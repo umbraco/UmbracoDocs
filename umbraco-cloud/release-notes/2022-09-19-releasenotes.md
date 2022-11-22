@@ -22,8 +22,6 @@ To enable 2FA for Umbraco Cloud, go to **Profile**, click **Edit Profile**, and 
 
 As your Umbraco profile is used to log in to the backoffice for your projects, these are all now protected with 2FA.
 
-See the [2-factor authentication on Umbraco Cloud documentation](https://our.umbraco.com/documentation/Umbraco-Cloud/set-up/2-factor-authentication-on-cloud/) for details.
-
 ## US Region Hosting
 
 Until now, Umbraco Cloud has been exclusively hosted in the West Europe region on Azure. Including **East US** as an option and offering regional hosting to agencies, partners, and end clients located or working in the US is a big milestone and enabler for Umbraco Cloud.
