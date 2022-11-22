@@ -158,7 +158,7 @@ As stated in the comment below this setting caches media and member data. This p
 
 ## `<EnablePropertyValueConverters>`** (Available on Umbraco versions 7.6.0 and above)
 
-Enables [value converters](../../../Extending/Property-Editors/value-converters.md) for all built in property editors so that they return strongly typed object, recommended for use with [Models Builder](../../Templating/Modelsbuilder/index.md)
+Enables [value converters](../../../Extending/Property-Editors/Property-Value-Converters/index.md) for all built in property editors so that they return strongly typed object, recommended for use with [Models Builder](../../Templating/Modelsbuilder/index.md)
 
 On new installs this set to true. When you are upgrading from a lower version than 7.6.0 it is recommended to set this setting to false. More information can be found in the explanation of the [breaking changes in 7.6.0](../../../Getting-Started/Setup/Upgrading/760-breaking-changes#property-value-converters-u4-7318)
 
@@ -321,7 +321,7 @@ Standard logTypeAlias Entries are as follows and correspond to the entries found
 ## ScheduledTasks
 
 :::note
-This setting is **obsolete** as of 7.2.7, use umbracoApplicationUrl instead (see Web.Routing below).
+This setting is **obsolete** as of 7.2.7, use `umbracoApplicationUrl` instead. For more information on `umbracoApplicationUrl`, see the [Web.Routing](index.md#webrouting) section.
 :::
 
 In this section you can add multiple scheduled tasks that should run at certain intervals.

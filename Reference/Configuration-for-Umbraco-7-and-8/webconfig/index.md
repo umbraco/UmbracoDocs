@@ -79,12 +79,12 @@ Makes sure that all of the requests in the backoffice are called over HTTPS inst
 ```
 
 :::memo
-Check out the [security documentation](../../security/use-https.md).
+Check out the [security documentation](../../security/SSL-HTTPS/index.md).
 :::
 
 ### Umbraco.Examine.LuceneDirectoryFactory
 
-The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory. The indexes will be accessed from the temporary storage directory. 
+The `SyncTempEnvDirectoryFactory` enables Examine to sync indexes between the remote file system and the local environment temporary storage directory. The indexes will be accessed from the temporary storage directory.
 
 This setting is required due to the nature of Lucene files and IO latency on Azure Web Apps.
 
@@ -126,7 +126,7 @@ For example if you wanted to store in a folder in the website root folder called
 ### umbracoScriptsPath
 
 By adding this to appSettings you can specify a new/different folder for storing your JavaScript files and still be able to edit them within Umbraco. Default folder is ~/scripts.
-For example if you wanted to store javascript in a folder in the website root folder "/assets/js", you could have this in appsetting:
+For example if you wanted to store JavaScript in a folder in the website root folder "/assets/js", you could have this in appsetting:
 
 ```xml
 <add key="umbracoScriptsPath" value="~/assets/js" />

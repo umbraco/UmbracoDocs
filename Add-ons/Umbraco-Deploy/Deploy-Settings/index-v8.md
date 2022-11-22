@@ -8,6 +8,25 @@ meta.Description: "Various settings for Umbraco Deploy"
 
 The UmbracoDeploy.Settings.config file is empty by default, but there are some optional settings you can set in the file to ignore certain types of file, increase timeout limits, etc.
 
+## Edition
+
+The default value for this setting is `Default`, which configures Umbraco Deploy to work according to how we expect most customers to use the product. Umbraco schema, such as Document and Data Types, are serialized to disk as `.uda` files in save operations. These are checked into source control and used to update the schema in the upstream environments via a trigger from your CI/CD pipeline, or automatically if using Umbraco Cloud.
+
+Items managed by editors - content, media and optionally forms, dictionary items and members - are deployed between environments using the transfer and restore options available in the backoffice.
+
+It is possible to use this method for all Umbraco data, by setting the value of this setting to `BackOfficeOnly`. With this in place, all data, including what is typically considered as schema, are available for transfer via the backoffice.
+
+Our recommended approach is to leave this setting as `Default` and use source control and a deployment pipeline to ensure that structural changes to Umbraco are always aligned with the code and template amends that use them.
+
+However, we are aware that some customers prefer the option to use the backoffice for all data transfers. If that is the case, the `BackOfficeOnly` setting will allow this.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <deploy edition="Default|BackOfficeOnly" />
+</settings>
+```
+
 ## ExcludedEntityTypes
 
 This setting allows you to exclude a certain type of entity from being deployed. This is **not** recommended to set, but sometimes there may be issues with the way a custom media fileprovider works with your site and you will need to set it for media files. Here is an example:
@@ -72,16 +91,54 @@ The defaults will cover most though. Changing the defaults by updating the `/Con
 - `httpClientTimeout`
 - `databaseCommandTimeout`
 
-These timeout settings default to 20 minutes, but if you are transferring a lot of data you may need to increase it. All of these times are in *seconds*:
+These timeout settings default to 20 minutes, but if you are transferring a lot of data you may need to increase it.
 
 :::note
 It's important that these settings are added to both the source and target environments in order to work.
 :::
 
+A fifth timeout setting is available from Umbraco Deploy 9.5 and 10.1, allowing for the adjustment of the maximum time allowed for disk operations such as schema updates.
+
+- `diskOperationsTimeout`
+
+This setting defaults to 5 minutes.
+
+All of these times are in *seconds*:
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <settings xmlns="urn:umbracodeploy-settings">
-    <deploy sessionTimeout="1800" sourceDeployTimeout="1800" httpClientTimeout="1800" databaseCommandTimeout="1800" />
+    <deploy sessionTimeout="1800" sourceDeployTimeout="1800" httpClientTimeout="1800" databaseCommandTimeout="1800" diskOperationsTimeout="60" />
+</settings>
+```
+
+## Batch settings
+
+Even with appropriate settings of the above timeouts, Deploy's backoffice transfer operations can hit a hard limit imposed by the hosting environment. For Azure, this is around 4 minutes. This will typically only be reached if deploying a considerable amount of items in one go. For example, a media folder with thousands of items can reach this limit.
+
+An error message of `500 - The request timed out. The web server failed to respond within the specified time.` will be reported.
+
+If encountering this issue, the following setting can be applied to cause Deploy to transfer items in batches, up to a maximum size. This will allow each individual batch to complete within the time available.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <deploy sourceDeployBatchSize="1000" />
+</settings>
+```
+
+## Transfer Queue
+
+In earlier versions of Umbraco Deploy, the transfer queue was implemented using in-memory storage. As a result, it would not be persisted across application restarts.
+
+From 4.7, a database backed queue was implemented and is used by default.
+
+If for any reason there was a need to revert to the previous implementation, the following setting can be used.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <deploy useDatabaseBackedTransferQueue="false" />
 </settings>
 ```
 
@@ -174,7 +231,7 @@ For example, using the following settings, you will have an installation that ig
 
 ## Memory cache reload
 
-Some customers have reported intermittent issues related to Umbraco's memory cache following deployments, which are resolved by a manual reload of the cache via the _Settings > Published Status > Caches_ dashboard.  If you are running into such issues and are able to accomodate a cache clear after deployment, this workaround can be automated via the following setting:
+Some customers have reported intermittent issues related to Umbraco's memory cache following deployments, which are resolved by a manual reload of the cache via the _Settings > Published Status > Caches_ dashboard.  If you are running into such issues and are able to accommodate a cache clear after deployment, this workaround can be automated via the following setting:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

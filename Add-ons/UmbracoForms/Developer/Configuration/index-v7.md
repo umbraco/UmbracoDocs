@@ -34,9 +34,21 @@ In Umbraco Forms 8.10.0, protection was added to uploaded files to prevent users
 
 If for any reason you need to revert to the previous behavior, or have other reasons where you want to permit unauthenticated users from accessing the files, you can turn off this protection by setting this configuration value to `true`.
 
-### DefaultAccessToNewForms
+### DefaultUserAccessToNewForms
 In Umbraco Forms 8.11.0, this setting was added to add control over access to new forms.  The default behavior is for all users to be granted access to newly created forms. To amend that to deny access,
 the setting can be updated to a value of `Deny`.  A value of `Grant` or a configuration file with the setting absent preserves the default behavior.
+
+### ManageSecurityWithUserGroups
+Umbraco Forms 8.11.0 introduced the ability to administer access to Umbraco Forms using Umbraco's user groups. This can be used instead or in addition to the legacy administration which is at the level of the individual user.  Set this option to `true` to enable the user group permission management functionality.
+
+### GrantAccessToNewFormsForUserGroups
+Also introduced in Umbraco Forms 8.11.0, this setting takes a comma-separated list of user group aliases which will be granted access automatically to newly created forms.  This setting only takes effect when `ManageSecurityWithUserGroups` is set to `true`.
+
+There are two "special" values that can be applied within or instead of the comma-separated list.
+
+A value of `all` will give access to the form to all user groups.
+
+A value of `form-creator` will give access to all the user groups that the user who created the form is part of.
 
 ### AllowEditableFormSubmissions
 This configuration value expects a `True/False` value and can be used to toggle the functionality to allow a form submission to be editable and re-submitted. When the value is set to `True` it allows Form Submissions to be edited using the following querystring for the page containing the form on the site. `?recordId=GUID` Replace `GUID` with the GUID of the form submission.
@@ -69,10 +81,10 @@ In certain circumstances, including hosting pages with forms in IFRAMEs from oth
 
 When redirecting following a form submission, a `TempData` value is set that is used to ensure the submission message is displayed rather than the form itself. In certain situations, such as hosting pages with forms in IFRAMEs from other websites, this value is not persisted between requests.
 
-By settting the following value to True, a querystring value of `formSubmitted=<id of submitted form>`, will be used to indicate a form submitted on the previous request.
+By setting the following value to True, a querystring value of `formSubmitted=<id of submitted form>`, will be used to indicate a form submitted on the previous request.
 
 ### StoreUmbracoFormsInDb
-This setting needs to be set to `True` if you want your Forms data to be stored in the database instead of the .json files in the `App_Data/UmbracoForms` directory in the file system.
+This setting needs to be set to `True` if you want your form's data to be stored in the database instead of the .json files. The .json files are stored in the `App_Data/UmbracoForms` directory in the file system.
 
 For more information on this, read the [Forms in the Database](../Forms-in-the-Database) article.
 
@@ -90,6 +102,23 @@ By default, .NET related code files like `.config` and `.aspx` are included in t
 
 ### MaxNumberOfColumnsInFormGroup
 Added in 8.7.0, this setting controls the maximum number of columns that can be created by editors when they configure groups within a form.  The default value used if the setting value is not provided is 12.
+
+### CultureToUseWhenParsingDatesForBackOffice
+This setting has been added in 8.13, to help resolve an issue with multi-lingual setups.
+
+When Umbraco Forms stores data for a record, it saves the values submitted for each field into a dedicated table for each type (string, date etc.). It also saves a second copy of the record in a JSON structure which is more suitable for fast look-up and display in the backoffice. Date values are serialized using the culture used by the front-end website when the form entry is stored.
+
+When displaying the data in the backoffice, the date value needs to be parsed back into an actual date object for formatting. And this can cause a problem if the backoffice user is using a different language, and hence culture setting, than that used when the value was stored.
+
+From 8.13 onwards, the culture used when storing the form entry is recorded, thus we can ensure the correct value is used when parsing the date. However, this doesn't help for historically stored records. To at least partially mitigate the problem, when you have editors using different languages to a single language presented on the website front-end, you can set this value to match the culture code used on the website. This ensures the date fields in the backoffice are correctly presented.
+
+Taking an example of a website globalization culture code setting of "en-US" (and a date format of `m/d/y`), but an editor uses "en-GB" (which formats dates as of `d/m/y`). By setting the value of this configuration key to "en-US", you can ensure that the culture when parsing dates for presentation in the backoffice will match that used when the value was stored.
+
+If no value is set, and no culture value was stored alongside the form entry, the culture based on the language associated with the current backoffice user will be used.
+
+### TriggerConditionsCheckOn
+
+This configuration setting provides control over the client-side event used to trigger conditions. The `change` event is the default used if this setting is empty. It can also be set to a value of `input`. The main difference seen here relates to text fields, with the "input" event firing on each key press, and the "change" only when the field loses focus.
 
 ### DefaultTheme
 Added in 8.8.0, this setting allows you to configure the name of the theme to use when an editor has not specifically selected one for a form.  If empty or missing, the default value of "default" is used.  If a custom default theme is configured, it will be used for rendering forms where the requested file exists, and where not, will fall back to the out of the box default theme.

@@ -5,9 +5,9 @@ versionFrom: 8.0.0
 ---
 # Customizing Umbraco website
 
-Looking to create a website with custom styling and tools? As a backend developer you can follow our instructions to easily create a fully customizable website. You will learn things like how to set up your environments and how to implement your custom templates. You will find all the tools that you're going to need to install Umbraco and start developing immediately.
+Looking to create a website with custom styling and tools? As a backend developer you can follow our instructions to create a fully customizable website. You will learn things like how to set up your environments and how to implement your custom templates. You will find all the tools that you're going to need to install Umbraco and start developing immediately.
 
-There are also some tutorials on how to inject dependencies and some information about how the Umbraco pipeline works and how you can customize it to fit your needs.
+There are tutorials on how to inject dependencies, information about how the Umbraco pipeline works, and how you can customize it to fit your needs.
 
 ## Using MVC with Umbraco
 
@@ -25,7 +25,7 @@ You can implement your own MVC controllers to work alongside Umbraco.
 
 There are two concepts that are Umbraco specific which might prove useful to learn about:
 
-- [Surface Controllers](../../../Reference/Routing/surface-controllers.md)
+- [Surface Controllers](../../../Reference/Routing/Surface-Controllers/index.md)
 - [Default routing](../../../Implementation/Default-Routing/Controller-Selection)
 
 :::

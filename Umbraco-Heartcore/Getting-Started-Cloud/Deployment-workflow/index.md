@@ -6,7 +6,7 @@ versionFrom: 8.0.0
 
 Having multiple environments on your Umbraco Heartcore project can be a great asset for testing and having a place where your content editors can work without interfering with anything on the Live environment.
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/M0FJtJ10czY?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="Umbraco Heartcore: Deploying between environments" src="https://www.youtube.com/embed/M0FJtJ10czY?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 When working with multiple environments, it is very important to follow the correct workflow. In this article, you can learn more about the workflow and the best practices for using it.
 
@@ -16,7 +16,7 @@ The workflow uses a classic "left to right" deployment model, meaning that chang
 
 We recommend that you do not work with Document Types directly on the Live environment. This should, as a rule of thumb always be done on the "lowest most" environment: the Development environment.
 
-The deployment approach is divided into two steps: 
+The deployment approach is divided into two steps:
 
 1. Structure changes like Document Types and Data Types are **deployed** via the project portal page
 2. Content and Media are **transferred/restored** via the Umbraco Backoffice

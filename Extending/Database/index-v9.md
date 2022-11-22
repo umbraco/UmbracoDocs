@@ -302,3 +302,47 @@ This however also means that if you do need to edit or display this data, it is 
 It also means that if you need this data to be transferred or kept synchronized between multiple sites or environments, it is up to you to handle this. Data stored in custom tables are not supported out of the box by add-ons such as Umbraco Deploy or Umbraco Courier and therefore will not be deployable by default.
 
 Figuring out how to manage data across multiple environments can be challenging, as there is not one solution that fits all. Some sites may have automated database synchronization set up to ensure specific tables in multiple databases are always kept in sync, while others may be better off with scripts moving data around manually on demand.
+
+
+## Working with data in Custom Database Tables
+
+To create, read, update or delete data from your custom database tables, you can use the `IScopeProvider` to get access to the database operations.
+
+The following example creates an `UmbracoApiController` to be able to fetch and insert blog comments.
+
+:::note
+This example does not use the aforementioned `BlogCommentSchema` class but rather a separate (yet duplicate) class that is not part of the example. Also, be aware that things like error handling and data validation have been omitted for brevity.
+:::
+
+```C#
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using Umbraco.Cms.Infrastructure.Scoping;
+using Umbraco.Cms.Web.Common.Controllers;
+namespace MyNamespace
+{
+    public class BlogCommentsApiController : UmbracoApiController
+    {
+        private readonly IScopeProvider _scopeProvider;
+        public BlogCommentsApiController(IScopeProvider scopeProvider)
+        {
+            _scopeProvider = scopeProvider;
+        }
+        [HttpGet]
+        public IEnumerable<BlogComment> GetComments(int umbracoNodeId)
+        {
+            using var scope = _scopeProvider.CreateScope();
+            var queryResults = scope.Database.Fetch<BlogComment>("SELECT * FROM BlogComments WHERE BlogPostUmbracoId = @0", umbracoNodeId);
+            scope.Complete();
+            return queryResults;
+        }
+        [HttpPost]
+        public void InsertComment(BlogComment comment)
+        {
+            using var scope = _scopeProvider.CreateScope();
+            scope.Database.Insert<BlogComment>(comment);
+            scope.Complete();
+        }
+    }
+}
+

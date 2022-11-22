@@ -15,7 +15,6 @@ In this tutorial, we will create a Custom Grid Editor using [custom elements](ht
 * [Create a custom grid editor](#create-a-custom-grid-editor)
 * [Using module aliases](#using-module-aliases)
 * [Describing the grid editor using JSON schema](#describing-the-grid-editor-using-json-schema)
-* [Limitations and best practices](#limitations-and-best-practices)
 
 ## Create a Document Type and grid configuration
 
@@ -325,7 +324,7 @@ Since we add to the array and do not set the `value` property we need to tell Li
 We will also need to add a `click` event to the button so it will show the dialog:
 
 ```html
-<button type="button" class="btn-reset placeholder" @click=${() => this.showPicker()}>
+<button type="button" class="add-button" @click=${() => this.showPicker()}>
 ```
 
 :::note
@@ -384,7 +383,7 @@ Module aliases allows us to define a common name for a module that we can use in
 
 ![Defining custom module aliases](images/module-aliases.png)
 
-Here we have defined an alias `@headless-backoffice-bridge` pointing to a CDN URL of the [backoffice bridge library](https://github.com/umbraco/Umbraco.Headless.Backoffice.Bridge).
+Here we have defined an alias `@headless-backoffice-bridge` pointing to a Content Delivery Network (CDN) URL of the [backoffice bridge library](https://github.com/umbraco/Umbraco.Headless.Backoffice.Bridge).
 
 With this alias added we can update our import in our editor to:
 
@@ -468,15 +467,10 @@ We now have an array where each item has the URL to the picked media item.
 While it is not necessary to define all properties in the JSON Schema, it is highly recommended as the schema is also used for validating the editor data when saving.
 :::
 
-Besides the `uri-reference` format there's also `richtext`. This is useful when storing rich text data like the output from the TinyMCE editor. When specifying the `richtext` format, things like `{locallink}` and `data-uri` will automatically be replaced with the correct URLs.
+Besides the `uri-reference` format there's also `rich-text`. This is useful when storing rich text data like the output from the TinyMCE editor. When specifying the `rich-text` format, things like `{locallink}` and `data-uri` will automatically be replaced with the correct URLs.
 
-## Limitations and best practices
-
-Currently there are some functionality and components that does not work well in the preview pane. This includes integrations with the backoffice like pickers and the Rich Text Editor. They do however still work when inserted on a page.
-
-To make your custom editors less likely to break with future updates, do not use any of the backoffice javascript directly. Always use the [headless backoffice bridge](https://github.com/umbraco/Umbraco.Headless.Backoffice.Bridge).
-
-If the library is missing any functionality raise an issue on the [Heartcore issue tracker](https://github.com/umbraco/Umbraco.Heartcore.Issues/issues).
-
-Try to avoid relying on backoffice CSS-classes. Instead we recommend creating isolated elements using [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM).
+:::links
+## Related articles
+- [Custom Grid Editors](../../Backoffice/Grid-Editors/)
+:::
 

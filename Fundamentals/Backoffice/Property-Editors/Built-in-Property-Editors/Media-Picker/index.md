@@ -1,19 +1,23 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+versionFrom: 8.1.0
+versionTo: 8.13.0
 ---
 
-# Media Picker
+# Media Picker (Legacy)
+
+:::note
+**Are you using Umbraco 8.14 or a newer version?**
+
+We highly recommend that you use the [Media Picker](../Media-Picker-3/) instead.
+
+This updated property contains more customizable features, and we recommend using this over the Media Picker, which is also marked as the *old* version of the picker.
+:::
 
 `Alias: Umbraco.MediaPicker`
 
 `Returns: IEnumerable<IPublishedContent>` or `IPublishedContent`
 
 This property editors returns a single item if the "Pick multiple items" data type setting is disabled or a collection if it is enabled.
-
-:::note
-As of Umbraco 8.14, this Media Picker has been replaced by [Media Picker 3](../Media-Picker-3). This updated property contains more customizable features, and we recommend using this over the Media Picker, which is also marked as the *old* version of the picker.
-:::
 
 ## Data Type Definition Example
 
@@ -75,7 +79,7 @@ When this setting is enabled, a user who doesn't normally have access to the med
     var typedMediaPickerSingle = Model.FeaturedBanner;
     if (typedMediaPickerSingle is Image image)
     {
-        <p>@typedMediaPickerSingle.Url()</p>
+        <p>@image.Url()</p>
         <img src="@image.Url()" style="width:200px"/>
     }
 }

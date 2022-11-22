@@ -5,12 +5,12 @@ product: "CMS"
 
 # Custom routing in Umbraco
 
-_There are a couple of ways of controlling the routing behavior in Umbraco: customizing how the inbound request pipeline
-finds content & creating custom MVC routes that integrate within the Umbraco pipeline_.
+_There are two ways of controlling the routing behavior in Umbraco: customizing how the inbound request pipeline
+finds content & creating custom MVC routes_.
 
 ## Customizing the inbound pipeline
 
-Below lists the ways in which you can customize the inbound request pipeline, this is done by using native Umbraco plugin classes, events or defining your own routes.
+Listed below are the ways in which you can customize the inbound request pipeline. This is done by using native Umbraco plugin classes, events or defining your own routes.
 
 ### IContentFinder
 
@@ -20,7 +20,7 @@ See: [IContentFinder documentation](../../Reference/Routing/Request-Pipeline/ICo
 
 ### Last Chance IContentFinder
 
-A 'Last Chance' `IContentFinder` is a special implementation of an `IContentFinder` for use with handling 404's. You can implement one of these plugins to decide which Umbraco content page you would like to show when the URL hasn't matched an Umbraco content node.
+A 'Last Chance' `IContentFinder` is a special implementation of an `IContentFinder` for use with handling 404's. You can implement one of these plugins to decide which content page you want to show when the URL hasn't matched a content node.
 
 To set your own 404 finder create an `IContentFinder` and set it as the `ContentLastChanceFinder`. A `ContentLastChanceFinder` will always return a 404 status code. Example:
 
@@ -48,7 +48,7 @@ routes.MapUmbracoRoute(
     new UmbracoVirtualNodeByIdRouteHandler(1234));
 ```
 
-See: [Custom routing documentation](../../Reference/Routing/custom-routes-v7.md)
+See: [Custom routing documentation](../../Reference/Routing/Custom-Routes/index-v7.md)
 
 ### PublishedContentRequest.Prepared event
 

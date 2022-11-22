@@ -73,7 +73,15 @@ The class is decorated with a `UdiDefinition` via which the name of the entity t
 
 The following example shows a service connector, responsible for handling the artifact shown above and it's related entity.  There are no dependencies to consider here.  More complex examples will involve collating the dependencies and potentially handling the extraction in more than one pass to ensure updates are made in the correct order.
 
-Note that an illustrative data service is provided via dependency injection.  This will be whatever is appropriate for your solution to use for CRUD operations around reading and writing of entiries.
+An illustrative data service is provided via dependency injection.  This will be whatever is appropriate for your solution to use for Create, Read, Update and Delete (CRUD) operations around reading and writing of entities.
+
+:::note
+In Deploy 4.7, to improve performance on deploy operations, we introduced a cache. This change required the addition of new methods to interfaces, allowing the passing in of a cache parameter.  In order to introduce this without breaking changes, we created some new interfaces and base classes.
+
+In the example below, if instead we inherited from `ServiceConnectorBase2`, which has a type parameter of `IServiceConnector2`, we would be able to implement `IArtifact IServiceConnector2.GetArtifact(Udi udi, IContextCache contextCache)`. This would allow the connector to read and write to the cache and remove the use of the obsolete methods.
+
+There's no harm in what is listed below though. It's only that the connectors won't be able to use the cache for any look-ups that are repeated in deploy operations. The obsolete methods won't be removed until Deploy 11. In that version we plan to return back to the original interface and class names. We also plan to introduce the new method overloads which will be a documented breaking change.
+:::
 
 ```C#
     [UdiDefinition("mypackage-example", UdiType.GuidUdi)]
@@ -260,7 +268,7 @@ In the same way that Umbraco entities often have dependencies on one another, th
 
 If the dependent entity is also deployable, it will be included in the transfer.  Or if not, the deployment will be blocked and the reason presented to the user.
 
-In the following illustrative example, if deploying a representation of a "Person", we ensure their "Department" dependency is added, indicating that it must exist to allow the transfer.  We can also use `ArtifactDependencyMode.Exist` to ensure the dependent entity not only exists but also matches in all properties.
+In the following illustrative example, if deploying a representation of a "Person", we ensure their "Department" dependency is added. This will indicate that it must exist to allow the transfer. We can also use `ArtifactDependencyMode.Match` to ensure the dependent entity not only exists but also matches in all properties.
 
 ```C#
         private PersonArtifact Map(GuidUdi udi, Person person, ICollection<ArtifactDependency> dependencies)
@@ -291,7 +299,7 @@ With the artifact and connectors in place, the final step necessary is to regist
 
 ### Disk Based Transfers
 
-In order to deploy the entity as schema, via disk based representations held in `.uda` files, it's necessary to register the entity with the disk entity service.  This can be done in a component, such as follows, where events are used to trigger a serialization of the enity to disk whenever one of them is saved.
+In order to deploy the entity as schema, via disk based representations held in `.uda` files, it's necessary to register the entity with the disk entity service.  This can be done in a component, such as follows, where events are used to trigger a serialization of the entity to disk whenever one of them is saved.
 
 ```C#
     public class ExampleDataDeployComponent : IComponent
@@ -486,7 +494,7 @@ To complete the setup for partial restore support, an external tree controller n
 
 With the server-side registration discussed in the previous section, most features that are available for the deployment of Umbraco entities will also be accessible to entities defined in custom solutions or packages.  One feature though - the "Transfer Now" option available from the "Save and Publish" or "Save" button available for content or media - is only available to custom entities if requested client-side.
 
-You would do this in the custom angularjs controller responsible for handling the edit operations on your entity, injecting the `pluginEntityService` and calling the `addInstantDeployButton` function as shown in the following stripped down sample (for the full code, see the sample data repository linked above):
+You would do this in the custom AngularJS controller responsible for handling the edit operations on your entity. Inject the `pluginEntityService` and call the `addInstantDeployButton` function as shown in the following stripped-down sample. For the full code, see the sample data repository linked above.
 
 ```JavaScript
 (function () {

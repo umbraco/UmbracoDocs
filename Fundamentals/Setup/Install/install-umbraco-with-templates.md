@@ -8,7 +8,7 @@ We have made custom Umbraco templates that are available for use with `dotnet ne
 
 ## Video Tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/boK2cMXiI10" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="800" height="450" title="Installing Umbraco using the .NET CLI" src="https://www.youtube.com/embed/U309rfT_4ns" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Install the template
 
@@ -17,12 +17,12 @@ We have made custom Umbraco templates that are available for use with `dotnet ne
 2. Run `dotnet new -i Umbraco.Templates` to install the project templates.  
 *The solution is packaged up into the NuGet package [Umbraco.Templates](https://www.nuget.org/packages/Umbraco.Templates) and can be installed into the dotnet CLI*.
 
-> Once that is complete, you can see that Umbraco was added to the list of available projects types by running `dotnet new -all`:
+> Once that is complete, you can see that Umbraco was added to the list of available projects types by running `dotnet new --list`:
 
 ```none
 Templates                    Short Name               Language          Tags
 ------------------------------------------------------------------------------------------------------
-Umbraco Solution             umbraco                  [C#]              Web/CMS/Umbraco
+Umbraco Project              umbraco                  [C#]              Web/CMS/Umbraco
 Umbraco Package              umbracopackage           [C#]              Web/CMS/Umbraco/Package/Plugin
 ```
 :::note
@@ -98,7 +98,7 @@ You will now have a new project with the name *MyCustomUmbracoProject*, or the n
 The new project can be opened and run using your favorite IDE or you can continue using the CLI commands.
 
 :::note
-If you want to create a solution file as well you can run the commands below. 
+If you want to create a solution file as well you can run the commands below.
 `dotnet new sln`  
 `dotnet sln add MyCustomUmbracoProject `
 :::

@@ -1,6 +1,5 @@
 ---
 versionFrom: 9.0.0
-versionTo: 10.0.0
 meta.Title: "Common Pitfalls and Anti-Patterns in Umbraco"
 meta.Description: "Information on common Pitfalls and Anti-Patterns in Umbraco"
 ---

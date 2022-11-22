@@ -23,7 +23,7 @@ using Umbraco.Core.Composing;
 namespace MyFormsExtensions
 {
     public class TestWorkflow : WorkflowType
-    {   
+    {
         private readonly ILogger<TestWorkflow> _logger;
 
         public TestWorkflow(ILogger<TestWorkflow> logger)
@@ -34,13 +34,13 @@ namespace MyFormsExtensions
             this.Name = "TestWorkflow";
             this.Description = "This workflow is just for testing";
             this.Icon = "icon-chat-active";
-            this.Group = "Services";                      
+            this.Group = "Services";
         }
 
         public override WorkflowExecutionStatus Execute(WorkflowExecutionContext context)
         {
             // first we log it
-            _logger.LogDebug("the IP " + context.Record.IP + " has submitted a record");            
+            _logger.LogDebug("the IP " + context.Record.IP + " has submitted a record");
 
             // we can then iterate through the fields
             foreach (RecordField rf in context.Record.RecordFields.Values)
@@ -51,7 +51,7 @@ namespace MyFormsExtensions
                 // or get it as a string
                 rf.ValuesAsString();
             }
-                      
+
             //Change the state
             context.Record.State = FormState.Approved;
 
@@ -64,12 +64,12 @@ namespace MyFormsExtensions
         public override List<Exception> ValidateSettings()
         {
             return new List<Exception>();
-        }       
+        }
     }
 }
 ```
 
-The `Execute()` method gets a `WorkflowExecutionContext` which has properties for the related `Form`, `Record` and `FormState`.  Essentially, this parameter contains all information related to the workflow.  The `Record` contains all data and meta data submitted by the form. The `Form` references the form the record is from, and `FormState` provides it's state.  Other context, such as the current `HttpContext`, if needed can be passed as constructor parameters (e.g. the `HttpContext` can be accessed by injecting `IHttpContextAccessor`).
+The `Execute()` method gets a `WorkflowExecutionContext` which has properties for the related `Form`, `Record` and `FormState`.  This parameter contains all information related to the workflow.  The `Record` contains all data and meta data submitted by the form. The `Form` references the form the record is from, and `FormState` provides its state.  Other context, such as the current `HttpContext`, if needed can be passed as constructor parameters (For example: the `HttpContext` can be accessed by injecting `IHttpContextAccessor`).
 
 You will then need to register this new workflow type as a dependency.
 
@@ -77,6 +77,7 @@ You will then need to register this new workflow type as a dependency.
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Forms.Core.Providers;
+
 namespace MyFormsExtensions
 {
     public class Startup : IComposer

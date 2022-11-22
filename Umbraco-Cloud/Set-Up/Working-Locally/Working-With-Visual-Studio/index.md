@@ -34,13 +34,13 @@ Below is a screenshot of our recommendation on how the projects should be config
 * Visual Studio 2017 v15.9.6 or later
 * Git and/or Git Credential Manager for Windows
 
-:::note 
+:::note
 If you're used to using a Git client like GitKraken or SourceTree, you will still need to make sure that you have Git CLI installed. Git CLI is used by the UaaS.cmd tool to clone down your Cloud project.
 :::
 
 ## Video tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/gUj45TcBPbA?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="How to create a Visual Studio solution to work on Umbraco Cloud" src="https://www.youtube.com/embed/gUj45TcBPbA?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Generate a Visual Studio Solution
 Manually creating and configuring a Visual Studio solution with the right projects can take a bit of time, so we have made a little command line tool that will set the solution up for you.
@@ -64,7 +64,7 @@ Before running the UaaS.cmd tool you will need the **git clone url** for your Um
 * Go to the Project in the Portal
 * Copy the url from "How to connect my machine"
 
-![](images/connect-my-machine.png)
+![](images/connect-my-machine-VS.png)
 
 Running the UaaS.cmd tool will download the latest Visual Studio generator (waasp.exe) and then prompt you to enter the git clone url for your Project.
 Then enter the "Namespace", which will be the name of the Visual Studio solution and thus the namespace for the solution as well.

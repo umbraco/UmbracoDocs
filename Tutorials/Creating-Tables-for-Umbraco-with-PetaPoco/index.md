@@ -1,7 +1,8 @@
 ---
 versionFrom: 7.0.0
-versionTo: 7.0.0
+versionTo: 7.15.9
 versionRemoved: 8.0.0
+meta.Title: "Creating Tables in Umbraco with PetaPoco"
 ---
 
 # Creating Tables in Umbraco with PetaPoco

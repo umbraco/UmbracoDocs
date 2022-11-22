@@ -26,7 +26,7 @@ SurfaceControllers are auto-routed meaning that you don't have to add/create you
 
 All implementations of SurfaceControllers inherit from the base class `Umbraco.Web.Mvc.SurfaceController`.
 
-See [Reference documentation on SurfaceControllers for full details](../../Reference/Routing/surface-controllers.md)
+See [Reference documentation on SurfaceControllers for full details](../../Reference/Routing/Surface-Controllers/index.md)
 
 ## Umbraco Api Controllers
 
@@ -34,7 +34,7 @@ An Umbraco API Controller is an ASP.NET WebApi controller that is used for creat
 
 All implementations of Umbraco Api Controllers inherit from the base class `Umbraco.Web.WebApi.UmbracoApiController`.
 
-See [Reference documentation on Umbraco Api Controllers for full details](../../Reference/Routing/WebApi/index.md)
+See [Reference documentation on Umbraco Api Controllers for full details](../../Reference/Routing/Umbraco-API-Controllers/index.md)
 
 ## Umbraco Authorized Controllers and Attributes
 
@@ -54,7 +54,7 @@ Any WebApi Controller or Action that is attributed with `Umbraco.Web.WebApi.Umbr
 
 A base class implementation that already exists with this attribute is: `Umbraco.Web.WebApi.UmbracoAuthorizedApiController`. Since this controller inherits from `Umbraco.Web.WebApi.UmbracoApiController` it is auto-routed. This controller is also attributed with `Umbraco.Web.WebApi.IsBackOfficeAttribute` to ensure that it is routed correctly to be authenticated for the backoffice.
 
-Another common base class implementation for the backoffice is `Umbraco.Web.Editors.UmbracoAuthorizedJsonController` which inherits from `Umbraco.Web.WebApi.UmbracoAuthorizedApiController` but has some special filters applied to it to automatically handle anti-forgery tokens for use with AngularJS in the backoffice.
+Another base class implementation for the backoffice is `Umbraco.Web.Editors.UmbracoAuthorizedJsonController`, which inherits from `Umbraco.Web.WebApi.UmbracoAuthorizedApiController`. Still, it has some special filters to automatically handle anti-forgery tokens for use with AngularJS in the backoffice.
 
 ### Members & Front-end Authorization
 
@@ -77,11 +77,11 @@ public class AccountController : SurfaceController
 }
 ```
 
-There are a few properties that exist for the attribute to give you more control over the authorization process for which members can access the resource:
+There are a few properties for the attribute to give you more control over the authorization process for which members can access the resource:
 
 * `AllowType` - Comma delimited list of allowed member types
 * `AllowGroup` - Comma delimited list of allowed member groups
 
 ### Routing
 
-For details on the routes and route requirements regarding authentication see [Routing for authentication](../../Reference/Routing/Authorized/index.md) and for authorization in API controllers see [Umbraco API authorization](../../Reference/Routing/WebApi/authorization).
+For details on the routes and route requirements regarding authentication see [Routing for authentication](../../Reference/Routing/Authorized/index.md) and for authorization in API controllers see [Umbraco API authorization](../../Reference/Routing/Umbraco-API-Controllers/authorization.md).

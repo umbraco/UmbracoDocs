@@ -7,7 +7,7 @@ versionFrom: 8.0.0
 
 If you haven't been able to find a topic that suits your needs, there are many ways for you to find help.
 
-You can talk to developers across the globe via the Umbraco Forum, report an issue with the Documentation team or check out our Training options. We also have UmbracoTV, a team of friendly supporters and direct links to get in touch with the team at Umbraco HQ for any questions you may have.
+You can talk to developers across the globe via the Umbraco Forum, report an issue with the Documentation team or check out our Training options. We also have UmbracoTV, a team of friendly supporters and direct links to contact the team at Umbraco HQ for any questions you may have.
 
 [Umbraco Forum](https://our.umbraco.com/forum/)
 
@@ -31,9 +31,9 @@ You can talk to developers across the globe via the Umbraco Forum, report an iss
 
 ## Other resources
 
-[Found an issue in Umbraco? Report it on our Issue Tracker](https://github.com/umbraco/Umbraco-CMS/issues)
+[Found an issue in Umbraco? Report it on our CMS Issue Tracker](https://github.com/umbraco/Umbraco-CMS/issues)
 
-[Found an issue with the Umbraco Documentation? Report it to the Documentation team](https://github.com/umbraco/UmbracoDocs)
+[Found an issue with the Umbraco Documentation? Report it on our Documentation Issue Tracker](https://github.com/umbraco/UmbracoDocs/issues)
 
 [Find out how to suggest an improvement to the Umbraco Documentation](../../Contribute/)
 
@@ -43,7 +43,7 @@ You can talk to developers across the globe via the Umbraco Forum, report an iss
 
 [Community teams](https://community.umbraco.com/community-teams/)
 
-[MVP Program](https://community.umbraco.com/mvp-program/)
+[Most Valuable People (MVP) Program](https://community.umbraco.com/mvp-program/)
 
 [Umbracians in action](https://community.umbraco.com/umbracians-in-action/)
 

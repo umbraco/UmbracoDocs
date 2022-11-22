@@ -5,45 +5,47 @@ meta.Title: "Transfering content with Umbraco Deploy"
 meta.Description: "How to restore content in Umbraco Deploy using the deployment dashboard"
 ---
 
-# Transferring Content, Media and Forms
+# Transferring Content, Media, and Forms
 
-After deploying changes to meta data, it's time to transfer your content and media. This is done from the Umbraco backoffice.
+After deploying changes to the metadata, it's time to transfer your content and media. This is done from the Umbraco Backoffice.
 
-Content and media transfers are very flexible which means you have complete control over which content nodes and/or media items you want to transfer - all in one go, a few at a time or a single node.
+Content and media transfers are flexible which means you have complete control over which content nodes and/or media items you want to transfer - all in one go, a few at a time, or a single node.
 
-Transferring content will overwrite any existing nodes on the target environment - content transfers will transfer the items that you select in the "source" environment to the "target" environment exactly the same as it was in the "source". This means that if you have some content on the target environment already, this will be replaced by the new content from the source environment.
+Transferring content will overwrite any existing nodes on the target environment. Content transfers will transfer the items that you select in the "source" environment to the "target" environment the same as it was in the "source". This means that if you have some content on the target environment already, this will be replaced by the new content from the source environment.
 
-**Important**: Content and Media transfers will only work if you've deployed all changes to your meta data before hand. Please refer to our documentation on how to deploy meta data from either [Local to Cloud](../Local-to-Cloud) or [Cloud to Cloud](../Cloud-to-Cloud).
+**Important**: Content and Media transfers will only work if you've deployed all changes to your metadata beforehand. Please refer to our documentation on how to deploy metadata from either [Local to Cloud](../Local-to-Cloud) or [Cloud to Cloud](../Cloud-to-Cloud).
 
 ## Step-by-step
 
-Let’s go through a content transfer step by step. Imagine you’ve finished working on new content for your project locally and you are ready to transfer the changes to your Cloud environment.
+Let’s go through a content transfer step by step. Imagine you’ve finished working on new content for your project locally and you are ready to transfer the changes to your Cloud Development environment.
 
 You want to transfer the whole site. You start from the `Home` node and choose to transfer everything under it:
 
-1. Click on the ellipsis next to the `Home` node in the Content tree.
-2. Choose "Do something else".
-3. There you get the choice of **Queue for transfer**.
-    * If you’re currently editing the Home page you could also use the Actions dropdown to find  **Queue for transfer**.
-4. Choose if you want to include all pages under the chosen page or only transfer the chosen node.
-    * If you wish to transfer all your content at once, *right-click* the top of the Content tree where you will also find **Queue for transfer** - this will queue all your content for transfer.
-5. Go to the Deployment dashboard - the easiest way to get there is to click on the Content section header.
+1. Right-click **...** next to the `Home` node in the **Content** tree.
+2. Select **Queue for transfer**.
+3. Alternatively, if you are in the Home page editor, you can go to the **Actions** dropdown and select **Queue for transfer**.
+4. Choose if you want to **include all items below** the chosen page or only transfer the chosen node. Alternatively, right-click the **Content** tree and select **Queue for transfer** to transfer all your content at once.
+5. Click **Queue**.
+6. Select **Open transfer queue**. The **Workspaces** dashboard opens.
     * You will be able to see which items are currently ready to be transferred - this will include both content and media that you've *queued for transfer*.
-7. Confirm by clicking '*Send changes to the Development workspace*' and monitor the progress of the transfer.
+7. Click **Transfer to Development** and monitor the progress of the transfer.
 
-If everything went well, you will see the confirmation screen saying that the transfer has succeeded.
+Once the transfer is completed, you will see the confirmation message stating that the transfer has succeeded.
 
-### Media items
+### Media Items
 
 Media items are transferred the same way as content:
 
-1. In the Media section *Right-click* the items you want to transfer and choose **Queue for transfer**.
-    * Or *right-click* the top of the Media section to transfer all you media at once.
-2. Go to the Deployment dashboard in the Content section to see the items you've queued for transfer and to transfer your items.
+1. Right-click the items in the **Media** section and select **Queue for transfer**. Alternatively, right-click the Media tree and select **Queue for transfer** to transfer all your media at once.
+2. Click **Queue**.
+3. Select **Open transfer queue**. The **Workspaces** dashboard opens.
+4. Click **Transfer to Development**.
 
 ### Umbraco Forms
 
-In order for deploy to handle Forms data as content for a V8 project, you'll need to add the following setting to `UmbracoDeploy.Settings.config`:
+#### Umbraco version 8 and below
+
+For Deploy to handle Forms data as content, you'll need to add the following setting to `UmbracoDeploy.Settings.config` file:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -52,7 +54,9 @@ In order for deploy to handle Forms data as content for a V8 project, you'll nee
 </settings>
 ```
 
-For projects on Umbraco 9+ you'll need to ensure the `TransferFormsAsContent` setting is set to true, in order for Deploy to handle Forms data as content:
+#### Umbraco version 9 and above
+
+For Deploy to handle Forms data as content, you'll need to ensure the `TransferFormsAsContent` setting is set to `true` in the `appsettings.json`file:
 
 ```json
 "Umbraco": {
@@ -64,11 +68,12 @@ For projects on Umbraco 9+ you'll need to ensure the `TransferFormsAsContent` se
   }
 ```
 
-Once the setting have been added to the source and target environment forms can be transferred the same way as content and media:
+Once the setting has been added to the source and target environment, Forms can be transferred the same way as content and media:
 
-1. In the Forms section *Right-click* the items you want to transfer and choose **Queue for transfer**.
-    * Or *right-click* the top of the Forms section to transfer all your Forms at once.
-2. Go to the Deployment dashboard in the Content section to see the items you've queued for transfer and to transfer your items.
+1. Right-click the items in the Forms section and choose **Queue for transfer**. Alternatively, right-click the Forms tree and select **Queue for transfer** to transfer all your Forms at once.
+2. Click **Queue**.
+3. Select **Open transfer queue**. The **Workspaces** dashboard opens.
+4. Click **Transfer to Development**.
 
 :::note
 This does not include entries submitted via the forms.
@@ -76,8 +81,8 @@ This does not include entries submitted via the forms.
 
 ## Schema Mismatches
 
-Sometimes a content transfer might not be possible. For example if you add a new property to the HomePage Document type and you don’t have that property in both environments, you’ll get an error with a hint on how to fix this.
+Sometimes a content transfer might not be possible. For example, if you add a new property to the HomePage Document type and you don’t have that property in the other Cloud environment, you’ll get an error with a hint on how to fix this.
 
-![clone dialog](images/schema-mismatch.png)
+![clone dialog](images/schema-mismatch_v10.png)
 
-If you are seeing this type of issue when trying to transfer content, head over to our article about [Schema Mismatch errors](../../Troubleshooting), where you can read about how to resolve the issues.
+If you are seeing this type of issue when trying to transfer content, refer to the [Schema Mismatches](../../Troubleshooting/Deployments/Schema-Mismatches/index.md) article, where you can read about how to resolve the issues.

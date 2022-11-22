@@ -5,10 +5,10 @@ versionTo: 10.0.0
 
 # Managing Transport Security
 
-Once you have added your own hostnames to your Umbraco Cloud project it's possible to configure certain transport security options for all or for specific hostnames within your project.
+Once you have added your hostnames to your Umbraco Cloud project, it's possible to configure certain transport security options for all or specific hostnames within your project.
 These security options all relate to the traffic that goes through your hostname from the origin (Umbraco Cloud) to the end-user - meaning the protocols and encryption used to transport your website and assets from the webserver to the browser.
 
-These options are currently available:
+Currently, these options are available:
 
 - HTTP/2 (default: on)
 - TLS 1.3 (default: off)
@@ -29,26 +29,26 @@ By turning on the TLS 1.3 option, traffic to and from your website will be serve
 ## Minimum TLS Version Explained
 
 Minimum TLS Version only allows HTTPS connections from visitors that support the selected TLS protocol version or newer.
-This option relates to the TLS versions mentioned above and the current default, which is TLS 1.2. If you want your website traffic to only use TLS 1.3 you can change the minimum version. But be mindful of the implications that this might have (see browser support above). You don't need to change the minimum version in order to use TLS 1.3.
+This option relates to the TLS versions mentioned above and the current default, which is TLS 1.2. If you want your website traffic to only use TLS 1.3 you can change the minimum version. But be mindful of the implications that this might have (see browser support above). You don't need to change the minimum version to use TLS 1.3.
 
 ## Plan specific features
 
-Access to the different options vary depending on the Umbraco Cloud Plan your project is on.
-Currently the features are available as follows:
+Access to the different options varies depending on the Umbraco Cloud plan your project is on.
+Currently, the features are available as follows:
 
 - Starter: HTTP/2
 - Standard: HTTP/2, TLS 1.3, Minimum TLS Version
-- Pro: HTTP/2, TLS 1.3, Minimum TLS Version
+- Professional: HTTP/2, TLS 1.3, Minimum TLS Version
 
 ## Security subpage
 
-From your Umbraco Cloud Project, click **Security** from the **Settings** dropdown. The Security settings are scoped per environment, so if you have multiple environments and add your own hostnames to different environments you can select the environment at the top of the page.
+Click **Security** from the **Settings** dropdown on your Umbraco Cloud Project. The Security settings are scoped per environment, so if you have multiple environments and add your hostnames to different environments you can select the environment at the top of the page.
 
-Aside from environments, the Security page is divided into two parts: 'Default Settings' and 'Hostname Specific Settings'. Use the default settings to configure what should be applied by default to new and existing hostnames.
+Aside from the environments, the Security page is divided into two parts: 'Default Settings' and 'Hostname Specific Settings'. Use the **Default Settings** to configure what should be applied by default to new and existing hostnames.
 
 ![Default Security Settings](images/security-subpage.png)
 
-If you want to have different security options for different hostnames, then select the hostname under Hostname specific settings and adjust the options for that specific hostname.
-This might be useful if you want to test the different options on another hostname then your primary hostname.
+If you want to have different security options for different hostnames, then select the hostname under **Hostname Specific Settings** and adjust the options for that specific hostname.
+This might be useful if you want to test the different options on another hostname than your primary hostname.
 
 ![Hostnames Specific Security Settings](images/security-subpage-hostname-specific.png)

@@ -77,8 +77,9 @@ namespace Umbraco.Cms.Web.UI
         public CleanUpYourRoom(
             IContentService contentService,
             ICoreScopeProvider coreScopeProvider,
-            IEventAggregator eventAggregator)
-            : base(HowOftenWeRepeat, DelayBeforeWeStart)
+            IEventAggregator eventAggregator,
+            ILogger<CleanUpYourRoom> logger)
+            : base(logger, HowOftenWeRepeat, DelayBeforeWeStart)
         {
             _contentService = contentService;
             _coreScopeProvider = coreScopeProvider;
@@ -90,7 +91,7 @@ namespace Umbraco.Cms.Web.UI
             // This will be published immediately
             _eventAggregator.Publish(new CleanYourRoomStartedNotification());
 
-            using IScope scope = _coreScopeProvider.CreateScope();
+            using ICoreScope scope = _coreScopeProvider.CreateCoreScope();
             int numberOfThingsInBin = _contentService.CountChildren(Constants.System.RecycleBinContent);
 
             if (_contentService.RecycleBinSmells())

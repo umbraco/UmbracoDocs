@@ -5,7 +5,7 @@ versionRemoved: 8.0.0
 
 # applications.config
 
-The 'applications.config' file contains the configuration for the different [sections](../../../Extending/Section-Trees/sections-v7.md) of the Umbraco Backoffice, sometimes referred to as applications. These sections are represented by icons in the navigation ribbon on the left hand side of the Umbraco Backoffice.
+The 'applications.config' file contains the configuration for the different [sections](../../../Extending/Section-Trees/Sections/index-v7.md) of the Umbraco Backoffice, sometimes referred to as applications. These sections are represented by icons in the navigation ribbon on the left hand side of the Umbraco Backoffice.
 
 When you first install Umbraco the following sections are available to be assigned to different users:
 
@@ -40,4 +40,4 @@ There are four attributes required to configure a section in the applications.co
 
 **sortOrder** - Where the link is placed in the navigation, lower numbers will be at the top
 
-Sections can be added directly to the config or via [code](../../../Extending/Section-Trees/sections.md). If a section has been added via code the config will be updated to reflect this.
+Sections can be added directly to the config or via [code](../../../Extending/Section-Trees/Sections/index.md). If a section has been added via code the config will be updated to reflect this.

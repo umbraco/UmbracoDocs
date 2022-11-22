@@ -13,7 +13,7 @@ In this section we provide a full example on how Umbraco Deploy running on Umbra
 
 We have defined a two-stage build process, divided into a build and a deploy stage, configured in YAML format. Although initially, this isn’t as easy to read as the drag and drop list of tasks, it does have the benefit of being managed in source control.
 
-We then have a number of variables defined, that are used in the build configuration below.  By using variables we have the ability to modify the script easily for use on other web applications.
+We then have a number of variables defined, that are used in the build configuration below.  By using variables we have the ability to modify the script for use on other web applications.
 
 ### Build Stage
 
@@ -60,13 +60,13 @@ variables:
   # The Visual Studio .csproj Web App name
   vsProjectName: DeployOnPremSite
 
-  # The umbraco deploy trigger reason
+  # The Umbraco deploy trigger reason
   umbracoDeployReason: AzureDeployment
 
-  # The umbraco deploy data folder path
+  # The Umbraco deploy data folder path
   umbracoDeployData: $(Build.SourcesDirectory)\$(vsSolutionName)\data
 
-  # The umbraco deploy license folder path
+  # The Umbraco deploy license folder path
   deployLicense: $(Build.SourcesDirectory)\$(vsSolutionName)\bin
 
   # The TriggerDeploy.ps1 file path
@@ -81,7 +81,7 @@ variables:
   # The name of the target Azure web application
   azureWebAppName: deploy-on-prem-live
 
-  # The azure subscription to deploy to
+  # The Azure subscription to deploy to
   azureSubscription: 'Microsoft Azure Sponsorship(5ffea398-7922-451b-bd72-fbe725185cbf)'
 
   # The upstream environment URL

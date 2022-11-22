@@ -23,7 +23,11 @@ See: [IContentFinder documentation](../../Reference/Routing/Request-Pipeline/ICo
 
 ### Last Chance IContentFinder
 
-A `IContentLastChanceFinder` is a special implementation of an `IContentFinder` for use with handling 404's. You can implement one of these plugins to decide which Umbraco content page you would like to show when the URL hasn't matched a Umbraco content node.
+A `IContentLastChanceFinder` is a special implementation of an `IContentFinder` for use with handling 404's. You can implement one of these plugins to decide which Umbraco content page you would like to show when the URL hasn't matched a Umbraco content node. 
+
+:::tip
+When creating packages or using class libraries, the `SetContentLastChanceFinder` is a part of the `Umbraco.Cms.Web.Website` NuGet package.
+:::
 
 To set your own 404 finder create a `IContentLastChanceFinder` and set it as the `ContentLastChanceFinder`. A `ContentLastChanceFinder` will always return a 404 status code. Example:
 
@@ -99,7 +103,7 @@ namespace CustomRoutes
 ```
 
 :::note
-This is an approach for mapping a custom route to a custom MVC controller. For creating routes for existing content pages you can use a custom MVC controller to handle the request by naming convention: see [Custom Controllers - Route Hijacking](../../Reference/Routing/custom-controllers.md).
+This is an approach for mapping a custom route to a custom MVC controller. For creating routes for existing content pages you can use a custom MVC controller to handle the request by naming convention: see [Custom Controllers - Route Hijacking](../../Reference/Routing/Custom-Controllers/index.md).
 :::
 
 ### RoutingRequestNotification
@@ -124,3 +128,8 @@ namespace CustomRoutes
 ```
 
 For more information on how to register and use notification handlers see [Notifications documentation](../../Reference/Notifications/index)
+
+:::links
+### Related articles
+- [Find out how to add your own hub(s) with SignalR to the existing setup](signalR.md))
+:::

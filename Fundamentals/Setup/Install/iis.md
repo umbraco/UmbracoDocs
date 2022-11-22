@@ -25,6 +25,12 @@ Once that is installed you should set up a new IIS site - and make sure to add t
 For the path you want to point it at the root of your site - where the `.csproj` file is.
 :::
 
+## Add permissions to NuGet cache folder
+
+You might need to change permissions for the NuGet cache folder - `C:\users\<username>\.nuget\packages`. The user or group (IIS_IUSRS) that the IIS site is running on requires Read permissions on this folder because this is where some of the files for Umbraco and Umbraco packages are being served from during development. If the IIS user or group does not have permission to read from the NuGet cache folder, you could run into a `DirectoryNotFoundException` while running the site.
+
+When the site is published these files are copied from the NuGet cache folder to `wwwroot/umbraco` and `wwwroot/App_Plugins` and these folders will typically have the correct permissions. For more information on setting permissions, see the [File and folder permissions](../Server-Setup/permissions.md) article.
+
 ## Add new launch profile
 
 At this point you can go to your Visual Studio solution of the site and in the `Properties` folder there is a `launchSettings.json` file, that looks like this:

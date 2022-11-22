@@ -34,6 +34,7 @@ namespace MyFormsExtensions
             this.DataType = FieldDataType.String;
             this.SortOrder = 10;
             this.SupportsRegex = true;
+            this.FieldTypeViewName = "FieldType.MyCustomField.cshtml";
         }
 
         // You can do custom validation in here which will occur when the form is submitted.
@@ -60,7 +61,7 @@ namespace MyFormsExtensions
 
 In the constructor, we specify the standard provider information (remember to set the ID to a unique ID).
 
-And then we set the field type specific information. In this case a preview Icon for the form builder UI and what kind of data it will return, this can either be string, longstring, integer, datetime or boolean.
+And then we set the field type specific information. In this case, a preview Icon for the form builder UI and what kind of data it will return. This can either be string, longstring, integer, datetime, or boolean.
 
 You will then need to register this new field as a dependency.
 
@@ -84,7 +85,9 @@ namespace MyFormsExtensions
 
 ## Partial view
 
-Then we will start building the view for the default theme of the form at `Views\Partials\Forms\Themes\default\FieldTypes\FieldType.MyCustomField.cshtml`
+Then we will start building the view for the default theme of the Form at `Views\Partials\Forms\Themes\default\FieldTypes\FieldType.MyCustomField.cshtml`.
+
+The file name for the partial view should match the value set on the `FieldTypeViewName` property.
 
 ```csharp
 @model Umbraco.Forms.Mvc.Models.FieldViewModel
@@ -97,6 +100,10 @@ Then we will start building the view for the default theme of the form at `Views
 
 This will be rendered when the default theme is used.
 
+If working with Umbraco 9 or earlier versions, you'll find the `Views\Partials\Forms\Themes\default\` folder on disk and can create the files in there.
+
+For Umbraco 10 and above, we've moved to [distributing the theme as part of a Razor Class Library](../../Installation/Version-Specific.md#views-and-client-side-files) so the folder won't exist. However, you can create it for your custom field type. If you would like to reference the partial views of the default theme, you can download them as mentioned in the [Themes](../../Developer/Themes/index.md) article.
+
 ## Umbraco backoffice view
 
 The final step involves building the HTML view which will be rendered in Umbraco as an example of how our end result will look:
@@ -108,6 +115,8 @@ The final step involves building the HTML view which will be rendered in Umbraco
     style="max-width: 100px"
 />
 ```
+
+In the HTML you can access settings via `field.settings`, e.g. `{{field.settings.Caption}}` to render a "Caption" setting. It is also possible to access prevalues via `field.parsedPreValues`.
 
 For built-in field types, Umbraco Forms look for this file in the folder:  `App_Plugins\UmbracoForms\backoffice\Common\FieldTypes\` and will expect to find a file with a name matching the class's name, i.e. `mycustomfield.html`.
 

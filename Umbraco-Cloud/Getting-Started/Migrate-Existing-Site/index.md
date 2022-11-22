@@ -1,10 +1,13 @@
 ---
 versionFrom: 10.0.0
 ---
- 
+
 # Migrating an Existing Site to Umbraco Cloud
 
-Sometimes you may already have a Umbraco site built that did not start with a clone of a Umbraco Cloud site. Or perhaps you have decided to move a site that's already live on Umbraco Cloud. In any case, migrating an existing site is not difficult, but it does require some specific steps, and an understanding of how Umbraco Cloud deployments work can be very helpful.
+Sometimes you may already have a Umbraco site built that did not start with a clone of a Umbraco Cloud site.
+Or perhaps you have decided to move a site that's already live on Umbraco Cloud.
+
+Migrating an existing site requires some specific steps and an understanding of how Umbraco Cloud deployments work can be helpful.
 
 These are the steps you need to go through to complete the migration successfully:
 
@@ -16,6 +19,9 @@ These are the steps you need to go through to complete the migration successfull
 6. [Move and Merge files](#6-move-and-merge-files)
 7. [Generate meta data](#7-generate-meta-data)
 8. [Deploy to Umbraco Cloud](#8-deploy-to-umbraco-cloud)
+
+## Video tutorial
+<iframe width="800" height="450" title="Migrating an existing site to Umbraco Cloud" src="https://www.youtube.com/embed/w4VaUnBJ52s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 If you prefer following a written guide, continue to read below.
 
@@ -60,7 +66,7 @@ The first order of business is to **upgrade your own Umbraco site to the latest 
 
 You can download the latest version of Umbraco from [Our](https://our.umbraco.com/download/).
 
-If you need help upgrading your project, we have some excellent [Upgrade instructions](https://our.umbraco.com/documentation/Getting-Started/Setup/Upgrading/general) you can follow. Be thorough when upgrading, as the latest upgrade might contain breaking changes and/or updated configuration.
+If you need help upgrading your project, we have some [Upgrade instructions](https://our.umbraco.com/documentation/Getting-Started/Setup/Upgrading/general) you can follow. Be thorough when upgrading, as the latest upgrade might contain breaking changes and/or updated configuration.
 
 If you have been using Umbraco Forms on your project, you will also need to upgrade this to the latest version. You can find and download the latest version of Umbraco Forms under [Projects on Our](https://our.umbraco.com/projects/developer-tools/umbraco-forms/). As with Umbraco CMS, we also have documentation on how to [Upgrade Umbraco Forms](https://our.umbraco.com/documentation/Add-ons/UmbracoForms/Installation/ManualUpgrade).
 
@@ -78,6 +84,7 @@ While the site is running you need to:
 Now, shut down the project, and delete the following files and folders from `/Umbraco/Data`
 
 * `/TEMP`
+* `/Umbraco/Logs`
 
 That was it! Now you are ready to start the actual migration process, or in other words: **now the real fun begins!**
 
@@ -89,7 +96,7 @@ In this next part, you are going to set up your Umbraco Cloud project and clone 
 
 Before the migration process can start, you will need to have a Umbraco Cloud project you can migrate your project into.
 
-![How to start a Umbraco Cloud trial](images/start-trial.gif)
+![How to start a Umbraco Cloud trial](images/Cloud-trial-gif.gif)
 
 1. The best way to get started with Umbraco Cloud is to [create a trial project](https://umbraco.com/)
 2. When your project is starting choose to start with a *clean slate* - you need to have an empty Cloud project for the migration to be successful
@@ -97,7 +104,9 @@ Before the migration process can start, you will need to have a Umbraco Cloud pr
 
 ![Manage environments](images/setup-dev-env.png)
 
-If you on your existing site have been working with members and made changes to the default Member Type, you must follow these steps on the Umbraco Cloud environments:
+Have you been working with members and made changes to the default Member Type on your existing site?
+
+Follow these steps on the Umbraco Cloud environment:
 
 1. Head to the backoffice of the Development environment
 2. Navigate to the *Settings* section
@@ -109,7 +118,7 @@ If you on your existing site have been working with members and made changes to 
 
 ## 5. Clone down the Cloud project
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/e3spd6Nqrf8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="Cloning down your Umbraco Cloud project" src="https://www.youtube.com/embed/e3spd6Nqrf8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 With your Umbraco Cloud project ready for migration, it is time to clone down the project to your local machine.
 
@@ -136,18 +145,18 @@ Merging your existing site into the Umbraco Cloud project is a matter of moving 
     * You can find them in `/umbraco/Data/Umbraco.sqlite.db`
 5. If you are using a local SQL server make sure to update the connection string in the `Appsettings.JSON` for the Umbraco Cloud project.
 
-That's it! Now that you've merged your existing site with the local clone of the Cloud project, you need to make sure the project runs and verify that
+That's it! Now that you've merged your existing site with the local clone of the Cloud project, make sure the project runs and verify that
 
 * You can log in using your Umbraco ID user
 * All the content is there
 * All Document Types, Templates, Stylesheets, etc, are in the backoffice
 
 :::note
-Umbraco Identity (Umbraco ID) is the single sign-on (SSO) feature across all Umbraco Cloud services and is required to access any project pages as well as backoffices.
+Umbraco Identity (Umbraco ID) is the Single Sign-On (SSO) feature across all Umbraco Cloud services.
 
-Any users that you might have had on your existing Umbraco site will be migrated over to the local clone of the Cloud project along with the database. These users, however, will not be able to access the Cloud environments of the project or any of the backoffices associated with those environments.
+It is required to access any project pages as well as the backoffice.
 
-For the users to continue having access to the project, they will need to be re-invited either as a [Team Member](../../Set-Up/Team-Members) on a project level or as a [User](../../Set-Up/Users-on-Cloud) to the backoffice of one or more Cloud environments.
+To migrate the users from your on-premises site to Umbraco Cloud and Umbraco ID, follow the [Migrate Users to Cloud guide](Migrating-Users-To-Umbraco-Cloud) article.
 :::
 
 With that confirmed, it's time to prepare to migrate the project to Umbraco Cloud.
@@ -211,4 +220,6 @@ Go to the backoffice of your Development environment and make sure all your meta
 
 **Voila!** You've now migrated your site to Umbraco Cloud.
 
-The very final step is to deploy the migration to the next environment - Staging or Live. You do this from the Umbraco Cloud Portal, using the green button on your Development environment *'Deploy changes to Staging/Live'*. Transfer content and media from the backoffice following the steps outlined above.
+The final step is to deploy the migration to the next environment - Staging or Live.
+
+You do this from the Umbraco Cloud Portal, using the green button on your Development environment *'Deploy changes to Staging/Live'*. Transfer content and media from the backoffice following the steps outlined above.

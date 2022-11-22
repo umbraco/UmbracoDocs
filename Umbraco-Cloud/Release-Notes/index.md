@@ -4,6 +4,12 @@ _View the latest updates for the Umbraco Cloud Portal_
 
 ---
 
+[**07/11/2022 Release Notes:**](2022-11-07-ReleaseNotes.md) Dedicated for Starter and Standard - Projects Dashboard Quick links - Other Umbraco Cloud Updates
+
+[**19/09/2022 Release Notes:**](2022-09-19-ReleaseNotes.md) 2FA authentication + US Region Hosting + Projects Dashboard
+
+[**19/08/2022 Release Notes:**](2022-08-19-ReleaseNotes.md) Dedicated Resources + Projects Dashboard (beta)
+
 [**23/06/2022 Release Notes:**](2022-06-23-ReleaseNotes.md) Runtime setting for .NET version + New version of “Edit team” page + Various improvements
 
 [**23/05/2022 Release Notes:**](2022-05-23-ReleaseNotes.md) CDN Caching and Optimization settings + Improved Organization Invite Flow + Media Storage Files Top 50

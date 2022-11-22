@@ -8,7 +8,7 @@ versionFrom: 8.0.0
 
 In this article you can learn more about the biggest new features that comes out of the box with Umbraco 8.
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/g5qwzmxiWJU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<!-- Video has been made private, replace or remove? <iframe width="800" height="450" title="What's new in Umbraco 8" src="https://www.youtube.com/embed/g5qwzmxiWJU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
 
 ## [Language Variants](../Getting-Started/Backoffice/Variants)
 

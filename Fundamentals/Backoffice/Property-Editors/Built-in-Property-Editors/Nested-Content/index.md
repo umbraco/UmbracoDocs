@@ -10,33 +10,46 @@ versionTo: 10.0.0
 `Returns: IEnumerable<IPublishedElement>` (or `IPublishedElement` depending on configuration)
 
 
-**Nested Content** is a list editing property editor, using Document Types to define the list item schema. By using document-types, you have the benefit of a reusable UI that you are familiar with and get to re-use all the standard data-types as field editors. This property editor returns either a single item or a collection of this document-type.
+**Nested Content** is a list editing property editor, using Element Types to define the list item schema. By using Document Types you have the benefit of a reusable UI that you are familiar with and get to re-use all the standard Data Types as field editors. This property editor returns either a single item or a collection of this Document Type.
+
+The Element Types that Nested Content uses are specialized Document Types - they can be found in the same section as Document Types. However, it is not possible to create content directly in the content tree with an Element Type - it is meant to be used in complex editors like Nested Content or Blocklist.
 
 ## Configuring Nested Content
 
 The **Nested Content** property editor is set-up/configured in the same way as any standard property editor, via the *Data Types* admin interface. To set-up your Nested Content property, create a new *Data Type* and select **Nested Content** from the list of available property editors.
 
-You should then be presented with the **Nested Content** property editors data-type editor as shown below.
+You should then be presented with the **Nested Content** property editors Data Type editor as shown below.
 
 ![Nested Content - Data Type Definition](images/NestedContent_DataType-v8.png)
 
-The data-type editor allows you to configure the following properties:
+The Data Type editor allows you to configure the following properties:
 
-- **Doc Types** - Defines a list of document-types to use as data blueprints for this **Nested Content** instance. For each document-type you can provide the alias of the group you wish to render (the first group is used by default if not set) as well as a template for generating list item labels using the syntax `{{propertyAlias}}`.
-    - If you would like to include the document type name in the label, you can use `{{alias}}`.
+- **Doc Types** - Defines a list of Document Types to use as data blueprints for this **Nested Content** instance. For each Document Type, you can provide the alias of the group you wish to render (the first group is used by default if not set) as well as a template for generating list item labels using the syntax `{{propertyAlias}}`.
+    - If you would like to include the Document Type name in the label, you can use `{{alias}}`.
     - If you would like to include the index position in the label, you can use `{{$index}}`.
     - If your property links to a content, media or member node, you can use the Angular filter `{{ pickerAlias | ncNodeName }}` to show the node name rather than the node ID.
     - If your property is a rich text editor, you can use the Angular filter `{{ pickerAlias | ncRichText }}` to show the unformatted text.
     - You can use conditional logic to show text instead of 1 or 0 for a true/false property: `{{checkboxPickerAlias == 1 ? 'Yes' : 'No'}}`.
     - For more complex property types, you can display specific attributes by referencing the JSON attribute. For example, if using the MultiUrlPicker, show the name of the first link using `{{urlPickerAlias[0]["name"]}}`.
+    - [Examples and more details about labels and AngularJS templates](../Block-Editor/label-property-configuration.md)
 - **Min Items** - Sets the minimum number of items that should be allowed in the list. If greater than `0`, **Nested Content** will pre-populate your list with the minimum amount of allowed items and prevent deleting items below this level. Defaults to `0`.
 - **Max Items** - Sets the maximum number of items that should be allowed in the list. If greater than `0`, **Nested Content** will prevent new items being added to the list above this threshold. Defaults to `0`.
 - **Confirm Deletes** - Enabling this will demand item deletions to require a confirmation before being deleted. Defaults to `true`.
 - **Show Icons** - Enabling this will display the item's doc type icon next to the name in the **Nested Content** list.
 - **Hide Label** - Enabling this will hide the property editor's label and expand the **Nested Content** property editor to the full width of the editor window.
 
-Once your data type has been configured, set-up a property on your page doc type using your new data type and you are set to start editing.
+Once your Data Type has been configured, set-up a property on your page doc type using your new Data Type and you are set to start editing.
 
+## Limitations
+
+There is a handful of editors that Nested Content does not support in its elements. These include:
+
+- [Tags](../../Built-in-Property-Editors/Tags/index.md)
+- [Blocklist Editor](../../Built-in-Property-Editors/Block-List-Editor/index.md)
+- [File upload](../../Built-in-Property-Editors/File-Upload/index.md)
+- [Image Cropper](../../Built-in-Property-Editors/Image-Cropper/index.md)
+
+![Editors that are not supported](images/NestedContent_NotSupported.png)
 
 ## Editing Nested Content
 

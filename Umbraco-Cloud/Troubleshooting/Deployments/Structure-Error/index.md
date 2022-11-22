@@ -23,14 +23,14 @@ This guide is for solving collision errors on your Umbraco Cloud project. Use th
 
 The error means that two (or more) `.uda` files have been created for the same entity. The `.uda` files contain schema data for each of your entities e.g Document Types, Templates, Macros, Dictionary Items, Data types, etc (for a full list of these entities see [What are UDA files?](../../../Deployment/Deploy-Operations/Extract-schema-to-data-files/#what-are-uda-files)).
 
-In this example, there are two `.uda` files who share the same alias which leads to a conflict: it is impossible for Deploy to know which of the files to use, so it gives up and sends an error back.
+In this example, there are two `.uda` files that share the same alias which leads to a conflict: it is impossible for Deploy to know which of the files to use, so it gives up and sends an error back.
 
 :::note
 Does the collision error involve **Dictionary items**?
 Use this guide instead: [Troubleshooting duplicate dictionary items](../Duplicate-Dictionary-Items)
 :::
 
-You can run into an error like this on all of your Cloud environment. Sometimes you might also run into it, on a local clone of your project. This guide will use an example, where two files are colliding on a Development and a Live environment.
+You can run into an error like this on all of your Cloud environments. Sometimes you might also run into it, on a local clone of your project. This guide will use an example, where two files are colliding on a Development and a Live environment.
 
 ## Table of content
 
@@ -45,7 +45,7 @@ When you have two or more Cloud environments, we recommend that you never create
 
 ## Video tutorial
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/HPmatVIt0bY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="Collision Errors on Umbraco Cloud" src="https://www.youtube.com/embed/HPmatVIt0bY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 You can find a full playlist about Collision errors on our [YouTube Channel](https://www.youtube.com/playlist?list=PLgX62vUaGZsHAKusJRjVyquIV47eJgjDq).
 
@@ -99,7 +99,7 @@ In order to figure out which of the two colliding `.uda` files are the one for t
     FROM umbracoNode
     WHERE text = '[The alias from the error message eg. home]'
     ```
-3. The above mentioned queries will give you the udi of the entity in use on the live environment.
+3. The above-mentioned queries will give you the udi of the entity in use on the live environment.
 
 You now know which `.uda` file you want.
 
@@ -128,7 +128,7 @@ Before pushing the changes to the Development environment, you need to access th
 
 **Commit** and **push** the changes from your local clone to the Development environment, using your local Git client.
 
-When the push from local to the Development environment has completed, refresh the Umbraco Cloud portal and you will see that the Development environment is now green, which means that the extraction error has been resolved.
+When the push from local to the Development environment has been completed, refresh the Umbraco Cloud portal and you will see that the Development environment is now green, which means that the extraction error has been resolved.
 
 ### Does your Development still have the red indicator?
 

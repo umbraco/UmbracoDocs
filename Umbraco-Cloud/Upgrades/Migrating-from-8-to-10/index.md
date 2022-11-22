@@ -1,6 +1,6 @@
 # Migrating Umbraco 8 Cloud project to Umbraco 10
 
-This article will provide steps on how to migrate an Umbraco 8 Cloud project to Umbraco 10.
+This article will provide steps on how to migrate a Umbraco 8 Cloud project to Umbraco 10.
 
 :::note
 The steps in this article can also be used to upgrade to Umbraco version 9, however, we do recommend always upgrading to the latest version whenever possible.
@@ -24,7 +24,7 @@ Read the [general article about Content migration](../../../Getting-Started/Setu
 
 ## Prerequisites
 
-* An Umbraco 8 Cloud project running **the latest version of Umbraco 8**.
+* A Umbraco 8 Cloud project running **the latest version of Umbraco 8**.
 
 * A clean Cloud project running the latest version of Umbraco 10 with **at least 2 environments**.
 
@@ -42,7 +42,7 @@ Should something fail during the migration, the Development environment can alwa
 
 * Import the database backup into SQL Server Management Studio.
 
-* Clone down the **Development** environment from the Umbraco 10 Cloud project, test the project and make sure to log in to the backoffice.
+* Clone down the **Development** environment from the Umbraco 10 Cloud project, test the project, and make sure to log in to the backoffice.
 
 * Update the connection string in the Umbraco 10 `appsettings.json` file so that it connects to the Umbraco 8 database:
 
@@ -81,8 +81,25 @@ You need to manually upgrade the view files and custom code implementation. For 
 * In Umbraco Forms version 9.0.0+, it is only possible to store Form data in the database. If Umbraco Forms is used on the Umbraco 8 project:
   * Make sure to first migrate the Forms to the database, see the [Umbraco Forms in the Database](../../../Add-ons/UmbracoForms/Developer/Forms-in-the-Database/index-v8) article.
 
+* Add the `global.json` in root repository folder
+:::note
+If `global.json` does not exist in the root of your repository, you can read about the `global.json` [Microsoft docs](https://learn.microsoft.com/en-us/dotnet/core/tools/global-json)
+:::
+
+Upgrade your `global.json` to target the runtime sdk for the latest version of [.NET 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+
+```json
+{
+  "sdk": {
+    "allowPrerelease": false,
+    "version": "6.0.402",
+    "rollForward": "minor"
+  }
+}
+```
+
 * Run the Umbraco 10 project locally.
-  * It **will** give you a YSOD/error screen on the frontend as none of the Template files have been updated yet.
+  * It **will** give you a Yellow Screen of Death (YSOD)/error screen on the frontend as none of the Template files have been updated yet.
 
 * Go to the backoffice of your project.
 
@@ -147,7 +164,7 @@ Once the Umbraco 10 project runs without errors on the local setup, the next ste
 
 * Transfer Content and Media from the local clone to the **Development** environment.
 
-* Test **everything** on the **Development** environment.
+* Test **everything** in the **Development** environment.
 
 * Deploy to the **Live** environment.
 

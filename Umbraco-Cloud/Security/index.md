@@ -76,7 +76,10 @@ By default, all ports are closed to secure them against external attacks. This i
 
 Umbraco Cloud offers a multitude of features allowing you to block access to different resources.
 
-- Basic Authentication allowing access to Backoffice & Frontend of Umbraco Cloud Websites only for authenticated users. **Note:** This feature is currently not available in Umbraco Cloud version 9.
+- Basic Authentication allows access to the Backoffice & Frontend of Umbraco Cloud Websites for authenticated users only. 
+:::note 
+Basic authentication will not be available for projects running Umbraco 9. It is available for Umbraco Cloud version 10 (and newer) versions, however, the users are currently unable to exclude IP addresses for authentication using the allowlist feature.
+:::
 - IP based list allowing access to Frontend & Backoffice
 - IP based list allowing access to website database
 
@@ -102,16 +105,13 @@ The following rule can be added to your web.config file in the `system.webServer
 <rule name="RequestBlockByIP" patternSyntax="Wildcard" stopProcessing="true">
     <match url="*"/>
     <conditions>
-    <add input="{REMOTE_ADDR}" negate="false" pattern="123.123.123.123"/>
+    <add input="{HTTP_CF_Connecting_IP}" negate="false" pattern="123.123.123.123"/>
     </conditions>
     <action type="AbortRequest"/>
 </rule>
 ```
 For anyone using the 123.123.123.123 IP, this will result in them getting a 502 error. You can choose your own error.
 
-:::note
-You can add additional IPs in the same "pattern" tag by separating them with a | symbol.
-:::
 
 ## Restrict backoffice access using IP filtering
 
@@ -129,7 +129,9 @@ If you are unsure whether your Cloud project uses Cloudflare or not, get in touc
 
 **Reverse Proxy version (eg. Cloudflare)**
 
-When using Cloudflare, which is the default setup for all Cloud projects, the project will from behind a reverse proxy get the IPs from the `X-Forwarded-For` header. In this case, which is most cases, use the first variation here to restrict access to your backoffice using IP filtering.
+When using Cloudflare, which is the default setup for all Cloud projects, the project will from behind a reverse proxy get the IPs from the `CF-Connecting-IP` header. In this case, which is most cases, use the first variation here to restrict access to your backoffice using IP filtering.
+
+You can read more about the HTTP request headers coming from Cloudflare in the [Cloudflare Documentation.](https://developers.cloudflare.com/fundamentals/get-started/reference/http-request-headers/).
 
 ```xml
 <rule name="Exluding Umbraco Deploy" enabled="true" stopProcessing="true">
@@ -145,7 +147,7 @@ When using Cloudflare, which is the default setup for all Cloud projects, the pr
     <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
 
     <!-- Custom IP list -->
-    <add input="{HTTP_X_Forwarded_For}" pattern="123.123.123.123" negate="true" />
+    <add input="{HTTP_CF_Connecting_IP}" pattern="123.123.123.123" negate="true" />
   </conditions>
   <action type="CustomResponse" statusCode="403" />
 </rule>

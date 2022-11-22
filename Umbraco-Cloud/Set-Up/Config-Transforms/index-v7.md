@@ -1,15 +1,13 @@
 ---
 versionFrom: 7.0.0
 versionTo: 8.0.0
-needsV9Update: "false"
 ---
 
 # Config Transforms
 
 In this article you can learn how to use config transform files to apply environment specific configuration and settings to your Umbraco Cloud project.
 
-
-<iframe width="800" height="450" src="https://www.youtube.com/embed/SBDRR9CNvdY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="How to use config transforms on Umbraco Cloud" src="https://www.youtube.com/embed/SBDRR9CNvdY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## What are Config Transforms?
 
@@ -90,8 +88,7 @@ This config transform is used to ensure that the live site will be running via H
 It does so by setting the "umbracoUseSSL" setting to true, which will tell the Umbraco Backoffice to serve URLs via HTTPS
 and it adds a redirect rule that will force the site to run via HTTPS, except for when running localhost.
 
-To disable the forced HTTPS, simply remove this file from your repository. This is not advised, as all domains
-on Umbraco Cloud will be running HTTPS, as a certificate will be issued for custom domains by the Automatic TLS feature, and all [alias].euwest01.umbraco.io domains will already be protected.
+To disable the forced HTTPS, remove this file from your repository. This is not advised. All domains on Umbraco Cloud will be running HTTPS. A certificate will be issued for custom domains by the automatic Transport Layer Security (TLS) feature. This means that all [alias].euwest01.umbraco.io domains will already be protected.
 
 ## Forced transforms
 
@@ -114,8 +111,9 @@ On all other Cloud environments:
 - We set `numRecompilesBeforeAppRestart="50"`  on the `compilation` node in `system.web`
 - We set the smtp `host=""` if the host was set to `127.0.0.1`
 
-
-Note that for the `compilation debug` and the `customErrors mode` there is a toggle in the Umbraco Cloud portal to temporarily toggle the opposite setting. This will change the debug/customErrors mode until the next deploy to this environment. On each deploy the forced transforms will be performed again.
+:::note
+For the `compilation debug` and the `customErrors mode` there is a toggle in the Umbraco Cloud portal to temporarily toggle the opposite setting. This will change the debug/customErrors mode until the next deploy to this environment. On each deploy the forced transforms will be performed again.
+:::
 
 ![Toggle debug mode](images/toggle-debug.png)
 

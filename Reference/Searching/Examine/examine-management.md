@@ -1,60 +1,47 @@
 ---
-versionFrom: 7.0.0
-versionTo: 7.0.0
+versionFrom: 9.0.0
 ---
 
 # Examine Management
 
 _Provides an overview of the available Examine functionality available directly within the Umbraco backoffice_
 
-:::note
-This document has been verified for Umbraco 7.
-
-If you are using Umbraco 8 or later versions, please refer to the note on the [Examine documentation landing page](index.md) for more details.
-:::
-
 ## Overview
 
-The Umbraco backoffice allows you to view details about your examine indexes and searches along with those that power the internal CMS search all in one place. You can see which fields are being indexed, rebuild the indexes if there's a problem and even test keywords to see what results would be returned.
+The Umbraco backoffice allows you to view details about your Examine indexes and searchers - all in one place. You can see which fields are being indexed, rebuild the indexes if there's a problem, and test keywords to see what results would be returned.
 
-![Examine Management within the Developer section](images/examine-management-home.png)
+![Examine Management within the Developer section](images/overview-examine.png)
 
-The Examine Management section, accessible from within the Developer area, is split into two sections: Indexers and Searchers.
+The Examine Management section, accessible from within the Settings section, is split into two sections: Indexers and Searchers.
 
 ## Indexers
 
-From the Indexers section, you can view details about each Examine index currently configured within your Umbraco installation. Selecting any of these will expand to show you four additional options, each discussed below.
+From the Indexers section, you can view details about each Examine index currently configured within your Umbraco installation. Clicking any of these indexes will show you additional options, each discussed below.
 
-### Index info & tools
+### Index info
 
-This section allows you to see the high level statistics about the index that you selected, including how many documents and fields are currently being stored.
+This section allows you to see the list of properties on the index that you selected, including how many documents and fields are currently being stored.
 
-![Rebuild Index within Examine Management](images/examine-management-rebuild-index.png)
+![Rebuild Index within Examine Management](images/External-indexes-v10.png)
 
-This section also provides the ability to rebuild the index should this be required. Depending on how much content your website has, rebuilding the search indexes could take a while and affect the site performance temporarily, so it is not recommended to do this while the website is under high load.
+Within the Indexers it displays the details for the index provider as well.
 
-### System fields
+This can be useful to confirm the configuration that Umbraco is using and to ensure it is working as expected. This section also displays the full file path of the index itself.
 
-From here you can see the default system fields that are stored for each document within the search index, including whether sorting is enabled for each field and what datatype the data is stored as.
+This section also provides the ability to rebuild the index, should this be required. Depending on how much content your website has, rebuilding the search indexes could take a while and affect the site performance temporarily, so it is not recommended to do this while the website is under high load.
 
-### User fields
+### Fields
 
-This section is exactly the same as system fields, but with any custom fields being listed instead.
-
-### Provider properties
-
-The final section within Indexers displays the details for the index provider. This can be useful to confirm the configuration that Umbraco is using and to ensure it is working as expected. This section also displays the full file path of the index itself.
+From here you can see the default system fields that are stored for each document within the search index. That includes the number of fields document, and the score which is calculated by Examine depending on how closely the individual results matched the search term.
 
 ## Searchers
 
-The Searchers section is broken down into two sub-sections which provide configuration details along with the ability to test how a search index is currently performing.
+From the Searchers section, you can view details about each Examine searcher currently configured within your Umbraco installation. Clicking any of these searchers will take you to a search page, where you can test out your search terms.
 
-### Search tools
+You can see an example here how to configure an Examine searcher in the [Examine Multisearcher documentation](./pdfindex-multisearcher.md#multi-index-searchers).
 
-![Search Tools within Examine Management](images/examine-management-search-tools.png)
+### Search field
 
-The search tools allows you to enter a search term and receive results back from the searcher in question, to confirm it is working as expected. Search terms can be entered either as plain text or as a lucene query. Matching results are returned in their raw format, with the score, document ID and values being returned. The score is calculated by Examine depending on how closely the individual results matched the search term.
+![Search field for custom searcher within Examine Management](images/examine-management-search-field.png)
 
-### Provider properties
-
-The final section within Searchers displays the details for the searcher. This can be useful to confirm the configuration that Umbraco is using and to ensure it is working as expected. This section also displays the full file path of the index itself, along with the particular analyzer being used.
+The search field allows you to enter a search term and receive results back from the searcher in question. You can confirm if your query is working as expected. Matching results are returned in their raw format, with the score, document ID and Name being returned. The score is calculated by Examine depending on how closely the individual results matched the search term.

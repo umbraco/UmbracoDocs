@@ -7,7 +7,7 @@ versionFrom: 7.0.0
 An error in the Cloud Portal often looks like this:
 ![Portal error](images/portal-error.png)
 
-Errors in the Cloud Portal are shown as a colored indicator on an environment. An environment can have three colors:
+Errors in the Cloud Portal are shown as a colored indicator of an environment. An environment can have three colors:
 
 * **Green** - this is the "healthy" state where everything is fine
 * **Yellow** - this is the "busy" state that normally occurs when a deployment is in process or an environment is being added
@@ -33,10 +33,10 @@ We have some guides on how to fix the most common errors below:
 
 If your issue is not covered above here are some general guidelines on what you should do when you have error states on Cloud environments:
 
-The reason an environment is in an error state is that the Umbraco Deploy engine sets markers on the environment, the green one sets a `deploy` marker, the yellow one a `deploy-progress` marker and the red one a `deploy-failed` marker.
+An environment is in an error state because the Umbraco Deploy engine sets markers on the environment, the green one sets a `deploy` marker, the yellow one a `deploy-progress` marker, and the red one a `deploy-failed` marker.
 
-Sometimes a deployment will fail due to another deployment in progress. This means that you'll need to wait a bit before you can kick in another deployment. Doing this, the deployment will go from failed to complete without needing to do anything extra - read more about [manual data extractions](../Set-Up/Power-Tools/Manual-extractions).
+Sometimes a deployment will fail due to another deployment in progress. You'll need to wait a bit before you can kick in another deployment. Doing this, the deployment will go from failure to complete without needing to do anything extra - read more about [manual data extractions](../Set-Up/Power-Tools/Manual-extractions).
 
-Often the deployment fails because of an error that won't be fixed by re-deploying. In these cases you will need to have a look at the log files.
+Often the deployment fails because of an error that won't be fixed by re-deploying. In these cases, you will need to have a look at the log files.
 
 You can check both the regular [umbracoTraceLogs](Log-Files/#umbraco-logs) and the [deploy logs](Log-Files/#deploy-logs).

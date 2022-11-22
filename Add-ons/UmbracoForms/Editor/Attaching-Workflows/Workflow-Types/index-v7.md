@@ -101,6 +101,10 @@ The following settings can be configured:
 * Fields - map the needed fields
 * User and password
 
+When mapping fields, if any are selected, only those chosen will be sent in the request to the configured URL. If no fields are mapped, all will be sent.
+
+The receiving endpoint will be able to extract the form fields and values from the querystring or form collection when the method used is set to GET or POST respectively.
+
 ## Send XSLT transformed email
 
 ![Send XSLT Email](images/xslt-email.png)

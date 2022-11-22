@@ -28,7 +28,7 @@ It is possible to create custom macro parameter types.
 
 ### isParameterEditor
 
-To create a custom Macro Parameter Type, first create a custom 'Property Editor' (or copy one from the core). See [Property Editors documentation](../Property-Editors/index.md) and in the corresponding [Package Manifest file](../Property-Editors/package-manifest.md) for the editor, set the `isParameterEditor` property to be true.
+To create a custom Macro Parameter Type, first create a custom 'Property Editor' (or copy one from the core). See [Property Editors documentation](../Property-Editors/index.md) and in the corresponding [Package Manifest file](../Property-Editors/Package-Manifest/index.md) for the editor, set the `isParameterEditor` property to be true.
 
 ```json
 {
@@ -201,8 +201,23 @@ In the `ImagePosition.controller.js` we can now read the 'options' values from t
 @using Umbraco.Extensions
 @inherits Umbraco.Cms.Web.Common.Macros.PartialViewMacroPage
 @{
-var imagePosition = Model.MacroParameters["imagePosition"];
-//or if for convenience if you are using Umbraco.Extensions namespace there is a GetParameterValue extension method, which allows a default value to be specified if the parameter is not provided:
-imagePosition = Model.GetParameterValue<string>("imagePosition","full-width");
+    var imagePosition = Model.MacroParameters["imagePosition"];
+    //or if for convenience if you are using Umbraco.Extensions namespace there is a GetParameterValue extension method, which allows a default value to be specified if the parameter is not provided:
+    imagePosition = Model.GetParameterValue<string>("imagePosition","full-width");
 }
 ```
+
+### Runtime minification cache busting in Production
+
+If your custom property editor doesn't load when your project is deployed, you may need to modify your [Runtime Minification Settings](/Reference/Configuration/RuntimeMinificationSettings/index.md). The minified bundle cache may need to be "busted" to get your new code to load. For example, to bust the cache whenever the app is restarted, you can use this configuration:
+
+```json
+  "Umbraco": {
+    "CMS": {
+      "RuntimeMinification": {
+        "CacheBuster": "AppDomain"
+      }
+    }
+  }
+  ```
+

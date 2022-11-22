@@ -20,7 +20,7 @@ Umbraco.Sys.registerNamespace("Umbraco.Controls");
 The above code will require a reference to the NamespaceManager.js file which should generally be included by default in all pages in Umbraco.
 
 ## jQuery
-If you are going to use jQuery and its dollar ($) operator, you will need to wrap your code in a self-executing function, this is to ensure that your code will still work with jQuery.noConflict() turned on. Example:
+If you are going to use jQuery and its dollar ($) operator, you will need to wrap your code in a self-executing function. This ensures that your code will still work with jQuery.noConflict() turned on. Example:
 
 ```javascript
 (function($) {
@@ -33,7 +33,7 @@ To create jQuery plugins, see the [jQuery Plugin Guidelines](jquery-guidelines.m
 
 ## Creating classes
 
-There are quite a few different ways to create classes in JavaScript. For Umbraco we have opted to use the 3rd party, classical inheritance library, [Base2](https://code.google.com/archive/p/base2/) to make class declarations extendable:
+There are a few different ways to create classes in JavaScript. For Umbraco we have opted to use the 3rd party, classical inheritance library, [Base2](https://code.google.com/archive/p/base2/) to make class declarations extendable:
 
 ```javascript
 Umbraco.Sys.registerNamespace("MyProject.MyNamespace");
@@ -137,7 +137,7 @@ MyProject.MyNamespace.NamePrinterManager = base2.Base.extend({
 });
 ```
 
-Defining a singleton is the same as defining a regular class, except that we also define a static "getInstance" accessor for accessing the entity in a controlled manner. By providing the static accessor we can ensure only one instance of the class is created per request. See example:
+Defining a singleton is the same as a regular class, except with a static "getInstance" accessor for accessing the entity in a controlled manner. By providing the static accessor we can ensure only one instance of the class is created per request. See example:
 
 
 ```javascript
@@ -172,8 +172,8 @@ MyProject.MyNamespace.Utility.showMsg("hello");
 
 Both singleton and static classes allow you to access methods directly without having to create an entity of your own. The main difference between the two, and what should govern when to use one over the other, is one of state.
 
-A singleton class can hold information which can be manipulated and retrieved via its public methods. It will be stored between method calls, whereas static methods should only manipulate and return values which it can gather from its parameters and should not be persisted between individual method calls.
+A singleton class can hold information which can be manipulated and retrieved via its public methods. It is stored between method calls. Static methods should only manipulate and return values which it can gather from its parameters and should not be persisted between individual method calls.
 
 A good example of a Singleton is the one highlighted above, "NamePrinterManager". Here printers can be registered using the registerPrinter method for storage, later retrieved using the getPrinter method. Here a singleton is used as you will only want one central repository of printers.
 
-A good example use of a Static class is for helper methods, where each method will perform a single self-contained task based upon the parameters passed in and will return an immediate response.
+A use-case for a Static class is for helper methods. One where methods will perform a single self-contained task based upon the parameters passed and will return a response.

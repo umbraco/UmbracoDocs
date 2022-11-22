@@ -37,11 +37,11 @@ Displays a list of preset values as a list where only a single value can be sele
 
 ## Dropdown multiple
 
-Displays a list of preset values as a list where multiple values can be selected. The default data type does not contain any prevlaues. The value saved is a comma separated string of prevalue IDs.
+Displays a list of preset values as a list where multiple values can be selected. The default Data Type does not contain any prevlaues. The value saved is a comma separated string of prevalue IDs.
 
 ## Image Cropper
 
-Allows to upload and crop images by using a focal point. Specific crop definitions can also be added. This data type is used by default on the Image Media Type.
+Allows to upload and crop images by using a focal point. Specific crop definitions can also be added. This Data Type is used by default on the Image Media Type.
 
 ## Image Media Picker
 
@@ -62,15 +62,15 @@ There are six Label Data Types:
 
 ## List View - Content
 
-This data type is used by **Document Types** that are set to display as list views.
+This Data Type is used by **Document Types** that are set to display as list views.
 
 ## List View - Media
 
-This data type is used by **Media Types** that are set to display as list views.
+This Data Type is used by **Media Types** that are set to display as list views.
 
 ## List View - Members
 
-This data type is used by **Member Types** that are set to display as list views.
+This Data Type is used by **Member Types** that are set to display as list views.
 
 ## Media Picker
 
@@ -102,15 +102,15 @@ This Data type enables editors to choose from a list of radiobuttons.
 
 ## Richtext Editor
 
-The TinyMCE based WYSIWYG editor. This is the standard editor used to edit larger amount of text. The editor has a lot of settings, which can be changed on Richtext editor Data Type in the Settings section. The editor also supports TinyMCE plugins which can be controlled in the configuration file located at `/config/tinyMce.config`.
+The TinyMCE based WYSIWYG editor. This is the standard editor used to edit larger amount of text. The editor has a lot of settings, which can be changed on the Richtext editor Data Type in the Settings section.
 
 In the default settings some tags such as bullet list can be used. If you want to use other tags like `h1` or `h2`, you need to add stylesheets.
 
-Create child stylesheets for each tag(`h1` or `h2`) under a base one.
-Go to "*Backoffice -> Settings -> Data Types -> Richtext editor*" and associate the Richtext editor with your stylesheet.
-Also turn on "Style select" in the toolbar section.
+Create Rich Text Editor stylesheets for each tag(`h1` or `h2`) and select them when configuring the Rich Text Editor Data Type. Learn more about how to configure this Data Type in the [Rich Text Editor articles](../../Backoffice/Property-Editors/Built-in-Property-Editors/Rich-Text-Editor/).
 
-An example of the stylesheet tree is as follows.
+The "Style select" options need to be enabled in the toolbar section.
+
+An example of the stylesheet tree is as follows:
 
 ```json
 
@@ -125,7 +125,7 @@ Stylesheets
 
 ## Tags
 
-A textbox that allows you to use multiple tags on a **Document Type**. You can specify a Tag Group for the data type, if you need to use Tags on different sections of your site (i.e. News, Article, Events).
+A textbox that allows you to use multiple tags on a **Document Type**. You can specify a Tag Group for the Data Type, if you need to use Tags on different sections of your site.
 
 ## Textarea
 
@@ -137,7 +137,7 @@ A normal HTML input text field.
 
 ## True/False
 
-A checkbox which saves either 0 or 1, depending on the checkbox being checked or not. A common use is to create a property with the special alias 'umbracoNaviHide' and the Data Type True/False to enable editors to hide nodes from appearing in a navigation menu.
+A checkbox which saves either 0 or 1, depending on the checkbox being checked or not. A common use is to create a property with the 'umbracoNaviHide' alias and the Data Type True/False. This will provide editors with the option to hide nodes in  the navigation menu on the website.
 
 ## Upload
 

@@ -5,7 +5,7 @@ versionTo: 10.0.0
 
 # Working with Mac
 
-One of the features built into Umbraco Cloud is the ability to work locally with your Umbraco site - without having a Windows machine with a local web server installed on it. This enables people on Mac or Linux based OS to use their favorite editor to modify code in their Umbraco Cloud site.
+One of the features built into Umbraco Cloud is the ability to work locally with your Umbraco site - without having a Windows machine with a local web server installed on it. This enables people on Mac or Linux-based OS to use their favorite editor to modify code in their Umbraco Cloud site.
 
 ## The Mac Solution
 
@@ -40,10 +40,10 @@ To work with Mac:
     ```
 
 :::note
-The UserName, Email, and Password are optional properties and *only* needed if you want to setup a local backoffice user. You can use your Umbraco Id to sign-in to the backoffice.
+The UserName, Email, and Password are optional properties and *only* needed if you want to set up a local backoffice user. You can use your Umbraco Id to sign in to the backoffice.
 :::
 
-4. On the termial, navigate to `src/UmbracoProject` folder and run the following commands to start the project:
+4. On the terminal, navigate to `src/UmbracoProject` folder and run the following commands to start the project:
 
     ```cli
     dotnet build

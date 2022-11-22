@@ -5,24 +5,35 @@ versionTo: 10.0.0
 
 # reCAPTCHA V3
 
-You need to configure your site keys by adding your public and private keys.
+In Umbraco Forms, reCAPTCHA V3 comes out of the box.
 
-When adding the field to your form, you can select whether or not to save the scores calculated by reCAPTCHA as a value in the form submission, using the _Save score_ setting.
+reCAPTCHA v3 allows you to verify if an interaction is legitimate without any user interaction.
 
-## For version 9
+## Enabling reCAPTCHA V3
 
-You can configure the settings in the `appSettings.json` file:
+Follow these steps to enable reCAPTCHA V3 in Umbraco Forms:
+
+1. Go to the **Forms** section in the backoffice.
+2. Find the form that should have **ReCAPTCHA v3** enabled.
+3. Add a new question and select **ReCAPTCHA v3 with Score** as its answer type.
+4. Make sure the field is set as  **Mandatory**.
+5. Configure ReCAPTCHA settings in the `appSettings.json` file to include public and private keys:
 
 ```json
-"Forms": {
-  "FieldTypes": {
-    "Recaptcha3": {
-        "SiteKey": "",
-        "PrivateKey": ""
+"Umbraco"{
+    "Forms": {
+      "FieldTypes": {
+        "Recaptcha3": {
+            "SiteKey": "",
+            "PrivateKey": ""
+          }
+        }
       }
-    }
-  }
+   }
 ```
+
+
+You can create your keys by logging into your [reCAPTCHA account](https://www.google.com/recaptcha/).
 
 ## For version 8.x and below
 
@@ -35,8 +46,4 @@ You can configure your public and private keys in the `UmbracoForms.config` file
 
 ![reCAPTCHA v2](images/recaptcha3-v9.png)
 
-You can create your keys by logging into your [reCAPTCHA account](https://www.google.com/recaptcha/).
-
-:::note
-Ensure to select the **Mandatory** field while adding the **Recaptcha3** to your Form.
-:::
+For information on how to use reCAPTCHA in the best possible way on your website, see the [reCAPTCHA V3 Documentation](https://developers.google.com/recaptcha/docs/v3).

@@ -69,3 +69,15 @@ It's important to know that Azure Web Apps may move your website between their '
 
 When your site is migrated to another worker, these variables will change.
 You cannot rely on these variables remaining static for the lifetime of your website.
+
+### How to find the Linux App Service Logs
+
+The quickest way to get to your logs is using the following URL template and replacing `{app}` with your Web App name:
+
+`https://{app}.scm.azurewebsites.net/api/logstream`
+
+You can also find this in the KUDU console by clicking **Advanced Tools** > **Log Stream** on the Web App in the Azure Portal.
+
+## Web App secret management
+
+Consult the [Azure Key Vault documentation](https://our.umbraco.com/Documentation/Extending/Key-Vault/#use-key-vault-references-for-azure-app-service) if you would like to directly reference Azure Key Vault Secrets to your Azure Web App.

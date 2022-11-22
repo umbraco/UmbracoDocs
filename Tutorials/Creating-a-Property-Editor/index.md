@@ -36,7 +36,7 @@ Next, we will create a Package Manifest file to describe what the plugin does. T
 
 Create the file `/App_Plugins/Suggestions/package.manifest`.
 
-For more information about the package.manifest file, see the [Package Manifest](../../Extending/Property-Editors/package-manifest.md) article.
+For more information about the package.manifest file, see the [Package Manifest](../../Extending/Property-Editors/Package-Manifest/index.md) article.
 
 Inside the `package.manifest` file, we will add the following JSON to describe the Property Editor. Have a look at the inline comments in the JSON below for details on each bit:
 
@@ -55,7 +55,9 @@ Inside the `package.manifest` file, we will add the following JSON to describe t
             "group": "Common",
             /*the HTML file we will load for the editor*/
             "editor": {
-                "view": "~/App_Plugins/Suggestions/suggestion.html"
+                "view": "~/App_Plugins/Suggestions/suggestion.html",
+                /*Optional: Add 'read-only' support. Available from Umbraco 10.2+*/
+                "supportsReadOnly": true
             }
         }
     ],
@@ -116,9 +118,9 @@ Now, we will add 3 files to the /App_Plugins/Suggestions/ folder:
 - `suggestion.controller.js`
 - `suggestion.css`
 
-These will be our main files for the editor, with the .html file handling the view, .js file handling the functionality and the .css file containing the stylesheet.
+These will be our main files for the editor, with the `.html` file handling the view, `.js` file handling the functionality and the `.css` file containing the stylesheet.
 
-In the .html file we'll add:
+In the `.html` file we'll add:
 
 ```html
 <div class="suggestion" ng-controller="SuggestionPluginController">
@@ -128,7 +130,13 @@ In the .html file we'll add:
 </div>
 ```
 
-In the .js file, we'll add a basic AngularJS controller declaration
+:::tip
+**Optional**
+
+Add `ng-readonly="readonly"` to the `input` tag in order to make the property editor *read-only*.
+:::
+
+In the `.js` file, we'll add a basic AngularJS controller declaration
 
 ```javascript
 angular.module('umbraco').controller('SuggestionPluginController', function () {
@@ -136,7 +144,7 @@ angular.module('umbraco').controller('SuggestionPluginController', function () {
     });
 ```
 
-In the .css file, we'll add:
+In the `.css` file, we'll add:
 
 ```css
 .suggestion {

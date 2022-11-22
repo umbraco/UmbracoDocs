@@ -16,10 +16,15 @@ An example of a configuration could look something like:
   "CMS": {
     "Runtime": {
       "MaxQueryStringLength": 90,
-      "MaxRequestLength": 2048
+      "MaxRequestLength": 2048,
+      "Mode": "BackofficeDevelopment"
     }
   }
 }
 ```
 
 `MaxRequsetLength` is specified in kilobytes, so this configuration would limit requests, and therefore uploaded files, to 2 megabytes, and a maximum query string length of 90 characters.
+
+`Mode` can have three values: `BackofficeDevelopment` (default), `Development`, and `Production`.
+
+For more information, see the [Runtime modes](/documentation/Fundamentals/Setup/Server-Setup/runtime-modes) article.

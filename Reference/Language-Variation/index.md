@@ -18,7 +18,7 @@ Introduced in Umbraco 8, Language Variation allows you to have several different
 
 Here we would attempt to render the `pageTitle` property in the French variant and fallback to the current culture language if it can't find it in French.
 
-The problem here comes if you want to output all values of an IPublishedContent model in a specific culture in something that has no access to the "current culture", such as a [Surface Controller](../Routing/surface-controllers.md).
+The problem here comes if you want to output all values of an IPublishedContent model in a specific culture in something that has no access to the "current culture", such as a [Surface Controller](../Routing/Surface-Controllers/index.md).
 
 If you do something like this:
 

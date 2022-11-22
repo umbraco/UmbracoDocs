@@ -1,17 +1,23 @@
 ---
 versionFrom: 8.0.0
-versionTo: 9.0.0
+versionTo: 10.0.0
 ---
 
 # Built-in Umbraco Property Editors
 
 This page contains a list of all the built-in Umbraco property editors and a short description of what they do:
 
-## [Block List Editor](Block-List-Editor)
+## [Block List Editor](Block-Editor/Block-List-Editor/)
 
 `Alias: Umbraco.BlockList`
 
 Use Element Types to create a set of Blocks that your editors can use to create content.
+
+## [Block Grid Editor](Block-Editor/Block-Grid-Editor/)
+
+`Alias: Umbraco.BlockGrid`
+
+Use Document Types as Element Types to create a custom editing experience for your editors using grids.
 
 ## [Toggle (True/False)](True-False)
 

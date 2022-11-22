@@ -6,18 +6,22 @@ meta.Description: "Information on the connection strings settings section"
 
 # Connection strings settings
 
-The connection strings settings section contains the connection string to the database Umbraco will connect to. This section is very similar to what's used by default in .Netcore, the important thing though is that the key for the connection string umbraco will use is `"umbracoDbDSN"`. It is also important to note that this section is outside the `Umbraco.CMS` section, and is therefore in the root of the config.
+The connection strings settings section contains the connection string to the database Umbraco will connect to. This section is similar to what is used by default in .NET Core. The important thing is that the key for the connection string Umbraco will use is `"umbracoDbDSN"`. It is also important to know that this section is outside the `Umbraco.CMS` section, and is therefore in the root of the config.
 
 An connection strings config can look like this:
 
 ```json
 {
   "ConnectionStrings": {
-    "umbracoDbDSN": "Data Source=|DataDirectory|/Umbraco.sqlite.db;Cache=Shared;Foreign Keys=True;Pooling=True",
+    "umbracoDbDSN": "Data Source=|DataDirectory|/Umbraco.sqlite.db;Cache=Private;Foreign Keys=True;Pooling=True",
     "umbracoDbDSN_ProviderName": "Microsoft.Data.SQLite"
   }
 }
 ```
+
+:::note
+We recommend using private cache for SQLite. You can read more on why shared cache is discouraged in [the official SQLite documentation](https://sqlite.org/sharedcache.html). 
+:::
 
 The connection string used here is an SQLite connection string, that will connect to a data in the file `Umbraco.sqlite.db`  located in `/umbraco/Data` .
 

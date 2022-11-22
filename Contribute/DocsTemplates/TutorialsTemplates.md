@@ -3,7 +3,7 @@ v8-equivalent: "If you are creating a document for Umbraco 9 and there is an Umb
 versionFrom: A property with semver notation to indicate from which version this article is valid 
 versionTo: A property with semver notation to indicate till which version this article is valid
 verified-against: The version of Umbraco which has been tested against or the latest version
-meta.Title: "VERBing a(n)/the NOUN(s) [title case]"
+meta.Title: "verbing a(n)/the noun(s) [title case]"
 meta.Description: "Short description of the topic, can reuse first sentence, max 300 characters"
 ---
 
@@ -24,19 +24,20 @@ This guide will help you [describe what the user will achieve by the end of the 
 
 ## Steps
 
-[optional: purpose of the tutorial/title] is a [number of large steps, e.g. two]-step process:
+[optional: purpose of the tutorial/title] is a [number of large steps, for example: two]-step process:
 
 <div data-autosteps></div>
 
-### Step 1: [VERB(ing) the/a(n)/your NOUN]
+### Step 1: [verb(ing) the/a(n)/your noun]
 
 [Full description of step with additional content, like code snippet, screenshot, etc.]
+
 If you are adding a codeblock to your document please use relevant namespaces and aliases from the repo. This will make sure that all code examples throughout our documentation are consistent and correct.
 Here is our Docs example: https://github.com/umbraco/Umbraco.Docs.Samples
 
-### Step 2: [VERB(ing) the/a(n)/your NOUN]
+### Step 2: [verb(ing) the/a(n)/your noun]
 
-### Step 3: [VERB(ing) the/a(n)/your NOUN]
+### Step 3: [verb(ing) the/a(n)/your noun]
 
 ## Live example and source code
 [optional: link to live site or reference]

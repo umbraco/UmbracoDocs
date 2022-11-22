@@ -46,7 +46,7 @@ Inside a view/template or partial view, access is also provided by the DI framew
 
 ## Accessing Core Services and Helpers in a Controller
 
-Inside a [custom Controller](../../Reference/Routing/custom-controllers.md) access is provided to Services via the `Services` property ([ServiceContext](../../Reference/Management/Services/)) and the `UmbracoHelper` via the `Umbraco` property ([UmbracoHelper](../../Reference/Querying/UmbracoHelper)).
+Inside a [custom Controller](../../Reference/Routing/Custom-Controllers/index.md) access is provided to Services via the `Services` property ([ServiceContext](../../Reference/Management/Services/)) and the `UmbracoHelper` via the `Umbraco` property ([UmbracoHelper](../../Reference/Querying/UmbracoHelper)).
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
@@ -205,21 +205,24 @@ namespace Umbraco9.Components
 
         public void Handle(ContentUnpublishedNotification notification)
         {
-            foreach (var item in notification.UnpublishedEntities)
+            // for each unpublished item, we want to find the url that it was previously 'published under' and store in a database table or similar
+            using (UmbracoContextReference umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext())
             {
-                if (item.ContentType.Alias == "blogpost")
+                // the UmbracoContextReference provides access to the ContentCache
+                IPublishedContentCache contentCache = umbracoContextReference.UmbracoContext.Content;
+
+                foreach (var item in notification.UnpublishedEntities)
                 {
-                    // for each unpublished item, we want to find the url that it was previously 'published under' and store in a database table or similar
-                    using (UmbracoContextReference umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext())
+                    if (item.ContentType.Alias == "blogpost")
                     {
-                        // the UmbracoContextReference provides access to the ContentCache
-                        IPublishedContentCache contentCache = umbracoContextReference.UmbracoContext.Content;
                         // item being unpublished will still be in the cache, as unpublishing event fires before the cache is updated.
                         IPublishedContent soonToBeUnPublishedItem = contentCache.GetById(item.Id);
+
                         if (soonToBeUnPublishedItem != null)
                         {
                             string previouslyPublishedUrl = soonToBeUnPublishedItem.Url();
-                            if (!String.IsNullOrEmpty(previouslyPublishedUrl) && previouslyPublishedUrl != "#")
+
+                            if (!string.IsNullOrEmpty(previouslyPublishedUrl) && previouslyPublishedUrl != "#")
                             {
                                 _customFourTenService.InsertFourTenUrl(previouslyPublishedUrl, DateTime.UtcNow);
                             }

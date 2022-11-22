@@ -4,7 +4,7 @@ versionFrom: 8.14.0
 ---
 
 # Default Data/Media Types
-On this page you will find the media types and data types that have been added in Umbaco 8.14. These types are not created automatically after an upgrade. If you want to use the new types, you can create them yourself.
+On this page you will find the media types and data types that have been added in Umbraco 8.14. These types are not created automatically after an upgrade. If you want to use the new types, you can create them yourself.
 
 ## Data Types 
 

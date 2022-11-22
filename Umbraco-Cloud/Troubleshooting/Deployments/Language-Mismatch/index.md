@@ -14,19 +14,19 @@ This error occurs when a language is deleted from the backoffice after you have 
 
 The issue will show up as an extraction error on your Umbraco Cloud environment with a red indicator.
 
-![Extraction error](images/error.png)
+![Extraction error](images/language-mismatch-error.png)
 
 Upon closer inspection, a more detailed error will reveal itself: `Languages in source and destination site do not match.`
 
 ![Languages do not match](images/detailed-error.png)
 
-This error can occur in two scenarios, and is caused by deleting any backoffice language, while having **dictionary items** present on your project.
+This error can occur in two scenarios and is caused by deleting any backoffice language while having **dictionary items** present on your project.
 
 If the below conditions are met on the "source" environment, you will be presented with the 'Languages in source and destination site do not match.' error on the newly created instance:
 
 1. You have at least two languages set in the backoffice
 
-2. You defined some dictionary items and filled out the translations
+2. You defined some dictionary items and fill out the translations
 
 3. You removed one of the languages via the Settings dashboard after defining the dictionary items
 
@@ -44,5 +44,5 @@ There are 2 ways to get this error resolved.
 
 ![KUDU tools procedure](images/kudutools.png)
 
-Deleting the section responsible for the removed language and saving the file should clear out the error - as long as you run a [manual extraction](../../../Set-up/Power-Tools/Manual-extractions/index) afterwards.
+Deleting the section responsible for the removed language and saving the file should clear out the error - as long as you run a [manual extraction](../../../Set-up/Power-Tools/Manual-extractions/index) afterward.
 Manually re-saving the dictionary items in the backoffice after the extraction is greatly recommended - it will log those changes in the git repository, and will correct said dictionary items on the source environment with the next deployment.

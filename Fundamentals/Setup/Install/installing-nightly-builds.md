@@ -7,7 +7,7 @@ meta.Description: "Instructions on installing nightly builds of Umbraco."
 
 # Installing nightly builds
 
-Here we'll explain how you can get the latest bleeding edge builds of Umbraco V9 and above. There's three steps to this.
+Here we'll explain how you can get the latest bleeding edge builds of Umbraco V9 and above. There's three steps to do this.
 
 1. Adding the nightly feed as a NuGet source
 2. Finding the latest nightly version
@@ -95,6 +95,6 @@ dotnet new -i Umbraco.Templates::9.4.0-preview20220228.85007
 
 The name and the versions are separated with two colons `::`, it's important that we specify the entire version including the `-preview20220228.85007`, otherwise the dotnet new command cannot find the package.
 
-With that, we've successfully installed the latest nightly build of Umbraco! All we have to do now to create a site with the newest nightly is to run `dotnet new Umbraco -n MyAwesomeNightlySite`
+With that, we've successfully installed the latest nightly build of Umbraco! All we have to do now to create a site with the newest nightly is to run `dotnet new umbraco -n MyAwesomeNightlySite`
 
 For more information about installing Umbraco see [the installation documentation](./index.md)

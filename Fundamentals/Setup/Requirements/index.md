@@ -21,7 +21,7 @@ The Umbraco UI should work in all modern browsers:
   * Linux (Ubuntu, Alpine, CentOS, Debian, Fedora, openSUSE and other major distributions)
 * One of the following .NET Tools or Editors:
   * [Visual Studio Code](https://code.visualstudio.com/) with the [IISExpress extension](https://marketplace.visualstudio.com/items?itemName=warren-buckley.iis-express)
-  * [Microsoft Visual Studio](https://www.visualstudio.com/) 2019 **version 16.8 and higher**
+  * [Microsoft Visual Studio](https://www.visualstudio.com/) 2022
   * [JetBrains Rider](https://www.jetbrains.com/rider) **version 2020.3 and higher**
   * .NET Core CLI
 * .NET 6.0.5+
@@ -30,6 +30,8 @@ The Umbraco UI should work in all modern browsers:
 ## Hosting
 
 ### Recommendation
+
+For the best experience, we would recommend that you ensure your hosting environment has the following to run Umbraco CMS:
 
 * Windows Server 2019 and higher
 * IIS 10 and higher
@@ -42,6 +44,8 @@ You can use Umbraco Cloud to manage the hosting infrastructure. All Umbraco Clou
 :::
 
 ### Miminium requirements to run Umbraco
+
+Umbraco can run on an environment with the minimum requirements stated below:
 
 * Windows Server 2012 R2 and higher
 * IIS 8.5 and higher

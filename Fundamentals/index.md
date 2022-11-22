@@ -91,7 +91,7 @@ Umbraco comes with a lot of new big features, as well as a long list of general 
             </div>
             <div class="col-sm-6">
                 <h5><a href="Backoffice/Variants">Language Variants</a></h5>
-                <small>Learn how to vary your content based on several languages.</small>
+                <small>Learn how to vary your content based on languages.</small>
             </div>
         </div>
     </div>
@@ -175,7 +175,7 @@ Umbraco comes with a lot of new big features, as well as a long list of general 
             </div>
             <div class="col-sm-6">
                 <h5><a href="Design/Stylesheets-JavaScript/">Stylesheets and JavaScript</a></h5>
-                <small>Working with css and JavaScript in Umbraco's templates.</small>
+                <small>Working with CSS and JavaScript in Umbraco's templates.</small>
             </div>
         </div>
     </div>
