@@ -1,4 +1,4 @@
-# Portal Overview
+# The Cloud Portal
 
 The Umbraco Cloud Portal helps you manage your Umbraco Cloud project. From here, you can view and manage all your Cloud projects in one place.
 
@@ -8,7 +8,7 @@ When you log in to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/home/log
 
 ![View all projects](images/Umbraco-cloud-dashboard.png)
 
-You can see the projects environments, usage for each project and which plans it is on. You can also see whether it is a baseline or baseline-child project.
+You can see the project's environments, usage for each project and which plans it is on. You can also see whether it is a baseline or baseline-child project.
 
 In the top-right corner of the Umbraco Cloud Portal, you will find:
 
