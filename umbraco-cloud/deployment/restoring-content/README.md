@@ -50,7 +50,7 @@ To see the media, go to the **Media** section and **reload** the tree.
 ![Workspace Restore](images/Workspace\_Restore.gif)
 
 {% embed url="https://www.youtube.com/embed/0jIhKZOSeLc?rel=0" %}
-Video example.
+Workspace restore
 {% endembed %}
 
 ### Tree Restore
