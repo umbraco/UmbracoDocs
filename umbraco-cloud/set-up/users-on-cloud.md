@@ -108,6 +108,5 @@ You can set the permission when you are creating or editing an existing User Gro
 3.  Choose the content node which you want to set the Granular settings for.
 
     ![Granular content node](images/Granular\_node.png)
-4.  Set permissions for restore, partial restore, and queueing content for transfer.
-
-    ![Granular permission](images/Granular\_permission-v10.png)
+4. Set permissions for restore, partial restore, and queueing content for transfer.\
+   ![](images/Granular\_permission-v10.png)

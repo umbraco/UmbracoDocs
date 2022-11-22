@@ -1,6 +1,8 @@
 # The Umbraco Backoffice
 
-An error in the Backoffice often looks like this: ![Backoffice error](images/backoffice-error.png)
+An error in the Backoffice often looks like this:
+
+<figure><img src="images/backoffice-error.png" alt=""><figcaption></figcaption></figure>
 
 Errors in the backoffice can be presented in many different ways, the most common ones are
 

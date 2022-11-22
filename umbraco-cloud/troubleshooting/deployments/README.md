@@ -1,12 +1,11 @@
-
 # Troubleshooting deployments
 
-Issues with deployments on Umbraco Cloud often come down to a misunderstanding on how to work with Umbraco Cloud. It is important to always work left to right as mentioned [here](../../deployment/README.md).
+Issues with deployments on Umbraco Cloud often come down to a misunderstanding on how to work with Umbraco Cloud. It is important to always work left to right as mentioned [here](../../deployment/).
 
 There are two ways to deploy on Umbraco Cloud, a deployment that transfers content and media:
 
-1. A Content [Transfer](../../deployment/content-transfer.md) / [Restore](../../deployment/restoring-content/README.md)
-1. A [Deployment](../../deployment/cloud-to-cloud.md) that transfers structure files (doc types, data types, templates, dll's, etc.)
+1. A Content [Transfer](../../deployment/content-transfer.md) / [Restore](../../deployment/restoring-content/)
+2. A [Deployment](../../deployment/cloud-to-cloud.md) that transfers structure files (doc types, data types, templates, dll's, etc.)
 
 There are some common errors associated with both of these. Most of the time it is caused by conflicting [UDA files](../../set-up/power-tools/generating-uda-files.md#what-are-uda-files) between the two environments you are deploying between.
 
@@ -19,7 +18,7 @@ The most common [Deployment](../../deployment/cloud-to-cloud.md) issues are list
 * [Deployment Failed (with no error message)](deployment-failed.md)
 * [Changes not being applied](changes-not-being-applied.md)
 
-The most common Content [Transfer](../../deployment/content-transfer.md) / [Restore](../../deployment/restoring-content/README.md) issues are listed below:
+The most common Content [Transfer](../../deployment/content-transfer.md) / [Restore](../../deployment/restoring-content/) issues are listed below:
 
 * [Schema mismatch](schema-mismatches.md)
 * [SQL Timeouts](../../../umbraco-deploy/deploy-settings.md#timeout-issues)
@@ -62,14 +61,14 @@ Here is an example of the error:
 2022-11-02T08:51:16.9321330Z,Deployment Failed.,133sa799-q231-c92a-a244-afa18e1c2b1f,0
 ```
 
-:::note
+{% hint style="info" %}
 A future release will mitigate this issue.
-:::
+{% endhint %}
 
 ### Steps to fix the issue
 
-1. Clone down your Development environment. If you only have a Live environment, then proceed with that  
-2. Add a global.json to root of the project. Your structure should look like this:
+1. Clone down your Development environment. If you only have a Live environment, then proceed with that
+2.  Add a global.json to root of the project. Your structure should look like this:
 
     ```html
     .git
@@ -83,8 +82,7 @@ A future release will mitigate this issue.
     NuGet.config
     Readme.md
     ```
-
-3. Open the global.json file and add the following:
+3.  Open the global.json file and add the following:
 
     ```json
     {
@@ -93,11 +91,9 @@ A future release will mitigate this issue.
         }
     }
     ```
-
 4. Save the file.
 5. Add, commit and push the file to the environment.
 
-This will force the Azure build service to target version 6.0.401 of the .net sdk for your project. Your env will be able to deploy again.
-You will not need to add the same file to your other environments. As source control will take care of adding it in when you deploy it between your development, staging or live environments.
+This will force the Azure build service to target version 6.0.401 of the .net sdk for your project. Your env will be able to deploy again. You will not need to add the same file to your other environments. As source control will take care of adding it in when you deploy it between your development, staging or live environments.
 
 When you have done the above steps you will no longer see deployment issues with .net 7-preview or rc.

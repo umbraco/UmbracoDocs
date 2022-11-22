@@ -26,10 +26,11 @@ The **`.pfx`** file can only contain one certificate. Each certificate can then 
 
 1. Click **Add New Certificate**.
 2. Select **Choose file** in the **Certificate (.pfx file)** field and upload your certificate from your local machine.
-3.  Enter the **Password** for your certificate.
+3. Enter the **Password** for your certificate.
 
-    ![Add Manual Certificate](../../manage-hostnames/images/Add-Manual-Certificate.png)
-4. Click **Add**.
+![Add Manual Certificate](../../manage-hostnames/images/Add-Manual-Certificate.png)
+
+1. Click **Add**.
 
 ## Bind Certificate to a Hostname
 

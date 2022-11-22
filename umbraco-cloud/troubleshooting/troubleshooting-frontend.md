@@ -4,7 +4,9 @@
 **This article needs to be updated.**
 {% endhint %}
 
-An error in the Frontend often looks like this: ![Frontend error](images/frontend-error.png)
+An error in the Frontend often looks like this:
+
+<figure><img src="images/frontend-error.png" alt=""><figcaption></figcaption></figure>
 
 Errors in the frontend are presented in three ways:
 
