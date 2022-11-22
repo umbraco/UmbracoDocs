@@ -1,12 +1,12 @@
-# Adding A Prevalue Source Type To Umbraco Forms
+# Adding a Prevalue Source Type to Umbraco Forms
 
-_This builds on the "_[_Adding a type to the provider model_](adding-a-type.md)_" article_
+*This builds on the "[Adding a type to the provider model](Adding-a-Type.md)" article*
 
-Add a new class to your project - inherit it from `Umbraco.Forms.Core.FieldPreValueSourceType` and implement the class.
+Add a new class to your project - inherit it from `Umbraco.Forms.Core.FieldPreValueSourceType` and implement the class. 
 
-The following example shows an illustrative custom prevalue source type that returns a hard-coded list of values. It can be extended for your needs via injection of services via the constructor. (See additional example at the bottom.)
+The following example shows an illustrative custom prevalue source type that returns a hard-coded list of values. It can be extended for your needs via injection of services via the constructor. (See additional example at the bottom.) 
 
-Dynamic settings can be applied and validated as shown in the [Validate type settings with ValidateSettings()](adding-a-type.md#validate-type-settings-with-validatesettings) article.
+Dynamic settings can be applied and validated as shown in the [Validate type settings with ValidateSettings()](adding-a-type#validate-type-settings-with-validatesettings) article.
 
 ```csharp
 using System;
@@ -197,7 +197,6 @@ namespace MyFormsExtensions
     }
 }
 ```
-
 You will then need to register this new type as a dependency (either in 'Startup.cs' or in your own IComposer, as shown here).
 
 ```csharp

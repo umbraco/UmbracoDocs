@@ -1,11 +1,11 @@
 ---
-meta.Title: Working with Umbraco Forms data
-meta.Description: Developer documentation on working with Forms record data.
+meta.Title: "Working with Umbraco Forms data"
+meta.Description: "Developer documentation on working with Forms record data."
 ---
 
-# Working With Record Data
+# Working with Record Data
 
-Umbraco Forms includes some helper methods that return records of a given Form, which can be used to output records in your templates using razor.
+Umbraco Forms `v8.2` includes some helper methods that return records of a given Form, which can be used to output records in your templates using razor.
 
 ## Available Methods
 
@@ -78,7 +78,8 @@ Guid UniqueId
 Dictionary<Guid, RecordField> RecordFields
 ```
 
-In order to access custom Form fields, these are available in the `RecordFields` property. Furthermore there exists an extension method named `ValueAsString` on `IRecord` in `Umbraco.Forms.Core.Services`, such that you can get the value as string given the alias of the field.
+In order to access custom Form fields, these are available in the `RecordFields` property.
+Furthermore there exists an extension method named `ValueAsString` on  `IRecord` in `Umbraco.Forms.Core.Services`, such that you can get the value as string given the alias of the field.
 
 This extension method handle multi value fields by comma separating the values. E.g. "A, B, C"
 

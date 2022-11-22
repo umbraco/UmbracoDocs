@@ -1,12 +1,12 @@
-# Storing Prevalue Text Files With IPreValueTextFileStorage
+# Storing prevalue text files with IPreValueTextFileStorage
 
-Umbraco Forms contains a built-in `Get value from textfile` [Prevalue Source Type](extending/adding-a-prevaluesourcetype.md) that stores the uploaded text file into the physical file system (by default in `umbraco\Data\UmbracoForms\PreValueTextFiles`).
+Umbraco Forms contains a built-in `Get value from textfile` [Prevalue Source Type](extending/adding-a-prevaluesourcetype.md) that stores the uploaded text file into the physical file system (by default in  `umbraco\Data\UmbracoForms\PreValueTextFiles`).
 
 You can replace the default implementation by writing your own `IPreValueTextFileStorage` and registering that using e.g. `builder.Services.AddUnique<IPreValueTextFileStorage, CustomPreValueTextFileStorage>()` (in `Startup.cs` or a composer).
 
-You can also use/inherit from `PreValueTextFileSystemStorage` to change the underlying `IFileSystem` that's used to store the prevalue text files.
+Since Forms 10.2, you can also use/inherit from `PreValueTextFileSystemStorage` to change the underlying `IFileSystem` that's used to store the prevalue text files.
 
-## Move files to Media file system
+## Move files to Media file system (10.2 and up)
 
 You can use the following composer to move the prevalue text files into the media file system. If the media file system is using Azure Blob Storage, this will remove the files from the local physical file system.
 
@@ -28,7 +28,7 @@ public class PreValueTextFileSystemStorageComposer : IComposer
 
 You need to manually move the existing files from `umbraco\Data\UmbracoForms\PreValueTextFiles` to your media storage. The final file path/URL will look like `~/media/PreValueTextFiles/{GUID}/{filename.txt}` and be accessible from the browser.
 
-## Move files to Azure Blob Storage
+## Move files to Azure Blob Storage (10.2 and up)
 
 First, install [Umbraco.StorageProviders.AzureBlob](https://github.com/umbraco/Umbraco.StorageProviders) and configure the Forms storage container, for example by adding the following to your `appsettings.json`:
 

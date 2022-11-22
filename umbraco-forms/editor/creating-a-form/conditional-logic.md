@@ -1,6 +1,6 @@
 # Setting-up Conditional Logic on Fields
 
-Sometimes you might have a field in your Form, that you want to show _only_ if the user has entered a specific value in another field.
+Sometimes you might have a field in your Form, that you want to show *only* if the user has entered a specific value in another field.
 
 You can achieve this setting by using **conditional logic** on Fields.
 
@@ -15,27 +15,23 @@ In this case, it makes sense to **only** show the email or phone field when the 
 To enable conditions for the **Email** and **Phone** fields, do the following:
 
 1. Click the `cog` wheel next to the **Email** and **Phone** field. The **Edit question** dialog opens.
-2.  Select **Enable Conditions** in the **Conditions** section.\
-    &#x20;
-
-    <figure><img src="images/EnableConditions-v9.png" alt=""><figcaption></figcaption></figure>
-3.  Enabling the condition field displays more options:\
-    &#x20;
-
-    <figure><img src="images/conditions-v9.png" alt=""><figcaption></figcaption></figure>
+2. Select **Enable Conditions** in the **Conditions** section.
+    ![Enable conditions](images/EnableConditions-v9.png)
+3. Enabling the condition field displays more options:
+    ![Conditions](images/conditions-v9.png)
 4. Set the appropriate conditions and click **Submit**.
 
 ### Action and Logic Types
 
 There are two **Action Types**:
 
-* Show: the field will be displayed if the rules match
-* Hide: the field will be hidden if the rules match
+- Show: the field will be displayed if the rules match
+- Hide: the field will be hidden if the rules match
 
 Next up, you'll need to specify the **Logic Type**. This setting is only important if you have multiple rules.
 
-* All: All of the rules must match
-* Any: Any of the rules may match
+- All: All of the rules must match
+- Any: Any of the rules may match
 
 ## Adding a new condition
 
@@ -55,7 +51,7 @@ When both the conditions have been set as shown above, this is how it will look 
 
 ![Frontend Example](images/exampleFrontend-v9.png)
 
-In this example, we have only selected **Phone** but it is possible to choose both _Phone_\* and **Email** and display both the fields.
+In this example, we have only selected **Phone** but it is possible to choose both *Phone** and **Email** and display both the fields.
 
 ## Conditions for Pages and Fieldsets
 
