@@ -4,7 +4,7 @@ The date picker uses a front-end library called [Pikaday](https://github.com/dbu
 
 ![Date picker on frontend](images/date-picker.png)
 
-As of Umbraco Forms 4.4.0, Pikaday date picker can be localised based on the page the Form is rendered on.
+Pikaday date picker can be localised based on the page the Form is rendered on.
 
 The date picker displays the picked date in the required locale. Using JavaScript, a hidden field is updated with a standard date format to send to the server for storing the record submission in a standard format. This avoids the locale mixing up the dates.
 
@@ -15,8 +15,6 @@ The **DatePicker.cshtml** includes the `moment-with-locales.min.js` library to h
 ## Configure the Year range
 
 The Date picker has a configuration setting to control the number of years shown in the picker. The default value is 10 years.
-
-### For version 9
 
 You can configure the settings in the `appSettings.json` file:
 
@@ -31,13 +29,3 @@ You can configure the settings in the `appSettings.json` file:
 ```
 
 Update `DatePickerYearRange` to a higher number (for example: 100) to increase the numbers of years available in the Date picker.
-
-### For version 8.x and below
-
-You can find the settings for changing this configuration in `~/App_Data/UmbracoForms/umbracoforms.config`:
-
-```xml
-<setting key="DatePickerYearRange" value="10" />
-```
-
-Update `value` to a higher number (for example: 100) to increase the numbers of years available in the Date picker.

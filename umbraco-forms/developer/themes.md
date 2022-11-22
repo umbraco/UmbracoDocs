@@ -1,11 +1,11 @@
 ---
-meta.Title: "Theming Umbraco Forms"
-meta.Description: "Documentation on how to apply custom themes to Umbraco Forms"
+meta.Title: Theming Umbraco Forms
+meta.Description: Documentation on how to apply custom themes to Umbraco Forms
 ---
 
 # Themes
 
-As of version 6.0.0 and newer Umbraco Forms supports Themes, allowing forms to be customised in a much simpler manner than found in version 4.x.
+Umbraco Forms supports Themes, allowing forms to be customised in a much simpler manner.
 
 ## Creating a Theme
 
@@ -13,7 +13,7 @@ To create a theme, you need to create a folder at `/Views/Partials/Forms/Themes/
 
 Copy the explicit files you wish to override in your theme, it may be a single file or all files from the default theme folder. Make the necessary changes you desire to CSS class names, markup etc.
 
-For Umbraco 9 and previous, it's straightforward to simply copy the files you need from the default theme folder.  Umbraco 10 distributes these files as part of a Razor class library, so you won't find them on disk. The easiest way to obtain copies of the files included in the default theme is to [download this zip file](https://our.umbraco.com/FileDownload?id=23911) and extract the ones you need.
+For Umbraco 9 and previous, it's straightforward to simply copy the files you need from the default theme folder. Umbraco 10 distributes these files as part of a Razor class library, so you won't find them on disk. The easiest way to obtain copies of the files included in the default theme is to [download this zip file](https://our.umbraco.com/FileDownload?id=23911) and extract the ones you need.
 
 {% hint style="info" %}
 Umbraco Forms conditional JavaScript logic depends on some CSS classes currently and it is advised that you add any additional classes you require but **do not remove those already being set**.
@@ -46,7 +46,7 @@ Files which can be overridden:
 * Render.cshtml (overrides the entire form - usually not needed)
 * Form.cshtml (overrides the generation of the fields on the current page)
 * Script.cshtml (overrides the way files are included with the form)
-* /Fieldtypes/FieldType.*.cshtml (overrides a specific view for a field)
+* /Fieldtypes/FieldType.\*.cshtml (overrides a specific view for a field)
 
 ## Helper Methods
 

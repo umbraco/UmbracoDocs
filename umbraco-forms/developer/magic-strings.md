@@ -1,4 +1,4 @@
-# Magic strings
+# Magic Strings
 
 Umbraco Forms has some magic strings that enable you to render values from various sources, such as session, cookies and Umbraco page fields.
 
@@ -16,20 +16,20 @@ These values can also be used for properties and settings in workflows. This mea
 
 Some examples of variables that are normally available in `HttpContext.Request`:
 
-- `[@Url]`: Insert the current URL
-- `[@Http_Referer]`: The previous visited URL (if available)
-- `[@Remote_Addr]`: The IP address of the visitor (stored by default by Umbraco)
-- `[@Http_User_Agent]`: The browser of the visitor
+* `[@Url]`: Insert the current URL
+* `[@Http_Referer]`: The previous visited URL (if available)
+* `[@Remote_Addr]`: The IP address of the visitor (stored by default by Umbraco)
+* `[@Http_User_Agent]`: The browser of the visitor
 
 The variables are not case-sensitive.
 
 ### Dictionary Items
 
-For multi-lingual websites, rather than hard-coding labels like form field captions, a dictionary key can be entered as, for example, `#MyKey`.  When the form is rendered, the placeholder will be replaced by the value of the dictionary item identified by the key, according to the current language.
+For multi-lingual websites, rather than hard-coding labels like form field captions, a dictionary key can be entered as, for example, `#MyKey`. When the form is rendered, the placeholder will be replaced by the value of the dictionary item identified by the key, according to the current language.
 
 In most cases, the field must contain only the magic string for the replacement to be carried out. This makes sense for translated values, as you will want the whole phrase replaced when, for example, using one for a field's placeholder.
 
-We also translate dictionary keys found within the rich text field, which will be contained within HTML tags. Here we look for dictionary keys making up the full inner text of a tag.  So for example, `<p>#myKey</p>` would be translated, but `<p>Lorem ipsum #myKey dolor sit amet.</p>` would not.
+We also translate dictionary keys found within the rich text field, which will be contained within HTML tags. Here we look for dictionary keys making up the full inner text of a tag. So for example, `<p>#myKey</p>` would be translated, but `<p>Lorem ipsum #myKey dolor sit amet.</p>` would not.
 
 ### Session & Cookies
 
@@ -43,8 +43,8 @@ If the item cannot be found in the collection of session keys, it will then try 
 
 Some extra variables are:
 
-- `[#pageName]`: The nodename of the current page
-- `[#pageID]`: The node ID of the current page
+* `[#pageName]`: The nodename of the current page
+* `[#pageID]`: The node ID of the current page
 
 ### Recursive Umbraco Page field
 
@@ -56,13 +56,13 @@ Some extra variables are:
 
 Some extra variables are:
 
-- `{record.id}`: The ID of the current record - this is only accessible on workflows triggered "on approve" rather than "on submit"
-- `{record.updated}`: The updated date/time of the current record
-- `{record.created}`: The created date/time of the current record
-- `{record.umbracopageid}`: The Umbraco Page ID the form was submitted on
-- `{record.uniqueid}`: The unique ID of the current record
-- `{record.ip}`: The IP address that was used when the form was submitted
-- `{record.memberkey}`: The member key that was used when the form was submitted
+* `{record.id}`: The ID of the current record - this is only accessible on workflows triggered "on approve" rather than "on submit"
+* `{record.updated}`: The updated date/time of the current record
+* `{record.created}`: The created date/time of the current record
+* `{record.umbracopageid}`: The Umbraco Page ID the form was submitted on
+* `{record.uniqueid}`: The unique ID of the current record
+* `{record.ip}`: The IP address that was used when the form was submitted
+* `{record.memberkey}`: The member key that was used when the form was submitted
 
 ### Member properties from a form submission
 
@@ -70,27 +70,27 @@ Some extra variables are:
 
 ## Formatting magic strings
 
-Using a magic string such as in the examples above will output the values exactly as read from the source. From Forms 10.2, it's possible to apply a format string to customize the output.
+Using a magic string such as in the examples above will output the values exactly as read from the source. It's possible to apply a format string to customize the output.
 
 The syntax follows that of AngularJS filters, i.e. `[<magic-string> | <formatFunction>: <arg1>: <arg2>]`.
 
 For example, to truncate a string value read from an Umbraco page field with alias `title`, you would use:
 
-```none
+```
 [#title | truncate: 10]
 ```
 
 Umbraco Forms ships with the following filters:
 
-|Filter                         |Function    |Arguments              |Example                           |
-|-------------------------------|------------|-----------------------|----------------------------------|
-|Convert string to lower case   |`lower`     |                       |`[#field lower]`                  |
-|Convert string to upper case   |`upper`     |                       |`[#field upper]`                  |
-|Truncate a string              |`truncate`  |number of characters   |`[#field truncate: 10]`           |
-|Format a number                |`number`    |format string          |`[#field number: #0.##%]`         |
-|Format a number as a currency  |`currency`  |                       |`[#field currency]`               |
-|Format a date                  |`date`      |format string          |`[#field date: dd-MM-yyyy HH:mm]` |
-|Bound a number                 |`bound`     |min and max bound      |`[#field bound: 1: 10]`           |
+| Filter                        | Function   | Arguments            | Example                           |
+| ----------------------------- | ---------- | -------------------- | --------------------------------- |
+| Convert string to lower case  | `lower`    |                      | `[#field lower]`                  |
+| Convert string to upper case  | `upper`    |                      | `[#field upper]`                  |
+| Truncate a string             | `truncate` | number of characters | `[#field truncate: 10]`           |
+| Format a number               | `number`   | format string        | `[#field number: #0.##%]`         |
+| Format a number as a currency | `currency` |                      | `[#field currency]`               |
+| Format a date                 | `date`     | format string        | `[#field date: dd-MM-yyyy HH:mm]` |
+| Bound a number                | `bound`    | min and max bound    | `[#field bound: 1: 10]`           |
 
 The format strings used for fomrmatting dates and numbers are the standard or custom .NET [date](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings) and [numeric](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings) format strings respectively.
 
@@ -98,7 +98,7 @@ Further magic string format functions can be [created in code](extending/adding-
 
 ## How can I parse these values elsewhere in my C# code or Razor Views?
 
-A service implemented by the `IPlaceholderParsingService` interface is available for use in custom code or views.  It's found in the `Umbraco.Forms.Core.Services` namespace.
+A service implemented by the `IPlaceholderParsingService` interface is available for use in custom code or views. It's found in the `Umbraco.Forms.Core.Services` namespace.
 
 In a controller you can inject it via the constructor and it can also be injected into views via:
 
@@ -107,7 +107,7 @@ In a controller you can inject it via the constructor and it can also be injecte
 @inject IPlaceholderParsingService PlaceholderParsingService
 ```
 
-The interface implements a single method, `ParsePlaceHolders`, that can be used for parsing magic strings.  There are a few overloads available for use depending on the context.
+The interface implements a single method, `ParsePlaceHolders`, that can be used for parsing magic strings. There are a few overloads available for use depending on the context.
 
 If parameters for the `Record` or `Form` are omitted, magic strings relating to these objects will be removed.
 
