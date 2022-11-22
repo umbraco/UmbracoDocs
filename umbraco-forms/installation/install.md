@@ -11,7 +11,7 @@ Umbraco contains the **Forms** section, by default. You will see a similar inter
 
 ## Installing Umbraco Forms
 
-### Video tutorial
+### Video Tutorial
 
 {% embed url="https://www.youtube.com/watch?v=3Aojbp_1MPc" %}
 
