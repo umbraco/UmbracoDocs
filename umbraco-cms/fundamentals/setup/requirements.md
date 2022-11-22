@@ -41,6 +41,10 @@ The Umbraco UI should work in all modern browsers:
 {% endtab %}
 {% endtabs %}
 
+{% hint style="info" %}
+When using Visual Studio as your primary Integrated Development Environment (IDE) we recommend [finding and downloading the Software Development Kits (SDKs) for Visual Studio](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks).
+{% endhint %}
+
 ## Hosting
 
 ### Recommendation

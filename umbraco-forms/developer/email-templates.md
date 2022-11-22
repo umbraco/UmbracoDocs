@@ -1,11 +1,11 @@
 ---
-meta.Title: "Umbraco Forms Email Templates"
-meta.Description: "Creating an email template for Umbraco Forms."
+meta.Title: Umbraco Forms Email Templates
+meta.Description: Creating an email template for Umbraco Forms.
 ---
 
 # Email Templates
 
-From version 6+, we now include a new Workflow **Send email with template (Razor)** that allows you to pick a Razor view file that can be used to send out a *pretty HTML email* for Form submissions.
+We include a Workflow **Send email with template (Razor)** that allows you to pick a Razor view file that can be used to send out a _pretty HTML email_ for Form submissions.
 
 ## Creating an Email Template
 
@@ -243,5 +243,4 @@ Below is an example of an email template from the `~/Views/Partials/Forms/Emails
     </table>
 </body>
 </html>
-
 ```
