@@ -41,7 +41,10 @@ To start working with and building your site, you can either work directly in th
 To create a project in Umbraco Cloud Portal:
 
 1. Log in to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects) with your credentials.
-2. Click **Create New Project**. ![Create new Project](images/create-Project.png)
+2.  Click **Create New Project**.\
+    &#x20;
+
+    <figure><img src="../../.gitbook/assets/create-project.png" alt=""><figcaption></figcaption></figure>
 3. Select **Umbraco Cloud** from the list of projects.
 4. Choose a **Plan Selection** as per your choice.
 5. On the **Project Information** page, enter the **Project Name**.
@@ -70,8 +73,10 @@ Once a project is created, you can view its overview in Umbraco Cloud Portal:
 
 1. Log in to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects) with your credentials.
 2. Select your Project from the **Projects** dashboard.
-3. Go to the Project **Settings** and click **Overview**. 
-    ![Cloud Overview](images/Cloud-Overview.png)
+3.  Go to the Project **Settings** and click **Overview**. \
+
+
+    <figure><img src="images/Cloud-Overview.png" alt=""><figcaption></figcaption></figure>
 
 The Overview Page consists of:
 
