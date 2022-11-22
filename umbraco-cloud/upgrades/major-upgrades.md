@@ -30,9 +30,9 @@ An overview of what you will find throughout this guide.
 
 ## Prerequisites
 
-* [ ] A Umbraco Cloud project running **the latest version of Umbraco**
-* [ ] **At least 2 environments** on your Cloud project.
-* [ ] A backup of your project database.
+* A Umbraco Cloud project running **the latest version of Umbraco**
+* **At least 2 environments** on your Cloud project.
+* A backup of your project database.
   * Directly from your environment. See the [Database backups](../databases/backups.md) article,
   * Or clone down and restore the project, and take a backup of the local database.
 
@@ -121,11 +121,9 @@ Once the Umbraco project runs locally without any errors, the next step is to de
 
 We highly recommend that you go through everything in your Development environment. This can help you identify any potential errors after the upgrade, and ensure that you are not deploying any issues onto your Live environment.
 
-## Step 6: Going live
+## Step 5: Going live
 
 Once everything works as expected in the development environment, you can push the upgrade to the live environment.
 
 * [Working locally with Umbraco Cloud](../set-up/working-locally.md)
 * [KUDU on Umbraco Cloud](../set-up/power-tools/)
-
-## Step 5: Deploy and Test on Umbraco Cloud
