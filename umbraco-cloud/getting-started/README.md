@@ -1,8 +1,3 @@
----
-meta.Title: Get started working with Umbraco Cloud
-meta.Description: Here you can find information about getting started working with Umbraco Cloud
----
-
 # What is Umbraco Cloud?
 
 In this article, you can read about [Umbraco Cloud](https://umbraco.com/products/umbraco-cloud/) and how to get started.
@@ -33,7 +28,9 @@ You can [learn more about quotas](umbraco-cloud-plans.md) that are put in place 
 
 The easiest way to get started with an Umbraco Cloud project is to take a [14-day free trial](https://umbraco.com/?product\_tour\_id=103162). The project is automatically created and you are ready to get started within a few minutes.
 
-## [Insert video](https://www.youtube.com/embed/TcmuTpJT1Kw?rel=0)
+{% embed url="https://www.youtube.com/embed/TcmuTpJT1Kw?rel=0" %}
+How to create a Umbraco Cloud trial.
+{% endembed %}
 
 Since we set up the entire project, we recommend that you get to know your project before you start building.
 
@@ -44,7 +41,7 @@ To start working with and building your site, you can either work directly in th
 To create a project in Umbraco Cloud Portal:
 
 1. Log in to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects) with your credentials.
-2. Click **Create New Project**. ![Create new Project](images/Create-Project.png)
+2. Click **Create New Project**. ![Create new Project](images/create-Project.png)
 3. Select **Umbraco Cloud** from the list of projects.
 4. Choose a **Plan Selection** as per your choice.
 5. On the **Project Information** page, enter the **Project Name**.
@@ -73,7 +70,8 @@ Once a project is created, you can view its overview in Umbraco Cloud Portal:
 
 1. Log in to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects) with your credentials.
 2. Select your Project from the **Projects** dashboard.
-3. Go to the Project **Settings** and click **Overview**. ![Cloud Overview](images/Cloud-Overview.png)
+3. Go to the Project **Settings** and click **Overview**. 
+    ![Cloud Overview](images/Cloud-Overview.png)
 
 The Overview Page consists of:
 

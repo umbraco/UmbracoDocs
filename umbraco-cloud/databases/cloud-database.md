@@ -26,12 +26,16 @@ Once the firewall is open, it's time to fire up SQL Management Studio and connec
 
 To connect, choose "Connect Database Engine" and copy the values from the Connection Details page on Umbraco Cloud where you'll find handy "copy" shortcut buttons to the right of each value. In the "Connect to Server" dialog in SQL Management Studio, choose "SQL Server Authentication" as the authentication type. Remember to click the "Options" button *before you connect* and paste the name of your database in the "Database" input field (otherwise, security settings on Umbraco Cloud will prevent you from connecting). You can see it all in this short video:
 
-### [Insert video here, use the link](https://www.youtube.com/embed/yrCNsW-8_nU?rel=0)
+{% embed url="https://www.youtube.com/embed/yrCNsW-8_nU?rel=0" %}
+How to connect to your Umbraco Cloud Database.
+{% endembed %}
 
 ### Moving on
+
 Now that you've connected you can work with the databases on Umbraco Cloud, like you could on any other host. Remember to let Umbraco Cloud do the work when it comes to the Umbraco-related tables (`Umbraco*` and `CMS*` tables).
 
 ## LocalDB
+
 {% hint style="info" %} style="info" %} style="info" %}
 LocalDB is no longer supported in the latest major version of Umbraco.
 The documentation below is only relevant if you are on Umbraco 9 and below.

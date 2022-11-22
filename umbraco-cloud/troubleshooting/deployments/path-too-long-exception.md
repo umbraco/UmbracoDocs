@@ -50,9 +50,10 @@ In order to fix this error, you will need to use [Power-tools Kudu](../../set-up
 3. Write this command in CMD prompt - ```dir /s /b > out.txt```
 4. That will generate an ```out.txt``` file which you have to download
 
-![out.txt](images/out-txt.jpg)
+![out.txt](images/out-txt.JPG)
 
 5. Open that file with any editor that shows the number of characters in the line
 6. Locate files with a path longer than 80 characters
 7. Rename these files to be less than 80 characters (including folder extension, e.g. 1041/mediafile.jpg)
 8. Re-upload the renamed file to the Media section in the backoffice
+ 
