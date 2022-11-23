@@ -34,7 +34,7 @@ The Rich Text Editor comes in three different modes: Classic, Inline and Distrac
 
 ### Classic
 
-The default mode, which displays the toolbar in the top.
+The default mode which displays the toolbar at the top.
 
 ![RTE Mode: Classic](../../built-in-property-editors/rich-text-editor/images/rte-mode-classic-11.png)
 

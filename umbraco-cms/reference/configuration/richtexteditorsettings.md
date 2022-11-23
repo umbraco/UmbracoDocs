@@ -13,7 +13,7 @@ If your site is upgraded from an older version, follow the migration guides belo
 * [Migrate from version 5 to version 6](https://www.tiny.cloud/docs/tinymce/6/migration-from-5x/)
 {% endhint %}
 
-A config with all the values can be seen underneath. Since there is a lot of defaults configured, some of these have been omited for the sake of readability. Anywhere something has been omitted it is shown with `{...}`.
+A config with all the values can be seen underneath. Since there are a lot of defaults configured, some of these have been omitted for the sake of readability. Anywhere something has been omitted it is shown with `{...}`.
 
 ```json
 "Umbraco": {
