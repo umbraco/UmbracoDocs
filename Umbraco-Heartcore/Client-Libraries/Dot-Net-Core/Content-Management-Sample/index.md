@@ -196,7 +196,7 @@ The different scenarios are:
     When uploading a file, you must specify the file name for the `umbracoFile` property alias.
 
     ```csharp
-    var media = new Umbraco.Headless.Client.Net.Management.Models.Media {Name = mediaName, MediaTypeAlias = "File", ParentId = folderId};
+    var media = new Umbraco.Headless.Client.Net.Management.Models.Media {Name = "name-of-media", MediaTypeAlias = "File", ParentId = parentFolderGuidObject};
     media.SetValue("umbracoFile", fileName, new FileInfoPart(new FileInfo(imagePath), fileName, $"image/{Path.GetExtension(imagePath).Trim('.')}"));
     ```
 
@@ -205,7 +205,7 @@ The different scenarios are:
     When uploading an Image (by default, it uses the Image Cropper property editor), you must specify the source's file name for the `umbracoFile` property alias.
 
     ```csharp
-    var media = new Umbraco.Headless.Client.Net.Management.Models.Media {Name = mediaName, MediaTypeAlias = "Image", ParentId = folderId};
+    var media = new Umbraco.Headless.Client.Net.Management.Models.Media {Name = "name-of-media", MediaTypeAlias = "Image", ParentId = parentFolderGuidObject};
     media.SetValue("umbracoFile", new { src = fileName }, new FileInfoPart(new FileInfo(imagePath), fileName, $"image/{Path.GetExtension(imagePath).Trim('.')}"));
     ```
 
