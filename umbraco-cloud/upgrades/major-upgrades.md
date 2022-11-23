@@ -16,18 +16,6 @@ description: >-
 Make sure that you know the [Breaking changes](../../umbraco-cms/fundamentals/setup/upgrading/version-specific/) in the latest version of Umbraco CMS.
 {% endhint %}
 
-## Content
-
-An overview of what you will find throughout this guide.
-
-* [Prerequisites](major-upgrades.md#prerequisites)
-* [Video Tutorial](major-upgrades.md#video-tutorial)
-* [Step 1: Enable .NET](major-upgrades.md#step-1-enable-net-6)
-* [Step 2: Clone down your project](major-upgrades.md#step-2-clone-down-your-environment)
-* [Step 3: Upgrade the project locally using Visual Studio](major-upgrades.md#step-3-upgrade-the-project-locally-using-visual-studio)
-* [Step 4: Deploy and Test on Umbraco Cloud](major-upgrades.md#step-4-deploy-and-test-on-umbraco-cloud)
-* [Step 5: Going live](major-upgrades.md#step-5-going-live)
-
 ## Prerequisites
 
 * A Umbraco Cloud project running **the latest version of Umbraco**
