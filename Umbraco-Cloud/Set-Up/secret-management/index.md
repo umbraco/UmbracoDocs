@@ -20,6 +20,6 @@ To add a secret to your environment follow the following steps:
 2. Go to the settings section and go to **Secret Management**
 3. Choose the environment to add the secret and click **Add secret**
 4. Add the Key and the Value in the fields and click **Add secret**
-5. Once the key has been added, save it to the environment.
+5. Save the key to the environment.
 
 Once the key has been saved the environment will be restarted.
