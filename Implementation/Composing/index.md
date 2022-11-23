@@ -3,7 +3,7 @@ keywords: composing composers components runtime boot booting v9 version9 events
 versionFrom: 9.0.0
 versionTo: 10.0.0
 meta.Title: "Composers in Umbraco"
-meta.Description: "Customising the behaviour of an Umbraco Application at start up"
+description: "Customising the behaviour of an Umbraco Application at start up"
 ---
 
 # Composing

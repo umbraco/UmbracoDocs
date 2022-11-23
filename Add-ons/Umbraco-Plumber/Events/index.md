@@ -1,6 +1,6 @@
 ---
 meta.Title: "Umbraco Plumber Events"
-meta.Description: "Information on Umbraco Plumber Events"
+description: "Information on Umbraco Plumber Events"
 versionFrom: 8.0.0
 versionTo: 10.0.0
 ---

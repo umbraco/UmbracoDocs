@@ -2,7 +2,7 @@
 versionFrom: 9.0.0
 versionTo: 10.0.0
 meta.Title: "Umbraco Models Builder Settings"
-meta.Description: "Information on the models builder settings section"
+description: "Information on the models builder settings section"
 ---
 
 # Models builder settings

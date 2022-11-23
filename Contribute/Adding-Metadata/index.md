@@ -1,6 +1,6 @@
 ---
 meta.Title: "Annotating a document with meta data"
-meta.Description: "The documentation markdown files are allowed to contain meta data.  This is done by adding YAML at the top of the document."
+description: "The documentation markdown files are allowed to contain meta data.  This is done by adding YAML at the top of the document."
 ---
 
 # Annotating a document with meta data
@@ -12,7 +12,7 @@ To add meta data, enclose the data between two lines of three dashes.  Every lin
     ---
     versionFrom: 7.3.4
     meta.Title: "Contribute to Umbraco CMS"
-    meta.Description: "Explanation of how you can contribute to Umbraco, what the process is, and what to keep in mind when contributing."
+    description: "Explanation of how you can contribute to Umbraco, what the process is, and what to keep in mind when contributing."
     ---
 
 Supported meta data properties:

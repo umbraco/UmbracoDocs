@@ -2,7 +2,7 @@
 versionFrom: 7.0.0
 keywords: packages 
 meta.Title: "Maintaining Umbraco Packages"
-meta.Description: "Once you've created and published your package, here is what's involved in it's ongoing maintenance"
+description: "Once you've created and published your package, here is what's involved in it's ongoing maintenance"
 ---
 
 # Maintaining packages

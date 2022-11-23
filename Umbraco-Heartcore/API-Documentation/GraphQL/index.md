@@ -1,7 +1,7 @@
 ---
 versionFrom: 8.0.0
 meta.Title: "Umbraco Heartcore GraphQL API"
-meta.Description: "Documentation for Umbraco Heartcore GraphQL API"
+description: "Documentation for Umbraco Heartcore GraphQL API"
 ---
 
 # GraphQL API

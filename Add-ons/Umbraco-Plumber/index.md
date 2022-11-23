@@ -1,6 +1,6 @@
 ---
 meta.Title: "Umbraco Plumber"
-meta.Description: "Documentation on how to work with Umbraco Plumber"
+description: "Documentation on how to work with Umbraco Plumber"
 versionFrom: 8.0.0
 versionTo: 10.0.0
 ---

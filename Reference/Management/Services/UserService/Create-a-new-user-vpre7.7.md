@@ -1,7 +1,7 @@
 ---
 versionTo: 7.7.0
 meta.Title: "Creating a new user with the UserService"
-meta.Description: "This will show you how to create a new user using the UserService in Umbraco."
+description: "This will show you how to create a new user using the UserService in Umbraco."
 ---
 # Create a new user
 

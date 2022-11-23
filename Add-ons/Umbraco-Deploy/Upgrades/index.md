@@ -2,7 +2,7 @@
 versionFrom: 9.0.0
 versionTo: 10.0.0
 meta.Title: "Upgrading Umbraco Deploy"
-meta.Description: "How to upgrade Umbraco Deploy"
+description: "How to upgrade Umbraco Deploy"
 ---
 
 # Upgrading Umbraco Deploy

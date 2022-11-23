@@ -2,7 +2,7 @@
 versionFrom: 9.0.0
 versionTo: 10.0.0
 meta.Title: "Installing Umbraco"
-meta.Description: "Instructions on installing Umbraco on various platforms using various tools."
+description: "Instructions on installing Umbraco on various platforms using various tools."
 ---
 
 # Installation

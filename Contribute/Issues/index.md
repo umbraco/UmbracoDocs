@@ -1,6 +1,6 @@
 ---
 meta.Title: "How to raise a question, start a discussion or report an issue on the Umbraco Documentation Issue Tracker."
-meta.Description: "Explanation on how to raise a question, start a discussion or report an issue on the Umbraco Documentation Issue Tracker."
+description: "Explanation on how to raise a question, start a discussion or report an issue on the Umbraco Documentation Issue Tracker."
 ---
 # What is an Issue?
 

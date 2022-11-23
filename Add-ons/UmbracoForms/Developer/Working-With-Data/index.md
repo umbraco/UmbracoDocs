@@ -2,7 +2,7 @@
 versionFrom: 9.0.0
 versionTo: 10.0.0
 meta.Title: "Working with Umbraco Forms data"
-meta.Description: "Developer documentation on working with Forms record data."
+description: "Developer documentation on working with Forms record data."
 ---
 
 # Working with Record Data

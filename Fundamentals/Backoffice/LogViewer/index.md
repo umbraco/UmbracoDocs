@@ -1,6 +1,6 @@
 ---
 meta.Title: "Log Viewer"
-meta.Description: "Information on using the Umbraco log viewer in version 8"
+description: "Information on using the Umbraco log viewer in version 8"
 keywords: logging logviewer logs serilog messagetemplates logs v8 version8
 versionFrom: 9.0.0
 versionTo: 10.0.0

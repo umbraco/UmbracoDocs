@@ -1,6 +1,6 @@
 ---
 meta.Title: "Umbraco Fundamentals"
-meta.Description: "This section shows you some beginner tools and information to get your started with Umbraco 8. From making a local installation to extending the backoffice."
+description: "This section shows you some beginner tools and information to get your started with Umbraco 8. From making a local installation to extending the backoffice."
 versionFrom: 9.0.0
 versionTo: 10.0.0
 ---

@@ -1,6 +1,6 @@
 ---
 meta.Title: "Creating websites with Umbraco" 
-meta.description: "This section shows you some beginner tools and information to get you started with Umbraco. From making a local installation to extending the backoffice."
+description: "This section shows you some beginner tools and information to get you started with Umbraco. From making a local installation to extending the backoffice."
 versionFrom: 8.0.0
 ---
 

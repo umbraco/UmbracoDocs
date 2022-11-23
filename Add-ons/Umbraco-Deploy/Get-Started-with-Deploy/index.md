@@ -2,7 +2,7 @@
 versionFrom: 9.0.0
 versionTo: 10.0.0
 meta.Title: "Getting started with Umbraco Deploy"
-meta.Description: "What is Umbraco Deploy, how does it work and how to get started using Umbraco Deploy "
+description: "What is Umbraco Deploy, how does it work and how to get started using Umbraco Deploy "
 ---
 
 # Getting started with Umbraco Deploy

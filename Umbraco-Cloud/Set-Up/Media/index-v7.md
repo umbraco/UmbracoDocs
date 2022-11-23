@@ -1,7 +1,7 @@
 ---
 versionFrom: 7.0.0
 meta.Title: "Azure Blob Storage on Umbraco Cloud"
-meta.Description: "All Media files for Umbraco Cloud projects are stored in Azure Blob Storage contaiers. Each environment has a separate container linked to it."
+description: "All Media files for Umbraco Cloud projects are stored in Azure Blob Storage contaiers. Each environment has a separate container linked to it."
 ---
 
 # Media on Umbraco Cloud

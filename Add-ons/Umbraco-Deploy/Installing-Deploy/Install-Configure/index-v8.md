@@ -1,7 +1,7 @@
 ---
 versionFrom: 8.0.0
 meta.Title: "Installing and Configuring Umbraco Deploy"
-meta.Description: "Steps to how to install and configure Umbraco Deploy"
+description: "Steps to how to install and configure Umbraco Deploy"
 ---
 
 # Installing Umbraco Deploy

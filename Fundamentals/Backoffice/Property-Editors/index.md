@@ -1,6 +1,6 @@
 ---
 meta.Title: "Property editors"
-meta.Description: "A Property editor is the editor that a Data Type references, and it's defined in a JSON manifest file and an associated JavaScript file."
+description: "A Property editor is the editor that a Data Type references, and it's defined in a JSON manifest file and an associated JavaScript file."
 versionFrom: 9.0.0
 ---
 

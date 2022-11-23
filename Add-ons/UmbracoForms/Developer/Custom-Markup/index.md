@@ -2,7 +2,7 @@
 versionFrom: 7.0.0
 versionTo: 10.0.0
 meta.Title: "Umbraco Forms custom markup"
-meta.Description: "With Umbraco Forms it's possible to customize the outputted markup of a Form, which means you have complete control over what Forms will output."
+description: "With Umbraco Forms it's possible to customize the outputted markup of a Form, which means you have complete control over what Forms will output."
 ---
 
 # Custom Markup

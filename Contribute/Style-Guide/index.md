@@ -1,6 +1,6 @@
 ---
 meta.Title: "Style Guide"
-meta.Description: "A style guide for Umbraco documentation repo."
+description: "A style guide for Umbraco documentation repo."
 ---
 
 # Style Guide

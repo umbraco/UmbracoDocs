@@ -3,7 +3,7 @@ versionFrom: 7.0.0
 versionTo: 8.0.0
 versionRemoved: 9.0.0
 meta.Title: "UmbPack"
-meta.Description: "How to use the UmbPack tool to deploy package versions to Our"
+description: "How to use the UmbPack tool to deploy package versions to Our"
 ---
 
 # UmbPack

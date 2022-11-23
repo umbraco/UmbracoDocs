@@ -1,7 +1,7 @@
 ---
 versionFrom: 9.1.0
 meta.Title: "Umbraco Content Settings"
-meta.Description: "Information on the content settings section"
+description: "Information on the content settings section"
 ---
 
 # Content Settings

@@ -2,7 +2,7 @@
 versionFrom: 9.0.0
 versionTo: 10.0.0
 meta.title: "Scheduling with hosted services in Umbraco"
-meta.Description: "Use hosted services to run a background task"
+description: "Use hosted services to run a background task"
 ---
 
 # Scheduling with RecurringHostedServiceBase

@@ -1,7 +1,7 @@
 ---
 versionFrom: 10.0.0
 meta.Title: "Forms Provider Type Details"
-meta.Description: "Provides details of the built-in provider types available with Umbraco Forms"
+description: "Provides details of the built-in provider types available with Umbraco Forms"
 ---
 
 # Forms Provider Type Details

@@ -2,7 +2,7 @@
 versionFrom: 8.0.0
 versionTo: 10.0.0
 meta.Title: "Transferring content with Umbraco Deploy"
-meta.Description: "How to restore content in Umbraco Deploy using the deployment dashboard"
+description: "How to restore content in Umbraco Deploy using the deployment dashboard"
 ---
 
 # Transferring Content, Media and Forms

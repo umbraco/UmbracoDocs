@@ -1,7 +1,7 @@
 ---
 versionFrom: 7.0.0
 meta.Title: "Working with the backoffice UI AngularJS project"
-meta.Description: "Guidelines for working with backoffice UI AngularJS project"
+description: "Guidelines for working with backoffice UI AngularJS project"
 ---
 
 # Working with the backoffice UI AngularJS project

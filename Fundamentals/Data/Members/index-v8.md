@@ -1,6 +1,6 @@
 ---
 meta.Title: "Creating Members in Umbraco"
-meta.Description: "Members are used for registering and authentication external / frontend users of an Umbraco installation. This could be Forum members and Intranet members."
+description: "Members are used for registering and authentication external / frontend users of an Umbraco installation. This could be Forum members and Intranet members."
 versionFrom: 8.0.0
 needsV9Update: "true"
 ---

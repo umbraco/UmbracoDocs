@@ -2,7 +2,7 @@
 versionFrom: 9.0.0
 versionTo: 10.0.0
 meta.Title: "Customize default workflows"
-meta.Description: "How to amend the built-in behavior of associating workflows with new forms"
+description: "How to amend the built-in behavior of associating workflows with new forms"
 ---
 
 # Customize Default Workflows For a Form

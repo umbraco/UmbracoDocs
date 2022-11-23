@@ -4,7 +4,7 @@ updated-links: false
 verified-against: alpha-3
 versionFrom: 9.0.0
 meta.Title: "Umbraco Property Editors"
-meta.Description: "Guide on how to work with and create Property Editors in Umbraco"
+description: "Guide on how to work with and create Property Editors in Umbraco"
 ---
 
 # Property Editors

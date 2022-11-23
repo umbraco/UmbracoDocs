@@ -1,6 +1,6 @@
 ---
 meta.Title: "Local IIS with Umbraco 9"
-meta.Description: "This article describes how to run an Umbraco 9 site on a local IIS server."
+description: "This article describes how to run an Umbraco 9 site on a local IIS server."
 versionFrom: 9.0.0
 versionTo: 10.0.0
 ---

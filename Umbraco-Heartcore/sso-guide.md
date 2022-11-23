@@ -1,6 +1,6 @@
 ---
 Meta.Title: Single-Sign-On for Umbraco Heartcore
-Meta.Description: Short guide on how to log in the first time after a Heartcore project has been migrated to UmbracoID
+description: Short guide on how to log in the first time after a Heartcore project has been migrated to UmbracoID
 ---
 
 # Single-Sign-On for Umbraco Heartcore

@@ -2,7 +2,7 @@
 keywords: composing composers components runtime boot booting v8 version8 events registering
 versionFrom: 8.0.0
 meta.Title: "Composers in Umbraco"
-meta.Description: "Customising the behaviour of an Umbraco Application at start up"
+description: "Customising the behaviour of an Umbraco Application at start up"
 ---
 
 # Composing

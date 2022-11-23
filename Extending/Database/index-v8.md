@@ -1,7 +1,7 @@
 ---
 versionFrom: 8.0.0
 meta.Title: "Umbraco Database"
-meta.Description: "A guide to creating a custom Database table in Umbraco"
+description: "A guide to creating a custom Database table in Umbraco"
 ---
 
 # Creating a Custom Database Table

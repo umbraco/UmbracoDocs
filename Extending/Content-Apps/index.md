@@ -2,7 +2,7 @@
 versionFrom: 9.2.0
 versionTo: 10.0.0
 meta.Title: "Content Apps"
-meta.Description: "A guide configuring content apps in Umbraco"
+description: "A guide configuring content apps in Umbraco"
 ---
 
 # Content Apps

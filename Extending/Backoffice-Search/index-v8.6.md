@@ -2,7 +2,7 @@
 keywords: Backoffice Search
 versionFrom: 8.6.0
 meta.Title: "Backoffice Search"
-meta.Description: "A guide to customization of Backoffice Search"
+description: "A guide to customization of Backoffice Search"
 ---
 
 # Backoffice Search

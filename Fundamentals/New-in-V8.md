@@ -1,6 +1,6 @@
 ---
 meta.Title: "Learn what's new in Umbraco 8"
-meta.Description: "In this section you can read about all the new features and changes in Umbraco 8."
+description: "In this section you can read about all the new features and changes in Umbraco 8."
 versionFrom: 8.0.0
 ---
 

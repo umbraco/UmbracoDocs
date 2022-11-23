@@ -2,7 +2,7 @@
 versionFrom: 7.0.0
 versionTo: 8.0.0
 meta.Title: "Deploying changes from a local machine to Umbraco Cloud"
-meta.Description: "How to Deploy changes between a local machine and an environment with Umbraco Deploy using either a Git GUI or CLI"
+description: "How to Deploy changes between a local machine and an environment with Umbraco Deploy using either a Git GUI or CLI"
 ---
 
 # Deploying changes with Umbraco Deploy

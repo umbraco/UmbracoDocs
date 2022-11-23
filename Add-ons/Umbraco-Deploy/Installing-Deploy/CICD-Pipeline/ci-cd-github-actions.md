@@ -2,7 +2,7 @@
 versionFrom: 10.0.0
 versionTo: 10.0.0
 meta.Title: "Setting up a CI/CD Build and Deployment Pipeline Using GitHub Actions"
-meta.Description: "Steps and examples on how to setup a build and deployment pipeline for Umbraco Deploy using GitHub Actions"
+description: "Steps and examples on how to setup a build and deployment pipeline for Umbraco Deploy using GitHub Actions"
 ---
 
 # Setting up CI/CD build server with Github actions

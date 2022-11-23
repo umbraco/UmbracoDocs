@@ -1,6 +1,6 @@
 ---
 meta.Title: "Creating Forms"
-meta.Description: "Information on creating forms in Umbraco"
+description: "Information on creating forms in Umbraco"
 versionFrom: 9.0.0
 versionTo: 10.0.0
 ---

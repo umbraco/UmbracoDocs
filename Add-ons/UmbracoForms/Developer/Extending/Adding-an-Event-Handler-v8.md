@@ -1,7 +1,7 @@
 ---
 versionFrom: 8.0.0
 meta.Title: "Adding Event Handlers in Umbraco Forms"
-meta.Description: "See an example of validating a form server-side"
+description: "See an example of validating a form server-side"
 ---
 
 # Adding a server-side event handlers to Umbraco Forms

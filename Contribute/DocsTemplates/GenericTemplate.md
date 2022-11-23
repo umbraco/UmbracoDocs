@@ -4,7 +4,7 @@ versionFrom: A property with semver notation to indicate from which version this
 versionTo: A property with semver notation to indicate till which version this article is valid
 verified-against: The version of Umbraco which has been tested against or the latest version
 meta.Title: "VERBing a(n)/the NOUN(s) [title case]"
-meta.Description: "Short description of the topic, can reuse first sentence, max 300 characters"
+description: "Short description of the topic, can reuse first sentence, max 300 characters"
 ---
 
 ## Main heading

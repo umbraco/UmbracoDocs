@@ -1,6 +1,6 @@
 ---
 meta.Title: "Umbraco 8 FAQ"
-meta.Description: "Frequently asked questions on Umbraco 8"
+description: "Frequently asked questions on Umbraco 8"
 ---
 
 # Umbraco 8 - Frequently Asked Questions

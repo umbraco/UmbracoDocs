@@ -2,7 +2,7 @@
 versionFrom: 7.3.0
 versionTo: 8.9.0
 meta.Title: "BackOfficeUserManager and Events"
-meta.Description: "The BackOfficeUserManager is the ASP.NET Identity UserManager implementation in Umbraco. It exposes APIs for working with Umbraco User's via the ASP.NET Identity including password handling."
+description: "The BackOfficeUserManager is the ASP.NET Identity UserManager implementation in Umbraco. It exposes APIs for working with Umbraco User's via the ASP.NET Identity including password handling."
 ---
 
 # BackOfficeUserManager and Events

@@ -1,7 +1,7 @@
 ---
 versionFrom: 7.3.0
 meta.Title: "External login providers"
-meta.Description: "The Umbraco backoffice supports external login providers (OAuth) for performing authentication of your users. This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook."
+description: "The Umbraco backoffice supports external login providers (OAuth) for performing authentication of your users. This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook."
 ---
 
 # External login providers

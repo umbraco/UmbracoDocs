@@ -2,7 +2,7 @@
 versionFrom: 8.0.0
 versionTo: 10.0.0
 meta.Title: "Troubleshooting Umbraco Deploy"
-meta.Description: "The troubleshooting section for Umbraco Deploy"
+description: "The troubleshooting section for Umbraco Deploy"
 ---
 # Troubleshooting
 

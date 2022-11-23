@@ -2,7 +2,7 @@
 versionFrom: 8.0.0
 versionRemoved: 9.0.0
 meta.Title: "Umbraco ContentService Events"
-meta.Description: "Information on the various events available in the ContentService"
+description: "Information on the various events available in the ContentService"
 ---
 
 # ContentService Events

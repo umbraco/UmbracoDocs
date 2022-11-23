@@ -1,6 +1,6 @@
 ---
 meta.Title: "The Umbraco Backoffice"
-meta.Description: "In this article you can learn more about the common terms and concepts that are used throughout the Umbraco Backoffice."
+description: "In this article you can learn more about the common terms and concepts that are used throughout the Umbraco Backoffice."
 versionFrom: 7.0.0
 ---
 

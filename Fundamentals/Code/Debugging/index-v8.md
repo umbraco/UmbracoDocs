@@ -1,6 +1,6 @@
 ---
 meta.Title: "Debugging"
-meta.Description: "Debugging in Umbraco"
+description: "Debugging in Umbraco"
 versionFrom: 8.0.0
 ---
 

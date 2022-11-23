@@ -1,6 +1,6 @@
 ---
 meta.Title: "Code samples - Best practices"
-meta.Description: "We highly recommend supporting your documentation articles with code samples. Make sure the samples follow our best practices outlined in this article."
+description: "We highly recommend supporting your documentation articles with code samples. Make sure the samples follow our best practices outlined in this article."
 ---
 
 # Code samples

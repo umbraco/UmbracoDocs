@@ -1,7 +1,7 @@
 ---
 versionFrom: 8.0.0
 meta.Title: "Umbraco events"
-meta.Description: "Information on various backoffice events in Umbraco"
+description: "Information on various backoffice events in Umbraco"
 versionRemoved: 9.0.0
 ---
 

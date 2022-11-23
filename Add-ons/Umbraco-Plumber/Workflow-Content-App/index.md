@@ -1,6 +1,6 @@
 ---
 meta.Title: "Umbraco Plumber Content App"
-meta.Description: "Information about using the Content app with Umbraco Plumber"
+description: "Information about using the Content app with Umbraco Plumber"
 versionFrom: 8.0.0
 versionTo: 10.0.0
 ---

@@ -1,7 +1,7 @@
 ---
 versionFrom: 8.0.0
 meta.Title: "Creating a property editor"
-meta.Description: "A guide to creating a property editor in Umbraco"
+description: "A guide to creating a property editor in Umbraco"
 ---
 
 # Creating a property editor

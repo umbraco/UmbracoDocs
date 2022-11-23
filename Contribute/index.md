@@ -1,6 +1,6 @@
 ---
 meta.Title: "Contribute to Umbraco CMS"
-meta.Description: "An explanation of how you can contribute to the Umbraco Documentation, what the process is and what things to keep in mind when contributing."
+description: "An explanation of how you can contribute to the Umbraco Documentation, what the process is and what things to keep in mind when contributing."
 ---
 # Contribute to the Umbraco Documentation
 

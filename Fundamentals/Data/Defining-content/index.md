@@ -1,6 +1,6 @@
 ---
 meta.Title: "Defining content"
-meta.Description: "Here you'll find an explanation of how content is defined in Umbraco 8"
+description: "Here you'll find an explanation of how content is defined in Umbraco 8"
 versionFrom: 9.2.0
 versionTo: 10.0.0
 ---

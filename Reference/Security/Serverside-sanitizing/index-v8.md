@@ -1,7 +1,7 @@
 ---
 versionFrom: 8.18.0
 meta.Title: "Serverside Sanitizing"
-meta.Description: "This section describes how to sanitize the Rich Text Editor serverside"
+description: "This section describes how to sanitize the Rich Text Editor serverside"
 ---
 
 # Sanitizing the Rich Text Editor

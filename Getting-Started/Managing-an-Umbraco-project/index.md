@@ -1,6 +1,6 @@
 ---
 meta.Title: "Managing an Umbraco project" 
-meta.Description: "This section allows you to investigate the deployment process, the commercial options and how to best plan out an Umbraco project."
+description: "This section allows you to investigate the deployment process, the commercial options and how to best plan out an Umbraco project."
 versionFrom: 8.0.0
 ---
 

@@ -2,7 +2,7 @@
 keywords: implementing services injecting di custom services service pattern UmbracoHelper reusing dry
 versionFrom: 8.0.0
 meta.Title: "Umbraco Services and Helpers"
-meta.Description: "Umbraco has a range of 'Core' Services and Helpers that act as a 'gateway' to Umbraco data and functionality to use when extending or implementing an Umbraco site"
+description: "Umbraco has a range of 'Core' Services and Helpers that act as a 'gateway' to Umbraco data and functionality to use when extending or implementing an Umbraco site"
 ---
 
 # Services and Helpers

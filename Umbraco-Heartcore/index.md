@@ -1,7 +1,7 @@
 ---
 versionFrom: 8.0.0
 meta.Title: "Umbraco Heartcore"
-meta.Description: "An introduction to Umbraco Heartcore"
+description: "An introduction to Umbraco Heartcore"
 ---
 
 # Umbraco Heartcore

@@ -1,6 +1,6 @@
 ---
 meta.Title: "Display an email address"
-meta.Description: "In this article you can learn how to use the build in email property editor"
+description: "In this article you can learn how to use the build in email property editor"
 versionFrom: 9.0.0
 versionTo: 10.0.0
 ---

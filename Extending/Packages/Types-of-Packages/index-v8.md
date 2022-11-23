@@ -2,7 +2,7 @@
 versionFrom: 7.0.0
 versionTo: 8.0.0
 meta.Title: "Umbraco Package Types"
-meta.Description: "Types of packages in Umbraco"
+description: "Types of packages in Umbraco"
 ---
 
 # Package Types

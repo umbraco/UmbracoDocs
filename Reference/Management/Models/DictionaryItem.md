@@ -1,7 +1,7 @@
 ---
 versionFrom: 9.0.0
 meta.Title: "DictionaryItem Model"
-meta.Description: "Represents a Dictionary Item. A Dictionary Item is what you see in the Translation / Dictionary tree."
+description: "Represents a Dictionary Item. A Dictionary Item is what you see in the Translation / Dictionary tree."
 ---
 
 # DictionaryItem

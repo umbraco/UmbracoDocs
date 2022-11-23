@@ -2,7 +2,7 @@
 versionFrom: 9.0.0
 versionTo: 10.0.0
 meta.Title: "How to install and configure your Umbraco installation"
-meta.Description: "Information on the requirements to setup, install & upgrade Umbraco"
+description: "Information on the requirements to setup, install & upgrade Umbraco"
 ---
 
 # Setup

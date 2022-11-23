@@ -2,7 +2,7 @@
 versionFrom: 9.0.0
 versionTo: 10.0.0
 meta.Title: "Outbound request pipeline"
-meta.Description: "How the Umbraco outbound request pipeline works"
+description: "How the Umbraco outbound request pipeline works"
 ---
 # Outbound request pipeline
 

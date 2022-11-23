@@ -2,7 +2,7 @@
 versionFrom: 8.0.0
 versionTo: 8.18.0
 meta.Title: "umbracoSettings.config options in Umbraco"
-meta.Description: "Reference on umbracoSettings.config options in Umbraco"
+description: "Reference on umbracoSettings.config options in Umbraco"
 ---
 
 # umbracoSettings

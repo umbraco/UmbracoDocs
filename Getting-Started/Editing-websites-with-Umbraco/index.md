@@ -1,6 +1,6 @@
 ---
 meta.Title: "Editing websites with Umbraco"
-meta.Description: "This section shows you some beginner tools and information to get you started with editor content in Umbraco."
+description: "This section shows you some beginner tools and information to get you started with editor content in Umbraco."
 versionFrom: 8.0.0
 ---
 

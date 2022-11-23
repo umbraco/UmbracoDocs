@@ -1,7 +1,7 @@
 ---
 versionFrom: 8.6.0
 meta.Title: "Umbraco Property Editors - Tracking References"
-meta.Description: "Guide on how to implement tracking entity references for Property Editors in Umbraco"
+description: "Guide on how to implement tracking entity references for Property Editors in Umbraco"
 ---
 
 # Tracking References

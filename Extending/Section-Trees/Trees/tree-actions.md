@@ -2,7 +2,7 @@
 versionFrom: 9.0.0
 versionTo: 10.0.0
 meta.Title: "Umbraco Tree Actions"
-meta.Description: "A guide to creating a custom tree action in Umbraco"
+description: "A guide to creating a custom tree action in Umbraco"
 ---
 
 # Tree Actions

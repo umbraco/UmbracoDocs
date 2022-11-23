@@ -1,6 +1,6 @@
 ---
 meta.Title: "Umbraco Plumber Approval Groups"
-meta.Description: "Umbraco Plumber's Approval groups and their settings"
+description: "Umbraco Plumber's Approval groups and their settings"
 versionFrom: 8.0.0
 versionTo: 10.0.0
 ---

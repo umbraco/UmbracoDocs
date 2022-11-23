@@ -1,6 +1,6 @@
 ---
 meta.Title: "Creating Dictionary Items in Umbraco"
-meta.Description: "Creating Dictionary Items in Umbraco"
+description: "Creating Dictionary Items in Umbraco"
 versionFrom: 10.1.0
 ---
 

@@ -2,7 +2,7 @@
 versionFrom: 9.0.0
 versionTo: 10.0.0
 meta.Title: "Installing Umbraco Nightly Builds"
-meta.Description: "Instructions on installing nightly builds of Umbraco."
+description: "Instructions on installing nightly builds of Umbraco."
 ---
 
 # Installing nightly builds

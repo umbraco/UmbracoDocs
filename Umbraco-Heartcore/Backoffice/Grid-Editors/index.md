@@ -1,7 +1,7 @@
 ---
 versionFrom: 8.0.0
 meta.Title: "Custom Grid Editors in Umbraco Heartcore"
-meta.Description: "Documentation for Custom Grid Editors in Umbraco Heartcore"
+description: "Documentation for Custom Grid Editors in Umbraco Heartcore"
 ---
 
 # Custom Grid Editors

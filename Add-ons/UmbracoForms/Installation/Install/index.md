@@ -3,7 +3,7 @@ versionFrom: 9.0.0
 versionTo: 10.0.0
 
 meta.Title: "Installing Umbraco Forms"
-meta.Description: "Installing Umbraco Forms"
+description: "Installing Umbraco Forms"
 ---
 
 # Installing Umbraco Forms

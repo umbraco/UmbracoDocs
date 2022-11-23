@@ -2,7 +2,7 @@
 versionFrom: 8.0.0
 versionTo: 10.0.0
 meta.Title: "Umbraco Forms security"
-meta.Description: "How to secure access to Umbraco Forms data and functionality."
+description: "How to secure access to Umbraco Forms data and functionality."
 ---
 
 # Security

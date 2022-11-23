@@ -1,7 +1,7 @@
 ---
 versionFrom: 7.0.0
 meta.Title: "Coding Standards"
-meta.Description: "A guide to coding standards and naming conventions in Umbraco core."
+description: "A guide to coding standards and naming conventions in Umbraco core."
 ---
 
 # Coding standards and naming conventions

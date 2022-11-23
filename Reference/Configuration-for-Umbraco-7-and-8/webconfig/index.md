@@ -1,7 +1,7 @@
 ---
 versionFrom: 8.0.0
 meta.Title: "web.config settings in Umbraco"
-meta.Description: "Reference on web.config settings in Umbraco"
+description: "Reference on web.config settings in Umbraco"
 ---
 
 # Web.config

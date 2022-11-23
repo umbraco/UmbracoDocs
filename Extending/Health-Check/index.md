@@ -2,7 +2,7 @@
 versionFrom: 9.0.0
 versionTo: 10.0.0
 meta.Title: "Umbraco Healthcheck"
-meta.Description: "The Settings section of the Umbraco backoffice holds a dashboard named 'Health Check'. It is a handy list of checks to see if your Umbraco installation is configured according to best practices."
+description: "The Settings section of the Umbraco backoffice holds a dashboard named 'Health Check'. It is a handy list of checks to see if your Umbraco installation is configured according to best practices."
 ---
 
 # Health Check

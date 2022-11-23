@@ -2,7 +2,7 @@
 versionFrom: 8.6.0
 versionTo: 9.0.0
 meta.Title: "Umbraco NuCache Settings"
-meta.Description: "Information on the NuCache settings section"
+description: "Information on the NuCache settings section"
 ---
 
 # NuCache Settings

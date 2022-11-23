@@ -1,6 +1,6 @@
 ---
 meta.Title: "Umbraco Plumber Localization"
-meta.Description: "Localization settings for Umbraco Plumber"
+description: "Localization settings for Umbraco Plumber"
 versionFrom: 8.0.0
 versionTo: 10.0.0
 ---

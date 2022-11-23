@@ -1,7 +1,7 @@
 ---
 versionFrom: 9.0.0
 meta.Title: "Source Control with Umbraco"
-meta.Description: "In this article you can learn more about how to effectively source control your Umbraco site."
+description: "In this article you can learn more about how to effectively source control your Umbraco site."
 ---
 
 # Source Control

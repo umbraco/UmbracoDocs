@@ -1,6 +1,6 @@
 ---
 meta.title: "Using Umbraco's service APIs"
-meta.description: "Using the Umbraco service APIs you can create, update and delete any of the core Umbraco entities directly from your custom code"
+description: "Using the Umbraco service APIs you can create, update and delete any of the core Umbraco entities directly from your custom code"
 versionFrom: 8.0.0
 ---
 

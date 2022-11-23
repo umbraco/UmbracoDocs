@@ -2,7 +2,7 @@
 versionFrom: 9.0.0
 versionTo: 10.0.0
 meta.Title: "Extending Umbraco Deploy"
-meta.Description: "How to extend Umbraco Deploy to synchronize custom data"
+description: "How to extend Umbraco Deploy to synchronize custom data"
 ---
 
 # Extending Umbraco Deploy

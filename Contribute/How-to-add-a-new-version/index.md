@@ -1,7 +1,7 @@
 ---
 versionFrom: 8.0.0
 meta.Title: "A tutorial on how to add a new version of an existing article."
-meta.Description: "Through a very detailed tutorial learn all the steps involved with creating a new version of an article in the Umbraco Docs and how to target it for a specific version of Umbraco."
+description: "Through a very detailed tutorial learn all the steps involved with creating a new version of an article in the Umbraco Docs and how to target it for a specific version of Umbraco."
 ---
 
 # How to add a new version of an article
@@ -102,7 +102,7 @@ Example:
 ---
 versionFrom: 9.0.0
 meta.Title: "Installing Umbraco"
-meta.Description: "Instructions on installing Umbraco: in VS code, via NuGet or on a Mac"
+description: "Instructions on installing Umbraco: in VS code, via NuGet or on a Mac"
 ---
 ```
 
