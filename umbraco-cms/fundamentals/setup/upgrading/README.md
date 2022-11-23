@@ -1,6 +1,8 @@
-# Upgrade your project
+---
+description: This is the guide for upgrading existing installations in general.
+---
 
-_This is the guide for upgrading existing installations in general._
+# Upgrade your project
 
 In this article, you will find everything you need to upgrade your Umbraco CMS project.
 
@@ -16,6 +18,7 @@ You will find instructions on how to upgrade to a new minor or major version as 
 The following lists a few things to be aware of before initiating an upgrade of your Umbraco CMS project.
 
 * Sometimes there are exceptions to general upgrade guidelines. These are listed in the [**version-specific guide**](version-specific/). Be sure to read this article before moving on.
+* Check if your setup meets the [requirements](broken-reference) for the new versions you will be upgrading your project to.
 * Things may go wrong for different reasons. Be sure to **ALWAYS** keep a backup of both your site's files and the database. This way you can always return to a version that you know works.
 * Before upgrading to a new major version, check if the packages you're using are compatible with the version you're upgrading to. On the package's download page, in the **Project compatibility** area, click **View details** to check version-specific compatibility.
 
