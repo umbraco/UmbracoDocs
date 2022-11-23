@@ -80,10 +80,10 @@ content.management.content.create()
 content.management.contentType.all()
 ```
 
-In the examples above, the first methods shows how the Content Management API is called in order to *create new content* and the second methods gives an example of how to get a list of all available content types. Find a full list of the available methods for the Content Management API on the [sample repository on Github](https://github.com/umbraco/Umbraco.Headless.Client.NodeJs#content-management).
+In the examples above, the first methods shows how the Content Management API is called in order to _create new content_ and the second methods gives an example of how to get a list of all available content types. Find a full list of the available methods for the Content Management API on the [sample repository on Github](https://github.com/umbraco/Umbraco.Headless.Client.NodeJs#content-management).
 
 ## References
 
-- [The official Node.js documentation](https://nodejs.org/en/docs/)
-- [API Documentation for Umbraco Heartcore](../../API-Documentation)
-- [Create an Umbraco Heartcore project](../../Getting-Started-Cloud/Creating-a-Heartcore-project)
+* [The official Node.js documentation](https://nodejs.org/en/docs/)
+* [API Documentation for Umbraco Heartcore](../api-documentation/)
+* [Create an Umbraco Heartcore project](../getting-started/creating-a-heartcore-project.md)
