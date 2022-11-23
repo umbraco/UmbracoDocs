@@ -12,7 +12,7 @@ This sample guide will cover how you can access and work with the [Content Manag
 
     `dotnet add package Umbraco.Headless.Client.Net`
 
-2. Add environment variables for your project alias and your Api key.
+2. Add environment variables for your project alias and your API key.
 
     ```json
     // appsettings.json
@@ -193,17 +193,19 @@ The different scenarios are:
 
 1. File Upload (A File Upload property editor)
 
-    When uploading a file, you must specify the file name for the the `umbracoFile` property alias.
+    When uploading a file, you must specify the file name for the `umbracoFile` property alias.
 
     ```csharp
+    var media = new Umbraco.Headless.Client.Net.Management.Models.Media {Name = mediaName, MediaTypeAlias = "File", ParentId = folderId};
     media.SetValue("umbracoFile", fileName, new FileInfoPart(new FileInfo(imagePath), fileName, $"image/{Path.GetExtension(imagePath).Trim('.')}"));
     ```
 
 2. Image Upload (A Image Cropper property editor)
 
-    When uploading an Image (by default, it uses the Image Cropper property editor), you must specify source's file name for the `umbracoFile` property alias.
+    When uploading an Image (by default, it uses the Image Cropper property editor), you must specify the source's file name for the `umbracoFile` property alias.
 
     ```csharp
+    var media = new Umbraco.Headless.Client.Net.Management.Models.Media {Name = mediaName, MediaTypeAlias = "Image", ParentId = folderId};
     media.SetValue("umbracoFile", new { src = fileName }, new FileInfoPart(new FileInfo(imagePath), fileName, $"image/{Path.GetExtension(imagePath).Trim('.')}"));
     ```
 
