@@ -121,7 +121,10 @@ The NuGet Package Manager UI in Visual Studio on Windows allows you to install, 
 
 1. Go to **Tools** -> **NuGet Package Manager** -> **Manage NuGet Packages for Solution**.
 2. In the Browse tab, type `Microsoft.AspNetCore.Authentication.Google` in the search field.
-3. Select the **version** from the drop-down and click **Install**. ![Install Package](images/Install\_Package.png)
+3.  Select the **version** from the drop-down and click **Install**. \
+
+
+    <figure><img src="images/Install_Package.png" alt=""><figcaption></figcaption></figure>
 
 For more information on installing and managing packages in Visual Studio, see the [Microsoft Documentation](https://docs.microsoft.com/en-us/nuget/consume-packages/install-use-packages-visual-studio).
 
