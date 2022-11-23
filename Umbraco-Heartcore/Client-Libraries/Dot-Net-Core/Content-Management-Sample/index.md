@@ -84,7 +84,7 @@ The `ContentManagementService` has three methods for getting content.
 
 3. `GetChildren(Guid id)` - Gets all content that is a child of a specific content item matching a GUID.
 
-    To use this method, call the method on the `ContentManagementService` instance and pass in the GUID of the content item you want to get the children of:
+    To use this method, call the method on the `ContentManagementService` instance and pass the GUID of the content item to get the children:
 
     ```csharp
     var content = await _contentManagementService.Content.GetChildren(yourGuidObject);
