@@ -32,10 +32,6 @@ When finding published content the [PublishedRouter](https://apidocs.umbraco.com
 
 This information is also used during the [Controller & Action selection](controller-selection.md) process.
 
-## Rendering engine
-
-Umbraco 9 and above only supports MVC.
-
 ### Related Information
 
 - [Routing in Umbraco](../../reference/routing/request-pipeline/)
