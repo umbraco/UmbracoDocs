@@ -6,7 +6,7 @@ Secrets can be added for each of the environments that you have added to your Cl
 
 When the secrets have been added they will be exposed exclusively to the assigned environments.
 
-it will be assigned as an environment variable at runtime using the assigned name for the secret.
+It will be assigned as an environment variable at runtime using the assigned name for the secret.
 
 Then it will use a reference that only the managed identity of the environment has access to.
 
