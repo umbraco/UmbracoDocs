@@ -66,7 +66,7 @@ The `ContentManagementService` has three methods for getting content.
 
 1. `GetRoot()` - Gets all content at the root of the tree.
 
-    To use this method, simply call the method on the `ContentManagementService` instance:
+    To use this method, call the method on the `ContentManagementService` instance:
 
     ```csharp
     var content = await _contentManagementService.Content.GetRoot();
@@ -215,7 +215,7 @@ The `ContentManagementService` has three methods for getting media.
 
 1. `GetRoot()` - Gets all media at the root of the tree.
 
-    To use this method, simply call the method on the `ContentManagementService` instance:
+    To use this method, call the method on the `ContentManagementService` instance:
 
     ```csharp
     var rootMedia = await _contentManagementService.Media.GetRoot();
