@@ -14,7 +14,9 @@ Umbraco Deploy doesn't come with a 14-day free trial, which means you will need 
 
 Licenses for our products are sold per domain and will also work on all subdomains. With every license, you will also be able to configure two development/testing domains.
 
-:::note The licenses are not bound to a specific product version. They will work for all versions of the related product. :::
+{% hint style="info" %}
+The licenses are not bound to a specific product version. They will work for all versions of the related product.
+{% endhint %}
 
 ### Example
 
@@ -31,7 +33,9 @@ The license will cover the following domains:
 * `devdomain2.com`
 * `www.devdomain2.com`
 
-:::note That you can have only 1 license per Umbraco installation. :::
+{% hint style="info" %}
+That you can have only 1 license per Umbraco installation.
+{% endhint %}
 
 ## What does a license cover?
 
@@ -47,9 +51,11 @@ Even though we use the same licensing model for Umbraco Forms and Umbraco Deploy
 
 In the case you run multiple sites within one Umbraco installation, e.g. you have multiple domains pointing at the same installation, you have the option to purchase and add **additional domains** to your license.
 
-Additional domains can be purchased from your account on [Umbraco.com](https://umbraco.com) for 129 €. Each additional domain includes 1 live domain and 2 development/testing domains.
+Additional domains can be purchased from your account on [Umbraco.com](https://umbraco.com). Each additional domain includes 1 live domain and 2 development/testing domains.
 
-:::note That this is an add-on domain for existing licenses. Refunds will not be given for this product. :::
+{% hint style="info" %}
+That this is an add-on domain for existing licenses. Refunds will not be given for this product.
+{% endhint %}
 
 ### Umbraco Deploy
 
@@ -59,10 +65,12 @@ A single license covers one Umbraco solution, including all domains hosted by th
 
 To clarify the above:
 
-* You only need one license when you have a solution covering multiple domains- e.g. www.mysite.com and www.mysite.dk - load balanced in production over multiple servers running from the same database, managed from the same back-office instance, and with any number of non-production environments (staging, QA, etc.)
-* You need two licenses if you have a web presence that consists of two separate websites hosted on different domains or sub-domains - e.g. www.mysite.com and shop.mysite.com - with each of these managed as a separate Umbraco installation using their own database and back-office in production.
+* You only need one license when you have a solution covering multiple domains- e.g. www.mysite.com and www.mysite.dk - load balanced in production over multiple servers running from the same database, managed from the same backoffice instance, and with any number of non-production environments (staging, QA, etc.)
+* You need two licenses if you have a web presence that consists of two separate websites hosted on different domains or sub-domains - e.g. www.mysite.com and shop.mysite.com - with each of these managed as a separate Umbraco installation using their own database and backoffice in production.
 
-:::note The license for Umbraco Deploy comes with a recurring yearly fee. Learn more about this and pricing on [Umbraco.com](https://umbraco.com/products/umbraco-deploy/). :::
+{% hint style="info" %}
+The license for Umbraco Deploy comes with a recurring yearly fee. Learn more about this and pricing on [Umbraco.com](https://umbraco.com/products/umbraco-deploy/).
+{% endhint %}
 
 ## Configuring and installing your license
 
@@ -94,7 +102,9 @@ If you can't include the license file in the `/umbraco/Licenses` directory for a
 
 It can be configured in the Umbraco installation's `appSettings.json` file by adding the following AppSetting, where the value contains the path of your custom license directory, relative to the root of your Umbraco installation.
 
-:::warning This will also change the location for other Umbraco-related licenses in this project. :::
+{% hint style="warning" %}
+This will also change the location for other Umbraco-related licenses in this project.
+{% endhint %}
 
 ```json
 {
