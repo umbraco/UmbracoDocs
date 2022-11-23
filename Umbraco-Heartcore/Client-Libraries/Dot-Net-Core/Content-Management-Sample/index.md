@@ -233,7 +233,7 @@ The `ContentManagementService` has three methods for getting media.
 
 3. `GetChildren(Guid id)` - Gets all media that is a child of a specific media item matching a GUID.
 
-    To use this method, call the method on the `ContentManagementService` instance and pass in the GUID of the media item you want to get the children of:
+    To use this method, call the method on the `ContentManagementService` instance and pass in the GUID of the media item to get the children:
 
     ```csharp
     var mediaChildren = await _contentManagementService.Media.GetChildren(yourGuidObject);
