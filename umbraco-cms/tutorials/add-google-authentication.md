@@ -37,7 +37,7 @@ For this tutorial, you need:
 
 * [Visual Studio](https://visualstudio.microsoft.com/) installed
 * A [Google](https://myaccount.google.com/) account
-* A working [Umbraco solution](../../umbraco-cms/fundamentals/setup/)
+* A working [Umbraco solution](../fundamentals/setup/)
 
 ## Setting up a Google OAuth API
 
@@ -45,26 +45,50 @@ The first thing to do is set up a Google API. To do this, you need to go to [htt
 
 ### Setup a Google Console Project
 
-1. At the top of the page, next to the Google Cloud Platform logo, select the project dropdown and click **New Project**. ![Project dropdown list](images/Project\_dropdown\_list.png)
-2. Enter the **Project name**, **Organization**, **Location** and click **Create**. ![Project details](images/Project\_Details.png)
+1.  At the top of the page, next to the Google Cloud Platform logo, select the project dropdown and click **New Project**.\
+    &#x20;
+
+    <figure><img src="images/Project_dropdown_list.png" alt=""><figcaption></figcaption></figure>
+2.  Enter the **Project name**, **Organization**, **Location** and click **Create**.&#x20;
+
+    <figure><img src="images/Project_Details.png" alt=""><figcaption></figcaption></figure>
 
 ### Enable Google+ API
 
-1. From the project dropdown list, select the project you recently created and click **Enable APIs and Services**. ![Enable Apis](images/Enable\_Apis.png)
+1.  From the project dropdown list, select the project you recently created and click **Enable APIs and Services**. \
+
+
+    <figure><img src="images/Enable_Apis.png" alt=""><figcaption></figcaption></figure>
 2. In the **Welcome to the API Library** window, type **Google+ API** in the search field.
-3. Click **Enable** to enable the API. ![Enable Google API](images/Enable\_Google\_API.png)
+3.  Click **Enable** to enable the API.\
+    &#x20;
+
+    <figure><img src="images/Enable_Google_API.png" alt=""><figcaption></figcaption></figure>
 
 ### Create Credentials
 
-1. Before creating the credentials, you will need to configure your consent screen. Click on **OAuth Consent Screen** from the left-side navigation menu. ![Navigate to OAuth Consent Screen](images/OAuth\_Consent\_Screen.png)
-2. In the **OAuth consent screen** window, select the **User Type** depending on how you want to configure and register your app. Click **Create**. ![User Type](images/User\_Type.png)
+1.  Before creating the credentials, you will need to configure your consent screen. Click on **OAuth Consent Screen** from the left-side navigation menu. \
+    \
+
+
+    <figure><img src="images/OAuth_Consent_Screen.png" alt=""><figcaption></figcaption></figure>
+2.  In the **OAuth consent screen** window, select the **User Type** depending on how you want to configure and register your app. Click **Create**.\
+    &#x20;
+
+    <figure><img src="images/User_Type.png" alt=""><figcaption></figcaption></figure>
 3. In the **OAuth consent screen** tab of the **Edit app registration** window, enter the **App information**, **App domain**, **Authorized domains**, **Developer contact information** and click **Save and Continue**.
 4. In the **Scopes** tab, select the scopes your project uses. Click **Save and Continue**.
 5. \[Optional] In the **Test Users** tab, add the test users that can access the application. Click **Save and Continue**.
 6. In the **Summary** tab, verify the details provided. Click **Back to Dashboard** or **Submit for verification**.
-7. Click on **Credentials** from the left-side navigation menu. Click on **Create Credentials** and select **OAuth Client ID**. ![OAuth Client Id](images/OAuth\_Client\_Id.png)
+7.  Click on **Credentials** from the left-side navigation menu. Click on **Create Credentials** and select **OAuth Client ID**. \
+
+
+    <figure><img src="images/OAuth_Client_Id.png" alt=""><figcaption></figcaption></figure>
 8. Select **Web Application** from the **Application type** drop-down.
-9. Enter the application **Name**, **Authorized JavaScript origins**, **Authorized redirect URIs** and click **Create**. ![Credentials Details](images/Credentials\_v9.png)
+9.  Enter the application **Name**, **Authorized JavaScript origins**, **Authorized redirect URIs** and click **Create**.\
+    &#x20;
+
+    <figure><img src="images/Credentials_v9.png" alt=""><figcaption></figcaption></figure>
 
 A popup appears displaying the **ClientId** and **ClientSecret**. You will need these values later while configuring your solution.
 
@@ -103,9 +127,12 @@ For more information on installing and managing packages in Visual Studio, see t
 
 ## Configuring the solution to allow Google logins
 
-1.  To enable a user to link their user account to an external login provider such as Google in the Umbraco Backoffice, you have to implement a custom named configuration `BackOfficeExternalLoginProviderOptions` for users.
+1.  To enable a user to link their user account to an external login provider such as Google in the Umbraco Backoffice, you have to implement a custom named configuration `BackOfficeExternalLoginProviderOptions` for users.\
 
-    You can create a `GoogleBackOfficeExternalLoginProviderOptions.cs` file in a location of your choice. For tutorial purposes, I have created the file in `App_Code/Google_Authentication` folder.
+
+    You can create a `GoogleBackOfficeExternalLoginProviderOptions.cs` file in a location of your choice. \
+    \
+    For tutorial purposes, I have created the file in `App_Code/Google_Authentication` folder.
 
     Add the following code in the `GoogleBackOfficeExternalLoginProviderOptions.cs` file.
 
@@ -227,23 +254,7 @@ For more information on installing and managing packages in Visual Studio, see t
     * Ensure to replace **YOURCLIENTID** and **YOURCLIENTSECRET** in the code with the values from the **OAuth Client Ids Credentials** window.
 3.  Update `ConfigureServices` in your `Startup.cs` class to register your configuration with Umbraco. For example:
 
-    **Umbraco 9**
-
-    ```csharp
-    using MyCustomUmbracoProject.App_Code.Google_Authentication;
-
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddUmbraco(_env, _config)
-            .AddBackOffice()
-            .AddWebsite()
-            .AddComposers()
-            .AddGoogleAuthentication()
-            .Build();
-    }
-    ```
-
-    **Umbraco 10**
+    ****
 
     ```csharp
     using MyCustomUmbracoProject.App_Code.Google_Authentication;
@@ -259,12 +270,17 @@ For more information on installing and managing packages in Visual Studio, see t
     }
     ```
 4. Build and run the website. The first time you will have to link the provider to your account from the Backoffice.
-5. Log in to the Backoffice. Click on your user profile in the top-right corner and select **Link your Google account**: ![Link to Google Account from Backoffice](images/Link\_Google\_Account\_Backoffice.png)
-6. In the **Choose an account** window, select the account you wish to link with the google console project. ![Choose Google Sign-in account](images/Link\_Google-sign-in.png)
-7. For future Backoffice logins, you can click on the **Sign in with Google** button and you will be logged in to the Backoffice. ![Google login screen](images/GoogleLoginScreen\_v9.png)
+5.  Log in to the Backoffice. Click on your user profile in the top-right corner and select **Link your Google account**:\
+    &#x20;
+
+    <figure><img src="images/Link_Google_Account_Backoffice.png" alt=""><figcaption></figcaption></figure>
+6. In the **Choose an account** window, select the account you wish to link with the google console project.
+7.  For future Backoffice logins, you can click on the **Sign in with Google** button and you will be logged in to the Backoffice.&#x20;
+
+    <figure><img src="images/GoogleLoginScreen_v9.png" alt=""><figcaption></figcaption></figure>
 
 ## Related Links
 
-* [External login providers](../../umbraco-cms/reference/security/external-login-providers.md)
-* [Linking External Login Provider accounts](../../umbraco-cms/reference/security/auto-linking.md)
+* [External login providers](../reference/security/external-login-providers.md)
+* [Linking External Login Provider accounts](../reference/security/auto-linking.md)
 * [Two-factor authentication](../reference/security/two-factor-authentication.md)

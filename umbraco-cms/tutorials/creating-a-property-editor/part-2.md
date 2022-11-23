@@ -3,12 +3,11 @@ versionFrom: 9.0.0
 versionTo: 10.0.0
 ---
 
-
 # Adding configuration to a property editor
 
 ## Overview
 
-This is step 2 in our guide to building a Property Editor. This step continues work on the Suggestion Data Type we built in [step 1](index.md), but goes further to show how to add configuration options to our editor.
+This is step 2 in our guide to building a Property Editor. This step continues work on the Suggestion Data Type we built in [step 1](./), but goes further to show how to add configuration options to our editor.
 
 ## Configuration
 
@@ -116,7 +115,7 @@ Save the file, rebuild the application and have a look at the Suggestions Data T
 
 The next step is to gain access to our new configuration options. For this, open the `suggestion.controller.js` file.
 
-Let's first add the default value functionality. When the `$scope.model.value` is empty or *undefined*, we want to use the default value. To do that, we add the following to the start of the controller:
+Let's first add the default value functionality. When the `$scope.model.value` is empty or _undefined_, we want to use the default value. To do that, we add the following to the start of the controller:
 
 ```javascript
 if($scope.model.value === null || $scope.model.value === ""){
@@ -140,8 +139,7 @@ and then at the end we add a getState method:
 
 See what's new? The `$scope.model.config` object. Also, because of this configuration, we now have access to `$scope.model.config.defaultValue` which contains the configuration value for that key.
 
-### For version 9
-The snippets are slightly different in V9 because `IEditorConfigurationParser` isn't required.
+The snippets are slightly different because `IEditorConfigurationParser` isn't required.
 
 ```csharp
 using Umbraco.Cms.Core.IO;

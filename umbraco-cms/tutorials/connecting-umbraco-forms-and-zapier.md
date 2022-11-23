@@ -3,7 +3,6 @@ versionFrom: 7.0.0
 versionTo: 10.0.0
 ---
 
-
 # Connecting Umbraco Forms and Zapier
 
 This guide takes you through the steps of connecting your Umbraco Forms to Zapier.
@@ -26,14 +25,13 @@ This tutorial is for all users of Umbraco and does not require any particular sk
 
 Here is what you will need for this tutorial:
 
-- A paid Zapier account (Premium apps are unavailable in the free plan)
-- Umbraco Forms
-- A Google account (only necessary if you want to follow the last example in the guide)
+* A paid Zapier account (Premium apps are unavailable in the free plan)
+* Umbraco Forms
+* A Google account (only necessary if you want to follow the last example in the guide)
 
 ## Creating a Zapier webhook trigger
 
-The first step is to generate the webhook URL that your Umbraco Forms has to send data to.
-This is done by logging into your Zapier account and clicking “Make a Zap”
+The first step is to generate the webhook URL that your Umbraco Forms has to send data to. This is done by logging into your Zapier account and clicking “Make a Zap”
 
 ![Zapier make a zap](images/zapierMakeZap.png)
 
@@ -55,7 +53,7 @@ Copy this URL and have it ready for later. You will need it when you set up your
 
 Now it’s time to login to the Umbraco backoffice so you can create your form. If you already have a form you want to connect you can skip to the next step.
 
-To create a form you can follow this tutorial with step-by-step instructions: [Creating a form in Umbraco Forms](../../Add-ons/UmbracoForms/Editor/Creating-a-Form/index.md).
+To create a form you can follow this tutorial with step-by-step instructions: [Creating a form in Umbraco Forms](../../umbraco-forms/editor/creating-a-form/).
 
 Once you have created your form you are ready to set up the workflow.
 
@@ -81,7 +79,7 @@ Now your workflow is ready. Submit your changes and save your form.
 
 Now your form is ready to send data to Zapier and any entry submitted will be posted to the Zapier webhook URL.
 
-To set up field mapping and actions in Zapier your form needs an entry. If this is a new form, add it to a page and submit an entry ([guide to adding your form to a page](../../umbraco-forms/editor/creating-a-form/README.md#adding-the-form-to-the-umbraco-site)).
+To set up field mapping and actions in Zapier your form needs an entry. If this is a new form, add it to a page and submit an entry ([guide to adding your form to a page](../../umbraco-forms/editor/creating-a-form/#adding-the-form-to-the-umbraco-site)).
 
 Here is the form and the fields that were submitted for this tutorial.
 
@@ -91,8 +89,7 @@ Once you have an entry in your form you are done in the Umbraco backoffice. Now 
 
 ## Find your form entry data in Zapier
 
-In Zapier, open up the Zap you started setting up in the first step of this guide.
-In that Zap we are now ready to continue the setup of our webhook trigger. Start by clicking continue and get to the “Find Data” step.
+In Zapier, open up the Zap you started setting up in the first step of this guide. In that Zap we are now ready to continue the setup of our webhook trigger. Start by clicking continue and get to the “Find Data” step.
 
 ![Zapier Find Webhook Data](images/zapierFindWebhookData.png)
 
@@ -124,8 +121,7 @@ Now choose the Action event “Create a spreadsheet row” and continue.
 
 ![Zapier Google Sheets Action Event](images/zapierGoogleSheetsActionEvent.png)
 
-Now you need to choose the Google Sheets account you want to connect to. If you have not set this up yet, you will be prompted to do so.
-Once connected you choose that account and click continue.
+Now you need to choose the Google Sheets account you want to connect to. If you have not set this up yet, you will be prompted to do so. Once connected you choose that account and click continue.
 
 ![Zapier Google Sheets Account](images/zapierGoogleSheetsAccount.png)
 
@@ -156,8 +152,7 @@ Tada! Now your Zap is ready and can be activated to automatically add form entri
 
 ## Connecting multiple Umbraco Forms to Zapier
 
-If you want to connect multiple forms to Zapier you can follow the above steps to do so.
-Remember to add individual Zaps to each form if the data being sent is different or you want to use different actions for the data.
+If you want to connect multiple forms to Zapier you can follow the above steps to do so. Remember to add individual Zaps to each form if the data being sent is different or you want to use different actions for the data.
 
 You can reuse the same Zap and webhook URL if all data sent to Zapier is formatted in the same way. Otherwise errors will occur.
 
