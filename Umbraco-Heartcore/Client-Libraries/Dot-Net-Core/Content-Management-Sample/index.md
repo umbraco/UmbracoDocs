@@ -58,7 +58,7 @@ Now you are ready to start using the `ContentManagementService`.
 
 ## Content
 
-First, we will look at how to work with content. The `ContentManagementService` allows you to Get, Create, Update, Publish, Unpublish and Delete content.
+When working with content, the `ContentManagementService` can Get, Create, Update, Publish, Unpublish and Delete content.
 
 ### Get Content
 
@@ -184,7 +184,7 @@ The `ContentManagementService` has one method for deleting content.
 
 ## Media
 
-First, we will look at how to work with media. The `ContentManagementService` allows you to Get, Create, Update and Delete media.
+When working with media, the `ContentManagementService` can Get, Create, Update and Delete media.
 
 :::note
 For Media you create programmatically, you have to use the "raw" property values that Umbraco expects for the specific property editor.
