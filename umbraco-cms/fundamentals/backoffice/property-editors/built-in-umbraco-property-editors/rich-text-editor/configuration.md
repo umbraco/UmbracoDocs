@@ -30,7 +30,7 @@ If inserted images are larger than the dimensions defined here, the images will 
 
 ## Mode
 
-The Rich Text Editor comes in three different modes: Classic, Inline and Distraction Free.
+The Rich Text Editor comes in two different modes: Classic and Inline.
 
 ### Classic
 
