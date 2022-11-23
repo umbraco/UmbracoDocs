@@ -1,6 +1,6 @@
 ---
 meta.Title: "Querying Umbraco Heartcore with GraphQL"
-meta.Description: "Learn how to query Umbraco Heartcore with GraphQL."
+description: "Learn how to query Umbraco Heartcore with GraphQL."
 ---
 
 # Querying Umbraco Heartcore with GraphQL

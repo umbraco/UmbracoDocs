@@ -2,7 +2,7 @@
 versionFrom: 9.0.0
 versionTo: 10.0.0
 meta.Title: "Umbraco Rich Text Editor Settings"
-meta.Description: "Information on the Rich text editor settings section"
+description: "Information on the Rich text editor settings section"
 ---
 
 # Rich text editor settings

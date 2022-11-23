@@ -1,6 +1,6 @@
 ---
 meta.Title: "Adding Notification Handlers in Umbraco Forms"
-meta.Description: "See an example of validating a form server-side"
+description: "See an example of validating a form server-side"
 ---
 
 # Adding a server-side notification handlers to Umbraco Forms

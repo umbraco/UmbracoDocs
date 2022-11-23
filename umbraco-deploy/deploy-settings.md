@@ -1,6 +1,6 @@
 ---
 meta.Title: "Umbraco Deploy settings"
-meta.Description: "Various settings for Umbraco Deploy"
+description: "Various settings for Umbraco Deploy"
 ---
 
 # Configuration for Umbraco Deploy

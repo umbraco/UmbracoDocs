@@ -2,7 +2,7 @@
 versionFrom: 9.0.0
 versionTo: 10.0.0
 meta.Title: "Umbraco Embed Providers"
-meta.Description: "A guide to creating a custom embed providers in Umbraco"
+description: "A guide to creating a custom embed providers in Umbraco"
 
 ---
 

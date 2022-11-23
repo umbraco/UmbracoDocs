@@ -2,7 +2,7 @@
 versionFrom: 9.0.0
 versionTo: 10.0.0
 meta.Title: "Umbraco IPublishedContentQuery"
-meta.Description: "Querying in views with IPublishedContentQuery in Umbraco"
+description: "Querying in views with IPublishedContentQuery in Umbraco"
 ---
 
 # IPublishedContentQuery

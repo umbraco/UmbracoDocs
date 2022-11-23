@@ -1,6 +1,6 @@
 ---
 meta.Title: Creating media in Umbraco
-meta.Description: Media in Umbraco is handled in much the same way as content. From the backoffice you can upload and create media items, such as images and files.
+description: Media in Umbraco is handled in much the same way as content. From the backoffice you can upload and create media items, such as images and files.
 ---
 
 # Creating media

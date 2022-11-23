@@ -1,6 +1,6 @@
 ---
 meta.Title: Where can I get help
-meta.description: >-
+description: >-
   This section will guide you on where to find the answers for any questions you
   may have.
 versionFrom: 8.0.0

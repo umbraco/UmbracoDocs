@@ -2,7 +2,7 @@
 versionFrom: 9.0.0
 versionTo: 10.0.0
 meta-title: "Umbraco Route Hijacking"
-meta.Description: "Use a custom controller to handle and control incoming requests for content pages based on a specific Document Type"
+description: "Use a custom controller to handle and control incoming requests for content pages based on a specific Document Type"
 ---
 
 # Custom MVC controllers (Umbraco Route Hijacking)

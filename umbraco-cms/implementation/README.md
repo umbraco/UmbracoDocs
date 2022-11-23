@@ -2,7 +2,7 @@
 versionFrom: 9.0.0
 versionTo: 10.0.0
 meta.Title: Learn how to implement an Umbraco site
-meta.Description: >-
+description: >-
   Get to know the Umbraco codebase. Developing an application requires knowledge
   about the tool you're working with. This section will give you an introduction
   to the structure of Umbraco.

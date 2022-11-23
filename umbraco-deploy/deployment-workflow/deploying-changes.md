@@ -1,6 +1,6 @@
 ---
 meta.Title: "Deploying changes from a local machine with Umbraco Deploy"
-meta.Description: "How to Deploy changes between a local machine and an environment in Umbraco Deploy using either a Git Gui or without"
+description: "How to Deploy changes between a local machine and an environment in Umbraco Deploy using either a Git Gui or without"
 ---
 
 # Deploying changes with Umbraco Deploy
