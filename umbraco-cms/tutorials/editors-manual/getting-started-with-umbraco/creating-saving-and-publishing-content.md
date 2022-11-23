@@ -15,7 +15,7 @@ If the parent page allows sub-pages underneath it, follow these steps:
 
 1. Hover over the name of the parent page in the **Content** section and click **•••** to view the types of pages you can create.
 2. Select the page type you wish to create. The new page is loaded in the editor on the right-hand side.
-3. Enter a **Name** for the page and click **Save**.
+3.  Enter a **Name** for the page and click **Save**.
 
     ![New Page](images/Enter-name-v9.png)
 
@@ -54,9 +54,9 @@ To set up scheduled publishing, follow these steps:
 1. Navigate to the page you want to publish.
 2. Select the arrow next to the **Save and Publish** button.
 3. Select **Schedule**.
-4. In the **Scheduled Publishing** window, set the date and time in the **Publish at** field.
+4.  In the **Scheduled Publishing** window, set the date and time in the **Publish at** field.
 
-    ![Schedualed publishing.](images/Schedule_publishing_v9.png)
+    ![Schedualed publishing.](images/Schedule\_publishing\_v9.png)
 5. Select **Schedule**.
 
 #### 2: Publish with descendants
@@ -67,10 +67,10 @@ To publish the node with descendants, follow these steps:
 
 1. Navigate to the page you want to publish.
 2. Select the arrow next to the **Save and Publish** button.
-3. Select **Publish with descendants**.
+3.  Select **Publish with descendants**.
 
     ![Publish with descendants](images/Publish-with-descendants-v9.png)
-4. Toggle the option to **Include unpublished content items** if you wish to. This option includes all unpublished content items for the selected page and the available linked pages.
+4.  Toggle the option to **Include unpublished content items** if you wish to. This option includes all unpublished content items for the selected page and the available linked pages.
 
     ![Publish with descendants](images/Publish-with-descendants2-v9.png)
 
@@ -93,9 +93,9 @@ To set up scheduled unpublishing, follow these steps:
 1. Navigate to the page you want to unpublish.
 2. Select the arrow next to the **Save and Publish** button.
 3. Select **Schedule**.
-4. In the **Scheduled Publishing** window, set the date and time in the **Unpublish at** field.
+4.  In the **Scheduled Publishing** window, set the date and time in the **Unpublish at** field.
 
-    ![Schedualed unpublishing.](images/Schedule_Unpublishing_v9.png)
+    ![Schedualed unpublishing.](images/Schedule\_Unpublishing\_v9.png)
 5. Select **Schedule**.
 
 ## Comparing Content between environments
@@ -112,17 +112,17 @@ To compare content between environments, follow these steps:
 
 1. Navigate to the page you want to compare.
 2. Select the arrow next to the **Save and Publish** button. Alternatively, you can right-click the content node or click the **Actions** drop-down.
-3. Select **Compare** to open the **Compare** window.
+3.  Select **Compare** to open the **Compare** window.
 
-    ![Compare option](images/Compare_option.png)
+    ![Compare option](images/Compare\_option.png)
 4. **Choose the workspace** from the drop-down field.
 5. View the **Summary information**.
 6. In the **Field Comparison** table, view the differences between the versions in the two workspaces at the node level of each field.
 7. Proceed to transfer the content using the **Queue for transfer** or **Transfer now** options.
 8. Restore the content from the higher environment using the **Partial restore** option.
-9. Click **Close** to continue editing the content node.
+9.  Click **Close** to continue editing the content node.
 
-    ![Comparing Content](images/Comparing_Content.png)
+    ![Comparing Content](images/Comparing\_Content.png)
 
 ## Transferring content
 
@@ -136,9 +136,10 @@ To transfer content between environments, follow these steps:
 
 1. Navigate to the page you want to transfer.
 2. Select the arrow next to the **Save and Publish** button.
-3. Select **Transfer now**.
+3.  Select **Transfer now**.
 
-    ![Transfer option](images/Transfernow_option.png)
-4. In the **Transfer now** window, a message is displayed that you are about to transfer the content node directly to the higher environment, without adding it to the queue.
-    ![Transfer Content](images/Transfer_Content.png)
+    ![Transfer option](images/Transfernow\_option.png)
+4.  In the **Transfer now** window, a message is displayed that you are about to transfer the content node directly to the higher environment, without adding it to the queue.&#x20;
+
+    <figure><img src="images/Transfer_Content.png" alt=""><figcaption></figcaption></figure>
 5. Click **Transfer now**.

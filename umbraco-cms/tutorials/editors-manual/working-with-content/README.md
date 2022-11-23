@@ -9,23 +9,15 @@ The Umbraco Rich Text Editor is an editable field where you, as the editor, can 
 
 If you want to use advanced functionality, you can insert images, create tables, or create links to other pages or documents. The functionality varies depending on how the editor is set up.
 
-- [Editor Buttons](#editor-buttons)
-
-- [Paragraph Break/Line Break](#paragraph-breakline-break)
-
-- [Shortcut Keys](#shortcut-keys)
-
-- [Text Formatting](#text-formatting)
-
-- [View Source Code](#view-source-code)
-
-- [Links](#links)
-
-- [Working with Images](#working-with-images)
-
-- [Macros](#macros)
-
-- [Tables](#tables)
+* [Editor Buttons](./#editor-buttons)
+* [Paragraph Break/Line Break](./#paragraph-break-line-break)
+* [Shortcut Keys](./#shortcut-keys)
+* [Text Formatting](./#text-formatting)
+* [View Source Code](./#view-source-code)
+* [Links](./#links)
+* [Working with Images](./#working-with-images)
+* [Macros](./#macros)
+* [Tables](./#tables)
 
 Contact your system administrator for details regarding your editor.
 
@@ -43,24 +35,24 @@ The Rich Text Editor provides the following functionalities:
 
 The Rich Text Editor is like any other word processing program. You write the text and the text wraps around when the line reaches the end. Use the following keyboard shortcuts in the editor to add:
 
-- Space between paragraphs - press `ENTER`.
-- Line breaks - press `SHIFT + ENTER`.
+* Space between paragraphs - press `ENTER`.
+* Line breaks - press `SHIFT + ENTER`.
 
 ### Shortcut Keys
 
 For ease, there are shortcut keys for certain editor functions. Use the following shortcut keys to carry out certain commands:
 
-Shortcut | Action
----|---
-Ctrl + A | Select all
-Ctrl + B | Bold
-Ctrl + C | Copy
-Ctrl + I | Italic
-Ctrl + U | Underline
-Ctrl + V | Paste
-Ctrl + X | Cut
-Ctrl + Y | Redo
-Ctrl + Z | Undo
+| Shortcut | Action     |
+| -------- | ---------- |
+| Ctrl + A | Select all |
+| Ctrl + B | Bold       |
+| Ctrl + C | Copy       |
+| Ctrl + I | Italic     |
+| Ctrl + U | Underline  |
+| Ctrl + V | Paste      |
+| Ctrl + X | Cut        |
+| Ctrl + Y | Redo       |
+| Ctrl + Z | Undo       |
 
 ### Text Formatting
 
@@ -73,7 +65,7 @@ The most familiar way to control formatting is using the formatting buttons. Wit
 To apply a format using the formatting buttons:
 
 1. Select the text you want to apply the formatting to.
-2. Click the format button to apply the formatting you wish to add.
+2.  Click the format button to apply the formatting you wish to add.
 
     ![Formats](images/formats-v9.png)
 
@@ -109,7 +101,7 @@ You can also add a **Remove format** button in your toolbar. To add the **Remove
 
 1. Navigate to your rich text editor.
 2. Go to the **Editor Settings** window.
-3. Select **Remove format**.
+3.  Select **Remove format**.
 
     ![Remove Format](images/removeFormat-v9.png)
 
@@ -154,7 +146,7 @@ The **Insert/edit Link** button is used to add or update links to internal pages
 1. Select the text for the hyperlink.
 2. Click the **Insert Link** button. The **Select Link** tree opens on the right-side of the editor.
 3. Select the **Select media** button. The **Select media** tree opens where you can select the media item.
-4. Click **Select**.  The selection will populate the **Link** and **Link Title** fields.
+4. Click **Select**. The selection will populate the **Link** and **Link Title** fields.
 5. In the **Target** field, select the checkbox if you want the link to open in a new window or tab.
 6. Click **Submit**.
 
@@ -178,11 +170,10 @@ An anchor allows you to create internal page links that enable users to navigate
 #### Creating an anchor
 
 1. Select the text or place the cursor where you wish to create the anchor.
-2. Click the **Anchor** button. The **Create Anchor** dialog opens.
+2.  Click the **Anchor** button. The **Create Anchor** dialog opens.
 
     ![Anchor Button](images/anchorButton.jpg)
-
-3. Enter the anchor name in the **ID** field. Aoid special characters and do not use spaces.
+3.  Enter the anchor name in the **ID** field. Aoid special characters and do not use spaces.
 
     ![Anchor Dialogue](images/Anchor-v8.png)
 4. Click **OK**. You will see a small anchor icon where you previously had the cursor in the editor.
@@ -205,7 +196,7 @@ To delete the anchor:
 
 You can make images into clickable links in Umbraco:
 
-1. Insert an image into the editor (see [Working with Images](#working-with-images), for more details).
+1. Insert an image into the editor (see [Working with Images](./#working-with-images), for more details).
 2. Select the image to form the hyperlink.
 3. Click the **Insert Link** button. The **Select Link** tree opens on the right-side of the editor.
 4. In the **Link** field, enter the URL of the web page you wish to link to.
@@ -218,7 +209,7 @@ You can make images into clickable links in Umbraco:
 To remove a link:
 
 1. Select the link in the editor. For text links, place the cursor anywhere within the link text. For an image, select the image itself.
-2. Click the **Remove Link** button which removes the hyperlink.
+2.  Click the **Remove Link** button which removes the hyperlink.
 
     ![Unlink](images/unlink.jpg)
 
@@ -226,7 +217,7 @@ If the remove link button is not in your richtext editor toolbar, you can add th
 
 1. Navigate to your rich text editor.
 2. Go to the **Editor Settings** window.
-3. Select **Remove Link**.
+3.  Select **Remove Link**.
 
     ![Remove Format](images/remove-link-v9.png)
 
@@ -285,13 +276,13 @@ The macros available to you differ from system to system. Contact your system ad
 
 1. Place the cursor in the editor where you want to insert your macro.
 2. Click the **Insert Macro** button. The **Select Macro** tree opens on the right-side of the editor.
-3. Select a macro to insert or enter the macro name in the **Search** bar.
+3.  Select a macro to insert or enter the macro name in the **Search** bar.
 
-   ![Macro Picker](images/Select-a-macro.png)
+    ![Macro Picker](images/Select-a-macro.png)
 4. Configure the macro as required.
-5. Click **Submit** to insert the macro. The macro is displayed in the editor with a dotted border.
+5.  Click **Submit** to insert the macro. The macro is displayed in the editor with a dotted border.
 
-   ![Macro Editor](images/Select-a-macro-v9.png)
+    ![Macro Editor](images/Select-a-macro-v9.png)
 
 {% hint style="info" %}
 If there are no macros, you can [Create Macros](../../../reference/templating/macros/managing-macros.md#creating-macros). The above image is an example of macros available when a Starter Kit package is installed.
@@ -324,7 +315,7 @@ To edit an existing table:
 
 1. Click on a cell in the table.
 2. A small square box is displayed with some quick actions.
-3. Select the action of your choice. Alternatively, click on the **Table** button in the rich text editor. There are various other options available for modifying cells, rows and columns such as height, alignment, merge, insert and delete.
+3.  Select the action of your choice. Alternatively, click on the **Table** button in the rich text editor. There are various other options available for modifying cells, rows and columns such as height, alignment, merge, insert and delete.
 
     ![Table Options](images/Table-options-v9.png)
 

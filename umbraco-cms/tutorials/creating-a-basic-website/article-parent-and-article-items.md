@@ -3,7 +3,7 @@ versionFrom: 9.0.0
 versionTo: 10.0.0
 ---
 
-# Articles and Article Items - A Parent Page with Infinite Children
+# Articles and Article Items
 
 Having an Articles Parent page, and a number of associated child articles, provides a good example of Umbraco's features. We'll assume our fictional company, Widgets Ltd, writes about ten articles a month and want the articles page to act like a blog. You could use this functionality for news, event pages, or any other collection of Document Types.
 
@@ -82,9 +82,10 @@ To add a content node:
     {% hint style="info" %}
     If you do not see the list view, try refreshing the page.
     {% endhint %}
-5.  Click **Create Articles Item** to add two child nodes called **Article 1**, **Article 2**, and click **Save and Publish**.
 
-    ![Content Tree With Articles](images/figure-40-articles-created-v8.png)
+5\. Click **Create Articles Item** to add two child nodes called **Article 1**, **Article 2**, and click **Save and Publish**. &#x20;
+
+<figure><img src="../../../.gitbook/assets/figure-40-articles-created-v8.png" alt=""><figcaption><p>Content Tree with Articles</p></figcaption></figure>
 
 ## Updating the Template
 
@@ -108,26 +109,26 @@ To update the **Articles Main** template, follow these steps:
 11. You can set conditions to get specific articles or decide the order of the articles. For the purpose of this guide, we'll use the following parameters:
 
     ![Query parameters](images/query-parameters.png)
-12. If you've set the correct parameters, you will get a preview of the items being selected with the query. Click **Submit**, and you will see a code snippet has been added to your template. It will look similar to this:
+12. If you've set the correct parameters, you will get a preview of the items being selected with the query. Click **Submit**, and you will see a code snippet has been added to your template. It will look similar to this:\
 
-```csharp
-@{
-    var selection = Umbraco.Content(Guid.Parse("e0a4f1ff-122e-41bd-941c-f9686f03019f"))
-    .ChildrenOfType("articlesItem")
-    .Where(x => x.IsVisible())
-    .OrderByDescending(x => x.CreateDate);
-}
-<ul>
-    @foreach (var item in selection)
-    {
-        <li>
-            <a href="@item.Url()">@item.Name()</a>
-        </li>
+
+    ```
+    @{
+       var selection = Umbraco.Content(Guid.Parse("e0a4f1ff-122e-41bd-941c-f9686f03019f"))
+        .ChildrenOfType("articlesItem")
+        .Where(x => x.IsVisible())
+        .OrderByDescending(x => x.CreateDate);
     }
-</ul>
-```
-
-1.  The above code will output a list of all the _**Article Items**_ as links using the name. We will modify the template a little, to add more information about the articles. Replace the `HTML` in the _foreach_ loop with this snippet:
+    <ul>
+        @foreach (var item in selection)
+        {
+            <li>
+                <a href="@item.Url()">@item.Name()</a>
+            </li>
+        }
+    </ul>
+    ```
+13. The above code will output a list of all the _**Article Items**_ as links using the name. We will modify the template a little, to add more information about the articles. Replace the `HTML` in the _foreach_ loop with this snippet:
 
     ```csharp
     <article class="special">
@@ -136,7 +137,7 @@ To update the **Articles Main** template, follow these steps:
         <div class="articlepreview">@Html.Truncate(item.Value("articleContent").ToString(), 20, true)<a href="@item.Url()">Read More..</a></div>
     </article>
     ```
-2. Click **Save**.
+14. Click **Save**.
 
 To update the **Articles Item** template, follow these steps:
 
