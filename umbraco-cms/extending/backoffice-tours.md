@@ -158,9 +158,7 @@ Below is an explanation of each of the properties on the tour step object.
     Use the developer tools from your browser to find the id, class and data-attribute.
     {% endhint %}
 
-```
-![Step element example highlighting content section](images/element-v8.png)
-```
+<figure><img src="../../.gitbook/assets/element-v8.png" alt=""><figcaption></figcaption></figure>
 
 *   **elementPreventClick**
 
