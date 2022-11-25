@@ -254,6 +254,6 @@ There is full API coverage of all Umbraco core entities:
 
 ### More information
 
-* [Umbraco Services API reference](../../reference/management/services/)
+* [Umbraco Services API reference](../../reference/management/services-reference/)
 * [Umbraco Notifications reference](../../reference/notifications/)
 * [Routes and controllers](../../reference/routing/)
