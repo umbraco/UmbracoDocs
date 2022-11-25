@@ -30,4 +30,4 @@ All services are available using their interfaces in the dependency injection co
 
 There is a service for each type of data in Umbraco.
 
-[See here For a full list of services available](broken-reference)
+[See here For a full list of services available](../reference/management/services/)
