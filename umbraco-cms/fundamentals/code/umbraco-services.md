@@ -238,19 +238,19 @@ namespace Umbraco.Cms.Infrastructure.Services.Implement
 
 There is full API coverage of all Umbraco core entities:
 
-* [AuditService](../../reference/management/services/auditservice.md)
-* [ConsentService](../../reference/management/services/consentservice.md)
-* [ContentService](../../reference/management/services/contentservice/)
-* [ContentTypeService](../../reference/management/services/contenttypeservice/)
-* [DataTypeService](../../reference/management/services/datatypeservice.md)
-* [EntityService](../../reference/management/services/entityservice.md)
-* [FileService](../../reference/management/services/fileservice.md)
-* [LocalizationService](../../reference/management/services/localizationservice/)
-* [MacroService](../../reference/management/services/macroservice.md)
-* [MediaService](../../reference/management/services/mediaservice.md)
-* [MemberService](../../reference/management/services/memberservice.md)
-* [MemberTypeService](../../reference/management/services/membertypeservice.md)
-* [MemberGroupService](../../reference/management/services/membergroupservice.md)
+* [AuditService](../../reference/management/services-reference/auditservice.md)
+* [ConsentService](../../reference/management/services-reference/consentservice.md)
+* [ContentService](../../reference/management/services-reference/contentservice/)
+* [ContentTypeService](../../reference/management/services-reference/contenttypeservice/)
+* [DataTypeService](../../reference/management/services-reference/datatypeservice.md)
+* [EntityService](../../reference/management/services-reference/entityservice.md)
+* [FileService](../../reference/management/services-reference/fileservice.md)
+* [LocalizationService](../../reference/management/services-reference/localizationservice/)
+* [MacroService](../../reference/management/services-reference/macroservice.md)
+* [MediaService](../../reference/management/services-reference/mediaservice.md)
+* [MemberService](../../reference/management/services-reference/memberservice.md)
+* [MemberTypeService](../../reference/management/services-reference/membertypeservice.md)
+* [MemberGroupService](../../reference/management/services-reference/membergroupservice.md)
 
 ### More information
 

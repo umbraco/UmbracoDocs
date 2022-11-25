@@ -1,9 +1,11 @@
 ---
-keywords: composing composers components runtime boot booting v9 version9 events registering
+keywords: >-
+  composing composers components runtime boot booting v9 version9 events
+  registering
 versionFrom: 9.0.0
 versionTo: 10.0.0
-meta.Title: "Composers in Umbraco"
-meta.Description: "Customising the behaviour of an Umbraco Application at start up"
+meta.Title: Composers in Umbraco
+meta.Description: Customising the behaviour of an Umbraco Application at start up
 ---
 
 # Composing
@@ -16,21 +18,17 @@ An Umbraco application is a `Composition` made of many different 'collections' a
 
 'Composing' is the term used to describe the process of curating which pieces of functionality should be included in a particular collection. The code that implements these choices at start up is called a `Composer`.
 
-A `Component` is a generic wrapper for writing custom code during composition, it has two methods: `Initialize()` and `Terminate()` and these are executed when the Umbraco Application starts up, and when it shuts down, respectively.
-The functionality of a `Component` is identical to having a class handling both the `UmbracoApplicationStartingNotification` and `UmbracoApplicationStoppingNotification`.
+A `Component` is a generic wrapper for writing custom code during composition, it has two methods: `Initialize()` and `Terminate()` and these are executed when the Umbraco Application starts up, and when it shuts down, respectively. The functionality of a `Component` is identical to having a class handling both the `UmbracoApplicationStartingNotification` and `UmbracoApplicationStoppingNotification`.
 
-How are the collections populated? - Either by scanning the codebase for c# classes that inherit from a particular base class
-or implement a particular interface (typed scanned) or by being explicitly registered via a `Composer`.
+How are the collections populated? - Either by scanning the codebase for c# classes that inherit from a particular base class or implement a particular interface (typed scanned) or by being explicitly registered via a `Composer`.
 
-Umbraco setup the default set of components and collections that deliver the core 'out of the box' Umbraco behaviour.
-These default collections can be removed, reordered, replaced, etc. by implementing `IComposer`'s and `IComponent`s to customise and extend Umbraco's behaviour.
+Umbraco setup the default set of components and collections that deliver the core 'out of the box' Umbraco behaviour. These default collections can be removed, reordered, replaced, etc. by implementing `IComposer`'s and `IComponent`s to customise and extend Umbraco's behaviour.
 
 ### Example - Creating a Composer to listen for ContentSavingNotification
 
 This example shows how to create a component and a notification handler for the `ContentSavingNotification`, (perhaps to check for explicit words, or some custom business logic that needs to run before the content item is saved in Umbraco).
 
 We create a new C# class that implements `IComposer` and use it register our notification handler.
-
 
 ```csharp
 using System.Linq;
@@ -63,12 +61,10 @@ namespace My.Website
         }
     }
 }
-
 ```
 
 {% hint style="warning" %}
-Ordering of composers is important, the last one added can override a previously added composer! Make sure, when overriding,
-that your composer that is doing the overriding, is 'composing', after the composer has 'composed' the element you wish to override!
+Ordering of composers is important, the last one added can override a previously added composer! Make sure, when overriding, that your composer that is doing the overriding, is 'composing', after the composer has 'composed' the element you wish to override!
 {% endhint %}
 
 ### Example - Explicitly Registering a new custom OEmbedProvider
@@ -146,50 +142,40 @@ public class SubscribeToContentServiceSavingComposer : ComponentComposer<Subscri
 
 ## Collections
 
->"Collections of elements", for example, the ContentFinders collection. - Collections are another concept that Umbraco uses to make things simpler, on top of DI. A collection builder builds a collection, allowing users to add and remove types before anything is registered into DI.
+> "Collections of elements", for example, the ContentFinders collection. - Collections are another concept that Umbraco uses to make things simpler, on top of DI. A collection builder builds a collection, allowing users to add and remove types before anything is registered into DI.
 
 Below is a list of collections with their corresponding 'collection type' and how items for this collection 'out of the box' are registered.
 
-
-| Collection                | Type      | Registration                                                      |
-| ---                       | ---       | ---                                                               |
-| Actions                   | Lazy      | Type scanned for `IAction`                                        |
-| CacheRefreshers           | Lazy      | Type scanned for `ICacheRefresher`                                |
-| Components                | Ordered   | Explicit Registration                                             |
-| ContentApps               | Ordered   | Package.manifest & Explicit Registration                          |
-| ContentFinders            | Ordered   | Explicit Registration                                             |
-| Dashboards                | Weighted  | Package.manifest & Explicit Registration                          |
-| DataEditors               | Lazy      | Type scanned for `IDataEditor`                                    |
-| EditorValidators          | Lazy      | Type scanned for `IEditorValidator`                               |
-| HealthChecks              | Lazy      | Type scanned for `HealthCheck`                                    |
-| ManifestValueValidators   | Set       | Explicit Registration                                             |
-| OEmbedProviders           | Ordered   | Explicit Registration                                             |
-| PropertyValueConverters   | Ordered   | Type scanned for `IPropertyValueConverter`                        |
-| SearchableTrees           | Lazy      | Type scanned for `ISearchableTree`                                |
-| Sections                  | Ordered   | Package.manifest & Explicit Registration                          |
-| TourFilters               | Base      | Empty collection                                                  |
-| Trees                     | Base      | Type scanned. Must inherit `TreeControllerBase` & use `[Tree]`    |
-| UrlProviders              | Ordered   | Explicit Registration                                             |
-| UrlSegmentProviders       | Ordered   | Explicit Registration                                             |
-| Validators                | Lazy      | Explicit Registration                                             |
+| Collection              | Type     | Registration                                                   |
+| ----------------------- | -------- | -------------------------------------------------------------- |
+| Actions                 | Lazy     | Type scanned for `IAction`                                     |
+| CacheRefreshers         | Lazy     | Type scanned for `ICacheRefresher`                             |
+| Components              | Ordered  | Explicit Registration                                          |
+| ContentApps             | Ordered  | Package.manifest & Explicit Registration                       |
+| ContentFinders          | Ordered  | Explicit Registration                                          |
+| Dashboards              | Weighted | Package.manifest & Explicit Registration                       |
+| DataEditors             | Lazy     | Type scanned for `IDataEditor`                                 |
+| EditorValidators        | Lazy     | Type scanned for `IEditorValidator`                            |
+| HealthChecks            | Lazy     | Type scanned for `HealthCheck`                                 |
+| ManifestValueValidators | Set      | Explicit Registration                                          |
+| OEmbedProviders         | Ordered  | Explicit Registration                                          |
+| PropertyValueConverters | Ordered  | Type scanned for `IPropertyValueConverter`                     |
+| SearchableTrees         | Lazy     | Type scanned for `ISearchableTree`                             |
+| Sections                | Ordered  | Package.manifest & Explicit Registration                       |
+| TourFilters             | Base     | Empty collection                                               |
+| Trees                   | Base     | Type scanned. Must inherit `TreeControllerBase` & use `[Tree]` |
+| UrlProviders            | Ordered  | Explicit Registration                                          |
+| UrlSegmentProviders     | Ordered  | Explicit Registration                                          |
+| Validators              | Lazy     | Explicit Registration                                          |
 
 ### Types of Collections
 
-Set
-
-`SetCollectionBuilderBase` - The base class for collection builders that do not order their items explicitly.
-
-Ordered
-
-`OrderedCollectionBuilderBase` - The base class for collection builders that order their items explicitly.
-
-Weighted
-
-`WeightedCollectionBuilder` - The base class for collection builders that order their items by the `[Weight]` attribute.
-
-Lazy
-
-`LazyCollectionBuilderBase` - The base class for collection builders that resolve the types at the last moment, only when the collection is required.
+| Type     | Method                         | Notes                                                                                                                   |
+| -------- | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
+| Set      | `SetCollectionBuilderBase`     | The base class for collection builders that do not order their items explicitly.                                        |
+| Ordered  | `OrderedCollectionBuilderBase` | The base class for collection builders that order their items explicitly.                                               |
+| Weighted | `WeightedCollectionBuilder`    | The base class for collection builders that order their items by the `[Weight]` attribute.                              |
+| Lazy     | `LazyCollectionBuilderBase`    | The base class for collection builders that resolve the types at the last moment, only when the collection is required. |
 
 ### Example - Modifying Collections
 
@@ -222,7 +208,7 @@ namespace My.Website
 
 Umbraco has some useful C# attributes to decorate your composer classes or Types used in collections, to give you further control on how and when your Composers will 'compose'.
 
-### `ComposeBefore` and `ComposeAfter`
+### ComposeBefore and ComposeAfter
 
 A finer-grain mechanism can then be used to refine the order of composition. Each composer can specify that it should compose before or after another composer, using the ComposeBefore and ComposeAfter attributes. For instance:
 
@@ -305,34 +291,18 @@ But maybe they want to swap our two "something" implementations? In this case, a
 Umbraco also has `[Enable]` & `[EnableComposer]` attributes but all composers are enabled by default.
 {% endhint %}
 
-
 ## Runtime Levels
 
 The `Umbraco.Cms.Core.RuntimeLevel` enum contains the following values:
 
-`BootFailed`
-
-The runtime has failed to boot and cannot run.
-
-`Unknown`
-
-The level is unknown.
-
-`Boot`
-
-The runtime is booting.
-
-`Install`
-
-The runtime has detected that Umbraco is not installed at all, ie. there is no database, and is currently installing Umbraco.
-
-`Upgrade`
-
-The runtime has detected an Umbraco install which needed to be upgraded, and is currently upgrading Umbraco.
-
-`Run`
-
-The runtime has detected an up-to-date Umbraco install and is running.
+| Level        | Description                                                                                                                   |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------- |
+| `BootFailed` | The runtime has failed to boot and cannot run.                                                                                |
+| `Unknown`    | The level is unknown.                                                                                                         |
+| `Boot`       | The runtime is booting.                                                                                                       |
+| `Install`    | The runtime has detected that Umbraco is not installed at all, ie. there is no database, and is currently installing Umbraco. |
+| `Upgrade`    | The runtime has detected an Umbraco install which needed to be upgraded, and is currently upgrading Umbraco.                  |
+| `Run`        | The runtime has detected an up-to-date Umbraco install and is running.                                                        |
 
 ## Example of using Ordered Collections and adding types explicitly
 
@@ -430,8 +400,7 @@ namespace TestCollections.Code
 You may wish to create an Umbraco package that allows package consumers to extend and add additional functionality. In this example, we show how you can use the `LazyCollectionBuilderBase` to scan assemblies that implement your interface by using the `TypeLoader`
 
 {% hint style="warning" %}
-Add types from assemblies - be conscious of doing type scanning, as this adds time to boot up of Umbraco.
-If you still need to use type scanning, ensure your Interface implements `IDiscoverable` as this is a type that is scanned once by Umbraco and the results are cached and then filtered. This saves time by re-scanning for types over and over again.
+Add types from assemblies - be conscious of doing type scanning, as this adds time to boot up of Umbraco. If you still need to use type scanning, ensure your Interface implements `IDiscoverable` as this is a type that is scanned once by Umbraco and the results are cached and then filtered. This saves time by re-scanning for types over and over again.
 {% endhint %}
 
 ```csharp

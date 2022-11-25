@@ -341,7 +341,7 @@ public class Person
 }
 ```
 
-After injecting [ContentService](../../../../../reference/management/services/contentservice/) and [ContentTypeService](../../../../../reference/management/services/contenttypeservice/), we can do the following:
+After injecting [ContentService](../../../../../reference/management/services-reference/contentservice/) and [ContentTypeService](../../../../../reference/management/services-reference/contenttypeservice/), we can do the following:
 
 ```csharp
             @using Umbraco.Cms.Core.Services;

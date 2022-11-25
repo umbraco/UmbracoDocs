@@ -1,8 +1,10 @@
 ---
 versionFrom: 9.0.0
 versionTo: 10.0.0
-meta.Title: "Security in Umbraco"
-meta.Description: "This section includes information on Umbraco security, its various security options and configuring how authentication & authorization works in Umbraco"
+meta.Title: Security in Umbraco
+meta.Description: >-
+  This section includes information on Umbraco security, its various security
+  options and configuring how authentication & authorization works in Umbraco
 ---
 
 # Security
@@ -39,13 +41,11 @@ Out of the box Umbraco ships with a custom ASP.NET Core Identity implementation 
 
 ### [External login providers](external-login-providers.md)
 
-The Umbraco users and members supports external login providers (OAuth) for performing authentication of your users/members.
-This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook.
+The Umbraco users and members supports external login providers (OAuth) for performing authentication of your users/members. This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook.
 
 ### [Two-factor authentication](two-factor-authentication.md)
 
-The Umbraco members supports a two-factor authentication (2FA) abstraction for implementing a 2FA provider of your choice.
-This could be any Time-based One-time Password (TOTP) Algorithm, including Microsoft and Google Authenticator Apps
+The Umbraco members supports a two-factor authentication (2FA) abstraction for implementing a 2FA provider of your choice. This could be any Time-based One-time Password (TOTP) Algorithm, including Microsoft and Google Authenticator Apps
 
 ### [BackOfficeUserManager and Notifications](backofficeusermanager-and-notifications.md)
 
@@ -79,4 +79,4 @@ If you need to reset accounts of every other user while you still have administr
 
 * [Routing requirements for backoffice authentication](../routing/authorized.md)
 * [Health Checks](../../extending/health-check/)
-* [Consent Service](../management/services/consentservice.md)
+* [Consent Service](../management/services-reference/consentservice.md)
