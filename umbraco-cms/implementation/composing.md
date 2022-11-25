@@ -222,7 +222,7 @@ namespace My.Website
 
 Umbraco has some useful C# attributes to decorate your composer classes or Types used in collections, to give you further control on how and when your Composers will 'compose'.
 
-### `[ComposeBefore]` and `[ComposeAfter]`
+### `ComposeBefore` and `ComposeAfter`
 
 A finer-grain mechanism can then be used to refine the order of composition. Each composer can specify that it should compose before or after another composer, using the ComposeBefore and ComposeAfter attributes. For instance:
 
@@ -242,7 +242,7 @@ public class ThisComposer : IComposer
 If you create a circular dependency then Umbraco will fail to boot and will report the conflicting/circular dependency.
 {% endhint %}
 
-### [Weight]
+### Weight
 
 This attribute is used only for `WeightedCollectionBuilders` (see list above). It specifies an integer ordinal value for each item to be added to the weighted collection which controls their sort order. The weighting attribute is not applied to the Composers.
 
@@ -265,11 +265,11 @@ namespace Umbraco.Web.Dashboards
 }
 ```
 
-### [HideFromTypeFinder]
+### HideFromTypeFinder
 
 This is used to hide a type from being auto-scanned/added to a collection as in some cases certain items/types may need to be added to a collection manually. For example, a Search package may make it optional whether to replace the 'backoffice search' with an ISearchableTree implementation. Type scanning would make this change automatically at start up if the custom implementation was detected via type scanning. This attribute could hide the class from the scanner.
 
-### [DisableComposer] & [Disable]
+### DisableComposer & Disable
 
 These attributes allow you to disable a particular implementation of a composer or class - Let's say Umbraco ships with two different ways of doing "something" (for instance, two front-end caches). Each way has its own composer, which registers all the relevant elements. Keep in mind that if both composers are detected, there will be some sort of collision. Ideally, we want to disable one of them. That can be achieved with the Disable attribute:
 
@@ -302,7 +302,7 @@ But maybe they want to swap our two "something" implementations? In this case, a
 ```
 
 {% hint style="info" %}
-Note that Umbraco also has a `[Enable]` & `[EnableComposer]` attributes but all composers are enabled by default.
+Umbraco also has `[Enable]` & `[EnableComposer]` attributes but all composers are enabled by default.
 {% endhint %}
 
 
