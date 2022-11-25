@@ -76,7 +76,8 @@ For illustration purposes, the following structure represents the full set of op
         "Enabled": true,
         "FirstRunTime": "",
         "Period": "1.00:00:00"
-      }
+      },
+      "DisableRecordIndexing": false
     },
     "Security": {
       "DisallowedFileUploadExtensions": "config,exe,dll,asp,aspx",
@@ -85,7 +86,9 @@ For illustration purposes, the following structure represents the full set of op
       "DisableFileUploadAccessProtection": false,
       "DefaultUserAccessToNewForms": "Grant",
       "ManageSecurityWithUserGroups": false,
-      "GrantAccessToNewFormsForUserGroups": "admin,editor"
+      "GrantAccessToNewFormsForUserGroups": "admin,editor",
+      "FormsApiKey": "",
+      "EnableAntiForgeryTokenForFormsApi": true,
     },
     "FieldTypes": {
       "DatePicker": {
@@ -327,6 +330,10 @@ This will configure when the record deletion process will run for the first time
 
 Defines how often the record deletion process will run. The default value is `1.00:00:00` which is equivalent to once every 24 hours.  Shorter or longer periods can be set using different datetime strings.
 
+### DisableRecordIndexing
+
+Set this value to `true` to disable the default behavior of indexing the form submissions into the Examine index.
+
 ## Security configuration
 
 ### DisallowedFileUploadExtensions
@@ -366,6 +373,13 @@ There are two "special" values that can be applied within or instead of the comm
 A value of `all` will give access to the form to all user groups.
 
 A value of `form-creator` will give access to all the user groups that the user who created the form is part of.
+
+### FormsApiKey and EnableAntiForgeryTokenForFormsApi
+Available from Forms 10.2.1, the `FormsApiKey` configuration setting can be used to secure the Forms Headless API in server-to-server integrations. When set, API calls will be rejected unless the value of this setting is provided in an HTTP header.
+
+Setting the value of `EnableAntiForgeryTokenForFormsApi` to `true` will disable the anti-forgery protection which by default is in place for the Forms Headless/AJAX API. You will need to do this for server-to-server integrations where it's not possible to provide a valid anti-forgery token in the request.
+
+Read more in the documentation for [Headless/AJAX Forms](../AjaxForms/index.md).
 
 ## Field type specific configuration
 

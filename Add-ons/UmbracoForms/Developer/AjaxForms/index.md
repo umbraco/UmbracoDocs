@@ -367,7 +367,9 @@ In the case of a validation error, a 422 "Unprocessable Entity" status code will
 
 A successful response will return a 202 "Accepted" status code.
 
-## Antiforgery Protection
+## Securing the API
+
+### Antiforgery Protection
 
 When posting forms in the traditional way, via a full page post back, an anti-forgery token is generated and validated.  This provides protection against Cross-Site Request Forgery (CSRF) attacks.
 
@@ -397,6 +399,20 @@ When posting the form, the header value generated can be provided, where it will
         body: JSON.stringify(data),
     });
 ```
+
+### API Key
+
+The antiforgery token security approach is valid for when building a client-side integration with API calls made from the browser.
+
+Providing the token isn't possible though in other headless situations such as server-to-server requests. In these situations, an alternative approach to securing the API is available.
+
+Firstly, with server-to-server integrations you will want to disable the antiforgery token protection.
+
+This is done by setting the `Umbraco:Forms:Security:EnableAntiForgeryTokenForFormsApi` configuration key to a value of `false`.
+
+You should then configure an API key `Umbraco:Forms:Security:FormsApiKey`.  This can be any string value, but shouldn't be easily guessable by a brute force attack.
+
+With this in place any request to the Forms API will be rejected unless the configured value is provided in an HTTP header named `Api-Key`.
 
 ## Rendering and Submitting forms with JavaScript
 
