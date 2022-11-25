@@ -63,7 +63,15 @@ Sometimes you might want to add the images to a specific folder. This folder can
 
 # Advanced Configuration
 
-The RTE can also accept advanced configuration through the `appSettings.json` file which is fed into the TinyMCE configuration. This is within `Umbraco` / `CMS` / `RichTextEditor` and allows you to configure the following; [Commands](https://www.tiny.cloud/docs/advanced/editor-command-identifiers/#executablecommands), [Plugins](https://www.tiny.cloud/docs/configure/integration-and-setup/#plugins), [CustomConfig](https://www.tiny.cloud/docs/configure/integration-and-setup/), [ValidElements](https://www.tiny.cloud/docs/configure/content-filtering/#valid_elements) and [InvalidElements](https://www.tiny.cloud/docs/configure/content-filtering/#invalid_elements). `CustomConfig` is slightly different to the rest as it extends the core config passed into TinyMCE.
+The RTE can also accept advanced configuration through the `appSettings.json` file fed into the TinyMCE configuration. This is within `Umbraco` / `CMS` / `RichTextEditor` and allows you to configure the following:
+
+* [Commands](https://www.tiny.cloud/docs/advanced/editor-command-identifiers/#executablecommands)
+* [Plugins](https://www.tiny.cloud/docs/configure/integration-and-setup/#plugins)
+* [CustomConfig](https://www.tiny.cloud/docs/configure/integration-and-setup/)
+* [ValidElements](https://www.tiny.cloud/docs/configure/content-filtering/#valid_elements)
+* [InvalidElements](https://www.tiny.cloud/docs/configure/content-filtering/#invalid_elements)
+
+`CustomConfig` is slightly different from the rest as it extends the core config passed into TinyMCE.
 
 ## Allowing script tags in the RTE
 
