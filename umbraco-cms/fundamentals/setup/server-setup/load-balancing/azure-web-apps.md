@@ -37,8 +37,6 @@ When an instance of Umbraco starts up it generates some 'temporary' files on dis
 }
 ```
 
-{% tabs %}
-{% tab title="Latest version" %}
 #### Host synchronization
 
 Umbraco runs within a [.NET Host](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/host/generic-host?view=aspnetcore-6.0).
@@ -62,30 +60,6 @@ By default **Umbraco v9.4 & 9.5** uses a system-wide semaphore locking mechanism
 ```
 
 Apply this setting to both the **SCHEDULINGPUBLISHER** Administrative server and the **SUBSCRIBER** scalable public-facing servers.
-{% endtab %}
-
-{% tab title="9.0.0 - 9.4.0" %}
-#### AppDomain synchronization
-
-Each application runs inside an [AppDomain](https://docs.microsoft.com/en-us/dotnet/framework/app-domains/application-domains) which is like a subprocess within the web app process. When an ASP.Net application restarts, the current AppDomain 'winds down' while another AppDomain is started; meaning there can be more than 1 live AppDomain during a restart. Restarts can occur in many scenarios including when an Azure Web App auto transitions between hosts, you scale the instances or you utilize slot swapping.
-
-Some file system based services in Umbraco such as the Published Cache and Lucene files can only be accessed by a single AppDomain at once. Umbraco manages this synchronization by an object called `IMainDom`. By default, this uses a system-wide locking mechanism but this default mechanism doesn't work in Azure Web Apps so we need to swap it out for an alternative database locking mechanism by using the following appSetting:
-
-```json
-{
-    "Umbraco": {
-        "CMS": {
-            "Global": {
-                "MainDomLock" : "SqlMainDomLock"
-            }
-        }
-    }
-}
-```
-
-Apply this setting to both the **SCHEDULINGPUBLISHER** Administrative server and the **SUBSCRIBER** scalable public-facing servers.
-{% endtab %}
-{% endtabs %}
 
 ## Steps to set-up an environment
 

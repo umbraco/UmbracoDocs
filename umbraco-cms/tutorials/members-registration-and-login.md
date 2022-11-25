@@ -115,8 +115,6 @@ However, with the above approach, members will not be assigned to any group auto
 
 Since the member saving form is processed in a controller, we can copy the default UmbRegisterController and add a function to assign the newly created member to a group.
 
-{% tabs %}
-{% tab title="C#" %}
 ```csharp
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -300,8 +298,6 @@ namespace Umbraco.Web.Controllers
     }
 }
 ```
-{% endtab %}
-{% endtabs %}
 
 For an easier implementation, you can copy the above code to a new .cs file and place it in a folder in your solution so that it will be compiled on application startup.
 
@@ -317,8 +313,6 @@ To be able to add the Member Group that we automatically assign from the backoff
 
 In the Backoffice, navigate to the Register partial you created before. Where we would normally be using
 
-{% tabs %}
-{% tab title="C#" %}
 ```csharp
 using (Html.BeginUmbracoForm<UmbRegisterController>(
             "HandleRegisterMember",
@@ -328,13 +322,9 @@ using (Html.BeginUmbracoForm<UmbRegisterController>(
                 RedirectUrl = registerModel.RedirectUrl
             }))
 ```
-{% endtab %}
-{% endtabs %}
 
 we have to instead use the custom controller we added, as well as include an anti-forgery token:
 
-{% tabs %}
-{% tab title="C#" %}
 ```csharp
     using (Html.BeginUmbracoForm<UmbAlternativeRegisterController>(
             "HandleRegisterMember",
@@ -347,8 +337,6 @@ we have to instead use the custom controller we added, as well as include an ant
 
             @Html.AntiForgeryToken()
 ```
-{% endtab %}
-{% endtabs %}
 
 {% hint style="info" %}
 Make sure to replace `UmbRegisterController` with the name of the controller you created in the earlier step - in our example, that is `UmbAlternativeRegisterController`.
