@@ -1,14 +1,12 @@
 ---
 versionFrom: 8.0.0
-meta.Title: "Umbraco Heartcore Backoffice"
-meta.Description: "Tour of Umbraco Heartcore backoffice"
+meta.Title: Umbraco Heartcore Backoffice
+meta.Description: Tour of Umbraco Heartcore backoffice
 ---
 
-# Tour of the Umbraco Backoffice
+# Tour of the Backoffice
 
 In this article you will get an introduction to the different sections in the Umbraco Backoffice.
-
-<iframe width="800" height="450" title="Umbraco Heartcore: Tour Around The Backoffice" src="https://www.youtube.com/embed/bQT2QcMYvwE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Login screen
 
@@ -108,19 +106,18 @@ The headless dashboard has some information about your Heartcore project. Depend
 
 The dashboard shows you:
 
-- What plan you are on
-- How many available languages you have
-- How many user groups you have
+* What plan you are on
+* How many available languages you have
+* How many user groups you have
 
 ![Headless Dashboard](images/headless-dashboard.png)
 
-In addition you are able to set the Content Delivery API to either Public or Private. If the API is set to private you will have to have an [API key assigned](../Backoffice-Users-and-API-Keys) to your user which you will need when fetching content from the APIs.
+In addition you are able to set the Content Delivery API to either Public or Private. If the API is set to private you will have to have an[ API key assigned](backoffice-users-and-api-keys.md) to your user which you will need when fetching content from the APIs.
 
 From the Headless tree you can browse and explore the REST API endpoints as well as create and manage your Webhooks.
 
-- API Browser: In the API Browser you can test your API endpoints. Learn more about this in the [API Browser article](../API-Browser).
-
-- Webhooks: You can create and manage Webhooks for various content actions. Learn more about how this is setup in the [Webhooks article](../Webhooks).
+* API Browser: In the API Browser you can test your API endpoints. Learn more about this in the [API Browser article](api-browser.md).
+* Webhooks: You can create and manage Webhooks for various content actions. Learn more about how this is setup in the[ Webhooks article](webhooks.md).
 
 ## Users
 
@@ -128,7 +125,7 @@ In this section you can manage all the users that are currently working on the p
 
 You can segment your users into different User Groups. You can add Users to existing Groups or create your own custom User Groups. How many of these groups you can create depends on the plan your project is on.
 
-For each user on your project you can generate a unique API key. This key will be used to access the Content Management API, and can be revoked at any time. Learn more about the API Keys in the [Backoffice users and API keys article](../Backoffice-Users-and-API-Keys).
+For each user on your project you can generate a unique API key. This key will be used to access the Content Management API, and can be revoked at any time. Learn more about the API Keys in the [Backoffice users and API keys article.](backoffice-users-and-api-keys.md)
 
 ## Members
 
