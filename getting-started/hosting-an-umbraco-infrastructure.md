@@ -7,7 +7,7 @@ meta.description: >-
 
 # Hosting an Umbraco project
 
-You can find resources to guide you through the process of installing and hosting different types of Umbraco projects. Here you will find details on Azure setups, our [Umbraco Cloud](../Umbraco-Cloud/) hosting service, how to upgrade Umbraco, and much more.
+You can find resources to guide you through the process of installing and hosting different types of Umbraco projects. Here you will find details on Azure setups, our [Umbraco Cloud](../umbraco-cloud) hosting service, how to upgrade Umbraco, and much more.
 
 In this section you will also find information on areas such as load balancing, deployments and user management.
 

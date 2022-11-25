@@ -77,7 +77,7 @@ namespace Umbraco.Docs.Samples.Web.Notifications
     <td>
     Published when IContentService.Save is called in the API and after data has been persisted.<br />
     NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Save method call (true by default).<br />
-    <em>NOTE: <a href="../determining-new-entity">See here on how to determine if the entity is brand new</a></em><br />
+    <em>NOTE: <a href="determining-new-entity.md">See here on how to determine if the entity is brand new</a></em><br />
     SavedEntities: The saved collection of IContent objects.
     </td>
   </tr>
@@ -112,7 +112,7 @@ namespace Umbraco.Docs.Samples.Web.Notifications
     <td>
     Published when IContentService.Publish is called in the API and after data has been published.<br />
     NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Publish method call (true by default).<br />
-    <em>NOTE: <a href="../determining-new-entity">See here on how to determine if the entity is brand new</a></em><br />
+    <em>NOTE: <a href="determining-new-entity.md">See here on how to determine if the entity is brand new</a></em><br />
     PublishedEntities: The published collection of IContent objects.
     </td>
   </tr>

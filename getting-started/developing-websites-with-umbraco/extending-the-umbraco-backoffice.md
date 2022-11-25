@@ -17,42 +17,42 @@ It is recommended that you have some knowledge and prior experience working with
 
 ## Resources for extending
 
-* [Package manifest](../../Extending/Property-Editors/Package-Manifest/index.md)
-* [Angular docs / Backoffice UI API](../../Reference/Angular/)
-* [C# API Docs](../../Reference/API-Documentation/)
+* [Package manifest](../../umbraco-cms/extending/property-editors/package-manifest.md)
+* [Angular docs / Backoffice UI API](../../umbraco-cms/reference/angular)
+* [C# API Docs](../../umbraco-cms/reference/api-documentation.md)
 
 ## What can be extended?
 
 To get you started here are some examples of what you can extend in Umbraco:
 
-[Property Editors](../../Extending/Property-Editors/)
+[Property Editors](../../umbraco-cms/extending/property-editors)
 
-[Dashboards](../../Extending/Dashboards/)
+[Dashboards](../../umbraco-cms/extending/dashboards.md)
 
-[Backoffice Tours](../../Extending/Backoffice-Tours/)
+[Backoffice Tours](../../umbraco-cms/extending/backoffice-tours.md)
 
-[Sections](../../Extending/Section-Trees/sections/)
+[Sections](../../umbraco-cms/extending/section-trees/sections.md)
 
-[Trees](../../Extending/Section-Trees/trees/)
+[Trees](../../umbraco-cms/extending/section-trees/trees)
 
-[Content Apps](../../Extending/Content-Apps/)
+[Content Apps](../../umbraco-cms/extending/content-apps.md)
 
-[Backoffice Search](../../Extending/Backoffice-Search/)
+[Backoffice Search](../../umbraco-cms/extending/backoffice-search.md)
 
-[Health checks](../../Extending/Health-Check/)
+[Health checks](../../umbraco-cms/extending/health-check)
 
-[File system providers](../../Extending/FileSystemProviders/)
+[File system providers](../../umbraco-cms/extending/filesystemproviders)
 
 ## Tutorials
 
 If you're in a creative mood then why not experiment with some of our tutorials:
 
-[Creating a Property Editor](../../Tutorials/Creating-a-Property-Editor/)
+[Creating a Property Editor](../../umbraco-cms/tutorials/creating-a-property-editor)
 
-[Creating a Custom Content Apps](../../Extending/Content-Apps/#creating-a-custom-content-app)
+[Creating a Custom Content Apps](../../umbraco-cms/extending/content-apps.md#creating-a-custom-content-app)
 
-[Creating a Custom Dashboard](../../Tutorials/Creating-a-Custom-Dashboard/)
+[Creating a Custom Dashboard](../../umbraco-cms/tutorials/creating-a-custom-dashboard.md)
 
-[Creating a Package](../../Extending/Packages/Creating-a-Package/)
+[Creating a Package](../../umbraco-cms/extending/packages/creating-a-package.md)
 
 ![Extending Umbraco](images/Headless\_Email\_hero\_780x405px.png)

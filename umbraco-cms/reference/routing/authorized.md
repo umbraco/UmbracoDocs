@@ -5,7 +5,7 @@ meta.Title: "Routing Requirements for Backoffice authentication"
 meta.Description: "Requirements for authenticating requests for the backoffice"
 ---
 
-# Routing requirements for backoffice authentication
+# Backoffice authentication
 
 In order for Umbraco to authenticate a request for the backoffice, the routing needs to be specific. Any URL that routes to:
 
@@ -38,7 +38,7 @@ Defining a route is done with the standard .NET Core MVC routing practices, howe
 
 When creating custom routes you can either do it directly in the `Startup.cs` files, or with a pipeline filter in a composer which looks something like:
 
-```C#
+```csharp
 public class MyControllerComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
@@ -67,7 +67,7 @@ public class MyControllerComposer : IComposer
 
 The signature of `MapUmbracoRoute<T>` is as follows
 
-```C#
+```csharp
 public static void MapUmbracoRoute<T>(
             this IEndpointRouteBuilder endpoints,
             string rootSegment,
@@ -89,7 +89,7 @@ public static void MapUmbracoRoute<T>(
 
 Using the `MapUmbracoRoute` extension method is completely optional though, it's just a neat helper to ensure controllers get routed in the same way. It's very important to note though that if your controller uses an area, like in this example, you need to specify this on your controller using the `Area` attribute, this is not an Umbraco specific thing though, in this example the controller looks like this: 
 
-```C#
+```csharp
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Web.Common.Controllers;
 

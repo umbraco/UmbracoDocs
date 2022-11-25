@@ -5,7 +5,7 @@ meta.Title: "Special Property Type Aliases for Routing"
 meta.Description: "Describes special property type aliases which can be used to customise routing"
 ---
 
-# Special Property Type aliases for routing
+# Routing properties
 
 _There are a few special/reserved Umbraco Property Type aliases that can be used which can manipulate how the standard Umbraco routing pipeline works. You can add these Property Types to any Document Type and if values are assigned to these properties, Umbraco will adjust its routing accordingly. See below for full details._
 
