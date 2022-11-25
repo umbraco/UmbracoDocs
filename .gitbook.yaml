@@ -5,5 +5,5 @@ root: ./
 
 redirects:
     umbraco-cms/fundamentals/setup/upgrading/general: umbraco-cms/fundamentals/setup/upgrading/README.md
-    umbraco-cms/reference/management/services: umbraco-cms/reference/management/services-reference/README.md
-    umbraco-cms/reference/management/models: umbraco-cms/reference/management/percistence-models-reference/README.md
+    umbraco-cms/reference/management/services: umbraco-cms/reference/management/services-reference
+    umbraco-cms/reference/management/models: umbraco-cms/reference/management/persistence-models-reference
