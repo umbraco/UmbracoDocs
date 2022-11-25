@@ -26,8 +26,4 @@ Allows you to disable the keep alive http calls.
 
 ### Keep alive ping URL
 
-If you want to change the url you need to call to keep the site alive, update this property, it should not contain a trailing slash.
-
-{% hint style="info" %}
-Due to a bug this setting is ignored [pre v9.5.0](https://github.com/umbraco/Umbraco-CMS/pull/12224)
-{% endhint %}
+If you want to change the URL you need to call to keep the site alive, update this property, it should not contain a trailing slash.

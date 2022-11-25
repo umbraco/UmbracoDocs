@@ -13,7 +13,7 @@ For more information see the [Security Settings documentation](../configuration/
 
 ## Password reset settings
 
-Umbraco backend users can [reset their own password](../password-reset.md), or if they try too much, have a locked out account.
+Umbraco backend users can [reset their own password](password-reset.md), or if they try too much, have a locked out account.
 
 To deactivate the User password reset look at the [Umbraco Settings Security](../configuration/securitysettings.md#allow-password-reset) section.
 

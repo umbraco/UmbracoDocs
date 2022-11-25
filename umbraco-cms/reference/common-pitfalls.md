@@ -6,7 +6,7 @@ meta.Description: "Information on common Pitfalls and Anti-Patterns in Umbraco"
 
 # Common Pitfalls & Anti-Patterns
 
-_This section is ultra important! It will describe many common pitfalls that developers fall into. Some of the anti-patterns mentioned here can bring your site to a grinding halt, cause memory leaks, or make your site unstable or perform poorly. Make sure you read this section - it might save your site! Another great source of information is Shannon Deminick's Codegarden 2021 talk about performance tuning which can be seen [here](https://www.youtube.com/watch?v=RM2EGXm6DYU&list=PLG_nqaT-rbpx6wIDr5ufUlbHkg6qB3sxH)_
+This section describes many common pitfalls that developers fall into. Some of the anti-patterns mentioned here can bring your site to a grinding halt, cause memory leaks, or make your site unstable or perform poorly. Make sure you read this section - it might save your site.
 
 ## Usage of Singletons and Statics
 
