@@ -5,11 +5,13 @@ meta.Description: "In this article we list the breaking changes between Umbraco 
 
 # Breaking changes
 
-Most breaking changes are introduced due to updated dependencies. The breaking changes in .NET 7 and ASP.NET Core 7 are documented by [Microsoft](https://learn.microsoft.com/en-us/dotnet/core/compatibility/7.0).
+Most breaking changes are introduced due to **updated dependencies**. The breaking changes in .NET 7 and ASP.NET Core 7 are documented by [Microsoft](https://learn.microsoft.com/en-us/dotnet/core/compatibility/7.0).
 
 Besides the documented changes, we have also seen a few method signatures that are changed to support Nullable-Reference-Types.
 
-The breaking changes in TinyMCE are documented in the migration guides for [version 4 to 5](https://www.tiny.cloud/docs/migration-from-4x/) and from [version 5 to 6](https://www.tiny.cloud/docs/tinymce/6/migration-from-5x/).
+If you are using **TinyMCE** plugins or custom TinyMCE configuration you need to migrate to the latest version. Learn more about this in the [Rich Text Editor documentation](../../../backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor).
+
+The breaking changes in TinyMCE are also documented in the official migration guides for [version 4 to 5](https://www.tiny.cloud/docs/migration-from-4x/) and from [version 5 to 6](https://www.tiny.cloud/docs/tinymce/6/migration-from-5x/).
 
 The breaking changes in Umbraco 11 are mainly the removal of classes, methods, and so on, marked as obsolete in Umbraco 9.
 

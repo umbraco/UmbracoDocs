@@ -1,4 +1,4 @@
-# Rich Text Editor Configuration
+# Configuration
 
 The Rich Text Editor (RTE) in Umbraco can be configured in many different ways, and you have full control over which options you want to give you content editors.
 
@@ -8,7 +8,7 @@ In this article you can learn about the various ways you can configure the RTE.
 
 You have full control over which options should be available on the RTE.
 
-![Toolbar: All options enabled](../../built-in-property-editors/rich-text-editor/images/toolbar-all-options.png)
+![Toolbar: All options enabled](../../built-in-property-editors/rich-text-editor/images/toolbar-full-11.png)
 
 In the examble above, all 34 options have been enabled. The options include copy/paste buttons, font styles like bold and italics, bullet lists and options to embed videos and insert images.
 
@@ -30,18 +30,19 @@ If inserted images are larger than the dimensions defined here, the images will 
 
 ## Mode
 
-The Rich Text Editor comes in two different modes: Classic and Distraction Free.
+The Rich Text Editor comes in two different modes: Classic and Inline.
 
-*   Classic
+### Classic
 
-    The default mode, which displays the toolbar in the top.
+The default mode which displays the toolbar at the top.
 
-    ![RTE Mode: Classic](../../built-in-property-editors/rich-text-editor/images/rte-mode-classic-new.png)
-*   Distraction Free
+![RTE Mode: Classic](../../built-in-property-editors/rich-text-editor/images/rte-mode-classic-11.png)
 
-    In this mode the toolbar is hidden, and only shows up when content in the editor is highlighted.
+### Inline
 
-    ![RTE Mode: Distraction Free](../../built-in-property-editors/rich-text-editor/images/rte-mode-distractionfree.png)
+In this mode the toolbar is hidden, and only shows up when content in the editor is highlighted.
+
+![Rich Text Editor Inline mode](../../built-in-property-editors/rich-text-editor/images/inline-mode-new.png)
 
 ## Overlay Size
 

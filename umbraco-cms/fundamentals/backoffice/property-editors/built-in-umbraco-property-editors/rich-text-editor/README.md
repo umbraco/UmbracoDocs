@@ -6,6 +6,17 @@
 
 The Rich Text Editor (RTE) is based on [tinymce](https://www.tinymce.com/) and is highly configurable. Depdending on the configuration, it will give your content editors more flexibility when working with content that should be more than only plain text.
 
+{% hint style="info" %}
+**Are you using custom configuration or plugins with TinyMCE?**
+
+In Umbraco 11 the TinyMCE version supported has been upgraded from version 4 to version 6. You need to migrate to the latest version if you are using TinyMCE plugins or custom configuration.
+
+If your site is upgraded from an older version, follow the migration guides below to upgrade the TinyMCE version as well.
+
+* [Migrate from version 4 to version 5](https://www.tiny.cloud/docs/migration-from-4x/)
+* [Migrate from version 5 to version 6](https://www.tiny.cloud/docs/tinymce/6/migration-from-5x/)
+{% endhint %}
+
 ## [Configuration options](configuration.md)
 
 Customize everything from toolbar options to editor size to where pasted images are saved.
@@ -20,7 +31,7 @@ Use CSS to define specific editor styles and add them to the RTE.
 
 ## Content Example
 
-![Rich Text Editor - Content](../../built-in-property-editors/rich-text-editor/images/rte-content.png)
+![Rich Text Editor - Content](../../built-in-property-editors/rich-text-editor/images/rte-content-11.png)
 
 ## MVC View Example
 
