@@ -9,7 +9,7 @@ It includes REST API documentation, the basics on how to get started and how to 
 Reference documentation for the APIs available, as well as details about common HTTP headers, versioning, REST Standard and how to work with authentication and authorization.
 
 * [Authentication and Authorization](../api-documentation/#authentication-and-authorization)
-* [Content Delivery API](../api-documentation/Content-Delivery/)
+* [Content Delivery API](../api-documentation/content-delivery/)
 * [Content Management API](../api-documentation/content-management/)
 * [GraphQL API](../api-documentation/graphql/)
 

@@ -22,7 +22,7 @@ Having multiple environments can be a great help when you want to test your cont
 
 ## [Deployment workflow](deployment-workflow/)
 
-When you have multiple environments on your Heartcore project, you need to make sure that you follow the correct deployment workflow. In this section, you will find more details about the workflow along with descriptions of the two steps: [Structure deployments](Deployment-workflow/Structure-deployment/) and [Content and media transfers](Deployment-workflow/Content-transfer/).
+When you have multiple environments on your Heartcore project, you need to make sure that you follow the correct deployment workflow. In this section, you will find more details about the workflow along with descriptions of the two steps:[ Structure deployments](deployment-workflow/structure-deployment.md) and [Content and media transfers](deployment-workflow/content-transfer.md).
 
 ## [The Umbraco Backoffice](the-umbraco-backoffice.md)
 
