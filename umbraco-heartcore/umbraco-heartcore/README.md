@@ -4,7 +4,7 @@ In this section you will find documentation on how to work with Umbraco Heartcor
 
 It includes REST API documentation, the basics on how to get started and how to work with the available Client Libraries. Please note that Umbraco Heartcore is a specific type of project only available via Umbraco Cloud.
 
-## [API Documentation for the Umbraco Heartcore REST API endpoints](../API-Documentation/)
+## [API Documentation for the Umbraco Heartcore REST API endpoints](../api-documentation/)
 
 Reference documentation for the APIs available, as well as details about common HTTP headers, versioning, REST Standard and how to work with authentication and authorization.
 
