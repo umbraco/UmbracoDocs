@@ -4,9 +4,9 @@ meta.title: Scheduling with hosted services in Umbraco
 meta.Description: Use hosted services to run a background task
 ---
 
-# Scheduling with RecurringHostedServiceBase
+# Scheduling
 
-In Umbraco 9+ it is possible to run recurring code using a hosted service. Below is a complete example showing how to create and register a hosted service that will regularly empty out the recycle bin every five minutes.
+It is possible to run recurring code using a hosted service. Below is a complete example showing how to create and register a hosted service that will regularly empty out the recycle bin every five minutes.
 
 {% hint style="warning" %}
 Be aware you may or may not want this hosted service code to run on all servers, if you are using Load Balancing with multiple servers, see [load balancing documentation](../fundamentals/setup/server-setup/load-balancing/) for more information
@@ -14,7 +14,7 @@ Be aware you may or may not want this hosted service code to run on all servers,
 
 ## RecurringHostedService example
 
-```
+```csharp
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Logging;
 using Umbraco.Cms.Core.Scoping;

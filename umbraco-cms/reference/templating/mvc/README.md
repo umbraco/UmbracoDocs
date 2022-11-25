@@ -18,7 +18,7 @@ Documentation covering how to use Partial Views. This is not documentation about
 ## [Child Actions](child-actions.md)
 Using MVC Child Actions in Umbraco
 
-## [ViewComponents](viewComponents.md)
+## [ViewComponents](viewcomponents.md)
 Using MVC Child Actions in Umbraco
 
 ## [Querying](querying.md)

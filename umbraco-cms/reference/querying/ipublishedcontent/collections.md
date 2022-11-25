@@ -3,7 +3,7 @@ versionFrom: 9.0.0
 versionTo: 10.0.0
 ---
 
-# IPublishedContent Collections
+# Collections
 
 All collections of `IPublishedContent` are `IEnumerable<IPublishedContent>`.
 This means that all C# LINQ statements can be used to filter and query the collections.
@@ -209,7 +209,7 @@ Returns a boolean True/False value determined by whether there are any items in 
 bool hasChildren =  Model.Children.Any();
 ```
 
-## [Filtering Conventions](#filtering-conventions)
+## Filtering Conventions
 
 Some filtering and routing behaviour is dependent upon a set of special naming conventions for certain properties. [See also: Routing Property Conventions](../../routing/routing-properties.md)
 
