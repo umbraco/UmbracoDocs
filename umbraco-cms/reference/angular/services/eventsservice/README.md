@@ -506,4 +506,4 @@ Available from 8.4.0
 ```
 $scope.$emit("$changeTitle", title);
 ```
-For more information see [Change title](changetitle-md)
+For more information see [Change title](changetitle.md)
