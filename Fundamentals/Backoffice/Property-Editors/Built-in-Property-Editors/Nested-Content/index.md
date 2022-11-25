@@ -103,9 +103,11 @@ Example:
 @{
     var items = Model.Value<IEnumerable<IPublishedElement>>("nest");
 
-    foreach (var item in items)
-    {
-        // Render your content, e.g. item.Value<string>("heading")
+    if (items != null) {
+        foreach (var item in items)
+        {
+            // Render your content, e.g. item.Value<string>("heading")
+        }
     }
 }
 ```
