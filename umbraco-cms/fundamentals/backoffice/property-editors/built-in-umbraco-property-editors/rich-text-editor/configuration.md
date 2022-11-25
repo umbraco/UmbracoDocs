@@ -76,7 +76,7 @@ The RTE can also accept advanced configuration through the `appSettings.json` fi
 
 ## Allowing script tags in the RTE
 
-Sometimes you want to allow your content editors to be able to add `<script>` tags into the RTE, this tag is classed as invalid by default so the configuration needs updated to allow it. This is not something that can be done through the CMS and requires advanced configuration in the `appSettings.json` file. This uses the `ValidElements` property to append `,script[*]` to the pre-existing list of valid elements as shown below.
+Sometimes you want to allow your content editors to be able to add `<script>` tags into the RTE. This tag is classed as invalid by default which means the configuration needs to be updated to allow it. This is not something that can be done through the CMS and requires advanced configuration in the `appSettings.json` file. It uses the `ValidElements` property to append `,script[*]` to the pre-existing list of valid elements as shown below.
 
 ```
 {
