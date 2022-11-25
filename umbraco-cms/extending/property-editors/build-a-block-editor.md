@@ -1,9 +1,10 @@
 ---
 versionFrom: 10.0.0
 ---
+
 # Build a Block Editor
 
-Before reading this document we highly recommend that you familiarise yourself with [the basics of developing a custom Property Editor for Umbraco](index.md).
+Before reading this document we highly recommend that you familiarise yourself with the [basics of developing a custom Property Editor for Umbraco](build-a-block-editor.md).
 
 {% hint style="info" %}
 [Click here for an overview with a working example and references back to the relevant documention.](https://umbraco.com/blog/deep-dive-the-block-list-editor/)
@@ -92,8 +93,6 @@ namespace MyNamespace
 ```
 {% endtab %}
 {% endtabs %}
-
-
 
 Notice how the `PropertyEditorAsset` attribute is used to load the `UnicornBlocks.controller.js` JavaScript file.
 
@@ -266,7 +265,7 @@ if (vm.layout.length > 0) {
 }
 ```
 
-See [blockEditorModelObject](https://our.umbraco.com/apidocs/v8/ui/#/api/umbraco.services.blockEditorModelObject#methods_getBlockObject) for the getBlockObject method for more information on the properties avaiable on a Block Object.
+See [blockEditorModelObject](https://our.umbraco.com/apidocs/v8/ui/#/api/umbraco.services.blockEditorModelObject#methods\_getBlockObject) for the getBlockObject method for more information on the properties avaiable on a Block Object.
 
 ## Remove a Block
 

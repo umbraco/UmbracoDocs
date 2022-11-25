@@ -1,9 +1,4 @@
 ---
-state: partial
-updated-links: false
-verified-against: alpha-3
-versionFrom: 9.0.0
-meta.Title: "Umbraco Property Editors"
 description: "Guide on how to work with and create Property Editors in Umbraco"
 ---
 
@@ -40,4 +35,4 @@ Learn how to extend Property editors to track entity references inside the prope
 
 ## More information
 
-* [Built in Property Editors](../../fundamentals/backoffice/property-editors/built-in-property-editors/)
+* [Built in Property Editors](../../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/)

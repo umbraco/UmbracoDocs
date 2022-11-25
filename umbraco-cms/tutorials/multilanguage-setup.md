@@ -117,8 +117,8 @@ When you return to your content node you will notice two things:
 To add culture and hostnames, follow these steps:
 
 1. Go to the **Content** tab.
-2. Right-click on the **...** dots next to the **Contact Us** content node and select **Culture and Hostnames...**.
-3.  In the **Allow access to assign culture and hostnames** pane, let's add a domain for each hostname, like it's done here:\
+2. Right-click on the **...** dots next to the **Contact Us** content node and select **Culture and Hostnames...**
+3.  In the **Culture and Hostnames...** pane, let's add a domain for each hostname, like it's done here:\
     \
 
 

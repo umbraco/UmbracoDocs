@@ -208,7 +208,7 @@ imagePosition = Model.GetParameterValue<string>("imagePosition","full-width");
 
 ### Runtime minification cache busting in Production
 
-If your custom property editor doesn't load when your project is deployed, you may need to modify your [Runtime Minification Settings](/Reference/Configuration/RuntimeMinificationSettings/index.md). The minified bundle cache may need to be "busted" to get your new code to load. For example, to bust the cache whenever the app is restarted, you can use this configuration:
+If your custom property editor doesn't load when your project is deployed, you may need to modify your [Runtime Minification Settings](../reference/configuration/runtimeminificationsettings.md). The minified bundle cache may need to be "busted" to get your new code to load. For example, to bust the cache whenever the app is restarted, you can use this configuration:
 
 ```json
 "Umbraco": {

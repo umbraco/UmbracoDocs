@@ -1,7 +1,4 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Umbraco Sections & Trees"
 description: "An explanation on sections and trees in Umbraco"
 ---
 
@@ -77,31 +74,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 {% endtab %}
-
-{% tab title="9.0.0 - 9.2.0" %}
-You can achieve this by using a C# class which implements `IComposer` as shown below.
-
-```csharp
-using My.Website.Sections;
-using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Cms.Core.Sections;
-
-namespace My.Website.Composers
-{
-    public class SectionComposer : IComposer
-    {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.Sections().Append<MyFavouriteThingsSection>();
-        }
-    }
-}
-```
-{% endtab %}
 {% endtabs %}
-
-
 
 This would also create a new section called 'My Favourite Things' in your Umbraco Backoffice.
 
@@ -139,7 +112,7 @@ When your new custom section appears, you'll notice only the section 'Alias' is 
 
 Create a /lang folder in the folder where you are creating the implementation for your custom section. If you do not have one already, create a `/lang` folder within the folder where you are creating the implementation for your custom section, eg. `/App_Plugins/MyFavouriteThings/lang/`.
 
-It is worth knowing that the `/lang` folder does not have to be directly in the MyFavouriteThings folder, it can be nested deeper if you need it to be. The only requirement is that the folder is called lang. E.g. *~/App_Plugins/MyFavouriteThings/Some/Another/Lang/*.
+It is worth knowing that the `/lang` folder does not have to be directly in the MyFavouriteThings folder, it can be nested deeper if you need it to be. The only requirement is that the folder is called lang. E.g. _\~/App\_Plugins/MyFavouriteThings/Some/Another/Lang/_.
 
 Inside this folder create a file called **en-us.xml**. This is the 'default' fallback language translation file. Add the following definition:
 
