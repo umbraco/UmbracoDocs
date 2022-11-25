@@ -54,10 +54,8 @@ you should specify this with a corresponding name in a configuration file such a
 
 ## Access secrets in a Umbraco Solution
 
-When saving a secret for a Umbraco cloud environment, it will be stored in a key vault and loaded by the app service (using a key vault reference) as an environment variable.
+Secrets for cloud environments are stored in a key vault and loaded by the app service (using a key vault reference) as an environment variable.
 
-This enables you to get the value at runtime as you normally would fetch an environment variable using the method ```GetEnvironmentVariable```,
-getting it from the System namespace in .NET.
+This enables you to get the value at runtime as you normally would fetch an environment variable.
 
-
-
+You can use the method ```GetEnvironmentVariable```, getting it from the System namespace in .NET.
