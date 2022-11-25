@@ -98,6 +98,13 @@ Or, alternatively:
     <img src="@Model.Image.GetCropUrl(height: 300, width: 400, imageUrlGenerator: Current.ImageUrlGenerator)" />
 }
 ```
+:::note
+Creating multiple crop URLs directly in your template will result in a different image, which will fill up the Azure Blob storage cache folder adding to the overall media storage on the project plan. 
+
+An option to be considered will be using cache trimming trimCache=true so cached processed images can be automatically deleted after being created a certain amount of days ago (maxDays): https://imageprocessor.org/imageprocessor-web/configuration/. 
+
+Note that Umbraco 7/8 previously shipped with config to turn this off, since it had some performance issues in earlier ImageProcessor versions.
+:::
 
 ### CSS background example to output a "banner" crop from a cropper property with alias "image"
 
