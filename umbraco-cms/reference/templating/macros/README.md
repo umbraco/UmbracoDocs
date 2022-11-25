@@ -9,7 +9,7 @@ _Describes how to set up a macro, use macro parameters & configuring caching. De
 
 ## What is a macro
 
-A macro is 'wrapper' for a reusable piece of functionality that you can utilise in different places throughout your site.
+A macro is 'wrapper' for a reusable piece of functionality that you can utilize in different places throughout your site.
 
 You can use macros in your templates, like MVC Partial views - however they differ in that they can be configured to work with Parameters and Caching, that can be updated by editors via the Umbraco Backoffice.
 So if you allow a macro to be added to a Rich Text Editor or Grid cell, the editor, at the point of inserting the macro can supply the parameter values.

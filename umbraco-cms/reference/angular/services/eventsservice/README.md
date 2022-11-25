@@ -505,7 +505,9 @@ https://github.com/umbraco/Umbraco-CMS/blob/e8bb3b01aacc50fc096d726a83d3bd6a9147
 **Setting the page title**
 
 Available from 8.4.0
+
 ```
 $scope.$emit("$changeTitle", title);
 ```
-For more information see [Change title](changeTitle)
+
+For more information see [Change title](changetitle.md)
