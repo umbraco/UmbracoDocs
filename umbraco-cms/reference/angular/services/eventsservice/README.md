@@ -7,8 +7,6 @@ needsV9Update: "true"
 
 The events service allows different components in Umbraco to broadcast and listen for global events.
 
-https://github.com/umbraco/Umbraco-CMS/blob/v8/contrib/src/Umbraco.Web.UI.Client/src/common/services/events.service.js
-
 ## Using the events service in your custom code
 
 ### Broadcasting an event
