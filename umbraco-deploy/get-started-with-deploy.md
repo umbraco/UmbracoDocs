@@ -1,6 +1,5 @@
 ---
-meta.Title: "Getting started with Umbraco Deploy"
-meta.Description: "How does Umbraco Deploy work and how to get started using Umbraco Deploy "
+description: "How does Umbraco Deploy work and how to get started using Umbraco Deploy "
 ---
 
 # Getting started with Umbraco Deploy
