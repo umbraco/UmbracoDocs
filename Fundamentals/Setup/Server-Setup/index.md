@@ -9,7 +9,7 @@ versionTo: 10.0.0
 
 *This section describes different ways of setting up servers for use with Umbraco*
 
-## SSL/HTTPS
+## Secure Sockets Layer (SSL) and HTTPS
 
 We strongly encourage the use of HTTPS with Umbraco installations especially in production environments. Using HTTPS will greatly enhance the security of your website, see the [Security reference](../../../Reference/Security/index.md) for more information.
 

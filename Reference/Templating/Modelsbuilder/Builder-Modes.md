@@ -24,7 +24,7 @@ This is for a setup that exclusively uses the Umbraco backoffice, and do not use
 
 Generation *can* fail for various reasons, in which case Umbraco will run without models (and front-end views fail to render). Umbraco's log file should contain all details about what prevented the generation, but it is probably faster to check the Models Builder dashboard, which should report the last error that was encountered, if any.
 
-Models Builder maintains some files in `~/umbraco/Data/TEMP/PureLive`:
+Models Builder maintains some files in `~/umbraco/Data/TEMP/InMemoryAuto`:
 
 * `models.generated.cs` contains the generated models code
 * `all.generated.cs` contains the compiled code (models merged with non-generated files)
