@@ -402,7 +402,7 @@ When posting the form, the header value generated can be provided, where it will
 
 ### API Key
 
-The antiforgery token security approach is valid for when building a client-side integration with API calls made from the browser.
+The antiforgery token security approach is valid when building a client-side integration with API calls made from the browser.
 
 Providing the token isn't possible though in other headless situations such as server-to-server requests. In these situations, an alternative approach to securing the API is available.
 
