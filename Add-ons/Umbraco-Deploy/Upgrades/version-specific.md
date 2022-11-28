@@ -36,6 +36,8 @@ parameter.
 - The class `UmbracoFormsCompatibility` that is no longer required has been removed.
 - Obsolete constructors were removed on `NoNodesController`, `UiController`, and `UiControllerBase`.
 - Temporary interfaces for connectors, introduced to avoid breaking changes with the introduction of the `IContextCache` in 10.2, were removed and the method overloads added to the original interfaces.
+- The obsolete constructor was removed on `WorkItemFactory`.
+- The obsolete protected methods on `DeployRestoreWorkItemBase` were removed.
 
 ## Version 10
 
