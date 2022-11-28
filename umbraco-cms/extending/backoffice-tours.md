@@ -91,7 +91,7 @@ Below is an explanation of each of the properties on the tour configuration obje
 
     The `contentType` property can also be used to limit the tours to content types that are using a specific composition. This will show the tour on all nodes that are using a specific composition.
 
-    ![Content Type specific tours](images/contentTypespecific.png)
+    ![Content Type specific tours](images/contentTypespecific-v8.png)
 
     In the image above, two tours are avaibable on the _Welcome_ node:
 
@@ -158,7 +158,7 @@ Below is an explanation of each of the properties on the tour step object.
     Use the developer tools from your browser to find the id, class and data-attribute.
     {% endhint %}
 
-<figure><img src="../../.gitbook/assets/element-v8.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/element-v8.png" alt=""><figcaption></figcaption></figure>
 
 *   **elementPreventClick**
 

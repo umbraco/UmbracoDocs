@@ -4,27 +4,11 @@
 
 `Returns: BlockGridModel`
 
-The **Block Grid** property editor enables editors to layout their content in the Umbraco backoffice. The content is made of Blocks which can contain different types of data.
-
-## Contents
-
-* [Sample Configuration](block-grid-editor.md#undefined)
-* [Configuring the Block Grid](block-grid-editor.md#configuring-the-block-grid)
-* [Setup Block Types](block-grid-editor.md#setup-block-types)
-* [Block Configuration Settings](block-grid-editor.md#block-configuration-settings)
-* [Areas](block-grid-editor.md#areas)
-* [Advanced](block-grid-editor.md#advanced)
-* [Editing Blocks](block-grid-editor.md#editing-blocks)
-* [Sorting Blocks](block-grid-editor.md#sorting-blocks)
-* [Scaling Blocks](block-grid-editor.md#scaling-blocks)
-* [Rendering Block Grid content](block-grid-editor.md#rendering-block-grid-content)
-* [Write a Custom Layout Stylesheet](block-grid-editor.md#write-a-custom-layout-stylesheet)
-* [Build a custom Backoffice View](block-grid-editor.md#build-a-custom-backoffice-view)
-* [Creating a Block Grid programmatically](block-grid-editor.md#creating-a-block-grid-programmatically)
+The **Block Grid** property editor enables editors to layout their content in the Umbraco backoffice. The content is made of Blocks that can contain different types of data.
 
 ## Sample configuration
 
-When you are testing out the property editor, you have the option to test the new Block Grid using a set of predefined Blocks. The option will only be possible when there are no other Data Types using the Block Grid property editor.
+When testing out the property editor, you can use a set of predefined Blocks. The option will only be possible when there are no other Data Types using the Block Grid property editor.
 
 <figure><img src="../../built-in-property-editors/block-editor/images/Install-Sample-Configuration.png" alt=""><figcaption></figcaption></figure>
 
@@ -207,7 +191,7 @@ If a Block has multiple size options it can be scaled via the UI. This appears i
 
 The Block is resized using a click-and-drag feature. Moving the mouse will change the size to the size options closest to the mouse pointer.
 
-<figure><img src="../../../../../../.gitbook/assets/resizing-block-block-grid.gif" alt=""><figcaption><p>Scale blocks in the grid by dragging from the bottom-right corner.</p></figcaption></figure>
+<figure><img src="../../built-in-property-editors/block-editor/images/resizing-block-block-grid.gif" alt=""><figcaption><p>Scale blocks in the grid by dragging from the bottom-right corner.</p></figcaption></figure>
 
 ## Rendering Block Grid Content
 
