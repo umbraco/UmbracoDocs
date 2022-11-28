@@ -44,7 +44,7 @@ Inside a view/template or partial view, access is also provided by the DI framew
 
 ## Accessing Core Services and Helpers in a Controller
 
-Inside a [custom Controller](../../reference/routing/custom-controllers.md) access is provided to Services via the `Services` property ([ServiceContext](../../reference/management/services-reference/)) and the `UmbracoHelper` via the `Umbraco` property ([UmbracoHelper](../../reference/querying/umbracohelper.md)).
+Inside a [custom Controller](../../reference/routing/custom-controllers.md) access is provided to Services via the `Services` property ([ServiceContext](../../reference/management/services/)) and the `UmbracoHelper` via the `Umbraco` property ([UmbracoHelper](../../reference/querying/umbracohelper.md)).
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;

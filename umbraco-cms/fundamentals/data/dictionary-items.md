@@ -114,6 +114,6 @@ To use Dictionary Items in a multilingual website, see the [Creating a Multiling
 
 ## Related Links
 
-* [API reference for the DictionaryItem](../../reference/management/persistence-models-reference/dictionaryitem.md)
-* [Localization Service](../../reference/management/services-reference/localizationservice/)
+* [API reference for the DictionaryItem](../../reference/management/models/dictionaryitem.md)
+* [Localization Service](../../reference/management/services/localizationservice/)
 * [Creating a Multilingual Site](../../tutorials/multilanguage-setup.md)
