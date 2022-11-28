@@ -38,15 +38,11 @@ You can upload media in three ways:
     ![Upload Media - Create](images/v9-media-types-create1.png)
 2.  Drag and drop your files in the **Upload** field in the Media section.
 
+    \
+    Umbraco will automatically detect the media type and create a media item in the folder. You can even drop entire folders (with subfolders) and the folder and file structure will be recreated.
+
     ![Upload Media - Media section](images/v9-media-types-media-section.png)
-
-{% hint style="info" %}
-```
-Umbraco will automatically detect the media type and create a media item in the folder. You can even drop entire folders (with subfolders) and the folder and file structure will be recreated.
-```
-{% endhint %}
-
-1.  Click the **Create** dropdown, and choose the media item. Enter a name for your media item and select the **Click to upload** field or drag the file into the upload field to upload the item.
+3.  Click the **Create** dropdown, and choose the media item. Enter a name for your media item and select the **Click to upload** field or drag the file into the upload field to upload the item.
 
     ![Upload Media - Create Button](images/v9-media-types-upload-media.png)
 
