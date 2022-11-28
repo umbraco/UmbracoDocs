@@ -1,9 +1,5 @@
 ---
-meta.Title: Creating websites with Umbraco
-description: >-
-  This section shows you some beginner tools and information to get you started
-  with Umbraco. From making a local installation to extending the backoffice.
-description: Find everything you need when creating and implementing an Umbraco project.
+description: "This section shows you some beginner tools and information to get you started with Umbraco. From making a local installation to extending the backoffice."
 ---
 
 # Creating websites
