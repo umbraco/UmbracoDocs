@@ -29,7 +29,6 @@ A common way to replicate files on Windows Server is to use [DFS](https://msdn.m
 
 Additional DFS resources:
 
-* [Implementing DFS Replication in Windows Server 2003](http://www.windowsnetworking.com/articles_tutorials/Implementing-DFS-Replication.html)
 * [Overview of DFS Replication in Windows Server 2008 R2](https://technet.microsoft.com/en-us/library/cc771058.aspx)
 * [Watch an intro to installing and working with DFS](https://www.youtube.com/watch?v=DYfBoUt2RVE)
 
