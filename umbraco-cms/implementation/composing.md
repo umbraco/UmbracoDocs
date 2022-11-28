@@ -5,7 +5,6 @@ keywords: >-
 versionFrom: 9.0.0
 versionTo: 10.0.0
 meta.Title: Composers in Umbraco
-description: "Customising the behaviour of an Umbraco Application at start up"
 ---
 
 # Composing

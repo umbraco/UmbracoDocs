@@ -1,8 +1,5 @@
 ---
 meta.Title: Creating media in Umbraco
-description: >-
-  Media in Umbraco is handled in much the same way as content. From the
-  backoffice you can upload and create media items, such as images and files.
 ---
 
 # Creating Media
@@ -165,4 +162,4 @@ If you select an image that has been uploaded to this folder you'll see the full
 
 ## Related Services
 
-* [MediaService](../../../reference/management/services/mediaservice.md)
+* [MediaService](../../../reference/management/services-reference/mediaservice.md)

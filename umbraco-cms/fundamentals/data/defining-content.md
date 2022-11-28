@@ -1,6 +1,5 @@
 ---
 meta.Title: Defining content
-description: Here you'll find an explanation of how content is defined in Umbraco
 ---
 
 # Defining Content
@@ -240,8 +239,8 @@ Document Types are flexible and can be used for defining pieces of reusable cont
 
 ### Related Services
 
-* [ContentService](../../reference/management/services/contentservice/)
-* [ContentTypeService](../../reference/management/services/contenttypeservice/)
+* [ContentService](../../reference/management/services-reference/contentservice/)
+* [ContentTypeService](../../reference/management/services-reference/contenttypeservice/)
 
 ### Tutorials
 

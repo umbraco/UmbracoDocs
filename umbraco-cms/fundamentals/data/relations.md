@@ -1,6 +1,5 @@
 ---
 meta.Title: Working with Relations in Umbraco
-description: What are relations, how to create and manage them
 ---
 
 # Relations
@@ -77,7 +76,7 @@ To view one of the existing Relation Types, go to the **Relations** tab. It disp
 
 You can create Relations using the RelationService API via code.
 
-[Some examples are provided here in the RelationService Documentation Page](../../reference/management/services/relationservice.md)
+[Some examples are provided here in the RelationService Documentation Page](../../reference/management/services-reference/relationservice.md)
 
 ### Use cases
 
