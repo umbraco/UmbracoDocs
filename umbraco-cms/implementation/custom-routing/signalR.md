@@ -1,4 +1,7 @@
 ---
+versionFrom: 9.0.0
+product: "CMS"
+meta.Title: "Adding a signlR hub"
 description: "Umbraco ships with signalR installed, find out how to add your own hub(s) to the existing setup"
 ---
 
