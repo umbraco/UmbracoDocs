@@ -1,6 +1,8 @@
 ---
 meta.Title: Creating Members in Umbraco
-description: "Members are used for registering and authentication external / frontend users of an Umbraco installation. This could be Forum members and Intranet members."
+description: >-
+  Members are used for registering and authentication external / frontend users
+  of an Umbraco installation. This could be Forum members and Intranet members.
 ---
 
 # Members
@@ -103,9 +105,9 @@ You can find out more about the services methods in the reference section of the
 
 ### Related Services
 
-* [MemberService](../../reference/management/services-reference/memberservice.md)
-* [MemberType Service](../../reference/management/services-reference/membertypeservice.md)
-* [MemberGroup Service](../../reference/management/services-reference/membergroupservice.md)
+* [MemberService](../../reference/management/services/memberservice.md)
+* [MemberType Service](../../reference/management/services/membertypeservice.md)
+* [MemberGroup Service](../../reference/management/services/membergroupservice.md)
 
 ### Video tutorials
 

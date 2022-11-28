@@ -49,7 +49,7 @@ Textbox is an HTML input control for text. It can be configured to have a fixed 
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services-reference/contentservice/).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/contentservice/).
 
 ```csharp
 @using Umbraco.Cms.Core.Services;

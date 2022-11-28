@@ -14,7 +14,7 @@ There are two flavors of the slider. One with a single value picker. One with a 
 
 ## Content Example
 
-<figure><img src="../../../../../.gitbook/assets/Slider-Content-Example-no-range.PNG" alt=""><figcaption></figcaption></figure>
+<figure><img src="../built-in-property-editors/images/Slider-Content-Example-no-range.PNG" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../built-in-property-editors/images/Slider-Content-Example-With-Range.png" alt=""><figcaption></figcaption></figure>
 
@@ -57,7 +57,7 @@ There are two flavors of the slider. One with a single value picker. One with a 
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services-reference/contentservice/).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/contentservice/).
 
 ### With a range off
 

@@ -1,6 +1,6 @@
 ---
 meta.Title: Data types in Umbraco
-description: "Learn about the data types in Umbraco."
+description: Learn about the data types in Umbraco.
 ---
 
 # Data Types
@@ -50,7 +50,7 @@ Learn more about viewing references or implementing tracking in the [Tracking Re
 
 ### Related Services
 
-* [DataTypeService](../../../reference/management/services-reference/datatypeservice.md)
+* [DataTypeService](../../../reference/management/services/datatypeservice.md)
 
 ### Umbraco Learning Base Channel
 
