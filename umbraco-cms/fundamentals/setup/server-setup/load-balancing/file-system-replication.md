@@ -6,7 +6,7 @@ No file replication is configured, deployment handles updating files on the diff
 
 If the file system on your servers isn't performing any file replication then no _Umbraco_ configuration file changes are necessary. However Media will need to be configured to use a shared location such as Blob storage or S3.
 
-Depending on the configuration and performance of the environment's local storage you might need to consider [Examine Directory Factory Options](#examine-directory-factory-options) and the [Umbraco temporary storage location](https://our.umbraco.com/documentation/Reference/Configuration-for-Umbraco-7-and-8/webconfig/#umbracocorelocaltempstorage).
+Depending on the configuration and performance of the environment's local storage you might need to consider [Examine Directory Factory Options](file-system-replication.md#examine-directory-factory-options) and the [Umbraco temporary storage location](https://our.umbraco.com/documentation/Reference/Configuration-for-Umbraco-7-and-8/webconfig/#umbracocorelocaltempstorage).
 
 ## Synchronised File System
 
@@ -20,11 +20,10 @@ If the file system on your servers is located on shared storage you will need to
 
 ### Replication techniques
 
-A common way to replicate files on Windows Server is to use [DFS](https://msdn.microsoft.com/en-us/library/windows/desktop/bb540031(v=vs.85), which is included with Windows Server.
+A common way to replicate files on Windows Server is to use \[DFS]\(https://msdn.microsoft.com/en-us/library/windows/desktop/bb540031(v=vs.85), which is included with Windows Server.
 
 Additional DFS resources:
 
-* [Implementing DFS Replication in Windows Server 2003](http://www.windowsnetworking.com/articles_tutorials/Implementing-DFS-Replication.html)
 * [Overview of DFS Replication in Windows Server 2008 R2](https://technet.microsoft.com/en-us/library/cc771058.aspx)
 * [Watch an intro to installing and working with DFS](https://www.youtube.com/watch?v=DYfBoUt2RVE)
 
@@ -37,7 +36,7 @@ When deploying Umbraco in a load balanced scenario using file replication, it is
 * `~/umbraco/Data/TEMP/*`
 
 {% hint style="info" %}
-Alternatively store the Umbraco temporary files in the local server's 'temp' folder and set Examine to use a [Directory Factory](#examine-directory-factory-options).
+Alternatively store the Umbraco temporary files in the local server's 'temp' folder and set Examine to use a [Directory Factory](file-system-replication.md#examine-directory-factory-options).
 
 Achieve this by changing the value of the `LuceneDirectoryFactory` setting to 'TempFileSystemDirectoryFactory' in the `appsettings.json`. The downside is that if you need to view temporary files you'll have to find it in the temp files. Locating the file this way isn't always clear.
 
@@ -53,9 +52,7 @@ Below is shown how to do this in a Json configuration source.
         }
     }
 }
-
 ```
-
 {% endhint %}
 
 * `~/umbraco/Logs/*`

@@ -19,13 +19,13 @@ With the power of structured logging and a query language we are able to search 
 Here are a handful example queries to get you started, however the saved searches contain some further examples. For more details on the syntax head over to the https://github.com/serilog/serilog-filters-expressions project.
 
 **Find all logs that are from the namespace 'Umbraco.Core'**\
-`StartsWith(SourceContext, 'Umbraco.Core')`\
+`StartsWith(SourceContext, 'Umbraco.Core')`\\
 
 **Find all logs that have the property 'Duration' and the duration is greater than 1000ms**\
-`Has(Duration) and Duration > 1000`\
+`Has(Duration) and Duration > 1000`\\
 
 **Find all logs where the message has localhost in it with SQL like**\
-`@Message like '%localhost%'`\
+`@Message like '%localhost%'`\\
 
 ## Saved Searches
 
@@ -156,4 +156,4 @@ For more in depth information about logging and how to configure it, please read
 
 This is a desktop tool for viewing & querying JSON log files from disk in the same way as the built in logviewer dashboard of Umbraco.
 
-[![English badge](images/English/_get.png)](https://www.microsoft.com/store/apps/9N8RV8LKTXRJ?cid=storebadge\&ocid=badge)
+[<img src="../../../.gitbook/assets/English_get.png" alt="English badge" data-size="line">](https://www.microsoft.com/store/apps/9N8RV8LKTXRJ?cid=storebadge\&ocid=badge)

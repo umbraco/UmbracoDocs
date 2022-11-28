@@ -1,9 +1,11 @@
 ---
-meta.Title: "The Umbraco Backoffice"
-meta.Description: "In this article you can learn more about the common terms and concepts that are used throughout the Umbraco Backoffice."
+meta.Title: The Umbraco Backoffice
+meta.Description: >-
+  In this article you can learn more about the common terms and concepts that
+  are used throughout the Umbraco Backoffice.
 ---
 
-# Backoffice overview
+# Backoffice
 
 In this article you can learn more about the common terms and concepts that are used throughout the Umbraco backoffice.
 
@@ -11,7 +13,7 @@ In this article you can learn more about the common terms and concepts that are 
 
 When you go to the backoffice for the first time, you're presented with the login screen.
 
-![Login screen](images/backoffice-login.png "The login screen has a greeting, username/password field and optionally a 'Forgotten password' link.")
+![Login screen](images/backoffice-login.png)
 
 [Read more about the login screen](login.md).
 
@@ -19,21 +21,21 @@ When you go to the backoffice for the first time, you're presented with the logi
 
 A section in Umbraco is where you do specific tasks related to that section. For example Content, Settings and Users. You can navigate between the different sections of the backoffice by clicking the corresponding icon in the section menu.
 
-![Sections](images/highlight-sections.png "The Section menu is the horizontal menu located on the top of the backoffice.")
-*The __Section menu__ is the horizontal menu located on the top of the backoffice.*
+<figure><img src="images/highlight-sections.png" alt=""><figcaption></figcaption></figure>
+
+_The **Section menu** is the horizontal menu located on the top of the backoffice._
 
 [Read more about the section menu](sections.md).
 
-## [Tree](../../extending/section-trees/README.md)
+## [Tree](../../extending/section-trees/)
 
 A tree is a hierarchical list of items related (and usually restricted) to a specific concept, like for example content or media.
 
-You can expand trees by clicking the down arrow <img src="images/expand-node.png" style="margin:0;width:15px" title="Expand a node in a tree" /> to the left of the node or by double-clicking the node.
+You can expand trees by clicking the down arrow ![](images/expand-node.png) to the left of the node or by double-clicking the node.
 
-![Tree](images/highlight-tree.png "The content tree")
-*The content tree*
+<figure><img src="images/highlight-tree.png" alt=""><figcaption></figcaption></figure>
 
-[Read more about the Tree](../../extending/section-trees/README.md)
+[Read more about the Tree](../../extending/section-trees/)
 
 ## Node
 
@@ -43,10 +45,11 @@ A node is an item in a tree. The images and folders in the Media section are sho
 
 A dashboard is the main view you are presented with when entering a section within the backoffice. It can be used to show valuable information to the users of the system.
 
-![Dashboard](images/highlight-dashboard.png "Default dashboard in the content section")
-*Default dashboard in the content section*
+&#x20;_Default dashboard in the content section_
 
- [Read more about Dashboards](../../extending/dashboards.md)
+<figure><img src="images/highlight-dashboard.png" alt=""><figcaption></figcaption></figure>
+
+[Read more about Dashboards](../../extending/dashboards.md)
 
 ## Editor
 
@@ -54,7 +57,7 @@ An editor is what you use to edit different items within the backoffice. There a
 
 ## [Content](../data/defining-content.md)
 
-Content is what you find in the Content section. Each item in the tree is called a **content node**.  Each content node in the content tree consists of different fields, and each of them are defined by a Document Type.
+Content is what you find in the Content section. Each item in the tree is called a **content node**. Each content node in the content tree consists of different fields, and each of them are defined by a Document Type.
 
 [Read more about Content](../data/defining-content.md)
 
@@ -66,23 +69,23 @@ Document Types define the types of content nodes that backoffice users can creat
 
 Every Document Type has properties. These are the fields that the content editor is allowed to edit for the content node.
 
-### [Data Type](../data/data-types/README.md)
+### [Data Type](../data/data-types/)
 
 Each Document Type property has a Data Type which defines the type of input of that property. Data Types reference a Property Editor and are configured in the Umbraco backoffice in the Settings section. A Data Type can be something basic (textstring, number, true/false) or more complex (multi-node tree picker, image cropper, etc).
 
-[Read more about Data Types](../data/data-types/README.md)
+[Read more about Data Types](../data/data-types/)
 
-### [Property Editors](property-editors/README.md)
+### [Property Editors](property-editors/)
 
-A property editor is the view used by Data Types to insert content into Umbraco. An example of a property editor is the *Textarea*. It's possible to have many Textarea Data Types with different settings that all use the Textarea property editor.
+A property editor is the view used by Data Types to insert content into Umbraco. An example of a property editor is the _Textarea_. It's possible to have many Textarea Data Types with different settings that all use the Textarea property editor.
 
-[Read more about Property Editors](property-editors/README.md)
+[Read more about Property Editors](property-editors/)
 
-## [Media](../data/creating-media/README.md)
+## [Media](../data/creating-media/)
 
 Media items are used to store assets like images and video within the Media section and can be referenced from your content.
 
-[Read more about Media](../data/creating-media/README.md)
+[Read more about Media](../data/creating-media/)
 
 ### Media Types
 
@@ -100,21 +103,21 @@ A member is someone who has access to signup, register and login into your **pub
 
 Similar to a Document Type and a Media Type. You are able to define custom properties to store on a member such as twitter username or website URL.
 
-## [Templates](../design/templates/README.md)
+## [Templates](../design/templates/)
 
 A Template is where you define the HTML markup of your website and also where you output the data from your content nodes.
 
-[Read more about Templates](../design/templates/README.md)
+[Read more about Templates](../design/templates/)
 
 ## Packages
 
-A package is the Umbraco term for a module or plugin used to extend Umbraco. Packages can be found in the [Packages section of Our Umbraco](https://our.umbraco.com/projects/ "Projects on Our Umbraco"), and you can also install them directly from the Packages section in the Umbraco backoffice.
+A package is the Umbraco term for a module or plugin used to extend Umbraco. Packages can be found in the [Packages section of Our Umbraco](https://our.umbraco.com/projects/), and you can also install them directly from the Packages section in the Umbraco backoffice.
 
-## [Macros](../../reference/templating/macros/README.md)
+## [Macros](../../reference/templating/macros/)
 
-A macro is a reusable piece of functionality that you can reuse throughout your site. Macros can be configured with parameters and used on content nodes that has a Rich Text Editor, a Grid editor or a Macro Picker property.  You can define what macros are available for your editors to use. When an editor inserts a macro it will prompt them to fill out any of the defined parameters for the macro.
+A macro is a reusable piece of functionality that you can reuse throughout your site. Macros can be configured with parameters and used on content nodes that has a Rich Text Editor, a Grid editor or a Macro Picker property. You can define what macros are available for your editors to use. When an editor inserts a macro it will prompt them to fill out any of the defined parameters for the macro.
 
-[Read more about Macros](../../reference/templating/macros/README.md)
+[Read more about Macros](../../reference/templating/macros/)
 
 ### [Macro Parameter Editor](../../extending/macro-parameter-editors.md)
 
