@@ -1,16 +1,12 @@
 # What is Umbraco Cloud?
 
-In this article, you can read about [Umbraco Cloud](https://umbraco.com/products/umbraco-cloud/) and how to get started.
+Umbraco Cloud is our hosting option for your favorite Umbraco CMS. Built on the Microsoft Azure Cloud and encompassing web standard approaches, Umbraco Cloud is familiar to Umbraco's new and old users. With Umbraco Cloud, there are no limits to what you can accomplish. Anything you can do with Umbraco and web technology you can do with Umbraco Cloud.
 
-## Umbraco Cloud Overview
-
-Umbraco Cloud is a great way to work with your favorite CMS. Built on the Microsoft Azure Cloud and encompassing web standard approaches, Umbraco Cloud is familiar to Umbraco's new and old users. With Umbraco Cloud, there are no limits to what you can accomplish - anything you can do with Umbraco and web technology you can do with Umbraco Cloud.
-
-Umbraco Cloud takes care of installation, infrastructure, and security. Umbraco also provides you the tools to work with your project in the Cloud or locally by cloning the project down to your PC or Mac.
+Umbraco Cloud takes care of installation, infrastructure, and security. You will also get the tools to work with your project in the Cloud or locally. Local development starts with cloning the project down to your PC or Mac.
 
 When you are ready to show your work to the world, Umbraco Cloud provides a safe deployment mechanism that lets you publish to the web. When you have changes or updates to your site, Umbraco Cloud follows the process of moving, testing, and deploying your changes to your public site.
 
-With all the success you will have to build your site with Umbraco Cloud, you will want to add more using the same account and team members all from a single place. [Learn more and sign up for Umbraco Cloud](https://umbraco.com/campaigns/try-umbraco-today/).
+[Learn more and sign up for Umbraco Cloud](https://umbraco.com/campaigns/try-umbraco-today/).
 
 ## Umbraco Cloud Plans
 
