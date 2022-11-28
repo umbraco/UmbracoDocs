@@ -47,7 +47,7 @@ Use CSS to define specific editor styles and add them to the RTE.
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../reference/management/services/contentservice/).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../reference/management/services-reference/contentservice/).
 
 ```csharp
 @using Umbraco.Cms.Core.Services;

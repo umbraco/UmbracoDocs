@@ -79,4 +79,4 @@ If you need to reset accounts of every other user while you still have administr
 
 * [Routing requirements for backoffice authentication](../routing/authorized.md)
 * [Health Checks](../../extending/health-check/)
-* [Consent Service](../management/services/consentservice.md)
+* [Consent Service](../management/services-reference/consentservice.md)
