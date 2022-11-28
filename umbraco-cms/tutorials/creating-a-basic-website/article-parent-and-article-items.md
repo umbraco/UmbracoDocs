@@ -85,7 +85,7 @@ To add a content node:
 
 5\. Click **Create Articles Item** to add two child nodes called **Article 1**, **Article 2**, and click **Save and Publish**. &#x20;
 
-<figure><img src="images/figure-40-articles-created-v8.png" alt=""><figcaption><p>Content Tree with Articles</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/figure-40-articles-created-v8.png" alt=""><figcaption><p>Content Tree with Articles</p></figcaption></figure>
 
 ## Updating the Template
 

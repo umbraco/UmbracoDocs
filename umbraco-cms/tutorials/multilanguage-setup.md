@@ -122,7 +122,7 @@ To add culture and hostnames, follow these steps:
 3\. In the **Culture and Hostnames...**. pane, let's add a domain for each hostname, like it's done here:\
 
 
-<figure><img src="images/culture-and-hostnames.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/culture-and-hostnames.png" alt=""><figcaption></figcaption></figure>
 
 4\. Click **Save**.
 
