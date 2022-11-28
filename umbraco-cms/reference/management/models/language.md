@@ -1,9 +1,3 @@
----
-versionFrom: 9.0.0
-meta.Title: "Language Model"
-meta.Description: "Represents a Language. Installed languages can be found in the settings section."
----
-
 # Language
 
 Represents a Language. Installed languages can be found in the settings section.
@@ -28,7 +22,7 @@ using Umbraco.Cms.Core.Models;
 Constructor for creating a new `Language` object where the necessary parameter are the global settings as `GlobalSettings` and the isoCode as a `string`.
 
 {% hint style="info" %}
-To create a new Language the global setting parameter is necessary. You can find more info about how to use configuration in code in the [Config article](../../configuration/README.md#reading-configuration-in-code).
+To create a new Language the global setting parameter is necessary. You can find more info about how to use configuration in code in the [Config article](../../configuration/#reading-configuration-in-code).
 {% endhint %}
 
 ## Properties

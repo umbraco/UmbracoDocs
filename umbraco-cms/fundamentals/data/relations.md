@@ -76,7 +76,7 @@ To view one of the existing Relation Types, go to the **Relations** tab. It disp
 
 You can create Relations using the RelationService API via code.
 
-[Some examples are provided here in the RelationService Documentation Page](../../reference/management/services-reference/relationservice.md)
+[Some examples are provided here in the RelationService Documentation Page](../../reference/management/services/relationservice.md)
 
 ### Use cases
 

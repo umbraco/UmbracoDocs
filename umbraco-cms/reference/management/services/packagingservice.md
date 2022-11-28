@@ -1,15 +1,11 @@
----
-versionFrom: 8.0.0
----
-
 # PackagingService
 
 The PackagingService provides import/export functionality for the Core models of the API.
 
- * **Namespace:** `Umbraco.Core.Services` 
- * **Assembly:** `Umbraco.Core.dll`
+* **Namespace:** `Umbraco.Core.Services`
+* **Assembly:** `Umbraco.Core.dll`
 
- All samples in this document will require references to the following dll:
+All samples in this document will require references to the following dll:
 
 * Umbraco.Core.dll
 

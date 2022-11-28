@@ -1,9 +1,3 @@
----
-versionFrom: 9.0.0
-meta.Title: "ContentType Model"
-meta.Description: "A ContentType corresponds to the Document Type found in the backoffice."
----
-
 # ContentType
 
 A ContentType corresponds to the Document Type found in the backoffice. The ContentType is a model / data definition for your content nodes. Every content node on an Umbraco web site always maps to a backing Document Type.
@@ -94,7 +88,7 @@ return contentType.ContentTypeComposition;
 
 ### .CompositionPropertyGroups
 
-Gets a list of all 'PropertyGroup` objects from the composition including PropertyGroups from the current ContentType.
+Gets a list of all 'PropertyGroup\` objects from the composition including PropertyGroups from the current ContentType.
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return CompositionPropertyGroups

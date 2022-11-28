@@ -18,7 +18,7 @@ To explain things we will use the following content tree:
 
 ## 1. Create segments
 
-When the URL is constructed, Umbraco will convert every node in the tree into a segment. Each published [Content](../../management/persistence-models-reference/content.md) item has a corresponding url segment.
+When the URL is constructed, Umbraco will convert every node in the tree into a segment. Each published [Content](../../management/models/content.md) item has a corresponding url segment.
 
 In our example "Our Products" will become "our-products" and "Swibble" will become "swibble".
 

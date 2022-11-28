@@ -8,7 +8,7 @@ For this example, the default grid configuration has been used.
 
 ## Set value
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../reference/management/services-reference/contentservice/).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../../reference/management/services/contentservice/).
 
 ```csharp
 @using Newtonsoft.Json

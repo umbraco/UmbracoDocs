@@ -1,9 +1,3 @@
----
-versionFrom: 9.0.0
-meta.Title: "Template Model"
-meta.Description: "Represents a Template file."
----
-
 # Template
 
 Represents a Template file.

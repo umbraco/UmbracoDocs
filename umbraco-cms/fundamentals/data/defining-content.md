@@ -239,8 +239,8 @@ Document Types are flexible and can be used for defining pieces of reusable cont
 
 ### Related Services
 
-* [ContentService](../../reference/management/services-reference/contentservice/)
-* [ContentTypeService](../../reference/management/services-reference/contenttypeservice/)
+* [ContentService](../../reference/management/services/contentservice/)
+* [ContentTypeService](../../reference/management/services/contenttypeservice/)
 
 ### Tutorials
 

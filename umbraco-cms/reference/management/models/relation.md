@@ -1,9 +1,3 @@
----
-versionFrom: 9.0.0
-meta.Title: "Relation Model"
-meta.Description: "Represents a Relation between two items."
----
-
 # Relation
 
 Represents a Relation between two items.

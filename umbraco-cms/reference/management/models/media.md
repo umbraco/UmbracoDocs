@@ -1,9 +1,3 @@
----
-versionFrom: 9.0.0
-meta.Title: "Media Model"
-meta.Description: "The Media class represents a single item in the media tree."
----
-
 # Media
 
 The `Media` class represents a single item in the media tree, its values are fetched directly from the database, not from the cache. **Notice** the Media class should strictly be used for CRUD operations. Media is already stored in cache, so for querying Media you'd want to use the `IUmbracoContext.IPublishedMediaCache` to get the media. Then one would use [LINQ to query and filter the collection](../../querying/ipublishedcontent/collections.md).
@@ -181,12 +175,12 @@ return media.UpdateDate;
 
 ### .Version
 
-Returns the current Version Id as a `Guid`,
-For each change made to a Media item, its values are stored under a new Version. This version is identified by a `Guid`.
+Returns the current Version Id as a `Guid`, For each change made to a Media item, its values are stored under a new Version. This version is identified by a `Guid`.
 
 ## Methods
 
 ### .ChangeContentType(IMediaType mediaType)
+
 Changes the `IMediaType` for the current Media object and removes PropertyTypes and Properties, which are not part of the new `MediaType`. **Please use with caution** as this remove differences between the new and old MediaType.
 
 ```csharp
@@ -200,6 +194,7 @@ mediaService.Save(media);
 ```
 
 ### .GetCreatorProfile()
+
 Gets the `IProfile` object for the Creator of this Media, which contains the Id and Name of the User who created this Media item.
 
 ```csharp
@@ -211,6 +206,7 @@ string name = profile.Name;
 ```
 
 ### .GetValue(string propertyTypeAlias)
+
 Gets the value of a Property as an `Object`.
 
 ```csharp
@@ -221,6 +217,7 @@ int text = int.Parse(value.ToString());
 ```
 
 ### .GetValue< TPassType >(string propertyTypeAlias)
+
 Gets the value of a Property as the defined type 'TPassType'.
 
 ```csharp

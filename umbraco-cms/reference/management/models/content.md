@@ -1,9 +1,3 @@
----
-versionFrom: 9.0.0
-meta.Title: "Content Model"
-meta.Description: "The Content class represents a single item in the content tree, its values are fetched directly from the database, not from the cache." 
----
-
 # Content
 
 The `Content` class represents a single item in the content tree, its values are fetched directly from the database, not from the cache. **Notice** the Content class should strictly be used for CRUD operations, not complex queries, as it is not flexible nor fast enough for this.

@@ -1,7 +1,3 @@
----
-versionFrom: 9.0.0
----
-
 # MacroService
 
 Defines the MacroService, which is an access to operations involving `IMacro`.
@@ -11,7 +7,7 @@ Defines the MacroService, which is an access to operations involving `IMacro`.
 * **Namespace:** `Umbraco.Cms.Core.Services`
 * **Assembly:** `Umbraco.Core.dll`
 
- All samples in this document will require references to the following dll:
+All samples in this document will require references to the following dll:
 
 * Umbraco.Core.dll
 
@@ -20,6 +16,7 @@ using Umbraco.Cms.Core.Services;
 ```
 
 For Razor views:
+
 ```csharp
 @using Umbraco.Cms.Core.Services
 ```

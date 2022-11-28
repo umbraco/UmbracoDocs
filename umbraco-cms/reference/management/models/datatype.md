@@ -1,9 +1,3 @@
----
-versionFrom: 9.0.0
-meta.Title: "DataType Model"
-meta.Description: "A DataType is what you see in the backoffice in the Settings / DataTypes tree. The listed nodes are definitions of the DataTypes that are available to use on your PropertyTypes."
----
-
 # DataType
 
 A DataType is what you see in the backoffice in the Settings / DataTypes tree. The listed nodes are definitions of the DataTypes that are available to use on your PropertyTypes.

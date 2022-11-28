@@ -1,12 +1,6 @@
----
-versionFrom: 9.0.0
-meta.Title: "DictionaryItem Model"
-meta.Description: "Represents a Dictionary Item. A Dictionary Item is what you see in the Translation / Dictionary tree."
----
-
 # DictionaryItem
 
-Represents a Dictionary Item. A Dictionary Item is what you see in the Translation / Dictionary tree.  
+Represents a Dictionary Item. A Dictionary Item is what you see in the Translation / Dictionary tree.
 
 * **Namespace:** `Umbraco.Cms.Core.Models`
 * **Assembly:** `Umbraco.Core.dll`

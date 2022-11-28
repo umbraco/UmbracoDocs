@@ -162,4 +162,4 @@ If you select an image that has been uploaded to this folder you'll see the full
 
 ## Related Services
 
-* [MediaService](../../../reference/management/services-reference/mediaservice.md)
+* [MediaService](../../../reference/management/services/mediaservice.md)

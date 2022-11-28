@@ -6,7 +6,7 @@ meta.Title: Creating Dictionary Items in Umbraco
 
 Depending on how your site is set up, not all content is edited through the **Content** section. There might be some text in your templates or macros that needs translation. Using Dictionary Items, you can store a value for each language. Dictionary Items have a unique key that is used to fetch the value of the Dictionary Item.
 
-Dictionary Items can be managed from the **Translation** section. Let's take a look at an example. In this example, we will translate "Welcome to Umbraco" from within the template and add it to the dictionary:&#x20;
+Dictionary Items can be managed from the **Translation** section. Let's take a look at an example. In this example, we will translate "Welcome to Umbraco" from within the template and add it to the dictionary:
 
 <figure><img src="images/dictionary-item.png" alt=""><figcaption></figcaption></figure>
 
@@ -16,11 +16,11 @@ To add a Dictionary Item:
 
 1. Go to the **Translation** section.
 2. Click on **Dictionary** in the **Translation** tree and select **Create**.
-3.  Enter the **Name** for the dictionary item. Let's say _Welcome_.&#x20;
+3.  Enter the **Name** for the dictionary item. Let's say _Welcome_.
 
     <figure><img src="images/Create-dictionary-item.png" alt=""><figcaption></figcaption></figure>
 4. Click **Create**.
-5.  Enter the values for the different language versions.&#x20;
+5.  Enter the values for the different language versions.
 
     <figure><img src="images/dictionary-item-values.png" alt=""><figcaption></figcaption></figure>
 6. Click **Save**.
@@ -36,7 +36,7 @@ To group dictionary items:
 5. Click on **Contact** and select **Create**.
 6. Enter the **Name** of the item to be created under the **Contact** group.
 7. Click **Create**.
-8.  Enter the values for the different language versions.&#x20;
+8.  Enter the values for the different language versions.
 
     <figure><img src="images/display-dictionary-item.png" alt=""><figcaption></figcaption></figure>
 9. Click **Save**.
@@ -114,6 +114,6 @@ To use Dictionary Items in a multilingual website, see the [Creating a Multiling
 
 ## Related Links
 
-* [API reference for the DictionaryItem](../../reference/management/persistence-models-reference/dictionaryitem.md)
-* [Localization Service](../../reference/management/services-reference/localizationservice/)
+* [API reference for the DictionaryItem](../../reference/management/models/dictionaryitem.md)
+* [Localization Service](../../reference/management/services/localizationservice/)
 * [Creating a Multilingual Site](../../tutorials/multilanguage-setup.md)
