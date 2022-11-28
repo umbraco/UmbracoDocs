@@ -222,10 +222,10 @@ You can find references on the methods used here in our API documentation:
 
 <!-- vale off -->
 
-- [EntityService.GetKey](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Services.Implement.EntityService.html#Umbraco_Core_Services_Implement_EntityService_GetKey_System_Int32_Umbraco_Core_Models_UmbracoObjectTypes_)
-- [new GuidUdi](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.GuidUdi.html#Umbraco_Core_GuidUdi__ctor_System_String_System_Guid_)
-- [new ArtifactDependency](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Deploy.ArtifactDependency.html#Umbraco_Core_Deploy_ArtifactDependency__ctor_Umbraco_Core_Udi_System_Boolean_Umbraco_Core_Deploy_ArtifactDependencyMode_)
-- [ArtifactDependencyMode](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Deploy.ArtifactDependencyMode.html)
+- [EntityService.GetKey](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Cms.Core.Services.EntityService.html#Umbraco_Cms_Core_Services_EntityService_GetKey_System_Int32_Umbraco_Cms_Core_Models_UmbracoObjectTypes_)
+- [new GuidUdi](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Cms.Core.GuidUdi.html#Umbraco_Cms_Core_GuidUdi__ctor_System_String_Guid_)
+- [new ArtifactDependency](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Cms.Core.Deploy.ArtifactDependency.html#Umbraco_Cms_Core_Deploy_ArtifactDependency__ctor_Umbraco_Cms_Core_Udi_System_Boolean_Umbraco_Cms_Core_Deploy_ArtifactDependencyMode_)
+- [ArtifactDependencyMode](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Cms.Core.Deploy.ArtifactDependency.html)
 
 <!-- vale on -->
 
