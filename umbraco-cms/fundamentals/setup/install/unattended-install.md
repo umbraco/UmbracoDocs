@@ -73,7 +73,7 @@ Alternatively you may set your configuration with Environment Variables or other
 
 The keys for this would then be as follows:
 
-```none
+```
 Umbraco__CMS__Unattended__InstallUnattended
 Umbraco__CMS__Unattended__UnattendedUserName
 Umbraco__CMS__Unattended__UnattendedUserEmail
@@ -86,15 +86,15 @@ After completing the steps above you can now initialize the installation by boot
 
 Once it has completed, you should see the following when visiting the frontend of the site.
 
-![Frontend of Umbraco site installed using the unattended installs feature](images/Unattended/final-screen.png)
+<figure><img src="images/unattended/final-screen.png" alt=""><figcaption></figcaption></figure>
 
 ## Configuration options
 
 Depending on your preferences, you can use any type of configuration to specify the connection string and login information, as well as enable unattended install. With the extending configuration functionality, it is possible to read from all kinds of sources. One example can be using a JSON file or environment variables.
 
-**Program.cs** has a condition, which if met, an *appsettings.Local.json* file will be added and configured as a configuration source.
+**Program.cs** has a condition, which if met, an _appsettings.Local.json_ file will be added and configured as a configuration source.
 
-```c#
+```
 #if DEBUG
   .ConfigureAppConfiguration(config
     => config.AddJsonFile(
@@ -136,4 +136,4 @@ dotnet new umbraco -n MyNewProject --friendly-name "Friendly User" --email user@
 
 ### Visual Studio
 
-![Set up unattended install through Visual Studio](images/Unattended/VS-unattended-install.png)
+<figure><img src="images/unattended/VS-unattended-install.png" alt=""><figcaption></figcaption></figure>

@@ -1,21 +1,21 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Outbound request pipeline"
-description: "How the Umbraco outbound request pipeline works"
+meta.Title: Outbound request pipeline
+description: How the Umbraco outbound request pipeline works
 ---
+
 # Outbound request pipeline
 
 The **outbound pipeline** consists out of the following steps:
 
-1. [Create segments](#segments)
-2. [Create paths](#paths)
-3. [Create urls](#urls)
+1. [Create segments](outbound-pipeline.md#segments)
+2. [Create paths](outbound-pipeline.md#paths)
+3. [Create urls](outbound-pipeline.md#urls)
 
 To explain things we will use the following content tree:
+
 ![content tree](images/simple-content-tree-v8.png)
 
-## 1. <a name="segments"></a> Create segments
+## 1. Create segments
 
 When the URL is constructed, Umbraco will convert every node in the tree into a segment. Each published [Content](../../management/models/content.md) item has a corresponding url segment.
 
@@ -79,7 +79,7 @@ namespace RoutingDocs.SegmentProviders
 
 The returned string becomes the native Url segment. No need for any Url rewriting.
 
-For our "swibble" product in our example content tree the  `ProductPageUrlSegmentProvider`, would return a segment "swibble--123xyz" (where 123xyz is the unique product sku/reference for the swibble product).
+For our "swibble" product in our example content tree the `ProductPageUrlSegmentProvider`, would return a segment "swibble--123xyz" (where 123xyz is the unique product sku/reference for the swibble product).
 
 Register the custom UrlSegmentProvider with Umbraco, either using a composer or an extension method on the `IUmbracoBuilder`:
 
@@ -105,64 +105,48 @@ The Default Url Segment provider builds its segments like this:
 
 First it looks (in this order) for:
 
-- A property with alias *umbracoUrlName* on the node. (this is a convention led way of giving editors control of the segment name - with variants - this can vary by culture).
-- The 'name' of the content item e.g. `content.Name`.
+* A property with alias _umbracoUrlName_ on the node. (this is a convention led way of giving editors control of the segment name - with variants - this can vary by culture).
+* The 'name' of the content item e.g. `content.Name`.
 
 The Umbraco string extension `ToUrlSegment()` is used to produce a clean 'Url safe' segment.
 
-## 2. <a name="paths"></a>Create paths
+## 2. Create paths
 
 To create a path, the pipeline will use the segments of each node to produce a path.
 
-If we look at our example, the "swibble" node will receive the path: "/our-products/swibble".  If we take the `ProductPageUrlSegmentProvider` from above, the path would become: "/our-products/swibble-123xyz".
+If we look at our example, the "swibble" node will receive the path: "/our-products/swibble". If we take the `ProductPageUrlSegmentProvider` from above, the path would become: "/our-products/swibble-123xyz".
 
 ### Multiple sites in a single Umbraco implementation
 
-But, what if there are multiple websites in a single Umbraco Implementation? in this multi-site scenario then an (internal) path to a node such as "/our-products/swibble-123xyz" could belong to any of the sites, or match multiple nodes in multiple sites. In this scenario additional sites will have their internal path prefixed by the node id of their root node.
-Any content node with a hostname defines a “new root” for paths.
+But, what if there are multiple websites in a single Umbraco Implementation? in this multi-site scenario then an (internal) path to a node such as "/our-products/swibble-123xyz" could belong to any of the sites, or match multiple nodes in multiple sites. In this scenario additional sites will have their internal path prefixed by the node id of their root node. Any content node with a hostname defines a “new root” for paths.
 
 ![path example](images/path-example-v8.png)
 
-<table>
-<tr><th>Node</th><th>Segment</th><th>Internal Path</th>
-</tr>
-<tr>
-<td>Our Values</td><td>our-values</td><td>/our-values</td>
-</tr>
-<tr>
-<td>Our Products</td><td>our-products</td><td>/our-products</td>
-</tr>
-<tr>
-<td>Swibble</td><td>swibble-123xyz</td><td>/our-products/swibble-123xyz</td>
-</tr>
-<tr>
-<td>Dibble</td><td>dibble-456abc</td><td>/our-products/dibble-456abc</td>
-</tr>
-<tr>
-<td>Another Site</td><td>another-site</td><td><b>9676</b>/</td>
-</tr>
-<tr>
-<td>Their Values</td><td>their-values</td><td><b>9676</b>/their-values</td>
-</tr>
-</table>
+| Node         | Segment        | Internal Path                |
+| ------------ | -------------- | ---------------------------- |
+| Our Values   | our-values     | /our-values                  |
+| Our Products | our-products   | /our-products                |
+| Swibble      | swibble-123xyz | /our-products/swibble-123xyz |
+| Dibble       | dibble-456abc  | /our-products/dibble-456abc  |
+| Another Site | another-site   | **9676**/                    |
+| Their Values | their-values   | **9676**/their-values        |
 
 Paths can be cached, what comes next cannot (http vs https, current request…).
 
 #### Some further considerations when **working with hostnames**
 
--  **Domain without path** e.g. "www.site.com"
-will become "1234/path/to/page"
-- **Domain with path** e.g. "www.site.com/dk"
-will produce "1234/dk/path/to/page" as path
-- **No domain specified**: "/path/to/page"
-- **Unless HideTopLevelNodeFromPath config is true**, then the path becomes "/to/page"
+* **Domain without path** e.g. "www.site.com" will become "1234/path/to/page"
+* **Domain with path** e.g. "www.site.com/dk" will produce "1234/dk/path/to/page" as path
+* **No domain specified**: "/path/to/page"
+* **Unless HideTopLevelNodeFromPath config is true**, then the path becomes "/to/page"
 
-## 3. <a name="urls"></a> Creating Urls
-The Url of a node consists of a complete [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier): the Schema, Domain name, (port) and the path.
+## 3. Creating Urls
+
+The Url of a node consists of a complete [URI](https://en.wikipedia.org/wiki/Uniform\_Resource\_Identifier): the Schema, Domain name, (port) and the path.
 
 In our example the "swibble" node could have the following URL: "http://example.com/our-products/swibble"
 
-Generating this url is handled by the Url Provider.  The Url Provider is called whenever a request is made in code for a Url e.g.:
+Generating this url is handled by the Url Provider. The Url Provider is called whenever a request is made in code for a Url e.g.:
 
 ```csharp
 @Model.Url
@@ -170,8 +154,7 @@ Generating this url is handled by the Url Provider.  The Url Provider is called 
 @UmbracoContext.UrlProvider.GetUrl(1234);
 ```
 
-The DI container of an Umbraco implementation contains a collection of `UrlProviders` this collection is populated during Umbraco boot up. Umbraco ships with a `DefaultUrlProvider` - but custom implementations can be added to the collection.
-When .Url is called each `IUrlProvider` registered in the collection is executed in 'collection order' until a particular `IUrlProvider` returns a value. (and no further `IUrlProviders` in the collection will be executed.)
+The DI container of an Umbraco implementation contains a collection of `UrlProviders` this collection is populated during Umbraco boot up. Umbraco ships with a `DefaultUrlProvider` - but custom implementations can be added to the collection. When .Url is called each `IUrlProvider` registered in the collection is executed in 'collection order' until a particular `IUrlProvider` returns a value. (and no further `IUrlProviders` in the collection will be executed.)
 
 ### DefaultUrlProvider
 
@@ -188,25 +171,24 @@ public class DefaultUrlProvider : IUrlProvider
     {…}
 }
 ```
+
 ### How the Default Url provider works
 
-- If the current domain matches a root domain of the target content.
-  - Return a relative Url.
-  - Else must return an absolute Url.
-- If the target content has only one root domain.
-  - Use that domain to build the absolute Url.
-- If the target content has more than one root domain.
-  - Figure out which one to use.
-  - To build the absolute Url.
-- Complete the absolute Url with scheme (http vs https).
-  - If the domain contains a scheme use it.
-  - Else use the current request’s scheme.
-- If "addTrailingSlash" is true, then add a slash.
-- Then add the virtual directory.
+* If the current domain matches a root domain of the target content.
+  * Return a relative Url.
+  * Else must return an absolute Url.
+* If the target content has only one root domain.
+  * Use that domain to build the absolute Url.
+* If the target content has more than one root domain.
+  * Figure out which one to use.
+  * To build the absolute Url.
+* Complete the absolute Url with scheme (http vs https).
+  * If the domain contains a scheme use it.
+  * Else use the current request’s scheme.
+* If "addTrailingSlash" is true, then add a slash.
+* Then add the virtual directory.
 
-If the URL provider encounters collisions when generating content URLs, it will always select the first available node and assign the URL to this one.
-The remaining nodes will be marked as colliding and will not have a URL generated. Fetching the URL of a node with a collision URL will result in an error string including the node ID (#err-1094) since this node does not currently have an active URL.
-This can happen if an umbracoUrlName property is being used to override the generated URL of a node, or in some cases when having multiple root nodes without hostnames assigned.
+If the URL provider encounters collisions when generating content URLs, it will always select the first available node and assign the URL to this one. The remaining nodes will be marked as colliding and will not have a URL generated. Fetching the URL of a node with a collision URL will result in an error string including the node ID (#err-1094) since this node does not currently have an active URL. This can happen if an umbracoUrlName property is being used to override the generated URL of a node, or in some cases when having multiple root nodes without hostnames assigned.
 
 {% hint style="warning" %}
 This means publishing an unpublished node with a conflicting URL, might change the active node being rendered on that specific URL in cases where the published node should now take priority according to sort order in the tree!
@@ -229,9 +211,9 @@ The url returned in the 'UrlInfo' object by GetUrl can be completely custom.
 
 If implementing a custom Url Provider, consider following things:
 
-- Cache things.
-- Be sure to know how to handle schema's (http vs https) and hostnames.
-- Inbound might require rewriting.
+* Cache things.
+* Be sure to know how to handle schema's (http vs https) and hostnames.
+* Inbound might require rewriting.
 
 {% hint style="info" %}
 If there is only a small change to the logic around Url generation, then a smart way to create a custom Url Provider is to inherit from the DefaultUrlProvider and override the GetUrl() virtual method.
@@ -335,6 +317,7 @@ The GetOtherUrls method is only used in the Umbraco Backoffice to provide a list
 For example, let's consider a convention-led `umbracoUrlAlias` property that enables editors to specify a comma delimited list of alternative urls for the node. It has a corresponding `AliasUrlProvider` registered in the `UrlProviderCollecton` to display this list to the Editor in the backoffice Info Content app for a node.
 
 ### Url Provider Mode
+
 Specifies the type of urls that the url provider should produce, eg. absolute vs. relative Urls. Auto is the default
 
 These are the different modes:
@@ -363,6 +346,7 @@ public enum UrlMode
   Auto
 }
 ```
+
 Default setting can be changed in the Umbraco:CMS:WebRouting section of `appsettings.json`:
 
 ```json
@@ -376,7 +360,6 @@ Default setting can be changed in the Umbraco:CMS:WebRouting section of `appsett
 ```
 
 See [WebRouting config reference documentation](../../configuration/webroutingsettings.md) for more information on routing settings.
-
 
 ### Site Domain Mapper
 
@@ -417,8 +400,7 @@ namespace RoutingDocs.SiteDomainMapper
 
 ### Default SiteDomainMapper
 
-Umbraco ships with a default `SiteDomainMapper`. This has some useful functionality for grouping sets of domains together.
-With Umbraco Cloud, or another Umbraco development environment scenario, there maybe be multiple domains setup for a site 'live, 'staging', 'testing' or a seperate domain to access the backoffice. Each domain will be setup as a 'Culture and Hostname' inside Umbraco. By default editors will see the full list of possible Urls for each of their content items on each domain, which can be confusing. If the additional urls aren't present in Culture and Hostnames, then when testing the front-end of the site on a 'staging' url, will result in navigation links taking you to the registered domain!
+Umbraco ships with a default `SiteDomainMapper`. This has some useful functionality for grouping sets of domains together. With Umbraco Cloud, or another Umbraco development environment scenario, there maybe be multiple domains setup for a site 'live, 'staging', 'testing' or a seperate domain to access the backoffice. Each domain will be setup as a 'Culture and Hostname' inside Umbraco. By default editors will see the full list of possible Urls for each of their content items on each domain, which can be confusing. If the additional urls aren't present in Culture and Hostnames, then when testing the front-end of the site on a 'staging' url, will result in navigation links taking you to the registered domain!
 
 ![Culture and Hostnames multiple domains](images/culture-and-hostnames-v8.png)
 
@@ -465,7 +447,7 @@ namespace RoutingDocs.SiteDomainMapping
 
 Then add the component with a composer:
 
-```C#
+```
 using Umbraco.Cms.Core.Composing;
 
 namespace RoutingDocs.SiteDomainMapping

@@ -1,4 +1,4 @@
-# Markdown editor
+# Markdown Editor
 
 `Alias: Umbraco.MarkdownEditor`
 

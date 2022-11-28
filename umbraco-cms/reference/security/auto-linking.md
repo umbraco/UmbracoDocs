@@ -108,7 +108,7 @@ Additionally, there are more advanced properties for `BackOfficeExternalLoginPro
     * You want to display something different where external login providers are listed: in the login screen vs the backoffice panel vs on the logged-out screen. This same view will render in all of these cases but you can use the current route parameters to customize what is shown.
     * You want to change how the button interacts with the external login provider. For example, instead of having the site redirect on button-click, you want to open a popup window to load the external login provider.
   * The path is a virtual path, for example: `"~/App_Plugins/MyPlugin/BackOffice/my-external-login.html"`
-  * When specifying this view it is 100% up to your angular view and affiliated angular controller to perform all required logic. To get started, the easiest way is to copy what the [default angular view](https://github.com/umbraco/Umbraco-CMS/blob/v8/contrib/src/Umbraco.Web.UI.Client/src/views/components/application/umb-login.html#L126-L140) does and then implement your angular controller to do what the [default controller](https://github.com/umbraco/Umbraco-CMS/blob/v8/contrib/src/Umbraco.Web.UI.Client/src/common/directives/components/application/umblogin.directive.js#L48) does.
+  * When specifying this view it is 100% up to your angular view and affiliated angular controller to perform all required logic.
 
 To register this configuration class, you can call the following from your `startup.cs`:
 ```Csharp

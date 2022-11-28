@@ -1,6 +1,4 @@
 ---
-versionFrom: 8.0.0
-meta.Title: "Umbraco Heartcore GraphQL Playground"
 description: "Documentation for Umbraco Heartcore GraphQL Playground"
 ---
 
@@ -13,8 +11,6 @@ You can test and build GraphQL queries directly in the backoffice-integrated Gra
 In the Settings section in the Umbraco Backoffice, you will find the Headless tree. From there you can use the GraphQL Playground to test your queries against your project's schema.
 
 The Playground comes with basic features such as real-time error highlighting, syntax highlighting, formatting, query history and more.
-
-<iframe width="800" height="450" title="Umbraco Heartcore: GraphQL Playground" src="https://www.youtube.com/embed/25gpH6FJIxA?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Accessing GraphQL Playground
 
@@ -61,7 +57,7 @@ To run a query use the left side of the GraphQL Playground to type in your query
 }
 ```
 
-To learn more about querying, visit our [API documentation for GraphQL](../../API-Documentation/GraphQL/index.md).
+To learn more about querying, visit our [API documentation for GraphQL](../api-documentation/graphql/).
 
 {% hint style="info" %}
 The Heartcore GraphQL endpoint only supports queries - other operation types, that is mutations and subscriptions, are not supported.
@@ -75,9 +71,7 @@ When you are satisfied with the result, you can copy the client URL (CURL) by cl
 
 ## Sending HTTP headers
 
-GraphQL Playground supports requests made with HTTP headers - in case e.g. an authorization token is needed.
-The `HTTP HEADERS` section can be accessed from the bottom-left corner of the Playground window. By default, it contains the `umb-project-alias` header, which is the alias of your Heartcore project.
-It is possible to add multiple headers.
+GraphQL Playground supports requests made with HTTP headers - in case e.g. an authorization token is needed. The `HTTP HEADERS` section can be accessed from the bottom-left corner of the Playground window. By default, it contains the `umb-project-alias` header, which is the alias of your Heartcore project. It is possible to add multiple headers.
 
 ## Query variables
 
@@ -87,8 +81,7 @@ It is also possible to define variables for queries - such variables's values ca
 
 ## History
 
-If you happened to make an amazing query and afterwards erased it by accident, you would be able to re-use it by finding it in the History.
-The History menu can be found in the top part of the Playground, above the query input section.
+If you happened to make an amazing query and afterwards erased it by accident, you would be able to re-use it by finding it in the History. The History menu can be found in the top part of the Playground, above the query input section.
 
 ## Prettify
 

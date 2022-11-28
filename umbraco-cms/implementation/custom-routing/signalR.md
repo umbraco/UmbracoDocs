@@ -1,22 +1,10 @@
 ---
-versionFrom: 9.0.0
-product: "CMS"
-meta.Title: "Adding a signlR hub"
 description: "Umbraco ships with signalR installed, find out how to add your own hub(s) to the existing setup"
-
 ---
 
 # Adding a hub with SignalR and Umbraco
 
 Umbraco ships with signalR installed. This article shows how to add your own hub(s) to the existing setup.
-
-In this aticle, you will do the following:
-
-- [Create a hub and its interface](#create-a-hub-and-its-interface)
-- [Define a custom route](#define-a-custom-route)
-- [Add the routing to the Umbraco Composer](#add-the-routing-to-the-umbraco-composer)
-- [Add the route in appsettings.json](#add-the-route-in-appsettingsjson-file)
-- [Test the setup](#test-the-setup)
 
 ## Create a hub and its interface
 

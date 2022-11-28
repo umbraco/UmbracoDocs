@@ -1,9 +1,8 @@
 ---
-meta.Title: Creating media in Umbraco
 description: Media in Umbraco is handled in much the same way as content. From the backoffice you can upload and create media items, such as images and files.
 ---
 
-# Creating media
+# Creating Media
 
 Media in Umbraco is handled the same way as content. Instead of defining Document Types you define Media Types that acts as a base for media items. The following default Media Types are available:
 
@@ -18,7 +17,7 @@ Media in Umbraco is handled the same way as content. Instead of defining Documen
 This means you don't have to define your own Media Types to start using the Media section. You have already got the tools for organizing and uploading the media.
 
 {% hint style="info" %}
-If you have upgraded from an older version than 8.14 then the new media types are not added automatically. You can add those types manually yourselves by following the steps below ['Creating a new Media Type'](#creating-a-media-type). On the [default media types page](default-media-types.md), you will find an overview of all new media types.
+If you have upgraded from an older version than 8.14 then the new media types are not added automatically. You can add those types manually yourselves by following the steps below ['Creating a new Media Type'](./#creating-a-media-type). On the [default media types page](default-media-types.md), you will find an overview of all new media types.
 {% endhint %}
 
 ## Creating a folder
@@ -31,18 +30,16 @@ To create a media folder, go to the **Media section** and click **...** next to 
 
 You can upload media in three ways:
 
-1. Click **...** next to **Media** and choose the media type, enter a name for your media item and select the **Click to upload** field to choose a file type or drag the file into the upload field to upload the item.
+1.  Click **...** next to **Media** and choose the media type, enter a name for your media item and select the **Click to upload** field to choose a file type or drag the file into the upload field to upload the item.
 
     ![Upload Media - Create](images/v9-media-types-create1.png)
-2. Drag and drop your files in the **Upload** field in the Media section.
+2.  Drag and drop your files in the **Upload** field in the Media section.
+
+    \
+    Umbraco will automatically detect the media type and create a media item in the folder. You can even drop entire folders (with subfolders) and the folder and file structure will be recreated.
 
     ![Upload Media - Media section](images/v9-media-types-media-section.png)
-
-    {% hint style="info" %}
-    Umbraco will automatically detect the media type and create a media item in the folder. You can even drop entire folders (with subfolders) and the folder and file structure will be recreated.
-    {% endhint %}
-
-3. Click the **Create** dropdown, and choose the media item. Enter a name for your media item and select the **Click to upload** field or drag the file into the upload field to upload the item.
+3.  Click the **Create** dropdown, and choose the media item. Enter a name for your media item and select the **Click to upload** field or drag the file into the upload field to upload the item.
 
     ![Upload Media - Create Button](images/v9-media-types-upload-media.png)
 
@@ -86,7 +83,7 @@ Having different folders for different media types makes it possible to restrict
 
 Choose **New Media Type**. This will open the Media Type editor. It is similar to the editor used for creating Document Types. The difference is that Media Types define items for the Media section and you do not have the ability to assign a template for the Media Type.
 
-![Creating a Media Type](images/create-new-media-type_new.png)
+![Creating a Media Type](images/create-new-media-type\_new.png)
 
 Name the Media Type _Employee Image_. Choose an icon by clicking the icon to the left of the name.
 
@@ -112,11 +109,11 @@ Click **Add editor**, search for _cropper_ and choose **Image cropper** under **
 
 Add two new crops called _Thumbnail_ (200px x 350px) and _wideThumbnail_ (350px x 200px).
 
-![Defining crops](images/new-data-type_new.png)
+![Defining crops](images/new-data-type\_new.png)
 
 Name the remaining four properties _Width_, _Height_, _Size_ and _Type_ and give them the aliases as mentioned in the image below. They should all use the **Label** editor. As mentioned before these properties will automatically be populated once an image has been uploaded.
 
-![Adding properties](images/finished-new-media-type_new.png)
+![Adding properties](images/finished-new-media-type\_new.png)
 
 ## Defining a Media Type folder
 
@@ -128,7 +125,7 @@ Go back to the **Settings** and create a new Media Type and name it _Employee Im
 
 We want the same basic functionality (same properties and tabs) as the **Folder** Media type and that can be achieved by clicking **Compositions** and selecting the **Folder** Media Type. Now, Employee images will inherit tabs and properties from the Folder Media Type.
 
-![Compositions](images/folder-composition_new.png)
+![Compositions](images/folder-composition\_new.png)
 
 Switch to a list view by clicking the **List view** tab and toggle the **Enable list view** option.
 

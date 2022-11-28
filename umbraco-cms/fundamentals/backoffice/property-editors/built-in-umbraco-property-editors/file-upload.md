@@ -1,4 +1,4 @@
-# File upload
+# File Upload
 
 `Alias: Umbraco.UploadField`
 

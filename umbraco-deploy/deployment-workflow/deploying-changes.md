@@ -1,9 +1,8 @@
 ---
-meta.Title: "Deploying changes from a local machine with Umbraco Deploy"
 description: "How to Deploy changes between a local machine and an environment in Umbraco Deploy using either a Git Gui or without"
 ---
 
-# Deploying changes with Umbraco Deploy
+# Deploying Changes
 
 In this article you can learn more about how to deploy your code changes and meta data from a local instance to a remote environment.
 
@@ -13,18 +12,18 @@ When you are working with your Umbraco project locally all changes you make will
 
 Here's a quick step-by-step on how you deploy these changes to your environment:
 
-- You've cloned a site to your local machine to work on.
-- You've made some changes to a Document Type.
-- The corresponding `.uda` file for this Document Type is now updated with the changes - the file is located in the `/umbraco/Deploy/Revision` folder.
-- You've also created a new Data Type that's used on the Document Type. This Data Type is stored as a new file in the `/umbraco/Deploy/Revision` folder as well.
-- Using Git, commit those two changed files to your local repository and push them to your repository.
-- A deployment kicks in and the Document Type is updated and the new Data Type you created locally is now automatically created in the remote environment as well.
+* You've cloned a site to your local machine to work on.
+* You've made some changes to a Document Type.
+* The corresponding `.uda` file for this Document Type is now updated with the changes - the file is located in the `/umbraco/Deploy/Revision` folder.
+* You've also created a new Data Type that's used on the Document Type. This Data Type is stored as a new file in the `/umbraco/Deploy/Revision` folder as well.
+* Using Git, commit those two changed files to your local repository and push them to your repository.
+* A deployment kicks in and the Document Type is updated and the new Data Type you created locally is now automatically created in the remote environment as well.
 
 ## Deploying without using a Git client
 
 If you don't have a Git client installed on your local machine, or prefer to work with Git through command line, you can use eg. Git Bash and the following commands:
 
-```none
+```
 # Navigate to the repository folder
 cd mySite
 # Check status of the repository for pending changes
@@ -48,4 +47,4 @@ If you had to pull down new commits, it is a good idea to see if any of these co
 
 The local site should be running when you do this. The deploy marker will change to `deploy-progress` while updating the site and to `deploy-complete` when done. If there are any conflicts/errors you will see a `deploy-failed` marker instead, which contains an error message with a description of what went wrong.
 
-Another way is to use the Deploy Dashboard in the Settings section of the Umbraco backoffice. Here you can see the status of ongoing or completed deployment processes. The status will show whether an operation has been triggered and whether it is in progress, has completed or has failed. The dashboard will show the status based on the marker files on the disk, eg. `deploy-progress`. From the Deploy Dashboard it is also possible to trigger various processes. Learn more about this dashboard in the [Deployment](../README.md)article.
+Another way is to use the Deploy Dashboard in the Settings section of the Umbraco backoffice. Here you can see the status of ongoing or completed deployment processes. The status will show whether an operation has been triggered and whether it is in progress, has completed or has failed. The dashboard will show the status based on the marker files on the disk, eg. `deploy-progress`. From the Deploy Dashboard it is also possible to trigger various processes. Learn more about this dashboard in the [Deployment ](../)article.

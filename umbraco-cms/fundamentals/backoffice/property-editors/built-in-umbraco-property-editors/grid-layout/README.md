@@ -4,7 +4,7 @@
 
 Gives editors a grid layout editor which allows them to insert different types of content in a predefined layout.
 
-![Grid layouts](../../built-in-property-editors/grid-layout/images/editor.png)
+<figure><img src="../../built-in-property-editors/grid-layout/Images/editor.png" alt=""><figcaption></figcaption></figure>
 
 ## [What are Grid Layouts](what-are-grid-layouts.md)
 

@@ -1,14 +1,12 @@
-# Install Umbraco with Visual Studio Code
+# Install using Visual Studio Code
 
 Follow these steps to set up an Umbraco project with VS Code. The benefit of using VS Code is that it is super quick to get up and running.
 
 ## Installing and setting up VS Code
 
 1. Go to [https://code.visualstudio.com/](https://code.visualstudio.com/) and download VS Code for free.
-
 2. Once installed, launch VS Code.
-
-3. Click the extensions menu at the bottom on the left side. Then search for **C#**, install it then press reload.
+3.  Click the extensions menu at the bottom on the left side. Then search for **C#**, install it then press reload.
 
     ![VS Code install extension](images/VsCode/VsCodeExtension.png)
 
@@ -44,7 +42,7 @@ Now that we've told VS Code how to build your project, we need to tell it how to
 
 This will prompt a menu to appear, select:
 
-![Nectore launch task](images/VSCode/NetcoreTask.png)
+<figure><img src="images/VsCode/NetcoreTask.png" alt=""><figcaption></figcaption></figure>
 
 Now you'll see a green play button appear with a dropdown where ".NET Core Launch" is selected. If you navigate to the files section again, you'll see that another file has been created in the `.vscode` folder, this one is called `launch.json`, it's this file that tells VS Code, to build your project, run it, and then open a browser when you press F5.
 
@@ -66,7 +64,7 @@ Depending on the database configuration you've chosen you will have the followin
 
 When the installer is done you will automatically be logged into the backoffice.
 
-![Web Installer - Install Complete](images/VsCode/dashboard-v8.png)
+<figure><img src="images/VsCode/dashboard-v8.PNG" alt=""><figcaption></figcaption></figure>
 
 Congratulations, you have installed an Umbraco site!
 

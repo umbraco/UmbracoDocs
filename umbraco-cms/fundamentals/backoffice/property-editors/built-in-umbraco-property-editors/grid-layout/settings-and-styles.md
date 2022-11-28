@@ -1,8 +1,8 @@
-# Settings and styling
+# Settings And Styling
 
 A grid layout can also expose custom settings - such as data-attributes or styling options - on each cell or row. This allows editors to use a friendly UI to add configuration values to grid elements. When custom settings and styles are applied, they will by default be included in the grid html as either html attributes or inline styles.
 
-![Grid layouts](../../built-in-property-editors/grid-layout/images/settings.png)
+<figure><img src="../../built-in-property-editors/grid-layout/Images/settings.png" alt=""><figcaption></figcaption></figure>
 
 These settings and styles must be configured by developers when setting up the grid layout data type.
 

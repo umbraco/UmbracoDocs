@@ -127,7 +127,7 @@ namespace CustomRoutes
 }
 ```
 
-For more information on how to register and use notification handlers see [Notifications documentation](broken-reference)
+For more information on how to register and use notification handlers see [Notifications documentation](../../reference/notifications)
 
 ### Related articles
 

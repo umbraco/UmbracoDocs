@@ -6,8 +6,6 @@ versionFrom: 8.0.0
 
 Having multiple environments on your Umbraco Heartcore project can be a great asset for testing and having a place where your content editors can work without interfering with anything on the Live environment.
 
-<iframe width="800" height="450" title="Umbraco Heartcore: Deploying between environments" src="https://www.youtube.com/embed/M0FJtJ10czY?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
 When working with multiple environments, it is very important to follow the correct workflow. In this article, you can learn more about the workflow and the best practices for using it.
 
 The workflow uses a classic "left to right" deployment model, meaning that changes are first made on the Development environment and then deployed to the Staging or Live environment. The workflow depends on whether you have a Staging environment which further depends on the plan your project is on.
@@ -23,6 +21,6 @@ The deployment approach is divided into two steps:
 
 Each step is defined in more details in the following articles.
 
-## [Structure deployment](Structure-deployment)
+## [Structure deployment](structure-deployment.md)
 
-## [Content transfer/restore](Content-transfer)
+## [Content transfer/restore](content-transfer.md)

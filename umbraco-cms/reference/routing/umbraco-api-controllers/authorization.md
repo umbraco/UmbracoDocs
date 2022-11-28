@@ -6,7 +6,7 @@ description: "How to secure your Umbraco Api controllers"
 ---
 
 
-# Umbraco Api - Authorization
+# Authorization
 
 _This section will describe how to secure your Umbraco Api controllers based on a users membership_
 

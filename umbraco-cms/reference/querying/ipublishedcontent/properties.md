@@ -3,7 +3,7 @@ versionFrom: 9.0.0
 versionTo: 10.0.0
 ---
 
-# IPublishedContent Property Access & Extension Methods
+# Property Access & Extension Methods
 
 ## Umbraco Properties
 

@@ -243,7 +243,7 @@ Most of (if not all) the Umbraco goodies you work with every day can be injected
 
 ### UmbracoHelper
 
-[Read more about the UmbracoHelper](../querying/umbracohelper/index.md)
+[Read more about the UmbracoHelper](../reference/querying/umbracohelper.md)
 
 `UmbracoHelper` is a scoped service, therefore you can only use it in services that are also scoped, or transient. To get UmbracoHelper you must inject `IUmbracoHelperAccessor` and use that to resolve it:
 
@@ -281,12 +281,12 @@ namespace IOCDocs.Services
 }
 ```
 {% hint style="info" %}
-The use of the UmbracoHelper is only possible when there's an instance of the UmbracoContext. [You can read more here](../../Implementation/Services/index.md).
+The use of the UmbracoHelper is only possible when there's an instance of the UmbracoContext. [You can read more here](../implementation/services).
 {% endhint %}
 
 ### ExamineManager
 
-[Read more about examine](../Searching/Examine/index.md).
+[Read more about examine](../reference/searching/examine).
 
 ```csharp
 using System;
@@ -338,7 +338,7 @@ namespace IOCDocs.Services
 
 ### ILogger
 
-[Read more about logging](../../Fundamentals/Code/Debugging/Logging/index.md)
+[Read more about logging](../fundamentals/code/debugging/logging.md)
 
 ```csharp
 using System;
@@ -365,4 +365,4 @@ namespace IOCDocs.Services
 
 ## Using DI in Services and Helpers
 
-[Services and Helpers](../../Implementation/Services/index.md) - For more examples of using DI and gaining access to Services and Helpers, and creating your own custom Services and Helpers to inject.
+[Services and Helpers](../implementation/services) - For more examples of using DI and gaining access to Services and Helpers, and creating your own custom Services and Helpers to inject.

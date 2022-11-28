@@ -1,5 +1,4 @@
 ---
-meta.Title: "Sections in the Umbraco Backoffice"
 description: "In this article you can learn more about the various sections you can find within the Umbraco Backoffice."
 ---
 
@@ -7,8 +6,9 @@ description: "In this article you can learn more about the various sections you 
 
 A section in Umbraco is where you perform specific tasks related to a particular area of Umbraco. For example Content, Settings and Users are all sections. You can navigate between the different sections by clicking the corresponding icon in the section menu which is positioned at the top of the Backoffice.
 
-![Sections](images/sections-highlight-sections.png "The Section menu is the horizontal menu located at the top of the Umbraco Backoffice.")
-*The __Section menu__ is the horizontal menu located at the top of the Umbraco Backoffice.*
+&#x20;_The **Section menu** is the horizontal menu located at the top of the Umbraco Backoffice._
+
+<figure><img src="images/sections-highlight-sections.png" alt=""><figcaption></figcaption></figure>
 
 There are eight default sections that come with Umbraco:
 
@@ -17,10 +17,10 @@ There are eight default sections that come with Umbraco:
 The Content section contains the content of the website. Content is displayed as nodes in the content tree. Nodes can also show content state:
 
 * Grayed out nodes have not been published
-* <img src="images/has-unpublished-version.svg" width="12px" style="margin: 0;"> Nodes have unpublished versions (but are currently published)
-* <img src="images/protected.svg" width="12px" style="margin: 0;"> Nodes are protected from the public (can only be accessed by a logged in Member)
-* <img src="images/locked.svg" width="12px" style="margin: 0;"> Nodes are currently locked/non-deletable
-* <img src="images/is-container.svg" width="12px" style="margin: 0;"> Nodes are containers (a List View for example)
+* <img src="images/has-unpublished-version.svg" alt="" data-size="line"> Nodes have unpublished versions (but are currently published)
+* <img src="images/protected.svg" alt="" data-size="line"> Nodes are protected from the public (can only be accessed by a logged in Member)
+* <img src="images/locked.svg" alt="" data-size="line"> Nodes are currently locked/non-deletable
+* <img src="images/is-container.svg" alt="" data-size="line"> Nodes are containers (a List View for example)
 
 In order to create content, you must define it using Document Types.
 
@@ -34,20 +34,20 @@ The Settings section is where you can work with the website layout files, langua
 
 The Settings tree consists of:
 
-- Document Types
-- Media Types
-- Member Types
-- Data Types
-- Macros
-- Relation Types
-- Log Viewer
-- Languages
-- Content Templates
-- Templates (`.cshtml` files)
-- Partial views (`.cshtml` files)
-- Partial View Macro Files (`.cshtml` files)
-- Stylesheets (`.css` files)
-- Scripts (`.js` files)
+* Document Types
+* Media Types
+* Member Types
+* Data Types
+* Macros
+* Relation Types
+* Log Viewer
+* Languages
+* Content Templates
+* Templates (`.cshtml` files)
+* Partial views (`.cshtml` files)
+* Partial View Macro Files (`.cshtml` files)
+* Stylesheets (`.css` files)
+* Scripts (`.js` files)
 
 ## Packages
 
@@ -79,7 +79,7 @@ There is also a small 'user section' with shortcuts to edit the currently logged
 
 ## Custom Sections
 
-Along with the default sections that come with Umbraco, you can create your own [Custom Sections](../../extending/section-trees/README.md).
+Along with the default sections that come with Umbraco, you can create your own [Custom Sections](../../extending/section-trees/).
 
 ## Access based on User Group
 

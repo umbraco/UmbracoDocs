@@ -155,13 +155,9 @@ namespace Doccers.Core.Controllers.Api
 }
 ```
 
-`/umbraco/api/tags/getblogtags`:
+![`/umbraco/api/tags/getblogtags`](images/response.png)
 
-![Result](images/response.png)
-
-`/umbraco/api/tags/getdefaulttags`:
-
-![Result](images/response-2.png)
+![`/umbraco/api/tags/getdefaulttags`](images/response-2.png)
 
 Everything should now work as expected when it comes to getting tags. However, if I go to my Backoffice and add a new tag to the `blog` group the changes aren't shown on the endpoint. Let's fix that.
 

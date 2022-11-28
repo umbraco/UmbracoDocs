@@ -1,6 +1,6 @@
 ---
-meta.Title: "Creating Dictionary Items in Umbraco"
-description: "Creating Dictionary Items in Umbraco"
+meta.Title: Creating Dictionary Items in Umbraco
+description: Creating Dictionary Items in Umbraco
 ---
 
 # Dictionary Items
@@ -8,7 +8,8 @@ description: "Creating Dictionary Items in Umbraco"
 Depending on how your site is set up, not all content is edited through the **Content** section. There might be some text in your templates or macros that needs translation. Using Dictionary Items, you can store a value for each language. Dictionary Items have a unique key that is used to fetch the value of the Dictionary Item.
 
 Dictionary Items can be managed from the **Translation** section. Let's take a look at an example. In this example, we will translate "Welcome to Umbraco" from within the template and add it to the dictionary:
-![Dictionary Item](images/dictionary-item.png)
+
+<figure><img src="images/dictionary-item.png" alt=""><figcaption></figcaption></figure>
 
 ## Adding a Dictionary Item
 
@@ -16,11 +17,13 @@ To add a Dictionary Item:
 
 1. Go to the **Translation** section.
 2. Click on **Dictionary** in the **Translation** tree and select **Create**.
-3. Enter the **Name** for the dictionary item. Let's say *Welcome*.
-    ![Create dictionary item](images/Create-dictionary-item.png)
+3.  Enter the **Name** for the dictionary item. Let's say _Welcome_.
+
+    <figure><img src="images/Create-dictionary-item.png" alt=""><figcaption></figcaption></figure>
 4. Click **Create**.
-5. Enter the values for the different language versions.
-    ![Create dictionary item](images/dictionary-item-values.png)
+5.  Enter the values for the different language versions.
+
+    <figure><img src="images/dictionary-item-values.png" alt=""><figcaption></figcaption></figure>
 6. Click **Save**.
 
 ### Grouping Dictionary Items
@@ -29,13 +32,14 @@ To group dictionary items:
 
 1. Go to the **Translation** section.
 2. Click on **Dictionary** in the **Translation** tree and select **Create**.
-3. Enter the **Name** for the dictionary item. Let's say *Contact*.
+3. Enter the **Name** for the dictionary item. Let's say _Contact_.
 4. Click **Create**.
 5. Click on **Contact** and select **Create**.
 6. Enter the **Name** of the item to be created under the **Contact** group.
 7. Click **Create**.
-8. Enter the values for the different language versions.
-    ![Display dictionary item](images/display-dictionary-item.png)
+8.  Enter the values for the different language versions.
+
+    <figure><img src="images/display-dictionary-item.png" alt=""><figcaption></figcaption></figure>
 9. Click **Save**.
 
 ## Editing Dicionary Items
@@ -44,12 +48,12 @@ To edit a dictionary item, follow these steps:
 
 1. Go to the **Translation** section.
 2. Use the **Dictionary** tree to locate the item you need to update/edit.
-   * Alternatively, you can use the *search field* in the top-right corner.
+   * Alternatively, you can use the _search field_ in the top-right corner.
 3. Make the edits you need to make.
 4. Click **Save** to save the changes.
 
 {% hint style="info" %}
-It will only be possible to edit the language(s) that the given user has access to. The value of the remaining languages will be *read-only*.
+It will only be possible to edit the language(s) that the given user has access to. The value of the remaining languages will be _read-only_.
 
 Which language a user has access to is determined by the "Language permissions" set on the User Group. Learn more about this feature in the [Users](users.md#creating-a-user-group) article.
 {% endhint %}
@@ -91,7 +95,7 @@ This will download a `.udt` file which you can use to import the Dictionary item
 
 ### Importing Dictionary Items
 
-1. Go to the **Translation section in the Umbraco backoffice.
+1. Go to the \*\*Translation section in the Umbraco backoffice.
 2. Right-click on the top of the **Dictionary** tree.
 3. Select **Import...**.
 4. Click on **Import**.
@@ -112,5 +116,5 @@ To use Dictionary Items in a multilingual website, see the [Creating a Multiling
 ## Related Links
 
 * [API reference for the DictionaryItem](../../reference/management/models/dictionaryitem.md)
-* [Localization Service](../../reference/management/services/localizationservice/README.md)
+* [Localization Service](../../reference/management/services/localizationservice/)
 * [Creating a Multilingual Site](../../tutorials/multilanguage-setup.md)

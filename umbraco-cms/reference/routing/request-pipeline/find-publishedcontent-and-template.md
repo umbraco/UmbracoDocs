@@ -3,9 +3,9 @@ versionFrom: 7.0.0
 needsV8Update: "true"
 ---
 
-# FindPublishedContentAndTemplate()
+# Find Published Content and Template
 
-This method is called on the "PublishedContentRequest.PrepareRequest()" method.
+The followed method is called on the "PublishedContentRequest.PrepareRequest()" method: `FindPublishedContentAndTemplate()`.
 We discuss shortly what this method is doing:
 
 1. FindPublishedContent ()
@@ -51,7 +51,6 @@ We discuss shortly what this method is doing:
   - Even if the page has a template
 - But preserves whatever template the finder might have set
   - /path/to/page/template1?altTemplate=missing  template1
-- Yes, these rules are arbitrary… feedback?  Get to the [Dev Group](https://groups.google.com/forum/#!forum/umbraco-dev)!
 
 #### FollowExternalRedirect()
 

@@ -6,10 +6,9 @@ versionFrom: 8.0.0
 
 In this article you can learn more about how to use the Forms API for retrieving form definitions and submitting form entries.
 
-We recommend that you have a look at the [Forms API reference documentation](../../API-Documentation/Content-Management/forms) along side this article if you haven't already seen it. The API reference has useful content around field types and possible errors.
+We recommend that you have a look at the[ Forms API reference documentation](../api-documentation/content-management/forms.md) along side this article if you haven't already seen it. The API reference has useful content around field types and possible errors.
 
-Using the Forms API requires the use of a Bearer Token or an API-Key. A bearer token makes sense when working server side or in some kind of middleware whereas on the client side an API-Key might be a better fit.
-When using an API-Key on the client side we recommend that you create a "Forms-only" usergroup, so you do not expose any Content Management capabilities on the client side where not intentional.
+Using the Forms API requires the use of a Bearer Token or an API-Key. A bearer token makes sense when working server side or in some kind of middleware whereas on the client side an API-Key might be a better fit. When using an API-Key on the client side we recommend that you create a "Forms-only" usergroup, so you do not expose any Content Management capabilities on the client side where not intentional.
 
 {% hint style="info" %}
 The availability of Umbraco Forms depends on the plan. See the [Pricing & Features](https://umbraco.com/umbraco-heartcore-pricing/) for an overview of which plans includes Forms.
@@ -19,9 +18,9 @@ The availability of Umbraco Forms depends on the plan. See the [Pricing & Featur
 
 In the Forms section of the Umbraco backoffice you will find the Forms Builder, which allows you to create forms by adding Fields, Placeholder texts, Validation and Conditions.
 
-The purpose of this article is not to describe the Forms functionality itself, but to show how to use the APIs which are available for Umbraco Heartcore projects. 
+The purpose of this article is not to describe the Forms functionality itself, but to show how to use the APIs which are available for Umbraco Heartcore projects.
 
-If you want to learn the basics of 'Creating a form' before going further we recommend that you start with the [Umbraco Forms documentation section](../../../Add-ons/UmbracoForms/Editor/Creating-a-Form/).
+If you want to learn the basics of 'Creating a form' before going further we recommend that you start with the[ Umbraco Forms documentation section](broken-reference).
 
 Before you continue with the rest of this article we recommend that you have at least one Form available that can be used for examples below. Here we will use a form with a Name field, an Email field and the Data Consent field, which is standard for all new Forms.
 
@@ -33,8 +32,7 @@ The API for Forms lives under the Content Management API, so a Bearer token or a
 
 For this example we will call `https://api.umbraco.io/forms` which lists all available forms. From here you can find a specific form to retrieve in order to get the definition for that form. This is useful when you want to expose a specific form in a specific part of your presentation layer.
 
-Getting a specific form is done by issuing a GET request to
-`https://api.umbraco.io/forms/{id:guid}`
+Getting a specific form is done by issuing a GET request to `https://api.umbraco.io/forms/{id:guid}`
 
 Required headers include `umb-project-alias` and `Api-Key` or a Bearer Token via an Authorization header.
 
@@ -124,7 +122,7 @@ Notice that the layout of properties correspond to the Forms builder in the back
 
 ### Retrieving a Form using the .NET Core Client Library
 
-If you are a C# developer and work with .NET you can use the [.NET Core Client Library](../../Client-libraries/Dot-Net-Core) in your own codebase to retrieve form definitions.
+If you are a C# developer and work with .NET you can use the[ .NET Core Client Library](../client-libraries/dot-net-core/) in your own codebase to retrieve form definitions.
 
 First step is to install it through NuGet:
 
@@ -148,7 +146,7 @@ var contactForm = await managementService.Forms.GetById(new Guid("0134604b-f583-
 
 ### Retrieving a Form using the NodeJS Client Library
 
-If you are a JavaScript developer and work with NodeJS you can use the [NodeJS Client Library](../../Client-Libraries/Node-JS) in your own codebase to retrieve form definitions.
+If you are a JavaScript developer and work with NodeJS you can use the [NodeJS Client Library](../client-libraries/node-js.md) in your own codebase to retrieve form definitions.
 
 First step is to install it through npm:
 
@@ -188,8 +186,7 @@ When a form is filled out we need to post the entered values to the `entries` en
 
 In order to submit the entered values you send a POST request to `https://api.umbraco.io/forms/{id:guid}/entries` where the ID represents the specific form to post the entry to.
 
-Required headers include `umb-project-alias` and `Api-Key` or a Bearer Token via an Authorization header.
-The payload is a key value object with the alias of the fields and the values entered in the form.
+Required headers include `umb-project-alias` and `Api-Key` or a Bearer Token via an Authorization header. The payload is a key value object with the alias of the fields and the values entered in the form.
 
 Below is an example of the payload body when sending an entry back to the form retrieved in the previous section.
 
@@ -242,4 +239,3 @@ await client.management.forms.submitEntry('0134604b-f583-4ebc-a3b6-c26ce0f1a11b'
 ```
 
 Please note that if validation fails an error is thrown. The validation configured for each of the fields is validated by Umbraco Forms on the server side.
-

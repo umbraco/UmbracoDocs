@@ -1,6 +1,4 @@
 ---
-versionFrom: 8.0.0
-meta.Title: "Umbraco Heartcore backoffice"
 description: "Documentation for working in the backoffice in Umbraco Heartcore"
 ---
 
@@ -8,6 +6,6 @@ description: "Documentation for working in the backoffice in Umbraco Heartcore"
 
 On this page, you'll find articles about the backoffice that are specific to Heartcore.
 
-## [Custom Grid Editors](Grid-Editors/)
-An overview of how to create custom Grid Editors.
+## [Custom Grid Editors](grid-editors.md)
 
+An overview of how to create custom Grid Editors.

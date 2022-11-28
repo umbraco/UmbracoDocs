@@ -1,15 +1,14 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Security in Umbraco"
-description: "This section includes information on Umbraco security, its various security options and configuring how authentication & authorization works in Umbraco"
+description: >-
+  This section includes information on Umbraco security, its various security
+  options and configuring how authentication & authorization works in Umbraco
 ---
 
 # Security
 
 In this article, you will find everything you need regarding security within Umbraco.
 
-## [The Umbraco Trust Center](https://umbraco.com/about-us/trust-center/)
+## [The Umbraco Trust Center (external)](https://umbraco.com/about-us/trust-center/)
 
 On our main website, we have a dedicated security section which provides all the details you need to know about security within the Umbraco CMS. This includes how to report a vulnerability.
 
@@ -31,21 +30,19 @@ Learn about how to harden the security on your Umbraco website to secure it even
 
 When your project is hosted on Umbraco Cloud, you might be interested in more details about the security of the hosting. This information can be found in the Umbraco Cloud FAQs section of the documentation.
 
-## [Backoffice users and website members](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity) (Available from Umbraco version 9.3.0)
+## [Backoffice users and website members (external)](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity)
 
 Authentication for backoffice users and website members in Umbraco uses [ASP.NET Core Identity](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity) which is a flexible and extendable framework for authentication.
 
 Out of the box Umbraco ships with a custom ASP.NET Core Identity implementation which uses Umbraco's database data. Normally this is fine for most Umbraco developers, but in some cases the authentication process needs to be customized.
 
-### [External login providers](external-login-providers/index.md)
+### [External login providers](external-login-providers.md)
 
-The Umbraco users and members supports external login providers (OAuth) for performing authentication of your users/members.
-This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook.
+The Umbraco users and members supports external login providers (OAuth) for performing authentication of your users/members. This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook.
 
-### [Two-factor authentication](two-factor-authentication) (Available from Umbraco version 9.3.0)
+### [Two-factor authentication](two-factor-authentication.md)
 
-The Umbraco members supports a two-factor authentication (2FA) abstraction for implementing a 2FA provider of your choice.
-This could be any Time-based One-time Password (TOTP) Algorithm, including Microsoft and Google Authenticator Apps
+The Umbraco members supports a two-factor authentication (2FA) abstraction for implementing a 2FA provider of your choice. This could be any Time-based One-time Password (TOTP) Algorithm, including Microsoft and Google Authenticator Apps
 
 ### [BackOfficeUserManager and Notifications](backofficeusermanager-and-notifications.md)
 
