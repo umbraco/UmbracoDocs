@@ -6,9 +6,9 @@ description: A guide to install Umbraco CMS using Visual Studio.
 
 ## Prerequisites
 
-* Install the newest [Umbraco dotnet templates](broken-reference).
+* Install the newest [Umbraco dotnet templates](install-umbraco-with-templates.md).
   * In Visual Studio 2022, the .NET CLI templates are enabled to appear, by default. For information on how to enable .NET CLI templates in Visual Studio 2019, see the [.NET CLI Templates in Visual Studio](https://devblogs.microsoft.com/dotnet/net-cli-templates-in-visual-studio/) article.
-* Check the [Requirements](broken-reference) to ensure you have everything you need to start your Umbraco project.
+* Check the [Requirements](../requirements.md) to ensure you have everything you need to start your Umbraco project.
 
 ## Quick Start
 
@@ -71,7 +71,7 @@ Follow the installation wizard and after a few steps, you will get a message say
 
 You are now ready to start building your Umbraco project. Have a look below for different resources on the next steps.
 
-* [Getting Started with Umbraco](broken-reference)
-* [Tutorial: Create a website from scratch](broken-reference)
-* [Find different options for hosting your Umbraco website](broken-reference)
-* [Learn about configuration in Umbraco CMS](broken-reference)
+* [Getting Started with Umbraco](../../../../getting-started/)
+* [Tutorial: Create a website from scratch](../../../tutorials/creating-a-basic-website/)
+* [Find different options for hosting your Umbraco website](../server-setup/)
+* [Learn about configuration in Umbraco CMS](../../../reference/configuration/)
