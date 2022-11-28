@@ -9,16 +9,18 @@ description: >-
 {% hint style="info" %}
 **Are you using any custom packages or code on your Umbraco Cloud project?**\
 ****\
-****You will need to ensure the packages you are using are available in the latest version of  Umbraco and that your custom code is valid with the .NET Framework.\
+****You will need to ensure the packages you use are available in the latest version of  Umbraco and that your custom code is valid with the .NET Framework.\
 \
 **Breaking Changes**\
 \
-Make sure that you know the [Breaking changes](../../umbraco-cms/fundamentals/setup/upgrading/version-specific/) in the latest version of Umbraco CMS.
+Make sure you know the [Breaking changes](../../umbraco-cms/fundamentals/setup/upgrading/version-specific/) in the latest version of Umbraco CMS.
 {% endhint %}
 
 ## Prerequisites
 
+* Follow the requirements for [local development](../../umbraco-cms/fundamentals/setup/requirements.md#local-development).
 * An Umbraco Cloud project running **the latest version of Umbraco**
+* The latest .[NET version](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks) is installed locally.
 * **At least 2 environments** on your Cloud project.
 * A backup of your project database.
   * Directly from your environment. See the [Database backups](../databases/backups.md) article,
@@ -42,14 +44,14 @@ Video example.
 ## Step 2: Clone down your environment
 
 * Clone down the **Development** environment.
-* Build and run the project locally.
+* Build and run the [project locally](../set-up/working-locally.md#running-the-site-locally).
 * Log in to the backoffice.
 * Restore content from your Cloud environment.
 
 ## Step 3: Upgrade the project locally using Visual Studio
 
 * Open your project in Visual Studio - use the `csproj` file in the `/src/UmbracoProject` folder.
-* Right-click your project solution in the **Solution Explorer**.
+* Right-click your project solution in **Solution Explorer**.
 * Select **Properties**.
 
 ![Solution Explorer](images/Solution-Explorer.png)
