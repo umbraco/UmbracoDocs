@@ -265,7 +265,7 @@ if (vm.layout.length > 0) {
 }
 ```
 
-See [blockEditorModelObject](https://our.umbraco.com/apidocs/v8/ui/#/api/umbraco.services.blockEditorModelObject#methods\_getBlockObject) for the getBlockObject method for more information on the properties avaiable on a Block Object.
+See [blockEditorModelObject](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Cms.Core.Models.Blocks.html) for the getBlockObject method for more information on the properties avaiable on a Block Object.
 
 ## Remove a Block
 

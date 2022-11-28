@@ -6,7 +6,7 @@ versionFrom: 9.0.0
 
 The AuditService acts as a "gateway" to Umbraco data for operations which are related to the audit trail.
 
-[Browse the API documentation for IAuditService interface](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Services.IAuditService.html).
+[Browse the API documentation for IAuditService interface](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Cms.Core.Services.IAuditService.html).
 
  * **Namespace:** `Umbraco.Cms.Core.Services` 
  * **Assembly:** `Umbraco.Core.dll`

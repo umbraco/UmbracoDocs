@@ -40,7 +40,7 @@ The example above would register a custom tree with a title 'Favourite Things Na
 
 ### Tree Groups
 
-Tree Groups enable you to group trees in a section. You provide the alias of the Tree Group name, you wish to add your tree to - see [Constants.Trees.Groups](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Constants.Trees.Groups.html) for a list of existing group alias. An example of tree groups in the backoffice would be the *Settings* tree group and the *Templating* tree group in the *Settings* section.
+Tree Groups enable you to group trees in a section. You provide the alias of the Tree Group name, you wish to add your tree to - see [Constants.Trees.Groups](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Cms.Core.Constants.Trees.Groups.html) for a list of existing group alias. An example of tree groups in the backoffice would be the *Settings* tree group and the *Templating* tree group in the *Settings* section.
 
 If you add your own alias, you'll need to add a translation key. This can be done by adding a language file to a `lang` folder with your application folder in `App_Plugins`: `App_Plugins/favouriteThings/lang/en-us.xml`. This will avoid the alias appearing as the header in [square brackets].
 
@@ -224,8 +224,6 @@ Our Tree Action View would then be wired to the loaded controller using the `ng-
 ```
 
 ![Delete Raindrops on Roses](images/delete-raindrops-on-roses-v8.png)
-
-Take a look at the [umbEditor directives in the backoffice API Documentation](https://apidocs.umbraco.com/v9/ui/#/api/umbraco.directives.directive:umbEditorHeader), for lots of common interaction directives that can be used to deliver a consistent backoffice editing experience for items in your custom tree.
 
 [see Tree Actions for a list of tree *ActionMenuItems* and *IActions*](tree-actions.md)
 
