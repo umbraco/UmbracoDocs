@@ -240,26 +240,34 @@ These Partial Views must be placed in the same folder as before, (`Views/Partial
 
 #### Putting it all together
 
-The following is an example of a Partial View for a Block Type. It is important that the `MyElementTypeAliasOfContent`and `MyElementTypeAliasOfSettings` corresponds with the selected Element Type aliases for the given Content and Settings in your block.
+The following is an example of a Partial View for a Block Type of type `MyElementTypeAliasOfContent`.
 
-{% code title="PartialView.cshtml" %}
+{% code title="MyElementTypeAliasOfContent.cshtml" %}
 ```csharp
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>;
-@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
-@{
-    var content = (ContentModels.MyElementTypeAliasOfContent)Model.Content;
-    var settings = (ContentModels.MyElementTypeAliasOfSettings)Model.Settings;
-}
 
 @* Render the value of field with alias 'heading' from the Element Type selected as Content section *@
-<h1>@content.Value("heading")</h1>
+<h1>@Model.Content.Value("heading")</h1>
 
 @* Render the block areas *@
 @await Html.GetBlockGridItemAreasHtmlAsync(Model)
 ```
 {% endcode %}
 
-You can simplify the property rendering using ModelsBuilder by replacing `@content.Value("heading")` with `@content.Heading`.
+If you are using ModelsBuilder, you can make the property rendering strongly typed by letting your view accept a model of type `BlockGridItem<T>`. For example: 
+
+{% code title="MyElementTypeAliasOfContent.cshtml" %}
+```csharp
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem<ContentModels.MyElementTypeAliasOfContent>>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+@* Render the Heading property from the Element Type selected as Content section *@
+<h1>@Model.Content.Heading</h1>
+
+@* Render the block areas *@
+@await Html.GetBlockGridItemAreasHtmlAsync(Model)
+```
+{% endcode %}
 
 #### Stylesheet
 
@@ -524,7 +532,7 @@ All `contentData` and `layoutData` entries need their own unique `Udi` as well a
 
 First and foremost, we need models to transform the raw data into Block Grid compatible JSON:
 
-{% code title="BlockGridData.cs" lineNumbers="true" %}
+{% code title="Models.cs" lineNumbers="true" %}
 ```csharp
 using Newtonsoft.Json;
 using Umbraco.Cms.Core;
