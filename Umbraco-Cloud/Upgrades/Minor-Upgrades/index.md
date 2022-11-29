@@ -12,7 +12,7 @@ This workflow applies to all products on Umbraco Cloud: Umbraco CMS, Umbraco For
 
 For Starter plans, you will need to add a Development environment first before you can perform the semi-automatic upgrade. Find pricing details for Umbraco Cloud Starter plans on our [website](https://umbraco.com/pricing/).
 
-<iframe width="800" height="450" title="How to upgrade an Umbraco Cloud environment to a new minor version" src="https://www.youtube.com/embed/mMk2VM_5N-I?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" title="Upgrading an Umbraco Cloud environment to a new minor version" src="https://www.youtube.com/embed/JpD7m7DCtIk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Troubleshooting Automated minor upgrades
 
