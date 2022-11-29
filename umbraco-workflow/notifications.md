@@ -756,10 +756,9 @@ Which one you want to use depends on what you want to achieve. If you want to be
     <td>WorkflowSettingsSavedNotification</td>
     <td>
       <ul>
-        <li>IWorkflowGroup Target</li>
+        <li>IEnumerable&ltISettings&gt SavedEntities</li>
         <li>EventMessages Messages</li>
         <li>IDictionary&ltstring,object&gt State</li>        
-        <li>bool Cancel</li>
       </ul>
     </td>
     <td>
