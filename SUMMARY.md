@@ -566,7 +566,8 @@
 
 ## Umbraco Heartcore
 
-* [What is Umbraco Heartcore?](umbraco-heartcore/README.md)
+* [What is Umbraco Heartcore?](umbraco-heartcore/umbraco-heartcore/README.md)
+  * [Compare with Umbraco CMS](umbraco-heartcore/umbraco-heartcore/compare-with-umbraco-cms.md)
 * [Getting Started](umbraco-heartcore/getting-started/README.md)
   * [API Browser](umbraco-heartcore/getting-started/api-browser.md)
   * [Backoffice Users and API Keys](umbraco-heartcore/getting-started/backoffice-users-and-api-keys.md)

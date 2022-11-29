@@ -1,3 +1,8 @@
+---
+meta.Title: Umbraco Heartcore
+meta.Description: An introduction to Umbraco Heartcore
+---
+
 # What is Umbraco Heartcore?
 
 Umbraco Heartcore is a headless Software As A Service (SAAS) offered by Umbraco. The service enables you to create and manage content and media in the Umbraco backoffice and make it available to any platforms, devices, channels etc.
@@ -16,7 +21,7 @@ There are 3 ways to get your hands on an Umbraco Heartcore project:
 
 In this section you will find documentation on how to work with Umbraco Heartcore.
 
-It includes REST API documentation, the basics on how to get started and how to work with the available Client Libraries. Umbraco Heartcore is a specific type of project only available via Umbraco Cloud.
+It includes REST API documentation, the basics on how to get started and how to work with the available Client Libraries. Please note that Umbraco Heartcore is a specific type of project only available via Umbraco Cloud.
 
 ## [API Documentation for the Umbraco Heartcore REST API endpoints](../api-documentation/)
 
