@@ -26,7 +26,7 @@ public abstract class CacheRefresherNotification : INotification
 }
 ```
 
-As you can see this notification contains two properties, a `MessageObject` and a `MessageType`. The `MessageType` specifies what kind of cache operation was performed, for instance `RemoveById`, the possible message types is as follows: 
+As you can see this notification contains two properties, a `MessageObject` and a `MessageType`. The `MessageType` specifies what kind of cache operation was performed, for example `RemoveById`. The possible message types is as follows:
 
 ```C#
 public enum MessageType
