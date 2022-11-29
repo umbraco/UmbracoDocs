@@ -63,7 +63,7 @@ Sometimes you might want to add the images to a specific folder. This folder can
 
 # Advanced Configuration
 
-The RTE can also accept advanced configuration through the `appSettings.json` file fed into the TinyMCE configuration. This is within `Umbraco` / `CMS` / `RichTextEditor` and allows you to configure the following:
+The RTE can also accept advanced configuration through the `appSettings.json` file fed into the TinyMCE configuration. This is within `Umbraco:CMS:RichTextEditor` and allows you to configure the following:
 
 * [Commands](https://www.tiny.cloud/docs/advanced/editor-command-identifiers/#executablecommands)
 * [Plugins](https://www.tiny.cloud/docs/configure/integration-and-setup/#plugins)
