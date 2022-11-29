@@ -50,7 +50,7 @@ Use the table below to determine which .NET version to upgrade to when going thr
 
 It's recommended that you upgrade the site offline and test the upgrade fully before deploying it to the production environment.
 
-1. Stop your site in IIS to prevent any changes being made while you are upgrading.
+1. Stop your site in IIS to prevent any changes from being made while you are upgrading.
 2. Open your Umbraco project in Visual Studio.
 3. Right-click on the project name in the Solution Explorer and select **Properties**.
 4. Select the **.NET** version from the **Target Framework** drop-down.
@@ -78,11 +78,13 @@ If you are using SQL CE in your project you will need to run `dotnet add package
 
 When the command completes, open the **.csproj** file to make sure the package reference was updated:
 
+{% code title="" %}
 ```xml
 <ItemGroup>
   <PackageReference Include="Umbraco.Cms" Version="x.x.x" />
 </ItemGroup>
 ```
+{% endcode %}
 
 ## Run an unattended upgrade
 
