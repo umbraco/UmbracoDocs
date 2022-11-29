@@ -99,11 +99,11 @@ Or, alternatively:
 }
 ```
 :::note
-Creating multiple crop URLs directly in your template will result in a different image, which will fill up the Azure Blob storage cache folder adding to the overall media storage on the project plan. 
+Creating multiple crop URLs directly in your template will result in generating a new image. This will fill up the Azure Blob storage cache folder adding to the overall media storage on the project plan. 
 
-An option to be considered will be using cache trimming trimCache=true so cached processed images can be automatically deleted after being created a certain amount of days ago (maxDays): https://imageprocessor.org/imageprocessor-web/configuration/. 
+A solution to this is to use cache trimming by adding `trimCache=true`. With this enabled cached processed images can be automatically deleted after being created a certain amount of days ago. Learn more about this in the [ImageProcessor documentation](https://imageprocessor.org/imageprocessor-web/configuration/). 
 
-Note that Umbraco 7/8 previously shipped with config to turn this off, since it had some performance issues in earlier ImageProcessor versions.
+Older versions of Umbraco 7/8 shipped with the config set to `false`. This was due to performance issues in earlier ImageProcessor versions.
 :::
 
 ### CSS background example to output a "banner" crop from a cropper property with alias "image"
