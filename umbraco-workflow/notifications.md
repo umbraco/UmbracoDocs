@@ -431,7 +431,7 @@ Which one you want to use depends on what you want to achieve. If you want to be
     <td>
       <ul>
         <li>IWorkflowInstance Target</li>
-        <li>WorkflowAction Action<li>
+        <li>WorkflowAction Action</li>
         <li>EventMessages Messages</li>
         <li>IDictionary&ltstring,object&gt State</li>        
         <li>bool Cancel</li>
@@ -448,7 +448,7 @@ Which one you want to use depends on what you want to achieve. If you want to be
     <td>
       <ul>
         <li>IWorkflowInstance Target</li>
-        <li>WorkflowAction Action<li>
+        <li>WorkflowAction Action</li>
         <li>EventMessages Messages</li>
         <li>IDictionary&ltstring,object&gt State</li>        
       </ul>
@@ -464,7 +464,7 @@ Which one you want to use depends on what you want to achieve. If you want to be
     <td>
       <ul>
         <li>IWorkflowInstance Target</li>
-        <li>WorkflowAction Action<li>
+        <li>WorkflowAction Action</li>
         <li>EventMessages Messages</li>
         <li>IDictionary&ltstring,object&gt State</li>        
         <li>bool Cancel</li>
@@ -481,7 +481,7 @@ Which one you want to use depends on what you want to achieve. If you want to be
     <td>
       <ul>
         <li>IWorkflowInstance Target</li>
-        <li>WorkflowAction Action<li>
+        <li>WorkflowAction Action</li>
         <li>EventMessages Messages</li>
         <li>IDictionary&ltstring,object&gt State</li>        
       </ul>
@@ -497,7 +497,7 @@ Which one you want to use depends on what you want to achieve. If you want to be
     <td>
       <ul>
         <li>IWorkflowInstance Target</li>
-        <li>WorkflowType WorkflowType<li>
+        <li>WorkflowType WorkflowType</li>
         <li>EventMessages Messages</li>
         <li>IDictionary&ltstring,object&gt State</li>        
       </ul>
@@ -542,7 +542,7 @@ Which one you want to use depends on what you want to achieve. If you want to be
     <td>
       <ul>
         <li>IWorkflowInstance Target</li>
-        <li>WorkflowAction Action<li>
+        <li>WorkflowAction Action</li>
         <li>EventMessages Messages</li>
         <li>IDictionary&ltstring,object&gt State</li>        
         <li>bool Cancel</li>
@@ -559,7 +559,7 @@ Which one you want to use depends on what you want to achieve. If you want to be
     <td>
       <ul>
         <li>IWorkflowInstance Target</li>
-        <li>WorkflowAction Action<li>
+        <li>WorkflowAction Action</li>
         <li>EventMessages Messages</li>
         <li>IDictionary&ltstring,object&gt State</li>        
       </ul>
@@ -575,7 +575,7 @@ Which one you want to use depends on what you want to achieve. If you want to be
     <td>
       <ul>
         <li>IWorkflowInstance Target</li>
-        <li>WorkflowAction Action<li>
+        <li>WorkflowAction Action</li>
         <li>EventMessages Messages</li>
         <li>IDictionary&ltstring,object&gt State</li>        
         <li>bool Cancel</li>
@@ -592,7 +592,7 @@ Which one you want to use depends on what you want to achieve. If you want to be
     <td>
       <ul>
         <li>IWorkflowInstance Target</li>
-        <li>WorkflowAction Action<li>
+        <li>WorkflowAction Action</li>
         <li>EventMessages Messages</li>
         <li>IDictionary&ltstring,object&gt State</li>        
       </ul>
@@ -608,7 +608,7 @@ Which one you want to use depends on what you want to achieve. If you want to be
     <td>
       <ul>
         <li>IWorkflowInstance Target</li>
-        <li>WorkflowAction Action<li>
+        <li>WorkflowAction Action</li>
         <li>EventMessages Messages</li>
         <li>IDictionary&ltstring,object&gt State</li>        
         <li>bool Cancel</li>
@@ -626,7 +626,7 @@ Which one you want to use depends on what you want to achieve. If you want to be
     <td>
       <ul>
         <li>IWorkflowInstance Target</li>
-        <li>WorkflowAction Action<li>
+        <li>WorkflowAction Action</li>
         <li>EventMessages Messages</li>
         <li>IDictionary&ltstring,object&gt State</li>        
       </ul>
