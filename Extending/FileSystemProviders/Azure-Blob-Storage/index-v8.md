@@ -41,7 +41,7 @@ The following six keys will have been added to the `<appSettings>` in your `web.
 </appSettings>
 ```
 
-Make sure to update this configuration to match your own setup. For example `AzureBlobFileSystem.UsePrivateContainer:media` needs to be set to `true` if your blob container is not publicly accessible. `ImageProcessingException`s will be thrown when images are served and this is not configured properly.
+Make sure to update this configuration to match your own setup. For example `AzureBlobFileSystem.UsePrivateContainer:media` needs to be set to `true` if your blob container is not publicly accessible - [see below](#using-private-blob-containers).
 
 When you're installing the package from the **Package** section of the Umbraco Backoffice, you'll be able to fill in the configuration directly from the backoffice:
 
@@ -139,6 +139,39 @@ After manually updating the security.config file, you can override the `Containe
 Any media files you already have on your site will not automatically be added to the Blob Storage. You will need to copy the contents on the `/Media` folder and upload it to the `media` folder on your Blob account. Once you've done that you can safely delete the `/Media` folder locally, as it is no longer needed.
 
 Any new media files you upload to the site, will automatically be added to the Blob Storage.
+
+## Using Private Blob Containers
+
+If you don't want to use a publicly accessible container for media storage, you need to follow these additional steps:
+
+1. In your `Web.config`, `AzureBlobFileSystem.UsePrivateContainer:media` needs to be set to `true`.
+2. Install `ImageProcessor.Web.Plugins.AzureBlobCache` from NuGet, which contains the `AzureImageService` that is used in the following step.
+3. In your `~/config/imageprocessor/security.config`, you need to replace the existing section similar to 
+
+```xml
+<service prefix="media/" name="CloudImageService" type="ImageProcessor.Web.Services.CloudImageService, ImageProcessor.Web">
+  <settings>
+    <setting key="Container" value="media"/>
+    <setting key="MaxBytes" value="8194304"/>
+    <setting key="Timeout" value="30000"/>
+    <setting key="Host" value="https://mygreatproject.blob.core.windows.net/"/>
+  </settings>
+</service>
+```
+
+with
+
+```xml
+<service prefix="media/" name="AzureImageService" type="ImageProcessor.Web.Plugins.AzureBlobCache.AzureImageService, ImageProcessor.Web.Plugins.AzureBlobCache">
+  <settings>
+    <setting key="Container" value="[your-container-name e.g. media]"/>
+    <setting key="StorageAccount" value="DefaultEndpointsProtocol=https;AccountName=[your-account-name];AccountKey=[your-account-key]EndpointSuffix=core.windows.net" />
+    <setting key="AccessType" value="Blob" />
+  </settings>
+</service>
+```
+
+If you fail to apply set `AzureBlobFileSystem.UsePrivateContainer:media` properly, you will see a lot of `ImageProcessingException`s when images are served. If you fail to configure the `AzureImageService`, ImageProcessor will not work and your images will be served but not cropped, resized, and similar.
 
 ## Using Azure Blob Cache
 
