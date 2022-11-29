@@ -75,7 +75,7 @@ Video example.
 
 ### Upgrading Add-on packages
 
-Follow steps 9-12 to update the following packages to the latest stable version as well:
+&#x20;Update the following packages to the latest stable version as well:
 
 * Umbraco.Deploy.Cloud
 * Umbraco.Deploy.Contrib
