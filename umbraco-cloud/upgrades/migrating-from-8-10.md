@@ -32,6 +32,8 @@ Video example.
 
 * A backup of your Umbraco 8 project database.
 
+* Restore media on your Umbraco 8 project 
+
 {% hint style="info" %}
 We strongly recommend having at least **2 environments** on the Umbraco 10 project.
 
