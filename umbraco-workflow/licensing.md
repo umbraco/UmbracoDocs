@@ -13,16 +13,14 @@ To add the license to your site, follow these steps:
 
     ```
     {
-     “Umbraco”: {
-        “CMS”: {
-          “Licenses”: {
-            “UmbracoWorkflow”: “YOUR-LICENSE-KEY”
-          }
-        }
-      }
+      “Umbraco”: {
+        “Licenses”: {
+          “UmbracoWorkflow”: “YOUR-LICENSE-KEY”
+        }   
+      }  
     }
     ```
-2.  Create a class in your website, for example, `lic.cs` that implements the `IServerRoleAccessor` with `CurrentServerRole` set to either `Single` or `SchedulingPublisher` server role:\
+2.  Create a class in your website, for example, `ServerRoleAccessor.cs` that implements the `IServerRoleAccessor` with `CurrentServerRole` set to either `Single` or `SchedulingPublisher` server role, and register that class via a composer:\
 
 
     ```
@@ -34,11 +32,11 @@ To add the license to your site, follow these steps:
     {
         public void Compose(IUmbracoBuilder builder)
         {
-            builder.SetServerRegistrar<SinlgeServerRoleAccessor>();
+            builder.SetServerRegistrar<SingleServerRoleAccessor>();
         }
     }
 
-    public class SinlgeServerRoleAccessor : IServerRoleAccessor
+    public class SingleServerRoleAccessor : IServerRoleAccessor
     {
         public ServerRole CurrentServerRole => ServerRole.Single;
     }
