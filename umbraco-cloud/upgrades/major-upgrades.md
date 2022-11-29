@@ -7,22 +7,26 @@ description: >-
 # Major Upgrades
 
 {% hint style="info" %}
+****
+
 **Are you using any custom packages or code on your Umbraco Cloud project?**\
 ****\
-****You will need to ensure the packages you are using are available in the latest version of  Umbraco and that your custom code is valid with the .NET Framework.\
+****You will need to ensure the packages you use are available in the latest version of  Umbraco and that your custom code is valid with the .NET Framework.\
 \
 **Breaking Changes**\
 \
-Make sure that you know the [Breaking changes](../../umbraco-cms/fundamentals/setup/upgrading/version-specific/) in the latest version of Umbraco CMS.
+Make sure you know the [Breaking changes](../../umbraco-cms/fundamentals/setup/upgrading/version-specific/) in the latest version of Umbraco CMS.
 {% endhint %}
 
 ## Prerequisites
 
+* Follow the **requirements** for [local development](../../umbraco-cms/fundamentals/setup/requirements.md#local-development).
 * A Umbraco Cloud project running **the latest version of Umbraco**
+* The **latest** .[NET version](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks) is installed locally.
 * **At least 2 environments** on your Cloud project.
 * A backup of your project database.
   * Directly from your environment. See the [Database backups](../databases/backups.md) article,
-  * Or clone down and restore the project, and take a backup of the local database.
+  * Or clone down, restore the project, and backup the local database.
 
 ## Video Tutorial
 
@@ -42,7 +46,7 @@ Video example.
 ## Step 2: Clone down your environment
 
 * Clone down the **Development** environment.
-* Build and run the project locally.
+* Build and run the [project locally](../set-up/working-locally.md#running-the-site-locally).
 * Log in to the backoffice.
 * Restore content from your Cloud environment.
 
@@ -91,14 +95,11 @@ Also, if you have more projects in your solution or other packages, make sure th
 
 ## Step 4: Finishing the Upgrade
 
-*   Choose your Database configuration:
-
-    * To re-use the existing LocalDB database, configure the [ConnectionStrings](../../umbraco-deploy/upgrades/version-specific.md#database-initialization) or use the [`PreferLocalDbConnectionString` setting](../../umbraco-deploy/deploy-settings.md#preferlocaldbconnectionstring).
-    * To use the default SQLite database, skip this step.
-
-
-* Enable [Unattended Upgrades](../../umbraco-cms/reference/configuration/unattendedsettings.md#upgrade-unattended) to verify the Upgrade locally.
-* Remove Unattended Upgrades and build and run the project to verify everything works as expected.
+* Enable [Unattended Upgrades](../../umbraco-cms/reference/configuration/unattendedsettings.md#upgrade-unattended)&#x20;
+* Run the **project locally**
+* Log in to the Umbraco backoffice to **verify the upgrade** has happened.
+* **Remove** Unattended Upgrades&#x20;
+* **Build and run** the project to verify everything works as expected.
 
 ![Target Framework](images/verify-v10-upgrade-locally.png)
 
