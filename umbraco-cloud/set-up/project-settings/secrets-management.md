@@ -23,7 +23,7 @@ You can add secrets to your Umbraco Cloud environments if you are on a standard 
 ### How to add secrets
 
 {% hint style="warning" %}
-When adding a secret to your environment will restart
+When adding a secret to your environment it will restart.
 {% endhint %}
 
 To add a secret to your environment follow these steps:
