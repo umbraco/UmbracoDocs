@@ -519,7 +519,7 @@ Which one you want to use depends on what you want to achieve. If you want to be
       </ul>
     </td>
     <td>
-    Published when WorkflowProcess.IntiateWorkflow is called in the API, before the workflow is intiated.<br/>
+    Published when WorkflowProcess.InitiateWorkflow is called in the API, before the workflow is initiated.<br/>
     CreatedEntity: Gets the IWorkflowInstance object being created.
     </td>
   </tr>
