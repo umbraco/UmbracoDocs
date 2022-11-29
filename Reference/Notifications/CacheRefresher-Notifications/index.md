@@ -5,9 +5,11 @@ versionTo: 11.0.0
 
 # Cache Refresher Notifications
 
-Before starting with cache refresher notifications it's a good idea to ensure you need to use these, if you want to react to changes in content for instance, there's no real reason to use these notifications, since the [content service notifications](../ContentService-Notifications/index.md) will be easier to work with, but if you need to react to changes in the cache, then these are the notifications for you.
+Before starting with cache refresher notifications it's a good idea to ensure you need to use them. If you want to react to changes in content, for instance, there's no real reason to use these notifications. This is due to the [content service notifications](../ContentService-Notifications/index.md) being easier to work with. If you need to react to changes in the cache, then these are the notifications for you.
 
-Cache refresher notifications are sent when the cache has refreshed, there's multiple different type of cache refresher notifications, based on what type has been updated in the cache, for instance content or media. All these notifications inherit from the same base notification: `CacheRefresherNotification`, the base notification is implemented in the following way:
+Cache refresher notifications are sent when the cache has refreshed. There are multiple different types of cache refresher notifications. These types are based on what type has been updated in the cache, for instance, content or media. All these notifications inherit from the same base notification: `CacheRefresherNotification`.
+
+The base notification is implemented in the following way:
 
 ```C#
 public abstract class CacheRefresherNotification : INotification
@@ -38,7 +40,7 @@ public enum MessageType
     RefreshByPayload,
 }
 ```
-The other parameter `MessageObject` will depend on what type of cache refresher notification you're handling, if you for instance handle the `ContentCacheNotification` the message object will be `ContentCacheRefresher.JsonPayload[]`
+The other parameter `MessageObject` will depend on what type of cache refresher notification you're handling. If you for instance handle the `ContentCacheNotification`, the message object will be `ContentCacheRefresher.JsonPayload[]`.
 
 This object contains the Id and key of the item being updated, as well as an enum specifying how the tree is updated:
 
