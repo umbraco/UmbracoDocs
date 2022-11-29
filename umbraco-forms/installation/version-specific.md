@@ -40,6 +40,7 @@ Version 11 contains a number of breaking changes. We don't expect many projects 
 - The obsolete overload of the method `IsVisible` in `FieldConditionEvaluation` was removed.
 - The property `ConditionCheckFunctions` was added to the `IFieldType` interface.
 - The property `Alias` was added to the interfaces for all provider types inheriting from `ProviderBase`.
+- The additional method `GetRecordsFromFormForMember` was added to the interface `IRecordReaderService`.
 
 ## Version 10
 
