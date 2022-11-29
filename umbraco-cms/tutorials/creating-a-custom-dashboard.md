@@ -15,7 +15,7 @@ This guide takes you through the steps to setup a Custom Dashboard in Umbraco.
 
 A Dashboard is a tab on the right-hand side of a section eg. the Getting Started dashboard in the Content section:
 
-![Welcome dashboard](images/whatisadashboardv10.jpg)
+![Welcome dashboard](images/whatisadashboard-v10.jpg)
 
 ### Why provide a Custom Dashboard for your editors?
 
@@ -128,7 +128,7 @@ The `App_Plugins` version of the `Lang` directory is case sensitive on Linux sys
 
 ### The Result
 
-<figure><img src="../../.gitbook/assets/welcomemessage-v8.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/welcomemessage-v8.PNG" alt=""><figcaption></figcaption></figure>
 
 We can apply the same workflow to elements inside the dashboard, not only the name/alias. Extend the translation file xml like so:
 

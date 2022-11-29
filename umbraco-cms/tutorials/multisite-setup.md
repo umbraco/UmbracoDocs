@@ -44,7 +44,7 @@ At this point you should have several root nodes, where each is a separate websi
 4. In the **Domains** pane, click **Add new Domain**.
 5. Enter the domain in the **Domain** field and select the language from the **Language** drop-down list. If  you have a multilanguage solution, you can map different hostnames to specific languages.
 
-<figure><img src="../../.gitbook/assets/3-culturehostnamesp2-v10.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/3-culturehostnamesp2-v10.png" alt=""><figcaption></figcaption></figure>
 
 6\. Click Save and that should do it!
 

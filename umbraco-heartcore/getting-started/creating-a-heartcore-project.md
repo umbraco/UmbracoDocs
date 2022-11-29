@@ -27,7 +27,7 @@ As we go through this tutorial and start building the content for our Umbraco He
 
 If you are completely new to Umbraco, we recommend that you take the **Backoffice Tour** we've created! You can find it by selecting the question mark in the top-right corner.
 
-<img src="../../.gitbook/assets/backoffice-tour.png" alt="Take the Backoffice Tour" data-size="original">
+<img src="images/backoffice-tour.png" alt="Take the Backoffice Tour" data-size="original">
 {% endhint %}
 
 ## Overview of tutorial
