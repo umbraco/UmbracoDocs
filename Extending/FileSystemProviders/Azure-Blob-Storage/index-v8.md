@@ -41,7 +41,7 @@ The following six keys will have been added to the `<appSettings>` in your `web.
 </appSettings>
 ```
 
-Make sure to update this configuration to match your own setup. E.g. note that `AzureBlobFileSystem.UsePrivateContainer:media` needs to be set to `true` if your blob container is not publicly accessible.
+Make sure to update this configuration to match your own setup. For example `AzureBlobFileSystem.UsePrivateContainer:media` needs to be set to `true` if your blob container is not publicly accessible. `ImageProcessingException`s will be thrown when images are served and this is not configured properly.
 
 When you're installing the package from the **Package** section of the Umbraco Backoffice, you'll be able to fill in the configuration directly from the backoffice:
 
