@@ -144,7 +144,7 @@ Any new media files you upload to the site, will automatically be added to the B
 
 If you don't want to use a publicly accessible container for media storage, you need to follow these additional steps:
 
-1. In your `Web.config`, `AzureBlobFileSystem.UsePrivateContainer:media` needs to be set to `true`.
+1. In your `Web.config`, `AzureBlobFileSystem.UsePrivateContainer:media` needs to be set to `true`: `<add key="AzureBlobFileSystem.UsePrivateContainer:media" value="true"/>`
 2. Install `ImageProcessor.Web.Plugins.AzureBlobCache` from NuGet, which contains the `AzureImageService` that is used in the following step.
 3. In your `~/config/imageprocessor/security.config`, you need to replace the existing section similar to 
 
