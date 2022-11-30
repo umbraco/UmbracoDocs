@@ -11,6 +11,8 @@ layout: landing
 {% hint style="info" %}
 **Test and feedback**
 
+Testing.
+
 This platform is currently only available through a direct link as we want to ensure a proper test phase before publishing worldwide.
 
 The plan is to launch this documentation platform with the release of Umbraco 11 on December 1st, 2022.
