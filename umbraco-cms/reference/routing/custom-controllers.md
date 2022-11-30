@@ -1,11 +1,8 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta-title: "Umbraco Route Hijacking"
-meta.Description: "Use a custom controller to handle and control incoming requests for content pages based on a specific Document Type"
+description: "Use a custom MVC controller to handle and control incoming requests for content pages based on a specific Document Type, also called ."
 ---
 
-# Custom MVC controllers (Umbraco Route Hijacking)
+# Umbraco Route Hijacking
 
 _Use a custom controller to handle and control incoming requests for content pages based on a specific Document Type_
 
@@ -64,7 +61,23 @@ namespace My.Website
 
 ```
 
-ALL requests to ANY 'product' pages in the site will be'hijacked' and routed through the custom ProductPageController.
+All requests to any 'product' pages in the site will be'hijacked' and routed through the custom ProductPageController.
+
+If you prefer to use an async controller your need to override both the sync and the async Index()-methods. This is done to disable the default behavior from the base controller.
+
+```csharp
+public class ProductPageController : RenderController
+{
+       
+    [NonAction]
+    public sealed override IActionResult Index() => throw new NotImplementedException();
+    public async Task<IActionResult> Index(CancellationToken cancellationToken)
+    {
+        await SomethingAsync(cancellationToken);
+        return CurrentTemplate(CurrentPage);
+    }
+}
+```
 
 This example shows the default behaviour that Umbraco's core RenderController provides. The 'Index' action of the controller is executed, and the CurrentTemplate helper sends the model containing the details of the published content item related to the request to the relevant template/view.
 

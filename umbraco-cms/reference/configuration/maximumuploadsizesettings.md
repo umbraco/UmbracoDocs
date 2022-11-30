@@ -50,12 +50,6 @@ An example of a configuration could look something like this:
 
 `MaxRequestLength` is specified in kilobytes, so this configuration would limit requests, and therefore uploaded files, to 2 megabytes, and a maximum query string length of 90 characters.
 
-# Using Nginx
+## [Using Nginx (external)](https://nginx.org/en/docs/http/ngx_http_core_module.html#client_max_body_size)
 
-Here's the documentation link to Nginx:
-https://nginx.org/en/docs/http/ngx_http_core_module.html#client_max_body_size
-
-# Using apache
-
-Here's the documentation link to apache:
-https://httpd.apache.org/docs/2.2/mod/core.html#limitrequestbody
+## [Using apache (external)](https://httpd.apache.org/docs/2.2/mod/core.html#limitrequestbody)

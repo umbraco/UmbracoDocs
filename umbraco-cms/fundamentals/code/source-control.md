@@ -26,8 +26,6 @@ There are lots of different possible variations within your working environment 
 
 However, Umbraco ships with a `.gitignore` file with a custom Umbraco section, which will make git ignore the files for you. The Umbraco specific section looks like this:
 
-{% tabs %}
-{% tab title="Latest version" %}
 ```none
 ##
 ## Umbraco CMS
@@ -54,44 +52,6 @@ appsettings-schema.json
 /wwwroot/media/
 
 ```
-{% endtab %}
-
-{% tab title="Umbraco 9" %}
-```
-##
-## Umbraco CMS .NETCore
-##
-
-# Dont commit Umbraco TEMP folder containing Examine Indexes, NuCache etc
-**/umbraco/Data/TEMP/
-
-# Dont commit files that are generated and cached from the default ImageSharp location
-**/umbraco/mediacache/
-
-# Umbraco backoffice language files
-# Nuget package Umbraco.Cms.StaticAssets will copy them in during dotnet build
-# Customize langguage files in /config/lang/{language}.user.xml
-**/umbraco/config/lang/
-
-# JSON Schema file for appsettings
-# This is auto generated from the build
-**/umbraco/config/appsettings-schema.json
-
-# This is the no-nodes, installer & upgrader pages from Umbraco
-# Nuget package Umbraco.Cms.StaticAssets will copy them in during dotnet build
-**/umbraco/UmbracoWebsite/
-**/umbraco/UmbracoInstall/
-**/umbraco/UmbracoBackOffice/
-
-# Comment out the line below if you wish to change or add any new templates to PartialView Macros
-**/umbraco/PartialViewMacros/
-
-# Umbraco Static Assets of Backoffice
-# Nuget package Umbraco.Cms.StaticAssets will copy them in during dotnet build
-**/wwwroot/umbraco/
-```
-{% endtab %}
-{% endtabs %}
 
 For most projects, this gitignore will be enough, and this article will not be an exhaustive list of how to version control Umbraco in all possible scenarios.
 
@@ -101,8 +61,6 @@ However, we will go through the different files in order to give you an insight 
 
 #### The Umbraco Folder
 
-{% tabs %}
-{% tab title="Latest version" %}
 The main folder where the Umbraco CMS resides is the `/umbraco` one inside your project.
 
 Most of the files and folders within the Umbraco folder, is already added to the default gitignore file. As most of the Umbraco CMS core files are embedded, the `/umbraco` folder contains primarily temporary files and log files, which are all added as Umbraco is installed.
@@ -114,37 +72,6 @@ Below are a set of general recommendations regarding the files within the `/umbr
 - `/umbraco/data/TEMP` - This folder contains examine indexes, NuCache files, and so on, these are temporary and should not be committed.
 - `/umbraco/Logs` - Umbraco currently uses *Serilog*, and a file will be generated in this folder containing trace logs of your application, one JSON file for each day.
 - `/umbraco/mediacache` - *ImageSharp* ships with Umbraco and when an image is requested via the processor, for example, to be resized or cropped, a cached version of the transformed image will be stored in this folder. (The [Imaging settings section](../../reference/configuration/imagingsettings.md) allows you to determine where this cache is stored)
-{% endtab %}
-
-{% tab title="Umbraco 9" %}
-The main folder where the Umbraco CMS resides in, is the `/umbraco` one inside your project.
-
-Some of the contents change when you upgrade Umbraco, and will even be deleted and re-added on a clean and rebuild! No part of your implementation or third-party packages installed should update these folders.
-
-From the gitignore above we can see that the content that will change when you upgrade Umbraco and be deleted and re-added on clean and rebuild are:
-
-* `umbraco/UmbracoWebsite`
-* `umbraco/UmbracoInstall`
-* `umbraco/UmbracoBackoffice`
-* `umbraco/config/lang`
-* `umbraco/config/appsettings-schema.json`
-
-None of these folders should be committed to github since they will automatically be added on build. If you're working with an Integrated Development Environment (IDE) and a Build Server, it's NuGet's and MSBuild's job to restore the correct versions of these folders for you. If you don't use an IDE and prefer the command line you can use `dotnet restore` to manually restore the NuGet packages.
-
-But these are not the only files in the Umbraco folder that you should not commit to your git, some files are generated during runtime and should not be committed either, these are:
-
-* `/umbraco/data/TEMP` - This folder contains examine indexes, NuCache files, and so on, these are temporary and should not be committed.
-  * `Umbraco.sdf` - If you are using SQL CE for the data store in your Umbraco site, then this file IS that datastore, it will be difficult to source control the constant changes to this file.
-* `/umbraco/Logs` - Umbraco currently uses *Serilog*, and a file will be generated in this folder containing trace logs of your application, one JSON file for each day.
-* `/umbraco/mediacache` - *ImageSharp* ships with Umbraco and when an image is requested via the processor, for example, to be resized or cropped, a cached version of the transformed image will be stored in this folder. (The [Imaging settings section](../../reference/configuration/imagingsettings.md) allows you to determine where this cache is stored)
-
-We've now covered most of the folders within the `/umbraco` folder, however, there are two left, the `/umbraco/models` folder, and the `/umbraco/PartialViewMacros`. The model's folder has its own section right below, but for the `PartialViewMacros` folder, the answer to "should I commit this to git" is that it depends. If you want to change the templates within the folder or add your own, then you should commit it to git, if you don't need to do that, you should not, the build will automatically create it and its content.
-
-##### The Umbraco wwwroot folder
-
-The `/wwwroot/umbraco` folder contains static assets for the backoffice, these files will be automatically created when you do a build, and should not be included in source control.
-{% endtab %}
-{% endtabs %}
 
 #### Umbraco Models Builder
 

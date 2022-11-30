@@ -94,10 +94,13 @@ Example:
 @{
     var items = Model.Value<IEnumerable<IPublishedElement>>("nest");
 
-    foreach (var item in items)
-    {
-        // Render your content, e.g. item.Value<string>("heading")
+    if (items != null) {
+        foreach (var item in items)
+        {
+            // Render your content, e.g. item.Value<string>("heading")
+        }
     }
+    
 }
 ```
 
@@ -112,21 +115,23 @@ Example:
 @{
     var items = Model.Value<IEnumerable<IPublishedElement>>("nest");
 
-    foreach (var item in items)
-    {
-        var description = item.Value<string>("description");
-        var image = item.Value<IPublishedContent>("image");
-
-        <h3>@item.Value("heading")</h3>
-
-        if (!string.IsNullOrEmpty(description))
+    if (items != null) {
+        foreach (var item in items)
         {
-            <p>@description</p>
-        }
+            var description = item.Value<string>("description");
+            var image = item.Value<IPublishedContent>("image");
 
-        if (image != null)
-        {
-            <img src="@image.Url()" alt="" />
+            <h3>@item.Value("heading")</h3>
+
+            if (!string.IsNullOrEmpty(description))
+            {
+                <p>@description</p>
+            }
+
+            if (image != null)
+            {
+                <img src="@image.Url()" alt="" />
+            }
         }
     }
 }
@@ -144,8 +149,11 @@ Example:
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
     var item = Model.Value<IPublishedElement>("myPropertyAlias");
+
+    if (item != null) {
+        <h3>@item.Value("heading")</h3>
+    }
 }
-<h3>@item.Value("heading")</h3>
 ```
 
 ## Creating Nested Content programmatically

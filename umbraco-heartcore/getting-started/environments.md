@@ -10,15 +10,15 @@ Having multiple environments means that you have a place to test both your conte
 
 ## What is an environment?
 
-An environment on a Heartcore project can be defined as a *workspace* and is at the same time a Git repository. When you have more than one environment on your project, these environments will act as branches of the main repository.
+An environment on a Heartcore project can be defined as a _workspace_ and is at the same time a Git repository. When you have more than one environment on your project, these environments will act as branches of the main repository.
 
 Umbraco Heartcore uses a deployment model that relies on Git and other core technology, which gives you an option to move both content and structure files from one environment to another.
 
-Learn more about the deployment model in the [Deployment workflow article](../Deployment-workflow).
+Learn more about the deployment model in the[ Deployment workflow article](deployment-workflow/).
 
 ## Video tutorial
 
-<iframe width="800" height="450" title="How to create and delete additional environments on Umbraco Heartcore" src="https://www.youtube.com/embed/6MXuDqEMM70?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+{% embed url="https://www.youtube.com/watch?t=&v=6MXuDqEMM70" %}
 
 ## Manage environments
 
@@ -38,7 +38,6 @@ Adding and removing environments is done from the Project page in the Cloud Port
 {% hint style="info" %}
 Please note you will need to restart environments after they have been set up or removed from your project. In order to update the configuration of Umbraco Deploy
 {% endhint %}
-
 
 ![Manage environments from here](images/button-to-manage.png)
 

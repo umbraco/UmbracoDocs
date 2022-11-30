@@ -1,9 +1,9 @@
 ---
 versionFrom: 9.0.0
 versionTo: 10.0.0
-product: "CMS"
-meta.Title: "Creating an XML sitemap"
-meta.Description: "A guide to creating an XML sitemap in Umbraco"
+product: CMS
+meta.Title: Creating an XML sitemap
+meta.Description: A guide to creating an XML sitemap in Umbraco
 ---
 
 # Creating a Search Engine XML Site Map
@@ -16,8 +16,8 @@ There isn't an 'out of the box' XML sitemap generator with Umbraco. This tutoria
 
 If you are in a hurry, there are some Umbraco Packages that will do the job for you:
 
-- [Cultiv Search Engine Sitemap](https://our.umbraco.com/packages/website-utilities/cultiv-search-engine-sitemap/)
-- [Marcel Digital Umbraco XML Sitemap](https://github.com/marceldigital/Umbraco-XML-Sitemap)
+* [Cultiv Search Engine Sitemap](https://our.umbraco.com/packages/website-utilities/cultiv-search-engine-sitemap/)
+* [Marcel Digital Umbraco XML Sitemap](https://github.com/marceldigital/Umbraco-XML-Sitemap)
 
 ### What does an XML SiteMap look like?
 
@@ -46,9 +46,9 @@ There are many ways of approaching this task. The best approach will be determin
 For simplicity sake we're going to write this code directly in a Template using Razor and IPublishedContent. You may want to use route hijacking to write the code in an MVC controller or XSLT which is still a really good fit for this kind of task.
 
 1. We'll create a new Document Type called 'XmlSiteMap' with corresponding 'XmlSiteMap' template (visiting this page will trigger the rendering of the XML Sitemap).
-    - The XmlSiteMap document type will contain an 'Excluded Document Types' property to the XmlSiteMap Document Type to list types of content we wish to exclude from the Site Map (or you could alternatively create an 'Included Document Types' list if it is easier to specify types that should be included rather than define those that will be excluded.)
+   * The XmlSiteMap document type will contain an 'Excluded Document Types' property to the XmlSiteMap Document Type to list types of content we wish to exclude from the Site Map (or you could alternatively create an 'Included Document Types' list if it is easier to specify types that should be included rather than define those that will be excluded.)
 2. We'll create a 'SiteMap' Composition, containing a consistent set of 'Site Map related properties, and we'll add this to all of the different document types of the site.
-    - The 'SiteMap' Composition will contain a 'hide from Xml Site Map' checkbox, to give editors the ability to hide a certain page from the XML Sitemap.
+   * The 'SiteMap' Composition will contain a 'hide from Xml Site Map' checkbox, to give editors the ability to hide a certain page from the XML Sitemap.
 3. The implementation will start at the homepage of the site and loop through all the children, iterating in turn through the children of the children, etc, checking at each level whether to continue further based on the properties of the page.
 
 ## 1. Create the XmlSiteMap Document Type
@@ -69,23 +69,23 @@ and add the xmlSiteMap document type to your 'Excluded Document Type' list.
 
 A site map entry will allow you to state the relative priority of any particular page in terms of its importance within your site. A value of 1.0 is very important, and 0.1 close to insignificant. You can also state 'how often' the content will change on a particular page, eg weekly, monthly etc. This will help the search engine know when to return to reindex any regularly updated content.
 
-Create the XmlSiteMapSettings composition (Document Type Without Template) with name: __XmlSiteMapSettings__
+Create the XmlSiteMapSettings composition (Document Type Without Template) with name: **XmlSiteMapSettings**
 
-- __Search Engine Relative Priority__ - Slider - MinValue: 0.1, MaxValue: 1, Step Increments 0.1, InitialValue 0.5
-    (Relative priority of this page between 0.1 and 1.0, where 1.0 is the most important page on the site and 0.1 isn't)
-- __Search Engine Change Frequency__ - Dropdown - always, hourly, daily, weekly, monthly, yearly, never
-(How often the content of this page changes, for google site map, if left blank will inherit the setting for the section)
-- __Hide From Xml Sitemap__ (hideFromXmlSitemap) - checkbox.
+* **Search Engine Relative Priority** - Slider - MinValue: 0.1, MaxValue: 1, Step Increments 0.1, InitialValue 0.5 (Relative priority of this page between 0.1 and 1.0, where 1.0 is the most important page on the site and 0.1 isn't)
+* **Search Engine Change Frequency** - Dropdown - always, hourly, daily, weekly, monthly, yearly, never (How often the content of this page changes, for google site map, if left blank will inherit the setting for the section)
+* **Hide From Xml Sitemap** (hideFromXmlSitemap) - checkbox.
 
-At this point your composition should look similar to this:
-![The XmlSiteMap composition](images/v8/create-sitemap-settings-composition.png)
+At this point your composition should look similar to this:&#x20;
+
+<figure><img src="images/v8/create-sitemap-settings-composition.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Using pink for composition icons make them easier to spot in the list when you are curating your Document Types.
 {% endhint %}
 
-Add this composition to all of the document types on your site!
-![The XmlSiteMap composition](images/v8/create-sitemap-add-composition.png)
+Add this composition to all of the document types on your site!&#x20;
+
+<figure><img src="images/v8/create-sitemap-add-composition.png" alt=""><figcaption></figcaption></figure>
 
 Now editors have the ability to set these values for each page of the site. Rather than expect them to set them on every single page, we'll use the values from the parent or parent's parent nodes, using 'recursion' up the Umbraco Content Tree. This enables the values to be set in one place for a particular section, eg. setting once on a News Section, would then apply to all News Articles.
 
@@ -102,7 +102,6 @@ We'll start by writing out in the template the xml schema for the sitemap and be
  
  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">[INSERT SITE MAP CONTENT HERE]</urlset>
 ```
-
 
 ### Getting a reference to the sitemap starting point
 
@@ -137,7 +136,7 @@ You can include HTML markup in the body of a method declared in a code block. Th
 ```
 
 {% hint style="info" %}
-We're using `IPublishedContent` in this example but if you prefer to use __ModelsBuilder__ you could take advantage of the fact that the XMl Sitemap Settings composition will create an interface called `IXmlSiteMapSettings`. This will allow you to adjust the helper to accept this 'type' eg `RenderSiteMapUrlEntry(IXmlSiteMapSettings node)` and allow you to read the properties without the `Value` helper, eg `node.SearchEngineRelativePriority`. You would still need to create an extension method on `IXmlSiteMapSettings` to implement the recursive functionality we make use of on the `SearchEngineChangeFrequency` property.
+We're using `IPublishedContent` in this example but if you prefer to use **ModelsBuilder** you could take advantage of the fact that the XMl Sitemap Settings composition will create an interface called `IXmlSiteMapSettings`. This will allow you to adjust the helper to accept this 'type' eg `RenderSiteMapUrlEntry(IXmlSiteMapSettings node)` and allow you to read the properties without the `Value` helper, eg `node.SearchEngineRelativePriority`. You would still need to create an extension method on `IXmlSiteMapSettings` to implement the recursive functionality we make use of on the `SearchEngineChangeFrequency` property.
 {% endhint %}
 
 #### Xml Sitemap for the homepage
@@ -163,11 +162,13 @@ visit the url of your sitemap page (http://yoursite.com/sitemap) and this will r
 
 So now we need to find the pages created beneath the homepage, and see if they should be added to the sitemap, and then in turn look at the pages beneath those etc, until the entire content tree is traversed.
 
-We can use __IPublishedContent__'s _.Children_ method to return all the pages directly beneath a particular page eg:
+We can use **IPublishedContent**'s _.Children_ method to return all the pages directly beneath a particular page eg:
 
-    IEnumerable<IPublishedContent> sitePages = siteHomePage.Children();
+```
+IEnumerable<IPublishedContent> sitePages = siteHomePage.Children();
+```
 
-So we need to loop through each of these 'child' pages, and write out their sitemap markup using our helper, and then in turn loop through their children (grandchildren?)  etc and so on... (great-great-grandchildren...)
+So we need to loop through each of these 'child' pages, and write out their sitemap markup using our helper, and then in turn loop through their children (grandchildren?) etc and so on... (great-great-grandchildren...)
 
 ```csharp
 foreach (var page in sitePages){
@@ -189,14 +190,13 @@ foreach (var page in sitePages){
 
 So hopefully you can see the problem here, how deep do we go? How do we handle the repetition forever...
 
-... well we can use recursion - we can create a further razor helper that 'calls itself' [insert inception reference here]...
+... well we can use recursion - we can create a further razor helper that 'calls itself' \[insert inception reference here]...
 
 #### Recursive Helper
 
 If we create a helper called `RenderSiteMapUrlEntriesForChildren` that accepts a 'Parent Page' parameter as the starting point. Then we can find the children of this Parent Page, write out their Site Map Entry, and then call this same method again from itself - recursion!
 
 ```csharp
-
 @{
     void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
     {
@@ -231,12 +231,11 @@ and we should have a full XML sitemap rendered for the site!
 
 This is all very well, but what if some super secret pages shouldn't be on the sitemap? and what about the document type excluded list we mentioned earlier? and what if we only want to go 3 levels deep?
 
-##### HideFromSiteMap
+**HideFromSiteMap**
 
 We added a `hideFromXmlSitemap` checkbox to all of our document types via our `XmlSiteMapSettings` composition. Let's update the helper to only return children that haven't got the checkbox set, excluding these pages (and any beneath them) from the sitemap.
 
 ```csharp
-
 void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
 {
     foreach (var page in parentPage.Children.Where(x =>!x.Value<bool>("hideFromXmlSiteMap")))
@@ -251,7 +250,7 @@ void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
 
 Now revisit a page in the content tree, and tick the Hide from SiteMap option, if all has gone well, it will disappear from the XmlSitemap page!
 
-##### Depth
+**Depth**
 
 What if we only want to restrict 'how deep' the sitemap should go?
 
@@ -279,12 +278,11 @@ void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
         }
     }
 }
-
 ```
 
 Set your `MaxSiteMap` depth to be 2 on your XmlSiteMap content item, and save and republish. Your sitemap will now only contain entries for the top two levels. Leaving the value blank, will mean that no Maximum Depth restriction will be applied.
 
-##### Excluded DocumentType list
+**Excluded DocumentType list**
 
 Our Xml Sitemap includes an entry for itself on the XML Sitemap, I thought we had excluded that document type, when we created the excludedDocumentType property...
 
@@ -298,7 +296,6 @@ string[] excludedDocumentTypes = (!String.IsNullOrEmpty(excludedDocumentTypeList
 now we can pass this value into our helper
 
 ```csharp
-
 void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
 {
     foreach (var page in parentPage.Children.Where(f => !excludedDocumentTypes.Contains(f.ContentType.Alias) && !f.Value<bool>("hideFromXmlSiteMap")))
@@ -377,14 +374,18 @@ void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
 
 Finally let search engines know the url for your sitemap by updating your robots.txt file accordingly:
 
-    Sitemap: https://www.yourlovelysite.com/xmlsitemap
-    User-agent: *
+```
+Sitemap: https://www.yourlovelysite.com/xmlsitemap
+User-agent: *
+```
 
 Once you introduce a Sitemap for the first time, you might suddenly find yourself being crawled by multiple different search engine bots. This is exactly what you want! However if your site or hosting is a little creaky, you might want to add a crawl rate to the robots.txt to instruct well behaved search engine bots to give a bit of space to your site between requests:
 
-    Sitemap: https://www.yourlovelysite.com/xmlsitemap
-    User-agent: *
-    Crawl-delay: 10
+```
+Sitemap: https://www.yourlovelysite.com/xmlsitemap
+User-agent: *
+Crawl-delay: 10
+```
 
 #### Test your Xml SiteMap in a validation tool
 

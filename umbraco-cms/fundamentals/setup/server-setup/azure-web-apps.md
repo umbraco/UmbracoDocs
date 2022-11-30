@@ -1,6 +1,6 @@
 ﻿# Running Umbraco on Azure Web Apps
 
-_This section describes best practices with running Umbraco on Azure Web Apps_
+This section describes best practices with running Umbraco on Azure Web Apps
 
 ## What are Azure Web Apps
 
@@ -10,14 +10,12 @@ They have been called a few names in the past, many people still know Azure Web 
 
 [You can read more about them here](https://azure.microsoft.com/en-us/documentation/articles/app-service-web-overview/)
 
-Umbraco will run on Azure Web Apps but there are some configuration options and specific Azure Web Apps environment limitations you need to be aware of.
+Umbraco will run on Azure Web Apps but there are some configuration options and specific Azure Web Apps environment limitations to be aware of.
 
 ## Recommended configuration
 
 You need to add these configuration values. E.g in a json configuration source like `appSettings.json`:
 
-{% tabs %}
-{% tab title="Latest version" %}
 ```json
 {
     "Umbraco": {
@@ -35,36 +33,15 @@ You need to add these configuration values. E.g in a json configuration source l
     }
 }
 ```
-{% endtab %}
-{% tab title="9.0.0 - 9.3.0" %}
-```json
-{
-    "Umbraco": {
-        "CMS": {
-            "Global": {
-                "MainDomLock" : "SqlMainDomLock"
-            },
-            "Hosting": {
-                "LocalTempStorageLocation": "EnvironmentTemp"
-            },
-            "Examine": {
-                "LuceneDirectoryFactory": "SyncedTempFileSystemDirectoryFactory"
-            }
-        }
-    }
-}
-```
-{% endtab %}
-{% endtabs %}
 
-__The minimum recommended Azure SQL Tier is "S2"__, however noticeable performance improvements are seen in higher Tiers
+The minimum recommended Azure SQL Tier is "S2", however noticeable performance improvements are seen in higher Tiers
 
-__If you are load balancing or require the scaling ("scale out") ability of Azure Web Apps then you need to consult the
-[Load Balancing documentation](load-balancing/README.md)__ since there is more that needs to be configured to support scaling/auto-scaling.
+If you are load balancing or require the scaling ("scale out") ability of Azure Web Apps then you need to consult the
+[Load Balancing documentation](load-balancing/README.md). This is due to the fact that a lot more needs to be configured to support scaling/auto-scaling.
 
 ## Storage
 
-It is important to know that Azure Web Apps uses a remote file share to host the files to run your website (i.e. the files running your website do not exist on the machine running your website). In many cases this isn't an issue but it can become one if you have a large amount of IO operations running over remote file share.
+It is important to know that Azure Web Apps uses a remote file share to host the files to run your website. This is due to the files running your website do not exist on the machine running your website. In many cases this isn't an issue. It can become one if you have a large amount of IO operations running over remote file-share.
 
 ## Issues with read-only filesystems
 
@@ -74,11 +51,11 @@ For example, Azure's [Run from Package feature](https://docs.microsoft.com/en-us
 
 ## Scaling
 
-If you require the scaling ("scale out") ability of Azure Web Apps then you need to consult the [Load Balancing documentation](load-balancing/README.md) since there is a lot more that needs to be configured to support scaling/auto-scaling.
+If you require the scaling ("scale out") ability of Azure Web Apps you need to consult the [Load Balancing documentation](load-balancing/README.md). This is due to the fact that a lot more needs to be configured to support scaling/auto-scaling.
 
 ## Web worker migrations
 
-It's important to know that Azure Web Apps may move your website between their 'workers' at any given time. This is normally a transparent operation but in some cases you may be affected by it if any of your code or libraries use the following variables:
+It's important to know that Azure Web Apps may move your website between their 'workers' at any given time. This is normally a transparent operation. In some cases you may be affected by it if any of your code or libraries use the following variables:
 
 * `Environment.MachineName` (or equivalent)
 
@@ -91,3 +68,7 @@ The quickest way to get to your logs is using the following URL template and rep
 `https://{app}.scm.azurewebsites.net/api/logstream`
 
 You can also find this in the KUDU console by clicking **Advanced Tools** > **Log Stream** on the Web App in the Azure Portal.
+
+## Web App secret management
+
+Consult the [Azure Key Vault documentation](../../../extending/key-vault.md#use-key-vault-references-for-azure-app-service) if you would like to directly reference Azure Key Vault Secrets to your Azure Web App.

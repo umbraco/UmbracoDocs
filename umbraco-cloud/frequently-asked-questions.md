@@ -146,7 +146,7 @@ Yes, in fact Umbraco Cloud provides automatic TLS (HTTPS) certificates for ALL h
 
 Yes. Pro and Enterprise Plans can add custom certificates for each of their custom hostnames in order to override the certificates that are provided by Umbraco Cloud by default.
 
-Learn more about how to use your own certificates in the [Custom certificates](set-up/manage-hostnames/security-certificates.md) article.
+Learn more about how to use your own certificates in the [Custom certificates](set-up/project-settings/manage-hostnames/security-certificates.md) article.
 
 ### Does Umbraco Cloud support HTTP/2?
 

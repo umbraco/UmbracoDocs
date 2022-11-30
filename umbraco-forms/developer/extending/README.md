@@ -1,5 +1,5 @@
 ---
-meta.Title: "Extending Umbraco Forms"
+meta.Title: Extending Umbraco Forms
 ---
 
 # Extending
@@ -56,7 +56,7 @@ Form events are raised during the submission life cycle and can be handled for e
 
 The default behavior when a new form is created is for a single workflow to be added, which will send a copy of the form to the current backoffice user's email address.
 
-From versions 9.5/10.1 it's been possible to amend this behavior and change it to fit your needs.
+It's been possible to amend this behavior and change it to fit your needs.
 
 ## Responding to State Values
 
@@ -70,10 +70,10 @@ One variable with a key of `UmbracoFormSubmitted` has a value containing the Gui
 
 A second variable contains the Guid identifier of the record created from the form submission. You can find this using the `Forms_Current_Record_id` key.
 
-In order to redirect to an external URL rather than a selected page on the Umbraco website, you will need to use a [custom workflow](../../developer/extending/adding-a-workflowtype.md). Within this workflow you can set the required redirect URL on the `HttpContext.Items` dictionary using the key `FormsRedirectAfterFormSubmitUrl` (defined in the constant `Umbraco.Forms.Core.Constants.ItemKeys.RedirectAfterFormSubmitUrl`).
+In order to redirect to an external URL rather than a selected page on the Umbraco website, you will need to use a [custom workflow](adding-a-workflowtype.md). Within this workflow you can set the required redirect URL on the `HttpContext.Items` dictionary using the key `FormsRedirectAfterFormSubmitUrl` (defined in the constant `Umbraco.Forms.Core.Constants.ItemKeys.RedirectAfterFormSubmitUrl`).
 
 For example, using an injected instance of `IHttpContextAccessor`:
 
-```c#
+```
 _httpContextAccessor.HttpContext.Items[Constants.ItemKeys.RedirectAfterFormSubmitUrl] = "https://www.umbraco.com";
 ```

@@ -1,7 +1,5 @@
 # Table of contents
 
-* [Workflow Documentation](README.md)
-
 ## Umbraco Workflow
 
 * [What is Umbraco Workflow?](umbraco-workflow/README.md)
@@ -18,3 +16,4 @@
   * [Workflow History](umbraco-workflow/workflow-history.md)
   * [Workflow Settings](umbraco-workflow/workflow-settings.md)
 * [Events](umbraco-workflow/events.md)
+

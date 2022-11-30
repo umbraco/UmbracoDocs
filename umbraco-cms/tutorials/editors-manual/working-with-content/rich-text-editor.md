@@ -22,17 +22,17 @@ The editor is like any other word processing program. You write the text, and th
 
 To make your work easier, there are shortcut keys for certain editor functions. Shortcut keys let you use the keyboard to carry out certain commands.
 
-Shortcut | Action
----|---
-Ctrl + A | Select all
-Ctrl + B | Bold
-Ctrl + C | Copy
-Ctrl + I | Italic
-Ctrl + U | Underline
-Ctrl + V | Paste
-Ctrl + X | Cut
-Ctrl + Y | Redo
-Ctrl + Z | Undo
+| Shortcut | Action     |
+| -------- | ---------- |
+| Ctrl + A | Select all |
+| Ctrl + B | Bold       |
+| Ctrl + C | Copy       |
+| Ctrl + I | Italic     |
+| Ctrl + U | Underline  |
+| Ctrl + V | Paste      |
+| Ctrl + X | Cut        |
+| Ctrl + Y | Redo       |
+| Ctrl + Z | Undo       |
 
 ## Text Formatting
 
@@ -64,7 +64,7 @@ It is important to note that when you pre-write content to later be copied into 
 
 If you have formatted a paragraph or selection using the formatting buttons, you can remove a formatting rule by selecting the text, and clicking the relevant formatting button to remove that formatting rule. You may also have a remove format button in your toolbar. If you do not have this button please speak to your system administrator.
 
-![removeFormat.jpg](images/removeFormat.jpg) *Remove Format button*
+![removeFormat.jpg](images/removeFormat.jpg) _Remove Format button_
 
 ## Show/Hide HTML Code
 
@@ -76,41 +76,41 @@ If you are proficient in the use of HTML you can switch to HTML mode and create 
 
 ![linkButton.jpg](images/linkButton.jpg)
 
-The ***Insert Link*** button is used to create links to internal and external pages and media files email links and anchors. The process for inserting a hyperlink differs depending on the type of hyperlink you wish to create.
+The _**Insert Link**_ button is used to create links to internal and external pages and media files email links and anchors. The process for inserting a hyperlink differs depending on the type of hyperlink you wish to create.
 
 ### Link to a Page on Another Website
 
 1. Select the text that will form the hyperlink.
-2. Click the ***Insert Link*** button which will reveal the link properties slide out menu.
+2. Click the _**Insert Link**_ button which will reveal the link properties slide out menu.
 3. In the URL field, enter the URL of the web page you wish to link to.
 4. In the Title field, enter the text that will be shown as a pointer to the link. This is important information for everyone reading the website with different accessibility aids.
 5. In the Target field, select the target window/frame then select how the should be opened. There are three different ways the link can be opened:
-    1. Open link in a new tab in the same browser window.
-    2. Open link in a new separate browser window.
-    3. Open the link in the same browser tab as the user would be viewing your site.
-6. Click ***Select.*** Your text will now contain the link as requested.
+   * Open link in a new tab in the same browser window.
+   * Open link in a new separate browser window.
+   * Open the link in the same browser tab as the user would be viewing your site.
+6. Click _**Select.**_ Your text will now contain the link as requested.
 
 ![externalLink.jpg](images/externalLink.jpg)
 
 ### Link to a Page in Umbraco
 
 1. Select the text that will form the hyperlink.
-2. Click the ***Insert Link*** button which will reveal the link properties slide out menu.
-3. Select a page from the ***Content*** tab to link to. This will then populate the **link to document** automatically.
+2. Click the _**Insert Link**_ button which will reveal the link properties slide out menu.
+3. Select a page from the _**Content**_ tab to link to. This will then populate the **link to document** automatically.
 4. In the Page Title field, enter the text that will be shown as a pointer to the link. This is important information for everyone reading the website with different accessibility aids, (by default the name of the selected page will automatically be entered for your convenience).
-5. In the ***Target*** field, select the target window/frame the link should be opened in.
-6. Click ***Select***.
+5. In the _**Target**_ field, select the target window/frame the link should be opened in.
+6. Click _**Select**_.
 
 ![internalLink.jpg](images/internalLink.jpg)
 
 ### Link to a Media File in Umbraco
 
 1. Select the text that will form the hyperlink.
-2. Click the ***Insert Link*** button which will reveal the link properties slide out menu.
-3. Select the ***link to file*** button which is situated at the bottom of the slide out menu.
+2. Click the _**Insert Link**_ button which will reveal the link properties slide out menu.
+3. Select the _**link to file**_ button which is situated at the bottom of the slide out menu.
 4. You will then be taken to the media picker, where you can select the media item.
 5. When you have selected the media item you will be taken back to the link screen where the link to document and page title fields have been populated with the media item information. By default the page title will be the media file name however this can be edited.
-6. In the ***Target*** field, select the target window/frame the link should be opened in.
+6. In the _**Target**_ field, select the target window/frame the link should be opened in.
 7. Click Select.
 
 ![linkMedia.jpg](images/linkMedia.jpg)
@@ -118,11 +118,11 @@ The ***Insert Link*** button is used to create links to internal and external pa
 ### Link to an email address in Umbraco
 
 1. Select the text that will form the hyperlink.
-2. Click the ***Insert Link*** button which will reveal the link properties slide out menu.
+2. Click the _**Insert Link**_ button which will reveal the link properties slide out menu.
 3. In the URL field, enter the text mailto: followed by the email address you wish to link to (e.g. mailto:name@company.com).
 4. In the Title field, enter the text that will be shown as a pointer to the link. This is important information for everyone reading the website with different accessibility aids.
-5. In the ***Target*** field, select the target window/frame the link should be opened in.
-6. Click ***Select.***
+5. In the _**Target**_ field, select the target window/frame the link should be opened in.
+6. Click _**Select.**_
 
 ![linkEmail.jpg](images/linkEmail.jpg)
 
@@ -133,11 +133,9 @@ An anchor allows you to create internal page links that enable users to navigate
 ### Creating an anchor
 
 1. Focus the editor cursor where you wish to create the anchor.
-2. Click the
-![anchorButton.jpg](images/anchorButton.jpg)
- which will then launch the Anchor creation dialog.
+2. Click the ![anchorButton.jpg](images/anchorButton.jpg) which will then launch the Anchor creation dialog.
 3. In the name field enter your anchor name. You should avoid special characters and do not use spaces.
-4. Click ***OK*** to finish.
+4. Click _**OK**_ to finish.
 5. You will see a small anchor icon where you previously had the editor cursor.
 
 To delete the anchor, select it and then press your delete key.
@@ -147,9 +145,9 @@ To delete the anchor, select it and then press your delete key.
 ### Linking to an anchor
 
 1. Highlight the content which you wish to add the anchor link to.
-2. Click the ***Insert link*** button which will reveal the link properties slide out menu.
-3. Add a hash symbol followed by the name of your anchor into the **link to document*** field.
-4. Click ***Select.***
+2. Click the _**Insert link**_ button which will reveal the link properties slide out menu.
+3. Add a hash symbol followed by the name of your anchor into the **link to document**\* field.
+4. Click _**Select.**_
 
 ![linkAnchor.jpg](images/linkAnchor.jpg)
 
@@ -175,11 +173,11 @@ To display images on a page they must be uploaded to your Umbraco media library.
 ### Inserting an Image from the Media Library
 
 1. Place the cursor in the editor where you want to insert your image.
-2. Click the ***Media Picker*** button from the toolbar to open the media selector menu.
+2. Click the _**Media Picker**_ button from the toolbar to open the media selector menu.
 3. Select the folder which the image is in.
 4. Click the thumbnail of your chosen image to open the image properties menu.
 5. In the Title field, enter a name/description for the image (by default the name of the file will be automatically entered for your convenience). It is important to add descriptive titles to images as these as used to assist visually impaired users.
-6. Click ***Insert*** to add the image.
+6. Click _**Insert**_ to add the image.
 
 ![mediaPicker.jpg](images/mediaPicker.jpg)
 
@@ -188,17 +186,17 @@ To display images on a page they must be uploaded to your Umbraco media library.
 You can upload images directly from the rich text editor on the page you are editing. These images will be stored in the Umbraco media library. Therefore care should be taken to ensure that the image is placed in the correct location within the library. If you click the plus icon underneath the search bar in the media picker slide out menu you can create folders in the media library.
 
 1. Place the cursor in the editor where you want to insert your image.
-2. Click the ***Media Picker*** button from the toolbar to open the media selector.
-3. Click the ***Upload*** button which is located in the top right-hand corner of the menu.
+2. Click the _**Media Picker**_ button from the toolbar to open the media selector.
+3. Click the _**Upload**_ button which is located in the top right-hand corner of the menu.
 4. Select the chosen image from the pop-up window.
 5. In the Title field, enter a name/description for the image. (By default the name of the file will be automatically entered for your convenience).
-6. Click ***Insert** to add the image.
+6. Click \***Insert** to add the image.
 
 ![mediaUpload.jpg](images/mediaUpload.jpg)
 
 ### Deleting an Image from the Page
 
-If you want to delete an image from the page, select the image and press ***Delete*** button on your keyboard. The image disappears from the page, but is not deleted from the Umbraco media library.
+If you want to delete an image from the page, select the image and press _**Delete**_ button on your keyboard. The image disappears from the page, but is not deleted from the Umbraco media library.
 
 ## Macros
 
@@ -209,10 +207,10 @@ The macros available to you differ from system to system so please see your syst
 ### Adding a Macro to the Page
 
 1. Place the cursor in the editor where you want to insert your macro.
-2. Click the ***Insert Macro*** button from the toolbar to open the macro properties dialog box.
+2. Click the _**Insert Macro**_ button from the toolbar to open the macro properties dialog box.
 3. Select a macro to insert from the Choose a macro drop-down list.
 4. Configure the macro as required.
-5. Click ***Select*** to insert the macro.
+5. Click _**Select**_ to insert the macro.
 6. The macro is displayed in the editor with a yellow dotted border.
 
 ![macroPicker.jpg](images/macroPicker.jpg)
@@ -224,12 +222,12 @@ The macros available to you differ from system to system so please see your syst
 You can edit values you have inputted into a macro after it has been added to the rich text editor.
 
 1. Highlight the macro in the rich text editor.
-2. Click the ***macro*** button in the toolbar.
+2. Click the _**macro**_ button in the toolbar.
 3. This will bring out the configuration slide out menu where you can edit any values previously added.
 
 ### Removing macros
 
-To remove a macro you highlight the macro in the rich text editor and hit the ***delete*** or ***backspace*** button on your keyboard.
+To remove a macro you highlight the macro in the rich text editor and hit the _**delete**_ or _**backspace**_ button on your keyboard.
 
 ## Tables
 
@@ -239,8 +237,8 @@ Tables are used to format information in a grid based structure. When you insert
 
 ### Editing an Existing Table
 
-To edit the table after you have already created it, you need to click on it so you have a small square box in each of the four corners. Then you need to click on the ***Table*** button in the rich text editor in order to reveal the options.
+To edit the table after you have already created it, you need to click on it so you have a small square box in each of the four corners. Then you need to click on the _**Table**_ button in the rich text editor in order to reveal the options.
 
-Clicking ***Table Properties*** gives you several options for modifying the table’s appearance, however the developer of the website may have already created table styles for you so you may not need to adjust these settings. There are various other options available for modifying cells, rows and columns such as height, alignment, merge, insert and delete.
+Clicking _**Table Properties**_ gives you several options for modifying the table’s appearance, however the developer of the website may have already created table styles for you so you may not need to adjust these settings. There are various other options available for modifying cells, rows and columns such as height, alignment, merge, insert and delete.
 
 ![tableProperties.jpg](images/tableProperties.jpg)

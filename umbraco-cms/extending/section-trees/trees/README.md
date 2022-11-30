@@ -1,8 +1,8 @@
 ---
 versionFrom: 9.0.0
 versionTo: 10.0.0
-meta.Title: "Umbraco Tree"
-meta.Description: "A guide to creating a custom tree in Umbraco"
+meta.Title: Umbraco Tree
+meta.Description: A guide to creating a custom tree in Umbraco
 ---
 
 # Trees
@@ -13,7 +13,7 @@ This section describes how to work with and create trees with Umbraco APIs.
 
 To Create a Tree in a section of the Umbraco backoffice, you need to take several steps:
 
-Create a `TreeController` class in C#. A new controller which inherits from the abstract `Umbraco.Cms.Web.BackOffice.Trees.TreeController`*` class and provides an implementation for two abstract methods:
+Create a `TreeController` class in C#. A new controller which inherits from the abstract `Umbraco.Cms.Web.BackOffice.Trees.TreeController` class and provides an implementation for two abstract methods:
 
 * GetTreeNodes (returns a `TreeNodeCollection`) - Responsible for rendering the content of the tree structure;
 * GetMenuForNode (returns a `MenuItemCollection`) - Responsible for returning the menu structure to use for a particular node within a tree.
@@ -22,11 +22,11 @@ You will need to add a constructor as `TreeController` requires this. See full c
 
 The `Tree` attribute used to decorate the `TreeController` has multiple properties.
 
-- `SectionAlias` - Alias of the section in which the tree appears
-- `TreeAlias` - Alias of the tree
-- `TreeTitle` - The title of the tree
-- `TreeGroup` - The tree group, the tree belongs to
-- `SortOrder` - Sort order of the tree
+* `SectionAlias` - Alias of the section in which the tree appears
+* `TreeAlias` - Alias of the tree
+* `TreeTitle` - The title of the tree
+* `TreeGroup` - The tree group, the tree belongs to
+* `SortOrder` - Sort order of the tree
 
 For example:
 
@@ -40,9 +40,9 @@ The example above would register a custom tree with a title 'Favourite Things Na
 
 ### Tree Groups
 
-Tree Groups enable you to group trees in a section. You provide the alias of the Tree Group name, you wish to add your tree to - see [Constants.Trees.Groups](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Constants.Trees.Groups.html) for a list of existing group alias. An example of tree groups in the backoffice would be the *Settings* tree group and the *Templating* tree group in the *Settings* section.
+Tree Groups enable you to group trees in a section. You provide the alias of the Tree Group name, you wish to add your tree to - see [Constants.Trees.Groups](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Constants.Trees.Groups.html) for a list of existing group alias. An example of tree groups in the backoffice would be the _Settings_ tree group and the _Templating_ tree group in the _Settings_ section.
 
-If you add your own alias, you'll need to add a translation key. This can be done by adding a language file to a `lang` folder with your application folder in `App_Plugins`: `App_Plugins/favouriteThings/lang/en-us.xml`. This will avoid the alias appearing as the header in [square brackets].
+If you add your own alias, you'll need to add a translation key. This can be done by adding a language file to a `lang` folder with your application folder in `App_Plugins`: `App_Plugins/favouriteThings/lang/en-us.xml`. This will avoid the alias appearing as the header in \[square brackets].
 
 The language file should contain the following XML:
 
@@ -63,7 +63,6 @@ The first node in the tree is referred to as the **Root Node**. You can customis
 ### Implementing the Tree
 
 ```csharp
-
 using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Http;
@@ -227,12 +226,11 @@ Our Tree Action View would then be wired to the loaded controller using the `ng-
 
 Take a look at the [umbEditor directives in the backoffice API Documentation](https://apidocs.umbraco.com/v9/ui/#/api/umbraco.directives.directive:umbEditorHeader), for lots of common interaction directives that can be used to deliver a consistent backoffice editing experience for items in your custom tree.
 
-[see Tree Actions for a list of tree *ActionMenuItems* and *IActions*](tree-actions.md)
+[see Tree Actions for a list of tree _ActionMenuItems_ and _IActions_](tree-actions.md)
 
 ### Single Node Trees / Customising the Root Node Action
 
-It is possible to create 'trees' consisting of only a single node - perhaps to provide an area to control some settings or a placeholder for a single page backoffice app. See the LogViewer in the settings section for a good example.
-(or as in the case of the 'settings/content templates' tree, it's possible to have a custom view for the root node as an 'introduction' page to the tree).
+It is possible to create 'trees' consisting of only a single node - perhaps to provide an area to control some settings or a placeholder for a single page backoffice app. See the LogViewer in the settings section for a good example. (or as in the case of the 'settings/content templates' tree, it's possible to have a custom view for the root node as an 'introduction' page to the tree).
 
 In both scenarios you need to override the `CreateRootNode` method for the custom tree.
 
@@ -275,8 +273,7 @@ The RoutePath should be in the format of: **section/treeAlias/method**. As our e
 
 #### Full Width App - IsSingleNodeTree
 
-It's possible to make your single node tree app stretch across the full screen of the backoffice (no navigation tree) - see Packages section for an example.
-To achieve this add an additional attribute `IsSingleNodeTree`, in the Tree attribute for the custom controller.
+It's possible to make your single node tree app stretch across the full screen of the backoffice (no navigation tree) - see Packages section for an example. To achieve this add an additional attribute `IsSingleNodeTree`, in the Tree attribute for the custom controller.
 
 ```csharp
 [Tree("settings", "favouritistThingsAlias", IsSingleNodeTree = true, TreeTitle = "Favourite Thing", TreeGroup = "favoritesGroup", SortOrder = 5)]

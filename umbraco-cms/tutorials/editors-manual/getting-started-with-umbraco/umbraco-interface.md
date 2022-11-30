@@ -47,7 +47,9 @@ The menu list will differ depending on your permissions for the project. For exa
 
 The section tree is different depending on the section you are in. The section provides an overview of the nodes contained in the tree.
 
-In this example, you are looking at the content section. ![This is an arrow that points to the section tree on the left.](images/The-Section-Tree-v9.png)
+In this example, you are looking at the content section.&#x20;
+
+<figure><img src="images/The-Section-Tree-v9.png" alt=""><figcaption></figcaption></figure>
 
 The **Content** tab allows you to create content nodes and manage your content tree. When you hover over the sections, it is highlighted with a darker color indicating that you are hovering over it. A button with three dots will show up, left-click or right-click to view additional options.
 

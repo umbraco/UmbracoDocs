@@ -14,7 +14,9 @@ There are two flavors of the slider. One with a single value picker. One with a 
 
 ## Content Example
 
-![Slider Content](../built-in-property-editors/images/Slider-Content-Example-No-Range.png) ![Slider Content](../built-in-property-editors/images/Slider-Content-Example-With-Range.png)
+<figure><img src="../../../../../.gitbook/assets/Slider-Content-Example-no-range.PNG" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../built-in-property-editors/images/Slider-Content-Example-With-Range.png" alt=""><figcaption></figcaption></figure>
 
 ## MVC View Example
 

@@ -12,6 +12,10 @@ Getting Forms out of trial mode.
 
 Manual upgrade instructions.
 
+## [Keeping Umbraco Forms up to date](upgrade.md)
+
+Stay in sync with the latest releases so you can take advantage of new features and bug fixes.
+
 ## [Version specific upgrade notes](version-specific.md)
 
 Topics to be aware of when upgrading to specific versions of Forms.

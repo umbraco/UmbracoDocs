@@ -15,7 +15,7 @@ This guide takes you through the steps to setup a Custom Dashboard in Umbraco.
 
 A Dashboard is a tab on the right-hand side of a section eg. the Getting Started dashboard in the Content section:
 
-![Welcome dashboard](images/whatisadashboardv10.jpg)
+![Welcome dashboard](images/whatisadashboard-v10.jpg)
 
 ### Why provide a Custom Dashboard for your editors?
 
@@ -128,7 +128,7 @@ The `App_Plugins` version of the `Lang` directory is case sensitive on Linux sys
 
 ### The Result
 
-![Custom Dashboard Welcome Message](images/welcomemessage-v8.png)
+<figure><img src="images/welcomemessage-v8.PNG" alt=""><figcaption></figcaption></figure>
 
 We can apply the same workflow to elements inside the dashboard, not only the name/alias. Extend the translation file xml like so:
 
@@ -257,14 +257,6 @@ One caveat is that the package.manifest file is loaded into memory when Umbraco 
 **For version 9 and above:** If the title doesn't change color, [Smidge](https://github.com/shazwazza/smidge) may be caching the CSS and JavaScript. To clear the cache and get it to load in the new JavaScript and CSS, you can configure the [Runtime minification settings](../reference/configuration/runtimeminificationsettings.md#runtime-minification-settings) in the `appsettings.json` file. When you reload the page, you'll see the colorful title.
 
 For information on creating bundles of your site's CSS or JavaScript files in your code, see the [Bundling & Minification for JavaScript and CSS](../fundamentals/design/stylesheets-javascript.md#bundling--minification-for-javascript-and-css) section.
-
-**For version 8 and below:** If the title does not change color, you may be running the site without debugging. This means that the [Client Dependency Framework](https://github.com/Shazwazza/ClientDependency) (CDF) will be caching the CSS and JavaScript.
-
-To clear the CDF cache and load the new JavaScript and CSS, you need to:
-
-* Increment the version number in the [ClientDependency.config file](https://github.com/Shazwazza/ClientDependency/wiki/Configuration#complete-config)
-* Save the file
-* Reload the page and see the colourful title
 
 Hopefully, now you can see the potential of what you can provide to an editor as a basic welcome dashboard.
 
@@ -556,7 +548,7 @@ Add the following to our view:
 
 At this point we are done with the tutorial, your files should contain this:
 
-CustomWelcomeDashboardController:
+**CustomWelcomeDashboardController:**
 
 ```js
 angular.module("umbraco").controller("CustomWelcomeDashboardController", function ($scope, userService, logResource, entityResource) {
@@ -644,7 +636,7 @@ angular.module("umbraco").controller("CustomWelcomeDashboardController", functio
 });
 ```
 
-WelcomeDashboard.html:
+**WelcomeDashboard.html:**
 
 ```html
 <div class="welcome-dashboard" ng-controller="CustomWelcomeDashboardController as vm">
@@ -672,7 +664,7 @@ WelcomeDashboard.html:
 
 You can create your own custom Angular services/resources to interact with your own serverside data (using UmbracoAuthorizedJsonController).
 
-The [property editor tutorial](creating-a-property-dditor/part-4.md) has a step explaining how to do this.
+The [property editor tutorial](creating-a-property-editor/) has a step explaining how to do this.
 
 ## The end
 

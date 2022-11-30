@@ -1,8 +1,8 @@
 ---
-meta.Title: "Adding a type to the provider model"
+meta.Title: Adding a type to the provider model
 ---
 
-# Adding a type to the provider model
+# Adding A Type To The Provider Model
 
 To add a new type, no matter if it's a workflow, field, data source, etc, there is a number of tasks to perform to connect to the Forms provider model. This chapter walks through each step and describes how each part works. This chapter will reference the creation of a workflow type. It is, however, the same process for all types.
 
@@ -103,7 +103,7 @@ public override List<Exception> ValidateSettings() {
 
 ## Registering the class with Umbraco and Forms
 
-To register the type, ensure your web application project has a reference to the class library - either via a project or NuGet reference - and add the following code into the startup pipeline.  In this example, the registration is implemented as an extension method to `IUmbracoBuilder` and should be called from `Startup.cs`:
+To register the type, ensure your web application project has a reference to the class library - either via a project or NuGet reference - and add the following code into the startup pipeline. In this example, the registration is implemented as an extension method to `IUmbracoBuilder` and should be called from `Startup.cs`:
 
 ```csharp
 public static IUmbracoBuilder AddUmbracoFormsCustomProviders(this IUmbracoBuilder builder)
@@ -126,7 +126,7 @@ public class UmbracoFormsCustomProvidersComposer : IComposer
 }
 ```
 
-From Umbraco Forms 9.5 and 10.0, there are further convenience methods you can use for registering custom types. These are found in the namespace `Umbraco.Forms.Core.Providers.Extensions`.
+There are further convenience methods you can use for registering custom types. These are found in the namespace `Umbraco.Forms.Core.Providers.Extensions`.
 
 For example, instead of the following:
 

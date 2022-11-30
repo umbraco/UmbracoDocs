@@ -15,28 +15,28 @@ There are tutorials on how to inject dependencies, information about how the Umb
 
 You can implement your own MVC controllers to work alongside Umbraco.
 
-* [Working with generated Models](../../Reference/Templating/Modelsbuilder/)
-* [Concerns when working with Views](../../Reference/Templating/Mvc/)
-* [Different types of Controllers](../../Implementation/Controllers/)
+* [Working with generated Models](../../umbraco-cms/reference/templating/modelsbuilder)
+* [Concerns when working with Views](../../umbraco-cms/reference/templating/mvc)
+* [Different types of Controllers](../../umbraco-cms/implementation/controllers.md)
 
 ## Umbraco specific MVC concepts
 
 There are two concepts that are Umbraco specific which might prove useful to learn about:
 
-* [Surface Controllers](../../Reference/Routing/Surface-Controllers/index.md)
-* [Default routing](../../Implementation/Default-Routing/Controller-Selection/)
+* [Surface Controllers](../../umbraco-cms/reference/routing/surface-controllers)
+* [Default routing](../../umbraco-cms/implementation/default-routing/controller-selection.md)
 
 ## Dependency Injection and Umbraco's Composition
 
 Umbraco is composed of components. Programmatically you can add your own components and customize Umbraco at application startup.
 
-Learn more about composing and components in the [Composing article](../../Implementation/Composing/).
+Learn more about composing and components in the [Composing article](../../umbraco-cms/implementation/composing.md).
 
 ## Debugging
 
 When you're developing with Umbraco you might sometimes run into some errors and issues. Here are some guides to help you with the debugging:
 
-* [General debugging](../../Fundamentals/Code/Debugging/)
-* [Debugging with SourceLink](../../Reference/Debugging/)
+* [General debugging](../../umbraco-cms/fundamentals/code/debugging)
+* [Debugging with SourceLink](../../umbraco-cms/reference/debugging.md)
 
 ![Umbraco packages](images/corona\_blogpost\_05SoMe\_768x432px.png)
