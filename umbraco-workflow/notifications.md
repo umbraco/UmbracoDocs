@@ -615,7 +615,7 @@ Which one you want to use depends on what you want to achieve. If you want to ca
       </ul>
     </td>
     <td>
-    Base notification class for Approving, Cancelling, Creating, Rejecting and Resubmitting and can be used in place of these, using the Action value to identify the executed workflow action.<br/>
+    Base notification class for Approving, Cancelling, Creating, Rejecting, Resubmitting. Can be used in place of these, using the Action value to identify the executed workflow action.<br/>
     Published when WorkflowProcess.ResubmitWorkflow is called in the API before the workflow is updated.<br/>
     Target: Gets the IWorkflowInstance object being updated.<br />
     Action: Gets the WorkflowAction being executed.
@@ -632,7 +632,7 @@ Which one you want to use depends on what you want to achieve. If you want to ca
       </ul>
     </td>
     <td>
-    Base notification class for Approved, Cancelled, Created, Rejected, Resubmitted and can be used in place of these, using the Action value to identify the executed workflow action.<br/>
+    Base notification class for Approved, Cancelled, Created, Rejected, Resubmitted. Can be used in place of these, using the Action value to identify the executed workflow action.<br/>
     Published when WorkflowProcess.ResubmitWorkflow is called in the API after the workflow stage is updated.<br/>
     Target: Gets the updated IWorkflowInstance objects.<br />
     Action: Gets the WorkflowAction being executed.
