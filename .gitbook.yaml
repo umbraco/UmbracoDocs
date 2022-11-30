@@ -1,0 +1,7 @@
+root: ./
+
+​structure:  
+    readme: README.md
+
+redirects:
+    umbraco-cms/fundamentals/setup/upgrading/general: umbraco-cms/fundamentals/setup/upgrading/README.md
