@@ -1,6 +1,6 @@
 # Using Notifications
 
-Umbraco Workflow uses Notifications to allow you to hook into the processes for the backoffice. For example, you might want to execute some code every time an approval group is updated. Notifications allow you to do that. For more information on how Umbraco implements Notifications, visit [Using Notifications in the CMS documentation](https://docs.umbraco.com/umbraco-cms/reference/notifications)
+Umbraco Workflow uses Notifications to allow you to hook into the processes for the backoffice. For example, you might want to execute some code every time an approval group is updated. Notifications allow you to do that. For more information on how Umbraco implements Notifications, see the [Using Notifications](https://docs.umbraco.com/umbraco-cms/reference/notifications) article.
 
 ## Notifications
 
