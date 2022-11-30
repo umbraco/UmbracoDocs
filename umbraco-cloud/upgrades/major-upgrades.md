@@ -6,15 +6,23 @@ description: >-
 
 # Major Upgrades
 
-{% hint style="info" %}
-****
+{% hint style="danger" %}
+## Umbraco 11 release
 
-**Are you using any custom packages or code on your Umbraco Cloud project?**\
-****\
-****You will need to ensure the packages you use are available in the latest version of  Umbraco and that your custom code is valid with the .NET Framework.\
-\
-**Breaking Changes**\
-\
+We currently do **not recommend** upgrading to Umbraco CMS version 11 on Cloud.
+
+This is due to a temporary bug in the hosting services used for hosting Umbraco Cloud.
+
+Please reach out to [Umbraco Support](mailto:support@umbraco.com) if you have any questions.
+{% endhint %}
+
+{% hint style="info" %}
+#### **Are you using any custom packages or code on your Umbraco Cloud project?**
+
+You will need to ensure the packages you use are available in the latest version of  Umbraco and that your custom code is valid with the .NET Framework.
+
+#### **Breaking Changes**
+
 Make sure you know the [Breaking changes](../../umbraco-cms/fundamentals/setup/upgrading/version-specific/) in the latest version of Umbraco CMS.
 {% endhint %}
 
