@@ -186,7 +186,7 @@ Which one you want to use depends on what you want to achieve. If you want to ca
       </ul>
     </td>
     <td>
-    Published when ConfigService.DeleteNodeConfig is called in the API, before the config items are deleted.<br/>
+    Published when ConfigService.DeleteNodeConfig is called in the API before the config items are deleted.<br/>
     DeletedEntities: Gets the collection of IWorkflowConfig objects being deleted.
     </td>
   </tr>
