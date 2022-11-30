@@ -748,7 +748,7 @@ Which one you want to use depends on what you want to achieve. If you want to ca
       </ul>
     </td>
     <td>
-    Published when SettingsService.UpdateSettings<T> is called in the API, before the settings are saved.<br/>
+    Published when SettingsService.UpdateSettings<T> is called in the API before the settings are saved.<br/>
     SavedEntities: Gets the collection of ISettings objects being saved.<br />
     </td>
   </tr>
