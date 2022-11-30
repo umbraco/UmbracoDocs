@@ -1,15 +1,11 @@
----
-versionFrom: 8.0.0
----
-
 # ExternalLoginService
 
 The ExternalLoginService is used to store the external login info and can be replaced with your own implementation.
 
- * **Namespace:** `Umbraco.Core.Services` 
- * **Assembly:** `Umbraco.Core.dll`
+* **Namespace:** `Umbraco.Core.Services`
+* **Assembly:** `Umbraco.Core.dll`
 
- All samples in this document will require references to the following dll:
+All samples in this document will require references to the following dll:
 
 * Umbraco.Core.dll
 

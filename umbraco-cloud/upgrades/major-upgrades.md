@@ -73,7 +73,7 @@ Video example.
 
 ### Upgrading Add-on packages
 
-Follow the steps below to update the following packages as well:
+Update the following packages as well:
 
 * Umbraco.Deploy.Cloud
 * Umbraco.Deploy.Contrib

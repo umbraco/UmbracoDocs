@@ -1,6 +1,4 @@
 ---
-versionFrom: 9.0.0
-meta.Title: "Relation Model"
 description: "Represents a Relation between two items."
 ---
 

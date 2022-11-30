@@ -3,11 +3,11 @@ meta.Title: "Umbraco Forms"
 description: "Documentation on how to work with Umbraco Forms for both editors and developers"
 ---
 
-# Umbraco Forms Documentation
+# What is Umbraco Forms?
 
-_Documents how to work with Umbraco Forms (HQ's official Forms Builder) from both an editor and a developer standpoint._
+Umbraco Forms is tool that lets you build forms of all shapes and sizes, and put them on your Umbraco websites. Build forms using a long list of elements like multiple choice, dropdowns, text areas and checkboxes. Choose between a series of different workflow and control what happens once a form has been submitted.
 
-You can purchase Forms from [Umbraco Apps](https://umbraco.com/apps/umbraco-forms/).
+[Purchase Umbraco Forms](https://umbraco.com/apps/umbraco-forms/) or sign up for an [Umbraco Cloud](../umbraco-cloud/) project where Umbraco Forms is part of the package.
 
 ## [Installing and Upgrading](installation/README.md)
 

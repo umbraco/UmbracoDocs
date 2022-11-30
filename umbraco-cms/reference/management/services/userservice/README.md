@@ -1,13 +1,9 @@
----
-versionFrom: 8.0.0
----
-
 # UserService
 
 The UserService acts as a "gateway" to Umbraco data for operations which are related to Users.
 
- * **Namespace:** `Umbraco.Core.Services`
- * **Assembly:** `Umbraco.Core.dll`
+* **Namespace:** `Umbraco.Core.Services`
+* **Assembly:** `Umbraco.Core.dll`
 
 All samples listed in this document will require references to the following dll:
 
@@ -57,7 +53,7 @@ If neither a `Services` property or Dependency Injection is available, you can a
 IUserService userService = Umbraco.Core.Composing.Current.Services.UserService;
 ```
 
-
 ## Samples
 
-* [**Create a new user**](create-a-new-user.md)<br />Quick sample showing how to create a new backoffice user; including setting a password, assigning the user to a user group, and setting the name of the user.
+* [**Create a new user**](create-a-new-user.md)\
+  Quick sample showing how to create a new backoffice user; including setting a password, assigning the user to a user group, and setting the name of the user.

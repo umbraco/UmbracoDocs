@@ -4,7 +4,7 @@ description: >-
   persisted in the database
 ---
 
-# Umbraco Persistence
+# Management
 
 The intended audience for these reference pages are .NET developers. It is assumed the reader already has knowledge of the basics of Umbraco and knows .NET & C#.
 

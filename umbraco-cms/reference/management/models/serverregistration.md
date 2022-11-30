@@ -1,10 +1,9 @@
 ---
-versionFrom: 9.0.0
-meta.Title: "ServerRegistration"
 description: "Represents a registered server in a multiple-servers environment."
 ---
 
 # ServerRegistration
+
 The `ServerRegistration` class represents a registered server in a multiple-servers environment.
 
 * **Namespace:** `Umbraco.Cms.Core.Models`
@@ -91,8 +90,3 @@ Gets or sets the server unique identity.
 var serverRegistration = serverRegistrationService.GetActiveServers().FirstOrDefault();
 return serverRegistration.ServerIdentity;
 ```
-
-
-
-
-

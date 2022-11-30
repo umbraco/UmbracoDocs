@@ -1,6 +1,5 @@
 ---
 meta.Title: Outbound request pipeline
-description: How the Umbraco outbound request pipeline works
 ---
 
 # Outbound request pipeline

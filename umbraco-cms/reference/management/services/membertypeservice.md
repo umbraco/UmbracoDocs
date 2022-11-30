@@ -1,13 +1,9 @@
----
-versionFrom: 9.0.0
----
-
 # MemberTypeService
 
 The MemberTypeService acts as a "gateway" to Umbraco data for operations which are related to MemberTypes.
 
- * **Namespace:** `Umbraco.Cms.Core.Services`
- * **Assembly:** `Umbraco.Core.dll`
+* **Namespace:** `Umbraco.Cms.Core.Services`
+* **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
 
@@ -20,6 +16,7 @@ using Umbraco.Cms.Core.Services;
 ```
 
 For Razor views:
+
 ```csharp
 @using Umbraco.Cms.Core.Services
 ```

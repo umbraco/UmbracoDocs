@@ -1,6 +1,4 @@
 ---
-versionFrom: 9.0.0
-meta.Title: "ContentType Model"
 description: "A ContentType corresponds to the Document Type found in the backoffice."
 ---
 
@@ -94,7 +92,7 @@ return contentType.ContentTypeComposition;
 
 ### .CompositionPropertyGroups
 
-Gets a list of all 'PropertyGroup` objects from the composition including PropertyGroups from the current ContentType.
+Gets a list of all 'PropertyGroup\` objects from the composition including PropertyGroups from the current ContentType.
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return CompositionPropertyGroups

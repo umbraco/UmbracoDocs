@@ -1,8 +1,22 @@
 # What is Umbraco Heartcore?
 
+Umbraco Heartcore is a headless Software As A Service (SAAS) offered by Umbraco. The service enables you to create and manage content and media in the Umbraco backoffice and make it available to any platforms, devices, channels etc.
+
+The product comes with a set of API endpoints that enables you to provide content through Umbraco to any platform you can think of. The idea is that you create content in the Umbraco backoffice and you use the API endpoints to distribute the content wherever you want.
+
+All Umbraco Heartcore projects includes a Content Delivery Network (CDN) using CloudFlare. This CDN is used for caching content and media fetched through the Content Delivery API. Additionally, the media CDN (media.umbraco.io) allows for resizing and cropping options, which improves both performance and stability.
+
+You can read more about all the features and benefits on the [Umbraco Heartcore product page](https://umbraco.com/products/umbraco-heartcore/).
+
+There are 3 ways to get your hands on an Umbraco Heartcore project:
+
+* [Take a 14 day free trial](https://umbraco.com/try-umbraco-heartcore/)
+* [Purchase a Heartcore from Umbraco.com](https://umbraco.com/umbraco-heartcore-pricing/)
+* [Setup a project directly from the Umbraco Cloud Portal](https://umbraco.io) - requires that you already have an account
+
 In this section you will find documentation on how to work with Umbraco Heartcore.
 
-It includes REST API documentation, the basics on how to get started and how to work with the available Client Libraries. Please note that Umbraco Heartcore is a specific type of project only available via Umbraco Cloud.
+It includes REST API documentation, the basics on how to get started and how to work with the available Client Libraries. Umbraco Heartcore is a specific type of project only available via Umbraco Cloud.
 
 ## [API Documentation for the Umbraco Heartcore REST API endpoints](../api-documentation/)
 
@@ -23,22 +37,6 @@ Reference documentation and tutorials for the GraphQL API.
 ### Tutorials
 
 * [Querying With GraphQL](../tutorials/querying-with-graphql.md) - Learn how to query Umbraco Heartcore with GraphQL
-
-## What is Umbraco Heartcore?
-
-Umbraco Heartcore is a headless SaaS (Software as a Service) offered by Umbraco. The service enables you to create and manage content and media in the Umbraco backoffice and make it available to any - and multiple - platforms, devices, channels etc. in order to distribute your content.
-
-The product comes with a set of API endpoints that enables you to provide content through Umbraco to websites, apps, smartwatches or any other platform you can think of. The idea is that you create, manage and work with content in the Umbraco backoffice and then you use the API endpoints to distribute the content wherever you want.
-
-All Umbraco Heartcore projects includes a Content Delivery Network (CDN) using CloudFlare. This CDN is used for caching content and media fetched through the Content Delivery API. Additionally, the media CDN (media.umbraco.io) allows for resizing and cropping options, which improves both performance and stability.
-
-You can read more about all the features and benefits on the [Umbraco Heartcore product page](https://umbraco.com/products/umbraco-heartcore/).
-
-There are 3 ways to get your hands on an Umbraco Heartcore project:
-
-* [Take a 14 day free trial](https://umbraco.com/try-umbraco-heartcore/)
-* [Purchase a Heartcore from Umbraco.com](https://umbraco.com/umbraco-heartcore-pricing/)
-* [Setup a project directly from the Umbraco Cloud Portal](https://umbraco.io) - requires that you already have an account
 
 ## [Getting Started with Umbraco Heartcore](../getting-started/)
 

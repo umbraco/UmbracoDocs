@@ -1,15 +1,11 @@
----
-versionFrom: 8.0.0
----
-
 # NotificationService
 
-The NotificationServices is used to perform operations related to backoffice notifications. 
+The NotificationServices is used to perform operations related to backoffice notifications.
 
- * **Namespace:** `Umbraco.Core.Services` 
- * **Assembly:** `Umbraco.Core.dll`
+* **Namespace:** `Umbraco.Core.Services`
+* **Assembly:** `Umbraco.Core.dll`
 
- All samples in this document will require references to the following dll:
+All samples in this document will require references to the following dll:
 
 * Umbraco.Core.dll
 

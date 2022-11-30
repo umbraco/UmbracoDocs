@@ -1,13 +1,13 @@
 ---
-versionFrom: 7.7.0
-meta.Title: "Creating a new user with the UserService"
 description: "This will show you how to create a new user using the UserService in Umbraco."
-needsV8Update: "true"
 ---
+
 # Creating a user
+
 If you want to create a new user, you'd use ASP.NET identity APIs like it is used in core.
 
 ### Assigning the user to a user group
+
 Permissions aren't administered for the specific user, but rather for the user group(s) that the user is a part of. So to add our new user to a user group, we first need to get a reference to the user via the `GetUserGroupByAlias` method, and then use the `AddGroup` method for adding the group to our user:
 
 ```csharp
