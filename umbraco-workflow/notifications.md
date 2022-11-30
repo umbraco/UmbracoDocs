@@ -44,7 +44,7 @@ Which one you want to use depends on what you want to achieve. If you want to ca
       </ul>
     </td>
     <td>
-    Published when ContentReviewService.SaveContentReviewConfig is called in the API, after the entities have been saved.<br/>
+    Published when ContentReviewService.SaveContentReviewConfig is called in the API after the entities have been saved.<br/>
     SavedEntities: Gets the collection of saved IWorkflowConfig objects.
     </td>
   </tr>
