@@ -692,7 +692,7 @@ Which one you want to use depends on what you want to achieve. If you want to ca
       </ul>
     </td>
     <td>
-    Published when WorkflowTaskManager.CreateApprovalTask is called in the API, after the workflow task is persisted.<br/>
+    Published when WorkflowTaskManager.CreateApprovalTask is called in the API after the workflow task is persisted.<br/>
     CreatedEntity: Gets the created IWorkflowTask.
     </td>
   </tr>            
