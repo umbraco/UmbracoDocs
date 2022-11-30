@@ -18,6 +18,12 @@ This will open a **Schedule Publishing** dialog where you can specify dates and 
 
 ## Timezones
 
+:::warning
+Are you using **Umbraco 10** or a later version?
+
+Find the relevant documentation in the [Scheduled Publishing documentation for Umbraco 10+](https://docs.umbraco.com/umbraco-cms/fundamentals/data/scheduled-publishing#timezones).
+:::
+
 Your server may be in a different timezone than where you are located. You are able to select a date and time in your local timezone and Umbraco will make sure that the item gets published at the selected time. So, if you select 12PM then the item will be published at 12PM in the timezone you are in. This may be 8PM on the server, which is indicated when you select the date and time.
 
 ![Scheduled publishing](images/Publish-Timezone-Difference.jpg)
