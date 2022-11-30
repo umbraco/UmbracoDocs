@@ -707,7 +707,7 @@ Which one you want to use depends on what you want to achieve. If you want to ca
       </ul>
     </td>
     <td>
-    Published when WorkflowTaskManager.ResubmitWorkflow is called in the API, before the workflow task is updated.<br/>
+    Published when WorkflowTaskManager.ResubmitWorkflow is called in the API before the workflow task is updated.<br/>
     CreatedEntity: Gets the IWorkflowTask object being updated.
     </td>
   </tr>
