@@ -8,7 +8,7 @@ All notifications reside in the `Umbraco.Workflow.Core.Notifications` namespace 
 
 Typically, available notifications exist in pairs, with a "before" and "after" notification. For example, the `SettingsService` class publishes both a `WorkflowSettingsSavingNotification` and a `WorkflowSettingsSavedNotification` when settings are modified.
 
-Which one you want to use depends on what you want to achieve. If you want to be able to cancel the action, you would use the "before" notification, and use the CancelOperation method on the notification to cancel it. If you want to execute some code after the settings have been updated, then you would use the "after" notification.
+Which one you want to use depends on what you want to achieve. If you want to cancel the action, you will use the "before" notification and use the CancelOperation method on the notification to cancel it. If you want to execute some code after the settings have been updated, then you would use the "after" notification.
 
 ## ContentReviewService Notifications
 
