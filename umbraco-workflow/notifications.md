@@ -59,7 +59,7 @@ Which one you want to use depends on what you want to achieve. If you want to ca
       </ul>
     </td>
     <td>
-    Published when ContentReviewReminderEmailer.SendReviewReminders is called in the API, before email notifications are sent.<br/>
+    Published when ContentReviewReminderEmailer.SendReviewReminders is called in the API before email notifications are sent.<br/>
     Target: Gets a dictionary containing information about the nodes requiring review, and the assigned review groups.
     </td>
   </tr>   
