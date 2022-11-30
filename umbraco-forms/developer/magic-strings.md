@@ -31,6 +31,10 @@ In most cases, the field must contain only the magic string for the replacement 
 
 We also translate dictionary keys found within the rich text field, which will be contained within HTML tags. Here we look for dictionary keys making up the full inner text of a tag. So for example, `<p>#myKey</p>` would be translated, but `<p>Lorem ipsum #myKey dolor sit amet.</p>` would not.
 
+In most cases, the field must contain only the magic string for the replacement to be carried out. This makes sense for translated values, as you will want the whole phrase replaced when, for example, using one for a field's placeholder.
+
+We also translate dictionary keys found within the rich text field, which will be contained within HTML tags. Here we look for dictionary keys making up the full inner text of a tag.  So for example, `<p>#myKey</p>` would be translated, but `<p>Lorem ipsum #myKey dolor sit amet.</p>` would not.
+
 ### Session & Cookies
 
 `[%SomeSessionOrCookieItem]` this allows you to display an item from the current `HttpContext.Session` with the key of 'SomeSessionOrCookieItem'. The session key can only contain alphanumeric chars and you cannot use dots for example. `[%Member.Firstname]` cannot be used, but `[%MemberFirstname]` can be used. You would have to fill these session keys yourself.

@@ -116,11 +116,11 @@ However, with the above approach, members will not be assigned to any group auto
 Since the member saving form is processed in a controller, we can copy the default UmbRegisterController and add a function to assign the newly created member to a group.
 
 ```csharp
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Threading.Tasks;
-using System.Linq;
 using Umbraco.Cms.Core.Cache;
 using Umbraco.Cms.Core.Logging;
 using Umbraco.Cms.Core.Models;
@@ -134,10 +134,9 @@ using Umbraco.Cms.Web.Common.Filters;
 using Umbraco.Cms.Web.Common.Security;
 using Umbraco.Cms.Web.Website.Controllers;
 using Umbraco.Cms.Web.Website.Models;
-using Umbraco.Extensions;
 
-namespace Umbraco.Web.Controllers
-{ 
+namespace Umbraco.Docs.Samples.Web.Controllers
+{
     public class UmbAlternativeRegisterController : SurfaceController
     {
         private readonly IMemberManager _memberManager;
@@ -181,13 +180,13 @@ namespace Umbraco.Web.Controllers
             {
                 TempData["FormSuccess"] = true;
 
-               
+
                 if (model.RedirectUrl.IsNullOrWhiteSpace() == false)
                 {
                     return Redirect(model.RedirectUrl!);
                 }
 
-                
+
                 return RedirectToCurrentUmbracoPage();
             }
 
@@ -243,16 +242,16 @@ namespace Umbraco.Web.Controllers
 
 
         /// <summary>
-    
+
         /// </summary>
         /// <param name="model">Register member model.</param>
         /// <param name="logMemberIn">Flag for whether to log the member in upon successful registration.</param>
         /// <returns>Result of registration operation.</returns>
         private async Task<IdentityResult> RegisterMemberAsync(RegisterModel model, bool logMemberIn = true)
         {
-            using ICoreScope scope = _scopeProvider.CreateCoreScope(autoComplete: true);
+            using ICoreScope scope = _coreScopeProvider.CreateCoreScope(autoComplete: true);
 
-           
+
             if (string.IsNullOrEmpty(model.Name) && string.IsNullOrEmpty(model.Email) == false)
             {
                 model.Name = model.Email;
@@ -268,11 +267,11 @@ namespace Umbraco.Web.Controllers
 
             if (identityResult.Succeeded)
             {
-               
+
                 IMember? member = _memberService.GetByKey(identityUser.Key);
                 if (member == null)
                 {
-                    
+
                     throw new InvalidOperationException($"Could not find a member with key: {member?.Key}.");
                 }
 

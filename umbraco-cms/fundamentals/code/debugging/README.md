@@ -4,10 +4,6 @@ During the development of your Umbraco site you can debug and profile the code y
 
 To perform proper debugging on your site you need to set your application to have debug enabled. This can be done by setting `Umbraco:CMS:Hosting:Debug="true"` for example in the `appsettings.json` file:
 
-{% hint style="warning" %}
-Debug should always be set to false in production.
-{% endhint %}
-
 ```json
 {
   "Umbraco": {
@@ -19,6 +15,10 @@ Debug should always be set to false in production.
   }
 }
 ```
+
+{% hint style="warning" %}
+Debug should always be set to false in production.
+{% endhint %}
 
 ## Tracing
 

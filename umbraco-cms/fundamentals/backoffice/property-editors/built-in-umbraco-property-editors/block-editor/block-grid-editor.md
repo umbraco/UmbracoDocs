@@ -193,6 +193,14 @@ The Block is resized using a click-and-drag feature. Moving the mouse will chang
 
 <figure><img src="../../built-in-property-editors/block-editor/images/resizing-block-block-grid.gif" alt=""><figcaption><p>Scale blocks in the grid by dragging from the bottom-right corner.</p></figcaption></figure>
 
+## Scaling Blocks
+
+If a Block has multiple size options it can be scaled via the UI. This appears in the bottom left corner of the Block.
+
+The Block is resized using a click and drag feature. Moving the mouse will change the size to the size options closest to the mouse pointer.
+
+![Block Grid - Resizing Blocks](images/resizing-block-block-grid.gif)
+
 ## Rendering Block Grid Content
 
 Rendering the stored value of your **Block Grid** property editor can be done in two ways:

@@ -344,6 +344,7 @@ using Umbraco.Cms.Core.Deploy;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Deploy.Core;
+
 namespace Umbraco.Deploy.Infrastructure.Connectors.GridCellValueConnectors
 {
     public class CustomMediaGridCellValueConnector : GridCellValueConnectorBase2
@@ -352,6 +353,7 @@ namespace Umbraco.Deploy.Infrastructure.Connectors.GridCellValueConnectors
             : base(entityService, localLinkParser)
         {
         }
+
         public override bool IsConnector(string view) => string.Equals(view, "/App_Plugins/TestGridEditor/editor.html", StringComparison.OrdinalIgnoreCase);
         public override string? GetValue(GridValue.GridControl control, ICollection<ArtifactDependency> dependencies, IContextCache contextCache)
         {
@@ -360,10 +362,12 @@ namespace Umbraco.Deploy.Infrastructure.Connectors.GridCellValueConnectors
             {
                 return null;
             }
+
             if (!int.TryParse(value, out var valueAsInt))
             {
                 return null;
             }
+
             Udi? mediaUdi = GetUdi(valueAsInt, UmbracoObjectTypes.Media);
             if (mediaUdi == null)
             {
@@ -379,16 +383,19 @@ namespace Umbraco.Deploy.Infrastructure.Connectors.GridCellValueConnectors
             {
                 return;
             }
+
             var guidUdi = UdiParser.Parse(value.ToString() ?? string.Empty) as GuidUdi;
             if (guidUdi == null)
             {
                 return;
             }
+
             var mediaId = GetNodeId(guidUdi);
             if (!mediaId.HasValue)
             {
                 return;
             }
+
             control.Value = mediaId.Value;
         }
     }

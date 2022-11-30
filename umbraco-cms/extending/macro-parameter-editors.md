@@ -200,9 +200,9 @@ In the `ImagePosition.controller.js` we can now read the 'options' values from t
 @using Umbraco.Extensions
 @inherits Umbraco.Cms.Web.Common.Macros.PartialViewMacroPage
 @{
-var imagePosition = Model.MacroParameters["imagePosition"];
-//or if for convenience if you are using Umbraco.Extensions namespace there is a GetParameterValue extension method, which allows a default value to be specified if the parameter is not provided:
-imagePosition = Model.GetParameterValue<string>("imagePosition","full-width");
+    var imagePosition = Model.MacroParameters["imagePosition"];
+    //or if for convenience if you are using Umbraco.Extensions namespace there is a GetParameterValue extension method, which allows a default value to be specified if the parameter is not provided:
+    imagePosition = Model.GetParameterValue<string>("imagePosition","full-width");
 }
 ```
 

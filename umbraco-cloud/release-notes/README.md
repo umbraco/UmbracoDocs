@@ -2,7 +2,9 @@
 
 _View the latest updates for the Umbraco Cloud Portal_
 
-***
+[**07/11/2022 Release Notes:**](2022-11-07-releasenotes.md) Dedicated for Starter and Standard - Projects Dashboard Quick links - Other Umbraco Cloud Updates
+
+[**19/09/2022 Release Notes:**](2022-09-19-releasenotes.md) 2FA authentication + US Region Hosting + Projects Dashboard
 
 ****[**07/11/2022 Release Notes:**](2022-11-07-releasenotes.md) Dedicated for Starter and Standard - Projects Dashboard Quick links - Other Umbraco Cloud Updates
 

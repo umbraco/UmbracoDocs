@@ -79,6 +79,24 @@ public class ProductPageController : RenderController
 }
 ```
 
+If you prefer to use an async controller your need to override both the sync and the async Index()-methods. This is done to disable the default behavior from the base controller.
+
+```csharp
+public class ProductPageController : RenderController
+{
+       
+    [NonAction]
+    public sealed override IActionResult Index() => throw new NotImplementedException();
+
+    public async Task<IActionResult> Index(CancellationToken cancellationToken)
+    {
+        await SomethingAsync(cancellationToken);
+
+        return CurrentTemplate(CurrentPage);
+    }
+}
+```
+
 This example shows the default behaviour that Umbraco's core RenderController provides. The 'Index' action of the controller is executed, and the CurrentTemplate helper sends the model containing the details of the published content item related to the request to the relevant template/view.
 
 ## Routing via template

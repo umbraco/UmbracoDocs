@@ -5,7 +5,7 @@ keywords: content razor v9 version9
 
 # Rendering Content
 
-_The primary task of any template in Umbraco is to render the values of the current page or the result of a query against the content cache._
+_The primary task of any template is to render the values of the current page or the result of a query against the content cache._
 
 ## Display a value in your template view
 
@@ -43,7 +43,7 @@ To render the content from the Grid, see the [Render Grid in Template](../backof
 
 ### Using fall-back methods
 
-The `.Value()` method has a number of optional parameters that support scenarios where we want to "fall-back" to some other content when the property value does not exist on the current content item.
+The `.Value()` method has a number of optional parameters that support scenarios where we want to "fall-back" to some other content. 
 
 To use the `fallback` type, add the `@using Umbraco.Cms.Core.Models.PublishedContent;` directive.
 

@@ -222,3 +222,7 @@ public void ConfigureServices(IServiceCollection services)
         .Build();
 }
 ```
+
+:::warning
+When adding a custom `IContentLastChanceFinder` to the pipeline any `Error404Collection`-settings in `appSettings.json` will be ignored.
+:::
