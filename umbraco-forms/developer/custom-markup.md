@@ -1,6 +1,6 @@
 ---
 meta.Title: Umbraco Forms custom markup
-meta.Description: >-
+description: >-
   With Umbraco Forms it's possible to customize the outputted markup of a Form,
   which means you have complete control over what Forms will output.
 ---

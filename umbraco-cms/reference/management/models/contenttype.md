@@ -1,3 +1,7 @@
+---
+description: "A ContentType corresponds to the Document Type found in the backoffice."
+---
+
 # ContentType
 
 A ContentType corresponds to the Document Type found in the backoffice. The ContentType is a model / data definition for your content nodes. Every content node on an Umbraco web site always maps to a backing Document Type.

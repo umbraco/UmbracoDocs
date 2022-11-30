@@ -2,7 +2,7 @@
 versionFrom: 9.0.0
 versionTo: 10.0.0
 meta.Title: "Modelsbuilder Introduction"
-meta.Description: "Modelsbuilder introduction"
+description: "Modelsbuilder introduction"
 ---
 
 # Umbraco Models Builder Introduction

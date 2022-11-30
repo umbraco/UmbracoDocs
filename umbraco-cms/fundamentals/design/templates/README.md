@@ -1,6 +1,6 @@
 ---
 meta.Title: "Templates in Umbraco"
-meta.Description: "Templating in Umbraco including inheriting from master template"
+description: "Templating in Umbraco including inheriting from master template"
 ---
 
 # Templates

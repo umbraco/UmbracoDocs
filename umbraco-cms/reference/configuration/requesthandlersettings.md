@@ -2,7 +2,7 @@
 versionFrom: 9.0.0
 versionTo: 10.0.0
 meta.Title: "Umbraco Request Handler Settings"
-meta.Description: "Information on the request handler settings section"
+description: "Information on the request handler settings section"
 ---
 
 # Request handler settings

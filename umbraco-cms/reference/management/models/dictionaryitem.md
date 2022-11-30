@@ -1,3 +1,7 @@
+---
+description: "Represents a Dictionary Item. A Dictionary Item is what you see in the Translation / Dictionary tree."
+---
+
 # DictionaryItem
 
 Represents a Dictionary Item. A Dictionary Item is what you see in the Translation / Dictionary tree.

@@ -1,6 +1,6 @@
 ---
 meta.Title: Getting Started
-meta.description: ''
+description: ''
 versionFrom: 8.0.0
 ---
 

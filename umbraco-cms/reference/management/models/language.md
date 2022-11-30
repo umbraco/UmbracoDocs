@@ -1,3 +1,7 @@
+---
+description: "Represents a Language. Installed languages can be found in the settings section."
+---
+
 # Language
 
 Represents a Language. Installed languages can be found in the settings section.

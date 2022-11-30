@@ -1,3 +1,7 @@
+---
+description: "Represents a Relation between two items."
+---
+
 # Relation
 
 Represents a Relation between two items.

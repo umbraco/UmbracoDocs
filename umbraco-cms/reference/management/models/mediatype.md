@@ -1,3 +1,7 @@
+---
+description: "A MediaType is almost the same as a ContentType. I.e. a model / data definition for your media nodes."
+---
+
 # MediaType
 
 A MediaType is almost the same as a [ContentType](contenttype.md). I.e. a model / data definition for your media nodes.

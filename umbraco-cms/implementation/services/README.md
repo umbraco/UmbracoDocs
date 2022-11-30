@@ -1,6 +1,6 @@
 ---
 meta.Title: Umbraco Services and Helpers
-meta.Description: >-
+description: >-
   Umbraco has a range of 'Core' Services and Helpers that act as a 'gateway' to
   Umbraco data and functionality to use when extending or implementing an
   Umbraco site

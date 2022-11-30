@@ -1,3 +1,7 @@
+---
+description: "The `RelationType` class represents a relation definition between two node types (content or media)."
+---
+
 # RelationType
 
 The `RelationType` class represents a relation definition between two node types (content or media). For example keeping track of node usage across the site, in order to avoid deleting content that is used else where. When querying a relation this is done using the parent node key unless the `RelationType` is set to bidirectional in which case you can also query using the child node key.

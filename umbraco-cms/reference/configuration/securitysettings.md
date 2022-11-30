@@ -2,7 +2,7 @@
 versionFrom: 9.0.0
 versionTo: 10.0.0
 meta.Title: "Umbraco Security Settings"
-meta.Description: "Information on the security settings section"
+description: "Information on the security settings section"
 ---
 
 # Security Settings

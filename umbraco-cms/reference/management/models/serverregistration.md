@@ -1,3 +1,7 @@
+---
+description: "Represents a registered server in a multiple-servers environment."
+---
+
 # ServerRegistration
 
 The `ServerRegistration` class represents a registered server in a multiple-servers environment.

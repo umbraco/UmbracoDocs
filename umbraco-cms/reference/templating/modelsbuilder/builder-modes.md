@@ -2,7 +2,7 @@
 versionFrom: 9.0.0
 versionTo: 10.0.0
 meta.Title: "Modelsbuilder Modes"
-meta.Description: "Modelsbuilder modes"
+description: "Modelsbuilder modes"
 ---
 
 # Builder Modes

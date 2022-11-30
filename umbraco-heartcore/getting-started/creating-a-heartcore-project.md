@@ -1,7 +1,5 @@
 ---
-versionFrom: 8.0.0
-meta.Title: Creating a Heartcore Project
-meta.Description: A guide to building an Umbraco Heartcore project
+description: "A guide to building an Umbraco Heartcore project"
 ---
 
 # Building a project from scratch

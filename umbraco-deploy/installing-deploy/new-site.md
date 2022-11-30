@@ -1,6 +1,5 @@
 ---
-meta.Title: Installing Umbraco Deploy on new Umbraco website
-meta.Description: Steps to how Umbraco Deploy can be set up on a new Umbraco website
+description: "Steps to how Umbraco Deploy can be set up on a new Umbraco website"
 ---
 
 # New site

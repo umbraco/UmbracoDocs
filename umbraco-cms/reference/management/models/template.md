@@ -1,3 +1,7 @@
+---
+description: "Represents a Template file."
+---
+
 # Template
 
 Represents a Template file.
