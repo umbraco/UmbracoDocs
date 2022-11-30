@@ -143,7 +143,7 @@ Which one you want to use depends on what you want to achieve. If you want to ca
     </td>
     <td>
     Published when ConfigService.DeleteContentTypeConfig is called in the API after the config items are deleted.<br/>
-    DeletedEntities: Gets the collection of deleted IWorkflowConfig objects. Note these items are no longer in the database, and exist only in memory.
+    DeletedEntities: Gets the collection of deleted IWorkflowConfig objects. Note these items are no longer in the database and exist only in memory.
     </td>
   </tr> 
 <tr>
@@ -201,7 +201,7 @@ Which one you want to use depends on what you want to achieve. If you want to ca
     </td>
     <td>
     Published when ConfigService.DeleteNodeConfig is called in the API after the config items are deleted.<br/>
-    DeletedEntities: Gets the collection of deleted IWorkflowConfig objects. Note these items are no longer in the database, and exist only in memory.
+    DeletedEntities: Gets the collection of deleted IWorkflowConfig objects. Note these items are no longer in the database and exist only in memory.
     </td>
   </tr> 
   <tr>
@@ -294,7 +294,7 @@ Which one you want to use depends on what you want to achieve. If you want to ca
     <td>
     Published when NotificationsService.SendEmailReminders is called in the API before email notifications are generated and sent.<br/>
     Target: Gets the collection of objects describing the workflow instances used to build the email messages<br />
-    EmailType: Gets the enum value describing the email type, which will always be `EmailType.Reminder`
+    EmailType: Gets the enum value describing the email type. Will always be `EmailType.Reminder`
     </td>
   </tr>         
   <tr>
@@ -312,7 +312,7 @@ Which one you want to use depends on what you want to achieve. If you want to ca
     Published when WorkflowReminderEmailer.Send is called in the API after email notifications are sent.<br/>
     Target: Gets the collection of objects describing the workflow instances used to build the email messages<br />
     Tasks: Gets the collection of objects describing the overdue workflows for each notified user<br />
-    EmailType: Gets the enum value describing the email type, which will always be `EmailType.Reminder`
+    EmailType: Gets the enum value describing the email type. Will always be `EmailType.Reminder`
     </td>
   </tr>        
     
@@ -505,7 +505,7 @@ Which one you want to use depends on what you want to achieve. If you want to ca
     <td>
     Published when WorkflowProcess.HandleCompleteNow<T> or WorkflowProcess.HandleCompleteLater<T> is called in the API after the workflow is completed.<br/>
     Target: Gets the completed IWorkflowInstance object.<br />
-    WorkflowType: Gets the WorkflowType enum value representing the workflow type, either Publish or Unpublish
+    WorkflowType: Gets the WorkflowType enum value representing the workflow type. Will be either Publish or Unpublish.
     </td>
   </tr> 
   <tr>
