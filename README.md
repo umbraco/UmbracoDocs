@@ -1,57 +1,51 @@
-# Umbraco Documentation project
- [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org)
+---
+meta.Title: Umbraco Documentation
+description: >-
+  Examples, tutorials, references, and best practices—everything you need to
+  build future-proof applications with Umbraco.
+layout: landing
+---
 
-# Reading & using the docs
-This is the documentation project for Umbraco. The scope of this project is to provide overviews of concepts, tutorials, example code, and links to API reference.
+# Umbraco Documentation
 
-# What's in the documentation
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Umbraco CMS</strong></td><td>Everything you need to know when building your Umbraco website.</td><td></td><td><a href="getting-started/images/flexible_Email_hero_780x405px.png">flexible_Email_hero_780x405px.png</a></td><td><a href="umbraco-cms/">umbraco-cms</a></td></tr><tr><td><strong>Umbraco Cloud</strong></td><td>Learn how to get started with your Umbraco Cloud project.</td><td></td><td><a href=".gitbook/assets/Umbraco Cloud Update - Email hero - White - 780x405px@2xt.jpg">Umbraco Cloud Update - Email hero - White - 780x405px@2xt.jpg</a></td><td><a href="umbraco-cloud/getting-started/">getting-started</a></td></tr><tr><td><strong>Umbraco Heartcore</strong></td><td>Learn how to get the most out of your headless Umbraco solution.</td><td></td><td><a href="getting-started/developing-websites-with-umbraco/images/Headless_Email_hero_780x405px.png">Headless_Email_hero_780x405px.png</a></td><td><a href="umbraco-heartcore/">umbraco-heartcore</a></td></tr></tbody></table>
 
-## Getting started
-[Getting started](Getting-Started/) is an introduction to Umbraco, containing explanations of basic concepts and short tutorials.
+{% hint style="info" %}
+**Documentation for Umbraco 10+**
 
-## Implementation
-[Implementation](Implementation/) is an overview of Umbraco's structure and pipeline.
+This documentation covers the following major versions of Umbraco CMS:
 
-## Developers Reference
-[Reference](Reference/index.md) is a collection of API references specifically for developers working with and extending Umbraco.
+* Umbraco 9 (until it is End of Life (EOL) on December 1st)
+* Umbraco 10 (LTS)
+* Umbraco 11
 
-## Extending
-[Extending](Extending/) is documentation on customizing and extending the backoffice.
+If you are looking for documentation for older versions like Umbraco 7 and 8, you can find it on [our.umbraco.com](https://our.umbraco.com/Documentation).
 
-## Tutorials
-[Tutorials](Tutorials/) is a collection of the more extensive tutorials used in the documentation.
+Read the Documentation and versions article to learn more about how we support and document multiple major versions.
+{% endhint %}
 
-# Markdown conventions
-The Umbraco Documentation uses Markdown for all of the documentation; please read about our [Markdown Conventions](Contribute/Markdown-Conventions/).
+### Add on products
 
-# Annotating a document
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Umbraco Forms</strong></td><td>Build and add forms to your Umbraco websites with Umbraco Forms.</td><td></td><td><a href="umbraco-forms/">umbraco-forms</a></td></tr><tr><td><strong>Umbraco Deploy</strong></td><td>Ensure smooth code and content deployments on your Umbraco projects.</td><td></td><td><a href="umbraco-deploy/">umbraco-deploy</a></td></tr><tr><td><strong>Umbraco Workflow</strong></td><td>Setup custom workflows for managing content on your Umbraco website.<br></td><td><a href="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/ikWFgd9u1a58foXzJLwC/">What is Umbraco Workflow?</a></td><td></td></tr></tbody></table>
 
-To add version information and extra keywords, [every document can be annotated using YAML](Contribute/Adding-Metadata/index.md).
+## Contributing
 
-# Multi version documentation
-Every new version of Umbraco introduces new features. This means that every document might not work for your possibly older version.
+The documentation project is open source and hosted on GitHub. If you have any corrections or additions to the documentation, suggest a change or let us know.
 
-Therefore we introduced 2 different mechanisms:
-1. The [YAML metadata describing](Contribute/Adding-Metadata/index.md) `versionFrom` and `versionTo`.
-2. The possibility [to add multiple files about the same topic](Contribute/File-Naming-Conventions/index.md).
+Head over to the [Contribute section](contribute/) to start contributing to the Umbraco Documentation.
 
-# Previewing rendered output locally
+## Quick links
 
-There is an experimental project which supports rendering the documentation locally.
+{% content-ref url="umbraco-cms/fundamentals/setup/install/" %}
+[install](umbraco-cms/fundamentals/setup/install/)
+{% endcontent-ref %}
 
-You can install the tool from [NuGet](https://www.nuget.org/packages/Umbraco.Docs.Preview.App/) by issuing the following command.
+{% content-ref url="umbraco-cms/tutorials/creating-a-basic-website/" %}
+[creating-a-basic-website](umbraco-cms/tutorials/creating-a-basic-website/)
+{% endcontent-ref %}
 
-```bash
-$ dotnet tool install --global Umbraco.Docs.Preview.App
-```
+{% content-ref url="umbraco-cms/tutorials/" %}
+[tutorials](umbraco-cms/tutorials/)
+{% endcontent-ref %}
 
-Or check out the source at: [https://github.com/umbraco/UmbracoDocs.Preview](https://github.com/umbraco/UmbracoDocs.Preview).
-
-Once installed, navigate to your local clone of the UmbracoDocs repository and run the command `umbracodocs`. This will start a local webserver that's listening on `http://localhost:5000` and `https://localhost:5001` by default (the actual URLs will be shown), which you can open in your browser to view the rendered documentation.
-
-# Contributing [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/umbraco/UmbracoDocs/issues) [![GitHub contributors](https://img.shields.io/github/contributors/umbraco/UmbracoDocs.svg)](https://GitHub.com/umbraco/UmbracoDocsgraphs/contributors/)
-We :heart: valuable contributions from everyone who is willing to help. It does not matter to us if it's something trivial like correcting spelling mistakes, raising an issue or writing a tutorial! Every little bit of help counts and it all helps make Umbraco easier to use, for everyone.
-Otherwise, [bug reports](https://github.com/umbraco/UmbracoDocs/issues/), [bug fixes](https://github.com/umbraco/UmbracoDocs/pulls) and any feedback on Umbraco are always appreciated.
-Look at the [Contributor Guidelines](CONTRIBUTING.md) to learn how you can get involved and help with the Umbraco Documentation.
-## License [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md)
-This library is released under the [MIT License](LICENSE.md).
+***
