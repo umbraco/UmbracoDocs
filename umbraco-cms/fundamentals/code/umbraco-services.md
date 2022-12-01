@@ -1,6 +1,6 @@
 # Using Umbraco's service APIs
 
-_Whenever you need to modify an entity that Umbraco stores in the database, there are a number of service APIs available to help you. This means that you can create, update and delete any of the core Umbraco entities directly from your custom code._
+_Whenever you need to modify an entity that Umbraco stores in the database, there are service APIs available to help you. This means that you can create, update and delete any of the core Umbraco entities directly from your custom code._
 
 ## Accessing the Umbraco services
 
@@ -8,7 +8,7 @@ Services are typically defined using interfaces. Umbraco has them in the `Umbrac
 
 ### Access via a Controller
 
-If you are accessing Umbraco services inside your own controller class, you can add the Umbraco services that you need as constructor parameters. An instance of every service will be provided at runtime from the service container and by saving each one to a local field, you can make use of them within the scope of your class:
+If you are accessing Umbraco services inside your own controller class, you can add the Umbraco services that you need as constructor parameters. An instance of every service will be provided at runtime from the service container. By saving each one to a local field, you can make use of them within the scope of your class:
 
 ```csharp
 public class CustomController
@@ -116,7 +116,7 @@ namespace Umbraco.Cms.Core.Events
 
 When you are creating your own custom class, in order to make use of the dependency injection framework, you need to register the `ICustomNewsArticleService` service with the concrete type `CustomNewsArticleService`. The `AddScoped()` method registers the service with the lifetime of a single request.
 
-There are several different ways that you can achieve the same outcome:
+There are different ways that you can achieve the same outcome:
 
 Register directly into the **Startup.cs** class.
 
@@ -181,6 +181,9 @@ namespace DefaultNamespace
 ```
 
 Especially recommended when creating Umbraco packages as you won't have access to the Startup class, instead you can achieve the same as above by using a custom Composer which gives you access to the `IUmbracoBuilder`.
+
+If you don't have access to the Startup class 
+
 
 ```csharp
 public class CustomComposer : IComposer
