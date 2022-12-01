@@ -49,7 +49,7 @@ Inside a Razor View template, you can make use of a service injection into a vie
 
 ### Access in a Custom Class via dependency injection
 
-If for instance we wish to subscribe to notifications on one of the services, we'd do so in a Composer C# class, where you will add a custom `NotificationHandler`. In this custom `NotificationHandler` we would inject the service we need into the public constructor of the class and Umbraco's underlying dependency injection framework will do the rest.
+If for instance we wish to subscribe to notifications on one of the services, we'd do so in a Composer C# class, where you will add a custom `NotificationHandler`. In this custom `NotificationHandler` we would inject the service we need into the public constructor of the class and Umbraco's. The underlying dependency injection framework will do the rest.
 
 In this example we will wire up to the ContentService 'Saved' event, and create a new folder in the Media section whenever a new LandingPage is created in the content section to store associated media. Therefore we will need the MediaService available to create the new folder.
 
@@ -180,7 +180,7 @@ namespace DefaultNamespace
 }
 ```
 
-Especially recommended when creating Umbraco packages as you won't have access to the Startup class, instead you can achieve the same as above by using a custom Composer which gives you access to the `IUmbracoBuilder`.
+When creating Umbraco packages you don't have access to the Startup class, therefore  it's recommended to use a `IComposer` instead. A Composer gives you access to the `IUmbracoBuilder`.
 
 If you don't have access to the Startup class 
 
