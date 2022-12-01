@@ -52,7 +52,9 @@ A Module Alias can be configured under **Headless -> Custom Editors Configuratio
 
 ![Screenshot showing the Module Aliases configuration](images/module-aliases.png)
 
-{% endhint %}tip Use a Module Alias when importing libraries to ensure only a single version of that library is loaded. {% endhint %}
+{% hint style="info" %}
+Use a Module Alias when importing libraries to ensure only a single version of that library is loaded.
+{% endhint %}
 
 ## Accessing backoffice components
 
@@ -62,7 +64,9 @@ Using this library reduces breaking changes in the exposed API that would otherw
 
 Currently, the library is exposing only a few components but Feature Requests and Pull Requests are more than welcome.
 
-{% hint style="info" %} style="info" %} The Headless backoffice Bridge has custom elements so it's advised to import using a Module Alias {% endhint %}
+{% hint style="info" %}
+The Headless backoffice Bridge has custom elements so it's advised to import using a Module Alias
+{% endhint %}
 
 ## JSON Schema
 
@@ -122,14 +126,12 @@ Currently, the following combinations are supported:
 **type**: `string`\
 **format**: `uri-reference`\
 **value**: Content or Media `UDI`\
-**returned**: A URL to the item if exists.\
-
+**returned**: A URL to the item if exists.\\
 
 **type**: `string`\
 **format**: `rich-text`\
 **value**: Rich Text, for example from the TinyMCE editor\
-**returned**: The value where all `a` tags with a `locallink` href and `img` tags with a `data-udi` attribute is replaced with the correct links to the items.\
-
+**returned**: The value where all `a` tags with a `locallink` href and `img` tags with a `data-udi` attribute is replaced with the correct links to the items.\\
 
 ## Limitations and best practices
 
@@ -141,7 +143,6 @@ If the library is missing any functionality, raise an issue on the [Heartcore is
 
 Try to avoid relying on backoffice CSS-classes. Instead, it's recommended creating isolated elements using [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web\_Components/Using\_shadow\_DOM).
 
-
 ## Related articles
 
-* [Creating a Custom Grid Editor](../tutorials/creating-a-custom-grid-editor.md/) {% endhint %}
+* [Creating a Custom Grid Editor](../tutorials/creating-a-custom-grid-editor.md)
