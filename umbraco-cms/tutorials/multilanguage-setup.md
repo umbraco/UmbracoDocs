@@ -53,7 +53,10 @@ To change the default language of a website:
 
 1. Go to **Languages** in the **Settings** tree.
 2. Select the language you want to set as the new default language.
-3. Toggle **Default Language**. ![Change default language](images/change-default-language-v10.png)
+3.  Toggle **Default Language**. \
+
+
+    <figure><img src="images/change-default-language-v10.png" alt=""><figcaption></figcaption></figure>
 4. Click **Save**.
 
 ### Changing the Default Backoffice Language of a User
@@ -62,7 +65,9 @@ To change the default language of a User:
 
 1. Go to **Users** section.
 2. Select the user whose backoffice language you wish to change.
-3. Select the new language from the **Language** drop-down list. ![Change backoffice language](images/change-backoffice-language.png)
+3.  Select the new language from the **Language** drop-down list.&#x20;
+
+    <figure><img src="images/change-backoffice-language.png" alt=""><figcaption></figcaption></figure>
 4. Click **Save**.
 
 ## Document Types
@@ -112,17 +117,12 @@ When you return to your content node you will notice two things:
 To add culture and hostnames, follow these steps:
 
 1. Go to the **Content** tab.
-2.  Right-click on the **...** dots next to the **Contact Us** content node and select **Allow access to assign culture and hostnames**.
+2. Right-click on the **...** dots next to the **Contact Us** content node and select **Culture and Hostnames...**.
 
-    {% hint style="info" %}
-    In Umbraco 9, this option is called **Culture and Hostnames...**.
-    {% endhint %}
+3\. In the **Culture and Hostnames...**. pane, let's add a domain for each hostname, like it's done here:\
 
-3\. In the \*\*Allow access to assign culture and hostnames\*\* pane, let's add a domain for each hostname, like it's done here:
 
-```
-![Culture and Hostnames](images/culture-and-hostnames.png)
-```
+<figure><img src="images/culture-and-hostnames.png" alt=""><figcaption></figcaption></figure>
 
 4\. Click **Save**.
 
@@ -171,7 +171,7 @@ To display a value for a different language, if the language we are requesting d
 @Model.Value("pageTitle", "en-Us", fallback: Fallback.ToLanguage)
 ```
 
-For more information, see the [Using fall-back methods](../../umbraco-cms/fundamentals/design/rendering-content.md#using-fall-back-methods) article.
+For more information, see the [Using fall-back methods](../fundamentals/design/rendering-content.md#using-fall-back-methods) article.
 
 ## Using Dictionary Items
 
@@ -184,7 +184,9 @@ To create dictionary items:
 1. Go to the **Translation** section.
 2. Right-click **Dictionary** in the **Translation** tree and select **Create**.
 3. Enter a **Name** for the dictionary item. Let's say **Address** and click **Create**.
-4. Enter the different language versions for the dictionary item. ![Add dictionary items](images/add-dictionary-item.png)
+4.  Enter the different language versions for the dictionary item.&#x20;
+
+    <figure><img src="images/add-dictionary-item.png" alt=""><figcaption></figcaption></figure>
 5. Click **Save**.
 6. Similarly, we will add different language versions for the **Contact Number** field.
 
@@ -201,7 +203,7 @@ To render dictionary items in the template, replace the text with the following 
 
 You can assign a Translator when you need a 1-1 translation of your site. For example, let's say we originally created a website in "Danish" which works from a `.dk` domain and now there is a need for an "English" site on a `.com` domain. In this case, it might be easier to copy the entire danish site and then provide access to a Translator who can then translate the site page by page.
 
-Translators are used for the translation workflow. By default, Translators have permission to **Browse** and **Update** nodes. Someone must review the translations of site pages before publishing the nodes. For more information on managing User Groups, assigning accesss or User permissions, see the [Users](../../umbraco-cms/fundamentals/data/users.md) article.
+Translators are used for the translation workflow. By default, Translators have permission to **Browse** and **Update** nodes. Someone must review the translations of site pages before publishing the nodes. For more information on managing User Groups, assigning accesss or User permissions, see the [Users](../fundamentals/data/users.md) article.
 
 ## Viewing the Language Variant on the Browser
 
@@ -218,6 +220,12 @@ To view the language variant on the browser, follow these steps:
 
 For viewing purposes, I've added a stylesheet to my website. The final result should look similar to the image below:
 
-Danish Version: ![Danish version of Contact Us page](images/final-result-dk.png)
+Danish Version:\
+&#x20;
 
-German Version: ![German version of Contact Us page](images/final-result-da.png)
+<figure><img src="images/final-result-dk.png" alt=""><figcaption></figcaption></figure>
+
+German Version:\
+&#x20;
+
+<figure><img src="images/final-result-da.png" alt=""><figcaption></figcaption></figure>

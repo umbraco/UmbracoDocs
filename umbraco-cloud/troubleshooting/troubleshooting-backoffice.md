@@ -1,7 +1,8 @@
 # The Umbraco Backoffice
 
 An error in the Backoffice often looks like this:
-![Backoffice error](images/backoffice-error.png)
+
+<figure><img src="images/backoffice-error.png" alt=""><figcaption></figcaption></figure>
 
 Errors in the backoffice can be presented in many different ways, the most common ones are
 
@@ -33,8 +34,8 @@ This can have many different causes, and as such we don't have specific guides o
 * Do you have any rewrite rules? Often rewrite rules that are not set up correctly will cause issues with the backoffice, make sure that the following are negated:
   * ^/umbraco
   * ^/DependencyHandler.axd
-  * ^/App_Plugins
-  * You can see examples of how to set up rewrites correctly in the [Rewrites on Cloud](../set-up/manage-hostnames/rewrites-on-cloud.md) article.
+  * ^/App\_Plugins
+  * You can see examples of how to set up rewrites correctly in the [Rewrites on Cloud](../set-up/project-settings/manage-hostnames/rewrites-on-cloud.md) article.
 * Do you get any errors in your browser console that may help you figure it out?
 * Do you get any errors in your umbracoTraceLog?
 * If something isn't loading after a package was installed it could be because the package overwrites something like the dashboard.config file - try to turn the package off and see if that helps.

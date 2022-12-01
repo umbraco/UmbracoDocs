@@ -1,6 +1,8 @@
 ---
-meta.Title: "Umbraco Forms configuration"
-meta.Description: "In Umbraco Forms it's possible to customize the functionality with various configuration values."
+meta.Title: Umbraco Forms configuration
+meta.Description: >-
+  In Umbraco Forms it's possible to customize the functionality with various
+  configuration values.
 ---
 
 # Configuration
@@ -9,9 +11,9 @@ With Umbraco Forms it's possible to customize the functionality with various con
 
 ## Editing configuration values
 
-All configuration for Umbraco Forms is held in the `appSettings.json` file found at the root of your Umbraco website.  If the configuration has been customized to use another source, then the same keys and values discussed in this article can be applied there.
+All configuration for Umbraco Forms is held in the `appSettings.json` file found at the root of your Umbraco website. If the configuration has been customized to use another source, then the same keys and values discussed in this article can be applied there.
 
-The convention for Umbraco configuration is to have package based options stored as a child structure below the `Umbraco` element, and as a sibling of `CMS`.  Forms configuration follows this pattern, i.e.:
+The convention for Umbraco configuration is to have package based options stored as a child structure below the `Umbraco` element, and as a sibling of `CMS`. Forms configuration follows this pattern, i.e.:
 
 ```json
 {
@@ -74,7 +76,8 @@ For illustration purposes, the following structure represents the full set of op
         "Enabled": true,
         "FirstRunTime": "",
         "Period": "1.00:00:00"
-      }
+      },
+      "DisableRecordIndexing": false
     },
     "Security": {
       "DisallowedFileUploadExtensions": "config,exe,dll,asp,aspx",
@@ -83,7 +86,9 @@ For illustration purposes, the following structure represents the full set of op
       "DisableFileUploadAccessProtection": false,
       "DefaultUserAccessToNewForms": "Grant",
       "ManageSecurityWithUserGroups": false,
-      "GrantAccessToNewFormsForUserGroups": "admin,editor"
+      "GrantAccessToNewFormsForUserGroups": "admin,editor",
+      "FormsApiKey": "",
+      "EnableAntiForgeryTokenForFormsApi": true,
     },
     "FieldTypes": {
       "DatePicker": {
@@ -120,7 +125,7 @@ This setting controls the maximum number of columns that can be created by edito
 
 ### DefaultTheme
 
-This setting allows you to configure the name of the theme to use when an editor has not specifically selected one for a form.  If empty or missing, the default value of "default" is used.  If a custom default theme is configured, it will be used for rendering forms where the requested file exists, and where not, will fall back to the out of the box default theme.
+This setting allows you to configure the name of the theme to use when an editor has not specifically selected one for a form. If empty or missing, the default value of "default" is used. If a custom default theme is configured, it will be used for rendering forms where the requested file exists, and where not, will fall back to the out of the box default theme.
 
 ### DefaultEmailTemplate
 
@@ -130,30 +135,30 @@ If you have created a custom template and would like to use that as the default 
 
 ### RemoveProvidedEmailTemplate
 
-From Forms 10.2, the provided template can be removed from the selection if you have created email templates for the "send Razor email" workflow. To do this, set this value to `true`.
+The provided template can be removed from the selection if you have created email templates for the "send Razor email" workflow. To do this, set this value to `true`.
 
 ### RemoveProvidedFormsTemplates
 
-Similarly, from Forms 10.2, the provided form templates available from the form creation dialog can be removed from selection. To do this, set this configuration value to `true`.
+Similarly, the provided form templates available from the form creation dialog can be removed from selection. To do this, set this configuration value to `true`.
 
 ### FormElementHtmlIdPrefix
 
-By default the value of HTML `id` attribute rendered for fieldsets and fields using the default theme is the GUID associated with the form element. Although [this is valid](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id), some browsers, particularly Safari, may report issues with this if the identifier begins with a number. To avoid such issues, from Forms 10.2, the attribute values can be prefixed with the value provided in this configuration element.
+By default the value of HTML `id` attribute rendered for fieldsets and fields using the default theme is the GUID associated with the form element. Although [this is valid](https://developer.mozilla.org/en-US/docs/Web/HTML/Global\_attributes/id), some browsers, particularly Safari, may report issues with this if the identifier begins with a number. To avoid such issues, the attribute values can be prefixed with the value provided in this configuration element.
 
-For example, providing a value of `"f_"` will apply a prefix of "f_" to each fieldset and field `id` attribute.
+For example, providing a value of `"f_"` will apply a prefix of "f\_" to each fieldset and field `id` attribute.
 
 ### SettingsCustomization
 
-Forms 10.2 introduced the ability to configure settings for the field, workflow, data source, and prevalue sources.  The default behavior, when a new field or workflow is added to a form, is for each setting to be empty. The values are then completed by the editor.  All settings defined on the type are displayed for entry.
+Forms introduced the ability to configure settings for the field, workflow, data source, and prevalue sources. The default behavior, when a new field or workflow is added to a form, is for each setting to be empty. The values are then completed by the editor. All settings defined on the type are displayed for entry.
 
-In some situations, you may want to hide certain settings from entry, so they always take an empty value. In others, you may want to provide a default value that the editor can accept or amend.  And lastly, you may have a requirement for a fixed, non-empty value, that's enforced by the organization and not editable.  Each of these scenarios can be supported by this configuration setting.
+In some situations, you may want to hide certain settings from entry, so they always take an empty value. In others, you may want to provide a default value that the editor can accept or amend. And lastly, you may have a requirement for a fixed, non-empty value, that's enforced by the organization and not editable. Each of these scenarios can be supported by this configuration setting.
 
 It consists of four dictionaries, one for each type:
 
-- `DataSourceTypes`
-- `FieldTypes`
-- `PrevalueSourceTypes`
-- `WorkflowTypes`
+* `DataSourceTypes`
+* `FieldTypes`
+* `PrevalueSourceTypes`
+* `WorkflowTypes`
 
 Each dictionary can be identified using the GUID or alias of the type as the key. The value is set to the following structure that contains three settings:
 
@@ -165,9 +170,9 @@ Each dictionary can be identified using the GUID or alias of the type as the key
 }
 ```
 
-- `IsHidden` - if provided and set to true the setting will be hidden and will always have an empty value.
-- `DefaultValue` - if provided the value will be pre-filled when a type using it is created.
-- `IsReadOnly` - used in conjunction with the above, if set the field won't be editable and hence whatever is set as the `DefaultValue` won't be able to be changed. If set to false (or omitted) the editor can change the value from the default.
+* `IsHidden` - if provided and set to true the setting will be hidden and will always have an empty value.
+* `DefaultValue` - if provided the value will be pre-filled when a type using it is created.
+* `IsReadOnly` - used in conjunction with the above, if set the field won't be editable and hence whatever is set as the `DefaultValue` won't be able to be changed. If set to false (or omitted) the editor can change the value from the default.
 
 In this example, the sender address field on a workflow for sending emails can be hidden, such that the system configured value is always used:
 
@@ -240,11 +245,11 @@ This allows you to configure the invalid error validation message. By default th
 
 #### ShowValidationSummary
 
-This setting needs to be a `true` or `false` value and will allow you to toggle if the form will display all form validation error messages in a validation summary together.  Defaults to `false`.
+This setting needs to be a `true` or `false` value and will allow you to toggle if the form will display all form validation error messages in a validation summary together. Defaults to `false`.
 
 #### HideFieldValidationLabels
 
-This setting needs to be a `true` or `false` value and will allow you to toggle if the form will show inline validation error messages next to the form field that is invalid.  Defaults to `false`.
+This setting needs to be a `true` or `false` value and will allow you to toggle if the form will show inline validation error messages next to the form field that is invalid. Defaults to `false`.
 
 #### MessageOnSubmit
 
@@ -256,7 +261,7 @@ This setting needs to be a `True` or `False` value and will allow you to toggle 
 
 #### AutocompleteAttribute
 
-This setting provides a value to be used for the `autocomplete` attribute for newly created forms.  By default the value is empty, but can be set to `on` or `off` to have that value applied as the attribute value used when rendering the form.
+This setting provides a value to be used for the `autocomplete` attribute for newly created forms. By default the value is empty, but can be set to `on` or `off` to have that value applied as the attribute value used when rendering the form.
 
 #### DaysToRetainSubmittedRecordsFor
 
@@ -276,14 +281,14 @@ This configuration expects a `True` or `False` string value, or a comma-separate
 
 ### ExecuteWorkflowAsync
 
-This configuration key is *experimental* and will allow Workflows to be executed in an asynchronous manner. The value can be a `True` or `False` string value, or a comma-separated list of form names. Defaults to `False`.
+This configuration key is _experimental_ and will allow Workflows to be executed in an asynchronous manner. The value can be a `True` or `False` string value, or a comma-separated list of form names. Defaults to `False`.
 
 ### AllowEditableFormSubmissions
 
 This configuration value expects a `true` or `false` value and can be used to toggle the functionality to allow a form submission to be editable and re-submitted. When the value is set to `true` it allows Form Submissions to be edited using the following querystring for the page containing the form on the site. `?recordId=GUID` Replace `GUID` with the GUID of the form submission. Defaults to `false`.
 
 {% hint style="info" %}
-There was a typo in this setting where it had been named as `AllowEditableFormSubmissions`. This is the name that needs to be used in configuration for Forms 9.  In Forms 10 this was be corrected to the now documented value of `AllowEditableFormSubmissions`.
+There was a typo in this setting where it had been named as `AllowEditableFormSubmissions`. This is the name that needs to be used in configuration for Forms 9. In Forms 10 this was be corrected to the now documented value of `AllowEditableFormSubmissions`.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -298,13 +303,13 @@ By setting the following value to True, a querystring value of `formSubmitted=<i
 
 ### CultureToUseWhenParsingDatesForBackOffice
 
-This setting has been added in 9.5 and 10.1, to help resolve an issue with multi-lingual setups.
+This setting has been added to help resolve an issue with multi-lingual setups.
 
 When Umbraco Forms stores data for a record, it saves the values submitted for each field into a dedicated table for each type (string, date etc.). It also saves a second copy of the record in a JSON structure which is more suitable for fast look-up and display in the backoffice. Date values are serialized using the culture used by the front-end website when the form entry is stored.
 
 When displaying the data in the backoffice, the date value needs to be parsed back into an actual date object for formatting. And this can cause a problem if the backoffice user is using a different language, and hence culture setting, than that used when the value was stored.
 
-From 9.5 and 10.1 onwards, the culture used when storing the form entry is recorded, thus we can ensure the correct value is used when parsing the date. However, this doesn't help for historically stored records. To at least partially mitigate the problem, when you have editors using different languages to a single language presented on the website front-end, you can set this value to match the culture code used on the website. This ensures the date fields in the backoffice are correctly presented.
+The culture used when storing the form entry is recorded, thus we can ensure the correct value is used when parsing the date. However, this doesn't help for historically stored records. To at least partially mitigate the problem, when you have editors using different languages to a single language presented on the website front-end, you can set this value to match the culture code used on the website. This ensures the date fields in the backoffice are correctly presented.
 
 Taking an example of a website globalization culture code setting of "en-US" (and a date format of `m/d/y`), but an editor uses "en-GB" (which formats dates as of `d/m/y`). By setting the value of this configuration key to "en-US", you can ensure that the culture when parsing dates for presentation in the backoffice will match that used when the value was stored.
 
@@ -316,7 +321,7 @@ This configuration setting provides control over the client-side event used to t
 
 ### ScheduledRecordDeletion
 
-Scheduled deletion of records older than a specified number of days was a feature introduced in Forms 10.2.  It uses a background task to run the cleanup operation, which can be customized with the following settings.
+Scheduled deletion of records older than a specified number of days. It uses a background task to run the cleanup operation, which can be customized with the following settings.
 
 #### Enabled
 
@@ -330,7 +335,13 @@ This will configure when the record deletion process will run for the first time
 
 #### Period
 
-Defines how often the record deletion process will run. The default value is `1.00:00:00` which is equivalent to once every 24 hours.  Shorter or longer periods can be set using different datetime strings.
+Defines how often the record deletion process will run. The default value is `1.00:00:00` which is equivalent to once every 24 hours. Shorter or longer periods can be set using different datetime strings.
+
+### DisableRecordIndexing
+
+Set this value to `true` to disable the default behavior of indexing the form submissions into the Examine index.
+
+If indexing has already occurred, you will still need to manually remove the files (found in `App_Data\TEMP\ExamineIndexes\UmbracoFormsRecords`). They will be recreated if indexing is subsequently re-enabled.
 
 ## Security configuration
 
@@ -354,27 +365,35 @@ This setting needs to be a `true` or `false` value and controls whether password
 
 ### DisableFileUploadAccessProtection
 
-In Umbraco Forms 9.2.0, protection was added to uploaded files to prevent users from accessing them if they aren't logged into the backoffice and have permission to manage the form for which the file was submitted. As a policy of being "secure by default", the out of the box behavior is that this access protection is in place.
+Protection was added to uploaded files to prevent users from accessing them if they aren't logged into the backoffice and have permission to manage the form for which the file was submitted. As a policy of being "secure by default", the out of the box behavior is that this access protection is in place.
 
 If for any reason you need to revert to the previous behavior, or have other reasons where you want to permit unauthenticated users from accessing the files, you can turn off this protection by setting this configuration value to `true`.
 
 ### DefaultUserAccessToNewForms
 
-In Umbraco Forms 9.3.0, this setting was added to add control over access to new forms.  The default behavior is for all users to be granted access to newly created forms. To amend that to deny access, the setting can be updated to a value of `Deny`.  A value of `Grant` or configuration with the setting absent preserves the default behavior.
+This setting was added to add control over access to new forms. The default behavior is for all users to be granted access to newly created forms. To amend that to deny access, the setting can be updated to a value of `Deny`. A value of `Grant` or configuration with the setting absent preserves the default behavior.
 
 ### ManageSecurityWithUserGroups
 
-Umbraco Forms 9.3.0 introduced the ability to administer access to Umbraco Forms using Umbraco's user groups. This can be used instead or in addition to the legacy administration which is at the level of the individual user.  Set this option to `true` to enable the user group permission management functionality.
+Ability to administer access to Umbraco Forms using Umbraco's user groups. This can be used instead or in addition to the legacy administration which is at the level of the individual user. Set this option to `true` to enable the user group permission management functionality.
 
 ### GrantAccessToNewFormsForUserGroups
 
-Also introduced in Umbraco Forms 9.3.0, this setting takes a comma-separated list of user group aliases which will be granted access automatically to newly created forms.  This setting only takes effect when `ManageSecurityWithUserGroups` is set to `true`.
+This setting takes a comma-separated list of user group aliases which will be granted access automatically to newly created forms. This setting only takes effect when `ManageSecurityWithUserGroups` is set to `true`.
 
 There are two "special" values that can be applied within or instead of the comma-separated list.
 
 A value of `all` will give access to the form to all user groups.
 
 A value of `form-creator` will give access to all the user groups that the user who created the form is part of.
+
+### FormsApiKey and EnableAntiForgeryTokenForFormsApi
+
+Available from Forms 10.2.1, the `FormsApiKey` configuration setting can be used to secure the Forms Headless API in server-to-server integrations. When set, API calls will be rejected unless the value of this setting is provided in an HTTP header.
+
+Setting the value of `EnableAntiForgeryTokenForFormsApi` to `true` will disable the anti-forgery protection for the Forms Headless/AJAX API. You need to do this for server-to-server integrations where it's not possible to provide a valid anti-forgery token in the request.
+
+For more information, see the [Headless/AJAX Forms](../ajaxforms.md) article.
 
 ## Field type specific configuration
 
@@ -388,7 +407,7 @@ This setting is used to configure the Date Picker form field range of years that
 
 #### PublicKey & PrivateKey
 
-Both of these configuration values are needed in order to use the "*Recaptcha2*" field type implementing legacy ReCaptcha V2 from Google. You can obtain both of these values after signing up to create a ReCaptcha key here - <https://www.google.com/recaptcha/admin>
+Both of these configuration values are needed in order to use the "_Recaptcha2_" field type implementing legacy ReCaptcha V2 from Google. You can obtain both of these values after signing up to create a ReCaptcha key here - [https://www.google.com/recaptcha/admin](https://www.google.com/recaptcha/admin)
 
 Google has renamed these recently and the `Site Key` refers to `RecaptchaPublicKey` and `Secret Key` is to be used for `RecaptchaPrivateKey`
 
@@ -396,9 +415,9 @@ Google has renamed these recently and the `Site Key` refers to `RecaptchaPublicK
 
 #### SiteKey & PrivateKey
 
-Both of these configuration values are needed in order to use the "*reCAPTCHA V3 with Score*" field type implementing ReCaptcha V3 from Google.
+Both of these configuration values are needed in order to use the "_reCAPTCHA V3 with Score_" field type implementing ReCaptcha V3 from Google.
 
-You can obtain both of these values after signing up to create a ReCaptcha key here:  <https://www.google.com/recaptcha/admin>.
+You can obtain both of these values after signing up to create a ReCaptcha key here: [https://www.google.com/recaptcha/admin](https://www.google.com/recaptcha/admin).
 
 ### Rich text field type configuration
 

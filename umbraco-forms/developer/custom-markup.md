@@ -1,6 +1,8 @@
 ---
-meta.Title: "Umbraco Forms custom markup"
-meta.Description: "With Umbraco Forms it's possible to customize the outputted markup of a Form, which means you have complete control over what Forms will output."
+meta.Title: Umbraco Forms custom markup
+meta.Description: >-
+  With Umbraco Forms it's possible to customize the outputted markup of a Form,
+  which means you have complete control over what Forms will output.
 ---
 
 # Custom Markup
@@ -8,8 +10,7 @@ meta.Description: "With Umbraco Forms it's possible to customize the outputted m
 With Umbraco Forms, it is possible to customize the output markup of a Form, which means you have complete control over what Forms will display.
 
 {% hint style="warning" %}
-When using Forms version 6 or higher, we recommend that you use [Themes](themes.md) to customize your Forms.
-This will ensure that nothing is overwritten when you upgrade Forms to a newer version.
+We recommend using [Themes](themes.md) to customize your Forms. This will ensure that nothing is overwritten when you upgrade Forms to a newer version.
 {% endhint %}
 
 ## Customizing the Default Views
@@ -20,7 +21,7 @@ The razor macro uses some razor views to output the Form:
 * 1 view for the scripts
 * 1 view for the rest of the Form
 
-You can find the default views in the `~\Views\Partials\Forms\Themes\default` folder if you are using Forms 6+, or in the `~\Views\Partials\Forms\`folder if you are using Forms 4.
+You can find the default views in the `~\Views\Partials\Forms\Themes\default` folder.
 
 To avoid your custom changes to the default views from being overwritten, you need to copy the view you want to customize into your theme folder, e.g. `~\Views\Partials\Forms\Themes\YourTheme`, and edit the file in `YourTheme` folder.
 
@@ -36,9 +37,9 @@ This view can be customized, if you do so it will be customized for all your For
 
 This view renders the JavaScript that will take care of the conditional logic, customization won't be needed here.
 
-### FieldType.*.cshtml
+### FieldType.\*.cshtml
 
-The rest of the views start with FieldType, like `FieldType.Textfield.cshtml` and those will output the fields. There is a view for each default fieldtype like *textfield*, *textarea*, *checkbox*, etc)
+The rest of the views start with FieldType, like `FieldType.Textfield.cshtml` and those will output the fields. There is a view for each default fieldtype like _textfield_, _textarea_, _checkbox_, etc)
 
 Contents of the `FieldType.Textfield.cshtml` view (from the default theme):
 
@@ -61,21 +62,21 @@ Contents of the `FieldType.Textfield.cshtml` view (from the default theme):
 
 Umbraco Forms uses ASP.NET Unobtrusive Validation which is why you see attributes like `data-val` and `data-val-required`.
 
-This can be customized but it's important to keep the ID of the control to `@Model.Id` since that is used to match the value to the Form field.  For fields that are conditionally hidden, without an ID of `@Model.Id` the control won't be shown when the conditions to show the field are met.  An ID needs to be added to text controls such as headings and paragraphs.
+This can be customized but it's important to keep the ID of the control to `@Model.Id` since that is used to match the value to the Form field. For fields that are conditionally hidden, without an ID of `@Model.Id` the control won't be shown when the conditions to show the field are met. An ID needs to be added to text controls such as headings and paragraphs.
 
-The view model for the partial view for a field is `FieldViewModel`. This defines properties that may be useful when creating new themes or custom fields, some of which are shown in the code samples above.  Others include:
+The view model for the partial view for a field is `FieldViewModel`. This defines properties that may be useful when creating new themes or custom fields, some of which are shown in the code samples above. Others include:
 
-- `AdditionalSettings` - a dictionary of the settings keys and values populated for the form field. These can be retrieved in typed form by key using e.g. `Model.GetSettingValue<int>("MaximumLength", 255);`.
+* `AdditionalSettings` - a dictionary of the settings keys and values populated for the form field. These can be retrieved in typed form by key using e.g. `Model.GetSettingValue<int>("MaximumLength", 255);`.
 
 The following are available on the model but only populated for fields that support file upload:
 
-- `AllowAllUploadExtensions`- a boolean indicating whether all file extensions are permitted for upload.
-- `AllowedUploadExtensions`- a collection of strings indicating the file extensions that are permitted for upload.
-- `AllowMultipleFileUploads`- a boolean indicating whether selecting multiple files for upload is allowed.
+* `AllowAllUploadExtensions`- a boolean indicating whether all file extensions are permitted for upload.
+* `AllowedUploadExtensions`- a collection of strings indicating the file extensions that are permitted for upload.
+* `AllowMultipleFileUploads`- a boolean indicating whether selecting multiple files for upload is allowed.
 
 ### Customizing for a Specific Form
 
-In Forms 4, it is also possible to customize the markup for a specific Form.
+It is also possible to customize the markup for a specific Form.
 
 You will need to create folder using the ID of the Form: `~\Views\Partials\Forms\{FormId}` (find the id of the Form in the URL when you are viewing the Form in the backoffice.)
 

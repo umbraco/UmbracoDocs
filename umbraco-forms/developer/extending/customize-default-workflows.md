@@ -1,23 +1,23 @@
 ---
-meta.Title: "Customize default workflows"
-meta.Description: "How to amend the built-in behavior of associating workflows with new forms"
+meta.Title: Customize default workflows
+meta.Description: How to amend the built-in behavior of associating workflows with new forms
 ---
 
 # Customize Default Workflows For a Form
 
 The default behavior when a new form is created is for a single workflow to be added, which will send a copy of the form to the current backoffice user's email address.
 
-From versions 9.5/10.1 it's possible to amend this behavior and change it to fit your needs.
+It's possible to amend this behavior and change it to fit your needs.
 
 ## Implementing a Custom Behavior
 
-The interface `IApplyDefaultWorkflowsBehavior` is used to abstract the logic for setting default workflows for a form.  The default behavior is defined using a built-in, internal class that implements this interface.
+The interface `IApplyDefaultWorkflowsBehavior` is used to abstract the logic for setting default workflows for a form. The default behavior is defined using a built-in, internal class that implements this interface.
 
 You can create your own implementation of this interface. An illustrative example of this, adding a custom workflow that writes to the log, is shown below.
 
 Firstly, the custom workflow:
 
-```c#
+```
 using System;
 using System.Collections.Generic;
 using Umbraco.Core.Composing;
@@ -68,7 +68,7 @@ namespace MyNamespace
 
 Secondly, the custom implementation of `IApplyDefaultWorkflowsBehavior`:
 
-```C#
+```
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -159,7 +159,7 @@ namespace MyNamespace
 
 Finally, to register the custom implementation in place of the default one:
 
-```C#
+```
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Extensions;
@@ -180,7 +180,6 @@ namespace MyNamespace
         }
     }
 }
-
 ```
 
 ## Setting a Mandatory Default Workflow

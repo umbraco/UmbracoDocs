@@ -10,8 +10,6 @@ Global settings contains at set of global settings for the CMS such as default U
 
 The following snippet contains all the available options, with default values, and some example values for the required keys `From`, `Host` and `Port` keys of the SMTP settings:
 
-{% tabs %}
-{% tab title="Latest version" %}
 ```json
 "Umbraco": {
   "CMS": {
@@ -63,61 +61,6 @@ The following snippet contains all the available options, with default values, a
   }
 }
 ```
-{% endtab %}
-
-{% tab title="Umbraco 9" %}
-```json
-"Umbraco": {
-  "CMS": {
-    "Global": {
-      "ReservedUrls": "~/.well-known,",
-      "ReservedPaths": "~/app_plugins/,~/install/,~/mini-profiler-resources/,~/umbraco/,",
-      "TimeOut": "00:20:00",
-      "DefaultUILanguage": "en-US",
-      "HideTopLevelNodeFromPath": false,
-      "UseHttps": false,
-      "VersionCheckPeriod": 7,
-      "UmbracoPath": "~/umbraco",
-      "IconsPath": "~/umbraco/assets/icons",
-      "UmbracoCssPath": "~/css",
-      "UmbracoScriptsPath": "~/css",
-      "UmbracoMediaPath": "~/media",
-      "UmbracoMediaPhysicalRootPath": "X:/Shared/Media",
-      "InstallMissingDatabase": false,
-      "DisableElectionForSingleServer": false,
-      "DatabaseFactoryServerVersion": "SqlServer.V2019",
-      "MainDomLock": "MainDomSemaphoreLock",
-      "MainDomKeyDiscriminator": "",
-      "Id": "184a8175-bc0b-43dd-8267-d99871eaec3d",
-      "NoNodesViewPath": "~/umbraco/UmbracoWebsite/NoNodes.cshtml",
-      "SqlWriteLockTimeOut": "00:00:05",
-      "SanitizeTinyMce": false,
-      "Smtp": {
-        "From": "person@umbraco.dk",
-        "Host": "localhost",
-        "Port": 25,
-        "SecureSocketOptions": "Auto",
-        "DeliveryMethod": "Network",
-        "PickupDirectoryLocation": "",
-        "Username": "person@umbraco.dk",
-        "Password": "SuperSecretPassword"
-      },
-      "DatabaseServerRegistrar": {
-        "WaitTimeBetweenCalls": "00:01:00",
-        "StaleServerTimeout": "00:02:00"
-      },
-      "DatabaseServerMessenger": {
-        "MaxProcessingInstructionCount": 1000,
-        "TimeToRetainInstructions": "2.00:00:00",
-        "TimeBetweenSyncOperations": "00:00:05",
-        "TimeBetweenPruneOperations": "00:01:00"
-      }
-    }
-  }
-}
-```
-{% endtab %}
-{% endtabs %}
 
 ## Root level settings
 

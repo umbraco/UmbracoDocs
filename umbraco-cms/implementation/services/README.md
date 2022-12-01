@@ -546,11 +546,9 @@ namespace Umbraco9.Controllers
 }
 ```
 
-{% hint style="info" %}
 You can generate this ctor in Visual Studio by using either ctrl + . or alt + enter when your cursor is on the base class:
 
-<img src="images/vs-di-constructor-generation-tip.gif" alt="Generate DI constructor parameters in Visual Studio" data-size="original">
-{% endhint %}
+<figure><img src="images/vs-di-constructor-generation-tip.gif" alt=""><figcaption></figcaption></figure>
 
 #### Using the SiteService inside a View
 

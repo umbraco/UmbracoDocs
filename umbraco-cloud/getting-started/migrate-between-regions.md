@@ -87,6 +87,6 @@ Do you need help or have any questions regarding this process, please reach out 
 
 ## Related articles
 
-* [Manage hostnames](../set-up/manage-hostnames/)
-* [Team Members](../set-up/team-members/)
-* [Certificates](../set-up/manage-hostnames/security-certificates.md)
+* [Manage hostnames](../set-up/project-settings/manage-hostnames/)
+* [Team Members](../set-up/project-settings/team-members/)
+* [Certificates](../set-up/project-settings/manage-hostnames/security-certificates.md)

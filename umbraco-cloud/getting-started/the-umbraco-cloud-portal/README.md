@@ -1,4 +1,4 @@
-# The Umbraco Cloud Portal
+# The Cloud Portal
 
 The Umbraco Cloud Portal helps you manage your Umbraco Cloud project. From here, you can view and manage all your Cloud projects in one place.
 
@@ -8,7 +8,7 @@ When you log in to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/home/log
 
 ![View all projects](images/Umbraco-cloud-dashboard.png)
 
-You can see the projects environments, usage for each project and which plans it is on. You can also see whether it is a baseline or baseline-child project.
+You can see the project's environments, usage for each project and which plans it is on. You can also see whether it is a baseline or baseline-child project.
 
 In the top-right corner of the Umbraco Cloud Portal, you will find:
 
@@ -44,7 +44,7 @@ Click **Add Group** to give the group a name and then drag and drop your project
 
 In the bottom-right corner of the Umbraco Cloud Portal, you'll find a chat bubble. This is where you can reach out to the Umbraco HQ Support Warriors, should you have any questions regarding your Umbraco Cloud projects.
 
-![Chat Feature](../The-umbraco-cloud-portal/images/Chat.png)
+<figure><img src="images/Chat.PNG" alt=""><figcaption><p>Chat Feature</p></figcaption></figure>
 
 With the Starter and Standard plan, you are only entitled to support regarding specific issues regarding the Cloud platform. If you are on a Professional plan, you are entitled to support through the chat regarding implementation and issues with the CMS. For more information on plans and pricing, see [Umbraco Cloud plans](https://umbraco.com/pricing/).
 
@@ -52,13 +52,13 @@ With the Starter and Standard plan, you are only entitled to support regarding s
 
 When you click on the User Profile link, you will find the following options:
 
-- Projects
-- Manage Subscriptions
-- Pending Invites
-- Organizations
-- Profile
-- Release Notes
-- Logout
+* Projects
+* Manage Subscriptions
+* Pending Invites
+* Organizations
+* Profile
+* Release Notes
+* Logout
 
 ### Project Management
 
@@ -75,7 +75,7 @@ While managing the environments on your project, click on **Manage environments*
 
 Aside from these features, it's also from the project view that changes are deployed from one Cloud environment to another. Find out more in the [Cloud-to-Cloud](../../deployment/cloud-to-cloud.md) article.
 
-In the [Settings](../../set-up/project-settings.md) section, you will find a lot more options to configure your project.
+In the [Settings](../../set-up/project-settings/) section, you will find a lot more options to configure your project.
 
 ### Manage Subscriptions
 
@@ -87,11 +87,11 @@ Customers who have joined Umbraco Cloud after the 5th of May, 2021, can manage t
 
 On Umbraco Cloud, you can receive an invitation from different projects. These project details are available in the **Pending Invites** tab. On the **Pending Invites** page, as a user, you will see the following details:
 
-- Project Name
-- Invited by
-- The expiration date of the invite
-- Invitation status
-- Otions to approve, reject, or delete the invitations that have expired.
+* Project Name
+* Invited by
+* The expiration date of the invite
+* Invitation status
+* Otions to approve, reject, or delete the invitations that have expired.
 
 ![Project Invites](images/project-invites.png)
 
@@ -106,14 +106,13 @@ The Profile consists of the following information:
 ![Edit profile](images/change-profile-info-new.png)
 
 * Name: The name that is displayed on Umbraco Cloud.
-* Email: This email address is used for logging in to Umbraco Cloud and will receive email notifications from the Umbraco Cloud Portal.
+*   Email: This email address is used for logging in to Umbraco Cloud and will receive email notifications from the Umbraco Cloud Portal.
 
     {% hint style="info" %}
     It is not possible to change this email address at a later point.
     {% endhint %}
-* Telephone: The contact number of the user.
-* Edit profile: Allows you to update and ensure that your information is valid and up to date for your Umbraco Cloud profile.
-* Change Password: Change the password for your Umbraco Cloud account from here. 
+
+\* Telephone: The contact number of the user. \* Edit profile: Allows you to update and ensure that your information is valid and up to date for your Umbraco Cloud profile. \* Change Password: Change the password for your Umbraco Cloud account from here.
 
 ![change password](images/change-password.png)
 

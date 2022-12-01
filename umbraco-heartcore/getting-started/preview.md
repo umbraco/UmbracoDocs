@@ -4,11 +4,11 @@ versionFrom: 8.0.0
 
 # Preview
 
-In this article you will get an overview of the Preview functionality in Umbraco Heartcore and how to use it with our [Client Libraries](../../Client-Libraries/).
+In this article you will get an overview of the Preview functionality in Umbraco Heartcore and how to use it with our[ Client Libraries](../client-libraries/).
 
 ## Prerequisites
 
-The Preview API is always protected, this means it requires an API Key with **Browse Node** permission to be able to access it. If you don't already have an API Key ready, head over to [Backoffice Users and API Keys](../Backoffice-Users-and-API-Keys/) to learn how to create one.
+The Preview API is always protected, this means it requires an API Key with **Browse Node** permission to be able to access it. If you don't already have an API Key ready, head over to [Backoffice Users and API Keys](backoffice-users-and-api-keys.md) to learn how to create one.
 
 You will also need a client consuming the Content Delivery API. If you don't already have one you can use one of the samples included with the Client Libraries.
 
@@ -52,7 +52,7 @@ If multiple urls have been added for the Content item, there will be an arrow ne
 
 Now that we have setup the backoffice, we need to update our site to use the Preview API.
 
-The Preview API is available on `https://preview.umbraco.io` and its endpoints are identical to the [Content Delivery API](../../API-Documentation/Content-Delivery/content), meaning that you can swap the url out if you don't use one of our Client Libraries.
+The Preview API is available on `https://preview.umbraco.io` and its endpoints are identical to the[ Content Delivery API](../api-documentation/content-delivery/), meaning that you can swap the url out if you don't use one of our Client Libraries.
 
 {% hint style="info" %}
 The Preview API is always protected and requires an API Key to be passed with the request.
@@ -74,7 +74,7 @@ query {
 }
 ```
 
-If you are using the [Node JS Client](https://github.com/umbraco/Umbraco.Headless.Client.NodeJs) you set `preview: true`, set an `apiKey` as shown below, this switches all of the `client.delivery` functions to use the Preview API instead of the Content Delivery API.
+If you are using the[ Node JS Client ](../client-libraries/node-js.md)you set `preview: true`, set an `apiKey` as shown below, this switches all of the `client.delivery` functions to use the Preview API instead of the Content Delivery API.
 
 ```javascript
 import {Client} from '@umbraco/headless-client'
@@ -87,7 +87,7 @@ const client = new Client({
 })
 ```
 
-For the [.NET Client](https://github.com/umbraco/Umbraco.Headless.Client.Net) you'll create a new instance of the `Umbraco.Headless.Client.Net.Delivery.ContentPreviewService`. Note that its based on the `IContentDeliveryService` interface, which the `ContentDeliveryService` also implements.
+For the[ .NET Client](../client-libraries/dot-net-core/) you'll create a new instance of the `Umbraco.Headless.Client.Net.Delivery.ContentPreviewService`. Note that its based on the `IContentDeliveryService` interface, which the `ContentDeliveryService` also implements.
 
 ```csharp
 using Umbraco.Headless.Client.Net.Delivery;

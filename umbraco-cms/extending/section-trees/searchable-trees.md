@@ -18,8 +18,6 @@ To create a search for your own custom tree you need to create a C# class that i
 
 ### ISearchableTree
 
-{% tabs %}
-{% tab title="Latest version" %}
 ```csharp
 using System.Collections.Generic;
 using Umbraco.Cms.Core.Composing;
@@ -49,45 +47,9 @@ namespace My.Website
     }
 }
 ```
-{% endtab %}
-
-{% tab title="Umbraco 9" %}
-```csharp
-using System.Collections.Generic;
-using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.Models.ContentEditing;
-
-namespace My.Website
-{
-    public interface ISearchableTree : IDiscoverable
-    {
-        /// <summary>
-        /// The alias of the tree that the <see cref="ISearchableTree"/> belongs to
-        /// </summary>
-        string TreeAlias { get; }
-
-        /// <summary>
-        /// Searches for results based on the entity type
-        /// </summary>
-        /// <param name="query">The search term used for finding matching results.</param>
-        /// <param name="pageSize">The number of records to return for a page of results.</param>
-        /// <param name="pageIndex">The 0-based index for retrieving a page of search results.</param>
-        /// <param name="totalFound">Populated with the total number of results matching the provided search term.</param>
-        /// <param name="searchFrom">
-        ///     The starting point for the search, generally a node ID, but for members this is a member type alias.
-        /// </param>
-        /// <returns></returns>
-        IEnumerable<SearchResultEntity> Search(string query, int pageSize, long pageIndex, out long totalFound, string searchFrom = null);
-    }
-}
-```
-{% endtab %}
-{% endtabs %}
 
 Your implementation needs to return an IEnumerable of `SearchResultEntity` items:
 
-{% tabs %}
-{% tab title="Latest version" %}
 ```csharp
 public class SearchResultEntity : EntityBasic
 {
@@ -101,23 +63,6 @@ public class SearchResultEntity : EntityBasic
 
 }
 ```
-{% endtab %}
-
-{% tab title="Umbraco 9" %}
-```csharp
-public class SearchResultEntity : EntityBasic
-{
-    public SearchResultEntity();
-
-    /// <summary>
-    /// The score of the search result
-    /// </summary>
-    [DataMember(Name = "score")]
-    public float Score { get; set; }
-}
-```
-{% endtab %}
-{% endtabs %}
 
 A `SearchResultEntity` consists of a Score (a Float value) identifying its relevance to the search term, and the set of `EntityBasic` properties that all Umbraco objects share: eg Name, Id, Udi, Icon, Trashed, Key, ParentId, Path, Alias, AdditionalData.
 
@@ -125,8 +70,6 @@ A `SearchResultEntity` consists of a Score (a Float value) identifying its relev
 
 If we have a custom section Tree with the alias 'favouriteThingsAlias' (see the [custom tree example](trees/)) then we could implement searchability by creating the following C# class in our site:
 
-{% tabs %}
-{% tab title="Latest version" %}
 ```csharp
 using System;
 using System.Collections.Generic;
@@ -181,63 +124,6 @@ namespace Umbraco.Docs.Samples.Web.Trees
     }
 }
 ```
-{% endtab %}
-
-{% tab title="Umbraco 9" %}
-```csharp
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Umbraco.Cms.Core;
-using Umbraco.Cms.Core.Models.ContentEditing;
-using Umbraco.Cms.Core.Trees;
-
-namespace Umbraco.Docs.Samples.Web.Trees
-{
-    public class FavouriteThingsSearchableTree : ISearchableTree
-    {
-        public string TreeAlias => "favouriteThingsAlias";
-
-        public IEnumerable<SearchResultEntity> Search(string query, int pageSize, long pageIndex, out long totalFound, string searchFrom = null)
-        {
-            // your custom search implementation starts here
-            Dictionary<int, string> favouriteThings = new Dictionary<int, string>();
-            favouriteThings.Add(1, "Raindrops on Roses");
-            favouriteThings.Add(2, "Whiskers on Kittens");
-            favouriteThings.Add(3, "Skys full of Stars");
-            favouriteThings.Add(4, "Warm Woolen Mittens");
-            favouriteThings.Add(5, "Cream coloured Unicorns");
-            favouriteThings.Add(6, "Schnitzel with Noodles");
-
-            var searchResults = new List<SearchResultEntity>();
-
-            var matchingItems = favouriteThings.Where(f => f.Value.StartsWith(query, true, System.Globalization.CultureInfo.CurrentCulture));
-            foreach (var matchingItem in matchingItems)
-            {
-                // Making up the Id/Udi for this example! - these would normally be different for each search result.
-                searchResults.Add(new SearchResultEntity() { 
-                    Id = 12345, 
-                    Alias = "favouriteThingItem", 
-                    Icon = "icon-favorite", 
-                    Key = new Guid("325746a0-ec1e-44e8-8f7b-6e7c4aab36d1"), 
-                    Name = matchingItem.Value, 
-                    ParentId = -1, 
-                    Path = "-1,12345", 
-                    Score = 1.0F, 
-                    Trashed = false, 
-                    Udi = Udi.Create("document", new Guid("325746a0-ec1e-44e8-8f7b-6e7c4aab36d1")) 
-                });
-            }
-            // Set number of search results found
-            totalFound = matchingItems.Count();
-            // Return your IEnumerable of SearchResultEntity
-            return searchResults;
-        }
-    }
-}
-```
-{% endtab %}
-{% endtabs %}
 
 That's all we need, after an application pool recycle, if we now search in the backoffice we'll see matches from our custom 'Favourite Things' tree:
 

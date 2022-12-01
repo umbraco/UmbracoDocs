@@ -28,7 +28,7 @@ Upgrading from Umbraco 9 to Umbraco 10
 
 The upgrade path between Umbraco 9 and Umbraco 10 can be done directly by updating your project using NuGet. You will need to ensure the packages you are using are available in Umbraco 10.
 
-Are you looking to upgrade an Umbraco Cloud project from 9 to 10? Follow the guide made for [Upgrading your project from Umbraco 9 to 10](../../../../../umbraco-cloud/upgrades/upgrading-from-9-10.md) instead, as it requires a few steps specific to Umbraco Cloud.
+Are you looking to upgrade an Umbraco Cloud project from 9 to 10? Follow the guide made for [Upgrading your project from Umbraco 9 to 10](../../../../../umbraco-cloud/upgrades/major-upgrades.md) instead, as it requires a few steps specific to Umbraco Cloud.
 
 {% hint style="warning" %}
 **Important**: SQL CE is no longer a supported database engine.
@@ -111,19 +111,17 @@ When the upgrade is completed and tested, and prior to deploying to any publicly
 1. Ensure you have backups for both the database and the file system.
 2. Stop the site so it is not accessible during the upgrade process.
 3. Delete the relevant folders from the filesystem prior to deploying:
+   * `/wwwroot/umbraco`
+   * `/umbraco/PartialViewMacros`
+   * `/umbraco/UmbracoBackOffice`
+   * `/umbraco/UmbracoInstall`
+   * `/umbraco/UmbracoWebsite`
+   * `/umbraco/config/lang`
+   * `/umbraco/config/appsettings-schema.json`
+4. Deploy the site how you normally would to your public facing environment.
+5. Start the site. At this point it will launch and upgrade the database, after which the site should become accessible and your upgrade is complete.
+6. Check the logs for any errors which may have occurred during the upgrade process.
 
-* `/wwwroot/umbraco`
-* `/umbraco/PartialViewMacros`
-* `/umbraco/UmbracoBackOffice`
-* `/umbraco/UmbracoInstall`
-* `/umbraco/UmbracoWebsite`
-* `/umbraco/config/lang`
-* `/umbraco/config/appsettings-schema.json`
-
-1. Deploy the site how you normally would to your public facing environment.
-2. Start the site. At this point it will launch and upgrade the database, after which the site should become accessible and your upgrade is complete.
-3. Check the logs for any errors which may have occurred during the upgrade process.
-
-## [Breaking changes from Umbraco 9 to Umbraco 10](../umbraco10-breaking-changes/)
+## [Breaking changes from Umbraco 9 to Umbraco 10](umbraco10-breaking-changes.md)
 
 Breaking changes going from Umbraco 9 to Umbraco 10.

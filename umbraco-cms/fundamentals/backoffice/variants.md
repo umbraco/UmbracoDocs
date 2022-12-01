@@ -1,6 +1,8 @@
 ---
-meta.Title: "Language Variants in Umbraco"
-meta.Description: "Language Variants allow you to vary content by culture, so you can allow a content node to exist in several languages."
+meta.Title: Language Variants in Umbraco
+meta.Description: >-
+  Language Variants allow you to vary content by culture, so you can allow a
+  content node to exist in several languages.
 ---
 
 # Language Variants
@@ -11,13 +13,13 @@ This article will cover the different aspects of enabling and working with langu
 
 ## Contents
 
-* [Video tutorial](#video-tutorial)
-* [How to enable Language Variants](#how-to-enable-language-variants)
-* [Enabling Language Variants on Document Types](#enabling-language-variants-on-document-types)
-* [Working with Language Variants on content](#working-with-language-variants-on-content)
-* [Test your language variants](#test-your-language-variants)
-* [Control User Group permissions on language variants](#control-user-group-permissions-on-language-variants)
-* [Related Links](#related-links)
+* [Video tutorial](variants.md#video-tutorial)
+* [How to enable Language Variants](variants.md#how-to-enable-language-variants)
+* [Enabling Language Variants on Document Types](variants.md#enabling-language-variants-on-document-types)
+* [Working with Language Variants on content](variants.md#working-with-language-variants-on-content)
+* [Test your language variants](variants.md#test-your-language-variants)
+* [Control User Group permissions on language variants](variants.md#control-user-group-permissions-on-language-variants)
+* [Related Links](variants.md#related-links)
 
 ## Video tutorial
 
@@ -29,7 +31,7 @@ How to use Language Variants in Umbraco
 
 To work with Language Variants you need to have more than one language enabled. This can be done from the `Settings` section:
 
-![Adding a language](images/languages_v10.png)
+![Adding a language](images/languages\_v10.png)
 
 {% hint style="info" %}
 You will always have one default language but each language can be set to mandatory.
@@ -41,21 +43,22 @@ Now that there are two languages to vary the content with, it needs to be enable
 
 1. Go to the Document Type in the **Settings** section.
 2. Open the **Permissions** page.
-3. Toggle **Allow vary by culture**.
-    ![Allowing variance on doc types](images/allow-variance_v10.png)
+3.  Toggle **Allow vary by culture**.&#x20;
+
+    <figure><img src="images/allow-variance_v10.png" alt=""><figcaption></figcaption></figure>
 
 To allow a property on the Document Type to be varied it will have to be enabled for the property:
 
-![Allowing variance on properties](images/varying-properties_v10.png)
+![Allowing variance on properties](images/varying-properties\_v10.png)
 
 ## Working with Language Variants on content
 
 When you return to your content node you will notice two things:
 
 1. At the top of the Content tree there will now be a dropdown so you can show the Content tree in the language of your choice.
-2. To the right of the content name there is now a dropdown where you can select a language. You can also open a split view so you can see two languages at once.
+2.  To the right of the content name there is now a dropdown where you can select a language. You can also open a split view so you can see two languages at once.
 
-    ![Allowing variance on properties](images/varying-content_v10.png)
+    ![Allowing variance on properties](images/varying-content\_v10.png)
 
 Each Property Editor that does not allow variants (an Invariant Property) will by default need to be unlocked in order to be edited. The lock exists to make it clear that this change will affect more languages. Since the value of the invariant properties are shared between all variants on the website.
 
@@ -75,12 +78,8 @@ To read about how you render variant content in Templates, check out the [render
 
 Culture and hostnames must be added to your language sites before the content can be tested for variants:
 
-1. Right-click the Home node and select **Allow access to assign culture and hostnames...**.
-
-    {% hint style="info" %}
-    In Umbraco v9, this option is called **Culture and Hostnames**.
-    {% endhint %}
-2. Add a specific URL per language and save. For eg: An English language variant with English (United States) as the language can be given a specific URL *<https://yourwebsite.com/en-us>* and a Danish language variant can be given a specific URL *<https://yourwebsite.com/dk>*.
+1. Right-click the Home node and select **Culture and hostnames...**.
+2. Add a specific URL per language and save. For eg: An English language variant with English (United States) as the language can be given a specific URL [_https://yourwebsite.com/en-us_](https://yourwebsite.com/en-us) and a Danish language variant can be given a specific URL [_https://yourwebsite.com/dk_](https://yourwebsite.com/dk).
 
 The Info content app should now show specific URLs for your language variants.
 

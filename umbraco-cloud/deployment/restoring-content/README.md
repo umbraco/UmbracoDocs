@@ -26,7 +26,7 @@ This will restore **all** the content nodes and any media dependencies.
 3. When it's completed, select **Open Umbraco** to go to the Backoffice.
 4. You will now see all your content and media in the Umbraco Backoffice.
 
-![Restore from start-up](images/Normal-Restore.gif)
+![Restore from start-up](../../../umbraco-deploy/deployment-workflow/restoring-content/images/Normal-Restore.gif)
 
 ### Workspace Restore
 
@@ -50,7 +50,7 @@ To see the media, go to the **Media** section and **reload** the tree.
 ![Workspace Restore](images/Workspace\_Restore.gif)
 
 {% embed url="https://www.youtube.com/embed/0jIhKZOSeLc?rel=0" %}
-Video example.
+Workspace restore
 {% endembed %}
 
 ### Tree Restore

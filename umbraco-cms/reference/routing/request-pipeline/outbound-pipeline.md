@@ -15,7 +15,7 @@ The **outbound pipeline** consists out of the following steps:
 To explain things we will use the following content tree:
 ![content tree](images/simple-content-tree-v8.png)
 
-## 1. <a name="segments"></a> Create segments
+## 1. Create segments
 
 When the URL is constructed, Umbraco will convert every node in the tree into a segment. Each published [Content](../../management/models/content.md) item has a corresponding url segment.
 
@@ -110,7 +110,7 @@ First it looks (in this order) for:
 
 The Umbraco string extension `ToUrlSegment()` is used to produce a clean 'Url safe' segment.
 
-## 2. <a name="paths"></a>Create paths
+## 2. Create paths
 
 To create a path, the pipeline will use the segments of each node to produce a path.
 
@@ -157,7 +157,7 @@ will produce "1234/dk/path/to/page" as path
 - **No domain specified**: "/path/to/page"
 - **Unless HideTopLevelNodeFromPath config is true**, then the path becomes "/to/page"
 
-## 3. <a name="urls"></a> Creating Urls
+## 3. Creating Urls
 The Url of a node consists of a complete [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier): the Schema, Domain name, (port) and the path.
 
 In our example the "swibble" node could have the following URL: "http://example.com/our-products/swibble"

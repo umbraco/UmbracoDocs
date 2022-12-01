@@ -1,4 +1,4 @@
-# Security on Umbraco Cloud
+# Security
 
 In this article you can find information about security on Umbraco Cloud.
 
@@ -8,7 +8,7 @@ All Umbraco Cloud websites use HTTPS by default. Both the default {projectName}.
 
 ### Custom Certificates
 
-Custom certificates can be used with all custom domains. Please refer to our [Managing Custom Certificates documentation](set-up/manage-hostnames/security-certificates.md).
+Custom certificates can be used with all custom domains. Please refer to our [Managing Custom Certificates documentation](set-up/project-settings/manage-hostnames/security-certificates.md).
 
 ### TLS support
 
@@ -18,24 +18,24 @@ TLS 1.2 is now the default supported TLS protocol going forward.
 
 On the Security page for your cloud project you can change the default settings for both TLS and HTTP.
 
-Learn more about how this in the [Manage Security](set-up/manage-security.md) article.
+Learn more about how this in the [Manage Security](set-up/project-settings/manage-security.md) article.
 
 ### TLS Ciphers support
 
 Umbraco Cloud Websites support the following TLS ciphers in this order:
 
-- TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
-- TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
-- TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA
-- TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA
-- TLS_DHE_RSA_WITH_AES_256_GCM_SHA384
-- TLS_DHE_RSA_WITH_AES_128_GCM_SHA256
-- TLS_DHE_RSA_WITH_AES_256_CBC_SHA
-- TLS_DHE_RSA_WITH_AES_128_CBC_SHA
+* TLS\_ECDHE\_RSA\_WITH\_AES\_256\_CBC\_SHA384
+* TLS\_ECDHE\_RSA\_WITH\_AES\_128\_CBC\_SHA256
+* TLS\_ECDHE\_RSA\_WITH\_AES\_256\_CBC\_SHA
+* TLS\_ECDHE\_RSA\_WITH\_AES\_128\_CBC\_SHA
+* TLS\_DHE\_RSA\_WITH\_AES\_256\_GCM\_SHA384
+* TLS\_DHE\_RSA\_WITH\_AES\_128\_GCM\_SHA256
+* TLS\_DHE\_RSA\_WITH\_AES\_256\_CBC\_SHA
+* TLS\_DHE\_RSA\_WITH\_AES\_128\_CBC\_SHA
 
 ### HSTS - HTTP Strict Transport Security
 
-It's possible to enforce HTTP Strict Transport Security by adding the [HSTS](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) headers to your website. This grants Umbraco Cloud Websites an A+ security rating on sslabs (March 2020). You can add the header by modifying system.webServer/rewrite/outboundRules section in your web.config:
+It's possible to enforce HTTP Strict Transport Security by adding the [HSTS](https://en.wikipedia.org/wiki/HTTP\_Strict\_Transport\_Security) headers to your website. This grants Umbraco Cloud Websites an A+ security rating on sslabs (March 2020). You can add the header by modifying system.webServer/rewrite/outboundRules section in your web.config:
 
 ```xml
  <outboundRules>
@@ -62,7 +62,7 @@ More information specifically from Microsoft about .Net applications and TLS sup
 
 ### HTTP
 
-HTTP protocol is supported but not used by default on Umbraco Cloud Websites. If you'd like to keep using HTTP, which we strongly discourage, you'll need to remove a web.config transform as specified in [Rewrite rules on Umbraco Cloud](set-up/manage-hostnames/rewrites-on-cloud.md#running-your-site-on-https-only)
+HTTP protocol is supported but not used by default on Umbraco Cloud Websites. If you'd like to keep using HTTP, which we strongly discourage, you'll need to remove a web.config transform as specified in [Rewrite rules on Umbraco Cloud](set-up/project-settings/manage-hostnames/rewrites-on-cloud.md#running-your-site-on-https-only)
 
 ### Ports
 
@@ -72,12 +72,14 @@ By default, all ports are closed to secure them against external attacks. This i
 
 Umbraco Cloud offers a multitude of features allowing you to block access to different resources.
 
-- Basic Authentication allows access to the Backoffice & Frontend of Umbraco Cloud Websites for authenticated users only. 
-{% hint style="info" %} 
+* Basic Authentication allows access to the Backoffice & Frontend of Umbraco Cloud Websites for authenticated users only.
+
+{% hint style="info" %}
 Basic authentication will not be available for projects running Umbraco 9. It is available for Umbraco Cloud version 10 (and newer) versions, however, the users are currently unable to exclude IP addresses for authentication using the allowlist feature.
 {% endhint %}
-- IP based list allowing access to Frontend & Backoffice
-- IP based list allowing access to website database
+
+* IP based list allowing access to Frontend & Backoffice
+* IP based list allowing access to website database
 
 ## Cookies and security
 
@@ -106,8 +108,8 @@ The following rule can be added to your web.config file in the `system.webServer
     <action type="AbortRequest"/>
 </rule>
 ```
-For anyone using the 123.123.123.123 IP, this will result in them getting a 502 error. You can choose your own error.
 
+For anyone using the 123.123.123.123 IP, this will result in them getting a 502 error. You can choose your own error.
 
 ## Restrict backoffice access using IP filtering
 
@@ -120,7 +122,8 @@ Please note these two different variations, which differ if you have a reverse p
 {% hint style="info" %}
 Since December 8th, 2020 all Umbraco Cloud sites uses Cloudflare for DNS, so new and updated projects should use the Reverse Proxy version.
 
-If you are unsure whether your Cloud project uses Cloudflare or not, get in touch with the friendly support team, and they will help you out.{% endhint %}
+If you are unsure whether your Cloud project uses Cloudflare or not, get in touch with the friendly support team, and they will help you out.
+{% endhint %}
 
 **Reverse Proxy version (eg. Cloudflare)**
 

@@ -80,7 +80,7 @@ From this page, you can delete your project. When deleting the project your subs
 
 ## Go to backoffice
 
-Clicking on the 'Go to backoffice' link will open up a new tab with the login screen for the Backoffice. If you would like to learn more, you can read our documentation for the [Heartcore Backoffice](../The-Umbraco-Backoffice/).
+Clicking on the 'Go to backoffice' link will open up a new tab with the login screen for the Backoffice. If you would like to learn more, you can read our documentation for the[ Heartcore Backoffice](the-umbraco-backoffice.md).
 
 ## Environment history
 

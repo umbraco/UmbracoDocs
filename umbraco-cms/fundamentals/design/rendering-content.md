@@ -92,7 +92,7 @@ To use the `fallback` type, add the `@using Umbraco.Cms.Core.Models.PublishedCon
 
 ## Query content
 
-In many cases, you want to do more than display values from the current page, like creating a list of pages in the navigation. You can access content relative to the current page using methods such as `Children()`, `Descendants()` & `Ancestors()`. Explore the [full list of methods](../../../Reference/Templating/Mvc/querying.md#traversing).
+In many cases, you want to do more than display values from the current page, like creating a list of pages in the navigation. You can access content relative to the current page using methods such as `Children()`, `Descendants()` & `Ancestors()`. Explore the [full list of methods](../../reference/templating/mvc/querying.md#traversing).
 
 You can do this by querying content relative to your current page in template views:
 

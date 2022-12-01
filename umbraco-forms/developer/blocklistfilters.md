@@ -8,7 +8,7 @@ When working with the Block List editor, [the editor experience is enhanced](../
 
 These labels can contain AngularJS filters.
 
-From Forms 10.2, a filter `umbFormsFormName` is available for use.
+A filter `umbFormsFormName` is available for use.
 
 If you add a reference to a property containing a form to the block's label, it will render with the form's Id.
 

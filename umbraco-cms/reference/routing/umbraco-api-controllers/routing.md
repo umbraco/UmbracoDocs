@@ -5,7 +5,7 @@ meta.Title: "Umbraco WebApi Routing & Urls"
 meta.Description: "How api controllers are routed and how to retrieve their URLs"
 ---
 
-# Umbraco Api - Routing & Urls
+# Routing & Urls
 
 _This section will describe how Umbraco Api controllers are routed and how to retrieve their URLs_
 
@@ -21,7 +21,7 @@ All plugin based Umbraco api controllers will be routed under the url path of:
 
 ~/Umbraco/[YourAreaName]/[YourControllerName]
 
-* See [here](README.md) for more information on implementing these controllers.
+* [More information on implementing these controllers](README.md).
 
 ## Urls
 

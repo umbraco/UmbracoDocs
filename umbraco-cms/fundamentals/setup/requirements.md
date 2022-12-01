@@ -1,4 +1,4 @@
-# System Requirements
+# Requirements
 
 ## Browsers
 
@@ -22,6 +22,10 @@ The Umbraco UI works in all modern browsers:
   * .NET Core CLI
 * .NET 7.0
 * SQL connection string (SQL Server)
+
+{% hint style="info" %}
+When using Visual Studio as your primary Integrated Development Environment (IDE) we recommend [finding and downloading the Software Development Kits (SDKs) for Visual Studio](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks).
+{% endhint %}
 
 ## Hosting
 
@@ -49,14 +53,13 @@ Umbraco can run on an environment with the minimum requirements stated below:
 * .NET 7.0
 * Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
 
-*For more information, see the [Host and deploy ASP.NET Core applications](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/?view=aspnetcore-7.0) article in the Microsoft documentation.*
+_For more information, see the_ [_Host and deploy ASP.NET Core applications_](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/?view=aspnetcore-7.0) _article in the Microsoft documentation._
 
 ## Database Account Roles
 
 The database account used in the connection string will need permissions to read and write from tables. It will also require permission to create schema during installs and upgrades:
 
 * The `db_owner` role has full permissions on the database.
-
 * To use an account with more restricted permissions, the `db_datareader` and `db_datawriter` roles will be needed for normal use to read from and write to the database. The `db_ddladmin` role, which can modify the database schema, is required for installs and upgrades of the CMS and/or any packages that create database tables.
 
 For more information on the Database-level roles, see the [Microsoft documentation](https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-ver16#fixed-database-roles).

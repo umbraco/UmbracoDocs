@@ -1,6 +1,8 @@
-# Upgrade your project
+---
+description: This is the guide for upgrading existing installations in general.
+---
 
-_This is the guide for upgrading existing installations in general._
+# Upgrade your project
 
 In this article, you will find everything you need to upgrade your Umbraco CMS project.
 
@@ -16,6 +18,7 @@ You will find instructions on how to upgrade to a new minor or major version as 
 The following lists a few things to be aware of before initiating an upgrade of your Umbraco CMS project.
 
 * Sometimes there are exceptions to general upgrade guidelines. These are listed in the [**version-specific guide**](version-specific/). Be sure to read this article before moving on.
+* Check if your setup meets the [requirements](../requirements.md) for the new versions you will be upgrading your project to.
 * Things may go wrong for different reasons. Be sure to **ALWAYS** keep a backup of both your site's files and the database. This way you can always return to a version that you know works.
 * Before upgrading to a new major version, check if the packages you're using are compatible with the version you're upgrading to. On the package's download page, in the **Project compatibility** area, click **View details** to check version-specific compatibility.
 
@@ -47,7 +50,7 @@ Use the table below to determine which .NET version to upgrade to when going thr
 
 It's recommended that you upgrade the site offline and test the upgrade fully before deploying it to the production environment.
 
-1. Stop your site in IIS to prevent any changes being made while you are upgrading.
+1. Stop your site in IIS to prevent any changes from being made while you are upgrading.
 2. Open your Umbraco project in Visual Studio.
 3. Right-click on the project name in the Solution Explorer and select **Properties**.
 4. Select the **.NET** version from the **Target Framework** drop-down.
@@ -75,11 +78,13 @@ If you are using SQL CE in your project you will need to run `dotnet add package
 
 When the command completes, open the **.csproj** file to make sure the package reference was updated:
 
+{% code title="" %}
 ```xml
 <ItemGroup>
   <PackageReference Include="Umbraco.Cms" Version="x.x.x" />
 </ItemGroup>
 ```
+{% endcode %}
 
 ## Run an unattended upgrade
 

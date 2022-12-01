@@ -17,6 +17,8 @@ Below is a list of guides for Health Checks in Umbraco.
 
 ## [Excessive Headers](excessiveheaders.md)
 
+## [Fixed Application Url](fixedapplicationurl.md)
+
 ## [Folders and File Permissions](folderandfilepermissions.md)
 
 ## [HTTPS configuration](httpsconfiguration.md)
@@ -28,5 +30,3 @@ Below is a list of guides for Health Checks in Umbraco.
 ## [Simple Mail Transfer Protocol (SMTP)](smtp.md)
 
 ## [Strict transport security header](stricttransportsecurityheader.md)
-
-## [Fixed Application Url](fixedapplicationurl.md)

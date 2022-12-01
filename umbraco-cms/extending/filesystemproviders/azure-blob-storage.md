@@ -23,20 +23,9 @@ Before you begin, you need to install the `Umbraco.StorageProviders.AzureBlob` N
 
 Navigate to your project folder, which is the folder that contains your `.csproj` file. Now use the following `dotnet add package` command to install the package:
 
-{% tabs %}
-{% tab title="Latest version" %}
 ```none
 dotnet add package Umbraco.StorageProviders.AzureBlob
 ```
-{% endtab %}
-
-{% tab title="Umbraco 9" %}
-```none
-dotnet add package Umbraco.StorageProviders.AzureBlob --version 1.1.1
-```
-{% endtab %}
-{% endtabs %}
-
 
 The correct package will have be installed in your project.
 

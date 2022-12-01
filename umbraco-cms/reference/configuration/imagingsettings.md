@@ -11,8 +11,6 @@ The imaging settings section lets you configure the cache and resize settings fo
 
 All these settings contain default values, so nothing needs to be explicitly configured. A complete settings section for imaging can be seen here with all the default values:
 
-{% tabs %}
-{% tab title="Latest version" %}
 ```json
 "Umbraco": {
   "CMS": {
@@ -32,29 +30,6 @@ All these settings contain default values, so nothing needs to be explicitly con
   }
 }
 ```
-{% endtab %}
-
-{% tab title="Umbraco 9" %}
-```json
-"Umbraco": {
-  "CMS": {
-    "Imaging": {
-      "Cache": {
-        "BrowserMaxAge": "7.00:00:00",
-        "CacheMaxAge": "365.00:00:00",
-        "CachedNameLength": 8,
-        "CacheFolder": "~/umbraco/Data/TEMP/MediaCache"
-      },
-      "Resize": {
-        "MaxWidth": 5000,
-        "MaxHeight": 5000
-      }
-    }
-  }
-}
-```
-{% endtab %}
-{% endtabs %}
 
 ## Cache
 

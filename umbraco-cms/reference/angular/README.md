@@ -26,9 +26,3 @@ Generally, you can find information about these via the [Backoffice UI API docum
 
 - [Editor service](services/editorservice.md)
 - [Events service](services/eventsservice/)
-
-## [UI Examples](https://our.umbraco.com/packages/developer-tools/ui-examples/)
-
-There is a package available called 'UI Examples'. This package adds a new 'UI Examples' section to your Umbraco instance with working examples of how to customise the backoffice. 
-
-__Note: opens a documentation browser that is different from the documentation section you're viewing now.__

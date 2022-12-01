@@ -1,10 +1,10 @@
 ---
-meta.Title: "Headless/Asynchronous JavaScript and XML (AJAX)  Forms"
+meta.Title: Headless/Asynchronous JavaScript and XML (AJAX)  Forms
 ---
 
 # Headless/AJAX Forms
 
-From version 10.2, Umbraco Forms provides an API for client-side rendering and submission of forms. This will be useful when you want to handle forms in a headless style scenario.
+Umbraco Forms provides an API for client-side rendering and submission of forms. This will be useful when you want to handle forms in a headless style scenario.
 
 ## API Definition
 
@@ -18,7 +18,7 @@ The Open API specification is available from: `/umbraco/forms/api/openapi.json`
 
 To request the definition of a form, the following request can be made:
 
-```none
+```
 GET /umbraco/forms/api/v1.0/definitions/{id}?contentId={contentId}
 ```
 
@@ -28,7 +28,7 @@ An optional `contentId` parameter can be provided, which can either be the integ
 
 If the requested form is not found, a 404 status code will be returned.
 
-A successful request will return a 200 status code.  An example response is as follows. It will differ depending on the pages, fields and other settings available for the form.
+A successful request will return a 200 status code. An example response is as follows. It will differ depending on the pages, fields and other settings available for the form.
 
 ```json
 {
@@ -323,7 +323,7 @@ A successful request will return a 200 status code.  An example response is as f
 
 To submit a form entry, the following request can be made:
 
-```none
+```
 POST /umbraco/forms/api/v1.0/entries/{id}
 ```
 
@@ -345,7 +345,7 @@ It also requires a `Content-Type` header of `application/json` and accepts a bod
 }
 ```
 
-The `values` collection consists of a set of name/value pairs, where the name is the alias of a form field.  The value is the value of the submitted field, which can either be a string, or an array of strings. In this way we support fields that accept multiple values, such as checkbox lists.
+The `values` collection consists of a set of name/value pairs, where the name is the alias of a form field. The value is the value of the submitted field, which can either be a string, or an array of strings. In this way we support fields that accept multiple values, such as checkbox lists.
 
 The `contentId` is optional, and if provided will be used to customize the response for the current page.
 
@@ -366,9 +366,11 @@ In the case of a validation error, a 422 "Unprocessable Entity" status code will
 
 A successful response will return a 202 "Accepted" status code.
 
-## Antiforgery Protection
+## Securing the API
 
-When posting forms in the traditional way, via a full page post back, an anti-forgery token is generated and validated.  This provides protection against Cross-Site Request Forgery (CSRF) attacks.
+### Antiforgery Protection
+
+When posting forms in the traditional way, via a full page post back, an anti-forgery token is generated and validated. This provides protection against Cross-Site Request Forgery (CSRF) attacks.
 
 The same protection is available for forms submitted via AJAX techniques.
 
@@ -397,7 +399,20 @@ When posting the form, the header value generated can be provided, where it will
     });
 ```
 
+### API Key
+
+The antiforgery token security approach is valid when building a client-side integration with API calls made from the browser.
+
+Providing the token isn't possible though in other headless situations such as server-to-server requests. In these situations, an alternative approach to securing the API is available.
+
+Firstly, with server-to-server integrations you will want to disable the antiforgery token protection.
+
+This is done by setting the `Umbraco:Forms:Security:EnableAntiForgeryTokenForFormsApi` configuration key to a value of `false`.
+
+You should then configure an API key `Umbraco:Forms:Security:FormsApiKey`.  This can be any string value, but shouldn't be easily guessable by a brute force attack.
+
+With this in place any request to the Forms API will be rejected unless the configured value is provided in an HTTP header named `Api-Key`.
+
 ## Rendering and Submitting forms with JavaScript
 
 For an illustrative example showing how a form can be rendered, validated and submitted using the API and vanilla JavaScript, please [see this gist](https://gist.github.com/AndyButland/9371175d6acf24a5307b053398f08448).
-

@@ -3,7 +3,7 @@ versionFrom: 9.0.0
 versionTo: 10.0.0
 ---
 
-# Using View Components in Umbraco
+# Using View Components
 
 In the previous versions of MVC, we used Child Actions to build reusable components/widgets consisting of both Razor markup and backend logic. The backend logic was implemented as a controller action and marked with a *[ChildActionOnly]* attribute. Child Actions are no longer supported in ASP.NET Core MVC. Instead, we will use the *View Component* feature.
 

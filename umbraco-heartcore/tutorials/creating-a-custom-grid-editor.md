@@ -319,7 +319,7 @@ Since we add to the array and do not set the `value` property we need to tell Li
 We will also need to add a `click` event to the button so it will show the dialog:
 
 ```html
-<button type="button" class="btn-reset placeholder" @click=${() => this.showPicker()}>
+<button type="button" class="add-button" @click=${() => this.showPicker()}>
 ```
 
 {% hint style="info" %}
@@ -463,7 +463,7 @@ While it is not necessary to define all properties in the JSON Schema, it is hig
 Besides the `uri-reference` format there's also `rich-text`. This is useful when storing rich text data like the output from the TinyMCE editor. When specifying the `rich-text` format, things like `{locallink}` and `data-uri` will automatically be replaced with the correct URLs.
 
 {% hint style="info" %}
-#### Related articles
+**Related articles**
 
-* [Custom Grid Editors](../Backoffice/grid-editors.md)
+* [Custom Grid Editors](../backoffice/grid-editors.md)
 {% endhint %}

@@ -2,9 +2,10 @@
 versionFrom: 9.0.0
 versionTo: 10.0.0
 ---
+
 # Creating a Master Template
 
-We've seen how to create a **Document Type** and its corresponding **Template**. If you want to create a three-page site containing; Home, News and Contact Us pages, you would create a **_Document Type_** with a corresponding **Template** and copy the same HTML code into each template.
+We've seen how to create a **Document Type** and its corresponding **Template**. If you want to create a three-page site containing; Home, News and Contact Us pages, you would create a _**Document Type**_ with a corresponding **Template** and copy the same HTML code into each template.
 
 If you see yourself repeating the same HTML multiple times in your templates, you might want to consider creating a new master template.
 
@@ -13,8 +14,10 @@ To create a new master template:
 1. Go to **Settings**.
 2. Select **Templates** from the **Templating** section.
 3. Select the **...** next to the **Templates** folder and click **Create**.
-4. A template opens up in the content editor. Enter a **Name** for the master template. Let's call it _Master_.
-   ![Master Template](images/figure-22-master-template-v9.png)
+4.  A template opens up in the content editor. Enter a **Name** for the master template. Let's call it _Master_.\
+    &#x20;
+
+    <figure><img src="images/figure-22-master-template-v9.png" alt=""><figcaption></figcaption></figure>
 5. Click **Save**.
 
 ## Using the Master Template
@@ -24,31 +27,41 @@ To use the master template:
 1. Go to **Settings**.
 2. Select **Templates** from the **Templating** section and open the **Homepage** template.
 3. Select `Master Template: No Master`. The Master template dialog opens on the right-side of the browser.
-4. Select the template called **Master**. This will update the Razor code section from `Layout = null;` to `Layout = "Master.cshtml";`
-    ![Homepage Template now sits under the Master](images/figure-23-homepage-has-master-template-v9.png)
+4.  Select the template called **Master**. This will update the Razor code section from `Layout = null;` to `Layout = "Master.cshtml";` \
+
+
+    <figure><img src="images/figure-23-homepage-has-master-template-v9.png" alt=""><figcaption></figcaption></figure>
 5. Click **Save**.
 
 ## Updating Templates With the New Master Template
 
-We now need to move the parts of our HTML template that are common across all templates into the **_Master_**. It might be slightly different for different websites and you'll need to consider if all pages contain a `<div id="main">` section so that you can update it in the master.
+We now need to move the parts of our HTML template that are common across all templates into the _**Master**_. It might be slightly different for different websites and you'll need to consider if all pages contain a `<div id="main">` section so that you can update it in the master.
 
 To update templates with the new master template, follow these steps:
 
 1. Go to **Settings**.
 2. Select **Templates** from the **Templating** section and open the **Homepage** template.
-3. For this tutorial, we will cut everything from the `<html>` (around line 9) to the end of the `</div>` tag (around line 44) which is the `header` and `navigation` of the site to the master template.
-    ![Homepage Template After Cutting the Header](images/figure-24-homepage-after-cutting-the-header-v9.png)
+3.  For this tutorial, we will cut everything from the `<html>` (around line 9) to the end of the `</div>` tag (around line 44) which is the `header` and `navigation` of the site to the master template.\
+    &#x20;
+
+    <figure><img src="images/figure-24-homepage-after-cutting-the-header-v9.png" alt=""><figcaption></figcaption></figure>
 4. Click **Save**.
-5. Go to the **Master** template and paste this HTML markup after the closing curly brace (around line 9).
-    ![Master Template after Pasting the Header](images/figure-25-master-template-with-header-v9.png)
-6. At the end of this markup, we need to tell Umbraco to insert the child template's content. To do so, add the code **_@RenderBody()_** at the end.
-    ![Adding RenderBody() to the Master Template](images/figure-26-adding-renderbody-v9.png)
+5.  Go to the **Master** template and paste this HTML markup after the closing curly brace (around line 9).\
+    &#x20;
+
+    <figure><img src="images/figure-25-master-template-with-header-v9.png" alt=""><figcaption></figcaption></figure>
+6.  At the end of this markup, we need to tell Umbraco to insert the child template's content. To do so, add the code _**@RenderBody()**_ at the end.\
+    &#x20;
+
+    <figure><img src="images/figure-26-adding-renderbody-v9.png" alt=""><figcaption></figcaption></figure>
 7. Click **Save**.
 8. Repeat the same process for the footer content:
-    1. Go to **Settings > Templates > Homepage template** and cut everything from the `<!-- Footer -->` tag (around line 110) to the end of the `</html>` tag (around line 124) and click **Save**.
-    2. Go to the **Master** template and paste this HTML markup after the **_@RenderBody_** field we've added.
-        ![Completed Master Template](images/figure-27-master-template-complete-v9.png)
-    3. Click **Save**.
+   * Go to **Settings > Templates > Homepage template** and cut everything from the `<!-- Footer -->` tag (around line 110) to the end of the `</html>` tag (around line 124) and click **Save**.
+   *   Go to the **Master** template and paste this HTML markup after the _**@RenderBody**_ field we've added.\
+       &#x20;
+
+       <figure><img src="images/figure-27-master-template-complete-v9.png" alt=""><figcaption></figcaption></figure>
+   * Click **Save**.
 
 Now we've done a lot of work. When we refresh our localhost page, nothing has changed. If you have a compilation error you have perhaps mistyped **@RenderBody()**.
 

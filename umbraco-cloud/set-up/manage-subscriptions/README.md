@@ -25,12 +25,12 @@ Once you have logged in, you can see an overview of your account where you can f
 
 Under the Order History, you can get an overview of all your invoices. The overview has the following details:
 
-- Order number
-- Total price ex. VAT
-- Date of purchase
-- Payment method
-- Status of the order
-- A download link for the invoice
+* Order number
+* Total price ex. VAT
+* Date of purchase
+* Payment method
+* Status of the order
+* A download link for the invoice
 
 ![Order History](images/order-history.png)
 
@@ -54,10 +54,10 @@ Whoever is taking over a subscription will need to have an existing account on u
 
 When you have registered your user. You will need to log in to your [profile](https://shop.umbraco.com/profile/edit-your-details/) and fill out the following details under the invoicing information section. Please make sure you fill out the following:
 
-- Company Name
-- Address
-- Country
-- VAT number (if within the EU)
+* Company Name
+* Address
+* Country
+* VAT number (if within the EU)
 
 {% hint style="info" %}
 The owner of the subscription must reach out when changing the owner.
@@ -65,11 +65,10 @@ The owner of the subscription must reach out when changing the owner.
 
 ### Projects
 
-Handing over a project to someone else can be done by adding them to the project as a [Team Member](../team-members/README.md) from the portal. Make sure that you grant them admin rights when adding them so they have full control over the project. When they have been added they can remove you from the project.
+Handing over a project to someone else can be done by adding them to the project as a [Team Member](../project-settings/team-members/) from the portal. Make sure that you grant them admin rights when adding them so they have full control over the project. When they have been added they can remove you from the project.
 
 {% hint style="info" %}
-Remember to change the [technical contact details](../team-members/technical-contact.md) on the project to the new owner, as Umbraco will send updates such as automated upgrade notifications to whoever is listed under technical contact.
+Remember to change the [technical contact details](../project-settings/team-members/technical-contact.md) on the project to the new owner, as Umbraco will send updates such as automated upgrade notifications to whoever is listed under technical contact.
 
 You can change the technical contact details under the **Edit team** section in the Backoffice.
 {% endhint %}
-
