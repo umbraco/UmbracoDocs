@@ -1,26 +1,22 @@
-
 # Manage Environments
 
 When working with an Umbraco Cloud project, you can add or remove extra environments depending on the plan you are in:
 
-- For the Starter plan, you can add a Development environment for an additional price per month.
-
-- For the Standard plan, you get the Development environment for free and can add a Staging environment for an additional price per month.
-
-- For the Professional plan, you get the Development and Staging environment for free. Additionally, you can add and remove environments whenever you like without any additional cost.
+* For the Starter plan, you can add a Development environment for an additional price per month.
+* For the Standard plan, you get the Development environment for free and can add a Staging environment for an additional price per month.
+* For the Professional plan, you get the Development and Staging environment for free. Additionally, you can add and remove environments whenever you like without any additional cost.
 
 [Learn more about the additional prices on Umbraco Cloud](https://umbraco.com/cloud-pricing/).
 
-{% embed url="https://www.youtube.com/embed/uqSWAkv5tBQ?rel=0" %}
-Video example.
+{% embed url="https://www.youtube.com/watch?v=avzRNFR-FSY" %}
+Adding an additional environment to a Cloud project
 {% endembed %}
-
 
 ## Adding or Removing Environments
 
-__Important:__ *Before* adding an environment, you should consider if you have any changes locally that are not on Live yet. If you do, you should make sure to push it as adding another environment will also push it into the deployment chain.
+**Important:** _Before_ adding an environment, you should consider if you have any changes locally that are not on Live yet. If you do, you should make sure to push it as adding another environment will also push it into the deployment chain.
 
-__Important:__ *After* adding a Development environment, you need to do a fresh clone of the site. The local version you have will be set up to push directly to Live, a fresh clone will push to Development.
+**Important:** _After_ adding a Development environment, you need to do a fresh clone of the site. The local version you have will be set up to push directly to Live, a fresh clone will push to Development.
 
 You can find the interface for adding or removing environments from your project page here:
 
