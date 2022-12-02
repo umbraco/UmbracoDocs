@@ -173,6 +173,8 @@ with
 
 If you fail to apply set `AzureBlobFileSystem.UsePrivateContainer:media` properly, you will see a lot of `ImageProcessingException`s when images are served. If you fail to configure the `AzureImageService`, ImageProcessor will not work and your images will be served but not cropped, resized, and similar.
 
+Depending on your project configuration, the installation of `ImageProcessor.Web.Plugins.AzureBlobCache` might modify your `~/config/imageprocessor/cache.config` file. If you don't want to use the package for caching, you might want to revert the changes.
+
 ## Using Azure Blob Cache
 
 In some cases, you might also want to use the Azure Blob Cache to cache your media files. One scenario for this could be a load balancing setup where you have a lot of media files. Using the Azure Blob Cache will make sure that your media files are still cached and can be used effectively as the generated images are stored to blobs and served via a CDN instead of local disk.
