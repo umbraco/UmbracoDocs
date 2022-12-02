@@ -63,9 +63,10 @@ Ordering of composers is important, the last one added can override a previously
 
 ### Example - Explicitly Registering a new custom OEmbedProvider
 
-This example shows a custom 'Spotify' OEmbed Provider which will allow Spotify URLs to be used via the 'embed' button in the Grid and Rich Text Editors. As the collection for OEmbedProviders is not 'typed scanned', we need to explicitly register the provider in the collection of OEmbedProviders. We create a C# class which implements `IUserComposer` and append our new Spotify OEmbedProvider to the `EmbedProvidersCollection`:
+This example shows a custom 'Spotify' OEmbed Provider which will allow Spotify URLs to be used via the 'embed' button in the Grid and Rich Text Editors. As the collection for OEmbedProviders is not 'typed scanned', we need to explicitly register the provider in the collection of OEmbedProviders. We create a C# class which implements `IComposer` and append our new Spotify OEmbedProvider to the `EmbedProvidersCollection`:
 
 ```csharp
+using Umbraco.Cms.Core.Media.EmbedProviders;
 using Umbraco.Cms.Core.Serialization;
 
 namespace My.Website;
@@ -115,11 +116,10 @@ public class Spotify : OEmbedProviderBase
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.Media.EmbedProviders;
 
 namespace My.Website;
 
-public class CustomOEmbedComposer : IUserComposer
+public class CustomOEmbedComposer : IComposer
 {
     // Change the EmbedProvidersCollection
     // by adding our new EmbedProvider for Spotify

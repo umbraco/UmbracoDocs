@@ -90,6 +90,7 @@ Let's allow our editors to embed artwork from the popular DeviantArt website - t
 The Provider would look like this:
 
 ```csharp
+using Umbraco.Cms.Core.Media.EmbedProviders;
 using Umbraco.Cms.Core.Serialization;
 
 namespace MyNamespace;
@@ -126,15 +127,14 @@ public class DeviantArtEmbedProvider : OEmbedProviderBase
 
 #### Register the provider with the EmbedProvidersCollection
 
-Create a new C# class that implements `IUserComposer` and append your new provider to the `EmbedProvidersCollection`:
+Create a new C# class that implements `IComposer` and append your new provider to the `EmbedProvidersCollection`:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.Media.EmbedProviders;
 
 namespace MyNamespace;
 
-public class RegisterEmbedProvidersComposer : IUserComposer
+public class RegisterEmbedProvidersComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
         => builder.EmbedProviders().Append<DeviantArtEmbedProvider>();
@@ -159,6 +159,7 @@ This example creates a custom Embed Provider to do the job of taking the Url of 
 
 ```csharp
 using System.Net;
+using Umbraco.Cms.Core.Media.EmbedProviders;
 using Umbraco.Cms.Core.Serialization;
 
 namespace MyNamespace;
@@ -191,22 +192,20 @@ public class AzureVideoEmbedProvider : OEmbedProviderBase
         return videoPlayerMarkup;
     }
 }
-
 ```
 
 Here the markup to embed has been manually constructed based upon the iframe video player, no request to an Api endpoint is made...
 
 #### Register the Azure Embed Provider with the EmbedProvidersCollection
 
-Create a new C# class that implements `IUserComposer` and add append your new provider to the `EmbedProvidersCollection`:
+Create a new C# class that implements `IComposer` and add append your new provider to the `EmbedProvidersCollection`:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.Media.EmbedProviders;
 
 namespace MyNamespace;
 
-public class RegisterEmbedProvidersComposer : IUserComposer
+public class RegisterEmbedProvidersComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
         => builder.EmbedProviders().Append<AzureVideoEmbedProvider>();
