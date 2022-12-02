@@ -49,9 +49,9 @@ Inside a Razor View template, you can make use of a service injection into a vie
 
 ### Access in a Custom Class via dependency injection
 
-If for instance we wish to subscribe to notifications on one of the services, we'd do so in a Composer C# class, where you will add a custom `NotificationHandler`. In this custom `NotificationHandler` we would inject the service we need into the public constructor of the class and Umbraco's. The underlying dependency injection framework will do the rest.
+If we wish to subscribe to notifications on one of the services, we'd create a Composer C# class, where you will add a custom `NotificationHandler`. In this custom `NotificationHandler` we would inject the service we need into the public constructor of the class and Umbraco's. The underlying dependency injection framework will do the rest.
 
-In this example we will wire up to the ContentService 'Saved' event, and create a new folder in the Media section whenever a new LandingPage is created in the content section to store associated media. Therefore we will need the MediaService available to create the new folder.
+In this example we will wire up to the ContentService 'Saved' event. We will create a new folder in the Media section whenever a new LandingPage is created in the content section to store associated media. Therefore we will need the MediaService available to create the new folder.
 
 ```csharp
 public class CustomComposer : IComposer
@@ -114,7 +114,7 @@ namespace Umbraco.Cms.Core.Events
 
 #### Custom Class example
 
-When you are creating your own custom class, in order to make use of the dependency injection framework, you need to register the `ICustomNewsArticleService` service with the concrete type `CustomNewsArticleService`. The `AddScoped()` method registers the service with the lifetime of a single request.
+When you're creating your own class, in order to make use of the dependency injection framework, you need register the `ICustomNewsArticleService` service with the type `CustomNewsArticleService`. The `AddScoped()` method registers the service with the lifetime of a single request.
 
 There are different ways that you can achieve the same outcome:
 
