@@ -219,7 +219,7 @@ This is *italic*
 
 Next up we'll create a text page Document Type that will be used for subpages on the site.
 
-Go back to the **Settings section** and create a new Document Type and name it "Text Page". Add a group called "Content" and this time we'll add two properties. First, make a property called Summary using the **Textarea** editor and secondly create a property called "Body Text" and reuse the **Rich Text Editor** Data Type.
+Go back to the **Settings section** and create a new Document Type and name it "Text Page". Add a group called "Content" and this time we'll add two properties. First, make a property called Summary using the **Textarea** editor. Secondly create a property called "Body Text" and reuse the **Rich Text Editor** Data Type.
 
 ### Creating child nodes
 
