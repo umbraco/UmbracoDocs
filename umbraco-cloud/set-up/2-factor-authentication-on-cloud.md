@@ -12,7 +12,7 @@ On Umbraco Cloud, you can add 2-factor authentication for your Umbraco Cloud acc
 You can use email, phone, or an authenticator app when logging in to the Umbraco Cloud Portal or the Umbraco Backoffice.
 
 {% hint style="info" %}
-Do note that you won't be prompted to authenticate your backoffice login if you've already did it for the portal, as both logins use the same centralized login service.
+You will not be prompted to authenticate your backoffice login if you have already done it for the portal. This is because both logins use the same centralized login service.
 {% endhint %}
 ## Enabling 2-factor authentication
 
