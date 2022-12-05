@@ -68,7 +68,7 @@ You can use the method, getting it from the System namespace in .NET as below:
 
 `_secretMessage = Environment.GetEnvironmentVariable("SecretMessage");`
 
-Secrets can also be used to override AppSettings defined in appsettings.json files.
+Secrets can also be used to override AppSettings defined in `appsettings.json` files.
 
 In order for this to work, when adding the secret, the Key value should be all the settings' names joined by double underscores. 
 
