@@ -9,7 +9,7 @@ Follow these steps to be up and running with VS Code quickly. The benefit of usi
 :::note
 The information in this article covers installing Umbraco 8 or older versions of Umbraco CMS.
 
-Go to [**docs.umbraco.com**](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/install/install-umbraco-with-vs-code) to find documentation on installing the latest version of Umbraco CMS.
+Go to [**docs.umbraco.com**](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/install/install-umbraco-with-vs-code) to find documentation on installing the latest recommended version of Umbraco CMS.
 :::
 
 ## Download and Launch VS Code
