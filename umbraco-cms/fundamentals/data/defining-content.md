@@ -133,7 +133,7 @@ Select the **Rich Text editor** under **Create new**.
 This will let you configure the editor settings - the Rich Text editor for this property.
 
 {% hint style="info" %}
-The name of the Data Type is based on the name of the Document Type, the name of the property, and the property editor. Flor example: _Home - Body Text - Rich Text editor_.
+The name of the Data Type is based on the name of the Document Type, the name of the property, and the property editor. For example: _Home - Body Text - Rich Text editor_.
 {% endhint %}
 
 Let's rename it to "Basic Rich Text editor" and only select the most necessary options.
