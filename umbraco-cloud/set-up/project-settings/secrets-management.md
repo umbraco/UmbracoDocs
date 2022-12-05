@@ -76,7 +76,7 @@ For example, to change the Serilog's default options under `Serilog:MinimumLevel
 
 `Serilog__MinimumLevel__Default`
 
-The value defined in appsettings.json file will be overwritten with the Cloud Secret's value.
+The value defined in `appsettings.json` file will be overwritten with the Cloud Secret's value.
 
 ### Naming standards for secrets
 
