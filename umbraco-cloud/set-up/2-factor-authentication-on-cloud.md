@@ -27,7 +27,7 @@ To enable 2-factor-authentication follow these steps:
 
 ### Email authentication
 
-With email authentication, you will get an email with a code that you need to enter when you log in to the Umbraco Cloud portal or the Umbraco Backoffice.
+You will get an email with a code that you need to enter when logging in through the Umbraco Cloud portal or the backoffice.
 
 ![Email authentication](images/email-auth.png)
 
