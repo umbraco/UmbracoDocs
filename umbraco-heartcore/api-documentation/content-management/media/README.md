@@ -478,6 +478,10 @@ Create a new media item and optionally upload a file to the created item.
 
 Media would typically contain an upload field (the `Image` and `File` media types has this by default), which means it is possible to send a file along with the request to create a new media item. This is done by sending a multi-part request with the JSON body and the file. If the media item does not contain a file you can send a regular JSON request to create the media.
 
+{% hint style="info" %}
+Different media types/files like `.pdf` or `.png` will require different request body formats. To verify the JSON structure, manually upload the media file via the backoffice and fetch the data. It can then be used for reference.
+{% endhint %}
+
 **URL**: `/media`
 
 **Method**: `POST`
