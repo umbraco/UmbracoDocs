@@ -6,6 +6,12 @@ versionFrom: 8.0.0
 
 _Follow these steps to do a full install of Umbraco with NuGet._
 
+:::note
+The information in this article covers installing Umbraco 8 or older versions of Umbraco CMS.
+
+Go to [**docs.umbraco.com**](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/install) to find documentation on installing the latest version of Umbraco CMS.
+:::
+
 ## Abbreviated version
 
 - You will get the best results if you install Umbraco in a **blank** C# web application Visual Studio project

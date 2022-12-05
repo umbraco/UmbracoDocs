@@ -6,6 +6,12 @@ versionFrom: 7.0.0
 
 Follow these steps to be up and running with VS Code quickly. The benefit of using VS Code is that it is super quick to get up and running.
 
+:::note
+The information in this article covers installing Umbraco 8 or older versions of Umbraco CMS.
+
+Go to [**docs.umbraco.com**](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/install/install-umbraco-with-vs-code) to find documentation on installing the latest version of Umbraco CMS.
+:::
+
 ## Download and Launch VS Code
 
 1. Go to [https://code.visualstudio.com/](https://code.visualstudio.com/) and download VS Code for free.
