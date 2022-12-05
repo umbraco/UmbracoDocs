@@ -72,7 +72,7 @@ Secrets can also be used to override AppSettings defined in `appsettings.json` f
 
 In order for this to work, when adding the secret, the Key value should be all the settings' names joined by double underscores. 
 
-For example, to change the Serilog's default options under "Serilog" > "MinimumLevel" > "Default" key, the Secret key would look like this:
+For example, to change the Serilog's default options under `Serilog:MinimumLevel:Default`, the Secret key would look like this:
 
 `Serilog__MinimumLevel__Default`
 
