@@ -62,15 +62,15 @@ You can use the method, getting it from the System namespace in .NET as below:
 
 `_secretMessage = Environment.GetEnvironmentVariable("SecretMessage");`
 
-Secrets can also be used to override AppSettings defined in appsettings.json files.
+Secrets can also be used to override AppSettings defined in `appsettings.json` files.
 
 In order for this to work, when adding the secret, the Key value should be all the settings' names joined by double underscores. 
 
-For example, to change the Serilog's default options under "Serilog" > "MinimumLevel" > "Default" key, the Secret key would look like this:
+For example, to change the Serilog's default options under `Serilog:MinimumLevel:Default`, the Secret key would look like this:
 
 `Serilog__MinimumLevel__Default`
 
-The value defined in appsettings.json file will be overwritten with the Cloud Secret's value.
+The value defined in `appsettings.json` file will be overwritten with the Cloud Secret's value.
 
 ### Naming standards for secrets
 
