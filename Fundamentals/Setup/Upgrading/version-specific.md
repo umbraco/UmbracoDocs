@@ -8,6 +8,12 @@ versionFrom: 7.0.0
 
 Follow the steps in the [general upgrade guide](general.md), then these additional instructions for the specific versions. (Remember that new config files are not mentioned because they are already covered in the general upgrade guide.)
 
+:::note
+The information in this article covers version specific upgrade notes for Umbraco 9 as the latest version.
+
+Go to [**docs.umbraco.com**](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific) to find version specific upgrading notes for the latest recommend version of Umbraco CMS.
+:::
+
 ## Version 8 to version 9
 
 There is no direct upgrade path from Umbraco 8 to Umbraco 9, but it is possible to migrate from Umbraco 8 sites to Umbraco 9 sites.
