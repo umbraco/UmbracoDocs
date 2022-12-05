@@ -133,7 +133,7 @@ Select the **Rich Text editor** under **Create new**.
 This will let you configure the editor settings - the Rich Text editor for this property.
 
 {% hint style="info" %}
-The name of the Data Type is based on the name of the Document Type, the name of the property, and the property editor. Flor example: _Home - Body Text - Rich Text editor_.
+The name of the Data Type is based on the name of the Document Type, the name of the property, and the property editor. For example: _Home - Body Text - Rich Text editor_.
 {% endhint %}
 
 Let's rename it to "Basic Rich Text editor" and only select the most necessary options.
@@ -219,7 +219,7 @@ This is *italic*
 
 Next up we'll create a text page Document Type that will be used for subpages on the site.
 
-Go back to the **Settings section** and create a new Document Type and name it "Text Page". Add a group called "Content" and this time we'll add two properties. First, make a property called Summary using the **Textarea** editor and secondly create a property called "Body Text" and reuse the **Rich Text Editor** Data Type.
+Go back to the **Settings section** and create a new Document Type and name it "Text Page". Add a group called "Content" and this time we'll add two properties. First, make a property called Summary using the **Textarea** editor. Secondly create a property called "Body Text" and reuse the **Rich Text Editor** Data Type.
 
 ### Creating child nodes
 
