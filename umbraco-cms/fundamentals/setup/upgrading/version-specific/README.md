@@ -14,6 +14,10 @@ Follow the steps in the [general upgrade guide](../), then these additional inst
 [umbraco11-breaking-changes.md](umbraco11-breaking-changes.md)
 {% endcontent-ref %}
 
+## Version 10 to version 11
+
+It might be necessary to delete all of the `bin` and `obj` directories in each of the projects of your solution. It has been observed that Visual Studio's "Clean Solution" option is sometimes not enough.
+
 ## Version 9 to version 10
 
 {% hint style="warning" %}
