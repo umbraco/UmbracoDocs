@@ -40,7 +40,9 @@ Should something fail during the migration, the Development environment can alwa
 
 ## Step 1: Content Migration
 
-* Create a backup of the database from your Umbraco 8 project using the [database backup guide](../databases/README.md) *OR* clone down the V8 project and take a backup of the local Database. Make sure to restore the content from your cloud environment.
+* Create a backup of the database from your Umbraco 8 project using the [database backup guide](../databases/README.md) *OR* clone down the V8 project and take a backup of the local Database.
+
+  * Make sure to **restore both content and media** from your Cloud environment.
 
 * Import the database backup into SQL Server Management Studio.
 
