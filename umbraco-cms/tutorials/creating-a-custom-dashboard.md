@@ -722,7 +722,7 @@ At this point the code looks like this:
 
 Now we also want the editors to be able to go directly to the content node, lets move the ```<a href="/Umbraco/#/{{logEntry.editUrl}}">{{logEntry.Content.name}} <span ng-if="logEntry.comment">- {{logEntry.comment}}</span></a>``` line down under the ```<uui-card-content-node>```.
 
-Also make sure to add some text to the ```<a>``` like *"click here"* or *"See Node"* so that our code should look like this:
+Make sure to add some text to the ```<a>``` like *"click here"* or *"See Node"* so that our code should look like this:
 
 ```html
 <uui-card-content-node name="{{logEntry.Content.name}}" ng-repeat="logEntry in vm.UserLogHistory.items">
