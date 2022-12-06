@@ -612,6 +612,7 @@
   * [Node.js Client library](umbraco-heartcore/client-libraries/node-js.md)
   * [.NET Client library](umbraco-heartcore/client-libraries/dot-net-core/README.md)
     * [MVC Sample](umbraco-heartcore/client-libraries/dot-net-core/mvc-samples.md)
+    * [Content Management Sample](umbraco-heartcore/client-libraries/dot-net-core/content-management-sample.md)
 * [Versions and updates](umbraco-heartcore/versions-and-updates.md)
 * [Tutorials](umbraco-heartcore/tutorials/README.md)
   * [Custom Grid Editors](umbraco-heartcore/tutorials/creating-a-custom-grid-editor.md)
