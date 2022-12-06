@@ -72,7 +72,7 @@ namespace Umbraco.Docs.Samples.Web.Components.ProductView
 In **Views** folder, create new folders at `Views\Shared\Components\ProductView`. In the **ProductView** folder, create a new file named **Default.cshtml** as below:
 
 ```csharp
-<h1> Welcome to your Home Page <h1>
+<h1> Welcome to your Home Page </h1>
 <h2>Products List</h2>
 <ul>
     @foreach (var product in Model)
@@ -87,7 +87,7 @@ In **Views** folder, create new folders at `Views\Shared\Components\ProductView`
 You can invoke a ViewComponent from anywhere (even from within a Controller or another ViewComponent). Since this is our Product List, we want it rendered on the Home page - so we’ll invoke it from our HomePage.cshtml file using:
 
 ```csharp
- @(await Component.InvokeAsync("ProductView")) 
+ @(await Component.InvokeAsync("ProductView"))
 ```
 
 You can read about different ways of invoking your view component in the [View components in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-components?view=aspnetcore-5.0#invoking-a-view-component) section of the Microsoft Documentation.view=aspnetcore-5.0)
