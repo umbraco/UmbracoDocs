@@ -660,6 +660,59 @@ angular.module("umbraco").controller("CustomWelcomeDashboardController", functio
 </div>
 ```
 
+## Extending the Dashboard using the UI library
+
+Now that we have a fully functioning dashboard where editors can see nodes they recently worked on and create new blog posts,
+we might want to make it a bit prettier, by using the Umbraco UI library.
+
+The [Umbraco UI Library](../extending/ui-library.md) is a set of web components that we can use to build Umbraco User Interfaces.
+
+To get started using the UI library, the easiest way is to add the following CDN script to the **WelcomeDashboard.html:** file.
+
+```javascript
+<script src="https://cdn.jsdelivr.net/npm/@umbraco-ui/uui@latest/dist/uui.min.js"></script>
+```
+
+Once it has been added, we can start building our UI for our editors.
+
+Since we are showing our editors their recently edited content nodes in this guide, it makes sense to use the [Content Node Card](https://uui.umbraco.com/?path=/docs/uui-card-content-node--aaa-overview):
+
+![Content Node Card](images/uiLibraryCard.png)
+
+First we need to wrap our unordered list and its content in the ```<uui-card-content-node>``` so it will look like this:
+
+```html
+<uui-card-content-node name="The card">
+    <ul class="unstyled">
+        <li ng-repeat="logEntry in vm.UserLogHistory.items">
+            <i class="{{logEntry.Content.icon}}"></i> <a href="/Umbraco/#/{{logEntry.editUrl}}">{{logEntry.Content.name}} <span ng-if="logEntry.comment">- {{logEntry.comment}}</span></a> - <span class="text-muted">(Edited on: {{logEntry.timestamp  | date:'medium'}})</span>
+        </li>
+    </ul>
+</uui-card-content-node>
+```
+
+Now lets make sure that the card shows the name of the content nodes that the editors worked with.
+
+To do this we need to replace the name "The card" in the ```<uui-card-content-node">``` with ```{{logEntry.Content.name}}``` so it will look like this:
+
+```html
+<uui-card-content-node name="{{logEntry.Content.name}}">
+```
+
+We also need to move the loop through our content to the uui-card as well.
+
+So at this point the code for our card looks like this:
+
+```html
+<uui-card-content-node name="{{logEntry.Content.name}}" ng-repeat="logEntry in vm.UserLogHistory.items">
+    <ul class="unstyled">
+        <li ng-repeat="logEntry in vm.UserLogHistory.items">
+            <i class="{{logEntry.Content.icon}}"></i> <a href="/Umbraco/#/{{logEntry.editUrl}}">{{logEntry.Content.name}} <span ng-if="logEntry.comment">- {{logEntry.comment}}</span></a> - <span class="text-muted">(Edited on: {{logEntry.timestamp  | date:'medium'}})</span>
+        </li>
+    </ul>
+</uui-card-content-node>
+```
+
 ## Custom External Data - creating your own angular resource
 
 You can create your own custom Angular services/resources to interact with your own serverside data (using UmbracoAuthorizedJsonController).
