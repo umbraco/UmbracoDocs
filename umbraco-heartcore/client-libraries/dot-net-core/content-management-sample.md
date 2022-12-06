@@ -72,7 +72,9 @@ The `ContentManagementService` has three methods for getting content.
 
 <details>
 
-<summary><code>GetRoot()</code>  - Gets all content at the root of the tree</summary>
+<summary><code>GetRoot()</code> </summary>
+
+Gets all content at the root of the tree.
 
 To use this method, call the method on the `ContentManagementService` instance:
 
@@ -84,7 +86,9 @@ var content = await _contentManagementService.Content.GetRoot();
 
 <details>
 
-<summary><code>GetById(Guid id)</code>  - Gets a specific content item matching a GUID</summary>
+<summary><code>GetById(Guid id)</code> </summary>
+
+Gets a specific content item matching a GUID.
 
 To use this method, call the method on the `ContentManagementService` instance and pass in the GUID of the content item you want to get:
 
@@ -98,7 +102,9 @@ var content = await _contentManagementService.Content.GetById(Guid.Parse("your-g
 
 <details>
 
-<summary><code>GetChildren(Guid id)</code> - Gets all content that is a child of a specific content item</summary>
+<summary><code>GetChildren(Guid id)</code></summary>
+
+Gets all content that is a child of a specific content item.
 
 To use this method, call the method on the `ContentManagementService` instance and pass the GUID of the content item to get the children:
 
@@ -116,7 +122,9 @@ The `ContentManagementService` has one method for creating content.
 
 <details>
 
-<summary><code>Create(Content content)</code>- Creates a new content item based on the passed-in <code>Content</code> object</summary>
+<summary><code>Create(Content content)</code></summary>
+
+Creates a new content item based on the passed-in `Content` object.
 
 To use this method, call the method on the `ContentManagementService` instance and pass in the content item you want to create:
 
@@ -136,7 +144,9 @@ The `ContentManagementService` has one method for updating content.
 
 <details>
 
-<summary><code>Update(Content content)</code> - Updates an existing content item based on the passed-in <code>Content</code> object</summary>
+<summary><code>Update(Content content)</code></summary>
+
+Updates an existing content item based on the passed-in `Content` object.
 
 To use this method, call the method on the `ContentManagementService` instance and pass in the content item you want to update:
 
@@ -156,7 +166,9 @@ The `ContentManagementService` has one method for publishing content.
 
 <details>
 
-<summary><code>Publish(Guid id, string culture = "*")</code> - Publishes an existing content item based on the passed-in GUID and culture</summary>
+<summary><code>Publish(Guid id, string culture = "*")</code></summary>
+
+Publishes an existing content item based on the passed-in GUID and culture.
 
 To use this method, call the method on the `ContentManagementService` instance and pass in the GUID of the content item you want to publish:
 
@@ -182,7 +194,9 @@ The `ContentManagementService` has one method for unpublishing content.
 
 <details>
 
-<summary><code>Unpublish(Guid id, string culture = "*")</code> - Unpublishes an existing content item based on the passed-in GUID and culture</summary>
+<summary><code>Unpublish(Guid id, string culture = "*")</code></summary>
+
+Unpublishes an existing content item based on the passed-in GUID and culture.
 
 To use this method, call the method on the `ContentManagementService` instance and pass in the GUID of the content item you want to unpublish:
 
@@ -208,7 +222,9 @@ The `ContentManagementService` has one method for deleting content.
 
 <details>
 
-<summary><code>Delete(Guid id)</code> - Deletes an existing content item based on the passed-in GUID</summary>
+<summary><code>Delete(Guid id)</code></summary>
+
+Deletes an existing content item based on the passed-in GUID.
 
 To use this method, call the method on the `ContentManagementService` instance and pass in the GUID of the content item you want to delete:
 
@@ -269,7 +285,9 @@ The `ContentManagementService` has three methods for getting media.
 
 <details>
 
-<summary><code>GetRoot()</code> - Gets all media at the root of the tree</summary>
+<summary><code>GetRoot()</code></summary>
+
+Gets all media at the root of the tree.
 
 To use this method, call the method on the `ContentManagementService` instance:
 
@@ -281,7 +299,9 @@ var rootMedia = await _contentManagementService.Media.GetRoot();
 
 <details>
 
-<summary><code>GetById(Guid id)</code> - Gets a specific media item matching a GUID</summary>
+<summary><code>GetById(Guid id)</code></summary>
+
+Gets a specific media item matching a GUID.
 
 To use this method, call the method on the `ContentManagementService` instance and pass in the GUID of the media item you want to get:
 
@@ -295,7 +315,9 @@ var media = await _contentManagementService.Media.GetById(Guid.Parse("your-guid-
 
 <details>
 
-<summary><code>GetChildren(Guid id)</code> - Gets all media that is a child of a specific media item</summary>
+<summary><code>GetChildren(Guid id)</code></summary>
+
+Gets all media that is a child of a specific media item.
 
 To use this method, call the method on the `ContentManagementService` instance and pass in the GUID of the media item to get the children:
 
@@ -313,7 +335,9 @@ The `ContentManagementService` has one method for creating media.
 
 <details>
 
-<summary><code>Create(Media media)</code> - Creates a new media item based on the passed-in <code>Media</code> object</summary>
+<summary><code>Create(Media media)</code></summary>
+
+Creates a new media item based on the passed-in `Media` object.
 
 To use this method, call the method on the `ContentManagementService` instance and pass in the media item you want to create:
 
@@ -329,7 +353,9 @@ The `ContentManagementService` has one method for updating media.
 
 <details>
 
-<summary><code>Update(Media media)</code> - Updates an existing media item based on the passed-in <code>Media</code> object</summary>
+<summary><code>Update(Media media)</code></summary>
+
+Updates an existing media item based on the passed-in `Media` object.
 
 To use this method, call the method on the `ContentManagementService` instance and pass in the media item you want to update:
 
@@ -345,7 +371,9 @@ The `ContentManagementService` has one method for deleting media.
 
 <details>
 
-<summary><code>Delete(Guid id)</code> - Deletes an existing media item based on the passed-in GUID</summary>
+<summary><code>Delete(Guid id)</code></summary>
+
+Deletes an existing media item based on the passed-in GUID.
 
 To use this method, call the method on the `ContentManagementService` instance and pass in the GUID of the media item you want to delete:
 
