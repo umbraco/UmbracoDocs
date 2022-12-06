@@ -662,7 +662,7 @@ angular.module("umbraco").controller("CustomWelcomeDashboardController", functio
 
 ## Extending the Dashboard using the UI library
 
-Now that we have a fully functioning dashboard where editors can see nodes they recently worked on and create new blog posts, we might want to make it a bit prettier.
+Now that we have a fully functioning dashboard where editors can see nodes they worked on and create new blog posts, we might want to make it prettier.
 
 To do this we can use the Umbraco UI library.
 
@@ -702,7 +702,13 @@ To do this we need to replace the name "The card" in the ```<uui-card-content-no
 
 We also need to move the loop through our content to the uui-card as well.
 
-So at this point the code for our card looks like this:
+Which then will look like this:
+
+```html
+<uui-card-content-node name="{{logEntry.Content.name}}" ng-repeat="logEntry in vm.UserLogHistory.items">
+```
+
+At this point the code looks like this:
 
 ```html
 <uui-card-content-node name="{{logEntry.Content.name}}" ng-repeat="logEntry in vm.UserLogHistory.items">
@@ -714,7 +720,9 @@ So at this point the code for our card looks like this:
 </uui-card-content-node>
 ```
 
-So far so good, we want the editors to be able to go directly to the content node, so under the ```<uui-card-content-node>``` lets move our link so it looks like this:
+Now we also want the editors to be able to go directly to the content node, lets move the ```<a href="/Umbraco/#/{{logEntry.editUrl}}">{{logEntry.Content.name}} <span ng-if="logEntry.comment">- {{logEntry.comment}}</span></a>``` line down under the ```<uui-card-content-node>```.
+
+Also make sure to add some text to the ```<a>``` like *"click here"* or *"See Node"* so that our code should look like this:
 
 ```html
 <uui-card-content-node name="{{logEntry.Content.name}}" ng-repeat="logEntry in vm.UserLogHistory.items">
@@ -731,9 +739,9 @@ Next up, lets go ahead and update the ```<ul>``` tag with the style from the UI 
 
 ```style="list-style: none; padding-inline-start: 0px; margin: 0;```
 
-We can also go ahead and remove the ```<i class="{{logEntry.Content.icon}}"></i>``` from our list as we won't be using the icon as.
+We can also go ahead and remove the ```<i class="{{logEntry.Content.icon}}"></i>``` from our list as we won't be using the icon as the card has one by default.
 
-Once that is done, this now how our code should look like:
+Once that is done, our code look like:
 
 ```html
 <uui-card-content-node name="{{logEntry.Content.name}}" ng-repeat="logEntry in vm.UserLogHistory.items">
@@ -787,7 +795,7 @@ And your file should look like this:
 <script src="https://cdn.jsdelivr.net/npm/@umbraco-ui/uui@latest/dist/uui.min.js"></script>
 ```
 
-The last thing we need to do is to add a bit of styling to make it look good.
+The last thing we need to do is to add a bit of styling to the UI.
 
 Go to the **customwelcomedashboard.css** file and add the following:
 
