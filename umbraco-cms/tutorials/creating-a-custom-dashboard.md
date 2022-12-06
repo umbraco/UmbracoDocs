@@ -662,12 +662,13 @@ angular.module("umbraco").controller("CustomWelcomeDashboardController", functio
 
 ## Extending the Dashboard using the UI library
 
-Now that we have a fully functioning dashboard where editors can see nodes they recently worked on and create new blog posts,
-we might want to make it a bit prettier, by using the Umbraco UI library.
+Now that we have a fully functioning dashboard where editors can see nodes they recently worked on and create new blog posts, we might want to make it a bit prettier.
+
+To do this we can use the Umbraco UI library.
 
 The [Umbraco UI Library](../extending/ui-library.md) is a set of web components that we can use to build Umbraco User Interfaces.
 
-To get started using the UI library, the easiest way is to add the following CDN script to the **WelcomeDashboard.html:** file.
+To get started using the UI library, the easiest way is to add the following Content Delivery Network (CDN) script to the **WelcomeDashboard.html:** file.
 
 ```javascript
 <script src="https://cdn.jsdelivr.net/npm/@umbraco-ui/uui@latest/dist/uui.min.js"></script>
@@ -745,7 +746,7 @@ Once that is done, this now how our code should look like:
 </uui-card-content-node>
 ```
 
-Lets just for good measure add the styling from the Content Node Card to our ```<li>``` tag as well so it will look like this:
+Lets for good measure add the styling from the Content Node Card to our ```<li>``` tag as well so it will look like this:
 
 ```html
 <li>
@@ -786,7 +787,7 @@ And your file should look like this:
 <script src="https://cdn.jsdelivr.net/npm/@umbraco-ui/uui@latest/dist/uui.min.js"></script>
 ```
 
-The last thing we need to do is to just add a bit of styling to make it look good.
+The last thing we need to do is to add a bit of styling to make it look good.
 
 Go to the **customwelcomedashboard.css** file and add the following:
 
