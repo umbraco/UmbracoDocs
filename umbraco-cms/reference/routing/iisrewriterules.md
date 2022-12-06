@@ -3,7 +3,7 @@ versionFrom: 9.0.0
 versionTo: 10.0.0
 ---
 
-# URL Rewrites
+# URL Rewrites in Umbraco
 
 With the release of Umbraco 9 and the change of the underlying web framework that is decoupled from the webserver, the way that you configure rewrites has changed as well.
 
@@ -23,7 +23,7 @@ To use rewrites with Umbraco 9 you have to register the middleware in your `Star
 
 ### Example
 
-- Create an `IISUrlRewrite.xml` file in the root of your project (next to your `Startup.cs` file) containing:
+* Create an `IISUrlRewrite.xml` file in the root of your project (next to your `Startup.cs` file) containing:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -42,16 +42,15 @@ To use rewrites with Umbraco 9 you have to register the middleware in your `Star
 </rewrite>
 ```
 
-- In the `Startup.cs` file you can add the URL Rewriting Middleware just before the call to `app.UseUmbraco()` and use [`AddIISUrlRewrite`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.rewrite.iisurlrewriteoptionsextensions.addiisurlrewrite?view=aspnetcore-5.0)) to add the rewrite rules from the XML file:
+* In the `Startup.cs` file you can add the URL Rewriting Middleware just before the call to `app.UseUmbraco()` and use [`AddIISUrlRewrite`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.rewrite.iisurlrewriteoptionsextensions.addiisurlrewrite?view=aspnetcore-5.0)) to add the rewrite rules from the XML file:
 
 ```csharp
 using Microsoft.AspNetCore.Rewrite;
 
 app.UseRewriter(new RewriteOptions().AddIISUrlRewrite(env.ContentRootFileProvider, "IISUrlRewrite.xml"));
-
 ```
 
-- In your csproj file add the XML file to a new item group and set `CopyToOutputDirectory` to `Always`:
+* In your csproj file add the XML file to a new item group and set `CopyToOutputDirectory` to `Always`:
 
 ```xml
 <ItemGroup>

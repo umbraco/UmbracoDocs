@@ -16,11 +16,11 @@ Before your applications can interact with Azure AD B2C, they must be registered
 You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` NuGet package. There are two approaches to installing the packages:
 
 1. Use your favorite IDE and open up the **NuGet Package Manager** to search and install the packages.
-1. Use the command line to install the package.
+2. Use the command line to install the package.
 
 ## Azure AD Authentication for Users
 
-1. Create a class called `BackofficeAuthenticationExtensions.cs` to configure the external login.
+1.  Create a class called `BackofficeAuthenticationExtensions.cs` to configure the external login.
 
     ```csharp
     using Microsoft.AspNetCore.Authentication.MicrosoftAccount;
@@ -62,10 +62,9 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
     ```
 
     {% hint style="info" %}
-    Ensure to replace **{your_client_id}** and **{your_client_secret}** in the code with the values from the Azure AD tenant. If Azure AD is configured to use accounts in the organizational directory only (single tenant), you also have to specify the Token and AuthorizationEndpoint.
+    Ensure to replace **{your\_client\_id}** and **{your\_client\_secret}** in the code with the values from the Azure AD tenant. If Azure AD is configured to use accounts in the organizational directory only (single tenant), you also have to specify the Token and AuthorizationEndpoint.
     {% endhint %}
-
-2. Update `ConfigureServices` method in the `Startup.cs` file:
+2.  Update `ConfigureServices` method in the `Startup.cs` file:
 
     ```csharp
     public void ConfigureServices(IServiceCollection services)
@@ -79,16 +78,14 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
             .Build();
     }
     ```
+3.  Build and run the website. You can now login with your Azure AD credentials.
 
-3. Build and run the website. You can now login with your Azure AD credentials.
-
-    ![AD Login Screen](images/AD_Login.png)
+    ![AD Login Screen](images/AD\_Login.png)
 
 ## Azure AD Authentication for Members
 
 1. Create a Member login functionality, see the [Member registration and login](../../tutorials/members-registration-and-login.md#member-registration-and-login) article.
-
-2. Create a class called `MemberAuthenticationExtensions.cs` to configure the external login.
+2.  Create a class called `MemberAuthenticationExtensions.cs` to configure the external login.
 
     ```csharp
     using Microsoft.Extensions.DependencyInjection;
@@ -127,11 +124,13 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
     }
     ```
 
-    {% hint style="info" %}
-    Ensure to replace **{your_client_id}** and **{your_client_secret}** in the code with the values from the Azure AD tenant.
-    {% endhint %}
+{% hint style="info" %}
+```
+Ensure to replace **{your_client_id}** and **{your_client_secret}** in the code with the values from the Azure AD tenant.
+```
+{% endhint %}
 
-3. To enable a member to link their account to an external login provider such as Azure AD in the Umbraco Backoffice, you have to implement a custom named configuration `MemberExternalLoginProviderOptions` for Members. Add the following code in the `AzureB2CMembersExternalLoginProviderOptions.cs` file:
+1.  To enable a member to link their account to an external login provider such as Azure AD in the Umbraco Backoffice, you have to implement a custom named configuration `MemberExternalLoginProviderOptions` for Members. Add the following code in the `AzureB2CMembersExternalLoginProviderOptions.cs` file:
 
     ```csharp
     using Microsoft.Extensions.Options;
@@ -196,10 +195,8 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
             }
         }
     }
-
     ```
-
-4. Next, update `ConfigureServices` method in the `Startup.cs` file:
+2.  Next, update `ConfigureServices` method in the `Startup.cs` file:
 
     ```csharp
     public void ConfigureServices(IServiceCollection services)
@@ -215,7 +212,6 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
             .Build();
     }
     ```
+3.  Build and run the website. Your members can now login with their Azure AD credentials.
 
-5. Build and run the website. Your members can now login with their Azure AD credentials.
-
-    ![AD Login Screen](images/AD_Login_Members.png)
+    ![AD Login Screen](images/AD\_Login\_Members.png)

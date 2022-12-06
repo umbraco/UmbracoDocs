@@ -1,9 +1,9 @@
 ---
-meta.Title: "Querying Umbraco Heartcore with GraphQL"
-description: "Learn how to query Umbraco Heartcore with GraphQL."
+meta.Title: Querying Umbraco Heartcore with GraphQL
+description: Learn how to query Umbraco Heartcore with GraphQL.
 ---
 
-# Querying Umbraco Heartcore with GraphQL
+# Querying with GraphQL
 
 In this tutorial we will be looking at how we can fetch data from Umbraco Heartcore using GraphQL.
 
@@ -27,15 +27,12 @@ In that folder create the following Document Types:
 
 Add a new group called **Content** with the following properties:
 
-<table border="0">
-<col width="130">
-<col width="400">
-<tr align=left><th>Name</th><th>Alias</th><th>Property Editor</th><th>Property Editor Configuration</th></tr>
-<tr valign=top><td>Title</td><td>title</td><td>Textstring</td><td>Use defaults</td></tr>
-<tr valign=top><td>Text</td><td>text</td></td><td>Rich Text Editor</td><td>Use defaults</td></tr>
-<tr valign=top><td>Image</td><td>image</td></td><td>Media Picker</td><td>Pick multiple items: not checked<br>Pick only images: checked<br>Disable folder select: checked</td></tr>
-<tr><td>Show large image</td><td>showLargeImage</td valign=top></td><td>Checkbox</td><td>Use defaults</td></tr>
-</table>
+| Name             | Alias          | Property Editor  | Property Editor Configuration                                                                          |
+| ---------------- | -------------- | ---------------- | ------------------------------------------------------------------------------------------------------ |
+| Title            | title          | Textstring       | Use defaults                                                                                           |
+| Text             | text           | Rich Text Editor | Use defaults                                                                                           |
+| Image            | image          | Media Picker     | <p>Pick multiple items: not checked<br>Pick only images: checked<br>Disable folder select: checked</p> |
+| Show large image | showLargeImage | Checkbox         | Use defaults                                                                                           |
 
 Then under permissions check **Element Type**
 
@@ -47,19 +44,16 @@ Then under permissions check **Element Type**
 
 Add a new group called **Content** with the following properties:
 
-<table border="0">
-<col width="130">
-<col width="400">
-<tr align=left><th>Name</th><th>Alias</th><th>Property Editor</th><th>Property Editor Configuration</th></tr>
-<tr valign=top><td>Image</td><td>image</td></td><td>Media Picker</td><td>Pick multiple items: not checked<br>Pick only images: checked<br>Disable folder select: checked</td></tr>
-<tr valign=top><td>Title</td><td>title</td><td>Textstring</td><td>Use defaults</td></tr>
-<tr valign=top><td>Text</td><td>text</td></td><td>Textarea</td><td>Use defaults</td></tr>
-<tr valign=top><td>Link</td><td>link</td></td><td>Multi Url Picker</td><td>Max number of items: 1</td></tr>
-</table>
+| Name  | Alias | Property Editor  | Property Editor Configuration                                                                          |
+| ----- | ----- | ---------------- | ------------------------------------------------------------------------------------------------------ |
+| Image | image | Media Picker     | <p>Pick multiple items: not checked<br>Pick only images: checked<br>Disable folder select: checked</p> |
+| Title | title | Textstring       | Use defaults                                                                                           |
+| Text  | text  | Textarea         | Use defaults                                                                                           |
+| Link  | link  | Multi Url Picker | Max number of items: 1                                                                                 |
 
 Then under permissions check **Element Type**
 
----
+***
 
 Then create another folder called **Compositions** and create the following Document Types in that folder:
 
@@ -71,12 +65,9 @@ Then create another folder called **Compositions** and create the following Docu
 
 Add a new group called **Elements** with the following properties:
 
-<table border="0">
-<col width="130">
-<col width="400">
-<tr align=left><th>Name</th><th>Alias</th><th>Property Editor</th><th>Property Editor Configuration</th></tr>
-<tr valign=top><td>Elements</td><td>elements</td><td>Nested Content</td><td>Document Types:<br>Element Type: Text and image, Group: Content, Template: {{title}}<br>Confirm Deletes: checked<br>Show icons: checked<br>Hide label: checked</td></tr>
-</table>
+| Name     | Alias    | Property Editor | Property Editor Configuration                                                                                                                                         |
+| -------- | -------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Elements | elements | Nested Content  | <p>Document Types:<br>Element Type: Text and image, Group: Content, Template: {{title}}<br>Confirm Deletes: checked<br>Show icons: checked<br>Hide label: checked</p> |
 
 ![Nested Content Configured with Elements](images/nested-content-elements.png)
 
@@ -92,14 +83,11 @@ Then click the **Reorder** button and change the value for **Elements** from `0`
 
 Add a new group called **Hero** with the following properties:
 
-<table border="0">
-<col width="130">
-<col width="400">
-<tr align=left><th>Name</th><th>Alias</th><th>Property Editor</th><th>Property Editor Configuration</th></tr>
-<tr valign=top><td>Image</td><td>heroImage</td><td>Media Picker</td><td>Pick multiple items: not checked<br>Pick only images: checked<br>Disable folder select: checked</td></tr>
-<tr valign=top><td>Title</td><td>heroTitle</td><td>Textstring</td><td>Use defaults</td></tr>
-<tr valign=top><td>Subtitle</td><td>heroSubtitle</td><td>Textstring</td><td>Use defaults</td></tr>
-</table>
+| Name     | Alias        | Property Editor | Property Editor Configuration                                                                          |
+| -------- | ------------ | --------------- | ------------------------------------------------------------------------------------------------------ |
+| Image    | heroImage    | Media Picker    | <p>Pick multiple items: not checked<br>Pick only images: checked<br>Disable folder select: checked</p> |
+| Title    | heroTitle    | Textstring      | Use defaults                                                                                           |
+| Subtitle | heroSubtitle | Textstring      | Use defaults                                                                                           |
 
 ### Unique Selling Points Composition
 
@@ -109,13 +97,10 @@ Add a new group called **Hero** with the following properties:
 
 Add a new group called **Unique Selling Points** with the following properties:
 
-<table border="0">
-<col width="130">
-<col width="400">
-<tr><th>Name</th><th>Alias</th><th>Property Editor</th><th>Property Editor Configuration</th></tr>
-<tr valign=top><td>Title</td><td>uniqueSellingPointsTitle</td><td>Textstring</td><td>Document Types:<br>Use defaulst</td></tr>
-<tr valign=top><td>Unique Selling Points</td><td>uniqueSellingPoints</td><td>Nested Content</td><td>Document Types:<br>Element Type: Unique Selling Point, Group: Content, Template: {{title}}<br>Confirm Deletes: checked<br>Show icons: not checked<br>Hide label: checked</td></tr>
-</table>
+| Name                  | Alias                    | Property Editor | Property Editor Configuration                                                                                                                                                   |
+| --------------------- | ------------------------ | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Title                 | uniqueSellingPointsTitle | Textstring      | <p>Document Types:<br>Use defaulst</p>                                                                                                                                          |
+| Unique Selling Points | uniqueSellingPoints      | Nested Content  | <p>Document Types:<br>Element Type: Unique Selling Point, Group: Content, Template: {{title}}<br>Confirm Deletes: checked<br>Show icons: not checked<br>Hide label: checked</p> |
 
 ![Nested Content Configured with Unique Selling Points](images/nested-content-unique-selling-points.png)
 
@@ -123,7 +108,7 @@ Then click the **Reorder** button and change the value for **Elements** from `0`
 
 ![Unique Selling Points Composition Reorder](images/unique-selling-points-composition-reorder.png)
 
----
+***
 
 At the root create the following Document Types:
 
@@ -145,13 +130,10 @@ Click on **Compositions** and select **Elements Composition** and **Hero Composi
 
 Add a new group called **Footer** with the following properties:
 
-<table border="0">
-<col width="130">
-<col width="400">
-<tr align=left><th>Name</th><th>Alias</th><th>Property Editor</th><th>Property Editor Configuration</th></tr>
-<tr valign=top><td>Title</td><td>footerTitle</td><td>Textstring</td><td>Use defaults</td></tr>
-<tr valign=top><td>Links</td><td>footerLinks</td><td>Multi Url Picker</td><td>Use defaults</td></tr>
-</table>
+| Name  | Alias       | Property Editor  | Property Editor Configuration |
+| ----- | ----------- | ---------------- | ----------------------------- |
+| Title | footerTitle | Textstring       | Use defaults                  |
+| Links | footerLinks | Multi Url Picker | Use defaults                  |
 
 Then click on **Compositions** and select **Elements Composition**, **Hero Composition** and **Unique Selling Points Composition**, click on **Submit**.
 
@@ -173,7 +155,7 @@ The GraphQL endpoint accepts `POST` requests with the content type `application/
 }
 ```
 
-For the rest of this tutorial the GraphQL queries are written in plain text that can be executed with the [GraphQL Playground](../getting-started/graphql-playground.md/).
+For the rest of this tutorial the GraphQL queries are written in plain text that can be executed with the [GraphQL Playground](../getting-started/graphql-playground.md).
 
 Lets start with a basic query that fetches the `name`, `url`, and `heroTitle` properties from the Frontpage.
 
@@ -222,7 +204,6 @@ A fragment allows us to query data on the underlying concrete type.
     }
   }
 }
-
 ```
 
 This returns the following JSON:
@@ -244,7 +225,7 @@ This returns the following JSON:
 
 The query is fetching the `name` field which exists on the `Content` interface, it also fetches the `heroTitle`, `heroSubtitle` and `heroImage` on the `Frontpage` type.
 
-Since the `heroImage` is a Media picker we can pass arguments to the `url` field telling the server to generate an url with the [Image Cropper](../api-documentation/graphql/schema-generation.md/#imagecropper) query string parameters.
+Since the `heroImage` is a Media picker we can pass arguments to the `url` field telling the server to generate an url with the [Image Cropper](../api-documentation/graphql/schema-generation.md#imagecropper) query string parameters.
 
 ### Querying Composition Fields
 
@@ -353,7 +334,6 @@ We can even combine the two queries into a single query:
     }
   }
 }
-
 ```
 
 In the query above we are also using field aliases, this means that in the response data `frontpage` will be named `global` and `children` will be named `mainNavigation`.
@@ -398,7 +378,6 @@ In the query above we are also using field aliases, this means that in the respo
 }
 ```
 
-
 ### Using Variables
 
 You might have noticed that the `url` argument is hardcoded in the query. This means that we will always get back the Content for that url. What we want is to pass the argument to the query dynamically.
@@ -430,7 +409,6 @@ And then we pass the variable in a separate JSON property called `variables`
   }
 }
 ```
-
 
 ### Putting it all together
 

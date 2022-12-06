@@ -7,7 +7,7 @@ description: >-
 # Major Upgrades
 
 {% hint style="danger" %}
-## Umbraco 11 release
+Umbraco 11 release
 
 We currently do **not recommend** upgrading to Umbraco CMS version 11 on Cloud.
 
@@ -24,6 +24,12 @@ You will need to ensure the packages you use are available in the latest version
 #### **Breaking Changes**
 
 Make sure you know the [Breaking changes](broken-reference) in the latest version of Umbraco CMS.
+
+**Upgrading from Umbraco 9**
+
+If upgrading from Umbraco 9 to a later major version, follow the dropdowns named: _**"Upgrading from Umbraco 9"**_ in the steps of the guide_**.**_
+
+These are extra steps needed when going from Umbraco 9 to the latest major.
 {% endhint %}
 
 ## Prerequisites
@@ -105,7 +111,7 @@ With the packages and projects updated, it is time to make some changes to some 
 
 <details>
 
-<summary>Upgrading from 9 to 10</summary>
+<summary>Upgrading from Umbraco 9 - Update program.cs, appSettings.json and remove files.</summary>
 
 *   Update the `Program` class in the `Program.cs` file to the following:\
     using Umbraco.Cms.Web.Common.Hosting;
@@ -147,15 +153,14 @@ Apply this change to the following files as well:
 * **appsettings.Production.json**
 * **appsettings.Staging.json**
 
-<!---->
+Remove the following files and folders _manually_ from your local project:
 
-* Remove the following files and folders _manually_ from your local project:
-  * `/wwwroot/umbraco`
-  * `/umbraco/PartialViewMacros`
-  * `/umbraco/UmbracoBackOffice`
-  * `/umbraco/UmbracoInstall`
-  * `/umbraco/UmbracoWebsite`
-  * `/umbraco/config/lang`
+* `/wwwroot/umbraco`
+* `/umbraco/PartialViewMacros`
+* `/umbraco/UmbracoBackOffice`
+* `/umbraco/UmbracoInstall`
+* `/umbraco/UmbracoWebsite`
+* `/umbraco/config/lang`
 
 </details>
 
@@ -171,7 +176,7 @@ Apply this change to the following files as well:
 
 <details>
 
-<summary>Upgrading from Umbraco 9</summary>
+<summary>Upgrading from Umbraco 9 - Update global.json</summary>
 
 *   Update the `global.json` in the root repository folder to target the runtime Software Development Kit (SDK) for the latest version of [.NET 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0).\
     &#x20;
@@ -198,30 +203,31 @@ Once the project runs locally without any errors, the next step is to deploy and
 
 <details>
 
-<summary>Upgrading from Umbraco 9 </summary>
+<summary>Upgrading from Umbraco 9 - Remove files from the development environment.</summary>
 
-* Remove the folders mentioned above on the **Development** environment using KUDU from the `repository` and `wwwroot` folders.
-
-<!---->
-
-* Push the changes to the **Development** environment. See the Deploying from local to your environments article.
+* Remove the folders mentioned below on the **Development** environment using KUDU from the `repository` and `wwwroot` folders:
 
 <!---->
 
-* Test **everything** in the **Development** environment.
+* `/wwwroot/umbraco`
+* `/umbraco/PartialViewMacros`
+* `/umbraco/UmbracoBackOffice`
+* `/umbraco/UmbracoInstall`
+* `/umbraco/UmbracoWebsite`
+* `/umbraco/config/lang`
 
 </details>
 
 * Push the changes to the **Development** environment. See the [Deploying from local to your environments](../deployment/local-to-cloud.md) article.
 * Test **everything** in the **Development** environment.
 
-We highly recommend that you go through everything in your Development environment. This can help you identify any potential errors after the upgrade, and ensure that you are not deploying any issues onto your Live environment.
+We highly recommend that you go through everything in your Development environment. This can help you identify any potential errors after the upgrade and ensure that you are not deploying any issues onto your Live environment.
 
 ### Step 6: Going live
 
 <details>
 
-<summary>Upgrading from Umbraco 9</summary>
+<summary>Upgrading from Umbraco 9 -  Remove files from live the environment.</summary>
 
 Before deploying the upgrade to your Live environment, you will need to remove the folders you also removed from both your local instance and your Development environment.
 

@@ -1,6 +1,7 @@
 ---
 versionFrom: 9.3.0
 ---
+
 # Response Caching
 
 Response caching reduces the number of requests a client or proxy makes to a web server. See the Microsoft documentation for details of [Response caching in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/response?view=aspnetcore-6.0) and how to implement the [Response Caching Middleware](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/middleware?view=aspnetcore-6.0).
@@ -8,8 +9,6 @@ Response caching reduces the number of requests a client or proxy makes to a web
 ## Modify the `Cache-Control` header for Static Files
 
 Example class to allow the modification of the `Cache-Control` header for static assets by file extension, but excluding Umbraco BackOffice assets.
-
-
 
 ```csharp
 using System.IO;
@@ -74,13 +73,10 @@ namespace Umbraco.Docs.Samples.Web.Tutorials
 Register the service in `Startup.cs`
 
 ```csharp
-
 public void ConfigureServices(IServiceCollection services)
 {
 	services.AddTransient<IConfigureOptions<StaticFileOptions>, ConfigureStaticFileOptions>();
-
 ```
-
 
 ## Modify the `Cache-Control` header for ImageSharp.Web
 

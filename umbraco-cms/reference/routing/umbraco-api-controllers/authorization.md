@@ -1,12 +1,11 @@
 ---
 versionFrom: 9.0.0
 versionTo: 10.0.0
-meta.Title: "Umbraco WebApi Authorization"
-description: "How to secure your Umbraco Api controllers"
+meta.Title: Umbraco WebApi Authorization
+description: How to secure your Umbraco Api controllers
 ---
 
-
-# Authorization
+# Umbraco Api - Authorization
 
 _This section will describe how to secure your Umbraco Api controllers based on a users membership_
 
@@ -51,7 +50,6 @@ To secure your controller based on front-end membership use the attribute: `Umbr
 There are 3 parameters that can be supplied to control how the authorization works:
 
 ```csharp
-
 // Comma delimited list of allowed member types
 string AllowType
 
@@ -62,7 +60,7 @@ string AllowGroup
 string AllowMembers
 ```
 
-To allow all members, use the attribute without supplying any parameters. 
+To allow all members, use the attribute without supplying any parameters.
 
 You can apply these attributes at the controller level or at the action level.
 
@@ -83,7 +81,7 @@ public class ProductsController : UmbracoApiController
 
 This will only allow member's belonging to the group VIP to access any actions on the controller:
 
-```C#
+```
 [UmbracoMemberAuthorize("", "VIP", "")]
 public class ProductsController : UmbracoApiController
 {

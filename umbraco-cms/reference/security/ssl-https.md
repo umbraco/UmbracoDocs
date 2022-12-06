@@ -1,8 +1,11 @@
 ---
 versionFrom: 9.0.0
 versionTo: 10.0.0
-meta.Title: "Learn how to enforce the use of HTTPS (UseHttps) on your Umbraco websites."
-description: "In production environments it is highly recommend that you enforce the use of HTTPS (UseHttps). It grealy increases the general trust of your site and guards you against various attacks, like 'Man in the middle' and phising attacks."
+meta.Title: Learn how to enforce the use of HTTPS (UseHttps) on your Umbraco websites.
+description: >-
+  In production environments it is highly recommend that you enforce the use of
+  HTTPS (UseHttps). It grealy increases the general trust of your site and
+  guards you against various attacks, like 'Man in
 ---
 
 # HTTPS
@@ -12,7 +15,7 @@ We highly encourage the use of HTTPS on Umbraco websites especially in productio
 There are several benefits of HTTPS:
 
 * Trust - when your site is delivered over HTTPS your users will see that your site is secured, they are able to view the certificate assigned to your site and know that your site is legitimate
-* Removing an attack vector called ["Man in the middle"](https://owasp.org/www-community/attacks/Manipulator-in-the-middle_attack) (or network Sniffing)
+* Removing an attack vector called ["Man in the middle"](https://owasp.org/www-community/attacks/Manipulator-in-the-middle\_attack) (or network Sniffing)
 * Guards against [Phishing](https://en.wikipedia.org/wiki/Phishing), an attacker will have a hard time obtaining an authentic SSL certificate
 * Google likes HTTPS, it may help your site's rankings
 
@@ -46,8 +49,7 @@ This options does several things when it is turned on:
 
 ## Redirect traffic in code
 
-The .NET5+ way to handle this, is by adding this `HttpsRedirectionMiddleware` to your pipeline in `Startup.cs`.
-This can be done by adding `app.UseHttpsRedirection();` before the call to `app.UseUmbraco()` in the `Configure` method:
+The .NET5+ way to handle this, is by adding this `HttpsRedirectionMiddleware` to your pipeline in `Startup.cs`. This can be done by adding `app.UseHttpsRedirection();` before the call to `app.UseUmbraco()` in the `Configure` method:
 
 ```cs
 public class Startup
@@ -73,13 +75,11 @@ public class Startup
             });
     }
 }
-
 ```
 
 ## Redirect traffic on IIS
 
-Once you enable HTTPS for your site you should redirect all requests to your site to HTTPS, this can be done with an IIS rewrite rule.
-The IIS rewrite module needs to be installed for this to work, most hosting providers will have that enabled by default.
+Once you enable HTTPS for your site you should redirect all requests to your site to HTTPS, this can be done with an IIS rewrite rule. The IIS rewrite module needs to be installed for this to work, most hosting providers will have that enabled by default.
 
 In your `web.config` find or add the `<system.webServer><rewrite><rules>` section and put the following rule in there. This rule will redirect all requests for the site http://mysite.com URL to the secure https://mysite.com URL and respond with a permanent redirect status.
 
@@ -100,6 +100,6 @@ The rule includes an ignore for `localhost`. If you run your local environment o
 
 ## SSL versus TLS
 
-*In HTTPS, the communication protocol is encrypted using Transport Layer Security (TLS), or, formerly, its predecessor, Secure Sockets Layer (SSL)* - [wikipedia](https://en.wikipedia.org/wiki/HTTPS)
+_In HTTPS, the communication protocol is encrypted using Transport Layer Security (TLS), or, formerly, its predecessor, Secure Sockets Layer (SSL)_ - [wikipedia](https://en.wikipedia.org/wiki/HTTPS)
 
 While the deprecated SSL (2.0 and 3.0) are not supported anymore by modern browsers, some of the Umbraco configuration still uses SSL. But rest assured, that is **only** the name.

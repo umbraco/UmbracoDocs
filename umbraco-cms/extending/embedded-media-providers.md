@@ -1,9 +1,8 @@
 ---
 versionFrom: 9.0.0
 versionTo: 10.0.0
-meta.Title: "Umbraco Embed Providers"
-description: "A guide to creating a custom embed providers in Umbraco"
-
+meta.Title: Umbraco Embed Providers
+description: A guide to creating a custom embed providers in Umbraco
 ---
 
 # Embedded Media Providers
@@ -65,7 +64,7 @@ namespace Umbraco.Cms.Core.Media.EmbedProviders
 }
 ```
 
-If the provider to add supports the *OEmbed* format for embedding a representation of a Url in a website, then make use of the `EmbedProviderBase` base methods to implement the request:
+If the provider to add supports the _OEmbed_ format for embedding a representation of a Url in a website, then make use of the `EmbedProviderBase` base methods to implement the request:
 
 ```csharp
     public override string GetMarkup(string url, int maxWidth = 0, int maxHeight = 0)
@@ -79,7 +78,7 @@ If the provider to add supports the *OEmbed* format for embedding a representati
 
 ### Adding a new OEmbed Provider Example
 
-Let's allow our editors to embed artwork from the popular DeviantArt website - the world's largest online social community for artists and art enthusiasts. We can see they have information on using OEmbed: <https://www.deviantart.com/developers/oembed>. The format of their OEmbed implementation returns a JSON format, from a url `https://backend.deviantart.com/oembed?url=[urltoembed]`. We'll need to use the `EmbedProviderBase` and the `base.GetJsonResponse` method. We can see 'links' to media shared on DeviantArt are in the format: `https://fav.me/[uniquemediaidentifier]` so we'll need a regex to match any urls pasted into the embed panel that start with *fav.me*, achieved by setting the `UrlSchemeRegex` property.
+Let's allow our editors to embed artwork from the popular DeviantArt website - the world's largest online social community for artists and art enthusiasts. We can see they have information on using OEmbed: [https://www.deviantart.com/developers/oembed](https://www.deviantart.com/developers/oembed). The format of their OEmbed implementation returns a JSON format, from a url `https://backend.deviantart.com/oembed?url=[urltoembed]`. We'll need to use the `EmbedProviderBase` and the `base.GetJsonResponse` method. We can see 'links' to media shared on DeviantArt are in the format: `https://fav.me/[uniquemediaidentifier]` so we'll need a regex to match any urls pasted into the embed panel that start with _fav.me_, achieved by setting the `UrlSchemeRegex` property.
 
 The Provider would look like this:
 
@@ -119,7 +118,6 @@ namespace MyNamespace
         }
     }
 }
-
 ```
 
 #### Register the provider with the OEmbedProvidersCollection
@@ -188,7 +186,6 @@ namespace MyNamespace
         }
     }
 }
-
 ```
 
 Here the markup to embed has been manually constructed based upon the iframe video player, no request to an Api endpoint is made...
@@ -209,7 +206,6 @@ namespace MyNamespace
             => builder.OEmbedProviders().Append<AzureVideoEmbedProvider>();
     }
 }
-
 ```
 
 Now editors can embed Azure Media video Urls in the format: `//amssamples.streaming.mediaservices.windows.net/3b970ae0-39d5-44bd-b3a3-3136143d6435/AzureMediaServicesPromo.ism/manifest`.
