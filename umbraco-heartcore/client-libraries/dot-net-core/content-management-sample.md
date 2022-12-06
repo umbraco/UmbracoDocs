@@ -1,6 +1,6 @@
 # Content Management Sample
 
-This sample guide will cover how you can access and work with the [Content Management API](../../../API-Documentation/Content-Management) from the client library.
+This sample guide will cover how you can access and work with the [Content Management API](../../api-documentation/content-management/) from the client library.
 
 ## Requirements
 
@@ -45,14 +45,14 @@ This sample guide will cover how you can access and work with the [Content Manag
     }
     ```
 
-:::note
+{% hint style="info" %}
 If you don't want to use dependency injection, you can manually create an instance of the `ContentManagementService` class. The constructor requires that you know the project alias and your API key.
 
 ```csharp
 var managementService = new ContentManagementService("your-project-alias", "your-api-key");
 ```
 
-:::
+{% endhint %}
 
 Now you are ready to start using the `ContentManagementService`.
 
@@ -104,9 +104,9 @@ The `ContentManagementService` has one method for creating content.
     var newContent = await _contentManagementService.Content.Create(yourContentObject);
     ```
 
-    :::note
-    You can create content programmatically by following the [Create content programmatically](../../../../Reference/Management/Services/ContentService/create-content-programmatically.md) guide.
-    :::
+{% hint style="info" %}
+You can create content programmatically by following the [Create content programmatically](../../../umbraco-cms/reference/management/services/contentservice/create-content-programmatically.md) guide.
+{% endhint %}
 
 ### Update Content
 
@@ -120,9 +120,9 @@ The `ContentManagementService` has one method for updating content.
     var updatedContent = await _contentManagementService.Content.Update(yourContentObject);
     ```
 
-    :::note
-    You can create content programmatically by following the [Create content programmatically](../../../../Reference/Management/Services/ContentService/create-content-programmatically.md) guide.
-    :::
+{% hint style="info" %}
+You can create content programmatically by following the [Create content programmatically](../../../umbraco-cms/reference/management/services/contentservice/create-content-programmatically.md) guide.
+{% endhint %}
 
 ### Publish Content
 
@@ -186,7 +186,7 @@ The `ContentManagementService` has one method for deleting content.
 
 When working with media, the `ContentManagementService` can Get, Create, Update and Delete media.
 
-:::note
+{% hint style="info" %}
 For Media you create programmatically, you have to use the "raw" property values that Umbraco expects for the specific property editor.
 
 The different scenarios are:
@@ -209,7 +209,7 @@ The different scenarios are:
     media.SetValue("umbracoFile", new { src = fileName }, new FileInfoPart(new FileInfo(imagePath), fileName, $"image/{Path.GetExtension(imagePath).Trim('.')}"));
     ```
 
-:::
+{% endhint %}
 
 ### Get Media
 
