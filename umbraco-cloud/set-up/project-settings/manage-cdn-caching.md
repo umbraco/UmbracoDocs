@@ -1,6 +1,6 @@
 # CDN Caching and Optimizations
 
-Once you have [added your hostnames](https://our.umbraco.com/Documentation/Umbraco-Cloud/Set-Up/Manage-Hostnames/) to your Umbraco Cloud project, it's possible to configure certain CDN Caching and minification options. This can be done for all or for specific hostnames within your project.
+After [adding hostnames](https://our.umbraco.com/Documentation/Umbraco-Cloud/Set-Up/Manage-Hostnames/) to your project, it's possible to configure Content Delivery Network (CDN) Caching and minification. This can be done for all or for specific hostnames within your project.
 
 These caching options all relate to the traffic that goes through your hostname from the origin (Umbraco Cloud) to the end-user i.e. the traffic of your website and assets from the webserver to the browser.
 
