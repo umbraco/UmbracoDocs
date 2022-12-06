@@ -135,8 +135,10 @@ Example:
 @inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
     var item = Model.Value<IPublishedElement>("myPropertyAlias");
+    if (item != null) {
+        <h3>@item.Value("heading")</h3>
+    }
 }
-<h3>@item.Value("heading")</h3>
 ```
 
 ## Creating Nested Content programmatically
