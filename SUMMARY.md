@@ -171,7 +171,7 @@
       * [Macro Errors](umbraco-cms/extending/health-check/guides/macroerrors.md)
       * [Notification Email Settings](umbraco-cms/extending/health-check/guides/notificationemail.md)
       * [SMTP](umbraco-cms/extending/health-check/guides/smtp.md)
-      * [Cookie hijacking and protocol downgrade attacks Protection (Strict-Transport-Security](umbraco-cms/extending/health-check/guides/stricttransportsecurityheader.md)
+      * [Strict-Transport-Security Header](umbraco-cms/extending/health-check/guides/stricttransportsecurityheader.md)
   * [Language Files & Localization](umbraco-cms/extending/language-files.md)
   * [Backoffice Search](umbraco-cms/extending/backoffice-search.md)
   * [Backoffice Tours](umbraco-cms/extending/backoffice-tours.md)
