@@ -8,7 +8,7 @@ meta.Description: "A guide to getting started with integration testing in Umbrac
 
 These examples are for Umbraco 10.
 They use [NUnit](https://nunit.org/) as the testing framework. Leveraging [Umbraco.Cms.Tests.Integration](https://github.com/umbraco/Umbraco-CMS/tree/v10/contrib/tests/Umbraco.Tests.Integration) providing base classes.
-Beware that the Nuget package has an issue which was fixed with v10.3.1 of the package. So it is recommended to use tis version.
+Beware that the Nuget package has an issue fixed in v10.3.1. So it is recommended to use this version.
 
 ## Getting started
 
@@ -18,7 +18,7 @@ First you have to create a new UnitTest project based on NUnit and install the p
 //Create project
 dotnet new nunit
 //Install Umbraco.Tests.Integration package
-dotnet add package Umbraco.Tests.Integration
+dotnet add package Umbraco.Cms.Tests.Integration
 ```
 
 After the project is created and the package is added we have to create an ```appsettings.Tests.json``` file and a GlobalSetup class.
@@ -204,7 +204,7 @@ public class BackOfficeAssetsControllerTests: UmbracoTestServerTestBase
     public async Task EnsureSuccessStatusCode()
     {
         // Arrange
-        var url = PrepareUrl<BackOfficeAssetsController>(x=>x.GetSupportedLocales());
+        var url = PrepareApiControllerUrl<BackOfficeAssetsController>(x => x.GetSupportedLocales());
 
         // Act
         var response = await Client.GetAsync(url);
@@ -215,8 +215,9 @@ public class BackOfficeAssetsControllerTests: UmbracoTestServerTestBase
 }
 ```
 
-In this example you have to note two things:
+In this example you have to note three things:
 
+- You still need the `CustomGlobalSetupTeardown` class
 - The PrepareUrl to get the URL of an Action and ensure all services use the URL information when requested. 
 - The Client which is a normal HttpClient, but the base URL points to the test server that is set up for each test.
 
