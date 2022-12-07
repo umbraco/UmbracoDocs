@@ -195,7 +195,7 @@ Allows excluding segements of the content tree from the workflow model. This is 
 
 #### EnableContentReviews (bool)
 
-When true, the content review engine will monitor publication dates to determine content review requirements
+When true, the content review engine will monitor publication dates to determine content review requirements.
 
 #### ReviewPeriod (int)
 
