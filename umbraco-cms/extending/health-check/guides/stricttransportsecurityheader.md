@@ -1,11 +1,14 @@
 ---
 versionFrom: 9.0.0
 versionTo: 10.0.0
+description: >-
+  Learn about the health checks that check for cookie hijacking and protocol
+  downgrade attacks protection.
 ---
 
-# Health check: Cookie hijacking and protocol downgrade attacks Protection (Strict-Transport-Security Header (HSTS))
+# Strict-Transport-Security Header
 
-_Checks if your site, when running with HTTPS, contains the Strict-Transport-Security Header (HSTS)._
+Checks if your site, when running with HTTPS, contains the Strict-Transport-Security Header (HSTS).
 
 ## How to fix this health check
 
@@ -16,9 +19,11 @@ Enabling HSTS on a domain will cause browsers to only use HTTPS (not HTTP) to co
 {% endhint %}
 
 ### Using the UseHsts extension method
+
 ASP.NET Core implements HSTS with the `UseHsts` extension method.
 
-You can add `UseHsts` after the `env.IsDevelopment()` check in `Startup.cs`.
+You can add `UseHsts` after the `env.IsDevelopment()` check-in `Startup.cs`.
+
 ```csharp
 public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 {
@@ -33,6 +38,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     //...
 }
 ```
+
 This example only enables HSTS if the app is not running in development mode. `UseHsts` isn't recommended in development because the HSTS settings are highly cacheable by browsers.
 
-Full details of `UseHsts`, and additional configuration, can be found in the [ASP.NET Core documentation](https://learn.microsoft.com/en-us/aspnet/core/security/enforcing-ssl?view=aspnetcore-5.0&tabs=visual-studio#http-strict-transport-security-protocol-hsts-1).
+Full details of `UseHsts`, and additional configuration, can be found in the [ASP.NET Core documentation](https://learn.microsoft.com/en-us/aspnet/core/security/enforcing-ssl?view=aspnetcore-5.0\&tabs=visual-studio#http-strict-transport-security-protocol-hsts-1).

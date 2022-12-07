@@ -171,7 +171,7 @@
       * [Macro Errors](umbraco-cms/extending/health-check/guides/macroerrors.md)
       * [Notification Email Settings](umbraco-cms/extending/health-check/guides/notificationemail.md)
       * [SMTP](umbraco-cms/extending/health-check/guides/smtp.md)
-      * [Cookie hijacking and protocol downgrade attacks Protection (Strict-Transport-Security](umbraco-cms/extending/health-check/guides/stricttransportsecurityheader.md)
+      * [Strict-Transport-Security Header](umbraco-cms/extending/health-check/guides/stricttransportsecurityheader.md)
   * [Language Files & Localization](umbraco-cms/extending/language-files.md)
   * [Backoffice Search](umbraco-cms/extending/backoffice-search.md)
   * [Backoffice Tours](umbraco-cms/extending/backoffice-tours.md)
@@ -280,6 +280,7 @@
       * [PDF indexes and multisearchers](umbraco-cms/reference/searching/examine/pdfindex-multisearcher.md)
       * [quick-start](umbraco-cms/reference/searching/examine/quick-start.md)
   * [Using Notifications](umbraco-cms/reference/notifications/README.md)
+    * [CacheRefresher Notifications](umbraco-cms/reference/notifications/cacherefresher-notifications.md)
     * [ContentService Notifications](umbraco-cms/reference/notifications/contentservice-notifications.md)
     * [ContentTypeService Notifications](umbraco-cms/reference/notifications/contentypeservice-notifications.md)
     * [Creating And Publishing Notifications](umbraco-cms/reference/notifications/creating-and-publishing-notifications.md)
@@ -291,6 +292,7 @@
     * [MediaTypeService Notifications](umbraco-cms/reference/notifications/mediatypeservice-notifications.md)
     * [MemberService Notifications](umbraco-cms/reference/notifications/memberservice-notifications.md)
     * [MemberTypeService Notifications](umbraco-cms/reference/notifications/membertypeservice-notifications.md)
+    * [RelationService Notifications](umbraco-cms/reference/notifications/relationservice-notifications.md)
     * [Sending Allowed Children Notification](umbraco-cms/reference/notifications/sendingallowedchildrennotifications.md)
     * [Umbraco Application Lifetime Notifications](umbraco-cms/reference/notifications/umbracoapplicationlifetime-notifications.md)
     * [EditorModel Notifications](umbraco-cms/reference/notifications/editormodel-notifications/README.md)
@@ -610,6 +612,7 @@
   * [Node.js Client library](umbraco-heartcore/client-libraries/node-js.md)
   * [.NET Client library](umbraco-heartcore/client-libraries/dot-net-core/README.md)
     * [MVC Sample](umbraco-heartcore/client-libraries/dot-net-core/mvc-samples.md)
+    * [Content Management Sample](umbraco-heartcore/client-libraries/dot-net-core/content-management-sample.md)
 * [Versions and updates](umbraco-heartcore/versions-and-updates.md)
 * [Tutorials](umbraco-heartcore/tutorials/README.md)
   * [Custom Grid Editors](umbraco-heartcore/tutorials/creating-a-custom-grid-editor.md)
@@ -691,6 +694,24 @@
 * [Upgrading](umbraco-deploy/upgrades/README.md)
   * [Version Specific Upgrade Details](umbraco-deploy/upgrades/version-specific.md)
 * [Troubleshooting](umbraco-deploy/troubleshooting.md)
+
+## Umbraco Workflow
+
+* [What is Umbraco Workflow?](umbraco-workflow/README.md)
+* [Installation](umbraco-workflow/installing-workflow.md)
+* [Licensing](umbraco-workflow/licensing.md)
+* [Upgrading](umbraco-workflow/upgrading-workflow.md)
+  * [Migrate from Plumber to Workflow](umbraco-workflow/migrating-workflow.md)
+* [Dashboards and Buttons](umbraco-workflow/dashboards-and-buttons.md)
+* [Content App](umbraco-workflow/workflow-content-app.md)
+* [Workflow Section](umbraco-workflow/workflow-section.md)
+  * [Active Workflows](umbraco-workflow/active-workflows.md)
+  * [Approval Groups](umbraco-workflow/approval-groups.md)
+  * [Content Reviews](umbraco-workflow/content-reviews.md)
+  * [Workflow History](umbraco-workflow/workflow-history.md)
+  * [Workflow Settings](umbraco-workflow/workflow-settings.md)
+* [Notifications](umbraco-workflow/notifications.md)
+* [Configuration](umbraco-workflow/configuration.md)
 
 ## Other resources
 
