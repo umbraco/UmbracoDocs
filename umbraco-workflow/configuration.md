@@ -57,7 +57,7 @@ A `string` value representing the path to the email notification templates.
 
 #### DateFormats
 
-An instance of `DateTimeSettings` allowing customisation of date string formats. The `DateTimeSettings` class contains properties for long and short date and time strings, plus a long date variation with no minutes.
+An instance of `DateTimeSettings` allowing customization of date string formats. The `DateTimeSettings` class contains properties for long and short date and time strings, plus a long date variation with no minutes.
 
 #### Colors
 
