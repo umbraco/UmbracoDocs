@@ -36,7 +36,7 @@ To install via Visual Studio, follow these steps:
 2. Go to **Tools** -> **NuGet Package Manager** -> **Manage NuGet Packages for Solution...**.
 3. Browse for **Umbraco.Workflow**.
 4. Select the appropriate version from the Version drop-down depending on the Umbraco version you are using.
-5.  Click Install.\
+5.  Click Install.
     &#x20;
 
     <figure><img src="images/VS_Installation.png" alt=""><figcaption></figcaption></figure>
