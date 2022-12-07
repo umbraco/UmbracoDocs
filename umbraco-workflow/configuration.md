@@ -173,7 +173,7 @@ The number of days after which to start sending reminder emails for incomplete w
 
 #### EditUrl (string)
 
-The URL at which editors access the BackOffice eg `https://edit.mysite.com`. Used for generating links to nodes in email notifications. Must be fully qualified and not include the `/umbraco` path
+The URL at which editors access the BackOffice eg `https://edit.mysite.com`. Used for generating links to nodes in email notifications. Must be fully qualified and not include the `/umbraco` path.
 
 #### SiteUrl (string)
 
