@@ -203,7 +203,7 @@ Sets the number of days between mandatory reviews. This is a global value which 
 
 #### ReminderThreshold (int)
 
-Sets the date on which to send notification emails, prior to the review date elapsing. For example, if the `ReviewPeriod` is 20, and the `ReminderThreshold` is 3, notifications will be sent in 17 days, or 3 days before the review date.
+Sets the date on which to send notification emails, prior to the review date elapsing. For example, if the `ReviewPeriod` is 20 and the `ReminderThreshold` is 3, notifications will be sent in 17 days or 3 days before the review date.
 
 #### SendNotifications (bool)
 
