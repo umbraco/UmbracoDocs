@@ -137,7 +137,7 @@ These are complex types and not recommended to have values set from Configuratio
 Sets the workflow type to one of Explicit (0), Implicit (1), or Exclude (2):
  - Explicit requires all steps be approved, including steps where the original change author is a group member
  - Implicit auto-approves steps where the author is a member of the approving group
- - Exclude behaves similar to Explicit, but excludes the original author from any notifications (ie the author can not approve their own work)
+ - Exclude behaves similar to Explicit, but excludes the original author from any notifications (that is the author can not approve their own work)
 
 #### LockIfActive (bool)
 
