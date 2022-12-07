@@ -19,9 +19,11 @@ public void Handle(SendingContentNotification notification)
         new UrlInfo($"/products/?id={notification.Content.Id}", true, null)
     };
 }
+```
 
 If the content item has multiple cultures, we can specify the link culture like this: 
 
+```C#
 public void Handle(SendingContentNotification notification)
 {
     notification.Content.Urls = new[]
