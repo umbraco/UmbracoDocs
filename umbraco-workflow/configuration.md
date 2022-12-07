@@ -61,7 +61,7 @@ An instance of `DateTimeSettings` allowing customization of date string formats.
 
 #### Colors
 
-An instance of `ColorSettings` allowing customisation of colors used in email notifications. Allows setting alternate values for red, orange and green use to highlight workflow status in emails.
+An instance of `ColorSettings` allowing customization of colors used in email notifications. Allows setting alternate values for red, orange, and green use to highlight workflow status in emails.
 
 
 ## SettingsCustomization
