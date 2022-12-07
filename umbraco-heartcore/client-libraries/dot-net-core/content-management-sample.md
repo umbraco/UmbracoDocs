@@ -29,7 +29,7 @@ This sample guide will cover how you can access and work with the [Content Manag
     }
     ```
     {% endcode %}
-    
+
 3.  Register the `ContentManagementService` to your dependency injection container. The registration of the `ContentManagementService` is handled by the `AddUmbracoHeartocore` extension method.
 
     {% code title="Program.cs / Startup.cs" %}
@@ -72,7 +72,7 @@ When working with content, the `ContentManagementService` can Get, Create, Updat
 
 The `ContentManagementService` has three methods for getting content.
 
-#### **`GetRoot()`**&#x20;
+#### `GetRoot()`&#x20;
 
 Gets all content at the root of the tree.
 
@@ -82,7 +82,7 @@ To use this method, call the method on the `ContentManagementService` instance:
 var content = await _contentManagementService.Content.GetRoot();
 ```
 
-#### GetById(Guid id)
+#### `GetById(Guid id)`
 
 Gets a specific content item matching a GUID.
 
@@ -94,7 +94,7 @@ var content = await _contentManagementService.Content.GetById(yourGuidObject);
 var content = await _contentManagementService.Content.GetById(Guid.Parse("your-guid-as-a-string"));
 ```
 
-#### GetChildren(Guid id)
+#### `GetChildren(Guid id)`
 
 Gets all content that is a child of a specific content item.
 
@@ -110,7 +110,7 @@ var content = await _contentManagementService.Content.GetChildren(Guid.Parse("yo
 
 The `ContentManagementService` has one method for creating content.
 
-#### Create(Content content)
+#### `Create(Content content)`
 
 Creates a new content item based on the passed-in `Content` object.
 
@@ -124,7 +124,7 @@ var newContent = await _contentManagementService.Content.Create(yourContentObjec
 
 The `ContentManagementService` has one method for updating content.
 
-#### Update(Content content)
+#### `Update(Content content)`
 
 Updates an existing content item based on the passed-in `Content` object.
 
@@ -138,7 +138,7 @@ var updatedContent = await _contentManagementService.Content.Update(yourContentO
 
 The `ContentManagementService` has one method for publishing content.
 
-#### Publish(Guid id, string culture = "*")
+#### `Publish(Guid id, string culture = "*")`
 
 Publishes an existing content item based on the passed-in GUID and culture.
 
@@ -162,7 +162,7 @@ var publishedContent = await _contentManagementService.Content.Publish(Guid.Pars
 
 The `ContentManagementService` has one method for unpublishing content.
 
-#### Unpublish(Guid id, string culture = "*")
+#### `Unpublish(Guid id, string culture = "*")`
 
 Unpublishes an existing content item based on the passed-in GUID and culture.
 
@@ -186,7 +186,7 @@ var unpublishedContent = await _contentManagementService.Content.Unpublish(Guid.
 
 The `ContentManagementService` has one method for deleting content.
 
-#### Delete(Guid id)
+#### `Delete(Guid id)`
 
 Deletes an existing content item based on the passed-in GUID.
 
@@ -245,7 +245,7 @@ The different scenarios are:
 
 The `ContentManagementService` has three methods for getting media.
 
-#### GetRoot()
+#### `GetRoot()`
 
 Gets all media at the root of the tree.
 
@@ -255,7 +255,7 @@ To use this method, call the method on the `ContentManagementService` instance:
 var rootMedia = await _contentManagementService.Media.GetRoot();
 ```
 
-#### GetById(Guid id)
+#### `GetById(Guid id)`
 
 Gets a specific media item matching a GUID.
 
@@ -267,7 +267,7 @@ var media = await _contentManagementService.Media.GetById(yourGuidObject);
 var media = await _contentManagementService.Media.GetById(Guid.Parse("your-guid-as-a-string"));
 ```
 
-#### GetChildren(Guid id)
+#### `GetChildren(Guid id)`
 
 Gets all media that is a child of a specific media item.
 
@@ -283,7 +283,7 @@ var mediaChildren = await _contentManagementService.Media.GetChildren(Guid.Parse
 
 The `ContentManagementService` has one method for creating media.
 
-#### Create(Media media)
+#### `Create(Media media)`
 
 Creates a new media item based on the passed-in `Media` object.
 
@@ -297,7 +297,7 @@ var newMedia = await _contentManagementService.Media.Create(yourMediaObject);
 
 The `ContentManagementService` has one method for updating media.
 
-#### Update(Media media)
+#### `Update(Media media)`
 
 Updates an existing media item based on the passed-in `Media` object.
 
@@ -311,7 +311,7 @@ var updatedMedia = await _contentManagementService.Media.Update(yourMediaObject)
 
 The `ContentManagementService` has one method for deleting media.
 
-#### Delete(Guid id)
+#### `Delete(Guid id)`
 
 Deletes an existing media item based on the passed-in GUID.
 
