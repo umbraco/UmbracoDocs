@@ -70,9 +70,7 @@ When working with content, the `ContentManagementService` can Get, Create, Updat
 
 The `ContentManagementService` has three methods for getting content.
 
-<details>
-
-<summary><code>GetRoot()</code> </summary>
+#### **`GetRoot()`**&#x20;
 
 Gets all content at the root of the tree.
 
@@ -81,8 +79,6 @@ To use this method, call the method on the `ContentManagementService` instance:
 ```csharp
 var content = await _contentManagementService.Content.GetRoot();
 ```
-
-</details>
 
 <details>
 
@@ -134,10 +130,6 @@ var newContent = await _contentManagementService.Content.Create(yourContentObjec
 
 </details>
 
-{% hint style="info" %}
-You can create content programmatically by following the [Create content programmatically](../../../umbraco-cms/reference/management/services/contentservice/create-content-programmatically.md) guide.
-{% endhint %}
-
 ### Update Content
 
 The `ContentManagementService` has one method for updating content.
@@ -155,10 +147,6 @@ var updatedContent = await _contentManagementService.Content.Update(yourContentO
 ```
 
 </details>
-
-{% hint style="info" %}
-You can create content programmatically by following the [Create content programmatically](../../../umbraco-cms/reference/management/services/contentservice/create-content-programmatically.md) guide.
-{% endhint %}
 
 ### Publish Content
 
@@ -384,3 +372,7 @@ var deletedMedia = await _contentManagementService.Media.Delete(Guid.Parse("your
 ```
 
 </details>
+
+## Further reading
+
+* Learn how to [Create content programmatically](../../../umbraco-cms/reference/management/services/contentservice/create-content-programmatically.md).
