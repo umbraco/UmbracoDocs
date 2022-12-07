@@ -29,6 +29,7 @@ This sample guide will cover how you can access and work with the [Content Manag
     }
     ```
     {% endcode %}
+    
 3.  Register the `ContentManagementService` to your dependency injection container. The registration of the `ContentManagementService` is handled by the `AddUmbracoHeartocore` extension method.
 
     {% code title="Program.cs / Startup.cs" %}
@@ -39,6 +40,7 @@ This sample guide will cover how you can access and work with the [Content Manag
     });
     ```
     {% endcode %}
+
 4.  Inject the `ContentManagementService` into your non-static class.
 
     ```csharp
