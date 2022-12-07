@@ -308,7 +308,7 @@ Finally, we need to update the package.manifest file to load the additional cont
 }
 ```
 
-If all is set up fine we should now receive the 'Hello world' alert every time the dashboard is reloaded in the content section of Umbraco.
+If all is set up fine we should receive the 'Hello world' alert every time the dashboard is reloaded in the content section.
 
 ### Going further - Umbraco Angular Services and Directives
 
