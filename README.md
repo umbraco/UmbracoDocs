@@ -1,32 +1,26 @@
 ---
 meta.Title: Umbraco Documentation
 description: >-
-  Examples, tutorials, references, and best practices—everything you need to
-  build future-proof applications with Umbraco.
+  Welcome to the Umbraco Workflow Documentation. Here you can read all things
+  about how to work with Umbraco Workflow.
 layout: landing
 ---
 
-# Umbraco Documentation
-
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Umbraco CMS</strong></td><td>Everything you need to know when building your Umbraco website.</td><td></td><td><a href="getting-started/images/flexible_Email_hero_780x405px.png">flexible_Email_hero_780x405px.png</a></td><td><a href="umbraco-cms/">umbraco-cms</a></td></tr><tr><td><strong>Umbraco Cloud</strong></td><td>Learn how to get started with your Umbraco Cloud project.</td><td></td><td><a href=".gitbook/assets/Umbraco Cloud Update - Email hero - White - 780x405px@2xt.jpg">Umbraco Cloud Update - Email hero - White - 780x405px@2xt.jpg</a></td><td><a href="umbraco-cloud/getting-started/">getting-started</a></td></tr><tr><td><strong>Umbraco Heartcore</strong></td><td>Learn how to get the most out of your headless Umbraco solution.</td><td></td><td><a href="getting-started/developing-websites-with-umbraco/images/Headless_Email_hero_780x405px.png">Headless_Email_hero_780x405px.png</a></td><td><a href="umbraco-heartcore/">umbraco-heartcore</a></td></tr></tbody></table>
+# Workflow Documentation
 
 {% hint style="info" %}
-**Documentation for Umbraco 10+**
+**Test and feedback**
 
-This documentation covers the following major versions of Umbraco CMS:
+This documentation is currently only available through a direct link as we want to ensure a proper test phase before publishing the documentation publicly.
 
-* Umbraco 9 (until it is End of Life (EOL) on December 1st)
-* Umbraco 10 (LTS)
-* Umbraco 11
+The plan is to launch the Workflow documentation with the release of Umbraco Workflow on December 7th, 2022.
 
-If you are looking for documentation for older versions like Umbraco 7 and 8, you can find it on [our.umbraco.com](https://our.umbraco.com/Documentation).
-
-Read the Documentation and versions article to learn more about how we support and document multiple major versions.
+**Do you have feedback on the documentation?** Please send it to [docs@umbraco.com](mailto:docs@umbraco.com) or create an [Issue on the GitHub repository](https://github.com/umbraco/UmbracoDocs/issues).
 {% endhint %}
 
-### Add on products
+### Add on product
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Umbraco Forms</strong></td><td>Build and add forms to your Umbraco websites with Umbraco Forms.</td><td></td><td><a href="umbraco-forms/">umbraco-forms</a></td></tr><tr><td><strong>Umbraco Deploy</strong></td><td>Ensure smooth code and content deployments on your Umbraco projects.</td><td></td><td><a href="umbraco-deploy/">umbraco-deploy</a></td></tr><tr><td><strong>Umbraco Workflow</strong></td><td>Setup custom workflows for managing content on your Umbraco website.<br></td><td><a href="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/ikWFgd9u1a58foXzJLwC/">What is Umbraco Workflow?</a></td><td></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-type="content-ref"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Umbraco Workflow</strong></td><td>Setup multi-stage approval workflows for managing content on your Umbraco website.</td><td><a href="umbraco-workflow/">What is Umbraco Workflow?</a></td><td></td><td><a href="umbraco-workflow/">umbraco-workflow</a></td></tr></tbody></table>
 
 ## Contributing
 
@@ -36,16 +30,13 @@ Head over to the [Contribute section](contribute/) to start contributing to the 
 
 ## Quick links
 
-{% content-ref url="umbraco-cms/fundamentals/setup/install/" %}
-[install](umbraco-cms/fundamentals/setup/install/)
+{% content-ref url="umbraco-workflow/installing-workflow.md" %}
+[installing-workflow.md](umbraco-workflow/installing-workflow.md)
 {% endcontent-ref %}
 
-{% content-ref url="umbraco-cms/tutorials/creating-a-basic-website/" %}
-[creating-a-basic-website](umbraco-cms/tutorials/creating-a-basic-website/)
+{% content-ref url="umbraco-workflow/licensing.md" %}
+[licensing.md](umbraco-workflow/licensing.md)
 {% endcontent-ref %}
-
-{% content-ref url="umbraco-cms/tutorials/" %}
-[tutorials](umbraco-cms/tutorials/)
+{% content-ref url="umbraco-workflow/migrating-workflow.md" %}
+[migrating-workflow.md](umbraco-workflow/migrating-workflow.md)
 {% endcontent-ref %}
-
-***
