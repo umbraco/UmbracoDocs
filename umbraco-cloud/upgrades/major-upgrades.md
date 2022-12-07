@@ -164,7 +164,7 @@ Remove the following files and folders _manually_ from your local project:
 
 </details>
 
-### Step 4: Finishing the upgrade
+## Step 4: Finishing the upgrade
 
 * Update the Umbraco Forms-related files and folders according to the [Upgrading - version specific](../../umbraco-forms/installation/version-specific.md) article.
 * Choose your Database configuration:
@@ -197,7 +197,7 @@ Learn more about the `global.json` in the official [Microsoft docs.](https://lea
 
 </details>
 
-### Step 5: Deploy and test on Umbraco Cloud
+## Step 5: Deploy and test on Umbraco Cloud
 
 Once the project runs locally without any errors, the next step is to deploy and test on the Cloud Development environment.
 
@@ -206,8 +206,6 @@ Once the project runs locally without any errors, the next step is to deploy and
 <summary>Upgrading from Umbraco 9 - Remove files from the development environment.</summary>
 
 * Remove the folders mentioned below on the **Development** environment using KUDU from the `repository` and `wwwroot` folders:
-
-<!---->
 
 * `/wwwroot/umbraco`
 * `/umbraco/PartialViewMacros`
@@ -223,7 +221,7 @@ Once the project runs locally without any errors, the next step is to deploy and
 
 We highly recommend that you go through everything in your Development environment. This can help you identify any potential errors after the upgrade and ensure that you are not deploying any issues onto your Live environment.
 
-### Step 6: Going live
+## Step 6: Going live
 
 <details>
 
