@@ -20,7 +20,7 @@ public void Handle(SendingContentNotification notification)
     };
 }
 
-It is also possible to specify the culture:
+If the content item has multiple cultures, we can specify the link culture like this: 
 
 public void Handle(SendingContentNotification notification)
 {
