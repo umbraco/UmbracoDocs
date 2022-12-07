@@ -167,8 +167,6 @@ Here is an example where all types are taken intro consideration when limiting a
                 "+media/*", // show for all media types
                 "-member/premiumMembers", // hide for Member type 'premiumMembers'
                 "+member/*", // show for all other Member types
-                "-contentType/textPage", // hide on Content Type with alias 'textPage'
-                "+contentType/*", // show for all other Content types
             ]
         }
     ]
