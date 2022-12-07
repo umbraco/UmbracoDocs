@@ -87,7 +87,7 @@ Video example.
 
 ![Nuget Version Install](images/Nuget-Version-Install.png)
 
-## Upgrading Add-on packages
+### Upgrading Add-on packages
 
 Update the following packages as well:
 
