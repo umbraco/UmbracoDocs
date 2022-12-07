@@ -1,15 +1,13 @@
 ---
 meta.Title: Creating a Custom Dashboard
 meta.Description: A guide to creating a custom dashboard in Umbraco
-versionFrom: 8.0.0
-versionTo: 10.0.0
 ---
 
 # Creating a Custom Dashboard
 
 ## Overview
 
-This guide takes you through the steps to setup a Custom Dashboard in Umbraco.
+This guide takes you through the steps to set up a Custom Dashboard in Umbraco.
 
 ### What is a Dashboard?
 
@@ -44,7 +42,7 @@ This tutorial uses AngularJS with Umbraco, so it does not cover AngularJS itself
 * [AngularJS.org/tutorial](https://docs.angularjs.org/tutorial)
 * [Pluralsight](https://www.pluralsight.com/paths/angular-js)
 
-There are a lot of parallels with Creating a Property Editor. The tutorial '[Creating a Property Editor Tutorial](creating-a-property-editor/)' is worth a read through too.
+There are a lot of parallels with Creating a Property Editor. The tutorial '[Creating a Property Editor Tutorial](creating-a-property-editor/)' is worth a read too.
 
 ### The end result
 
@@ -56,7 +54,7 @@ The first thing we must do is create a new folder inside our site's '/App\_Plugi
 
 ## Creating the dashboard view
 
-Next, we will create an HTML file inside this folder called `WelcomeDashboard.html`. The HTML file will contain a fragment of a HTML document and does not need \<html>\<head>\<body> entities.
+Next, we will create an HTML file inside this folder called `WelcomeDashboard.html`. The HTML file will contain a fragment of an HTML document and does not need \<html>\<head>\<body> entities.
 
 Add the following HTML to the `WelcomeDashboard.html`.
 
@@ -105,12 +103,12 @@ You can specify multiple controls to appear on a particular tab, and multiple ta
 
 ### Add Language Keys
 
-After registering your dashboard, it will appear in the backoffice - however it will have it's dashboard alias \[WelcomeDashboard] wrapped in square brackets. This is because it is missing a language key. The language key allows people to provide a translation of the dashboard name in multilingual environments. To remove the square brackets - add a language key:
+After registering your dashboard, it will appear in the backoffice - however, it will have its dashboard alias \[WelcomeDashboard] wrapped in square brackets. This is because it is missing a language key. The language key allows people to provide a translation of the dashboard name in multilingual environments. To remove the square brackets - add a language key:
 
-You will need to create a _Lang_ folder in your custom dashboard folder and create a package specific language file: `~/App_Plugins/CustomWelcomeDashboard/Lang/en-US.xml`
+You will need to create a _Lang_ folder in your custom dashboard folder and create a package-specific language file: `~/App_Plugins/CustomWelcomeDashboard/Lang/en-US.xml`
 
 {% hint style="info" %}
-The `App_Plugins` version of the `Lang` directory is case sensitive on Linux systems, so make sure that it start with a capital `L`.
+The `App_Plugins` version of the `Lang` directory is case-sensitive on Linux systems, so make sure that it starts with a capital `L`.
 {% endhint %}
 
 {% code title="en-US.xml" lineNumbers="true" %}
@@ -168,7 +166,7 @@ As for the `localize` tag syntax in HTML, the area alias is combined with the ke
 <localize key="welcomeDashboard_heading">Default heading</localize>
 ```
 
-The xml for that specific key will look like this:
+The XML for that specific key will look like this:
 
 ```xml
     <area alias="welcomeDashboard">
@@ -176,7 +174,7 @@ The xml for that specific key will look like this:
     </area>
 ```
 
-The area and key aliases are combined and an underscore is added inbetween.
+The area and key aliases are combined and an underscore is added in between.
 
 ![Dashboard with translation keys](images/dashboard-untranslated-v10.png)
 
@@ -202,7 +200,7 @@ With the above steps completed, your dashboard is all set up to be translated ac
 </language>
 ```
 
-The backoffice language can be changed in the Users section, if you wish to test out the translations.
+The backoffice language can be changed in the Users section if you wish to test out the translations.
 
 ![Changing backoffice language](images/changing-languages-v10.png)
 
@@ -310,7 +308,7 @@ Finally, we need to update the package.manifest file to load the additional cont
 }
 ```
 
-If all is setup fine we should now receive the 'Hello world' alert every time the dashboard is reloaded in the content section of Umbraco.
+If all is set up fine we should now receive the 'Hello world' alert every time the dashboard is reloaded in the content section of Umbraco.
 
 ### Going further - Umbraco Angular Services and Directives
 
@@ -322,7 +320,7 @@ We inject the **userService** into our AngularJS controller like so:
 angular.module("umbraco").controller("CustomWelcomeDashboardController", function ($scope,userService) {
 ```
 
-and then we can use the userService's promise based **getCurrentUser()** method to get the details of the current logged in user:
+and then we can use the userService's promise based **getCurrentUser()** method to get the details of the current logged-in user:
 
 ```js
 angular.module("umbraco").controller("CustomWelcomeDashboardController", function ($scope, userService) {
@@ -375,7 +373,7 @@ Add to our WelcomeDashboard.html view some markup using angular's _ng-repeat_ to
 </ul>
 ```
 
-In our controller we will populate the array of entries using the `logResource`. The `getPagedUserLog` method expects to receive a JSON object containing information to filter the log by:
+In our controller, we will populate the array of entries using the `logResource`. The `getPagedUserLog` method expects to receive a JSON object containing information to filter the log by:
 
 ```js
 var userLogOptions = {
@@ -420,7 +418,7 @@ Take a look at the output of console.log of the response in your browser to see 
 
 It's nearly all we need but missing information about the item that was saved and published!
 
-We can use the **entityResource**, another Umbraco Angular resource to enables us to retrieve more information about an entity given its id.
+We can use the **entityResource**, another Umbraco Angular resource to enable us to retrieve more information about an entity given its id.
 
 Inject this into our angular controller:
 
@@ -428,7 +426,8 @@ Inject this into our angular controller:
 angular.module("umbraco").controller("CustomWelcomeDashboardController", function ($scope, userService, logResource, entityResource) {
 ```
 
-We need to loop through the log items from the **logResource**. Since this includes everything, we need to filter out activities we're not interested in eg, Macro Saves, or DocType Saves. Generally we need the entry in the log to have a `nodeId`, a 'logType' of 'save' and an entity type of Media or Content.
+We need to loop through the log items from the **logResource**. Since this includes everything, we need to filter out activities we're not interested in eg, Macro Saves, or DocType Saves.
+Generally we need the entry in the log to have a `nodeId`, a 'logType' of 'save' and an entity type of Media or Content.
 
 The `entityResource` then has a `getById` method that accepts the ID of the item and the entity 'type' to retrieve useful information about the entity. For example, its Name and Icon.
 
@@ -662,7 +661,7 @@ angular.module("umbraco").controller("CustomWelcomeDashboardController", functio
 
 ## Extending the Dashboard using the UI library
 
-Now that we have a fully functioning dashboard where editors can see nodes they worked on and create new blog posts, we might want to make it prettier.
+Now that we have a fully functioning dashboard we might want to make it prettier.
 
 To do this we can use the Umbraco UI library.
 
@@ -676,11 +675,11 @@ To get started using the UI library, the easiest way is to add the following Con
 
 Once it has been added, we can start building our UI for our editors.
 
-Since we are showing our editors their recently edited content nodes in this guide, it makes sense to use the [Content Node Card](https://uui.umbraco.com/?path=/docs/uui-card-content-node--aaa-overview):
+Since we are showing our editors their recently edited content nodes on this dashboard, it makes sense to use the [Content Node Card](https://uui.umbraco.com/?path=/docs/uui-card-content-node--aaa-overview):
 
-![Content Node Card](images/uiLibraryCard.png)
+![Content Node Card]
 
-First we need to wrap our unordered list and its content in the ```<uui-card-content-node>``` so it will look like this:
+First, we need to wrap our unordered list and its content in the ```<uui-card-content-node>``` so it will look like this:
 
 ```html
 <uui-card-content-node name="The card">
@@ -692,15 +691,14 @@ First we need to wrap our unordered list and its content in the ```<uui-card-con
 </uui-card-content-node>
 ```
 
-Now lets make sure that the card shows the name of the content nodes that the editors worked with.
-
+Let's make sure that the card shows the name of the content nodes that the editors recently worked with.
 To do this we need to replace the name "The card" in the ```<uui-card-content-node">``` with ```{{logEntry.Content.name}}``` so it will look like this:
 
 ```html
-<uui-card-content-node name="{{logEntry.Content.name}}">
+<uui-card-content-node name="{{logEntry.Content.name}}"> 
 ```
 
-We also need to move the loop through our content to the uui-card as well.
+We also need to move the loop that we added into the **uui-card** as well.
 
 Which then will look like this:
 
@@ -720,9 +718,9 @@ At this point the code looks like this:
 </uui-card-content-node>
 ```
 
-Now we also want the editors to be able to go directly to the content node, lets move the ```<a href="/Umbraco/#/{{logEntry.editUrl}}">{{logEntry.Content.name}} <span ng-if="logEntry.comment">- {{logEntry.comment}}</span></a>``` line down under the ```<uui-card-content-node>```.
+Now we also want the editors to be able to go directly to the content node, let's move the ```<a href="/Umbraco/#/{{logEntry.editUrl}}">{{logEntry.Content.name}} <span ng-if="logEntry.comment">- {{logEntry.comment}}</span></a>``` line down under the ```<uui-card-content-node>```.
 
-Make sure to add some text to the ```<a>``` like *"click here"* or *"See Node"* so that our code should look like this:
+Make sure to add some text to the ```<a>``` tag like *"click here"* or *"See Node"* so that our code should look like this:
 
 ```html
 <uui-card-content-node name="{{logEntry.Content.name}}" ng-repeat="logEntry in vm.UserLogHistory.items">
@@ -735,13 +733,13 @@ Make sure to add some text to the ```<a>``` like *"click here"* or *"See Node"* 
 </uui-card-content-node>
 ```
 
-Next up, lets go ahead and update the ```<ul>``` tag with the style from the UI library Card with the following:
+Next up, let's go ahead and update the ```<ul>``` tag with the style from the UI library Card with the following:
 
 ```style="list-style: none; padding-inline-start: 0px; margin: 0;```
 
 We can also go ahead and remove the ```<i class="{{logEntry.Content.icon}}"></i>``` from our list as we won't be using the icon as the card has one by default.
 
-Once that is done, our code look like:
+Once that is done, our code looks like this:
 
 ```html
 <uui-card-content-node name="{{logEntry.Content.name}}" ng-repeat="logEntry in vm.UserLogHistory.items">
@@ -754,7 +752,7 @@ Once that is done, our code look like:
 </uui-card-content-node>
 ```
 
-Lets for good measure add the styling from the Content Node Card to our ```<li>``` tag as well so it will look like this:
+Lets for good measure add the styling from the **Content Node Card** to our ```<li>``` tag as well so it will look like this:
 
 ```html
 <li>
@@ -806,9 +804,9 @@ uui-card-content-node {
 }
 ```
 
-Once it has been added, we are done with adding the card and it should look something like this:
+Once it has been added, we are done and it should look something like this:
 
-![Custom Dashboard extended with UI library Card](images/extendedWithUiLibrary.png)
+![Custom Dashboard extended with UI Library Card](images/extendedWithUiLibrary.png)
 
 ## Custom External Data - creating your own angular resource
 
@@ -819,5 +817,4 @@ The [property editor tutorial](creating-a-property-editor/) has a step explainin
 ## The end
 
 With all of the steps completed, you should have a functional dashboard that will let the logged-in user see the changes they made!
-
-Hopefully this tutorial has given you some ideas on what is possible to do when creating a dashboard. Remember to check out the [Angular API docs](../reference/api-documentation.md#backoffice-ui) for more info on all of the resources and services you can find for the backoffice!
+Hopefully, this tutorial has given you some ideas on what is possible to do when creating a dashboard. Remember to check out the [Angular API docs](../reference/api-documentation.md#backoffice-ui) for more info on all of the resources and services you can find for the backoffice!
