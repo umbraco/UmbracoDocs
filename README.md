@@ -1,7 +1,8 @@
 ---
 meta.Title: Umbraco Documentation
 description: >-
-  Examples, tutorials, references, and best practices—everything you need to build future-proof applications with Umbraco.
+  Examples, tutorials, references, and best practices—everything you need to
+  build future-proof applications with Umbraco.
 layout: landing
 ---
 
@@ -31,18 +32,20 @@ Read the Documentation and versions article to learn more about how we support a
 
 The documentation project is open source and hosted on GitHub. If you have any corrections or additions to the documentation, suggest a change or let us know.
 
-Head over to the [Umbraco Docs Github](https://github.com/umbraco/UmbracoDocs/pulls) to start contributing to the Umbraco Workflow Documentation.
+Head over to the [Contribute section](contribute/) to start contributing to the Umbraco Documentation.
 
 ## Quick links
 
-{% content-ref url="umbraco-workflow/installing-workflow.md" %}
-[installing-workflow.md](umbraco-workflow/installing-workflow.md)
+{% content-ref url="umbraco-cms/fundamentals/setup/install/" %}
+[install](umbraco-cms/fundamentals/setup/install/)
 {% endcontent-ref %}
 
-{% content-ref url="umbraco-workflow/licensing.md" %}
-[licensing.md](umbraco-workflow/licensing.md)
+{% content-ref url="umbraco-cms/tutorials/creating-a-basic-website/" %}
+[creating-a-basic-website](umbraco-cms/tutorials/creating-a-basic-website/)
 {% endcontent-ref %}
 
-{% content-ref url="umbraco-workflow/migrating-workflow.md" %}
-[migrating-workflow.md](umbraco-workflow/migrating-workflow.md)
+{% content-ref url="umbraco-cms/tutorials/" %}
+[tutorials](umbraco-cms/tutorials/)
 {% endcontent-ref %}
+
+***
