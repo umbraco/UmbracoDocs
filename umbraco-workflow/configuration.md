@@ -45,19 +45,24 @@ All Workflow configuration is optional and will fallback to defaults, if not set
 
 #### ReminderNotificationPeriod
 
-<TBD>
+A `TimeSpan` representing the period between checking for, and sending, reminder notifications for overdue workflows. This setting is used in conjunction with `ReminderDelay` to determine if a workflow is overdue.
 
 #### EnableTestLicense
 
-<TBD>
+A `bool` value used to enable or disable the test license. When true, and running Umbraco in development mode, all licensed features are available on local domains.
 
 #### EmailTemplatePath
 
-<TBD>
+A `string` value representing the path to the email notification templates.
 
 #### DateFormats
 
-<TBD>
+An instance of `DateTimeSettings` allowing customization of date string formats. The `DateTimeSettings` class contains properties for long and short date and time strings, plus a long date variation with no minutes.
+
+#### Colors
+
+An instance of `ColorSettings` allowing customization of colors used in email notifications. Allows setting alternate values for red, orange, and green use to highlight workflow status in emails.
+
 
 ## SettingsCustomization
 
@@ -82,9 +87,9 @@ Both are dictionaries of `SettingsCustomizationDetail` objects. The value is set
 }
 ```
 
-- `IsHidden` - <TBD>
-- `IsReadOnly` - <TBD>
-- `Value` - <TBD>
+- `IsHidden` - When true, the corresponding property is not displayed in the BackOffice UI
+- `IsReadOnly` - When true, the corresponding property is displayed in the BackOffice UI, but is not editable
+- `Value` - Sets the value for the corresponding property. This value takes priority over existing values set via the BackOffice
 
 All available `SettingsCustomization` options are illustrated below along with their respective values:
 
@@ -108,14 +113,13 @@ All available `SettingsCustomization` options are illustrated below along with t
         “NewNodeApprovalFlow”: *,
         “DocumentTypeApprovalFlow”: *,
         “ExcludeNodes”: *,
-        “EmailTemplates”, *,
       },
       “ContentReviews”: {
         “EnableContentReviews”: bool,
         “ReviewPeriod”: int,
         “ReminderThreshold”: int,
         “SendNotifications”: bool,
-        “SaveIsReview”: bool
+        “PublishIsReview”: bool
       }
     }
   }
@@ -128,87 +132,86 @@ These are complex types and not recommended to have values set from Configuratio
 
 ### General
 
-#### FlowType
+#### FlowType (int)
 
-<TBD>
+Sets the workflow type to one of Explicit (0), Implicit (1), or Exclude (2):
+ - Explicit requires all steps be approved, including steps where the original change author is a group member
+ - Implicit auto-approves steps where the author is a member of the approving group
+ - Exclude behaves similar to Explicit, but excludes the original author from any notifications (that is the author can not approve their own work)
 
-#### LockIfActive
+#### LockIfActive (bool)
 
-<TBD>
+When true, prevents editing content where the node is in an active workflow. When false, content can be edited at any stage of a workflow.
 
-#### AllowAttachments
+#### AllowAttachments (bool)
 
-<TBD>
+When true, displays an optional media picker when initiating a workflow. The selected media item can be used to provide further context or explanation of the content changes.
 
-#### AllowScheduling
+#### AllowScheduling (bool)
 
-<TBD>
+When true, displays optional controls for scheduling publish/unpublish when initiating a workflow. The scheduling uses Umbraco's existing content scheduling functionality.
 
-#### RequireUnpublish
+#### RequireUnpublish (bool)
 
-<TBD>
+When true, content must be approved via a workflow when unpublishing. When false, user with appropriate permission can unpublish content without workflow approval.
 
-#### ExtendPermissions
+#### ExtendPermissions (bool)
 
-<TBD>
+When true, Workflow adds additional buttons to the editor footer (Request publish and Request unpublish, if the latter is required). When false, Workflow replaces the existing editor footer buttons.
 
-#### SendNotifications
+#### SendNotifications (bool)
 
-<TBD>
+When true, Workflow will send email notifications in response to workflow changes. When false, no emails are sent.
 
-#### Email
+#### Email (string)
 
-<TBD>
+The from address for email notifications.
 
-#### ReminderDelay
+#### ReminderDelay (int)
 
-<TBD>
+The number of days after which to start sending reminder emails for incomplete workflows.
 
-#### EditUrl
+#### EditUrl (string)
 
-<TBD>
+The URL at which editors access the BackOffice eg `https://edit.mysite.com`. Used for generating links to nodes in email notifications. Must be fully qualified and not include the `/umbraco` path.
 
-#### SiteUrl
+#### SiteUrl (string)
 
-<TBD>
+The URL at which users access the live site eg `https://mysite.com`. Used for generating links in email notifications. Must be fully qualified.
 
-#### NewNodeApprovalFlow
+#### NewNodeApprovalFlow (complex type)
 
-<TBD>
+When set, this flow is used for all new nodes on the first approval request. Subsequent workflows use the permissions set on the node (or content type, or inherited from an ancestor node). This is a complex type and ideally would not be set via configuration.
 
-#### DocumentTypeApprovalFlow
+#### DocumentTypeApprovalFlow (complex type, requires a license)
 
-<TBD>
+Sets workflow permissions for Document Types (that is: all items of `BlogItem` type use the same workflow). The Document Type flow is used when a content node has no explicit permissions set. This is a complex type and ideally should not be set via configuration.
 
-#### ExcludeNodes
+#### ExcludeNodes (complex type, requires a license)
 
-<TBD>
-
-#### EmailTemplates
-
-<TBD>
+Allows excluding segements of the content tree from the workflow model. This is a complex type and ideally would not be set via configuration.
 
 ### ContentReviews
 
-#### EnableContentReviews
+#### EnableContentReviews (bool)
 
-<TBD>
+When true, the content review engine will monitor publication dates to determine content review requirements.
 
-#### ReviewPeriod
+#### ReviewPeriod (int)
 
-<TBD>
+Sets the number of days between mandatory reviews. This is a global value which can be overridden at the node or content type level.
 
-#### ReminderThreshold
+#### ReminderThreshold (int)
 
-<TBD>
+Sets the date on which to send notification emails, prior to the review date elapsing. For example, if the `ReviewPeriod` is 20 and the `ReminderThreshold` is 3, notifications will be sent in 17 days or 3 days before the review date.
 
-#### SendNotifications
+#### SendNotifications (bool)
 
-<TBD>
+When true, Workflow will send email notifications to approval groups, with a digest of expiring and expired content.
 
-#### SaveIsReview
+#### PublishIsReview (bool)
 
-<TBD>
+When true, publishing a node is treated as a review, and will generate a new review date. When false, content must be explicitly reviewed via the review banner rendered at the top of the editor.
 
 For example: To set the site URL, hide it in the backoffice, and set the content review period but keep the property readonly, the configuration would look like this:
 
