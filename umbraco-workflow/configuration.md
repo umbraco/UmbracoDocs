@@ -185,7 +185,7 @@ When set, this flow is used for all new nodes on the first approval request. Sub
 
 #### DocumentTypeApprovalFlow (complex type, requires a license)
 
-Sets workflow permissions for document types (ie all items of `BlogItem` type use the same workflow). The document type flow is used when a content node has no explicit permissions set. This is a complex type and ideally would not be set via configuration.
+Sets workflow permissions for Document Types (that is: all items of `BlogItem` type use the same workflow). The Document Type flow is used when a content node has no explicit permissions set. This is a complex type and ideally should not be set via configuration.
 
 #### ExcludeNodes (complex type, requires a license)
 
