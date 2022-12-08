@@ -49,7 +49,7 @@ We have ensured that the potential baselines are loaded much faster to ensure a 
 
 ### [Blob storage connection info](../set-up/media/connect-to-azure-storage-explorer.md)
 
-The blob storage connection info for a project was previously only displayed in Kudu which was not very convenient or easy to find. A developer should spend as much time as possible developing fantastic solutions and less time in Kudu. Therefore this connection info is now easy to _**copy directly from the portal**_ and ready to post into _Azure Blob Explorer_ whenever needed.
+The blob storage connection info for a project was previously only displayed in Kudu which was not convenient or easy to find. A developer should spend as much time as possible developing fantastic solutions and less time in Kudu. Therefore this connection info is now easy to _**copy directly from the portal**_ and ready to post into _Azure Blob Explorer_ whenever needed.
 
 ![BlobStorage](https://user-images.githubusercontent.com/93588665/151602205-2784ec6c-1142-4221-9bf4-0ba9727ff8f6.gif)
 
