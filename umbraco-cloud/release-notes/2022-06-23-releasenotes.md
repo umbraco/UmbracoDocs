@@ -1,4 +1,4 @@
-# Release Notes, June, 2022
+# Release Notes, June 2022
 
 _Runtime setting for .NET version + New version of “Edit team” page + Several improvements_
 
@@ -14,17 +14,20 @@ For Umbraco 9 projects and Umbraco 10 you can on the project subpage “Advanced
 
 ![RuntimeSettingsForV9](images/RuntimeSettingsForV9.gif)
 
-Prior to updating, you need to ensure the packages you are using are available in Umbraco 10 and that your custom code is valid with the .NET 6 Framework.
+Before updating, you need to ensure the packages used are available in Umbraco 10 and that your custom code is valid with the .NET 6 Framework.
 
 ## New version of “Edit team” page
+
 The “Edit team” page has received a facelift and is now based on the Umbraco UI Library web components. The new design has a more modern look and gives you a sneak preview of how the Umbraco Cloud Portal pages will look and feel in the future.
 
 ![NewEditTeamPage.gif](images/NewEditTeamPage.gif)
 
 We will continuously improve the many other sections in the Portal and ensure that all pages will adopt the new design as shown on the reworked “Edit team” page.
 
-## Various improvements
-During May and June, we have provided several small fixes and improvements to the Umbraco Cloud Portal. Here are some of the highlights.
+## Improvements and fixes
+
+During May and June, we provided small fixes and improvements to the Umbraco Cloud Portal. Here are some of the highlights:
+
 - The much-used project subpage “Edit team” has been updated with a fresh new look using the Umbraco UI Library based on web components. Go have a look today!
 - Custom hostnames for a few Umbraco 7 projects were not shown on the project subpage “Hostnames”.
 - For Professional plans, the download of IIS logs required you to log into the Azure portal.

@@ -12,18 +12,20 @@
 * **Project invitation link to clipboard** - To ease the project invite flow if a project invitation mail is bounced or accidentally lands in the spam folder you can now copy the invitation link to your clipboard.
 * **Release notes link in the portal** - As you are reading these pages you might already have noticed the new item in the profile menu of the portal; a link to the portal release notes.
 
-
 ### [Break reference between baseline and child project](../getting-started/baselines/break-baseline.md)
 
 Umbraco Cloud Portal offers a powerful baseline-child relationship between projects, similar to a fork (forked repository) on GitHub. With this feature you can create a clone of an existing project while maintaining a connection between the two projects.
 
-If you at some point **want to break this connection**, between the baseline and one a child project, it is now really easy for a user with the role of admin to do so. Please be aware that the action **cannot be undone**.
+If you at some point **want to break this connection**, between the baseline and one a child project you can now do so.
+Users with the role of admin  is able to break the connection.
+
+Please be aware that the action **cannot be undone**.
 
 ![Break reference between baseline and child project (1)](https://user-images.githubusercontent.com/93588665/149168277-e7ffb2e1-34c3-411f-9962-e834150f62d1.gif)
 
 ### [New Project Overview Page](../getting-started/project-overview.md)
 
-You are now able to access a simple project overview page for each of your projects. Initially are able to see basic information such as name, alias, **plan and project status**. In the future, we are likely to add more project related information that currently isn’t presented in the portal.
+You are now able to access a simpler project overview page for each of your projects. Initially are able to see basic information such as name, alias, **plan and project status**. In the future, we are likely to add more project related information that currently isn’t presented in the portal.
 
 ![New Project Overview Page](https://user-images.githubusercontent.com/93588665/149168523-088b58f1-5a04-43ff-9ac5-f30b62c74e4e.gif)
 
@@ -55,7 +57,7 @@ The blob storage connection info for a project was previously only displayed in 
 
 ### Project invitation link to clipboard
 
-The project invitation flow in Umbraco Cloud Portal has until recently suffered from invites ending up in the invitees' spam folder. We have now _**optimized**_ the configuration of the portal _**email delivery**_ so every invite should now be delivered to the expected receiver - in the correct inbox.
+The project invitation flow in Umbraco Cloud Portal has until recently suffered from invites ending up in the invitees' spam folder. We have  _**optimized**_ the configuration of the portal _**email delivery**_ so every invite will now be delivered to the expected receiver - in the correct inbox.
 
 However, there can be exceptions where an email is either bounced or lands in the spam folder. In such cases, a resend of the project invitation might not do the trick. So to ease the invite process, in the rare case the email doesn’t show up, we have added the option to _**copy the project invitation link**_ for active invites.
 
@@ -65,12 +67,11 @@ However, there can be exceptions where an email is either bounced or lands in th
 
 In 2021 we added new team members to the Cloud Feature team to support our strategy of making Umbraco Cloud [the best way](https://umbraco.com/blog/umbraco-2022-and-onwards/) to host Umbraco solutions. In 2022 and the years to come we will continue our _**customer-centric development**_ and with an increased focus on input from partners and portal users improve existing functionality and create new exciting features.
 
-In order for agencies and users to keep up with the improvements, we’ve made it easy to find the latest release notes. You can now find the link for the release notes in the profile settings menu. Release notes will be published multiple times each month and list the most relevant fixes and features added to the portal.
-
+In order for agencies and users to keep up with the improvements, we’ve made it easier to find the latest release notes. You can now find the link for the release notes in the profile settings menu. Release notes will be published multiple times each month and list the most relevant fixes and features added to the portal.
 
 ### Various tweaks and improvements
 
-During December we have provided a lot of small improvements to the Umbraco Cloud Portal. Actually too many to mention, you can find a few of the highlights in the list below.
+During December we have provided a lot of small improvements to the Umbraco Cloud Portal. Too many to mention, you can find a few of the highlights in the list below.
 
 * Alignment and consistent order of product versions on the project page.
 * Confirmation box for restarting environment (_to avoid accidental restarts_)
