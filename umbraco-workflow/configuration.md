@@ -1,6 +1,6 @@
 # Configuration
 
-With Umbraco Workflow it's possible to customize the functionality with different configuration values.
+With Umbraco Workflow, it is possible to customize the functionality with different configuration values.
 
 ## Editing configuration values
 

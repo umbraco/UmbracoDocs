@@ -1,8 +1,8 @@
 ---
 versionFrom: 9.2.0
 versionTo: 10.0.0
-meta.Title: "Content Apps"
-meta.Description: "A guide configuring content apps in Umbraco"
+meta.Title: Content Apps
+meta.Description: A guide configuring content apps in Umbraco
 ---
 
 # Content Apps
@@ -45,7 +45,7 @@ This guide explains how to set up a custom Content App in the following steps:
 * Limiting the Content App to appear for only specific content types
 * Limiting which user groups can see the Content App
 
-A basic understanding of how to use AngularJS with Umbraco is required.  If you have created a property value editor before, this will all feel familiar.
+A basic understanding of how to use AngularJS with Umbraco is required. If you have created a property value editor before, this will all feel familiar.
 
 ### Setting up the Plugin
 
@@ -145,7 +145,7 @@ And in the `.html` file:
 
 ### Checking it works
 
-After the above edits are done, restart your application. Go to any content node and you should now see an app called Word Counter. Clicking on the icon should say "Amount of words for each property" and confirm the details of the current item and user.  You can now adapt your Content App to retrieve external data using the standard Umbraco and AngularJS approach.
+After the above edits are done, restart your application. Go to any content node and you should now see an app called Word Counter. Clicking on the icon should say "Amount of words for each property" and confirm the details of the current item and user. You can now adapt your Content App to retrieve external data using the standard Umbraco and AngularJS approach.
 
 ![Content App in action: Word Counter](images/content-app-2.png)
 
@@ -153,22 +153,22 @@ After the above edits are done, restart your application. Go to any content node
 
 You can set your Content App to only show for specific types by adding a 'show' directive in the `package.manifest` file.
 
-This can be done for both **Content/Media Types**, for **Member types** and for **Content Types** (Document Types) in the Settings section.
+This can be done for both **Content** and **Media Types** and for **Member types**. It is also possible to show the Content App on specific **Document Types** (`contentTypes`) in the Settings section.
 
-Here is an example where all types are taken intro consideration when limiting access to a Content App:
+Here is an example where all types are taken into consideration when limiting access to a Content App:
 
 ```json5
 {
     "contentApps": [
         {
             "show": [
-                "-content/homePage", // hide for content type 'homePage'
-                "+content/*", // show for all other content types
-                "+media/*", // show for all media types
-                "-member/premiumMembers", // hide for Member type 'premiumMembers'
-                "+member/*", // show for all other Member types
-                "-contentType/textPage", // hide on Content Type with alias 'textPage'
-                "+contentType/*", // show for all other Content types
+                "-content/homePage", // hide for content using the 'homePage' Document Type
+                "+content/*", // show for content using any other Document Type
+                "+media/*", // show for all Media Types
+                "-member/premiumMembers", // hide for Member Type 'premiumMembers'
+                "+member/*", // show for all other Member Types
+                "-contentType/textPage", // hide on the Document Type with alias 'textPage'
+                "+contentType/*", // show on all other Document Types
             ]
         }
     ]
@@ -180,12 +180,12 @@ When the 'show' directive is omitted then the app will be shown for all types.
 
 Also, when you want to exclude any type, make sure to include all the rest of that type, using `"+content/*"`, `"+media/*"` or `"+member/*"`.
 
-In this case the WordCounter app is only usable within the Content section so you have to exclude from all other types.
+In this case, the WordCounter app is only usable within the Content section so you have to exclude it from all other types.
 {% endhint %}
 
 ### Limiting according to User Role
 
-In a similar way, you can limit your Content App according to user roles (groups).  For example:
+In a similar way, you can limit your Content App according to user roles (groups). For example:
 
 ```json5
 {
@@ -292,7 +292,7 @@ You will still need to add all of the files you added above. However, because yo
 ```
 
 {% hint style="info" %}
-You can also have a coloured icon for your Content App by specifying the icon in the format `icon-[name of icon] color-[name of color]`. For eg, an indigo colored icon can be specified for your Content App by specifying the icon as  `"icon-calculator color-indigo"` in your Content App C# class or *package.manifest* .
+You can also have a coloured icon for your Content App by specifying the icon in the format `icon-[name of icon] color-[name of color]`. For eg, an indigo colored icon can be specified for your Content App by specifying the icon as `"icon-calculator color-indigo"` in your Content App C# class or _package.manifest_ .
 {% endhint %}
 
 ## Notification badges
@@ -371,4 +371,4 @@ namespace My.Website
 }
 ```
 
-Possible values for the `ContentAppBadge` Type are *Default*, *Alert* and *Warning*.
+Possible values for the `ContentAppBadge` Type are _Default_, _Alert_ and _Warning_.
