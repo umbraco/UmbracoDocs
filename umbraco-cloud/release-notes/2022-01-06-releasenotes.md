@@ -43,7 +43,7 @@ Another change is that the upgrade banner will no longer be displayed on project
 
 ### Baseline loading efficiency in create wizard
 
-The _Create new Cloud project wizard_ has in the last weeks undergone some **performance improvements**. The most significant of these is the loading of potential baselines for users with more than 50 cloud projects. Previously this could be quite time-consuming, this has now been updated to loading asynchronously.
+The _Create new Cloud project wizard_ has in the last weeks undergone some **performance improvements**. The most significant of these is the loading of potential baselines for users with more than 50 cloud projects. Previously this could be time-consuming, this has now been updated to loading asynchronously.
 
 We have ensured that the potential baselines are loaded much faster to ensure a **better user experience** and less wasted time before you can start working on a new cloud project. ![BaselineAsyncLoad\_v1](https://user-images.githubusercontent.com/93588665/150125758-3fcb5664-f0b4-4bee-926e-ecbbfb113a09.gif)
 
