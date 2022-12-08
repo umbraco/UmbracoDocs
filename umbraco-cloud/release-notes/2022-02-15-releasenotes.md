@@ -1,4 +1,4 @@
-# Release Notes, February 15, 2022
+# Release Notes, February, 2022
 
 _Improved pending invite status + View backoffice user groups for team members + Usage limit warnings_
 

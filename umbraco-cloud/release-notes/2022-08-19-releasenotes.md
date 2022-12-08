@@ -1,4 +1,4 @@
-# Release Notes, August 19, 2022
+# Release Notes, August, 2022
 
 _Dedicated Resources - Projects Dashboard (beta)_
 

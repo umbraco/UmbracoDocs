@@ -1,12 +1,17 @@
-# Release Notes, January 06, 2022
+# Release Notes, January, 2022
 
-_Break baseline reference + See project information + Various improvements_
-
-### Key Takeaways
+## Key Takeaways
 
 * **Break reference between baseline and child project** - As an admin, you can now break the reference between a baseline and child projects.
 * **New Project Overview Page** - See project information such as plan, payment status for your project on the new project overview page.
 * **Various tweaks and improvements** - Since December we have provided a lot of small changes and improvements.
+* **Specify portal project roles on project invites** - When inviting a new user to a project you can specify the portal project role assigned to the user for each separate environment of the project.
+* **Improved available upgrade notifications** - We have improved the notifications for available upgrades on the project page.
+* **Baseline loading efficiency in create wizard** - When creating a new cloud project loading of potential baselines is now async for improved performance.
+* **Blob storage connection info** - The blob storage connection info for a project is now displayed on the _Connection details_ page.
+* **Project invitation link to clipboard** - To ease the project invite flow if a project invitation mail is bounced or accidentally lands in the spam folder you can now copy the invitation link to your clipboard.
+* **Release notes link in the portal** - As you are reading these pages you might already have noticed the new item in the profile menu of the portal; a link to the portal release notes.
+
 
 ### [Break reference between baseline and child project](../getting-started/baselines/break-baseline.md)
 
@@ -21,6 +26,47 @@ If you at some point **want to break this connection**, between the baseline and
 You are now able to access a simple project overview page for each of your projects. Initially are able to see basic information such as name, alias, **plan and project status**. In the future, we are likely to add more project related information that currently isn’t presented in the portal.
 
 ![New Project Overview Page](https://user-images.githubusercontent.com/93588665/149168523-088b58f1-5a04-43ff-9ac5-f30b62c74e4e.gif)
+
+### Specify portal project roles on project invites
+
+When inviting a new team member to a project it is now possible **to specify the project roles directly in the project invite**. Often you want the team member to be assigned a different role for each environment. This is now supported from the very start in the project invite. A user can now, for example, be assigned with the Admin role on the development environment while being limited to the Write role on the Live environment. All helping to make it faster and easier to set up the correct permissions for team members.
+
+![ProjectInvite\_v1](https://user-images.githubusercontent.com/93588665/150125691-cb846cbc-ad7f-4135-9a48-5de640776e62.gif)
+
+### Improved available upgrade notifications
+
+We have reworked a couple of the criteria that triggers **notifications** for an **available upgrade**. Now you will get a notification on Starter projects without a development environment as seen below.
+
+<figure><img src="https://user-images.githubusercontent.com/93588665/150126101-2a5b9de9-b5b8-4091-9e13-801eff1f8f6a.png" alt=""><figcaption></figcaption></figure>
+
+Another change is that the upgrade banner will no longer be displayed on projects with one or more environments already upgraded.
+
+### Baseline loading efficiency in create wizard
+
+The _Create new Cloud project wizard_ has in the last weeks undergone some **performance improvements**. The most significant of these is the loading of potential baselines for users with more than 50 cloud projects. Previously this could be quite time-consuming, this has now been updated to loading asynchronously.
+
+We have ensured that the potential baselines are loaded much faster to ensure a **better user experience** and less wasted time before you can start working on a new cloud project. ![BaselineAsyncLoad\_v1](https://user-images.githubusercontent.com/93588665/150125758-3fcb5664-f0b4-4bee-926e-ecbbfb113a09.gif)
+
+### [Blob storage connection info](../set-up/media/connect-to-azure-storage-explorer.md)
+
+The blob storage connection info for a project was previously only displayed in Kudu which was not very convenient or easy to find. A developer should spend as much time as possible developing fantastic solutions and less time in Kudu. Therefore this connection info is now easy to _**copy directly from the portal**_ and ready to post into _Azure Blob Explorer_ whenever needed.
+
+![BlobStorage](https://user-images.githubusercontent.com/93588665/151602205-2784ec6c-1142-4221-9bf4-0ba9727ff8f6.gif)
+
+### Project invitation link to clipboard
+
+The project invitation flow in Umbraco Cloud Portal has until recently suffered from invites ending up in the invitees' spam folder. We have now _**optimized**_ the configuration of the portal _**email delivery**_ so every invite should now be delivered to the expected receiver - in the correct inbox.
+
+However, there can be exceptions where an email is either bounced or lands in the spam folder. In such cases, a resend of the project invitation might not do the trick. So to ease the invite process, in the rare case the email doesn’t show up, we have added the option to _**copy the project invitation link**_ for active invites.
+
+![CopyProjectInviteLink](https://user-images.githubusercontent.com/93588665/151602357-1bd4b165-eb4d-44b5-bc88-b45594ae5dc0.gif)
+
+### Release notes link in the portal
+
+In 2021 we added several new team members to the Cloud Feature team to support our strategy of making Umbraco Cloud [the best way](https://umbraco.com/blog/umbraco-2022-and-onwards/) to host Umbraco solutions. In 2022 and the years to come we will continue our _**customer-centric development**_ and with an increased focus on input from partners and portal users improve existing functionality and create new exciting features.
+
+In order for agencies and users to keep up with the improvements, we’ve made it easy to find the latest release notes. You can now find the link for the release notes in the profile settings menu. Release notes will be published multiple times each month and list the most relevant fixes and features added to the portal.
+
 
 ### Various tweaks and improvements
 

@@ -1,4 +1,4 @@
-# Release Notes, November 7, 2022
+# Release Notes, November, 2022
 
 Dedicated for Starter and Standard - Projects Dashboard Quick links- Other Umbraco Cloud Updates.s
 

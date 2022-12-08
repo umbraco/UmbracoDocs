@@ -1,4 +1,4 @@
-# Release Notes, September 19, 2022
+# Release Notes, September, 2022
 
 _2FA authentication - US Region Hosting - Projects Dashboard_
 

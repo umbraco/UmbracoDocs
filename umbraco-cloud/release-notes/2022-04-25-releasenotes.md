@@ -1,4 +1,4 @@
-# Release Notes, April 25, 2022
+# Release Notes, April, 2022
 
 _Enable client certificates from filesystem + Various Cloud Portal improvements_
 
