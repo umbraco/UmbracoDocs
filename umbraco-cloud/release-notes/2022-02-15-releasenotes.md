@@ -4,9 +4,9 @@ _Improved pending invite status + View backoffice user groups for team members +
 
 ## Key Takeaways
 
-- **Improved pending invite status** - Users with pending project invites can see an expiration date, status and option to delete expired invites.
-- **View backoffice user groups for team members** - A step in improving backoffice user group handling is to display the current groups for all project team members on the project team edit page.
-- **Release notes link in the portal** - The portal now shows a warning for projects that have exceeded 90% of its usage limit for bandwidth or media storage.
+* **Improved pending invite status** - Users with pending project invites can see an expiration date, status and option to delete expired invites.
+* **View backoffice user groups for team members** - A step in improving backoffice user group handling is to display the current groups for all project team members on the project team edit page.
+* **Release notes link in the portal** - The portal now shows a warning for projects that have exceeded 90% of its usage limit for bandwidth or media storage.
 
 ### Improved pending invites view
 
