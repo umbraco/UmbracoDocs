@@ -58,7 +58,7 @@ Once you have added your own hostnames to your Umbraco Cloud project it's possib
 This can be done on the new _Security_ page.
 
 {% hint style="info" %}
-The Manage Transport Security feature will be rolling out on individual projects this week. It is expected that all relevant projects is able to access the new _Security_ page on March 18th 2022.
+The Manage Transport Security feature (TLS) will be rolling out on individual projects this week. It is expected that all relevant projects is able to access the new _Security_ page on March 18th 2022.
 {% endhint %}
 
 ![image](https://user-images.githubusercontent.com/93588665/158339048-166b9715-1d1e-4d71-8c8b-ddf35402d3ed.png)
