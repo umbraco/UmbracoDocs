@@ -692,7 +692,7 @@ First, we need to wrap our unordered list and its content in the ```<uui-card-co
 ```
 
 Let's make sure that the card shows the name of the content nodes that the editors recently worked with.
-To do this we need to replace the name "The card" in the ```<uui-card-content-node">``` with ```{{logEntry.Content.name}}``` so it will look like this:
+To do this, we need to replace "The card" value  of the `name ` property in the `<uui-card-content-node>` with `{{logEntry.Content.name}}` so it will look like this:
 
 ```html
 <uui-card-content-node name="{{logEntry.Content.name}}"> 
