@@ -661,7 +661,7 @@ angular.module("umbraco").controller("CustomWelcomeDashboardController", functio
 
 ## Extending the Dashboard using the UI library
 
-Now that we have a fully functioning dashboard we might want to make it prettier.
+Now that we have a fully functioning dashboard we might want to make it look prettier.
 
 To do this we can use the Umbraco UI library.
 
