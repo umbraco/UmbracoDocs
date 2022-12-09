@@ -679,7 +679,7 @@ Once it has been added, we can start building our UI for our editors.
 
 Since we are showing our editors their recently edited content nodes on this dashboard, it makes sense to use the [Content Node Card](https://uui.umbraco.com/?path=/docs/uui-card-content-node--aaa-overview):
 
-![Content Node Card]
+![Content Node Card](images/uiLibraryCard.png)
 
 First, we need to wrap our unordered list and its content in the ```<uui-card-content-node>``` so it will look like this:
 
