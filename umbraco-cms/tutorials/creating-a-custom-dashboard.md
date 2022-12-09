@@ -659,7 +659,7 @@ angular.module("umbraco").controller("CustomWelcomeDashboardController", functio
 </div>
 ```
 
-## Extending the Dashboard using the UI library
+## Extending the Dashboard using the Umbraco UI library
 
 Now that we have a fully functioning dashboard we might want to make it look prettier.
 
@@ -667,7 +667,9 @@ To do this we can use the Umbraco UI library.
 
 The [Umbraco UI Library](../extending/ui-library.md) is a set of web components that we can use to build Umbraco User Interfaces.
 
-To get started using the UI library, the easiest way is to add the following Content Delivery Network (CDN) script to the **WelcomeDashboard.html** file.
+To get started using the UI library, the easiest way is to add the Content Delivery Network (CDN) script.
+
+Add it at the bottom of the **WelcomeDashboard.html** file.
 
 ```javascript
 <script src="https://cdn.jsdelivr.net/npm/@umbraco-ui/uui@latest/dist/uui.min.js"></script>
