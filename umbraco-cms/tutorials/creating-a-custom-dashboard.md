@@ -667,7 +667,7 @@ To do this we can use the Umbraco UI library.
 
 The [Umbraco UI Library](../extending/ui-library.md) is a set of web components that we can use to build Umbraco User Interfaces.
 
-To get started using the UI library, the easiest way is to add the following Content Delivery Network (CDN) script to the **WelcomeDashboard.html:** file.
+To get started using the UI library, the easiest way is to add the following Content Delivery Network (CDN) script to the **WelcomeDashboard.html** file.
 
 ```javascript
 <script src="https://cdn.jsdelivr.net/npm/@umbraco-ui/uui@latest/dist/uui.min.js"></script>
