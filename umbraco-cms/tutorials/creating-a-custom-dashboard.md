@@ -698,7 +698,7 @@ To do this, we need to replace "The card" value  of the `name ` property in the 
 <uui-card-content-node name="{{logEntry.Content.name}}"> 
 ```
 
-We also need to move the loop that we added into the **uui-card** as well.
+We also need to move the `ng-repeat` parameter from the <li> tag below into the `uui-card-content-node` as well.
 
 Which then will look like this:
 
