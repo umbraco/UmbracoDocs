@@ -139,7 +139,7 @@ We can apply the same workflow to elements inside the dashboard, not only the na
     </area>
     <area alias="welcomeDashboard">
         <key alias="heading">Welcome!</key>
-        <key alias="bodytext">This is the Backoffice. From here, you can modify the content, media, and settings of your website.<key>
+        <key alias="bodytext">This is the Backoffice. From here, you can modify the content, media, and settings of your website.</key>
         <key alias="copyright">© Sample Company 20XX</key>
     </area>
 </language>
