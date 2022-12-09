@@ -66,7 +66,7 @@ The Manage Transport Security feature will be rolling out on individual projects
 The options currently available are:
 
 * HTTP/2 (default: on)
-* TLS 1.3 (default: off)
+* Transport Layer Security (TLS) 1.3 (default: off)
 * Minimum Transport Layer Security (TLS) Version (default: 1.2)
 
 When a new hostname is added to a Project it will have the default settings applied for all environments. You can change the default settings for your Project, so new hostnames will get the default settings you have chosen.
