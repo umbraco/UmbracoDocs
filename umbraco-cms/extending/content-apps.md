@@ -162,13 +162,13 @@ Here is an example where all types are taken intro consideration when limiting a
     "contentApps": [
         {
             "show": [
-                "-content/homePage", // hide for content type 'homePage'
-                "+content/*", // show for all other content types
-                "+media/*", // show for all media types
-                "-member/premiumMembers", // hide for Member type 'premiumMembers'
-                "+member/*", // show for all other Member types
-                "-contentType/textPage", // hide on Content Type with alias 'textPage'
-                "+contentType/*", // show for all other Content types
+                "-content/homePage", // hide for content using the 'homePage' Document Type (Content section)
+                "+content/*", // show for content using any other Document Type (Content section)
+                "+media/*", // show for all Media Types
+                "-member/premiumMembers", // hide for Member Type 'premiumMembers'
+                "+member/*", // show for all other Member Types
+                "-contentType/textPage", // hide on the Document Type with alias 'textPage' (Settings section)
+                "+contentType/*", // show on all other Document Types (Settings section)
             ]
         }
     ]
