@@ -8,8 +8,7 @@ If you want to buy an Umbraco Workflow license, reach out to the sales team at [
 
 To add the license to your site, follow these steps:
 
-1.  Update the `appSettings.json` file:\
-
+1.  Update the `appSettings.json` file:
 
     ```
     {
@@ -20,8 +19,7 @@ To add the license to your site, follow these steps:
       }  
     }
     ```
-2.  Create a class in your website, for example, `ServerRoleAccessor.cs` that implements the `IServerRoleAccessor` with `CurrentServerRole` set to either `Single` or `SchedulingPublisher` server role and register that class via a composer:\
-
+2.  Create a class in your website, for example, `ServerRoleAccessor.cs` that implements the `IServerRoleAccessor` with `CurrentServerRole` set to either `Single` or `SchedulingPublisher` server role and register that class via a composer:
 
     ```
     using Umbraco.Cms.Core.Composing;
