@@ -1,5 +1,9 @@
 # Grid Layout
 
+{% hint style="info" %} We highly recommend that you use the [Block Grid](../../block-editor/block-grid-editor.md) instead.
+
+Grid Layout has been marked as obsolete and will be removed from future versions of Umbraco. {% endhint %}
+
 `Returns: JSON`
 
 Gives editors a grid layout editor which allows them to insert different types of content in a predefined layout.
