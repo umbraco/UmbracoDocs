@@ -16,7 +16,7 @@ So if you allow a macro to be added to a Rich Text Editor or Grid cell, the edit
 
 For example imagine adding an Image Gallery within a rich text editor, and at the point of insertion 'picking' the images to display.
 
-![Insert Image Carousel](images/image-carousel-macro-v8.png)
+![Insert Image Carousel](images/Image-Carousel-Macro.png)
 
 Define the parameters
 
