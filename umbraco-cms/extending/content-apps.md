@@ -162,13 +162,13 @@ Here is an example where all types are taken into consideration when limiting ac
     "contentApps": [
         {
             "show": [
-                "-content/homePage", // hide for content using the 'homePage' Document Type
-                "+content/*", // show for content using any other Document Type
+                "-content/homePage", // hide for content using the 'homePage' Document Type (Content section)
+                "+content/*", // show for content using any other Document Type (Content section)
                 "+media/*", // show for all Media Types
                 "-member/premiumMembers", // hide for Member Type 'premiumMembers'
                 "+member/*", // show for all other Member Types
-                "-contentType/textPage", // hide on the Document Type with alias 'textPage'
-                "+contentType/*", // show on all other Document Types
+                "-contentType/textPage", // hide on the Document Type with alias 'textPage' (Settings section)
+                "+contentType/*", // show on all other Document Types (Settings section)
             ]
         }
     ]
