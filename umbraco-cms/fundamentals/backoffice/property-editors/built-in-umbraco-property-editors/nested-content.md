@@ -2,7 +2,7 @@
 
 {% hint style="info" %} We highly recommend that you use the [Block List](../block-editor/block-list-editor.md) instead.
 
-Nested Content has been marked as obsolete and will be removed from future versions of Umbraco. {% endhint %}
+Nested Content has been marked as obsolete and development on the property editor has been discontinued. {% endhint %}
 
 `Alias: Umbraco.NestedContent`
 
