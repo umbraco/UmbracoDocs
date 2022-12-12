@@ -1,4 +1,4 @@
-# Grid Layout
+# Grid Layout (Legacy)
 
 {% hint style="info" %} We highly recommend that you use the [Block Grid](../../block-editor/block-grid-editor.md) instead.
 
