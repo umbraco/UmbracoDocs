@@ -1,4 +1,8 @@
-# Nested Content
+# Nested Content (Legacy)
+
+{% hint style="info" %} We highly recommend that you use the [Block List](../block-editor/block-list-editor.md) instead.
+
+Nested Content has been marked as obsolete and will be removed from future versions of Umbraco. {% endhint %}
 
 `Alias: Umbraco.NestedContent`
 
