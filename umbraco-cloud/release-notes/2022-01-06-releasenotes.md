@@ -25,7 +25,7 @@ Please be aware that the action **cannot be undone**.
 
 ### [New Project Overview Page](../getting-started/project-overview.md)
 
-You are now able to access a simpler project overview page for each of your projects. Initially are able to see basic information such as name, alias, **plan and project status**. In the future, we are likely to add more project related information that currently isn’t presented in the portal.
+You are now able to access a simpler project overview page for each of your projects. Initially, you can see basic information such as name, alias, **plan and project status**. In the future, we will likely add more project-related information that currently is not presented in the portal.
 
 ![New Project Overview Page](https://user-images.githubusercontent.com/93588665/149168523-088b58f1-5a04-43ff-9ac5-f30b62c74e4e.gif)
 
