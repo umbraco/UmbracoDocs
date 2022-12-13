@@ -59,7 +59,7 @@ The blob storage connection info for a project was previously only displayed in 
 
 The project invitation flow in Umbraco Cloud Portal has until recently suffered from invites ending up in the invitees' spam folder. We have  _**optimized**_ the configuration of the portal _**email delivery**_ so every invite will now be delivered to the expected receiver - in the correct inbox.
 
-However, there can be exceptions where an email is either bounced or lands in the spam folder. In such cases, a resend of the project invitation might not do the trick. So to ease the invite process, in the rare case the email doesn’t show up, we have added the option to _**copy the project invitation link**_ for active invites.
+However, there can be exceptions where an email is either bounced or lands in the spam folder. In such cases, a resend of the project invitation might not do the trick. In rare cases, when the email doesn’t show up, we have added the option to _**copy the project invitation link**_ for active invites.
 
 ![CopyProjectInviteLink](https://user-images.githubusercontent.com/93588665/151602357-1bd4b165-eb4d-44b5-bc88-b45594ae5dc0.gif)
 
