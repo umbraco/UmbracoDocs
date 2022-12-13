@@ -1,21 +1,20 @@
-# Release Notes, April 25, 2022
-
-_Enable client certificates from filesystem + Various Cloud Portal improvements_
+# Release Notes, April 2022
 
 ## Key Takeaways
 
 * **Enable client certificates from file system** - If you need to load a client certificate from the file system in your cloud project at runtime you can make this possible by turning on the new setting on the _Advanced_ page of the project.
-* **Various tweaks and improvements** - During March and April, we have focused on fixing minor issues and adding minor improvements. The highlights of these changes are shown below.
+* **Tweaks and improvements** - During March and April, we focused on fixing minor issues and adding minor improvements.
 
 ## [Enable client certificates from file system](../set-up/project-settings/application-settings.md)
 
-If your cloud project needs to load a client certificate (such as an X.509 certificate) at runtime you can turn on this feature for one or more environments. By turning this feature on for an environment, you will be able to load a client certificate as a file during the run-time of your cloud project.
+If your project needs to load a client certificate (like an X.509 certificate) at runtime you can turn on this feature for your environments. By turning this feature on for an environment, you will be able to load a client certificate as a file.
+Which happens during the run-time of your cloud project.
 
 ![Enable client certificate load from file system](../set-up/images/EnableClientCertificateLoadedFromFileSystem.gif)
 
-## Various tweaks and improvements
+## Tweaks and improvements
 
-During March and April, we have provided a lot of small improvements to the Umbraco Cloud Portal. Actually, too many to mention, but you will find the highlights in the list below.
+During March and April, we have provided a lot of small improvements to the Umbraco Cloud Portal. Too many to mention, however you will find the highlights in the list below.
 
 * Display the time of creation for environments (_now presented on the “Overview” page of the project_)
 * Restrict access to function when environments are changing (_to avoid actions on environments that are being created, deleted, or modified_)

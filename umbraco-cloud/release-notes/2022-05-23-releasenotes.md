@@ -1,10 +1,8 @@
-# Release Notes, May 23, 2022
-
-_CDN Caching and Optimization settings + Improved Organization Invite Flow + Media Storage Files Top 50_
+# Release Notes, May 2022
 
 ## Key Takeaways
 
-* **CDN Caching and Optimization settings** - You can now enable CDN caching on your Umbraco Cloud projects for even better performance. You can specify default settings and overwrite them at the hostname level.
+* **CDN Caching and Optimization settings** - You can now enable Content Delivery Network (CDN) caching on your Umbraco Cloud projects for even better performance. You can specify default settings and overwrite them at the hostname level.
 * **Improved Organization Invite flow** - When you invite a new user to your organization, the Umbraco Cloud portal now ensures a more intuitive and secure handling of the invitation workflow.
 * **Media Storage Files Top 50** - The Umbraco Cloud portal now offers greater transparency for which media files take up the most space in your cloud project's media storage.
 
@@ -38,4 +36,4 @@ On the “Usage” page of a Cloud project, we have added an option for you to s
 
 ![Top50MediaFiles](images/Top50MediaFiles.gif)
 
-The sorted list is a real-time display of media files including file name, path, size, and type. If you delete one or more of the listed files in the backoffice or the blob storage you can refresh the page and select the option to load the media files again.
+The sorted list is a real-time display of media files including file name, path, size, and type. If you delete one or more of the listed files in the backoffice or the blob storage refresh the page and select the option to load the media files again.

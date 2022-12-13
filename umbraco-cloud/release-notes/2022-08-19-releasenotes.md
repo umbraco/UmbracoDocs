@@ -1,11 +1,9 @@
-# Release Notes, August 19, 2022
-
-_Dedicated Resources - Projects Dashboard (beta)_
+# Release Notes, August 2022
 
 ## Key Takeaways
 
 * **Dedicated Resources** - A new feature offering dedicated resources for your Umbraco Cloud project has been released. You can upgrade your projects to use dedicated resources with the click of a button.
-* **Projects Dashboard (beta)** - The beta version of the Projects Dashboard offers the first sneak preview of the future projects overview in the Umbraco Cloud Portal.
+* **Projects Dashboard (Beta)** - The Beta version of the Projects Dashboard offers the first sneak preview of the future projects overview in the Umbraco Cloud Portal.
 
 ## [Dedicated Resources](../set-up/project-settings/dedicated-resources.md)
 
@@ -17,13 +15,13 @@ You can access Dedicated Resources from the Settings menu on your Cloud project.
 
 Dedicated Resources is currntly available for projects on **Professional** and **Enterprise** plans. More options will be added later in the year to make the feature available for Starter and Standard plans as well.
 
-## Projects Dashboard (beta)
+## Projects Dashboard (Beta)
 
 We are currently working on multiple initiatives to give Umbraco Cloud users a fantastic **developer-friendly experience**. One of these is the Projects Dashboard. Together with partners and Cloud users, we have worked to identify what would be the most useful features and tools to provide an overview of all your projects.
 
 ![ProjectsDashboard](images/ProjectsDashboard.gif)
 
-Together with a large amount of project info, a slim project representation, and a filtering system, you will see a **much-improved overview** for managing all your Umbraco Cloud projects. Flexibility and usability are the focus of enabling Umbraco Cloud to empower users to organize and group their projects.
+Together with the project information, a project representation, and a filtering system, you will see an **improved overview** for managing your Umbraco Cloud projects. Flexibility and usability are the focus of enabling Umbraco Cloud to empower users to organize and group their projects.
 
 We will **add new features and functionality** to the dashboard in future releases, starting with a search functionality as you know from the current project overview. We are also working on improving the performance so especially the environment and product versions are retrieved more fluently.
 

@@ -552,19 +552,22 @@
     * [Extraction error: "Type not found! "](umbraco-cloud/troubleshooting/deployments/type-not-found.md)
 * [Frequently asked questions](umbraco-cloud/frequently-asked-questions.md)
 * [Portal Release Notes](umbraco-cloud/release-notes/README.md)
-  * [Release Notes, January 06, 2022](umbraco-cloud/release-notes/2022-01-06-releasenotes.md)
-  * [Release Notes, January 19, 2022](umbraco-cloud/release-notes/2022-01-19-releasenotes.md)
-  * [Release Notes, January 31, 2022](umbraco-cloud/release-notes/2022-01-31-releasenotes.md)
-  * [Release Notes, February 15, 2022](umbraco-cloud/release-notes/2022-02-15-releasenotes.md)
-  * [Release Notes, March 2, 2022](umbraco-cloud/release-notes/2022-03-02-releasenotes.md)
-  * [Release Notes, March 15, 2022](umbraco-cloud/release-notes/2022-03-15-releasenotes.md)
-  * [Release Notes, March 29, 2022](umbraco-cloud/release-notes/2022-03-29-releasenotes.md)
-  * [Release Notes, April 25, 2022](umbraco-cloud/release-notes/2022-04-25-releasenotes.md)
-  * [Release Notes, May 23, 2022](umbraco-cloud/release-notes/2022-05-23-releasenotes.md)
-  * [Release Notes, June 23, 2022](umbraco-cloud/release-notes/2022-06-23-releasenotes.md)
-  * [Release Notes, August 19, 2022](umbraco-cloud/release-notes/2022-08-19-releasenotes.md)
-  * [Release Notes, September 19, 2022](umbraco-cloud/release-notes/2022-09-19-releasenotes.md)
-  * [Release Notes, November 7, 2022](umbraco-cloud/release-notes/2022-11-07-releasenotes.md)
+  * [Release Notes, November 2022](umbraco-cloud/release-notes/2022-11-07-releasenotes.md)
+  * [Release Notes, September 2022](umbraco-cloud/release-notes/2022-09-19-releasenotes.md)
+  * [Release Notes, August 2022](umbraco-cloud/release-notes/2022-08-19-releasenotes.md)
+  * [Release Notes, June 2022](umbraco-cloud/release-notes/2022-06-23-releasenotes.md)
+  * [Release Notes, May 2022](umbraco-cloud/release-notes/2022-05-23-releasenotes.md)
+  * [Release Notes, April 2022](umbraco-cloud/release-notes/2022-04-25-releasenotes.md)
+  * [Release Notes, March 2022](umbraco-cloud/release-notes/2022-03-02-releasenotes.md)
+  * [Release Notes, February 2022](umbraco-cloud/release-notes/2022-02-15-releasenotes.md)
+  * [Release Notes, January 2022](umbraco-cloud/release-notes/2022-01-06-releasenotes.md)
+
+
+
+
+  
+
+
 
 ## Umbraco Heartcore
 
