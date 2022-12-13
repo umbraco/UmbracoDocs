@@ -16,7 +16,7 @@
 
 Umbraco Cloud Portal offers a powerful baseline-child relationship between projects, similar to a fork (forked repository) on GitHub. With this feature you can create a clone of an existing project while maintaining a connection between the two projects.
 
-If you at some point **want to break this connection**, between the baseline and one a child project you can now do so.
+If you at some point **want to break this connection**, between the baseline and one child project, you can do so now.
 Users with the role of admin  is able to break the connection.
 
 Please be aware that the action **cannot be undone**.
