@@ -10,7 +10,7 @@ _Backoffice user group selection + Outgoing IPs for Heartcore webhooks + Bandwid
 * **Static Outbound IP Address** - Enable the static outbound IP address feature to ease communication with external firewall-protected services. Find the dynamic or static outbound IP addresses on the _Advanced_ page.
 * **Managing Transport Security** - Configure transport security options for your specific hostnames for your Umbraco Cloud Project.
 * **Content Comparison** - Explore the new feature in Umbraco Deploy feature that enables you to preview content changes prior to transferring them to another environment.
-* **Bandwidth Usage Top 10 for resources** - Wondering which resources of your Umbraco Cloud project that contributes with most bandwidth usage? Now you can find the answer in the new bandwidth Top 10 for resources on the project usage page.
+* **Bandwidth Usage Top 10 for resources** - Wondering which resources of your Umbraco Cloud project contributes with the most bandwidth usage? Now you can find the answer in the new bandwidth Top 10 for resources on the project usage page.
 
 
 ### Backoffice user group selection
