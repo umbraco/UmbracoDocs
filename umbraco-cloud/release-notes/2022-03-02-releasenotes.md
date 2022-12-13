@@ -53,7 +53,7 @@ For Starter projects, there is likewise a new addition. On the Advanced page, yo
 
 ### [Managing Transport Security](../set-up/project-settings/manage-security.md)
 
-Once you have added your own hostnames to your Umbraco Cloud project it's possible to configure certain **transport security options** for all or for specific hostnames within your project. These security options all relate to the traffic that goes through your hostname from the origin (Umbraco Cloud) to the end-user - meaning the protocols and encryption used to transport your website and assets from the webserver to the browser.
+Once you have added your own hostnames it's possible to configure certain **transport security options** for all or for specific hostnames within your Cloud project. These security options all relate to the traffic that goes through your hostname from the origin (Umbraco Cloud) to the end user. The options are the protocols and encryption used to transport your website and assets from the webserver to the browser.
 
 This can be done on the new _Security_ page.
 
