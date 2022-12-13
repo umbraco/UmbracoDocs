@@ -91,5 +91,5 @@ The bandwidth top 10 for referrers is now out of Beta. We are introducing a **ne
 
 You can use the paths generating the most bandwidth usage to see where optimizing and minimizing the file size of resources will impact the most.
 
-The top 10 bandwidth usage for resources is currently in BETA and for March it only contains requests from the 15th of March or later. From April 2022 and onwards the top 10 will contain all bandwidth for the specific month.
+The top 10 bandwidth usage for resources is currently in beta and for March it only contains requests from the 15th of March or later. From April 2022 and onwards the top 10 will contain all bandwidth for the specific month.
 
