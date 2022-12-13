@@ -81,7 +81,7 @@ The Umbraco Commercial Packages team has made some great improvements to Umbraco
 
 You are able to see what has changed when. And understand what will change if you proceed with a transfer upstream or a restore into the local environment.
 
-Content comparison is now available in all Umbraco Cloud projects running Umbraco Deploy 9.3+ for Umbraco 9, and 4.5 + for Umbraco 8.
+Content comparison is now available in all Umbraco Cloud projects running Umbraco Deploy 9.3+ for Umbraco 9 and 4.5 + for Umbraco 8.
 
 ## Bandwidth Usage Top 10 for resources
 
