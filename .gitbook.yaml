@@ -5,4 +5,4 @@ root: ./
 
 redirects:
     umbraco-cms/fundamentals/setup/upgrading/general: umbraco-cms/fundamentals/setup/upgrading/README.md
-    README: umbraco-workflow/README.md 
+    umbraco-workflow: umbraco-workflow/README.md
