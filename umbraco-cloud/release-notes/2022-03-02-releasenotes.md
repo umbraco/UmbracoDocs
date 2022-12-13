@@ -85,7 +85,7 @@ Content comparison is now available in all Umbraco Cloud projects running Umbrac
 
 ## Bandwidth Usage Top 10 for resources
 
-The bandwidth top 10 for referrers is now out of beta. And we are introducing a **new top 10 for resources** where you will see the resources that are contributing the most to the total bandwidth of your project. Each resource is represented by its path together with the number of requests and its total contribution of bandwidth.
+The bandwidth top 10 for referrers is now out of Beta. We are introducing a **new top 10 for resources** that displays the resources contributing the most to the total bandwidth of your project. Each resource is represented by its path together with the number of requests and its total contribution of bandwidth.
 
 ![Top 10 Bandwidth Paths](images/Top10BandwidthPaths.gif)
 
