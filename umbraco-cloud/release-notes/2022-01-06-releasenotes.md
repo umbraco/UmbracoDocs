@@ -1,4 +1,4 @@
-# Release Notes, January, 2022
+# Release Notes, January 2022
 
 ## Key Takeaways
 
@@ -8,7 +8,7 @@
 * **Specify portal project roles on project invites** - When inviting a new user to a project you can specify the portal project role assigned to the user for each separate environment of the project.
 * **Improved available upgrade notifications** - We have improved the notifications for available upgrades on the project page.
 * **Baseline loading efficiency in create wizard** - When creating a new cloud project loading of potential baselines is now async for improved performance.
-* **Blob storage connection info** - The blob storage connection info for a project is now displayed on the _Connection details_ page.
+* **Blob storage connection info** - The blob storage connection information for a project is now displayed on the _Connection details_ page.
 * **Project invitation link to clipboard** - To ease the project invite flow if a project invitation mail is bounced or accidentally lands in the spam folder you can now copy the invitation link to your clipboard.
 * **Release notes link in the portal** - As you are reading these pages you might already have noticed the new item in the profile menu of the portal; a link to the portal release notes.
 
@@ -49,9 +49,9 @@ The _Create new Cloud project wizard_ has in the last weeks undergone some **per
 
 We have ensured that the potential baselines are loaded much faster to ensure a **better user experience**. This reduces the time wasted before you can start working on a new cloud project. ![BaselineAsyncLoad\_v1](https://user-images.githubusercontent.com/93588665/150125758-3fcb5664-f0b4-4bee-926e-ecbbfb113a09.gif)
 
-### [Blob storage connection info](../set-up/media/connect-to-azure-storage-explorer.md)
+### [Blob storage connection information](../set-up/media/connect-to-azure-storage-explorer.md)
 
-The blob storage connection info for a project was previously only displayed in Kudu which was not convenient or easy to find. A developer should spend as much time as possible developing fantastic solutions and less time in Kudu. Therefore this connection info is now easy to _**copy directly from the portal**_ and ready to post into _Azure Blob Explorer_ whenever needed.
+The blob storage connection information for a project was previously only displayed in Kudu which was not convenient or easy to find. A developer should spend as much time as possible developing fantastic solutions and less time in Kudu. Therefore this connection info is now easy to _**copy directly from the portal**_ and ready to post into _Azure Blob Explorer_ whenever needed.
 
 ![BlobStorage](https://user-images.githubusercontent.com/93588665/151602205-2784ec6c-1142-4221-9bf4-0ba9727ff8f6.gif)
 

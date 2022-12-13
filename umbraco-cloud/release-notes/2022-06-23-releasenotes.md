@@ -28,8 +28,8 @@ We will continuously improve the many other sections in the Portal and ensure th
 
 During May and June, we provided small fixes and improvements to the Umbraco Cloud Portal. Here are some of the highlights:
 
-- The much-used project subpage “Edit team” has been updated with a fresh new look using the Umbraco UI Library based on web components. Go have a look today!
-- Custom hostnames for a few Umbraco 7 projects were not shown on the project subpage “Hostnames”.
-- For Professional plans, the download of IIS logs required you to log into the Azure portal.
-- Download of error logs at times opened in a new tab instead of starting downloading.
-- A new project member could not instantly create a new cloud project.
+* The much-used project subpage “Edit team” has been updated with a fresh new look using the Umbraco UI Library based on web components. Go have a look today!
+* Custom hostnames for a few Umbraco 7 projects were not shown on the project subpage “Hostnames”.
+* For Professional plans, the download of IIS logs required you to log into the Azure portal.
+* Download of error logs at times opened in a new tab instead of starting downloading.
+* A new project member could not instantly create a new cloud project.

@@ -1,4 +1,4 @@
-# Release Notes, May, 2022
+# Release Notes, May 2022
 
 _CDN Caching and Optimization settings + Improved Organization Invite Flow + Media Storage Files Top 50_
 
