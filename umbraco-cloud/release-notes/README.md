@@ -11,7 +11,7 @@
 ### [**September 2022 Release Notes**](2022-11-07-releasenotes.md)
 
 * **2FA authentication** - You can now secure your Umbraco Cloud account by enabling 2-factor authentication (2FA). Select between email, phone, or app authentication.
-* **US Region Hosting** - From the 1st of September, you can select a brand new US region in addition to the existing West Europe option.
+* **US Region Hosting** - From the 1st of September, you can select a brand-new US region in addition to the existing West Europe option.
 * **Projects Dashboard** - The first version of the Projects Dashboard has been released. Organize your Umbraco Cloud projects as per your preference and get a complete overview of product versions in all your environments.
 
 ### [**August 2022 Release Notes**](2022-09-19-releasenotes.md)
