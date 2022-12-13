@@ -79,7 +79,7 @@ The Umbraco Commercial Packages team has made some great improvements to Umbraco
 
 ![Content comparison](images/umbraco-deploy-93-content-comparisson\_1.gif)
 
-You are able to see what has changed when. And understand what will change if you proceed with a transfer upstream or a restore into the local environment.
+You can see what has changed and understand what will change if you proceed with a transfer upstream or a restore into the local environment.
 
 Content comparison is now available in all Umbraco Cloud projects running Umbraco Deploy 9.3+ for Umbraco 9 and 4.5 + for Umbraco 8.
 
