@@ -43,7 +43,7 @@ The top 10 bandwidth usage for referrers is currently launched as a **Beta** ver
 
 ### Static Outbound IP Address
 
-When your Umbraco project connects to an external endpoint that requires connections originating from a static IP, such as a database or a web service using an IP address-based firewall, you will need **static outbound IP addresses** for your cloud project.
+You will need **static outbound IP addresses** for your cloud project when your Umbraco project connects to an external endpoint. The external endpoint requires connections originating from a static IP, such as a database or a web service using an IP address-based firewall.
 
 On the _Advanced_ page of your project, you are now able to turn on the static outbound IP address feature to ensure persistent communication. This opt-in feature can be switched on for Standard, Pro, and Enterprise cloud projects.
 
