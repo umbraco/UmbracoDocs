@@ -55,7 +55,7 @@
 ### [**January 2022 Release Notes**](2022-01-06-releasenotes.md)
 
 * **Break reference between baseline and child project** - As an admin, you can now break the reference between a baseline and child projects.
-* **New Project Overview Page** - See project information such as plan, payment status for your project on the new project overview page.
+* **New Project Overview Page** - See project information such as plan and payment status for your project on the new project overview page.
 * **Tweaks and improvements** - Since December we have provided a lot of small changes and improvements.
 * **Specify portal project roles on project invites** - When inviting a new user to a project you can specify the portal project role assigned to the user for each separate environment of the project.
 * **Improved available upgrade notifications** - We have improved the notifications for available upgrades on the project page.
