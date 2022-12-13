@@ -75,7 +75,7 @@ You can also add hostname-specific settings if needed and thereby overriding the
 
 ### [Content Comparison](https://umbraco.com/blog/umbraco-forms-81193-and-deploy-4593-release/#content)
 
-The Umbraco Commercial Packages team has made some great improvements for Umbraco Forms and Umbraco Deploy [lately](https://umbraco.com/blog/umbraco-forms-81193-and-deploy-4593-release/) which immediately adds value to your projects on Umbraco Cloud. One of the new Umbraco Deploy features, Content Comparison, enables you to preview content changes directly in the backoffice prior to transferring them to another environment. This will often be helpful in order to ensure the correct updates are transferred and improve predictability when working with content in multiple environments.
+The Umbraco Commercial Packages team has made some great improvements to Umbraco Forms and Umbraco Deploy [lately](https://umbraco.com/blog/umbraco-forms-81193-and-deploy-4593-release/) adding immediate value to your Cloud projects. One of the Umbraco Deploy features, Content Comparison, enables you to preview content changes directly in the backoffice prior to transferring them to another environment. This is often helpful to ensure the correct updates are transferred and improves predictability when working with content in multiple environments.
 
 ![Content comparison](images/umbraco-deploy-93-content-comparisson\_1.gif)
 
