@@ -23,7 +23,7 @@ The type name is the Content Type's alias in Pascal Case, e.g. if a Content Type
 
 The types generated depends on how the Content Types are configured.
 
-If a Content Type is used as a [Composition](../../../umbraco-cms/fundamentals/data/defining-content.md#creating-a-document-type) it will be generated as an interface
+If a Content Type is inherited from or used as a [Composition](../../../umbraco-cms/fundamentals/data/defining-content.md#creating-a-document-type) it will be generated as an interface
 
 ```graphql
 interface NavigationBase {
