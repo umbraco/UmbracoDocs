@@ -33,7 +33,7 @@ You are now able to access a simpler project overview page for each of your proj
 
 When inviting a new team member to a project it is now possible **to specify the project roles directly in the project invite**. Often you want the team member to be assigned a different role for each environment. This is now supported from the start of the project invite. A user can now be assigned the Admin role in the development environment while being limited to the Writer role in the Live environment. All helping to make it faster and easier to set up the correct permissions for team members.
 
-![ProjectInvite\_v1](https://user-images.githubusercontent.com/93588665/150125691-cb846cbc-ad7f-4135-9a48-5de640776e62.gif)
+![ProjectInvite_v1](https://user-images.githubusercontent.com/93588665/150125691-cb846cbc-ad7f-4135-9a48-5de640776e62.gif)
 
 ### Improved available upgrade notifications
 
