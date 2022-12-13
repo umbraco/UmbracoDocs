@@ -39,7 +39,7 @@ You can use this insight of pages generating the most bandwidth to see where opt
 
 ![Top10BandwidthReferers](https://user-images.githubusercontent.com/93588665/156560697-0dcc10f4-e252-43e4-bf44-fe78ef6a150b.png)
 
-The top 10 bandwidth usage for referrers is currently launched as a **beta** version as the bandwidth listed does not always match the total bandwidth shown for the project. We will update you when the list offers 100% trusted bandwidth values.
+The top 10 bandwidth usage for referrers is currently launched as a **Beta** version as the bandwidth listed does not always match the total bandwidth shown for the project. We will update you when the list offers 100% trusted bandwidth values.
 
 ### Static Outbound IP Address
 
