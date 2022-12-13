@@ -28,7 +28,7 @@
 ### [**May 2022 Release Notes**](2022-05-23-releasenotes.md)
 
 * **Content Delivery Network (CDN) Caching and Optimization settings** - You can now enable Content Delivery Network (CDN) caching on your Umbraco Cloud projects for even better performance. You can specify default settings and overwrite them at the hostname level.
-* **Improved Organization Invite flow** - When you invite a new user to your organization, the Umbraco Cloud portal now ensures a more intuitive and secure handling of the invitation workflow.
+* **Improved Organization Invite flow** - When you invite a new user to your organization, the Umbraco Cloud portal now ensures more intuitive and secure handling of the invitation workflow.
 * **Media Storage Files Top 50** - The Umbraco Cloud portal now offers greater transparency for which media files take up the most space in your cloud project's media storage.
 
 ### [**April 2022 Release Notes**](2022-04-25-releasenotes.md)
