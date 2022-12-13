@@ -23,7 +23,7 @@ We are currently working on multiple initiatives to give Umbraco Cloud users a f
 
 ![ProjectsDashboard](images/ProjectsDashboard.gif)
 
-Together with a large amount of project info, a slim project representation, and a filtering system, you will see a **improved overview** for managing your Umbraco Cloud projects. Flexibility and usability are the focus of enabling Umbraco Cloud to empower users to organize and group their projects.
+Together with the project information, a project representation, and a filtering system, you will see an **improved overview** for managing your Umbraco Cloud projects. Flexibility and usability are the focus of enabling Umbraco Cloud to empower users to organize and group their projects.
 
 We will **add new features and functionality** to the dashboard in future releases, starting with a search functionality as you know from the current project overview. We are also working on improving the performance so especially the environment and product versions are retrieved more fluently.
 
