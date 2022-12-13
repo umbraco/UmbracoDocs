@@ -14,7 +14,7 @@ For Umbraco 9 projects and Umbraco 10 you can on the project subpage “Advanced
 
 ![RuntimeSettingsForV9](images/RuntimeSettingsForV9.gif)
 
-Before updating, you need to ensure the packages used are available in Umbraco 10 and that your custom code is valid with the .NET 6 Framework.
+Before updating, ensure the packages used are available in Umbraco 10 and that your custom code is valid with the .NET 6 Framework.
 
 ## New version of “Edit team” page
 
