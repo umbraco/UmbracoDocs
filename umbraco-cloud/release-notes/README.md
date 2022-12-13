@@ -17,7 +17,7 @@
 ### [**August 2022 Release Notes**](2022-09-19-releasenotes.md)
 
 * **Dedicated Resources** - A new feature offering dedicated resources for your Umbraco Cloud project has been released. You can upgrade your projects to use dedicated resources with the click of a button.
-* **Projects Dashboard (beta)** - The beta version of the Projects Dashboard offers the first sneak preview of the future project's overview in the Umbraco Cloud Portal.
+* **Projects Dashboard (Beta)** - The Beta version of the Projects Dashboard offers the first sneak preview of the future project's overview in the Umbraco Cloud Portal.
 
 ### [**June 2022 Release Notes**](2022-06-23-releasenotes.md)
 
@@ -60,6 +60,6 @@
 * **Specify portal project roles on project invites** - When inviting a new user to a project you can specify the portal project role assigned to the user for each separate environment of the project.
 * **Improved available upgrade notifications** - We have improved the notifications for available upgrades on the project page.
 * **Baseline loading efficiency in create wizard** - When creating a new cloud project loading of potential baselines is now async for improved performance.
-* **Blob storage connection info** - The blob storage connection info for a project is now displayed on the _Connection details_ page.
+* **Blob storage connection info** - The blob storage connection information for a project is now displayed on the _Connection details_ page.
 * **Project invitation link to clipboard** - To ease the project invite flow if a project invitation mail is bounced or accidentally lands in the spam folder you can now copy the invitation link to your clipboard.
 * **Release notes link in the portal** - As you are reading these pages you might already have noticed the new item in the profile menu of the portal; a link to the portal release notes.
