@@ -34,7 +34,7 @@
 ### [**April 2022 Release Notes**](2022-04-25-releasenotes.md)
 
 * **Enable client certificates from file system** - If you need to load a client certificate from the file system in your cloud project at runtime you can make this possible by turning on the new setting on the _Advanced_ page of the project.
-* **tweaks and improvements** - During March and April, we have focused on fixing minor issues and adding minor improvements. The highlights of these changes are shown below.
+* **Tweaks and improvements** - During March and April, we focused on fixing minor issues and adding minor improvements. The highlights of these changes are shown below.
 
 ### [**March 2022 Release Notes**](2022-03-02-releasenotes.md)
 
