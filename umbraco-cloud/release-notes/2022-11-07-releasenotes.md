@@ -1,7 +1,5 @@
 # Release Notes, November 2022
 
-Dedicated for Starter and Standard - Projects Dashboard Quick links- Other Umbraco Cloud Updates.s
-
 ## Key Takeaways
 
 * **Dedicated for Starter and Standard plan** - You can now add a dedicated option for every Umbraco Cloud project plan to run on dedicated resources.

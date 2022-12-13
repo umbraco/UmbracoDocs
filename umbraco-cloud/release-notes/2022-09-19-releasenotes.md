@@ -1,7 +1,5 @@
 # Release Notes, September 2022
 
-_2FA authentication - US Region Hosting - Projects Dashboard_
-
 ## Key Takeaways
 
 * **2FA authentication** - You can now secure your Umbraco Cloud account by enabling 2-factor authentication (2FA). Select between email, phone, or app authentication.

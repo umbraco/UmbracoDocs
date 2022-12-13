@@ -51,7 +51,7 @@ We have ensured that the potential baselines are loaded much faster to ensure a 
 
 ### [Blob storage connection information](../set-up/media/connect-to-azure-storage-explorer.md)
 
-The blob storage connection information for a project was previously only displayed in Kudu which was not convenient or easy to find. A developer should spend as much time as possible developing fantastic solutions and less time in Kudu. Therefore this connection info is now easy to _**copy directly from the portal**_ and ready to post into _Azure Blob Explorer_ whenever needed.
+The blob storage connection information for a project was previously only displayed in Kudu which was not convenient or easy to find. A developer should spend as much time as possible developing fantastic solutions and less time in Kudu. Therefore this connection informantion is now easy to _**copy directly from the portal**_ and ready to post into _Azure Blob Explorer_ whenever needed.
 
 ![BlobStorage](https://user-images.githubusercontent.com/93588665/151602205-2784ec6c-1142-4221-9bf4-0ba9727ff8f6.gif)
 
@@ -69,7 +69,7 @@ We added new team members to the Cloud Feature team to support our strategy of m
 
 In order for agencies and users to keep up with the improvements, we’ve made it easier to find the latest release notes. You can now find the link for the release notes in the profile settings menu. Release notes will be published multiple times each month and list the most relevant fixes and features added to the portal.
 
-### Various tweaks and improvements
+### tweaks and improvements
 
 During December we have provided a lot of small improvements to the Umbraco Cloud Portal. Too many to mention, you can find a few of the highlights in the list below.
 

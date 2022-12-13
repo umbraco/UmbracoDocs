@@ -1,7 +1,5 @@
 # Release Notes, February 2022
 
-_Improved pending invite status + View backoffice user groups for team members + Usage limit warnings_
-
 ## Key Takeaways
 
 * **Improved pending invite status** - Users with pending project invites can see an expiration date, status and option to delete expired invites.
