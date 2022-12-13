@@ -13,7 +13,7 @@ If your cloud project needs to load a client certificate (such as an X.509 certi
 
 ![Enable client certificate load from file system](../set-up/images/EnableClientCertificateLoadedFromFileSystem.gif)
 
-## tweaks and improvements
+## Tweaks and improvements
 
 During March and April, we have provided a lot of small improvements to the Umbraco Cloud Portal. Too many to mention, however you will find the highlights in the list below.
 
