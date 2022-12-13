@@ -18,7 +18,7 @@ To enable 2FA for Umbraco Cloud, go to **Profile**, click **Edit Profile**, and 
 
 ![2FA-Registration](images/2FA-Registration.gif)
 
-2FA code can be sent either to your email or an text message to your phone, or you can use an authentication app such as Google Authenticator, Authy, or similar.
+2FA code can be sent either to your email or as a text message on your phone. Alternatively, you can use an authentication app such as Google Authenticator, Authy, or similar.
 
 ![Phone-auth](../set-up/images/Phone-auth.png)
 
