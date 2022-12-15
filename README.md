@@ -21,9 +21,14 @@ Contribute to this branch by submitting a PR or raising an Issue.
 The initial Razor Cheat Sheet has been created and put together by the [Umbraco Documentation Curators](https://community.umbraco.com/community-teams/the-documentation-curators-retired/):
 
 [Marc Goodson](https://twitter.com/marcemarc)
+
 [Jeavon Leopold](https://twitter.com/crumpled_jeavon)
+
 [Damiaan Peeter](https://twitter.com/dampeebe)
+
 [Sophie Neale](https://twitter.com/Sophie__Says)
+
 [Busra Sengul](https://twitter.com/onlybusranow)
+
 
 The cheat sheet is based losely on [the Umbraco v6 MVC Razor Cheatsheets](https://our.umbraco.com/packages/developer-tools/umbraco-v6-mvc-razor-cheatsheets/).
