@@ -4,7 +4,7 @@ This repository holds the source and code snippets that make out the Razor Cheat
 
 ## Download
 
-The complete cheatsheet is available as PDF using this link: [DOWNLOAD LINK!]
+The complete cheatsheet is available as PDF using this link: [umbra.co/razorCheatsheet](umbra.co/razorCheatsheet)
 
 The cheatsheet is build using Google Slides. You can get your hands on these following this link: [Razor Cheatsheet Template](https://docs.google.com/presentation/d/1d5BQHxGz9OUV4b3ChVRo5bHLGYMS7aMMd8YgvlD0RzM/edit?usp=sharing)
 
