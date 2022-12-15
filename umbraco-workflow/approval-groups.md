@@ -15,7 +15,7 @@ To add an approval group, follow these steps:
 7. Select the **Language** from the drop-down list.
 8. **Enable offline approval** to allow users in this group to approve changes without logging in to the backoffice.
 9.  Click **Save Group**.\
-    &#x20;
+
 
     <figure><img src="images/Create-approval-group.png" alt="Create Approval Group"><figcaption><p>Create Approval Groups</p></figcaption></figure>
 

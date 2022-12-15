@@ -1,12 +1,12 @@
 ---
-meta.Title: "Adding a field type to Umbraco Forms"
+meta.Title: Adding a field type to Umbraco Forms
 ---
 
-# Adding a field type to Umbraco Forms #
+# Adding A Field Type To Umbraco Forms
 
-*This builds on the "[adding a type to the provider model](adding-a-type.md)" chapter*
+_This builds on the "_[_adding a type to the provider model_](adding-a-type.md)_" chapter_
 
-## C#
+## C\#
 
 Add a new class to the Visual Studio solution, make it inherit from `Umbraco.Forms.Core.FieldType` and fill in the constructor:
 
@@ -54,7 +54,6 @@ namespace MyFormsExtensions
         }
     }
 }
-
 ```
 
 In the constructor, we specify the standard provider information (remember to set the ID to a unique ID).
@@ -100,7 +99,7 @@ This will be rendered when the default theme is used.
 
 If working with Umbraco 9 or earlier versions, you'll find the `Views\Partials\Forms\Themes\default\` folder on disk and can create the files in there.
 
-For Umbraco 10 and above, we've moved to [distributing the theme as part of a Razor Class Library](../../installation/version-specific.md#views-and-client-side-files) so the folder won't exist. However, you can create it for your custom field type. If you would like to reference the partial views of the default theme, you can download them as mentioned in the [Themes](../../developer/themes.md) article.
+For Umbraco 10 and above, we've moved to [distributing the theme as part of a Razor Class Library](../../installation/version-specific.md#views-and-client-side-files) so the folder won't exist. However, you can create it for your custom field type. If you would like to reference the partial views of the default theme, you can download them as mentioned in the [Themes](../themes.md) article.
 
 ## Umbraco backoffice view
 
@@ -116,7 +115,7 @@ The final step involves building the HTML view which will be rendered in Umbraco
 
 In the HTML you can access settings via `field.settings`, e.g. `{{field.settings.Caption}}` to render a "Caption" setting. It is also possible to access prevalues via `field.parsedPreValues`.
 
-For built-in field types, Umbraco Forms look for this file in the folder:  `App_Plugins\UmbracoForms\backoffice\Common\FieldTypes\` and will expect to find a file with a name matching the class's name, i.e. `mycustomfield.html`.
+For built-in field types, Umbraco Forms look for this file in the folder: `App_Plugins\UmbracoForms\backoffice\Common\FieldTypes\` and will expect to find a file with a name matching the class's name, i.e. `mycustomfield.html`.
 
 As this location is cleared following a `dotnet clean` command, it's better to host the files for custom field types in a different location, such as `App_Plugins\UmbracoFormsCustomFields\backoffice\Common\FieldTypes\mycustomfield.html`.
 
@@ -125,7 +124,6 @@ With a file in that location, you can apply the following override to the custom
 ```csharp
 public override string GetDesignView() =>
     "~/App_Plugins/UmbracoFormsCustomFields/backoffice/Common/FieldTypes/mycustomfield.html";
-
 ```
 
 ## Field settings
@@ -137,7 +135,7 @@ Field settings that will be managed in the backoffice by editors creating forms 
     public string MySetting { get; set; }
 ```
 
-The `View` attribute defines the client-side view used when rendering a preview of the field in the form's designer.  Umbraco Forms ships with a number of these, found in `App_Plugins\UmbracoForms\backoffice\Common\SettingTypes\`.
+The `View` attribute defines the client-side view used when rendering a preview of the field in the form's designer. Umbraco Forms ships with a number of these, found in `App_Plugins\UmbracoForms\backoffice\Common\SettingTypes\`.
 
 Again though, as this location is cleared following a `dotnet clean` command, if you require a custom setting type view, it's better to host them in different location, such as `App_Plugins\UmbracoFormsCustomFields\backoffice\Common\SettingTypes\mycustomsettingfield.html`.
 

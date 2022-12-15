@@ -115,6 +115,7 @@
     * [Templates](umbraco-cms/fundamentals/design/templates/README.md)
       * [Basic Razor Syntax](umbraco-cms/fundamentals/design/templates/basic-razor-syntax.md)
       * [Named Sections](umbraco-cms/fundamentals/design/templates/named-sections.md)
+      * [Razor Cheatsheet](umbraco-cms/fundamentals/design/templates/razor-cheatsheet.md)
     * [Rendering Content](umbraco-cms/fundamentals/design/rendering-content.md)
     * [Rendering Media](umbraco-cms/fundamentals/design/rendering-media.md)
     * [Partial Views](umbraco-cms/fundamentals/design/partial-views.md)
@@ -561,13 +562,6 @@
   * [Release Notes, March 2022](umbraco-cloud/release-notes/2022-03-02-releasenotes.md)
   * [Release Notes, February 2022](umbraco-cloud/release-notes/2022-02-15-releasenotes.md)
   * [Release Notes, January 2022](umbraco-cloud/release-notes/2022-01-06-releasenotes.md)
-
-
-
-
-  
-
-
 
 ## Umbraco Heartcore
 

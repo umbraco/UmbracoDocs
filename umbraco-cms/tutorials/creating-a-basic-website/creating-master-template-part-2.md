@@ -68,7 +68,7 @@ To update the Document Type permissions:
 2. Open the **Homepage** Document Type and go to the **Permissions** tab.
 3. Select **Add child** in the **Allowed child node types**. The **Choose child node** dialog opens.
 4.  Select **Simple Content Page** and click **Save**.\
-    &#x20;
+
 
     <figure><img src="images/figure-32-homepage-allowed-child-v8.png" alt=""><figcaption></figcaption></figure>
 
@@ -106,7 +106,7 @@ To view the **Contact Us** Page:
 2. Select the **Contact Us** page.
 3. Go to the **Info** tab.
 4.  Click the link to view the page.\
-    &#x20;
+
 
     <figure><img src="images/figure-37-viewing-contact-us.png" alt=""><figcaption></figcaption></figure>
 

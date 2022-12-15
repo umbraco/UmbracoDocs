@@ -1,22 +1,22 @@
-# Content Management API for Content
+# Content
 
 **BASE URL**: `https://api.umbraco.io`
 
 ## Table of Contents
-* [Common Headers](#common-headers)
-* [Authentication](#authentication)
-* [Permissions](#permissions)
-* [Errors](#errors)
-* [Get Root Content](#get-root-content)
-* [Get By Id](#get-by-id)
-* [Get Children](#get-children)
-* [Create Content](#create-content)
-* [Create Content with Files](#create-content-with-files)
-* [Update Content](#update-content)
-* [Publish Content](#publish-content)
-* [Unpublish Content](#unpublish-content)
-* [Delete Content](#delete-content)
 
+* [Common Headers](./#common-headers)
+* [Authentication](./#authentication)
+* [Permissions](./#permissions)
+* [Errors](./#errors)
+* [Get Root Content](./#get-root-content)
+* [Get By Id](./#get-by-id)
+* [Get Children](./#get-children)
+* [Create Content](./#create-content)
+* [Create Content with Files](./#create-content-with-files)
+* [Update Content](./#update-content)
+* [Publish Content](./#publish-content)
+* [Unpublish Content](./#unpublish-content)
+* [Delete Content](./#delete-content)
 
 ## Common Headers
 
@@ -40,14 +40,14 @@ In addition to the specific permissions listed under each endpoint, all requests
 
 If an error occours you will receive a HTTP status code along with an API error code and an error message in the response body.
 
-| Status Code | Error Code           | Message                                                                  |
-| ----------- | -------------------- | ------------------------------------------------------------------------ |
-| 400         | BadRequest           | Body cannot be empty.                                                    |
-| 401         | Unauthorized         | Authorization has been denied for this request.                          |
-| 403         | Forbidden            | You are not authorized to access the given resource.                     |
-| 404         | NotFound             | Content with id '{id}' could not be found.                               |
-| 422         | ValidationFailed     | Validation error occured when trying to save or update the content item. |
-| 500         | InternalServerError  | Internal server error.                                                   |
+| Status Code | Error Code          | Message                                                                  |
+| ----------- | ------------------- | ------------------------------------------------------------------------ |
+| 400         | BadRequest          | Body cannot be empty.                                                    |
+| 401         | Unauthorized        | Authorization has been denied for this request.                          |
+| 403         | Forbidden           | You are not authorized to access the given resource.                     |
+| 404         | NotFound            | Content with id '{id}' could not be found.                               |
+| 422         | ValidationFailed    | Validation error occured when trying to save or update the content item. |
+| 500         | InternalServerError | Internal server error.                                                   |
 
 **JSON example**:
 
@@ -290,7 +290,7 @@ Get a list of children (content items) by parent GUID ID. Includes all language 
 
 **Query Strings**
 
-```none
+```
 ?page={integer=1}
 ?pageSize={integer=10}
 ```
@@ -651,7 +651,7 @@ In this example only one language exists, so the properties are marked with `$in
 
 Create a new content item with one or more language variations and files.
 
-When content contains an upload field it is possible to send a file along with the request to create new content. This is done by sending a multi-part request with the JSON body and the file. 
+When content contains an upload field it is possible to send a file along with the request to create new content. This is done by sending a multi-part request with the JSON body and the file.
 
 If the content item doesn't include files then you can send a standard reqeust with a JSON payload to create a new content item.
 
@@ -696,7 +696,6 @@ Content-Type: image/png
 
 BINARY DATA
 --MultipartBoundry--
-
 ```
 
 ### Success Response
@@ -748,9 +747,9 @@ BINARY DATA
 
 ## Update content
 
-Updates an existing content item that has one or more language variations. 
+Updates an existing content item that has one or more language variations.
 
-When content contains an upload field it is possible to send a file along with the request to update content. This is done by sending a multi-part request with the json body and the file, see [Create content with files](#create-content-with-files) for an example. If the content item doesn't include files then you can send a standard reqeust with a JSON payload to update the content item.
+When content contains an upload field it is possible to send a file along with the request to update content. This is done by sending a multi-part request with the json body and the file, see [Create content with files](./#create-content-with-files) for an example. If the content item doesn't include files then you can send a standard reqeust with a JSON payload to update the content item.
 
 **URL**: `/content/{id}`
 
@@ -881,7 +880,7 @@ Publish specific content item with all language variations or for a specific lan
 
 **Query Strings**
 
-```none
+```
 ?culture={string=en-US}
 ```
 
@@ -969,7 +968,7 @@ Unpublish specific content item with all language variations or for a specific l
 
 **Query Strings**
 
-```none
+```
 ?culture={string=en-US}
 ```
 

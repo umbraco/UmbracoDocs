@@ -1,4 +1,4 @@
-# Advanced techniques with Flexible Load Balancing
+# Advanced Techniques With Flexible Load Balancing
 
 _This describes some more advanced techniques that you could achieve with flexible load balancing_
 
@@ -15,8 +15,7 @@ These new terms replace 'Master and Replica', in Umbraco versions 7 and 8.
 
 ## Explicit SchedulingPublisher server
 
-It is recommended to configure an explicit SchedulingPublisher server since this reduces the amount
-of complexity that the election process performs.
+It is recommended to configure an explicit SchedulingPublisher server since this reduces the amount of complexity that the election process performs.
 
 The first thing to do is create a couple of small classes that implement `IServerRoleAccessor` one for each of the different server roles:
 
@@ -32,8 +31,7 @@ public class SubscriberServerRoleAccessor : IServerRoleAccessor
 }
 ```
 
-then you'll need to replace the default `IServerRoleAccessor` for the your custom registrars.
-You'll can do this by using the `SetServerRegistrar()` extension method on `IUmbracoBuilder` from a [Composer](../../../../implementation/composing.md) or directly in your `startup.cs`.
+then you'll need to replace the default `IServerRoleAccessor` for the your custom registrars. You'll can do this by using the `SetServerRegistrar()` extension method on `IUmbracoBuilder` from a [Composer](../../../../implementation/composing.md) or directly in your `startup.cs`.
 
 ```csharp
 // This should be executed on your single `SchedulingPublisher` server
@@ -53,15 +51,14 @@ By setting your SchedulingPublisher server to use your custom `SchedulingPublish
 This description pertains only to Umbraco database tables
 {% endhint %}
 
-In some cases infrastructure admins will not want their front-end servers to have write access to the database.
-By default front-end servers will require write full access to the following tables:
+In some cases infrastructure admins will not want their front-end servers to have write access to the database. By default front-end servers will require write full access to the following tables:
 
 * `umbracoServer`
 * `umbracoNode`
 
 This is because by default each server will inform the database that they are active and more importantly it is used for task scheduling. Only a single server can execute task scheduling and these tables are used for servers to use a server role election process without the need for any configuration. So in the case that a subscriber server becomes the SchedulingPublisher task scheduler, **it will require write access to all of the Umbraco tables**.
 
-In order to have read-only database access configured for your front-end servers, you need to implement the [Explicit SchedulingPublisher server](#explicit-schedulingpublisher-server) configuration mentioned above.
+In order to have read-only database access configured for your front-end servers, you need to implement the [Explicit SchedulingPublisher server](flexible-advanced.md#explicit-schedulingpublisher-server) configuration mentioned above.
 
 Now that your subscriber servers are using your custom `SubscriberServerRoleAccessor` class, they will always be deemed 'Subscriber' servers and will not attempt to run the automatic server role election process or task scheduling. Because you are no longer using the default `ElectedServerRoleAccessor` they will not try to ping the umbracoServer table.
 
@@ -95,7 +92,6 @@ Below is shown how to do this from a JSON configuration source.
         }
     }
 }
-
 ```
 
 Options:
@@ -105,4 +101,4 @@ Options:
 * `TimeBetweenSyncOperations` - The timespan to wait between each sync operations
 * `TimeBetweenPruneOperations` - The timespan to wait between each prune operation
 
-These setting would normally be applied to all environments as they are added to the global app settings. If you need these settings to be environment specific, we recommend using [environment specific `appSetting` files](../../../../reference/configuration/README.md#managing-configuration).
+These setting would normally be applied to all environments as they are added to the global app settings. If you need these settings to be environment specific, we recommend using [environment specific `appSetting` files](../../../../reference/configuration/#managing-configuration).

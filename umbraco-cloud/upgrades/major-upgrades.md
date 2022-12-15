@@ -7,7 +7,7 @@ description: >-
 # Major Upgrades
 
 {% hint style="danger" %}
-## Umbraco 11 release
+### Umbraco 11 release
 
 We currently do **not recommend** upgrading to Umbraco CMS version 11 on Cloud.
 
@@ -17,11 +17,11 @@ Please reach out to [Umbraco Support](mailto:support@umbraco.com) if you have an
 {% endhint %}
 
 {% hint style="info" %}
-#### **Are you using any custom packages or code on your Umbraco Cloud project?**
+**Are you using any custom packages or code on your Umbraco Cloud project?**
 
-You will need to ensure the packages you use are available in the latest version of  Umbraco and that your custom code is valid with the .NET Framework.
+You will need to ensure the packages you use are available in the latest version of Umbraco and that your custom code is valid with the .NET Framework.
 
-#### **Breaking Changes**
+**Breaking Changes**
 
 Make sure you know the [Breaking changes](../../umbraco-cms/fundamentals/setup/upgrading/version-specific/) in the latest version of Umbraco CMS.
 {% endhint %}
@@ -83,7 +83,7 @@ Video example.
 
 ### Upgrading Add-on packages
 
-&#x20;Update the following packages to the latest stable version as well:
+Update the following packages to the latest stable version as well:
 
 * Umbraco.Deploy.Cloud
 * Umbraco.Deploy.Contrib
@@ -95,18 +95,17 @@ Video example.
 {% hint style="info" %}
 Choose the package version corresponding to the CMS version that you are currently upgrading to.
 
-For example, if you are upgrading to "Umbraco.Cms 11.0.0" update the forms package to "Umbraco.Forms 11.0.0" as well. \
-
+For example, if you are upgrading to "Umbraco.Cms 11.0.0" update the forms package to "Umbraco.Forms 11.0.0" as well. \\
 
 Also, if you have more projects in your solution or other packages, make sure that these are also updated to support the latest .NET framework.
 {% endhint %}
 
 ## Step 4: Finishing the Upgrade
 
-* Enable [Unattended Upgrades](../../umbraco-cms/reference/configuration/unattendedsettings.md#upgrade-unattended)&#x20;
+* Enable [Unattended Upgrades](../../umbraco-cms/reference/configuration/unattendedsettings.md#upgrade-unattended)
 * Run the **project locally**
 * Log in to the Umbraco backoffice to **verify the upgrade** has happened.
-* **Remove** Unattended Upgrades&#x20;
+* **Remove** Unattended Upgrades
 * **Build and run** the project to verify everything works as expected.
 
 ![Target Framework](images/verify-v10-upgrade-locally.png)

@@ -1,8 +1,8 @@
 ---
 versionFrom: 9.0.0
 versionTo: 10.0.0
-meta.Title: "Creating content finders"
-meta.Description: "Information about creating your own content finders"
+meta.Title: Creating content finders
+meta.Description: Information about creating your own content finders
 ---
 
 # IContentFinder
@@ -72,7 +72,7 @@ You either use an extension on the Umbraco builder or, a composer to access the 
 
 First create the extension method:
 
-```c#
+```
 using RoutingDocs.ContentFinders;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Routing;
@@ -99,7 +99,7 @@ namespace RoutingDocs.Extensions
 
 Then invoke it in `ConfigureServices` in the `Startup.cs` file:
 
-```c#
+```
 public void ConfigureServices(IServiceCollection services)
 {
 #pragma warning disable IDE0022 // Use expression body for methods
@@ -137,7 +137,6 @@ namespace RoutingDocs.ContentFinders
         }
     }
 }
-
 ```
 
 ## NotFoundHandlers
@@ -223,6 +222,4 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-:::warning
-When adding a custom `IContentLastChanceFinder` to the pipeline any `Error404Collection`-settings in `appSettings.json` will be ignored.
-:::
+:::warning When adding a custom `IContentLastChanceFinder` to the pipeline any `Error404Collection`-settings in `appSettings.json` will be ignored. :::
