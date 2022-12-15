@@ -2,6 +2,8 @@
 
 This repository holds the source and code snippets that make out the Razor Cheatsheet for Umbraco CMS.
 
+![Razor Cheatsheet preview for Umbraco 11](images/razorcheatsheet.png)
+
 ## Download
 
 The complete cheatsheet is available as PDF using this link: [umbra.co/razorCheatsheet](https://umbra.co/razorCheatsheet)
