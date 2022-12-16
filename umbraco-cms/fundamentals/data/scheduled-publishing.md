@@ -24,7 +24,7 @@ Your server may be in a different timezone than where you are located. You are a
 If you are in the same timezone as the server, this message will not appear under the date picker.
 
 {% hint style="info" %}
-In Umbraco versions lower than 7.5, the time you select has to be the time on the server, these older versions of Umbraco do not detect your local timezone.
+In Umbraco versions lower than 7.5, the time you select has to be the time on the server. These older versions of Umbraco do not detect your local timezone.
 {% endhint %}
 
 ## Permissions
@@ -44,11 +44,11 @@ If you are not load balancing, the way that Umbraco determines the base URL to s
 * Else umbracoSettings:distributedCall/servers if we have the server in there _(deprecated, see load balance docs)_
 * Else it's based on the first request that the website receives and uses the base URL of this request _(default)_
 
-If the `umbracoApplicationUrl` is used, the value also specifies the scheme (either http or https). However if any of the other options are used and the appSetting `umbracoUseSSL` is set to `true`, then the request for scheduled publishing will always be sent to the HTTPS endpoint.
+If the `umbracoApplicationUrl` is used, the value also specifies the scheme (either http or https). The request for scheduled publishing will always sent over HTTPS if the appSettings `umbracoUseSSL` is set to `true`.
 
 ## Troubleshooting
 
-If your scheduled publishing/unpublishing is not working as expected it is most likely an issue that your server cannot communicate with the scheduled publishing endpoint. This can be caused by a number of reasons such as:
+If your scheduled publishing/unpublishing is not working as expected it is probably an issue that your server cannot communicate with the scheduled publishing endpoint. This can be caused by a number of reasons such as:
 
 * Url rewrites in place that prevent the endpoint from being reached
 * DNS misconfiguration not allowing the server to communicate to the base URL used in the first request that the website receives - which could be directly affected by a firewall/Network Address Translation (NAT)/load balancer that your server sites behind
@@ -56,4 +56,4 @@ If your scheduled publishing/unpublishing is not working as expected it is most 
 
 To better diagnose the issue you can temporarily change your log4net config settings to be `DEBUG` instead of `INFO`. This will give you all sorts of information including being able to see whether or not the scheduled publishing endpoint is being reached or not.
 
-In some cases it might be easiest to specify the [umbracoSettings:settings/web.routing/@umbracoApplicationUrl](../../reference/configuration/webroutingsettings.md) setting to ensure that your server is communicating to itself on the correct base URL.
+In some cases it might be easiest to specify the [umbracoSettings:settings/web.routing/@umbracoApplicationUrl](../../reference/configuration/webroutingsettings.md) setting. This is to ensure that your server is communicating to itself on the correct URL.
