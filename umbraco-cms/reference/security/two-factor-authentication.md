@@ -2,8 +2,10 @@
 versionFrom: 9.5.0
 versionTo: 10.0.0
 keywords: 2fa, security, members, users
-meta.Title: "Two-factor authentication"
-meta.Description: "Umbraco users and members support a two-factor authentication (2FA) abstraction for implementing a 2FA provider of your choice"
+meta.Title: Two-factor authentication
+meta.Description: >-
+  Umbraco users and members support a two-factor authentication (2FA)
+  abstraction for implementing a 2FA provider of your choice
 ---
 
 # Two-factor Authentication
@@ -16,10 +18,9 @@ Since Umbraco does not control how the UI is for member login and profile edit, 
 
 ### Example implementation for Authenticator Apps for Members
 
-In the following example, we will use the [GoogleAuthenticator NuGet Package](https://www.nuget.org/packages/GoogleAuthenticator/).
-Despite the name, this package works for both Google and Microsoft authenticator apps and can be used to generate the QR code needed to activate the app for the website.
+In the following example, we will use the [GoogleAuthenticator NuGet Package](https://www.nuget.org/packages/GoogleAuthenticator/). Despite the name, this package works for both Google and Microsoft authenticator apps and can be used to generate the QR code needed to activate the app for the website.
 
-```Csharp
+```
 using System;
 using System.Threading.Tasks;
 using Google.Authenticator;
@@ -107,14 +108,13 @@ namespace Umbraco9
         public bool ValidateTwoFactorSetup(string secret, string token) => ValidateTwoFactorPIN(secret, token);
     }
 }
-
 ```
 
 First, we create a model with the information required to set up the 2FA provider and then we implement the `ITwoFactorProvider` with the use of the `TwoFactorAuthenticator` from the GoogleAuthenticator NuGet package.
 
 Now we need to register the `UmbracoAppAuthenticator` implementation. This can be done on the `IUmbracoBuilder` in your startup or a composer.
 
-```Csharp
+```
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Security;
@@ -135,7 +135,7 @@ namespace Umbraco9
 
 At this point, the 2FA is active, but no members have set up 2FA yet. The setup of 2FA depends on the type. In the case of App Authenticator, we will add the following to our view showing the edit profile of the member.
 
-```Csharp
+```
 @using Umbraco.Cms.Core.Services
 @using Umbraco.Cms.Web.Website.Controllers
 @using Umbraco.Cms.Web.Website.Models
@@ -198,10 +198,9 @@ Umbraco controls how the UI is for user login and user edits, but will still nee
 
 ### Example implementation for Authenticator Apps for Users
 
-In the following example, we will use the [GoogleAuthenticator NuGet Package](https://www.nuget.org/packages/GoogleAuthenticator/).
-Despite the name, this package works for both Google and Microsoft authenticator apps and can be used to generate the QR code needed to activate the app for the website.
+In the following example, we will use the [GoogleAuthenticator NuGet Package](https://www.nuget.org/packages/GoogleAuthenticator/). Despite the name, this package works for both Google and Microsoft authenticator apps and can be used to generate the QR code needed to activate the app for the website.
 
-```Csharp
+```
 using System;
 using System.Runtime.Serialization;
 using System.Threading.Tasks;
@@ -292,7 +291,7 @@ First, we create a model with the information required to set up the 2FA provide
 
 Now we need to register the `UmbracoUserAppAuthenticator` implementation and the view to show to set up this provider. This can be done on the `IUmbracoBuilder` in your startup or a composer.
 
-```Csharp
+```
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
@@ -492,10 +491,8 @@ To disable the two-factor authentication on your user, it is required to enter t
 
 ![Verify disable](images/verify-disable.png)
 
-While the 2FA is enabled, the user will be presented with this screen after entering the username and password.
-![Verify disable](images/login-2fa.png)
+While the 2FA is enabled, the user will be presented with this screen after entering the username and password. ![Verify disable](images/login-2fa.png)
 
 ## Notification when 2FA is requested for a user
 
-When a 2FA login is requested for a user, the `UserTwoFactorRequestedNotification` is published.
-This notification can also be used to send the user a one-time password via e-mail or phone, even though these 2FA types are [not considered secure](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/mfa?view=aspnetcore-6.0#mfa-sms) as App Authentication, it is still a massive improvement compared to no 2FA.
+When a 2FA login is requested for a user, the `UserTwoFactorRequestedNotification` is published. This notification can also be used to send the user a one-time password via e-mail or phone, even though these 2FA types are [not considered secure](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/mfa?view=aspnetcore-6.0#mfa-sms) as App Authentication, it is still a massive improvement compared to no 2FA.

@@ -1,9 +1,9 @@
 ---
-meta.Title: "Adding Notification Handlers in Umbraco Forms"
-meta.Description: "See an example of validating a form server-side"
+meta.Title: Adding Notification Handlers in Umbraco Forms
+meta.Description: See an example of validating a form server-side
 ---
 
-# Adding a server-side notification handlers to Umbraco Forms
+# Adding A Server-Side Notification Handlers To Umbraco Forms
 
 ## Form validation notification
 
@@ -63,12 +63,11 @@ namespace MyFormsExtensions
         private static Field GetPostField(Form form, string key) => form.AllFields.SingleOrDefault(f => f.Alias == key);
     }
 }
-
 ```
 
 The handler will check the `ModelState` and `Form` field values provided in the notification. If validation fails, we add a ModelError.
 
-To register the handler, add the following code into the startup pipeline.  In this example, the registration is implemented as an extension method to `IUmbracoBuilder` and should be called from `Startup.cs`:
+To register the handler, add the following code into the startup pipeline. In this example, the registration is implemented as an extension method to `IUmbracoBuilder` and should be called from `Startup.cs`:
 
 ```csharp
 public static IUmbracoBuilder AddUmbracoFormsCoreProviders(this IUmbracoBuilder builder)
@@ -81,7 +80,7 @@ public static IUmbracoBuilder AddUmbracoFormsCoreProviders(this IUmbracoBuilder 
 
 The services available via interfaces `IFormService`, `IFolderService`, `IDataSourceService` and `IPrevalueSourceService` trigger following notifications before or after an entity handled by the service is modified.
 
-The "-ing" events allow for the entity being changed to be modified before the operation takes place, or to cancel the operation.  The "-ed" events fire after the update is complete.
+The "-ing" events allow for the entity being changed to be modified before the operation takes place, or to cancel the operation. The "-ed" events fire after the update is complete.
 
 Both can be wired up using a composer and component:
 
@@ -118,7 +117,7 @@ Both can be wired up using a composer and component:
     }
 ```
 
-When a form or folder is _moved_ there is no specific service event.  However information available in the `State` dictionary available on the notification object can be used to determine whether the item was moved, and if so, where from:
+When a form or folder is _moved_ there is no specific service event. However information available in the `State` dictionary available on the notification object can be used to determine whether the item was moved, and if so, where from:
 
 ```csharp
     public class TestSiteComposer : IComposer
@@ -149,7 +148,7 @@ If a folder is being moved, the key within the `State` dictionary is `"MovedFrom
 
 ## Backoffice entry rendering events
 
-When an entry for a form is rendered in the backoffice, and event is available to allow modification of the record details before they are presented to the user.  This is shown in the following example:
+When an entry for a form is rendered in the backoffice, and event is available to allow modification of the record details before they are presented to the user. This is shown in the following example:
 
 ```csharp
     public class TestSiteComposer : IComposer

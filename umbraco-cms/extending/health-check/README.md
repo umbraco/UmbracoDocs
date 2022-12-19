@@ -1,8 +1,11 @@
 ---
 versionFrom: 9.0.0
 versionTo: 10.0.0
-meta.Title: "Umbraco Healthcheck"
-meta.Description: "The Settings section of the Umbraco backoffice holds a dashboard named 'Health Check'. It is a handy list of checks to see if your Umbraco installation is configured according to best practices."
+meta.Title: Umbraco Healthcheck
+meta.Description: >-
+  The Settings section of the Umbraco backoffice holds a dashboard named 'Health
+  Check'. It is a handy list of checks to see if your Umbraco installation is
+  configured according to best practices.
 ---
 
 # Health Check
@@ -26,7 +29,7 @@ Umbraco comes with the following checks by default:
   * **Folder & File Permissions (id: `53DBA282-4A79-4B67-B958-B29EC40FCC23`)** - checks that the folders and files set with write permissions that are either required or recommended can be accessed
 * Category **Security**
   * **Application URL Configuration (id: `6708CA45-E96E-40B8-A40A-0607C1CA7F28`)** - checks if the Umbraco application URL is configured for your site.
-  * **Click-Jacking Protection (id: `ED0D7E40-971E-4BE8-AB6D-8CC5D0A6A5B0`)** - checks to see if a header or meta-tag is in place to indicate whether the site can be hosted in an IFRAME.  Normally this is best set to deny permission for this to be done, to prevent what is known as [click-jacking](https://www.owasp.org/index.php/Clickjacking) attacks
+  * **Click-Jacking Protection (id: `ED0D7E40-971E-4BE8-AB6D-8CC5D0A6A5B0`)** - checks to see if a header or meta-tag is in place to indicate whether the site can be hosted in an IFRAME. Normally this is best set to deny permission for this to be done, to prevent what is known as [click-jacking](https://www.owasp.org/index.php/Clickjacking) attacks
   * **Content/MIME Sniffing Protection (id: `1CF27DB3-EFC0-41D7-A1BB-EA912064E071`)** - checks that your site contains a header used to protect against MIME sniffing vulnerabilities
   * **Cookie hijacking and protocol downgrade attacks Protection (HSTS) (id: `E2048C48-21C5-4BE1-A80B-8062162DF124`)** - checks if your HTTPS site contains the Strict-Transport-Security Header (HSTS). If not - adds with a default of 18 weeks
   * **Cross-site scripting Protection (id: `F4D2B02E-28C5-4999-8463-05759FA15C3A`)** - checks for the presence of the X-XSS-Protection-header
@@ -42,7 +45,7 @@ Some of them can also be rectified via the dashboard, by clicking the **Fix** bu
 
 ## Configuring and scheduling checks
 
-As well as viewing the results of health checks via the Settings section dashboard, you can set up the checks to be run on a schedule and be notified of the results by email.  It's also possible to disable certain checks if they aren't applicable in your environment.
+As well as viewing the results of health checks via the Settings section dashboard, you can set up the checks to be run on a schedule and be notified of the results by email. It's also possible to disable certain checks if they aren't applicable in your environment.
 
 For more information, see the [Reference > Configuration > Health checks](../../reference/configuration/healthchecks.md) article.
 
@@ -163,7 +166,6 @@ namespace Umbraco.Cms.Core.HealthChecks.Checks.Configuration
                 new[] { CurrentValue, Values.First(v => v.IsRecommended).Value });
     }
 }
-
 ```
 
 ### General checks
@@ -284,7 +286,7 @@ Disallow: /umbraco/";
 
 ## Custom health check notifications
 
-Health check notifications can be scheduled to run periodically and notify you of the results. Included with Umbraco is a notification method to deliver the results via email. In a similar manner to how it's possible to create your health checks, you can also create custom notification methods to send the message summarising the status of the health checks via other means.  Again, for further details on implementing this please refer to the [existing notification methods within the core code base](https://github.com/umbraco/Umbraco-CMS/tree/v10/dev/src/Umbraco.Core/HealthChecks/NotificationMethods).
+Health check notifications can be scheduled to run periodically and notify you of the results. Included with Umbraco is a notification method to deliver the results via email. In a similar manner to how it's possible to create your health checks, you can also create custom notification methods to send the message summarising the status of the health checks via other means. Again, for further details on implementing this please refer to the [existing notification methods within the core code base](https://github.com/umbraco/Umbraco-CMS/tree/v10/dev/src/Umbraco.Core/HealthChecks/NotificationMethods).
 
 Each notification method needs to implement the core interface `IHealthCheckNotificationMethod` and, for ease of creation, can inherit from the base class `NotificationMethodBase`, which itself implements the `IHealthCheckNotificationMethod` interface. The class must also be decorated with an instance of the `HealthCheckNotificationMethod` attribute. There's one method to implement - `SendAsync(HealthCheckResults results)` - which is responsible for taking the results of the health checks and sending them via the mechanism of your choice.
 
@@ -385,7 +387,6 @@ namespace Umbraco.Cms.Core.HealthChecks.NotificationMethods
         }
     }
 }
-
 ```
 
 If a custom configuration is required for a custom notification method, the following extract can be merged in the `appsettings.json` file, which will enable the email notification method to be configured:

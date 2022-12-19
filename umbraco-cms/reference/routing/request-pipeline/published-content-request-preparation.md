@@ -84,18 +84,18 @@ If the template is allowed it will then use the file service to get the specifie
 The router will pick up the redirect and redirect. There is no need to write your own redirects:
 
 ```csharp
-PublishedContentRequest.Prepared += (sender, args) =>
+public class PublishedRequestHandler : INotificationHandler<RoutingRequestNotification>
 {
-public void Handle(RoutingRequestNotification notification)
-{
-    var requestBuilder = notification.RequestBuilder;
-    var content = requestBuilder.PublishedContent;
-    var redirect = content.Value<string>("myRedirect");
-    if (!string.IsNullOrWhiteSpace(redirect))
+    public void Handle(RoutingRequestNotification notification)
     {
-        requestBuilder.SetRedirect(redirect);
+        var requestBuilder = notification.RequestBuilder;
+        var content = requestBuilder.PublishedContent;
+        var redirect = content.Value<string>("myRedirect");
+        if (!string.IsNullOrWhiteSpace(redirect))
+        {
+            requestBuilder.SetRedirect(redirect);
+        }
     }
-}
 }
 ```
 

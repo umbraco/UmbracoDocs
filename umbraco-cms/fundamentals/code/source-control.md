@@ -1,13 +1,15 @@
 ---
-meta.Title: "Source Control with Umbraco"
-meta.Description: "In this article you can learn more about how to effectively source control your Umbraco site."
+meta.Title: Source Control with Umbraco
+meta.Description: >-
+  In this article you can learn more about how to effectively source control
+  your Umbraco site.
 ---
 
 # Source Control
 
 ## Umbraco Cloud
 
-When you are running your site on Umbraco Cloud, source control is a part of the experience. Have a look at the ['Technical overview of an Umbraco Cloud Environment'](../../../umbraco-cloud/getting-started/environments.md) and the information on ['Working with your Umbraco Cloud project'](../../../umbraco-cloud/set-up/README.md#working-with-your-umbraco-cloud-project) for a steer on Source/Version Control good practices.
+When you are running your site on Umbraco Cloud, source control is a part of the experience. Have a look at the ['Technical overview of an Umbraco Cloud Environment'](../../../umbraco-cloud/getting-started/environments.md) and the information on ['Working with your Umbraco Cloud project'](../../../umbraco-cloud/set-up/#working-with-your-umbraco-cloud-project) for a steer on Source/Version Control good practices.
 
 ## Outside of Umbraco Cloud
 
@@ -19,14 +21,14 @@ So if you've made the decision to try to attempt to source/version control your 
 
 There are lots of different possible variations within your working environment that will affect the best way to set up version control. It depends on whether you are:
 
-- Working with a team of developers.
-- How your development environment is set up.
-- Source control repository.
-- And also how you intend to build and deploy your solution to your target production environment (build servers, Web Deploy or good old File Transfer Protocol (FTP), etc).
+* Working with a team of developers.
+* How your development environment is set up.
+* Source control repository.
+* And also how you intend to build and deploy your solution to your target production environment (build servers, Web Deploy or good old File Transfer Protocol (FTP), etc).
 
 However, Umbraco ships with a `.gitignore` file with a custom Umbraco section, which will make git ignore the files for you. The Umbraco specific section looks like this:
 
-```none
+```
 ##
 ## Umbraco CMS
 ##
@@ -50,7 +52,6 @@ appsettings-schema.json
 
 # Media files
 /wwwroot/media/
-
 ```
 
 For most projects, this gitignore will be enough, and this article will not be an exhaustive list of how to version control Umbraco in all possible scenarios.
@@ -69,16 +70,16 @@ We recommend that you follow the structure of the default gitignore file, and do
 
 Below are a set of general recommendations regarding the files within the `/umbraco` folder.
 
-- `/umbraco/data/TEMP` - This folder contains examine indexes, NuCache files, and so on, these are temporary and should not be committed.
-- `/umbraco/Logs` - Umbraco currently uses *Serilog*, and a file will be generated in this folder containing trace logs of your application, one JSON file for each day.
-- `/umbraco/mediacache` - *ImageSharp* ships with Umbraco and when an image is requested via the processor, for example, to be resized or cropped, a cached version of the transformed image will be stored in this folder. (The [Imaging settings section](../../reference/configuration/imagingsettings.md) allows you to determine where this cache is stored)
+* `/umbraco/data/TEMP` - This folder contains examine indexes, NuCache files, and so on, these are temporary and should not be committed.
+* `/umbraco/Logs` - Umbraco currently uses _Serilog_, and a file will be generated in this folder containing trace logs of your application, one JSON file for each day.
+* `/umbraco/mediacache` - _ImageSharp_ ships with Umbraco and when an image is requested via the processor, for example, to be resized or cropped, a cached version of the transformed image will be stored in this folder. (The [Imaging settings section](../../reference/configuration/imagingsettings.md) allows you to determine where this cache is stored)
 
 #### Umbraco Models Builder
 
-The strategy here will depend a little on which mode ['Umbraco Models Builder'](../../reference/templating/modelsbuilder/README.md) you have opted to work with.
+The strategy here will depend a little on which mode ['Umbraco Models Builder'](../../reference/templating/modelsbuilder/) you have opted to work with.
 
-- **InMemoryAuto** (default), The models are generated in memory, no source control is required.
-- **SourceCodeManual** and **SourceCodeAuto**, The models are generated in the `/umbraco/models` folder of your project (or can be configured to be in a different folder or project), allowing you to track changes to the models in source/version control.
+* **InMemoryAuto** (default), The models are generated in memory, no source control is required.
+* **SourceCodeManual** and **SourceCodeAuto**, The models are generated in the `/umbraco/models` folder of your project (or can be configured to be in a different folder or project), allowing you to track changes to the models in source/version control.
 
 #### Media
 
@@ -88,7 +89,7 @@ These are by default ignored by git.
 
 #### Packages and Plugins
 
-The **App_Plugins** folder is the home for all third-party packages installed on your site.
+The **App\_Plugins** folder is the home for all third-party packages installed on your site.
 
 Depending on how you installed the plugin it will affect how you choose to version control a particular third-party plugin:
 
@@ -122,20 +123,20 @@ Umbraco Cloud is a good solution in these scenarios, as changes via the backoffi
 
 To source/version control changes to Macro implementation code, track the files in the following location:
 
-- **Partial View Macros** - stored in `/Views/MacroPartials` as .cshtml files
+* **Partial View Macros** - stored in `/Views/MacroPartials` as .cshtml files
 
 #### Controllers/Classes/Custom Code
 
 Any supporting custom code for your application should be in version control, eg any of the following files
 
-- C# implementation,
-  - Surface Controllers
-  - API Controllers
-  - ViewModels
-  - Helpers / Extension Methods
-  - Services etc.
-- Supporting class library projects,
-- Models generated by Modelsbuilder in SourceCodeManual or SourceCodeAuto mode.
+* C# implementation,
+  * Surface Controllers
+  * API Controllers
+  * ViewModels
+  * Helpers / Extension Methods
+  * Services etc.
+* Supporting class library projects,
+* Models generated by Modelsbuilder in SourceCodeManual or SourceCodeAuto mode.
 
 #### Config
 
@@ -149,8 +150,6 @@ When you create and edit eg. Document Types, Media Types, and Data Types in the 
 
 There are a series of add-on packages that can help add source control to these structure changes:
 
-- *[The uSync package (free)](https://our.umbraco.com/projects/developer-tools/usync/)* - which can be configured to serialize these changes to files on disk, in a folder called /uSync - enabling you to source/version control these changes and synchronise them to other environments.
-
-- *[uSync Snapshots (licensed)](https://our.umbraco.com/packages/developer-tools/usyncsnapshots/)* - an extension to uSync, for taking 'before' and 'after' snapshots of an Umbraco site, for managing a release of a 'set of changes' between environments.
-
-- *[Umbraco Deploy on Premise](https://umbraco.com/products/umbraco-deploy/umbraco-deploy-on-premises/)* - the on premise version of the package used by Umbraco Cloud.
+* [_The uSync package (free)_](https://our.umbraco.com/projects/developer-tools/usync/) - which can be configured to serialize these changes to files on disk, in a folder called /uSync - enabling you to source/version control these changes and synchronise them to other environments.
+* [_uSync Snapshots (licensed)_](https://our.umbraco.com/packages/developer-tools/usyncsnapshots/) - an extension to uSync, for taking 'before' and 'after' snapshots of an Umbraco site, for managing a release of a 'set of changes' between environments.
+* [_Umbraco Deploy on Premise_](https://umbraco.com/products/umbraco-deploy/umbraco-deploy-on-premises/) - the on premise version of the package used by Umbraco Cloud.

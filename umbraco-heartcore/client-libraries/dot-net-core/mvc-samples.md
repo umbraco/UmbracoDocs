@@ -17,7 +17,7 @@ Before running the sample, you must define which Umbraco Heartcore project you w
 
 ```json
 {
-    "Umbraco": {
+    "Heartcore": {
         "ProjectAlias": "demo-headless",
         "ApiKey": ""
     }
