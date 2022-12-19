@@ -43,7 +43,7 @@ So what did we add? We added a prevalue editor, with a `fields` collection. This
 
 The label "Enabled?" uses the "boolean" view. This will allow us to turn the suggestions on/off and will provide the user with a toggle button. The name "boolean" comes from the convention that all preview editors are stored in `/umbraco/views/prevalueeditors/` and then found via `boolean.html`.
 
-Same with the "Default value" label, only that it will provide the user with a textarea to input a default value for the property editor that should be displayed when the property editor is blank.
+Same with the "Default value" label, it will provide the user with a textarea. The user can input a default value for the property editor that should be displayed when the property editor is blank.
 
 To hide the property editor label, add the `hideLabel` parameter in the `editor` block:
 
@@ -304,7 +304,7 @@ The next step is to gain access to our new configuration options. For this, open
     }
     ```
 
-Save the files and rebuild the application. To access the configuration options: enable/disable the `Enabled?` and `Hide Label?` options or set a default value in the `Default Value` field and see the Suggestions Data Type at play.
+Save the files and rebuild the application. To access the configuration options, enable/disable the `Enabled?` and `Hide Label?` options. Additionally, you can set a default value in the `Default Value` field and see the Suggestions Data Type at play.
 
 ![An example of setting the configuration](images/suggestion-editor-config_2.png)
 
