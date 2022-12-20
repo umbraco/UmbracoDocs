@@ -26,7 +26,7 @@ As a member of a Umbraco Cloud organization, on the "Projects" page under your o
 
 In addition to the name, plan, and status of the project, you can now also see the creation date, hosting region, payment status, and the number of environments running on the solution.
 
-![ProjectsDashboardHoverEnvironment](images/Organization Projects.png)
+![ProjectsDashboardHoverEnvironment](images/OrganizationProjects.png)
 
 You can sort your organization projects ascending and descending for all columns in the projects table.
 
