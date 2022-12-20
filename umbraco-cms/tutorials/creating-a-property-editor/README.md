@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: Creating a property editor
-meta.Description: A guide to creating a property editor in Umbraco
+description: A guide to creating a property editor in Umbraco
 ---
 
 # Creating a Property Editor
@@ -112,7 +109,7 @@ You will still need to add all of the files you added above but, because your `C
 
 ## Writing basic HTML and JavaScript
 
-Now, we will add 3 files to the /App\_Plugins/Suggestions/ folder:
+Now, we will add 3 files to the /App_Plugins/Suggestions/ folder:
 
 * `suggestion.html`
 * `suggestion.controller.js`
@@ -214,7 +211,7 @@ and add that id to the button in the HTML:
 
 Now, clear the cache, reload the document, and see the Suggestions Data Type running.
 
-![Example of the Suggestions data type running](images/suggestion-editor-backoffice.png)
+![Example of the Suggestions Data Type running](images/suggestion-editor-backoffice.png)
 
 When we save or publish, the value of the Data Type is automatically synced to the current content object and sent to the server, all through the power of Angular and the `ng-model` attribute.
 
