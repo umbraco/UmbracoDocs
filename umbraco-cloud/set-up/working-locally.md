@@ -54,7 +54,16 @@ Once the project has been cloned down, you will get a folder with files for your
 
 ## Running the site Locally
 
-To run your Umbraco Cloud project locally, you will need to [install the latest .NET SDK](https://dotnet.microsoft.com/download) (if you do not have this already).
+To run your Umbraco Cloud project locally, you will need to install the correct .Net SDK. In the root of your project folder you find the file `global.json` e. g. `6.0.401`:
+
+![global.json](images/root-global-json.jpg)
+
+Now you have to find the configured SDK version:
+
+![Download page for .Net SDKs](images/download-specific-dotnet-sdk.jpg)
+
+As you can see the SDK version `6.0.401` is part of .Net release version `6.0.9`.
+[Download configured .NET SDK](https://dotnet.microsoft.com/download) and install (if you do not have this already).
 
 With dotnet installed, run the following commands in a terminal application of your choice. You can also refer to the `Readme` file in the project folder.
 
