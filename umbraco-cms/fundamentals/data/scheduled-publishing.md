@@ -44,7 +44,7 @@ If you are not load balancing, the way that Umbraco determines the base URL to s
 * Else umbracoSettings:distributedCall/servers if we have the server in there _(deprecated, see load balance docs)_
 * Else it's based on the first request that the website receives and uses the base URL of this request _(default)_
 
-If the `umbracoApplicationUrl` is used, the value also specifies the scheme (either http or https). The request for scheduled publishing will always sent over HTTPS if the appSettings `umbracoUseSSL` is set to `true`.
+If the `umbracoApplicationUrl` is used, the value also specifies the scheme (either HTTP or HTTPS). The request for scheduled publishing will always be sent over HTTPS if the appSettings `umbracoUseSSL` is set to `true`.
 
 ## Troubleshooting
 
