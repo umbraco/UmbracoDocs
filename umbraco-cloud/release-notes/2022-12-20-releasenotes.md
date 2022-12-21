@@ -9,7 +9,11 @@
 
 ## [Secrets Management](../set-up/project-settings/secrets-management.md)
 
-The new _secrets management_ feature in Umbraco Cloud enables you to store your secrets (digital authentication credentials such as private keys, database passwords, and 3rd-party API tokens) securely in Azure key vaults. Hereby, you will never have to worry about exposing the most sensitive information of your Umbraco Cloud solution in code repositories.
+The new _secrets management_ feature in Umbraco Cloud enables you to store your secrets securely in Azure key vaults.
+
+This being digital authentication credentials such as private keys, database passwords, and 3rd-party API tokens
+
+Hereby, you will never have to worry about exposing the most sensitive information of your Umbraco Cloud solution in code repositories.
 
 ![SecretsManagementExample](images/SecretsManagementExample2.gif)
 
