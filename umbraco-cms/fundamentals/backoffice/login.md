@@ -23,19 +23,19 @@ In the config folder create a folder called ```lang``` and create a file called:
 
 ```xml
 <language culture="en-US">
-<area alias="login">
-    <key alias="greeting0">Happy super Sunday</key>
-    <key alias="greeting1">Happy manic Monday </key>
-    <key alias="greeting2">Happy tubular Tuesday</key>
-    <key alias="greeting3">Happy wonderful Wednesday</key>
-    <key alias="greeting4">Happy thunderous Thursday</key>
-    <key alias="greeting5">Happy funky Friday</key>
-    <key alias="greeting6">Happy Caturday</key>
-</area>
+  <area alias="login">
+      <key alias="greeting0">Happy super Sunday</key>
+      <key alias="greeting1">Happy manic Monday </key>
+      <key alias="greeting2">Happy tubular Tuesday</key>
+      <key alias="greeting3">Happy wonderful Wednesday</key>
+      <key alias="greeting4">Happy thunderous Thursday</key>
+      <key alias="greeting5">Happy funky Friday</key>
+      <key alias="greeting6">Happy Caturday</key>
+  </area>
 </language>
 ```
 
-Before the changes takes place you will need to restart the site.
+- Before the changes takes place you will need to restart the site.
 
 You can customize other text on the login screen as well. First, grab the default values and keys from the [en.xml](https://github.com/umbraco/Umbraco-CMS/blob/release-11.0.0/src/Umbraco.Core/EmbeddedResources/Lang/en.xml) in the Umbraco CMS Github repository. Thereafter copy the ones you want to translate into `~/config/lang/en_us.user.xml` file.
 
@@ -94,7 +94,7 @@ The `LoginBackgroundImage` and `LoginLogoImage` are referenced from the `/wwwroo
 
 To affect the styling of the images add a folder to the `/App_Plugins` folder containing a `CSS` folder, containing a CSS file, and a package.manifest file. An example structure might be:
 
-```package.manifest
+```json
 /App_Plugins
     /myLoginFolder
         /css
