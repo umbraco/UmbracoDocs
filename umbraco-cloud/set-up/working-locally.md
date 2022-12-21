@@ -21,20 +21,9 @@ We recommend using the following tools to work with a local clone of your Umbrac
 * Git needs to be installed on your computer
   * Example: [Fork](https://git-fork.com/), [SourceTree](https://www.sourcetreeapp.com/), or [GitKraken](https://www.gitkraken.com/)
 * Visual Studio
-* The [.NET Software Development Kit (SDK) version](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) matching the Cloud projects `global.json` file
-
-{% hint style="warning" %}
-We are currently seeing projects running into deployment issues due to SDK version mismatches between Cloud and local development environments. This happens for projects running Umbraco CMS versions 9 and 10.
-
-A .NET SDK version is specified in the `global.json` file in order to ensure project compatibility with the Azure hosting.
-
-If you are experiencing deployment issues on your Cloud project, please ensure you're using the .NET SDK version specified in the `global.json` file.
-
-Reach out to the chat support or use [contact@umbraco.com](mailto:contact@umbraco.com) if you're still seeing issues or have any questions to the above.
-{% endhint %}
 
 {% hint style="info" %}
-In the root of your local project, there is a REAMDE file containing information about the project structure and the build process on Umbraco Cloud.&#x20;
+In the root of your local project, there is a REAMDE file containing information about the project structure and the build process on Umbraco Cloud.
 {% endhint %}
 
 ## Cloning an Umbraco Cloud Project
