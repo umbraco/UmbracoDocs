@@ -42,7 +42,7 @@ You can sort your organization projects ascending and descending for all columns
 
 On the "Public Access" page, you can now specify a name when you add a new entry in the allowlist for an environment.
 ![PublicAccessV2](images/PublicAccessV2.gif)
-When you choose to add the public IP for the network you are currently working on, your name will automatically be used as the descriptive text.
+When choosing to add the public IP for the network you are currently working on, your name will automatically be used as the descriptive text.
 
 
 ## Kudu quicklink in Projects Dashboard
