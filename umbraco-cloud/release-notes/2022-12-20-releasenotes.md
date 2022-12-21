@@ -26,7 +26,7 @@ See the documentation section [Secrets Management](https://docs.umbraco.com/umbr
 
 ## Organization Project view
 
-As a member of a Umbraco Cloud organization, on the "Projects" page under your organization, you will find a more detailed overview of your projects than before.
+As a member of a Umbraco Cloud organization, on the "Projects" page under your organization, you'll find a more detailed overview of your projects.
 
 In addition to the name, plan, and status of the project, you can now also see:
 - Creation date.
