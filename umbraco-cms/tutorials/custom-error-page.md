@@ -188,3 +188,5 @@ The following steps guides you through setting up a page for internal server err
     ...
     }
     ```
+
+    For local testing in Visual Studio replace `app.UseDeveloperExceptionPage();` by `app.UseExceptionHandler("/error");`. Otherwise you will get the default error page with stack trace etc.
