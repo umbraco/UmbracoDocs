@@ -128,3 +128,65 @@ If your code or any packacges configures a custom `IContentLastChanceFinder`, th
 ## Handling errors in ASP.NET Core
 
 For common approaches to handling errors in ASP.NET Core web apps, see the [Handle errors in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/error-handling?view=aspnetcore-6.0) article in the Microsoft Documentation.
+
+## 500 errors
+
+The following steps guides you through setting up a page for internal server errors (500 errors).
+
+1. First Step
+
+    - Create a `~/controllers` folder in your Umbraco web project.
+    - Create a file in this folder, called `ErrorController.cs`.
+    - Add the following code to the file:
+
+        ```csharp
+        using Microsoft.AspNetCore.Mvc;
+        namespace UmbracoProject.Web.Controllers
+        {
+            public class ErrorController : Controller
+            {
+                [Route("Error")]
+                public IActionResult Index()
+                {
+                    if (Response.StatusCode == StatusCodes.Status500InternalServerError)
+                    {
+                        return Redirect("/statuscodes/500");
+                    }
+                    else if (Response.StatusCode != StatusCodes.Status200OK)
+                    {
+                        return Redirect("/statuscodes");
+                    }
+                    return Redirect("/");
+                }
+            }
+        }
+        ```
+
+2. Add an entry in `appSettings.json` for the new route "Error" like so
+
+    ```json
+    "Umbraco": {
+    "CMS": {
+        "Global": {
+        "ReservedPaths": "~/app_plugins/,~/install/,~/mini-profiler-resources/,~/umbraco/,~/error/",
+        ...
+    ```
+
+3. Create the redirect pages from 1. step as regular content nodes in the backoffice. They should neither appear in navigation menus or sitemaps. In this example you would create under root node `Statuscodes` with a subnode `500`.
+4. Update the `Configure` method in file `Startup.cs`
+
+    ```csharp
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    {
+    ...
+    if (env.IsDevelopment())
+    {
+        app.UseDeveloperExceptionPage();
+    }
+    else
+    {
+        app.UseExceptionHandler("/error");
+    }
+    ...
+    }
+    ```
