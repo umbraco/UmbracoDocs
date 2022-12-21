@@ -19,7 +19,7 @@ Below, you will find instructions on how to customize the login screen.
 
 The login screen features a greeting that you can personalize by overriding the existing language translation keys. To do this, create a 'user' translation file for the default language of your Umbraco site, (usually en-US) to override the greetings. For en-US, you'd first need to create a ```config``` folder at the root of your project.
 
-In the config folder create a folder called ```lang``` and create a file called: `en_us.user.xml`. Then take the relevant keys (listed below) and add them to your `~/config/lang/en_us.user.xml` file, and update the greetings as necessary!
+In the config folder create a folder called `lang` and create a file called: `en_us.user.xml`. Then take the relevant keys (listed below) and add them to your `~/config/lang/en_us.user.xml` file, and update the greetings as necessary.
 
 ```xml
 <language culture="en-US">
