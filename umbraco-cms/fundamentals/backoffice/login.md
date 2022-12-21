@@ -13,25 +13,31 @@ You will be presented with a login form similar to this:
 
 The **login** screen contains a **Greeting**, **Email**, **Password** field and optionally a **Forgotten password** link
 
-Below, you will find instructions on how to customise the login screen.
+Below, you will find instructions on how to customize the login screen.
 
 ## Greeting
 
-The login screen features a greeting which you can personalize by overriding the existing language translation keys. To do this, create a 'user' translation file for the default language of your Umbraco site, (usually en-US) to override the greetings. For en-US, you'd create a file called: `en_us.user.xml` in the directory `~/config/lang/`. Then take the relevant keys (listed below) and add them to your `~/config/lang/en_us.user.xml` file, and update the greetings as necessary!
+The login screen features a greeting that you can personalize by overriding the existing language translation keys. To do this, create a 'user' translation file for the default language of your Umbraco site, (usually en-US) to override the greetings. For en-US, you'd first need to create a ```config``` folder at the root of your project.
+
+In the config folder create a folder called `lang` and create a file called: `en_us.user.xml`. Then take the relevant keys (listed below) and add them to your `~/config/lang/en_us.user.xml` file, and update the greetings as necessary.
 
 ```xml
-<area alias="login">
-    <key alias="greeting0">Happy super Sunday</key>
-    <key alias="greeting1">Happy manic Monday </key>
-    <key alias="greeting2">Happy tubular Tuesday</key>
-    <key alias="greeting3">Happy wonderful Wednesday</key>
-    <key alias="greeting4">Happy thunderous Thursday</key>
-    <key alias="greeting5">Happy funky Friday</key>
-    <key alias="greeting6">Happy Caturday</key>
-</area>
+<language culture="en-US">
+  <area alias="login">
+      <key alias="greeting0">Happy super Sunday</key>
+      <key alias="greeting1">Happy manic Monday </key>
+      <key alias="greeting2">Happy tubular Tuesday</key>
+      <key alias="greeting3">Happy wonderful Wednesday</key>
+      <key alias="greeting4">Happy thunderous Thursday</key>
+      <key alias="greeting5">Happy funky Friday</key>
+      <key alias="greeting6">Happy Caturday</key>
+  </area>
+</language>
 ```
 
-You can customize other text on the login screen as well. First, grab the default values and keys from `~/umbraco/config/lang/en.xml`. Thereafter copy the ones you want to translate into `~/config/lang/en_us.user.xml` file. Note: the new /config/ folder needs to be created at the site root.
+- Before the changes takes place you will need to restart the site.
+
+You can customize other text on the login screen as well. First, grab the default values and keys from the [en.xml](https://github.com/umbraco/Umbraco-CMS/blob/release-11.0.0/src/Umbraco.Core/EmbeddedResources/Lang/en.xml) in the Umbraco CMS Github repository. Thereafter copy the ones you want to translate into `~/config/lang/en_us.user.xml` file.
 
 ## Password reset
 
@@ -88,7 +94,7 @@ The `LoginBackgroundImage` and `LoginLogoImage` are referenced from the `/wwwroo
 
 To affect the styling of the images add a folder to the `/App_Plugins` folder containing a `CSS` folder, containing a CSS file, and a package.manifest file. An example structure might be:
 
-```
+```json
 /App_Plugins
     /myLoginFolder
         /css
