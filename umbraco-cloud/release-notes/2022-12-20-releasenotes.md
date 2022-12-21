@@ -42,7 +42,7 @@ You can sort your organization projects ascending and descending for all columns
 
 On the "Public Access" page, you can now specify a name when you add a new entry in the allowlist for an environment.
 
-&#x20;![PublicAccessV2](images/PublicAccessV2.gif)&#x20;
+<figure><img src="images/PublicAccessV2.gif" alt=""><figcaption></figcaption></figure>
 
 When choosing to add the public IP for the network you are currently working on, your name will automatically be used as the descriptive text.
 
@@ -50,6 +50,6 @@ When choosing to add the public IP for the network you are currently working on,
 
 And finally, we've added a quicklink to Kudo that you can see by hovering over an environment.&#x20;
 
-![Kudu](images/Kudu.gif)&#x20;
+<figure><img src="images/Kudu.gif" alt=""><figcaption></figcaption></figure>
 
 You now have the opportunity to access both the cloud project's page, backoffice and Kudo from the "Projects Dashboard".
