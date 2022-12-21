@@ -137,30 +137,30 @@ The following steps guides you through setting up a page for internal server err
 2. Create a file in this folder, called `ErrorController.cs`.
 3. Add the following code to the file:
 
-        ```csharp
-        using Microsoft.AspNetCore.Mvc;
-        namespace UmbracoProject.Web.Controllers
+    ```csharp
+    using Microsoft.AspNetCore.Mvc;
+    namespace UmbracoProject.Web.Controllers
+    {
+        public class ErrorController : Controller
         {
-            public class ErrorController : Controller
+            [Route("Error")]
+            public IActionResult Index()
             {
-                [Route("Error")]
-                public IActionResult Index()
+                if (Response.StatusCode == StatusCodes.Status500InternalServerError)
                 {
-                    if (Response.StatusCode == StatusCodes.Status500InternalServerError)
-                    {
-                        return Redirect("/statuscodes/500");
-                    }
-                    else if (Response.StatusCode != StatusCodes.Status200OK)
-                    {
-                        return Redirect("/statuscodes");
-                    }
-                    return Redirect("/");
+                    return Redirect("/statuscodes/500");
                 }
+                else if (Response.StatusCode != StatusCodes.Status200OK)
+                {
+                    return Redirect("/statuscodes");
+                }
+                return Redirect("/");
             }
         }
-        ```
+    }
+    ```
 
-2. Add an entry in `appSettings.json` for the new route "Error" like so
+4. Add an entry in `appSettings.json` for the new route "Error" like so
 
     ```json
     "Umbraco": {
@@ -170,8 +170,8 @@ The following steps guides you through setting up a page for internal server err
         ...
     ```
 
-3. Create the redirect pages from 1. step as regular content nodes in the backoffice. They should neither appear in navigation menus or sitemaps. In this example you would create under root node `Statuscodes` with a subnode `500`.
-4. Update the `Configure` method in file `Startup.cs`
+5. Create the redirect pages from 1. step as regular content nodes in the backoffice. They should neither appear in navigation menus or sitemaps. In this example you would create under root node `Statuscodes` with a subnode `500`.
+6. Update the `Configure` method in file `Startup.cs`
 
     ```csharp
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
