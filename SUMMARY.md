@@ -531,7 +531,6 @@
   * [Upgrade your projects manually](umbraco-cloud/upgrades/manual-upgrades/README.md)
     * [Manual upgrade of Umbraco CMS](umbraco-cloud/upgrades/manual-upgrades/manual-cms-upgrade.md)
     * [Manual upgrade of Umbraco Deploy](umbraco-cloud/upgrades/manual-upgrades/manual-upgrade-deploy.md)
-  * [Migrating Umbraco 8 project to Umbraco 10](umbraco-cloud/upgrades/migrating-from-8-10.md)
   * [Dependencies on Umbraco Cloud](umbraco-cloud/upgrades/product-dependencies.md)
 * [Troubleshooting](umbraco-cloud/troubleshooting/README.md)
   * [Troubleshooting FAQ](umbraco-cloud/troubleshooting/faq.md)
