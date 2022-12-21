@@ -133,11 +133,9 @@ For common approaches to handling errors in ASP.NET Core web apps, see the [Hand
 
 The following steps guides you through setting up a page for internal server errors (500 errors).
 
-1. First Step
-
-    - Create a `~/controllers` folder in your Umbraco web project.
-    - Create a file in this folder, called `ErrorController.cs`.
-    - Add the following code to the file:
+1. Create a `~/controllers` folder in your Umbraco web project.
+2. Create a file in this folder, called `ErrorController.cs`.
+3. Add the following code to the file:
 
         ```csharp
         using Microsoft.AspNetCore.Mvc;
