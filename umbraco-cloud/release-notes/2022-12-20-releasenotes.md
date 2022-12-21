@@ -28,7 +28,11 @@ See the documentation section [Secrets Management](https://docs.umbraco.com/umbr
 
 As a member of a Umbraco Cloud organization, on the "Projects" page under your organization, you will find a more detailed overview of your projects than before.
 
-In addition to the name, plan, and status of the project, you can now also see the creation date, hosting region, payment status, and the number of environments running on the solution.
+In addition to the name, plan, and status of the project, you can now also see:
+- Creation date.
+- Hosting region.
+- Payment status.
+- The number of environments.
 
 ![ProjectsDashboardHoverEnvironment](images/OrganizationProjects.png)
 
