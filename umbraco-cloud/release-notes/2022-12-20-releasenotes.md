@@ -49,4 +49,4 @@ When you choose to add the public IP for the network you are currently working o
 
 And finally, we've added a quicklink to Kudo that you can see by hovering over an environment.
 ![Kudu](images/Kudu.gif)
-You now have the opportunity to access both the cloud project's page, back office and Kudo from the "Projects Dashboard".
+You now have the opportunity to access both the cloud project's page, backoffice and Kudo from the "Projects Dashboard".
