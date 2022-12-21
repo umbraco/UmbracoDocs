@@ -139,7 +139,7 @@ The following steps guides you through setting up a page for internal server err
 
     ```csharp
     using Microsoft.AspNetCore.Mvc;
-    namespace UmbracoProject.Web.Controllers
+    namespace [YOUR_PROJECT_NAME].Controllers
     {
         public class ErrorController : Controller
         {
@@ -159,6 +159,10 @@ The following steps guides you through setting up a page for internal server err
         }
     }
     ```
+
+    {% hint style="info" %}
+**Namespace** replace [YOUR_PROJECT_NAME] by the actual project name. In Visual Studio you can use *Sync Namespaces* from the project context menu (in *Solution Explorer* View).
+{% endhint %}
 
 4. Add an entry in `appSettings.json` for the new route "Error" like so
 
