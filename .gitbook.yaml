@@ -11,3 +11,4 @@ redirects:
     umbraco-cloud/set-up/external-services: umbraco-cloud/set-up/project-settings/external-services.md
     umbraco-cloud/set-up/dedicated-resources: umbraco-cloud/set-up/project-settings/dedicated-resources.md
     v/workflow: umbraco-workflow/README.md
+    umbraco-cloud/upgrades/migrating-from-8-10: umbraco-cloud/upgrades/major-upgrades.md
