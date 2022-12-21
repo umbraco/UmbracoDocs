@@ -91,3 +91,11 @@ We follow [GitBooks conventions for adding code blocks](https://docs.gitbook.com
 Four types of hints can be added to our documentation: info, success, warning and danger.
 
 [Learn more about how to use hints in the GitBook Docs](https://docs.gitbook.com/tour/editor/blocks/hint).
+
+## Miscellaneous
+
+Another helpful source is the [Microsoft Style Guide](https://learn.microsoft.com/en-us/style-guide/welcome/).
+
+### Acronyms
+
+Acronyms or abbreviations are spelled out the first time and placed in parentheses behind. An example: Software Development Kit (SDK). The short form can then be used in the remaining text of the article. Use just SDK here.
