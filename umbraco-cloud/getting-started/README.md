@@ -44,7 +44,7 @@ To create a project in Umbraco Cloud Portal:
 1. Log in to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects) with your credentials.
 2.  Click **Create New Project**.
 
-    <figure><img src="../../.gitbook/assets/create-project.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/create-project.png" alt=""><figcaption></figcaption></figure>
 3. Select **Umbraco Cloud** from the list of projects.
 4. Choose a **Plan Selection** as per your choice.
 5. On the **Project Information** page, enter the **Project Name**.

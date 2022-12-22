@@ -18,7 +18,7 @@ To enable 2FA for Umbraco Cloud, go to **Profile**, click **Edit Profile**, and 
 
 2FA code can be sent either to your email or as a text message on your phone. Alternatively, you can use an authentication app such as Google Authenticator, Authy, or similar.
 
-![Phone-auth](../set-up/images/Phone-auth.png)
+![Phone-auth](images/Phone-auth.png)
 
 As your Umbraco profile is used to log in to the backoffice for your projects, these are all now protected with 2FA.
 
@@ -38,8 +38,7 @@ See the blog article [Umbraco Cloud expands with US regional hosting](https://um
 
 Have you tried the new Projects Dashboard yet? The first official version of the dashboard has been released.
 
-Currently, you can find a link in the project's overview.
-Soon the Projects Dashboard will be the default landing page after logging into Umbraco Cloud Portal.
+Currently, you can find a link in the project's overview. Soon the Projects Dashboard will be the default landing page after logging into Umbraco Cloud Portal.
 
 By clicking on “Edit groups”, you can sort projects into groups with the drag-drop functionality to organize your Cloud and Heartcore projects.
 

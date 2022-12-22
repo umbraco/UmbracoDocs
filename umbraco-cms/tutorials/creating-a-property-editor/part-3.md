@@ -1,9 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
-
 # Integrating services with a property editor
 
 ## Overview
@@ -56,50 +50,57 @@ Now that we have access to the editor events, we will trim the text to a length 
 At this point your controller should look like this:
 
 ```javascript
-angular.module('umbraco').controller('SuggestionPluginController', function ($scope, notificationsService) {
-    console.log($scope.model)
-       
-    if ($scope.model.value === null || $scope.model.value === "") {
-        $scope.model.value = $scope.model.config.defaultValue;
-    }
+angular.module("umbraco")
+    .controller("SuggestionPluginController",
+        // Scope object is the main object which is used to pass information from the controller to the view.
+        function ($scope, notificationsService) {
 
-    $scope.aSuggestions = ["You should take a break", "I suggest that you visit the Eiffel Tower", "How about starting a book club?", "Are you hungry?"];
+            if ($scope.model.value === null || $scope.model.value === "") {
+                $scope.model.value = $scope.model.config.defaultValue;
+            }
 
-    $scope.getSuggestion = function () {
+            // SuggestionPluginController assigns the suggestions list to the aSuggestions property of the scope
+            $scope.aSuggestions = ["You should take a break", "I suggest that you visit the Eiffel Tower", "How about starting a book club today or this week?", "Are you hungry?"];
 
-        $scope.model.value = $scope.aSuggestions[$scope.aSuggestions.length * Math.random() | 0];
+            // The controller assigns the behavior to scope as defined by the getSuggestion method, which is invoked when the user clicks on the 'Give me Suggestions!' button.
+            $scope.getSuggestion = function () {
 
-    }
+                // The getSuggestion method reads a random value from an array and provides a Suggestion. 
+                $scope.model.value = $scope.aSuggestions[$scope.aSuggestions.length * Math.random() | 0];
 
-    $scope.getState = function () {
-        if ($scope.model.config.isEnabled === "1") {
-            return false;
-        }
-        return true;
-    }
+            }
+         
+            // The controller assigns the behavior to scope as defined by the getState method, which is invoked when the user toggles the enable button in the data type settings.
+            $scope.getState = function () {
 
-    // trial code
-
-    $scope.TrimText = function () {
-        $scope.model.value = $scope.model.value.substring(0, 35);
-    };
-   
-
-    $scope.showNotification = function () {
-        if ($scope.model.value.length > 35) {
-            notificationsService.add({
-                // the path of our custom notification view
-                view: "/App_Plugins/Suggestions/notification.html",
-                // arguments object we want to pass to our custom notification
-                args: {
-                    value: $scope.model.value,
-                    callback: $scope.TrimText
+                //If the data type is enabled in the Settings the 'Give me Suggestions!' button is enabled
+                 if (Boolean(Number($scope.model.config.isEnabled))) {
+                    return false;
                 }
-            });
-        }
-    };
+                return true;
+            }
 
-  });
+            //// function to show custom notification
+            $scope.showNotification = function () {
+                if ($scope.model.value.length > 35) {
+                    notificationsService.add({
+                        // the path of our custom notification view
+                        view: "/App_Plugins/Suggestions/notification.html",
+                        // arguments object we want to pass to our custom notification
+                        args: {
+                            value: $scope.model.value,
+                            callback: $scope.TrimText
+                        }
+                    });
+                }
+            };
+
+            // function to trim the text to a length of 35.
+            $scope.TrimText = function () {
+                $scope.model.value = $scope.model.value.substring(0, 35);
+            };
+
+        });
 ```
 
 ### Add the directive in the `suggestion.html`

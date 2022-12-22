@@ -29,13 +29,13 @@ A Document Type is created using the Document Type editor in the **Settings** se
 
 Go to the **Settings** section in the backoffice. On the **Document Types** node click the menu icon (•••) to bring up the context menu. Here choose **Document Type with Template**. This will create a new Document Type with a template. The Template can be found under **Templates** in the **Settings** section that will be assigned as the default template for the Document Type.
 
-<figure><img src="../../../.gitbook/assets/createDoctype.PNG" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/v8Screenshots/createDoctype.PNG" alt=""><figcaption></figcaption></figure>
 
 You can also choose to create a **Document Type** without a template and create **Folders** to organize your Document Types.
 
 You can also use **Composition** to create a new Document Type. Compositions allow you to inherit properties from other groups. When using a mixed setup, you can take advantage of nesting and use compositions by visiting the Structure group. A checklist like this should appear:
 
-<figure><img src="../../../.gitbook/assets/compositions.PNG" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/v8Screenshots/compositions.PNG" alt=""><figcaption></figcaption></figure>
 
 Finally, you can create a Document Type as an **Element Type** which can be used to build Block Grid and Block List editors. Learn more about [Element Types](defining-content.md#what-is-an-element-type) below.
 
@@ -66,7 +66,7 @@ To import a Document Type, go to the **Settings** section, right-click the **Doc
 
 First, we're prompted to give the Document Type a name. This first Document Type will be the root node for our content, name it "Home".
 
-<figure><img src="../../../.gitbook/assets/homePage.PNG" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/v8Screenshots/homePage.PNG" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 The alias of the Document Type is automatically generated based on the property name. If you want to change the auto-generated alias, click the "lock" icon. The alias must be in camel case. For example: _homePage_.
@@ -76,17 +76,17 @@ Having a root node lets you quickly query content as you know everything will be
 
 To set an icon for the Document Type click the document icon in the top left corner. This will open the icon select dialog. Search for _Home_ and select the icon. This icon will be used in the content tree. Choosing appropriate icons for your content nodes is a good way to give editors a better overview of the content tree.
 
-<figure><img src="../../../.gitbook/assets/docTypeIcon.PNG" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/v8Screenshots/docTypeIcon.PNG" alt=""><figcaption></figcaption></figure>
 
 Go to the **Permissions** tab and tick the **Allow as root** toggle and save the Document Type by clicking save in the bottom right corner.
 
-<figure><img src="../../../.gitbook/assets/docTypePermissions.PNG" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/v8Screenshots/docTypePermissions.PNG" alt=""><figcaption></figcaption></figure>
 
 ### Creating the root node
 
 Now go to the **Content section**, click on the menu icon next to **Content** and Select the Home Document Type. We'll name it "Home" and click the **Save and Publish** button.
 
-<figure><img src="../../../.gitbook/assets/createHomepage.PNG" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/v8Screenshots/createHomepage.PNG" alt=""><figcaption></figcaption></figure>
 
 As we haven't created our properties, all we can see on the "Home" node is the Properties tab. This tab contains the default properties that are available on all content nodes in Umbraco.
 
@@ -225,11 +225,11 @@ Go back to the **Settings section** and create a new Document Type and name it "
 
 Before creating a Text Page in **Content** section, allow the Text Page Document Type to be created as a child node to the Home node. Select the Home Document Type and go to the **Permissions** group. Click **Add child** and select Text Page.
 
-<figure><img src="../../../.gitbook/assets/setPagePermissions.PNG" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/v8Screenshots/setPagePermissions.PNG" alt=""><figcaption></figcaption></figure>
 
 Go to the **Content** section and click the menu icon (•••) next to the _Home_ node and select the Text page Document Type. We'll name the page "About us". We now have a basic content structure.
 
-<figure><img src="../../../.gitbook/assets/createAboutUs.PNG" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/v8Screenshots/createAboutUs.PNG" alt=""><figcaption></figcaption></figure>
 
 Document Types are flexible and can be used for defining pieces of reusable content or an entire page, to acting as a container or repository.
 
