@@ -1,4 +1,4 @@
-# Grid Layout (Legacy)
+# Grid Layout
 
 {% hint style="info" %}
 We highly recommend that you use the [Block Grid](../block-editor/block-grid-editor.md) instead.
@@ -10,7 +10,7 @@ Grid Layout has been marked as obsolete and development on the property editor h
 
 Gives editors a grid layout editor which allows them to insert different types of content in a predefined layout.
 
-<figure><img src="../../../../../../.gitbook/assets/editor.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../built-in-property-editors/grid-layout/Images/editor.png" alt=""><figcaption></figcaption></figure>
 
 ## [What are Grid Layouts](what-are-grid-layouts.md)
 
