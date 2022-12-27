@@ -130,7 +130,7 @@ If your code or any packacges configures a custom `IContentLastChanceFinder`, th
 
 For common approaches to handling errors in ASP.NET Core web apps, see the [Handle errors in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/error-handling?view=aspnetcore-6.0) article in the Microsoft Documentation.
 
-## maintenance Page
+## Maintenance Page
 
 While upgrading Umbraco in the past it would redirect visitors of the website to the upgrading page.
 
