@@ -9,7 +9,7 @@ Custom error handling might make your site look more on-brand and minimize the i
 This article contains guides on how to create custom error pages for the following types of errors:
 
 - [404 errors ("Page not found")](#404-errors)
-- [maintenance Page](#maintenance-page)
+- [Maintenance Page](#maintenance-page)
 
 ## In-code error page handling
 
@@ -132,15 +132,13 @@ For common approaches to handling errors in ASP.NET Core web apps, see the [Hand
 
 ## maintenance Page
 
-When upgrading your Umbraco project, most of the time the site does not need to restart or won't go down.
+While upgrading Umbraco in the past it would redirect visitors of the website to the upgrading page.
 
-While upgrading the website in the past it would redirect users to the login/upgrading page.
-
-To make sure users are not redirected to the upgrade page when trying to log in, we added a `maintenance page` that will be shown when visiting the website while it is upgrading.
+To make sure users are not redirected to the upgrade page we added a `maintenance page` that will be shown when visiting the website while Umbraco is in Upgrade runtime mode.
 
 ![Maintenance page](images/maintenancePage.png)
 
-It is possible to either disable the maintenance page as most upgrades can be done without the website having to restart or go down.
+It is possible to disable the maintenance page as most upgrades can be done without the website having to restart or go down.
 
 To disable the maintenance page, add the following configuration in the `appSettings.json` file:
 
