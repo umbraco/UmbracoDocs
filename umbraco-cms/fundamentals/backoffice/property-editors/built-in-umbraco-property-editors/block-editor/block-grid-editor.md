@@ -37,6 +37,7 @@ The Data Type editor allows you to configure the following properties:
 
 * **Blocks** - Defines the Block Types available for use in the property. For more information, see [Setup Block Types](block-grid-editor.md#setup-block-types).
 * **Amount** - Sets the minimum and/or the maximum number of Blocks that should be allowed at the root of the layout.
+* **Single block mode** - When in Single block mode, the output will be `BlockListItem<>` instead of `BlockListModel`-
 * **Live editing mode** - Enabling this option will allow you to see the changes as you are editing them.
 * **Editor width** - Overwrites the width of the property editor. This field takes any valid CSS value for "max-width". For example: 100% or 800px.
 * **Grid Columns** - Define the number of columns in your grid layout. The default is 12 columns.
