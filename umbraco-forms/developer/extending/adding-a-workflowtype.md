@@ -82,7 +82,7 @@ Having obtained a reference to a record field, the submitted value can be retrie
 var fieldValue = recordField.ValuesAsString();
 ```
 
-If the field stores multiple values, they are delimited with a comma. In many cases you can safely split on that delimeter to obtain the individual values. However this can lead to issues if the prevalues being selected also contain commas. If that's a concern, the following extension method is available to correctly parse the selected prevalues:
+If the field stores multiple values, they are delimited with a comma. In many cases you can safely split on that delimiter to obtain the individual values. However this can lead to issues if the prevalues being selected also contain commas. If that's a concern, the following extension method is available in `Umbraco.Forms.Core.Extensions` to correctly parse the selected prevalues:
 
 ```csharp
 IEnumerable<string> selectedPrevalues = recordField.GetSelectedPrevalues();
