@@ -206,7 +206,8 @@ Once the project runs locally without any errors, the next step is to deploy and
 <summary>Upgrading from Umbraco 9 - Remove files from the development environment.</summary>
 
 * Remove the folders mentioned below on the **Development** environment using KUDU from the `repository` and `wwwroot` folders:
-
+![kuduFolders](https://user-images.githubusercontent.com/83591955/209948527-e3f40a39-95e0-4db3-a8dc-f0c148253646.PNG)
+    
 * `/wwwroot/umbraco`
 * `/umbraco/PartialViewMacros`
 * `/umbraco/UmbracoBackOffice`
@@ -221,13 +222,13 @@ Once the project runs locally without any errors, the next step is to deploy and
 
 We highly recommend that you go through everything in your Development environment. This can help you identify any potential errors after the upgrade and ensure that you are not deploying any issues onto your Live environment.
 
-## Step 6: Going live
+## Step 6: Deploying to Staging/Live
 
 <details>
 
-<summary>Upgrading from Umbraco 9 -  Remove files from live the environment.</summary>
+<summary>Upgrading from Umbraco 9 -  Remove files from staging/live the environment.</summary>
 
-Before deploying the upgrade to your Live environment, you will need to remove the folders you also removed from both your local instance and your Development environment.
+Before deploying the upgrade to your next environment, you will need to remove the folders you also removed from Kudu on your Development environment.
 
 The files are:
 
@@ -239,10 +240,11 @@ The files are:
 * `/umbraco/config/lang`
 
 They need to be removed through KUDU from both the `repository` and `wwwroot` folders.
+![kuduFolders](https://user-images.githubusercontent.com/83591955/209948901-8420f595-16f4-428d-91a1-51dee483a3ac.PNG)
 
 </details>
 
-Once everything works as expected in the development environment, you can push the upgrade to the live environment.
+Once everything works as expected in the development/staging environment, you can push the upgrade to the live environment.
 
 * [Working locally with Umbraco Cloud](https://github.com/umbraco/UmbracoDocs/blob/11.x/umbraco-cloud/set-up/working-locally.md)
 * [KUDU on Umbraco Cloud](https://github.com/umbraco/UmbracoDocs/blob/11.x/umbraco-cloud/set-up/power-tools)
