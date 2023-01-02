@@ -1,5 +1,41 @@
 # Documentation and versions
 
-[To do.]
+The Umbraco Documentation covers multiple versions of multiple different products. This articles explains how we version the documentation as well as how to use it when reading the documentation.
 
-A little change.
+The major versions of Umbraco CMS is used for versioning the Umbraco Documentation.
+
+{% hint style="info" %}
+The versioning can be disregarding for any and all articles related to Umbraco Cloud and Umbraco Heartcore.
+
+The documentation for Umbraco Cloud and Umbraco Heartcore currently appears with the same versioning as the Umbraco CMS. The plan is to create seperate sites for each main Umbraco product; CMS, Cloud and Heartcore.
+
+Currently there is no timeline on this change.
+{% endhint %}
+
+## Site-wide versioning
+
+The Umbraco Documentation is versioned on a site-wide basis. This means that when the dropdown is used to change the version, it changes the version of the entire documentation site.
+
+If the article you are currently viewing does not exist in the version you change to, you will be redirected to the documentation landing page.
+
+## Major vs minor versions
+
+The Umbraco Documentation covers all supported versions of Umbraco CMS. A version exists for each supported **major** version of Umbraco CMS.
+
+When a Release Candidate (RC) for a new **minor** version of Umbraco CMS is released, a new version of the documentation will also be available. When the minor version is released, the documentation for it will be merged into the related **major** verion.
+
+The documentation for each major version will **always document the latest version of that major version of Umbraco CMS**.
+
+When an RC for a new **major** version of Umbraco CMS is released, a new version of the documentation will also be available. When the major version is released, the documentation for it will be the new **default version of the Umbraco Documentation**.
+
+## Long Term Support (LTS) and End of Life (EOL)
+
+The Umbraco Documentation follows the [LTS and EOL strategies outlined for the Umbraco CMS](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/).
+
+This means that the Umbraco Documentation will cover each major version of Umbraco CMS until it is EOL. After a major version is EOL the documentation for that version will be unpublished after 1 month extended to 3 months for LTS versions.
+
+Unpublished versions of the Umbraco Documentation will continue to be available from GitHub.
+
+{% hint style="info" %}
+We reserve the rights to change the strategy for EOL versions. This is due to the fact that we want to thoroughly test the process before making a decision.
+{% endhint %}
