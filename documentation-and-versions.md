@@ -2,7 +2,7 @@
 
 The Umbraco Documentation covers multiple versions of multiple different products. This articles explains how we version the documentation as well as how to use it when reading the documentation.
 
-The major versions of Umbraco CMS is used for versioning the Umbraco Documentation.
+The major versions of Umbraco CMS is currently used for versioning the entire Umbraco Documentation site.
 
 {% hint style="info" %}
 The versioning can be disregarding for any and all articles related to Umbraco Cloud and Umbraco Heartcore.
@@ -22,11 +22,11 @@ If the article you are currently viewing does not exist in the version you chang
 
 The Umbraco Documentation covers all supported versions of Umbraco CMS. A version exists for each supported **major** version of Umbraco CMS.
 
-When a Release Candidate (RC) for a new **minor** version of Umbraco CMS is released, a new version of the documentation will also be available. When the minor version is released, the documentation for it will be merged into the related **major** verion.
+When a Release Candidate (RC) for a new **minor** version of Umbraco CMS is released, a new version of the documentation will be available. When the minor version is released, the documentation for it will be merged into the related **major** verion.
 
-The documentation for each major version will **always document the latest version of that major version of Umbraco CMS**.
+The documentation for each major version will always document the latest version of that major version of Umbraco CMS.
 
-When an RC for a new **major** version of Umbraco CMS is released, a new version of the documentation will also be available. When the major version is released, the documentation for it will be the new **default version of the Umbraco Documentation**.
+When an RC for a new **major** version of Umbraco CMS is released, a new version of the documentation will be available. When the major version is released, the documentation for it will be the new **default version of the Umbraco Documentation**.
 
 ## Long Term Support (LTS) and End of Life (EOL)
 
