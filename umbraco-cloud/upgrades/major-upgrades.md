@@ -204,9 +204,6 @@ Once the project runs locally without any errors, the next step is to deploy and
 <details>
 
 <summary>Upgrading from Umbraco 9 - Remove files from the development environment.</summary>
-
-* Remove the folders mentioned below on the **Development** environment using KUDU from the `repository` and `wwwroot` folders:
-![kuduFolders](https://user-images.githubusercontent.com/83591955/209948527-e3f40a39-95e0-4db3-a8dc-f0c148253646.PNG)
     
 * `/wwwroot/umbraco`
 * `/umbraco/PartialViewMacros`
@@ -214,6 +211,10 @@ Once the project runs locally without any errors, the next step is to deploy and
 * `/umbraco/UmbracoInstall`
 * `/umbraco/UmbracoWebsite`
 * `/umbraco/config/lang`
+
+The files and folder above need to be removed on the **Development** environment through `KUDU` -> `Debug Console` -> `CMD` -> `Site` -> from both the `repository` and `wwwroot` folders.
+
+![image](https://user-images.githubusercontent.com/83591955/210218172-b32a6be9-9b2a-48c4-8ed7-676068f72946.png)
 
 </details>
 
@@ -239,8 +240,8 @@ The files are:
 * `/umbraco/UmbracoWebsite`
 * `/umbraco/config/lang`
 
-They need to be removed through KUDU from both the `repository` and `wwwroot` folders.
-![kuduFolders](https://user-images.githubusercontent.com/83591955/209948901-8420f595-16f4-428d-91a1-51dee483a3ac.PNG)
+They need to be removed through  `KUDU` -> `Debug Console` -> `CMD` -> `Site` -> from both the `repository` and `wwwroot` folders.
+![image](https://user-images.githubusercontent.com/83591955/210218090-9b72fc05-cfe3-442f-8045-a90e5b8a9e89.png)
 
 </details>
 
