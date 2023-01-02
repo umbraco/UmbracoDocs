@@ -9,6 +9,7 @@ Custom error handling might make your site look more on-brand and minimize the i
 This article contains guides on how to create custom error pages for the following types of errors:
 
 - [404 errors ("Page not found")](#404-errors)
+- [500 errors ("Internal Server Error")](#500-errors)
 
 ## In-code error page handling
 
@@ -128,3 +129,69 @@ If your code or any packacges configures a custom `IContentLastChanceFinder`, th
 ## Handling errors in ASP.NET Core
 
 For common approaches to handling errors in ASP.NET Core web apps, see the [Handle errors in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/error-handling?view=aspnetcore-6.0) article in the Microsoft Documentation.
+
+## 500 errors
+
+The following steps guides you through setting up a page for internal server errors (500 errors).
+
+- Create a `~/controllers` folder in your Umbraco web project.
+- Create a file in this folder, called `ErrorController.cs`.
+- Add the following code to the file:
+
+    ```csharp
+    using Microsoft.AspNetCore.Mvc;
+    namespace [YOUR_PROJECT_NAME].Controllers
+    {
+        public class ErrorController : Controller
+        {
+            [Route("Error")]
+            public IActionResult Index()
+            {
+                if (Response.StatusCode == StatusCodes.Status500InternalServerError)
+                {
+                    return Redirect("/statuscodes/500");
+                }
+                else if (Response.StatusCode != StatusCodes.Status200OK)
+                {
+                    return Redirect("/statuscodes");
+                }
+                return Redirect("/");
+            }
+        }
+    }
+    ```
+
+    {% hint style="info" %}
+**Namespace** replace [YOUR_PROJECT_NAME] by the actual project name. In Visual Studio you can use *Sync Namespaces* from the project context menu (in *Solution Explorer* View).
+{% endhint %}
+
+- Add an entry in `appSettings.json` for the new route "Error" like so
+
+    ```json
+    "Umbraco": {
+    "CMS": {
+        "Global": {
+        "ReservedPaths": "~/app_plugins/,~/install/,~/mini-profiler-resources/,~/umbraco/,~/error/",
+        ...
+    ```
+
+- Create the redirect pages from 1. step as regular content nodes in the backoffice. They should neither appear in navigation menus or sitemaps. In this example you would create under root node `Statuscodes` with a subnode `500`.
+- Update the `Configure` method in file `Startup.cs`
+
+    ```csharp
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    {
+    ...
+    if (env.IsDevelopment())
+    {
+        app.UseDeveloperExceptionPage();
+    }
+    else
+    {
+        app.UseExceptionHandler("/error");
+    }
+    ...
+    }
+    ```
+
+    For local testing in Visual Studio replace `app.UseDeveloperExceptionPage();` by `app.UseExceptionHandler("/error");`. Otherwise you will get the default error page with stack trace etc.
