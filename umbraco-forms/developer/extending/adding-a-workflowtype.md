@@ -68,9 +68,9 @@ namespace MyFormsExtensions
 
 ### Record information
 
-The `Execute()` method gets a `WorkflowExecutionContext` which has properties for the related `Form`, `Record` and `FormState`.  This parameter contains all information related to the workflow.
+The `Execute()` method gets a `WorkflowExecutionContext` which has properties for the related `Form`, `Record`, and `FormState`.  This parameter contains all information related to the workflow.
 
-The `Record` contains all data and meta data submitted by the form.  As shown in the example above, you can iterate over all `RecordField` values in the form. You can also retrieve a specific record field by alias using the following method:
+The `Record` contains all data and metadata submitted by the form.  As shown in the example above, you can iterate over all `RecordField` values in the form. You can also retrieve a specific record field by alias using the following method:
 
 ```csharp
 RecordField? recordField = context.Record.GetRecordFieldByAlias("myalias");
@@ -82,7 +82,7 @@ Having obtained a reference to a record field, the submitted value can be retrie
 var fieldValue = recordField.ValuesAsString();
 ```
 
-If the field stores multiple values, they are delimited with a comma. In many cases you can safely split on that delimiter to obtain the individual values. However this can lead to issues if the prevalues being selected also contain commas. If that's a concern, the following extension method is available in `Umbraco.Forms.Core.Extensions` to correctly parse the selected prevalues:
+If the field stores multiple values, they are delimited with a comma. In many cases, you can safely split on that delimiter to obtain the individual values. However, this can lead to issues if the prevalues being selected also contain commas. If that's a concern, the following extension method is available in `Umbraco.Forms.Core.Extensions` to correctly parse the selected prevalues:
 
 ```csharp
 IEnumerable<string> selectedPrevalues = recordField.GetSelectedPrevalues();
@@ -90,7 +90,7 @@ IEnumerable<string> selectedPrevalues = recordField.GetSelectedPrevalues();
 
 ### Form and state information
 
-The `Form` references the form the record is from, and `FormState` provides its state (submitted or approved).
+The `Form` references the form the record is from and `FormState` provides its state (submitted or approved).
 
 Other context, such as the current `HttpContext`, if needed can be passed as constructor parameters (for example: the `HttpContext` can be accessed by injecting `IHttpContextAccessor`).
 

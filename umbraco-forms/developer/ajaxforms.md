@@ -390,7 +390,7 @@ When retrieving a form definition, some additional detail is provided for fields
             ...
 ```
 
-When submitting a form the value should be a JSON structure that provides a collection. Each item in the collection should contain the file name and the file contents as a base64 encoded data URL.
+When submitting a form, the value should be a JSON structure that provides a collection. Each item in the collection should contain the file name and the file contents as a base64 encoded data URL.
 
 ```json
 {
