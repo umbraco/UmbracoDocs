@@ -1,3 +1,7 @@
+---
+description: The Umbraco Documentation is versioned based on major versions of the Umbraco CMS. Learn more about how that works in this article.
+---
+
 # Documentation and versions
 
 The Umbraco Documentation covers multiple versions of multiple different products. This articles explains how we version the documentation as well as how to use it when reading the documentation.
@@ -38,4 +42,14 @@ Unpublished versions of the Umbraco Documentation will continue to be available 
 
 {% hint style="info" %}
 We reserve the rights to change the strategy for EOL versions. This is due to the fact that we want to thoroughly test the process before making a decision.
+{% endhint %}
+
+## Contributing to a specific version
+
+The Umbraco Documentation is synchronized with a GitHub repository, [UmbracoDocs](https://github.com/umbraco/UmbracoDocs), which is open source. Read the [Contribution documentation](../contribute/) to learn more about contributions and how to get started.
+
+The `main` branch on the repository holds the default version of the documentation. Each version of the Umbraco Documentation has a seperate branch in the repository. These will remain even though the CMS version is EOL.
+
+{% hint style="info" %}
+Documentation for Umbraco 8 and earlier versions are gathered in a single branch, `legacy-docs`. These versions are live on a different site: [Our](https://our.umbraco.com/documentation).
 {% endhint %}
