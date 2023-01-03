@@ -34,7 +34,7 @@ In Umbraco Forms 8.10.0, protection was added to uploaded files to prevent users
 
 If for any reason you need to revert to the previous behavior, or have other reasons where you want to permit unauthenticated users from accessing the files, you can turn off this protection by setting this configuration value to `true`.
 
-### DefaultAccessToNewForms
+### DefaultUserAccessToNewForms
 In Umbraco Forms 8.11.0, this setting was added to add control over access to new forms.  The default behavior is for all users to be granted access to newly created forms. To amend that to deny access,
 the setting can be updated to a value of `Deny`.  A value of `Grant` or a configuration file with the setting absent preserves the default behavior.
 
