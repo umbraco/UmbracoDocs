@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Creating a property editor"
-description: "A guide to creating a property editor in Umbraco"
+description: A guide to creating a property editor in Umbraco
 ---
 
 # Creating a Property Editor
@@ -11,18 +8,18 @@ This guide explains how to set up a property editor, hook it into Umbraco's Data
 
 The steps we will go through in part 1 are:
 
-- [Setting up a Plugin](#setting-up-a-plugin)
-- [Writing basic HTML and JavaScript](#writing-basic-html-and-javascript)
-- [Registering the Data Type in Umbraco](#registering-the-data-type-in-umbraco)
-- [Implementing AngularJS Dependency Injection](#implementing-angularjs-dependency-injection)
+* [Setting up a Plugin](./#setting-up-a-plugin)
+* [Writing basic HTML and JavaScript](./#writing-basic-html-and-javascript)
+* [Registering the Data Type in Umbraco](./#registering-the-data-type-in-umbraco)
+* [Implementing AngularJS Dependency Injection](./#implementing-angularjs-dependency-injection)
 
 ## Prerequisites
 
 This tutorial covers how to use AngularJS with Umbraco, so it does not cover AngularJS itself. To read about AngularJS, you can take a look at some of the resources here:
 
-- [Egghead.io](https://egghead.io/courses/angularjs-fundamentals)
-- [Angularjs.org/tutorial](https://docs.angularjs.org/tutorial)
-- [Pluralsight](https://www.pluralsight.com/paths/angular-js)
+* [Egghead.io](https://egghead.io/courses/angularjs-fundamentals)
+* [Angularjs.org/tutorial](https://docs.angularjs.org/tutorial)
+* [Pluralsight](https://www.pluralsight.com/paths/angular-js)
 
 ## The End Result
 
@@ -114,9 +111,9 @@ You will still need to add all of the files you added above but, because your `C
 
 Now, we will add 3 files to the /App_Plugins/Suggestions/ folder:
 
-- `suggestion.html`
-- `suggestion.controller.js`
-- `suggestion.css`
+* `suggestion.html`
+* `suggestion.controller.js`
+* `suggestion.css`
 
 These will be our main files for the editor, with the `.html` file handling the view, `.js` file handling the functionality and the `.css` file containing the stylesheet.
 
@@ -133,7 +130,7 @@ In the `.html` file we'll add:
 {% hint style="info" %}
 **Optional**
 
-Add `ng-readonly="readonly"` to the `input` tag in order to make the property editor *read-only*.
+Add `ng-readonly="readonly"` to the `input` tag in order to make the property editor _read-only_.
 {% endhint %}
 
 In the `.js` file, we'll add a basic AngularJS controller declaration
@@ -153,15 +150,14 @@ In the `.css` file, we'll add:
     font-size: 20px;
     color: Highlight;
 }
-
 ```
 
 Now our basic parts of the editor are done, namely:
 
-- The package manifest, telling Umbraco what to load
-- The HTML view for the editor
-- The controller for wiring up the editor with angular
-- The stylesheet for defining our data type styles
+* The package manifest, telling Umbraco what to load
+* The HTML view for the editor
+* The controller for wiring up the editor with angular
+* The stylesheet for defining our data type styles
 
 ## Registering the Data Type in Umbraco
 
@@ -215,7 +211,7 @@ and add that id to the button in the HTML:
 
 Now, clear the cache, reload the document, and see the Suggestions Data Type running.
 
-![Example of the Suggestions data type running](images/suggestion-editor-backoffice.png)
+![Example of the Suggestions Data Type running](images/suggestion-editor-backoffice.png)
 
 When we save or publish, the value of the Data Type is automatically synced to the current content object and sent to the server, all through the power of Angular and the `ng-model` attribute.
 

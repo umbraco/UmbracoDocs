@@ -76,7 +76,7 @@ Create the XmlSiteMapSettings composition (Document Type Without Template) with 
 * **Hide From Xml Sitemap** (hideFromXmlSitemap) - checkbox.
 
 At this point your composition should look similar to this:\
-&#x20;
+
 
 <figure><img src="images/v8/create-sitemap-settings-composition.png" alt=""><figcaption></figcaption></figure>
 
@@ -84,7 +84,7 @@ At this point your composition should look similar to this:\
 Using pink for composition icons make them easier to spot in the list when you are curating your Document Types.
 {% endhint %}
 
-Add this composition to all of the document types on your site!&#x20;
+Add this composition to all of the document types on your site!
 
 <figure><img src="images/v8/create-sitemap-add-composition.png" alt=""><figcaption></figcaption></figure>
 

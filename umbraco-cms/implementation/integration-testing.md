@@ -1,17 +1,64 @@
 ---
-versionFrom: 9.1.0
-versionTo: 10.0.0
 meta.Title: "Integration Testing Umbraco"
 description: "A guide to getting started with integration testing in Umbraco"
 ---
 
 # Integration Testing Umbraco
 
-These examples are for Umbraco 9.1+ and they rely on [NUnit](https://nunit.org/) and [Umbraco.Cms.Tests.Integration](https://github.com/umbraco/Umbraco-CMS/tree/v10/contrib/tests/Umbraco.Tests.Integration).
+These examples are for Umbraco 10.
+They use [NUnit](https://nunit.org/) as the testing framework. Leveraging [Umbraco.Cms.Tests.Integration](https://github.com/umbraco/Umbraco-CMS/tree/v10/contrib/tests/Umbraco.Tests.Integration) providing base classes.
+Beware that the Nuget package has an issue fixed in v10.3.1. So it is recommended to use this version.
 
-## Using the NuGet package and attributes in your class
+## Getting started
 
-In your NUnit class, you need to use the NuGet package Umbraco.Cms.Tests.Integration, and then decorate your class with the TestFixture attribute & UmbracoTest attribute, with the UmbracoTest attributes there are multiple options:
+First you have to create a new UnitTest project based on NUnit and install the package into the project.
+
+```csharp
+//Create project
+dotnet new nunit
+//Install Umbraco.Tests.Integration package
+dotnet add package Umbraco.Cms.Tests.Integration
+```
+
+After the project is created and the package is added we have to create an ```appsettings.Tests.json``` file and a GlobalSetup class.
+
+The ```appsettings.Tests.json``` can be a bit tricky, as a file with the same name is provided by the package but currently isn't picked up properly.
+A workaround is to create the file as ```appsettings.json``` and then rename the file.
+
+The GlobalSetup is necessary to call the ```GlobalSetupTeardown``` class present in the package. This class makes sure that configuration is read and everything is setup as needed.
+Here is a sample that can be used:
+
+```csharp
+[SetUpFixture]
+public class CustomGlobalSetupTeardown
+{
+    private static GlobalSetupTeardown _setupTearDown;
+
+    [OneTimeSetUp]
+    public void SetUp()
+    {
+        _setupTearDown = new GlobalSetupTeardown();
+        _setupTearDown.SetUp();
+    }
+
+    [OneTimeTearDown]
+    public void TearDown()
+    {
+        _setupTearDown.TearDown();
+    }
+}
+```
+
+Important: The class shouldn't have a namespace!
+
+## Creating a test
+
+To create a test you have to create a new class in your project. This class has to be derived from ```UmbracoIntegrationTest```. This gives you access to some helper methods that you can use.
+
+Second is the ```[UmbracoTest]```-attribute that has to be set on the class. This attribute is responsible to set which type of database setup you want to use in your test class.
+
+The available options are:
+
 
 - None
 - NewEmptyPerFixture
@@ -19,7 +66,7 @@ In your NUnit class, you need to use the NuGet package Umbraco.Cms.Tests.Integra
 - NewSchemaPerFixture
 - NewSchemaPerTest
 
-Besides that you also need to derive from the UmbracoIntegrationTest class, with this you are now ready to start Integration Testing.
+Basic sample:
 
 ```csharp
 using Umbraco.Cms.Tests.Integration;
@@ -56,7 +103,7 @@ public class MyNotificationHandler : INotificationHandler<ContentSavingNotificat
 Then we can make an integration test, we do have to register our notification in the test like you would do with a composer, we can do this by overriding the `CustomTestSetupMethod` and adding the notification.
 After this, we can build our ContentType and Content with their respective builders.
 When we are saving both the ContentType & Content, we need the services to do so, so we use the `GetRequiredService<IService>` method that can get the services we need.
-We can then use `Assert.Multiple()` to do multiple asserts
+We can then use `Assert.Multiple()` to do multiple asserts.
 
 ```csharp
 [TestFixture]
@@ -105,7 +152,7 @@ public class Tests : UmbracoIntegrationTest
 So one of the awesome things about integration tests, is that you can set up a site, download the package for it, and we can run this state for every test.
 This means that you do not have to go through and set up your tests with data like we do in the above example with the builder pattern.
 
-To start with we decorate our class with the `[UmbracoTest]` attribute and we again derive from `UmbracoIntegrationTest`
+To start with we decorate our class with the `[UmbracoTest]` attribute and we again derive from `UmbracoIntegrationTest`.
 Then what you wanna do is set up your Umbraco site, go to the packages section and create your own package. Download the package and place the XML file next to your testing class. You want to have the build action of that XML file to be `EmbeddedResource`
 
 Now we're almost ready to start testing! The last thing we wanna do is have a Setup method to install the package on your site.
@@ -143,3 +190,37 @@ public void Ensure_No_Content_After_Doctype_Is_Deleted()
     Assert.AreEqual(0, contentTypeService.GetAll().Count());
 }
 ```
+
+## Testing from controller to database
+
+Sometimes we want to test from a controller action and down to the database. In this case, we use the built-in concept of a test server. All you need to do is to use the base class UmbracoTestServerTestBase. Let’s take an example:
+
+```csharp
+[TestFixture]
+public class BackOfficeAssetsControllerTests: UmbracoTestServerTestBase
+{
+    [Test]
+    public async Task EnsureSuccessStatusCode()
+    {
+        // Arrange
+        var url = PrepareApiControllerUrl<BackOfficeAssetsController>(x => x.GetSupportedLocales());
+
+        // Act
+        var response = await Client.GetAsync(url);
+
+        // Assert
+        Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
+    }
+}
+```
+
+In this example you have to note three things:
+
+- You still need the `CustomGlobalSetupTeardown` class
+- The PrepareUrl to get the URL of an Action and ensure all services use the URL information when requested. 
+- The Client which is a normal HttpClient, but the base URL points to the test server that is set up for each test.
+
+Note that you can still use GetRequiredService to get the services required to seed data.
+
+Keep in mind that integration tests require a lot of setup before the test executes.
+So execution time will be many times longer compared to a unit test.

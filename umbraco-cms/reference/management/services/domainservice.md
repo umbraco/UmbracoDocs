@@ -2,7 +2,7 @@
 
 The domain service acts as a "gateway" to Umbraco data for operations which are related to domains.
 
-* **Namespace:** `Umbraco.Core.Services`
+* **Namespace:** `Umbraco.Cms.Core.Services`
 * **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:

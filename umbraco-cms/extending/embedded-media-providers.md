@@ -1,8 +1,5 @@
 ---
-versionTo: 11.0.0
-meta.Title: "Umbraco Embed Providers"
 description: "A guide to creating a custom embed providers in Umbraco"
-
 ---
 
 # Embedded Media Providers

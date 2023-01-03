@@ -3,9 +3,9 @@ versionFrom: 9.0.0
 versionTo: 10.0.0
 ---
 
-# Using View Components
+# Using View Components in Umbraco
 
-In the previous versions of MVC, we used Child Actions to build reusable components/widgets consisting of both Razor markup and backend logic. The backend logic was implemented as a controller action and marked with a *[ChildActionOnly]* attribute. Child Actions are no longer supported in ASP.NET Core MVC. Instead, we will use the *View Component* feature.
+In the previous versions of MVC, we used Child Actions to build reusable components/widgets consisting of both Razor markup and backend logic. The backend logic was implemented as a controller action and marked with a _\[ChildActionOnly]_ attribute. Child Actions are no longer supported in ASP.NET Core MVC. Instead, we will use the _View Component_ feature.
 
 ## View Component Overview
 
@@ -13,25 +13,24 @@ View components replace the traditional Controller (SurfaceController)/Partial V
 
 View components are:
 
-- Generated from a C# class
-- Derived from the base class ViewComponent and
-- Associated with a Razor file (*.cshtml) to generate markup.
+* Generated from a C# class
+* Derived from the base class ViewComponent and
+* Associated with a Razor file (\*.cshtml) to generate markup.
 
 [View components](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-components?view=aspnetcore-5.0) are similar to partial views but they are much more powerful compared to the partial views. View components do not use model binding, instead they work with the data provided when calling it.
 
-View Components can be implemented in any part of the web application where there are some possibilities to duplicate code like Header, Navigation Pane, Login Panel, Menu, Shopping Cart, Footer, Nested Content, BlockList Items and so on. View Components behave like a web part containing both business logic and UI design to create a package which can be reused in  multiple parts of the web application.
+View Components can be implemented in any part of the web application where there are some possibilities to duplicate code like Header, Navigation Pane, Login Panel, Menu, Shopping Cart, Footer, Nested Content, BlockList Items and so on. View Components behave like a web part containing both business logic and UI design to create a package which can be reused in multiple parts of the web application.
 
 A view component code consists of two parts:
 
-- The View Component class derived from the `ViewComponent` class:
+*   The View Component class derived from the `ViewComponent` class:
 
     ```csharp
     [ViewComponent(Name = "Employee")]
     public class EmployeeViewComponent : ViewComponent
     {}
     ```
-
-- Returns a Task object as `IViewComponentResult`:
+*   Returns a Task object as `IViewComponentResult`:
 
     ```csharp
     public IViewComponentResult Invoke()
@@ -42,7 +41,7 @@ A view component code consists of two parts:
 
 ### Create a class for a ViewComponent
 
-In this example, let's create a ViewComponent for a Product List and render it on the *HomePage* of the website.
+In this example, let's create a ViewComponent for a Product List and render it on the _HomePage_ of the website.
 
 Create a folder named **ProductView**. In this folder, create a new class named **ProductViewViewComponent.cs** as below:
 
@@ -64,7 +63,6 @@ namespace Umbraco.Docs.Samples.Web.Components.ProductView
         }
     }
 }
-
 ```
 
 ### Create a View for ViewComponent
@@ -72,7 +70,7 @@ namespace Umbraco.Docs.Samples.Web.Components.ProductView
 In **Views** folder, create new folders at `Views\Shared\Components\ProductView`. In the **ProductView** folder, create a new file named **Default.cshtml** as below:
 
 ```csharp
-<h1> Welcome to your Home Page <h1>
+<h1> Welcome to your Home Page </h1>
 <h2>Products List</h2>
 <ul>
     @foreach (var product in Model)
@@ -87,7 +85,7 @@ In **Views** folder, create new folders at `Views\Shared\Components\ProductView`
 You can invoke a ViewComponent from anywhere (even from within a Controller or another ViewComponent). Since this is our Product List, we want it rendered on the Home page - so we’ll invoke it from our HomePage.cshtml file using:
 
 ```csharp
- @(await Component.InvokeAsync("ProductView")) 
+ @(await Component.InvokeAsync("ProductView"))
 ```
 
 You can read about different ways of invoking your view component in the [View components in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-components?view=aspnetcore-5.0#invoking-a-view-component) section of the Microsoft Documentation.view=aspnetcore-5.0)
@@ -96,5 +94,5 @@ You can read about different ways of invoking your view component in the [View c
 
 By default, the framework searches for the Component View path in the following areas:
 
-- `/Views/{Controller Name Folder}/Components/{View Component Name Folder}/{View Name}`
-- `/Views/Shared/Components/{View Component Name Folder}/{View Name}`
+* `/Views/{Controller Name Folder}/Components/{View Component Name Folder}/{View Name}`
+* `/Views/Shared/Components/{View Component Name Folder}/{View Name}`

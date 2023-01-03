@@ -1,6 +1,10 @@
-
-
 # Baselines
+
+{% hint style="info" %}
+Currently, the baseline feature is only available in the west EU region.
+
+At this point, it is not possible to create baselines if you are hosting your site in the East US region.
+{% endhint %}
 
 A Baseline Child project is very similar to a Fork (forked repository) on GitHub where we create a clone of an existing project while maintaining a connection between the two projects. The connection exists between the _Live_ environment of the existing project, the **Baseline project**, and the _Development_ or Live environment - of the newly created project, the **Child project**.
 
@@ -11,12 +15,6 @@ The basic idea is that you have a project that contains all your standard Umbrac
 ![Baseline workflow](images/baseline-workflow.gif)
 
 For some more in-depth information have a look at the [High-level Overview](high-level-overview.md) article.
-
-{% hint style="info" %}
-Currently, the baseline feature is only available in the west EU region.
-
-At this point, it is not possible to create baselines if you are hosting your site in the East US region.
-{% endhint %}
 
 ## Video Tutorial
 
@@ -33,17 +31,19 @@ To create a child project:
 3. Select **Umbraco Cloud** from the **Create New Project** window.
 4. Choose either **Starter**, **Standard** or **Professional** plan from the **Plan Selection** window.
 5. In the **Project Information** window, enter the **Project Name**.
-6. [Optional] Select **Create from Baseline**.
+6. \[Optional] Select **Create from Baseline**.
 7. From the **Choose baseline** drop-down list, select the Cloud project, the new project should be based on.
+
 {% hint style="info" %}
 Any Umbraco Cloud project can be used as a Baseline project
 {% endhint %}
-8. **Choose an Owner** from the drop-down list.
-9. In the **Technical Contact** section, enter your **Name**, **Email**, and **Telephone**.
-10. Select **I have read and agree to the terms and conditions and the Data Processing Agreement**.
-11. Click **Create Project**.
 
-It might take couple of minutes for the project to spin up before your environments are ready. When your environments are ready, you will see a *green* light next to the environment name.
+1. **Choose an Owner** from the drop-down list.
+2. In the **Technical Contact** section, enter your **Name**, **Email**, and **Telephone**.
+3. Select **I have read and agree to the terms and conditions and the Data Processing Agreement**.
+4. Click **Create Project**.
+
+It might take couple of minutes for the project to spin up before your environments are ready. When your environments are ready, you will see a _green_ light next to the environment name.
 
 ![Creating a Baseline child project](images/create-baseline-child-project-v9-new.gif)
 
@@ -58,12 +58,12 @@ When you've created the Child project you can choose to restore content from you
 1. Go to the **Content** section.
 2. Right-click the top of the **Content** tree in the Umbraco backoffice.
 3. Choose **Workspace Restore**.
-4. The *Baseline project* should already be selected as the environment to restore from
+4. The _Baseline project_ should already be selected as the environment to restore from
 5. Click **Restore from Baseline**
 
 If you do not see the content, **Reload** the content tree once the restore is complete.
 
-![Restore content from Baseline project](images/RestoreFromBaseline_v10.gif)
+![Restore content from Baseline project](images/RestoreFromBaseline\_v10.gif)
 
 ## [Merge Conflicts](baseline-merge-conflicts.md)
 

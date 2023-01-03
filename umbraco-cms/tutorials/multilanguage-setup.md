@@ -54,7 +54,7 @@ To change the default language of a website:
 1. Go to **Languages** in the **Settings** tree.
 2. Select the language you want to set as the new default language.
 3.  Toggle **Default Language**.\
-    &#x20;
+
 
     <figure><img src="images/change-default-language-v10.png" alt=""><figcaption></figcaption></figure>
 4. Click **Save**.
@@ -65,7 +65,7 @@ To change the default language of a User:
 
 1. Go to **Users** section.
 2. Select the user whose backoffice language you wish to change.
-3.  Select the new language from the **Language** drop-down list.&#x20;
+3.  Select the new language from the **Language** drop-down list.
 
     <figure><img src="images/change-backoffice-language.png" alt=""><figcaption></figcaption></figure>
 4. Click **Save**.
@@ -119,8 +119,7 @@ To add culture and hostnames, follow these steps:
 1. Go to the **Content** tab.
 2. Right-click on the **...** dots next to the **Contact Us** content node and select **Culture and Hostnames...**
 3.  In the **Culture and Hostnames...** pane, let's add a domain for each hostname, like it's done here:\
-    \
-
+    \\
 
     <figure><img src="images/culture-and-hostnames.png" alt=""><figcaption></figcaption></figure>
 4. Click **Save**.
@@ -138,8 +137,7 @@ To use side-by-side mode for editing content at the same time, follow these step
 3.  Click **Open in Splitview**. In this splitview, we can see the content node with each language side by side.
 
     \
-    You may notice that the **Address** and other fields are greyed out - this is because we haven't checked the **Allow vary by culture** checkbox.\
-
+    You may notice that the **Address** and other fields are greyed out - this is because we haven't checked the **Allow vary by culture** checkbox.\\
 
     ![Splitview editing](images/splitview-editing.png)
 
@@ -185,7 +183,7 @@ To create dictionary items:
 1. Go to the **Translation** section.
 2. Right-click **Dictionary** in the **Translation** tree and select **Create**.
 3. Enter a **Name** for the dictionary item. Let's say **Address** and click **Create**.
-4.  Enter the different language versions for the dictionary item.&#x20;
+4.  Enter the different language versions for the dictionary item.
 
     <figure><img src="images/add-dictionary-item.png" alt=""><figcaption></figcaption></figure>
 5. Click **Save**.
@@ -222,11 +220,11 @@ To view the language variant on the browser, follow these steps:
 For viewing purposes, I've added a stylesheet to my website. The final result should look similar to the image below:
 
 **Danish Version:**\
-&#x20;
+
 
 <figure><img src="images/final-result-dk.png" alt=""><figcaption></figcaption></figure>
 
 **German Version:**\
-&#x20;
+
 
 <figure><img src="images/final-result-da.png" alt=""><figcaption></figcaption></figure>

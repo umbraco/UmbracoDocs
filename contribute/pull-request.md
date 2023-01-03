@@ -28,10 +28,10 @@ GitHub has a functionality that allows you to submit a PR directly from our [rep
 7. Select **Create pull request** again to create the PR.
 
 {% hint style="info" %}
-Before we officially publish the documentation on the GitBook platform, contributions to the migrated docs should be made to a specific branch.
+Choose the correct branch:
 
-* Are you contributing to the Umbraco 10 documentation, select the **`gb/10`** branch before step 7 in the steps above.
-* Are you contributing to the Umbraco 11 documentation, select the **`11.x`** branch before step 7 in the steps above.
+* Are you contributing to Umbraco 10 documentation, select **`gb/10`** branch before step 7 in the steps above.
+* Are you contributing to Umbraco 11 documentation, select **`main`** branch before step 7 in the steps above.
 {% endhint %}
 
 This is helpful to fix typing errors or adding small things. If you are working on a larger update that includes pictures and editing files then it is not the best way to work. In that case you will be better off creating a fork. See below for more thorough instructions on this approach.
