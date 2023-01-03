@@ -696,7 +696,7 @@
 ## Other resources
 
 * [The Licensing Model](other-resources/the-licensing-model.md)
-* [Documentation and Versions](other-resources/documentation-and-versions.md)
+* [Versioning strategy](other-resources/documentation-and-versions.md)
 
 ## Contribute
 

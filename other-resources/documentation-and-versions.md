@@ -2,7 +2,7 @@
 description: The Umbraco Documentation is versioned based on major versions of the Umbraco CMS. Learn more about how that works in this article.
 ---
 
-# Documentation and versions
+# Versioning Strategy
 
 The Umbraco Documentation covers multiple versions of multiple different products. This article explains how we version the documentation as well as how to use it when reading the documentation.
 
