@@ -1,8 +1,5 @@
 ---
-meta.Title: Customizing Umbraco websites
-meta.Description: >-
-  This section shows you some beginner tools and information to get your started
-  with Umbraco. From making a local installation to extending the backoffice.
+description: "This section shows you some beginner tools and information to get your started with Umbraco. From making a local installation to extending the backoffice."
 ---
 
 # Customizing Umbraco

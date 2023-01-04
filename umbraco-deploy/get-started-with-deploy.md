@@ -1,5 +1,5 @@
 ---
-description: How does Umbraco Deploy work and how to get started using Umbraco Deploy
+description: "How does Umbraco Deploy work and how to get started using Umbraco Deploy"
 ---
 
 # Getting started
