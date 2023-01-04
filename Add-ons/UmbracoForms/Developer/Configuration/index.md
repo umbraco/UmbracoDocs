@@ -39,7 +39,7 @@ Set this value to `true` to disable the default behavior of indexing the form su
 
 If indexing has already occurred, you will still need to manually remove the files (found in `App_Data\TEMP\ExamineIndexes\UmbracoFormsRecords`). They will be recreated if indexing is subsequently re-enabled.
 
-### DefaultAccessToNewForms
+### DefaultUserAccessToNewForms
 In Umbraco Forms 8.11.0, this setting was added to add control over access to new forms.  The default behavior is for all users to be granted access to newly created forms. To amend that to deny access,
 the setting can be updated to a value of `Deny`.  A value of `Grant` or a configuration file with the setting absent preserves the default behavior.
 
