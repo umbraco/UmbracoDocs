@@ -1,5 +1,5 @@
 ---
-description: "With Umbraco Forms it's possible to customize the outputted markup of a Form, which means you have complete control over what Forms will output."
+description: "This article teaches you how to customize how your Umbraco Forms are outputted."
 ---
 
 # Custom Markup
