@@ -1,5 +1,5 @@
 ---
-description: "This article covers the topic of composing in Umbraco.
+description: "This article covers the topic of composing in Umbraco."
 ---
 
 # Composing
