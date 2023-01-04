@@ -5,7 +5,7 @@ A private NuGet feed is a package repository that is only accessible to a specif
 
 Private feeds are often used to host internal libraries or proprietary software within an organization.
 
-NuGet is a package manager for the Microsoft development platform, including .NET. It makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
+NuGet is a package manager for the Microsoft development platform, including .NET. It gives you the ability to add, remove, and update libraries and tools in Visual Studio projects.
 
 In this tutorial, we'll be covering how to set up a private NuGet feed with Umbraco Cloud. 
 
@@ -16,7 +16,8 @@ To follow along with this tutorial, you'll need the following tools:
 1. Visual Studio - https://visualstudio.microsoft.com/downloads/
 2. A NuGet server such as MyGet - https://www.myget.org/
 
-If you don't already have these tools installed, you can download Visual Studio from the Microsoft website and set up a NuGet server using one of the options listed above.
+If you don't already have these tools installed, you can download Visual Studio from the Microsoft website, 
+and set up a NuGet server using one of the options listed above.
 
 Now you can go ahead an do the following steps.
 
@@ -83,7 +84,8 @@ Here you need to add some configurations
 </configuration>
 ```
 
-In the above code example you can see that we are using the Key: "MYGET_PASSWORD" that we created in the previous step using the Cloud Secrets Management feature on Umbraco Cloud. 
+In the above code example you can see that we are using the Key: "MYGET_PASSWORD" that we created in the previous step.
+We did that by using the Cloud Secrets Management feature on Umbraco Cloud. 
 
 
 6. Push this to your Umbraco Cloud project. 
