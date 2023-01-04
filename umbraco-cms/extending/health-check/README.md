@@ -1,11 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: Umbraco Healthcheck
-meta.Description: >-
-  The Settings section of the Umbraco backoffice holds a dashboard named 'Health
-  Check'. It is a handy list of checks to see if your Umbraco installation is
-  configured according to best practices.
+description: "Health Checks are used to determine the state of your Umbraco project. Learn more about each of them in this section."
 ---
 
 # Health Check

@@ -1,8 +1,5 @@
 ---
-meta.Title: The Umbraco Backoffice
-meta.Description: >-
-  In this article you can learn more about the common terms and concepts that
-  are used throughout the Umbraco Backoffice.
+description: "Learn more about the Umbraco backoffice which is the admin side of your Umbraco website."
 ---
 
 # Backoffice

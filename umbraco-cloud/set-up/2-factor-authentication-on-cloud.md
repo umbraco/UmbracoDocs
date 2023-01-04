@@ -1,8 +1,5 @@
 ---
-meta.Title: 2-factor authentication on Umbraco Cloud
-meta.Description: >-
-  This article shows you how you can enable 2-factor authentication for when you
-  log in to the Umbraco Cloud Portal or the Umbraco Backoffice.
+description: "This article shows you how you can enable 2-factor authentication for when you log in to the Umbraco Cloud Portal or the Umbraco Backoffice."
 ---
 
 # 2-factor authentication
