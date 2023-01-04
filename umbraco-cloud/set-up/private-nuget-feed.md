@@ -5,26 +5,36 @@ A private NuGet feed is a package repository that is only accessible to a specif
 
 In this tutorial, we'll be covering how to set up a private NuGet feed with Umbraco Cloud. 
 
-## Set up
+## Prerequisite
 
 To follow along with this tutorial, you'll need the following tools:
 
-1. Visual Studio
-2. A NuGet server (such as ProGet or MyGet)
+1. Visual Studio - https://visualstudio.microsoft.com/downloads/
+2. A NuGet server such as MyGet - https://www.myget.org/
 
 If you don't already have these tools installed, you can download Visual Studio from the Microsoft website and set up a NuGet server using one of the options listed above.
 
-## Create a package by following
+Now you can go ahead an do the following steps.
 
-1. https://learn.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package-using-visual-studio?tabs=netcore-cli
+## Step 1 create a package
+
+The first step is to create and publish a NuGet package using visual studio.
+
+This can be done by following the Microsoft documentation.
+
+https://learn.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package-using-visual-studio?tabs=netcore-cli
 
 
-## Create your own MyGet feed by following this documentation
+## Step 2 create your own MyGet feed
 
+The second step is to create your own MyGet feed by following the MyGet documentation.
 1. https://docs.myget.org/docs/walkthrough/getting-started-with-nuget
-2. Remember to create it as private
 
-## Publish your NuGet package to your private MyGet feed
+Remember to create it as private
+
+## Step 3 publish your NuGet package
+
+The third step is to publish your NuGet package to your MyGet feed.
 
 You can do this by going directly to your MyGet feed and upload the NuGet 
 
@@ -32,9 +42,13 @@ or
 
 by following this documentation: https://docs.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package-using-visual-studio?tabs=netcore-cli#publish-with-the-dotnet-cli-ornugetexe-cli
 
-## Umbraco Cloud
+## Step 4 Umbraco Cloud
 
-1. Now you need to create an Umbraco Cloud project (V9 or Above)
+The last step is describes how to add your private feed to your Umbraco cloud project. 
+
+Please do the following:
+
+1. Create an Umbraco Cloud project (V9 or Above)
 2. Access the cloud secrets management and add your MyGet credentials: https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/secrets-management
 3. Clone down your Umbraco Cloud project
 4. Open the project locally and build/spin up the site
