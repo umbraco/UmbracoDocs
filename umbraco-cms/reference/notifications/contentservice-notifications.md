@@ -26,7 +26,7 @@ namespace Umbraco.Docs.Samples.Web.Notifications
                 if (node.ContentType.Alias.Equals("announcement"))
                 {
                     var newsArticleTitle = node.GetValue<string>("title");
-                    if (newsArticleTitle.Equals(newsArticleTitle.ToUpper()))
+                    if (!string.IsNullOrWhiteSpace(newsArticleTitle) && newsArticleTitle.Equals(newsArticleTitle.ToUpper()))
                     {
                         notification.CancelOperation(new EventMessage("Corporate style guideline infringement",
                             "Don't put the announcement title in upper case, no need to shout!",
