@@ -51,7 +51,7 @@ The last step is describes how to add your private feed to your Umbraco cloud pr
 Please do the following:
 
 1. Create an Umbraco Cloud project (V9 or Above)
-2. Access the cloud secrets management and add your MyGet credentials: https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/secrets-management
+2. Access the cloud [Secrets Management](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/secrets-management) and add your MyGet credentials
 3. Clone down your Umbraco Cloud project
 4. Open the project locally and build/spin up the site
 5. Go to your NuGet.config file in the root of your project.
