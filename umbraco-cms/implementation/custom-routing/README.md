@@ -1,8 +1,11 @@
 ---
-description: "There are a couple of ways of controlling the routing behavior in Umbraco: customizing how the inbound request pipeline finds content & creating custom MVC routes that integrate within the Umbraco pipeline."
+description: >-
+  There are a couple of ways of controlling the routing behavior in Umbraco:
+  customizing how the inbound request pipeline finds content & creating custom
+  MVC routes that integrate within the Umbraco pip
 ---
 
-# Custom routing in Umbraco
+# Custom Routing
 
 _There are a couple of ways of controlling the routing behavior in Umbraco: customizing how the inbound request pipeline finds content & creating custom MVC routes that integrate within the Umbraco pipeline_.
 
@@ -122,7 +125,7 @@ namespace CustomRoutes
 }
 ```
 
-For more information on how to register and use notification handlers see [Notifications documentation](../../reference/notifications)
+For more information on how to register and use notification handlers see [Notifications documentation](../../reference/notifications/)
 
 ### Related articles
 
