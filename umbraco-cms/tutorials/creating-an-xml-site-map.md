@@ -202,9 +202,9 @@ If we create a helper called `RenderSiteMapUrlEntriesForChildren` that accepts a
     {
         foreach (var page in parentPage.Children)
         {
-            @RenderSiteMapUrlEntry(page)
+            RenderSiteMapUrlEntry(page);
             if (page.Children.Any()){
-                @RenderSiteMapUrlEntriesForChildren(page)
+                RenderSiteMapUrlEntriesForChildren(page);
             }
         }
     }
@@ -220,7 +220,12 @@ Let's update our template to call this recursive helper:
     Response.ContentType = "text/xml";
     IPublishedContent siteHomePage = Model.Root();
     }
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">@RenderSiteMapUrlEntry(siteHomePage)@RenderSiteMapUrlEntriesForChildren(siteHomePage)</urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    @{
+        RenderSiteMapUrlEntry(siteHomePage);
+        RenderSiteMapUrlEntriesForChildren(siteHomePage);
+    }
+</urlset>
 ```
 
 and we should have a full XML sitemap rendered for the site!
