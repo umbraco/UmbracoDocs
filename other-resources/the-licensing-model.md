@@ -54,7 +54,7 @@ In the case you run multiple sites within one Umbraco installation, e.g. you hav
 Additional domains can be purchased from your account on [Umbraco.com](https://umbraco.com). Each additional domain includes 1 live domain and 2 development/testing domains.
 
 {% hint style="info" %}
-That this is an add-on domain for existing licenses. Refunds will not be given for this product.
+This is an add-on domain for existing licenses. Refunds will not be given for this product.
 {% endhint %}
 
 ### Umbraco Deploy
@@ -76,7 +76,7 @@ The license for Umbraco Deploy comes with a recurring yearly fee. Learn more abo
 
 You can purchase licenses for our products on our website:
 
-* [Umbraco Forms licenses](https://umbraco.com/apps/umbraco-forms/)
+* [Umbraco Forms licenses](https://umbraco.com/products/umbraco-forms/)
 * [Umbraco Deploy licenses](https://umbraco.com/products/umbraco-deploy/)
 
 When you've bought a license you need to configure it with your domains.
