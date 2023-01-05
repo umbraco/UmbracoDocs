@@ -42,7 +42,7 @@ You can do this by going directly to your MyGet feed and upload the NuGet
 
 or
 
-by following this documentation: https://docs.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package-using-visual-studio?tabs=netcore-cli#publish-with-the-dotnet-cli-ornugetexe-cli
+by following the Microsoft [Documentation](https://docs.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package-using-visual-studio?tabs=netcore-cli#publish-with-the-dotnet-cli-or�nugetexe-cli)
 
 ### Step 4: Add private MyGet feed on Umbraco Cloud
 
