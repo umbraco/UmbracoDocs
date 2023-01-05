@@ -1,9 +1,5 @@
 ---
-meta.Title: Where can I get help
-meta.description: >-
-  This section will guide you on where to find the answers for any questions you
-  may have.
-versionFrom: 8.0.0
+description: "This section will guide you on where to find the answers for any questions you may have."
 ---
 
 # Where can I get help?

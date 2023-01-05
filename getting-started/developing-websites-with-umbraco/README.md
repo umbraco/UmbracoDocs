@@ -1,11 +1,5 @@
 ---
-meta.Title: Developing websites with Umbraco
-meta.Description: >-
-  This section shows you some beginner tools and information to get your started
-  with Umbraco. From making a local installation to extending the backoffice.
-description: >-
-  Find all the resources you need when you're developing and customizing an
-  Umbraco website - be it backend or extending the backoffice.
+description: "Find all the resources you need when you're developing and customizing an Umbraco website - be it backend or extending the backoffice."
 ---
 
 # Developing websites

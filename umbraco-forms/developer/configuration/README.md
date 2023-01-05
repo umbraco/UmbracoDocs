@@ -1,8 +1,5 @@
 ---
-meta.Title: Umbraco Forms configuration
-meta.Description: >-
-  In Umbraco Forms it's possible to customize the functionality with various
-  configuration values.
+description: "In Umbraco Forms it's possible to customize the functionality with various configuration values."
 ---
 
 # Configuration
