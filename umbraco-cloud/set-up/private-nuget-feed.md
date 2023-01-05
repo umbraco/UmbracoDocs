@@ -1,5 +1,5 @@
 
-# Private Nuget Feed
+# Private Nuget Feed on Umbraco Cloud
 
 A private NuGet feed is a package repository that is only accessible to a specific group of users, rather than being publicly available.
 
@@ -21,7 +21,7 @@ You can also setup a server on MyGet following the above link.
 
 Now you can go ahead an do the following steps.
 
-## Step 1 create a package
+### Step 1: Create a NuGet package
 
 The first step is to create and publish a NuGet package using visual studio.
 
@@ -30,14 +30,14 @@ This can be done by following the Microsoft documentation.
 https://learn.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package-using-visual-studio?tabs=netcore-cli
 
 
-## Step 2 create your own MyGet feed
+### Step 2: Create your own MyGet feed
 
 The second step is to create your own MyGet feed by following the MyGet documentation.
 1. https://docs.myget.org/docs/walkthrough/getting-started-with-nuget
 
 Remember to create it as private 
 
-## Step 3 publish your NuGet package
+### Step 3: Publish your NuGet package
 
 The third step is to publish your NuGet package to your MyGet feed.
 
@@ -47,7 +47,7 @@ or
 
 by following this documentation: https://docs.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package-using-visual-studio?tabs=netcore-cli#publish-with-the-dotnet-cli-ornugetexe-cli
 
-## Step 4 Umbraco Cloud
+### Step 4: Add private MyGet feed on Umbraco Cloud
 
 The last step is describes how to add your private feed to your Umbraco cloud project. 
 
