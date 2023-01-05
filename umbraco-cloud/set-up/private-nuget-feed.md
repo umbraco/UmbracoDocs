@@ -30,8 +30,7 @@ This can be done by following the [Microsoft documentation.](https://learn.micro
 
 ### Step 2: Create your own MyGet feed
 
-The second step is to create your own MyGet feed by following the MyGet documentation.
-1. https://docs.myget.org/docs/walkthrough/getting-started-with-nuget
+The second step is to create your own MyGet feed by following the [MyGet documentation.](https://docs.myget.org/docs/walkthrough/getting-started-with-nuget)
 
 Remember to create it as private 
 
