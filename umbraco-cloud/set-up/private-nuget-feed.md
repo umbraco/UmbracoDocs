@@ -25,9 +25,7 @@ Now you can go ahead an do the following steps.
 
 The first step is to create and publish a NuGet package using visual studio.
 
-This can be done by following the Microsoft documentation.
-
-https://learn.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package-using-visual-studio?tabs=netcore-cli
+This can be done by following the [Microsoft documentation.](https://learn.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package-using-visual-studio?tabs=netcore-cli)
 
 
 ### Step 2: Create your own MyGet feed
