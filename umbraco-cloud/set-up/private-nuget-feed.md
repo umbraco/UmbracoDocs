@@ -81,7 +81,7 @@ Here you need to add some configurations
 </configuration>
 ```
 
-In the above code example you can see that we are using the Key: "MYGET_PASSWORD" that we created in the previous step.
+In the above code example, you can see that we are using the Key: "MYGET_PASSWORD" that we created in the previous step.
 We did that by using the Cloud Secrets Management feature on Umbraco Cloud. 
 
 
