@@ -46,7 +46,7 @@ by following the Microsoft [Documentation](https://docs.microsoft.com/en-us/nuge
 
 ### Step 4: Add private MyGet feed on Umbraco Cloud
 
-The last step is describes how to add your private feed to your Umbraco cloud project. 
+In the last step, we are going to add the private feed to our Umbraco cloud project. 
 
 Please do the following:
 
