@@ -2,24 +2,21 @@
 description: "A guide to creating an XML sitemap in Umbraco"
 ---
 
-# Creating a Search Engine XML Site Map
+# Creating an XML Site Map
 
-## Overview
+Adding an XML sitemap to your site makes it easier for search engines such as Google to find and index your websites pages. Having a sitemap will improve the Search Engine Optimization (SEO) for your website.
 
-Adding an XML sitemap to your site makes it easier for search engine's such as Google to find and index your site pages. Your friendly SEO consultancy will recommend you have a google site map for 'better SEO'.
+There is not an XML sitemap generator in Umbraco, which is why this tutorial will show you how to create one.
 
-There isn't an 'out of the box' XML sitemap generator with Umbraco. This tutorial will show you how to create one.
+If you are in a hurry, there are some community packages that will do the job for you:
 
-If you are in a hurry, there are some Umbraco Packages that will do the job for you:
+* [SEO Toll Kit](https://marketplace.umbraco.com/package/seotoolkit.umbraco)
 
-* [Cultiv Search Engine Sitemap](https://our.umbraco.com/packages/website-utilities/cultiv-search-engine-sitemap/)
-* [Marcel Digital Umbraco XML Sitemap](https://github.com/marceldigital/Umbraco-XML-Sitemap)
+## What does an XML sitemap look like?
 
-### What does an XML SiteMap look like?
+An XML sitemap is a list of URLs for the content on your site.
 
-Essentially this is a list of urls for the content on your site:
-
-See [Sitemaps XML format](https://www.sitemaps.org/protocol.html) for the XML schema the sitemap needs to conform to:
+See [Sitemaps XML format](https://www.sitemaps.org/protocol.html) for the XML schema the sitemap needs to conform to.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -33,37 +30,42 @@ See [Sitemaps XML format](https://www.sitemaps.org/protocol.html) for the XML sc
 </urlset>
 ```
 
-The XML Sitemap is a guide for search engines to discover and index your content. Each page on your site that you wish to feature will be represented by a `<url>` entry in the list.
+The XML sitemap is a guide for search engines to discover and index your content. Each page on your site that you wish to feature will be represented by a `<url>` entry in the list.
 
-### Approach
+## Approach
 
-There are many ways of approaching this task. The best approach will be determined by the size of your site, and your preference for implementing functionality in Umbraco.
+There are different ways of approaching this task. The best approach will be determined by the size of your site, and your preference for implementing functionality in Umbraco.
 
-For simplicity sake we're going to write this code directly in a Template using Razor and IPublishedContent. You may want to use route hijacking to write the code in an MVC controller or XSLT which is still a really good fit for this kind of task.
+In this tutorial we are going to write the code directly in a Template using Razor and `IPublishedContent`. You may want to take a different approach, like using route hijacking to write the code in an MVC controller.
 
-1. We'll create a new Document Type called 'XmlSiteMap' with corresponding 'XmlSiteMap' template (visiting this page will trigger the rendering of the XML Sitemap).
-   * The XmlSiteMap document type will contain an 'Excluded Document Types' property to the XmlSiteMap Document Type to list types of content we wish to exclude from the Site Map (or you could alternatively create an 'Included Document Types' list if it is easier to specify types that should be included rather than define those that will be excluded.)
-2. We'll create a 'SiteMap' Composition, containing a consistent set of 'Site Map related properties, and we'll add this to all of the different document types of the site.
-   * The 'SiteMap' Composition will contain a 'hide from Xml Site Map' checkbox, to give editors the ability to hide a certain page from the XML Sitemap.
-3. The implementation will start at the homepage of the site and loop through all the children, iterating in turn through the children of the children, etc, checking at each level whether to continue further based on the properties of the page.
+The following will be covered in this tutorial:
 
-## 1. Create the XmlSiteMap Document Type
+* We'll create a new Document Type called 'XmlSiteMap' with a corresponding 'XmlSiteMap' Template. Visiting page based on this Document Type will trigger the rendering of the XML sitemap.
+  * The XmlSiteMap Document Type will contain an 'Excluded Document Types' property to list types of content we wish to exclude from the sitemap. Alternatively, you could create an 'Included Document Types' to specify types that should be included rather than excluded.
+* We'll create a 'SiteMap' composition, containing a consistent set of sitemap related properties. This composition will be added to all of the different Document Types in the site.
+  * The 'SiteMap' composition will contain a 'hide from Xml Site Map' checkbox, to give editors the ability to hide a certain page from the XML Sitemap.
 
-![The XmlSiteMap doc type](images/v8/create-sitemap-doctype.png)
+## 1. Create an XmlSiteMap Document Type
 
-The act of creating the document type, unless you specify otherwise will also create a corresponding template called 'XmlSiteMap'.
+![View of the properties defined on the finished XmlSiteMap Document Type](images/v8/create-sitemap-doctype.png "View of the properties defined on the finished XmlSiteMap Document Type")
 
-Visit your homepage document type, and choose 'Permissions', allow the new XmlSiteMap document type to be created underneath the homepage.
+1. Navigate to the **Settings** section in the Umbraco backoffice.
+2. Create a new "Document Type with Template".
+3. Name the new Document Type **XmlSiteMap**.
+4. Add a TextString property called "Excluded Document Types" (alias: `excludedDocumentType`).
+5. Save the XmlSiteMap Document Type.
+6. Open the Document Type used in the root of your website.
+7. Select the "Permissions" tab and add the new XmlSiteMap under "Allowed child node types".
+8. Navigate to the **Content** section and create a new XmlSiteMap page in your content tree.
+9. Use the alias to add the XmlSiteMap Document Type to the "Excluded Document Type" list: `xmlSiteMap`.
 
-Create your XmlSiteMap page in your content tree.
+![View of the Content Tree after a Sitemap page has been added.](images/v8/create-sitemap-page.png "View of the Content Tree after a Sitemap page has been added.")
 
-![The XmlSiteMap doc type](images/v8/create-sitemap-page.png)
+## 2. Create an XmlSiteMapSettings Composition
 
-and add the xmlSiteMap document type to your 'Excluded Document Type' list.
+A sitemap entry will allow you to state the relative priority of any particular page in terms of its importance within your site. A value of 1.0 is the highest level of importance where 0.1 is at the other end of the scale. 
 
-## 2. Create XmlSiteMapSettings Composition
-
-A site map entry will allow you to state the relative priority of any particular page in terms of its importance within your site. A value of 1.0 is very important, and 0.1 close to insignificant. You can also state 'how often' the content will change on a particular page, eg weekly, monthly etc. This will help the search engine know when to return to reindex any regularly updated content.
+You can add a change frequence to define how often the content on a particular page is expected to change. This will help the search engine know when to return to reindex any regularly updated content.
 
 Create the XmlSiteMapSettings composition (Document Type Without Template) with name: **XmlSiteMapSettings**
 
