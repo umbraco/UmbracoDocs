@@ -490,6 +490,7 @@
       * [Account Contacts](umbraco-cloud/set-up/project-settings/team-members/accounts-contact.md)
       * [Technical Contact](umbraco-cloud/set-up/project-settings/team-members/technical-contact.md)
     * [Secrets Management](umbraco-cloud/set-up/project-settings/secrets-management.md)
+  * [Private Nuget Feed on Umbraco Cloud](umbraco-cloud/set-up/private-nuget-feed.md)
   * [Going Live](umbraco-cloud/set-up/going-live.md)
   * [Media](umbraco-cloud/set-up/media/README.md)
     * [Connect to Azure Storage Explorer to upload files manually](umbraco-cloud/set-up/media/connect-to-azure-storage-explorer.md)
