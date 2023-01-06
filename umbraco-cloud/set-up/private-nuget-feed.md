@@ -15,6 +15,7 @@ To follow along with this tutorial, you'll need the following tools:
 
 1. [Visual Studio](https://visualstudio.microsoft.com/downloads/)
 2. A NuGet server such as [MyGet](https://www.myget.org/)
+3. A Umbraco Cloud project on a standard plan or higher
 
 If you don't already have these tools installed, you can download Visual Studio from the Microsoft website. 
 You can also set up a server on MyGet by following the above link. 
