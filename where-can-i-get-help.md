@@ -2,7 +2,7 @@
 description: "This section will guide you on where to find the answers for any questions you may have."
 ---
 
-# Where can I get help?
+# Where can I get help? 
 
 If you haven't been able to find a topic that suits your needs, there are many ways for you to find help.
 
