@@ -38,7 +38,7 @@ Remember to create it as private
 
 The third step is to publish your NuGet package to your MyGet feed.
 
-You can do this by going directly to your MyGet feed and upload the NuGet 
+You can do this by going directly to your MyGet feed and upload the NuGet package
 
 or
 
