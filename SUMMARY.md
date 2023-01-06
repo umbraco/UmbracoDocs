@@ -470,6 +470,7 @@
   * [Best Practice for Working in Teams](umbraco-cloud/getting-started/team-workflow-on-cloud.md)
   * [Migrate between regions](umbraco-cloud/getting-started/migrate-between-regions.md)
 * [Set Up](umbraco-cloud/set-up/README.md)
+  * [Private Nuget Feed on Umbraco Cloud](umbraco-cloud/set-up/private-nuget-feed.md)
   * [Working with a Local Clone](umbraco-cloud/set-up/working-locally.md)
   * [Working with Mac](umbraco-cloud/set-up/working-with-mac.md)
   * [Manage Environments](umbraco-cloud/set-up/manage-environments.md)
