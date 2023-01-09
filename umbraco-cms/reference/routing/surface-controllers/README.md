@@ -232,6 +232,49 @@ $.ajax({
 
 For more information, see the [Antiforgery in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/security/anti-request-forgery?view=aspnetcore-6.0#antiforgery-in-aspnet-core-1) article.
 
+### Asynchronous surface controller actions
+
+Surface controller actions can be asynchronous. A common naming convention for asynchronous methods is using an `Async` suffix for the action name. However, this will not work by default due to the inner workings of ASP.NET Core MVC. 
+
+Consider the following asynchronous surface controller action:
+
+```csharp
+public class MySurfaceController : SurfaceController
+{
+    // ...
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> SomeMethodAsync()
+    {
+        // do some async work here
+        return CurrentUmbracoPage();
+    }
+}
+```
+
+To use this action in a view you can add this: 
+
+```html
+@using (Html.BeginUmbracoForm<MySurfaceController>(nameof(MySurfaceController.SomeMethodAsync), FormMethod.Post))
+{
+	<button type="submit">Do the async work</button>
+}
+```
+
+But once you click the button, you will encounter an error message along the lines of: `InvalidOperationException: Could not find a Surface controller route in the RouteTable for controller name MySurface`.
+
+To counter this you need to instruct ASP.NET Core MVC to explicitly accept the `Async` suffix for controller names:
+
+```csharp
+services.AddMvc(options =>
+{
+    options.SuppressAsyncSuffixInActionNames = false; 
+});
+```
+
+Alternatively you can rename your surface controller action so it does not contain the `Async` suffix.
+
 ### Surface Controller Actions
 
 You can read more about the surface controller [action result helpers](surface-controllers-actions.md).
