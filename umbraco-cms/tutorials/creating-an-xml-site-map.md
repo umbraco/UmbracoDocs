@@ -178,94 +178,91 @@ Visit the URL of your sitemap page (`http://yoursite.com/sitemap`) to render a s
 
 ### Looping through the rest of the site
 
-So now we need to find the pages created beneath the homepage, and see if they should be added to the sitemap, and then in turn look at the pages beneath those etc, until the entire content tree is traversed.
+We need to go through each page created beneath the homepage to see if they should be added to the sitemap.
 
-We can use **IPublishedContent**'s _.Children_ method to return all the pages directly beneath a particular page eg:
+We can use the `.Children` method from `IPublishedContent` to return all the pages directly beneath a particular page.
 
-```
-IEnumerable<IPublishedContent> sitePages = siteHomePage.Children();
-```
+1. Add `IEnumerable<IPublishedContent> sitePages = siteHomePage.Children();` within the first set of curly brackets in the template.
+2. Loop through each of these 'child' pages, and write out their sitemap markup using the helper:
 
-So we need to loop through each of these 'child' pages, and write out their sitemap markup using our helper, and then in turn loop through their children (grandchildren?) etc and so on... (great-great-grandchildren...)
-
-```csharp
-foreach (var page in sitePages){
-    @RenderSiteMapUrlEntry(page)
-    if (page.Children.Any()){
-        var childPages = page.Children();
-        foreach (var childPage in childPages){
-            @RenderSiteMapUrlEntry(childPage)
-            if (childPage.Children.Any()){
-                var grandChildPages = childPage.Children();
-                foreach (var grandChildPage in grandChildPages){
-                    // ... on forever how do we stop?
+    ```csharp
+    foreach (var page in sitePages){
+        @RenderSiteMapUrlEntry(page)
+        if (page.Children.Any()){
+            var childPages = page.Children();
+            foreach (var childPage in childPages){
+                @RenderSiteMapUrlEntry(childPage)
+                if (childPage.Children.Any()){
+                    var grandChildPages = childPage.Children();
+                    foreach (var grandChildPage in grandChildPages){
+                        // ... can go on forever. How do we stop?
+                    }
                 }
             }
         }
     }
-}
-```
+    ```
 
-So hopefully you can see the problem here, how deep do we go? How do we handle the repetition forever...
+Do you see the potential problem here? How deep do we go and how do we handle the repetition?
 
-... well we can use recursion - we can create a further razor helper that 'calls itself' \[insert inception reference here]...
+One option is to use recursion. We can create a Razor helper that 'calls itself'.
 
-#### Recursive Helper
+{% hint style="warning" %}
+Before moving on, make sure the remove any code pieces related to the two steps directly above this box.
+The code in those steps was to showcase what not to do.
+{% endhint %}
 
-If we create a helper called `RenderSiteMapUrlEntriesForChildren` that accepts a 'Parent Page' parameter as the starting point. Then we can find the children of this Parent Page, write out their Site Map Entry, and then call this same method again from itself - recursion!
+We will add a `RenderSiteMapUrlEntriesForChildren` helper which accepts a 'Parent Page' parameter as the starting point. Then we will find the children of this Parent Page and write out their sitemap entry. Finally we will call this same method again from itself.
 
-```csharp
-@{
-    void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
-    {
-        foreach (var page in parentPage.Children)
+1. Add the following code snippet below the `RenderSiteMapUrlEntry` helper in the XmlSiteMap Template:
+
+    ```csharp
+    @{
+        void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
         {
-            RenderSiteMapUrlEntry(page);
-            if (page.Children.Any()){
-                RenderSiteMapUrlEntriesForChildren(page);
+            foreach (var page in parentPage.Children)
+            {
+                RenderSiteMapUrlEntry(page);
+                if (page.Children.Any()){
+                    RenderSiteMapUrlEntriesForChildren(page);
+                }
             }
         }
     }
-}
-```
+    ```
 
-Let's update our template to call this recursive helper:
+2. Update the XML schema to include `RenderSiteMapUrlEntriesForChildren(siteHomePage)`:
 
-```csharp
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
-@{
-    Layout = null;
-    Response.ContentType = "text/xml";
-    IPublishedContent siteHomePage = Model.Root();
-    }
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-    @{
-        RenderSiteMapUrlEntry(siteHomePage);
-        RenderSiteMapUrlEntriesForChildren(siteHomePage);
-    }
-</urlset>
-```
+    ```csharp
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+            xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
+            xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        @{
+            RenderSiteMapUrlEntry(siteHomePage);
+            RenderSiteMapUrlEntriesForChildren(siteHomePage);
+        }
+    </urlset>
+    ```
 
-and we should have a full XML sitemap rendered for the site!
+You will now see the XML sitemap rendered for the entire site.
 
 ![Example of Sitemap with children](images/sitemapWithChildren.png)
 
-#### Checking if a page should be on the sitemap
+As everything is rendered on the sitemap, we have yet to take into account the pages that should be excluded.
 
-This is all very well, but what if some super secret pages shouldn't be on the sitemap? and what about the document type excluded list we mentioned earlier? and what if we only want to go 3 levels deep?
+We added a HideFromXmlSitemap checkbox to all of the Document Types via our `XmlSiteMapSettings` composition. This configuration needs to be included when rendering the sitemap.
 
-**HideFromSiteMap**
-
-We added a `hideFromXmlSitemap` checkbox to all of our document types via our `XmlSiteMapSettings` composition. Let's update the helper to only return children that haven't got the checkbox set, excluding these pages (and any beneath them) from the sitemap.
+Let's update the helper to only return children that haven't got the checkbox set, excluding these pages (and any beneath them) from the sitemap.
 
 ```csharp
 void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
 {
     foreach (var page in parentPage.Children.Where(x =>!x.Value<bool>("hideFromXmlSiteMap")))
     {
-        @RenderSiteMapUrlEntry(page)
+        RenderSiteMapUrlEntry(page);
         if (page.Children.Any(x =>!x.Value<bool>("hideFromXmlSiteMap"))){
-            @RenderSiteMapUrlEntriesForChildren(page)
+            RenderSiteMapUrlEntriesForChildren(page);
         }
     }
 }
