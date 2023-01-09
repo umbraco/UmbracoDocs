@@ -131,7 +131,7 @@ We will retrieve each page in the site as **IPublishedContent** and read in the 
 You can include HTML markup in the body of a method declared in a code block. This is a great way to organize your razor view implementation and to avoid repeating code and HTML in multiple places.
 {% endhint %}
 
-1. Add the following code snippet below the XML schema in the XmlSiteMap template:
+1. Add the following code snippet to the XML schema in the XmlSiteMap template:
 
     ```csharp
     @{
@@ -217,15 +217,13 @@ We will add a `RenderSiteMapUrlEntriesForChildren` helper which accepts a 'Paren
 1. Add the following code snippet below the `RenderSiteMapUrlEntry` helper in the XmlSiteMap Template:
 
     ```csharp
-    @{
-        void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
+    void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
+    {
+        foreach (var page in parentPage.Children)
         {
-            foreach (var page in parentPage.Children)
-            {
-                RenderSiteMapUrlEntry(page);
-                if (page.Children.Any()){
-                    RenderSiteMapUrlEntriesForChildren(page);
-                }
+            RenderSiteMapUrlEntry(page);
+            if (page.Children.Any()){
+                RenderSiteMapUrlEntriesForChildren(page);
             }
         }
     }
@@ -251,28 +249,29 @@ You will now see the XML sitemap rendered for the entire site.
 
 As everything is rendered on the sitemap, we have yet to take into account the pages that should be excluded.
 
-We added a HideFromXmlSitemap checkbox to all of the Document Types via our `XmlSiteMapSettings` composition. This configuration needs to be included when rendering the sitemap.
+We added a **HideFromXmlSitemap** checkbox to all Document Types via our `XmlSiteMapSettings` composition. This configuration needs to be included when rendering the sitemap.
 
-Let's update the helper to only return children that haven't got the checkbox set, excluding these pages (and any beneath them) from the sitemap.
+The helper needs to only return pages that do not have the HideFromXmlSitemap checked.
 
-```csharp
-void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
-{
-    foreach (var page in parentPage.Children.Where(x =>!x.Value<bool>("hideFromXmlSiteMap")))
+1. Update the `RenderSiteMapUrlEntriesForChildren` helper like shown below:
+
+    ```csharp
+    void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
     {
-        RenderSiteMapUrlEntry(page);
-        if (page.Children.Any(x =>!x.Value<bool>("hideFromXmlSiteMap"))){
-            RenderSiteMapUrlEntriesForChildren(page);
+
+        foreach (var page in parentPage.Children.Where(x =>!x.Value<bool>("hideFromXmlSiteMap")))
+        {
+            RenderSiteMapUrlEntry(page);
+            if (page.Children.Any(x =>!x.Value<bool>("hideFromXmlSiteMap"))){
+                RenderSiteMapUrlEntriesForChildren(page);
+            }
         }
     }
-}
-```
+    ```
 
-Now revisit a page in the content tree, and tick the Hide from SiteMap option, if all has gone well, it will disappear from the XmlSitemap page!
+Revisit a page in the Content tree, and check the HideFromXmlSitemap option. This page will now be excluded from the from the sitemap.
 
-**Depth**
-
-What if we only want to restrict 'how deep' the sitemap should go?
+Another way to control which and how many pages are shown in the sitemap is to filter by **depth**. It is possible to add a number that 
 
 If we add to our XmlSiteMap document type a new property of numeric type called 'maxSiteMapDepth'... we can use that value to determine when to stop iterating:
 
