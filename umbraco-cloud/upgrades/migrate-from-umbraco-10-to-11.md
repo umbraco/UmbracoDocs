@@ -110,7 +110,7 @@ Make sure that your local project is Upgraded to Umbraco 11 and works as expecte
 {% hint style="info" %}
 The `umbraco-cloud.json` file contains details about each environment on the Cloud project.
 
-By replacing the one on the **old project** with the one from the **clean Umbraco 11 project**, content and media transfers will point to the environments of the **clean Umbraco 11 project** instead.
+By replacing this file, content and media transfers will now point to the environments on the **clean Umbraco 11 project**.
 {% endhint %}
 
 1. Commit all the local changes on your **old project** through git, but do not push it yet.
