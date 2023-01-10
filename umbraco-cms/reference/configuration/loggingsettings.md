@@ -23,7 +23,7 @@ The following configuration is available in the Logging settings:
 
 This setting allows you to configure the maximum log age for the internal audit log scrubbing. The default maximum age for the internal audit log is 24 hours. Change the duration with the `"MaxLogAge"` key in the Logging settings.
 
-To increase the maximum age of the entires in the audit log to 48 hours (2 days), set the value to `2.00:00:00`.
+To increase the maximum age of the entries in the audit log to 48 hours (2 days), set the value to `2.00:00:00`.
 
 ## Directory
 
