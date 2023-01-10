@@ -134,7 +134,7 @@ By replacing this file, content and media transfers will now point to the enviro
 5. Transfer content and media from the local **old project** to the **clean Umbraco 11 project**.
 6. Verify that all the content and media have been transfered to the **clean Umbraco 11 project**.
 
-Once you've verified that all schema and files as well as content and media has successfully been deployed and transferred the migration is complete.
+Once you have verified that all schema, files, content, and media have been successfully deployed and transferred, the migration is complete.
 
 It is highly recommended to thoroughly go through everything on the migrated site to ensure that everything works as expected.
 
