@@ -1,5 +1,5 @@
 ---
-description: "Learn how to build, configure and add an XML sitemap to your Umbraco website."
+description: "Learn how to build, configure, and add an XML sitemap to your Umbraco website."
 ---
 
 # Creating an XML Sitemap
@@ -36,14 +36,14 @@ Below is an XML sample of a typical sitemap entry:
 
 ## Approach
 
-There are different ways of approaching this task. The best approach will be determined by the size of your site, and your preference for implementing functionality in Umbraco.
+There are different ways of approaching this task. The best approach will be determined by the size of your site and your preference for implementing functionality in Umbraco.
 
 In this tutorial, we are going to write the code directly in a Template using Razor and `IPublishedContent`. You may want to take a different approach, like using route hijacking to write the code in an MVC controller.
 
 Throughout this tutorial, we will:
 
 * Create a new Document Type called 'XmlSiteMap' that is to be used for the sitemap content page,
-* Create a Document Type composition, containing a consistent set of sitemap-related properties and
+* Create a Document Type composition, containing a consistent set of sitemap-related properties, and
 * Build a Razor template view to generate the sitemap entries based on different criteria and filters.
 
 ## 1. Create an XmlSiteMap Document Type
@@ -53,7 +53,7 @@ In this first step of the tutorial, we will be creating a new Document Type for 
 ![View of the properties defined on the finished XmlSiteMap Document Type](images/v8/create-sitemap-doctype.png "View of the properties defined on the finished XmlSiteMap Document Type")
 
 1. Navigate to the **Settings** section in the Umbraco backoffice.
-2. Create a new "Document Type with Template" under the Document Types folder.
+2. Create a new **Document Type with Template** under the Document Types folder.
 3. Name the new Document Type **XmlSiteMap**.
 4. Add a TextString property called **Excluded Document Types** (alias: `excludedDocumentType`).
 5. Save the XmlSiteMap Document Type.
@@ -168,7 +168,7 @@ You can include HTML markup in the body of a method declared in a code block. Th
             xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
             xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
         @{
-            RenderSiteMapUrlEntry(siteHomePage)
+            RenderSiteMapUrlEntry(siteHomePage);
         }
     </urlset>
     ```
@@ -256,7 +256,7 @@ You will now see the XML sitemap rendered for the entire site.
 
 In this step, we will use different parameters for filtering the content on the sitemap.
 
-As everything iscurrently added on the sitemap, we have yet to take into account the pages that should be hidden.
+As everything is currently added on the sitemap, we have yet to take into account the pages that should be hidden.
 
 We added a **HideFromXmlSitemap** checkbox to all Document Types via our `XmlSiteMapSettings` composition. This configuration needs to be included when rendering the sitemap. The helper needs to only return pages that do not have the HideFromXmlSitemap checked.
 
