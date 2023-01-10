@@ -5,9 +5,15 @@ description:
 
 # Migrating a Umbraco 10 project to a Umbraco 11 project
 
-Due to an issue with different SDK's on the underlying framework of Umbraco Cloud, we currently do not recommend to directly upgrade a project on Umbraco Cloud from Umbraco 10 to 11. 
+In this guide, we show how you can migrate your Umbraco 10 project on Umbraco Cloud to a new Umbraco 11 project.
 
-Instead it is possible to upgrade a Umbraco 10 project to Umbraco 11 locally and then migrate the project to a clean Umbraco 11 project using `git`.
+The reason for this guide is due to a temporary bug in the hosting services used for hosting Umbraco Cloud.
+
+Because of this bug we do not recommend to directly upgrade to Umbraco 11.
+
+Instead in this guide, we show you how you can upgrade your Umbraco 10 project to Umbraco 11 locally.
+
+Once the project has been upgraded we show how it can be migrated to a clean Umbraco 11 project using `git`.
 
 {% hint style="info" %}
 **Are you using any custom packages or code on your Umbraco Cloud project?**
@@ -23,7 +29,7 @@ Make sure you know the [Breaking changes](../../umbraco-cms/fundamentals/setup/u
 
 * Follow the **requirements** for [local development](../../umbraco-cms/fundamentals/setup/requirements.md#local-development).
 * A Umbraco Cloud project running **the latest Umbraco 10**
-* The .NET 7 SDK installed locally.
+* The .NET 7 Software development kit (SDK) installed locally.
 * A clean Umbraco 11 project.
 
 ## Step 1: Enable .NET 7
