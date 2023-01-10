@@ -34,28 +34,30 @@ You can upload media in two different ways:
 
 From the Media section in the Umbraco backoffice you can add new media items by following either of the approaches defined below.
 
-* Click **...** next to **Media** and choose the media type, enter a name for your media item and select the **Click to upload** field to choose a file type or drag the file into the upload field to upload the item.
+* Use the **Create** dialog to to create a new Media item in the Media section
+  * The Media item will be created based on the type you choose.
+  * Upload the image or file, give the Media item a name and click **Save**.
 
-    ![Upload Media - Create](images/v9-media-types-create1.png)
-* Drag and drop your files in the **Upload** field in the Media section.\
-    \
-    Umbraco will automatically detect the media type and create a media item in the folder. You can even drop entire folders (with subfolders) and the folder and file structure will be recreated.
+![Upload Media - Create Button](images/v9-media-types-upload-media.png)
 
-    ![Upload Media - Media section](images/v9-media-types-media-section.png)
-* Click the **Create** dropdown, and choose the media item. Enter a name for your media item and select the **Click to upload** field or drag the file into the upload field to upload the item.
+* Use the Drag and drop feature to add your files to the Media section.
+  * Umbraco will automatically detect the Media Type and create the Media item.
+  * You can drop entire folders structures to recreate that same structure in the Media section.
 
-    ![Upload Media - Create Button](images/v9-media-types-upload-media.png)
+![Upload Media - Media section](images/v9-media-types-media-section.png)
 
 ### Add media through the Content section
 
 New media items can be added to your site without interupting the content creating flow. This can be done following either of the two approaches outlined below.
 
 * Drag and drop the image(s) from your file explorer directly into the Media Picker property on the Content page.
-
-    ![Drag and drop images directly into the content](images/upload-images-from-content.gif)
-
   * Images added this way is automatically added to the user's start node in the Media section of the Umbraco backoffice.
-* Select the "+" icon to open the "Add Media" dialog where you can add image(s) from your file explorer directly or by drag and drop.
+
+![Drag and drop images directly into the content](images/upload-images-from-content.gif)
+  
+* Select the "+" icon to open the "Select media" dialog where you can add image(s) from your file explorer directly or by drag and drop.
+
+![Add images from the "Select media" dialog](images/add-image-from-dialog.gif)
 
 ## Creating a folder
 
