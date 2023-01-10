@@ -130,7 +130,7 @@ By replacing this file, content and media transfers will now point to the enviro
     ```
     git push origin master -f
     ```
-4. Verify that the schema and files have been merged into the live environment on the **clean Umbraco 11 project**.
+4. Verify that the schema and files have been merged into the Live environment on the **clean Umbraco 11 project**.
 5. Transfer content and media from the local **old project** to the **clean Umbraco 11 project**.
 6. Verify that all the content and media have been transfered to the **clean Umbraco 11 project**.
 
