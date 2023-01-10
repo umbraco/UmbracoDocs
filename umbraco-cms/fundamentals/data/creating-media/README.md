@@ -53,6 +53,7 @@ New media items can be added to your site without interupting the content creati
 * Drag and drop the image(s) from your file explorer directly into the Media Picker property on the Content page.
 
     ![Drag and drop images directly into the content](images/upload-images-from-content.gif)
+
   * Images added this way is automatically added to the user's start node in the Media section of the Umbraco backoffice.
 * Select the "+" icon to open the "Add Media" dialog where you can add image(s) from your file explorer directly or by drag and drop.
 
