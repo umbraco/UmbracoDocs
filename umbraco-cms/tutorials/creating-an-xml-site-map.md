@@ -82,7 +82,7 @@ Create and configure the Document Type Composition by following these steps:
 4. Add the following properties:
     a. Slider named **Search Engine Relative Priority** (searchEngineRelativePriority): MinValue: 0.1, MaxValue: 1, Step Increments 0.1, InitialValue 0.5.
     b. Dropdown named **Search Engine Change Frequency** (searchEngineChangeFrequency): Always, hourly, daily, weekly, monthly, yearly, and never.
-    c. Checkbox named **Hide From Xml Sitemap** (hideFromXmlSitemap).
+    c. Toggle named **Hide From Xml Sitemap** (hideFromXmlSitemap).
 
 <figure><img src="images/v8/create-sitemap-settings-composition.png" alt=""><figcaption></figcaption></figure>
 
@@ -127,10 +127,11 @@ We will start by adding the XML schema for the sitemap. Since we do not want our
 The sitemap should start at the homepage at the root of the site. Since our XmlSiteMap page is created as a subpage page to the root, we can use the `Root()` helper to define the starting point as `IPublishedContent`.
 
 1. Add `IPublishedContent siteHomePage = Model.Root();` within the first set of curly brackets in the template.
+2. Save the template.
 
 ### Rendering a sitemap entry
 
-We will retrieve each page in the site as **IPublishedContent** and read in the properties we added in step 3: `SearchEngineChangeFrequency` and `SearchEngineRelativePriority`. We will also read the URL of the page as well as when it was last modified.
+We will retrieve each page in the site as **IPublishedContent** and read in the  `SearchEngineChangeFrequency` and `SearchEngineRelativePriority` properties. We will also read the URL of the page as well as when it was last modified.
 
 {% hint style="info" %}
 You can include HTML markup in the body of a method declared in a code block. This is a great way to organize your razor view implementation and to avoid repeating code and HTML in multiple places.
@@ -219,7 +220,7 @@ The code in those steps was to showcase what not to do.
 
 We will add a `RenderSiteMapUrlEntriesForChildren` helper which accepts a 'Parent Page' parameter as the starting point. Then we will find the children of this Parent Page and write out their sitemap entry. Finally, we will call this same method again from itself.
 
-1. Add the following code snippet below the `RenderSiteMapUrlEntry` helper:
+1. Add the following code snippet below the `RenderSiteMapUrlEntry` helper and before the closing curly bracket:
 
     ```csharp
     void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
@@ -279,7 +280,7 @@ We added a **HideFromXmlSitemap** checkbox to all Document Types via our `XmlSit
 
 Revisit a page in the Content tree, and check the HideFromXmlSitemap option. This page will now be excluded from the sitemap.
 
-Another way to control which and how many pages are shown in the sitemap is to filter by **depth**. We will provide the helper with a number that defines how deep into the Content tree the sitemap should look.
+To further control which and how many pages are shown in the sitemap you can filter by **depth**. We will provide the helper with a number that defines how deep into the Content tree the sitemap should look.
 
 1. Navigate to the **Settings** section in the Umbraco backoffice.
 2. Find and open the XmlSiteMap Document Type.
@@ -337,7 +338,7 @@ Finally, we need the helper to check the **Excluded Document Types** list on the
             RenderSiteMapUrlEntry(page);
             if (page.Level < maxSiteMapDepth && page.Children.Any(f => !f.Value<bool>("hideFromXmlSiteMap")))
             {
-                RenderSiteMapUrlEntriesForChildren(page, maxSiteMapDepth, excludedDocumentTypes);
+                RenderSiteMapUrlEntriesForChildren(page);
             }
         }
     }
@@ -362,8 +363,8 @@ It contains an entry for each page that is
 
 @{
     Layout = null;
-    var siteHomePage = Model.Root();
     Context.Response.ContentType = "text/xml";
+    IPublishedContent siteHomePage = Model.Root();
 
     // Get the maxSiteMapDepth value as an integer if the value is not empty
     int maxSiteMapDepth = Model.HasValue("maxSiteMapDepth") ? Model.Value<int>("maxSiteMapDepth") : int.MaxValue;
