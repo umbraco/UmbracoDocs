@@ -351,7 +351,7 @@ It contains an entry for each page that is
 * Not based on an **excluded Document Type**, and
 * Located within the bounds of the defined **depth**.
 
-### The finished sitemap template
+## The finished sitemap template
 
 **Add this to an expandable.**
 
