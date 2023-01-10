@@ -5,13 +5,11 @@ description:
 
 # Migrating a Umbraco 10 project to a Umbraco 11 project
 
-In this guide, we show how you can migrate your Umbraco 10 project on Umbraco Cloud to a new Umbraco 11 project.
+In this guide, we show how you can migrate your Umbraco 10 project to a new Umbraco 11 project on Umbraco Cloud.
 
-The reason for this guide is due to a temporary bug in the hosting services used for hosting Umbraco Cloud and we do not recommend to directly upgrade to Umbraco 11.
+The reason for this guide is due to a temporary bug in the hosting services and we do not recommend to directly upgrade to Umbraco 11.
 
-Instead in this guide, we show you how you can upgrade your Umbraco 10 project to Umbraco 11 locally.
-
-Once the project has been upgraded we show how it can be migrated to a clean Umbraco 11 project using `git`.
+Instead we show how you can upgrade your Umbraco 10 project to Umbraco 11 locally and migrate it to a clean Umbraco 11 project.
 
 {% hint style="info" %}
 **Are you using any custom packages or code on your Umbraco Cloud project?**
@@ -27,7 +25,7 @@ Make sure you know the [Breaking changes](../../umbraco-cms/fundamentals/setup/u
 
 * Follow the **requirements** for [local development](../../umbraco-cms/fundamentals/setup/requirements.md#local-development).
 * A Umbraco Cloud project running **the latest Umbraco 10**
-* The .NET 7 Software development kit (SDK) installed locally.
+* The .NET 7 Software development kit(SDK) installed locally.
 * A clean Umbraco 11 project.
 
 ## Step 1: Enable .NET 7
@@ -109,13 +107,13 @@ Make sure that your local project is Upgraded to Umbraco 11 and works as expecte
 {% endhint %}
 
 
-1. Clone down the _clean Umbraco 11 project_.
-2. Replace the `src/UmbracoProject/umbraco-cloud.json` file in the old project with the one from the clean Umbraco 11 project.
+1. Clone down the **clean Umbraco 11 project**.
+2. Replace the `src/UmbracoProject/umbraco-cloud.json` file in the **old project** with the one from the **clean Umbraco 11 project**.
 
 {% hint style="info" %}
 The `umbraco-cloud.json` file contains details about each environment on the Cloud project.
 
-By replacing the one on the **old project** with the one from the **clean Umbraco 11 project**, content and media transfers will point to the environments on the **clean Umbraco 11 project** instead of the **old project**.
+By replacing the one on the **old project** with the one from the **clean Umbraco 11 project**, content and media transfers will point to the environments of the **clean Umbraco 11 project** instead.
 {% endhint %}
 
 1. Commit all the local changes on your **old project** through git, but do not push it yet.
