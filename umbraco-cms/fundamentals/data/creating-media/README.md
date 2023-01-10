@@ -29,11 +29,11 @@ You can upload media in two different ways:
 
 ### Add media through the Media section
 
-From the Media section in the Umbraco backoffice you can add new media items by following either of the approaches defined below.
+From the **Media** section in the Umbraco backoffice, you can add new media items by following either of the approaches defined below:
 
 * Use the **Create** dialog to to create a new Media item in the Media section
   * The Media item will be created based on the type you choose.
-  * Upload the image or file, give the Media item a name and click **Save**.
+  * Upload the image or file, give the Media item a name, and click **Save**.
 
 ![Upload Media - Create Button](images/v9-media-types-upload-media.png)
 
