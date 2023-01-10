@@ -10,9 +10,9 @@ Due to a temporary bug in the hosting services, we do not recommend to directly 
 In this guide, we show how you can migrate your Umbraco 10 project to a new Umbraco 11 project on Umbraco Cloud instead.
 
 {% hint style="info" %}
-**Are you using any custom packages or code on your Umbraco Cloud project?**
+**Are you using any custom packages?**
 
-You will need to ensure the packages you use are available in the latest version of Umbraco and that your custom code is valid with the .NET Framework.
+You will need to ensure the packages you use are available in Umbraco 11.
 
 **Breaking Changes**
 
@@ -135,7 +135,7 @@ By replacing the one on the **old project** with the one from the **clean Umbrac
 5. Transfer content and media from the local **old project** to the **clean Umbraco 11 project**.
 6. Verify that all the content and media have been transfered to the **clean Umbraco 11 project**.
 
-Once you have verified that all schema and files as well as content and media has successfully been deployed and transferred to your new **clean Umbraco 11 project** the migration process is complete.
+Once you've verified that all schema and files as well as content and media has successfully been deployed and transferred the migration is complete.
 
 It is highly recommended to thoroughly go through everything on the migrated site to ensure that everything works as expected.
 
