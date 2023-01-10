@@ -186,38 +186,6 @@ Visit the URL of your sitemap page (`http://yoursite.com/sitemap`) to render a s
 
 We need to go through each page created beneath the homepage to see if they should be added to the sitemap.
 
-We can use the `.Children` method from `IPublishedContent` to return all the pages directly beneath a particular page.
-
-1. Add `IEnumerable<IPublishedContent> sitePages = siteHomePage.Children();` within the first set of curly brackets in the template.
-2. Loop through each of these 'child' pages, and write out their sitemap markup using the helper:
-
-    ```csharp
-    foreach (var page in sitePages){
-        @RenderSiteMapUrlEntry(page)
-        if (page.Children.Any()){
-            var childPages = page.Children();
-            foreach (var childPage in childPages){
-                @RenderSiteMapUrlEntry(childPage)
-                if (childPage.Children.Any()){
-                    var grandChildPages = childPage.Children();
-                    foreach (var grandChildPage in grandChildPages){
-                        // ... can go on forever. How do we stop?
-                    }
-                }
-            }
-        }
-    }
-    ```
-
-Do you see the potential problem here? How deep do we go and how do we handle the repetition?
-
-One option is to use recursion. We can create a Razor helper that 'calls itself'.
-
-{% hint style="warning" %}
-Before moving on, remove any code pieces related to the two steps directly above this box.
-The code in those steps was to showcase what not to do.
-{% endhint %}
-
 We will add a `RenderSiteMapUrlEntriesForChildren` helper which accepts a 'Parent Page' parameter as the starting point. Then we will find the children of this Parent Page and write out their sitemap entry. Finally, we will call this same method again from itself.
 
 1. Add the following code snippet below the `RenderSiteMapUrlEntry` helper and before the closing curly bracket:
