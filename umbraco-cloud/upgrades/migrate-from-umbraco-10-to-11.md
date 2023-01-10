@@ -141,3 +141,23 @@ Once you have verified that all schema and files as well as content and media ha
 
 It is highly recommended to thoroughly go through everything on the migrated site to ensure that everything works as expected.
 
+## Post migration tasks
+
+By following the steps above you have migrated your Umbraco project from one Cloud environment to another.
+
+The following will need to be reconfigured on the new project after the initial migration:
+
+* All **Team Members** added through the Cloud Portal on the **old project** also need to be invited to the **new Umbraco 11 project**.
+* **Hostnames**, **certificates** and other related settings need to be re-added and reconfigured on the **new Umbraco 11 project**.
+
+Once everything has been configured and set up you can safely delete the **old project** which will also cancel the running subscription on the project.
+
+Do you need help or have any questions regarding this process, please reach out to our support using [contact@umbraco.com](mailto:contact@umbraco.com).
+
+## Related articles
+
+* [Manage hostnames](../set-up/project-settings/manage-hostnames/)
+* [Team Members](../set-up/project-settings/team-members/)
+* [Certificates](../set-up/project-settings/manage-hostnames/security-certificates.md)
+
+
