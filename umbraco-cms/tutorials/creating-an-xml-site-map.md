@@ -1,8 +1,8 @@
 ---
-description: "A guide to creating an XML sitemap in Umbraco"
+description: "Learn how to build, configure and add a sitemap to your Umbraco website."
 ---
 
-# Creating an XML Site Map
+# Creating an XML Sitemap
 
 Adding an XML sitemap to your site makes it easier for search engines such as Google to find and index your websites pages. Having a sitemap will improve the Search Engine Optimization (SEO) for your website.
 
@@ -38,12 +38,11 @@ There are different ways of approaching this task. The best approach will be det
 
 In this tutorial we are going to write the code directly in a Template using Razor and `IPublishedContent`. You may want to take a different approach, like using route hijacking to write the code in an MVC controller.
 
-The following will be covered in this tutorial:
+Throughout this tutorial we will:
 
-* We'll create a new Document Type called 'XmlSiteMap' with a corresponding 'XmlSiteMap' Template. Visiting page based on this Document Type will trigger the rendering of the XML sitemap.
-  * The XmlSiteMap Document Type will contain an 'Excluded Document Types' property to list types of content we wish to exclude from the sitemap. Alternatively, you could create an 'Included Document Types' to specify types that should be included rather than excluded.
-* We'll create a 'SiteMap' composition, containing a consistent set of sitemap related properties. This composition will be added to all of the different Document Types in the site.
-  * The 'SiteMap' composition will contain a 'hide from Xml Site Map' checkbox, to give editors the ability to hide a certain page from the XML Sitemap.
+* Create a new Document Type called 'XmlSiteMap' that is to be used for the sitemap content page,
+* Create a Document Type composition, containing a consistent set of sitemap related properties and
+* Build a Razor template view the generate the sitemap entries based on different criteria and filters.
 
 ## 1. Create an XmlSiteMap Document Type
 
@@ -74,7 +73,7 @@ You can add a *change frequency* to define how often the content on a particular
 1. Navigate to the **Settings** section in the Umbraco backoffice.
 2. Create a new **Composition** under the Document Types folder.
 3. Name the new Document Type **XmlSiteMapSettings**.
-3. Add the following properties:
+4. Add the following properties:
   a. Slider named **Search Engine Relative Priority** (searchEngineRelativePriority): MinValue: 0.1, MaxValue: 1, Step Increments 0.1, InitialValue 0.5.
   b. Dropdown named **Search Engine Change Frequency** (searchEngineChangeFrequency): Always, hourly, daily, weekly, monthly, yearly and never.
   c. Checkbox named **Hide From Xml Sitemap** (hideFromXmlSitemap).
@@ -247,7 +246,11 @@ You will now see the XML sitemap rendered for the entire site.
 
 ![Example of Sitemap with children](images/sitemapWithChildren.png)
 
-As everything is rendered on the sitemap, we have yet to take into account the pages that should be excluded.
+## 5. Filter the sitemap content
+
+In this step we will use different parameters for filtering the content on the sitemap.
+
+As everything is rendered on the sitemap, we have yet to take into account the pages that should be hidden.
 
 We added a **HideFromXmlSitemap** checkbox to all Document Types via our `XmlSiteMapSettings` composition. This configuration needs to be included when rendering the sitemap.
 
@@ -259,9 +262,11 @@ The helper needs to only return pages that do not have the HideFromXmlSitemap ch
     void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
     {
 
+        // Filter the query based on the hideFromXmlSiteMap value
         foreach (var page in parentPage.Children.Where(x =>!x.Value<bool>("hideFromXmlSiteMap")))
         {
             RenderSiteMapUrlEntry(page);
+            // Filter the query based on the hideFromXmlSiteMap value
             if (page.Children.Any(x =>!x.Value<bool>("hideFromXmlSiteMap"))){
                 RenderSiteMapUrlEntriesForChildren(page);
             }
@@ -271,97 +276,122 @@ The helper needs to only return pages that do not have the HideFromXmlSitemap ch
 
 Revisit a page in the Content tree, and check the HideFromXmlSitemap option. This page will now be excluded from the from the sitemap.
 
-Another way to control which and how many pages are shown in the sitemap is to filter by **depth**. It is possible to add a number that 
+Another way to control which and how many pages are shown in the sitemap is to filter by **depth**. We will provide the helper with a number that defines how deep the sitemap should look in the Content tree.
 
-If we add to our XmlSiteMap document type a new property of numeric type called 'maxSiteMapDepth'... we can use that value to determine when to stop iterating:
+1. Navigate to the **Settings** section in the Umbraco backoffice.
+2. Find and open the XmlSiteMap Document Type.
+3. Add a Numeric property and call it **Max Site Map Depth** (maxSiteMapDepth).
+4. Save the Document Type.
+5. Open the XmlSiteMap Template.
+6. Add the following line within the first set of curly brackets:
 
-```csharp
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
-@{
-    Layout = null;
-    Response.ContentType = "text/xml"; 
-    IPublishedContent siteHomePage = Model.Root();
-    int maxSiteMapDepth = Model.HasValue("maxSiteMapDepth") ? Model.Value<int>("maxSiteMapDepth") : int.MaxValue; 
-}
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">@RenderSiteMapUrlEntry(siteHomePage)@RenderSiteMapUrlEntriesForChildren(siteHomePage, maxSiteMapDepth)</urlset>
+    ```csharp
+    int maxSiteMapDepth = Model.HasValue("maxSiteMapDepth") ? Model.Value<int>("maxSiteMapDepth") : int.MaxValue;
+    ```
 
-.....
+7. Update the `RenderSiteMapUrlEntriesForChildren` helper like shown below:
 
-void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
-{
-    foreach (var page in parentPage.Children.Where(f=>!f.Value<bool>("hideFromXmlSiteMap")))
+    ```csharp
+    void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
     {
-        @RenderSiteMapUrlEntry(page)
-        if (page.Level < maxSiteMapDepth && page.Children.Any(f=>!f.Value<bool>("hideFromXmlSiteMap"))){
-            @RenderSiteMapUrlEntriesForChildren(page, maxSiteMapDepth)
-        }
-    }
-}
-```
-
-Set your `MaxSiteMap` depth to be 2 on your XmlSiteMap content item, and save and republish. Your sitemap will now only contain entries for the top two levels. Leaving the value blank, will mean that no Maximum Depth restriction will be applied.
-
-**Excluded DocumentType list**
-
-Our Xml Sitemap includes an entry for itself on the XML Sitemap, I thought we had excluded that document type, when we created the excludedDocumentType property...
-
-... we did but we haven't checked this value in the helper yet.
-
-```csharp
-string excludedDocumentTypeList = Model.Value<string>("excludedDocumentTypes");
-string[] excludedDocumentTypes = (!String.IsNullOrEmpty(excludedDocumentTypeList)) ? excludedDocumentTypeList.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(p => p.Trim()).ToArray() : new string[] { };
-```
-
-now we can pass this value into our helper
-
-```csharp
-void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
-{
-    foreach (var page in parentPage.Children.Where(f => !excludedDocumentTypes.Contains(f.ContentType.Alias) && !f.Value<bool>("hideFromXmlSiteMap")))
-    {
-        @RenderSiteMapUrlEntry(page)
-        if (page.Level < maxSiteMapDepth && page.Children.Any(f => !excludedDocumentTypes.Contains(f.ContentType.Alias) && !f.Value<bool>("hideFromXmlSiteMap")))
+        foreach (var page in parentPage.Children.Where(f=>!f.Value<bool>("hideFromXmlSiteMap")))
         {
-            @RenderSiteMapUrlEntriesForChildren(page, maxSiteMapDepth, excludedDocumentTypes)
+            RenderSiteMapUrlEntry(page);
+            // Filter the query based on the maxSiteMapDepth value
+            if (page.Level < maxSiteMapDepth && page.Children.Any(f=>!f.Value<bool>("hideFromXmlSiteMap"))){
+                RenderSiteMapUrlEntriesForChildren(page);
+            }
         }
     }
+    ```
 
-}
-```
+8. Navigate to the **Content** section in the Umbraco backoffice.
+9. Open the Sitemap page and set the **Max Site Map Depth** to 2.
+10. Save and publish the content.
+
+Your sitemap will now only contain entries for the top two levels. Leaving the value blank, will mean that no maximum depth restriction will be applied.
+
+Finally, we need the helper to check the **Excluded Document Types** list on the XmlSiteMap Document Type.
+
+1. Open the XmlSiteMap Template.
+2. Add the following within the first set of curly brackets in the template:
+
+    ```csharp
+    // Get the value from the excludedDocumentTypes property as a 'string'
+    string excludedDocumentTypeList = Model.Value<string>("excludedDocumentTypes");
+    // Separate the values into separate Document Types and add them to an 'array'
+    string[] excludedDocumentTypes = (!String.IsNullOrEmpty(excludedDocumentTypeList)) ? excludedDocumentTypeList.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(p => p.Trim()).ToArray() : new string[] { };
+    ```
+
+3. Update the `RenderSiteMapUrlEntriesForChildren` helper like shown below to pass in the array:
+
+    ```csharp
+    void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
+    {
+        // Filter the query based on the excludedDocumentTypes value
+        foreach (var page in parentPage.Children.Where(f => !excludedDocumentTypes.Contains(f.ContentType.Alias) && !f.Value<bool>("hideFromXmlSiteMap")))
+        {
+            RenderSiteMapUrlEntry(page);
+            if (page.Level < maxSiteMapDepth && page.Children.Any(f => !f.Value<bool>("hideFromXmlSiteMap")))
+            {
+                RenderSiteMapUrlEntriesForChildren(page, maxSiteMapDepth, excludedDocumentTypes);
+            }
+        }
+    }
+    ```
+
+Visit the URL of your sitemap page (`http://yoursite.com/sitemap`) to render a complete sitemap for your site.
+
+It contains an entry for each page that is
+
+* Not **hidden**,
+* Not based on an **excluded Document Type**, and
+* Located within the bounds of the defined **depth**.
 
 ### The finished sitemap template
 
+**Add this to an expandable.**
+
 ```csharp
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.XmlSiteMap>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 
 @{
     Layout = null;
     var siteHomePage = Model.Root();
     Context.Response.ContentType = "text/xml";
+
+    // Get the maxSiteMapDepth value as integer if the value is not empty
     int maxSiteMapDepth = Model.HasValue("maxSiteMapDepth") ? Model.Value<int>("maxSiteMapDepth") : int.MaxValue;
 
+    // Get the value from the excludedDocumentTypes property as a 'string'
     string excludedDocumentTypeList = Model.Value<string>("excludedDocumentTypes");
+    // Separate the values into separate Document Types and add them to an 'array'
     string[] excludedDocumentTypes = (!String.IsNullOrEmpty(excludedDocumentTypeList)) ? excludedDocumentTypeList.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(p => p.Trim()).ToArray() : new string[] { };
 }
 
-
-
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     
     @{
+        // Sitemap entry for the homepage is rendered
         RenderSiteMapUrlEntry(siteHomePage);
+        // Sitemap for the rest of the site is rendered
         RenderSiteMapUrlEntriesForChildren(siteHomePage);
     }
-    
 
 </urlset>
 
-
 @{
+    // This helper is used to render the sitemap entries
     void RenderSiteMapUrlEntry(IPublishedContent node)
     {
+        // The change frequency is recursive, and should 'fallback to ancestor' when no value is given.
         var changeFreq = node.Value("searchEngineChangeFrequency", fallback: Fallback.To(Fallback.Ancestors, Fallback.DefaultValue), defaultValue: "monthly");
-        // with the relative priority, this is a per page setting only, so we're not using recursion, so we won't set Fallback.ToAncestors here and we'll default to 0.5 if no value is set
+        // The relative priority is a per-page setting only. We will not set Fallback.ToAncestors and instead default to 0.5 if no value is set.
         var priority = node.HasValue("searchEngineRelativePriority") ? node.Value<string>("searchEngineRelativePriority") : "0.5";
 
         <url>
@@ -370,48 +400,46 @@ void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
             <changefreq>@changeFreq</changefreq>
             <priority>@priority</priority>
         </url>
-
     }
 
+    // This helper is used to filter which pages are shown in the sitemap
     void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
     {
+        // Filter the query based on the excludedDocumentTypes and hideFromXmlSiteMap values
         foreach (var page in parentPage.Children.Where(x => !excludedDocumentTypes.Contains(x.ContentType.Alias) && !x.Value<bool>("hideFromXmlSiteMap")))
         {
             RenderSiteMapUrlEntry(page);
+            // Filter the query based on the maxSiteMapDepth and hideFromXmlSiteMap values
             if (page.Level < maxSiteMapDepth && page.Children.Any(x => !x.Value<bool>("hideFromXmlSiteMap")))
             {
                 RenderSiteMapUrlEntriesForChildren(page);
             }
         }
-
     }
-
 }
 ```
 
-#### Add sitemap to robots.txt
+## Going further
 
-Finally let search engines know the url for your sitemap by updating your robots.txt file accordingly:
+Once you have added a sitemap to your site it is recommend that you also reference it in your `robots.txt` file.
 
-```
-Sitemap: https://www.yourlovelysite.com/xmlsitemap
-User-agent: *
-```
+1. Locate and open the `robots.txt` file in your preferred IDE.
+2. Add the following code snippet:
 
-Once you introduce a Sitemap for the first time, you might suddenly find yourself being crawled by multiple different search engine bots. This is exactly what you want! However if your site or hosting is a little creaky, you might want to add a crawl rate to the robots.txt to instruct well behaved search engine bots to give a bit of space to your site between requests:
+    ```xml
+    Sitemap: https://www.yourlovelysite.com/xmlsitemap
+    User-agent: *
+    ```
 
-```
-Sitemap: https://www.yourlovelysite.com/xmlsitemap
-User-agent: *
-Crawl-delay: 10
-```
+3. Save the file.
 
-#### Test your Xml SiteMap in a validation tool
+Once you introduce a sitemap for the first time, you might find yourself being crawled by multiple different search engine bots. This is expected and exactly what you want.
 
-Visit [Xml-Sitemaps.com](https://www.xml-sitemaps.com/validate-xml-sitemap.html) to test the validity of your generated Xml Site Map.
+It can be a good idea to add a **crawl-rate** to the `robots.txt` as well. This will instruct well behaved search engine bots to increase the time between requests to your site.
 
-#### Summary
+1. Add `Crawl-delay: 10` to a new line in your `robots.txt` file.
+2. Save the file.
 
-This is one way to add an XML Sitemap to your site, depending on your site it might not always be the 'best way' eg it will be much faster using XSLT. Particularly for large sites.
+### Test your XML sitemap in a validation tool
 
-This tutorial aims to serve as an introduction to Razor, Helpers, Functions, IPublishedContent, and working with the Umbraco Content Tree. It is not trying to establish the 'only best practice' way to achieve an Xml SiteMap.
+Visit [Xml-Sitemaps.com](https://www.xml-sitemaps.com/validate-xml-sitemap.html) to test the validity of your generated XML sitemap.
