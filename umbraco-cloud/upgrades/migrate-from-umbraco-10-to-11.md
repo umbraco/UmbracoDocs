@@ -5,8 +5,6 @@ description:
 
 # Migrating a Umbraco 10 project to a Umbraco 11 project
 
-Due to a temporary bug in the hosting services, we do not recommend to directly upgrade to Umbraco 11.
-
 In this guide, we show how you can migrate your Umbraco 10 project to a new Umbraco 11 project on Umbraco Cloud instead.
 
 {% hint style="info" %}
@@ -24,7 +22,7 @@ Make sure you know the [Breaking changes](../../umbraco-cms/fundamentals/setup/u
 * Follow the **requirements** for [local development](../../umbraco-cms/fundamentals/setup/requirements.md#local-development).
 * A Umbraco Cloud project running **the latest Umbraco 10**
 * The .NET 7 Software Development Kit (SDK) installed locally.
-* A clean Umbraco 11 project.
+* A clean Umbraco 11 Cloud project.
 
 ## Step 1: Enable .NET 7
 
@@ -67,7 +65,7 @@ Make sure you know the [Breaking changes](../../umbraco-cms/fundamentals/setup/u
 
 ### Upgrading Add-on packages
 
-Update the following packages to the latest stable version as well:
+Update the following packages to the latest stable Umbraco 11 version as well:
 
 * Umbraco.Deploy.Cloud
 * Umbraco.Deploy.Contrib
@@ -75,14 +73,6 @@ Update the following packages to the latest stable version as well:
 * Umbraco.Deploy.Forms
 * Umbraco.Cloud.Identity.Cms
 * Umbraco.Cloud.StorageProviders.AzureBlob
-
-{% hint style="info" %}
-Choose the package version corresponding to the CMS version that you are currently upgrading to.
-
-For example, if you are upgrading to "Umbraco.Cms 11.0.0" update the forms package to "Umbraco.Forms 11.0.0" as well.
-
-Also, if you have more projects in your solution or other packages, make sure that these are also updated to support tUmbraco 11.
-{% endhint %}
 
 ## Step 4: Finishing the Upgrade
 
@@ -96,14 +86,11 @@ Also, if you have more projects in your solution or other packages, make sure th
 
 Once the Umbraco project runs locally without any errors, the next step is to deploy our Umbraco 10 project to our **clean Umbraco 11 project**.
 
-## Migrate Umbraco 10 project to Umbraco 11 project
-
-The following steps will guide you through the process of deploying your locally upgraded Umbraco 10 project to the **clean Umbraco 11 project**.
+## Migrate the Umbraco 10 project to the Umbraco 11 project
 
 {% hint style="warning" %}
 Make sure that your local project is Upgraded to Umbraco 11 and works as expected before continuing the process.
 {% endhint %}
-
 
 1. Clone down the **clean Umbraco 11 project**.
 2. Replace the `src/UmbracoProject/umbraco-cloud.json` file in the **old project** with the one from the **clean Umbraco 11 project**.
