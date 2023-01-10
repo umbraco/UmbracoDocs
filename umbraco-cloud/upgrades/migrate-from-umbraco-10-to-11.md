@@ -1,11 +1,12 @@
 ---
-description:
-  In this article we show how you can upgrade your Umbraco 10 Cloud project locally to Umbraco 11 and then migrate the project to a new Umbraco 11 project.
+description: "In this article we show how you can upgrade your Umbraco 10 Cloud project locally to Umbraco 11 and then migrate the project to a new Umbraco 11 project."
 ---
 
 # Migrating a Umbraco 10 project to a Umbraco 11 project
 
-In this guide, we show how you can migrate your Umbraco 10 project to a new Umbraco 11 project on Umbraco Cloud instead.
+Due to a temporary bug in the hosting services, we do not recommend to directly upgrade to Umbraco 11.
+
+In this guide, we will migrate an Umbraco Cloud project from Umbraco 10 to Umbraco 11.
 
 {% hint style="info" %}
 **Are you using any custom packages?**
@@ -98,7 +99,7 @@ Make sure that your local project is Upgraded to Umbraco 11 and works as expecte
 {% hint style="info" %}
 The `umbraco-cloud.json` file contains details about each environment on the Cloud project.
 
-By replacing the one on the **old project** with the one from the **clean Umbraco 11 project**, content and media transfers will point to the environments of the **clean Umbraco 11 project** instead.
+By replacing this file, content and media transfers will now point to the environments on the **clean Umbraco 11 project**.
 {% endhint %}
 
 1. Commit all the local changes on your **old project** through git, but do not push it yet.
@@ -118,11 +119,11 @@ By replacing the one on the **old project** with the one from the **clean Umbrac
     ```
     git push origin master -f
     ```
-4. Verify that the schema and files have been merged into the live environment on the **clean Umbraco 11 project**.
+4. Verify that the schema and files have been merged into the Live environment on the **clean Umbraco 11 project**.
 5. Transfer content and media from the local **old project** to the **clean Umbraco 11 project**.
 6. Verify that all the content and media have been transfered to the **clean Umbraco 11 project**.
 
-Once you've verified that all schema and files as well as content and media has successfully been deployed and transferred the migration is complete.
+Once you have verified that all schema, files, content, and media have been successfully deployed and transferred, the migration is complete.
 
 It is highly recommended to thoroughly go through everything on the migrated site to ensure that everything works as expected.
 
