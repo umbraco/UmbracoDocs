@@ -7,9 +7,7 @@ description:
 
 In this guide, we show how you can migrate your Umbraco 10 project on Umbraco Cloud to a new Umbraco 11 project.
 
-The reason for this guide is due to a temporary bug in the hosting services used for hosting Umbraco Cloud.
-
-Because of this bug we do not recommend to directly upgrade to Umbraco 11.
+The reason for this guide is due to a temporary bug in the hosting services used for hosting Umbraco Cloud and we do not recommend to directly upgrade to Umbraco 11.
 
 Instead in this guide, we show you how you can upgrade your Umbraco 10 project to Umbraco 11 locally.
 
