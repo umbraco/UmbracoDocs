@@ -10,7 +10,7 @@ use `@Model` in a Template
 .IsAncestorOrSelf
 .IsComposedOf
 .IsDescendant
-.IsDescendantOfSelf
+.IsDescendantOrSelf
 .IsDocumentType
 .IsEqual
 .IsInvariantOrHasCulture
