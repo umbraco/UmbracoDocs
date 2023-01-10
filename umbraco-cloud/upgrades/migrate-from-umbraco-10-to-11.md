@@ -98,11 +98,11 @@ Also, if you have more projects in your solution or other packages, make sure th
 
 ![Target Framework](images/verify-v10-upgrade-locally.png)
 
-Once the Umbraco project runs locally without any errors, the next step is to deploy our Umbraco 10 project to our _clean Umbraco 11 project_.
+Once the Umbraco project runs locally without any errors, the next step is to deploy our Umbraco 10 project to our **clean Umbraco 11 project**.
 
 ## Migrate Umbraco 10 project to Umbraco 11 project
 
-The following steps will guide you through the process of deploying your locally upgraded Umbraco 10 project to the _clean Umbraco 11 project_.
+The following steps will guide you through the process of deploying your locally upgraded Umbraco 10 project to the **clean Umbraco 11 project**.
 
 {% hint style="warning" %}
 Make sure that your local project is Upgraded to Umbraco 11 and works as expected before continuing the process.
@@ -115,11 +115,11 @@ Make sure that your local project is Upgraded to Umbraco 11 and works as expecte
 {% hint style="info" %}
 The `umbraco-cloud.json` file contains details about each environment on the Cloud project.
 
-By replacing the one on the _old project_ with the one from the _clean Umbraco 11 project_, content and media transfers will point to the environments on the _clean Umbraco 11 project_ instead of the _old project_.
+By replacing the one on the **old project** with the one from the **clean Umbraco 11 project**, content and media transfers will point to the environments on the **clean Umbraco 11 project** instead of the **old project**.
 {% endhint %}
 
-1. Commit all the local changes on your _old project_ through git, but do not push it yet.
-2.  Use the following git commands to connect your local _clean Umbraco 11 project_ to the live environment of the _clean Umbraco 11 project_ :
+1. Commit all the local changes on your **old project** through git, but do not push it yet.
+2.  Use the following git commands to connect your local **old project** to the live environment of the **clean Umbraco 11 project** :
 
     ```
     git remote rm origin
@@ -130,16 +130,16 @@ By replacing the one on the _old project_ with the one from the _clean Umbraco 1
 
     git branch --set-upstream-to=origin/master
     ```
-3.  Push the schema and files from the  _old project_ to the _clean Umbraco 11 project_ using the following git command:
+3.  Push the schema and files from the  **old project** to the **clean Umbraco 11 project** using the following git command:
 
     ```
     git push origin master -f
     ```
-4. Verify that the schema and files have been merged into the live environment on the _clean Umbraco 11 project_.
-5. Transfer content and media from the local _clean Umbraco 11 project_ to the _clean Umbraco 11 project_.
-6. Verify that all the content and media have been transfered to the _clean Umbraco 11 project_.
+4. Verify that the schema and files have been merged into the live environment on the **clean Umbraco 11 project**.
+5. Transfer content and media from the local **old project** to the **clean Umbraco 11 project**.
+6. Verify that all the content and media have been transfered to the **clean Umbraco 11 project**.
 
-Once you have verified that all schema and files as well as content and media has successfully been deployed and transferred to your new _clean Umbraco 11 project_ the migration process is complete.
+Once you have verified that all schema and files as well as content and media has successfully been deployed and transferred to your new **clean Umbraco 11 project** the migration process is complete.
 
 It is highly recommended to thoroughly go through everything on the migrated site to ensure that everything works as expected.
 
