@@ -25,7 +25,7 @@ Make sure you know the [Breaking changes](../../umbraco-cms/fundamentals/setup/u
 
 * Follow the **requirements** for [local development](../../umbraco-cms/fundamentals/setup/requirements.md#local-development).
 * A Umbraco Cloud project running **the latest Umbraco 10**
-* The .NET 7 Software development kit(SDK) installed locally.
+* The .NET 7 Software Development Kit (SDK) installed locally.
 * A clean Umbraco 11 project.
 
 ## Step 1: Enable .NET 7
@@ -81,7 +81,7 @@ Update the following packages to the latest stable version as well:
 {% hint style="info" %}
 Choose the package version corresponding to the CMS version that you are currently upgrading to.
 
-For example, if you are upgrading to "Umbraco.Cms 11.0.0" update the forms package to "Umbraco.Forms 11.0.0" as well. \\
+For example, if you are upgrading to "Umbraco.Cms 11.0.0" update the forms package to "Umbraco.Forms 11.0.0" as well.
 
 Also, if you have more projects in your solution or other packages, make sure that these are also updated to support tUmbraco 11.
 {% endhint %}
