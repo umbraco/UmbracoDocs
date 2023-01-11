@@ -1,8 +1,5 @@
 ---
-meta.Title: Creating media in Umbraco
-meta.Description: >-
-  Media in Umbraco is handled in much the same way as content. From the
-  backoffice you can upload and create media items, such as images and files.
+description: "Learn how to work with different types of Media content on your Umbraco website."
 ---
 
 # Creating Media
@@ -23,27 +20,49 @@ This means you don't have to define your own Media Types to start using the Medi
 If you have upgraded from an older version than 8.14 then the new media types are not added automatically. You can add those types manually yourselves by following the steps below ['Creating a new Media Type'](./#creating-a-media-type). On the [default media types page](default-media-types.md), you will find an overview of all new media types.
 {% endhint %}
 
+## Uploading Media
+
+You can upload media in two different ways:
+
+* [Through the Media section](#add-media-through-the-media-section) and
+* [Through the Content section](#add-media-through-the-content-section)
+
+### Add media through the Media section
+
+From the **Media** section in the Umbraco backoffice, you can add new media items by following either of the approaches defined below:
+
+* Use the **Create** dialog to to create a new Media item in the Media section
+  * The Media item will be created based on the type you choose.
+  * Upload the image or file, give the Media item a name, and click **Save**.
+
+![Upload Media - Create Button](images/v9-media-types-upload-media.png)
+
+* Use the Drag and drop feature to add your files to the Media section.
+  * Umbraco will automatically detect the Media Type and create the Media item.
+  * You can drop entire folders structures to recreate that same structure in the Media section.
+
+![Upload Media - Media section](images/v9-media-types-media-section.png)
+
+### Add media through the Content section
+
+New media items can be added to your site without interrupting the content creation-flow. This can be done following either of the two approaches outlined below.
+
+* Drag and drop the image(s) from your file explorer directly into the Media Picker property on the Content page.
+  * Images added this way is automatically added to the user's start node in the Media section of the Umbraco backoffice.
+
+![Drag and drop images directly into the content](images/upload-images-from-content.gif)
+  
+* Select the "+" icon to open the "Select media" dialog where you can add image(s) from your file explorer directly or using drag and drop.
+
+![Add images from the "Select media" dialog](images/add-image-from-dialog.gif)
+
 ## Creating a folder
 
 It is always a good idea to start by creating a folder for your Media items. Make sure to name your folders in a way that makes it possible for editors to upload their media items in the right place.
 
 To create a media folder, go to the **Media section** and click **...** next to **Media**. Alternatively, you can right-click the **Media** node and choose **Create**. This will bring up the list of available media types. Select **Folder**, enter a name for the folder and click **save**.
 
-## Uploading Media
-
-You can upload media in three ways:
-
-1.  Click **...** next to **Media** and choose the media type, enter a name for your media item and select the **Click to upload** field to choose a file type or drag the file into the upload field to upload the item.
-
-    ![Upload Media - Create](images/v9-media-types-create1.png)
-2.  Drag and drop your files in the **Upload** field in the Media section.\
-    \
-    Umbraco will automatically detect the media type and create a media item in the folder. You can even drop entire folders (with subfolders) and the folder and file structure will be recreated.
-
-    ![Upload Media - Media section](images/v9-media-types-media-section.png)
-3.  Click the **Create** dropdown, and choose the media item. Enter a name for your media item and select the **Click to upload** field or drag the file into the upload field to upload the item.
-
-    ![Upload Media - Create Button](images/v9-media-types-upload-media.png)
+## Media Type properties
 
 The **Image** Media Type has 5 properties (**Upload Image**, **Width**, **Height**, **Size** and **Type**) that is populated once the image is uploaded. These properties can be viewed in the **Media** section and accessed in your templates.
 
