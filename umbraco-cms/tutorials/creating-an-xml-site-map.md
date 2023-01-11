@@ -174,7 +174,7 @@ You can include HTML markup in the body of a method declared in a code block. Th
     </urlset>
     ```
 
-{% hint style="info" %}
+{% hint style="info" %} 
 We are using `IPublishedContent` in this example. Using **ModelsBuilder** instead will enable you to take advantage of the fact that the XML Sitemap Settings composition will create an interface called `IXmlSiteMapSettings`. This will allow you to adjust the helper to accept `RenderSiteMapUrlEntry(IXmlSiteMapSettings node)` and read properties without the `Value` helper. You would still need to create an extension method on `IXmlSiteMapSettings` to implement the recursive functionality we make use of on the `SearchEngineChangeFrequency` property.
 {% endhint %}
 
