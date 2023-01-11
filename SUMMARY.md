@@ -76,6 +76,7 @@
         * [Toggle](umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/true-false.md)
         * [User Picker](umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/user-picker.md)
         * [Block Editors](umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/README.md)
+          * [Block Grid](umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-grid-editor.md)
           * [Block List](umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-list-editor.md)
           * [Build a Custom View for a Block](umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/build-custom-view-for-blocks.md)
           * [Configuring Block Editor Label Properties](umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/label-property-configuration.md)
