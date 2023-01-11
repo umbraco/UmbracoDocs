@@ -185,7 +185,7 @@ For local testing in Visual Studio replace `app.UseDeveloperExceptionPage();` by
 
 While upgrading Umbraco in the past it would redirect visitors of the website to the upgrading page.
 
-To make sure users are not redirected to the upgrade page we added a `maintenance page` that will be shown when visiting the website while Umbraco is in Upgrade runtime mode.
+To prevent this we have added a `maintenance page` that will be shown when visiting the website while Umbraco is in Upgrade runtime mode.
 
 ![Maintenance page](images/maintenancePage.png)
 
