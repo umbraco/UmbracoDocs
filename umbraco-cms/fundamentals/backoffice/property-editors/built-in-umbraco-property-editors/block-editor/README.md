@@ -6,4 +6,4 @@ Umbraco 10 currently ships with one Block Editor: Block List.
 
 ## [Block List](block-list-editor.md)
 
-## [Block List](block-grid-editor.md)
+## [Block Grid](block-grid-editor.md)
