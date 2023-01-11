@@ -14,6 +14,7 @@ This is the documentation for the upcoming **Umbraco 11.1** release. For informa
 **New documentation in the RC:**
 
 * [Maintenance Page](umbraco-cms/tutorials/custom-error-page.md#maintenance-page)
+* [Logging Settings](umbraco-cms/reference/configuration/loggingsettings.md)
 {% endhint %}
 
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Umbraco CMS</strong></td><td>Everything you need to know when building your Umbraco website.</td><td></td><td><a href="getting-started/images/flexible_Email_hero_780x405px.png">flexible_Email_hero_780x405px.png</a></td><td><a href="umbraco-cms/">umbraco-cms</a></td></tr><tr><td><strong>Umbraco Cloud</strong></td><td>Learn how to get started with your Umbraco Cloud project.</td><td></td><td><a href=".gitbook/assets/Umbraco Cloud Update - Email hero - White - 780x405px@2xt.jpg">Umbraco Cloud Update - Email hero - White - 780x405px@2xt.jpg</a></td><td><a href="umbraco-cloud/getting-started/">getting-started</a></td></tr><tr><td><strong>Umbraco Heartcore</strong></td><td>Learn how to get the most out of your headless Umbraco solution.</td><td></td><td><a href="getting-started/developing-websites-with-umbraco/images/Headless_Email_hero_780x405px.png">Headless_Email_hero_780x405px.png</a></td><td><a href="umbraco-heartcore/">umbraco-heartcore</a></td></tr></tbody></table>
