@@ -25,7 +25,7 @@ If you have upgraded from an older version than 8.14 then the new media types ar
 You can upload media in two different ways:
 
 * [Through the Media section](#add-media-through-the-media-section) and
-* [Through the Content](#add-media-through-the-content-section) section
+* [Through the Content section](#add-media-through-the-content-section)
 
 ### Add media through the Media section
 
