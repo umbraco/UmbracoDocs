@@ -2,6 +2,13 @@
 
 ## View the latest updates for the Umbraco Cloud Portal
 
+### [**December 2022 Release Notes**](2022-12-20-releasenotes.md)
+
+* **Secrets Management** - Secure your secrets in Azure key vaults in an intuitive user interface and easy access to secrets during the run-time of your Umbraco solution.
+* **Organization Project view** - You will now see a lot more information for each of your organization projects on the project page under your organization.
+* **Updated public access page** - We have added the option to specify a name when you choose to specify a new entry to the allowlist for an environment.
+* **Kudu quicklink in Projects Dashboard** - You now have the option to navigate to Kudu for a cloud project environment from the "Projects Dashboard".
+
 ### [**November 2022 Release Notes**](2022-11-07-releasenotes.md)
 
 * **Dedicated for Starter and Standard plan** - You can now add a dedicated option for every Umbraco Cloud project plan to run on dedicated resources.

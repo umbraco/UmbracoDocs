@@ -58,7 +58,7 @@ To add a Document type approval flow:
 
 1. Go to the **Workflow** section.
 2. Go to the **General** tab in the **Settings** menu.
-3.  Click **Add** in the **Document type approval flows** section. \\
+3.  Click **Add** in the **Document type approval flows** section.&#x20;
 
     <figure><img src="images/doc-type-approval-flows.png" alt=""><figcaption><p>Document Type Approval Flows</p></figcaption></figure>
 4.  Select a **Document type** from the drop-down list.\
@@ -67,7 +67,7 @@ To add a Document type approval flow:
     <figure><img src="images/add-doc-type-approval-flows.png" alt=""><figcaption><p>Add Document Type Approval Flows</p></figcaption></figure>
 5. Select a **Language** from the drop-down list.
 6. **Add workflow approval groups** in the **Current flow** process.
-7.  Click **Add condition** to add a condition to the workflow process. \\
+7.  Click **Add condition** to add a condition to the workflow process.&#x20;
 
     <figure><img src="images/add-doc-type-approval-flows-settings.png" alt=""><figcaption><p>Configure Document Type Approval Flow Settings</p></figcaption></figure>
 8. Click **Submit**.

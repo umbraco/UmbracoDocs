@@ -1,9 +1,5 @@
 ---
-versionFrom: 9.3.0
-versionTo: 10.0.0
-keywords: oauth, security
-meta.Title: "External login providers"
-meta.Description: "Umbraco supports supports external login providers (OAuth) for performing authentication of your users and members. This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook."
+description: "Umbraco supports supports external login providers (OAuth) for performing authentication of your users and members. This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook."
 ---
 
 # External login providers

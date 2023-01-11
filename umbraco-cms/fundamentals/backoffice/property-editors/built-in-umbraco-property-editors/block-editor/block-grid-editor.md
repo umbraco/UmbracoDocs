@@ -263,7 +263,7 @@ The following is an example of a Partial View for a Block Type of type `MyElemen
 ```
 {% endcode %}
 
-If you are using ModelsBuilder, you can make the property rendering strongly typed by letting your view accept a model of type `BlockGridItem<T>`. For example: 
+If you are using ModelsBuilder, you can make the property rendering strongly typed by letting your view accept a model of type `BlockGridItem<T>`. For example:
 
 {% code title="MyElementTypeAliasOfContent.cshtml" %}
 ```csharp

@@ -1,7 +1,5 @@
 ---
-description: >-
-  Learn how to access and work with the Content Management API on your Umbraco
-  Heartcore project.
+description: "Learn how to access and work with the Content Management API on your Umbraco Heartcore project."
 ---
 
 # Content Management Sample

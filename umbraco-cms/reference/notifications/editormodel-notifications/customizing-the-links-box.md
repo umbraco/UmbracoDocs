@@ -9,14 +9,27 @@ For a content item, Umbraco will show a **Links** box within the **Info** conten
 
 ![image](images/properties-info-app.png)
 
-With the `SendingContentNotification` event, we can manipulate the links in the `Urls` property - e.g. replace it with some custom links (although a URL provider would be more suitable):
+With the `SendingContentNotification` event, we can manipulate the links in the `Urls` property. This could be by replace it with custom links although a URL provider would be more suitable:
 
 ```C#
 public void Handle(SendingContentNotification notification)
 {
     notification.Content.Urls = new[]
     {
-        new UrlInfo($"/products/?id={notification.Content.Id}", true, CultureInfo.CurrentCulture.Name)
+        new UrlInfo($"/products/?id={notification.Content.Id}", true, null)
+    };
+}
+```
+
+If the content item has multiple cultures, we can specify the link culture like this: 
+
+```C#
+public void Handle(SendingContentNotification notification)
+{
+    notification.Content.Urls = new[]
+    {
+        new UrlInfo($"https://mysite.com/products/?id={notification.Content.Id}", true, "en-US"),
+        new UrlInfo($"https://mysite.dk/produkter/?id={notification.Content.Id}", true, "da-DK")
     };
 }
 ```

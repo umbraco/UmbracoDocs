@@ -1,8 +1,5 @@
 ---
-meta.Title: 2-factor authentication on Umbraco Cloud
-meta.Description: >-
-  This article shows you how you can enable 2-factor authentication for when you
-  log in to the Umbraco Cloud Portal or the Umbraco Backoffice.
+description: "This article shows you how you can enable 2-factor authentication for when you log in to the Umbraco Cloud Portal or the Umbraco Backoffice."
 ---
 
 # 2-factor authentication
@@ -14,6 +11,7 @@ You can use email, phone, or an authenticator app when logging in to the Umbraco
 {% hint style="info" %}
 You will not be prompted to authenticate your backoffice login if you have already done it for the portal. This is because both logins use the same centralized login service.
 {% endhint %}
+
 ## Enabling 2-factor authentication
 
 2-factor authentication can be enabled when editing your Umbraco Cloud profile.
@@ -47,7 +45,7 @@ You have the option to use your phone when you log in to the Umbraco Cloud porta
 Before deactivating your old phone number, please make sure to update the phone number used for your 2-factor-authentication. Changing the phone number used for 2FA will require verification through the old number.
 {% endhint %}
 
-![Phone authentication](../release-notes/images/Phone-auth.png)
+![Phone authentication](images/Phone-auth.png)
 
 ## Disabeling 2-factor authentication
 

@@ -89,7 +89,7 @@ To configure your SMTP service, enter the following details:
 * **Password**: The password you use to access your SMTP service.
 
 {% hint style="info" %}
-To make sure that your SMTP password is not visible in the `appSettings.json` file, you can use the [Secrets management](broken-reference) feature to hide the setting by using the following key: `UMBRACO__CMS__GLOBAL__SMTP__PASSWORD.`
+To make sure that your SMTP password is not visible in the `appSettings.json` file, you can use the [Secrets management](project-settings/secrets-management.md) feature to hide the setting by using the following key: `UMBRACO__CMS__GLOBAL__SMTP__PASSWORD.`
 {% endhint %}
 
 Once you've configured these settings for your SMTP service, you can send emails from your Umbraco Cloud project. For more information on SMTP configuration, see the [Global Settings](../../umbraco-cms/reference/configuration/globalsettings.md) article

@@ -1,8 +1,5 @@
 ---
-meta.Title: Language Variants in Umbraco
-meta.Description: >-
-  Language Variants allow you to vary content by culture, so you can allow a
-  content node to exist in several languages.
+description: "Learn how to use language variants to output your content in multiple languages."
 ---
 
 # Language Variants

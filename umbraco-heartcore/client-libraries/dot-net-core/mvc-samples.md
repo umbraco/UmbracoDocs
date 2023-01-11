@@ -109,7 +109,7 @@ using Umbraco.Headless.Client.Samples.Web.Mvc;
 
 namespace Umbraco.Headless.Client.Samples.Web.Controllers
 {
-    public class HomePageController : UmbracoController
+    public class HomePageController : Controller
     {
         public HomePageController(UmbracoContext umbracoContext) : base(umbracoContext)
         {

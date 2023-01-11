@@ -1,9 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-description: >-
-  Learn about the health checks that check for cookie hijacking and protocol
-  downgrade attacks protection.
+description: "Learn about the health checks that check for cookie hijacking and protocol downgrade attacks protection."
 ---
 
 # Strict-Transport-Security Header

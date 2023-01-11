@@ -39,7 +39,7 @@ We are currently testing how best to handle the versions in terms of all product
 For now all documentation will follow the Umbraco CMS major versions. We will add warnings and notes whenever the versions to not match.
 {% endhint %}
 
-Learn more about how we handle the multiple version of our documentation in the [documenting multiple versions and products](../documentation-and-versions.md) article.
+Learn more about how we handle the multiple version of our documentation in the [documenting multiple versions and products](../other-resources/documentation-and-versions.md) article.
 
 ## Labels
 

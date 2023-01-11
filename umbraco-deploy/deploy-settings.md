@@ -1,7 +1,6 @@
 ---
 meta.Title: Umbraco Deploy settings
-meta.Description: Various settings for Umbraco Deploy
-description: Learn about the different settings available in Umbraco Deploy.
+description: "Learn about the different settings and configurations available in Umbraco Deploy."
 ---
 
 # Configuration

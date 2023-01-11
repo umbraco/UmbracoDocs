@@ -42,7 +42,7 @@ Now that we've told VS Code how to build your project, we need to tell it how to
 
 This will prompt a menu to appear, select:
 
-<figure><img src="../../../../.gitbook/assets/NetcoreTask.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/VsCode/NetcoreTask.png" alt=""><figcaption></figcaption></figure>
 
 Now you'll see a green play button appear with a dropdown where ".NET Core Launch" is selected. If you navigate to the files section again, you'll see that another file has been created in the `.vscode` folder, this one is called `launch.json`, it's this file that tells VS Code, to build your project, run it, and then open a browser when you press F5.
 
@@ -64,7 +64,7 @@ Depending on the database configuration you've chosen you will have the followin
 
 When the installer is done you will automatically be logged into the backoffice.
 
-<figure><img src="../../../../.gitbook/assets/dashboard-v8.PNG" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/VsCode/dashboard-v8.PNG" alt=""><figcaption></figcaption></figure>
 
 Congratulations, you have installed an Umbraco site!
 

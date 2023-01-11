@@ -9,6 +9,8 @@ Custom error handling might make your site look more on-brand and minimize the i
 This article contains guides on how to create custom error pages for the following types of errors:
 
 - [404 errors ("Page not found")](#404-errors)
+- [500 errors ("Internal Server Error")](#500-errors)
+- [Maintenance Page](#maintenance-page)
 
 ## In-code error page handling
 
@@ -113,21 +115,71 @@ The `BootFailed.html` page will only be shown if debugging is disabled in the `a
 
 The full error can always be found in the log file.
 
-## Are the error pages not working?
+## 500 errors
 
-If you set up everything correctly and the error pages are not showing correctly, make sure that you are not using
+The following steps guides you through setting up a page for internal server errors (500 errors).
 
-- Custom [ContentFinders](../../umbraco-cms/reference/routing/request-pipeline/icontentfinder.md) in your solution,
-- Any packages that allow you to customize redirects, or
-- Rewrite rules in web.config that might interefere with custom error handling.
+- Create a `~/controllers` folder in your Umbraco web project.
+- Create a file in this folder, called `ErrorController.cs`.
+- Add the following code to the file:
 
-{% hint style="warning" %}
-If your code or any packacges configures a custom `IContentLastChanceFinder`, the settings `appSettings.json` will not be used.
+    ```csharp
+    using Microsoft.AspNetCore.Mvc;
+    namespace [YOUR_PROJECT_NAME].Controllers
+    {
+        public class ErrorController : Controller
+        {
+            [Route("Error")]
+            public IActionResult Index()
+            {
+                if (Response.StatusCode == StatusCodes.Status500InternalServerError)
+                {
+                    return Redirect("/statuscodes/500");
+                }
+                else if (Response.StatusCode != StatusCodes.Status200OK)
+                {
+                    return Redirect("/statuscodes");
+                }
+                return Redirect("/");
+            }
+        }
+    }
+    ```
+
+{% hint style="info" %}
+**Namespace** replace [YOUR_PROJECT_NAME] by the actual project name. In Visual Studio you can use *Sync Namespaces* from the project context menu (in *Solution Explorer* View).
 {% endhint %}
 
-## Handling errors in ASP.NET Core
+- Add an entry in `appSettings.json` for the new route "Error" like so
 
-For common approaches to handling errors in ASP.NET Core web apps, see the [Handle errors in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/error-handling?view=aspnetcore-6.0) article in the Microsoft Documentation.
+    ```json
+    "Umbraco": {
+    "CMS": {
+        "Global": {
+        "ReservedPaths": "~/app_plugins/,~/install/,~/mini-profiler-resources/,~/umbraco/,~/error/",
+        ...
+    ```
+
+- Create the redirect pages from 1. step as regular content nodes in the backoffice. They should neither appear in navigation menus or sitemaps. In this example you would create under root node `Statuscodes` with a subnode `500`.
+- Update the `Configure` method in file `Startup.cs`
+
+    ```csharp
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    {
+    ...
+    if (env.IsDevelopment())
+    {
+        app.UseDeveloperExceptionPage();
+    }
+    else
+    {
+        app.UseExceptionHandler("/error");
+    }
+    ...
+    }
+    ```
+
+For local testing in Visual Studio replace `app.UseDeveloperExceptionPage();` by `app.UseExceptionHandler("/error");`. Otherwise you will get the default error page with stack trace etc.
 
 ## Maintenance Page
 
@@ -164,3 +216,19 @@ It is not recommended to let Umbraco be in Upgrade mode for longer periods.
 Most migrations can be executed while the website continues to work.
 Consider using this feature, if you know what you are doing.
 {% endhint %}
+
+## Are the error pages not working?
+
+If you set up everything correctly and the error pages are not showing correctly, make sure that you are not using
+
+- Custom [ContentFinders](../../umbraco-cms/reference/routing/request-pipeline/icontentfinder.md) in your solution,
+- Any packages that allow you to customize redirects, or
+- Rewrite rules in web.config that might interefere with custom error handling.
+
+{% hint style="warning" %}
+If your code or any packacges configures a custom `IContentLastChanceFinder`, the settings `appSettings.json` will not be used.
+{% endhint %}
+
+## Handling errors in ASP.NET Core
+
+For common approaches to handling errors in ASP.NET Core web apps, see the [Handle errors in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/error-handling?view=aspnetcore-6.0) article in the Microsoft Documentation.

@@ -447,7 +447,7 @@
   * [Member Registration and Login](umbraco-cms/tutorials/members-registration-and-login.md)
   * [Custom Views for Block List](umbraco-cms/tutorials/creating-custom-views-for-blocklist.md)
   * [Connecting Umbraco Forms and Zapier](umbraco-cms/tutorials/connecting-umbraco-forms-and-zapier.md)
-  * [Creating a Search Engine XML Site Map](umbraco-cms/tutorials/creating-an-xml-site-map.md)
+  * [Creating an XML Sitemap](umbraco-cms/tutorials/creating-an-xml-site-map.md)
   * [Creating And Distributing A Package](umbraco-cms/tutorials/creating-and-distributing-a-package.md)
   * [Implementing Custom Error Pages](umbraco-cms/tutorials/custom-error-page.md)
 
@@ -490,6 +490,7 @@
       * [Account Contacts](umbraco-cloud/set-up/project-settings/team-members/accounts-contact.md)
       * [Technical Contact](umbraco-cloud/set-up/project-settings/team-members/technical-contact.md)
     * [Secrets Management](umbraco-cloud/set-up/project-settings/secrets-management.md)
+  * [Private Nuget Feed on Umbraco Cloud](umbraco-cloud/set-up/private-nuget-feed.md)
   * [Going Live](umbraco-cloud/set-up/going-live.md)
   * [Media](umbraco-cloud/set-up/media/README.md)
     * [Connect to Azure Storage Explorer to upload files manually](umbraco-cloud/set-up/media/connect-to-azure-storage-explorer.md)
@@ -552,6 +553,7 @@
     * [Extraction error: "Type not found! "](umbraco-cloud/troubleshooting/deployments/type-not-found.md)
 * [Frequently asked questions](umbraco-cloud/frequently-asked-questions.md)
 * [Portal Release Notes](umbraco-cloud/release-notes/README.md)
+  * [Release Notes, December 2022](umbraco-cloud/release-notes/2022-12-20-releasenotes.md)
   * [Release Notes, November 2022](umbraco-cloud/release-notes/2022-11-07-releasenotes.md)
   * [Release Notes, September 2022](umbraco-cloud/release-notes/2022-09-19-releasenotes.md)
   * [Release Notes, August 2022](umbraco-cloud/release-notes/2022-08-19-releasenotes.md)
@@ -712,6 +714,7 @@
 ## Other resources
 
 * [The Licensing Model](other-resources/the-licensing-model.md)
+* [Versioning Strategy](other-resources/documentation-and-versions.md)
 
 ## Contribute
 

@@ -1,8 +1,5 @@
 ---
-meta.Title: Umbraco Forms configuration
-meta.Description: >-
-  In Umbraco Forms it's possible to customize the functionality with various
-  configuration values.
+description: "In Umbraco Forms it's possible to customize the functionality with various configuration values."
 ---
 
 # Configuration
@@ -336,12 +333,6 @@ This will configure when the record deletion process will run for the first time
 #### Period
 
 Defines how often the record deletion process will run. The default value is `1.00:00:00` which is equivalent to once every 24 hours. Shorter or longer periods can be set using different datetime strings.
-
-### DisableRecordIndexing
-
-Set this value to `true` to disable the default behavior of indexing the form submissions into the Examine index.
-
-If indexing has already occurred, you will still need to manually remove the files (found in `App_Data\TEMP\ExamineIndexes\UmbracoFormsRecords`). They will be recreated if indexing is subsequently re-enabled.
 
 ### DisableRecordIndexing
 

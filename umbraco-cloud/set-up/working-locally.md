@@ -1,7 +1,5 @@
 ---
-description: >-
-  In this article we explain how you can work with a local clone of your Umbraco
-  Cloud project.
+description: "In this article we explain how you can work with a local clone of your Umbraco Cloud project."
 ---
 
 # Working with a Local Clone
