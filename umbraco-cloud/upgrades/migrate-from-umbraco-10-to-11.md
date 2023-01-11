@@ -2,7 +2,7 @@
 description: "In this article we show how you can upgrade your Umbraco 10 Cloud project locally to Umbraco 11 and then migrate the project to a new Umbraco 11 project."
 ---
 
-# Migrating a Umbraco 10 project to a Umbraco 11 project
+# Migrate from Umbraco 10 to 11 on Umbraco Cloud
 
 In this guide, we will migrate an Umbraco Cloud project from Umbraco 10 to Umbraco 11.
 
