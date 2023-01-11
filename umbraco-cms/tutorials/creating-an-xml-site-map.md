@@ -122,59 +122,12 @@ We will start by adding the XML schema for the sitemap. Since we do not want our
 
 6. Save the template.
 
-<details>
-
-<summary>XmlSiteMap Template</summary>
-
-```csharp
-@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.XmlSiteMap>
-@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
-@{
-    Layout = null;
-    Context.Response.ContentType = "text/xml";
-}
-
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-        xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-    // Insert sitemap content here.
-</urlset>
-```
-
-</details>
-
 ### Getting a reference to the sitemap starting point
 
 The sitemap should start at the homepage at the root of the site. Since our XmlSiteMap page is created as a subpage page to the root, we can use the `Root()` helper to define the starting point as `IPublishedContent`.
 
 1. Add `IPublishedContent siteHomePage = Model.Root();` within the first set of curly brackets in the template.
 2. Save the template.
-
-<details>
-
-<summary>XmlSiteMap Template</summary>
-
-```csharp
-@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.XmlSiteMap>
-@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
-@{
-    Layout = null;
-    Context.Response.ContentType = "text/xml";
-    IPublishedContent siteHomePage = Model.Root();
-}
-
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-        xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-    // Insert sitemap content here.
-</urlset>
-```
-
-</details>
 
 ### Rendering a sitemap entry
 
@@ -229,52 +182,6 @@ Visit the URL of your sitemap page (`http://yoursite.com/sitemap`) to render a s
 
 ![Example of Sitemap](images/sitemap.png)
 
-<details>
-
-<summary>XmlSiteMap Template</summary>
-
-```csharp
-@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.XmlSiteMap>
-@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
-@{
-    Layout = null;
-    Context.Response.ContentType = "text/xml";
-    IPublishedContent siteHomePage = Model.Root();
-}
-
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-        xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-    @{
-        RenderSiteMapUrlEntry(siteHomePage);
-    }
-</urlset>
-
-@{
-    void RenderSiteMapUrlEntry(IPublishedContent node)
-    {
-        // The change frequency is recursive and should 'fallback to ancestor' when no value is given.
-        var changeFreq = node.Value("searchEngineChangeFrequency", 
-                                    fallback: Fallback.To(Fallback.Ancestors, Fallback.DefaultValue), 
-                                    defaultValue: "monthly");
-
-        // The relative priority is a per-page setting only. We will not set Fallback.ToAncestors and instead default to 0.5 if no value is set.
-        var priority = node.HasValue("searchEngineRelativePriority") ? node.Value<string>("searchEngineRelativePriority") : "0.5";
-
-        <url>
-            <loc>@node.Url(mode: UrlMode.Absolute)</loc>
-            <lastmod>@(string.Format("{0:s}+00:00", node.UpdateDate))</lastmod>
-            <changefreq>@changeFreq</changefreq>
-            <priority>@priority</priority>
-        </url>
-    }
-}
-```
-
-</details>
-
 ### Looping through the rest of the site
 
 We need to go through each page created beneath the homepage to see if they should be added to the sitemap.
@@ -313,64 +220,6 @@ We will add a `RenderSiteMapUrlEntriesForChildren` helper which accepts a 'Paren
 You will now see the XML sitemap rendered for the entire site.
 
 ![Example of Sitemap with children](images/sitemapWithChildren.png)
-
-<details>
-
-<summary>XmlSiteMap Template</summary>
-
-```csharp
-@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.XmlSiteMap>
-@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
-@{
-    Layout = null;
-    Context.Response.ContentType = "text/xml";
-    IPublishedContent siteHomePage = Model.Root();
-}
-
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-        xsi:schemalocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-    @{
-        RenderSiteMapUrlEntry(siteHomePage);
-        RenderSiteMapUrlEntriesForChildren(siteHomePage);
-    }
-</urlset>
-
-@{
-    void RenderSiteMapUrlEntry(IPublishedContent node)
-    {
-        // The change frequency is recursive and should 'fallback to ancestor' when no value is given.
-        var changeFreq = node.Value("searchEngineChangeFrequency", 
-                                    fallback: Fallback.To(Fallback.Ancestors, Fallback.DefaultValue), 
-                                    defaultValue: "monthly");
-
-        // The relative priority is a per-page setting only. We will not set Fallback.ToAncestors and instead default to 0.5 if no value is set.
-        var priority = node.HasValue("searchEngineRelativePriority") ? node.Value<string>("searchEngineRelativePriority") : "0.5";
-
-        <url>
-            <loc>@node.Url(mode: UrlMode.Absolute)</loc>
-            <lastmod>@(string.Format("{0:s}+00:00", node.UpdateDate))</lastmod>
-            <changefreq>@changeFreq</changefreq>
-            <priority>@priority</priority>
-        </url>
-    }
-
-    void RenderSiteMapUrlEntriesForChildren(IPublishedContent parentPage)
-    {
-        foreach (var page in parentPage.Children)
-        {
-            RenderSiteMapUrlEntry(page);
-            if (page.Children.Any()){
-                RenderSiteMapUrlEntriesForChildren(page);
-            }
-        }
-    }
-}
-```
-
-</details>
 
 ## 5. Filter the sitemap content
 
@@ -471,9 +320,7 @@ It contains an entry for each page that is
 * Not based on an **excluded Document Type**, and
 * Located within the bounds of the defined **depth**.
 
-<details>
-
-<summary>XmlSiteMap Template - Complete</summary>
+## The finished XmlSiteMap Template
 
 ```csharp
 @using Umbraco.Cms.Web.Common.PublishedModels;
@@ -541,8 +388,6 @@ It contains an entry for each page that is
     }
 }
 ```
-
-</details>
 
 ## Going further
 
