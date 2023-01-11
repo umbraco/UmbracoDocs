@@ -447,7 +447,7 @@
   * [Member Registration and Login](umbraco-cms/tutorials/members-registration-and-login.md)
   * [Custom Views for Block List](umbraco-cms/tutorials/creating-custom-views-for-blocklist.md)
   * [Connecting Umbraco Forms and Zapier](umbraco-cms/tutorials/connecting-umbraco-forms-and-zapier.md)
-  * [Creating a Search Engine XML Site Map](umbraco-cms/tutorials/creating-an-xml-site-map.md)
+  * [Creating an XML Sitemap](umbraco-cms/tutorials/creating-an-xml-site-map.md)
   * [Creating And Distributing A Package](umbraco-cms/tutorials/creating-and-distributing-a-package.md)
   * [Implementing Custom Error Pages](umbraco-cms/tutorials/custom-error-page.md)
 
