@@ -113,7 +113,7 @@ By replacing this file, content and media transfers will now point to the enviro
 
     git branch --set-upstream-to=origin/master
     ```
-3.  Push the schema and files from the  ***Migration project** to the **clean Umbraco 11 project** using the following git command:
+3.  Push the schema and files from the  **Migration project** to the **clean Umbraco 11 project** using the following git command:
 
     ```
     git push origin master -f
