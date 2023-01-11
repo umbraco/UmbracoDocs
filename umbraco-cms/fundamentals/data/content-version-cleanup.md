@@ -1,5 +1,5 @@
 ---
-meta.Title: Content version cleanup
+description: "Avoid filling up your database with old versions of your content by using the Content Version cleanup feature."
 ---
 
 # Content Version Cleanup
@@ -54,9 +54,9 @@ It is possible to override the global settings per Document Type in the backoffi
 
 It is possible to mark important content versions as "prevent cleanup" to ensure they are never removed. This happens via the new and improved rollback modal which can be found on the "info" content app for each document.
 
-1.  Open rollback modal.&#x20;
+1. Open rollback modal.&#x20;
 
     <figure><img src="images/prevent-cleanup-part-1.png" alt=""><figcaption></figcaption></figure>
-2.  Click **Prevent cleanup** button for each important version.&#x20;
+2. Click **Prevent cleanup** button for each important version.&#x20;
 
     <figure><img src="images/prevent-cleanup-part-2.png" alt=""><figcaption></figcaption></figure>

@@ -1,12 +1,12 @@
 ---
-meta.Title: Content Apps
+description: "Use Content Apps to provide your content editors with even more functionality when building Forms in Umbraco."
 ---
 
 # Content Apps
 
 [Umbraco Content Apps](../../umbraco-cms/extending/content-apps.md) can be configured to appear alongside forms in the Umbraco Forms backoffice section.
 
-They will appear after the default "Design" and "Settings" apps when editing a form in the back-office:
+They will appear after the default "Design" and "Settings" apps when editing a form in the backoffice:
 
 ![Umbraco Forms Content App](images/content-app.png)
 

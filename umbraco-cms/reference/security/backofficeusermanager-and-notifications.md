@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "BackOfficeUserManager and Notifications"
-meta.Description: "The BackOfficeUserManager is the ASP.NET Core Identity UserManager implementation in Umbraco. It exposes APIs for working with Umbraco User's via the ASP.NET Core Identity including password handling."
+description: "The BackOfficeUserManager is the ASP.NET Core Identity UserManager implementation in Umbraco. It exposes APIs for working with Umbraco User's via the ASP.NET Core Identity including password handling."
 ---
 
 # BackOfficeUserManager and Events

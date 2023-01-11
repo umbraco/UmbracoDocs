@@ -1,7 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "UmbracoMapper"
+description: "Learn everything you need to know about the Umbraco Mapper."
 ---
 
 # UmbracoMapper

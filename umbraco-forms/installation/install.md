@@ -1,6 +1,5 @@
 ---
-meta.Title: Installing Umbraco Forms
-meta.Description: Installing Umbraco Forms
+description: "Installing Umbraco Forms"
 ---
 
 # Installing Umbraco Forms

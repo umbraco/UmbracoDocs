@@ -1,11 +1,8 @@
 ---
-meta.Title: Rendering content
-keywords: content razor v9 version9
+description: "Learn how to build templates to render your content on your Umbraco website."
 ---
 
 # Rendering Content
-
-_The primary task of any template is to render the values of the current page or the result of a query against the content cache._
 
 ## Display a value in your template view
 

@@ -1,6 +1,5 @@
 ---
-meta.Title: Theming Umbraco Forms
-meta.Description: Documentation on how to apply custom themes to Umbraco Forms
+description: "Documentation on how to apply custom themes to Umbraco Forms"
 ---
 
 # Themes

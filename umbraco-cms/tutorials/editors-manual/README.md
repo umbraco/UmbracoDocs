@@ -1,6 +1,5 @@
 ---
-meta.Title: "Editors Manual for Umbraco"
-meta.Description: "How-tos and best practices for working with the Umbraco backoffice as a content editor."
+description: "How-tos and best practices for working with the Umbraco backoffice as a content editor."
 ---
 
 # Editor's Manual

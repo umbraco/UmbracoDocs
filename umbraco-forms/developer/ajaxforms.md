@@ -1,5 +1,5 @@
 ---
-meta.Title: Headless/Asynchronous JavaScript and XML (AJAX)  Forms
+description: "Headless/Asynchronous JavaScript and XML (AJAX) Forms"
 ---
 
 # Headless/AJAX Forms

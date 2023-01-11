@@ -1,8 +1,5 @@
 ---
-description: >-
-  In production environments it is highly recommend that you enforce the use of
-  HTTPS (UseHttps). It grealy increases the general trust of your site and
-  guards you against various attacks, like 'Man in
+description: "HTTPS is recommended for all Umbraco websites in production. Learn how to set this up and about the different configuration options."
 ---
 
 # HTTPS
@@ -22,7 +19,7 @@ Another benefits of HTTPS is that you are able to use the [http2](https://en.wik
 
 Umbraco allows you to force HTTPS for all backoffice communications by using the following configuration:
 
-In Umbraco 9, set the UseHttps key in `appSettings` to true.
+Set the UseHttps key in `appSettings` to true.
 
 ```json
 {

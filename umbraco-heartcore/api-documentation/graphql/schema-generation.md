@@ -1,6 +1,5 @@
 ---
-meta.Title: "Umbraco Heartcore GraphQL Schema Generation"
-meta.Description: "Documentation for Umbraco Heartcore GraphQL schema generation"
+description: "Documentation for Umbraco Heartcore GraphQL schema generation"
 ---
 
 # Schema Generation

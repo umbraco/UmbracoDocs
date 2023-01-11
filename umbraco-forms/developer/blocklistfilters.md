@@ -1,5 +1,5 @@
 ---
-meta.Title: Block List Filters
+description: "Learn about the available Block List Filters and how to use them."
 ---
 
 # Block List Filters

@@ -1,7 +1,5 @@
 ---
-versionFrom: 9.0.0
-meta.Title: "Umbraco Request Context"
-meta.Description: "The UmbracoContext is a helpful service provided on each request to the website"
+description: "The UmbracoContext is a helpful service provided on each request to the website"
 ---
 
 # UmbracoContext helper

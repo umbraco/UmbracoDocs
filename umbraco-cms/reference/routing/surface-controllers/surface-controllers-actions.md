@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Surface Controller Actions"
-meta.Description: "Information about Surface Controller Actions Result Helpers in Umbraco"
+description: "Information about Surface Controller Actions Result Helpers in Umbraco"
 ---
 
 # Surface controller actions

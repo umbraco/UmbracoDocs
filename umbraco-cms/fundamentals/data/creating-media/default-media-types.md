@@ -1,8 +1,8 @@
 ---
-meta.Title: "Default Data/Media Types"
+description: "Learn about the default Media Types that comes with your Umbraco CMS website."
 ---
 
-# Default Data/Media Types
+# Default Media Types
 
 On this page you will find the media types and Data Types in Umbraco. These types are not created automatically after an upgrade. If you want to use the new types, you can create them yourself.
 
