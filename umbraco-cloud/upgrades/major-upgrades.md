@@ -1,15 +1,15 @@
 ---
-description: >-
-  In this article we show how you can upgrade your Umbraco Cloud project to
-  latest major version of Umbraco CMS.
+description: "In this article we show how you can upgrade your Umbraco Cloud project to latest major version of Umbraco CMS."
 ---
 
 # Major Upgrades
 
-{% hint style="danger" %}
+{% hint style="hint" %}
 #### Umbraco 11 release
 
-We currently do **not recommend** upgrading to Umbraco CMS version 11 on Cloud.
+We currently do **not recommend** upgrading your project directly to Umbraco CMS version 11 on Cloud.
+
+Instead it is possible to [migrate your Umbraco 10 projects to a new Umbraco 11 project](./migrate-from-umbraco-10-to-11.md).
 
 This is due to a temporary bug in the hosting services used for hosting Umbraco Cloud.
 
