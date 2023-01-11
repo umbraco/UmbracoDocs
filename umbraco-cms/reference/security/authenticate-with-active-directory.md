@@ -1,6 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+description: "Learn jow to use Azure Active Directory credentials to login to the Umbraco backoffice"
 ---
 
 # Authenticating the Umbraco backoffice with Azure Active Directory credentials

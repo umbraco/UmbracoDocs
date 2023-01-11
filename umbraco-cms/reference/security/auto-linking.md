@@ -1,7 +1,5 @@
 ---
-versionFrom: 9.3.0
-versionTo: 10.0.0
-keywords: oauth, security
+description: "Learn more about linking to external login providers."
 ---
 
 # Linking External Login Provider accounts
