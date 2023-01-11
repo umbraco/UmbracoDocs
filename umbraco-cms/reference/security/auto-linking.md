@@ -8,7 +8,6 @@ Traditionally when using [External login providers (OAuth)](external-login-provi
 
 In many cases, however, the external login provider you install will be the source of truth for all of your users and you may want to provide a Single Sign On (SSO) approach to the backoffice or your member sections of your website. This is called Auto Linking.
 
-
 ## Configure External Login provider
 
 To enable auto linking you have to implement a custom named configuration of `BackOfficeExternalLoginProviderOptions` or `MemberExternalLoginProviderOptions` for users or members, respectively.
@@ -19,7 +18,7 @@ _This example shows connection to an Open ID Connect Service such as [IdentitySe
 
 You can first create a `OpenIdConnectBackOfficeExternalLoginProviderOptions.cs` file which configures the options like
 
-```Csharp
+```csharp
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Web.BackOffice.Security;
@@ -109,13 +108,15 @@ Additionally, there are more advanced properties for `BackOfficeExternalLoginPro
   * When specifying this view it is 100% up to your angular view and affiliated angular controller to perform all required logic.
 
 To register this configuration class, you can call the following from your `startup.cs`:
-```Csharp
+
+```csharp
 services.ConfigureOptions<OpenIdConnectBackOfficeExternalLoginProviderOptions>();
 ```
 
 We recommend to create an extension method on the `IUmbracoBuilder`, to add the Open Id Connect Authentication, like this
 This extension can also handle the configuration of `OpenIdConnectBackOfficeExternalLoginProviderOptions`:
-```Csharp
+
+```csharp
 public static IUmbracoBuilder AddOpenIdConnectAuthentication(this IUmbracoBuilder builder)
 {
     // Register OpenIdConnectBackOfficeExternalLoginProviderOptions here rather than require it in startup
@@ -162,7 +163,7 @@ public static IUmbracoBuilder AddOpenIdConnectAuthentication(this IUmbracoBuilde
 
 Finally this extension can also be called from the `Startup.cs` like the example below:
 
-```Csharp
+```csharp
 services.AddUmbraco(_env, _config)
    .AddBackOffice()
    .AddWebsite()
@@ -170,11 +171,13 @@ services.AddUmbraco(_env, _config)
    .AddOpenIdConnectAuthentication()
    .Build();
 ```
+
 {% hint style="info" %}
 For some providers, it doesn't make sense to use auto-linking. This is especially true for public providers such as Google or Facebook. In those cases, it would mean that anyone who has a Google or Facebook account can log into your site. For public providers such as this, if auto-linking was needed you would need to limit the access by domain or other information provided in the Claims using the options/callbacks specified in those provider's authentication options.
 {% endhint %}
 
 ### Example for members
+
 The way to implement auto linking for members is fairly similar to how it is for users. The main difference is the UI, where Umbraco do not have a fixed login page for members.
 Instead, Umbraco ships with some Partial Macro Snippets for `Login` and `EditProfile` that contains handling of Login and manual linking of the configured external member providers.
 
@@ -183,8 +186,7 @@ When auto-linking is enabled, only the `Login` snippet is relevant as users do n
 The following example will show how to use Google and external login provider.
 You can first create a `GoogleMemberExternalLoginProviderOptions.cs` file which configures the options like
 
-
-```Csharp
+```csharp
 using System;
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
@@ -250,13 +252,15 @@ namespace Umbraco9
 ```
 
 To register this configuration class, you can call the following from your `startup.cs`:
-```Csharp
+
+```csharp
 services.ConfigureOptions<GoogleMemberExternalLoginProviderOptions>();
 ```
 
 Like for users, we recommend creating an extension method on the `IUmbracoBuilder`, to add the Google Authentication, like this.
 This extension can also handle the configuration of `GoogleMemberExternalLoginProviderOptions`:
-```Csharp
+
+```csharp
 public static IUmbracoBuilder AddMemberGoogleAuthentication(this IUmbracoBuilder builder)
 {
     // Register GoogleMemberExternalLoginProviderOptions here rather than require it in startup
@@ -283,7 +287,8 @@ public static IUmbracoBuilder AddMemberGoogleAuthentication(this IUmbracoBuilder
 
 Finally this extension can also be called from the `Startup.cs` like the example below:
 
-```Csharp
+```C
+csharp
 services.AddUmbraco(_env, _config)
    .AddBackOffice()
    .AddWebsite()
@@ -291,6 +296,7 @@ services.AddUmbraco(_env, _config)
    .AddMemberGoogleAuthentication()
    .Build();
 ```
+
 {% hint style="info" %}
 Auto-linking only makes sense if you have a public member registration anyway or the external provider does not have public account creation.
 {% endhint %}
@@ -315,7 +321,7 @@ Do not flow large amounts of data into the backoffice identity because this info
 
 _This is a very simplistic example for brevity, no null checks, etc..._
 
-```Csharp
+```csharp
 OnAutoLinking = (user, loginInfo) => {
     // You can customize the user before it's linked.
     // i.e. Modify the user's groups based on the Claims returned
@@ -349,11 +355,11 @@ OnExternalLogin = (user, loginInfo) => {
 ```
 
 ## Storing external login provider data
+
 In some cases, you may need to persist data from your external login provider like Access Tokens, etc.
 You can persist this data to the affiliated user's external login data via the `IExternalLoginWithKeyService`.
 The `void Save(Guid userOrMemberKey,IEnumerable<IExternalLoginToken> tokens)` overload takes a new model of type `IEnumerable<IExternalLogin>`. `IExternalLogin` contains a property called `UserData`.
 This is a blob text column so can store any arbitrary data for the external login provider.
-
 
 {% hint style="info" %}
 Be aware that the local Umbraco user must already exist and be linked to the external login provider before data can be stored here. In cases where auto-linking occurs and the backoffice user isn't yet created, you will most likely need to store this data in memory. First, during auto-linking and then persist this data to the service once the user is linked and created.
