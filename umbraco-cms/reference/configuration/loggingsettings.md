@@ -29,4 +29,4 @@ To increase the maximum age of the entries in the audit log to 48 hours (2 days)
 
 By default, all log files are saved to the `umbraco/Logs` directory. You can define a custom directory for your log files by using the `Directory` key in the Logging settings.
 
-The following value will add all log files to a `LogFiles` directory in the root of the file structure: `~/LogFiles`.
+Set the value to `~/LogFiles` to add all log files to a `LogFiles` directory in the root of the file structure.
