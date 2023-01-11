@@ -45,13 +45,11 @@ Make sure you know the [Breaking changes](../../umbraco-cms/fundamentals/setup/u
 2. Right-click your project solution in **Solution Explorer**.
 3. Select **Properties**.
 
-<figure><img src="images/Solution-Explorer.png" alt=""><figcaption></figcaption></figure>
-
+    <figure><img src="images/Solution-Explorer.png" alt=""><figcaption></figcaption></figure>
 4. Change the **.Net** **Target Framework** from .NET 6 to .NET 7
 5. It can be changed in the **General** section of the **Application** tab  in Visual Studio.
 
-![Target Framework](images/Target-Framework.png)
-
+    ![Target Framework](images/Target-Framework.png)
 6. Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**.
 7. Navigate to the **Browse** tab.
 8. Install version 7.0.0 of the `Microsoft.Extensions.DependencyInjection.Abstractions` framework.
