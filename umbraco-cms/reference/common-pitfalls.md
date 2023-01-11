@@ -1,7 +1,5 @@
 ---
-versionFrom: 11.0.0
-meta.Title: Common Pitfalls and Anti-Patterns in Umbraco
-meta.Description: Information on common Pitfalls and Anti-Patterns in Umbraco
+description: "Information on common Pitfalls and Anti-Patterns in Umbraco"
 ---
 
 # Common Pitfalls & Anti-Patterns

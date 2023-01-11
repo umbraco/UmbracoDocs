@@ -1,6 +1,5 @@
 ---
-meta.Title: Named Sections in Umbraco
-meta.Description: Using named sections in Umbraco
+description: "Using named sections in Umbraco"
 ---
 
 # Named Sections

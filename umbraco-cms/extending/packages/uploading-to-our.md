@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: Uploading an Umbraco package to Our
-meta.Description: Information on how to upload your Umbraco package on Our
+description: "Information on how to upload your Umbraco package on Our"
 ---
 
 # Uploading to Our

@@ -1,6 +1,5 @@
 ---
-meta.Title: Unit Testing Umbraco
-meta.Description: A guide to getting started with unit testing in Umbraco
+description: A guide to getting started with unit testing in Umbraco
 ---
 
 # Unit Testing Umbraco

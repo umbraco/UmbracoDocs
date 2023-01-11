@@ -1,6 +1,5 @@
 ---
-meta.Title: "Partial Views"
-meta.Description: "Information on working with partial views in Umbraco"
+description: "Information on working with partial views in Umbraco"
 ---
 
 # Partial Views

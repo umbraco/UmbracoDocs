@@ -1,7 +1,5 @@
 ---
-versionFrom: 9.0.0
-meta.Title: "Umbraco Packages"
-meta.Description: "A package extends the functionality of Umbraco to provide additional functionality to editors, developers, site visitors, and all other types of users of Umbraco."
+description: "A package extends the functionality of Umbraco to provide additional functionality to editors, developers, site visitors, and all other types of users of Umbraco."
 ---
 
 # Packages

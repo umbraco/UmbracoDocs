@@ -1,6 +1,5 @@
 ---
-meta.Title: "Breaking changes going from Umbraco 10 to 11"
-meta.Description: "In this article we list the breaking changes between Umbraco 10 and 11"
+description: "In this article we list the breaking changes between Umbraco 10 and 11"
 ---
 
 # Breaking changes

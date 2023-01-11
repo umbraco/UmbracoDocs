@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Umbraco Runtime Minification Settings"
-meta.Description: "Information on the runtime minification settings section"
+description: "Information on the runtime minification settings section"
 ---
 
 # Runtime minification settings

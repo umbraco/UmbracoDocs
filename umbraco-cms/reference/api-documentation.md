@@ -1,7 +1,5 @@
 ---
-versionFrom: 10.0.0
-meta.Title: "Umbraco API Documentation"
-meta.Description: "Information on Umbraco API Documentation"
+description: "Information on Umbraco API Documentation"
 ---
 
 # API Documentation

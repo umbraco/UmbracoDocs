@@ -1,6 +1,5 @@
 ---
-meta.Title: Default data types in Umbraco
-meta.Description: Learn about the default data types in Umbraco.
+description: Learn about the default data types in Umbraco.
 ---
 
 # Default Data Types

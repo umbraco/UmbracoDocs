@@ -1,6 +1,5 @@
 ---
-meta.Title: Defining content
-meta.Description: Here you'll find an explanation of how content is defined in Umbraco
+description: "Here you'll find an explanation of how content is defined in Umbraco"
 ---
 
 # Defining Content

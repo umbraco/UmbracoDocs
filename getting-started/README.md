@@ -1,6 +1,6 @@
 ---
 meta.Title: Getting Started
-meta.description: ''
+description: "Based on what you want to achieve with Umbraco, use this section to locate the information you need."
 versionFrom: 8.0.0
 ---
 

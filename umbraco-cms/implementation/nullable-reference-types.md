@@ -1,7 +1,5 @@
 ---
-versionFrom: 10.0.0
-Meta.Title: Nullable Reference Types
-Meta.Description: In this article we describe what Nullable reference types is.
+description: "In this article we describe what Nullable reference types is."
 ---
 
 # Nullable Reference Types

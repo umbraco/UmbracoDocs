@@ -1,7 +1,5 @@
 ---
-versionFrom: 9.0.0
-meta.Title: "MediaType Model"
-meta.Description: "A MediaType is almost the same as a ContentType. I.e. a model / data definition for your media nodes."
+description: "A MediaType is almost the same as a ContentType. I.e. a model / data definition for your media nodes."
 ---
 
 # MediaType

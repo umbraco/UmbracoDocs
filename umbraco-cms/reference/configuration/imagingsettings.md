@@ -1,7 +1,5 @@
 ---
-versionFrom: 10.0.0
-meta.Title: "Umbraco Imaging Settings"
-meta.Description: "Information on the imaging settings section"
+description: "Information on the imaging settings section"
 ---
 
 

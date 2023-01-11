@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Umbraco Maximum upload size settings"
-meta.Description: "Information on how to change the default cap of upload size"
+description: "Information on how to change the default cap of upload size"
 ---
 
 Umbraco does not touch the default maximum allowed content size of the different services, but you can configure this yourself.

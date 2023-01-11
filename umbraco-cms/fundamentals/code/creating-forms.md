@@ -1,6 +1,5 @@
 ---
-meta.Title: "Creating Forms"
-meta.Description: "Information on creating forms in Umbraco"
+description: "Information on creating forms in Umbraco"
 ---
 
 

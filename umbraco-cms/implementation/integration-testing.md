@@ -1,6 +1,5 @@
 ---
-meta.Title: "Integration Testing Umbraco"
-meta.Description: "A guide to getting started with integration testing in Umbraco"
+description: "A guide to getting started with integration testing in Umbraco"
 ---
 
 # Integration Testing Umbraco

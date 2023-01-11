@@ -1,6 +1,5 @@
 ---
-meta.Title: "Scheduled Publishing"
-meta.Description: "Each document in Umbraco can be scheduled for publishing and unpublishing on a pre-defined date and time."
+description: "Each document in Umbraco can be scheduled for publishing and unpublishing on a pre-defined date and time."
 ---
 
 # Scheduled Publishing
