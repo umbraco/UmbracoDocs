@@ -10,6 +10,7 @@ This article contains guides on how to create custom error pages for the followi
 
 - [404 errors ("Page not found")](#404-errors)
 - [500 errors ("Internal Server Error")](#500-errors)
+- [Maintenance Page](#maintenance-page)
 
 ## In-code error page handling
 
@@ -114,22 +115,6 @@ The `BootFailed.html` page will only be shown if debugging is disabled in the `a
 
 The full error can always be found in the log file.
 
-## Are the error pages not working?
-
-If you set up everything correctly and the error pages are not showing correctly, make sure that you are not using
-
-- Custom [ContentFinders](../../umbraco-cms/reference/routing/request-pipeline/icontentfinder.md) in your solution,
-- Any packages that allow you to customize redirects, or
-- Rewrite rules in web.config that might interefere with custom error handling.
-
-{% hint style="warning" %}
-If your code or any packacges configures a custom `IContentLastChanceFinder`, the settings `appSettings.json` will not be used.
-{% endhint %}
-
-## Handling errors in ASP.NET Core
-
-For common approaches to handling errors in ASP.NET Core web apps, see the [Handle errors in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/error-handling?view=aspnetcore-6.0) article in the Microsoft Documentation.
-
 ## 500 errors
 
 The following steps guides you through setting up a page for internal server errors (500 errors).
@@ -161,7 +146,7 @@ The following steps guides you through setting up a page for internal server err
     }
     ```
 
-    {% hint style="info" %}
+{% hint style="info" %}
 **Namespace** replace [YOUR_PROJECT_NAME] by the actual project name. In Visual Studio you can use *Sync Namespaces* from the project context menu (in *Solution Explorer* View).
 {% endhint %}
 
@@ -194,4 +179,56 @@ The following steps guides you through setting up a page for internal server err
     }
     ```
 
-    For local testing in Visual Studio replace `app.UseDeveloperExceptionPage();` by `app.UseExceptionHandler("/error");`. Otherwise you will get the default error page with stack trace etc.
+For local testing in Visual Studio replace `app.UseDeveloperExceptionPage();` by `app.UseExceptionHandler("/error");`. Otherwise you will get the default error page with stack trace etc.
+
+## Maintenance Page
+
+While upgrading Umbraco in the past it would redirect visitors of the website to the upgrading page.
+
+To prevent this we have added a `maintenance page` that will be shown when visiting the website while Umbraco is in Upgrade runtime mode.
+
+![Maintenance page](images/maintenancePage.png)
+
+It is possible to disable the maintenance page as most upgrades can be done without the website having to restart or go down.
+
+To disable the maintenance page, add the following configuration in the `appSettings.json` file:
+
+```json
+{
+    "Umbraco": {
+        "CMS": {
+            "global": {
+                "ShowMaintenancePageWhenInUpgradeState": false
+            }
+        }
+    }
+}
+```
+
+To customize the Maintenance page, in the Umbraco folder create a new folder called: `UmbracoWebsite`.
+
+in this folder create a new file called `maintenance.cshtml`.
+
+Once the file has been created you can style it so it looks the way you want it to.
+
+{% hint style="warning" %}
+It is not recommended to let Umbraco be in Upgrade mode for longer periods.
+Most migrations can be executed while the website continues to work.
+Consider using this feature, if you know what you are doing.
+{% endhint %}
+
+## Are the error pages not working?
+
+If you set up everything correctly and the error pages are not showing correctly, make sure that you are not using
+
+- Custom [ContentFinders](../../umbraco-cms/reference/routing/request-pipeline/icontentfinder.md) in your solution,
+- Any packages that allow you to customize redirects, or
+- Rewrite rules in web.config that might interefere with custom error handling.
+
+{% hint style="warning" %}
+If your code or any packacges configures a custom `IContentLastChanceFinder`, the settings `appSettings.json` will not be used.
+{% endhint %}
+
+## Handling errors in ASP.NET Core
+
+For common approaches to handling errors in ASP.NET Core web apps, see the [Handle errors in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/error-handling?view=aspnetcore-6.0) article in the Microsoft Documentation.

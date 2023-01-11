@@ -8,8 +8,6 @@ layout: landing
 
 # Umbraco Documentation
 
-<figure><img src=".gitbook/assets/FREE (1).png" alt=""><figcaption><p><a href="https://webapp.spotme.com/login/umbraco/nyr2023">Sign up for the Umbraco New Year Reception 2023 livestream</a></p></figcaption></figure>
-
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Umbraco CMS</strong></td><td>Everything you need to know when building your Umbraco website.</td><td></td><td><a href="getting-started/images/flexible_Email_hero_780x405px.png">flexible_Email_hero_780x405px.png</a></td><td><a href="umbraco-cms/">umbraco-cms</a></td></tr><tr><td><strong>Umbraco Cloud</strong></td><td>Learn how to get started with your Umbraco Cloud project.</td><td></td><td><a href=".gitbook/assets/Umbraco Cloud Update - Email hero - White - 780x405px@2xt.jpg">Umbraco Cloud Update - Email hero - White - 780x405px@2xt.jpg</a></td><td><a href="umbraco-cloud/getting-started/">getting-started</a></td></tr><tr><td><strong>Umbraco Heartcore</strong></td><td>Learn how to get the most out of your headless Umbraco solution.</td><td></td><td><a href="getting-started/developing-websites-with-umbraco/images/Headless_Email_hero_780x405px.png">Headless_Email_hero_780x405px.png</a></td><td><a href="umbraco-heartcore/">umbraco-heartcore</a></td></tr></tbody></table>
 
 {% hint style="info" %}
