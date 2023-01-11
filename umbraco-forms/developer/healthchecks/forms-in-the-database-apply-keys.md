@@ -1,5 +1,5 @@
 ---
-meta.Title: "Apply keys and indexes for forms in the database"
+description: "Apply keys and indexes for forms in the database"
 ---
 
 # Apply keys and indexes for forms in the database

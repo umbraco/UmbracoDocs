@@ -1,5 +1,5 @@
 ---
-meta.Title: "Apply keys and indexes"
+description: "An SQL script that enable you to add keys and indexes to the core Umbraco Forms tables."
 ---
 
 # Apply keys and indexes

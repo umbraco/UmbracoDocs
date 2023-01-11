@@ -1,10 +1,10 @@
 ---
-meta.Title: Extending Umbraco Forms
+description: "Find different tutorials on how to extend Umbraco Forms to fit with your Umbraco website."
 ---
 
 # Extending
 
-Umbraco Forms functionality can be extended in various ways. In this section we focus on techniques available to a back-end/C# developer.
+Umbraco Forms functionality can be extended in different ways. In this section we focus on techniques available to a back-end/C# developer.
 
 For front-end extensions, specifically via theming, see the [Themes](../themes.md) section.
 

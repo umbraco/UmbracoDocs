@@ -1,5 +1,5 @@
 ---
-meta.Title: "Add a Magic String Format Function"
+description: "Learn how to use Magic Strings to replace placeholders within your Umbraco Forms elements."
 ---
 
 # Adding a Magic String Format Function

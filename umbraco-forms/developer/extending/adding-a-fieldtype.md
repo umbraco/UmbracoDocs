@@ -1,5 +1,5 @@
 ---
-meta.Title: Adding a field type to Umbraco Forms
+description: "A tutorial covering how to add a custom Field Type to your Umbraco Forms installation."
 ---
 
 # Adding A Field Type To Umbraco Forms

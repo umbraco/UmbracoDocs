@@ -1,5 +1,5 @@
 ---
-meta.Title: Adding a type to the provider model
+description: "A tutorial covering how to add a custom type to your Umbraco Forms Provider Model"
 ---
 
 # Adding A Type To The Provider Model
