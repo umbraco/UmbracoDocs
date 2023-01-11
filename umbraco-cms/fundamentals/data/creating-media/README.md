@@ -24,8 +24,8 @@ If you have upgraded from an older version than 8.14 then the new media types ar
 
 You can upload media in two different ways:
 
-* Through the Media section and
-* Through the Content section
+* [Through the Media section](#add-media-through-the-media-section) and
+* [Through the Content](#add-media-through-the-content-section) section
 
 ### Add media through the Media section
 
@@ -45,14 +45,14 @@ From the **Media** section in the Umbraco backoffice, you can add new media item
 
 ### Add media through the Content section
 
-New media items can be added to your site without interupting the content creating flow. This can be done following either of the two approaches outlined below.
+New media items can be added to your site without interrupting the content creation-flow. This can be done following either of the two approaches outlined below.
 
 * Drag and drop the image(s) from your file explorer directly into the Media Picker property on the Content page.
   * Images added this way is automatically added to the user's start node in the Media section of the Umbraco backoffice.
 
 ![Drag and drop images directly into the content](images/upload-images-from-content.gif)
   
-* Select the "+" icon to open the "Select media" dialog where you can add image(s) from your file explorer directly or by drag and drop.
+* Select the "+" icon to open the "Select media" dialog where you can add image(s) from your file explorer directly or using drag and drop.
 
 ![Add images from the "Select media" dialog](images/add-image-from-dialog.gif)
 
