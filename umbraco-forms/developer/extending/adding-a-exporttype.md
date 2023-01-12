@@ -16,7 +16,7 @@ You can implement the method `public override string ExportRecords(RecordExportF
 In the constructor of your provider, you will need a further two properties, `FileExtension` and `Icon`.
 {% endhint %}
 
-The FileExtension property is the file extension such as `zip`, `txt` or `csv` of the file you will be generating and serving from the file system as the export file.
+`FileExtension` is the extension such as `zip`, `txt` or `csv` of the file you will be generating and serving from the file system.
 
 In this example below we will create a single HTML file which takes all the submissions/entries to be displayed as a HTML report. We will do this in conjunction with a Razor partial view to help build up our HTML and thus merge it with the form submission data to generate a string of HTML.
 
