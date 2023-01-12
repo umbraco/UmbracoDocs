@@ -17,7 +17,7 @@ description: "Information on hosting Umbraco on IIS"
 You can use the dotnet CLI to compile and collate all files required for hosting
 
 ```none
-dotnet publish -o ../deployment-artefacts -f net5.0
+dotnet publish -o ../deployment-artefacts -f net7.0
 ```
 
 Alternatively, you can use the File Transfer Protocol (FTP) publishing in Visual Studio to compile and collate all the required files for the application to run.
