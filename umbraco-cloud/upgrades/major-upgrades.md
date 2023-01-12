@@ -204,15 +204,17 @@ Once the project runs locally without any errors, the next step is to deploy and
 <details>
 
 <summary>Upgrading from Umbraco 9 - Remove files from the development environment.</summary>
-
-* Remove the folders mentioned below on the **Development** environment using KUDU from the `repository` and `wwwroot` folders:
-
+    
 * `/wwwroot/umbraco`
 * `/umbraco/PartialViewMacros`
 * `/umbraco/UmbracoBackOffice`
 * `/umbraco/UmbracoInstall`
 * `/umbraco/UmbracoWebsite`
 * `/umbraco/config/lang`
+
+The files and folder above need to be removed on the **Development** environment through `KUDU` -> `Debug Console` -> `CMD` -> `Site` -> from both the `repository` and `wwwroot` folders.
+
+![image](https://user-images.githubusercontent.com/83591955/210218172-b32a6be9-9b2a-48c4-8ed7-676068f72946.png)
 
 </details>
 
@@ -221,13 +223,13 @@ Once the project runs locally without any errors, the next step is to deploy and
 
 We highly recommend that you go through everything in your Development environment. This can help you identify any potential errors after the upgrade and ensure that you are not deploying any issues onto your Live environment.
 
-## Step 6: Going live
+## Step 6: Deploying to Staging/Live
 
 <details>
 
-<summary>Upgrading from Umbraco 9 -  Remove files from live the environment.</summary>
+<summary>Upgrading from Umbraco 9 -  Remove files from staging/live the environment.</summary>
 
-Before deploying the upgrade to your Live environment, you will need to remove the folders you also removed from both your local instance and your Development environment.
+Before deploying the upgrade to your next environment, you will need to remove the folders you also removed from Kudu on your Development environment.
 
 The files are:
 
@@ -238,11 +240,13 @@ The files are:
 * `/umbraco/UmbracoWebsite`
 * `/umbraco/config/lang`
 
-They need to be removed through KUDU from both the `repository` and `wwwroot` folders.
+They need to be removed through  `KUDU` -> `Debug Console` -> `CMD` -> `Site` -> from both the `repository` and `wwwroot` folders.
+
+![image](https://user-images.githubusercontent.com/83591955/210218090-9b72fc05-cfe3-442f-8045-a90e5b8a9e89.png)
 
 </details>
 
-Once everything works as expected in the development environment, you can push the upgrade to the live environment.
+Once everything works as expected in the development/staging environment, you can push the upgrade to the live environment.
 
 * [Working locally with Umbraco Cloud](https://github.com/umbraco/UmbracoDocs/blob/11.x/umbraco-cloud/set-up/working-locally.md)
 * [KUDU on Umbraco Cloud](https://github.com/umbraco/UmbracoDocs/blob/11.x/umbraco-cloud/set-up/power-tools)
