@@ -241,6 +241,7 @@ The files are:
 * `/umbraco/config/lang`
 
 They need to be removed through  `KUDU` -> `Debug Console` -> `CMD` -> `Site` -> from both the `repository` and `wwwroot` folders.
+
 ![image](https://user-images.githubusercontent.com/83591955/210218090-9b72fc05-cfe3-442f-8045-a90e5b8a9e89.png)
 
 </details>
