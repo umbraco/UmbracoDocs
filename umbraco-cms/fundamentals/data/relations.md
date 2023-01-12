@@ -1,5 +1,5 @@
 ---
-description: "What are relations, how to create and manage them"
+description: "What are relations? How to create and manage them."
 ---
 
 # Relations

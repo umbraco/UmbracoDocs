@@ -1,5 +1,5 @@
 ---
-description: "Steps to how Umbraco Deploy can be set up on a new Umbraco website"
+description: "Steps on how Umbraco Deploy can be set up on a new Umbraco website"
 ---
 
 # New site

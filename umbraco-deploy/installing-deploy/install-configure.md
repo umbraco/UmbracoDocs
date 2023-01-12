@@ -1,5 +1,5 @@
 ---
-description: "Steps to how to install and configure Umbraco Deploy"
+description: "Steps on how to install and configure Umbraco Deploy"
 ---
 
 # Installing Umbraco Deploy

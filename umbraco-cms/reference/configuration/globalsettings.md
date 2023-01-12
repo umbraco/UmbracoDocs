@@ -1,5 +1,5 @@
 ---
-description: Information on the global settings section
+description: "Information on the global settings section"
 ---
 
 # Global Settings

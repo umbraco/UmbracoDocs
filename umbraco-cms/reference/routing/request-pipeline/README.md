@@ -1,5 +1,5 @@
 ---
-description: "What the Umbraco Request Pipeline is"
+description: "What is the Umbraco Request Pipeline?"
 ---
 
 # Routing in Umbraco

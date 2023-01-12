@@ -1,5 +1,5 @@
 ---
-description: "How to install a package, and remove a package from a solution"
+description: "How to install a package and remove a package from a solution"
 ---
 
 # Installing and Uninstalling Packages

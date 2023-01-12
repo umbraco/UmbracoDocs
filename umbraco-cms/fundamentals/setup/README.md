@@ -1,5 +1,5 @@
 ---
-description: "Information on the requirements to setup, install & upgrade Umbraco"
+description: "Information on the requirements to setup, install, and upgrade Umbraco"
 ---
 
 # Setup

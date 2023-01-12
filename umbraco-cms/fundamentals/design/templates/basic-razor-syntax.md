@@ -1,5 +1,5 @@
 ---
-description: "How to perform common logical tasks in Razor like if/else, foreach loops, switch statements and using the @ character to separate code and markup"
+description: "How to perform common logical tasks in Razor like if/else, foreach loops, switch statements, and using the @ character to separate code and markup"
 ---
 
 # Basic Razor Syntax
