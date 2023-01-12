@@ -1,5 +1,8 @@
 ---
-description: "In this article we show how you can upgrade your Umbraco 10 Cloud project locally to Umbraco 11 and then migrate the project to a new Umbraco 11 project."
+description: >-
+  In this article we show how you can upgrade your Umbraco 10 Cloud project
+  locally to Umbraco 11 and then migrate the project to a new Umbraco 11
+  project.
 ---
 
 # Migrate from Umbraco 10 to 11 on Umbraco Cloud
@@ -23,31 +26,22 @@ Make sure you know the [Breaking changes](../../umbraco-cms/fundamentals/setup/u
 * The .NET 7 Software Development Kit (SDK) installed locally.
 * A clean Umbraco 11 Cloud project - We will refer to this in the guide as the **Clean Umbraco 11 project**.
 
-## Step 1: Enable .NET 7
-
-1. Go to the Umbraco 10 project in the Umbraco Cloud portal.
-2. Navigate to **Settings** -> **Advanced**.
-3. Scroll down to the **Runtime Settings** section.
-4. **Enable the latest version of .NET** for each environment on your Cloud project.
-
-<figure><img src="../../.gitbook/assets/runtime-settings.png" alt=""><figcaption><p>Runtime settings</p></figcaption></figure>
-
-## Step 2: Clone down your environment
+## Step 1: Clone down your environment
 
 1. Clone down the **Live** environment.
 2. Build and run the [project locally](../set-up/working-locally.md#running-the-site-locally).
 3. Log in to the backoffice.
 4. Restore content from your Cloud environment.
 
-## Step 3: Upgrade the project locally using Visual Studio
+## Step 2: Upgrade the project locally using Visual Studio
 
 1. Open your project in Visual Studio - use the `csproj` file in the `/src/UmbracoProject` folder.
 2. Right-click your project solution in **Solution Explorer**.
-3. Select **Properties**.
+3.  Select **Properties**.
 
     <figure><img src="images/Solution-Explorer.png" alt=""><figcaption></figcaption></figure>
 4. Change the **.Net** **Target Framework** from .NET 6 to .NET 7
-5. It can be changed in the **General** section of the **Application** tab  in Visual Studio.
+5.  It can be changed in the **General** section of the **Application** tab in Visual Studio.
 
     ![Target Framework](images/Target-Framework.png)
 6. Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**.
@@ -72,7 +66,7 @@ Update the following packages to the latest stable Umbraco 11 version as well:
 * Umbraco.Cloud.Identity.Cms
 * Umbraco.Cloud.StorageProviders.AzureBlob
 
-## Step 4: Finishing the Upgrade
+## Step 3: Finishing the Upgrade
 
 1. Enable [Unattended Upgrades](../../umbraco-cms/reference/configuration/unattendedsettings.md#upgrade-unattended)
 2. Run the **project locally**
@@ -111,7 +105,7 @@ By replacing this file, content and media transfers will now point to the enviro
 
     git branch --set-upstream-to=origin/master
     ```
-3.  Push the schema and files from the  **Migration project** to the **clean Umbraco 11 project** using the following git command:
+3.  Push the schema and files from the **Migration project** to the **clean Umbraco 11 project** using the following git command:
 
     ```
     git push origin master -f
@@ -142,5 +136,3 @@ Do you need help or have any questions regarding this process, please reach out 
 * [Manage hostnames](../set-up/project-settings/manage-hostnames/)
 * [Team Members](../set-up/project-settings/team-members/)
 * [Certificates](../set-up/project-settings/manage-hostnames/security-certificates.md)
-
-
