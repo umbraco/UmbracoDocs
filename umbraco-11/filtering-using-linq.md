@@ -7,7 +7,7 @@
 .GroupBy(p => p.Category)
 .Take(3)
 .Skip(3)
-.InGroupsOf
+.InGroupsOf(10)
 .IsVisible()
 .Select(s => s.Supplier)
 .Distinct()
