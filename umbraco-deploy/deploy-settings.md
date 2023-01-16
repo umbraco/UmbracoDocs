@@ -191,13 +191,13 @@ With `TransferMemberGroupsAsContent` set to `true`, member groups can also be tr
 
 This setting is to be defined and set to `false` only if you are using an external membership provider for your members. You will not want to export Member Groups that would no longer be managed by Umbraco but by an external membership provider.
 
-Setting `exportMemberGroups` to false will no longer export Member Groups to .uda files on disk. By default if this setting is not present, its value will automatically be set to true as most sites use Umbraco's built-in membership provider and thus will want the membership groups exported.
+Setting `exportMemberGroups` to `false` will no longer export Member Groups to .uda files on disk. The default for this setting is `true`, as most sites use Umbraco's built-in membership provider and thus will want the membership groups exported.
 
 ## IgnoreBrokenDependenciesBehavior
 
 When restoring or transferring content, Umbraco Deploy will make checks to ensure that any dependent content, media or other items are either present in the target environment, or can be deployed from the source environment.
 
-For example, you may have a media picker on a content item, that references a media item that's been deleted or is in the recycle bin. In this situation the dependency won't be available in the target environment.
+For example, you may have a media picker on a content item, referencing media that has been deleted or is in the recycle bin. In this situation the dependency won't be available in the target environment.
 
 Deploy can halt at this point, so you get an error and the deployment won't complete until the issue is resolved. To fix, you would need to remove the reference to the deleted media item.
 
