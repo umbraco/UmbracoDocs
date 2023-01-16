@@ -28,7 +28,7 @@ To configure the default 28.6MB upload limit using IIS, we have to create a web.
 `maxAllowedContentLength` is specified in bytes, so this configuration would limit requests, and therefore uploaded files, to 2 megabytes
 
 {% hint style="info" %}
-If your site is hosted on Umbraco Cloud, this is the method you should use.
+If your site is hosted on Umbraco Cloud, this is the method you should use. Umbraco Cloud uses IIS for hosting, and IIS needs the setting to be in a web.config file for this to work.
 {% endhint %}
 
 # Using Kestrel
