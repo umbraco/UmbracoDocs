@@ -47,7 +47,8 @@ For illustration purposes, the following structure represents the full set of op
             "DiskOperationsTimeout": "0.0:05:00",
             "SourceDeployBatchSize": null,
             "UseDatabaseBackedTransferQueue": true,
-            "IgnoreBrokenDependenciesBehavior": "Restore",
+            "IgnoreBrokenDependencies": false,
+            "IgnoreBrokenDependenciesBehavior": "All",
             "AcceptInvalidCertificates": false,
             "TransferFormsAsContent": true,
             "TransferDictionaryAsContent": false,
@@ -193,25 +194,19 @@ This setting is to be defined and set to `false` only if you are using an extern
 
 Setting the `exportMemberGroups` to false will no longer export Member Groups to .uda files on disk. By default if this setting is not present, its value will automatically be set to true as most sites use Umbraco's built-in membership provider and thus will want the membership groups exported.
 
-## IgnoreBrokenDependenciesBehavior
+## IgnoreBrokenDependencies
 
 When restoring or transferring content, Umbraco Deploy will make checks to ensure that any dependent content, media or other items are either present in the target environment, or can be deployed from the source environment.
 
-For example, if you have a media picker on a content item, that references a media item that's been deleted or is in the recycle bin, the dependency won' be available in the target environment.
+For example, if you have a media picker on a content item, that references a media item that's been deleted or is in the recycle bin, you'll get an error and the deploy won't complete until the issue is resolved (by removing the reference to the deleted media item).
 
-Deploy can halt at this point, so you get an error and the deployment won't complete until the issue is resolved (by removing the reference to the deleted media item).
+You can configure deploy to ignore these issues and proceed with the transfer operation without warning, by setting the value of this option to `true`.
 
-Alternatively, you can configure Deploy to ignore these issues and proceed with the transfer operation without warning.
+## IgnoreBrokenDependenciesBehavior
 
-To configure the behavior you prefer, amend this value to either `None`, `Transfer`, `Restore` or `All`.
+For finer control of the above setting you can amend this value from the default of `All` to either `Transfer` or `Restore`.
 
 For example, using the following settings, you will have an installation that ignores broken dependencies when restoring from an upstream environment. It will however still prevent deployment and report any dependency issues when attempting a transfer to an upstream environment.
-
-```json
-    "IgnoreBrokenDependenciesBehavior": "Restore",
-```
-
-When configuring for Deploy 9, an additional `IgnoreBrokenDependencies` setting existed that took a value of `true` or `false`. To achieve the same result as the example above, the following configuration was required:
 
 ```json
     "IgnoreBrokenDependencies": true,
