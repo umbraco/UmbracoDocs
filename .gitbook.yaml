@@ -12,3 +12,4 @@ redirects:
     umbraco-cloud/set-up/dedicated-resources: umbraco-cloud/set-up/project-settings/dedicated-resources.md
     v/workflow: umbraco-workflow/README.md
     umbraco-cloud/upgrades/migrating-from-8-10: umbraco-cloud/upgrades/major-upgrades.md
+    umbraco-cms/reference/templating/mvc/child-actions: umbraco-cms/reference/templating/mvc/viewcomponents
