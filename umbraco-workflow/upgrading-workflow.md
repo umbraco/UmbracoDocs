@@ -28,11 +28,11 @@ To get the latest version of Umbraco Workflow, you can upgrade using either of t
 *   Select the latest version from the **Version** drop-down and click **Install**.
 
 
-    ![NuGet Package Manager](images/Manage-packages-v11.png)
+    ![NuGet Package Manager](images/Manage-packages-v10.png)
 *   Open the **.csproj** file to make sure the package reference is updated:
 
     ```xml
     <ItemGroup>
-      <PackageReference Include="Umbraco.Workflow" Version="11.x.x" />
+      <PackageReference Include="Umbraco.Workflow" Version="10.x.x" />
     </ItemGroup>
     ```

@@ -6,12 +6,6 @@ In this article, we will cover the steps required to install Umbraco Workflow on
 
 * [Microsoft Visual Studio](https://visualstudio.microsoft.com/)
 
-### Video Tutorial
-
-{% embed url="https://www.youtube.com/embed/OUD-PbWESAs?rel=0" %}
-Installing Umbraco Workflow
-{% endembed %}
-
 ## Umbraco Workflow Installation
 
 There are different ways to install Umbraco Workflow:
@@ -26,7 +20,7 @@ To install the Umbraco Workflow package (Umbraco.Workflow), follow these steps:
 1. Run the following command to add a package reference to your Umbraco project:
 
     ```
-    dotnet add package Umbraco.Workflow --version 11.0.0
+    dotnet add package Umbraco.Workflow --version 10.0.0
     ```
 
 2. Add `AddWorkflowEmailTemplateProvider()` in the `ConfigureServices` method in the `Startup.cs` file:
@@ -61,12 +55,12 @@ To install via Visual Studio, follow these steps:
 4. Select the appropriate version from the Version drop-down depending on the Umbraco version you are using.
 5. Click Install.
 
-    <figure><img src="images/VS_Installation.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/VS_Installation_v10.png" alt=""><figcaption></figcaption></figure>
 6. Once the package is installed, open the **.csproj** file to make sure the package reference is added:
 
     ```xml
     <ItemGroup>
-    <PackageReference Include="Umbraco.Workflow" Version="11.0.0" />
+    <PackageReference Include="Umbraco.Workflow" Version="10.0.0" />
     </ItemGroup>
     ```
 
@@ -92,7 +86,7 @@ Once the installation is completed, you will see the following in the Umbraco Ba
 
 ### A Workflow Dashboard
 
-![Workflow dashboard](images/WorkflowDashboard\_ContentSection.png)
+![Workflow dashboard](images/WorkflowDashboard_ContentSection.png)
 
 ### A Workflow section
 
