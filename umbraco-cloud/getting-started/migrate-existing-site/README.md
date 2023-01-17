@@ -1,4 +1,4 @@
-# Migrating an Existing Site to Umbraco Cloud
+# Migrating an Existing Site
 
 Sometimes you may already have a Umbraco site built that did not start with a clone of a Umbraco Cloud site. Or perhaps you have decided to move a site that's already live on Umbraco Cloud.
 
@@ -6,14 +6,14 @@ Migrating an existing site requires some specific steps and an understanding of 
 
 These are the steps you need to go through to complete the migration successfully:
 
-1. [Requirements](./#1-requirements)
-2. [Tools](./#2-tools)
-3. [Prepare your site](./#3-prepare-your-site)
-4. [Prepare your Cloud project](./#4-prepare-your-cloud-project)
-5. [Clone down the Cloud project](./#5-clone-down-the-cloud-project)
-6. [Move and Merge files](./#6-move-and-merge-files)
+1. [Requirements](./#1.-requirements)
+2. [Tools](./#2.-tools)
+3. [Prepare your site](./#3.-prepare-your-site)
+4. [Prepare your Cloud project](./#4.-prepare-your-cloud-project)
+5. [Clone down the Cloud project](./#5.-clone-down-the-cloud-project)
+6. [Move and Merge files](./#6.-move-and-merge-files)
 7. [Generate meta data](./#7-generate-meta-data)
-8. [Deploy to Umbraco Cloud](./#8-deploy-to-umbraco-cloud)
+8. [Deploy to Umbraco Cloud](./#8.-deploy-to-umbraco-cloud)
 
 ## Video tutorial
 
