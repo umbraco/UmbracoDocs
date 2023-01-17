@@ -29,6 +29,7 @@ To configure the default 28.6MB upload limit using IIS, we have to create a web.
 
 {% hint style="info" %}
 **Are you hosting your site on Umbraco Cloud?**
+
 Umbraco Cloud uses IIS for hosting. This means you need to add the setting in a `web.config` file for this to work on your Umbraco Cloud hosted sites.
 {% endhint %}
 
