@@ -17,7 +17,6 @@ To get the latest version of Umbraco Workflow, you can upgrade using either of t
 
 *   NuGet installs the latest version of the package when you use the `dotnet add package Umbraco.Workflow` command unless you specify a package version:
 
-
     `dotnet add package Umbraco.Workflow --version <VERSION>`
 * Run `dotnet restore` to install the package.
 
@@ -27,8 +26,7 @@ To get the latest version of Umbraco Workflow, you can upgrade using either of t
 * Select **Umbraco.Workflow**.
 *   Select the latest version from the **Version** drop-down and click **Install**.
 
-
-    ![NuGet Package Manager](images/Manage-packages-v10.png)
+    <figure><img src="../.gitbook/assets/Manage_packages-v10.png" alt=""><figcaption><p>NuGet Package Manager</p></figcaption></figure>
 *   Open the **.csproj** file to make sure the package reference is updated:
 
     ```xml

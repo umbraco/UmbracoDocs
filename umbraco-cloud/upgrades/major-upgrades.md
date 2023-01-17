@@ -1,11 +1,13 @@
 ---
-description: In this article, we show how you can upgrade your Umbraco Cloud project to the latest major version of Umbraco CMS.
+description: >-
+  In this article, we show how you can upgrade your Umbraco Cloud project to the
+  latest major version of Umbraco CMS.
 ---
 
 # Major Upgrades
 
-{% hint style="hint" %}
-#### Umbraco 11 release
+{% hint style="info" %}
+**Umbraco 11 release**
 
 We currently do **not recommend** upgrading your project directly to Umbraco CMS version 11 on Cloud.
 
@@ -17,17 +19,17 @@ Please reach out to [Umbraco Support](mailto:support@umbraco.com) if you have an
 {% endhint %}
 
 {% hint style="info" %}
-#### **Are you using any custom packages or code on your Umbraco Cloud project?**
+**Are you using any custom packages or code on your Umbraco Cloud project?**
 
-You will need to ensure the packages you use are available in the latest version of  Umbraco and that your custom code is valid with the .NET Framework.
+You will need to ensure the packages you use are available in the latest version of Umbraco and that your custom code is valid with the .NET Framework.
 
-#### **Breaking Changes**
+**Breaking Changes**
 
-Make sure you know the [Breaking changes](broken-reference) in the latest version of Umbraco CMS.
+Make sure you know the [Breaking changes](broken-reference/) in the latest version of Umbraco CMS.
 
 **Upgrading from Umbraco 9**
 
-If upgrading from Umbraco 9 to a later major version, follow the dropdowns named: _**"Upgrading from Umbraco 9"**_ in the steps of the guide_**.**_
+If upgrading from Umbraco 9 to a later major version, follow the dropdowns named: _**"Upgrading from Umbraco 9"**_ in the steps of the guide\_**.**\_
 
 These are extra steps needed when going from Umbraco 9 to the latest major.
 {% endhint %}
@@ -101,8 +103,7 @@ Update the following packages as well:
 {% hint style="info" %}
 Choose the package version corresponding to the CMS version that you are currently upgrading to.
 
-For example, if you are upgrading to "Umbraco.Cms 10.0.0" update the forms package to "Umbraco.Forms 10.0.0" as well. \
-
+For example, if you are upgrading to "Umbraco.Cms 10.0.0" update the forms package to "Umbraco.Forms 10.0.0" as well. \\
 
 Also, if you have more projects in your solution or other packages, make sure that these are also updated to support the latest .NET framework.
 {% endhint %}
@@ -179,7 +180,7 @@ Remove the following files and folders _manually_ from your local project:
 <summary>Upgrading from Umbraco 9 - Update global.json</summary>
 
 *   Update the `global.json` in the root repository folder to target the runtime Software Development Kit (SDK) for the latest version of [.NET 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0).\
-    &#x20;
+
 
     ```
        {
@@ -191,7 +192,7 @@ Remove the following files and folders _manually_ from your local project:
       }
     ```
 
-&#x20;If `global.json` does not exist in the root of your repository, you need to add it manually.
+If `global.json` does not exist in the root of your repository, you need to add it manually.
 
 Learn more about the `global.json` in the official [Microsoft docs.](https://learn.microsoft.com/en-us/dotnet/core/tools/global-json)
 
@@ -204,7 +205,7 @@ Once the project runs locally without any errors, the next step is to deploy and
 <details>
 
 <summary>Upgrading from Umbraco 9 - Remove files from the development environment.</summary>
-    
+
 * `/wwwroot/umbraco`
 * `/umbraco/PartialViewMacros`
 * `/umbraco/UmbracoBackOffice`
@@ -214,7 +215,7 @@ Once the project runs locally without any errors, the next step is to deploy and
 
 The files and folder above need to be removed on the **Development** environment through `KUDU` -> `Debug Console` -> `CMD` -> `Site` -> from both the `repository` and `wwwroot` folders.
 
-![image](https://user-images.githubusercontent.com/83591955/210218172-b32a6be9-9b2a-48c4-8ed7-676068f72946.png)
+<img src="https://user-images.githubusercontent.com/83591955/210218172-b32a6be9-9b2a-48c4-8ed7-676068f72946.png" alt="image" data-size="original">
 
 </details>
 
@@ -227,7 +228,7 @@ We highly recommend that you go through everything in your Development environme
 
 <details>
 
-<summary>Upgrading from Umbraco 9 -  Remove files from staging/live the environment.</summary>
+<summary>Upgrading from Umbraco 9 - Remove files from staging/live the environment.</summary>
 
 Before deploying the upgrade to your next environment, you will need to remove the folders you also removed from Kudu on your Development environment.
 
@@ -240,9 +241,9 @@ The files are:
 * `/umbraco/UmbracoWebsite`
 * `/umbraco/config/lang`
 
-They need to be removed through  `KUDU` -> `Debug Console` -> `CMD` -> `Site` -> from both the `repository` and `wwwroot` folders.
+They need to be removed through `KUDU` -> `Debug Console` -> `CMD` -> `Site` -> from both the `repository` and `wwwroot` folders.
 
-![image](https://user-images.githubusercontent.com/83591955/210218090-9b72fc05-cfe3-442f-8045-a90e5b8a9e89.png)
+<img src="https://user-images.githubusercontent.com/83591955/210218090-9b72fc05-cfe3-442f-8045-a90e5b8a9e89.png" alt="image" data-size="original">
 
 </details>
 
