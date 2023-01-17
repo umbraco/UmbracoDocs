@@ -82,6 +82,7 @@ Once the Umbraco project runs locally without any errors, the next step is to de
 
 {% hint style="warning" %}
 Make sure that your local project is Upgraded to Umbraco 11 and works as expected before continuing the process.
+Likewise, check that the clean Umbraco 11 project on Cloud also works, before you push your local changes.
 {% endhint %}
 
 1. Clone down the **clean Umbraco 11 project**.
