@@ -35,7 +35,7 @@ In multi-lingual sites, variant content can be submitted in one of these workflo
 * All variants for publishing in a single workflow process using the workflow applied to the default variant.
 * Each variant into a separate workflow.
 
-For example, the German version of your content can be approved by German speaker's group and the English version by the English speaker's group.
+For example, the German version of your content can be approved by German speaker's group. The English version by the English speaker's group.
 
 ### Approve, Reject, or Cancel pending workflow tasks
 

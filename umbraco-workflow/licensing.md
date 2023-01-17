@@ -63,5 +63,3 @@ To impersonate the full license on a local site, set `EnableTestLicense` to `tru
 {% hint style="info" %}
 The test license is restricted to sites running in a development environment with a debugger attached. Hit F5 in Visual Studio, in Debug mode to enable the test license.
 {% endhint %}
-
-##

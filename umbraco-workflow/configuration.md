@@ -6,7 +6,7 @@ With Umbraco Workflow, it is possible to customize the functionality with differ
 
 All configuration for Umbraco Workflow is held in the `appSettings.json` file found at the root of your Umbraco website. If the configuration has been customized to use another source, then the same keys and values discussed in this article can be applied there.
 
-The convention for Umbraco configuration is to have package based options stored as a child structure below the Umbraco element and as a sibling of CMS. Workflow configuration follows this pattern, i.e.:
+The convention for Umbraco configuration is to have package based options stored as a child structure. The child structure is added below the Umbraco element and as a sibling of the CMS. Workflow configuration follows this pattern, i.e.:
 
 ```json
 {
@@ -212,7 +212,7 @@ When true, Workflow will send email notifications to approval groups, with a dig
 
 When true, publishing a node is treated as a review, and will generate a new review date. When false, content must be explicitly reviewed via the review banner rendered at the top of the editor.
 
-For example: To set the site URL, hide it in the backoffice, and set the content review period but keep the property readonly, the configuration would look like this:
+For example: To set the site URL, hide it in the backoffice, and set the content review period but keep the property readonly. The configuration would look like this:
 
 ```json
 {
@@ -238,5 +238,5 @@ For example: To set the site URL, hide it in the backoffice, and set the content
 Your Integrated Development Environment (IDE) will provide intellisense for the available settings but does not provide the valid value types. Settings are validated on startup and Umbraco will throw an exception if a known setting is provided with an invalid value.
 
 {% hint style="info" %}
-It is possible to include settings outside of those referenced by Workflow, which can be useful for providing values for use in extensions and customisations. These settings are not validated on startup, so can have any value.
+It is possible to include settings outside of those referenced by Workflow. These can be useful for providing values for use in extensions and customizations. These settings are not validated on startup so can have any value.
 {% endhint %}
