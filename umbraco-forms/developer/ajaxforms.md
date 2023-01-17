@@ -333,15 +333,15 @@ It also requires a `Content-Type` header of `application/json` and accepts a bod
 
 ```json
 {
-  "values": {
-      "name": "Fred",
-      "email": "fred@test.com",
-      "comment": "Test",
-      "country": "it",
-      "favouriteColours": ["red", "green"],
-      "dataConsent": "on"
-  },
-  "contentId": "ca4249ed-2b23-4337-b522-63cabe5587d1"
+    "values": {
+        "name": "Fred",
+        "email": "fred@test.com",
+        "comment": "Test",
+        "country": "it",
+        "favouriteColours": ["red", "green"],
+        "dataConsent": "on"
+    },
+    "contentId": "ca4249ed-2b23-4337-b522-63cabe5587d1"
 }
 ```
 
@@ -365,6 +365,45 @@ In the case of a validation error, a 422 "Unprocessable Entity" status code will
 ```
 
 A successful response will return a 202 "Accepted" status code.
+
+#### File Uploads
+
+The file upload field type is supported via the API for the rendering and submission of forms.
+
+When retrieving a form definition, some additional detail is provided for fields of this type to allow for the appropriate rendering of the form interface:
+
+```json
+    ...
+    "fields": [
+        {
+            "alias": "uploadAPicture",
+            ...
+            "fileUploadOptions": {
+                "allowAllUploadExtensions": false,
+                "allowedUploadExtensions": [
+                    "png",
+                    "jpg",
+                    "gif"
+                ],
+                "allowMultipleFileUploads": false
+            },
+            ...
+```
+
+When submitting a form, the value should be a JSON structure that provides a collection. Each item in the collection should contain the file name and the file contents as a base64 encoded data URL.
+
+```json
+{
+    "values": {
+        "uploadAPicture": [
+            {
+                "fileName": "mypic.jpg",
+                "fileContents": "data:image/png;base64,iVBORw..."
+            }
+        ]
+    },
+}
+```
 
 ## Securing the API
 
@@ -416,3 +455,5 @@ With this in place any request to the Forms API will be rejected unless the conf
 ## Rendering and Submitting forms with JavaScript
 
 For an illustrative example showing how a form can be rendered, validated and submitted using the API and vanilla JavaScript, please [see this gist](https://gist.github.com/AndyButland/9371175d6acf24a5307b053398f08448).
+
+An example demonstrating how to handle a file upload is included.
