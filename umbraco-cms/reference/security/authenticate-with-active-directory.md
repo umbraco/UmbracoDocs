@@ -21,6 +21,7 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
 
 1. Create a class called `BackofficeAuthenticationExtensions.cs` to configure the external login.
 
+    {% code lineNumbers="true" %}
     ```csharp
     using Microsoft.AspNetCore.Authentication.MicrosoftAccount;
     using Microsoft.Extensions.DependencyInjection;
@@ -29,7 +30,7 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
     {
         public static class BackofficeAuthenticationExtensions
         {
-            public static IUmbracoBuilder ConfigureAuthentication(this IUmbracoBuilder builder)
+            pulic static IUmbracoBuilder ConfigureAuthentication(this IUmbracoBuilder builder)
             {
                 builder.AddBackOfficeExternalLogins(logins =>
                 {
@@ -59,6 +60,7 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
         }
     }
     ```
+    {% endcode %}
 
     {% hint style="info" %}
     Ensure to replace **{your\_client\_id}** and **{your\_client\_secret}** in the code with the values from the Azure AD tenant. If Azure AD is configured to use accounts in the organizational directory only (single tenant), you also have to specify the Token and AuthorizationEndpoint.
@@ -81,6 +83,21 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
 3. Build and run the website. You can now login with your Azure AD credentials.
 
     ![AD Login Screen](images/AD\_Login.png)
+
+{% hint style="info" %}
+In some cases where Azure B2C does not provide an email for the user, it can be necessary to add additional code.
+
+Add the following snippet within the `backOfficeAuthenticationBuilder.SchemeForBackOffice` between lines 31 and 32 in the code sample in step one:
+
+```csharp
+ // Example on how to get a different field from the user profile
+options.UserInformationEndpoint = "https://graph.microsoft.com/v1.0/me?$select=otherMails,displayName,givenName,surname,id";
+options.ClaimActions.MapCustomJson(ClaimTypes.Email, x =>
+{
+    return x.GetProperty("otherMails").EnumerateArray().First().ToString();
+});
+```
+{% endhint %}
 
 ## Azure AD Authentication for Members
 
