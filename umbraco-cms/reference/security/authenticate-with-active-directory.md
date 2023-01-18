@@ -63,7 +63,7 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
     {% endcode %}
 
     {% hint style="info" %}
-    Ensure to replace **{your\_client\_id}** and **{your\_client\_secret}** in the code with the values from the Azure AD tenant. If Azure AD is configured to use accounts in the organizational directory only (single tenant), you also have to specify the Token and AuthorizationEndpoint.
+    Ensure to replace **{your_client_id}** and **{your_client_secret}** in the code with the values from the Azure AD tenant. If Azure AD is configured to use accounts in the organizational directory only (single tenant), you also have to specify the Token and AuthorizationEndpoint.
     {% endhint %}
 2. Update `ConfigureServices` method in the `Startup.cs` file:
 
@@ -81,7 +81,6 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
     }
     ```
     {% endcode %}
-
 3. Build and run the website. You can now login with your Azure AD credentials.
 
     ![AD Login Screen](images/AD\_Login.png)
@@ -89,7 +88,7 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
 {% hint style="info" %}
 In some cases where Azure B2C does not provide an email for the user, it can be necessary to add additional code.
 
-Add the following snippet within the `backOfficeAuthenticationBuilder.SchemeForBackOffice` between lines 31 and 32 in the code sample in step one:
+Add the following snippet within the `backOfficeAuthenticationBuilder.SchemeForBackOffice` between lines 29 and 30 in the code sample in step one:
 
 ```csharp
  // Example on how to get a different field from the user profile
@@ -144,11 +143,9 @@ options.ClaimActions.MapCustomJson(ClaimTypes.Email, x =>
     }
     ```
     {% endcode %}
-
-{% hint style="info" %}
-Ensure to replace **{your_client_id}** and **{your_client_secret}** in the code with the values from the Azure AD tenant.
-{% endhint %}
-
+    {% hint style="info" %}
+    Ensure to replace **{your_client_id}** and **{your_client_secret}** in the code with the values from the Azure AD tenant.
+    {% endhint %}
 1. To enable a member to link their account to an external login provider such as Azure AD in the Umbraco Backoffice, you have to implement a custom named configuration `MemberExternalLoginProviderOptions` for Members. Add the following code in the `AzureB2CMembersExternalLoginProviderOptions.cs` file:
 
     {% code title="AzureB2CMembersExternalLoginProviderOptions.cs" lineNumbers="true" %}
@@ -217,7 +214,6 @@ Ensure to replace **{your_client_id}** and **{your_client_secret}** in the code 
     }
     ```
     {% endcode %}
-
 2. Next, update `ConfigureServices` method in the `Startup.cs` file:
 
     {% code title="Startup.cs" lineNumbers="true" %}
@@ -236,7 +232,6 @@ Ensure to replace **{your_client_id}** and **{your_client_secret}** in the code 
     }
     ```
     {% endcode %}
-
 3. Build and run the website. Your members can now login with their Azure AD credentials.
 
     ![AD Login Screen](images/AD\_Login\_Members.png)
