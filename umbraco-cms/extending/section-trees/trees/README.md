@@ -382,8 +382,7 @@ public class TreeNotificationHandler : INotificationHandler<MenuRenderingNotific
 
         // for all content tree nodes
         if (notification.TreeAlias.Equals("content") &&
-            _backOfficeSecurityAccessor.BackOfficeSecurity.CurrentUser.Groups.Any(x =>
-                x.Alias.InvariantEquals("admin")))
+            _backOfficeSecurityAccessor.BackOfficeSecurity.CurrentUser.IsAdmin())
         {
             // Creates a menu action that will open /umbraco/currentSection/itemAlias.html
             var menuItem = new Umbraco.Cms.Core.Models.Trees.MenuItem("itemAlias", "Item name");
