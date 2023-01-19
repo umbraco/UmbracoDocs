@@ -100,7 +100,7 @@ By adding a **Media Picker** property to a Document Type the editor will have th
 
 ## Creating a Media Type
 
-You can create your own Media Types to add tabs, and properties, and control the structure of the Media tree as you would with Document Types. This means you can store information that is specific to the media on the item itself.
+You can create custom Media Types and control the structure of the Media tree as you would with Document Types. This means you can store information that is specific to the media on the item itself.
 
 A Media Type is created in the **Settings** section using the Media Type editor.
 
