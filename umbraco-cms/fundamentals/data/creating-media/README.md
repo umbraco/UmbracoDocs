@@ -118,11 +118,12 @@ You will now see the Media Type editor. It is similar to the editor used for cre
 Having different folders for different Media Types makes it possible to restrict where media items can be created and added. Only allowing PDF uploads in a certain folder and employee images in another makes it easier to keep the Media section organized.
 {% endhint %}
 
-### Adding tabs/groups
+### Adding groups
 
-Before we start adding properties to the Media Type we need to add a tab/group to put these in. To add a tab/group, Click on **Add tab** or **Add group** and call it _Image_.
+Before we start adding properties to the Media Type we need to add a group to put these in.
 
-For more information on adding a tab, see [Using tabs](../adding-tabs.md) article.
+1. Click on **Add group**.
+2. Call the group _Image_.
 
 ### Adding properties
 
@@ -134,39 +135,42 @@ We need to add the same properties as on the default **Image** Media Type. These
 * `umbracoBytes`
 * `umbracoExtension`
 
-On the Image group, click **Add property**. Name it _Upload image_ and change the alias to _umbracoFile_.
-
-Click **Add editor**, search for _cropper_ and choose **Image cropper** under **Create new**. This will create a new Image Cropper Data Type. The name of the new Data Type type is a bit long so rename it to _Employee Image Cropper_.
-
-Add two new crops called _Thumbnail_ (200px x 350px) and _wideThumbnail_ (350px x 200px).
+1. Click **Add property**.
+2. Name it _Upload image_.
+3. Change the alias to _umbracoFile_.
+4. Click **Add editor**.
+5. Search for _cropper_ and choose **Image cropper** under **Create new**.
+6. Rename the editor _Employee Image Cropper_.
+7. Add two new crops called _Thumbnail_ (200px x 350px) and _wideThumbnail_ (350px x 200px).
 
 ![Defining crops](images/new-data-type\_new.png)
 
-Name the remaining four properties _Width_, _Height_, _Size_ and _Type_ and give them the aliases as mentioned in the image below. They should all use the **Label** editor. As mentioned before these properties will automatically be populated once an image has been uploaded.
+Name the remaining four properties _Width_, _Height_, _Size_ and _Type_ and give them the aliases as mentioned above. They should all use the **Label** editor.
+
+As mentioned before these properties will automatically be populated once an image has been uploaded.
 
 ![Adding properties](images/finished-new-media-type\_new.png)
 
 ## Defining a Media Type folder
 
-Next up, we'll create a folder to hold the employee images. We could use the existing **Folder** Media Type but that would mean editors can upload employee images to any folder of that type. If we create a folder specifically for employee images there is only one place to put them thus making it easier to have an organized Media section.
+Next up, we will create a folder to hold the employee images. We could use the existing **Folder** Media Type but that would mean editors can upload employee images to any folder of that type. If we create a folder specifically for employee images there is only one place to put them.
 
-### Structure and inheritance
-
-Go back to the **Settings** and create a new Media Type and name it _Employee Images_. Select the folder icon by clicking the icon to the left of the name.
-
-We want the same basic functionality (same properties and tabs) as the **Folder** Media type and that can be achieved by clicking **Compositions** and selecting the **Folder** Media Type. Now, Employee images will inherit tabs and properties from the Folder Media Type.
-
-![Compositions](images/folder-composition\_new.png)
-
-Switch to a list view by clicking the **List view** tab and toggle the **Enable list view** option.
+1. Go back to the **Settings** section and create a new Media Type.
+2. Name it _Employee Images_.
+3. Select the folder icon by clicking the icon to the left of the name.
+4. Navigate to the **List view** tab.
+5. Toggle the **Enable list view** option.
 
 ![Enable List View](images/toggle-listview.png)
 
-We need to allow the Employee Image Media Type in our new folder. Go to the **Permissions** tab. Click **Add child** under **Employee Images** and select **Employee Image**.
+The new folder should be allowed to be created in the root of the Media tree. We also need to allow only the Employee Image Media Type in our new folder. Both of these configurations can be set on the **Permissions** tab.
+
+1. Go to the **Permissions** tab.
+2. Toggle the **Allow as root**.
+3. Click **Add child** under **Employee Images**.
+4. Select **Employee Image**.
 
 ![Permissions](images/select-child-nodes.png)
-
-Finally, define where the folder can be created. We want to create the folder in the root of the Media section so select the **Allow at root** option at the top of the Permission tab.
 
 ### Creating the folder and media items
 
