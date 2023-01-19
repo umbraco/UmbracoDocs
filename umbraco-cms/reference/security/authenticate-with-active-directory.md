@@ -90,7 +90,7 @@ public void ConfigureServices(IServiceCollection services)
 {% hint style="info" %}
 In some cases where Azure B2C does not provide an email for the user, it can be necessary to add additional code.
 
-Add the following snippet within the `backOfficeAuthenticationBuilder.SchemeForBackOffice` between lines 29 and 30 in the code sample in step one:
+Add the following snippet within the options of `AddMicrosoftAccount` between lines 29 and 30 in the code sample in step one:
 
 ```csharp
  // Example on how to get a different field from the user profile
