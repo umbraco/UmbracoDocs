@@ -174,21 +174,24 @@ The new folder should be allowed to be created in the root of the Media tree. We
 
 ### Creating the folder and media items
 
-Go to the **Media** section and click the menu icon next to Media and select the **Employee images** folder. Name it "Employee Images" and click **Save**.
+1. Go to the **Media** section.
+2. Select **...** next to Media and select the **Employee images** folder. 3. Name it "Employee Images" and select **Save**.
 
 There are four options to add a new media items to the folder, as you can see here:
 
 ![Uploading Media](images/four-ways-of-uploading.png)
 
 {% hint style="info" %}
-Remember you can uncheck the **Allow at root** option on the **Employee images** Media Type to prevent editors from creating multiple folders of this type. This will not affect created folders, only disable the creation of new ones.
+Uncheck the **Allow at root** option on the **Employee Images** Media Type to prevent the creation of multiple folders of this type. This will only disable the creation of new ones and not affect existing folders.
 {% endhint %}
 
 ### Cropping the images
 
-![Cropping images](images/crops-and-focal-point.png)
+If you select an image that has been uploaded to the folder you will see the full image and the two defined crops.
 
-If you select an image that has been uploaded to this folder you'll see the full image and the two crops we have defined below. Moving the pink focal point on the on the image will update the crops to focus accordingly. You can also edit the individual crops by selecting them and moving the image or adjust the slider to zoom.
+Moving the focal point circle on the image will update the crops to focus accordingly. You can also edit the individual crops by selecting them and moving the image or adjust the slider to zoom.
+
+![Cropping images](images/crops-and-focal-point-geo.png)
 
 ## More information
 
