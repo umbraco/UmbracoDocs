@@ -20,7 +20,7 @@ In the Forms section of the Umbraco backoffice you will find the Forms Builder, 
 
 The purpose of this article is not to describe the Forms functionality itself, but to show how to use the APIs which are available for Umbraco Heartcore projects.
 
-If you want to learn the basics of 'Creating a form' before going further we recommend that you start with the[ Umbraco Forms documentation section](../../umbraco-forms/).
+If you want to learn the basics of 'Creating a form' before going further we recommend that you start with the[ Umbraco Forms documentation section](../../umbraco-forms/overview.md).
 
 Before you continue with the rest of this article we recommend that you have at least one Form available that can be used for examples below. Here we will use a form with a Name field, an Email field and the Data Consent field, which is standard for all new Forms.
 
