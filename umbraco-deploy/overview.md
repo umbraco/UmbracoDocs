@@ -1,5 +1,5 @@
 ---
-description: "Documentation on how to work with Umbraco Deploy."
+description: Documentation on how to work with Umbraco Deploy.
 ---
 
 # What is Umbraco Deploy?
@@ -14,19 +14,19 @@ In the Umbraco Deploy documentation can read all about how to set up and work wi
 
 You can find articles about how to set up Umbraco Deploy on a new or an existing website, and article about the deployment workflow.
 
-## [Getting Started](README.md)
+## [Getting Started](overview.md)
 
 Learn what Umbraco Deploy is, how it works and how to get started using Umbraco Deploy.
 
-## [Install Umbraco Deploy](installing-deploy/README.md)
+## [Install Umbraco Deploy](installing-deploy/)
 
 Find instructions on how to install Umbraco Deploy and examples of how to set it up using a CI/CD build server.
 
-## [Deployments](deployment-workflow/README.md)
+## [Deployments](deployment-workflow/)
 
 The deployment process explained for Umbraco Deploy.
 
-## [Upgrading Umbraco Deploy](upgrades/README.md)
+## [Upgrading Umbraco Deploy](upgrades/)
 
 Learn how to upgrade Umbraco Deploy on your projects.
 

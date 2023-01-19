@@ -1,13 +1,10 @@
----
----
-
 # Umbraco Forms on Cloud
 
 In this article, you can learn about how Umbraco Forms is handled on Umbraco Cloud and read about the workflow and best practices.
 
 Umbraco Forms is a package that is included with your Umbraco Cloud project. It gives you a nice integrated UI, where you can create Forms for your website. The package is built specifically for Umbraco and is maintained by Umbraco HQ.
 
-Read more about the product in the [Umbraco Forms](/umbraco-forms/README.md) section.
+Read more about the product in the [Umbraco Forms](../../umbraco-forms/overview.md) section.
 
 ## How Forms are handled on Umbraco Cloud
 
@@ -15,7 +12,7 @@ Forms are handled like content and media. This means that you can transfer your 
 
 Definitions for each specific Form, its fields, workflows, and prevalues are all stored in the Umbraco database.
 
-Entries submitted are not transferred to the next environment, as they are *environment-specific*. If you need to move entries from one environment to another, you need to run an export/import script on the databases.
+Entries submitted are not transferred to the next environment, as they are _environment-specific_. If you need to move entries from one environment to another, you need to run an export/import script on the databases.
 
 ## Recommended workflow
 
@@ -27,15 +24,15 @@ You can work with Forms in an environment of your choice. When you need to test 
 For more information on how to handle content transfer/restores on Umbraco Cloud, check out the following articles:
 
 * [Transfer content, media and forms](content-transfer.md)
-* [Restoring content](restoring-content/README.md)
+* [Restoring content](restoring-content/)
 
 ## Upgrades
 
-Umbraco Forms is part of the [auto-upgrades on Umbraco Cloud](../upgrades/README.md). Whenever a new patch is ready for release, we will automatically apply it to your Cloud project. There will be a notification in the Umbraco Cloud Portal at least 5 days before we roll out new versions.
+Umbraco Forms is part of the [auto-upgrades on Umbraco Cloud](../upgrades/). Whenever a new patch is ready for release, we will automatically apply it to your Cloud project. There will be a notification in the Umbraco Cloud Portal at least 5 days before we roll out new versions.
 
-To avoid having the auto-upgrades overwrite any of your custom settings, we strongly encourage that you use [config transforms](../set-up/config-transforms.md) when you need custom configuration and [Themes](/umbraco-forms/developer/themes.md) when you need to customize your forms.
+To avoid having the auto-upgrades overwrite any of your custom settings, we strongly encourage that you use [config transforms](../set-up/config-transforms.md) when you need custom configuration and [Themes](../../umbraco-forms/developer/themes.md) when you need to customize your forms.
 
-Whenever a new minor version of Umbraco Forms is ready, eg. 8.x or 7.x, you will get the option to apply the upgrade to your project. When your project is eligible to receive the new version, you will see an "*Upgrade available!*" label on your Development environment.
+Whenever a new minor version of Umbraco Forms is ready, eg. 8.x or 7.x, you will get the option to apply the upgrade to your project. When your project is eligible to receive the new version, you will see an "_Upgrade available!_" label on your Development environment.
 
 ### Version-specific changes
 
@@ -60,12 +57,11 @@ To switch to persisting all definitions for Umbraco Forms data in the Umbraco da
 3. Clone down your Development environment.
 4. Restore content and Forms to the local clone.
 5. Open the configuration file `App_Plugins\UmbracoForms\UmbracoForms.config` from your local clone.
-6. Add the following key in the `<settings>` section and make sure the value is set to `True`:
+6.  Add the following key in the `<settings>` section and make sure the value is set to `True`:
 
-   ```xml
-   <setting key="StoreUmbracoFormsInDb" value="True" />
-   ```
-
+    ```xml
+    <setting key="StoreUmbracoFormsInDb" value="True" />
+    ```
 7. Save the file.
 8. Spin up your local clone and verify that everything works as expected.
 
@@ -81,22 +77,21 @@ Follow the steps outlined below **for each environment** for the migration to ru
 6. From the Umbraco Backoffice, **Queue and transfer** the Forms to the environment.
 7. Repeat steps 1-5 for each of your Cloud environments.
 
-##### Did you create your project before June 2018?
+**Did you create your project before June 2018?**
 
 Then your Umbraco Forms data might still be handled as metadata.
 
 You will need to follow the steps below to persist Umbraco Forms data in the Umbraco database.
 
 1. Find and open `Config\UmbracoDeploy.settings.config` on your local machine.
-2. Update the `transferFormsAsContent` value to `true`:
+2.  Update the `transferFormsAsContent` value to `true`:
 
-   ```xml
-   <?xml version="1.0" encoding="utf-8"?>
-   <settings xmlns="urn:umbracodeploy-settings">
-      <forms transferFormsAsContent="true" />
-   </settings>
-   ```
-
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <settings xmlns="urn:umbracodeploy-settings">
+       <forms transferFormsAsContent="true" />
+    </settings>
+    ```
 3. Remove all existing `data\revision\forms-form__*.uda` files, so it's not possible to accidentally revert to this state (removing `UDA` files won't remove the actual form on deploy).
 4. Push the change back to the Cloud environment.
    * If you have more than 1 Cloud environment, make sure to deploy the change through to all of them.

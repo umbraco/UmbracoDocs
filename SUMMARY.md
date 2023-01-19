@@ -16,7 +16,7 @@
 
 ## Umbraco CMS
 
-* [What is Umbraco CMS?](umbraco-cms/README.md)
+* [What is Umbraco CMS?](umbraco-cms/overview.md)
 * [Fundamentals](umbraco-cms/fundamentals/README.md)
   * [Setup](umbraco-cms/fundamentals/setup/README.md)
     * [Requirements](umbraco-cms/fundamentals/setup/requirements.md)
@@ -567,8 +567,8 @@
 
 ## Umbraco Heartcore
 
-* [What is Umbraco Heartcore?](umbraco-heartcore/README.md)
-  * [Compare with Umbraco CMS](umbraco-heartcore/umbraco-heartcore/compare-with-umbraco-cms.md)
+* [What is Umbraco Heartcore?](umbraco-heartcore/overview/README.md)
+  * [Compare with Umbraco CMS](umbraco-heartcore/overview/compare-with-umbraco-cms.md)
 * [Getting Started](umbraco-heartcore/getting-started/README.md)
   * [API Browser](umbraco-heartcore/getting-started/api-browser.md)
   * [Backoffice Users and API Keys](umbraco-heartcore/getting-started/backoffice-users-and-api-keys.md)
@@ -619,7 +619,7 @@
 
 ## Umbraco Forms
 
-* [What is Umbraco Forms?](umbraco-forms/README.md)
+* [What is Umbraco Forms?](umbraco-forms/overview.md)
 * [Installation And Upgrades](umbraco-forms/installation/README.md)
   * [Installing Umbraco Forms](umbraco-forms/installation/install.md)
   * [Manually Upgrading Umbraco Forms](umbraco-forms/installation/manualupgrade.md)
@@ -672,7 +672,7 @@
 
 ## Umbraco Deploy
 
-* [What is Umbraco Deploy?](umbraco-deploy/README.md)
+* [What is Umbraco Deploy?](umbraco-deploy/overview.md)
 * [Getting started](umbraco-deploy/get-started-with-deploy.md)
 * [Installing](umbraco-deploy/installing-deploy/README.md)
   * [Installing Umbraco Deploy](umbraco-deploy/installing-deploy/install-configure.md)
@@ -696,7 +696,7 @@
 
 ## Workflow
 
-* [What is Umbraco Workflow?](workflow/umbraco-workflow.md)
+* [What is Umbraco Workflow?](workflow/overview.md)
 * [Installation](workflow/installing-workflow.md)
 * [Licensing](workflow/licensing.md)
 * [Upgrading](workflow/upgrading-workflow/README.md)
@@ -719,7 +719,7 @@
 
 ## Contribute
 
-* [Contribute to Documentation](contribute/README.md)
+* [Contribute to Documentation](contribute/getting-started.md)
 * [Submit a Pull Request](contribute/pull-request.md)
 * [Submit Feedback](contribute/issues.md)
 * [Code Blocks](contribute/code-samples.md)

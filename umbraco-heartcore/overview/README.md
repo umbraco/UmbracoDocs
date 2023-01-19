@@ -18,27 +18,27 @@ In this section you will find documentation on how to work with Umbraco Heartcor
 
 It includes REST API documentation, the basics on how to get started and how to work with the available Client Libraries. Please note that Umbraco Heartcore is a specific type of project only available via Umbraco Cloud.
 
-## [API Documentation for the Umbraco Heartcore REST API endpoints](api-documentation/)
+## [API Documentation for the Umbraco Heartcore REST API endpoints](../api-documentation/)
 
 Reference documentation for the APIs available, as well as details about common HTTP headers, versioning, REST Standard and how to work with authentication and authorization.
 
-* [Authentication and Authorization](api-documentation/#authentication-and-authorization)
-* [Content Delivery API](api-documentation/content-delivery/)
-* [Content Management API](api-documentation/content-management/)
-* [GraphQL API](api-documentation/graphql/)
+* [Authentication and Authorization](../api-documentation/#authentication-and-authorization)
+* [Content Delivery API](../api-documentation/content-delivery/)
+* [Content Management API](../api-documentation/content-management/)
+* [GraphQL API](../api-documentation/graphql/)
 
 ## GraphQL
 
 Reference documentation and tutorials for the GraphQL API.
 
-* [GraphQL API Documentation](api-documentation/graphql/)
-* [GraphQL Filter and Ordering Documentation](api-documentation/graphql/filtering-and-ordering.md)
+* [GraphQL API Documentation](../api-documentation/graphql/)
+* [GraphQL Filter and Ordering Documentation](../api-documentation/graphql/filtering-and-ordering.md)
 
 ### Tutorials
 
-* [Querying With GraphQL](tutorials/querying-with-graphql.md) - Learn how to query Umbraco Heartcore with GraphQL
+* [Querying With GraphQL](../tutorials/querying-with-graphql.md) - Learn how to query Umbraco Heartcore with GraphQL
 
-## [Getting Started with Umbraco Heartcore](getting-started/)
+## [Getting Started with Umbraco Heartcore](../getting-started/)
 
 In order to get started with Umbraco Heartcore you will need to create a new project via the Umbraco Cloud Portal and familiarize yourself with the features available. This includes the Headless section in the backoffice and creating API Keys for authentication and authorization purposes.
 
@@ -50,11 +50,11 @@ In this article you will learn how to create your first Umbraco Heartcore projec
 How to create a Heartcore Trial
 {% endembed %}
 
-## [Client libraries](client-libraries/)
+## [Client libraries](../client-libraries/)
 
 In order to test your Umbraco Heartcore project against the REST API endpoints, you can use one of the samples we provide with the client libraries for .NET Core and Node JS.
 
-## [Versions and updates](versions-and-updates.md)
+## [Versions and updates](../versions-and-updates.md)
 
 Learn more about how we handle versioning and updates of Heartcore projects.
 

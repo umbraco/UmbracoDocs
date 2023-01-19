@@ -1,8 +1,10 @@
 ---
-description: "This section will guide you on where to find the answers for any questions you may have."
+description: >-
+  This section will guide you on where to find the answers for any questions you
+  may have.
 ---
 
-# Where can I get help? 
+# Where can I get help?
 
 If you haven't been able to find a topic that suits your needs, there are many ways for you to find help.
 
@@ -32,7 +34,7 @@ You can talk to developers across the globe via the Umbraco Forum, report an iss
 
 [Found an issue with the Umbraco Documentation? Report it on our Documentation Issue Tracker](https://github.com/umbraco/UmbracoDocs/issues)
 
-[Find out how to suggest an improvement to the Umbraco Documentation](contribute/)
+[Find out how to suggest an improvement to the Umbraco Documentation](contribute/getting-started.md)
 
 ## Community Resources
 
