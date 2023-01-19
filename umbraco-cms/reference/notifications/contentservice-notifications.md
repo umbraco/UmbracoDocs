@@ -60,7 +60,7 @@ namespace Umbraco.Docs.Samples.Web.Notifications
     </td>
     <td>
     Published when the IContentService.Save is called in the API.<br />
-    NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Save method call (true by default).<br />
+    NOTE: It can be skipped if the parameter "raiseEvents" is set to false during the Save method call (true by default).<br />
     SavedEntities: The collection of IContent objects being saved. <br /><em>NOTE: If the entity is brand new then HasIdentity will equal false.</em>
     </td>
   </tr>
@@ -76,7 +76,7 @@ namespace Umbraco.Docs.Samples.Web.Notifications
     </td>
     <td>
     Published when IContentService.Save is called in the API and after data has been persisted.<br />
-    NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Save method call (true by default).<br />
+    NOTE: It can be skipped if the parameter "raiseEvents" is set to false during the Save method call (true by default).<br />
     <em>NOTE: <a href="determining-new-entity.md">See here on how to determine if the entity is brand new</a></em><br />
     SavedEntities: The saved collection of IContent objects.
     </td>
@@ -94,7 +94,7 @@ namespace Umbraco.Docs.Samples.Web.Notifications
     </td>
     <td>
     Published when IContentService.Publishing is called in the API.<br />
-    NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Publish method call (true by default).<br />
+    NOTE: It can be skipped if the parameter "raiseEvents" is set to false during the Publish method call (true by default).<br />
     <em>NOTE: If the entity is brand new then HasIdentity will equal false.</em><br />
     PublishedEntities: The collection of IContent objects being published.
     </td>
@@ -111,7 +111,7 @@ namespace Umbraco.Docs.Samples.Web.Notifications
     </td>
     <td>
     Published when IContentService.Publish is called in the API and after data has been published.<br />
-    NOTE: It can be skipped completely if the parameter "raiseEvents" is set to false during the Publish method call (true by default).<br />
+    NOTE: It can be skipped if the parameter "raiseEvents" is set to false during the Publish method call (true by default).<br />
     <em>NOTE: <a href="determining-new-entity.md">See here on how to determine if the entity is brand new</a></em><br />
     PublishedEntities: The published collection of IContent objects.
     </td>
@@ -487,7 +487,7 @@ Umbraco V8 introduced the concept of Variants for Document Types, initially to a
 
 These variants can be saved, published, and unpublished independently of each other. (Unpublishing a 'mandatory language' variant of a content item - will trigger all culture variants to be unpublished).
 
-This poses a problem when handling notifications from the ContentService - eg which culture got published? Do I want to run my 'custom' code that fires on save if it's only the Spanish version that's been published? Also, if only the Spanish variant is 'unpublished' - that feels like a different situation than if 'all the variants' have been 'unpublished'. Depending on which event you are handling there are helper methods you can call to find out.
+This poses a problem when handling notifications from the ContentService - for example which culture got published? Do I want to run my 'custom' code that fires on save if it's only the Spanish version that's been published? Also, if only the Spanish variant is 'unpublished' - that feels like a different situation than if 'all the variants' have been 'unpublished'. Depending on which event you are handling there are helper methods you can call to find out.
 
 #### Saving
 
@@ -621,4 +621,4 @@ Furthermore, there was no reason to listen to the Creating/Created events. They 
 
 #### What do we use instead?
 
-The ContentSavingNotification and ContentSavedNotification will always be published before and after an entity has been persisted. You can determine if an entity is brand new in either of those notifications. In the Saving notification - before the entity is persisted - you can check the entity's HasIdentity property which will be 'false' if it is brand new. In the Saved notification you can [check to see if the entity 'remembers being dirty'](determining-new-entity.md)
+The ContentSavingNotification and ContentSavedNotification will always be published before and after an entity has been persisted. You can determine if an entity is brand new in either of those notifications. In the Saving notification - before the entity is persisted - you can check the entity's HasIdentity property which will be `false` if it is brand new. In the Saved notification you can [check to see if the entity 'remembers being dirty'](determining-new-entity.md)
