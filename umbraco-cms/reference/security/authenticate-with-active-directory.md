@@ -100,6 +100,8 @@ options.ClaimActions.MapCustomJson(ClaimTypes.Email, x =>
     return x.GetProperty("otherMails").EnumerateArray().First().ToString();
 });
 ```
+This extra code will read the user email from the microsoft graph api.
+
 {% endhint %}
 
 ## Azure AD Authentication for Members
