@@ -2,7 +2,7 @@
 
 Content reviews is a tool that allows content editors to keep their content up-to-date. **Content reviews** adds a new dashboard to the **Workflow** section. By default, Content reviews are disabled and can be enabled from **Content reviews Settings** in the **Workflow** section.
 
-![Enable Content Reviews](images/Enable-content-reviews.png)
+![Enable Content Reviews](../../umbraco-workflow/images/Enable-content-reviews.png)
 
 ## Content Reviews Dashboard
 
@@ -14,23 +14,23 @@ The Content reviews Dashboard provides an overview of the expired content. The d
 * Review period in days
 * Review group
 
-![Content Reviews Dashboard](images/Content-review-dashboard.png)
+![Content Reviews Dashboard](../../umbraco-workflow/images/Content-review-dashboard.png)
 
 Selecting a content node takes you to the content node in the **Content** section where you can see the Content review banner. The Content review banner is displayed only when the node has passed its review date. Also, the review banner is displayed only to users assigned as reviewers for the node. For more information, see the [Content Reviews Permissions](content-reviews.md#content-review-permissions) section
 
-![Content Review Message Banner](images/content-review-message-banner.png)
+![Content Review Message Banner](../../umbraco-workflow/images/content-review-message-banner.png)
 
 Clicking on **Mark as reviewed** allows the review group member to mark the content as reviewed. Optionally, the review group member can also set the next review date on the content node. The next review date must fall inside the review period set in the **Content Reviews Settings**.
 
-![Content Review Date](images/content-review-date.png)
+![Content Review Date](../../umbraco-workflow/images/content-review-date.png)
 
 You can also **Filter** the Dashboard records based on the Node, Group Email, Next review due date, Last reviewed date, and Expired review Status.
 
-![Content Reviews Filters](images/content-reviews-filter.png)
+![Content Reviews Filters](../../umbraco-workflow/images/content-reviews-filter.png)
 
 Additionally, you can adjust the total number of records displayed on a page.
 
-![Content Reviews PageSize](images/content-reviews-pagesize.png)
+![Content Reviews PageSize](../../umbraco-workflow/images/content-reviews-pagesize.png)
 
 ## Content Reviews Settings
 
@@ -40,7 +40,7 @@ The Content reviews Settings tab provides a range of settings for configuring em
 
 You can configure the **General** Settings from the **Workflow** section in the **Content reviews** menu. The following settings are available:
 
-![General settings](images/content-reviews-general-settings.png)
+![General settings](../../umbraco-workflow/images/content-reviews-general-settings.png)
 
 * **Enable content reviews** - Enable this setting if you wish to remind users to review their content. By default, this option is disabled.
 * **Send notifications** - Enable this setting to send email notification to approval groups when content requires review.
@@ -54,11 +54,11 @@ You can configure which review group reviews which content nodes or Document Typ
 
 Content review permissions can be set at the node or Document Type level, both of which take precedence over any existing Workflow permissions.
 
-![Content review permissions](images/Content-review-permissions.png)
+![Content review permissions](../../umbraco-workflow/images/Content-review-permissions.png)
 
 The current permissions for a content node are displayed in the **Workflow** content app on the **Configuration** tab.
 
-![Workflow Content App - Configuration tab](images/workflow-content-app-configuration.png)
+![Workflow Content App - Configuration tab](../../umbraco-workflow/images/workflow-content-app-configuration.png)
 
 ### Content Item and Document Type Reviews
 
@@ -78,20 +78,20 @@ To add a content item review, follow these steps:
 
 1. Go to the **Workflow** section.
 2. Go to the **Settings** tab in the **Content reviews** menu.
-3. Click **Add** in the **Content item reviews** section.
+3.  Click **Add** in the **Content item reviews** section.
 
-    <figure><img src="images/content-item-reviews.png" alt=""><figcaption><p>Content Item Reviews</p></figcaption></figure>
-4. Select **Content node** to add to the Content item reviews section.
+    <figure><img src="../../umbraco-workflow/images/content-item-reviews.png" alt=""><figcaption><p>Content Item Reviews</p></figcaption></figure>
+4.  Select **Content node** to add to the Content item reviews section.
 
-    <figure><img src="images/content-item-reviews-select-content.png" alt=""><figcaption><p>Select Content Node</p></figcaption></figure>
+    <figure><img src="../../umbraco-workflow/images/content-item-reviews-select-content.png" alt=""><figcaption><p>Select Content Node</p></figcaption></figure>
 5. Select the **Language** from the drop-down in the **Add Content item review settings** pane.
-6. [Optional] Enable **Exclude from Review** if you wish to exclude this content node from content review. If you enable this setting, skip to step 11.
+6. \[Optional] Enable **Exclude from Review** if you wish to exclude this content node from content review. If you enable this setting, skip to step 11.
 7. Enter the **Review period** in days.
 8. Click **Add** to add the **Review Group**.
 9. Select an **approval group**.
 10. Click Submit.
 
-    <figure><img src="images/content-item-reviews-settings.png" alt=""><figcaption><p>Edit Content Item Review Settings</p></figcaption></figure>
+    <figure><img src="../../umbraco-workflow/images/content-item-reviews-settings.png" alt=""><figcaption><p>Edit Content Item Review Settings</p></figcaption></figure>
 11. Click Submit.
 12. Click **Save Settings**.
 
@@ -105,20 +105,20 @@ To add a Document Type review, follow these steps:
 
 1. Go to the **Workflow** section.
 2. Go to the **Settings** tab in the **Content reviews** menu.
-3. Click **Add** in the **Document-type reviews** section.
+3.  Click **Add** in the **Document-type reviews** section.
 
-    <figure><img src="images/document-type-reviews.png" alt=""><figcaption><p>Document Type reviews</p></figcaption></figure>
-4. Select **Content type** to add to the Document-type reviews section.
+    <figure><img src="../../umbraco-workflow/images/document-type-reviews.png" alt=""><figcaption><p>Document Type reviews</p></figcaption></figure>
+4.  Select **Content type** to add to the Document-type reviews section.
 
-    <figure><img src="images/document-type-reviews-select-content.png" alt=""><figcaption><p>Select Content Type</p></figcaption></figure>
+    <figure><img src="../../umbraco-workflow/images/document-type-reviews-select-content.png" alt=""><figcaption><p>Select Content Type</p></figcaption></figure>
 5. Select the **Language** from the drop-down in the **Add Document-type review settings** pane.
-6. [Optional] Enable **Exclude from Review** if you wish to exclude this Document-type from content review. If you enable this setting, skip to step 11.
+6. \[Optional] Enable **Exclude from Review** if you wish to exclude this Document-type from content review. If you enable this setting, skip to step 11.
 7. Enter the **Review period** in days.
 8. Click **Add** to add the **Review Group**.
 9. Select an **approval group**.
 10. Click Submit.
 
-    <figure><img src="images/document-type-review-settings.png" alt=""><figcaption><p>Add Document Type Review Settings</p></figcaption></figure>
+    <figure><img src="../../umbraco-workflow/images/document-type-review-settings.png" alt=""><figcaption><p>Add Document Type Review Settings</p></figcaption></figure>
 11. Click Submit.
 12. Click **Save Settings**.
 
@@ -138,7 +138,5 @@ To add templates for other languages:
 
 For example:
 
-* **Default approval request template:**
-  `~/Views/Partials/WorkflowEmails/ContentReviews.cshtml`
-
+* **Default approval request template:** `~/Views/Partials/WorkflowEmails/ContentReviews.cshtml`
 * **Danish approval request template:** `~/Views/Partials/WorkflowEmails/ContentReviews_da-DK.cshtml`

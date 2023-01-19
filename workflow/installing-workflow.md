@@ -53,7 +53,7 @@ To install via Visual Studio, follow these steps:
 4. Select the appropriate version from the Version drop-down depending on the Umbraco version you are using.
 5.  Click Install.
 
-    <figure><img src="images/VS_Installation_v10.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../umbraco-workflow/images/VS_Installation_v10.png" alt=""><figcaption></figcaption></figure>
 6.  Once the package is installed, open the **.csproj** file to make sure the package reference is added:
 
     ```xml
@@ -85,8 +85,8 @@ Once the installation is completed, you will see the following in the Umbraco Ba
 
 ### A Workflow Dashboard
 
-![Workflow dashboard](images/WorkflowDashboard\_ContentSection.png)
+![Workflow dashboard](../umbraco-workflow/images/WorkflowDashboard\_ContentSection.png)
 
 ### A Workflow section
 
-![Workflow section](images/workflow-section.png)
+![Workflow section](../umbraco-workflow/images/workflow-section.png)
