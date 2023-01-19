@@ -4,20 +4,20 @@ description: "Learn how to work with different types of Media content on your Um
 
 # Creating Media
 
-Media in Umbraco is handled the same way as content. Instead of defining Document Types you define Media Types that acts as a base for media items. The following default Media Types are available:
+Media in Umbraco CMS is handled the same way as content. You define **Media Types** that act as a base for media items. The following default Media Types are available:
 
-* Article - Used for uploading and storing documents.
+* Article - used for uploading and storing documents.
 * Audio - used for uploading and storing digital audio files.
 * File - used for uploading and storing different types of files in the Media section.
-* Folder - a container for organizing media items in the media tree.
+* Folder - a container for organizing media items in the Media section tree.
 * Image - used for uploading and storing images.
-* Vector Graphics (SVG) - used for uploading and storing Scalable Vector Graphics files which are text files containing source code to draw the desired image.
+* Vector Graphics (SVG) - used for uploading and storing Scalable Vector Graphics (SVG) files which are text files containing source code to draw the desired image.
 * Video - used for uploading and storing video files.
 
-This means you don't have to define your own Media Types to start using the Media section. You have already got the tools for organizing and uploading the media.
+The default Media Types aim to cover most needs for media in a website. This means that you do not need to define your own Media Types to start using the Media section. The tools for organizing and uploading the media are already in place.
 
 {% hint style="info" %}
-If you have upgraded from an older version than 8.14 then the new media types are not added automatically. You can add those types manually yourselves by following the steps below ['Creating a new Media Type'](./#creating-a-media-type). On the [default media types page](default-media-types.md), you will find an overview of all new media types.
+If you have upgraded from an older version than 8.14 the Media Types listed above are not added automatically. You can add those types manually yourselves by following the steps below ['Creating a new Media Type'](./#creating-a-media-type). On the [default media types page](default-media-types.md), you will find a detailed overview of all Media Types.
 {% endhint %}
 
 ## Uploading Media
@@ -58,55 +58,65 @@ New media items can be added to your site without interrupting the content creat
 
 ## Creating a folder
 
-It is always a good idea to start by creating a folder for your Media items. Make sure to name your folders in a way that makes it possible for editors to upload their media items in the right place.
+It is always a good idea to start by creating a folder for your media items. It can be a good idea to align these folders with the content on you website. This will give the editors a better overview of the files and enable them to upload media items in the correct place.
 
-To create a media folder, go to the **Media section** and click **...** next to **Media**. Alternatively, you can right-click the **Media** node and choose **Create**. This will bring up the list of available media types. Select **Folder**, enter a name for the folder and click **save**.
+Follow these steps to create a folder in the Media section:
+
+1. Go to the **Media section**.
+2. Select **...** next to **Media**.
+    * Alternatively, you can right-click the **Media** node and choose **Create**.
+3. Select **Folder**.
+4. Choose a name for the folder and select **save** in the bottom-right corner.
 
 ## Media Type properties
 
-The **Image** Media Type has 5 properties (**Upload Image**, **Width**, **Height**, **Size** and **Type**) that is populated once the image is uploaded. These properties can be viewed in the **Media** section and accessed in your templates.
+The **Image** Media Type has 5 properties: **Upload Image**, **Width**, **Height**, **Size** and **Type**. These are populated once the image is uploaded. The properties can be viewed in the **Media** section and accessed in your Templates.
 
-Except the **Folder** Media Type, the rest of the media types has 3 properties - **Upload Image**, **Type**, and **Size**.
+Except the **Folder** Media Type, the rest of the media types has 3 properties: **Upload Image**, **Type**, and **Size**.
+
+Learn more about each Media Type in [the article about default Media Types](default-media-types.md).
 
 ## Organizing and editing media items
 
-The default view for the media section is a card view that let's you preview the different media files.
+The default view for the Media section is a card view that lets you preview the different files that have been uploaded.
 
-![Media Section - Cardview](images/media-section.png)
+![Media Section - Cardview](images/media-section-11.png)
 
-Click the items to select multiple media items and perform bulk operations like moving or deleting them. To edit properties on a media item, click the name of the item, which you will see once you hover over the item.
+By selecting multiple media items it is possible to perform bulk operations like moving or deleting the items.
+
+To edit properties on a single media item, click the name of the item, which you will see once you hover over the item.
 
 ![Edit media item](images/hover-over.png)
 
-You can switch to a list view by clicking the view toggle next to the search field and selecting the listview.
+From the top-right corner of the Media section you can toggle between list- and grid-view. There is also an option to search the items in the Media section.
 
-![Media Section - List view](images/switch-view.png)
+You can switch to a list view by selecting the view toggle next to the search field and selecting the listview.
+
+![Media Section - List view](images/switch-view-11.png)
 
 ## Using media items in content
 
 By adding a **Media Picker** property to a Document Type the editor will have the ability to select media items when creating content.
 
-{% hint style="info" %}
-The **Upload File** property on the images use the Image Cropper Data Type. If crops are added to this you can adjust the individual crops on the media item and access them in templates. You can add crops by editing the Upload File property on the Image Media type in the Settings section.
-{% endhint %}
-
 ## Creating a Media Type
 
-You can create your own Media Types and add tabs, properties, and control the structure of the Media tree as you would with Document Types. This means you can store information that is specific to the media on the item itself.
+You can create your own Media Types to add tabs, properties, and control the structure of the Media tree as you would with Document Types. This means you can store information that is specific to the media on the item itself.
 
 A Media Type is created in the **Settings** section using the Media Type editor.
 
-Go to the **Settings** section. On the **Media Types** node click **...** next to **Media Types** (or right click the Media Types node) to bring up the context menu. Here you can choose between creating a **New Media Type** or a **Folder**.
+1. Go to the **Settings** section.
+2. Click **...** next to **Media Types** (or right click the Media Types node).
+3. Choose **New Media Type**.
+4. Name the new Media Type **Employee Image**.
+5. Choose an icon by selecting the icon left of the name field.
 
-{% hint style="info" %}
-Having different folders for different media types makes it possible to restrict where media items can be created. Only allowing PDF uploads in a certain folder or employee images in another makes it easier for editors to keep the Media section organized.
-{% endhint %}
-
-Choose **New Media Type**. This will open the Media Type editor. It is similar to the editor used for creating Document Types. The difference is that Media Types define items for the Media section and you do not have the ability to assign a template for the Media Type.
+You will now see the Media Type editor. It is similar to the editor used for creating Document Types.
 
 ![Creating a Media Type](images/create-new-media-type\_new.png)
 
-Name the Media Type _Employee Image_. Choose an icon by clicking the icon to the left of the name.
+{% hint style="info" %}
+Having different folders for different Media Types makes it possible to restrict where media items can be created and added. Only allowing PDF uploads in a certain folder and employee images in another makes it easier to keep the Media section organized.
+{% endhint %}
 
 ### Adding tabs/groups
 
