@@ -7,18 +7,6 @@ description: >-
 # Major Upgrades
 
 {% hint style="info" %}
-**Umbraco 11 release**
-
-We currently do **not recommend** upgrading your project directly to Umbraco CMS version 11 on Cloud.
-
-Instead it is possible to [migrate your Umbraco 10 projects to a new Umbraco 11 project](https://docs.umbraco.com/umbraco-cloud/upgrades/migrate-from-umbraco-10-to-11).
-
-This is due to a temporary bug in the hosting services used for hosting Umbraco Cloud.
-
-Please reach out to [Umbraco Support](mailto:support@umbraco.com) if you have any questions.
-{% endhint %}
-
-{% hint style="info" %}
 **Are you using any custom packages or code on your Umbraco Cloud project?**
 
 You will need to ensure the packages you use are available in the latest version of Umbraco and that your custom code is valid with the .NET Framework.
@@ -29,7 +17,7 @@ Make sure you know the [Breaking changes](broken-reference/) in the latest versi
 
 **Upgrading from Umbraco 9**
 
-If upgrading from Umbraco 9 to a later major version, follow the dropdowns named: _**"Upgrading from Umbraco 9"**_ in the steps of the guide\_**.**\_
+If upgrading from Umbraco 9 to a later major version, follow the dropdowns named: _**"Upgrading from Umbraco 9"**_ in the steps of the guide.
 
 These are extra steps needed when going from Umbraco 9 to the latest major.
 {% endhint %}
