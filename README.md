@@ -8,9 +8,7 @@ layout: landing
 
 # Umbraco Documentation
 
-<figure><img src=".gitbook/assets/FREE (1).png" alt=""><figcaption><p><a href="https://webapp.spotme.com/login/umbraco/nyr2023">Sign up for the Umbraco New Year Reception 2023 livestream</a></p></figcaption></figure>
-
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Umbraco CMS</strong></td><td>Everything you need to know when building your Umbraco website.</td><td></td><td><a href="getting-started/images/flexible_Email_hero_780x405px.png">flexible_Email_hero_780x405px.png</a></td><td><a href="umbraco-cms/">umbraco-cms</a></td></tr><tr><td><strong>Umbraco Cloud</strong></td><td>Learn how to get started with your Umbraco Cloud project.</td><td></td><td><a href=".gitbook/assets/Umbraco Cloud Update - Email hero - White - 780x405px@2xt.jpg">Umbraco Cloud Update - Email hero - White - 780x405px@2xt.jpg</a></td><td><a href="umbraco-cloud/getting-started/">getting-started</a></td></tr><tr><td><strong>Umbraco Heartcore</strong></td><td>Learn how to get the most out of your headless Umbraco solution.</td><td></td><td><a href="getting-started/developing-websites-with-umbraco/images/Headless_Email_hero_780x405px.png">Headless_Email_hero_780x405px.png</a></td><td><a href="umbraco-heartcore/">umbraco-heartcore</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Umbraco CMS</strong></td><td>Everything you need to know when building your Umbraco website.</td><td></td><td><a href=".gitbook/assets/flexible_Email_hero_780x405px.png">flexible_Email_hero_780x405px.png</a></td><td><a href="umbraco-cms/overview.md">overview.md</a></td></tr><tr><td><strong>Umbraco Cloud</strong></td><td>Learn how to get started with your Umbraco Cloud project.</td><td></td><td><a href=".gitbook/assets/Umbraco Cloud Update - Email hero - White - 780x405px@2xt.jpg">Umbraco Cloud Update - Email hero - White - 780x405px@2xt.jpg</a></td><td><a href="umbraco-cloud/getting-started/">getting-started</a></td></tr><tr><td><strong>Umbraco Heartcore</strong></td><td>Learn how to get the most out of your headless Umbraco solution.</td><td></td><td><a href="getting-started/developing-websites-with-umbraco/images/Headless_Email_hero_780x405px.png">Headless_Email_hero_780x405px.png</a></td><td><a href="umbraco-heartcore/overview/">overview</a></td></tr></tbody></table>
 
 {% hint style="info" %}
 **Versioned documentation**
@@ -26,13 +24,13 @@ Read the Documentation and versions article to learn more about how we support a
 
 ### Add on products
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Umbraco Forms</strong></td><td>Build and add forms to your Umbraco websites with Umbraco Forms.</td><td></td><td><a href="umbraco-forms/">umbraco-forms</a></td></tr><tr><td><strong>Umbraco Deploy</strong></td><td>Ensure smooth code and content deployments on your Umbraco projects.</td><td></td><td><a href="umbraco-deploy/">umbraco-deploy</a></td></tr><tr><td><strong>Umbraco Workflow</strong></td><td>Setup custom workflows for managing content on your Umbraco website.<br></td><td><a href="umbraco-workflow/">What is Umbraco Workflow?</a></td><td></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Umbraco Forms</strong></td><td>Build and add forms to your Umbraco websites with Umbraco Forms.</td><td></td><td><a href="umbraco-forms/overview.md">overview.md</a></td></tr><tr><td><strong>Umbraco Deploy</strong></td><td>Ensure smooth code and content deployments on your Umbraco projects.</td><td></td><td><a href="umbraco-deploy/overview.md">overview.md</a></td></tr><tr><td><strong>Umbraco Workflow</strong></td><td>Setup custom workflows for managing content on your Umbraco website.<br></td><td><a href="workflow/overview.md">What is Umbraco Workflow?</a></td><td></td></tr></tbody></table>
 
 ## Contributing
 
 The documentation project is open source and hosted on GitHub. If you have any corrections or additions to the documentation, suggest a change or let us know.
 
-Head over to the [Contribute section](contribute/) to start contributing to the Umbraco Documentation.
+Head over to the [Contribute section](contribute/getting-started.md) to start contributing to the Umbraco Documentation.
 
 ## Quick links
 

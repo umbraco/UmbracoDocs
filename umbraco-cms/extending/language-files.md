@@ -1,8 +1,10 @@
 ---
 versionFrom: 9.0.0
 versionTo: 10.0.0
-meta.Title: "Language Files & Localization"
-meta.Description: "Language files are used to translate the Umbraco backoffice user interface so that end users can use Umbraco in their native language."
+meta.Title: Language Files & Localization
+meta.Description: >-
+  Language files are used to translate the Umbraco backoffice user interface so
+  that end users can use Umbraco in their native language.
 ---
 
 # Language Files & Localization
@@ -15,27 +17,27 @@ If you are a package developer, [see here for docs on how to include translation
 
 Current languages that are included in the core are:
 
-- English (UK)
-- English (US)
-- Danish
-- German
-- Spanish
-- French
-- Hebrew (Israel)
-- Italian
-- Japanese
-- Korean
-- Dutch
-- Norwegian
-- Polish
-- Portuguese
-- Russian
-- Swedish
-- Chinese
-- Chinese (Taiwan)
-- Czech
-- Turkish
-- Welsh
+* English (UK)
+* English (US)
+* Danish
+* German
+* Spanish
+* French
+* Hebrew (Israel)
+* Italian
+* Japanese
+* Korean
+* Dutch
+* Norwegian
+* Polish
+* Portuguese
+* Russian
+* Swedish
+* Chinese
+* Chinese (Taiwan)
+* Czech
+* Turkish
+* Welsh
 
 ## Where to find the language files
 
@@ -85,7 +87,7 @@ Using core or custom language keys from your code:
 
 ### From .NET
 
-`ILocalizedTextService` is used to localize strings, and is available through dependency injection. First, inject the service, and then use the `Localize()` method available in the namespace `Umbraco.Extensions` to localize the string with the format [area]/[key]:
+`ILocalizedTextService` is used to localize strings, and is available through dependency injection. First, inject the service, and then use the `Localize()` method available in the namespace `Umbraco.Extensions` to localize the string with the format \[area]/\[key]:
 
 ```csharp
 public MyClass(ILocalizedTextService textservice)
@@ -104,7 +106,7 @@ In the Umbraco backoffice UI, labels can be localized with the `localize` direct
 </button>
 ```
 
-The localize directive can also be used as an attribute like below where the value of the title attribute is then populated with the dictionary key "title_name" from the language file using "@title_name".
+The localize directive can also be used as an attribute like below where the value of the title attribute is then populated with the dictionary key "title\_name" from the language file using "@title\_name".
 
 ```xml
 <button localize="title" title="@title_name">
@@ -166,4 +168,4 @@ In the above example of a missing translation for "assignDomain", locate this st
 </language>
 ```
 
-If you do update any of the core language files or you add a new language, don't forget to help the rest of the community by [submitting a pull request](../../contribute/) so that your changes are merged into the core.
+If you do update any of the core language files or you add a new language, don't forget to help the rest of the community by [submitting a pull request](../../contribute/getting-started.md) so that your changes are merged into the core.

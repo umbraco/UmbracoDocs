@@ -25,7 +25,7 @@ The following JSON needs to be merged into one of your JSON sources. By default 
                 "Smtp": {
                     "From": "<your email>",
                     "Host": "<host>",
-                    "Port": "<port>",
+                    "Port": <port>,
                     "PickupDirectoryLocation": "<optional directory>",
                     "Username": "<optional username>",
                     "Password": "<optional password>",
@@ -48,7 +48,7 @@ An example that can be used on localhost, is if you have a local Simple Mail Tra
                 "Smtp": {
                     "From": "my@email.com",
                     "Host": "localhost",
-                    "Port": "25"
+                    "Port": 25
                 }
             }
         }

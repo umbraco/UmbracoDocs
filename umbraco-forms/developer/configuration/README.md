@@ -340,12 +340,6 @@ Set this value to `true` to disable the default behavior of indexing the form su
 
 If indexing has already occurred, you will still need to manually remove the files (found in `App_Data\TEMP\ExamineIndexes\UmbracoFormsRecords`). They will be recreated if indexing is subsequently re-enabled.
 
-### DisableRecordIndexing
-
-Set this value to `true` to disable the default behavior of indexing the form submissions into the Examine index.
-
-If indexing has already occurred, you will still need to manually remove the files (found in `App_Data\TEMP\ExamineIndexes\UmbracoFormsRecords`). They will be recreated if indexing is subsequently re-enabled.
-
 ## Security configuration
 
 ### DisallowedFileUploadExtensions

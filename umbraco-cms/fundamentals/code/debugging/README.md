@@ -22,7 +22,7 @@ Debug should always be set to false in production.
 
 ## Tracing
 
-Logging and tracing are really two names for the same technique. You need to configure what log messages you wanna log.
+Tracing and trace logging is really two names for the same technique. You need to configure what log messages you wanna log.
 
 ### Enabling Trace Logging
 
@@ -30,7 +30,8 @@ Logging and tracing are really two names for the same technique. You need to con
 Do not enable trace logging in your production environment! It reveals an awful lot of (sensitive) information about your production environment.
 {% endhint %}
 
-We recommend at least logging the following namespace at minimum (Verbose) level to enable valuable trace logging:
+We recommend at least logging the following namespace at minimum (Verbose) level to enable valuable trace logging.
+Thereby you will have information about all endpoints that have been executed.
 
 ```json
 {

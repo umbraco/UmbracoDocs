@@ -6,12 +6,7 @@ meta.Description: A guide for getting started working with the Umbraco UI Librar
 # UI Library
 
 {% hint style="info" %}
-Please be aware that the topic covered in this document is currently only available in the following versions of Umbraco:
-
-* The latest version of Umbraco 10.
-* The Release Candidate (RC) for Umbraco 11.
-
-The new UI Library is currently _opt-in_ and something we recommend Backoffice and package developers start getting familiar with.
+The UI Library is currently _opt-in_ and something we recommend Backoffice and package developers start getting familiar with.
 
 In the [Backoffice UI API Documentation](backoffice-ui-api-documentation.md) article you can find links to relevant resources for working with the Umbraco backoffice.
 {% endhint %}

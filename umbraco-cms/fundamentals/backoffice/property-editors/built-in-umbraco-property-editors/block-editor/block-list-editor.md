@@ -26,6 +26,7 @@ The Data Type editor allows you to configure the following properties:
 
 * **Available Blocks** - Here you will define the Block Types to be available for use in the property. Read more on how to set up Block Types below.
 * **Amount** - Sets the minimum and/or maximum number of blocks that should be allowed in the list.
+* **Single block mode** - When in Single block mode, the output will be `BlockListItem<>` instead of `BlockListModel`
 * **Live editing mode** - Enabling this will make editing of a block happening directly to the document model, making changes appear as you type.
 * **Inline editing mode** - Enabling this will change editing experience to inline, meaning that editing the data of blocks happens at sight as accordions.
 * **Property editor width** - Overwrite the width of the property editor. This field takes any valid css value for "max-width".

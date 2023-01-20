@@ -135,7 +135,7 @@ using Umbraco.Cms.Core.Models.PublishedContent;
 
 namespace MyStarterKitSite.Services;
 
-public class SearchServices : ISearchService
+public class SearchService : ISearchService
 {
     private readonly IExamineManager _examineManager;
     public SearchServices(IExamineManager examineManager)

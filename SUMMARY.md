@@ -16,7 +16,7 @@
 
 ## Umbraco CMS
 
-* [What is Umbraco CMS?](umbraco-cms/README.md)
+* [What is Umbraco CMS?](umbraco-cms/overview.md)
 * [Fundamentals](umbraco-cms/fundamentals/README.md)
   * [Setup](umbraco-cms/fundamentals/setup/README.md)
     * [Requirements](umbraco-cms/fundamentals/setup/requirements.md)
@@ -238,12 +238,12 @@
       * [Tips and Tricks](umbraco-cms/reference/templating/modelsbuilder/coolthingswithmodels.md)
       * [Install the full version](umbraco-cms/reference/templating/modelsbuilder/install-models-builder.md)
     * [Working with MVC](umbraco-cms/reference/templating/mvc/README.md)
-      * [View/Razor Examples](umbraco-cms/reference/templating/mvc/examples.md)
-      * [Creating Forms](umbraco-cms/reference/templating/mvc/forms.md)
-      * [Using MVC Partial Views in Umbraco](umbraco-cms/reference/templating/mvc/partial-views.md)
-      * [Querying & Traversal](umbraco-cms/reference/templating/mvc/querying.md)
-      * [Using View Components in Umbraco](umbraco-cms/reference/templating/mvc/viewcomponents.md)
       * [Working with MVC Views in Umbraco](umbraco-cms/reference/templating/mvc/views.md)
+      * [View/Razor Examples](umbraco-cms/reference/templating/mvc/examples.md)
+      * [Using MVC Partial Views in Umbraco](umbraco-cms/reference/templating/mvc/partial-views.md)
+      * [Using View Components in Umbraco](umbraco-cms/reference/templating/mvc/viewcomponents.md)
+      * [Querying & Traversal](umbraco-cms/reference/templating/mvc/querying.md)
+      * [Creating Forms](umbraco-cms/reference/templating/mvc/forms.md)
   * [Querying & Models](umbraco-cms/reference/querying/README.md)
     * [IMemberManager](umbraco-cms/reference/querying/imembermanager.md)
     * [IPublishedContentQuery](umbraco-cms/reference/querying/ipublishedcontentquery.md)
@@ -447,7 +447,7 @@
   * [Member Registration and Login](umbraco-cms/tutorials/members-registration-and-login.md)
   * [Custom Views for Block List](umbraco-cms/tutorials/creating-custom-views-for-blocklist.md)
   * [Connecting Umbraco Forms and Zapier](umbraco-cms/tutorials/connecting-umbraco-forms-and-zapier.md)
-  * [Creating a Search Engine XML Site Map](umbraco-cms/tutorials/creating-an-xml-site-map.md)
+  * [Creating an XML Sitemap](umbraco-cms/tutorials/creating-an-xml-site-map.md)
   * [Creating And Distributing A Package](umbraco-cms/tutorials/creating-and-distributing-a-package.md)
   * [Implementing Custom Error Pages](umbraco-cms/tutorials/custom-error-page.md)
 
@@ -490,6 +490,7 @@
       * [Account Contacts](umbraco-cloud/set-up/project-settings/team-members/accounts-contact.md)
       * [Technical Contact](umbraco-cloud/set-up/project-settings/team-members/technical-contact.md)
     * [Secrets Management](umbraco-cloud/set-up/project-settings/secrets-management.md)
+  * [Private Nuget Feed on Umbraco Cloud](umbraco-cloud/set-up/private-nuget-feed.md)
   * [Going Live](umbraco-cloud/set-up/going-live.md)
   * [Media](umbraco-cloud/set-up/media/README.md)
     * [Connect to Azure Storage Explorer to upload files manually](umbraco-cloud/set-up/media/connect-to-azure-storage-explorer.md)
@@ -565,8 +566,8 @@
 
 ## Umbraco Heartcore
 
-* [What is Umbraco Heartcore?](umbraco-heartcore/README.md)
-  * [Compare with Umbraco CMS](umbraco-heartcore/umbraco-heartcore/compare-with-umbraco-cms.md)
+* [What is Umbraco Heartcore?](umbraco-heartcore/overview/README.md)
+  * [Compare with Umbraco CMS](umbraco-heartcore/overview/compare-with-umbraco-cms.md)
 * [Getting Started](umbraco-heartcore/getting-started/README.md)
   * [API Browser](umbraco-heartcore/getting-started/api-browser.md)
   * [Backoffice Users and API Keys](umbraco-heartcore/getting-started/backoffice-users-and-api-keys.md)
@@ -617,7 +618,7 @@
 
 ## Umbraco Forms
 
-* [What is Umbraco Forms?](umbraco-forms/README.md)
+* [What is Umbraco Forms?](umbraco-forms/overview.md)
 * [Installation And Upgrades](umbraco-forms/installation/README.md)
   * [Installing Umbraco Forms](umbraco-forms/installation/install.md)
   * [Manually Upgrading Umbraco Forms](umbraco-forms/installation/manualupgrade.md)
@@ -670,7 +671,7 @@
 
 ## Umbraco Deploy
 
-* [What is Umbraco Deploy?](umbraco-deploy/README.md)
+* [What is Umbraco Deploy?](umbraco-deploy/overview.md)
 * [Getting started](umbraco-deploy/get-started-with-deploy.md)
 * [Installing](umbraco-deploy/installing-deploy/README.md)
   * [Installing Umbraco Deploy](umbraco-deploy/installing-deploy/install-configure.md)
@@ -692,23 +693,23 @@
   * [Version Specific Upgrade Details](umbraco-deploy/upgrades/version-specific.md)
 * [Troubleshooting](umbraco-deploy/troubleshooting.md)
 
-## Umbraco Workflow
+## Workflow
 
-* [What is Umbraco Workflow?](umbraco-workflow/README.md)
-* [Installation](umbraco-workflow/installing-workflow.md)
-* [Licensing](umbraco-workflow/licensing.md)
-* [Upgrading](umbraco-workflow/upgrading-workflow.md)
-  * [Migrate from Plumber to Workflow](umbraco-workflow/migrating-workflow.md)
-* [Dashboards and Buttons](umbraco-workflow/dashboards-and-buttons.md)
-* [Content App](umbraco-workflow/workflow-content-app.md)
-* [Workflow Section](umbraco-workflow/workflow-section.md)
-  * [Active Workflows](umbraco-workflow/active-workflows.md)
-  * [Approval Groups](umbraco-workflow/approval-groups.md)
-  * [Content Reviews](umbraco-workflow/content-reviews.md)
-  * [Workflow History](umbraco-workflow/workflow-history.md)
-  * [Workflow Settings](umbraco-workflow/workflow-settings.md)
-* [Notifications](umbraco-workflow/notifications.md)
-* [Configuration](umbraco-workflow/configuration.md)
+* [What is Umbraco Workflow?](workflow/overview.md)
+* [Installation](workflow/installing-workflow.md)
+* [Licensing](workflow/licensing.md)
+* [Upgrading](workflow/upgrading-workflow/README.md)
+  * [Migrate from Plumber to Workflow](workflow/upgrading-workflow/migrating-workflow.md)
+* [Dashboards and Buttons](workflow/dashboards-and-buttons.md)
+* [Content App](workflow/workflow-content-app.md)
+* [Workflow Section](workflow/workflow-section/README.md)
+  * [Active Workflows](workflow/workflow-section/active-workflows.md)
+  * [Approval Groups](workflow/workflow-section/approval-groups.md)
+  * [Content Reviews](workflow/workflow-section/content-reviews.md)
+  * [Workflow History](workflow/workflow-section/workflow-history.md)
+  * [Workflow Settings](workflow/workflow-section/workflow-settings.md)
+* [Notifications](workflow/notifications.md)
+* [Configuration](workflow/configuration.md)
 
 ## Other resources
 
@@ -717,7 +718,7 @@
 
 ## Contribute
 
-* [Contribute to Documentation](contribute/README.md)
+* [Contribute to Documentation](contribute/getting-started.md)
 * [Submit a Pull Request](contribute/pull-request.md)
 * [Submit Feedback](contribute/issues.md)
 * [Code Blocks](contribute/code-samples.md)
