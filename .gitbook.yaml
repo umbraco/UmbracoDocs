@@ -13,3 +13,4 @@ redirects:
     v/workflow: umbraco-workflow/README.md
     umbraco-cloud/upgrades/migrating-from-8-10: umbraco-cloud/upgrades/major-upgrades.md
     umbraco-cms/reference/templating/mvc/child-actions: umbraco-cms/reference/templating/mvc/viewcomponents
+    umbraco-cloud/upgrades/migrate-from-umbraco-10-to-11: umbraco-cloud/upgrades/major-upgrades.md
