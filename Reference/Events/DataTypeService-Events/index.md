@@ -2,6 +2,7 @@
 versionFrom: 8.0.0
 meta.Title: "Umbraco DataTypeService Events"
 meta.Description: "Information on the various events available in the DataTypeService"
+meta.RedirectLink: "https://docs.umbraco.com/umbraco-cms/reference/notifications/datatypeservice-notifications"
 ---
 
 # DataTypeService Events

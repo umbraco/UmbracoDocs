@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+meta.RedirectLink: "https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/grid-layout/configuring-the-grid-layout-datatype"
 ---
 
 # Configuring the Grid Layout data type

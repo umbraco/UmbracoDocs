@@ -2,6 +2,7 @@
 versionFrom: 8.0.0
 meta.Title: "Umbraco MediaService Events"
 meta.Description: "Information on the various events available in the MediaService"
+meta.RedirectLink: "https://docs.umbraco.com/umbraco-cms/reference/notifications/mediaservice-notifications"
 ---
 
 # MediaService Events
