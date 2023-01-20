@@ -7,7 +7,7 @@ meta.Description: A guide to getting started with unit testing in Umbraco
 
 These examples are for Umbraco 9.x and 10.x and they rely on [NUnit](https://nunit.org/), [Moq](https://github.com/moq/moq4) and [AutoFixture](https://github.com/AutoFixture/AutoFixture) and they should be considered inspiration of how to get started with Unit Testing in Umbraco. There are many ways of testing Umbraco and there’s no right or wrong way.
 
-When testing various components in Umbraco, such as controllers, helpers, services etc. these components often require that you provide a couple of dependencies in your classes using [dependency injection](../reference/using-ioc.md). This is because a lot of magic happens “under the hood” of Umbraco and these dependencies are needed for that magic to happen.
+When testing components in Umbraco, such as controllers, helpers, services etc. these components often require that you provide a couple of dependencies in your classes using [dependency injection](../reference/using-ioc.md). This is because a lot of magic happens “under the hood” of Umbraco and these dependencies are needed for that magic to happen.
 
 {% hint style="info" %}
 When you are writing Unit Tests you will become a lot more aware of these underlying dependencies and what they do, which in return will make you an even better Umbraco developer.
@@ -17,7 +17,7 @@ When you are writing Unit Tests you will become a lot more aware of these underl
 
 These tests follows an approach thats based on isolating your tests from Umbraco and mock as much of Umbraco’s dependencies as possible. Think of it like you’re not testing Umbraco, you’re testing how your implementation code interacts with Umbraco’s behavior.
 
-Once you get familiar with these underlying dependencies you might want to start looking in to replacing them with actual implementations (leaning more towards integration or E2E testing) but that’s completely up to you. Again these examples should be a source of inspiration and the quickest way to get started with Unit Testing.
+Once you get familiar with these underlying dependencies you might want to start looking into replacing them with actual implementations. This leans more towards integration or E2E testing. Again these examples should be a source of inspiration and the quickest way to get started with Unit Testing.
 
 {% hint style="info" %}
 If you are new to mocking you can read more on this topic [here](https://martinfowler.com/bliki/TestDouble.html) or use the [Moq Quickstart](https://github.com/Moq/moq4/wiki/Quickstart) guide. For more inspiration and other ways of how to write tests in Umbraco there's a blogpost from HQ member Bjarke Berg about [Automated Testing](https://umbraco.com/blog/automated-testing-in-umbraco/).
@@ -157,7 +157,7 @@ public class PageSurfaceControllerTests
 ```
 
 {% hint style="info" %}
-`ServiceContext.CreatePartial()` has several optional parameters, and by naming them you only need to mock the dependencies that you actually need, for example: `ServiceContext.CreatePartial(contentService: Mock.Of<IContentService>());`
+`ServiceContext.CreatePartial()` has optional parameters, and by naming them you only need to mock the dependencies that you need, for example: `ServiceContext.CreatePartial(contentService: Mock.Of<IContentService>());`
 {% endhint %}
 
 ## Testing an UmbracoApiController
