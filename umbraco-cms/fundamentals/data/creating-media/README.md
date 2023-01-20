@@ -62,11 +62,11 @@ It is always a good idea to start by creating a folder for your media items. It 
 
 Follow these steps to create a folder in the Media section:
 
-1. Go to the **Media section**.
+1. Go to the **Media** section.
 2. Select **...** next to **Media**.
     * Alternatively, you can right-click the **Media** node and select **Create**.
 3. Select **Folder**.
-4. Choose a name for the folder and select **save** in the bottom-right corner.
+4. Enter a name for the folder and select **Save** in the bottom-right corner.
 
 ## Media Type properties
 
@@ -94,7 +94,7 @@ You can switch to a list view by selecting the view toggle next to the search fi
 
 ![Media Section - List view](images/switch-view-11.png)
 
-## Using media items in the content
+## Using media items in the Content section
 
 By adding a **Media Picker** property to a Document Type the editor will have the ability to select media items when creating content.
 
@@ -177,7 +177,8 @@ The new folder should be allowed to be created in the root of the Media tree. We
 ### Creating the folder and media items
 
 1. Go to the **Media** section.
-2. Select **...** next to Media and select the **Employee images** folder. 3. Name it "Employee Images" and select **Save**.
+2. Select **...** next to Media and select the **Employee images** folder. 
+3. Name it _Employee Images_ and select **Save**.
 
 There are four options to add new media items to the folder, as you can see here:
 
