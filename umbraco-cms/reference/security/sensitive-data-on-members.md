@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Sensitive data
 
 Marking fields and properties on member data as sensitive will hide the data in those fields for backoffice users that are not privy to the data.

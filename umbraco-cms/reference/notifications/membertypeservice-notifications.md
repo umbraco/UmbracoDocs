@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # MemberTypeService Notifications
 
 The MemberTypeService class implements IMemberTypeService. It provides access to operations involving IMemberType

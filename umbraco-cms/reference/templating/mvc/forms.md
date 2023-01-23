@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Creating Forms
 
 Creating an HTML form to submit data with MVC in Umbraco is possible in a few steps.

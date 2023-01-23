@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Templating
 
 _Templating in Umbraco consists of 3 larger concepts, namely Templates (Views), Partials (Partial Views) and Macros (Macro Partials). Templates are used for the HTML layout of your pages. Partials can be included in your templates for shared functionality across different page templates. Macros can be used for reusable dynamic components that can be controlled by editors to embed functionality into the grid or rich text areas._

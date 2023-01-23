@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Cookies
 
 The cookies listed in this article are required only for accessing the Backoffice. You can include these in your own cookie policy, if you wish.

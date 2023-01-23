@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Querying & Models
 
 _Overview of various ways of querying, filtering and searching published content for use on your website._

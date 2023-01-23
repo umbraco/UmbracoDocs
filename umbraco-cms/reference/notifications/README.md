@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Using notifications
 
 Umbraco uses Notifications, very similar to the Observer pattern, to allow you to hook into the workflow process for the backoffice. For example, you might want to execute some code every time a page is published. Notifications allow you to do that.

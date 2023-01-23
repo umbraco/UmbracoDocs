@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Creating Pages and Using the Master Template
 
 ## Creating a Contact Us Page

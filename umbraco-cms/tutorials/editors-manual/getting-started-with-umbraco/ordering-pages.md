@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Sorting Pages
 
 The pages in Umbraco are placed in the tree structure according to a predefined sort order. The most recently created page is placed at the bottom of the tree structure. You can change the order of the pages by using the **Sort** function.

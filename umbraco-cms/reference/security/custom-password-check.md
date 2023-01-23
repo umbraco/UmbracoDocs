@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Custom Password check
 
 Having the ability to replace the logic to validate a username and password against a custom data store is important to some developers. Normally in ASP.Net Core Identity this
