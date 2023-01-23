@@ -70,6 +70,8 @@ This video guide you through the steps involved with upgrading your Cloud projec
 * Checkmark the `Microsoft.Extensions.DependencyInjection.Abstractions` package if it appears in the list.
 * Select **Update**.
 
+![All packages checked in the Visual Studio Package manager and ready for update](images/check-all-packages.png)
+
 {% hint style="info" %}
 If you have more projects in your solution or other packages, make sure that these are also updated to support the latest .NET framework.
 {% endhint %}
