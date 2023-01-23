@@ -15,6 +15,8 @@ The App Service plan with the Administrative web app should only be scaled up. T
 
 The App Service plan with the Public web app can be scaled both out and up.
 
+![Loadbalancing infrastructure on Azure web apps](images/loadbalanced-infrastructure.png)
+
 ## Lucene/Examine configuration
 
 The single instance Backoffice Administrative Web App should be set to use [SyncedTempFileSystemDirectoryFactory](file-system-replication.md#examine-directory-factory-options).
