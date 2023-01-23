@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-meta.RedirectLink: "https://our.umbraco.com/documentation/Fundamentals/Backoffice/Property-Editors/Built-in-Property-Editors/"
+meta.RedirectLink: "/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors"
 ---
 
 # Built-in Umbraco Property Editors
