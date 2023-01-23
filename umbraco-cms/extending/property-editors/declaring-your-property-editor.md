@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Declaring your property editor
 
 Generally Umbraco supports two different ways to declare a property editor. Most commonly one would create a `package.manifest` file, and then use it for declaring one or more property editors. But as an alternative, property editors can also be declared using C#.

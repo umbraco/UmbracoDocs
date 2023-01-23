@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Package Types
 
 There are two main ways to install packages in Umbraco: Package zip files and NuGet packages.

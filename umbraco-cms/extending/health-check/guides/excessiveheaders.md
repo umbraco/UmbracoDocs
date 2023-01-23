@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Health check: Excessive Headers
 
 _Checks to see if your site is revealing information in its headers that gives away unnecessary details about the technology used to build and host it._

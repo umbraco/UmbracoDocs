@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Health check: Notification Email Settings
 
 _If notifications are used, the 'from' email address should be specified and changed from the default value._

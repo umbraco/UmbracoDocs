@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Executing an Umbraco request
 
 _During the Umbraco request execution, an MVC Action is called which executes a Razor view to render content to the end-user_,

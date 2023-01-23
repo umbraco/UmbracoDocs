@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Circular Dependencies
 
 In some cases you might experience that a circular dependency is preventing your Umbraco installing from starting up.
