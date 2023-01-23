@@ -78,7 +78,7 @@ If you have more projects in your solution or other packages, make sure that the
 
 ## Step 4: Finishing the Upgrade
 
-* Enable the[Unattended Upgrades](../../umbraco-cms/reference/configuration/unattendedsettings.md#upgrade-unattended) feature.
+* Enable the [Unattended Upgrades](../../umbraco-cms/reference/configuration/unattendedsettings.md#upgrade-unattended) feature.
 * Run the **project locally**.
 * Log in to the Umbraco backoffice to **verify the upgrade** has happened.
 * **Disable** the Unattended Upgrades feature.
