@@ -111,6 +111,7 @@ The deployment might take a bit longer than normal.
   * `Last deployment operation completed`
     * Everything checks out: The Development environment has been upgraded.
 * Transfer Content and Media from the local clone to the **Development** environment.
+  * To transfer members make sure that [`AllowMembersDeploymentOperations` and `TransferMemberGroupsAsContent`](broken-reference)is configured in the `appSettings.json` file.
 * Test **everything** in the **Development** environment.
 * Deploy to the **Live** environment.
 

@@ -505,7 +505,7 @@
     * [Manually run Extractions on your Cloud Environments](umbraco-cloud/set-up/power-tools/manual-extractions.md)
 * [Deployment](umbraco-cloud/deployment/README.md)
   * [Deploying between environments](umbraco-cloud/deployment/cloud-to-cloud.md)
-  * [Transferring Content, Media, and Forms](umbraco-cloud/deployment/content-transfer.md)
+  * [Transferring Content, Media, Members and Forms](umbraco-cloud/deployment/content-transfer.md)
   * [Deploying Deletions](umbraco-cloud/deployment/deploying-deletions.md)
   * [Deployment Webhook](umbraco-cloud/deployment/deployment-webhook.md)
   * [Deploying Changes](umbraco-cloud/deployment/local-to-cloud.md)
