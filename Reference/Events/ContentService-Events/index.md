@@ -2,6 +2,7 @@
 versionFrom: 8.0.0
 meta.Title: "Umbraco ContentService Events"
 meta.Description: "Information on the various events available in the ContentService"
+meta.RedirectLink: "https://docs.umbraco.com/umbraco-cms/reference/notifications/contentservice-notifications"
 ---
 
 # ContentService Events

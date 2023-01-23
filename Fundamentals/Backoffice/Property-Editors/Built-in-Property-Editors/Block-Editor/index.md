@@ -1,3 +1,7 @@
+---
+meta.RedirectLink: "https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor"
+---
+
 # Block Editors
 
 The Block Editors are property editors that enables you to build advanced editor tools using a set of predefined Document Types.
