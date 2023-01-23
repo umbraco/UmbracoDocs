@@ -1,7 +1,3 @@
----
-meta.Title: Localization
----
-
 # Localization
 
 The labels, descriptions, and buttons that make up the backoffice screens for Umbraco Forms can be translated into different languages.

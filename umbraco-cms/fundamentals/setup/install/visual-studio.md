@@ -1,5 +1,5 @@
 ---
-description: A guide to install Umbraco CMS using Visual Studio.
+description: "A guide to install Umbraco CMS using Visual Studio."
 ---
 
 # Install using Visual Studio

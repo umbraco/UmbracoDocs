@@ -1,5 +1,4 @@
 ﻿---
-meta.Title: "Installing Umbraco Nightly Builds"
 description: "Instructions on installing nightly builds of Umbraco."
 ---
 

@@ -1,7 +1,3 @@
----
-meta.Title: Content Apps
----
-
 # Content Apps
 
 [Umbraco Content Apps](../../umbraco-cms/extending/content-apps.md) can be configured to appear alongside forms in the Umbraco Forms backoffice section.

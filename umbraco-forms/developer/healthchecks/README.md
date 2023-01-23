@@ -1,7 +1,3 @@
----
-meta.Title: Healthchecks
----
-
 # Health Checks
 
 In this article, you will find information about Umbraco Forms-related health checks that can be run from the Umbraco backoffice to ensure that your installation is running seamlessly.
