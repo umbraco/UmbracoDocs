@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Add Open Graph - Step 2
 
 We will now add the group and properties to the Home page and Blog post of the site.

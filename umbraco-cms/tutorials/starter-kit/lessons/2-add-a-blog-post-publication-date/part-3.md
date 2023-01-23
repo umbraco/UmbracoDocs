@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Add a Blog Post Publication Date
 
 In [Part Two](part-2.md), we displayed a nicely formatted publication date on the blog post page.

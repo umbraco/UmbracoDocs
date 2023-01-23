@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Add Open Graph - Step 1
 
 Adding support for Open Graph can be done in many ways. In this lesson, we'll create a reusable set of properties we can add to specific page types.
