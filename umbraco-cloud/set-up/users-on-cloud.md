@@ -1,6 +1,5 @@
 ---
-meta.Title: Users on Umbraco Cloud
-meta.Description: An article explaining how Umbraco Users are working on Umbraco Cloud.
+description: "An article explaining how Umbraco Users are working on Umbraco Cloud."
 ---
 
 # Users

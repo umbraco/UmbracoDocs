@@ -1,6 +1,5 @@
 ---
-meta.Title: "Users in Umbraco"
-meta.Description: "This guide will explain how to define, create, and manage users in the backoffice"
+description: "This guide will explain how to define, create, and manage users in the backoffice"
 ---
 
 # Users

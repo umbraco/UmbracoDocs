@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Umbraco Sections & Trees"
-meta.Description: "An explanation on sections and trees in Umbraco"
+description: "An explanation on sections and trees in Umbraco"
 ---
 
 # Sections

@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Umbraco Content Dashboard Settings"
-meta.Description: "Information on the content dashboard settings section"
+description: "Information on the content dashboard settings section"
 ---
 
 # Content Dashboard Settings

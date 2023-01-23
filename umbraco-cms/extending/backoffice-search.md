@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Backoffice Search"
-meta.Description: "A guide to customization of Backoffice Search"
+description: "A guide to customization of Backoffice Search"
 ---
 
 # Backoffice Search

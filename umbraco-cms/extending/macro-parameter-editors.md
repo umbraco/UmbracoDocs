@@ -1,7 +1,5 @@
 ---
-versionFrom: 9.0.0
-meta.Title: Macro Parameter Editors
-meta.Description: A guide to creating macro property editors in Umbraco
+description: "A guide to creating macro property editors in Umbraco"
 ---
 
 # Macro Parameter Editors
