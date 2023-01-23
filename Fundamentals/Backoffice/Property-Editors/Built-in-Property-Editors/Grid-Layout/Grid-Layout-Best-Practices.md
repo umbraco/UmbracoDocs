@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-meta.RedirectLink: "https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/grid-layout/grid-layout-best-practices"
+meta.RedirectLink: "/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/grid-layout/grid-layout-best-practices"
 ---
 
 # Grid layout best practices

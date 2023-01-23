@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.4.0
-meta.RedirectLink: "https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/listview"
+meta.RedirectLink: "/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/listview"
 ---
 
 # List View

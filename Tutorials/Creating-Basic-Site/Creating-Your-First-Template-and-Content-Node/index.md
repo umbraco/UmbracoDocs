@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-meta.RedirectLink: "https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-basic-website/creating-your-first-template-and-content-node"
+meta.RedirectLink: "/umbraco-cms/tutorials/creating-a-basic-website/creating-your-first-template-and-content-node"
 ---
 
 # Creating Your First Template

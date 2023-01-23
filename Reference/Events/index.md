@@ -2,7 +2,7 @@
 versionFrom: 8.0.0
 meta.Title: "Umbraco events"
 meta.Description: "Information on various backoffice events in Umbraco"
-meta.RedirectLink: "https://docs.umbraco.com/umbraco-cms/reference/notifications"
+meta.RedirectLink: "/umbraco-cms/reference/notifications"
 ---
 
 # Using Events

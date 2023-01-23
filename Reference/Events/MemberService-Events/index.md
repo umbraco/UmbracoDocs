@@ -2,7 +2,7 @@
 versionFrom: 8.0.0
 meta.Title: "Umbraco MemberService Events"
 meta.Description: "Information on the various events available in the MemberService"
-meta.RedirectLink: "https://docs.umbraco.com/umbraco-cms/reference/notifications/memberservice-notifications"
+meta.RedirectLink: "/umbraco-cms/reference/notifications/memberservice-notifications"
 ---
 
 # MemberService Events

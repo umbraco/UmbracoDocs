@@ -3,7 +3,7 @@ versionFrom: 8.0.0
 meta.Title: "Members Registration and Logins"
 meta.Description: "In this article you can learn about how to create Member registration and login functionality for the frontend of your application."
 needsV9Update: "true"
-meta.RedirectLink: "https://docs.umbraco.com/umbraco-cms/tutorials/members-registration-and-login"
+meta.RedirectLink: "/umbraco-cms/tutorials/members-registration-and-login"
 ---
 
 # Member registration and login 

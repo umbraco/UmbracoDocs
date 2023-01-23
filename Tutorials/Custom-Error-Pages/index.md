@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-meta.RedirectLink: "https://docs.umbraco.com/umbraco-cms/tutorials/custom-error-page"
+meta.RedirectLink: "/umbraco-cms/tutorials/custom-error-page"
 ---
 
 # Implementing custom error pages

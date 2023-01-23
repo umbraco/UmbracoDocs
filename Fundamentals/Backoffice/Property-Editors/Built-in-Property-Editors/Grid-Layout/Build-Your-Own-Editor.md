@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-meta.RedirectLink: "https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/grid-layout/build-your-own-editor"
+meta.RedirectLink: "/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/grid-layout/build-your-own-editor"
 ---
 
 # Build your own editor

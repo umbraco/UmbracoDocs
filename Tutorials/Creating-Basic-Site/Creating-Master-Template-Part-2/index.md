@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-meta.RedirectLink: "https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-basic-website/creating-master-template-part-2"
+meta.RedirectLink: "/umbraco-cms/tutorials/creating-a-basic-website/creating-master-template-part-2"
 ---
 # Creating Pages and Using the Master Template - Part 2
 

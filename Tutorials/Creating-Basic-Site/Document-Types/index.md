@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-meta.RedirectLink: "https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-basic-website/document-types"
+meta.RedirectLink: "/umbraco-cms/tutorials/creating-a-basic-website/document-types"
 ---
 # Document Types
 

@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-meta.RedirectLink: "https://docs.umbraco.com/umbraco-cms/reference/notifications/contentypeservice-notifications"
+meta.RedirectLink: "/umbraco-cms/reference/notifications/contentypeservice-notifications"
 ---
 
 # ContentTypeService Events

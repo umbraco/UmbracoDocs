@@ -3,7 +3,7 @@ versionFrom: 8.0.0
 product: "CMS"
 meta.Title: "Creating a Basic Website using Umbraco"
 meta.Description: "A guide to creating a Basic Website using Umbraco"
-meta.RedirectLink: "https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-basic-website"
+meta.RedirectLink: "/umbraco-cms/tutorials/creating-a-basic-website"
 ---
 # Creating a Basic Website using Umbraco
 

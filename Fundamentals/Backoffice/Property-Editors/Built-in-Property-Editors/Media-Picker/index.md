@@ -1,7 +1,7 @@
 ---
 versionFrom: 8.0.0
 versionTo: 8.1.0
-meta.RedirectLink: "https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/media-picker"
+meta.RedirectLink: "/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/media-picker"
 ---
 
 # Media Picker

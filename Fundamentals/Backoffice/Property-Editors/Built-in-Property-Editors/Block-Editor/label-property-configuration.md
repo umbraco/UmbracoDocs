@@ -1,5 +1,5 @@
 ---
-meta.RedirectLink: "https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/label-property-configuration"
+meta.RedirectLink: "/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/label-property-configuration"
 ---
 # Configuring block editor label properties
 

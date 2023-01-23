@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-meta.RedirectLink: "https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-basic-website/article-parent-and-article-items"
+meta.RedirectLink: "/umbraco-cms/tutorials/creating-a-basic-website/article-parent-and-article-items"
 ---
 
 # Articles and Article Items - A Parent Page with Infinite Children

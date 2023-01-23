@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.13.0
-meta.RedirectLink: "https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/eye-dropper-color-picker"
+meta.RedirectLink: "/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/eye-dropper-color-picker"
 ---
 
 # Eye Dropper Color Picker

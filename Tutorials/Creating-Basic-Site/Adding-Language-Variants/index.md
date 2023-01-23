@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-meta.RedirectLink: "https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-basic-website/adding-language-variants"
+meta.RedirectLink: "/umbraco-cms/tutorials/creating-a-basic-website/adding-language-variants"
 ---
 
 # Adding Language Variants

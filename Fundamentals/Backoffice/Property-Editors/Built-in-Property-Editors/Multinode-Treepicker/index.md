@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.1.0
-meta.RedirectLink: "https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/multinode-treepicker"
+meta.RedirectLink: "/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/multinode-treepicker"
 ---
 
 # Multinode Treepicker

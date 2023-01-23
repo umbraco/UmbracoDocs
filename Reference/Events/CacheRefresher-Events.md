@@ -2,7 +2,7 @@
 versionFrom: 8.0.0
 meta.Title: "Umbraco CacheRefresher Events"
 meta.Description: "Information on the various CacheRefresher events available"
-meta.RedirectLink: "https://docs.umbraco.com/umbraco-cms/reference/notifications/cacherefresher-notifications"
+meta.RedirectLink: "/umbraco-cms/reference/notifications/cacherefresher-notifications"
 ---
 
 # CacheRefresher Events
