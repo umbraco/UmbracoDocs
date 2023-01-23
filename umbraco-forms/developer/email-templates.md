@@ -1,6 +1,5 @@
 ---
-meta.Title: Umbraco Forms Email Templates
-meta.Description: Creating an email template for Umbraco Forms.
+description: "Creating an email template for Umbraco Forms."
 ---
 
 # Email Templates

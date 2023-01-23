@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: Umbraco WebApi Authorization
-meta.Description: How to secure your Umbraco Api controllers
+description: "How to secure your Umbraco Api controllers"
 ---
 
 # Umbraco Api - Authorization

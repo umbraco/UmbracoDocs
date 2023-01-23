@@ -1,6 +1,5 @@
 ---
-meta.Title: Creating a Custom Dashboard
-meta.Description: A guide to creating a custom dashboard in Umbraco
+description: "A guide to creating a custom dashboard in Umbraco"
 ---
 
 # Creating a Custom Dashboard

@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Cool Things to do With Models"
-meta.Description: "Cool things you can do with models"
+description: "Cool things you can do with models"
 ---
 # Cool things you can do with strongly-typed models
 

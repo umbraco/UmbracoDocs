@@ -1,6 +1,5 @@
 ---
-meta.Title: "Umbraco Heartcore Content Delivery"
-meta.Description: "Documentation for Heartcore Content Delivery APIs"
+description: "Documentation for Heartcore Content Delivery APIs"
 ---
 
 # Content Delivery API

@@ -1,6 +1,5 @@
 ---
-meta.Title: "Version specific upgrades"
-meta.Description: "Version specific documentation for upgrading to new major versions of Umbraco Deploy."
+description: "Version specific documentation for upgrading to new major versions of Umbraco Deploy."
 ---
 
 # Version Specific Upgrade Details

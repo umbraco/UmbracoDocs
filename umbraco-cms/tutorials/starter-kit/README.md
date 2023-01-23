@@ -1,9 +1,5 @@
 ---
-versionFrom: 7.0.0
-versionTo: 10.0.0
-product: CMS
-meta.Title: Getting started with Umbraco using the Starter Kit
-meta.Description: A tutorial on getting started with Umbraco using the starter kit
+description: "A tutorial on getting started with Umbraco using the starter kit"
 ---
 
 # The Starter Kit

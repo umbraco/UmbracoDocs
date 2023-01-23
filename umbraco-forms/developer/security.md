@@ -1,6 +1,5 @@
 ---
-meta.Title: Umbraco Forms security
-meta.Description: How to secure access to Umbraco Forms data and functionality.
+description: "How to secure access to Umbraco Forms data and functionality."
 ---
 
 # Security

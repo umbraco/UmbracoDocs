@@ -1,6 +1,5 @@
 ---
-meta.Title: Umbraco Heartcore GraphQL Property Editors
-meta.Description: Documentation for Umbraco Heartcore GraphQL property editors and their types
+description: "Documentation for Umbraco Heartcore GraphQL property editors and their types"
 ---
 
 # Property Editors

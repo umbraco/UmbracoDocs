@@ -1,7 +1,5 @@
 ---
-versionFrom: 9.0.0
-meta.Title: "Umbraco Serilog Settings"
-meta.Description: "Information on the serilog settings section"
+description: "Information on the serilog settings section"
 ---
 
 # Serilog settings

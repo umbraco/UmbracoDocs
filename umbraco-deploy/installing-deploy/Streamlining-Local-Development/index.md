@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Streamlining Local Development"
-meta.Description: "Additional steps you can carry out to streamline your local development workflow"
+description: "Additional steps you can carry out to streamline your local development workflow"
 ---
 
 # Streamlining Local Development
