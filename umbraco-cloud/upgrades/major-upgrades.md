@@ -7,7 +7,7 @@ description: "In this article we show how you can upgrade your Umbraco Cloud pro
 {% hint style="info" %}
 **Are you using any custom packages or code on your Umbraco Cloud project?**
 
-You will need to ensure the packages you use are available in the latest version of Umbraco and that your custom code is valid with the .NET Framework.
+You need to ensure that any packages you use are available in the latest version of Umbraco. You also need to ensure that your custom code is valid with the new .NET Framework version.
 
 **Breaking Changes**
 
@@ -27,7 +27,7 @@ Make sure you know the [Breaking changes](../../umbraco-cms/fundamentals/setup/u
 ## Video Tutorial
 
 {% embed url="https://www.youtube.com/embed/AN5OOKLHmPE?rel=0" %}
-Video example.
+This video guide you through the steps involved with upgrading your Cloud project to the next major CMS version.
 {% endembed %}
 
 ## Step 1: Enable .NET
@@ -35,7 +35,7 @@ Video example.
 * Go to the project in the Umbraco Cloud portal.
 * Navigate to **Settings** -> **Advanced**.
 * Scroll down to the **Runtime Settings** section.
-* **Enable the latest version of .NET** for each environment on your Cloud project.
+* **Ensure that the latest version of .NET is enabled** for each environment on your Cloud project.
 
 <figure><img src="../../.gitbook/assets/runtime-settings.png" alt=""><figcaption><p>Runtime settings</p></figcaption></figure>
 
@@ -59,41 +59,29 @@ Video example.
 ![Target Framework](images/Target-Framework.png)
 
 * Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**.
-* Navigate to the **Browse** tab.
-* Install the _latest stable_ version of the `Microsoft.Extensions.DependencyInjection.Abstractions`.
-* Navigate to the **Installed** tab.
-* Choose **Umbraco.Cms**.
-* Select your project.
-* Choose **the latest stable version** from the **Version** drop-down.
-* Click **Install** to upgrade your project.
+* Navigate to the **Updates** tab.
+* Checkmark all packages made **by Umbraco**:
+  * Umbraco.Cms
+  * Umbraco.Deploy.Cloud
+  * Umbraco.Deploy.Contrib
+  * Umbraco.Forms
+  * Umbraco.Deploy.Forms
+  * Umbraco.Cloud.Identity.Cms
+* Checkmark the `Microsoft.Extensions.DependencyInjection.Abstractions` package if it appears in the list.
+* Select **Update**.
 
-![Nuget Version Install](images/Nuget-Version-Install.png)
-
-### Upgrading Add-on packages
-
-Update the following packages to the latest stable version as well:
-
-* Umbraco.Deploy.Cloud
-* Umbraco.Deploy.Contrib
-* Umbraco.Forms
-* Umbraco.Deploy.Forms
-* Umbraco.Cloud.Identity.Cms
-* Umbraco.Cloud.StorageProviders.AzureBlob
+![All packages checked in the Visual Studio Package manager and ready for update](images/check-all-packages-2.png)
 
 {% hint style="info" %}
-Choose the package version corresponding to the CMS version that you are currently upgrading to.
-
-For example, if you are upgrading to "Umbraco.Cms 11.0.0" update the forms package to "Umbraco.Forms 11.0.0" as well. \\
-
-Also, if you have more projects in your solution or other packages, make sure that these are also updated to support the latest .NET framework.
+If you have more projects in your solution or other packages, make sure that these are also updated to support the latest .NET framework.
 {% endhint %}
 
 ## Step 4: Finishing the Upgrade
 
-* Enable [Unattended Upgrades](../../umbraco-cms/reference/configuration/unattendedsettings.md#upgrade-unattended)
-* Run the **project locally**
+* Enable the [Unattended Upgrades](../../umbraco-cms/reference/configuration/unattendedsettings.md#upgrade-unattended) feature.
+* Run the **project locally**.
 * Log in to the Umbraco backoffice to **verify the upgrade** has happened.
-* **Remove** Unattended Upgrades
+* **Disable** the Unattended Upgrades feature.
 * **Build and run** the project to verify everything works as expected.
 
 ![Target Framework](images/verify-v10-upgrade-locally.png)
