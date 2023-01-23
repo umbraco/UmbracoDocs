@@ -1,7 +1,5 @@
 ---
-description: >-
-  This section will guide you on where to find the answers for any questions you
-  may have.
+description: "This section will guide you on where to find the answers for any questions you may have."
 ---
 
 # Where can I get help?

@@ -1,9 +1,5 @@
 ---
-meta.Title: Style Guide
-meta.Description: A style guide for Umbraco documentation repo.
-description: >-
-  Help us keep the Umbraco documentation accessible and readable by following
-  our style guide which is defined in this article.
+description: "Help us keep the Umbraco documentation accessible and readable by following our style guide which is defined in this article."
 ---
 
 # Style Guide
