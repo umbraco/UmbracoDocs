@@ -55,7 +55,7 @@ Workspace restore
 
 ### Tree Restore
 
-The Tree restore option restores all the entities available for the selected tree in that section. It's available in the **Content**, **Media**, **Forms** (root node of Forms, Datasources, and Prevalue sources), or **Translation** (Dictionary menu if configured) sections. Using Tree Restore, you can, for example, restore all your content only. This will restore any media that’s referenced in that content, but it won’t attempt to restore the full media library.
+The Tree restore option restores all the entities available for the selected tree in that section. It's available in the **Content**, **Media**, **Members**, **Forms** (root node of Forms, Datasources, and Prevalue sources), or **Translation** (Dictionary menu if configured) sections. Using Tree Restore, you can, for example, restore all your content only. This will restore any media that’s referenced in that content, but it won’t attempt to restore the full media library.
 
 1. Log in to the Umbraco Backoffice in the environment you want to restore the tree.
 2. Click **...** and select **Do something else** or Right-click the **Content** Tree in the Content section.

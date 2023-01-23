@@ -29,8 +29,6 @@ Before you start migrating your Umbraco site to Umbraco Cloud there are a few th
 
 Your Umbraco site has to fulfill these requirements:
 
-* Contains no member data
-  * If you do have member data, these will need to be imported manually after the migration
 * No obsolete/old packages
   * Not all packages will work on Umbraco Cloud
   * Read more about this in the section below
@@ -131,7 +129,7 @@ Merging your existing site into the Umbraco Cloud project is a matter of moving 
 1. Copy and replace the following folders from your project with the Umbraco Cloud project
    * `/wwwroot`
    * `/Views`
-   * \`/Umbraco
+   * `/Umbraco`
    * If your existing site uses Umbraco Forms, make sure you **do not overwrite** the `\umbraco\Licenses\umbracoForms.lic` file
 2. Merge Appsettings.JSON files from your existing site with the cloud site.
    * Make sure that you merge your Appsetting.JSON files with the ones from your existing site so that the settings you used are moved over to your Cloud project
@@ -201,7 +199,8 @@ Go to the backoffice of your Development environment and make sure all your meta
 
 ### Transfer your content and media
 
-1. With all your metadata in place, it's time to transfer your content and media as well
+1. With all your metadata in place, it's time to transfer your content, media, members and member groups as well
+   * To transfer members make sure that [`AllowMembersDeploymentOperations` and `TransferMemberGroupsAsContent`](../../../umbraco-deploy/deploy-settings.md#allowmembersdeploymentoperations-and-transfermembergroupsascontent)`are` configured in the `appSettings.json file`.
 2. Go to the backoffice of your local clone of the Umbraco Cloud project
 3. Right-click the top of the Content tree and choose _'Queue for transfer'_
    * **NOTE**: If you have a large amount of content and media you may have the best result in deploying content and media independently
