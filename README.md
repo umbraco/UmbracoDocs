@@ -24,6 +24,20 @@ This is the documentation project for Umbraco. The scope of this project is to p
 # Markdown conventions
 The Umbraco Documentation uses Markdown for all of the documentation; please read about our [Markdown Conventions](Contribute/Markdown-Conventions/).
 
+# Linking to the new docs site
+For each article in the legacy docs a link to the corresponding article on the new documentation site is automatically generated and added to the "We have moved" box.
+
+In the cases where the auto-generated link is not correct, it is possible to add a YAML tag with the correct URL path.
+
+```
+---
+meta.RedirectLink: "/path/to/article"
+---
+```
+
+Example:
+`"/umbraco-cms/fundamentals/setup"` will generate the following link: `https://docs.umbraco.com/umbraco-cms/fundamentals/setup`.
+
 # Annotating a document
 
 To add version information and extra keywords, [every document can be annotated using YAML](Contribute/Adding-Metadata/index.md).
