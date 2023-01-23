@@ -6,6 +6,8 @@ You can also use more advanced expressions using AngularJS filters. Example: `{{
 
 It is also possible to use properties from the settings model by using `{{$settings.propertyAlias}}`.
 
+If you like to make a fallback label, it can be achieved in this way: `{{myProperty || $contentTypeName}}`, this will show as the value of `myProperty` if its not defined then the name of the ElementType will be displayed.
+
 ## Useful Angular filters
 
 As well as the [default AngularJS filters](https://docs.angularjs.org/api/ng/filter), Umbraco ships with some additional filters which are useful for setting the Label field of Block editors.
