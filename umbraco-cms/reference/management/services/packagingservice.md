@@ -1,7 +1,3 @@
----
-versionFrom: 8.0.0
----
-
 # PackagingService
 
 The PackagingService provides import/export functionality for the Core models of the API.

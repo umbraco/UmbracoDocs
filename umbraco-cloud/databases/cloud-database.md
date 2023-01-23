@@ -1,7 +1,3 @@
----
-versionFrom: 7.0.0
----
-
 # Database
 
 In order for you to be able to work with your Cloud database there are a few steps you will need to do before you are able to work with it locally. This article will go through the needed steps. At the end of the article you will be ready to start working with the database.

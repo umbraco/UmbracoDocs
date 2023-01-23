@@ -1,7 +1,3 @@
----
-versionFrom: 8.0.0
----
-
 # Content and media transfer / restore
 
 While structure changes are deployed between environments using the Cloud Portal, content and media transfers and restores are handled through the Umbraco Backoffice.

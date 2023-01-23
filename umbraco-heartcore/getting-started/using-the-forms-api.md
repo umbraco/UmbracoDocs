@@ -1,7 +1,3 @@
----
-versionFrom: 8.0.0
----
-
 # Using the Forms API
 
 In this article you can learn more about how to use the Forms API for retrieving form definitions and submitting form entries.

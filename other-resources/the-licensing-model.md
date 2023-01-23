@@ -1,7 +1,3 @@
----
-versionFrom: 9.0.0
----
-
 # The Licensing Model
 
 Umbraco Forms and Umbraco Deploy are commercial products.

@@ -1,9 +1,3 @@
----
-versionFrom: 8.4.0
-needsV9Update: "true"
----
-
-
 # changeTitle
 
 Setting the title of the page the user is working on is important for accessibility purposes; where people using assistive technology need to know what they are maintaining. 

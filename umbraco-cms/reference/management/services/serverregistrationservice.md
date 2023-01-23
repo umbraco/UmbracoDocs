@@ -1,7 +1,3 @@
----
-versionFrom: 9.0.0
----
-
 # ServerRegistrationService
 
 The ServerRegistrationService manages server registrations in the database.

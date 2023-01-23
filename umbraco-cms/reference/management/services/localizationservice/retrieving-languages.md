@@ -1,7 +1,3 @@
----
-versionFrom: 9.0.0
----
-
 # Retrieving languages
 
 ### Getting a single language

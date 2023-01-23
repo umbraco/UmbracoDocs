@@ -1,7 +1,3 @@
----
-versionFrom: 9.0.0
----
-
 # umbProperty
 
 The [umb-property](https://apidocs.umbraco.com/v9/ui#/api/umbraco.directives.directive:umbProperty) directive can along with [umb-property-editor](https://apidocs.umbraco.com/v9/ui#/api/umbraco.directives.directive:umbPropertyEditor) be used for rendering property editors in the backoffice.

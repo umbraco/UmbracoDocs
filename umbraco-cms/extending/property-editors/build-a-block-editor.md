@@ -1,7 +1,3 @@
----
-versionFrom: 10.0.0
----
-
 # Build a Block Editor
 
 Before reading this document we highly recommend that you familiarise yourself with the [basics of developing a custom Property Editor for Umbraco](build-a-block-editor.md).

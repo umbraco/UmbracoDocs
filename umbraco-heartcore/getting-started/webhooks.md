@@ -1,7 +1,3 @@
----
-versionFrom: 8.0.0
----
-
 # Webhooks
 
 In this article you can learn more about how to use Webhooks, and how to set them up.

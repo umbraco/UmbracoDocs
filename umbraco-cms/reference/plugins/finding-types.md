@@ -1,9 +1,3 @@
----
-versionFrom: 7.0.0
-needsV8Update: "false"
-needsV9Update: "false"
----
-
 # Finding types
 
 _Whenever types need to be found in assemblies in order to add them to resolvers, the PluginManager should be used. The TypeFinder should never be used directly in any code except for in PluginManager extension methods or in the PluginManager itself._

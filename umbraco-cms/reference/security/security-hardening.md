@@ -1,7 +1,3 @@
----
-versionFrom: 10.0.0
----
-
 # Umbraco Security Hardening
 
 Here you find some tips and trick for hardening the security of your Umbraco installation.

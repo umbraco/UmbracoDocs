@@ -1,7 +1,3 @@
----
-keywords: logging serilog messagetemplates logs v9 version9
----
-
 # Logging
 
 In Umbraco we use the underlying logging framework of [Serilog](https://serilog.net/).
