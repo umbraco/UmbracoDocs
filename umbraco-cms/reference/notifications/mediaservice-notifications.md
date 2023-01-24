@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # MediaService Notifications
 
 The MediaService class implements IMediaService. It provides access to operations involving IMedia.

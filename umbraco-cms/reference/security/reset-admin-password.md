@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Reset admin password
 
 There is one default admin user in any Umbraco installation. This is the first user of the system.

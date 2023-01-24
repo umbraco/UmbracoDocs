@@ -1,8 +1,5 @@
 ---
-description: >-
-  In production environments it is highly recommend that you enforce the use of
-  HTTPS (UseHttps). It grealy increases the general trust of your site and
-  guards you against various attacks, like 'Man in
+description: "This article covers the recommended way of working with HTTPS and Umbraco CMS."
 ---
 
 # HTTPS

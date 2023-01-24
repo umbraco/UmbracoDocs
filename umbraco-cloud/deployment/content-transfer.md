@@ -1,6 +1,5 @@
 ---
-meta.Title: Transfering content with Umbraco Deploy
-meta.Description: How to restore content in Umbraco Deploy using the deployment dashboard
+description: "How to restore content in Umbraco Deploy using the deployment dashboard"
 ---
 
 # Transferring Content, Media, Members, and Forms

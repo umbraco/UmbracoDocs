@@ -1,7 +1,3 @@
----
-needsV9Update: "true"
----
-
 # Handling configuration files
 
 {% hint style="warning" %}

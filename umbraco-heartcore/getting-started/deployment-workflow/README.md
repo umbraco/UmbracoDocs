@@ -1,7 +1,3 @@
----
-versionFrom: 8.0.0
----
-
 # Deployment workflow
 
 Having multiple environments on your Umbraco Heartcore project can be a great asset for testing and having a place where your content editors can work without interfering with anything on the Live environment.

@@ -1,6 +1,5 @@
 ---
-meta.title: "Subscribing to notifications"
-meta.description: "Subscribing to notifications allows you to execute custom code on a number of operations both before and after the operation occurs"
+description: "Subscribing to notifications allows you to execute custom code on a number of operations both before and after the operation occurs"
 ---
 
 # Subscribing to notifications

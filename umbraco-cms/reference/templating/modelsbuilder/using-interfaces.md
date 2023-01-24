@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Using Modelsbuilder interfaces"
-meta.Description: "Using interfaces with modelsbuilder"
+description: "Using interfaces with modelsbuilder"
 ---
 
 # Using Interfaces

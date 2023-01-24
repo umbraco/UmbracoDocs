@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # FileService Notifications
 
 The FileService class implements IFileService. It provides access to operations involving IFile objects like scripts, stylesheets and templates.

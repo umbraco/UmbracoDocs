@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # IPublishedContent
 
 _`IPublishedContent` is a strongly typed model for content, media and members and is used to render content in your views for your website._

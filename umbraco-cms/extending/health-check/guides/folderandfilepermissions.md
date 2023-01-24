@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Health check: Folder & File Permissions
 
 _Checks that the web server folder and file permissions are set correctly for Umbraco to run._

@@ -1,7 +1,3 @@
----
-versionFrom: 8.0.0
----
-
 # ExternalLoginService
 
 The ExternalLoginService is used to store the external login info and can be replaced with your own implementation.

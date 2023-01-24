@@ -1,7 +1,3 @@
----
-versionFrom: 9.0.0
----
-
 # DataTypeService
 
 The DataTypeService acts as a "gateway" to Umbraco data for operations which are related to DataTypes and DataTypeDefinitions.

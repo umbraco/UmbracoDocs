@@ -1,6 +1,5 @@
 ---
-meta.Title: Restoring content in Umbraco Deploy
-meta.Description: How to restore content in Umbraco Deploy
+description: "How to restore content in Umbraco Deploy"
 ---
 
 # Restoring content

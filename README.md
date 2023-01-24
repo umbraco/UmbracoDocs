@@ -1,8 +1,5 @@
 ---
-meta.Title: Umbraco Documentation
-description: >-
-  Examples, tutorials, references, and best practices—everything you need to
-  build future-proof applications with Umbraco.
+description: "Examples, tutorials, references, and best practices—everything you need to build future-proof applications with Umbraco."
 layout: landing
 ---
 

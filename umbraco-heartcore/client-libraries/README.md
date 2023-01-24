@@ -1,7 +1,3 @@
----
-versionFrom: 8.0.0
----
-
 # Client Libraries
 
 In order for you to get started with Umbraco Heartcore we have created a set of client libraries for you to use for testing and for getting a seamless start with the product.

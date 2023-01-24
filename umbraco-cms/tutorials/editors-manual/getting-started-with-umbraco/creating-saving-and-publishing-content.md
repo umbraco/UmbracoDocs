@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Creating, Saving and Publishing Content Options
 
 In this section, you will get an overview of how to create and save pages. You will also learn more about how to publish and unpublish your content, as well as how you can compare content between multiple environments. Finally, you will also get an introduction to how you can transfer your created content to another environment.

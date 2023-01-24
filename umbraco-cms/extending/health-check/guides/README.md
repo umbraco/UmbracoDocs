@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Health Check Guides
 
 Below is a list of guides for Health Checks in Umbraco.

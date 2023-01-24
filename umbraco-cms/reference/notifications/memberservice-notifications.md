@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # MemberService Notifications
 
 The MemberService implements IMemberService and provides access to operations involving IMember.

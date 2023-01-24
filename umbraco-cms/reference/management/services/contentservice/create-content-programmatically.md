@@ -1,7 +1,3 @@
----
-versionFrom: 8.0.0
----
-
 # Create content programmatically
 
 In the example below, a new page is programmatically created using the content service. It is assumed that there are two document types, namely people and person. In this case, a new person is added underneath the people page.

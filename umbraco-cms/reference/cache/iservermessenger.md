@@ -1,8 +1,3 @@
----
-versionFrom: 7.0.0
-needsV8Update: "true"
----
-
 # IServerMessenger
 
 Broadcasts distributed cache notifications to all servers of a load balanced environment.

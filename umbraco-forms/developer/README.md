@@ -1,6 +1,5 @@
 ---
-meta.Title: "Umbraco Forms Developer Documentation"
-meta.Description: "Developer documentation covering retrieving data, how to extend the system by hooking into the provider model, and describes the available events and workflows you can use to extend or integrate Umbraco Forms."
+description: "Developer documentation covering retrieving data, how to extend the system by hooking into the provider model, and describes the available events and workflows you can use to extend or integrate Umbraco Forms."
 ---
 
 # Developer Documentation

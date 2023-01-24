@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Umbraco Tours Settings"
-meta.Description: "Information on the tours settings section"
+description: "Information on the tours settings section"
 ---
 
 # Tours settings

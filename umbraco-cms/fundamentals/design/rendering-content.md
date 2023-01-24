@@ -1,8 +1,3 @@
----
-meta.Title: Rendering content
-keywords: content razor v9 version9
----
-
 # Rendering Content
 
 _The primary task of any template is to render the values of the current page or the result of a query against the content cache._

@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Working with Folders
 
 All media within your site must be loaded in the **Media** section. The Media section is a media library for the site. Within the Media section, you can create or organize files and folders as in a File Explorer.

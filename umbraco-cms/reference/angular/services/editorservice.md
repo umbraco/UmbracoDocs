@@ -1,7 +1,3 @@
----
-versionFrom: 8.0.0
----
-
 # Editor Service
 
 The Angular `editorService` service is the primary resource used for opening overlays and handling infinite editing. Besides the `open` and `close` functions, the service also contains functions for opening specialized overlays/editors - eg. `contentPicker` or `mediaPicker`.

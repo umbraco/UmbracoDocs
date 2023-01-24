@@ -1,7 +1,3 @@
----
-versionFrom: 8.0.0
----
-
 # PublicAccessService
 
 Service to handle public access.

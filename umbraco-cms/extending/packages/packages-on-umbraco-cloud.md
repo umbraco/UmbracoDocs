@@ -1,10 +1,5 @@
 ---
-versionFrom: 8.0.0
-versionTo: 10.0.0
-meta.Title: "Packages on Umbraco Cloud"
-meta.Description: "Things to consider for package development and usage in Umbraco Cloud"
-v9-equivalent: "https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Packages/packages-on-Umbraco-Cloud.md"
-needsv9Update: "true"
+description: "Things to consider for package development and usage in Umbraco Cloud"
 ---
 
 # Packages on Umbraco Cloud

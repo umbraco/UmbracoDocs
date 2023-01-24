@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Add Open Graph - Step 3
 
 Next step is to get the Open Graph code rendered on the website. This is done in the `head` section of the HTML, so you need to find the template for this.

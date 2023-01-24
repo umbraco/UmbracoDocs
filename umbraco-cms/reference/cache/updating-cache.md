@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Updating Cache
 
 _This section describes how you should be getting/adding/updating/inserting items in the cache._

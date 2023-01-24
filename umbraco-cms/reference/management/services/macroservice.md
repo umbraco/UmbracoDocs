@@ -1,7 +1,3 @@
----
-versionFrom: 9.0.0
----
-
 # MacroService
 
 Defines the MacroService, which is an access to operations involving `IMacro`.

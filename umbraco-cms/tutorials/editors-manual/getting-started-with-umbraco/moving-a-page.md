@@ -1,8 +1,3 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
-
 # Moving a Page
 
 Move pages within the website through the tree view. Not all pages can be moved depending on your set-up or page permissions. If you need clarification, contact your system administrator.

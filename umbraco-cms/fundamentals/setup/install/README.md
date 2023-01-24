@@ -1,6 +1,5 @@
 ---
-meta.Title: "Installing Umbraco"
-meta.Description: "Instructions on installing Umbraco on various platforms using various tools."
+description: "Instructions on installing Umbraco on various platforms using various tools."
 ---
 
 # Installation

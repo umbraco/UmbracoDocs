@@ -1,8 +1,5 @@
 ---
-description: >-
-  Umbraco supports supports external login providers (OAuth) for performing
-  authentication of your users and members. This could be any OpenIDConnect
-  provider such as Azure Active Directory, Identity Se
+description: "Umbraco supports supports external login providers (OAuth) for performing authentication of your users and members."
 ---
 
 # External login providers

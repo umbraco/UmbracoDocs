@@ -1,7 +1,3 @@
----
-versionFrom: 8.0.0
----
-
 # .NET Client library
 
 In this article you can learn more about the .NET client library that you can clone and use with your Umbraco Heartcore projects.

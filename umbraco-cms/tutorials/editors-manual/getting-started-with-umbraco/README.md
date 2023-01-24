@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Getting started with Umbraco
 
 In this section, you will find all the relevant topics to help you get started with Umbraco:

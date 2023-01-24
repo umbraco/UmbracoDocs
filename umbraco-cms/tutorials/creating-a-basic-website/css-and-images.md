@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # CSS and Images
 
 Our homepage is currently missing the CSS and image files. To include these files:

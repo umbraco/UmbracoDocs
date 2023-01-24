@@ -1,8 +1,3 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
-
 # Connecting Umbraco Forms and Zapier
 
 This guide takes you through the steps of connecting your Umbraco Forms to Zapier.

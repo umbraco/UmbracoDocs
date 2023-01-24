@@ -1,11 +1,4 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
-# quick-start
-
-## Quick start
+# Quick start
 
 _This guide will help you get set up quickly using Examine with minimal configuration options. Umbraco ships Examine with 3 indexes: internal, external, and members. The internal index should not be used for searching when returning results on a public website because it includes content that has not been published yet. Instead, you can use the external index to get up and running._
 

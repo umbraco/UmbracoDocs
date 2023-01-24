@@ -1,6 +1,5 @@
 ---
-meta.Title: "Partial View Macro Files"
-meta.Description: "Information on working with partial view macro files in Umbraco"
+description: "Information on working with partial view macro files in Umbraco"
 ---
 
 # Partial View Macro Files

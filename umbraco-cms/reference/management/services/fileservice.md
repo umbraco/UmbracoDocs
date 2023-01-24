@@ -1,7 +1,3 @@
----
-versionFrom: 9.0.0
----
-
 # FileService
 The FileService acts as a "gateway" to Umbraco data for operations which are related to Scripts, Stylesheets and Templates.
 

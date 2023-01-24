@@ -1,6 +1,5 @@
 ---
-meta.Title: Get started working with Umbraco Cloud
-meta.Description: Here you can find information about getting started working with Umbraco Cloud
+description: "Here you can find information about getting started working with Umbraco Cloud."
 ---
 
 # What is Umbraco Cloud?

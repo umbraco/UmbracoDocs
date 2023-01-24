@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Refreshing the Tree View
 
 When editing content, the content tree will refresh itself when the content is saved.

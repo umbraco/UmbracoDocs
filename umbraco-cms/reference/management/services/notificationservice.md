@@ -1,7 +1,3 @@
----
-versionFrom: 8.0.0
----
-
 # NotificationService
 
 The NotificationServices is used to perform operations related to backoffice notifications. 

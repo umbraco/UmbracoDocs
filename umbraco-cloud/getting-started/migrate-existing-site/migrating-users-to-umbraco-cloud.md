@@ -1,6 +1,5 @@
 ---
-meta.Title: "Migrating Users to Umbraco Cloud"
-meta.Description: "In this guide we show you how you can migrate users from your existing on-premise site to Umbraco Cloud and Umbraco ID."
+description: "In this guide we show you how you can migrate users from your existing on-premise site to Umbraco Cloud and Umbraco ID."
 ---
 
 # Migrating Users to Umbraco Cloud

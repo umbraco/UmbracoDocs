@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # MediaTypeService Notifications
 
 The MediaTypeService class implements IMediaTypeService. It provides access to operations involving IMediaType.

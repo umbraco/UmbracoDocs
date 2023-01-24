@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Umbraco Basic Authentication Settings"
-meta.Description: "Information on the basic authentication section"
+description: "Information on the basic authentication section"
 ---
 
 # Basic Authentication Settings

@@ -1,7 +1,3 @@
----
-versionFrom: 9.0.0
----
-
 # ContentService
 
 The ContentService acts as a "gateway" to Umbraco data for operations which are related to Content.

@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Cropping Images
 
 If your system administrator has set up cropping for your images, you will see a similar interface when you edit your images:

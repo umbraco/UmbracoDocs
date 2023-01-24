@@ -1,6 +1,5 @@
 ---
-meta.Title: "Deploying deletions in Umbraco Deploy"
-meta.Description: "How deleting meta data and files work in Umbraco Deploy"
+description: "How deleting meta data and files work in Umbraco Deploy"
 ---
 
 # Deploying deletions

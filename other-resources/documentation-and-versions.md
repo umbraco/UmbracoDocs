@@ -1,7 +1,5 @@
 ---
-description: >-
-  The Umbraco Documentation is versioned based on major versions of the Umbraco
-  CMS. Learn more about how that works in this article.
+description: "The Umbraco Documentation is versioned based on major versions of the Umbraco CMS. Learn more about how that works in this article."
 ---
 
 # Versioning Strategy

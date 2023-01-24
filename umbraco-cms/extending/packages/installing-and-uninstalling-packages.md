@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: Installing and uninstalling Umbraco packages
-meta.Description: How to install a package, and remove a package from a solution
+description: "How to install a package, and remove a package from a solution"
 ---
 
 # Installing and Uninstalling Packages

@@ -1,7 +1,3 @@
----
-meta.Title: Extending Umbraco Forms
----
-
 # Extending
 
 Umbraco Forms functionality can be extended in various ways. In this section we focus on techniques available to a back-end/C# developer.

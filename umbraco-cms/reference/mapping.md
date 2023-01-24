@@ -1,9 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "UmbracoMapper"
----
-
 # UmbracoMapper
 
 Often in code there is a need to 'map' one object's properties to another type of object, and the 'type of objects' are not related by inheritance or interface. (Think database layer object, passing information to a presentation layer ViewModel etc). In these circumstances, it can save time and provide consistency to consolidate the logic to map between the options into one set of 'Mapping' rules.

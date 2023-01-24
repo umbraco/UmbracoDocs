@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Inbound request pipeline"
-meta.Description: "How the Umbraco inbound request pipeline works"
+description: "How the Umbraco inbound request pipeline works"
 ---
 
 # Inbound request pipeline

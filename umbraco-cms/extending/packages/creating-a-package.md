@@ -1,7 +1,5 @@
 ---
-versionFrom: 11.0.0
-meta.Title: Creating a package
-meta.Description: Tutorial to create a package in Umbraco
+description: "Tutorial to create a package in Umbraco"
 ---
 
 # Creating a Package

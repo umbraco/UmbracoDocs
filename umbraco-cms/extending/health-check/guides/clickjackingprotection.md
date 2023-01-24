@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Health check: Click-Jacking Protection
 
 _Checks if your site is allowed to be IFRAMEd by another site and thus would be susceptible to click-jacking._

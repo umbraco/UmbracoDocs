@@ -1,6 +1,5 @@
 ---
-meta.Title: "Infinite Editing in Umbraco"
-meta.Description: "This section explains how the concept of infinite editing in the Umbraco backoffice works."
+description: "This section explains how the concept of infinite editing in the Umbraco backoffice works."
 ---
 
 # Infinite Editing

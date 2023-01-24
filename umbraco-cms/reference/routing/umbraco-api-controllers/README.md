@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Umbraco WebApi"
-meta.Description: "A guide to implenting WebApi in Umbraco projects"
+description: "A guide to implenting WebApi in Umbraco projects"
 ---
 
 # Umbraco API Controllers

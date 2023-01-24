@@ -1,7 +1,3 @@
----
-versionFrom: 8.0.0
----
-
 # TagService
 
 Tag service to query for tags in the tags db table.

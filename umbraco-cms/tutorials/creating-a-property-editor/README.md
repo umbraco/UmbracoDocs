@@ -1,5 +1,5 @@
 ---
-description: A guide to creating a property editor in Umbraco
+description: "A guide to creating a property editor in Umbraco"
 ---
 
 # Creating a Property Editor

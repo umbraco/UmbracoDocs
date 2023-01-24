@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Language Variation
 
 Language Variation allows you to have several different variations of content based on a language culture. In the documentation there are several other useful articles about the feature:

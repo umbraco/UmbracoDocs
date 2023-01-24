@@ -1,8 +1,3 @@
----
-versionFrom: 7.0.0
-needsV8Update: "true"
----
-
 # Find Published Content and Template
 
 The followed method is called on the "PublishedContentRequest.PrepareRequest()" method: `FindPublishedContentAndTemplate()`.

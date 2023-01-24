@@ -1,7 +1,3 @@
----
-versionFrom: 8.0.0
----
-
 # Node.js Client library
 
 In this article you will be able to read about our Node.js Client library. You will be able to see a code sample showing you how to create a client and fetch some data from an Umbraco Heartcore project.

@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Add Open Graph - Step 4
 
 The final piece to the puzzle is adding the partial view that will be rendered when the composition is present. To do this:

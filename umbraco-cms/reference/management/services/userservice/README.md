@@ -1,7 +1,3 @@
----
-versionFrom: 8.0.0
----
-
 # UserService
 
 The UserService acts as a "gateway" to Umbraco data for operations which are related to Users.

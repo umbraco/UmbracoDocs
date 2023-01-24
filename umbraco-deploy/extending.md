@@ -1,6 +1,5 @@
 ---
-meta.Title: "Extending Umbraco Deploy"
-meta.Description: "How to extend Umbraco Deploy to synchronize custom data"
+description: "How to extend Umbraco Deploy to synchronize custom data"
 ---
 
 # Extending Umbraco Deploy

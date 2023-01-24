@@ -1,8 +1,3 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
-
 # Partial Restores
 
 In some cases, you might not want to restore the entire content tree but only the parts that you need. **Partial restore** is a feature that allows for restoring specific parts of your content instead of restoring everything.

@@ -1,7 +1,3 @@
----
-versionFrom: 9.0.0
----
-
 # MemberGroupService
 
 The MemberGroupService acts as a "gateway" to Umbraco data for operations which are related to Member groups, which are also known as Member Roles.

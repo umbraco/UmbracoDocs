@@ -1,6 +1,5 @@
 ---
-meta.Title: "Information on server setup for Umbraco hosting"
-meta.Description: "This section describes different ways of setting up servers for use with Umbraco"
+description: "This section describes different ways of setting up servers for use with Umbraco"
 ---
 
 # Server setup
