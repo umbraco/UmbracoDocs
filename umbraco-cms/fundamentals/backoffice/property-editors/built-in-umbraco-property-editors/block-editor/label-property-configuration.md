@@ -53,4 +53,6 @@ angular.module("umbraco.filters").filter("myFilter", function () {
 | Variable    | Description                                                  |
 | ----------- | ------------------------------------------------------------ |
 | `$index`    | The 1-based index of this block item in the current block list |
+| `$contentTypeName` | The name of the Element Type used for the Block |
 | `$settings` | Provides access to the settings model for the block (if configured) |
+| `$layout`   | Provides access to the layout model for the block (columnSpan and rowSpan) |
