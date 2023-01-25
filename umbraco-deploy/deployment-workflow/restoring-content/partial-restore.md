@@ -1,5 +1,5 @@
 ---
-description: "How to partially restore content in Umbraco Deploy"
+description: How to partially restore content in Umbraco Deploy
 ---
 
 # Partial Restores
@@ -57,4 +57,4 @@ Imagine that you are working with your Umbraco project locally. One of your cont
 6. Start the restore by clicking _Restore_
 7. When the restore is done, reload the content tree to see the changes
 
-![Partial restore](../../../umbraco-cloud/deployment/restoring-content/images/partialRestore-onEnvWithContent.png)
+![Partial restore](images/partialRestore-onEnvWithContent.png)

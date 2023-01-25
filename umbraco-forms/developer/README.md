@@ -1,5 +1,8 @@
 ---
-description: "Developer documentation covering retrieving data, how to extend the system by hooking into the provider model, and describes the available events and workflows you can use to extend or integrate Umbraco Forms."
+description: >-
+  Developer documentation covering retrieving data, how to extend the system by
+  hooking into the provider model, and describes the available events and
+  workflows you can use to extend or integrate Umbra
 ---
 
 # Developer Documentation
@@ -34,11 +37,11 @@ Fetch and display record data from your Razor macros.
 
 Persist all data from Umbraco Forms in the database. Configure your Umbraco Forms installation to migrate all forms data into the Umbraco database.
 
-## [Extending](extending/README.md)
+## [Extending](extending/)
 
 Extend Umbraco Forms with your own custom providers.
 
-## [Configuration](configuration/README.md)
+## [Configuration](configuration/)
 
 Look at some of the available configuration options to modify how Umbraco Forms works.
 
@@ -50,7 +53,7 @@ Understand the security model of Umbraco Forms.
 
 Learn about the magic string formats that Umbraco Forms supports that can retrieve information from various sources such as Session, Cookies, Umbraco Page Fields, Member fields, Form fields to use in workflows.
 
-## [Health Checks](healthchecks/README.md)
+## [Health Checks](healthchecks/)
 
 Introducing the health checks provided to confirm your Umbraco Forms installation is running as intended. Understand how to handle any issues reported.
 
