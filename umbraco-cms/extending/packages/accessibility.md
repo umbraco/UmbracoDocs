@@ -1,4 +1,4 @@
-# Creating An Accessible Umbraco Packages
+# Create accessible Umbraco packages
 
 Creating accessible packages extends on accessibility in an [Umbraco context](https://www.skrift.io/issues/accessibility-in-an-umbraco-context/).
 
