@@ -6,7 +6,9 @@ You can also use more advanced expressions using AngularJS filters. Example: `{{
 
 It is also possible to use properties from the settings model by using `{{$settings.propertyAlias}}`.
 
-If you like to make a fallback label, it can be achieved in this way: `{{myProperty || $contentTypeName}}`, this will show as the value of `myProperty` if its not defined then the name of the ElementType will be displayed.
+In some cases, you might want to create a fallback label. This can be achieved using the following format: `{{myProperty || $contentTypeName}}`.
+
+This example will show the name of the ElementType when the value of `myProperty` is not defined.
 
 ## Useful Angular filters
 
