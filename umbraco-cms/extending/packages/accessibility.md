@@ -4,7 +4,7 @@ Creating accessible packages extends on accessibility in an [Umbraco context](ht
 
 The Umbraco UI components have been built to be accessible and have accessibility tests built within them. Building the user interface (UI) using these components ensures that the package is as accessible as the Umbraco backoffice.
 
-In addition, any fixes and updates to the UI components will be pushed through to the packages being created as long as you rebuild them with the updates.
+In addition, any fixes and updates to the UI components will be pushed through to the packages when you rebuild them with the updates.
 
 ## Testing
 
