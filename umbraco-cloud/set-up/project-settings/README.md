@@ -54,7 +54,7 @@ If you have your own custom certificate, you can upload and bind it to your cust
 
 You can deny access to your project with the Public access setting.
 
-Users who are not part of the project or whose IP has not been allowed will then not be able to access the project.
+Users who are not part of the project or whose IP has not been allowed will not be able to access the project.
 
 On the Public access page, it is possible to allow certain IPs access to the project.
 
