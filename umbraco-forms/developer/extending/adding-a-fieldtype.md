@@ -83,7 +83,7 @@ Then we will start building the view for the default theme of the Form at `Views
 The file name for the partial view should match the value set on the `FieldTypeViewName` property.
 
 ```csharp
-@model Umbraco.Forms.Mvc.Models.FieldViewModel
+@model Umbraco.Forms.Web.Models.FieldViewModel
 <input type="text" name="@Model.Name" id="@Model.Id" class="text" value="@Model.ValueAsHtmlString" maxlength="500"
         @{if (string.IsNullOrEmpty(Model.PlaceholderText) == false) { <text> placeholder="@Model.PlaceholderText" </text> }}
         @{if (Model.Mandatory || Model.Validate) { <text> data-val="true" </text> }}
