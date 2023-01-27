@@ -3,14 +3,14 @@
 ## Key Takeaways
 
 * **UK Region Hosting** - With support for the azure hosting region "UK South", it is now possible to spin up a cloud project in 3 regions.
-* **Multi-factor authentication list** - As an administrator at a cloud organization, you can see the multi-factor authentication connection for all the organization's members.
+* **Display of Multi-factor authentication setting for organisation members** - As an administrator at a cloud organization, you can see the multi-factor authentication connection for all the organization's members.
 * **Prefixes for naming secrets** - When naming secrets, you can reference the security related settings for Umbraco:CMS:Global:Smtp and Umbraco Forms api-key and field recaptchas.
 
 ## UK Region Hosting
 
 Umbraco Cloud has reached yet a new milestone with the support of UK region. You are now able to create a new Umbraco Cloud project in either "West Europe", "US East", or "UK South" to the delight of the majority of our European and American customers.
 
-## Multi-factor authentication list
+## Display of Multi-factor authentication setting for organisation members
 
 Since October last year, our users have had the opportunity to enable multi-factor authentication (MFA) and thereby authenticate with a password and either phone, email or an authenticator app.
 
