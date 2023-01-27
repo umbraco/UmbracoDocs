@@ -18,8 +18,8 @@ For some more in-depth information have a look at the [High-level Overview](high
 
 ## Video Tutorial
 
-{% embed url="https://www.youtube.com/embed/A4FhZTyruE0?rel=0" %}
-How to work with baselines on Umbraco Cloud
+{% embed url="https://www.youtube.com/embed/Ci1Hm-bH98Y" %}
+Learn how to work with Baselines.
 {% endembed %}
 
 ## Creating a Child Project
