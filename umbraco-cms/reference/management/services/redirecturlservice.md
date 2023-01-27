@@ -1,6 +1,6 @@
 # RedirectUrlService
 
-The RedirectUrlService is used for CRUD operations related to Redirects.
+The RedirectUrlService is used for Create, Read, Update and Delete (CRUD) operations related to Redirects.
 
  * **Namespace:** `Umbraco.Core.Services` 
  * **Assembly:** `Umbraco.Core.dll`
