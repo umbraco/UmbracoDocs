@@ -1,7 +1,3 @@
----
-versionFrom: 9.0.0
----
-
 # AngularJS
 
 The Umbraco backoffice is built using AngularJS. The implementation is made up of many directives and services.

@@ -1,10 +1,3 @@
----
-state: partial
-updated-links: false
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Package Manifest
 
 The `package.manifest` JSON file format is used to describe one or more custom Umbraco property editors, grid editors or parameter editors. This page outlines the file format and properties found in the JSON.

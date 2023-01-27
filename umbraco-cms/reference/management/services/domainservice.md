@@ -1,7 +1,3 @@
----
-versionFrom: 8.0.0
----
-
 # DomainService
 
 The domain service acts as a "gateway" to Umbraco data for operations which are related to domains.

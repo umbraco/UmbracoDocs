@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Umbraco Helper"
-meta.Description: "Using the Umbraco Helper"
+description: "Using the Umbraco Helper"
 ---
 
 # UmbracoHelper

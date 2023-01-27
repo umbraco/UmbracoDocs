@@ -1,6 +1,5 @@
 ---
-meta.Title: UI Library
-meta.Description: A guide for getting started working with the Umbraco UI Library
+description: "A guide for getting started working with the Umbraco UI Library"
 ---
 
 # UI Library

@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Health check: SMTP
 
 _Checks that valid settings for sending emails are in place._

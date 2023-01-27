@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-needsV9Update: "true"
----
-
 # Adding server-side data to a property editor
 
 ## Overview

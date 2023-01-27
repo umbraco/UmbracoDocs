@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Displaying the Document Type Properties
 
 You might have noticed that the content we've added to the homepage is not being displayed. We need to wire up the Data Type properties to the template.

@@ -1,7 +1,3 @@
----
-meta.Title: "Apply keys and indexes"
----
-
 # Apply keys and indexes
 
 ```sql

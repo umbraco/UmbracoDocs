@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Password reset
 
 It's impossible to brute force the authentication on the login screen because after `MaxFailedAccessAttemptsBeforeLockout` the account of the user will be locked, and until that account is unlocked in the Users section, no attempt will succeed.

@@ -1,7 +1,5 @@
 ---
-versionFrom: 9.0.0
-meta.Title: "Content Model"
-meta.Description: "The Content class represents a single item in the content tree, its values are fetched directly from the database, not from the cache." 
+description: "The Content class represents a single item in the content tree, its values are fetched directly from the database, not from the cache." 
 ---
 
 # Content

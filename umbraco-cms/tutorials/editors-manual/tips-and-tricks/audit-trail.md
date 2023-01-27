@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Audit Trail
 
 Within the **Info** content app for pages you can find the **Audit Trail** in the **History** section. Here, you can get a quick overview of the actions performed on that node, by whom, when and any additional comments.

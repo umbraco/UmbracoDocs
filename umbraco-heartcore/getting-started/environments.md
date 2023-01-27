@@ -1,7 +1,3 @@
----
-versionFrom: 8.0.0
----
-
 # Environments
 
 In this article, you can learn more about how to work with environments on your Umbraco Heartcore project.

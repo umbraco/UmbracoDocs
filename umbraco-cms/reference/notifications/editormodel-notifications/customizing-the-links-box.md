@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Customizing the "Links" box
 
 For a content item, Umbraco will show a **Links** box within the **Info** content app. By default, this box will show one or more links to content item.

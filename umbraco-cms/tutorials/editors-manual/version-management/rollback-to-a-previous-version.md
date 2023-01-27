@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Rollback to a Previous Version
 
 You have the opportunity to access and re-publish older versions, if necessary.

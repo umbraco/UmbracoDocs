@@ -1,7 +1,3 @@
----
-versionFrom: 8.0.0
----
-
 # .NET Core Console Application
 
 In this article, you can read more about the .NET Core Console Application.

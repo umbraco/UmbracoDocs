@@ -1,7 +1,3 @@
----
-versionFrom: 8.0.0
----
-
 # RedirectUrlService
 
 The RedirectUrlService is used for CRUD operations related to Redirects.

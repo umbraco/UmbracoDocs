@@ -1,7 +1,3 @@
----
-versionFrom: 8.0.0
----
-
 # Structure deployments
 
 Structure changes like new and/or updated Document Types needs to deployed through environments using the Project View in the Cloud Portal.

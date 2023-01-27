@@ -14,7 +14,7 @@ Then it will use a reference that only the managed identity of the environment h
 You can add secrets to your Umbraco Cloud environments if you are on a standard plan or higher.
 {% endhint %}
 
-### How to add secrets
+## How to add secrets
 
 {% hint style="warning" %}
 When adding a secret to your environment it will restart.
@@ -28,7 +28,7 @@ To add a secret to your environment follow these steps:
 4. Add the Key and the Value in the fields and click Add secret
 5. Save the key to the environment.
 
-### Working locally with secrets
+## Working locally with secrets
 
 When you develop locally, you cannot access secrets that are stored in the key vault associated with a cloud environment.
 
@@ -52,7 +52,7 @@ you should specify this with a corresponding name in a configuration file such a
 }
 ```
 
-### Access secrets in a Umbraco Solution
+## Access secrets in a Umbraco Solution
 
 Secrets for cloud environments are stored in a key vault and loaded by the app service (using a key vault reference) as an environment variable.
 
@@ -64,7 +64,7 @@ You can use the method, getting it from the System namespace in .NET as below:
 
 Secrets can also be used to override AppSettings defined in `appsettings.json` files.
 
-In order for this to work, when adding the secret, the Key value should be all the settings' names joined by double underscores. 
+In order for this to work, when adding the secret, the Key value should be all the settings' names joined by double underscores.
 
 For example, to change the Serilog's default options under `Serilog:MinimumLevel:Default`, the Secret key would look like this:
 
@@ -72,7 +72,7 @@ For example, to change the Serilog's default options under `Serilog:MinimumLevel
 
 The value defined in `appsettings.json` file will be overwritten with the Cloud Secret's value.
 
-### Naming standards for secrets
+## Naming standards for secrets
 
 When naming a secret, it is possible to use alphanumeric characters as well as '-' and '\_' (dash and underscore).
 
@@ -112,6 +112,16 @@ The list consists of:
 * `DATABASE_`
 * `WORDPRESS_`
 * `MACHINEKEY_`
+
+### Accepted Prefixes
+
+While we have a number of prefixes that are not accepted, we do allow the use of the below prefixes for Secrets on Umbraco Cloud:
+
+* `Umbraco__CMS__Global__Smtp`
+* `Umbraco__Forms__Security__FormsApiKey`
+* `Umbraco__Forms__FieldTypes__Recaptcha` &#x20;
+
+It is also possible to use Secrets to save API keys, Passwords, and ReChaptcha for all our Umbraco products on Umbraco Cloud.
 
 Do you have an existing or new secret that you want to add to a key vault that conflicts with the name restrictions?
 

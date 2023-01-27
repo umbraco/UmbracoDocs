@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Lessons
 
 ## [Customise the Starter Kit](1-customize-the-starter-kit.md)

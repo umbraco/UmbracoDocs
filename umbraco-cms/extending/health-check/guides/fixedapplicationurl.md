@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Health check: Fixed Application Url
 
 _Check to make sure a fixed application url is specified. This url is for example used when sending emails from backoffice.

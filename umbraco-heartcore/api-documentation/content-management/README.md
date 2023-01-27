@@ -1,6 +1,5 @@
 ---
-meta.Title: "Umbraco Heartcore Content Management"
-meta.Description: "Documentation for Heartcore Content Management APIs"
+description: "Documentation for Heartcore Content Management APIs"
 ---
 
 # Content Management API

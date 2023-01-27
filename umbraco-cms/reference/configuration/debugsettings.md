@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Umbraco Debug Settings"
-meta.Description: "Information on debug settings section"
+description: "Information on debug settings section"
 ---
 
 # Debug settings

@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "URL Redirect Management"
-meta.Description: "URL redirect management in Umbraco"
+description: "URL redirect management in Umbraco"
 ---
 
 # URL Redirect Management

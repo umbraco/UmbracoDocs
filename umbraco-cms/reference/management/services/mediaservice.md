@@ -1,10 +1,3 @@
----
-versionFrom: 9.0.0
-verified-against: 10.2.1
-state: complete
-updated-links: true
----
-
 # MediaService
 
 The MediaService acts as a "gateway" to Umbraco data for operations which are related to media.

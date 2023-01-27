@@ -1,8 +1,5 @@
 ---
-versionFrom: 7.7.0
-meta.Title: "Creating a new user with the UserService"
-meta.Description: "This will show you how to create a new user using the UserService in Umbraco."
-needsV8Update: "true"
+description: "This will show you how to create a new user using the UserService in Umbraco."
 ---
 # Creating a user
 If you want to create a new user, you'd use ASP.NET identity APIs like it is used in core.

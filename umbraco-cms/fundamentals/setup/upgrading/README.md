@@ -1,5 +1,5 @@
 ---
-description: This is the guide for upgrading existing installations in general.
+description: "This is the guide for upgrading existing installations in general."
 ---
 
 # Upgrade your project

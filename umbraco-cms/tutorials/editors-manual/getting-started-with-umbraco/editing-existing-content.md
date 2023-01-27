@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Editing Existing Content
 
 ## Content Within the Tree View

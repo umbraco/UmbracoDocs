@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Adding Language Variants
 
 Now that we have a basic site set up, let's make the site multilingual by making variations of our content in one more language. For this tutorial, we will make a Danish version of the `HomePage` page.

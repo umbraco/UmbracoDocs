@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-needsV9Update: "true"
----
-
 # Events Service
 
 The events service allows different components in Umbraco to broadcast and listen for global events.

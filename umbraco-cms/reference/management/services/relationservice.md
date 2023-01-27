@@ -1,7 +1,3 @@
----
-versionFrom: 8.0.0
----
-
 # RelationService
 
 The `RelationService` is pretty awesome as it allows you to create relations between objects that would otherwise have no obvious connection.

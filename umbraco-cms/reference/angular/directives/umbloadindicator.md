@@ -1,7 +1,3 @@
----
-versionFrom: 9.0.0
----
-
 # umbLoadIndicator
 
 Many web sites and web applications use a form of load indicator to indicate a busy state to the user. Throughout the backoffice, Umbraco uses three animated circles as a load indicator - eg. as shown below:

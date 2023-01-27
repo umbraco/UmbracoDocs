@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Preview Pane Responsive View
 
 When viewing page content in preview mode you have the option to scale the preview window to various device sizes:

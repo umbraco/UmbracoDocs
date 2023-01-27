@@ -1,7 +1,3 @@
----
-versionFrom: 9.0.0
----
-
 # LocalizationService
 
 The LocalizationService acts as a "gateway" to Umbraco data for operations which are related to Dictionary items and Languages.

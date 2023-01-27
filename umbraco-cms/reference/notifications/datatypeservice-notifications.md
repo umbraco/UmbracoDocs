@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # DataTypeService Notifications
 
 The DataTypeService class implements IDataTypeService. It provides access to operations involving IDataType.

@@ -2,20 +2,21 @@
 
 When working with a Umbraco Cloud project, you can handle a lot of the project configuration directly in the Umbraco Cloud Portal. You can manage the following configurations from the **Settings** dropdown:
 
-* View Project Overview
-* Team Members
-* Database Connection Details
-* Hostnames/Domains
-* Security Settings
-* Content Delivery Network (CDN) Caching and Optimizations
-* Deployment Webhooks
-* Secure Sockets Layer (SSL) certificates
-* Upgrade Plan
-* Rename Project
-* Advanced Settings
-* Project Usage
-* Dedicated Resources
-* Delete the project.
+* [View Project Overview](./#overview)
+* [Team Members](./#edit-team)
+* [Database Connection Details](./#connection-details)
+* [Hostnames/Domains](./#hostnames)
+* [Security Settings](./#security)
+* [Content Delivery Network (CDN) Caching and Optimizations](./#cdn-caching-and-optimization)
+* [Public Access](./#public-access)
+* [Deployment Webhooks](./#webhooks)
+* [Secure Sockets Layer (SSL) certificates](./#certificates-only-available-on-professional-or-enterprise-plan)
+* [Upgrade Plan](./#upgrade-plan)
+* [Rename Project](./#rename-project)
+* [Advanced Settings](./#advanced)
+* [Project Usage](./#usage)
+* [Dedicated Resources](./#dedicated-resources)
+* [Delete the project.](./#delete-project)
 
 ![settings](../images/project-settings-v10.png)
 
@@ -51,11 +52,21 @@ If you have your own custom certificate, you can upload and bind it to your cust
 
 ## Public access
 
-Staging and Development environments on Umbraco Cloud projects can be protected by basic authentication. It requires you to enter your Cloud credentials in order to view the frontend.
+{% hint style="info" %}
+Public access is only available for projects created after the 10th of January 2023.
+{% endhint %}
+
+You can deny access to your project with the Public access setting.
+
+Users who are not part of the project or whose IP has not been allowed will not be able to access the project.
+
+On the Public access page, it is possible to allow certain IPs access to the project.
+
+All environments on Umbraco Cloud projects can be protected by Public access. It requires you to enter your Cloud credentials in order to view the frontend.
 
 You can disable/enable it with one click on the Public access page.
 
-Access to manage the basic authentication requires your project to be on the Standard plan or higher.
+Access to manage Public access requires your project to be on the Standard plan or higher.
 
 ## [Webhooks](../../deployment/deployment-webhook.md)
 

@@ -1,7 +1,5 @@
 ---
-versionFrom: 10.0.0
-meta.Title: Umbraco Global Settings
-meta.Description: Information on the global settings section
+description: "Information on the global settings section"
 ---
 
 # Global Settings

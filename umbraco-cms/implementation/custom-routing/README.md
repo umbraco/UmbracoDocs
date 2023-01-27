@@ -1,8 +1,5 @@
 ---
-description: >-
-  There are a couple of ways of controlling the routing behavior in Umbraco:
-  customizing how the inbound request pipeline finds content & creating custom
-  MVC routes that integrate within the Umbraco pip
+description: "Learn everything you need to know about custom routing in Umbraco CMS."
 ---
 
 # Custom Routing

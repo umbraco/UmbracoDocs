@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Umbraco Unattended Settings"
-meta.Description: "Information on the unattended settings section"
+description: "Information on the unattended settings section"
 ---
 
 # Unattended

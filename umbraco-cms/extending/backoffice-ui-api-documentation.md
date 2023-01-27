@@ -1,7 +1,3 @@
----
-versionFrom: 10.0.0
----
-
 # Backoffice UI API Documentation
 
 A library of API Reference documentation is auto-generated from the comments within the Umbraco Source Code.

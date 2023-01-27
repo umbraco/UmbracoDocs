@@ -1,8 +1,3 @@
----
-versionFrom: 8.5.0
-versionTo: 10.0.0
----
-
 # Install the full version of the Models Builder
 
 In this article you will find instructions on how to install the full version of the Models Builder to your Umbraco project.

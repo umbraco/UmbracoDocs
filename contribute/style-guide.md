@@ -1,6 +1,4 @@
 ---
-meta.Title: Style Guide
-meta.Description: A style guide for Umbraco documentation repo.
 description: >-
   Help us keep the Umbraco documentation accessible and readable by following
   our style guide which is defined in this article.
@@ -106,7 +104,7 @@ In order to keep lists short and to the point, we recommend that you follow thes
 
 * Start each item on the list with the **action** word.
   * :no\_entry: Do not do this: "The next thing to do, is to _navigate to_ the Content section"
-  * :white\_check\_mark: Do this: "_Navigate to_ the Content section" &#x20;
+  * :white\_check\_mark: Do this: "_Navigate to_ the Content section"
 * Add a maximum of two actions per item list.
 * Keep each list item short and to the point.
   * Add additional information in one or more sub-list items.

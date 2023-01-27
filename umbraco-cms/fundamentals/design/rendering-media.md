@@ -1,7 +1,5 @@
 ---
-meta.Title: Rendering Media in Umbraco
-meta.Description: Info on rendering media items and imaging cropping
-keywords: rendering media imagecropper
+description: "Info on rendering media items and imaging cropping"
 ---
 
 # Rendering media

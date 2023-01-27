@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Add a Blog Post Publication Date
 
 In [Part One](README.md) we added a new property to the *Blogpost* Document Type.

@@ -1,7 +1,3 @@
----
-versionFrom: 8.0.0
----
-
 # TextService
 
 The TextService is the entry point to localize any key in the text storage source for a given culture.

@@ -1,7 +1,3 @@
----
-versionFrom: 9.0.0
----
-
 # Retrieving content types
 
 ## Getting a single content type container

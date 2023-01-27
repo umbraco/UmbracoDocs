@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # ContentTypeService Notifications
 
 The ContentTypeService class implements IContentTypeService. It provides access to operations involving IContentType

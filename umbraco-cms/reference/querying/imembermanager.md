@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: Umbraco IMemberManager
-meta.Description: Using the IMemberManager1
+description: "Using the IMemberManager"
 ---
 
 # IMemberManager

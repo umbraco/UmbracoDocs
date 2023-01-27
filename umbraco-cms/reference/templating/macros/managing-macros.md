@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-needsv9Update: "true"
----
-
 # Managing macros
 
 In this article you can learn how to create and update a Macro, as well as how to configure its parameters.

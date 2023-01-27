@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "ModelsBuilder Configuration"
-meta.Description: "Explanation of how to configure models builder"
+description: "Explanation of how to configure models builder"
 ---
 
 # Configuration

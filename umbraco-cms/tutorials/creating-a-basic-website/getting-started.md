@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Getting Started
 
 The **Creating a Basic Site** tutorial provides step by step instructions to build an Umbraco website using a set of flat HTML, CSS, and JavaScript files. The tutorial allows you to use a website template, customize it, and wire up the sections that need content managing in the Umbraco CMS.

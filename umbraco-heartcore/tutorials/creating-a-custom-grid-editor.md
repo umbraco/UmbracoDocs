@@ -1,6 +1,5 @@
 ---
-meta.Title: Creating a Custom Grid Editor
-meta.Description: Learn how to create a Custom Grid Editor in Umbraco Heartcore.
+description: "Learn how to create a Custom Grid Editor in Umbraco Heartcore."
 ---
 
 # Custom Grid Editors

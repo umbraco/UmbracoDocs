@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # View/Razor Examples
 
 _Lots of examples of using various techniques to render data in a view_

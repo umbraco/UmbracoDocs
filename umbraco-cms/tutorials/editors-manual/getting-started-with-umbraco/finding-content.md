@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Finding Content
 
 The Umbraco content tree view allows you to navigate web pages through a logical site hierarchy. You can find a page by navigating through the tree itself if you know where the page is stored.

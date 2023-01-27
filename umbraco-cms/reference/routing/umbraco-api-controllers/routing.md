@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Umbraco WebApi Routing & Urls"
-meta.Description: "How api controllers are routed and how to retrieve their URLs"
+description: "How api controllers are routed and how to retrieve their URLs"
 ---
 
 # Routing & Urls

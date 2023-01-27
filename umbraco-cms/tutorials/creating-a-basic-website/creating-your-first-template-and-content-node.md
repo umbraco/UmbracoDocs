@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Creating Your First Template
 
 Umbraco creates a corresponding template when you select the **Document Type with Template** option when creating a Document Type.

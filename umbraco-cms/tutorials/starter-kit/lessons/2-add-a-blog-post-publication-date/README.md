@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Add a Blog Post Publication Date
 
 In this lesson, you will learn how to add a new date property to blog posts.

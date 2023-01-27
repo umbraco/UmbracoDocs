@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Umbraco Custom Dashboards"
-meta.Description: "A guide to creating custom dashboards in Umbraco"
+description: "A guide to creating custom dashboards in Umbraco"
 ---
 
 # Dashboards

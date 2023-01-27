@@ -1,8 +1,5 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Umbraco configuration"
-meta.Description: "Information on configuring Umbraco"
+description: "Information on configuring Umbraco"
 ---
 
 # Configuration Files

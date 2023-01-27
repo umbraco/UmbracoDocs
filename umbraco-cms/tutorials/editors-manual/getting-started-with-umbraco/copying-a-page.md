@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Copying a Page
 
 Re-use a page or a tree structure you have previously created by copying the parent page and its child pages to a different section within the site structure.

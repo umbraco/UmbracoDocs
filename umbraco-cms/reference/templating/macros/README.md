@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Macros
 
 _Describes how to set up a macro, use macro parameters & configuring caching. Defines the different types of macros and provides details on the different macro engine APIs and their usage_
@@ -16,7 +11,7 @@ So if you allow a macro to be added to a Rich Text Editor or Grid cell, the edit
 
 For example imagine adding an Image Gallery within a rich text editor, and at the point of insertion 'picking' the images to display.
 
-![Insert Image Carousel](images/Image-Carousel-Macro.png)
+![Insert Image Carousel](images/image-carousel-macro-v8.PNG)
 
 Define the parameters
 

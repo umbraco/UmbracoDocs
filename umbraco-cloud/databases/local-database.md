@@ -1,7 +1,5 @@
 ---
-versionFrom: 10.0.0
-meta.Title: "Working with a Cloud database locally"
-meta.Description: "Explanation on how to work with an Umbraco Cloud database locally, connecting to your local database using Visual Studio and working with custom tables in the Cloud database"
+description: "Explanation on how to work with an Umbraco Cloud database locally, connecting to your local database using Visual Studio and working with custom tables in the Cloud database"
 ---
 
 # Working with a Cloud database locally

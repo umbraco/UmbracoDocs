@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Comparing Versions
 
 You will never lose changes on a page because all the old versions of the page are saved in **History**.

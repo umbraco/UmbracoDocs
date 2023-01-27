@@ -1,7 +1,3 @@
----
-versionFrom: 9.0.0
----
-
 # AuditService
 
 The AuditService acts as a "gateway" to Umbraco data for operations which are related to the audit trail.

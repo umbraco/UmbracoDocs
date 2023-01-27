@@ -1,7 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
 # Setting the Navigation Menu
 
 You can fix the navigation menu in two ways:

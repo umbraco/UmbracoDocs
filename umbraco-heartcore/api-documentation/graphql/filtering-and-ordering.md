@@ -1,6 +1,5 @@
 ---
-meta.Title: "Filtering content in Umbraco Heartcore with GraphQL"
-meta.Description: "Documentation for GraphQL filtering in Umbraco Heartcore."
+description: "Documentation for GraphQL filtering in Umbraco Heartcore."
 ---
 
 # Introduction

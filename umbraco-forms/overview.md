@@ -1,6 +1,5 @@
 ---
-meta.Title: "Umbraco Forms"
-meta.Description: "Documentation on how to work with Umbraco Forms for both editors and developers"
+description: "Documentation on how to work with Umbraco Forms for both editors and developers"
 ---
 
 # What is Umbraco Forms?

@@ -1,7 +1,3 @@
----
-versionFrom: 10.0.0
----
-
 # Umbraco Security Hardening
 
 Here you find some tips and trick for hardening the security of your Umbraco installation.
@@ -32,9 +28,8 @@ Some older versions of Umbraco also relied on /umbraco/webservices/ for loadbala
 </rule>
 ```
 
-2. Get the IP-addresses of your client and write these down like a regular expression. If the IP-addresses are for example 213.3.10.8 and 88.4.43.108 the regular expression would be "213.3.10.8|88.4.43.108".
-
-3. Lock down the Umbraco folder by putting this rule into your IISRewrite-rules
+1. Get the IP-addresses of your client and write these down like a regular expression. If the IP-addresses are for example 213.3.10.8 and 88.4.43.108 the regular expression would be "213.3.10.8|88.4.43.108".
+2. Lock down the Umbraco folder by putting this rule into your IISRewrite-rules
 
 ```xml
 <rule name="Allowed IPs" stopProcessing="true">

@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Health check: HTTPS Configuration
 
 _Checks if your site is configured to work over HTTPS and if the Umbraco related configuration for that is correct._

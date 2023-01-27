@@ -1,8 +1,3 @@
----
-versionFrom: 9.0.0
-versionTo: 10.0.0
----
-
 # Controller & Action Selection
 
 When you make a page request to the MVC application, a controller is responsible for returning the response to that request. The controller can perform one or more actions. The controller action can return different types of action results based on the request.

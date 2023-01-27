@@ -1,9 +1,9 @@
 ﻿---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+description: "Learn how to build and customize the indexes that comes with your Umbraco website."
 ---
 
 # Custom indexing
+
 ## Customizing the built in indexes
 
 You can modify the built-in indexes in the following ways:
@@ -18,7 +18,8 @@ We can do all this by using the `ConfigureNamedOptions` pattern.
 ## Creating a ConfigureOptions class
 
 We will start by creating a ConfigureExamineOptions class, that derives from `IConfigureNamedOptions<LuceneDirectoryIndexOptions>`:
-```c#
+
+```csharp
 using Examine.Lucene;
 using Microsoft.Extensions.Options;
 
@@ -61,6 +62,7 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
     }
 }
 ```
+
 ### Changing field value types
 
 By default, Examine will store values into the Lucene index as "Full Text" fields, meaning the values will be indexed and analyzed for a textual search. However, if a field value is numerical, date/time, or another non-textual value type, you might want to change how the value is stored in the index. This will let you take advantage of some value type-specific search features such as numerical or date range.
@@ -69,7 +71,7 @@ There is some documentation about this in the [Examine documentation](https://sh
 
 The easiest way to modify how a field is configured is using the ConfigureNamedOptions pattern like so:
 
-```c#
+```csharp
 using Examine;
 using Examine.Lucene;
 using Microsoft.Extensions.Options;
@@ -95,6 +97,7 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
     }
 }
 ```
+
 This will ensure that the `price` field in the index is treated as a `double` type (if the `price` field does not exist in the index, it is added).
 
 ## Changing IValueSetValidator
@@ -105,10 +108,9 @@ If a `ValueSet` was passed to the ExternalIndex and it did not pass this require
 
 The `IValueSetValidator` is also responsible for filtering the data in the `ValueSet`. For example, by default the validator for the MemberIndex will validate on all the default member properties, so an extra property "PhoneNumber", would not pass validation, and therefore not be included.
 
-
 The `IValueSetValidator` implementation for the built-in indexes, can be changed like this:
 
-```c#
+```csharp
 using Examine.Lucene;
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
@@ -157,10 +159,9 @@ To create this index we need five things:
 4. An `IndexPopulator` implementation that populates the index with the value sets
 5. A composer that adds all these services to the runtime.
 
-
 ### ProductIndex
 
-```c#
+```csharp
 using Examine.Lucene;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -173,15 +174,15 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
     public class ProductIndex : UmbracoExamineIndex
     {
         public ProductIndex(
-            ILoggerFactory loggerFactory, 
-            string name, 
-            IOptionsMonitor<LuceneDirectoryIndexOptions> indexOptions, 
-            IHostingEnvironment hostingEnvironment, 
+            ILoggerFactory loggerFactory,
+            string name,
+            IOptionsMonitor<LuceneDirectoryIndexOptions> indexOptions,
+            IHostingEnvironment hostingEnvironment,
             IRuntimeState runtimeState)
-            : base(loggerFactory, 
-            name, 
-            indexOptions, 
-            hostingEnvironment, 
+            : base(loggerFactory,
+            name,
+            indexOptions,
+            hostingEnvironment,
             runtimeState)
         {
         }
@@ -191,7 +192,7 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
 
 ### ConfigureProductIndexOptions
 
-```c#
+```csharp
 using Examine;
 using Examine.Lucene;
 using Lucene.Net.Analysis.Standard;
@@ -254,7 +255,7 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
 
 ### ProductIndexValueSetBuilder
 
-```c#
+```csharp
 using System.Collections.Generic;
 using Examine;
 using Umbraco.Cms.Core.Models;
@@ -274,14 +275,16 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
                     ["id"] = content.Id,
                 };
 
-                yield return new ValueSet(content.Id.ToString(), "content", indexValues);
+                yield return new ValueSet(content.Id.ToString(), IndexTypes.Content, content.ContentType.Alias, indexValues);
             }
         }
     }
 }
 ```
+
 ### ProductIndexPopulator
-```c#
+
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -323,7 +326,8 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
 ```
 
 ### ExamineComposer
-```c#
+
+```csharp
 using Examine;
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.Composing;
@@ -336,6 +340,8 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
     {
         public void Compose(IUmbracoBuilder builder)
         {
+            builder.Services.ConfigureOptions<ConfigureProductIndexOptions>();
+
             builder.Services.AddExamineLuceneIndex<ProductIndex, ConfigurationEnabledDirectoryFactory>("ProductIndex");
 
             builder.Services.AddSingleton<ProductIndexValueSetBuilder>();
@@ -345,6 +351,7 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
     }
 }
 ```
+
 ### Result
 
 ![Custom product index](images/examine-management-product-index.png)

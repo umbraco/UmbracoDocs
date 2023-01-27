@@ -1,8 +1,3 @@
----
-versionFrom: 8.0.0
-versionTo: 10.0.0
----
-
 # Deleting and Restoring Pages
 
 If you have pages that are no longer required for your website, you can delete them. Upon deletion, the page is moved to the **Recycle Bin** and is not deleted permanently.

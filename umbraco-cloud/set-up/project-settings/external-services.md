@@ -1,7 +1,3 @@
----
-keywords: whitelist allow list allowlist IP internal static outbound ips
----
-
 # Using External Services with Umbraco Cloud
 
 In some cases, Umbraco Cloud might not be the only service you are working with. You might need to work with other services as well - this could be either internal or third-party services. In either case, it will be serviced externally to Umbraco Cloud.

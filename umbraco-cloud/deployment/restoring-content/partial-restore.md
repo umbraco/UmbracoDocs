@@ -1,8 +1,3 @@
----
-versionFrom: 7.0.0
-versionTo: 10.0.0
----
-
 # Partial Restores
 
 In some cases, you might not want to restore the entire content tree but only the parts that you need. **Partial restore** is a feature that allows for restoring specific parts of your content instead of restoring everything.
@@ -40,7 +35,7 @@ To partially restore the parts you need:
 If you select a content node deeper down the tree, all the parents above it, required for the node to exist, will be restored as well.
 {% endhint %}
 
-![Partial restore on empty environment](../../../umbraco-deploy/deployment-workflow/restoring-content/images/partialRestore-onEmpty.gif)
+![Partial restore on empty environment](<images/partialRestore-onEmpty (1).gif>)
 
 Partial Restores on empty environments are especially helpful when you have a large amount of content and media and do not necessarily need it all for the task you need to do. Instead of having to restore everything which could potentially take a long time, doing a partial restore can be used to shorten the waiting time by only restoring the parts you need. This will ensure that you can quickly get on your way with the task at hand.
 
