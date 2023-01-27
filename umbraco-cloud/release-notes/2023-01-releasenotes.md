@@ -6,36 +6,19 @@
 * **Multi-factor authentication list** - As an administrator at a cloud organization, you can see the multi-factor authentication connection for all the organization's members.
 * **More allowed prefixes for naming secrets** - When naming secrets, you can reference the security related settings for Umbraco:CMS:Global:Smtp and Umbraco Forms api-key and field recaptchas.
 
-## [Secrets Management](../set-up/project-settings/secrets-management.md)
+## [UK Region Hosting]
 
-The new _secrets management_ feature in Umbraco Cloud enables you to store your secrets securely in Azure key vaults.
-
-This being digital authentication credentials such as private keys, database passwords, and 3rd-party API tokens
-
-Hereby, you will never have to worry about exposing the most sensitive information of your Umbraco Cloud solution in code repositories.
-
-![SecretsManagementExample](images/SecretsManagementExample2.gif)
-
-Every environment has its own key vault and the secured values can only be accessed by the associated environment. The secret will be referenced with the assigned name as an environment variable. During runtime of your Umbraco application, the secret can be accessed using standard .NET conventions such as \_secretMessage = Environment.GetEnvironmentVariable("SecretName");
-
-Storing Secrets Management in Azure key is enabled for all Umbraco cloud projects on Standard and Professional plans.
-
-See the documentation section [Secrets Management](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/secrets-management) for more information.
+Umbraco Cloud has reached yet a new milestone with the support of UK region. You are now able to create a new Umbraco Cloud project in either "West Europe", "US East", or "UK South" to the delight of the majority of our European and American customers.
 
 ## Organization Project view
+Since October last year, our users have had the opportunity to enable multi-factor authentication (MFA) and thereby authenticate with a password and either phone, email or an authenticator app.
 
-As a member of a Umbraco Cloud organization, on the "Projects" page under your organization, you'll find a more detailed overview of your projects.
+Now we deliver the second part of the planned three steps of the MFA feature, by ensuring that an administrator in a cloud organization can see the multi-factor authentication settings for all organization members.
 
-In addition to the name, plan, and status of the project, you can now also see:
+IMAGE
 
-* Creation date.
-* Hosting region.
-* Payment status.
-* The number of environments.
+The third and final step will be the enforcement of MFA per user level based on an organization setting. This means that an administrator can set the desired MFA type (email, phone or authenticator app) for each individual user, which will then be imposed on the user at the next login to Umbraco Cloud. This feature is expected to be delivered in the first quarter of 2023.
 
-![ProjectsDashboardHoverEnvironment](<images/Organization Projects.png>)
-
-You can sort your organization projects ascending and descending for all columns in the projects table.
 
 ## Public access page
 
