@@ -52,6 +52,10 @@ If you have your own custom certificate, you can upload and bind it to your cust
 
 ## Public access
 
+{% hint style="info" %}
+Public access is only available for projects created after the 10th of January 2023.
+{% endhint %}
+
 You can deny access to your project with the Public access setting.
 
 Users who are not part of the project or whose IP has not been allowed will not be able to access the project.

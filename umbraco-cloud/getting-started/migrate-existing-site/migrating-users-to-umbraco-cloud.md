@@ -1,5 +1,7 @@
 ---
-description: "In this guide we show you how you can migrate users from your existing on-premise site to Umbraco Cloud and Umbraco ID."
+description: >-
+  In this guide we show you how you can migrate users from your existing
+  on-premise site to Umbraco Cloud and Umbraco ID.
 ---
 
 # Migrating Users to Umbraco Cloud
@@ -30,25 +32,25 @@ Below are the steps to generate a script with the `umbracoUser` database tables.
 4. Choose **Select specific tables** when prompted to **Select the database object to script**.
 5. Choose the following tables:
 
-  ```SQL
-  dbo.umbracoUser
-  dbo.umbracoUser2NodeNotify
-  dbo.umbracoUser2UserGroup
-  dbo.umbracoUserGroup
-  dbo.umbracoUserGroup2App
-  dbo.umbracoUserGroup2NodePermission
-  dbo.umbracoUserLogin
-  dbo.umbracoUserStartNode
-  dbo.umbracoUserGroup2Node
-  dbo.umbracoUserGroup2Language
-  ```
+```
+dbo.umbracoUser
+dbo.umbracoUser2NodeNotify
+dbo.umbracoUser2UserGroup
+dbo.umbracoUserGroup
+dbo.umbracoUserGroup2App
+dbo.umbracoUserGroup2NodePermission
+dbo.umbracoUserLogin
+dbo.umbracoUserStartNode
+dbo.umbracoUserGroup2Node
+dbo.umbracoUserGroup2Language
+```
 
-6. Click **Next** and then click **Advanced**
-7. Find **Type of data to script** and choose **Data only**.
-8. Choose where to save the script and save it.
-9. Connect to your [Umbraco Cloud Database](../../databases/cloud-database.md).
-10. Run the script on your Umbraco Cloud Database.
-11. Restart your Umbraco Cloud environment.
+1. Click **Next** and then click **Advanced**
+2. Find **Type of data to script** and choose **Data only**.
+3. Choose where to save the script and save it.
+4. Connect to your [Umbraco Cloud Database](../../databases/cloud-database.md).
+5. Run the script on your Umbraco Cloud Database.
+6. Restart your Umbraco Cloud environment.
 
 ### Finishing the Migration
 

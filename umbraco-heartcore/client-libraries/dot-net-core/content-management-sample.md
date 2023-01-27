@@ -1,5 +1,7 @@
 ---
-description: "Learn how to access and work with the Content Management API on your Umbraco Heartcore project."
+description: >-
+  Learn how to access and work with the Content Management API on your Umbraco
+  Heartcore project.
 ---
 
 # Content Management Sample
@@ -27,19 +29,20 @@ This sample guide will cover how you can access and work with the [Content Manag
     }
     ```
     {% endcode %}
+3. Register the `ContentManagementService` to your dependency injection container. The registration of the `ContentManagementService` is handled by the `AddUmbracoHeartocore` extension method.
 
-3.  Register the `ContentManagementService` to your dependency injection container. The registration of the `ContentManagementService` is handled by the `AddUmbracoHeartocore` extension method.
+{% code title="Program.cs / Startup.cs" %}
+````
+```csharp
+builder.Services.AddUmbracoHeartcore(options =>
+{
+    //configure options
+});
+```
+````
+{% endcode %}
 
-    {% code title="Program.cs / Startup.cs" %}
-    ```csharp
-    builder.Services.AddUmbracoHeartcore(options =>
-    {
-        //configure options
-    });
-    ```
-    {% endcode %}
-
-4.  Inject the `ContentManagementService` into your non-static class.
+1.  Inject the `ContentManagementService` into your non-static class.
 
     ```csharp
     private readonly ContentManagementService _contentManagementService;
@@ -70,7 +73,7 @@ When working with content, the `ContentManagementService` can Get, Create, Updat
 
 The `ContentManagementService` has three methods for getting content.
 
-#### `GetRoot()`&#x20;
+#### `GetRoot()`
 
 Gets all content at the root of the tree.
 

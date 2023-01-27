@@ -1,8 +1,6 @@
-
 # Extraction error: Config transforms failing
 
-Sometimes you might notice that even though your deployments are coming through without errors, no changes are being applied to the Cloud environments.
-This might be due to Config Transforms failing during the extraction process.
+Sometimes you might notice that even though your deployments are coming through without errors, no changes are being applied to the Cloud environments. This might be due to Config Transforms failing during the extraction process.
 
 This issue may occur if you have added custom [Config Transforms](../../set-up/config-transforms.md) to your project.
 
@@ -16,11 +14,11 @@ The environment overview on your project will most likely not mention anything, 
 
 ## How to check for and resolve the issue
 
-1. Access [KUDU](../../set-up/power-tools/README.md) on the environment where you expected to see your changes reflected
+1. Access [KUDU](../../set-up/power-tools/) on the environment where you expected to see your changes reflected
 2. Navigate to site > **deployments** folder in KUDU
 3. Find the latest deployment folder, either by date or by ID of the deployment (you can find the latest active deployment ID by opening the **active** file in the folder)
 4. If the deployment folder with the latest ID contains only two items (`log.log` and `status.xml`), that means something went wrong as we would normally see two more files - `commits.uc` and `manifest`
-5. Open the `log.log` file and look for anything mentioning `XmlTransform`. 
+5. Open the `log.log` file and look for anything mentioning `XmlTransform`.
 
 An example of a faulty config transform not being applied could look something like this:
 
@@ -59,9 +57,9 @@ An example of a faulty config transform not being applied could look something l
 	at OutcoldSolutions.ConfigTransformationTool.TransformationTask.Execute(String destinationFilePath&comma; Boolean forceParametersTask).
 ```
 
-6. Verify the Config Transform file mentioned in the error message and ensure the XML is valid.
-7. Update the Config Transform file as necessary on your local solution and deploy the change to the Cloud environments.
-8. Run a ['Schema Deployment From Data Files'](../../deployment/deploy-operations/extract-schema-to-data-files.md) to extract the schema that you previously deployed.
+1. Verify the Config Transform file mentioned in the error message and ensure the XML is valid.
+2. Update the Config Transform file as necessary on your local solution and deploy the change to the Cloud environments.
+3. Run a ['Schema Deployment From Data Files'](../../deployment/deploy-operations/extract-schema-to-data-files.md) to extract the schema that you previously deployed.
 
 {% hint style="info" %}
 To find errors in the config transform, you can use an xml validation tool like https://www.xmlvalidation.com/

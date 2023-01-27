@@ -1,5 +1,7 @@
 ---
-description: "This section shows you some beginner tools and information to get you started with Umbraco. From making a local installation to extending the backoffice."
+description: >-
+  This section shows you some beginner tools and information to get you started
+  with Umbraco. From making a local installation to extending the backoffice.
 ---
 
 # Creating websites
@@ -8,7 +10,7 @@ In this section you will find information on which frameworks, languages and pla
 
 There is a set of key concepts that you will need to familiarize yourself with. This section will give you the details you need as well as introduce you to how you can work with them in the Umbraco backoffice.
 
-![Umbraco tree image](images/flexible\_Email\_hero\_780x405px.png)
+![Umbraco tree image](../.gitbook/assets/flexible\_Email\_hero\_780x405px.png)
 
 We've even included some helpful tutorials which you can follow for creating a basic site to get you started.
 
