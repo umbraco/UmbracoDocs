@@ -16,7 +16,7 @@ Since October last year, our users have had the opportunity to enable multi-fact
 
 Now we deliver the second part of the planned three steps of the MFA feature, by ensuring that an administrator in a cloud organization can see the multi-factor authentication settings for all organization members.
 
-![OrgMfaDisplay](images/OrgMfaDisplay.png)
+![OrgMfaDisplay](images/OrgMfaDisplay2.png)
 
 The third and final step will be the enforcement of MFA per user level based on an organization setting. This means that an administrator can set the desired MFA type (email, phone or authenticator app) for each individual user, which will then be imposed on the user at the next login to Umbraco Cloud. This feature is expected to be delivered in the first quarter of 2023.
 
