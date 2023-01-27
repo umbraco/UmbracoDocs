@@ -21,7 +21,7 @@
 * **US Region Hosting** - From the 1st of September, you can select a brand-new US region in addition to the existing West Europe option.
 * **Projects Dashboard** - The first version of the Projects Dashboard has been released. Organize your Umbraco Cloud projects as per your preference and get a complete overview of product versions in all your environments.
 
-### [**August 2022 Release Notes**](2022-08-19-releasenotes)
+### [**August 2022 Release Notes**](2022-08-19-releasenotes.md)
 
 * **Dedicated Resources** - A new feature offering dedicated resources for your Umbraco Cloud project has been released. You can upgrade your projects to use dedicated resources with the click of a button.
 * **Projects Dashboard (Beta)** - The Beta version of the Projects Dashboard offers the first sneak preview of the future project's overview in the Umbraco Cloud Portal.
