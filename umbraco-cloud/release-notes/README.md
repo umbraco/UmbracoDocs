@@ -15,13 +15,13 @@
 * **Projects Dashboard Quick links** - When hovering an environment in the Projects Dashboard two links are shown for quick access to the backoffice and page, respectively.
 * **Other Umbraco Cloud Portal updates** - The Portal has been updated with a few other features and updates worth mentioning. These include a quick invite for organization members, improved deployment messaging, region, and dedicated information on the project information page, and a few fixes.
 
-### [**September 2022 Release Notes**](2022-11-07-releasenotes.md)
+### [**September 2022 Release Notes**](2022-09-19-releasenotes.md)
 
 * **2FA authentication** - You can now secure your Umbraco Cloud account by enabling 2-factor authentication (2FA). Select between email, phone, or app authentication.
 * **US Region Hosting** - From the 1st of September, you can select a brand-new US region in addition to the existing West Europe option.
 * **Projects Dashboard** - The first version of the Projects Dashboard has been released. Organize your Umbraco Cloud projects as per your preference and get a complete overview of product versions in all your environments.
 
-### [**August 2022 Release Notes**](2022-09-19-releasenotes.md)
+### [**August 2022 Release Notes**](2022-08-19-releasenotes)
 
 * **Dedicated Resources** - A new feature offering dedicated resources for your Umbraco Cloud project has been released. You can upgrade your projects to use dedicated resources with the click of a button.
 * **Projects Dashboard (Beta)** - The Beta version of the Projects Dashboard offers the first sneak preview of the future project's overview in the Umbraco Cloud Portal.
