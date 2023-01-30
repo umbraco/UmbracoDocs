@@ -28,7 +28,7 @@ Now we deliver the second part of the planned three steps of the Multi-Factor Au
 
 The third and final step will be the enforcement of Multi-Factor-Authentication (MFA) per user level based on an organization setting. This means that an administrator can set the desired Multi-Factor-Authentication (MFA) type (email, phone, or authenticator app) for each individual user. This will then be imposed on the user at the next login to Umbraco Cloud. The enforcement of multi-factor authentication for organization members is expected to be delivered in the first quarter of 2023.
 
-## [Prefixes for naming secrets](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/secrets-management)
+## [Prefixes for Naming Secrets](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/secrets-management)
 
 In December the Secrets Management feature was released in Umbraco Cloud, enabling all Cloud projects on the Standard and Pro plans to securely store secrets in Azure key vaults and manage them in the Cloud portal. These can then be referenced and accessed during the runtime of the application on a per-environment basis.
 
