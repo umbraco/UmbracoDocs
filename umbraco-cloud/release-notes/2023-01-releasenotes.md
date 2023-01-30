@@ -30,7 +30,7 @@ The third and final step will be the enforcement of MFA per user level based on 
 
 ## [Prefixes for naming secrets](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/secrets-management)
 
-In December the Secrets management feature was released in Umbraco Cloud, which enables all Cloud projects on the Standard and Pro to securely store secrets in Azure key vaults and reference them and access simply and conveniently during the runtime of the application.
+In December the Secrets Management feature was released in Umbraco Cloud, enabling all Cloud projects on the Standard and Pro plans to securely store secrets in Azure key vaults and manage them in the Cloud portal. These can then be referenced and accessed during the runtime of the application on a per-environment basis.
 
 The naming of secrets is subject to some restrictions to ensure that reserved words and application settings cannot be accidentally overwritten.
 
