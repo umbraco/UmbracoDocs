@@ -4,7 +4,7 @@ description: "Language files are used to translate the Umbraco backoffice user i
 
 # Language Files & Localization
 
-Language files are used to translate the Umbraco backoffice user interface so that end users can use Umbraco in their native language. This is particularly important for content editors who do not speak English.
+This is particularly important for content editors who do not speak English.
 
 If you are a package developer, [see here for docs on how to include translations for your own package](packages/language-files-for-packages.md).
 
