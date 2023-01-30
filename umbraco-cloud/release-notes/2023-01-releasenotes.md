@@ -20,7 +20,7 @@ You are now able to create a new Umbraco Cloud project in "West Europe", "US Eas
 
 ## Display of Multi-factor authentication setting for organisation members
 
-Since October last year, our users have had the opportunity to enable multi-factor authentication (MFA) and thereby authenticate with a password and either phone, email or an authenticator app.
+Since October last year, users has the opportunity to enable Multi-Factor Authentication (MFA) and authenticate with either phone, email, or an authenticator app.
 
 Now we deliver the second part of the planned three steps of the MFA feature, by ensuring that an administrator in a cloud organization can see the multi-factor authentication settings for all organization members.
 
