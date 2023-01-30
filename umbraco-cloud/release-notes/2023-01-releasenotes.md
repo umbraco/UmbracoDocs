@@ -18,7 +18,7 @@ Umbraco Cloud has reached a new milestone with the addition of a UK regional hos
 
 This means can now choose to create new Umbraco Cloud projects in "West Europe", "US East", and "UK South".
 
-## Display of Multi-factor authentication setting for organisation members
+## Display of Multi-factor Authentication Setting for Organization Members
 
 Since October last year, users has the opportunity to enable Multi-Factor Authentication (MFA) and authenticate with either phone, email, or an authenticator app.
 
