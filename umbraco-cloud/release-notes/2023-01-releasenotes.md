@@ -16,7 +16,7 @@ Umbraco Cloud has reached a new milestone with the addition of a UK regional hos
 
 ![Cloud-artboard](images/umbraco-cloud-update-artboard-1-2x.png)
 
-You are now able to create a new Umbraco Cloud project in "West Europe", "US East", or "UK South" to the delight of the majority of our European and American customers.
+This means can now choose to create new Umbraco Cloud projects in "West Europe", "US East", and "UK South".
 
 ## Display of Multi-factor authentication setting for organisation members
 
