@@ -32,7 +32,7 @@ The third and final step will be the enforcement of MFA per user level based on 
 
 In December the Secrets Management feature was released in Umbraco Cloud, enabling all Cloud projects on the Standard and Pro plans to securely store secrets in Azure key vaults and manage them in the Cloud portal. These can then be referenced and accessed during the runtime of the application on a per-environment basis.
 
-The naming of secrets is subject to some restrictions to ensure that reserved words and application settings cannot be accidentally overwritten.
+Naming secrets is subject to some restrictions to ensure that reserved words and application settings cannot be accidentally overwritten.
 
 Certain application settings should, however, be overwritten precisely under the auspices of security. Whereby it is now possible to overwrite the following three namespaces
 - Umbraco:CMS:Global:Smtp
