@@ -39,4 +39,4 @@ Certain application settings should, however, be overwritten precisely under the
 - Umbraco:Forms:Security:FormsApiKey
 - Umbraco:Forms:FieldTypes:Recaptcha  
 
-These namespaces are relevant when adding an SMTP to the Umbraco CMS, saving the Umbraco Forms API key, or using ReChaptcha for Umbraco Forms.
+These namespaces are relevant when adding a Simple Mail Transfer Protocol (SMTP) to the Umbraco CMS, saving the Umbraco Forms API key, or using ReChaptcha for Umbraco Forms.
