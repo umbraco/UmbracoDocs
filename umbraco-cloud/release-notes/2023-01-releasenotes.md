@@ -12,7 +12,7 @@ With an increasing interest in using Umbraco Cloud as the development and hostin
 
 Regional Hosting Options make it possible to choose where your Umbraco Cloud project, including all environments and data, is served and stored.
 
-Umbraco Cloud has reached yet a new milestone with the support of UK region. This is fantastic news for everyone working with or out of Britain. 
+Umbraco Cloud has reached a new milestone with the addition of a UK regional hosting option. This is fantastic news for everyone based in and working with clients in the UK. 
 
 ![Cloud-artboard](images/umbraco-cloud-update-artboard-1-2x.png)
 
