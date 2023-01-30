@@ -8,7 +8,7 @@
 
 ## UK Region Hosting
 
-Umbraco Cloud has reached yet a new milestone with the support of UK region. You are now able to create a new Umbraco Cloud project in either "West Europe", "US East", or "UK South" to the delight of the majority of our European and American customers. This is fantastic news for everyone working with or out of Britain.
+Umbraco Cloud has reached yet a new milestone with the support of UK region. This is fantastic news for everyone working with or out of Britain. You are now able to create a new Umbraco Cloud project in either "West Europe", "US East", or "UK South" to the delight of the majority of our European and American customers.
 
 ![Cloud-artboard](images/umbraco-cloud-update-artboard-1-2x.png)
 
@@ -28,8 +28,11 @@ The third and final step will be the enforcement of MFA per user level based on 
 
 ## [Prefixes for naming secrets](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/secrets-management)
 
-Naming secrets for the Secret management feature now supports all of the three namespaces:
+The naming of secrets is subject to some restrictions to ensure that reserved words and application settings cannot be accidentally overwritten.
+
+Certain application settings should, however, be overwritten precisely under the auspices of security. Whereby it is now possible to overwrite the following three namespaces
 - Umbraco:CMS:Global:Smtp
 - Umbraco:Forms:Security:FormsApiKey
 - Umbraco:Forms:FieldTypes:Recaptcha  
-that are required to be used when adding a SMTP to the Umbraco CMS, saving the Umbraco Forms API key, or using the ReChaptcha for Umbraco Forms.
+
+There namespaces are relevant to consider when adding a SMTP to the Umbraco CMS, saving the Umbraco Forms API key, or using the ReChaptcha for Umbraco Forms.
