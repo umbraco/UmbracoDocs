@@ -3,18 +3,20 @@
 ## Key Takeaways
 
 * **UK Region Hosting** - Umbraco Cloud expands with UK regional hosting.
-* **Display of Multi-factor authentication setting for organisation members** - As an administrator at a cloud organization, you can see the multi-factor authentication connection for all the organization's members.
+* **Display of Multi-factor authentication setting for organisation members** - As an administrator at a cloud organization, you can see the multi-factor authentication setting for all the organization's members.
 * **Prefixes for naming secrets** - When naming secrets, you can reference the security related settings for Umbraco:CMS:Global:Smtp and Umbraco Forms api-key and field recaptchas.
 
 ## UK Region Hosting
 
-Umbraco Cloud has reached yet a new milestone with the support of UK region. This is fantastic news for everyone working with or out of Britain. You are now able to create a new Umbraco Cloud project in either "West Europe", "US East", or "UK South" to the delight of the majority of our European and American customers.
-
-![Cloud-artboard](images/umbraco-cloud-update-artboard-1-2x.png)
-
 With an increasing interest in using Umbraco Cloud as the development and hosting platform for Umbraco projects, we’ve also seen an increased demand for additional (regional) hosting options. Especially when it comes to privacy and data policy requirements, the physical location of the data matters.
 
 Regional Hosting Options make it possible to choose where your Umbraco Cloud project, including all environments and data, is served and stored.
+
+Umbraco Cloud has reached yet a new milestone with the support of UK region. This is fantastic news for everyone working with or out of Britain. 
+
+![Cloud-artboard](images/umbraco-cloud-update-artboard-1-2x.png)
+
+You are now able to create a new Umbraco Cloud project in "West Europe", "US East", or "UK South" to the delight of the majority of our European and American customers.
 
 ## Display of Multi-factor authentication setting for organisation members
 
