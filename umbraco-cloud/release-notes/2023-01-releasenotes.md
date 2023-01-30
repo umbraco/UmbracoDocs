@@ -3,7 +3,7 @@
 ## Key Takeaways
 
 * **UK Region Hosting** - Umbraco Cloud expands with UK regional hosting.
-* **Display of Multi-factor authentication setting for organisation members** - As an administrator at a cloud organization, you can see the multi-factor authentication setting for all the organization's members.
+* **Display of Multi-factor authentication setting for organization members** - As an administrator at a cloud organization, you can see the multi-factor authentication setting for all the organization's members.
 * **Prefixes for naming secrets** - When naming secrets, you can reference the security related settings for Umbraco:CMS:Global:Smtp and Umbraco Forms api-key and field recaptchas.
 
 ## UK Region Hosting
