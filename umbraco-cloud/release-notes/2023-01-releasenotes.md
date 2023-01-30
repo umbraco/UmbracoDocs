@@ -20,13 +20,13 @@ This means can now choose to create new Umbraco Cloud projects in "West Europe",
 
 ## Display of Multi-factor Authentication Setting for Organization Members
 
-Since October last year, users has the opportunity to enable Multi-Factor Authentication (MFA) and authenticate with either phone, email, or an authenticator app.
+Since October last year, users has the opportunity to enable Multi-Factor Authentication and authenticate with either phone, email, or an authenticator app.
 
-Now we deliver the second part of the planned three steps of the Multi-Factor Authentication (MFA) feature. We ensure that administrators in a cloud organization can see the multi-factor authentication settings for all organization members.
+Now we deliver the second part of the planned three steps of the Multi-Factor Authentication feature. We ensure that administrators in a cloud organization can see the multi-factor authentication settings for all organization members.
 
 ![OrgMfaDisplay](images/OrgMfaDisplay2.png)
 
-The third and final step will be the enforcement of Multi-Factor-Authentication (MFA) per user level based on an organization setting. This means that an administrator can set the desired Multi-Factor-Authentication (MFA) type (email, phone, or authenticator app) for each individual user. This will then be imposed on the user at the next login to Umbraco Cloud. The enforcement of multi-factor authentication for organization members is expected to be delivered in the first quarter of 2023.
+The third and final step will be the enforcement of Multi-Factor-Authentication per user level based on an organization setting. This means that an administrator can set the desired Multi-Factor-Authentication type (email, phone, or authenticator app) for each individual user. This will then be imposed on the user at the next login to Umbraco Cloud. The enforcement of multi-factor authentication for organization members is expected to be delivered in the first quarter of 2023.
 
 ## [Prefixes for Naming Secrets](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/secrets-management)
 
@@ -34,9 +34,9 @@ In December the Secrets Management feature was released in Umbraco Cloud. This e
 
 Naming secrets is subject to some restrictions to ensure that reserved words and application settings cannot be accidentally overwritten.
 
-Certain application settings should, however, be overwritten precisely under the auspices of security. Whereby it is now possible to overwrite the following three namespaces
+However, it is now possible to change parameters for namespaces related to adding a Simple Mail Transfer Protocol (SMTP) to the Umbraco CMS, saving the Umbraco Forms API key, or using ReChaptcha for Umbraco Forms.
+
+These namesspaces are:
 - Umbraco:CMS:Global:Smtp
 - Umbraco:Forms:Security:FormsApiKey
-- Umbraco:Forms:FieldTypes:Recaptcha  
-
-These namespaces are relevant when adding a Simple Mail Transfer Protocol (SMTP) to the Umbraco CMS, saving the Umbraco Forms API key, or using ReChaptcha for Umbraco Forms.
+- Umbraco:Forms:FieldTypes:Recaptcha
