@@ -1,11 +1,17 @@
+---
+description: >-
+  Learn how to manually upgrade your Umbraco Cloud project to run the latest
+  version of Umbraco CMS.
+---
+
 # Manual upgrade of Umbraco CMS
 
-This article will give you a step-by-step on how to manually upgrade your Umbraco Cloud project to run the latest version of Umbraco CMS.
+This article will give you a step-by-step on how to manually upgrade your Umbraco Cloud project.
 
 ## Prepare for the upgrade
 
 * When upgrading a Umbraco Cloud project manually, the very first step is to either [clone down your Cloud Development environment to your local machine](../../set-up/working-locally.md) or pull down the latest changes for your development environment.
-* navigate to the /src/UmbracoProject/ folder with the csproj with the CMS NuGet package installed.
+* navigate to the `/src/UmbracoProject/` folder to find the `.csproj` file.
 * Make sure you can run your Cloud project locally and restore content and media. It's important that you check that everything works once the upgrade has been applied and for this, you need to have a clone locally that resembles the Cloud environment as much as possible.
 
 ## Get the latest version of Umbraco
@@ -20,7 +26,7 @@ After you have added a package reference to your project by executing the `dotne
 
 You can also update the CMS through the `NuGet Package Manager` in Visual studio:
 
-![NuGet Package Manager](images/Manage\_packages.png)
+![NuGet Package Manager](../../../umbraco-forms/installation/images/Manage\_packages.png)
 
 When the command completes, open the **.csproj** file to make sure the package reference was updated:
 
@@ -36,7 +42,9 @@ When you are done updating the NuGet packages as mentioned above, follow these s
 
 * Run the project locally
 * When the project spins up, you'll be prompted to log in to verify the upgrade
-* On the installation screen you need to verify the upgrade: ![Verify upgrade](images/upgrade-screen.png)
+* On the installation screen, you need to verify the upgrade: \
+  \
+  ![Verify upgrade](images/upgrade-screen.png)
 * Hit **Continue** - this will complete upgrading the database
 * The upgrade will finish up
 * When it's complete you will be sent to the Umbraco backoffice
