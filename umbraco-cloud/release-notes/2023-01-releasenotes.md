@@ -8,7 +8,7 @@
 
 ## UK Region Hosting
 
-With an increasing interest in using Umbraco Cloud as the development and hosting platform for Umbraco projects, we’ve also seen an increased demand for additional regional hosting options. Especially when it comes to privacy and data policy requirements, the physical location of the data matters.
+With an increasing interest in using Umbraco Cloud as the development and hosting platform for Umbraco projects. We’ve also seen an increased demand for additional regional hosting options. Especially when it comes to privacy and data policy requirements, the physical location of the data matters.
 
 Regional Hosting Options make it possible to choose where your Umbraco Cloud project, including all environments and data, is served and stored.
 
