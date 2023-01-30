@@ -26,7 +26,7 @@ Now we deliver the second part of the planned three steps of the Multi-Factor Au
 
 ![OrgMfaDisplay](images/OrgMfaDisplay2.png)
 
-The third and final step will be the enforcement of MFA per user level based on an organization setting. This means that an administrator can set the desired MFA type (email, phone or authenticator app) for each individual user, which will then be imposed on the user at the next login to Umbraco Cloud. The enforcement of multi-factorr authentication for organisation members is expected to be delivered in the first quarter of 2023.
+The third and final step will be the enforcement of Multi-Factor-Authentication (MFA) per user level based on an organization setting. This means that an administrator can set the desired Multi-Factor-Authentication (MFA) type (email, phone, or authenticator app) for each individual user. This will then be imposed on the user at the next login to Umbraco Cloud. The enforcement of multi-factor authentication for organization members is expected to be delivered in the first quarter of 2023.
 
 ## [Prefixes for naming secrets](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/secrets-management)
 
