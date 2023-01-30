@@ -553,6 +553,7 @@
     * [Extraction error: "Type not found! "](umbraco-cloud/troubleshooting/deployments/type-not-found.md)
 * [Frequently asked questions](umbraco-cloud/frequently-asked-questions.md)
 * [Portal Release Notes](umbraco-cloud/release-notes/README.md)
+  * [Release Notes, January 2023](umbraco-cloud/release-notes/2023-01-releasenotes.md)
   * [Release Notes, December 2022](umbraco-cloud/release-notes/2022-12-20-releasenotes.md)
   * [Release Notes, November 2022](umbraco-cloud/release-notes/2022-11-07-releasenotes.md)
   * [Release Notes, September 2022](umbraco-cloud/release-notes/2022-09-19-releasenotes.md)
