@@ -25,8 +25,8 @@ Gets or sets a value indicating if data types can be changed after they've been 
 Valid values:
 
 - `"True"`
-  - Allows data types to be changed after creation. This can lead to data on content is not valid on the data type.
+  - Allows data types to be changed after creation. This can lead to data on content is not valid on the Data Type.
 - `"False"`
-  - Disallow data type changes. (Recommeded value, unless you really know what you are doing)
+  - Disallow Data Type changes. (Recommeded value, unless you really know what you are doing)
 - `"FalseWithHelpText"`
-  - Disallow data type changes, but show the users a help text so they understand why.
+  - Disallow Data Type changes, but show the users a help text so they understand why.
