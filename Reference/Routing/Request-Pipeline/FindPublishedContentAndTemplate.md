@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+meta.RedirectLink: "/umbraco-cms/reference/routing/request-pipeline/find-publishedcontent-and-template"
 ---
 
 # FindPublishedContentAndTemplate()
