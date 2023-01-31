@@ -18,7 +18,7 @@ The `UmbracoAuthorizedApiController` is automatically routed. Check out the [rou
 
 To secure your controller based on backoffice membership use the attribute: `Microsoft.AspNetCore.Authorization.Authorize`, with the policy parameter set to `AuthorizationPolicies.BackOfficeAccess`, like so: `[Authorize(Policy = AuthorizationPolicies.BackOfficeAccess)]`.
 
-This attribute will ensure that a valid backoffice user is logged in, however it's very important to note that this only works if the controller is routed to `/umbraco/backoffice/*`.
+This attribute will ensure that a valid backoffice user is logged in, however it's important to know that this only works if the controller is routed to `/umbraco/backoffice/*`.
 
 **Examples:**
 
