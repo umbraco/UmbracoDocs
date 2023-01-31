@@ -4,6 +4,12 @@ Expand the Form in the tree to view the Entries for each Form.
 
 ![Tree](images/tree.png)
 
+## Video overview
+
+{% embed url="https://youtu.be/vUQpX3wqDrs" %}
+Watch this video to learn how to manage entries submitted via Umbraco Forms.
+{% endembed %}
+
 ## Entries Overview
 
 When accessing the Entries viewer, you will be able to see all the entries submitted via the Form.
