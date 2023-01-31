@@ -1,6 +1,7 @@
 ---
 meta.Title: "How to request a change to an article by submitting a Pull Request"
 meta.Description: "Explanation on how to request a change to an article by submitting a Pull Request"
+meta.RedirectLink: "/contribute/pull-request"
 ---
 
 # What is a pull request
