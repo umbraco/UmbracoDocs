@@ -10,7 +10,7 @@ Add a new class to your project and have it inherit from `Umbraco.Forms.Core.Exp
 
 ## Basic Example
 
-You can implement the method `public override string ExportRecords(RecordExportFilter filter)` in your export provider class. You need to return a string you wish to write to a file. For example you can generate a `.csv` (comma separated values) file. You would perform your logic to build up a comma separated string in the `ExportRecords` method.
+You can implement the method `public override string ExportRecords(RecordExportFilter filter)` in your export provider class. You need to return a string you wish to write to a file. For example, you can generate a `.csv` (comma-separated values) file. You would perform your logic to build up a comma-separated string in the `ExportRecords` method.
 
 {% hint style="info" %}
 In the constructor of your provider, you will need a further two properties, `FileExtension` and `Icon`.
