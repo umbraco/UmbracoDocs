@@ -1,3 +1,9 @@
+---
+versionFrom: 7.0.0
+versionTo: 8.0.0
+meta.RedirectLink: "/v/10.x-lts/umbraco-cloud/upgrades/migrating-from-8-10"
+---
+
 # Migrating Umbraco 7 Cloud project to Umbraco 8
 
 This article will provide detailed steps on how to migrate a Umbraco 7 Cloud project to Umbraco 8.

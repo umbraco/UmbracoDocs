@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+meta.RedirectLink: "/umbraco-cloud/set-up/project-settings/manage-hostnames/security-certificates"
 ---
 
 # Upload Custom Certificates Manually
