@@ -23,3 +23,9 @@ person.SetValue("isAuthor", false);
 // Save the child item
 contentService.Save(person);
 ```
+
+In a multilanguage setup, it is necessary to set the name of the content item for a specified culture:
+
+```csharp
+person.SetCultureName("James" , "en-us");
+```
