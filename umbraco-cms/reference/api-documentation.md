@@ -1,5 +1,5 @@
 ---
-description: "Information on Umbraco API Documentation"
+description: Information on Umbraco API Documentation
 ---
 
 # API Documentation
@@ -19,19 +19,19 @@ C# API references for the Umbraco Core, Infrastructure, Extensions and Web libra
 ### [Umbraco.Extensions](https://apidocs.umbraco.com/v11/csharp/api/Umbraco.Extensions.html)
 
 {% hint style="info" %}
-opens a documentation browser that is different from the documentation section you're viewing now.
+Opens a documentation browser that is different from the documentation section you're viewing now.
 {% endhint %}
 
 ## Backoffice UI API Documentation
 
 Angular, JavaScript, CSS & Less UI API references for building Umbraco backoffice components.
 
-- The umbraco.directives
-- The umbraco.services
-- The umbraco.resources
+* The umbraco.directives
+* The umbraco.services
+* The umbraco.resources
 
 ### [Backoffice UI](https://apidocs.umbraco.com/v11/ui)
 
 {% hint style="info" %}
-opens a documentation browser that is different from the documentation section you're viewing now.
+Opens a documentation browser that is different from the documentation section you're viewing now.
 {% endhint %}
