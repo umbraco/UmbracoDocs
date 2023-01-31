@@ -3,6 +3,7 @@ versionFrom: 8.0.0
 versionTo: 8.0.0
 meta.Title: "Umbraco Serilog config"
 meta.Description: "Reference for the Serilog config file in Umbraco"
+meta.RedirectLink: "/umbraco-cms/reference/configuration/serilog"
 ---
 
 # Serilog Config

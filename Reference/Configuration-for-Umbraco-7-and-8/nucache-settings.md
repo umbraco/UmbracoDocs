@@ -2,6 +2,7 @@
 versionFrom: 8.6.0
 meta.Title: "Umbraco NuCache Settings"
 meta.Description: "Information on the NuCache settings section"
+meta.RedirectLink: "/umbraco-cms/reference/configuration/nucachesettings"
 ---
 
 # NuCache Settings
