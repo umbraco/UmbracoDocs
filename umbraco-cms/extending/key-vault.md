@@ -131,7 +131,7 @@ Under Connection Strings, select **Advanced Edit**.
 
 ![image](https://user-images.githubusercontent.com/11179749/196053130-8fb6c2b9-61c7-4c02-a419-8570174c6646.png)
 
-You can obtain the Secret Uri by visitng the specific version of your secret and copying the Url:
+You can obtain the Secret Uri by visiting the specific version of your secret and copying the Url:
 
 ![image](https://user-images.githubusercontent.com/11179749/196054001-cc215c04-d29c-435a-ae7b-6e8efb7f3faa.png)
 
