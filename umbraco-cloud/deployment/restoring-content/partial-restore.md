@@ -35,7 +35,7 @@ To partially restore the parts you need:
 If you select a content node deeper down the tree, all the parents above it, required for the node to exist, will be restored as well.
 {% endhint %}
 
-![Partial restore on empty environment](<../../../umbraco-deploy/deployment-workflow/restoring-content/images/partialRestore-onEmpty (1) (1).gif>)
+![Partial restore on empty environment](images/partialRestore-onEmpty.gif)
 
 Partial Restores on empty environments are especially helpful when you have a large amount of content and media and do not necessarily need it all for the task you need to do. Instead of having to restore everything which could potentially take a long time, doing a partial restore can be used to shorten the waiting time by only restoring the parts you need. This will ensure that you can quickly get on your way with the task at hand.
 
@@ -53,7 +53,7 @@ Imagine that you are working with your Umbraco Cloud project locally. One of you
 6. Click **Restore**.
 7. Once the restore is completed, right-click the Content tree and select **Reload**.
 
-![Partial restore](../../../umbraco-deploy/deployment-workflow/restoring-content/images/partialRestore-onEnvWithContent.png)
+![Partial restore](images/partialRestore-onEnvWithContent.png)
 
 {% embed url="https://www.youtube.com/embed/C5SnrEf78bQ?rel=0" %}
 Video example.

@@ -1,5 +1,4 @@
-
-# Organizations on Umbraco Cloud
+# Organizations
 
 On Umbraco Cloud, you can get an Umbraco Cloud Organization. With an Organization, you get an overview of all the projects that have been created by you and the members of your Organization.
 
@@ -13,15 +12,15 @@ In the following sections, we will go through the different options that are ava
 
 ### Information
 
-In the **Information** section of the Organization, you can find Information about your Organization. If there are any changes to your Information, you can change them from this section.
+In the **Information** section of the Organization, you can find information about your Organization. If there are any changes to your Information, you can change them from this section.
 
 ![Information](images/Information-v10.png)
 
 ### Members
 
-In the **Members** section, you can get an overview of all the Members that are a part of your Organization. It is also possible to set up different permissions for your Members, such as Read,  Write, Administrators, or Super-Admins for your organization. You can also view pending invites, if any.
+In the **Members** section, you can get an overview of the Members part of your Organization, see pending invites, and which Multi-Factor Authentication they have enabled. It is also possible to set up different permissions for your Members, such as Read, Write, and Administrators for your organization.
 
-![Organization Members](images/Members-v10.png)
+<figure><img src="../../../.gitbook/assets/members.png" alt=""><figcaption></figcaption></figure>
 
 ### Projects
 
@@ -35,7 +34,7 @@ Additionally, you can view if any Projects have been disabled under your Organiz
 
 In the **Access Rights** section, you can get a list of all the Access Rights your Members have to each Project in your Organization.
 
-![Access Rights](images/Access_rights-v10.png)
+![Access Rights](images/Access\_rights-v10.png)
 
 ## Payment methods
 
