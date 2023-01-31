@@ -4,6 +4,12 @@ Content reviews is a tool that allows content editors to keep their content up-t
 
 ![Enable Content Reviews](../../umbraco-workflow/images/Enable-content-reviews.png)
 
+## Video overview
+
+{% embed url="https://youtu.be/mnSL7nrn10o" %}
+Watch this vdeo to learn how to use the Content Review feature in Umbraco Workflow.
+{% endembed %}
+
 ## Content Reviews Dashboard
 
 The Content reviews Dashboard provides an overview of the expired content. The dashboard displays a table containing the following details:

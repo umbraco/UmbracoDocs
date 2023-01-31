@@ -1,5 +1,7 @@
 ---
-description: "Learn how to work with different types of Media content on your Umbraco website."
+description: >-
+  Learn how to work with different types of Media content on your Umbraco
+  website.
 ---
 
 # Creating Media
@@ -24,8 +26,8 @@ If you have upgraded from an older version than 8.14 then the new media types ar
 
 You can upload media in two different ways:
 
-* [Through the Media section](#add-media-through-the-media-section) and
-* [Through the Content section](#add-media-through-the-content-section)
+* [Through the Media section](./#add-media-through-the-media-section) and
+* [Through the Content section](./#add-media-through-the-content-section)
 
 ### Add media through the Media section
 
@@ -51,7 +53,7 @@ New media items can be added to your site without interrupting the content creat
   * Images added this way is automatically added to the user's start node in the Media section of the Umbraco backoffice.
 
 ![Drag and drop images directly into the content](images/upload-images-from-content.gif)
-  
+
 * Select the "+" icon to open the "Select media" dialog where you can add image(s) from your file explorer directly or using drag and drop.
 
 ![Add images from the "Select media" dialog](images/add-image-from-dialog.gif)
@@ -93,6 +95,12 @@ The **Upload File** property on the images use the Image Cropper Data Type. If c
 ## Creating a Media Type
 
 You can create your own Media Types and add tabs, properties, and control the structure of the Media tree as you would with Document Types. This means you can store information that is specific to the media on the item itself.
+
+### Video tutorial
+
+{% embed url="https://youtu.be/aS39zygmJcQ" %}
+Watch this tutorial to learn how to create your own Media Types in Umbraco CMS.
+{% endembed %}
 
 A Media Type is created in the **Settings** section using the Media Type editor.
 

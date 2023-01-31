@@ -1,22 +1,26 @@
 ---
 meta.Title: Log Viewer
-description: Information on using the Umbraco log viewer in version 8
 keywords: logging logviewer logs serilog messagetemplates logs v8 version8
+description: Information on using the Umbraco log viewer in version 8
 ---
 
 # Log Viewer
 
 Umbraco ships with a built-in Log Viewer feature. This allows you to filter and view log entries and perform much more complex search queries. This helps you finding the log entries that you are interested in. You can find the log viewer in the settings section.
 
+{% embed url="https://youtu.be/PDqIRVygAQ4" %}
+Learn how to use the Log Viewer to read and understand logs for your Umbraco CMS website.
+{% endembed %}
+
 ## Benefits
 
-Have you ever wanted to find all log entries which contains the same request ID? Or find all items in the log where a property called duration is greater than 1000ms?
+Have you ever wanted to find all log entries which contain the same request ID? Or find all items in the log where a property called duration is greater than 1000ms?
 
-With the power of structured logging and a query language we are able to search and find log items for specific scenarios. When debugging the site you should now have more power to see and find patterns in your log files and get rid of those errors.
+With the power of structured logging and a query language, we are able to search and find log items for specific scenarios. When debugging the site you should now have more power to see and find patterns in your log files and get rid of those errors.
 
 ## Example queries
 
-Here are a handful example queries to get you started, however the saved searches contain some further examples. For more details on the syntax head over to the https://github.com/serilog/serilog-filters-expressions project.
+Here are a handful of example queries to get you started, however, the saved searches contain some further examples. For more details on the syntax head over to the https://github.com/serilog/serilog-filters-expressions project.
 
 **Find all logs that are from the namespace 'Umbraco.Core'**\
 `StartsWith(SourceContext, 'Umbraco.Core')`\\
@@ -33,7 +37,7 @@ Sometimes you want to use a custom query more often. It is possible to save a qu
 
 ## Implementing your own Log Viewer
 
-With the flexibility of Umbraco, we give you the power to implement your own `ILogViewer`. This makes it possible to fetch logs and the saved searched from a different location such as Azure table storage.
+With the flexibility of Umbraco, we give you the power to implement your own `ILogViewer`. This makes it possible to fetch logs and the saved searches from a different location such as Azure table storage.
 
 ### Create your own implementation
 
@@ -113,7 +117,7 @@ public class AzureTableLogEntity : LogEventEntity, ITableEntity
 }
 ```
 
-Keep in mind that we have to implement our own version of a `LogEventEntity`. This is because the `TableClient` needs whatever it is fetching to implement the `ITableEntity` interface.
+Keep in mind that we have to implement our own version of a `LogEventEntity`. This is because of the `TableClient` needs whatever it is fetching to implement the `ITableEntity` interface.
 
 ### Register implementation
 
@@ -131,9 +135,9 @@ public class LogViewerSavedSearches : IComposer
 }
 ```
 
-### Configure Umbraco to log to Azure Table Storage
+### Configure Umbraco to log into Azure Table Storage
 
-Now with the above two classes, we have the plumbing in place to view logs from an Azure Table. However, we are not persisting our logs into the Azure table storage account. So we need to configure the Serilog logging pipeline to store our logs into Azure table storage.
+Now with the above two classes, we have the plumbing in place to view logs from an Azure Table. However, we are not persisting our logs into the Azure table storage account. So we need to configure the Serilog logging pipeline to store our logs in Azure table storage.
 
 * Install Serilog.Sinks.AzureTableStorage from Nuget
 * Add a new sink to the appsettings with credentials (so logs persist to Azure)
@@ -150,10 +154,10 @@ The following sink needs to be added to the array [`Serilog:WriteTo`](https://gi
 }
 ```
 
-For more in depth information about logging and how to configure it, please read the [logging documentation](../code/debugging/logging.md).
+For more in-depth information about logging and how to configure it, please read the [logging documentation](../code/debugging/logging.md).
 
 ### Compact Log Viewer - Desktop App
 
-This is a desktop tool for viewing & querying JSON log files from disk in the same way as the built in logviewer dashboard of Umbraco.
+This is a desktop tool for viewing & querying JSON log files from disk in the same way as the built-in logviewer dashboard of Umbraco.
 
 [<img src="images/English_get.png" alt="English badge" data-size="line">](https://www.microsoft.com/store/apps/9N8RV8LKTXRJ?cid=storebadge\&ocid=badge)
