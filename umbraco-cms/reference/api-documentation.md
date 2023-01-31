@@ -12,11 +12,11 @@ A library of API Reference documentation is auto-generated from the comments wit
 
 C# API references for the Umbraco Core, Infrastructure, Extensions and Web libraries.
 
-### [Umbraco.Core](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Cms.Core.html)
+### [Umbraco.Cms.Core](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Cms.Core.html)
 
-### [Umbraco.Infrastructure](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Cms.Infrastructure.html)
+### [Umbraco.Cms.Infrastructure](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Cms.Infrastructure.html)
 
-### [Umbraco.Web](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Cms.Web.Common.html)
+### [Umbraco.Cms.Web](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Cms.Web.Common.html)
 
 ### [Umbraco.Extensions](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Extensions.html)
 
