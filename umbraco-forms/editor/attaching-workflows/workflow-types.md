@@ -1,16 +1,12 @@
+---
+description: >-
+  This article will give you an overview of the Workflow Types available in
+  Umbraco Forms.
+---
+
 # Workflow Types
 
-There are several built-in workflow types that can be used to extend the functionality of your Form.
-
-- [Change Record State](#change-record-state)
-- [Post as XML](#post-as-xml)
-- [Save as an XML file](#save-as-an-xml-file)
-- [Save as Umbraco Content Node](#save-as-umbraco-content-node)
-- [Send Email](#send-email)
-- [Send Email with Template (Razor)](#send-email-with-template-razor)
-- [Send Form to URL](#send-form-to-url)
-- [Send XSLT Transformed Email](#send-xslt-transformed-email)
-- [Slack](#slack)
+There are several built-in Workflow Types that can be used to extend the functionality of your form. Do you want to post the submitted form as XML, send the data as an email, or send a notification through another messaging system? These are just a few of the options you can choose when working with Umbraco Forms.
 
 ## Video Tutorial
 
@@ -30,13 +26,13 @@ Used to automatically **Approve Record** or **Delete Record** once it is submitt
 
 Used to post the Form as an XML to a specified URL. The following configuration can be set:
 
-- Workflow Name
-- URL (required)
-- Method
-- XsltFile - used to transform the XML
-- Headers - map the needed files
-- User
-- Password
+* Workflow Name
+* URL (required)
+* Method
+* XsltFile - used to transform the XML
+* Headers - map the needed files
+* User
+* Password
 
 ## **Save as an XML file**
 
@@ -44,10 +40,10 @@ Used to post the Form as an XML to a specified URL. The following configuration 
 
 Saves the result of the Form as an XML file by using XSLT. The following configuration can be set:
 
-- Workflow Name
-- Path (required) - where to save the XML file
-- File extension (required)
-- XsltFile - used to transform the XML
+* Workflow Name
+* Path (required) - where to save the XML file
+* File extension (required)
+* XsltFile - used to transform the XML
 
 ## **Save as Umbraco Content Node**
 
@@ -65,9 +61,9 @@ The value from the **Name** field will be added as the **Node Name** property in
 
 The following configuration can be set:
 
-- Workflow Name
-- Publish - choose whether to publish the node on submission
-- Where to save - choose a section in the content tree where this new node should be added
+* Workflow Name
+* Publish - choose whether to publish the node on submission
+* Where to save - choose a section in the content tree where this new node should be added
 
 ## **Send Email**
 
@@ -75,13 +71,13 @@ The following configuration can be set:
 
 Sends the result of the Form to the specified email address. The following configuration can be set:
 
-- Workflow Name
-- Message (required)
-- Attachment - specify whether file uploads should be attached to the email
-- Recipient Email (required)
-- CC Email
-- BCC Email
-- SenderEmail - also configurable in `appsettings.json` under `Umbraco:CMS:Global:Smtp`. For more information, see the [Global Settings](../../../umbraco-cms/reference/configuration/globalsettings.md) article.
+* Workflow Name
+* Message (required)
+* Attachment - specify whether file uploads should be attached to the email
+* Recipient Email (required)
+* CC Email
+* BCC Email
+* SenderEmail - also configurable in `appsettings.json` under `Umbraco:CMS:Global:Smtp`. For more information, see the [Global Settings](../../../umbraco-cms/reference/configuration/globalsettings.md) article.
 
 ```json
     "Umbraco": {
@@ -95,8 +91,8 @@ Sends the result of the Form to the specified email address. The following confi
             }
 ```
 
-- Reply To Email
-- Subject of the email (required)
+* Reply To Email
+* Subject of the email (required)
 
 ## **Send Email with Template (Razor)**
 
@@ -104,17 +100,17 @@ Sends the result of the Form to the specified email address. The following confi
 
 Uses a template to send the results of the Form to a specified email address.
 
-You can create your own custom Razor templates to be used to send out emails upon Forms submission. Read more about how to create these templates in the [Email Templates](../../../umbraco-forms/developer/email-templates.md) article.
+You can create your own custom Razor templates to be used to send out emails upon Forms submission. Read more about how to create these templates in the [Email Templates](../../developer/email-templates.md) article.
 
 The following configuration can be set:
 
-- Workflow Name
-- Email Template (required) - specify which template you want to use
-- Attachment - specify whether file uploads should be attached to the email
-- Recipient Email (required)
-- CC Email
-- BCC Email
-- SenderEmail - also configurable in `appsettings.json` under `Umbraco:CMS:Global:Smtp`. For more information, see the [Global Settings](../../../umbraco-cms/reference/configuration/globalsettings.md) article.
+* Workflow Name
+* Email Template (required) - specify which template you want to use
+* Attachment - specify whether file uploads should be attached to the email
+* Recipient Email (required)
+* CC Email
+* BCC Email
+* SenderEmail - also configurable in `appsettings.json` under `Umbraco:CMS:Global:Smtp`. For more information, see the [Global Settings](../../../umbraco-cms/reference/configuration/globalsettings.md) article.
 
 ```json
 "Umbraco": {
@@ -128,8 +124,8 @@ The following configuration can be set:
        }
 ```
 
-- Reply To Email
-- Subject of the email (required)
+* Reply To Email
+* Subject of the email (required)
 
 ## **Send Form to URL**
 
@@ -137,13 +133,13 @@ The following configuration can be set:
 
 Sends the Form to a URL either as a HTTP POST or GET. The following configuration can be set:
 
-- Workflow Name
-- URL (required)
-- Method (required) - POST, GET, PUT or DELETE
+* Workflow Name
+* URL (required)
+* Method (required) - POST, GET, PUT or DELETE
 * Standard Fields - optionally include and map standard form information such as name and page URL
 * Fields - map the needed fields
-- User
-- Password
+* User
+* Password
 
 When mapping fields, if any are selected, only those chosen will be sent in the request to the configured URL. If no fields are mapped, all will be sent.
 
@@ -194,12 +190,12 @@ namespace RequestSaver.Controllers
 
 Sends the result of the Form to an email address with full control over the email contents by providing an xslt file. The following configuration can be set:
 
-- Workflow Name
-- XSLT File - specify which file should be used to transform the content
-- Recipient Email (required)
-- CC Email
-- BCC Email
-- SenderEmail - also configurable in `appsettings.json` under `Umbraco:CMS:Global:Smtp`. For more information, see the [Global Settings](../../../umbraco-cms/reference/configuration/globalsettings.md) article.
+* Workflow Name
+* XSLT File - specify which file should be used to transform the content
+* Recipient Email (required)
+* CC Email
+* BCC Email
+* SenderEmail - also configurable in `appsettings.json` under `Umbraco:CMS:Global:Smtp`. For more information, see the [Global Settings](../../../umbraco-cms/reference/configuration/globalsettings.md) article.
 
 ```json
 "Umbraco": {
@@ -213,8 +209,8 @@ Sends the result of the Form to an email address with full control over the emai
         }
 ```
 
-- Reply To Email
-- Subject of the email (required)
+* Reply To Email
+* Subject of the email (required)
 
 ## **Slack**
 
@@ -222,5 +218,5 @@ Sends the result of the Form to an email address with full control over the emai
 
 Allows to post the Form data to a specific channel on Slack. The following configuration can be set:
 
-- Workflow Name
-- Webhook URL (required)
+* Workflow Name
+* Webhook URL (required)

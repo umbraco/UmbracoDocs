@@ -1,5 +1,7 @@
 ---
-description: "Learn how to work with different types of Media content on your Umbraco website."
+description: >-
+  Learn how to work with different types of Media content on your Umbraco
+  website.
 ---
 
 # Creating Media
@@ -24,8 +26,8 @@ If you have upgraded from an older version than 8.14 the Media Types listed abov
 
 You can upload media in two different ways:
 
-* [Through the Media section](#add-media-through-the-media-section) and
-* [Through the Content section](#add-media-through-the-content-section)
+* [Through the Media section](./#add-media-through-the-media-section) and
+* [Through the Content section](./#add-media-through-the-content-section)
 
 ### Add media through the Media section
 
@@ -51,7 +53,7 @@ New media items can be added to your site without interrupting the content creat
   * Images added this way is automatically added to the user's start node in the Media section of the Umbraco backoffice.
 
 ![Drag and drop images directly into the content](images/upload-images-from-content.gif)
-  
+
 * Select the "+" icon to open the "Select media" dialog where you can add images from your file explorer directly or using drag and drop.
 
 ![Add images from the "Select media" dialog](images/add-image-from-dialog.gif)
@@ -64,7 +66,7 @@ Follow these steps to create a folder in the Media section:
 
 1. Go to the **Media** section.
 2. Select **...** next to **Media**.
-    * Alternatively, you can right-click the **Media** node and select **Create**.
+   * Alternatively, you can right-click the **Media** node and select **Create**.
 3. Select **Folder**.
 4. Enter a name for the folder and select **Save** in the bottom-right corner.
 
@@ -101,6 +103,12 @@ By adding a **Media Picker** property to a Document Type the editor will have th
 ## Creating a Media Type
 
 You can create custom Media Types and control the structure of the Media tree as you would with Document Types. This means you can store information that is specific to the media on the item itself.
+
+### Video tutorial
+
+{% embed url="https://youtu.be/aS39zygmJcQ" %}
+Watch this tutorial and learn how to create your own Media Types in Umbraco CMS.
+{% endembed %}
 
 A Media Type is created in the **Settings** section using the Media Type editor.
 
@@ -177,7 +185,7 @@ The new folder should be allowed to be created in the root of the Media tree. We
 ### Creating the folder and media items
 
 1. Go to the **Media** section.
-2. Select **...** next to Media and select the **Employee images** folder. 
+2. Select **...** next to Media and select the **Employee images** folder.
 3. Name it _Employee Images_ and select **Save**.
 
 There are four options to add new media items to the folder, as you can see here:

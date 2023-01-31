@@ -1,6 +1,6 @@
 # RedirectUrlService
 
-The RedirectUrlService is used for CRUD operations related to Redirects.
+The RedirectUrlService is used for Create, Read, Update and Delete (CRUD) operations related to Redirects.
 
  * **Namespace:** `Umbraco.Core.Services` 
  * **Assembly:** `Umbraco.Core.dll`
@@ -21,7 +21,7 @@ using Umbraco.Core.Services;
 
 ### Services property
 
-If you wish to use the redirect url service in a class that inherits from one of the Umbraco base classes (eg. `SurfaceController`, `UmbracoApiController` or `UmbracoAuthorizedApiController`), you can access the redirect url service through a local `Services` property:
+If you wish to use the redirect URL service in a class that inherits from one of the Umbraco base classes (eg. `SurfaceController`, `UmbracoApiController` or `UmbracoAuthorizedApiController`), you can access the redirect URL service through a local `Services` property:
 
 ```csharp
 IRedirectUrlService redirectUrlService = Services.RedirectUrlService;
