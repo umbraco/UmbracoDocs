@@ -1,6 +1,7 @@
 ---
 meta.Title: "Multi version documentation conventions"
 meta.Description: "To support multi version documentation we work according to the conventions you can read about in this article."
+meta.RedirectLink: "/contribute/getting-started"
 ---
 
 # Multi version documentation conventions
