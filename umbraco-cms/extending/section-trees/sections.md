@@ -37,62 +37,6 @@ This would create a new section in your Umbraco backoffice called 'My Favourite 
 
 When registering your section this way, it is added to the end of the collection of sections. But as more `package.manifest` files may do the same, the order of the additional sections depends on the order of which the `package.manifest` files are loaded. Registering your section this way doesn't allow further control of its order.
 
-### Registering with C# Type
-
-By creating a C# class that implements `ISection` from `Umbraco.Cms.Core.Sections`:
-
-```csharp
-using Umbraco.Cms.Core.Sections;
-
-namespace My.Website.Sections
-{
-    public class MyFavouriteThingsSection : ISection
-    {
-        public string Alias => "myFavouriteThings";
-
-        public string Name => "My Favourite Things";
-    }
-}
-```
-
-For your C# type to be discovered by Umbraco at application start up, it needs to be appended to the `SectionCollectionBuilder`.
-
-You can achieve this by updating the `ConfigureServices` method in the `Startup.cs` class:
-
-```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()
-        .AddWebsite()
-        .AddComposers()
-        // Register the section
-        .AddSection<MyFavouriteThingsSection>()
-        .Build();
-}
-```
-
-This would also create a new section called 'My Favourite Things' in your Umbraco Backoffice.
-
-Similar to registering the section via a `package.manifest` file, the `Append<>` method will add the section to the end of the list of sections.
-
-If you wish to control the order of your section a bit more, you can use some of the other methods on `SectionsCollectionBuilder`. For instance, you can add your section at a specific index:
-
-```csharp
-builder.Sections().Insert<MyFavouriteThingsSection>(2);
-```
-
-Or before or after an existing section:
-
-```csharp
-builder.Sections().InsertBefore<SettingsSection, MyFavouriteThingsSection>();
-```
-
-```csharp
-builder.Sections().InsertAfter<SettingsSection, MyFavouriteThingsSection>();
-```
-
-The final order of the sections is down to the order of which the composers are executed. For instance, two composers may add a new section before `SettingsSection`, in which case the latter will add its section between the section of the first composer and `SettingsSection`.
 
 ### Why can't I see my new Custom Section?
 
