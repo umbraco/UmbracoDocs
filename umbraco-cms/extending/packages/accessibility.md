@@ -16,6 +16,6 @@ Accessibility testing is more a specialist skillset than it is automated testing
   - Does the **tab order** make sense?
 - Check the UI with a screen reader.
   - [NVDA have a free screen reader](https://www.nvaccess.org/download/) and some guidelines on screen reader testing are available from [webaim](https://webaim.org/articles/screenreader_testing/)
-- Install use an accessibility testing tool as a plugin into your browser to run automated tests.
+- Install an accessibility testing tool as a plugin into your browser to run automated tests:
   - Tools like [axe DevTools](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd) are built to reduce the number of false positives in a test.
 - If the UI does not follow the Umbraco Style, then check the contrast with a tool like [WCAG Contrast Checker](https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf) will help ensure contrast.
