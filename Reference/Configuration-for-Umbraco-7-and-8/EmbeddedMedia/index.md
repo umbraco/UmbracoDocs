@@ -1,6 +1,7 @@
 ---
 versionFrom: 7.0.0
 needsV8Update: "true"
+meta.RedirectLink: "/umbraco-cms/extending/embedded-media-providers"
 ---
 
 # EmbeddedMedia.config

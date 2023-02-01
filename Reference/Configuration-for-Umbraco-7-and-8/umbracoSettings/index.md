@@ -3,6 +3,7 @@ versionFrom: 8.0.0
 versionTo: 8.18.0
 meta.Title: "umbracoSettings.config options in Umbraco"
 meta.Description: "Reference on umbracoSettings.config options in Umbraco"
+meta.RedirectLink: "/umbraco-cms/reference/configuration/globalsettings"
 ---
 
 # umbracoSettings

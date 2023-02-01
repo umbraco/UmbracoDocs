@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.0.0
+meta.RedirectLink: "/umbraco-cms/reference/configuration/contentsettings#error-404-collection"
 ---
 
 # How to implement a 404 Page

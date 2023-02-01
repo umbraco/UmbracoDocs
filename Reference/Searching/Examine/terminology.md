@@ -1,6 +1,7 @@
 ---
 versionFrom: 7.0.0
 versionTo: 7.0.0
+meta.RedirectLink: "/umbraco-cms/reference/searching/examine"
 ---
 
 # Examine Terminology

@@ -2,6 +2,7 @@
 keywords: base v6 version6
 versionFrom: 6.0.0
 needsV8Update: "true"
+meta.RedirectLink: "/umbraco-cms/reference/routing/umbraco-api-controllers"
 ---
 
 :::warning

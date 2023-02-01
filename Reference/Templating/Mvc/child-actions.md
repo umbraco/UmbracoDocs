@@ -1,6 +1,7 @@
 ---
 versionFrom: 7.0.0
 versionTo: 8.0.0
+meta.RedirectLink: "/umbraco-cms/reference/templating/mvc"
 ---
 
 # Using MVC Child Actions in Umbraco

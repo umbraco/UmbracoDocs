@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.0.0
+meta.RedirectLink: "/umbraco-cms/extending/dashboards"
 ---
 
 # How to create custom dashboards

@@ -2,6 +2,7 @@
 versionFrom: 8.0.0
 meta.Title: "Umbraco configuration files"
 meta.Description: "Information on the various configuration files in Umbraco"
+meta.RedirectLink: "/umbraco-cms/reference/configuration"
 ---
 
 # Configuration Files
