@@ -107,7 +107,7 @@ namespace RoutingDocs.Controllers
 
 ## RedirectToCurrentUmbracoUrl
 
-Redirects to the currently rendered Umbraco url.
+Redirects to the currently rendered Umbraco URL.
 
 ```csharp
 namespace RoutingDocs.Controllers
