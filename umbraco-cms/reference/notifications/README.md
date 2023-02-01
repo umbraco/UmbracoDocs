@@ -120,6 +120,59 @@ public void ConfigureServices(IServiceCollection services)
 
 Now all the notifications you registered in your extension method will be handled by your handler.
 
+## Async Notification Handler
+
+If you need to do anything asynchronous when handling a notification you can do this with the `INotificationAsyncHandler` interface.
+
+### Notification handler
+
+You may want to handle notifications ansynchronous. We can create a `INotificationAsyncHandler` for this.
+
+```C#
+public class ContentDeletedHandler : INotificationAsyncHandler<ContentDeletedNotification>
+{
+    public Task HandleAsync(ContentDeletedNotification notification, CancellationToken cancellationToken)
+    {
+        // await anything
+        await Task.Delay(1000);
+    }
+}
+```
+
+### Notification registration
+
+When using the `INotificationAsyncHandler` we need to register it using the `IUmbracoBuilder` and the `AddNotificationAsyncHandler` extension method. This can be done in the Startup class of with a composer.
+
+#### Registering notification async handlers in the startup class
+
+You need to register your notification async handler to the `IUmbracoBuilder`. We can do this in the Startup class.
+
+```C#
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddUmbraco(_env, _config)
+        .AddBackOffice()             
+        .AddWebsite()
+        .AddComposers()
+        .AddNotificationAsyncHandler<ContentDeletedNotification, ContentDeletedHandler>()
+        .Build();
+}
+```
+
+#### Registering notification async handlers in a composer
+
+If you don't have access to the Startup we can use a composer instead.
+
+```C#
+public class NotificationHandlersComposer : IComposer
+    {
+        public void Compose(IUmbracoBuilder builder)
+        {
+            builder.AddNotificationAsyncHandler<ContentDeletedNotification, ContentDeletedHandler>();
+        }
+    }
+```
+
 ## Content, Media, and Member notifications
 
 * See [ContentService Notifications](contentservice-notifications.md) for a listing of the ContentService object notifications.
