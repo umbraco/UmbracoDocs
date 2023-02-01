@@ -122,11 +122,11 @@ Now all the notifications you registered in your extension method will be handle
 
 ## Async Notification Handler
 
-If you need to do anything asynchronous when handling a notification you can do this with the `INotificationAsyncHandler` interface.
+If you need to do anything asynchronous when handling a notification you can achieve this using the `INotificationAsyncHandler`.
 
 ### Notification handler
 
-You may want to handle notifications ansynchronous. We can create a `INotificationAsyncHandler` for this.
+You may want to handle notifications ansynchronous. We can create a handler implementing the `INotificationAsyncHandler`.
 
 ```C#
 public class ContentDeletedHandler : INotificationAsyncHandler<ContentDeletedNotification>
@@ -141,7 +141,7 @@ public class ContentDeletedHandler : INotificationAsyncHandler<ContentDeletedNot
 
 ### Notification registration
 
-When using the `INotificationAsyncHandler` we need to register it using the `IUmbracoBuilder` and the `AddNotificationAsyncHandler` extension method. This can be done in the Startup class of with a composer.
+When using the `INotificationAsyncHandler` we need to register it using the `IUmbracoBuilder` and the `AddNotificationAsyncHandler` extension method. This can be done in the Startup class or with a composer.
 
 #### Registering notification async handlers in the startup class
 
@@ -161,7 +161,7 @@ public void ConfigureServices(IServiceCollection services)
 
 #### Registering notification async handlers in a composer
 
-If you don't have access to the Startup we can use a composer instead.
+If you do not have access to the Startup we can use a composer instead.
 
 ```C#
 public class NotificationHandlersComposer : IComposer
