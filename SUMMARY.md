@@ -481,7 +481,7 @@
     * [Application Settings](umbraco-cloud/set-up/project-settings/application-settings.md)
     * [Upgrade your Plan](umbraco-cloud/set-up/project-settings/upgrade-umbraco-cloud-plan.md)
     * [Managing Hostnames](umbraco-cloud/set-up/project-settings/manage-hostnames/README.md)
-      * [new Certificate Authority for custom hostnames](umbraco-cloud/set-up/project-settings/manage-hostnames/ca-record-migration.md)
+      * [New Certificate Authority for custom hostnames](umbraco-cloud/set-up/project-settings/manage-hostnames/ca-record-migration.md)
       * [Rewrite rules](umbraco-cloud/set-up/project-settings/manage-hostnames/rewrites-on-cloud.md)
       * [Custom Certificates](umbraco-cloud/set-up/project-settings/manage-hostnames/security-certificates.md)
     * [External Services](umbraco-cloud/set-up/project-settings/external-services.md)
