@@ -9,7 +9,7 @@ meta.RedirectLink: "/umbraco-cms/reference/notifications"
 
 Umbraco uses .Net events to allow you to hook into the workflow processes for the backoffice. For example you might want to execute some code every time a page is published. Events allow you to do that.
 
-## [Composing](../../Implementation/Composing/index-v8)
+## [Composing](../../Implementation/Composing/)
 
 Umbraco uses Compositions and Components to allow you to execute code during startup. This is also the correct place to register for many other types of events including the ability to bind to HttpApplication events.
 
