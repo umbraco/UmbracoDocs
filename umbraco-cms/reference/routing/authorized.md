@@ -84,7 +84,7 @@ public static void MapUmbracoRoute<T>(
 * `constraints` - Any routing constraints passed to this will be used when mapping the route see [Microsoft documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/routing?view=aspnetcore-5.0#route-constraint-reference) for more information.
 
 
-Using the `MapUmbracoRoute` extension method is optional though, it's a neat helper to ensure controllers get routed in the same way. It's important to note that if your controller uses an area, like in this example, you need to specify this using the `Area` attribute. In this example the controller looks like this: 
+Using the `MapUmbracoRoute` extension method is optional though, it's a neat helper to ensure controllers get routed in the same way. If your controller uses an area, like in this example, you need to specify this using the `Area` attribute. In this example the controller looks like this: 
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
