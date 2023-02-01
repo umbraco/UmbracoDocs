@@ -147,7 +147,7 @@ We can apply the same workflow to elements inside the dashboard, not only the na
 
 We are adding another area tag with a few keys. Let us adjust the dashboard HTML accordingly:
 
-{% code title="en-US.xml" lineNumbers="true" %}
+{% code title="WelcomeDashboard.html" lineNumbers="true" %}
 ```html
 <div class="welcome-dashboard">
     <h1><localize key="welcomeDashboard_heading">Default heading</localize></h1>
