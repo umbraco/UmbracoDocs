@@ -16,7 +16,7 @@ Accessibility testing is more a specialist skillset than it is automated testing
   - Does the **tab order** make sense?
   - More on focus, tab orders, other common interactions and techniques for keyboard testing can be found at [WebAIM: Keyboard Accessibility](https://webaim.org/techniques/keyboard/)
 - Check the UI with a screen reader.
-  - [NVDA have a free screen reader](https://www.nvaccess.org/download/) and some guidelines on screen reader testing are available from [webaim](https://webaim.org/articles/screenreader_testing/)
+  - [NVDA: NonVisual Desktop Access is a free Windows screen reader](https://www.nvaccess.org/download/) and some guidelines on screen reader testing are available from [WebAIM: Web Accessibility In Mind](https://webaim.org/articles/screenreader_testing/)
 - Install an accessibility testing tool as a plugin into your browser to run automated tests:
   - Tools like [axe DevTools](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd) are built to reduce the number of false positives in a test.
 - If the UI does not follow the Umbraco Style, then check the contrast with a tool like [WCAG Contrast Checker](https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf) will help ensure contrast.
