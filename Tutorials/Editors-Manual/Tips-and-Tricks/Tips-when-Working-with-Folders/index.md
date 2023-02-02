@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.0.0
+meta.RedirectLink: "/umbraco-cms/tutorials/editors-manual/tips-and-tricks/working-with-folders"
 ---
 
 # Refreshing the Tree View
