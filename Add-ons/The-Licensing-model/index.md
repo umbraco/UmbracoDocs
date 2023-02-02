@@ -1,6 +1,7 @@
 ---
 versionFrom: 7.0.0
 versionTo: 8.0.0
+meta.RedirectLink: "/other-resources/the-licensing-model"
 ---
 
 # The Licensing Model
