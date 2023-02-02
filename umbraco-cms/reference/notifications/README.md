@@ -131,7 +131,7 @@ You may want to handle notifications ansynchronous. We can create a handler impl
 ```C#
 public class ContentDeletedHandler : INotificationAsyncHandler<ContentDeletedNotification>
 {
-    public Task HandleAsync(ContentDeletedNotification notification, CancellationToken cancellationToken)
+    public async Task HandleAsync(ContentDeletedNotification notification, CancellationToken cancellationToken)
     {
         // await anything
         await Task.Delay(1000);
@@ -165,12 +165,12 @@ If you do not have access to the Startup we can use a composer instead.
 
 ```C#
 public class NotificationHandlersComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.AddNotificationAsyncHandler<ContentDeletedNotification, ContentDeletedHandler>();
-        }
+        builder.AddNotificationAsyncHandler<ContentDeletedNotification, ContentDeletedHandler>();
     }
+}
 ```
 
 ## Content, Media, and Member notifications
