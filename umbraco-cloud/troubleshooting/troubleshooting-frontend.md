@@ -8,7 +8,7 @@ The error above is a 500 error meaning that the server encountered an unexpected
 
 Errors on the frontend are presented in three ways:
 
-* 500 (unable to fulfill the request)
+* 500 (internal server error)
 * Blank / not loading
 * 404 (Page not found)
 
