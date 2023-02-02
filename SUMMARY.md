@@ -191,6 +191,7 @@
     * [Packages on Umbraco Cloud](umbraco-cms/extending/packages/packages-on-umbraco-cloud.md)
     * [Installing and Uninstalling Packages](umbraco-cms/extending/packages/installing-and-uninstalling-packages.md)
     * [Maintaining packages](umbraco-cms/extending/packages/maintaining-packages.md)
+    * [Create accessible Umbraco packages](umbraco-cms/extending/packages/accessibility.md)
   * [UI Library](umbraco-cms/extending/ui-library.md)
 * [Reference](umbraco-cms/reference/README.md)
   * [Configuration](umbraco-cms/reference/configuration/README.md)
