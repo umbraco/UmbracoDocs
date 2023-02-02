@@ -8,7 +8,7 @@ meta.Description: "Documentation on how to work with Umbraco Forms for both edit
 
 _Documents how to work with Umbraco Forms (HQ's official Forms Builder) from both an editor and a developer standpoint._
 
-You can purchase Forms from [Umbraco Apps](https://umbraco.com/apps/umbraco-forms/).
+You can purchase Forms from [Umbraco Apps](https://umbraco.com/products/umbraco-forms/).
 
 ## [Installing and Upgrading](Installation/index.md)
 

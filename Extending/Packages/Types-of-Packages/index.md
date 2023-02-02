@@ -30,7 +30,7 @@ Packages zip files can contain:
 * Data Types
 
 :::note
-Currently you cannot include media items in a Package Zip file. You will need a custom [package action](Package-Actions/custom-package-actions.md) to install media as part of a package.
+Currently you cannot include media items in a Package Zip file. You will need a custom [package action](../Package-Actions/custom-package-actions.md) to install media as part of a package.
 :::
 
 A package zip file can also contain [Package Actions](../Package-Actions/index.md) which run after installation and allow you to perform additional tasks against the Umbraco installation.
