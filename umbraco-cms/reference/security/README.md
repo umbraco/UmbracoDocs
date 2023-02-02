@@ -10,7 +10,7 @@ In this article, you will find everything you need regarding security within Umb
 
 On our main website, we have a dedicated security section which provides all the details you need to know about security within the Umbraco CMS. This includes how to report a vulnerability.
 
-## [SSL/HTTPS](ssl-https.md)
+## [Secure Sockets Layer (SSL)/HTTPS](ssl-https.md)
 
 We highly encourage the use of HTTPS on Umbraco websites, especially in production environments. By using HTTPS you greatly improve the security of your website.
 
@@ -50,7 +50,7 @@ The [`BackOfficeUserManager`](backofficeusermanager-and-notifications.md) is the
 
 ### [Custom password check](custom-password-check.md)
 
-In most cases [External login providers (OAuth)](external-login-providers.md) will meet the needs of most users when needing to authenticate with external resources but in some cases you may need to only change how the username and password credentials are checked.
+In most cases [External login providers (OAuth)](external-login-providers.md) will meet the needs of most users when needing to authenticate with external resources. In some cases you may need to only change how the username and password credentials are checked.
 
 This is typically a legacy approach to validating credentials with external resources but it is possible.
 
@@ -62,7 +62,7 @@ Marking fields as **sensitive** will hide the data in those fields for backoffic
 
 Learn more about this in the [Sensitive Data](sensitive-data-on-members.md) article.
 
-## [Setup Umbraco for a FIPS Compliant Server](setup-umbraco-for-a-fips-server.md)
+## [Setup Umbraco for a Federal Information Processing Standards (FIPS) Compliant Server](setup-umbraco-for-a-fips-server.md)
 
 How to configure Umbraco to run on a FIPS compliant server.
 
