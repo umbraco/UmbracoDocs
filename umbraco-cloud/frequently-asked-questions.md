@@ -256,7 +256,7 @@ If you need help with this, don't hesitate to reach out to us and we'll be happy
 
 ### Can I choose which region my projects run in?
 
-Yes, you can choose between the West Europe region and US East region.
+Yes, you can choose between West Europe, East US, and South UK regions.
 
 ### Can I move my existing project created on Cloud in the EU region to the US region?
 
@@ -264,7 +264,7 @@ Yes, you can move a project that was created on Umbraco Cloud in the EU region t
 
 ### How do I select a region when creating projects on Cloud?
 
-You can choose a region when creating a project.
+You can choose a region from the **Region** drop-down list when creating a new project.
 
 ### Can I have a Baseline master project in the EU and a Baseline child project in the US?
 
@@ -274,13 +274,13 @@ No. Baseline-projects are bound to a region for now.
 
 Yes. The US region is no different than normal Cloud other than its regional location. That means that the patch-upgrade functionality will work in whichever region you choose.
 
-### Can you create Umbraco Heartcore projects in the US Region?
+### Can you create Umbraco Heartcore projects in the US and UK Regions?
 
 Not at the moment.
 
-### Are all the features we have in Umbraco Cloud available in the US region?
+### Are all the features we have in Umbraco Cloud available in the US and UK regions?
 
-Baseline functionality is not supported in the US-region at the moment. Other than that, all features are fully supported.
+Baseline functionality is not supported in the US and UK regions at the moment. Other than that, all features are fully supported.
 
 ### Are you planning to add other regions in the future?
 
@@ -288,7 +288,11 @@ Yes. Once we have specific plans, we will announce them publicly.
 
 ### Where can I see what region my project was created in?
 
-## EU region has “euwest” in the URL, while US has “useast” in the URL.
+The hostnames contain the region your project is hosted on. Currently, there are 3 options available when choosing a region for your Umbraco project:
+
+* West Europe (euwest01). For example, `https://west-europe-project.euwest01.umbraco.io/`
+* East US (useast01). For example, `https://east-us-project.useast01.umbraco.io/`
+* South UK (uksouth01). For example, `https://south-uk-project.uksouth01.umbraco.io/`
 
 ## Backups and data retention
 
