@@ -147,7 +147,7 @@ We can apply the same workflow to elements inside the dashboard, not only the na
 
 We are adding another area tag with a few keys. Let us adjust the dashboard HTML accordingly:
 
-{% code title="en-US.xml" lineNumbers="true" %}
+{% code title="WelcomeDashboard.html" lineNumbers="true" %}
 ```html
 <div class="welcome-dashboard">
     <h1><localize key="welcomeDashboard_heading">Default heading</localize></h1>
@@ -809,12 +809,12 @@ We also need to move the `ng-repeat` parameter from the
 
     ![Custom Dashboard extended with UI Library Card](images/extendedWithUiLibrary.png)
 
-    #### Custom External Data - creating your own angular resource
+    **Custom External Data - creating your own angular resource**
 
     You can create your own custom Angular services/resources to interact with your own serverside data (using UmbracoAuthorizedJsonController).
 
     The [property editor tutorial](creating-a-property-editor/) has a step explaining how to do this.
 
-    #### The end
+    **The end**
 
     With all of the steps completed, you should have a functional dashboard that will let the logged-in user see the changes they made! Hopefully, this tutorial has given you some ideas on what is possible to do when creating a dashboard. Remember to check out the [Angular API docs](../reference/api-documentation.md#backoffice-ui) for more info on all of the resources and services you can find for the backoffice!
