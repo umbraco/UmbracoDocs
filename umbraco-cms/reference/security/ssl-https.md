@@ -10,7 +10,7 @@ There are several benefits of HTTPS:
 
 * Trust - when your site is delivered over HTTPS your users will see that your site is secured, they are able to view the certificate assigned to your site and know that your site is legitimate
 * Removing an attack vector called ["Man in the middle"](https://owasp.org/www-community/attacks/Manipulator-in-the-middle\_attack) (or network Sniffing)
-* Guards against [Phishing](https://en.wikipedia.org/wiki/Phishing), an attacker will have a hard time obtaining an authentic SSL certificate
+* Guards against [Phishing](https://en.wikipedia.org/wiki/Phishing), an attacker will have a hard time obtaining an authentic Secure Sockets Layer (SSL) certificate
 * Google likes HTTPS, it may help your site's rankings
 
 Another benefits of HTTPS is that you are able to use the [http2](https://en.wikipedia.org/wiki/HTTP/2) protocol if your web server and browser support it.
@@ -92,7 +92,7 @@ In your `web.config` find or add the `<system.webServer><rewrite><rules>` sectio
 The rule includes an ignore for `localhost`. If you run your local environment on a different URL than `localhost` you can add additional ignore rules. Additionally, if you have a staging environment that doesn't run on HTTPS, you can add that to the ignore rules too.
 {% endhint %}
 
-## SSL versus TLS
+## SSL versus Transport Layer Security (TLS)
 
 _In HTTPS, the communication protocol is encrypted using Transport Layer Security (TLS), or, formerly, its predecessor, Secure Sockets Layer (SSL)_ - [wikipedia](https://en.wikipedia.org/wiki/HTTPS)
 
