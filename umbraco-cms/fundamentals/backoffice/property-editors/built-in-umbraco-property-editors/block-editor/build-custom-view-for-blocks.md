@@ -23,7 +23,7 @@ If you would like to display properties of `settings`, you can access these by u
 
 ## Make Block List Editor custom view draggable
 
-A custom view of Block List Editor needs to have the 'blockelement__draggable-element' class presented to define which part of the Block that is draggable.
+A custom view of Block List Editor needs to have the 'blockelement\_\_draggable-element' class presented to define which part of the Block is draggable.
 
 Example:
 
@@ -34,15 +34,17 @@ Example:
 </button>
 ```
 
-Notice this is not a choice for Block Grid Editor, here all Blocks are draggable.
+{% hint style="info" %}
+This is not relevant for the Block Grid Editor where all Blocks are draggable by default..
+{% endhint %}
 
 ## Add the Areas for Block Grid Editor
 
-Blocks of the Block Grid Editor can have Areas. These Blocks requires their Custom View to define where the Areas should be inserted.
+Blocks of the Block Grid Editor can have Areas. These Blocks require their Custom View to define where the Areas should be inserted.
 
 This enables you to wrap and place the Areas as you need.
 
-The Areas is inserted through [Web Component Slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots). A slot is a native HTML tag.
+The Areas is inserted through [Web Component Slots](https://developer.mozilla.org/en-US/docs/Web/Web\_Components/Using\_templates\_and\_slots). A slot is a native HTML tag.
 
 These Area slots can be generated automatically via this AngularJS Directive:
 
