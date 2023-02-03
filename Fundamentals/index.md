@@ -35,10 +35,6 @@ Learn more about the features in Umbraco v8.
             <span class="line v-line"></span>
             <span class="line h-line"></span>
         </span>
-        <span class="dot small">
-            <span class="line v-line"></span>
-            <span class="line h-line"></span>
-        </span>
     </div>
     <div class="col-xs-9">
         <div class="row explain">
@@ -255,6 +251,7 @@ Learn more about the features in Umbraco v8.
             <span class="line h-line"></span>
         </span>
         <span class="dot small">
+            <span class="line h-line"></span>
         </span>
     </div>
     <div class="col-xs-9">
