@@ -1,6 +1,6 @@
 ---
 versionFrom: 4.5.0
-verionRemoved: 8.0.0
+versionRemoved: 8.0.0
 ---
 
 # 4.5 XML Schema
