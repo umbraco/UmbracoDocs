@@ -34,6 +34,8 @@ Example:
 </button>
 ```
 
+Notice this is not a choice for Block Grid Editor, here all Blocks are draggable.
+
 ## Add the Areas for Block Grid Editor
 
 Blocks of the Block Grid Editor can have Areas. These Blocks requires their Custom View to define where the Areas should be inserted.
