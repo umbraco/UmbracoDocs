@@ -117,11 +117,11 @@ angular.module("umbraco").controller("customBlockController", function ($scope) 
 
 Your block may enable you to 'pick' an image to use as the background for a particular block. If you try to display this image directly in the view using `block.data.image`, you will see the unique ID and not the image.
 
-There are two approaches to display the actual image in your custom block view. Either use a filter in your custom view or retrieve the image through the AngularJS controller.
+There are two approaches to displaying the actual image in your custom block view. Either use a filter in your custom view or retrieve the image through the AngularJS controller.
 
 #### 1. Retrieve the image using a filter directly in your custom view
 
-By using the AngularJS filter called `mediaItemResolver` is it possible to retrieve the image directly from your custom view file. You will need to create a variable which then uses the `mediaItemResolver` filter on the Media Picker property. This variable is then used to retrieve the image URL in an `<img>` HTML tag.
+By using the AngularJS filter called `mediaItemResolver`, it is possible to retrieve the image directly from your custom view file. You will need to create a variable that then uses the `mediaItemResolver` filter on the Media Picker property. This variable is then used to retrieve the image URL in an `<img>` HTML tag.
 
 In the following example, a `mediaItem` variable is defined and used to set the `ng-src` value on the image tag. This will retrieve the image into your custom view.
 
@@ -138,7 +138,7 @@ In the following example, a `mediaItem` variable is defined and used to set the 
 </div>
 ```
 
-#### 2. Retrive the image using your the AngularJS controller
+#### 2. Retrieve the image using an AngularJS controller
 
 It is also possible to get the `ImageUrl` by using the unique ID in an AngularJS controller.
 
