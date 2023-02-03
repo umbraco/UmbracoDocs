@@ -62,10 +62,6 @@ Learn more about the features in Umbraco v8.
                 <h5><a href="Setup/Upgrading/">Upgrading</a></h5>
                 <small>How to upgrade your copy of Umbraco to a newer version?</small>
             </div>
-            <div class="col-sm-6">
-                <h5><a href="Setup/Config/">Configuration</a></h5>
-                <small>Information about all of the different configuration files that control Umbraco.</small>
-            </div>
         </div>
     </div>
 </div>

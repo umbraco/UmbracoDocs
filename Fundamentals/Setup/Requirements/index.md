@@ -4,12 +4,6 @@ versionFrom: 8.0.0
 
 # Minimum System Requirements
 
-:::note
-This article covers requirements for Umbraco 8 and older versions of Umbraco CMS.
-
-Go to [**docs.umbraco.com**](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/requirements) to find requirements for the latest recommended version of Umbraco CMS.
-:::
-
 ## Browsers
 
 The Umbraco UI should work in all modern browsers:

@@ -1,6 +1,7 @@
 ---
 versionFrom: 7.0.0
 versionTo: 8.0.0
+needsV8Update: "true"
 meta.Title: "UmbPack"
 meta.Description: "How to use the UmbPack tool to deploy package versions to Our"
 ---

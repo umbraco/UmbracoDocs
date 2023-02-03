@@ -3,6 +3,7 @@ meta.Title: "Add-ons for Umbraco CMS"
 meta.Description: "Learn about the Umbraco CMS add-ons; Umbraco Forms and Umbraco Courier. How to install them, what they do and how to extend functionality."
 versionFrom: 7.0.0
 versionTo: 10.0.0
+needsV8Update: "true"
 ---
 
 # Umbraco Products Documentation

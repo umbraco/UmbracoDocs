@@ -51,7 +51,3 @@ An introduction to Relations and Relation Types, creating, and managing relation
 ## [Dictionary Items](Dictionary-Items/)
 
 Using Dictionary Items, you can store a value for each language. Dictionary Items have a unique key which is used to fetch the value of the Dictionary Item.
-
-## [Content Version Cleanup (v9.1.0+)](Content-Version-Cleanup/)
-
-How to keep the noise down whilst ensuring your important content versions stick around indefinitely.
