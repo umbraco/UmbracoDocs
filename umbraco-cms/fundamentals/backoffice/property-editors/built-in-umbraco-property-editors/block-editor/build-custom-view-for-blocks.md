@@ -126,12 +126,12 @@ By using the AngularJS filter called `mediaItemResolver` is it possible to retri
 In the following example, a `mediaItem` variable is defined and used to set the `ng-src` value on the image tag. This will retrieve the image into your custom view.
 
 ```html
-<div ng-controller="customBlockController" ng-click="block.edit()">
+<div ng-click="block.edit()">
     <h2 ng-bind="block.data.headline"></h2>
 
     <!-- Use the 'mediaItemResolver' on the block.data.image -->
     {{mediaItem = (block.data.image[0].mediaKey | mediaItemResolver); “”}}
-    
+
     <!-- Use the variable defined above to retrieve the mediaLink representing the image -->
     <img ng-src=“{{mediaItem.mediaLink}}“/>
     <p ng-bind="block.data.description"></p>
@@ -140,7 +140,7 @@ In the following example, a `mediaItem` variable is defined and used to set the 
 
 #### 2. Retrive the image using your the AngularJS controller
 
-It is also possible to get the `ImageUrl` by using the unique ID in the AngularJS controller.
+It is also possible to get the `ImageUrl` by using the unique ID in an AngularJS controller.
 
 Amend the `customBlock.controller.js` file, by injecting the `mediaResource` to retrieve the image from the ID:
 
