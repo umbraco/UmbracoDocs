@@ -39,7 +39,7 @@ To group dictionary items:
     <figure><img src="images/display-dictionary-item.png" alt=""><figcaption></figcaption></figure>
 9. Click **Save**.
 
-## Editing Dicionary Items
+## Editing Dictionary Items
 
 To edit a dictionary item, follow these steps:
 
