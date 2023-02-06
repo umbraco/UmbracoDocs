@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+versionRemoved: 8.99.99
 ---
 
 # Migrating data types
