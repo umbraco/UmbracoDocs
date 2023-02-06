@@ -5,7 +5,8 @@ versionFrom: 7.0.0
 versionTo: 8.0.0
 ---
 
-# Umbraco Fundamentals 
+# Umbraco Fundamentals
+
 *All the fundamentals of using Umbraco. From making a local installation to extending the backend.*
 
 Umbraco comes with a lot of new big features, as well as a long list of general improvements to the CMS in general.
@@ -24,10 +25,6 @@ Learn more about the features in Umbraco v8.
     </div>
     <div class="col-xs-3">
         <span class="dot big icon-Wrench">
-            <span class="line v-line"></span>
-            <span class="line h-line"></span>
-        </span>
-        <span class="dot small">
             <span class="line v-line"></span>
             <span class="line h-line"></span>
         </span>
@@ -255,6 +252,7 @@ Learn more about the features in Umbraco v8.
             <span class="line h-line"></span>
         </span>
         <span class="dot small">
+            <span class="line h-line"></span>
         </span>
     </div>
     <div class="col-xs-9">
