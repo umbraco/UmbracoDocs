@@ -115,11 +115,34 @@ angular.module("umbraco").controller("customBlockController", function ($scope) 
 
 ### Example: Displaying an image from a Media Picker
 
-Your block may enable you to 'pick' an image for use as the background for a particular block. If you try to display this image directly in the view using `block.data.image`, you will see the unique ID and not the image.
+Your block may enable you to 'pick' an image to use as the background for a particular block. If you try to display this image directly in the view using `block.data.image`, you will see the unique ID and not the image.
 
-You will need to use the ID in our custom AngularJS controller in order to get the `ImageUrl` to display in our backoffice Block Editor View.
+There are two approaches to displaying the actual image in your custom block view. Either use a filter in your custom view or retrieve the image through the AngularJS controller.
 
-With the setup of files above, you need to amend the `customBlock.controller.js` file, by injecting the `mediaResource` to retrieve the image from the ID:
+#### 1. Retrieve the image using a filter directly in your custom view
+
+By using the AngularJS filter called `mediaItemResolver`, it is possible to retrieve the image directly from your custom view file. You will need to create a variable that then uses the `mediaItemResolver` filter on the Media Picker property. This variable is then used to retrieve the image URL in an `<img>` HTML tag.
+
+In the following example, a `mediaItem` variable is defined and used to set the `ng-src` value on the image tag. This will retrieve the image into your custom view.
+
+```html
+<div ng-click="block.edit()">
+    <h2 ng-bind="block.data.headline"></h2>
+
+    <!-- Use the 'mediaItemResolver' on the block.data.image -->
+    {{mediaItem = (block.data.image[0].mediaKey | mediaItemResolver); “”}}
+
+    <!-- Use the variable defined above to retrieve the mediaLink representing the image -->
+    <img ng-src=“{{mediaItem.mediaLink}}“/>
+    <p ng-bind="block.data.description"></p>
+</div>
+```
+
+#### 2. Retrieve the image using an AngularJS controller
+
+It is also possible to get the `ImageUrl` by using the unique ID in an AngularJS controller.
+
+Amend the `customBlock.controller.js` file, by injecting the `mediaResource` to retrieve the image from the ID:
 
 ```javascript
 angular.module("umbraco").controller("customBlockController", function ($scope, mediaResource) {
@@ -135,7 +158,7 @@ angular.module("umbraco").controller("customBlockController", function ($scope, 
 });
 ```
 
-Update the Custom View to use the `imageUrl` property to display the image:
+The Custom View should then be updated to use the `imageUrl` property to display the image:
 
 ```html
 <div ng-controller="customBlockController" ng-click="block.edit()">
@@ -145,7 +168,7 @@ Update the Custom View to use the `imageUrl` property to display the image:
 </div>
 ```
 
-If you need to use a specific crop, you can inject the `imageUrlGeneratorResource` resource, which has a `getCropUrl(mediaPath, width, height, imageCropMode, animationProcessMode)` method:
+If you need to use a specific crop, you can inject the `imageUrlGeneratorResource` resource. This has a `getCropUrl(mediaPath, width, height, imageCropMode, animationProcessMode)` method:
 
 ```javascript
 angular.module("umbraco").controller("customBlockController", function ($scope, mediaResource,imageUrlGeneratorResource) {
