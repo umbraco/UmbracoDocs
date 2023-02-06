@@ -26,7 +26,7 @@ It's possible with Razor to define functions for rendering HTML, we can leverage
 }
 ```
 
-Now, it's not recommended to create a single template and doing all the rendering via razor function, but it can be quite nifty for rendering search results, and so on.
+Now, it's not recommended to create a single template and doing all the rendering via razor function, but it can be nifty for rendering search results, and so on.
 
 A thing that's important to note here is that `RenderContent` is called from a codeblock, and not as `@RenderContent((dynamic) Model);` the reason for this is that if you try to use the latter, razor will expect for the function to return something for it to render.
 
