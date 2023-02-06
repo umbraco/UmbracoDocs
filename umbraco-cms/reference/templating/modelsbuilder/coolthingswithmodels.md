@@ -30,4 +30,4 @@ Now, it's not recommended to create a single template and doing all the renderin
 
 A thing that's important to note here is that `RenderContent` is called from a codeblock, and not as `@RenderContent((dynamic) Model);` the reason for this is that if you try to use the latter, razor will expect for the function to return something for it to render.
 
-By casting the strongly-typed to a dynamic when calling the **RenderContent** method, you tell C# to do late runtime binding and pick the proper **RenderContent** implementation depending on the actual CLR type of the **content** object. Using dynamic here is OK and will not pollute the rest of the code.
+By casting the strongly-typed to a dynamic when calling the **RenderContent** method, you tell C# to do late runtime binding and pick the proper **RenderContent** implementation depending on the actual Common Language Runtime (CLR) type of the **content** object. Using dynamic here is OK and will not pollute the rest of the code.
