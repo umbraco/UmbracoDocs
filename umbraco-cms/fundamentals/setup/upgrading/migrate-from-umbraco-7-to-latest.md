@@ -10,7 +10,10 @@ The End Of Life (EOL) date for Umbraco 7 is coming up and we highly recommend mo
 
 * [Migration content to Umbraco 8](https://our.umbraco.com/documentation/Fundamentals/Setup/Upgrading/migrating-to-v8)
 * [Migrating Data Types: No more Pre-values](https://our.umbraco.com/documentation/Fundamentals/Setup/Upgrading/7-8-migration-dataTypes)
-* [Migrate Umbraco 8 project to Umbraco 10](https://docs.umbraco.com/v/10.x-lts/umbraco-cloud/upgrades/migrating-from-8-10)
+* [Migrate Umbraco 8 project to Umbraco 10 (docs)](https://docs.umbraco.com/v/10.x-lts/umbraco-cloud/upgrades/migrating-from-8-10)
+* [Migrate from Umbraco 8 to Umbraco 9 (umbraco.com)](https://umbraco.com/products/umbraco-cms/umbraco-9/migrating-from-umbraco-8-to-umbraco-9/)
+* [Umbraco 7 EOL (umbraco.com)](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/umbraco-7-end-of-life-eol/)
+* [Migrating from Umbraco 7 to Umbraco 8 (umbraco.com)](https://umbraco.com/products/umbraco-cms/umbraco-8/migrating-from-umbraco-7-to-umbraco-8/)
 
 ## Unanswered questions
 
@@ -31,10 +34,6 @@ The End Of Life (EOL) date for Umbraco 7 is coming up and we highly recommend mo
 
 * Pre migration considerations
 * Before migrating
-  * Create backups
-  * Upgrade to minimum 7.14.0
-  * Clean up all things you don't need
-  * Run pre-migration health checks
 * Step 1: Migrate to 8.5.5
 * Step 2: Migrate to 10.0.1
 * Step 3: Upgrade to latest CMS version
