@@ -138,6 +138,10 @@ This setting tells Umbraco to use the default character replacements. If you don
 
 This settings contains a lot of obejcts with a **`"Char"`** and **`"Replacement`** key, each of these object holds a character that should be replaced, and what it should be replaced with.
 
+{% hint style="info" %}
+If you add or remove entries from the collection, you will have to re-save and publish any node where you want the change reflected. You can also use **`"Publish with descendants..."`** on the root node, to update the url for all descendants.
+{% endhint %}
+
 So, if:
 
 ```json
