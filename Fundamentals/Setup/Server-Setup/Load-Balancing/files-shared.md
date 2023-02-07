@@ -1,6 +1,6 @@
 ---
 versionFrom: 8.0.0
-meta.RedirectLink: "/umbraco-cms/fundamentals/setup/server-setup/load-balancing/file-system-replication"
+versionRemoved: 8.0.0
 ---
 
 [Replaced by file system replication in v8+](file-system-replication.md)
