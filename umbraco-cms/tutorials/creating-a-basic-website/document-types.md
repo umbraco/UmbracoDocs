@@ -33,9 +33,7 @@ To create a Document Type:
 
 With the help of icons, you can identify different Document Types in the **Content Tree**. To add an icon:
 
-1.  Select the icon placeholder next to the document name. The **Select Icon** dialog appears on the right-side of the website.\
-
-
+1.  Select the icon placeholder next to the document name. The **Select Icon** dialog appears on the right-side of the website.
     <figure><img src="images/figure-9-adding-an-icon-to-document-type-v8.png" alt=""><figcaption></figcaption></figure>
 2. Browse through the icon list and selct the icon of your choice.
 3. Click **Submit**.
@@ -44,9 +42,7 @@ With the help of icons, you can identify different Document Types in the **Conte
 
 To create a Document Type at the root of the **Content Tree**:
 
-1.  Go to the **Permissions** tab.\
-
-
+1.  Go to the **Permissions** tab.
     <figure><img src="images/figure-9a-allow-document-type-as-root-v8.png" alt=""><figcaption></figcaption></figure>
 2. Toggle the **Allow as root** button.
    * If your **Document Types** do not have the **Allow as root** checked, you will not be able to create any content on your site.
@@ -65,9 +61,7 @@ To add properties to your Document Type, follow these steps:
 5.  Enter a **Description**. For example: _The main title of the page (e.g. Welcome to Widgets Ltd.)_.
 
     <figure><img src="images/figure-11-creating-our-pagetitle-property-v8.png" alt=""><figcaption></figcaption></figure>
-6.  Select **Select Editor** and select the Data Type of your choice. We'll add _text_ in the search box and select the **Textstring** Data Type.\
-
-
+6.  Select **Select Editor** and select the Data Type of your choice. We'll add _text_ in the search box and select the **Textstring** Data Type.
     <figure><img src="images/figure-11a-selecting-textstring-data-type-v8.png" alt=""><figcaption></figcaption></figure>
 7. Click **Submit**.
    * Remember to come back and explore the list of _**Data Types**_ later.
@@ -87,8 +81,7 @@ To add properties to your Document Type, follow these steps:
     | Alias       | footerText                       |
     | Description | Copyright notice for the footer. |
     | Data Type   | Textstring                       |
-10. Your Document Type should now look like this: \\
-
+10. Your Document Type should now look like this:
     <figure><img src="images/figure-12-homepage-document-type-with-properties-v8.png" alt=""><figcaption></figcaption></figure>
 11. Click **Save**.
 
