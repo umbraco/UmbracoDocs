@@ -14,6 +14,10 @@ Follow the steps in the [general upgrade guide](../), then these additional inst
 [umbraco11-breaking-changes.md](umbraco11-breaking-changes.md)
 {% endcontent-ref %}
 
+## Find you upgrade path
+
+Are you looking to upgrade an Umbraco Cloud project from 9 to 10? Follow the guide made for [Upgrading your project from Umbraco 9 to 10](../../../../../umbraco-cloud/upgrades/major-upgrades.md) instead, as it requires a few steps specific to Umbraco Cloud.
+
 <details>
 
 <summary>Version 10 to version 11</summary>
@@ -26,22 +30,13 @@ It might be necessary to delete all of the `bin` and `obj` directories in each o
 
 <summary>Version 9 to version 10</summary>
 
-{% hint style="warning" %}
 **Important**: .NET version 6.0.5 is the minimum required version for Umbraco 10 to be able to run. You can check with `dotnet --list-sdks` what your latest installed Software Development Kit (SDK) version is. SDK version 6.0.300 is the one that includes .NET 6.0.5. At the time of writing, .NET 6.0.6 is out with an SDK version of 6.0.301.
-{% endhint %}
 
-### Video Tutorial
+Watch the ['Upgrading from Umbraco 9 to Umbraco 10 video tutorial'](https://www.youtube.com/watch?v=075H_ekJBKI&ab_channel=UmbracoLearningBase) for a complete walk-through of all the steps.
 
-{% embed url="https://www.youtube.com/watch?ab_channel=UmbracoLearningBase&v=075H_ekJBKI" %}
-Upgrading from Umbraco 9 to Umbraco 10
-{% endembed %}
+The upgrade path between Umbraco 9 and Umbraco 10 can be done directly by upgrading your project using NuGet. You will need to ensure the packages you are using are available in Umbraco 10.
 
-The upgrade path between Umbraco 9 and Umbraco 10 can be done directly by updating your project using NuGet. You will need to ensure the packages you are using are available in Umbraco 10.
-
-Are you looking to upgrade an Umbraco Cloud project from 9 to 10? Follow the guide made for [Upgrading your project from Umbraco 9 to 10](../../../../../umbraco-cloud/upgrades/major-upgrades.md) instead, as it requires a few steps specific to Umbraco Cloud.
-
-{% hint style="warning" %}
-**Important**: SQL CE is no longer a supported database engine.
+### SQL CE is no longer a supported database engine
 
 There is no official migration path from SQL CE to another database engine.
 
@@ -51,7 +46,6 @@ The following options may suit your needs:
 * Setup a new database for v10 and use [uSync](https://jumoo.co.uk/usync/) to transfer document types and content across.
 * Setup a new database for v10 and use a premium tool such as [redgate SQL Data Compare](https://www.red-gate.com/products/sql-development/sql-data-compare/) to copy database contents across.
 * Setup a new database for v10 and use a premium tool such as [Umbraco Deploy](https://umbraco.com/products/umbraco-deploy) to transfer document types and content across.
-{% endhint %}
 
 ### Steps to upgrade using Visual Studio
 
@@ -67,26 +61,26 @@ It's recommended that you upgrade the site offline, and test the upgrade fully b
 8. Select **10.0.0** from the **Version** drop-down and click **Install** to upgrade your project to version 10.
 9.  Update `Program.cs` to the following:
 
-    ```csharp
-    public class Program
-    {
-        public static void Main(string[] args)
-            => CreateHostBuilder(args)
-                .Build()
-                .Run();
+```csharp
+public class Program
+{
+    public static void Main(string[] args)
+        => CreateHostBuilder(args)
+            .Build()
+            .Run();
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureUmbracoDefaults()
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStaticWebAssets();
-                    webBuilder.UseStartup<Startup>();
-                });
-    }
-    ```
+    // The calls to `ConfigureUmbracoDefaults` and `webBuilder.UseStaticWebAssets()` are new.
+    public static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+            .ConfigureUmbracoDefaults()
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.UseStaticWebAssets();
+                webBuilder.UseStartup<Startup>();
+            });
+}
+```
 
-    The calls to `ConfigureUmbracoDefaults` and `webBuilder.UseStaticWebAssets()` are new.
 10. Remove the following files and folders:
     * `/wwwroot/umbraco`
     * `/umbraco/PartialViewMacros`
@@ -110,9 +104,7 @@ To:
 "$schema": "./appsettings-schema.json",
 ```
 
-{% hint style="info" %}
 To upgrade to Umbraco 10, your database needs to be at least on Umbraco 8.18.
-{% endhint %}
 
 ### Upgrade of any publicly hosted environment
 
