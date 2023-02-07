@@ -1,4 +1,4 @@
-# Cache Refresher Notifications
+# CacheRefresher Notifications
 
 Before starting with cache refresher notifications it's a good idea to ensure you need to use them. If you want to react to changes in content, for instance, there's no real reason to use these notifications. This is due to the [content service notifications](contentservice-notifications.md) being easier to work with. If you need to react to changes in the cache, then these are the notifications for you.
 
@@ -6,7 +6,7 @@ Cache refresher notifications are sent when the cache has refreshed. There are m
 
 The base notification is implemented in the following way:
 
-```C#
+```
 public abstract class CacheRefresherNotification : INotification
 {
     public CacheRefresherNotification(object messageObject, MessageType messageType)
@@ -23,7 +23,7 @@ public abstract class CacheRefresherNotification : INotification
 
 As you can see this notification contains two properties, a `MessageObject` and a `MessageType`. The `MessageType` specifies what kind of cache operation was performed, for example `RemoveById`. The possible message types is as follows:
 
-```C#
+```
 public enum MessageType
 {
     RefreshAll,
@@ -40,7 +40,7 @@ The other parameter `MessageObject` will depend on what type of cache refresher 
 
 This object contains the Id and key of the item being updated, as well as an enum specifying how the tree is updated:
 
-```C#
+```
 [Flags]
 public enum TreeChangeTypes : byte
 {
@@ -64,9 +64,9 @@ public enum TreeChangeTypes : byte
 
 ```
 
-An example of working with the `ContentCacheNotification` can be seen here: 
+An example of working with the `ContentCacheNotification` can be seen here:
 
-```C#
+```
 using Umbraco.Cms.Core.Cache;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
@@ -106,71 +106,9 @@ public class ContentCacheRefresherExample : INotificationHandler<ContentCacheRef
 
 ```
 
-<table>
-  <tr>
-    <th>Notification</th>
-    <th>Members</th>
-    <th>Description</th>
-  </tr>
-
-  <tr>
-    <td>ContentCacheRefresherNotification</td>
-    <td>
-      <ul>
-        <li>object MessageObject</li>
-        <li>MessageType MessageType</li>
-      </ul>
-    </td>
-    <td>
-    Published when the content cache has been updated.<br />
-    MessageObject: The refresher payload.<br />
-    MessageType: The type of cache refresher message.<br />
-    </td>
-  </tr>
-
-  <tr>
-    <td>MediaCacheRefresherNotification</td>
-    <td>
-      <ul>
-        <li>object MessageObject</li>
-        <li>MessageType MessageType</li>
-      </ul>
-    </td>
-    <td>
-    Published when the media cache has been updated.<br />
-    MessageObject: The refresher payload.<br />
-    MessageType: The type of cache refresher message.<br />
-    </td>
-  </tr>
-
-  <tr>
-    <td>MemberCacheRefresherNotification</td>
-    <td>
-      <ul>
-        <li>object MessageObject</li>
-        <li>MessageType MessageType</li>
-      </ul>
-    </td>
-    <td>
-    Published when the member cache has been updated.<br />
-    MessageObject: The refresher payload.<br />
-    MessageType: The type of cache refresher message.<br />
-    </td>
-  </tr>
-
-  <tr>
-    <td>UserCacheRefresherNotification</td>
-    <td>
-      <ul>
-        <li>object MessageObject</li>
-        <li>MessageType MessageType</li>
-      </ul>
-    </td>
-    <td>
-    Published when the user cache has been updated.<br />
-    MessageObject: The refresher payload.<br />
-    MessageType: The type of cache refresher message.<br />
-    </td>
-  </tr>
-  
-</table>  
+| Notification                      | Members                                                                | Description                                                                                                                                                 |
+| --------------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ContentCacheRefresherNotification | <ul><li>object MessageObject</li><li>MessageType MessageType</li></ul> | <p>Published when the content cache has been updated.<br>MessageObject: The refresher payload.<br>MessageType: The type of cache refresher message.<br></p> |
+| MediaCacheRefresherNotification   | <ul><li>object MessageObject</li><li>MessageType MessageType</li></ul> | <p>Published when the media cache has been updated.<br>MessageObject: The refresher payload.<br>MessageType: The type of cache refresher message.<br></p>   |
+| MemberCacheRefresherNotification  | <ul><li>object MessageObject</li><li>MessageType MessageType</li></ul> | <p>Published when the member cache has been updated.<br>MessageObject: The refresher payload.<br>MessageType: The type of cache refresher message.<br></p>  |
+| UserCacheRefresherNotification    | <ul><li>object MessageObject</li><li>MessageType MessageType</li></ul> | <p>Published when the user cache has been updated.<br>MessageObject: The refresher payload.<br>MessageType: The type of cache refresher message.<br></p>    |

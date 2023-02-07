@@ -1,4 +1,4 @@
-# Install Umbraco with .NET CLI
+# Install using .NET CLI
 
 We have made custom Umbraco templates that are available for use with `dotnet new`. The steps below will demonstrate the minimum amount of actions required to get you going and set up an Umbraco project from the command line using .NET templates.
 
@@ -11,13 +11,12 @@ Installing Umbraco using the .NET CLI
 ## Install the template
 
 1. Install the latest [.NET SDK](https://dotnet.microsoft.com/download).
-
-2. Run `dotnet new install Umbraco.Templates` to install the project templates.  
-*The solution is packaged up into the NuGet package [Umbraco.Templates](https://www.nuget.org/packages/Umbraco.Templates) and can be installed into the dotnet CLI*.
+2. Run `dotnet new install Umbraco.Templates` to install the project templates.\
+   _The solution is packaged up into the NuGet package_ [_Umbraco.Templates_](https://www.nuget.org/packages/Umbraco.Templates) _and can be installed into the dotnet CLI_.
 
 > Once that is complete, you can see that Umbraco was added to the list of available projects types by running `dotnet new --list`:
 
-```none
+```
 Templates                    Short Name               Language          Tags
 ------------------------------------------------------------------------------------------------------
 Umbraco Project              umbraco                  [C#]              Web/CMS/Umbraco
@@ -34,7 +33,7 @@ To get **help** on a project template with `dotnet new` run the following comman
 
 From that command's output, you will get a better understanding of what are the default template options, as well as those command-line flags specific to Umbraco that you can use (as seen below):
 
-```none
+```
 Umbraco Project (C#)
 Author: Umbraco HQ
 Description: An empty Umbraco project ready to get started.
@@ -90,27 +89,24 @@ Options:
 
 ## Create an Umbraco project
 
-1. Create a new empty Umbraco solution using MS SQL Azure/Server:  
-`dotnet new umbraco -n MyCustomUmbracoProject`
+1. Create a new empty Umbraco solution using MS SQL Azure/Server:\
+   `dotnet new umbraco -n MyCustomUmbracoProject`
 
-You will now have a new project with the name *MyCustomUmbracoProject*, or the name you chose to use.
-The new project can be opened and run using your favorite IDE or you can continue using the CLI commands.
+You will now have a new project with the name _MyCustomUmbracoProject_, or the name you chose to use. The new project can be opened and run using your favorite IDE or you can continue using the CLI commands.
 
 {% hint style="info" %}
-If you want to create a solution file as well you can run the commands below.
-`dotnet new sln`  
-`dotnet sln add MyCustomUmbracoProject `
+If you want to create a solution file as well you can run the commands below. `dotnet new sln`\
+`dotnet sln add MyCustomUmbracoProject`
 {% endhint %}
 
 ## Run Umbraco
 
-1. Navigate to the newly created project folder:  
-`cd MyCustomUmbracoProject`
+1. Navigate to the newly created project folder:\
+   `cd MyCustomUmbracoProject`
+2. Build and run the new Umbraco .Net Core project:\
+   `dotnet build`\
+   `dotnet run`
 
-1. Build and run the new Umbraco .Net Core project:  
-`dotnet build`  
-`dotnet run`
-
-The project is now running on the [Kestrel server](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/?view=aspnetcore-5.0&tabs=windows#kestrel) and has assigned a free available port to run it on. Look in the terminal window after the `dotnet run` command to see the URLs.
+The project is now running on the [Kestrel server](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/?view=aspnetcore-5.0\&tabs=windows#kestrel) and has assigned a free available port to run it on. Look in the terminal window after the `dotnet run` command to see the URLs.
 
 The next step is to run through the Umbraco CMS installation. If you chose to use MS SQL Server/Azure you will need to add your connection string during this setup process to get access to the Umbraco backoffice.

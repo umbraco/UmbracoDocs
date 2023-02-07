@@ -1,13 +1,14 @@
-# Content Delivery API for Media
+# Media
 
 **BASE URL**: `https://cdn.umbraco.io`
 
 ## Table of Contents
-* [Common Headers](#common-headers)
-* [Errors](#errors)
-* [Get Root Media](#get-root-media)
-* [Get By Id](#get-by-id)
-* [Get Children](#get-children)
+
+* [Common Headers](media.md#common-headers)
+* [Errors](media.md#errors)
+* [Get Root Media](media.md#get-root-media)
+* [Get By Id](media.md#get-by-id)
+* [Get Children](media.md#get-children)
 
 ## Common Headers
 
@@ -194,7 +195,7 @@ Get children of a single media.
 
 **Query Strings**
 
-```none
+```
 ?page={integer=1}
 ?pageSize={integer=10}
 ```

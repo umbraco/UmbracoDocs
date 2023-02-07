@@ -1,11 +1,10 @@
-
 # Extraction error: "Type not found! "
 
 This issue will present itself as an extraction error on your target environment for a deploy.
 
-![Extraction error on Live](images/Error_environment.png)
+![Extraction error on Live](images/Error\_environment.png)
 
-The extraction error happens with two Document Types where one of them have been allowed as a child node type for  the other Document Type.
+The extraction error happens with two Document Types where one of them have been allowed as a child node type for the other Document Type.
 
 If the Document Type that have been allowed as the child is then deleted, the references for the child Document Type is not removed from the parent Document Type.
 
@@ -15,17 +14,17 @@ Because the parent Document Type still has the references from the deleted child
 
 Open the **More info** to see the details for the error message.
 
-![Extraction error on Live](images/Extraction_Error.png)
+![Extraction error on Live](images/Extraction\_Error.png)
 
 In the case illustrated above the extraction error is saying:
 
-```none
+```
 Document type c3bedefc-7eab-4ee2-9941-920ecc9b09b2 not found! This Document type is listed as an allowed child content type of parent Document type Test1 with id: 1087, and guid: 4a06f910-7b1b-4ad6-84db-72481b1ae529
 ```
 
 To resolve the extraction error go to the backoffice of the environment, which you are deploying from and find the Document Type that is listed as the parent for the deleted Document Type in the error message.
 
-In this case that is the Document Type *"test1"*.
+In this case that is the Document Type _"test1"_.
 
 Resave the parent Document Type so that the references to the deleted child Document Type will be removed from the parent Document Type.
 

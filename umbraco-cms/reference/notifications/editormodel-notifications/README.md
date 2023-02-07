@@ -6,7 +6,7 @@ EditorModel notifications enable you to manipulate the model used by the backoff
 
 Example usage of the `SendingContentNotification` - e.g. set the default PublishDate for a new NewsArticle to be today's Date:
 
-```C#
+```
 using System;
 using System.Linq;
 using Umbraco.Cms.Core.Events;
@@ -52,9 +52,9 @@ namespace Umbraco.Docs.Samples.Web.Notifications
 }
 ```
 
-Another example could be to set  the default Member Group for a specific Member Type using `SendingMemberNotification`:
+Another example could be to set the default Member Group for a specific Member Type using `SendingMemberNotification`:
 
-```C#
+```
 using System.Collections.Generic;
 using System.Linq;
 using Umbraco.Cms.Core;
@@ -112,96 +112,14 @@ namespace Umbraco.Docs.Samples.Web.Notifications
 
 ## Notifications
 
-<table>
-  <tr>
-    <th>Notification</th>
-    <th>Members</th>
-    <th>Description</th>
-  </tr>
-
-  <tr>
-    <td>SendingContentNotification</td>
-    <td>
-      <ul>
-        <li>ContentItemDisplay Content</li>
-        <li>IUmbracoContext UmbracoContext</li>
-      </ul>
-    </td>
-    <td>
-    Published right before the editor model is sent for editing in the content section.<br/>
-    NOTE: Content is a Umbraco.Cms.Core.Models.ContentEditing.ContentItemDisplay type which contains the tabs and properties of the elements about to be loaded for editing.
-    </td>
-  </tr>
-
-  <tr>
-    <td>SendingMediaNotification</td>
-    <td>
-      <ul>
-        <li>MediaItemDisplay Media</li>
-        <li>IUmbracoContext UmbracoContext</li>
-      </ul>
-    </td>
-    <td>Published right before the editor model is sent for editing in the media section<br/>
-    NOTE: Media is a Umbraco.Cms.Core.Models.ContentEditing.MediaItemDisplay type which in turn contains the tabs and properties of the elements about to be loaded for editing.
-    </td>
-  </tr>
-
-  <tr>
-    <td>SendingMemberNotification</td>
-    <td>
-      <ul>
-        <li>MemberDisplay Member</li>
-        <li>IUmbracoContext UmbracoContext</li>
-      </ul>
-    </td>
-    <td>
-    Published right before the editor model is sent for editing in the member section.<br/>
-    NOTE: Member is a Umbraco.Cms.Core.Models.ContentEditing.MemberDisplay type which in turn contains the tabs and properties of the elements about to be loaded for editing.
-    </td>
-  </tr>
-
-  <tr>
-    <td>SendingUserNotification</td>
-    <td>
-      <ul>
-        <li>UserDisplay User</li>
-        <li>IUmbracoContext UmbracoContext</li>
-      </ul>
-    </td>
-    <td>
-    Published right before the editor model is sent for editing in the user section.<br/>
-    NOTE: User is a Umbraco.Cms.Core.Models.ContentEditing.UserDisplay type which in turn contains the tabs and properties of the elements about to be loaded for editing.
-    </td>
-  </tr>
-  
-  <tr>
-    <td>SendingDashboardsNotification</td>
-    <td>
-      <ul>
-        <li>IEnumerable&ltTab&ltIDashboardSlim&gt&gt Dashboards</li>
-        <li>IUmbracoContext UmbracoContext</li>
-      </ul>
-    </td>
-    <td>
-    Published right before the a dashboard is retrieved in a section.<br>
-    NOTE: Dashboards is a collection of IDashboardSlim, each object gives you access to Label, Alias, Properties, whether it's expanded, and whether it IsActive.
-    </td>
-  </tr>
-  
-  <tr>
-    <td>SendingAllowedChildrenNotification</td>
-    <td>
-      <ul>
-        <li>IEnumerable&ltContentTypeBasic&gt Children</li>
-        <li>IUmbracoContext UmbracoContext</li>
-      </ul>
-    </td>
-    <td>
-    Published right before the allowed children of the selected Content Type are sent back during content creation in the Content Section.<br>
-    NOTE: Children is a collection of ContentTypeBasic, each object gives you access to Alias, Description, Thumbnail and more. You can remove or add new children to the list in the notification.
-    </td>
-  </tr>
-</table>
+| Notification                       | Members                                                                                                        | Description                                                                                                                                                                                                                                                                                                                                      |
+| ---------------------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| SendingContentNotification         | <ul><li>ContentItemDisplay Content</li><li>IUmbracoContext UmbracoContext</li></ul>                            | <p>Published right before the editor model is sent for editing in the content section.<br>NOTE: Content is a Umbraco.Cms.Core.Models.ContentEditing.ContentItemDisplay type which contains the tabs and properties of the elements about to be loaded for editing.</p>                                                                           |
+| SendingMediaNotification           | <ul><li>MediaItemDisplay Media</li><li>IUmbracoContext UmbracoContext</li></ul>                                | <p>Published right before the editor model is sent for editing in the media section<br>NOTE: Media is a Umbraco.Cms.Core.Models.ContentEditing.MediaItemDisplay type which in turn contains the tabs and properties of the elements about to be loaded for editing.</p>                                                                          |
+| SendingMemberNotification          | <ul><li>MemberDisplay Member</li><li>IUmbracoContext UmbracoContext</li></ul>                                  | <p>Published right before the editor model is sent for editing in the member section.<br>NOTE: Member is a Umbraco.Cms.Core.Models.ContentEditing.MemberDisplay type which in turn contains the tabs and properties of the elements about to be loaded for editing.</p>                                                                          |
+| SendingUserNotification            | <ul><li>UserDisplay User</li><li>IUmbracoContext UmbracoContext</li></ul>                                      | <p>Published right before the editor model is sent for editing in the user section.<br>NOTE: User is a Umbraco.Cms.Core.Models.ContentEditing.UserDisplay type which in turn contains the tabs and properties of the elements about to be loaded for editing.</p>                                                                                |
+| SendingDashboardsNotification      | <ul><li>IEnumerable&#x3C;Tab&#x3C;IDashboardSlim>> Dashboards</li><li>IUmbracoContext UmbracoContext</li></ul> | <p>Published right before the a dashboard is retrieved in a section.<br>NOTE: Dashboards is a collection of IDashboardSlim, each object gives you access to Label, Alias, Properties, whether it's expanded, and whether it IsActive.</p>                                                                                                        |
+| SendingAllowedChildrenNotification | <ul><li>IEnumerable&#x3C;ContentTypeBasic> Children</li><li>IUmbracoContext UmbracoContext</li></ul>           | <p>Published right before the allowed children of the selected Content Type are sent back during content creation in the Content Section.<br>NOTE: Children is a collection of ContentTypeBasic, each object gives you access to Alias, Description, Thumbnail and more. You can remove or add new children to the list in the notification.</p> |
 
 ### Display models
 
@@ -237,7 +155,7 @@ A model representing a member to be displayed in the backoffice
 * Properties - properties based on the properties in the tabs collection
 * And more...
 
-## Samples 
+## Samples
 
 The EditorModel notifications gives you a lot of options to customize the backoffice experience. You can find inspiration from the various samples provided below:
 

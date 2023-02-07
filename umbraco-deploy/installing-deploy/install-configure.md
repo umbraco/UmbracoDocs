@@ -1,5 +1,5 @@
 ---
-description: "Steps to how to install and configure Umbraco Deploy"
+description: Steps to how to install and configure Umbraco Deploy
 ---
 
 # Installing Umbraco Deploy
@@ -14,7 +14,7 @@ Ensure you have read and followed the setup guide for [new](new-site.md) or [Exi
 
 After the Umbraco files have been committed add the following lines to the .gitignore so that they will not be picked up by Git when we are deploying.
 
-```none
+```
 **/media/*
 
 # Umbraco deploy specific
@@ -34,7 +34,7 @@ When Umbraco has been installed in a repository, we can go ahead and install Umb
 To install Umbraco Deploy, run `dotnet add package Umbraco.Deploy.OnPrem` from the command line or `Install-Package Umbraco.Deploy.OnPrem` from the package manager console in Visual Studio.
 
 {% hint style="info" %}
-To be able to use Umbraco Forms with Umbraco Deploy, you need to install the  `Umbraco.Deploy.Forms` package as well.
+To be able to use Umbraco Forms with Umbraco Deploy, you need to install the `Umbraco.Deploy.Forms` package as well.
 {% endhint %}
 
 {% hint style="info" %}
@@ -47,7 +47,7 @@ The API key should be a random string of at least 10 characters.
 
 The following code snippet can be used to generate a random key, using a tool like LinqPad.
 
-```C#
+```
 public string GetRandomKey(int bytelength)
 {
    byte[] buff = new byte[bytelength];
@@ -109,7 +109,7 @@ An example configuration with a single upstream environment file will look like 
 }
 ```
 
-The setting under _Project:CurrentWorkspaceName_ should match the _Name_ provided in the list of _Workspaces_ that matches the current environment.  Using this Umbraco Deploy will indicate the correct current environment on the "Workspaces" dashboard.
+The setting under _Project:CurrentWorkspaceName_ should match the _Name_ provided in the list of _Workspaces_ that matches the current environment. Using this Umbraco Deploy will indicate the correct current environment on the "Workspaces" dashboard.
 
 {% hint style="info" %}
 In Umbraco Deploy 9, this value was set using the configuration key _Debug:EnvironmentName_. Although included under a "Debug" section, this setting is required for the installations of Umbraco Deploy on-premises (i.e. other than on Umbraco Cloud). Hence why it was moved to the "Project" section in Umbraco Deploy 10.

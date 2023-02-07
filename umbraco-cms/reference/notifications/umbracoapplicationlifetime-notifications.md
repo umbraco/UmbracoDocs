@@ -1,5 +1,7 @@
 ---
-description: "Represents an Umbraco application lifetime (starting, started, stopping, stopped) notification"
+description: >-
+  Represents an Umbraco application lifetime (starting, started, stopping,
+  stopped) notification
 ---
 
 # Umbraco Application Lifetime Notifications
@@ -12,7 +14,7 @@ A Umbraco application is restarted after an install or upgrade has been complete
 
 Example usage of the UmbracoApplicationLifetime notifications:
 
-```C#
+```
 using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Events;
@@ -50,73 +52,9 @@ public class UmbracoApplicationNotificationHandler : INotificationHandler<Umbrac
 
 ## Notifications
 
-<table>
-  <tr>
-    <th>Notification</th>
-    <th>Members</th>
-    <th>Description</th>
-  </tr>
-
-  <tr>
-    <td>UmbracoApplicationStartingNotification</td>
-    <td>
-      <ul>
-        <li>RuntimeLevel RuntimeLevel</li>
-        <li>bool IsRestarting</li>
-      </ul>
-    </td>
-    <td>
-        Triggered when the application is starting after all <code>IComponents</code> are initialized but before any incoming requests are accepted.<br />
-      <ol>
-        <li>RuntimeLevel: Gets the runtime level.</li>
-        <li>IsRestarting: Gets a value indicating whether Umbraco is restarting (e.g. after an install or upgrade).</li>
-      </ol>
-    </td>
-  </tr>
-
-  <tr>
-    <td>UmbracoApplicationStartedNotification</td>
-    <td>
-      <ul>
-        <li>bool IsRestarting</li>
-      </ul>
-    </td>
-    <td>
-      Triggered when the application has fully started and is accepting incoming requests.<br />
-      <ol>
-        <li>IsRestarting: Gets a value indicating whether Umbraco is restarting (e.g. after an install or upgrade).</li>
-      </ol>
-    </td>
-  </tr>
-
-  <tr>
-    <td>UmbracoApplicationStoppingNotification</td>
-    <td>
-      <ul>
-        <li>bool IsRestarting</li>
-      </ul>
-    </td>
-    <td>
-      Triggered when the application is performing a graceful shutdown after all <code>IComponents</code> are terminated.<br />
-      <ol>
-        <li>IsRestarting: Gets a value indicating whether Umbraco is restarting (e.g. after an install or upgrade).</li>
-      </ol>
-    </td>
-  </tr>
-
-  <tr>
-    <td>UmbracoApplicationStoppedNotification</td>
-    <td>
-      <ul>
-        <li>bool IsRestarting</li>
-      </ul>
-    </td>
-    <td>
-      Triggered when the application has performed a graceful shutdown.<br />
-      <ol>
-        <li>IsRestarting: Gets a value indicating whether Umbraco is restarting (e.g. after an install or upgrade).</li>
-      </ol>
-    </td>
-  </tr>
-
-</table>
+| Notification                           | Members                                                               | Description                                                                                                                                                                                                                                                                                                                    |
+| -------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| UmbracoApplicationStartingNotification | <ul><li>RuntimeLevel RuntimeLevel</li><li>bool IsRestarting</li></ul> | <p>Triggered when the application is starting after all <code>IComponents</code> are initialized but before any incoming requests are accepted.<br></p><ol><li>RuntimeLevel: Gets the runtime level.</li><li>IsRestarting: Gets a value indicating whether Umbraco is restarting (e.g. after an install or upgrade).</li></ol> |
+| UmbracoApplicationStartedNotification  | <ul><li>bool IsRestarting</li></ul>                                   | <p>Triggered when the application has fully started and is accepting incoming requests.<br></p><ol><li>IsRestarting: Gets a value indicating whether Umbraco is restarting (e.g. after an install or upgrade).</li></ol>                                                                                                       |
+| UmbracoApplicationStoppingNotification | <ul><li>bool IsRestarting</li></ul>                                   | <p>Triggered when the application is performing a graceful shutdown after all <code>IComponents</code> are terminated.<br></p><ol><li>IsRestarting: Gets a value indicating whether Umbraco is restarting (e.g. after an install or upgrade).</li></ol>                                                                        |
+| UmbracoApplicationStoppedNotification  | <ul><li>bool IsRestarting</li></ul>                                   | <p>Triggered when the application has performed a graceful shutdown.<br></p><ol><li>IsRestarting: Gets a value indicating whether Umbraco is restarting (e.g. after an install or upgrade).</li></ol>                                                                                                                          |

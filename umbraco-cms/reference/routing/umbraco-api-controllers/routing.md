@@ -1,8 +1,8 @@
 ---
-description: "How api controllers are routed and how to retrieve their URLs"
+description: How api controllers are routed and how to retrieve their URLs
 ---
 
-# Routing & Urls
+# Umbraco Api - Routing & Urls
 
 _This section will describe how Umbraco Api controllers are routed and how to retrieve their URLs_
 
@@ -12,13 +12,13 @@ Like Surface Controllers in Umbraco, when you inherit from the base class `Umbra
 
 All locally declared Umbraco api controllers will be routed under the URL path of:
 
-~/Umbraco/Api/[YourControllerName]
+\~/Umbraco/Api/\[YourControllerName]
 
 All plugin based Umbraco api controllers will be routed under the URL path of:
 
-~/Umbraco/[YourAreaName]/[YourControllerName]
+\~/Umbraco/\[YourAreaName]/\[YourControllerName]
 
-* [More information on implementing these controllers](README.md).
+* [More information on implementing these controllers](./).
 
 ## Urls
 
@@ -45,7 +45,7 @@ The most consistent way to retrieve a Url is to use your controller's type, and 
 
 Generally a UrlHelper instance will be available on most base classes like Controllers and Views, and you shouldn't have to create it manually, but if you need to you can, by injecting `IUrlHelperFactory` and `IActionContextAccessor` and then use the factory like so:
 
-```C#
+```
 var urlHelper = _urlFactory.GetUrlHelper(_actionContextAccessor.ActionContext);
 var url = urlHelper.GetUmbracoApiService("GetAllProducts", "Products");
 ```

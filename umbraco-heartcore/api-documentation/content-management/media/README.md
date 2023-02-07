@@ -1,17 +1,18 @@
-# Content Management API for Media
+# Media
 
 **BASE URL**: `https://api.umbraco.io`
 
 ## Table of Contents
-* [Common Headers](#common-headers)
-* [Authentication](#authentication)
-* [Errors](#errors)
-* [Get root media](#get-root-media)
-* [Get by id](#get-by-id)
-* [Get children](#get-children)
-* [Create media](#create-media)
-* [Update media](#update-media)
-* [Delete media](#delete-media)
+
+* [Common Headers](./#common-headers)
+* [Authentication](./#authentication)
+* [Errors](./#errors)
+* [Get root media](./#get-root-media)
+* [Get by id](./#get-by-id)
+* [Get children](./#get-children)
+* [Create media](./#create-media)
+* [Update media](./#update-media)
+* [Delete media](./#delete-media)
 
 ## Common Headers
 
@@ -28,14 +29,14 @@ Auth is required for this API meaning that you must supply a Bearer Token via an
 
 If an error occours you will receive a HTTP status code along with an API error code and an error message in the response body.
 
-| Status Code | Error Code           | Message                                                                  |
-| ----------- | -------------------- | ------------------------------------------------------------------------ |
-| 400         | BadRequest           | Body cannot be empty.                                                    |
-| 401         | Unauthorized         | Authorization has been denied for this request.                          |
-| 403         | Forbidden            | You are not authorized to access the given resource.                     |
-| 404         | NotFound             | Media with id '{id}' could not be found.                                 |
-| 422         | ValidationFailed     | Validation error occured when trying to save or update the media item.   |
-| 500         | InternalServerError  | Internal server error.                                                   |
+| Status Code | Error Code          | Message                                                                |
+| ----------- | ------------------- | ---------------------------------------------------------------------- |
+| 400         | BadRequest          | Body cannot be empty.                                                  |
+| 401         | Unauthorized        | Authorization has been denied for this request.                        |
+| 403         | Forbidden           | You are not authorized to access the given resource.                   |
+| 404         | NotFound            | Media with id '{id}' could not be found.                               |
+| 422         | ValidationFailed    | Validation error occured when trying to save or update the media item. |
+| 500         | InternalServerError | Internal server error.                                                 |
 
 **JSON example**:
 
@@ -239,7 +240,7 @@ Get a list of children (media items) by their parent GUID ID.
 
 **Query Strings**
 
-```none
+```
 ?page={integer=1}
 ?pageSize={integer=10}
 ```

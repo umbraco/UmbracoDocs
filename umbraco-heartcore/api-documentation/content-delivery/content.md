@@ -1,20 +1,20 @@
-# Content Delivery API for Content
+# Content
 
 **BASE URL**: `https://cdn.umbraco.io`
 
-
 ## Table of Contents
-* [Common Headers](#common-headers)
-* [Errors](#errors)
-* [Get Root Content](#get-root-content)
-* [Get By Id](#get-by-id)
-* [Get By Url](#get-by-url)
-* [Get By Type](#get-by-type)
-* [Get Ancestors](#get-ancestors)
-* [Get Children](#get-children)
-* [Get Descendants](#get-descendants)
-* [Content Filter](#content-filter)
-* [Search](#search)
+
+* [Common Headers](content.md#common-headers)
+* [Errors](content.md#errors)
+* [Get Root Content](content.md#get-root-content)
+* [Get By Id](content.md#get-by-id)
+* [Get By Url](content.md#get-by-url)
+* [Get By Type](content.md#get-by-type)
+* [Get Ancestors](content.md#get-ancestors)
+* [Get Children](content.md#get-children)
+* [Get Descendants](content.md#get-descendants)
+* [Content Filter](content.md#content-filter)
+* [Search](content.md#search)
 
 ## Common Headers
 
@@ -28,8 +28,7 @@ Umb-Project-Alias: {project-alias}
 
 The `depth` querystring parameter controls how many levels of referenced Content or Media items that is included in the result.
 
-Lets say a Content item have a `Multi Node Tree Picker` and one of the Content items that can be picked have a `Media Picker`. In this case, if the level is set to `1` the returned data will contain the referenced Content items, but their Media property will be null.
-To include the Media property (which is at level 2) the `depth` parameter should be `2` or higher.
+Lets say a Content item have a `Multi Node Tree Picker` and one of the Content items that can be picked have a `Media Picker`. In this case, if the level is set to `1` the returned data will contain the referenced Content items, but their Media property will be null. To include the Media property (which is at level 2) the `depth` parameter should be `2` or higher.
 
 ## Errors
 
@@ -64,7 +63,7 @@ Gets all published content at the root of the tree.
 
 **Query Strings**
 
-```none
+```
 ?hyperlinks={boolean=true}
 ?contentType={string}
 ```
@@ -243,7 +242,7 @@ Get a single published content by its ID.
 
 **Query Strings**
 
-```none
+```
 ?hyperlinks={boolean=true}
 ?depth={integer=1}
 ```
@@ -427,7 +426,7 @@ Get a single published content by its URL.
 
 **Query Strings**
 
-```none
+```
 ?hyperlinks={boolean=true}
 ?depth={integer=1}
 ```
@@ -481,7 +480,7 @@ Example: `GET /content/type?contentType=product` gets all content based on the `
 
 **Query Strings**
 
-```none
+```
 ?hyperlinks={boolean=true}
 ?page={integer=1}
 ?pageSize={integer=10}
@@ -753,7 +752,7 @@ Get ancestors of a single published content.
 
 **Query Strings**
 
-```none
+```
 ?hyperlinks={boolean=true}
 ?contentType={string}
 ```
@@ -874,7 +873,7 @@ Get children of a single published content.
 
 **Query Strings**
 
-```none
+```
 ?hyperlinks={boolean=true}
 ?contentType={string}
 ?page={integer=1}
@@ -1143,7 +1142,7 @@ Get descendants of a single published content.
 
 **Query Strings**
 
-```none
+```
 ?hyperlinks={boolean=true}
 ?contentType={string}
 ?page={integer=1}
@@ -1409,6 +1408,7 @@ Get content filtered by property values and optionally content type.
 This endpoint can be used for advanced filtering of content based on the value of specific properties. You can choose to filter on one or more properties by their `alias` and a `value`, which will be matched on whether the property `contains` or is `like` the passed in value.
 
 Say you have a property with an `alias` called "title" and you want all content, which `contains` the word "world". The payload you post to the `/content/filter` endpoint would be as shown below.
+
 ```json
 {
   "contentTypeAlias": "",
@@ -1419,9 +1419,11 @@ Say you have a property with an `alias` called "title" and you want all content,
   }]
 }
 ```
+
 If the value in the above properties was set to "hello world" then the content returned would have a "title" property where the value is "hello" and/or "world".
 
 If you want the value of a property to match on both "page" and "pages" then you could use `like` with a payload as shown below.
+
 ```json
 {
   "contentTypeAlias": "",
@@ -1441,7 +1443,7 @@ Please note that filtering is done on individual content items meaning that cont
 
 **Query Strings**
 
-```none
+```
 ?hyperlinks={boolean=true}
 ?page={integer=1}
 ?pageSize={integer=10}
@@ -1457,6 +1459,7 @@ Umb-Project-Alias: {project-alias}
 ```
 
 ### Request
+
 In this example we do a filter where the match should contain a "productName"-property with the value "Jacket" and a "description"-property with the value "Vivamus" and the Document Type should have the alias "product".
 
 At least one object with `alias`, `value` and `match` in the `properties` array is required. The `contentTypeAlias` is optional and the `match` property can be either `CONTAINS` or `LIKE`.
@@ -1482,6 +1485,7 @@ At least one object with `alias`, `value` and `match` in the `properties` array 
 **Code**: 200
 
 **Content Example**:
+
 ```json
 {
   "_totalItems": 1,
@@ -1606,7 +1610,7 @@ Search for published content by keyword.
 
 **Query Strings**
 
-```none
+```
 ?hyperlinks={boolean=true}
 ?page={integer=1}
 ?pageSize={integer=10}

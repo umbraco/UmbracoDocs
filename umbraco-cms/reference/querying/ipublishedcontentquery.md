@@ -1,5 +1,5 @@
 ---
-description: "Querying in views with IPublishedContentQuery in Umbraco"
+description: Querying in views with IPublishedContentQuery in Umbraco
 ---
 
 # IPublishedContentQuery
@@ -10,7 +10,7 @@ The `IPublishedContentQuery` interface contains different query methods for acce
 
 In order to inject the `IPublishedContentQuery` into your services, you must add a using statement for `Umbraco.Cms.Core` and inject the service using the constructor.
 
-```C#
+```
 using Umbraco.Cms.Core;
 
 namespace Umbraco.Docs.Samples.Web.Services
@@ -28,7 +28,6 @@ namespace Umbraco.Docs.Samples.Web.Services
 ```
 
 Now you can access the `IPublishedContentQuery` through `_publishedContentQuery`
-
 
 ## Examples
 
@@ -62,8 +61,7 @@ public IEnumerable<PublishedSearchResult> Search(string searchTerm, int skip = 5
 
 ### .Search(IQueryExecutor queryExecutor)
 
-For more complex searching you can construct an Examine QueryExecutor. In the example the search will execute against content of type "blogPost" only.
-[Further information on using Examine](../searching/examine/quick-start.md#different-ways-to-query)
+For more complex searching you can construct an Examine QueryExecutor. In the example the search will execute against content of type "blogPost" only. [Further information on using Examine](../searching/examine/quick-start.md#different-ways-to-query)
 
 ```csharp
 using System;

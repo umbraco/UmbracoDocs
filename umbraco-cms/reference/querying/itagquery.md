@@ -1,5 +1,5 @@
 ---
-description: "Working with tags in Umbraco"
+description: Working with tags in Umbraco
 ---
 
 # ITagQuery
@@ -10,7 +10,7 @@ The `ITagQuery` interface is your primary way to work with tags in Umbraco, the 
 
 If you're using it in Views or Partial views you can inject `ITagQuery` using the `@inject` keyword, for example
 
-```C#
+```
 @inject ITagQuery _tagQuery;
 ```
 
@@ -18,7 +18,7 @@ After this you can use `_tagQuery` to access the `ITagQuery`.
 
 If you're using it in controllers, you can inject it into the constructor like so:
 
-```C#
+```
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
@@ -53,7 +53,7 @@ namespace UmbracoHelperDocs.Controllers
 
 All examples are from a view using the injection shown above, but working with tags in controllers will be the same.
 
-### GetAllContentTags([string tagGroup])
+### GetAllContentTags(\[string tagGroup])
 
 Get a collection of tags used by content items on the site, you can optionally pass in a group name to only list tags belonging to a specific tag group
 
@@ -64,7 +64,7 @@ Get a collection of tags used by content items on the site, you can optionally p
 }
 ```
 
-### GetAllMediaTags([string tagGroup])
+### GetAllMediaTags(\[string tagGroup])
 
 Get a collection of tags used by media items on the site, you can optionally pass in a group name to only list tags belonging to a specific tag group
 
@@ -75,7 +75,7 @@ Get a collection of tags used by media items on the site, you can optionally pas
 }
 ```
 
-### GetAllMemberTags([string tagGroup])
+### GetAllMemberTags(\[string tagGroup])
 
 Get a collection of tags used by members on the site, you can optionally pass in a group name to only list tags belonging to a specific tag group
 
@@ -86,7 +86,7 @@ Get a collection of tags used by members on the site, you can optionally pass in
 }
 ```
 
-### GetAllTags([string tagGroup])
+### GetAllTags(\[string tagGroup])
 
 Get a collection of tags used on the site, you can optionally pass in a group name to only list tags belonging to a specific tag group
 
@@ -97,7 +97,7 @@ Get a collection of tags used on the site, you can optionally pass in a group na
 }
 ```
 
-### GetContentByTag(string tag, [string tagGroup])
+### GetContentByTag(string tag, \[string tagGroup])
 
 Get a collection of IPublishedContent by tag, and you can optionally filter by tag group as well
 
@@ -117,7 +117,7 @@ Get a collection of IPublishedContent by tag group
 }
 ```
 
-### GetMediaByTag(string tag, [string tagGroup])
+### GetMediaByTag(string tag, \[string tagGroup])
 
 Get a collection of Media by tag, and you can optionally filter by tag group as well
 
@@ -127,7 +127,7 @@ Get a collection of Media by tag, and you can optionally filter by tag group as 
 }
 ```
 
-### GetMediaByTagGroup(string tag, [string tagGroup])
+### GetMediaByTagGroup(string tag, \[string tagGroup])
 
 Get a collection of Media by tag group
 
@@ -137,7 +137,7 @@ Get a collection of Media by tag group
 }
 ```
 
-### GetTagsForEntity(int contentId, [string tagGroup])
+### GetTagsForEntity(int contentId, \[string tagGroup])
 
 Get a collection of tags by entity id (queries content, media and members), and you can optionally filter by tag group as well
 
@@ -147,7 +147,7 @@ Get a collection of tags by entity id (queries content, media and members), and 
 }
 ```
 
-### GetTagsForProperty(int contentId, string propertyTypeAlias, [string tagGroup])
+### GetTagsForProperty(int contentId, string propertyTypeAlias, \[string tagGroup])
 
 Get a collection of tags assigned to a property of an entity (queries content, media and members), and you can optionally filter by tag group as well
 

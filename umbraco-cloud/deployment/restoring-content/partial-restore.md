@@ -53,7 +53,7 @@ Imagine that you are working with your Umbraco Cloud project locally. One of you
 6. Click **Restore**.
 7. Once the restore is completed, right-click the Content tree and select **Reload**.
 
-![Partial restore](../../../umbraco-deploy/deployment-workflow/restoring-content/images/partialRestore-onEnvWithContent.png)
+![Partial restore](images/partialRestore-onEnvWithContent.png)
 
 {% embed url="https://www.youtube.com/embed/C5SnrEf78bQ?rel=0" %}
 Video example.

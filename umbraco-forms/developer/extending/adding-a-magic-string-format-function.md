@@ -4,7 +4,7 @@ Umbraco Forms [Magic Strings](../magic-strings.md) can be used to replace placeh
 
 These values can be formatted using [filter functions](../magic-strings.md#formatting-magic-strings).
 
-Filter functions for common operations such as truncating a string or formatting a date or number are provided.  It's also possible to create custom ones in code.
+Filter functions for common operations such as truncating a string or formatting a date or number are provided. It's also possible to create custom ones in code.
 
 ## Creating a custom format function
 
@@ -14,7 +14,7 @@ The `FunctionName` property provides the name of the function that will be used 
 
 The `FormatValue` property parses the provided value and arguments and returns the formatted value as a string.
 
-The following example shows the implementation of a function that bounds an integer value.  It takes two arguments, a minimum and maximum value.  If the value read from the magic string source is numeric, and fits within the the two bounds, it is returned.  Otherwise, either the minimum or maximum value is returned depending on whether the value is lower or higher than the bounds respectively.
+The following example shows the implementation of a function that bounds an integer value. It takes two arguments, a minimum and maximum value. If the value read from the magic string source is numeric, and fits within the the two bounds, it is returned. Otherwise, either the minimum or maximum value is returned depending on whether the value is lower or higher than the bounds respectively.
 
 ```csharp
 using System.Globalization;
@@ -80,6 +80,6 @@ The format function can be used within a form's magic string in the same way as 
 
 For the example provided, it would be used like this:
 
-```none
+```
 [#field bound: 1: 10]
 ```

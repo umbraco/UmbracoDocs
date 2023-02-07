@@ -1,5 +1,5 @@
 ---
-description: "A guide to implenting WebApi in Umbraco projects"
+description: A guide to implenting WebApi in Umbraco projects
 ---
 
 # Umbraco API Controllers
@@ -66,7 +66,7 @@ All locally declared Umbraco API controllers will be routed under the url path o
 
 `~/Umbraco/Api/[YourControllerName]`
 
-E.g. *`~/Umbraco/Api/Products/GetAllProducts`
+E.g. \*`~/Umbraco/Api/Products/GetAllProducts`
 
 Note that the "Controller" part of your controller name gets stripped away.
 
@@ -103,8 +103,7 @@ If you are creating a controller to work within the Umbraco backoffice then you 
 
 `~/Umbraco/backoffice/[YourAreaName]/[YourControllerName]`
 
-E.g.
-`~/Umbraco/backoffice/Api/Products/GetAllProducts` or
+E.g. `~/Umbraco/backoffice/Api/Products/GetAllProducts` or
 
 `~/Umbraco/backoffice/AwesomeProducts/Products/GetAllProducts` for PluginController
 
@@ -114,7 +113,7 @@ E.g.
 
 ## Using MVC Attribute Routing in Umbraco Web API Controllers
 
-*Attribute routing* uses attributes to define routes. *Attribute routing* gives you more control over the URIs in your web application.
+_Attribute routing_ uses attributes to define routes. _Attribute routing_ gives you more control over the URIs in your web application.
 
 {% hint style="info" %}
 To exclude any endpoint or folders in your directory from Umbraco's routing, add it to the `ReservedPaths` setting in the `appsettings.json` file.
@@ -136,7 +135,7 @@ For more information, see the [Global Settings](../../configuration/globalsettin
 
 To use attribute routing, add the `Microsoft.AspNetCore.Mvc.Route` attribute to the controller or controller action you want to route. If you want to attribute route an entire controller you have to add the `[action]` token in order to route to an action, for instance:
 
-```C#
+```
 [Route("products/[action]")]
 public class ProductsController : UmbracoApiController
 {
@@ -158,7 +157,7 @@ This route the controllers actions like so:
 
 If you use the route attribute for a specific action the `[action]` token is not nececary, but you can request parameters from the path in a similar manner, using the `{parameterName}` syntax, for instance:
 
-```C#
+```
 public class ProductsController : UmbracoApiController
 {
     public IEnumerable<string> GetAllProducts()
