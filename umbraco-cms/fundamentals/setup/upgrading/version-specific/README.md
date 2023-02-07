@@ -20,7 +20,7 @@ Are you looking to upgrade an Umbraco Cloud project from 9 to 10? Follow the gui
 
 <details>
 
-<summary>Version 10 to version 11</summary>
+<summary>10.latest to version 11</summary>
 
 It might be necessary to delete all of the `bin` and `obj` directories in each of the projects of your solution. It has been observed that Visual Studio's "Clean Solution" option is sometimes not enough.
 
@@ -28,7 +28,7 @@ It might be necessary to delete all of the `bin` and `obj` directories in each o
 
 <details>
 
-<summary>Version 9 to version 10</summary>
+<summary>9.latest to 10</summary>
 
 **Important**: .NET version 6.0.5 is the minimum required version for Umbraco 10 to be able to run. You can check with `dotnet --list-sdks` what your latest installed Software Development Kit (SDK) version is. SDK version 6.0.300 is the one that includes .NET 6.0.5. At the time of writing, .NET 6.0.6 is out with an SDK version of 6.0.301.
 
@@ -59,7 +59,7 @@ It's recommended that you upgrade the site offline, and test the upgrade fully b
 6. Go to the **Installed** tab in the NuGet Package manager.
 7. Choose **Umbraco.Cms**.
 8. Select **10.0.0** from the **Version** drop-down and click **Install** to upgrade your project to version 10.
-9.  Update `Program.cs` to the following:
+9. Update `Program.cs` to the following:
 
 ```csharp
 public class Program
@@ -128,75 +128,170 @@ When the upgrade is completed and tested, and prior to deploying to any publicly
 
 <details>
 
-<summary>Version 8 to version 9</summary>
+<summary>8.latest to 9</summary>
 
-There is no direct upgrade path from Umbraco 8 to Umbraco 9, but it is possible to migrate from Umbraco 8 sites to Umbraco 9 sites.
+There is no direct upgrade path from Umbraco 8 to Umbraco 9. It is however possible to migrate from Umbraco 8 sites to Umbraco 9 sites.
 
-You can reuse your content if you take a backup of your Umbraco 8 database and restore it into a new database used for a Umbraco 9 site.
+You can reuse your content restoring your Umbraco 8 database into a new database used for a Umbraco 9 site.
+
 You will need to ensure packages you are using is available in Umbraco 9, and you will need to reimplement your custom code and templates.
 
-The reason why it is not possible to upgrade an Umbraco 8 site to Umbraco 9 is is that the codebase has been fundamentally updated in Umbraco 9 and the underlying web framework updated from ASP.NET to ASP.NET Core.
-It wouldn’t be possible to take this giant leap while maintaining full compatibility with Umbraco 8.
+The direct upgrade path is not possible due to the fact that the codebase has been fundamentally updated in Umbraco 9. The underlying web framework has been updated from ASP.NET to ASP.NET Core.
+
+It is not possible to take this step while maintaining full compatibility with Umbraco 8.
 
 </details>
 
 <details>
 
-<summary>Version 8.0.0 to 8.1.0</summary>
+<summary>8.0.0 to 8.1.0</summary>
 
 There are a few breaking changes from 8.0.x to 8.1.0. Make sure to check the [full list](https://github.com/umbraco/Umbraco-CMS/issues?q=is%3Aissue+label%3Arelease%2F8.1.0+is%3Aclosed+label%3Acategory%2Fbreaking).
 
-### IPublishedContent
+### IPublishedContent breaking changes in 8.1.0
 
-Due to the [changes in `IPublishedContent`](https://github.com/umbraco/Umbraco-CMS/issues/5170) there are few steps you will need to take to make sure that your site works. See the [docs on IPublishedContent changes in 8.1.0](v81-ipublishedcontent-changes.md) and what steps you may need to take when you upgrade.
+#### Why
+
+The `IPublishedContent` interface is central to Umbraco, as it represents published content and media items at rendering layer level. This could be in controllers or views. In other words, it is the interface that is used everywhere when building sites.
+
+The introduction of multilingual support in version 8 required changes to the interface. For instance, a property value could be obtained with `GetPropertyValue(alias)`in version 7. Version 8 requires a new parameter for culture, and the call thus became `Value(alias, culture)`.
+
+In the excitement of the version 8 release, we assumed that `IPublishedContent` was "done". By our tests, everything was looking good. However, feedback from early testers showed that the interface was in some places odd or inconsistent, or had issues.
+
+#### What
+
+Fixing the bugs is a requirement. Some of the required bug fixes could not be achieved without introducing some breaking changes.
+
+At that point, we had decided to give `IPublishedContent` some love. We fixed the bugs and made it clean, friendly, discoverable and predictable for the entire life of version 8.
+
+Breaking changes to such a central interface is not something we take lightly. Even though they do not impact the "concepts" nor require heavy refactoring, they may demand an amount of small fixes here and there.
+
+The general idea underlying these changes is that:
+
+* The proper way to retrieve "something" from an `IPublishedContent` instance is always through a method, for example: `Children()`. And, when that method can be multilingual, the method accepts a `culture` parameter, which can be left `null` to get the "current" culture value.
+* To reduce the amount of breaking changes, and to simplify things for non-multilingual sites, existing properties such as `document.Name` and `document.Children` (and others) still exist, and return the value for the current culture. In other words, these properties are now implemented as `document.Name => document.Name()` or `document.Children => document.Children()`.
+
+The rest of this document presents each change in details.
+
+#### When
+
+In Umbraco version 8.1.
+
+### How
+
+#### More interfaces
+
+It was possible to mock and test the `IPublishedContent` interface in version 7. It has been improved in version 8, but it still relies on concrete `PublishedContentType` and `PublishedPropertyType` classes to represent the content types, which complicates things.
+
+In version 8.1, these two classes are abstracted as `IPublishedContentType` and `IPublishedPropertyType`, thus making `IPublishedContent` easier to mock and test.
+
+>**CHANGE**: This impacts every method accepting or returning a content type. For instance, the signature of most `IPropertyValueConverter` methods changes. References to `PublishedContentType` must be replaced with references to `IPublishedContentType`.
+
+The following `IPublishedContent` members change:
+
+#### Name
+
+The `document.Name` property is complemented by the `document.Name(string culture = null)` extension method. The property returns the name for the current culture. The `document.GetCulture(...).Name` syntax is removed.
+
+>**CHANGE**: Calls to `document.GetCulture(culture).Name` must be replaced with `document.Name(culture)`.
+
+#### UrlSegment
+
+The `document.UrlSegment` property is complemented by the `document.UrlSegment(string culture = null)` extension method. The property returns the Url segment for the current culture. The `document.GetCulture(...).UrlSegment` syntax is removed.
+
+>**CHANGE**: Calls to `document.GetCulture(culture).UrlSegment` must be replaced with `document.UrlSegment(culture)`.
+
+#### Culture
+
+The `document.GetCulture()` method is removed. The proper way to get a culture date is `document.CultureDate(string culture = null)`. The `document.Cultures` property now returns the invariant culture, for invariant documents.
+
+>**CHANGE**: Calls to `document.GetCulture(culture).Date` must be replaced with `document.CultureDate(culture)`. Calls to `document.Cultures` must take into account the invariant culture.
+
+#### Children
+
+The `document.Children` property is complemented by the `document.Children(string culture = null)` extension method which, when a culture is specified always return children available for the specified culture. The property returns the children available for the current culture.
+
+A new `document.ChildrenForAllCultures` property is introduced, which returns _all_ children, regardless of whether they are available for a culture or not.
+
+>**CHANGE**: Calls to `document.Children` may have to be replaced by `document.ChildrenForAllCultures` depending on if the 8.0.x usage of this was relying on it returning unfiltered/all children regardless of the current routed culture.
+
+#### Url
+
+The `document.Url` property is complemented by the `document.Url(string culture = null, UrlMode mode = UrlMode.Auto)` extension method. The `document.GetUrl(...)` and `document.UrlAbsolute()` methods are removed. The `UrlProviderMode` enumeration is renamed `UrlMode`.
+
+>**CHANGE**: Calls to `document.GetUrl(...)` must be replaced with `document.Url(...)`. Calls to `document.UrlAbsolute()` must be replaced with `document.Url(mode: UrlMode.Absolute)`.
+
+### UmbracoContext
+
+Due to the `UrlProviderMode` enumeration being renamed `UrlMode`, the signature of some overloads of the `Url(...)` method has changed. Methods that do not have a mode parameter remain unchanged.
+
+>**CHANGE**: Code such as `context.Url(1234, UrlProviderMode.Absolute)` must become `context.Url(1234, UrlMode.Absolute)`.
+
+The `UmbracoContext` class gives access to the rendering layer, which is more than a "cache". To reflect this, its `ContentCache` and `MediaCache` properties are renamed `Content` and `Media`. However, the old properties remain as obsolete properties.
+
+>**CHANGE**: None required in 8.1, but code such as `context.ContentCache.GetById(1234)` should eventually be converted to `context.Content.GetById(1234)` as the obsolete properties may be removed in a further release.
+
+### GetCulture
+
+Version 7 had a `document.GetCulture()` method that was deriving a culture from domains configured in the tree. Somehow, that method was lost during version 8 development (issue [#5269](https://github.com/umbraco/Umbraco-CMS/issues/5269)).
+
+Because that method is useful, especially when building traditional, non-multilingual sites, it has been re-introduced in version 8.1 as `document.GetCultureFromDomains()`.
+
+>**CHANGE**: None.
+
+### DomainHelper
+
+`DomainHelper` has been replaced with a static `DomainUtilities` class.
+
+>**CHANGE**: It is rare that `DomainHelper` is used in code since it only contains one public method but if developers are using this, it can no longer be injected since it's now a static class called `DomainUtilities`.
+
+Due to the [changes in `IPublishedContent`](https://github.com/umbraco/Umbraco-CMS/issues/5170) there are few steps you will need to take to make sure that your site works. See the [docs on IPublishedContent changes in 8.1.0](v81-ipublishedcontent-changes.md) and what steps you may need to take when you upgrade.   
 
 ### Models Builder
 
-If you're using ModelsBuilder in dll mode you will need to delete the dlls before upgrading because they're going to be wrong and cause your whole site to YSOD.
+If you're using ModelsBuilder in `dll` mode you need to delete the dlls before upgrading. Otherwise they're going to be wrong and cause your whole site to throw errors.
 
-If you're using ModelsBuilder in AppData mode and you have your generated models in your solution you will need to update them after upgrading: `PublishedContentType` will need to be replaced with `IPublishedContentType`. If you have an implementation of the `PropertyValueConverter` class, you need to replace all references to `PublishedPropertyType` with `IPublishedPropertyType` within that class. Only after you do that will your solution build again.
+If you're using ModelsBuilder in `AppData` mode and you have your generated models in your solution you need to update them after upgrading. `PublishedContentType` will need to be replaced with `IPublishedContentType`. If you have an implementation of the `PropertyValueConverter` class, you need to replace all references to `PublishedPropertyType` with `IPublishedPropertyType` within that class. Only after you do that will your solution build again.
 
 ### AutoMapper
 
-Umbraco 8.1 replaces AutoMapper with [UmbracoMapper](../../../Reference/Mapping/index.md). This in itself will not break anything on your site, but if you have used AutoMapper in your own code you will have to either include the package yourself or switch your implementation to use UmbracoMapper.
+Umbraco 8.1 replaces AutoMapper with [UmbracoMapper](../../../Reference/Mapping/index.md). This in itself will not break anything on your site. If you have used AutoMapper in your own code you will have to either include the package yourself or switch your implementation to use UmbracoMapper.
 
 </details>
 
 <details>
 
-<summary>Version 7 to 8</summary>
+<summary>7.latest to 8.0.0</summary>
 
-There is no direct upgrade path from Umbraco 7 to Umbraco 8, but it is possible to migrate content from Umbraco 7 sites to Umbraco 8 sites. We have [added content migrations](#migrating-content-from-v7-to-v8) in Umbraco 8.1.0 that will enable you to move your content (content/media/members) from an Umbraco 7 site to an Umbraco 8 site.
+There is no direct upgrade path from Umbraco 7 to Umbraco 8. It is however possible to migrate content from Umbraco 7 sites to Umbraco 8 sites. We have added content migrations in Umbraco 8.1.0 enabling you to migrate your content from Umbraco 7 to Umbrao 8.
 
-The reason why it is not possible to upgrade an Umbraco 7 site to Umbraco 8 is is that the codebase has been fundamentally updated in Umbraco 8. A lot of outdated code and technology has been removed and instead new, faster and more secure technology has been implemented throughout Umbraco 8. It wouldn’t be possible to take this giant leap while maintaining full compatibility with Umbraco 7.
+It is not possible to upgrade an Umbraco 7 site to Umbraco 8 is because the codebase has been fundamentally updated in Umbraco 8. A lot of outdated code and technology has been removed and instead new, faster and more secure technology has been implemented.
 
-In Umbraco 8 we have added improvements and updated dependencies as well as done a thorough clean-up to make it simpler for you to work with and extend your Umbraco project.
+In Umbraco 8 we have added improvements and updated dependencies. We have also done a thorough clean-up to make it simpler for you to work with and extend your Umbraco project.
 
-### Migrating content from v7 to v8
-
-If you have an Umbraco 7 site you can migrate the content to an Umbraco 8.1+ site. Read how to do it in our [Content migration to v8 guide](migrating-to-v8.md).
+## [Migrate your content to Umbraco 8](migrating-content-to-umbraco-8.md)
 
 </details>
 
 <details>
 
-<summary>Version 7.6.3 to 7.7.0</summary>
+<summary>7.6.3 to 7.7.0</summary>
 
-Version 7.7.0 introduces User Groups and a better user management and security facilities. This means that anything to do with "User Types" no longer exist including several APIs that work with User Types. If your code or any package's code that you use makes reference to "User Type" APIs, you may need to make changes to your code. In many cases we've created backward compatibility shims for these scenarios and obsoleted APIs that should no longer be used but in some cases this was not possible.
+Version 7.7.0 introduces User Groups and a better user management and security facilities. This means that anything to do with "User Types" no longer exist including APIs that work with User Types. If your code or any package's code makes reference to "User Type" APIs, you need to make changes to your code. In many cases, we've added backward compatibility for these scenarios and obsoleted APIs that should no longer be used.
 
-Also we're now by default using the e-mail address and not the username for the credentials. So when trying to login to the backoffice one will now need to use the e-mail address as opposed to the username, which was used in previous versions. If you do an upgrade from an older version and would like to keep using the username you will need to change the `<usernameIsEmail>true</usernameIsEmail>` setting to **false**.
+We are now by default using the e-mail address and not the username for the credentials. When trying to login to the backoffice you need to use the e-mail address as opposed to the username. If you do an upgrade from an older version and would like to keep using the username, change the `<usernameIsEmail>true</usernameIsEmail>` setting to **false**.
 
 For a full list of breaking changes see: [the list on the issue tracker](https://issues.umbraco.org/issues/?q=&project=U4&tagValue=&release=7.7.0&issueType=&search=search)
 
-Version 7.7.2 no longer ships with the `CookComputing.XmlRpcV2` assembly. If you reference this assembly or have a package that requires this assembly, you may need to copy it back into your website from the backup you've taken before you began the 7.7.2 upgrade.
+Version 7.7.2 no longer ships with the `CookComputing.XmlRpcV2` assembly. If you reference this assembly or have a package that requires this assembly, you need to copy it back into your website.
 
-This version also ships with far less client files (i.e. js, css, images) that were only relevant for very old versions of Umbraco (i.e. < 7.0.0). There might be some packages that were referencing these old client files so if you seen missing image references you may need to contact the vendor of the package in question to update their references.
+This version also ships with far less client files that were only relevant for older versions of Umbraco (i.e. < 7.0.0). There might be some packages that were referencing these old client files. If you seen missing image references you may need to contact the vendor of the package in question to update their references.
 
 </details>
 
 <details>
 
-<summary>Version 7.6.0 to 7.6.3</summary>
+<summary>7.6.0 to 7.6.3</summary>
 
 In short:
 
@@ -260,7 +355,7 @@ We promise it's the last time you need to update them. We're sorry for the incon
 
 <details>
 
-<summary>Version 7.4.0 to 7.6.0</summary>
+<summary>7.4.0 to 7.6.0</summary>
 
 There are a few breaking changes in 7.6.0 be sure to **[read about them here](760-breaking-changes.md)** and [here's the list of these items on the tracker](http://issues.umbraco.org/issues/U4?q=Due+in+version%3A+7.6.0+Backwards+compatible%3F%3A+No+)
 
@@ -323,7 +418,7 @@ Umbraco Courier 3.1.0 has been released to be compatible with Umbraco 7.6. If yo
 
 <details>
 
-<summary>Version 7.3.0 to 7.4.0</summary>
+<summary>7.3.0 to 7.4.0</summary>
 
 For manual upgrades:
 
@@ -336,7 +431,7 @@ For manual upgrades:
 
 <details>
 
-<summary>Version 7.2.0 to 7.3.0</summary>
+<summary>7.2.0 to 7.3.0</summary>
 
 Make sure to manually clear your cookies after updating all the files, otherwise you might an error relating to `Umbraco.Core.Security.UmbracoBackOfficeIdentity.AddUserDataClaims()`. The error looks like: `Value cannot be null. Parameter name: value`.
 
@@ -365,7 +460,7 @@ Other considerations:
 
 <details>
 
-<summary>Version 7.1.0 to 7.2.0</summary>
+<summary>7.1.0 to 7.2.0</summary>
 
 * Copy in the /Views/Partials/Grid (contains Grid rendering views)
 
@@ -373,7 +468,7 @@ Other considerations:
 
 <details>
 
-<summary>Version 7.0.2 to 7.1.0</summary>
+<summary>7.0.2 to 7.1.0</summary>
 
 * Remove the /Install folder.
 
@@ -381,7 +476,7 @@ Other considerations:
 
 <details>
 
-<summary>Version 7.0.1 to 7.0.2</summary>
+<summary>7.0.1 to 7.0.2</summary>
 
 * There was an update to the /umbraco/config/create/ui.xml which needs to be manually updated, the original element had this text:
 
@@ -403,7 +498,7 @@ Other considerations:
 
 <details>
 
-<summary>Version 7.0.0 to 7.0.1</summary>
+<summary>7.0.0 to 7.0.1</summary>
 
 * Remove all uGoLive dlls from /bin
   * These are not compatible with V7
@@ -418,7 +513,7 @@ Other considerations:
 
 <details>
 
-<summary>Version 6 to 7.0.0</summary>
+<summary>6.latest to 7</summary>
 
 Read and follow [the full v7 upgrade guide](upgrading-to-v7.md)
 
@@ -426,7 +521,7 @@ Read and follow [the full v7 upgrade guide](upgrading-to-v7.md)
 
 <details>
 
-<summary>4.10.x/4.11.x to 6.0.0</summary>
+<summary>4.latest to 6</summary>
 
 * If your site was ever a version between 4.10.0 and 4.11.4 and you have upgraded to 6.0.0 install the [fixup package](https://our.umbraco.com/projects/developer-tools/path-fixup) and run it after the upgrade process is finished.
 * The DocType Mixins package is **NOT** compatible with v6+ and will cause problems in your document types.
