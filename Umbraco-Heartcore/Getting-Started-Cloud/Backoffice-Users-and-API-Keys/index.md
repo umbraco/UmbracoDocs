@@ -2,6 +2,7 @@
 versionFrom: 8.0.0
 meta.Title: "Backoffice users and API keys"
 meta.Description: "Managing Umbraco Heartcore Users and API keys"
+meta.RedirectLink: "/umbraco-heartcore/getting-started/backoffice-users-and-api-keys"
 ---
 
 # Backoffice Users and API Keys
