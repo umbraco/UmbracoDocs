@@ -150,15 +150,11 @@ There are a few breaking changes from 8.0.x to 8.1.0. Make sure to check the [fu
 
 ### IPublishedContent breaking changes in 8.1.0
 
-#### Why
-
 The `IPublishedContent` interface is central to Umbraco, as it represents published content and media items at rendering layer level. This could be in controllers or views. In other words, it is the interface that is used everywhere when building sites.
 
 The introduction of multilingual support in version 8 required changes to the interface. For instance, a property value could be obtained with `GetPropertyValue(alias)`in version 7. Version 8 requires a new parameter for culture, and the call thus became `Value(alias, culture)`.
 
 In the excitement of the version 8 release, we assumed that `IPublishedContent` was "done". By our tests, everything was looking good. However, feedback from early testers showed that the interface was in some places odd or inconsistent, or had issues.
-
-#### What
 
 Fixing the bugs is a requirement. Some of the required bug fixes could not be achieved without introducing some breaking changes.
 
@@ -173,13 +169,7 @@ The general idea underlying these changes is that:
 
 The rest of this document presents each change in details.
 
-#### When
-
-In Umbraco version 8.1.
-
-### How
-
-#### More interfaces
+### More interfaces
 
 It was possible to mock and test the `IPublishedContent` interface in version 7. It has been improved in version 8, but it still relies on concrete `PublishedContentType` and `PublishedPropertyType` classes to represent the content types, which complicates things.
 
@@ -189,25 +179,25 @@ In version 8.1, these two classes are abstracted as `IPublishedContentType` and 
 
 The following `IPublishedContent` members change:
 
-#### Name
+### Name
 
 The `document.Name` property is complemented by the `document.Name(string culture = null)` extension method. The property returns the name for the current culture. The `document.GetCulture(...).Name` syntax is removed.
 
 >**CHANGE**: Calls to `document.GetCulture(culture).Name` must be replaced with `document.Name(culture)`.
 
-#### UrlSegment
+### UrlSegment
 
 The `document.UrlSegment` property is complemented by the `document.UrlSegment(string culture = null)` extension method. The property returns the Url segment for the current culture. The `document.GetCulture(...).UrlSegment` syntax is removed.
 
 >**CHANGE**: Calls to `document.GetCulture(culture).UrlSegment` must be replaced with `document.UrlSegment(culture)`.
 
-#### Culture
+### Culture
 
 The `document.GetCulture()` method is removed. The proper way to get a culture date is `document.CultureDate(string culture = null)`. The `document.Cultures` property now returns the invariant culture, for invariant documents.
 
 >**CHANGE**: Calls to `document.GetCulture(culture).Date` must be replaced with `document.CultureDate(culture)`. Calls to `document.Cultures` must take into account the invariant culture.
 
-#### Children
+### Children
 
 The `document.Children` property is complemented by the `document.Children(string culture = null)` extension method which, when a culture is specified always return children available for the specified culture. The property returns the children available for the current culture.
 
@@ -215,7 +205,7 @@ A new `document.ChildrenForAllCultures` property is introduced, which returns _a
 
 >**CHANGE**: Calls to `document.Children` may have to be replaced by `document.ChildrenForAllCultures` depending on if the 8.0.x usage of this was relying on it returning unfiltered/all children regardless of the current routed culture.
 
-#### Url
+### Url
 
 The `document.Url` property is complemented by the `document.Url(string culture = null, UrlMode mode = UrlMode.Auto)` extension method. The `document.GetUrl(...)` and `document.UrlAbsolute()` methods are removed. The `UrlProviderMode` enumeration is renamed `UrlMode`.
 
@@ -295,17 +285,17 @@ This version also ships with far less client files that were only relevant for o
 
 In short:
 
-In Umbraco version 7.6.2 we made a mistake in the Property Value Converts (PVCs) which was corrected 2 days later in version 7.6.3. If you were having problems with querying the following data types in the frontend, then make sure to upgrade to 7.6.3:
+In Umbraco version 7.6.2 we made a mistake in the Property Value Converts (PVCs). This was corrected 2 days later in version 7.6.3. If you were having problems with querying the following Data Types on the frontend, make sure to upgrade to 7.6.3:
 
 * Multi Node Tree Picker
 * Related Links
 * Member Picker
 
-Depending on if you tried to fix problem with those data types you will might need to fix them again after you upgrade to 7.6.3.
+Depending on whether you tried to fix problem with those Data Types you will need to fix them after you upgrade to 7.6.3.
 
-## Property Value Converters
+### Property Value Converters (PVC)
 
-Umbraco stores data for data types in different ways, for a lot of pickers it will store (for example) 1072 or 1083,1283. These numbers refer to the identifier of the item in Umbraco. In the past, when building your templates you would manually have to take that value and find the content item it belongs to and then get the data you wanted from there, for example:
+Umbraco stores data for Data Types in different ways. For a lot of pickers it will store `1072` or `1083,1283`. These numbers refer to the identifier of the item in Umbraco. In the past, when building your templates, you would manually have to take that value and find the content item it belongs to. Then you would be able to get the data you wanted from there. An example of that is shown below:
 
 ```csharp
 @{
@@ -322,7 +312,7 @@ Umbraco stores data for data types in different ways, for a lot of pickers it wi
 </p>
 ```
 
-Wouldn't it be nice if instead of that you could do:
+In Umbraco 7.6.0, this is what you would do instead:
 
 ```html
 <p>
@@ -330,15 +320,16 @@ Wouldn't it be nice if instead of that you could do:
 </p>
 ```
 
-This is possible since 7.6.0 using Models Builder and through the inclusion of [core property value converters](https://our.umbraco.com/projects/developer-tools/umbraco-core-property-value-converters/), a brilliant package by Jeavon.
+This is possible using Models Builder and through the inclusion of [core property value converters](https://our.umbraco.com/projects/developer-tools/umbraco-core-property-value-converters/), a package by community member Jeavon Leopold.
 
-In order to not break everybody's sites (the results of queries are different when PVCs are enabled) we disabled these PVCs by default.
+In order to not break everybody's sites (the results of queries are different when PVC's are enabled) we disabled these PVC's by default.
 
-Umbraco 7.6.0 also came with new pickers that store their data as a [UDI (Umbraco Identifier)](https://our.umbraco.com/Documentation/Reference/Querying/Udi). We wanted to simplify the use of these new pickers and by default we wanted PVCs to always be enabled for those pickers.
+Umbraco 7.6.0 also came with new pickers that store their data as a [UDI (Umbraco Identifier)](https://our.umbraco.com/Documentation/Reference/Querying/Udi). We wanted to simplify the use of these new pickers and by default we wanted PVC's to always be enabled for those pickers.
 
-Unfortunately we noticed that some new pickers also got their PVCs disabled when the configuration setting was set to false (`<EnablePropertyValueConverters>false</EnablePropertyValueConverters>`) - yet the content picker ignored this setting.
+We noticed that some new pickers also got their PVC's disabled when the configuration setting was set to false (`<EnablePropertyValueConverters>false</EnablePropertyValueConverters>`).
 
-In order to make everything consistent, we made sure that the UDI pickers would always use PVCs in 7.6.2... or so we thought! By accident we reversed the behavior. So when PVCs were enabled, the property would NOT be converted and when PVCs were disabled, the property would be converted after all. This is the exact opposite behavior of 7.6.2. Oops!
+To make everything consistent, we made sure that the UDI pickers would always use PVC's in 7.6.2, this however reversed the behavior. So when PVC's were enabled, the property would not be converted and when PVC's were disabled, the property would be converted after all. This is the exact opposite behavior of 7.6.2.
+
 So we have fixed this now in 7.6.3.
 
 This issue only affects:
@@ -347,9 +338,7 @@ This issue only affects:
 * Related Links
 * Member Picker
 
-If you have already upgraded to 7.6.2 and fixed some of your queries for those three data types then you might have to fix them again in 7.6.3.
-
-We promise it's the last time you need to update them. We're sorry for the inconvenience.
+Have you already upgraded to 7.6.2 and fixed queries for those three Data Types you have to fix them again in version 7.6.3.
 
 </details>
 
