@@ -3,6 +3,7 @@ versionFrom: 8.0.0
 meta.Title: "Creating a Nuget version of an Umbraco package"
 meta.Description: "A guide to creating a Nuget version of an Umbraco package"
 meta.RedirectLink: "/umbraco-cms/extending/packages/creating-a-package#creating-a-nuget-package"
+versionRemoved: 9.0.0
 ---
 
 # Creating a NuGet version of a package

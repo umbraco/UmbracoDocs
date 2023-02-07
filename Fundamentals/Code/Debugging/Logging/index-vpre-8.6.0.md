@@ -2,6 +2,7 @@
 keywords: logging serilog messagetemplates logs v8 version8
 versionFrom: 8.0.0
 versionTo: 8.5.5
+versionRemoved: 9.0.0
 ---
 
 # Logging

@@ -1,3 +1,7 @@
+---
+versionRemoved: 9.0.0
+---
+
 # IPublishedContent breaking changes in 8.1.0
 
 ## Why
