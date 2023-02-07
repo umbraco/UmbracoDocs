@@ -1,3 +1,7 @@
+---
+versionFrom: 8.0.0
+meta.RedirectLink: "/umbraco-heartcore/getting-started/api-browser"
+---
 # API Browser
 
 With the built-in API browser that ships with all Umbraco Heartcore projects, you are able to test how your data is outputted and formatted before connecting to your website or application. You can test the API endpoints and see which JSON is outputted with each call.

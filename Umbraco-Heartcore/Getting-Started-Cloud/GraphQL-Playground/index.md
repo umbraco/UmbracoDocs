@@ -2,6 +2,8 @@
 versionFrom: 8.0.0
 meta.Title: "Umbraco Heartcore GraphQL Playground"
 meta.Description: "Documentation for Umbraco Heartcore GraphQL Playground"
+meta.RedirectLink: "/umbraco-heartcore/getting-started/graphql-playground"
+
 ---
 
 # GraphQL Playground

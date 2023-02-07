@@ -1,3 +1,6 @@
+---
+meta.RedirectLink: "/umbraco-heartcore/getting-started/the-cloud-portal"
+---
 # The Umbraco Cloud Portal
 
 In this article, you will learn more about the Umbraco Cloud Portal and what options that are available to you.
