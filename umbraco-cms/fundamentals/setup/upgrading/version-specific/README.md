@@ -14,17 +14,23 @@ Follow the steps in the [general upgrade guide](../), then these additional inst
 [umbraco11-breaking-changes.md](umbraco11-breaking-changes.md)
 {% endcontent-ref %}
 
-## Version 10 to version 11
+<details>
+
+<summary>Version 10 to version 11</summary>
 
 It might be necessary to delete all of the `bin` and `obj` directories in each of the projects of your solution. It has been observed that Visual Studio's "Clean Solution" option is sometimes not enough.
 
-## Version 9 to version 10
+</details>
+
+<details>
+
+<summary>Version 9 to version 10</summary>
 
 {% hint style="warning" %}
 **Important**: .NET version 6.0.5 is the minimum required version for Umbraco 10 to be able to run. You can check with `dotnet --list-sdks` what your latest installed Software Development Kit (SDK) version is. SDK version 6.0.300 is the one that includes .NET 6.0.5. At the time of writing, .NET 6.0.6 is out with an SDK version of 6.0.301.
 {% endhint %}
 
-## Video Tutorial
+### Video Tutorial
 
 {% embed url="https://www.youtube.com/watch?ab_channel=UmbracoLearningBase&v=075H_ekJBKI" %}
 Upgrading from Umbraco 9 to Umbraco 10
@@ -126,6 +132,4 @@ When the upgrade is completed and tested, and prior to deploying to any publicly
 5. Start the site. At this point it will launch and upgrade the database, after which the site should become accessible and your upgrade is complete.
 6. Check the logs for any errors which may have occurred during the upgrade process.
 
-## [Breaking changes from Umbraco 9 to Umbraco 10](umbraco10-breaking-changes.md)
-
-Breaking changes going from Umbraco 9 to Umbraco 10.
+</details>
