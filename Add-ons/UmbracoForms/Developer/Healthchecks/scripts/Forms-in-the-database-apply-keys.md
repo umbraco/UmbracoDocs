@@ -1,5 +1,6 @@
 ---
 meta.Title: "Apply keys and indexes for forms in the database"
+meta.RedirectLink: "/umbraco-forms/developer/healthchecks/forms-in-the-database-apply-keys"
 ---
 
 # Apply keys and indexes for forms in the database

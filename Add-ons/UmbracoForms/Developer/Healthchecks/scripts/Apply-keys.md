@@ -1,5 +1,6 @@
 ---
 meta.Title: "Apply keys and indexes"
+meta.RedirectLink: "/umbraco-forms/developer/healthchecks/apply-keys"
 ---
 
 # Apply keys and indexes
