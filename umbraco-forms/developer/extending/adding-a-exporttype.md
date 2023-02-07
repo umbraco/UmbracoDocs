@@ -2,17 +2,17 @@
 
 _This builds on the "_[_adding a type to the provider model_](adding-a-type.md)_" chapter._
 
-Add a new class to your project and have it inherit from `Umbraco.Forms.Core.ExportType` and you have two options when implementing the class.
+Add a new class to your project and have it inherit from `Umbraco.Forms.Core.ExportType`. You have two options when implementing the class, as shown in the following examples.
 
 ## Basic Example
 
-When implementing the method `public override string ExportRecords(RecordExportFilter filter)` in your export provider class. You need to return the final string you wish to write to a file. Such as .txt file or .csv and you can perform your logic to build up a comma separated string for a CSV file in the `ExportRecords` method.
+You can implement the method `public override string ExportRecords(RecordExportFilter filter)` in your export provider class. You need to return a string you wish to write to a file. For example, you can generate a `.csv` (comma-separated values) file. You would perform your logic to build up a comma-separated string in the `ExportRecords` method.
 
 {% hint style="info" %}
 In the constructor of your provider, you will need a further two properties, `FileExtension` and `Icon`.
 {% endhint %}
 
-The FileExtension property is the file extension such as `zip`, `txt` or `csv` of the file you will be generating & serving from the file system as the export file.
+`FileExtension` is the extension such as `zip`, `txt` or `csv` of the file you will be generating and serving from the file system.
 
 In this example below we will create a single HTML file which takes all the submissions/entries to be displayed as a HTML report. We will do this in conjunction with a Razor partial view to help build up our HTML and thus merge it with the form submission data to generate a string of HTML.
 
@@ -28,28 +28,32 @@ using Umbraco.Forms.Web.Helpers;
 
 namespace MyFormsExtensions
 {
-    public class ExportToHtmlReport : ExportType
+    public class ExportToHtml : ExportType
     {
+        private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IFormRecordSearcher _formRecordSearcher;
 
-        public ExportToHtmlReport(
-            IHostingEnvironment hostingEnvironment,
+        public ExportToHtml(
+            IHostEnvironment hostEnvironment,
+            IHttpContextAccessor httpContextAccessor,
             IFormRecordSearcher formRecordSearcher)
-            : base(hostingEnvironment)
+            : base(hostEnvironment)
         {
+            _httpContextAccessor = httpContextAccessor;
             _formRecordSearcher = formRecordSearcher;
 
-            this.Name = "Export as HTML";
-            this.Description = "Export entries as a single HTML report";
-            this.Id = new Guid("4117D352-FB41-4A4C-96F5-F6EF35B384D2");
-            this.FileExtension = "html";
-            this.Icon = "icon-article";        }
+            Name = "Export as HTML";
+            Description = "Export entries as a single HTML report";
+            Id = new Guid("4117D352-FB41-4A4C-96F5-F6EF35B384D2");
+            FileExtension = "html";
+            Icon = "icon-article";
+        }
 
         public override string ExportRecords(RecordExportFilter filter)
         {
             var view = "~/Views/Partials/Forms/Export/html-report.cshtml";
             EntrySearchResultCollection model = _formRecordSearcher.QueryDataBase(filter);
-            return ViewHelper.RenderPartialViewToString(view, model);
+            return ViewHelper.RenderPartialViewToString(_httpContextAccessor.GetRequiredHttpContext(), view, model);
         }
     }
 }
@@ -58,11 +62,11 @@ namespace MyFormsExtensions
 ### Razor Partial View
 
 ```csharp
-@model Umbraco.Forms.Web.Models.Backoffice.EntrySearchResultCollection
+@model Umbraco.Forms.Core.Searchers.EntrySearchResultCollection
 
 @{
     var submissions = Model.Results.ToList();
-    var schemaItems = Model.schema.ToList();
+    var schemaItems = Model.Schema.ToList();
 }
 
 <h1>Form Submissions</h1>
@@ -73,10 +77,30 @@ namespace MyFormsExtensions
 
     for (int i = 0; i < schemaItems.Count; i++)
     {
-        <strong>@schemaItems[i].Name</strong> @values[i] <br />
+      <strong>@schemaItems[i].Name</strong> @values[i].Value
+      <br />
     }
 
-    <hr/>
+    <hr />
+}
+```
+
+### Registration
+
+```csharp
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Forms.Core.Providers.Extensions;
+using Umbraco.Forms.TestSite.Business.ExportTypes;
+
+namespace MyFormsExtensions
+{
+    public class TestComposer : IComposer
+    {
+        public void Compose(IUmbracoBuilder builder)
+        {
+            builder.FormsExporters().Add<ExportToHtml>();
+        }
+    }
 }
 ```
 
