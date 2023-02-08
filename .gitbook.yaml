@@ -14,3 +14,5 @@ redirects:
     umbraco-cloud/upgrades/migrating-from-8-10: umbraco-cloud/upgrades/major-upgrades.md
     umbraco-cms/reference/templating/mvc/child-actions: umbraco-cms/reference/templating/mvc/viewcomponents
     umbraco-cloud/upgrades/migrate-from-umbraco-10-to-11: umbraco-cloud/upgrades/major-upgrades.md
+    umbraco-cms/fundamentals/setup/upgrading/version-specific/umbraco10-breaking-changes: umbraco-cms/fundamentals/setup/upgrading/version-specific/README.md
+    umbraco-cms/fundamentals/setup/upgrading/version-specific/umbraco11-breaking-changes: umbraco-cms/fundamentals/setup/upgrading/version-specific/README.md
