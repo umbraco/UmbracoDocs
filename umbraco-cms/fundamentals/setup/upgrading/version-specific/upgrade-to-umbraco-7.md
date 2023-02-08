@@ -2,7 +2,7 @@
 description: "This document should be used as a reference, not a step by step guide. Upgrading will largely depend on what version of Umbraco you are currently running, what packages you have installed and the many aspects of your own Umbraco installation."
 ---
 
-# Upgrading to version 7
+# Upgrade to Umbraco 7
 
 The [standard upgrade instructions](../README.md) still apply to this process as well.
 
