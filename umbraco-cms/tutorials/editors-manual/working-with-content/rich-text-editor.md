@@ -1,18 +1,18 @@
 # Rich Text Editor
 
-The Umbraco Rich Text Editor is the field where you, as the editor, can be creative. You select how much you want to do yourself. You can work on text content, format the text, or leave it the way it is. If you want to do more, you can insert images, create tables or create links to other pages or documents.
+The Umbraco Rich Text Editor (RTE) is a field where you, as an editor, can be creative. You select how much you want to do yourself. You can work on text content, format the text, or leave it the way it is. If you want to do more, you can insert images, create tables, or create links to other pages/documents.
 
-The functionality varies depending on how the editor is set up. Here we describe the default editor with all options enabled. Contact your system administrator for details regarding your editor.
+The functionality varies depending on how the editor is set up. Here, we describe the default editor with all the options enabled. Contact your system administrator for details regarding your editor.
 
 ## Editor Buttons
 
-Below are all the default editor buttons available. Your system administrator is able to determine which buttons are displayed in different templates. You could therefore have access to more or fewer buttons than those shown here.
+Below are the default editor buttons available. Your system administrator is able to determine which buttons are displayed in different templates. You could therefore have access to more or fewer buttons than those shown here.
 
-![editorBar.jpg](images/editorBar.jpg)
+![editorBar.jpg](images/editorBar_v11.png)
 
 ## Paragraph Break/Line Break
 
-The editor is like any other word processing program. You write the text, and the text wraps around when the line reaches the end. When you press ENTER in the editor, you get a paragraph break, which means there is space between the paragraphs. If you do not want a space, you have to make a line break instead. You do this by pressing SHIFT+ENTER.
+The editor is like any other word processing program. You write the text and the text wraps around when the line reaches the end. When you press `ENTER` in the editor, you get a paragraph break, which means there is space between the paragraphs. If you do not want a space, you have to make a line break instead. You do this by pressing `SHIFT+ENTER`.
 
 ## Shortcut Keys
 
@@ -30,97 +30,104 @@ To make your work easier, there are shortcut keys for certain editor functions. 
 | Ctrl + Y | Redo       |
 | Ctrl + Z | Undo       |
 
+We have listed only a few keyboard shortcuts. For a detailed list of available keyboard shortcuts, see the [official TinyMCE Documentation](https://www.tiny.cloud/docs/advanced/keyboard-shortcuts/).
+
+## View Source Code
+
+![View Source Code](images/code.jpg)
+
+If you are proficient in the use of HTML, you can switch to HTML mode and create your page by writing HTML code. You can also check the code and make minor adjustments  to get the page exactly as you want it. Certain elements such as scripts will not be allowed and will be filtered out of code pasted into the rich text editor.
+
 ## Text Formatting
 
-You do not normally need to spend much time formatting text because Umbraco takes care of a lot of the formatting for you. When the default formatting is not enough however, there are a number of options for controlling the formatting of text.
-
-### Formatting Buttons
-
-The most basic and probably the most familiar way to control formatting are via the formatting buttons. These work much the same as those found in most word processing applications such as Microsoft Word. With these you can apply basic formatting such as Bold, Italic and underline as well as altering text alignment and creating bulleted and numbered lists.
-
-Regardless of the formatting being applied, the process for applying a format using the formatting buttons is always the same.
-
-1. Select the text you want to apply the formatting to.
-2. Click the appropriate format button to apply the formatting you wish to add.
-
-![formats.jpg](images/formats.jpg)
+You do not normally need to spend much time formatting text because Umbraco takes care of a lot of the formatting for you. When the default formatting is not enough however, there are a couple of options for controlling the formatting of text:
 
 ### Formats
 
-Another way of applying formatting is via the Formats drop-down list. The Formats drop-down list provides a set of predefined styles that can be applied to text whilst maintaining a consistent look and feel through the site. These styles often incorporate more advanced formatting functionality which can be applied to provide a different look for certain elements such as links, headings and sub heading. For example you can use a format style to change a link into a call to action button. Whilst the styles available on your site may differ, the process for applying styles is always the same.
+![Formats](images/Formats_v11.png)
 
-1. Select the text you want to apply the style to.
-2. Select the style to apply from the Format drop-down list.
+You can apply formatting via the **Formats** drop-down list. The Formats drop-down list provides predefined styles that can be applied to text while maintaining a consistent look and feel through the site. These styles incorporate advanced formatting functionality which can be applied to provide a different look for certain elements such as links, headings, and sub-headings. For example you can use a format style to change a link into a call to action button. 
+
+While the styles available on your site may differ, you can apply styles by:
+
+1. Selecting the text you want to apply the style to.
+2. Selecting the style to apply from the **Format** drop-down list.
+
+For more information on how to create RTE Styles, see the [Rich Text Editor Styles](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-styles) article.
+
+### Formatting Buttons
+
+![Formatting Buttons](images/Formatting_Buttons_v11.png)
+
+The most basic and probably the most familiar way to control formatting are via the formatting buttons. These work the same as those found in most word processing applications such as Microsoft Word. With these you can apply basic formatting such as Bold, Italic, Underline, altering text alignment, bulleted and numbered lists, and altering text indentations.
+
+Regardless of the formatting being applied, you can apply a format using the formatting buttons by:
+
+1. Selecting the text you want to apply the formatting to.
+2. Click the appropriate format button to apply the formatting you wish to add.
 
 ### Copying Content from Other Programs
 
-It is important to note that when you pre-write content to later be copied into a rich text editor you may encounter style issues on your website. When pasting content, the original text styles will be preserved which can lead to different font faces, sizes and colours from what is expected when the website is viewed. To prevent this from happening it is advisable that you paste the content into a markdown editor first such as notepad, then copy and paste it from there into your rich text editor.
+When you pre-write content to copy it later into a rich text editor you may encounter style issues on your website. When pasting content, the original text styles will be preserved. This can lead to different font faces, sizes, and colors from what is expected when the website is viewed. It is advisable to paste the content into a markdown editor such as notepad, then copy, and paste it into your rich text editor.
 
 ### Remove Formatting
 
-If you have formatted a paragraph or selection using the formatting buttons, you can remove a formatting rule by selecting the text, and clicking the relevant formatting button to remove that formatting rule. You may also have a remove format button in your toolbar. If you do not have this button please speak to your system administrator.
+![removeFormat.jpg](images/removeFormat.jpg)
 
-![removeFormat.jpg](images/removeFormat.jpg) _Remove Format button_
+If you have formatted a paragraph or selection using the formatting buttons, you can remove a formatting rule by:
 
-## Show/Hide HTML Code
-
-![code.jpg](images/code.jpg)
-
-If you are proficient in the use of HTML you can switch to HTML mode and create your page by writing HTML code. You can also check the code and make minor adjustments here to get the page exactly as you want it. Certain elements such as scripts will not be allowed and will be filtered out of code pasted into the rich text editor.
+1. Selecting the text and clicking the relevant formatting button to remove that formatting rule.
+2. You can also use the **Remove Format** button from the toolbar. If you do not have this button please speak to your system administrator.
 
 ## Links
 
 ![linkButton.jpg](images/linkButton.jpg)
 
-The _**Insert Link**_ button is used to create links to internal and external pages and media files email links and anchors. The process for inserting a hyperlink differs depending on the type of hyperlink you wish to create.
+The **Insert/Edit Link** button is used to create links to internal pages, external pages, media files, email links, and anchors. The process for inserting a hyperlink differs depending on the type of hyperlink you wish to create:
 
-### Link to a Page on Another Website
+### Link to a Page on another Website
 
 1. Select the text that will form the hyperlink.
-2. Click the _**Insert Link**_ button which will reveal the link properties slide out menu.
-3. In the URL field, enter the URL of the web page you wish to link to.
-4. In the Title field, enter the text that will be shown as a pointer to the link. This is important information for everyone reading the website with different accessibility aids.
-5. In the Target field, select the target window/frame then select how the should be opened. There are three different ways the link can be opened:
-   * Open link in a new tab in the same browser window.
-   * Open link in a new separate browser window.
-   * Open the link in the same browser tab as the user would be viewing your site.
-6. Click _**Select.**_ Your text will now contain the link as requested.
+2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
+3. In the **Link** field, enter the URL of the web page you wish to link to.
+4. In the **Link Title** field, enter the text that will be shown as a pointer to the link. This is important information for everyone reading the website with different accessibility aids.
+5. In the **Target** field, select the target window/frame to open the link in a new window or tab.
+6. Click **Submit**.
 
-![externalLink.jpg](images/externalLink.jpg)
+![Link to a Page on another Website](images/externalLink_v11.png)
 
 ### Link to a Page in Umbraco
 
 1. Select the text that will form the hyperlink.
-2. Click the _**Insert Link**_ button which will reveal the link properties slide out menu.
-3. Select a page from the _**Content**_ tab to link to. This will then populate the **link to document** automatically.
-4. In the Page Title field, enter the text that will be shown as a pointer to the link. This is important information for everyone reading the website with different accessibility aids, (by default the name of the selected page will automatically be entered for your convenience).
-5. In the _**Target**_ field, select the target window/frame the link should be opened in.
-6. Click _**Select**_.
+2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
+3. Select a page from the **Link to page** field. This will then populate the **Link** and  **Link Title** fields automatically.
+4. In the **Target** field, select the target window/frame to open the link in a new window or tab.
+5. Click **Submit**.
 
-![internalLink.jpg](images/internalLink.jpg)
+![Link to a Page in Umbraco](images/internalLink_v11.png)
 
 ### Link to a Media File in Umbraco
 
 1. Select the text that will form the hyperlink.
-2. Click the _**Insert Link**_ button which will reveal the link properties slide out menu.
-3. Select the _**link to file**_ button which is situated at the bottom of the slide out menu.
-4. You will then be taken to the media picker, where you can select the media item.
-5. When you have selected the media item you will be taken back to the link screen where the link to document and page title fields have been populated with the media item information. By default the page title will be the media file name however this can be edited.
-6. In the _**Target**_ field, select the target window/frame the link should be opened in.
-7. Click Select.
+2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
+3. Select the **Link to Media** button to select the media item.
+4. Click **Select**.
+5. When you have selected the media item, the **Link** and  **Link Title** fields are automatically populated with the media item information. By default, the **Link** field contains the media file name and cannot be edited.
+6. In the **Target** field, select the target window/frame to open the link in a new window or tab.
+7. Click **Submit**.
 
-![linkMedia.jpg](images/linkMedia.jpg)
+![Link to a Media File in Umbraco](images/linkMedia_v11.png)
 
-### Link to an email address in Umbraco
+### Link to an Email Address in Umbraco
 
 1. Select the text that will form the hyperlink.
-2. Click the _**Insert Link**_ button which will reveal the link properties slide out menu.
-3. In the URL field, enter the text mailto: followed by the email address you wish to link to (e.g. mailto:name@company.com).
-4. In the Title field, enter the text that will be shown as a pointer to the link. This is important information for everyone reading the website with different accessibility aids.
-5. In the _**Target**_ field, select the target window/frame the link should be opened in.
-6. Click _**Select.**_
+2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
+3. In the **Link** field, enter the text mailto: followed by the email address you wish to link to. For example, `mailto:contact@umbraco.com`.
+4. In the **Link Title** field, enter the text that will be shown as a pointer to the link.
+5. In the **Target** field, select the target window/frame to open the link in a new window or tab.
+6. Click **Submit**.
 
-![linkEmail.jpg](images/linkEmail.jpg)
+![Link to an Email Address in Umbraco](images/linkEmail_v11.png)
 
 ### Link to an Anchor on the Same Page
 
@@ -141,7 +148,7 @@ To delete the anchor, select it and then press your delete key.
 ### Linking to an anchor
 
 1. Highlight the content which you wish to add the anchor link to.
-2. Click the _**Insert link**_ button which will reveal the link properties slide out menu.
+2. Click the _**Insert link**_ button to open the link properties slide-out menu.
 3. Add a hash symbol followed by the name of your anchor into the **link to document**\* field.
 4. Click _**Select.**_
 
