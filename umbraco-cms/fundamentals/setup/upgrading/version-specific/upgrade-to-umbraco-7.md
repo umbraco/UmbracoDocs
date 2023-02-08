@@ -158,7 +158,9 @@ We see common errors that we cannot fix for you, but we do have recommendations 
 
 ### TypeFinder
 
-"Could not load type `umbraco.BusinessLogic.Utils.TypeFinder` from assembly `businesslogic, Version=1.0.5031.21336, Culture=neutral, PublicKeyToken=null`."
+```none
+Could not load type umbraco.BusinessLogic.Utils.TypeFinder from assembly businesslogic, Version=1.0.5031.21336, Culture=neutral, PublicKeyToken=null.
+```
 
 The TypeFinder has been deprecated since 4.10 and is now found under `Umbraco.Core.TypeFinder`.
 
