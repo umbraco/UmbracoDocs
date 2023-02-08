@@ -32,7 +32,7 @@
       * [Version Specific Upgrades](umbraco-cms/fundamentals/setup/upgrading/version-specific/README.md)
         * [Umbraco 10: Breaking Changes](umbraco-cms/fundamentals/setup/upgrading/version-specific/umbraco10-breaking-changes.md)
         * [Umbraco 11: Breaking Changes](umbraco-cms/fundamentals/setup/upgrading/version-specific/umbraco11-breaking-changes.md)
-        * [Migrating content to Umbraco 8](umbraco-cms/fundamentals/setup/upgrading/version-specific/migrating-content-to-umbraco-8.md)
+        * [Migrate content to Umbraco 8](umbraco-cms/fundamentals/setup/upgrading/version-specific/migrating-content-to-umbraco-8.md)
         * [Upgrade to Umbraco 7](umbraco-cms/fundamentals/setup/upgrading/version-specific/upgrade-to-umbraco-7.md)
     * [Server setup](umbraco-cms/fundamentals/setup/server-setup/README.md)
       * [Running Umbraco On Azure Web Apps](umbraco-cms/fundamentals/setup/server-setup/azure-web-apps.md)
