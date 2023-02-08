@@ -189,7 +189,7 @@ The edit view in the example would now be loaded from the location: `/App_Plugin
 
 #### Providing functionality in your Tree Action Views
 
-You can instruct the Umbraco backoffice to load additional JavaScript resources (eg. angularJS controllers) to use in conjunction with your 'tree action views' by adding a `package.manifest` file in the same folder location as your views.
+You can instruct the Umbraco backoffice to load additional JavaScript resources (eg. AngularJS controllers) to use in conjunction with your 'tree action views' by adding a `package.manifest` file in the same folder location as your views.
 
 **For example**...
 
