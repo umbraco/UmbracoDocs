@@ -6,13 +6,13 @@ The functionality varies depending on how the editor is set up. Here, we describ
 
 ## Editor Buttons
 
-Below are the default editor buttons available. Your system administrator is able to determine which buttons are displayed in different templates. You could therefore have access to more or fewer buttons than those shown here.
+Below are the default editor buttons available. Your system administrator can determine which buttons are displayed in different templates. You could therefore have access to more or fewer buttons than those shown here.
 
 ![editorBar.jpg](images/editorBar-v11.png)
 
 ## Paragraph Break/Line Break
 
-The editor is like any other word processing program. You write the text and the text wraps around when the line reaches the end. When you press `ENTER` in the editor, you get a paragraph break, which means there is space between the paragraphs. If you do not want a space, you have to make a line break instead. You do this by pressing `SHIFT+ENTER`.
+The editor is like any other word-processing program. You write the text and the text wraps around when the line reaches the end. When you press `ENTER` in the editor, you get a paragraph break, which means there is space between the paragraphs. If you do not want a space, you have to make a line break instead. You do this by pressing `SHIFT+ENTER`.
 
 ## Shortcut Keys
 
@@ -36,22 +36,22 @@ We have listed only a few keyboard shortcuts. For a detailed list of available k
 
 ![View Source Code](images/code.jpg)
 
-If you are proficient in the use of HTML, you can switch to HTML mode and create your page by writing HTML code. You can also check the code and make minor adjustments  to get the page exactly as you want it. Certain elements such as scripts will not be allowed and will be filtered out of code pasted into the rich text editor.
+If you are proficient in the use of HTML, you can switch to HTML mode and create your page by writing HTML code. You can also check the code and make minor adjustments to get the page exactly as you want it. Certain elements such as scripts will not be allowed and will be filtered out of the code and pasted into the rich text editor.
 
 ## Text Formatting
 
-You do not normally need to spend much time formatting text because Umbraco takes care of a lot of the formatting for you. When the default formatting is not enough however, there are a couple of options for controlling the formatting of text:
+You do not normally need to spend much time formatting text because Umbraco takes care of a lot of the formatting for you. When the default formatting is not enough, however, there are a couple of options for controlling the formatting of text:
 
 ### Formats
 
 ![Formats](images/Formats-Button-v11.png)
 
-You can apply formatting via the **Formats** drop-down list. The Formats drop-down list provides predefined styles that can be applied to text while maintaining a consistent look and feel through the site. These styles incorporate advanced formatting functionality which can be applied to provide a different look for certain elements such as links, headings, and sub-headings. For example you can use a format style to change a link into a call to action button. 
+You can apply formatting via the **Formats** drop-down list. The Formats drop-down list provides predefined styles that can be applied to text while maintaining a consistent look and feel throughout the site. These styles incorporate advanced formatting functionality which can be applied to provide a different look for certain elements such as links, headings, and sub-headings. For example, you can use a format style to change a link into a call-to-action button.
 
-While the styles available on your site may differ, you can apply styles by:
+While the styles available on your site may differ, you can apply styles:
 
-1. Selecting the text you want to apply the style to.
-2. Selecting the style to apply from the **Format** drop-down list.
+1. Select the text you want to apply the style to.
+2. Select the style to apply from the **Format** drop-down list.
 
 For more information on how to create RTE Styles, see the [Rich Text Editor Styles](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-styles) article.
 
@@ -59,11 +59,11 @@ For more information on how to create RTE Styles, see the [Rich Text Editor Styl
 
 ![Formatting Buttons](images/Formatting-Buttons-v11.png)
 
-The most basic and probably the most familiar way to control formatting are via the formatting buttons. These work the same as those found in most word processing applications such as Microsoft Word. With these you can apply basic formatting such as Bold, Italic, Underline, altering text alignment, bulleted and numbered lists, and altering text indentations.
+The most basic and probably the most familiar way to control formatting are via the formatting buttons. These work the same as those found in most word-processing applications such as Microsoft Word. With these you can apply basic formatting such as Bold, Italic, Underline, altering text alignment, bulleted and numbered lists, and altering text indentations.
 
-Regardless of the formatting being applied, you can apply a format using the formatting buttons by:
+Regardless of the formatting being applied, you can apply a format using the formatting buttons:
 
-1. Selecting the text you want to apply the formatting to.
+1. Select the text you want to apply the formatting to.
 2. Click the appropriate format button to apply the formatting you wish to add.
 
 ### Copying Content from Other Programs
@@ -74,9 +74,9 @@ When you pre-write content to copy it later into a rich text editor you may enco
 
 ![removeFormat.jpg](images/removeFormat.jpg)
 
-If you have formatted a paragraph or selection using the formatting buttons, you can remove a formatting rule by:
+If you have formatted a paragraph or selection using the formatting buttons, you can remove a formatting rule:
 
-1. Selecting the text and clicking the relevant formatting button to remove that formatting rule.
+1. Select the text and click the relevant formatting button to remove that formatting rule.
 2. You can also use the **Remove Format** button from the toolbar. If you do not have this button please speak to your system administrator.
 
 ## Links
@@ -147,7 +147,7 @@ To delete the anchor, select the anchor icon and then press your delete key.
 
 ### Linking to an anchor
 
-1. Select the text where you wish to add the anchor link to.
+1. Select the text to which you wish to add the anchor link to.
 2. Click the _**Insert link**_ button to open the link properties slide-out menu.
 3. Add a hash symbol (#) followed by the name of your anchor in the **Anchor/querystring** field.
 4. In the **Link Title** field, enter the text that will be shown as a pointer to the link.
@@ -173,83 +173,86 @@ You can make images into clickable links in Umbraco:
 To remove a link:
 
 1. First select the link in the rich text editor. For text links, click the cursor anywhere within the link text. For an image, click the image itself.
-2. Click the **Remove Link** button which will remove the hyperlink. If the remove link button is not in your richtext editor toolbar, you will need to click the **Insert/Edit Link** button and manually remove the link from the **Link** field.
+2. Click the **Remove Link** button which will remove the hyperlink. If the remove link button is not in your rich text editor toolbar, you will need to click the **Insert/Edit Link** button and manually remove the link from the **Link** field.
 
 ![Remove link Button](images/Remove-link-v11.png)
 
 ## Working with Images
 
-To display images on a page they must be uploaded to your Umbraco Media library. Many organizations set up a media library containing images that editors can use on their pages. Others allow their editors free use of their own images. The procedure for uploading an image varies slightly depending on which method your organization uses.Check with your system administrator what is applicable in your organization.
+To display images on a page they must be uploaded to your Umbraco Media library. Many organizations set up a media library containing images that editors can use on their pages. Others allow their editor's free use of their images. The procedure for uploading an image varies slightly depending on which method your organization uses. Check with your system administrator about what applies to your organization.
 
 ### Inserting an Image from the Media Library
 
 1. Place the cursor in the rich text editor where you want to insert your image.
 2. Click the **Media Picker** button from the toolbar.
-3. Select the folder in which the image is in.
+3. Select the folder in which the image is.
 4. Click the thumbnail of your chosen image to open the image properties menu.
 5. In the **Caption (optional)** field, enter a name/description for the image. It is important to add descriptive titles to images as these are used to assist visually impaired users.
 6. Click **Select** to add the image.
 
-![mediaPicker.jpg](images/mediaPicker.jpg)
+![Inserting an Image from the Media Library](images/Inserting-Image-from-the-Media-Library-v11.png)
 
 ### Inserting an Image from your Computer
 
-You can upload images directly from the rich text editor on the page you are editing. These images will be stored in the Umbraco media library. Therefore care should be taken to ensure that the image is placed in the correct location within the library. If you click the plus icon underneath the search bar in the media picker slide out menu you can create folders in the media library.
+You can upload images directly from the rich text editor on the page you are editing. These images will be stored in the Umbraco Media library. Therefore care should be taken to ensure that the image is placed in the correct location within the library. If you click the plus icon underneath the search bar in the media picker slide-out menu you can create folders in the media library.
 
-1. Place the cursor in the editor where you want to insert your image.
-2. Click the _**Media Picker**_ button from the toolbar to open the media selector.
-3. Click the _**Upload**_ button which is located in the top right-hand corner of the menu.
+1. Place the cursor in the rich text editor where you want to insert your image.
+2. Click the **Media Picker** button from the toolbar.
+3. Click the **Upload** button which is located in the top right-hand corner of the menu.
 4. Select the chosen image from the pop-up window.
-5. In the Title field, enter a name/description for the image. (By default the name of the file will be automatically entered for your convenience).
-6. Click \***Insert** to add the image.
+5. In the **Caption (optional)** field, enter a name/description for the image.
+6. Click **Select** to add the image.
 
-![mediaUpload.jpg](images/mediaUpload.jpg)
+![Inserting an Image from your Computer](images/Inserting-an-Image-from-Computer-v11.png)
 
 ### Deleting an Image from the Page
 
-If you want to delete an image from the page, select the image and press _**Delete**_ button on your keyboard. The image disappears from the page, but is not deleted from the Umbraco media library.
+If you want to delete an image from the page, select the image, and press the **Delete** button on your keyboard. The image disappears from the page but is not deleted from the Umbraco Media library.
 
 ## Macros
 
-In Umbraco, macros are small building blocks of functionality that can be dropped into an editor. Each macro encompasses a piece of functionality and provides a simple interface to be able to modify the macro to your requirements. A macro can be anything from a contact form to an embeddable media player. The advantage of macros is that it gives editors the ability to add complex elements to the page in a simple manner.
+In Umbraco, macros are small building blocks of functionality that can be dropped into an editor. Each macro encompasses a piece of functionality and provides an interface to modify the macro to your requirements. A macro can be anything from a contact form to an embedded media player. The advantage of macros is that it gives editors the ability to add complex elements to a page.
 
-The macros available to you differ from system to system so please see your system administrator to find out which macros are available to you and what they do. The process for adding and updating a macro is always the same.
+The macros available differ on each system. Kindly check with your system administrator to find out which macros are available to you and what they do. The process for adding and updating a macro is as follows:
 
 ### Adding a Macro to the Page
 
-1. Place the cursor in the editor where you want to insert your macro.
-2. Click the _**Insert Macro**_ button from the toolbar to open the macro properties dialog box.
-3. Select a macro to insert from the Choose a macro drop-down list.
-4. Configure the macro as required.
-5. Click _**Select**_ to insert the macro.
-6. The macro is displayed in the editor with a yellow dotted border.
+1. Place the cursor in the rich text editor where you want to insert your macro.
+2. Click the **Insert Macro** button from the toolbar.
+3. Select a macro to insert from the macros list.
+4. Click **Submit**.
+5. The macro is displayed in the editor with a dotted border.
 
-![macroPicker.jpg](images/macroPicker.jpg)
-
-![macroEditor.jpg](images/macroEditor.jpg)
+![Adding a Macro to the Page](images/Select-Macro-v11.png)
 
 ### Editing macros
 
-You can edit values you have inputted into a macro after it has been added to the rich text editor.
+You can edit values after it has been added to the rich text editor:
 
-1. Highlight the macro in the rich text editor.
-2. Click the _**macro**_ button in the toolbar.
-3. This will bring out the configuration slide out menu where you can edit any values previously added.
+1. Select the macro in the rich text editor.
+2. Click the **Insert Macro** button from the toolbar.
+3. This will open the configuration menu where you can edit any values previously added.
 
 ### Removing macros
 
-To remove a macro you highlight the macro in the rich text editor and hit the _**delete**_ or _**backspace**_ button on your keyboard.
+To remove a macro, select the macro in the rich text editor and press the **Delete** or **Backspace** button on your keyboard.
 
 ## Tables
 
-Tables are used to format information in a grid based structure. When you insert a table, you select how many rows and columns the table should comprise of, as well as fill in a number of additional optional formatting properties. These values can be altered later, so it is not important to know exactly what your table will look like when you create it.
+Tables are used to format information in a grid-based structure. When you insert a table, you select how many rows and columns the table should comprise of. Additionally, you can fill in some optional formatting properties. These values can be changed later, so it is not important to know exactly what your table will look like when you create it.
 
-![tables.jpg](images/tables.jpg)
+![Inserting a Table](images/Insert-a-table-v11.png)
 
 ### Editing an Existing Table
 
-To edit the table after you have already created it, you need to click on it so you have a small square box in each of the four corners. Then you need to click on the _**Table**_ button in the rich text editor in order to reveal the options.
+To edit the table after you have already created it, you need to click on it. A pop-up appears with different table properties and options. Alternatively, you can click on the **Table** button in the rich text editor toolbar.
 
-Clicking _**Table Properties**_ gives you several options for modifying the table’s appearance, however the developer of the website may have already created table styles for you so you may not need to adjust these settings. There are various other options available for modifying cells, rows and columns such as height, alignment, merge, insert and delete.
+![Editing an Existing Table](images/Editing-an-existing-table-v11.png)
 
-![tableProperties.jpg](images/tableProperties.jpg)
+Clicking on **Table Properties** gives you different options for modifying the table’s appearance. However, the developer of the website may have already created table styles for you so you may not need to adjust these settings. There are other options available for modifying cells, rows, and columns such as width, height, alignment, border, and so on.
+
+![Table Properties](images/table-properties-v11.png)
+
+## Configuring a Rich Text Editor
+
+The Rich Text Editor in Umbraco can be configured in many different ways. For more information, see the [Rich Text Editor Configuration](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration) article.
