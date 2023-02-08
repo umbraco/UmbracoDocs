@@ -144,7 +144,7 @@ public class FavouriteThingsTreeController : TreeController
         return menu;
     }
 
-    protected override ActionResult<TreeNode> CreateRootNode(FormCollection queryStrings)
+    protected override ActionResult<TreeNode?> CreateRootNode(FormCollection queryStrings)
     {
         var rootResult = base.CreateRootNode(queryStrings);
         if (!(rootResult.Result is null))
