@@ -53,6 +53,8 @@ Below you can find a list of the most frequently asked questions and the answers
   * It will not be possible to work on the project while it is being moved to the dedicated server. The move takes a couple of minutes, and during that time the website will not respond as usual
 * Will the environments be moved at the same time or one by one?
   * Yes, all environments will be moved simultaneously. 
+* Will the live environment be unavailable while the Project is moved?
+  * There will always be an active live environment which continues to serve requests and be online during the move operation. When the moved live environment is ready and responding to requests, the hostnames will be switched to point to the moved environment.
 
 If you have any other questions regarding dedicated resource, feel free to reach out to [Umbraco Support](mailto:contact@umbraco.com).
 
