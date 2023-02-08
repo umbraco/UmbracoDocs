@@ -1,5 +1,5 @@
 ---
-description: "Use a custom MVC controller to handle and control incoming requests for content pages based on a specific Document Type, also called ."
+description: "Use a custom MVC controller to handle and control incoming requests for content pages based on a specific Document Type, also called _Route Hijacking._"
 ---
 
 # Umbraco Route Hijacking
