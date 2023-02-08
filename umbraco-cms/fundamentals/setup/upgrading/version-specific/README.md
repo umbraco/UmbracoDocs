@@ -150,6 +150,8 @@ There are a few breaking changes from 8.0.x to 8.1.0. Make sure to check the [fu
 
 ### IPublishedContent breaking changes in 8.1.0
 
+Due to the [changes in `IPublishedContent`](https://github.com/umbraco/Umbraco-CMS/issues/5170) there are few steps you will need to take to make sure that your site works.
+
 The `IPublishedContent` interface is central to Umbraco, as it represents published content and media items at rendering layer level. This could be in controllers or views. In other words, it is the interface that is used everywhere when building sites.
 
 The introduction of multilingual support in version 8 required changes to the interface. For instance, a property value could be obtained with `GetPropertyValue(alias)`in version 7. Version 8 requires a new parameter for culture, and the call thus became `Value(alias, culture)`.
@@ -235,8 +237,6 @@ Because that method is useful, especially when building traditional, non-multili
 
 >**CHANGE**: It is rare that `DomainHelper` is used in code since it only contains one public method but if developers are using this, it can no longer be injected since it's now a static class called `DomainUtilities`.
 
-Due to the [changes in `IPublishedContent`](https://github.com/umbraco/Umbraco-CMS/issues/5170) there are few steps you will need to take to make sure that your site works. See the [docs on IPublishedContent changes in 8.1.0](v81-ipublishedcontent-changes.md) and what steps you may need to take when you upgrade.   
-
 ### Models Builder
 
 If you're using ModelsBuilder in `dll` mode you need to delete the dlls before upgrading. Otherwise they're going to be wrong and cause your whole site to throw errors.
@@ -245,7 +245,7 @@ If you're using ModelsBuilder in `AppData` mode and you have your generated mode
 
 ### AutoMapper
 
-Umbraco 8.1 replaces AutoMapper with [UmbracoMapper](../../../Reference/Mapping/index.md). This in itself will not break anything on your site. If you have used AutoMapper in your own code you will have to either include the package yourself or switch your implementation to use UmbracoMapper.
+Umbraco 8.1 replaces AutoMapper with [UmbracoMapper](../../../../reference/mapping.md). This in itself will not break anything on your site. If you have used AutoMapper in your own code you will have to either include the package yourself or switch your implementation to use UmbracoMapper.
 
 </details>
 
@@ -346,31 +346,107 @@ Have you already upgraded to 7.6.2 and fixed queries for those three Data Types 
 
 <summary>7.4.0 to 7.6.0</summary>
 
-There are a few breaking changes in 7.6.0 be sure to **[read about them here](760-breaking-changes.md)** and [here's the list of these items on the tracker](http://issues.umbraco.org/issues/U4?q=Due+in+version%3A+7.6.0+Backwards+compatible%3F%3A+No+)
+Find a list of all the breaking changes below and [a list of the items is also available on the tracker](http://issues.umbraco.org/issues/U4?q=Due+in+version%3A+7.6.0+Backwards+compatible%3F%3A+No+)
 
 The three most important things to note are:
 
- 1. In web.config do not change `useLegacyEncoding` to `false` if it is currently set to `true` - changing the password encoding will cause you not being able to log in any more
- 2. In umbracoSettings.config leave `EnablePropertyValueConverters` set to `false` - this will help your existing content queries to still work
- 3. In tinyMceConfig.config make sure to remove `<plugin loadOnFrontend="true">umbracolink</plugin>` so that the rich text editor works as it should
+1. In web.config do not change `useLegacyEncoding` to `false` if it is currently set to `true` - changing the password encoding will cause you not being able to log in any more
+2. In umbracoSettings.config leave `EnablePropertyValueConverters` set to `false` - this will help your existing content queries to still work
+3. In tinyMceConfig.config make sure to remove `<plugin loadOnFrontend="true">umbracolink</plugin>` so that the rich text editor works as it should
+
+### Breaking Changes
+
+### Dependencies
+
+### UrlRewriting.Net ([U4-9004](https://issues.umbraco.org/issue/U4-9004))
+
+`UrlRewriting` was old, leaking memory, and slowing down website startup when dealing with more than a few rules. It's entirely replaced by the [IIS Url Rewrite](https://www.iis.net/downloads/microsoft/url-rewrite) extension.
+
+### Json.Net ([U4-9499](https://issues.umbraco.org/issue/U4-9499))
+
+Json.Net has been updated to version 10.0.0 to benefit from improvements in features, fixes and performances (see [release notes](https://github.com/JamesNK/Newtonsoft.Json/releases)). This might be a breaking change for people relying on one of the changed functionality.
+
+### Log4net ([U4-1324](https://issues.umbraco.org/issue/U4-1324))
+
+Umbraco has used a custom build of an old (1.2.11) version of log4net that supported Medium Trust. However, Umbraco itself does not support Medium Trust anymore, and therefore log4net has been upgraded to the standard, latest build of log4net 2.0.8.
+
+### ImageProcessor ([U4-8963](https://issues.umbraco.org/issue/U4-8963))
+
+An optional parameter has been added to the `GetCropUrl` method in order to support the background color parameter. This breaks the method signature and therefore might require a recompile of user's code.
+
+### HtmlAgilityPack ([U4-9655](https://issues.umbraco.org/issue/U4-9655))
+
+The HtmlAgilityPack has been upgraded to version 1.4.9.5. The Umbraco upgrade process should take care of setting up the binding redirects appropriately.
+
+### Core
+
+### Membership Provider Encoding ([U4-6566](https://issues.umbraco.org/issue/U4-6566))
+
+The Membership Provider `useLegacyEncoding` setting is now `false` by default, as the legacy password encoding has weaknesses.
+
+This change only impacts new installs (no change for upgrades).
+
+### Property Value Converters ([U4-7318](https://issues.umbraco.org/issue/U4-7318))
+
+A large amount of property value converters contributed by the community have been merged in and are now the default value converters. These converters change the object types returned by `GetPropertyValue` for more convenient types.
+
+For example, the `SliderValueConverter` returns a `decimal` or a `Range<decimal>` value that can directly be used in views, instead of the CSV string value that was previously returned.
+
+This change only impacts new installs (no change for upgrades).
+
+The new property value converters are controlled by an `umbracoSettings.config` setting. In section `settings/content`, setting `EnablePropertyValueConverters` needs to be present and `true` to activate them.
+
+### Database ([U4-9201](https://issues.umbraco.org/issue/U4-9201))
+
+Umbraco has been using a PetaPoco-managed `UmbracoDatabase` instance since version 7 came out. We realized that some of our legacy code still bypassed that mechanism and used parallel, out-of-band database connections, causing issues with transactions.
+
+The legacy code has been refactored to rely on the `UmbracoDatabase` instance. However, because that database is disposed during `EndRequest`, code that ran after it has been disposed may not work anymore. This should then be updated to used either an `HttpModule` event that occurs before `EndRequest`, or the new `UmbracoModule.EndRequest` event.
+
+More details are available on [issue 146](https://github.com/kipusoep/UrlTracker/issues/146) on the 301 Redirect Tracker GitHub issue tracker.
+
+### Scopes ([U4-9406](https://issues.umbraco.org/issue/U4-9406))
+
+Version 7.6 introduces the notion of _scopes_, which allow for wrapping multiple service-level operations in one single transaction. The scopes API is partially public. Scopes are not meant for public use at this stage and we need a few more releases to ensure that the APIs are stable.
+
+Scopes _should not_ change how Umbraco functions.
+
+Introducing scopes means that some public APIs signatures are changing. Most of these changes target internal and/or non-breaking APIs (as per our [guidelines](https://our.umbraco.com/Documentation/Development-Guidelines/breaking-changes)). This should therefore have no impact on sites but may break unit tests.
+
+### Property Editors storing UDI instead of ID ([U4-9310](https://issues.umbraco.org/issue/U4-9310))
+
+The property editors for pickers for content, media, members and related links have been updated to store UDI instead of node ID. Pickers in sites being upgraded have been marked as obsolete, but will continue to work as they always did.
+
+New sites will have the obsolete pickers filtered out from the list of available property editors, but they can be enabled by a configuration flag.
+
+### Rich Text Editor (RTE) Images attributes ([U4-6228](https://issues.umbraco.org/issue/U4-6228), [U4-6595](http://issues.umbraco.org/issue/U4-6595))
+
+For a long time we had a `rel` attribute on an `<img>` tag when inserting into the RTE. This is invalid HTML markup. We worked around this by stripping this attribute using a Property Editor Value converter. Some developers relied on this attribute so we didn't change it to a "data-id" attribute which would have been valid. In 7.6 we are not storing integer IDs in these attributes. Instead storing UDI values so with this change we no longer use `rel` or `data-id` and instead there will be a "data-udi" attribute. This change should affect only a small amount of people that were previously relying on the values from the "rel" attribute.
+
+### Others
+
+We are shipping with SignalR in the core at version 2.2.1. If you already have SignalR installed into your app and are using an older version there may be conflicts.
+
+The creation and editing of WebForms templates will no longer be supported as for version 7.6.0.
 
 ### Upgrading via NuGet
 
-This is an important one and there was unfortunately not a perfect solution to this. We have removed the UrlRewriting dependency and no longer ship with it, however if you are using it we didn't want to have NuGet delete all of your rewrites. So the good news is that if you are using it, the NuGet upgrade will not delete your rewrite file and everything should continue to work (though you should really be using IIS rewrites!).
+This is an important one and there was not a perfect solution to this. We have removed the UrlRewriting dependency and no longer ship with it. However, if you are using it we didn't want to have NuGet delete all of your rewrites. The good news is that if you are using it, the NuGet upgrade will not delete your rewrite file and everything should continue to work.
 
-However, if you are not using it, **you will get a YSOD after upgrading, here's how to fix it**
+However, if you are not using it, **you will get an error after upgrading. Here's how to fix it:**
 
-Since you aren't using UrlRewriting you will have probably never edited the UrlRewriting file and in which case NuGet will detect that and remove it. However you will need to manually remove these UrlRewriting references from your web.config:
+Since you aren't using UrlRewriting you will have probably never edited the UrlRewriting file. In this case, NuGet will detect that and remove it. However you will need to manually remove these UrlRewriting references from your `web.config`:
 
 ```xml
 <section name="urlrewritingnet" restartOnExternalChanges="true" requirePermission="false" type="UrlRewritingNet.Configuration.UrlRewriteSection, UrlRewritingNet.UrlRewriter" />
 ```
 
+and
+
 ```xml
 <urlrewritingnet configSource="config\UrlRewriting.config" />
 ```
 
-* And remove the following http modules from your web.config:
+Remove the following `httpModules` from your `web.config`:
 
 ```xml
 <system.web>
@@ -395,9 +471,9 @@ and
 
 ### Forms
 
-Umbraco Forms 6.0.0 has been released to be compatible with Umbraco 7.6, it is a new major version release of Forms primarily due to the strict dependency on 7.6+. If you are using Forms, you will need to update it to version 6.0.0
+Umbraco Forms 6.0.0 has been released to be compatible with Umbraco 7.6. It is a new major version release of Forms primarily due to the strict dependency on 7.6+. If you are using Forms, you will need to update it to version 6.0.0
 
-There is **[important Forms upgrade documentation that you will need to read the here](https://our.umbraco.com/documentation/Add-ons/UmbracoForms/Installation/Version-Specific#version-4-to-version-6)**
+There is **[important Forms upgrade documentation that you will need to read the here](../../../../../umbraco-forms/installation/version-specific.md#version-4-to-version-6)**.
 
 ### Courier
 
@@ -424,14 +500,14 @@ For manual upgrades:
 
 Make sure to manually clear your cookies after updating all the files, otherwise you might an error relating to `Umbraco.Core.Security.UmbracoBackOfficeIdentity.AddUserDataClaims()`. The error looks like: `Value cannot be null. Parameter name: value`.
 
-NuGet will do the following for you but if you're upgrading manually:
+NuGet will do the following for you. If you're upgrading manually make sure to also:
 
 * Delete `bin/Microsoft.Web.Helpers.dll`
 * Delete `bin/Microsoft.Web.Mvc.FixedDisplayModes.dll`
 * Delete `bin/System.Net.Http.dll`
-* Delete `bin/System.Net.Http.*.dll` (all dll files starting with `System.Net.Http`) **EXCEPT** for `System.Net.Http.Formatting.dll`
+* Delete `bin/System.Net.Http.*.dll` (all dll files starting with `System.Net.Http`) **except** for `System.Net.Http.Formatting.dll`
 * Delete `bin/umbraco.XmlSerializers.dll`
-* In your `web.config` file, add this in the `appSetting` section: `<add key="owin:appStartup" value="UmbracoDefaultOwinStartup" />`
+* Add this in the `appSetting` section of your `web.config` file: `<add key="owin:appStartup" value="UmbracoDefaultOwinStartup" />`
 
 Other considerations:
 
@@ -451,7 +527,7 @@ Other considerations:
 
 <summary>7.1.0 to 7.2.0</summary>
 
-* Copy in the /Views/Partials/Grid (contains Grid rendering views)
+* Copy in the `/Views/Partials/Grid` (contains Grid rendering views).
 
 </details>
 
@@ -459,7 +535,7 @@ Other considerations:
 
 <summary>7.0.2 to 7.1.0</summary>
 
-* Remove the /Install folder.
+* Remove the `/Install` folder.
 
 </details>
 
@@ -467,7 +543,7 @@ Other considerations:
 
 <summary>7.0.1 to 7.0.2</summary>
 
-* There was an update to the /umbraco/config/create/ui.xml which needs to be manually updated, the original element had this text:
+* There was an update to the `/umbraco/config/create/ui.xml` which needs to be manually updated. The original element had this text:
 
 ```xml
 <nodeType alias="users">
@@ -480,7 +556,7 @@ Other considerations:
 </nodeType>
 ```
 
-* The &lt;usercontrol&gt; value has changed to: **/create/user.ascx**, this is a required change otherwise creating a new user will not work.
+* The `usercontrol` value has changed to: `/create/user.ascx`. This is a required change otherwise creating a new user will not work.
 * There is a breaking change to be aware of, full details can be found [here](https://umbraco.com/blog/heads-up-breaking-change-coming-in-702-and-62/).
 
 </details>
@@ -489,13 +565,13 @@ Other considerations:
 
 <summary>7.0.0 to 7.0.1</summary>
 
-* Remove all uGoLive dlls from /bin
+* Remove all uGoLive dlls from `/bin`
   * These are not compatible with V7
-* Move appSettings/connectionStrings back to web.config
-  * If you are on 7.0.0 you should migrate these settings into the web.config instead of having them in separate files in /config/
-  * The keys in config/AppSettings.config need to be moved back to the web.config `<appSettings>` section and similarly, the config/ConnectionStrings.config holds the Umbraco database connections in v7.0.0 and they should be moved back to the web.config `<connectionStrings>` section.
-  * /config/AppSettings.config and /config/ConnectionString.config can be removed after the contents have been moved back to web.config. (Make backups)
-* Delete all files in ~/App_Data/TEMP/Razor/*
+* Move `appSettings/connectionStrings` back to `web.config`
+  * If you are on 7.0.0 you should migrate these settings into the web.config instead of having them in separate files in `/config/`
+  * The keys in `config/AppSettings.config` need to be moved back to the web.config `<appSettings>` section and similarly, the `config/ConnectionStrings.config` holds the Umbraco database connections in v7.0.0 and they should be moved back to the web.config `<connectionStrings>` section.
+  * `/config/AppSettings.config` and `/config/ConnectionString.config` can be removed after the contents have been moved back to `web.config`.
+* Delete all files in `~/App_Data/TEMP/Razor/`
   * Related to issues with razor macros
 
 </details>
@@ -513,7 +589,7 @@ Read and follow [the full v7 upgrade guide](upgrading-to-v7.md)
 <summary>4.latest to 6</summary>
 
 * If your site was ever a version between 4.10.0 and 4.11.4 and you have upgraded to 6.0.0 install the [fixup package](https://our.umbraco.com/projects/developer-tools/path-fixup) and run it after the upgrade process is finished.
-* The DocType Mixins package is **NOT** compatible with v6+ and will cause problems in your document types.
+* The DocType Mixins package is **not** compatible with v6+ and will cause problems in your Document Types.
 
 </details>
 
@@ -527,30 +603,30 @@ Read and follow [the full v7 upgrade guide](upgrading-to-v7.md)
 
 ### Version 4.8.0 to 4.10.0
 
-* Delete the bin/umbraco.linq.core.dll file
+* Delete the `bin/umbraco.linq.core.dll` file
 * Copy the new files and folders from the zip file into your site's folder
-  * /App_Plugins
-  * /Views
-  * Global.asax
-* Remove the Config/formHandlers.config file
+  * `/App_Plugins`
+  * `/Views`
+  * `Global.asax`
+* Remove the `Config/formHandlers.config` file
 
 ### Version 4.7.2 to 4.8.0
 
-* Delete the bin/App_Browsers.dll file
-* Delete the bin/App_global.asax.dll file
-* Delete the bin/Fizzler.Systems.HtmlAgilityPack.dll file
+* Delete the `bin/App_Browsers.dll` file
+* Delete the `bin/App_global.asax.dll` file
+* Delete the `bin/Fizzler.Systems.HtmlAgilityPack.dll` file
 * For people using uComponents 3.1.2 or below, 4.8.0 breaks support for it. Either upgrade to a newer version beforehand or follow the workaround [posted here](https://our.umbraco.com/projects/backoffice-extensions/ucomponents/questionssuggestions/33021-Upgrading-to-Umbraco-48-breaks-support-for-uComponents)
 
 ### Version 4.7.1.1 to 4.7.2
 
-* Delete the bin/umbraco.MacroEngines.Legacy.dll file
+* Delete the `bin/umbraco.MacroEngines.Legacy.dll` file
 
 ### Version 4.6.1 to 4.7.1.1
 
-* Delete bin/Iron*.dll (all dll files starting with "Iron")
-* Delete bin/RazorEngine*.dll (all dll files starting with "RazorEngine")
-* Delete bin/umbraco.MacroEngines.Legacy.dll
-* Delete bin/Microsoft.Scripting.Debugging.dll
-* Delete bin/Microsoft.Dynamic.dll
+* Delete `bin/Iron*.dll` (all dll files starting with "Iron")
+* Delete `bin/RazorEngine*.dll` (all dll files starting with "RazorEngine")
+* Delete `bin/umbraco.MacroEngines.Legacy.dll`
+* Delete `bin/Microsoft.Scripting.Debugging.dll`
+* Delete `bin/Microsoft.Dynamic.dll`
 
 </details>
