@@ -8,7 +8,7 @@ This section describes how to work with and create trees with Umbraco APIs.
 
 ## Creating trees
 
-To Create a Tree in a section of the Umbraco backoffice, you need to take several steps:
+To Create a Tree in a section of the Umbraco backoffice, you need to take multiple steps:
 
 Create a `TreeController` class in C#. A new controller which inherits from the abstract `Umbraco.Cms.Web.BackOffice.Trees.TreeController` class and provides an implementation for two abstract methods:
 
