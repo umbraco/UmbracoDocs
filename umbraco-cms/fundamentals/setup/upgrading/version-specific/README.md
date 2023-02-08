@@ -492,7 +492,7 @@ Umbraco.Cms.Core.Media.EmbedProviders.YouTube
 
 The `diff`library used in the Backoffice client has been updated and introduces a breaking change since the exposed global object has been renamed from `JsDiff` to `Diff`.
 
-###[Content Schedule performance](https://github.com/umbraco/Umbraco-CMS/pull/11398)
+### [Content Schedule performance](https://github.com/umbraco/Umbraco-CMS/pull/11398)
 
 Removes mutable ContentSchedule property from `IContent/Content` to `read/write` content schedules. 
 
