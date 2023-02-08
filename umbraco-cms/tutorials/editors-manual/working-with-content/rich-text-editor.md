@@ -8,7 +8,7 @@ The functionality varies depending on how the editor is set up. Here, we describ
 
 Below are the default editor buttons available. Your system administrator is able to determine which buttons are displayed in different templates. You could therefore have access to more or fewer buttons than those shown here.
 
-![editorBar.jpg](images/editorBar_v11.png)
+![editorBar.jpg](images/editorBar-v11.png)
 
 ## Paragraph Break/Line Break
 
@@ -44,7 +44,7 @@ You do not normally need to spend much time formatting text because Umbraco take
 
 ### Formats
 
-![Formats](images/Formats_v11.png)
+![Formats](images/Formats-Button-v11.png)
 
 You can apply formatting via the **Formats** drop-down list. The Formats drop-down list provides predefined styles that can be applied to text while maintaining a consistent look and feel through the site. These styles incorporate advanced formatting functionality which can be applied to provide a different look for certain elements such as links, headings, and sub-headings. For example you can use a format style to change a link into a call to action button. 
 
@@ -57,7 +57,7 @@ For more information on how to create RTE Styles, see the [Rich Text Editor Styl
 
 ### Formatting Buttons
 
-![Formatting Buttons](images/Formatting_Buttons_v11.png)
+![Formatting Buttons](images/Formatting-Buttons-v11.png)
 
 The most basic and probably the most familiar way to control formatting are via the formatting buttons. These work the same as those found in most word processing applications such as Microsoft Word. With these you can apply basic formatting such as Bold, Italic, Underline, altering text alignment, bulleted and numbered lists, and altering text indentations.
 
@@ -94,7 +94,7 @@ The **Insert/Edit Link** button is used to create links to internal pages, exter
 5. In the **Target** field, select the target window/frame to open the link in a new window or tab.
 6. Click **Submit**.
 
-![Link to a Page on another Website](images/externalLink_v11.png)
+![Link to a Page on another Website](images/Link-to-an-external-Page-v11.png)
 
 ### Link to a Page in Umbraco
 
@@ -104,7 +104,7 @@ The **Insert/Edit Link** button is used to create links to internal pages, exter
 4. In the **Target** field, select the target window/frame to open the link in a new window or tab.
 5. Click **Submit**.
 
-![Link to a Page in Umbraco](images/internalLink_v11.png)
+![Link to a Page in Umbraco](images/Link-to-a-Page-v11.png)
 
 ### Link to a Media File in Umbraco
 
@@ -116,7 +116,7 @@ The **Insert/Edit Link** button is used to create links to internal pages, exter
 6. In the **Target** field, select the target window/frame to open the link in a new window or tab.
 7. Click **Submit**.
 
-![Link to a Media File in Umbraco](images/linkMedia_v11.png)
+![Link to a Media File in Umbraco](images/Link-to-Media-File-v11.png)
 
 ### Link to an Email Address in Umbraco
 
@@ -127,60 +127,68 @@ The **Insert/Edit Link** button is used to create links to internal pages, exter
 5. In the **Target** field, select the target window/frame to open the link in a new window or tab.
 6. Click **Submit**.
 
-![Link to an Email Address in Umbraco](images/linkEmail_v11.png)
+![Link to an Email Address in Umbraco](images/Link-to-Email-Address-v11.png)
 
 ### Link to an Anchor on the Same Page
 
 An anchor allows you to create internal page links that enable users to navigate within a page. There are two parts to setting up an anchor; the anchor itself and the link to the anchor.
 
-### Creating an anchor
+### Creating an Anchor
 
 1. Focus the editor cursor where you wish to create the anchor.
-2. Click the ![anchorButton.jpg](images/anchorButton.jpg) which will then launch the Anchor creation dialog.
-3. In the name field enter your anchor name. You should avoid special characters and do not use spaces.
-4. Click _**OK**_ to finish.
+2. Click the ![Anchor Button](images/anchorButton.jpg) which will then launch the Anchor creation dialog.
+3. In the **ID** field enter your anchor name. You should avoid special characters and spaces.
+4. Click **OK**.
 5. You will see a small anchor icon where you previously had the editor cursor.
 
-To delete the anchor, select it and then press your delete key.
+To delete the anchor, select the anchor icon and then press your delete key.
 
-![anchorDialogue.jpg](images/anchorDialogue.jpg)
+![Creating an Anchor](images/Creating-an-anchor-v11.png)
 
 ### Linking to an anchor
 
-1. Highlight the content which you wish to add the anchor link to.
+1. Select the text where you wish to add the anchor link to.
 2. Click the _**Insert link**_ button to open the link properties slide-out menu.
-3. Add a hash symbol followed by the name of your anchor into the **link to document**\* field.
-4. Click _**Select.**_
+3. Add a hash symbol (#) followed by the name of your anchor in the **Anchor/querystring** field.
+4. In the **Link Title** field, enter the text that will be shown as a pointer to the link.
+5. Click **Submit**.
 
-![linkAnchor.jpg](images/linkAnchor.jpg)
+![Linking to an anchor](images/Linking-to-Anchor-v11.png)
 
 ### Create a Link from an Image
 
-You can make images into clickable links in Umbraco.
+You can make images into clickable links in Umbraco:
 
-1. Insert an image into the editor (see Working with Images for more details).
+1. Insert an image into the rich text editor. For more information, see the [Working with Images](#working-with-images) section.
 2. Select the image that will form the hyperlink.
-3. From here, follow the same instructions as for inserting a normal hyperlink, starting at step 2.
+3. In the **Link** field, enter the URL of the web page you wish to link to.
+4. In the **Link Title** field, enter the text that will be shown as a pointer to the link.
+5. In the **Target** field, select the target window/frame to open the link in a new window or tab.
+6. Click **Submit**.
 
-### Removing a link
+![Create a Link from an Image](images/Link-from-Image-v11.png)
 
-1. To remove a link you first need to select it in the editor. For text links click the cursor anywhere within the link text. For an image just click the image itself.
-2. Click the **Remove Link** button which remove the hyperlink. If the remove link button is not in your richtext editor toolbar you will instead need to click the **Insert/Edit Link** button again and manually remove the link from the link to document text field.
+### Removing a Link
 
-![unlink.jpg](images/unlink.jpg)
+To remove a link:
+
+1. First select the link in the rich text editor. For text links, click the cursor anywhere within the link text. For an image, click the image itself.
+2. Click the **Remove Link** button which will remove the hyperlink. If the remove link button is not in your richtext editor toolbar, you will need to click the **Insert/Edit Link** button and manually remove the link from the **Link** field.
+
+![Remove link Button](images/Remove-link-v11.png)
 
 ## Working with Images
 
-To display images on a page they must be uploaded to your Umbraco media library. Many organisations set up a media library containing images that editors can use on their pages. Others allow their editors free use of their own images. The procedure for uploading an image varies slightly depending on which method your organisation has adopted, so check with your system administrator what is applicable in your organisation.
+To display images on a page they must be uploaded to your Umbraco Media library. Many organizations set up a media library containing images that editors can use on their pages. Others allow their editors free use of their own images. The procedure for uploading an image varies slightly depending on which method your organization uses.Check with your system administrator what is applicable in your organization.
 
 ### Inserting an Image from the Media Library
 
-1. Place the cursor in the editor where you want to insert your image.
-2. Click the _**Media Picker**_ button from the toolbar to open the media selector menu.
-3. Select the folder which the image is in.
+1. Place the cursor in the rich text editor where you want to insert your image.
+2. Click the **Media Picker** button from the toolbar.
+3. Select the folder in which the image is in.
 4. Click the thumbnail of your chosen image to open the image properties menu.
-5. In the Title field, enter a name/description for the image (by default the name of the file will be automatically entered for your convenience). It is important to add descriptive titles to images as these as used to assist visually impaired users.
-6. Click _**Insert**_ to add the image.
+5. In the **Caption (optional)** field, enter a name/description for the image. It is important to add descriptive titles to images as these are used to assist visually impaired users.
+6. Click **Select** to add the image.
 
 ![mediaPicker.jpg](images/mediaPicker.jpg)
 
