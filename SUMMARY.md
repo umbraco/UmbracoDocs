@@ -30,8 +30,6 @@
       * [Unattended Installs](umbraco-cms/fundamentals/setup/install/unattended-install.md)
     * [Upgrade your project](umbraco-cms/fundamentals/setup/upgrading/README.md)
       * [Version Specific Upgrades](umbraco-cms/fundamentals/setup/upgrading/version-specific/README.md)
-        * [Umbraco 10: Breaking Changes](umbraco-cms/fundamentals/setup/upgrading/version-specific/umbraco10-breaking-changes.md)
-        * [Umbraco 11: Breaking Changes](umbraco-cms/fundamentals/setup/upgrading/version-specific/umbraco11-breaking-changes.md)
         * [Migrate content to Umbraco 8](umbraco-cms/fundamentals/setup/upgrading/version-specific/migrate-content-to-umbraco-8.md)
         * [Upgrade to Umbraco 7](umbraco-cms/fundamentals/setup/upgrading/version-specific/upgrade-to-umbraco-7.md)
     * [Server setup](umbraco-cms/fundamentals/setup/server-setup/README.md)
