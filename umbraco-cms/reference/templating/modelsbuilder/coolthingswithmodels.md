@@ -3,7 +3,7 @@ description: "Cool things you can do with models"
 ---
 # Cool things you can do with strongly-typed models
 
-It's possible with Razor to define functions for rendering HTML. We can leverage our strongly typed models when doing this, and even provide overloads for different types of models. That will automatically called for different models using `dynamic`
+It's possible with Razor to define functions for rendering HTML. We can leverage our strongly typed models when doing this, and even provide overloads for different types of models. That will automatically be called for different models using `dynamic`
 
 ```csharp
 @functions
