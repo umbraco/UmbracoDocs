@@ -28,8 +28,8 @@ Make sure you know the [Breaking changes](../../umbraco-cms/fundamentals/setup/u
 
 ## Video Tutorial
 
-{% embed url="https://www.youtube.com/embed/80qwWxoNuKU" %}
-Video tutorial showing how to upgrade your Umbraco Cloud project to the latest major version
+{% embed url="https://www.youtube-nocookie.com/embed/80qwWxoNuKU" %}
+Video Tutorial
 {% endembed %}
 
 ## Step 1: Enable .NET
