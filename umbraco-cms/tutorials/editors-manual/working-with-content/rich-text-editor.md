@@ -34,7 +34,7 @@ We have listed only a few keyboard shortcuts. For a detailed list of available k
 
 ## View Source Code
 
-![View Source Code](images/code.jpg)
+![View Source Code](images/view-source-code-v11.png)
 
 If you are proficient in the use of HTML, you can switch to HTML mode and create your page by writing HTML code. You can also check the code and make minor adjustments to get the page exactly as you want it. Certain elements such as scripts will not be allowed and will be filtered out of the code and pasted into the RTE.
 
@@ -74,7 +74,7 @@ When you pre-write content to copy it later into a RTE you may encounter style i
 
 ### Remove Formatting
 
-![Remove Format Button](images/removeFormat.jpg)
+![Remove Format Button](images/Remove-Format-v11.png)
 
 If you have formatted a paragraph or selection using the formatting buttons, you can remove a formatting rule:
 
@@ -88,7 +88,7 @@ If you do not have the **Remove Format** button, contact your system administrat
 
 ## Links
 
-![Link Button](images/linkButton.jpg)
+![Link Button](images/Link-Button-v11.png)
 
 The **Insert/Edit Link** button is used to create links to internal pages, external pages, media files, email links, and anchors. The process for inserting a hyperlink differs depending on the type of hyperlink you wish to create:
 
@@ -98,8 +98,7 @@ The **Insert/Edit Link** button is used to create links to internal pages, exter
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
 3. Enter the URL of the web page you wish to link to in the **Link** field.
 4. Enter the text that will be displayed as the link title in the **Link Title** field.
-
-   This is important information for everyone reading the website with different accessibility aids.
+   - This is important information for everyone reading the website with different accessibility aids.
 5. Select the **Target** field to open the link in a new window or tab.
 6. Click **Submit**.
 
@@ -110,8 +109,7 @@ The **Insert/Edit Link** button is used to create links to internal pages, exter
 1. Select the text that will form the hyperlink.
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
 3. Select a page from the **Link to page** field.
-
-   This will populate the **Link** and  **Link Title** fields automatically.
+   - This will populate the **Link** and  **Link Title** fields automatically.
 4. Select the **Target** field to open the link in a new window or tab.
 5. Click **Submit**.
 
@@ -123,13 +121,8 @@ The **Insert/Edit Link** button is used to create links to internal pages, exter
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
 3. Select the **Link to Media** button to select the media item.
 4. Click **Select**.
-
-   This will populate the **Link** and  **Link Title** fields automatically with the media item information.
-
-   {% hint style="info" %}
-   By default, the **Link** field contains the media file name and cannot be edited.
-   {% endhint %}
-
+   - This will populate the **Link** and  **Link Title** fields automatically with the media item information.
+   - By default, the **Link** field contains the media file name and cannot be edited.
 5. Select the **Target** field to open the link in a new window or tab.
 6. Click **Submit**.
 
@@ -153,23 +146,20 @@ An anchor allows you to create internal page links that enable users to navigate
 ### Creating an Anchor
 
 1. Click the editor cursor where you wish to create the anchor.
-2. Click the **Anchor Button** which will then launch the Anchor creation dialog.
+2. Click the **Anchor Button** which will launch the Anchor creation dialog.
 3. Enter your anchor name in the **ID** field.
+   - You should avoid special characters and spaces.
+4. Click **Save**.
+   - You will see a small anchor icon where you previously had the editor cursor.
 
-   {% hint style="info" %}
-   You should avoid special characters and spaces.
-   {% endhint %}
-
-4. Click **OK**.
-
-   You will see a small anchor icon where you previously had the editor cursor.
+![Creating an Anchor](images/Creating-an-anchor-v11.png)
 
 To delete the anchor:
 
 1. Select the anchor icon.
 2. Press your **Delete** key.
 
-![Creating an Anchor](images/Creating-an-anchor-v11.png)
+![Deleting an Anchor](images/Delete-an-anchor-v11.png)
 
 ### Linking to an anchor
 
@@ -186,8 +176,7 @@ To delete the anchor:
 You can make images into clickable links in Umbraco:
 
 1. Insert an image into the RTE.
-
-   For more information, see the [Working with Images](#working-with-images) section.
+   - For more information, see the [Working with Images](#working-with-images) section.
 2. Select the image that will form the hyperlink.
 3. Enter the URL of the web page you wish to link to in the **Link** field.
 4. Enter the text that will be displayed as the link title in the **Link Title** field.
@@ -201,8 +190,7 @@ You can make images into clickable links in Umbraco:
 To remove a link:
 
 1. Select the link in the RTE.
-
-   For text links, click the cursor anywhere within the link text. For an image, click the image itself.
+   - For text links, click the cursor anywhere within the link text. For an image, click the image itself.
 2. Click the **Remove Link** button which will remove the hyperlink.
 3. Alternatively, you can click the **Insert/Edit Link** button and remove the link from the **Link** field.
 
@@ -219,8 +207,7 @@ To display images on a page they must be uploaded to your Umbraco Media library.
 3. Select the folder in which the image is.
 4. Click the thumbnail of your chosen image to open the image properties menu.
 5. Enter a name/description for the image in the **Caption (optional)** field.
-
-   It is important to add descriptive titles to images as these are used to assist visually impaired users.
+   - It is important to add descriptive titles to images as these are used to assist visually impaired users.
 6. Click **Select**.
 
 ![Inserting an Image from the Media Library](images/Inserting-Image-from-the-Media-Library-v11.png)
@@ -244,8 +231,7 @@ To delete an image from the page:
 
 1. Select the image.
 2. Press the **Delete** button on your keyboard.
-
-   The image disappears from the page but is not deleted from the Umbraco Media library.
+   - The image disappears from the page but is not deleted from the Umbraco Media library.
 
 ## Macros
 
@@ -259,8 +245,7 @@ The macros available differ on each system. Kindly check with your system admini
 2. Click the **Insert Macro** button from the toolbar.
 3. Select a macro to insert from the macros list.
 4. Click **Submit**.
-
-   The macro is displayed in the editor with a dotted border.
+   - The macro is displayed in the editor with a dotted border.
 
 ![Adding a Macro to the Page](images/Select-Macro-v11.png)
 
@@ -270,7 +255,7 @@ You can edit values after a macro has been added to the RTE:
 
 1. Select the macro in the RTE.
 2. Click the **Insert Macro** button from the toolbar.
-3. This will open the configuration menu where you can edit any values previously added.
+   - This will open the configuration menu where you can edit any values previously added.
 
 ### Removing macros
 
@@ -287,11 +272,7 @@ Tables are used to format information in a grid-based structure. When you insert
 
 ### Editing an Existing Table
 
-To edit the table after creating it:
-
-1. Click on the table.
-2. A pop-up appears with different table properties and options.
-3. Alternatively, you can click on the **Table** button in the RTE toolbar.
+To edit the table after creating it, click on the table. A pop-up appears with different table properties and options. Alternatively, you can click on the **Table** button in the RTE toolbar.
 
 ![Editing an Existing Table](images/Editing-an-existing-table-v11.png)
 
