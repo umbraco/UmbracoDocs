@@ -50,7 +50,7 @@ Below you can find a list of the most frequently asked questions including answe
 ### **How will the resources be split between the environments?**
      - All environments on the project moved to dedicated will share the resources of the dedicated server.
 ### **Will the customer be able to work on the project during the move?**
-     - It will not be possible to work on the project while it is being moved to the dedicated server. The move takes a couple of minutes, and during that time the backoffice will not respond as usual
+     - It will not be possible to work on the project while it is being moved to the dedicated server. The move takes a couple of minutes, and during that time the backoffice will not respond as usual.
 ### **Will the environments be moved at the same time or one by one?**
      - Yes, all environments will be moved simultaneously. 
 ### **Will the live environment be unavailable while the Project is moved?**
