@@ -45,7 +45,7 @@ Now the checks Deploy has to do to figure out the items and dependencies to proc
 
 Deploy will do comparisons between the entities in different environments to determine if they match and decide whether to include them in the operation. By default, for media files, a check is made on a portion of the intial bytes of the file.
 
-If a lot of files need to checked, this can be slow, and a faster option is available that uses the file metadata. The only downside of changing this option is a marginally increased the chance of Deploy considering a media file hasn't changed when it has.  This would omit it from the deployment.
+If a lot of files need to be checked, this can be slow, and a faster option is available that uses the file metadata. The only downside of changing this option is a marginally increased chance of Deploy considering a media file hasn't changed when it has.  This would omit it from the deployment.
 
 This option can be [set in configuration](./deploy-setings#mediafilechecksumcalculationmethod).
 
