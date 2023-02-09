@@ -43,7 +43,7 @@ Moving away from dedicated resources and back to shared can be done from the _De
 ## Frequently asked questions
 
 Wondering what happens when you move your environment to a dedicated server? 
-Below you can find a list of the most frequently asked questions and the answers.
+Below you can find a list of the most frequently asked questions including answers.
 
 1. **Will it move all the environments to the dedicated server?**
      - Yes, all environments will be moved to the dedicated server.
