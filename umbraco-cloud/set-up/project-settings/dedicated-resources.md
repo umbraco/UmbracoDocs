@@ -39,27 +39,29 @@ Moving away from dedicated resources and back to shared can be done from the _De
 * By hitting "Downgrade to shared" and confirming your choice, you will be redirected to the project page where you will be notified when the move back to a shared resource has been completed.
 * Your Cloud project is now back on a shared resource.
 
-
 ## Frequently asked questions
 
 Wondering what happens when you move your environment to a dedicated server? 
 Below you can find a list of the most frequently asked questions including answers.
 
-### **Will it move all the environments to the dedicated server?**
+### Will it move all the environments to the dedicated server?
+
 Yes, all environments will be moved to the dedicated server.
 
-### **How will the resources be split between the environments?**
+### How will the resources be split between the environments?
+
 All environments on the project moved to dedicated will share the resources of the dedicated server.
 
-### **Will the customer be able to work on the project during the move?**
+### Will the customer be able to work on the project during the move?
+
 It will not be possible to work on the project while it is being moved to the dedicated server. The move takes a couple of minutes, and during that time the backoffice will not respond as usual.
 
-### **Will the environments be moved at the same time or one by one?**
+### Will the environments be moved at the same time or one by one?
+
 Yes, all environments will be moved simultaneously. 
 
-### **Will the live environment be unavailable while the Project is moved?**
+### Will the live environment be unavailable while the Project is moved?
+
 There will always be an active live environment that continues to serve requests and be online during the move operation. When the moved live environment is ready and responding to requests, the hostnames will be switched to point to the moved environment.
 
 If you have any other questions regarding dedicated resource, feel free to reach out to [Umbraco Support](mailto:contact@umbraco.com).
-
-
