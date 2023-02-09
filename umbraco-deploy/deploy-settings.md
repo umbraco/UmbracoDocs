@@ -284,6 +284,6 @@ The cut-off before switching methods is set by this configuration value, and it 
 
 ## ContinueOnMediaFilePathTooLongException
 
-When restoring between different media systems, normally a local file system and a remote system based on blob storage, exceptions can occur due to file paths. What is accepted on one system may be rejected on another as the file path is too long. Normally this will only happen for files with particularly long names.
+When restoring between different media systems exceptions can occur due to file paths. They can happen between a local file system and a remote system based on blob storage. What is accepted on one system may be rejected on another as the file path is too long. Normally this will only happen for files with particularly long names.
 
 If you are happy to continue without throwing exceptions in these instances you can set this value to `true`.  For example, this may make sense if restoring to a local or development environment. If this is done such files will be skipped, and although the media item will exist there will be no associated file.
