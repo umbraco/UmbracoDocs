@@ -98,8 +98,9 @@ The **Insert/Edit Link** button is used to create links to internal pages, exter
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
 3. Enter the URL of the web page you wish to link to in the **Link** field.
 4. Enter the text that will be displayed as the link title in the **Link Title** field.
+
    This is important information for everyone reading the website with different accessibility aids.
-5. Select the target window/frame to open the link in a new window or tab in the **Target** field.
+5. Select the **Target** field to open the link in a new window or tab.
 6. Click **Submit**.
 
 ![Link to a Page on another Website](images/Link-to-an-external-Page-v11.png)
@@ -109,8 +110,9 @@ The **Insert/Edit Link** button is used to create links to internal pages, exter
 1. Select the text that will form the hyperlink.
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
 3. Select a page from the **Link to page** field.
+
    This will populate the **Link** and  **Link Title** fields automatically.
-4. Select the target window/frame to open the link in a new window or tab in the **Target** field.
+4. Select the **Target** field to open the link in a new window or tab.
 5. Click **Submit**.
 
 ![Link to a Page in Umbraco](images/Link-to-a-Page-v11.png)
@@ -121,13 +123,14 @@ The **Insert/Edit Link** button is used to create links to internal pages, exter
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
 3. Select the **Link to Media** button to select the media item.
 4. Click **Select**.
+
    This will populate the **Link** and  **Link Title** fields automatically with the media item information.
 
    {% hint style="info" %}
    By default, the **Link** field contains the media file name and cannot be edited.
    {% endhint %}
 
-5. Select the target window/frame to open the link in a new window or tab in the **Target** field.
+5. Select the **Target** field to open the link in a new window or tab.
 6. Click **Submit**.
 
 ![Link to a Media File in Umbraco](images/Link-to-Media-File-v11.png)
@@ -138,7 +141,7 @@ The **Insert/Edit Link** button is used to create links to internal pages, exter
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
 3. Enter the text `mailto:` followed by the email address you wish to link to in the **Link** field. For example, `mailto:contact@umbraco.com`.
 4. Enter the text that will be displayed as the link title in the **Link Title** field.
-5. Select the target window/frame to open the link in a new window or tab in the **Target** field.
+5. Select the **Target** field to open the link in a new window or tab.
 6. Click **Submit**.
 
 ![Link to an Email Address in Umbraco](images/Link-to-Email-Address-v11.png)
@@ -150,7 +153,7 @@ An anchor allows you to create internal page links that enable users to navigate
 ### Creating an Anchor
 
 1. Click the editor cursor where you wish to create the anchor.
-2. Click the ![Anchor Button](images/anchorButton.jpg) which will then launch the Anchor creation dialog.
+2. Click the **Anchor Button** which will then launch the Anchor creation dialog.
 3. Enter your anchor name in the **ID** field.
 
    {% hint style="info" %}
@@ -158,6 +161,7 @@ An anchor allows you to create internal page links that enable users to navigate
    {% endhint %}
 
 4. Click **OK**.
+
    You will see a small anchor icon where you previously had the editor cursor.
 
 To delete the anchor:
@@ -182,11 +186,12 @@ To delete the anchor:
 You can make images into clickable links in Umbraco:
 
 1. Insert an image into the RTE.
+
    For more information, see the [Working with Images](#working-with-images) section.
 2. Select the image that will form the hyperlink.
 3. Enter the URL of the web page you wish to link to in the **Link** field.
 4. Enter the text that will be displayed as the link title in the **Link Title** field.
-5. Select the target window/frame to open the link in a new window or tab in the **Target** field.
+5. Select the **Target** field to open the link in a new window or tab.
 6. Click **Submit**.
 
 ![Create a Link from an Image](images/Link-from-Image-v11.png)
@@ -196,6 +201,7 @@ You can make images into clickable links in Umbraco:
 To remove a link:
 
 1. Select the link in the RTE.
+
    For text links, click the cursor anywhere within the link text. For an image, click the image itself.
 2. Click the **Remove Link** button which will remove the hyperlink.
 3. Alternatively, you can click the **Insert/Edit Link** button and remove the link from the **Link** field.
@@ -213,6 +219,7 @@ To display images on a page they must be uploaded to your Umbraco Media library.
 3. Select the folder in which the image is.
 4. Click the thumbnail of your chosen image to open the image properties menu.
 5. Enter a name/description for the image in the **Caption (optional)** field.
+
    It is important to add descriptive titles to images as these are used to assist visually impaired users.
 6. Click **Select**.
 
@@ -237,6 +244,7 @@ To delete an image from the page:
 
 1. Select the image.
 2. Press the **Delete** button on your keyboard.
+
    The image disappears from the page but is not deleted from the Umbraco Media library.
 
 ## Macros
@@ -251,6 +259,7 @@ The macros available differ on each system. Kindly check with your system admini
 2. Click the **Insert Macro** button from the toolbar.
 3. Select a macro to insert from the macros list.
 4. Click **Submit**.
+
    The macro is displayed in the editor with a dotted border.
 
 ![Adding a Macro to the Page](images/Select-Macro-v11.png)
