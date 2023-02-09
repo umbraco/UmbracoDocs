@@ -23,7 +23,7 @@ This should not be necessary in normal use, but can occur after upgrades. If you
 
 When transferring or restoring content between environments, Deploy needs to ensure that all related items are updated together.  It also checks that any schema dependencies an item has also exist in the target environment. When a large amount of content is selected for transfer or restore, this process of determining all the dependent items can take some time.
 
-If you find the process slow or timing out, there are few options you can take.
+If you find the process slow or timing out, there are a few options you can take.
 
 ### Review timeouts
 
@@ -31,7 +31,7 @@ Firstly, you can review and update the [timeout settings available with Deploy](
 
 ### Use batch configuration for transfers to upstream environments
 
-If transferring items from a downstream environment to an upstream one, it's possible to [configure a batch size](./deploy-setings#batch-settings).  With this in place, transfers will be batched into separate operations, allowing each single operation to complete before any hosting environment enforced timeout.
+If transferring items from a downstream environment to an upstream one, it's possible to [configure a batch size](./deploy-setings#batch-settings).  With this in place, transfers will be batched into separate operations, allowing each single operation to complete before any hosting environment-enforced timeout.
 
 ### Ensure signatures are pre-cached
 
