@@ -187,14 +187,14 @@ You can make images into clickable links in Umbraco:
 
 ### Removing a Link
 
+![Remove link Button](images/Remove-link-v11.png)
+
 To remove a link:
 
 1. Select the link in the RTE.
    - For text links, click the cursor anywhere within the link text. For an image, click the image itself.
 2. Click the **Remove Link** button which will remove the hyperlink.
 3. Alternatively, you can click the **Insert/Edit Link** button and remove the link from the **Link** field.
-
-![Remove link Button](images/Remove-link-v11.png)
 
 ## Working with Images
 
