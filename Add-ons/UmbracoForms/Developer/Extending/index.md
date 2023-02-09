@@ -29,9 +29,13 @@ A field type handles rendering of the UI for a field in a form. It renders a sta
 
 A data source type enables Umbraco Forms to connect to a custom source of data. A datasource can consist of any kind of storage as long as it possible to return a list of fields Umbraco Forms can map values to. For example: a Database data source can return a list of columns Forms can send data to, which enables Umbraco Forms to map a form to a data source. A data source type is responsible for connecting Forms to external storage.
 
-### [Prevalue Source Types](Adding-a-Prevaluesourcetype.md)
+### [Prevalue Source Types (version 10+)](https://docs.umbraco.com/umbraco-forms/developer/extending/adding-a-prevaluesourcetype)
 
-A prevalue source type can connect to a 3rd party storage and retrieve a collection of values that can be used on fields that support prevalues. The prevalue source is responsible for connecting to the source and retrieving the collection of values.
+:::warning
+**This is only valid for Umbraco Forms version 10+.**
+:::
+
+A prevalue source type can connect to a 3rd party storage and retrieve a collection of values. These can can be used on fields that support prevalues. The prevalue source is responsible for connecting to the source and retrieving the collection of values.
 
 ### [Workflow Types](Adding-a-Workflowtype.md)
 
