@@ -20,13 +20,15 @@ Here is a quick overview of the default types:
     * Choosing a node directly from the Content tree or
     *   Using XPath
 
-        ![Umbraco Documents as prevalue sources](images/umbraco-documents-v9.png)
+        ![Umbraco Documents as Prevalue Source type](../../../.gitbook/assets/umbraco-docs-prevalue-source-type.png)
 
         Additional settings can be applied:
 
+        * Select which **Value field** should be used for the value of the prevalue.
         * Select **Use current page as root** instead of choosing a specific root node. Note that the preview is not available when this setting is enabled.
         * Select a specific **Document type**, if the selected root node contains a different Document Type.
-        * Select to include **Grand children** of the selected root node.
+        * Select **List all Descendants** of the selected root node to list all levels of descendants.
+        * Select **Order by** from the drop-down list to display how the prevalue list should be ordered.
 *   **SQL Database**
 
     Connect to a OleDB compatible database table and construct a prevalue source from it. Once selected, it will be editable from the Forms interface.
@@ -38,6 +40,7 @@ Here is a quick overview of the default types:
     * Table Name
     * Key Column
     * Value Column
+    * Caption Column
 *   **Umbraco Data Type Prevalues**
 
     Choose an Umbraco Data Type to use its configured prevalue collection.
