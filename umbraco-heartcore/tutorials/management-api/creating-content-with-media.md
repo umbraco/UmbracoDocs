@@ -23,6 +23,7 @@ To create a new document type with a Media Picker V3 property, follow these step
 1. Go to the settings section in the backoffice and click the Document Types `Create...` option, and then select the option to create a new document type in the sub-menu.
 
     ![Creating a document type 1](../images/settings-create-document-type1.png)
+    ![Creating a document type 2](../images/settings-create-document-type2.png)
 
 2. Fill in the name of the document type, create a new group and add a new property of the Media Picker V3 type.
 
