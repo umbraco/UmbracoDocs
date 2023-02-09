@@ -266,11 +266,11 @@ If you would prefer to use SQL Server LocalDb when it's available on your local 
 
 ## MediaFileChecksumCalculationMethod
 
-Deploy will do comparisons between the entities in different environments to determine if they match and decide whether to include them in the operation. By default, for media files, a check is made on the a portion of the intial bytes of the file.
+Deploy will do comparisons between the entities in different environments to determine if they match and decide whether to include them in the operation. By default, for media files, a check is made on the a portion of the initial bytes of the file.
 
 This corresponds to the default setting of `PartialFileContents`.
 
-If a lot of files need to checked, this can be slow, and a faster option is available that uses the file metadata. The only downside of changing this option is a marginally increased the chance of Deploy considering a media file hasn't changed when it has.  This would omit it from the deployment.
+If a lot of files need to be checked, this can be slow, and a faster option is available that uses the file metadata. The only downside of changing this option is a marginally increased chance of Deploy considering a media file hasn't changed when it has.  This would omit it from the deployment.
 
 To use this method, set the value to `Metadata`.
 
@@ -278,7 +278,7 @@ To use this method, set the value to `Metadata`.
 
 When reviewing a set of items for a deployment operation, Deploy will retrieve and include relations. It does this either via single database lookups, or by bringing all relations into memory in one step, and retrieving them from there.
 
-For small deployment operations, the former is the more optimal approach. It gets slow though when the number if items being transferred is large.
+For small deployment operations, the former is the more optimal approach. It gets slow though when the number of items being transferred is large.
 
 The cut-off before switching methods is set by this configuration value, and it defaults to an operation size of `100` items.
 

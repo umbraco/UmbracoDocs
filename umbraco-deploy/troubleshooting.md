@@ -13,7 +13,7 @@ When transferring or restoring content between two Umbraco Deploy environments, 
 
 Umbraco Deploy maintains a cached set of signatures that represent each schema and content item. They are used when transferring or restoring content between environments to aid performance.
 
-If having resolved schema mismatches you still have reports of errors, it might be that the signatures are out of date.  In other words, Deploy is using a cached representation of an item that no longer matches the actual item stored in Umbraco.
+If having resolved schema mismatches you still have reports of errors, it might be that the signatures are out of date. In other words, Deploy is using a cached representation of an item that no longer matches the actual item stored in Umbraco.
 
 This should not be necessary in normal use, but can occur after upgrades. If you have this situation, you can clear the cached signatures in both the upstream and downstream environments.  You do this via the *Clear Cached Signatures* operation available on the _Settings > Deploy_ dashboard:
 
