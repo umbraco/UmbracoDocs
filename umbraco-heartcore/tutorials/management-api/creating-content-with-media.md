@@ -16,7 +16,7 @@ You can then use the response body as a template for your request body when crea
 The following example shows you the process for determining the request body while creating content with a Media Picker V3 property.
 
 {% hint style="info" %}
-To follow this guide for the Media Picker (legacy) replace the Media Picker V3 property with the Media Picker (legacy) property when creating the Document Type and content node.
+To follow this guide for the Media Picker (legacy) property editor replace the Media Picker V3 property with the Media Picker (legacy) property. You need to do this when creating the Document Type and content node.s
 {% endhint %}
 
 ### Create a new Document Type with a Media Picker V3 property
@@ -56,7 +56,7 @@ To upload an image to the media section, do one of the following:
 
     ![Creating media with the File or Image option in the Create dropdown](../images/media-create-dropdown.png)
 
-- Send a request (e.g. with the Management API) to upload an image from binary data. See the [API Documentation](../../api-documentation/content-management/media/README.md#create-media) for more information on how to do this.
+- Send a request (for example with the Management API) to upload an image from binary data. See the [API Documentation](../../api-documentation/content-management/media/README.md#create-media) for more information on how to do this.
 
 ### Create a new content node of the new Document Type
 
@@ -115,33 +115,33 @@ To query the content node using the Management API Browser, follow these steps:
 
 ### Clean up the response body and use it as a template for your request body
 
-Lastly, we need to clean up the response body and use it as a template for our request body when creating content through the Management API.
+Finally, we need to clean up the response body, so it can be used as a template for our request body.
 
 In this case, we can omit ID's and create/update dates as these are auto-generated at creation time:
 
 ```json
 {
-  "_currentVersionState": {
-    "$invariant": "PUBLISHED"
-  },
+//"_currentVersionState": {
+//  "$invariant": "PUBLISHED"
+//},
   "name": {
     "$invariant": "Star Wars Blog"
   },
 //"_updateDate": {
 //  "$invariant": "2023-02-08T13:26:16.6Z"
 //},
-  "_hasChildren": false,
-  "_level": 1,
+//"_hasChildren": false,
+//"_level": 1,
 //"_createDate": "2023-02-08T13:21:35.27Z",
 //"_id": "a6126eb4-c667-466c-ae7c-252a5b2e7be9",
   "contentTypeAlias": "blog",
-  "sortOrder": 0,
+//"sortOrder": 0,
   "image": {
     "$invariant": [{
       //"key": "394c9bfd-be7b-486d-968a-ce844aa76b5e",
         "mediaKey": "766c9c5b-f4eb-4a5c-b94e-06701eafcbab",
-        "crops": [],
-        "focalPoint": null
+      //"crops": [],
+      //"focalPoint": null
       }]
   }
 }
@@ -152,21 +152,13 @@ Resulting in the following request body:
 ```json
 //You cannot use this request body as-is, as the mediaKey will differ.
 {
-  "_currentVersionState": {
-    "$invariant": "PUBLISHED"
-  },
   "name": {
     "$invariant": "Star Wars Blog"
   },
-  "_hasChildren": false,
-  "_level": 1,
   "contentTypeAlias": "blog",
-  "sortOrder": 0,
   "image": {
     "$invariant": [{
         "mediaKey": "766c9c5b-f4eb-4a5c-b94e-06701eafcbab",
-        "crops": [],
-        "focalPoint": null
       }]
   }
 }
@@ -194,3 +186,16 @@ To create a new content node with a Media Picker, follow these steps:
 4. Click the `Make Request` button.
 
 Now you have created a new content node with a Media Picker property editor that correctly references the image with the ID "766c9c5b-f4eb-4a5c-b94e-06701eafcbab".
+
+## Publishing a Media Picker with the Management API
+
+After having created the content node it is time to publish it, so it can be viewed on the front-end.
+
+To publish a content node with a Media Picker, follow these steps:
+
+1. Go to the Management API Browser, fill in the API Key as a Custom Request Header, and click the `Go!` button.
+2. Type in the following request URL: `https://api.umbraco.io/content/{id}/publish{?culture}`.
+   - `{id}` is the ID of the content node you want to publish.
+   - `{?culture}` is the culture you want to publish the content node in. By default, the culture is set to `en-US`.
+
+    <!--![Publishing a content node](../images/management-api-browser-publishing-a-content-node.png) missing image-->
