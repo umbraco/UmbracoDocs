@@ -105,7 +105,7 @@ To query the content node using the Management API Explorer, follow these steps:
 
 3. Copy the response body from the response section in the editor window.
 
-    ![](../images/management-api-browser-copy-response.png)
+    ![Copying the JSON response](../images/management-api-browser-copy-response.png)
 
 ### Clean up the response body and use it as a template for your request body
 
