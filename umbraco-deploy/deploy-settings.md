@@ -266,7 +266,7 @@ If you would prefer to use SQL Server LocalDb when it's available on your local 
 
 ## MediaFileChecksumCalculationMethod
 
-Deploy will do comparisons between the entities in different environments to determine if they match and decide whether to include them in the operation. By default, for media files, a check is made on the a portion of the initial bytes of the file.
+Deploy will do comparisons between the entities in different environments to determine if they match and decide whether to include them in the operation. By default, for media files, a check is made on a portion of the initial bytes of the file.
 
 This corresponds to the default setting of `PartialFileContents`.
 
