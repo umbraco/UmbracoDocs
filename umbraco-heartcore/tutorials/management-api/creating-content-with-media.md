@@ -6,34 +6,39 @@ The example will be using the Media Picker V3 property editor.
 
 ## Determining the request body
 
-Determining the right request body for creating content through the Management API can be a bit tricky. An excellent way to figure out the correct request body is to first create the content in the backoffice and then use the Management API Explorer to get the response body for the content created. You can then use this response body as a template for your request body when creating content through the Management API.
+Determining the right request body for creating content through the Management API can be a bit tricky. One way to figure out the correct request body is to:
 
-The following example shows you the process for determining the request body for creating content with a Media Picker V3 property.
+1. Create the content in the backoffice
+2. Use the Management API Browser to get the response body for the content created.
+
+You can then use the response body as a template for your request body when creating content through the Management API.
+
+The following example shows you the process for determining the request body while creating content with a Media Picker V3 property.
 
 {% hint style="info" %}
-To follow this guide for the Media Picker (legacy) simply just replace the Media Picker V3 property with the Media Picker (legacy) property when creating the document type and content node.
+To follow this guide for the Media Picker (legacy) replace the Media Picker V3 property with the Media Picker (legacy) property when creating the Document Type and content node.
 {% endhint %}
 
-### Create a new document type with a Media Picker V3 property
+### Create a new Document Type with a Media Picker V3 property
 
-First we must create a document type with a Media Picker V3 property. This will allow us to create content with the Media Picker V3 property.
+First, we must create a Document Type with a Media Picker V3 property. This will allow us to create content with the Media Picker V3 property.
 
-To create a new document type with a Media Picker V3 property, follow these steps:
+To create a new Document Type with a Media Picker V3 property, follow these steps:
 
-1. Go to the settings section in the backoffice and click the Document Types `Create...` option, and then select the option to create a new document type in the sub-menu.
+1. Go to the settings section in the backoffice and click the Document Types `Create...` option, and then select the option to create a new Document Type in the sub-menu.
 
-    ![Creating a document type 1](../images/settings-create-document-type1.png)
-    ![Creating a document type 2](../images/settings-create-document-type2.png)
+    ![Creating a Document Type 1](../images/settings-create-document-type1.png)
+    ![Creating a Document Type 2](../images/settings-create-document-type2.png)
 
-2. Fill in the name of the document type, create a new group and add a new property of the Media Picker V3 type.
+2. Fill in the name of the Document Type, create a new group and add a new property of the Media Picker V3 type.
 
-    ![Creating a document type 3](../images/settings-create-document-type3.png)
+    ![Creating a Document Type 3](../images/settings-create-document-type3.png)
 
-3. Go to the Permissions page for the document type and enable 'Allow as root'.
+3. Go to the Permissions page for the Document Type and enable 'Allow as root'.
 
-    ![Creating a document type 4](../images/settings-create-document-type4.png)
+    ![Creating a Document Type 4](../images/settings-create-document-type4.png)
 
-4. Save the document type.
+4. Save the Document Type.
 
 ### Upload an image to the media section
 
@@ -53,13 +58,13 @@ To upload an image to the media section, do one of the following:
 
 - Send a request (e.g. with the Management API) to upload an image from binary data. See the [API Documentation](../../api-documentation/content-management/media/README.md#create-media) for more information on how to do this.
 
-### Create a new content node of the new document type
+### Create a new content node of the new Document Type
 
-Next, we need to create a new content node of the new document type. This will allow us to query the content node using the Management API Explorer.
+Next, we need to create a new content node of the new Document Type. This will allow us to query the content node using the Management API Browser.
 
-To create a new content node of the new document type, follow these steps:
+To create a new content node of the new Document Type, follow these steps:
 
-1. Go to the content section in the backoffice, click the three dots on the right side of the content sidebar, and select the document type we created earlier.
+1. Go to the content section in the backoffice, click the three dots on the right side of the content sidebar, and select the Document Type we created earlier.
 
     ![Creating a content node 1](../images/content-create-content-node1.png)
 
@@ -90,19 +95,19 @@ To query content using the Management API, you need the ID of the content node. 
 
     ![Getting the content node ID](../images/content-content-node-id.png)
 
-### Query the content node using the Management API Explorer
+### Query the content node using the Management API Browser
 
-Now we can query the content node using the Management API Explorer, the content node ID and our API Key. This will allow us to get the response body for the content node we just created.
+Now we can query the content node using the Management API Browser, the content node ID and our API Key. This will allow us to get the response body for the content node we created.
 
-To query the content node using the Management API Explorer, follow these steps:
+To query the content node using the Management API Browser, follow these steps:
 
 1. Go to the settings section in the backoffice, unfold the Headless section, select the API Browser menu item, and click the Content Management tab in the editor window.
 
-    ![Navigating to the Management API Explorer](../images/management-api-browser-content-managment-tab.png)
+    ![Navigating to the Management API Browser](../images/management-api-browser-content-managment-tab.png)
 
 2. Write the request URL to query the newly created content, fill in the API Key as a Custom Request Header, and click the `Go!` button.
 
-    ![Filling info into the Management API Explorer](../images/management-api-browser-fill-in-info.png)
+    ![Filling info into the Management API Browser](../images/management-api-browser-fill-in-info.png)
 
 3. Copy the response body from the response section in the editor window.
 
@@ -177,7 +182,7 @@ After having followed the steps demonstrated in the [previous section](#determin
 
 To create a new content node with a Media Picker, follow these steps:
 
-1. Go to the Management API Explorer, fill in the API Key as a Custom Request Header, and click the `Go!` button.
+1. Go to the Management API Browser, fill in the API Key as a Custom Request Header, and click the `Go!` button.
 2. Now click the small orange exclamation mark button next to the content rel in the `Links` section. This opens up a modal with the option to make non-GET requests.
 
     ![Opening the non-GET request modal](../images/management-api-explorer-opening-the-non-get-requests-modal.png)

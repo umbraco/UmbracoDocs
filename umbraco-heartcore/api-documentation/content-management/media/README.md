@@ -477,7 +477,7 @@ Get a list of children (media items) by their parent GUID ID.
 
 Create a new media item and optionally upload a file to the created item.
 
-Media would typically contain an upload field (the `Image` and `File` media types has this by default), which means it is possible to send a file along with the request to create a new media item. This is done by sending a multi-part request with the JSON body and the file. The first MultipartBoundary contains the JSON body describing the content for the image. The second MultipartBoundary contains the file. If the media item does not contain a file you can send a regular JSON request to create the media.
+Media typically contains an upload field (the `Image` and `File` media types has this by default). An upload field allows sending a file along with the request to create a new media item. This is done by sending a multi-part request with the JSON body and the file. The first MultipartBoundary contains the JSON body describing the content for the image. The second MultipartBoundary contains the file. If the media item does not contain a file you can send a regular JSON request to create the media.
 
 {% hint style="info" %}
 Different media property editors will require different request body formats.The FileUpload property editor has the file name as the value `"umbracoFile": FILE_NAME`, and the Image Cropper property editor expects a JSON value `"umbracoFile": { "src": FILE_NAME }`. To verify the JSON structure you can manually upload the media file via the backoffice and fetch the data. It can then be used for reference.
