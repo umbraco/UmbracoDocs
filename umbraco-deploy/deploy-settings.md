@@ -56,7 +56,7 @@ For illustration purposes, the following structure represents the full set of op
             "ReloadMemoryCacheFollowingDiskReadOperation": false,
             "AllowDomainsDeploymentOperations": "None",
             "PreferLocalDbConnectionString": false,
-            "MediaFileChecksumCalculationMethod": "FileMetadata",
+            "MediaFileChecksumCalculationMethod": "Metadata",
             "NumberOfSignaturesToUseAllRelationCache": 100,
             "ContinueOnMediaFilePathTooLongException": false
         }
