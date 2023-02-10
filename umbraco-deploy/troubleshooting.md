@@ -39,6 +39,8 @@ For transfer or restore operations, it's worth ensuring Deploy's cached signatur
 
 ![Set cached signatures](images/set-cached-sigs.png)
 
+The process make take a few minutes to complete if you have a lot of content or media in your installation.  Information is written to the log indicating the signatures calculated for each entity type.
+
 Now the checks Deploy has to do to figure out the items and dependencies to process will complete much more quickly.
 
 ### Modify the checksum calculation method for media files
