@@ -4,7 +4,7 @@ description: "A guide to customization of Backoffice Search"
 
 # Backoffice Search
 
-The search facility of the Umbraco Backoffice allows the searching 'across sections' of different types of Umbraco entities, eg Content, Media, Members. However 'by default' only a small subset of standard fields are searched:
+The search facility of the Umbraco Backoffice allows the searching 'across sections' of different types of Umbraco entities, for example Content, Media, Members. However 'by default' only a small subset of standard fields are searched:
 
 | Node Type    | Propagated Fields      |
 | ------------ | ---------------------- |
@@ -18,7 +18,7 @@ An Umbraco implementation might have additional custom properties that it would 
 
 To add custom properties, it is required to register a custom implementation of `IUmbracoTreeSearcherFields`. We recommend to override the existing `UmbracoTreeSearcherFields`.
 
-Your custom implementation needs to be registered in the container. E.g. in the `Startup.ConfigureServices` method or in a composer, as an alternative.
+Your custom implementation needs to be registered in the container. For example in the `Startup.ConfigureServices` method or in a composer, as an alternative.
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
