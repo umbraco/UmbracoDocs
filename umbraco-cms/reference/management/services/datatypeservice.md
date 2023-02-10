@@ -4,8 +4,8 @@ The DataTypeService acts as a "gateway" to Umbraco data for operations which are
 
 [Browse the API documentation for IDataTypeService](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Services.IDataTypeService.html).
 
- * **Namespace:** `Umbraco.Cms.Core.Services`
- * **Assembly:** `Umbraco.Core.dll`
+* **Namespace:** `Umbraco.Cms.Core.Services`
+* **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
 
@@ -18,6 +18,7 @@ using Umbraco.Cms.Core.Services;
 ```
 
 For Razor views:
+
 ```csharp
 @using Umbraco.Cms.Core.Services
 ```
@@ -28,7 +29,7 @@ For Razor views:
 
 If you wish to use the Data Type service in a class, you need to specify the `IDataTypeService` interface in your constructor:
 
-```c#
+```
 public class MyClass
 {
     private IDataTypeService _dataTypeService;

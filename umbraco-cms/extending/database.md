@@ -1,5 +1,5 @@
 ---
-description: "A guide to creating a custom Database table in Umbraco"
+description: A guide to creating a custom Database table in Umbraco
 ---
 
 # Creating a Custom Database Table
@@ -306,7 +306,7 @@ The following example creates an `UmbracoApiController` to be able to fetch and 
 This example does not use the aforementioned `BlogCommentSchema` class but rather a separate (yet duplicate) class that is not part of the example. Also, be aware that things like error handling and data validation have been omitted for brevity.
 {% endhint %}
 
-```C#
+```
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using Umbraco.Cms.Infrastructure.Scoping;
@@ -337,3 +337,4 @@ namespace MyNamespace
         }
     }
 }
+```

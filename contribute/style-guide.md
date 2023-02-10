@@ -129,7 +129,7 @@ Run the following command:
 
 The Vale extension will also run automatically when you are viewing Markdown files. It will present warnings directly in the document as you write, based on the style rules set for the project. It will look similar to this:
 
-![Example of the extension](../.gitbook/assets/extension.png)
+![Example of the extension](images/extension.PNG)
 
 ### Using Vale locally
 
@@ -141,7 +141,7 @@ Next, you can open a command line tool in the documentation repository and run t
 
 This tells Vale to test all markdown files (.md) in the current directory (.). The output will look something like this:
 
-![Vale Output](../.gitbook/assets/vale-output.png)
+![Vale Output](images/vale-output.PNG)
 
 It will show you what file has issues. In the case above the `v8documentation.md` the article broke the [HeadingsPunctuation rule](style-guide.md#punctuation-in-headings), and it did so in the following places:
 

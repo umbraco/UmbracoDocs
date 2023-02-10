@@ -1,5 +1,7 @@
 ---
-description: "The UmbracoContext is a helpful service provided on each request to the website"
+description: >-
+  The UmbracoContext is a helpful service provided on each request to the
+  website
 ---
 
 # UmbracoContext helper
@@ -16,7 +18,7 @@ If you need an `UmbracoContext` in your own controllers, you need to inject an `
 
 The following is an example of how to get access to the `UmbracoContext` in a controller:
 
-```C#
+```
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

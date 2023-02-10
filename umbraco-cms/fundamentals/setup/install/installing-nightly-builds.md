@@ -1,8 +1,8 @@
-﻿---
-description: "Instructions on installing nightly builds of Umbraco."
+---
+description: Instructions on installing nightly builds of Umbraco.
 ---
 
-# Installing nightly builds
+# Installing Nightly Builds
 
 Here we'll explain how you can get the latest bleeding edge builds of Umbraco V9 and above. There's three steps to do this.
 
@@ -20,7 +20,7 @@ The NuGet feed containing the nightly builds is `https://www.myget.org/F/umbraco
 
 To add the nightly feed using the command line, open up your command prompt of choice and run the following command:
 
-```none
+```
 dotnet nuget add source "https://www.myget.org/F/umbraconightly/api/v3/index.json" -n "Umbraco Nightly"
 ```
 
@@ -66,7 +66,7 @@ Now the `NuGet` window will open, in the top right corner there is a dropdown `P
 
 ![Select the nightly NuGet feed](images/VS/select-nuget-feed.jpg)
 
-Now that the correct feed is selected we're almost ready to search for the package and choose a version, however since these are marked as prerelease, we have to tick the checkbox `Include prerelease` otherwise these will be filtered out. Next search for `Umbraco.Templates`, and choose that package. Now we can click on the `Version` drop down and see the available nightly builds for both V9 and V10. his is the ***template***, not the Umbraco package itself, so it won't work to click install. Instead chose the applicable version and note down the version number
+Now that the correct feed is selected we're almost ready to search for the package and choose a version, however since these are marked as prerelease, we have to tick the checkbox `Include prerelease` otherwise these will be filtered out. Next search for `Umbraco.Templates`, and choose that package. Now we can click on the `Version` drop down and see the available nightly builds for both V9 and V10. his is the _**template**_, not the Umbraco package itself, so it won't work to click install. Instead chose the applicable version and note down the version number
 
 ![Find the version](images/VS/find-the-version.jpg)
 
@@ -76,7 +76,7 @@ You can use the NuGet window in Rider to browse the available template versions.
 
 ![Choose the feed](images/Rider/choose-the-feed.jpg)
 
-Now that the correct feed is selected we're almost ready to search for the package and choose a version, however since these are marked as prerelease, we have to tick the checkbox `Prerelase` otherwise these will be filtered out. Next search for `Umbraco.Templates`, and choose that package. Now we can click on the `Version` drop down and see the available nightly builds for both V9 and V10. It's important to note that this is the ***template***, not the Umbraco package itself, so it won't work to click install. Instead chose the applicable version and note down the version number
+Now that the correct feed is selected we're almost ready to search for the package and choose a version, however since these are marked as prerelease, we have to tick the checkbox `Prerelase` otherwise these will be filtered out. Next search for `Umbraco.Templates`, and choose that package. Now we can click on the `Version` drop down and see the available nightly builds for both V9 and V10. It's important to note that this is the _**template**_, not the Umbraco package itself, so it won't work to click install. Instead chose the applicable version and note down the version number
 
 ![Find the version](images/Rider/find-the-version.jpg)
 
@@ -84,9 +84,9 @@ Now that the correct feed is selected we're almost ready to search for the packa
 
 Now that our feed is added and we know the exact version we're ready to install our template.
 
-Open up your command prompt of choice and execute the `dotnet new -i ` command using the latest, version, at the time of writing the latest preview build is `9.4.0-preview20220228.85007` so to install the newest nightly build I'd have to execute:
+Open up your command prompt of choice and execute the `dotnet new -i` command using the latest, version, at the time of writing the latest preview build is `9.4.0-preview20220228.85007` so to install the newest nightly build I'd have to execute:
 
-```none
+```
 dotnet new -i Umbraco.Templates::9.4.0-preview20220228.85007
 ```
 
@@ -94,4 +94,4 @@ The name and the versions are separated with two colons `::`, it's important tha
 
 With that, we've successfully installed the latest nightly build of Umbraco! All we have to do now to create a site with the newest nightly is to run `dotnet new umbraco -n MyAwesomeNightlySite`
 
-For more information about installing Umbraco see [the installation documentation](README.md)
+For more information about installing Umbraco see [the installation documentation](./)

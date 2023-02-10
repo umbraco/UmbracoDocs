@@ -1,8 +1,8 @@
 ---
-description: "A guide to creating custom file systems in Umbraco"
+description: A guide to creating custom file systems in Umbraco
 ---
 
-# Custom file systems (IFileSystem)
+# Custom File Systems (IFileSystem)
 
 ## Media Filesystem
 
@@ -145,7 +145,7 @@ By default the MediaPath scheme used by Umbraco is the `UniqueMediaPathScheme` t
 
 You can set the `MediaPathScheme` during composition, for example if you wanted to revert back to the V7 methodology in a migrated site:
 
-```c#
+```
   builder.Services.AddUnique<IMediaPathScheme, OriginalMediaPathScheme>();
 ```
 
@@ -155,11 +155,11 @@ And you could create your own logic for the path by implementing `IMediaPathSche
 
 Umbraco also registers instances of `PhysicalFileSystem` for the following parts of Umbraco that persist to 'files':
 
-- `MacroPartialsFileSystem`
-- `PartialViewsFileSystem`
-- `StylesheetsFileSystem`
-- `ScriptsFileSystem`
-- `MvcViewsFileSystem`
+* `MacroPartialsFileSystem`
+* `PartialViewsFileSystem`
+* `StylesheetsFileSystem`
+* `ScriptsFileSystem`
+* `MvcViewsFileSystem`
 
 These are accessible via dependency injection.
 
@@ -184,7 +184,7 @@ When replacing the stylesheet filesystem, you don't need to register it, since i
 
 The IUmbracoBuilder has an extension method for configuring the `FileSystems`, you need to invoke this method with an action that accepts an `IServiceProvider` and the `FileSystems` you will configure, configuring the `FileSystems` can look like this:
 
-```c#
+```
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -228,4 +228,4 @@ After the `SetStylesheetFileSystem` method has run, `FileSystems.StylesheetsFile
 
 There is an Azure Blob Storage provider:
 
-- [Azure Blob Storage](azure-blob-storage.md)
+* [Azure Blob Storage](azure-blob-storage.md)

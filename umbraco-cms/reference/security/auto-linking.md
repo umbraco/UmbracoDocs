@@ -1,5 +1,5 @@
 ---
-description: "Learn more about linking to external login providers."
+description: Learn more about linking to external login providers.
 ---
 
 # Linking External Login Provider accounts
@@ -14,7 +14,7 @@ To enable auto linking you have to implement a custom named configuration of `Ba
 
 ### Example for users
 
-_This example shows connection to an Open ID Connect Service such as [IdentityServer4](https://github.com/IdentityServer/IdentityServer4) or [OpenIDDict](https://github.com/openiddict/openiddict-core)_
+_This example shows connection to an Open ID Connect Service such as_ [_IdentityServer4_](https://github.com/IdentityServer/IdentityServer4) _or_ [_OpenIDDict_](https://github.com/openiddict/openiddict-core)
 
 You can first create a `OpenIdConnectBackOfficeExternalLoginProviderOptions.cs` file which configures the options like
 
@@ -113,8 +113,7 @@ To register this configuration class, you can call the following from your `star
 services.ConfigureOptions<OpenIdConnectBackOfficeExternalLoginProviderOptions>();
 ```
 
-We recommend to create an extension method on the `IUmbracoBuilder`, to add the Open Id Connect Authentication, like this
-This extension can also handle the configuration of `OpenIdConnectBackOfficeExternalLoginProviderOptions`:
+We recommend to create an extension method on the `IUmbracoBuilder`, to add the Open Id Connect Authentication, like this This extension can also handle the configuration of `OpenIdConnectBackOfficeExternalLoginProviderOptions`:
 
 ```csharp
 public static IUmbracoBuilder AddOpenIdConnectAuthentication(this IUmbracoBuilder builder)
@@ -178,13 +177,11 @@ For some providers, it doesn't make sense to use auto-linking. This is especiall
 
 ### Example for members
 
-The way to implement auto linking for members is fairly similar to how it is for users. The main difference is the UI, where Umbraco do not have a fixed login page for members.
-Instead, Umbraco ships with some Partial Macro Snippets for `Login` and `EditProfile` that contains handling of Login and manual linking of the configured external member providers.
+The way to implement auto linking for members is fairly similar to how it is for users. The main difference is the UI, where Umbraco do not have a fixed login page for members. Instead, Umbraco ships with some Partial Macro Snippets for `Login` and `EditProfile` that contains handling of Login and manual linking of the configured external member providers.
 
 When auto-linking is enabled, only the `Login` snippet is relevant as users do not have to register before.
 
-The following example will show how to use Google and external login provider.
-You can first create a `GoogleMemberExternalLoginProviderOptions.cs` file which configures the options like
+The following example will show how to use Google and external login provider. You can first create a `GoogleMemberExternalLoginProviderOptions.cs` file which configures the options like
 
 ```csharp
 using System;
@@ -257,8 +254,7 @@ To register this configuration class, you can call the following from your `star
 services.ConfigureOptions<GoogleMemberExternalLoginProviderOptions>();
 ```
 
-Like for users, we recommend creating an extension method on the `IUmbracoBuilder`, to add the Google Authentication, like this.
-This extension can also handle the configuration of `GoogleMemberExternalLoginProviderOptions`:
+Like for users, we recommend creating an extension method on the `IUmbracoBuilder`, to add the Google Authentication, like this. This extension can also handle the configuration of `GoogleMemberExternalLoginProviderOptions`:
 
 ```csharp
 public static IUmbracoBuilder AddMemberGoogleAuthentication(this IUmbracoBuilder builder)
@@ -287,7 +283,7 @@ public static IUmbracoBuilder AddMemberGoogleAuthentication(this IUmbracoBuilder
 
 Finally this extension can also be called from the `Startup.cs` like the example below:
 
-```C
+```
 csharp
 services.AddUmbraco(_env, _config)
    .AddBackOffice()
@@ -314,7 +310,7 @@ In some cases you may want to flow a Claim returned in your external login provi
 Reason for this could be to store the external login provider user ID into the backoffice identity cookie. That way it can be retrieved on each request in order to look up some data in another system that needs the current user id from the external login provider.
 
 {% hint style="warning" %}
-Do not flow large amounts of data into the backoffice identity because this information is stored into the backoffice authentication cookie and cookie limits will apply. Data like JWT tokens need to be [persisted](#storing-external-login-provider-data) somewhere to be looked up and not stored within the backoffice identity itself.
+Do not flow large amounts of data into the backoffice identity because this information is stored into the backoffice authentication cookie and cookie limits will apply. Data like JWT tokens need to be [persisted](auto-linking.md#storing-external-login-provider-data) somewhere to be looked up and not stored within the backoffice identity itself.
 {% endhint %}
 
 ### Example
@@ -356,10 +352,7 @@ OnExternalLogin = (user, loginInfo) => {
 
 ## Storing external login provider data
 
-In some cases, you may need to persist data from your external login provider like Access Tokens, etc.
-You can persist this data to the affiliated user's external login data via the `IExternalLoginWithKeyService`.
-The `void Save(Guid userOrMemberKey,IEnumerable<IExternalLoginToken> tokens)` overload takes a new model of type `IEnumerable<IExternalLogin>`. `IExternalLogin` contains a property called `UserData`.
-This is a blob text column so can store any arbitrary data for the external login provider.
+In some cases, you may need to persist data from your external login provider like Access Tokens, etc. You can persist this data to the affiliated user's external login data via the `IExternalLoginWithKeyService`. The `void Save(Guid userOrMemberKey,IEnumerable<IExternalLoginToken> tokens)` overload takes a new model of type `IEnumerable<IExternalLogin>`. `IExternalLogin` contains a property called `UserData`. This is a blob text column so can store any arbitrary data for the external login provider.
 
 {% hint style="info" %}
 Be aware that the local Umbraco user must already exist and be linked to the external login provider before data can be stored here. In cases where auto-linking occurs and the backoffice user isn't yet created, you will most likely need to store this data in memory. First, during auto-linking and then persist this data to the service once the user is linked and created.
