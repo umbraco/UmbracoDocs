@@ -1,5 +1,7 @@
 # Table of content
+
 * [Security](umbraco-cloud/security.md)
+* [Frequently asked questions](umbraco-cloud/frequently-asked-questions.md)
 
 ## Getting Started
 
@@ -22,6 +24,7 @@
  * [Migrate between regions](umbraco-cloud/getting-started/migrate-between-regions.md)
   
 ## Setup
+
 * [Set Up](umbraco-cloud/set-up/README.md)
  * [Working with a Local Clone](umbraco-cloud/set-up/working-locally.md)
  * [Working with Mac](umbraco-cloud/set-up/working-with-mac.md)
@@ -98,13 +101,13 @@
 ## Troubleshooting
 
 * [Troubleshooting](umbraco-cloud/troubleshooting/README.md)
- * [Troubleshooting FAQ](umbraco-cloud/troubleshooting/faq.md)
- * [Log files](umbraco-cloud/troubleshooting/log-files.md)
- * [The Umbraco Backoffice](umbraco-cloud/troubleshooting/troubleshooting-backoffice.md)
- * [The Frontend](umbraco-cloud/troubleshooting/troubleshooting-frontend.md)
- * [The Umbraco Cloud Portal](umbraco-cloud/troubleshooting/troubleshooting-portal.md)
- * [Site Performance checklist](umbraco-cloud/troubleshooting/troubleshooting-siteperformance.md)
- * [Troubleshooting deployments](umbraco-cloud/troubleshooting/deployments/README.md)
+* [Troubleshooting FAQ](umbraco-cloud/troubleshooting/faq.md)
+* [Log files](umbraco-cloud/troubleshooting/log-files.md)
+* [The Umbraco Backoffice](umbraco-cloud/troubleshooting/troubleshooting-backoffice.md)
+* [The Frontend](umbraco-cloud/troubleshooting/troubleshooting-frontend.md)
+* [The Umbraco Cloud Portal](umbraco-cloud/troubleshooting/troubleshooting-portal.md)
+* [Site Performance checklist](umbraco-cloud/troubleshooting/troubleshooting-siteperformance.md)
+* [Troubleshooting deployments](umbraco-cloud/troubleshooting/deployments/README.md)
    * [Extraction error: Config transforms failing](umbraco-cloud/troubleshooting/deployments/changes-not-being-applied.md)
    * [Extraction error: Data Type collisions](umbraco-cloud/troubleshooting/deployments/colliding-datatypes.md)
    * [Dependency Exception](umbraco-cloud/troubleshooting/deployments/dependency-exceptions.md)
@@ -115,8 +118,9 @@
    * [Schema Mismatches](umbraco-cloud/troubleshooting/deployments/schema-mismatches.md)
    * [How to resolve collision errors](umbraco-cloud/troubleshooting/deployments/structure-error.md)
    * [Extraction error: "Type not found! "](umbraco-cloud/troubleshooting/deployments/type-not-found.md)
-* [Frequently asked questions](umbraco-cloud/frequently-asked-questions.md)
-* [Portal Release Notes](umbraco-cloud/release-notes/README.md)
+
+## Portal Release Notes
+ * [Portal Release Notes](umbraco-cloud/release-notes/README.md)
  * [Release Notes, January 2023](umbraco-cloud/release-notes/2023-01-releasenotes.md)
  * [Release Notes, December 2022](umbraco-cloud/release-notes/2022-12-20-releasenotes.md)
  * [Release Notes, November 2022](umbraco-cloud/release-notes/2022-11-07-releasenotes.md)
