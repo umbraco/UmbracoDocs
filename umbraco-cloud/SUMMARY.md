@@ -1,17 +1,18 @@
 # Table of content
 
+* [Umbraco Cloud Documentation](README.md)
 * [Security](umbraco-cloud/security.md)
 * [Frequently asked questions](umbraco-cloud/frequently-asked-questions.md)
 
 ## Getting Started
 
-* [What is Umbraco Cloud?](umbraco-cloud/getting-started/README.md)
-* [The Cloud Portal](umbraco-cloud/getting-started/the-umbraco-cloud-portal/README.md)
-* [Organizations](umbraco-cloud/getting-started/the-umbraco-cloud-portal/organizations.md)
- * [Project Overview](umbraco-cloud/getting-started/project-overview.md)
- * [Environments](umbraco-cloud/getting-started/environments.md)
- * [Baselines](umbraco-cloud/getting-started/baselines/README.md)
-   * [Baseline Merge Conflicts](umbraco-cloud/getting-started/baselines/baseline-merge-conflicts.md)
+* [What is Umbraco Cloud?](getting-started/README.md)
+* [The Cloud Portal](getting-started/the-umbraco-cloud-portal/README.md)
+  * [Organizations](getting-started/the-umbraco-cloud-portal/organizations.md)
+ * [Project Overview](getting-started/project-overview.md)
+ * [Environments](getting-started/environments.md)
+ * [Baselines](getting-started/baselines/README.md)
+   * [Baseline Merge Conflicts](getting-started/baselines/baseline-merge-conflicts.md)
    * [Break Reference between Baseline and Child Project](umbraco-cloud/getting-started/baselines/break-baseline.md)
    * [Handling configuration files](umbraco-cloud/getting-started/baselines/configuration-files.md)
    * [High-level Overview](umbraco-cloud/getting-started/baselines/high-level-overview.md)
@@ -26,10 +27,10 @@
 ## Setup
 
 * [Set Up](umbraco-cloud/set-up/README.md)
- * [Working with a Local Clone](umbraco-cloud/set-up/working-locally.md)
- * [Working with Mac](umbraco-cloud/set-up/working-with-mac.md)
- * [Manage Environments](umbraco-cloud/set-up/manage-environments.md)
- * [Project Settings](umbraco-cloud/set-up/project-settings/README.md)
+* [Working with a Local Clone](umbraco-cloud/set-up/working-locally.md)
+* [Working with Mac](umbraco-cloud/set-up/working-with-mac.md)
+* [Manage Environments](umbraco-cloud/set-up/manage-environments.md)
+* [Project Settings](umbraco-cloud/set-up/project-settings/README.md)
    * [Managing Transport Security](umbraco-cloud/set-up/project-settings/manage-security.md)
    * [CDN Caching and Optimizations](umbraco-cloud/set-up/project-settings/manage-cdn-caching.md)
    * [Dedicated Resources](umbraco-cloud/set-up/project-settings/dedicated-resources.md)
@@ -64,13 +65,13 @@
 ## Deployments
 
 * [Deployment](umbraco-cloud/deployment/README.md)
- * [Deploying between environments](umbraco-cloud/deployment/cloud-to-cloud.md)
- * [Transferring Content, Media, Members, and Forms](umbraco-cloud/deployment/content-transfer.md)
- * [Deploying Deletions](umbraco-cloud/deployment/deploying-deletions.md)
- * [Deployment Webhook](umbraco-cloud/deployment/deployment-webhook.md)
- * [Deploying Changes](umbraco-cloud/deployment/local-to-cloud.md)
- * [Umbraco Forms on Cloud](umbraco-cloud/deployment/umbraco-forms-on-cloud.md)
- * [Deploy Operations](umbraco-cloud/deployment/deploy-operations/README.md)
+* [Deploying between environments](umbraco-cloud/deployment/cloud-to-cloud.md)
+* [Transferring Content, Media, Members, and Forms](umbraco-cloud/deployment/content-transfer.md)
+* [Deploying Deletions](umbraco-cloud/deployment/deploying-deletions.md)
+* [Deployment Webhook](umbraco-cloud/deployment/deployment-webhook.md)
+* [Deploying Changes](umbraco-cloud/deployment/local-to-cloud.md)
+* [Umbraco Forms on Cloud](umbraco-cloud/deployment/umbraco-forms-on-cloud.md)
+* [Deploy Operations](umbraco-cloud/deployment/deploy-operations/README.md)
    * [Clearing Cached Signatures](umbraco-cloud/deployment/deploy-operations/clearing-cached-signatures.md)
    * [Deploying Schema from Data Files](umbraco-cloud/deployment/deploy-operations/deploy-schema.md)
    * [Extract Schema to Data Files](umbraco-cloud/deployment/deploy-operations/extract-schema-to-data-files.md)
@@ -84,16 +85,16 @@
 ## Databases
 
 * [Working with databases](umbraco-cloud/databases/README.md)
- * [Database backups](umbraco-cloud/databases/backups.md)
- * [Database](umbraco-cloud/databases/cloud-database.md)
- * [Working with a Cloud database locally](umbraco-cloud/databases/local-database.md)
+* [Database backups](umbraco-cloud/databases/backups.md)
+* [Database](umbraco-cloud/databases/cloud-database.md)
+* [Working with a Cloud database locally](umbraco-cloud/databases/local-database.md)
 
 ## Product Upgrades
 
 * [Product Upgrades](umbraco-cloud/upgrades/README.md)
- * [Major Upgrades](umbraco-cloud/upgrades/major-upgrades.md)
- * [Minor Upgrades](umbraco-cloud/upgrades/minor-upgrades.md)
- * [Upgrade your projects manually](umbraco-cloud/upgrades/manual-upgrades/README.md)
+* [Major Upgrades](umbraco-cloud/upgrades/major-upgrades.md)
+* [Minor Upgrades](umbraco-cloud/upgrades/minor-upgrades.md)
+* [Upgrade your projects manually](umbraco-cloud/upgrades/manual-upgrades/README.md)
    * [Manual upgrade of Umbraco CMS](umbraco-cloud/upgrades/manual-upgrades/manual-cms-upgrade.md)
    * [Manual upgrade of Umbraco Deploy](umbraco-cloud/upgrades/manual-upgrades/manual-upgrade-deploy.md)
  * [Dependencies on Umbraco Cloud](umbraco-cloud/upgrades/product-dependencies.md)
