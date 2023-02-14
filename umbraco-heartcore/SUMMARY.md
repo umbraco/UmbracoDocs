@@ -57,7 +57,7 @@
  * [.NET Client library](client-libraries/dot-net-core/README.md)
    * [MVC Sample](client-libraries/dot-net-core/mvc-samples.md)
    * [Content Management Sample](client-libraries/dot-net-core/content-management-sample.md)
-* [Versions and updates](versions-and-updates.md)
+
   
 ## Tutorials
 
