@@ -21,7 +21,7 @@ A user can be a member of multiple groups in the same workflow. To initiate an a
 
 The workflow Dashboard updates to reflect the state of each task, providing an overview of a user's submissions and tasks. Tasks can be approved, cancelled, or rejected from the **Dashboard** or from the content node **Workflow** tab. For more information, see the [Workflow Dashboards and Buttons](dashboards-and-buttons.md) section.
 
-### Quick Links
+## Quick Links
 
 {% content-ref url="dashboards-and-buttons.md" %}
 [dashboards-and-buttons.md](dashboards-and-buttons.md)
