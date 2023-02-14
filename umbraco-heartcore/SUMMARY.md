@@ -7,7 +7,6 @@
 
 ## Getting Started 
 
-* [Overview](getting-started/README.md)
 * [API Browser](getting-started/api-browser.md)
 * [Backoffice Users and API Keys](getting-started/backoffice-users-and-api-keys.md)
 * [Building a project from scratch](getting-started/creating-a-heartcore-project.md)
@@ -48,8 +47,7 @@
 
 ## Backoffice
 
-* [Working in the backoffice](backoffice/README.md)
- * [Custom Grid Editors](backoffice/grid-editors.md)
+* [Custom Grid Editors](backoffice/grid-editors.md)
   
 ## Client Libraries
 
@@ -63,6 +61,5 @@
   
 ## Tutorials
 
-* [Tutorials](tutorials/README.md)
- * [Custom Grid Editors](tutorials/creating-a-custom-grid-editor.md)
- * [Querying with GraphQL](tutorials/querying-with-graphql.md)
+* [Custom Grid Editors](tutorials/creating-a-custom-grid-editor.md)
+* [Querying with GraphQL](tutorials/querying-with-graphql.md)
