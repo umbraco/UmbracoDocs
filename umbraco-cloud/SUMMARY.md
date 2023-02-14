@@ -120,7 +120,8 @@
    * [How to resolve collision errors](troubleshooting/deployments/structure-error.md)
    * [Extraction error: "Type not found! "](troubleshooting/deployments/type-not-found.md)
 
-## Portal Release Notes
+## Release Notes
+
  * [Portal Release Notes](release-notes/README.md)
  * [Release Notes, January 2023](release-notes/2023-01-releasenotes.md)
  * [Release Notes, December 2022](release-notes/2022-12-20-releasenotes.md)
