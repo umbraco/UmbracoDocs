@@ -1,4 +1,4 @@
-# Getting Started
+# Overview
 
 In this section, you can find articles about managing your Umbraco Heartcore project. You will also be able to find documentation that can help you get to know the platforms used for working with Umbraco Heartcore.
 
