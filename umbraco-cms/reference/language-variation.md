@@ -11,9 +11,9 @@ Language Variation allows you to have different variations of content based on a
 @Model.Value("pageTitle", "fr", fallback: Fallback.ToLanguage)
 ```
 
-Here we would attempt to render the `pageTitle` property in the French variant and fallback to the current culture language if it can't find it in French.
+Here we would attempt to render the `pageTitle` property in the French variant. We want to fallback to the current culture language if it can't find it in French.
 
-The problem here comes if you want to output all values of an IPublishedContent model in a specific culture in something that has no access to the "current culture", such as a [Surface Controller](routing/surface-controllers/).
+The challenge arises when trying to display all values of an IPublishedContent model in a specific culture from a "current ]culture"-less context, like a `SurfaceController`.
 
 If you do something like this:
 
