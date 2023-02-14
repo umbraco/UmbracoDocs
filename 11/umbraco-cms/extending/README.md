@@ -2,7 +2,7 @@
 description: "This section shows the different ways you can extend Umbraco. From Content Apps to Backoffice tours, and many more."
 ---
 
-# Extending Umbraco
+# Overview
 
 ## [Dashboards](dashboards.md)
 

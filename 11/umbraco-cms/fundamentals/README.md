@@ -1,4 +1,4 @@
-# Fundamentals
+# Overview
 
 _All the fundamentals of using Umbraco. From making a local installation to extending the backend._
 
