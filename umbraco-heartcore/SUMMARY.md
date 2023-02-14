@@ -1,8 +1,8 @@
 ## Umbraco Heartcore
 
 * [Umbraco Heartcore](README.md)
-  * [Compare with Umbraco CMS](umbraco-heartcore/overview/compare-with-umbraco-cms.md)
-* * [Versions and updates](versions-and-updates.md)
+  * [Compare with Umbraco CMS](compare-with-umbraco-cms.md)
+* [Versions and updates](versions-and-updates.md)
 
 
 ## Getting Started 
@@ -46,7 +46,7 @@
    * [Property Editors](api-documentation/graphql/property-editors.md)
    * [Schema Generation](api-documentation/graphql/schema-generation.md)
 
-## Working in the Backoffice
+## Backoffice
 
 * [Working in the backoffice](backoffice/README.md)
  * [Custom Grid Editors](backoffice/grid-editors.md)
