@@ -3,3 +3,7 @@ root: ./
 ​structure:  
     readme: README.md
     summary: SUMMARY.md
+
+redirects:
+    umbraco-cms/fundamentals/setup/upgrading/general: umbraco-cms/fundamentals/setup/upgrading/README.md
+    umbraco-cms/reference/templating/mvc/child-actions: umbraco-cms/reference/templating/mvc/viewcomponents
