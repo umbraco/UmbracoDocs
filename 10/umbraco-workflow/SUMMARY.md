@@ -16,8 +16,8 @@
 ## Workflow Section
 
 * [Workflow Section](workflow-section/README.md)
-  * [Active Workflows](workflow-section/active-workflows.md)
-  * [Approval Groups](workflow-section/approval-groups.md)
-  * [Content Reviews](workflow-section/content-reviews.md)
-  * [Workflow History](workflow-section/workflow-history.md)
-  * [Workflow Settings](workflow-section/workflow-settings.md)
+* [Active Workflows](workflow-section/active-workflows.md)
+* [Approval Groups](workflow-section/approval-groups.md)
+* [Content Reviews](workflow-section/content-reviews.md)
+* [Workflow History](workflow-section/workflow-history.md)
+* [Workflow Settings](workflow-section/workflow-settings.md)
