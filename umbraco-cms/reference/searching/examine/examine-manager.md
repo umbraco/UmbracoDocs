@@ -1,7 +1,6 @@
 # Examine Manager
 
-
-Accessing the singleton can be done by using dependency injection. 
+Accessing the singleton can be done by using dependency injection.
 
 In a class you can inject the IExamineManager interface:
 
@@ -20,7 +19,8 @@ namespace MyCustomUmbracoSolution
     }
 }
 ```
-In a view the IExamineManager can be injected as well: 
+
+In a view the IExamineManager can be injected as well:
 
 ```csharp
 @inject IExamineManager ExamineManager;
@@ -44,7 +44,7 @@ var canGetSearcher = _examineManager.TryGetSearcher("ExternalSearcher", out var 
 
 For searching the method to use is:
 
-```chsarp
+```
 ISearchResults Search(string searchText);
 ```
 

@@ -1,5 +1,5 @@
 ---
-description: "Use a custom MVC controller to handle and control incoming requests for content pages based on a specific Document Type, also called ."
+description: "Use a custom MVC controller to handle and control incoming requests for content pages based on a specific Document Type, also called Route Hijacking."
 ---
 
 # Umbraco Route Hijacking
@@ -158,7 +158,7 @@ or if you are using modelsbuilder:
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ProductPage>
 ```
 
-`<>` contains a model generated for each document type to give strongly typed access to the Document Type properties in the template view.
+`<>` contains a model generated for each Document Type to give strongly typed access to the Document Type properties in the template view.
 
 To use a specific custom view model, the `@inherits` directive will need to be updated to reference your custom model using the `Umbraco.Cms.Web.Common.Views.UmbracoViewPage<T>` format where 'T' is the type of your custom model.
 
@@ -169,7 +169,7 @@ So for example, if your custom model is of type 'MyProductViewModel' then your `
 ```
 
 {% hint style="info" %}
-Views will likely specify a master view to use as the common layout for the site html. When using a custom view model it's necessary to make sure this doesn't conflict with any implementation in the master layout view.
+Views will likely specify a master view to use as the common layout for the site HTML. When using a custom view model it's necessary to make sure this doesn't conflict with any implementation in the master layout view.
 Eg. if your master layout view is inheriting from a specific model `UmbracoViewPage<SpecificModel>` and using a property from SpecificModel that isn't available in your custom model an exception will be thrown.
 To avoid this you could:
 

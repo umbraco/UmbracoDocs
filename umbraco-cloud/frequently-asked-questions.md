@@ -1,8 +1,8 @@
 # Frequently asked questions
 
-Here you will find answers to the questions we most commonly hear from people that are wondering about if Umbraco Cloud is the right fit for their project. The answers you will find here are of a more technical nature and are directed at developers.
+Here you will find answers to the questions we most commonly hear from people that are wondering if Umbraco Cloud is the right fit for their project. The answers you will find here are of a more technical nature and are directed at developers.
 
-If you are interested in more general and information about the product, you should [visit the FAQ on our website](https://umbraco.com/products/umbraco-cloud/faq/).
+If you are interested in more general information about the product, you should [visit the FAQ on our website](https://umbraco.com/products/umbraco-cloud/faq/).
 
 ## General
 
@@ -14,15 +14,15 @@ Yes, you can [take a free trial of Umbraco Cloud](https://umbraco.com/try-umbrac
 
 No. It's the same as the latest version of Umbraco that you can download.
 
-### Can I run my high traffic site on Umbraco Cloud?
+### Can I run my high-traffic site on Umbraco Cloud?
 
-Currently we have benchmarked a "well built" site with approximately 50,000 unique visitors per day (\~1.5 million per month) that performs very well. For business critical, high traffic sites, we recommend that you look into Umbraco Cloud Professional and Umbraco Cloud Enterprise possibly in combination with a dedicated server.
+Currently, we have benchmarked a "well-built" site with approximately 50,000 unique visitors per day (\~1.5 million per month) that performs very well. For business-critical, high-traffic sites, we recommend that you look into Umbraco Cloud Professional and Umbraco Cloud Enterprise possibly in combination with a dedicated server.
 
 ### Can my site auto-scale or use dedicated worker resources?
 
 Your site can't currently auto-scale, but it is something we’re investigating as a future feature. We do offer dedicated worker resources. [Reach out to us if you want to know more](https://umbraco.com/contact-us/).
 
-### Can I setup a load balanced Umbraco Cloud site?
+### Can I set up a load-balanced Umbraco Cloud site?
 
 Not currently.
 
@@ -40,7 +40,7 @@ Umbraco Cloud is best when used as the base for a new project. There is a specif
 
 ### On what kind of server environment does my Cloud site run?
 
-All available Umbraco Cloud plans are utilising P1V3 Azure App Service Plans as their underlying infrastructure. A P1V3 Azure App Service Plan offers in total
+All available Umbraco Cloud plans are utilizing P1V3 Azure App Service Plans as their underlying infrastructure. A P1V3 Azure App Service Plan offers in total
 
 * 2 CPU Cores
 * 8GB of RAM
@@ -53,7 +53,7 @@ In order to see quotas for the different plans on Umbraco Cloud see [Umbraco Clo
 
 We also have a limitation for hostnames on the different plans on Umbraco Cloud. You can see how many hostnames you can have on our [pricing list.](https://umbraco.com/umbraco-cloud-pricing/)
 
-In our experience there are only a few Cloud sites that have experienced these limitations and we're happy to work with people who have sites affected by these limitations.
+In our experience, there are only a few Cloud sites that have experienced these limitations and we're happy to work with people who have sites affected by these limitations.
 
 {% hint style="info" %}
 If you have questions about how many resources your site is using, then please reach out to our friendly support team.
@@ -61,13 +61,13 @@ If you have questions about how many resources your site is using, then please r
 
 ### Can I use Cloudflare in front of my Umbraco Cloud site
 
-Yes you can. Please note that Umbraco Cloud also uses Cloudflare for DNS, so you need to enroll your hostname as 'DNS Only' with a CNAME pointing to `dns.umbraco.io`. Once you can see the hostname is marked with 'Protected' under the Project / Hostname subpage you can turn on 'Proxying' for the hostname in your Cloudflare account if you need to use specific Cloudflare features like Page Rules.
+Yes, you can. Please note that Umbraco Cloud also uses Cloudflare for DNS, so you need to enroll your hostname as 'DNS Only' with a CNAME pointing to `dns.umbraco.io`. Once you can see the hostname is marked with 'Protected' under the Project / Hostname subpage you can turn on 'Proxying' for the hostname in your Cloudflare account if you need to use specific Cloudflare features like Page Rules.
 
 Generally, we recommend that you keep your DNS entry set to 'DNS Only' in your own Cloudflare account and let Umbraco Cloud handle the automatic TLS (HTTPS) certificates for the hostnames you point to your Umbraco Cloud project. Check with our support team, via chat or using support@umbraco.com, before bringing in your own Cloudflare setup.
 
 ### What versions of .NET does Cloud support?
 
-By default, Umbraco Cloud runs all Umbraco version 8 projects on .NET 4.8, Umbraco 9 projects on .NET 5.0 and Umbraco 10 projects on .NET 6.0.
+By default, Umbraco Cloud runs all Umbraco version 8 projects on .NET 4.8, Umbraco 9 projects on .NET 5.0, and Umbraco 10 projects on .NET 6.0.
 
 ***
 
@@ -79,13 +79,13 @@ We upgrade when we're very confident the release is solid.
 
 ### How do Automated Upgrades work?
 
-We automatically upgrade Cloud projects to the latest patch version of Umbraco CMS, Umbraco Forms and Umbraco Deploy / Courier. For minor version upgrades of our products, you’ll get a button in the interface to decide if you want to move to that version when it is released. When we make a new patch version, we first run it through our test suite, then test it on 10 test-sites. When all that passes, we roll out the upgrade in batches of 100 to customer accounts.
+We automatically upgrade Cloud projects to the latest patch version of Umbraco CMS, Umbraco Forms, and Umbraco Deploy / Courier. For minor version upgrades of our products, you’ll get a button in the interface to decide if you want to move to that version when it is released. When we make a new patch version, we first run it through our test suite, then test it on 10 test-sites. When all that passes, we roll out the upgrade in batches of 100 to customer accounts.
 
 [Read more about upgrades](https://our.umbraco.com/documentation/Umbraco-Cloud/Upgrades/)
 
 ### My project didn't receive the auto-upgrade. Why?
 
-When we roll out auto-upgrades to Umbraco Cloud projects the very first thing that happens is a check of all environments on a project. This check will verify whether the environments are responding and doesn't return an HTTP status error. If the auto-upgrader encounters HTTP status errors on any of the environments during this check, the upgrade process is aborted, and your project will not receive the upgrade.
+When we roll out auto-upgrades to Umbraco Cloud projects the very first thing that happens is a check of all environments on a project. This check will verify whether the environments are responding and don't return an HTTP status error. If the auto-upgrader encounters HTTP status errors on any of the environments during this check, the upgrade process is aborted, and your project will not receive the upgrade.
 
 Another reason why your project wasn't auto-upgraded could be, that it failed the test we perform after applying the auto-upgrade. This test compares the state of an environment from before the upgrade with the state of the same environment after the upgrade. If they do not match, we take the appropriate measures to rollback the environment to its previous state and abort the upgrade of any remaining environments.
 
@@ -100,15 +100,15 @@ You can find all the steps of the auto-upgrade process outlined in the [Upgrades
 
 Pending commits won't stop the auto-upgrade.
 
-### Is it OK to do manual updates? For example if a project on 9.4.3 is updated locally to 9.4.4, can we commit back to dev?
+### Is it OK to do manual updates? For example, if a project on 9.4.3 is updated locally to 9.4.4, can we commit back to dev?
 
-Yes, that’s fine. In some cases you may want to upgrade sooner than the scheduled service upgrade or you may have a site we couldn't upgrade automatically for one reason or another.
+Yes, that’s fine. In some cases, you may want to upgrade sooner than the scheduled service upgrade or you may have a site we couldn't upgrade automatically for one reason or another.
 
-Do note, however that you will need to step through the upgrade installer manually on each environment, including live. Our automated upgrader makes sure that visitors to your live site will not be prompted to log in to the upgrade installer.
+Do note, however, that you will need to step through the upgrade installer manually on each environment, including live. Our automated upgrader makes sure that visitors to your live site will not be prompted to log in to the upgrade installer.
 
 ### I have customized files that Umbraco ships with, will they be overwritten during upgrades?
 
-You will have to assume that every time we upgrade your site, any file that comes with Umbraco by default will be overwritten. Generally we only overwrite the files that have been changed in the newest release but there is no guarantee for that. So if you (for example) have customized the login page then you can assume it will be reverted on each upgrade.
+You will have to assume that every time we upgrade your site, any file that comes with Umbraco by default will be overwritten. Generally, we only overwrite the files that have been changed in the newest release but there is no guarantee for that. So if you (for example) have customized the login page then you can assume it will be reverted on each upgrade.
 
 ***
 
@@ -118,7 +118,7 @@ You will have to assume that every time we upgrade your site, any file that come
 
 Yes, we're happy for people to do penetration testing on the sites they have built on Cloud. We do ask you to please tell us about these tests beforehand so our support staff knows to look out for possible strange things happening on your site.
 
-We are also happy to receive any test results you receive, so that we can improve security in Umbraco where necessary.
+We are also happy to receive any test results you receive so that we can improve security in Umbraco where necessary.
 
 Please contact us using the chat button at the bottom right corner of the [Umbraco Cloud portal](https://www.s1.umbraco.io/).
 
@@ -136,11 +136,11 @@ Please contact us using the chat button at the bottom right corner of the [Umbra
 
 ## Security and encryption
 
-Haven't found an answer to your question? Many security related questions are answered in the [Security section](security.md) of the documentation.
+Haven't found an answer to your question? Many security-related questions are answered in the [Security section](security.md) of the documentation.
 
 ### Does Umbraco Cloud support TLS / HTTPS?
 
-Yes, in fact Umbraco Cloud provides automatic TLS (HTTPS) certificates for ALL hostnames added to an Umbraco Cloud Project's environment. Umbraco Cloud will automatically renew the certificates, which are issued by Cloudflare. By default the certificates are valid for 1 year and are then automatically renewed for as long as the hostname is active on Umbraco Cloud.
+Yes, in fact, Umbraco Cloud provides automatic TLS (HTTPS) certificates for ALL hostnames added to an Umbraco Cloud Project's environment. Umbraco Cloud will automatically renew the certificates, which are issued by Cloudflare. By default, the certificates are valid for 1 year and are then automatically renewed for as long as the hostname is active on Umbraco Cloud.
 
 ### Does Umbraco Cloud support custom certificates?
 
@@ -152,13 +152,13 @@ Learn more about how to use your own certificates in the [Custom certificates](s
 
 By default, Umbraco Cloud supports HTTP/2.
 
-### There's a ARRAffinity cookie on my site which is not sent over HTTPS, is this a security risk?
+### There's an ARRAffinity cookie on my site which is not sent over HTTPS, is this a security risk?
 
-No this is not a security risk. This cookie is set by the load balancer (LB) and only used by the LB to track which server your site is on. ARRAffinity cookie is a built-in feature of Azure App Service and only useful when your website is being scaled to multiple servers. In Umbraco Cloud we cannot scale your site to multiple servers so the cookie is effectively unused.
+No this is not a security risk. This cookie is set by the load balancer (LB) and is only used by the LB to track which server your site is on. ARRAffinity cookie is a built-in feature of Azure App Service and is only useful when your website is being scaled to multiple servers. In Umbraco Cloud, we cannot scale your site to multiple servers so the cookie is effectively unused.
 
 You can learn much more about this in our [Security section](security.md#cookies-and-security).
 
-### Can I use wildcard certificates on Umbraco Cloud? How about an EV, DV or OV certificate?
+### Can I use wildcard certificates on Umbraco Cloud? How about an EV, DV, or OV certificate?
 
 Yes. You can use any valid certificate on Umbraco Cloud.
 
@@ -168,13 +168,13 @@ It seems that you didn't set up the bindings for the specific domain where this 
 
 ### How can I control who accesses my backoffice using IP filtering?
 
-Yes. On Cloud you can add an IP filter of your choosing. There are a few things you need to pay attention to though. Umbraco Deploy will still need to be able to talk to the different environments in your Cloud website and you should still be able to use the site locally.
+Yes. On Cloud, you can add an IP filter of your choosing. There are a few things you need to pay attention to though. Umbraco Deploy will still need to be able to talk to the different environments in your Cloud website and you should still be able to use the site locally.
 
 Learn more about this and how to set it up in our [Security section](security.md#restrict-backoffice-access-using-ip-filtering).
 
 ### Does Umbraco Cloud use Transparent Data Encryption (TDE) for databases?
 
-Yes, every site created after May 2nd 2017 will have TDE enabled by default. For older sites we can enable this by request.
+Yes, every site created after May 2nd, 2017 will have TDE enabled by default. For older sites, we can enable this by request.
 
 ***
 
@@ -182,14 +182,14 @@ Yes, every site created after May 2nd 2017 will have TDE enabled by default. For
 
 ### Umbraco Cloud creates a SQL CE / LocalDb database for me, can I use a shared SQL Server for my development team instead?
 
-No, you should not use a shared database for your team. Umbraco Cloud is made so that each team member can safely make any changes they need and then send them to your development environment on Cloud. Another developer can do the same and also send their changes to dev to test. Once you're happy with all of the changes, each developer can pull down the changes from development and continue working on the next change.
+No, you should not use a shared database for your team. Umbraco Cloud is made so that each team member can safely make any changes they need and then send them to your development environment on Cloud. Another developer can do the same and also send their changes to the dev to test. Once you're happy with all of the changes, each developer can pull down the changes from development and continue working on the next change.
 
 Not only does this promote working in small increments it also prevents two problems:
 
-1. If you share a database between multiple developers, [Umbraco's flexible load balancing](../umbraco-cms/fundamentals/setup/server-setup/load-balancing/) automatically kicks in. Without a proper load balancing setup this means that often you will not see changes another team member has made, potentially overwriting their changes with your own changes.
-2. Our deployment engine (Umbraco Deploy) is not made for this and your local site will quickly get out of sync with changes both developers are making. Once you push your changes up to your Cloud instance you can expect to see errors and mismatches because changes have not been saved correctly.
+1. If you share a database between multiple developers, [Umbraco's flexible load balancing](../umbraco-cms/fundamentals/setup/server-setup/load-balancing/) automatically kicks in. Without a proper load balancing setup, this means that often you will not see changes another team member has made, potentially overwriting their changes with your own changes.
+2. Our deployment engine (Umbraco Deploy) is not made for this and your local site will quickly get out of sync with the changes both developers are making. Once you push your changes up to your Cloud instance you can expect to see errors and mismatches because changes have not been saved correctly.
 
-### Can I use custom .NET code?
+### Can I use a custom .NET code?
 
 Yes, you can make your Umbraco implementations as you're used to, including custom .NET assemblies.
 
@@ -199,25 +199,25 @@ If you have any experience with Azure Web Apps, Cloud works in the same way. So 
 
 ### Is it possible to add my own custom DLLs for extending the Umbraco Backoffice?
 
-Yes, an Umbraco Cloud project is similar to a normal Umbraco website where we give you multiple environments and deployment of code and content between these environments. You can run your site locally (via Git) which is the best way to add your own code (templates, cs files, packages, DLLs and so forth).
+Yes, an Umbraco Cloud project is similar to a normal Umbraco website where we give you multiple environments and deployment of code and content between these environments. You can run your site locally (via Git) which is the best way to add your own code (templates, cs files, packages, DLLs, and so forth).
 
 ### Is it possible to add custom tables in addition to the Umbraco Cloud database?
 
-Yes, you can create custom tables in the database. Find the connection strings to the databases on the different environments on the "Connection details" page found in the "Settings" menu.
+Yes, you can create custom tables in the database. Find the connection strings to the databases on the different environments on the "Connection Details" page found in the "Settings" menu.
 
-Note that custom database tables and data do not replicate automatically across Cloud environments. You might want to use Umbraco Migrations and our PetaPoco datalayer to make deployment of your custom data more automated.
+Note that custom database tables and data do not replicate automatically across Cloud environments. You might want to use Umbraco Migrations and our PetaPoco data layer to make the deployment of your custom data more automated.
 
 ### I would love to use Websockets on my site, is this possible?
 
-Yes it is! Websockets are enabled on all sites.
+Yes, it is! Websockets are enabled on all sites.
 
 ### My deletions are not picked up when deployed to the next environment
 
-When you've deleted something (e.g. content, media or schema) on one environment, the deletions will not be picked up on the next environment when you deploy.
+When you've deleted something (e.g. content, media, or schema) on one environment, the deletions will not be picked up on the next environment when you deploy.
 
-This is intended behaviour.
+This is intended behavior.
 
-We will **only delete the files** and not the database entries, as this could potentially cause you to lose data on your Live / production environment.
+We will **only delete the files** and not the database entries, as this could potentially cause you to lose data on your Live/production environment.
 
 You can read much more about these deletions in the [Deploying Deletions](deployment/deploying-deletions.md) article.
 
@@ -233,16 +233,16 @@ If the indicator says "Works on Umbraco Cloud" it means that Umbraco HQ has test
 
 If the indicator says "Untested or doesn't work on Umbraco Cloud" then we have not tested it and cannot vouch for it on Cloud. It might work, and we're happy for you to test it on Cloud.
 
-We're happy to hear from and work with package developers to make their packages Cloud compatible where possible. Make sure to reach out to us using the chat button at the bottom right corner of the [Umbraco Cloud portal](https://www.s1.umbraco.io/).
+We're happy to hear from and work with package developers to make their packages Cloud-compatible where possible. Make sure to reach out to us using the chat button at the bottom right corner of the [Umbraco Cloud portal](https://www.s1.umbraco.io/).
 
 ### How do I make my package support Umbraco Cloud?
 
-The biggest problem concerning Cloud support is when a package stores references to nodes, media items, or members in Umbraco.
+The biggest problem concerning Cloud support is when a package store references to nodes, media items, or members in Umbraco.
 
 There are two challenges here:
 
-1. Your package is referring to an integer identifier, for example a content item with id `1023`. On the next environment that same content item exists but since the content is a bit different there, the id is `1039` instead. Umbraco Deploy needs to know how to connect the correct identifier.
-2. Even if the identifier is correct on both environments your package might rely on the other item (the one you're referring to) to exist in the next environment. So if the content item you're referring to (`1023`) does not exist on the environment where you're pushing the content to you might see errors in your package.
+1. Your package is referring to an integer identifier, for example, a content item with the id `1023`. On the next environment that same content item exists but since the content is a bit different there, the id is `1039` instead. Umbraco Deploy needs to know how to connect the correct identifier.
+2. Even if the identifier is correct in both environments your package might rely on the other item (the one you're referring to) to exist in the next environment. So if the content item you're referring to (`1023`) does not exist in the environment where you're pushing the content you might see errors in your package.
 
 These problems can be solved with so-called Umbraco Deploy connectors. We've set up a project called [Umbraco Deploy Contrib](https://github.com/umbraco/Umbraco.Deploy.Contrib/) to collect these connectors together. Umbraco Deploy Contrib is included in all Cloud sites and we keep it upgraded to the latest version for every site.
 
@@ -256,7 +256,7 @@ If you need help with this, don't hesitate to reach out to us and we'll be happy
 
 ### Can I choose which region my projects run in?
 
-Yes, you can choose between the West Europe region and US East region.
+Yes, you can choose between West Europe, East US, and South UK regions.
 
 ### Can I move my existing project created on Cloud in the EU region to the US region?
 
@@ -264,23 +264,23 @@ Yes, you can move a project that was created on Umbraco Cloud in the EU region t
 
 ### How do I select a region when creating projects on Cloud?
 
-You can choose a region when creating a project.
+You can choose a region from the **Region** drop-down list when creating a new project.
 
 ### Can I have a Baseline master project in the EU and a Baseline child project in the US?
 
-No. Baseline-projects are bound to a region for now.
+No. Baseline projects are bound to a region for now.
 
-### Will my sites receive automatic patch-upgrades of CMS, Deploy, and Forms when new releases are available?
+### Will my sites receive automatic patch upgrades of CMS, Deploy, and Forms when new releases are available?
 
 Yes. The US region is no different than normal Cloud other than its regional location. That means that the patch-upgrade functionality will work in whichever region you choose.
 
-### Can you create Umbraco Heartcore projects in the US Region?
+### Can you create Umbraco Heartcore projects in the US and UK Regions?
 
 Not at the moment.
 
-### Are all the features we have in Umbraco Cloud available in the US region?
+### Are all the features we have in Umbraco Cloud available in the US and UK regions?
 
-Baseline functionality is not supported in the US-region at the moment. Other than that, all features are fully supported.
+Baseline functionality is not supported in the US and UK regions at the moment. Other than that, all features are fully supported.
 
 ### Are you planning to add other regions in the future?
 
@@ -288,7 +288,11 @@ Yes. Once we have specific plans, we will announce them publicly.
 
 ### Where can I see what region my project was created in?
 
-## EU region has “euwest” in the URL, while US has “useast” in the URL.
+The hostnames contain the region your project is hosted on. Currently, there are 3 options available when choosing a region for your Umbraco project:
+
+* West Europe (euwest01). For example, `https://west-europe-project.euwest01.umbraco.io/`
+* East US (useast01). For example, `https://east-us-project.useast01.umbraco.io/`
+* South UK (uksouth01). For example, `https://south-uk-project.uksouth01.umbraco.io/`
 
 ## Backups and data retention
 
@@ -296,13 +300,13 @@ Yes. Once we have specific plans, we will announce them publicly.
 
 #### Database
 
-Database backups are not available as downloads by default, but a copy can be downloaded using a Powershell script. By default 35 days point in time restore is available. Restore is dependent on your needs, requirements and database size and will be handled on a case by case basis. Contact Umbraco Cloud support through the portal to discuss your requirements.
+Database backups are not available as downloads by default, but a copy can be downloaded using a Powershell script. By default 35 days point in time restore is available. Restore is dependent on your needs, requirements, and database size and will be handled on a case-by-case basis. Contact Umbraco Cloud support through the portal to discuss your requirements.
 
 You can read more about database backups and how to perform these on Umbraco Cloud in the [databases/Backups section](databases/backups.md)
 
 #### Filesystem
 
-Umbraco Cloud keeps 30 days of snapshots of filesystem for disaster recovery purposes.
+Umbraco Cloud keeps 30 days of snapshots of the filesystem for disaster recovery purposes.
 
 #### Blob Storage containers
 

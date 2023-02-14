@@ -1,5 +1,7 @@
-﻿---
-description: "Learn how to build and customize the indexes that comes with your Umbraco website."
+---
+description: >-
+  Learn how to build and customize the indexes that comes with your Umbraco
+  website.
 ---
 
 # Custom indexing
@@ -46,7 +48,7 @@ In this sample we are altering the external index and thus we name the class `Co
 
 When using the `ConfigureNamedOptions` pattern, we have to register this in a composer for it to configure our indexes, this can be done like this:
 
-```c#
+```
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
@@ -102,9 +104,7 @@ This will ensure that the `price` field in the index is treated as a `double` ty
 
 ## Changing IValueSetValidator
 
-An `IValueSetValidator` is responsible for validating a `ValueSet` to see if it should be included in the index.
-For example, by default the validation process for the ExternalIndex checks if a `ValueSet` has a category type of either "media" or "content" (not member).
-If a `ValueSet` was passed to the ExternalIndex and it did not pass this requirement it would be ignored.
+An `IValueSetValidator` is responsible for validating a `ValueSet` to see if it should be included in the index. For example, by default the validation process for the ExternalIndex checks if a `ValueSet` has a category type of either "media" or "content" (not member). If a `ValueSet` was passed to the ExternalIndex and it did not pass this requirement it would be ignored.
 
 The `IValueSetValidator` is also responsible for filtering the data in the `ValueSet`. For example, by default the validator for the MemberIndex will validate on all the default member properties, so an extra property "PhoneNumber", would not pass validation, and therefore not be included.
 

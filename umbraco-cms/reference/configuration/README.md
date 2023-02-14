@@ -1,8 +1,8 @@
 ---
-description: "Information on configuring Umbraco"
+description: Information on configuring Umbraco
 ---
 
-# Configuration Files
+# Configuration
 
 In Umbraco 9+, we have moved away from the previous configuration using `.config` files, to instead using the .NET built-in configuration pattern. This means that there is no longer separate files for different configuration, the configuration is now primarily done using `IConfiguration` with diffent sources. E.g. The `appsettings.json` file.
 
@@ -58,7 +58,7 @@ Now it's possible to store the connection string with this command:
 
 `dotnet user-secrets set "ConnectionStrings:umbracoDbDSN" "CONNECTION_STRING_IN_HERE"`
 
-The name of the key is created in the same way as in the [Command Line](#using-command-line-arguments-configuration) example above, and thus corresponds to this JSON chunk:
+The name of the key is created in the same way as in the [Command Line](./#using-command-line-arguments-configuration) example above, and thus corresponds to this JSON chunk:
 
 ```json
 "ConnectionStrings": {
@@ -76,7 +76,7 @@ You might need to read the configuration from your code.
 
 When reading the configuration you need to inject an [`IOptions<>`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.options.ioptions-1?view=dotnet-plat-ext-6.0) or [`IOptionsMonitor<>`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.options.ioptionsmonitor-1?view=dotnet-plat-ext-6.0) object into the class that needs it. Here is an example of how you would read the `Host` value from the SMTP settings contained within the global settings:
 
-```C#
+```
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core.Configuration.Models;
 

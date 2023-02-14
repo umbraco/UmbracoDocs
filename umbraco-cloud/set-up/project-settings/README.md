@@ -44,7 +44,7 @@ Manage transport security settings for your project. You can configure certain t
 
 ## [CDN Caching and Optimization](manage-cdn-caching.md)
 
-Manage CDN Cache settings for your project. You can modify default settings, which apply to all hostnames added to the current Project. Alternatively, you can setup specific settings per hostname, if you want to have different settings for certain hostnames.
+Manage CDN Cache settings for your project. You can modify default settings, which apply to all hostnames added to the current Project. Alternatively, you can set up specific settings per hostname, if you want to have different settings for certain hostnames.
 
 ## [Certificates](manage-hostnames/security-certificates.md) (Only available on **Professional** or **Enterprise** plan)
 
@@ -53,7 +53,9 @@ If you have your own custom certificate, you can upload and bind it to your cust
 ## Public access
 
 {% hint style="info" %}
-Public access is only available for projects created after the 10th of January 2023.
+Public access is by default available for projects created after the 10th of January 2023.
+
+The [Umbraco.Cloud.Cms.PublicAccess](https://www.nuget.org/packages/Umbraco.Cloud.Cms.PublicAccess) package can be installed to enable Public access for projects created before the 10th of January 2023.
 {% endhint %}
 
 You can deny access to your project with the Public access setting.
@@ -111,7 +113,7 @@ You can change your Umbraco Cloud project to run in a dedicated setup with addit
 
 ## [Usage](usage.md)
 
-On your Umbraco Cloud project, it is possible to see the usage of Custom Domains, Media Storage, Content Nodes, and Bandwidth for your project. You can also check if it is using above or below the allowed amount for the plan that your project is on.
+On your Umbraco Cloud project, it is possible to see the usage of Custom Domains, Media Storage, Content Nodes, and Bandwidth for the project. You can also check if it is using above or below the allowed amount for the plan that your project is on.
 
 ## [Payment](../manage-subscriptions/new-shop.md)
 

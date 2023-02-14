@@ -1,5 +1,7 @@
 ---
-description: "In this article we show how you can upgrade your Umbraco Cloud project to latest major version of Umbraco CMS."
+description: >-
+  In this article we show how you can upgrade your Umbraco Cloud project to
+  latest major version of Umbraco CMS.
 ---
 
 # Major Upgrades
@@ -26,8 +28,8 @@ Make sure you know the [Breaking changes](../../umbraco-cms/fundamentals/setup/u
 
 ## Video Tutorial
 
-{% embed url="https://www.youtube.com/embed/AN5OOKLHmPE?rel=0" %}
-This video guide you through the steps involved with upgrading your Cloud project to the next major CMS version.
+{% embed url="https://www.youtube-nocookie.com/embed/80qwWxoNuKU" %}
+Video Tutorial
 {% endembed %}
 
 ## Step 1: Enable .NET

@@ -1,4 +1,4 @@
-# Using notifications
+# Using Notifications
 
 Umbraco uses Notifications, very similar to the Observer pattern, to allow you to hook into the workflow process for the backoffice. For example, you might want to execute some code every time a page is published. Notifications allow you to do that.
 
@@ -64,7 +64,7 @@ For the full handler implementation see [ContentService Notifications](contentse
 
 #### Registering notification handlers in a composer
 
-If you're writing a package for Umbraco you won't have access to the Startup class, you can instead use a composer which gives you access to the  `IUmbracoBuilder`, the rest is the same as when doing it in the Startup class:
+If you're writing a package for Umbraco you won't have access to the Startup class, you can instead use a composer which gives you access to the `IUmbracoBuilder`, the rest is the same as when doing it in the Startup class:
 
 ```csharp
 public class DontShoutComposer : IComposer

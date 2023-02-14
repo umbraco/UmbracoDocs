@@ -8,7 +8,7 @@ This section describes how to work with and create trees with Umbraco APIs.
 
 ## Creating trees
 
-To Create a Tree in a section of the Umbraco backoffice, you need to take several steps:
+To Create a Tree in a section of the Umbraco backoffice, you need to take multiple steps:
 
 Create a `TreeController` class in C#. A new controller which inherits from the abstract `Umbraco.Cms.Web.BackOffice.Trees.TreeController` class and provides an implementation for two abstract methods:
 
@@ -33,11 +33,11 @@ public class FavouriteThingsTreeController : TreeController
 { }
 ```
 
-The example above would register a custom tree with a title 'Favourite Things Name' in the Settings section of Umbraco, inside a custom group called 'Favourites'.
+The example above would register a custom tree with a title 'Favourite Things Name' in the Settings section of Umbraco. It will be visiable inside a custom group called 'Favourites'.
 
 ### Tree Groups
 
-Tree Groups enable you to group trees in a section. You provide the alias of the Tree Group name, you wish to add your tree to - see [Constants.Trees.Groups](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Constants.Trees.Groups.html) for a list of existing group alias. An example of tree groups in the backoffice would be the _Settings_ tree group and the _Templating_ tree group in the _Settings_ section.
+Tree Groups enable you to group trees in a section. You provide the alias of the Tree Group name, you wish to add your tree to. See [Constants.Trees.Groups](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Constants.Trees.Groups.html) for a list of existing group alias. An example of tree groups in the backoffice would be the _Settings_ tree group and the _Templating_ tree group in the _Settings_ section.
 
 If you add your own alias, you'll need to add a translation key. This can be done by adding a language file to a `lang` folder with your application folder in `App_Plugins`: `App_Plugins/favouriteThings/lang/en-us.xml`. This will avoid the alias appearing as the header in \[square brackets].
 
@@ -144,7 +144,7 @@ public class FavouriteThingsTreeController : TreeController
         return menu;
     }
 
-    protected override ActionResult<TreeNode> CreateRootNode(FormCollection queryStrings)
+    protected override ActionResult<TreeNode?> CreateRootNode(FormCollection queryStrings)
     {
         var rootResult = base.CreateRootNode(queryStrings);
         if (!(rootResult.Result is null))
@@ -170,7 +170,7 @@ public class FavouriteThingsTreeController : TreeController
 
 ### Responding to Tree Actions
 
-The actions on items in an Umbraco Tree will trigger a request to load an AngularJS view, with a name corresponding to the name of the action, from a subfolder of the views folder matching the name of the 'customTreeAlias'.
+The actions on items in an Umbraco Tree will trigger a request to load a view, with a name corresponding the name of the action. From a subfolder of the views folder matching the name of the 'customTreeAlias'.
 
 Clicking on one of the 'Favourite Things' in the custom tree example will load an `edit.html` view from the folder: `/views/favouriteThingsAlias/edit.html`. The 'Delete' menu item would also load a view from: `/views/favouriteThingsAlias/delete.html`
 
@@ -189,7 +189,7 @@ The edit view in the example would now be loaded from the location: `/App_Plugin
 
 #### Providing functionality in your Tree Action Views
 
-You can instruct the Umbraco backoffice to load additional JavaScript resources (eg. angularJS controllers) to use in conjunction with your 'tree action views' by adding a `package.manifest` file in the same folder location as your views.
+You can instruct the Umbraco backoffice to load additional JavaScript resources (eg. AngularJS controllers) to use in conjunction with your 'tree action views' by adding a `package.manifest` file in the same folder location as your views.
 
 **For example**...
 
@@ -203,7 +203,7 @@ You can instruct the Umbraco backoffice to load additional JavaScript resources 
 }
 ```
 
-...this manifest would load files for two controllers to work with the edit and delete views and a general resource file, perhaps containing code to retrieve, create, edit and delete 'favourite things' from some external non-Umbraco API.
+...this manifest would load files for two controllers to work with the edit and delete views and a general resource file. Those files perhaps containing code to retrieve, create, edit and delete 'favourite things' from some external non-Umbraco API.
 
 Our Tree Action View would then be wired to the loaded controller using the `ng-controller` attribute. The delete view would perhaps the delete view look a little bit like this:
 
@@ -221,13 +221,13 @@ Our Tree Action View would then be wired to the loaded controller using the `ng-
 
 ![Delete Raindrops on Roses](images/delete-raindrops-on-roses-v8.png)
 
-Take a look at the [umbEditor directives in the backoffice API Documentation](https://apidocs.umbraco.com/v9/ui/#/api/umbraco.directives.directive:umbEditorHeader), for lots of common interaction directives that can be used to deliver a consistent backoffice editing experience for items in your custom tree.
+Take a look at the [umbEditor directives in the backoffice API Documentation](https://apidocs.umbraco.com/v9/ui/#/api/umbraco.directives.directive:umbEditorHeader), for lots of common interaction directives. Those directives can be used to deliver a consistent backoffice editing experience for items in your custom tree.
 
 [see Tree Actions for a list of tree _ActionMenuItems_ and _IActions_](tree-actions.md)
 
 ### Single Node Trees / Customising the Root Node Action
 
-It is possible to create 'trees' consisting of only a single node - perhaps to provide an area to control some settings or a placeholder for a single page backoffice app. See the LogViewer in the settings section for a good example. (or as in the case of the 'settings/content templates' tree, it's possible to have a custom view for the root node as an 'introduction' page to the tree).
+It is possible to create 'trees' consisting of only a single node. Perhaps you want to do this to provide an area to control some settings or a placeholder for a single page backoffice app. See the LogViewer in the settings section for a good example. (in the case of the 'content templates' tree, it's possible to have a custom view for the root node).
 
 In both scenarios you need to override the `CreateRootNode` method for the custom tree.
 
@@ -270,7 +270,7 @@ The RoutePath should be in the format of: **section/treeAlias/method**. As our e
 
 #### Full Width App - IsSingleNodeTree
 
-It's possible to make your single node tree app stretch across the full screen of the backoffice (no navigation tree) - see Packages section for an example. To achieve this add an additional attribute `IsSingleNodeTree`, in the Tree attribute for the custom controller.
+It's possible to make your single node tree app stretch across the full screen of the backoffice (no navigation tree). See the Packages section for an example. To achieve this add an additional attribute `IsSingleNodeTree`, in the Tree attribute for the custom controller.
 
 ```csharp
 [Tree("settings", "favouritistThingsAlias", IsSingleNodeTree = true, TreeTitle = "Favourite Thing", TreeGroup = "favoritesGroup", SortOrder = 5)]

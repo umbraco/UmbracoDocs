@@ -1,5 +1,5 @@
 ---
-description: "Using the Umbraco Helper"
+description: Using the Umbraco Helper
 ---
 
 # UmbracoHelper
@@ -16,7 +16,7 @@ If you need an `UmbracoHelper` in your own controllers, you need to inject an in
 
 Example of getting `UmbracoHelper` in a controller:
 
-```C#
+```
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Web.Common;
@@ -141,7 +141,6 @@ Returns a collection of `IPublishedContent` objects from the Media tree.
 
 Previously the `UmbracoHelper` could be used to work with tags, this has been moved out of `UmbracoHelper` and is now available from `ITagQuery` which you can read more about in the [ITagQuery document](itagquery.md).
 
-
 ## Working with Members
 
 Previously the `UmbracoHelper` could be used to work with members, this has ben moved out of `UmbracoHelper` and is now available from `IMemberManager`, see [IMemberManager](imembermanager.md) for more information
@@ -165,7 +164,6 @@ Alternatively, you can also specify an `altText` which will be returned if the d
 ```html
 <p>@Umbraco.GetDictionaryValue("createdOn", "Date Created"): @Model.CreateDate</p>
 ```
-
 
 ## Templating Helpers
 

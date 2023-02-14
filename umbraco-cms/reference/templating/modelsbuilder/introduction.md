@@ -1,10 +1,10 @@
 ---
-description: "Modelsbuilder introduction"
+description: Modelsbuilder introduction
 ---
 
-# Umbraco Models Builder Introduction
+# Introduction
 
-Models Builder is a tool that can generate a complete set of strongly-typed published content models for Umbraco. By default, a slimmed down version of Models Builder is embedded with the main Umbraco distribution. 
+Models Builder is a tool that can generate a complete set of strongly-typed published content models for Umbraco. By default, a slimmed down version of Models Builder is embedded with the main Umbraco distribution.
 
 Models can be used anywhere that content is retrieved from the content cache, i.e. in MVC views, controllers, etc. In other words, when using the Models Builder, the content cache does not return `IPublishedContent` objects anymore, but strongly typed models, implementing `IPublishedContent`.
 
@@ -79,13 +79,13 @@ public partial class NewsItem : PublishedContentModel
 
 Now since this is an automatically generated file, it's a bit messy, the important part is that it has all the properties defined and strongly typed:
 
-```c#
+```
 public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString BodyText => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "bodyText");
 ```
 
 And:
 
-```c#
+```
 public virtual string Title => this.Value<string>(_publishedValueFallback, "title");
 ```
 
@@ -104,7 +104,7 @@ If your view inherits from `UmbracoViewPage<NewsItem>` then the model is the con
 
 Models Builder respects the content types' inheritance tree, i.e. models inherit from each other if required, and mixins (content type compositions) are represented by interfaces.
 
-Models Builder is a "_code-after_*_" solution. It only generates code from content types that already exist in Umbraco. It is not a "_code-first_" solution - code-first is a much more complex question.
+Models Builder is a "_code-after_\*\_" solution. It only generates code from content types that already exist in Umbraco. It is not a "_code-first_" solution - code-first is a much more complex question.
 
 And once you are using strongly typed models, there are some [cool things](coolthingswithmodels.md) that you can do.
 

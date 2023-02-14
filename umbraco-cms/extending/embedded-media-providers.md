@@ -1,5 +1,5 @@
 ---
-description: "A guide to creating a custom embed providers in Umbraco"
+description: A guide to creating a custom embed providers in Umbraco
 ---
 
 # Embedded Media Providers
@@ -20,7 +20,8 @@ Embed Providers are registered with the `EmbedProvidersCollection` during Compos
 
 The list of available default Embed Providers in an Umbraco install are as follows:
 
-* YouTube
+* YouTube&#x20;
+* YouTube Shorts
 * Twitter
 * Vimeo
 * Dailymotion
