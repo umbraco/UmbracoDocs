@@ -5,7 +5,6 @@
 
 ## Getting Started
 
-* [Where do I start?](getting-started/README.md)
 * [Choosing Umbraco](getting-started/managing-an-umbraco-project.md)
 * [Hosting an Umbraco project](getting-started/hosting-an-umbraco-infrastructure.md)
 * [Creating websites](getting-started/creating-websites-with-umbraco.md)
