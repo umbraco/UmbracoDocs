@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Umbraco Documentation](README.md)
-* [Versioning Strategy](other-resources/documentation-and-versions.md)
+* [Versioning Strategy](documentation-and-versions.md)
 
 ## Getting Started
 
