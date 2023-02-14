@@ -8,7 +8,7 @@
 * [Notifications](notifications.md)
 * [Configuration](configuration.md)
 
-## Upgrading Workflow
+## Upgrading
 
 * [Upgrading](upgrading-workflow/README.md)
   * [Migrate from Plumber to Workflow](upgrading-workflow/migrating-workflow.md)
