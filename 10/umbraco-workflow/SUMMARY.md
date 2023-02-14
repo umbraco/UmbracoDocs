@@ -1,6 +1,6 @@
 # Table of contents
 
-* [What is Umbraco Workflow?](README.md)
+* [Umbraco Workflow Documentation](README.md)
 * [Installation](installing-workflow.md)
 * [Licensing](licensing.md)
 * [Dashboards and Buttons](dashboards-and-buttons.md)
