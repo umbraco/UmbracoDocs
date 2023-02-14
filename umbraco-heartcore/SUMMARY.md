@@ -1,4 +1,4 @@
-## Umbraco Heartcore
+# Table of Content 
 
 * [Umbraco Heartcore](README.md)
   * [Compare with Umbraco CMS](compare-with-umbraco-cms.md)
