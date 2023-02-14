@@ -40,7 +40,7 @@ If an error occours, you will receive a HTTP status code along with an API error
 | 400         | AmbiguousCulture           | The following cultures were requested: {cultures}. At most, only a single culture may be specified. Please update the intended culture and retry the request. |
 | 400         | LanguageForCultureNotFound | Could not find a language for culture {culture}.                                                                                                              |
 | 401         | Unauthorized               | Authorization has been denied for this request.                                                                                                               |
-| 500         | InternalServerError        | Internal server error.
+| 500         | InternalServerError        | Internal server error.                                                                                                                                        |
 
 **JSON example**:
 
@@ -65,7 +65,7 @@ The key is the URL of the content and the values are the URLs redirecting to the
 
 **Query Strings**
 
-```none
+```
 ?page={integer=1}
 ?pageSize={integer=10}
 ```

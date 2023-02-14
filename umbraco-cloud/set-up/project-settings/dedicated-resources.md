@@ -2,7 +2,7 @@
 
 _Dedicated Resources_ is a feature on Umbraco Cloud that gives you the option to move your project to a dedicated server. You can choose between a number of _dedicated options_ depending on the amount of resources you will need for your project.
 
-In this article, you can read about how you can move your Umbraco Cloud project to dedicated resources and what you need to be aware of before you do so.
+In this article, you can read about how to move your Umbraco Cloud project to dedicated resources. You can also find information about what you need to be aware of before doing so.
 
 ## Before you move your project to dedicated resources
 
@@ -27,7 +27,7 @@ The first step in moving to a dedicated resource is to access your project in th
 * By hitting the "Upgrade" button on your dedicated option of choice and confirming this, you will be redirected to the project page where you will be notified when the move to a dedicated resource has been completed.
 
 {% hint style="info" %}
-Dedicated resources are reserved on a per-month basis. The price of the dedicated resource will take effect from the next period of your subscription. If you move your Cloud project to a dedicated resource in the middle of the month, the time from that date until the start of the next subscription period, will be added to the next invoice.
+Are you moving your Cloud project to a dedicated resource in the middle of the month? Dedicated resources are reserved on a per-month basis. The price of the dedicated resource will take effect from the next period of your subscription. The time from that date until the start of the next subscription period, will be added to the next invoice.
 {% endhint %}
 
 ## How to move from dedicated to shared
@@ -39,4 +39,29 @@ Moving away from dedicated resources and back to shared can be done from the _De
 * By hitting "Downgrade to shared" and confirming your choice, you will be redirected to the project page where you will be notified when the move back to a shared resource has been completed.
 * Your Cloud project is now back on a shared resource.
 
-If you have any questions regarding dedicated resource, feel free to reach out to [Umbraco Support](mailto:contact@umbraco.com).
+## Frequently asked questions
+
+Wondering what happens when you move your environment to a dedicated server? 
+Below you can find a list of the most frequently asked questions including answers.
+
+### Will it move all the environments to the dedicated server?
+
+Yes, all environments will be moved to the dedicated server.
+
+### How will the resources be split between the environments?
+
+All environments on the project moved to dedicated will share the resources of the dedicated server.
+
+### Will the customer be able to work on the project during the move?
+
+It will not be possible to work on the project while it is being moved to the dedicated server. The move takes a couple of minutes, and during that time the backoffice will not respond as usual.
+
+### Will the environments be moved at the same time or one by one?
+
+Yes, all environments will be moved simultaneously. 
+
+### Will the live environment be unavailable while the Project is moved?
+
+There will always be an active live environment that continues to serve requests and be online during the move operation. When the moved live environment is ready and responding to requests, the hostnames will be switched to point to the moved environment.
+
+If you have any other questions regarding dedicated resource, feel free to reach out to [Umbraco Support](mailto:contact@umbraco.com).

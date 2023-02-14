@@ -6,21 +6,19 @@ In this article, you can read about how you can upgrade your Umbraco Cloud plan 
 
 Before you decide to upgrade your Umbraco Cloud plan, you need to consider a few things:
 
-* Changing a plan for a project on the new platform will change the outgoing IP of the project. If your solution has an external service that requires whitelisting the outgoing IP of the project, please visit the documentation for [external services](external-services.md) prior to upgrade.
+* Changing a plan for a project will change the outgoing IP of the project. If your solution has an external service that requires whitelisting the outgoing IP of the project, please visit the documentation for [external services](external-services.md) prior to the upgrade.
 * If you are on the Starter plan, you can either upgrade your plan to a Standard or a Professional plan.
-* On the Standard plan you have the option to upgrade to a professional plan.
-* When you upgrade from the Starter plan to the Standard plan, the price will increase from €32 a month to €199.
-* With the Standard plan you will get a Development environment for no additional cost and it is possible to add a Staging environment for €50.
-* The Professional plan costs €535 per month and you get both a Development and a Staging environment for free.
+* On the Standard plan, you have the option to upgrade to a professional plan.
+* Before upgrading, make sure to check the [price difference](https://umbraco.com/umbraco-cloud-pricing) and the features you get on the new plan.
 
 ## How to upgrade your plan
 
 The first step to upgrading your Umbraco Cloud plan is to access your project in the project overview at [Umbraco.io](https://www.s1.umbraco.io/projects).
 
-* In the project overview you can find all the projects that you have been invited to or have created.
-* From here you need to find the project that you want to upgrade the plan for.
+* In the project overview, you can find all the projects that you have been invited to or have created.
+* From here you need to find the project that you want to upgrade the plan.
 
-Under the project on the right side you have a dropdown menu called settings:
+Under the project on the right side, you have a dropdown menu called settings:
 
 ![Upgrade plan step 1](../images/step\_1.png)
 

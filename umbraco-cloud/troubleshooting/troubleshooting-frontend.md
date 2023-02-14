@@ -1,28 +1,27 @@
 # The Frontend
 
-{% hint style="info" %}
-**This article needs to be updated.**
-{% endhint %}
+An error in the Frontend could look like this:
 
-An error in the Frontend often looks like this:
+<figure><img src="../../.gitbook/assets/frontend-error-500.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="images/frontend-error.png" alt=""><figcaption></figcaption></figure>
+The error above is a 500 error meaning that the server encountered an unexpected condition. This could be a code error in a Template file.
 
-Errors in the frontend are presented in three ways:
+Errors on the frontend are presented in three ways:
 
-* YSOD: Yellow Screen of Death, .NET error page
+* 500 (internal server error)
 * Blank / not loading
 * 404 (Page not found)
 
-A **YSOD page** will either show the full error stack trace or a generic error message if you have customErrors turned off. The full error message can be found in the [umbracoTraceLogs](Log-Files/#umbraco-logs). Not much more to say about this - if you can't figure out what is wrong when you have the stack trace, try looking at the namespaces to see if you can figure out what process is throwing errors.
+A **500 error** will either show a generic error message like the one shown above or the full error stack trace if debug mode is enabled. The full error message can be found in the [Umbraco Logs](log-files.md).
 
-A **blank or not loading page** is likely due to bad rewrite rules - often it will end in a rewrite loop. Make sure you don't rewrite anything on these paths:
+A **blank page or a page that is not loading** is likely due to bad rewrite rules ending in a rewrite loop. Make sure you do not rewrite anything on these paths:
 
 * ^/umbraco
 * ^/DependencyHandler.axd
 * ^/App\_Plugins
-* You can see examples of how to set up rewrites correctly in the [Rewrites on Cloud](../set-up/project-settings/manage-hostnames/rewrites-on-cloud.md) article.
+
+You can see examples of how to set up rewrites correctly in the [Rewrites on Cloud](../set-up/project-settings/manage-hostnames/rewrites-on-cloud.md) article.
 
 You should also check your console log in your browser to see if something is failing to load. Finally, you can check the [umbracoTraceLogs](log-files.md#umbraco-logs) and see if any errors are thrown!
 
-A **404 page** could also be rewrite rules - look above what to check for. Other than that make sure your site and content structure is set up correctly - if you try to access a content node with no template related to it will throw this error!
+A **404 page** could also be rewrite-rules. See above for what to check for. Other than that make sure your site and content structure is set up correctly. If you try to access a content node with no template related to it will throw this error.
