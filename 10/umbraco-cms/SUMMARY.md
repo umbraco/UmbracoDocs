@@ -8,7 +8,6 @@
 
 ## Fundamentals
 
-* [Overview](fundamentals/README.md)
 * [Setup](fundamentals/setup/README.md)
   * [Requirements](fundamentals/setup/requirements.md)
   * [Installation](fundamentals/setup/install/README.md)
@@ -122,7 +121,6 @@
 
 ## Implementation
 
-* [Overview](implementation/README.md)
 * [Routing](implementation/default-routing/README.md)
   * [Controller & Action Selection](implementation/default-routing/controller-selection.md)
   * [Execute Request](implementation/default-routing/execute-request.md)
@@ -190,7 +188,6 @@
 
 ## Reference
 
-* [Overview](reference/README.md)
 * [Configuration](reference/configuration/README.md)
   * [Basic Authentication Settings](reference/configuration/basicauthsettings.md)
   * [Connection strings settings](reference/configuration/connectionstringssettings.md)
@@ -385,7 +382,6 @@
 
 ## Tutorials
 
-* [Overview](tutorials/README.md)
 * [Creating a Basic Website](tutorials/creating-a-basic-website/README.md)
   * [Getting Started](tutorials/creating-a-basic-website/getting-started.md)
   * [Document Types](tutorials/creating-a-basic-website/document-types.md)
