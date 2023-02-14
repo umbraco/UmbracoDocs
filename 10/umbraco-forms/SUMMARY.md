@@ -2,7 +2,7 @@
 
 * [What is Umbraco Forms?](README.md)
 
-## Installation and Setup
+## Installation
 
 * [Installation And Upgrades](installation/README.md)
 * [Installing Umbraco Forms](installation/install.md)
