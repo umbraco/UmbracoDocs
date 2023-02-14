@@ -1,6 +1,6 @@
 # Table of contents
 
-* [What is Umbraco Forms?](README.md)
+* [Umbraco Forms Documentation](README.md)
 
 ## Installation
 
