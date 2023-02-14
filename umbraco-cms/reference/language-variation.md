@@ -1,6 +1,6 @@
 # Language Variation
 
-Language Variation allows you to have several different variations of content based on a language culture. In the documentation there are several other useful articles about the feature:
+Language Variation allows you to have different variations of content based on a language culture. In the documentation there are other useful articles about the feature:
 
 * [Getting started with Language Variants](../fundamentals/backoffice/variants.md)
 * [Rendering variant values](../fundamentals/design/rendering-content.md)
