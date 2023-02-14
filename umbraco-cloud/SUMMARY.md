@@ -1,12 +1,11 @@
 # Table of content
 
-* [Umbraco Cloud Documentation](README.md)
+* [What is Umbraco Cloud?](README.md)
 * [Security](security.md)
 * [Frequently asked questions](frequently-asked-questions.md)
 
 ## Getting Started
 
-* [What is Umbraco Cloud?](getting-started/README.md)
 * [The Cloud Portal](getting-started/the-umbraco-cloud-portal/README.md)
   * [Organizations](getting-started/the-umbraco-cloud-portal/organizations.md)
  * [Project Overview](getting-started/project-overview.md)
