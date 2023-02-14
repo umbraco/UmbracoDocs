@@ -2,6 +2,7 @@
 
 * [Umbraco Documentation](README.md)
 * [Versioning Strategy](documentation-and-versions.md)
+* [Where can I get help?](where-can-i-get-help.md)
 
 ## Getting Started
 
@@ -12,7 +13,6 @@
 * [Developing websites](getting-started/developing-websites-with-umbraco/README.md)
   * [Customizing Umbraco](getting-started/developing-websites-with-umbraco/customizing-umbraco-sites.md)
   * [Extending the Umbraco Backoffice](getting-started/developing-websites-with-umbraco/extending-the-umbraco-backoffice.md)
-* [Where can I get help?](where-can-i-get-help.md)
 
 ## Contribute
 
@@ -23,3 +23,4 @@
 * [Create a new version of an article](contribute/how-to-add-a-new-version.md)
 * [Markdown Conventions](contribute/markdown-conventions.md)
 * [Style Guide](contribute/style-guide.md)
+* [Structure](contribute/structure.md)
