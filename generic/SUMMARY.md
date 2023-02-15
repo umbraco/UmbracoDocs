@@ -1,8 +1,9 @@
 # Table of contents
 
 * [Umbraco Documentation](README.md)
-* [Versioning Strategy](documentation-and-versions.md)
 * [Where can I get help?](where-can-i-get-help.md)
+* [Versioning Strategy](documentation-and-versions.md)
+* [Add on products](add-on-products.md)
 
 ## Getting Started
 
@@ -24,7 +25,3 @@
 * [Markdown Conventions](contribute/markdown-conventions.md)
 * [Style Guide](contribute/style-guide.md)
 * [Structure](contribute/structure.md)
-
-***
-
-* [Add on products](add-on-products.md)
