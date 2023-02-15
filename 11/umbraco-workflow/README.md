@@ -9,17 +9,11 @@ Umbraco Workflow allows the creation of multi-stage approval workflows when writ
 
 [Learn more or purchase Umbraco Workflow to get all the features and support.](https://umbraco.com/products/umbraco-workflow/)
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Installing Umbraco Workflow</strong></td><td>Install Umbraco Workflow in a few steps</td><td></td><td><a href="installing-workflow.md">installing-workflow.md</a></td></tr><tr><td><strong>Content Approval Workflows for Umbraco</strong></td><td>Allows you to design the approval process to fit your organization</td><td></td><td><a href="workflow-content-app.md">workflow-content-app.md</a></td></tr><tr><td><strong>Workflow Section Overview</strong></td><td>Approving, rejecting, content reviews, and scheduling workflows are natural additions to the existing toolbox.</td><td></td><td><a href="workflow-section/">workflow-section</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Installing Umbraco Workflow</strong></td><td>Install Umbraco Workflow in a few steps</td><td></td><td><a href="installing-workflow.md">installing-workflow.md</a></td><td><a href=".gitbook/assets/umbraco-workflow-1.png">umbraco-workflow-1.png</a></td></tr><tr><td><strong>Content Approval Workflows for Umbraco</strong></td><td>Allows you to design the approval process to fit your organization</td><td></td><td><a href="workflow-content-app.md">workflow-content-app.md</a></td><td><a href=".gitbook/assets/Community.png">Community.png</a></td></tr><tr><td><strong>Workflow Section Overview</strong></td><td>Approving, rejecting, content reviews, and scheduling workflows are natural additions to the existing toolbox.</td><td></td><td><a href="workflow-section/">workflow-section</a></td><td><a href=".gitbook/assets/Documentation_blogpost_styleguide_b.png">Documentation_blogpost_styleguide_b.png</a></td></tr></tbody></table>
 
-{% embed url="https://www.youtube.com/embed/jFWYZUiQPv8?rel=0" %}
+{% embed url="https://www.youtube-nocookie.com/embed/jFWYZUiQPv8" %}
 Umbraco Workflow Overview
 {% endembed %}
-
-Umbraco Workflow adds a [Content App](https://our.umbraco.com/Documentation/Extending/Content-Apps/) to all content nodes in the **Content** section where a workflow is enabled. For more information, see the [Workflow Content App](workflow-content-app.md) section.
-
-A user can be a member of multiple groups in the same workflow. To initiate an approval workflow, a user updates the content, saves their changes, then selects **Request publish**.
-
-The workflow Dashboard updates to reflect the state of each task, providing an overview of a user's submissions and tasks. Tasks can be approved, cancelled, or rejected from the **Dashboard** or from the content node **Workflow** tab. For more information, see the [Workflow Dashboards and Buttons](dashboards-and-buttons.md) section.
 
 ## Quick Links
 
