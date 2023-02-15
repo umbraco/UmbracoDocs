@@ -135,7 +135,9 @@
 * [Services and Helpers](implementation/services/README.md)
   * [Circular Dependencies](implementation/services/circular-dependencies.md)
 * [Unit Testing](implementation/unit-testing.md)
-* [Extending](extending/README.md)
+
+## Extending
+
 * [Dashboards](extending/dashboards.md)
 * [Sections & Trees](extending/section-trees/README.md)
   * [Sections](extending/section-trees/sections.md)
