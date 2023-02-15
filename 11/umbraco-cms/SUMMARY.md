@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Umbraco Documentation](README.md)
+* [Umbraco CMS Documentation](README.md)
 * [Where can I get help?](where-can-i-get-help.md)
 * [Legacy Documentation](legacy-documentation/README.md)
   * [Umbraco 8 Documentation](https://our.umbraco.com/documentation/)
