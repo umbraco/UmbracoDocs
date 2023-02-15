@@ -1,27 +1,9 @@
-# What is Umbraco CMS?
+---
+description: Your main resource when building and managing an Umbraco CMS website.
+---
 
-Umbraco CMS is a flexible and editor-friendly content management system that allows you to create beautiful and modern websites. Use the latest version of .NET, integrate with your favorite services and help your customers launch a website tailored to their specific needs.
+# Umbraco Documentation
 
-Learn much more about what Umbraco CMS and get an overview of the top features on [Umbraco.com](https://umbraco.com/products/umbraco-cms/).
+Umbraco CMS is a flexible and editor-friendly Content Management System (CMS) that allows you to create beautiful and modern websites. Use the latest version of .NET, integrate with your favorite services, and help your customers launch a website tailored to their specific needs. Learn much more about Umbraco CMS and get an overview of the top features on [Umbraco.com](https://umbraco.com/products/umbraco-cms/).
 
-In this section of the documentation, you can read how to set up and work with Umbraco CMS. You can find articles about installing, upgrading and managing Umbraco as well as all the features and functionalities of the Backoffice.
-
-## [Fundamentals](fundamentals/)
-
-All the fundamentals of using Umbraco. From making a local installation to customizing the editor experience in the Backoffice.
-
-## [Implementation](implementation/)
-
-Get to know the Umbraco codebase. Developing an application requires knowledge about the tool you are working with. This section will give you an introduction to the structure of Umbraco.
-
-## [Extending](extending/)
-
-This section provides an in-depth study of how to extend Umbraco's features.
-
-## [Reference](reference/)
-
-The Reference section primarily consists of API references of the different core Umbraco APIs. In many cases, the references come with code snippets with examples.&#x20;
-
-## [Tutorials](tutorials/)
-
-In the Tutorials section, you can find guides to help you create and maintain your websites.
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Fundamentals</strong></td><td>Learn the basics of working with Umbraco CMS. How to install and setup your very first site is also included in this section.</td><td><a href=".gitbook/assets/rocket-hero.png">rocket-hero.png</a></td></tr><tr><td><strong>Developer's Reference</strong></td><td>Dive into the source code of Umbraco CMS and learn how to customize it to fit your website needs.</td><td><a href=".gitbook/assets/docs-style-hero.png">docs-style-hero.png</a></td></tr><tr><td><strong>Tutorials</strong></td><td>Find details step-by-step guides on everything from building a site from scratch to implementing a custom maintenance page.</td><td><a href=".gitbook/assets/reversed-heart-hero.png">reversed-heart-hero.png</a></td></tr></tbody></table>

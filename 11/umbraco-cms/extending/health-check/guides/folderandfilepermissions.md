@@ -1,4 +1,4 @@
-# Health check: Folder & File Permissions
+# Folder & File Permissions
 
 _Checks that the web server folder and file permissions are set correctly for Umbraco to run._
 
@@ -12,12 +12,11 @@ The following shows an example of how to change permissions for a single folder.
 
 First we see an example of an error from the health check
 
-![Failed health check for folder creation](images/failed_healthcheck_folder_permissions.png)
+![Failed health check for folder creation](../../../../../10/umbraco-cms/extending/health-check/guides/images/failed\_healthcheck\_folder\_permissions.png)
 
 To fix this, we find the specified folder, from the report and choose `Properties` and the `Security` tab.
 
-![Folder properties](images/folder_properties.png)
-![Folder properties - Security tab](images/folder_properties_security.png)
+![Folder properties](../../../../../10/umbraco-cms/extending/health-check/guides/images/folder\_properties.png) ![Folder properties - Security tab](../../../../../10/umbraco-cms/extending/health-check/guides/images/folder\_properties\_security.png)
 
 From here you can edit the permissions for a specific user or user group.
 
