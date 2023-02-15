@@ -5,7 +5,7 @@ root: ./
     summary: SUMMARY.md
 
 redirects:
-    10/umbraco-workflow/configuration.md: 10/umbraco-workflow/getting-started/configuration.md
-    10/umbraco-workflow/dashboards-and-buttons.md: 10/umbraco-workflow/getting-started/dashboards-and-buttons.md
-    10/umbraco-workflow/notifications.md: 10/umbraco-workflow/getting-started/notifications.md
-    10/umbraco-workflow/workflow-content-app.md: 10/umbraco-workflow/getting-started/workflow-content-app.md
+    umbraco-workflow/configuration: umbraco-workflow/getting-started/configuration.md
+    umbraco-workflow/dashboards-and-buttons: umbraco-workflow/getting-started/dashboards-and-buttons.md
+    umbraco-workflow/notifications: umbraco-workflow/getting-started/notifications.md
+    umbraco-workflow/workflow-content-app: umbraco-workflow/getting-started/workflow-content-app.md

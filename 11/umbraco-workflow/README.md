@@ -1,7 +1,6 @@
 ---
 meta.Title: Umbraco Workflow Documentation
 description: Documentation on how to work with Umbraco Workflow in just a few steps
-layout: landing
 ---
 
 # Umbraco Workflow Documentation
