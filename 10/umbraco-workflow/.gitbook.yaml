@@ -3,3 +3,9 @@ root: ./
 ​structure:  
     readme: README.md
     summary: SUMMARY.md
+
+redirects:
+    10/umbraco-workflow/configuration.md: 10/umbraco-workflow/getting-started/configuration.md
+    10/umbraco-workflow/dashboards-and-buttons.md: 10/umbraco-workflow/getting-started/dashboards-and-buttons.md
+    10/umbraco-workflow/notifications.md: 10/umbraco-workflow/getting-started/notifications.md
+    10/umbraco-workflow/workflow-content-app.md: 10/umbraco-workflow/getting-started/workflow-content-app.md
