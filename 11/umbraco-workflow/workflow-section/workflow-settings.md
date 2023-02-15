@@ -35,12 +35,10 @@ To add an approval group to the workflow:
 
 1. Go to the **Workflow** section.
 2. Go to the **General** tab in the **Settings** menu.
-3.  Click **Add** in the **New node approval flow** section.\
-
+3. Click **Add** in the **New node approval flow** section.
 
     <figure><img src="../../umbraco-workflow/images/new-node-approval-flow.png" alt=""><figcaption><p>New Node Approval Flow</p></figcaption></figure>
-4.  Select an **approval group** to add to the workflow.\
-
+4. Select an **approval group** to add to the workflow.
 
     <figure><img src="../../umbraco-workflow/images/add-approval-flow.png" alt=""><figcaption><p>Add Workflow Approval Groups</p></figcaption></figure>
 5. Click **Submit**.
@@ -58,16 +56,15 @@ To add a Document type approval flow:
 
 1. Go to the **Workflow** section.
 2. Go to the **General** tab in the **Settings** menu.
-3.  Click **Add** in the **Document type approval flows** section.&#x20;
+3. Click **Add** in the **Document type approval flows** section.
 
     <figure><img src="../../umbraco-workflow/images/doc-type-approval-flows.png" alt=""><figcaption><p>Document Type Approval Flows</p></figcaption></figure>
-4.  Select a **Document type** from the drop-down list.\
-
+4. Select a **Document type** from the drop-down list.
 
     <figure><img src="../../umbraco-workflow/images/add-doc-type-approval-flows.png" alt=""><figcaption><p>Add Document Type Approval Flows</p></figcaption></figure>
 5. Select a **Language** from the drop-down list.
 6. **Add workflow approval groups** in the **Current flow** process.
-7.  Click **Add condition** to add a condition to the workflow process.&#x20;
+7. Click **Add condition** to add a condition to the workflow process.
 
     <figure><img src="../../umbraco-workflow/images/add-doc-type-approval-flows-settings.png" alt=""><figcaption><p>Configure Document Type Approval Flow Settings</p></figcaption></figure>
 8. Click **Submit**.
@@ -77,12 +74,12 @@ To edit a Document type approval flow:
 
 1. Go to the **Workflow** section.
 2. Go to the **General** tab in the **Settings** menu.
-3.  Click **Edit** next to the content node in the **Document type approval flows** section.
+3. Click **Edit** next to the content node in the **Document type approval flows** section.
 
     <figure><img src="../../umbraco-workflow/images/edit-doc-type-approval-flows.png" alt=""><figcaption><p>Edit Document Type Approval Flow</p></figcaption></figure>
 4. Select a **Language** from the drop-down list.
 5. **Add**, **Edit**, or **Remove** approval groups from the current workflow.
-6.  Click **Add condition** to add a condition to the workflow process.
+6. Click **Add condition** to add a condition to the workflow process.
 
     <figure><img src="../../umbraco-workflow/images/edit-doc-type-approval-flows-settings.png" alt=""><figcaption><p>Configure Document Type Approval Flow</p></figcaption></figure>
 7. Click **Submit**.
@@ -96,12 +93,10 @@ To exclude a node from the workflow process:
 
 1. Go to the **Workflow** section.
 2. Go to the **General** tab in the **Settings** menu.
-3.  Click **Add** in the **Exclude nodes** section.\
-
+3. Click **Add** in the **Exclude nodes** section.
 
     <figure><img src="../../umbraco-workflow/images/exclude-nodes.png" alt=""><figcaption><p>Exclude Nodes</p></figcaption></figure>
-4.  Select the **Content node** from the Content tree.\
-
+4.  Select the **Content node** from the Content tree.
 
     <figure><img src="../../umbraco-workflow/images/select-content-from-tree.png" alt=""><figcaption><p>Select Content Node</p></figcaption></figure>
 5. Click **Submit**.
@@ -116,11 +111,11 @@ From the **Settings** view in the **Workflow** section, the **Notifications** ta
 * **Send notifications:** If you wish to send email notifications to approval groups, you can enable it here. If your users are active in the backoffice, email notifications might not be required.
 * **Workflow email:** Provide a sender address for email notifications. This is a mandatory field.
 * **Reminder delay (days):** Set a delay in days for sending reminder emails for outstanding workflow processes. Set to 0 to disable reminder emails.
-* **Edit site URL:** The URL for the editing environment (including schema - http\[s]). This is a mandatory field.
-* **Site URL:** The URL for the public website (including schema - http\[s]). This is a mandatory field.
-*   [**Email templates**](workflow-settings.md#email-templates)**:** Configure which users receive emails for which workflow actions and modify the templates for those emails.\\
+* **Edit site URL:** The URL for the editing environment (including schema - http[s]). This is a mandatory field.
+* **Site URL:** The URL for the public website (including schema - http[s]). This is a mandatory field.
+* [**Email templates**](workflow-settings.md#email-templates)**:** Configure which users receive emails for which workflow actions and modify the templates for those emails.
 
-    ![Notifications tab in the Workflow Section](../../umbraco-workflow/images/Notifications\_tab.png)
+    ![Notifications tab in the Workflow Section](../../umbraco-workflow/images/Notifications-tab.png)
 
 ## Notifications Overview
 
