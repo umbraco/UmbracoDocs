@@ -23,7 +23,7 @@ To set a prevalue source:
 Depending on the **Type** you choose, you'll need to provide some additional settings:
 
 1. In this walk-through, we will select **Get values from textfile** from the **Type** drop-down. ![Type settings](images/typesettings.png)
-2.  Now, provide a file containing the list to use as prevalues. For example: A `.txt` file containing the following values:&#x20;
+2.  Now, provide a file containing the list to use as prevalues. For example: A `.txt` file containing the following values:
 
     ```
     example value 1
@@ -35,7 +35,7 @@ Depending on the **Type** you choose, you'll need to provide some additional set
 3. Select **Pick File** and choose the text file you created.
 4. Once the text file is uploaded, click **Save** to save the prevalue source.
 5.  If the file is successfully uploaded and validated, you will see an overview of the values in a tabular format.\
-    &#x20;
+
 
     <figure><img src="images/preview.png" alt=""><figcaption></figcaption></figure>
 

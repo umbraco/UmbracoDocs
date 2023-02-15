@@ -25,24 +25,21 @@ To create a Form, follow these steps:
 
     ![Forms designer](images/FormDesignerStartV8.png)
 5. By default, there is a page, a fieldset, and a container available. The rest of the Form has to be added using the interface.
-6.  Enter the **Name** for the Form. Let's call it _Our first form_.\
-
+6.  Enter the **Name** for the Form. Let's call it _Our first form_.\\
 
     <figure><img src="images/FormDesignerFormNameV8.png" alt=""><figcaption></figcaption></figure>
 7.  **\[Optional]** Enter the **Page Name**. We'll call it _The first page_. Click **Add new page** at the bottom of the Forms designer to add more pages.\
-    &#x20;
+
 
     <figure><img src="images/FormDesignerPageCaptionV8.png" alt=""><figcaption></figcaption></figure>
-8.  **\[Optional]** Enter the **Group Name**. Click **Add new group** to add another group. \
-
+8.  **\[Optional]** Enter the **Group Name**. Click **Add new group** to add another group. \\
 
     <figure><img src="images/FormDesignerPageGroupV8.png" alt=""><figcaption></figcaption></figure>
 9.  Click the **Add Question** button to add a new field.\
-    &#x20;
+
 
     <figure><img src="images/FormDesignerAddFieldV8.png" alt=""><figcaption></figcaption></figure>
-10. The **Add Question** dialog opens.\
-
+10. The **Add Question** dialog opens.\\
 
     ![Forms add field dialog](images/FormDesignerAddFieldDialogV8.png)
 11. Enter the following details:
@@ -62,7 +59,7 @@ To create a Form, follow these steps:
 
     Some of the additional settings are dependent on which answer type was chosen. For example, since we selected _Short Answer_ as our answer type we got two additional settings (Default Value and Placeholder).
 19. Once the configuration is completed, click **Submit**. You will see that the field has been added to the Form designer.\
-    &#x20;
+
 
     <figure><img src="images/FormDesignerFieldAddedV8.png" alt=""><figcaption></figcaption></figure>
 
@@ -70,12 +67,11 @@ To edit a field that has already been added to the Form, click the little **cog*
 
 ### Structuring the Form
 
-Once you've added a few fields to your Form, you might want to change the order of questions. To do so, click **Reorder** in the top-right corner of the Form designer.\
-
+Once you've added a few fields to your Form, you might want to change the order of questions. To do so, click **Reorder** in the top-right corner of the Form designer.\\
 
 <figure><img src="images/Reorder_Form.png" alt=""><figcaption></figcaption></figure>
 
-When reordering your Form, you can drag and drop the fields to make it look the way you want. Click **I am done reordering** to get back to the Form designer.&#x20;
+When reordering your Form, you can drag and drop the fields to make it look the way you want. Click **I am done reordering** to get back to the Form designer.
 
 <figure><img src="images/Reorder_Form_1.png" alt=""><figcaption></figcaption></figure>
 

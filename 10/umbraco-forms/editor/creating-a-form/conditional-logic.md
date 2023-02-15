@@ -16,11 +16,11 @@ To enable conditions for the **Email** and **Phone** fields, do the following:
 
 1. Click the `cog` wheel next to the **Email** and **Phone** field. The **Edit question** dialog opens.
 2.  Select **Enable Conditions** in the **Conditions** section.\
-    &#x20;
+
 
     <figure><img src="images/EnableConditions-v9.png" alt=""><figcaption></figcaption></figure>
 3.  Enabling the condition field displays more options:\
-    &#x20;
+
 
     <figure><img src="images/conditions-v9.png" alt=""><figcaption></figcaption></figure>
 4. Set the appropriate conditions and click **Submit**.
