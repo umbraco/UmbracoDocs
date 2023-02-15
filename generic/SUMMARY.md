@@ -24,3 +24,7 @@
 * [Markdown Conventions](contribute/markdown-conventions.md)
 * [Style Guide](contribute/style-guide.md)
 * [Structure](contribute/structure.md)
+
+***
+
+* [Add on products](add-on-products.md)
