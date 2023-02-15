@@ -2,7 +2,7 @@
 
 Umbraco Heartcore is a headless Software As A Service (SAAS) offered by Umbraco. The service enables you to create and manage content and media in the Umbraco backoffice and make it available to any platforms, devices, channels etc.
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Get started using Umbraco Heartcore</strong></td><td><a href=".gitbook/assets/headless.png">headless.png</a></td></tr><tr><td><strong>Find out how to use the Umbraco Heartcore APIs</strong></td><td><a href=".gitbook/assets/code.png">code.png</a></td></tr><tr><td><strong>Learn how to use Umbraco Heartcore using the Client libraries</strong> </td><td><a href=".gitbook/assets/devices.png">devices.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Getting started</strong></td><td>Get started working with Umbraco Heartcore</td><td><a href=".gitbook/assets/headless.png">headless.png</a></td></tr><tr><td><strong>Umbraco Heartcore APIs</strong></td><td>See the different APIs available in Umbraco Heartcore</td><td><a href=".gitbook/assets/code.png">code.png</a></td></tr><tr><td><strong>Client libraries</strong> </td><td>Test out your Umbraco Hearcore project with the premade client libraries</td><td><a href=".gitbook/assets/devices.png">devices.png</a></td></tr></tbody></table>
 
 {% embed url="https://www.youtube.com/embed/Rujaw1VWUaQ?rel=0" %}
 How to create a Heartcore Trial
