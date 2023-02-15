@@ -85,8 +85,8 @@ Once the installation is completed, you will see the following in the Umbraco Ba
 
 ### A Workflow Dashboard
 
-![Workflow dashboard](../../11/umbraco-workflow/images/WorkflowDashboard\_ContentSection.png)
+![Workflow dashboard](images/WorkflowDashboard-ContentSection.png)
 
 ### A Workflow section
 
-![Workflow section](../../11/umbraco-workflow/images/workflow-section.png)
+![Workflow section](images/workflow-section.png)
