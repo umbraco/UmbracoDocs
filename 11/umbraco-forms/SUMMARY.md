@@ -1,10 +1,9 @@
 # Table of contents
 
-* [What is Umbraco Forms?](README.md)
+* [Umbraco Forms Documentation](README.md)
 
 ## Installation
 
-* [Installation And Upgrades](installation/README.md)
 * [Installing Umbraco Forms](installation/install.md)
 * [Manually Upgrading Umbraco Forms](installation/manualupgrade.md)
 * [Keeping Umbraco Forms up to date](installation/upgrade.md)
@@ -12,7 +11,6 @@
 
 ## Editor
 
-* [Editor Documentation](editor/README.md)
 * [Creating a Form - The Basics](editor/creating-a-form/README.md)
   * [Form Settings](editor/creating-a-form/form-settings.md)
   * [Overview Of The Field Types](editor/creating-a-form/fieldtypes/README.md)
@@ -29,7 +27,6 @@
 
 ## Developer
 
-* [Developer Documentation](developer/README.md)
 * [Preparing Your Frontend](developer/prepping-frontend.md)
 * [Rendering Forms Scripts](developer/rendering-scripts.md)
 * [Themes](developer/themes.md)
