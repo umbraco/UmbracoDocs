@@ -1,7 +1,6 @@
 ---
 meta.Title: Umbraco Workflow Documentation
-description: >-
-  Documentation on how to work with Umbraco Workflow in just a few steps
+description: Documentation on how to work with Umbraco Workflow in just a few steps
 layout: landing
 ---
 
@@ -19,14 +18,14 @@ Umbraco Workflow Overview
 
 ## Quick Links
 
-{% content-ref url="dashboards-and-buttons.md" %}
-[dashboards-and-buttons.md](dashboards-and-buttons.md)
+{% content-ref url="getting-started/dashboards-and-buttons.md" %}
+[dashboards-and-buttons.md](getting-started/dashboards-and-buttons.md)
 {% endcontent-ref %}
 
-{% content-ref url="notifications.md" %}
-[notifications.md](notifications.md)
+{% content-ref url="getting-started/notifications.md" %}
+[notifications.md](getting-started/notifications.md)
 {% endcontent-ref %}
 
-{% content-ref url="configuration.md" %}
-[configuration.md](configuration.md)
+{% content-ref url="getting-started/configuration.md" %}
+[configuration.md](getting-started/configuration.md)
 {% endcontent-ref %}
