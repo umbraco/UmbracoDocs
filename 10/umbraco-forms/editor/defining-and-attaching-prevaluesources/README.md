@@ -14,7 +14,7 @@ To set a prevalue source:
 2. Right-click the **Prevalue sources** folder and select **Create**.
 3. A new page opens in the right-side of the editor where you'll need to setup and configure your prevalue source.
 4. Enter a **Name**.
-5.  Select the type of prevalue source from the **Type** drop-down. For more information on the different default types, see the [Overview of the Prevalue Source Types](prevalue-source-types.md) article.
+5. Select the type of prevalue source from the **Type** drop-down. For more information on the different default types, see the [Overview of the Prevalue Source Types](prevalue-source-types.md) article.
 
     ![Choose type](images/choosetype.png)
 
@@ -23,7 +23,7 @@ To set a prevalue source:
 Depending on the **Type** you choose, you'll need to provide some additional settings:
 
 1. In this walk-through, we will select **Get values from textfile** from the **Type** drop-down. ![Type settings](images/typesettings.png)
-2.  Now, provide a file containing the list to use as prevalues. For example: A `.txt` file containing the following values:&#x20;
+2. Now, provide a file containing the list to use as prevalues. For example: A `.txt` file containing the following values:
 
     ```
     example value 1
@@ -34,8 +34,7 @@ Depending on the **Type** you choose, you'll need to provide some additional set
     ```
 3. Select **Pick File** and choose the text file you created.
 4. Once the text file is uploaded, click **Save** to save the prevalue source.
-5.  If the file is successfully uploaded and validated, you will see an overview of the values in a tabular format.\
-    &#x20;
+5. If the file is successfully uploaded and validated, you will see an overview of the values in a tabular format.
 
     <figure><img src="images/preview.png" alt=""><figcaption></figcaption></figure>
 
