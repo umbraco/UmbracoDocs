@@ -9,20 +9,18 @@ Umbraco contains the **Forms** section, by default. You will see a similar inter
 
 ![Form section in backoffice](images/Forms\_Section\_Backoffice.png)
 
-## Installing Umbraco Forms
-
-### Video Tutorial
+## Video Tutorial
 
 {% embed url="https://www.youtube.com/watch?v=3Aojbp_1MPc" %}
 
 To install the Umbraco Forms package (**Umbraco.Forms**), follow these steps:
 
-1.  Run the following command on a command prompt of your choice:
+1. Run the following command on a command prompt of your choice:
 
     ```
     dotnet add package Umbraco.Forms
     ```
-2.  Restart the web application using the following command:
+2. Restart the web application using the following command:
 
     ```
      dotnet run
@@ -36,4 +34,4 @@ Once the installation is successful, you will see a similar screen in the Forms 
 
 ## Using Forms
 
-For details on using Forms, see the [Editor Documentation](broken-reference).
+For details on using Forms, see the [Editor Documentation](../editor/creating-a-form/README.md).

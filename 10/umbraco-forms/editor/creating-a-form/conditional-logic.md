@@ -15,12 +15,10 @@ In this case, it makes sense to **only** show the email or phone field when the 
 To enable conditions for the **Email** and **Phone** fields, do the following:
 
 1. Click the `cog` wheel next to the **Email** and **Phone** field. The **Edit question** dialog opens.
-2.  Select **Enable Conditions** in the **Conditions** section.\
-
+2. Select **Enable Conditions** in the **Conditions** section.
 
     <figure><img src="images/EnableConditions-v9.png" alt=""><figcaption></figcaption></figure>
-3.  Enabling the condition field displays more options:\
-
+3. Enabling the condition field displays more options:
 
     <figure><img src="images/conditions-v9.png" alt=""><figcaption></figcaption></figure>
 4. Set the appropriate conditions and click **Submit**.
@@ -55,7 +53,7 @@ When both the conditions have been set as shown above, this is how it will look 
 
 ![Frontend Example](images/exampleFrontend-v9.png)
 
-In this example, we have only selected **Phone** but it is possible to choose both _Phone_\* and **Email** and display both the fields.
+In this example, we have only selected **Phone** but it is possible to choose both _Phone_* and **Email** and display both the fields.
 
 ## Conditions for Pages and Fieldsets
 

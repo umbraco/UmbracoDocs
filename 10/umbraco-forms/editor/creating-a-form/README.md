@@ -15,31 +15,29 @@ If you do not see the **Forms** section, you might need to request access from t
 To create a Form, follow these steps:
 
 1. Navigate to the **Forms** section.
-2.  Click **...** next to the Forms folder.
+2. Click **...** next to the Forms folder.
 
     ![Forms tree](images/FormsTree.png)
-3.  The **Create a new Form** dialog opens.
+3. The **Create a new Form** dialog opens.
 
     ![Forms create dialog](images/FormsCreateDialogV9.png)
-4.  Select **Empty Form**. The Form Designer opens in the editor.
+4. Select **Empty Form**. The Form Designer opens in the editor.
 
     ![Forms designer](images/FormDesignerStartV8.png)
 5. By default, there is a page, a fieldset, and a container available. The rest of the Form has to be added using the interface.
-6.  Enter the **Name** for the Form. Let's call it _Our first form_.\\
+6. Enter the **Name** for the Form. Let's call it _Our first form_.
 
     <figure><img src="images/FormDesignerFormNameV8.png" alt=""><figcaption></figcaption></figure>
-7.  **\[Optional]** Enter the **Page Name**. We'll call it _The first page_. Click **Add new page** at the bottom of the Forms designer to add more pages.\
-
+7. **[Optional]** Enter the **Page Name**. We'll call it _The first page_. Click **Add new page** at the bottom of the Forms designer to add more pages.
 
     <figure><img src="images/FormDesignerPageCaptionV8.png" alt=""><figcaption></figcaption></figure>
-8.  **\[Optional]** Enter the **Group Name**. Click **Add new group** to add another group. \\
+8. **[Optional]** Enter the **Group Name**. Click **Add new group** to add another group.
 
     <figure><img src="images/FormDesignerPageGroupV8.png" alt=""><figcaption></figcaption></figure>
-9.  Click the **Add Question** button to add a new field.\
-
+9. Click the **Add Question** button to add a new field.
 
     <figure><img src="images/FormDesignerAddFieldV8.png" alt=""><figcaption></figcaption></figure>
-10. The **Add Question** dialog opens.\\
+10. The **Add Question** dialog opens.
 
     ![Forms add field dialog](images/FormDesignerAddFieldDialogV8.png)
 11. Enter the following details:
@@ -58,8 +56,7 @@ To create a Form, follow these steps:
 18. Set **Conditions** for the field. For more information on Conditions, see the [Setting-up conditional logic on fields](conditional-logic.md) article.
 
     Some of the additional settings are dependent on which answer type was chosen. For example, since we selected _Short Answer_ as our answer type we got two additional settings (Default Value and Placeholder).
-19. Once the configuration is completed, click **Submit**. You will see that the field has been added to the Form designer.\
-
+19. Once the configuration is completed, click **Submit**. You will see that the field has been added to the Form designer.
 
     <figure><img src="images/FormDesignerFieldAddedV8.png" alt=""><figcaption></figcaption></figure>
 
@@ -67,7 +64,7 @@ To edit a field that has already been added to the Form, click the little **cog*
 
 ### Structuring the Form
 
-Once you've added a few fields to your Form, you might want to change the order of questions. To do so, click **Reorder** in the top-right corner of the Form designer.\\
+Once you've added a few fields to your Form, you might want to change the order of questions. To do so, click **Reorder** in the top-right corner of the Form designer.
 
 <figure><img src="images/Reorder_Form.png" alt=""><figcaption></figcaption></figure>
 
@@ -94,16 +91,16 @@ You can create folders within folders, rename, move and delete them. You also ha
 To add the Form, follow these steps:
 
 1. Navigate to the **Content** section of the Umbraco Backoffice.
-2.  Select the content page where you want to insert the Form. The page you choose should either have an RTE field, a Grid Editor, or a form picker all of which you can add in the **Settings** section under **Document Types**.
+2. Select the content page where you want to insert the Form. The page you choose should either have an Rich Text Editor (RTE) field, a Grid Editor, or a form picker all of which you can add in the **Settings** section under **Document Types**.
 
     ![Content page](images/ContentExamples.png)
 3. Click the **Insert macro** button in the toolbar of the RTE or Grid. The **Select Macro** dialog opens.
-4.  Click **Add** under **Choose a Form** and select the Form you want to insert. You will be able to select from the full list of forms. If available on your installation, you will also be able to select using a folder based view, which can be quicker to navigate when many forms have been prepared.
+4. Click **Add** under **Choose a Form** and select the Form you want to insert. You will be able to select from the full list of forms. If available on your installation, you will also be able to select using a folder based view, which can be quicker to navigate when many forms have been prepared.
 
     ![Content page add macro](images/ContentPageAddMacroDialog.png)
-5. **\[Optional]** Click **Add** under **Theme** to choose which theme the Form should use.
+5. **[Optional]** Click **Add** under **Theme** to choose which theme the Form should use.
 6. Finally you have an option to **Exclude Scripts**.
 7. Click **Submit**.
-8.  The Form is inserted on to your page. Click the **Save and publish** button.
+8. The Form is inserted on to your page. Click the **Save and publish** button.
 
     ![Content page with form](images/ContentExamplesWithForm.png)
