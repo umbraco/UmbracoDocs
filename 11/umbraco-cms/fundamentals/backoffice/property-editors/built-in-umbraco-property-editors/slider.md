@@ -10,13 +10,13 @@ There are two flavors of the slider. One with a single value picker. One with a 
 
 ## Data Type Definition Example
 
-![Slider Data Type Definition](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Slider-Data-Type-Definition-Example.png)
+![Slider Data Type Definition](../built-in-property-editors/images/Slider-Data-Type-Definition-Example.png)
 
 ## Content Example
 
-<figure><img src="../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Slider-Content-Example-no-range.PNG" alt=""><figcaption></figcaption></figure>
+<figure><img src="../built-in-property-editors/images/Slider-Content-Example-no-range.PNG" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Slider-Content-Example-With-Range.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../built-in-property-editors/images/Slider-Content-Example-With-Range.png" alt=""><figcaption></figcaption></figure>
 
 ## MVC View Example
 

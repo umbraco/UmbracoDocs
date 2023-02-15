@@ -1,5 +1,5 @@
 ---
-description: Guide on how to implement Property Actions for Property Editors in Umbraco
+description: "Guide on how to implement Property Actions for Property Editors in Umbraco"
 ---
 
 # Property Actions
@@ -8,11 +8,12 @@ Property Actions are a built-in feature that provide a generic place for seconda
 
 Property Actions appear as a small button next to the label of the property, which expands to show the available actions. They are defined and implemented in the Property Editor, making it very open as to what a Property Action is.
 
-![Example of Property Action on Nested Content Property Editor](../../../../10/umbraco-cms/extending/property-editors/images/example-of-property-actions.jpg)
+![Example of Property Action on Nested Content Property Editor](images/example-of-property-actions.jpg)
 
 ## Data Structure of Property Actions
 
-Property Editors are an array of objects defining each action. An action is defined by the following properties:
+Property Editors are an array of objects defining each action.
+An action is defined by the following properties:
 
 ```js
 {
@@ -71,7 +72,8 @@ this.$onInit = function () {
 
 ### Component Implementation
 
-Follow this guide if your Property Editor is implemented as a Component. The Component must be configured to retrieve an optional reference to `umbProperty`. The requirement must be optional because property-editors are implemented in scenarios where it's not presented.
+Follow this guide if your Property Editor is implemented as a Component.
+The Component must be configured to retrieve an optional reference to `umbProperty`. The requirement must be optional because property-editors are implemented in scenarios where it's not presented.
 
 See the following example:
 

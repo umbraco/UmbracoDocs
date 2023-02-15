@@ -1,10 +1,10 @@
 ---
-description: Learn about the data types in Umbraco.
+description: "Learn about the data types in Umbraco."
 ---
 
 # Data Types
 
-_A Data Type defines the type of input for a property. So when adding a property (on Document Types, Media Types and Members) and selecting the Type you are selecting a Data Type. There are preconfigured Data Types available in Umbraco and more can be added in the Settings section._
+*A Data Type defines the type of input for a property. So when adding a property (on Document Types, Media Types and Members) and selecting the Type you are selecting a Data Type. There are preconfigured Data Types available in Umbraco and more can be added in the Settings section.*
 
 ## What is a Data Type?
 
@@ -16,27 +16,29 @@ An example of this could be to have two dropdown Data Types both referencing the
 
 ## Creating a new Data Type
 
-To create a new Data Type, go to the **Settings** section within the backoffice. Thereafter click the menu icon to the right of the **Data Types** folder and select **Create**->**New Data Type**. Name the Data Type - we'll call it _Dropdown Cities_.
+To create a new Data Type, go to the **Settings** section within the backoffice. Thereafter click the menu icon to the right of the __Data Types__ folder and select __Create__->__New Data Type__. Name the Data Type - we'll call it _Dropdown Cities_.
 
-![Dropdown List](../../../../../10/umbraco-cms/fundamentals/data/data-types/images/creating-a-data-type-v10.png)
+![Dropdown List](images/creating-a-data-type-v10.png)
 
-* **Property Editor:** This is where you pick the Property Editor that our _Dropdown Cities_ Data Type will be referencing. Pick the **Dropdown** and now you will see the configuration options that are available for a Data Type referencing the Dropdown Property Editor.
-* **Enable multiple choice:** By enabling this it will be possible to select multiple options from the dropdown.
-* **Add prevalue:** Here you can add prevalues to the Data Type by entering the value you want into the input field and pressing the **add** button or hitting **Enter** on your keyboard.
+* __Property Editor:__ This is where you pick the Property Editor that our *Dropdown Cities* Data Type will be referencing. Pick the __Dropdown__ and now you will see the configuration options that are available for a Data Type referencing the Dropdown Property Editor.
+
+* __Enable multiple choice:__ By enabling this it will be possible to select multiple options from the dropdown.
+
+* __Add prevalue:__ Here you can add prevalues to the Data Type by entering the value you want into the input field and pressing the __add__ button or hitting __Enter__ on your keyboard.
 
 When you're happy with the list press **Save**. It is now possible to select this Data Type for a property on Document Types, Media Types, and Members. Doing this will then create a dropdown list for the editor to choose from and save the choice as a string.
 
 ## Customizing Data Types
 
-To customize an existing Data Type go to the **Settings** section, expand the **Data Types** folder and select the **Data Type** you want to edit.
+To customize an existing Data Type go to the __Settings__ section, expand the __Data Types__ folder and select the **Data Type** you want to edit.
 
-Besides the Data Types that are available out of the box there are some additional **Property Editors**. For example, think of the **Slider** and **Nested Content**.
+Besides the Data Types that are available out of the box there are some additional **Property Editors**. For example, think of the __Slider__ and __Nested Content__.
 
 ## Viewing Data Type References
 
-To view the Data Type reference, go to the **Settings** section and expand the **Data Types** folder. Select the **Data Type** you wish to view the reference for and click the **Info** tab.
+To view the Data Type reference, go to the __Settings__ section and expand the __Data Types__ folder. Select the **Data Type** you wish to view the reference for and click the __Info__ tab.
 
-![Content Picker References](../../../../../10/umbraco-cms/fundamentals/data/data-types/images/viewing-data-type-reference.png)
+![Content Picker References](images/viewing-data-type-reference.png)
 
 This gives you an overview of the Types that currently use the Data Type.
 
@@ -45,7 +47,7 @@ Learn more about viewing references or implementing tracking in the [Tracking Re
 ### More information
 
 * [List of available Data Types](default-data-types.md)
-* [Property Editors](../../backoffice/property-editors/)
+* [Property Editors](../../backoffice/property-editors/README.md)
 
 ### Related Services
 

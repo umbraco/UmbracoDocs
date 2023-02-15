@@ -90,7 +90,7 @@ Deletes relation of the specified relation type.
 
 Returns `void`.
 
-### GetAllRelations(params int\[] ids)
+### GetAllRelations(params int[] ids)
 
 Gets a collection of `Umbraco.Core.Models.Relation` objects. Optional array of integer ids to return relations for.
 
@@ -108,7 +108,7 @@ Gets a collection of `Umbraco.Core.Models.Relation` objects by their relation ty
 
 Returns `IEnumerable<IRelation>`.
 
-### GetAllRelationTypes(params int\[] ids)
+### GetAllRelationTypes(params int[] ids)
 
 Gets a collection of `Umbraco.Core.Models.Relation` objects. Optional array of integer ids to return relationtypes for.
 
@@ -194,7 +194,7 @@ Gets a collection of `Umbraco.Core.Models.Relation` objects by the name of their
 
 Returns `IEnumerable<IRelation>`.
 
-### GetChildEntitiesFromRelations(IEnumerable relations)
+### GetChildEntitiesFromRelations(IEnumerable<IRelation> relations)
 
 Gets the child objects from a collection of `IRelation` as a collection of `Umbraco.Core.Models.Entities.IUmbracoEntity`.
 
@@ -212,13 +212,13 @@ Gets the parent and child objects from a relation as a `System.Tuple` with `Umbr
 
 Returns `Tuple<IUmbracoEntity, IUmbracoEntity>`.
 
-### GetEntitiesFromRelations(IEnumerable relations)
+### GetEntitiesFromRelations(IEnumerable<IRelation> relations)
 
 Gets the parent and child objects from a collection of relations as a list of `Umbraco.Core.Models.Entities.IUmbracoEntity` objects.
 
 Returns `IEnumerable<Tuple<IUmbracoEntity, IUmbracoEntity>>`.
 
-### GetParentEntitiesFromRelations(IEnumerable relations)
+### GetParentEntitiesFromRelations(IEnumerable<IRelation> relations)
 
 Gets the parent objects from a collection of relations as a collection of `Umbraco.Core.Models.Entities.IUmbracoEntity`.
 
@@ -382,7 +382,7 @@ namespace Doccers.Core.Composers
 
 If I know `Save and Publish` my `Products` node I get the following result:
 
-![Relations](../../../../../10/umbraco-cms/reference/management/services/images/relations.PNG)
+![Relations](images/relations.PNG)
 
 Cool! Now let us try and fetch the data from an API.
 
@@ -447,7 +447,7 @@ public class Relation
 
 Browsing `/umbraco/api/relations/getbyrelationtypealias?alias=homesick` now returns the following:
 
-![Relations](../../../../../10/umbraco-cms/reference/management/services/images/relations-api.PNG)
+![Relations](images/relations-api.PNG)
 
 {% hint style="info" %}
 If you want to do something similar to this it is recommended that you wrap a caching layer around it, as the RelationService queries the database directly.

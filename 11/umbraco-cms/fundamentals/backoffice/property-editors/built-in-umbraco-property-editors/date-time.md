@@ -8,7 +8,7 @@ Displays a calendar UI for selecting dates which are saved as a DateTime value.
 
 ## Data Type Definition Example
 
-![Data Type Definition Example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/date-time-v8.png)
+![Data Type Definition Example](../built-in-property-editors/images/date-time-v8.png)
 
 There are two settings available for manipulating the DateTime property.
 
@@ -18,7 +18,7 @@ The second setting is "Offset time". When enabling this setting the displayed ti
 
 ## Content Example
 
-![Content Example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/date-picker-v8.png)
+![Content Example](../built-in-property-editors/images/date-picker-v8.png)
 
 ## MVC View Example - displays a datetime
 
