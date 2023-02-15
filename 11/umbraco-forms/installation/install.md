@@ -1,5 +1,5 @@
 ---
-description: "Installing Umbraco Forms"
+description: Installing Umbraco Forms
 ---
 
 # Installing Umbraco Forms
@@ -35,4 +35,4 @@ Once the installation is successful, you will see a similar screen in the Forms 
 
 ## Using Forms
 
-For details on using Forms, see the [Editor Documentation](../editor/).
+For details on using Forms, see the [Editor Documentation](broken-reference).
