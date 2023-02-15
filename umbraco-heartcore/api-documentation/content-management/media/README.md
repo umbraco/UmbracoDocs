@@ -477,14 +477,12 @@ Get a list of children (media items) by their parent GUID ID.
 
 Create a new media item and optionally upload a file to the created item.
 
-Media typically contains an upload field (the `Image` and `File` media types has this by default). An upload field allows sending a file along with the request to create a new media item. This is done by sending a multi-part request with the JSON body and the file. The first MultipartBoundary contains the JSON body describing the content for the image. The second MultipartBoundary contains the file. If the media item does not contain a file you can send a regular JSON request to create the media.
+Media can be created by sending a POST request to the media endpoint. The request body should contain the media item properties and the file to upload. The file is sent as a multi-part request. The first `MultipartBoundary` contains the JSON body describing the content for the image. The second `MultipartBoundary` contains the file. If the media item does not contain a file you can send a regular JSON request to create the media.
+
+The `umbracoFile.src` property in the first `MultipartBoundary`'s JSON body defines the name of the file to be uploaded. The `fileName` in the second `MultipartBoundary` must match the `umbracoFile.src` property's value.
 
 {% hint style="info" %}
-Different media property editors will require different request body formats.The FileUpload property editor has the file name as the value `"umbracoFile": FILE_NAME`, and the Image Cropper property editor expects a JSON value `"umbracoFile": { "src": FILE_NAME }`. To verify the JSON structure you can manually upload the media file via the backoffice and fetch the data. It can then be used for reference.
-{% endhint %}
-
-{% hint style="info" %}
-The `umbracoFile.src` property in the first MultipartBoundary's JSON body defines the name of the file to be uploaded. The `fileName` in the second MultipartBoundary must match the `umbracoFile.src` property's value.
+Different media property editors will require different request body formats.The File Upload property editor has the file name as the value `"umbracoFile": FILE_NAME`, and the Image Cropper property editor expects a JSON value `"umbracoFile": { "src": FILE_NAME }`. To verify the JSON structure you can manually upload the media file via the backoffice and fetch the data. It can then be used for reference. (See how in the [Creating Content with Media](../../../tutorials/management-api/creating-content-with-media.md) tutorial.)
 {% endhint %}
 
 **URL**: `/media`
