@@ -47,5 +47,3 @@ In Heartcore, the Grid editor is working a bit differently compared to the CMS.\
 To see how to work with the Grid editor in Heartcore, have a look at the Creating a Custom Grid Editor Tutorial.
 
 </details>
-
-## Test 
