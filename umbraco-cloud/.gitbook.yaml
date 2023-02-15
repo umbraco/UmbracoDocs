@@ -5,11 +5,10 @@ root: ./
     summary: SUMMARY.md
 
 redirects:
-    umbraco-cloud/set-up/manage-hostnames/rewrites-on-cloud: umbraco-cloud/set-up/project-settings/manage-hostnames/rewrites-on-cloud.md
-    umbraco-cloud/set-up/manage-security: umbraco-cloud/set-up/project-settings/manage-security.md
-    umbraco-cloud/set-up/manage-cdn-caching: umbraco-cloud/set-up/project-settings/manage-cdn-caching.md
-    umbraco-cloud/set-up/external-services: umbraco-cloud/set-up/project-settings/external-services.md
-    umbraco-cloud/set-up/dedicated-resources: umbraco-cloud/set-up/project-settings/dedicated-resources.md
-    umbraco-cloud/upgrades/migrating-from-8-10: umbraco-cloud/upgrades/major-upgrades.md
-    umbraco-cms/reference/templating/mvc/child-actions: umbraco-cms/reference/templating/mvc/viewcomponents
-    umbraco-cloud/upgrades/migrate-from-umbraco-10-to-11: umbraco-cloud/upgrades/major-upgrades.md
+    set-up/manage-hostnames/rewrites-on-cloud: set-up/project-settings/manage-hostnames/rewrites-on-cloud.md
+    set-up/manage-security: set-up/project-settings/manage-security.md
+    set-up/manage-cdn-caching: set-up/project-settings/manage-cdn-caching.md
+    set-up/external-services: set-up/project-settings/external-services.md
+    set-up/dedicated-resources: set-up/project-settings/dedicated-resources.md
+    upgrades/migrating-from-8-10: upgrades/major-upgrades.md
+    upgrades/migrate-from-umbraco-10-to-11: upgrades/major-upgrades.md
