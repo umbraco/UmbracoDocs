@@ -1,7 +1,6 @@
 # Table of contents
 
-* [Umbraco Documentation](README.md)
-* [Where can I get help?](where-can-i-get-help.md)
+* [Umbraco CMS Documentation](README.md)
 * [Legacy Documentation](legacy-documentation/README.md)
   * [Umbraco 8 Documentation](https://our.umbraco.com/documentation/)
   * [Umbraco 7 Documentation](https://our.umbraco.com/documentation/)
@@ -135,7 +134,9 @@
 * [Services and Helpers](implementation/services/README.md)
   * [Circular Dependencies](implementation/services/circular-dependencies.md)
 * [Unit Testing](implementation/unit-testing.md)
-* [Extending](extending/README.md)
+
+## Extending
+
 * [Dashboards](extending/dashboards.md)
 * [Sections & Trees](extending/section-trees/README.md)
   * [Sections](extending/section-trees/sections.md)
