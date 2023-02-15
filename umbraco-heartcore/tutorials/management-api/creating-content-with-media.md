@@ -9,11 +9,11 @@ The example will be using the Media Picker V3 property editor.
 Determining the right request body for creating content through the Management API can be a bit tricky. One way to figure out the correct request body is to:
 
 1. Create the content in the backoffice
-2. Use the Management API Browser to get the response body for the content created.
+2. Use the Management API Browser to get the properties for the content created.
 
-You can then use the response body as a template for your request body when creating content through the Management API.
+You can then use the properties as a template for your request body when creating content through the Management API.
 
-The following example shows you the process for determining the request body while creating content with a Media Picker V3 property.
+The following tutorial shows you the detailed process for determining the request body while creating content with a Media Picker V3 property.
 
 {% hint style="info" %}
 To follow this guide for the Media Picker (legacy) property editor replace the Media Picker V3 property with the Media Picker (legacy) property. You need to do this when creating the Document Type and content node.s
@@ -97,25 +97,25 @@ To query content using the Management API, you need the ID of the content node. 
 
 ### Query the content node using the Management API Browser
 
-Now we can query the content node using the Management API Browser, the content node ID and our API Key. This will allow us to get the response body for the content node we created.
+Now we can query the content node using the Management API Browser, the content node ID and our API Key. This will allow us to get the properties for the content node we created.
 
 To query the content node using the Management API Browser, follow these steps:
 
 1. Go to the settings section in the backoffice, unfold the Headless section, select the API Browser menu item, and click the Content Management tab in the editor window.
 
-    ![Navigating to the Management API Browser](../images/management-api-browser-content-managment-tab.png)
+    ![Navigating to the Management API Browser](../images/management-api-browser-content-management-tab.png)
 
 2. Write the request URL to query the newly created content, fill in the API Key as a Custom Request Header, and click the `Go!` button.
 
     ![Filling info into the Management API Browser](../images/management-api-browser-fill-in-info.png)
 
-3. Copy the response body from the response section in the editor window.
+3. Copy the properties from the response section in the editor window.
 
-    ![Copying the JSON response](../images/management-api-browser-copy-response.png)
+    ![Copying the JSON properties](../images/management-api-browser-copy-response.png)
 
-### Clean up the response body and use it as a template for your request body
+### Clean up the properties and use it as a template for your request body
 
-Finally, we need to clean up the response body, so it can be used as a template for our request body.
+Finally, we need to clean up the properties, so it can be used as a template for our request body.
 
 In this case, we can omit ID's and create/update dates as these are auto-generated at creation time:
 
@@ -175,9 +175,9 @@ After having followed the steps demonstrated in the [previous section](#determin
 To create a new content node with a Media Picker, follow these steps:
 
 1. Go to the Management API Browser, fill in the API Key as a Custom Request Header, and click the `Go!` button.
-2. Now click the small orange exclamation mark button next to the content rel in the `Links` section. This opens up a modal with the option to make non-GET requests.
+2. Now click the small orange exclamation mark button next to the `content` link in the `Links` section. This opens up a modal with the option to make non-GET requests.
 
-    ![Opening the non-GET request modal](../images/management-api-explorer-opening-the-non-get-requests-modal.png)
+    ![Opening the non-GET request modal](../images/management-api-browser-opening-the-non-get-requests-modal.png)
 
 3. Next copy and paste your request body into the request body section in the modal.
 
@@ -193,9 +193,9 @@ After having created the content node it is time to publish it, so it can be vie
 
 To publish a content node with a Media Picker, follow these steps:
 
-1. Go to the Management API Browser, fill in the API Key as a Custom Request Header, and click the `Go!` button.
-2. Type in the following request URL: `https://api.umbraco.io/content/{id}/publish{?culture}`.
-   - `{id}` is the ID of the content node you want to publish.
-   - `{?culture}` is the culture you want to publish the content node in. By default, the culture is set to `en-US`.
+1. Go to the Management API Browser, fill in the API Key as a Custom Request Header, Write the request URL for the content, and click the `Go!` button.
+2. Navigate to and click the small orange exclamation mark button next to the `publish` link in the `Links` section.
+3. Change the request type to `PUT`, and leave the request body empty as an empty object.
+4. Click the `Make Request` button.
 
-    <!--![Publishing a content node](../images/management-api-browser-publishing-a-content-node.png) missing image-->
+    ![Publishing a content node](../images/management-api-browser-publishing-a-content-node.png)
