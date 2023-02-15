@@ -5,5 +5,5 @@ root: ./
     summary: SUMMARY.md
 
 redirects:
-    umbraco-cms/fundamentals/setup/upgrading/general: umbraco-cms/fundamentals/setup/upgrading/README.md
-    umbraco-cms/reference/templating/mvc/child-actions: umbraco-cms/reference/templating/mvc/viewcomponents
+    fundamentals/setup/upgrading/general: fundamentals/setup/upgrading/README.md
+    reference/templating/mvc/child-actions: reference/templating/mvc/viewcomponents
