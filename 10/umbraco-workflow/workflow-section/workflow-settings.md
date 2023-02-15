@@ -9,13 +9,13 @@ When working with Umbraco Workflow, you can handle the workflow settings directl
 * [Notification Settings](workflow-settings.md#notifications-settings)
   * [Email templates](workflow-settings.md#email-templates)
 
-![Workflow settings](../../umbraco-workflow/images/workflow-settings.png)
+![Workflow settings](../../../11/umbraco-workflow/images/workflow-settings.png)
 
 ## General Settings
 
 You can configure the **General** Settings from the **Workflow** section in the **Settings** menu. The following settings are available:
 
-![General settings](../../umbraco-workflow/images/general-settings.png)
+![General settings](../../../11/umbraco-workflow/images/general-settings.png)
 
 * **Flow type** - Determines the approval flow progress. These options manage how the Change Author is included in the workflow:
   * **Explicit** - All steps of the workflow must be completed and all users will be notified of tasks (including the Change Author).
@@ -37,10 +37,10 @@ To add an approval group to the workflow:
 2. Go to the **General** tab in the **Settings** menu.
 3.  Click **Add** in the **New node approval flow** section.
 
-    <figure><img src="../../umbraco-workflow/images/new-node-approval-flow.png" alt=""><figcaption><p>New Node Approval Flow</p></figcaption></figure>
+    <figure><img src="../../../11/umbraco-workflow/images/new-node-approval-flow.png" alt=""><figcaption><p>New Node Approval Flow</p></figcaption></figure>
 4.  Select an **approval group** to add to the workflow.\\
 
-    <figure><img src="../../umbraco-workflow/images/add-approval-flow.png" alt=""><figcaption><p>Add Workflow Approval Groups</p></figcaption></figure>
+    <figure><img src="../../../11/umbraco-workflow/images/add-approval-flow.png" alt=""><figcaption><p>Add Workflow Approval Groups</p></figcaption></figure>
 5. Click **Submit**.
 6. Click **Save Settings**.
 
@@ -58,15 +58,15 @@ To add a Document type approval flow:
 2. Go to the **General** tab in the **Settings** menu.
 3.  Click **Add** in the **Document type approval flows** section.
 
-    <figure><img src="../../umbraco-workflow/images/doc-type-approval-flows.png" alt=""><figcaption><p>Document Type Approval Flows</p></figcaption></figure>
+    <figure><img src="../../../11/umbraco-workflow/images/doc-type-approval-flows.png" alt=""><figcaption><p>Document Type Approval Flows</p></figcaption></figure>
 4.  Select a **Document type** from the drop-down list.\\
 
-    <figure><img src="../../umbraco-workflow/images/add-doc-type-approval-flows.png" alt=""><figcaption><p>Add Document Type Approval Flows</p></figcaption></figure>
+    <figure><img src="../../../11/umbraco-workflow/images/add-doc-type-approval-flows.png" alt=""><figcaption><p>Add Document Type Approval Flows</p></figcaption></figure>
 5. Select a **Language** from the drop-down list.
 6. **Add workflow approval groups** in the **Current flow** process.
 7.  Click **Add condition** to add a condition to the workflow process.
 
-    <figure><img src="../../umbraco-workflow/images/add-doc-type-approval-flows-settings.png" alt=""><figcaption><p>Configure Document Type Approval Flow Settings</p></figcaption></figure>
+    <figure><img src="../../../11/umbraco-workflow/images/add-doc-type-approval-flows-settings.png" alt=""><figcaption><p>Configure Document Type Approval Flow Settings</p></figcaption></figure>
 8. Click **Submit**.
 9. Click **Save Settings**.
 
@@ -76,12 +76,12 @@ To edit a Document type approval flow:
 2. Go to the **General** tab in the **Settings** menu.
 3.  Click **Edit** next to the content node in the **Document type approval flows** section.
 
-    <figure><img src="../../umbraco-workflow/images/edit-doc-type-approval-flows.png" alt=""><figcaption><p>Edit Document Type Approval Flow</p></figcaption></figure>
+    <figure><img src="../../../11/umbraco-workflow/images/edit-doc-type-approval-flows.png" alt=""><figcaption><p>Edit Document Type Approval Flow</p></figcaption></figure>
 4. Select a **Language** from the drop-down list.
 5. **Add**, **Edit**, or **Remove** approval groups from the current workflow.
 6.  Click **Add condition** to add a condition to the workflow process.
 
-    <figure><img src="../../umbraco-workflow/images/edit-doc-type-approval-flows-settings.png" alt=""><figcaption><p>Configure Document Type Approval Flow</p></figcaption></figure>
+    <figure><img src="../../../11/umbraco-workflow/images/edit-doc-type-approval-flows-settings.png" alt=""><figcaption><p>Configure Document Type Approval Flow</p></figcaption></figure>
 7. Click **Submit**.
 8. Click **Save Settings**.
 
@@ -95,10 +95,10 @@ To exclude a node from the workflow process:
 2. Go to the **General** tab in the **Settings** menu.
 3.  Click **Add** in the **Exclude nodes** section.
 
-    <figure><img src="../../umbraco-workflow/images/exclude-nodes.png" alt=""><figcaption><p>Exclude Nodes</p></figcaption></figure>
+    <figure><img src="../../../11/umbraco-workflow/images/exclude-nodes.png" alt=""><figcaption><p>Exclude Nodes</p></figcaption></figure>
 4.  Select the **Content node** from the Content tree.
 
-    <figure><img src="../../umbraco-workflow/images/select-content-from-tree.png" alt=""><figcaption><p>Select Content Node</p></figcaption></figure>
+    <figure><img src="../../../11/umbraco-workflow/images/select-content-from-tree.png" alt=""><figcaption><p>Select Content Node</p></figcaption></figure>
 5. Click **Submit**.
 6. Click **Save Settings**.
 
@@ -115,7 +115,7 @@ From the **Settings** view in the **Workflow** section, the **Notifications** ta
 * **Site URL:** The URL for the public website (including schema - http\[s]). This is a mandatory field.
 *   [**Email templates**](workflow-settings.md#email-templates)**:** Configure which users receive emails for which workflow actions and modify the templates for those emails.
 
-    ![Notifications tab in the Workflow Section](../../umbraco-workflow/images/Notifications\_tab.png)
+    ![Notifications tab in the Workflow Section](../../../11/umbraco-workflow/images/Notifications\_tab.png)
 
 ## Notifications Overview
 
