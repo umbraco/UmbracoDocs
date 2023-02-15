@@ -7,3 +7,5 @@ root: ./
 redirects:
     umbraco-cms/fundamentals/setup/upgrading/general: umbraco-cms/fundamentals/setup/upgrading/README.md
     umbraco-cms/reference/templating/mvc/child-actions: umbraco-cms/reference/templating/mvc/viewcomponents
+    umbraco-cms/fundamentals/setup/upgrading/version-specific/umbraco10-breaking-changes: umbraco-cms/fundamentals/setup/upgrading/version-specific/README.md
+    umbraco-cms/fundamentals/setup/upgrading/version-specific/umbraco11-breaking-changes: umbraco-cms/fundamentals/setup/upgrading/version-specific/README.md
