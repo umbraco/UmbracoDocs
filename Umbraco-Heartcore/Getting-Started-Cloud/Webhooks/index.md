@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+meta.RedirectLink: "/umbraco-heartcore/getting-started/webhooks"
+
 ---
 
 # Webhooks

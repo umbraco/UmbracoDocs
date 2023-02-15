@@ -2,12 +2,14 @@
 versionFrom: 8.0.0
 meta.Title: "Creating a Nuget version of an Umbraco package"
 meta.Description: "A guide to creating a Nuget version of an Umbraco package"
+meta.RedirectLink: "/umbraco-cms/extending/packages/creating-a-package#creating-a-nuget-package"
+versionRemoved: 9.0.0
 ---
 
 # Creating a NuGet version of a package
 
 :::note
-This tutorial is for Umbraco 8 - however, a lot of the things covered here will be the same or similar in Umbraco 7. Regarding Umbraco 9, check the instructions in [Creating a Package article](../Creating-a-Package/index.md).
+This tutorial is for Umbraco 8 - however, a lot of the things covered here will be the same or similar in Umbraco 7. For  Umbraco 9 or higher, check the instructions in [Creating a NuGet Package article](https://docs.umbraco.com/umbraco-cms/extending/packages/creating-a-package#creating-a-nuget-package).
 :::
 
 The goal of this tutorial is to take something that extends Umbraco and create a NuGet Package for it. Like the [Creating a Package](../Creating-a-Package/index.md) tutorial we are using the [Creating a Custom Dashboard Tutorial](../../../Tutorials/Creating-a-Custom-Dashboard/index.md) as a starting point.

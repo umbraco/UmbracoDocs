@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.0.0
+meta.RedirectLink: "/umbraco-cms/tutorials/editors-manual/version-management/rollback-to-a-previous-version"
 ---
 
 # Rollback to a Previous Version

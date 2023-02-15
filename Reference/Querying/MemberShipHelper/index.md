@@ -1,6 +1,7 @@
 ---
 versionFrom: 8.0.0
 versionTo: 8.18.0
+meta.RedirectLink: "/umbraco-cms/reference/querying/imembermanager"
 ---
 
 :::warning

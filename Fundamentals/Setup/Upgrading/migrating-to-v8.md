@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.1.0
+versionRemoved: 9.0.0
 ---
 
 # Migrating content to Umbraco 8

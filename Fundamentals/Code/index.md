@@ -23,7 +23,3 @@ Using Tracing and MiniProfiler to debug your code.
 ## [Source/Version Control](Source-Control/)
 
 General advice on source controlling your Umbraco implementation.
-
-## [Subscribing To Notifications](Subscribing-To-Notifications/)
-
-Subscribe to notifications to execute custom code on a number of operations.

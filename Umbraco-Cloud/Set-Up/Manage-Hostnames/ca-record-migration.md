@@ -1,3 +1,8 @@
+---
+versionFrom: 7.0.0
+meta.RedirectLink: "/umbraco-cloud/set-up/project-settings/manage-hostnames/ca-record-migration"
+---
+
 # Migrate to new Certificate Authority for custom hostnames
 
 The following changes in Certificate Authority (CA) used to issue certificates for all Umbraco Cloud sites' for new and existing custom hostnames.

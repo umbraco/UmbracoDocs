@@ -6,12 +6,6 @@ versionFrom: 8.0.0
 
 _This is the guide for upgrading in general._
 
-:::note
-The information in this article will enable you to upgrade your project to the **latest version of Umbraco 8**.
-
-Go to [**docs.umbraco.com**](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading) to find instructions on upgrading the latest recommended version of Umbraco CMS.
-:::
-
 :::warning
 **Important**: If you are upgrading to a new major version, like from Umbraco 7 to Umbraco 8, make sure to check out the **[version-specific documentation.](version-specific.md)**
 

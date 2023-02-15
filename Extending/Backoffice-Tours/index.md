@@ -13,7 +13,7 @@ They are managed in a JSON format and stored in files on disk. The filenames sho
 
 ### Enabling Tours
 
-You can enable or disable the tours from within the [umbracoSettings](../../../Reference/Config/umbracoSettings/index.md#tours).
+You can enable or disable the tours from within the [umbracoSettings](https://our.umbraco.com/documentation/Reference/Configuration-for-Umbraco-7-and-8/umbracoSettings/#tours).
 
 ```xml
 <backOffice>

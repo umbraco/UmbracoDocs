@@ -14,9 +14,9 @@ Angular, JavaScript, CSS & Less UI API references for building Umbraco backoffic
 - The umbraco.services
 - The umbraco.resources
 
-__Note: opens a documentation browser that is different from the documentation section you're viewing now.__
+__Note: Opens a documentation browser that is different from the documentation section you're viewing now.__
 
 ## [UI Examples](https://our.umbraco.com/packages/developer-tools/ui-examples/)
 There is a package available called 'UI Examples'. This package adds a new 'UI Examples' section to your Umbraco instance with working examples of how to customise the backoffice. 
 
-__Note: opens a documentation browser that is different from the documentation section you're viewing now.__
+__Note: Opens a documentation browser that is different from the documentation section you're viewing now.__

@@ -2,6 +2,7 @@
 versionFrom: 8.0.0
 meta.Title: "Umbraco Embed Providers"
 meta.Description: "A guide to creating a custom embed providers in Umbraco"
+meta.RedirectLink: "/umbraco-cms/extending/embedded-media-providers"
 ---
 
 # Embed Providers

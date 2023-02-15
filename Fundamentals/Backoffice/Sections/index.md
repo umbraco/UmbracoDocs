@@ -6,12 +6,6 @@ versionFrom: 8.0.0
 
 # Sections
 
-:::warning
-Are you using **Umbraco 10** or a later version?
-
-Find the relevant documentation in the [Sections documentation for Umbraco 10+](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/sections).
-:::
-
 A section in Umbraco is where you perform specific tasks related to a particular area of Umbraco. For example Content, Settings and Users are all sections. You can navigate between the different sections by clicking the corresponding icon in the section menu which is positioned at the top of the Backoffice.
 
 ![Sections](images/highlight-sections.png "The Section menu is the horizontal menu located at the top of the Umbraco Backoffice.")

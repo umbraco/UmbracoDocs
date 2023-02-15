@@ -6,12 +6,6 @@ versionFrom: 8.0.0
 
 # File and folder permissions
 
-:::warning
-Are you using **Umbraco 10** or a later version?
-
-Find the relevant documentation in the [file and folder permissions documentation for Umbraco 10+](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/permissions).
-:::
-
 :::note
 To ensure a stable and smoothly running Umbraco installation, these permissions need to be set correctly. These permissions should be setup before or during the installation of Umbraco.
 

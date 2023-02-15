@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.0.0
+meta.RedirectLink: "/umbraco-cloud/set-up/project-settings/upgrade-umbraco-cloud-plan"
 ---
 
 # Upgrade your Umbraco Cloud Plan

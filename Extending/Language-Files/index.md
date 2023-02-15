@@ -6,17 +6,12 @@ meta.Description: "Language files are used to translate the Umbraco backoffice u
 
 # Language Files & Localization
 
-:::warning
-Are you using **Umbraco 10** or a later version?
-
-Find the relevant documentation in the [Language Files documentation for Umbraco 10+](https://docs.umbraco.com/umbraco-cms/extending/language-files).
-:::
-
 Language files are used to translate the Umbraco backoffice user interface so that end users can use Umbraco in their native language. This is particularly important for content editors who do not speak English.
 
 If you are a package developer, [see here for docs on how to include translations for your own package](Language-Files-For-Packages/index.md).
 
 ## Supported Languages
+
 Current languages that are included in the core are:
 
 - English (UK)

@@ -2,6 +2,7 @@
 versionFrom: 8.0.0
 meta.Title: "Umbraco Heartcore Backoffice"
 meta.Description: "Tour of Umbraco Heartcore backoffice"
+meta.RedirectLink: "/umbraco-heartcore/getting-started/the-umbraco-backoffice"
 ---
 
 # Tour of the Umbraco Backoffice

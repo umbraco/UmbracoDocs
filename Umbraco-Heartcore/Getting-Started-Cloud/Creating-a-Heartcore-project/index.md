@@ -2,6 +2,8 @@
 versionFrom: 8.0.0
 meta.Title: "Creating a Heartcore Project"
 meta.Description: "A guide to building an Umbraco Heartcore project"
+meta.RedirectLink: "/umbraco-heartcore/getting-started/creating-a-heartcore-project"
+
 ---
 
 # Building an Umbraco Heartcore project from scratch

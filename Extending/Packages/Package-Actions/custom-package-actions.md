@@ -1,5 +1,7 @@
 ---
 versionFrom: 8.0.0
+versionTo: 8.0.0
+versionRemoved: 9.0.0
 meta.Title: "Create custom package actions for your Umbraco package"
 meta.Description: "Tutorial on how to create custom package actions for your Umbraco package"
 ---

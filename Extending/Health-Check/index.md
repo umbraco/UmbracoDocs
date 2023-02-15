@@ -6,12 +6,6 @@ meta.Description: "The Settings section of the Umbraco backoffice holds a dashbo
 
 # Health Check
 
-:::warning
-Are you using **Umbraco 10** or a later version?
-
-Find the relevant documentation in the [Health Checks documentation for Umbraco 10+](https://docs.umbraco.com/umbraco-cms/extending/health-check).
-:::
-
 The Settings section of the Umbraco backoffice holds a dashboard named "Health Check". It is a handy list of checks to see if your Umbraco installation is configured according to best practices. It's possible to add your custom built health checks.
 This feature has been available since Umbraco version 7.5.
 

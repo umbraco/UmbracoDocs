@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.0.0
+meta.RedirectLink: "/umbraco-heartcore/getting-started/using-the-forms-api"
 ---
 
 # Using the Forms API

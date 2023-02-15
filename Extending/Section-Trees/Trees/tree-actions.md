@@ -2,6 +2,7 @@
 versionFrom: 8.0.0
 meta.Title: "Umbraco Tree Actions"
 meta.Description: "A guide to creating a custom tree action in Umbraco"
+meta.RedirectLink: "/umbraco-cms/tutorials/starter-kit/lessons/1-customize-the-starter-kit"
 ---
 
 # Tree Actions

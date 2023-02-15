@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+meta.RedirectLink: "/umbraco-cms/reference/plugins/creating-resolvers"
 ---
 
 # Resolvers
