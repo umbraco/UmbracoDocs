@@ -1,6 +1,6 @@
 # Content App
 
-Umbraco Workflow adds a [Content App](https://our.umbraco.com/Documentation/Extending/Content-Apps/) to all content nodes in the **Content** section where a workflow is enabled. The Workflow content app includes three sub-sections:
+Umbraco Workflow adds a [Content App](https://docs.umbraco.com/umbraco-cms/extending/content-apps) to all content nodes in the **Content** section where a workflow is enabled. The Workflow content app includes three sub-sections:
 
 * [Active Workflow](workflow-content-app.md#active-workflow)
 * [Configuration](workflow-content-app.md#configuration)

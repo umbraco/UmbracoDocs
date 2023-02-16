@@ -104,6 +104,6 @@ The History tab provides an overview of the workflow activity for the current gr
 
 You can also **Filter** the records based on the Node, Requested by, Created date, Completed date, Page Language, Workflow Type, and Workflow Status. Additionally, you can adjust the total number of records displayed on a page.
 
-The **Detail** button at the end of the record displays an overlay with content similar to the [Active workflow](active-workflows.md) sub-section.
+The **Detail** button at the end of the record displays an overlay with content similar to the [Active workflow](../getting-started/workflow-content-app.md#active-workflow) sub-section.
 
 ![Details overlay](../images/details-overlay.png)

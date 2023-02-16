@@ -17,6 +17,6 @@ Additionally, you can adjust the total number of records displayed on a page.
 
 ![Workflow history PageSize](../images/history-pagesize.png)
 
-The **Detail** button at the end of the record displays an overlay with content similar to the [Active workflow](active-workflows.md) sub-section.
+The **Detail** button at the end of the record displays an overlay with content similar to the [Active workflow](../getting-started/workflow-content-app.md#active-workflow) sub-section.
 
 ![Details overlay](../images/active-workflow-detail-overlay.png)
