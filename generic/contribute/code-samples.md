@@ -1,12 +1,8 @@
-# Code samples
+# Code Blocks
 
 The articles in the Umbraco Documentation can in most cases benefit from relevant code samples to support the written text.
 
-In this article, you will find guidelines which outline how we recommend formatting and using code samples. We provide definitions and examples of the most used types of code samples in the Umbraco Documentation.
-
-## Code block example
-
-[Add code block here.]
+In this article, you will find guidelines that outline how we recommend formatting and using code samples. We provide definitions and examples of the most used types of code samples in the Umbraco Documentation.
 
 ## Good practices
 
@@ -20,7 +16,7 @@ To ensure quality and consistent code samples, we have outlined some good practi
 * Add only complete compilable samples (incl. `using` statements)
 * Check for syntax errors
 
-Each of these guidelines are explained in more detail below.
+Each of these guidelines is explained in more detail below.
 
 ### Add a clear description
 
@@ -30,25 +26,25 @@ Make sure to **always** add a clear description of what the code sample showcase
 
 ### Add a caption (file name)
 
-In most cases, it is relevant to tell the reader which file or file-type a code snippet should be added to.
+In most cases, it is relevant to tell the reader which file or file type a code snippet should be added to.
 
-Aside from mentioning this in the description of the code snippet, it is also recommended to add the file name as caption.
+Aside from mentioning this in the description of the code snippet, it is also recommended to add the file name as a caption.
 
 Is the code snippet from a JSON file, add `fileName.json` as the caption.
 
 ### Use code comments
 
-When adding code samples that contain more than a single feature or method, it is recommended that you add inline-comments.
+When adding code samples that contain more than a single feature or method, it is recommended that you add inline comments.
 
-By adding inline-comments you avoid having too much text surrounding the code sample, and you also help readers understand the code snippet in detail.
+By adding inline comments you avoid having too much text surrounding the code sample, and you also help readers understand the code snippet in detail.
 
 The use of code comments does not eliminate the need for a description of the code sample in the surrounding text.
 
 ### Use real-life samples
 
-The documentation often aims to explain complex scenarios and concepts within Umbraco. This means that code samples can be useful to further the understanding. It is important that these code samples are *real-life* examples. For example, using variables such as 'foo' and 'bar' can distract from the intent of the example. Aim to use an example that would make sense to add to a production environment.
+The documentation often aims to explain complex scenarios and concepts within Umbraco. This means that code samples can be useful to further the understanding. It is important that these code samples are _real-life_ examples. For example, using variables such as 'foo' and 'bar' can distract from the intent of the example. Aim to use an example that would make sense to add to a production environment.
 
-It is a good idea to use *placeholders* for names, methods, etc., in order to keep the code samples as neutral and general as possible.
+It is a good idea to use _placeholders_ for names, methods, etc., in order to keep the code samples as neutral and general as possible.
 
 With Umbraco, often there is more than one way to achieve a result, depending on context and the skillset of the development team. Having multiple examples - for example, a Modelsbuilder version and a non-Modelsbuilder version - can help prevent readers from mixing techniques in their solution. It is fine to provide multiple examples.
 
@@ -56,7 +52,7 @@ With Umbraco, often there is more than one way to achieve a result, depending on
 
 When you add code blocks to an article, make sure that you add the correct syntax highlighting. This will "prettify" the code in the sample based on which language is used.
 
-If you are adding a code sample using a language that isn't support, it is recommended that you add a `none` label instead.
+If you are adding a code sample using a language that isn't supported, it is recommended that you add a `none` label instead.
 
 ### Add only complete compilable samples (incl. `using` statements)
 
@@ -66,7 +62,7 @@ Include any relevant `Using` statements for namespaces that provide 'extension' 
 
 ### Check for syntax errors
 
-When reading any piece of text, there is nothing more frustrating than running into spelling and syntax errors. This also applies for code samples.
+When reading any piece of text, there is nothing more frustrating than running into spelling and syntax errors. This also applies to code samples.
 
 Any code that is added to articles in the documentation should be double-checked for syntax errors and typos.
 
@@ -120,6 +116,6 @@ The Razor snippet above will output the following:
 
 As part of tutorials and longer articles explaining a specific workflow, it might make sense to add a full code sample of the topic covered.
 
-We recommend creating separate articles for these large code samples and using them as references, instead of adding them as part of the actual article. Having long snippets in an article which already contains multiple sections and steps can make the article confusing.
+We recommend creating separate articles for these large code samples and using them as references, instead of adding them as part of the actual article. Having long snippets in an article that already contains multiple sections and steps can make the article confusing.
 
 It is highly recommended to use line numbers in large code samples. This will make it easier to reference certain parts of the sample in the surrounding text.

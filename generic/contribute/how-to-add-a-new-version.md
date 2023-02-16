@@ -5,7 +5,7 @@ Our documentation is versioned in git branches. This means that there is a branc
 {% hint style="info" %}
 The documentation follows the Long Term Support (LTS) strategy for Umbraco CMS. This means that whenever a major version is End of Life (EOL), documentation for that version will be moved to GitHub.
 
-Read the [Documentation and versions](../other-resources/documentation-and-versions.md) article to learn more about how to handle documentation for the different versions.
+Read the [Documentation and versions](../documentation-and-versions.md) article to learn more about how to handle documentation for the different versions.
 {% endhint %}
 
 In order to create a new version of an article, follow these steps:
