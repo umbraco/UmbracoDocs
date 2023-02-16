@@ -19,4 +19,4 @@ To configure password reset verify the [Backoffice Login Password Reset](../../f
 * [The Umbraco timeout in minutes](../configuration/globalsettings.md#timeout)
 * [disableAlternativeTemplates](../configuration/webroutingsettings.md#disable-alternative-templates) If set to false this can be used to try to render pages in a way that they are not supposed to
 * [disableFindContentByIdPath](../configuration/webroutingsettings.md#disable-find-content-by-id-path) If set to false this can be used to do an enumeration of the nodes in your website and find hidden pages.
-* Umbraco Forms: [AntiForgeryToken](../../../umbraco-forms/developer/configuration/#enableantiforgerytoken) and DisableFormCaching
+* Umbraco Forms: [AntiForgeryToken](https://docs.umbraco.com/umbraco-forms/developer/configuration#enableantiforgerytoken) and DisableFormCaching
