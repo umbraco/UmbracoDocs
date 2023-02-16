@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-meta.RedirectLink: "/umbraco-cloud/set-up/project-settings/team-members"
+meta.RedirectLink: "/umbraco-cloud/setup/project-settings/team-members"
 ---
  
 # Team Members in the Project Portal

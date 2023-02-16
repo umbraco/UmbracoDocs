@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+meta.RedirectLink: "/umbraco-cloud/setup/power-tools"
 ---
 
 # Power Tools (Kudu)

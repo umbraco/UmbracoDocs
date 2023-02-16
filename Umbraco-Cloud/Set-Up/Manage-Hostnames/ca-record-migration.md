@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-meta.RedirectLink: "/umbraco-cloud/set-up/project-settings/manage-hostnames/ca-record-migration"
+meta.RedirectLink: "/umbraco-cloud/setup/project-settings/manage-hostnames/ca-record-migration"
 ---
 
 # Migrate to new Certificate Authority for custom hostnames

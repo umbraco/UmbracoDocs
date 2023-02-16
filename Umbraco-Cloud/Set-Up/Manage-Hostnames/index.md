@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-meta.RedirectLink: "/umbraco-cloud/set-up/project-settings/manage-hostnames"
+meta.RedirectLink: "/umbraco-cloud/setup/project-settings/manage-hostnames"
 ---
 
 # Managing hostnames
