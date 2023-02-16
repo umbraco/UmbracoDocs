@@ -4,7 +4,7 @@ description: "Information on how to use language files to make your Umbraco pack
 
 # Language file for packages
 
-While the Umbraco Core ships with its own set of language files, package authors who would like their UI to be multi-lingual, will need to include their own set of language files as part of their package distribution.
+Umbraco Core includes language files, but package authors must provide their own for multi-lingual UI.
 
 ## Including new language keys
 
