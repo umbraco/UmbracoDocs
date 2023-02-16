@@ -14,7 +14,7 @@ When you are working with Umbraco Forms, you have the option to set up email wor
 
 To set up an email workflow to send out emails, you will need to configure the SMTP service. In some cases, you might also experience that you need to configure a _SenderEmail_ for notifications.
 
-Configure _SenderEmail_ in the `appsettings.json` file under `Umbraco:CMS:Global:Smtp`. For more details, see the [`Send Email`](../../umbraco-forms/editor/attaching-workflows/workflow-types.md#send-email) section in the [Workflow Types](../../umbraco-forms/editor/attaching-workflows/workflow-types.md) article.
+Configure _SenderEmail_ in the `appsettings.json` file under `Umbraco:CMS:Global:Smtp`. For more details, see the [`Send Email`](../../umbraco-forms/editor/attaching-workflows/workflow-types.md#send-email) section in the [Workflow Types](https://docs.umbraco.com/umbraco-forms/editor/attaching-workflows/workflow-types#send-email) article.
 
 ```csharp
  "Umbraco": {
@@ -92,8 +92,8 @@ To configure your SMTP service, enter the following details:
 To make sure that your SMTP password is not visible in the `appSettings.json` file, you can use the [Secrets management](project-settings/secrets-management.md) feature to hide the setting by using the following key: `UMBRACO__CMS__GLOBAL__SMTP__PASSWORD.`
 {% endhint %}
 
-Once you've configured these settings for your SMTP service, you can send emails from your Umbraco Cloud project. For more information on SMTP configuration, see the [Global Settings](../../umbraco-cms/reference/configuration/globalsettings.md) article
+Once you've configured these settings for your SMTP service, you can send emails from your Umbraco Cloud project. For more information on SMTP configuration, see the [Global Settings](https://docs.umbraco.com/umbraco-cms/reference/configuration/globalsettings#smtp-settings) article
 
 {% hint style="info" %}
-You can test if you've configured your SMTP service correctly by running a [Health Check](../../umbraco-cms/extending/health-check/) from the Umbraco Backoffice.
+You can test if you've configured your SMTP service correctly by running a [Health Check](https://docs.umbraco.com/umbraco-cms/extending/health-check) from the Umbraco Backoffice.
 {% endhint %}

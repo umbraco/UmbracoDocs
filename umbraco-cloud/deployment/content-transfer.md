@@ -1,5 +1,5 @@
 ---
-description: "How to restore content in Umbraco Deploy using the deployment dashboard"
+description: How to restore content in Umbraco Deploy using the deployment dashboard
 ---
 
 # Transferring Content, Media, Members, and Forms
@@ -38,7 +38,7 @@ Media items are transferred the same way as content:
 3. Select **Open transfer queue**. The **Workspaces** dashboard opens.
 4. Click **Transfer to Development**.
 
-### [Members and Member Groups](../../umbraco-deploy/deploy-settings.md#allowmembersdeploymentoperations-and-transfermembergroupsascontent)
+### [Members and Member Groups](https://docs.umbraco.com/umbraco-deploy/deploy-settings#allowmembersdeploymentoperations-and-transfermembergroupsascontent)
 
 To be able to transfer Members and Member groups make sure that `AllowMembersDeploymentOperations` is configured to `transfer` and `TransferMemberGroupsAsContent` is set to `true`. This needs to be done in the `appSettings.json` file
 

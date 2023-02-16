@@ -1,6 +1,6 @@
 # Troubleshooting deployments
 
-Issues with deployments on Umbraco Cloud often come down to a misunderstanding on how to work with Umbraco Cloud. It is important to always work left to right as mentioned [here](../../deployment/).
+Issues with deployments on Umbraco Cloud often come down to a misunderstanding on how to work with Umbraco Cloud. It is important to always work left to right as mentioned in the [Deployment section](broken-reference).
 
 There are two ways to deploy on Umbraco Cloud, a deployment that transfers content and media:
 
@@ -21,6 +21,6 @@ The most common [Deployment](../../deployment/cloud-to-cloud.md) issues are list
 The most common Content [Transfer](../../deployment/content-transfer.md) / [Restore](../../deployment/restoring-content/) issues are listed below:
 
 * [Schema mismatch](schema-mismatches.md)
-* [SQL Timeouts](../../../umbraco-deploy/deploy-settings.md#timeout-issues)
+* [SQL Timeouts](https://docs.umbraco.com/umbraco-deploy/deploy-settings#timeout-settings)
 * [Dependency Exception](dependency-exceptions.md)
 * [Media path too long](path-too-long-exception.md)
