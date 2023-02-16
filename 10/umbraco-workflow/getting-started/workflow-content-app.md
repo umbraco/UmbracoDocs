@@ -1,6 +1,6 @@
 # Content App
 
-Umbraco Workflow adds a [Content App](https://our.umbraco.com/Documentation/Extending/Content-Apps/) to all content nodes in the **Content** section where a workflow is enabled. The Workflow content app includes three sub-sections:
+Umbraco Workflow adds a [Content App](https://docs.umbraco.com/umbraco-cms/v/10.latest-lts/extending/content-apps) to all content nodes in the **Content** section where a workflow is enabled. The Workflow content app includes three sub-sections:
 
 * [Active Workflow](workflow-content-app.md#active-workflow)
 * [Configuration](workflow-content-app.md#configuration)
@@ -13,7 +13,7 @@ Umbraco Workflow adds a [Content App](https://our.umbraco.com/Documentation/Exte
 The Active workflow sub-section provides an interface for managing workflows for the current content node. When you initiate a workflow on the current node, the **Active workflow** sub-section requires information such as:
 
 * Change Description.
-* [Optional] Scheduled date to publish the changes requested in the node.
+* \[Optional] Scheduled date to publish the changes requested in the node.
 
 ![Active workflow initiate request](images/Active-workflow-initiate-request.png)
 
