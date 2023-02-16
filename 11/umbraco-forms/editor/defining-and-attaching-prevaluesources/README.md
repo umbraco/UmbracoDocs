@@ -6,7 +6,7 @@ Prevalue sources are a way to pre-define and/or retrieve a list of items from a 
 
 Prevalue sources can be managed in the **Prevalue sources** folder available in the **Forms** section.
 
-![Prevalue source tree](images/prevaluesourcetree.png)
+![Prevalue source tree](../../../../10/umbraco-forms/editor/defining-and-attaching-prevaluesources/images/prevaluesourcetree.png)
 
 To set a prevalue source:
 
@@ -16,13 +16,13 @@ To set a prevalue source:
 4. Enter a **Name**.
 5.  Select the type of prevalue source from the **Type** drop-down. For more information on the different default types, see the [Overview of the Prevalue Source Types](prevalue-source-types.md) article.
 
-    ![Choose type](images/choosetype.png)
+    ![Choose type](../../../../10/umbraco-forms/editor/defining-and-attaching-prevaluesources/images/choosetype.png)
 
 ### Configuring the Prevalue Source
 
 Depending on the **Type** you choose, you'll need to provide some additional settings:
 
-1. In this walk-through, we will select **Get values from textfile** from the **Type** drop-down. ![Type settings](images/typesettings.png)
+1. In this walk-through, we will select **Get values from textfile** from the **Type** drop-down. ![Type settings](../../../../10/umbraco-forms/editor/defining-and-attaching-prevaluesources/images/typesettings.png)
 2.  Now, provide a file containing the list to use as prevalues. For example: A `.txt` file containing the following values:\\
 
     <pre><code>example value 1
@@ -33,10 +33,9 @@ Depending on the **Type** you choose, you'll need to provide some additional set
     </code></pre>
 3. Select **Pick File** and choose the text file you created.
 4. Once the text file is uploaded, click **Save** to save the prevalue source.
-5.  If the file is successfully uploaded and validated, you will see an overview of the values in a tabular format.\
+5.  If the file is successfully uploaded and validated, you will see an overview of the values in a tabular format.
 
-
-    <figure><img src="images/preview.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../../10/umbraco-forms/editor/defining-and-attaching-prevaluesources/images/preview.png" alt=""><figcaption></figcaption></figure>
 
 If you would like to have different values presented to your users from the value stored, you can provide two values per line, separated with a vertical bar (|), e.g.:
 
@@ -52,7 +51,7 @@ In this case the user would pick from a list showing the captions, but the singl
 
 This can be useful if the recorded entries are used in any subsequent workflows or business processes, where particular values, that aren't appropriate for the user to select from, are required.
 
-![Prevalues with captions](images/Prevalues-with-caption.png)
+![Prevalues with captions](../../../../10/umbraco-forms/editor/defining-and-attaching-prevaluesources/images/Prevalues-with-caption.png)
 
 ## Attaching a Prevalue Source to a Field
 
@@ -62,8 +61,8 @@ Once a prevalue source has been created, it can be used while building Forms in 
 
 If there is at least one prevalue source defined in the project, the Prevalues source will contain a dropdown from where you can choose the predefined value.
 
-![Prevalue source](images/FieldPrevalueSource.png)
+![Prevalue source](../../../../10/umbraco-forms/editor/defining-and-attaching-prevaluesources/images/FieldPrevalueSource.png)
 
 Once you have selected the prevalue source, the values are rendered in the Forms designer from the attached source.
 
-![Preview](images/fieldpreview.png)
+![Preview](../../../../10/umbraco-forms/editor/defining-and-attaching-prevaluesources/images/fieldpreview.png)
