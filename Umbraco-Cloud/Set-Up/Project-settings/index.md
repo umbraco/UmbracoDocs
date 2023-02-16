@@ -1,6 +1,6 @@
 ---
 versionFrom: 7.0.0
-meta.RedirectLink: "/umbraco-cloud/setup/project-settings/application-settings"
+meta.RedirectLink: "/umbraco-cloud/setup/project-settings"
 ---
 
 # Project Settings
