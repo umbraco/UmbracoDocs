@@ -84,20 +84,18 @@ To add a content item review, follow these steps:
 
 1. Go to the **Workflow** section.
 2. Go to the **Settings** tab in the **Content reviews** menu.
-3.  Click **Add** in the **Content item reviews** section.\
-
+3. Click **Add** in the **Content item reviews** section.
 
     <figure><img src="../../umbraco-workflow/images/content-item-reviews.png" alt=""><figcaption><p>Content Item Reviews</p></figcaption></figure>
-4.  Select **Content node** to add to the Content item reviews section. \\
+4. Select **Content node** to add to the Content item reviews section.
 
     <figure><img src="../../umbraco-workflow/images/content-item-reviews-select-content.png" alt=""><figcaption><p>Select Content Node</p></figcaption></figure>
 5. Select the **Language** from the drop-down in the **Add Content item review settings** pane.
-6. \[Optional] Enable **Exclude from Review** if you wish to exclude this content node from content review. If you enable this setting, skip to step 11.
+6. [Optional] Enable **Exclude from Review** if you wish to exclude this content node from content review. If you enable this setting, skip to step 11.
 7. Enter the **Review period** in days.
 8. Click **Add** to add the **Review Group**.
 9. Select an **approval group**.
-10. Click Submit.\
-
+10. Click Submit.
 
     <figure><img src="../../umbraco-workflow/images/content-item-reviews-settings.png" alt=""><figcaption><p>Edit Content Item Review Settings</p></figcaption></figure>
 11. Click Submit.
@@ -113,20 +111,18 @@ To add a Document Type review, follow these steps:
 
 1. Go to the **Workflow** section.
 2. Go to the **Settings** tab in the **Content reviews** menu.
-3.  Click **Add** in the **Document-type reviews** section.\
-
+3.  Click **Add** in the **Document-type reviews** section.
 
     <figure><img src="../../umbraco-workflow/images/document-type-reviews.png" alt=""><figcaption><p>Document Type reviews</p></figcaption></figure>
 4.  Select **Content type** to add to the Document-type reviews section.
 
     <figure><img src="../../umbraco-workflow/images/document-type-reviews-select-content.png" alt=""><figcaption><p>Select Content Type</p></figcaption></figure>
 5. Select the **Language** from the drop-down in the **Add Document-type review settings** pane.
-6. \[Optional] Enable **Exclude from Review** if you wish to exclude this Document-type from content review. If you enable this setting, skip to step 11.
+6. [Optional] Enable **Exclude from Review** if you wish to exclude this Document-type from content review. If you enable this setting, skip to step 11.
 7. Enter the **Review period** in days.
 8. Click **Add** to add the **Review Group**.
 9. Select an **approval group**.
-10. Click Submit.\
-
+10. Click Submit.
 
     <figure><img src="../../umbraco-workflow/images/document-type-review-settings.png" alt=""><figcaption><p>Add Document Type Review Settings</p></figcaption></figure>
 11. Click Submit.
@@ -148,6 +144,6 @@ To add templates for other languages:
 
 For example:
 
-* **Default approval request template:**\
+* **Default approval request template:**
   `~/Views/Partials/WorkflowEmails/ContentReviews.cshtml`
 * **Danish approval request template:** `~/Views/Partials/WorkflowEmails/ContentReviews_da-DK.cshtml`

@@ -1,12 +1,15 @@
 # Table of contents
 
-* [What is Umbraco Workflow?](README.md)
+* [Umbraco Workflow Documentation](README.md)
 * [Installation](installing-workflow.md)
 * [Licensing](licensing.md)
-* [Dashboards and Buttons](dashboards-and-buttons.md)
-* [Content App](workflow-content-app.md)
-* [Notifications](notifications.md)
-* [Configuration](configuration.md)
+
+## Getting Started
+
+* [Dashboards and Buttons](getting-started/dashboards-and-buttons.md)
+* [Content App](getting-started/workflow-content-app.md)
+* [Notifications](getting-started/notifications.md)
+* [Configuration](getting-started/configuration.md)
 
 ## Upgrading Workflow
 

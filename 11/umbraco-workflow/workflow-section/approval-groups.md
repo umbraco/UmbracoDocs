@@ -14,8 +14,7 @@ To add an approval group, follow these steps:
 6. Enter the group's **Email** address in the Settings section to which the notifications will be sent.
 7. Select the **Language** from the drop-down list.
 8. **Enable offline approval** to allow users in this group to approve changes without logging in to the backoffice.
-9.  Click **Save Group**.\
-
+9. Click **Save Group**.
 
     <figure><img src="../../umbraco-workflow/images/Create-approval-group.png" alt="Create Approval Group"><figcaption><p>Create Approval Groups</p></figcaption></figure>
 
