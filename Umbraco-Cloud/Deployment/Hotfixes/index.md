@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+meta.RedirectLink: "/umbraco-cloud/deployments/hotfixes"
 ---
 
 # How to handle hotfixes on Umbraco Cloud projects

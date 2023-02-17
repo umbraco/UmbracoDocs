@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+meta.RedirectLink: "/umbraco-cloud/deployments/deployment"
 ---
 
 # Restoring Content
@@ -12,10 +13,12 @@ The restore option comes in handy when you have content editors creating content
 
 You can restore the content in the following ways:
 
-1. [Restore when starting up the project locally](#restore-when-starting-up-the-project-locally)
-2. [Workspace Restore](#workspace-restore)
-3. [Tree Restore](#tree-restore)
-4. [Partial Restore](Partial-Restore)
+- [Restoring Content](#restoring-content)
+  - [Step-by-step](#step-by-step)
+    - [Restore when starting up the project locally](#restore-when-starting-up-the-project-locally)
+    - [Workspace Restore](#workspace-restore)
+    - [Tree Restore](#tree-restore)
+    - [Partial Restore](#partial-restore)
 
 ### Restore when starting up the project locally
 

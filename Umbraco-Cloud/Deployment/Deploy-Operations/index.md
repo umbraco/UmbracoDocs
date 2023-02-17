@@ -1,5 +1,6 @@
 ---
 versionFrom: 8.0.0
+meta.RedirectLink: "/umbraco-cloud/deployments/deploy-operations"
 ---
 
 # Deploy Operations
