@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+meta.RedirectLink: "/umbraco-cloud/product-upgrades/upgrades"
 ---
 
 # Umbraco Cloud Product Upgrades

@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+meta.RedirectLink: "/umbraco-cloud/product-upgrades/manual-upgrades"
 ---
 
 # Upgrade your Umbraco Cloud projects manually
