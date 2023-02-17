@@ -4,6 +4,7 @@
 * [Legacy Documentation](legacy-documentation/README.md)
   * [Umbraco 8 Documentation](https://our.umbraco.com/documentation/)
   * [Umbraco 7 Documentation](https://our.umbraco.com/documentation/)
+* [Contribute](https://docs.umbraco.com/welcome/contribute/getting-started)
 
 ## Fundamentals
 
