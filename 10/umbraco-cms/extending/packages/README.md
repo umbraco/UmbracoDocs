@@ -38,7 +38,7 @@ A Management Extension package helps you manage your site, and provides informat
 
 #### Starter Kits
 
-Starter kits are, as the name suggests, a package that helps you set up a starter version of whatever you want to build. Most starter kit packages are for starting a website, and include schema like Document Types and Templates as well as content nodes and media. There are also some specialised starter kits, for example for creating a blog. Umbraco HQ has released their [own starter kit](https://our.umbraco.com/packages/starter-kits/the-starter-kit/), that creates a small site with the most commonly used features.
+Starter kits are, as the name suggests, a package that helps you set up a starter version of whatever you want to build. Most starter kit packages are for starting a website, and include schema like Document Types and Templates as well as content nodes and media. There are also some specialized starter kits, for example for creating a blog. Umbraco HQ has released their [own starter kit](https://our.umbraco.com/packages/starter-kits/the-starter-kit/), that creates a small site with the most commonly used features.
 
 #### Content Apps
 
