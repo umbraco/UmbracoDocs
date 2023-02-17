@@ -13,12 +13,12 @@
 
 ## Upgrading Workflow
 
-* [Upgrading](upgrading-workflow/README.md)
+* [Upgrading](upgrading-workflow/upgrading.md)
   * [Migrate from Plumber to Workflow](upgrading-workflow/migrating-workflow.md)
 
 ## Workflow Section
 
-* [Workflow Section](workflow-section/README.md)
+* [Workflow Section](workflow-section/workflow-section-dashboard.md)
 * [Active Workflows](workflow-section/active-workflows.md)
 * [Approval Groups](workflow-section/approval-groups.md)
 * [Content Reviews](workflow-section/content-reviews.md)
