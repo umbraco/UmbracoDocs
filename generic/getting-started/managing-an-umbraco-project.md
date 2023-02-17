@@ -1,5 +1,5 @@
 ---
-description: "Find all the resources you need in order to manage your Umbraco project."
+description: Find all the resources you need in order to manage your Umbraco project.
 ---
 
 # Choosing Umbraco
@@ -16,11 +16,11 @@ In this section you will find information on the key concepts and requirements o
 
 [What commerical options are available from Umbraco?](https://umbraco.com/products/)
 
-[Information on planning an Umbraco project](../umbraco-cms/fundamentals/setup/requirements.md)
+[Information on planning an Umbraco project](https://app.gitbook.com/s/OdQETpqkO0Kcv8KMquKL/fundamentals/setup/requirements)
 
-[How do I manage users with Umbraco?](../umbraco-cms/fundamentals/data/users.md)
+[How do I manage users with Umbraco?](https://app.gitbook.com/s/OdQETpqkO0Kcv8KMquKL/fundamentals/data/users)
 
-[What is the deployment process for Umbraco?](../umbraco-cloud/deployment/)
+[What is the deployment process for Umbraco?](https://app.gitbook.com/s/ZtqcoypStodmS9g6g8zC/deployments)
 
 [What is the Umbraco Community?](https://community.umbraco.com)
 
