@@ -2,7 +2,7 @@
 
 In this article, you will find information about Umbraco Forms-related health checks that can be run from the Umbraco backoffice to ensure that your installation is running seamlessly.
 
-Read the [Health Check](../../../umbraco-cms/extending/health-check/) article to learn more about the feature in general.
+Read the [Health Check](https://docs.umbraco.com/umbraco-cms/extending/health-check) article to learn more about the feature in general.
 
 ## Database Integrity Health Check
 
@@ -26,13 +26,12 @@ There shouldn't be - but without these constraints in place it's always possible
 
 To run the health check:
 
-1.  Navigate to the **Health Check** dashboard in the **Settings** section in the Umbraco backoffice.&#x20;
+1.  Navigate to the **Health Check** dashboard in the **Settings** section in the Umbraco backoffice.
 
-    <figure><img src="images/Umb-backoffice.png" alt=""><figcaption></figcaption></figure>
-2.  Click on the **Forms** button and select **Check Group**. You'll see a result that looks something like this: \
+    <figure><img src="../../../../10/umbraco-forms/developer/healthchecks/images/Umb-backoffice.png" alt=""><figcaption></figcaption></figure>
+2.  Click on the **Forms** button and select **Check Group**. You'll see a result that looks something like this: \\
 
-
-    <figure><img src="images/healthcheck.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../../10/umbraco-forms/developer/healthchecks/images/healthcheck.png" alt=""><figcaption></figcaption></figure>
 
 If you have a full set of green ticks, then you're all good - and no need to read on!
 

@@ -1,6 +1,6 @@
 # Team Members
 
-This article is about team members that are added via the **Invite User** button in the Umbraco Cloud Portal. If you are looking for more information about Users in the Backoffice, see [Users](../../../../umbraco-cms/fundamentals/data/users.md). Users added through the backoffice do not have access to the Umbraco Cloud Portal.
+This article is about team members that are added via the **Invite User** button in the Umbraco Cloud Portal. If you are looking for more information about Users in the Backoffice, see [Users](https://docs.umbraco.com/umbraco-cms/fundamentals/data/users). Users added through the backoffice do not have access to the Umbraco Cloud Portal.
 
 ![Invite User](../../team-members/images/Invite-User-1.gif)
 
@@ -12,7 +12,7 @@ When adding a user, the default permission is _Read_ for each environment. You c
 
 ## Team Member User Permissions
 
-User Permissions for each environment can be set in the **Edit Team** page available from the **Settings** dropdown. User Permissions can be set per environment. For example, a user can have Write access on the Development environment and Read access on the Live environment.&#x20;
+User Permissions for each environment can be set in the **Edit Team** page available from the **Settings** dropdown. User Permissions can be set per environment. For example, a user can have Write access on the Development environment and Read access on the Live environment.
 
 <figure><img src="../../team-members/images/Edit-Team.png" alt=""><figcaption></figcaption></figure>
 

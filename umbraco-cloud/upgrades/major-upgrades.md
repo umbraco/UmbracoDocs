@@ -13,12 +13,12 @@ You need to ensure that any packages you use are available in the latest version
 
 **Breaking Changes**
 
-Make sure you know the [Breaking changes](../../umbraco-cms/fundamentals/setup/upgrading/version-specific/) in the latest version of Umbraco CMS.
+Make sure you know the [Breaking changes](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific#breaking-changes) in the latest version of Umbraco CMS.
 {% endhint %}
 
 ## Prerequisites
 
-* Follow the **requirements** for [local development](../../umbraco-cms/fundamentals/setup/requirements.md#local-development).
+* Follow the **requirements** for [local development](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/requirements#local-development).
 * A Umbraco Cloud project running **the latest version of Umbraco**
 * The **latest** .[NET version](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks) is installed locally.
 * **At least 2 environments** on your Cloud project.
@@ -80,7 +80,7 @@ If you have more projects in your solution or other packages, make sure that the
 
 ## Step 4: Finishing the Upgrade
 
-* Enable the [Unattended Upgrades](../../umbraco-cms/reference/configuration/unattendedsettings.md#upgrade-unattended) feature.
+* Enable the [Unattended Upgrades](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading#run-an-unattended-upgrade) feature.
 * Run the **project locally**.
 * Log in to the Umbraco backoffice to **verify the upgrade** has happened.
 * **Disable** the Unattended Upgrades feature.

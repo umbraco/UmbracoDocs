@@ -1,6 +1,6 @@
 # Block List Filters
 
-When working with the Block List editor, [the editor experience is enhanced](../../umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-list-editor.md#editor-appearance) by defining a label for the appearance of the Block.
+When working with the Block List editor, [the editor experience is enhanced](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-list-editor#editor-appearance) by defining a label for the appearance of the Block.
 
 These labels can contain AngularJS filters.
 

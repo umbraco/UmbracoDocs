@@ -6,7 +6,7 @@ description: Documentation on how to work with Umbraco Deploy.
 
 Umbraco Deploy is a deployment tool that helps you with the process of transferring code and data between multiple environments. Deploy can be configured for many different setups and is great for both small setups as well as large and more complex infrastructures.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Install Umbraco Deploy</strong></td><td>Learn how you can install Umbraco Deploy on new and existing Umbraco projects.</td><td><a href=".gitbook/assets/update.png">update.png</a></td><td><a href="broken-reference">Broken link</a></td></tr><tr><td><strong>Deployment workflow in</strong></td><td>Learn about how the Deployment workflow in Umbraco Deploy work.</td><td><a href=".gitbook/assets/lightbulb.png">lightbulb.png</a></td><td><a href="broken-reference">Broken link</a></td></tr><tr><td><strong>Upgrading</strong></td><td>Learn how you can upgrade Umbraco Deploy.</td><td><a href=".gitbook/assets/code_cursor.png">code_cursor.png</a></td><td><a href="broken-reference">Broken link</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Install Umbraco Deploy</strong></td><td>Learn how you can install Umbraco Deploy on new and existing Umbraco projects.</td><td><a href=".gitbook/assets/update.png">update.png</a></td><td><a href="broken-reference">Broken link</a></td></tr><tr><td><strong>Deployment workflow in</strong></td><td>Learn about how the Deployment workflow in Umbraco Deploy work.</td><td><a href=".gitbook/assets/lightbulb.png">lightbulb.png</a></td><td><a href="deployment-workflow/">deployment-workflow</a></td></tr><tr><td><strong>Upgrading</strong></td><td>Learn how you can upgrade Umbraco Deploy.</td><td><a href=".gitbook/assets/code_cursor.png">code_cursor.png</a></td><td><a href="broken-reference">Broken link</a></td></tr></tbody></table>
 
 {% content-ref url="deploy-settings.md" %}
 [deploy-settings.md](deploy-settings.md)
@@ -20,7 +20,7 @@ Umbraco Deploy is a deployment tool that helps you with the process of transferr
 [troubleshooting.md](troubleshooting.md)
 {% endcontent-ref %}
 
-Umbraco Deploy is also the engine that runs behind the scenes on [Umbraco Cloud](../umbraco-cloud/). Here it takes care of all the deployment processes of both code, schema and content on projects.
+Umbraco Deploy is also the engine that runs behind the scenes on [Umbraco Cloud](https://docs.umbraco.com/umbraco-cloud/). Here it takes care of all the deployment processes of both code, schema and content on projects.
 
 With Umbraco Deploy you get to use the Umbraco Cloud Deployment technology outside of Umbraco Cloud to ease deployment between multiple Umbraco environments. This is done by connecting external hosted Umbraco projects with a local instance of your Umbraco website.
 

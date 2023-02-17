@@ -1,5 +1,5 @@
 ---
-description: "Documentation for Umbraco Heartcore GraphQL schema generation"
+description: Documentation for Umbraco Heartcore GraphQL schema generation
 ---
 
 # Schema Generation
@@ -10,19 +10,19 @@ The type name is the Content Type's alias in Pascal Case, e.g. if a Content Type
 
 ## Table of Contents
 
-* [Types](#types)
-* [Fields](#fields)
-* [Root Query](#root-query)
-* [Reserved Type Names and Property Aliases](#reserved-type-names-and-property-aliases)
-* [Built-in Custom Types](#built-in-custom-types)
-* [Filtering](#filtering)
-* [Ordering](#ordering)
+* [Types](schema-generation.md#types)
+* [Fields](schema-generation.md#fields)
+* [Root Query](schema-generation.md#root-query)
+* [Reserved Type Names and Property Aliases](schema-generation.md#reserved-type-names-and-property-aliases)
+* [Built-in Custom Types](schema-generation.md#built-in-custom-types)
+* [Filtering](schema-generation.md#filtering)
+* [Ordering](schema-generation.md#ordering)
 
 ## Types
 
 The types generated depends on how the Content Types are configured.
 
-If a Content Type is inherited from or used as a [Composition](../../../umbraco-cms/fundamentals/data/defining-content.md#creating-a-document-type) it will be generated as an interface
+If a Content Type is inherited from or used as a [Composition](https://docs.umbraco.com/umbraco-cms/fundamentals/data/defining-content#creating-a-document-type) it will be generated as an interface
 
 ```graphql
 interface NavigationBase {
@@ -31,7 +31,7 @@ interface NavigationBase {
 }
 ```
 
-If the Document Type is marked as an Element Type it will implement the [Element](#element) interface
+If the Document Type is marked as an Element Type it will implement the [Element](schema-generation.md#element) interface
 
 ```graphql
 type Feature implements Element {
@@ -41,7 +41,7 @@ type Feature implements Element {
 }
 ```
 
-All other Content Types will implement either the [Content](#content) or the [Media](#media) interface, they will also implement all their Composition interfaces.
+All other Content Types will implement either the [Content](schema-generation.md#content) or the [Media](schema-generation.md#media) interface, they will also implement all their Composition interfaces.
 
 ```graphql
 type Product implements Content & NavigationBase {
@@ -87,7 +87,7 @@ type ProductEdge {
 
 All properties on a Content Type is generated as a field on the GraphQL type. See the [Property Editors](property-editors.md) page for which types the editors are returning.
 
-If a property is marked as [Allow varying by culture](../../../umbraco-cms/fundamentals/backoffice/variants.md), a `culture` argument is added to that field. The argument is optional and will fallback to the parent fields culture or the default culture if none is specified.
+If a property is marked as [Allow varying by culture](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/variants), a `culture` argument is added to that field. The argument is optional and will fallback to the parent fields culture or the default culture if none is specified.
 
 ```graphql
 type Product implements Content & NavigationBase {
@@ -233,7 +233,6 @@ The GraphQL type name is the Content Type `alias` converted to Pascal Case.
 * Uri
 * UShort
 
-
 ### Reserved Element Type Property Names
 
 List of reserved Element Type Property names, these cannot be used as a Property `alias` on an Element Type.
@@ -333,7 +332,6 @@ type BlockListItem {
   }
 }
 ```
-
 
 ### Decimal Range
 
@@ -711,7 +709,6 @@ enum ImageCropRatioMode {
   }
 }
 ```
-
 
 ### Image Cropper Crop
 
@@ -1256,6 +1253,7 @@ type OurUmbracoGMapsMapConfig {
 ```
 
 ### Our Umbraco GMaps Coordinate
+
 ```graphql
 type OurUmbracoGMapsCoordinate {
   coordinates: String
@@ -2181,7 +2179,7 @@ input ProductFilterInput {
 
 ### Content
 
-For types returning `Content` the [ContentFilterInput](#default_filter_fields) is used.
+For types returning `Content` the [ContentFilterInput](schema-generation.md#default\_filter\_fields) is used.
 
 ### Dates
 
@@ -2464,7 +2462,7 @@ To filter the `allContent` field, `ancestors`, `children` and `descendants` conn
 All order by inputs for Content Types will also have the default fields.
 {% endhint %}
 
-```graphql
+````graphql
 ``"""
 An order input for the type `Content`.
 """
@@ -2538,7 +2536,7 @@ Product implements Content {
   sku: String
 ...
 }
-```
+````
 
 The following type will be generated, incl. the fields from the `ContentOrderByInput`.
 

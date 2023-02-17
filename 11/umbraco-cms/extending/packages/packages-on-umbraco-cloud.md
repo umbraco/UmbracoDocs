@@ -1,14 +1,13 @@
 ---
-description: "Things to consider for package development and usage in Umbraco Cloud"
+description: Things to consider for package development and usage in Umbraco Cloud
 ---
 
 # Packages on Umbraco Cloud
 
-If you want to use or develop packages for Umbraco Cloud there are a few things to consider and be aware of.
-The two most important things to know about are
+If you want to use or develop packages for Umbraco Cloud there are a few things to consider and be aware of. The two most important things to know about are
 
-- [How you should store data on Cloud](#storing-data)
-- [Using custom property editors with Deploy](#valueconnectors)
+* [How you should store data on Cloud](packages-on-umbraco-cloud.md#storing-data)
+* [Using custom property editors with Deploy](packages-on-umbraco-cloud.md#valueconnectors)
 
 ## Storing data
 
@@ -24,17 +23,16 @@ A [migration](../database.md) is some code that you run as part of a migration p
 
 As migration runs are stored in the database of the site it also means that they will run on each environment you trigger them on. The most common way to trigger a migration is to include them in a [composer](../../implementation/composing.md), which will ensure they run on site startup. This means any commands you have in your migration will automatically run when the site starts up. When your package code is pushed to a new environment it will run them from the beginning on that environment as no ID is saved in the database.
 
-This is normally a good thing. However if you generate any Umbraco schema then Umbraco Deploy will automatically create [UDA files](../../../umbraco-cloud/set-up/power-tools/generating-uda-files.md#what-are-uda-files) based on that schema, and commit them to source control. This means that when you deploy all your files to the next environment the migration will run again, create duplicates and generate duplicate UDA files, which could end up causing a lot of issues.
+This is normally a good thing. However if you generate any Umbraco schema then Umbraco Deploy will automatically create [UDA files](https://docs.umbraco.com/umbraco-cloud/setup/power-tools/generating-uda-files) based on that schema, and commit them to source control. This means that when you deploy all your files to the next environment the migration will run again, create duplicates and generate duplicate UDA files, which could end up causing a lot of issues.
 
 You could consider creating Umbraco schema only during a package action, and then running things like creating database tables in migrations. Another good workaround could be to not run the migrations in a composer, but rather create a dashboard for the package where the user can choose which migrations to run themselves. The [Articulate package](https://github.com/Shazwazza/Articulate/blob/master/build/packageManifest.xml#L613) has an example of this.
 
 ### Creating files
 
-You may sometimes choose to save data in a file. Could be a seperate config file for your package or a [config transform file](../../../umbraco-cloud/set-up/config-transforms.md) to add an app setting to the web.config.
-If you do this be aware of two things:
+You may sometimes choose to save data in a file. Could be a seperate config file for your package or a [config transform file](https://docs.umbraco.com/umbraco-cloud/setup/config-transforms) to add an app setting to the web.config. If you do this be aware of two things:
 
-1. If these files are generated on a Cloud environment they will not be stored in source control, and will be overwritten on next deployment. They need to be installed locally, committed to source control and then pushed up to the Cloud environments. We have an [existing feature request](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/33) on allowing package creators to commit their files directly on Cloud, and it is possible to do so currently but not in a supported way, and it may change suddenly.
-2. If you need the content of the files to be different on the different environments you will need to use environment specific [config transforms](../../../umbraco-cloud/set-up/config-transforms.md).
+1. If these files are generated on a Cloud environment they will not be stored in source control, and will be overwritten on next deployment. They need to be installed locally, committed to source control and then pushed up to the Cloud environments. We have an [existing feature request](../../reference/mapping.md) on allowing package creators to commit their files directly on Cloud, and it is possible to do so currently but not in a supported way, and it may change suddenly.
+2. If you need the content of the files to be different on the different environments you will need to use environment specific [config transforms](https://docs.umbraco.com/umbraco-cloud/setup/config-transforms).
 
 ## ValueConnectors
 
@@ -44,7 +42,7 @@ An example of creating one for your package would be if you had a custom propert
 
 So you have a property editor with a textarea input, that saves an ID as a string. It could look like this:
 
-![Property editor](images/property-editor.png)
+![Property editor](../../../../10/umbraco-cms/extending/packages/images/property-editor.png)
 
 Then in the template you have something like this:
 
@@ -52,13 +50,13 @@ Then in the template you have something like this:
 <img src="@Umbraco.Media(Model.Value("BadMedia")).Url" />
 ```
 
-Renders the image perfectly! 
+Renders the image perfectly!
 
 However now you do a content transfer to your Cloud environment, and one of three things will happen:
 
 1. You got lucky and the ID you had on local happened to be the same as what the media node was assigned on your Cloud environment.
-1. Your page will now show a different image as the ID you had corresponds to something else on this environment.
-1. You will get an error on the frontend as it can't find any media nodes with that ID.
+2. Your page will now show a different image as the ID you had corresponds to something else on this environment.
+3. You will get an error on the frontend as it can't find any media nodes with that ID.
 
 To prevent this from happening we will need to use a ValueConnector.
 
@@ -96,7 +94,7 @@ namespace valueconnector.Core.Controllers
 }
 ```
 
-In this case I cloned the Cloud project down using the [uaas.cmd](https://umbra.co/uaas-cmd) tool, which means that I have a class library that I can add the ValueConnector to. This will automatically have some references included and will build a DLL, eg. `projectalias.core.dll`, and put it in the websites bin folder when building. 
+In this case I cloned the Cloud project down using the [uaas.cmd](https://umbra.co/uaas-cmd) tool, which means that I have a class library that I can add the ValueConnector to. This will automatically have some references included and will build a DLL, eg. `projectalias.core.dll`, and put it in the websites bin folder when building.
 
 This has no impact on the way you work, but it may help you understand why some things are named the way they are.
 
@@ -104,20 +102,13 @@ At this point I have one clone of the site locally. However, to test this I will
 
 At this point I have two local sites:
 
-**Site 1**:
-Full Visual Studio solution
-Running on http://localhost:6240/ (Randomly generated)
-Has the ValueConnector in a class library that is built to a dll and copied to the websites bin on build
+**Site 1**: Full Visual Studio solution Running on http://localhost:6240/ (Randomly generated) Has the ValueConnector in a class library that is built to a dll and copied to the websites bin on build
 
-**Site 2**: 
-A website served through VS Code (Could be IIS or anything else, doesn't matter)
-Running on http://localhost:17025/ (Randomly generated)
-Has the ValueConnector dll in the bin from the clone
+**Site 2**: A website served through VS Code (Could be IIS or anything else, doesn't matter) Running on http://localhost:17025/ (Randomly generated) Has the ValueConnector dll in the bin from the clone
 
-Now we will set up these two identical sites to transfer content between eachother. 
+Now we will set up these two identical sites to transfer content between eachother.
 
-To do so go to `site1/Config/UmbracoDeploy.config` and edit the live environment url to be Site 2's url (http://localhost:17025/ in my case).
-Then do the same for Site 2 but put in the domain for Site 1 as the "live" one.
+To do so go to `site1/Config/UmbracoDeploy.config` and edit the live environment url to be Site 2's url (http://localhost:17025/ in my case). Then do the same for Site 2 but put in the domain for Site 1 as the "live" one.
 
 At this point you should be able to go to the backoffice of either environment and do a Content transfer to live, and it should end up on the other (Assuming no errors from your custom connector).
 
@@ -134,7 +125,7 @@ At this point we haven't done anything to the ValueConverter yet, other than ret
 
 It will hit your breakpoint, and if you continue you will then get an error. On the breakpoint you can see why the error occurs. It should look like this:
 
-![Hitting the breakpoint](images/hitting-breakpoints.png)
+![Hitting the breakpoint](../../../../10/umbraco-cms/extending/packages/images/hitting-breakpoints.png)
 
 Here you can see that value is null, and if you try to return `value.ToString()` you will get a null exception.
 
@@ -157,7 +148,7 @@ The workflow here is not optimal, but a lot quicker than trying to deploy to Clo
 
 After copying the dll and pdb files over we are synced up, now attach the debugger and attempt another transfer. Now you will see that `value` is null a few times, then your hardcoded ID a few times, but nothing breaks here. Eventually you will hit the `FromArtifact` method instead:
 
-![Hitting FromArtifact](images/fromArtifact.png)
+![Hitting FromArtifact](../../../../10/umbraco-cms/extending/packages/images/fromArtifact.png)
 
 Here you will notice that the value is what you had returned in `ToArtifact`.
 
@@ -166,16 +157,15 @@ Here you will notice that the value is what you had returned in `ToArtifact`.
 You may have realised at this point that the flow is something like this:
 
 1. Site 1 content transfer initated
-1. Property data is fetched on Site 1
-1. Hit the `ToArtifact` method on Site 1
-1. Send to Site 2
-1. Hit the `FromArtifact` method on Site 2
-1. Property data is saved on Site 2
+2. Property data is fetched on Site 1
+3. Hit the `ToArtifact` method on Site 1
+4. Send to Site 2
+5. Hit the `FromArtifact` method on Site 2
+6. Property data is saved on Site 2
 
 So in our case, what we want to do is to ensure the ID from Site 1 is changed during the transfer to match what the new ID in Site 2 is. We do this by converting the ID to a GUID in the `ToArtifact` method on Site 1, which will then get transfered to Site 2. On site 2 we will convert it back to an ID in the `FromArtifact` method. This way the user will still see an ID on the content node, but the ID they see will be updated to the correct one.
 
 {% hint style="warning" %}
-
 In this example there would be no way for Deploy to know to also transfer the image. We assume that you would transfer all content and images to ensure it is on the target environment under a different ID.
 
 That is not a good assumption, and you may have noticed that there is a parameter on the `ToArtifact` method that you could update by finding the image and adding it to `ICollection<ArtifactDependency> dependencies`.
@@ -215,18 +205,14 @@ public string ToArtifact(object value, PropertyType propertyType, ICollection<Ar
 
 You can find references on the methods used here in our API documentation:
 
-<!-- vale off -->
-
-- [EntityService.GetKey](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Services.Implement.EntityService.html#Umbraco_Core_Services_Implement_EntityService_GetKey_System_Int32_Umbraco_Core_Models_UmbracoObjectTypes_)
-- [new GuidUdi](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.GuidUdi.html#Umbraco_Core_GuidUdi__ctor_System_String_System_Guid_)
-- [new ArtifactDependency](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Deploy.ArtifactDependency.html#Umbraco_Core_Deploy_ArtifactDependency__ctor_Umbraco_Core_Udi_System_Boolean_Umbraco_Core_Deploy_ArtifactDependencyMode_)
-- [ArtifactDependencyMode](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Deploy.ArtifactDependencyMode.html)
-
-<!-- vale on -->
+* [EntityService.GetKey](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Services.Implement.EntityService.html#Umbraco\_Core\_Services\_Implement\_EntityService\_GetKey\_System\_Int32\_Umbraco\_Core\_Models\_UmbracoObjectTypes\_)
+* [new GuidUdi](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.GuidUdi.html#Umbraco\_Core\_GuidUdi\_\_ctor\_System\_String\_System\_Guid\_)
+* [new ArtifactDependency](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Deploy.ArtifactDependency.html#Umbraco\_Core\_Deploy\_ArtifactDependency\_\_ctor\_Umbraco\_Core\_Udi\_System\_Boolean\_Umbraco\_Core\_Deploy\_ArtifactDependencyMode\_)
+* [ArtifactDependencyMode](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Deploy.ArtifactDependencyMode.html)
 
 When stepping through the code we can see that everything seems to work fine:
 
-![Stepped through code](images/steppingThroughCode.png)
+![Stepped through code](../../../../10/umbraco-cms/extending/packages/images/steppingThroughCode.png)
 
 {% hint style="info" %}
 Note: Showing the variable values is a feature of [ReSharper](https://www.jetbrains.com/resharper/) .
@@ -253,7 +239,7 @@ public object FromArtifact(string value, PropertyType propertyType, object curre
 
 Here is a gif showing the ValueConnector in action. A new image is uploaded, the ID on the node is updated and transferred. Finally the image is on the new environment and the ID is updated:
 
-![Full workflow gif](images/valueconnector.gif)
+![Full workflow gif](../../../../10/umbraco-cms/extending/packages/images/valueconnector.gif)
 
 The final ValueConnector code will look like this:
 

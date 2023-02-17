@@ -1,12 +1,12 @@
 ---
-meta.Title: "Healthchecks"
+meta.Title: Healthchecks
 ---
 
 # Health Checks
 
 In this article, you will find information about Umbraco Forms-related health checks that can be run from the Umbraco backoffice to ensure that your installation is running seamlessly.
 
-Read the [Health Check](../../../umbraco-cms/extending/health-check/README.md) article to learn more about the feature in general.
+Read the [Health Check](https://docs.umbraco.com/umbraco-cms/v/10.latest-lts/extending/health-check) article to learn more about the feature in general.
 
 ## Database Integrity Health Check
 
@@ -18,11 +18,11 @@ In this section, you can learn more about the background for adding this check, 
 
 With version 8.7, a health check was introduced to confirm the Umbraco Forms database tables are all set up with the expected data integrity checks - i.e. primary keys, foreign keys and unique constraints.
 
-In most cases, you can expect them all to be in place without any developer intervention.  For new installs, the database schema is initialized with all the necessary integrity constraints.  And for upgrades, any new schema changes are automatically applied.
+In most cases, you can expect them all to be in place without any developer intervention. For new installs, the database schema is initialized with all the necessary integrity constraints. And for upgrades, any new schema changes are automatically applied.
 
-There remains the possibility though that not all will be in place for a particular installation.  For example, this could happen if a constraint is added in a new version. It can't be added via an automated migration due to existing data integrity issues.
+There remains the possibility though that not all will be in place for a particular installation. For example, this could happen if a constraint is added in a new version. It can't be added via an automated migration due to existing data integrity issues.
 
-In particular, prior to version 8.7, there were a number of tables that weren't defined as strictly as they should be in this area.  So we've added some primary key, foreign key and unique constraints with this version.  If you've been running a version prior to this and are upgrading, these schema updates will be applied automatically _unless_ there is existing data in the tables that prevent them from being added.
+In particular, prior to version 8.7, there were a number of tables that weren't defined as strictly as they should be in this area. So we've added some primary key, foreign key and unique constraints with this version. If you've been running a version prior to this and are upgrading, these schema updates will be applied automatically _unless_ there is existing data in the tables that prevent them from being added.
 
 There shouldn't be - but without these constraints in place it's always possible for an application bug to exist that allows for example the creation of duplicate records, or the orphaning of records, that aren't correct. This is the reason for the constraints to exist, and why we want to ensure they are in place.
 
@@ -30,10 +30,8 @@ There shouldn't be - but without these constraints in place it's always possible
 
 To run the health check:
 
-1. Navigate to the **Health Check** dashboard in the **Settings** section in the Umbraco backoffice.
- ![Umbraco Forms Health Check](images/Umb-backoffice.png)
-2. Click on the **Forms** button and select **Check Group**. You'll see a result that looks something like this:
- ![Umbraco Forms Health Check](images/healthcheck.png)
+1. Navigate to the **Health Check** dashboard in the **Settings** section in the Umbraco backoffice. ![Umbraco Forms Health Check](../../../../11/umbraco-forms/developer/healthchecks/images/Umb-backoffice.png)
+2. Click on the **Forms** button and select **Check Group**. You'll see a result that looks something like this: ![Umbraco Forms Health Check](../../../../11/umbraco-forms/developer/healthchecks/images/healthcheck.png)
 
 If you have a full set of green ticks, then you're all good - and no need to read on!
 
@@ -49,8 +47,8 @@ As well as in the log files, such issues will be visible via the health check an
 
 To support this, we provide the following SQL scripts:
 
-- Apply database integrity schema changes for 8.7.0 - [8.7.0-apply-keys-and-indexes](apply-keys.md)
-- Apply database integrity schema changes for 8.7.0 (Forms in database tables) - [8.7.0-apply-keys-and-indexes-forms-in-db](forms-in-the-database-apply-keys.md)
+* Apply database integrity schema changes for 8.7.0 - [8.7.0-apply-keys-and-indexes](apply-keys.md)
+* Apply database integrity schema changes for 8.7.0 (Forms in database tables) - [8.7.0-apply-keys-and-indexes-forms-in-db](forms-in-the-database-apply-keys.md)
 
 The first of these provides the SQL statements required to apply the schema updates for 8.7.0 to the common Umbraco Forms tables. The second applies to those tables used for when Forms are stored in the database, and hence only need to be applied if that option is configured.
 
@@ -103,7 +101,7 @@ WHERE [Key] IN (SELECT [Key]
 )
 ```
 
-From the `Id` field you can identify the Form records that are duplicated and should be removed, and delete the records.  To check you have found them all, run one of the above queries again, and confirm you find no records returned.
+From the `Id` field you can identify the Form records that are duplicated and should be removed, and delete the records. To check you have found them all, run one of the above queries again, and confirm you find no records returned.
 
 Finally you can run the `ALTER TABLE...` statement shown above to apply the constraint, and confirm via the health check that it's now in place.
 
@@ -113,5 +111,5 @@ If for any reason you wish to revert the changes - perhaps when testing these up
 
 To support this, we provide the following SQL scripts:
 
-- Revert database integrity schema changes for 8.7.0 - [8.7.0-apply-keys-and-indexes_revert](apply-keys.md#revert-application-of-keys-and-indexes)
-- Revert database integrity schema changes for 8.7.0 (Forms in database tables) - [8.7.0-apply-keys-and-indexes-forms-in-db_revert](forms-in-the-database-apply-keys.md#reverting-the-application-of-keys-and-indexes)
+* Revert database integrity schema changes for 8.7.0 - [8.7.0-apply-keys-and-indexes\_revert](apply-keys.md#revert-application-of-keys-and-indexes)
+* Revert database integrity schema changes for 8.7.0 (Forms in database tables) - [8.7.0-apply-keys-and-indexes-forms-in-db\_revert](forms-in-the-database-apply-keys.md#reverting-the-application-of-keys-and-indexes)
