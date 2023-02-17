@@ -9,5 +9,5 @@ redirects:
     dashboards-and-buttons: getting-started/dashboards-and-buttons.md
     notifications: getting-started/notifications.md
     workflow-content-app: getting-started/workflow-content-app.md
-    upgrading-workflow/README: upgrading-workflow/upgrading.md
-    workflow-section/README: workflow-section/workflow-section-overview.md
+    upgrading-workflow/upgrading-workflow: upgrading-workflow/upgrading.md
+    workflow-section/workflow-section: workflow-section/workflow-section-dashboard.md
