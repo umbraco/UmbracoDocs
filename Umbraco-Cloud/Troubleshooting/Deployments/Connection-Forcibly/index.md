@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+needsV8Update: true
 ---
 
 # Error: "An existing connection was forcibly closed by the remote host"
