@@ -2,8 +2,7 @@
 
 During the development of your Umbraco site you can debug and profile the code you have written to analyse and discover bottlenecks in your code.
 
-To perform proper debugging on your site you need to set your application to have debug enabled.
-This can be done by setting `Umbraco:CMS:Hosting:Debug="true"` for example in the `appsettings.json` file:
+To perform proper debugging on your site you need to set your application to have debug enabled. This can be done by setting `Umbraco:CMS:Hosting:Debug="true"` for example in the `appsettings.json` file:
 
 {% hint style="warning" %}
 Debug should always be set to false in production.
@@ -49,9 +48,7 @@ The logged messages can as always be monitored in the log viewer in backoffice
 
 ## MiniProfiler
 
-Umbraco includes the Mini Profiler project in its core (see [https://miniprofiler.com](https://miniprofiler.com) for more details).
-The MiniProfiler profiles your code method calls, giving you a greater insight into code duration and query time for (for example) underlying SQL queries.
- It's great for tracking down performance issues in your site's implementation.
+Umbraco includes the Mini Profiler project in its core (see [https://miniprofiler.com](https://miniprofiler.com) for more details). The MiniProfiler profiles your code method calls, giving you a greater insight into code duration and query time for (for example) underlying SQL queries. It's great for tracking down performance issues in your site's implementation.
 
 ### Displaying the MiniProfiler
 
@@ -59,17 +56,17 @@ To display the profiler ensure that the configuration `Umbraco:CMS:Hosting:Debug
 
 Also, ensure your template calls `@Html.RenderProfiler()` as one of the last things.
 
-![?umbDebug=true](images/v8-miniprofiler-view.png)
+![?umbDebug=true](../../../../../11/umbraco-cms/fundamentals/code/debugging/images/v8-miniprofiler-view.png)
 
 If you click 'Show Trivial' you can seen the kind of detail the MiniProfiler makes available to you about the execution path of your page:
 
-![Show Trivial](images/v8-miniprofiler-trivial.png)
+![Show Trivial](../../../../../11/umbraco-cms/fundamentals/code/debugging/images/v8-miniprofiler-trivial.png)
 
 and any underlying SQL Statements that are being executed for a part of the execution:
 
-![Underlying SQL queries](images/v8-miniprofiler-sql-trigger.png)
+![Underlying SQL queries](../../../../../11/umbraco-cms/fundamentals/code/debugging/images/v8-miniprofiler-sql-trigger.png)
 
-![Underlying SQL query details](images/v8-miniprofiler-sql-details.png)
+![Underlying SQL query details](../../../../../11/umbraco-cms/fundamentals/code/debugging/images/v8-miniprofiler-sql-details.png)
 
 ### Writing to the MiniProfiler
 
@@ -117,7 +114,7 @@ namespace MyCustomUmbracoProject
 
 and now in the profiler you can see:
 
-![Show Trivial](images/v8-miniprofiler-write.png)
+![Show Trivial](../../../../../11/umbraco-cms/fundamentals/code/debugging/images/v8-miniprofiler-write.png)
 
 ## Umbraco Productivity Tool - Chrome Extension
 
@@ -125,7 +122,7 @@ If you are using the Google Chrome browser you can install this [Umbraco Product
 
 This will allow you to quickly switch between debugging with the MiniProfiler, Trace viewer and normal mode.
 
-![Umbraco Productivity Tool](images/chrome-tool.png)
+![Umbraco Productivity Tool](../../../../../11/umbraco-cms/fundamentals/code/debugging/images/chrome-tool.png)
 
 ## [Logging](logging.md)
 

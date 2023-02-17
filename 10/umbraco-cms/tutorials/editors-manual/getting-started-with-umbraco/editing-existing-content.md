@@ -7,9 +7,9 @@ versionTo: 10.0.0
 
 ## Content Within the Tree View
 
-When you are looking to edit content, locate the ***page*** you want to edit in the section tree on the left-side of the screen.
+When you are looking to edit content, locate the _**page**_ you want to edit in the section tree on the left-side of the screen.
 
-![Viewing Pages in Content Section](images/View-page-v9.png)
+![Viewing Pages in Content Section](../../../../../11/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/View-page-v9.png)
 
 To edit existing content, follow these steps:
 
@@ -24,30 +24,29 @@ To edit existing content, follow these steps:
 
 You can view Page layouts in three ways:
 
-1. **Tree View**
+1.  **Tree View**
 
     The tree view is present in the section tree on the left-side of the screen. For a growing website with multiple content pages, the tree view can become very large and unmanageable.
 
-    ![Tree View](images/Pick-page-v9.png)
-
-2. **List View**
+    ![Tree View](../../../../../11/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Pick-page-v9.png)
+2.  **List View**
 
     When you enable listview on a page, there will be no standard tree view for that page. Clicking on the parent page displays the child pages in the list view.
 
-    ![Shows the regular listview.](images/List-view-v9.png)
+    ![Shows the regular listview.](../../../../../11/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/List-view-v9.png)
 
     To enable list view:
+
     1. Go to **Settings**.
     2. Navigate to the Document Type/page you wish to enable list view.
     3. Go to the **List View** tab.
-    4. Toggle **Enable List view** and click **Save**.
+    4.  Toggle **Enable List view** and click **Save**.
 
-        ![Shows the regular listview.](images/Enabling-List-View-v9.png)
+        ![Shows the regular listview.](../../../../../11/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Enabling-List-View-v9.png)
 
     Additionally, you can sort the column **Name**, **Last edited**, and **Created by** in ascending or descending order to sort the list items.
-
-3. **Tiles View**
+3.  **Tiles View**
 
     You can switch between list view and tiles view by clicking the view icon in the top-right of the screen:
 
-    ![Tiles View.](images/Tiles-View-v9.png)
+    ![Tiles View.](../../../../../11/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Tiles-View-v9.png)

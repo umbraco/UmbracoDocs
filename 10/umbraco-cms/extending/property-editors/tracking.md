@@ -1,8 +1,10 @@
 ---
 versionFrom: 9.0.0
 versionTo: 10.0.0
-meta.Title: "Umbraco Property Editors - Tracking References"
-description: "Guide on how to implement tracking entity references for Property Editors in Umbraco"
+meta.Title: Umbraco Property Editors - Tracking References
+description: >-
+  Guide on how to implement tracking entity references for Property Editors in
+  Umbraco
 ---
 
 # Tracking References
@@ -18,25 +20,25 @@ When a content node is saved it will save the entity references as relations.
 ### For Media Items
 
 1. Go to the **Media** section.
-2. Select a media item and click the **Info** tab.
+2.  Select a media item and click the **Info** tab.
 
-    ![Viewing media references](images/media-references-v9.png)
+    ![Viewing media references](../../../../11/umbraco-cms/extending/property-editors/images/media-references-v9.png)
 
 ### For Content Nodes
 
 1. Go to the **Settings** section.
-2. Under the **Relation Types** folder, select **Related Document** relations and click **Relations**.
+2.  Under the **Relation Types** folder, select **Related Document** relations and click **Relations**.
 
-    ![Viewing document references](images/document-references-v9.png)
+    ![Viewing document references](../../../../11/umbraco-cms/extending/property-editors/images/document-references-v9.png)
 
 ### For Data Types
 
 1. Go to the **Settings** section.
 2. Expand the **Data Types** folder.
 3. Select the **Data Type** you wish to view the references
-4. Navigate to the **Info** tab.
+4.  Navigate to the **Info** tab.
 
-    ![Viewing Data Type references](images/data-types-references-v10.png)
+    ![Viewing Data Type references](../../../../11/umbraco-cms/extending/property-editors/images/data-types-references-v10.png)
 
 ## Example
 

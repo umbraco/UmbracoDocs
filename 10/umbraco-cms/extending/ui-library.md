@@ -1,5 +1,5 @@
 ---
-description: "A guide for getting started working with the Umbraco UI Library"
+description: A guide for getting started working with the Umbraco UI Library
 ---
 
 # UI Library
@@ -51,9 +51,9 @@ For more information on installation, Content Delivery Networks (CDN), or includ
 
 The [Storybook](https://uui.umbraco.com/) is the starting point for working with the Umbraco UI Library. The Storybook contains two tabs:
 
-1.  Canvas - The Canvas tab allows to use the interactive controls.&#x20;
+1.  Canvas - The Canvas tab allows to use the interactive controls.
 
-    <figure><img src="images/Canvas_tab.png" alt=""><figcaption></figcaption></figure>
-2.  Docs - Here, you can find code examples for all the stories and use them in your markup. You can look it up by tag name or head to the project repository, where, in the packages folder, you will find all the component packages with all the necessary scripts and examples in the readme files.&#x20;
+    <figure><img src="../../../11/umbraco-cms/extending/images/Canvas_tab.png" alt=""><figcaption></figcaption></figure>
+2.  Docs - Here, you can find code examples for all the stories and use them in your markup. You can look it up by tag name or head to the project repository, where, in the packages folder, you will find all the component packages with all the necessary scripts and examples in the readme files.
 
-    <figure><img src="images/Docs_tab.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../11/umbraco-cms/extending/images/Docs_tab.png" alt=""><figcaption></figcaption></figure>

@@ -1,6 +1,8 @@
 ---
-meta.Title: "Umbraco in Load Balanced Environments"
-description: "Information on how to deploy Umbraco in a Load Balanced scenario and other details to consider when setting up Umbraco for load balancing"
+meta.Title: Umbraco in Load Balanced Environments
+description: >-
+  Information on how to deploy Umbraco in a Load Balanced scenario and other
+  details to consider when setting up Umbraco for load balancing
 ---
 
 # Umbraco in Load Balanced Environments
@@ -45,7 +47,7 @@ In order to understand how to host your site it is best to understand how Umbrac
 
 The following diagram shows the data flow/communication between each item in the environment:
 
- ![Umbraco flexible load balancing diagram](images/flexible-load-balancing-v9.png)
+![Umbraco flexible load balancing diagram](../../../../../../11/umbraco-cms/fundamentals/setup/server-setup/load-balancing/images/flexible-load-balancing-v9.png)
 
 The process is as follows:
 
@@ -57,8 +59,7 @@ The process is as follows:
 
 ## Scheduling and server role election
 
-Although there is a backoffice server designated for administration, by default this is not explicitly set as the "Scheduling server".
-In Umbraco there can only be a single scheduling server which performs the following 3 things:
+Although there is a backoffice server designated for administration, by default this is not explicitly set as the "Scheduling server". In Umbraco there can only be a single scheduling server which performs the following 3 things:
 
 * Keep alive service - to ensure scheduled publishing occurs
 * Scheduled tasks - to initiate any configured scheduled tasks
@@ -79,16 +80,13 @@ These new terms replace 'Master and Replica', in Umbraco versions 7 and 8.
 
 Each instance will be allocated a role by the automatic server role election process, but they can also be set explicitly (recommended)
 
-For example, In the following diagram the node **f02.mysite.local** is the elected "Scheduling server". In order for scheduling to work it needs to be able to send
-requests to itself, the Backoffice server, the internal load balancer or the public address. The address used by the "Scheduling server" is called the "umbracoApplicationUrl".
+For example, In the following diagram the node **f02.mysite.local** is the elected "Scheduling server". In order for scheduling to work it needs to be able to send requests to itself, the Backoffice server, the internal load balancer or the public address. The address used by the "Scheduling server" is called the "umbracoApplicationUrl".
 
-![Umbraco flexible load balancing diagram](images/flexible-load-balancing-scheduler-v9.png)
+![Umbraco flexible load balancing diagram](../../../../../../11/umbraco-cms/fundamentals/setup/server-setup/load-balancing/images/flexible-load-balancing-scheduler-v9.png)
 
-By default, Umbraco will set the "umbracoApplicationUrl" to the address made by the first accepted request when the AppDomain starts.
-It is assumed that this address will be a DNS address that the server can resolve.
+By default, Umbraco will set the "umbracoApplicationUrl" to the address made by the first accepted request when the AppDomain starts. It is assumed that this address will be a DNS address that the server can resolve.
 
-For example, if a public request reached the load balancer on `www.mysite.com`, the load balancer may send the request on to the servers with the original address: `www.mysite.com`. By default the "umbracoApplicationUrl" will be `www.mysite.com`. However, load balancers may route the request internally under a different DNS name such as "f02.mysite.local" which
-by default would mean the "umbracoApplicationUrl" is "f02.mysite.local". In any case the elected "Scheduling server" must be able to resolve this address.
+For example, if a public request reached the load balancer on `www.mysite.com`, the load balancer may send the request on to the servers with the original address: `www.mysite.com`. By default the "umbracoApplicationUrl" will be `www.mysite.com`. However, load balancers may route the request internally under a different DNS name such as "f02.mysite.local" which by default would mean the "umbracoApplicationUrl" is "f02.mysite.local". In any case the elected "Scheduling server" must be able to resolve this address.
 
 In many scenarios this is fine, but in case this is not adequate there's a few of options you can use:
 
@@ -103,7 +101,7 @@ _The below section applies to all ASP.NET load balancing configurations._
 
 This section describes the configuration options depending on your hosting setup:
 
-1. [Azure Web Apps](file-system-replication.md#mixture-of-standalone--synchronised) - _You use cloud based auto-scaling appliances like [Microsoft's Azure Web Apps](https://azure.microsoft.com/en-us/services/app-service/web/)_
+1. [Azure Web Apps](file-system-replication.md#mixture-of-standalone--synchronised) - _You use cloud based auto-scaling appliances like_ [_Microsoft's Azure Web Apps_](https://azure.microsoft.com/en-us/services/app-service/web/)
 2. [File Replication](file-system-replication.md#synchronised-file-system) - _Each server hosts copies of the load balanced website files and a file replication service is running to ensure that all files on all servers are up to date_
 3. [Centralized file share](file-system-replication.md#synchronised-file-system) - _The load balanced website files are located on a centralized file share (SAN/NAS/Clustered File Server/Network Share)_
 
@@ -111,16 +109,13 @@ This section describes the configuration options depending on your hosting setup
 
 ### Data Protection
 
-The replacement for Machine Keys in ASP.NET Core are called Data Protection.
-You will need to setup data protection to the same keys on all servers,
-without this you will end up with view state errors, validation errors and encryption/decryption errors since each server will have its own generated key.
+The replacement for Machine Keys in ASP.NET Core are called Data Protection. You will need to setup data protection to the same keys on all servers, without this you will end up with view state errors, validation errors and encryption/decryption errors since each server will have its own generated key.
 
 ASP.NET Core supports multiple ways to share keys. Use the [official docs](https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/configuration/overview) to find a description that fits your setup the best.
 
 ### Session State and Distributed Cache
 
-It is required to setup a distributed cache, like `DistributedSqlServerCache` or an alternative provider (see [https://docs.microsoft.com/en-us/aspnet/core/performance/caching/distributed](https://docs.microsoft.com/en-us/aspnet/core/performance/caching/distributed) for more details).
-The distributed cache is used by the session in your application, which is used by the default TempDataProvider in MVC.
+It is required to setup a distributed cache, like `DistributedSqlServerCache` or an alternative provider (see [https://docs.microsoft.com/en-us/aspnet/core/performance/caching/distributed](https://docs.microsoft.com/en-us/aspnet/core/performance/caching/distributed) for more details). The distributed cache is used by the session in your application, which is used by the default TempDataProvider in MVC.
 
 Because Umbraco in some cases uses TempData, your setup needs to be configured with a distributed cache.
 
@@ -142,7 +137,7 @@ Ensure to analyze logs from all servers and check for any warnings and errors.
 
 When upgrading it is possible to run the upgrades unattended.
 
-Find steps on how to enable the feature for a load balanced setup in the [General Upgrades](../../upgrading/README.md#unattended-upgrades-in-a-load-balanced-setup) article.
+Find steps on how to enable the feature for a load balanced setup in the [General Upgrades](../../upgrading/#unattended-upgrades-in-a-load-balanced-setup) article.
 
 ## FAQs
 
