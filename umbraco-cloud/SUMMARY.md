@@ -89,10 +89,10 @@
 
 ## Product Upgrades
 
-* [Migrate a Umbraco 8 project to Umbraco 10](product-upgrades/migrate-a-umbraco-8-project-to-umbraco-10.md)
 * [Product Upgrades](upgrades/README.md)
 * [Major Upgrades](upgrades/major-upgrades.md)
 * [Minor Upgrades](upgrades/minor-upgrades.md)
+* [Migrate a Umbraco 8 project to Umbraco 10](product-upgrades/migrate-a-umbraco-8-project-to-umbraco-10.md)
 * [Upgrade your projects manually](upgrades/manual-upgrades/README.md)
   * [Manual upgrade of Umbraco CMS](upgrades/manual-upgrades/manual-cms-upgrade.md)
   * [Manual upgrade of Umbraco Deploy](upgrades/manual-upgrades/manual-upgrade-deploy.md)
