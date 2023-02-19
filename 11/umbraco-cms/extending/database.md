@@ -14,7 +14,7 @@ The end result looks like this:
 
 The following code sample shows how this is done using a composer and component.
 
-When migrating from verison 8 there are a few changes to be aware of. The first change is that namespace updates are dependencies that need to be passed to the `Upgrader.Execute()` method. Another is a change to the access modifier of the `Migrate()` method.
+When migrating from version 8 there are a few changes to be aware of. The first change is that namespace updates are dependencies that need to be passed to the `Upgrader.Execute()` method. Another is a change to the access modifier of the `Migrate()` method.
 
 ```csharp
 using Microsoft.Extensions.Logging;
