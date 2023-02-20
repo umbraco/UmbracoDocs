@@ -29,7 +29,7 @@ By default, we add **Basic Authentication** to all trials and non-live environme
    
 ![Hostnames Specific Security Settings](../images/allow_ip.png)
 
-Once **Basic Authentication** has been enabled, users not on the project or with IPs not added to the allowlist will be promted to log in.
+Once **Basic Authentication** has been enabled, users not on the project or with IPs not added to the allowlist will be prompted to log in.
 
 
 
