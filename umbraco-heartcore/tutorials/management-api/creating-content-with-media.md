@@ -16,7 +16,7 @@ You can then use the properties as a template for your request body when creatin
 The following tutorial shows you the detailed process for determining the request body while creating content with a Media Picker V3 property.
 
 {% hint style="info" %}
-To follow this guide for the Media Picker (legacy) property editor replace the Media Picker V3 property with the Media Picker (legacy) property. You need to do this when creating the Document Type and content node.s
+To follow this guide using the Media Picker (legacy) property you need to replace the Media Picker V3 property. You need to do this when creating the Document Type and content nodes.
 {% endhint %}
 
 ### Create a new Document Type with a Media Picker V3 property
