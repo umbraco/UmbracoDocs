@@ -163,7 +163,7 @@ The layout-entries alone do not provide much value when displaying or editing Bl
 
 Our Model Object allows obtaining a Block Object by parsing a block's layout-entry for a specific Block.
 
-The Block Object provides data of interest. The most important of these properties are: Block configuration, a label and the Block content in the Element Type Data Model format. This Content-model is very useful for building the UI for editing the Content of a Block.
+The Block Object provides data of interest. The most important of these properties are: Block configuration, a label and the Block content in the Element Type Data Model format. This Content-model is useful for building the UI for editing the Content of a Block.
 
 This example uses the Model Object to retrive a Block Object for outputting its label in the console.
 
