@@ -1,5 +1,5 @@
 ---
-description: In this article, we show how you can enable public access for your Umbraco Cloud project, so only people with whitelisted IP's can access your project.
+description: In this article we show how you can enable public access for your Umbraco Cloud project, so only people with whitelisted IP's can access your project.
 ---
 
 # Public Access
@@ -23,13 +23,13 @@ By default we add basic authentication to all trials and non-live environments.
 1. Go to **Public Access** in the **project settings** tab
 2. Enable **Basic Authentication** on the project
    
-   ![Hostnames Specific Security Settings](../images/basic_auth.png)
+![Hostnames Specific Security Settings](../images/basic_auth.png)
 
 3. Once enabled **Allow** IPs for users that need access to the project
    
-   ![Hostnames Specific Security Settings](../images/allow_ip.png)
+![Hostnames Specific Security Settings](../images/allow_ip.png)
 
-Once Basic Authentication has been enabled, users not on the project or which IP is not allowed, will be promted to log in when visiting the frontend.
+Once **Basic Authentication** has been enabled, users not on the project or IPs not added to the allowlist, will be promted to log in.
 
 
 
