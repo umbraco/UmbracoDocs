@@ -1,5 +1,5 @@
 ---
-description: In this article we show how you can enable public access for your Umbraco Cloud project, so only people with whitelisted IP's can access your project.
+description: In this article, we show how you can enable public access for your Umbraco Cloud project, so only people with whitelisted IPs can access your project.
 ---
 
 # Public Access
