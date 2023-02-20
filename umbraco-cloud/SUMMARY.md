@@ -35,6 +35,7 @@
   * [Dedicated Resources](set-up/project-settings/dedicated-resources.md)
   * [Application Settings](set-up/project-settings/application-settings.md)
   * [Upgrade your Plan](set-up/project-settings/upgrade-umbraco-cloud-plan.md)
+  * [Public Access](set-up/project-settings/public-access.md)
   * [Managing Hostnames](set-up/project-settings/manage-hostnames/README.md)
     * [New Certificate Authority for custom hostnames](set-up/project-settings/manage-hostnames/ca-record-migration.md)
     * [Rewrite rules](set-up/project-settings/manage-hostnames/rewrites-on-cloud.md)
