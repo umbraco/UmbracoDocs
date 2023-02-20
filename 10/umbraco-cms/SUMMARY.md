@@ -4,6 +4,7 @@
 * [Legacy Documentation](legacy-documentation/README.md)
   * [Umbraco 8 Documentation](https://our.umbraco.com/documentation/)
   * [Umbraco 7 Documentation](https://our.umbraco.com/documentation/)
+* [Contribute](https://docs.umbraco.com/welcome/contribute/getting-started)
 
 ## Fundamentals
 
@@ -184,7 +185,7 @@
   * [Packages on Umbraco Cloud](extending/packages/packages-on-umbraco-cloud.md)
   * [Installing and Uninstalling Packages](extending/packages/installing-and-uninstalling-packages.md)
   * [Maintaining packages](extending/packages/maintaining-packages.md)
-  * [Create accessible Umbraco packages](extending/packages/create-accessible-umbraco-packages.md)
+  * [Create accessible Umbraco packages](extending/packages/accessibility.md)
 * [UI Library](extending/ui-library.md)
 
 ## Reference

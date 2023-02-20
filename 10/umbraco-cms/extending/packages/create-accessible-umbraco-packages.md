@@ -1,2 +1,0 @@
-# Create accessible Umbraco packages
-

@@ -1,9 +1,10 @@
-﻿---
+---
 versionFrom: 9.0.0
 versionTo: 10.0.0
 ---
 
 # Custom indexing
+
 ## Customizing the built in indexes
 
 You can modify the built-in indexes in the following ways:
@@ -18,6 +19,7 @@ We can do all this by using the `ConfigureNamedOptions` pattern.
 ## Creating a ConfigureOptions class
 
 We will start by creating a ConfigureExamineOptions class, that derives from `IConfigureNamedOptions<LuceneDirectoryIndexOptions>`:
+
 ```c#
 using Examine.Lucene;
 using Microsoft.Extensions.Options;
@@ -61,6 +63,7 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
     }
 }
 ```
+
 ### Changing field value types
 
 By default, Examine will store values into the Lucene index as "Full Text" fields, meaning the values will be indexed and analyzed for a textual search. However, if a field value is numerical, date/time, or another non-textual value type, you might want to change how the value is stored in the index. This will let you take advantage of some value type-specific search features such as numerical or date range.
@@ -95,16 +98,14 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
     }
 }
 ```
+
 This will ensure that the `price` field in the index is treated as a `double` type (if the `price` field does not exist in the index, it is added).
 
 ## Changing IValueSetValidator
 
-An `IValueSetValidator` is responsible for validating a `ValueSet` to see if it should be included in the index.
-For example, by default the validation process for the ExternalIndex checks if a `ValueSet` has a category type of either "media" or "content" (not member).
-If a `ValueSet` was passed to the ExternalIndex and it did not pass this requirement it would be ignored.
+An `IValueSetValidator` is responsible for validating a `ValueSet` to see if it should be included in the index. For example, by default the validation process for the ExternalIndex checks if a `ValueSet` has a category type of either "media" or "content" (not member). If a `ValueSet` was passed to the ExternalIndex and it did not pass this requirement it would be ignored.
 
 The `IValueSetValidator` is also responsible for filtering the data in the `ValueSet`. For example, by default the validator for the MemberIndex will validate on all the default member properties, so an extra property "PhoneNumber", would not pass validation, and therefore not be included.
-
 
 The `IValueSetValidator` implementation for the built-in indexes, can be changed like this:
 
@@ -156,7 +157,6 @@ To create this index we need five things:
 3. An `IValueSetBuilder` implementation that builds the value sets for the index
 4. An `IndexPopulator` implementation that populates the index with the value sets
 5. A composer that adds all these services to the runtime.
-
 
 ### ProductIndex
 
@@ -280,7 +280,9 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
     }
 }
 ```
+
 ### ProductIndexPopulator
+
 ```c#
 using System;
 using System.Collections.Generic;
@@ -323,6 +325,7 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
 ```
 
 ### ExamineComposer
+
 ```c#
 using Examine;
 using Microsoft.Extensions.DependencyInjection;
@@ -345,8 +348,9 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
     }
 }
 ```
+
 ### Result
 
-![Custom product index](images/examine-management-product-index.png)
+![Custom product index](../../../../../11/umbraco-cms/reference/searching/examine/images/examine-management-product-index.png)
 
-![Product document](images/examine-management-product-document.png)
+![Product document](../../../../../11/umbraco-cms/reference/searching/examine/images/examine-management-product-document.png)

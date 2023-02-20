@@ -26,7 +26,7 @@ Learn which password settings that can be configured in Umbraco.
 
 Learn about how to harden the security on your Umbraco website to secure it even further.
 
-## [Security on Umbraco Cloud](../../../umbraco-cloud/frequently-asked-questions.md#security-and-encryption)
+## [Security on Umbraco Cloud](https://docs.umbraco.com/umbraco-cloud/security)
 
 When your project is hosted on Umbraco Cloud, you might be interested in more details about the security of the hosting. This information can be found in the Umbraco Cloud FAQs section of the documentation.
 

@@ -1,15 +1,17 @@
 ---
-meta.Title: "Configure and customize the Login screen"
-description: "In this article you can learn the various ways of customizing the Umbraco backoffice login screen and form."
+meta.Title: Configure and customize the Login screen
+description: >-
+  In this article you can learn the various ways of customizing the Umbraco
+  backoffice login screen and form.
 ---
 
-# Login screen
+# Login
 
 To access the backoffice, you will need to login. You can do this by adding `/umbraco` at the end of your website URL, e.g. http://mywebsite.com/umbraco.
 
 You will be presented with a login form similar to this:
 
-![Login screen](images/login-backoffice-login.png "The login screen has a greeting, username/password field and optionally a 'Forgotten password' link.")
+![Login screen](../../../../11/umbraco-cms/fundamentals/backoffice/images/login-backoffice-login.png)
 
 The **login** screen contains a **Greeting**, **Email**, **Password** field and optionally a **Forgotten password** link
 
@@ -115,7 +117,7 @@ An example stylesheet might be:
     div.login-overlay__logo {
     	width: 10%;
     }
- ```
+```
 
 An example package.manifest might be:
 

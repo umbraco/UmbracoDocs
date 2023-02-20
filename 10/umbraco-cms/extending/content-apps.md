@@ -1,8 +1,8 @@
 ---
 versionFrom: 9.2.0
 versionTo: 10.0.0
-meta.Title: "Content Apps"
-description: "A guide configuring content apps in Umbraco"
+meta.Title: Content Apps
+description: A guide configuring content apps in Umbraco
 ---
 
 # Content Apps
@@ -13,7 +13,7 @@ Content Apps are **companions** to the editing experience when working with cont
 
 With Content Apps, editors can switch from editing 'Content' to accessing contextual information related to the item they are editing.
 
-![Content Apps in backoffice](images/content-app-1.png)
+![Content Apps in backoffice](../../../11/umbraco-cms/extending/images/content-app-1.png)
 
 ### Default Content Apps
 
@@ -45,7 +45,7 @@ This guide explains how to set up a custom Content App in the following steps:
 * Limiting the Content App to appear for only specific content types
 * Limiting which user groups can see the Content App
 
-A basic understanding of how to use AngularJS with Umbraco is required.  If you have created a property value editor before, this will all feel familiar.
+A basic understanding of how to use AngularJS with Umbraco is required. If you have created a property value editor before, this will all feel familiar.
 
 ### Setting up the Plugin
 
@@ -145,9 +145,9 @@ And in the `.html` file:
 
 ### Checking it works
 
-After the above edits are done, restart your application. Go to any content node and you should now see an app called Word Counter. Clicking on the icon should say "Amount of words for each property" and confirm the details of the current item and user.  You can now adapt your Content App to retrieve external data using the standard Umbraco and AngularJS approach.
+After the above edits are done, restart your application. Go to any content node and you should now see an app called Word Counter. Clicking on the icon should say "Amount of words for each property" and confirm the details of the current item and user. You can now adapt your Content App to retrieve external data using the standard Umbraco and AngularJS approach.
 
-![Content App in action: Word Counter](images/content-app-2.png)
+![Content App in action: Word Counter](../../../11/umbraco-cms/extending/images/content-app-2.png)
 
 ### Limiting according to type
 
@@ -185,7 +185,7 @@ In this case the WordCounter app is only usable within the Content section so yo
 
 ### Limiting according to User Role
 
-In a similar way, you can limit your Content App according to user roles (groups).  For example:
+In a similar way, you can limit your Content App according to user roles (groups). For example:
 
 ```json5
 {
@@ -292,7 +292,7 @@ You will still need to add all of the files you added above. However, because yo
 ```
 
 {% hint style="info" %}
-You can also have a coloured icon for your Content App by specifying the icon in the format `icon-[name of icon] color-[name of color]`. For eg, an indigo colored icon can be specified for your Content App by specifying the icon as  `"icon-calculator color-indigo"` in your Content App C# class or *package.manifest* .
+You can also have a coloured icon for your Content App by specifying the icon in the format `icon-[name of icon] color-[name of color]`. For eg, an indigo colored icon can be specified for your Content App by specifying the icon as `"icon-calculator color-indigo"` in your Content App C# class or _package.manifest_ .
 {% endhint %}
 
 ## Notification badges
@@ -301,7 +301,7 @@ There are times when you want to draw the attention of editors to your content b
 
 When you set a badge, a circle with a chosen background and a number in it will be added to the content app icon.
 
-![Content App badge](images/content-app-badge.png)
+![Content App badge](../../../11/umbraco-cms/extending/images/content-app-badge.png)
 
 You can enable a badge by using this code in the angular controller of your content app.
 
@@ -371,4 +371,4 @@ namespace My.Website
 }
 ```
 
-Possible values for the `ContentAppBadge` Type are *Default*, *Alert* and *Warning*.
+Possible values for the `ContentAppBadge` Type are _Default_, _Alert_ and _Warning_.

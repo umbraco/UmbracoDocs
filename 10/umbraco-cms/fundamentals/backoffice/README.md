@@ -1,5 +1,7 @@
 ---
-description: "In this article you can learn more about the common terms and concepts that are used throughout the Umbraco Backoffice."
+description: >-
+  In this article you can learn more about the common terms and concepts that
+  are used throughout the Umbraco Backoffice.
 ---
 
 # Backoffice
@@ -10,7 +12,7 @@ In this article you can learn more about the common terms and concepts that are 
 
 When you go to the backoffice for the first time, you're presented with the login screen.
 
-![Login screen](images/backoffice-login.png)
+![Login screen](../../../../11/umbraco-cms/fundamentals/backoffice/images/backoffice-login.png)
 
 [Read more about the login screen](login.md).
 
@@ -18,7 +20,7 @@ When you go to the backoffice for the first time, you're presented with the logi
 
 A section in Umbraco is where you do specific tasks related to that section. For example Content, Settings and Users. You can navigate between the different sections of the backoffice by clicking the corresponding icon in the section menu.
 
-<figure><img src="images/highlight-sections.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../11/umbraco-cms/fundamentals/backoffice/images/highlight-sections.png" alt=""><figcaption></figcaption></figure>
 
 _The **Section menu** is the horizontal menu located on the top of the backoffice._
 
@@ -28,9 +30,9 @@ _The **Section menu** is the horizontal menu located on the top of the backoffic
 
 A tree is a hierarchical list of items related (and usually restricted) to a specific concept, like for example content or media.
 
-You can expand trees by clicking the down arrow ![](images/expand-node.png) to the left of the node or by double-clicking the node.
+You can expand trees by clicking the down arrow ![](../../../../11/umbraco-cms/fundamentals/backoffice/images/expand-node.png) to the left of the node or by double-clicking the node.
 
-<figure><img src="images/highlight-tree.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../11/umbraco-cms/fundamentals/backoffice/images/highlight-tree.png" alt=""><figcaption></figcaption></figure>
 
 [Read more about the Tree](../../extending/section-trees/)
 
@@ -42,9 +44,9 @@ A node is an item in a tree. The images and folders in the Media section are sho
 
 A dashboard is the main view you are presented with when entering a section within the backoffice. It can be used to show valuable information to the users of the system.
 
-&#x20;_Default dashboard in the content section_
+_Default dashboard in the content section_
 
-<figure><img src="images/highlight-dashboard.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../11/umbraco-cms/fundamentals/backoffice/images/highlight-dashboard.png" alt=""><figcaption></figcaption></figure>
 
 [Read more about Dashboards](../../extending/dashboards.md)
 

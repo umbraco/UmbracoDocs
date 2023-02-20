@@ -179,13 +179,13 @@ namespace Umbraco.Cms.Core.PropertyEditors
 
 Save the file, rebuild the application and have a look at the Suggestions Data Type. You should see that you have one configuration option.
 
-![An example of how the configuration will look](images/suggestion-editor-config_1.png)
+![An example of how the configuration will look](../../../../11/umbraco-cms/tutorials/creating-a-property-editor/images/suggestion-editor-config\_1.png)
 
 ## Using the configuration
 
 The next step is to gain access to our new configuration options. For this, open the `suggestion.controller.js` file.
 
-1) Let's add the `isEnabled` functionality. Before the closing tag, we will add a `getState` method:
+1.  Let's add the `isEnabled` functionality. Before the closing tag, we will add a `getState` method:
 
     ```javascript
     // The controller assigns the behavior to scope as defined by the getState method, which is invoked when the user toggles the enable button in the data type settings.
@@ -198,52 +198,50 @@ The next step is to gain access to our new configuration options. For this, open
         return true;
     }
     ```
-
-2) Next, we'll add the `defaultValue` functionality. When the `$scope.model.value` is empty or null, we want to use the default value. To do that, we add the following to the start of the controller:
+2.  Next, we'll add the `defaultValue` functionality. When the `$scope.model.value` is empty or null, we want to use the default value. To do that, we add the following to the start of the controller:
 
     ```js
     if($scope.model.value === null || $scope.model.value === ""){
         $scope.model.value = $scope.model.config.defaultValue;
     }
     ```
-    
+
     See what's new? The `$scope.model.config` object. Also, because of this configuration, we now have access to `$scope.model.config.defaultValue` which contains the configuration value for that key.
 
     Your `suggestion.controller.js` file should now look like:
 
-     ```javascript
+    ```javascript
     angular.module("umbraco")
-        .controller("SuggestionPluginController",
-            // Scope object is the main object which is used to pass information from the controller to the view.
-            function ($scope) {
-                if ($scope.model.value === null || $scope.model.value === "") {
-                    $scope.model.value = $scope.model.config.defaultValue;
-                }
-                // SuggestionPluginController assigns the suggestions list to the aSuggestions property of the scope
-                $scope.aSuggestions = ["You should take a break", "I suggest that you visit the Eiffel Tower", "How about starting a book club today or this week?", "Are you hungry?"];
+       .controller("SuggestionPluginController",
+           // Scope object is the main object which is used to pass information from the controller to the view.
+           function ($scope) {
+               if ($scope.model.value === null || $scope.model.value === "") {
+                   $scope.model.value = $scope.model.config.defaultValue;
+               }
+               // SuggestionPluginController assigns the suggestions list to the aSuggestions property of the scope
+               $scope.aSuggestions = ["You should take a break", "I suggest that you visit the Eiffel Tower", "How about starting a book club today or this week?", "Are you hungry?"];
 
-                 // The controller assigns the behavior to scope as defined by the getSuggestion method, which is invoked when the user clicks on the 'Give me Suggestions!' button.
-                $scope.getSuggestion = function () {
+                // The controller assigns the behavior to scope as defined by the getSuggestion method, which is invoked when the user clicks on the 'Give me Suggestions!' button.
+               $scope.getSuggestion = function () {
 
-                    // The getSuggestion method reads a random value from an array and provides a Suggestion. 
-                    $scope.model.value = $scope.aSuggestions[$scope.aSuggestions.length * Math.random() | 0];
-                }
-            
-                // The controller assigns the behavior to scope as defined by the getState method, which is invoked when the user toggles the enable button in the data type settings.
+                   // The getSuggestion method reads a random value from an array and provides a Suggestion. 
+                   $scope.model.value = $scope.aSuggestions[$scope.aSuggestions.length * Math.random() | 0];
+               }
+           
+               // The controller assigns the behavior to scope as defined by the getState method, which is invoked when the user toggles the enable button in the data type settings.
 
-                $scope.getState = function () {
+               $scope.getState = function () {
 
-                    //If the data type is enabled in the Settings the 'Give me Suggestions!' button is enabled
-                     if (Boolean(Number($scope.model.config.isEnabled))) {
-                        return false;
-                    }
-                    return true;
-                }
+                   //If the data type is enabled in the Settings the 'Give me Suggestions!' button is enabled
+                    if (Boolean(Number($scope.model.config.isEnabled))) {
+                       return false;
+                   }
+                   return true;
+               }
 
     });
     ```
-
-3) Finally, we'll add the `hideLabel` functionality. For this, we'll open the `Suggestion.cs` file and override the GetValueEditor method with configuration as a parameter.
+3.  Finally, we'll add the `hideLabel` functionality. For this, we'll open the `Suggestion.cs` file and override the GetValueEditor method with configuration as a parameter.
 
     ```cs
     public override IDataValueEditor GetValueEditor(object? configuration)
@@ -302,10 +300,10 @@ The next step is to gain access to our new configuration options. For this, open
             }
         
         }
-     ```
+    ```
 
 Save the files and rebuild the application. To access the configuration options, enable/disable the `Enabled?` and `Hide Label?` options. Additionally, you can set a default value in the `Default Value` field and see the Suggestions Data Type at play.
 
-![An example of setting the configuration](images/suggestion-editor-config_2.png)
+![An example of setting the configuration](../../../../11/umbraco-cms/tutorials/creating-a-property-editor/images/suggestion-editor-config\_2.png)
 
-![Backoffice view](images/suggestion-editor-backoffice_1.png)
+![Backoffice view](../../../../11/umbraco-cms/tutorials/creating-a-property-editor/images/suggestion-editor-backoffice\_1.png)
