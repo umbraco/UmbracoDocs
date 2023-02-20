@@ -12,7 +12,7 @@ The [Umbraco.Cloud.Cms.PublicAccess](https://www.nuget.org/packages/Umbraco.Clou
 
 Public access lets you deny access to your Umbraco Cloud project.
 
-When enabled only team members on the project and users whose IPs has been allowed, can access the frontend of the project.
+When enabled only team members on the project and users whose IPs have been allowed, can access the frontend of the project.
 
 All environments on Umbraco Cloud projects can be protected by Public access. It requires you to enter your Cloud credentials in order to view the frontend.
 
