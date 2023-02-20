@@ -1,4 +1,4 @@
-# Release Notes, January 2022
+# January 2022
 
 ## Key Takeaways
 
@@ -12,18 +12,17 @@
 * **Project invitation link to clipboard** - To ease the project invite flow if a project invitation mail is bounced or accidentally lands in the spam folder you can now copy the invitation link to your clipboard.
 * **Release notes link in the portal** - As you are reading these pages you might already have noticed the new item in the profile menu of the portal; a link to the portal release notes.
 
-### [Break reference between baseline and child project](../getting-started/baselines/break-baseline.md)
+### [Break reference between baseline and child project](../../getting-started/baselines/break-baseline.md)
 
 Umbraco Cloud Portal offers a powerful baseline-child relationship between projects, similar to a fork (forked repository) on GitHub. With this feature you can create a clone of an existing project while maintaining a connection between the two projects.
 
-If you at some point **want to break this connection**, between the baseline and one child project, you can do so now.
-Users with the role of admin are able to break the connection.
+If you at some point **want to break this connection**, between the baseline and one child project, you can do so now. Users with the role of admin are able to break the connection.
 
 Please be aware that the action **cannot be undone**.
 
 ![Break reference between baseline and child project (1)](https://user-images.githubusercontent.com/93588665/149168277-e7ffb2e1-34c3-411f-9962-e834150f62d1.gif)
 
-### [New Project Overview Page](../getting-started/project-overview.md)
+### [New Project Overview Page](../../getting-started/project-overview.md)
 
 You are now able to access a simpler project overview page for each of your projects. Initially, you can see basic information such as name, alias, **plan and project status**. In the future, we will likely add more project-related information that currently is not presented in the portal.
 
@@ -33,7 +32,7 @@ You are now able to access a simpler project overview page for each of your proj
 
 When inviting a new team member to a project it is now possible **to specify the project roles directly in the project invite**. Often you want the team member to be assigned a different role for each environment. This is now supported from the start of the project invite. A user can now be assigned the Admin role in the development environment while being limited to the Writer role in the Live environment. All helping to make it faster and easier to set up the correct permissions for team members.
 
-![ProjectInvite_v1](https://user-images.githubusercontent.com/93588665/150125691-cb846cbc-ad7f-4135-9a48-5de640776e62.gif)
+![ProjectInvite\_v1](https://user-images.githubusercontent.com/93588665/150125691-cb846cbc-ad7f-4135-9a48-5de640776e62.gif)
 
 ### Improved available upgrade notifications
 
@@ -49,7 +48,7 @@ The _Create new Cloud project wizard_ has in the last weeks undergone some **per
 
 We have ensured that the potential baselines are loaded much faster to ensure a **better user experience**. This reduces the time wasted before you can start working on a new cloud project. ![BaselineAsyncLoad\_v1](https://user-images.githubusercontent.com/93588665/150125758-3fcb5664-f0b4-4bee-926e-ecbbfb113a09.gif)
 
-### [Blob storage connection information](../set-up/media/connect-to-azure-storage-explorer.md)
+### [Blob storage connection information](../../set-up/media/connect-to-azure-storage-explorer.md)
 
 The blob storage connection information for a project was previously only displayed in Kudu which was not convenient or easy to find. A developer should spend as much time as possible developing fantastic solutions and less time in Kudu. Therefore this connection informantion is now easy to _**copy directly from the portal**_ and ready to post into _Azure Blob Explorer_ whenever needed.
 
@@ -57,7 +56,7 @@ The blob storage connection information for a project was previously only displa
 
 ### Project invitation link to clipboard
 
-The project invitation flow in Umbraco Cloud Portal has until recently suffered from invites ending up in the invitees' spam folder. We have  _**optimized**_ the configuration of the portal _**email delivery**_ so every invite will now be delivered to the expected receiver - in the correct inbox.
+The project invitation flow in Umbraco Cloud Portal has until recently suffered from invites ending up in the invitees' spam folder. We have _**optimized**_ the configuration of the portal _**email delivery**_ so every invite will now be delivered to the expected receiver - in the correct inbox.
 
 However, there can be exceptions where an email is either bounced or lands in the spam folder. In such cases, a resend of the project invitation might not do the trick. In rare cases, when the email doesn’t show up, we have added the option to _**copy the project invitation link**_ for active invites.
 
