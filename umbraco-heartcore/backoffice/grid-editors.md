@@ -1,5 +1,5 @@
 ---
-description: "Documentation for Custom Grid Editors in Umbraco Heartcore"
+description: Documentation for Custom Grid Editors in Umbraco Heartcore
 ---
 
 # Custom Grid Editors
@@ -71,7 +71,7 @@ The Headless backoffice Bridge has custom elements so it's advised to import usi
 
 A [JSON Schema](https://json-schema.org/) is used to describe how the value is stored and returned by the REST and GraphQL API.
 
-This allows for advanced configurations where, for example, an [UDI](../../umbraco-cms/reference/querying/udi-identifiers.md) is converted to a URL.
+This allows for advanced configurations where, for example, an [UDI](https://docs.umbraco.com/umbraco-cms/reference/querying/udi-identifiers) is converted to a URL.
 
 The default Schema looks like this:
 

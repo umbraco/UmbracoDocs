@@ -1,5 +1,7 @@
 ---
-description: "All Media files for Umbraco Cloud projects are stored in Azure Blob Storage containers. Each environment has a separate container linked to it."
+description: >-
+  All Media files for Umbraco Cloud projects are stored in Azure Blob Storage
+  containers. Each environment has a separate container linked to it.
 ---
 
 # Media
@@ -67,4 +69,4 @@ Once you have the variables, use the ["Connect to Azure Storage Explorer"](conne
 ## Related Articles
 
 * [Rewrites will impact your media rendering as well - read about the best practices](../project-settings/manage-hostnames/rewrites-on-cloud.md)
-* [To get the media files from Blob storage in a stream, you can use the IMediaFileSystem interface](../../../umbraco-cms/reference/configuration/filesystemproviders.md#get-the-contents-of-a-file-as-a-stream)
+* [To get the media files from Blob storage in a stream, you can use the IMediaFileSystem interface](https://docs.umbraco.com/umbraco-cms/reference/configuration/filesystemproviders#get-the-contents-of-a-file-as-a-stream)

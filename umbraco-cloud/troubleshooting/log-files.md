@@ -1,4 +1,4 @@
-# Log files on Umbraco Cloud
+# Log files
 
 You can access the different types of log files on Umbraco Cloud or through [Kudu](../set-up/power-tools/). You have access to different types of logs:
 
@@ -23,7 +23,9 @@ Video example.
 ### On Umbraco Cloud Portal
 
 1. Go to your project and click on the arrow next to the environment name. ![Logs on Cloud](images/logs.png)
-2. Click **Logs** to view the log details. ![Logs on Cloud](images/logs-table.png)
+2. Click **Logs** to view the log details.
+
+<figure><img src="images/logs-table.png" alt=""><figcaption></figcaption></figure>
 
 ### On Kudu
 
@@ -31,7 +33,7 @@ To access logs through Kudu, see [Power tools (Kudu)](../set-up/power-tools/) ar
 
 ## Umbraco logs
 
-Umbraco logs on Cloud work almost the same as on a [normal installation](../../umbraco-cms/fundamentals/code/debugging/logging.md), they are still found in the `~/site/wwwroot/umbraco/Logs/` folder. Umbraco Deploy also writes to the standard log files with events and errors. If there is an extraction error and you can't find any issues in your Umbraco log, try the Deploy log listed below.
+Umbraco logs on Cloud work almost the same as on a [normal installation](https://docs.umbraco.com/umbraco-cms/fundamentals/code/debugging/logging), they are still found in the `~/site/wwwroot/umbraco/Logs/` folder. Umbraco Deploy also writes to the standard log files with events and errors. If there is an extraction error and you can't find any issues in your Umbraco log, try the Deploy log listed below.
 
 ## Deploy logs
 

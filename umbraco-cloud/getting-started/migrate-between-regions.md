@@ -2,7 +2,7 @@
 
 When creating a project on Umbraco Cloud, you can choose to host the project in different regions: East US, EU West, or South UK.
 
-In some cases, you might want to migrate your project(s) from one region to another. This article will outline the steps to do this.&#x20;
+In some cases, you might want to migrate your project(s) from one region to another. This article will outline the steps to do this.
 
 The East US and West EU regions will be used as examples in this article.
 
@@ -10,7 +10,7 @@ The East US and West EU regions will be used as examples in this article.
 
 * Admin access and deployment rights on the project that is to be migrated.
 * Git is installed locally as well as a Git client like _Git Bash_.
-* A local setup that can run an Umbraco instance. Learn more about this in the [Requirements](../../umbraco-cms/fundamentals/setup/requirements.md) article.
+* A local setup that can run an Umbraco instance. Learn more about this in the [Requirements](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/requirements) article.
 
 {% hint style="info" %}
 To follow this guide, it is highly recommended that you have experience with Git and running git commands through a command line tool.

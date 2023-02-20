@@ -44,7 +44,7 @@ Manage transport security settings for your project. You can configure certain t
 
 ## [CDN Caching and Optimization](manage-cdn-caching.md)
 
-Manage CDN Cache settings for your project. You can modify default settings, which apply to all hostnames added to the current Project. Alternatively, you can setup specific settings per hostname, if you want to have different settings for certain hostnames.
+Manage CDN Cache settings for your project. You can modify default settings, which apply to all hostnames added to the current Project. Alternatively, you can set up specific settings per hostname, if you want to have different settings for certain hostnames.
 
 ## [Certificates](manage-hostnames/security-certificates.md) (Only available on **Professional** or **Enterprise** plan)
 
@@ -53,7 +53,9 @@ If you have your own custom certificate, you can upload and bind it to your cust
 ## Public access
 
 {% hint style="info" %}
-Public access is only available for projects created after the 10th of January 2023.
+Public access is by default available for projects created after the 10th of January 2023.
+
+The [Umbraco.Cloud.Cms.PublicAccess](https://www.nuget.org/packages/Umbraco.Cloud.Cms.PublicAccess) package can be installed to enable Public access for projects created before the 10th of January 2023.
 {% endhint %}
 
 You can deny access to your project with the Public access setting.
@@ -94,7 +96,7 @@ You can rename your project from the **Rename Project** section in the **Setting
 
 Manage **Advanced** settings for your project from the **Settings** menu:
 
-* [Enable static outbound IP addresses](../external-Services.md) for projects on a **Standard**, **Professional**, or **Enterprise** plan.
+* [Enable static outbound IP addresses](external-services.md#enabling-static-outbound-ip-addresses) for projects on a **Standard**, **Professional**, or **Enterprise** plan.
 * Enable IIS logging for each of your environments. The log files can be accessed through kudu in `C:\home\LogFiles\http`. There is a rolling size limit on the log files of 100 MB. Once the limit is reached, the oldest log files will be overwritten by new ones.
 * [Enable loading of a client certificate from the file system](application-settings.md#enable-client-certificate-loaded-from-file-system-explained).
 * Change .NET framework runtime for your Umbraco installation for each environment of your cloud project.
@@ -111,7 +113,7 @@ You can change your Umbraco Cloud project to run in a dedicated setup with addit
 
 ## [Usage](usage.md)
 
-On your Umbraco Cloud project, it is possible to see the usage of Custom Domains, Media Storage, Content Nodes, and Bandwidth for your project. You can also check if it is using above or below the allowed amount for the plan that your project is on.
+On your Umbraco Cloud project, it is possible to see the usage of Custom Domains, Media Storage, Content Nodes, and Bandwidth for the project. You can also check if it is using above or below the allowed amount for the plan that your project is on.
 
 ## [Payment](../manage-subscriptions/new-shop.md)
 

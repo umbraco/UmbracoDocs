@@ -1,0 +1,9 @@
+root: ./
+
+​structure:  
+    readme: README.md
+    summary: SUMMARY.md
+
+redirects:
+    fundamentals/setup/upgrading/general: fundamentals/setup/upgrading/README.md
+    reference/templating/mvc/child-actions: reference/templating/mvc/viewcomponents

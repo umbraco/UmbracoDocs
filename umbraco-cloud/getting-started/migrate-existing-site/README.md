@@ -62,7 +62,7 @@ The first order of business is to **upgrade your own Umbraco site to the latest 
 
 You can download the latest version of Umbraco from [Our](https://our.umbraco.com/download/).
 
-If you need help upgrading your project, we have some [Upgrade instructions](../../../umbraco-cms/fundamentals/setup/upgrading/) you can follow. Be thorough when upgrading, as the latest upgrade might contain breaking changes and/or updated configuration.
+If you need help upgrading your project, we have some [Upgrade instructions](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading) you can follow. Be thorough when upgrading, as the latest upgrade might contain breaking changes and/or updated configuration.
 
 If you have been using Umbraco Forms on your project, you will also need to upgrade this to the latest version. You can find and download the latest version of Umbraco Forms under [Projects on Our](https://our.umbraco.com/projects/developer-tools/umbraco-forms/). As with Umbraco CMS, we also have documentation on how to [Upgrade Umbraco Forms](../../../umbraco-forms/installation/manualupgrade.md).
 
@@ -200,7 +200,7 @@ Go to the backoffice of your Development environment and make sure all your meta
 ### Transfer your content and media
 
 1. With all your metadata in place, it's time to transfer your content, media, members and member groups as well
-   * To transfer members make sure that [`AllowMembersDeploymentOperations` and `TransferMemberGroupsAsContent`](../../../umbraco-deploy/deploy-settings.md#allowmembersdeploymentoperations-and-transfermembergroupsascontent)`are` configured in the `appSettings.json file`.
+   * To transfer members make sure that [`AllowMembersDeploymentOperations` and `TransferMemberGroupsAsContent`](https://docs.umbraco.com/umbraco-deploy/deploy-settings#allowmembersdeploymentoperations-and-transfermembergroupsascontent)are configured in the `appSettings.json file`.
 2. Go to the backoffice of your local clone of the Umbraco Cloud project
 3. Right-click the top of the Content tree and choose _'Queue for transfer'_
    * **NOTE**: If you have a large amount of content and media you may have the best result in deploying content and media independently

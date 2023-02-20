@@ -1,5 +1,5 @@
 ---
-description: "An article explaining how Umbraco Users are working on Umbraco Cloud."
+description: An article explaining how Umbraco Users are working on Umbraco Cloud.
 ---
 
 # Users
@@ -24,7 +24,7 @@ By default, when added to the project as a team member, they will be added as us
 
 Users can also be invited directly from the backoffice of your Umbraco Cloud project, from where you can give them different permissions.
 
-Check out the [Users article](../../umbraco-cms/fundamentals/data/users.md) for an in-depth explanation about Umbraco users in general.
+Check out the [Users article](https://docs.umbraco.com/umbraco-cms/fundamentals/data/users) for an in-depth explanation about Umbraco users in general.
 
 {% hint style="info" %}
 Users are environment-specific on Umbraco Cloud. This means that they will not be transferred over when doing a deployment to the next environment they will need to be added to the different environments on Umbraco Cloud.

@@ -186,7 +186,7 @@ No, you should not use a shared database for your team. Umbraco Cloud is made so
 
 Not only does this promote working in small increments it also prevents two problems:
 
-1. If you share a database between multiple developers, [Umbraco's flexible load balancing](../umbraco-cms/fundamentals/setup/server-setup/load-balancing/) automatically kicks in. Without a proper load balancing setup, this means that often you will not see changes another team member has made, potentially overwriting their changes with your own changes.
+1. If you share a database between multiple developers, [Umbraco's flexible load balancing](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/load-balancing) automatically kicks in. Without a proper load balancing setup, this means that often you will not see changes another team member has made, potentially overwriting their changes with your own changes.
 2. Our deployment engine (Umbraco Deploy) is not made for this and your local site will quickly get out of sync with the changes both developers are making. Once you push your changes up to your Cloud instance you can expect to see errors and mismatches because changes have not been saved correctly.
 
 ### Can I use a custom .NET code?

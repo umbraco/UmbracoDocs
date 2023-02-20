@@ -1,5 +1,7 @@
 ---
-description: "In this article we show how you can upgrade your Umbraco Cloud project to latest major version of Umbraco CMS."
+description: >-
+  In this article we show how you can upgrade your Umbraco Cloud project to
+  latest major version of Umbraco CMS.
 ---
 
 # Major Upgrades
@@ -11,12 +13,18 @@ You need to ensure that any packages you use are available in the latest version
 
 **Breaking Changes**
 
-Make sure you know the [Breaking changes](../../umbraco-cms/fundamentals/setup/upgrading/version-specific/) in the latest version of Umbraco CMS.
+Make sure you know the [Breaking changes](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific#breaking-changes) in the latest version of Umbraco CMS.
+
+**Upgrading from Umbraco 9**
+
+If upgrading from Umbraco 9 to a later major version, follow the dropdowns named: _**"Upgrading from Umbraco 9"**_ in the steps of the guide.
+
+These are extra steps needed when going from Umbraco 9 to the latest major.
 {% endhint %}
 
 ## Prerequisites
 
-* Follow the **requirements** for [local development](../../umbraco-cms/fundamentals/setup/requirements.md#local-development).
+* Follow the **requirements** for [local development](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/requirements#local-development).
 * A Umbraco Cloud project running **the latest version of Umbraco**
 * The **latest** .[NET version](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks) is installed locally.
 * **At least 2 environments** on your Cloud project.
@@ -26,8 +34,8 @@ Make sure you know the [Breaking changes](../../umbraco-cms/fundamentals/setup/u
 
 ## Video Tutorial
 
-{% embed url="https://www.youtube.com/embed/AN5OOKLHmPE?rel=0" %}
-This video guide you through the steps involved with upgrading your Cloud project to the next major CMS version.
+{% embed url="https://www.youtube-nocookie.com/embed/80qwWxoNuKU" %}
+Video Tutorial
 {% endembed %}
 
 ## Step 1: Enable .NET
@@ -76,9 +84,64 @@ This video guide you through the steps involved with upgrading your Cloud projec
 If you have more projects in your solution or other packages, make sure that these are also updated to support the latest .NET framework.
 {% endhint %}
 
+<details>
+
+<summary>Upgrading from Umbraco 9 - Update program.cs, appSettings.json and remove files.</summary>
+
+*   Update the `Program` class in the `Program.cs` file to the following:\
+    using Umbraco.Cms.Web.Common.Hosting;
+
+    ```
+
+    public class Program
+        {
+            public static void Main(string[] args)
+                => CreateHostBuilder(args)
+                    .Build()
+                    .Run();
+
+            public static IHostBuilder CreateHostBuilder(string[] args) =>
+                Host.CreateDefaultBuilder(args)
+                    .ConfigureUmbracoDefaults()
+                    .ConfigureWebHostDefaults(webBuilder =>
+                    {
+                        webBuilder.UseStaticWebAssets();
+                        webBuilder.UseStartup<Startup>();
+                    });
+        }
+    ```
+* Re-enable the appsettings IntelliSense by updating your schema reference in the **appsettings.json** file from:
+
+```json
+"$schema": "./umbraco/config/appsettings-schema.json",
+```
+
+To:
+
+```json
+"$schema": "./appsettings-schema.json",
+```
+
+Apply this change to the following files as well:
+
+* **appsettings.Development.json**
+* **appsettings.Production.json**
+* **appsettings.Staging.json**
+
+Remove the following files and folders _manually_ from your local project:
+
+* `/wwwroot/umbraco`
+* `/umbraco/PartialViewMacros`
+* `/umbraco/UmbracoBackOffice`
+* `/umbraco/UmbracoInstall`
+* `/umbraco/UmbracoWebsite`
+* `/umbraco/config/lang`
+
+</details>
+
 ## Step 4: Finishing the Upgrade
 
-* Enable the [Unattended Upgrades](../../umbraco-cms/reference/configuration/unattendedsettings.md#upgrade-unattended) feature.
+* Enable the [Unattended Upgrades](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading#run-an-unattended-upgrade) feature.
 * Run the **project locally**.
 * Log in to the Umbraco backoffice to **verify the upgrade** has happened.
 * **Disable** the Unattended Upgrades feature.
@@ -88,12 +151,48 @@ If you have more projects in your solution or other packages, make sure that the
 
 Once the Umbraco project runs locally without any errors, the next step is to deploy and test on the Cloud Development environment.
 
+<summary>Upgrading from Umbraco 9 - Remove files from the development environment.</summary>
+
+* `/wwwroot/umbraco`
+* `/umbraco/PartialViewMacros`
+* `/umbraco/UmbracoBackOffice`
+* `/umbraco/UmbracoInstall`
+* `/umbraco/UmbracoWebsite`
+* `/umbraco/config/lang`
+
+The files and folder above need to be removed on the **Development** environment through `KUDU` -> `Debug Console` -> `CMD` -> `Site` -> from both the `repository` and `wwwroot` folders.
+
+<img src="https://user-images.githubusercontent.com/83591955/210218172-b32a6be9-9b2a-48c4-8ed7-676068f72946.png" alt="image" data-size="original">
+
+</details>
+
 * Push the changes to the **Development** environment. See the [Deploying from local to your environments](../deployment/local-to-cloud.md) article.
 * Test **everything** in the **Development** environment.
 
 We highly recommend that you go through everything in your Development environment. This can help you identify any potential errors after the upgrade, and ensure that you are not deploying any issues onto your Live environment.
 
 ## Step 5: Going live
+
+<details>
+
+<summary>Upgrading from Umbraco 9 - Remove files from staging/live the environment.</summary>
+
+Before deploying the upgrade to your next environment, you will need to remove the folders you also removed from Kudu on your Development environment.
+
+The files are:
+
+* `/wwwroot/umbraco`
+* `/umbraco/PartialViewMacros`
+* `/umbraco/UmbracoBackOffice`
+* `/umbraco/UmbracoInstall`
+* `/umbraco/UmbracoWebsite`
+* `/umbraco/config/lang`
+
+They need to be removed through `KUDU` -> `Debug Console` -> `CMD` -> `Site` -> from both the `repository` and `wwwroot` folders.
+
+<img src="https://user-images.githubusercontent.com/83591955/210218090-9b72fc05-cfe3-442f-8045-a90e5b8a9e89.png" alt="image" data-size="original">
+
+</details>
 
 Once everything works as expected in the development environment, you can push the upgrade to the live environment.
 
