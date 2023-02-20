@@ -193,7 +193,7 @@ Unzip the file you downloaded and copy and overwrite (almost) everything into yo
 
 Finally, you'll need to tell Umbraco Forms to update itself when you start the website next. In order to do that you need to have a `formsupdate` file (an empty text file without extension) in `~/App_Data/TEMP/`. The easiest way to create this file is by going into the root folder of your website and start a command line there. You can then type the following command: `echo > /App_Data/TEMP/formsupdate`.
 
-This command creates the file and you should see it disappear the next time the website recycles (you may want to recycle the website manually after creating this file). If the file isn't automatically removed, it is completely safe to remove it manually.
+This command creates the file and you should see it disappear the next time the website recycles. You may want to recycle the website manually after creating this file. If the file isn't automatically removed, it is safe to remove it manually.
 
 That's it! You're all set.
 
