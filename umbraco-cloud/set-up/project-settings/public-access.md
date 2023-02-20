@@ -25,7 +25,7 @@ By default, we add **Basic Authentication** to all trials and non-live environme
    
 ![Enable Basic Authentication](../images/basic_auth.png)
 
-3. Once enabled **Allow** IPs for users that need access to the project
+3. Once enabled **Add IPs** for users that need access to the project
    
 ![Allow IPs for your Umbraco Cloud Project](../images/allow_ip.png)
 
