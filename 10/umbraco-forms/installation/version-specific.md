@@ -132,7 +132,70 @@ See notes under 10.1.
 
 Version 8 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `8.0.0` and runs on .NET Framework 7.2.
 
-In order to upgrade from Umbraco Forms 7 to Umbraco Forms 8 make sure you read the [Manual Upgrade instructions](manualupgrade.md).
+In order to upgrade from Umbraco Forms 7 to Umbraco Forms 8, you can use any of these options:
+
+## Download
+
+In order to upgrade you will want to [download the version of Forms you wish to upgrade to](https://our.umbraco.com/projects/developer-tools/umbraco-forms/). Instead of downloading the actual package, however, you want to download the `Umbraco.Forms.Files.x.y.z.zip` file (where x.y.z) is the version.
+
+The filename ends with `.Files.x.y.z.zip` and contains only the files that get installed when you install Umbraco Forms.
+
+## Copy
+
+The easiest way to proceed is to unzip the file you downloaded and copy and overwrite (almost) everything into your website. Almost, because you might not want to overwrite `~/App_Plugins/UmbracoForms/UmbracoForms.config` because you might have updated it in the past. Make sure to compare your current version to the version in the zip file you downloaded. If there's any new configuration options in there then copy those into your website's `UmbracoForms.config` file.
+
+</details>
+
+<details>
+
+<summary>Version 7</summary>
+
+You can upgrade to the latest version of Umbraco Forms through:
+
+- [Automatic Upgrade](#automatic-upgrade)
+- [Download](#download-1)
+- [Copy](#copy-1)
+- [Upgrade marker](#upgrade-marker)
+
+## Automatic Upgrade
+
+Forms allows you to stay in sync with the latest releases, so you can take advantage of the new features and bug fixes.
+
+### Checking for updates
+
+You won't have to check for updates manually. Umbraco Forms will inform you when a new update is available. Navigate to the Forms dashboard and if you see the following then a new version is already available.
+
+![Upgrade available](../installation/images/UpgradeAvailable.png)
+
+### Installing update
+
+To upgrade your installation hit the *upgrade now* button.
+
+![Upgrade now](../installation/images/UpgradeNow.png)
+
+Umbraco will now fetch and install the upgrade.
+
+![Upgrade Progress](../installation/images/UpgradeProgress.png)
+
+Once it's completed the upgrade notification should be gone and you can continue using a newly updated Umbraco Forms.
+
+## Download
+
+In order to upgrade you will want to [download the version of Forms you wish to upgrade to](https://our.umbraco.com/projects/developer-tools/umbraco-forms/). Instead of downloading the actual package, however, you want to download the `UmbracoForms.Files.x.y.z.zip` file (where x.y.z) is the version.
+
+The filename ends with `.Files.x.y.z.zip` and contains only the files that get installed when you install Umbraco Forms.
+
+## Copy
+
+Unzip the file you downloaded and copy and overwrite (almost) everything into your website. Almost, because you might not want to overwrite `~/App_Plugins/UmbracoForms/UmbracoForms.config` because you might have updated it in the past. Make sure to compare your current version to the version in the zip file you downloaded. If there's any new configuration options in there then copy those into your website's `UmbracoForms.config` file.
+
+## Upgrade marker
+
+Finally, you'll need to tell Umbraco Forms to update itself when you start the website next. In order to do that you need to have a `formsupdate` file (an empty text file without extension) in `~/App_Data/TEMP/`. The easiest way to create this file is by going into the root folder of your website and start a command line there. You can then type the following command: `echo > /App_Data/TEMP/formsupdate`.
+
+This command creates the file and you should see it disappear the next time the website recycles (you may want to recycle the website manually after creating this file). If the file isn't automatically removed, it is completely safe to remove it manually.
+
+That's it! You're all set.
 
 </details>
 
