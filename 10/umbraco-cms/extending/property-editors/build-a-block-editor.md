@@ -102,7 +102,7 @@ Your Property Editor will need a `PropertyValueConverter`. Read more about [Prop
 
 The Block Editor data structure consists of three main parts:
 
-**Layout**: The Layout defines Blocks that each will reference (by UDI) a content item in the list of data. The Layout object will be key/value pairs where the key is the Property Editor alias and the value type depends on your Property Editor's setup.
+**Layout**: The Layout defines Blocks that each will reference (by UDI) a content item in the list of data. The Layout object pairs keys with Property Editor aliases and their value type varies based on setup.
 
 **ContentData**: A list of content items based on ElementTypes (IPublishedElement).
 
@@ -151,13 +151,13 @@ In the following example the layout object "MyOwn.UnicornBlocksEditor" is of typ
 
 ### Basic knowledge for understanding how to work with Block Editor data
 
-To help your Block Editor manage the Data Structure presented above, we have made a Model Object called BlockEditorModelObject which helps manage the basic parts of a Block Editor.
+We created the BlockEditorModelObject to aid in managing the presented Data Structure in the Block Editor.
 
 To get a better understanding of what the Model Object does for you, we need to look at some usages of the Model Object.
 
 ### Maintain and work with the Layout of a Block Editor
 
-The `layout` of a Block Editor can be any structure. Therefore the Model Object (BlockEditorModelObject) cannot maintain this data. This makes our usage of Model Object a bit more complex as we often will be giving the Model Object a reference to an entry of the `layout` to then perform an action. This action may then need to reflect changes back to the `layout`.
+The `layout` of a Block Editor can be any structure. Therefore the Model Object (BlockEditorModelObject) cannot maintain this data. Our usage of the Model Object becomes complex. We give it a reference to a `layout` entry and perform an action that may need to reflect changes back to the `layout`.
 
 Since the origin of blocks is in the `layout` the Model Object only can serve as a helper to maintain and create data. Therefore the Property Editor code will be using the `layout` as origin, using the Model Object to help manage specific parts.
 
@@ -218,7 +218,7 @@ vm.layout.push(layoutEntry);
 
 The layout-entries alone do not provide much value when displaying or editing Blocks.
 
-Our Model Object provides the option to get a Block Object for a given Block, retrieved by parsing the layout-entry of the block we would like.
+Our Model Object allows obtaining a Block Object by parsing a block's layout-entry for a specific Block.
 
 The Block Object provides data of interest. The most important of these properties are: Block configuration, a label and the Block content in the Element Type Data Model format. This Content-model is very useful for building the UI for editing the Content of a Block.
 
@@ -301,9 +301,9 @@ if (vm.layout.length > 0) {
 
 ## Manage Block Objects for general use through out your Property Editor
 
-We use the Block Objects for almost anything, these Block Objects should not be created for each action but instead be available through out the runtime of your Block Editor.
+Block Objects are used extensively and should be available throughout your Block Editor's runtime, rather than created for each action.
 
-As you probably would like to use these for your property-editor view, we will append the BlockObjects to our layout entries, enabling you to use the layout object directly and access the BlockObjects as properties of those.
+You probably want to use BlockObjects for your property-editor view. We append them to layout entries, so you can access them as properties from the layout object.
 
 ```js
 // continuing from the basic setup example.
