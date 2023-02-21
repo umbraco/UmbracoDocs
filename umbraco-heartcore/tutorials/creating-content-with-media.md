@@ -199,3 +199,7 @@ To publish a content node with a Media Picker, follow these steps:
 4. Click the `Make Request` button.
 
     ![Publishing a content node](images/management-api-browser-publishing-a-content-node.png)
+
+And you are done! You should now be able to upload a media item and create a new content node that uses the newly uploaded media item in a Media Picker v3 property.
+You can use a similar approach for discovering the format of more complex content for when you want to create it through the Content Management API.
+Please note that the .NET Client Library also supports the use of the Management API if you want to do it from C# code.
