@@ -24,7 +24,7 @@ The `editor` object then has the following properties:
 | Name | Type | Required | Description |
 | ---- | ---- | ---- | ---- |
 | `view` | string | Yes | This is the full path to the HTML view for your property editor. |
-| `hideLabel` | bool | Yes | If set to `true`, this hides the label for the property editor when used in Umbraco on a document type. |
+| `hideLabel` | bool | Yes | If set to `true`, this hides the label for the property editor when used in Umbraco on a Document Type. |
 | `valueType` | object | No | This is the type of data you want your property editor to save to Umbraco. Possible values are `STRING`, `JSON`, `DATETIME`, `TEXT` and `INT`. Default is `STRING`. |
 | `validation` | object | No | Object describing required validators on the editor. |
 | `isReadOnly` | boolean | No | If set to true this makes the property editor read only. |
@@ -186,7 +186,7 @@ Possible values are either `AssetType.Javascript` or `AssetType.Css`. The second
 
 In the example above, the `SirTrevorEditor` class doesn't really do much. For more basic property editors, the C# approach may require a bit more work compared to that of `package.manifest` files. But as property editors grow in complexity, using C# becomes a bit more useful - and also lets you do things not possible with `package.manifest` files.
 
-The [DataEditor](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Cms.Core.PropertyEditors.DataEditor.html) class defines a virtual `CreateConfigurationEditor` method. It returns a model which is used for the Angular view when editing the prevalues of a data type.
+The [DataEditor](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Cms.Core.PropertyEditors.DataEditor.html) class defines a virtual `CreateConfigurationEditor` method. It returns a model which is used for the Angular view when editing the prevalues of a Data Type.
 
 Virtual methods are methods declared in a parent class, and they have a default implementation that can be overridden in classes that inherit from the parent class. For instance in the example below, we can override the method and provide our own `SirTrevorConfigurationEditor` instead of what Umbraco returns by default.
 
@@ -238,7 +238,7 @@ namespace UmbracoEightExamples.PropertyEditors
 }
 ```
 
-The referenced `SirTrevorConfiguration` class is then what declares the configuration fields of when editing a data type using the Sir Trevor property editor:
+The referenced `SirTrevorConfiguration` class is then what declares the configuration fields of when editing a Data Type using the Sir Trevor property editor:
 
 ```csharp
 using Umbraco.Cms.Core.PropertyEditors;
