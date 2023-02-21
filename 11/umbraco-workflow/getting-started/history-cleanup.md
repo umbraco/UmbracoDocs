@@ -1,8 +1,8 @@
 # History Cleanup
 
-Every new workflow stores multiple records in the database - one for the workflow instance, and one for each task in the workflow. In a multi-lingual site, depending on how you use Workflow, there may also be records generated for each culture variation. These records are used to build the various workflow history views in the Umbraco backoffice. 
+Every new workflow stores multiple records in the database - one for the workflow instance, and one for each task in the workflow. In a multi-lingual site, depending on how you use Workflow, there may also be records generated for each culture variation. These records are used to build the workflow history views in the Umbraco backoffice. 
 
-Depending on your requirements, this information may not be required, or may only be useful for a short period of time. Note too, the workflow history exists in addition to Umbraco's audit trail information, which will always show the identity of the user who completes the workflow (and therefore resulting in a node being published).
+Depending on your requirements, this information may not be required, or may only be useful for a short period of time. Note too, the workflow history exists in addition to Umbraco's audit trail information, which will always show the identity of the user who completes the workflow.
   
 Umbraco Workflow 11.1.0 introduced a history cleanup feature similar to those already available in Umbraco CMS and Umbraco Forms. 
 
@@ -41,12 +41,12 @@ For sites with stricter or more complex requirements, it is possible to override
 
 The below example will apply the following policies:
 
- - History cleanup is enabled globally
- - History items with `Approved` or `Cancelled` status are deleted after 90 days
- - Workflow history for node `dcf18a51-6919-4cf8-89d1-36b94ce4d963` will never be deleted
- - Workflow history for node `31523089-f648-4883-9087-ef9a0b83129f` will be deleted after 10 days, for the statuses defined in the global `StatusesToDelete` property
- - Workflow history for all nodes using the `ContentPage` document type will never be deleted
- - Workflow history with `Cancelled` status for all nodes using the `NewsItem` document type will be deleted after 100 days (see also [StatusesToDelete configuration](#statusestodelete-configuration))
+ - History cleanup is enabled globally.
+ - History items with `Approved` or `Cancelled` status are deleted after 90 days.
+ - Workflow history for node `dcf18a51-6919-4cf8-89d1-36b94ce4d963` will never be deleted.
+ - Workflow history for node `31523089-f648-4883-9087-ef9a0b83129f` will be deleted after 10 days, for the statuses defined in the global `StatusesToDelete` property.
+ - Workflow history for all nodes using the `ContentPage` Document Type will never be deleted.
+ - Workflow history with `Cancelled` status for all nodes using the `NewsItem` Document Type will be deleted after 100 days (see also [StatusesToDelete configuration](#statusestodelete-configuration)).
 
 ```json
 {
@@ -87,7 +87,7 @@ The below example will apply the following policies:
 }
 ```
 
-When calculating node and document type policies, these are applied lazily - if the current workflow instance matches a node rule the document type rules will not be processed. Using the above configuration as an example, if both nodes in the `CleanuUp` rules dictionary are using the document type `ContentPage`, the document type rules will NOT be applied as the node rules are prioritised.
+When calculating node and Document Type policies, these are applied lazily - if the current workflow instance matches a node rule the Document Type rules will not be processed. Using the above configuration as an example, if both nodes in the `CleanuUp` rules dictionary are using the document type `ContentPage`, the Document Type rules will NOT be applied as the node rules are prioritised.
 
 If a value is ommitted from the node or document type policy, the global value will be used instead. In the above example, the node policy for `31523089-f648-4883-9087-ef9a0b83129f` will use the `StatusesToDelete` value from the global policy (in this example, deleting `Approved` or `Cancelled` workflow history).
 
