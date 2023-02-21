@@ -139,7 +139,11 @@ This setting tells Umbraco to use the default character replacements. If you don
 This settings contains objects with a **"Char"** and **"Replacement** key. Each of these objects holds a character that should be replaced and what it should be replaced with.
 
 {% hint style="info" %}
-When adding or removing entries from the collection, you need to re-save and publish any node where you want the change reflected. You can also use **Publish with descendants...** on the root node to update the URL for all descendants.
+When managing entries from the collection, you need to do a couple of things for the change to be reflected: 
+
+1. Refresh the database cache from the "Published Status" tab in the **Settings** section of the backoffice.
+2. Re-save and publish any node where you want the change reflected. 
+  a. You can also use **Publish with descendants...** on the root node to update the URL for all descendants.
 {% endhint %}
 
 So, if:
