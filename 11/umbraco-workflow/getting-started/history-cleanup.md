@@ -110,7 +110,7 @@ If a value is ommitted from the node or document type policy, the global value w
   }
 ```
 
-It is possible for a cleanup rule (or the global configuration) to declare a `StatusesToDelete` property without the full set of status keys, but note that this will not modify the default values.
+It is possible for a cleanup rule (or the global configuration) to declare a `StatusesToDelete` property without the full set of status keys, this will not modify the default values.
 
 For example, adding `"Approved": false` will remove `Approved` from the deletable statuses, but all other default values will remain. Therefore, to delete approved workflows ONLY, the configuration would look like the below, where the default truthy values have been negated:
 
