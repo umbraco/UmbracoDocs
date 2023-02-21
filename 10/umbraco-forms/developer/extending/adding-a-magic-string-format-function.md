@@ -69,11 +69,10 @@ namespace Umbraco.Forms.Core.Providers.ParsedPlacholderFormatters
 As with other provider types, the custom function needs to be registered. An example registration using the `IUmbracoBuilder` is shown below:
 
 ```csharp
-public static IUmbracoBuilder AddUmbracoFormsCoreProviders(this IUmbracoBuilder builder)
+public static IUmbracoBuilder AddCustomProviders(this IUmbracoBuilder builder)
 {
-    builder.ParsedPlaceholderFormatters()
+    builder.FormsParsedPlaceholderFormatters()
         .Add<BoundNumber>();
-
     return builder;
 }
 ```

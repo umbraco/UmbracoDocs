@@ -44,6 +44,10 @@ Export types are responsible for turning form records into any other data format
 
 Custom magic string format functions to add to the [ones shipped with Umbraco Forms](../magic-strings.md#formatting-magic-strings) can be created in code.
 
+### [Validation Patterns](adding-a-validation-pattern.md)
+
+When creating a text field in Umbraco Forms, a validation pattern in the form of a regular expression can be applied. Default patterns can be removed or re-ordered, and custom ones created and added.
+
 ## Handling Forms Events
 
 Another option for extension via custom code is to hook into one of the many events available.
