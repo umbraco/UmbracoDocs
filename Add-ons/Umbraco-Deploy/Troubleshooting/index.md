@@ -17,7 +17,7 @@ Umbraco Deploy maintains a cached set of signatures that represent each schema a
 
 If having resolved schema mismatches you still have reports of errors, it might be that the signatures are out of date. In other words, Deploy is using a cached representation of an item that no longer matches the actual item stored in Umbraco.
 
-This should not be necessary in normal use, but can occur after upgrades. If you have this situation, you can clear the cached signatures in both the upstream and downstream environments.  You do this via the *Clear Cached Signatures* operation available on the _Settings > Deploy_ dashboard:
+This should not be necessary in normal use, but can occur after upgrades. If you have this situation, you can clear the cached signatures in both the upstream and downstream environments.  You do this via the *Clear Cached Signatures* operation available on the *Settings > Deploy* dashboard:
 
 ![Clear cached signatures](images/clear-cached-sigs.png)
 
@@ -37,7 +37,7 @@ If transferring items from a downstream environment to an upstream one, it's pos
 
 ### Ensure signatures are pre-cached
 
-For transfer or restore operations, it's worth ensuring Deploy's cached signatures are fully populated in both the upstream and downstream environments.  This can be done via the *Set Cached Signatures* operation available on the _Settings > Deploy_ dashboard:
+For transfer or restore operations, it's worth ensuring Deploy's cached signatures are fully populated in both the upstream and downstream environments.  This can be done via the *Set Cached Signatures* operation available on the *Settings > Deploy* dashboard:
 
 ![Set cached signatures](images/set-cached-sigs.png)
 
@@ -49,7 +49,7 @@ Now the checks Deploy has to do to figure out the items and dependencies to proc
 
 Deploy will do comparisons between the entities in different environments to determine if they match and decide whether to include them in the operation. By default, for media files, a check is made on a portion of the intial bytes of the file.
 
-If a lot of files need to be checked, this can be slow, and a faster option is available that uses the file metadata. The only downside of changing this option is a marginally increased chance of Deploy considering a media file hasn't changed when it has.  This would omit it from the deployment.
+If a lot of files need to be checked, this can be slow, and a faster option is available that uses the file's metadata. The only downside of changing this option is a marginally increased chance of Deploy considering a media file hasn't changed when it has.  This would omit it from the deployment.
 
 This option can be [set in configuration](../Deploy-Settings/index.md#media-file-checksum-calculation-method).
 
