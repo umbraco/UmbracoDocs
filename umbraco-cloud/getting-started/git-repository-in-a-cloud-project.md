@@ -33,7 +33,7 @@ Once you're happy with the results or wish to see how your website has progresse
 
 ### Code Deployment Summary
 
-![Umbraco Cloud Overview](images/UCP\_v9.png)
+![Umbraco Cloud Overview](images/UCP.png)
 
 In the above diagram, the Umbraco Git repository contains the source code of a class library CS project.
 

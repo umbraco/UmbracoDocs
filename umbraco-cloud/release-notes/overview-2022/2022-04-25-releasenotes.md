@@ -1,15 +1,15 @@
-# Release Notes, April 2022
+# April 2022
 
 ## Key Takeaways
 
 * **Enable client certificates from file system** - If you need to load a client certificate from the file system in your cloud project at runtime you can make this possible by turning on the new setting on the _Advanced_ page of the project.
 * **Tweaks and improvements** - During March and April, we focused on fixing minor issues and adding minor improvements.
 
-## [Enable client certificates from file system](../set-up/project-settings/application-settings.md)
+## [Enable client certificates from file system](../../set-up/project-settings/application-settings.md)
 
 If your project needs to load a client certificate (like an X.509 certificate) at runtime you can turn on this feature for your environments. By turning this feature on for an environment, you will be able to load a client certificate as a file. Which happens during the run-time of your cloud project.
 
-![Enable client certificate load from file system](images/EnableClientCertificateLoadedFromFileSystem.gif)
+![Enable client certificate load from file system](../images/EnableClientCertificateLoadedFromFileSystem.gif)
 
 ## Tweaks and improvements
 

@@ -1,4 +1,4 @@
-# Release Notes, March 2022
+# March 2022
 
 ## Key Takeaways
 
@@ -9,7 +9,6 @@
 * **Managing Transport Security** - Configure transport security options for your specific hostnames for your Umbraco Cloud Project.
 * **Content Comparison** - Explore the new feature in Umbraco Deploy feature that enables you to preview content changes prior to transferring them to another environment.
 * **Bandwidth Usage Top 10 for resources** - Wondering which resources of your Umbraco Cloud project contributes with the most bandwidth usage? Now you can find the answer in the new bandwidth Top 10 for resources on the project usage page.
-
 
 ### Backoffice user group selection
 
@@ -45,11 +44,11 @@ You will need **static outbound IP addresses** for your cloud project when your 
 
 On the _Advanced_ page of your project, you are now able to turn on the static outbound IP address feature to ensure persistent communication. This opt-in feature can be switched on for Standard, Pro, and Enterprise cloud projects.
 
-![StaticOutboundIps](images/ips.gif)
+![StaticOutboundIps](../images/ips.gif)
 
 For Starter projects, there is likewise a new addition. On the Advanced page, you can see the current outbound IP addresses of your project. These are however dynamic and are likely to change at some point due to either Azure or Umbraco optimizing hosting resources.
 
-### [Managing Transport Security](../set-up/project-settings/manage-security.md)
+### [Managing Transport Security](../../set-up/project-settings/manage-security.md)
 
 Once you have added your own hostnames it's possible to configure certain **transport security options** for all or for specific hostnames within your Cloud project. These security options all relate to the traffic that goes through your hostname from the origin (Umbraco Cloud) to the end user. The options are the protocols and encryption used to transport your website and assets from the webserver to the browser.
 
@@ -75,7 +74,7 @@ You can also add hostname-specific settings if needed and thereby overriding the
 
 The Umbraco Commercial Packages team has made some great improvements to Umbraco Forms and Umbraco Deploy [lately](https://umbraco.com/blog/umbraco-forms-81193-and-deploy-4593-release/) adding immediate value to your Cloud projects. One of the Umbraco Deploy features, Content Comparison, enables you to preview content changes directly in the backoffice prior to transferring them to another environment. This is often helpful to ensure the correct updates are transferred and improves predictability when working with content in multiple environments.
 
-![Content comparison](images/umbraco-deploy-93-content-comparisson\_1.gif)
+![Content comparison](../images/umbraco-deploy-93-content-comparisson\_1.gif)
 
 You can see what has changed and understand what will change if you proceed with a transfer upstream or a restore into the local environment.
 
@@ -85,7 +84,7 @@ Content comparison is now available in all Umbraco Cloud projects running Umbrac
 
 The bandwidth top 10 for referrers is now out of Beta. We are introducing a **new top 10 for resources** that displays the resources contributing the most to the total bandwidth of your project. Each resource is represented by its path together with the number of requests and its total contribution of bandwidth.
 
-![Top 10 Bandwidth Paths](images/Top10BandwidthPaths.gif)
+![Top 10 Bandwidth Paths](../images/Top10BandwidthPaths.gif)
 
 You can use the paths generating the most bandwidth usage to see where optimizing and minimizing the file size of resources will impact the most.
 
