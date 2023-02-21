@@ -20,7 +20,13 @@ The feature can be enabled in the `appSettings.json`:
   "Umbraco": {
     "Workflow": {
       "HistoryCleanup": {
-        "EnableCleanup": true
+        "EnableCleanup": true,
+        // Below settings are optional
+        "FirstRunTime": string; the time to first run the scheduled cleanup task, in crontab format
+        "Period": string; how often to run the task, in timespan format
+        "KeepHistoryForDays": int; delete history after this many days
+        "StatusesToDelete": refer to StatusesToDelete configuration below
+        "CleanupRules": refer to Configuration examples below
       }
     }
   }
@@ -31,7 +37,7 @@ The feature can be enabled in the `appSettings.json`:
 
 For sites with stricter or more complex requirements, it is possible to override the global settings for individual content nodes and document types. This is also managed through `appSettings.json` configuration. Configuration rules defined in application settings are prioritised over any rules set via the backoffice, allowing developers to restrict cleanup up of critical history, while allowing site administrators flexibility to manage non-critical history.
 
-### Global configuration examples
+## Configuration examples
 
 The below example will apply the following policies:
 
@@ -40,7 +46,7 @@ The below example will apply the following policies:
  - Workflow history for node `dcf18a51-6919-4cf8-89d1-36b94ce4d963` will never be deleted
  - Workflow history for node `31523089-f648-4883-9087-ef9a0b83129f` will be deleted after 10 days, for the statuses defined in the global `StatusesToDelete` property
  - Workflow history for all nodes using the `ContentPage` document type will never be deleted
- - Workflow history with `Cancelled` status for all nodes using the `NewsItem` document type will be deleted after 100 days (see also StatusesToDelete configuration)
+ - Workflow history with `Cancelled` status for all nodes using the `NewsItem` document type will be deleted after 100 days (see also [StatusesToDelete configuration](#statusestodelete-configuration))
 
 ```json
 {
@@ -127,4 +133,4 @@ Rules for content items and their document type are set from the History tab of 
 
 Content items with no custom cleanup rules defined will display the global defaults.
 
-
+<figure><img src="./images/workflow-history-cleanup-modal.png" alt=""><figcaption></figcaption></figure>
