@@ -14,19 +14,16 @@ To set the Document Type properties:
 
 1. Go to **Settings**.
 2. Select **Templates** in the **Templating** section, and open the **Homepage** template.
-3.  Scroll down to the `<!-- Jumbotron, w title -->` section (around line 46) and highlight the text `“Welcome - UmbracoTV”` (around line 49).\
-
+3.  Scroll down to the `<!-- Jumbotron, w title -->` section (around line 46) and highlight the text `“Welcome - UmbracoTV”` (around line 49).
 
     <figure><img src="images/figure-18-replace-hardcoded-text-with-umbraco-page-field-v9.png" alt=""><figcaption></figcaption></figure>
 4. Click **Insert** and select **Value**.
-5.  Select **pageTitle** field from the drop-down list.\
-
+5.  Select **pageTitle** field from the drop-down list.
 
     <figure><img src="images/figure-19-umbraco-page-field-v9.png" alt=""><figcaption></figcaption></figure>
 6. Click **Submit**.
 7. Repeat the same process for the content between the `<div class="container">` tags (around line 61 to 78):
-   *   Highlight the content as shown in the figure.\
-
+   *   Highlight the content as shown in the figure.
 
        <figure><img src="images/figure-20-replace-bodytext-with-page-field-v9.png" alt=""><figcaption></figcaption></figure>
    * Click **Insert** and select **Value**.
