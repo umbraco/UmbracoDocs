@@ -26,7 +26,7 @@ The `editor` object then has the following properties:
 
 ## Using a Package Manifest
 
-A package manifest is a file specific to your package or custom code, and it is always stored in a folder in `/App_Plugins/{YourPackageName}`, and with the name `package.manifest` :
+A package manifest is a file specific to your package or custom code. This file is always stored in a folder in `/App_Plugins/{YourPackageName}`, and with the name `package.manifest` :
 
 ```json
 {
@@ -183,7 +183,7 @@ In the example above, the `SirTrevorEditor` class doesn't really do much. For mo
 
 The [DataEditor](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.PropertyEditors.DataEditor.html) class defines a virtual `CreateConfigurationEditor` method. It returns a model which is used for the Angular view when editing the prevalues of a Data Type.
 
-Virtual methods are methods declared in a parent class, and they have a default implementation that can be overridden in classes that inherit from the parent class. For instance in the example below, we can override the method and provide our own `SirTrevorConfigurationEditor` instead of what Umbraco returns by default.
+Virtual methods are methods declared in a parent class. These methods have a default implementation that can be overridden in classes that inherit from the parent class. For instance in the example below, we can override the method and provide our own `SirTrevorConfigurationEditor` instead of what Umbraco returns by default.
 
 ```csharp
 using Umbraco.Cms.Core.PropertyEditors;
@@ -295,7 +295,7 @@ To get the strongly typed model, you can either cast the configuration value on 
 
 Like mentioned before, the `SirTrevorConfigurationEditor` class doesn't really do much in this example with the Sir Trevor property editor. But the **Multi Node Tree Picker** and others of Umbraco's build in property editors also override the `ToValueEditor` method.
 
-This method is used when the strongly typed configuration value is converted to the model used by the Angular logic in the backoffice. So with the implementation of the [MultiNodePickerConfigurationEditor]( https://github.com/umbraco/Umbraco-CMS/blob/ade9bb73246caf25a7073f2b9e5262641a201863/src/Umbraco.Web/PropertyEditors/MultiNodePickerConfigurationEditor.cs) class, some additional configuration fields are sent along - for instance that it's a multi picker and that the ID type should be URI's. These are configuration values that the user should not be able to edit, but the property editor may still rely on them.
+This method is used when the strongly typed configuration value is converted to the model used by the Angular logic in the backoffice. So with the implementation of the [MultiNodePickerConfigurationEditor]( https://github.com/umbraco/Umbraco-CMS/blob/ade9bb73246caf25a7073f2b9e5262641a201863/src/Umbraco.Web/PropertyEditors/MultiNodePickerConfigurationEditor.cs) class, some additional configuration fields are sent along. For instance that it's a multi picker and that the ID type should be URI's. These are configuration values that the user should not be able to edit, but the property editor may still rely on them.
 
 ```csharp
 using Umbraco.Cms.Core.IO;
