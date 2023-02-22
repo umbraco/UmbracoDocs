@@ -102,6 +102,8 @@ Take note of the negates in the rewrite rule.
 It is important to negate the path to files on your site because with the trailing slash added, your media will not show correctly after [your site has been migrated to use Azure Blob Storage](../../media/).
 {% endhint %}
 
+## Redirect from non-www to www
+
 Another example would be to redirect from non-www to www:
 
 ```xml
