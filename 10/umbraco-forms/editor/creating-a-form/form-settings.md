@@ -57,7 +57,7 @@ The automcomplete setting for the overall form can be changed from the default o
 
 ### Moderation
 
-Enabling this feature allows the moderator to approve or deny a Form before its published. Most Forms contain publicly shown entries such as blog post comments or submissions for a social campaign and you can decide what's being published online with the help of this option.
+Enabling this feature allows the moderator to manage the approval status of a form. This can be used in a number of scenarios. For example, if the form submission will be publicly shown, you can control which are published.
 
 ![Form settings validation](images/FormSettingsModeration.png)
 
@@ -73,6 +73,6 @@ To customize this, turn off the option to "Display default fields" and select th
 
 In order to help protect site visitor privacy, rules can be configured in this section for automatic deletion of submissions. You can set how long to retain records for each state (submitted or approved).
 
-Note that a background service that carries out the actual removal of records needs to be [enabled in configuration](../../developer/configuration/README.md#scheduledrecorddeletion). If that is not running, a notification will be displayed.
+A background service that carries out the actual removal of records needs to be [enabled in configuration](../../developer/configuration/README.md#scheduledrecorddeletion). If that is not running, a notification will be displayed.
 
 ![Form settings validation](../../../../11/umbraco-forms/editor/creating-a-form/images/FormSettingsDataRetentionNotification.png)
