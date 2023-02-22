@@ -101,3 +101,22 @@ Take note of the negates in the rewrite rule.
 
 It is important to negate the path to files on your site because with the trailing slash added, your media will not show correctly after [your site has been migrated to use Azure Blob Storage](../../media/).
 {% endhint %}
+
+Another example would be to redirect from non-www to www:
+
+```xml
+<rule name="Redirect to www prefix" stopProcessing="true">
+  <match url=".*" />
+  <conditions>
+    <add input="{HTTP_HOST}" pattern="^www\." negate="true" />
+    <add input="{HTTP_HOST}" pattern=".*azurewebsites.net*" negate="true" ignoreCase="true" />
+    <add input="{HTTP_HOST}" pattern="^localhost(:[0-9]+)?$" negate="true" />
+    <add input="{HTTP_HOST}" pattern="\.umbraco\.io$" negate="true" />
+  </conditions>
+  <action type="Redirect" url="https://www.{HTTP_HOST}/{R:0}" />
+</rule>
+```
+
+{% hint style="warning" %}
+Adding the `.*azurewebsites.net*` pattern is required for the deployment service and the content transfer between environments to continue to function.
+{% endhint %}
