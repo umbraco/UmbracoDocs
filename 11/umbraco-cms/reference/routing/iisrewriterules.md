@@ -99,9 +99,15 @@ Another example would be to redirect from non-www to www (except for the Umbraco
   <match url=".*" />
   <conditions>
     <add input="{HTTP_HOST}" pattern="^www\." negate="true" />
+    <add input="{HTTP_HOST}" pattern=".*azurewebsites.net*" negate="true" ignoreCase="true" />
     <add input="{HTTP_HOST}" pattern="^localhost(:[0-9]+)?$" negate="true" />
     <add input="{HTTP_HOST}" pattern="\.umbraco\.io$" negate="true" />
   </conditions>
   <action type="Redirect" url="https://www.{HTTP_HOST}/{R:0}" />
 </rule>
 ```
+
+{% hint style="warning" %}
+Adding wwww redirect rule requires the ".*azurewebsites.net*" pattern to be added as well in order for Umbraco to function correctly.
+Failing to do so will cause the deployment service to fail and you will be unable to deploy changes from one environment to the next.
+{% endhint %}
