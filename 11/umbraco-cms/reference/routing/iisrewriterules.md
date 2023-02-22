@@ -108,5 +108,5 @@ Another example would be to redirect from non-www to www (except for the Umbraco
 
 {% hint style="warning" %}
 Adding wwww redirect rule requires <add input="{HTTP_HOST}" pattern=".*azurewebsites.net*" negate="true" ignoreCase="true" /> condition to be added as well in order for Umbraco to function correctly.
-Failing to do so will cause the deployment service to fail and content transfer between environments will fail.
+This step is required for the deployment service and the content transfer between environments to function properly.
 {% endhint %}
