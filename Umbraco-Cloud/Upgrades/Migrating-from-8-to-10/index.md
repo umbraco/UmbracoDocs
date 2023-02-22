@@ -1,7 +1,7 @@
 ---
 versionFrom: 8.0.0
 versionTo: 10.0.0
-meta.RedirectLink: "/v/10.x-lts/umbraco-cloud/upgrades/migrating-from-8-10"
+meta.RedirectLink: "/umbraco-cloud/upgrades/migrating-from-8-10"
 ---
 # Migrating Umbraco 8 Cloud project to Umbraco 10
 
