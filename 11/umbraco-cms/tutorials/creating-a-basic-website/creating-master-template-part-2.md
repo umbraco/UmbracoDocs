@@ -62,8 +62,7 @@ To update the Document Type permissions:
 1. Go to **Settings**.
 2. Open the **Homepage** Document Type and go to the **Permissions** tab.
 3. Select **Add child** in the **Allowed child node types**. The **Choose child node** dialog opens.
-4.  Select **Simple Content Page** and click **Save**.\
-
+4.  Select **Simple Content Page** and click **Save**.
 
     <figure><img src="images/figure-32-homepage-allowed-child-v8.png" alt=""><figcaption></figcaption></figure>
 
@@ -82,16 +81,17 @@ To create a content node:
 To add the Document Type properties:
 
 1. Go to **Settings**.
-2. Select **Templates** from the **Templating** section, and open the **Simple Content Page** template.
-3. Scroll to the `<!-- Jumbotron, w title -->` (around line 8) section and highlight the text `“Umbraco Support”` (around line 11).
-4. Click **Insert** and select **Value**.
-5. Select the **pageTitle** field from the drop-down list and click **Submit**.
-6. Repeat the same process for the `<div class="container">` tag:
+2. Select **Templates** from the **Templating** section.
+3. Go to **Master** and open the **Simple Content Page** template.
+4. Scroll to the `<!-- Jumbotron, w title -->` (around line 8) section and highlight the text `“Umbraco Support”` (around line 11).
+5. Click **Insert** and select **Value**.
+6. Select the **pageTitle** field from the drop-down list and click **Submit**.
+7. Repeat the same process for the `<div class="container">` tag:
    * Highlight the content from the `<p>` tag (around line 19) to the end of the `</p>` tag (around line 22).
    * Click **Insert** and select **Value**.
    * Select **bodyText** field from the drop-down list.
    * Click **Submit**.
-7. Click **Save**.
+8. Click **Save**.
 
 ### Viewing the Contact Us Page
 
@@ -100,8 +100,7 @@ To view the **Contact Us** Page:
 1. Go to **Content**.
 2. Select the **Contact Us** page.
 3. Go to the **Info** tab.
-4.  Click the link to view the page.\
-
+4.  Click the link to view the page.
 
     <figure><img src="images/figure-37-viewing-contact-us.png" alt=""><figcaption></figcaption></figure>
 

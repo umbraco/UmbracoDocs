@@ -4,8 +4,7 @@ Our homepage is currently missing the CSS and image files. To include these file
 
 1. Navigate to the **MyCustomUmbracoProject** folder and the **Custom Umbraco Template** folder in File Explorer.
 2. Copy the **css** and **images** folders from the _Custom Umbraco template_ folder and place it in the **wwwroot** folder inside the _MyCustomUmbracoProject_ folder.
-3.  Navigate to the **HomePage** template in the **Settings** section and ensure the stylesheet reference link is `/css/main.css`.\
-
+3.  Navigate to the **HomePage** template in the **Settings** section and ensure the stylesheet reference link is `/css/main.css`.
 
     <figure><img src="images/Master-Template.png" alt=""><figcaption></figcaption></figure>
 4.  Using Chrome/Firefox/Edge Developer Tools, start or refresh your `http://localhost:xxxx.`
