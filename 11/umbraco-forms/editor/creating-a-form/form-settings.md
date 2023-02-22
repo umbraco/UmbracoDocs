@@ -14,43 +14,65 @@ To access the Form Settings:
 
 The following options are available in Forms Settings:
 
-- **Store Records**
+### Store Records
 
-    By default, all submitted records are saved in the database. This option allows you to view and export the saved records from the queries overview. If you do not want to store data (due to policies in your organisation), you can uncheck the box.
+By default, all submitted records are saved in the database. This option allows you to view and export the saved records from the queries overview. If you do not want to store data (due to policies in your organisation), you can uncheck the box.
 
-    ![Form settings Store Records](images/Store-Records.png)
+![Form settings Store Records](images/Store-Records.png)
 
-- **Captions**
+### Captions
 
-    Customize the labels of the **Submit**, **Next**, and **Previous** buttons used in your Form.
+Customize the labels of the **Submit**, **Next**, and **Previous** buttons used in your Form.
 
-    ![Form settings stylesheet](images/FormSettingsCaptions-v9.png)
+![Form settings stylesheet](images/FormSettingsCaptions-v9.png)
 
-- **Styling**
+### Styling
 
-    Set a stylesheet to give your Form custom styling. You have an option to disable the default styling. Enabling the **Disable default stylesheet** option will prevent a default stylesheet to be added to the pages where the Form is placed.
+Set a stylesheet to give your Form custom styling. You have an option to disable the default styling. Enabling the **Disable default stylesheet** option will prevent a default stylesheet to be added to the pages where the Form is placed.
 
-    ![Form settings stylesheet](images/FormSettingsStyling.png)
+![Form settings stylesheet](images/FormSettingsStyling.png)
 
-- **Validation**
+### Validation
 
-    Define a message that is displayed when a field is mandatory, when a value is not supplied, or when the value is invalid.
+Define a message that is displayed when a field is mandatory, when a value is not supplied, or when the value is invalid.
 
-    ![Form settings validation](images/FormSettingsValidation.png)
+![Form settings validation](images/FormSettingsValidation.png)
 
-    The following Validations are available:
-    
-    |Validation Type | Description|
-    |-|-|
-    | **Mandatory error message** | The error message is displayed for a field that is marked as mandatory but a value has not been provided upon submission. This setting can be overwritten on a field level - `{0}` will be replaced with the field caption. |
-    | **Invalid error message** | The error message is displayed for a field if the value provided is not valid (a regular expression has been setup but the input does not match). This setting can be overwritten on a field level - `{0}` will be replaced with the field caption. |
-    | **Show validation summary** | Enable this option if you wish to display a summary of all the error messages on top of the Form. |
-    | **Hide field validation labels** | Enable this option if you wish to hide individual field error messages from being displayed. |
-    |**Mark fields** | You can choose to not mark any fields or only mark mandatory or optional fields. |
-    | **Indicator** | Choose which indicator to use when a field has been marked as mandatory. The default indicator is `*` |
+The following Validations are available:
 
-- **Moderation**
+|Validation Type | Description|
+|-|-|
+| **Mandatory error message** | The error message is displayed for a field that is marked as mandatory but a value has not been provided upon submission. This setting can be overwritten on a field level - `{0}` will be replaced with the field caption. |
+| **Invalid error message** | The error message is displayed for a field if the value provided is not valid (a regular expression has been setup but the input does not match). This setting can be overwritten on a field level - `{0}` will be replaced with the field caption. |
+| **Show validation summary** | Enable this option if you wish to display a summary of all the error messages on top of the Form. |
+| **Hide field validation labels** | Enable this option if you wish to hide individual field error messages from being displayed. |
+|**Mark fields** | You can choose to not mark any fields or only mark mandatory or optional fields. |
+| **Indicator** | Choose which indicator to use when a field has been marked as mandatory. The default indicator is `*` |
 
-    Enabling this feature allows the moderator to approve or deny a Form before its published. Most Forms contain publicly shown entries such as blog post comments or submissions for a social campaign and you can decide what's being published online with the help of this option.
+### Automcomplete
 
-    ![Form settings validation](images/FormSettingsModeration.png)
+The automcomplete setting for the overall form can be changed from the default of "None" to "On" or "Off". Setting this explicitly will control how the browser offers automatic prompts to the user when completing the form.
+
+![Form settings validation](images/FormSettingsAutcomplete.png)
+
+### Moderation
+
+Enabling this feature allows the moderator to approve or deny a Form before its published. Most Forms contain publicly shown entries such as blog post comments or submissions for a social campaign and you can decide what's being published online with the help of this option.
+
+![Form settings validation](images/FormSettingsModeration.png)
+
+### Fields displayed
+
+By default when form entries are shown in a list, a constant set of fields are displayed. You will see the first three fields in the form, plus some system information like the record state and the date it was created.
+
+To customize this, turn off the option to "Display default fields" and select the ones you wish to display.
+
+![Form settings validation](images/FieldsDisplayed.png)
+
+### Date retentions
+
+In order to help protect site visitor privacy, rules can be configured in this section for automatic deletion of submissions. You can set how long to retain records for each state (submitted or approved).
+
+Note that a background service that carries out the actual removal of records needs to be [enabled in configuration](../../developer/configuration/README.md#scheduledrecorddeletion). If that is not running, a notification will be displayed.
+
+![Form settings validation](images/FormSettingsDataRetention.png)
