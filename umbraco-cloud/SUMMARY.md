@@ -93,7 +93,7 @@
 * [Product Upgrades](upgrades/README.md)
 * [Major Upgrades](upgrades/major-upgrades.md)
 * [Minor Upgrades](upgrades/minor-upgrades.md)
-* [Version Specific Upgrades](upgrades/version-specific-upgrades/)
+* [Version Specific Upgrades](upgrades/version-specific-upgrades/README.md)
   * [Migrate from Umbraco 7 to Umbraco 8 on Umbraco Cloud](upgrades/version-specific-upgrades/migrate-from-umbraco-7-to-8.md)
 * [Migrate a Umbraco 8 project to Umbraco 10](product-upgrades/migrate-a-umbraco-8-project-to-umbraco-10.md)
 * [Upgrade your projects manually](upgrades/manual-upgrades/README.md)
