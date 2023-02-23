@@ -8,7 +8,7 @@ Umbraco Workflow 11.1.0 introduced a history cleanup feature similar to those al
 
 ## How it works
 
-The feature is disabled by default, but applying the default cleanup policy will:
+The feature is disabled by default, but applying the default history cleanup policy will:
 
 * Delete history older than 28 days. See the `KeepHistoryForDays` setting.
 * Only delete history where the workflow status is `Approved`, `Cancelled`, `CancelledByThirdParty` or `Errored`. See the `StatusesToDelete` setting.
@@ -19,7 +19,7 @@ The feature can be enabled in the `appSettings.json`:
 {
   "Umbraco": {
     "Workflow": {
-      "HistoryCleanup": {
+      "HistoryCleanupPolicy": {
         "EnableCleanup": true,
         // Below settings are optional
         "FirstRunTime": string; the time to first run the scheduled cleanup task, in crontab format
@@ -52,7 +52,7 @@ The below example will apply the following policies:
 {
   "Umbraco": {
     "Workflow": {
-      "HistoryCleanup": {
+      "HistoryCleanupPolicy": {
         "EnableCleanup": true,
         "KeepHistoryForDays": 90,
         "StatusesToDelete": {
@@ -96,7 +96,7 @@ If a value is ommitted from the node or document type policy, the global value w
 `StatusesToDelete` uses a dictionary built from the `WorkflowStatus` enum type. The default configuration is:
 
 ```json
-  "HistoryCleanup": { 
+  "HistoryCleanupPolicy": { 
     "StatusesToDelete": {
       "Approved": true,
       "Cancelled": true,
@@ -115,7 +115,8 @@ It is possible for a cleanup rule (or the global configuration) to declare a `St
 For example, adding `"Approved": false` will remove `Approved` from the deletable statuses, but all other default values will remain. Therefore, to delete approved workflows ONLY, the configuration would look like the below, where the default truthy values have been negated:
 
 ```json
-  "HistoryCleanup": { 
+  "HistoryCleanupPolicy": { 
+    "EnableCleanup": true,
     "StatusesToDelete": {
       "Approved": true,
       "Cancelled": false,
