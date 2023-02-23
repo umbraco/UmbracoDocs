@@ -209,5 +209,5 @@ And you are done! You are now able to upload a media item and create a new conte
 You can use a similar approach for discovering the format of more complex content when you want to create it through the Content Management API.
 
 {% hint style="info" %}
-If you want to create content with media programatically, you can try out the the [.NET Client Library for Umbraco Heartcore](https://github.com/umbraco/Umbraco.Headless.Client.Net). The client library also supports the use of the Management API.
+If you want to create content with media programmatically, you can try out the the [.NET Client Library for Umbraco Heartcore](https://github.com/umbraco/Umbraco.Headless.Client.Net). The client library also supports the use of the Management API.
 {% endhint %}
