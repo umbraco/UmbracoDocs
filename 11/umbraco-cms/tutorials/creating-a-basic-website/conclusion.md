@@ -6,7 +6,7 @@ This is not the limit of Umbraco - you've barely scratched the surface in this g
 
 * For Video Tutorials, see the [Umbraco Learning Base Youtube channel](https://www.youtube.com/c/UmbracoLearningBase).
 * For hands-on Training and Developer Certification, attend an official Umbraco Master Class course in a city near you. [Book your Online Course now](https://umbraco.com/products/training).
-* For Online Documentation, see [Our Umbraco Documentation website](./).
+* For Online Documentation, see [Our Umbraco Documentation website](https://docs.umbraco.com/welcome/).
 * For Help and Guidance on anything this guide doesn't cover, reach out to us at [Umbraco Forum](https://our.umbraco.com/forum).
 
 ## Happy Umbraco-ing
