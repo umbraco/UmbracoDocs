@@ -6,7 +6,7 @@ description: This article will provide detailed steps on how to migrate a Umbrac
 
 Taking your Umbraco CMS project from Umbraco 7 to 8 is called a migration as it requires that the data is migrated in the process. This article covers each step involved in this process.
 
-Read the [general article about Content migration](../../umbraco-cms/fundamentals/setup/upgrading/version-specific/migrate-content-to-umbraco-8.md#what-are-the-limitations) to learn more about limitations and other things related to migrating your Umbraco site from 7 to 8.
+Read the [general article about Content migration](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific/migrate-content-to-umbraco-8.md#what-are-the-limitations) to learn more about limitations and other things related to migrating your Umbraco site from 7 to 8.
 
 ## Video tutorial
 
@@ -18,7 +18,7 @@ You can find the full playlist here: [Migrate an Umbraco Cloud project from 7 to
 
 * A Umbraco 7 Cloud project running **the latest version of Umbraco 7**.
 * Make sure Umbraco Forms data is not handled as content.
-  * See [Umbraco Forms on Cloud](../deployment/umbraco-forms-on-cloud.md#how-forms-are-handled-on-umbraco-cloud) for more details on how to check the setting.
+  * See [Umbraco Forms on Cloud](../../deployment/umbraco-forms-on-cloud.md#how-forms-are-handled-on-umbraco-cloud) for more details on how to check the setting.
 * A clean Cloud project running the latest version of Umbraco 8 with **at least 2 environments**.
 
 {% hint style="info" %}
@@ -37,11 +37,11 @@ Should something fail during the migration, the Development environment can alwa
 6. Paste the file into `~/App_Data` on the clone of the Umbraco 8 project.
 7. Open `web.config` from the Umbraco 8 project.
 8. Locate the `Umbraco.Core.ConfigurationStatus` key.
-9. Replace the value `8.6` with the version your Umbraco 7 project is running - eg. `7.15.4`.
+9. Replace the value with the version your Umbraco 7 project is running.
 10. Run the Umbraco 8 project locally
 11. Authorize the migration - Cloud credentials are used for this.
 
-![Authorize upgrade](images/upgrade-to-8_1.png)
+![Authorize upgrade](../images/upgrade-to-8_1.png)
 
 12. Click **Continue** to start the migration.
 13. Log in to the backoffice and verify that everything is there once the migration is complete.
@@ -116,7 +116,7 @@ Umbraco 8 is different from Umbraco 7 in many ways. This means that in this step
 
 One of the changes made, is how published content is rendered through Template files. Due to this, it will be necessary to update **all** Template files (`.cshtml`) to reflect these changes.
 
-Read more about these changes in the [IPublishedContent section of the Documentation](../../umbraco-cms/reference/querying/ipublishedcontent/README.md).
+Read more about these changes in the [IPublishedContent section of the Documentation](https://docs.umbraco.com/umbraco-cms/reference/querying/ipublishedcontent).
 
 * Template files need to inherit from `Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.HomePage>` instead of `Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.HomePage>`.
 * Template files need to use `ContentModels = Umbraco.Web.PublishedModels` instead of `ContentModels = Umbraco.Web.PublishedContentModels`.
@@ -154,8 +154,8 @@ Once the migration is complete, and the Live environment is running without erro
 
 ## Related information
 
-* [Content Migration for Umbraco CMS - 7 to 8](../../umbraco-cms/fundamentals/setup/upgrading/version-specific/migrate-content-to-umbraco-8.md)
+* [Content Migration for Umbraco CMS - 7 to 8](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific/migrate-content-to-umbraco-8.md)
 * [Issue tracker for known issues with Content Migration](https://github.com/umbraco/UmbracoDocs/issues)
-* [Forms on Umbraco Cloud](../deployment/umbraco-forms-on-cloud.md)
-* [Working locally with Umbraco Cloud](../set-up/working-locally.md)
-* [KUDU on Umbraco Cloud](../set-up/power-tools/README.md)
+* [Forms on Umbraco Cloud](../../deployment/umbraco-forms-on-cloud.md)
+* [Working locally with Umbraco Cloud](../../set-up/working-locally.md)
+* [KUDU on Umbraco Cloud](../../set-up/power-tools/README.md)
