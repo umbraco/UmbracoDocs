@@ -26,6 +26,16 @@ The following lists a few things to be aware of before initiating an upgrade of 
 It is necessary to run the upgrade installer on each environment of your Umbraco site. This means that you need to repeat the steps below on each of your environments in order to complete the upgrade.
 {% endhint %}
 
+## Legacy Umbraco
+
+The steps outlined in this article applies to moderne Umbraco from version 10 and later versions.
+
+Are you upgrading to a minor for Umbraco 6, 7 or 8 you can find the appropriate guide below:
+
+{% content-ref url="version-specific/minor-upgrades-for-umbraco-8.md" %} version-specific/minor-upgrades-for-umbraco-8.md {% endcontent-ref %}
+
+{% content-ref url="version-specific/minor-upgrades-for-umbraco-7.md" %} version-specific/minor-upgrades-for-umbraco-7.md {% endcontent-ref %}
+
 ## Upgrade to a new Major
 
 You can upgrade to a new major of Umbraco CMS directly by using NuGet.
@@ -44,8 +54,6 @@ Use the table below to determine which .NET version to upgrade to when going thr
 | ----------- | ------------------- |
 | 11          | 7.0                 |
 | 10          | 6.0.5               |
-| 8           | .NET Framework 4.7.2|
-| 7           | .NET Framework 4.5+ |
 
 ### Upgrade your project using Visual Studio
 
@@ -79,7 +87,7 @@ If you are using SQL CE in your project you will need to run `dotnet add package
 
 When the command completes, open the **.csproj** file to make sure the package reference was updated:
 
-{% code title="" %}
+{% code title=".csproj" %}
 ```xml
 <ItemGroup>
   <PackageReference Include="Umbraco.Cms" Version="x.x.x" />

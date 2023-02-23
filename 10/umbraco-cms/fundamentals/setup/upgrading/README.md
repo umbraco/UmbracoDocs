@@ -28,7 +28,7 @@ It is necessary to run the upgrade installer on each environment of your Umbraco
 
 The steps outlined in this article applies to moderne Umbraco from version 10 and later versions.
 
-Are you upgrading to or from Umbraco 6, 7 or 8, find the approipriate guide below:
+Are you upgrading to a minor for Umbraco 6, 7 or 8 you can find the appropriate guide below:
 
 {% content-ref url="migrate-from-umbraco-7-to-8.md" %} migrate-from-umbraco-7-to-8.md {% endcontent-ref %}
 
@@ -50,8 +50,6 @@ Use the table below to determine which .NET version to upgrade to when going thr
 | ----------- | ------------------- |
 | 11          | 7.0                 |
 | 10          | 6.0.5               |
-| 8           | .NET Framework 4.7.2|
-| 7           | .NET Framework 4.5+ |
 
 ### Upgrade your project using Visual Studio
 
