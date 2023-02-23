@@ -864,7 +864,7 @@ It is not possible to upgrade an Umbraco 7 site to Umbraco 8 is because the code
 
 In Umbraco 8 we have added improvements and updated dependencies. We have also done a thorough clean-up to make it simpler for you to work with and extend your Umbraco project.
 
-## [Migrate your content to Umbraco 8](migrating-content-to-umbraco-8.md)
+## [Migrate your content to Umbraco 8](migrate-content-to-umbraco-8.md)
 
 </details>
 
@@ -1203,7 +1203,7 @@ Follow the **[upgrade guide for Umbraco 7](minor-upgrades-for-umbraco-7.md)** to
 
 <summary>6.latest to 7</summary>
 
-Read and follow [the full v7 upgrade guide](upgrading-to-v7.md)
+Read and follow [the full v7 upgrade guide](upgrade-to-v7.md)
 
 </details>
 
