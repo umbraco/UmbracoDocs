@@ -44,6 +44,7 @@ With the help of icons, you can identify different Document Types in the **Conte
 To create a Document Type at the root of the **Content Tree**:
 
 1. Go to the **Permissions** tab.
+
     ![Allow Document Type as root](images/figure-9a-allow-document-type-as-root-v8.png)
 2. Toggle the **Allow as root** button.
    * If your **Document Types** do not have the **Allow as root** checked, you will not be able to create any content on your site.
@@ -63,6 +64,7 @@ To add properties to your Document Type, follow these steps:
 
    ![Adding a property](images/figure-11-creating-our-pagetitle-property-v11.png)
 6. Select **Select Editor** and select the Data Type of your choice. We'll add _text_ in the search box and select the **Textstring** Data Type.
+
     ![Selecting a Data Type](images/figure-11a-selecting-textstring-data-type-v11.png)
 7. Click **Submit**.
    * Remember to come back and explore the list of _**Data Types**_ later.
@@ -83,6 +85,7 @@ To add properties to your Document Type, follow these steps:
     | Description | Copyright notice for the footer. |
     | Data Type   | Textstring                       |
 10. Your Document Type should now look like this:
+
     ![Home Page with Properties](images/figure-12-homepage-document-type-with-properties-v11.png)
 11. Click **Save**.
 
