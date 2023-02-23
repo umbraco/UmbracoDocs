@@ -194,10 +194,8 @@ The easiest way to proceed is to unzip the file you downloaded and copy and over
 
 You can upgrade to the latest version of Umbraco Forms through:
 
-- [Automatic Upgrade](#automatic-upgrade)
-- [Download](#download-1)
-- [Copy](#copy-1)
-- [Upgrade marker](#upgrade-marker)
+- [Automatic Upgrades](#automatic-upgrade), or
+- [Download and upgrade manually.](#download-and-upgrade-manually)
 
 ## Automatic Upgrade
 
@@ -221,17 +219,17 @@ Umbraco will now fetch and install the upgrade.
 
 Once it's completed the upgrade notification should be gone and you can continue using a newly updated Umbraco Forms.
 
-## Download
+## Download and upgrade manually
 
 In order to upgrade you will want to [download the version of Forms you wish to upgrade to](https://our.umbraco.com/projects/developer-tools/umbraco-forms/). Instead of downloading the actual package, however, you want to download the `UmbracoForms.Files.x.y.z.zip` file (where x.y.z) is the version.
 
 The filename ends with `.Files.x.y.z.zip` and contains only the files that get installed when you install Umbraco Forms.
 
-## Copy
+### Copy
 
 Unzip the file you downloaded and copy and overwrite (almost) everything into your website. Almost, because you might not want to overwrite `~/App_Plugins/UmbracoForms/UmbracoForms.config` because you might have updated it in the past. Make sure to compare your current version to the version in the zip file you downloaded. If there's any new configuration options in there then copy those into your website's `UmbracoForms.config` file.
 
-## Upgrade marker
+### Upgrade marker
 
 Finally, you'll need to tell Umbraco Forms to update itself when you start the website next. In order to do that you need to have a `formsupdate` file (an empty text file without extension) in `~/App_Data/TEMP/`. The easiest way to create this file is by going into the root folder of your website and start a command line there. You can then type the following command: `echo > /App_Data/TEMP/formsupdate`.
 
