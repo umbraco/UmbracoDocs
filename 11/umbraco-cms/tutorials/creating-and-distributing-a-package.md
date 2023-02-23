@@ -78,7 +78,7 @@ Other than these backoffice extensions you can also include any c# code you wish
 
 You may have noticed earlier when you created the package site that you added a `-d` option, that has already set up a starting point for creating a dashboard for you. You'll find it here in the PackageWorkshop class library:
 
-![PackageWorkshop class library](images/class-library.png)
+![PackageWorkshop class library](../../../10/umbraco-cms/tutorials/images/class-library.png)
 
 However, since these files are not included in the .Site project you can't see the dashboard yet. If you navigate back to the root folder of the PackageWorkshop you will find a gulpfile.js file. If you run the following commands via a CMD prompt you will get a message that it is watching the App Plugins folder.
 
@@ -90,11 +90,11 @@ gulp
 
 In your solution, you will see that you now have a copy of the App Plugins folder available. This may be hidden as it's not included in the project by default though.
 
-![Result of the gulp command](images/gulp-watch.png)
+![Result of the gulp command](../../../10/umbraco-cms/tutorials/images/gulp-watch.png)
 
 The cool thing here is that since it is a watch command, any small changes you may make will trigger a new copy so you can immediately test. Finally let's restart the site so we can see the dashboard in the Content section.
 
-![Custom dashboard](images/dashboard.png)
+![Custom dashboard](../../../10/umbraco-cms/tutorials/images/dashboard.png)
 
 ## Creating a package from the backoffice
 
@@ -106,13 +106,13 @@ First step is to go to the packages section in the backoffice, then click the `C
 
 Now fill out the name at the top, and then all the info in the Package Properties. An example could be:
 
-![Example package info](images/package-info.png)
+![Example package info](../../../10/umbraco-cms/tutorials/images/package-info.png)
 
 Next section is the Package Content - we are going to leave it empty for this package, but this is where you can include doc types, content nodes, etc. Very useful for starter kit packages that need to include some starter content.
 
 The next section is Package Files, here under "Path to file" we will find the package folder inside App\_Plugins and select it, additionally the \~/bin/PackageWorkshop.dll file (containing the controllers from the class library).
 
-![Example package files](images/package-files.png)
+![Example package files](../../../10/umbraco-cms/tutorials/images/package-files.png)
 
 We can also skip the Package Actions, which is a way to run some code when installing or uninstalling packages, you can read more [in the documentation](https://our.umbraco.com/documentation/Extending/Packages/Package-Actions/)!
 
@@ -122,7 +122,7 @@ Now click create in the bottom right, and after that you can download the zip pa
 
 If you peek into the zip file of the package we created you will see that all of the files you had are there. But they are not in folders anymore, they are all added in the root of the zip. There is also a new file called `package.xml`:
 
-![zip-files](images/zip-files.png)
+![zip-files](../../../10/umbraco-cms/tutorials/images/zip-files.png)
 
 The `package.xml` file is the one containing all package metadata, and the file references that ensures Umbraco knows where to place the files when installing a package.
 
@@ -222,7 +222,7 @@ To create a package on Our, you first need an account on there and the account n
 
 Once you log in you can go to your [package overview](https://our.umbraco.com/member/profile/packages/) which should look a bit like this:
 
-![Package overview](images/package-overview.png)
+![Package overview](../../../10/umbraco-cms/tutorials/images/package-overview.png)
 
 Click the "Add package" button and fill out all the information, upload the package and save at the end.
 
@@ -267,7 +267,7 @@ git push -u origin main
 
 Now you have it all on Github:
 
-![Github repo](images/github-repo.png)
+![Github repo](../../../10/umbraco-cms/tutorials/images/github-repo.png)
 
 ## Pack up your package locally using UmbPack
 
@@ -291,7 +291,7 @@ Any changes to Umbraco content and schema is a lot easier to do from the backoff
 
 If you have a look back in your solution you will notice there is an almost empty package.xml file in the root:
 
-![Package.xml file in root](images/packagexml.png)
+![Package.xml file in root](../../../10/umbraco-cms/tutorials/images/packagexml.png)
 
 If you open this package.xml file you will notice it has some default values in it, the only new part is under files:
 
@@ -371,7 +371,7 @@ You will see there are 2 necessary options, an API key and a path to the package
 
 In short - similar options to what you can set on the package upload section on Our when uploading a package manually:
 
-![Our package data](images/our-package-data.png)
+![Our package data](../../../10/umbraco-cms/tutorials/images/our-package-data.png)
 
 So before we can try this out, let's go to Our and create an API key.
 
@@ -435,7 +435,7 @@ It sets the version of the package to be what we've set in the release tag based
 
 Below this there is another step to push the package to Our, which again is like our approach locally - except now we add the API key as a Github secret so it's not public to everyone.
 
-![Github secret](images/gh-secret.png)
+![Github secret](../../../10/umbraco-cms/tutorials/images/gh-secret.png)
 
 ```yml
 - name: Push to Our

@@ -1,13 +1,14 @@
 ---
-description: "A guide to creating a Basic Website using Umbraco"
+description: A guide to creating a Basic Website using Umbraco
 ---
-# Creating a Basic Website using Umbraco
 
-_This tutorial was last tested on the latest version of **Umbraco 11**_
+# Creating a Basic Website
+
+_This tutorial was last tested on the latest version of **Umbraco 11.**_
 
 ## Introduction
 
-This tutorial will take you step-by-step through an Umbraco website build. It will allow you to take any website "template" (for example, flat HTML, CSS, and JavaScript) and install it into a fresh Umbraco site. You can then wire up the sections that need content managing by Umbraco.  
+This tutorial will take you step-by-step through an Umbraco website build. It will allow you to take any website "template" (for example, flat HTML, CSS, and JavaScript) and install it into a fresh Umbraco site. You can then wire up the sections that need content managing by Umbraco.
 
 We will avoid using any starter kits in this tutorial. Although these are useful, they won’t provide you with an understanding of the basics of Umbraco. We'll look at how to create Document Types and Templates and how these work together to build pages.
 
@@ -55,4 +56,4 @@ At this point we have a basic site, but wouldn't it be cool if we could make the
 
 ## [Conclusions](conclusion.md)
 
-By this point you'll have a basic working site - but where to next?  You've barely scratched the surface of the power of Umbraco - a few links to send you on your way!
+By this point you'll have a basic working site - but where to next? You've barely scratched the surface of the power of Umbraco - a few links to send you on your way!

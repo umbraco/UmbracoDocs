@@ -122,10 +122,10 @@ angular.module("umbraco")
 
 ## Creating custom Notification View and Controller
 
-We will add 2 files to the /App_Plugins/Suggestions/ folder:
+We will add 2 files to the /App\_Plugins/Suggestions/ folder:
 
-- `notification.html`
-- `notification.controller.js`
+* `notification.html`
+* `notification.controller.js`
 
 In the `notification.html`, we'll add:
 
@@ -162,7 +162,7 @@ angular.module('umbraco')
 
 Restart the application and either enter a suggestion longer than 35 characters or click on the `Get Suggestions` button. When you do so and click in the textarea, you will be presented with a notification like this:
 
-![Suggestion Notification](images/suggestion-notification.png)
+![Suggestion Notification](../../../../10/umbraco-cms/tutorials/creating-a-property-editor/images/suggestion-notification.png)
 
 The notification object contains the `args` object that we passed to the view in our `suggestion.controller.js`. When we click the `Yes` button in the notification, we use the callback function from the Suggestions controller which is executed in the scope of our Suggestions Property Editor.
 
@@ -170,10 +170,10 @@ The notification object contains the `args` object that we passed to the view in
 
 Over the 3 previous steps, we have:
 
-- Created a plugin.
-- Defined an editor.
-- Registered the Data Type in Umbraco.
-- Added a `$scope` object to pass information from the controller to the view.
-- Added configuration to the Property Editor.
-- Connected the editor with the Notification Service.
-- Looked at the notification dialog in action.
+* Created a plugin.
+* Defined an editor.
+* Registered the Data Type in Umbraco.
+* Added a `$scope` object to pass information from the controller to the view.
+* Added configuration to the Property Editor.
+* Connected the editor with the Notification Service.
+* Looked at the notification dialog in action.
