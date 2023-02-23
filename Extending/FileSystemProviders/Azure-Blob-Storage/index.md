@@ -4,9 +4,9 @@ versionFrom: 8.0.0
 
 # Setup Your Site to use Azure Blob Storage for Media and Image Processor Cache
 
-For Umbraco sites there are some scenarios when you may want, or need, to consider using Azure Blob Storage for your media.  Particularly if your site contains large amounts of media.  Having your site's media in Azure Blob Storage can also help your deployments complete more quickly and has the potential to positively affect site performance as the Image Processor cache is moved to Azure Blob Storage.  It also allows you to serve your media from the Azure CDN.
+For Umbraco sites there are some scenarios when you may want, or need, to consider using Azure Blob Storage for your media.  Particularly if your site contains large amounts of media.  Having your site's media in Azure Blob Storage can help your deployments complete more quickly. It also has the potential to positively affect site performance as the Image Processor cache is moved to Azure Blob Storage.  It also allows you to serve your media from the Azure Content Delivery Network (CDN).
 
-Setup consists of adding several packages to your site and setting the correct configuration.  Before you begin you’ll need to create an Azure Storage Account and a container for your media and your ImageProcessor cache as well.  In this example we assume your media container is "media" and your cache is "cache".  You can, optionally, enable an Azure CDN for this storage container and use it in the cache.config below.
+The setup consists of adding packages to your site and setting the correct configuration.  Before you begin you’ll need to create an Azure Storage Account and a container for your media and your ImageProcessor cache as well.  In this example we assume your media container is "media" and your cache is "cache".  You can, optionally, enable an Azure CDN for this storage container and use it in the cache.config below.
 
 ## Packages
 
@@ -41,13 +41,13 @@ The following six keys will have been added to the `<appSettings>` in your `web.
 </appSettings>
 ```
 
-Make sure to update this configuration to match your own setup.
+Make sure to update this configuration to match your own setup.  For example `AzureBlobFileSystem.UsePrivateContainer:media` needs to be set to `true` if your blob container is not publicly accessible - [see below](#using-private-blob-containers).
 
-When you're installing the package from the **Package** section of the Umbraco Backoffice, you'll be able to fill in the configuration directly from the backoffice:
+When you're installing the package from the **Package** section of the Umbraco Backoffice, you can add configuration from the backoffice:
 
 ![Setup from backoffice](images/config-from-backoffice.png)
 
-If you are using IISExpress (as with Visual Studio) you’ll need to add a static file handler mapping to `~web.config` - this should be added automatically, but you should check that it's there!
+If you are using IISExpress (as with Visual Studio) you’ll need to add a static file handler mapping to `~web.config`. This should be added automatically, but you should check that it's there.
 
 ```xml
 <?xml version="1.0"?>
@@ -125,7 +125,10 @@ You have to manually add `prefix="media/"` to the service element, otherwise Ima
 You have now successfully setup Azure Blob Storage with your Umbraco site.
 
 ### Application Setting Override
-After manually updating the security.config file, you can override the `Container` and `Host` values for your blob via an appsetting value.  Moving to application settings can be useful in some scenarios, for example allowing these values to be set in the Azure Portal applications settings rather than stored in the security.config file.    Be sure that your security.config has some value configured for the container, and the host value is a valid Uri or else the site wont load. 
+
+After manually updating the security.config file, you can override the `Container` and `Host` values for your blob via an appsetting value. Moving to application settings can be useful in some scenarios. For example, allowing these values to be set in the Azure Portal applications settings rather than stored in the security.config file.
+
+Be sure that your security.config has some value configured for the container, and the host value is a valid Uri. If those are not in place, the site will not be able to run.
 
 ```xml
 <appSettings>
@@ -140,8 +143,43 @@ Any media files you already have on your site will not automatically be added to
 
 Any new media files you upload to the site, will automatically be added to the Blob Storage.
 
+## Using Private Blob Containers
+
+If you don't want to use a publicly accessible container for media storage, you need to follow these additional steps:
+
+1. In your `Web.config`, `AzureBlobFileSystem.UsePrivateContainer:media` needs to be set to `true`: `<add key="AzureBlobFileSystem.UsePrivateContainer:media" value="true"/>`
+2. Install `ImageProcessor.Web.Plugins.AzureBlobCache` from NuGet, which contains the `AzureImageService` that is used in the following step.
+3. In your `~/config/imageprocessor/security.config`, you need to replace the existing section similar to
+
+```xml
+<service prefix="media/" name="CloudImageService" type="ImageProcessor.Web.Services.CloudImageService, ImageProcessor.Web">
+  <settings>
+    <setting key="Container" value="media"/>
+    <setting key="MaxBytes" value="8194304"/>
+    <setting key="Timeout" value="30000"/>
+    <setting key="Host" value="https://mygreatproject.blob.core.windows.net/"/>
+  </settings>
+</service>
+```
+
+with
+
+```xml
+<service prefix="media/" name="AzureImageService" type="ImageProcessor.Web.Plugins.AzureBlobCache.AzureImageService, ImageProcessor.Web.Plugins.AzureBlobCache">
+  <settings>
+    <setting key="Container" value="[your-container-name e.g. media]"/>
+    <setting key="StorageAccount" value="DefaultEndpointsProtocol=https;AccountName=[your-account-name];AccountKey=[your-account-key]EndpointSuffix=core.windows.net" />
+    <setting key="AccessType" value="Blob" />
+  </settings>
+</service>
+```
+
+If you fail to apply set `AzureBlobFileSystem.UsePrivateContainer:media` properly, you will see a lot of `ImageProcessingException`s when images are served. If you fail to configure the `AzureImageService`, ImageProcessor will not work and your images will be served but not cropped, resized, and similar.
+
+Depending on your project configuration, the installation of `ImageProcessor.Web.Plugins.AzureBlobCache` might modify your `~/config/imageprocessor/cache.config` file. If you don't want to use the package for caching, you might want to revert the changes.
+
 ## Using Azure Blob Cache
 
-In some cases, you might also want to use the Azure Blob Cache to cache your media files. One scenario for this could be a load balancing setup where you have a lot of media files. Using the Azure Blob Cache will make sure that your media files are still cached and can be used effectively as the generated images are stored to blobs and served via a CDN instead of local disk.
+In some cases, you might also want to use the Azure Blob Cache to cache your media files. One scenario for this could be a load balancing setup where you have a lot of media files. Using the Azure Blob Cache will make sure that your media files are still cached and can be used effectively. This is because the generated images are stored to blobs and served via a CDN instead of local disk.
 
 More information on can be found on the ImageProcessor website: [Azure Blob Cache](https://imageprocessor.org/imageprocessor-web/plugins/azure-blob-cache/).
