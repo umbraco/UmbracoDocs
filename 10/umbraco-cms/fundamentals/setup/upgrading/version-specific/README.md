@@ -372,6 +372,8 @@ If you're using ModelsBuilder in `AppData` mode and you have your generated mode
 
 Umbraco 8.1 replaces AutoMapper with [UmbracoMapper](../../../../reference/mapping.md). This in itself will not break anything on your site. If you have used AutoMapper in your own code you will have to either include the package yourself or switch your implementation to use UmbracoMapper.
 
+## Follow the **[upgrade guide for Umbraco 8](minor-upgrades-for-umbraco-8.md)** to complete the upgrade
+
 </details>
 
 <details>
@@ -401,6 +403,8 @@ For a full list of breaking changes see: [the list on the issue tracker](https:/
 Version 7.7.2 no longer ships with the `CookComputing.XmlRpcV2` assembly. If you reference this assembly or have a package that requires this assembly, you need to copy it back into your website.
 
 This version also ships with far less client files that were only relevant for older versions of Umbraco (i.e. < 7.0.0). There might be some packages that were referencing these old client files. If you seen missing image references you may need to contact the vendor of the package in question to update their references.
+
+Follow the **[upgrade guide for Umbraco 7](minor-upgrades-for-umbraco-7.md)** to complete the upgrade.
 
 </details>
 
@@ -465,6 +469,8 @@ This issue only affects:
 
 Have you already upgraded to 7.6.2 and fixed queries for those three Data Types you have to fix them again in version 7.6.3.
 
+Follow the **[upgrade guide for Umbraco 7](minor-upgrades-for-umbraco-7.md)** to complete the upgrade.
+
 </details>
 
 <details>
@@ -475,9 +481,9 @@ Find a list of all the breaking changes below and [a list of the items is also a
 
 The three most important things to note are:
 
-1. In web.config do not change `useLegacyEncoding` to `false` if it is currently set to `true` - changing the password encoding will cause you not being able to log in any more
-2. In umbracoSettings.config leave `EnablePropertyValueConverters` set to `false` - this will help your existing content queries to still work
-3. In tinyMceConfig.config make sure to remove `<plugin loadOnFrontend="true">umbracolink</plugin>` so that the rich text editor works as it should
+1. In web.config do not change `useLegacyEncoding` to `false` if it is currently set to `true` - changing the password encoding will cause you not being able to log in any more.
+2. In umbracoSettings.config leave `EnablePropertyValueConverters` set to `false` - this will help your existing content queries to still work.
+3. In tinyMceConfig.config make sure to remove `<plugin loadOnFrontend="true">umbracolink</plugin>` so that the rich text editor works as it should.
 
 ### Breaking Changes
 
@@ -598,11 +604,13 @@ and
 
 Umbraco Forms 6.0.0 has been released to be compatible with Umbraco 7.6. It is a new major version release of Forms primarily due to the strict dependency on 7.6+. If you are using Forms, you will need to update it to version 6.0.0
 
-There is **[important Forms upgrade documentation that you will need to read the here](../../../../../umbraco-forms/installation/version-specific.md#version-4-to-version-6)**.
+There is **[important Forms upgrade documentation that you will need to read the here](https://docs.umbraco.com/umbraco-forms/installation/version-specific.md#version-4-to-version-6)**.
 
 ### Courier
 
 Umbraco Courier 3.1.0 has been released to be compatible with Umbraco 7.6. If you are using Courier, you will need to update it to version 3.1.0.
+
+## Follow the [upgrade guide for Umbraco 7](minor-upgrades-for-umbraco-7.md) to complete the upgrade.
 
 </details>
 
@@ -616,6 +624,8 @@ For manual upgrades:
 * Do not forget to merge `~/Config/trees.config` and `~/Config/Dashboard.config` - they contain new and updated entries that are required to be there
   * If you forget `trees.config` you will either not be able to browse the Developer section or you will be logged out immediately when trying to go to the developer section
 * You may experience an error saying `Invalid object name 'umbracoUser'` - this can be fixed by [clearing your cookies on localhost](http://issues.umbraco.org/issue/U4-8031)
+
+Follow the **[upgrade guide for Umbraco 7](minor-upgrades-for-umbraco-7.md)** to complete the upgrade.
 
 </details>
 
@@ -646,6 +656,8 @@ Other considerations:
 * It is not required that you merge the changes for the Examine index paths in the ExamineIndex.config file. However, if you do, your indexes will be rebuilt on startup because Examine will detect that they don’t exist at the new location.
 * It's highly recommended to clear browser cache - the ClientDependency version is automatically bumped during install which should force browser cache to refresh, however in some edge cases this might not be enough.
 
+Follow the **[upgrade guide for Umbraco 7](minor-upgrades-for-umbraco-7.md)** to complete the upgrade.
+
 </details>
 
 <details>
@@ -654,6 +666,8 @@ Other considerations:
 
 * Copy in the `/Views/Partials/Grid` (contains Grid rendering views).
 
+Follow the **[upgrade guide for Umbraco 7](minor-upgrades-for-umbraco-7.md)** to complete the upgrade.
+
 </details>
 
 <details>
@@ -661,6 +675,8 @@ Other considerations:
 <summary>7.0.2 to 7.1.0</summary>
 
 * Remove the `/Install` folder.
+
+Follow the **[upgrade guide for Umbraco 7](minor-upgrades-for-umbraco-7.md)** to complete the upgrade.
 
 </details>
 
@@ -684,6 +700,8 @@ Other considerations:
 * The `usercontrol` value has changed to: `/create/user.ascx`. This is a required change otherwise creating a new user will not work.
 * There is a breaking change to be aware of, full details can be found [here](https://umbraco.com/blog/heads-up-breaking-change-coming-in-702-and-62/).
 
+Follow the **[upgrade guide for Umbraco 7](minor-upgrades-for-umbraco-7.md)** to complete the upgrade.
+
 </details>
 
 <details>
@@ -698,6 +716,8 @@ Other considerations:
   * `/config/AppSettings.config` and `/config/ConnectionString.config` can be removed after the contents have been moved back to `web.config`.
 * Delete all files in `~/App_Data/TEMP/Razor/`
   * Related to issues with razor macros
+
+Follow the **[upgrade guide for Umbraco 7](minor-upgrades-for-umbraco-7.md)** to complete the upgrade.
 
 </details>
 
