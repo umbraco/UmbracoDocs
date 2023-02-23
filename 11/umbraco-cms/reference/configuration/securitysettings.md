@@ -18,25 +18,7 @@ A full configuration with all default values can be seen here:
       "AuthCookieName": "UMB_UCONTEXT",
       "AuthCookieDomain": "",
       "AllowEditInvariantFromNonDefault": true,
-      "UsernameIsEmail": true,
-      "UserPassword": {
-        "RequiredLength": 10,
-        "RequireNonLetterOrDigit": false,
-        "RequireDigit": false,
-        "RequireLowercase": false,
-        "RequireUppercase": false,
-        "HashAlgorithmType": "PBKDF2.ASPNETCORE.V3",
-        "MaxFailedAccessAttemptsBeforeLockout": 5
-      },
-      "MemberPassword": {
-        "RequiredLength": 10,
-        "RequireNonLetterOrDigit": false,
-        "RequireDigit": false,
-        "RequireLowercase": false,
-        "RequireUppercase": false,
-        "HashAlgorithmType": "PBKDF2.ASPNETCORE.V3",
-        "MaxFailedAccessAttemptsBeforeLockout": 5
-      }
+      "UsernameIsEmail": true
     }
   }
 }
@@ -78,42 +60,3 @@ When set to `true` (default) the invariant properties will need to be unlocked b
 ### Username is email
 
 This setting specifies whether the username and email address are separate fields in the backoffice editor. When set to "false", you can specify an email address and username, only the username can be used to log on. When set to "true" (the default value) the username is hidden and always the same as the email address.
-
-## User password settings
-
-This section lets you define the password rules for users.
-
-### Required length
-
-Specifies the minimum length a user password is allowed to be.
-
-### Require non letter or digit
-
-Requires a users password to contain at least one character which is not a letter or a digit if enabled.
-
-### Require digit
-
-Requires a users password to contain at least one digit if enabled.
-
-### Require lowercase
-
-Requires a users password to contain at least on lowercase letter if enabled.
-
-### Max failed access attempts before lockout
-
-Specifies the max amount of failed password attempts is allowed before the user is locked out of the site.
-
-### Hash algorithm type
-
-Allows you to specify what hashing algorithm should be used to store the users password.
-
-Options are:
-
-* `"PBKDF2.ASPNETCORE.V3"`
-* `"PBKDF2.ASPNETCORE.V2"`
-* `"HMACSHA256"`
-* `"HMACSHA1"`
-
-## Member password settings
-
-This section allows you to define the password rules for members. This section is identical to the one for users.
