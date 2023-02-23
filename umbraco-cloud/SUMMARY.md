@@ -92,11 +92,13 @@
 * [Product Upgrades](upgrades/README.md)
 * [Major Upgrades](upgrades/major-upgrades.md)
 * [Minor Upgrades](upgrades/minor-upgrades.md)
+* [Version Specific Upgrades](upgrades/version-specific-upgrades/)
+  * [Migrate from Umbraco 7 to Umbraco 8 on Umbraco Cloud](upgrades/migrate-from-umbraco-7-to-8.md)
 * [Upgrade your projects manually](upgrades/manual-upgrades/README.md)
   * [Manual upgrade of Umbraco CMS](upgrades/manual-upgrades/manual-cms-upgrade.md)
   * [Manual upgrade of Umbraco Deploy](upgrades/manual-upgrades/manual-upgrade-deploy.md)
 * [Dependencies on Umbraco Cloud](upgrades/product-dependencies.md)
-* [Migrate from Umbraco 7 to Umbraco 8 on Umbraco Cloud](upgrades/migrate-from-umbraco-7-to-8.md)
+
 
 ## Troubleshooting
 
