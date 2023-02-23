@@ -20,11 +20,29 @@ In the **Information** section of the Organization, you can find information abo
 
 In the **Members** section, you can get an overview of the Members part of your Organization, see pending invites, and which Multi-Factor Authentication they have enabled. It is also possible to set up different permissions for your Members, such as Read, Write, and Administrators for your organization.
 
+### Multi-Factor-**Authentication (MFA) enforcement
+
+When working in organizations on Umbraco Cloud, as a company, you might want to enforce a certain type of MFA for members.
+
+It is possible for administrators of organizations on Umbraco Cloud to enforce MFA for members of their organization.
+
+If your company has a policy that requires members of your organization to use an autheticator app, this can then be enabled for specific users.
+
+To enforce a certain MFA for a user follow these steps:
+1. Go to the organizations tab under your user on Umbraco Cloud
+2. Under oorganizations go to the **Members** tab
+3. Under the **Members** tab go to **Multi-Factor Authentication**
+4. Find the user that needs to have have MFA enabled
+5. Enable the desired MFA for the user.
+
+Once it has been enabled next time the user logs in, they will be enforced to set up the MFA, that has been choosen.
+
+
 <figure><img src="../../../.gitbook/assets/members.png" alt=""><figcaption></figcaption></figure>
 
 ### Projects
 
-In the **Projects** section, you can get an overview of all the Projects that have been created in your Organization. It is also possible to see which User from your Organization has created the Project and edit the team members for different projects if you are a super-admin in the Organization.
+In the **Projects** section, you can get an overview of all the Projects that have been created in your Organization.
 
 ![Project overview](images/Projects-v10.png)
 
