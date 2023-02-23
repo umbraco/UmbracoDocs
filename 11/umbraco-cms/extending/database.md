@@ -14,7 +14,7 @@ The end result looks like this:
 
 The following code sample shows how this is done using a composer and component.
 
-When migrating from verison 8 there are a few changes to be aware of. The first change is that namespace updates are dependencies that need to be passed to the `Upgrader.Execute()` method. Another is a change to the access modifier of the `Migrate()` method.
+When migrating from version 8 there are a few changes to be aware of. The first change is that namespace updates are dependencies that need to be passed to the `Upgrader.Execute()` method. Another is a change to the access modifier of the `Migrate()` method.
 
 ```csharp
 using Microsoft.Extensions.Logging;
@@ -135,7 +135,7 @@ If building a new solution, you can adopt a new pattern. With this pattern you c
 
 The code for this approach is as follows:
 
-```
+```csharp
 using Microsoft.Extensions.Logging;
 using NPoco;
 using Umbraco.Cms.Core;
@@ -201,7 +201,7 @@ namespace MyNamespace
 
 The notification handler can either be registered in a composer:
 
-```
+```csharp
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Notifications;
@@ -220,7 +220,7 @@ namespace TableMigrationTest
 
 Or in an extension method called from `StartUp.cs` as is preferred:
 
-```
+```csharp
 using System.Linq;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Notifications;
@@ -238,7 +238,7 @@ namespace MyNamespace
 }
 ```
 
-```
+```csharp
 using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -306,7 +306,7 @@ The following example creates an `UmbracoApiController` to be able to fetch and 
 This example does not use the aforementioned `BlogCommentSchema` class but rather a separate (yet duplicate) class that is not part of the example. Also, be aware that things like error handling and data validation have been omitted for brevity.
 {% endhint %}
 
-```
+```csharp
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using Umbraco.Cms.Infrastructure.Scoping;

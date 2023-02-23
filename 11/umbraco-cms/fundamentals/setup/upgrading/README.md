@@ -1,5 +1,5 @@
 ---
-description: "This is the guide for upgrading existing installations in general."
+description: This is the guide for upgrading existing installations in general.
 ---
 
 # Upgrade your project
@@ -58,7 +58,7 @@ It's recommended that you upgrade the site offline and test the upgrade fully be
 7. Choose **Umbraco.Cms**.
 8. Select the correct version from the **Version** drop-down.
 9. Click **Install** to upgrade your project.
-10. Consult the [version specific upgrade notes for Umbraco Forms](../../../../umbraco-forms/installation/version-specific.md) if relevant.
+10. Consult the [version specific upgrade notes for Umbraco Forms](https://docs.umbraco.com/umbraco-forms/installation/version-specific) if relevant.
 11. Restart your site in IIS, build, and run your project to finish the installation.
 
 ## Upgrade to a new Minor

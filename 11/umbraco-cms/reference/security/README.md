@@ -1,5 +1,7 @@
 ---
-description: "This section includes information on Umbraco security, its various security options and configuring how authentication & authorization works in Umbraco"
+description: >-
+  This section includes information on Umbraco security, its various security
+  options and configuring how authentication & authorization works in Umbraco
 ---
 
 # Security
@@ -24,7 +26,7 @@ Learn which password settings that can be configured in Umbraco.
 
 Learn about how to harden the security on your Umbraco website to secure it even further.
 
-## [Security on Umbraco Cloud](../../../umbraco-cloud/frequently-asked-questions.md#security-and-encryption)
+## [Security on Umbraco Cloud](https://docs.umbraco.com/umbraco-cloud/security)
 
 When your project is hosted on Umbraco Cloud, you might be interested in more details about the security of the hosting. This information can be found in the Umbraco Cloud FAQs section of the documentation.
 
@@ -36,13 +38,11 @@ Out of the box Umbraco ships with a custom ASP.NET Core Identity implementation 
 
 ### [External login providers](external-login-providers.md)
 
-The Umbraco users and members supports external login providers (OAuth) for performing authentication of your users/members.
-This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook.
+The Umbraco users and members supports external login providers (OAuth) for performing authentication of your users/members. This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook.
 
 ### [Two-factor authentication](two-factor-authentication.md)
 
-The Umbraco members supports a two-factor authentication (2FA) abstraction for implementing a 2FA provider of your choice.
-This could be any Time-based One-time Password (TOTP) Algorithm, including Microsoft and Google Authenticator Apps
+The Umbraco members supports a two-factor authentication (2FA) abstraction for implementing a 2FA provider of your choice. This could be any Time-based One-time Password (TOTP) Algorithm, including Microsoft and Google Authenticator Apps
 
 ### [BackOfficeUserManager and Notifications](backofficeusermanager-and-notifications.md)
 

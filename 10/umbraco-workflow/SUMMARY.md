@@ -1,21 +1,24 @@
 # Table of contents
 
-* [What is Umbraco Workflow?](README.md)
+* [Umbraco Workflow Documentation](README.md)
 * [Installation](installing-workflow.md)
 * [Licensing](licensing.md)
-* [Dashboards and Buttons](dashboards-and-buttons.md)
-* [Content App](workflow-content-app.md)
-* [Notifications](notifications.md)
-* [Configuration](configuration.md)
+
+## Getting Started
+
+* [Dashboards and Buttons](getting-started/dashboards-and-buttons.md)
+* [Content App](getting-started/workflow-content-app.md)
+* [Notifications](getting-started/notifications.md)
+* [Configuration](getting-started/configuration.md)
 
 ## Upgrading Workflow
 
-* [Upgrading](upgrading-workflow/README.md)
+* [Upgrading](upgrading-workflow/upgrading.md)
   * [Migrate from Plumber to Workflow](upgrading-workflow/migrating-workflow.md)
 
 ## Workflow Section
 
-* [Workflow Section](workflow-section/README.md)
+* [Workflow Section](workflow-section/workflow-section-dashboard.md)
 * [Active Workflows](workflow-section/active-workflows.md)
 * [Approval Groups](workflow-section/approval-groups.md)
 * [Content Reviews](workflow-section/content-reviews.md)

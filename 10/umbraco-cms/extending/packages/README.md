@@ -34,12 +34,11 @@ A package that can be categorised as a Schema Extension will extend the default 
 
 #### Management Extensions
 
-A Management Extension package helps you manage your site, and provides information to the users. Management extensions can be made of many different parts, but often they include custom sections or dashboards for you to manage something.
-A good example of a management extension package is [Diplo God Mode](https://our.umbraco.com/packages/developer-tools/diplo-god-mode/) which gives you a lot of extra info and tools to manage your site.
+A Management Extension package helps you manage your site, and provides information to the users. Management extensions typically contain custom sections or dashboards to facilitate site management. [Diplo God Mode](https://our.umbraco.com/packages/developer-tools/diplo-god-mode/) is an example of a comprehensive management extension package with additional tools and information.
 
 #### Starter Kits
 
-Starter kits are, as the name suggests, a package that helps you set up a starter version of whatever you want to build. Most starter kit packages are for starting a website, and include schema like Document Types and Templates as well as content nodes and media. There are also some quite specialised starter kits, for example for creating a blog. Umbraco HQ has released their [own starter kit](https://our.umbraco.com/packages/starter-kits/the-starter-kit/), that creates a small site with the most commonly used features.
+Starter kits are, as the name suggests, a package that helps you set up a starter version of whatever you want to build. Most starter kit packages are for starting a website, and include schema like Document Types and Templates as well as content nodes and media. There are also some specialized starter kits, for example for creating a blog. Umbraco HQ has released their [own starter kit](https://our.umbraco.com/packages/starter-kits/the-starter-kit/), that creates a small site with the most commonly used features.
 
 #### Content Apps
 

@@ -4,7 +4,7 @@ Umbraco Workflow is a licensed product that does not require a purchase. New ins
 
 ## Purchasing an Umbraco Workflow License
 
-If you want to buy an Umbraco Workflow license, reach out to the sales team at [**suits@umbraco.com**](mailto:suits@umbraco.com). Existing Plumber license holders who wish to update to Umbraco Workflow should contact [**suits@umbraco.com**](mailto:suits@umbraco.com).
+If you want to buy an Umbraco Workflow license, reach out to the sales team at [**suits@umbraco.com**](mailto:suits@umbraco.com). Existing Plumber license holders who wish to upgrade to Umbraco Workflow should contact [**suits@umbraco.com**](mailto:suits@umbraco.com).
 
 To add the license to your site, follow these steps:
 

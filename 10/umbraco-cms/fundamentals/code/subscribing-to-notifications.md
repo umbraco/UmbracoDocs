@@ -1,9 +1,11 @@
 ---
-meta.title: "Subscribing to notifications"
-description: "Subscribing to notifications allows you to execute custom code on a number of operations both before and after the operation occurs"
+meta.title: Subscribing to notifications
+description: >-
+  Subscribing to notifications allows you to execute custom code on a number of
+  operations both before and after the operation occurs
 ---
 
-# Subscribing to notifications
+# Subscribing To Notifications
 
 Subscribing to notifications allows you to execute custom code on a number of operations both before and after the operation occurs. All you need to follow this guide is an Umbraco installation with some content, e.g. the Umbraco starter kit.
 
@@ -11,7 +13,7 @@ Subscribing to notifications allows you to execute custom code on a number of op
 
 Let's add a string of text to the log when a document is published. (The log is useful for debugging, different parts of the Umbraco codebase 'log' key events, warnings and errors to the log)
 
-We react to notifications in Umbraco inside a notification handler, so let's create one. Add a new C# class to our project - call it *LogWhenPublishedHandler* and use `: INotificationHandler<ContentPublishedNotification>` to identify our code as a handler, that will handle `ContentPublishedNotification`. We'll need to add `using Umbraco.Cms.Core.Events;` to the top of the .cs file and because the notifications that you can subscribe to in Umbraco are found in the core notifications namespace, we also need to add a using statement for that: `using Umbraco.Cms.Core.Notifications;`.
+We react to notifications in Umbraco inside a notification handler, so let's create one. Add a new C# class to our project - call it _LogWhenPublishedHandler_ and use `: INotificationHandler<ContentPublishedNotification>` to identify our code as a handler, that will handle `ContentPublishedNotification`. We'll need to add `using Umbraco.Cms.Core.Events;` to the top of the .cs file and because the notifications that you can subscribe to in Umbraco are found in the core notifications namespace, we also need to add a using statement for that: `using Umbraco.Cms.Core.Notifications;`.
 
 We now have a class that looks like this:
 
@@ -152,11 +154,11 @@ namespace MyProject
 
 Now we're ready to spin up our site and give it a try. Go to the Umbraco backoffice and publish a piece of content. Switch to the Settings section and find the Log Viewer in the Settings tree:
 
-![Log Viewer](images/log-viewer.png)
+![Log Viewer](../../../../11/umbraco-cms/fundamentals/code/images/log-viewer.png)
 
 Search 'All Logs', and if all is wired up correctly you should discover your custom publish log message entries:
 
-![Messages in Log](images/log-messages.png)
+![Messages in Log](../../../../11/umbraco-cms/fundamentals/code/images/log-messages.png)
 
 ### Before and after
 
@@ -164,4 +166,4 @@ As you can see our custom code has been executed when we published a piece of co
 
 ### More information
 
-- [Notifications Reference](../../reference/notifications/README.md)
+* [Notifications Reference](../../reference/notifications/)

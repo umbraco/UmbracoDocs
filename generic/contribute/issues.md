@@ -1,4 +1,8 @@
-# Submit feedback
+---
+description: Learn how to provide feedback on the Umbraco Documentation.
+---
+
+# Submit Feedback
 
 There are a couple of different ways to submit feedback on the documentation, be it the entire platform or a single article. This article will give you the overview of the different feedback channels and how to use them.
 
@@ -8,9 +12,7 @@ At the bottom of each article in our documentation you have an option to rate th
 
 ![Highlight the feedback option that lets you rate the content served in the article](images/rate-article.png)
 
-<!-- vale off -->
 You can rate the content from poor, OK to excellent.
-<!-- vale on -->
 
 {% hint style="success" %}
 Page-rating is used when determining which articles needs to be reviewed by the documentation team at Umbraco HQ.
@@ -24,10 +26,10 @@ The [Issue Tracker](https://github.com/umbraco/UmbracoDocs/issues) is a way to k
 
 Here are a few examples of what the Issue Tracker can be used for:
 
-- You were looking for a specific piece of information, but couldn't find it.
-- You found a broken link on one of the articles.
-- You found an article with wrong or outdated information and you do not have the time or knowledge to rewrite it.
-- You want to discuss possible improvements or ways to deal with a specific thing in the documentation.
+* You were looking for a specific piece of information, but couldn't find it.
+* You found a broken link on one of the articles.
+* You found an article with wrong or outdated information and you do not have the time or knowledge to rewrite it.
+* You want to discuss possible improvements or ways to deal with a specific thing in the documentation.
 
 ### Creating an Issue
 

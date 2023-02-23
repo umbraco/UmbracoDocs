@@ -50,7 +50,7 @@ Manage CDN Cache settings for your project. You can modify default settings, whi
 
 If you have your own custom certificate, you can upload and bind it to your custom hostnames. This can be done instead of using the TLS: Transport Layer Security (HTTPS) certificates provided by the Umbraco Cloud service.
 
-## Public access
+## [Public access](public-access.md)
 
 {% hint style="info" %}
 Public access is by default available for projects created after the 10th of January 2023.
@@ -61,10 +61,6 @@ The [Umbraco.Cloud.Cms.PublicAccess](https://www.nuget.org/packages/Umbraco.Clou
 You can deny access to your project with the Public access setting.
 
 Users who are not part of the project or whose IP has not been allowed will not be able to access the project.
-
-On the Public access page, it is possible to allow certain IPs access to the project.
-
-All environments on Umbraco Cloud projects can be protected by Public access. It requires you to enter your Cloud credentials in order to view the frontend.
 
 You can disable/enable it with one click on the Public access page.
 
@@ -82,7 +78,9 @@ You can upgrade your project to a **Standard** or a **Professional** plan, from 
 
 ### Renaming the Cloud Project
 
-You can rename your Umbraco Cloud project from the **Settings** menu. ![settings](../images/renaming-project-v10.png)
+You can rename your Umbraco Cloud project from the **Settings** menu. 
+
+s![settings](../images/renaming-project-v10.png)
 
 {% hint style="info" %}
 If you are working locally, you need to update the origin of your local git repository to point to the new clone URL. Alternatively, you can make a fresh local clone of the project, once you’ve changed your project name.
@@ -96,7 +94,7 @@ You can rename your project from the **Rename Project** section in the **Setting
 
 Manage **Advanced** settings for your project from the **Settings** menu:
 
-* [Enable static outbound IP addresses](../external-Services.md) for projects on a **Standard**, **Professional**, or **Enterprise** plan.
+* [Enable static outbound IP addresses](external-services.md#enabling-static-outbound-ip-addresses) for projects on a **Standard**, **Professional**, or **Enterprise** plan.
 * Enable IIS logging for each of your environments. The log files can be accessed through kudu in `C:\home\LogFiles\http`. There is a rolling size limit on the log files of 100 MB. Once the limit is reached, the oldest log files will be overwritten by new ones.
 * [Enable loading of a client certificate from the file system](application-settings.md#enable-client-certificate-loaded-from-file-system-explained).
 * Change .NET framework runtime for your Umbraco installation for each environment of your cloud project.

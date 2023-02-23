@@ -10,5 +10,15 @@ redirects:
     set-up/manage-cdn-caching: set-up/project-settings/manage-cdn-caching.md
     set-up/external-services: set-up/project-settings/external-services.md
     set-up/dedicated-resources: set-up/project-settings/dedicated-resources.md
-    upgrades/migrating-from-8-10: upgrades/major-upgrades.md
     upgrades/migrate-from-umbraco-10-to-11: upgrades/major-upgrades.md
+    release-notes/2022-01-06-releasenotes: release-notes/overview-2022/2022-01-06-releasenotes.md
+    release-notes/2022-02-15-releasenotes: release-notes/overview-2022/2022-02-15-releasenotes.md
+    release-notes/2022-03-02-releasenotes: release-notes/overview-2022/2022-03-02-releasenotes.md
+    release-notes/2022-04-25-releasenotes: release-notes/overview-2022/2022-04-25-releasenotes.md
+    release-notes/2022-05-23-releasenotes: release-notes/overview-2022/2022-05-23-releasenotes.md
+    release-notes/2022-06-23-releasenotes: release-notes/overview-2022/2022-06-23-releasenotes.md
+    release-notes/2022-08-19-releasenotes: release-notes/overview-2022/2022-08-19-releasenotes.md
+    release-notes/2022-09-19-releasenotes: release-notes/overview-2022/2022-09-19-releasenotes.md
+    release-notes/2022-11-07-releasenotes: release-notes/overview-2022/2022-01-06-releasenotes.md
+    release-notes/2022-12-20-releasenotes: release-notes/overview-2022/2022-12-20-releasenotes.md
+    

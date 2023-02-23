@@ -135,7 +135,7 @@ This setting has been superseeded by `DistributedLockingWriteLockDefaultTimeout`
 
 ## Find you upgrade path
 
-Are you looking to upgrade an Umbraco Cloud project from 9 to 10? Follow the guide made for [Upgrading your project from Umbraco 9 to 10](../../../../../umbraco-cloud/upgrades/major-upgrades.md) instead, as it requires a few steps specific to Umbraco Cloud.
+Are you looking to upgrade an Umbraco Cloud project from 9 to 10? Follow the guide made for [Upgrading your project from Umbraco 9 to 10](https://docs.umbraco.com/umbraco-cloud/product-upgrades/major-upgrades) instead, as it requires a few steps specific to Umbraco Cloud.
 
 <details>
 
@@ -208,7 +208,7 @@ public class Program
     * `/umbraco/UmbracoWebsite`
     * `/umbraco/config/lang`
     * `/umbraco/config/appsettings-schema.json`
-11. If using Umbraco Forms, update your files and folders according to the [Upgrading - version specific](../../../../../umbraco-forms/installation/version-specific.md) for version 10 article.
+11. If using Umbraco Forms, update your files and folders according to the [Upgrading - version specific](https://docs.umbraco.com/umbraco-forms/installation/version-specific) for version 10 article.
 12. Restart your site in IIS, build and run your project to finish the installation of Umbraco 10.
 
 To re-enable the appsettings IntelliSense, you must update your schema reference in the `appsettings.json` file and any other `appsettings.{Environment}.json` files from:

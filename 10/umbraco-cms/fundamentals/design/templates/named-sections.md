@@ -1,6 +1,6 @@
 ---
-meta.Title: "Named Sections in Umbraco"
-description: "Using named sections in Umbraco"
+meta.Title: Named Sections in Umbraco
+description: Using named sections in Umbraco
 ---
 
 # Named Sections
@@ -30,10 +30,10 @@ For example, you can define the following section within a child template like a
 To define a Named Section, follow these steps:
 
 1. Go to **Settings**.
-2.  Navigate to a template and click **Sections**.&#x20;
+2.  Navigate to a template and click **Sections**.
 
-    <figure><img src="images/Sections-option.png" alt=""><figcaption></figcaption></figure>
-3. Select **Define a named section** and enter the **Section Name**. ![Define Named Sections Menu](images/Define-named-section.png)
+    <figure><img src="../../../../../11/umbraco-cms/fundamentals/design/templates/images/Sections-option.png" alt=""><figcaption></figcaption></figure>
+3. Select **Define a named section** and enter the **Section Name**. ![Define Named Sections Menu](../../../../../11/umbraco-cms/fundamentals/design/templates/images/Define-named-section.png)
 4. Click **Submit**.
 
 ## Render a Name Section
@@ -49,9 +49,9 @@ For example, you can define the following section within a Master template:
 To render a Named Section, follow these steps:
 
 1. Go to **Settings**.
-2.  Navigate to a template and click **Sections**.&#x20;
+2.  Navigate to a template and click **Sections**.
 
-    <figure><img src="images/Sections-option.png" alt=""><figcaption></figcaption></figure>
-3. Select **Render a named section** and enter the **Section Name**. ![Render Named Sections Menu](images/Render-named-sections.png)
+    <figure><img src="../../../../../11/umbraco-cms/fundamentals/design/templates/images/Sections-option.png" alt=""><figcaption></figcaption></figure>
+3. Select **Render a named section** and enter the **Section Name**. ![Render Named Sections Menu](../../../../../11/umbraco-cms/fundamentals/design/templates/images/Render-named-sections.png)
 4. \[Optional] Select **Section is mandatory**. This means that the child templates need to have the named section defined for them to work.
 5. Click **Submit**.

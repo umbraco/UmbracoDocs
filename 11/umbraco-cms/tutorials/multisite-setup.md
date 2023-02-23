@@ -1,13 +1,13 @@
 ---
-description: "A guide to multisite setup in Umbraco"
+description: A guide to multisite setup in Umbraco
 ---
 
 # Multisite Setup
 
-This tutorial explains how to host multiple sites from one project/installation of Umbraco. For practical reasons, we recommend using [Baselines](../../umbraco-cloud/getting-started/baselines/) on Umbraco Cloud projects.
+This tutorial explains how to host multiple sites from one project/installation of Umbraco. For practical reasons, we recommend using [Baselines](https://docs.umbraco.com/umbraco-cloud/getting-started/baselines) on Umbraco Cloud projects.
 
 {% hint style="info" %}
-When using Baselines on Umbraco Cloud for a multisite solution, you would not need to worry about [Usage](../../umbraco-cloud/set-up/project-settings/usage.md) limits, and could see better performance compared to having multiple websites in one project.
+When using Baselines on Umbraco Cloud for a multisite solution, you would not need to worry about [Usage](https://docs.umbraco.com/umbraco-cloud/setup/project-settings/usage) limits, and could see better performance compared to having multiple websites in one project.
 {% endhint %}
 
 If you are planning to create a multilingual site, please take a look at the [Multilanguage Setup](multilanguage-setup.md) tutorial instead.
@@ -26,11 +26,11 @@ Before you can map your hostnames to individual websites in the solution, you sh
 
 ![Adding hostnames to the project](images/1-addinghostnames.png)
 
-Keep in mind the [hostnames have to be configured in a specific way.](../../umbraco-cloud/set-up/project-settings/manage-hostnames/).
+Keep in mind the [hostnames have to be configured in a specific way.](https://docs.umbraco.com/umbraco-cloud/setup/project-settings/manage-hostnames)
 
 ## Mapping the hostnames to individual websites/root nodes
 
-At this point you should have several root nodes, where each is a separate website. To map the hostnames to individual root nodes:
+At this point, you should have several root nodes, where each is a separate website. To map the hostnames to individual root nodes:
 
 1. Go to the **Content** section in the backoffice of your site.
 2. Right-click on the content node you wish to assign the hostname to.
@@ -38,7 +38,7 @@ At this point you should have several root nodes, where each is a separate websi
 
     ![Culture and hostnames](images/2-culturehostnames-v10.png)
 4. In the **Domains** pane, click **Add new Domain**.
-5. Enter the domain in the **Domain** field and select the language from the **Language** drop-down list. If  you have a multilanguage solution, you can map different hostnames to specific languages.
+5. Enter the domain in the **Domain** field and select the language from the **Language** drop-down list. If you have a multilanguage solution, you can map different hostnames to specific languages.
 
 <figure><img src="images/3-culturehostnamesp2-v10.png" alt=""><figcaption></figcaption></figure>
 
@@ -56,4 +56,4 @@ While such a setup might be handy, it also comes with drawbacks. It is important
 * Could interfere with editors' workflows, especially if there are multiple people working on both websites at once. That is because the solution will still use one database for both websites.
 * Limit your options in regards to developing new features and making schema changes.
 
-On Umbraco Cloud-hosted sites we recommend using the [Baseline](../../umbraco-cloud/getting-started/baselines/) functionality - which comes with added benefits, and offers increased stability compared to the multisite solution in a single project.
+On Umbraco Cloud-hosted sites we recommend using the [Baseline](https://docs.umbraco.com/umbraco-cloud/getting-started/baselines) functionality - which comes with added benefits, and offers increased stability compared to the multisite solution in a single project.

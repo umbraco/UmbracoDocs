@@ -48,7 +48,7 @@ Copy this URL and have it ready for later. You will need it when you set up your
 
 Now it’s time to login to the Umbraco backoffice so you can create your form. If you already have a form you want to connect you can skip to the next step.
 
-To create a form you can follow this tutorial with step-by-step instructions: [Creating a form in Umbraco Forms](../../umbraco-forms/editor/creating-a-form/).
+To create a form you can follow this tutorial with step-by-step instructions: [Creating a form in Umbraco Forms](https://docs.umbraco.com/umbraco-forms/editor/creating-a-form).
 
 Once you have created your form you are ready to set up the workflow.
 
@@ -74,7 +74,7 @@ Now your workflow is ready. Submit your changes and save your form.
 
 Now your form is ready to send data to Zapier and any entry submitted will be posted to the Zapier webhook URL.
 
-To set up field mapping and actions in Zapier your form needs an entry. If this is a new form, add it to a page and submit an entry ([guide to adding your form to a page](../../umbraco-forms/editor/creating-a-form/#adding-the-form-to-the-umbraco-site)).
+To set up field mapping and actions in Zapier your form needs an entry. If this is a new form, add it to a page and submit an entry ([guide to adding your form to a page](https://docs.umbraco.com/umbraco-forms/editor/creating-a-form)).
 
 Here is the form and the fields that were submitted for this tutorial.
 

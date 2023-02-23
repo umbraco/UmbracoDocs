@@ -14,7 +14,7 @@ If migrating to Umbraco 9 from Umbraco 8, you'll be able to use a similar method
 
 The end result looks like this:
 
-![Database result of a migration](images/db-table.png)
+![Database result of a migration](../../../11/umbraco-cms/extending/images/db-table.png)
 
 ## Using a Composer and Component
 
@@ -532,3 +532,4 @@ namespace MyNamespace
         }
     }
 }
+```
