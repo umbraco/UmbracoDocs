@@ -47,7 +47,7 @@ When you're installing the package from the **Package** section of the Umbraco B
 
 ![Setup from backoffice](images/config-from-backoffice.png)
 
-If you are using IISExpress (as with Visual Studio) you’ll need to add a static file handler mapping to `~web.config` - this should be added automatically, but you should check that it's there.
+If you are using IISExpress (as with Visual Studio) you’ll need to add a static file handler mapping to `~web.config`. This should be added automatically, but you should check that it's there.
 
 ```xml
 <?xml version="1.0"?>
