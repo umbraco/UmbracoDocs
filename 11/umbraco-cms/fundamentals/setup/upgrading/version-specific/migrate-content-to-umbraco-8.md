@@ -10,12 +10,6 @@ A content migration tool has been implemented in Umbraco 8.1.0, to help you with
 
 In this guide you can read more about the tool, its limitations, and how to use it in practice.
 
-{% hint style="info"%}
-## Migrating Umbraco Cloud sites
-
-Follow the [steps outlined in the Umbraco Cloud documentation](../../../../../umbraco-cloud/upgrades/migrate-from-umbraco-7-to-8.md) to upgrade your Umbraco 7 site on Cloud.
-{% endhint %}
-
 ## What are the limitations?
 
 In the following section, you can learn more about the limitations on migrating content from Umbraco 7 to Umbraco 8.
@@ -116,11 +110,15 @@ It is highly recommended to clean up your site before running this as it will be
 * Empty Media recycle bin
 * Clean up the database version history (can be done with a script or a package like [Unversion](https://our.umbraco.com/packages/website-utilities/unversion/))
 
-## How it works
+## The migration
 
 In the following guide we will migrate the content of an Umbraco 7.13.1 site to Umbraco 8.1.0.
 
-### Step 1: Upgrading to 7.14+
+{% hint style="info"%}
+This guide can also be used for migrating to Umbraco 8.5.
+{% endhint %}
+
+### Step 1: Upgrade to the latest Umbraco 7 version
 
 Before the content migration can start the site has to run Umbraco 7.14+. Make sure to **always take a backup of the database** before doing an upgrade, and then check the [version specific upgrade instructions](README.md).
 
@@ -154,7 +152,8 @@ Once it is upgraded and you have verified everything is working, move on to the 
 
 ### Step 2: Migrating content to Umbraco 8
 
-The first thing to do is to spin up a fresh new Umbraco 8.1+ site. Make sure everything works and that no content is there.
+1. Spin up a fresh new Umbraco 8.1+ site.
+2. Make sure everything works and that no content is there.
 
 ![Fresh 8.1 site](images/fresh-8_1-site.png)
 
@@ -164,9 +163,11 @@ If you have customized the `UsersMembershipProvider` on your Umbraco 7 site you 
 This also includes the attribute `useLegacyEncoding` value. Make sure that this setting is copied into your new Umbraco 8 site, as it is needed in order to log in.
 {% endhint %}
 
-Take a backup of your database from the **Umbraco 7.14 site**. Take the information for the backup database and add that to the connectionstring for the **Umbraco 8.1 site**. If you are running SQL CE, you will have to copy the database over to the new site as well.
-
-Once the connectionstring is set, the final step is to change the Umbraco version number in the `web.config` on the **Umbraco 8.1 site**. Chang it to `7.14.0`. This will indicate that there is an upgrade pending and it needs to run the migration.
+3. Take a backup of your database from the **Umbraco 7.14 site**.
+4. Take the information for the backup database and add that to the connectionstring for the **Umbraco 8.1 site**.
+    * If you are running SQL CE, you will have to copy the database over to the new site as well.
+5. Change the Umbraco version number in the `web.config` on the **Umbraco 8.1 site** to `7.14.0` (the version your 7 site it using).
+    * This will indicate that there is an upgrade pending and it needs to run the migration.
 
 ![Set Umbraco version in the web.config](images/set-umbraco-version.png)
 

@@ -44,7 +44,6 @@ Use the table below to determine which .NET version to upgrade to when going thr
 | ----------- | ------------ |
 | 11          | 7.0          |
 | 10          | 6.0.5        |
-| 9           | 5.0          |
 
 ### Upgrade your project using Visual Studio
 
