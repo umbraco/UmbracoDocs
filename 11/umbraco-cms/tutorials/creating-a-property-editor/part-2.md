@@ -179,13 +179,13 @@ namespace Umbraco.Cms.Core.PropertyEditors
 
 Save the file, rebuild the application, and have a look at the Suggestions Data Type. You should see that you have three configuration options.
 
-![An example of how the configuration will look](../../../../10/umbraco-cms/tutorials/creating-a-property-editor/images/suggestion-editor-config\_1.png)
+![An example of how the configuration will look](images/suggestion-editor-config_1.png)
 
 ## Using the configuration
 
 The next step is to gain access to our new configuration options. For this, open the `suggestion.controller.js` file.
 
-1.  Let's add the `isEnabled` functionality. Before the closing tag, we will add a `getState` method:
+1) Let's add the `isEnabled` functionality. Before the closing tag, we will add a `getState` method:
 
     ```javascript
         // The controller assigns the behavior to scope as defined by the getState method, which is invoked when the user toggles the enable button in the data type settings.
@@ -198,7 +198,8 @@ The next step is to gain access to our new configuration options. For this, open
             return true;
         }
     ```
-2.  Next, we'll add the `defaultValue` functionality. When the `$scope.model.value` is empty or null, we want to use the default value. To do that, we add the following to the start of the controller:
+
+2) Next, we'll add the `defaultValue` functionality. When the `$scope.model.value` is empty or null, we want to use the default value. To do that, we add the following to the start of the controller:
 
     ```js
     if($scope.model.value === null || $scope.model.value === ""){
@@ -241,7 +242,8 @@ The next step is to gain access to our new configuration options. For this, open
 
             });
     ```
-3.  Finally, we'll add the `hideLabel` functionality. For this, we'll open the `Suggestion.cs` file and override the GetValueEditor method with configuration as a parameter.
+
+3) Finally, we'll add the `hideLabel` functionality. For this, we'll open the `Suggestion.cs` file and override the GetValueEditor method with configuration as a parameter.
 
     ```cs
     public override IDataValueEditor GetValueEditor(object? configuration)
@@ -304,6 +306,6 @@ The next step is to gain access to our new configuration options. For this, open
 
 Save the files and rebuild the application. To access the configuration options, enable/disable the `Enabled?` and `Hide Label?` options. Additionally, you can set a default value in the `Default Value` field and see the Suggestions Data Type at play.
 
-![An example of setting the configuration](../../../../10/umbraco-cms/tutorials/creating-a-property-editor/images/suggestion-editor-config\_2.png)
+![An example of setting the configuration](images/suggestion-editor-config_2.png)
 
-![Backoffice view](../../../../10/umbraco-cms/tutorials/creating-a-property-editor/images/suggestion-editor-backoffice\_1.png)
+![Backoffice view](images/suggestion-editor-backoffice_1.png)

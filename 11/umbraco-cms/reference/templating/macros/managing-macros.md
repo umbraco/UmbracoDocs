@@ -10,7 +10,7 @@ There are a couple of ways to create a macro.
 
 The first way is to manually create a macro, by right-clicking the Macro folder in the Settings section:
 
-![Create macro](../../../../../10/umbraco-cms/reference/templating/macros/images/create-macro-tree-8.png)
+![Create macro](images/create-macro-tree-8.png)
 
 Give it a name in the dialog screen, and you'll be presented with the macro editor.
 
@@ -18,7 +18,7 @@ Give it a name in the dialog screen, and you'll be presented with the macro edit
 
 The second option is to create the macro through **Partial View Macro Files**.
 
-![Partial View Macro files dialog](../../../../../10/umbraco-cms/reference/templating/macros/images/partial-view-macro-files-8.png)
+![Partial View Macro files dialog](images/partial-view-macro-files-8.png)
 
 The dialog provides the following options:
 
@@ -31,7 +31,7 @@ The dialog provides the following options:
 
 The macro editor view comes with a set of configuration options.
 
-![Macro editor](../../../../../10/umbraco-cms/reference/templating/macros/images/macro-editor-8.png)
+![Macro editor](images/macro-editor-8.png)
 
 ### Macro partial view
 
@@ -63,7 +63,7 @@ Macro parameters can be used to change the output of a macro at runtime. Macro p
 
 The macro parameter dialog looks like this:
 
-![Macro editor](../../../../../10/umbraco-cms/reference/templating/macros/images/macro-parameters-v8.png)
+![Macro editor](images/macro-parameters-v8.png)
 
 Here you can add/modify/remove macro parameters.
 
@@ -71,21 +71,21 @@ Here you can add/modify/remove macro parameters.
 
 This list defines the different types of macro parameters:
 
-* Checkbox(`Umbraco.TrueFalse`) - A true/false value
-* Content Type picker (`contentType`) - Choose a type from existing Document Types
-* Decimal (`Umbraco.Decimal`) - accepts only numbers
-* Email address (`Umbraco.EmailAddress`) - validates to valid email adresses
-* Multiple Content Picker (`Umbraco.MultiNodeTreePicker`) - pick 1 or more nodes from the Content tree
-* Multiple Content Type Picker (`contentTypeMultiple`) - pick 1 or more types from existing Document Types
-* Multiple Media Picker (`Umbraco.MultipleMediaPicker`) - pick 1 or more media items
-* Multiple Property Type Picker (`propertyTypePickerMultiple`) - pick 1 or more from existing property types
-* Multiple Tab Picker (`tabPickerMultiple`) - pick 1 or more from existing tabs
-* Numeric (`Umbraco.Integer`) - accepts only numbers
-* Property Type Picker (`propertyTypePicker`) - choose property from existing property types
-* Tab picker (`tabPicker`) - select 1 from list of existing tabs
-* Textarea (`Umbraco.TextArea`) - multiple lines of text
-* Textbox (`Umbraco.TextBox`) - single line of text
-* Media picker (`Umbraco.MediaPicker`) - select a single media item
-* Content Picker (`Umbraco.ContentPicker`) - select a single content node from the Content tree
-* Form Picker (`UmbracoForms.FormsPicker`) - choose from exising Umbraco Forms
-* Forms Theme Picker (`UmbracoForms.ThemePicker`) - choose from existing Forms Themes
+- Checkbox(`Umbraco.TrueFalse`) - A true/false value
+- Content Type picker (`contentType`) - Choose a type from existing Document Types
+- Decimal (`Umbraco.Decimal`) - accepts only numbers
+- Email address (`Umbraco.EmailAddress`) - validates to valid email adresses
+- Multiple Content Picker (`Umbraco.MultiNodeTreePicker`) - pick 1 or more nodes from the Content tree
+- Multiple Content Type Picker (`contentTypeMultiple`) - pick 1 or more types from existing Document Types
+- Multiple Media Picker (`Umbraco.MultipleMediaPicker`) - pick 1 or more media items
+- Multiple Property Type Picker (`propertyTypePickerMultiple`) - pick 1 or more from existing property types
+- Multiple Tab Picker (`tabPickerMultiple`) - pick 1 or more from existing tabs
+- Numeric (`Umbraco.Integer`) - accepts only numbers
+- Property Type Picker (`propertyTypePicker`) - choose property from existing property types
+- Tab picker (`tabPicker`) - select 1 from list of existing tabs
+- Textarea (`Umbraco.TextArea`) - multiple lines of text
+- Textbox (`Umbraco.TextBox`) - single line of text
+- Media picker (`Umbraco.MediaPicker`) - select a single media item
+- Content Picker (`Umbraco.ContentPicker`) - select a single content node from the Content tree
+- Form Picker (`UmbracoForms.FormsPicker`) - choose from exising Umbraco Forms
+- Forms Theme Picker (`UmbracoForms.ThemePicker`) - choose from existing Forms Themes

@@ -44,15 +44,15 @@ It is worth noting that whilst we delete rows, we do not shrink database files o
 
 It is possible to override the global settings per Document Type in the backoffice to prevent unwanted cleanup. This can be managed in the "permissions" Content App for each Document Type.
 
-![Content Version Cleanup - Document Type overrides](../../../../10/umbraco-cms/fundamentals/data/images/per-doctype-override.png)
+![Content Version Cleanup - Document Type overrides](images/per-doctype-override.png)
 
 ## Prevent cleanup of important versions
 
 It is possible to mark important content versions as "prevent cleanup" to ensure they are never removed. This happens via the new and improved rollback modal which can be found on the "info" content app for each document.
 
-1.  Open rollback modal.
+1.  Open rollback modal.&#x20;
 
-    <figure><img src="../../../../10/umbraco-cms/fundamentals/data/images/prevent-cleanup-part-1.png" alt=""><figcaption></figcaption></figure>
-2.  Click **Prevent cleanup** button for each important version.
+    <figure><img src="images/prevent-cleanup-part-1.png" alt=""><figcaption></figcaption></figure>
+2.  Click **Prevent cleanup** button for each important version.&#x20;
 
-    <figure><img src="../../../../10/umbraco-cms/fundamentals/data/images/prevent-cleanup-part-2.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/prevent-cleanup-part-2.png" alt=""><figcaption></figcaption></figure>
