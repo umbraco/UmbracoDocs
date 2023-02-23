@@ -164,7 +164,7 @@ Resulting in the following request body:
 }
 ```
 
-The media key is the ID of the image in the media section, and as such it is the image reference to the image the Media Picker V3 property uses.
+The media key is the ID of the image in the media section. As such it is the image reference to the image the Media Picker V3 property uses.
 
 See the [Media Picker 3](../../umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/media-picker-3.md) section for more info on the other properties.
 
