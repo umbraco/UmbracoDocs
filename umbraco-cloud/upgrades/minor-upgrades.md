@@ -1,3 +1,7 @@
+---
+description: Follow this guide when upgrading your Cloud project to a new minor version. For example when upgrading from 10.1 to 10.2.
+---
+
 # Minor Upgrades
 
 When minor version upgrades are available, your Umbraco site will not be auto-upgraded to this version. You will need to press the Upgrade button in the Umbraco Cloud portal to perform the upgrade. This will upgrade your Development environment so you can test how everything works on a Cloud environment before pushing the upgrade to your Live site.
@@ -33,12 +37,10 @@ Once you have the site running locally, you should push your changes to the repo
 
 The upgrade process left off when it was needing three more steps. These three steps now need to be done manually.
 
-1.  Complete the installer
-
-    To complete the installer, you should visit the site on its url. it will be like \`https://dev-mysite.s1.umbraco.io. This will show you the installer screen, where you should insert your backoffice credentials, and follow the process. It will run through a few steps, and afterward, Umbraco will be updated to the latest version.
-2.  Export the metadata files.
-
-    The second thing you need to do is to regenerate the metadata files used for transferring items like document types, data types, and media types. This is done by accessing the Power tools(Kudu) on the project, opening the cmd prompt, and browse to the wwwroot/data folder. Once there, you need to enter `echo > deploy-export`. This will generate the needed files for the upgraded site to work with Umbraco Deploy.
+1. Complete the installer
+    * To complete the installer, you should visit the site on its URL. it will be like \`https://dev-mysite.s1.umbraco.io. This will show you the installer screen, where you should insert your backoffice credentials, and follow the process. It will run through a few steps, and afterward, Umbraco will be updated to the latest version.
+2. Export the metadata files.
+    * The second thing you need to do is to regenerate the metadata files used for transferring items like document types, data types, and media types. This is done by accessing the Power tools(Kudu) on the project, opening the cmd prompt, and browse to the wwwroot/data folder. Once there, you need to enter `echo > deploy-export`. This will generate the needed files for the upgraded site to work with Umbraco Deploy.
 3. The last thing to do is to go to the `/site/locks` folder (still through Kudu) and rename the file called `upgrading` to `upgraded-minor` - rename the file by typing `ren upgrading upgraded-minor`. This will indicate to Umbraco Cloud, that the development environment is now ready to deploy all its changes to the next environment.
 
 Before deploying the upgrade to the next environment, you should verify that everything looks as expected on the development environment.
