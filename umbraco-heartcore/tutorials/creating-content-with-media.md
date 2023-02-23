@@ -168,6 +168,10 @@ The media key is the ID of the image in the media section. As such it is the ima
 
 See the [Media Picker 3](../../umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/media-picker-3.md) section for more info on the other properties.
 
+{% hint style="info" %}
+If you decide to copy the json from the response section to another editor/application, be careful that the formatting is correct, and that no extra characters are added. These characters can be hidden, but will cause the request to fail.
+{% endhint %}
+
 ## Creating a Media Picker with the Management API
 
 Following the steps demonstrated in the [previous section](#determining-the-request-body), we can now create a new content node with a Media Picker using the Management API.
