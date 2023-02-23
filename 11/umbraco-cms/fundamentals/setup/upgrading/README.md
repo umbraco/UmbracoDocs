@@ -40,10 +40,12 @@ The package compatibility can be checked on the package's download page. Locate 
 
 Use the table below to determine which .NET version to upgrade to when going through the steps below.
 
-| CMS version | .NET version |
-| ----------- | ------------ |
-| 11          | 7.0          |
-| 10          | 6.0.5        |
+| CMS version | .NET version        |
+| ----------- | ------------------- |
+| 11          | 7.0                 |
+| 10          | 6.0.5               |
+| 8           | .NET Framework 4.7.2|
+| 7           | .NET Framework 4.5+ |
 
 ### Upgrade your project using Visual Studio
 
