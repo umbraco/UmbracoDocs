@@ -9,7 +9,7 @@ This section lets you define the password rules for users.
 ```json
 "Umbraco": {
     "CMS": {
-        "UserPassword": {
+        "UserPasswordConfigurationSettings": {
             "RequiredLength": 10,
             "RequireNonLetterOrDigit": false,
             "RequireDigit": false,
