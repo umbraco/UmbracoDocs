@@ -170,7 +170,7 @@ See the [Media Picker 3](../../umbraco-cms/fundamentals/backoffice/property-edit
 
 ## Creating a Media Picker with the Management API
 
-After having followed the steps demonstrated in the [previous section](#determining-the-request-body), we can now create a new content node with a Media Picker using the Management API.
+Following the steps demonstrated in the [previous section](#determining-the-request-body), we can now create a new content node with a Media Picker using the Management API.
 
 To create a new content node with a Media Picker, follow these steps:
 
