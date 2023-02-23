@@ -202,4 +202,7 @@ To publish a content node with a Media Picker, follow these steps:
 
 And you are done! You are now able to upload a media item and create a new content node using the newly uploaded media item in a Media Picker v3 property.
 You can use a similar approach for discovering the format of more complex content when you want to create it through the Content Management API.
-Please note that the .NET Client Library also supports the use of the Management API if you want to do it from C# code.
+
+{% hint style="info" %}
+If you want to create content with media programatically, you can try out the the [.NET Client Library for Umbraco Heartcore](https://github.com/umbraco/Umbraco.Headless.Client.Net). The client library also supports the use of the Management API.
+{% endhint %}
