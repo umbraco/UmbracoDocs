@@ -153,5 +153,5 @@ When managing entries from the collection, you need to do a couple of things for
 
 1. Refresh the database cache from the "Published Status" tab in the **Settings** section of the backoffice.
 2. Re-save and publish any node where you want the change reflected.
-  a. You can also use **Publish with descendants...** on the root node to update the URL for all descendants.
+    * You can also use **Publish with descendants...** on the root node to update the URL for all descendants.
 {% endhint %}
