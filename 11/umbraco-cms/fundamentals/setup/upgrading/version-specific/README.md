@@ -1,8 +1,14 @@
+---
+description: This document covers specific upgrade steps if a version requires them. Most versions do not require specific upgrade steps. In most cases, you will be able to upgrade directly from your current version to the latest version.
+---
+
 # Version Specific Upgrades
 
-_This document covers specific upgrade steps if a version requires them. Most versions do not require specific upgrade steps. In most cases, you will be able to upgrade directly from your current version to the latest version._
+Use the information below to learn about any potential breaking changes and common pitfalls when upgrading your Umbraco CMS project.
 
-Follow the steps in the [general upgrade guide](../), then these additional instructions for the specific versions.
+If any specific steps are involved with upgrading to a specific version they will be listed below.
+
+Use the [general upgrade guide](../) to complete the upgrade of your project.
 
 ## Breaking changes
 

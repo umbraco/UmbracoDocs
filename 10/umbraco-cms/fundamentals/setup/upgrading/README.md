@@ -30,7 +30,9 @@ The steps outlined in this article applies to moderne Umbraco from version 10 an
 
 Are you upgrading to a minor for Umbraco 6, 7 or 8 you can find the appropriate guide below:
 
-{% content-ref url="migrate-from-umbraco-7-to-8.md" %} migrate-from-umbraco-7-to-8.md {% endcontent-ref %}
+{% content-ref url="version-specific/minor-upgrades-for-umbraco-8.md" %} version-specific/minor-upgrades-for-umbraco-8.md {% endcontent-ref %}
+
+{% content-ref url="version-specific/minor-upgrades-for-umbraco-7.md" %} version-specific/minor-upgrades-for-umbraco-7.md {% endcontent-ref %}
 
 ## Upgrade to a new Major
 
