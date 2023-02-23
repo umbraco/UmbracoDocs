@@ -617,6 +617,7 @@
 * [Tutorials](umbraco-heartcore/tutorials/README.md)
   * [Custom Grid Editors](umbraco-heartcore/tutorials/creating-a-custom-grid-editor.md)
   * [Querying with GraphQL](umbraco-heartcore/tutorials/querying-with-graphql.md)
+  * [Creating Content with Media](umbraco-heartcore/tutorials/management-api/creating-content-with-media.md)
 
 ## Umbraco Forms
 
