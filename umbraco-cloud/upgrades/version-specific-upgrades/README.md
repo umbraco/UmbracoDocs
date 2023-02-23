@@ -8,6 +8,6 @@ As there might also be version specific notes for the specific products involved
 * [Umbraco Forms](https://docs.umbraco.com/umbraco-forms/installation/version-specific)
 * [Umbraco Deploy](https://docs.umbraco.com/umbraco-deploy/upgrading/version-specific)
 
-## Specific notes for Major upgrades
+## Specific notes for major upgrades on Cloud
 
 {% content-ref url="migrate-from-umbraco-7-to-8.md" %} migrate-from-umbraco-7-to-8.md {% endcontent-ref %}
