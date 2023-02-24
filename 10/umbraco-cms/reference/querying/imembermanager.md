@@ -18,6 +18,7 @@ There are different ways to reference MembershipHelper:
 While working with templates, the methods are available when you inject `@IMemberManager` to access member data:
 
 ```csharp
+@using Umbraco.Cms.Core.Services;
 @inject IMemberManager _memberManager;
 
 _memberManager.IsLoggedIn()
