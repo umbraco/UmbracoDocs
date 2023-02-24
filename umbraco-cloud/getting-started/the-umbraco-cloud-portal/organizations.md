@@ -33,7 +33,7 @@ To enforce a certain MFA for a member follow these steps:
 2. Under oorganizations go to the **Members** tab
 3. Under the **Members** tab go to **Multi-Factor Authentication**
 4. Find the member that needs to have have MFA enabled
-5. Click on the small cogwheel to and choose the desired MFA for the member.
+5. Click on the small cogwheel and choose the desired MFA for the member.
 
 Once it has been enabled next time the member logs in, they will be enforced to set up the MFA, that has been choosen.
 
