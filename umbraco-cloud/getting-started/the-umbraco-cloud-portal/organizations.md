@@ -20,7 +20,7 @@ In the **Information** section of the Organization, you can find information abo
 
 In the **Members** section, you can get an overview, see pending invites, and the Multi-Factor Authentication for the Members your Organization. It is also possible to set up different permissions for your Members, such as Read, Write, and Administrators for your organization.
 
-### Multi-Factor-**Authentication (MFA) enforcement
+### Multi-Factor Authentication (MFA) enforcement
 
 When working in organizations on Umbraco Cloud, as a company, you might want to enforce a certain type of MFA for members.
 
