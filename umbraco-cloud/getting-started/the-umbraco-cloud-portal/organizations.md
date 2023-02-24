@@ -30,8 +30,8 @@ It is possible for administrators of organizations on Umbraco Cloud to enforce M
 
 To enforce a certain MFA for a member follow these steps:
 1. Go to the organizations tab under your user on Umbraco Cloud
-2. Under oorganizations go to the **Members** tab
-3. Under the **Members** tab go to **Multi-Factor Authentication**
+2. Go to the **Members** tab under Organization
+3. Go to **Multi-Factor Authentication**
 4. Find the member that needs to have have MFA enabled
 5. Click on the small cogwheel to and choose the desired MFA for the member.
 
