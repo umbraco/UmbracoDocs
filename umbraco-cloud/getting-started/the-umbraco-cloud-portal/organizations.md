@@ -18,24 +18,24 @@ In the **Information** section of the Organization, you can find information abo
 
 ### Members
 
-In the **Members** section, you can get an overview of the Members part of your Organization, see pending invites, and which Multi-Factor Authentication they have enabled. It is also possible to set up different permissions for your Members, such as Read, Write, and Administrators for your organization.
+In the **Members** section, you can get an overview, see pending invites, and the Multi-Factor Authentication for the Members your Organization. It is also possible to set up different permissions for your Members, such as Read, Write, and Administrators for your organization.
 
 ### Multi-Factor-**Authentication (MFA) enforcement
 
 When working in organizations on Umbraco Cloud, as a company, you might want to enforce a certain type of MFA for members.
 
-It is possible for administrators of organizations on Umbraco Cloud to enforce MFA for members of their organization.
+![MFA for members](images/mfa-page.png)
 
-If your company has a policy that requires members of your organization to use an autheticator app, this can then be enabled for specific users.
+It is possible for administrators of organizations on Umbraco Cloud to enforce MFA for specific members of their organization.
 
-To enforce a certain MFA for a user follow these steps:
+To enforce a certain MFA for a member follow these steps:
 1. Go to the organizations tab under your user on Umbraco Cloud
 2. Under oorganizations go to the **Members** tab
 3. Under the **Members** tab go to **Multi-Factor Authentication**
-4. Find the user that needs to have have MFA enabled
-5. Enable the desired MFA for the user.
+4. Find the member that needs to have have MFA enabled
+5. Click on the small cogwheel to and choose the desired MFA for the member.
 
-Once it has been enabled next time the user logs in, they will be enforced to set up the MFA, that has been choosen.
+Once it has been enabled next time the member logs in, they will be enforced to set up the MFA, that has been choosen.
 
 
 <figure><img src="../../../.gitbook/assets/members.png" alt=""><figcaption></figcaption></figure>
