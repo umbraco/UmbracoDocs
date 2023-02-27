@@ -1,7 +1,7 @@
 ---
 versionFrom: 7.0.0
 versionTo: 8.0.0
-meta.RedirectLink: "/other-resources/the-licensing-model"
+meta.RedirectLink: "/welcome/the-licensing-model"
 ---
 
 # The Licensing Model
@@ -111,4 +111,3 @@ This will also change the location for other Umbraco related licenses in this pr
     ...
 </appSettings>
 ```
-
