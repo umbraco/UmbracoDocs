@@ -48,7 +48,7 @@ To create a project in Umbraco Cloud Portal:
 8. Choose a **Project Owner** and add **Technical Contacts**.
 9. Click **Continue**.
 10. Verify that everything looks correct and check **I have read and agree to the terms and conditions and the Data Processing Agreement**.
-8.  Click **Create Project**.
+11.  Click **Create Project**.
 
 ### Naming a Project
 
