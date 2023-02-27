@@ -18,13 +18,31 @@ In the **Information** section of the Organization, you can find information abo
 
 ### Members
 
-In the **Members** section, you can get an overview of the Members part of your Organization, see pending invites, and which Multi-Factor Authentication they have enabled. It is also possible to set up different permissions for your Members, such as Read, Write, and Administrators for your organization.
+In the **Members** section, you can get an overview, see pending invites, and the Multi-Factor Authentication for the Members your Organization. It is also possible to set up different permissions for your Members, such as Read, Write, and Administrators for your organization.
 
 <figure><img src="../../../.gitbook/assets/members.png" alt=""><figcaption></figcaption></figure>
 
+
+### Multi-Factor Authentication (MFA) enforcement
+
+When working in organizations on Umbraco Cloud, as a company, you might want to enforce a certain type of MFA for members.
+
+![MFA for members](images/mfa-page.png)
+
+It is possible for administrators of organizations on Umbraco Cloud to enforce MFA for specific members of their organization.
+
+To enforce a certain MFA for a member follow these steps:
+1. Go to the organizations tab under your user on Umbraco Cloud
+2. Go to the **Members** tab under Organization
+3. Go to **Multi-Factor Authentication**
+4. Find the member that needs to have have MFA enabled
+5. Click on the small cogwheel and choose the desired MFA for the member.
+
+Once it has been enabled next time the member logs in, they will be enforced to set up the MFA, that has been choosen.
+
 ### Projects
 
-In the **Projects** section, you can get an overview of all the Projects that have been created in your Organization. It is also possible to see which User from your Organization has created the Project and edit the team members for different projects if you are a super-admin in the Organization.
+In the **Projects** section, you can get an overview of all the Projects that have been created in your Organization.
 
 ![Project overview](images/Projects-v10.png)
 
