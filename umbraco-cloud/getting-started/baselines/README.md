@@ -45,7 +45,7 @@ Any Umbraco Cloud project can be used as a Baseline project
 
 It might take couple of minutes for the project to spin up before your environments are ready. When your environments are ready, you will see a _green_ light next to the environment name.
 
-![Creating a Baseline child project](images/create-baseline-child-project-v9-new.gif)
+![Creating a Baseline child project](images/baseline-creation.gif)
 
 {% hint style="info" %}
 Depending on the size of the project you've chosen as a Baseline project, it might take several minutes before the Child project is ready.
