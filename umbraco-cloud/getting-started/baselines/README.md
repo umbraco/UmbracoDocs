@@ -38,7 +38,8 @@ Any Umbraco Cloud project can be used as a Baseline project
 {% endhint %}
 
 7. **Choose an Owner** from the drop-down list.
-8. In the **Technical Contact** section, enter your **Name**, **Email**, and **Telephone**.
+8. Enter your **Name**, **Email**, and **Telephone** in the **Technical Contact** section.
+9. Click **Continue**.
 9. Review the entered information and select **I have read and agree to the terms and conditions and the Data Processing Agreement**.
 10. Click **Create Project**.
 
