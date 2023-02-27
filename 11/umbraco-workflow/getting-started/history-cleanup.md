@@ -87,7 +87,7 @@ The below example will apply the following policies:
 }
 ```
 
-When calculating node and Document Type policies, these are applied lazily - if the current workflow instance matches a node rule the Document Type rules will not be processed. Using the above configuration as an example, if both nodes in the `CleanuUp` rules dictionary are using the document type `ContentPage`, the Document Type rules will NOT be applied as the node rules are prioritised.
+When calculating node and Document Type policies, these are applied lazily - if the current workflow instance matches a node rule the Document Type rules will not be processed. Using the above configuration as an example, if both nodes in the `CleanuUp` rules dictionary are using the document type `ContentPage`, the Document Type rules will not be applied as the node rules are prioritised.
 
 If a value is ommitted from the node or document type policy, the global value will be used instead. In the above example, the node policy for `31523089-f648-4883-9087-ef9a0b83129f` will use the `StatusesToDelete` value from the global policy (in this example, deleting `Approved` or `Cancelled` workflow history).
 
@@ -112,7 +112,7 @@ If a value is ommitted from the node or document type policy, the global value w
 
 It is possible for a cleanup rule (or the global configuration) to declare a `StatusesToDelete` property without the full set of status keys, this will not modify the default values.
 
-For example, adding `"Approved": false` will remove `Approved` from the deletable statuses, but all other default values will remain. Therefore, to delete approved workflows ONLY, the configuration would look like the below, where the default truthy values have been negated:
+For example, adding `"Approved": false` will remove `Approved` from the deletable statuses, but all other default values will remain. Therefore, to delete approved workflows only, the configuration would look like the below, where the default truthy values have been negated:
 
 ```json
   "HistoryCleanupPolicy": { 
