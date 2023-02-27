@@ -42,14 +42,13 @@ To create a project in Umbraco Cloud Portal:
     <figure><img src="getting-started/images/create-project.png" alt=""><figcaption></figcaption></figure>
 3. Select **Umbraco Cloud** from the list of projects.
 4. Choose a **Plan Selection** as per your choice.
-5. On the **Project Information** page, enter the **Project Name**.
-6. _\[Optional]_ Select **Create from baseline** and **Choose baseline** from the drop-down list to select the Cloud project the new project should be based on.
-7. **Choose an Umbraco version** from the drop-down list.
-8. Choose the **Region** from the drop-down list.
-9. **Choose an owner** from the drop-down list.
-10. In the **Technical Contact** section, enter the **Name**, **Email**, and **Telephone** number.
-11. Select **I have read and agree to the terms and conditions and the Data Processing Agreement**.
-12. Click **Create Project**.
+5. Choose the Umbraco version for your Project.
+6. Enter the **Project Name**.
+7. Choose a **Region**.
+8. Choose a **Project Owner** and add **Technical Contacts**.
+9. Click **Continue**.
+10. Verify that everything looks correct and check **I have read and agree to the terms and conditions and the Data Processing Agreement**.
+11.  Click **Create Project**.
 
 ### Naming a Project
 
@@ -68,13 +67,13 @@ Once a project is created, you can view its overview in Umbraco Cloud Portal:
 
 1. Log in to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects) with your credentials.
 2. Select your Project from the **Projects** dashboard.
-3.  Go to the Project **Settings** and click **Overview**.
+3.  Go to Project **Settings** and click **Overview**.
 
     <figure><img src="getting-started/images/Cloud-Overview.png" alt=""><figcaption></figcaption></figure>
 
 The Overview Page consists of:
 
-* Name: The name of the project.
+* Name - The name of the project.
 * Alias - The alias of the project.
 * Plan - The plan selected for the project. Available plans are Starter, Standard, or Professional.
 * Payment status - The payment status of the project.

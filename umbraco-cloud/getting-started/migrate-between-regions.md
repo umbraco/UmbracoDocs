@@ -22,7 +22,7 @@ The first step in this process is to create a new Umbraco Cloud project in the r
 
 This is done by selecting **East US** from the **Region** dropdown when creating the Cloud project.
 
-![Select the East US region](images/CreateProject-SelectRegion.png)
+![Select the East US region](images/creationflow-chooseRegion.png)
 
 The new project in the US region will run the latest version of Umbraco CMS, Umbraco Forms, and Umbraco Deploy. You will need to ensure that the project you are migrating is running the exact same version of each product before initiating the migration process.
 
