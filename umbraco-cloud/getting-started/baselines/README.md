@@ -31,7 +31,7 @@ To create a child project:
 3. Select **Baseline Project**.
 4. From the **Choose baseline** drop-down list, select the Cloud project, the new project should be based on.
 5. Choose either **Starter**, **Standard** or **Professional** plan from the **Plan Selection** window.
-6. In the **Project Information** window, enter the **Project Name**.
+6. Enter the **Project Name** in the **Project Information** window.
 
 {% hint style="info" %}
 Any Umbraco Cloud project can be used as a Baseline project
