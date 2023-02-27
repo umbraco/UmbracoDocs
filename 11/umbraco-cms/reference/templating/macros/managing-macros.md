@@ -89,3 +89,37 @@ This list defines the different types of macro parameters:
 - Content Picker (`Umbraco.ContentPicker`) - select a single content node from the Content tree
 - Form Picker (`UmbracoForms.FormsPicker`) - choose from exising Umbraco Forms
 - Forms Theme Picker (`UmbracoForms.ThemePicker`) - choose from existing Forms Themes
+
+### Enable Inline Macro
+
+In some case you want to have the macro in the middle of a sentence.
+
+![image](https://user-images.githubusercontent.com/840606/221513022-878ada3c-bf5b-4ebf-b171-012882ae3cbc.png)
+
+- To enable this add a macro parameter called: **enableInlineMacro** with the type Checkbox(`Umbraco.TrueFalse`)
+- Next time you add the macro and enable this parameter, it will be inlined.
+
+#### Enable Inline Macro by default on a macro
+In some cases you want to have a checkbox that has this enabled by default, then you can create your own type of macroparameter that has 1 as default value. To achive this, create a DataEditor class anywhere in your Umbraco Project with the following definition. 
+
+```
+    [DataEditor(
+        alias: "enableInlineMacro",
+        type: EditorType.MacroParameter,
+        name: "Enable Inline Macro",
+        view: "boolean",
+        Group = "Macro Config",
+        Icon = "icon-list")]
+    public class EnableInlineMacro : DataEditor
+    {
+        public EnableInlineMacro(IDataValueEditorFactory dataValueEditorFactory)
+            : base(dataValueEditorFactory)
+        {
+            DefaultConfiguration.Add("default", "1");
+        }
+    }
+```
+Tip: You can create a MacroParameter however you want, the importance is to have a parameter called enableInlineMacro with the value 1 to enable it.
+
+
+
