@@ -28,20 +28,19 @@ To create a child project:
 
 1. Log in to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects).
 2. Click the **Create New Project** button.
-3. Select **Umbraco Cloud** from the **Create New Project** window.
-4. Choose either **Starter**, **Standard** or **Professional** plan from the **Plan Selection** window.
-5. In the **Project Information** window, enter the **Project Name**.
-6. \[Optional] Select **Create from Baseline**.
-7. From the **Choose baseline** drop-down list, select the Cloud project, the new project should be based on.
+3. Select **Baseline Project**.
+4. From the **Choose baseline** drop-down list, select the Cloud project, the new project should be based on.
+5. Choose either **Starter**, **Standard** or **Professional** plan from the **Plan Selection** window.
+6. In the **Project Information** window, enter the **Project Name**.
 
 {% hint style="info" %}
 Any Umbraco Cloud project can be used as a Baseline project
 {% endhint %}
 
-1. **Choose an Owner** from the drop-down list.
-2. In the **Technical Contact** section, enter your **Name**, **Email**, and **Telephone**.
-3. Select **I have read and agree to the terms and conditions and the Data Processing Agreement**.
-4. Click **Create Project**.
+7. **Choose an Owner** from the drop-down list.
+8. In the **Technical Contact** section, enter your **Name**, **Email**, and **Telephone**.
+9. Review the entered information and select **I have read and agree to the terms and conditions and the Data Processing Agreement**.
+10. Click **Create Project**.
 
 It might take couple of minutes for the project to spin up before your environments are ready. When your environments are ready, you will see a _green_ light next to the environment name.
 
