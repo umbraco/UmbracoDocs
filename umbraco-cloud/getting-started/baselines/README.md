@@ -40,8 +40,8 @@ Any Umbraco Cloud project can be used as a Baseline project
 7. **Choose an Owner** from the drop-down list.
 8. Enter your **Name**, **Email**, and **Telephone** in the **Technical Contact** section.
 9. Click **Continue**.
-9. Review the entered information and select **I have read and agree to the terms and conditions and the Data Processing Agreement**.
-10. Click **Create Project**.
+10. Review the entered information and select **I have read and agree to the terms and conditions and the Data Processing Agreement**.
+11. Click **Create Project**.
 
 It might take couple of minutes for the project to spin up before your environments are ready. When your environments are ready, you will see a _green_ light next to the environment name.
 
