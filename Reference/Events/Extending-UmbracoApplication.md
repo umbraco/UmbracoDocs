@@ -1,16 +1,17 @@
 ---
 versionFrom: 8.0.0
+versionRemoved: 9.0.0
 ---
 
-## Binding to HttpApplication events
+# Binding to HttpApplication events
 
 It is not necessary to override and replace the [UmbracoApplication](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Web.UmbracoApplication.html?q=UmbracoApplication).  If you consider changing the default `global.asax`, read on!
 
-Umbraco allows you to bind directly to HttpApplication events which is very handy since normally you would require an HttpModule to bind to these types of events.
+Umbraco allows you to bind directly to HttpApplication events. This is handy since normally you would require an HttpModule to bind to these types of events.
 
 The HttpApplication events are listed here: [https://msdn.microsoft.com/en-us/library/system.web.httpapplication_events.aspx](https://msdn.microsoft.com/en-us/library/system.web.httpapplication_events.aspx)
 
-In order to bind to these events you need to first listen to the `UmbracoApplicationBase.ApplicationInit` event, which you can gain access to in a custom `IComponent`, here is an example:
+In order to bind to these events you need to first listen to the `UmbracoApplicationBase.ApplicationInit` event. You can gain access to this in a custom `IComponent`. Here is an example:
 
 ```csharp
 using System;
@@ -89,6 +90,7 @@ namespace Umbraco8.Example
 ```
 
 ## Related Links
+
 * [Troubleshooting Slow Startup](Troubleshooting-Slow-Startup.md)
 * [More information about BootManager](Understanding-Bootmanagers.md) (EXPERT)
 * [Adding startup logic and plugin on c# events](Application-Startup.md) (EXPERT)
