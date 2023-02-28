@@ -6,7 +6,7 @@ description: This document covers specific upgrade steps if a version requires t
 
 Use the information below to learn about any potential breaking changes and common pitfalls when upgrading your Umbraco CMS project.
 
-If any specific steps are involved with upgrading to a specific version they will be listed below.
+If any specific steps are involved with upgrading to a specific version, they will be listed below.
 
 Use the [general upgrade guide](../) to complete the upgrade of your project.
 
@@ -18,7 +18,7 @@ Use the [general upgrade guide](../) to complete the upgrade of your project.
 
 ### [Update 'diff' from 3.5.0 to 5.0.0](https://github.com/umbraco/Umbraco-CMS/issues/12337)
 
-The `diff`library used in the Backoffice client has been updated and introduces a breaking change since the exposed global object has been renamed from `JsDiff` to `Diff`.
+The `diff` library used in the Backoffice client has been updated and introduces a breaking change since the exposed global object has been renamed from `JsDiff` to `Diff`.
 
 ### [Content Schedule performance](https://github.com/umbraco/Umbraco-CMS/pull/11398)
 
@@ -33,7 +33,7 @@ Use _IContentService.GetContentScheduleByContentId && IContentService.PersistCon
 
 ### [Scope provider cleanup](https://github.com/umbraco/Umbraco-CMS/pull/11859)
 
-- Some public classes in the `Cms.Core.Services` namespace has moved assembly from **`Umbraco.Cms.Infrastructure`** to **`Umbraco.Cms.Core`**.
+- Some public classes in the `Cms.Core.Services` namespace have moved assembly from **`Umbraco.Cms.Infrastructure`** to **`Umbraco.Cms.Core`**.
 - These same public classes have changed namespace from **`Umbraco.Cms.Core.Services.Implement`** to **`Umbraco.Cms.Core.Services`**.
 
 ### [Update to NPoco5](https://github.com/umbraco/Umbraco-CMS/pull/11880)
@@ -64,7 +64,7 @@ NPoco types and interfaces are part of our public interface which means that thi
 - `SixLabors.ImageSharp` from 1.0.4 to 2.1.1
 - `SixLabors.ImageSharp.Web` from 1.0.5 to 2.0.0
 
-Renamed `CachedNameLength` property to `CacheHashLength` on **ImagingCacheSettings**.
+Renamed the `CachedNameLength` property to `CacheHashLength` on **ImagingCacheSettings**.
 
 Moved **ImageSharpImageUrlGenerator** from project `Umbraco.Infrastructure` to `Umbraco.Web.Common` and updated the corresponding namespace and DI registration (from `AddCoreInitialServices()` to `AddUmbracoImageSharp()`);
 
@@ -75,7 +75,7 @@ Moved **ImageSharp** configuration from the `AddUmbracoImageSharp()` extension m
 
 ### [Migrate Member properties to columns on the Member table](https://github.com/umbraco/Umbraco-CMS/pull/12205)
 
-This is breaking because it is no longer possible to access the properties listed below through the _IMember.Properties_ collection. You must now access them through their specific properties i.e. _IMember.IsLockedOut_.
+This is breaking because it is no longer possible to access the properties listed below through the _IMember.Properties_ collection. You must now access them through their specific properties that is _IMember.IsLockedOut_.
 
 - `umbracoMemberFailedPasswordAttempts`
 - `umbracoMemberApproved`
@@ -135,11 +135,11 @@ StackQueue has been moved from `Umbraco.Core.Collections` to the `Umbraco.Cms.Co
 
 ### Globalsetting SqlWriteLockTimeOut has been removed
 
-This setting has been superseeded by `DistributedLockingWriteLockDefaultTimeout`.
+This setting has been superseded by `DistributedLockingWriteLockDefaultTimeout`.
 
 </details>
 
-## Find you upgrade path
+## Find your upgrade path
 
 Are you looking to upgrade an Umbraco Cloud project from 9 to 10? Follow the guide made for [Upgrading your project from Umbraco 9 to 10](https://docs.umbraco.com/umbraco-cloud/product-upgrades/major-upgrades) instead, as it requires a few steps specific to Umbraco Cloud.
 
@@ -257,11 +257,11 @@ When the upgrade is completed and tested, and prior to deploying to any publicly
 
 There is no direct upgrade path from Umbraco 8 to Umbraco 9. It is however possible to migrate from Umbraco 8 sites to Umbraco 9 sites.
 
-You can reuse your content restoring your Umbraco 8 database into a new database used for a Umbraco 9 site.
+You can reuse your content by restoring your Umbraco 8 database into a new database used for an Umbraco 9 site.
 
-You will need to ensure packages you are using is available in Umbraco 9, and you will need to reimplement your custom code and templates.
+You will need to ensure the packages you are using are available in Umbraco 9, and you will need to reimplement your custom code and templates.
 
-The direct upgrade path is not possible due to the fact that the codebase has been fundamentally updated in Umbraco 9. The underlying web framework has been updated from ASP.NET to ASP.NET Core.
+The direct upgrade path is not possible because the codebase has been fundamentally updated in Umbraco 9. The underlying web framework has been updated from ASP.NET to ASP.NET Core.
 
 It is not possible to take this step while maintaining full compatibility with Umbraco 8.
 
@@ -275,17 +275,17 @@ There are a few breaking changes from 8.0.x to 8.1.0. Make sure to check the [fu
 
 ### IPublishedContent breaking changes in 8.1.0
 
-Due to the [changes in `IPublishedContent`](https://github.com/umbraco/Umbraco-CMS/issues/5170) there are few steps you will need to take to make sure that your site works.
+Due to the [changes in `IPublishedContent`](https://github.com/umbraco/Umbraco-CMS/issues/5170) there are a few steps you will need to take, to make sure that your site works.
 
-The `IPublishedContent` interface is central to Umbraco, as it represents published content and media items at rendering layer level. This could be in controllers or views. In other words, it is the interface that is used everywhere when building sites.
+The `IPublishedContent` interface is central to Umbraco, as it represents published content and media items at the rendering layer level. This could be in controllers or views. In other words, it is the interface that is used everywhere when building sites.
 
-The introduction of multilingual support in version 8 required changes to the interface. For instance, a property value could be obtained with `GetPropertyValue(alias)`in version 7. Version 8 requires a new parameter for culture, and the call thus became `Value(alias, culture)`.
+The introduction of multilingual support in version 8 required changes to the interface. For instance, a property value could be obtained with `GetPropertyValue(alias)` in version 7. Version 8 requires a new parameter for culture, and the call thus became `Value(alias, culture)`.
 
-In the excitement of the version 8 release, we assumed that `IPublishedContent` was "done". By our tests, everything was looking good. However, feedback from early testers showed that the interface was in some places odd or inconsistent, or had issues.
+In the excitement of the version 8 release, we assumed that `IPublishedContent` was "done". By our tests, everything was looking good. However, feedback from early testers showed that the interface was in some places odd or inconsistent or had issues.
 
 Fixing the bugs is a requirement. Some of the required bug fixes could not be achieved without introducing some breaking changes.
 
-At that point, we had decided to give `IPublishedContent` some love. We fixed the bugs and made it clean, friendly, discoverable and predictable for the entire life of version 8.
+At that point, we decided to give `IPublishedContent` some love. We fixed the bugs and made it clean, friendly, discoverable, and predictable for the entire life of version 8.
 
 Breaking changes to such a central interface is not something we take lightly. Even though they do not impact the "concepts" nor require heavy refactoring, they may demand an amount of small fixes here and there.
 
@@ -364,7 +364,7 @@ Because that method is useful, especially when building traditional, non-multili
 
 ### Models Builder
 
-If you're using ModelsBuilder in `dll` mode you need to delete the dlls before upgrading. Otherwise they're going to be wrong and cause your whole site to throw errors.
+If you're using ModelsBuilder in `dll` mode you need to delete the dlls before upgrading. Otherwise, they're going to be wrong and cause your whole site to throw errors.
 
 If you're using ModelsBuilder in `AppData` mode and you have your generated models in your solution you need to update them after upgrading. `PublishedContentType` will need to be replaced with `IPublishedContentType`. If you have an implementation of the `PropertyValueConverter` class, you need to replace all references to `PublishedPropertyType` with `IPublishedPropertyType` within that class. Only after you do that will your solution build again.
 
@@ -380,9 +380,9 @@ Umbraco 8.1 replaces AutoMapper with [UmbracoMapper](../../../../reference/mappi
 
 <summary>7.latest to 8.0.0</summary>
 
-There is no direct upgrade path from Umbraco 7 to Umbraco 8. It is however possible to migrate content from Umbraco 7 sites to Umbraco 8 sites. We have added content migrations in Umbraco 8.1.0 enabling you to migrate your content from Umbraco 7 to Umbrao 8.
+There is no direct upgrade path from Umbraco 7 to Umbraco 8. It is however possible to migrate content from Umbraco 7 sites to Umbraco 8 sites. We have added content migrations in Umbraco 8.1.0 enabling you to migrate your content from Umbraco 7 to Umbraco 8.
 
-It is not possible to upgrade an Umbraco 7 site to Umbraco 8 is because the codebase has been fundamentally updated in Umbraco 8. A lot of outdated code and technology has been removed and instead new, faster and more secure technology has been implemented.
+It is not possible to upgrade an Umbraco 7 site to Umbraco 8 because the codebase has been fundamentally updated in Umbraco 8. A lot of outdated code and technology has been removed and instead new, faster, and more secure technology has been implemented.
 
 In Umbraco 8 we have added improvements and updated dependencies. We have also done a thorough clean-up to make it simpler for you to work with and extend your Umbraco project.
 
@@ -394,7 +394,7 @@ In Umbraco 8 we have added improvements and updated dependencies. We have also d
 
 <summary>7.6.3 to 7.7.0</summary>
 
-Version 7.7.0 introduces User Groups and a better user management and security facilities. This means that anything to do with "User Types" no longer exist including APIs that work with User Types. If your code or any package's code makes reference to "User Type" APIs, you need to make changes to your code. In many cases, we've added backward compatibility for these scenarios and obsoleted APIs that should no longer be used.
+Version 7.7.0 introduces User Groups, better user management, and security facilities. This means that anything to do with "User Types" no longer exists including APIs that work with User Types. If your code or any package's code refers to "User Type" APIs, you need to make changes to your code. In many cases, we've added backward compatibility for these scenarios and obsoleted APIs that should no longer be used.
 
 We are now by default using the e-mail address and not the username for the credentials. When trying to login to the backoffice you need to use the e-mail address as opposed to the username. If you do an upgrade from an older version and would like to keep using the username, change the `<usernameIsEmail>true</usernameIsEmail>` setting to **false**.
 
@@ -402,7 +402,7 @@ For a full list of breaking changes see: [the list on the issue tracker](https:/
 
 Version 7.7.2 no longer ships with the `CookComputing.XmlRpcV2` assembly. If you reference this assembly or have a package that requires this assembly, you need to copy it back into your website.
 
-This version also ships with far less client files that were only relevant for older versions of Umbraco (i.e. < 7.0.0). There might be some packages that were referencing these old client files. If you seen missing image references you may need to contact the vendor of the package in question to update their references.
+This version also ships with far fewer client files that were only relevant for older versions of Umbraco (i.e. < 7.0.0). There might be some packages that were referencing these old client files. If you see missing image references you may need to contact the vendor of the package in question to update their references.
 
 Follow the **[upgrade guide for Umbraco 7](minor-upgrades-for-umbraco-7.md)** to complete the upgrade.
 
@@ -420,7 +420,7 @@ In Umbraco version 7.6.2 we made a mistake in the Property Value Converts (PVCs)
 * Related Links
 * Member Picker
 
-Depending on whether you tried to fix problem with those Data Types you will need to fix them after you upgrade to 7.6.3.
+Depending on whether you tried to fix the problem with those Data Types, you will need to fix them after you upgrade to 7.6.3.
 
 ### Property Value Converters (PVC)
 
@@ -451,7 +451,7 @@ In Umbraco 7.6.0, this is what you would do instead:
 
 This is possible using Models Builder and through the inclusion of [core property value converters](https://our.umbraco.com/projects/developer-tools/umbraco-core-property-value-converters/), a package by community member Jeavon Leopold.
 
-In order to not break everybody's sites (the results of queries are different when PVC's are enabled) we disabled these PVC's by default.
+To not break everybody's sites (the results of queries are different when PVCs are enabled), we disabled these PVCs by default.
 
 Umbraco 7.6.0 also came with new pickers that store their data as a [UDI (Umbraco Identifier)](https://our.umbraco.com/Documentation/Reference/Querying/Udi). We wanted to simplify the use of these new pickers and by default we wanted PVC's to always be enabled for those pickers.
 
@@ -495,7 +495,7 @@ The three most important things to note are:
 
 ### Json.Net ([U4-9499](https://issues.umbraco.org/issue/U4-9499))
 
-Json.Net has been updated to version 10.0.0 to benefit from improvements in features, fixes and performances (see [release notes](https://github.com/JamesNK/Newtonsoft.Json/releases)). This might be a breaking change for people relying on one of the changed functionality.
+Json.Net has been updated to version 10.0.0 to benefit from improvements in features, fixes, and performances (see [release notes](https://github.com/JamesNK/Newtonsoft.Json/releases)). This might be a breaking change for people relying on one of the changed functionality.
 
 ### Log4net ([U4-1324](https://issues.umbraco.org/issue/U4-1324))
 
@@ -525,13 +525,13 @@ For example, the `SliderValueConverter` returns a `decimal` or a `Range<decimal>
 
 This change only impacts new installs (no change for upgrades).
 
-The new property value converters are controlled by an `umbracoSettings.config` setting. In section `settings/content`, setting `EnablePropertyValueConverters` needs to be present and `true` to activate them.
+The new property value converters are controlled by an `umbracoSettings.config` setting. In the section `settings/content`, setting `EnablePropertyValueConverters` needs to be present and `true` to activate them.
 
 ### Database ([U4-9201](https://issues.umbraco.org/issue/U4-9201))
 
 Umbraco has been using a PetaPoco-managed `UmbracoDatabase` instance since version 7 came out. We realized that some of our legacy code still bypassed that mechanism and used parallel, out-of-band database connections, causing issues with transactions.
 
-The legacy code has been refactored to rely on the `UmbracoDatabase` instance. However, because that database is disposed during `EndRequest`, code that ran after it has been disposed may not work anymore. This should then be updated to used either an `HttpModule` event that occurs before `EndRequest`, or the new `UmbracoModule.EndRequest` event.
+The legacy code has been refactored to rely on the `UmbracoDatabase` instance. However, because that database is disposed of during `EndRequest`, the code that ran after it has been disposed may not work anymore. This should then be updated to use either an `HttpModule` event that occurs before `EndRequest` or the new `UmbracoModule.EndRequest` event.
 
 More details are available on [issue 146](https://github.com/kipusoep/UrlTracker/issues/146) on the 301 Redirect Tracker GitHub issue tracker.
 
@@ -545,13 +545,13 @@ Introducing scopes means that some public APIs signatures are changing. Most of 
 
 ### Property Editors storing UDI instead of ID ([U4-9310](https://issues.umbraco.org/issue/U4-9310))
 
-The property editors for pickers for content, media, members and related links have been updated to store UDI instead of node ID. Pickers in sites being upgraded have been marked as obsolete, but will continue to work as they always did.
+The property editors for pickers for content, media, members, and related links have been updated to store UDI instead of the node ID. Pickers in sites being upgraded have been marked as obsolete but will continue to work as they always did.
 
 New sites will have the obsolete pickers filtered out from the list of available property editors, but they can be enabled by a configuration flag.
 
 ### Rich Text Editor (RTE) Images attributes ([U4-6228](https://issues.umbraco.org/issue/U4-6228), [U4-6595](http://issues.umbraco.org/issue/U4-6595))
 
-For a long time we had a `rel` attribute on an `<img>` tag when inserting into the RTE. This is invalid HTML markup. We worked around this by stripping this attribute using a Property Editor Value converter. Some developers relied on this attribute so we didn't change it to a "data-id" attribute which would have been valid. In 7.6 we are not storing integer IDs in these attributes. Instead storing UDI values so with this change we no longer use `rel` or `data-id` and instead there will be a "data-udi" attribute. This change should affect only a small amount of people that were previously relying on the values from the "rel" attribute.
+For a long time, we had a `rel` attribute on an `<img>` tag when inserted into the RTE. This is invalid HTML markup. We worked around this by stripping this attribute using a Property Editor Value converter. Some developers relied on this attribute so we didn't change it to a "data-id" attribute which would have been valid. In 7.6 we are not storing integer IDs in these attributes. Instead of storing UDI values so with this change we no longer use `rel` or `data-id` and instead there will be a "data-udi" attribute. This change should affect only a small amount of people that were previously relying on the values from the "rel" attribute.
 
 ### Others
 
@@ -561,7 +561,7 @@ The creation and editing of WebForms templates will no longer be supported as fo
 
 ### Upgrading via NuGet
 
-This is an important one and there was not a perfect solution to this. We have removed the UrlRewriting dependency and no longer ship with it. However, if you are using it we didn't want to have NuGet delete all of your rewrites. The good news is that if you are using it, the NuGet upgrade will not delete your rewrite file and everything should continue to work.
+This is an important one and there was no perfect solution to this. We have removed the UrlRewriting dependency and no longer ship with it. However, if you are using it we didn't want to have NuGet delete all of your rewrites. The good news is that if you are using it, the NuGet upgrade will not delete your rewrite file and everything should continue to work.
 
 However, if you are not using it, **you will get an error after upgrading. Here's how to fix it:**
 
@@ -654,7 +654,7 @@ Other considerations:
   * The upgrader will take care of updating all other web.config’s (in all other folders, for example, the `Views` and `App_Plugins` folders) to have the correct settings
   * For general ASP.NET MVC 5 upgrade details see: [https://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2](https://www.asp.net/mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2)
 * It is not required that you merge the changes for the Examine index paths in the ExamineIndex.config file. However, if you do, your indexes will be rebuilt on startup because Examine will detect that they don’t exist at the new location.
-* It's highly recommended to clear browser cache - the ClientDependency version is automatically bumped during install which should force browser cache to refresh, however in some edge cases this might not be enough.
+* It's highly recommended to clear the browser cache - the ClientDependency version is automatically bumped during installation which should force the browser cache to refresh, however in some edge cases this might not be enough.
 
 Follow the **[upgrade guide for Umbraco 7](minor-upgrades-for-umbraco-7.md)** to complete the upgrade.
 

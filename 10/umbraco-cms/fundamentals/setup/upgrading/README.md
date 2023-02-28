@@ -26,9 +26,9 @@ It is necessary to run the upgrade installer on each environment of your Umbraco
 
 ## Legacy Umbraco
 
-The steps outlined in this article applies to moderne Umbraco from version 10 and later versions.
+The steps outlined in this article apply to modern Umbraco from version 10 and later versions.
 
-Are you upgrading to a minor for Umbraco 6, 7 or 8 you can find the appropriate guide below:
+Are you upgrading to a minor for Umbraco 6, 7, or 8? You can find the appropriate guide below:
 
 {% content-ref url="version-specific/minor-upgrades-for-umbraco-8.md" %} version-specific/minor-upgrades-for-umbraco-8.md {% endcontent-ref %}
 
