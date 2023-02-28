@@ -8,7 +8,7 @@ Sometimes there are exceptions to these guidelines, which are listed in the **[v
 
 ## Note
 
-It is necessary to run the upgrade installer on each environment of your Umbraco site. So if you want to update your staging and your live site then you need to repeat the steps below and make sure that you click through the install screens so that your upgrade is complete.
+It is necessary to run the upgrade installer on each environment of your Umbraco site. If you want to update your staging and live site then you need to repeat the steps below and make sure that you click through the install screens to complete the upgrade.
 
 ## Contents
 
@@ -34,7 +34,6 @@ The upgrade will run through all the files and make sure you have the latest cha
 
 If you're not upgrading to 7.2.0 or higher then you should follow these extra instructions. If you are upgrading to 7.2.0+ then you can skip this and go to [Merge UI.xml and language](#merge-ui-xml-and-language).
 
-**The following only applies to upgrading to versions lower than 7.2.0**
 You will be asked to overwrite your web.config file and the files in /config, make sure to answer **No** to those questions.
 
 For some inexplicable reason, the installation will fail if you click "No to All" (in the GUI) or answer "L" (in the package manager console) to the question: "File 'Web.config' already exists in project 'MySite'. Do you want to overwrite it?" So make sure to only answer "**No**" (in the GUI) or "**N**" (in the package manager console).
@@ -42,7 +41,7 @@ For some inexplicable reason, the installation will fail if you click "No to All
 ![](images/nuget-overwrite-dialog.png)
 ![](images/nuget-upgrade-overwrite.png)
 
-Now here comes the tricky bit: We'll be mean and overwrite your web.config file anyway. But we'll back it up so don't worry. (Plus you already had your own backup, right?) You can find the backup in `App_Data\NuGetBackup\20140320-165450\`. (The `20140320-165450` bit is the date and time when the backup occurred, which varies.) You can then merge your config files and make sure they're completely up to date.
+We will overwrite the `web.config` file. We'll back it up so don't worry. You can find the backup in `App_Data\NuGetBackup\20140320-165450\`. The `20140320-165450` bit is the date and time when the backup occurred, which varies. You can then merge your config files and make sure they're up to date.
 
 ## Upgrade manually from a zip file
 
@@ -67,7 +66,7 @@ You can expect some changes to the following configuration files:
 * The `web.config` file in the root of your site **(Important: make sure to copy back the version number, and the connection string as they were.)**
 * In rare cases, the `web.config` file in the Views folder
 
-Use a tool like [WinMerge](http://winmerge.org/ "WinMerge") to check changes between all of the config files. Depending on when you last did this there may have been updates to quite a few of them.
+Use a tool like [WinMerge](http://winmerge.org/ "WinMerge") to check changes between all of the config files. Depending on when you last did this there may have been updates to a few of them.
 
 There's also the possibility that files in the `/Config` folder are new or have been removed(we note this in the release notes). WinMerge (and other diff tools) is able to compare folders as well so you can spot these differences.
 
