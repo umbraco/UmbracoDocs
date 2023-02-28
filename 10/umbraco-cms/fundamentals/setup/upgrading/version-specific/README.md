@@ -45,7 +45,7 @@ NPoco types and interfaces are part of our public interface which means that thi
 - Removed support for Microsoft SQL Server Compact (SQL CE).
 - Removed `ReadLock` and `WriteLock` methods from `ISqlSyntaxProvider` interface. Use  `IDistributedLockingMechanism` (or IScope which delegates to `IDistributedLockingMechanism`) instead.
 - Constants for SQL Server provider name moved+consolidated from `Core.Constants.DatabaseProviders` and `Core.Constants.-DbProviderNames` to `Umbraco.Cms.Persistence.SqlServer.Constants`
-- Various SQL Server related services moved from the `Umbraco.Infrastructure` project to the new `Umbraco.Cms.Persistence`.
+- Some SQL Server related services moved from the `Umbraco.Infrastructure` project to the new `Umbraco.Cms.Persistence`.
 - SqlServer project with altered namespaces e.g. `SqlServerSyntaxProvider`, `SqlServerBulkSqlInsertProvider`, `SqlServerDatabaseCreator`.
 
 **Added the following methods/properties to ISqlSyntaxProvider. These must be implemented in any downstream implementation e.g:**
@@ -259,7 +259,7 @@ There is no direct upgrade path from Umbraco 8 to Umbraco 9. It is however possi
 
 You can reuse your content by restoring your Umbraco 8 database into a new database used for an Umbraco 9 site.
 
-You will need to ensure the packages you are using are available in Umbraco 9, and you will need to reimplement your custom code and templates.
+You need to ensure the packages you are using are available in Umbraco 9, and you will need to reimplement your custom code and templates.
 
 The direct upgrade path is not possible because the codebase has been fundamentally updated in Umbraco 9. The underlying web framework has been updated from ASP.NET to ASP.NET Core.
 
@@ -416,11 +416,11 @@ In short:
 
 In Umbraco version 7.6.2 we made a mistake in the Property Value Converts (PVCs). This was corrected 2 days later in version 7.6.3. If you were having problems with querying the following Data Types on the frontend, make sure to upgrade to 7.6.3:
 
-* Multi Node Tree Picker
-* Related Links
-* Member Picker
+- Multi Node Tree Picker
+- Related Links
+- Member Picker
 
-Depending on whether you tried to fix the problem with those Data Types, you will need to fix them after you upgrade to 7.6.3.
+Depending on whether you tried to fix the problem with those, you will need to fix them after you upgrade to 7.6.3.
 
 ### Property Value Converters (PVC)
 
@@ -463,9 +463,9 @@ So we have fixed this now in 7.6.3.
 
 This issue only affects:
 
-* Multi Node Tree Picker
-* Related Links
-* Member Picker
+- Multi Node Tree Picker
+- Related Links
+- Member Picker
 
 Have you already upgraded to 7.6.2 and fixed queries for those three Data Types you have to fix them again in version 7.6.3.
 
@@ -521,7 +521,7 @@ This change only impacts new installs (no change for upgrades).
 
 A large amount of property value converters contributed by the community have been merged in and are now the default value converters. These converters change the object types returned by `GetPropertyValue` for more convenient types.
 
-For example, the `SliderValueConverter` returns a `decimal` or a `Range<decimal>` value that can directly be used in views, instead of the CSV string value that was previously returned.
+For example, the `SliderValueConverter` returns a `decimal` or a `Range<decimal>` value that can directly be used in views, instead of the comma-separated string values that were previously returned.
 
 This change only impacts new installs (no change for upgrades).
 
@@ -604,13 +604,13 @@ and
 
 Umbraco Forms 6.0.0 has been released to be compatible with Umbraco 7.6. It is a new major version release of Forms primarily due to the strict dependency on 7.6+. If you are using Forms, you will need to update it to version 6.0.0
 
-There is **[important Forms upgrade documentation that you will need to read the here](https://docs.umbraco.com/umbraco-forms/installation/version-specific.md#version-4-to-version-6)**.
+There are **[important Forms upgrade documentation that you will need to read.](https://docs.umbraco.com/umbraco-forms/installation/version-specific.md#version-4-to-version-6)**.
 
 ### Courier
 
 Umbraco Courier 3.1.0 has been released to be compatible with Umbraco 7.6. If you are using Courier, you will need to update it to version 3.1.0.
 
-## Follow the [upgrade guide for Umbraco 7](minor-upgrades-for-umbraco-7.md) to complete the upgrade.
+## Follow the [upgrade guide for Umbraco 7](minor-upgrades-for-umbraco-7.md) to complete the upgrade
 
 </details>
 
