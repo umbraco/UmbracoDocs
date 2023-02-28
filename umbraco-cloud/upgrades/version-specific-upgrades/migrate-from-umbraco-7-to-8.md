@@ -78,7 +78,7 @@ See [Step 3](#step-3-setup-custom-code-for-umbraco-8) of this guide, for more de
 
 ## Step 2: Files migration
 
-Before moving on with the next step, make sure that the Umbraco 8 project is no longer running.
+Before moving on to the next step, make sure that the Umbraco 8 project is no longer running.
 
 The following files/folders need to be copied into the Umbraco 8 project:
 
@@ -88,13 +88,13 @@ The following files/folders need to be copied into the Umbraco 8 project:
 * Any custom files/folders the Umbraco 7 project uses, that aren't in the `~/Config` or `~/bin`.
 * `~/App_Data/UmbracoForms` - in the case Umbraco Forms was used on the Umbraco 7 site.
 
-Merge the configuration files carefully to ensures any custom settings are migrated while none of the default configurations for Umbraco 8 is overwritten.
+Merge the configuration files carefully to ensure any custom settings are migrated while none of the default configurations for Umbraco 8 is overwritten.
 
 ### Generating UDA files
 
 1. Run the Umbraco 8 project locally
     * It **will** give you an error on the frontend as none of the Template files have been updated yet.
-2. Open the commandline tool in the `~/data` folder on the Umbraco 8 project.
+2. Open the command line tool in the `~/data` folder on the Umbraco 8 project.
 3. Generate UDA files by running the following command: `echo > deploy-export`.
     * Once a `deploy-complete` marker is added to the `~/data` folder, it is done.
 4. Check `~/data/revision` to ensure all the UDA files have been generated.
@@ -123,7 +123,7 @@ Read more about these changes in the [IPublishedContent section of the Documenta
 * `@Model.Value("propertyAlias")` replaces `@Umbraco.Field("propertyAlias")`.
 * `@Model.PropertyAlias` replaces `@Model.Content.PropertyAlias`.
 
-Depending on the size of the project and amount of custom code and implementations, this step is going to require a lot of work.
+Depending on the size of the project and the amount of custom code and implementations, this step is going to require a lot of work.
 
 ## Step 4: Deploy and test on Umbraco Cloud
 
