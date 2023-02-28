@@ -6,21 +6,21 @@ description: The process of installing and, in turn, uninstalling packages in yo
 
 This article will cover the process of installing as well as uninstalling packages from your Umbraco CMS website.
 
-As the article will cover both NuGet packages and zip-file packages, it is important to know the distinction:
+As the article will cover both NuGet packages and zip file packages, it is important to know the distinction:
 
 * **NuGet packages**: Modern Umbraco (Umbraco 10+) and Legacy Umbraco (Umbraco 8 and earlier versions).
-* **Package zip-files**: Legacy Umbraco (Umbraco 8 and earlier versions) only.
+* **Package zip files**: Legacy Umbraco (Umbraco 8 and earlier versions) only.
 
 Learn more about the different types of packages in the [Types of packages](types-of-packages.md) article.
 
 ## Installing packages
 
-In the Umbraco Backoffice, you will find a **Packages** section which displays the [Umbraco Marketplace](https://marketplace.umbraco.com/). From here you can browse all community-made as well as official Umbraco packages for the Umbraco CMS.
+In the Umbraco Backoffice, you will find a **Packages** section that displays the [Umbraco Marketplace](https://marketplace.umbraco.com/). From here you can browse all community-made as well as official Umbraco packages for the Umbraco CMS.
 
 ![Backoffice - Packages section](images/backoffice-packages-section.png)
 
 {% hint style="warning" %}
-For Umbraco CMS version 8 and earlier versions the Packages section displays the [Packages site on Our](https://our.umbraco.com/packages/).
+For Umbraco CMS version 8 and earlier versions, the Packages section displays the [Packages site on Our](https://our.umbraco.com/packages/).
 {% endhint %}
 
 {% tabs %}
@@ -35,7 +35,7 @@ The packages can be installed by using:
 * **Package Manager Console** in Visual Studio
 * .NET CLI (usually accessible from the terminal/command prompt of your system)
 
-For example, to install TheStarterKit package for the Umbraco CMS the command would be:
+For example, to install the StarterKit package for the Umbraco CMS the command would be:
 
 `dotnet add package Umbraco.TheStarterKit`
 
@@ -52,19 +52,19 @@ Once the package has been installed, it will show up under the **Packages** sect
 ![Backoffice - installed packages](images/backoffice-installed-packages.png)
 {% endtab %}
 
-{% tab title="Package zip-file" %}
+{% tab title="Package zip file" %}
 {% hint style="warning" %}
-Package zip-files are only available for Umbraco 8 or earlier versions.
+Package zip files are only available for Umbraco 8 or earlier versions.
 {% endhint %}
 
-Once you have downloaded an Umbraco package zip-file, you can install it in the Umbraco backoffice following the steps below:
+Once you have downloaded an Umbraco package zip file, you can install it in the Umbraco backoffice by following the steps below:
 
 * Navigate to the **Packages** section.
-* Select **Install local** in the top-right side of the page.
-* Drag'n drop the package onto the page or use the file explorer to select the package zip-file.
+* Select **Install local** on the top-right side of the page.
+* Drag'n drop the package onto the page or use the file explorer to select the package zip file.
 * Accept terms of use to confirm the package installation.
 
-The package will be install and any necessary reboots of the site will be initiated.
+The package will be installed and any necessary reboots of the site will be initiated.
 
 You can also install packages directly when browsing the packages in the Umbraco backoffice. This is usually preferred in order to ensure that the package is compatible with the Umbraco CMS version used.
 
@@ -81,7 +81,7 @@ The package will be install and the site will be rebooted.
 
 Uninstalling packages is not always as straightforward as installing them.
 
-In this section we will provide two examples on uninstalling a package - the StarterKit package and the SEOChecker package.
+In this section, we will provide two examples of uninstalling a package - the StarterKit package and the SEOChecker package.
 
 ### Uninstalling packages like the StarterKit
 
@@ -89,7 +89,7 @@ In this section we will provide two examples on uninstalling a package - the Sta
 Keep in mind that this particular guide targets a specific package. There are many packages out there, and each one is different. The exact steps presented here might not work the exact same way for all the packages, though the general approach should still apply.
 {% endhint %}
 
-The Starter Kit provides you with a boilerplate website solution to build upon. The package installs Document Types, Templates, media, content, and everything else needed to set up a small website. There is little custom code/functionality involved which is usually the case for such starterkit or sample site packages.
+The Starter Kit provides you with a boilerplate website solution to build upon. The package installs Document Types, Templates, media, content, and everything else needed to set up a small website. There is little custom code/functionality involved which is usually the case for such starter kit or sample-site packages.
 
 To uninstall a package, either run a command or use the NuGet Package Manager in Visual Studio.
 
@@ -183,7 +183,7 @@ In many cases, custom dashboards, editors, and scripts are left in the `App_Plug
 Keep in mind that this particular guide targets a specific package. There are many packages out there, and each one is different. The exact steps presented here might not work the exact same way for all the packages, though the general approach should still apply.
 {% endhint %}
 
-More advanced packages that adds functionality on top of Umbraco, usually rely on providing custom, compiled code. That being said, many of such packages also implement custom Sections, Dashboards, editors, and views.
+More advanced packages that add functionality on top of Umbraco, usually rely on providing custom, compiled code. That being said, many of such packages also implement custom Sections, Dashboards, editors, and views.
 
 In this example, we will be using the SEOChecker package. This package allows developers of the site to add custom properties to Document Types used to track search engine optimization practices.
 
@@ -191,7 +191,7 @@ An example use case of the SEOChecker property on a Document Type, as presented 
 
 ![SEOChecker in content](images/seochecker-content-section.png)
 
-To uninstall the SEOChecker from a website, the first step would be to remove the package via a dotnet command or using the NuGet Package Manager in Visual Studio.
+To uninstall the SEOChecker from a website, the first step is to remove the package via a `dotnet` command or use the NuGet Package Manager.
 
 The following command can be used for uninstalling the package:
 
