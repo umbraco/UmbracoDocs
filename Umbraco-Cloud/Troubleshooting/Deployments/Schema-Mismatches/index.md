@@ -29,7 +29,3 @@ If there are no pending deployments in your source environment, there are two wa
     * This will update your schema in the target environment and ensure it is in sync with the source environment
 
 If the mismatches involve differences in the `aliases` or `names`, changing these manually on the target environment will enable you to transfer your content.
-
-:::note
-If your project is using Umbraco Courier, please refer to this article instead: [Schema Mismatches with Courier](../../Courier/Schema-Mismatch-Courier)
-:::
