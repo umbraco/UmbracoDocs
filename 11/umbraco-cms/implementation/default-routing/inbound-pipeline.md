@@ -1,6 +1,6 @@
 # Umbraco's request pipeline
 
-Umbraco's request pipeline is the process of building-up the URL for a node, resolving a request to a specified node, and ensuring that the right content is sent back.
+Umbraco's request pipeline is the process of building up a URL, resolving the requests, and returning correct content.
 
 ## Published Request Preparation
 
