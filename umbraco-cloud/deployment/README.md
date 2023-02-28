@@ -50,7 +50,7 @@ Moving your content and media between your environments is done through the Umbr
 Transferring and restoring content and media is the same whether you are working between Local and Cloud or you are working between two Cloud environments.
 {% endhint %}
 
-## [Deploy Settings](../../umbraco-deploy/deploy-settings.md)
+## [Deploy Settings](https://docs.umbraco.com/umbraco-deploy/deploy-settings)
 
 All configuration for Umbraco Deploy is held in the `appSettings.json` file found at the root of your Umbraco website.
 
