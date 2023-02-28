@@ -18,7 +18,7 @@ Follow the [steps outlined in the Umbraco Cloud documentation](../../../../../um
 
 ## What are the limitations?
 
-In the following section, you can learn more about the limitations on migrating content from Umbraco 7 to Umbraco 8.
+In the following section, you can learn more about the limitations of migrating content from Umbraco 7 to Umbraco 8.
 
 ### Versions supported
 
@@ -55,8 +55,8 @@ The migration will transform the data stored in third party editors as well. How
 
 ### Migrating data types
 
-When migrating content from Umbraco 7 to Umbraco 8, the data type 'pre-value' structure has changed.
-In Umbraco 8, the term 'pre-values' no longer exist is instead referred to as `property editor configuration`.
+When migrating content from Umbraco 7 to Umbraco 8, the Data Type 'pre-value' structure has changed.
+In Umbraco 8, the term 'pre-values' no longer exists and is instead referred to as `property editor configuration`.
 
 In Umbraco 8, property editor configuration is a strongly typed object. There are plenty of examples in the [Umbraco-CMS codebase](https://github.com/umbraco/Umbraco-CMS/blob/v8/dev/src/Umbraco.Web/PropertyEditors/ContentPickerConfiguration.cs).
 
@@ -106,7 +106,7 @@ This will require you to update and save all custom pre-value editors to transfo
 
 ## What will happen
 
-When the migrations are running, Umbraco will go through your entire Umbraco 7 database and update it to the format required for Umbraco 8. The schema will be remodelled and transformed into the correct format and your existing compatible data will be transformed to fit with Umbraco 8.
+When the migrations are running, Umbraco will go through your entire Umbraco 7 database and update it to the format required for Umbraco 8. The schema will be remodeled and transformed into the correct format and your existing compatible data will be transformed to fit with Umbraco 8.
 
 These migrations will be running directly on your database. They are transforming schema and data - not transferring. Therefore always ensure that you have a backup before attempting to do this. In case something goes wrong, you will be able to rollback and try again.
 
