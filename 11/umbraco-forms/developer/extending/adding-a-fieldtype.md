@@ -111,7 +111,7 @@ The final step involves building the HTML view which will be rendered in Umbraco
 
 In the HTML you can access settings via `field.settings`, e.g. `{{field.settings.Caption}}` to render a "Caption" setting. It is also possible to access prevalues via `field.parsedPreValues`.
 
-For built-in field types, Umbraco Forms look for this file in the virtual folder: `App_Plugins\UmbracoForms\backoffice\Common\FieldTypes\` and will expect to find a file with a name matching the class's name, i.e. `mycustomfield.html`.
+For built-in field types, Umbraco Forms look for this file in the virtual folder: `App_Plugins\UmbracoForms\backoffice\Common\FieldTypes\`. It will expect to find a file with a name matching the class's name, i.e. `mycustomfield.html`.
 
 To store in a different location, you can apply the following override to the custom field type's C# representation:
 
@@ -129,7 +129,7 @@ Field settings that will be managed in the backoffice by editors creating forms 
     public string MySetting { get; set; }
 ```
 
-The property `Name` names the setting in the back-office with the `Description` providing the help text.  Both of these are translatable by providing a [user or package language file](../../../umbraco-cms/extending/language-files.md) containing appropriate keys:
+The property `Name` names the setting in the backoffice with the `Description` providing the help text.  Both of these are translatable by providing a [user or package language file](../../../umbraco-cms/extending/language-files.md) containing appropriate keys:
 
 ```xml
 <area alias="formProviderFieldTypes">
