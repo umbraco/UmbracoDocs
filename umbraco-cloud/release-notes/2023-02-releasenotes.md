@@ -17,7 +17,7 @@ The organization-enforced method will **override any MFA setting that the member
 
 ![Cloud-artboard](images/MfaEnforcedOrganizationMethod.gif)
 
-This organization-enforced MFA feature is easy to set up and manage and can help you protect your organization's data and resources in Umbraco Cloud. Enforcing MFA on all the members of your organization is a vital step in assuring that your cloud projects and backoffices are secured from unauthorized access.
+This organization-enforced MFA feature is easy to set up and manage and can help you protect your organization's data and resources in Umbraco Cloud. Enforcing MFA on all the members of your organization is a vital step in assuring your cloud projects and backoffices are secured from unauthorized access.
 
 ## New Project Creation Flow
 
