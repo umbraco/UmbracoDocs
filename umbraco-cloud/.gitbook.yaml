@@ -6,8 +6,8 @@ root: ./
 
 redirects:
     set-up/manage-hostnames/rewrites-on-cloud: set-up/project-settings/manage-hostnames/rewrites-on-cloud.md
-    set-up/manage-hostnames: set-up/project-settings/manage-hostnames.md
-    set-up/application-settings: set-up/project-settings/application-settings.md
+    set-up/manage-hostnames: setup/project-settings/manage-hostnames.md
+    set-up/application-settings: setup/project-settings/application-settings.md
     set-up/manage-security: set-up/project-settings/manage-security.md
     set-up/manage-cdn-caching: set-up/project-settings/manage-cdn-caching.md
     set-up/external-services: set-up/project-settings/external-services.md
