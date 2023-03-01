@@ -111,11 +111,9 @@ The final step involves building the HTML view which will be rendered in Umbraco
 
 In the HTML you can access settings via `field.settings`, e.g. `{{field.settings.Caption}}` to render a "Caption" setting. It is also possible to access prevalues via `field.parsedPreValues`.
 
-For built-in field types, Umbraco Forms look for this file in the folder: `App_Plugins\UmbracoForms\backoffice\Common\FieldTypes\` and will expect to find a file with a name matching the class's name, i.e. `mycustomfield.html`.
+For built-in field types, Umbraco Forms look for this file in the virtual folder: `App_Plugins\UmbracoForms\backoffice\Common\FieldTypes\` and will expect to find a file with a name matching the class's name, i.e. `mycustomfield.html`.
 
-As this location is cleared following a `dotnet clean` command, it's better to host the files for custom field types in a different location, such as `App_Plugins\UmbracoFormsCustomFields\backoffice\Common\FieldTypes\mycustomfield.html`.
-
-With a file in that location, you can apply the following override to the custom field type's C# representation:
+To store in a different location, you can apply the following override to the custom field type's C# representation:
 
 ```csharp
 public override string GetDesignView() =>
@@ -127,13 +125,30 @@ public override string GetDesignView() =>
 Field settings that will be managed in the backoffice by editors creating forms using the custom field type can be added to the C# class as properties with a `Setting` attribute:
 
 ```csharp
-    [Setting("My Setting", Description = "Help text for the setting", View = "TextField", DisplayOrder=10)]
+    [Setting("My Setting", Description = "Help text for the setting", View = "TextField", SupportsPlaceholders = "true", DisplayOrder = 10)]
     public string MySetting { get; set; }
 ```
 
-The `View` attribute defines the client-side view used when rendering a preview of the field in the form's designer. Umbraco Forms ships with a number of these, found in `App_Plugins\UmbracoForms\backoffice\Common\SettingTypes\`.
+The property `Name` names the setting in the back-office with the `Description` providing the help text.  Both of these are translatable by providing a [user or package language file](../../../umbraco-cms/extending/language-files.md) containing appropriate keys:
 
-Again though, as this location is cleared following a `dotnet clean` command, if you require a custom setting type view, it's better to host them in different location, such as `App_Plugins\UmbracoFormsCustomFields\backoffice\Common\SettingTypes\mycustomsettingfield.html`.
+```xml
+<area alias="formProviderFieldTypes">
+    <key alias="mySettingName">My Setting</key>
+    <key alias="mySettingDescription">Help text for the setting</key>
+</area>
+```
+
+The area aliases for the other provider types are as follows:
+
+- Data sources - `formProviderDataSources`
+- Export types - `formProviderExportTypes`
+- Prevalue sources - `formProviderPrevalueSources`
+- Recordset actions - `formRecordSetActions`
+- Workflows - `formProviderWorkflows`
+
+The `View` attribute defines the client-side view used when rendering a preview of the field in the form's designer. Umbraco Forms ships with a number of these, found in a virtual path of `App_Plugins\UmbracoForms\backoffice\Common\SettingTypes\`.
+
+Again though, you can use your own location, and configure with a full path to the view, e.g.:
 
 To reference the file the setting should be configured with a full path to the view, e.g.:
 
@@ -141,9 +156,14 @@ To reference the file the setting should be configured with a full path to the v
     [Setting("My Setting",
         Description = "Help text for the setting",
         View = "~/App_Plugins/UmbracoFormsCustomFields/backoffice/Common/SettingTypes/mycustomsettingfield.html",
-        DisplayOrder=10)]
+        SupportsPlaceholders = "true"
+        DisplayOrder = 10)]
     public string MySetting { get; set; }
 ```
+
+`SupportsPlaceholders` is a flag indicating whether the setting can contain ["magic string" placeholders](../magic-strings.md) and controls whether they are parsed on rendering.
+
+`HtmlEncodeReplacedPlaceholderValues` takes effect only if `SupportsPlaceholders` is `true`. It controls whether the replaced placeholder values should be HTML encoded (as is necessary for rendering within content from a rich text editor).
 
 ## Backoffice entry rendering
 
