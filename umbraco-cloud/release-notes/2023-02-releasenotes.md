@@ -42,7 +42,7 @@ Our updated deployment process facilitates that your website is deployed quickly
 
 Some of the deployment issues reported by users are related to the configuration of the Umbraco Cloud project or schema mismatches between environments. In these scenarios, we strive to provide a helpful text that will guide you in the right direction to solve the issue at hand.
 
-If you are experiencing a deployment error, have a question or remark to the deployment feature, please **consult our experienced support team**. Both the Umbraco Support and Cloud Team are dedicated to removing any friction caused by the deployments and share the vision to make the deployment process in Umbraco Cloud as perfect as it can be.
+If you are experiencing a deployment error, a question, or a remark about the deployment feature, please **consult our experienced support team**. Both the Umbraco Support and Cloud Team are dedicated to removing any friction caused by deployments on Umbraco cloud. Our vision is to make the deployment process in Umbraco Cloud as perfect as it can be.
 
 ## Restore Content Optimization
 The latest patch releases for Umbraco Deploy have introduced some important improvements to deploy restore and transfer operations. The update contains **significant performance improvements** and should ensure that **restoring and transferring content** in a setup with a four-digit number of content nodes are not in danger of timing out.
