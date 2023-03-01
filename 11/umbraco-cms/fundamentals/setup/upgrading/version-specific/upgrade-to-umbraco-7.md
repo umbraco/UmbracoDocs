@@ -8,7 +8,7 @@ The [standard upgrade instructions](../README.md) still apply to this process as
 
 ## Backup
 
-It is critical that you back up your website and database before upgrading. There are database changes made during install and you cannot revert an Umbraco 7 database to an Umbraco 6 database.
+It is critical that you back up your website and database before upgrading. There are database changes made during installation and you cannot revert an Umbraco 7 database to an Umbraco 6 database.
 
 ## .Net 4.5
 
@@ -20,7 +20,7 @@ Umbraco 7 requires browsers with proper HTML 5 support, these include Chrome, Fi
 
 ## Breaking changes
 
-Before you upgrade be sure to read the list of breaking changes. This is especially recommended if you have removed or modified code in the core or if one of these breaking changes directly affects your install.
+Before you upgrade be sure to read the list of breaking changes. This is especially recommended if you have removed or modified code in the core or if one of these breaking changes directly affects your installation.
 
 [See the list of breaking changes](https://our.umbraco.com/contribute/releases/700) for more details.
 
@@ -49,7 +49,7 @@ It is recommended that you use a Diff tool to compare the configuration file cha
     * Remove the `add key="umbracoUseMediumTrust"` element
     * Remove the `system.web.extensions` element
     * Removes the `xhtmlConformance` element
-    * Remove `system.codedom` element
+    * Remove the `system.codedom` element
     * Remove the `compilation` assemblies, `/compilation`
     * Remove the `system.web.webPages.razor` element
     * New: `sectionGroup name="umbracoConfiguration"` section
@@ -69,8 +69,8 @@ It is recommended that you use a Diff tool to compare the configuration file cha
   * [https://issues.umbraco.org/issue/U4-2742](https://issues.umbraco.org/issue/U4-2742)
 * `/config/applications.config` and `/config/trees.config` have some icon paths and names updated. You need to merge the new changes into your existing config files.
 * `/config/tinyMceConfig.config`
-  * The `inlinepopups` is compatible supported in  Umbraco 7. You need to remove this element: `plugin loadOnFrontend="true"`, `inlinepopups/plugin`;
-  * The plugins element that is ships with Umbraco 7 looks like:
+  * The `inlinepopups` is compatible and supported in  Umbraco 7. You need to remove these elements: `plugin loadOnFrontend="true"`, `inlinepopups/plugin`;
+  * The plugins element that is shipped with Umbraco 7 looks like this:
 
     ```xml
     <plugins>
@@ -97,7 +97,7 @@ Umbraco 7+ will no longer support medium trust environments. There are now some 
 
 ### Tree events
 
-Content, Media, Members and Data Type trees will no longer raise the legacy tree events (based on BaseTree). It is recommended to change all tree event handlers to use the new tree events which fire for every tree in Umbraco including legacy trees. The new tree events are static events and are found on the class `Umbraco.Web.Trees.TreeControllerBase`:
+Content, Media, Members, and Data Type trees will no longer raise the legacy tree events (based on BaseTree). It is recommended to change all tree event handlers to use the new tree events that fire for every tree in Umbraco including legacy trees. The new tree events are static events and are found in the class `Umbraco.Web.Trees.TreeControllerBase`:
 
 * `MenuRendering`
 * `RootNodeRendering`
@@ -105,11 +105,11 @@ Content, Media, Members and Data Type trees will no longer raise the legacy tree
 
 ### Legacy business logic events
 
-The Content, Media, Member and Data Type editors have been re-created and are solely using the new Umbraco Services data layer. This means that operations performed in the backoffice will no longer raise the legacy business logic events (for example, events based on `umbraco.cms.businesslogic.web.Document`). It is recommended to change your event handlers to subscribe to the new Services data layer events. These are static events and are found in the services. For example:  `Umbraco.Core.Services.ContentService.Saved`.
+The Content, Media, Member, and Data Type editors have been re-created and are solely using the new Umbraco Services data layer. This means that operations performed in the backoffice will no longer raise the legacy business logic events (for example, events based on `umbraco.cms.businesslogic.web.Document`). It is recommended to change your event handlers to subscribe to the new Services data layer events. These are static events and are found in the services. For example:  `Umbraco.Core.Services.ContentService.Saved`.
 
 ## Property Editors
 
-Legacy property editors (pre Umbraco 7) will not work with Umbraco 7. During the upgrade installation process Umbraco will generate a report showing you which legacy property editors are installed. These will all be converted to a `readonly` Label property editor. No data loss will occur but you'll need to re-assign your existing data types to use a new compatible Umbraco 7 property editor.
+Legacy property editors (pre-Umbraco 7) will not work with Umbraco 7. During the upgrade installation process, Umbraco will generate a report showing you which legacy property editors are installed. These will all be converted to a `readonly` Label property editor. No data loss will occur but you'll need to re-assign your existing data types to use a new compatible Umbraco 7 property editor.
 
 Most Umbraco core property editors shipped will be mapped to their equivalent Umbraco 7 editors. The Image cropper editor has not been completed for v7.0.
 
@@ -123,11 +123,11 @@ One of the database changes made in Umbraco 7 is the change of referencing a pro
 
 ## Parameter Editors
 
-Legacy parameter editors (pre Umbraco 7) will not work with Umbraco 7. If Umbraco detects legacy parameter editor aliases that does not map to a Umbraco 7 parameter editor it will render a textbox in its place. You will need to update your macros to use a compatible Umbraco 7 parameter editor as those that aren't supported.
+Legacy parameter editors (pre-Umbraco 7) will not work with Umbraco 7. If Umbraco detects legacy parameter editor aliases that do not map to a Umbraco 7 parameter editor it will render a textbox in its place. You will need to update your macros to use a compatible Umbraco 7 parameter editor as those that aren't supported.
 
 Previously, parameter editors were registered in an Umbraco database table: `cmsMacroPropertyType` which no longer exists. Parameter editors in Umbraco 7 are plugins like property editors. During the Umbraco 7 upgrade installation process it will update the new `cmsMacroProperty.editorAlias` column with the previous parameter editor alias. During this process it will look into the `Umbraco.Core.PropertyEditors.LegacyParameterEditorAliasConverter` for a map between a legacy alias to a new Umbraco 7 alias.
 
-Custom legacy parameters can be mapped to new Umbraco 7 parameter editor aliases during install. This can be done by modifying the mapping during application startup using this method: `Umbraco.Core.PropertyEditors.LegacyParameterEditorAliasConverter.CreateMap`.
+Custom legacy parameters can be mapped to new Umbraco 7 parameter editor aliases during installation. This can be done by modifying the mapping during application startup using this method: `Umbraco.Core.PropertyEditors.LegacyParameterEditorAliasConverter.CreateMap`.
 
 ## Database changes
 
@@ -142,10 +142,10 @@ For database change details see (including all child tasks):
 
 See above for the database updates made for better tag support.
 
-* Tags can now be assigned to a nodess property and not only a node
+* Tags can now be assigned to a nodes property and not only a node
 * Multiple tag controls can exist on one page with different data
   * The legacy API does **not** support this, the legacy API will effectively, add/update/remove tags for the first property found for the document that is assigned a tag property editor.
-* There is a new ITagService which can be used to query tags
+* There is a new ITagService that can be used to query tags
   * Querying for tags in a view (front-end) can be done via the new TagQuery class which is exposed from the UmbracoHelper. For example: `@Umbraco.TagQuery.GetTagsForProperty`
 
 ## Packages
@@ -154,7 +154,7 @@ You should check with the package creator for all installed packages to ensure t
 
 ## For package developers
 
-We see common errors that we cannot fix for you, but we do have recommendations you can follow to fix:
+We see common errors that we cannot fix for you, but we do have recommendations you can follow to fix them:
 
 ### TypeFinder
 
@@ -170,4 +170,4 @@ While you need to have JavaScript inside menu actions to trigger a response, it 
 
 ### Use the recommended Umbraco uicontrols
 
-If you have a webforms page, it is recommended to use the built-in ASP.NET controls to render panels, properties and so on. If you use the raw HTML, or try to style it to match the backoffice, you will get out of sync. Follow the guidelines set by Umbraco's internal editors and use the ASP.NET custom controls for UI.
+If you have a webforms page, it is recommended to use the built-in ASP.NET controls to render panels, properties and so on. If you use the raw HTML or try to style it to match the backoffice, you will get out of sync. Follow the guidelines set by Umbraco's internal editors and use the ASP.NET custom controls for UI.

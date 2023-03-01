@@ -1,5 +1,5 @@
 ---
-description: This articles provides details on how to upgrade to the next minor version when using Umbraco 8.
+description: This article provides details on how to upgrade to the next minor version when using Umbraco 8.
 ---
 
 # Minor upgrades for Umbraco 8
@@ -8,11 +8,11 @@ Sometimes there are exceptions to these guidelines, which are listed in the **[v
 
 ## Note
 
-It is necessary to run the upgrade installer on each environment of your Umbraco site. So if you want to update your staging and your live site then you need to repeat the steps below and make sure that you click through the install screens so that your upgrade is complete.
+It is necessary to run the upgrade installer on each environment of your Umbraco site. If you want to update your staging and live site you need to repeat the steps below. Make sure you click through the install screens so that your upgrade is complete.
 
 ## Contents
 
-In this article you will find instruction of 3 different ways of upgrading:
+In this article you will find instructions for 3 different ways of upgrading:
 
 * [Upgrade using NuGet](#upgrade-using-nuget)
 * [Upgrade manually from a Zip file](#upgrade-manually-from-a-zip-file)
@@ -53,9 +53,9 @@ You can expect some changes to the following configuration files:
 * The `web.config` file in the root of your site **(Important: make sure to copy back the version number, and the connection string as they were.)**
 * In rare cases, the `web.config` file in the `/Views` folder
 
-Use a tool like [WinMerge](http://winmerge.org/ "WinMerge") to check changes between all of the config files. Depending on when you last did this there may have been updates to quite a few of them.
+Use a tool like [WinMerge](http://winmerge.org/ "WinMerge") to check changes between all of the config files. Depending on when you last did this there may have been updates to few of them.
 
-There's also the possibility that some files in the `/Config` folder are new or some have been removed (we do make a note of this in the release notes). WinMerge (and other diff tools) is able to compare folders as well so you can spot these differences.
+There's also the possibility that some files in the `/Config` folder are new or some have been removed (we do make a note of this in the release notes). WinMerge (and other diff tools) can compare folders as well so you can spot these differences.
 
 ### Merge UI.xml and language files
 
