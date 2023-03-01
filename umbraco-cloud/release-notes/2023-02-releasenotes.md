@@ -27,7 +27,7 @@ The new flow has a **more modern and visually appealing design**, which makes it
 
 ![OrgMfaDisplay](images/ProjectCreationFlow.gif)
 
-You will start by selecting the preferred project type, and then continue to choose your project plan, CMS version (for Umbraco Cloud or Umbraco baseline), and region. Next, you only need to register a project name, and the cloud project will be ready for you within a few minutes.
+You will start by selecting the preferred project type, then you choose your project plan, CMS version (for Umbraco Cloud), and region. Next, you only need to register a project name, and the cloud project will be ready for you within a few minutes.
 
 Whether you're a seasoned Umbraco Cloud developer or new to Umbraco development, you'll appreciate the ease and efficiency of our new project creation flow.
 
