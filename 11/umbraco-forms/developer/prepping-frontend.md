@@ -53,7 +53,7 @@ To add the three client dependencies, see the examples below:
 
 **Example within `body` tags.**
 
-When adding the script to the bottom of the page, you will also need to render the scripts. For more information, see [Rendering From Scripts](rendering-scripts.md) article.
+When adding the script to the bottom of the page, you will also need to render the scripts. For more information, see [Rendering Forms Scripts](rendering-scripts.md) article.
 
 ```html
 <body>
