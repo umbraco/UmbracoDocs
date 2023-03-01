@@ -9,10 +9,11 @@
 
 ## Enforced Multi-factor Authentication (MFA) for Organizations
 
-We're excited to introduce our latest security feature in Umbraco Cloud - organization-enforced multi-factor authentication.
-With this new feature, you can enforce MFA for all members in your organization, ensuring that everyone follows the same security protocols. You can customize the authentication method required for each member, depending on your organization's security policies and preferences.
+We're excited to introduce our latest security feature in Umbraco Cloud - _organization-enforced multi-factor authentication_.
 
-The organization-enforced method will override any MFA setting that the member has and ensure that the user will have to use the specified MFA method when during his login session involving UmbracoID.
+With this new feature, you can **enforce MFA for all members in your organization**, ensuring that everyone follows the same security protocols. You can customize the authentication method required for each member, depending on your organization's security policies and preferences.
+
+The organization-enforced method will **override any MFA setting that the member has registred**. And ensure that the user will have to use the specified MFA method when during his login session involving UmbracoID.
 
 ![Cloud-artboard](images/MfaEnforcedOrganizationMethod.gif)
 
@@ -22,7 +23,7 @@ This organization-enforced MFA feature is easy to set up and manage and can help
 
 We are continuously migrating the pages of Umbraco Cloud Portal to a new front end stack. Lately, we have updated the [hostnames](https://docs.umbraco.com/umbraco-cloud/setup/project-settings/manage-hostnames) page and the project creation flow. In particular, for the latter, you will notice some significant improvements compared to the previous version.
 
-The new flow has a more modern and visually appealing design, which makes it more engaging and user-friendly. It features a step-by-step guide that leads users through the process of creating a new project, ensuring that they don't miss any important details.
+The new flow has a **more modern and visually appealing design**, which makes it more engaging and user-friendly. It features a **step-by-step guide** that leads users through the process of creating a new project, ensuring that they don't miss any important details.
 
 ![OrgMfaDisplay](images/ProjectCreationFlow.gif)
 
@@ -35,15 +36,15 @@ So why wait? Try out our new project creation flow today and start building your
 
 ## Improved Deployment and Error Handling
 
-We have made significant improvements to the deployment process and error handling in Umbraco Cloud. We understand that seamless deployment between environments is crucial for your developer experience when working in Umbraco Cloud, and we have worked hard to make it even better.
+We have made **significant improvements to the deployment process and error handling** in Umbraco Cloud. We understand that seamless deployment between environments is crucial for your developer experience when working in Umbraco Cloud, and we have worked hard to make it even better.
 
 Our updated deployment process facilitates that your website is deployed quickly and accurately every time you make changes to your project. We have also improved our error handling system to provide you with clear and concise guidance when unexpected errors occur during deployment.
 
 Some of the deployment issues reported by users are related to the configuration of the Umbraco Cloud project or schema mismatches between environments. In these scenarios, we strive to provide a helpful text that will guide you in the right direction to solve the issue at hand.
 
-If you are experiencing a deployment error, have a question or remark to the deployment feature, please consult our experienced support team. Both the Umbraco Support and Cloud Team are dedicated to removing any friction caused by the deployments and share the vision to make the deployment process in Umbraco Cloud as perfect as it can be.
+If you are experiencing a deployment error, have a question or remark to the deployment feature, please **consult our experienced support team**. Both the Umbraco Support and Cloud Team are dedicated to removing any friction caused by the deployments and share the vision to make the deployment process in Umbraco Cloud as perfect as it can be.
 
 ## Restore Content Optimization
-The latest patch releases for Umbraco Deploy have introduced some important improvements to deploy restore and transfer operations. The update contains significant performance improvements and should ensure that restoring and transferring content in a setup with a four-digit number of content nodes are not in danger of timing out.
+The latest patch releases for Umbraco Deploy have introduced some important improvements to deploy restore and transfer operations. The update contains **significant performance improvements** and should ensure that **restoring and transferring content** in a setup with a four-digit number of content nodes are not in danger of timing out.
 
 The new configuration settings and options will work instantly on the cloud projects that previously have experienced long process times during restore and transfer operations. However, you might find more insight on the pages for [troubleshooting](https://docs.umbraco.com/umbraco-deploy/troubleshooting) and [configuration](https://docs.umbraco.com/umbraco-deploy/deploy-settings) for the deployment and restoring feature of Umbraco Cloud.
