@@ -36,7 +36,7 @@ So why wait? Try out our new project creation flow today and start building your
 
 ## Improved Deployment and Error Handling
 
-We have made **significant improvements to the deployment process and error handling** in Umbraco Cloud. We understand that seamless deployment between environments is crucial for your developer experience when working in Umbraco Cloud, and we have worked hard to make it even better.
+We have made **significant improvements to the deployment process and error handling** in Umbraco Cloud. We understand that seamless deployment between environments is crucial for your developer experience working in Umbraco Cloud. We have therefore been hard at work to make it even better.
 
 Our updated deployment process facilitates that your website is deployed quickly and accurately every time you make changes to your project. We have also improved our error handling system to provide you with clear and concise guidance when unexpected errors occur during deployment.
 
