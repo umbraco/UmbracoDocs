@@ -10,9 +10,8 @@ description: >-
 # Language Files & Localization
 
 Language files are used for translating:
-- The Umbraco backoffice user interface so that end users can use Umbraco in their native language.
-  This is particularly important for content editors who do not speak English.
-- The member identity errors in a Umbraco website so that end users can use Umbraco in the website language.
+- The Umbraco backoffice user interface so that end users can use Umbraco in their native language. This is particularly important for content editors who do not speak English.
+- The member identity errors in an Umbraco website enabling end users to use Umbraco in the website language.
 
 If you are a package developer, [see here for docs on how to include translations for your own package](packages/language-files-for-packages.md).
 
