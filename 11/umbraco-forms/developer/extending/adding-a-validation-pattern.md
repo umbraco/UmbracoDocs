@@ -57,4 +57,4 @@ public static IUmbracoBuilder AddCustomProviders(this IUmbracoBuilder builder)
 
 With the pattern registered it will be available for selection by editors in the backoffice when they create validation for fields supporting this feature.
 
-![Validation pattern](images/validation-pattern.png)
+![Validation pattern](../images/validation-pattern.png)
