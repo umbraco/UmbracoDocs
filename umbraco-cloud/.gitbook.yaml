@@ -5,11 +5,17 @@ root: ./
     summary: SUMMARY.md
 
 redirects:
+    set-up/manage-hostnames: set-up/project-settings/manage-hostnames/README.md
+    set-up/team-members: set-up/project-settings/team-members/README.md
     set-up/manage-hostnames/rewrites-on-cloud: set-up/project-settings/manage-hostnames/rewrites-on-cloud.md
+    set-up/manage-hostnames/security-certificates: set-up/project-settings/manage-hostnames/security-certificates.md
+    set-up/application-settings: set-up/project-settings/application-settings.md
     set-up/manage-security: set-up/project-settings/manage-security.md
     set-up/manage-cdn-caching: set-up/project-settings/manage-cdn-caching.md
     set-up/external-services: set-up/project-settings/external-services.md
     set-up/dedicated-resources: set-up/project-settings/dedicated-resources.md
+    set-up/upgrade-umbraco-cloud-plan: set-up/project-settings/upgrade-umbraco-cloud-plan
+    set-up/usage: set-up/project-settings/usage.md
     upgrades/migrate-from-umbraco-10-to-11: upgrades/major-upgrades.md
     release-notes/2022-01-06-releasenotes: release-notes/overview-2022/2022-01-06-releasenotes.md
     release-notes/2022-02-15-releasenotes: release-notes/overview-2022/2022-02-15-releasenotes.md
