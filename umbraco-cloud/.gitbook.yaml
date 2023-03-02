@@ -6,6 +6,7 @@ root: ./
 
 redirects:
     set-up/manage-hostnames: set-up/project-settings/manage-hostnames/README.md
+    set-up/team-members: setup/project-settings/team-members/README.md
     set-up/manage-hostnames/rewrites-on-cloud: set-up/project-settings/manage-hostnames/rewrites-on-cloud.md
     set-up/application-settings: set-up/project-settings/application-settings.md
     set-up/manage-security: set-up/project-settings/manage-security.md
