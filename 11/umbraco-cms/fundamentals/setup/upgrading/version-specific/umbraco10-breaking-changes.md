@@ -37,7 +37,7 @@ NPoco types and interfaces are part of our public interface which means that thi
 * Removed support for Microsoft SQL Server Compact (SQL CE).
 * Removed `ReadLock` and `WriteLock` methods from `ISqlSyntaxProvider` interface. Use `IDistributedLockingMechanism` (or IScope which delegates to `IDistributedLockingMechanism`) instead.
 * Constants for SQL Server provider name moved+consolidated from `Core.Constants.DatabaseProviders` and `Core.Constants.-DbProviderNames` to `Umbraco.Cms.Persistence.SqlServer.Constants`
-* Various SQL Server related services moved from the `Umbraco.Infrastructure` project to the new `Umbraco.Cms.Persistence`.
+* Multiple SQL Server related services moved from the `Umbraco.Infrastructure` project to the new `Umbraco.Cms.Persistence`.
 * SqlServer project with altered namespaces e.g. `SqlServerSyntaxProvider`, `SqlServerBulkSqlInsertProvider`, `SqlServerDatabaseCreator`.
 
 **Added the following methods/properties to ISqlSyntaxProvider. These must be implemented in any downstream implementation e.g:**
