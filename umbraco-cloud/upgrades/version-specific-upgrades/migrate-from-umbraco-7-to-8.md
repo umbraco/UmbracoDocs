@@ -34,7 +34,7 @@ Should something fail during the migration, the Development environment can alwa
 3. Clone down the Development environment from the Umbraco 8 Cloud project.
 
 {% hint style="info" %}
-We recommend setting up the Umbraco 8 Cloud portal locally Visual Studio.
+We recommend setting up the Umbraco 8 Cloud portal locally in Visual Studio.
 
 This can be done after cloning down the Cloud environment or by using the [UaaS cloning tool](https://umbra.co/uaas-cmd).
 
