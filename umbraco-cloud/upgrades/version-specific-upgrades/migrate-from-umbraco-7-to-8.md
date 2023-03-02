@@ -49,7 +49,7 @@ Should something fail during the migration, the Development environment can alwa
 {% hint style="info" %}
 If your login does not work, try the following approach:
 
-1, Copy the `UsersMembershipProvider` attributes from your Umbraco 7 `web.config`, to the Umbraco 8 `web.config`.
+1. Copy the `UsersMembershipProvider` attributes from your Umbraco 7 `web.config` file to the Umbraco 8 `web.config` file.
 2. Try to login again.
 
 Below is an example of how the attribute can look:
