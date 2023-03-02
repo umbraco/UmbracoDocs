@@ -38,7 +38,7 @@ We recommend setting up the Umbraco 8 Cloud portal locally in Visual Studio.
 
 This can be done after cloning down the Cloud environment or by using the [UaaS cloning tool](https://umbra.co/uaas-cmd).
 
-To use the cloning tool, place it and run it in the local directory you want to clone to Cloud project into.
+To use the cloning tool, place it and run it in the local directory you want to clone the Cloud project into.
 {% endhint %}
 
 4. Install the [ProWorks Umbraco 8 Migrations](https://www.nuget.org/packages/ProWorks.Umbraco8.Migrations) community package on the cloned Umbraco 8 site.
