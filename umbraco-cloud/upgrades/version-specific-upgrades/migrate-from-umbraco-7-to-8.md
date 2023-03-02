@@ -49,8 +49,7 @@ Should something fail during the migration, the Development environment can alwa
 {% hint style="info" %}
 If your login does not work, try the following approach:
 
-1. Copy the `UsersMembershipProvider` attributes from your Umbraco 7 `web.config` file to the Umbraco 8 `web.config` file.
-2. Try to login again.
+Copy the `UsersMembershipProvider` attributes from your Umbraco 7 `web.config` file to the Umbraco 8 `web.config` file. Once you've done this, try to login again.
 
 Below is an example of how the attribute can look:
 
@@ -122,6 +121,7 @@ Read more about these changes in the [IPublishedContent section of the Documenta
 * Template files need to use `ContentModels = Umbraco.Web.PublishedModels` instead of `ContentModels = Umbraco.Web.PublishedContentModels`.
 * `@Model.Value("propertyAlias")` replaces `@Umbraco.Field("propertyAlias")`.
 * `@Model.PropertyAlias` replaces `@Model.Content.PropertyAlias`.
+* `@Model.Value<IPublishedContent>("propertyAlias")` replaces `Model.Content.GetPropertyValue<IPublishedContent>("propertyAlias")`.
 
 Depending on the size of the project and the amount of custom code and implementations, this step is going to require a lot of work.
 
