@@ -63,7 +63,7 @@ Enabling this feature allows the moderator to manage the approval status of a fo
 
 ### Fields displayed
 
-By default when form entries are shown in a list, a constant set of fields are displayed. You will see the first three fields in the form, plus some system information like the record state and the date it was created.
+By default, a constant set of fields are displayed when form entries are shown in a list. You will see the first three fields in the form, plus some system information like the record state and the date it was created.
 
 To customize this, turn off the "Display default fields" option and select the ones you wish to display.
 
