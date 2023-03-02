@@ -49,9 +49,9 @@ The following Validations are available:
 |**Mark fields** | You can choose to not mark any fields or only mark mandatory or optional fields. |
 | **Indicator** | Choose which indicator to use when a field has been marked as mandatory. The default indicator is `*` |
 
-### Automcomplete
+### Autocomplete
 
-The automcomplete setting for the overall form can be changed from the default of "None" to "On" or "Off". Setting this explicitly will control how the browser offers automatic prompts to the user when completing the form.
+The autocomplete setting for the overall form can be changed from the default of "None" to "On" or "Off". Setting this explicitly will control how the browser offers automatic prompts to the user when completing the form.
 
 ![Form settings validation](images/FormSettingsAutcomplete.png)
 
@@ -63,15 +63,15 @@ Enabling this feature allows the moderator to manage the approval status of a fo
 
 ### Fields displayed
 
-By default when form entries are shown in a list, a constant set of fields are displayed. You will see the first three fields in the form, plus some system information like the record state and the date it was created.
+By default, a constant set of fields are displayed when form entries are shown in a list. You will see the first three fields in the form, plus some system information like the record state and the date it was created.
 
-To customize this, turn off the option to "Display default fields" and select the ones you wish to display.
+To customize this, turn off the "Display default fields" option and select the ones you wish to display.
 
 ![Form settings validation](images/FieldsDisplayed.png)
 
 ### Date retentions
 
-In order to help protect site visitor privacy, rules can be configured in this section for automatic deletion of submissions. You can set how long to retain records for each state (submitted or approved).
+To help protect site visitor privacy, rules can be configured in this section for the automatic deletion of submissions. You can set how long to retain records for each state (submitted or approved).
 
 A background service that carries out the actual removal of records needs to be [enabled in configuration](../../developer/configuration/README.md#scheduledrecorddeletion). If that is not running, a notification will be displayed.
 

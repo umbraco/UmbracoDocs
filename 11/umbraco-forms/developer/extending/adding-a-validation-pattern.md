@@ -8,14 +8,14 @@ When creating a text field in Umbraco Forms, a validation pattern in the form of
 
 ## Provided patterns
 
-Umbraco Forms ships with three patterns: number, email and URL.  The class names are `Number`, `Email` and `Url` respectively, and all are found in the `
+Umbraco Forms ships with three patterns: number, email, and URL.  The class names are `Number`, `Email`, and `Url` respectively, and all are found in the 
 `Umbraco.Forms.Core.Providers.ValidationPatterns` namespace.
 
 ## Creating a custom validation pattern
 
 To create a custom format function, create a class that implements `IValidationPattern`.  You will need to initialize five properties:
 
-- `Alias` - an alias that should be unique across the patterns, and is typically camel-cased with no spaces.
+- `Alias` - an alias that should be unique across the patterns and is typically camel-cased with no spaces.
 - `Name` - the name of the pattern that will be visible in the backoffice.
 - `LabelKey` - as an alternative to providing a name, a translation key can be provided. This will be used to look-up the name in the correct language for the backoffice user.
 - `Pattern` - the regular expression pattern.
@@ -40,7 +40,7 @@ namespace Umbraco.Forms.TestSite.Business.ValidationPatterns
 
 ## Registering the validation pattern
 
-As with other provider types, the validation pattern needs to be registered. There are options to add, remove and re-order patterns.
+As with other provider types, the validation pattern needs to be registered. There are options to add, remove, and re-order patterns.
 
 An example registration using the `IUmbracoBuilder` is shown below:
 
