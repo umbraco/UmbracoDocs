@@ -32,6 +32,15 @@ Should something fail during the migration, the Development environment can alwa
 1. Clone down the Umbraco 7 Cloud project.
 2. Run the project locally and **restore** Content and Media.
 3. Clone down the Development environment from the Umbraco 8 Cloud project.
+
+{% hint style="info" %}
+We recommend setting up the Umbraco 8 Cloud portal locally Visual Studio.
+
+This can be done after cloning down the Cloud environment or by using the [UaaS cloning tool](https://umbra.co/uaas-cmd).
+
+To use the cloning tool, place it and run it in the local directory you want to clone to Cloud project into.
+{% endhint %}
+
 4. Install the [ProWorks Umbraco 8 Migrations](https://www.nuget.org/packages/ProWorks.Umbraco8.Migrations) community package on the cloned Umbraco 8 site.
 5. Copy `~/App_Data/Umbraco.sdf` or `~/App_Data/Umbraco.mdf` from the cloned Umbraco 7 project.
 6. Paste the file into `~/App_Data` on the clone of the Umbraco 8 project.
