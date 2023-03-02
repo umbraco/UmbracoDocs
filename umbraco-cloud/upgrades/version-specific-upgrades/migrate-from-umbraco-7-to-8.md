@@ -6,7 +6,7 @@ description: This article will provide detailed steps on how to migrate a Umbrac
 
 Taking your Umbraco CMS project from Umbraco 7 to 8 is called a migration as it requires that the data is migrated in the process. This article covers each step involved in this process.
 
-Read the [general article about Content migration](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific/migrate-content-to-umbraco-8.md#what-are-the-limitations) to learn more about limitations and other things related to migrating your Umbraco site from 7 to 8.
+Read the [general article about Content migration](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific/migrate-content-to-umbraco-8#what-are-the-limitations) to learn more about limitations and other things related to migrating your Umbraco site from 7 to 8.
 
 ## Video tutorial
 
