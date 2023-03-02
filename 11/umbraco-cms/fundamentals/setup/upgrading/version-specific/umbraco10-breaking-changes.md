@@ -67,7 +67,7 @@ Moved **ImageSharp** configuration from the `AddUmbracoImageSharp()` extension m
 
 ## [Migrate Member properties to columns on the Member table](https://github.com/umbraco/Umbraco-CMS/pull/12205)
 
-This is breaking because it is no longer possible to access the properties listed below through the _IMember.Properties_ collection. You must now access them through their specific properties i.e. _IMember.IsLockedOut_.
+This is breaking because it is no longer possible to access the properties listed below through the _IMember.Properties_ collection. You must now access them through their specific properties for example _IMember.IsLockedOut_.
 
 * `umbracoMemberFailedPasswordAttempts`
 * `umbracoMemberApproved`
