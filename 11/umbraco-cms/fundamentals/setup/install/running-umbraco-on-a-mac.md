@@ -8,7 +8,7 @@ With Umbraco CMS on .NET Core, Mac OS is natively supported with SQLite as the d
 
 In the below section, we describe how to get started with running Umbraco CMS on Mac.
 
-## How to get started
+## How to get running Umbraco CMS on Mac
 
 To get started with Umbraco CMS on Mac OS first have a look at the [requirements for running Umbraco CMS with Mac OS](../requirements.md#local-development).
 
