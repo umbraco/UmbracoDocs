@@ -16,13 +16,14 @@ Once you've made sure you meet the requirements it is time to install the Umbrac
 
 To do this follow the [Install using .NET CLI](install-umbraco-with-templates.md#install-the-template) guide.
 
-with the templates installed on your system, it is now possible to create Umbraco projects.
+With the templates installed on your system, it is now possible to create Umbraco projects.
 
 To create a project, there are two options:
+
 - Continue creating projects using the .NET CLI.
 - Create new projects using Visual Studio.
 
-To create new projects using Visual Studio, you can use the [Install using Visual Studio](visual-studio.md) guide to do so.
+To create new projects using Visual Studio, you can use the [Install using Visual Studio](visual-studio.md) guide.
 
 Once you create a new project it will use SQLite by default on Mac.
 
