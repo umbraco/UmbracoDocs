@@ -8,11 +8,11 @@ The Member Group Picker opens a panel to pick one or more member groups from the
 
 ## Data Type Definition Example
 
-![Member Group Picker Type Definition](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Member-Picker-DataType.png)
+![Member Group Picker Type Definition](../built-in-property-editors/images/Member-Picker-DataType.png)
 
 ## Content Example
 
-![Member Grouep Picker Content](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Member-Group-Picker-Content.png)
+![Member Grouep Picker Content](../built-in-property-editors/images/Member-Group-Picker-Content.png)
 
 ## MVC View Example
 

@@ -1,12 +1,12 @@
 ---
-description: What are relations, how to create and manage them
+description: "What are relations, how to create and manage them"
 ---
 
 # Relations
 
 Umbraco sections are built around the concept of 'trees' and there is an implicit relationship between items in a section tree.
 
-![Parent, Siblings & Children](../../../../10/umbraco-cms/fundamentals/data/images/parent-siblings-children.png)
+![Parent, Siblings & Children](images/parent-siblings-children.png)
 
 We refer to these relationships in the manner of a 'Family Tree' - eg, One content item might be the 'Parent' of some content items, and those content items would be referred to as the 'Children' of that parent. Items within the same branch of the tree can also be described as 'Ancestors' or 'Descendants' of an item, depending if they are above or below them in the depth of the tree.
 
@@ -20,7 +20,7 @@ These are the scenarios where the concept of **Umbraco Relations** provides a so
 
 ## The Concept of Umbraco Relations
 
-Umbraco Relations allow you to relate almost any object in Umbraco to almost any other Umbraco object - under a defined _Relation Type_.
+Umbraco Relations allow you to relate almost any object in Umbraco to almost any other Umbraco object - under a defined *Relation Type*.
 
 ### How is this different to pickers?
 
@@ -36,41 +36,47 @@ To create and use Relations in your Umbraco Website, you need to define a 'Relat
 
 Navigate to the **Settings** section in the Umbraco backoffice and you'll find the **Relation Types** folder in the Settings tree.
 
-![Relation Types Tree](../../../../10/umbraco-cms/fundamentals/data/images/relation-types-tree.png)
+![Relation Types Tree](images/relation-types-tree.png)
 
 If you expand the Relation Type tree, you can see that Umbraco 'ships' with some default Relation Types. These are used by the Umbraco backoffice to help deliver some key backoffice functionality:
 
-![Default Relation Types](../../../../10/umbraco-cms/fundamentals/data/images/default-relation-types.png)
+![Default Relation Types](images/default-relation-types.png)
 
 For example, there is a Relation Type that tracks when Media is picked in Content to be able to provide the functionality of warning an editor if they try to delete a Media Item that it is 'in use'. There is a Relation Type, to help 'restore' deleted content back to the place it was deleted from in the Recycle Bin.
 
-![Create Relation Type](../../../../10/umbraco-cms/fundamentals/data/images/create-relation-type.png)
+![Create Relation Type](images/create-relation-type.png)
 
 To create your new Relation Type, follow these steps:
 
 1. Right-click the **Relation Types** folder.
-2. Provide a **Name** for the Relation Type. This will generate it's alias.
-3. Choose the **Direction** of the relationship, for example, usually **Bidirectional** to get the benefits of relations.
-4.  Define the type of one object in the relation called **Parent** that defines which column in the database this value is stored in.
 
-    For a bidirectional relationship, it doesn't matter which type of entity is defined as the Parent or the Child. If there is 'one thing' that will be related to lots of 'other things', then choose that thing as the Parent.
-5.  Choose the different types for each entity (**Parent** and **child**) from the drop-down list.
+2. Provide a **Name** for the Relation Type. This will generate it's alias.
+
+3. Choose the **Direction** of the relationship, for example, usually **Bidirectional** to get the benefits of relations.
+
+4. Define the type of one object in the relation called **Parent** that defines which column in the database this value is stored in.
+
+   For a bidirectional relationship, it doesn't matter which type of entity is defined as the Parent or the Child. If there is 'one thing' that will be related to lots of 'other things', then choose that thing as the Parent.
+
+5. Choose the different types for each entity (**Parent** and **child**) from the drop-down list.
 
     Currently the available types are: Document(Content), Media, Member, Document Type, Media Type, Member Type, Member Group, Data Type, Root, and Recycle Bin
 
     Example: For relating Members to their uploaded Images, we might create a 'Member Images' relation
 
-    ![Member Images](../../../../10/umbraco-cms/fundamentals/data/images/member-images.png)
-6. Select **Is Dependency** as **Yes** if you wish this Relation Type to be used in Umbraco's 'tracking' functionality; that warns editors when trying to delete entities if they are 'used' in a Relation Type marked as 'Is Dependency'
-7.  Click **Create** and you'll see your new Relation Type created in the Relation Types folder. You can see the 'Alias' that you'll need to make note of when working with Relations.
+    ![Member Images](images/member-images.png)
 
-    ![Member Images](../../../../10/umbraco-cms/fundamentals/data/images/relation-alias.png)
+6. Select **Is Dependency** as **Yes** if you wish this Relation Type to be used in Umbraco's 'tracking' functionality; that warns editors when trying to delete entities if they are 'used' in a Relation Type marked as 'Is Dependency'
+
+7. Click **Create** and you'll see your new Relation Type created in the Relation Types folder. You can see the 'Alias' that you'll need to make note of when working with Relations.
+
+    ![Member Images](images/relation-alias.png)
 
 ## Viewing Relations
 
-To view one of the existing Relation Types, go to the **Relations** tab. It displays a long list of all the objects that have been related for this specific Relation Type.
+To view one of the existing Relation Types, go to the **Relations** tab. It displays a long list of all the objects that have been related for this specific Relation Type. 
 
-![View Relations](../../../../10/umbraco-cms/fundamentals/data/images/view-relations.png)
+![View Relations](images/view-relations.png)
 
 ## Creating Relations
 
@@ -82,11 +88,11 @@ You can create Relations using the RelationService API via code.
 
 You might want to create a 'Relation' between two objects either as:
 
-* A response to a backoffice event. For example, a content item being published that has picked several other content items. Storing a relationship between these items would make querying between them easier. Perhaps show all the pages on which a particular 'banner' has been picked.
-* A logged-in member on the front end of an Umbraco website might have the facility to upload images. In response, the implementation could store the photos programmatically in the Media Section and at the same time, create a Relation to record the relationship between the member and their uploaded pictures. On an image gallery page, it would be possible to display all the gallery images for the current logged-in Member using the relations.
+- A response to a backoffice event. For example, a content item being published that has picked several other content items. Storing a relationship between these items would make querying between them easier. Perhaps show all the pages on which a particular 'banner' has been picked.
+- A logged-in member on the front end of an Umbraco website might have the facility to upload images. In response, the implementation could store the photos programmatically in the Media Section and at the same time, create a Relation to record the relationship between the member and their uploaded pictures. On an image gallery page, it would be possible to display all the gallery images for the current logged-in Member using the relations.
 
 ### Community Packages
-
+  
 Some of the community packages that use Relations are listed below:
 
 * ['Relations Picker'](https://our.umbraco.com/packages/backoffice-extensions/relations-picker/) - a content picker that automatically creates Relations.

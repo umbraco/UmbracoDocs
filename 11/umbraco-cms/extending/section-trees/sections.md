@@ -1,5 +1,5 @@
 ---
-description: An explanation on sections and trees in Umbraco
+description: "An explanation on sections and trees in Umbraco"
 ---
 
 # Sections
@@ -98,17 +98,17 @@ The final order of the sections is down to the order of which the composers are 
 
 You will also need to allow your current Umbraco User group access to this new Custom Section via the backoffice! (you will need to logout and back in again to see the change)
 
-![Add Section for User](../../../../10/umbraco-cms/extending/section-trees/images/add-custom-section-v8.png)
+![Add Section for User](images/add-custom-section-v8.png)
 
 ### Adding a Language Translation (get rid of the square brackets)
 
-![Custom Section appears displaying Alias](../../../../10/umbraco-cms/extending/section-trees/images/custom-section-alias-v8.png)
+![Custom Section appears displaying Alias](images/custom-section-alias-v8.png)
 
 When your new custom section appears, you'll notice only the section 'Alias' is displayed inside square brackets. This is because Umbraco caters for Multiple Languages in the backoffice, and is looking for a translation file for the current backoffice culture, containing a translation key for your custom section alias.
 
 Create a /lang folder in the folder where you are creating the implementation for your custom section. If you do not have one already, create a `/lang` folder within the folder where you are creating the implementation for your custom section, eg. `/App_Plugins/MyFavouriteThings/lang/`.
 
-It is worth knowing that the `/lang` folder does not have to be directly in the MyFavouriteThings folder, it can be nested deeper if you need it to be. The only requirement is that the folder is called lang. E.g. _\~/App\_Plugins/MyFavouriteThings/Some/Another/Lang/_.
+It is worth knowing that the `/lang` folder does not have to be directly in the MyFavouriteThings folder, it can be nested deeper if you need it to be. The only requirement is that the folder is called lang. E.g. *~/App_Plugins/MyFavouriteThings/Some/Another/Lang/*.
 
 Inside this folder create a file called **en-us.xml**. This is the 'default' fallback language translation file. Add the following definition:
 

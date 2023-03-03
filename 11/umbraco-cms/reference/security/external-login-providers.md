@@ -1,7 +1,5 @@
 ---
-description: >-
-  Umbraco supports supports external login providers (OAuth) for performing
-  authentication of your users and members.
+description: "Umbraco supports supports external login providers (OAuth) for performing authentication of your users and members."
 ---
 
 # External login providers
@@ -118,7 +116,7 @@ For a more in depth article on how to setup OAuth providers in .NET refer to the
 
 Depending on the provider you've configured and its caption/color, the end result will look similar to this for users:
 
-![OAuth Login Screen](../../../../10/umbraco-cms/reference/security/images/google-oauth-v8.png)
+![OAuth Login Screen](images/google-oauth-v8.png)
 
 Because Umbraco do not control the UI of members, this can be setup to look exactly like you would like, but Umbraco ships with partial macro snippets for `Login` that will show all configured external login providers.
 

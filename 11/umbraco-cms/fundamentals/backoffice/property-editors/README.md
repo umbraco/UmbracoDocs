@@ -1,7 +1,5 @@
 ---
-description: >-
-  Learn more about the default property editors that ships with an Umbraco
-  installation.
+description: "Learn more about the default property editors that ships with an Umbraco installation."
 ---
 
 # Property Editors
@@ -10,7 +8,7 @@ A Property Editor is the editor that a Data Type references. A Data Type is defi
 
 When creating a Data Type, specify the property editor for the Data Type to use by selecting from the "Property editor" list (as shown below).
 
-![Data Type Definition](../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/images/Media-picker-dataType-v9.png)
+![Data Type Definition](images/Media-picker-dataType-v9.png)
 
 ## [Built-in Property Editors in Umbraco](built-in-umbraco-property-editors/)
 

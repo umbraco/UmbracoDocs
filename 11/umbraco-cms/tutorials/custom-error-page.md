@@ -1,4 +1,4 @@
-# Implementing Custom Error Pages
+# Implementing custom error pages
 
 Umbraco is built upon Microsoft's .NET Framework and is using ASP.NET. This provides a number of options when setting up custom error pages on your website.
 
@@ -8,9 +8,9 @@ Custom error handling might make your site look more on-brand and minimize the i
 
 This article contains guides on how to create custom error pages for the following types of errors:
 
-* [404 errors ("Page not found")](custom-error-page.md#404-errors)
-* [500 errors ("Internal Server Error")](custom-error-page.md#500-errors)
-* [Maintenance Page](custom-error-page.md#maintenance-page)
+- [404 errors ("Page not found")](#404-errors)
+- [500 errors ("Internal Server Error")](#500-errors)
+- [Maintenance Page](#maintenance-page)
 
 ## In-code error page handling
 
@@ -22,7 +22,10 @@ In this method we will use a 404 page created via the backoffice.
 
 ### Create a 404 page in the backoffice
 
-First, create a new Document Type (though you could also use a more generic Document Type if you already have one) called Page404. Make sure the permissions are set to create it under Content. Properties on this Document Type are optional - in most cases, the 404 not found page would be static. Make sure to assign (and fill out) the template for your error page, and then create it in Content.
+First, create a new Document Type (though you could also use a more generic Document Type if you already have one) called Page404.
+Make sure the permissions are set to create it under Content.
+Properties on this Document Type are optional - in most cases, the 404 not found page would be static.
+Make sure to assign (and fill out) the template for your error page, and then create it in Content.
 
 ### Set a custom 404 page in appsettings.json
 
@@ -30,9 +33,9 @@ Once all of that is done, grab your published error page's ID, GUID or path and 
 
 The value for error pages can be:
 
-* A content item's GUID ID (example: 26C1D84F-C900-4D53-B167-E25CC489DAC8)
-* An XPath statement (example: //errorPages\[@nodeName='My cool error']
-* A content item's integer ID (example: 1234)
+- A content item's GUID ID (example: 26C1D84F-C900-4D53-B167-E25CC489DAC8)
+- An XPath statement (example: //errorPages[@nodeName='My cool error']
+- A content item's integer ID (example: 1234)
 
 That is where the value you grabbed earlier comes in. Fill it out like so:
 
@@ -92,7 +95,7 @@ Sometimes you might experience issues with booting up your Umbraco project. This
 
 When there is an error during boot you will presented with a generic error page.
 
-![Boot Failed. Umbraco failed to boot, if you are the owner of the website please see the log file for more details.](../../../10/umbraco-cms/tutorials/images/BootFailedGeneric.png)
+![Boot Failed. Umbraco failed to boot, if you are the owner of the website please see the log file for more details.](images/BootFailedGeneric.png "Screen shot of generic BootFailed page")
 
 In order to customize this error page it is recommend that you create a **new HTML file** using the name `BootFailed.html`. The file must be in a folder `config/errors` in the `wwwroot` on the Physical file system.
 
@@ -116,9 +119,9 @@ The full error can always be found in the log file.
 
 The following steps guides you through setting up a page for internal server errors (500 errors).
 
-* Create a `~/controllers` folder in your Umbraco web project.
-* Create a file in this folder, called `ErrorController.cs`.
-*   Add the following code to the file:
+- Create a `~/controllers` folder in your Umbraco web project.
+- Create a file in this folder, called `ErrorController.cs`.
+- Add the following code to the file:
 
     ```csharp
     using Microsoft.AspNetCore.Mvc;
@@ -144,10 +147,10 @@ The following steps guides you through setting up a page for internal server err
     ```
 
 {% hint style="info" %}
-**Namespace** replace \[YOUR\_PROJECT\_NAME] by the actual project name. In Visual Studio you can use _Sync Namespaces_ from the project context menu (in _Solution Explorer_ View).
+**Namespace** replace [YOUR_PROJECT_NAME] by the actual project name. In Visual Studio you can use *Sync Namespaces* from the project context menu (in *Solution Explorer* View).
 {% endhint %}
 
-*   Add an entry in `appSettings.json` for the new route "Error" like so
+- Add an entry in `appSettings.json` for the new route "Error" like so
 
     ```json
     "Umbraco": {
@@ -156,8 +159,9 @@ The following steps guides you through setting up a page for internal server err
         "ReservedPaths": "~/app_plugins/,~/install/,~/mini-profiler-resources/,~/umbraco/,~/error/",
         ...
     ```
-* Create the redirect pages from 1. step as regular content nodes in the backoffice. They should neither appear in navigation menus or sitemaps. In this example you would create under root node `Statuscodes` with a subnode `500`.
-*   Update the `Configure` method in file `Startup.cs`
+
+- Create the redirect pages from 1. step as regular content nodes in the backoffice. They should neither appear in navigation menus or sitemaps. In this example you would create under root node `Statuscodes` with a subnode `500`.
+- Update the `Configure` method in file `Startup.cs`
 
     ```csharp
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -183,7 +187,7 @@ While upgrading Umbraco in the past it would redirect visitors of the website to
 
 To prevent this we have added a `maintenance page` that will be shown when visiting the website while Umbraco is in Upgrade runtime mode.
 
-![Maintenance page](../../../10/umbraco-cms/tutorials/images/maintenancePage.png)
+![Maintenance page](images/maintenancePage.png)
 
 It is possible to disable the maintenance page as most upgrades can be done without the website having to restart or go down.
 
@@ -208,16 +212,18 @@ in this folder create a new file called `maintenance.cshtml`.
 Once the file has been created you can style it so it looks the way you want it to.
 
 {% hint style="warning" %}
-It is not recommended to let Umbraco be in Upgrade mode for longer periods. Most migrations can be executed while the website continues to work. Consider using this feature, if you know what you are doing.
+It is not recommended to let Umbraco be in Upgrade mode for longer periods.
+Most migrations can be executed while the website continues to work.
+Consider using this feature, if you know what you are doing.
 {% endhint %}
 
 ## Are the error pages not working?
 
 If you set up everything correctly and the error pages are not showing correctly, make sure that you are not using
 
-* Custom [ContentFinders](../reference/routing/request-pipeline/icontentfinder.md) in your solution,
-* Any packages that allow you to customize redirects, or
-* Rewrite rules in web.config that might interefere with custom error handling.
+- Custom [ContentFinders](../../umbraco-cms/reference/routing/request-pipeline/icontentfinder.md) in your solution,
+- Any packages that allow you to customize redirects, or
+- Rewrite rules in web.config that might interefere with custom error handling.
 
 {% hint style="warning" %}
 If your code or any packages configures a custom `IContentLastChanceFinder`, the settings in `appSettings.json` will not be used.
