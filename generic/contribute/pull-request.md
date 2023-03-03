@@ -1,6 +1,10 @@
+---
+description: Learn the two different ways to submit a PR to the Umbraco Documentation.
+---
+
 # Submit a Pull Request
 
-A Pull Request (PR) is a way of submitting changes to an open source project like the Umbraco documentation.
+A Pull Request (PR) is a way of submitting changes to an open-source project like the Umbraco documentation.
 
 Let’s say you have found a typing or syntax error in one of the articles on the documentation, and you want to correct it. You can do that with a pull request.
 
@@ -15,7 +19,7 @@ In order to create a PR to the Umbraco Documentation it is required that you hav
 
 ## Option 1: Creating a PR directly on GitHub
 
-GitHub has a functionality that allows you to submit a PR directly from our [repository](https://github.com/umbraco/UmbracoDocs/). There is also a button in the right side of every article, which allows you to jump straight into GitHub to suggest your changes.
+GitHub has a functionality that allows you to submit a PR directly from our [repository](https://github.com/umbraco/UmbracoDocs/). There is also a button on the right side of every article, which allows you to jump straight into GitHub to suggest your changes.
 
 ![Highlighting the "Edit on GitHub" button in the right side of an article.](images/gb-edit-on-github.png)
 
@@ -27,14 +31,7 @@ GitHub has a functionality that allows you to submit a PR directly from our [rep
 6. Select **Create pull request** to preview your PR.
 7. Select **Create pull request** again to create the PR.
 
-{% hint style="info" %}
-Choose the correct branch:
-
-* Are you contributing to Umbraco 10 documentation, select **`gb/10`** branch before step 7 in the steps above.
-* Are you contributing to Umbraco 11 documentation, select **`main`** branch before step 7 in the steps above.
-{% endhint %}
-
-This is helpful to fix typing errors or adding small things. If you are working on a larger update that includes pictures and editing files then it is not the best way to work. In that case you will be better off creating a fork. See below for more thorough instructions on this approach.
+This is helpful to fix typing errors or add small things. If you are working on a larger update that includes pictures and editing files then it is not the best way to work. In that case, you will be better off creating a fork. See below for more thorough instructions on this approach.
 
 ## Options 2: Creating a PR through a fork
 
@@ -46,9 +43,9 @@ If you do not have Git installed on your machine, you should follow [these instr
 
 ### Step 1: Creating a fork
 
-Once you have setup Git you can create a fork of the [Umbraco Documentation repository](https://github.com/umbraco/UmbracoDocs/).
+Once you have set up Git you can create a fork of the [Umbraco Documentation repository](https://github.com/umbraco/UmbracoDocs/).
 
-When you make a fork, you get a copy of the entire repository on your own GitHub profile. You can create a fork by select the **Fork** option at the top of the screen:
+When you make a fork, you get a copy of the entire repository on your own GitHub profile. You can create a fork by selecting the **Fork** option at the top of the screen:
 
 ![Creating a fork](images/fork-repository-new.png)
 
@@ -91,8 +88,8 @@ Once you have made some changes and you are happy with the result, you can creat
 3. Add a title and description explaining what changes you have made and why you made them.
 4. Select **Create pull request** to create the pull request on the original repository.
 
-### Step 3: Review process
+### Step 3: The review process
 
-Your PR is now subject for review with the Umbraco HQ documentation team.
+Your PR is now subject to review with the Umbraco HQ Docs team.
 
-We hope to review and resolve all incoming pull requests within a couple of weeks, depending on the extend of the changes.
+We hope to review and resolve all incoming pull requests within a couple of weeks, depending on the extent of the changes.
