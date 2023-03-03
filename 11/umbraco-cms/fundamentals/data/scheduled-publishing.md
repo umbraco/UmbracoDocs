@@ -1,7 +1,5 @@
 ---
-description: >-
-  Each document in Umbraco can be scheduled for publishing and unpublishing on a
-  pre-defined date and time.
+description: "Each document in Umbraco can be scheduled for publishing and unpublishing on a pre-defined date and time."
 ---
 
 # Scheduled Publishing
@@ -10,17 +8,17 @@ Each document in Umbraco can be scheduled for publishing and unpublishing on a p
 
 You can find the options to do this click on the arrow next to the **Save and publish** button and pick **Schedule...**
 
-![Scheduled publishing](../../../../10/umbraco-cms/fundamentals/data/images/schedule.png)
+![Scheduled publishing](images/schedule.png)
 
 This will open a **Schedule Publishing** dialog where you can specify dates and time.
 
-![Scheduled publishing](../../../../10/umbraco-cms/fundamentals/data/images/scheduled-publishing-8.png)
+![Scheduled publishing](images/scheduled-publishing-8.png)
 
 ## Timezones
 
 Your server may be in a different timezone than where you are located. You are able to select a date and time in your timezone and Umbraco will make sure that the item gets published at that time. So, if you select 12PM then the item will be published at 12PM in the timezone you are in. This may be 8PM on the server, which is indicated when you select the date and time.
 
-![Scheduled publishing](../../../../10/umbraco-cms/fundamentals/data/images/Publish-Timezone-Difference.jpg)
+![Scheduled publishing](images/Publish-Timezone-Difference.jpg)
 
 If you are in the same timezone as the server, this message will not appear under the date picker.
 
@@ -40,7 +38,7 @@ If you are in a load balanced environment special care must be given to ensure y
 
 If you are not load balancing, the way that Umbraco determines the base URL to send the scheduled HTTP(S) request to is as follows:
 
-* umbracoSettings:settings/web.routing/@umbracoApplicationUrl if it exists _(see_ [_these docs_](../../reference/configuration/webroutingsettings.md) _for details)_
+* umbracoSettings:settings/web.routing/@umbracoApplicationUrl if it exists _(see [these docs](../../reference/configuration/webroutingsettings.md) for details)_
 * Else umbracoSettings:settings/scheduledTasks/@baseUrl if it exits _(deprecated)_
 * Else umbracoSettings:distributedCall/servers if we have the server in there _(deprecated, see load balance docs)_
 * Else it's based on the first request that the website receives and uses the base URL of this request _(default)_

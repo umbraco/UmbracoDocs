@@ -8,7 +8,7 @@ The Tags property editor allows you to add multiple tags to a node.
 
 ## Data Type Definition Example
 
-![Data Type Definition Example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Tags-DataType-v10.png)
+![Data Type Definition Example](../built-in-property-editors/images/Tags-DataType-v10.png)
 
 ### Tag group
 
@@ -24,17 +24,17 @@ There are built-in property value converters, which means you don't need to worr
 
 ### CSV tags
 
-![CSV tags example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Csv-example-v8.png)
+![CSV tags example](../built-in-property-editors/images/Csv-example-v8.png)
 
 ### JSON tags
 
-![JSON tags example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Json-example-v8.png)
+![JSON tags example](../built-in-property-editors/images/Json-example-v8.png)
 
 ### Tags typeahead
 
 Whenever a tag has been added it will be visible in the typeahead when you start typing on other pages.
 
-![Tags typeahead example](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Typeahead-v8.png)
+![Tags typeahead example](../built-in-property-editors/images/Typeahead-v8.png)
 
 ## MVC View Example - displays a list of tags
 

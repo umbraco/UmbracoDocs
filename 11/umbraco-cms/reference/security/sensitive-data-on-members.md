@@ -8,9 +8,9 @@ In this article, you will get an overview of how you can grant and/or deny your 
 
 Every new Umbraco installation ships with a default set of User Groups. One of them is the **Sensitive data User Group**. To give users in the backoffice access to view and work with sensitive data, they need to be part of the Sensitive data User Group.
 
-Any users who are not part of the Sensitive data User Group, will not be able to see the data in the properties that are marked as sensitive. Instead, they will see a generic message: "_This value is hidden. If you need access to view this value please contact your website administrator._"
+Any users who are not part of the Sensitive data User Group, will not be able to see the data in the properties that are marked as sensitive. Instead, they will see a generic message: "*This value is hidden. If you need access to view this value please contact your website administrator.*"
 
-![Sensitive data hidden](../../../../10/umbraco-cms/reference/security/images/sensitive-data-hidden-v8.png)
+![Sensitive data hidden](images/sensitive-data-hidden-v8.png)
 
 While not part of the Sensitive data User Group it is also not possible to export members or member data.
 
@@ -21,7 +21,7 @@ Follow these steps in order to grant a user access to sensitive data:
 * Select the **Groups** menu in the top-right corner.
 * Choose the **Sensitive data** group.
 
-![Sensitive data user group](../../../../10/umbraco-cms/reference/security/images/sensitive-data-user-group-v8.png)
+![Sensitive data user group](images/sensitive-data-user-group-v8.png)
 
 * Click **Add** in the **Users** box on the right.
 * Select the users you want to give access to the sensitive data.
@@ -49,4 +49,4 @@ Once your user is added to the Sensitive data User Group, you have access to add
 
 When the **Is sensitive data** option is enabled, the value and data in the property will only be visible to the users with access to sensitive data.
 
-![Update member type](../../../../10/umbraco-cms/reference/security/images/update-member-type-v8.png)
+![Update member type](images/update-member-type-v8.png)

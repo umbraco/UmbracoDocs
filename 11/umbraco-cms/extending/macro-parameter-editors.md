@@ -1,5 +1,5 @@
 ---
-description: A guide to creating macro property editors in Umbraco
+description: "A guide to creating macro property editors in Umbraco"
 ---
 
 # Macro Parameter Editors
@@ -133,7 +133,7 @@ angular.module("umbraco").controller("Our.Umbraco.ImagePositionController", func
 
 The final custom parameter should look like this:
 
-![Image Position Radio Button Options](../../../10/umbraco-cms/extending/images/image-position-v8.png)
+![Image Position Radio Button Options](images/image-position-v8.png)
 
 #### Using defaultConfig
 
