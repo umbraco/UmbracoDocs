@@ -24,6 +24,6 @@ To create a project, there are two options:
 
 To create new projects using Visual Studio, you can use the [Install using Visual Studio](visual-studio.md) guide to do so.
 
-Once you create a new project it will use SQLite by default on Mac OS.
+Once you create a new project it will use SQLite by default on Mac.
 
 If you want to use an SQL server database, you will need to [set up Docker](https://creativewebspecialist.co.uk/2021/09/07/how-to-run-netcore-umbraco-cms-on-a-macbook/) to be able to use SQL Server with Mac.
