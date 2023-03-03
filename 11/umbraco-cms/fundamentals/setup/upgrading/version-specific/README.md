@@ -945,7 +945,7 @@ This issue only affects:
 - Related Links
 - Member Picker
 
-Have you already upgraded to 7.6.2 and fixed queries for those three Data Types? Then you have to that again in version 7.6.3.
+Have you already upgraded to 7.6.2 and fixed queries for those three Data Types? Then you have to do that again in version 7.6.3.
 
 Follow the **[upgrade guide for Umbraco 7](minor-upgrades-for-umbraco-7.md)** to complete the upgrade.
 
