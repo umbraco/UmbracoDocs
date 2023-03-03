@@ -32,7 +32,7 @@ When you're happy with the list press **Save**. It is now possible to select thi
 
 To customize an existing Data Type go to the __Settings__ section, expand the __Data Types__ folder and select the **Data Type** you want to edit.
 
-Besides the Data Types that are available out of the box there are some additional **Property Editors**. For example, think of the __Slider__ and __Nested Content__.
+Besides the Data Types that are available out of the box there are some additional **Property Editors**. For example, think of the __Slider__ and __Block List__.
 
 ## Viewing Data Type References
 

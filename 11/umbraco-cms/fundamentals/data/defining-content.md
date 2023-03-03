@@ -40,7 +40,7 @@ Finally, you can create a Document Type as an **Element Type** which can be used
 
 ## What is an Element Type?
 
-An Element Type is a Document Type without a template containing schema configurations for repeating a set of properties. These are for defining schema in the Block List Editor, Nested Content, Block Grid Editor, or other Element Type based editors. Element Types cannot be used to create content that resides in the Content tree. When you create an Element type, it automatically sets the **Is Element Type** flag to **True** on the **Permissions** tab.
+An Element Type is a Document Type without a template containing schema configurations for repeating a set of properties. These are for defining schema in the Block List Editor, Block Grid Editor, or other Element Type based editors. Element Types cannot be used to create content that resides in the Content tree. When you create an Element type, it automatically sets the **Is Element Type** flag to **True** on the **Permissions** tab.
 
 ![Element Type](images/Element-Type.png)
 

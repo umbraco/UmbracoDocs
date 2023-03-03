@@ -140,8 +140,7 @@ The updated properties are:
 * Content Picker
 * Media Picker
 * Member Picker
-* Multinode Treepicker
-* Nested Content
+* Multinode TreePicker
 * Folder Browser
 * Related Links
 
