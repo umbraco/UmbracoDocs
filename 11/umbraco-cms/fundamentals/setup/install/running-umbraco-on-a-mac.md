@@ -1,21 +1,29 @@
+---
+description: "Since Umbraco 9 it has been possible to run Umbraco CMS natively on Mac Os."
+---
+
 # Running Umbraco on a Mac
 
-*To run a local installation of Umbraco on a Mac you need to setup a Virtual Machine "vm" that runs Microsoft Windows*
+With Umbraco CMS on .NET Core, Mac OS is natively supported with SQLite as the database.
 
-## Bootcamp
+In the below section, we describe how to get started with running Umbraco CMS on Mac.
 
-Bootcamp is native vm software for Mac OS. See how to install Windows with Bootcamp [here](https://support.apple.com/en-us/HT201468).
+## How to get started
 
-## Parallels
+To get started with Umbraco CMS on Mac OS first have a look at the [requirements for running Umbraco CMS with Mac OS](../requirements.md).
 
-Parallels is a third party vm solution that enables integration between Mac OS and Windows ie. running Windows Apps from the dock. Get it [here](https://www.parallels.com).
+Once you've made sure you meet the requirements it is time to install the Umbraco Templates on your system.
 
-When your vm is running Windows, follow the instructions for [installing Umbraco](README.md).
+This can be done by following the [Install using .NET CLI](install-umbraco-with-templates.md) guide.
 
-## VMWare Fusion
+with the templates installed on your system, it is now possible to create Umbraco projects.
 
-VMWare Fusion is third party virtualization software that can be used to run Windows on your Mac.  Get it [here](https://www.vmware.com/products/fusion.html). In the same way as Parallels, you should follow these [install instructions for Umbraco](README.md) after you have installed Windows.
+To create a project, there is now two options:
+- Continue creating projects using the .NET CLI.
+- Create new projects using Visual Studio.
 
-## VirtualBox
+To create new projects using Visual Studio, you can use the [Install using Visual Studio](visual-studio.md) guide to do so.
 
-VirtualBox is another free and open-source virtualization software. Please follow [the detailed instructions](http://osxdaily.com/2015/03/25/install-run-windows-10-mac-virtualbox-os-x/) on their website to get up and running with Windows on your Mac.
+Once you create a new project by default it will use SQLite.
+
+If you want to use an SQL server database, you will need to [set up Docker](https://creativewebspecialist.co.uk/2021/09/07/how-to-run-netcore-umbraco-cms-on-a-macbook/) to be able to use SQL Server.
