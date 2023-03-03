@@ -636,7 +636,7 @@ It might be necessary to delete all of the `bin` and `obj` directories in each o
 
 <summary>9.latest to 10</summary>
 
-**Important**: .NET version 6.0.5 is the minimum required version for Umbraco 10 to be able to run. You can check with `dotnet --list-sdks` what your latest installed Software Development Kit (SDK) version is. SDK version 6.0.300 is the one that includes .NET 6.0.5. At the time of writing, .NET 6.0.6 is out with an SDK version of 6.0.301.
+**Important**: .NET version 6.0.5 is the minimum required version for Umbraco 10 to be able to run. You can check with `dotnet --list-sdks` what your latest installed Software Development Kit (SDK) version is. The latest SDK version 6.0.301 includes .NET 6.0.6, while SDK version 6.0.300 includes .NET 6.0.5.
 
 Watch the ['Upgrading from Umbraco 9 to Umbraco 10 video tutorial'](https://www.youtube.com/watch?v=075H\_ekJBKI\&ab\_channel=UmbracoLearningBase) for a complete walk-through of all the steps.
 
@@ -948,7 +948,7 @@ This issue only affects:
 * Related Links
 * Member Picker
 
-Have you already upgraded to 7.6.2 and fixed queries for those three Data Types you have to fix them again in version 7.6.3.
+Have you already upgraded to 7.6.2 and fixed queries for those three Data Types? Then you have to do that again in version 7.6.3.
 
 Follow the [**upgrade guide for Umbraco 7**](minor-upgrades-for-umbraco-7.md) to complete the upgrade.
 
@@ -1002,7 +1002,7 @@ This change only impacts new installs (no change for upgrades).
 
 A large amount of property value converters contributed by the community have been merged in and are now the default value converters. These converters change the object types returned by `GetPropertyValue` for more convenient types.
 
-For example, the `SliderValueConverter` returns a `decimal` or a `Range<decimal>` value that can directly be used in views, instead of the comma-separated string values that were previously returned.
+Instead of returning comma-separated string values like it did before, the `SliderValueConverter` now returns a `decimal` or a `Range<decimal>` value that can be used directly in views.
 
 This change only impacts new installs (no change for upgrades).
 
