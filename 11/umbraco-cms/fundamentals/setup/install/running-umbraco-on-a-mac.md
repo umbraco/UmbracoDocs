@@ -18,7 +18,7 @@ To do this follow the [Install using .NET CLI](install-umbraco-with-templates.md
 
 with the templates installed on your system, it is now possible to create Umbraco projects.
 
-To create a project, there is two options:
+To create a project, there are two options:
 - Continue creating projects using the .NET CLI.
 - Create new projects using Visual Studio.
 
