@@ -1,8 +1,8 @@
 ---
-description: "Since Umbraco 9 it has been possible to run Umbraco CMS natively on Mac Os."
+description: Since Umbraco 9 it has been possible to run Umbraco CMS natively on Mac OS.
 ---
 
-# Running Umbraco on a Mac
+# Running Umbraco On A Mac
 
 With Umbraco CMS on .NET Core, Mac OS is natively supported with SQLite as the database.
 
@@ -20,8 +20,8 @@ With the templates installed on your system, it is now possible to create Umbrac
 
 To create a project, there are two options:
 
-- Continue creating projects using the .NET CLI.
-- Create new projects using Visual Studio.
+* Continue creating projects using the .NET CLI.
+* Create new projects using Visual Studio.
 
 To create new projects using Visual Studio, you can use the [Install using Visual Studio](visual-studio.md) guide.
 
