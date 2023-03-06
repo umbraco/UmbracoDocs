@@ -9,10 +9,7 @@
 
 ## Installing Deploy
 
-* [Installing](installing-deploy/README.md)
-* [Installing Umbraco Deploy](installing-deploy/install-configure.md)
-  * [Existing project](installing-deploy/existing-site.md)
-  * [New site](installing-deploy/new-site.md)
+* [Setting up Umbraco Deploy](installing-deploy/install-configure.md)
 * [CI/CD Build and Deployment Pipeline](installing-deploy/cicd-pipeline/README.md)
   * [Azure DevOps](installing-deploy/cicd-pipeline/ci-cd-azure-dev-ops.md)
   * [Github actions](installing-deploy/cicd-pipeline/ci-cd-github-actions.md)
