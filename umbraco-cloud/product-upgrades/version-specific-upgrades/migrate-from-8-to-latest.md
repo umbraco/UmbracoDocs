@@ -4,17 +4,13 @@ description: >-
   Umbraco 10.
 ---
 
-# Migrate a Umbraco 8 project to Umbraco 10
+# Migrate from Umbraco 8 to the latest version
 
-{% hint style="info" %}
-The steps in this article can also be used to upgrade to Umbraco version 9, however, we do recommend always upgrading to the latest version whenever possible.
-{% endhint %}
+Since the underlying framework going from Umbraco 8 to the latest version has changed, there is no direct upgrade path. That said, it is possible to re-use the database from your Umbraco 8 project on your new project in order to maintain the content.
 
-Since the underlying framework going from Umbraco 8 to 10 has changed there is no direct upgrade path. However, there have been a few changes to the Database schema. You can re-use the database from your Umbraco 8 project on your new Umbraco 10 Cloud project so that you have your content from Umbraco 8.
+It is not possible to migrate the custom code as the underlying web framework has been updated from ASP.NET to ASP.NET Core. All templates and custom code will need to be re-implemented.
 
-It is not possible to migrate the custom code as the underlying web framework has been updated from ASP.NET to ASP.NET Core and you will need to re-implement it.
-
-You also need to make sure that the packages that you are using are available for Umbraco 10.
+You also need to make sure that the packages that you are using are available on the latest version.
 
 ## Prerequisites
 
