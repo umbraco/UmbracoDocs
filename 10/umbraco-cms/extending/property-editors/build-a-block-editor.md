@@ -338,7 +338,7 @@ invalidLayoutItems.forEach(entry => {
 });
 ```
 
-The following example loops through a array layout to display the contentUdi of each blocks:
+The following example loops through a layout array to display the contentUdi of each blocks:
 
 ```html
 <div ng-repeat="layoutEntry in vm.layout track by layoutEntry.$block.key">
