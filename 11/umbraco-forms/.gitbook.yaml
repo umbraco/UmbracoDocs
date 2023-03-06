@@ -5,4 +5,4 @@ root: ./
     summary: SUMMARY.md
 
 redirects:
-    installation/upgrade: installation/version-specific.md
+    installation/upgrade: installation/manualupgrade
