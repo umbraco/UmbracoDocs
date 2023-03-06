@@ -1,8 +1,5 @@
 ---
-meta.Title: Setting up a CI/CD Build and Deployment Pipeline Using Azure DevOps
-description: >-
-  Steps and examples on how to setup a build and deployment pipeline for Umbraco
-  Deploy using Azure DevOps
+description: "Steps and examples on how to setup a build and deployment pipeline for Umbraco Deploy using Azure DevOps."
 ---
 
 # Azure DevOps

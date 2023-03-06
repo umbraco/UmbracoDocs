@@ -1,3 +1,7 @@
+---
+description: "Additional steps you can carry out to streamline your local development workflow"
+---
+
 # Streamlining Local Development
 
 In this section we discuss some additional steps you can carry out to streamline your local development workflow.
@@ -21,7 +25,7 @@ Therefore, if we ensure that the file is created everytime the source code is pu
 To do this, carry out the following steps:
 
 - Find the `.git` folder within your solution root.
-  - It might be a hidden folder, so if you don't see it, make sure your file browser is configured to show hidden files and folders.
+    - It might be a hidden folder, so if you don't see it, make sure your file browser is configured to show hidden files and folders.
 - Within that you'll find a `hooks` folder, and inside that, a file called `post-merge.sample`.
 - Rename the file to remove the `.sample` extension and open it in a text editor.
 - Apply the following text and save the file (amending the path to the web project as appropriate for your solution structure):
@@ -33,3 +37,4 @@ echo > src/UmbracoProject/umbraco/Deploy/deploy-on-start
 
 - Run a `git pull origin <branchname>`.
 - Start up the website and you should find the Umbraco schema update has been triggered.
+

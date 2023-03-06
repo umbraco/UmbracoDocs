@@ -1,5 +1,4 @@
 ---
-meta.Title: "Setting up a CI/CD Build and Deployment Pipeline"
 description: "Steps and examples on how Umbraco Deploy can be integrated into an automated build and deployment pipeline"
 ---
 
