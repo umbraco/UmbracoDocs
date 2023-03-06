@@ -7,7 +7,7 @@
 * [Troubleshooting](troubleshooting.md)
 * [Licensing Model](https://docs.umbraco.com/welcome/the-licensing-model#umbraco-deploy)
 
-## Installing Deploy
+## Getting Started
 
 * [Setting up Umbraco Deploy](installing-deploy/install-configure.md)
 * [CI/CD Build and Deployment Pipeline](installing-deploy/cicd-pipeline/README.md)
