@@ -6,7 +6,6 @@
 
 * [Installing Umbraco Forms](installation/install.md)
 * [Manually Upgrading Umbraco Forms](installation/manualupgrade.md)
-* [Keeping Umbraco Forms up to date](installation/upgrade.md)
 * [Version Specific Upgrade Notes](installation/version-specific.md)
 * [Licensing Model](https://docs.umbraco.com/welcome/the-licensing-model)
 

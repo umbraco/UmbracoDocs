@@ -90,14 +90,16 @@
 
 ## Product Upgrades
 
-* [Product Upgrades](upgrades/README.md)
-* [Major Upgrades](upgrades/major-upgrades.md)
-* [Minor Upgrades](upgrades/minor-upgrades.md)
-* [Migrate a Umbraco 8 project to Umbraco 10](product-upgrades/migrate-a-umbraco-8-project-to-umbraco-10.md)
-* [Upgrade your projects manually](upgrades/manual-upgrades/README.md)
-  * [Manual upgrade of Umbraco CMS](upgrades/manual-upgrades/manual-cms-upgrade.md)
-  * [Manual upgrade of Umbraco Deploy](upgrades/manual-upgrades/manual-upgrade-deploy.md)
-* [Dependencies on Umbraco Cloud](upgrades/product-dependencies.md)
+* [Product Upgrades](product-upgrades/README.md)
+* [Major Upgrades](product-upgrades/major-upgrades.md)
+* [Minor Upgrades](product-upgrades/minor-upgrades.md)
+* [Version Specific Upgrades](product-upgrades/version-specific-upgrades/README.md)
+  * [Migrate a Umbraco 8 project to Umbraco 10](product-upgrades/version-specific-upgrades/migrate-a-umbraco-8-project-to-umbraco-10.md)
+  * [Migrate from Umbraco 7 to Umbraco 8 on Umbraco Cloud](product-upgrades/version-specific-upgrades/migrate-from-umbraco-7-to-8.md)
+* [Upgrade your projects manually](product-upgrades/manual-upgrades/README.md)
+  * [Manual upgrade of Umbraco CMS](product-upgrades/manual-upgrades/manual-cms-upgrade.md)
+  * [Manual upgrade of Umbraco Deploy](product-upgrades/manual-upgrades/manual-upgrade-deploy.md)
+* [Dependencies on Umbraco Cloud](product-upgrades/product-dependencies.md)
 
 ## Troubleshooting
 

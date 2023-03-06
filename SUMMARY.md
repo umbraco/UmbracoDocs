@@ -625,7 +625,6 @@
 * [Installation And Upgrades](umbraco-forms/installation/README.md)
   * [Installing Umbraco Forms](umbraco-forms/installation/install.md)
   * [Manually Upgrading Umbraco Forms](umbraco-forms/installation/manualupgrade.md)
-  * [Keeping Umbraco Forms up to date](umbraco-forms/installation/upgrade.md)
   * [Version Specific Upgrade Notes](umbraco-forms/installation/version-specific.md)
 * [Editor Documentation](umbraco-forms/editor/README.md)
   * [Creating a Form - The Basics](umbraco-forms/editor/creating-a-form/README.md)

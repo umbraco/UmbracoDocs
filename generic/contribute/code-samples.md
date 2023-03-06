@@ -1,3 +1,9 @@
+---
+description: >-
+  When adding code snippets to the Umbraco documentation, refer to this article 
+  for tips on how to improve the samples.
+---
+
 # Code Blocks
 
 The articles in the Umbraco Documentation can in most cases benefit from relevant code samples to support the written text.
