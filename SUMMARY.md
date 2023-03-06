@@ -655,7 +655,7 @@
     * [Adding A Workflow Type To Umbraco Forms](umbraco-forms/developer/extending/adding-a-workflowtype.md)
     * [Adding A Export Type To Umbraco Forms](umbraco-forms/developer/extending/adding-a-exporttype.md)
     * [Adding a Magic String Format Function](umbraco-forms/developer/extending/adding-a-magic-string-format-function.md)
-    * [Adding A Server-Side Notification Handlers To Umbraco Forms](umbraco-forms/developer/extending/adding-an-event-handler.md)
+    * [Adding A Server-Side Notification Handler To Umbraco Forms](umbraco-forms/developer/extending/adding-an-event-handler.md)
     * [Customize Default Workflows For a Form](umbraco-forms/developer/extending/customize-default-workflows.md)
   * [Configuration](umbraco-forms/developer/configuration/README.md)
     * [Forms Provider Type Details](umbraco-forms/developer/configuration/type-details.md)
