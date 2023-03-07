@@ -3,7 +3,7 @@ meta.Title: Adding Notification Handlers in Umbraco Forms
 description: See an example of validating a form server-side
 ---
 
-# Adding A Server-Side Notification Handlers To Umbraco Forms
+# Adding A Server-Side Notification Handler To Umbraco Forms
 
 ## Form validation notification
 
@@ -65,7 +65,7 @@ namespace MyFormsExtensions
 }
 ```
 
-The handler will check the `ModelState` and `Form` field values provided in the notification. If validation fails, we add a ModelError.
+The handler will check the `ModelState` and `Form` field values provided in the notification. If validation fails, we add a `ModelError`.
 
 To register the handler, add the following code into the startup pipeline. In this example, the registration is implemented as an extension method to `IUmbracoBuilder` and should be called from `Startup.cs`:
 
@@ -148,7 +148,7 @@ If a folder is being moved, the key within the `State` dictionary is `"MovedFrom
 
 ## Backoffice entry rendering events
 
-When an entry for a form is rendered in the backoffice, and event is available to allow modification of the record details before they are presented to the user. This is shown in the following example:
+When an entry for a form is rendered in the backoffice, an event is available to allow modification of the record detail. This event is available before the record details are presented to the user. This is shown in the following example:
 
 ```csharp
     public class TestSiteComposer : IComposer
