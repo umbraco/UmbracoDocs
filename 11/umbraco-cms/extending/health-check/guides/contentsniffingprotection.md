@@ -1,4 +1,4 @@
-# Health check: Content/MIME Sniffing Protection
+# Health check: Content/Multipurpose Internet Mail Extensions (MIME) Sniffing Protection
 
 _Checks that your site contains a header used to protect against MIME sniffing vulnerabilities._
 
