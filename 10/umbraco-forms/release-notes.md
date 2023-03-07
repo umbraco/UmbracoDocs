@@ -320,7 +320,7 @@ We've listed here all changes going back to March 2021 for Forms 8 and above. Fo
 *   Applied dictionary translations to form fields displayed in backoffice entries viewer. [#672](https://github.com/umbraco/Umbraco.Forms.Issues/issues/672)
 *   Resolved issue with field type script rendering when multiple forms are displayed on a page. [#670](https://github.com/umbraco/Umbraco.Forms.Issues/issues/670)
 *   Completed support for client-side views to be created outside of the _App\_Plugins_ folder, thus being retained following a _dotnet clean_ (V9 only). [#13](https://github.com/umbraco/Umbraco.Forms.Issues/issues/13)
-*   Added fallback to default configured SMTP sender address (V9 only). [#676](https://github.com/umbraco/Umbraco.Forms.Issues/issues/676)
+*   Added fallback to default configured Simple Mail Transfer Protocol (SMTP) sender address (V9 only). [#676](https://github.com/umbraco/Umbraco.Forms.Issues/issues/676)
 *   Fixed casing issue referencing default theme stylesheet (V9 only) [#680](https://github.com/umbraco/Umbraco.Forms.Issues/issues/680)
 
 ### [8.9.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.9.1) and [9.1.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.1.1) (November 23rd 2021)
