@@ -274,7 +274,7 @@ We've listed here all changes going back to March 2021 for Forms 8 and above. Fo
 *   Fixed timezone conversion on entries viewer [#723](https://github.com/umbraco/Umbraco.Forms.Issues/issues/723)
 *   Fixed null reference in backoffice user check for retrieving records outside of a backoffice request [#724](https://github.com/umbraco/Umbraco.Forms.Issues/issues/724)
 *   Fixed case insensitive view name under forms security (V9 only) [#725](https://github.com/umbraco/Umbraco.Forms.Issues/issues/725)
-*   Additional translations for localized back-office: Czech and Danish.
+*   Additional translations for localized backoffice: Czech and Danish.
 
 ### [8.10.3](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.10.3) and [9.2.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.2.2) (February 15th 2022)
 
