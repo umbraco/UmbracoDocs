@@ -78,7 +78,7 @@ We've listed here all changes going back to March 2021 for Forms 8 and above. Fo
 *   Resolved issue with removed field type preventing edit of form [#899](https://github.com/umbraco/Umbraco.Forms.Issues/issues/899)
 *   Fixed mandatory data consent not being validated correctly where conditions are set. [#897](https://github.com/umbraco/Umbraco.Forms.Issues/issues/897)
 *   Fixed error on export of entries when there are many records to export [#864](https://github.com/umbraco/Umbraco.Forms.Issues/issues/864)
-*   Added documentation and base class to allow users to more easily change the location of prevalue source text files. [#789](https://github.com/umbraco/Umbraco.Forms.Issues/issues/789)
+*   Added documentation and base class to allow users to change the location of prevalue source text files. [#789](https://github.com/umbraco/Umbraco.Forms.Issues/issues/789)
 
 ### [10.2.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.0) (November 8th 2022)
 
