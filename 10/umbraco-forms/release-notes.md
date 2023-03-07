@@ -160,7 +160,7 @@ We've listed here all changes going back to March 2021 for Forms 8 and above. Fo
 
 ### [10.0.5](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.5) (July 14th 2022)
 
-*   Fixed macro partial view tree so RCL shipped partials from Forms are only shown in the "picker" dialog. [#814](https://github.com/umbraco/Umbraco.Forms.Issues/issues/814)
+*   Fixed macro partial view tree so Razor Class Library (RCL) shipped partials from Forms are only shown in the "picker" dialog. [#814](https://github.com/umbraco/Umbraco.Forms.Issues/issues/814)
 *   Removed false positive report of missing indexes on tables. [#803](https://github.com/umbraco/Umbraco.Forms.Issues/issues/803)
 *   Fixed issue with saving forms in upgrade scenarios, when workflows that have settings introduced after the form was created (and hence null values) [#813](https://github.com/umbraco/Umbraco.Forms.Issues/issues/813)
 
