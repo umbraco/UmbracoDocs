@@ -4,4 +4,4 @@
 
 ## Building packages
 
-* [Page 1](building-packages/page-1.md)
+* [Extending Umbraco](building-packages/extending-umbraco.md)
