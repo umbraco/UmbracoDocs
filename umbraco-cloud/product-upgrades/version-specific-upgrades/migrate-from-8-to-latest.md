@@ -7,14 +7,14 @@ description: >-
 
 Since the underlying framework going from Umbraco 8 to the latest version has changed, there is no direct upgrade path. That said, it is possible to re-use the database from your Umbraco 8 project on your new project in order to maintain the content.
 
-It is not possible to migrate the custom code as the underlying web framework has been updated from ASP.NET to ASP.NET Core. All templates and custom code will need to be re-implemented.
+It is not possible to migrate the custom code as the underlying web framework has been updated from ASP.NET to ASP.NET Core. All templates and custom code will need to be reimplemented.
 
 You also need to make sure that the packages that you are using are available on the latest version.
 
 ## Prerequisites
 
 * A Umbraco 8 Cloud project running **the latest version of Umbraco 8**.
-* A clean Cloud project running the latest version of Umbraco **at least 2 environments**.
+* A clean Cloud project running the latest version of Umbraco with **at least 2 environments**.
 * A backup of your Umbraco 8 project database.
 
 {% hint style="info" %}
@@ -39,7 +39,7 @@ Should something fail during the migration, the Development environment can be r
 }
 ```
 
-6. Enable [Unattended Upgrades](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading#enable-the-unattended-upgrade-feature) to authorize the database upgrade, .
+6. Enable [Unattended Upgrades](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading#enable-the-unattended-upgrade-feature) to authorize the database upgrade.
 7. Run the new Cloud project locally.
 8. Wait for the site to finish upgrading.
 9. Stop the site and disable the unattended upgrade.
@@ -53,14 +53,14 @@ You need to manually upgrade the view files and custom code implementation. For 
 
 ## Step 2: File Migration
 
-1. The following files/folders need to be copied into the new Cloud project:
+1. The following files/folders need to be copied from the Umbraco 8 folder into the new Cloud project folder:
     * `~/Views` - **Do not** overwrite the default Macro and Partial View Macro files unless changes have been made to these.
     * `~/Media`
     * Any files/folders related to Stylesheets and JavaScript.
 2. Migrate custom configuration from the Umbraco 8 configuration files (`.config`) into the `appsettings.json` file on the new Cloud project.
-    * As of Umbraco 9, configuration no longer live in the `Web.Config` file and has been replaced by the `appsettings.json` file.
+    * As of Umbraco version 9, the configuration no longer lives in the `Web.Config` file and has been replaced by the `appsettings.json` file.
 3. [Migrate Umbraco Forms data to the database](../../deployment/umbraco-forms-on-cloud.md), if relevant.
-    * As of Umbraco Forms version 9, it is only possible to store Form data in the database. If Umbraco Forms was used on the Umbraco 8 project the files need to be migrated to the database.
+    * As of Umbraco Forms version 9, it is only possible to store Forms data in the database. If Umbraco Forms was used on the Umbraco 8 project, the files need to be migrated to the database.
 4. Run the new Cloud project locally.
     * It **will** give you a Yellow Screen of Death (YSOD)/error screen on the frontend as none of the Template files have been updated yet.
 5. Go to the backoffice of the project.
@@ -84,7 +84,7 @@ Read more about these changes in the [IPublishedContent](https://docs.umbraco.co
 * Template files need to inherit from `Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>` instead of `Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.HomePage>`
 * Template files need to use `ContentModels = Umbraco.Cms.Web.Common.PublishedModels` instead of `ContentModels = Umbraco.Web.PublishedModels`
 
-Depending on the extend of the project and the amount of custom code and implementations, this step is going to require a lot of work.
+Depending on the extent of the project and the amount of custom code and implementations, this step is going to require a lot of work.
 
 ## Step 4: Deploy and Test on Umbraco Cloud
 
@@ -93,7 +93,7 @@ Once the new Cloud project runs without errors on the local setup, the next step
 1. Push the migration and changes to the Umbraco Cloud **Development** environment.
 
 {% hint style="info" %}
-The deployment might take a bit longer than normal as a lot of changes has been made.
+The deployment might take a bit longer than normal as a lot of changes have been made.
 {% endhint %}
 
 2. Go to the backoffice of the **Development** environment once everything has been pushed.
