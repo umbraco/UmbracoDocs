@@ -54,7 +54,7 @@ We've listed here all changes going back to March 2021 for Forms 8 and above. Fo
 *   Added logging to honeypot capture [#911](https://github.com/umbraco/Umbraco.Forms.Issues/issues/911)
 *   Fixed CSS validation errors [#932](https://github.com/umbraco/Umbraco.Forms.Issues/issues/932)
 *   Fixed issue where an invalid value stored via file upload could lead to media directory removal [#933](https://github.com/umbraco/Umbraco.Forms.Issues/issues/933)
-*   Improved performance of back-office forms search [#940](https://github.com/umbraco/Umbraco.Forms.Issues/issues/940)
+*   Improved performance of backoffice forms search [#940](https://github.com/umbraco/Umbraco.Forms.Issues/issues/940)
 *   Added extension method for retrieval of selected prevalues in workflow, resolving issue with delimiter clash and multiple selections [#941](https://github.com/umbraco/Umbraco.Forms.Issues/issues/941)
 *   Added support for file uploads via the headless/AJAX API (V10+ only) [#922](https://github.com/umbraco/Umbraco.Forms.Issues/issues/922)
 *   Ensured versioning and documentation for headless/AJAX API is scoped only to Forms API controllers (V10+ only)
