@@ -1,6 +1,6 @@
 # Release Notes
 
-In this section we have summarised the changes to Umbraco Forms released in each version. Each version is presented with a link to the [Forms issue tracker](https://github.com/umbraco/Umbraco.Forms.Issues/issues) showing a list of issues resolved in the release.  We also link to the individual issues themselves from the detail.
+In this section, we have summarized the changes to Umbraco Forms released in each version. Each version is presented with a link to the [Forms issue tracker](https://github.com/umbraco/Umbraco.Forms.Issues/issues) showing a list of issues resolved in the release.  We also link to the individual issues themselves from the detail.
 
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
