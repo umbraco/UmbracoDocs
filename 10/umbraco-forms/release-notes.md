@@ -433,7 +433,7 @@ We've listed here all changes going back to March 2021 for Forms 8 and above. Fo
 
 ### [8.7.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=label%3Arelease%2F8.7.2+is%3Aclosed) (May 11th 2021)
 
-*   Style back-office preview for Recaptcha3 field type [#552](https://github.com/umbraco/Umbraco.Forms.Issues/issues/552)
+*   Style backoffice preview for Recaptcha3 field type [#552](https://github.com/umbraco/Umbraco.Forms.Issues/issues/552)
 *   Fixed issue with validation retained when answer type changed [#548](https://github.com/umbraco/Umbraco.Forms.Issues/issues/548)
 *   Fixed issue with previous button link in multi-page forms [#547](https://github.com/umbraco/Umbraco.Forms.Issues/issues/547)
 *   Fixed issue with save of text area number of rows setting [#544](https://github.com/umbraco/Umbraco.Forms.Issues/issues/544)
