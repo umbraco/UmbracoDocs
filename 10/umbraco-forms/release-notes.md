@@ -342,7 +342,7 @@ We've listed here all changes going back to March 2021 for Forms 8 and above. Fo
 *   [](https://github.com/umbraco/Umbraco.Forms.Issues/issues/18)Fixed null reference exception when deleting records within workflows. [#100](https://github.com/umbraco/Umbraco.Forms.Issues/issues/100)
 *   Fixed issue where check-boxes are used in conditions. [#192](https://github.com/umbraco/Umbraco.Forms.Issues/issues/192)
 *   Added missing custom CMS class to text field template. [#484](https://github.com/umbraco/Umbraco.Forms.Issues/issues/484)
-*   Show list of licensed domains in the back-office. [#629](https://github.com/umbraco/Umbraco.Forms.Issues/issues/629)
+*   Show list of licensed domains in the backoffice. [#629](https://github.com/umbraco/Umbraco.Forms.Issues/issues/629)
 *   Restored behaviour of excluding scripts when rendering forms to only do so when explicitly requested to. [#634](https://github.com/umbraco/Umbraco.Forms.Issues/issues/634)
 *   Added a new event to support hooking into form entry display in the back-office. [#639](https://github.com/umbraco/Umbraco.Forms.Issues/issues/639)
 *   Ensured when forms are created from templates that they have unique page, fieldset and field Ids. [#647](https://github.com/umbraco/Umbraco.Forms.Issues/issues/647)
