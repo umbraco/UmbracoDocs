@@ -24,7 +24,7 @@ We've listed here all changes going back to March 2021 for Forms 8 and above. Fo
 *   Improved labeling of workflows [#977](https://github.com/umbraco/Umbraco.Forms.Issues/issues/977)
 *   Removed initial brief visibility of fieldset hidden by conditions [#970](https://github.com/umbraco/Umbraco.Forms.Issues/issues/970)
 *   Fixed display of "automatic" label associated with workflows when manual approval is not enabled
-*   Updated workflow processing to take account for IgnoreWorkFlowsOnEdit setting
+*   Updated workflow processing to take account of the `IgnoreWorkFlowsOnEdit` setting
 *   Fixed issue with empty member properties in the "send to URL" workflow [#984](https://github.com/umbraco/Umbraco.Forms.Issues/issues/984​)
 *   Fixed load of XSLT file in send email workflow (V9+) [#974](https://github.com/umbraco/Umbraco.Forms.Issues/issues/974)
 *   Added detail of container widths in headless/AJAX API (V10+) [#981](https://github.com/umbraco/Umbraco.Forms.Issues/issues/981)
