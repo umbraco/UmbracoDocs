@@ -175,7 +175,7 @@ We've listed here all changes going back to March 2021 for Forms 8 and above. Fo
 *   Added option for prevalue captions [#84](https://github.com/umbraco/Umbraco.Forms.Issues/issues/84​)
 *   Ensured user group start folder aggregation for user's permissions doesn't include user groups that don't have access to Forms [#772](https://github.com/umbraco/Umbraco.Forms.Issues/issues/772)
 *   Added option for creating permissions on form for user groups to all groups, or all groups the creating user is part of.
-*   Provided fixes for issues with rendering localized dates in the back-office entries view [#777](https://github.com/umbraco/Umbraco.Forms.Issues/issues/777)
+*   Provided fixes for issues with rendering localized dates in the backoffice entries view [#777](https://github.com/umbraco/Umbraco.Forms.Issues/issues/777)
 *   Added read-only, rich text data type (V9 and 10).
 *   Friendlier extensions for registering custom types (V10).
 *   Added details of page where form was submitted to Excel download [#768](https://github.com/umbraco/Umbraco.Forms.Issues/issues/768​)
