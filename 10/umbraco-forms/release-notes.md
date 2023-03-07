@@ -257,7 +257,7 @@ We've listed here all changes going back to March 2021 for Forms 8 and above. Fo
 
 *   All changes listed under 8.11.0-rc001 and 9.3.0-rc001
 *   Fixed issue with clean on already cleaned project (V9 only) [#732](https://github.com/umbraco/Umbraco.Forms.Issues/issues/732)
-*   Resolved client-side error when just the jquery unobtrusive dependency is missing [#734](https://github.com/umbraco/Umbraco.Forms.Issues/issues/734)
+*   Resolved client-side error when the jquery unobtrusive dependency is missing [#734](https://github.com/umbraco/Umbraco.Forms.Issues/issues/734)
 *   Fixed two typos in labels [#727](https://github.com/umbraco/Umbraco.Forms.Issues/issues/727)
 
 ### [8.11.0-rc001](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.11.0) and [9.3.0-rc001](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.3.0) (February 15th 2022)
