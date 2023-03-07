@@ -381,7 +381,7 @@ We've listed here all changes going back to March 2021 for Forms 8 and above. Fo
 *   Added busy indicator when exporting to Excel and performing record set operations [#419](https://github.com/umbraco/Umbraco.Forms.Issues/issues/419) [#575](https://github.com/umbraco/Umbraco.Forms.Issues/issues/575)
 *   Ensured form submissions with message display follow post/redirect/get pattern [#485](https://github.com/umbraco/Umbraco.Forms.Issues/issues/485) [#572](https://github.com/umbraco/Umbraco.Forms.Issues/issues/572) [#593](https://github.com/umbraco/Umbraco.Forms.Issues/issues/593)
 *   Added ability to toggle field labels [#530](https://github.com/umbraco/Umbraco.Forms.Issues/issues/530)
-*   Added link to page where form was submitted from back-office entry screen [#607](https://github.com/umbraco/Umbraco.Forms.Issues/issues/607)
+*   Added link to a page where the form was submitted from backoffice entry screen [#607](https://github.com/umbraco/Umbraco.Forms.Issues/issues/607)
 *   Fixed icons for answer types display [#610](https://github.com/umbraco/Umbraco.Forms.Issues/issues/610)
 *   Fixed display of grid picker form preview [#612](https://github.com/umbraco/Umbraco.Forms.Issues/issues/612)
 *   Ensured workflow settings updates saved only when submitting and not closing dialog [#613](https://github.com/umbraco/Umbraco.Forms.Issues/issues/613)
