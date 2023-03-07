@@ -447,7 +447,7 @@ We've listed here all changes going back to March 2021 for Forms 8 and above. Fo
 *   Added missing default form setting configuration entry [#369](https://github.com/umbraco/Umbraco.Forms.Issues/issues/369)
 *   Made the body text component of the "title and description" field type a text area [#326](https://github.com/umbraco/Umbraco.Forms.Issues/issues/326)
 *   Fixed issue with conditional field rendering [#207](https://github.com/umbraco/Umbraco.Forms.Issues/issues/207)
-*   Removed some legacy, commented out code from back-office JavaScript [#148](https://github.com/umbraco/Umbraco.Forms.Issues/issues/148)
+*   Removed some legacy, commented-out code from backoffice JavaScript [#148](https://github.com/umbraco/Umbraco.Forms.Issues/issues/148)
 
 ### [8.7.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=label%3Arelease%2F8.7.1+is%3Aclosed) (Apr 13th 2021)
 
