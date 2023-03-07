@@ -23,5 +23,5 @@ We are using Storybook to work with and showcase the progress of the new backoff
   * [x] Backoffice Library: [https://ambitious-stone-0033b3603.1.azurestaticapps.net/?path=/docs/guides-getting-started--docs](https://ambitious-stone-0033b3603.1.azurestaticapps.net/?path=/docs/guides-getting-started--docs)&#x20;
 * [ ] UmbraCollab
 * [ ] RFCs
-* [ ] Contributing Guidelines: [https://github.com/umbraco/Umbraco.CMS.Backoffice/contribute](https://github.com/umbraco/Umbraco.CMS.Backoffice/contribute)
+* [x] Contributing Guidelines: [https://github.com/umbraco/Umbraco.CMS.Backoffice/contribute](https://github.com/umbraco/Umbraco.CMS.Backoffice/contribute)
 * [ ] Mock site: [https://ashy-bay-09f36a803.1.azurestaticapps.net/section/content/dashboard/welcome](https://ashy-bay-09f36a803.1.azurestaticapps.net/section/content/dashboard/welcome)&#x20;
