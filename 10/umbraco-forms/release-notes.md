@@ -469,7 +469,7 @@ We've listed here all changes going back to March 2021 for Forms 8 and above. Fo
 *   Updated styling on re-order button [#519](https://github.com/umbraco/Umbraco.Forms.Issues/issues/519)
 *   Set upper limit on number of columns in form group [#520](https://github.com/umbraco/Umbraco.Forms.Issues/issues/520)
 *   Updated reCAPTCHA v3 to function on submut buttons as well as inputs [#521](https://github.com/umbraco/Umbraco.Forms.Issues/issues/521)
-*   Sanitise for field names when sort option provided in back-office record filter request.
+*   Sanitise for field names when the sort option is provided in the backoffice record filter request.
 *   Applied fix for issue with conditionals that are not on the first page [#462](https://github.com/umbraco/Umbraco.Forms.Issues/issues/462)
 *   Resolved issue with conditional logic - [#273](https://github.com/umbraco/Umbraco.Forms.Issues/issues/273) and [#522](https://github.com/umbraco/Umbraco.Forms.Issues/issues/522)
 
