@@ -1,4 +1,4 @@
-# Adding A Export Type To Umbraco Forms
+# Adding An Export Type To Umbraco Forms
 
 _This builds on the "_[_adding a type to the provider model_](adding-a-type.md)_" chapter._
 

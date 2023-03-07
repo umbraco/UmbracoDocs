@@ -132,7 +132,7 @@ To scale an Area, click and drag the scale-button in the bottom-right corner of 
 
 ![Block Grid - Area Configuration](../../built-in-property-editors/block-editor/images/BlockGridEditor\_AreasConfiguration.png)
 
-* **Alias** - The alias is used to identify this Area. It is being printed by `GetBlockGridHTML()` and used as name for the Area slot in Custom Views. The alias is also available for CSS Selectors to target the HTML-Element representing a Area.
+* **Alias** - The alias is used to identify this Area. It is being printed by `GetBlockGridHTML()` and used as name for the Area slot in Custom Views. The alias is also available for CSS Selectors to target the HTML-Element representing an Area.
 * **Create Button Label** - Overwrites the Create Button Label of the Area.
 * **Number of blocks** - Determines the total number of Blocks in an Area.
 * **Allowed block types** - When this is empty, all Blocks with Permissions for creation in Areas, will be available. This can be overwritten by specifying the allowed Blocks. Define the types of Blocks or Groups of Blocks that are allowed. Additionally, you can also set how many Blocks of each type/group should be present.
