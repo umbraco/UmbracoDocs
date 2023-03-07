@@ -21,7 +21,7 @@ We've listed here all changes going back to March 2021 for Forms 8 and above. Fo
 
 ### [8.13.7](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.13.7), [9.5.7](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.5.7), [10.2.4](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.4) and [11.0.3](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.0.3) (March 7th 2023)
 
-*   Improved labelling of workflows [#977](https://github.com/umbraco/Umbraco.Forms.Issues/issues/977)
+*   Improved labeling of workflows [#977](https://github.com/umbraco/Umbraco.Forms.Issues/issues/977)
 *   Removed initial brief visibility of fieldset hidden by conditions [#970](https://github.com/umbraco/Umbraco.Forms.Issues/issues/970)
 *   Fixed display of "automatic" label associated with workflows when manual approval is not enabled
 *   Updated workflow processing to take account for IgnoreWorkFlowsOnEdit setting
