@@ -148,7 +148,7 @@ If a folder is being moved, the key within the `State` dictionary is `"MovedFrom
 
 ## Backoffice entry rendering events
 
-When an entry for a form is rendered in the backoffice, an event is available to allow modification of the record details before they are presented to the user. This is shown in the following example:
+When an entry for a form is rendered in the backoffice, an event is available to allow modification of the record detail. This event is available before the record details are presented to the user. This is shown in the following example:
 
 ```csharp
     public class TestSiteComposer : IComposer
