@@ -272,7 +272,7 @@ We've listed here all changes going back to March 2021 for Forms 8 and above. Fo
 *   Removed use of inline scripts allowing setting of a stricter content security policy [#677](https://github.com/umbraco/Umbraco.Forms.Issues/issues/677)
 *   Fixed typos in setting description (V9 only) [#710](https://github.com/umbraco/Umbraco.Forms.Issues/issues/710)
 *   Fixed timezone conversion on entries viewer [#723](https://github.com/umbraco/Umbraco.Forms.Issues/issues/723)
-*   Fixed null reference in back-office user check for retrieving records outside of a back-office request [#724](https://github.com/umbraco/Umbraco.Forms.Issues/issues/724)
+*   Fixed null reference in backoffice user check for retrieving records outside of a backoffice request [#724](https://github.com/umbraco/Umbraco.Forms.Issues/issues/724)
 *   Fixed case insensitive view name under forms security (V9 only) [#725](https://github.com/umbraco/Umbraco.Forms.Issues/issues/725)
 *   Additional translations for localized back-office: Czech and Danish.
 
