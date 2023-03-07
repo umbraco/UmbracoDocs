@@ -62,16 +62,15 @@ You need to manually upgrade the view files and custom code implementation. For 
     * As of Umbraco 9, configuration no longer live in the `Web.Config` file and has been replaced by the `appsettings.json` file.
 3. [Migrate Umbraco Forms data to the database](../../deployment/umbraco-forms-on-cloud.md), if relevant.
     * As of Umbraco Forms version 9, it is only possible to store Form data in the database. If Umbraco Forms was used on the Umbraco 8 project the files need to be migrated to the database.
-4. Run the Umbraco 10 project locally.
+4. Run the new Cloud project locally.
     * It **will** give you a Yellow Screen of Death (YSOD)/error screen on the frontend as none of the Template files have been updated yet.
-5. Go to the backoffice of your project.
+5. Go to the backoffice of the project.
 6. Navigate to the **Settings** section and open the **Deploy** dashboard.
-7. Select `Extract Schema To Data Files` from the **Deploy Operations** drop-down to generate the UDA files.
-8. Click **Trigger Operation**.
+7. Click on `Export Schema` in the **Deploy Operations** section in order to generate the UDA files.
     * Once the operation is completed, the status will change to `Last deployment operation completed`.
-9. Check `~\umbraco\Deploy\Revision` folder to ensure all the UDA files have been generated.
-10. Select `Schema Deployment From Data Files` from the **Deploy Operations** drop-down to make sure everything checks out with the UDA files that were generated.
-11. Click **Trigger Operation**.
+8. Check `~\umbraco\Deploy\Revision` folder to ensure all the UDA files have been generated.
+9. Return to the **Deploy** dashboard.
+10. Click on `Update Umbraco Schema` in the **Deploy Operations** section to make sure everything checks out with the UDA files that were generated.
 
 ## Step 3: Custom Code in the latest version
 
@@ -100,18 +99,17 @@ The deployment might take a bit longer than normal as a lot of changes has been 
 
 2. Go to the backoffice of the **Development** environment once everything has been pushed.
 3. Go to **Settings** and open the **Deploy** Dashboard.
-4. Select `Schema Deployment From Data Files` from the **Deploy Operations** drop-down.
-5. Click **Trigger Operation**.
+4. Click on `Export Schema` in the **Deploy Operations** section.
     * The deployment will result in either of the two:
       * `Last deployment operation failed` - something failed during the check.
-        * Select `Clear Cached Signatures` from the **Deploy Operations** drop-down.
-        * Select `Schema Deployment From Data Files` from the **Deploy Operations** drop-down to clear up the error.
+        * Select `Clear Signatures` from the **Deploy Operations** section.
+        * Select `Update Umbraco Schema` from the **Deploy Operations** section to clear up the error.
       * `Last deployment operation completed`
         * Everything checks out: The Development environment has been upgraded.
-6. Transfer Content and Media from the local clone to the **Development** environment.
-    * To transfer members make sure that `AllowMembersDeploymentOperations` and `TransferMemberGroupsAsContent`is configured in the `appSettings.json` file.
-7. Test **everything** in the **Development** environment.
-8. Deploy to the **Live** environment.
+5. Transfer Content and Media from the local clone to the **Development** environment.
+    * To transfer members make sure that the following Deploy settings are configured in the `appsettings.json`: [`AllowMembersDeploymentOperations` and `TransferMemberGroupsAsContent`](https://docs.umbraco.com/umbraco-deploy/deploy-settings).
+6. Test **everything** in the **Development** environment.
+7. Deploy to the **Live** environment.
 
 ## Step 5: Going live
 
@@ -126,6 +124,5 @@ Hostnames are unique and can only be added to one Cloud project at a time.
 ## Related Information
 
 * [Issue tracker for known issues with Content Migration](https://github.com/umbraco/UmbracoDocs/issues)
-* Forms on Umbraco Cloud
-* Working locally with Umbraco Cloud
-* KUDU on Umbraco Cloud
+* [Forms on Umbraco Cloud](../../deployment/umbraco-forms-on-cloud.md)
+* [Working locally with Umbraco Cloud](../../set-up/working-locally.md)
