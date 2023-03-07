@@ -31,6 +31,11 @@ Should something fail during the migration, the Development environment can be r
 2. Import the database backup into SQL Server Management Studio.
 3. Clone down the **Development** environment from the new Cloud project.
 4. Test the project and make sure to log in to the backoffice.
+
+{% hint style="info" %}
+As you are cloning down a brand new Cloud project there is nothing the restore. Select the "**Skip restore and open Umbraco**" link when starting up the project locally to go directly to the backoffice.
+{% endhint %}
+
 5. Update the connection string in the new Cloud projects `appsettings.json` file so that it connects to the Umbraco 8 database:
 
 ```json
