@@ -266,7 +266,7 @@ We've listed here all changes going back to March 2021 for Forms 8 and above. Fo
 *   Management of form permissions by user group [#19](https://github.com/umbraco/Umbraco.Forms.Issues/issues/19)
 *   Separated permissions for form "design" and "entry viewer" [#3](https://github.com/umbraco/Umbraco.Forms.Issues/issues/3)
 *   Setting of start folders for users
-*   Added permission and feature for editing entries via the back-office [#498](https://github.com/umbraco/Umbraco.Forms.Issues/issues/498)
+*   Added permission and feature for editing entries via the backoffice [#498](https://github.com/umbraco/Umbraco.Forms.Issues/issues/498)
 *   Added migration and healthcheck for missing index following V7 upgrade [#713](https://github.com/umbraco/Umbraco.Forms.Issues/issues/713)
 *   Allow tracking of calculated score in reCAPTCHA checks [#664](https://github.com/umbraco/Umbraco.Forms.Issues/issues/664)
 *   Removed use of inline scripts allowing setting of a stricter content security policy [#677](https://github.com/umbraco/Umbraco.Forms.Issues/issues/677)
