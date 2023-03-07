@@ -402,7 +402,7 @@ We've listed here all changes going back to March 2021 for Forms 8 and above. Fo
 *   Fixed bug with sending static values in "Send to URL" workflow [#597](https://github.com/umbraco/Umbraco.Forms.Issues/issues/597)
 *   Displayed visual indicator of conditions applied to form groups] [#590](https://github.com/umbraco/Umbraco.Forms.Issues/issues/590)
 *   Handled escaping of pre-values with apostrophes when used in conditions [#456](https://github.com/umbraco/Umbraco.Forms.Issues/issues/456)
-    *   _Note that this change has required a minor amend to the Script.cshtml partial view, so if you've modified this in your installation and don't simply copy over from the update, you should review to ensure you apply the update._
+    *   _**Note:** This change has required a minor amendment to the Script.cshtml partial view. So if you've modified this in your installation, don't copy over from the update. You should review it to ensure you apply the update._
 *   Added script attributes to avoid incompatibility issues with vuejs [#311](https://github.com/umbraco/Umbraco.Forms.Issues/issues/311)
 *   Fixed reCAPTCHA v3 slider issue when score threshold set to value of 0
 *   Confirmed resolution of duplicate form name exception caused when copying forms [#425](https://github.com/umbraco/Umbraco.Forms.Issues/issues/425)
