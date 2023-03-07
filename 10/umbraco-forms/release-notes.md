@@ -299,7 +299,7 @@ We've listed here all changes going back to March 2021 for Forms 8 and above. Fo
 *   Fixed issue introduced by localization of workflow details [#692](https://github.com/umbraco/Umbraco.Forms.Issues/issues/692)
 *   Ensured list of licensed domains on dashboard includes the full set allocated to the license [#697](https://github.com/umbraco/Umbraco.Forms.Issues/issues/697)
 *   Fixed rendering of HTML entities in form titles in the backoffice [#699](https://github.com/umbraco/Umbraco.Forms.Issues/issues/699)
-*   Fixed issue with back-office delete of form with > 2000 associated entries [#700](https://github.com/umbraco/Umbraco.Forms.Issues/issues/700)
+*   Fixed issue with backoffice delete of form with > 2000 associated entries [#700](https://github.com/umbraco/Umbraco.Forms.Issues/issues/700)
 *   Removed duplicate type attribute from rendered form scripts [#690](https://github.com/umbraco/Umbraco.Forms.Issues/issues/690)
 *   Fixed issue with distributed cache refreshing (V9 only) [#687](https://github.com/umbraco/Umbraco.Forms.Issues/issues/687)
 
