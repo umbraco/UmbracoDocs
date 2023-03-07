@@ -427,7 +427,7 @@ We've listed here all changes going back to March 2021 for Forms 8 and above. Fo
 *   Removed unnecessary rendering of validation framework requirement when form previewed in a rich text editor [#562](https://github.com/umbraco/Umbraco.Forms.Issues/issues/562)
 *   Optimised loading of form record counts in the backoffice dashboard [#561](https://github.com/umbraco/Umbraco.Forms.Issues/issues/561)
 *   Added support for multiple forms on one page using recaptchaV3 [#556](https://github.com/umbraco/Umbraco.Forms.Issues/issues/556)
-*   Resolved JavaScript console errors found on back-office security settings page [#505](https://github.com/umbraco/Umbraco.Forms.Issues/issues/505)
+*   Resolved JavaScript console errors found on the backoffice security settings page [#505](https://github.com/umbraco/Umbraco.Forms.Issues/issues/505)
 *   Restored create datasource based on webservice functionality [#265](https://github.com/umbraco/Umbraco.Forms.Issues/issues/265)
 *   Resolved issue with save of uploaded files when a pre-populate event is registered [#177](https://github.com/umbraco/Umbraco.Forms.Issues/issues/177)
 
