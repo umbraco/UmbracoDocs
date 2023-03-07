@@ -349,7 +349,7 @@ We've listed here all changes going back to March 2021 for Forms 8 and above. Fo
 *   Fixed issue with saving of forms with sensitive data by editors not in the sensitive data user group. [#652](https://github.com/umbraco/Umbraco.Forms.Issues/issues/652)
 *   Removed display of fields in email template that have no expected user input. [#659](https://github.com/umbraco/Umbraco.Forms.Issues/issues/659)
 *   Amended the “-ing” events (e.g. “Saving”) to be cancellable and allow changes to the object being saved. [#663](https://github.com/umbraco/Umbraco.Forms.Issues/issues/663)
-*   Added a field type property to hide the mandatory option where it’s not appropriate (i.e. where there’s no expected user input). [#665](https://github.com/umbraco/Umbraco.Forms.Issues/issues/665)
+*   Added a field-type property to hide the mandatory option where it’s not appropriate (that is where there’s no expected user input). [#665](https://github.com/umbraco/Umbraco.Forms.Issues/issues/665)
 *   Ensured consistent ordering of setting fields [#649](https://github.com/umbraco/Umbraco.Forms.Issues/issues/649) (V9 only)
 *   Avoid clash of constants in field type views [#657](https://github.com/umbraco/Umbraco.Forms.Issues/issues/657)
 
