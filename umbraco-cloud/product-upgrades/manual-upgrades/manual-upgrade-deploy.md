@@ -41,6 +41,29 @@ When the command completes, open the `.csproj` file to make sure the package ref
 
 Make sure that everything works on the local clone and that you can **run the project without any errors**.
 
+<details>
+
+<summary>Upgrading Deploy Legacy Version 7 & 8</summary>
+  
+1.   Download the latest version of Umbraco Deploy here: [http://nightly.umbraco.org/?container=umbraco-deploy-release](https://nightly.umbraco.org/?container=umbraco-deploy-release)
+    Check [Product Dependencies](https://docs.umbraco.com/umbraco-cloud/product-upgrades/product-dependencies) to be sure you download the correct version of Deploy
+    
+2.   Unzip the file on your computer
+    
+3.   Copy/Paste the files from the unzipped folder to your local project folder
+    You should not overwrite the following files:
+```
+    Config/UmbracoDeploy.config
+    Config/UmbracoDeploy.Settings.config
+```
+4.   Run the project locally - make sure it runs without any errors
+
+5.   Commit and deploy the changes to the Cloud environment
+
+6.   Again, make sure everything runs without errors before deploying to the next Cloud environment
+
+</details>
+
 ## Push upgrade to Cloud
 
 When you've upgraded everything locally, and made sure that everything runs without any errors, you are ready to deploy the upgrade to Umbraco Cloud.
