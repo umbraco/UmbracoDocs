@@ -239,7 +239,7 @@ We've listed here all changes going back to March 2021 for Forms 8 and above. Fo
 *   Removed reliance on class names for multi-page form navigation to allow removal in custom themes [#740](https://github.com/umbraco/Umbraco.Forms.Issues/issues/740)
 *   Added details of file upload supported extensions to the view model (that can be used in custom themes or field types) [#744](https://github.com/umbraco/Umbraco.Forms.Issues/issues/744)
 *   Remove inline scripts from the reCAPTCHA field type (completing the removal of all inline scripts started in the previous release and allowing for the setting of a stricter content security policy) [#745](https://github.com/umbraco/Umbraco.Forms.Issues/issues/745)
-*   Fixed issue with date display in the back-office when localized date formats are in use [#747](https://github.com/umbraco/Umbraco.Forms.Issues/issues/747)
+*   Fixed issue with date display in the backoffice when localized date formats are in use [#747](https://github.com/umbraco/Umbraco.Forms.Issues/issues/747)
 *   Re-added support for some request context magic strings (V9 only) [#750](https://github.com/umbraco/Umbraco.Forms.Issues/issues/750)
 *   Restored default permissions for new installs for users to be able to view entries [#753](https://github.com/umbraco/Umbraco.Forms.Issues/issues/753)
 *   Added configuration for a default email template to use when a new form is created
