@@ -425,7 +425,7 @@ We've listed here all changes going back to March 2021 for Forms 8 and above. Fo
 *   Fixed issue with migrations using SQL CE [#559](https://github.com/umbraco/Umbraco.Forms.Issues/issues/559)
 *   Aligned text field maxlength attribute with database field size [#563](https://github.com/umbraco/Umbraco.Forms.Issues/issues/563)
 *   Removed unnecessary rendering of validation framework requirement when form previewed in a rich text editor [#562](https://github.com/umbraco/Umbraco.Forms.Issues/issues/562)
-*   Optimised loading of form record counts in the back-office dashboard [#561](https://github.com/umbraco/Umbraco.Forms.Issues/issues/561)
+*   Optimised loading of form record counts in the backoffice dashboard [#561](https://github.com/umbraco/Umbraco.Forms.Issues/issues/561)
 *   Added support for multiple forms on one page using recaptchaV3 [#556](https://github.com/umbraco/Umbraco.Forms.Issues/issues/556)
 *   Resolved JavaScript console errors found on back-office security settings page [#505](https://github.com/umbraco/Umbraco.Forms.Issues/issues/505)
 *   Restored create datasource based on webservice functionality [#265](https://github.com/umbraco/Umbraco.Forms.Issues/issues/265)
