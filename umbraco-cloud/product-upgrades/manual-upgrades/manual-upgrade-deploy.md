@@ -43,7 +43,7 @@ Make sure that everything works on the local clone and that you can **run the pr
 
 <details>
 
-<summary>Upgrading Deploy Legacy Version 7 & 8</summary>
+<summary>Manually Upgrade Umbraco Deploy Legacy versions 7 and 8</summary>
   If you are on Umbraco 7 or Umbraco 8, follow the steps below to manually upgrade Umbraco Deploy to a later version of your project.
 1.   Download the latest version of Umbraco Deploy here: [http://nightly.umbraco.org/?container=umbraco-deploy-release](https://nightly.umbraco.org/?container=umbraco-deploy-release)
     Check [Product Dependencies](https://docs.umbraco.com/umbraco-cloud/product-upgrades/product-dependencies) to be sure you download the correct version of Deploy
