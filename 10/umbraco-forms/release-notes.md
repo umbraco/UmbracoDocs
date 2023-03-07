@@ -40,7 +40,7 @@ We've listed here all changes going back to March 2021 for Forms 8 and above. Fo
 *   Fixed editing issue with "include sensitive data" flag for workflow [#958](https://github.com/umbraco/Umbraco.Forms.Issues/issues/958)
 *   Fixed issue with backoffice editing of conditionally shown mandatory field [#956](https://github.com/umbraco/Umbraco.Forms.Issues/issues/956)
 *   Fixed casing regression issue with client-side file names (V9+) [#962](https://github.com/umbraco/Umbraco.Forms.Issues/issues/962)
-*   Fixed regression issue with "allowed forms" selection on form picker data type (V10+) [#957](https://github.com/umbraco/Umbraco.Forms.Issues/issues/957)
+*   Fixed regression issue with "allowed forms" selection on form picker Data Type (V10+) [#957](https://github.com/umbraco/Umbraco.Forms.Issues/issues/957)
 *   Fixed regression issue with saving of reCAPTCHA score (V10+) [#955](https://github.com/umbraco/Umbraco.Forms.Issues/issues/955)
 *   Fixed issue with sending of attachments in emails with non-default media storage (V10+) [#952](https://github.com/umbraco/Umbraco.Forms.Issues/issues/952)
 *   Fixed reference to incorrect configuration key for scheduled record deletion (V10+) [#951](https://github.com/umbraco/Umbraco.Forms.Issues/issues/951)
