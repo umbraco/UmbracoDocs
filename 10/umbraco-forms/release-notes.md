@@ -416,7 +416,7 @@ We've listed here all changes going back to March 2021 for Forms 8 and above. Fo
 *   Reduced level of log messages related to reCAPTCHA field type [#573](https://github.com/umbraco/Umbraco.Forms.Issues/issues/573)
 *   Resolved issue with use of reCAPTCHA field type on multiple forms on the same page [#571](https://github.com/umbraco/Umbraco.Forms.Issues/issues/571)
 *   Resolved issue with copy form function when form storage configuration key is missing [#567](https://github.com/umbraco/Umbraco.Forms.Issues/issues/567)
-*   Resolved bug with back-office data filter in non-English locales - [#560](https://github.com/umbraco/Umbraco.Forms.Issues/issues/560)
+*   Resolved bug with backoffice data filter in non-English locales - [#560](https://github.com/umbraco/Umbraco.Forms.Issues/issues/560)
 *   Removed use of obsolete methods in reCAPTCHA field type [#557](https://github.com/umbraco/Umbraco.Forms.Issues/issues/557)
 *   Added cache invalidation for member properties when used for "magic strings" [#534](https://github.com/umbraco/Umbraco.Forms.Issues/issues/534)
 
