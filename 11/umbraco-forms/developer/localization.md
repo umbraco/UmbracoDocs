@@ -10,7 +10,7 @@ When an editor chooses a language for their account, Umbraco CMS will render app
 
 ## Language Files
 
-Umbraco Forms ships with translations for various languages:
+Umbraco Forms ships with translations for the following languages:
 
  - Czech (`cs-cz.xml`)
  - Danish (`da-dk.xml`)
