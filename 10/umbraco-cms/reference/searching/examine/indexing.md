@@ -9,7 +9,7 @@ versionTo: 10.0.0
 
 You can modify the built-in indexes in the following ways:
 
-* Events - giving you control over exactly what data goes into them and how the fields are configured
+* [Events](https://shazwazza.github.io/Examine/indexing) - giving you control over exactly what data goes into them and how the fields are configured
 * Changing the field value types to change how values are stored in the index
 * Changing the `IValueSetValidator` to change what goes into the index
 * Take control of the entire index creation pipeline to change the implementation
