@@ -110,3 +110,9 @@ Another example would be to redirect from non-www to www (except for the Umbraco
   <action type="Redirect" url="https://www.{HTTP_HOST}/{R:0}" />
 </rule>
 ```
+
+{% hint style="warning" %}
+Adding the www redirect rule requires a `<add input="{HTTP_HOST}" pattern=".*azurewebsites.net*" negate="true" ignoreCase="true" />` condition to be added in order for Umbraco Cloud to function correctly.
+
+This step is required for the deployment service and the content transfer between environments to continue to function.
+{% endhint %}

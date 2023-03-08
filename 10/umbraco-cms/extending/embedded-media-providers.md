@@ -7,7 +7,7 @@ description: A guide to creating a custom embed providers in Umbraco
 
 # Embedded Media Providers
 
-The Rich Text Editor in Umbraco has an 'Embed' button, that when pressed, slides open a panel to enable editors to paste the Url of a third-party media resource to embed in content.
+The Rich Text Editor in Umbraco has an 'Embed' button, that when pressed, slides open a panel. This panel enables editors to paste the URL of a third-party media resource to embed in content.
 
 ![The Rich Text Editor Embed Button](../../../11/umbraco-cms/extending/images/Embed-Button.png)
 
@@ -15,7 +15,7 @@ For example, a YouTube Video...
 
 ![Embedding a music video from YouTube](../../../11/umbraco-cms/extending/images/Embed-YouTube.png)
 
-It is the job of an 'Embed Provider', to accept the pasted Url, and to write out the appropriate embed markup for the relevant third party provider associated with the Url.
+The task of an `EmbedProvider` is to accept the pasted URL and write out the appropriate markup for the third-party provider associated with the URL.
 
 ## Embed Provider Configuration
 
@@ -64,7 +64,7 @@ namespace Umbraco.Cms.Core.Media.EmbedProviders
 }
 ```
 
-If the provider to add supports the _OEmbed_ format for embedding a representation of a Url in a website, then make use of the `EmbedProviderBase` base methods to implement the request:
+If the provider supports _OEmbed_ format for website URL embedding, then use the `EmbedProviderBase` base methods to implement the request.
 
 ```csharp
     public override string GetMarkup(string url, int maxWidth = 0, int maxHeight = 0)
@@ -78,10 +78,9 @@ If the provider to add supports the _OEmbed_ format for embedding a representati
 
 ### Adding a new OEmbed Provider Example
 
-Let's allow our editors to embed artwork from the popular DeviantArt website - the world's largest online social community for artists and art enthusiasts. We can see they have information on using OEmbed: [https://www.deviantart.com/developers/oembed](https://www.deviantart.com/developers/oembed). The format of their OEmbed implementation returns a JSON format, from a url `https://backend.deviantart.com/oembed?url=[urltoembed]`. We'll need to use the `EmbedProviderBase` and the `base.GetJsonResponse` method. We can see 'links' to media shared on DeviantArt are in the format: `https://fav.me/[uniquemediaidentifier]` so we'll need a regex to match any urls pasted into the embed panel that start with _fav.me_, achieved by setting the `UrlSchemeRegex` property.
+Let's allow our editors to embed artwork from the popular DeviantArt website - the world's largest online social community for artists and art enthusiasts. We can see they have information on using OEmbed: [https://www.deviantart.com/developers/oembed](https://www.deviantart.com/developers/oembed). The format of their OEmbed implementation returns a JSON format, from a URL `https://backend.deviantart.com/oembed?url=[urltoembed]`. We'll need to use the `EmbedProviderBase` and the `base.GetJsonResponse` method. We can see 'links' to media shared on DeviantArt are in the format: `https://fav.me/[uniquemediaidentifier]`. We'll need a regex to match any urls pasted into the embed panel that start with _fav.me_, achieved by setting the `UrlSchemeRegex` property.
 
 The Provider would look like this:
-
 ```csharp
 using System.Collections.Generic;
 using Umbraco.Cms.Core.Media.EmbedProviders;
@@ -142,17 +141,17 @@ The new provider should be available for editors to use:
 
 ![Embedding a Media Item from DeviantArt website](../../../11/umbraco-cms/extending/images/deviantart-embedded-media.png)
 
-Notice there isn't really any implementation written here - the regex maps the incoming url to the provider, and the base methods handle the complication of requesting from the third party api, and turning the response into html.
+Notice there isn't really any implementation written here. The regex maps the incoming URL to the provider. The base methods handle the complication of requesting from the third party API and turning the response into HTML.
 
 ## Custom Embed Providers
 
-If your third-party media provider does not support OEmbed or there is some quirk with the content being embedded that requires custom html. then implement GetMarkup without using the base helper methods.
+If your third-party media provider does not support OEmbed or there is some quirk with the content being embedded that requires custom HTML. then implement GetMarkup without using the base helper methods.
 
 ### Custom Embed Provider Example
 
 Azure Media Services [(https://azure.microsoft.com/en-gb/services/media-services/)](https://azure.microsoft.com/en-gb/services/media-services/) provide 'broadcast-quality' video streaming services. You can embed the Azure Media Player into your site to play a video [using an IFrame](https://ampdemo.azureedge.net/azuremediaplayer.html).
 
-This example creates a custom Embed Provider to do the job of taking the Url of the Media asset and writing out the markup required to embed the IFrame video player inside your content.
+You can create a custom `EmbedProvider` to embed an IFrame video player in your content. This can be done by taking the Media asset URL and writing out the required markup.
 
 ```csharp
 using System.Collections.Generic;

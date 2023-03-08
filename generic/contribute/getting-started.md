@@ -1,3 +1,9 @@
+---
+description: >-
+  Whether you've found a broken link or want to add a new article to the Umbraco
+  documentation, this article will guide you on your way.
+---
+
 # Contribute to Documentation
 
 The Umbraco Documentation is presented here on [GitBook](https://docs.umbraco.com), however, it is also a [GitHub repository](https://github.com/umbraco/UmbracoDocs) and is as open source as the [Umbraco CMS](https://github.com/umbraco/Umbraco-CMS).
@@ -31,13 +37,13 @@ Learn how we structure and name files in the Umbraco documentation.
 
 Whenever a new version of an Umbraco product is released, the previous way of doing things may change. This means that there need to be multiple versions of our documentation.
 
-We do this by having a Git branch for each of the major versions of Umbraco CMS.
+We do this by keeping documentation for each version in separate folders.
 
-{% hint style="info" %}
-We are currently testing how best to handle the versions in terms of all products including Cloud, Heartcore, Forms, and Deploy.
+<figure><img src="../.gitbook/assets/repository-folder-structure.png" alt=""><figcaption><p>And overview of the file structure in the UmbracoDocs GitHub repository.</p></figcaption></figure>
 
-For now, all documentation will follow the Umbraco CMS major versions. We will add warnings and notes whenever the versions do not match.
-{% endhint %}
+In the screenshot above, two versions are available: 10 and 11. Within each of these folders is the documentation for all the versioned products: Umbraco Forms, Umbraco Deploy, Umbraco Workflow, and Umbraco CMS.
+
+Umbraco Cloud and Umbraco Heartcore are not following the same versioning, which is why they are separate from this structure.
 
 Learn more about how we handle the multiple version of our documentation in the [documenting multiple versions and products](../documentation-and-versions.md) article.
 

@@ -226,7 +226,7 @@ If you set up everything correctly and the error pages are not showing correctly
 - Rewrite rules in web.config that might interefere with custom error handling.
 
 {% hint style="warning" %}
-If your code or any packacges configures a custom `IContentLastChanceFinder`, the settings in `appSettings.json` will not be used.
+If your code or any packages configures a custom `IContentLastChanceFinder`, the settings in `appSettings.json` will not be used.
 {% endhint %}
 
 ## Handling errors in ASP.NET Core

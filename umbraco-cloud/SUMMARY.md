@@ -35,6 +35,7 @@
   * [Dedicated Resources](set-up/project-settings/dedicated-resources.md)
   * [Application Settings](set-up/project-settings/application-settings.md)
   * [Upgrade your Plan](set-up/project-settings/upgrade-umbraco-cloud-plan.md)
+  * [Public Access](set-up/project-settings/public-access.md)
   * [Managing Hostnames](set-up/project-settings/manage-hostnames/README.md)
     * [New Certificate Authority for custom hostnames](set-up/project-settings/manage-hostnames/ca-record-migration.md)
     * [Rewrite rules](set-up/project-settings/manage-hostnames/rewrites-on-cloud.md)
@@ -89,14 +90,16 @@
 
 ## Product Upgrades
 
-* [Product Upgrades](upgrades/README.md)
-* [Major Upgrades](upgrades/major-upgrades.md)
-* [Minor Upgrades](upgrades/minor-upgrades.md)
-* [Migrate a Umbraco 8 project to Umbraco 10](product-upgrades/migrate-a-umbraco-8-project-to-umbraco-10.md)
-* [Upgrade your projects manually](upgrades/manual-upgrades/README.md)
-  * [Manual upgrade of Umbraco CMS](upgrades/manual-upgrades/manual-cms-upgrade.md)
-  * [Manual upgrade of Umbraco Deploy](upgrades/manual-upgrades/manual-upgrade-deploy.md)
-* [Dependencies on Umbraco Cloud](upgrades/product-dependencies.md)
+* [Product Upgrades](product-upgrades/README.md)
+* [Major Upgrades](product-upgrades/major-upgrades.md)
+* [Minor Upgrades](product-upgrades/minor-upgrades.md)
+* [Version Specific Upgrades](product-upgrades/version-specific-upgrades/README.md)
+  * [Migrate from Umbraco 8 to the latest version](product-upgrades/version-specific-upgrades/migrate-from-8-to-latest.md)
+  * [Migrate from Umbraco 7 to Umbraco 8 on Umbraco Cloud](product-upgrades/version-specific-upgrades/migrate-from-umbraco-7-to-8.md)
+* [Upgrade your projects manually](product-upgrades/manual-upgrades/README.md)
+  * [Manual upgrade of Umbraco CMS](product-upgrades/manual-upgrades/manual-cms-upgrade.md)
+  * [Manual upgrade of Umbraco Deploy](product-upgrades/manual-upgrades/manual-upgrade-deploy.md)
+* [Dependencies on Umbraco Cloud](product-upgrades/product-dependencies.md)
 
 ## Troubleshooting
 
@@ -121,6 +124,7 @@
 
 ## Release Notes
 
+* [February 2023](release-notes/2023-02-releasenotes.md)
 * [January 2023](release-notes/2023-01-releasenotes.md)
 * [Overview 2022](release-notes/overview-2022/README.md)
   * [December 2022](release-notes/overview-2022/2022-12-20-releasenotes.md)

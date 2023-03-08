@@ -5,7 +5,7 @@ To make rewrite rules on Umbraco Cloud as seamless as possible, we've installed 
 The rewrite rules should be added to the `<system.webServer><rewrite>` module in your projects `Web.config` file.
 
 {% hint style="info" %}
-If you are running Umbraco 9 and above on IIS, you can still add a `web.config` file to configure IIS features such as URL rewrites. If you wish to use IIS rewrite rules, see the [URL Rewrites in Umbraco](../../../../umbraco-cms/reference/routing/iisrewriterules.md)[ ](https://docs.umbraco.com/umbraco-cms/reference/routing/iisrewriterules)article.
+If you are running Umbraco 9 and above on IIS, you can still add a `web.config` file to configure IIS features such as URL rewrites. If you wish to use IIS rewrite rules, see the [URL Rewrites in Umbraco](https://docs.umbraco.com/umbraco-cms/reference/routing/iisrewriterules)[ ](https://docs.umbraco.com/umbraco-cms/reference/routing/iisrewriterules)article.
 {% endhint %}
 
 ```xml
@@ -100,4 +100,25 @@ For example, the following rule will redirect all requests for `https://mysite.c
 Take note of the negates in the rewrite rule.
 
 It is important to negate the path to files on your site because with the trailing slash added, your media will not show correctly after [your site has been migrated to use Azure Blob Storage](../../media/).
+{% endhint %}
+
+## Redirect from non-www to www
+
+Another example would be to redirect from non-www to www:
+
+```xml
+<rule name="Redirect to www prefix" stopProcessing="true">
+  <match url=".*" />
+  <conditions>
+    <add input="{HTTP_HOST}" pattern="^www\." negate="true" />
+    <add input="{HTTP_HOST}" pattern=".*azurewebsites.net*" negate="true" ignoreCase="true" />
+    <add input="{HTTP_HOST}" pattern="^localhost(:[0-9]+)?$" negate="true" />
+    <add input="{HTTP_HOST}" pattern="\.umbraco\.io$" negate="true" />
+  </conditions>
+  <action type="Redirect" url="https://www.{HTTP_HOST}/{R:0}" />
+</rule>
+```
+
+{% hint style="warning" %}
+Adding the `.*azurewebsites.net*` pattern is required for the deployment service and the content transfer between environments to continue to function.
 {% endhint %}

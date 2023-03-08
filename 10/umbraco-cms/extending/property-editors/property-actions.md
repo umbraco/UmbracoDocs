@@ -9,7 +9,7 @@ description: Guide on how to implement Property Actions for Property Editors in 
 
 Property Actions are a built-in feature that provide a generic place for secondary functionality for property editors.
 
-Property Actions appear as a small button next to the label of the property, which expands to show the available actions. They are defined and implemented in the Property Editor, making it very open as to what a Property Action is.
+Property Actions appear as a small button next to the label of the property, which expands to show the available actions. They are defined and implemented in the Property Editor, making it open as to what a Property Action is.
 
 ![Example of Property Action on Nested Content Property Editor](../../../../11/umbraco-cms/extending/property-editors/images/example-of-property-actions.jpg)
 
