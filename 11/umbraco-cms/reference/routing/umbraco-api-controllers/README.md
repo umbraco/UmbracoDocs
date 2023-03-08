@@ -107,6 +107,10 @@ E.g. `~/Umbraco/backoffice/Api/Products/GetAllProducts` or
 
 `~/Umbraco/backoffice/AwesomeProducts/Products/GetAllProducts` for PluginController
 
+{% hint style="info" %}
+If you examine the response from a Backoffice controller in your browser, you will see additional characters which prefix the response as JSON vulnerability protection. This is normal, and these characters are removed by AngularJs' $http service or Umbraco's umbRequestHelper. For more info see https://github.com/umbraco/Umbraco-CMS/issues/13920
+{% endhint %}
+
 ### More Information
 
 * [Authenticating & Authorizing controllers](../authorized.md)
