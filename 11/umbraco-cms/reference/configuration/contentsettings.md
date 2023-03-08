@@ -6,7 +6,7 @@ description: "Information on the content settings section"
 
 Content settings contains a handful of settings related to the content in the CMS. It includes settings such as allowed upload files, image settings, and much more. All the values in the content settings has default values, so all configuration is optional.
 
-The following snippet will give an overview of the keys and values in the global section including the default values:
+The following snippet will give an overview of the keys and values in the content section including the default values:
 
 ```json
 "Umbraco": {
@@ -18,6 +18,7 @@ The following snippet will give an overview of the keys and values in the global
         "KeepLatestVersionPerDayForDays": 90
       },
       "AllowedUploadFiles": [],
+      "AllowedMediaHosts":  [],
       "AllowedUploadedFileExtensions": [],
       "DisableDeleteWhenReferenced": false,
       "DisableUnpublishWhenReferenced": false,
@@ -59,6 +60,11 @@ In the root level section, that is those without a seperate sub section like Ima
 ### Allowed upload files
 
 If greater control is required than available from the above, this setting can be used to store a list of file extensions. If provided, only files with these extensions can be uploaded via the backoffice.
+
+### Allowed media hosts
+
+By default only relative urls are allowed when getting URLs for resized images or thumbnails using the ImagesController.
+If you need absolute urls you will have to add the allowed hosted in this list. The value could be `["umbraco.com", "www.umbraco.com", "our.umbraco.com"]`.
 
 ### Disable delete when referenced
 
