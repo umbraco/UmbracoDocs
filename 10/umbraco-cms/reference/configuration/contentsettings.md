@@ -252,4 +252,4 @@ If you need to create a custom Media Type to handle images you need to add anoth
 
 ## Notifications
 
-Umbraco can send out email notifications, set the sender email address for the notifications emails here. To set the SMTP server used to send the emails, edit the standard Simple Mail Transfer Protocol (SMTP) section in the global section, see [global settings](../GlobalSettings/) for more information.
+Umbraco can send out email notifications. To set the SMTP server used to send the emails, edit the standard Simple Mail Transfer Protocol (SMTP) section in the global section. See the [Global settings](../GlobalSettings/) article for more information.
