@@ -1,5 +1,6 @@
 ---
-meta.Title: "Adding a Validation Pattern"
+description: >-
+  Customize the regular expression based validation patterns available for text fields.
 ---
 
 # Adding a Validation Pattern
@@ -8,7 +9,7 @@ When creating a text field in Umbraco Forms, a validation pattern in the form of
 
 ## Provided patterns
 
-Umbraco Forms ships with three patterns: number, email, and URL.  The class names are `Number`, `Email`, and `Url` respectively, and all are found in the 
+Umbraco Forms ships with three patterns: number, email, and URL.  The class names are `Number`, `Email`, and `Url` respectively, and all are found in the
 `Umbraco.Forms.Core.Providers.ValidationPatterns` namespace.
 
 ## Creating a custom validation pattern
