@@ -183,12 +183,34 @@ From here, the automatic migration will take over, and after a little bit you ca
 {% hint style="info" %}
 Please be aware that this is a **content migration**. If you go to the frontend after following these steps, it will throw errors.
 
-At this point you will have the content but nothing else. You will have to recreate all templates and other custom implementation to get the site up and running.
-
-[Read more about rendering content.](../../../design/rendering-content.md)
+At this point you will have the content but nothing else.
 {% endhint %}
 
-### Step 3: Post-migration checks
+## Step 3: Files migration
+
+Before moving on to this step, make sure that the Umbraco 8 project is no longer running.
+
+The following files/folders need to be copied into the Umbraco 8 project:
+
+* `~/Views` - do **not** overwrite the default Macro and Partial View Macro files, unless changes have been made to these.
+* `~/Media`
+* Any files/folders related to Stylesheets and JavaScripts.
+* Any custom files/folders the Umbraco 7 project uses, that aren't in the `~/Config` or `~/bin`.
+* `~/App_Data/UmbracoForms` - in the case Umbraco Forms was used on the Umbraco 7 site.
+
+**Merge the configuration files carefully** to ensure any custom settings are migrated while none of the default configurations for Umbraco 8 is overwritten.
+
+You will have to revisit all templates and other custom implementation to get the site up and running, as all markup will still be Umbraco 7 specific.
+
+{% hint style="info" %}
+Are you planning on continuing the migration to the latest version on Umbraco CMS?
+
+Then you can skip the step to revisit the template files and custom implementation. We highly recommend waiting with this step until you've reached the latest version.
+
+If you're stopping at Umbraco 8, you can learn more about [rendering content on the Legacy Docs site](https://our.umbraco.com/Documentation/Fundamentals/Design/Rendering-Content/).
+{% endhint %}
+
+### Step 4: Post-migration checks
 
 As you are updating your template files and custom implementation, you should also verify your configuration files and settings.
 
