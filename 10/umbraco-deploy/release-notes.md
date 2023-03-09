@@ -65,7 +65,7 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 *   Single language content transfers [#132](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/132)
 *   Scheduled content transfers.
 *   Corrected transfer of unpublished content status [#131](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/131)
-*   Improved UX and descriptions in back-office settings dashboard [#118](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/118)
+*   Improved UX and descriptions in backoffice settings dashboard [#118](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/118)
 *   Added ability to download Deploy artifacts (.uda files) as a zip archive from the management dashboard.
 *   Added sort options to the schema comparison view in the management dashboard [#115](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/115)
 *   Indented the JSON representation of data type configuration details in the .uda files for ease of review [#85](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/85)
