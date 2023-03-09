@@ -59,7 +59,7 @@ The autocomplete setting for the overall form can be changed from the default of
 
 Enabling this feature allows the moderator to manage the approval status of a form. This can be used in a number of scenarios. For example, if the form submission will be publicly shown, you can control which are published.
 
-![Form settings validation](images/FormSettingsModeration.png)
+![Form settings Moderation](images/FormSettingsModeration.png)
 
 ### Fields displayed
 
@@ -75,4 +75,4 @@ To help protect site visitor privacy, rules can be configured in this section fo
 
 A background service that carries out the actual removal of records needs to be [enabled in configuration](../../developer/configuration/#scheduledrecorddeletion). If that is not running, a notification will be displayed.
 
-![Form settings validation](images/FormSettingsDataRetention.png)
+![Form settings Date Retentions](images/FormSettingsDataRetention.png)
