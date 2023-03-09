@@ -82,7 +82,7 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 *   Fixed issue with deployment of root node value for Umbraco Forms's "save as Umbraco node" workflow [#133](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/133)
 *   Fixed incorrect availability of workspace restore in production environment (V9 and V10 only)
 *   Added close button to "Transfer now" dialog
-*   Resolved registration of deployable types to support configuration for "back-office edition".
+*   Resolved registration of deployable types to support configuration for "backoffice edition".
 
 ### [Deploy 4.6.1,](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.6.1) [9.4.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.4.1) and [10.0.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.2) (July 12th 2022)
 
