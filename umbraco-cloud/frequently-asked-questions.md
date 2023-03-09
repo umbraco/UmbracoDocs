@@ -94,7 +94,7 @@ Other reasons why you didn't receive the auto-upgrade:
 * If you are doing a deployment at the time we tried to run the auto-upgrader on your project
 * If your environments aren't running the same minor version - e.g. if you are in the middle of upgrading to a new minor version, and one environment is running 7.6.x while another environment on the same project is running 7.7.x.
 
-You can find all the steps of the auto-upgrade process outlined in the [Upgrades](upgrades/#the-process-of-auto-upgrading-an-umbraco-cloud-project) article.
+You can find all the steps of the auto-upgrade process outlined in the [Upgrades](product-upgrades/#the-process-of-auto-upgrading-an-umbraco-cloud-project) article.
 
 ### Does leaving pending commits (dev to live) derail the upgrade process?
 

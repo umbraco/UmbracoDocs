@@ -2,7 +2,7 @@
 
 When a project has one or more Child Projects it will appear on the Project page and the user can click to get an overview of all the Child Projects based on the current project.
 
-![Manage Baseline Children](images/mange-updates-here_v10.png)
+![Manage Baseline Children](images/mange-updates-here\_v10.png)
 
 From this page, you will have an overview of all the Child Projects this Baseline project has. This is also where you go when you want to push upgrades from your Baseline Project to the Child Projects.
 
@@ -16,13 +16,13 @@ From this page, you will have an overview of all the Child Projects this Baselin
 
 If the upgrade has been completed successfully, the Child Projects will be displayed under the **Successful updates/upgrades** section.
 
-![Upgrade Child Projects](images/manage-baseline-children_v10.gif)
+![Upgrade Child Projects](images/manage-baseline-children\_v10.gif)
 
 ## Deploying Minor upgrades to Child projects
 
 To do a minor upgrade of a Baseline project and its Child projects, the initial task is to run the minor upgrade on the Baseline project itself. This is done in the Umbraco Cloud portal by clicking the "Upgrade available!" button on the Development environment, once the environments on the project are in sync.
 
-Following [Minor upgrades](../../upgrades/minor-upgrades.md) guide and the process will leave the Baseline project upgraded to the latest version, while all the children are untouched for now.
+Following [Minor upgrades](../../product-upgrades/minor-upgrades.md) guide and the process will leave the Baseline project upgraded to the latest version, while all the children are untouched for now.
 
 Once the upgrade has been verified on the Baseline project, and you've made sure everything works as expected, you should go to the **Manage child projects** page on the Baseline.
 
