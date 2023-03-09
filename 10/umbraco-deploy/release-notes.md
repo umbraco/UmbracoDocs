@@ -68,7 +68,7 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 *   Improved UX and descriptions in backoffice settings dashboard [#118](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/118)
 *   Added ability to download Deploy artifacts (.uda files) as a zip archive from the management dashboard.
 *   Added sort options to the schema comparison view in the management dashboard [#115](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/115)
-*   Indented the JSON representation of data type configuration details in the .uda files for ease of review [#85](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/85)
+*   Indented the JSON representation of Data Type configuration details in the .uda files for ease of review [#85](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/85)
 *   Fixed issue with transfer of Forms prevalue sources from text files that include captions.
 *   Ensured document type validation messages are transferred between environments [#137](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/137)
 
