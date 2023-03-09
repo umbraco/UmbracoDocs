@@ -159,9 +159,9 @@ To migrate the users from your on-premises site to Umbraco Cloud and Umbraco ID,
 With that confirmed, it's time to prepare to migrate the project to Umbraco Cloud.
 {% endtab %}
 
-{% tab title="Site running on Legacy versions 7 and 8" %}
+{% tab title="Site running on Legacy version 8" %}
     
-  If you are on Umbraco 7 or Umbraco 8, follow the steps below to move and merge your Umbraco Files.
+  If you are on Umbraco 8, follow the steps below to move and merge your Umbraco Files.
     
 1.  Copy and replace all folders from your own project to the Umbraco Cloud project
     Do not copy and replace the following folders:
