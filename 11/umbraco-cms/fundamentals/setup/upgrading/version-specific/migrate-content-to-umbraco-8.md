@@ -200,7 +200,7 @@ The following files/folders need to be copied into the Umbraco 8 project:
 
 **Merge the configuration files carefully** to ensure any custom settings are migrated while none of the default configurations for Umbraco 8 is overwritten.
 
-You will have to revisit all templates and other custom implementation to get the site up and running, as all markup will still be Umbraco 7 specific.
+You'll have to revisit all templates and custom implementations to get the site up and running, as all markup is still Umbraco 7-specific.
 
 {% hint style="info" %}
 Are you planning on continuing the migration to the latest version on Umbraco CMS?
