@@ -64,7 +64,7 @@ You need to manually upgrade the view files and custom code implementation. For 
     * Any files/folders related to Stylesheets and JavaScript.
 2. Migrate custom configuration from the Umbraco 8 configuration files (`.config`) into the `appsettings.json` file on the new Cloud project.
     * As of Umbraco version 9, the configuration no longer lives in the `Web.Config` file and has been replaced by the `appsettings.json` file.
-3. [Migrate Umbraco Forms data to the database](../../deployment/umbraco-forms-on-cloud#version-9+), if relevant.
+3. [Migrate Umbraco Forms data to the database](https://docs.umbraco.com/umbraco-forms/developer/forms-in-the-database), if relevant.
     * As of Umbraco Forms version 9, it is only possible to store Forms data in the database. If Umbraco Forms was used on the Umbraco 8 project, the files need to be migrated to the database.
 4. Run the new Cloud project locally.
     * It **will** give you a Yellow Screen of Death (YSOD)/error screen on the frontend as none of the Template files have been updated yet.
