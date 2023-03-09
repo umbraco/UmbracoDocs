@@ -16,13 +16,13 @@ Ensure to first read and follow the setup guides for either new or existing proj
 
 Here we will cover how to install and set up Umbraco Deploy on a new website.
 
-### Requirement
+#### Requirement
 
 * Visual Studio 2017 v15.9.6 or later
 * Umbraco Deploy license
 * SQL Server Database
 
-#### Set up the Git repository and Umbraco project
+**Set up the Git repository and Umbraco project**
 
 The first step to get Umbraco Deploy up and running is to set up a GitHub repository. This will be where source code is stored, and, following the GitHub actions example, act as our environment where we will set up a CI/CD pipeline.
 
@@ -45,14 +45,14 @@ Here we will cover the steps in order for you to install Umbraco deploy on your 
 
 We will cover how to install and set up Umbraco deploy on your website and how to generate the UDA files based on your production website's database.
 
-### Requirement
+#### Requirement
 
 * Visual Studio 2017 v15.9.6 or later
 * Umbraco Deploy license
 * Copy of your production site's database
 * Copy of views, CSS, and scripts folder from production
 
-#### Step 1: Install Umbraco Deploy on Existing site <a href="#install-umbraco-deploy-on-existing-site" id="install-umbraco-deploy-on-existing-site"></a>
+**Step 1: Install Umbraco Deploy on Existing site**
 
 To install Umbraco Deploy on an existing site there are additional steps that need to be taken so Umbraco Deploy can run with your website. On an existing Umbraco website, there is already a set of Document Types, Templates, and Data Types with IDs in the database. In order for Umbraco Deploy to work with your website, you will need to make sure that these IDs are in sync between the different environments that you want to add to your setup.
 
@@ -61,7 +61,7 @@ To install Umbraco Deploy on an existing site there are additional steps that ne
 
 When the production database, folder, and files have been copied down, it's time to set up a git repository and a new Umbraco project.
 
-#### Step 2: Set up Git repository and Umbraco project <a href="#set-up-git-repository-and-umbraco-project" id="set-up-git-repository-and-umbraco-project"></a>
+**Step 2: Set up Git repository and Umbraco project**
 
 The next step to get Umbraco Deploy up and running is to set up a repository and install Umbraco into it.
 
@@ -200,7 +200,7 @@ Once the configuration has been set up with the correct information we can now g
 
 This can be done by going to the `/umbraco/Deploy/Revision` folder of the project and create a test `.uda` file, and then check in either your Git GUI or in the command line and verify whether the test file is being tracked.
 
-![Test UDA file](../getting-started/images/test-UDA.png)
+![Test UDA file](../../../10/umbraco-deploy/getting-started/images/test-UDA.png)
 
 We can see that the file has been created and it is being tracked by Git and we can go ahead and delete the test file.
 
