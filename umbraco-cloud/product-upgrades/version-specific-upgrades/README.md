@@ -10,6 +10,6 @@ As there might also be version-specific notes for the specific products involved
 
 ## Specific notes for major upgrades on Cloud
 
-{% content-ref url="migrate-a-umbraco-8-project-to-umbraco-10.md" %} migrate-a-umbraco-8-project-to-umbraco-10.md {% endcontent-ref %}
+{% content-ref url="migrate-from-8-to-latest.md" %} migrate-from-8-to-latest.md {% endcontent-ref %}
 
 {% content-ref url="migrate-from-umbraco-7-to-8.md" %} migrate-from-umbraco-7-to-8.md {% endcontent-ref %}

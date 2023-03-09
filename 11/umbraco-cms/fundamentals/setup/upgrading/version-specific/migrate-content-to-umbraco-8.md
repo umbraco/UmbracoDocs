@@ -13,7 +13,7 @@ In this guide you can read more about the tool, its limitations, and how to use 
 {% hint style="info"%}
 ## Migrating Umbraco Cloud sites
 
-Follow the [steps outlined in the Umbraco Cloud documentation](https://docs.umbraco.com/umbraco-cloud/upgrades/migrate-from-umbraco-7-to-8.md) to upgrade your Umbraco 7 site on Cloud.
+Follow the [steps outlined in the Umbraco Cloud documentation](https://docs.umbraco.com/umbraco-cloud/upgrades/migrate-from-umbraco-7-to-8) to upgrade your Umbraco 7 site on Cloud.
 {% endhint %}
 
 ## What are the limitations?
