@@ -67,7 +67,7 @@ By default, a constant set of fields are displayed when form entries are shown i
 
 To customize this, turn off the "Display default fields" option and select the ones you wish to display.
 
-![Form settings validation](images/FieldsDisplayed.png)
+<figure><img src="../../.gitbook/assets/FormSettingsFieldsDisplayed.png" alt=""><figcaption><p>Forms Settings Fields Displayed</p></figcaption></figure>
 
 ### Date retentions
 
