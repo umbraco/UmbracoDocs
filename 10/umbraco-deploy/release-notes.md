@@ -90,7 +90,7 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 *   Added details of failed deployment to deploy dashboard [#120](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/120)
 *   Added copy button for deploy log in the backoffice [#121](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/121)
 *   Fixed typo in UI [#113](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/113)
-*   Ensured signature refresh on data type move into or out of folder [#125](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/125)
+*   Ensured signature refresh on Data Type move into or out of folder [#125](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/125)
 *   Fixed selection of workspace for compare dialog
 *   Optimized existence checks in connectors
 *   Restore missing partial restore option in content and media tree roots (V9+)
