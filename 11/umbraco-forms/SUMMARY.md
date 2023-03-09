@@ -42,6 +42,7 @@
   * [Adding An Export Type To Umbraco Forms](developer/extending/adding-a-exporttype.md)
   * [Adding a Magic String Format Function](developer/extending/adding-a-magic-string-format-function.md)
   * [Adding A Server-Side Notification Handler To Umbraco Forms](developer/extending/adding-an-event-handler.md)
+  * [Adding a Validation Pattern](developer/extending/adding-a-validation-pattern.md)
   * [Customize Default Workflows For a Form](developer/extending/customize-default-workflows.md)
 * [Configuration](developer/configuration/README.md)
   * [Forms Provider Type Details](developer/configuration/type-details.md)

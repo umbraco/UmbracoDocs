@@ -60,7 +60,7 @@ The extraction will end in one of two possible outcomes:
 
 It is also possible to see which version of Umbraco Deploy you are running, when the last operation was started and the status of the deployment operation.
 
-![Deploy Dashboard](images/Deploy-dahsboard.png)
+![Deploy Dashboard](../../../11/umbraco-deploy/deployment-workflow/images/Deploy-dahsboard.png)
 
 {% embed url="https://www.youtube.com/embed/l5qdTsIddKM?rel=0" %}
 Umbraco Deploy - Content transfer and deploy

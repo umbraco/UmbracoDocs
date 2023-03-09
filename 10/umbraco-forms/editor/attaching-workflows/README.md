@@ -14,7 +14,11 @@ The behaviour to display a message to the user that submitted the form, or to re
 
 If a value is selected for **Go to page**, it will be used to redirect to that page once the form has been submitted.
 
-If no value is selected, the message in **Message on submit** is displayed to the user on the same page, instead of the form fields. From version 8.8 onwards, this is implemented via a redirect to the current page, ensuring that the form can't be accidentally resubmitted.
+If no value is selected, the message in **Message on submit** is displayed to the user on the same page, instead of the form fields. This is implemented via a redirect to the current page, ensuring that the form can't be accidentally resubmitted.
+
+By default, the message is created and rendered in plain text. If you need to add formatting to the message, toggle the **Format message in rich text** button.
+
+![Submit message/Go to page](../../../../11/umbraco-forms/editor/attaching-workflows/images/MessageOnSubmitRichText.png)
 
 ## Video Tutorial
 

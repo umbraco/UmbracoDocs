@@ -16,6 +16,10 @@ If a value is selected for **Go to page**, it will be used to redirect to that p
 
 If no value is selected, the message in **Message on submit** is displayed to the user on the same page, instead of the form fields. This is implemented via a redirect to the current page, ensuring that the form can't be accidentally resubmitted.
 
+By default, the message is created and rendered in plain text. If you need to add formatting to the message, toggle the **Format message in rich text** button.
+
+![Submit message/Go to page](images/MessageOnSubmitRichText.png)
+
 ## Video Tutorial
 
 {% embed url="https://www.youtube.com/watch?ab_channel=UmbracoLearningBase&v=qJrf1drw1Bg" %}

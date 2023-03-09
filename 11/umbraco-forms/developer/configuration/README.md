@@ -47,6 +47,9 @@ For illustration purposes, the following structure represents the full set of op
         "InvalidErrorMessage": "Please provide a valid value for {0}",
         "ShowValidationSummary": false,
         "HideFieldValidationLabels": false,
+        "NextPageButtonLabel": "Next",
+        "PreviousPageButtonLabel": "Previous",
+        "SubmitButtonLabel": "Submit",
         "MessageOnSubmit": "Thank you",
         "StoreRecordsLocally": true,
         "AutocompleteAttribute": "",
@@ -247,6 +250,10 @@ This setting needs to be a `true` or `false` value and will allow you to toggle 
 #### HideFieldValidationLabels
 
 This setting needs to be a `true` or `false` value and will allow you to toggle if the form will show inline validation error messages next to the form field that is invalid. Defaults to `false`.
+
+#### NextPageButtonLabel, PreviousPageButtonLabel, SubmitButtonLabel
+
+These settings configure the default next, previous, and submit button labels. By default, these are `Next`, `Previous`, and `Submit` respectively. These labels can be amended on a form-by-form basis via the form's **Settings** section.
 
 #### MessageOnSubmit
 

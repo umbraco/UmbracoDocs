@@ -24,6 +24,8 @@ It is possible to add new Field types, Data Source Types, Prevalue Source Types,
 
 A field type handles rendering of the UI for a field in a form. It renders a standard ASP.NET webcontrol and is able to return a list of values when the form is saved.
 
+The concept of provider settings, common to the field and other types, is also discussed in this section.
+
 ### Data Source Types
 
 A data source type enables Umbraco Forms to connect to a custom source of data. A data source consists of any kind of storage if it is possible to return a list of fields Umbraco Forms can map values to. For example: a Database data source can return a list of columns Forms can send data to. This enables Umbraco Forms to map a form to a data source. A data source type is responsible for connecting Forms to external storage.
@@ -43,6 +45,10 @@ Export types are responsible for turning form records into any other data format
 ### [Magic String Format Functions](adding-a-magic-string-format-function.md)
 
 Custom magic string format functions to add to the [ones shipped with Umbraco Forms](../magic-strings.md#formatting-magic-strings) can be created in code.
+
+### [Validation Patterns](adding-a-validation-pattern.md)
+
+When creating a text field in Umbraco Forms, a validation pattern in the form of a regular expression can be applied. Default patterns can be removed or re-ordered, and custom ones created and added.
 
 ## Handling Forms Events
 

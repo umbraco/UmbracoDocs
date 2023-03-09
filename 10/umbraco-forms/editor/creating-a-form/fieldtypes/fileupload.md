@@ -1,10 +1,10 @@
-# File upload
+# File Upload
 
 The File Upload field allows the users to upload a file along with the Form on your website.
 
 In this article, you will find details about the configuration options you have for the File Upload field.
 
-![fileupload](images/fileupload-types.png)
+![fileupload](../../../../../11/umbraco-forms/editor/creating-a-form/fieldtypes/images/fileupload-types.png)
 
 ## Predefined allowed File Types
 
@@ -13,7 +13,7 @@ You can choose to specify which files you want to allow the user to upload, when
 To allow only specific files:
 
 1. Select the File Type checkbox the user should be able to upload.
-2. Click **Submit**.  
+2. Click **Submit**.
 
 {% hint style="info" %}
 We recommend selecting **Allow only specified files**, to limit malicious code to be uploaded, whenever the user is submitting the Form.
