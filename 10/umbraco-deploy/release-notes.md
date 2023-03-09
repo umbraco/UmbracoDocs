@@ -212,7 +212,7 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 
 ### [Deploy 9.0.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.0.1) (October 12th 2021)
 
-*   Removed import document type option [#73](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/73)
+*   Removed import Document Type option [#73](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/73)
 *   Resolved globalization discrepancy leading to schema mismatch reports [#72](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/72)
 *   Set appropriate environment defaults for package migration schema and content installation [#74](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/74) [#75](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/75)
 
