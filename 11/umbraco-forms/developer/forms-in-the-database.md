@@ -45,9 +45,9 @@ You can force Forms to rerun the migration of the file-format Forms if you have 
 First of all, you should ensure that you have enabled the setting that persists Forms in the database, as the migration requires this (`StoreUmbracoFormsInDb`) key. We highly recommend testing this on a local setup before applying it to your live site.
 
 1. Copy over the Forms, workflows, prevaluesources, and datasource files to the site into `~\App_Data\UmbracoForms\Data`.
-1. Go to the database and find the `[umbracoKeyValue]` table.
-1. Find the Form's row and check that the value is `1d084819-84ba-4ac7-b152-2c3d167d22bc` (if not you are not currently working with Forms in the database, changing the setting should be enough).
-1. Change that value to `{forms-init-complete}`.
-1. Restart the site.
+2. Go to the database and find the `[umbracoKeyValue]` table.
+3. Find the Form's row and check that the value is `1d084819-84ba-4ac7-b152-2c3d167d22bc` (if not you are not currently working with Forms in the database, changing the setting should be enough).
+4. Change that value to `{forms-init-complete}`.
+5. Restart the site.
 
 The site will now try to migrate the Forms files into the database. In the umbracoTraceLog, you can follow the progress. It will throw errors if anything goes wrong. Additionally, it will log out "The Umbraco Forms DB table {TableName} already exists" for the 4 Forms tables before starting the migration.
