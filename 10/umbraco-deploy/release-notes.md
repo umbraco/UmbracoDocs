@@ -78,7 +78,7 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 
 ### [Deploy 4.6.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.6.2), [9.4.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.4.2) and [10.0.3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.3) (August 16th 2022)
 
-*   Aligned Git URL displayed in back-office with that in Cloud Portal (V4 only) [#136](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/136)
+*   Aligned Git URL displayed in backoffice with that in Cloud Portal (V4 only) [#136](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/136)
 *   Fixed issue with deployment of root node value for Umbraco Forms's "save as Umbraco node" workflow [#133](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/133)
 *   Fixed incorrect availability of workspace restore in production environment (V9 and V10 only)
 *   Added close button to "Transfer now" dialog
