@@ -6,7 +6,7 @@ To access the Form Settings:
 
 1. Navigate to the **Forms** section.
 2. Open a Form you wish to customize.
-3. Click **Settings** in the top-right corner of the screen.
+3.  Click **Settings** in the top-right corner of the screen.
 
     ![Form settings dialog](images/FormSettings.png)
 
@@ -40,26 +40,26 @@ Define a message that is displayed when a field is mandatory, when a value is no
 
 The following Validations are available:
 
-|Validation Type | Description|
-|-|-|
-| **Mandatory error message** | The error message is displayed for a field that is marked as mandatory but a value has not been provided upon submission. This setting can be overwritten on a field level - `{0}` will be replaced with the field caption. |
-| **Invalid error message** | The error message is displayed for a field if the value provided is not valid (a regular expression has been setup but the input does not match). This setting can be overwritten on a field level - `{0}` will be replaced with the field caption. |
-| **Show validation summary** | Enable this option if you wish to display a summary of all the error messages on top of the Form. |
-| **Hide field validation labels** | Enable this option if you wish to hide individual field error messages from being displayed. |
-|**Mark fields** | You can choose to not mark any fields or only mark mandatory or optional fields. |
-| **Indicator** | Choose which indicator to use when a field has been marked as mandatory. The default indicator is `*` |
+| Validation Type                  | Description                                                                                                                                                                                                                                         |
+| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Mandatory error message**      | The error message is displayed for a field that is marked as mandatory but a value has not been provided upon submission. This setting can be overwritten on a field level - `{0}` will be replaced with the field caption.                         |
+| **Invalid error message**        | The error message is displayed for a field if the value provided is not valid (a regular expression has been setup but the input does not match). This setting can be overwritten on a field level - `{0}` will be replaced with the field caption. |
+| **Show validation summary**      | Enable this option if you wish to display a summary of all the error messages on top of the Form.                                                                                                                                                   |
+| **Hide field validation labels** | Enable this option if you wish to hide individual field error messages from being displayed.                                                                                                                                                        |
+| **Mark fields**                  | You can choose to not mark any fields or only mark mandatory or optional fields.                                                                                                                                                                    |
+| **Indicator**                    | Choose which indicator to use when a field has been marked as mandatory. The default indicator is `*`                                                                                                                                               |
 
 ### Autocomplete
 
 The autocomplete setting for the overall form can be changed from the default of "None" to "On" or "Off". Setting this explicitly will control how the browser offers automatic prompts to the user when completing the form.
 
-![Form settings validation](../../../../11/umbraco-forms/editor/creating-a-form/images/FormSettingsAutocomplete.png)
+![Form settings Autocomplete](../../../../11/umbraco-forms/editor/creating-a-form/images/FormSettingsAutocomplete.png)
 
 ### Moderation
 
 Enabling this feature allows the moderator to manage the approval status of a form. This can be used in a number of scenarios. For example, if the form submission will be publicly shown, you can control which are published.
 
-![Form settings validation](images/FormSettingsModeration.png)
+![Form settings Moderation](images/FormSettingsModeration.png)
 
 ### Fields displayed
 
@@ -73,6 +73,6 @@ To customize this, turn off the "Display default fields" option and select the o
 
 To help protect site visitor privacy, rules can be configured in this section for the automatic deletion of submissions. You can set how long to retain records for each state (submitted or approved).
 
-A background service that carries out the actual removal of records needs to be [enabled in configuration](../../developer/configuration/README.md#scheduledrecorddeletion). If that is not running, a notification will be displayed.
+A background service that carries out the actual removal of records needs to be [enabled in configuration](../../developer/configuration/#scheduledrecorddeletion). If that is not running, a notification will be displayed.
 
-![Form settings validation](../../../../11/umbraco-forms/editor/creating-a-form/images/FormSettingsDataRetentionNotification.png)
+<figure><img src="../../.gitbook/assets/FormSettingsDataRetention.png" alt=""><figcaption><p>Form Settings Date Retention</p></figcaption></figure>
