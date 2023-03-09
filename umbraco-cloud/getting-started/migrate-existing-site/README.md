@@ -126,6 +126,9 @@ Run the site locally and verify your project and the cloned Umbraco Cloud projec
 
 Merging your existing site into the Umbraco Cloud project is a matter of moving and merging files between the two projects. When following the steps outlined below you mustn't overwrite any settings and configurations related to Umbraco Deploy.
 
+{% tabs %}
+{% tab title="Site running on version 9 or above" %}
+
 1. Copy and replace the following folders from your project with the Umbraco Cloud project
    * `/wwwroot`
    * `/Views`
@@ -154,10 +157,9 @@ To migrate the users from your on-premises site to Umbraco Cloud and Umbraco ID,
 {% endhint %}
 
 With that confirmed, it's time to prepare to migrate the project to Umbraco Cloud.
+{% endtab %}
 
-<details>
-
-<summary>Move and Merge Files - Umbraco Legacy versions 7 and 8</summary>
+{% tab title="Site running on Legacy versions 7 and 8" %}
     
   If you are on Umbraco 7 or Umbraco 8, follow the steps below to move and merge your Umbraco Files.
     
@@ -188,8 +190,8 @@ That's it! Now that you've merged your existing site with the local clone of the
 * You can login using your Umbraco ID user
 * All the content is there
 * All Document Types, Templates, Stylesheets etc, is in the backoffice
-
-</details>
+{% endtab %}
+{% endtabs %}
 
 ## 7. Generate meta data
 
