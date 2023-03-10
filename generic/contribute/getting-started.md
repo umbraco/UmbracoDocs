@@ -33,7 +33,7 @@ The Umbraco Documentation is written using the MarkDown markup language. We have
 
 Learn how we structure and name files in the Umbraco documentation.
 
-## IDE / Text Editor
+## Writing documentation locally
 
 We recommend using Visual Studio Code for making changes to the documentation.
 
