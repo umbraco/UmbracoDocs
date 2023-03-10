@@ -149,6 +149,8 @@ Remove the following files and folders _manually_ from your local project:
 
 Once the Umbraco project runs locally without any errors, the next step is to deploy and test on the Cloud Development environment.
 
+<details>
+    
 <summary>Upgrading from Umbraco 9 - Remove files from the development environment.</summary>
 
 * `/wwwroot/umbraco`

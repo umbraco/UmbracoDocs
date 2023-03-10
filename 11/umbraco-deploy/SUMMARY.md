@@ -5,7 +5,7 @@
 * [Configuration](deploy-settings.md)
 * [Extending](extending.md)
 * [Troubleshooting](troubleshooting.md)
-* [Licensing Model](https://docs.umbraco.com/welcome/the-licensing-model#umbraco-deploy)
+* [Licensing](the-licensing-model.md)
 
 ## Getting Started
 

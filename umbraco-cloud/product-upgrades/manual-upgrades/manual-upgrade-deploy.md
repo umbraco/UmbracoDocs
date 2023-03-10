@@ -28,7 +28,7 @@ After you have added a package reference to your project by executing the comman
 
 You can also update the Umbraco Deploy through the NuGet Package Manager in Visual studio:
 
-![NuGet Package Manager](../../../10/umbraco-forms/installation/images/Manage\_packages.png)
+![NuGet Package Manager](../../../11/umbraco-forms/installation/images/Manage\_packages.png)
 
 When the command completes, open the `.csproj` file to make sure the package reference was updated:
 
@@ -45,24 +45,20 @@ Make sure that everything works on the local clone and that you can **run the pr
 
 <summary>Manually Upgrade Umbraco Deploy Legacy versions 7 and 8</summary>
 
-  If you are on Umbraco 7 or Umbraco 8, follow the steps below to manually upgrade Umbraco Deploy to a later version of your project.
-  
-1.   Download the latest version of Umbraco Deploy here: [http://nightly.umbraco.org/?container=umbraco-deploy-release](https://nightly.umbraco.org/?container=umbraco-deploy-release)
-    Check [Product Dependencies](https://docs.umbraco.com/umbraco-cloud/product-upgrades/product-dependencies) to be sure you download the correct version of Deploy
-    
-2.   Unzip the file on your computer
-    
-3.   Copy/Paste the files from the unzipped folder to your local project folder
-    You should not overwrite the following files:
+If you are on Umbraco 7 or Umbraco 8, follow the steps below to manually upgrade Umbraco Deploy to a later version of your project.
+
+1. Download the latest version of Umbraco Deploy here: [http://nightly.umbraco.org/?container=umbraco-deploy-release](https://nightly.umbraco.org/?container=umbraco-deploy-release) Check [Product Dependencies](https://docs.umbraco.com/umbraco-cloud/product-upgrades/product-dependencies) to be sure you download the correct version of Deploy
+2. Unzip the file on your computer
+3. Copy/Paste the files from the unzipped folder to your local project folder You should not overwrite the following files:
+
 ```
     Config/UmbracoDeploy.config
     Config/UmbracoDeploy.Settings.config
 ```
-4.   Run the project locally - make sure it runs without any errors
 
-5.   Commit and deploy the changes to the Cloud environment
-
-6.   Again, make sure everything runs without errors before deploying to the next Cloud environment
+4. Run the project locally - make sure it runs without any errors
+5. Commit and deploy the changes to the Cloud environment
+6. Again, make sure everything runs without errors before deploying to the next Cloud environment
 
 </details>
 
