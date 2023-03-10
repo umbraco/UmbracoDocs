@@ -8,6 +8,11 @@ We've listed here all changes going back to March 2021 for Forms 8 and above. Fo
 
 ## Release History
 
+### [9.5.8](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.5.8) (March 10th 2023)
+
+*   Fixed a regression issue introduced in 9.5.7 related to form rendering.</li>
+*   Fixed encoding issue with workflow settings [#988](https://github.com/umbraco/Umbraco.Forms.Issues/issues/988)
+
 ### [10.3.0-rc001](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.0) and [11.1.0-rc001](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.1.0) (March 9th 2023)
 
 *   Added form settings to allow for the configuration of which fields are shown in the entries view per form [#336](https://github.com/umbraco/Umbraco.Forms.Issues/issues/336)
