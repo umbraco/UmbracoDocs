@@ -35,7 +35,7 @@ Learn how we structure and name files in the Umbraco documentation.
 
 ## Writing documentation locally
 
-We recommend using Visual Studio Code for making changes to the documentation.
+We recommend using a text editor like Visual Studio Code, rather than an IDE like Visual Studio, for making changes to the documentation on your local machine.
 
 ## Multi-version documentation
 
