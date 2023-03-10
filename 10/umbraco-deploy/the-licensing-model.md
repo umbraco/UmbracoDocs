@@ -1,6 +1,6 @@
 # The Licensing Model
 
-Umbraco Deploy is a commercial product. It doesn't come with a 14-day free trial which means you will need a **valid license** to use the product.
+Umbraco Deploy is a commercial product. You will need a **valid license** to use the product.
 
 ## How does it work?
 
@@ -57,7 +57,7 @@ Once you've configured your license with the correct domains, you are ready to i
 1. Download your license from your Umbraco.com account - this will give you a `.lic` file
 2. Place the file in the `/umbraco/Licenses` directory in your Umbraco installation
 
-The `.lic` file must be placed in the `/umbraco/Licenses` directory in order to be registered by Umbraco Deploy. If the file isn't placed correctly, the application will automatically switch to trial mode.
+The `.lic` file must be placed in the `/umbraco/Licenses` directory in order to be registered by Umbraco Deploy.
 
 ## Alternative license location
 
