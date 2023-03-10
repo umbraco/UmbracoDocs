@@ -6,7 +6,7 @@
 * **US Region Hosting** - From the 1st of September, you can select a brand new US region in addition to the existing West Europe option.
 * **Projects Dashboard** - The first version of the Projects Dashboard has been released. Organize your Umbraco Cloud projects as per your preference and get a complete overview of product versions in all your environments.
 
-## [MFA authentication](../../set-up/2-factor-authentication-on-cloud.md)
+## [MFA authentication](../../set-up/Multi-factor-authentication-on-cloud.md)
 
 On Umbraco Cloud, you can add MFA in a few steps for your Umbraco Cloud account.
 

@@ -51,7 +51,7 @@
 * [Media](set-up/media/README.md)
   * [Connect to Azure Storage Explorer to upload files manually](set-up/media/connect-to-azure-storage-explorer.md)
 * [Users](set-up/users-on-cloud.md)
-* [Multi-Factor Authentication](set-up/2-factor-authentication-on-cloud.md)
+* [Multi-Factor Authentication](set-up/Multi-factor-authentication-on-cloud.md)
 * [Application Insights](set-up/application-insights.md)
 * [Config Transforms](set-up/config-transforms.md)
 * [SMTP Settings](set-up/smtp-settings.md)
