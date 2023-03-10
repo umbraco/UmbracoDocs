@@ -496,7 +496,7 @@
   * [Media](umbraco-cloud/set-up/media/README.md)
     * [Connect to Azure Storage Explorer to upload files manually](umbraco-cloud/set-up/media/connect-to-azure-storage-explorer.md)
   * [Users](umbraco-cloud/set-up/users-on-cloud.md)
-  * [2-factor authentication](umbraco-cloud/set-up/2-factor-authentication-on-cloud.md)
+  * [Multi-Factor Authentication](umbraco-cloud/set-up/2-factor-authentication-on-cloud.md)
   * [Application Insights](umbraco-cloud/set-up/application-insights.md)
   * [Config Transforms](umbraco-cloud/set-up/config-transforms.md)
   * [SMTP Settings](umbraco-cloud/set-up/smtp-settings.md)
