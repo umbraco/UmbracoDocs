@@ -6,4 +6,3 @@ root: ./
 redirects:
     umbraco-cms/fundamentals/setup/upgrading/general: umbraco-cms/fundamentals/setup/upgrading/README.md
     v/workflow: umbraco-workflow/README.md
-    setup/2-factor-authentication-on-cloud: setup/multi-factor-authentication-on-cloud.md
