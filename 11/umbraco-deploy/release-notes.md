@@ -44,13 +44,7 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 *   Resolved issue with media restore when database items exist and files don't (backport fix to V4) [#123](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/123)
 *   Fixed issue with use of HTTP timeout setting (V9+)
 
-### [10.1.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.0) (September 22nd 2022)
-
-*   All changes listed under 10.1.0-rc001
-*   Fixed issue with scheduled publish date being time shifted on deployments when source and target servers are running in different timezones.
-*   Fixed issue with transfer for members of a given type (V10 only) [#139](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/139)
-
-### [10.1.0-rc001](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.0) (September 7th 2022)
+### [10.1.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.0) (September 7th 2022)
 
 *   Introduced and used caching in deploy operations to improve performance.
 *   Increased default and added setting for disk operation timeouts [#135](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/135)
@@ -63,6 +57,8 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 *   Indented the JSON representation of data type configuration details in the .uda files for ease of review [#85](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/85)
 *   Fixed issue with transfer of Forms prevalue sources from text files that include captions.
 *   Ensured document type validation messages are transferred between environments [#137](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/137)
+*   Fixed issue with scheduled publish date being time shifted on deployments when source and target servers are running in different timezones.
+*   Fixed issue with transfer for members of a given type (V10 only) [#139](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/139)
 
 
 ### [10.0.3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.3) (August 16th 2022)
