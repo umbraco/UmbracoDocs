@@ -23,9 +23,9 @@
 * [Best Practice for Working in Teams](getting-started/team-workflow-on-cloud.md)
 * [Migrate between regions](getting-started/migrate-between-regions.md)
 
-## Setup
+## Set up
 
-* [Set Up](set-up/README.md)
+* [Set Up](set-up/set-up.md)
 * [Working with a Local Clone](set-up/working-locally.md)
 * [Working with Mac](set-up/working-with-mac.md)
 * [Manage Environments](set-up/manage-environments.md)
@@ -51,7 +51,7 @@
 * [Media](set-up/media/README.md)
   * [Connect to Azure Storage Explorer to upload files manually](set-up/media/connect-to-azure-storage-explorer.md)
 * [Users](set-up/users-on-cloud.md)
-* [2-factor authentication](set-up/2-factor-authentication-on-cloud.md)
+* [Multi-Factor Authentication](set-up/multi-factor-authentication-on-cloud.md)
 * [Application Insights](set-up/application-insights.md)
 * [Config Transforms](set-up/config-transforms.md)
 * [SMTP Settings](set-up/smtp-settings.md)
