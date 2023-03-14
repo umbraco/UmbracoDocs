@@ -400,6 +400,8 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 
 </details>
 
+<details>
+
 <summary>Umbraco Deploy Version 2</summary>
 
 ### [Deploy 2.1.6](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.4.2) (January 11th 2022)
