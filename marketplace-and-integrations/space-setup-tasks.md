@@ -1,11 +1,12 @@
 # ✅ Space setup tasks
 
-* [ ] Decide on URL docs.umbraco.com/??
+* [ ] Decide on URL: docs.umbraco.com/??
 * [ ] Content
   * [ ] Submit packages to Marketplace
-  * [ ] Build packages/add-ons/integrations (move out from CMS docs?)
+  * [ ] General marketplace docs
+  * [ ] Build packages/add-ons/integrations (move out from the CMS docs?)
   * [ ] Blog posts to guides (TBD) (templates)
-* [ ] Decide on site structure (set something)
+* [ ] Decide on site structure (✅temporary structure in place)
 * [x] Sync with Git (Sofie, today)
-* [ ] Invite Andy to GitBook
+* [x] Invite Andy to GitBook
 
