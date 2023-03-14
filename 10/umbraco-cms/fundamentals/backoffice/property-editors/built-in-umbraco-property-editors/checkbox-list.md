@@ -4,7 +4,7 @@
 
 `Returns: IEnumerable<string>`
 
-Displays a list of preset values as a list of checkbox controls. The text saved is a IEnumerable collection of the text values.
+Displays a list of preset values as a list of checkbox controls. The text saved is an IEnumerable collection of the text values.
 
 {% hint style="info" %}
 Unlike other property editors, the Prevalue IDs are not directly accessible in Razor.
@@ -70,7 +70,7 @@ See the example below to see how a value can be added or changed programmaticall
     // Get the page using the GUID you've defined
     var content = contentService.GetById(guid); // ID of your page
 
-    // Set the value of the property with alias 'superHeros'. 
+    // Set the value of the property with alias 'superHeros'.
     content.SetValue("superHeros", JsonConvert.SerializeObject(new[] { "Umbraco", "CodeGarden"}));
 
     // Save the change
@@ -83,7 +83,7 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 ```csharp
 @{
     // Get the page using it's id
-    var content = contentService.GetById(1234); 
+    var content = contentService.GetById(1234);
 }
 ```
 

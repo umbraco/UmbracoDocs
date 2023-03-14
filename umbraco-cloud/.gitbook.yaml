@@ -14,10 +14,12 @@ redirects:
     set-up/manage-cdn-caching: set-up/project-settings/manage-cdn-caching.md
     set-up/external-services: set-up/project-settings/external-services.md
     set-up/dedicated-resources: set-up/project-settings/dedicated-resources.md
-    set-up/upgrade-umbraco-cloud-plan: set-up/project-settings/upgrade-umbraco-cloud-plan
+    set-up/upgrade-umbraco-cloud-plan: set-up/project-settings/upgrade-umbraco-cloud-plan.md
     set-up/usage: set-up/project-settings/usage.md
+    set-up/manage-subscriptions: set-up/manage-subscriptions/README.md
     upgrades/migrate-from-umbraco-10-to-11: product-upgrades/major-upgrades.md
-    product-upgrades/migrate-a-umbraco-8-project-to-umbraco-10: product-upgrades/version-specific-upgrades/migrate-a-umbraco-8-project-to-umbraco-10
+    product-upgrades/migrate-a-umbraco-8-project-to-umbraco-10: product-upgrades/version-specific-upgrades/migrate-from-8-to-latest.md
+    product-upgrades/version-specific-upgrades/migrate-a-umbraco-8-project-to-umbraco-10: product-upgrades/version-specific-upgrades/migrate-from-8-to-latest.md
     release-notes/2022-01-06-releasenotes: release-notes/overview-2022/2022-01-06-releasenotes.md
     release-notes/2022-02-15-releasenotes: release-notes/overview-2022/2022-02-15-releasenotes.md
     release-notes/2022-03-02-releasenotes: release-notes/overview-2022/2022-03-02-releasenotes.md
@@ -28,4 +30,5 @@ redirects:
     release-notes/2022-09-19-releasenotes: release-notes/overview-2022/2022-09-19-releasenotes.md
     release-notes/2022-11-07-releasenotes: release-notes/overview-2022/2022-01-06-releasenotes.md
     release-notes/2022-12-20-releasenotes: release-notes/overview-2022/2022-12-20-releasenotes.md
-    
+    upgrades/migrate-from-umbraco-7-to-8: product-upgrades/version-specific-upgrades/migrate-from-umbraco-7-to-8.md
+    set-up/2-factor-authentication-on-cloud: setup/multi-factor-authentication-on-cloud

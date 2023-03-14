@@ -36,12 +36,10 @@ To export all the entries from your Form:
 
 1. Go to the **Forms** section.
 2. Navigate to the **Entries** you wish to export.
-3.  Click **Export** in the top-right corner of the screen.\
-
+3.  Click **Export** in the top-right corner of the screen.
 
     <figure><img src="images/Export.png" alt=""><figcaption></figcaption></figure>
-4.  The Export dialog opens. Choose a format such as Microsoft Excel to export the Form records to.\
-
+4.  The Export dialog opens. Choose a format such as Microsoft Excel to export the Form records to.
 
     <figure><img src="images/ExportAllDialog.png" alt=""><figcaption></figcaption></figure>
 5. Click **Done**.

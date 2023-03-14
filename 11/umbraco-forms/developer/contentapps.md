@@ -4,7 +4,7 @@
 
 They will appear after the default "Design" and "Settings" apps when editing a form in the back-office:
 
-![Umbraco Forms Content App](../../../10/umbraco-forms/developer/images/content-app.png)
+![Umbraco Forms Content App](images/content-app.png)
 
 A content app such as the following would display only in the forms section:
 

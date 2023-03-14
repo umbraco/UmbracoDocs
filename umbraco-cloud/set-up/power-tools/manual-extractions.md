@@ -12,14 +12,14 @@ Run an extraction following these steps:
 2. Navigate to **CMD** under the **Debug console** menu.
 3. In the file structure, navigate to `site/wwwroot/umbraco/Deploy`.
 4. The `/Deploy` folder contains:
-    * `Revision` folder containing all your project's UDA files.
-    * `deploy-marker` indicating the state of the latest extraction (`deploy-complete` or `deploy-failed`).
-    * `deploy.log` containing logs from the latest extraction.
+   * `Revision` folder containing all your project's UDA files.
+   * `deploy-marker` indicating the state of the latest extraction (`deploy-complete` or `deploy-failed`).
+   * `deploy.log` containing logs from the latest extraction.
 5. While in this folder, type the following command in the CMD console: `echo > deploy`. This will initiate extraction of the environment.
-6. While the extraction is running, the *deploy-marker* will change its name to `deploy-progress`.
+6. While the extraction is running, the _deploy-marker_ will change its name to `deploy-progress`.
 7. The extraction will end in one of two possible outcomes:
-    1. `deploy-complete`: The extraction succeeded and your environment is in good shape.
-    2. `deploy-failed`: The extraction failed - open the file, to see the error message. The same error message will be shown on your environment in the Umbraco Cloud Portal.
+   1. `deploy-complete`: The extraction succeeded and your environment is in good shape.
+   2. `deploy-failed`: The extraction failed - open the file, to see the error message. The same error message will be shown on your environment in the Umbraco Cloud Portal.
 
 ![Run manual extraction](images/manual-extraction-v9.gif)
 
@@ -29,4 +29,4 @@ Sometimes, you might encounter a deploy-marker called `deploy`. This usually mea
 
 Sometimes, you might also need to run this extraction locally. This can be done by following the above steps using Command Prompt (CMD) on your local machine and navigating to the `/umbraco/data` folder in your local project folder.
 
-Find general information about Kudu and how to access the tool in the [Power tools](../) article.
+Find general information about Kudu and how to access the tool in the [Power tools](../set-up.md) article.

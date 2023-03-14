@@ -1,6 +1,6 @@
 ---
 description: >-
-  Learn how to create a new version of an article based on a existing or
+  Learn how to create a new version of an article based on an existing or
   upcoming Umbraco CMS version.
 ---
 
