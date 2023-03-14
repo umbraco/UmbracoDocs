@@ -23,9 +23,9 @@
 * [Best Practice for Working in Teams](getting-started/team-workflow-on-cloud.md)
 * [Migrate between regions](getting-started/migrate-between-regions.md)
 
-## Setup
+## Set up
 
-* [Set Up](set-up/README.md)
+* [Set Up](set-up/set-up.md)
 * [Working with a Local Clone](set-up/working-locally.md)
 * [Working with Mac](set-up/working-with-mac.md)
 * [Manage Environments](set-up/manage-environments.md)

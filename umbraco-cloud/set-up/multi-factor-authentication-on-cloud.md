@@ -1,7 +1,7 @@
 ---
 description: >-
-  This article shows how you can enable Multi-Factor authentication when you
-  log in to the Umbraco Cloud Portal or the Umbraco Backoffice.
+  This article shows how you can enable Multi-Factor authentication when you log
+  in to the Umbraco Cloud Portal or the Umbraco Backoffice.
 ---
 
 # Multi-Factor Authentication
@@ -22,9 +22,7 @@ To enable MFA, follow these steps:
 
 1. Go to your **Profile** on Umbraco Cloud.
 2. Click **Edit Profile** in the **Profile Settings** section.
-3. Select the desired **Multifactor Authentication Method** from the drop-down list.
-    ![Edit Profile MFA](images/Edit_Profile_MFA.png)
-
+3. Select the desired **Multifactor Authentication Method** from the drop-down list. ![Edit Profile MFA](images/Edit\_Profile\_MFA.png)
 4. Follow the steps shown below to enable MFA.
 
 ### Email Authentication
@@ -49,7 +47,7 @@ You have the option to use your phone when you log in to the Umbraco Cloud porta
 Before deactivating your old phone number, make sure to update the phone number used for your MFA. Changing the phone number used for MFA will require verification through the old number.
 {% endhint %}
 
-![Phone authentication](images/Phone-auth.png)
+![Phone authentication](../release-notes/images/Phone-auth.png)
 
 ## Disabling MFA
 
