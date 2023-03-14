@@ -412,7 +412,7 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 
 *   Fixed issue relating to deployment of data types with prevalues on Umbraco 7. [#20](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/20) [#45](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/45) [#89](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/89)
 
-### Deploy 2.1.4 '
+### Deploy 2.1.4
 *   Resolution of issue with failed extractions on vNext infrastructure.
 
 ### Deploy 2.0.18 + 2.1.3 (July 6th 2021)
