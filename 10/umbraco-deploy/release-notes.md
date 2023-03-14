@@ -8,6 +8,10 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 
 ## Release History
 
+In the below section, you can find the release notes for each version of Umbraco Deploy.
+
+The first step is to identify which version of Umbraco your project
+
 <details>
 
 <summary>Umbraco Deploy Version 11</summary>
@@ -242,7 +246,6 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 
 ### [Deploy 4.7.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.7.0) (September 22nd 2022)
 
-*   All changes listed under 4.7.0-rc001, 9.5.0-rc001 and 10.1.0-rc001
 *   Fixed issue with scheduled publish date being time shifted on deployments when source and target servers are running in different timezones.
 *   Fixed issue with transfer for members of a given type (V10 only) [#139](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/139)
 *   Introduced and used caching in deploy operations to improve performance.
@@ -281,7 +284,7 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 *   Improved deserialization of exceptions for clearer reporting (V9+)
 
 
-### [Deploy 4.6.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.6.0) [and](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.12.0)  (April 26th 2022)
+### [Deploy 4.6.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.6.0) (April 26th 2022)
 
 *   Retained compact JSON formatting when transferring grid values
 *   Enhancements to content comparison dialog [#101](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/101)[](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/65)
@@ -323,10 +326,6 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 ### [Deploy 4.4.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.4.1) (December 7th 2021)
 
 *   Fixed issue relating to deployment of image alt text within the rich text editor. [#87](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/87)
-
-### [Deploy 4.4.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.4.0) (November 16th 2021)
-
-*   All updates listed under 4.4.0-rc001/2 and 9.1.0-rc001/2.[](https://github.com/umbraco/Umbraco.Forms.Issues/issues/669)
 
 
 ### [Deploy 4.4.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.4.0) (November 2nd 2021)
