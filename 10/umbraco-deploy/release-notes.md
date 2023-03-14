@@ -267,7 +267,7 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 *   Added close button to "Transfer now" dialog
 *   Resolved registration of deployable types to support configuration for "backoffice edition".
 
-### [Deploy 4.6.1,](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.6.1) (July 12th 2022)
+### [Deploy 4.6.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.6.1) (July 12th 2022)
 
 *   Resolved issue with media restore when database items exist and files don't [#123](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/123)
 *   Added details of failed deployment to deploy dashboard [#120](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/120)
