@@ -28,11 +28,6 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 *   Fixed display child nodes indicator for tree picker used for selecting items in the remote environment [#146](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/146)
 *   Added additional logging to indicate which item and pass causes a processing failure if and when one occurs [#144](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/144)
 *   Tidied up initialization markers [#102](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/102)
-
-### Deploy Contrib 11.0.1 (February 14th 2023)
-
-*   Block grid editor support and fix for null reference exception (10+)
-*   Further caching for deploy operations.
   
 </details>
 
@@ -43,11 +38,6 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 ### [10.1.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.2) (November 15th 2022)
 
 * Added batch settings option providing resolution to large content or media transfers hitting Azure service limit [#128](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/128)
-
-### Deploy Contrib 10.1.1 (February 14th 2023)
-
-*   Block grid editor support and fix for null reference exception (10+)
-*   Further caching for deploy operations.
 
 ### [10.1.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.1) (October 18th 2022)
 
@@ -96,10 +86,6 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 *   Fixed extract trigger URL in PowerShell script distributed with Deploy On-Premise (V9+)
 *   Improved deserialization of exceptions for clearer reporting (V9+)
 
-### Deploy Contrib 10.0.1 (July 12th 2022)
-
-*   Optimized existence checks in connectors
-
 ### [Deploy 10.0.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.1) (June 29th 2022)
 
 *   Fixed issue with deployment of content using variant properties [#126](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/126)
@@ -132,11 +118,6 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 *   Fixed display child nodes indicator for tree picker used for selecting items in the remote environment [#146](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/146)
 *   Added additional logging to indicate which item and pass causes a processing failure if and when one occurs [#144](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/144)
 *   Tidied up initialization markers [#102](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/102)
-
-### Deploy Contrib 9.1.1 (February 14th 2023)
-
-*   Block grid editor support and fix for null reference exception (10+)
-*   Further caching for deploy operations.
 
 ### [9.5.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.5.2) (November 15th 2022)
 
@@ -189,24 +170,75 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 *   Fixed extract trigger URL in PowerShell script distributed with Deploy On-Premise (V9+)
 *   Improved deserialization of exceptions for clearer reporting (V9+)
 
-### [Deploy 9.3.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.3.1) (March 22nd 2022)**
+### [9.4.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.4.0) (April 12th 2022)
+
+*   Enhancements to content comparison dialog [#101](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/101)[](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/65)
+*   Partial restore for Forms and third-party plugins [#100](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/100)
+*   Display of configuration information and schema comparison on the deploy "settings" dashboard.
+*   Deployment of culture & hostname details [#107](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/107)
+*   Optional, automated clear of memory cache
+*   Resolved issue with empty value deployment of content based on the tags property editor [#104](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/104)
+*   Resolved issue with redirect functionality when records are deployed between environments (part of CMS [#10066](https://github.com/umbraco/Umbraco-CMS/issues/10066))
+*   Surfaced information about configuration for the ignore of broken dependencies in the dialog that presents the error information
+*   Fixed a CSS rendering issue for the deploy content dashboard's workspace display, when more than four environments are available.
+*   Fixed issue with deployment of empty tags data [#104](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/104)
+*   Retained compact JSON formatting when transferring grid values
+
+### [9.3.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.3.1) (March 22nd 2022)**
 
 *   Adds support for deploying new relation type property introduced in CMS 9.4
 *   Fixes layout issue on workspaces dashboard when more than 4 environments are configured.
+
+### [9.3.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.3.0) (February 15th 2022)
+
+*   Content comparison dialog [#65](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/65)
+*   Back-office deployment of members and member groups.
+*   Fixed bug with deployments of templates involving alias renames
+
+### [9.2.3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.2.3) (February 15th 2022)
+
+*   Fixed content transfer issue when public access login and error pages are created below the protected page [#99](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/99)
+*   Fixed issue with clashing permission letter for "queue for transfer" menu option (V4 only) [#95](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/95)
+
+### [9.2.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.2.2) (January 25th 2022)
+
+*   Fixed ambiguous match exception when deploying forms (V4 only) [#97](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/97)
+*   Fixed issue with "live edit" component and scheduled publishing (V9 only) [#98](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/98)
+*   Amends to timing of file operation initialization to ensure third party components complete setup (V9 only).
+*   Added .NET 6 version of environment variable syntax for Umbraco Cloud configuration settings.
   
+### [9.2.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.2.1) (January 11th 2022)
+
+*   Fixed issue with clashing permission letter for "queue for transfer" menu option [#95](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/95)
+*   Fixed link to open project in Cloud portal [#94](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/94)
+
+### [9.2.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.2.0) (December 7th 2021)
+
+*   Fixed issue relating to deployment of image alt text within the rich text editor. [#87](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/87)
+*   Added support for deployment of history clean-up settings on document types.
+*   Fixes display of git clone URL in the backoffice dashboard. [#88](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/88)
+*   Updates connection string initialization to earlier in the pipeline to ensure it's available for external component configuration.
+*   Fixed casing of Deploy folder in App\Plugins referenced from the custom "no nodes" page.
+
+### [9.0.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.0.1) (October 12th 2021)
+
+*   Removed import document type option [#73](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/73)
+*   Resolved globalization discrepancy leading to schema mismatch reports [#72](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/72)
+*   Set appropriate environment defaults for package migration schema and content installation [#74](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/74) [#75](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/75)
+
+### Deploy 9.0.0 (September 27th 2021)
+
+*   V9 release on .NET 5 compatible with CMS V9.
+
 </details>
 
+<details>
 
-
+<summary>Umbraco Deploy Version 4 and 2</summary>
 
 ### [Deploy 4.7.3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.7.3) (February 21st 2023)
 
 *   All items listed under the 9.5.3, 10.1.3 and 11.0.1 releases (other than those indicated as only applying to higher versions).
-
-### Deploy Contrib 4.2.1 (February 21st 2023)
-
-*   All items listed under the 9.1.1, 10.1.1 and 11.0.1 releases (other than those indicated as only applying to higher versions).
-
 
 ### [Deploy 4.7.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.7.2) (November 15th 2022)
 
@@ -223,10 +255,7 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 *   Fixed issue with scheduled publish date being time shifted on deployments when source and target servers are running in different timezones.
 *   Fixed issue with transfer for members of a given type (V10 only) [#139](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/139)
 
-### Deploy Contrib 4.2.0, 9.1.0 and 10.1.0 (September 22nd 2022)
 
-*   All changes listed under 4.2.0-rc001, 9.1.0-rc001 and 10.1.0-rc001
-*   Fixed issue with transfer of nested content string values using item templates (i.e. commencing with "{{") that were erroneously considered as JSON.
 
 ### [Deploy 4.7.0-rc001](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.7.0) (September 7th 2022)
 
@@ -242,9 +271,7 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 *   Fixed issue with transfer of Forms prevalue sources from text files that include captions.
 *   Ensured document type validation messages are transferred between environments [#137](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/137)
 
-### Deploy Contrib 4.2.0-rc001, 9.1.0-rc001 and 10.1.0-rc001 (September 7th 2022)
 
-*   Used caching in value connectors to improve performance.
 
 ### [Deploy 4.6.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.6.2) (August 16th 2022)
 
@@ -267,24 +294,13 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 *   Fixed extract trigger URL in PowerShell script distributed with Deploy On-Premise (V9+)
 *   Improved deserialization of exceptions for clearer reporting (V9+)
 
-### Deploy Contrib 4.1.2, 9.0.2, 10.0.1 (July 12th 2022)
-
-*   Optimized existence checks in connectors
 
 
+### [Deploy 4.6.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.6.0) [and](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.12.0)  (April 26th 2022)
 
-
-
-### Deploy Contrib 4.1.1 (April 26th 2022)
-
-*   Fixes issue with deployment of nested content properties within doc type grid editor values. [#82](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/82)
-
-### [Deploy 4.6.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.6.0) [and](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.12.0) [9.4.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.4.0) (April 26th 2022)
-
-*   All changes listed under 4.6.0-rc001 and 9.4.0-rc001
 *   Retained compact JSON formatting when transferring grid values
 
-### [Deploy 4.6.0-rc001](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.6.0) and [9.4.0-rc001](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.4.0) (April 12th 2022)
+### [Deploy 4.6.0-rc001](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.6.0)(April 12th 2022)
 
 *   Enhancements to content comparison dialog [#101](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/101)[](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/65)
 *   Partial restore for Forms and third-party plugins [#100](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/100)
@@ -297,33 +313,28 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 *   Fixed a CSS rendering issue for the deploy content dashboard's workspace display, when more than four environments are available.
 *   Fixed issue with deployment of empty tags data [#104](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/104)
 
-### [Deploy 4.5.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.5.0) and [9.3.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.3.0) (March 8th 2022)
+### [Deploy 4.5.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.5.0) (March 8th 2022)
 
-*   All changes from 4.5.0-rc001 and 9.3.0-rc001
 *   Fixed bug with deployments of templates involving alias renames
 
-### [Deploy 4.5.0-rc001](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.5.0) and [9.3.0-rc001](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.3.0) (February 15th 2022)
+### [Deploy 4.5.0-rc001](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.5.0) (February 15th 2022)
 
 *   Content comparison dialog [#65](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/65)
 *   Back-office deployment of members and member groups.
 *   Added support for deployment of history clean-up settings on document types (V4 only)
 
-### [Deploy 4.4.4](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.4.4) and [9.2.3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.2.3) (February 15th 2022)
+### [Deploy 4.4.4](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.4.4) (February 15th 2022)
 
 *   Fixed content transfer issue when public access login and error pages are created below the protected page [#99](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/99)
 *   Fixed issue with clashing permission letter for "queue for transfer" menu option (V4 only) [#95](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/95)
 
-### [Deploy 4.4.3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.4.3) and [9.2.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.2.2) (January 25th 2022)
+### [Deploy 4.4.3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.4.3) (January 25th 2022)
 
 *   Fixed ambiguous match exception when deploying forms (V4 only) [#97](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/97)
 *   Fixed issue with "live edit" component and scheduled publishing (V9 only) [#98](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/98)
 *   Amends to timing of file operation initialization to ensure third party components complete setup (V9 only).
 *   Added .NET 6 version of environment variable syntax for Umbraco Cloud configuration settings.
 
-### [Deploy 9.2.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.2.1) (January 11th 2022)
-
-*   Fixed issue with clashing permission letter for "queue for transfer" menu option [#95](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/95)
-*   Fixed link to open project in Cloud portal [#94](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/94)
 
 ### [Deploy 2.1.6](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.4.2) (January 11th 2022)
 
@@ -334,13 +345,6 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 *   Fixed issue with extractions triggered from uda files generated from older versions without property group aliases. [#92](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/92)
 *   Fixed timing issue for initiation of reading of file system triggers impacting third party Deploy integrations. [#91](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/91)
 
-### [Deploy 9.2.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.2.0) (December 7th 2021)
-
-*   Fixed issue relating to deployment of image alt text within the rich text editor. [#87](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/87)
-*   Added support for deployment of history clean-up settings on document types.
-*   Fixes display of git clone URL in the backoffice dashboard. [#88](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/88)
-*   Updates connection string initialization to earlier in the pipeline to ensure it's available for external component configuration.
-*   Fixed casing of Deploy folder in App\_Plugins referenced from the custom "no nodes" page.
 
 ### [Deploy 4.4.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.4.1) (December 7th 2021)
 
@@ -350,15 +354,15 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 
 *   Fixed issue relating to deployment of data types with prevalues on Umbraco 7. [#20](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/20) [#45](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/45) [#89](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/89)
 
-### [Deploy 4.4.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.4.0) and [9.1.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.1.0) (November 16th 2021)
+### [Deploy 4.4.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.4.0) (November 16th 2021)
 
 *   All updates listed under 4.4.0-rc001/2 and 9.1.0-rc001/2.[](https://github.com/umbraco/Umbraco.Forms.Issues/issues/669)
 
-### [Deploy 4.4.0-rc002](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.4.0) and [9.1.0-rc002](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.1.0) (November 8th 2021)
+### [Deploy 4.4.0-rc002](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.4.0) and (November 8th 2021)
 
 *   Fixed issue with restore of empty tab alias  [#84](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/84)
 
-### [Deploy 4.4.0-rc001](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.4.0) and [9.1.0-rc001](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.1.0) (November 2nd 2021)
+### [Deploy 4.4.0-rc001](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.4.0) (November 2nd 2021)
 
 *   Separate operations for "tree" and "workspace" restore  [#66](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/66)
 *   Finer configuration options for ignoring broken dependencies [#81](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/81)
@@ -371,20 +375,12 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 *   Fixed issue with language deployment when fallbacks are configured.
 *   Improved the error reporting when authorization fails between environments (V9 only). [#77](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/77)
 
-### [Deploy 9.0.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.0.1) (October 12th 2021)
-
-*   Removed import document type option [#73](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/73)
-*   Resolved globalization discrepancy leading to schema mismatch reports [#72](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/72)
-*   Set appropriate environment defaults for package migration schema and content installation [#74](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/74) [#75](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/75)
-
 ### [Deploy 4.3.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.3.0) (October 7th 2021)
 
 *   Added support for deployment of CMS tabs and groups
 *   Fixed issue with JSON detection causing issues using square brackets in grid content [#70](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/70)
 
-### Deploy 9.0.0 (September 27th 2021)
 
-*   V9 release on .NET 5 compatible with CMS V9.
 
 ### [Deploy 4.2.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.2.0) (September 14th 2021)
 
@@ -441,4 +437,50 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 
 ### Deploy 4.0.1 (March 23rd 2021)
 
-*   Enabling Deploy 4 to work in new Cloud infrastructure
+*   Enabling Deploy 4 to work in new Cloud infrastructure  
+
+</details>
+
+
+
+## Deploy Contrib
+
+<details>
+
+<summary>Umbraco Deploy Contrib</summary>
+
+### Deploy Contrib 11.0.1 (February 14th 2023)
+
+*   Block grid editor support and fix for null reference exception (10+)
+*   Further caching for deploy operations.
+
+### Deploy Contrib 10.1.1 (February 14th 2023)
+
+*   Block grid editor support and fix for null reference exception (10+)
+*   Further caching for deploy operations.
+
+### Deploy Contrib 9.1.1 (February 14th 2023)
+
+*   Block grid editor support and fix for null reference exception (10+)
+*   Further caching for deploy operations.
+
+### Deploy Contrib 4.2.0, 9.1.0 and 10.1.0 (September 7th 2022)
+
+*   Used caching in value connectors to improve performance.
+*   Fixed issue with transfer of nested content string values using item templates (i.e. commencing with "{{") that were erroneously considered as JSON.
+
+### Deploy Contrib 4.1.2, 9.0.2, 10.0.1 (July 12th 2022)
+
+*   Optimized existence checks in connectors
+
+
+### Deploy Contrib 4.1.1 (April 26th 2022)
+
+*   Fixes issue with deployment of nested content properties within doc type grid editor values. [#82](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/82)
+
+### Deploy Contrib 4.2.1 (February 21st 2023)
+
+*   All items listed under the 9.1.1, 10.1.1 and 11.0.1 releases (other than those indicated as only applying to higher versions).
+  
+</details>
+
