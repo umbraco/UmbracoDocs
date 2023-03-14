@@ -31,7 +31,7 @@ public class Startup
 
 ### Adding Click-Jacking Protection using manual middleware
 
-If you don't like to have a dependency on a third party library, you can add the following custom middleware to the request pipeline instead.
+Avoid third-party library dependency by using custom middleware added to the request pipeline.
 
 ```csharp
 public class Startup
