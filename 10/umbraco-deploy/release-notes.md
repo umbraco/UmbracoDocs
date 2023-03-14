@@ -51,12 +51,12 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 *   Single language content transfers [#132](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/132)
 *   Scheduled content transfers.
 *   Corrected transfer of unpublished content status [#131](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/131)
-*   Improved UX and descriptions in back-office settings dashboard [#118](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/118)
+*   Improved UX and descriptions in backoffice settings dashboard [#118](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/118)
 *   Added ability to download Deploy artifacts (.uda files) as a zip archive from the management dashboard.
 *   Added sort options to the schema comparison view in the management dashboard [#115](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/115)
-*   Indented the JSON representation of data type configuration details in the .uda files for ease of review [#85](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/85)
+*   Indented the JSON representation of Data Type configuration details in the .uda files for ease of review [#85](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/85)
 *   Fixed issue with transfer of Forms prevalue sources from text files that include captions.
-*   Ensured document type validation messages are transferred between environments [#137](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/137)
+*   Ensured Document Type validation messages are transferred between environments [#137](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/137)
 *   Fixed issue with scheduled publish date being time shifted on deployments when source and target servers are running in different timezones.
 *   Fixed issue with transfer for members of a given type (V10 only) [#139](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/139)
 
@@ -73,9 +73,9 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 
 *   Resolved issue with media restore when database items exist and files don't [#123](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/123)
 *   Added details of failed deployment to deploy dashboard [#120](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/120)
-*   Added copy button for deploy log in the back-office [#121](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/121)
+*   Added copy button for deploy log in the backoffice [#121](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/121)
 *   Fixed typo in UI [#113](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/113)
-*   Ensured signature refresh on data type move into or out of folder [#125](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/125)
+*   Ensured signature refresh on Data Type move into or out of folder [#125](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/125)
 *   Fixed selection of workspace for compare dialog
 *   Optimized existence checks in connectors
 *   Restore missing partial restore option in content and media tree roots (V9+)
@@ -131,18 +131,18 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 *   Single language content transfers [#132](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/132)
 *   Scheduled content transfers.
 *   Corrected transfer of unpublished content status [#131](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/131)
-*   Improved UX and descriptions in back-office settings dashboard [#118](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/118)
+*   Improved UX and descriptions in backoffice settings dashboard [#118](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/118)
 *   Added ability to download Deploy artifacts (.uda files) as a zip archive from the management dashboard.
 *   Added sort options to the schema comparison view in the management dashboard [#115](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/115)
-*   Indented the JSON representation of data type configuration details in the .uda files for ease of review [#85](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/85)
+*   Indented the JSON representation of Data Type configuration details in the .uda files for ease of review [#85](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/85)
 *   Fixed issue with transfer of Forms prevalue sources from text files that include captions.
-*   Ensured document type validation messages are transferred between environments [#137](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/137)
+*   Ensured Document Type validation messages are transferred between environments [#137](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/137)
 *   Fixed issue with scheduled publish date being time shifted on deployments when source and target servers are running in different timezones.
 *   Fixed issue with transfer for members of a given type (V10 only) [#139](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/139)
 
 ### [Deploy 9.4.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.4.2) (August 16th 2022)
 
-*   Aligned Git URL displayed in back-office with that in Cloud Portal (V4 only) [#136](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/136)
+*   Aligned Git URL displayed in backoffice with that in Cloud Portal (V4 only) [#136](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/136)
 *   Fixed issue with deployment of root node value for Umbraco Forms's "save as Umbraco node" workflow [#133](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/133)
 *   Fixed incorrect availability of workspace restore in production environment (V9 and V10 only)
 *   Added close button to "Transfer now" dialog
@@ -152,9 +152,9 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 
 *   Resolved issue with media restore when database items exist and files don't [#123](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/123)
 *   Added details of failed deployment to deploy dashboard [#120](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/120)
-*   Added copy button for deploy log in the back-office [#121](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/121)
+*   Added copy button for deploy log in the backoffice [#121](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/121)
 *   Fixed typo in UI [#113](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/113)
-*   Ensured signature refresh on data type move into or out of folder [#125](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/125)
+*   Ensured signature refresh on Data Type move into or out of folder [#125](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/125)
 *   Fixed selection of workspace for compare dialog
 *   Optimized existence checks in connectors
 *   Restore missing partial restore option in content and media tree roots (V9+)
@@ -183,7 +183,7 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 ### [Deploy 9.3.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.3.0) (February 15th 2022)
 
 *   Content comparison dialog [#65](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/65)
-*   Back-office deployment of members and member groups.
+*   backoffice deployment of members and member groups.
 *   Fixed bug with deployments of templates involving alias renames
 
 ### [Deploy 9.2.3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.2.3) (February 15th 2022)
@@ -206,14 +206,14 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 ### [Deploy 9.2.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.2.0) (December 7th 2021)
 
 *   Fixed issue relating to deployment of image alt text within the rich text editor. [#87](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/87)
-*   Added support for deployment of history clean-up settings on document types.
+*   Added support for deployment of history clean-up settings on Document Types.
 *   Fixes display of git clone URL in the backoffice dashboard. [#88](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/88)
 *   Updates connection string initialization to earlier in the pipeline to ensure it's available for external component configuration.
 *   Fixed casing of Deploy folder in App\Plugins referenced from the custom "no nodes" page.
 
 ### [Deploy 9.0.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.0.1) (October 12th 2021)
 
-*   Removed import document type option [#73](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/73)
+*   Removed import Document Type option [#73](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/73)
 *   Resolved globalization discrepancy leading to schema mismatch reports [#72](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/72)
 *   Set appropriate environment defaults for package migration schema and content installation [#74](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/74) [#75](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/75)
 
@@ -250,30 +250,30 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 *   Single language content transfers [#132](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/132)
 *   Scheduled content transfers.
 *   Corrected transfer of unpublished content status [#131](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/131)
-*   Improved UX and descriptions in back-office settings dashboard [#118](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/118)
+*   Improved UX and descriptions in backoffice settings dashboard [#118](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/118)
 *   Added ability to download Deploy artifacts (.uda files) as a zip archive from the management dashboard.
 *   Added sort options to the schema comparison view in the management dashboard [#115](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/115)
-*   Indented the JSON representation of data type configuration details in the .uda files for ease of review [#85](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/85)
+*   Indented the JSON representation of Data Type configuration details in the .uda files for ease of review [#85](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/85)
 *   Fixed issue with transfer of Forms prevalue sources from text files that include captions.
-*   Ensured document type validation messages are transferred between environments [#137](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/137)
+*   Ensured Document Type validation messages are transferred between environments [#137](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/137)
 
 
 
 ### [Deploy 4.6.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.6.2) (August 16th 2022)
 
-*   Aligned Git URL displayed in back-office with that in Cloud Portal (V4 only) [#136](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/136)
+*   Aligned Git URL displayed in backoffice with that in Cloud Portal (V4 only) [#136](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/136)
 *   Fixed issue with deployment of root node value for Umbraco Forms's "save as Umbraco node" workflow [#133](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/133)
 *   Fixed incorrect availability of workspace restore in production environment (V9 and V10 only)
 *   Added close button to "Transfer now" dialog
-*   Resolved registration of deployable types to support configuration for "back-office edition".
+*   Resolved registration of deployable types to support configuration for "backoffice edition".
 
 ### [Deploy 4.6.1,](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.6.1) (July 12th 2022)
 
 *   Resolved issue with media restore when database items exist and files don't [#123](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/123)
 *   Added details of failed deployment to deploy dashboard [#120](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/120)
-*   Added copy button for deploy log in the back-office [#121](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/121)
+*   Added copy button for deploy log in the backoffice [#121](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/121)
 *   Fixed typo in UI [#113](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/113)
-*   Ensured signature refresh on data type move into or out of folder [#125](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/125)
+*   Ensured signature refresh on Data Type move into or out of folder [#125](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/125)
 *   Fixed selection of workspace for compare dialog
 *   Optimized existence checks in connectors
 *   Restore missing partial restore option in content and media tree roots (V9+)
@@ -298,8 +298,8 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 ### [Deploy 4.5.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.5.0) (February 15th 2022)
 
 *   Content comparison dialog [#65](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/65)
-*   Back-office deployment of members and member groups.
-*   Added support for deployment of history clean-up settings on document types (V4 only)
+*   Backoffice deployment of members and member groups.
+*   Added support for deployment of history clean-up settings on Document Types (V4 only)
 *   Fixed bug with deployments of templates involving alias renames
 
 ### [Deploy 4.4.4](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.4.4) (February 15th 2022)
@@ -351,7 +351,7 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 ### [Deploy 4.2.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.2.0+) (August 19th 2021)
 
 *   Added support for deployment of form folders [#75 (Forms)](https://github.com/umbraco/Umbraco.Forms.Issues/issues/75)
-*   Added support for back-office transfer of data from custom packages or solutions 
+*   Added support for backoffice transfer of data from custom packages or solutions 
 *   Provided option for deploying dictionary items "as content" [#17](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/17) [#56](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/56)
 *   List multiple dependency errors when deploying or restoring [#5](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/5)
 *   Add additional detail about deployment errors into logs [#40](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/40)
@@ -410,7 +410,7 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 
 ### [Deploy 2.1.5](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F2.1.5) (December 7th 2021)
 
-*   Fixed issue relating to deployment of data types with prevalues on Umbraco 7. [#20](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/20) [#45](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/45) [#89](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/89)
+*   Fixed issue relating to deployment of Data Types with prevalues on Umbraco 7. [#20](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/20) [#45](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/45) [#89](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/89)
 
 ### Deploy 2.1.4
 *   Resolution of issue with failed extractions on vNext infrastructure.
