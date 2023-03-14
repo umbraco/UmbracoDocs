@@ -33,6 +33,10 @@ The Umbraco Documentation is written using the MarkDown markup language. We have
 
 Learn how we structure and name files in the Umbraco documentation.
 
+## Writing documentation locally
+
+We recommend using a text editor like Visual Studio Code for making changes to the documentation on your local machine. We do not recommend using an Integrated Development Environment (IDE) like Visual Studio, for making changes to the documentation on your local machine. This is because the IDE may create files in the project which are not needed for the document changes to be implemented.
+
 ## Multi-version documentation
 
 Whenever a new version of an Umbraco product is released, the previous way of doing things may change. This means that there need to be multiple versions of our documentation.
