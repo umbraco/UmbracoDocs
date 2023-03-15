@@ -8,6 +8,14 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 
 ## Release History
 
+**[Deploy 4.7.4](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.7.4), [9.5.4](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.5.4), [10.1.4](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.4) and [11.0.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.0.2) (March 21st 2023)**
+
+*   Fixed issue with transfer of form workflow's "sensitive data" property. [#159](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/159)
+*   Fixed issue with datatype not found on cache rebuild [#157](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/157)
+*   Resolved issue with progress bar initialization on partial restore dialog (V9+)
+*   Handled file not found issue when calculating media file checksum using file metadata (V9+)
+*   Avoided exception triggered by custom tree implementations that do not expose an alias [#160](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/160)
+
 ### [Deploy 4.7.3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.7.3) (February 21st 2023)
 
 *   All items listed under the 9.5.3, 10.1.3 and 11.0.1 releases (other than those indicated as only applying to higher versions).
