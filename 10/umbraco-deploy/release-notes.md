@@ -10,7 +10,7 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 
 In the below section, you can find the release notes for each major version of Umbraco Deploy.
 
-Under each dropdown for the major versions, you can find details about each new minor versions released for that specific major.
+Under each dropdown for the major versions, you can find details about each new minor versions released for the specific major.
 
 <details>
 
@@ -423,10 +423,6 @@ Under each dropdown for the major versions, you can find details about each new 
 
 ## Deploy Contrib
 
-<details>
-
-<summary>Umbraco Deploy Contrib</summary>
-
 ### Deploy Contrib 11.0.1 (February 14th 2023)
 
 *   Block grid editor support and fix for null reference exception (10+)
@@ -459,6 +455,3 @@ Under each dropdown for the major versions, you can find details about each new 
 ### Deploy Contrib 4.2.1 (February 21st 2023)
 
 *   All items listed under the 9.1.1, 10.1.1 and 11.0.1 releases (other than those indicated as only applying to higher versions).
-  
-</details>
-
