@@ -142,12 +142,6 @@ In the below section, you can find the release notes for each major version of U
 
 ### [10.2.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.0) (November 8th 2022)
 
-* All changes listed under 10.2.0-rc001
-* Resolved issue with removed field type preventing edit of form [#899](https://github.com/umbraco/Umbraco.Forms.Issues/issues/899)
-* Added functionality to replace magic strings within the rich text field content [#903](https://github.com/umbraco/Umbraco.Forms.Issues/issues/903)
-
-### [10.2.0-rc001](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.0) (October 25th 2022)
-
 * Headless/AJAX forms API [#730](https://github.com/umbraco/Umbraco.Forms.Issues/issues/730)
 * Automatic removal of entries after configured period [#656](https://github.com/umbraco/Umbraco.Forms.Issues/issues/656)
 * Magic string formatters [#828](https://github.com/umbraco/Umbraco.Forms.Issues/issues/828)
@@ -166,6 +160,8 @@ In the below section, you can find the release notes for each major version of U
 * Improved condition label display when matching on an empty value. [#886](https://github.com/umbraco/Umbraco.Forms.Issues/issues/886)
 * Added documentation and base class to allow users to change the location of prevalue source text files. [#789](https://github.com/umbraco/Umbraco.Forms.Issues/issues/789)
 * Added configurable prefix for form element Ids.
+* Resolved issue with removed field type preventing edit of form [#899](https://github.com/umbraco/Umbraco.Forms.Issues/issues/899)
+* Added functionality to replace magic strings within the rich text field content [#903](https://github.com/umbraco/Umbraco.Forms.Issues/issues/903)
 
 ### [10.1.3](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.3) (October 18th 2022)
 
@@ -204,7 +200,26 @@ In the below section, you can find the release notes for each major version of U
 
 ### [10.1.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.0) (August 9th 2022)
 
-* All changes listed under 8.13.0-rc001, 9.5.0-rc001 and 10.1.0-rc001
+* Added workflow audit trail.
+* Added workflow retry option.
+* Added option to customize the behavior of default workflows, including mandatory workflows [#654](https://github.com/umbraco/Umbraco.Forms.Issues/issues/654)
+* Added conditional workflows [#370](https://github.com/umbraco/Umbraco.Forms.Issues/issues/370)
+* Added ability to redirect to an external site from workflows, after all have been completed.
+* Extended the form picker to use folder structure [#729](https://github.com/umbraco/Umbraco.Forms.Issues/issues/729​)
+* Added option for prevalue captions [#84](https://github.com/umbraco/Umbraco.Forms.Issues/issues/84​)
+* Ensured user group start folder aggregation for user's permissions doesn't include user groups that don't have access to Forms [#772](https://github.com/umbraco/Umbraco.Forms.Issues/issues/772)
+* Added option for creating permissions on form for user groups to all groups, or all groups the creating user is part of.
+* Provided fixes for issues with rendering localized dates in the backoffice entries view [#777](https://github.com/umbraco/Umbraco.Forms.Issues/issues/777)
+* Added read-only, rich text Data Type (V9 and 10).
+* Friendlier extensions for registering custom types (V10).
+* Added details of the page where the form was submitted to Excel download [#768](https://github.com/umbraco/Umbraco.Forms.Issues/issues/768​)
+* Added indication of options for "magic strings" when adding fields and workflows to forms. [#765](https://github.com/umbraco/Umbraco.Forms.Issues/issues/765)
+* Ensured the order of fields retrieved for a record from the database matches the field order defined on the form. [#661](https://github.com/umbraco/Umbraco.Forms.Issues/issues/661)
+* The trigger for client-side conditions checked can now be configured between "change" (the default) and "input". [#784](https://github.com/umbraco/Umbraco.Forms.Issues/issues/784)
+* Fixed issue with displaying entries where a member's Id was stored as a Guid via a custom membership provider. [#798](https://github.com/umbraco/Umbraco.Forms.Issues/issues/798)
+* Fixed issue with console request for client validation script source map. [#796](https://github.com/umbraco/Umbraco.Forms.Issues/issues/796)
+* Fixed issue with reCAPTCHA V3 field type. [#799](https://github.com/umbraco/Umbraco.Forms.Issues/issues/799)
+* Added a missing translation [#804](https://github.com/umbraco/Umbraco.Forms.Issues/issues/804​)
 * Styling improvements to form and theme picker [#107](https://github.com/umbraco/Umbraco.Forms.Issues/issues/107) and [#814](https://github.com/umbraco/Umbraco.Forms.Issues/issues/814)
 * Mark-up changes for accessibility of button elements [#383](https://github.com/umbraco/Umbraco.Forms.Issues/issues/383)
 * Removed elements types from prevalue source options [#805](https://github.com/umbraco/Umbraco.Forms.Issues/issues/805)
@@ -245,29 +260,6 @@ In the below section, you can find the release notes for each major version of U
 ### [10.0.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.0) (June 16th 2022)
 
 * Compatibility with .NET 6 and Umbraco 10
-
-### [10.1.0-rc001](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.0) (July 12th 2022)
-
-* Added workflow audit trail.
-* Added workflow retry option.
-* Added option to customize the behavior of default workflows, including mandatory workflows [#654](https://github.com/umbraco/Umbraco.Forms.Issues/issues/654)
-* Added conditional workflows [#370](https://github.com/umbraco/Umbraco.Forms.Issues/issues/370)
-* Added ability to redirect to an external site from workflows, after all have been completed.
-* Extended the form picker to use folder structure [#729](https://github.com/umbraco/Umbraco.Forms.Issues/issues/729​)
-* Added option for prevalue captions [#84](https://github.com/umbraco/Umbraco.Forms.Issues/issues/84​)
-* Ensured user group start folder aggregation for user's permissions doesn't include user groups that don't have access to Forms [#772](https://github.com/umbraco/Umbraco.Forms.Issues/issues/772)
-* Added option for creating permissions on form for user groups to all groups, or all groups the creating user is part of.
-* Provided fixes for issues with rendering localized dates in the backoffice entries view [#777](https://github.com/umbraco/Umbraco.Forms.Issues/issues/777)
-* Added read-only, rich text Data Type (V9 and 10).
-* Friendlier extensions for registering custom types (V10).
-* Added details of the page where the form was submitted to Excel download [#768](https://github.com/umbraco/Umbraco.Forms.Issues/issues/768​)
-* Added indication of options for "magic strings" when adding fields and workflows to forms. [#765](https://github.com/umbraco/Umbraco.Forms.Issues/issues/765)
-* Ensured the order of fields retrieved for a record from the database matches the field order defined on the form. [#661](https://github.com/umbraco/Umbraco.Forms.Issues/issues/661)
-* The trigger for client-side conditions checked can now be configured between "change" (the default) and "input". [#784](https://github.com/umbraco/Umbraco.Forms.Issues/issues/784)
-* Fixed issue with displaying entries where a member's Id was stored as a Guid via a custom membership provider. [#798](https://github.com/umbraco/Umbraco.Forms.Issues/issues/798)
-* Fixed issue with console request for client validation script source map. [#796](https://github.com/umbraco/Umbraco.Forms.Issues/issues/796)
-* Fixed issue with reCAPTCHA V3 field type. [#799](https://github.com/umbraco/Umbraco.Forms.Issues/issues/799)
-* Added a missing translation [#804](https://github.com/umbraco/Umbraco.Forms.Issues/issues/804​)
 
 </details>
 
@@ -368,22 +360,6 @@ In the below section, you can find the release notes for each major version of U
 
 ### [9.5.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.5.0) (August 9th 2022)
 
-* All changes listed under 8.13.0-rc001, 9.5.0-rc001 and 10.1.0-rc001
-* Styling improvements to form and theme picker [#107](https://github.com/umbraco/Umbraco.Forms.Issues/issues/107) and [#814](https://github.com/umbraco/Umbraco.Forms.Issues/issues/814)
-* Mark-up changes for accessibility of button elements [#383](https://github.com/umbraco/Umbraco.Forms.Issues/issues/383)
-* Removed elements types from prevalue source options [#805](https://github.com/umbraco/Umbraco.Forms.Issues/issues/805)
-* Fixed styling and color of Confirm overlay for fieldsets and fields [#808](https://github.com/umbraco/Umbraco.Forms.Issues/issues/808)
-* Added show/hide label option to data consent and text/description fields [#810](https://github.com/umbraco/Umbraco.Forms.Issues/issues/810), [#823](https://github.com/mbraco/Umbraco.Forms.Issues/issues/823), and [#810](https://github.com/umbraco/Umbraco.Forms.Issues/issues/810)
-* Fixed issue with duplication of magic string replacement [#811](https://github.com/umbraco/Umbraco.Forms.Issues/issues/811)
-* Ensured field references in copied forms are updated to the new fields [#815](https://github.com/umbraco/Umbraco.Forms.Issues/issues/815)
-* Fixed validation of mandatory date field [#817](https://github.com/umbraco/Umbraco.Forms.Issues/issues/817)
-* Added tag option for text/description field type [#821](https://github.com/umbraco/Umbraco.Forms.Issues/issues/821)
-* Added additional input type options to text field type [#825](https://github.com/umbraco/Umbraco.Forms.Issues/issues/825)
-* Restored open/edit options to form picker preview [#827](https://github.com/umbraco/Umbraco.Forms.Issues/issues/827)
-* Improved performance of permission-related queries [#827](https://github.com/umbraco/Umbraco.Forms.Issues/issues/827) (raised in discussion)
-
-### [9.5.0-rc001](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.5.0) (July 12th 2022)
-
 * Added workflow audit trail.
 * Added workflow retry option.
 * Added option to customize the behavior of default workflows, including mandatory workflows [#654](https://github.com/umbraco/Umbraco.Forms.Issues/issues/654)
@@ -404,6 +380,18 @@ In the below section, you can find the release notes for each major version of U
 * Fixed issue with console request for client validation script source map. [#796](https://github.com/umbraco/Umbraco.Forms.Issues/issues/796)
 * Fixed issue with reCAPTCHA V3 field type. [#799](https://github.com/umbraco/Umbraco.Forms.Issues/issues/799)
 * Added a missing translation [#804](https://github.com/umbraco/Umbraco.Forms.Issues/issues/804​)
+* Styling improvements to form and theme picker [#107](https://github.com/umbraco/Umbraco.Forms.Issues/issues/107) and [#814](https://github.com/umbraco/Umbraco.Forms.Issues/issues/814)
+* Mark-up changes for accessibility of button elements [#383](https://github.com/umbraco/Umbraco.Forms.Issues/issues/383)
+* Removed elements types from prevalue source options [#805](https://github.com/umbraco/Umbraco.Forms.Issues/issues/805)
+* Fixed styling and color of Confirm overlay for fieldsets and fields [#808](https://github.com/umbraco/Umbraco.Forms.Issues/issues/808)
+* Added show/hide label option to data consent and text/description fields [#810](https://github.com/umbraco/Umbraco.Forms.Issues/issues/810), [#823](https://github.com/mbraco/Umbraco.Forms.Issues/issues/823), and [#810](https://github.com/umbraco/Umbraco.Forms.Issues/issues/810)
+* Fixed issue with duplication of magic string replacement [#811](https://github.com/umbraco/Umbraco.Forms.Issues/issues/811)
+* Ensured field references in copied forms are updated to the new fields [#815](https://github.com/umbraco/Umbraco.Forms.Issues/issues/815)
+* Fixed validation of mandatory date field [#817](https://github.com/umbraco/Umbraco.Forms.Issues/issues/817)
+* Added tag option for text/description field type [#821](https://github.com/umbraco/Umbraco.Forms.Issues/issues/821)
+* Added additional input type options to text field type [#825](https://github.com/umbraco/Umbraco.Forms.Issues/issues/825)
+* Restored open/edit options to form picker preview [#827](https://github.com/umbraco/Umbraco.Forms.Issues/issues/827)
+* Improved performance of permission-related queries [#827](https://github.com/umbraco/Umbraco.Forms.Issues/issues/827) (raised in discussion)
 
 ### [9.4.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.4.2) (June 7th 2022)
 
@@ -418,12 +406,6 @@ In the below section, you can find the release notes for each major version of U
 * Fixed issue with immediate edit of form created by non-admin user [#764](https://github.com/umbraco/Umbraco.Forms.Issues/issues/764)
 
 ### [9.4.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.4.0) (April 26th 2022)
-
-* All changes listed under 8.12.0-rc001 and 9.4.0-rc001
-* Fix the issue with using the export to Excel feature on Linux [#761](https://github.com/umbraco/Umbraco.Forms.Issues/issues/761)
-* Fixed issue with saving forms when storing definitions on disk [#762](https://github.com/umbraco/Umbraco.Forms.Issues/issues/762)
-
-### [9.4.0-rc001](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.4.0) (April 12th 2022)
 
 * Added support for start folder configuration at user group level [#749](https://github.com/umbraco/Umbraco.Forms.Issues/issues/749)
 * Import/export of forms (V9 only) [#576](https://github.com/umbraco/Umbraco.Forms.Issues/issues/576)
@@ -447,15 +429,10 @@ In the below section, you can find the release notes for each major version of U
 * Fixed issue with access to forms in folders for users with a single start folder defined. [#759](https://github.com/umbraco/Umbraco.Forms.Issues/issues/759)
 * Fixed issue with access to previously created forms for non-admin users. [#764](https://github.com/umbraco/Umbraco.Forms.Issues/issues/764)
 * Resolves issue where an authenticated user with access to Forms can enumerate permissions related to forms access for other users.
+* Fix the issue with using the export to Excel feature on Linux [#761](https://github.com/umbraco/Umbraco.Forms.Issues/issues/761)
+* Fixed issue with saving forms when storing definitions on disk [#762](https://github.com/umbraco/Umbraco.Forms.Issues/issues/762)
 
 ### [9.3.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.3.0) (March 8th 2022)
-
-* All changes listed under 8.11.0-rc001 and 9.3.0-rc001
-* Fixed issue with clean on already cleaned project (V9 only) [#732](https://github.com/umbraco/Umbraco.Forms.Issues/issues/732)
-* Resolved client-side error when the jquery unobtrusive dependency is missing [#734](https://github.com/umbraco/Umbraco.Forms.Issues/issues/734)
-* Fixed two typos in label [#727](https://github.com/umbraco/Umbraco.Forms.Issues/issues/727)
-
-### [9.3.0-rc001](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.3.0) (February 15th 2022)
 
 * Config for control over user access to new forms [#12](https://github.com/umbraco/Umbraco.Forms.Issues/issues/12)
 * Management of form permissions by user group [#19](https://github.com/umbraco/Umbraco.Forms.Issues/issues/19)
@@ -470,6 +447,9 @@ In the below section, you can find the release notes for each major version of U
 * Fixed null reference in backoffice user check for retrieving records outside of a backoffice request [#724](https://github.com/umbraco/Umbraco.Forms.Issues/issues/724)
 * Fixed case insensitive view name under forms security (V9 only) [#725](https://github.com/umbraco/Umbraco.Forms.Issues/issues/725)
 * Additional translations for localized backoffice: Czech and Danish.
+* Fixed issue with clean on already cleaned project (V9 only) [#732](https://github.com/umbraco/Umbraco.Forms.Issues/issues/732)
+* Resolved client-side error when the jquery unobtrusive dependency is missing [#734](https://github.com/umbraco/Umbraco.Forms.Issues/issues/734)
+* Fixed two typos in label [#727](https://github.com/umbraco/Umbraco.Forms.Issues/issues/727)
 
 ### [9.2.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.2.2) (February 15th 2022)
 
@@ -494,12 +474,6 @@ In the below section, you can find the release notes for each major version of U
 
 ### [9.2.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.2.0) (December 21st 2021)
 
-* All updates listed under 8.10.0-rc001 and 9.2.0-rc001.
-* Fixed casing issues causing issues with running on Linux [#680](https://github.com/umbraco/Umbraco.Forms.Issues/issues/680) [#682](https://github.com/umbraco/Umbraco.Forms.Issues/issues/682)
-* Added support for V8 syntax for the remote address placeholder [#685](https://github.com/umbraco/Umbraco.Forms.Issues/issues/685)
-
-### [9.2.0-rc001](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.2.0) (December 7th 2021)
-
 * Localized backoffice for the Forms section [#267](https://github.com/umbraco/Umbraco.Forms.Issues/issues/267)
 * Added support for content apps alongside forms [#653](https://github.com/umbraco/Umbraco.Forms.Issues/issues/653)
 * Additional settings for text fields
@@ -511,6 +485,8 @@ In the below section, you can find the release notes for each major version of U
 * Completed support for client-side views to be created outside of the _App_Plugins_ folder, thus being retained following a _dotnet clean_ (V9 only). [#13](https://github.com/umbraco/Umbraco.Forms.Issues/issues/13)
 * Added fallback to default configured Simple Mail Transfer Protocol (SMTP) sender address (V9 only). [#676](https://github.com/umbraco/Umbraco.Forms.Issues/issues/676)
 * Fixed casing issue referencing default theme stylesheet (V9 only) [#680](https://github.com/umbraco/Umbraco.Forms.Issues/issues/680)
+* Fixed casing issues causing issues with running on Linux [#680](https://github.com/umbraco/Umbraco.Forms.Issues/issues/680) [#682](https://github.com/umbraco/Umbraco.Forms.Issues/issues/682)
+* Added support for V8 syntax for the remote address placeholder [#685](https://github.com/umbraco/Umbraco.Forms.Issues/issues/685)
 
 ### [9.1.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.1.1) (November 23rd 2021)
 
@@ -518,11 +494,6 @@ In the below section, you can find the release notes for each major version of U
 * Fixed issue with member field replacements (V9 only) [#674](https://github.com/umbraco/Umbraco.Forms.Issues/issues/674)
 
 ### [9.1.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.1.0) (November 16th 2021)
-
-* All updates listed under 8.9.0-rc001 and 9.1.0-rc001.
-* Fixed copy form dialog (v9) [#669](https://github.com/umbraco/Umbraco.Forms.Issues/issues/669)
-
-### [9.1.0-rc001](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.1.0) (November 2nd 2021)
 
 * Conditional display of "submit" or "next/previous" buttons [#18](https://github.com/umbraco/Umbraco.Forms.Issues/issues/18)
 * Include form details in "Sent to URL" workflow [#569](https://github.com/umbraco/Umbraco.Forms.Issues/issues/569)
@@ -541,6 +512,7 @@ In the below section, you can find the release notes for each major version of U
 * Added a field-type property to hide the mandatory option where it’s not appropriate (that is where there’s no expected user input) [#665](https://github.com/umbraco/Umbraco.Forms.Issues/issues/665)
 * Ensured consistent ordering of setting fields [#649](https://github.com/umbraco/Umbraco.Forms.Issues/issues/649) (V9 only)
 * Avoid clash of constants in field type views [#657](https://github.com/umbraco/Umbraco.Forms.Issues/issues/657)
+* Fixed copy form dialog (v9) [#669](https://github.com/umbraco/Umbraco.Forms.Issues/issues/669)
 
 ### [9.0.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.0.1) (October 12th 2021)
 
@@ -644,22 +616,6 @@ In the below section, you can find the release notes for each major version of U
 
 ### [8.13.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.13.0) (August 9th 2022)
 
-* All changes listed under 8.13.0-rc001, 9.5.0-rc001 and 10.1.0-rc001
-* Styling improvements to form and theme picker [#107](https://github.com/umbraco/Umbraco.Forms.Issues/issues/107) and [#814](https://github.com/umbraco/Umbraco.Forms.Issues/issues/814)
-* Mark-up changes for accessibility of button elements [#383](https://github.com/umbraco/Umbraco.Forms.Issues/issues/383)
-* Removed elements types from prevalue source options [#805](https://github.com/umbraco/Umbraco.Forms.Issues/issues/805)
-* Fixed styling and color of Confirm overlay for fieldsets and fields [#808](https://github.com/umbraco/Umbraco.Forms.Issues/issues/808)
-* Added show/hide label option to data consent and text/description fields [#810](https://github.com/umbraco/Umbraco.Forms.Issues/issues/810), [#823](https://github.com/mbraco/Umbraco.Forms.Issues/issues/823), and [#810](https://github.com/umbraco/Umbraco.Forms.Issues/issues/810)
-* Fixed issue with duplication of magic string replacement [#811](https://github.com/umbraco/Umbraco.Forms.Issues/issues/811)
-* Ensured field references in copied forms are updated to the new fields [#815](https://github.com/umbraco/Umbraco.Forms.Issues/issues/815)
-* Fixed validation of mandatory date field [#817](https://github.com/umbraco/Umbraco.Forms.Issues/issues/817)
-* Added tag option for text/description field type [#821](https://github.com/umbraco/Umbraco.Forms.Issues/issues/821)
-* Added additional input type options to text field type [#825](https://github.com/umbraco/Umbraco.Forms.Issues/issues/825)
-* Restored open/edit options to form picker preview [#827](https://github.com/umbraco/Umbraco.Forms.Issues/issues/827)
-* Improved performance of permission-related queries [#827](https://github.com/umbraco/Umbraco.Forms.Issues/issues/827) (raised in discussion)
-
-### [8.13.0-rc001](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.13.0) (July 12th 2022)
-
 * Added workflow audit trail.
 * Added workflow retry option.
 * Added option to customize the behavior of default workflows, including mandatory workflows [#654](https://github.com/umbraco/Umbraco.Forms.Issues/issues/654)
@@ -680,6 +636,18 @@ In the below section, you can find the release notes for each major version of U
 * Fixed issue with console request for client validation script source map. [#796](https://github.com/umbraco/Umbraco.Forms.Issues/issues/796)
 * Fixed issue with reCAPTCHA V3 field type. [#799](https://github.com/umbraco/Umbraco.Forms.Issues/issues/799)
 * Added a missing translation [#804](https://github.com/umbraco/Umbraco.Forms.Issues/issues/804​)
+* Styling improvements to form and theme picker [#107](https://github.com/umbraco/Umbraco.Forms.Issues/issues/107) and [#814](https://github.com/umbraco/Umbraco.Forms.Issues/issues/814)
+* Mark-up changes for accessibility of button elements [#383](https://github.com/umbraco/Umbraco.Forms.Issues/issues/383)
+* Removed elements types from prevalue source options [#805](https://github.com/umbraco/Umbraco.Forms.Issues/issues/805)
+* Fixed styling and color of Confirm overlay for fieldsets and fields [#808](https://github.com/umbraco/Umbraco.Forms.Issues/issues/808)
+* Added show/hide label option to data consent and text/description fields [#810](https://github.com/umbraco/Umbraco.Forms.Issues/issues/810), [#823](https://github.com/mbraco/Umbraco.Forms.Issues/issues/823), and [#810](https://github.com/umbraco/Umbraco.Forms.Issues/issues/810)
+* Fixed issue with duplication of magic string replacement [#811](https://github.com/umbraco/Umbraco.Forms.Issues/issues/811)
+* Ensured field references in copied forms are updated to the new fields [#815](https://github.com/umbraco/Umbraco.Forms.Issues/issues/815)
+* Fixed validation of mandatory date field [#817](https://github.com/umbraco/Umbraco.Forms.Issues/issues/817)
+* Added tag option for text/description field type [#821](https://github.com/umbraco/Umbraco.Forms.Issues/issues/821)
+* Added additional input type options to text field type [#825](https://github.com/umbraco/Umbraco.Forms.Issues/issues/825)
+* Restored open/edit options to form picker preview [#827](https://github.com/umbraco/Umbraco.Forms.Issues/issues/827)
+* Improved performance of permission-related queries [#827](https://github.com/umbraco/Umbraco.Forms.Issues/issues/827) (raised in discussion)
 
 ### [8.12.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.12.2) (June 7th 2022)
 
@@ -694,12 +662,6 @@ In the below section, you can find the release notes for each major version of U
 * Fixed issue with immediate edit of form created by non-admin user [#764](https://github.com/umbraco/Umbraco.Forms.Issues/issues/764)
 
 ### [8.12.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.12.0) (April 26th 2022)
-
-* All changes listed under 8.12.0-rc001 and 9.4.0-rc001
-* Fix the issue with using the export to Excel feature on Linux [#761](https://github.com/umbraco/Umbraco.Forms.Issues/issues/761)
-* Fixed issue with saving forms when storing definitions on disk [#762](https://github.com/umbraco/Umbraco.Forms.Issues/issues/762)
-
-### [8.12.0-rc001](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.12.0) (April 12th 2022)
 
 * Added support for start folder configuration at user group level [#749](https://github.com/umbraco/Umbraco.Forms.Issues/issues/749)
 * Import/export of forms (V9 only) [#576](https://github.com/umbraco/Umbraco.Forms.Issues/issues/576)
@@ -723,15 +685,10 @@ In the below section, you can find the release notes for each major version of U
 * Fixed issue with access to forms in folders for users with a single start folder defined. [#759](https://github.com/umbraco/Umbraco.Forms.Issues/issues/759)
 * Fixed issue with access to previously created forms for non-admin users. [#764](https://github.com/umbraco/Umbraco.Forms.Issues/issues/764)
 * Resolves issue where an authenticated user with access to Forms can enumerate permissions related to forms access for other users.
+* Fix the issue with using the export to Excel feature on Linux [#761](https://github.com/umbraco/Umbraco.Forms.Issues/issues/761)
+* Fixed issue with saving forms when storing definitions on disk [#762](https://github.com/umbraco/Umbraco.Forms.Issues/issues/762)
 
 ### [8.11.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.11.0) (March 8th 2022)
-
-* All changes listed under 8.11.0-rc001 and 9.3.0-rc001
-* Fixed issue with clean on already cleaned project (V9 only) [#732](https://github.com/umbraco/Umbraco.Forms.Issues/issues/732)
-* Resolved client-side error when the jquery unobtrusive dependency is missing [#734](https://github.com/umbraco/Umbraco.Forms.Issues/issues/734)
-* Fixed two typos in label [#727](https://github.com/umbraco/Umbraco.Forms.Issues/issues/727)
-
-### [8.11.0-rc001](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.11.0) (February 15th 2022)
 
 * Config for control over user access to new forms [#12](https://github.com/umbraco/Umbraco.Forms.Issues/issues/12)
 * Management of form permissions by user group [#19](https://github.com/umbraco/Umbraco.Forms.Issues/issues/19)
@@ -746,6 +703,9 @@ In the below section, you can find the release notes for each major version of U
 * Fixed null reference in backoffice user check for retrieving records outside of a backoffice request [#724](https://github.com/umbraco/Umbraco.Forms.Issues/issues/724)
 * Fixed case insensitive view name under forms security (V9 only) [#725](https://github.com/umbraco/Umbraco.Forms.Issues/issues/725)
 * Additional translations for localized backoffice: Czech and Danish.
+* Fixed issue with clean on already cleaned project (V9 only) [#732](https://github.com/umbraco/Umbraco.Forms.Issues/issues/732)
+* Resolved client-side error when the jquery unobtrusive dependency is missing [#734](https://github.com/umbraco/Umbraco.Forms.Issues/issues/734)
+* Fixed two typos in label [#727](https://github.com/umbraco/Umbraco.Forms.Issues/issues/727)
 
 ### [8.10.3](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.10.3) (February 15th 2022)
 
@@ -776,12 +736,6 @@ In the below section, you can find the release notes for each major version of U
 
 ### [8.10.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.10.0) (December 21st 2021)
 
-* All updates listed under 8.10.0-rc001 and 9.2.0-rc001.
-* Fixed casing issues causing issues with running on Linux [#680](https://github.com/umbraco/Umbraco.Forms.Issues/issues/680) [#682](https://github.com/umbraco/Umbraco.Forms.Issues/issues/682)
-* Added support for V8 syntax for the remote address placeholder [#685](https://github.com/umbraco/Umbraco.Forms.Issues/issues/685)
-
-### [8.10.0-rc001](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.10.0) (December 7th 2021)
-
 * Localized backoffice for the Forms section [#267](https://github.com/umbraco/Umbraco.Forms.Issues/issues/267)
 * Added support for content apps alongside forms [#653](https://github.com/umbraco/Umbraco.Forms.Issues/issues/653)
 * Additional settings for text fields
@@ -793,6 +747,8 @@ In the below section, you can find the release notes for each major version of U
 * Completed support for client-side views to be created outside of the _App_Plugins_ folder, thus being retained following a _dotnet clean_ (V9 only). [#13](https://github.com/umbraco/Umbraco.Forms.Issues/issues/13)
 * Added fallback to default configured Simple Mail Transfer Protocol (SMTP) sender address (V9 only). [#676](https://github.com/umbraco/Umbraco.Forms.Issues/issues/676)
 * Fixed casing issue referencing default theme stylesheet (V9 only) [#680](https://github.com/umbraco/Umbraco.Forms.Issues/issues/680)
+* Fixed casing issues causing issues with running on Linux [#680](https://github.com/umbraco/Umbraco.Forms.Issues/issues/680) [#682](https://github.com/umbraco/Umbraco.Forms.Issues/issues/682)
+* Added support for V8 syntax for the remote address placeholder [#685](https://github.com/umbraco/Umbraco.Forms.Issues/issues/685)
 
 ### [8.9.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.9.1) (November 23rd 2021)
 
@@ -800,11 +756,6 @@ In the below section, you can find the release notes for each major version of U
 * Fixed issue with member field replacements (V9 only) [#674](https://github.com/umbraco/Umbraco.Forms.Issues/issues/674)
 
 ### [8.9.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.9.0) (November 16th 2021)
-
-* All updates listed under 8.9.0-rc001 and 9.1.0-rc001.
-* Fixed copy form dialog (v9) [#669](https://github.com/umbraco/Umbraco.Forms.Issues/issues/669)
-
-### [8.9.0-rc001](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.9.0) (November 2nd 2021)
 
 * Conditional display of "submit" or "next/previous" buttons [#18](https://github.com/umbraco/Umbraco.Forms.Issues/issues/18)
 * Include form details in "Sent to URL" workflow [#569](https://github.com/umbraco/Umbraco.Forms.Issues/issues/569)
@@ -823,17 +774,9 @@ In the below section, you can find the release notes for each major version of U
 * Added a field-type property to hide the mandatory option where it’s not appropriate (that is where there’s no expected user input) [#665](https://github.com/umbraco/Umbraco.Forms.Issues/issues/665)
 * Ensured consistent ordering of setting fields [#649](https://github.com/umbraco/Umbraco.Forms.Issues/issues/649) (V9 only)
 * Avoid clash of constants in field type views [#657](https://github.com/umbraco/Umbraco.Forms.Issues/issues/657)
+* Fixed copy form dialog (v9) [#669](https://github.com/umbraco/Umbraco.Forms.Issues/issues/669)
 
 ### [8.8.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.8.0) (September 14th 2021)
-
-* All updates listed for 8.8.0-rc001
-* Better handle deleted form when the content linked to that form [#635](https://github.com/umbraco/Umbraco.Forms.Issues/issues/635)
-* Fixed issue with re-submitted edited form records that include file uploads [#632](https://github.com/umbraco/Umbraco.Forms.Issues/issues/632)
-* Added validation message when a file upload is configured to accept no file types [#631](https://github.com/umbraco/Umbraco.Forms.Issues/issues/631)
-* Updated styling of form page and group titles to better indicate that they are editable [#636](https://github.com/umbraco/Umbraco.Forms.Issues/issues/636)
-* Fix for incorrect validation of mandatory file upload fields [#110](https://github.com/umbraco/Umbraco.Forms.Issues/issues/110)
-
-### [8.8.0-rc001](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.8.0) (August 19th 2021)
 
 * Structure forms in folder [#75](https://github.com/umbraco/Umbraco.Forms.Issues/issues/75)
 * Fixed conditional field value being recorded when conditions are not met [#292](https://github.com/umbraco/Umbraco.Forms.Issues/issues/292)
@@ -850,6 +793,11 @@ In the below section, you can find the release notes for each major version of U
 * Ensured workflow settings updates were saved only when submitting and not closing dialog [#613](https://github.com/umbraco/Umbraco.Forms.Issues/issues/613)
 * Fixed issue with conditional fields when forms are copied [#624](https://github.com/umbraco/Umbraco.Forms.Issues/issues/624)
 * Fixed issue with settings validation of prevalues with custom field types [#627](https://github.com/umbraco/Umbraco.Forms.Issues/issues/627)
+* Better handle deleted form when the content linked to that form [#635](https://github.com/umbraco/Umbraco.Forms.Issues/issues/635)
+* Fixed issue with re-submitted edited form records that include file uploads [#632](https://github.com/umbraco/Umbraco.Forms.Issues/issues/632)
+* Added validation message when a file upload is configured to accept no file types [#631](https://github.com/umbraco/Umbraco.Forms.Issues/issues/631)
+* Updated styling of form page and group titles to better indicate that they are editable [#636](https://github.com/umbraco/Umbraco.Forms.Issues/issues/636)
+* Fix for incorrect validation of mandatory file upload fields [#110](https://github.com/umbraco/Umbraco.Forms.Issues/issues/110)
 
 ### 8.0.2, 8.1.6, 8.2.3, 8.3.4, 8.4.4, 8.5.7, 8.6.2, 8.7.6 (July 20th 2021)
 
@@ -985,7 +933,7 @@ Breaking changes:
 
 * In introducing CC and BCC email addresses for workflow-based email sending (#457), we've needed to add a new method to _IWorkflowEmailService_. If anyone has a custom implementation of this interface, it will need to be amended to implement this new method.
 
-<details>
+</details>
 
 <details>
 
