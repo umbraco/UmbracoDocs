@@ -10,7 +10,7 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 
 In the below section, you can find the release notes for each major version of Umbraco Deploy.
 
-Under each dropdown for the major versions, you can find details about each new minor versions released for the specific major.
+Under each major version, you can find details about minor and patch releases for the specific major.
 
 <details>
 
