@@ -16,7 +16,7 @@ Under each dropdown for the major versions, you can find details about each new 
 
 <summary>Umbraco Deploy Version 11</summary>
 
-### [Deploy 11.0.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.2) (February 14th 2023)
+### [11.0.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.2) (February 14th 2023)
 
 *   Applied various updates to improve performance and reduce likelihood of timeouts when transferring or restoring items in bulk [#128](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/128) [#152](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/152) [#148](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/148) [#110](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/110) [#106](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/106)
     *   Added a task to set signatures via the backoffice settings dashboard, ensuring these are calculated and cached before a restore is commenced.
