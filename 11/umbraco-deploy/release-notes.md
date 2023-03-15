@@ -37,7 +37,7 @@ Under each major version, you can find details about minor and patch releases fo
 
 <details>
 
-<summary>Umbraco Deploy Version 10</summary>
+<summary>Version 10</summary>
 
 ### [10.1.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.2) (November 15th 2022)
 
