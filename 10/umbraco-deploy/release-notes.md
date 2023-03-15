@@ -14,29 +14,6 @@ Under each major version, you can find details about minor and patch releases fo
 
 <details>
 
-<summary>Version 11</summary>
-
-### [11.0.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.2) (February 14th 2023)
-
-*   Applied various updates to improve performance and reduce likelihood of timeouts when transferring or restoring items in bulk [#128](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/128) [#152](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/152) [#148](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/148) [#110](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/110) [#106](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/106)
-    *   Added a task to set signatures via the backoffice settings dashboard, ensuring these are calculated and cached before a restore is commenced.
-    *   Provided a configuration option to allow for use of the media file metadata instead of file contents when calculating a checksum.
-    *   Made a new default behaviour which can be tweaked via configuration, of loading all relations into memory once we know we are processing a lot of artifact signatures, and doing look-ups for the relations for each entity from there.
-    *   Optimised the retrieval of relations ensuring excluded relation types aren't retrieved and then filtered in memory.
-    *   Updated the default configuration to exclude the document/media "dependency" relations that were introduced in an earlier minor version of Umbraco 10, and aren't required for including in deployment operations.
-    *   Added a configuration value to allow skipping of "path too long" exceptions with media files (so the media item will be created, but with no file attached).
-    *   Providing a custom message in the case of a hosting environment hard timeout with information and links to options for resolution.
-*   Fixed issue with the Forms add-on that wasn't transferring conditionals on pages or workflows, nor the "contains sensitive data" flag [#158](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/158) [#154](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/154)
-*   Fixed display of _IgnoreBrokenDependencies_ setting in the management dashboard (10+) [#151](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/151)
-*   Ensured schema files are not generated for member groups when configured to not export them [#150](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/150)
-*   Fixed display child nodes indicator for tree picker used for selecting items in the remote environment [#146](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/146)
-*   Added additional logging to indicate which item and pass causes a processing failure if and when one occurs [#144](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/144)
-*   Tidied up initialization markers [#102](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/102)
-  
-</details>
-
-<details>
-
 <summary>Umbraco Deploy Version 10</summary>
 
 ### [10.1.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.2) (November 15th 2022)
