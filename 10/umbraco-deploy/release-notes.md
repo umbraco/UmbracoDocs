@@ -421,7 +421,13 @@ Under each dropdown for the major versions, you can find details about each new 
 </details>
 
 
-## Deploy Contrib
+## [Deploy Contrib](https://github.com/umbraco/Umbraco.Deploy.Contrib)
+
+{% hint style="info" %}
+Deploy Contrib contains community contributions for Umbraco Deploy targetted for version 8 and above.
+
+It offers connectors for the most popular Umbraco community packages. These are used by Deploy to aid with the deployment and transferring of content/property-data between environments.
+{% endhint %}
 
 ### Deploy Contrib 11.0.1 (February 14th 2023)
 
