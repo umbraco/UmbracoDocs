@@ -909,10 +909,6 @@ In the below section, you can find the release notes for each major version of U
 * Tidied up styling on the form picker [#219](https://github.com/umbraco/Umbraco.Forms.Issues/issues/219)
 * Tidied up styling on the form security page [#380](https://github.com/umbraco/Umbraco.Forms.Issues/issues/380)
 * Better error messaging on unsupported migrations [#455](https://github.com/umbraco/Umbraco.Forms.Issues/issues/455)
-
-Breaking changes:
-
-* In introducing CC and BCC email addresses for workflow-based email sending (#457), we've needed to add a new method to _IWorkflowEmailService_. If anyone has a custom implementation of this interface, it will need to be amended to implement this new method.
 * Use the range slider component in reCAPTCHA v3 [#507](https://github.com/umbraco/Umbraco.Forms.Issues/issues/507)
 * Use toggle for enabled/disabled settings [#508](https://github.com/umbraco/Umbraco.Forms.Issues/issues/508)
 * Ensure overlays close with Esc key [#509](https://github.com/umbraco/Umbraco.Forms.Issues/issues/509)
@@ -928,6 +924,10 @@ Breaking changes:
 * Sanitize for field names when the sort option is provided in the backoffice record filter request.
 * Applied fix for an issue with conditionals that are not on the first page [#462](https://github.com/umbraco/Umbraco.Forms.Issues/issues/462)
 * Resolved issues with conditional logic - [#273](https://github.com/umbraco/Umbraco.Forms.Issues/issues/273) and [#522](https://github.com/umbraco/Umbraco.Forms.Issues/issues/522)
+
+Breaking changes:
+
+* In introducing CC and BCC email addresses for workflow-based email sending (#457), we've needed to add a new method to _IWorkflowEmailService_. If anyone has a custom implementation of this interface, it will need to be amended to implement this new method.
 
 </details>
 
