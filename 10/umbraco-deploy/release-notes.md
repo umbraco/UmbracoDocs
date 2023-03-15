@@ -14,7 +14,7 @@ Under each major version, you can find details about minor and patch releases fo
 
 <details>
 
-<summary>Umbraco Deploy Version 11</summary>
+<summary>Version 11</summary>
 
 ### [11.0.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.2) (February 14th 2023)
 
@@ -100,7 +100,7 @@ Under each major version, you can find details about minor and patch releases fo
 
 <details>
 
-<summary>Umbraco Deploy Version 9</summary>
+<summary>Version 9</summary>
 
 ### [9.5.3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.5.3) (February 14th 2023)
 
@@ -229,7 +229,7 @@ Under each major version, you can find details about minor and patch releases fo
 
 <details>
 
-<summary>Umbraco Deploy Version 4</summary>
+<summary>Version 4</summary>
 
 ### [4.7.3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.7.3) (February 21st 2023)
 
@@ -401,7 +401,7 @@ Under each major version, you can find details about minor and patch releases fo
 
 <details>
 
-<summary>Umbraco Deploy Version 2</summary>
+<summary>Version 2</summary>
 
 ### [2.1.6](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.4.2) (January 11th 2022)
 

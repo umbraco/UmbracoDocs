@@ -8,13 +8,13 @@ We've listed here all changes going back to March 2021 for Deploy 4 and above. F
 
 ## Release History
 
-In the below section, you can find the release notes for each major version of Umbraco Deploy.
+In this article, you can find release notes for each release of Umbraco Deploy.
 
-Under each dropdown for the major versions, you can find details about each new minor versions released for the specific major.
+Under each major version, you can find details about minor and patch releases for the specific major.
 
 <details>
 
-<summary>Umbraco Deploy Version 11</summary>
+<summary>Version 11</summary>
 
 ### [11.0.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.2) (February 14th 2023)
 
@@ -100,7 +100,7 @@ Under each dropdown for the major versions, you can find details about each new 
 
 <details>
 
-<summary>Umbraco Deploy Version 9</summary>
+<summary>Version 9</summary>
 
 ### [9.5.3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.5.3) (February 14th 2023)
 
@@ -229,7 +229,7 @@ Under each dropdown for the major versions, you can find details about each new 
 
 <details>
 
-<summary>Umbraco Deploy Version 4</summary>
+<summary>Version 4</summary>
 
 ### [4.7.3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.7.3) (February 21st 2023)
 
@@ -401,7 +401,7 @@ Under each dropdown for the major versions, you can find details about each new 
 
 <details>
 
-<summary>Umbraco Deploy Version 2</summary>
+<summary>Version 2</summary>
 
 ### [2.1.6](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.4.2) (January 11th 2022)
 
