@@ -867,25 +867,6 @@ In the below section, you can find the release notes for each major version of U
 
 ### [8.7.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=label%3Arelease%2F8.7.0+is%3Aclosed) (Apr 6th 2021)
 
-* Changes from 8.7.0 RC
-* Use the range slider component in reCAPTCHA v3 [#507](https://github.com/umbraco/Umbraco.Forms.Issues/issues/507)
-* Use toggle for enabled/disabled settings [#508](https://github.com/umbraco/Umbraco.Forms.Issues/issues/508)
-* Ensure overlays close with Esc key [#509](https://github.com/umbraco/Umbraco.Forms.Issues/issues/509)
-* Aligned caret in conditions overlay [#510](https://github.com/umbraco/Umbraco.Forms.Issues/issues/510)
-* Removed use of turquoise color [#511](https://github.com/umbraco/Umbraco.Forms.Issues/issues/511)
-* Added clear line between conditions [#512](https://github.com/umbraco/Umbraco.Forms.Issues/issues/512)
-* Prevented addition of empty file extension on file upload [#516](https://github.com/umbraco/Umbraco.Forms.Issues/issues/516)
-* Improved UI for file upload types [#517](https://github.com/umbraco/Umbraco.Forms.Issues/issues/517)
-* Prevented password managers acting on form group and page name fields [#518](https://github.com/umbraco/Umbraco.Forms.Issues/issues/518)
-* Updated styling on re-order button [#519](https://github.com/umbraco/Umbraco.Forms.Issues/issues/519)
-* Set upper limit on the number of columns in form group [#520](https://github.com/umbraco/Umbraco.Forms.Issues/issues/520)
-* Updated reCAPTCHA v3 to function on submit buttons as well as inputs [#521](https://github.com/umbraco/Umbraco.Forms.Issues/issues/521)
-* Sanitize for field names when the sort option is provided in the backoffice record filter request.
-* Applied fix for an issue with conditionals that are not on the first page [#462](https://github.com/umbraco/Umbraco.Forms.Issues/issues/462)
-* Resolved issues with conditional logic - [#273](https://github.com/umbraco/Umbraco.Forms.Issues/issues/273) and [#522](https://github.com/umbraco/Umbraco.Forms.Issues/issues/522)
-
-### [8.7.0 (RC)](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=label%3Arelease%2F8.7.0+is%3Aclosed) (Mar 23rd 2021)
-
 * Addition of database integrity constraints and introduction of healthcheck for verification [#475](https://github.com/umbraco/Umbraco.Forms.Issues/issues/475)
 * Created a new Recaptcha3 field type [#455](https://github.com/umbraco/Umbraco.Forms.Issues/issues/455)
 * Added a new Slack workflow type using the currently supported method for integration [#482](https://github.com/umbraco/Umbraco.Forms.Issues/issues/482)
@@ -932,6 +913,21 @@ In the below section, you can find the release notes for each major version of U
 Breaking changes:
 
 * In introducing CC and BCC email addresses for workflow-based email sending (#457), we've needed to add a new method to _IWorkflowEmailService_. If anyone has a custom implementation of this interface, it will need to be amended to implement this new method.
+* Use the range slider component in reCAPTCHA v3 [#507](https://github.com/umbraco/Umbraco.Forms.Issues/issues/507)
+* Use toggle for enabled/disabled settings [#508](https://github.com/umbraco/Umbraco.Forms.Issues/issues/508)
+* Ensure overlays close with Esc key [#509](https://github.com/umbraco/Umbraco.Forms.Issues/issues/509)
+* Aligned caret in conditions overlay [#510](https://github.com/umbraco/Umbraco.Forms.Issues/issues/510)
+* Removed use of turquoise color [#511](https://github.com/umbraco/Umbraco.Forms.Issues/issues/511)
+* Added clear line between conditions [#512](https://github.com/umbraco/Umbraco.Forms.Issues/issues/512)
+* Prevented addition of empty file extension on file upload [#516](https://github.com/umbraco/Umbraco.Forms.Issues/issues/516)
+* Improved UI for file upload types [#517](https://github.com/umbraco/Umbraco.Forms.Issues/issues/517)
+* Prevented password managers acting on form group and page name fields [#518](https://github.com/umbraco/Umbraco.Forms.Issues/issues/518)
+* Updated styling on re-order button [#519](https://github.com/umbraco/Umbraco.Forms.Issues/issues/519)
+* Set upper limit on the number of columns in form group [#520](https://github.com/umbraco/Umbraco.Forms.Issues/issues/520)
+* Updated reCAPTCHA v3 to function on submit buttons as well as inputs [#521](https://github.com/umbraco/Umbraco.Forms.Issues/issues/521)
+* Sanitize for field names when the sort option is provided in the backoffice record filter request.
+* Applied fix for an issue with conditionals that are not on the first page [#462](https://github.com/umbraco/Umbraco.Forms.Issues/issues/462)
+* Resolved issues with conditional logic - [#273](https://github.com/umbraco/Umbraco.Forms.Issues/issues/273) and [#522](https://github.com/umbraco/Umbraco.Forms.Issues/issues/522)
 
 </details>
 
