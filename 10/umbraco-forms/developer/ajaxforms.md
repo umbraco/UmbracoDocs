@@ -26,6 +26,8 @@ The GET request requires the Guid identifying the form.
 
 An optional `contentId` parameter can be provided, which can either be the integer or GUID identifier for the current page. If provided, the content item identified will be used for Forms features requiring information from the page the form is hosted on. This includes the parsing of ["magic string" placeholders](magic-strings.md).
 
+A `culture` paramater can also be provided, expected as an ISO code identifying a language used in the Umbraco installation (for exampple, `en-US`). This will be used to ensure the correct translation for dictionary keys is used. It will also retrieve page content from the appropriate language variant. If the parameter is not provided in the request, the default Umbraco language will be used.
+
 If the requested form is not found, a 404 status code will be returned.
 
 A successful request will return a 200 status code. An example response is as follows. It will differ depending on the pages, fields and other settings available for the form.
@@ -49,6 +51,7 @@ A successful request will return a 200 status code. An example response is as fo
                     "columns": [
                         {
                             "caption": "",
+                            "width": 12,
                             "fields": [
                                 {
                                     "alias": "name",
@@ -333,21 +336,22 @@ It also requires a `Content-Type` header of `application/json` and accepts a bod
 
 ```json
 {
-  "values": {
-      "name": "Fred",
-      "email": "fred@test.com",
-      "comment": "Test",
-      "country": "it",
-      "favouriteColours": ["red", "green"],
-      "dataConsent": "on"
-  },
-  "contentId": "ca4249ed-2b23-4337-b522-63cabe5587d1"
+    "values": {
+        "name": "Fred",
+        "email": "fred@test.com",
+        "comment": "Test",
+        "country": "it",
+        "favouriteColours": ["red", "green"],
+        "dataConsent": "on"
+    },
+    "contentId": "ca4249ed-2b23-4337-b522-63cabe5587d1",
+    "culture": "en-US"
 }
 ```
 
 The `values` collection consists of a set of name/value pairs, where the name is the alias of a form field. The value is the value of the submitted field, which can either be a string, or an array of strings. In this way we support fields that accept multiple values, such as checkbox lists.
 
-The `contentId` is optional, and if provided will be used to customize the response for the current page.
+The `contentId` and `culture` is optional, and if provided will be used to customize the response for the current page and language respectively.
 
 In the case of a validation error, a 422 "Unprocessable Entity" status code will be returned, along with a response similar to the following:
 
