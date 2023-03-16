@@ -4,6 +4,10 @@ In this section, we have summarized the changes to Umbraco Forms released in eac
 
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
+{% hint style="info" %}
+If you are upgrading to a new major version, you can find information about the breaking changes in the [Version Specific Upgrade Notes](installation/version-specific.md) article
+{% endhint %}
+
 We've listed here all the changes going back to 2021 for Forms. For details of releases before this date or older versions, refer to the [Umbraco Forms Package page](https://our.umbraco.com/packages/developer-tools/umbraco-forms/).
 
 ## Release History
