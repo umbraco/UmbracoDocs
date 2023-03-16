@@ -4,7 +4,7 @@ In this section, we have summarized the changes to Umbraco Forms released in eac
 
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
-We've listed here all changes going back to March 2021 for Forms 8 and above. For details of releases before this date or older versions, refer to the [Umbraco Forms Package page](https://our.umbraco.com/packages/developer-tools/umbraco-forms/).
+We've listed here all the changes going back to 2021 for Forms. For details of releases before this date or older versions, refer to the [Umbraco Forms Package page](https://our.umbraco.com/packages/developer-tools/umbraco-forms/).
 
 ## Release History
 
