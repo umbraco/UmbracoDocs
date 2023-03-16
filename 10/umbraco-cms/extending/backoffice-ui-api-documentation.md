@@ -6,6 +6,14 @@ versionFrom: 10.0.0
 
 A library of API Reference documentation is auto-generated from the comments within the Umbraco Source Code.
 
+{% hint style="info" %}
+A new backoffice for Umbraco CMS is currently being worked on. It is planned for release with Umbraco 13 i December of 2023.
+
+We have gathered all information and resources about the project in one place, giving you a full overview of what we're working on. You will also be able to find information about how to get involved in the project.
+
+You can find it all on [docs.umbraco.com/umbraco-backoffice](https://docs.umbraco.com/umbraco-backoffice).
+{% endhint %}
+
 ## [Backoffice UI](https://apidocs.umbraco.com/v10/ui)
 
 Angular, JavaScript, CSS & Less UI API references for building Umbraco backoffice components. V10 is using minified versions of the following files:
