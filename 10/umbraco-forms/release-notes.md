@@ -749,9 +749,9 @@ In this section, you can find the release notes for each major version of Umbrac
 * Displayed visual indicator of conditions applied to form groups [#590](https://github.com/umbraco/Umbraco.Forms.Issues/issues/590)
 * Handled escaping of pre-values with apostrophes when used in conditions [#456](https://github.com/umbraco/Umbraco.Forms.Issues/issues/456)
 
-   {% hint style="info" %}
-   This change has required a minor amendment to the Script.cshtml partial view. So if you've modified this in your installation, don't copy over from the update. You should review it to ensure you apply the update.
-   {% endhint %}
+{% hint style="info" %}
+This change has required a minor amendment to the Script.cshtml partial view. So if you've modified this in your installation, don't copy over from the update. You should review it to ensure you apply the update.
+{% endhint %}
 
 * Added script attributes to avoid incompatibility issues with vuejs [#311](https://github.com/umbraco/Umbraco.Forms.Issues/issues/311)
 * Fixed reCAPTCHA v3 slider issue when the score threshold was set to the value of 0
