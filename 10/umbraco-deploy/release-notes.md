@@ -168,7 +168,7 @@ Under each major version, you can find details about minor and patch releases fo
 ### [9.3.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.3.0) (February 15th 2022)
 
 *   Content comparison dialog [#65](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/65)
-*   backoffice deployment of members and member groups.
+*   Backoffice deployment of members and member groups.
 *   Fixed bug with deployments of templates involving alias renames
 
 ### [9.2.3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.2.3) (February 15th 2022)
