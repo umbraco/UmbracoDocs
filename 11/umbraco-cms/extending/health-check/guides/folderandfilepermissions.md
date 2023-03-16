@@ -8,7 +8,7 @@ This health check can be fixed by ensuring that the process running Umbraco also
 
 ### Updating the file permissions on Windows
 
-Here's an example of how to adjust permissions for a folder. This process works the same way for files too.
+Here's an example of how to adjust permissions for a folder. This process works the same way for files.
 
 First we see an example of an error from the health check
 
