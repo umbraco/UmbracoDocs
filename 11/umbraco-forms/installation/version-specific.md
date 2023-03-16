@@ -2,6 +2,10 @@
 
 This page covers specific upgrade documentation for specific versions.
 
+{% hint style="info" %}
+If you are upgrading to a new minor or patch version, you can find information about the breaking changes in the [Release Notes](../release-notes.md) article.
+{% endhint %}
+
 <details>
 
 <summary>Version 11</summary>
