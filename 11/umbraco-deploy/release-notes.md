@@ -451,7 +451,7 @@ It offers connectors for the most popular Umbraco community packages. These are 
 ### Deploy Contrib 4.2.0, 9.1.0 and 10.1.0 (September 7th 2022)
 
 *   Used caching in value connectors to improve performance.
-*   Fixed issue with transfer of nested content string values using item templates (i.e. commencing with "{{") that were erroneously considered as JSON.
+*   Fixed issue with transfer of nested content string values using item templates (for example commencing with "{{") that were erroneously considered as JSON.
 
 ### Deploy Contrib 4.1.2, 9.0.2, 10.0.1 (July 12th 2022)
 
