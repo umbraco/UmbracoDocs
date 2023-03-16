@@ -8,7 +8,7 @@ We've listed here all changes going back to March 2021 for Forms 8 and above. Fo
 
 ## Release History
 
-In this section, you can find the release notes for each major version of Umbraco Forms. Under each major versions dropdown, you can find the details about each minor versions releases.
+In this section, you can find the release notes for each version of Umbraco Forms. For each major version, you can find the details about each release.
 
 <details>
 
