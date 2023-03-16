@@ -6,6 +6,10 @@ description: "Version specific documentation for upgrading to new major versions
 
 This page covers specific upgrade documentation for when migrating to a new major of Umbraco Deploy.
 
+{% hint style="info" %}
+If you are upgrading to a new minor version you can find the details about the changes in the [release notes](/11/umbraco-deploy/release-notes.md) article
+{% endhint %}
+
 ## Version 11
 
 Version 11 of Umbraco Deploy has a minimum dependency on Umbraco CMS core of `11.0.0`. It runs on .NET 7.
