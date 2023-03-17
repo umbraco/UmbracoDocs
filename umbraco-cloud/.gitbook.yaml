@@ -19,6 +19,7 @@ redirects:
     set-up/manage-subscriptions: set-up/manage-subscriptions/README.md
     upgrades/migrate-from-umbraco-10-to-11: product-upgrades/major-upgrades.md
     product-upgrades/migrate-a-umbraco-8-project-to-umbraco-10: product-upgrades/version-specific-upgrades/migrate-from-8-to-latest.md
+    upgrades/migrating-from-8-to-10: 
     product-upgrades/version-specific-upgrades/migrate-a-umbraco-8-project-to-umbraco-10: product-upgrades/version-specific-upgrades/migrate-from-8-to-latest.md
     release-notes/2022-01-06-releasenotes: release-notes/overview-2022/2022-01-06-releasenotes.md
     release-notes/2022-02-15-releasenotes: release-notes/overview-2022/2022-02-15-releasenotes.md
