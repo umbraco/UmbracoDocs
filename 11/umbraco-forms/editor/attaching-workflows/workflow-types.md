@@ -48,7 +48,7 @@ Saves the result of the Form as an XML file by using XSLT. The following configu
 The path needs to point to a folder, not a file name. The files are then stored locally, and relative paths are resolved to the content root.
 
 {% hint style="info" %}
-If you store the files within the wwwroot or App_Plugins folders, this will make the files publicly available by default.
+When storing the files within the `wwwroot` or `App_Plugins` folders, the files will be publicly available by default.
 {% endhint %}
 
 ## **Save as Umbraco Content Node**
