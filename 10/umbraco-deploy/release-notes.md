@@ -20,6 +20,14 @@ Under each major version, you can find details about minor and patch releases fo
 
 <summary>Version 10</summary>
 
+### [10.1.4](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.4) (March 21st 2023)
+
+*   Fixed issue with transfer of form workflow's "sensitive data" property. [#159](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/159)
+*   Fixed issue with datatype not found on cache rebuild [#157](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/157)
+*   Resolved issue with progress bar initialization on partial restore dialog
+*   Handled file not found issue when calculating media file checksum using file metadata
+*   Avoided exception triggered by custom tree implementations that do not expose an alias [#160](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/160)
+
 ### [10.1.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.2) (November 15th 2022)
 
 * Added batch settings option providing resolution to large content or media transfers hitting Azure service limit [#128](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/128)
@@ -76,12 +84,18 @@ Under each major version, you can find details about minor and patch releases fo
 
 *   Compatibility with .NET 6 and Umbraco 10
 
-
 </details>
 
 <details>
 
 <summary>Version 9</summary>
+
+### [9.5.4](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.5.4) (March 21st 2023)
+
+*   Fixed issue with transfer of form workflow's "sensitive data" property. [#159](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/159)
+*   Fixed issue with datatype not found on cache rebuild [#157](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/157)
+*   Resolved issue with progress bar initialization on partial restore dialog
+*   Handled file not found issue when calculating media file checksum using file metadata
 
 ### [9.5.3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.5.3) (February 14th 2023)
 
@@ -182,7 +196,7 @@ Under each major version, you can find details about minor and patch releases fo
 *   Fixed issue with "live edit" component and scheduled publishing (V9 only) [#98](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/98)
 *   Amends to timing of file operation initialization to ensure third party components complete setup (V9 only).
 *   Added .NET 6 version of environment variable syntax for Umbraco Cloud configuration settings.
-  
+
 ### [9.2.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.2.1) (January 11th 2022)
 
 *   Fixed issue with clashing permission letter for "queue for transfer" menu option [#95](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/95)
@@ -211,6 +225,10 @@ Under each major version, you can find details about minor and patch releases fo
 <details>
 
 <summary>Version 4</summary>
+
+### [4.7.4](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.7.4) (March 21st 2023)
+
+*   Fixed issue with datatype not found on cache rebuild [#157](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/157)
 
 ### [4.7.3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.7.3) (February 21st 2023)
 
@@ -376,7 +394,7 @@ Under each major version, you can find details about minor and patch releases fo
 
 ### 4.0.1 (March 23rd 2021)
 
-*   Enabling Deploy 4 to work in new Cloud infrastructure  
+*   Enabling Deploy 4 to work in new Cloud infrastructure
 
 </details>
 
