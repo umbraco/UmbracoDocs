@@ -6,6 +6,7 @@
 * [Extending](extending.md)
 * [Troubleshooting](troubleshooting.md)
 * [Licensing](the-licensing-model.md)
+* [Release notes](release-notes.md)
 
 ## Getting Started
 
