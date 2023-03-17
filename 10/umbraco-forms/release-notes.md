@@ -18,6 +18,14 @@ In this section, you can find the release notes for each version of Umbraco Form
 
 <summary>Version 10</summary>
 
+### [10.3.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.0) (March 21st 2023)
+
+* All changes listed under 10.3.0-rc001
+* Fixed issue with encoding of setting values in workflows [#988](https://github.com/umbraco/Umbraco.Forms.Issues/issues/988)
+* Fixed issue with GetPrevalueMaps method used in email workflow and exports where we have two prevalue sources of the same type on the form [#990](https://github.com/umbraco/Umbraco.Forms.Issues/issues/990)
+* Exposed enabled property in conditions in API result and view model [#993](https://github.com/umbraco/Umbraco.Forms.Issues/issues/993)
+* Fixed issue with clearing of numeric setting values [#994](https://github.com/umbraco/Umbraco.Forms.Issues/issues/994)
+
 ### [10.3.0-rc001](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.0) (March 9th 2023)
 
 * Added form settings to allow for the configuration of which fields are shown in the entries view per form [#336](https://github.com/umbraco/Umbraco.Forms.Issues/issues/336)
