@@ -18,8 +18,12 @@ In this section, you can find the release notes for each version of Umbraco Form
 
 <summary>Version 11</summary>
 
-### [11.1.0-rc001](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.1.0) (March 9th 2023)
+### [11.1.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.1.0) (March 21st 2023)
 
+* Fixed issue with an encoding of setting values in workflows [#988](https://github.com/umbraco/Umbraco.Forms.Issues/issues/988)
+* Fixed issue with the GetPrevalueMaps method used in email workflow and exports where we have two prevalue sources of the same type on the form [#990](https://github.com/umbraco/Umbraco.Forms.Issues/issues/990)
+* Exposed enabled property in conditions in API result and view model [#993](https://github.com/umbraco/Umbraco.Forms.Issues/issues/993)
+* Fixed issue with the clearing of numeric setting values [#994](https://github.com/umbraco/Umbraco.Forms.Issues/issues/994)
 * Added form settings to allow for the configuration of which fields are shown in the entries view per form [#336](https://github.com/umbraco/Umbraco.Forms.Issues/issues/336)
 * Added rich text header and footer fields to Razor email workflow [#853](https://github.com/umbraco/Umbraco.Forms.Issues/issues/853)
 * Added option for rich text formatting in the message shown after form submission [#873](https://github.com/umbraco/Umbraco.Forms.Issues/issues/873)
@@ -79,8 +83,12 @@ In this section, you can find the release notes for each version of Umbraco Form
 
 <summary>Version 10</summary>
 
-### [10.3.0-rc001](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.0) (March 9th 2023)
+### [10.3.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.0) (March 21st 2023)
 
+* Fixed issue with an encoding of setting values in workflows [#988](https://github.com/umbraco/Umbraco.Forms.Issues/issues/988)
+* Fixed issue with the GetPrevalueMaps method used in email workflow and exports where we have two prevalue sources of the same type on the form [#990](https://github.com/umbraco/Umbraco.Forms.Issues/issues/990)
+* Exposed enabled property in conditions in API result and view model [#993](https://github.com/umbraco/Umbraco.Forms.Issues/issues/993)
+* Fixed issue with the clearing of numeric setting values [#994](https://github.com/umbraco/Umbraco.Forms.Issues/issues/994)
 * Added form settings to allow for the configuration of which fields are shown in the entries view per form [#336](https://github.com/umbraco/Umbraco.Forms.Issues/issues/336)
 * Added rich text header and footer fields to Razor email workflow [#853](https://github.com/umbraco/Umbraco.Forms.Issues/issues/853)
 * Added option for rich text formatting in the message shown after form submission [#873](https://github.com/umbraco/Umbraco.Forms.Issues/issues/873)

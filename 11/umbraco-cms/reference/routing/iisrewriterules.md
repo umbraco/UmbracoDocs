@@ -65,7 +65,7 @@ On Umbraco Cloud the item group needs to be set to `<CopyToPublishDirectory>Alwa
 * Another site showing some handy examples of IIS Rewrite rules: [Some useful IIS rewrite rules](https://odetocode.com/blogs/scott/archive/2014/03/27/some-useful-iis-rewrite-rules.aspx)
 * If you needed to a lot of static rewrites using rewrite maps: [Rule with rewrite map rule template](https://www.iis.net/learn/extensions/url-rewrite-module/rule-with-rewrite-map-rule-template)
 
-For example, to always remove a trailing slash from the URL (make sure Umbraco doesn't add a trailing slash to all generated URLs by setting `AddTrailingSlash` to `false` in your [RequestHandler settings](../../V9-Config/RequestHandlerSettings/index.md)):
+For example, to always remove a trailing slash from the URL (make sure Umbraco doesn't add a trailing slash to all generated URLs by setting `AddTrailingSlash` to `false` in your [RequestHandler settings](../configuration/requesthandlersettings.md)):
 
 ```xml
 <rule name="Remove trailing slash" stopProcessing="true">
