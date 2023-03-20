@@ -172,7 +172,10 @@ You can do this by right-clicking on **References** and selecting **Add Referenc
 
 ## Git - what should be committed
 
-When working with this solution setup it's important to remember that you have one git repository for your source code, and one within the `*.Web` folder for committing and deploying your changes to Umbraco Cloud.
+When working with this solution setup it's important to remember that you  are operating with two different git repositories:
+
+* One for your source code, and
+* One within the `*.Web` folder for committing and deploying your changes to Umbraco Cloud.
 
 The cloned git repository from Umbraco Cloud comes with its own `.gitignore` so files that should not be committed are already handled.
 
