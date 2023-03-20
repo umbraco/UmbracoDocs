@@ -94,7 +94,7 @@ This list defines the different types of macro parameters:
 
 In some case you want to have the macro in the middle of a sentence.
 
-![image](images/inline-macro-in-richtext.png)
+![Inline macros used multiple places inside a single Rich Text Editor](images/inline-macro-in-richtext.png)
 
 To enable editors to add the macro inline, follow these steps:
 
