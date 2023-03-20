@@ -103,7 +103,7 @@ To enable editors to add the macro inline, follow these steps:
 
 The next time you add the macro, enable the new parameter to add the macro inline.
 
-#### Enable Inline Macro by default on a macro
+### Enable Inline Macro by default on a macro
 In some cases, you want to have a checkbox that is enabled by default. This would enable you to create your own type of macro parameter that has 1 as the default value. To achieve this, create a DataEditor class anywhere in your Umbraco Project with the following definition:
 
 ```csharp
