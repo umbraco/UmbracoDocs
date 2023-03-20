@@ -174,7 +174,7 @@ You can do this by right-clicking on **References** and selecting **Add Referenc
 
 When working with this solution setup it's important to remember that you have one git repository for your source code, and one within the `*.Web` folder for committing and deploying your changes to Umbraco Cloud.
 
-The cloned git repository from Umbraco Cloud comes with its own `.gitignore` so files that should NOT be committed are already handled.
+The cloned git repository from Umbraco Cloud comes with its own `.gitignore` so files that should not be committed are already handled.
 
 As a rule of thumb all files that are required to run the Umbraco site should be committed to the git repository in the `*.Web` folder and deployed to Umbraco Cloud. This includes assemblies (`*.dll`).
 
