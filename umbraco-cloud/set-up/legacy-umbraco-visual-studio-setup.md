@@ -82,7 +82,7 @@ What follows is **a recommendation and not the only way to work with Visual Stud
 Before running the UaaS.cmd tool you will need the **git clone url** for your Umbraco Cloud Project.
 
 * Go to the Project in the Portal
-* Copy the url from "How to connect my machine"
+* Copy the URL from "How to connect my machine"
 
 ![Connect to machine](images/connect-my-machine.png)
 
