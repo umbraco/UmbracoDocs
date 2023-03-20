@@ -2,25 +2,19 @@
 description: This page describes how to set up your Visual Studio solution to work locally with an Umbraco 7 or 8 Cloud project.
 ---
 
-# Visual Studio Setup
+# Legacy Umbraco Visual Studio Setup
 
-In this article you will find:
+{% hint style="warning" %}
 
-- [Visual Studio Setup](#visual-studio-setup)
-  - [The Visual Studio Solution](#the-visual-studio-solution)
-  - [Prerequisites](#prerequisites)
-  - [Video tutorial](#video-tutorial)
-  - [Generate a Visual Studio Solution](#generate-a-visual-studio-solution)
-  - [The Git repositories](#the-git-repositories)
-  - [What's next?](#whats-next)
-  - [Working with Visual Studio](#working-with-visual-studio)
-    - [Using ModelsBuilder and IntelliSense](#using-modelsbuilder-and-intellisense)
-    - [Using Umbraco namespaces in your `*.Core` project](#using-umbraco-namespaces-in-your-core-project)
-  - [Git - what should be committed](#git---what-should-be-committed)
-  - [Setup for new team members](#setup-for-new-team-members)
-  - [Working with NuGet](#working-with-nuget)
+This article is only relevant if you are working on a Umbraco Cloud project running Umbraco 7 or 8.
+
+if you are on a later version, follow the ![working Locally article](/umbraco-cloud/set-up/working-locally.md)
+
+{% endhint %}
+
 
 ## The Visual Studio Solution
+
 If you're writing a lot of custom code (or like Intellisense), we recommend the following setup:
 
 A Visual Studio solution with a
@@ -46,7 +40,7 @@ Are you used to using a Git client like GitKraken or SourceTree? You still need 
 ## Video tutorial
 
 {% embed url="https://www.youtube.com/embed/gUj45TcBPbA?rel=0" %}
-Video tutorial.
+Video tutorial on working locally with your Umbraco Cloud project.
 {% endembed %}
 
 
