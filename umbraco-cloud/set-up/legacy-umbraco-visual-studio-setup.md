@@ -79,7 +79,7 @@ This is a recommended setup. If you don't like the setup then you can play with 
 
 What follows is **a recommendation and not the only way to work with Visual Studio**.
 
-Before running the UaaS.cmd tool you will need the **git clone url** for your Umbraco Cloud Project.
+Before running the UaaS.cmd tool you will need the **git clone URL** for your Umbraco Cloud Project.
 
 * Go to the Project in the Portal
 * Copy the URL from "How to connect my machine"
