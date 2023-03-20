@@ -63,7 +63,7 @@ Specifies the maximum width and height an image can be resized to. If the reques
 
 The maximum width and height settings are enforced by setting the `ImageSharpMiddlewareOptions.OnParseCommandsAsync` option of ImageSharp to an Umbraco-specific function. If you want to add your own logic without overwriting this behaviour, use the following code:
 
-```c#
+```csharp
 public class ConfigureImageSharpMiddlewareOptionsComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
