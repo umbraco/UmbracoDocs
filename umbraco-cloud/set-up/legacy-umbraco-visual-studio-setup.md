@@ -28,7 +28,7 @@ A Visual Studio solution with a
 * Website Project for the Umbraco site (coming from the cloned git repository from the Umbraco Cloud Project), and
 * Class Library Project for the code that will be created for the Umbraco site - this can be MVC Controllers, WebApi Controllers, Surface Controllers or data access plus whatever else you might need to write code for.
 
-Below is a screenshot of our recommendation on how the projects should be configured. Here we use the following naming conventions: `*.Web` for the Umbraco website and `*.Core` for the accompanying code.
+Below is a screenshot of our recommendation on how the projects should be configured. We use the following naming conventions: `*.Web` for the Umbraco website and `*.Core` for the accompanying code.
 
 ![Visual Studio Project setup](images/vs-project-setup.png)
 
@@ -39,7 +39,7 @@ Below is a screenshot of our recommendation on how the projects should be config
 
 {% hint style="info" %}
 
-Are you used to using a Git client like GitKraken or SourceTree? you will still need to make sure that you have Git CLI installed. Git CLI is used by the UaaS.cmd tool to clone down your Cloud project.
+Are you used to using a Git client like GitKraken or SourceTree? You still need to make sure that you have Git CLI installed. Git CLI is used by the UaaS.cmd tool to clone down your Cloud project.
 
 {% endhint %}
 
@@ -106,7 +106,7 @@ The result should look something like this within the folder where the UaaS.cmd 
 
 ![Generated Solution](images/generated-solution.png)
 
-You can now open the solution in Visual Studio and hit F5 to start the site directly from Visual Studio.
+You can now open the solution in Visual Studio and hit `F5` to start the site directly from Visual Studio.
 
 ## The Git repositories
 One thing to notice about this setup is that you will get two git repositories as well as two projects.
@@ -131,12 +131,12 @@ _So what goes where?_
 
 Anything that is used within Umbraco, like plugins and configuration, should by default be placed in the `*.Web` project. Here is a list of other elements that you want to place in the `*.Web` project:
 
-* Website assets like css, JavaScript and related images
+* Website assets like CSS, JavaScript and related images
 * Views, Partial Views and Partial View Macros
-* Configuration (web.config and all the Umbraco specific or related config files in ~/Config/)
+* Configuration (`web.config` and all the Umbraco specific or related config files in `~/Config/`)
 * Usercontrol ascx-files
 * Plugins (typically located in App_Plugins)
-* Meta data (the files that Umbraco Deploy uses in the folder ~/Data/Revision/)
+* Meta data (the files that Umbraco Deploy uses in the folder `~/Data/Revision/`)
 
 Media files will also be placed under the `*.Web` folder and you will be able to see these through Visual Studio, as Website projects show all files on disk by default. Media files from the /Media/ folder should not be committed to the git repository, but more on that in the next section.
 
