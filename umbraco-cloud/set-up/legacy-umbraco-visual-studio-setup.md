@@ -173,7 +173,7 @@ When working with this solution setup it's important to remember that you  are o
 
 The cloned git repository from Umbraco Cloud comes with its own `.gitignore` so files that should not be committed are already handled.
 
-As a rule of thumb all files that are required to run the Umbraco site should be committed to the git repository in the `*.Web` folder and deployed to Umbraco Cloud. This includes assemblies (`*.dll`).
+All files that are required to run the Umbraco site should be committed to the git repository in the `*.Web` folder. From there they can be deployed to Umbraco Cloud. This includes assemblies (`*.dll`).
 
 {% hint style="info" %}
 
