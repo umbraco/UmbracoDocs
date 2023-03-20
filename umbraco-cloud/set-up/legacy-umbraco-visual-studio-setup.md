@@ -124,7 +124,7 @@ The key thing to know is that your custom code from the `*.Core` project will be
 Once you have everything your site will need committed you can follow the [deployment workflow](/umbraco-cloud/deployment/README.md) to complete the deployment.
 
 ## Working with Visual Studio
-As mentioned in the previous section, you will start with two projects in Visual Studio. A project called `*.Web` with the Umbraco site (from Umbraco Cloud) configured as a Website project, and a project called `*.Core` configured as a class library for all of your code.
+As mentioned in the previous section, you will start with two projects in Visual Studio.  A `*.Web` project with the Umbraco site configured as a Website project, and a `*.Core` project configured as a class library.
 
 _So what goes where?_
 
