@@ -77,7 +77,7 @@ Before running the UaaS.cmd tool you will need the **git clone URL** for your Um
 * Go to the Project in the Portal
 * Copy the URL from "How to connect my machine"
 
-![Connect to machine](images/connect-my-machine.png)
+![Clone down Umbraco Cloud project](images/connect-my-machine.png)
 
 Running the UaaS.cmd tool will download the latest Visual Studio generator (waasp.exe) and prompt you to enter the clone URL for your Project.
 Then enter the "Namespace", which will be the name of the Visual Studio solution and thus the namespace for the solution as well.
@@ -86,7 +86,7 @@ Does an error appear where the tool says: "Unable to connect to the remote serve
 
 If you haven't cloned the repository before, you will be asked to enter the username and password for the Umbraco Cloud Project. This also happens if you do not have a [git credentials manager](https://github.com/Microsoft/Git-Credential-Manager-for-Windows) installed. In both cases, use the credentials you use to access the Portal and the Umbraco backoffice.
 
-![cmd clone](images/cmd-clone.png)
+![Cloning down using Command line](images/cmd-clone.png)
 
 Once it's done running the tool will have created a Visual Studio solution file `*.sln` and two Projects.
 
@@ -97,7 +97,7 @@ Both projects are configured with the NuGet packages for Umbraco using the versi
 
 The result should look something like this within the folder where the UaaS.cmd tool ran:
 
-![Generated Solution](images/generated-solution.png)
+![The Generated Umbraco Solution](images/generated-solution.png)
 
 You can now open the solution in Visual Studio and hit `F5` to start the site directly from Visual Studio.
 
@@ -162,7 +162,7 @@ In order to use Umbraco's features in your `*.Core` project, you have to add ref
 
 You can do this by right-clicking on **References** and selecting **Add Reference**. Browse and select the DLLs you'd like to use and then hit **OK**. Don't forget to build.
 
-![References](images/references.gif)
+![Add references to DLLs](images/references.gif)
 
 ## Git - what should be committed
 
