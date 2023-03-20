@@ -119,7 +119,7 @@ Think of everything within the `*.Web` folder as your **deployment repository**,
 ## What's next?
 
 Now that you've added your own touch to your site, you're ready to deploy to your Umbraco Cloud environment.
-The key thing to know is that your custom code from the `*.Core` project will be built into a .dll file in your `*.Web` project that you can then push up to the Cloud repository.
+The key thing to know is that your custom code from the `*.Core` project will be built into a `.dll` file in your `*.Web` project. This `.dll` file is what you need to push up to the Cloud repository.
 
 Once you have everything your site will need committed you can follow the [deployment workflow](/umbraco-cloud/deployment/README.md) to complete the deployment.
 
