@@ -90,7 +90,7 @@ This list defines the different types of macro parameters:
 - Form Picker (`UmbracoForms.FormsPicker`) - choose from exising Umbraco Forms
 - Forms Theme Picker (`UmbracoForms.ThemePicker`) - choose from existing Forms Themes
 
-### Enable Inline Macro
+## Enable Inline Macro
 
 In some case you want to have the macro in the middle of a sentence.
 
