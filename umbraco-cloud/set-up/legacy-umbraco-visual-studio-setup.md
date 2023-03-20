@@ -56,7 +56,7 @@ Video tutorial.
 
 {% hint style="warning" %}
 
-**Important**: The UaaS.cmd tool is not actively supportet anymore by Umbraco HQ. 
+**Important**: The UaaS.cmd tool is not being supportet by Umbraco HQ anymore. 
 
 {% endhint %}
 
