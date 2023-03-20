@@ -20,7 +20,7 @@ You also need to make sure that the packages you are using are available on the 
 ## Video Tutorial
 
 {% hint style="warning" %}
-The video below shows how to complete the upgrade on an Umbraco Cloud project. Most of the process is the same, however, the video does contain several Cloud-specific elements.
+The video below shows how to complete the upgrade on an Umbraco Cloud project. Most of the process is the same, however, the video does contain some Cloud-specific elements.
 {% endhint %}
 
 {% embed url="https://www.youtube-nocookie.com/embed/wD9SGeRQR7o" %}
