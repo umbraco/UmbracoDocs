@@ -49,7 +49,6 @@ Are you used to using a Git client like GitKraken or SourceTree? You still need 
 Video tutorial.
 {% endembed %}
 
-<iframe width="800" height="450" title="How to create a Visual Studio solution to work on Umbraco Cloud" src="https://www.youtube.com/embed/gUj45TcBPbA?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Generate a Visual Studio Solution
 
