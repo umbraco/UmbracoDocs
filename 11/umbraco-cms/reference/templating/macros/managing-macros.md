@@ -96,13 +96,17 @@ In some case you want to have the macro in the middle of a sentence.
 
 ![image](https://user-images.githubusercontent.com/840606/221513022-878ada3c-bf5b-4ebf-b171-012882ae3cbc.png)
 
-- To enable this add a macro parameter called: **enableInlineMacro** with the type Checkbox(`Umbraco.TrueFalse`)
-- Next time you add the macro and enable this parameter, it will be inlined.
+To enable editors to add the macro inline, follow these steps:
+
+1. Add a macro parameter called: **enableInlineMacro**.
+2. Choose Checkbox (`Umbraco.TrueFalse`) as the type.
+
+The next time you add the macro, enable the new parameter to add the macro inline.
 
 #### Enable Inline Macro by default on a macro
-In some cases you want to have a checkbox that has this enabled by default, then you can create your own type of macroparameter that has 1 as default value. To achive this, create a DataEditor class anywhere in your Umbraco Project with the following definition. 
+In some cases, you want to have a checkbox that is enabled by default. This would enable you to create your own type of macro parameter that has 1 as the default value. To achieve this, create a DataEditor class anywhere in your Umbraco Project with the following definition:
 
-```
+```csharp
     [DataEditor(
         alias: "enableInlineMacro",
         type: EditorType.MacroParameter,
@@ -119,7 +123,9 @@ In some cases you want to have a checkbox that has this enabled by default, then
         }
     }
 ```
-Tip: You can create a MacroParameter however you want, the importance is to have a parameter called enableInlineMacro with the value 1 to enable it.
+{% hint style="info"%}
+You can create a MacroParameter however you want, the importance is to have a parameter called enableInlineMacro with the value 1 to enable it.
+{% endhint %}
 
 
 
