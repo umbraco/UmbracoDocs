@@ -86,7 +86,7 @@ Before running the UaaS.cmd tool you will need the **git clone URL** for your Um
 
 ![Connect to machine](images/connect-my-machine.png)
 
-Running the UaaS.cmd tool will download the latest Visual Studio generator (waasp.exe) and prompt you to enter the git clone URL for your Project.
+Running the UaaS.cmd tool will download the latest Visual Studio generator (waasp.exe) and prompt you to enter the clone URL for your Project.
 Then enter the "Namespace", which will be the name of the Visual Studio solution and thus the namespace for the solution as well.
 
 Does an error appear where the tool says: "Unable to connect to the remote server", but you can still add the clone Url? You then need to allow the UaaS.cmd through your firewall/antivirus.
