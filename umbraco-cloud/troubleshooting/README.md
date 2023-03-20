@@ -1,4 +1,3 @@
-
 # Troubleshooting
 
 If an error occurs when you are using Umbraco Cloud there are several places that can take place and a lot of possible reasons for it.
@@ -21,6 +20,6 @@ Start by determining where this error is reported and what causes the error. The
 
 ## Is your issue related to something else?
 
-- [Minor upgrades issues](../upgrades/minor-upgrades.md)
-- [Baseline merge conflicts](../getting-started/baselines/baseline-merge-conflicts.md)
-- [How Umbraco Forms are handled on Cloud](../deployment/umbraco-forms-on-cloud.md)
+* [Minor upgrades issues](../product-upgrades/minor-upgrades.md)
+* [Baseline merge conflicts](../getting-started/baselines/baseline-merge-conflicts.md)
+* [How Umbraco Forms are handled on Cloud](../deployment/umbraco-forms-on-cloud.md)

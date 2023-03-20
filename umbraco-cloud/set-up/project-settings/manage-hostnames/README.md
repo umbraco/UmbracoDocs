@@ -12,7 +12,7 @@ Let's say you have a project named `Snoopy`. The default hostnames will be:
 The hostnames contain the region your project is hosted on. Currently, there are 3 options available when choosing a region for your Umbraco project:
 
 * West Europe (euwest01),
-* East US (useast01), and&#x20;
+* East US (useast01), and
 * South UK (uksouth01)
 
 To access the backoffice add `/umbraco` at the end of the Live, Development, or Staging URL.
@@ -21,7 +21,7 @@ To access the backoffice add `/umbraco` at the end of the Live, Development, or 
 
 Under **Settings** in the Umbraco Cloud Portal, you'll find **Hostnames**. This is where you bind Hostnames to your Cloud environments.
 
-![Hostnames](../../manage-hostnames/images/manage-hostnames-v9.png)
+<figure><img src="../../../.gitbook/assets/hostnames-umbraco-cloud.png" alt=""><figcaption><p>Manage Hostnames</p></figcaption></figure>
 
 You can bind any hostname to your project environments. Ensure that the hostname has a DNS entry so that it resolves to the Umbraco Cloud service.
 

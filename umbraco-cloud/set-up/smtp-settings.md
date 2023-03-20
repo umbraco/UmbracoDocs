@@ -6,7 +6,7 @@ SMTP server is not included with your Umbraco Cloud project. You will need to ha
 
 ## Why Configure SMTP?
 
-There are a handful of reasons where configuring an SMTP service on your Umbraco Cloud project could come in handy or might even be necessary.
+There are a handful of reasons why configuring an SMTP service on your Umbraco Cloud project could come in handy or might even be necessary.
 
 ### Umbraco Forms
 
@@ -27,6 +27,12 @@ Configure _SenderEmail_ in the `appsettings.json` file under `Umbraco:CMS:Global
     }
 },
 ```
+
+{% hint style="info" %}
+**Legacy Umbraco**
+
+If your Cloud project is running Umbraco 7 or 8, the _SenderEmail_ is configured in the `<notifications>` section of the `web.config` file. Find more details on this in the [Legacy Documentation](https://our.umbraco.com/documentation/Reference/Configuration-for-Umbraco-7-and-8/umbracoSettings/).
+{% endhint %}
 
 ### Backoffice Users
 
@@ -50,17 +56,21 @@ As Umbraco Cloud doesn't provide SMTP servers, you will need to find hosting els
 * [Sparkpost](https://www.sparkpost.com/) - quick to set up and developer-friendly.
 * [SendGrid](https://sendgrid.com/) - quick to set up.
 * [MailGun](https://www.mailgun.com/) - mainly for developers, as it is a bit more on the technical side.
-* [Rapidmail](https://www.rapidmail.com/) - EU based and GDPR compliant.
+* [Rapidmail](https://www.rapidmail.com/) - EU-based and GDPR compliant.
 
 {% embed url="https://www.youtube.com/embed/CFYuF7eNTF4?rel=0" %}
-Video example.
+A video tutorial covering how to configure SMTP settings on an Umbraco Cloud project.
 {% endembed %}
 
-Step 1 - Set up the SMTP server.
+1. Set up the SMTP server.
+2. Configure the service:&#x20;
 
-Step 2 - Configure the service in the `Umbraco:CMS:Global:Smtp` section in your `appsettings.json` file.
+{% tabs %}
+{% tab title="Umbraco 10 +" %}
+The SMTP is configured in the `Umbraco:CMS:Global:Smtp` section in your `appsettings.json` file.
 
-```csharp
+{% code title="appsettings.json" %}
+```json
 "Umbraco": {
     "CMS": {
         "Global": {
@@ -76,8 +86,7 @@ Step 2 - Configure the service in the `Umbraco:CMS:Global:Smtp` section in your 
     }
 },
 ```
-
-![Configure SMTP settings](images/configure-SMTP-settings.gif)
+{% endcode %}
 
 To configure your SMTP service, enter the following details:
 
@@ -87,12 +96,38 @@ To configure your SMTP service, enter the following details:
 * **SecureSocketOptions**: Allows you to specify what security should be used for the connection sending the email.
 * **Username**: Your username for the SMTP service.
 * **Password**: The password you use to access your SMTP service.
+{% endtab %}
+
+{% tab title="Legacy Umbraco (version 7 and 8)" %}
+The SMTP is configured in the `system.net/mailSettings` section of the `web.config` file.
+
+{% code title="web.config" %}
+```xml
+<system.net>
+    <mailSettings>
+    <smtp from="noreply@example.com">
+        <network host="127.0.0.1" userName="username" password="password" />
+    </smtp>
+    </mailSettings>
+</system.net>
+```
+{% endcode %}
+
+To configure your SMTP service you will need the following details:
+
+* The **host**: IP address or hostname for your SMTP service.
+* The **userName**: Your username for the SMTP service.
+* The **password**: The password you use to access your SMTP service.
+{% endtab %}
+{% endtabs %}
+
+![Configure SMTP settings in an Umbraco 9+ site.](images/configure-SMTP-settings.gif)
 
 {% hint style="info" %}
 To make sure that your SMTP password is not visible in the `appSettings.json` file, you can use the [Secrets management](project-settings/secrets-management.md) feature to hide the setting by using the following key: `UMBRACO__CMS__GLOBAL__SMTP__PASSWORD.`
 {% endhint %}
 
-Once you've configured these settings for your SMTP service, you can send emails from your Umbraco Cloud project. For more information on SMTP configuration, see the [Global Settings](https://docs.umbraco.com/umbraco-cms/reference/configuration/globalsettings#smtp-settings) article
+Once you've configured these settings for your SMTP service, you can send emails from your Umbraco Cloud project. For more information on SMTP configuration, see the [Global Settings](https://docs.umbraco.com/umbraco-cms/reference/configuration/globalsettings#smtp-settings) article.
 
 {% hint style="info" %}
 You can test if you've configured your SMTP service correctly by running a [Health Check](https://docs.umbraco.com/umbraco-cms/extending/health-check) from the Umbraco Backoffice.

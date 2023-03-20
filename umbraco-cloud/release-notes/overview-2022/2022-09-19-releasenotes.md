@@ -2,25 +2,25 @@
 
 ## Key Takeaways
 
-* **2FA authentication** - You can now secure your Umbraco Cloud account by enabling 2-factor authentication (2FA). Select between email, phone, or app authentication.
+* **MFA authentication** - You can now secure your Umbraco Cloud account by enabling Multi-Factor Authentication (MFA). Select between Email, Phone, or Authenticator App.
 * **US Region Hosting** - From the 1st of September, you can select a brand new US region in addition to the existing West Europe option.
 * **Projects Dashboard** - The first version of the Projects Dashboard has been released. Organize your Umbraco Cloud projects as per your preference and get a complete overview of product versions in all your environments.
 
-## [2FA authentication](../../set-up/2-factor-authentication-on-cloud.md)
+## [MFA authentication](../../set-up/multi-factor-authentication-on-cloud.md)
 
-On Umbraco Cloud, you can add 2-factor authentication in a few steps for your Umbraco Cloud account.
+On Umbraco Cloud, you can add MFA in a few steps for your Umbraco Cloud account.
 
-You can either use **email**, **phone**, or an **authenticator app** when logging in to the Cloud Portal.
+You can either use **Email**, **Phone**, or an **Authenticator App** when logging in to the Cloud Portal.
 
-To enable 2FA for Umbraco Cloud, go to **Profile**, click **Edit Profile**, and select the **Multifactor Authentication Method** from the drop-down list.
+To enable MFA for Umbraco Cloud, go to **Profile**, click **Edit Profile**, and select the **Multifactor Authentication Method** from the drop-down list.
 
-![2FA-Registration](../images/2FA-Registration.gif)
+![MFA-Registration](../images/2FA-Registration.gif)
 
-2FA code can be sent either to your email or as a text message on your phone. Alternatively, you can use an authentication app such as Google Authenticator, Authy, or similar.
+MFA code can be sent either to your email or as a text message on your phone. Alternatively, you can use an authentication app such as Google Authenticator, Authy, or similar.
 
-![Phone-auth](../images/Phone-auth.png)
+![Phone-auth](../../set-up/images/Phone-auth.png)
 
-As your Umbraco profile is used to log in to the backoffice for your projects, these are all now protected with 2FA.
+As your Umbraco profile is used to log in to the backoffice for your projects, these are all now protected with MFA.
 
 ## US Region Hosting
 

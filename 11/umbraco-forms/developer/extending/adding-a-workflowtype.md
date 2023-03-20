@@ -44,7 +44,7 @@ namespace MyFormsExtensions
                 List<object> vals = rf.Values;
 
                 // or get it as a string
-                rf.ValuesAsString();
+                rf.ValuesAsString(false);
             }
 
             //Change the state
@@ -79,8 +79,10 @@ RecordField? recordField = context.Record.GetRecordFieldByAlias("myalias");
 Having obtained a reference to a record field, the submitted value can be retrieved via:
 
 ```csharp
-var fieldValue = recordField.ValuesAsString();
+var fieldValue = recordField.ValuesAsString(false);
 ```
+
+The `ValuesAsString` will JSON escape the result by default. If you do not want this escaping to occur, pass `false` as the parameter.
 
 If the field stores multiple values, they are delimited with a comma. In many cases, you can safely split on that delimiter to obtain the individual values. However, this can lead to issues if the prevalues being selected also contain commas. If that's a concern, the following extension method is available in `Umbraco.Forms.Core.Extensions` to correctly parse the selected prevalues:
 

@@ -5,18 +5,16 @@
 * [Configuration](deploy-settings.md)
 * [Extending](extending.md)
 * [Troubleshooting](troubleshooting.md)
-* [Licensing Model](https://docs.umbraco.com/welcome/the-licensing-model#umbraco-deploy)
+* [Licensing](the-licensing-model.md)
+* [Release notes](release-notes.md)
 
-## Installing Deploy
+## Getting Started
 
-* [Installing](installing-deploy/README.md)
-* [Installing Umbraco Deploy](installing-deploy/install-configure.md)
-  * [Existing project](installing-deploy/existing-site.md)
-  * [New site](installing-deploy/new-site.md)
-* [CI/CD Build and Deployment Pipeline](installing-deploy/cicd-pipeline/README.md)
-  * [Azure DevOps](installing-deploy/cicd-pipeline/ci-cd-azure-dev-ops.md)
-  * [Github actions](installing-deploy/cicd-pipeline/ci-cd-github-actions.md)
-* [Streamlining Local Development](installing-deploy/streamlining-local-development.md)
+* [Installing Umbraco Deploy](getting-started/install-configure.md)
+* [CI/CD Build and Deployment Pipeline](getting-started/cicd-pipeline/README.md)
+  * [Azure DevOps](getting-started/cicd-pipeline/ci-cd-azure-dev-ops.md)
+  * [Github actions](getting-started/cicd-pipeline/ci-cd-github-actions.md)
+* [Streamlining Local Development](getting-started/streamlining-local-development.md)
 
 ## Deployment Workflow
 

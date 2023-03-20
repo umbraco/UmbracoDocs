@@ -110,7 +110,9 @@ The following configuration can be set:
 
 * Workflow Name
 * Email Template (required) - specify which template you want to use
-* Attachment - specify whether file uploads should be attached to the email
+* Header text - formatted text that will be rendered above the form entry details
+* Footer text - formatted text that will be rendered below the form entry details
+* Attachments - specify whether file uploads should be attached to the email
 * Recipient Email (required)
 * CC Email
 * BCC Email

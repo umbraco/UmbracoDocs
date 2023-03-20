@@ -10,6 +10,7 @@
 * [Content App](getting-started/workflow-content-app.md)
 * [Notifications](getting-started/notifications.md)
 * [Configuration](getting-started/configuration.md)
+* [History Cleanup](getting-started/history-cleanup.md)
 
 ## Upgrading Workflow
 

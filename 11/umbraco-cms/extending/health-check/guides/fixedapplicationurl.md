@@ -1,7 +1,7 @@
-# Health check: Fixed Application Url
+# Health check: Fixed Application URL
 
-_Check to make sure a fixed application url is specified. This url is for example used when sending emails from backoffice.
-If this is not specified in configuration, Umbraco gets the application url from last host used to request the application_
+_Check to make sure a fixed application URL is specified. This URL is for example used when sending emails from backoffice.
+If this is not specified in configuration, Umbraco gets the application URL from last host used to request the application_
 
 
 ## How to fix this health check

@@ -1,8 +1,8 @@
 ---
-meta.Title: "Adding a Export type to Umbraco Forms"
+meta.Title: "Adding an Export type to Umbraco Forms"
 ---
 
-# Adding a Export type to Umbraco Forms
+# Adding an Export type to Umbraco Forms
 
 *This builds on the "[adding a type to the provider model](adding-a-type.md)" chapter and applies to Umbraco Forms version 4.4.1 and higher*
 

@@ -18,27 +18,27 @@ In the **Information** section of the Organization, you can find information abo
 
 ### Members
 
-In the **Members** section, you can get an overview, see pending invites, and the Multi-Factor Authentication for the Members your Organization. It is also possible to set up different permissions for your Members, such as Read, Write, and Administrators for your organization.
+In the **Members** section, you can get an overview, view pending invites, and the Multi-Factor Authentication (MFA) for the Members of your Organization. It is also possible to set up different permissions for your Members, such as Read, Write, and Administrators for your organization.
 
 <figure><img src="../../../.gitbook/assets/members.png" alt=""><figcaption></figcaption></figure>
 
-
-### Multi-Factor Authentication (MFA) enforcement
+### MFA enforcement
 
 When working in organizations on Umbraco Cloud, as a company, you might want to enforce a certain type of MFA for members.
 
 ![MFA for members](images/mfa-page.png)
 
-It is possible for administrators of organizations on Umbraco Cloud to enforce MFA for specific members of their organization.
+Administrators of Organizations on Umbraco Cloud can enforce MFA for specific members of their organization.
 
-To enforce a certain MFA for a member follow these steps:
-1. Go to the organizations tab under your user on Umbraco Cloud
-2. Go to the **Members** tab under Organization
-3. Go to **Multi-Factor Authentication**
-4. Find the member that needs to have have MFA enabled
-5. Click on the small cogwheel and choose the desired MFA for the member.
+To enforce a certain MFA for a member, follow these steps:
 
-Once it has been enabled next time the member logs in, they will be enforced to set up the MFA, that has been choosen.
+1. Go to the **Organizations** tab under your user on Umbraco Cloud.
+2. Go to the **Members** tab under Organization.
+3. Go to **Multi-Factor Authentication**.
+4. Find the member that needs to have MFA enabled.
+5. Click on the cogwheel and select the **Enforced MFA Method** from the drop-down list for the member.
+
+Once it has been enabled, the next time the member logs in, they will be enforced to set up the MFA that has been chosen.
 
 ### Projects
 
@@ -52,7 +52,7 @@ Additionally, you can view if any Projects have been disabled under your Organiz
 
 In the **Access Rights** section, you can get a list of all the Access Rights your Members have to each Project in your Organization.
 
-![Access Rights](images/Access\_rights-v10.png)
+![Access Rights](images/Access_rights-v10.png)
 
 ## Payment methods
 
