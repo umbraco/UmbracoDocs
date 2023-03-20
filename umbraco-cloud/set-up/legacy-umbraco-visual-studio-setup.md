@@ -6,7 +6,7 @@ description: This page describes how to set up your Visual Studio solution to wo
 
 {% hint style="warning" %}
 
-This article is only relevant if you are working on a Umbraco Cloud project running **Umbraco 7** or **Umbraco 8**.
+This article is only relevant if you are working on a Umbraco Cloud project running **Umbraco 7** or **Umbraco 8** (legacy Umbraco).
 
 if you are on a later version, follow the [working Locally article.](/umbraco-cloud/set-up/working-locally.md)
 
