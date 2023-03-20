@@ -205,7 +205,7 @@ To help to get up and running we added a `UaaSClone.cmd`, which can be run after
 
 Some Umbraco packages are available on NuGet and you can install NuGet packages into the `*.Web` project to add functionality to your site. Remember, this is a normal Visual Studio solution, so you can work with NuGet packages exactly like you're used to.
 
-For example, if you need to program something in your `*.Core` project and you depend on a NuGet package for the code you're writing, you should install that NuGet package in both:
+If you need to program something that depends on a NuGet package you should install that NuGet package in both projects.
 
 - Install it in `*.Core` so you can write the code you need against the library you working with (obtained from NuGet)
 - Also install it in `*.Web` so that the library files also end up in your website and your compiled code works there as well
