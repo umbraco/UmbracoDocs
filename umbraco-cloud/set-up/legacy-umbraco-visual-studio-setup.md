@@ -1,10 +1,9 @@
 ---
-
+description: This page describes how to set up your Visual Studio solution to work with an Umbraco 7 or 8 project on Umbraco Cloud.
 ---
 
 # Visual Studio Setup
 
-This page describes how to set up your Visual Studio solution to work with an Umbraco 7 or 8 project on Umbraco Cloud.
 In this article you will find:
 
 - [Visual Studio Setup](#visual-studio-setup)
