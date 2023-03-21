@@ -39,11 +39,10 @@ A video tutorial guiding you through the steps of upgrading from version 8 to th
 }
 ```
 
-4. Enable [Unattended Upgrades](../README.md#enable-the-unattended-upgrade-feature) to authorize the database upgrade.
-5. Run the new project.
-6. Wait for the site to finish upgrading.
-7. Stop the site and disable the unattended upgrade.
-8. Run the site and log in.
+4. Run the new project and login to initiative the upgrade.
+5. Select "Upgrade" when the upgrade wizard appears.
+
+Once the upgrade has completed, it is recommended to login to the backoffice to verify the upgrade.
 
 {% hint style="info" %}
 This is **only content migration** and the database will be migrated.
