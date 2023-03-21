@@ -378,6 +378,16 @@ If greater control is required than available from the above, this setting can b
 <allowedUploadFiles></allowedUploadFiles>
 ```
 
+### ´AllowedMediaHosts´
+
+By default, only relative URLs are allowed when getting URLs for resized images or thumbnails using the ImagesController.
+If you need absolute URLs you will have to add the allowed hosts to this list. The value could be `["umbraco.com", "www.umbraco.com"]`. 
+
+```
+<!-- By default, only relative URLs are allowed when getting URLs for resized images or thumbnails using the ImagesController. Add allowed hosts for absolute paths -->
+<allowedMediaHosts></allowedMediaHosts>
+```
+
 ### `<loginBackgroundImage>`
 
 You can specify your own background image for the login screen here. The image will automatically get an overlay to match Backoffice colors. This path is relative to the `~/umbraco` path. The default location is: `/umbraco/assets/img/installer.jpg`.
