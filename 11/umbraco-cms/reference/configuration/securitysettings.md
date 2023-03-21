@@ -58,7 +58,7 @@ When this is set to "true" it's not possible to see disabled users. This means i
 
 ### Allow password reset
 
-The feature to allow users to reset their passwords if they have forgotten them. By default, this is enabled. It can be disabled at both the UI and API level by setting this value to "false".
+This feature allows users to reset their passwords if they have forgotten them. By default, this is enabled. It can be disabled at both the UI and API level by setting this value to "false".
 
 ### Auth cookie name
 
