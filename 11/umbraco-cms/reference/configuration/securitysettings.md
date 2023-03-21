@@ -121,12 +121,12 @@ This section allows you to define the password rules for members. This section i
 
 ## User Default Lockout Time In Minutes
 
-Use this setting to configure the lockout time for Users in the Umbraco backoffice. The setting accepts an integer which defines the lockout in minutes.
+Use this setting to configure how long time a User is locked out of the Umbraco backoffice when a lockout occurs. The setting accepts an integer which defines the lockout in minutes.
 
 The default lockout time for users is 30 days (43200 minutes).
 
 ## Member Default Lockout Time In Minutes
 
-Use this setting to configure the lockout time for Members on an Umbraco website. The setting accepts an integer which defines the lockout in minutes.
+Use this setting to configure how long time a Member is locked out of the Umbraco website when a lockout occurs. The setting accepts an integer which defines the lockout in minutes.
 
 The default lockout time for users is 30 days (43200 minutes).
