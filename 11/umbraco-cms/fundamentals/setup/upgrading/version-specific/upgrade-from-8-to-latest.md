@@ -39,7 +39,7 @@ A video tutorial guiding you through the steps of upgrading from version 8 to th
 }
 ```
 
-4. Run the new project and login to initiative the upgrade.
+4. Run the new project and login to authorize the upgrade.
 5. Select "Upgrade" when the upgrade wizard appears.
 
 Once the upgrade has completed, it is recommended to login to the backoffice to verify the upgrade.
