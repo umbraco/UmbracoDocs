@@ -39,7 +39,9 @@ A full configuration with all default values can be seen here:
         "RequireUppercase": false,
         "HashAlgorithmType": "PBKDF2.ASPNETCORE.V3",
         "MaxFailedAccessAttemptsBeforeLockout": 5
-      }
+      },
+      "UserDefaultLockoutTimeInMinutes": 43200,
+      "MemberDefaultLockoutTimeInMinutes": 43200
     }
   }
 }
@@ -51,16 +53,15 @@ At the root level of security you can configure the following
 
 ### Keep user logged in
 
-If set to false a user will be logged out after a specific amount of time has passed with no activity, you can specify this time span in the [global settings](globalsettings.md) with the `TimeOut` key.
+When set to false a user will be logged out after a specific amount of time has passed with no activity. You can specify this time span in the [global settings](globalsettings.md) with the `TimeOut` key.
 
 ### Hide disabled users in backoffice
 
-If this is set to "true" it's not possible to see disabled users, which means it's
-not possible to re-enable their access to the backoffice again. It also means you can't create an identical username if the user was disabled by a mistake.
+When this is set to "true" it's not possible to see disabled users. This means it's not possible to re-enable their access to the backoffice again. It also means you can't create an identical username if the user was disabled by a mistake.
 
 ### Allow password reset
 
-The feature to allow users to reset their passwords if they have forgotten them. By default, this is enabled but if you'd prefer to not allow users to do this it can be disabled at both the UI and API level by setting this value to "false".
+This feature allows users to reset their passwords if they have forgotten them. By default, this is enabled. It can be disabled at both the UI and API level by setting this value to "false".
 
 ### Auth cookie name
 
@@ -72,7 +73,7 @@ The authentication cookie which is set in the browser when a backoffice user log
 
 ### Allow Edit Invariant From Non-Default
 
-Invariant properties are properties on a multilingual site that are not varied by culture, which means it shared the same value across all languages added to the website.
+Invariant properties are properties on a multilingual site that are not varied by culture. This means that they share the same value across all languages added to the website.
 
 When the setting is set to `false` the invariant properties that are shared between all languages can only be edited from the default language. This means you need access to the default language, in order to edit the property.
 
@@ -120,3 +121,15 @@ Options are:
 ## Member password settings
 
 This section allows you to define the password rules for members. This section is identical to the one for users.
+
+## User Default Lockout Time In Minutes
+
+Use this setting to configure how long time a User is locked out of the Umbraco backoffice when a lockout occurs. The setting accepts an integer which defines the lockout in minutes.
+
+The default lockout time for users is 30 days (43200 minutes).
+
+## Member Default Lockout Time In Minutes
+
+Use this setting to configure how long time a Member is locked out of the Umbraco website when a lockout occurs. The setting accepts an integer which defines the lockout in minutes.
+
+The default lockout time for users is 30 days (43200 minutes).
