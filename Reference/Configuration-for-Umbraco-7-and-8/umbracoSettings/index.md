@@ -380,10 +380,12 @@ If greater control is required than available from the above, this setting can b
 
 ### `<AllowedMediaHosts>`
 
+**This setting is available from Umbraco 8.18.6.**
+
 By default, only relative URLs are allowed when getting URLs for resized images or thumbnails using the ImagesController.
 If you need absolute URLs you will have to add the allowed hosts to this list. The value could be `["umbraco.com", "www.umbraco.com"]`. 
 
-```
+```xml
 <!-- By default, only relative URLs are allowed when getting URLs for resized images or thumbnails using the ImagesController. Add allowed hosts for absolute paths -->
 <allowedMediaHosts></allowedMediaHosts>
 ```
