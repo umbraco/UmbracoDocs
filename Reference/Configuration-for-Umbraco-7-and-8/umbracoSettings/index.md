@@ -378,7 +378,7 @@ If greater control is required than available from the above, this setting can b
 <allowedUploadFiles></allowedUploadFiles>
 ```
 
-### ´AllowedMediaHosts´
+### `<AllowedMediaHosts>`
 
 By default, only relative URLs are allowed when getting URLs for resized images or thumbnails using the ImagesController.
 If you need absolute URLs you will have to add the allowed hosts to this list. The value could be `["umbraco.com", "www.umbraco.com"]`. 
