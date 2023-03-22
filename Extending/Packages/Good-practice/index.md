@@ -146,7 +146,7 @@ Settings in ASP.NET Core are merged from a number of different locations at runt
 There are many options for where you might save your settings and a lot will depend on the nature of your package:
 
 #### Save to database
-Settings can be saved to the database, usually in a custom table.
+Settings can be saved to the database; simple settings can be stored in the databse using the IKeyValueservice; for more complex setting you might need to use a custom table
 
 - Pros:
   - Settings will be accessible directly from the database, and not dependent on deployed files on disk.
