@@ -40,6 +40,8 @@ Umbraco (version 9 and up) is an ASP.NET Core application and can be ran on mult
 ### Case sensitivity 
 The Linux and macOS file system is case sensitive (by default), so `App_Plugins/myPackage` is a different location to `app_plugins/MyPACKAGE`. When building your package you should ensure that you always refer to folders and paths in a consistent way.
 
+A good way to ensure consistency is to use constants in your code to define file or folder locations.
+
 :::tip
 You can adjust the case sensitivity of a Windows folder by running a command against the folder.
 
