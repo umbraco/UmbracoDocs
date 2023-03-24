@@ -1,12 +1,6 @@
 # Repositories in a Cloud Project
 
-{% hint style="warning" %}
-This article is only relevant to you if you are using **Umbraco 9+**.\
-\
-If you are using **Umbraco 8** (or older versions), find the relevant documentation on [our.umbraco.com](https://our.umbraco.com/Documentation/Umbraco-Cloud/Getting-Started/Git-Repository-in-a-Cloud-Project/).
-{% endhint %}
-
-Each Umbraco Cloud project can have multiple environments: Development, Staging, and Live depending on your Cloud project plan. Each environment has it's own git repository that is hosted on Umbraco’s Cloud platform.
+Each Umbraco Cloud project can have multiple environments: Development, Staging, and Live depending on your Cloud project plan. Each environment has its own git repository that is hosted on Umbraco’s Cloud platform.
 
 {% hint style="info" %}
 Umbraco Cloud repositories are _only_ deployment repositories and should not be used as source code repositories.
@@ -23,7 +17,15 @@ Source control is a way to control changes to files and directories. You can kee
 
 There are different source code management tools that you can use such as GitHub, Git, GitLab, Apache Subversion (SVN), Mercurial, etc.
 
+{% tabs %}
+{% tab title="Umbraco 10+" %}
 The external Git repository can be used to store the entire source code of your project. Additionally, the Umbraco Cloud project must have all your source code too. You can no longer store dll files in your Umbraco Cloud project.
+{% endtab %}
+
+{% tab title="Legacy Umbraco 7 and 8" %}
+You need to put your custom code in a different source control repository of your choice. You can use the source control repository to store the custom models, controllers, class libraries, CS code etc as the Umbraco Cloud Git repository can only store the dll files of your C# files.
+{% endtab %}
+{% endtabs %}
 
 ## A Git Umbraco Cloud source control repository with the locally cloned Umbraco project
 
@@ -31,6 +33,8 @@ We recommend creating a Cloud project with at least two environments: a Developm
 
 Once you're happy with the results or wish to see how your website has progressed, you push the changes back to the Development environment. If everything is working as expected you then deploy your changes to the Live environment.
 
+{% tabs %}
+{% tab title="Umbraco 10+" %}
 ### Code Deployment Summary
 
 ![Umbraco Cloud Overview](images/UCP.png)
@@ -39,7 +43,26 @@ In the above diagram, the Umbraco Git repository contains the source code of a c
 
 With this setup, once you commit your code in the Umbraco Cloud Git repository, your C# source code is built by Umbraco Cloud and then deployed to the `wwwroot` folder.
 
-## Disadvantages of using an Umbraco Cloud Project repository as a source code repository
+### Disadvantages of using an Umbraco Cloud Project repository as a source code repository
 
 * We only guarantee to maintain and keep the `master` branch. If there are any other branches, they might be removed without any notification causing data loss.
 * You will need to commit your frontend artifacts as the build pipeline only builds dlls from your C# code.
+{% endtab %}
+
+{% tab title="Legacy Umbraco 7 and 8" %}
+### Code Deployment Summary
+
+<figure><img src="images/UCP_v8.png" alt=""><figcaption><p>Umbraco cloud overview Legacy versions</p></figcaption></figure>
+
+In the above diagram, the external git repository contains the source code of a class library CS project, if you had a class library project that was used in your Cloud project.
+
+With this setup, you commit your changes twice. Once to commit your code in your source control and the other commit to the Umbraco Cloud GIT repository to deploy your website. Your source code is not hosted on Umbraco Cloud but only your cloned project will be in the Umbraco Cloud GIT Repository. Your code is built and compiled into the cloned project and then pushed to Umbraco Cloud. Thus updating the site with your latest code changes.
+
+### Disadvantages of using an Umbraco Cloud Project repository as a source code repository
+
+* We only guarantee to maintain and keep the `master` branch. If there are any other branches, they might be removed without any notification causing data loss.
+* You will always need to commit your dll files.
+{% endtab %}
+{% endtabs %}
+
+##

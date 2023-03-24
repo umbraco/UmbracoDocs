@@ -2,7 +2,7 @@
 
 Content settings contains a handful of settings related to the content in the CMS. It includes settings such as allowed upload files, image settings, and much more. All the values in the content settings has default values, so all configuration is optional.
 
-The following snippet will give an overview of the keys and values in the global section including the default values:
+The following snippet will give an overview of the keys and values in the content section including the default values:
 
 ```json
 "Umbraco": {
@@ -14,6 +14,7 @@ The following snippet will give an overview of the keys and values in the global
         "KeepLatestVersionPerDayForDays": 90
       },
       "AllowedUploadFiles": [],
+      "AllowedMediaHosts":  [],
       "DisableDeleteWhenReferenced": false,
       "DisableUnpublishWhenReferenced": false,
       "DisallowedUploadFiles": ["ashx", "aspx", "ascx", "config", "cshtml", "vbhtml", "asmx", "air", "axd", "xamlx"],
@@ -58,6 +59,11 @@ In the root level section, that is those without a seperate sub section like Ima
 ### Allowed upload files
 
 If greater control is required than available from the above, this setting can be used to store a list of file extensions. If provided, only files with these extensions can be uploaded via the backoffice.
+
+### Allowed media hosts
+
+By default, only relative URLs are allowed when getting URLs for resized images or thumbnails using the ImagesController.
+If you need absolute URLs you will have to add the allowed hosts to this list. The value could be `["umbraco.com", "www.umbraco.com", "our.umbraco.com"]`.
 
 ### Disable delete when referenced
 
@@ -246,4 +252,4 @@ If you need to create a custom Media Type to handle images you need to add anoth
 
 ## Notifications
 
-Umbraco can send out email notifications, set the sender email address for the notifications emails here. To set the SMTP server used to send the emails, edit the standard Simple Mail Transfer Protocol (SMTP) section in the global section, see [global settings](../GlobalSettings/) for more information.
+Umbraco can send out email notifications. To set the SMTP server used to send the emails, edit the standard Simple Mail Transfer Protocol (SMTP) section in the global section. See the [Global settings](../GlobalSettings/) article for more information.

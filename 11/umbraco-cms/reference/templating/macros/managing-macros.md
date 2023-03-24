@@ -22,10 +22,10 @@ The second option is to create the macro through **Partial View Macro Files**.
 
 The dialog provides the following options:
 
-* New partial view macro: Will give you an empty macro with an associated empty partial view file
-* New partial view macro (without macro): Will give you a partial view, without an associated macro
-* New partial view macro from snippet...: Will give you the option to choose between a pre-defined set, including a macro and a partial view with a code snippet
-* Folder...: Will give you the option to create a folder below "Partial View Macro Files"
+-   New partial view macro: Will give you an empty macro with an associated empty partial view file
+-   New partial view macro (without macro): Will give you a partial view, without an associated macro
+-   New partial view macro from snippet...: Will give you the option to choose between a pre-defined set, including a macro and a partial view with a code snippet
+-   Folder...: Will give you the option to create a folder below "Partial View Macro Files"
 
 ## Macro Editor
 
@@ -71,21 +71,60 @@ Here you can add/modify/remove macro parameters.
 
 This list defines the different types of macro parameters:
 
-- Checkbox(`Umbraco.TrueFalse`) - A true/false value
-- Content Type picker (`contentType`) - Choose a type from existing Document Types
-- Decimal (`Umbraco.Decimal`) - accepts only numbers
-- Email address (`Umbraco.EmailAddress`) - validates to valid email adresses
-- Multiple Content Picker (`Umbraco.MultiNodeTreePicker`) - pick 1 or more nodes from the Content tree
-- Multiple Content Type Picker (`contentTypeMultiple`) - pick 1 or more types from existing Document Types
-- Multiple Media Picker (`Umbraco.MultipleMediaPicker`) - pick 1 or more media items
-- Multiple Property Type Picker (`propertyTypePickerMultiple`) - pick 1 or more from existing property types
-- Multiple Tab Picker (`tabPickerMultiple`) - pick 1 or more from existing tabs
-- Numeric (`Umbraco.Integer`) - accepts only numbers
-- Property Type Picker (`propertyTypePicker`) - choose property from existing property types
-- Tab picker (`tabPicker`) - select 1 from list of existing tabs
-- Textarea (`Umbraco.TextArea`) - multiple lines of text
-- Textbox (`Umbraco.TextBox`) - single line of text
-- Media picker (`Umbraco.MediaPicker`) - select a single media item
-- Content Picker (`Umbraco.ContentPicker`) - select a single content node from the Content tree
-- Form Picker (`UmbracoForms.FormsPicker`) - choose from exising Umbraco Forms
-- Forms Theme Picker (`UmbracoForms.ThemePicker`) - choose from existing Forms Themes
+-   Checkbox(`Umbraco.TrueFalse`) - A true/false value
+-   Content Type picker (`contentType`) - Choose a type from existing Document Types
+-   Decimal (`Umbraco.Decimal`) - accepts only numbers
+-   Email address (`Umbraco.EmailAddress`) - validates to valid email adresses
+-   Multiple Content Picker (`Umbraco.MultiNodeTreePicker`) - pick 1 or more nodes from the Content tree
+-   Multiple Content Type Picker (`contentTypeMultiple`) - pick 1 or more types from existing Document Types
+-   Multiple Media Picker (`Umbraco.MultipleMediaPicker`) - pick 1 or more media items
+-   Multiple Property Type Picker (`propertyTypePickerMultiple`) - pick 1 or more from existing property types
+-   Multiple Tab Picker (`tabPickerMultiple`) - pick 1 or more from existing tabs
+-   Numeric (`Umbraco.Integer`) - accepts only numbers
+-   Property Type Picker (`propertyTypePicker`) - choose property from existing property types
+-   Tab picker (`tabPicker`) - select 1 from list of existing tabs
+-   Textarea (`Umbraco.TextArea`) - multiple lines of text
+-   Textbox (`Umbraco.TextBox`) - single line of text
+-   Media picker (`Umbraco.MediaPicker`) - select a single media item
+-   Content Picker (`Umbraco.ContentPicker`) - select a single content node from the Content tree
+-   Form Picker (`UmbracoForms.FormsPicker`) - choose from exising Umbraco Forms
+-   Forms Theme Picker (`UmbracoForms.ThemePicker`) - choose from existing Forms Themes
+
+## Enable Inline Macro
+
+In some case you want to have the macro in the middle of a sentence.
+
+![Inline macros used multiple places inside a single Rich Text Editor](images/inline-macro-in-richtext.png)
+
+To enable editors to add the macro inline, follow these steps:
+
+1. Add a macro parameter called: **enableInlineMacro**.
+2. Choose Checkbox (`Umbraco.TrueFalse`) as the type.
+
+The next time you add the macro, enable the new parameter to add the macro inline.
+
+### Enable Inline Macro by default on a macro
+
+In some cases, you want to have a checkbox that is enabled by default. This would enable you to create your own type of macro parameter that has 1 as the default value. To achieve this, create a DataEditor class anywhere in your Umbraco Project with the following definition:
+
+```csharp
+    [DataEditor(
+        alias: "enableInlineMacro",
+        type: EditorType.MacroParameter,
+        name: "Enable Inline Macro",
+        view: "boolean",
+        Group = "Macro Config",
+        Icon = "icon-list")]
+    public class EnableInlineMacro : DataEditor
+    {
+        public EnableInlineMacro(IDataValueEditorFactory dataValueEditorFactory)
+            : base(dataValueEditorFactory)
+        {
+            DefaultConfiguration.Add("default", "1");
+        }
+    }
+```
+
+{% hint style="info"%}
+You can create a MacroParameter however you want, the importance is to have a parameter called enableInlineMacro with the value 1 to enable it.
+{% endhint %}
