@@ -110,22 +110,9 @@ In order to deploy content based on certain rich core and community property edi
 
 When Umbraco Deploy has been installed, to be able to use it in the project you will need to create and add configuration for an API key.
 
-The API key should be a random string of at least 10 characters.
+The API key should be a **randomly generated string of 64 characters (recommended)**. The minimum requirement is 10 characters.
 
-The following code snippet can be used to generate a random key, using a tool like LinqPad.
-
-```
-public string GetRandomKey(int bytelength)
-{
-   byte[] buff = new byte[bytelength];
-   RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
-   rng.GetBytes(buff);
-   StringBuilder sb = new StringBuilder(bytelength * 2);
-   for (int i = 0; i < buff.Length; i++)
-       sb.Append(string.Format("{0:X2}", buff[i]));
-   return sb.ToString();
-}
-```
+To generate the API key you can use a website like [passwordgenerator.net](https://passwordsgenerator.net/).
 
 This same Deploy API key must be used on each environment for the same website.
 
@@ -200,7 +187,7 @@ Once the configuration has been set up with the correct information we can now g
 
 This can be done by going to the `/umbraco/Deploy/Revision` folder of the project and create a test `.uda` file, and then check in either your Git GUI or in the command line and verify whether the test file is being tracked.
 
-![Test UDA file](<../../../11/umbraco-deploy/getting-started/images/test-UDA (1).png>)
+![Test UDA file](<images/test-UDA (1).png>)
 
 We can see that the file has been created and it is being tracked by Git and we can go ahead and delete the test file.
 
