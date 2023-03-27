@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Umbraco DXP](README.md)
+* [Umbraco DXP (Digital Experience Platform)](README.md)
 
 ## Umbraco Marketplace
 

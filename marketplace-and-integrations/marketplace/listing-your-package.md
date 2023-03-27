@@ -9,7 +9,7 @@ Do you want to be listed on the official Umbraco Marketplace? Follow this guide 
 
 ## Required Step
 
-The minimum requirement is adding the `umbraco-marketplace` tag to your NuGet package - our scheduled synchronization process searches for all packages with this tag, importing those that meet the minimum Umbraco version requirement (Umbraco 8 or above).
+The minimum requirement is adding the `umbraco-marketplace` tag to your NuGet package. Our scheduled synchronization process searches for all packages with this tag, importing those that meet the minimum Umbraco version requirement (Umbraco 8 or above).
 
 The base package information is then sourced from NuGet, including the package name, icon, authors, description, readme, and project URL.
 
@@ -27,15 +27,15 @@ For example, if your project URL is `https://mypackage.com`, we will look for th
 
 And if your project URL is `https://mycompany.com/mypackage`, we will look for the file at `https://mycompany.com/mypackage/umbraco-marketplace.json`.
 
-If your project URL is your GitHub repository we'll check the root of the default branch, or a deeper link (if that's what is defined).
+If your project URL is your GitHub repository we'll check the root of the default branch, or a deeper link if provided.
 
-We also want to cater to developers using a single website for multiple packages - in this case, you can create a JSON file for each package, suffixed with the package ID.
+We also want to cater to developers using a single website for multiple packages. In this case, you can create a JSON file for each package, suffixed with the package ID.
 
 For example, if your package ID is `My.Package`, we'll look for `https://mypackage.com/umbraco-marketplace-my.package.json`.
 
 ### Proving Custom "ReadMe" Information
 
-We have implemented a similar import for a custom "read me" file for the Umbraco Marketplace, in case you want to display different information here than you do on nuget.org.
+We have implemented a similar import for a custom "read me" file for the Umbraco Marketplace. This can be use if you want to display different information here than you do on nuget.org.
 
 By default we will import and display the "read me" content made available as part of the NuGet package. However, if we find a file by the name of `umbraco-marketplace-readme.md` in the same location as the `umbraco-marketplace.json` file, we will import and display that instead.
 
@@ -176,13 +176,14 @@ Want to check how the Marketplace parses your package? [Try the validation tools
 The schedule for retrieving the latest information from NuGet and any further information provided by the package owners is as follows:
 
 | **Operation**                                      | **Schedule**
-|----------------------------------------------------|--------------------------|
-| **Scan NuGet for new tagged packages**             |Every 24 hours at 0400 UTC|
-| **Refresh the information on the known packages**  |Every 2 hours             |
-| **Refresh the NuGet download counts**              |Every 1 hour              |
+|----------------------------------------------------|----------------------------------------------------|
+| **Scan NuGet for new tagged packages**             |Every 24 hours at 0400  (Coordinated Universal Time)|
+| **Refresh the information on the known packages**  |Every 2 hours                                       |
+| **Refresh the NuGet download counts**              |Every 1 hour                                        |
 
+If you can't wait, it's possible to trigger the process for a single package by making an HTTP `POST` request to `https://functions.marketplace.umbraco.com/api/InitiateSinglePackageSyncFunction`.
 
-If you can't wait, it's possible to trigger the process for a single package by making an HTTP `POST` request to `https://functions.marketplace.umbraco.com/api/InitiateSinglePackageSyncFunction` with a `Content-Type` header of `application/json` and a body of:
+The request should include a `Content-Type` header of `application/json` and a body of:
 
 ```json
 {

@@ -3,7 +3,7 @@ description: >-
   Extending the Umbraco platform through the composition of packages and integrations.
 ---
 
-# Umbraco DXP
+# Umbraco DXP (Digital Experience Platform)
 
 Within this Umbraco DXP (Digital Experience Platform) area of the Umbraco documentation you'll find topics related to extending the CMS via packages and integrations.
 
@@ -29,11 +29,11 @@ As well as the commercial products, Umbraco HQ also develop and make available o
 
 We expect them to be useful starting points to anyone looking to integrate such services into their Umbraco solution.
 
-Where we have released an integration for a particular provider and use-case that matches your needs, they are available for use directly. If we don't quite meet the particular requirement you have, we welcome feedback at the issue trackers. As all are open-source, they can be used as reference for building similar integrations with related services.
+Where we have released an integration for a particular provider and use-case that matches your needs, they are available for use directly. If we don't meet the particular requirement you have, we welcome feedback at the issue trackers. As all are open-source, they can be used as reference for building similar integrations with related services.
 
 Source code and issue trackers are found at the following GitHub repositories:
 
 - [Umbraco CMS Integrations](https://github.com/umbraco/Umbraco.Cms.Integrations/)
 - [Umbraco Forms Integrations](https://github.com/umbraco/Umbraco.Forms.Integrations/)
 
-Within the [Integrations section of the documentation](integrations/README.md) you'll find details on installing and working with the various integration packages we have developed.
+Within the [Integrations section of the documentation](integrations/README.md) you'll find details on installing and working with the integration packages we have developed.
