@@ -1,5 +1,5 @@
 ---
-description: A guide displaying the options available in the Settings section in Umbraco Backoffice.
+description: A guide displaying the options available in the Settings section in Umbraco CMS backoffice.
 ---
 
 # Backoffice Settings Section
