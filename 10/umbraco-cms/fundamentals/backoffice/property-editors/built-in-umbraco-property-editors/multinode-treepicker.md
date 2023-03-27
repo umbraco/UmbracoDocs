@@ -36,11 +36,11 @@ Enter `typeAlias,altTypeAlias` to only allow selecting nodes with those alias'. 
 
 ## Data Type Definition Example
 
-![Multinode Treepicker Data Type Definition](../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Multinode-Treepicker-DataType-8\_1.png)
+![Multinode Treepicker Data Type Definition](../built-in-property-editors/images/Multinode-Treepicker-DataType-8\_1.png)
 
 ## Content Example
 
-![Multinode Treepicker](../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Multinode-Treepicker-Content-v8.png)
+![Multinode Treepicker](../built-in-property-editors/images/Multinode-Treepicker-Content-v8.png)
 
 ## MVC View Example
 
