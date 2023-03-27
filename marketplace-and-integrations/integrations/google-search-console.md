@@ -43,16 +43,17 @@ the access token and the refresh token.
 You can also choose to remove access to Google Search Console API by triggering the _Revoke_ action. This will remove the access token and the refresh token
 from the database.
 
-Before you can properly use the URL Inspection Tool to retrieve data from the Search Console API you will need to register the domain of your Umbraco website. This is done at the [Google Search Console](https://search.google.com/search-console).
+Before you can retrieve data from the Search Console API you will need to register the domain of your Umbraco website. This is done at the [Google Search Console](https://search.google.com/search-console).
 
 After Google has verified your ownership, the _URL Inspection_ tool will provide the proper results. Otherwise a "permission denied" error will be shown.
 
 ## The URL Inspection Tool API
 
 The URL Inspection Tool API expects three parameters, two mandatory:
-- inspectionUrl - fully-qualified URL to inspect. Must be under the property specified in "siteUrl".
-- siteUrl - the URL of the property as defined in Search Console.
-- languageCode - optional; default value is "en-US".
+
+- InspectionUrl - fully-qualified URL to inspect. Must be under the property specified in "siteUrl".
+- SiteUrl - the URL of the property as defined in Search Console.
+- LanguageCode - optional; default value is "en-US".
 
 More information can be found [here](https://developers.google.com/webmaster-tools/v1/urlInspection.index/inspect)
 

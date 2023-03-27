@@ -25,8 +25,7 @@ Required minimum versions of Umbraco CMS:
 
 ### Authentication
 
-All requests to the ActiveCampaign API are authenticated by providing
-an API key. The API key is included as an HTTP header called _Api_Token_.
+All requests to the ActiveCampaign API are authenticated by providing an API key. The API key is included as an HTTP header called _Api_Token_.
 
 If the configuration is incomplete, the user will receive an error message.
 
@@ -65,7 +64,7 @@ Ensure your template has a reference to the following using statement:
 @using Umbraco.Cms.Integrations.Crm.ActiveCampaign.Helpers;
 ```
 
-And render the form using (assuming a property based on the created data type, with alias `activeCampaignForm` has been created):
+And render the form using (assuming a property based on the created datatype, with alias `activeCampaignForm` has been created):
 
 ```csharp
 @Html.RenderActiveCampaignForm(Model.ActiveCampaignForm)

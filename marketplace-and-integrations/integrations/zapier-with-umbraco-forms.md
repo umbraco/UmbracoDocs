@@ -7,7 +7,7 @@ description: >-
 
 This integration is an add-on to the [Zapier CMS](zapier.md) integration, and provides necessary components for handling form submissions based on the registered subscription hooks.
 
-A Zap is an automated workflow that connects various apps and services together. Each Zap consists of a trigger and one or more actions.
+A Zap is an automated workflow that connects apps and services together. Each Zap consists of a trigger and one or more actions.
 
 Install from NuGet via:
 https://www.nuget.org/packages/Umbraco.Forms.Integrations.Automation.Zapier

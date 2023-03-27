@@ -25,7 +25,7 @@ Requires minimum versions of Umbraco CMS:
 
 ### Configuration
 
-The following configuration is required to connect to the _Aprimo_ DAM workspace:
+The following configuration is required to connect to the _Aprimo_ DAM (Digital Asset Management) workspace:
 
 ```json
 {
@@ -53,7 +53,7 @@ The following configuration is required to connect to the _Aprimo_ DAM workspace
 
 The configuration is split in two components: a generic one that holds your tenant name, and one for OAuth settings.
 
-The authorization process is managed using the [OAuth flow - Authorization Code with PKCE](https://developers.aprimo.com/marketing-operations/rest-api/authorization/#module7). When making a request for an access token, you will need to generate a code verifier and a code challenge.
+The authorization process is managed using the [OAuth flow - Authorization Code with PKCE (Proof Key for Code Exchange)](https://developers.aprimo.com/marketing-operations/rest-api/authorization/#module7). When making a request for an access token, you will need to generate a code verifier and a code challenge.
 
 `Client Id` and `Client Secret` details are retrieved from your [Aprimo Client Registration](https://developers.aprimo.com/marketing-operations/rest-api/authorization/#module2), which you will need to set up with the redirect URI pointing to the [`AprimoAuthorizationController`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/feature/aprimo-integration/src/Umbraco.Cms.Integrations.DAM.Aprimo/Controllers/AprimoAuthorizationController.cs) - `OAuth` action.
 
@@ -70,7 +70,7 @@ Otherwise, you will be able to select one of the two available options for picki
 - Aprimo Content Selector - rich UI tool hosted on Aprimo Cloud where you can pick items using a familiar Aprimo interface.
 
 #### Browser information
-Before using the integration with Aprimo, please make sure to use a browser that is supported by Aprimo Cloud, in contrary you will not be able to authenticate, nor use the Content Selector.
+Before using the integration with Aprimo, please make sure to use a browser that is supported by Aprimo Cloud. Without one you will not be able to authenticate, nor use the Content Selector.
 
 Aprimo currently supports these browsers, but make sure to check [this](https://help.aprimo.com/Content/Marketing_Operations_Help/aprimo_basics/browsers_configuring_concept.html) topic for an updated list:
 - Chrome for Windows and Macintosh

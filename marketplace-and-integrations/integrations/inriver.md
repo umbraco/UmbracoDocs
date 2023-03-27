@@ -5,7 +5,7 @@ description: >-
 
 # Cookiebot Integration
 
-This integration provides a custom product picker for selected products in the [inriver](https://www.inriver.com/) PIM (product information management) system.  It also includes a value converter providing a strongly typed model for rendering and a sample rendering component.
+This integration provides a custom product picker for selected products in the [inriver](https://www.inriver.com/) PIM (Product Information Management) system.  It also includes a value converter providing a strongly typed model for rendering and a sample rendering component.
 
 Install from NuGet via:
 https://www.nuget.org/packages/Umbraco.Cms.Integrations.PIM.Inriver
@@ -27,7 +27,7 @@ Required minimum versions of Umbraco CMS:
 
 Accessing the resources from inriver through the REST API requires an API key, which will be included with each request using the `X-InRiver-APIKey` header.
 
-To retrieve your API key and instance of your environment, you need to go in the _Users_ section of the _Control Center_ and generate your key.
+To retrieve your API key and instance of your environment, go to the _Users_ section of the _Control Center_ and generate your key.
 
 ### Configuration
 

@@ -13,7 +13,7 @@ Umbraco HQ have developed and made available integrations with SaaS providers. T
 
 Provides a means of including the cookie policy banner and declaration available from [Cookiebot](https://www.cookiebot.com/).
 
-This example can be used as a reference for creating a simple package "wrapper" around a script based integration, allowing listing on the [Umbraco Marketplace](https://marketplace.umbraco.com).
+This example can be used as a reference for creating a package "wrapper" around a script based integration, allowing listing on the [Umbraco Marketplace](https://marketplace.umbraco.com).
 
 ## Automation Integrations
 

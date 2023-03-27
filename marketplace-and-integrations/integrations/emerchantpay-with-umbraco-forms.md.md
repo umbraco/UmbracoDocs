@@ -91,7 +91,7 @@ A consumer has the following properties available that can be mapped against for
 * Phone
 
 
-When a form is submitted on the website, the workflow will execute and based on it's settings, two data payloads will be sent to emerchantpay for creating or retrieving the details of a consumer, and for creating a payment.
+When a form is submitted on the website, the workflow will execute. Two data payloads will be sent to emerchantpay. One for creating or retrieving the details of a consumer and the other for creating a payment.
 
 The response for the second request will provide the URL for the hosted payment page, and the user will the redirected there.
 

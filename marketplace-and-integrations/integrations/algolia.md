@@ -59,7 +59,7 @@ The following configuration is required for working with the Algolia API:
 
 In the backoffice, go to the _Settings_ section and look for the _Algolia Search Management_ dashboard.
 
-In this view you will be able to create definitions for indices in Algolia. For each you provide a name for the index and select the document types to be indexed.  For each document type, select the fields you want to include.
+In this view you will be able to create definitions for indices in Algolia. For each you provide a name for the index and select the Document Types to be indexed.  For each Document Type, select the fields you want to include.
 
 After creating an index, only the content definition is saved into the _algoliaIndices_ table in Umbraco and an empty
 index is created in Algolia.

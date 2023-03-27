@@ -5,8 +5,7 @@ description: >-
 
 # Hubspot with Umbraco Forms Integration
 
-This integration provides a custom workflow, allowing form entries to be mapped to a HubSpot contact record, and stored within the CRM (Customer Relationship
-Management) platform.
+This integration provides a custom workflow for Umbraco Forms. Workflow settings allow form entries to be mapped to a HubSpot contact record. When the form is submitted, the details are and stored within the CRM (Customer Relationship Management) platform.
 
 Install from NuGet via:
 https://www.nuget.org/packages/Umbraco.Forms.Integrations.Crm.Hubspot
@@ -38,11 +37,11 @@ They will need to log into their HubSpot account and agree to the permissions th
 
 They will then be redirected to a website hosted at https://hubspot-forms-auth.umbraco.com which will present an authorization code issued by HubSpot. It's necessary to copy that and paste into the field indicated within the Umbraco Forms installation.
 
-Behind the scenes this will make a further request to HubSpot which will return two tokens - an access and a refresh token.  The former will be provided in further API calls to HubSpot to authenticate the request.  The latter will be stored via Umbraco's key/value service (which writes to the `umbracoKeyValue` table) and will be used to retrieve a new access token when it expires.
+Behind the scenes this will make a further request to HubSpot which will return two tokens - an access and a refresh token.  The former will be provided in further API calls to HubSpot to authenticate the request.  The latter will be stored via Umbraco's key/value service and will be used to retrieve a new access token when it expires.
 
 A button is available to clear the authentication with HubSpot, following which the authentication process would need to be repeated before the integration can again be used.
 
-When the OAuth authentication method is being used, the API call to retrieve the token is proxied via an endpoint on the same website. This allows the Umbraco Forms HubSpot app secret key to remain secret (this is not included in configuration or hard-coded into the dll).
+When the OAuth authentication method is being used, the API call to retrieve the token is proxied via an endpoint on the same website. This allows the Umbraco Forms HubSpot app secret key to remain secret.
 
 ### Working With the HubSpot/Umbraco Forms Integration
 

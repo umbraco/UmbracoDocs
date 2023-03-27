@@ -35,7 +35,7 @@ For this integration, the authentication is managed on Zapier's side by using th
 
 The trigger event to be used by this integration is _New Content Published_.
 
-When creating the Zap trigger, you will be prompted to enter a username, password and the URL for your Umbraco website, or you can use instead an API key.
+When creating the Zap trigger, you will be prompted to enter a username, password and the URL for your Umbraco website. Alternatively, you can use an API key.
 If the following setting is present, then the API key based authentication will take precedence and will be the main method of authorization.
 
 ```xml
