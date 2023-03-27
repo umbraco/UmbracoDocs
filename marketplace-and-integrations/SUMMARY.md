@@ -1,12 +1,13 @@
 # Table of contents
 
-* [Welcome (landing page)](README.md)
-* [✅ Space setup tasks](space-setup-tasks.md)
+* [Umbraco DXP](README.md)
 
-## Marketplace
+## Umbraco Marketplace
 
-* [Submit your package](marketplace/submit-your-package.md)
+* [Introduction](marketplace/README.md)
+  * [Listing Your Package](marketplace/listing-your-package.md)
 
-## Development
+## Umbraco Integrations
 
-* [Build integrations](development/build-integrations.md)
+* [Introduction](integrations/README.md)
+  * [CookieBot Integration](integrations/cookiebot.md)
