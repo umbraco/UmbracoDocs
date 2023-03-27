@@ -56,7 +56,7 @@ For more information about Models Builder, see the [Models Builder](../reference
 
 Health Checks are used to determine the status of your Umbraco project. It is a handy list of checks to see if your Umbraco installation is configured according to best practices. It's possible to add your custom-built health checks.
 
-For more information about Health Checks, see the [Health Check](health-check/README.md) article.
+For more information about Health Checks, see the [Health Check](health-check/README.md) articles.
 
 </details>
 
