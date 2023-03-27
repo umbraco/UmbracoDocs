@@ -9,11 +9,11 @@ description: A guide to creating a custom embed providers in Umbraco
 
 The Rich Text Editor in Umbraco has an 'Embed' button, that when pressed, slides open a panel. This panel enables editors to paste the URL of a third-party media resource to embed in content.
 
-![The Rich Text Editor Embed Button](../../../11/umbraco-cms/extending/images/Embed-Button.png)
+![The Rich Text Editor Embed Button](images/Embed-Button.png)
 
 For example, a YouTube Video...
 
-![Embedding a music video from YouTube](../../../11/umbraco-cms/extending/images/Embed-YouTube.png)
+![Embedding a music video from YouTube](images/Embed-YouTube.png)
 
 The task of an `EmbedProvider` is to accept the pasted URL and write out the appropriate markup for the third-party provider associated with the URL.
 
@@ -81,6 +81,7 @@ If the provider supports _OEmbed_ format for website URL embedding, then use the
 Let's allow our editors to embed artwork from the popular DeviantArt website - the world's largest online social community for artists and art enthusiasts. We can see they have information on using OEmbed: [https://www.deviantart.com/developers/oembed](https://www.deviantart.com/developers/oembed). The format of their OEmbed implementation returns a JSON format, from a URL `https://backend.deviantart.com/oembed?url=[urltoembed]`. We'll need to use the `EmbedProviderBase` and the `base.GetJsonResponse` method. We can see 'links' to media shared on DeviantArt are in the format: `https://fav.me/[uniquemediaidentifier]`. We'll need a regex to match any urls pasted into the embed panel that start with _fav.me_, achieved by setting the `UrlSchemeRegex` property.
 
 The Provider would look like this:
+
 ```csharp
 using System.Collections.Generic;
 using Umbraco.Cms.Core.Media.EmbedProviders;
@@ -139,7 +140,7 @@ namespace MyNamespace
 
 The new provider should be available for editors to use:
 
-![Embedding a Media Item from DeviantArt website](../../../11/umbraco-cms/extending/images/deviantart-embedded-media.png)
+![Embedding a Media Item from DeviantArt website](images/deviantart-embedded-media.png)
 
 Notice there isn't really any implementation written here. The regex maps the incoming URL to the provider. The base methods handle the complication of requesting from the third party API and turning the response into HTML.
 

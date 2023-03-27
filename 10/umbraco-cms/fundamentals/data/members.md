@@ -34,11 +34,11 @@ You can create your own Member Types and add tabs, groups and properties as you 
 
 Go to the **Settings** section, right-click **Member Types** and select **Create**. You will now be taken to the Member Type editor that is used to define and edit the Member Type. Name the new Member Type and click **Save**.
 
-![Member Type Editor](../../../../11/umbraco-cms/fundamentals/data/images/Member-Type-Editor\_new.png)
+![Member Type Editor](images/Member-Type-Editor\_new.png)
 
 You will see that the **Membership** group is added automatically to any Member Types you create. This group includes all the default Member Type properties listed above. The properties are locked, which means you cannot remove them, but you can still configure the settings for each property:
 
-![Configure property settings](../../../../11/umbraco-cms/fundamentals/data/images/member-type-property-settings\_new.png)
+![Configure property settings](images/member-type-property-settings\_new.png)
 
 It is possible to add more groups and more properties to each of the Member Types you create, as well as the default Member Type.
 
@@ -46,7 +46,7 @@ It is possible to add more groups and more properties to each of the Member Type
 
 Member Groups define roles for your members that can be used for role-based protection. A member can be in multiple groups.
 
-![Creating a Member Group](../../../../11/umbraco-cms/fundamentals/data/images/Member-group.png)
+![Creating a Member Group](images/Member-group.png)
 
 To create a new Member Group click the menu icon next to the **Member Groups** node in the Members section. Choose **Create**, name the group, and save the group.
 
@@ -54,7 +54,7 @@ To create a new Member Group click the menu icon next to the **Member Groups** n
 
 To assign a member to a specific group find the member you wish to assign and find the **Properties** group. Here you can see which groups the member is already part of, as well as add the member to more groups or remove the member from already assigned groups:
 
-![Assigning a Member Group](../../../../11/umbraco-cms/fundamentals/data/images/assign-member-group.png)
+![Assigning a Member Group](images/assign-member-group.png)
 
 ## [Sensitive data](../../reference/security/sensitive-data-on-members.md)
 

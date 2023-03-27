@@ -13,7 +13,7 @@ When developing a package you should attempt to provide both a zip file package 
 
 A package zip file can be installed through the Umbraco backoffice.
 
-![Zip packages can be installed via the Umbraco backoffice package section](../../../../11/umbraco-cms/extending/packages/images/backoffice-package-section.png)
+![Zip packages can be installed via the Umbraco backoffice package section](images/backoffice-package-section.png)
 
 Packages zip files can contain:
 

@@ -18,17 +18,17 @@ Prevalues are the options which are shown in the dropdown list. You can add, edi
 
 ## Data Type Definition Example
 
-![Dropdown Data Type Definition](../../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/dropdown/images/Dropdown-DataType-v10.png)
+![Dropdown Data Type Definition](../../built-in-property-editors/dropdown/images/Dropdown-DataType-v10.png)
 
 ## Content Example
 
 ### Single Value
 
-![Single dropdown content example](../../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/dropdown/images/DropdownSingle-Content.png)
+![Single dropdown content example](../../built-in-property-editors/dropdown/images/DropdownSingle-Content.png)
 
 ### Multiple Values
 
-![Multiple dropdown content example](../../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/dropdown/images/DropdownMultiple-Content.png)
+![Multiple dropdown content example](../../built-in-property-editors/dropdown/images/DropdownMultiple-Content.png)
 
 ## MVC View Example
 

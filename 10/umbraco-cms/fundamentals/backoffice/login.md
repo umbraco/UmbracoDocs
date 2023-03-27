@@ -11,7 +11,7 @@ To access the backoffice, you will need to login. You can do this by adding `/um
 
 You will be presented with a login form similar to this:
 
-![Login screen](../../../../11/umbraco-cms/fundamentals/backoffice/images/login-backoffice-login.png)
+![Login screen](images/login-backoffice-login.png)
 
 The **login** screen contains a **Greeting**, **Email**, **Password** field and optionally a **Forgotten password** link
 
