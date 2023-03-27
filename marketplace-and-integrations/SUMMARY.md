@@ -4,10 +4,10 @@
 
 ## Umbraco Marketplace
 
-* [Introduction](marketplace/README.md)
+* [Marketplace](marketplace/README.md)
   * [Listing Your Package](marketplace/listing-your-package.md)
 
 ## Umbraco Integrations
 
-* [Introduction](integrations/README.md)
-  * [CookieBot Integration](integrations/cookiebot.md)
+* [Integrations](integrations/README.md)
+  * [CookieBot](integrations/cookiebot.md)

@@ -11,9 +11,9 @@ Within this Umbraco DXP (Digital Experience Platform) area of the Umbraco docume
 
 Umbraco makes available three licensed add-ons to the CMS that are available for purchase. They each have their own dedicated documentation area:
 
-- [Umbraco Forms](../11/umbraco-forms/)
-- [Umbraco Deploy On Premise](../11/umbraco-deploy/)
-- [Umbraco Workflow](../11/umbraco-workflow//)
+- [Umbraco Forms](https://docs.umbraco.com/umbraco-forms/)
+- [Umbraco Deploy On Premise](https://docs.umbraco.com/umbraco-deploy/)
+- [Umbraco Workflow](https://docs.umbraco.com/umbraco-workflow/)
 
 ## [Umbraco Marketplace](marketplace/README.md)
 
