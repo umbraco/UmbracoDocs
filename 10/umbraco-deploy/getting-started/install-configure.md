@@ -136,7 +136,7 @@ The key should be applied in `appSettings.json`.
 
 #### Configuring Environments
 
-hasOnce the `appSetting` and API key has been added, it is now time to configure the environments, also in the `appSettings.json` file.
+Once the `appSetting` and API key has been added, it is now time to configure the environments, also in the `appSettings.json` file.
 
 An example configuration with a single upstream environment file will look like this:
 
