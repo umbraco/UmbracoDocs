@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Umbraco DXP (Digital Experience Platform)](README.md)
+* [Umbraco DXP (Digital eXperience Platform)](README.md)
 
 ## Umbraco Marketplace
 
@@ -16,7 +16,7 @@
   * [CookieBot](integrations/cookiebot.md)
   * [CommerceTools](integrations/commercetools.md)
   * [Dynamics](integrations/dynamics.md)
-  * [emerchantpay](integrations/emerchantpay-with-umbraco-forms.md)
+  * [emerchantpay With Umbraco Forms](integrations/emerchantpay-with-umbraco-forms.md)
   * [Google Search Console](integrations/google-search-console.md)
   * [HubSpot](integrations/hubspot.md)
   * [HubSpot With Umbraco Forms](integrations/hubspot-with-umbraco-forms.md)

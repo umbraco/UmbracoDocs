@@ -37,8 +37,9 @@ The Umbraco app manages two types of events:
 
 The trigger event to be used by this integration is _New Form Submission_.
 
-When creating the Zap trigger, you will be prompted to enter a username, password and the URL for your Umbraco website, or you can use instead an API key.
-If the following setting is present, then the API key based authentication will take precedence and will be the main method of authorization.
+When creating the Zap trigger, you will be prompted to enter a username, password and the URL for your Umbraco website.
+
+It;s also possible to usean API key. If the following setting is present, then the API key based authentication will take precedence and will be used for authorization.
 
 ```json
 "Umbraco": {

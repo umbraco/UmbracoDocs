@@ -5,7 +5,7 @@ description: >-
 
 # Google Search Console Integration
 
-This integration provides an extension for Umbraco CMS allowing programmatic access to URL-level data for properties managed in Google Search Console and the indexed version of a URL.
+This integration provides an extension for Umbraco CMS. It provides details on indexed URLs managed in Google Search Console.
 
 Install from NuGet via:
 https://www.nuget.org/packages/Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.URLInspectionTool
@@ -43,11 +43,11 @@ the access token and the refresh token.
 You can also choose to remove access to Google Search Console API by triggering the _Revoke_ action. This will remove the access token and the refresh token
 from the database.
 
-Before you can properly use the URL Inspection Tool to retrieve data from the Search Console API you
-will need to register the domain of you Umbraco website as a property in [Google Search Console](https://search.google.com/search-console).
+Before you can properly use the URL Inspection Tool to retrieve data from the Search Console API you will need to register the domain of your Umbraco website. This is done at the [Google Search Console](https://search.google.com/search-console).
 
-After Google has verified your ownership, the _URL Inspection_ tool will provide the proper results. Otherwise a _PERMISSION_DENIED_
-error will be prompted.
+After Google has verified your ownership, the _URL Inspection_ tool will provide the proper results. Otherwise a "permission denied" error will be shown.
+
+## The URL Inspection Tool API
 
 The URL Inspection Tool API expects three parameters, two mandatory:
 - inspectionUrl - fully-qualified URL to inspect. Must be under the property specified in "siteUrl".

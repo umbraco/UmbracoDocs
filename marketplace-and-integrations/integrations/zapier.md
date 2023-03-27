@@ -7,9 +7,9 @@ description: >-
 
 This integration provides a dashboard interface that allows users to visualize registered subscription hooks. When a Zap is turned on, the subscription hook is saved into the database; turning off the Zap will remove the registered subscription hook.
 
-When content gets published, the content type is looked up in the subscription hooks list from the database, and if a record is found, A POST request will be sent to the webhook URL with details of the current node. This eventually will cause the Zap's trigger to be invoked, triggering the assigned actions of the Zap.
+When content gets published, the content type is looked up in the subscription hooks list from the database. If a record is found, a POST request will be sent to the webhook URL with details of the current node. This will cause the Zap's trigger to be invoked, triggering the assigned actions of the Zap.
 
-A Zap is an automated workflow that connects various apps and services together. Each Zap consists of a trigger and one or more actions.
+A Zap is an automated workflow that connects apps and services together. Each Zap consists of a trigger and one or more actions.
 
 Install from NuGet via:
 https://www.nuget.org/packages/Umbraco.Cms.Integrations.Automation.Zapier
@@ -46,7 +46,7 @@ If the following setting is present, then the API key based authentication will 
 
 If no API key is present, then the Umbraco application will validate the credentials entered and return a message in case the validation fails.
 
-If you want to extend the security layer, you can also specify a user group that the user trying to connect needs to be a part of, by adding the following
+For additional security, you can also specify a user group that the user trying to connect must be part of, by adding the following
 setting in `Web.config`:
 
 ```xml

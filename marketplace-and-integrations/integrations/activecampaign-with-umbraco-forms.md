@@ -5,7 +5,7 @@ description: >-
 
 # ActiveCampaign with UmbracoForms Integration
 
-This integration provides a custom workflow, allowing form entries to be mapped to an ActiveCampaign contact record, a contact's custom fields or to associate a contact with an existing CRM account.
+This integration provides a custom workflow, allowing form entries to be mapped to an ActiveCampaign contact record. The record can be used to create a new contact or to associate a contact with an existing CRM (customer relationship management) account.
 
 Install from NuGet via:
 https://www.nuget.org/packages/Umbraco.Forms.Integrations.Crm.ActiveCampaign
@@ -76,12 +76,11 @@ To connect to your ActiveCampaign account, the following configuration is requir
 
 Email property is mandatory by default through ActiveCampaign API rules. The required rule can be extended to the other properties as well, by explicitly specifying that in the ```required``` property of each ```ContactFields``` node.
 
-
 ### Working with the Umbraco Forms - ActiveCampaign integration
 
-To use it you will need to attach the _ActiveCampaign Contacts Workflow_ to a form, configure the mappings between the contact properties and the form fields,
-select an account if you want to associate the contacts, and/or map any contact custom fields.
+To use it you will need to attach the _ActiveCampaign Contacts Workflow_ to a form.  Configure the mappings between the contact properties and the form fields.
+Select an account if you want to associate the contacts, and/or map any contact custom fields.
 
-When a form is submitted on the website, the workflow will execute and based on the provided email, create or update an ActiveCampaign account. If custom fields mappings have been provided, the contact payload will contain custom fields values.
+When a form is submitted on the website, the workflow will execute.  Based on the provided email it will create or update an ActiveCampaign account. If custom fields mappings have been provided, the contact payload will contain custom fields values.
 
 After the account data has been persisted, if an account has been provided in the workflow setup, then an association with the account will be created.

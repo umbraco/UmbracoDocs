@@ -19,4 +19,4 @@ We provide links for each package to the NuGet details, and other locations if a
 
 ## [Listing Your Package](listing-your-package.md)
 
-If you are a package developer wanting to make your work available to the widest audience, please review the steps described in [how to list your package](listing-your-package.md).
+If you are a package developer wanting to make your work available for Umbraco website developers, please review how to [list your package](listing-your-package.md).

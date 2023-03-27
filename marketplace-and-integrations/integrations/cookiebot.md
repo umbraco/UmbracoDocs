@@ -43,7 +43,7 @@ The following configuration is required for the Cookiebot scripts to be loaded c
 
 The package is a reusable [Razor class library](https://learn.microsoft.com/en-us/aspnet/core/razor-pages/?view=aspnetcore-6.0&tabs=visual-studio) which will allow editors to load the Cookiebot Banner and Declaration scripts.
 
-The banner script needs to be inserted as the **first script** of the website, by placing it in the _HEAD_ tag using this syntax:
+The banner script needs to be inserted as the **first script** of the website, by placing it within the `<head></head>` tag using this syntax:
 
 ```csharp
 @await Html.PartialAsync("~/Views/Partials/UmbracoCms.Integrations/Analytics/Cookiebot/Banner.cshtml")

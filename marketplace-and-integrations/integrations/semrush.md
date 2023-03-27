@@ -26,9 +26,9 @@ An account with Semrush.
 
 ## How To Use
 
-Once the package is installed either from [NuGet](https://www.nuget.org/packages/Umbraco.Cms.Integrations.Seo.Semrush) or via the zip file available at our.umbraco.com _(link TBC when published)_, the integration is made available in the Umbraco back-office as a content app.
+Once the package is installed, the integration is made available in the Umbraco backoffice as a content app.
 
-The interface is available for all types of content items as well as for all user groups.  Either using an existing content field as a starting point, or by entering a custom phrase, a keyword search tool can be made for different metrics across various markets.
+The interface is available for all types of content items as well as for all user groups.  Either using an existing content field as a starting point, or by entering a custom phrase, a keyword search can be initiated.  The results can be filtered for different metrics across various markets.
 
 Administrators are provided with additional features for managing the connectivity with their organization's account with Semrush.
 

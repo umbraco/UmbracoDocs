@@ -33,7 +33,7 @@ From your CommerceTools account, retrieve the following details add them as appl
 <add key="Umbraco.Cms.Integrations.Commerce.CommerceTools.DefaultLanguage" value="en-US" />
 ```
 
-With that in place, in the Umbraco back-office click to _Settings > Data Types_ and create a new data type based on the available *CommerceTools Picker*.
+In the Umbraco backoffice click to _Settings > Data Types_ and create a new datatype based on the available *CommerceTools Picker*.
 
 The picker can be configured for selection of categories or products, defined as single or multiple picker, as well as other options:
 

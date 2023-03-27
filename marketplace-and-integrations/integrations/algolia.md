@@ -59,15 +59,14 @@ The following configuration is required for working with the Algolia API:
 
 In the backoffice, go to the _Settings_ section and look for the _Algolia Search Management_ dashboard.
 
-In this view you will be able to create definitions for indices in Algolia, by providing a name for the index and
-selecting the document types you want indexed, and which fields of the document types you want to include.
+In this view you will be able to create definitions for indices in Algolia. For each you provide a name for the index and select the document types to be indexed.  For each document type, select the fields you want to include.
 
 After creating an index, only the content definition is saved into the _algoliaIndices_ table in Umbraco and an empty
 index is created in Algolia.
 
 The actual content payload is pushed to Algolia for indices created in Umbraco on two scenarios:
-- from the list of indices, the _Build_ action is triggered, resulting in all content of specific document types to be sent as JSON to Algolia.
-- using a _ContentPublishedNotification_ handler which will check the list of indices for the specific document type, and will update a matching Algolia object.
+- From the list of indices, the _Build_ action is triggered, resulting in all content of specific Document Types to be sent as JSON to Algolia.
+- Using a _ContentPublishedNotification_ handler which will check the list of indices for the specific Document Type, and will update a matching Algolia object.
 
 From the dashboard you can also perform a search over one selected index, or remove it.
 
@@ -76,7 +75,7 @@ Two additional handlers for _ContentDeletedNotification_ and _ContentUnpublished
 Each Umbraco content item indexed in Algolia is referenced by the content entity's `GUID` Key field.
 
 ### Algolia record structure
-An indexed Algolia record matching an Umbraco content item is composed of a default set of properties and a list of properties defined within the Umbraco dashboard.
+An indexed Algolia record matching an Umbraco content item is contains a default set of properties. It is augmented by the list of properties defined within the Umbraco dashboard.
 
 Properties that can vary by culture will have a record property corespondent with this naming convention: `[property]-[culture]`.
 
@@ -95,10 +94,10 @@ The [`ContentBuilder`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/
 Current implementation contains a custom converter for the `Umbraco.MediaPicker3` property editor.
 
 If a different implementation is required, you will need to follow these steps:
-- inherit from `AlgoliaSearchPropertyIndexValueFactory`
-- override the `GetValue` method
-- add custom handlers to the [`Converters`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/fe5b17be519fff2c2420966febe73c8ed61c9374/src/Umbraco.Cms.Integrations.Search.Algolia/Services/AlgoliaSearchPropertyIndexValueFactory.cs#L26) dictionary
-- register your implementation in the composer
+- Inherit from `AlgoliaSearchPropertyIndexValueFactory`
+- Override the `GetValue` method
+- Add custom handlers to the [`Converters`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/fe5b17be519fff2c2420966febe73c8ed61c9374/src/Umbraco.Cms.Integrations.Search.Algolia/Services/AlgoliaSearchPropertyIndexValueFactory.cs#L26) dictionary
+- Register your implementation in the composer
 
 #### Example
 
@@ -130,6 +129,7 @@ If a different implementation is required, you will need to follow these steps:
 
   }
 ```
+
 #### Extension registration
 
 ```csharp

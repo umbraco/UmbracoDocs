@@ -29,7 +29,7 @@ A dashboard interface allowing users to visualize registered subscription hooks 
 
 ### [CommerceTools](commercetools.md)
 
-A product and category picker that can be added as a property editor for content, with a value converter providing a strongly typed model for rendering.
+A product and category picker that can be added as a property editor for content. Contains a value converter providing a strongly typed model for rendering.
 
 ### [emerchantpay With Umbraco Forms](emerchantpay-with-umbraco-forms.md)
 
@@ -47,7 +47,7 @@ A form picker and rendering component for ActiveCampaign forms.
 
 ### [ActiveCampaign With Umbraco Forms](activecampaign-with-umbraco-forms.md)
 
-A custom workflow allowing form form entries to be mapped to a ActiveCampaign contact, and stored within the CRM platform.
+A custom workflow allowing form form entries to be mapped to a ActiveCampaign contact, and stored within the CRM (Customer Relationship Management) platform.
 
 ### [Dynamics](dynamics.md)
 
@@ -59,7 +59,7 @@ A form picker and rendering component for Hubspot forms.
 
 ### [Hubspot With Umbraco Forms](hubspot-with-umbraco-forms.md)
 
-A custom workflow allowing form form entries to be mapped to a HubSpot contact record, and stored within the CRM platform.
+A custom workflow allowing form form entries to be mapped to a HubSpot contact record, and stored within the CRM (Customer Relationship Management) platform.
 
 ## DAM (Digital Asset Management) Integrations
 
