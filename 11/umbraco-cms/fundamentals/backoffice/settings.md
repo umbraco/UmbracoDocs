@@ -10,7 +10,7 @@ The **Settings** section of the Umbraco backoffice has its own set of default da
 
 <summary>Welcome</summary>
 
-The Welcome dashboard is part of the Settings section. It is displayed next to the Settings tree and consists of a blank view that can be used to build any custom dashboard. The Welcome dashboard can be customized to display information as per your needs. It is possible to extend the dashboard and add them to either an existing section or a custom one.
+The Welcome dashboard is the default dashboard in the Settings section. Like all dashboards, it is displayed next to the Settings tree and consists of a view that can be customized. The Welcome dashboard can be customized to display information as per your needs. It is possible to extend the dashboard and add them to either an existing section or a custom one.
 
 For more information about creating custom dashoards, see the [Dashboards](../extending/dashboards.md) article.
 
