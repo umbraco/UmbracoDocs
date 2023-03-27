@@ -20,13 +20,13 @@ Workflow Types in Umbraco Forms
 
 ## **Change Record State**
 
-![Change Record state](../../../../11/umbraco-forms/editor/attaching-workflows/images/change-record-state.png)
+![Change Record state](images/change-record-state.png)
 
 Used to automatically **Approve Record** or **Delete Record** once it is submitted. Configure words that you want to match and select whether these words should trigger an approval or deletion of the record.
 
 ## **Post as XML**
 
-![Post as XML](../../../../11/umbraco-forms/editor/attaching-workflows/images/post-as-xml.png)
+![Post as XML](images/post-as-xml.png)
 
 Used to post the Form as an XML to a specified URL. The following configuration can be set:
 
@@ -40,7 +40,7 @@ Used to post the Form as an XML to a specified URL. The following configuration 
 
 ## **Save as an XML file**
 
-![Save as XML](../../../../11/umbraco-forms/editor/attaching-workflows/images/save-as-an-xml-file.png)
+![Save as XML](images/save-as-an-xml-file.png)
 
 Saves the result of the Form as an XML file by using XSLT. The following configuration can be set:
 
@@ -49,15 +49,21 @@ Saves the result of the Form as an XML file by using XSLT. The following configu
 * File extension (required)
 * XsltFile - used to transform the XML
 
+The path needs to point to a folder, not a file name. The files are then stored locally, and relative paths are resolved to the content root.
+
+{% hint style="info" %}
+When storing the files within the `wwwroot` or `App_Plugins` folders, the files will be publicly available by default.
+{% endhint %}
+
 ## **Save as Umbraco Content Node**
 
-![Save as content node](../../../../11/umbraco-forms/editor/attaching-workflows/images/save-as-content-node.png)
+![Save as content node](images/save-as-content-node.png)
 
 Saves a submitted Form as a new content node. You need to choose a Document type and match the fields in the Form with the properties on the selected Document Type.
 
 You can also choose to set a static value to fill in the properties:
 
-![Save as content node](../../../../11/umbraco-forms/editor/attaching-workflows/images/create-new-node.png)
+![Save as content node](images/create-new-node.png)
 
 In the example above, a Document Type called **Blogpost** is selected for creating the new Content node.
 
@@ -71,7 +77,7 @@ The following configuration can be set:
 
 ## **Send Email**
 
-![Send email](../../../../11/umbraco-forms/editor/attaching-workflows/images/send-email.png)
+![Send email](images/send-email.png)
 
 Sends the result of the Form to the specified email address. The following configuration can be set:
 
@@ -100,7 +106,7 @@ Sends the result of the Form to the specified email address. The following confi
 
 ## **Send Email with Template (Razor)**
 
-![Send email with template](../../../../11/umbraco-forms/editor/attaching-workflows/images/send-email-razor.png)
+![Send email with template](images/send-email-razor.png)
 
 Uses a template to send the results of the Form to a specified email address.
 
@@ -135,7 +141,7 @@ The following configuration can be set:
 
 ## **Send Form to URL**
 
-![Send to URL](../../../../11/umbraco-forms/editor/attaching-workflows/images/send-to-URL.png)
+![Send to URL](images/send-to-URL.png)
 
 Sends the Form to a URL either as a HTTP POST or GET. The following configuration can be set:
 
@@ -192,7 +198,7 @@ namespace RequestSaver.Controllers
 
 ## **Send XSLT Transformed Email**
 
-![Send XSLT Email](../../../../11/umbraco-forms/editor/attaching-workflows/images/xslt-email.png)
+![Send XSLT Email](images/xslt-email.png)
 
 Sends the result of the Form to an email address with full control over the email contents by providing an xslt file. The following configuration can be set:
 
@@ -220,7 +226,7 @@ Sends the result of the Form to an email address with full control over the emai
 
 ## **Slack**
 
-![Send to Slack](../../../../11/umbraco-forms/editor/attaching-workflows/images/email-slack.png)
+![Send to Slack](images/email-slack.png)
 
 Allows to post the Form data to a specific channel on Slack. The following configuration can be set:
 
