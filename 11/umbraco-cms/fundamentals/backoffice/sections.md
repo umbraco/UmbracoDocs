@@ -49,6 +49,8 @@ The Settings tree consists of:
 * Stylesheets (`.css` files)
 * Scripts (`.js` files)
 
+The **Settings** section of the Umbraco backoffice has its own set of default dashboards. For more information, see the [Settings Dashboards](settings-dashboards.md) article.
+
 ## Packages
 
 In this section, you can browse and install packages into your Umbraco solution. You can also get an overview of all the installed packages as well as uninstall packages you no longer need.
