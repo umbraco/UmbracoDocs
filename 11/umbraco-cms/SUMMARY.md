@@ -92,6 +92,7 @@
   * [Infinite Editing](fundamentals/backoffice/infinite-editing.md)
   * [Log Viewer](fundamentals/backoffice/logviewer.md)
   * [Language Variants](fundamentals/backoffice/variants.md)
+  * [Settings Dashboards](fundamentals/backoffice/settings-dashboards.md)
 * [Data](fundamentals/data/README.md)
   * [Defining Content](fundamentals/data/defining-content.md)
   * [Creating Media](fundamentals/data/creating-media/README.md)
