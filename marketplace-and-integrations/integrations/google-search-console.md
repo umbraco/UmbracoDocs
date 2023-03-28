@@ -10,7 +10,7 @@ This integration provides an extension for Umbraco CMS. It provides details on i
 ## Package Links
 
 - [NuGet install](https://www.nuget.org/packages/Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.URLInspectionTool)
-- [Source code](https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.URLInspectionTool)
+- [Source code](https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.UrlInspectionTool)
 - [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.cms.integrations.seo.googlesearchconsole.urlinspectiontool)
 
 ## Prerequisites

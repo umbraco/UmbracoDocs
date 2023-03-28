@@ -10,7 +10,7 @@ This integration provides a custom workflow for Umbraco Forms. Workflow settings
 ## Package Links
 
 - [NuGet install](https://www.nuget.org/packages/Umbraco.Forms.Integrations.Crm.Hubspot)
-- [Source code](https://github.com/umbraco/Umbraco.Forms.Integrations/tree/main/src/Umbraco.Forms.Integrations.Crm.Hubspot)
+- [Source code](https://github.com/umbraco/Umbraco.Forms.Integrations/tree/main-v10/src/Umbraco.Forms.Integrations.Crm.Hubspot)
 - [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.forms.integrations.crm.hubspot)
 
 ## Prerequisites

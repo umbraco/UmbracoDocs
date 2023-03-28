@@ -10,7 +10,7 @@ This integration provides a custom workflow, allowing form entries to be mapped 
 ## Package Links
 
 - [NuGet install](https://www.nuget.org/packages/Umbraco.Forms.Integrations.Crm.ActiveCampaign)
-- [Source code](https://github.com/umbraco/Umbraco.Forms.Integrations/tree/main/src/Umbraco.Forms.Integrations.Crm.ActiveCampaign)
+- [Source code](https://github.com/umbraco/Umbraco.Forms.Integrations/tree/main-v10/src/Umbraco.Forms.Integrations.Crm.ActiveCampaign)
 - [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.forms.integrations.crm.activecampaign)
 
 ## Prerequisites
