@@ -1,5 +1,7 @@
 ---
-description: "Once you've created and published your package, here is what's involved in it's ongoing maintenance"
+description: >-
+  Once you've created and published your package, here is what's involved in
+  it's ongoing maintenance
 ---
 
 # Maintaining packages
@@ -18,35 +20,35 @@ It would also be helpful to ensure that the 'Package Compatibility' details are 
 
 ### If the package needs updating
 
-Make the changes required so that your code works on the latest version of Umbraco. Next you need to create a new version of your package. Read the [Creating a Package](creating-a-package.md) article for guidelines on creating the package zip file using the backoffice.  
+Make the changes required so that your code works on the latest version of Umbraco. Next you need to create a new version of your package. Read the [Creating a Package](creating-a-package.md) article for guidelines on creating the package zip file using the backoffice.
 
 To publish your new version on Our, visit [your packages profile page](https://our.umbraco.com/member/profile/packages/) and select the package that you are updating.
 
-- On the 'Package Details' section of the form update the 'Current Version'. You should also add some details about which versions of your package are for which version of Umbraco in the 'Package Description'. For example:
+* On the 'Package Details' section of the form update the 'Current Version'. You should also add some details about which versions of your package are for which version of Umbraco in the 'Package Description'. For example:
 
-![Specify version info](images/specify-version-info.png)
+![Specify version info](../../../../10/umbraco-cms/extending/packages/images/specify-version-info.png)
 
-- On the 'Package Files' section of the form you can upload a new file and then make it the 'current' one. You don't have to archive the previous version as you are allowed multiple active ones that will all appear in the Package Files list, for example:
+* On the 'Package Files' section of the form you can upload a new file and then make it the 'current' one. You don't have to archive the previous version as you are allowed multiple active ones that will all appear in the Package Files list, for example:
 
-![Package files list](images/package-files-list.png)
+![Package files list](../../../../10/umbraco-cms/extending/packages/images/package-files-list.png)
 
 You can only have one 'current' file - this is the version that will be downloaded from the main button on the package's public page:
 
-![Download current version button](images/download-package-button.png)
+![Download current version button](../../../../10/umbraco-cms/extending/packages/images/download-package-button.png)
 
 ## Manage feature requests and issues
 
 If you want to encourage feedback, feature requests, and issue reports then you should add a forum to your package. You can manage your forums from [your packages profile page](https://our.umbraco.com/member/profile/packages/):
 
-![Link to manage forums](images/forums-link.png)
+![Link to manage forums](../../../../10/umbraco-cms/extending/packages/images/forums-link.png)
 
 To add a new forum you will need to specify a name and a description, such as:
 
-![Create a new forum](images/forum-create.png)
+![Create a new forum](../../../../10/umbraco-cms/extending/packages/images/forum-create.png)
 
 Any forum you create will appear under the Package Files list on the package's public page:
 
-![Forum list](images/forums-display.png)
+![Forum list](../../../../10/umbraco-cms/extending/packages/images/forums-display.png)
 
 ## Find collaborators
 
@@ -58,9 +60,9 @@ If you'd like to find a collaborator you are welcome to raise a 'Request for Col
 
 ### Add collaborators on Our
 
-You can assign other Our members to the 'team' for your package. Team members will see the package in their list to maintain, and will be able to edit its details.  You can manage your team of collaborators from [your packages profile page](https://our.umbraco.com/member/profile/packages/):
+You can assign other Our members to the 'team' for your package. Team members will see the package in their list to maintain, and will be able to edit its details. You can manage your team of collaborators from [your packages profile page](https://our.umbraco.com/member/profile/packages/):
 
-![Link to manage team](images/team-link.png)
+![Link to manage team](../../../../10/umbraco-cms/extending/packages/images/team-link.png)
 
 ## Package no longer required?
 
@@ -68,8 +70,8 @@ If your package should no longer be used (perhaps it is now too old, or it has b
 
 At the bottom of the 'Package Details' form, tick to say 'Retired' and specify the reason for the retirement.
 
-![Flag package as retired](images/flag-as-retired.png)
+![Flag package as retired](../../../../10/umbraco-cms/extending/packages/images/flag-as-retired.png)
 
 Moving 'Next' will save your changes, and the retired status and reason will be displayed prominently on the package's public page:
 
-![Retired display on package page](images/display-retired.png)
+![Retired display on package page](../../../../10/umbraco-cms/extending/packages/images/display-retired.png)
