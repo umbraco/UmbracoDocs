@@ -20,7 +20,7 @@ The Welcome dashboard is the first dashboard in the Settings section. Like all d
 
 The Examine Management dashboard provides an overview of the Examine functionality available directly within the Umbraco backoffice. The Umbraco backoffice allows you to view details about your Examine indexes and searchers - all in one place. You can see which fields are being indexed and rebuild the indexes if there's a problem. You can also test keywords to see what results will be returned.
 
-For more information about Examine Management, see the [Examine Management](https://docs.umbraco.com/umbraco-cms/reference/searching/examine/examine-management) article.
+For more information about Examine Management, see the [Examine Management](../../reference/searching/examine/examine-management.md) article.
 
 </details>
 
@@ -50,7 +50,7 @@ The Models Builder dashboard displays the following information:
 - Provides a button to generate models (if the models mode is `SourceCodeManual` mode only).
 - Reports the last error (if any) that would have prevented models from being properly generated.
 
-For more information about Models Builder, see the [Models Builder](https://docs.umbraco.com/umbraco-cms/reference/templating/modelsbuilder) article.
+For more information about Models Builder, see the [Models Builder](../../reference/templating/modelsbuilder/README.md) article.
 
 </details>
 
@@ -60,7 +60,7 @@ For more information about Models Builder, see the [Models Builder](https://docs
 
 Health Checks are used to determine the status of your Umbraco project. It is a handy list of checks to see if your Umbraco installation is configured according to best practices. It's possible to add your custom-built health checks.
 
-For more information about Health Checks, see the [Health Check](https://docs.umbraco.com/umbraco-cms/extending/health-check) articles.
+For more information about Health Checks, see the [Health Check](../../extending/health-check/README.md) articles.
 
 </details>
 
@@ -72,7 +72,7 @@ You can use the built-in performance profiler to assess the performance when ren
 
 The Profiling dashboard provides a toggle option - `Activate the profiler by default` to keep the profiler active by default for all page renderings. You can use this option without having to set `umbDebug=true` on each page request. The toggle button sets a cookie named `UMB-DEBUG` in your browser, which then activates the profiler automatically.
 
-For more information about MiniProfiler, see the [MiniProfiler](https://docs.umbraco.com/umbraco-cms/fundamentals/code/debugging#miniprofiler) section in the [Debugging](https://docs.umbraco.com/umbraco-cms/fundamentals/code/debugging) article.
+For more information about MiniProfiler, see the [MiniProfiler](../../fundamentals/code/debugging#miniprofiler) section in the [Debugging](../../fundamentals/code/debugging) article.
 
 </details>
 
