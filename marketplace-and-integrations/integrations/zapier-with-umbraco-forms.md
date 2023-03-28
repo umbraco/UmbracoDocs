@@ -39,7 +39,7 @@ The trigger event to be used by this integration is _New Form Submission_.
 
 When creating the Zap trigger, you will be prompted to enter a username, password and the URL for your Umbraco website.
 
-It;s also possible to usean API key. If the following setting is present, then the API key based authentication will take precedence and will be used for authorization.
+It iss also possible to use an API key. If the following setting is present, then the API key based authentication will take precedence and will be used for authorization.
 
 ```json
 "Umbraco": {
@@ -59,13 +59,21 @@ It;s also possible to usean API key. If the following setting is present, then t
 
 If no API key is present, then the Umbraco application will validate the credentials entered and return a message in case the validation fails.
 
-If you want to extend the security layer, you can also specify a user group that the user trying to connect needs to be a part of, by adding the following
+To enhance security extend, you can specify a user group that the user connecting needs to be a part of, by adding the following
 setting in `appsettings.json`:
 
 ```json
 "Umbraco": {
-  "Settings": {
-    "UserGroup": "[your_user_group]"
+  "Forms": {
+    "Integrations": {
+      "Automation": {
+        "Zapier": {
+          "Settings": {
+            "UserGroup": "[your_user_group]"
+          }
+        }
+      }
+    }
   }
 }
 ```

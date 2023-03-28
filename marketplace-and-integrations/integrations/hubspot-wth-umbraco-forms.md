@@ -39,7 +39,7 @@ They will then be redirected to a website hosted at https://hubspot-forms-auth.u
 
 Behind the scenes this will make a further request to HubSpot which will return two tokens - an access and a refresh token.  The former will be provided in further API calls to HubSpot to authenticate the request.  The latter will be stored via Umbraco's key/value service and will be used to retrieve a new access token when it expires.
 
-A button is available to clear the authentication with HubSpot, following which the authentication process would need to be repeated before the integration can again be used.
+A button is available to clear the authentication with HubSpot. Following which the authentication process needs to be repeated before the integration can be used again.
 
 When the OAuth authentication method is being used, the API call to retrieve the token is proxied via an endpoint on the same website. This allows the Umbraco Forms HubSpot app secret key to remain secret.
 

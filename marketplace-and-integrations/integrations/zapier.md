@@ -46,7 +46,7 @@ If the following setting is present, then the API key based authentication will 
 
 If no API key is present, then the Umbraco application will validate the credentials entered and return a message in case the validation fails.
 
-For additional security, you can also specify a user group that the user trying to connect must be part of, by adding the following
+To enhance security extend, you can specify a user group that the user connecting needs to be a part of, by adding the following
 setting in `Web.config`:
 
 ```xml

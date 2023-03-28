@@ -28,7 +28,7 @@ An account with Semrush.
 
 Once the package is installed, the integration is made available in the Umbraco backoffice as a content app.
 
-The interface is available for all types of content items as well as for all user groups.  A keyword search can be initiated using a content field as a starting point, or by entering a custom phrase.  The results can be filtered for different metrics across markets.
+The interface is available for all types of content items as well as for all user groups. A keyword search can be initiated using a content field as a starting point, or by entering a custom phrase.  The results can be filtered for different metrics across markets.
 
 Administrators are provided with additional features for managing the connectivity with their organization's account with Semrush.
 
