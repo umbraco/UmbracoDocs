@@ -7,14 +7,11 @@ description: >-
 
 This integration provides a form picker and rendering component for forms managed within an ActiveCampaign CRM (Customer Relationship Management) account.
 
-Install from NuGet via:
-https://www.nuget.org/packages/Umbraco.Cms.Integrations.Crm.ActiveCampaign
+## Package Links
 
-Source code is at:
-https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.Crm.ActiveCampaign
-
-Available on the Umbraco Marketplace at:
-https://marketplace.umbraco.com/package/umbraco.cms.integrations.crm.activecampaign
+- [NuGet install](https://www.nuget.org/packages/Umbraco.Cms.Integrations.Crm.ActiveCampaign)
+- [Source code](https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.Crm.ActiveCampaign)
+- [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.cms.integrations.crm.activecampaign)
 
 ## Prerequisites
 

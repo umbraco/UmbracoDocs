@@ -3,18 +3,15 @@ description: >-
   Details an integration available for Algolia, built and maintained by Umbraco HQ.
 ---
 
-# Cookiebot Integration
+# Algolia Integration
 
 This integration provides a custom dashboard and indexing component for managing search indices in Algolia.
 
-Install from NuGet via:
-https://www.nuget.org/packages/Umbraco.Cms.Integrations.Search.Algolia
+## Package Links
 
-Source code is at:
-https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.Search.Algolia
-
-Available on the Umbraco Marketplace at:
-https://marketplace.umbraco.com/package/umbraco.cms.integrations.search.algolia
+- [NuGet install](https://www.nuget.org/packages/Umbraco.Cms.Integrations.Search.Algolia)
+- [Source code](https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.Search.Algolia)
+- [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.cms.integrations.search.algolia)
 
 ## Prerequisites
 

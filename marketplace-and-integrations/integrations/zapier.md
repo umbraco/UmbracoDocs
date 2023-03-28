@@ -11,14 +11,11 @@ When content gets published, the content type is looked up in the subscription h
 
 A Zap is an automated workflow that connects apps and services together. Each Zap consists of a trigger and one or more actions.
 
-Install from NuGet via:
-https://www.nuget.org/packages/Umbraco.Cms.Integrations.Automation.Zapier
+## Package Links
 
-Source code is at:
-https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.Automation.Zapier
-
-Available on the Umbraco Marketplace at:
-https://marketplace.umbraco.com/package/umbraco.cms.integrations.automation.zapier
+- [NuGet install](https://www.nuget.org/packages/Umbraco.Cms.Integrations.Automation.Zapier)
+- [Source code](https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.Automation.Zapier)
+- [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.cms.integrations.automation.zapier)
 
 ## Prerequisites
 

@@ -7,14 +7,11 @@ description: >-
 
 This integration provides a products picker and a value converter that uses a [strongly typed model](Models/ViewModels/ProductViewModel.cs) for rendering. Products can be retrieved from a [Shopify](https://www.shopify.com/) store or through custom apps developed by [Shopify Partners](https://www.shopify.com/partners).
 
-Install from NuGet via:
-https://www.nuget.org/packages/Umbraco.Cms.Integrations.Commerce.Shopify
+## Package Links
 
-Source code is at:
-https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.Commerce.Shopify
-
-Available on the Umbraco Marketplace at:
-https://marketplace.umbraco.com/package/umbraco.cms.integrations.commerce.shopify
+- [NuGet install](https://www.nuget.org/packages/Umbraco.Cms.Integrations.Commerce.Shopify)
+- [Source code](https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.Commerce.Shopify)
+- [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.cms.integrations.commerce.shopify)
 
 ## Prerequisites
 

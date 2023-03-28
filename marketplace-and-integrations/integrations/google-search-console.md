@@ -7,14 +7,11 @@ description: >-
 
 This integration provides an extension for Umbraco CMS. It provides details on indexed URLs managed in Google Search Console.
 
-Install from NuGet via:
-https://www.nuget.org/packages/Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.URLInspectionTool
+## Package Links
 
-Source code is at:
-https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.URLInspectionTool
-
-Available on the Umbraco Marketplace at:
-https://marketplace.umbraco.com/package/umbraco.cms.integrations.seo.googlesearchconsole.urlinspectiontool
+- [NuGet install](https://www.nuget.org/packages/Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.URLInspectionTool)
+- [Source code](https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.URLInspectionTool)
+- [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.cms.integrations.seo.googlesearchconsole.urlinspectiontool)
 
 ## Prerequisites
 

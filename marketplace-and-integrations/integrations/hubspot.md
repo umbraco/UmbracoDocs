@@ -7,14 +7,11 @@ description: >-
 
 This integration provides a form picker and rendering component for forms managed within a [Hubspot](https://www.hubspot.com/) account.
 
-Install from NuGet via:
-https://www.nuget.org/packages/Umbraco.Cms.Integrations.Crm.Hubspot
+## Package Links
 
-Source code is at:
-https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.Crm.Hubspot
-
-Available on the Umbraco Marketplace at:
-https://marketplace.umbraco.com/package/umbraco.cms.integrations.crm.hubspot
+- [NuGet install](https://www.nuget.org/packages/Umbraco.Cms.Integrations.Crm.Hubspot)
+- [Source code](https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.Crm.Hubspot)
+- [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.cms.integrations.crm.hubspot)
 
 ## Prerequisites
 

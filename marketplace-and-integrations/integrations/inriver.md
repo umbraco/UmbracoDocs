@@ -3,18 +3,15 @@ description: >-
   Details an integration available for inriver, built and maintained by Umbraco HQ.
 ---
 
-# Cookiebot Integration
+# inriver Integration
 
 This integration provides a custom product picker for selected products in the [inriver](https://www.inriver.com/) PIM (Product Information Management) system.  It also includes a value converter providing a strongly typed model for rendering and a sample rendering component.
 
-Install from NuGet via:
-https://www.nuget.org/packages/Umbraco.Cms.Integrations.PIM.Inriver
+## Package Links
 
-Source code is at:
-https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.PIM.Inriver
-
-Available on the Umbraco Marketplace at:
-https://marketplace.umbraco.com/package/umbraco.cms.integrations.pim.inriver
+- [NuGet install](https://www.nuget.org/packages/Umbraco.Cms.Integrations.PIM.Inriver)
+- [Source code](https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.PIM.Inriver)
+- [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.cms.integrations.pim.inriver)
 
 ## Prerequisites
 

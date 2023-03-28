@@ -7,14 +7,11 @@ description: >-
 
 This integration provides a custom workflow, allowing form entries to be mapped to an ActiveCampaign contact record. The record can be used to create a new contact or to associate a contact with an existing CRM (Customer Relationship Management) account.
 
-Install from NuGet via:
-https://www.nuget.org/packages/Umbraco.Forms.Integrations.Crm.ActiveCampaign
+## Package Links
 
-Source code is at:
-https://github.com/umbraco/Umbraco.Forms.Integrations/tree/main/src/Umbraco.Forms.Integrations.Crm.ActiveCampaign
-
-Available on the Umbraco Marketplace at:
-https://marketplace.umbraco.com/package/umbraco.forms.integrations.crm.activecampaign
+- [NuGet install](https://www.nuget.org/packages/Umbraco.Forms.Integrations.Crm.ActiveCampaign)
+- [Source code](https://github.com/umbraco/Umbraco.Forms.Integrations/tree/main/src/Umbraco.Forms.Integrations.Crm.ActiveCampaign)
+- [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.forms.integrations.crm.activecampaign)
 
 ## Prerequisites
 

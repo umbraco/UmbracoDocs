@@ -9,14 +9,11 @@ This integration is an add-on to the [Zapier CMS](zapier.md) integration, and pr
 
 A Zap is an automated workflow that connects apps and services together. Each Zap consists of a trigger and one or more actions.
 
-Install from NuGet via:
-https://www.nuget.org/packages/Umbraco.Forms.Integrations.Automation.Zapier
+## Package Links
 
-Source code is at:
-https://github.com/umbraco/Umbraco.Forms.Integrations/tree/main/src/Umbraco.Forms.Integrations.Automation.Zapier
-
-Available on the Umbraco Marketplace at:
-https://marketplace.umbraco.com/package/umbraco.forms.integrations.automation.zapier
+- [NuGet install](https://www.nuget.org/packages/Umbraco.Forms.Integrations.Automation.Zapier)
+- [Source code](https://github.com/umbraco/Umbraco.Forms.Integrations/tree/main/src/Umbraco.Forms.Integrations.Automation.Zapier)
+- [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.forms.integrations.automation.zapier)
 
 ## Prerequisites
 

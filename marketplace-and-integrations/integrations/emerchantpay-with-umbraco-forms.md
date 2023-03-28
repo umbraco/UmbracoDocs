@@ -7,14 +7,11 @@ description: >-
 
 This integration provides a custom workflow for handling online payments using a hosted payment page provided by emerchantpay.
 
-Install from NuGet via:
-https://www.nuget.org/packages/Umbraco.Forms.Integrations.Commerce.emerchantpay
+## Package Links
 
-Source code is at:
-https://github.com/umbraco/Umbraco.Forms.Integrations/tree/main/src/Umbraco.Forms.Integrations.Commerce.emerchantpay
-
-Available on the Umbraco Marketplace at:
-https://marketplace.umbraco.com/package/umbraco.forms.integrations.commerce.emerchantpay
+- [NuGet install](https://www.nuget.org/packages/Umbraco.Forms.Integrations.Commerce.emerchantpay)
+- [Source code](https://github.com/umbraco/Umbraco.Forms.Integrations/tree/main/src/Umbraco.Forms.Integrations.Commerce.emerchantpay)
+- [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.forms.integrations.commerce.emerchantpay)
 
 ## Prerequisites
 

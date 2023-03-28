@@ -7,14 +7,11 @@ description: >-
 
 This integration provides a custom media picker for digital assets managed in an Aprimo workspace. It can be used as a property editor for content. A value converter providing a strongly typed model for rendering is available, along with a sample rendering component.
 
-Install from NuGet via:
-https://www.nuget.org/packages/Umbraco.Cms.Integrations.DAM.Aprimo
+## Package Links
 
-Source code is at:
-https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.DAM.Aprimo
-
-Available on the Umbraco Marketplace at:
-https://marketplace.umbraco.com/package/umbraco.cms.integrations.dam.aprimo
+- [NuGet install](https://www.nuget.org/packages/Umbraco.Cms.Integrations.DAM.Aprimo)
+- [Source code](https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.DAM.Aprimo)
+- [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.cms.integrations.dam.aprimo)
 
 ## Prerequisites
 

@@ -7,14 +7,11 @@ description: >-
 
 This integration provides a custom workflow for Umbraco Forms. Workflow settings allow form entries to be mapped to a HubSpot contact record. When the form is submitted, the details are and stored within the CRM (Customer Relationship Management) platform.
 
-Install from NuGet via:
-https://www.nuget.org/packages/Umbraco.Forms.Integrations.Crm.Hubspot
+## Package Links
 
-Source code is at:
-https://github.com/umbraco/Umbraco.Forms.Integrations/tree/main/src/Umbraco.Forms.Integrations.Crm.Hubspot
-
-Available on the Umbraco Marketplace at:
-https://marketplace.umbraco.com/package/umbraco.forms.integrations.crm.hubspot
+- [NuGet install](https://www.nuget.org/packages/Umbraco.Forms.Integrations.Crm.Hubspot)
+- [Source code](https://github.com/umbraco/Umbraco.Forms.Integrations/tree/main/src/Umbraco.Forms.Integrations.Crm.Hubspot)
+- [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.forms.integrations.crm.hubspot)
 
 ## Prerequisites
 

@@ -7,14 +7,11 @@ description: >-
 
 This integration provides a keywords search tool powered by [Semrush](https://www.semrush.com/).
 
-Install from NuGet via:
-https://www.nuget.org/packages/Umbraco.Cms.Integrations.SEO.Semrush
+## Package Links
 
-Source code is at:
-https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.SEO.Semrush
-
-Available on the Umbraco Marketplace at:
-https://marketplace.umbraco.com/package/umbraco.cms.integrations.seo.semrush
+- [NuGet install](https://www.nuget.org/packages/Umbraco.Cms.Integrations.SEO.Semrush)
+- [Source code](https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.SEO.Semrush)
+- [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.cms.integrations.seo.semrush)
 
 ## Prerequisites
 

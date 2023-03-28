@@ -7,14 +7,11 @@ description: >-
 
 This integration provides a form picker and rendering component for forms managed within a Microsoft Dynamics 365 Marketing instance.
 
-Install from NuGet via:
-https://www.nuget.org/packages/Umbraco.Cms.Integrations.Crm.Dynamics
+## Package Links
 
-Source code is at:
-https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.Crm.Dynamics
-
-Available on the Umbraco Marketplace at:
-https://marketplace.umbraco.com/package/umbraco.cms.integrations.crm.dynamics
+- [NuGet install](https://www.nuget.org/packages/Umbraco.Cms.Integrations.Crm.Dynamics)
+- [Source code](https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.Crm.Dynamics)
+- [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.cms.integrations.crm.dynamics)
 
 ## Prerequisites
 

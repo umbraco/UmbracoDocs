@@ -7,14 +7,11 @@ description: >-
 
 This integration provides an implementation model for [Cookiebot](https://www.cookiebot.com/) banner and declaration.
 
-Install from NuGet via:
-https://www.nuget.org/packages/Umbraco.Cms.Integrations.Analytics.Cookiebot
+## Package Links
 
-Source code is at:
-https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.Analytics.Cookiebot
-
-Available on the Umbraco Marketplace at:
-https://marketplace.umbraco.com/package/umbraco.cms.integrations.analytics.cookiebot
+- [NuGet install](https://www.nuget.org/packages/Umbraco.Cms.Integrations.Analytics.Cookiebot)
+- [Source code](https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.Analytics.Cookiebot)
+- [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.cms.integrations.analytics.cookiebot)
 
 ## Prerequisites
 

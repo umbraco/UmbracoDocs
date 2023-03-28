@@ -7,14 +7,11 @@ description: >-
 
 This integration provides a product and category picker, with data sourced from a [CommerceTools](https://commercetools.com/) installation.
 
-Install from NuGet via:
-https://www.nuget.org/packages/Umbraco.Cms.Integrations.Commerce.CommerceTools
+## Package Links
 
-Source code is at:
-https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.Commerce.CommerceTools
-
-Available on the Umbraco Marketplace at:
-https://marketplace.umbraco.com/package/umbraco.cms.integrations.commerce.commercetools
+- [NuGet install](https://www.nuget.org/packages/Umbraco.Cms.Integrations.Commerce.CommerceTools)
+- [Source code](https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.Commerce.CommerceTools)
+- [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.cms.integrations.commerce.commercetools)
 
 ## Prerequisites
 
