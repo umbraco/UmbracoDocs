@@ -4,7 +4,7 @@ description: A guide displaying the options available in the Settings section in
 
 # Settings Dashboards
 
-The **Settings** section of the Umbraco backoffice has its own set of default dashboards. In this article, you can get an overview of each dashboard avaiable in the **Settings** section:
+The **Settings** section of the Umbraco backoffice has its own set of default dashboards. In this article, you can get an overview of each dashboard available in the **Settings** section:
 
 <details>
 
