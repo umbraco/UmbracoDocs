@@ -5,11 +5,11 @@ description: >-
 
 # Umbraco DXP (Digital eXperience Platform)
 
-Within this Umbraco DXP (Digital eXperience Platform) area of the Umbraco documentation you'll find topics related to extending the CMS via packages and integrations.
+Within this Umbraco DXP (Digital eXperience Platform) area of the Umbraco documentation you'll find topics related to extending Umbraco CMS via packages and integrations.
 
 ## Umbraco Commercial Products
 
-Umbraco makes available three licensed add-ons to the CMS that are available for purchase. They each have their own dedicated documentation area:
+Umbraco makes available three licensed add-ons that are available for purchase. They each have their own dedicated documentation area:
 
 - [Umbraco Forms](https://docs.umbraco.com/umbraco-forms/)
 - [Umbraco Deploy On Premise](https://docs.umbraco.com/umbraco-deploy/)
@@ -17,23 +17,23 @@ Umbraco makes available three licensed add-ons to the CMS that are available for
 
 ## [Umbraco Marketplace](marketplace/README.md)
 
-The Umbraco Marketplace is a public website used to showcase Umbraco packages. These are commercial and open-source extensions to the CMS available for use in Umbraco solutions. On the website you can browse and search for packages, understand their usage and review their suitability for your project.
+The Umbraco Marketplace is a public website used to showcase Umbraco packages. These are commercial and open-source extensions available for use in Umbraco solutions. On the marketplace you can browse and search for packages, understand their usage and review their suitability for your project.
 
-The website is available at [marketplace.umbraco.com](https://marketplace.umbraco.com).
+The marketplace is available at [marketplace.umbraco.com](https://marketplace.umbraco.com).
 
-Within the [Marketplace section of the documentation](marketplace/README.md) you'll find details aimed at package developers looking to list their CMS extensions and integrations.
+Within the [Marketplace section of the documentation](marketplace/README.md) you'll find details aimed at package developers looking to list their Umbraco CMS extensions and integrations.
 
 ## [Umbraco Integrations](integrations/README.md)
 
-As well as the commercial products, Umbraco HQ also develop and make available open-source integrations. These add functionality to the CMS to support working with third-party services.
+As well as the commercial products, Umbraco HQ also develop and make available open-source integrations. These add functionality to the Umbraco CMS to support working with third-party services.
 
-We expect them to be useful starting points to anyone looking to integrate such services into their Umbraco solution.
+These integrations are useful starting points to anyone looking to integrate such services into their Umbraco solution.
 
-Where we have released an integration for a particular provider and use-case that matches your needs, they are available for use directly. If we don't meet the particular requirement you have, we welcome feedback at the issue trackers. As all are open-source, they can be used as reference for building similar integrations with related services.
+When we have released an integration for a particular provider and use-case that matches your needs, they are available for use directly. If we don't meet the particular requirement you have, we welcome feedback at the Issue Trackers. As all are open-source, they can be used as reference for building similar integrations with related services.
 
 Source code and issue trackers are found at the following GitHub repositories:
 
 - [Umbraco CMS Integrations](https://github.com/umbraco/Umbraco.Cms.Integrations/)
 - [Umbraco Forms Integrations](https://github.com/umbraco/Umbraco.Forms.Integrations/)
 
-Within the [Integrations section of the documentation](integrations/README.md) you'll find details on installing and working with the integration packages we have developed.
+Within the [Integrations section of the documentation](integrations/README.md) you'll find details on installing and working with the integration packages developed by Umbraco HQ.
