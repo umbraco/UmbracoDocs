@@ -9,15 +9,15 @@
 
 ## Umbraco Baseline Support For All Cloud Regions
 
-Umbraco Cloud has recently expanded its baseline feature to include the US and UK regions, providing users with a standardized set of features across all regions.
+Umbraco Cloud has recently expanded its **baseline feature to** include the **East US and South UK regions**, providing users with a standardized set of features across all regions.
 
 If you have had experience working with Umbraco Cloud baselines, you will know that the basic idea is that you have a project that contains all your standard Umbraco packages/components, maybe configured with some default Document Types, which you want to use as baseline for future projects. When you've made changes to your Baseline project, you can then push these changes out to all the child projects with a click of a button.
 
-If you solely have been working with Umbraco Cloud in the US or UK regions and accordingly are not that familiar with the Umbraco Cloud baseline feature you can read more about it at [Umbraco Docs](https://docs.umbraco.com/umbraco-cloud/getting-started/baselines), or see an introduction at the [Umbraco Learning Base](https://www.youtube.com/watch?v=Ci1Hm-bH98Y) on how to work with baseline in Umbraco Cloud.
+If you primary have been working with Umbraco Cloud in the US or UK regions and accordingly are not that familiar with the Umbraco Cloud baseline feature you can read more about it at [Umbraco Docs](https://docs.umbraco.com/umbraco-cloud/getting-started/baselines), or see an introduction at the [Umbraco Learning Base](https://www.youtube.com/watch?v=Ci1Hm-bH98Y) on how to work with baseline in Umbraco Cloud.
 
 ## Simplified Access to Project Team Page
 
-As an administrator of your organization in Umbraco Cloud, you now have access to the project team page (called the "Edit Team") of all your Umbraco cloud projects.
+As an administrator of your organization in Umbraco Cloud, you now have access to the **project team page** (called the "Edit Team") of all your **Umbraco cloud projects in your organization**.
 
 The project team page can easily be accessed from the overview showing all the organization's projects. The administrator can by clicking the icon listed to the right of the individual project., where he will be able to invite users to join the project team with a set of project permissions and backoffice user group memberships or revoke access to the project of an existing project team member.
 
@@ -29,7 +29,7 @@ The new addition overall improves security, enhances collaboration, and streamli
 
 ## Monthly Bandwidth Usage
 
-We have launched a small update on the usage page that allows you to see the total bandwidth used every month for the past seven months.
+We have launched a small update on the usage page that allows you to see the **total bandwidth used every month for the past seven months**.
 
 ![BandwidthHistory](images/BandwidthHistory.png)
 
@@ -40,6 +40,6 @@ The newest feature to launch in the new front end stack is “Upgrade project”
 
 While you can still change the project plan you’ll also get the opportunity to change to a new dedicated option or go back to a shared resource during the flow. And like the new project creation flow launched in the February update, you will see a summary at the very end before accepting the upgrade.
 
-<animation>
+![UpgradeProject](images/UpgradeProject.gif)
 
 With this new flow, you can easily upgrade your existing projects to a new upgrade plan and even a new dedicated plan within only a few minutes.
