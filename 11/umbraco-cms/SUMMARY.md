@@ -380,6 +380,7 @@
 * [Debugging with SourceLink](reference/debugging.md)
 * [Language Variation](reference/language-variation.md)
 * [UmbracoMapper](reference/mapping.md)
+* [Database Locks](reference/database-locks.md)
 * [AngularJS](reference/angular/README.md)
   * [Directives](reference/angular/directives/README.md)
     * [umbLayoutSelector](reference/angular/directives/umblayoutselector.md)
