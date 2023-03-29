@@ -5,7 +5,7 @@
 * **Umbraco Baseline Support For All Cloud Regions** - Umbraco Cloud now offers baseline support for all three regions - West Europe, East US, and South UK.
 * **Simplified Access to Project Team Page** - As an administrator for a Cloud organization you will be able to access the project team for all the cloud projects of the organization.
 * **Monthly Bandwidth Usage** - You find an update to the “Usage” page where you now can see the total bandwidth used for the past seven months.
-* **Upgrade Project Flow ** - The previous Upgrade plan feature has been migrated into a new, improved Upgrade Project flow, where you can change the project plan and change to a dedicated resource in one go!
+* **Upgrade Project Flow** - The previous Upgrade plan feature has been migrated into a new, improved Upgrade Project flow, where you can change the project plan and change to a dedicated resource in one go!
 
 ## Umbraco Baseline Support For All Cloud Regions
 
