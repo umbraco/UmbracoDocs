@@ -36,7 +36,7 @@ Follow the below steps to upgrade your plan:
 1. Click on the **Select plan** button to choose the plan you want to upgrade to.
 2. In the next step, you can choose to upragde with to a **dedicated option**.
    ![Dedicated option when upgrading](../images/dedicated-option.png)
-3. In the last step, review the **summary** to make sure that everything selected is correct.
+3. Review the **Summary** to make sure that everything selected is correct in the last step.
 ![Upgrade summary](../images/upgrade-summary.png)
 
 Once you click the **Upgrade Project** button, the project will be upgraded to the new plan and if selected to a dedicated server.
