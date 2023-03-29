@@ -34,7 +34,7 @@ In the menu, you can find a tab called _"Upgrade plan"_.
 
 Follow the below steps to upgrade your plan:
 1. Click on the **Select plan** button to choose the plan you want to upgrade to.
-2. In the next step, you can choose to upragde with to a **dedicated option**.
+2. _[Optional]_ Choose to upgrade to a **dedicated option** in the next step.
    ![Dedicated option when upgrading](../images/dedicated-option.png)
 3. Review the **Summary** to make sure that everything selected is correct in the last step.
 ![Upgrade summary](../images/upgrade-summary.png)
