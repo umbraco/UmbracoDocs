@@ -21,7 +21,7 @@ As an administrator of your organization in Umbraco Cloud, you now have access t
 
 The project team page can easily be accessed from the overview showing all the organization's projects. The administrator can by clicking the icon listed to the right of the individual project., where he will be able to invite users to join the project team with a set of project permissions and backoffice user group memberships or revoke access to the project of an existing project team member.
 
-![OrgMfaDisplay](images/ProjectCreationFlow.gif)
+![OrgAdminEditUserPage](images/OrgAdminEditUserPage.gif)
 
 This change provides a centralized and convenient way for the organization administrator to manage the team members' access to the cloud projects, ensuring that trusted individuals of your organization are able to grant and restrict access to cloud projects in Umbraco Cloud.
 
@@ -31,7 +31,7 @@ The new addition overall improves security, enhances collaboration, and streamli
 
 We have launched a small update on the usage page that allows you to see the total bandwidth used every month for the past seven months.
 
-<animation>
+![BandwidthHistory](images/BandwidthHistory.png)
 
 With this new feature, you can track your website's bandwidth usage over time and identify any patterns or trends. We believe that this new addition will be especially valuable for customers who are running high-traffic websites and perhaps weekly need to monitor the bandwidth usage to ensure the cloud project stays inside the limit of the plan tier.
 
