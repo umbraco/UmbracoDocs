@@ -5,7 +5,7 @@ description: >-
 
 # Umbraco Integrations
 
-Umbraco HQ have developed and made available integrations with SaaS providers. These are all open-source, and add functionality to the CMS to support working with third-party services.
+Umbraco HQ have developed and made available integrations with different SaaS (Software as a Service) providers. These are all open-source, and add functionality to Umbraco CMS to support working with third-party services.
 
 ## Analytics Integrations
 
@@ -37,7 +37,7 @@ A custom workflow for handling online payments using a hosted payment page provi
 
 ### [Shopify](shopify.md)
 
-A products picker that can be added as a property editor for content, with a value converter providing a strongly typed model for rendering.
+A products picker that can be added as a property editor for content. It includes a value converter providing a strongly typed model for rendering.
 
 ## CRM (Customer Relationship Management) Integrations
 
@@ -47,7 +47,7 @@ A form picker and rendering component for ActiveCampaign forms.
 
 ### [ActiveCampaign With Umbraco Forms](activecampaign-with-umbraco-forms.md)
 
-A custom workflow allowing form form entries to be mapped to a ActiveCampaign contact, and stored within the CRM (Customer Relationship Management) platform.
+A custom workflow allowing form entries to be mapped to an ActiveCampaign contact, and is stored within the CRM (Customer Relationship Management) platform.
 
 ### [Dynamics](dynamics.md)
 
@@ -59,7 +59,7 @@ A form picker and rendering component for Hubspot forms.
 
 ### [Hubspot With Umbraco Forms](hubspot-with-umbraco-forms.md)
 
-A custom workflow allowing form form entries to be mapped to a HubSpot contact record, and stored within the CRM (Customer Relationship Management) platform.
+A custom workflow allowing form entries to be mapped to a HubSpot contact record, and store it within the CRM (Customer Relationship Management) platform.
 
 ## DAM (Digital Asset Management) Integrations
 
@@ -86,7 +86,3 @@ A tool allowing programmatic access to URL-level data for properties managed in 
 ### [Semrush](semrush.md)
 
 A search engine optimization tool available as a content app, helping editors research and use appropriate keywords for their content.
-
-
-
-
