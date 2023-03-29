@@ -26,6 +26,7 @@ Under each major version, you can find details about minor and patch releases fo
 * Tidied up the Deploy dialogs for transfer, compare and restore to align with CMS conventions and remove redundant options.
 * Added a database lock to the persistent transfer queue, removing any risk of concurrency issues when adding or removing items from the queue.
 * Added support for new form properties introduced in the most recent minor release of Forms 11. [#161](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/161)
+* Retained sort order introduced in Umbraco 11 for domains when deploying between environments.
 
 #### [11.0.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.0.2) (March 21st 2023)
 
