@@ -8,7 +8,7 @@ On the Usage page, you will find an usage overview that displays your usage and 
 
 The overview shows the bandwidth of the project for the current month, the media storage size, and the number of custom domains added to the project. It is also possible to see the bandwidth history for the previous six months.
 
-In this overview you will also find the usage limitations for your Umbraco Cloud project as well as the plan that the project is on.
+In this overview, you will find the usage limitations for your Umbraco Cloud project as well as the plan that the project is on.
 
 ![Usage on Cloud](../images/cloud-usage.png)
 
