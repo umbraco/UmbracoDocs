@@ -1,29 +1,42 @@
 ---
 description: >-
-  Details an integration available for emerchantpay with Umbraco Forms, built and maintained by Umbraco HQ.
+  Details an integration available for emerchantpay with Umbraco Forms, built
+  and maintained by Umbraco HQ.
 ---
 
-# emerchantpay with Umbraco Forms Integration
+# emerchantpay With Umbraco Forms
 
 This integration provides a custom workflow for handling online payments using a hosted payment page provided by emerchantpay.
 
 ## Package Links
 
-- [NuGet install](https://www.nuget.org/packages/Umbraco.Forms.Integrations.Commerce.emerchantpay)
-- [Source code](https://github.com/umbraco/Umbraco.Forms.Integrations/tree/main-v10/src/Umbraco.Forms.Integrations.Commerce.EMerchantPay)
-- [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.forms.integrations.commerce.emerchantpay)
+* [NuGet install](https://www.nuget.org/packages/Umbraco.Forms.Integrations.Commerce.emerchantpay)
+* [Source code](https://github.com/umbraco/Umbraco.Forms.Integrations/tree/main-v10/src/Umbraco.Forms.Integrations.Commerce.EMerchantPay)
+* [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.forms.integrations.commerce.emerchantpay)
 
-## Prerequisites
+## Minimum version requirements
 
-Required minimum versions of Umbraco CMS:
-- CMS: 10.1.0
-- Forms: 10.1.0
+### Umbraco CMS
+
+| Major      | Minor/Patch |
+| ---------- | ----------- |
+| Version 8  | 8.5.4       |
+| Version 10 | 10.1.0      |
+| Version 11 | 11.0.0      |
+
+### Umbraco Forms
+
+| Major      | Minor/Patch |
+| ---------- | ----------- |
+| Version 8  | 8.13.0      |
+| Version 10 | 10.1.0      |
+| Version 11 | 11.0.0      |
 
 ## How To Use
 
 To get started with _emerchantpay_ a merchant needs to be onboarded. This will allow you to get a merchant ID and obtain the keys required by the integration.
 
-To begin the onboarding process an obtain the merchant account, you need to fill out [this](https://www.emerchantpay.com/contact-us?utm_source__c=umbraco_referral&utm_medium__c=technical_blog&utm_campaign__c=Umbraco) form.
+To begin the onboarding process and obtain the merchant account, you need to fill out [this](https://www.emerchantpay.com/contact-us?utm\_source\_\_c=umbraco\_referral\&utm\_medium\_\_c=technical\_blog\&utm\_campaign\_\_c=Umbraco) form.
 
 Afterwards, a member of the _emerchantpay_ team will reach out to you.
 
@@ -35,9 +48,11 @@ If the configuration is incomplete, the user will receive an error message.
 
 ### Configuration
 
-The below configuration - consisting of authentication settings, merchant specific details and customizable payment fields - is required. Some configuration items
-are stored as an array of strings or a dictionary, and parsed using a specific service.
+The below configuration is required. It consists of authentication settings, merchant specific details and customizable payment fields. Some configuration items are stored as an array of strings or a dictionary, and parsed using a specific service.
 
+{% tabs %}
+{% tab title="Versions 9 and above" %}
+{% code title="appsettings.json" %}
 ```json
 {
   "Umbraco": {
@@ -69,10 +84,44 @@ are stored as an array of strings or a dictionary, and parsed using a specific s
   }
 }
 ```
+{% endcode %}
+{% endtab %}
 
-### Working with the Umbraco Forms - emerchantpay integration
+{% tab title="Version 8" %}
+{% code title="web.config" %}
+```xml
+<appSettings>
+...
+  <add key="Umbraco.Forms.Integrations.Commerce.eMerchantPay.GatewayBaseurl" value="https://staging.gate.emerchantpay.net/"/>
+  <add key="Umbraco.Forms.Integrations.Commerce.eMerchantPay.WpfUrl" value="https://staging.wpf.emerchantpay.net/wpf"/>
+  <add key="Umbraco.Forms.Integrations.Commerce.eMerchantPay.Username" value="[your_merchant_username]"/>
+  <add key="Umbraco.Forms.Integrations.Commerce.eMerchantPay.Password" value="[your_merchant_password]"/>
+  <add key="Umbraco.Forms.Integrations.Commerce.eMerchantPay.UmbracoBaseUrl" value="[your_website_url]"/>
+  <add key="Umbraco.Forms.Integrations.Commerce.eMerchantPay.Supplier" value="Umbraco"/>
+  <add key="Umbraco.Forms.Integrations.Commerce.eMerchantPay.Usage" value="Payment Gateway using Umbraco Forms"/>
+  <add key="Umbraco.Forms.Integrations.Commerce.eMerchantPay.Currencies" value="USD,US Dollar;EUR,Euro;GBP,British Pound;DKK,Danish Krone"/>
+  <add key="Umbraco.Forms.Integrations.Commerce.eMerchantPay.TransactionTypes" value="authorize;sale"/>
+  <add key="Umbraco.Forms.Integrations.Commerce.eMerchantPay.MappingFields" value="Email;FirstName;LastName"/>
+...
+</appSettings>
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
-To use it you will need to attach the _emerchantpay Gateway_ workflow to a form. Then map the _Amount_, _Currency_, _Number of Items_, _Record Status_, _Record Payment Unique ID_ and _Consumer Details_ with matching form fields. Finally, configure the event handlers for payment successfully processed, failed or cancelled.
+### Working with the integration
+
+Follow the steps below to start using the integration.
+
+1. Attach the _emerchantpay Gateway_ workflow to a form.
+2. Map the following values with matching form fields:
+   * _Amount_&#x20;
+   * _Currency_
+   * _Number of Items_
+   * _Record Status_
+   * _Record Payment Unique ID_
+   * _Consumer Details_
+3. Configure the event handlers for payment successfully processed, failed, or canceled.
 
 A consumer has the following properties available that can be mapped against form fields:
 
@@ -87,9 +136,8 @@ A consumer has the following properties available that can be mapped against for
 * Country
 * Phone
 
-
 When a form is submitted on the website, the workflow will execute. Two data payloads will be sent to emerchantpay. One for creating or retrieving the details of a consumer and the other for creating a payment.
 
-The response for the second request will provide the URL for the hosted payment page, and the user will the redirected there.
+The response for the second request will provide the URL for the hosted payment page, and the user will be redirected there.
 
-On completing the payment the emerchantpay API will return the user to the page provided in matching event handler of the workflow.
+On completing the payment the emerchantpay API will return the user to the page provided in the matching event handler of the workflow.

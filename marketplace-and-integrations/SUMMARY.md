@@ -2,26 +2,27 @@
 
 * [Umbraco DXP](README.md)
 
-## Umbraco Marketplace
+## Marketplace
 
-* [Marketplace](marketplace/README.md)
-  * [Listing Your Package](marketplace/listing-your-package.md)
+* [Introduction](marketplace/introduction.md)
+* [Listing Your Package](marketplace/listing-your-package.md)
 
-## Umbraco Integrations
+## Integrations
 
-* [Integrations](integrations/README.md)
-  * [ActiveCampaign](integrations/activecampaign.md)
-  * [Algolia](integrations/algolia.md)
-  * [Aprimo](integrations/aprimo.md)
-  * [CookieBot](integrations/cookiebot.md)
-  * [CommerceTools](integrations/commercetools.md)
-  * [Dynamics](integrations/dynamics.md)
-  * [emerchantpay With Umbraco Forms](integrations/emerchantpay-with-umbraco-forms.md)
-  * [Google Search Console](integrations/google-search-console.md)
-  * [HubSpot](integrations/hubspot.md)
-  * [HubSpot With Umbraco Forms](integrations/hubspot-with-umbraco-forms.md)
-  * [inriver](integrations/inriver.md)
-  * [Semrush](integrations/semrush.md)
-  * [Shopify](integrations/shopify.md)
-  * [Zapier](integrations/zapier.md)
-  * [Zapier With Umbraco Forms](integrations/zapier-with-umbraco-forms.md)
+* [Categories](integrations/categories.md)
+* [ActiveCampaign](integrations/activecampaign.md)
+* [ActiveCampaign with Umbraco Forms](integrations/activecampaign-with-umbraco-forms.md)
+* [Algolia](integrations/algolia.md)
+* [Aprimo](integrations/aprimo.md)
+* [CookieBot](integrations/cookiebot.md)
+* [CommerceTools](integrations/commercetools.md)
+* [Dynamics](integrations/dynamics.md)
+* [emerchantpay with Umbraco Forms](integrations/emerchantpay-with-umbraco-forms.md)
+* [Google Search Console](integrations/google-search-console.md)
+* [HubSpot](integrations/hubspot.md)
+* [HubSpot with Umbraco Forms](integrations/hubspot-with-umbraco-forms.md)
+* [inriver](integrations/inriver.md)
+* [Semrush](integrations/semrush.md)
+* [Shopify](integrations/shopify.md)
+* [Zapier](integrations/zapier.md)
+* [Zapier with Umbraco Forms](integrations/zapier-with-umbraco-forms.md)

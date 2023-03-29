@@ -1,63 +1,99 @@
 ---
 description: >-
-  Details an integration available for Shopify, built and maintained by Umbraco HQ.
+  Details an integration available for Shopify, built and maintained by Umbraco
+  HQ.
 ---
 
-# Shopify Integration
+# Shopify
 
-This integration provides a products picker and a value converter that uses a [strongly typed model](Models/ViewModels/ProductViewModel.cs) for rendering. Products can be retrieved from a [Shopify](https://www.shopify.com/) store or through custom apps developed by [Shopify Partners](https://www.shopify.com/partners).
+This integration provides a product picker and a value converter that creates a strongly typed model for rendering. Products can be retrieved from a [Shopify](https://www.shopify.com/) store or through custom apps developed by [Shopify Partners](https://www.shopify.com/partners).
 
 ## Package Links
 
-- [NuGet install](https://www.nuget.org/packages/Umbraco.Cms.Integrations.Commerce.Shopify)
-- [Source code](https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.Commerce.Shopify)
-- [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.cms.integrations.commerce.shopify)
+* [NuGet install](https://www.nuget.org/packages/Umbraco.Cms.Integrations.Commerce.Shopify)
+* [Source code](https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.Commerce.Shopify)
+* [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.cms.integrations.commerce.shopify)
 
-## Prerequisites
+## Minimum version requirements
 
-Required minimum versions of Umbraco CMS:
+### Umbraco CMS
 
-- 8.5.4 for version 8
-- 9.0.1 for version 9
+| Major      | Minor/Patch |
+| ---------- | ----------- |
+| Version 8  | 8.5.4       |
+| Version 9  | 9.0.1       |
+| Version 10 | 10.0.0      |
+| Version 11 | 11.0.0      |
 
-## How To Use
-
-### Authentication
+## Authentication
 
 The package supports two modes of authentication:
 
-- API Access Token
-- OAuth
+* API Access Token
+* OAuth
 
-#### API Access Token
+### API Access Token
 
-Log into the admin interface of your shop by accessing `https://{shop}.myshopify.com/admin`. Go to _Apps > Develop apps_ and create a new App for the shop. If App Development feature is disabled, you will need to enable it.
+Follow these steps to retrieve an API Access token:
 
-After the app is created, define the scopes for the Admin API: _read_products_, then select the option to _Install App_.
+1. Log into the admin interface of your shop by accessing `https://{shop}.myshopify.com/admin`.
+2. Go to **Apps > Develop apps**.
+3. Create a new App for the shop.
+4. Enable the App Development feature if it is currently disabled.
+5. Define the scopes for the Admin API: _read\_products_.
+6. Select the option to **Install App**.
 
-Once the app is installed the Admin API access token will be visible only once in the _API credentials_ tab.
+Once the app is installed the Admin API access token will be visible **only once** in the _API credentials_ tab.
 
-Use the access token and add it to an app setting in `Web.config` alongside settings for the API version and the name of the shop:
+Use the access token and add it to your website's configuration file alongside settings for the API version and the name of the shop:
 
-```xml
-  <appSettings>
-    <add key="Umbraco.Cms.Integrations.Commerce.Shopify.ApiVersion" value="2022-01" />
-    <add key="Umbraco.Cms.Integrations.Commerce.Shopify.AccessToken" value="[your access token]" />
-    <add key="Umbraco.Cms.Integrations.Commerce.Shopify.Shop" value="[your shop's name]" />
-  </appSettings>
+{% tabs %}
+{% tab title="Versions 9 and above" %}
+{% code title="appsettings.json" %}
+```json
+"Umbraco": {
+  "CMS": {
+    "Integrations": {
+      "Commerce": {
+        "Shopify": {
+          "Settings": {
+            "ApiVersion": "2022-01",
+            "Shop": "[your shop's name]",
+            "AccessToken": "[your access token]"
+          }
+        }
+      }
+    }
+  }
+}
 ```
+{% endcode %}
+{% endtab %}
 
-Shopify releases a new API version every 3 months at the beginning of the quarter. Latest stable version used for this integration is [2022-01](https://shopify.dev/api/usage/versioning).
+{% tab title="Version 8" %}
+{% code title="web.config" %}
+```xml
+<appSettings>
+  <add key="Umbraco.Cms.Integrations.Commerce.Shopify.ApiVersion" value="2022-01" />
+  <add key="Umbraco.Cms.Integrations.Commerce.Shopify.AccessToken" value="[your access token]" />
+  <add key="Umbraco.Cms.Integrations.Commerce.Shopify.Shop" value="[your shop's name]" />
+</appSettings>
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
-#### OAuth
+Shopify releases a new API version every 3 months at the beginning of the quarter. The latest stable version used for this integration is [2022-01](https://shopify.dev/api/usage/versioning).
 
-If you prefer not to use an API key, an authentication flow using OAuth is also available.
+### OAuth
 
-To use this, ensure you don't have an API key in your configuration file.
+If you prefer not to use an API token, an authentication flow using OAuth is also available.
 
-### Backoffice usage
+To use this, ensure you do not have an API key in your configuration file.
 
-To use the products picker, a new datatype should be created based on the Shopify Products Picker property editor.
+## Backoffice usage
+
+To use the products picker, a new Data Type should be created based on the Shopify Products Picker property editor.
 
 The settings in `Web.config` will be checked and a message presented indicating whether authentication is in place.
 
@@ -65,11 +101,11 @@ If OAuth is being used for authentication, then the _Connect_ button will be ena
 
 The retrieved access token will be saved into the database and used for future requests.
 
-_Revoke_ action will remove the access token from the database and the authorization process will need to be repeated.
+The _Revoke_ action will remove the access token from the database and the authorization process will need to be repeated.
 
-### Front-end rendering
+## Front-end rendering
 
-A [strongly typed model](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Commerce.Shopify/Models/ViewModels/ProductViewModel.cs) will be generated by the property value converter. An HTML helper is available, to render the products on the front-end.
+A [strongly typed model](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Commerce.Shopify/Models/ViewModels/ProductViewModel.cs) will be generated by the property value converter. An HTML helper is available, to render the products on the front end.
 
 Ensure your template has a reference to the following using statement:
 
@@ -77,10 +113,10 @@ Ensure your template has a reference to the following using statement:
 @using Umbraco.Cms.Integrations.Commerce.Shopify.Helpers;
 ```
 
-And render the form using (assuming a property based on the created datatype, with alias `shopifyProductPicker` has been created):
+Assuming a property based on the created Data Type with the alias `shopifyProductPicker` has been created, render the form using:
 
 ```csharp
 @Html.RenderProductsList(Model.ShopifyProductPicker)
 ```
 
-You can use the default rendering view and style it using the existing CSS classes, or use it as inspiration for your own views. The path to your custom view will be then passed as parameter to the HTML helper method.
+You can use the default rendering view and style using the existing CSS classes, or use it as inspiration for your views. The path to your custom view will be then passed as a parameter to the HTML helper method.

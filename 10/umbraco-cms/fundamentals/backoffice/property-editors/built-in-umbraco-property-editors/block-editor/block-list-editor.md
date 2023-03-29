@@ -20,7 +20,7 @@ To set up your Block List Editor property, create a new _Data Type_ and select *
 
 Then you will see the configuration options for a Block List as shown below.
 
-![Block List - Data Type Definition](../../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor\_DataType.jpg)
+![Block List - Data Type Definition](../../built-in-property-editors/block-editor/images/BlockListEditor\_DataType.jpg)
 
 The Data Type editor allows you to configure the following properties:
 
@@ -37,7 +37,7 @@ Block Types are **Element Types** which need to be created before you can start 
 
 Once you have added an element type as a Block Type on your Block List Data Type you will have the option to configure it further.
 
-![Block List - Data Type Block Configuration](../../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor\_DataType\_Blocks.png)
+![Block List - Data Type Block Configuration](../../built-in-property-editors/block-editor/images/BlockListEditor\_DataType\_Blocks.png)
 
 Each Block has a set of properties that are optional to configure. They are described below.
 
@@ -77,15 +77,15 @@ These properties are relevant when you work with custom views.
 
 When viewing a **Block List** editor in the Content section for the first time, you will be presented with the option to Add content.
 
-![Block List - Add Content](../../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor\_AddContent.png)
+![Block List - Add Content](../../built-in-property-editors/block-editor/images/BlockListEditor\_AddContent.png)
 
 Clicking the Add content button brings up the Block Catalogue.
 
-![Block List - Setup](../../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor\_BlockPicker\_simplesetup.jpg)
+![Block List - Setup](../../built-in-property-editors/block-editor/images/BlockListEditor\_BlockPicker\_simplesetup.jpg)
 
 The Block Catalogue looks different depending on the amount of available Blocks and their catalogue appearance.
 
-![Block List - example setup from Umbraco.com](../../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor\_BlockPicker.jpg)
+![Block List - example setup from Umbraco.com](../../built-in-property-editors/block-editor/images/BlockListEditor\_BlockPicker.jpg)
 
 Click the Block Type you wish to create and a new Block will appear in the list.
 
@@ -93,15 +93,15 @@ Depending on whether your Block List Editor is setup to use default or inline ed
 
 In default mode you will enter the editing overlay of that Block:
 
-![Block List - Overlay editing](../../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor\_EditingOverlay.jpg)
+![Block List - Overlay editing](../../built-in-property-editors/block-editor/images/BlockListEditor\_EditingOverlay.jpg)
 
 In inline editing mode the new Blocks will expand to show its inline editor:
 
-![Block List - Inline editing](../../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor\_InlineEditing.jpg)
+![Block List - Inline editing](../../built-in-property-editors/block-editor/images/BlockListEditor\_InlineEditing.jpg)
 
 More Blocks can be added to the list by clicking the Add content button or using the inline Add content button that appears on hover between or above existing Blocks.
 
-![Block List - Add Content](../../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor\_AddContentInline.jpg)
+![Block List - Add Content](../../built-in-property-editors/block-editor/images/BlockListEditor\_AddContentInline.jpg)
 
 To reorder the Blocks, click and drag a Block up or down to place in the desired order.
 

@@ -135,7 +135,7 @@ angular.module("umbraco").controller("Our.Umbraco.ImagePositionController", func
 
 The final custom parameter should look like this:
 
-![Image Position Radio Button Options](../../../11/umbraco-cms/extending/images/image-position-v8.png)
+![Image Position Radio Button Options](images/image-position-v8.png)
 
 #### Using defaultConfig
 

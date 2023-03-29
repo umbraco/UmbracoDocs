@@ -9,9 +9,9 @@ Folders help organize the Media section and keep similar media items in a logica
 To create a folder:
 
 1. Go to the **Media** section.
-2. Click on **•••** where you want to create the folder and select **Folder**.
+2.  Click on **•••** where you want to create the folder and select **Folder**.
 
-    ![Create Folder](images/create-folder-v9.png)
+    ![Create Folder](../../../../../10/umbraco-cms/tutorials/editors-manual/media-management/images/create-folder-v9.png)
 3. Enter a **Name** for your folder and click **Save**.
 
 {% hint style="info" %}
@@ -24,9 +24,9 @@ To edit an existing folder:
 
 1. Select the folder you want to edit from the **Media** tree.
 2. Edit the title at the top of the page.
-3. Click **Create** to add another media type or drag and drop your files into the **Upload** field.
+3.  Click **Create** to add another media type or drag and drop your files into the **Upload** field.
 
-    ![Edit Folder](images/Edit-folder-v9.png)
+    ![Edit Folder](../../../../../10/umbraco-cms/tutorials/editors-manual/media-management/images/Edit-folder-v9.png)
 4. Click **Save**.
 
 ## Deleting a Folder
@@ -36,9 +36,9 @@ If you wish to tidy up the Media section of your site, you can delete existing f
 To delete a folder:
 
 1. Select the folder you want to delete.
-2. Right-click the folder, and select **Delete**.
+2.  Right-click the folder, and select **Delete**.
 
-    ![Delete Folder](images/Delete-folder-v9.png)
+    ![Delete Folder](../../../../../10/umbraco-cms/tutorials/editors-manual/media-management/images/Delete-folder-v9.png)
 3. Click **OK**.
 
 {% hint style="info" %}
@@ -49,14 +49,14 @@ The contents of the folder are also moved to the Recycle Bin. You can restore it
 
 The Recycle Bin is a separate tree structure within the Media tree. Clicking on the arrow next to the Recycle Bin will display its contents.
 
-![Recycle Bin](images/mediaRecycle-v9.png)
+![Recycle Bin](../../../../../10/umbraco-cms/tutorials/editors-manual/media-management/images/mediaRecycle-v9.png)
 
 To restore a Folder:
 
 1. Click **•••** next to the Folder or right-click the Folder you want to restore.
-2. Select **Restore**.
+2.  Select **Restore**.
 
-    ![Restore Folder](images/Restore-Folder-v9.png)
+    ![Restore Folder](../../../../../10/umbraco-cms/tutorials/editors-manual/media-management/images/Restore-Folder-v9.png)
 3. Click **Restore**.
 
 ### Moving a Folder from the Recycle Bin
@@ -64,12 +64,12 @@ To restore a Folder:
 To move Folders within the Media section:
 
 1. Click **•••** next to the folder or right-click the folder you want to move.
-2. Select **Move**.
+2.  Select **Move**.
 
-    ![Move Folder](images/Move-Folder-v9.png)
-3. Choose the location where you want to move the folder to in the tree structure.
+    ![Move Folder](../../../../../10/umbraco-cms/tutorials/editors-manual/media-management/images/Move-Folder-v9.png)
+3.  Choose the location where you want to move the folder to in the tree structure.
 
-    ![Move Media.png](images/Move-media-location-v9.png)
+    ![Move Media.png](../../../../../10/umbraco-cms/tutorials/editors-manual/media-management/images/Move-media-location-v9.png)
 4. Click **Move**.
 5. Click **OK** to dismiss the confirmation message.
 
@@ -80,10 +80,10 @@ Media items in Umbraco are sorted in the tree view according to a predefined sor
 To sort the order of the items in a folder:
 
 1. Right-click the folder you want to sort.
-2. Select **Sort**.
+2.  Select **Sort**.
 
-    ![Sort Folder](images/Sort-Folder-v9.png)
-3. Drag the folders, images and files into the required order. Alternatively, click on the **Name** or **Creation Date** column header to sort the items in ascending or descending order. Clicking on a column header again reverses the sort order.
+    ![Sort Folder](../../../../../10/umbraco-cms/tutorials/editors-manual/media-management/images/Sort-Folder-v9.png)
+3.  Drag the folders, images and files into the required order. Alternatively, click on the **Name** or **Creation Date** column header to sort the items in ascending or descending order. Clicking on a column header again reverses the sort order.
 
-    ![Sort Items](images/sort-items-v9.png)
+    ![Sort Items](../../../../../10/umbraco-cms/tutorials/editors-manual/media-management/images/sort-items-v9.png)
 4. Click **Save.**
