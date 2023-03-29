@@ -20,3 +20,9 @@ We provide links for each package to the NuGet details, and other locations if a
 ## [Listing Your Package](listing-your-package.md)
 
 If you are a package developer wanting to make your work available for Umbraco website developers, please review how to [list your package](listing-your-package.md).
+
+## [Package Telemetry Data](package-telemetry-data.md)
+
+Umbraco installations that have opted into providing basic or detailed telemetry data will indicate which packages are installed. We use that information to order packages by "Most Active Installs".
+
+To understand how to ensure your package is ranking correctly by this measure, please consider the details provided about [package telemetry data usage](package-telemetry-data.md).
