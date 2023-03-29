@@ -33,7 +33,7 @@ In the menu, you can find a tab called _"Upgrade plan"_.
 * If you are on the Standard plan you can upgrade to the Professional plan.
 
 Follow the below steps to upgrade your plan:
-1. Click on the button saying **"Select plan"** to choose the plan you want to upgrade to.
+1. Click on the **Select plan** button to choose the plan you want to upgrade to.
 2. In the next step, you can choose to upragde with to a **dedicated option**.
    ![Dedicated option when upgrading](../images/dedicated-option.png)
 3. In the last step, review the **summary** to make sure that everything selected is correct.
