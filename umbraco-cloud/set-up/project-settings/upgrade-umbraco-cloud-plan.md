@@ -39,7 +39,7 @@ Follow the below steps to upgrade your plan:
 3. In the last step, review the **summary** to make sure that everything selected is correct.
 ![Upgrade summary](../images/upgrade-summary.png)
 
-Once you click the button **"Upgrade Project"** the project will be upgrade to the new plan and if selected to a dedicated server.
+Once you click the **Upgrade Project** button, the project will be upgraded to the new plan and if selected to a dedicated server.
 
 
 {% hint style="info" %}
