@@ -8,6 +8,7 @@
 
 ## Fundamentals
 
+* [Get to know Umbraco](fundamentals/get-to-know-umbraco.md)
 * [Setup](fundamentals/setup/README.md)
   * [Requirements](fundamentals/setup/requirements.md)
   * [Installation](fundamentals/setup/install/README.md)
@@ -91,6 +92,7 @@
   * [Infinite Editing](fundamentals/backoffice/infinite-editing.md)
   * [Log Viewer](fundamentals/backoffice/logviewer.md)
   * [Language Variants](fundamentals/backoffice/variants.md)
+  * [Settings Dashboards](fundamentals/backoffice/settings-dashboards.md)
 * [Data](fundamentals/data/README.md)
   * [Defining Content](fundamentals/data/defining-content.md)
   * [Creating Media](fundamentals/data/creating-media/README.md)
@@ -124,6 +126,7 @@
 
 ## Implementation
 
+* [Learn how Umbraco works](implementation/learn-how-umbraco-works.md)
 * [Routing](implementation/default-routing/README.md)
   * [Controller & Action Selection](implementation/default-routing/controller-selection.md)
   * [Execute Request](implementation/default-routing/execute-request.md)
@@ -141,6 +144,7 @@
 
 ## Extending
 
+* [Customize the editing experience](extending/customize-the-editing-experience.md)
 * [Dashboards](extending/dashboards.md)
 * [Sections & Trees](extending/section-trees/README.md)
   * [Sections](extending/section-trees/sections.md)
@@ -193,6 +197,7 @@
 
 ## Reference
 
+* [Dive into the code](reference/dive-into-the-code.md)
 * [Configuration](reference/configuration/README.md)
   * [Basic Authentication Settings](reference/configuration/basicauthsettings.md)
   * [Connection strings settings](reference/configuration/connectionstringssettings.md)
@@ -387,6 +392,7 @@
 
 ## Tutorials
 
+* [Overview](tutorials/overview.md)
 * [Creating a Basic Website](tutorials/creating-a-basic-website/README.md)
   * [Getting Started](tutorials/creating-a-basic-website/getting-started.md)
   * [Document Types](tutorials/creating-a-basic-website/document-types.md)

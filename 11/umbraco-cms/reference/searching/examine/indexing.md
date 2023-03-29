@@ -354,6 +354,6 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
 
 ### Result
 
-![Custom product index](images/examine-management-product-index.png)
+![Custom product index](../../../../../10/umbraco-cms/reference/searching/examine/images/examine-management-product-index.png)
 
-![Product document](images/examine-management-product-document.png)
+![Product document](../../../../../10/umbraco-cms/reference/searching/examine/images/examine-management-product-document.png)

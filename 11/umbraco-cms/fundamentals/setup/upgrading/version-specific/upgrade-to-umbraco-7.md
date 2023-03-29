@@ -1,10 +1,13 @@
 ---
-description: "This document should be used as a reference, not a step by step guide. Upgrading will largely depend on what version of Umbraco you are currently running, what packages you have installed and the many aspects of your own Umbraco installation."
+description: >-
+  This document should be used as a reference, not a step by step guide.
+  Upgrading will largely depend on what version of Umbraco you are currently
+  running, what packages you have installed and the many
 ---
 
 # Upgrade to Umbraco 7
 
-The [standard upgrade instructions](../README.md) still apply to this process as well.
+The [standard upgrade instructions](../) still apply to this process as well.
 
 ## Backup
 
@@ -69,23 +72,23 @@ It is recommended that you use a Diff tool to compare the configuration file cha
   * [https://issues.umbraco.org/issue/U4-2742](https://issues.umbraco.org/issue/U4-2742)
 * `/config/applications.config` and `/config/trees.config` have some icon paths and names updated. You need to merge the new changes into your existing config files.
 * `/config/tinyMceConfig.config`
-  * The `inlinepopups` is compatible and supported in  Umbraco 7. You need to remove these elements: `plugin loadOnFrontend="true"`, `inlinepopups/plugin`;
-  * The plugins element that is shipped with Umbraco 7 looks like this:
+  * The `inlinepopups` is compatible and supported in Umbraco 7. You need to remove these elements: `plugin loadOnFrontend="true"`, `inlinepopups/plugin`;
+  *   The plugins element that is shipped with Umbraco 7 looks like this:
 
-    ```xml
-    <plugins>
-        <plugin loadOnFrontend="true">code</plugin>
-        <plugin loadOnFrontend="true">paste</plugin>
-        <plugin loadOnFrontend="true">umbracolink</plugin>
-        <plugin loadOnFrontend="true">anchor</plugin>
-        <plugin loadOnFrontend="true">charmap</plugin>
-        <plugin loadOnFrontend="true">table</plugin>
-        <plugin loadOnFrontend="true">lists</plugin>
-    </plugins>
-    ```
+      ```xml
+      <plugins>
+          <plugin loadOnFrontend="true">code</plugin>
+          <plugin loadOnFrontend="true">paste</plugin>
+          <plugin loadOnFrontend="true">umbracolink</plugin>
+          <plugin loadOnFrontend="true">anchor</plugin>
+          <plugin loadOnFrontend="true">charmap</plugin>
+          <plugin loadOnFrontend="true">table</plugin>
+          <plugin loadOnFrontend="true">lists</plugin>
+      </plugins>
+      ```
 
-    * You need to merge the changes from the new `tinyMceConfig` file into yours. The `command` elements that have changed are: `JustifyCenter`, `JustifyLeft`, `JustifyRight`, `JustifyFull`, `umbracomacro`, `umbracoembed`, `mceImage`, `subscript`, `superscript`, `styleselect`
-    * Remove the command: `mceSpellCheck`
+      * You need to merge the changes from the new `tinyMceConfig` file into yours. The `command` elements that have changed are: `JustifyCenter`, `JustifyLeft`, `JustifyRight`, `JustifyFull`, `umbracomacro`, `umbracoembed`, `mceImage`, `subscript`, `superscript`, `styleselect`
+      * Remove the command: `mceSpellCheck`
 * `/config/dashboard.config`
   * You need to merge the changes from the new `dashboard.config` into yours. Some of the original dashboard entries that were shipped with Umbraco 6 have been replaced or removed.
 
@@ -105,7 +108,7 @@ Content, Media, Members, and Data Type trees will no longer raise the legacy tre
 
 ### Legacy business logic events
 
-The Content, Media, Member, and Data Type editors have been re-created and are solely using the new Umbraco Services data layer. This means that operations performed in the backoffice will no longer raise the legacy business logic events (for example, events based on `umbraco.cms.businesslogic.web.Document`). It is recommended to change your event handlers to subscribe to the new Services data layer events. These are static events and are found in the services. For example:  `Umbraco.Core.Services.ContentService.Saved`.
+The Content, Media, Member, and Data Type editors have been re-created and are solely using the new Umbraco Services data layer. This means that operations performed in the backoffice will no longer raise the legacy business logic events (for example, events based on `umbraco.cms.businesslogic.web.Document`). It is recommended to change your event handlers to subscribe to the new Services data layer events. These are static events and are found in the services. For example: `Umbraco.Core.Services.ContentService.Saved`.
 
 ## Property Editors
 

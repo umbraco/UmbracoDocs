@@ -1,14 +1,16 @@
 ---
-description: "In this article you can learn the various ways of customizing the Umbraco backoffice login screen and form."
+description: >-
+  In this article you can learn the various ways of customizing the Umbraco
+  backoffice login screen and form.
 ---
 
-# Login screen
+# Login
 
 To access the backoffice, you will need to login. You can do this by adding `/umbraco` at the end of your website URL, e.g. http://mywebsite.com/umbraco.
 
 You will be presented with a login form similar to this:
 
-![Login screen](images/login-backoffice-login.png "The login screen has a greeting, username/password field and optionally a 'Forgotten password' link.")
+![Login screen](../../../../10/umbraco-cms/fundamentals/backoffice/images/login-backoffice-login.png)
 
 The **login** screen contains a **Greeting**, **Email**, **Password** field and optionally a **Forgotten password** link
 
@@ -16,7 +18,7 @@ Below, you will find instructions on how to customize the login screen.
 
 ## Greeting
 
-The login screen features a greeting that you can personalize by overriding the existing language translation keys. To do this, create a 'user' translation file for the default language of your Umbraco site, (usually en-US) to override the greetings. For en-US, you'd first need to create a ```config``` folder at the root of your project.
+The login screen features a greeting that you can personalize by overriding the existing language translation keys. To do this, create a 'user' translation file for the default language of your Umbraco site, (usually en-US) to override the greetings. For en-US, you'd first need to create a `config` folder at the root of your project.
 
 In the config folder create a folder called `lang` and create a file called: `en_us.user.xml`. Then take the relevant keys (listed below) and add them to your `~/config/lang/en_us.user.xml` file, and update the greetings as necessary.
 
@@ -34,7 +36,7 @@ In the config folder create a folder called `lang` and create a file called: `en
 </language>
 ```
 
-- Before the changes takes place you will need to restart the site.
+* Before the changes takes place you will need to restart the site.
 
 You can customize other text on the login screen as well. First, grab the default values and keys from the [en.xml](https://github.com/umbraco/Umbraco-CMS/blob/release-11.0.0/src/Umbraco.Core/EmbeddedResources/Lang/en.xml) in the Umbraco CMS Github repository. Thereafter copy the ones you want to translate into `~/config/lang/en_us.user.xml` file.
 
@@ -120,7 +122,7 @@ An example stylesheet might be:
     div.login-overlay__logo {
     	width: 10%;
     }
- ```
+```
 
 An example package.manifest might be:
 
