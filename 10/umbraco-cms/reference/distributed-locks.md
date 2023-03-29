@@ -1,4 +1,4 @@
-# Database Locks
+# Distributed Locks
 
 During save operations, Umbraco will generally take a database lock to avoid concurrency issues.
 
