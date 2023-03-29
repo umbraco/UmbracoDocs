@@ -3,7 +3,7 @@ description: >-
   Details an integration available for Algolia, built and maintained by Umbraco HQ.
 ---
 
-# Algolia Integration
+# Algolia
 
 This integration provides a custom dashboard and indexing component for managing search indices in Algolia.
 
@@ -15,21 +15,18 @@ This integration provides a custom dashboard and indexing component for managing
 
 ## Prerequisites
 
-Required minimum versions of Umbraco CMS:
-- CMS: 10.3.1
+Required minimum versions:
+
+- Umbraco CMS: 10.3.1
 - Algolia.Search: 6.13.0
 
-## How To Use
+## Authentication
 
-### Authentication
+The communication with Algolia is handled through their [.NET API client](https://www.algolia.com/doc/api-client/getting-started/install/csharp/?client=csharp), which requires an Application ID and an API key.
 
-The communication with Algolia is handled through their [.NET API client](https://www.algolia.com/doc/api-client/getting-started/install/csharp/?client=csharp),
-which requires an Application ID and an API key.
+They are used to initialize the [`SearchClient`](https://github.com/algolia/algoliasearch-client-csharp/blob/master/src/Algolia.Search/Clients/SearchClient.cs) which handles indexing and searching operations.
 
-They are used to initialize the [`SearchClient`](https://github.com/algolia/algoliasearch-client-csharp/blob/master/src/Algolia.Search/Clients/SearchClient.cs)
-which handles indexing and searching operations.
-
-### Configuration
+## Configuration
 
 The following configuration is required for working with the Algolia API:
 
@@ -52,16 +49,24 @@ The following configuration is required for working with the Algolia API:
 }
 ```
 
-### Working with the Umbraco CMS - Algolia integration
+## Working with the integration
 
-In the backoffice, go to the _Settings_ section and look for the _Algolia Search Management_ dashboard.
+The following details how you can work with the Algolia integration.
 
-In this view you will be able to create definitions for indices in Algolia. For each you provide a name for the index and select the Document Types to be indexed.  For each Document Type, select the fields you want to include.
+1. Go to the _Settings_ section in the Umbraco CMS backoffice.
+2. Locate the _Algolia Search Management_ dashboard.
+
+In this view you will be able to create definitions for indices in Algolia. 
+
+3. Provide a name for the index for each indices.
+4. Select the Document Types to be indexed.
+5. Select the fields you want to include for each Document Type.
 
 After creating an index, only the content definition is saved into the _algoliaIndices_ table in Umbraco and an empty
 index is created in Algolia.
 
 The actual content payload is pushed to Algolia for indices created in Umbraco on two scenarios:
+
 - From the list of indices, the _Build_ action is triggered, resulting in all content of specific Document Types to be sent as JSON to Algolia.
 - Using a _ContentPublishedNotification_ handler which will check the list of indices for the specific Document Type, and will update a matching Algolia object.
 
@@ -71,32 +76,36 @@ Two additional handlers for _ContentDeletedNotification_ and _ContentUnpublished
 
 Each Umbraco content item indexed in Algolia is referenced by the content entity's `GUID` Key field.
 
-### Algolia record structure
-An indexed Algolia record matching an Umbraco content item is contains a default set of properties. It is augmented by the list of properties defined within the Umbraco dashboard.
+## Algolia record structure
+
+An indexed Algolia record matching an Umbraco content item contains a default set of properties. It is augmented by the list of properties defined within the Umbraco dashboard.
 
 Properties that can vary by culture will have a record property corespondent with this naming convention: `[property]-[culture]`.
 
 The list of default properties consists of:
-- `ObjectID` - `Guid` from the content item's `Key` property
+
+- `ObjectID` - Guid` from the content item's `Key` property
 - `Name` - with culture variants if any
 - `CreateDate`
 - `UpdateDate`
 - `Url` - with culture variants if any
 
-### Extending the Algolia indexing
-Indexing the content for Algolia is based on the `IDataEditor.PropertyIndexValueFactory` property from the CMS, the indexed value of the property being retrieved using the `GetIndexValues` method.
+## Extending the Algolia indexing
 
-The [`ContentBuilder`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Search.Algolia/Builders/ContentRecordBuilder.cs) is responsible for creating the record object that will be pushed to _Algolia_ and the [`AlgoliaSearchPropertyIndexValueFactory`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Search.Algolia/Services/AlgoliaSearchPropertyIndexValueFactory.cs) implementation of `IAlgoliaSearchPropertyIndexValueFactory` will returned the property value.
+Indexing the content for Algolia is based on the `IDataEditor.PropertyIndexValueFactory` property from Umbraco CMS, the indexed value of the property being retrieved using the `GetIndexValues` method.
 
-Current implementation contains a custom converter for the `Umbraco.MediaPicker3` property editor.
+The [`ContentBuilder`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Search.Algolia/Builders/ContentRecordBuilder.cs) is responsible for creating the record object that will be pushed to _Algolia_ and the [`AlgoliaSearchPropertyIndexValueFactory`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Search.Algolia/Services/AlgoliaSearchPropertyIndexValueFactory.cs) implementation of `IAlgoliaSearchPropertyIndexValueFactory` will return the property value.
+
+The current implementation contains a custom converter for the `Umbraco.MediaPicker3` property editor.
 
 If a different implementation is required, you will need to follow these steps:
-- Inherit from `AlgoliaSearchPropertyIndexValueFactory`
-- Override the `GetValue` method
-- Add custom handlers to the [`Converters`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/fe5b17be519fff2c2420966febe73c8ed61c9374/src/Umbraco.Cms.Integrations.Search.Algolia/Services/AlgoliaSearchPropertyIndexValueFactory.cs#L26) dictionary
-- Register your implementation in the composer
 
-#### Example
+1. Inherit from `AlgoliaSearchPropertyIndexValueFactory`
+2. Override the `GetValue` method
+3. Add custom handlers to the [`Converters`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/fe5b17be519fff2c2420966febe73c8ed61c9374/src/Umbraco.Cms.Integrations.Search.Algolia/Services/AlgoliaSearchPropertyIndexValueFactory.cs#L26) dictionary
+4. Register your implementation in the composer
+
+### Example
 
 ```csharp
  public class ExtendedAlgoliaSearchPropertyIndexValueFactory : AlgoliaSearchPropertyIndexValueFactory
@@ -127,7 +136,7 @@ If a different implementation is required, you will need to follow these steps:
   }
 ```
 
-#### Extension registration
+### Extension registration
 
 ```csharp
 builder.Services.AddScoped<IAlgoliaSearchPropertyIndexValueFactory, ExtendedAlgoliaSearchPropertyIndexValueFactory>();

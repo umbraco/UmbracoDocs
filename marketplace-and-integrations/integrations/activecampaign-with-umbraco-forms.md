@@ -3,7 +3,7 @@ description: >-
   Details an integration available for ActiveCampaign with Umbraco Forms, built and maintained by Umbraco HQ.
 ---
 
-# ActiveCampaign with UmbracoForms Integration
+# ActiveCampaign with UmbracoForms
 
 This integration provides a custom workflow, allowing form entries to be mapped to an ActiveCampaign contact record. The record can be used to create a new contact or to associate a contact with an existing CRM (Customer Relationship Management) account.
 
@@ -16,18 +16,17 @@ This integration provides a custom workflow, allowing form entries to be mapped 
 ## Prerequisites
 
 Required minimum versions of Umbraco CMS:
+
 - CMS: 10.1.0
 - Forms: 10.1.0
 
-## How To Use
-
-### Authentication
+## Authentication
 
 All requests to the ActiveCampaign API are authenticated by providing an API key. The API key is included as an HTTP header called _Api-Token_.
 
 If the configuration is incomplete, the user will receive an error message.
 
-### Configuration
+## Configuration
 
 An ActiveCampaign contact has four main properties: email, first name, last name and phone.
 
@@ -74,7 +73,7 @@ To connect to your ActiveCampaign account, the following configuration is requir
 
 The email property is mandatory by default through ActiveCampaign API rules. The required rule can be extended to the other properties, by explicitly specifying that in the `required` property of each `ContactFields` node.
 
-### Working with the Umbraco Forms x ActiveCampaign integration
+## Working with the integration
 
 To use it, follow these steps:
 
