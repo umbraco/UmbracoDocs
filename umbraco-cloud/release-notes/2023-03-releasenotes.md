@@ -23,7 +23,7 @@ The project team page can easily be accessed from the overview showing all the o
 
 ![OrgAdminEditUserPage](images/OrgAdminEditUserPage.gif)
 
-This change provides a centralized and convenient way for the organization administrator to manage the team members' access to the cloud projects, ensuring that trusted individuals of your organization are able to grant and restrict access to cloud projects in Umbraco Cloud.
+This change provides a centralized and convenient way for the organization administrator to manage the team members' access to the cloud projects. Hereby Ensuring that trusted individuals of your organization are able to grant and restrict access to cloud projects in Umbraco Cloud.
 
 The new addition overall improves security, enhances collaboration, and streamlines the workflow for the organization's cloud projects.
 
