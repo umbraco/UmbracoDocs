@@ -40,14 +40,34 @@ Follow these steps to retrieve an API Access token:
 
 Once the app is installed the Admin API access token will be visible **only once** in the _API credentials_ tab.
 
-Use the access token and add it to an app setting in `Web.config` alongside settings for the API version and the name of the shop:
+Use the access token and add it to your website's `Web.config`/`appsettings.json` alongside settings for the API version and the name of the shop:
 
+For Umbraco 8:
 ```xml
   <appSettings>
     <add key="Umbraco.Cms.Integrations.Commerce.Shopify.ApiVersion" value="2022-01" />
     <add key="Umbraco.Cms.Integrations.Commerce.Shopify.AccessToken" value="[your access token]" />
     <add key="Umbraco.Cms.Integrations.Commerce.Shopify.Shop" value="[your shop's name]" />
   </appSettings>
+```
+
+For Umbraco 9+:
+```json
+ "Umbraco": {
+    "CMS": {
+      "Integrations": {
+        "Commerce": {
+          "Shopify": {
+            "Settings": {
+              "ApiVersion": "2022-01",
+              "Shop": "[your shop's name]",
+              "AccessToken": "[your access token]"
+            }
+          }
+        }
+      }
+    }
+  }
 ```
 
 Shopify releases a new API version every 3 months at the beginning of the quarter. The latest stable version used for this integration is [2022-01](https://shopify.dev/api/usage/versioning).
