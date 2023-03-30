@@ -34,20 +34,58 @@ When creating the Zap trigger, you will be prompted to enter a username, passwor
 
 If the following setting is present, the API key based authentication will take precedence and will be the main method of authorization.
 
+For Umbraco 8:
 ```xml
 <appSettings>
   <add key="Umbraco.Cms.Integrations.Automation.Zapier.ApiKey" value="[your_api_key]" />
 </appSettings>
 ```
 
+For Umbraco 9+:
+```json
+"Umbraco": {
+    "CMS": {
+      "Integrations": {
+        "Automation": {
+          "Zapier": {
+            "Settings": {
+              "ApiKey": "[your_api_key]"
+            }
+          }
+        }
+      }
+    }
+  }
+```
+
+
 If no API key is present, the Umbraco application will validate the credentials entered and return a message in case the validation fails.
 
-To enhance security, you can specify a User Group that the user connecting needs to be a part of, by adding the following setting in `Web.config`:
+To enhance security, you can specify a User Group that the user connecting needs to be a part of, by adding the following setting in `Web.config`/`appsettings.json`:
 
+For Umbraco 8:
 ```xml
 <appSettings>
   <add key="Umbraco.Cms.Integrations.Automation.Zapier.UserGroup" value="[your User Group]" />
 </appSettings>
+```
+
+For Umbraco 9+:
+```json
+"Umbraco": {
+    "CMS": {
+      "Integrations": {
+        "Automation": {
+          "Zapier": {
+            "Settings": {
+              ...
+              "UserGroup": "[your User Group]"
+            }
+          }
+        }
+      }
+    }
+  }
 ```
 
 ### Working With the Zapier Cms Integration
