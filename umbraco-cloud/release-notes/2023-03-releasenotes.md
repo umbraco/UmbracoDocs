@@ -17,7 +17,7 @@ If you primarily have been working with Umbraco Cloud in the US or UK regions an
 
 ## Simplified Access to Project Team Page
 
-As an administrator of your organization in Umbraco Cloud, you now have access to the **project team page** (called the "Edit Team") of all your **Umbraco cloud projects in your organization**.
+As an administrator of your organization in Umbraco Cloud, you now have access to the **Edit Team** page of **Umbraco cloud projects in your organization**.
 
 The project team page can easily be accessed from the overview showing all the organization's projects. The administrator can by clicking the icon listed to the right of the individual project., where he will be able to invite users to join the project team with a set of project permissions and backoffice user group memberships or revoke access to the project of an existing project team member.
 
