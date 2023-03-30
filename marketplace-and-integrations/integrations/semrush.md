@@ -3,7 +3,7 @@ description: >-
   Details an integration available for Semrush, built and maintained by Umbraco HQ.
 ---
 
-# Semrush Integration
+# Semrush
 
 This integration provides a keywords search tool powered by [Semrush](https://www.semrush.com/).
 

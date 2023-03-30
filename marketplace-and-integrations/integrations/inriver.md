@@ -3,7 +3,7 @@ description: >-
   Details an integration available for inriver, built and maintained by Umbraco HQ.
 ---
 
-# inriver Integration
+# inriver
 
 This integration provides a custom product picker for selected products in the [inriver](https://www.inriver.com/) Product Information Management (PIM) system. It also includes a value converter providing a strongly typed model for rendering and a sample rendering component.
 

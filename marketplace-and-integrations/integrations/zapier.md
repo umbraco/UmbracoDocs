@@ -3,7 +3,7 @@ description: >-
   Details an integration available for Zapier, built and maintained by Umbraco HQ.
 ---
 
-# Zapier Integration
+# Zapier
 
 This integration provides a dashboard interface that allows users to visualize registered subscription hooks. When a Zap is turned on, the subscription hook is saved into the database; turning off the Zap will remove the registered subscription hook.
 

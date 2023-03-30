@@ -3,7 +3,7 @@ description: >-
   Details an integration available for emerchantpay with Umbraco Forms, built and maintained by Umbraco HQ.
 ---
 
-# emerchantpay with Umbraco Forms Integration
+# emerchantpay with Umbraco Forms
 
 This integration provides a custom workflow for handling online payments using a hosted payment page provided by emerchantpay.
 

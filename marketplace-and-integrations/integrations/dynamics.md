@@ -3,7 +3,7 @@ description: >-
   Details an integration available for Dynamics, built and maintained by Umbraco HQ.
 ---
 
-# Dynamics Integration
+# Dynamics
 
 This integration provides a form picker and rendering component for forms managed within a Microsoft Dynamics 365 Marketing instance.
 

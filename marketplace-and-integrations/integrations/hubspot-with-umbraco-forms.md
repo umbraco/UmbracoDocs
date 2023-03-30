@@ -3,7 +3,7 @@ description: >-
   Details an integration available for Hubspot with Umbraco Forms, built and maintained by Umbraco HQ.
 ---
 
-# Hubspot with Umbraco Forms Integration
+# Hubspot with Umbraco Forms
 
 This integration provides a custom workflow for Umbraco Forms. The workflow settings allow form entries to be mapped to a HubSpot contact record. When the form is submitted, the details are stored within the Customer Relationship Management (CRM) platform.
 

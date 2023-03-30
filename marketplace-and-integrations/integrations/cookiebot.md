@@ -3,7 +3,7 @@ description: >-
   Details an integration available for Cookiebot, built and maintained by Umbraco HQ.
 ---
 
-# Cookiebot Integration
+# Cookiebot
 
 This integration provides an implementation model for [Cookiebot](https://www.cookiebot.com/) banner and declaration.
 

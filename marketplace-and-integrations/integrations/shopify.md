@@ -3,7 +3,7 @@ description: >-
   Details an integration available for Shopify, built and maintained by Umbraco HQ.
 ---
 
-# Shopify Integration
+# Shopify
 
 This integration provides a products picker and a value converter that uses a [strongly typed model](Models/ViewModels/ProductViewModel.cs) for rendering. Products can be retrieved from a [Shopify](https://www.shopify.com/) store or through custom apps developed by [Shopify Partners](https://www.shopify.com/partners).
 

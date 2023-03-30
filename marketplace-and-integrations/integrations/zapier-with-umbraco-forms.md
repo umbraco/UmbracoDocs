@@ -3,7 +3,7 @@ description: >-
   Details an integration available for Zapier with Umbraco Forms, built and maintained by Umbraco HQ.
 ---
 
-# Zapier with Umbraco Forms Integration
+# Zapier with Umbraco Forms
 
 This integration is an add-on to the [Zapier CMS](zapier.md) integration, and provides necessary components for handling form submissions based on the registered subscription hooks.
 

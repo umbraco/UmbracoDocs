@@ -3,7 +3,7 @@ description: >-
   Details an integration available for Hubspot, built and maintained by Umbraco HQ.
 ---
 
-# Hubspot Integration
+# Hubspot
 
 This integration provides a form picker and rendering component for forms managed within a [Hubspot](https://www.hubspot.com/) account.
 
