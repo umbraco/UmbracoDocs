@@ -9,7 +9,7 @@ This integration provides a dashboard interface that allows users to visualize r
 
 When content gets published, the content type is looked up in the subscription hooks list from the database. If a record is found, a POST request will be sent to the webhook URL with details of the current node. This will cause the Zap's trigger to be invoked, triggering the assigned actions of the Zap.
 
-A Zap is an automated workflow that connects apps and services together. Each Zap consists of a trigger and one or more actions.
+A **Zap** is an automated workflow that connects apps and services together. Each Zap consists of a trigger and one or more actions.
 
 ## Package Links
 
@@ -19,21 +19,20 @@ A Zap is an automated workflow that connects apps and services together. Each Za
 
 ## Prerequisites
 
-Requires minimum versions of Umbraco:
+Requires minimum versions of Umbraco CMS:
 
-- CMS V8: 8.5.4
-- CMS V9: 9.0.1
-
-## How To Use
+- Version 8: 8.5.4
+- Version 9: 9.0.1
 
 ### Authentication
 
-For this integration, the authentication is managed on Zapier's side by using the Umbraco marketplace app.
+For this integration, the authentication is managed on Zapier's side by using the Umbraco Marketplace app.
 
 The trigger event to be used by this integration is _New Content Published_.
 
 When creating the Zap trigger, you will be prompted to enter a username, password and the URL for your Umbraco website. Alternatively, you can use an API key.
-If the following setting is present, then the API key based authentication will take precedence and will be the main method of authorization.
+
+If the following setting is present, the API key based authentication will take precedence and will be the main method of authorization.
 
 ```xml
 <appSettings>
@@ -41,10 +40,9 @@ If the following setting is present, then the API key based authentication will 
 </appSettings>
 ```
 
-If no API key is present, then the Umbraco application will validate the credentials entered and return a message in case the validation fails.
+If no API key is present, the Umbraco application will validate the credentials entered and return a message in case the validation fails.
 
-To enhance security extend, you can specify a user group that the user connecting needs to be a part of, by adding the following
-setting in `Web.config`:
+To enhance security, you can specify a User Group that the user connecting needs to be a part of, by adding the following setting in `Web.config`:
 
 ```xml
 <appSettings>
@@ -57,7 +55,8 @@ setting in `Web.config`:
 In the _Content_ area of the backoffice, find the _Zapier Integrations_ dashboard.
 
 The dashboard is composed of two sections:
+
 - Content Properties - Zapier details and input fields for adding content configurations
-- Registered Subscription Hooks - list of registered entities.
+- Registered Subscription Hooks - a list of registered entities.
 
 The _Trigger Webhook_ action will send a test request to the Zap trigger, enabling the preview of requests in the Zap setup workflow.

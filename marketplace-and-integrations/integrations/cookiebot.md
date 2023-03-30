@@ -15,12 +15,11 @@ This integration provides an implementation model for [Cookiebot](https://www.co
 
 ## Prerequisites
 
-Requires minimum versions of Umbraco CMS:
-- CMS: 10.0.0
+Requires minimum versions of:
 
-## How To Use
+- Umbraco CMS: 10.0.0
 
-### Configuration
+## Configuration
 
 The following configuration is required for the Cookiebot scripts to be loaded correctly:
 
@@ -28,15 +27,14 @@ The following configuration is required for the Cookiebot scripts to be loaded c
 "Umbraco": {
   "Cookiebot": {
     "Settings": {
+      // CBID = Cookiebot Identifier
       "Id": "[YOUR_CBID]"
     }
   }
 }
 ```
 
-`CBID` = `Cookiebot Identifier`
-
-### Templating
+## Templating
 
 The package is a reusable [Razor class library](https://learn.microsoft.com/en-us/aspnet/core/razor-pages/?view=aspnetcore-6.0&tabs=visual-studio) which will allow editors to load the Cookiebot Banner and Declaration scripts.
 
@@ -56,18 +54,14 @@ Both scripts "pick up" the `CBID` from the website's configuration file and upda
 
 ## Custom Implementations
 
-This integration demonstrates how an Umbraco package can be used as an integration with a script-based provider, using partial views and the `IConfiguration` interface.  By doing this, the package can be released to NuGet and listed on the [Umbraco Marketplace](https://marketplace.umbraco.com).
+This integration demonstrates how an Umbraco package can be used as an integration with a script-based provider, using partial views and the `IConfiguration` interface.
 
 You can use this package as reference for creating integrations with other providers using scripts:
 
-- Create a new Razor class library for your integration.
-- Add partial(s) view(s) where you insert your custom script code.
-- Inject the `IConfiguration` interface into your view: `@inject Microsoft.Extensions.Configuration.IConfiguration Configuration`.
-- Use `Configuration[YOUR_SETTINGS_PATH:KEY]` to retrieve the required configuration values.
-- Add `umbraco-marketplace.json` file with Marketplace details of the package.
+1. Create a new Razor class library for your integration.
+2. Add partial views where you insert your custom script code.
+3. Inject the `IConfiguration` interface into your view: `@inject Microsoft.Extensions.Configuration.IConfiguration Configuration`.
+4. Use `Configuration[YOUR_SETTINGS_PATH:KEY]` to retrieve the required configuration values.
+5. Add `umbraco-marketplace.json` file with Marketplace details of the package.
 
 Once your integration is ready, all that remains to do is to [deploy the package to NuGet](https://learn.microsoft.com/en-us/nuget/what-is-nuget).
-
-
-
-

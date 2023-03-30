@@ -15,9 +15,10 @@ This integration provides a custom workflow for handling online payments using a
 
 ## Prerequisites
 
-Required minimum versions of Umbraco CMS:
-- CMS: 10.1.0
-- Forms: 10.1.0
+Required minimum versions:
+
+- Umbraco CMS: 10.1.0
+- Umbraco Forms: 10.1.0
 
 ## How To Use
 
@@ -35,8 +36,7 @@ If the configuration is incomplete, the user will receive an error message.
 
 ### Configuration
 
-The below configuration - consisting of authentication settings, merchant specific details and customizable payment fields - is required. Some configuration items
-are stored as an array of strings or a dictionary, and parsed using a specific service.
+The below configuration is required. It consists of authentication settings, merchant specific details and customizable payment fields. Some configuration items are stored as an array of strings or a dictionary, and parsed using a specific service.
 
 ```json
 {
@@ -70,23 +70,32 @@ are stored as an array of strings or a dictionary, and parsed using a specific s
 }
 ```
 
-### Working with the Umbraco Forms - emerchantpay integration
+### Working with the integration
 
-To use it you will need to attach the _emerchantpay Gateway_ workflow to a form. Then map the _Amount_, _Currency_, _Number of Items_, _Record Status_, _Record Payment Unique ID_ and _Consumer Details_ with matching form fields. Finally, configure the event handlers for payment successfully processed, failed or cancelled.
+Follow the steps below to start using the integration.
+
+1. Attach the _emerchantpay Gateway_ workflow to a form.
+2. Map the following values with with matching form fields:
+  a. _Amount_
+  b. _Currency_
+  c. _Number of Items_
+  d. _Record Status_
+  e. _Record Payment Unique ID_
+  f. _Consumer Details_
+3. Configure the event handlers for payment successfully processed, failed or cancelled.
 
 A consumer has the following properties available that can be mapped against form fields:
 
-* Email
-* FirstName
-* LastName
-* Address1
-* Address2
-* ZipCode
-* City
-* State
-* Country
-* Phone
-
+- Email
+- FirstName
+- LastName
+- Address1
+- Address2
+- ZipCode
+- City
+- State
+- Country
+- Phone
 
 When a form is submitted on the website, the workflow will execute. Two data payloads will be sent to emerchantpay. One for creating or retrieving the details of a consumer and the other for creating a payment.
 

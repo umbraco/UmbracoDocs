@@ -3,7 +3,7 @@ description: >-
   Details an integration available for CommerceTools, built and maintained by Umbraco HQ.
 ---
 
-# CommerceTools Integration
+# CommerceTools
 
 This integration provides a product and category picker, with data sourced from a [CommerceTools](https://commercetools.com/) installation.
 
@@ -19,7 +19,7 @@ Requires minimum version of Umbraco CMS: 8.5.4.
 
 ## How To Use
 
-From your CommerceTools account, retrieve the following details add them as application settings to your websites web.config file.
+From your CommerceTools account, retrieve the following details add them as application settings to your websites `web.config` file.
 
 ```xml
 <add key="Umbraco.Cms.Integrations.Commerce.CommerceTools.OAuthUrl" value="https://auth.europe-west1.gcp.commercetools.com/oauth/token" />
@@ -30,7 +30,7 @@ From your CommerceTools account, retrieve the following details add them as appl
 <add key="Umbraco.Cms.Integrations.Commerce.CommerceTools.DefaultLanguage" value="en-US" />
 ```
 
-In the Umbraco backoffice click to _Settings > Data Types_ and create a new datatype based on the available *CommerceTools Picker*.
+In the Umbraco backoffice, navigate to _Settings > Data Types_ and create a new Data Type based on the available *CommerceTools Picker*.
 
 The picker can be configured for selection of categories or products, defined as single or multiple picker, as well as other options:
 
