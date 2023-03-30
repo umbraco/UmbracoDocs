@@ -36,4 +36,4 @@ Source code and issue trackers are found at the following GitHub repositories:
 - [Umbraco CMS Integrations](https://github.com/umbraco/Umbraco.Cms.Integrations/)
 - [Umbraco Forms Integrations](https://github.com/umbraco/Umbraco.Forms.Integrations/)
 
-Within the [Integrations section of the documentation](integrations/README.md) you'll find details on installing and working with the integration packages developed by Umbraco HQ.
+Within the [Integrations section of the documentation](integrations/categories.md) you'll find details on installing and working with the integration packages developed by Umbraco HQ.

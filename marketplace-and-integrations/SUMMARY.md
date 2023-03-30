@@ -9,7 +9,7 @@
 
 ## Umbraco Integrations
 
-* [Integrations](integrations/README.md)
+* [Integrations](integrations/categories.md)
 * [ActiveCampaign](integrations/activecampaign.md)
 * [ActiveCampaign with Umbraco Forms](integrations/activecampaign-with-umbraco-forms.md.md)
 * [Algolia](integrations/algolia.md)
