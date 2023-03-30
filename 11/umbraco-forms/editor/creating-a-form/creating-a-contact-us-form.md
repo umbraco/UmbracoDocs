@@ -84,7 +84,7 @@ To create a Form, follow these steps:
 2. Click **...** next to the Forms folder.
 3. Select **Empty Form**.
 4. Enter the **Name** for the Form. Let's call it _Contact Us_.
-5. By default, there is a data consent field added to all new forms.
+5. By default, there is a **data consent** field added to all new forms.
 6. _[Optional]_ Enter the **Group Name**. Let's call it _Data Consent_.
 7. Click **Add new group**. Let's call it _Information_.
 8. Click the **Add Question** button to add a new field.
@@ -199,7 +199,7 @@ To configure the form workflow, follow these steps:
 5. Select **Example-Template.cshtml** in the **Email template** field.
 6. Enable **Attachments**.
 7. Enter an email address in the **Sender Email** field.
-8. Click Submit.
+8. Click **Submit**.
 9. Click **Save**.
 
 ## Configure Form Settings
@@ -207,13 +207,13 @@ To configure the form workflow, follow these steps:
 To configure the form settings, follow these steps:
 
 1. Select **Yes, keep submitted records in a database so they can be viewed and exported later** in the **Store Records** field.
-2. Enter the label for Submit, Next and Previous buttons in the **Captions** field.
+2. Enter the label for **Submit**, **Next**, and **Previous** buttons in the **Captions** field.
 3. Provide a stylesheet class in the **Styling** field.
 4. Enter the **Mandatory Error Message** and **Invalid Error Message** in the Validation field.
 5. Select **Mark Mandatory fields** in the **Mark fields**.
 6. Select the **Autocomplete** attribute value if you wish to use the autocompletion behavior.
 7. **Enable post moderation** if you wish the form submissions should be verified.
-8. Enable display default fields to select which fields are displayed in the list of form entries.
+8. Enable **display default fields** to select which fields are displayed in the list of form entries.
 9. Enable **Retain submitted records forever** and/or **Retain approved records forever** if you wish to retain data.
 10. Click **Save**.
 
