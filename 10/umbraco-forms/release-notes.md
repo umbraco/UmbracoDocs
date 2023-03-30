@@ -18,6 +18,10 @@ In this section, you can find the release notes for each version of Umbraco Form
 
 <summary>Version 10</summary>
 
+### [10.3.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.1) (April 4th 2023)
+
+* Fixed UI issue with access to submit message workflow [#998](https://github.com/umbraco/Umbraco.Forms.Issues/issues/998)
+
 ### [10.3.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.0) (March 21st 2023)
 
 * Fixed issue with an encoding of setting values in workflows [#988](https://github.com/umbraco/Umbraco.Forms.Issues/issues/988)
@@ -213,6 +217,11 @@ In this section, you can find the release notes for each version of Umbraco Form
 <details>
 
 <summary>Version 9</summary>
+
+### [9.5.9](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.5.9) (April 4th 2023)
+
+* Fixed issue with the `GetPrevalueMaps` method used in email workflow and exports where we have two prevalue sources of the same type on the form [#990](https://github.com/umbraco/Umbraco.Forms.Issues/issues/990)
+* Fixed issue with the clearing of numeric setting values [#994](https://github.com/umbraco/Umbraco.Forms.Issues/issues/994)
 
 ### [9.5.8](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.5.8) (March 10th 2023)
 
@@ -474,6 +483,12 @@ In this section, you can find the release notes for each version of Umbraco Form
 <details>
 
 <summary>Version 8</summary>
+
+### [8.13.8](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.13.8) (April 4th 2023)
+
+* Fixed issue with the `GetPrevalueMaps` method used in email workflow and exports where we have two prevalue sources of the same type on the form [#990](https://github.com/umbraco/Umbraco.Forms.Issues/issues/990)
+* Fixed issue with the clearing of numeric setting values [#994](https://github.com/umbraco/Umbraco.Forms.Issues/issues/994)
+* Fixed issue with an encoding of setting values in workflows [#988](https://github.com/umbraco/Umbraco.Forms.Issues/issues/988)
 
 ### [8.13.7](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.13.7) (March 7th 2023)
 
