@@ -17,8 +17,10 @@ This integration provides a custom workflow for Umbraco Forms. The workflow sett
 
 Requires minimum versions:
 
-- Umbraco CMS: 10.1.0
-- Umbraco Forms: 10.1.0
+- Umbraco CMS v8: 8.1.0
+- Umbraco CMS v10+: 10.1.0
+- Umbraco Forms v8: 8.7.4
+- Umbraco Forms v10+: 10.1.0
 
 ## Authentication
 
