@@ -43,6 +43,7 @@ Once the app is installed the Admin API access token will be visible **only once
 Use the access token and add it to your website's `Web.config`/`appsettings.json` alongside settings for the API version and the name of the shop:
 
 For Umbraco 8:
+
 ```xml
   <appSettings>
     <add key="Umbraco.Cms.Integrations.Commerce.Shopify.ApiVersion" value="2022-01" />
@@ -52,6 +53,7 @@ For Umbraco 8:
 ```
 
 For Umbraco 9+:
+
 ```json
  "Umbraco": {
     "CMS": {
