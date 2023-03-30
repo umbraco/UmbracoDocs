@@ -29,7 +29,7 @@ The new addition overall improves security, enhances collaboration, and streamli
 
 ## Monthly Bandwidth Usage
 
-We have launched a small update on the usage page that allows you to see the **total bandwidth used every month for the past seven months**.
+We've launched a minor update on the usage page. The update lets you see the **total bandwidth used every month for the past seven months**.
 
 ![BandwidthHistory](images/BandwidthHistory.png)
 
