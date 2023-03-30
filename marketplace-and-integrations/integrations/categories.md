@@ -3,7 +3,7 @@ description: >-
   Details integrations with third party services, built and maintained by Umbraco HQ.
 ---
 
-# Umbraco Integrations
+# Categories
 
 Umbraco HQ have developed and made available integrations with different SaaS (Software as a Service) providers. These are all open-source, and add functionality to Umbraco CMS to support working with third-party services.
 

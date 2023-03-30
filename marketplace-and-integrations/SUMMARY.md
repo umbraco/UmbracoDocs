@@ -2,14 +2,14 @@
 
 * [Umbraco DXP](README.md)
 
-## Umbraco Marketplace
+## Marketplace
 
 * [Marketplace](marketplace/README.md)
 * [Listing Your Package](marketplace/listing-your-package.md)
 
-## Umbraco Integrations
+## Integrations
 
-* [Integrations](integrations/categories.md)
+* [Categories](integrations/categories.md)
 * [ActiveCampaign](integrations/activecampaign.md)
 * [ActiveCampaign with Umbraco Forms](integrations/activecampaign-with-umbraco-forms.md.md)
 * [Algolia](integrations/algolia.md)
