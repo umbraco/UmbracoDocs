@@ -23,7 +23,7 @@ The marketplace is available at [marketplace.umbraco.com](https://marketplace.um
 
 Within the [Marketplace section of the documentation](marketplace/README.md) you'll find details aimed at package developers looking to list their Umbraco CMS extensions and integrations.
 
-## [Umbraco Integrations](integrations/README.md)
+## Umbraco Integrations
 
 As well as the commercial products, Umbraco HQ also develop and make available open-source integrations. These add functionality to the Umbraco CMS to support working with third-party services.
 

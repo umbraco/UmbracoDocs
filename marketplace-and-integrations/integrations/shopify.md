@@ -18,7 +18,7 @@ This integration provides a products picker and a value converter that uses a [s
 Required minimum versions of Umbraco CMS:
 
 - Version 8: 8.5.4
-- Version 9: 9.0.1
+- Version 9+: 9.0.1
 
 ## Authentication
 
