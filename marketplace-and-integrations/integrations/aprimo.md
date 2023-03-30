@@ -95,3 +95,30 @@ Assuming a property based on the created Data Type with alias `aprimoMediaPicker
 ```csharp
 @Html.RenderAprimoAsset(Model.AprimoMediaPicker)`
 ```
+
+Properties available from the strongly-typed model:
+- Title
+- Thumbnail
+- Crops
+- Asset fields
+
+### Working with Crops
+For the selected media asset you can retrieve the crops details using the `MediaWithCrops` object.
+ 
+It contains the details of the original asset, the list of available crops and a method to retrieve the crop URL based on name and width/height.
+
+For example:
+- get URL for crop item with the name _Social_: `@Model.MediaWithCrops.GetCropUrl("Social")`
+- get URL for crop item with height _1080_: `@Model.MediaWithCrops.GetCropUrl(null, 1080)`
+
+### Working with fields
+The asset's fields are grouped in an object containing their label and a dictionary of values based on the available cultures for that asset.
+
+For example:
+- get values for a field with label _Display Title_: 
+```
+var displayTitle = @Model.Fields.FirstOrDefault(p => p.Label == "Display Title");
+var values = displayTitle != null
+                ? displayTitle.Values 
+                : default(Dictionary<string, string>());
+```

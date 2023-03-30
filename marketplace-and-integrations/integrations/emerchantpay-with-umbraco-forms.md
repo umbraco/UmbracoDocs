@@ -17,8 +17,10 @@ This integration provides a custom workflow for handling online payments using a
 
 Required minimum versions:
 
-- Umbraco CMS: 10.1.0
-- Umbraco Forms: 10.1.0
+- Umbraco CMS v8: 8.5.4
+- Umbraco CMS v10+: 10.1.0
+- Umbraco Forms v8: 8.13.0
+- Umbraco Forms v10+: 10.1.0
 
 ## How To Use
 
@@ -38,6 +40,25 @@ If the configuration is incomplete, the user will receive an error message.
 
 The below configuration is required. It consists of authentication settings, merchant specific details and customizable payment fields. Some configuration items are stored as an array of strings or a dictionary, and parsed using a specific service.
 
+For Umbraco v8:
+```xml
+<appSettings>
+...
+  <add key="Umbraco.Forms.Integrations.Commerce.eMerchantPay.GatewayBaseurl" value="https://staging.gate.emerchantpay.net/"/>
+  <add key="Umbraco.Forms.Integrations.Commerce.eMerchantPay.WpfUrl" value="https://staging.wpf.emerchantpay.net/wpf"/>
+  <add key="Umbraco.Forms.Integrations.Commerce.eMerchantPay.Username" value="[your_merchant_username]"/>
+  <add key="Umbraco.Forms.Integrations.Commerce.eMerchantPay.Password" value="[your_merchant_password]"/>
+  <add key="Umbraco.Forms.Integrations.Commerce.eMerchantPay.UmbracoBaseUrl" value="[your_website_url]"/>
+  <add key="Umbraco.Forms.Integrations.Commerce.eMerchantPay.Supplier" value="Umbraco"/>
+  <add key="Umbraco.Forms.Integrations.Commerce.eMerchantPay.Usage" value="Payment Gateway using Umbraco Forms"/>
+  <add key="Umbraco.Forms.Integrations.Commerce.eMerchantPay.Currencies" value="USD,US Dollar;EUR,Euro;GBP,British Pound;DKK,Danish Krone"/>
+  <add key="Umbraco.Forms.Integrations.Commerce.eMerchantPay.TransactionTypes" value="authorize;sale"/>
+  <add key="Umbraco.Forms.Integrations.Commerce.eMerchantPay.MappingFields" value="Email;FirstName;LastName"/>
+...
+</appSettings>
+```
+
+For Umbraco v10+:
 ```json
 {
   "Umbraco": {
