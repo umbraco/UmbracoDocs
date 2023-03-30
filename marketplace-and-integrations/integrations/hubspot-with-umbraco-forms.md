@@ -48,10 +48,10 @@ Follow the steps outlined below to start working with the integration:
 1. Add the "Save Contact to Hubspot" workflow to a form.
 2. Configure the mappings between the form and Hubspot fields.
 
-![Select the HubSpot workflow](https://github.com/umbraco/Umbraco.Forms.Integrations/raw/main-v10/src/Umbraco.Forms.Integrations.Crm.Hubspot/img/select-workflow.png)
+![Select the HubSpot workflow](images/hubspot-with-umbraco-forms-select-workflow.png)
 
-![Defining mappings](https://github.com/umbraco/Umbraco.Forms.Integrations/raw/main-v10/src/Umbraco.Forms.Integrations.Crm.Hubspot/img/mapping.png)
+![Defining mappings](images/hubspot-with-umbraco-forms-mapping.png)
 
 When a form is submitted on the website, the workflow will execute and create a new contact record in your Hubspot account. It will be populated using the information mapped from the fields in the form submission.
 
-![Hubspot contacts](https://github.com/umbraco/Umbraco.Forms.Integrations/raw/main-v10/src/Umbraco.Forms.Integrations.Crm.Hubspot/img/hubspot-contacts.png)
+![Hubspot contacts](images/hubspot-with-umbraco-forms-contacts.png)
