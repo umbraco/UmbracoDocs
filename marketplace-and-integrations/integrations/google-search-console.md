@@ -17,8 +17,8 @@ This integration provides an extension for Umbraco CMS. It provides details on i
 
 Requires minimum versions of Umbraco CMS:
 
-- Verion 8: 8.4.0
-- Version 9: 9.0.1
+- Version 8: 8.4.0
+- Version 9+: 9.0.1
 
 ## Authentication
 

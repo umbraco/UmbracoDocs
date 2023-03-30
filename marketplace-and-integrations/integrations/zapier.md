@@ -22,7 +22,7 @@ A **Zap** is an automated workflow that connects apps and services together. Eac
 Requires minimum versions of Umbraco CMS:
 
 - Version 8: 8.5.4
-- Version 9: 9.0.1
+- Version 9+: 9.0.1
 
 ### Authentication
 

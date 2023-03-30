@@ -3,7 +3,7 @@ description: >-
   Extending the Umbraco platform through the composition of packages and integrations.
 ---
 
-# Umbraco DXP (Digital eXperience Platform)
+# Umbraco DXP
 
 Within this Umbraco DXP (Digital eXperience Platform) area of the Umbraco documentation you'll find topics related to extending Umbraco CMS via packages and integrations.
 
@@ -15,7 +15,7 @@ Umbraco makes available three licensed add-ons that are available for purchase. 
 - [Umbraco Deploy On Premise](https://docs.umbraco.com/umbraco-deploy/)
 - [Umbraco Workflow](https://docs.umbraco.com/umbraco-workflow/)
 
-## [Umbraco Marketplace](marketplace/README.md)
+## Umbraco Marketplace
 
 The Umbraco Marketplace is a public website used to showcase Umbraco packages. These are commercial and open-source extensions available for use in Umbraco solutions. On the marketplace you can browse and search for packages, understand their usage and review their suitability for your project.
 
@@ -23,7 +23,7 @@ The marketplace is available at [marketplace.umbraco.com](https://marketplace.um
 
 Within the [Marketplace section of the documentation](marketplace/README.md) you'll find details aimed at package developers looking to list their Umbraco CMS extensions and integrations.
 
-## [Umbraco Integrations](integrations/README.md)
+## Umbraco Integrations
 
 As well as the commercial products, Umbraco HQ also develop and make available open-source integrations. These add functionality to the Umbraco CMS to support working with third-party services.
 

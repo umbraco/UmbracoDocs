@@ -56,7 +56,7 @@ The following details how you can work with the Algolia integration.
 1. Go to the _Settings_ section in the Umbraco CMS backoffice.
 2. Locate the _Algolia Search Management_ dashboard.
 
-In this view you will be able to create definitions for indices in Algolia. 
+In this view you will be able to create definitions for indices in Algolia.
 
 3. Provide a name for the index for each indices.
 4. Select the Document Types to be indexed.
@@ -105,7 +105,7 @@ If a different implementation is required, you will need to follow these steps:
 3. Add custom handlers to the [`Converters`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/fe5b17be519fff2c2420966febe73c8ed61c9374/src/Umbraco.Cms.Integrations.Search.Algolia/Services/AlgoliaSearchPropertyIndexValueFactory.cs#L26) dictionary
 4. Register your implementation in the composer
 
-### Example
+The following code sample demonstrates this approach:
 
 ```csharp
  public class ExtendedAlgoliaSearchPropertyIndexValueFactory : AlgoliaSearchPropertyIndexValueFactory

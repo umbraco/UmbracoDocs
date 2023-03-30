@@ -5,7 +5,7 @@ description: >-
 
 # Shopify
 
-This integration provides a products picker and a value converter that uses a [strongly typed model](Models/ViewModels/ProductViewModel.cs) for rendering. Products can be retrieved from a [Shopify](https://www.shopify.com/) store or through custom apps developed by [Shopify Partners](https://www.shopify.com/partners).
+This integration provides a products picker and a value converter that creates a strongly typed model for rendering. Products can be retrieved from a [Shopify](https://www.shopify.com/) store or through custom apps developed by [Shopify Partners](https://www.shopify.com/partners).
 
 ## Package Links
 
@@ -18,7 +18,7 @@ This integration provides a products picker and a value converter that uses a [s
 Required minimum versions of Umbraco CMS:
 
 - Version 8: 8.5.4
-- Version 9: 9.0.1
+- Version 9+: 9.0.1
 
 ## Authentication
 
