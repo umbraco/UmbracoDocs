@@ -17,8 +17,8 @@ This integration provides a keywords search tool powered by [Semrush](https://ww
 
 Requires minimum versions of Umbraco CMS:
 
-- Versio 8: 8.5.4
-- Version 9: 9.0.1
+- Version 8: 8.5.4
+- Version 9+: 9.0.1
 
 ## How To Use
 

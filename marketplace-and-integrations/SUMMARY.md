@@ -11,6 +11,7 @@
 
 * [Integrations](integrations/README.md)
 * [ActiveCampaign](integrations/activecampaign.md)
+* [ActiveCampaign with Umbraco Forms](integrations/activecampaign-with-umbraco-forms.md.md)
 * [Algolia](integrations/algolia.md)
 * [Aprimo](integrations/aprimo.md)
 * [CookieBot](integrations/cookiebot.md)
