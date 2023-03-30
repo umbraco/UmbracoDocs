@@ -33,7 +33,7 @@ We've launched a minor update on the usage page. The update lets you see the **t
 
 ![BandwidthHistory](images/BandwidthHistory.png)
 
-With this new feature, you can track your website's bandwidth usage over time and identify any patterns or trends. We believe that this new addition will be especially valuable for customers who are running high-traffic websites and perhaps weekly need to monitor the bandwidth usage to ensure the cloud project stays inside the limit of the plan tier.
+With this new feature, you can track your website's bandwidth usage over time and identify any patterns or trends. We believe this new addition is valuable for customers running high-traffic websites and weekly need to monitor the bandwidth usage to ensure the project stays within the plan tier limit.
 
 ## Upgrade Project Flow
 The newest feature to launch in the new front end stack is “Upgrade project” flow. It replaces the current upgrade plan feature while adding a more modern and visually appealing design.
