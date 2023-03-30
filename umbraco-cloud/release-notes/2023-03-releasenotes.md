@@ -9,7 +9,7 @@
 
 ## Umbraco Baseline Support For All Cloud Regions
 
-Umbraco Cloud has recently expanded its **baseline feature to** include the **East US and South UK regions**, providing users with a standardized set of features across all regions.
+We've expanded the **baseline feature to** include the **East US and South UK regions**. This provides users with a standardized set of features across all regions.
 
 If you have had experience working with Umbraco Cloud baselines, you will know that the basic idea is that you have a project that contains all your standard Umbraco packages/components, maybe configured with some default Document Types, which you want to use as baseline for future projects. When you've made changes to your Baseline project, you can then push these changes out to all the child projects with a click of a button.
 
