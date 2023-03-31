@@ -28,8 +28,9 @@ This integration is currently only available for Umbraco 8.
 
 ## How To Use
 
-From your CommerceTools account, retrieve the following details add them as application settings to your websites `web.config` file.
+From your CommerceTools account, retrieve the following details and add them as application settings to your websites `web.config` file.
 
+{% code title="web.config" %}
 ```xml
 <add key="Umbraco.Cms.Integrations.Commerce.CommerceTools.OAuthUrl" value="https://auth.europe-west1.gcp.commercetools.com/oauth/token" />
 <add key="Umbraco.Cms.Integrations.Commerce.CommerceTools.ApiUrl" value="https://api.europe-west1.gcp.commercetools.com" />
@@ -38,6 +39,7 @@ From your CommerceTools account, retrieve the following details add them as appl
 <add key="Umbraco.Cms.Integrations.Commerce.CommerceTools.ClientSecret" value="" />
 <add key="Umbraco.Cms.Integrations.Commerce.CommerceTools.DefaultLanguage" value="en-US" />
 ```
+{% endcode %}
 
 In the Umbraco backoffice, navigate to _Settings > Data Types_ and create a new Data Type based on the available _CommerceTools Picker_.
 

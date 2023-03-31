@@ -33,6 +33,7 @@ If the configuration is incomplete, the user will receive an error message.
 
 To connect to your ActiveCampaign account, the following configuration is required:
 
+{% code title="appsettings.json" %}
 ```json
 "Umbraco": {
   "CMS": {
@@ -47,6 +48,7 @@ To connect to your ActiveCampaign account, the following configuration is requir
         }
       }
 ```
+{% endcode %}
 
 ## Backoffice usage
 

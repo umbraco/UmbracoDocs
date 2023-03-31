@@ -1,6 +1,7 @@
 ---
 description: >-
-  Details an integration available for ActiveCampaign with Umbraco Forms, built and maintained by Umbraco HQ.
+  Details an integration available for ActiveCampaign with Umbraco Forms, built
+  and maintained by Umbraco HQ.
 ---
 
 # ActiveCampaign with Umbraco Forms
@@ -9,16 +10,25 @@ This integration provides a custom workflow, allowing form entries to be mapped 
 
 ## Package Links
 
-- [NuGet install](https://www.nuget.org/packages/Umbraco.Forms.Integrations.Crm.ActiveCampaign)
-- [Source code](https://github.com/umbraco/Umbraco.Forms.Integrations/tree/main-v10/src/Umbraco.Forms.Integrations.Crm.ActiveCampaign)
-- [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.forms.integrations.crm.activecampaign)
+* [NuGet install](https://www.nuget.org/packages/Umbraco.Forms.Integrations.Crm.ActiveCampaign)
+* [Source code](https://github.com/umbraco/Umbraco.Forms.Integrations/tree/main-v10/src/Umbraco.Forms.Integrations.Crm.ActiveCampaign)
+* [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.forms.integrations.crm.activecampaign)
 
-## Prerequisites
+## Minimum version requirements
 
-Required minimum versions of Umbraco CMS:
+### Umbraco CMS
 
-- CMS: 10.1.0
-- Forms: 10.1.0
+| Major      | Minor/Patch |
+| ---------- | ----------- |
+| Version 10 | 10.1.0      |
+| Version 11 | 11.0.0      |
+
+### Umbraco Forms
+
+| Major      | Minor/Patch |
+| ---------- | ----------- |
+| Version 10 | 10.1.0      |
+| Version 11 | 11.0.0      |
 
 ## Authentication
 
@@ -28,10 +38,11 @@ If the configuration is incomplete, the user will receive an error message.
 
 ## Configuration
 
-An ActiveCampaign contact has four main properties: email, first name, last name and phone.
+An ActiveCampaign contact has four main properties: email, first name, last name, and phone.
 
 To connect to your ActiveCampaign account, the following configuration is required:
 
+{% code title="appsettings.json" %}
 ```json
 "Umbraco": {
   "CMS": {
@@ -70,6 +81,7 @@ To connect to your ActiveCampaign account, the following configuration is requir
   }
 }
 ```
+{% endcode %}
 
 The email property is mandatory by default through ActiveCampaign API rules. The required rule can be extended to the other properties, by explicitly specifying that in the `required` property of each `ContactFields` node.
 

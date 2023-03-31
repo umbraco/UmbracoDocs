@@ -39,6 +39,28 @@ When creating the Zap trigger, you will be prompted to enter a username, passwor
 
 If the following setting is present, the API key-based authentication will take precedence and will be the main method of authorization.
 
+{% tabs %}
+{% tab title="Versions 9 and above" %}
+{% code title="appsettings.json" %}
+```json
+"Umbraco": {
+  "CMS": {
+    "Integrations": {
+      "Automation": {
+        "Zapier": {
+          "Settings": {
+            "ApiKey": "[your_api_key]"
+          }
+        }
+      }
+    }
+  }
+}
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Version 8" %}
 {% code title="web.config" %}
 ```xml
 <appSettings>
@@ -46,29 +68,36 @@ If the following setting is present, the API key-based authentication will take 
 </appSettings>
 ```
 {% endcode %}
+{% endtab %}
+{% endtabs %}
 
-For Umbraco 9+:
+If no API key is present, the Umbraco application will validate the credentials entered and return a message in case the validation fails.
+
+To enhance security, you can specify a User Group that the user connecting needs to be a part of, by adding the following setting in the configuration file.
+
+{% tabs %}
+{% tab title="Versions 9 and above" %}
+{% code title="appsettings.json" %}
 ```json
 "Umbraco": {
-    "CMS": {
-      "Integrations": {
-        "Automation": {
-          "Zapier": {
-            "Settings": {
-              "ApiKey": "[your_api_key]"
-            }
+  "CMS": {
+    "Integrations": {
+      "Automation": {
+        "Zapier": {
+          "Settings": {
+            ...
+            "UserGroup": "[your User Group]"
           }
         }
       }
     }
   }
+}
 ```
+{% endcode %}
+{% endtab %}
 
-
-If no API key is present, the Umbraco application will validate the credentials entered and return a message in case the validation fails.
-
-To enhance security, you can specify a User Group that the user connecting needs to be a part of, by adding the following setting in `Web.config`/`appsettings.json`:
-
+{% tab title="Version 8" %}
 {% code title="web.config" %}
 ```xml
 <appSettings>
@@ -76,24 +105,8 @@ To enhance security, you can specify a User Group that the user connecting needs
 </appSettings>
 ```
 {% endcode %}
-
-For Umbraco 9+:
-```json
-"Umbraco": {
-    "CMS": {
-      "Integrations": {
-        "Automation": {
-          "Zapier": {
-            "Settings": {
-              ...
-              "UserGroup": "[your User Group]"
-            }
-          }
-        }
-      }
-    }
-  }
-```
+{% endtab %}
+{% endtabs %}
 
 ## Working With the Zapier Cms Integration
 

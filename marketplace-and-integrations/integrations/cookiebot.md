@@ -27,6 +27,7 @@ This integration provides an implementation model for the [Cookiebot](https://ww
 
 The following configuration is required for the Cookiebot scripts to be loaded correctly:
 
+{% code title="appsettings.json" %}
 ```json
 "Umbraco": {
   "Cookiebot": {
@@ -37,6 +38,7 @@ The following configuration is required for the Cookiebot scripts to be loaded c
   }
 }
 ```
+{% endcode %}
 
 ## Templating
 

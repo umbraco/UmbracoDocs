@@ -37,6 +37,7 @@ To retrieve your API key and instance of your environment, follow these steps:
 
 The following configuration is required for working with the inriver API:
 
+{% code title="appsettings.json" %}
 ```json
 {
   "Umbraco": {
@@ -55,6 +56,7 @@ The following configuration is required for working with the inriver API:
   }
 }
 ```
+{% endcode %}
 
 ## Backoffice usage
 

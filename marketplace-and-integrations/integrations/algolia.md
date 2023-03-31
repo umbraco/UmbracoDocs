@@ -33,6 +33,7 @@ They are used to initialize the [`SearchClient`](https://github.com/algolia/algo
 
 The following configuration is required for working with the Algolia API:
 
+{% code title="appsettings.json" %}
 ```json
 {
   "Umbraco": {
@@ -51,6 +52,7 @@ The following configuration is required for working with the Algolia API:
   }
 }
 ```
+{% endcode %}
 
 ## Working with the integration
 

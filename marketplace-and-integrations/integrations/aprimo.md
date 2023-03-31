@@ -27,6 +27,7 @@ This integration provides a custom Media Picker for digital assets managed in an
 
 The following configuration is required to connect to the _Aprimo_ Digital Asset Management (DAM) workspace:
 
+{% code title="appsettings.json" %}
 ```json
 {
   "Umbraco": {
@@ -50,6 +51,7 @@ The following configuration is required to connect to the _Aprimo_ Digital Asset
   }
 }
 ```
+{% endcode %}
 
 The configuration is split into two components:
 
