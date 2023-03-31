@@ -4,7 +4,7 @@
 
 ## Marketplace
 
-* [Introduction](marketplace/README.md)
+* [Introduction](marketplace/introduction.md)
 * [Listing Your Package](marketplace/listing-your-package.md)
 
 ## Integrations

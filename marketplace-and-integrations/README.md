@@ -22,7 +22,7 @@ The Umbraco Marketplace is a public website used to showcase Umbraco packages. T
 
 The marketplace is available at [marketplace.umbraco.com](https://marketplace.umbraco.com).
 
-Within the [Marketplace section of the documentation](marketplace/), you'll find details aimed at package developers looking to list their Umbraco CMS extensions and integrations.
+Within the [Marketplace section of the documentation](marketplace/introduction.md), you'll find details aimed at package developers looking to list their Umbraco CMS extensions and integrations.
 
 ## Umbraco Integrations
 
