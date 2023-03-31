@@ -12,9 +12,7 @@ Within this Umbraco DXP (Digital Experience Platform) area of the Umbraco docume
 
 Umbraco makes available three licensed add-ons that are available for purchase. They each have their dedicated documentation area:
 
-* [Umbraco Forms](https://docs.umbraco.com/umbraco-forms/)
-* [Umbraco Deploy On-Premise](https://docs.umbraco.com/umbraco-deploy/)
-* [Umbraco Workflow](https://docs.umbraco.com/umbraco-workflow/)
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Umbraco Forms</strong></td><td>Extend your Umbraco CMS website with custom forms in all shapes and sizes.</td><td><a href="https://docs.umbraco.com/umbraco-forms">https://docs.umbraco.com/umbraco-forms</a></td><td><a href=".gitbook/assets/Umbraco_Brand_Guidelines_2020_30_Illustrationbuilding.png">Umbraco_Brand_Guidelines_2020_30_Illustrationbuilding.png</a></td></tr><tr><td><strong>Umbraco Deploy</strong></td><td>Synchronize content and code changes between your Umbraco website environments.</td><td><a href="https://docs.umbraco.com/umbraco-deploy">https://docs.umbraco.com/umbraco-deploy</a></td><td><a href=".gitbook/assets/umbraco_free_way_01.png">umbraco_free_way_01.png</a></td></tr><tr><td><strong>Umbraco Workflow</strong></td><td>Structure content reviews and approval flows for Content Editors on your website.</td><td><a href="https://docs.umbraco.com/umbraco-workflow">https://docs.umbraco.com/umbraco-workflow</a></td><td><a href=".gitbook/assets/umbraco_8_2_A.png">umbraco_8_2_A.png</a></td></tr></tbody></table>
 
 ## Umbraco Marketplace
 
