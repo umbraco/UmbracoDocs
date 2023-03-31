@@ -1,6 +1,7 @@
 ---
 description: >-
-  Details an integration available for Aprimo, built and maintained by Umbraco HQ.
+  Details an integration available for Aprimo, built and maintained by Umbraco
+  HQ.
 ---
 
 # Aprimo
@@ -9,20 +10,24 @@ This integration provides a custom Media Picker for digital assets managed in an
 
 ## Package Links
 
-- [NuGet install](https://www.nuget.org/packages/Umbraco.Cms.Integrations.DAM.Aprimo)
-- [Source code](https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.DAM.Aprimo)
-- [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.cms.integrations.dam.aprimo)
+* [NuGet install](https://www.nuget.org/packages/Umbraco.Cms.Integrations.DAM.Aprimo)
+* [Source code](https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.DAM.Aprimo)
+* [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.cms.integrations.dam.aprimo)
 
-## Prerequisites
+## Minimum version requirements
 
-Requires minimum versions of Umbraco CMS:
+### Umbraco CMS
 
-- CMS: 10.3.0
+| Major      | Minor/Patch |
+| ---------- | ----------- |
+| Version 10 | 10.3.0      |
+| Version 11 | 11.0.0      |
 
 ## Configuration
 
 The following configuration is required to connect to the _Aprimo_ Digital Asset Management (DAM) workspace:
 
+{% code title="appsettings.json" %}
 ```json
 {
   "Umbraco": {
@@ -46,43 +51,44 @@ The following configuration is required to connect to the _Aprimo_ Digital Asset
   }
 }
 ```
+{% endcode %}
 
-The configuration is split in two components:
+The configuration is split into two components:
 
-- A generic one that holds your tenant name, and
-- One for OAuth settings.
+* A generic one that holds your tenant's name, and
+* One for OAuth settings.
 
 The authorization process is managed using the [OAuth flow - Authorization Code with Proof Key for Code Exchange (PKCE)](https://developers.aprimo.com/marketing-operations/rest-api/authorization/#module7). When making a request for an access token, you will need to generate a code verifier and a code challenge.
 
 `Client Id` and `Client Secret` details are retrieved from your [Aprimo Client Registration](https://developers.aprimo.com/marketing-operations/rest-api/authorization/#module2), which you will need to set up with the redirect URI pointing to the [`AprimoAuthorizationController`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/feature/aprimo-integration/src/Umbraco.Cms.Integrations.DAM.Aprimo/Controllers/AprimoAuthorizationController.cs) - `OAuth` action.
 
-Using the `offline_access` scope, the response from Aprimo API will contain a refresh token, with an expiration period of 10 days. This will keep the API access available for front-end rendering of the images.
+Using the `offline_access` scope, the response from Aprimo API will contain a refresh token, with an expiration period of 10 days. This will keep the API access available for the front-end rendering of the images.
 
 ## Backoffice usage
 
 To use the Media Picker, a new Data Type should be created based on the `Aprimo Media Picker` property editor.
 
-If the configuration is not valid, an error tag will be displayed in the right upper corner of the configuration box.
+If the configuration is not valid, an error-tag will be displayed in the right upper corner of the configuration box.
 
 Otherwise, you will be able to select one of the two available options for picking assets:
 
-- Aprimo API - items are retrieved using the API and an overlay of the property editor will display the list of available items in the DAM (Digital Asset Management) workspace.
-- Aprimo Content Selector - rich UI tool hosted on Aprimo Cloud where you can pick items using a familiar Aprimo interface.
+* Aprimo API - items are retrieved using the API and an overlay of the property editor will display the list of available items in the DAM (Digital Asset Management) workspace.
+* Aprimo Content Selector - rich UI tool hosted on Aprimo Cloud where you can pick items using a familiar Aprimo interface.
 
 ### Browser information
 
 Before using the integration with Aprimo, please make sure to use a browser that is supported by Aprimo Cloud. Without one you will not be able to authenticate, nor use the Content Selector.
 
-Aprimo currently supports these browsers, but make sure to check [this](https://help.aprimo.com/Content/Marketing_Operations_Help/aprimo_basics/browsers_configuring_concept.html) topic for an updated list:
+Aprimo currently supports these browsers, but make sure to check [this](https://help.aprimo.com/Content/Marketing\_Operations\_Help/aprimo\_basics/browsers\_configuring\_concept.html) topic for an updated list:
 
-- Chrome for Windows and Macintosh
-- Edge (Windows 10 only)
-- Internet Explorer 9, 10, and 11
-- Safari 6, 6.1, 6.2, and 7.0 (Macintosh only)
+* Chrome for Windows and Macintosh
+* Edge (Windows 10 only)
+* Internet Explorer 9, 10, and 11
+* Safari 6, 6.1, 6.2, and 7.0 (Macintosh only)
 
 ## Front-end rendering
 
-A strongly-typed model will be generated by the property value converter. An HTML helper is available to render the asset on the front-end.
+A strongly-typed model will be generated by the property value converter. An HTML helper is available to render the asset on the front end.
 
 Make sure your template has a reference to the following using statement:
 
@@ -90,7 +96,7 @@ Make sure your template has a reference to the following using statement:
 @using Umbraco.Cms.Integrations.DAM.Aprimo.Helpers;
 ```
 
-Assuming a property based on the created Data Type with alias `aprimoMediaPicker` has been created, render the media asset:
+Assuming a property based on the created Data Type with the alias `aprimoMediaPicker` has been created, render the media asset:
 
 ```csharp
 @Html.RenderAprimoAsset(Model.AprimoMediaPicker)`
@@ -98,31 +104,31 @@ Assuming a property based on the created Data Type with alias `aprimoMediaPicker
 
 Properties available from the strongly-typed model:
 
-- Title
-- Thumbnail
-- Crops
-- Asset fields
+* Title
+* Thumbnail
+* Crops
+* Asset fields
 
 ## Working with Crops
 
-For the selected media asset you can retrieve the crops details using the `MediaWithCrops` object.
+For the selected media asset you can retrieve the details of the crops using the `MediaWithCrops` object.
 
 It contains:
 
-- Details of the original asset,
-- The list of available crops, and
-- A method to retrieve the crop URL based on name and width/height.
+* Details of the original asset,
+* The list of available crops, and
+* A method to retrieve the crop URL based on name and width/height.
 
 For example:
 
-- To get the URL for crop item with the name _Social_: `@Model.MediaWithCrops.GetCropUrl("Social")`
-- To get the URL for crop item with height _1080_: `@Model.MediaWithCrops.GetCropUrl(null, 1080)`
+* To get the URL for crop item with the name _Social_: `@Model.MediaWithCrops.GetCropUrl("Social")`
+* To get the URL for crop item with height _1080_: `@Model.MediaWithCrops.GetCropUrl(null, 1080)`
 
 ## Working with fields
 
 The asset's fields are grouped in an object containing their label and a dictionary of values based on the available cultures for that asset.
 
-For example, to get values for a field with label _Display Title_:
+For example, to get values for a field with the label _Display Title_:
 
 ```csharp
 var displayTitle = @Model.Fields.FirstOrDefault(p => p.Label == "Display Title");

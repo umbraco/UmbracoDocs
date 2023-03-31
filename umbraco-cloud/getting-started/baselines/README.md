@@ -1,11 +1,5 @@
 # Baselines
 
-{% hint style="info" %}
-Currently, the baseline feature is only available in the west EU region.
-
-At this point, it is not possible to create baselines if you are hosting your site in the East US or the UK region.
-{% endhint %}
-
 A Baseline Child project is very similar to a Fork (forked repository) on GitHub where we create a clone of an existing project while maintaining a connection between the two projects. The connection exists between the _Live_ environment of the existing project, the **Baseline project**, and the _Development_ or Live environment - of the newly created project, the **Child project**.
 
 Any project can act as a Baseline project.
