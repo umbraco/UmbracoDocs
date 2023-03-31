@@ -16,7 +16,7 @@ We have two measures that we can use to rank packages by popularity:
 
 Both of these are available for website users to select when filtering the list of packages they are reviewing.
 
-Currently "Total Number of NuGet Downloads" is used as the measure for "Most popular" packages shown on the Marketplace home page.
+Currently, the "Total Number of NuGet Downloads" is used as the measure for "Most popular" packages shown on the Marketplace home page.
 
 We plan to switch this in the near future to use the measure of "Number of Active Installs".
 
@@ -33,11 +33,11 @@ Packages are identified in the telemetry service based on one of the following:
 - The package name provided in a `package.manifest` file.
 - The name of the folder within `/App_Plugins/` that the package creates.
 
-This may not be the same as the NuGet package Id.
+This may not be the same as the NuGet package ID.
 
-If not, please ensure to supply the name that will be found by the package telemetry in your `umbraco-marketplace.json` file, under the `AlternatePackageNames` key. For more details see the page on [listing your package](listing-your-package.md).
+If not, please ensure to supply the name that will be found by the package telemetry in your `umbraco-marketplace.json` file, under the `AlternatePackageNames` key. For more details see the article on [listing your package](listing-your-package.md).
 
-For example, a package may be registered at NuGet with an Id of `Umbraco.Community.MyPackage` and create a folder at `/App_Plugins/MyPackage`. The following should be added to the `umbraco-marketplace.json` file to ensure it's telemetry data is correctly allocated:
+For example, a package may be registered at NuGet with `Umbraco.Community.MyPackage` as the alias and create a folder at `/App_Plugins/MyPackage`. The following should be added to the `umbraco-marketplace.json` file to ensure it's telemetry data is correctly allocated:
 
 ```json
     {
@@ -89,6 +89,3 @@ namespace Umbraco.Community.MyPackage
     }
 }
 ```
-
-
-
