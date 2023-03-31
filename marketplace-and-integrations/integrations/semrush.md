@@ -1,6 +1,7 @@
 ---
 description: >-
-  Details an integration available for Semrush, built and maintained by Umbraco HQ.
+  Details an integration available for Semrush, built and maintained by Umbraco
+  HQ.
 ---
 
 # Semrush
@@ -9,16 +10,20 @@ This integration provides a keywords search tool powered by [Semrush](https://ww
 
 ## Package Links
 
-- [NuGet install](https://www.nuget.org/packages/Umbraco.Cms.Integrations.SEO.Semrush)
-- [Source code](https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.SEO.Semrush)
-- [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.cms.integrations.seo.semrush)
+* [NuGet install](https://www.nuget.org/packages/Umbraco.Cms.Integrations.SEO.Semrush)
+* [Source code](https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.SEO.Semrush)
+* [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.cms.integrations.seo.semrush)
 
-## Prerequisites
+## Minimum version requirements
 
-Requires minimum versions of Umbraco CMS:
+### Umbraco CMS
 
-- Version 8: 8.5.4
-- Version 9+: 9.0.1
+| Major      | Minor/Patch |
+| ---------- | ----------- |
+| Version 8  | 8.5.4       |
+| Version 9  | 9.0.1       |
+| Version 10 | 10.0.0      |
+| Version 11 | 11.0.0      |
 
 ## How To Use
 
@@ -30,4 +35,4 @@ A keyword search can be initiated using a content field as a starting point, or 
 
 Administrators are provided with additional features for managing the connectivity with their organization's account with Semrush.
 
-For more detail on the integration, it's purpose and how it was built, please see the [accompanying blog post](https://umbraco.com/blog/integrating-umbraco-cms-with-semrush/).
+For more detail on the integration, its purpose, and how2 it was built, please see the [accompanying blog post](https://umbraco.com/blog/integrating-umbraco-cms-with-semrush/).

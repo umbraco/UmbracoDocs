@@ -1,6 +1,7 @@
 ---
 description: >-
-  Details an integration available for Zapier, built and maintained by Umbraco HQ.
+  Details an integration available for Zapier, built and maintained by Umbraco
+  HQ.
 ---
 
 # Zapier
@@ -13,50 +14,58 @@ A **Zap** is an automated workflow that connects apps and services together. Eac
 
 ## Package Links
 
-- [NuGet install](https://www.nuget.org/packages/Umbraco.Cms.Integrations.Automation.Zapier)
-- [Source code](https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.Automation.Zapier)
-- [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.cms.integrations.automation.zapier)
+* [NuGet install](https://www.nuget.org/packages/Umbraco.Cms.Integrations.Automation.Zapier)
+* [Source code](https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.Automation.Zapier)
+* [Umbraco marketplace listing](https://marketplace.umbraco.com/package/umbraco.cms.integrations.automation.zapier)
 
-## Prerequisites
+## Minimum version requirements
 
-Requires minimum versions of Umbraco CMS:
+### Umbraco CMS
 
-- Version 8: 8.5.4
-- Version 9+: 9.0.1
+| Major      | Minor/Patch |
+| ---------- | ----------- |
+| Version 8  | 8.5.4       |
+| Version 9  | 9.0.1       |
+| Version 10 | 10.0.0      |
+| Version 11 | 11.0.0      |
 
-### Authentication
+## Authentication
 
 For this integration, the authentication is managed on Zapier's side by using the Umbraco Marketplace app.
 
 The trigger event to be used by this integration is _New Content Published_.
 
-When creating the Zap trigger, you will be prompted to enter a username, password and the URL for your Umbraco website. Alternatively, you can use an API key.
+When creating the Zap trigger, you will be prompted to enter a username, password, and URL for your Umbraco website. Alternatively, you can use an API key.
 
-If the following setting is present, the API key based authentication will take precedence and will be the main method of authorization.
+If the following setting is present, the API key-based authentication will take precedence and will be the main method of authorization.
 
+{% code title="web.config" %}
 ```xml
 <appSettings>
   <add key="Umbraco.Cms.Integrations.Automation.Zapier.ApiKey" value="[your_api_key]" />
 </appSettings>
 ```
+{% endcode %}
 
 If no API key is present, the Umbraco application will validate the credentials entered and return a message in case the validation fails.
 
 To enhance security, you can specify a User Group that the user connecting needs to be a part of, by adding the following setting in `Web.config`:
 
+{% code title="web.config" %}
 ```xml
 <appSettings>
   <add key="Umbraco.Cms.Integrations.Automation.Zapier.UserGroup" value="[your User Group]" />
 </appSettings>
 ```
+{% endcode %}
 
-### Working With the Zapier Cms Integration
+## Working With the Zapier Cms Integration
 
 In the _Content_ area of the backoffice, find the _Zapier Integrations_ dashboard.
 
 The dashboard is composed of two sections:
 
-- Content Properties - Zapier details and input fields for adding content configurations
-- Registered Subscription Hooks - a list of registered entities.
+* Content Properties - Zapier details and input fields for adding content configurations
+* Registered Subscription Hooks - a list of registered entities.
 
 The _Trigger Webhook_ action will send a test request to the Zap trigger, enabling the preview of requests in the Zap setup workflow.
