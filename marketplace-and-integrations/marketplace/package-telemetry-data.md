@@ -71,7 +71,7 @@ namespace Umbraco.Community.MyPackage
 }
 ```
 
-The class needs to be registered as part of application startup, via an extension method (as shown here), or a composer:
+The class needs to be registered as part of the application startup, via a composer or an extension method as shown here:
 
 ```csharp
 using Umbraco.Cms.Core.DependencyInjection;
