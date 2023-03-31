@@ -47,9 +47,27 @@ If the following setting is present, the API key-based authentication will take 
 ```
 {% endcode %}
 
+For Umbraco 9+:
+```json
+"Umbraco": {
+    "CMS": {
+      "Integrations": {
+        "Automation": {
+          "Zapier": {
+            "Settings": {
+              "ApiKey": "[your_api_key]"
+            }
+          }
+        }
+      }
+    }
+  }
+```
+
+
 If no API key is present, the Umbraco application will validate the credentials entered and return a message in case the validation fails.
 
-To enhance security, you can specify a User Group that the user connecting needs to be a part of, by adding the following setting in `Web.config`:
+To enhance security, you can specify a User Group that the user connecting needs to be a part of, by adding the following setting in `Web.config`/`appsettings.json`:
 
 {% code title="web.config" %}
 ```xml
@@ -58,6 +76,24 @@ To enhance security, you can specify a User Group that the user connecting needs
 </appSettings>
 ```
 {% endcode %}
+
+For Umbraco 9+:
+```json
+"Umbraco": {
+    "CMS": {
+      "Integrations": {
+        "Automation": {
+          "Zapier": {
+            "Settings": {
+              ...
+              "UserGroup": "[your User Group]"
+            }
+          }
+        }
+      }
+    }
+  }
+```
 
 ## Working With the Zapier Cms Integration
 
