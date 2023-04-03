@@ -26,6 +26,7 @@ To create a Composition, follow these steps:
 4. Click **Composition**.  
 
 ![Creating a Composition](images/creating-a-composition.png)
+
 5. Enter a **Name** for the **Composition**. Let's call it _Title Box_.
 6. Add the following fields with the respective specifications:
 
@@ -35,6 +36,7 @@ To create a Composition, follow these steps:
 | Title Box | Subtitle   | subtitle | Textarea   |
 
 ![Add Composition Properties](images/composition-properties.png)
+
 7. Click **Save**.
 
 ## Step 2: Creating a Contact Us Document Type with Template
@@ -58,6 +60,7 @@ To create a **Contact Us** Document Type, follow these steps:
 | Content | Body Text    | bodyText    | Richtext Editor |
 
 ![Contact Us Document Type Properties](images/contact-us-doc-type-properties.png)
+
 9. Click **Save**.
 
 ### Step 3: Updating the Document Type Permission
@@ -72,6 +75,7 @@ To update the **Contact Us** Document Type permissions, follow these steps:
 4. Select **Contact Us** page.
 
 ![Update Home Page Document Type Properties](images/update-doc-type-permissions.png)
+
 5. Click **Submit**.
 6. Click **Save**.
 
@@ -88,6 +92,7 @@ To add a content node, follow these steps:
 5. Enter the **Title**, **Subtitle**, and **Body Text** values.
 
 ![Enter values in Contact Us Content node](images/fill-contact-us-node.png)
+
 6. Click **Save and Publish**.
 
 ## Step 5: Creating the Contact Us Form using Umbraco Forms
@@ -199,6 +204,7 @@ To create a Form, follow these steps:
 39. Click **Submit**.
 
 ![Add questions](images/contact-us-form-add-questions.png)
+
 40. Click **Reorder**.
 41. Drag the **Data consent** group below the **Information** group.
 42. Click **I am done reordering**.
@@ -257,6 +263,7 @@ To add the Contact Us Form in the Content Node, follow these steps:
 8. Select the **default** theme.
 
 ![Adding the Contact Us Form](images/select-form.png)
+
 9. Click **Submit**.
 10. Click on **Save and Publish**.
 
@@ -298,4 +305,4 @@ To view the Form on the Frontend, follow these steps:
 3. Go to the **Info** tab.
 4. Click on the Published link in the **Links** section.
 
-The default Contact Us page will now be gone and you now have a full-fledged Contact Us Form ready to be used on your website.
+The default Contact Us page is now gone and you have a full-fledged Contact Us Form ready to be used on your website.
