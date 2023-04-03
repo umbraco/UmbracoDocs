@@ -1,5 +1,7 @@
 ---
-description: "In Umbraco Forms it's possible to customize the functionality with various configuration values."
+description: >-
+  In Umbraco Forms it's possible to customize the functionality with various
+  configuration values.
 ---
 
 # Configuration
@@ -73,7 +75,7 @@ For illustration purposes, the following structure represents the full set of op
       "CultureToUseWhenParsingDatesForBackOffice": "",
       "TriggerConditionsCheckOn": "change",
       "ScheduledRecordDeletion": {
-        "Enabled": true,
+        "Enabled": false,
         "FirstRunTime": "",
         "Period": "1.00:00:00"
       },
