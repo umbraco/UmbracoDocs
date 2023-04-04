@@ -33,4 +33,4 @@ demoproduct.SetCultureName("Microphone", "en-us"); // this will set the english 
 demoproduct.SetCultureName("Mikrofon", "da"); // this will set the danish name
 ```
 
-For information on how to retrieve languages, see the [Retrieving languages](../localizationservice/retrieving-languages.md) article.
+For information on how to retrieve multilingual languages, see the [Retrieving languages](../localizationservice/retrieving-languages.md) article.
