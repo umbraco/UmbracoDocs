@@ -27,17 +27,27 @@ In the menu, you can find a tab called _"Upgrade plan"_.
 * Clicking on the tab will direct you to the overview of the plans that you can upgrade to.
 * From here you can see the different plans, the price per month, and the limitations between each of the plans.
 
-![Upgrade plane step2](../images/upgrade\_plan.png)
+![Upgrade plane step2](../images/umbraco-cloud-plans-new.png)
 
 * If you are on a Starter plan you can upgrade to the Standard and the Professional plan.
 * If you are on the Standard plan you can upgrade to the Professional plan.
 
-To upgrade to the plan of your choosing, click on the green button for the plan that you want to upgrade to and then your project will be upgraded.
+Follow the below steps to upgrade your plan:
+
+1. Click on the **Select plan** button to choose the plan you want to upgrade to.
+2.  _\[Optional]_ Choose to upgrade to a **dedicated option** in the next step.&#x20;
+
+    <figure><img src="../images/dedicated-option.png" alt=""><figcaption><p>Dedicated option on Cloud</p></figcaption></figure>
+3.  Review the **Summary** to make sure that everything selected is correct in the last step.&#x20;
+
+    <figure><img src="../images/upgrade-summary.png" alt=""><figcaption><p>Summary of project upgrade.</p></figcaption></figure>
+
+Once you click the **Upgrade Project** button, the project will be upgraded to the new plan and if selected to a dedicated server.
 
 {% hint style="info" %}
 The change in price will take effect from the next period of your subscription.
 
-If you change the plan in the middle of the month, the time from that date until the start of the next subscription period, will be added to the next invoice.
+Are you changing the plan in the middle of the month? The time from that date until the start of the next subscription period, will be added to the next invoice.
 {% endhint %}
 
 ## Automatic plan upgrades
