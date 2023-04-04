@@ -8,6 +8,8 @@ description: In this article, we show how you can enable public access for your 
 Public access is by default available for projects created after the 10th of January 2023.
 
 The [Umbraco.Cloud.Cms.PublicAccess](https://www.nuget.org/packages/Umbraco.Cloud.Cms.PublicAccess) package can be installed to enable Public access for projects created before the 10th of January 2023.
+
+You can use the public access feature for all Umbraco Cloud environments if your cloud project is on the standard plan or higher.
 {% endhint %}
 
 **Public Access** lets you deny access to your Umbraco Cloud project.
