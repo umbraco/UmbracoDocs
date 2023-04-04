@@ -21,7 +21,7 @@ In the example below, a new page is programmatically created using the content s
     // Set the value of the property with alias 'price'
     demoproduct.SetValue("price", "1500");
 
-    // Save the child item
+    // Save and publish the child item
     ContentService.SaveAndPublish(demoproduct);
     ```
 }
