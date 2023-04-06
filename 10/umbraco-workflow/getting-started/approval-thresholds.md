@@ -16,7 +16,7 @@ The threshold options are:
 
 The workflow detail UI displays the status of the current task, tracking the approval status for members of the current group, plus the progress towards meeting the threshold for the approval stage.
 
-[image - task list]
+![Tasklist with approval thresholds](./images/tasklist-with-approval-thresholds.png)
 
 Approving a task as an administrator immediately satisfies the approval threshold for the task, and will advance to the next workflow stage.
 
@@ -38,4 +38,4 @@ The settings below can be set from the Backoffice or via settings customisation 
 ### Configuration
 When configuring an approval flow on a content item or document type, and provided **Allow configuring approval threshold** is `true`, the approval threshold for an individual stage can be set using the control below the stage name:
 
-[image - configuration]
+![Setting approval threshold for individual workflow stages](./images/approval-flow-with-thresholds.png)
