@@ -20,7 +20,7 @@ This integration provides a custom dashboard and indexing component for managing
 
 | Major      | Minor/Patch |
 | ---------- | ----------- |
-| Version 10 | 103.1       |
+| Version 10 | 10.3.1       |
 | Version 11 | 11.0.0      |
 
 ## Authentication
@@ -72,11 +72,9 @@ After creating an index, only the content definition is saved into the _algoliaI
 The actual content payload is pushed to Algolia for indices created in Umbraco in two scenarios:
 
 * From the list of indices, the _Build_ action is triggered, resulting in all content of specific Document Types being sent as JSON to Algolia.
-* Using a _ContentPublishedNotification_ handler which will check the list of indices for the specific Document Type, and will update a matching Algolia object.
+* Using a custom handler for [CacheRefresher Notifications](https://docs.umbraco.com/umbraco-cms/reference/notifications/cacherefresher-notifications) which will check the list of indices for the specific Document Type, and will update a matching Algolia object. The handler will only run for [SchedulingPublisher server or Single server roles](https://docs.umbraco.com/umbraco-cms/reference/scheduling#using-serverroleaccessor).
 
 From the dashboard, you can also perform a search over one selected index, or remove it.
-
-Two additional handlers for _ContentDeletedNotification_ and _ContentUnpublishedNotification_ will remove the matching object from Algolia.
 
 Each Umbraco content item indexed in Algolia is referenced by the content entity's `GUID` Key field.
 
@@ -91,8 +89,15 @@ The list of default properties consists of:
 * `ObjectID` - GUID`from the content item's`Key\` property
 * `Name` - with culture variants if any
 * `CreateDate`
+* `CreatorName`
 * `UpdateDate`
+* `WriterName`
+* `TemplateId`
+* `Level`
+* `Path`
+* `ContentTypeAlias`
 * `Url` - with culture variants if any
+* registered properties of the content type
 
 ## Extending the Algolia indexing
 
