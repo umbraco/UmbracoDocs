@@ -21,6 +21,12 @@ You can configure the **General** Settings from the **Workflow** section in the 
   * **Explicit** - All steps of the workflow must be completed and all users will be notified of tasks (including the Change Author).
   * **Implicit** - All steps where the original Change Author is _not_ a member of the group must be completed. Steps where the original Change Author is a member of the approving group will be completed automatically and noted in the workflow history as not required.
   * **Exclude** - Similar to Explicit. All steps must be completed but the original Change Author is not included in the notifications or shown in the dashboard tasks.
+* **Approval threshold** - sets the global approval threshold to One, Most or All:
+  * **One** - Pending task requires approval from any member of the assigned approval group. This is the default behaviour for all installations (trial and licensed).
+  * **Most** - Pending task requires an absolute majority of group members. For example, a group with three members requires two approvals, a group with four members requires three approvals, and a group with six members requires four approvals.
+  * **All** - Pending task requires approval from all group members. 
+* **Rejection resets approvals** - When true, and the approval threshold is Most or All, rejecting a task resets the previous approvals for the workflow stage.
+* **Allow configuring approval threshold** - Enables setting the approval threshold for any stage of a workflow (on a content node or document type).
 * **Lock active content** - Determines how the content in a workflow should be managed. Set to `true` or `false` depending on whether the approval group responsible for the active workflow step should make modifications to the content.
 * **Allow attachments** - Provide an attachment (such as a supporting document or enable referencing a media item) when initiating a workflow. This feature is useful when a workflow requires supporting documentation.
 * **Allow scheduling** - Provides an option to select a scheduled date when initiating a workflow.
