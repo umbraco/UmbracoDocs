@@ -110,10 +110,10 @@ This means that you can setup your own app on _Microsoft_ for handling authoriza
   ...
   <add key="Umbraco.Cms.Integrations.Crm.Dynamics.UseUmbracoAuthorization" value="true/false" />
   <add key="Umbraco.Cms.Integrations.Crm.Dynamics.ClientId" value="[your client id]" />
-		<add key="Umbraco.Cms.Integrations.Crm.Dynamics.ClientSecret" value="[your client secret]" />
-		<add key="Umbraco.Cms.Integrations.Crm.Dynamics.RedirectUri" value="https://[your website base URL]/umbraco/api/dynamicsauthorization/oauth" />
-		<add key="Umbraco.Cms.Integrations.Crm.Dynamics.TokenEndpoint" value="https://login.microsoftonline.com/common/oauth2/v2.0/token" />
-		<add key="Umbraco.Cms.Integrations.Crm.Dynamics.Scopes" value="https://[your instance].crm4.dynamics.com/.default" />
+  <add key="Umbraco.Cms.Integrations.Crm.Dynamics.ClientSecret" value="[your client secret]" />
+  <add key="Umbraco.Cms.Integrations.Crm.Dynamics.RedirectUri" value="https://[your website base URL]/umbraco/api/dynamicsauthorization/oauth" />
+  <add key="Umbraco.Cms.Integrations.Crm.Dynamics.TokenEndpoint" value="https://login.microsoftonline.com/common/oauth2/v2.0/token" />
+  <add key="Umbraco.Cms.Integrations.Crm.Dynamics.Scopes" value="https://[your instance].crm4.dynamics.com/.default" />
 </appSettings>
 ```
 {% endcode %}
