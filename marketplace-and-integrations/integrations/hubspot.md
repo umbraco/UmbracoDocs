@@ -107,10 +107,10 @@ This means that you can setup your own app on _HubSpot_ for handling authorizati
   ...
   <add key="Umbraco.Cms.Integrations.Crm.Hubspot.UseUmbracoAuthorization" value="true/false" />
   <add key="Umbraco.Cms.Integrations.Crm.Hubspot.ClientId" value="[your client id]" />
-		<add key="Umbraco.Cms.Integrations.Crm.Hubspot.ClientSecret" value="[your client secret]" />
-		<add key="Umbraco.Cms.Integrations.Crm.Hubspot.RedirectUri" value="https://[your website base URL]/umbraco/api/hubspotauthorization/oauth" />
-		<add key="Umbraco.Cms.Integrations.Crm.Hubspot.TokenEndpoint" value="[hubspot token endpoint]" />
-		<add key="Umbraco.Cms.Integrations.Crm.Hubspot.Scopes" value="[scopes]" />
+  <add key="Umbraco.Cms.Integrations.Crm.Hubspot.ClientSecret" value="[your client secret]" />
+  <add key="Umbraco.Cms.Integrations.Crm.Hubspot.RedirectUri" value="https://[your website base URL]/umbraco/api/hubspotauthorization/oauth" />
+  <add key="Umbraco.Cms.Integrations.Crm.Hubspot.TokenEndpoint" value="[hubspot token endpoint]" />
+  <add key="Umbraco.Cms.Integrations.Crm.Hubspot.Scopes" value="[scopes]" />
 </appSettings>
 ```
 {% endcode %}
