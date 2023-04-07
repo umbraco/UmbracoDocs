@@ -17,7 +17,7 @@ To create **Articles Main** Document Type, follow these steps:
 2. Select **...** next to the **Document Types** in the **Settings** tree.
 3.  Click **Document Type with Template**.
 
-    ![Document Type with template](../../../../11/umbraco-cms/tutorials/creating-a-basic-website/images/Document\_type\_with\_template.png)
+    ![Document Type with template](images/Document\_type\_with\_template.png)
 4. Enter a **Name** for the **Document Type**. Let's call it _Articles Main_.
 5.  Let's add two fields with the following specifications:
 
@@ -26,7 +26,7 @@ To create **Articles Main** Document Type, follow these steps:
     | Intro | Articles Title     | articlesTitle    | Textstring       |
     | Intro | Articles Body Text | articlesBodyText | Rich Text Editor |
 
-    ![Articles Main Document Type Data Properties](../../../../11/umbraco-cms/tutorials/creating-a-basic-website/images/figure-38-articles-main-v8.png)
+    ![Articles Main Document Type Data Properties](images/figure-38-articles-main-v8.png)
 6. Click **Save**
 
 To create **Articles Item** Document Type, follow these steps:
@@ -35,7 +35,7 @@ To create **Articles Item** Document Type, follow these steps:
 2. Select **...** next to the **Document Types** in the **Settings** tree.
 3.  Click **Document Type with Template**.
 
-    ![Document Type with template](../../../../11/umbraco-cms/tutorials/creating-a-basic-website/images/Document\_type\_with\_template.png)
+    ![Document Type with template](images/Document\_type\_with\_template.png)
 4. Enter a **Name** for the **Document Type**. Let's call it _Articles Item_.
 5.  Let's add two fields with the following specifications:
 
@@ -44,7 +44,7 @@ To create **Articles Item** Document Type, follow these steps:
     | Content | Article Title   | articleTitle   | Textstring       |
     | Content | Article Content | articleContent | Rich Text Editor |
 
-    ![Article Item Document Type Data Properties](../../../../11/umbraco-cms/tutorials/creating-a-basic-website/images/figure-39-articles-item-v8.png)
+    ![Article Item Document Type Data Properties](images/figure-39-articles-item-v8.png)
 6. Click **Save**
 
 ### Updating the Document Type Permissions
@@ -57,7 +57,7 @@ To update **Articles Main** Document Type permissions:
 4. Navigate to the **Articles Main** Document Type and go to the **List View** tab.
 5.  Toggle **Enable List view** and click **Save**.
 
-    ![Enabling List View](../../../../11/umbraco-cms/tutorials/creating-a-basic-website/images/figure-44-list-view-enabled.png)
+    ![Enabling List View](images/figure-44-list-view-enabled.png)
 6. Go to the **Permissions** tab.
 7. Select **Add child** in the **Allowed child node types**. The **Choose child node** window opens.
 8. Select **Articles Item** and click **Save**.
@@ -104,13 +104,13 @@ To update the **Articles Main** template, follow these steps:
 8. Replace the static text within the `<h1>` tags (around line 13) with the Model.Value reference to _**articlesTitle**_.
 9.  Replace the static text within the `<div>` tags (from line 24 to 30) with the Model.Value reference to _**articlesBodyText**_.
 
-    ![Articles Main Template](../../../../11/umbraco-cms/tutorials/creating-a-basic-website/images/articles-main-template-v9.png)
+    ![Articles Main Template](images/articles-main-template-v9.png)
 10. Define a query for all articles, just below the `<h3>` tag (around line 32) of the `<!-- Latest blog posts -->` section.
 
-    ![Query Builder](../../../../11/umbraco-cms/tutorials/creating-a-basic-website/images/query-builder-v9.png)
+    ![Query Builder](images/query-builder-v9.png)
 11. You can set conditions to get specific articles or decide the order of the articles. For the purpose of this guide, we'll use the following parameters:
 
-    ![Query parameters](../../../../11/umbraco-cms/tutorials/creating-a-basic-website/images/query-parameters.png)
+    ![Query parameters](images/query-parameters.png)
 12. If you've set the correct parameters, you will get a preview of the items being selected with the query. Click **Submit**, and you will see a code snippet has been added to your template. It will look similar to this:\\
 
     ```csharp
@@ -153,9 +153,9 @@ To update the **Articles Item** template, follow these steps:
 8. Replace the static text within the `<h1>` tags (around line 14) with the Model.Value reference to _**articleTitle**_.
 9.  Replace the static text within the `<div>` tags (from line 26 to 41) with the Model.Value reference to _**articleContent**_.
 
-    ![Articles Item Template](../../../../11/umbraco-cms/tutorials/creating-a-basic-website/images/articles-item-template-v9.png)
+    ![Articles Item Template](images/articles-item-template-v9.png)
 10. Click **Save**.
 
 Check your browser, you should now see something similar to the screen below.
 
-![Finished Articles section](../../../../11/umbraco-cms/tutorials/creating-a-basic-website/images/article-main-frontend.png)
+![Finished Articles section](images/article-main-frontend.png)

@@ -40,7 +40,7 @@ The possible values, from most verbose to least, is:
 * Error
 * Fatal
 
-For information on what each of these levels means see [the serilog wiki](https://github.com/serilog/serilog/wiki/Configuration-Basics#minimum-level).
+For information on what each of these levels means see [the Serilog wiki](https://github.com/serilog/serilog/wiki/Configuration-Basics#minimum-level).
 
 
 ## Changing the log level for specific namespaces
@@ -94,7 +94,7 @@ Here you can see that we use the `"WriteTo"` key to specify a list of sinks the 
 Now there's too many sinks to cover here, for a full list of all available sinks see [Provided sinks](https://github.com/serilog/serilog/wiki/Provided-Sinks#list-of-available-sinks). Each of these entries will have their own documentation on how to set up the logging with the particular sink.
 
 ## Changing the Umbraco 'sink'
-By default, Umbraco uses a special Serilog 'sink' that is optimized for performance. To change parameters for only this sink, but not the default. For E.g higher log lever for this compared to other sinks you can do it in the following way:
+By default, Umbraco uses a special Serilog 'sink' that is optimized for performance. To change parameters for only this sink, but not the default. For E.g higher log level for this compared to other sinks you can do it in the following way:
 
 ```json
   "Serilog": {

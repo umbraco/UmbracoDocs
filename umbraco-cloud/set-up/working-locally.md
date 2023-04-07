@@ -21,7 +21,7 @@ We recommend using the following tools to work with a local clone of your Umbrac
 * Visual Studio
 
 {% hint style="info" %}
-In the root of your local project, there is a REAMDE file containing information about the project structure and the build process on Umbraco Cloud.&#x20;
+In the root of your local project, there is a README file containing information about the project structure and the build process on Umbraco Cloud.&#x20;
 {% endhint %}
 
 ## Cloning an Umbraco Cloud Project

@@ -16,7 +16,7 @@ To create a package, you first need to create a package schema through the Umbra
 2. Select `Created` in the top-right corner of the screen.
 3.  Select the `Create package` button.
 
-    ![Buttons to select for creating a package schema in the backoffice](../../../../11/umbraco-cms/extending/packages/images/creating-package-menu-v9.png)
+    ![Buttons to select for creating a package schema in the backoffice](images/creating-package-menu-v9.png)
 4. On the `Create package` page, there are fields that you can use to construct the contents of your package that are based on items from the backoffice.
 5. Enter the package name at the top - we will call our dashboard the same as in the mentioned [Tutorial](../../tutorials/creating-a-custom-dashboard.md): `Custom Welcome Dashboard`.
 
@@ -47,7 +47,7 @@ After filling out all the information, we can select **Create** to create the pa
 
 If your package doesn't include backoffice specific items, the result from downloading it will be just a `package.xml` file. Otherwise, if you select media files you will download a ZIP package that looks like this:
 
-![Content of a ZIP package](../../../../11/umbraco-cms/extending/packages/images/zip-package-v9.png)
+![Content of a ZIP package](images/zip-package-v9.png)
 
 Additionally to the `package.xml`, there is a folder containing the media items for your package. The rest of the information is recorded in the XML schema document.
 
@@ -98,7 +98,7 @@ For a guide on how to install the project templates, follow the 2 steps listed i
 
 The outcome is the files generated below:
 
-![Content of an empty package](../../../../11/umbraco-cms/extending/packages/images/empty-package-from-template.png)
+![Content of an empty package](images/empty-package-from-template.png)
 
 Apart from the project file, you can find an empty `package.manifest` inside the **App\_Plugins** folder, which we will replace with the one created from the [Creating a Custom Dashboard Tutorial](../../../Tutorials/Creating-a-Custom-Dashboard/index.md). But more importantly, it also contains a `build/CustomWelcomeDashboard.targets` file.
 
@@ -114,7 +114,7 @@ You can also add your custom C# files in the root of the package folder which wi
 
 As mentioned previously, let's navigate to the **App\_Plugins** folder and replace its contents with the custom files we created for our new dashboard.
 
-![App\_Plugins with dashboard files](../../../../11/umbraco-cms/extending/packages/images/app-pligins-contents.png)
+![App\_Plugins with dashboard files](images/app-pligins-contents.png)
 
 ### Specify package properties
 
@@ -122,7 +122,7 @@ In this section, we will demonstrate how you can add metadata about the package 
 
 Now that Umbraco 9 is built on ASP.NET Core, you can add values directly to the package `csproj` file and it will pick them up. If you don't want to manually edit the `csproj` file, you can right-click your project, go to _Properties_ and then to _Package_. There you can insert your specific information:
 
-![Package properties](../../../../11/umbraco-cms/extending/packages/images/package-properties.png)
+![Package properties](images/package-properties.png)
 
 Here is an example of some basic properties that you can specify in your project file:
 
@@ -218,7 +218,7 @@ namespace CustomWelcomeDashboardProject.Migrations
 }
 ```
 
-![Automatic package migration](../../../../11/umbraco-cms/extending/packages/images/embeded-resource.png)
+![Automatic package migration](images/embeded-resource.png)
 
 {% hint style="info" %}
 Whenever the embedded package.xml file changes, the automatic package migration plan is executed again. This is due to the fact that the migration state is based on the file hash. Existing schema or content will not be overwritten in this process.
@@ -291,13 +291,13 @@ namespace CustomWelcomeDashboardProject.Migrations
 
 Here we also added the ZIP file as an embedded resource to the package project.
 
-![ZIP as an embedded resource](../../../../11/umbraco-cms/extending/packages/images/embeded-resource-props.png)
+![ZIP as an embedded resource](images/embeded-resource-props.png)
 
-![Automatic package migration](../../../../11/umbraco-cms/extending/packages/images/embeded-zip-resource.png)
+![Automatic package migration](images/embeded-zip-resource.png)
 
 Whichever migration plan you choose to create, you will be able to see that your package has been installed after the migration is completed.
 
-![Installed package](../../../../11/umbraco-cms/extending/packages/images/installed-package.png)
+![Installed package](images/installed-package.png)
 
 When using a custom package migration plan, the current state is ignored by default. This causes it to execute all migrations again whenever this isn't the same as the final state of the plan (e.g. if you added a new migration). This is due to the `IgnoreCurrentState` being set to `true` in the `PackageMigrationPlan` base class. You can override this property and set it to `false` again to make it behave like regular migration plans and only run the migrations that have not yet been executed on the current environment.
 
@@ -318,6 +318,6 @@ By default, all these package migrations are executed unattended during startup 
   }
 ```
 
-![Attended package install](../../../../11/umbraco-cms/extending/packages/images/package-install-attended.png)
+![Attended package install](images/package-install-attended.png)
 
 The configuration of package migrations can be different for each environment and makes it possible to have the migration executed unattended on the development environment, but leave them out or manually execute them on other environments. This is useful when you use a tool like Umbraco Deploy or USync as these will migrate the content.

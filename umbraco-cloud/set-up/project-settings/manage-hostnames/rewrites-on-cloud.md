@@ -2,11 +2,13 @@
 
 To make rewrite rules on Umbraco Cloud as seamless as possible, we've installed the IIS Rewrite Module on all our Umbraco Cloud servers.
 
-The rewrite rules should be added to the `<system.webServer><rewrite>` module in your projects `Web.config` file.
+You need to use [config transform](../../config-transforms.md) to add rewrite rules.
 
 {% hint style="info" %}
-If you are running Umbraco 9 and above on IIS, you can still add a `web.config` file to configure IIS features such as URL rewrites. If you wish to use IIS rewrite rules, see the [URL Rewrites in Umbraco](https://docs.umbraco.com/umbraco-cms/reference/routing/iisrewriterules)[ ](https://docs.umbraco.com/umbraco-cms/reference/routing/iisrewriterules)article.
+If you are running Umbraco 8, the rewrite rule can be added directly to your project's `web.config`.
 {% endhint %}
+
+The rewrite rules should be added to the `<system.webServer><rewrite>` module in your project's `web.config` file.
 
 ```xml
 <!--
@@ -20,7 +22,7 @@ If you are running Umbraco 9 and above on IIS, you can still add a `web.config` 
 
 When you are doing rewrite rules on Umbraco Cloud there are a few important things to keep in mind:
 
-* Always make sure that you add a condition that negates the Umbraco Backoffice - `/umbraco`, otherwise you will not be able to do deployments to/from the environment
+* Always make sure that you add a condition that negates the Umbraco Backoffice - `/umbraco`, otherwise, you will not be able to do deployments to/from the environment
 * To be able to continue working locally with your Umbraco Cloud project, you also need to add a condition that negates `localhost`
 
 ## Hiding the Default umbraco.io Url

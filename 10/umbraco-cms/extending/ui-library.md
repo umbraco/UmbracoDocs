@@ -5,12 +5,7 @@ description: A guide for getting started working with the Umbraco UI Library
 # UI Library
 
 {% hint style="info" %}
-Please be aware that the topic covered in this document is currently only available in the following versions of Umbraco:
-
-* The latest version of Umbraco 10.
-* The Release Candidate (RC) for Umbraco 11.
-
-The new UI Library is currently _opt-in_ and something we recommend Backoffice and package developers start getting familiar with.
+The UI Library is currently _opt-in_. We recommend Backoffice and package developers start getting familiar with it.
 
 In the [Backoffice UI API Documentation](backoffice-ui-api-documentation.md) article you can find links to relevant resources for working with the Umbraco backoffice.
 {% endhint %}
@@ -53,7 +48,7 @@ The [Storybook](https://uui.umbraco.com/) is the starting point for working with
 
 1.  Canvas - The Canvas tab allows to use the interactive controls.
 
-    <figure><img src="../../../11/umbraco-cms/extending/images/Canvas_tab.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/Canvas_tab.png" alt=""><figcaption></figcaption></figure>
 2.  Docs - Here, you can find code examples for all the stories and use them in your markup. You can look it up by tag name or head to the project repository, where, in the packages folder, you will find all the component packages with all the necessary scripts and examples in the readme files.
 
-    <figure><img src="../../../11/umbraco-cms/extending/images/Docs_tab.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/Docs_tab.png" alt=""><figcaption></figcaption></figure>

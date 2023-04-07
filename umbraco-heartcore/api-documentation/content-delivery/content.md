@@ -30,6 +30,8 @@ The `depth` querystring parameter controls how many levels of referenced Content
 
 Lets say a Content item have a `Multi Node Tree Picker` and one of the Content items that can be picked have a `Media Picker`. In this case, if the level is set to `1` the returned data will contain the referenced Content items, but their Media property will be null. To include the Media property (which is at level 2) the `depth` parameter should be `2` or higher.
 
+The lowest supported depth value is `0` and the highest is `5`.
+
 ## Errors
 
 If an error occours you will receive a HTTP status code along with an API error code and an error message in the response body.

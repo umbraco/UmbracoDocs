@@ -156,4 +156,4 @@ For more in depth information about logging and how to configure it, please read
 
 This is a desktop tool for viewing & querying JSON log files from disk in the same way as the built in logviewer dashboard of Umbraco.
 
-[<img src="../../../../11/umbraco-cms/fundamentals/backoffice/images/English_get.png" alt="English badge" data-size="line">](https://www.microsoft.com/store/apps/9N8RV8LKTXRJ?cid=storebadge\&ocid=badge)
+[<img src="images/English_get.png" alt="English badge" data-size="line">](https://www.microsoft.com/store/apps/9N8RV8LKTXRJ?cid=storebadge\&ocid=badge)

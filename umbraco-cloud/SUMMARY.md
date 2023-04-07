@@ -27,6 +27,7 @@
 
 * [Set Up](set-up/set-up.md)
 * [Working with a Local Clone](set-up/working-locally.md)
+  * [Legacy Umbraco Visual Studio Setup](set-up/legacy-umbraco-visual-studio-setup.md)
 * [Working with Mac](set-up/working-with-mac.md)
 * [Manage Environments](set-up/manage-environments.md)
 * [Project Settings](set-up/project-settings/README.md)
@@ -124,6 +125,7 @@
 
 ## Release Notes
 
+* [March 2023](release-notes/2023-03-releasenotes.md)
 * [February 2023](release-notes/2023-02-releasenotes.md)
 * [January 2023](release-notes/2023-01-releasenotes.md)
 * [Overview 2022](release-notes/overview-2022/README.md)

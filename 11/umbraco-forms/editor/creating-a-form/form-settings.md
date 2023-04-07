@@ -8,7 +8,7 @@ To access the Form Settings:
 2. Open a Form you wish to customize.
 3.  Click **Settings** in the top-right corner of the screen.
 
-    ![Form settings dialog](images/FormSettings.png)
+    ![Form settings dialog](../../../../10/umbraco-forms/editor/creating-a-form/images/FormSettings.png)
 
 ## Settings Options
 
@@ -18,25 +18,25 @@ The following options are available in Forms Settings:
 
 By default, all submitted records are saved in the database. This option allows you to view and export the saved records from the queries overview. If you do not want to store data (due to policies in your organisation), you can uncheck the box.
 
-![Form settings Store Records](images/Store-Records.png)
+![Form settings Store Records](../../../../10/umbraco-forms/editor/creating-a-form/images/Store-Records.png)
 
 ### Captions
 
 Customize the labels of the **Submit**, **Next**, and **Previous** buttons used in your Form.
 
-![Form settings stylesheet](images/FormSettingsCaptions-v9.png)
+![Form settings stylesheet](../../../../10/umbraco-forms/editor/creating-a-form/images/FormSettingsCaptions-v9.png)
 
 ### Styling
 
 Set a stylesheet to give your Form custom styling. You have an option to disable the default styling. Enabling the **Disable default stylesheet** option will prevent a default stylesheet to be added to the pages where the Form is placed.
 
-![Form settings stylesheet](images/FormSettingsStyling.png)
+![Form settings stylesheet](../../../../10/umbraco-forms/editor/creating-a-form/images/FormSettingsStyling.png)
 
 ### Validation
 
 Define a message that is displayed when a field is mandatory, when a value is not supplied, or when the value is invalid.
 
-![Form settings validation](images/FormSettingsValidation.png)
+![Form settings validation](../../../../10/umbraco-forms/editor/creating-a-form/images/FormSettingsValidation.png)
 
 The following Validations are available:
 
@@ -53,13 +53,13 @@ The following Validations are available:
 
 The autocomplete setting for the overall form can be changed from the default of "None" to "On" or "Off". Setting this explicitly will control how the browser offers automatic prompts to the user when completing the form.
 
-<figure><img src="../../.gitbook/assets/FormSettingsAutocomplete.png" alt=""><figcaption><p>Form Settings Autocomplete</p></figcaption></figure>
+<figure><img src="images/FormSettingsAutocomplete.png" alt=""><figcaption><p>Form Settings Autocomplete</p></figcaption></figure>
 
 ### Moderation
 
 Enabling this feature allows the moderator to manage the approval status of a form. This can be used in a number of scenarios. For example, if the form submission will be publicly shown, you can control which are published.
 
-![Form settings Moderation](images/FormSettingsModeration.png)
+![Form settings Moderation](../../../../10/umbraco-forms/editor/creating-a-form/images/FormSettingsModeration.png)
 
 ### Fields displayed
 
@@ -67,12 +67,12 @@ By default, a constant set of fields are displayed when form entries are shown i
 
 To customize this, turn off the "Display default fields" option and select the ones you wish to display.
 
-<figure><img src="../../.gitbook/assets/FormSettingsFieldsDisplayed.png" alt=""><figcaption><p>Forms Settings Fields Displayed</p></figcaption></figure>
+<figure><img src="../../../../10/umbraco-forms/.gitbook/assets/FormSettingsFieldsDisplayed.png" alt=""><figcaption><p>Forms Settings Fields Displayed</p></figcaption></figure>
 
-### Date retentions
+### Data retentions
 
 To help protect site visitor privacy, rules can be configured in this section for the automatic deletion of submissions. You can set how long to retain records for each state (submitted or approved).
 
 A background service that carries out the actual removal of records needs to be [enabled in configuration](../../developer/configuration/#scheduledrecorddeletion). If that is not running, a notification will be displayed.
 
-![Form settings Date Retentions](images/FormSettingsDataRetention.png)
+![Form settings Date Retentions](../../../../10/umbraco-forms/.gitbook/assets/FormSettingsDataRetention.png)

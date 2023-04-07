@@ -177,7 +177,7 @@ public class NotificationHandlersComposer : IComposer
 
 * See [ContentService Notifications](contentservice-notifications.md) for a listing of the ContentService object notifications.
 * See [MediaService Notifications](mediaservice-notifications.md) for a listing of the MediaService object notifications.
-* See [MemberService Notifications](membertypeservice-notifications.md) for a listing of the MemberService object notifications.
+* See [MemberService Notifications](memberservice-notifications.md) for a listing of the MemberService object notifications.
 
 ## Other notifications
 
