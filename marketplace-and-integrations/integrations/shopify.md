@@ -132,10 +132,10 @@ This means that you can setup your own app on _Shopify_ for handling authorizati
   ...
   <add key="Umbraco.Cms.Integrations.Commerce.Shopify.UseUmbracoAuthorization" value="true/false" />
   <add key="Umbraco.Cms.Integrations.Commerce.Shopify.ClientId" value="[your client id]" />
-		<add key="Umbraco.Cms.Integrations.Commerce.Shopify.ClientSecret" value="[your client secret]" />
-		<add key="Umbraco.Cms.Integrations.Commerce.Shopify.RedirectUri" value="https://[your website base URL]/umbraco/api/shopifyauthorization/oauth" />
-		<add key="Umbraco.Cms.Integrations.Commerce.Shopify.TokenEndpoint" value="https://[your shop].myshopify.com/admin/oauth/access_token" />
-		<add key="Umbraco.Cms.Integrations.Commerce.Shopify.Scopes" value="read_products" />
+  <add key="Umbraco.Cms.Integrations.Commerce.Shopify.ClientSecret" value="[your client secret]" />
+  <add key="Umbraco.Cms.Integrations.Commerce.Shopify.RedirectUri" value="https://[your website base URL]/umbraco/api/shopifyauthorization/oauth" />
+  <add key="Umbraco.Cms.Integrations.Commerce.Shopify.TokenEndpoint" value="https://[your shop].myshopify.com/admin/oauth/access_token" />
+  <add key="Umbraco.Cms.Integrations.Commerce.Shopify.Scopes" value="read_products" />
 </appSettings>
 ```
 {% endcode %}
