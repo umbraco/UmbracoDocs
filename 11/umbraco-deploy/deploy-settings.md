@@ -160,7 +160,7 @@ An error message of "The remote API has returned a response indicating a platfor
 
 If encountering this issue, there are two batch settings that can be applied with integer values (for example 500). This will cause Deploy to transfer items in batches, up to a maximum size. This will allow each individual batch to complete within the time available.
 
-- `SourceDeployBatchSize` - applies a batch setting for the transfer of multiple selected items to an upstream environment (e.g. a media folder with many images).
+- `SourceDeployBatchSize` - applies a batch setting for the transfer of multiple selected items to an upstream environment (such as a media folder with many images).
 - `ProcessPackageBatchSize` - applies a batch setting to the processing of a Deploy "package", which contains all the items selected for a Deploy operation, plus all the determined dependencies and relations.
 
 ## UseDatabaseBackedTransferQueue

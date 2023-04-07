@@ -40,7 +40,7 @@ There are two places where Deploy operations can be batched. This allows breakin
 
 If transferring items from a downstream environment to an upstream one, it's possible to [configure a batch size](deploy-settings.md#batch-settings). With this in place, transfers will be batched into separate operations, allowing each single operation to complete before any hosting environment-enforced timeout.
 
-This will take effect only for transfers to upstream environments and when multiple items are selected in the backoffice, such as a single media folder containing many files.
+This will take effect only for transfers to upstream environments and when multiple items are selected in the backoffice. An example is the selection of a single media folder containing many files.
 
 #### For processing of a Deploy "package"
 
