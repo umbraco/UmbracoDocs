@@ -70,9 +70,11 @@ To connect to your Dynamics 365 instance, the following configuration is require
 The above settings are for demonstration purposes. They might change depending on your personalized instance Web API.
 
 ### Self Hosted OAuth Configuration
-Starting with version [1.2.0](https://www.nuget.org/packages/Umbraco.Cms.Integrations.Crm.Dynamics/1.2.0), we are allowing developers to alternate the existing `OAuth Proxy for Umbraco Integrations` client for handling OAuth authorizations and redirects, with a custom authorization workflow managed entirely on their side. 
+The easiest way to configure the integration is to make use of an application Umbraco have pre-configured with Microsoft.  With this in place, the authorization flow will go through a proxy website Umbraco maintains before redirecting back to your Umbraco backoffice.
 
-This means that you can setup your own app on _Microsoft_ for handling authorization requests and use an extended configuration like this:
+From version 1.2.0, we've introduced an alternate approach that requires a little more setup, but removes the need for relying on any services from Umbraco when using the integration.
+
+To use this you need to setup your own app with Microsoft and use an extended configuration like this:
 
 {% tabs %}
 {% tab title="Versions 9 and above" %}

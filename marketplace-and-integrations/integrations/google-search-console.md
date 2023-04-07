@@ -32,9 +32,11 @@ The package uses the OAuth2 security protocol for authentication. After the auth
 All requests to the Google Search Console API will include the access token in the authorization header.
 
 ### Self Hosted OAuth Configuration
-Starting with version [1.1.0](https://www.nuget.org/packages/Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.URLInspectionTool/1.1.0), we are allowing developers to alternate the existing `OAuth Proxy for Umbraco Integrations` client for handling OAuth authorizations and redirects, with a custom authorization workflow managed entirely on their side. 
+The easiest way to configure the integration is to make use of an application Umbraco have pre-configured with Google.  With this in place, the authorization flow will go through a proxy website Umbraco maintains before redirecting back to your Umbraco backoffice.
 
-This means that you can setup your own app on _Google_ for handling authorization requests and use an extended configuration like this:
+From version 1.1.0, we've introduced an alternate approach that requires a little more setup, but removes the need for relying on any services from Umbraco when using the integration.
+
+To use this you need to setup your own app with Google and use an extended configuration like this:
 
 {% tabs %}
 {% tab title="Versions 9 and above" %}
@@ -72,10 +74,10 @@ This means that you can setup your own app on _Google_ for handling authorizatio
   ...
   <add key="Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.UseUmbracoAuthorization" value="true/false" />
   <add key="Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.ClientId" value="[your client id]" />
-		<add key="Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.ClientSecret" value="[your client secret]" />
-		<add key="Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.RedirectUri" value="https://[your website base URL]/umbraco/api/googlesearchconsoleauthorization/oauth" />
-		<add key="Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.TokenEndpoint" value="[google token endpoint]" />
-		<add key="Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.Scopes" value="https://www.googleapis.com/auth/webmasters https://www.googleapis.com/auth/webmasters.readonly" />
+	<add key="Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.ClientSecret" value="[your client secret]" />
+	<add key="Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.RedirectUri" value="https://[your website base URL]/umbraco/api/googlesearchconsoleauthorization/oauth" />
+	<add key="Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.TokenEndpoint" value="[google token endpoint]" />
+	<add key="Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.Scopes" value="https://www.googleapis.com/auth/webmasters https://www.googleapis.com/auth/webmasters.readonly" />
 </appSettings>
 ```
 {% endcode %}
