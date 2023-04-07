@@ -69,6 +69,69 @@ To connect to your Dynamics 365 instance, the following configuration is require
 
 The above settings are for demonstration purposes. They might change depending on your personalized instance Web API.
 
+### Self Hosted OAuth Configuration
+Starting with version [1.2.0](https://www.nuget.org/packages/Umbraco.Cms.Integrations.Crm.Dynamics/1.2.0), we are allowing developers to alternate the existing `OAuth Proxy for Umbraco Integrations` client for handling OAuth authorizations and redirects, with a custom authorization workflow managed entirely on their side. 
+
+This means that you can setup your own app on _Microsoft_ for handling authorization requests and use an extended configuration like this:
+
+{% tabs %}
+{% tab title="Versions 9 and above" %}
+{% code title="appsettings.json" %}
+```json
+"Umbraco": {
+  "CMS": {
+    "Integrations": {
+      "Crm": {
+        "Dynamics": {
+          "Settings": {
+            ...
+            "UseUmbracoAuthorization": true/false
+          },
+          "OAuthSettings": {
+              "ClientId": "[your client id]",
+              "ClientSecret": "[your client secret]",
+              "RedirectUri": "https://[your website base URL]/umbraco/api/dynamicsauthorization/oauth",
+              "TokenEndpoint": "https://login.microsoftonline.com/common/oauth2/v2.0/token",
+              "Scopes": "https://[your instance].crm4.dynamics.com/.default"
+            }
+        }
+      }
+    }
+  }
+}
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Version 8" %}
+{% code title="web.config" %}
+```xml
+<appSettings>
+  ...
+  <add key="Umbraco.Cms.Integrations.Crm.Dynamics.UseUmbracoAuthorization" value="true/false" />
+  <add key="Umbraco.Cms.Integrations.Crm.Dynamics.ClientId" value="[your client id]" />
+		<add key="Umbraco.Cms.Integrations.Crm.Dynamics.ClientSecret" value="[your client secret]" />
+		<add key="Umbraco.Cms.Integrations.Crm.Dynamics.RedirectUri" value="https://[your website base URL]/umbraco/api/dynamicsauthorization/oauth" />
+		<add key="Umbraco.Cms.Integrations.Crm.Dynamics.TokenEndpoint" value="https://login.microsoftonline.com/common/oauth2/v2.0/token" />
+		<add key="Umbraco.Cms.Integrations.Crm.Dynamics.Scopes" value="https://[your instance].crm4.dynamics.com/.default" />
+</appSettings>
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+The authorization mode is toggled by the `UseUmbracoAuthorization` flag, which by default is set to `true` so previous versions of the integration are not impacted.
+
+Authorization specific methods are exposed by the [`IDynamicsAuthorizationService`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Crm.Dynamics/Services/IDynamicsAuthorizationService.cs) and implemented by two services:
+- [UmbracoAuthorizationService](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Crm.Dynamics/Services/UmbracoAuthorizationService.cs)
+- [AuthorizationService](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Crm.Dynamics/Services/AuthorizationService.cs)
+
+The used service is provided using the `AuthorizationImplementationFactory` method, depending on the type of authorization selected.
+
+If you are selecting your own authorization flow that uses the `AuthorizationService`, the redirect URL will be this one: `/umbraco/api/dynamicsauthorization/oauth`, from [`DynamicsAuthorizationController`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Crm.Dynamics/Controllers/DynamicsAuthorizationController.cs). Please make sure to set to correct URL in the settings of the website and in the configuration of your Shopify app.
+
+The authorization controller uses the `window.postMessage` interface for cross-window communications when redirecting from the _Microsoft_ authorization server.
+
 ## Backoffice usage
 
 To use the form picker, a new Data Type needs to be created based on the Dynamics Form Picker property editor.

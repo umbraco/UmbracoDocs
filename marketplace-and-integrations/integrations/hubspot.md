@@ -66,6 +66,69 @@ To support multi-region HubSpot forms, the following configuration is required:
 
 For example, in Europe, a setting of `eu1` should be used.
 
+### Self Hosted OAuth Configuration
+Starting with version [2.1.0](https://www.nuget.org/packages/Umbraco.Cms.Integrations.Crm.Hubspot/2.1.0), we are allowing developers to alternate the existing `OAuth Proxy for Umbraco Integrations` client for handling OAuth authorizations and redirects, with a custom authorization workflow managed entirely on their side. 
+
+This means that you can setup your own app on _HubSpot_ for handling authorization requests and use an extended configuration like this:
+
+{% tabs %}
+{% tab title="Versions 9 and above" %}
+{% code title="appsettings.json" %}
+```json
+"Umbraco": {
+  "CMS": {
+    "Integrations": {
+      "Crm": {
+        "Hubspot": {
+          "Settings": {
+            ...
+            "UseUmbracoAuthorization": true/false
+          },
+          "OAuthSettings": {
+              "ClientId": "[your client id]",
+              "ClientSecret": "[your client secret]",
+              "RedirectUri": "https://[your website base URL]/umbraco/api/hubspotauthorization/oauth",
+              "TokenEndpoint": "[hubspot token endpoint]",
+              "Scopes": "[scopes]"
+            }
+        }
+      }
+    }
+  }
+}
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Version 8" %}
+{% code title="web.config" %}
+```xml
+<appSettings>
+  ...
+  <add key="Umbraco.Cms.Integrations.Crm.Hubspot.UseUmbracoAuthorization" value="true/false" />
+  <add key="Umbraco.Cms.Integrations.Crm.Hubspot.ClientId" value="[your client id]" />
+		<add key="Umbraco.Cms.Integrations.Crm.Hubspot.ClientSecret" value="[your client secret]" />
+		<add key="Umbraco.Cms.Integrations.Crm.Hubspot.RedirectUri" value="https://[your website base URL]/umbraco/api/hubspotauthorization/oauth" />
+		<add key="Umbraco.Cms.Integrations.Crm.Hubspot.TokenEndpoint" value="[hubspot token endpoint]" />
+		<add key="Umbraco.Cms.Integrations.Crm.Hubspot.Scopes" value="[scopes]" />
+</appSettings>
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+The authorization mode is toggled by the `UseUmbracoAuthorization` flag, which by default is set to `true` so previous versions of the integration are not impacted.
+
+Authorization specific methods are exposed by the [`IHubspotAuthorizationService`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Crm.Hubspot/Services/IHubspotAuthorizationService.cs) and implemented by two services:
+- [UmbracoAuthorizationService](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Crm.Hubspot/Services/UmbracoAuthorizationService.cs)
+- [AuthorizationService](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Crm.Hubspot/Services/AuthorizationService.cs)
+
+The used service is provided using the `AuthorizationImplementationFactory` method, depending on the type of authorization selected.
+
+If you are selecting your own authorization flow that uses the `AuthorizationService`, the redirect URL will be this one: `/umbraco/api/hubspotauthorization/oauth`, from [`HubspotAuthorizationController`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Crm.Hubspot/Controllers/HubspotAuthorizationController.cs). Please make sure to set to correct URL in the settings of the website and in the configuration of your Shopify app.
+
+The authorization controller uses the `window.postMessage` interface for cross-window communications when redirecting from the Shopify authorization server.
+
 ## Backoffice usage
 
 To use the form picker, a new Data Type should be created based on the HubSpot Form Picker property editor.

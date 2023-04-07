@@ -31,6 +31,69 @@ The package uses the OAuth2 security protocol for authentication. After the auth
 
 All requests to the Google Search Console API will include the access token in the authorization header.
 
+### Self Hosted OAuth Configuration
+Starting with version [1.1.0](https://www.nuget.org/packages/Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.URLInspectionTool/1.1.0), we are allowing developers to alternate the existing `OAuth Proxy for Umbraco Integrations` client for handling OAuth authorizations and redirects, with a custom authorization workflow managed entirely on their side. 
+
+This means that you can setup your own app on _Google_ for handling authorization requests and use an extended configuration like this:
+
+{% tabs %}
+{% tab title="Versions 9 and above" %}
+{% code title="appsettings.json" %}
+```json
+"Umbraco": {
+  "CMS": {
+    "Integrations": {
+      "SEO": {
+        "GoogleSearchConsole": {
+          "Settings": {
+            ...
+            "UseUmbracoAuthorization": true/false
+          },
+          "OAuthSettings": {
+              "ClientId": "[your client id]",
+              "ClientSecret": "[your client secret]",
+              "RedirectUri": "https://[your website base URL]/umbraco/api/googlesearchconsoleauthorization/oauth",
+              "TokenEndpoint": "[google token endpoint]",
+              "Scopes": "https://www.googleapis.com/auth/webmasters https://www.googleapis.com/auth/webmasters.readonly"
+            }
+        }
+      }
+    }
+  }
+}
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Version 8" %}
+{% code title="web.config" %}
+```xml
+<appSettings>
+  ...
+  <add key="Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.UseUmbracoAuthorization" value="true/false" />
+  <add key="Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.ClientId" value="[your client id]" />
+		<add key="Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.ClientSecret" value="[your client secret]" />
+		<add key="Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.RedirectUri" value="https://[your website base URL]/umbraco/api/googlesearchconsoleauthorization/oauth" />
+		<add key="Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.TokenEndpoint" value="[google token endpoint]" />
+		<add key="Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.Scopes" value="https://www.googleapis.com/auth/webmasters https://www.googleapis.com/auth/webmasters.readonly" />
+</appSettings>
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+The authorization mode is toggled by the `UseUmbracoAuthorization` flag, which by default is set to `true` so previous versions of the integration are not impacted.
+
+Authorization specific methods are exposed by the [`IGoogleAuthorizationService`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.UrlInspectionTool/Services/IGoogleAuthorizationService.cs) and implemented by two services:
+- [UmbracoAuthorizationService](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.UrlInspectionTool/Services/UmbracoAuthorizationService.cs)
+- [AuthorizationService](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.UrlInspectionTool/Services/AuthorizationService.cs)
+
+The used service is provided using the `AuthorizationImplementationFactory` method, depending on the type of authorization selected.
+
+If you are selecting your own authorization flow that uses the `AuthorizationService`, the redirect URL will be this one: `/umbraco/api/Googleauthorization/oauth`, from [`GoogleAuthorizationController`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.UrlInspectionTool/Controllers/GoogleSearchConsoleAuthorizationController.cs). Please make sure to set to correct URL in the settings of the website and in the configuration of your _Google_ app.
+
+The authorization controller uses the `window.postMessage` interface for cross-window communications when redirecting from the Shopify authorization server.
+
 ## Working With the URL Inspection Tool
 
 The URL Inspection Tool is accessible from each content node via the **URL Inspection** content app.
