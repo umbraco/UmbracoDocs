@@ -6,11 +6,27 @@ meta.Title: Headless/Asynchronous JavaScript and XML (AJAX)  Forms
 
 Umbraco Forms provides an API for client-side rendering and submission of forms. This will be useful when you want to handle forms in a headless style scenario.
 
+## Enabling the API
+
+The Forms API is disabled by default. To enable it, set the `Umbraco:Forms:Options:EnableFormsApi` configuration key to `true`.
+
+For example:
+
+```json
+  "Umbraco": {
+    "Forms": {
+      "Options": {
+        "EnableFormsApi": true
+      }
+    }
+  }
+```
+
 ## API Definition
 
 The API supports two endpoints, one for rendering a form and one for submitting it.
 
-As well as this docmentation, the definition of the API can also be reviewed via the Swagger UI, available at the following path: `/umbraco/forms/api/swagger/index.html`.
+As well as this documentation, the definition of the API can also be reviewed via the Swagger UI, available at the following path: `/umbraco/forms/api/swagger/index.html`.
 
 The Open API specification is available from: `/umbraco/forms/api/openapi.json`
 
@@ -26,7 +42,7 @@ The GET request requires the Guid identifying the form.
 
 An optional `contentId` parameter can be provided, which can either be the integer or GUID identifier for the current page. If provided, the content item identified will be used for Forms features requiring information from the page the form is hosted on. This includes the parsing of ["magic string" placeholders](magic-strings.md).
 
-A `culture` paramater can also be provided, expected as an ISO code identifying a language used in the Umbraco installation (for exampple, `en-US`). This will be used to ensure the correct translation for dictionary keys is used. It will also retrieve page content from the appropriate language variant. If the parameter is not provided in the request, the default Umbraco language will be used.
+A `culture` parameter can also be provided, expected as an ISO code identifying a language used in the Umbraco installation (for example, `en-US`). This will be used to ensure the correct translation for dictionary keys is used. It will also retrieve page content from the appropriate language variant. If the parameter is not provided in the request, the default Umbraco language will be used.
 
 If the requested form is not found, a 404 status code will be returned.
 

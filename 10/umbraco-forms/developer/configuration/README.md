@@ -80,7 +80,8 @@ For illustration purposes, the following structure represents the full set of op
         "FirstRunTime": "",
         "Period": "1.00:00:00"
       },
-      "DisableRecordIndexing": false
+      "DisableRecordIndexing": false,
+      "EnableFormsApi": false
     },
     "Security": {
       "DisallowedFileUploadExtensions": "config,exe,dll,asp,aspx",
@@ -349,6 +350,10 @@ Defines how often the record deletion process will run. The default value is `1.
 Set this value to `true` to disable the default behavior of indexing the form submissions into the Examine index.
 
 If indexing has already occurred, you will still need to manually remove the files (found in `App_Data\TEMP\ExamineIndexes\UmbracoFormsRecords`). They will be recreated if indexing is subsequently re-enabled.
+
+### EnableFormsApi
+
+Set this value to `true` to enable the Forms API supporting headless and AJAX forms.
 
 ## Security configuration
 
