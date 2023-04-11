@@ -91,6 +91,73 @@ If you prefer not to use an API token, an authentication flow using OAuth is als
 
 To use this, ensure you do not have an API key in your configuration file.
 
+### Self Hosted OAuth Configuration
+
+The easiest way to configure the integration is to make use of an application Umbraco has pre-configured with Shopify. With this in place, the authorization flow will go through a proxy website Umbraco maintains before redirecting back to your Umbraco backoffice.
+
+From version 1.1.0, we introduced an alternate approach that requires a little more setup. It removes the need for relying on any services from Umbraco when using the integration.
+
+To use this you need to setup your own app with Shopify and use an extended configuration like this:
+
+{% tabs %}
+{% tab title="Versions 9 and above" %}
+{% code title="appsettings.json" %}
+```json
+"Umbraco": {
+  "CMS": {
+    "Integrations": {
+      "Commerce": {
+        "Shopify": {
+          "Settings": {
+            ...
+            "UseUmbracoAuthorization": true/false
+          },
+          "OAuthSettings": {
+              "ClientId": "[your client id]",
+              "ClientSecret": "[your client secret]",
+              "RedirectUri": "https://[your website base URL]/umbraco/api/shopifyauthorization/oauth",
+              "TokenEndpoint": "https://[your shop].myshopify.com/admin/oauth/access_token",
+              "Scopes": "read_products"
+            }
+        }
+      }
+    }
+  }
+}
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Version 8" %}
+{% code title="web.config" %}
+```xml
+<appSettings>
+  ...
+  <add key="Umbraco.Cms.Integrations.Commerce.Shopify.UseUmbracoAuthorization" value="true/false" />
+  <add key="Umbraco.Cms.Integrations.Commerce.Shopify.ClientId" value="[your client id]" />
+  <add key="Umbraco.Cms.Integrations.Commerce.Shopify.ClientSecret" value="[your client secret]" />
+  <add key="Umbraco.Cms.Integrations.Commerce.Shopify.RedirectUri" value="https://[your website base URL]/umbraco/api/shopifyauthorization/oauth" />
+  <add key="Umbraco.Cms.Integrations.Commerce.Shopify.TokenEndpoint" value="https://[your shop].myshopify.com/admin/oauth/access_token" />
+  <add key="Umbraco.Cms.Integrations.Commerce.Shopify.Scopes" value="read_products" />
+</appSettings>
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+The authorization mode is toggled by the `UseUmbracoAuthorization` flag, which by default is set to `true` meaning that previous versions of the integration are not impacted.
+
+Authorization specific methods are exposed by the [`IShopifyAuthorizationService`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Commerce.Shopify/Services/IShopifyAuthorizationService.cs) and implemented by two services:
+
+- [UmbracoAuthorizationService](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Commerce.Shopify/Services/UmbracoAuthorizationService.cs)
+- [AuthorizationService](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Commerce.Shopify/Services/AuthorizationService.cs)
+
+The used service is provided using the `AuthorizationImplementationFactory` method, depending on the type of authorization selected.
+
+If you are selecting your own authorization flow that uses the `AuthorizationService`, the redirect URL will be this one: `/umbraco/api/shopifyauthorization/oauth`, from [`ShopifyAuthorizationController`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Commerce.Shopify/Controllers/ShopifyAuthorizationController.cs). Please make sure to set to correct URL in the settings of the website and in the configuration of your Shopify app.
+
+The authorization controller uses the `window.postMessage` interface for cross-window communications when redirecting from the Shopify authorization server.
+
 ## Backoffice usage
 
 To use the products picker, a new Data Type should be created based on the Shopify Products Picker property editor.
