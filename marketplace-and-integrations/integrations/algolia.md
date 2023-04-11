@@ -97,7 +97,7 @@ The list of default properties consists of:
 * `Path`
 * `ContentTypeAlias`
 * `Url` - with culture variants if any
-* registered properties of the content type
+* Any registered properties on the Content Type
 
 ## Extending the Algolia indexing
 
