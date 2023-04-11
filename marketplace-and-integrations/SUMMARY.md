@@ -12,6 +12,7 @@
 
 * [Introduction](marketplace/introduction.md)
 * [Listing Your Package](marketplace/listing-your-package.md)
+* [Package Telemetry Data](marketplace/package-telemetry-data.md)
 
 ## Integrations
 
