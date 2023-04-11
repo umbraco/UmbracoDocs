@@ -131,7 +131,7 @@ The used service is provided using the `AuthorizationImplementationFactory` meth
 
 If you are selecting your own authorization flow that uses the `AuthorizationService`, the redirect URL will be this one: `/umbraco/api/hubspotauthorization/oauth`, from [`HubspotAuthorizationController`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Crm.Hubspot/Controllers/HubspotAuthorizationController.cs). Make sure to set to correct URL in the settings of the website and in the configuration of your _Hubspot_ app.
 
-The authorization controller uses the `window.postMessage` interface for cross-window communications when redirecting from the Shopify authorization server.
+The authorization controller uses the `window.postMessage` interface for cross-window communications when redirecting from the Hubspot authorization server.
 
 ## Backoffice usage
 
