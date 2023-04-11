@@ -17,7 +17,7 @@ Learn more about the different types of packages in the [Types of packages](type
 
 In the Umbraco Backoffice, you will find a **Packages** section that displays the [Umbraco Marketplace](https://marketplace.umbraco.com/). From here you can browse all community-made as well as official Umbraco packages for the Umbraco CMS.
 
-![Backoffice - Packages section](images/backoffice-packages-section.png)
+![Backoffice - Packages section](../../../../10/umbraco-cms/extending/packages/images/backoffice-packages-section.png)
 
 {% hint style="warning" %}
 For Umbraco CMS version 8 and earlier versions, the Packages section displays the [Packages site on Our](https://our.umbraco.com/packages/).
@@ -27,7 +27,7 @@ For Umbraco CMS version 8 and earlier versions, the Packages section displays th
 {% tab title="NuGet package" %}
 Navigating to a specific package in the section will present you with an overview of the package, as well as an install snippet for NuGet CLI.
 
-![Backoffice - Starter Kit package](images/backoffice-packages-section-package.png)
+![Backoffice - Starter Kit package](../../../../10/umbraco-cms/extending/packages/images/backoffice-packages-section-package.png)
 
 The packages can be installed by using:
 
@@ -41,11 +41,11 @@ For example, to install the StarterKit package for the Umbraco CMS the command w
 
 Navigating to the NuGet Package Manager in Visual Studio is more visual, and gives you an overview of already installed packages.
 
-![Visual Studio - nuget packages manager](images/nuget-installing-options.png)
+![Visual Studio - nuget packages manager](../../../../10/umbraco-cms/extending/packages/images/nuget-installing-options.png)
 
 The Package Manager has an integrated search function that allows you to find any public NuGet package and install it on the project.
 
-![Visual Studio - finding The Starter Kit](images/nuget-package-in-manager.png)
+![Visual Studio - finding The Starter Kit](../../../../10/umbraco-cms/extending/packages/images/nuget-package-in-manager.png)
 
 Once the package has been installed, it will show up under the **Packages** section in the backoffice, under **Installed** tab.
 
@@ -95,7 +95,7 @@ To uninstall a package, either run a command or use the NuGet Package Manager in
 
 `dotnet remove package Umbraco.TheStarterKit`
 
-![Visual Studio - uninstalling via Package Manager](images/uninstalling-via-nuget-package-manager.png)
+![Visual Studio - uninstalling via Package Manager](../../../../10/umbraco-cms/extending/packages/images/uninstalling-via-nuget-package-manager.png)
 
 {% hint style="info" %}
 If you are using Umbraco 8 or an earlier version you uninstall the packages directly from the **Packages** section of the Umbraco backoffice.
@@ -108,7 +108,7 @@ If you are using Umbraco 8 or an earlier version you uninstall the packages dire
 
 It is recommended to clean the solution after removing any package. This can be done by right-clicking the project in Visual Studio and choosing the _Clean_ option, or using the `dotnet clean` command.
 
-![Visual Studio - clean solution](images/vs-cleaning-solution.png)
+![Visual Studio - clean solution](../../../../10/umbraco-cms/extending/packages/images/vs-cleaning-solution.png)
 
 #### Removing package leftovers from the backoffice
 
@@ -127,7 +127,7 @@ There is no universal way to tell what content comes from a package, and what co
 
 Similar to content, media also might have to be removed.
 
-![Backoffice - removing media](images/removing-media.png)
+![Backoffice - removing media](../../../../10/umbraco-cms/extending/packages/images/removing-media.png)
 
 </details>
 
@@ -136,7 +136,7 @@ Similar to content, media also might have to be removed.
 
 Document Types can be removed from the **Settings** section. If fully removing the package, all Document Types can be deleted, as there are no default Document Types in a clean-slate Umbraco installation.
 
-![Backoffice - removing document types](images/removing-document-types.png)
+![Backoffice - removing document types](../../../../10/umbraco-cms/extending/packages/images/removing-document-types.png)
 
 </details>
 
@@ -169,11 +169,11 @@ Out of the box, there are a few views available in the `blocklist` and `grid` fo
 
 Some packages might reference other items. For example, installing the StarterKit also adds `Bergmania.OpenStreetMap` to your project. That component will show up as installed in the backoffice even after uninstalling the NuGet package.
 
-![Backoffice - Packages section - leftover dependency](images/installed-package-leftovers-backoffice.png)
+![Backoffice - Packages section - leftover dependency](../../../../10/umbraco-cms/extending/packages/images/installed-package-leftovers-backoffice.png)
 
 In many cases, custom dashboards, editors, and scripts are left in the `App_Plugins` folder after a package has been uninstalled via NuGet. These files also have to be deleted manually.
 
-![Visual Studio - App Plugins leftover files](images/app-plugins-starterkit.png)
+![Visual Studio - App Plugins leftover files](../../../../10/umbraco-cms/extending/packages/images/app-plugins-starterkit.png)
 
 </details>
 
@@ -199,7 +199,7 @@ The following command can be used for uninstalling the package:
 
 After that, cleaning the solution is recommended.
 
-![Visual Studio - clean solution](images/vs-cleaning-solution.png)
+![Visual Studio - clean solution](../../../../10/umbraco-cms/extending/packages/images/vs-cleaning-solution.png)
 
 <details>
 <summary>Cleaning leftover files on disk</summary>

@@ -24,7 +24,7 @@ You want to transfer the whole site. You start from the `Home` node and choose t
    * If you’re currently editing the Home page you could also use the Actions dropdown to find **Queue for transfer**.
 4. Choose if you want to include all pages under the chosen page or only transfer the chosen node.
    * If you wish to transfer all your content at once, _right-click_ the top of the Content tree where you will also find **Queue for transfer** - this will queue all your content for transfer.
-5. Select the language versions that you want to queue for transfer.
+5. Select the language versions that you want to queue for transfer. Only languages for which you have permission to access will be selectable.
 6.  Set the publish date and time if you want to change when the transferred content should be published.
 
     {% hint style="info" %}
@@ -32,12 +32,12 @@ You want to transfer the whole site. You start from the `Home` node and choose t
     {% endhint %}
 7.  Click **Queue** to add the content item to the transfer queue.
 
-    ![Queue for transfer window](../../../10/umbraco-deploy/deployment-workflow/images/queue-for-transfer-dialog.png)
+    ![Queue for transfer window](images/queue-for-transfer-dialog.png)
 8. Go to the Deployment dashboard by clicking on the Content section header.
    * You will be able to see which items are currently ready to be transferred - this will include both content and media that you've _queued for transfer_.
 9.  Confirm by clicking **Transfer toDevelopment** and monitor the progress of the transfer.
 
-    ![Transfer queue](../../../10/umbraco-deploy/deployment-workflow/images/transfer-queue.png)
+    ![Transfer queue](images/transfer-queue.png)
 
 If everything went well, you will see the confirmation screen saying that the transfer has succeeded.
 
@@ -67,6 +67,6 @@ This does not include entries submitted via the forms.
 
 Sometimes a content transfer might not be possible. For example if you add a new property to the HomePage Document type and you don’t have that property in both environments, you’ll get an error with a hint on how to fix this.
 
-![clone dialog](<../../../umbraco-cloud/deployment/images/schema-mismatch (1) (1).png>)
+![clone dialog](<images/schema-mismatch (1) (1) (1) (1) (1).png>)
 
 If you are seeing this type of issue when trying to transfer content, head over to our article about [Schema Mismatch errors](../troubleshooting.md), where you can read about how to resolve the issues.

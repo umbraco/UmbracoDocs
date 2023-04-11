@@ -50,6 +50,7 @@ The Package Manager has an integrated search function that allows you to find an
 Once the package has been installed, it will show up under the **Packages** section in the backoffice, under **Installed** tab.
 
 ![Backoffice - installed packages](images/backoffice-installed-packages.png)
+
 {% endtab %}
 
 {% tab title="Package zip file" %}
@@ -146,6 +147,7 @@ Document Types can be removed from the **Settings** section. If fully removing t
 As opposed to Document Types, there are some Data Types that are available out of the box when Umbraco is installed. It is not recommended to remove them. The safe approach is to delete any item that starts with a Document Type prefix and includes multiple dashes. That is the default naming convention for new configurations of Data Types (Example: "Blog - How many posts should be shown - Slider")
 
 ![Backoffice - removing data types](images/removing-datatypes.png)
+
 </details>
 
 <details>
@@ -154,6 +156,7 @@ As opposed to Document Types, there are some Data Types that are available out o
 No Templates are available out of the box in a new installation. If cleaning up after a package, it would be okay to delete all that are present
 
 ![Backoffice - removing templates](images/removing-templates.png)
+
 </details>
 
 <details>
@@ -162,6 +165,7 @@ No Templates are available out of the box in a new installation. If cleaning up 
 Out of the box, there are a few views available in the `blocklist` and `grid` folders. Everything else can theoretically be removed.
 
 ![Backoffice - removing partial views](images/removing-partials.png)
+
 </details>
 
 <details>

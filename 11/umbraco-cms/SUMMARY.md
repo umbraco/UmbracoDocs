@@ -8,20 +8,24 @@
 
 ## Fundamentals
 
+* [Get to know Umbraco](fundamentals/get-to-know-umbraco.md)
 * [Setup](fundamentals/setup/README.md)
   * [Requirements](fundamentals/setup/requirements.md)
   * [Installation](fundamentals/setup/install/README.md)
     * [Install using .NET CLI](fundamentals/setup/install/install-umbraco-with-templates.md)
     * [Install using Visual Studio](fundamentals/setup/install/visual-studio.md)
     * [Local IIS With Umbraco](fundamentals/setup/install/iis.md)
-    * [Install Umbraco With Visual Studio Code](fundamentals/setup/install/install-umbraco-with-vs-code.md)
+    * [Install using Visual Studio Code](fundamentals/setup/install/install-umbraco-with-vs-code.md)
     * [Installing Nightly Builds](fundamentals/setup/install/installing-nightly-builds.md)
     * [Running Umbraco On A Mac](fundamentals/setup/install/running-umbraco-on-a-mac.md)
     * [Unattended Installs](fundamentals/setup/install/unattended-install.md)
   * [Upgrade your project](fundamentals/setup/upgrading/README.md)
     * [Version Specific Upgrades](fundamentals/setup/upgrading/version-specific/README.md)
-      * [Umbraco 10: Breaking Changes](fundamentals/setup/upgrading/version-specific/umbraco10-breaking-changes.md)
-      * [Umbraco 11: Breaking Changes](fundamentals/setup/upgrading/version-specific/umbraco11-breaking-changes.md)
+      * [Upgrade from Umbraco 8 to the latest version](fundamentals/setup/upgrading/version-specific/upgrade-from-8-to-latest.md)
+      * [Migrate content to Umbraco 8](fundamentals/setup/upgrading/version-specific/migrate-content-to-umbraco-8.md)
+      * [Minor upgrades for Umbraco 8](fundamentals/setup/upgrading/version-specific/minor-upgrades-for-umbraco-8.md)
+      * [Upgrade to Umbraco 7](fundamentals/setup/upgrading/version-specific/upgrade-to-umbraco-7.md)
+      * [Minor upgrades for Umbraco 7](fundamentals/setup/upgrading/version-specific/minor-upgrades-for-umbraco-7.md)
   * [Server setup](fundamentals/setup/server-setup/README.md)
     * [Running Umbraco On Azure Web Apps](fundamentals/setup/server-setup/azure-web-apps.md)
     * [Hosting Umbraco in IIS](fundamentals/setup/server-setup/iis.md)
@@ -88,6 +92,7 @@
   * [Infinite Editing](fundamentals/backoffice/infinite-editing.md)
   * [Log Viewer](fundamentals/backoffice/logviewer.md)
   * [Language Variants](fundamentals/backoffice/variants.md)
+  * [Settings Dashboards](fundamentals/backoffice/settings-dashboards.md)
 * [Data](fundamentals/data/README.md)
   * [Defining Content](fundamentals/data/defining-content.md)
   * [Creating Media](fundamentals/data/creating-media/README.md)
@@ -121,6 +126,7 @@
 
 ## Implementation
 
+* [Learn how Umbraco works](implementation/learn-how-umbraco-works.md)
 * [Routing](implementation/default-routing/README.md)
   * [Controller & Action Selection](implementation/default-routing/controller-selection.md)
   * [Execute Request](implementation/default-routing/execute-request.md)
@@ -138,6 +144,7 @@
 
 ## Extending
 
+* [Customize the editing experience](extending/customize-the-editing-experience.md)
 * [Dashboards](extending/dashboards.md)
 * [Sections & Trees](extending/section-trees/README.md)
   * [Sections](extending/section-trees/sections.md)
@@ -190,6 +197,7 @@
 
 ## Reference
 
+* [Dive into the code](reference/dive-into-the-code.md)
 * [Configuration](reference/configuration/README.md)
   * [Basic Authentication Settings](reference/configuration/basicauthsettings.md)
   * [Connection strings settings](reference/configuration/connectionstringssettings.md)
@@ -372,6 +380,7 @@
 * [Debugging with SourceLink](reference/debugging.md)
 * [Language Variation](reference/language-variation.md)
 * [UmbracoMapper](reference/mapping.md)
+* [Distributed Locks](reference/distributed-locks.md)
 * [AngularJS](reference/angular/README.md)
   * [Directives](reference/angular/directives/README.md)
     * [umbLayoutSelector](reference/angular/directives/umblayoutselector.md)
@@ -384,6 +393,7 @@
 
 ## Tutorials
 
+* [Overview](tutorials/overview.md)
 * [Creating a Basic Website](tutorials/creating-a-basic-website/README.md)
   * [Getting Started](tutorials/creating-a-basic-website/getting-started.md)
   * [Document Types](tutorials/creating-a-basic-website/document-types.md)

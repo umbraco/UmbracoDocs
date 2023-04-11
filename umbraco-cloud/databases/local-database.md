@@ -13,9 +13,11 @@ This article will cover how you can connect to the database of your project that
 
 When cloning down your project to work locally you might want to have a look in your database every now and then.
 
-In the latest version of Umbraco, LocalDB is no longer supported, instead, Umbraco now comes with SQLite out of the box. When you clone down your Umbraco project and restore its content it will create a `Umbraco.sqlite.db` file.
+Since Umbraco 10, SQL CE is no longer supported, instead, Umbraco now comes with SQLite out of the box. When you clone down your Umbraco project and restore its content, it will create a `Umbraco.sqlite.db` file.
 
-To view your local database, you will need to use a program like [DB Browser for SQLite](https://sqlitebrowser.org/) which lets you view and query your local SQLite Database.
+To view your local SQLite database, you will need to use a program like [DB Browser for SQLite](https://sqlitebrowser.org/) or a Visual Studio extension like [SQLite and SQL Server Compact Toolbox](https://marketplace.visualstudio.com/items?itemName=ErikEJ.SQLServerCompactSQLiteToolbox).
+
+You can also configure your project to prefer SQL Server LocalDb when it's available on your local machine by enabling the Deploy [`PreferLocalDbConnectionString`](https://docs.umbraco.com/umbraco-deploy/deploy-settings#preferlocaldbconnectionstring) setting.
 
 ## Using Custom Tables with Umbraco Cloud
 

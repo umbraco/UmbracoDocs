@@ -12,7 +12,7 @@ In this article you can learn more about the common terms and concepts that are 
 
 When you go to the backoffice for the first time, you're presented with the login screen.
 
-![Login screen](../../../../11/umbraco-cms/fundamentals/backoffice/images/backoffice-login.png)
+![Login screen](images/backoffice-login.png)
 
 [Read more about the login screen](login.md).
 
@@ -20,7 +20,7 @@ When you go to the backoffice for the first time, you're presented with the logi
 
 A section in Umbraco is where you do specific tasks related to that section. For example Content, Settings and Users. You can navigate between the different sections of the backoffice by clicking the corresponding icon in the section menu.
 
-<figure><img src="../../../../11/umbraco-cms/fundamentals/backoffice/images/highlight-sections.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/highlight-sections.png" alt=""><figcaption></figcaption></figure>
 
 _The **Section menu** is the horizontal menu located on the top of the backoffice._
 
@@ -30,15 +30,15 @@ _The **Section menu** is the horizontal menu located on the top of the backoffic
 
 A tree is a hierarchical list of items related (and usually restricted) to a specific concept, like for example content or media.
 
-You can expand trees by clicking the down arrow ![](../../../../11/umbraco-cms/fundamentals/backoffice/images/expand-node.png) to the left of the node or by double-clicking the node.
+You can expand trees by clicking the down arrow ![](images/expand-node.png) to the left of the node or by double-clicking the node.
 
-<figure><img src="../../../../11/umbraco-cms/fundamentals/backoffice/images/highlight-tree.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/highlight-tree.png" alt=""><figcaption></figcaption></figure>
 
 [Read more about the Tree](../../extending/section-trees/)
 
 ## Node
 
-A node is an item in a tree. The images and folders in the Media section are shown as nodes in the Media tree, pages and content in the Content tree and so forth.
+A node is an item in a tree. Images and folders in the Media section are shown as nodes in the Media tree, pages and content in the Content tree and so forth.
 
 ## [Dashboards](../../extending/dashboards.md)
 
@@ -46,7 +46,7 @@ A dashboard is the main view you are presented with when entering a section with
 
 _Default dashboard in the content section_
 
-<figure><img src="../../../../11/umbraco-cms/fundamentals/backoffice/images/highlight-dashboard.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/highlight-dashboard.png" alt=""><figcaption></figcaption></figure>
 
 [Read more about Dashboards](../../extending/dashboards.md)
 
@@ -62,7 +62,7 @@ Content is what you find in the Content section. Each item in the tree is called
 
 ## Document Type
 
-Document Types define the types of content nodes that backoffice users can create in the content tree. Each Document Type contains different properties. Each property has a specific Data Type e.g. text or number.
+Document Types define the types of content nodes that backoffice users can create in the content tree. Each Document Type contains different properties. Each property has a specific Data Type for example text or number.
 
 ### Properties
 
@@ -88,7 +88,7 @@ Media items are used to store assets like images and video within the Media sect
 
 ### Media Types
 
-Media Types are very similar to Document Types in Umbraco, except they are specifically for media items in the Media section.
+Media Types are similar to Document Types in Umbraco, except they are specifically for media items in the Media section.
 
 Umbraco comes with 3 default Media Types: **File**, **Folder** and **Image**.
 
@@ -110,7 +110,7 @@ A Template is where you define the HTML markup of your website and also where yo
 
 ## Packages
 
-A package is the Umbraco term for a module or plugin used to extend Umbraco. Packages can be found in the [Packages section of Our Umbraco](https://our.umbraco.com/projects/), and you can also install them directly from the Packages section in the Umbraco backoffice.
+A package is the Umbraco term for a module or plugin used to extend Umbraco. Packages can be found in the [Packages section of Our Umbraco](https://our.umbraco.com/projects/). 
 
 ## [Macros](../../reference/templating/macros/)
 

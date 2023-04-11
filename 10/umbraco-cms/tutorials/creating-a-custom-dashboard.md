@@ -15,7 +15,7 @@ This guide takes you through the steps to setup a Custom Dashboard in Umbraco.
 
 A Dashboard is a tab on the right-hand side of a section eg. the Getting Started dashboard in the Content section:
 
-![Welcome dashboard](../../../11/umbraco-cms/tutorials/images/whatisadashboard-v10.jpg)
+![Welcome dashboard](images/whatisadashboard-v10.jpg)
 
 ### Why provide a Custom Dashboard for your editors?
 
@@ -128,7 +128,7 @@ The `App_Plugins` version of the `Lang` directory is case sensitive on Linux sys
 
 ### The Result
 
-<figure><img src="../../../11/umbraco-cms/tutorials/images/welcomemessage-v8.PNG" alt=""><figcaption><p>Welcome Dashboard</p></figcaption></figure>
+<figure><img src="images/welcomemessage-v8.PNG" alt=""><figcaption><p>Welcome Dashboard</p></figcaption></figure>
 
 We can apply the same workflow to elements inside the dashboard, not only the name/alias. Extend the translation file xml like so:
 
@@ -178,7 +178,7 @@ The xml for that specific key will look like this:
 
 The area and key aliases are combined and an underscore is added inbetween.
 
-![Dashboard with translation keys](../../../11/umbraco-cms/tutorials/images/dashboard-untranslated-v10.png)
+![Dashboard with translation keys](images/dashboard-untranslated-v10.png)
 
 {% hint style="info" %}
 If you don't see the brackets disappearing - you may need to restart the website.
@@ -204,9 +204,9 @@ With the above steps completed, your dashboard is all set up to be translated ac
 
 The backoffice language can be changed in the Users section, if you wish to test out the translations.
 
-![Changing backoffice language](../../../11/umbraco-cms/tutorials/images/changing-languages-v10.png)
+![Changing backoffice language](images/changing-languages-v10.png)
 
-![Dashboard in danish](../../../11/umbraco-cms/tutorials/images/dashboard-translated-v10.png)
+![Dashboard in danish](images/dashboard-translated-v10.png)
 
 ## Adding a bit of style
 
@@ -248,7 +248,7 @@ Now create a stylesheet in our CustomWelcomeDashboard folder called 'customwelco
 
 This stylesheet will now be loaded and applied to your dashboard. Add images and HTML markup as required.
 
-![Custom Dashboard Welcome Message With styles...](../../../11/umbraco-cms/tutorials/images/welcomemessagewithstyles-v10.png)
+![Custom Dashboard Welcome Message With styles...](images/welcomemessagewithstyles-v10.png)
 
 {% hint style="info" %}
 One caveat is that the package.manifest file is loaded into memory when Umbraco starts up. If you are adding a new stylesheet or JavaScript file you will need to start and stop your application for it to be loaded.
@@ -346,7 +346,7 @@ Finally we can now update our view to incorporate the current user's name in our
 <h1><localize key="welcomeDashboard_heading">Default heading</localize> {{vm.UserName}}</h1>
 ```
 
-![Custom Dashboard Welcome Message With Current User's Name](../../../11/umbraco-cms/tutorials/images/welcomemessagepersonalised-v10.png)
+![Custom Dashboard Welcome Message With Current User's Name](images/welcomemessagepersonalised-v10.png)
 
 ## I know what you did last Tuesday
 
@@ -517,7 +517,7 @@ Finally update our view to use the additional retrieved entity information:
 
 and we should have a list of recently saved content and media:
 
-![We know what you edited last week...](../../../11/umbraco-cms/tutorials/images/WeKnowWhatYouEditedLastWeek-v10.png)
+![We know what you edited last week...](images/WeKnowWhatYouEditedLastWeek-v10.png)
 
 {% hint style="info" %}
 The URL `/umbraco/#/content/content/edit/1234` is the path to open up a particular entity (with id 1234) ready for editing.
@@ -544,7 +544,7 @@ Add the following to our view:
 
 `1065` is the ID of our blog section and `blogPost` is the alias of the type of document we want to create.
 
-![Handy shortcut buttons](../../../11/umbraco-cms/tutorials/images/CreateNewBlogPost-v10.png)
+![Handy shortcut buttons](images/CreateNewBlogPost-v10.png)
 
 At this point we are done with the tutorial, your files should contain this:
 

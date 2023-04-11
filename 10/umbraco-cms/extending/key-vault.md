@@ -19,7 +19,7 @@ Depending on your hosting situation there are a few approaches to incorporating 
 
 Before you begin, you need to install the `Azure.Extensions.AspNetCore.Configuration.Secrets` and the `Azure.Identity` NuGet packages. There are two approaches to installing the packages:
 
-1. Use your favorite IDE and open up the NuGet Package Manager to search and install the packages
+1. Use your favorite Integrated Development Environment (IDE) and open up the NuGet Package Manager to search and install the packages
 1. Use the command line to install the package
 
 ### Installing through command line

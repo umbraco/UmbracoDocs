@@ -11,7 +11,7 @@ The Umbraco UI works in all modern browsers:
 
 ## Local Development
 
-* Either OS:
+* One of the following OSs:
   * Microsoft Windows 10 or 11
   * MacOS High Sierra 10.13
   * Linux (Ubuntu, Alpine, CentOS, Debian, Fedora, openSUSE and other major distributions)

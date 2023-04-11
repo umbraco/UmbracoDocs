@@ -42,7 +42,7 @@ In this section, you can find information about version-specific changes that mi
 
 In Umbraco Forms version 9.0.0+, it is only possible to store Form data in the database.
 
-If you want to upgrade to Umbraco 9 and are using Forms, you should first migrate the Forms to the database using Forms 8. See the [Umbraco Forms in the Database version 8.0.0](https://our.umbraco.com/Documentation/Add-ons/UmbracoForms/Developer/Forms-in-the-Database/) article.
+If you want to upgrade to Umbraco 9 and are using Forms, you should first migrate the Forms to the database using Forms 8. See the [Umbraco Forms in the Database](https://docs.umbraco.com/umbraco-forms/developer/forms-in-the-database) article.
 
 #### Version 8.5.0
 

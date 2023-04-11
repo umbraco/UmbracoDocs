@@ -8,7 +8,7 @@ description: >-
 
 Umbraco Cloud is our hosting option for your favorite Umbraco CMS. Built on the Microsoft Azure Cloud and encompassing web standard approaches, Umbraco Cloud is familiar to Umbraco's new and old users. With Umbraco Cloud, there are no limits to what you can accomplish. Anything you can do with Umbraco and web technology you can do with Umbraco Cloud.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Getting Started</strong></td><td>Learn how to get started working with Umbraco Cloud.</td><td><a href="broken-reference">Broken link</a></td><td><a href=".gitbook/assets/arm_with_u_logo.png">arm_with_u_logo.png</a></td></tr><tr><td><strong>Setup</strong></td><td>Learn how you can set up your Umbraco Cloud projects.</td><td><a href="broken-reference">Broken link</a></td><td><a href=".gitbook/assets/code_too.png">code_too.png</a></td></tr><tr><td><strong>Deployments</strong></td><td>Learn how Deployments on Umbraco Cloud works.</td><td><a href="broken-reference">Broken link</a></td><td><a href=".gitbook/assets/arrow.png">arrow.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Getting Started</strong></td><td>Learn how to get started working with Umbraco Cloud.</td><td><a href="getting-started/the-umbraco-cloud-portal/">the-umbraco-cloud-portal</a></td><td><a href=".gitbook/assets/arm_with_u_logo.png">arm_with_u_logo.png</a></td></tr><tr><td><strong>Setup</strong></td><td>Learn how you can set up your Umbraco Cloud projects.</td><td><a href="set-up/set-up.md">set-up.md</a></td><td><a href=".gitbook/assets/code_too.png">code_too.png</a></td></tr><tr><td><strong>Deployments</strong></td><td>Learn how Deployments on Umbraco Cloud works.</td><td><a href="broken-reference">Broken link</a></td><td><a href=".gitbook/assets/arrow.png">arrow.png</a></td></tr></tbody></table>
 
 {% embed url="https://www.youtube.com/embed/TcmuTpJT1Kw?rel=0" %}
 How to create Umbraco Cloud trial
@@ -48,7 +48,7 @@ To create a project in Umbraco Cloud Portal:
 8. Choose a **Project Owner** and add **Technical Contacts**.
 9. Click **Continue**.
 10. Verify that everything looks correct and check **I have read and agree to the terms and conditions and the Data Processing Agreement**.
-11.  Click **Create Project**.
+11. Click **Create Project**.
 
 ### Naming a Project
 

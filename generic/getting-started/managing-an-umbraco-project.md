@@ -16,12 +16,12 @@ In this section you will find information on the key concepts and requirements o
 
 [What commerical options are available from Umbraco?](https://umbraco.com/products/)
 
-[Information on planning an Umbraco project](https://app.gitbook.com/s/OdQETpqkO0Kcv8KMquKL/fundamentals/setup/requirements)
+[Information on planning an Umbraco project](http://localhost:5000/s/OdQETpqkO0Kcv8KMquKL/fundamentals/setup/requirements)
 
-[How do I manage users with Umbraco?](https://app.gitbook.com/s/OdQETpqkO0Kcv8KMquKL/fundamentals/data/users)
+[How do I manage users with Umbraco?](http://localhost:5000/s/OdQETpqkO0Kcv8KMquKL/fundamentals/data/users)
 
-[What is the deployment process for Umbraco?](https://app.gitbook.com/s/ZtqcoypStodmS9g6g8zC/deployments)
+[What is the deployment process for Umbraco?](http://localhost:5000/s/ZtqcoypStodmS9g6g8zC/deployments)
 
 [What is the Umbraco Community?](https://community.umbraco.com)
 
-![Umbraco business](images/Documentation\_blogpost\_styleguide\_b.png)
+![Umbraco business](<../../10/umbraco-workflow/.gitbook/assets/Documentation\_blogpost\_styleguide\_b (1).png>)

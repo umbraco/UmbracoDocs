@@ -45,6 +45,12 @@ Saves the result of the Form as an XML file by using XSLT. The following configu
 * File extension (required)
 * XsltFile - used to transform the XML
 
+The path needs to point to a folder, not a file name. The files are then stored locally, and relative paths are resolved to the content root.
+
+{% hint style="info" %}
+When storing the files within the `wwwroot` or `App_Plugins` folders, the files will be publicly available by default.
+{% endhint %}
+
 ## **Save as Umbraco Content Node**
 
 ![Save as content node](../../../../10/umbraco-forms/editor/attaching-workflows/images/save-as-content-node.png)
@@ -106,7 +112,9 @@ The following configuration can be set:
 
 * Workflow Name
 * Email Template (required) - specify which template you want to use
-* Attachment - specify whether file uploads should be attached to the email
+* Header text - formatted text that will be rendered above the form entry details
+* Footer text - formatted text that will be rendered below the form entry details
+* Attachments - specify whether file uploads should be attached to the email
 * Recipient Email (required)
 * CC Email
 * BCC Email

@@ -51,7 +51,7 @@ Refer to the [NuGet Packages](#nuget-packages) section above, if your website is
 
 A package zip file can be installed directly through the Umbraco backoffice.
 
-![Zip packages can be installed via the Umbraco backoffice package section](images/backoffice-package-section.png)
+![Zip packages can be installed via the Umbraco backoffice package section](../../../../10/umbraco-cms/extending/packages/images/backoffice-package-section.png)
 
 Packages zip files can contain:
 

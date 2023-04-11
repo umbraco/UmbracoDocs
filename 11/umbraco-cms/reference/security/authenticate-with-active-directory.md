@@ -1,5 +1,7 @@
 ---
-description: "Learn how to use Azure Active Directory credentials to login to the Umbraco backoffice"
+description: >-
+  Learn how to use Azure Active Directory credentials to login to the Umbraco
+  backoffice
 ---
 
 # Authenticating the Umbraco backoffice with Azure Active Directory credentials
@@ -83,9 +85,9 @@ public void ConfigureServices(IServiceCollection services)
 ```
 {% endcode %}
 
-* Build and run the website. You can now login with your Azure AD credentials.
+*   Build and run the website. You can now login with your Azure AD credentials.
 
-    ![AD Login Screen](images/AD\_Login.png)
+    ![AD Login Screen](../../../../10/umbraco-cms/reference/security/images/AD\_Login.png)
 
 {% hint style="info" %}
 In some cases where Azure B2C does not provide an email for the user, it can be necessary to add additional code.
@@ -102,7 +104,6 @@ options.ClaimActions.MapCustomJson(ClaimTypes.Email, x =>
 ```
 
 This extra code will read the user email from the Microsoft Graph API.
-
 {% endhint %}
 
 ## Azure AD Authentication for Members
@@ -150,7 +151,7 @@ namespace MyApp
 {% endcode %}
 
 {% hint style="info" %}
-Ensure to replace **{your_client_id}** and **{your_client_secret}** in the code with the values from the Azure AD tenant.
+Ensure to replace **{your\_client\_id}** and **{your\_client\_secret}** in the code with the values from the Azure AD tenant.
 {% endhint %}
 
 * To enable a member to link their account to an external login provider such as Azure AD in the Umbraco Backoffice, you have to implement a custom named configuration `MemberExternalLoginProviderOptions` for Members. Add the following code in the `AzureB2CMembersExternalLoginProviderOptions.cs` file:
@@ -241,6 +242,6 @@ public void ConfigureServices(IServiceCollection services)
 ```
 {% endcode %}
 
-* Build and run the website. Your members can now login with their Azure AD credentials.
+*   Build and run the website. Your members can now login with their Azure AD credentials.
 
-    ![AD Login Screen](images/AD\_Login\_Members.png)
+    ![AD Login Screen](../../../../10/umbraco-cms/reference/security/images/AD\_Login\_Members.png)

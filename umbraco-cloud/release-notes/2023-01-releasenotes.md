@@ -1,4 +1,4 @@
-# Release Notes, January 2023
+# January 2023
 
 ## Key Takeaways
 

@@ -28,10 +28,10 @@ To run the health check:
 
 1.  Navigate to the **Health Check** dashboard in the **Settings** section in the Umbraco backoffice.
 
-    <figure><img src="../../../../10/umbraco-forms/developer/healthchecks/images/Umb-backoffice.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/Umb-backoffice.png" alt=""><figcaption></figcaption></figure>
 2.  Click on the **Forms** button and select **Check Group**. You'll see a result that looks something like this: \\
 
-    <figure><img src="../../../../10/umbraco-forms/developer/healthchecks/images/healthcheck.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/healthcheck.png" alt=""><figcaption></figcaption></figure>
 
 If you have a full set of green ticks, then you're all good - and no need to read on!
 
@@ -47,10 +47,10 @@ As well as in the log files, such issues will be visible via the health check an
 
 To support this, we provide the following SQL scripts:
 
-* Apply database integrity schema changes for 8.7.0 - [8.7.0-apply-keys-and-indexes](apply-keys.md)
-* Apply database integrity schema changes for 8.7.0 (Forms in database tables) - [8.7.0-apply-keys-and-indexes-forms-in-db](forms-in-the-database-apply-keys.md)
+* Apply database integrity schema changes for 8.7.0+ - [8.7.0-apply-keys-and-indexes](apply-keys.md)
+* Apply database integrity schema changes for 8.7.0+ (Forms in database tables) - [8.7.0-apply-keys-and-indexes-forms-in-db](forms-in-the-database-apply-keys.md)
 
-The first of these provides the SQL statements required to apply the schema updates for 8.7.0 to the common Umbraco Forms tables. The second applies to those tables used for when Forms are stored in the database, and hence only need to be applied if that option is configured.
+The first of these provides the SQL statements required to apply the schema updates for 8.7.0+ to the common Umbraco Forms tables. The second applies to those tables used for when Forms are stored in the database, and hence only need to be applied if that option is configured.
 
 {% hint style="info" %}
 Before running any scripts or queries, please be sure to have a database backup in place.
@@ -111,5 +111,5 @@ If for any reason you wish to revert the changes - perhaps when testing these up
 
 To support this, we provide the following SQL scripts:
 
-* Revert database integrity schema changes for 8.7.0 - [8.7.0-apply-keys-and-indexes\_revert](apply-keys.md#revert-application-of-keys-and-indexes)
-* Revert database integrity schema changes for 8.7.0 (Forms in database tables) - [8.7.0-apply-keys-and-indexes-forms-in-db\_revert](forms-in-the-database-apply-keys.md#reverting-the-application-of-keys-and-indexes)
+* Revert database integrity schema changes for 8.7.0+ - [8.7.0-apply-keys-and-indexes\_revert](apply-keys.md#revert-application-of-keys-and-indexes)
+* Revert database integrity schema changes for 8.7.0+ (Forms in database tables) - [8.7.0-apply-keys-and-indexes-forms-in-db\_revert](forms-in-the-database-apply-keys.md#reverting-the-application-of-keys-and-indexes)

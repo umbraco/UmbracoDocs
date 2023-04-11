@@ -6,7 +6,7 @@ For front-end extensions, specifically via theming, see the [Themes](../themes.m
 
 ## Developing Custom Providers
 
-Although the Forms package comes with many field, workflow and other built-in types, if you have a requirement that isn't served by any of these, you can create and develop your own.
+Although the Forms package comes with many fields, workflows and other built-in types, you can still create and develop your own if needed.
 
 ### [Provider model](adding-a-type.md)
 
@@ -19,6 +19,8 @@ It is possible to add new Field types, Data Source Types, Prevalue Source Types,
 ### [Field types](adding-a-fieldtype.md)
 
 A field type handles rendering of the UI for a field in a form. It renders a standard ASP.NET webcontrol and is able to return a list of values when the form is saved.
+
+The concept of provider settings, common to the field and other types, is also discussed in this section.
 
 ### Data Source Types
 
@@ -39,6 +41,10 @@ Export types are responsible for turning form records into any other data format
 ### [Magic String Format Functions](adding-a-magic-string-format-function.md)
 
 Custom magic string format functions to add to the [ones shipped with Umbraco Forms](../magic-strings.md#formatting-magic-strings) can be created in code.
+
+### [Validation Patterns](adding-a-validation-pattern.md)
+
+When creating a text field in Umbraco Forms, a validation pattern in the form of a regular expression can be applied. Default patterns can be removed or re-ordered, and custom ones created and added.
 
 ## Handling Forms Events
 

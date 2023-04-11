@@ -8,7 +8,7 @@ description: In this article we describe what Nullable reference types is.
 
 From Umbraco version 10, Nullable Reference Types is enabled by default in Umbraco.
 
-Nullable reference types is a group of features introduced in C# 8.0 that can be used to minimize the likelihood that your code causes the runtime to throw `System.NullReferenceException`.
+Nullable reference types is a group of features introduced in C# 8.0. These features can be used to minimize the likelihood that your code causes the runtime to throw `System.NullReferenceException`.
 
 Nullable reference types includes three features that help you avoid these exceptions, including the ability to explicitly mark a reference type as nullable:
 

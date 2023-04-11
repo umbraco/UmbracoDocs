@@ -37,13 +37,13 @@ From the **Media** section in the Umbraco backoffice, you can add new media item
   * The Media item will be created based on the type you choose.
   * Upload the image or file, give the Media item a name, and click **Save**.
 
-![Upload Media - Create Button](../../../../../11/umbraco-cms/fundamentals/data/creating-media/images/v9-media-types-upload-media.png)
+![Upload Media - Create Button](images/v9-media-types-upload-media.png)
 
 * Use the Drag and drop feature to add your files to the Media section.
   * Umbraco will automatically detect the Media Type and create the Media item.
   * You can drop entire folders structures to recreate that same structure in the Media section.
 
-![Upload Media - Media section](../../../../../11/umbraco-cms/fundamentals/data/creating-media/images/v9-media-types-media-section.png)
+![Upload Media - Media section](images/v9-media-types-media-section.png)
 
 ### Add media through the Content section
 
@@ -52,11 +52,11 @@ New media items can be added to your site without interrupting the content creat
 * Drag and drop the image(s) from your file explorer directly into the Media Picker property on the Content page.
   * Images added this way is automatically added to the user's start node in the Media section of the Umbraco backoffice.
 
-![Drag and drop images directly into the content](../../../../../11/umbraco-cms/fundamentals/data/creating-media/images/upload-images-from-content.gif)
+![Drag and drop images directly into the content](images/upload-images-from-content.gif)
 
 * Select the "+" icon to open the "Select media" dialog where you can add image(s) from your file explorer directly or using drag and drop.
 
-![Add images from the "Select media" dialog](../../../../../11/umbraco-cms/fundamentals/data/creating-media/images/add-image-from-dialog.gif)
+![Add images from the "Select media" dialog](images/add-image-from-dialog.gif)
 
 ## Creating a folder
 
@@ -78,7 +78,7 @@ The default view for the media section is a card view that let's you preview the
 
 Click the items to select multiple media items and perform bulk operations like moving or deleting them. To edit properties on a media item, click the name of the item, which you will see once you hover over the item.
 
-![Edit media item](../../../../../11/umbraco-cms/fundamentals/data/creating-media/images/hover-over.png)
+![Edit media item](images/hover-over.png)
 
 You can switch to a list view by clicking the view toggle next to the search field and selecting the listview.
 
@@ -106,7 +106,7 @@ Having different folders for different media types makes it possible to restrict
 
 Choose **New Media Type**. This will open the Media Type editor. It is similar to the editor used for creating Document Types. The difference is that Media Types define items for the Media section and you do not have the ability to assign a template for the Media Type.
 
-![Creating a Media Type](../../../../../11/umbraco-cms/fundamentals/data/creating-media/images/create-new-media-type\_new.png)
+![Creating a Media Type](images/create-new-media-type\_new.png)
 
 Name the Media Type _Employee Image_. Choose an icon by clicking the icon to the left of the name.
 
@@ -132,11 +132,11 @@ Click **Add editor**, search for _cropper_ and choose **Image cropper** under **
 
 Add two new crops called _Thumbnail_ (200px x 350px) and _wideThumbnail_ (350px x 200px).
 
-![Defining crops](../../../../../11/umbraco-cms/fundamentals/data/creating-media/images/new-data-type\_new.png)
+![Defining crops](images/new-data-type\_new.png)
 
 Name the remaining four properties _Width_, _Height_, _Size_ and _Type_ and give them the aliases as mentioned in the image below. They should all use the **Label** editor. As mentioned before these properties will automatically be populated once an image has been uploaded.
 
-![Adding properties](../../../../../11/umbraco-cms/fundamentals/data/creating-media/images/finished-new-media-type\_new.png)
+![Adding properties](images/finished-new-media-type\_new.png)
 
 ## Defining a Media Type folder
 
@@ -148,15 +148,15 @@ Go back to the **Settings** and create a new Media Type and name it _Employee Im
 
 We want the same basic functionality (same properties and tabs) as the **Folder** Media type and that can be achieved by clicking **Compositions** and selecting the **Folder** Media Type. Now, Employee images will inherit tabs and properties from the Folder Media Type.
 
-![Compositions](../../../../../11/umbraco-cms/fundamentals/data/creating-media/images/folder-composition\_new.png)
+![Compositions](images/folder-composition\_new.png)
 
 Switch to a list view by clicking the **List view** tab and toggle the **Enable list view** option.
 
-![Enable List View](../../../../../11/umbraco-cms/fundamentals/data/creating-media/images/toggle-listview.png)
+![Enable List View](images/toggle-listview.png)
 
 We need to allow the Employee Image Media Type in our new folder. Go to the **Permissions** tab. Click **Add child** under **Employee Images** and select **Employee Image**.
 
-![Permissions](../../../../../11/umbraco-cms/fundamentals/data/creating-media/images/select-child-nodes.png)
+![Permissions](images/select-child-nodes.png)
 
 Finally, define where the folder can be created. We want to create the folder in the root of the Media section so select the **Allow at root** option at the top of the Permission tab.
 
@@ -166,7 +166,7 @@ Go to the **Media** section and click the menu icon next to Media and select the
 
 There are four options to add a new media items to the folder, as you can see here:
 
-![Uploading Media](../../../../../11/umbraco-cms/fundamentals/data/creating-media/images/four-ways-of-uploading.png)
+![Uploading Media](images/four-ways-of-uploading.png)
 
 {% hint style="info" %}
 Remember you can uncheck the **Allow at root** option on the **Employee images** Media Type to prevent editors from creating multiple folders of this type. This will not affect created folders, only disable the creation of new ones.

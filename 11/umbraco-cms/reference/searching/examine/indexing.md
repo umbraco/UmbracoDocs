@@ -10,7 +10,7 @@ description: >-
 
 You can modify the built-in indexes in the following ways:
 
-* Events - giving you control over exactly what data goes into them and how the fields are configured
+* [Events](https://shazwazza.github.io/Examine/articles/indexing.html#events) - giving you control over exactly what data goes into them and how the fields are configured
 * Changing the field value types to change how values are stored in the index
 * Changing the `IValueSetValidator` to change what goes into the index
 * Take control of the entire index creation pipeline to change the implementation
@@ -354,6 +354,6 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
 
 ### Result
 
-![Custom product index](images/examine-management-product-index.png)
+![Custom product index](../../../../../10/umbraco-cms/reference/searching/examine/images/examine-management-product-index.png)
 
-![Product document](images/examine-management-product-document.png)
+![Product document](../../../../../10/umbraco-cms/reference/searching/examine/images/examine-management-product-document.png)

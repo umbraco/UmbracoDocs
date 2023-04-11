@@ -154,11 +154,11 @@ namespace MyProject
 
 Now we're ready to spin up our site and give it a try. Go to the Umbraco backoffice and publish a piece of content. Switch to the Settings section and find the Log Viewer in the Settings tree:
 
-![Log Viewer](../../../../11/umbraco-cms/fundamentals/code/images/log-viewer.png)
+![Log Viewer](images/log-viewer.png)
 
 Search 'All Logs', and if all is wired up correctly you should discover your custom publish log message entries:
 
-![Messages in Log](../../../../11/umbraco-cms/fundamentals/code/images/log-messages.png)
+![Messages in Log](images/log-messages.png)
 
 ### Before and after
 
