@@ -1,6 +1,7 @@
 ---
 versionFrom: 8.0.0
 versionTo: 8.1.0
+versionRemoved: 9.9.9
 ---
 
 # Multinode Treepicker
