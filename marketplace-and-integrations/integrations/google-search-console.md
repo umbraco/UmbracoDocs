@@ -32,9 +32,10 @@ The package uses the OAuth2 security protocol for authentication. After the auth
 All requests to the Google Search Console API will include the access token in the authorization header.
 
 ### Self Hosted OAuth Configuration
-The easiest way to configure the integration is to make use of an application Umbraco have pre-configured with Google.  With this in place, the authorization flow will go through a proxy website Umbraco maintains before redirecting back to your Umbraco backoffice.
 
-From version 1.1.0, we've introduced an alternate approach that requires a little more setup, but removes the need for relying on any services from Umbraco when using the integration.
+The easiest way to configure the integration is to make use of an application Umbraco has pre-configured with Google. With this in place, the authorization flow will go through a proxy website Umbraco maintains before redirecting back to your Umbraco backoffice.
+
+From version 1.1.0, we introduced an alternate approach that requires a little more setup. It removes the need for relying on any services from Umbraco when using the integration.
 
 To use this you need to setup your own app with Google and use an extended configuration like this:
 
@@ -84,15 +85,16 @@ To use this you need to setup your own app with Google and use an extended confi
 {% endtab %}
 {% endtabs %}
 
-The authorization mode is toggled by the `UseUmbracoAuthorization` flag, which by default is set to `true` so previous versions of the integration are not impacted.
+The authorization mode is toggled by the `UseUmbracoAuthorization` flag, which by default is set to `true` meaning that previous versions are not impacted.
 
 Authorization specific methods are exposed by the [`IGoogleAuthorizationService`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.UrlInspectionTool/Services/IGoogleAuthorizationService.cs) and implemented by two services:
+
 - [UmbracoAuthorizationService](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.UrlInspectionTool/Services/UmbracoAuthorizationService.cs)
 - [AuthorizationService](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.UrlInspectionTool/Services/AuthorizationService.cs)
 
 The used service is provided using the `AuthorizationImplementationFactory` method, depending on the type of authorization selected.
 
-If you are selecting your own authorization flow that uses the `AuthorizationService`, the redirect URL will be this one: `/umbraco/api/Googleauthorization/oauth`, from [`GoogleAuthorizationController`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.UrlInspectionTool/Controllers/GoogleSearchConsoleAuthorizationController.cs). Please make sure to set to correct URL in the settings of the website and in the configuration of your _Google_ app.
+If you are selecting your own authorization flow that uses the `AuthorizationService`, the redirect URL will be this one: `/umbraco/api/Googleauthorization/oauth`, from [`GoogleAuthorizationController`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.UrlInspectionTool/Controllers/GoogleSearchConsoleAuthorizationController.cs). Make sure to set to correct URL in the settings of the website and in the configuration of your _Google_ app.
 
 The authorization controller uses the `window.postMessage` interface for cross-window communications when redirecting from the Shopify authorization server.
 
