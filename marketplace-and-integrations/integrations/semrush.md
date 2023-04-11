@@ -38,9 +38,10 @@ Administrators are provided with additional features for managing the connectivi
 For more detail on the integration, its purpose, and how2 it was built, please see the [accompanying blog post](https://umbraco.com/blog/integrating-umbraco-cms-with-semrush/).
 
 ### Self Hosted OAuth Configuration
-The easiest way to configure the integration is to make use of an application Umbraco have pre-configured with Semrush.  With this in place, the authorization flow will go through a proxy website Umbraco maintains before redirecting back to your Umbraco backoffice.
 
-From version 1.2.0, we've introduced an alternate approach that requires a little more setup, but removes the need for relying on any services from Umbraco when using the integration.
+The easiest way to configure the integration is to make use of an application Umbraco has pre-configured with Semrush. With this in place, the authorization flow will go through a proxy website Umbraco maintains before redirecting back to your Umbraco backoffice.
+
+From version 1.2.0, we introduced an alternate approach that requires a little more setup. It removes the need for relying on any services from Umbraco when using the integration.
 
 To use this you need to setup your own app with Semrush and use an extended configuration like this:
 
@@ -91,9 +92,10 @@ To use this you need to setup your own app with Semrush and use an extended conf
 {% endtab %}
 {% endtabs %}
 
-The authorization mode is toggled by the `UseUmbracoAuthorization` flag, which by default is set to `true` so previous versions of the integration are not impacted.
+The authorization mode is toggled by the `UseUmbracoAuthorization` flag, which by default is set to `true` meaning that previous versions are not impacted.
 
 Authorization specific methods are exposed by the [`ISemrushAuthorizationService`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.SEO.Semrush/Services/ISemrushAuthorizationService.cs) and implemented by two services:
+
 - [UmbracoAuthorizationService](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.SEO.Semrush/Services/UmbracoAuthorizationService.cs)
 - [AuthorizationService](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.SEO.Semrush/Services/AuthorizationService.cs)
 
