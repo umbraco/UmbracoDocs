@@ -112,30 +112,30 @@ To create a form, follow these steps:
 
 | Field Name         | Value                |
 | ------------------ | -------------------- |
-| Enter question     | Name                 |
+| Enter question     | **Name**                 |
 | Alias              | fullName             |
 | Choose answer type | Short answer         |
 | Field Type         | text                 |
 | Mandatory          | Yes                  |
 
 9. **Submit** the changes.
-10. Repeat **steps 8-10** to add the following fields:
+10. Repeat **steps 7-9** to add the following fields:
 
 | Field Name         | Value                |
 | ------------------ | -------------------- |
-| Enter question     | Company Name         |
+| Enter question     | **Company Name**         |
 | Choose answer type | Short answer         |
 
 | Field Name         | Value                      |
 |--------------------|----------------------------|
-| Enter question     | How should we contact you? |
+| Enter question     | **How should we contact you?** |
 | Choose answer type | Single choice              |
 | Prevalues Items    | phone, email               |
 | Mandatory          | Yes                        |
 
 | Field Name         | Value                      |
 |--------------------|----------------------------|
-| Enter question     | Enter your phone number    |
+| Enter question     | **Enter your phone number**    |
 | Choose answer type | Short answer               |
 | Field Type         | tel                        |
 | Validation         | Validate as a number       |
@@ -145,11 +145,11 @@ To create a form, follow these steps:
 13. Select **How should we contact you? from the dropwdown**.
 14. Enter **phone** in the value field.
 15. **Submit** the changes.
-16. Repeat **steps 8-10** to add the following field:
+16. Repeat **steps 7-9** to add the following field:
 
 | Field Name         | Value                        |
 |--------------------|------------------------------|
-| Enter question     | Enter your email address     |
+| Enter question     | **Enter your email address**     |
 | Choose answer type | Short answer                 |
 | Field Type         | email                        |
 | Validation         | Validate as an email address |
@@ -159,23 +159,23 @@ To create a form, follow these steps:
 19. Select **How should we contact you? from the dropwdown**.
 20. Enter **email** in the value field.
 21. **Submit** the changes.
-22. Repeat **steps 8-10** to add the following field:
+22. Repeat **steps 7-9** to add the following field:
 
 | Field Name         | Value                                                    |
 |--------------------|----------------------------------------------------------|
-| Enter question     | What is your role?                                       |
+| Enter question     | **What is your role?**                                       |
 | Choose answer type | Dropdown                                                 |
 | Prevalues Items    | manager, developer, tester, writer, marketing specialist |
 
 | Field Name                     | Value                    |
 |--------------------------------|--------------------------|
-| Enter question                 | Attachments (if any)     |
+| Enter question                 | **Attachments (if any)**     |
 | Choose answer type             | File upload              |
 | Predefined allowed file types  | pdf, png, jpg, gif, txt  |
 
 | Field Name         | Value               |
 |--------------------|---------------------|
-| Enter question     | Are you a Robot?    |
+| Enter question     | **Are you a Robot?**    |
 | Choose answer type | reCAPTCHAv2         |
 | Theme              | light               |
 | Size               | normal              |
