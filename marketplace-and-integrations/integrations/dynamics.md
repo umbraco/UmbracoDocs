@@ -132,7 +132,7 @@ The authorization specific methods are exposed by the [`IDynamicsAuthorizationSe
 
 The used service is provided using the `AuthorizationImplementationFactory` method, depending on the type of authorization selected.
 
-If you are selecting your own authorization flow that uses the `AuthorizationService`, the redirect URL will be this one: `/umbraco/api/dynamicsauthorization/oauth`, from [`DynamicsAuthorizationController`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Crm.Dynamics/Controllers/DynamicsAuthorizationController.cs). Make sure to set to correct URL in the settings of the website and in the configuration of your Shopify app.
+If you are selecting your own authorization flow that uses the `AuthorizationService`, the redirect URL will be this one: `/umbraco/api/dynamicsauthorization/oauth`, from [`DynamicsAuthorizationController`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Crm.Dynamics/Controllers/DynamicsAuthorizationController.cs). Make sure to set to correct URL in the settings of the website and in the configuration for your Dynamics app.
 
 The authorization controller uses the `window.postMessage` interface for cross-window communications when redirecting from the _Microsoft_ authorization server.
 
