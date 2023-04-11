@@ -96,7 +96,7 @@ The used service is provided using the `AuthorizationImplementationFactory` meth
 
 If you are selecting your own authorization flow that uses the `AuthorizationService`, the redirect URL will be this one: `/umbraco/api/Googleauthorization/oauth`, from [`GoogleAuthorizationController`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.SEO.GoogleSearchConsole.UrlInspectionTool/Controllers/GoogleSearchConsoleAuthorizationController.cs). Make sure to set to correct URL in the settings of the website and in the configuration of your _Google_ app.
 
-The authorization controller uses the `window.postMessage` interface for cross-window communications when redirecting from the Shopify authorization server.
+The authorization controller uses the `window.postMessage` interface for cross-window communications when redirecting from the Google Search Console authorization server.
 
 ## Working With the URL Inspection Tool
 
