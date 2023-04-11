@@ -1,5 +1,6 @@
 ---
 versionFrom: 7.0.0
+versionRemoved: 9.9.9
 meta.Title: "Uploading an Umbraco package to Our"
 meta.Description: "Information on how to upload your Umbraco package on Our"
 ---
