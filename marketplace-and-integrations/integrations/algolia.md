@@ -72,7 +72,7 @@ After creating an index, only the content definition is saved into the _algoliaI
 The actual content payload is pushed to Algolia for indices created in Umbraco in two scenarios:
 
 * From the list of indices, the _Build_ action is triggered, resulting in all content of specific Document Types being sent as JSON to Algolia.
-* Using a custom handler for [CacheRefresher Notifications](https://docs.umbraco.com/umbraco-cms/reference/notifications/cacherefresher-notifications) which will check the list of indices for the specific Document Type, and will update a matching Algolia object. The handler will only run for [SchedulingPublisher server or Single server roles](https://docs.umbraco.com/umbraco-cms/reference/scheduling#using-serverroleaccessor).
+* Using a custom handler for [CacheRefresher Notifications](https://docs.umbraco.com/umbraco-cms/reference/notifications/cacherefresher-notifications) which will check the list of indices for the specific Document Type, and update a matching Algolia object. The handler will only run for [SchedulingPublisher server or Single server roles](https://docs.umbraco.com/umbraco-cms/reference/scheduling#using-serverroleaccessor).
 
 From the dashboard, you can also perform a search over one selected index, or remove it.
 
