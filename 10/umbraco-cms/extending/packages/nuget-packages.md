@@ -1,12 +1,12 @@
 ---
-description: "Umbraco packages use the familiar NuGet format and method of distribution."
+description: Umbraco packages use the familiar NuGet format and method of distribution.
 ---
 
 # NuGet Packages
 
 All Umbraco packages for Umbraco 10+ are distributed as NuGet packages.
 
-A NuGet package is a standard way of delivering compiled code and configuration to a .NET project. NuGet packages contain dlls and other files required for the solution. For more information on NuGet packages see Microsoft's [An introduction to NuGet](https://docs.microsoft.com/en-us/nuget/what-is-nuget) documentation.
+A NuGet package is a standard way of delivering compiled code and configuration to a .NET project. NuGet packages contain `dll`s and other files required for the solution. For more information on NuGet packages see Microsoft's [An introduction to NuGet](https://docs.microsoft.com/en-us/nuget/what-is-nuget) documentation.
 
 NuGet packages can be installed via the command line using a command like the following:
 
