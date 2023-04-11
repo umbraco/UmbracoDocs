@@ -1,5 +1,5 @@
 ---
-description: The process of installing and, in turn, uninstalling packages in your Umbraco CMS website depends on the package type and size.
+description: The process of installing and, in turn, uninstalling packages in your Umbraco CMS website depends on the version and package type.
 ---
 
 # Installing and uninstalling Umbraco packages

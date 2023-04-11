@@ -4,7 +4,7 @@ description: Depending on which version of Umbraco CMS you are using, we disting
 
 # Package Types
 
-There are two main ways to install packages in Umbraco CMS: Package zip files and NuGet packages. Each of these has its own advantages.
+There are two main ways to install packages in Umbraco CMS: Package zip files and NuGet packages.
 
 {% hint style="warning" %}
 The zip file package type is only available for Umbraco version 8 and earlier versions. Learn more about it in the [NuGet Packages](#package-zip files) section of this article.
@@ -32,14 +32,6 @@ NuGet packages can include any solution files and can be configured to run Power
 As NuGet packages are installed outside of the Umbraco website they cannot directly manipulate any of the Umbraco settings or content during their installation.
 
 When adding or changing configuration of Umbraco as part of a NuGet package you need to develop code to run as part of a [Migration](../database.md). The Migration will run the first time the Umbraco site starts after the package is installed, applying the correct configuration.
-
-### Advantages of NuGet packages
-
-NuGet packages are useful when you wish to deploy your Umbraco site using standard CI/CD deployment tools.
-
-NuGet manages package dependencies and references for you which means that you do not need to update your build process for each new package.
-
-NuGet maintains a reference list of packages used in the project and ensures the ability to restore and update the packages from that list.
 
 ## Package zip files
 
@@ -69,11 +61,3 @@ Packages zip files can contain:
 {% hint style="info" %}
 If you want to include media in your package, you must select it in both the "Media" section and the "Package Files" section under "Path to file"
 {% endhint %}
-
-### Advantages of package zip files
-
-Package zip files have been developed for Umbraco and have a number of advantages.
-
-Packages uploaded to [Our.umbraco.com](https://our.umbraco.com/packages/) or the [Umbraco Marketplace (Umbraco 8+)](https://marketplace.umbraco.com/) are listed in the package directory and are accessible through the Umbraco backoffice
-
-Package zip files can add items to Umbraco and you can change Umbraco config and settings via package actions.
