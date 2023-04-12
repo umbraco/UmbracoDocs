@@ -6,7 +6,7 @@ description: When rebooting an Umbraco CMS website it is common to distinguish b
 
 The load time of your site is dependent on a few different things. When talking about hot vs. cold restarts of your Umbraco CMS website it comes down to whether NuCache needs to be rebuilt.
 
-* **Cold restart**: When ["In Memory Auto"](../templating/modelsbuilder/builder-modes.md#in-memory) mode is enabled and the NuCache needs to rebuild.
+* **Cold restart**: When NuCache needs to rebuild.
 * **Hot start**: When NuCache does not need to rebuild.
 
 ## Hot start
@@ -15,7 +15,7 @@ When no cache needs to be rebuild, the restart of your site is generally faster.
 
 ## Cold start
 
-The **cold restart** expression is generally used for a site with ["In Memory Auto"](../templating/modelsbuilder/builder-modes.md#in-memory) mode enabled. This means that the startup time will be slightly slower as the NuCache needs to rebuild amongst other things.
+The **cold restart** expression is generally used for when the NuCache needs to rebuild, this wil resolve in a slower startup time, depending on the amount of content on the site. Generally speaking, the more content you have the longer a cold boot will take.
 
 ## Troubleshooting slow startup
 
@@ -26,6 +26,12 @@ Below is a list of some of the more common reasons:
 * NuCache needs to rebuild (cold restart).
 * Examine indexes need to rebuild - for large sites, this can take some time.
 * The custom code on the website is not optimized and does not live up to .NET standards.
+
+## In Memory Auto
+
+Another factory that can slow down time to first page load is the In Memory Auto models builder setting. Having this setting enabled will result in the first page load to be slower, this is because as the first page is requested, the strongly typed models needs to be compiled and loaded in. 
+
+This is however less noticable on consecutive restarts, a bit like hot and cold restarts, since the compiled models will be cached on disk, so they don't need to be recompiled untill the models change again.
 
 ## Legacy Umbraco
 
