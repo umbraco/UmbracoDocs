@@ -31,7 +31,7 @@ Below is a list of some of the more common reasons:
 
 Another factor that can slow down time to first page load is the [In Memory Auto models builder](../templating/modelsbuilder/builder-modes.md#in-memory) setting. Having this setting enabled will result in the first page load being slower. The reason for this is that when the first page is requested, the strongly typed models needs to be compiled and loaded in. 
 
-This is, however, less noticable on consecutive restarts, a bit like hot and cold restarts, since the compiled models will be cached on disk, so they don't need to be recompiled untill the models change again.
+This is, however, less noticeable on consecutive restarts, a bit like hot and cold restarts. Since the compiled models will be cached on disk, they don't need to be recompiled until the models change again.
 
 ## Legacy Umbraco
 
