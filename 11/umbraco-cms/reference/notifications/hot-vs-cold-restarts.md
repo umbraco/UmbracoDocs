@@ -15,7 +15,7 @@ When no cache needs to be rebuild, the restart of your site is generally faster.
 
 ## Cold start
 
-The **cold restart** expression is generally used for when the NuCache needs to rebuild, this wil resolve in a slower startup time, depending on the amount of content on the site. Generally speaking, the more content you have the longer a cold boot will take.
+The **cold restart** expression is generally used for when the NuCache needs to rebuild. This will resolve in a slower startup time, depending on the amount of content on the site. Generally speaking, the more content you have the longer a cold boot will take.
 
 ## Troubleshooting slow startup
 
@@ -29,9 +29,9 @@ Below is a list of some of the more common reasons:
 
 ## In Memory Auto
 
-Another factory that can slow down time to first page load is the In Memory Auto models builder setting. Having this setting enabled will result in the first page load to be slower, this is because as the first page is requested, the strongly typed models needs to be compiled and loaded in. 
+Another factor that can slow down time to first page load is the In Memory Auto models builder setting. Having this setting enabled will result in the first page load being slower. The reason for this is that when the first page is requested, the strongly typed models needs to be compiled and loaded in. 
 
-This is however less noticable on consecutive restarts, a bit like hot and cold restarts, since the compiled models will be cached on disk, so they don't need to be recompiled untill the models change again.
+This is, however, less noticable on consecutive restarts, a bit like hot and cold restarts, since the compiled models will be cached on disk, so they don't need to be recompiled untill the models change again.
 
 ## Legacy Umbraco
 
