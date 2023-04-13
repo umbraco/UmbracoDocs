@@ -339,6 +339,8 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
     {
         public void Compose(IUmbracoBuilder builder)
         {
+            builder.Services.ConfigureOptions<ConfigureProductIndexOptions>();
+            
             builder.Services.AddExamineLuceneIndex<ProductIndex, ConfigurationEnabledDirectoryFactory>("ProductIndex");
 
             builder.Services.AddSingleton<ProductIndexValueSetBuilder>();
