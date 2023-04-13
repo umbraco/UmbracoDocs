@@ -37,6 +37,10 @@ Version 11 contains a number of breaking changes. We don't expect many projects 
 * The obsolete `Build` method overload was removed in `FormViewModel`.
 * The obsolete constructor on `FormRenderingService` was removed.
 
+#### Behavior
+
+* The session variable `ContourMemberKey` is no longer set.
+
 <summary>Version 11</summary>
 
 Version 11 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `11.0.0`. It runs on .NET 7.
