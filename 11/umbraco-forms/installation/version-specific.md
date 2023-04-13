@@ -8,6 +8,35 @@ If you are upgrading to a new minor or patch version, you can find information a
 
 <details>
 
+<summary>Version 12</summary>
+
+Version 12 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `12.0.0`. It runs on .NET 7.
+
+#### Breaking changes
+
+Version 11 contains a number of breaking changes. We don't expect many projects to be affected by them as they are in areas that are not typical extension points. For reference though, the full details are listed here:
+
+#### Dependencies
+
+#### Code
+
+* The obsolete constant `FormsConfigPath` was removed.
+* Obsolete constructor was removed on `DictionaryHelper`.
+* Obsolete overloads of `StringExtensions.ParsePlaceHolders` was removed.
+* Unused parameter in the constructors of `DatabaseIntegrityHealthCheck` and `MsSqlAnalyzer` were removed.
+* Default interface implementations were removed from the `MessageOnSubmitIsHtml`, `DisplayDefaultFields` and `SelectedDisplayFields` properties defined on `IFormEntity`.
+* The `SearchForms` method, previously defined in the implementation of `IFormService`, has been added to the interface.
+* An obsolete method on `IPlaceholderParsingService` were removed.
+* An obsolete method on `IWorkflowService` were removed.
+* Obsolete methods on `UmbracoBuilderExtensions` were removed.
+* The obsolete constructors on `BaseEmailWorkflowType`, `SendEmail`, `SendRazorEmail` and `SendXsltEmail` workflows were removed.
+* The obsolete constructors on `FormsApiControllerBase`, `DefinitionsController` and `EntriesController` API controllers were removed.
+* The obsolete constructors on `UmbracoFormsController` were removed.
+* The obsolete constructors on `FieldController` and `RecordController` were removed.
+* The obsolete overload on the `ViewHelper.RenderPartialViewToString` method was removed and the `FakeController` class used in this method was made private.
+* The obsolete `Build` method overload was removed in `FormViewModel`.
+* The obsolete constructor on `FormRenderingService` was removed.
+
 <summary>Version 11</summary>
 
 Version 11 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `11.0.0`. It runs on .NET 7.
