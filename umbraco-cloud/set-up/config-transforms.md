@@ -1,8 +1,14 @@
+---
+description: >-
+  Configuration files can be transformed to match requirements on different
+  Umbraco Cloud environments.
+---
+
 # Config Transforms
 
-In this article, you will find two options for applying environment-specific configuration to your Umbraco Cloud project.
+In this article, you will find examples of applying environment-specific configuration to your Umbraco Cloud project.
 
-The article will show how to use a `Web.Config` transform as well as the `appSettings.json` file.
+Common configuration files, like the `web.config` and `appSettings.json` files on your Umbraco Cloud project will be used as examples.
 
 ## What are Config Transforms?
 
