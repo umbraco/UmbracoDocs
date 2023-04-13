@@ -4,7 +4,7 @@ In this article you can find information about security on Umbraco Cloud.
 
 ## HTTPS & Certificates
 
-All Umbraco Cloud websites use HTTPS by default. Both the default {projectName}.s1.umbraco.io and custom domains are protected by periodically renewed certificates issued by Cloudflare. This service is offered as part of Umbraco Cloud for all plans.
+All Umbraco Cloud websites use HTTPS by default. Both the default {projectName}.{region}.umbraco.io and custom domains are protected by periodically renewed certificates issued by Cloudflare. This service is offered as part of Umbraco Cloud for all plans.
 
 ### Custom Certificates
 
