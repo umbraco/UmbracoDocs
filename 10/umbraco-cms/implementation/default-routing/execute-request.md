@@ -19,7 +19,7 @@ When you are working in a View of type `UmbracoViewPage` (which is the default v
 @Model.Name
 ```
 
-All Umbraco view page types inherit from `UmbracoViewPage<TModel>`. A neat trick is that if you want your view Model to be `IPublishedContent` you can change your view type to `UmbracoViewPage` and the view will still render without issue even though the controller is passing it a model of type ContentModel.
+All Umbraco view page types inherit from `UmbracoViewPage<TModel>`. A neat trick is that if you want your view Model to be `IPublishedContent` you can change your view type to `UmbracoViewPage`. After changin the type the view will still render without issue even though the controller is passing it a model of type ContentModel.
 
 ## [IPublishedContent](../../reference/querying/ipublishedcontent/)
 
