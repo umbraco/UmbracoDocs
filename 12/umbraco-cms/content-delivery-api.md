@@ -2,7 +2,7 @@
 
 ## Overview
 
-With its several extension points, this new API delivers headless capabilities built directly into Umbraco. It allows you to retrieve your content items in a JSON format and lets you preset them in different channels, using your preferred technology stack. This feature preserves the friendly editing experience of Umbraco, while also ensuring a performant delivery of content, even in headless scenarios.&#x20;
+With its several extension points, this new API delivers headless capabilities built directly into Umbraco. It allows you to retrieve your content items in a JSON format and lets you preset them in different channels, using your preferred technology stack. This feature preserves the friendly editing experience of Umbraco, while also ensuring a performant delivery of content, even in headless scenarios.
 
 ## Getting Started
 
@@ -67,7 +67,7 @@ Once the Delivery API has been configured on your project, you need to be aware 
 * `Umbraco.CMS.ContentApi.ApiKey` specifies what API key to use for authorizing access to the API when public access is disabled. This setting is also used for managing access to draft content.
 * `Umbraco.CMS.ContentApi.DisallowedContentTypeAliases` contains the aliases of the content types that would never be exposed through the Delivery API.
 
-To test the functionality of the API, you would need to create some content items first. &#x20;
+To test the functionality of the API, you would need to create some content items first.
 
 ## Endpoints
 
@@ -79,7 +79,7 @@ The output produced by the Delivery API can either represent a specific content 
 
 <summary>Content item JSON Schema</summary>
 
-E_xplain how a content item is represented in the Delivery API; the overall structure_
+_Explain how a content item is represented in the Delivery API; the overall structure_
 
 * _simple props_
 * _props referencing another piece of content_
@@ -106,8 +106,6 @@ E_xplain how a content item is represented in the Delivery API; the overall stru
 
 <summary>Preview</summary>
 
-Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something&#x20;
-
 
 
 </details>
@@ -122,7 +120,7 @@ Preview is something Preview is something Preview is something Preview is someth
 
 ### Get by id
 
-{% swagger method="get" path="/content/item/{id}" baseUrl="/umbraco/delivery/api/v1" summary="Gets a content item by id" expanded="false" %}
+{% swagger method="get" path="/content/item/{id}" baseUrl="/umbraco/delivery/api/v1" summary="Gets a content item by id" %}
 {% swagger-description %}
 Returns a single item
 {% endswagger-description %}
@@ -131,23 +129,23 @@ Returns a single item
 GUID of the content item
 {% endswagger-parameter %}
 
-{% swagger-parameter in="header" name="Accept-Language" type="String" %}
+{% swagger-parameter in="header" name="Accept-Language" type="String" required="false" %}
 Requested culture
 {% endswagger-parameter %}
 
-{% swagger-parameter in="header" name="Api-Key" type="String" %}
+{% swagger-parameter in="header" name="Api-Key" type="String" required="false" %}
 Access token
 {% endswagger-parameter %}
 
-{% swagger-parameter in="header" name="Preview" type="Boolean" %}
+{% swagger-parameter in="header" name="Preview" type="Boolean" required="false" %}
 Whether draft content is requested
 {% endswagger-parameter %}
 
-{% swagger-parameter in="header" name="Start-Item" type="String" %}
+{% swagger-parameter in="header" name="Start-Item" type="String" required="false" %}
 URL segment of the root content item
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="expand" type="String" %}
+{% swagger-parameter in="query" name="expand" type="String" required="false" %}
 Which properties to expand and therefore include in the output if they refer to another piece of content
 {% endswagger-parameter %}
 
@@ -171,23 +169,23 @@ Returns a single item
 Path of the content item
 {% endswagger-parameter %}
 
-{% swagger-parameter in="header" name="Accept-Language" type="String" %}
+{% swagger-parameter in="header" name="Accept-Language" type="String" required="false" %}
 Requested culture
 {% endswagger-parameter %}
 
-{% swagger-parameter in="header" name="Api-Key" type="String" %}
+{% swagger-parameter in="header" name="Api-Key" type="String" required="false" %}
 Access token
 {% endswagger-parameter %}
 
-{% swagger-parameter in="header" name="Preview" type="Boolean" %}
+{% swagger-parameter in="header" name="Preview" type="Boolean" required="false" %}
 Whether draft content is requested
 {% endswagger-parameter %}
 
-{% swagger-parameter in="header" name="Start-Item" type="String" %}
+{% swagger-parameter in="header" name="Start-Item" type="String" required="false" %}
 URL segment of the root content item
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="expand" type="String" %}
+{% swagger-parameter in="query" name="expand" type="String" required="false" %}
 Which properties to expand and therefore include in the output if they refer to another piece of content
 {% endswagger-parameter %}
 
@@ -207,43 +205,43 @@ Which properties to expand and therefore include in the output if they refer to 
 Returns a single or multiple items
 {% endswagger-description %}
 
-{% swagger-parameter in="query" name="fetch" type="String" %}
+{% swagger-parameter in="query" name="fetch" type="String" required="false" %}
 Structural query string option
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="filter" type="String Array" %}
+{% swagger-parameter in="query" name="filter" type="String Array" required="false" %}
 Filtering query string options
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="sort" type="String Array" %}
+{% swagger-parameter in="query" name="sort" type="String Array" required="false" %}
 Sorting query string options
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="skip" type="Integer" %}
+{% swagger-parameter in="query" name="skip" type="Integer" required="false" %}
 Amount of items to skip
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="take" type="Integer" %}
+{% swagger-parameter in="query" name="take" type="Integer" required="false" %}
 Amount of items to take
 {% endswagger-parameter %}
 
-{% swagger-parameter in="header" name="Accept-Language" type="String" %}
+{% swagger-parameter in="header" name="Accept-Language" type="String" required="false" %}
 Requested culture
 {% endswagger-parameter %}
 
-{% swagger-parameter in="header" name="Api-Key" type="String" %}
+{% swagger-parameter in="header" name="Api-Key" type="String" required="false" %}
 Access token
 {% endswagger-parameter %}
 
-{% swagger-parameter in="header" name="Preview" type="Boolean" %}
+{% swagger-parameter in="header" name="Preview" type="Boolean" required="false" %}
 Whether draft content is requested
 {% endswagger-parameter %}
 
-{% swagger-parameter in="header" name="Start-Item" type="String" %}
+{% swagger-parameter in="header" name="Start-Item" type="String" required="false" %}
 URL segment of the root content item
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="expand" type="String" %}
+{% swagger-parameter in="query" name="expand" type="String" required="false" %}
 Which properties to expand and therefore include in the output if they refer to another piece of content
 {% endswagger-parameter %}
 
@@ -267,7 +265,4 @@ Which properties to expand and therefore include in the output if they refer to 
 * Denylist of document types
 * Custom property editors
 
-
-
 ## Testing Checklist
-
