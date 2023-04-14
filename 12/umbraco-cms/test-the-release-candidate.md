@@ -2,7 +2,7 @@
 
 This article will cover in detail how you can try out and test the Release Candidate (RC) of Umbraco 12.
 
-## Content Delivery API
+## [Content Delivery API](test-the-release-candidate.md#content-delivery-api)
 
 ### Overview
 
@@ -10,7 +10,7 @@ With its several extension points, this new API delivers headless capabilities b
 
 ### Getting Started
 
-When upgrading an existing project to version 12, you would need to opt-in explicitly for using the Delivery API. Below you will find the steps you need to take in order to configure it for your Umbraco project.
+When upgrading an existing project to version 12, you would need to opt-in explicitly for using the Delivery API. Below you will find the steps you need to take in order to configure it for your Umbraco project. If you start with a fresh Umbraco 12 installation, the Delivery API will be enabled by default and therefore you can skip straight to the [Additional configuration](test-the-release-candidate.md#additional-configuration) section.
 
 #### Register the Content Delivery API dependencies
 
@@ -46,11 +46,9 @@ Add the `ContentApi` configuration section in `appsettings.json` and set the val
 ```
 {% endcode %}
 
-If you start with a fresh Umbraco 12 installation, the Delivery API will be enabled by default.
-
 #### Additional configuration
 
-Once you enable the Delivery API on an existing project, you need to be aware that all your content will be made available to the public. However, there are a few additional configuration options that you can use to restrict access to the Delivery API endpoints and limit the content that is returned.
+Once the Delivery API has been configured on your project, you need to be aware that all your content will be made available to the public. However, there are a few additional configuration options that you can use to restrict access to the Delivery API endpoints and limit the content that is returned.
 
 {% code title="appsettings.json" %}
 ```json
@@ -61,7 +59,7 @@ Once you enable the Delivery API on an existing project, you need to be aware th
                 "Enabled": true,
                 "PublicAccess": true,
                 "ApiKey": "my-api-key",
-                "DisallowedContentTypeAliases" : ["alias1", "alias2", "alias3"]
+                "DisallowedContentTypeAliases": ["alias1", "alias2", "alias3"]
             }
         }
     }
@@ -69,13 +67,62 @@ Once you enable the Delivery API on an existing project, you need to be aware th
 ```
 {% endcode %}
 
-* `Umbraco.CMS.ContentApi.PublicAccess` determines whether the Delivery API (_if enabled_) should be accessible to the public or if access should require an API key.
-* `Umbraco.CMS.ContentApi.ApiKey` specifies what API key to use for authorizing access to the API when public access is disabled and for obtaining draft content.
+* `Umbraco.CMS.ContentApi.PublicAccess` determines whether the Delivery API (_if enabled_) should be publicly accessible or if access should require an API key.
+* `Umbraco.CMS.ContentApi.ApiKey` specifies what API key to use for authorizing access to the API when public access is disabled. This setting is also used for managing access to draft content.
 * `Umbraco.CMS.ContentApi.DisallowedContentTypeAliases` contains the aliases of the content types that would never be exposed through the Delivery API.
 
-To test the functionality of the API, you would need to create some content items first.
+To test the functionality of the API, you would need to create some content items first. &#x20;
 
 ### Endpoints
+
+The output produced by the Delivery API can either represent a specific content item or a paged list of multiple items. Before exploring the endpoints that API has to offer, there are a few concepts to keep in mind.
+
+#### Concepts
+
+<details>
+
+<summary>Content item JSON Schema</summary>
+
+E_xplain how a content item is represented in the Delivery API; the overall structure_
+
+* _simple props_
+* _props referencing another piece of content_
+
+</details>
+
+<details>
+
+<summary>Start item</summary>
+
+
+
+</details>
+
+<details>
+
+<summary>Output expansion</summary>
+
+
+
+</details>
+
+<details>
+
+<summary>Preview</summary>
+
+Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something Preview is something&#x20;
+
+
+
+</details>
+
+<details>
+
+<summary>Localization</summary>
+
+
+
+</details>
 
 #### Get by id
 
@@ -102,6 +149,10 @@ Whether draft content is requested
 
 {% swagger-parameter in="header" name="Start-Item" type="String" %}
 URL segment of the root content item
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="expand" type="String" %}
+Which properties to expand and therefore include in the output if they refer to another piece of content
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Content item" %}
@@ -138,6 +189,10 @@ Whether draft content is requested
 
 {% swagger-parameter in="header" name="Start-Item" type="String" %}
 URL segment of the root content item
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="expand" type="String" %}
+Which properties to expand and therefore include in the output if they refer to another piece of content
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Content item" %}
@@ -190,6 +245,10 @@ Whether draft content is requested
 
 {% swagger-parameter in="header" name="Start-Item" type="String" %}
 URL segment of the root content item
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="expand" type="String" %}
+Which properties to expand and therefore include in the output if they refer to another piece of content
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Paginated list of content items" %}
