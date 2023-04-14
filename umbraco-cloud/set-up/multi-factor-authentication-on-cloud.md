@@ -47,7 +47,7 @@ You have the option to use your phone when you log in to the Umbraco Cloud porta
 Before deactivating your old phone number, make sure to update the phone number used for your MFA. Changing the phone number used for MFA will require verification through the old number.
 {% endhint %}
 
-![Phone authentication](images/Phone-auth.png)
+![Phone authentication](../release-notes/images/Phone-auth.png)
 
 ## Disabling MFA
 
