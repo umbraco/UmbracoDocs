@@ -18,6 +18,10 @@ Version 11 contains a number of breaking changes. We don't expect many projects 
 
 #### Dependencies
 
+* Umbraco CMS dependency was updated to `12.0.0`.
+* The dependency on `Hellang.Middleware.ProblemDetails` was removed.
+* The dependency on `NSwag.AspNetCore` was removed and replaced with `Swashbuckle.AspNetCore`.
+
 #### Code
 
 * The obsolete constant `FormsConfigPath` was removed.
@@ -40,6 +44,7 @@ Version 11 contains a number of breaking changes. We don't expect many projects 
 #### Behavior
 
 * The session variable `ContourMemberKey` is no longer set.
+* Exception handling in the Forms API has been aligned with the CMS leading to subtle differences in the population of the `ProblemDetails` exposed.
 
 <summary>Version 11</summary>
 
