@@ -3,7 +3,7 @@
 {% hint style="info" %}
 We highly recommend that you use the [Block Grid](../block-editor/block-grid-editor.md) instead.
 
-Grid Layout has been marked as obsolete and development on the property editor has been discontinued.
+Grid Layout has been marked as obsolete and development on the property editor has been discontinued. It will be removed completely as a core property editor in Umbraco 13.
 {% endhint %}
 
 `Returns: JSON`
