@@ -25,9 +25,7 @@ As well as the [default AngularJS filters](https://docs.angularjs.org/api/ng/fil
 | [umbCmsTitleCase](https://apidocs.umbraco.com/v10/ui/#/api/umbraco.filters.filter:umbCmsTitleCase) | Converts a string to title case                         | String                      |                                                              |
 | [umbCmsJoinArray](https://apidocs.umbraco.com/v10/ui/#/api/umbraco.filters.filter:umbCmsJoinArray) | Joins an array into one string                          | Array (of string or object) | separator: string used to join values together, e.g. "`, `"<br />prop (optional): string key indicating which property to join when used on an array of objects |  
 
-### Example usage
-
-#### mediaItemResolver
+### Example: mediaItemResolver
 This is how you could use the filter for a Media Picker of type `Umbraco.MediaPicker3` with multiple images:
 `{{(myPropertyAlias[0].mediaKey | mediaItemResolver).name}}`
 
