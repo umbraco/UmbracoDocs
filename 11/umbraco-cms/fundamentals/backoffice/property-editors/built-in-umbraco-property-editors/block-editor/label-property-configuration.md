@@ -25,6 +25,19 @@ As well as the [default AngularJS filters](https://docs.angularjs.org/api/ng/fil
 | [umbCmsTitleCase](https://apidocs.umbraco.com/v10/ui/#/api/umbraco.filters.filter:umbCmsTitleCase) | Converts a string to title case                         | String                      |                                                              |
 | [umbCmsJoinArray](https://apidocs.umbraco.com/v10/ui/#/api/umbraco.filters.filter:umbCmsJoinArray) | Joins an array into one string                          | Array (of string or object) | separator: string used to join values together, e.g. "`, `"<br />prop (optional): string key indicating which property to join when used on an array of objects |  
 
+### Example usage
+
+#### mediaItemResolver
+Assuming a media picker of type Umbraco.MediaPicker3 with multiple images, and taking the first image
+`{{(myPropertyAlias[0].mediaKey | mediaItemResolver).name}}`
+
+**mediaKey** is a Guid like *c7a4526c-6b32-4665-a047-5b3e7256d973*
+
+For the Media Name the same could be achieved with ncNodeName
+`{{myPropertyAlias[0].mediaKey ? ('umb://media/'+myPropertyAlias[0].mediaKey.split("-").join("") | ncNodeName) : 'No Image' }}`
+
+**ncNodeName** expectes a udi like *umb://media/c7a4526c6b324665a0475b3e7256d973*
+
 ### Custom filters
 
 If the filters do not suit your needs, you can create custom filters by creating a plugin in `App_Plugins` and adding a filter module.
