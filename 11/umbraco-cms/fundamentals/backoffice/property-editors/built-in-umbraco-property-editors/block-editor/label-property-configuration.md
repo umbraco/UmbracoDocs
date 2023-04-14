@@ -26,13 +26,20 @@ As well as the [default AngularJS filters](https://docs.angularjs.org/api/ng/fil
 | [umbCmsJoinArray](https://apidocs.umbraco.com/v10/ui/#/api/umbraco.filters.filter:umbCmsJoinArray) | Joins an array into one string                          | Array (of string or object) | separator: string used to join values together, e.g. "`, `"<br />prop (optional): string key indicating which property to join when used on an array of objects |  
 
 ### Example: mediaItemResolver
+
 This is how you could use the filter for a Media Picker of type `Umbraco.MediaPicker3` with multiple images:
-`{{(myPropertyAlias[0].mediaKey | mediaItemResolver).name}}`
+
+```
+{{(myPropertyAlias[0].mediaKey | mediaItemResolver).name}}
+```
 
 The `mediaKey` is a Guid like `c7a4526c-6b32-4665-a047-5b3e7256d973`.
 
 For the Media Name the same could be achieved using `ncNodeName` like shown below:
-`{{myPropertyAlias[0].mediaKey ? ('umb://media/'+myPropertyAlias[0].mediaKey.split("-").join("") | ncNodeName) : 'No Image' }}`
+
+```
+{{myPropertyAlias[0].mediaKey ? ('umb://media/'+myPropertyAlias[0].mediaKey.split("-").join("") | ncNodeName) : 'No Image' }}
+```
 
 The `ncNodeName` value expects a UDI like `umb://media/c7a4526c6b324665a0475b3e7256d973`.
 
