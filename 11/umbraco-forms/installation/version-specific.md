@@ -14,7 +14,7 @@ Version 12 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `12.
 
 #### Breaking changes
 
-Version 11 contains a number of breaking changes. If you do run into any, they should be fairly straightforward to adjust and recompile.
+Version 11 contains a number of breaking changes. If you do run into any, they should be straightforward to adjust and recompile.
 
 For reference, the full details are listed here:
 
