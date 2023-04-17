@@ -1,5 +1,7 @@
 ---
-description: Depending on which version of Umbraco CMS you are using, we distinguish between two package types, NuGet packages, and Package ZIP files.
+description: >-
+  Depending on which version of Umbraco CMS you are using, we distinguish
+  between two package types, NuGet packages, and Package ZIP files.
 ---
 
 # Package Types
@@ -7,7 +9,7 @@ description: Depending on which version of Umbraco CMS you are using, we disting
 There are two main ways to install packages in Umbraco CMS: Package zip files and NuGet packages.
 
 {% hint style="warning" %}
-The zip file package type is only available for Umbraco version 8 and earlier versions. Learn more about it in the [Package zip Files](#package-zip-files) section of this article.
+The zip file package type is only available for Umbraco version 8 and earlier versions. Learn more about it in the [Package zip Files](types-of-packages.md#package-zip-files) section of this article.
 {% endhint %}
 
 When developing a package you need to consider the Umbraco CMS version you're using before determining the package type.
@@ -38,12 +40,12 @@ When adding or changing configuration of Umbraco as part of a NuGet package you 
 {% hint style="warning" %}
 Zip file packages are only available for Umbraco CMS 8 and earlier versions.
 
-Refer to the [NuGet Packages](#nuget-packages) section above, if your website is using Umbraco 10 or a later version.
+Refer to the [NuGet Packages](types-of-packages.md#nuget-packages) section above, if your website is using Umbraco 10 or a later version.
 {% endhint %}
 
 A package zip file can be installed directly through the Umbraco backoffice.
 
-![Zip packages can be installed via the Umbraco backoffice package section](../../../../10/umbraco-cms/extending/packages/images/backoffice-package-section.png)
+![Zip packages can be installed via the Umbraco backoffice package section](images/backoffice-package-section.png)
 
 Packages zip files can contain:
 
