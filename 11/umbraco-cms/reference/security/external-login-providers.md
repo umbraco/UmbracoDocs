@@ -27,6 +27,8 @@ Install an appropriate Nuget package for the provider you wish to use. Some popu
 This community-created package with a complete Umbraco solution incl. an SQLite database demonstrates how OpenID Connect can be used: [Umbraco OpenIdConnect Example](https://github.com/jbreuer/Umbraco-OpenIdConnect-Example).
 
 It is great for testing and for trying out the implementation before building it into your own project.
+
+**This project is not managed or maintained by Umbraco HQ.**
 {% endhint %}
 
 To configure the provider create a new static extension class and configure a custom-named option as `GoogleBackOfficeExternalLoginProviderOptions` described in detail in the [auto-linking](auto-linking.md) section. The code example below shows how the configuration for Google Authentication can be done. You can find an example of how this can be done with Microsoft in the [Authenticating on the Umbraco backoffice with Active Directory credentials](authenticate-with-active-directory.md) article.
