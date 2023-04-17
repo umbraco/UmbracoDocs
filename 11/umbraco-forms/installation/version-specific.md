@@ -14,7 +14,9 @@ Version 12 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `12.
 
 #### Breaking changes
 
-Version 11 contains a number of breaking changes. We don't expect many projects to be affected by them as they are in areas that are not typical extension points. For reference though, the full details are listed here:
+Version 11 contains a number of breaking changes. If you do run into any, they should be fairly straightforward to adjust and recompile.
+
+For reference, the full details are listed here:
 
 #### Dependencies
 
@@ -23,6 +25,15 @@ Version 11 contains a number of breaking changes. We don't expect many projects 
 * The dependency on `NSwag.AspNetCore` was removed and replaced with `Swashbuckle.AspNetCore`.
 
 #### Code
+
+The following updates describe the more significant changes to the codebase and public API:
+
+* The interfaces that previously defined entity model classes have been removed. These were `IFormEntity`, `IFolderEntity`, `IWorkflowEntity`, `IDataSourceEntity` and `IPrevalueSourceEntity`. All code now refers to the concrete classes.
+* The interfaces that previously defined application model classes have been removed. These were `IFieldPreValueSource`, `IFormDataSource`, `IFormDataSourceField`, `IWorkflow`, `IRecordField` and `IRecord`.
+* These changes affect service, repository and other interfaces and classes that previously used these interfaces. All methods have been updated to use the concrete classes as parameters and return values.
+* The now unused class `InterfaceJsonConverter` was removed.
+
+These updates are more minor.  We don't expect many projects to be affected by them as they are in areas that are not typical extension points:
 
 * The obsolete constant `FormsConfigPath` was removed.
 * Obsolete constructor was removed on `DictionaryHelper`.
