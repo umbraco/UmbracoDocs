@@ -10,7 +10,7 @@ This article describes how to configure Azure Active Directory (Azure AD) with U
 
 ## Configuring Azure AD
 
-Before your applications can interact with Azure AD B2C, they must be registered in a tenant that you manage. For more information, see [Microsoft's Tutorial: Create an Azure Active Directory B2C tenant](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant).
+Before your applications can interact with Azure AD B2C, they must be registered with a tenant that you manage. For more information, see [Microsoft's Tutorial: Create an Azure Active Directory B2C tenant](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant).
 
 ## Installing the NuGet Package
 
@@ -85,17 +85,17 @@ public void ConfigureServices(IServiceCollection services)
 ```
 {% endcode %}
 
-*   Build and run the website. You can now login with your Azure AD credentials.
+*   Build and run the website. You can now log in with your Azure AD credentials.
 
     ![AD Login Screen](../../../../10/umbraco-cms/reference/security/images/AD\_Login.png)
 
 {% hint style="info" %}
 In some cases where Azure B2C does not provide an email for the user, it can be necessary to add additional code.
 
-Add the following snippet within the options of `AddMicrosoftAccount` between lines 29 and 30 in the code sample in step one:
+Add the following snippet within the `AddMicrosoftAccount` options between lines 29 and 30 in the code sample in step one:
 
 ```csharp
- // Example on how to get a different field from the user profile
+ // Example of how to get a different field from the user profile
 options.UserInformationEndpoint = "https://graph.microsoft.com/v1.0/me?$select=otherMails,displayName,givenName,surname,id";
 options.ClaimActions.MapCustomJson(ClaimTypes.Email, x =>
 {
@@ -154,7 +154,7 @@ namespace MyApp
 Ensure to replace **{your\_client\_id}** and **{your\_client\_secret}** in the code with the values from the Azure AD tenant.
 {% endhint %}
 
-* To enable a member to link their account to an external login provider such as Azure AD in the Umbraco Backoffice, you have to implement a custom named configuration `MemberExternalLoginProviderOptions` for Members. Add the following code in the `AzureB2CMembersExternalLoginProviderOptions.cs` file:
+* To enable a member to link their account to an external login provider such as Azure AD in the Umbraco Backoffice, you have to implement a custom-named configuration `MemberExternalLoginProviderOptions` for Members. Add the following code in the `AzureB2CMembersExternalLoginProviderOptions.cs` file:
 
 {% code title="AzureB2CMembersExternalLoginProviderOptions.cs" lineNumbers="true" %}
 ```csharp
@@ -186,7 +186,7 @@ namespace MyApp
 
                 // Optionally specify the default culture to create
                 // the user as. If null it will use the default
-                // culture defined in the web.config, or it can
+                // culture defined in the appSettings.json, or it can
                 // be dynamically assigned in the OnAutoLinking
                 // callback.
 
@@ -242,6 +242,6 @@ public void ConfigureServices(IServiceCollection services)
 ```
 {% endcode %}
 
-*   Build and run the website. Your members can now login with their Azure AD credentials.
+*   Build and run the website. Your members can now log in with their Azure AD credentials.
 
     ![AD Login Screen](../../../../10/umbraco-cms/reference/security/images/AD\_Login\_Members.png)
