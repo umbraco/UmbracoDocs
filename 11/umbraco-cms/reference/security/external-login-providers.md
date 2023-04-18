@@ -43,7 +43,7 @@ It is great for testing and for trying out the implementation before building it
 
 </details>
 
-To configure the provider create a new static extension class and configure a custom-named option as `GoogleBackOfficeExternalLoginProviderOptions` described in detail in the [auto-linking](auto-linking.md) section. The code example below shows how the configuration for Google Authentication can be done.
+To configure the provider create a new static extension class and configure a custom-named option as `ProviderBackOfficeExternalLoginProviderOptions` described in detail in the [auto-linking](auto-linking.md) section. The code example below shows how the configuration for Google Authentication can be done.
 
 ```csharp
 using Umbraco.Cms.Core.DependencyInjection;
@@ -54,22 +54,22 @@ using Microsoft.Extensions.Configuration;
 
 namespace Umbraco.Cms.Web.UI.NetCore.Configuration
 {
-    public static class GoogleBackofficeAuthenticationExtensions
+    public static class ProviderBackofficeAuthenticationExtensions
     {
-        public static IUmbracoBuilder AddGoogleBackofficeAuthentication(this IUmbracoBuilder builder)
+        public static IUmbracoBuilder AddProviderBackofficeAuthentication(this IUmbracoBuilder builder)
         {
             builder.AddBackOfficeExternalLogins(logins =>
             {
                 logins.AddBackOfficeLogin(
                     backOfficeAuthenticationBuilder =>
                     {
-                        backOfficeAuthenticationBuilder.AddGoogle(
+                        backOfficeAuthenticationBuilder.AddProvider(
                             // The scheme must be set with this method to work for the back office
-                            backOfficeAuthenticationBuilder.SchemeForBackOffice(GoogleBackOfficeExternalLoginProviderOptions.SchemeName),
+                            backOfficeAuthenticationBuilder.SchemeForBackOffice(ProviderBackOfficeExternalLoginProviderOptions.SchemeName),
                             options =>
                             {
-                                //  By default this is '/signin-google' but it needs to be changed to this
-                                options.CallbackPath = "/umbraco-google-signin";
+                                //  By default this is '/signin-provider' but it needs to be changed to this
+                                options.CallbackPath = "/umbraco-provider-signin";
                                 options.ClientId = "YOURCLIENTID";
                                 options.ClientSecret = "YOURCLIENTSECRET";
                             });
@@ -81,7 +81,7 @@ namespace Umbraco.Cms.Web.UI.NetCore.Configuration
 }
 ```
 
-Another similar example of the configuration for Google Authentication for **Members** may look like this:
+Another similar example of the configuration for authentication for **Members** may look like this:
 
 ```csharp
 using Microsoft.Extensions.DependencyInjection;
@@ -90,18 +90,18 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.UI.NetCore.Configuration
 {
-    public static class GoogleMemberAuthenticationExtensions
+    public static class ProviderMemberAuthenticationExtensions
     {
-        public static IUmbracoBuilder AddGoogleMemberAuthentication(this IUmbracoBuilder builder)
+        public static IUmbracoBuilder AddProviderMemberAuthentication(this IUmbracoBuilder builder)
         {
             builder.AddMemberExternalLogins(logins =>
             {
                 logins.AddMemberLogin(
                     memberAuthenticationBuilder =>
                     {
-                        memberAuthenticationBuilder.AddGoogle(
+                        memberAuthenticationBuilder.AddProvider(
                             // The scheme must be set with this method to work for the back office
-                            memberAuthenticationBuilder.SchemeForMembers(GoogleMemberExternalLoginProviderOptions.SchemeName),
+                            memberAuthenticationBuilder.SchemeForMembers(ProviderMemberExternalLoginProviderOptions.SchemeName),
                             options =>
                             {
                                 options.ClientId = "YOURCLIENTID";
@@ -124,8 +124,9 @@ public void ConfigureServices(IServiceCollection services)
         .AddBackOffice()
         .AddWebsite()
         .AddComposers()
-        .AddGoogleBackofficeAuthentication()
-        .AddGoogleMemberAuthentication()
+
+        // Register your configuration methods here
+
         .Build();
 }
 ```
@@ -134,7 +135,7 @@ For a more in-depth article on how to set up OAuth providers in .NET refer to th
 
 Depending on the provider you've configured and its caption/color, the end result will look similar to this for users:
 
-![OAuth Login Screen](../../../../10/umbraco-cms/reference/security/images/google-oauth-v8.png)
+![OAuth Login Screen](images/google-oauth-v8.png)
 
 Because Umbraco does not control the UI of members, this can be set up to look exactly like you would like. Umbraco ships with a Partial Macro snippet for `Login` that will show all configured external login providers.
 
