@@ -235,7 +235,7 @@ var mediaItems = Model.Value<IEnumerable<IPublishedContent>>(PublishedValueFallb
 
 If the current content item doesn't have the requested value, use an alternative 'fallback' value in its place.
 
-Each of the examples below make use of an injected `PublishedValueFallback` this is achived by adding the following at the top of your razor file:
+Each of the examples below make use of an injected `PublishedValueFallback`. This is achieved by adding the following at the top of your Razor file:
 
 ```csharp
 @inject IPublishedValueFallback PublishedValueFallback
