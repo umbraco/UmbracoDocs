@@ -232,6 +232,7 @@ If the current content item doesn't have the requested value, use an alternative
 
 Each of the examples below make use of an injected PublishedValueFallback. This is achieved by adding the following at the top of your Razor file:
 
+```csharp
 @inject IPublishedValueFallback PublishedValueFallback
 This parameter is optional, but can make unit testing easier.
 
