@@ -234,6 +234,8 @@ Each of the examples below make use of an injected PublishedValueFallback. This 
 
 ```csharp
 @inject IPublishedValueFallback PublishedValueFallback
+```
+
 This parameter is optional, but can make unit testing easier.
 
 ### Fallback to Default Value
