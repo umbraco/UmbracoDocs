@@ -1,19 +1,18 @@
 ---
 description: >-
-  Learn how to use Azure Active Directory credentials to login to the Umbraco
-  backoffice
+  Learn how to use Azure Active Directory credentials to login to Umbraco either as a user or a member.
 ---
 
-# Authenticating the Umbraco backoffice with Azure Active Directory credentials
+# Add Azure Active Directory authentication
 
-This article describes how to configure Azure Active Directory (Azure AD) with Umbraco Users and Members.
+This tutorial takes you through configuring Azure Active Directory (Azure AD) with Umbraco backoffice users and frontend members.
 
 {% hint style="warning" %}
 Azure AD conflicts with Umbraco ID which is the main authentication method used on all Umbraco Cloud projects.
 
 Due to this, we **highly recommend not using Azure AD for backoffice authentication on your Umbraco Cloud projects**.
 
-It is still possible to use other [External Login Providers](external-login-providers.md) like Google Auth and OpenIdConnect, with Umbraco Cloud.
+It is still possible to use other [External Login Providers](../reference/security/external-login-providers.md) like Google Auth and OpenIdConnect, with Umbraco Cloud.
 {% endhint %}
 
 ## Configuring Azure AD
@@ -29,7 +28,7 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
 
 ## Azure AD Authentication for Users
 
-* Create a class called `BackofficeAuthenticationExtensions.cs` to configure the external login.
+1. Create a class called `BackofficeAuthenticationExtensions.cs` to configure the external login.
 
 {% code title="BackofficeAuthenticationExtensions.cs" lineNumbers="true" %}
 ```csharp
@@ -76,7 +75,7 @@ namespace MyApp
 Ensure to replace `{your_client_id}` and `{your_client_secret}` in the code with the values from the Azure AD tenant. If Azure AD is configured to use accounts in the organizational directory only (single tenant), you also have to specify the Token and AuthorizationEndpoint.
 {% endhint %}
 
-* Update `ConfigureServices` method in the `Startup.cs` file:
+2. Update `ConfigureServices` method in the `Startup.cs` file:
 
 {% code title="Startup.cs" lineNumbers="true" %}
 ```csharp
@@ -93,9 +92,9 @@ public void ConfigureServices(IServiceCollection services)
 ```
 {% endcode %}
 
-* Build and run the website. You can now log in with your Azure AD credentials.
+3. Build and run the website. You can now log in with your Azure AD credentials.
 
-![AD Login Screen](../../../../10/umbraco-cms/reference/security/images/AD\_Login.png)
+![AD Login Screen](images/AD\_Login.png)
 
 {% hint style="info" %}
 In some cases where Azure B2C does not provide an email for the user, it can be necessary to add additional code.
@@ -116,8 +115,8 @@ This extra code will read the user email from the Microsoft Graph API.
 
 ## Azure AD Authentication for Members
 
-* Create a Member login functionality, see the [Member registration and login](../../tutorials/members-registration-and-login.md#member-registration-and-login) article.
-* Create a class called `MemberAuthenticationExtensions.cs` to configure the external login.
+1. Create a Member login functionality, see the [Member registration and login](members-registration-and-login.md#member-registration-and-login) article.
+2. Create a class called `MemberAuthenticationExtensions.cs` to configure the external login.
 
 {% code title="MemberAuthenticationExtensions.cs" lineNumbers="true" %}
 ```csharp
@@ -162,7 +161,7 @@ namespace MyApp
 Ensure to replace `YOURCLIENTID` and `YOURCLIENTSECRET` in the code with the values from the Azure AD tenant.
 {% endhint %}
 
-* To enable a member to link their account to an external login provider such as Azure AD in the Umbraco Backoffice, you have to implement a custom-named configuration `MemberExternalLoginProviderOptions` for Members. Add the following code in the `AzureB2CMembersExternalLoginProviderOptions.cs` file:
+3. To enable a member to link their account to an external login provider such as Azure AD in the Umbraco Backoffice, you have to implement a custom-named configuration `MemberExternalLoginProviderOptions` for Members. Add the following code in the `AzureB2CMembersExternalLoginProviderOptions.cs` file:
 
 {% code title="AzureB2CMembersExternalLoginProviderOptions.cs" lineNumbers="true" %}
 ```csharp
@@ -231,7 +230,7 @@ namespace MyApp
 ```
 {% endcode %}
 
-* Next, update `ConfigureServices` method in the `Startup.cs` file:
+4. Next, update `ConfigureServices` method in the `Startup.cs` file:
 
 {% code title="Startup.cs" lineNumbers="true" %}
 ```csharp
@@ -250,6 +249,6 @@ public void ConfigureServices(IServiceCollection services)
 ```
 {% endcode %}
 
-* Build and run the website. Your members can now log in with their Azure AD credentials.
+5. Build and run the website. Your members can now log in with their Azure AD credentials.
 
-![AD Login Screen](../../../../10/umbraco-cms/reference/security/images/AD\_Login\_Members.png)
+![AD Login Screen](images/AD\_Login\_Members.png)
