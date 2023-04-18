@@ -618,6 +618,10 @@ StackQueue has been moved from `Umbraco.Core.Collections` to the `Umbraco.Cms.Co
 
 This setting has been superseded by `DistributedLockingWriteLockDefaultTimeout`.
 
+#### GlobalSetting UmbracoPath cannot be configured
+
+It is no longer possible to rename the `/Umbraco` folder path using configuration. The property still exists but is hardcoded to `/Umbraco` and will be removed in Umbraco 12, planned for release in June 2023.    
+    
 </details>
 
 ## Find your upgrade path

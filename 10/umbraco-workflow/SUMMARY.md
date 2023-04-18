@@ -3,6 +3,7 @@
 * [Umbraco Workflow Documentation](README.md)
 * [Installation](installing-workflow.md)
 * [Licensing](licensing.md)
+* [Release notes](release-notes.md)
 
 ## Getting Started
 
