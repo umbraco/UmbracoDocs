@@ -1,6 +1,7 @@
 # Table of contents
 
 * [What is Umbraco Deploy?](README.md)
+* [Test the RC](test-the-release-candidate.md)
 * [Getting started](get-started-with-deploy.md)
 * [Configuration](deploy-settings.md)
 * [Licensing](the-licensing-model.md)
