@@ -8,6 +8,14 @@ description: >-
 
 This article describes how to configure Azure Active Directory (Azure AD) with Umbraco Users and Members.
 
+{% hint style="warning" %}
+Azure AD conflicts with Umbraco ID which is the main authentication method used on all Umbraco Cloud projects.
+
+Due to this, we **highly recommend not using Azure AD for backoffice authentication on your Umbraco Cloud projects**.
+
+It is still possible to use other [External Login Providers](external-login-providers.md) like Google Auth and OpenIdConnect, with Umbraco Cloud.
+{% endhint %}
+
 ## Configuring Azure AD
 
 Before your applications can interact with Azure AD B2C, they must be registered with a tenant that you manage. For more information, see [Microsoft's Tutorial: Create an Azure Active Directory B2C tenant](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant).
