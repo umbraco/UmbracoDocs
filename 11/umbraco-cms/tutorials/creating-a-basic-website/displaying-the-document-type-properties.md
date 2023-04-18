@@ -16,7 +16,7 @@ To set the Document Type properties:
 2. Select **Templates** in the **Templating** section, and open the **Homepage** template.
 3.  Scroll down to the `<!-- Jumbotron, w title -->` section (around line 46) and highlight the text `“Welcome - UmbracoTV”` (around line 49).
 
-    ![Replace page Title value](<../../../../10/umbraco-cms/tutorials/creating-a-basic-website/images/figure-18-replace-hardcoded-text-with-umbraco-page-field-v9 (1).png>)
+    ![Replace page Title value](<../../../../10/umbraco-cms/tutorials/creating-a-basic-website/images/figure-18-replace-hardcoded-text-with-umbraco-page-field-v9 (2).png>)
 4. Click **Insert** and select **Value**.
 5.  Select **pageTitle** field from the drop-down list.
 

@@ -157,7 +157,7 @@ Once it is upgraded and you have verified everything is working, move on to the 
 
 The first thing to do is to spin up a fresh new Umbraco 8.1+ site. Make sure everything works and that no content is there.
 
-![Fresh 8.1 site](<../../../../../../10/umbraco-cms/fundamentals/setup/upgrading/images/fresh-8\_1-site (2).png>)
+![Fresh 8.1 site](<../../../../../../10/umbraco-cms/fundamentals/setup/upgrading/images/fresh-8\_1-site (1).png>)
 
 {% hint style="warning" %}
 If you have customized the `UsersMembershipProvider` on your Umbraco 7 site you need to copy that over to the 8.1 `web.config` as well. Additionally you need to update the `type` attribute to be `type="Umbraco.Web.Security.Providers.UsersMembershipProvider, Umbraco.Web"`.
@@ -169,7 +169,7 @@ Take a backup of your database from the **Umbraco 7.14 site**. Take the informat
 
 Once the connectionstring is set, the final step is to change the Umbraco version number in the `web.config` on the **Umbraco 8.1 site**. Chang it to `7.14.0`. This will indicate that there is an upgrade pending and it needs to run the migration.
 
-![Set Umbraco version in the web.config](<../../../../../../10/umbraco-cms/fundamentals/setup/upgrading/images/set-umbraco-version (2).png>)
+![Set Umbraco version in the web.config](<../../../../../../10/umbraco-cms/fundamentals/setup/upgrading/images/set-umbraco-version (1).png>)
 
 The version will be set to 8.1.0, and you need to change it to the version you are currently migrating from.
 
