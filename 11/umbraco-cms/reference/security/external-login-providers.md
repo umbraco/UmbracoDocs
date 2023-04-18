@@ -21,17 +21,29 @@ Install an appropriate Nuget package for the provider you wish to use. Some popu
 * [Open ID Connect](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.OpenIdConnect)
 * [Others](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/other-logins?view=aspnetcore-5.0)
 
-{% hint style="info" %}
-**Try it out**
+## Try it out
+
+{% content-ref url="../../tutorials/add-azure-active-directory-authentication.md" %}
+[configuration](../../tutorials/add-azure-active-directory-authentication.md)
+{% endcontent-ref %}
+
+{% content-ref url="../../tutorials/add-google-authentication.md" %}
+[configuration](../../tutorials/add-google-authentication.md)
+{% endcontent-ref %}
+
+<details>
+
+<summary>Umbraco OpenIdConnect Example [Community-made]</summary>
 
 This community-created package with a complete Umbraco solution incl. an SQLite database demonstrates how OpenID Connect can be used: [Umbraco OpenIdConnect Example](https://github.com/jbreuer/Umbraco-OpenIdConnect-Example).
 
 It is great for testing and for trying out the implementation before building it into your own project.
 
 **This project is not managed or maintained by Umbraco HQ.**
-{% endhint %}
 
-To configure the provider create a new static extension class and configure a custom-named option as `GoogleBackOfficeExternalLoginProviderOptions` described in detail in the [auto-linking](auto-linking.md) section. The code example below shows how the configuration for Google Authentication can be done. You can find an example of how this can be done with Microsoft in the [Authenticating on the Umbraco backoffice with Active Directory credentials](authenticate-with-active-directory.md) article.
+</details>
+
+To configure the provider create a new static extension class and configure a custom-named option as `GoogleBackOfficeExternalLoginProviderOptions` described in detail in the [auto-linking](auto-linking.md) section. The code example below shows how the configuration for Google Authentication can be done.
 
 ```csharp
 using Umbraco.Cms.Core.DependencyInjection;
