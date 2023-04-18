@@ -14,7 +14,7 @@ To enable auto-linking you have to implement a custom-named configuration of `Ba
 
 ### Example for users
 
-_This example shows a connection to an Open ID Connect Service such as_ [_IdentityServer4_](https://github.com/IdentityServer/IdentityServer4) _or_ [_OpenIDDict_](https://github.com/openiddict/openiddict-core)
+This example shows a connection to an Open ID Connect Service such as [_IdentityServer4_](https://github.com/IdentityServer/IdentityServer4) or [_OpenIDDict_](https://github.com/openiddict/openiddict-core).
 
 First, you need to create a `OpenIdConnectBackOfficeExternalLoginProviderOptions.cs` file which configures options like those shown below.
 
@@ -101,7 +101,7 @@ namespace Umbraco9
 Additionally, there are more advanced properties for `BackOfficeExternalLoginProviderOptions`:
 
 * `BackOfficeExternalLoginProviderOptions.CustomBackOfficeView`
-  * Allows for specifying a custom angular HTML view that will render in place of the default external login button. The purpose of this is in case you want to completely change the UI but also in these circumstances:
+  * Allows for specifying a custom angular HTML view that will render in place of the default external login button. USe this in case you want to change the UI or one of the following:
     * You want to display something different where external login providers are listed: in the login screen vs the backoffice panel vs on the logged-out screen. This same view will render in all of these cases but you can use the current route parameters to customize what is shown.
     * You want to change how the button interacts with the external login provider. For example, instead of having the site redirect on button-click, you want to open a popup window to load the external login provider.
   * The path is a virtual path, for example: `"~/App_Plugins/MyPlugin/BackOffice/my-external-login.html"`
@@ -172,12 +172,12 @@ services.AddUmbraco(_env, _config)
 ```
 
 {% hint style="info" %}
-For some providers, it doesn't make sense to use auto-linking. This is especially true for public providers such as Google or Facebook. In those cases, it would mean that anyone who has a Google or Facebook account can log into your site. For public providers such as this, if auto-linking was needed you would need to limit the access by domain or other information provided in the Claims using the options/callbacks specified in those provider's authentication options.
+For some providers, it doesn't make sense to use auto-linking. This is especially true for public providers such as Google or Facebook. In those cases, it would mean that anyone who has a Google or Facebook account can log into your site. If auto-linking for public providers such as these was needed you would need to limit the access. This can be done by domain or other information provided in the claims using the options/callbacks specified in those provider's authentication options.
 {% endhint %}
 
 ### Example for members
 
-The way to implement auto-linking for members is fairly similar to how it is for users. The main difference is the UI, where Umbraco does not have a fixed login page for members. Instead, Umbraco ships with some Partial Macro Snippets for `Login` and `EditProfile` that contains handling of Login and manual linking of the configured external member providers.
+The way to implement auto-linking for members is similar to how it is for users. The main difference is the UI, where Umbraco does not have a fixed login page for members. Instead, Umbraco ships with some Partial Macro Snippets for `Login` and `EditProfile` that contains handling of Login and manual linking of the configured external member providers.
 
 When auto-linking is enabled, only the `Login` snippet is relevant as users do not have to register before.
 
@@ -298,23 +298,23 @@ Auto-linking only makes sense if you have a public member registration anyway or
 
 ## Local logins
 
-If you have configured auto-linking, then any auto-linked user or member will have an empty password assigned and they will not be able to log in locally (via username and password). In order to log in locally, they will have to assign a password to their account in the backoffice or the edit profile page.
+If you have auto-linking configured, then any auto-linked user or member will have an empty password assigned. This means that they will not be able to log in locally (via username and password). In order to log in locally, they will have to assign a password to their account in the backoffice or the edit profile page.
 
 For users only, if the `DenyLocalLogin` option is enabled, then all password-changing functionality in the backoffice is also disabled and local login is not possible.
 
 ## Transferring Claims from External identities
 
-In some cases, you may want to flow a Claim returned in your external login provider to the Umbraco backoffice identity's Claims (the authentication cookie). This can be done during the `OnAutoLinking` and `OnExternalLogin`.
+In some cases, you may want to flow a Claim returned in your external login provider to the Umbraco backoffice identity's Claims. This could be the authentication cookie. This can be done during the `OnAutoLinking` and `OnExternalLogin`.
 
-The reason for this could be to store the external login provider user ID into the backoffice identity cookie. That way it can be retrieved on each request in order to look up some data in another system that needs the current user id from the external login provider.
+The reason for this could be to store the external login provider user ID into the backoffice identity cookie. It can then be retrieved on each request to look up data in another system needing the current user id from the external login provider.
 
 {% hint style="warning" %}
-Do not flow large amounts of data into the backoffice identity because this information is stored in the backoffice authentication cookie and cookie limits will apply. Data like JWT tokens need to be [persisted](auto-linking.md#storing-external-login-provider-data) somewhere to be looked up and not stored within the backoffice identity itself.
+Do not flow large amounts of data into the backoffice identity. This information is stored in the backoffice authentication cookie and cookie limits will apply. Data like Json Web Tokens (JWT) needs to be [persisted](auto-linking.md#storing-external-login-provider-data) somewhere to be looked up and not stored within the backoffice identity itself.
 {% endhint %}
 
 ### Example
 
-This is a very simplistic example of brevity including no null checks, etc.
+This is a simplistic example of brevity including no null checks, etc.
 
 ```csharp
 OnAutoLinking = (user, loginInfo) => {
