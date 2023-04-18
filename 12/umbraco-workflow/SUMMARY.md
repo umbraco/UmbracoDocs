@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Umbraco Workflow Documentation](README.md)
+* [Test the RC](test-the-release-candidate.md)
 * [Installation](installing-workflow.md)
 * [Licensing](licensing.md)
 
