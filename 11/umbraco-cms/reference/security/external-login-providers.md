@@ -69,7 +69,7 @@ namespace Umbraco.Cms.Web.UI.NetCore.Configuration
 }
 ```
 
-Another, but fairly similar example of the configuration for Google Authentication for Members may look like this:
+Another similar example of the configuration for Google Authentication for **Members** may look like this:
 
 ```csharp
 using Microsoft.Extensions.DependencyInjection;
@@ -128,9 +128,9 @@ Because Umbraco does not control the UI of members, this can be set up to look e
 
 ## Auto-linking accounts for custom OAuth providers
 
-Traditionally, a backoffice User or frontend Member will need to exist in Umbraco first and can then link their user account to an external login provider. In many cases, however, the external login provider you install will be the source of truth for all of your Users and Members.
+Traditionally, a backoffice User or frontend Member will need to exist in Umbraco first. Once they exist there, they can link their user account to an external login provider. In many cases, however, the external login provider you install will be the source of truth for all of your Users and Members.
 
-In this case, you would want to be able to create user accounts in your external login provider and then have that user given access to the backoffice without having to create the user in the backoffice first. This is done via auto-linking.
+In this case, you will want to be able to create user accounts in your external login provider and automatically them access to the backoffice. This is done via auto-linking.
 
 This could also be the case for members if your website allows the public creation of members. In this case, the creation process can be simplified by allowing auto-linking to the external account. This could be when using something like Facebook, Twitter, or Google.
 
