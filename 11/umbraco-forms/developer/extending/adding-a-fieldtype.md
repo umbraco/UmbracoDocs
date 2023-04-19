@@ -44,9 +44,7 @@ namespace MyFormsExtensions
             }
 
             // Also validate it against the original default method.
-            returnStrings.AddRange(base.ValidateField(form, field, postedValues, context, placeholderParsingService, fieldTypeStorage, errors));
-
-            return returnStrings;
+            return base.ValidateField(form, field, postedValues, context, placeholderParsingService, fieldTypeStorage, returnStrings));
         }
     }
 }
