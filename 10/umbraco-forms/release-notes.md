@@ -18,6 +18,11 @@ In this section, you can find the release notes for each version of Umbraco Form
 
 <summary>Version 10</summary>
 
+### [10.3.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.2) (April 18th 2023)
+
+* Fixed issue with field mapper in Umbraco nodes workflow not respecting magic string placeholders [#1005](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1005)
+* Fixed issue with range selector in backoffice responding only to drag events and not click ones
+
 ### [10.3.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.1) (April 4th 2023)
 
 * Fixed UI issue with access to submit message workflow [#998](https://github.com/umbraco/Umbraco.Forms.Issues/issues/998)
