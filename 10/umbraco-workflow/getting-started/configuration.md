@@ -103,6 +103,7 @@ All available `SettingsCustomization` options are illustrated below along with t
         "ConfigureApprovalThreshold": bool,
         "RejectionResetsApprovals": bool,
         "LockIfActive": bool,
+        "MandatoryComments": bool,
         "AllowAttachments": bool,
         "AllowScheduling": bool,
         "RequireUnpublish": bool,
@@ -161,6 +162,10 @@ When true, and ApprovalThreshold is Most or All, rejecting a task resets progres
 #### LockIfActive (bool)
 
 When true, prevents editing content where the node is in an active workflow. When false, content can be edited at any stage of a workflow.
+
+#### MandatoryComments (bool)
+
+When true, comments are required when approving a workflow task. When false, comments are optional when approving a workflow task. Comments are always required when submitting changes for approval.
 
 #### AllowAttachments (bool)
 

@@ -1,5 +1,7 @@
 ---
-description: A guide displaying the options available in the Settings section in Umbraco CMS backoffice.
+description: >-
+  A guide displaying the options available in the Settings section in Umbraco
+  CMS backoffice.
 ---
 
 # Settings Dashboards
@@ -20,7 +22,7 @@ The Welcome dashboard is the first dashboard in the Settings section. Like all d
 
 The Examine Management dashboard provides an overview of the Examine functionality available directly within the Umbraco backoffice. The Umbraco backoffice allows you to view details about your Examine indexes and searchers - all in one place. You can see which fields are being indexed and rebuild the indexes if there's a problem. You can also test keywords to see what results will be returned.
 
-For more information about Examine Management, see the [Examine Management](https://docs.umbraco.com/umbraco-cms/reference/searching/examine/examine-management) article.
+For more information about Examine Management, see the [Examine Management](../../reference/searching/examine/examine-management.md) article.
 
 </details>
 
@@ -30,11 +32,9 @@ For more information about Examine Management, see the [Examine Management](http
 
 The Published Status dashboard displays the status of your site in the Published Cache Status section alongwith the Content and Media nodes value. The Caches section provides three options: Memory Cache, Database Cache, and Internals (NuCache).
 
-- Memory Cache - Reloads the in-memory cache by entirely reloading it from the database cache. Use it when you think that the memory cache has not been properly refreshed.
-
-- Database Cache - Rebuilds the database cache that is the content of the `cmsContentNu` table. Use it when reloading the Memory Cache is not enough and you think that the database cache has not been properly generated.
-
-- Internals - Lets you trigger a NuCache snapshots collection.
+* Memory Cache - Reloads the in-memory cache by entirely reloading it from the database cache. Use it when you think that the memory cache has not been properly refreshed.
+* Database Cache - Rebuilds the database cache that is the content of the `cmsContentNu` table. Use it when reloading the Memory Cache is not enough and you think that the database cache has not been properly generated.
+* Internals - Lets you trigger a NuCache snapshots collection.
 
 </details>
 
@@ -46,11 +46,11 @@ Models builder is a tool that can generate a complete set of strongly-typed publ
 
 The Models Builder dashboard displays the following information:
 
-- Details on how Models Builder is configured, that is: `InMemoryAuto`, `Nothing`, `SourceCodeAuto`, and `SourceCodeManual`.
-- Provides a button to generate models (if the models mode is `SourceCodeManual` mode only).
-- Reports the last error (if any) that would have prevented models from being properly generated.
+* Details on how Models Builder is configured, that is: `InMemoryAuto`, `Nothing`, `SourceCodeAuto`, and `SourceCodeManual`.
+* Provides a button to generate models (if the models mode is `SourceCodeManual` mode only).
+* Reports the last error (if any) that would have prevented models from being properly generated.
 
-For more information about Models Builder, see the [Models Builder](https://docs.umbraco.com/umbraco-cms/reference/templating/modelsbuilder) article.
+For more information about Models Builder, see the [Models Builder](../../reference/templating/modelsbuilder/) article.
 
 </details>
 
@@ -60,7 +60,7 @@ For more information about Models Builder, see the [Models Builder](https://docs
 
 Health Checks are used to determine the status of your Umbraco project. It is a handy list of checks to see if your Umbraco installation is configured according to best practices. It's possible to add your custom-built health checks.
 
-For more information about Health Checks, see the [Health Check](https://docs.umbraco.com/umbraco-cms/extending/health-check) articles.
+For more information about Health Checks, see the [Health Check](../../extending/health-check/) articles.
 
 </details>
 
@@ -72,7 +72,7 @@ You can use the built-in performance profiler to assess the performance when ren
 
 The Profiling dashboard provides a toggle option - `Activate the profiler by default` to keep the profiler active by default for all page renderings. You can use this option without having to set `umbDebug=true` on each page request. The toggle button sets a cookie named `UMB-DEBUG` in your browser, which then activates the profiler automatically.
 
-For more information about MiniProfiler, see the [MiniProfiler](https://docs.umbraco.com/umbraco-cms/fundamentals/code/debugging#miniprofiler) section in the [Debugging](https://docs.umbraco.com/umbraco-cms/fundamentals/code/debugging) article.
+For more information about MiniProfiler, see the [MiniProfiler](../code/debugging/#miniprofiler) section in the [Debugging](../code/debugging/) article.
 
 </details>
 
@@ -84,10 +84,10 @@ The Telemetry Data dashboard is a consent screen that is used for collecting sys
 
 **Detailed** is the default option where the data sent contains:
 
-- Anonymized site ID, Umbraco version, and packages installed.
-- Number of: Root nodes, Content nodes, Macros, Media, Document Types, Templates, Languages, Domains, User Group, Users, Members, and Property Editors in use.
-- System information: Webserver, server OS, server framework, server OS language, and database provider.
-- Configuration settings: Modelsbuilder mode, if custom Umbraco path exists, ASP environment, and if you are in debug mode.
+* Anonymized site ID, Umbraco version, and packages installed.
+* Number of: Root nodes, Content nodes, Macros, Media, Document Types, Templates, Languages, Domains, User Group, Users, Members, and Property Editors in use.
+* System information: Webserver, server OS, server framework, server OS language, and database provider.
+* Configuration settings: Modelsbuilder mode, if custom Umbraco path exists, ASP environment, and if you are in debug mode.
 
 You can see the specific data being sent on each of the levels directly in the **Telemetry Data** Dashboard.
 

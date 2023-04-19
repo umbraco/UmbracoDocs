@@ -4,7 +4,7 @@ In this article you can find information about security on Umbraco Cloud.
 
 ## HTTPS & Certificates
 
-All Umbraco Cloud websites use HTTPS by default. Both the default {projectName}.s1.umbraco.io and custom domains are protected by periodically renewed certificates issued by Cloudflare. This service is offered as part of Umbraco Cloud for all plans.
+All Umbraco Cloud websites use HTTPS by default. Both the default {projectName}.{region}.umbraco.io and custom domains are protected by periodically renewed certificates issued by Cloudflare. This service is offered as part of Umbraco Cloud for all plans.
 
 ### Custom Certificates
 
@@ -132,7 +132,7 @@ When using Cloudflare, which is the default setup for all Cloud projects, the pr
 You can read more about the HTTP request headers coming from Cloudflare in the [Cloudflare Documentation.](https://developers.cloudflare.com/fundamentals/get-started/reference/http-request-headers/).
 
 ```xml
-<rule name="Exluding Umbraco Deploy" enabled="true" stopProcessing="true">
+<rule name="Excluding Umbraco Deploy" enabled="true" stopProcessing="true">
   <match url="^(umbraco/umbracodeploy|umbraco/deploy|umbraco/backoffice/deploy/environment/)(.*)" ignoreCase="true" />
   <conditions logicalGrouping="MatchAll" trackAllCaptures="false"></conditions>
   <action type="None" />
@@ -160,7 +160,7 @@ In the first rule we exclude the Umbraco Deploy endpoints, so that all deploymen
 When your Cloud project is not using Cloudflare, your site gets the Remote IP address of the website visitor. In this case, you should use the second variation as shown below, when restricting access to your backoffice.
 
 ```xml
-<rule name="Exluding Umbraco Deploy" enabled="true" stopProcessing="true">
+<rule name="Excluding Umbraco Deploy" enabled="true" stopProcessing="true">
   <match url="^(umbraco/umbracodeploy|umbraco/deploy|umbraco/backoffice/deploy/environment/)(.*)" ignoreCase="true" />
   <conditions logicalGrouping="MatchAll" trackAllCaptures="false"></conditions>
   <action type="None" />
