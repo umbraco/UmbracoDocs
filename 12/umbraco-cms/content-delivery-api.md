@@ -1,3 +1,7 @@
+---
+description: Get started with the Content Delivery API.
+---
+
 # Content Delivery API
 
 ## Overview
@@ -10,7 +14,7 @@ When upgrading an existing project to version 12, you would need to opt-in expli
 
 ### Register the Content Delivery API dependencies
 
-In the `Startup.cs` file, register the API dependencies in the `ConfigureServices` by adding `.AddContentApi()`:
+In the `Startup.cs` file, register the API dependencies in the `ConfigureServices` by adding `.AddDeliveryApi()`:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -18,7 +22,8 @@ public void ConfigureServices(IServiceCollection services)
     services.AddUmbraco(_env, _config)
         .AddBackOffice()             
         .AddWebsite()
-        .AddContentApi()
+        // Register all Delivery API dependencies
+        .AddDeliveryApi()
         .AddComposers()
         .Build();
 }
@@ -26,14 +31,14 @@ public void ConfigureServices(IServiceCollection services)
 
 ### Enable the Content Delivery API
 
-Add the `ContentApi` configuration section in `appsettings.json` and set the value of the `Enabled` key to `true`:
+Add the `DeliveryApi` configuration section in `appsettings.json` and set the value of the `Enabled` key to `true`:
 
 {% code title="appsettings.json" %}
 ```json
 {
     "Umbraco": {
         "CMS": {
-            "ContentApi": {
+            "DeliveryApi": {
                 "Enabled": true
             }
         }
@@ -51,7 +56,7 @@ Once the Delivery API has been configured on your project, you need to be aware 
 {
     "Umbraco": {
         "CMS": {
-            "ContentApi": {
+            "DeliveryApi": {
                 "Enabled": true,
                 "PublicAccess": true,
                 "ApiKey": "my-api-key",
@@ -63,11 +68,13 @@ Once the Delivery API has been configured on your project, you need to be aware 
 ```
 {% endcode %}
 
-* `Umbraco.CMS.ContentApi.PublicAccess` determines whether the Delivery API (_if enabled_) should be publicly accessible or if access should require an API key.
-* `Umbraco.CMS.ContentApi.ApiKey` specifies what API key to use for authorizing access to the API when public access is disabled. This setting is also used for managing access to draft content.
-* `Umbraco.CMS.ContentApi.DisallowedContentTypeAliases` contains the aliases of the content types that would never be exposed through the Delivery API.
+* `Umbraco.CMS.DeliveryApi.PublicAccess` determines whether the Delivery API (_if enabled_) should be publicly accessible or if access should require an API key.
+* `Umbraco.CMS.DeliveryApi.ApiKey` specifies what API key to use for authorizing access to the API when public access is disabled. This setting is also used for managing access to draft content.
+* `Umbraco.CMS.DeliveryApi.DisallowedContentTypeAliases` contains the aliases of the content types that would never be exposed through the Delivery API.
 
+{% hint style="info" %}
 To test the functionality of the API, you would need to create some content items first.
+{% endhint %}
 
 ## Endpoints
 
@@ -142,7 +149,7 @@ Whether draft content is requested
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Start-Item" type="String" required="false" %}
-URL segment of the root content item
+URL segment or GUID of the root content item
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="expand" type="String" required="false" %}
@@ -182,7 +189,7 @@ Whether draft content is requested
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Start-Item" type="String" required="false" %}
-URL segment of the root content item
+URL segment or GUID of the root content item
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="expand" type="String" required="false" %}
@@ -238,7 +245,7 @@ Whether draft content is requested
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Start-Item" type="String" required="false" %}
-URL segment of the root content item
+URL segment or GUID of the root content item
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="expand" type="String" required="false" %}
@@ -265,4 +272,4 @@ Which properties to expand and therefore include in the output if they refer to 
 * Denylist of document types
 * Custom property editors
 
-## Testing Checklist
+## Current Limitations
