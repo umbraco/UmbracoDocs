@@ -39,7 +39,7 @@ To support multi-region HubSpot forms, the following configuration is required:
   "Umbraco": {
     "Integrations": {
       "Crm": {
-        "Dynamics": {
+        "Hubspot": {
           "Settings": {
             "ApiKey": "[your_private_app_access_token]",
             "Region": "[region]"
