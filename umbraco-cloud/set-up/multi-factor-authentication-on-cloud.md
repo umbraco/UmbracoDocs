@@ -39,7 +39,7 @@ You can use the Microsoft Authenticator App for both iOS and Android or any othe
 
 ![Authenticator app](images/auth-app.png)
 
-In case you want to reset the authenticator app settings for your own user, you can have an administrator for your Umbraco Cloud organization do this. It may be relevant if you want to use another authenticator app on your current phone or transfer the authentication process to another device.
+In case you want to reset the authenticator app settings for your user, an administrator in your Umbraco Cloud organization can do this. It may be relevant if you want to use another authenticator app on your current phone or transfer the authentication process to another device.
 
 ### Phone Authentication
 
