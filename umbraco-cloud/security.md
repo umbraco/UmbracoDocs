@@ -157,7 +157,7 @@ In the first rule we exclude the Umbraco Deploy endpoints, so that all deploymen
 
 **Projects from before December 8th, 2020 (Non-Reverse Proxy, eg. non-Cloudflare)**
 
-When your Cloud project is not using Cloudflare, your site needs to get the Remote IP address of the website visitor. In this case, you should use the second variation as shown below, when restricting access to your backoffice.
+When your Cloud project is not using Cloudflare, your site needs to use the Remote IP address of the website visitor. In this case, you should use the second variation as shown below, when restricting access to your backoffice.
 
 ```xml
 <rule name="Excluding Umbraco Deploy" enabled="true" stopProcessing="true">
