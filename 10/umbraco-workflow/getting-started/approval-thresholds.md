@@ -16,10 +16,10 @@ The threshold options are:
 
 The workflow detail UI displays the following:
 
- - the status of the current task
- - approval status for members of the current group
- - progress towards meeting the threshold for the current approval stage
- - future tasks and the assigned group and its users
+ - The status of the current task
+ - Approval status for members of the current group
+ - Progress towards meeting the threshold for the current approval stage
+ - Future tasks and the assigned group and its users
 
 ![Tasklist with approval thresholds](./images/tasklist-with-approval-thresholds.png)
 
