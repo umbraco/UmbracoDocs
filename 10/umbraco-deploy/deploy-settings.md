@@ -46,7 +46,7 @@ For illustration purposes, the following structure represents the full set of op
             "HttpClientTimeout": "0.0:20:00",
             "DiskOperationsTimeout": "0.0:05:00",
             "SourceDeployBatchSize": null,
-            "ProcessPackageBatchSize": null,
+            "PackageBatchSize": null,
             "UseDatabaseBackedTransferQueue": true,
             "IgnoreBrokenDependenciesBehavior": "Restore",
             "AcceptInvalidCertificates": false,
@@ -161,7 +161,7 @@ An error message of "The remote API has returned a response indicating a platfor
 If encountering this issue, there are two batch settings that can be applied with integer values (for example 500). This will cause Deploy to transfer items in batches, up to a maximum size. This will allow each individual batch to complete within the time available.
 
 - `SourceDeployBatchSize` - applies a batch setting for the transfer of multiple selected items to an upstream environment (such as a media folder with many images).
-- `ProcessPackageBatchSize` - applies a batch setting to the processing of a Deploy "package", which contains all the items selected for a Deploy operation, plus all the determined dependencies and relations.
+- `PackageBatchSize` - applies a batch setting to the processing of a Deploy "package", which contains all the items selected for a Deploy operation, plus all the determined dependencies and relations.
 
 ## UseDatabaseBackedTransferQueue
 
