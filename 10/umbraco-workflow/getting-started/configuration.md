@@ -100,6 +100,7 @@ All available `SettingsCustomization` options are illustrated below along with t
       “General”: {
         “FlowType”: 0|1|2 matching the FlowType enum values,
         “LockIfActive”: bool,
+        "MandatoryComments": bool,
         “AllowAttachments”: bool,
         “AllowScheduling”: bool,
         “RequireUnpublish”: bool,
@@ -142,6 +143,10 @@ Sets the workflow type to one of Explicit (0), Implicit (1), or Exclude (2):
 #### LockIfActive (bool)
 
 When true, prevents editing content where the node is in an active workflow. When false, content can be edited at any stage of a workflow.
+
+#### MandatoryComments (bool)
+
+When true, comments are required when approving a workflow task. When false, comments are optional when approving a workflow task. Comments are always required when submitting changes for approval.
 
 #### AllowAttachments (bool)
 

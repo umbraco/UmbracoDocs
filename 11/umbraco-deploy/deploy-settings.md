@@ -1,5 +1,7 @@
 ---
-description: "Learn about the different settings and configurations available in Umbraco Deploy."
+description: >-
+  Learn about the different settings and configurations available in Umbraco
+  Deploy.
 ---
 
 # Configuration
@@ -110,9 +112,26 @@ This setting allows you to manage how relations are deployed between environment
 ],
 ```
 
+As of Deploy 10.1.2 and 11.0.1, if this setting is left blank, the two relation types used for usage tracking are omitted. These are rebuilt by the CMS following a save of an item in the target environment and so don't need to be transferred. Unless you have specified otherwise, the effective default configuration is:
+
+```json
+"RelationTypes": [
+    {
+        "Alias": "umbDocument",
+        "Mode": "Exclude",
+    },
+    {
+        "Alias": "umbMedia",
+        "Mode": "Exclude",
+    }
+],
+```
+
+If a particular relation type is not listed, it's considered as a "weak" relation.
+
 ## ValueConnectors
 
-This setting is used by package creators who wants their custom editors to work with Deploy. The packages should be creating this setting automatically. There is a community driven package that has value connectors for Deploy called [Deploy Contrib](https://github.com/umbraco/Umbraco.Deploy.Contrib).
+This setting is used by package creators who want their custom editors to work with Deploy. The packages should be creating this setting automatically. There is a community-driven package that has value connectors for Deploy called [Deploy Contrib](https://github.com/umbraco/Umbraco.Deploy.Contrib).
 
 Here is an example of how the setting can look:
 
@@ -127,7 +146,7 @@ Here is an example of how the setting can look:
 
 ## Timeout settings
 
-Umbraco Deploy have a few built-in timeouts, which on larger sites might need to be modified. You will usually see these timeouts in the backoffice with an exception mentioning a timeout. It will be as part of a full restore or a full deploy of an entire site. In the normal workflow you should never hit these timeouts.
+Umbraco Deploy has a few built-in timeouts, which on larger sites might need to be modified. You will usually see these timeouts in the backoffice with an exception mentioning a timeout. It will be as part of a full restore or a full deployment of an entire site. In the normal workflow, you should never hit these timeouts.
 
 There are four settings available relating to backoffice deployment operations:
 
@@ -162,7 +181,7 @@ If encountering this issue, the `SourceDeployBatchSize` setting can be applied w
 
 In earlier versions of Umbraco Deploy, the transfer queue was implemented using in-memory storage. As a result, it would not be persisted across application restarts.
 
-From 9.5 and 10.1, a database backed queue was implemented and is used by default.
+From 10.1, a database-backed queue was implemented and is used by default.
 
 If for any reason there was a need to revert to the previous implementation, the value of this setting can be set to `false`.
 
@@ -176,7 +195,7 @@ In a similar way, Deploy can be configured to allow for backoffice transfers of 
 
 ## AllowMembersDeploymentOperations and TransferMemberGroupsAsContent
 
-As of version 9.3.0, it's also possible to transfer members and member groups via the back-office between environments. This is disabled by default as a deliberate decision to make use of the feature needs to be taken, as for most installations it will make sense to have member data created and managed only in production. There are obvious potential privacy concerns to consider too. However, if being able to deploy and restore this information between environments makes sense for the specific workflow of your project, it's a supported scenario.
+It's also possible to transfer members and member groups via the backoffice between environments. This is disabled by default as a deliberate decision to make use of the feature needs to be taken, as for most installations it will make sense to have member data created and managed only in production. There are obvious potential privacy concerns to consider too. However, if being able to deploy and restore this information between environments makes sense for the specific workflow of your project, it's a supported scenario.
 
 To enable, you can add or amend the `AllowMembersDeploymentOperations` and `TransferMemberGroupsAsContent` settings.
 
@@ -270,7 +289,7 @@ Deploy will do comparisons between the entities in different environments to det
 
 This corresponds to the default setting of `PartialFileContents`.
 
-If a lot of files need to be checked, this can be slow, and a faster option is available that uses the file metadata. The only downside of changing this option is a marginally increased chance of Deploy considering a media file hasn't changed when it has.  This would omit it from the deployment.
+If a lot of files need to be checked, this can be slow, and a faster option is available that uses the file metadata. The only downside of changing this option is a marginally increased chance of Deploy considering a media file hasn't changed when it has. This would omit it from the deployment.
 
 To use this method, set the value to `Metadata`.
 
@@ -286,4 +305,4 @@ The cut-off before switching methods is set by this configuration value, and it 
 
 When restoring between different media systems exceptions can occur due to file paths. They can happen between a local file system and a remote system based on blob storage. What is accepted on one system may be rejected on another as the file path is too long. Normally this will only happen for files with particularly long names.
 
-If you are happy to continue without throwing exceptions in these instances you can set this value to `true`.  For example, this may make sense if restoring to a local or development environment. If this is done such files will be skipped, and although the media item will exist there will be no associated file.
+If you are happy to continue without throwing exceptions in these instances you can set this value to `true`. For example, this may make sense if restoring to a local or development environment. If this is done such files will be skipped, and although the media item will exist there will be no associated file.

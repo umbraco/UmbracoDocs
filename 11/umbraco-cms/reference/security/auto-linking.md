@@ -4,19 +4,19 @@ description: Learn more about linking to external login providers.
 
 # Linking External Login Provider accounts
 
-Traditionally when using [External login providers (OAuth)](external-login-providers.md), a backoffice user or website member will need to exist first and then that user can link their user account to an external login provider in the backoffice or edit profile page.
+Traditionally when using [External login providers (OAuth)](external-login-providers.md), a backoffice User or website Member will need to exist in Umbraco first. After that, the user can link their user account to an external login provider in the backoffice or edit the profile page.
 
-In many cases, however, the external login provider you install will be the source of truth for all of your users and you may want to provide a Single Sign On (SSO) approach to the backoffice or your member sections of your website. This is called Auto Linking.
+In many cases, however, the external login provider you install will be the source of truth for all of your users and members. In this case, you will want to provide a Single Sign On (SSO) approach to logging in. This is called **auto-Linking**.
 
 ## Configure External Login provider
 
-To enable auto linking you have to implement a custom named configuration of `BackOfficeExternalLoginProviderOptions` or `MemberExternalLoginProviderOptions` for users or members, respectively.
+To enable auto-linking you have to implement a custom-named configuration of `BackOfficeExternalLoginProviderOptions` or `MemberExternalLoginProviderOptions` for users or members, respectively.
 
 ### Example for users
 
-_This example shows connection to an Open ID Connect Service such as_ [_IdentityServer4_](https://github.com/IdentityServer/IdentityServer4) _or_ [_OpenIDDict_](https://github.com/openiddict/openiddict-core)
+_This example shows a connection to an Open ID Connect Service such as_ [_IdentityServer4_](https://github.com/IdentityServer/IdentityServer4) _or_ [_OpenIDDict_](https://github.com/openiddict/openiddict-core)
 
-You can first create a `OpenIdConnectBackOfficeExternalLoginProviderOptions.cs` file which configures the options like
+First, you need to create a `OpenIdConnectBackOfficeExternalLoginProviderOptions.cs` file which configures options like those shown below.
 
 ```csharp
 using Microsoft.Extensions.Options;
@@ -53,7 +53,7 @@ namespace Umbraco9
 
                 // Optionally specify the default culture to create
                 // the user as. If null it will use the default
-                // culture defined in the web.config, or it can
+                // culture defined in your appSettings.json, or it can
                 // be dynamically assigned in the OnAutoLinking
                 // callback.
 
@@ -91,7 +91,7 @@ namespace Umbraco9
 
             // Optionally choose to automatically redirect to the
             // external login provider so the user doesn't have
-            // to click the login button. This is
+            // to click the login button.
             options.AutoRedirectLoginToExternalProvider = false;
         }
     }
@@ -107,13 +107,13 @@ Additionally, there are more advanced properties for `BackOfficeExternalLoginPro
   * The path is a virtual path, for example: `"~/App_Plugins/MyPlugin/BackOffice/my-external-login.html"`
   * When specifying this view it is 100% up to your angular view and affiliated angular controller to perform all required logic.
 
-To register this configuration class, you can call the following from your `startup.cs`:
+To register the configuration class, you can call the following from your `startup.cs`:
 
 ```csharp
 services.ConfigureOptions<OpenIdConnectBackOfficeExternalLoginProviderOptions>();
 ```
 
-We recommend to create an extension method on the `IUmbracoBuilder`, to add the Open Id Connect Authentication, like this This extension can also handle the configuration of `OpenIdConnectBackOfficeExternalLoginProviderOptions`:
+We recommend creating an extension method to the `IUmbracoBuilder`, to add the Open Id Connect Authentication. This extension can also handle the configuration of `OpenIdConnectBackOfficeExternalLoginProviderOptions`:
 
 ```csharp
 public static IUmbracoBuilder AddOpenIdConnectAuthentication(this IUmbracoBuilder builder)
@@ -160,7 +160,7 @@ public static IUmbracoBuilder AddOpenIdConnectAuthentication(this IUmbracoBuilde
 }
 ```
 
-Finally this extension can also be called from the `Startup.cs` like the example below:
+Finally, this extension can also be called from the `Startup.cs` like the example below:
 
 ```csharp
 services.AddUmbraco(_env, _config)
@@ -177,11 +177,11 @@ For some providers, it doesn't make sense to use auto-linking. This is especiall
 
 ### Example for members
 
-The way to implement auto linking for members is fairly similar to how it is for users. The main difference is the UI, where Umbraco do not have a fixed login page for members. Instead, Umbraco ships with some Partial Macro Snippets for `Login` and `EditProfile` that contains handling of Login and manual linking of the configured external member providers.
+The way to implement auto-linking for members is fairly similar to how it is for users. The main difference is the UI, where Umbraco does not have a fixed login page for members. Instead, Umbraco ships with some Partial Macro Snippets for `Login` and `EditProfile` that contains handling of Login and manual linking of the configured external member providers.
 
 When auto-linking is enabled, only the `Login` snippet is relevant as users do not have to register before.
 
-The following example will show how to use Google and external login provider. You can first create a `GoogleMemberExternalLoginProviderOptions.cs` file which configures the options like
+The following example will show how to use Google and the external login provider. You can first create a `GoogleMemberExternalLoginProviderOptions.cs` file which configures options like the ones shown below:
 
 ```csharp
 using System;
@@ -248,13 +248,13 @@ namespace Umbraco9
 }
 ```
 
-To register this configuration class, you can call the following from your `startup.cs`:
+To register the configuration class, you can call the following from your `startup.cs`:
 
 ```csharp
 services.ConfigureOptions<GoogleMemberExternalLoginProviderOptions>();
 ```
 
-Like for users, we recommend creating an extension method on the `IUmbracoBuilder`, to add the Google Authentication, like this. This extension can also handle the configuration of `GoogleMemberExternalLoginProviderOptions`:
+As for users, we recommend creating an extension method on the `IUmbracoBuilder`, to add Google Authentication. This extension can also handle the configuration of `GoogleMemberExternalLoginProviderOptions`:
 
 ```csharp
 public static IUmbracoBuilder AddMemberGoogleAuthentication(this IUmbracoBuilder builder)
@@ -281,10 +281,9 @@ public static IUmbracoBuilder AddMemberGoogleAuthentication(this IUmbracoBuilder
 }
 ```
 
-Finally this extension can also be called from the `Startup.cs` like the example below:
+Finally, this extension can also be called from the `Startup.cs` like the example below:
 
-```
-csharp
+```csharp
 services.AddUmbraco(_env, _config)
    .AddBackOffice()
    .AddWebsite()
@@ -301,21 +300,21 @@ Auto-linking only makes sense if you have a public member registration anyway or
 
 If you have configured auto-linking, then any auto-linked user or member will have an empty password assigned and they will not be able to log in locally (via username and password). In order to log in locally, they will have to assign a password to their account in the backoffice or the edit profile page.
 
-For users only, if the `DenyLocalLogin` option is enabled, then all password changing functionality in the backoffice is also disabled and local login is not possible.
+For users only, if the `DenyLocalLogin` option is enabled, then all password-changing functionality in the backoffice is also disabled and local login is not possible.
 
-## Transfering Claims from External identities
+## Transferring Claims from External identities
 
-In some cases you may want to flow a Claim returned in your external login provider to the Umbraco backoffice identity's Claims (the authentication cookie). This can be done during the `OnAutoLinking` and `OnExternalLogin`.
+In some cases, you may want to flow a Claim returned in your external login provider to the Umbraco backoffice identity's Claims (the authentication cookie). This can be done during the `OnAutoLinking` and `OnExternalLogin`.
 
-Reason for this could be to store the external login provider user ID into the backoffice identity cookie. That way it can be retrieved on each request in order to look up some data in another system that needs the current user id from the external login provider.
+The reason for this could be to store the external login provider user ID into the backoffice identity cookie. That way it can be retrieved on each request in order to look up some data in another system that needs the current user id from the external login provider.
 
 {% hint style="warning" %}
-Do not flow large amounts of data into the backoffice identity because this information is stored into the backoffice authentication cookie and cookie limits will apply. Data like JWT tokens need to be [persisted](auto-linking.md#storing-external-login-provider-data) somewhere to be looked up and not stored within the backoffice identity itself.
+Do not flow large amounts of data into the backoffice identity because this information is stored in the backoffice authentication cookie and cookie limits will apply. Data like JWT tokens need to be [persisted](auto-linking.md#storing-external-login-provider-data) somewhere to be looked up and not stored within the backoffice identity itself.
 {% endhint %}
 
 ### Example
 
-_This is a very simplistic example for brevity, no null checks, etc..._
+This is a very simplistic example of brevity including no null checks, etc.
 
 ```csharp
 OnAutoLinking = (user, loginInfo) => {
