@@ -38,7 +38,7 @@ namespace MyFormsExtensions
         // You can do custom validation in here which will occur when the form is submitted.
         // Any strings returned will cause the submit to be invalid!
         // Where as returning an empty ienumerable of strings will say that it's okay.
-        public override IEnumerable<string> ValidateField(Form form, Field field, IEnumerable<object> postedValues, HttpContext context, IPlaceholderParsingService placeholderParsingService, IFieldTypeStorage fieldTypeStorage, List<string> errors)
+        public override IEnumerable<string> ValidateField(Form form, Field field, IEnumerable<object> postedValues, HttpContext context, IPlaceholderParsingService placeholderParsingService, IFieldTypeStorage fieldTypeStorage)
         {
             var returnStrings = new List<string>();
 
