@@ -4,7 +4,7 @@
 This feature requires a license - learn more about [Workflow's licensing model](https://umbraco.com/products/umbraco-workflow)
 {% endhint %}
 
-Workflow's default behaviour requires one member of an approval group to review and approve a pending task to advance it to the next stage of the workflow. 
+Workflow's default behaviour requires one member of an approval group to approve a pending task to advance it through the workflow. 
 
 The approval thresholds feature introduces configuration options to set the required number of approvals for a given workflow stage.
 
@@ -14,7 +14,12 @@ The threshold options are:
  - **Most**: pending task requires an absolute majority of group members. For example, a group with three members requires two approvals, a group with four members requires three approvals, and a group with six members requires four approvals.
  - **All**: pending task requires approval from all group members.
 
-The workflow detail UI displays the status of the current task, tracking the approval status for members of the current group, plus the progress towards meeting the threshold for the approval stage.
+The workflow detail UI displays the following:
+
+ - the status of the current task
+ - approval status for members of the current group
+ - progress towards meeting the threshold for the current approval stage
+ - future tasks and the assigned group and its users
 
 ![Tasklist with approval thresholds](./images/tasklist-with-approval-thresholds.png)
 
@@ -26,16 +31,16 @@ When a task is rejected in a workflow stage where the approval threshold is Most
 
 ## Related settings and configuration
 
-Approval thresholds are managed via settings in the Workflow section or in `app-settings.json`, and directly on the workflow configuration in the Workflow content app on a content node.
+Approval thresholds are managed via settings in the Workflow section or in `app-settings.json`. Node-specific thresholds are set directly on the workflow configuration in the Workflow content app.
 
 ### Settings
 The settings below can be set from the Backoffice or via settings customisation in app-settings.json (refer to [Settings customisation](https://docs.umbraco.com/umbraco-workflow/getting-started/configuration#settingscustomization) for implementation instructions).
 
  - **Approval threshold**: sets the global approval threshold to One, Most or All.
  - **Rejection resets approvals**: when true, and the approval threshold is Most or All, rejecting a task resets the previous approvals for the workflow stage.
- - **Allow configuring approval threshold**: when true, enables setting the approval threshold for any stage of a workflow (on a content node or document type).
+ - **Allow configuring approval threshold**: when true, enables setting the approval threshold for any stage of a workflow (on a content node or Document Type).
 
 ### Configuration
-When configuring an approval flow on a content item or document type, and provided **Allow configuring approval threshold** is `true`, the approval threshold for an individual stage can be set using the control below the stage name:
+The approval threshold for an individual workflow stage can be set using the control below the stage name. Setting the stage threshold requires the **Allow configuring approval threshold** setting to be `true`.
 
 ![Setting approval threshold for individual workflow stages](./images/approval-flow-with-thresholds.png)
