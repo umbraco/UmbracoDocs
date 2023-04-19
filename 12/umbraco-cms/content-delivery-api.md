@@ -10,7 +10,7 @@ With its several extension points, this new API delivers headless capabilities b
 
 ## Getting Started
 
-When upgrading an existing project to version 12, you would need to opt-in explicitly for using the Delivery API. Below you will find the steps you need to take in order to configure it for your Umbraco project. If you start with a fresh Umbraco 12 installation, the Delivery API will be enabled by default and therefore you can skip straight to the [Additional configuration](test-the-release-candidate.md#additional-configuration) section.
+When upgrading an existing project to version 12, you would need to opt-in explicitly for using the Delivery API. Below you will find the steps you need to take in order to configure it for your Umbraco project. If you start with a fresh Umbraco 12 installation, the Delivery API will be enabled by default and therefore you can skip straight to the [Additional configuration](content-delivery-api.md#additional-configuration) section.
 
 ### Register the Content Delivery API dependencies
 
