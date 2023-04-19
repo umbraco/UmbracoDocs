@@ -125,9 +125,9 @@ Since December 8th, 2020 all Umbraco Cloud sites uses Cloudflare for DNS, so new
 If you are unsure whether your Cloud project uses Cloudflare or not, get in touch with the friendly support team, and they will help you out.
 {% endhint %}
 
-**Reverse Proxy version (eg. Cloudflare)**
+**Default setup (reverse Proxy version, eg. Cloudflare)**
 
-When using Cloudflare, which is the default setup for all Cloud projects, the project will from behind a reverse proxy get the IPs from the `CF-Connecting-IP` header. In this case, which is most cases, use the first variation here to restrict access to your backoffice using IP filtering.
+For all cloud projects since December 8th, 2020, Cloudflare is used as a reverse proxy service for your project. This means that you'll need to get the IPs from the `X-Forwarded-For` header. Use the first variation here to restrict access to your backoffice using IP filtering.
 
 You can read more about the HTTP request headers coming from Cloudflare in the [Cloudflare Documentation.](https://developers.cloudflare.com/fundamentals/get-started/reference/http-request-headers/).
 
@@ -155,9 +155,9 @@ You can read more about the HTTP request headers coming from Cloudflare in the [
 In the first rule we exclude the Umbraco Deploy endpoints, so that all deployment and content transfers can still work.
 {% endhint %}
 
-**Non-Reverse Proxy (eg. non-Cloudflare)**
+**Projects from before December 8th, 2020 (Non-Reverse Proxy, eg. non-Cloudflare)**
 
-When your Cloud project is not using Cloudflare, your site gets the Remote IP address of the website visitor. In this case, you should use the second variation as shown below, when restricting access to your backoffice.
+When your Cloud project is not using Cloudflare, your site needs to get the Remote IP address of the website visitor. In this case, you should use the second variation as shown below, when restricting access to your backoffice.
 
 ```xml
 <rule name="Excluding Umbraco Deploy" enabled="true" stopProcessing="true">
