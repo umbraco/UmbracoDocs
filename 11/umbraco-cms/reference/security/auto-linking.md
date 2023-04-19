@@ -98,14 +98,7 @@ namespace Umbraco9
 }
 ```
 
-Additionally, there are more advanced properties for `BackOfficeExternalLoginProviderOptions`:
 
-* `BackOfficeExternalLoginProviderOptions.CustomBackOfficeView`
-  * Allows for specifying a custom angular HTML view that will render in place of the default external login button. USe this in case you want to change the UI or one of the following:
-    * You want to display something different where external login providers are listed: in the login screen vs the backoffice panel vs on the logged-out screen. This same view will render in all of these cases but you can use the current route parameters to customize what is shown.
-    * You want to change how the button interacts with the external login provider. For example, instead of having the site redirect on button-click, you want to open a popup window to load the external login provider.
-  * The path is a virtual path, for example: `"~/App_Plugins/MyPlugin/BackOffice/my-external-login.html"`
-  * When specifying this view it is 100% up to your angular view and affiliated angular controller to perform all required logic.
 
 To register the configuration class, you can call the following from your `startup.cs`:
 

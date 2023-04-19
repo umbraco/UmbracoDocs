@@ -3,7 +3,7 @@ description: >-
   Learn how to use Azure Active Directory credentials to login to Umbraco either as a user or a member.
 ---
 
-# Add Azure Active Directory authentication
+# Add Azure Active Directory authentication (Members)
 
 This tutorial takes you through configuring Azure Active Directory (Azure AD) with Umbraco backoffice users and frontend members.
 

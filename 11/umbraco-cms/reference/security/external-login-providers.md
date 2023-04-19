@@ -43,7 +43,215 @@ It is great for testing and for trying out the implementation before building it
 
 </details>
 
-To configure the provider create a new static extension class and configure a custom-named option as `ProviderBackOfficeExternalLoginProviderOptions` described in detail in the [auto-linking](auto-linking.md) section. The code example below shows how the configuration for Google Authentication can be done.
+## Generic examples
+
+To configure an external login provider two things are required:
+
+* A static extention class.
+* Custom-named configuration.
+
+{% hint style="info"%}
+The following presents a series of generic examples. "*Provider*" is used in place of the names of actual external login providers.
+
+When you implement your own custom authentication, ensure to replace "Provider" with the name of the provider used.
+{% endhint %}
+
+### Custom-named configuration
+
+MORE INFO ABOUT WHAT THIS FILE HOLDS!
+
+{% tabs %}
+{% tab title="User Authentication" %}
+
+```csharp
+using Microsoft.Extensions.Options;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Web.BackOffice.Security;
+
+namespace MyUmbracoProject.CustomAuthentication
+{
+    public class ProviderBackOfficeExternalLoginProviderOptions : IConfigureNamedOptions<BackOfficeExternalLoginProviderOptions>
+    {
+        public const string SchemeName = "OpenIdConnect";
+        public void Configure(string name, BackOfficeExternalLoginProviderOptions options)
+        {
+            if (name != "Umbraco." + SchemeName)
+            {
+                return;
+            }
+
+            Configure(options);
+        }
+
+        public void Configure(BackOfficeExternalLoginProviderOptions options)
+        {
+            // Customize the login button
+            options.ButtonStyle = "btn-danger";
+            options.Icon = "fa fa-cloud";
+
+            // The following options are relevant if you
+            // want to configure auto-linking on the authentication.
+            options.AutoLinkOptions = new ExternalSignInAutoLinkOptions(
+
+                // Set to true to enable auto-linking
+                autoLinkExternalAccount: true,
+
+                // [OPTIONAL]
+                // Default: "Editor"
+                // Specify User Group.
+                defaultUserGroups: new[] { Constants.Security.EditorGroupAlias },
+
+                // [OPTIONAL]
+                // Default: The culture specified in appsettings.json.
+                // Specify the default culture to create the User as.
+                // It can be dynamically assigned in the OnAutoLinking callback.
+                defaultCulture: null,
+
+                // [OPTIONAL]
+                // Disable the ability to link/unlink manually from within
+                // the Umbraco backoffice.
+                // Set this to false if you don't want the user to unlink 
+                // from this external provider.
+                allowManualLinking: false
+            )
+            {
+                // [OPTIONAL] Callback
+                OnAutoLinking = (autoLinkUser, loginInfo) =>
+                {
+                    // Customize the user before it's linked.
+                    // Modify the User's groups based on the Claims returned
+                    // in the external ogin info.
+                },
+
+                // [OPTIONAL] Callback
+                OnExternalLogin = (user, loginInfo) =>
+                {
+                    // Customize the User before it is saved whenever they have
+                    // logged in with the external provider.
+                    // Sync the Users name based on the Claims returned
+                    // in the external login info
+
+                    // Returns a boolean indicating if sign-in should continue or not.
+                    return true;
+                }
+            };
+
+            // [OPTIONAL]
+            // Disable the ability for users to login with a username/password.
+            // If set to true, it will disable username/password login
+            // even if there are other external login providers installed.
+            options.DenyLocalLogin = false;
+
+            // [OPTIONAL]
+            // Choose to automatically redirect to the external login provider
+            // effectively removing the login button.
+            options.AutoRedirectLoginToExternalProvider = false;
+        }
+    }
+}
+```
+
+{% endtab %}
+
+{% tab title="Member Authentication" %}
+
+```csharp
+using Microsoft.Extensions.Options;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Web.Common.Security;
+
+namespace MyUmbracoProject.CustomAuthentication
+{
+    public class ProviderMembersExternalLoginProviderOptions : IConfigureNamedOptions<MemberExternalLoginProviderOptions>
+    {
+        public const string SchemeName = "OpenIdConnect";
+        public void Configure(string name, MemberExternalLoginProviderOptions options)
+        {
+            if (name != "Umbraco." + SchemeName)
+            {
+                return;
+            }
+
+            Configure(options);
+        }
+
+        public void Configure(MemberExternalLoginProviderOptions options)
+        {
+            // The following options are relevant if you
+            // want to configure auto-linking on the authentication.
+            options.AutoLinkOptions = new MemberExternalSignInAutoLinkOptions(
+
+                // Set to true to enable auto-linking
+                autoLinkExternalAccount: true,
+
+                // [OPTIONAL]
+                // Default: The culture specified in appsettings.json.
+                // Specify the default culture to create the Member as.
+                // It can be dynamically assigned in the OnAutoLinking callback.
+                defaultCulture: null,
+                
+                // [OPTIONAL]
+                // Specify the default "IsApproved" status.
+                // Must be true for auto-linking.
+                defaultIsApproved: true,
+
+                // [OPTIONAL]
+                // Default: "Member"
+                // Specify the Member Type alias.
+                defaultMemberTypeAlias: "Member"
+            )
+            {
+                // [OPTIONAL] Callback
+                OnAutoLinking = (autoLinkUser, loginInfo) =>
+                {
+                    // Customize the Member before it's linked.
+                    // Modify the Members groups based on the Claims returned
+                    // in the external ogin info.
+                },
+                OnExternalLogin = (user, loginInfo) =>
+                {
+                    // Customize the Member before it is saved whenever they have
+                    // logged in with the external provider.
+                    // Sync the Members name based on the Claims returned
+                    // in the external login info
+
+                    // Returns a boolean indicating if sign-in should continue or not.
+                    return true;
+                }
+            };
+        }
+    }
+}
+```
+
+{% endtab %}
+{% endtabs %}
+
+#### Advanced properties
+
+Additionally, more advanced custom properties can be added to the `BackOfficeExternalLoginProviderOptions`.
+
+<details>
+
+<summary>`BackOfficeExternalLoginProviderOptions.CustomBackOfficeView`</summary>
+
+The `CustomBackofficeView` allows for specifying a custom Angular HTML view that will render in place of the default external login button. Use this in case you want to change the UI or one of the following:
+
+* You want to display something different where external login providers are listed: in the login screen vs the backoffice panel vs on the logged-out screen. This same view will render in all of these cases but you can use the current route parameters to customize what is shown.
+* You want to change how the button interacts with the external login provider. For example, instead of having the site redirect on button-click, you want to open a popup window to load the external login provider.
+
+The path to the custom view is a virtual path, like this example: `"~/App_Plugins/MyPlugin/BackOffice/my-external-login.html"`.
+
+When a custom view is specified it is 100% up to this view and affiliated Angular controllers to perform all required logic.
+
+</details>
+
+### Static extension class
+
+MORE INFO ABOUT WHAT THIS FILE HOLDS!
+
+{% tabs %}
+{% tab title="User Authentication" %}
 
 ```csharp
 using Umbraco.Cms.Core.DependencyInjection;
@@ -52,7 +260,7 @@ using Umbraco.Cms.Web.BackOffice.Security;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 
-namespace Umbraco.Cms.Web.UI.NetCore.Configuration
+namespace MyUmbracoProject.CustomAuthentication
 {
     public static class ProviderBackofficeAuthenticationExtensions
     {
@@ -81,14 +289,16 @@ namespace Umbraco.Cms.Web.UI.NetCore.Configuration
 }
 ```
 
-Another similar example of the configuration for authentication for **Members** may look like this:
+{% endtab %}
+
+{% tab title="Member Authentication" %}
 
 ```csharp
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Extensions;
 
-namespace Umbraco.Cms.Web.UI.NetCore.Configuration
+namespace MyUmbracoProject.CustomAuthentication
 {
     public static class ProviderMemberAuthenticationExtensions
     {
@@ -114,6 +324,9 @@ namespace Umbraco.Cms.Web.UI.NetCore.Configuration
     }
 }
 ```
+
+{% endtab %}
+{% endtabs %}
 
 Finally, update `ConfigureServices` in your `Startup.cs` class to register your configuration with Umbraco. An example may look like this:
 
