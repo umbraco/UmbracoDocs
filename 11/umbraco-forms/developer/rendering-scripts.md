@@ -2,7 +2,7 @@
 
 Forms output some JavaScript which is by default rendered right below the markup.
 
-In many cases, you might prefer rendering your scripts at the bottom of the page. You can do this before the closing `</body>` tag, as this generally improves site performance.
+In many cases, you might prefer rendering your scripts at the bottom of the page. For example, before the closing `</body>` tag. This generally improves site performance.
 
 In order to render your scripts where you want, you need to add the following snippet to your template. Make sure you add it below your scripts, right before the closing `</body>` tag:
 
