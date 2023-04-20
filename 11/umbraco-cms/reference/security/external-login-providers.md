@@ -49,8 +49,14 @@ When you are implementing your own custom authentication on Users and/or Members
 
 The process requires adding a couple of new classes (`.cs` files) to your Umbraco project:
 
-* **Custom-named configuration** to add additional configuration for handling different options related to the authentication.
-* A **static extention class** to extend on the default authentication implementation in Umbraco CMS for either Users or Members.
+* **Custom-named configuration** to add additional configuration for handling different options related to the authentication. [See the generic example of the configuration class to learn more.](#custom-named-configuration)
+* A **static extention class** to extend on the default authentication implementation in Umbraco CMS for either Users or Members. [See the generic example of the static extension class to learn more.](#static-extension-class)
+
+To register these two classes in Umbraco CMS you need to add them to the `ConfigureServices` method in your `Startup.cs` class.
+
+{% hint style="info" %}
+It is also possible to register the configuration class directly into the extension class. See examples of how this is done in the [generic examples for the static extension class](#static-extension-class).
+{% endhint %}
 
 ## Auto-linking
 
@@ -113,7 +119,7 @@ OnExternalLogin = (user, loginInfo) => {
 }
 ```
 
-## Storing external login provider data
+### Storing external login provider data
 
 In some cases, you may need to persist data from your external login provider like Access Tokens, etc.
 
@@ -324,7 +330,9 @@ Additionally, more advanced custom properties can be added to the `BackOfficeExt
 
 <details>
 
-<summary>`BackOfficeExternalLoginProviderOptions.CustomBackOfficeView`</summary>
+<summary>CustomBackOfficeView</summary>
+
+`BackOfficeExternalLoginProviderOptions.CustomBackOfficeView`
 
 The `CustomBackofficeView` allows for specifying a custom Angular HTML view that will render in place of the default external login button. Use this in case you want to change the UI or one of the following:
 
@@ -441,21 +449,5 @@ namespace MyUmbracoProject.CustomAuthentication
 
 {% endtab %}
 {% endtabs %}
-
-Finally, update `ConfigureServices` method in your `Startup.cs` class to register your configuration with Umbraco. An example may look like this:
-
-```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()
-        .AddWebsite()
-        .AddComposers()
-
-        // Register your configuration methods here
-
-        .Build();
-}
-```
 
 For a more in-depth article on how to set up OAuth providers in .NET refer to the [Microsoft Documentation](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/?view=aspnetcore-5.0\&tabs=visual-studio).
