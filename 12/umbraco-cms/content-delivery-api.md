@@ -143,35 +143,26 @@ In Umbraco, `Umbraco.CMS.Global.HideTopLevelNodeFromPath` setting can be used to
 
 <summary>Output expansion</summary>
 
-Explain the concept - check Open API spec
-
-If a content item has a property that references another piece of content, for example, through a content picker property editor, that property in the JSON output will contain by default a shallow representation of the item:
+**Output expansion** is a concept that refers to the ability to retrieve additional data about related content in the JSON output. By default, when a property that allows picking a different content item is used in a content node, for example, through a content picker property editor, the JSON representation of that content node will only contain a shallow representation of the referenced item. That means, only the basic information about the linked item, without the nested properties. However, with output expansion, it is possible to expand all or specific properties of the content, provided they are expandable and referenced at the first level.
 
 // Image
 
 // JSON example (shallow)
 
+This feature can be used when querying for a content item or items through the Delivery API, by adding an `expand` parameter to the query. The value of this parameter can be either `"all"` to expand all properties on the content item, or `"property:alias, alias, alias"` to expand specific ones.
 
+Here is an example of how an expanded representation might look for a content item with a property called "linkedItem" that references another content item with properties "title" and "description":
 
-If you want to get all the details about the picked item - its properties - then this is where the output expansion comes into play. You can choose to expand all or specific properties of the content, as long as they are expandable. You can do so when querying for a content item or items through the Delivery API. An `expand` parameter can be added to the query and there are several possibilities for its value:
-
-* all
-* specific prop alias - show query
-* list all prop aliases
-
-
-
-include additional data about related content
-
-
-
-ask for a specific prop to be expanded or all props or list the specific prop aliases
+// JSON example (expanded)
 
 
 
 The built-in property editors in Umbraco that allow for output expansion are:  &#x20;
 
-
+* Content Picker - links?
+* Media Picker
+* Block Editors
+* ...
 
 </details>
 
@@ -179,24 +170,7 @@ The built-in property editors in Umbraco that allow for output expansion are:  &
 
 <summary>Preview</summary>
 
-Draft versions of a content item can be requested though a header.&#x20;
-
-previewing a draft state
-
-similar to the preview concept in Umbraco, the delivery api allows for requesting unpublished content throught its endpoints.
-
-* build authorization mechanism that allows the API to fetch unpublished content
-  * being able to pass API key that allows you to preview something  = authentication part of the Preview API
-
-Preview setting should be enabled as well.
-
-
-
-Draft content is not going to be querable otherwise
-
-
-
-Check HC explanation
+Similar to the preview concept in Umbraco, the Delivery API allows for requesting unpublished content through its endpoints. This can be done by setting a `Preview` header to `true` in the API request. However, accessing draft versions of your content nodes requires authorization via an API key configured in `appsettings.json` file - `Umbraco.CMS.DeliveryApi.ApiKey` setting. To obtain preview data, you must add the `Api-Key` request header containing the configured API key to the appropriate endpoints. Draft content is not going to be included in the JSON response otherwise.
 
 </details>
 
@@ -204,17 +178,7 @@ Check HC explanation
 
 <summary>Localization</summary>
 
-Resolve localized content - can handle
-
-we can handle localization of content - variant content
-
-supported by CMS culture and hostname configuration/setup and through the accept language header
-
-
-
-* Localization header - Accept-Language
-  * ❗️mostly applicable when querying something by id
-    * because if you query by path - it knows the language explicitly
+If your content is available in multiple languages, the Delivery API can resolve localized content. When querying content by `id`, the `Accept-Language` header can be used to request variant content. When querying content by path, the culture is already known and included in the path, making the `Accept-Language` header unnecessary. However, if the header is present in the request, its value will take precedence over any other configuration settings. Localization is also supported by the means of the CMS's culture and hostname configuration.
 
 </details>
 
@@ -366,3 +330,5 @@ Which properties to expand and therefore include in the output if they refer to 
 * Custom property editors
 
 ## Current Limitations
+
+While the Content Delivery API provides a powerful and flexible way to retrieve content from the Umbraco CMS, there are certain limitations to be aware of. In this section, we'll discuss some of the known limitations of the API, and how to work around them if necessary.
