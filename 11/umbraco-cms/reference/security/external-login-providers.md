@@ -58,7 +58,7 @@ When you implement your own custom authentication, ensure to replace "Provider" 
 
 ### Custom-named configuration
 
-MORE INFO ABOUT WHAT THIS FILE HOLDS!
+The configuration file is used to configure a handful of different options for the authentication setup. A generic example of such file is shown below.
 
 {% tabs %}
 {% tab title="User Authentication" %}
@@ -248,7 +248,7 @@ When a custom view is specified it is 100% up to this view and affiliated Angula
 
 ### Static extension class
 
-MORE INFO ABOUT WHAT THIS FILE HOLDS!
+The extension class is required to extend on the default authentication implementation in Umbraco CMS. A generic example of such extension class can be seen below.
 
 {% tabs %}
 {% tab title="User Authentication" %}
