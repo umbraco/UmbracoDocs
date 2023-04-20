@@ -12,7 +12,7 @@ Umbraco Cloud uses a deployment model that relies on Git, Kudu, and Umbraco Depl
 If your project contains a Staging environment, deployments will be made from Development to Staging and then from Staging to Live.
 {% endhint %}
 
-![Left to right model](<../../11/umbraco-deploy/deployment-workflow/images/left-to-right (2).png>)
+![Left to right model](<images/left-to-right (1) (1) (1) (1) (1) (1).png>)
 
 ## Deployment Approach
 
