@@ -86,10 +86,46 @@ The output produced by the Delivery API can either represent a specific content 
 
 <summary>Content item JSON Schema</summary>
 
-_Explain how a content item is represented in the Delivery API; the overall structure_
+The Delivery API uses the JSON schema below to represent the retrieved content items, which consist of a range of properties. Basic JSON properties that any item returned by the API will contain include `name`, `id`, and t_ype_ (`contentType` in this case). All properties added to the content item can be found under the `properties` field.  Depending on the used property editor, the value associated with it in the JSON response can be a _string_, _number_, _boolean expression_, _array_, _object_ or _`null`_ (when a picker property is empty). The `route` property provides information about the `path` of the content item, as well as details about the root node value that is represented by the `startItem` object. We will discuss the concept of a `startItem` in more detail in the next section. Finally, if the content item varies by culture, the `cultures` property will contain information about all configured cultures for the content node, including the culture variant `path` and `startItem` for each one.
 
-* _simple props_
-* _props referencing another piece of content_
+```json
+{
+  "name": "string",
+  "route": {
+    "path": "string",
+    "startItem": {
+      "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "path": "string"
+    }
+  },
+  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "contentType": "string",
+  "properties": {
+    "property1Alias": "string",
+    "property2Alias": 0,
+    "property3Alias": true,
+    "property4Alias": [],
+    "property5Alias": {},
+    "property6Alias": null
+  },
+  "cultures": {
+    "cultureIsoCode1": {
+      "path": "string",
+      "startItem": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "path": "string"
+      }
+    },
+    "cultureIsoCode2": {
+      "path": "string",
+      "startItem": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "path": "string"
+      }
+    }
+  }
+}
+```
 
 </details>
 
@@ -97,13 +133,43 @@ _Explain how a content item is represented in the Delivery API; the overall stru
 
 <summary>Start item</summary>
 
+The start item indicates the root node to which a content item belongs. This concept is particularly useful for omitting the root node URL segment in the output, especially in cases where multiple Umbraco sites are configured under a single domain. The start item is represented by a header and is included in the JSON response of the Delivery API as the `startItem` property. This property contains both the item’s `id` and `path`. Note that the start item path segment will not be included in the value of the `path` JSON property.
 
+In Umbraco, `Umbraco.CMS.Global.HideTopLevelNodeFromPath` setting can be used to enable or disable including the top-level node in the URL of your content items. If the setting is set to `false`, you can still use the root node URL segment in the `path` parameter of the "_Get by route_" endpoint. However, the preferred approach is to make use of the `Start-Item` header to specify the URL segment or `id` of the root content node. This way, you can omit the root node URL segment from the content item path when querying for a content item. The `HideTopLevelNodeFromPath` setting does not affect the output URLs when rendering the content output.
 
 </details>
 
 <details>
 
 <summary>Output expansion</summary>
+
+Explain the concept - check Open API spec
+
+If a content item has a property that references another piece of content, for example, through a content picker property editor, that property in the JSON output will contain by default a shallow representation of the item:
+
+// Image
+
+// JSON example (shallow)
+
+
+
+If you want to get all the details about the picked item - its properties - then this is where the output expansion comes into play. You can choose to expand all or specific properties of the content, as long as they are expandable. You can do so when querying for a content item or items through the Delivery API. An `expand` parameter can be added to the query and there are several possibilities for its value:
+
+* all
+* specific prop alias - show query
+* list all prop aliases
+
+
+
+include additional data about related content
+
+
+
+ask for a specific prop to be expanded or all props or list the specific prop aliases
+
+
+
+The built-in property editors in Umbraco that allow for output expansion are:  &#x20;
 
 
 
@@ -113,7 +179,24 @@ _Explain how a content item is represented in the Delivery API; the overall stru
 
 <summary>Preview</summary>
 
+Draft versions of a content item can be requested though a header.&#x20;
 
+previewing a draft state
+
+similar to the preview concept in Umbraco, the delivery api allows for requesting unpublished content throught its endpoints.
+
+* build authorization mechanism that allows the API to fetch unpublished content
+  * being able to pass API key that allows you to preview something  = authentication part of the Preview API
+
+Preview setting should be enabled as well.
+
+
+
+Draft content is not going to be querable otherwise
+
+
+
+Check HC explanation
 
 </details>
 
@@ -121,7 +204,17 @@ _Explain how a content item is represented in the Delivery API; the overall stru
 
 <summary>Localization</summary>
 
+Resolve localized content - can handle
 
+we can handle localization of content - variant content
+
+supported by CMS culture and hostname configuration/setup and through the accept language header
+
+
+
+* Localization header - Accept-Language
+  * ❗️mostly applicable when querying something by id
+    * because if you query by path - it knows the language explicitly
 
 </details>
 
