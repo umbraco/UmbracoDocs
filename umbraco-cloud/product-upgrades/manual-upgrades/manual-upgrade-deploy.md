@@ -1,10 +1,14 @@
 ---
 description: >-
-  Learn how to manually upgrade the Umbraco Deployversion used on your Umbraco
+  Learn how to manually upgrade the Umbraco Deploy version used on your Umbraco
   Cloud project.
 ---
 
 # Manual upgrade of Umbraco Deploy
+
+Deploy on Coud will either be automatically upgraded with patch releases or it can be done through the portal when new minors are available.
+
+In rare cases, Deploy might not be on the latest patch or minor and you will need to upgrade Deploy manually.
 
 This article will give you a step-by-step on how to manually upgrade the deployment engine used on your Umbraco Cloud project.
 

@@ -6,6 +6,10 @@ description: >-
 
 # Manual upgrade of Umbraco CMS
 
+Projects on Cloud will either be automatically upgraded with patch releases or it can be done through the portal when new minors are available.
+
+In rare cases, your project might not be on the latest patch or minor and you will need to upgrade the project manually.
+
 This article will give you a step-by-step on how to manually upgrade your Umbraco Cloud project.
 
 ## Prepare for the upgrade
