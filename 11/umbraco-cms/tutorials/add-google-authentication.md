@@ -121,7 +121,7 @@ For more information on installing and managing packages in Visual Studio, see [
 
 ## Configuring the solution to allow Google logins
 
-To enable a user to link their user account to an external login provider such as Google in the Umbraco Backoffice, you have to implement a custom-named configuration `BackOfficeExternalLoginProviderOptions` for users.
+To enable a user to link their account to an external login provider such as Google, you have to implement a custom-named configuration `BackOfficeExternalLoginProviderOptions`.
 
 You can create a `GoogleBackOfficeExternalLoginProviderOptions.cs` file in a location of your choice.
 
