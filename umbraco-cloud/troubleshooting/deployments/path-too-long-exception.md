@@ -1,6 +1,11 @@
-# Path too long Exception
+---
+description: >-
+  When you have Media files on your Umbraco Cloud project with a file name
+  longer than 80 characters, you will not be able to transfer and/or restore
+  between your Cloud environments.
+---
 
-When you have Media files on your Umbraco Cloud project with a file name longer than 80 characters, you will not be able to transfer and / or restore between your Cloud environments.
+# Path too long Exception
 
 ## How does it look?
 
@@ -42,15 +47,26 @@ This is a known issue with Microsoft servers, that limits the amounts of charact
 
 ## Solution
 
-In order to fix this error, you will need to use [Power-tools Kudu](../../set-up/power-tools/)
+In order to fix this error, you will need to connect to the Live Environments project's database.
 
-1. Go to Kudu and navigate to CMD under the Debug console menu. Here you'll be presented with a navigable file structure
-2. Navigate to site/wwwroot/media
-3. Write this command in CMD prompt - `dir /s /b > out.txt`
-4.  That will generate an `out.txt` file which you have to download
+1. Connect to your Live environments [database](../../databases/local-database.md#connecting-to-your-local-umbraco-installation).
+2.  In the database run the following query to find the faulty media files:
 
-    <figure><img src="images/out-txt.JPG" alt=""><figcaption></figcaption></figure>
-5. Open that file with any editor that shows the number of characters in the line
-6. Locate files with a path longer than 80 characters
-7. Rename these files to be less than 80 characters (including folder extension, e.g. 1041/mediafile.jpg)
-8. Re-upload the renamed file to the Media section in the backoffice
+
+
+    ```sql
+    SELECT TOP (2000) [id]
+    ,[path],
+    Len(path) As valueLength
+    FROM [dbo].[umbracoMediaVersion]
+    WHERE path IS NOT null
+    ORDER BY Len(path) DESC
+    ```
+3. Identify the files with a path longer than 80 characters.
+4. Find the files in the Media section in the Umbraco backoffice.
+5. Remove the media files from the backoffice.
+   * Make sure to note down where the media item is being used in the content
+6. Change the names of the media files giving them shorter names.
+7. Re-upload the renamed file to the Media section in the backoffice.
+
+Once re-added in the backoffice, make sure to add the media back in the content where it was used.
