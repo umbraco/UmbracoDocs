@@ -359,8 +359,7 @@
   * [Examples](reference/cache/examples/README.md)
     * [Working with caching](reference/cache/examples/tags.md)
 * [Response Caching](reference/response-caching.md)
-* [Security](reference/security/README.md)v
-  * [Linking External Login Provider accounts](reference/security/auto-linking.md)
+* [Security](reference/security/README.md)
   * [BackOfficeUserManager and Events](reference/security/backofficeusermanager-and-notifications.md)
   * [Cookies](reference/security/cookies.md)
   * [Replacing the basic username/password check](reference/security/custom-password-check.md)

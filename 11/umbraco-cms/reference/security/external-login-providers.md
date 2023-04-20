@@ -52,6 +52,91 @@ The process requires adding a couple of new classes (`.cs` files) to your Umbrac
 * **Custom-named configuration** to add additional configuration for handling different options related to the authentication.
 * A **static extention class** to extend on the default authentication implementation in Umbraco CMS for either Users or Members.
 
+## Auto-linking
+
+Traditionally, a backoffice User or frontend Member will need to exist in Umbraco first. Once they exist there, they can link their user account to an external login provider.
+
+In many cases, however, the external login provider you install will be the source of truth for all of your users and members.
+
+In this case, you will want to provide a Single Sign On (SSO) approach to logging in. This would enable the creating of user accounts on the external login provider and then automatically give them access to Umbraco. This is called **auto-Linking**.
+
+### Local logins
+
+When have auto-linking configured, then any auto-linked user or member will have an empty password assigned. This means that they will not be able to log in locally (via username and password). In order to log in locally, they will have to assign a password to their account in the backoffice or the edit profile page.
+
+For users specifically, if the `DenyLocalLogin` option is enabled, all password-changing functionality in the backoffice is disabled and local login is not possible.
+
+### Transferring Claims from External identities
+
+In some cases, you may want to flow a Claim returned in your external login provider to the Umbraco backoffice identity's Claims. This could be the authentication cookie. Flowing Claims between the two can be done during the `OnAutoLinking` and `OnExternalLogin`.
+
+The reason for wanted to flow a Cloud could be to store the external login provider user ID into the backoffice identity cookie. It can then be retrieved on each request to look up data in another system needing the current user ID from the external login provider.
+
+{% hint style="warning" %}
+Do not flow large amounts of data into the backoffice identity. This information is stored in the backoffice authentication cookie and cookie limits will apply. Data like Json Web Tokens (JWT) needs to be [persisted](#storing-external-login-provider-data) somewhere to be looked up and not stored within the backoffice identity itself.
+{% endhint %}
+
+#### Example
+
+This is a simplistic example of brevity including no null checks, etc.
+
+```csharp
+OnAutoLinking = (user, loginInfo) => {
+    // You can customize the user before it's linked.
+    // i.e. Modify the user's groups based on the Claims returned
+    // in the externalLogin info
+    var extClaim = externalLogin
+        .Principal
+        .FindFirst("MyClaim");
+    user.Claims.Add(new IdentityUserClaim<string>
+    {
+        ClaimType = extClaim.Type,
+        ClaimValue = extClaim.Value,
+        UserId = user.Id
+    });
+},
+OnExternalLogin = (user, loginInfo) => {
+    // You can customize the user before it's saved whenever they have
+    // logged in with the external provider.
+    // i.e. Sync the user's name based on the Claims returned
+    // in the externalLogin info
+    var extClaim = externalLogin
+        .Principal
+        .FindFirst("MyClaim");
+    user.Claims.Add(new IdentityUserClaim<string>
+    {
+        ClaimType = extClaim.Type,
+        ClaimValue = extClaim.Value,
+        UserId = user.Id
+    });
+    return true;
+}
+```
+
+## Storing external login provider data
+
+In some cases, you may need to persist data from your external login provider like Access Tokens, etc.
+
+You can persist this data to the affiliated user's external login data via the `IExternalLoginWithKeyService`. The `void Save(Guid userOrMemberKey,IEnumerable<IExternalLoginToken> tokens)` overload takes a new model of type `IEnumerable<IExternalLogin>`.
+
+`IExternalLogin` contains a property called `UserData`. This is a blob text column which can store any arbitrary data for the external login provider.
+
+{% hint style="info" %}
+Be aware that the local Umbraco user must already exist and be linked to the external login provider before data can be stored here. In cases where auto-linking occurs and the user isn't yet created, you need to store the data in memory first during auto-linking. Then you can persist the data to the service once the user is linked and created.
+{% endhint %}
+
+### Auto-linking on backoffice authentication
+
+For some providers, it does not make sense to use auto-linking. This is especially true for public providers such as Google or Facebook.
+
+In those cases, it would mean that anyone who has a Google or Facebook account can log into your site.
+
+If auto-linking for public providers such as these was needed you would need to limit the access. This can be done by domain or other information provided in the claims using the options/callbacks specified in those provider's authentication options.
+
+### Auto-linking on Member authentication
+
+Auto-linking on Member authentication only makes sense if you have a public member registration already or the provider does not have public account creation.
+
 ## Generic examples
 
 The following section presents a series of generic examples.
@@ -374,21 +459,3 @@ public void ConfigureServices(IServiceCollection services)
 ```
 
 For a more in-depth article on how to set up OAuth providers in .NET refer to the [Microsoft Documentation](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/?view=aspnetcore-5.0\&tabs=visual-studio).
-
-Depending on the provider you've configured the end result for User authentication will look similar to this:
-
-![OAuth Login Screen](images/google-oauth-v8.png)
-
-Since Umbraco does not control the UI for a Members setup, this can be set up to look exactly how you would like. Umbraco ships with a Partial Macro snippet for `Login` that will show any configured external login providers.
-
-## Auto-linking accounts for custom OAuth providers
-
-Traditionally, a backoffice User or frontend Member will need to exist in Umbraco first. Once they exist there, they can link their user account to an external login provider.
-
-In many cases, however, the external login provider you install will be the source of truth for all of your users and members.
-
-In this case, you will want to provide a Single Sign On (SSO) approach to logging in. This would enable the creating of user accounts on the external login provider and then automatically give them access to Umbraco. This is called **auto-Linking**.
-
-This could also be the case for members if your website allows the public creation of members. In this case, the creation process can be simplified by allowing auto-linking to the external account. This could be when using something like Facebook, Twitter, or Google.
-
-Read more about this in the [Linking External Login Provider accounts](auto-linking.md) article.
