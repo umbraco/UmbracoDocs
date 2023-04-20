@@ -12,7 +12,11 @@ In this section, you can find the release notes for each version of Umbraco Work
 
 <summary>Version 11</summary>
 
-#### [11.1.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.1.2) (April 18th 2023)
+### [11.2.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.2.0) (May 9th 2023)
+
+* **FEATURE** => Introduces approval thresholds 
+
+### [11.1.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.1.2) (April 18th 2023)
 
 * **FEATURE** => Introduces optional configuration for mandatory comments
 * **FEATURE** => Modifies content lock to allow edits until the first workflow action is completed
@@ -23,11 +27,11 @@ In this section, you can find the release notes for each version of Umbraco Work
 * Ensure the `canEdit` flag is set correctly when the Workflow application state changes
 * Ensure canceled workflows are never marked as actioned by admin when canceled by the original change requestor, regardless of their admin status
 
-#### [11.1.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.1.1) (March 8th 2023)
+### [11.1.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.1.1) (March 8th 2023)
 
 * Fixes bug in workflow detail overlay [#12](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/12)
 
-#### [11.1.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.1.0) (March 7th 2023)
+### [11.1.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.1.0) (March 7th 2023)
 
 * **FEATURE** => History cleanup and retention policies
 * Fixes tree collision issue when multiple trees share class names [#11](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/11)
@@ -44,7 +48,11 @@ In this section, you can find the release notes for each version of Umbraco Work
 
 <summary>Version 10</summary>
 
-#### [10.1.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.2) (April 18th 2023)
+### [10.2.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.0) (May 9th 2023)
+
+* **FEATURE** => Introduces approval thresholds 
+
+### [10.1.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.2) (April 18th 2023)
 
 * **FEATURE** => Introduces optional configuration for mandatory comments
 * **FEATURE** => Modifies content lock to allow edits until the first workflow action is completed
@@ -55,11 +63,11 @@ In this section, you can find the release notes for each version of Umbraco Work
 * Ensure the `canEdit` flag is set correctly when the Workflow application state changes
 * Ensure canceled workflows are never marked as actioned by admin when canceled by the original change requestor, regardless of their admin status
 
-#### [10.1.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.1) (March 8th 2023)
+### [10.1.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.1) (March 8th 2023)
 
 * Fixes bug in workflow detail overlay [#12](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/12)
 
-#### [10.1.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.01) (March 7th 2023)
+### [10.1.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.01) (March 7th 2023)
 
 * **FEATURE** => History cleanup and retention policies
 * Fixes tree collision issue when multiple trees share class names [#11](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/11)
