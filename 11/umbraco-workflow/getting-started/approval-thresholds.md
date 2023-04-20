@@ -36,7 +36,7 @@ Approval thresholds are managed via settings in the Workflow section or in the `
 
 ### Settings
 
-The settings below can be set from the Backoffice or via settings customization in the `appsettings.json` file (refer to [Settings customization](https://docs.umbraco.com/umbraco-workflow/getting-started/configuration#settingscustomization) for implementation instructions).
+The settings below can be set from the Backoffice or via settings customization in the `appsettings.json` file (refer to [Settings customization](configuration.md#settingscustomization) for implementation instructions).
 
 - **Approval threshold**: Sets the global approval threshold to One, Most or All.
 - **Rejection resets approvals**: When `true`, and the approval threshold is Most or All, rejecting a task resets the previous approvals for the workflow stage.
