@@ -6,7 +6,7 @@ Umbraco Workflow adds a [Content App](https://docs.umbraco.com/umbraco-cms/exten
 * [Configuration](workflow-content-app.md#configuration)
 * [History](workflow-content-app.md#history)
 
-![Workflow content app](images/content-app.png)
+![Workflow content app](../../../12/umbraco-workflow/images/content-app.png)
 
 ## Active Workflow
 
@@ -15,7 +15,7 @@ The Active workflow sub-section provides an interface for managing workflows for
 * Change Description.
 * \[Optional] Scheduled date to publish the changes requested in the node.
 
-![Active workflow initiate request](images/Active-workflow-initiate-request.png)
+![Active workflow initiate request](../../../10/umbraco-workflow/images/Active-workflow-initiate-request.png)
 
 When the current node is pending workflow approval, the **Active workflow** sub-section displays detailed information such as:
 
@@ -25,7 +25,7 @@ When the current node is pending workflow approval, the **Active workflow** sub-
 * View pending language variant(s) workflow.
 * View the workflow activity (eg. pending approval/task approvals/rejects) for the current workflow process.
 
-![Active Workflow sub-section](images/Active-Workflow-detailed-info.png)
+![Active Workflow sub-section](../../../10/umbraco-workflow/images/Active\_Workflow\_detailed\_info.png)
 
 You can access Active Workflows from two places - the **Content** section and the **Workflow** section (depending on your user permission). Workflow Administrators (those users with access to the Workflow section) can access workflows assigned to a different group. In the **Workflow History**, these are noted as being performed by the admin.
 
@@ -49,7 +49,7 @@ To reject a Workflow task, click on the **Reject** button in the Action section.
 
 For first-stage approvals, the rejected task is sent back to the original editor/author. For second-stage approvals and above, the reviewer can send the rejected task either to the original editor or any other previous workflow group.
 
-![Reject Workflow Tasks](images/assign-rejected-task.png)
+![Reject Workflow Tasks](../../../10/umbraco-workflow/images/assign-rejected-task.png)
 
 #### Cancel pending Workflow Tasks
 
@@ -59,13 +59,13 @@ To cancel a pending Workflow task, click on the **Cancel** button in the Action 
 
 The Configuration sub-section provides an interface for configuring the content approval flow for the current node. It also displays any Inherited or Document type approval flows applied to the current content node.
 
-![Configuration sub-section](images/Configuration-sub-section.png)
+![Configuration sub-section](../../../10/umbraco-workflow/images/Configuration-sub-section.png)
 
 ### Content Approval Flow
 
 You can add different groups for different stages of content approval flow. Content Approval flow groups can be reordered via drag and drop. You can also apply the approval flow either for publish and unpublish workflow or only publish workflow.
 
-![Content approval flow](images/content-approval-flow.gif)
+![Content approval flow](../../../10/umbraco-workflow/images/content-approval-flow.gif)
 
 #### Approval Flow Types
 
@@ -77,11 +77,11 @@ A given content node may have all three approval flow types applied but only one
 * **Document type approval flow:** set in the **Settings** section. This approval flow will apply to all content nodes of the selected Document Type unless the node has a Content approval flow set. This feature requires a license.
 * **Inherited approval flow:** if a node has no Content approval flow set, nor a flow applied to its Document Type, Umbraco Workflow will traverse the content tree until it finds a node with a Content approval flow and will use this flow for the current change.
 
-![Approval Flow Types](images/approval-flow-types.png)
+![Approval Flow Types](../../../10/umbraco-workflow/images/approval-flow-types.png)
 
 Review the current responsibilities for Approval Groups in the **Roles** tab of the **Approval Groups** section for **Node-based approvals** and **Document type approvals** only. For more information see the [Roles](../workflow-section/approval-groups.md#roles) section in the [Approval Groups](../workflow-section/approval-groups.md) article.
 
-![Approval Groups Roles](images/approval-groups-roles.png)
+![Approval Groups Roles](../../../10/umbraco-workflow/images/approval-groups-roles.png)
 
 Document type approval flows can also include conditional stages i.e., only include **Translators** in the workflow when the **Description** property has changed. For more information on settings conditions in Document type approval flows, see the [Document type approval flows](../workflow-section/workflow-settings.md#document-type-approval-flows) section in the [Workflow Settings](../workflow-section/workflow-settings.md) article.
 
@@ -101,10 +101,10 @@ The History sub-section provides a chronological audit trail of workflow activit
 * Comments.
 * Status of the workflow.
 
-![History sub-section](images/History-sub-section.png)
+![History sub-section](../../../10/umbraco-workflow/images/History-sub-section.png)
 
 You can also **Filter** the records based on the information listed above. Additionally, you can adjust the total number of records displayed on a page.
 
 The **Detail** button at the end of the record displays an overlay with content similar to the Active workflow sub-section.
 
-![Details overlay](images/Workflow-Content-app-Details-overlay.png)
+![Details overlay](../../../10/umbraco-workflow/images/Workflow-Content-app-Details-overlay.png)

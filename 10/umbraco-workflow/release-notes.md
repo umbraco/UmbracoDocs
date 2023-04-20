@@ -14,7 +14,7 @@ In this section, you can find the release notes for each version of Umbraco Work
 
 ### [10.1.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.2) (April 18th 2023)
 
-* FEATURE => Introduces optional configuration for manadatory comments
+* FEATURE => Introduces optional configuration for mandatory comments
 * FEATURE => Modifies content lock to allow edits until first workflow action is completed
 * Ensure notifications inheriting from ObjectNotification have a public Target property [#13](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/13)
 * Improve UI notification when publish fails on workflow completion

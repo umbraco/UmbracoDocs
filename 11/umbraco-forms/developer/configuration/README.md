@@ -397,7 +397,7 @@ A value of `form-creator` will give access to all the user groups that the user 
 
 Available from Forms 10.2.1, the `FormsApiKey` configuration setting can be used to secure the Forms Headless API in server-to-server integrations. When set, API calls will be rejected unless the value of this setting is provided in an HTTP header.
 
-Setting the value of `EnableAntiForgeryTokenForFormsApi` to `true` will disable the anti-forgery protection for the Forms Headless/AJAX API. You need to do this for server-to-server integrations where it's not possible to provide a valid anti-forgery token in the request.
+Setting the value of `EnableAntiForgeryTokenForFormsApi` to `false` will disable the anti-forgery protection for the Forms Headless/AJAX API. You need to do this for server-to-server integrations where it's not possible to provide a valid anti-forgery token in the request.
 
 For more information, see the [Headless/AJAX Forms](../ajaxforms.md) article.
 
