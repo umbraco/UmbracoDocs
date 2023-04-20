@@ -43,18 +43,20 @@ It is great for testing and for trying out the implementation before building it
 
 </details>
 
+## Extend core functionality
+
+When you are implementing your own custom authentication on Users and/or Members on your Umbraco CMS website, you are effectively extending existing features.
+
+The process requires adding a couple of new classes (`.cs` files) to your Umbraco project:
+
+* **Custom-named configuration** to add additional configuration for handling different options related to the authentication.
+* A **static extention class** to extend on the default authentication implementation in Umbraco CMS for either Users or Members.
+
 ## Generic examples
 
-To configure an external login provider two things are required:
+The following section presents a series of generic examples.
 
-* A static extention class.
-* Custom-named configuration.
-
-{% hint style="info"%}
-The following presents a series of generic examples. "*Provider*" is used in place of the names of actual external login providers.
-
-When you implement your own custom authentication, ensure to replace "Provider" with the name of the provider used.
-{% endhint %}
+"*Provider*" is used to replace place of the names of actual external login providers. When you implement your own custom authentication, you will need to use the correct method names for the chosen provider.
 
 ### Custom-named configuration
 
@@ -63,6 +65,7 @@ The configuration file is used to configure a handful of different options for t
 {% tabs %}
 {% tab title="User Authentication" %}
 
+{% code title="ProviderBackOfficeExternalLoginProviderOptions.cs" lineNumbers="true" %}
 ```csharp
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
@@ -150,11 +153,13 @@ namespace MyUmbracoProject.CustomAuthentication
     }
 }
 ```
+{% endcode %}
 
 {% endtab %}
 
 {% tab title="Member Authentication" %}
 
+{% code title="ProviderMembersExternalLoginProviderOptions.cs" lineNumbers="true" %}
 ```csharp
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
@@ -223,6 +228,7 @@ namespace MyUmbracoProject.CustomAuthentication
     }
 }
 ```
+{% endcode %}
 
 {% endtab %}
 {% endtabs %}
@@ -253,6 +259,7 @@ The extension class is required to extend on the default authentication implemen
 {% tabs %}
 {% tab title="User Authentication" %}
 
+{% code title="ProviderBackofficeAuthenticationExtensions.cs" lineNumbers="true" %}
 ```csharp
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Extensions;
@@ -264,8 +271,13 @@ namespace MyUmbracoProject.CustomAuthentication
 {
     public static class ProviderBackofficeAuthenticationExtensions
     {
+
         public static IUmbracoBuilder AddProviderBackofficeAuthentication(this IUmbracoBuilder builder)
         {
+            // [OPTIONAL]
+            // Register ProviderBackOfficeExternalLoginProviderOptions here rather than require it in startup
+            builder.Services.ConfigureOptions<ProviderBackOfficeExternalLoginProviderOptions>();
+
             builder.AddBackOfficeExternalLogins(logins =>
             {
                 logins.AddBackOfficeLogin(
@@ -278,8 +290,17 @@ namespace MyUmbracoProject.CustomAuthentication
                             {
                                 //  By default this is '/signin-provider' but it needs to be changed to this
                                 options.CallbackPath = "/umbraco-provider-signin";
+
                                 options.ClientId = "YOURCLIENTID";
                                 options.ClientSecret = "YOURCLIENTSECRET";
+                                
+                                // Example: Map Claims
+                                // Relevant when using auto-linking.
+                                options.GetClaimsFromUserInfoEndpoint = true;
+                                options.TokenValidationParameters.NameClaimType = "name";
+
+                                // Example: Add scopes
+                                options.Scope.Add("email");
                             });
                     });
             });
@@ -288,11 +309,13 @@ namespace MyUmbracoProject.CustomAuthentication
     }
 }
 ```
+{% endcode %}
 
 {% endtab %}
 
 {% tab title="Member Authentication" %}
 
+{% code title="ProviderMembersAuthenticationExtensions.cs" lineNumbers="true" %}
 ```csharp
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.DependencyInjection;
@@ -304,6 +327,10 @@ namespace MyUmbracoProject.CustomAuthentication
     {
         public static IUmbracoBuilder AddProviderMemberAuthentication(this IUmbracoBuilder builder)
         {
+            // [OPTIONAL]
+            // Register ProviderMembersExternalLoginProviderOptions here rather than require it in startup
+            builder.Services.ConfigureOptions<GoogleMemberExternalLoginProviderOptions>();
+
             builder.AddMemberExternalLogins(logins =>
             {
                 logins.AddMemberLogin(
@@ -311,11 +338,12 @@ namespace MyUmbracoProject.CustomAuthentication
                     {
                         memberAuthenticationBuilder.AddProvider(
                             // The scheme must be set with this method to work for the back office
-                            memberAuthenticationBuilder.SchemeForMembers(ProviderMemberExternalLoginProviderOptions.SchemeName),
+                            memberAuthenticationBuilder.SchemeForMembers(ProviderMembersExternalLoginProviderOptions.SchemeName),
                             options =>
                             {
                                 options.ClientId = "YOURCLIENTID";
                                 options.ClientSecret = "YOURCLIENTSECRET";
+
                             });
                     });
             });
@@ -324,11 +352,12 @@ namespace MyUmbracoProject.CustomAuthentication
     }
 }
 ```
+{% endcode %}
 
 {% endtab %}
 {% endtabs %}
 
-Finally, update `ConfigureServices` in your `Startup.cs` class to register your configuration with Umbraco. An example may look like this:
+Finally, update `ConfigureServices` method in your `Startup.cs` class to register your configuration with Umbraco. An example may look like this:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -346,17 +375,19 @@ public void ConfigureServices(IServiceCollection services)
 
 For a more in-depth article on how to set up OAuth providers in .NET refer to the [Microsoft Documentation](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/?view=aspnetcore-5.0\&tabs=visual-studio).
 
-Depending on the provider you've configured and its caption/color, the end result will look similar to this for users:
+Depending on the provider you've configured the end result for User authentication will look similar to this:
 
 ![OAuth Login Screen](images/google-oauth-v8.png)
 
-Because Umbraco does not control the UI of members, this can be set up to look exactly like you would like. Umbraco ships with a Partial Macro snippet for `Login` that will show all configured external login providers.
+Since Umbraco does not control the UI for a Members setup, this can be set up to look exactly how you would like. Umbraco ships with a Partial Macro snippet for `Login` that will show any configured external login providers.
 
 ## Auto-linking accounts for custom OAuth providers
 
-Traditionally, a backoffice User or frontend Member will need to exist in Umbraco first. Once they exist there, they can link their user account to an external login provider. In many cases, however, the external login provider you install will be the source of truth for all of your Users and Members.
+Traditionally, a backoffice User or frontend Member will need to exist in Umbraco first. Once they exist there, they can link their user account to an external login provider.
 
-In this case, you will want to be able to create user accounts in your external login provider and automatically them access to the backoffice. This is done via auto-linking.
+In many cases, however, the external login provider you install will be the source of truth for all of your users and members.
+
+In this case, you will want to provide a Single Sign On (SSO) approach to logging in. This would enable the creating of user accounts on the external login provider and then automatically give them access to Umbraco. This is called **auto-Linking**.
 
 This could also be the case for members if your website allows the public creation of members. In this case, the creation process can be simplified by allowing auto-linking to the external account. This could be when using something like Facebook, Twitter, or Google.
 
