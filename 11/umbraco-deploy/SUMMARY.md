@@ -18,7 +18,8 @@
 
 ## Deployment Workflow
 
-* [Deployment](deployment-workflow/README.md)
+* [Deployment](deployment-workflow/deployment-workflow/README.md)
+  * [Deploy Dashboard](deployment-workflow/deployment-workflow/deploy-dashboard.md)
 * [Transferring Content, Media and Forms](deployment-workflow/content-transfer.md)
 * [Deploying Changes](deployment-workflow/deploying-changes.md)
 * [Deploying deletions](deployment-workflow/deploying-deletions.md)
