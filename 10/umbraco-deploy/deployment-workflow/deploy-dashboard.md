@@ -12,7 +12,7 @@ In this article, we will show the different sections on the Deploy dashboard and
 
 Here you can see whether the latest deployment has been completed or failed. You can see the version of Umbraco Deploy you are running, and the last time an operation was run.
 
-<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption><p>Umbraco Deploy status</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image%20(8).png" alt=""><figcaption><p>Umbraco Deploy status</p></figcaption></figure>
 
 ## Deploy Operations
 
