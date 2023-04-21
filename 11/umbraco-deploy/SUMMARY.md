@@ -18,13 +18,13 @@
 
 ## Deployment Workflow
 
-* [Deployment](deployment-workflow/deployment-workflow/README.md)
-  * [Deploy Dashboard](deployment-workflow/deployment-workflow/deploy-dashboard.md)
+* [Deployment](deployment-workflow/deployment-workflow.md)
 * [Transferring Content, Media and Forms](deployment-workflow/content-transfer.md)
 * [Deploying Changes](deployment-workflow/deploying-changes.md)
 * [Deploying deletions](deployment-workflow/deploying-deletions.md)
 * [Restoring content](deployment-workflow/restoring-content/README.md)
   * [Partial Restores](deployment-workflow/restoring-content/partial-restore.md)
+* [Deploy Dashboard](deployment-workflow/deploy-dashboard.md)
 
 ## Upgrading
 

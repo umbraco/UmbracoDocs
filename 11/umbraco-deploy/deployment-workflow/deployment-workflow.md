@@ -10,7 +10,7 @@ Umbraco Deploy uses a deployment model that relies on Git and Umbraco Deploy cor
 If your project contains a Staging environment, deployments will be made from Development to Staging and then from Staging to Live.
 {% endhint %}
 
-![Left to right model](<../../../../10/umbraco-deploy/deployment-workflow/images/left-to-right (1) (1) (1).png>)
+![Left to right model](<../../../10/umbraco-deploy/deployment-workflow/images/left-to-right (1) (1) (1).png>)
 
 ## Deployment Approach
 
@@ -25,14 +25,14 @@ In summary:
 
 In order to be able to transfer content and media, the source environment and the target environment needs to have the same setup - meaning they need to be completely in sync and have the same file structure. To achieve this you need to deploy your meta data changes to the target environment.
 
-* [Deploying from your local machine to your environments](../deploying-changes.md)
+* [Deploying from your local machine to your environments](deploying-changes.md)
 
 ### Transfer Content and Media
 
 Moving your content and media between your environments is done through the Umbraco backoffice. You can transfer content from one environment to another, e.g. from local to your development environment. You also have the option to restore content and media to your local or development environment from your production or staging environment.
 
-* [Transfer Content and Media](../content-transfer.md)
-* [Restore Content and / or Media](../restoring-content/)
+* [Transfer Content and Media](content-transfer.md)
+* [Restore Content and / or Media](restoring-content/)
 
 {% hint style="info" %}
 Transferring and restoring content and media is the same whether you are working locally and transferring between two environments.
