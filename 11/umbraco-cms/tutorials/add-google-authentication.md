@@ -28,55 +28,73 @@ I'm sure a lot of content editors and implementors of your Umbraco sites would l
 
 For this tutorial, you need:
 
-* [Visual Studio](https://visualstudio.microsoft.com/) installed
-* A [Google](https://myaccount.google.com/) account
-* A working [Umbraco solution](../fundamentals/setup/)
+* [Visual Studio](https://visualstudio.microsoft.com/) installed.
+* A [Google](https://myaccount.google.com/) account.
+* A working [Umbraco solution](https://umbraco.com/products/umbraco-cloud/).
 
-## Setting up a Google OAuth API
+## 1. Setting up a Google OAuth API
 
 The first thing to do is set up a Google API. To do this, you need to go to [https://console.developers.google.com/](https://console.developers.google.com/) and log in with your Google account.
 
 ### Setup a Google Console Project
 
-1. At the top of the page, next to the Google Cloud Platform logo, select the project dropdown and click **New Project**.
+1. Select the project dropdown and select **New Project**.
 
 <figure><img src="images/Project_dropdown_list.png" alt=""><figcaption></figcaption></figure>
 
-2. Enter the **Project name**, **Organization**, and **Location,** and click **Create**.
+2. Enter a **Project name**, **Organization**, and **Location**.
+3. **Create** the project.
 
 <figure><img src="images/Project_Details.png" alt=""><figcaption></figcaption></figure>
 
-### Enable Google+ API
+### Enable the Google+ API
 
-1. From the project dropdown list, select the project you recently created and click **Enable APIs and Services**.
+1. Open the newly created project frmo the project dropdown.
+1. Select **Enable APIs and Services**.
 
 <figure><img src="images/Enable_Apis.png" alt=""><figcaption></figcaption></figure>
 
-2. In the **Welcome to the API Library** window, type **Google+ API** in the search field.
-3. Click **Enable** to enable the API.
+2. Use the search field to find the **Google+ API**.
+3. **Enable** the product to enable the API.
 
 <figure><img src="images/Enable_Google_API.png" alt=""><figcaption></figcaption></figure>
 
-### Create Credentials
+### Set up an OAuth Consent Screen
 
-1. Before creating the credentials, you will need to configure your consent screen. Click on **OAuth Consent Screen** from the left-side navigation menu.
+Before you can create the credentials, you need to configure your consent screen.
+
+1. Select **OAuth Consent Screen** from the left-side navigation menu.
 
 <figure><img src="images/OAuth_Consent_Screen.png" alt=""><figcaption></figcaption></figure>
 
-2. In the **OAuth consent screen** window, select the **User Type** depending on how you want to configure and register your app. Click **Create**.
+2. Choose the **User Type** that fits your setup.
+3. Select **Create** to move to the next step.
 
 <figure><img src="images/User_Type.png" alt=""><figcaption></figcaption></figure>
 
-3. In the **OAuth consent screen** tab of the **Edit app registration** window, enter the **App information**, **App domain**, **Authorized domains**, and **Developer contact information,** and click **Save and Continue**.
-4. In the **Scopes** tab, select the scopes your project uses. Click **Save and Continue**.
-5. [Optional] In the **Test Users** tab, add the test users that can access the application. Click **Save and Continue**.
-6. In the **Summary** tab, verify the details provided. Click **Back to Dashboard** or **Submit for verification**.
-7. Click on **Credentials** from the left-side navigation menu. Click on **Create Credentials** and select **OAuth Client ID**.
+4. Fill in the required information:
+  * App name
+  * User support email
+  * Developer contact information
+5. Select **Save and continue**.
+6. Select the scopes your project needs.
+7. Move to the next step by selecting **Save and Continue**.
+8. Verify the details provided.
+9. Select **Back to Dashboard** to complete the creating of the Consent screen.
+
+### Create credentials
+
+1. Click on **Credentials** from the left-side navigation menu.
+2. Select **Create Credentials** and choose **OAuth Client ID** from the dropdown.
 
 <figure><img src="images/OAuth_Client_Id.png" alt=""><figcaption></figcaption></figure>
 
-8. Select **Web Application** from the **Application type** drop-down.
-9. Enter the application **Name**, **Authorized JavaScript origins**, and **Authorized redirect URIs,** and click **Create**.
+3. Select **Web Application** from the **Application type** dropdown.
+4. Enter the follow details:
+  * Application **Name**
+  * **Authorized JavaScript origins**
+  * **Authorized redirect URIs**
+5. **Create** the OAuth Client ID.
 
 <figure><img src="images/Credentials_v9.png" alt=""><figcaption></figcaption></figure>
 
@@ -86,9 +104,9 @@ A popup appears displaying the **ClientId** and **ClientSecret**. You will need 
 The **ClientId** and **ClientSecret** can always be accessed from the **Credentials** tab in the **APIs & Services** menu.
 {% endhint %}
 
-## Integrating Google Auth in Visual Studio
+## 2. Integrating Google Auth in Visual Studio
 
-Now that you have the Google API set up, open your existing solution in Visual Studio.
+Once the Google API is set up it is time to install the Google Auth provider on the Umbraco project.
 
 If you are working with a Cloud project, see the [Working locally](https://docs.umbraco.com/umbraco-cloud/setup/working-locally) article to complete this step.
 
@@ -98,10 +116,14 @@ You can install and manage packages in Visual Studio either using the Package Ma
 
 #### Option 1: Package Manager Console (PowerShell)
 
-The NuGet Package Manager Console lets you use NuGet PowerShell commands to find, install, uninstall, and update NuGet packages. You can use this option if you are comfortable using the Package Manager Console (PowerShell). The command listed below is specific to the Package Manager Console in Visual Studio:
+The NuGet Package Manager Console lets you use NuGet PowerShell commands to manage NuGet packages on your project. You can use this option if you are comfortable using the Package Manager Console (PowerShell). The command listed below is specific to the Package Manager Console in Visual Studio:
 
 1. Open your project/solution in Visual Studio.
-2. Go to **Tools** > **NuGet Package Manager** > **Package Manager Console**. A package manager console appears at the bottom where you can install packages with commands. In this console, type the following:
+2. Go to **Tools** > **NuGet Package Manager** > **Package Manager Console**.
+
+A package manager console appears at the bottom where you can install packages with commands.
+
+3. Type the following in the console:
 
 ```js
 Install-Package Microsoft.AspNetCore.Authentication.Google -Version 5.0.0
@@ -109,25 +131,30 @@ Install-Package Microsoft.AspNetCore.Authentication.Google -Version 5.0.0
 
 #### Option 2: NuGet Package Manager
 
-The NuGet Package Manager UI in Visual Studio on Windows allows you to install, uninstall, and update NuGet packages in projects and solutions.
+The NuGet Package Manager UI in Visual Studio allows you to manage NuGet packages in projects and solutions.
 
-1. Go to **Tools** -> **NuGet Package Manager** -> **Manage NuGet Packages for Solution**.
-2. In the Browse tab, type `Microsoft.AspNetCore.Authentication.Google` in the search field.
-3. Select the **version** from the drop-down and click **Install**.
+1. Open your project in Visual Studio.
+2. Go to **Tools** -> **NuGet Package Manager** -> **Manage NuGet Packages for Solution**.
+3. Select the **Browse** tab.
+4. Type `Microsoft.AspNetCore.Authentication.Google` in the search field.
+5. Ensure that your project is checked.
+6. Select the **version** from the drop-down and click **Install**.
 
 <figure><img src="images/Install_Package.png" alt=""><figcaption></figcaption></figure>
 
 For more information on installing and managing packages in Visual Studio, see [Microsoft Documentation](https://docs.microsoft.com/en-us/nuget/consume-packages/install-use-packages-visual-studio).
 
-## Configuring the solution to allow Google logins
+## 3. Configuring the solution to allow Google logins
 
-To enable a user to link their account to an external login provider such as Google, you have to implement a custom-named configuration `BackOfficeExternalLoginProviderOptions`.
+To use an external login provider such as Google on your Umbraco CMS project, you have to implement a couple of new classes:
 
-You can create a `GoogleBackOfficeExternalLoginProviderOptions.cs` file in a location of your choice.
+* A custom-named configuration class.
+* A static extension class.
 
-For tutorial purposes, I have created the file in `App_Code/Google_Authentication` folder.
+You can create these files in a location of your choice. In this tutorial, the files will be added to an `App_Code/Google_Authentication` folder.
 
-Add the following code in the `GoogleBackOfficeExternalLoginProviderOptions.cs` file.
+1. Create a new class:`GoogleBackOfficeExternalLoginProviderOptions.cs`.
+2. Add the following code to the file:
 
 ```csharp
 using Microsoft.Extensions.Options;
@@ -151,65 +178,78 @@ namespace MyCustomUmbracoProject.App_Code.Google_Authentication
 
         public void Configure(BackOfficeExternalLoginProviderOptions options)
         {
+            // Customize the login button
             options.ButtonStyle = "btn-danger";
             options.Icon = "fa fa-cloud";
+
+            // The following options are only relevant if you
+            // want to configure auto-linking on the authentication.
             options.AutoLinkOptions = new ExternalSignInAutoLinkOptions(
-                // must be true for auto-linking to be enabled
+                
+                // Set to true to enable auto-linking
                 autoLinkExternalAccount: true,
 
-                // Optionally specify default user group, else
-                // assign in the OnAutoLinking callback
-                // (default is editor)
+                // [OPTIONAL]
+                // Default: "Editor"
+                // Specify User Group.
                 defaultUserGroups: new[] { Constants.Security.EditorGroupAlias },
 
-                // Optionally specify the default culture to create
-                // the user as. If null it will use the default
-                // culture defined in the web.config, or it can
-                // be dynamically assigned in the OnAutoLinking
-                // callback.
-
+                // [OPTIONAL]
+                // Default: The culture specified in appsettings.json.
+                // Specify the default culture to create the User as.
+                // It can be dynamically assigned in the OnAutoLinking callback.
                 defaultCulture: null,
-                // Optionally you can disable the ability to link/unlink
-                // manually from within the back office. Set this to false
-                // if you don't want the user to unlink from this external
-                // provider.
-                allowManualLinking: false
+
+                // [OPTIONAL]
+                // Enable the ability to link/unlink manually from within
+                // the Umbraco backoffice.
+                // Set this to false if you don't want the user to unlink 
+                // from this external login provider.
+                allowManualLinking: true
             )
             {
-                // Optional callback
+                // [OPTIONAL] Callback
                 OnAutoLinking = (autoLinkUser, loginInfo) =>
                 {
-                    // You can customize the user before it's linked.
-                    // i.e. Modify the user's groups based on the Claims returned
-                    // in the externalLogin info
+                    // Customize the user before it's linked.
+                    // Modify the User's groups based on the Claims returned
+                    // in the external ogin info.
                 },
                 OnExternalLogin = (user, loginInfo) =>
                 {
-                    // You can customize the user before it's saved whenever they have
+                    // Customize the User before it is saved whenever they have
                     // logged in with the external provider.
-                    // i.e. Sync the user's name based on the Claims returned
-                    // in the externalLogin info
+                    // Sync the Users name based on the Claims returned
+                    // in the external login info
 
-                    return true; //returns a boolean indicating if sign-in should continue or not.
+                    // Returns a boolean indicating if sign-in should continue or not.
+                    return true;
                 }
             };
 
-            // Optionally you can disable the ability for users
-            // to login with a username/password. If this is set
-            // to true, it will disable username/password login
+            // [OPTIONAL]
+            // Disable the ability for users to login with a username/password.
+            // If set to true, it will disable username/password login
             // even if there are other external login providers installed.
             options.DenyLocalLogin = false;
 
-            // Optionally choose to automatically redirect to the
-            // external login provider so the user doesn't have
-            // to click the login button. This is
+            // [OPTIONAL]
+            // Choose to automatically redirect to the external login provider
+            // effectively removing the login button.
             options.AutoRedirectLoginToExternalProvider = false;
         }
     }
 }
 ```
 
-Create a new static extension class called `GoogleAuthenticationExtensions.cs`. Add the following code in the `GoogleAuthenticationExtensions.cs` file.
+{% hint style="info" %}
+The code used here, enables [auto-linking](../reference/security/external-login-providers.md#auto-linking) with the external login provider. This enables the option for users to login to the Umbraco backoffice prior to having a backoffice User.
+
+Set the `autoLinkExternalAccount` to `false` in order to disable auto-linking in your implementation.
+{% endhint %}
+
+3. Create a new class: `GoogleAuthenticationExtensions.cs`.
+4. Add the following code to the file:
 
 ```csharp
 using Umbraco.Cms.Core.DependencyInjection;
@@ -222,6 +262,9 @@ namespace MyCustomUmbracoProject.App_Code.Google_Authentication
     {
         public static IUmbracoBuilder AddGoogleAuthentication(this IUmbracoBuilder builder)
         {
+            // Register ProviderBackOfficeExternalLoginProviderOptions here rather than require it in startup
+            builder.Services.ConfigureOptions<GoogleBackOfficeExternalLoginProviderOptions>();
+
             builder.AddBackOfficeExternalLogins(logins =>
             {
                 logins.AddBackOfficeLogin(
@@ -245,9 +288,8 @@ namespace MyCustomUmbracoProject.App_Code.Google_Authentication
 }
 ```
 
-Ensure to replace **YOURCLIENTID** and **YOURCLIENTSECRET** in the code with the values from the **OAuth Client Ids Credentials** window.
-
-Update `ConfigureServices` in your `Startup.cs` class to register your configuration with Umbraco. For example:
+5. Replace **YOURCLIENTID** and **YOURCLIENTSECRET** with the values from the **OAuth Client Ids Credentials** window.
+6. Update `ConfigureServices` in your `Startup.cs` class to register your configuration with Umbraco.
 
 ```csharp
 using MyCustomUmbracoProject.App_Code.Google_Authentication;
@@ -258,24 +300,31 @@ public void ConfigureServices(IServiceCollection services)
         .AddBackOffice()
         .AddWebsite()
         .AddComposers()
-        .AddGoogleBackofficeAuthentication()
+
+        // Register your new static extension class
+        .AddGoogleAuthentication()
+
         .Build();
 }
 ```
 
-1. Build and run the website. The first time you will have to link the provider to your account from the backoffice.
-2. Log in to the backoffice. Click on your user profile in the top-right corner and select **Link your Google account**:
+7. Build and run the website.
+8. Log in to the backoffice using the Google Auth option.
 
-<figure><img src="images/Link_Google_Account_Backoffice.png" alt=""><figcaption></figcaption></figure>
+{% hint style="info" %}
+If auto-linking is disabled, the user will need to follow these steps in order to be able to use the Google Authenticaion:
 
-3. In the **Choose an account** window, select the account you wish to link with the Google console project.
+1. Login to the backoffice using Umbraco credentials.
+2. Select your user profile in the top-right corner.
+3. **Link your Google account**.
+4. Choose the account you which to link to the Umbraco login.
 
-For future backoffice logins, you can click on the **Sign in with Google** button and you will be logged in to the Backoffice.
+For future backoffice logins, the user will be able to use Google Authentication to login.
+{% endhint %}
 
 <figure><img src="images/GoogleLoginScreen_v9.png" alt=""><figcaption></figcaption></figure>
 
 ## Related Links
 
 * [External login providers](../reference/security/external-login-providers.md)
-* [Linking External Login Provider accounts](../reference/security/auto-linking.md)
-* [Two-factor authentication](../reference/security/two-factor-authentication.md)
+* [Linking External Login Provider accounts](../reference/security/external-login-providers.md#auto-linking)
