@@ -38,7 +38,7 @@ The first thing to do is set up a Google API. To do this, you need to go to [htt
 
 ### Setup a Google Console Project
 
-1. Select the project dropdown and select **New Project**.
+1. Click the project dropdown and select **New Project**.
 
 <figure><img src="images/Project_dropdown_list.png" alt=""><figcaption></figcaption></figure>
 
@@ -49,7 +49,7 @@ The first thing to do is set up a Google API. To do this, you need to go to [htt
 
 ### Enable the Google+ API
 
-1. Open the newly created project frmo the project dropdown.
+1. Open the newly created project from the project dropdown.
 1. Select **Enable APIs and Services**.
 
 <figure><img src="images/Enable_Apis.png" alt=""><figcaption></figcaption></figure>
@@ -73,27 +73,27 @@ Before you can create the credentials, you need to configure your consent screen
 <figure><img src="images/User_Type.png" alt=""><figcaption></figcaption></figure>
 
 4. Fill in the required information:
-  * App name
-  * User support email
-  * Developer contact information
+    * App name
+    * User support email
+    * Developer contact information
 5. Select **Save and continue**.
 6. Select the scopes your project needs.
 7. Move to the next step by selecting **Save and Continue**.
 8. Verify the details provided.
-9. Select **Back to Dashboard** to complete the creating of the Consent screen.
+9. Select **Back to Dashboard** to complete creating the Consent screen.
 
 ### Create credentials
 
-1. Click on **Credentials** from the left-side navigation menu.
+1. Click on **Credentials** in the left-side navigation menu.
 2. Select **Create Credentials** and choose **OAuth Client ID** from the dropdown.
 
 <figure><img src="images/OAuth_Client_Id.png" alt=""><figcaption></figcaption></figure>
 
 3. Select **Web Application** from the **Application type** dropdown.
-4. Enter the follow details:
-  * Application **Name**
-  * **Authorized JavaScript origins**
-  * **Authorized redirect URIs**
+4. Enter the following details:
+    * Application **Name**
+    * **Authorized JavaScript origins**
+    * **Authorized redirect URIs**
 5. **Create** the OAuth Client ID.
 
 <figure><img src="images/Credentials_v9.png" alt=""><figcaption></figcaption></figure>
@@ -140,8 +140,6 @@ The NuGet Package Manager UI in Visual Studio allows you to manage NuGet package
 5. Ensure that your project is checked.
 6. Select the **version** from the drop-down and click **Install**.
 
-<figure><img src="images/Install_Package.png" alt=""><figcaption></figcaption></figure>
-
 For more information on installing and managing packages in Visual Studio, see [Microsoft Documentation](https://docs.microsoft.com/en-us/nuget/consume-packages/install-use-packages-visual-studio).
 
 ## 3. Configuring the solution to allow Google logins
@@ -156,6 +154,7 @@ You can create these files in a location of your choice. In this tutorial, the f
 1. Create a new class:`GoogleBackOfficeExternalLoginProviderOptions.cs`.
 2. Add the following code to the file:
 
+{% code title="GoogleBackOfficeExternalLoginProviderOptions.cs" lineNumbers="true" %}
 ```csharp
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
@@ -241,6 +240,7 @@ namespace MyCustomUmbracoProject.App_Code.Google_Authentication
     }
 }
 ```
+{% endcode %}
 
 {% hint style="info" %}
 The code used here, enables [auto-linking](../reference/security/external-login-providers.md#auto-linking) with the external login provider. This enables the option for users to login to the Umbraco backoffice prior to having a backoffice User.
@@ -251,6 +251,7 @@ Set the `autoLinkExternalAccount` to `false` in order to disable auto-linking in
 3. Create a new class: `GoogleAuthenticationExtensions.cs`.
 4. Add the following code to the file:
 
+{% code title="GoogleAuthenticationExtensions.cs" lineNumbers="true" %}
 ```csharp
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Extensions;
@@ -287,10 +288,12 @@ namespace MyCustomUmbracoProject.App_Code.Google_Authentication
     }
 }
 ```
+{% endcode %}
 
 5. Replace **YOURCLIENTID** and **YOURCLIENTSECRET** with the values from the **OAuth Client Ids Credentials** window.
 6. Update `ConfigureServices` in your `Startup.cs` class to register your configuration with Umbraco.
 
+{% code title="Startup.cs" lineNumbers="true" %}
 ```csharp
 using MyCustomUmbracoProject.App_Code.Google_Authentication;
 
@@ -307,6 +310,7 @@ public void ConfigureServices(IServiceCollection services)
         .Build();
 }
 ```
+{% endcode %}
 
 7. Build and run the website.
 8. Log in to the backoffice using the Google Auth option.
