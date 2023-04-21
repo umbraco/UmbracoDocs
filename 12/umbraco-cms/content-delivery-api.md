@@ -145,15 +145,94 @@ In Umbraco, `Umbraco.CMS.Global.HideTopLevelNodeFromPath` setting can be used to
 
 **Output expansion** is a concept that refers to the ability to retrieve additional data about related content in the JSON output. By default, when a property that allows picking a different content item is used in a content node, for example, through a content picker property editor, the JSON representation of that content node will only contain a shallow representation of the referenced item. That means, only the basic information about the linked item, without the nested properties. However, with output expansion, it is possible to expand all or specific properties of the content, provided they are expandable and referenced at the first level.
 
-// Image
-
-// JSON example (shallow)
-
 This feature can be used when querying for a content item or items through the Delivery API, by adding an `expand` parameter to the query. The value of this parameter can be either `"all"` to expand all properties on the content item, or `"property:alias, alias, alias"` to expand specific ones.
 
-Here is an example of how an expanded representation might look for a content item with a property called "linkedItem" that references another content item with properties "title" and "description":
 
-// JSON example (expanded)
+
+The following snippet demonstrates the output of a "My post" content node without expanding the `linkedItem` content picker property.
+
+{% code title="Shallow output for "linkedItem" property" %}
+```json
+{
+    "name": "My post",
+    "route": {...
+    },
+    "id": "9bdac0e9-66d8-4bfd-bba1-e954ed9c780d",
+    "contentType": "blogpost1",
+    "properties": {
+        "title": "My post page",
+        "blogPostNumber": 11,
+        "bodyContent": "Congue, sollicitudin? Est fames maiores, sociis suspendisse et aliquet tristique excepturi, aliquam, nihil illum pretium penatibus exercitationem lacinia! Dolorem tempus convallis, nulla! Eius scelerisque voluptatum penatibus, dignissimos molestiae, soluta eum. Voluptatibus quod? Temporibus potenti voluptates dictumst? Cillum metus, nec asperiores? Impedit sit! Eum tellus cillum facilisis ullamco tempor? Sint nostrum luctus? Neque dictumst diam, minus? Itaque, minus, etiam dignissimos debitis occaecat aptent tempus! Praesent molestiae duis nihil recusandae, eius imperdiet aspernatur natus. Tempus mattis at architecto, augue, consequuntur ultricies eligendi, litora morbi ante nesciunt pretium laoreet quidem recusandae voluptates dapibus, iure sagittis donec ipsum mollit? Blanditiis! Laborum sit assumenda beatae.",
+        "linkedItem": {
+            "name": "Demo blog",
+            "route": {
+                "path": "/demo-blog/",
+                "startItem": {
+                    "id": "5d5ae914-9885-4ee0-a14b-0ab57f501a55",
+                    "path": "demo-blog"
+                }
+            },
+            "id": "5d5ae914-9885-4ee0-a14b-0ab57f501a55",
+            "contentType": "blog",
+            "properties": {}
+        }
+    },
+    "cultures": {}
+}
+```
+{% endcode %}
+
+
+
+And here is an example of how an expanded representation might look for the `linkedItem` property that references another content item with properties `title` and `description`:
+
+#### Request
+
+```
+GET
+/umbraco/delivery/api/v1/content/item/9bdac0e9-66d8-4bfd-bba1-e954ed9c780d?expand=property:linkedItem
+```
+
+#### Response
+
+{% code title="Expanded output for "linkedItem" property" %}
+```json
+{
+    "name": "My post",
+    "route": {
+        "path": "/my-post/",
+        "startItem": {
+            "id": "5d5ae914-9885-4ee0-a14b-0ab57f501a55",
+            "path": "demo-blog"
+        }
+    },
+    "id": "9bdac0e9-66d8-4bfd-bba1-e954ed9c780d",
+    "contentType": "blogpost1",
+    "properties": {
+        "title": "My post page",
+        "blogPostNumber": 11,
+        "bodyContent": "Congue, sollicitudin? Est fames maiores, sociis suspendisse et aliquet tristique excepturi, aliquam, nihil illum pretium penatibus exercitationem lacinia! Dolorem tempus convallis, nulla! Eius scelerisque voluptatum penatibus, dignissimos molestiae, soluta eum. Voluptatibus quod? Temporibus potenti voluptates dictumst? Cillum metus, nec asperiores? Impedit sit! Eum tellus cillum facilisis ullamco tempor? Sint nostrum luctus? Neque dictumst diam, minus? Itaque, minus, etiam dignissimos debitis occaecat aptent tempus! Praesent molestiae duis nihil recusandae, eius imperdiet aspernatur natus. Tempus mattis at architecto, augue, consequuntur ultricies eligendi, litora morbi ante nesciunt pretium laoreet quidem recusandae voluptates dapibus, iure sagittis donec ipsum mollit? Blanditiis! Laborum sit assumenda beatae.",
+        "linkedItem": {
+            "name": "Demo blog",
+            "route": {
+                "path": "/demo-blog/",
+                "startItem": {
+                    "id": "5d5ae914-9885-4ee0-a14b-0ab57f501a55",
+                    "path": "demo-blog"
+                }
+            },
+            "id": "5d5ae914-9885-4ee0-a14b-0ab57f501a55",
+            "contentType": "blog",
+            "properties": {
+                "title": "My demo blog",
+                "description": "Nihil incididunt dolores adipisicing placeat quisque imperdiet interdum autem, dolorem fusce rhoncus sunt leo inventore dictumst quisque, voluptatem, magni justo nostrud deserunt! Natus ipsam commodi dignissimos, sodales ab.\n"
+            }
+        }
+    },
+    "cultures": {}
+}
+```
+{% endcode %}
 
 
 
@@ -162,7 +241,7 @@ The built-in property editors in Umbraco that allow for output expansion are:  &
 * Content Picker - links?
 * Media Picker
 * Block Editors
-* ...
+* Multinode Treepicker
 
 </details>
 
@@ -332,3 +411,5 @@ Which properties to expand and therefore include in the output if they refer to 
 ## Current Limitations
 
 While the Content Delivery API provides a powerful and flexible way to retrieve content from the Umbraco CMS, there are certain limitations to be aware of. In this section, we'll discuss some of the known limitations of the API, and how to work around them if necessary.
+
+_TBD_
