@@ -4,7 +4,7 @@ description: "How to amend the built-in behavior of associating workflows with n
 
 # Customize Default Workflows For a Form
 
-The default behavior when a new form is created is for a single workflow to be added, which will send a copy of the form to the current backoffice user's email address.
+By default, a single workflow is added when a new form is created. This workflow will send a copy of the form to the email address of the current backoffice user.
 
 It's possible to amend this behavior and change it to fit your needs.
 
