@@ -238,10 +238,8 @@ GET
 
 The built-in property editors in Umbraco that allow for output expansion are:  &#x20;
 
-* Content Picker - links?
-* Media Picker
-* Block Editors
-* Multinode Treepicker
+* `Umbraco.ContentPicker`
+* `Umbraco.MultiNodeTreePicker`
 
 </details>
 
