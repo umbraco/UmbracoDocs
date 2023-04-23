@@ -120,14 +120,16 @@ The following rule can be added to your web.config file in the `system.webServer
 Please note these two different variations, which differ if you have a reverse proxy like Cloudflare (with Proxying turned on) in front of the website.
 
 {% hint style="info" %}
-Since December 8th, 2020 all Umbraco Cloud sites uses Cloudflare for DNS, so new and updated projects should use the Reverse Proxy version.
+Since December 8th, 2020 all Umbraco Cloud sites uses Cloudflare for DNS, so new and updated projects should use the reverse proxy version.
 
 If you are unsure whether your Cloud project uses Cloudflare or not, get in touch with the friendly support team, and they will help you out.
 {% endhint %}
 
-**Default setup (reverse Proxy version, eg. Cloudflare)**
+{% tabs %}
+{% tab title="Default (reverse proxy)" %}
+**Default setup (reverse proxy version, eg. Cloudflare)**
 
-For all cloud projects since December 8th, 2020, Cloudflare is used as a reverse proxy service for your project. This means that you'll need to get the IPs from the `X-Forwarded-For` header. Use the first variation here to restrict access to your backoffice using IP filtering.
+For all cloud projects since December 8th, 2020, Cloudflare is used as a reverse proxy service for your project. This means that you'll need to get the IPs from the `X-Forwarded-For` header. Use the example below to restrict access to your backoffice using IP filtering.
 
 You can read more about the HTTP request headers coming from Cloudflare in the [Cloudflare Documentation.](https://developers.cloudflare.com/fundamentals/get-started/reference/http-request-headers/).
 
@@ -150,14 +152,11 @@ You can read more about the HTTP request headers coming from Cloudflare in the [
   <action type="CustomResponse" statusCode="403" />
 </rule>
 ```
-
-{% hint style="info" %}
-In the first rule we exclude the Umbraco Deploy endpoints, so that all deployment and content transfers can still work.
-{% endhint %}
-
+{% endtab %}
+{% tab title="Legacy (non-reverse proxy)" %}
 **Projects from before December 8th, 2020 (Non-Reverse Proxy, eg. non-Cloudflare)**
 
-When your Cloud project is not using Cloudflare, your site needs to use the Remote IP address of the website visitor. In this case, you should use the second variation as shown below, when restricting access to your backoffice.
+When your Cloud project is not using Cloudflare, your site needs to use the Remote IP address of the website visitor. Use the example below to restrict access to your backoffice using IP filtering.
 
 ```xml
 <rule name="Excluding Umbraco Deploy" enabled="true" stopProcessing="true">
@@ -178,6 +177,12 @@ When your Cloud project is not using Cloudflare, your site needs to use the Remo
     <action type="CustomResponse" statusCode="403" />
 </rule>
 ```
+{% endtab %}
+{% endtabs %}
+
+{% hint style="info" %}
+In the first rule we exclude the Umbraco Deploy endpoints, so that all deployment and content transfers can still work.
+{% endhint %}
 
 What we're doing here is blocking all the requests to `umbraco/backoffice/` (while still allowing Umbraco Deploy to work)and all of the routes that start with this.
 
