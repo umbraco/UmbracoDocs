@@ -87,7 +87,27 @@ Sends the result of the Form to the specified email address. The following confi
 * Recipient Email (required)
 * CC Email
 * BCC Email
-* SenderEmail - also configurable in `appsettings.json` under `Umbraco:CMS:Global:Smtp`. For more information, see the [Global Settings](https://docs.umbraco.com/umbraco-cms/v/10.latest-lts/reference/configuration/globalsettings) article.
+* Sender Email
+* Reply To Email
+* Subject of the email (required)
+
+If the _Sender Email_ field is not populated, the address used will be read from CMS configuration.
+
+The [Content Settings](https://docs.umbraco.com/umbraco-cms/v/10.latest-lts/reference/configuration/contentsettings) value configured at `Umbraco:CMS:Content:Notifications:Email` will be used if provided.
+
+```json
+    "Umbraco": {
+         "CMS": {
+            "Content": {
+                "Notifications": {
+                    "Email": "person@umbraco.dk"
+                }
+            }
+        }
+    }
+```
+
+If that is not set, the [Global Settings](https://docs.umbraco.com/umbraco-cms/v/10.latest-lts/reference/configuration/globalsettings) value configured at `Umbraco:CMS:Global:Smtp` will be used.
 
 ```json
     "Umbraco": {
@@ -95,14 +115,13 @@ Sends the result of the Form to the specified email address. The following confi
             "Global": {
                 "Smtp": {
                     "From": "person@umbraco.dk"
-                        }
-                    }
                 }
             }
+        }
+    }
 ```
 
-* Reply To Email
-* Subject of the email (required)
+The fallback behavior to find the sender email address described also applies to the other email workflows.
 
 ## **Send Email with Template (Razor)**
 
@@ -122,20 +141,7 @@ The following configuration can be set:
 * Recipient Email (required)
 * CC Email
 * BCC Email
-* SenderEmail - also configurable in `appsettings.json` under `Umbraco:CMS:Global:Smtp`. For more information, see the [Global Settings](https://docs.umbraco.com/umbraco-cms/v/10.latest-lts/reference/configuration/globalsettings) article.
-
-```json
-"Umbraco": {
-    "CMS": {
-        "Global": {
-            "Smtp": {
-                "From": "person@umbraco.dk"
-                    }
-                }
-           }
-       }
-```
-
+* SenderEmail
 * Reply To Email
 * Subject of the email (required)
 
@@ -207,20 +213,7 @@ Sends the result of the Form to an email address with full control over the emai
 * Recipient Email (required)
 * CC Email
 * BCC Email
-* SenderEmail - also configurable in `appsettings.json` under `Umbraco:CMS:Global:Smtp`. For more information, see the [Global Settings](https://docs.umbraco.com/umbraco-cms/v/10.latest-lts/reference/configuration/globalsettings) article.
-
-```json
-"Umbraco": {
-    "CMS": {
-        "Global": {
-            "Smtp": {
-                "From": "person@umbraco.dk"
-                    }
-                }
-            }
-        }
-```
-
+* SenderEmail
 * Reply To Email
 * Subject of the email (required)
 
