@@ -16,7 +16,7 @@ Video example.
 
 We recommend using the following tools to work with a local clone of your Umbraco Cloud project:
 
-* Git needs to be installed on your computer
+* Git needs to be installed on your computer in order to clone down the project and push your changes up to Cloud.
   * We recommend using one of the following git-clients if you are new to git:: [Fork](https://git-fork.com/), [SourceTree](https://www.sourcetreeapp.com/), or [GitKraken](https://www.gitkraken.com/)
 * Visual Studio - for running the project on your local machine.
 
