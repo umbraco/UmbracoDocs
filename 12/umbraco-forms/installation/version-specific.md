@@ -57,6 +57,10 @@ These updates are more minor.  We don't expect many projects to be affected by t
 * The session variable `ContourMemberKey` is no longer set.
 * Exception handling in the Forms API has been aligned with the CMS leading to subtle differences in the population of the `ProblemDetails` exposed.
 
+</details>
+
+<details>
+
 <summary>Version 11</summary>
 
 Version 11 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `11.0.0`. It runs on .NET 7.
