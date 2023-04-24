@@ -43,7 +43,8 @@ The following configuration is required for working with the Algolia API:
           "Algolia": {
             "Settings": {
               "ApplicationId": "[your_application_id]",
-              "AdminApiKey": "[your_admin_api_key]]"
+              "AdminApiKey": "[your_admin_api_key]",
+              "SearchApiKey": "[your_search_api_key]"
             }
           }
         }
@@ -53,6 +54,13 @@ The following configuration is required for working with the Algolia API:
 }
 ```
 {% endcode %}
+
+Algolia comes with a set of predefined API keys:
+
+* Search-Only API key - a public API key used on the frontend for performing search queries.
+* Admin API key - used on the backend for create, update or delete operations on the indices. 
+
+More details on other use cases for the Algolia API keys can be found in [the Algolia Docs](https://www.algolia.com/doc/guides/security/api-keys/#predefined-api-keys).
 
 ## Working with the integration
 
