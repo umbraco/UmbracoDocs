@@ -156,7 +156,11 @@ You can read more about the HTTP request headers coming from Cloudflare in the [
 {% tab title="Legacy (non-reverse proxy)" %}
 **Projects from before December 8th, 2020 (Non-Reverse Proxy, eg. non-Cloudflare)**
 
-When your Cloud project is not using Cloudflare, your site needs to use the Remote IP address of the website visitor. Use the example below to restrict access to your backoffice using IP filtering.
+If you created the Cloud project earlier than December 8th, 2020, Cloudflare is not used on your project.
+
+When your Cloud project is not using Cloudflare, your site needs to use the Remote IP address of the website visitor.
+
+Use the example below to restrict access to your backoffice using IP filtering:
 
 ```xml
 <rule name="Excluding Umbraco Deploy" enabled="true" stopProcessing="true">
