@@ -14,7 +14,7 @@ In this section, you can find the release notes for each version of Umbraco Work
 
 ### [10.2.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.0) (May 9th 2023)
 
-* **FEATURE** => Introduces approval thresholds 
+* **FEATURE** => Introduces [approval thresholds](getting-starting/approval-thresholds.md). 
 
 ### [10.1.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.2) (April 18th 2023)
 
