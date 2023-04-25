@@ -6,7 +6,7 @@ description: Get started with the Content Delivery API.
 
 ## Overview
 
-With its several extension points, this new API delivers headless capabilities built directly into Umbraco. It allows you to retrieve your content items in a JSON format and lets you preset them in different channels, using your preferred technology stack. This feature preserves the friendly editing experience of Umbraco, while also ensuring a performant delivery of content, even in headless scenarios.
+The Content Delivery API delivers headless capabilities built directly into Umbraco. It allows you to retrieve your content items in a JSON format and lets you preset them in different channels, using your preferred technology stack. This feature preserves the friendly editing experience of Umbraco, while also ensuring a performant delivery of content in a headless fashion. And with its several extension points, you can tailor this API to fit a broad range of requirements.
 
 ## Getting Started
 
@@ -49,7 +49,7 @@ Add the `DeliveryApi` configuration section in `appsettings.json` and set the va
 
 ### Additional configuration
 
-Once the Delivery API has been configured on your project, you need to be aware that all your content will be made available to the public. However, there are a few additional configuration options that you can use to restrict access to the Delivery API endpoints and limit the content that is returned.
+Once the Delivery API has been configured on your project, all your published content will be made available to the public by default. However, there are a few additional configuration options that you can use to restrict access to the Delivery API endpoints and limit the content that is returned.
 
 {% code title="appsettings.json" %}
 ```json
@@ -68,25 +68,30 @@ Once the Delivery API has been configured on your project, you need to be aware 
 ```
 {% endcode %}
 
-* `Umbraco.CMS.DeliveryApi.PublicAccess` determines whether the Delivery API (_if enabled_) should be publicly accessible or if access should require an API key.
-* `Umbraco.CMS.DeliveryApi.ApiKey` specifies what API key to use for authorizing access to the API when public access is disabled. This setting is also used for managing access to draft content.
-* `Umbraco.CMS.DeliveryApi.DisallowedContentTypeAliases` contains the aliases of the content types that would never be exposed through the Delivery API.
+* `Umbraco:CMS:DeliveryApi:PublicAccess` determines whether the Delivery API (_if enabled_) should be publicly accessible or if access should require an API key.
+* `Umbraco:CMS:DeliveryApi:ApiKey` specifies the API key to use for authorizing access to the API when public access is disabled. This setting is also used for accessing draft content for preview.
+* `Umbraco:CMS:DeliveryApi:DisallowedContentTypeAliases` contains the aliases of the content types that should never be exposed through the Delivery API, regardless of any other configurations.
 
 {% hint style="info" %}
-To test the functionality of the API, you would need to create some content items first.
+To test the functionality of the API, you need to create some content first.
 {% endhint %}
 
 ## Endpoints
 
-The output produced by the Delivery API can either represent a specific content item or a paged list of multiple items. Before exploring the endpoints that API has to offer, there are a few concepts to keep in mind.
+The output produced by the Delivery API can either represent a specific content item or a paged list of multiple items. Before exploring the API endpoints, there are a few concepts to keep in mind.
 
 ### Concepts
 
 <details>
 
-<summary>Content item JSON Schema</summary>
+<summary>Content item JSON structure</summary>
 
-The Delivery API uses the JSON schema below to represent the retrieved content items, which consist of a range of properties. Basic JSON properties that any item returned by the API will contain include `name`, `id`, and t_ype_ (`contentType` in this case). All properties added to the content item can be found under the `properties` field.  Depending on the used property editor, the value associated with it in the JSON response can be a _string_, _number_, _boolean expression_, _array_, _object_ or _`null`_ (when a picker property is empty). The `route` property provides information about the `path` of the content item, as well as details about the root node value that is represented by the `startItem` object. We will discuss the concept of a `startItem` in more detail in the next section. Finally, if the content item varies by culture, the `cultures` property will contain information about all configured cultures for the content node, including the culture variant `path` and `startItem` for each one.
+The Delivery API outputs the JSON structure outlined below to represent the retrieved content items, which consist of a range of properties:&#x20;
+
+* Basic properties for any content item include `name`, `id` and `contentType`.
+* All editorial properties from the content type can be found in the `properties` collection. Depending on the configured property editor, the property output value can be a _string_, _number_, _boolean expression_, _array_, _object_ or _`null`_.
+* The `route` property provides the `path` of the content item, as well as details about the root node value that is represented by the `startItem` object. We will discuss the concept of a `startItem` in more detail in the next section.
+* If the content item varies by culture, the `cultures` property will contain information about all configured cultures for the content node, including the culture variant `path` and `startItem` for each one.
 
 ```json
 {
@@ -98,7 +103,7 @@ The Delivery API uses the JSON schema below to represent the retrieved content i
       "path": "string"
     }
   },
-  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "id": "11fb598b-5c51-4d1a-8f2e-0c7594361d15",
   "contentType": "string",
   "properties": {
     "property1Alias": "string",
@@ -143,13 +148,24 @@ In Umbraco, `Umbraco.CMS.Global.HideTopLevelNodeFromPath` setting can be used to
 
 <summary>Output expansion</summary>
 
-**Output expansion** is a concept that refers to the ability to retrieve additional data about related content in the JSON output. By default, when a property that allows picking a different content item is used in a content node, for example, through a content picker property editor, the JSON representation of that content node will only contain a shallow representation of the referenced item. That means, only the basic information about the linked item, without the nested properties. However, with output expansion, it is possible to expand all or specific properties of the content, provided they are expandable and referenced at the first level.
+**Output expansion** allows you to retrieve additional data about related content in the API output for a given content item.
 
-This feature can be used when querying for a content item or items through the Delivery API, by adding an `expand` parameter to the query. The value of this parameter can be either `"all"` to expand all properties on the content item, or `"property:alias, alias, alias"` to expand specific ones.
+By default, a content property that allows picking a different content item (for example a content picker property) outputs a shallow representation of the picked item. That means, only the basic information about the picked item, without the item properties. However, with output expansion, it is possible to include the properties of the picked item in the API output.
+
+This feature can be used both when querying for single and multiple content items, by adding an `expand` parameter to the query. The value of this parameter can be either `"all"` to expand all properties of the requested content item or `"property:alias, alias, alias"` to expand specific ones.
 
 
 
-The following snippet demonstrates the output of a "My post" content node without expanding the `linkedItem` content picker property.
+The following JSON snippet demonstrates the default output of a content item (without expanding any properties):
+
+#### Request
+
+```
+GET
+/umbraco/delivery/api/v1/content/item/9bdac0e9-66d8-4bfd-bba1-e954ed9c780d
+```
+
+#### Response
 
 {% code title="Shallow output for "linkedItem" property" %}
 ```json
