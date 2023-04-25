@@ -19,7 +19,8 @@ The workflow detail UI displays the following:
 - The status of the current task.
 - Approval status for members of the current group.
 - Progress towards meeting the threshold for the current approval stage.
-- Future tasks and the assigned group and its users.
+- Future tasks
+- The assigned group and its users.
 
 ![Tasklist with approval thresholds](./images/tasklist-with-approval-thresholds.png)
 
