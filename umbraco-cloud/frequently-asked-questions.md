@@ -68,7 +68,7 @@ Generally, we recommend that you keep your DNS entry set to 'DNS Only' in your o
 ### Does Cloudflare add any additional HTTP request headers?
 HTTP headers are bits of information that are passed along within every communication between (web) servers and (browser) clients. All HTTP requests to custom hostnames on Umbraco Cloud pass through Cloudflare. 
 
-HTTP requests headers can be useful for e.g. multilingual purposes to redirect users of certain languages to a specific URL. Here, the collection of visitor location headers below will be helpful. The values for these location headers are derived from the visitor's IP address.
+HTTP requests headers can be useful for for example multilingual purposes to redirect users of certain languages to a specific URL. Here, the collection of visitor location headers below will be helpful. The values for these location headers are derived from the visitor's IP address.
 
 - `cf-ipcity`: The visitor's city
 - `cf-ipcountry`: The visitor's country
@@ -77,7 +77,7 @@ HTTP requests headers can be useful for e.g. multilingual purposes to redirect u
 - `cf-iplatitude`: The visitor's latitude
 - `uc-ipcountry`: The visitor’s country. `uc-ipcountry` header is a carbon copy of [uf-ipcountry](https://developers.cloudflare.com/fundamentals/get-started/reference/http-request-headers/#cf-ipcountry).
 
-Note, the HTTP requests headers are available on all custom hostnames created through Umbraco Cloud, but not the default hostname for the Umbraco Cloud project e.g: project.euwest01..umbraco.io.
+Note, the HTTP requests headers are available on all custom hostnames created through Umbraco Cloud. But not the default hostname for the Umbraco Cloud project such as project.euwest01.umbraco.io.
 
 ### What versions of .NET does Cloud support?
 
