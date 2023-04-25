@@ -20,7 +20,7 @@ This integration provides a custom dashboard and indexing component for managing
 
 | Major      | Minor/Patch |
 | ---------- | ----------- |
-| Version 10 | 10.3.1       |
+| Version 10 | 10.3.1      |
 | Version 11 | 11.0.0      |
 
 ## Authentication
@@ -57,8 +57,10 @@ The following configuration is required for working with the Algolia API:
 
 Algolia comes with a set of predefined API keys:
 
-* Search-Only API key - a public API key used on the frontend for performing search queries.
-* Admin API key - used on the backend for create, update or delete operations on the indices. 
+| Name                | Purpose                                                                                  |
+| ------------------- | ---------------------------------------------------------------------------------------- |
+| Search-Only API key | Public API key used on the front end for performing search queries.                      |
+| Admin API key       | Used in the Umbraco backoffice for create-, update- or delete operations on the indices. |
 
 More details on other use cases for the Algolia API keys can be found in [the Algolia Docs](https://www.algolia.com/doc/guides/security/api-keys/#predefined-api-keys).
 

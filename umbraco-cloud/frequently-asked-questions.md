@@ -67,7 +67,7 @@ Generally, we recommend that you keep your DNS entry set to 'DNS Only' in your o
 
 ### What versions of .NET does Cloud support?
 
-By default, Umbraco Cloud runs all Umbraco version 8 projects on .NET 4.8, Umbraco 9 projects on .NET 5.0, and Umbraco 10 projects on .NET 6.0.
+By default, Umbraco Cloud runs all Umbraco version 8 projects on .NET 4.8, Umbraco 9 projects on .NET 5.0, Umbraco 10 projects on .NET 6.0, and Umbraco 11 projects on .NET 7.0.
 
 ***
 
