@@ -1,11 +1,11 @@
 ---
 description: >-
-  Learn how to use Azure Active Directory credentials to login to Umbraco either as a user or a member.
+  Learn how to use Azure Active Directory credentials to login to Umbraco as a member.
 ---
 
 # Add Azure Active Directory authentication (Members)
 
-This tutorial takes you through configuring Azure Active Directory (Azure AD) with Umbraco backoffice users and frontend members.
+This tutorial takes you through configuring Azure Active Directory (Azure AD) for the member login on your Umbraco CMS website.
 
 {% hint style="warning" %}
 Azure AD conflicts with Umbraco ID which is the main authentication method used on all Umbraco Cloud projects.
@@ -15,11 +15,16 @@ Due to this, we **highly recommend not using Azure AD for backoffice authenticat
 It is still possible to use other [External Login Providers](../reference/security/external-login-providers.md) like Google Auth and OpenIdConnect, with Umbraco Cloud.
 {% endhint %}
 
-## Configuring Azure AD
+## Prerequisites
+
+* A project with a setup for Members.
+* Visual Studio, or another Integrated Development Environment (IDE).
+
+## Step 1: Configure Azure AD
 
 Before your applications can interact with Azure AD B2C, they must be registered with a tenant that you manage. For more information, see [Microsoft's Tutorial: Create an Azure Active Directory B2C tenant](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant).
 
-## Installing the NuGet Package
+## Step 2: Install the NuGet package
 
 You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` NuGet package. There are two approaches to installing the packages:
 
@@ -113,15 +118,86 @@ options.ClaimActions.MapCustomJson(ClaimTypes.Email, x =>
 This extra code will read the user email from the Microsoft Graph API.
 {% endhint %}
 
-## Azure AD Authentication for Members
+## Step 3: Implement the Azure AD Authentication
 
-1. Create a Member login functionality, see the [Member registration and login](members-registration-and-login.md#member-registration-and-login) article.
-2. Create a class called `MemberAuthenticationExtensions.cs` to configure the external login.
+1. Create a new class for custom configuration options: `AzureB2CMembersExternalLoginProviderOptions.cs`.
+
+{% code title="AzureB2CMembersExternalLoginProviderOptions.cs" lineNumbers="true" %}
+```csharp
+using Microsoft.Extensions.Options;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Web.Common.Security;
+
+namespace MyApp
+{
+    public class AzureB2CMembersExternalLoginProviderOptions : IConfigureNamedOptions<MemberExternalLoginProviderOptions>
+    {
+        public const string SchemeName = "OpenIdConnect";
+        public void Configure(string? name, MemberExternalLoginProviderOptions options)
+        {
+            if (name != "Umbraco." + SchemeName)
+            {
+                return;
+            }
+
+            Configure(options);
+        }
+
+        public void Configure(MemberExternalLoginProviderOptions options)
+        {
+            // The following options are relevant if you
+            // want to configure auto-linking on the authentication.
+            options.AutoLinkOptions = new MemberExternalSignInAutoLinkOptions(
+
+                // Set to true to enable auto-linking
+                autoLinkExternalAccount: true,
+
+                // [OPTIONAL]
+                // Default: The culture specified in appsettings.json.
+                // Specify the default culture to create the Member as.
+                // It can be dynamically assigned in the OnAutoLinking callback.
+                defaultCulture: null,
+
+                // [OPTIONAL]
+                // Specify the default "IsApproved" status.
+                // Must be true for auto-linking.
+                defaultIsApproved: true,
+
+                // [OPTIONAL]
+                // Default: "Member"
+                // Specify the Member Type alias.
+                defaultMemberTypeAlias: "Member"
+
+            )
+            {
+                // [OPTIONAL] Callbacks
+                OnAutoLinking = (autoLinkUser, loginInfo) =>
+                {
+                    // Customize the Member before it's linked.
+                    // Modify the Members groups based on the Claims returned
+                    // in the external ogin info.
+                },
+                OnExternalLogin = (user, loginInfo) =>
+                {
+                    // Customize the Member before it is saved whenever they have
+                    // logged in with the external provider.
+                    // Sync the Members name based on the Claims returned
+                    // in the external login info
+
+                    // Returns a boolean indicating if sign-in should continue or not.
+                    return true;
+                }
+            };
+        }
+    }
+}
+```
+{% endcode %}
+
+2. Create a new static extension class called `MemberAuthenticationExtensions.cs`.
 
 {% code title="MemberAuthenticationExtensions.cs" lineNumbers="true" %}
 ```csharp
-using Microsoft.Extensions.DependencyInjection;
-
 namespace MyApp
 {
     public static class MemberAuthenticationExtensions
@@ -135,17 +211,21 @@ namespace MyApp
                     membersAuthenticationBuilder =>
                     {
                         membersAuthenticationBuilder.AddMicrosoftAccount(
-                            // The scheme must be set with this method to work for members
+
+                            // The scheme must be set with this method to work for the external login.
                             membersAuthenticationBuilder.SchemeForMembers(AzureB2CMembersExternalLoginProviderOptions.SchemeName),
                             options =>
                             {
-                                //Callbackpath - Important! The CallbackPath represents the URL to which the browser should be redirected to and the default value is
-                                // /signin-oidc This should be unique!.
+                                // Callbackpath: Tepresents the URL to which the browser should be redirected to.
+                                // The default value is /signin-oidc.
+                                // This needs to be unique.
                                 options.CallbackPath = "/umbraco-b2c-members-signin";
+
                                 //Obtained from the AZURE AD B2C WEB APP
                                 options.ClientId = "YOURCLIENTID";
                                 //Obtained from the AZURE AD B2C WEB APP
                                 options.ClientSecret = "YOURCLIENTSECRET"; 
+
                                 options.SaveTokens = true;
                             });
                     });
@@ -161,76 +241,7 @@ namespace MyApp
 Ensure to replace `YOURCLIENTID` and `YOURCLIENTSECRET` in the code with the values from the Azure AD tenant.
 {% endhint %}
 
-3. To enable a member to link their account to an external login provider such as Azure AD in the Umbraco Backoffice, you have to implement a custom-named configuration `MemberExternalLoginProviderOptions` for Members. Add the following code in the `AzureB2CMembersExternalLoginProviderOptions.cs` file:
-
-{% code title="AzureB2CMembersExternalLoginProviderOptions.cs" lineNumbers="true" %}
-```csharp
-using Microsoft.Extensions.Options;
-using Umbraco.Cms.Core;
-using Umbraco.Cms.Web.Common.Security;
-
-namespace MyApp
-{
-    public class AzureB2CMembersExternalLoginProviderOptions : IConfigureNamedOptions<MemberExternalLoginProviderOptions>
-    {
-        public const string SchemeName = "OpenIdConnect";
-        public void Configure(string name, MemberExternalLoginProviderOptions options)
-        {
-            if (name != "Umbraco." + SchemeName)
-            {
-                return;
-            }
-
-            Configure(options);
-        }
-
-        public void Configure(MemberExternalLoginProviderOptions options)
-        {
-
-            options.AutoLinkOptions = new MemberExternalSignInAutoLinkOptions(
-                // must be true for auto-linking to be enabled
-                autoLinkExternalAccount: true,
-
-                // Optionally specify the default culture to create
-                // the user as. If null it will use the default
-                // culture defined in the appSettings.json, or it can
-                // be dynamically assigned in the OnAutoLinking
-                // callback.
-
-                defaultCulture: null,
-                
-                // Optionally specify the default "IsApprove" status. Must be true for auto-linking.
-                defaultIsApproved: true,
-
-                // Optionally specify the member type alias. Default is "Member"
-                defaultMemberTypeAlias: "Member"
-
-            )
-            {
-                // Optional callback
-                OnAutoLinking = (autoLinkUser, loginInfo) =>
-                {
-                    // You can customize the user before it's linked.
-                    // i.e. Modify the user's groups based on the Claims returned
-                    // in the externalLogin info
-                },
-                OnExternalLogin = (user, loginInfo) =>
-                {
-                    // You can customize the user before it's saved whenever they have
-                    // logged in with the external provider.
-                    // i.e. Sync the user's name based on the Claims returned
-                    // in the externalLogin info
-
-                    return true; //returns a boolean indicating if sign-in should continue or not.
-                }
-            };
-        }
-    }
-}
-```
-{% endcode %}
-
-4. Next, update `ConfigureServices` method in the `Startup.cs` file:
+4. Add the Members authentication configuration to the `ConfigureServices` method in the `Startup.cs` file:
 
 {% code title="Startup.cs" lineNumbers="true" %}
 ```csharp
@@ -240,15 +251,16 @@ public void ConfigureServices(IServiceCollection services)
         .AddBackOffice()
         .AddWebsite()
         .AddComposers()
-        // Add ConfigureAuthentication
-        .ConfigureAuthentication()
+
         //Add Members ConfigureAuthentication
         .ConfigureAuthenticationMembers()
+
         .Build();
 }
 ```
 {% endcode %}
 
-5. Build and run the website. Your members can now log in with their Azure AD credentials.
+5. Build the project.
+6. Run the website.
 
 ![AD Login Screen](images/AD\_Login\_Members.png)

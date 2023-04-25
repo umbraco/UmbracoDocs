@@ -261,7 +261,7 @@ namespace MyUmbracoProject.CustomAuthentication
     public class ProviderMembersExternalLoginProviderOptions : IConfigureNamedOptions<MemberExternalLoginProviderOptions>
     {
         public const string SchemeName = "OpenIdConnect";
-        public void Configure(string name, MemberExternalLoginProviderOptions options)
+        public void Configure(string? name, MemberExternalLoginProviderOptions options)
         {
             if (name != "Umbraco." + SchemeName)
             {
