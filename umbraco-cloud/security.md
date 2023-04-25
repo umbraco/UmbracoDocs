@@ -129,7 +129,7 @@ If you are unsure whether your Cloud project uses Cloudflare or not, get in touc
 {% tab title="Default (reverse proxy)" %}
 **Reverse proxy version (default)**
 
-For all cloud projects since December 8th, 2020, Cloudflare is used as a reverse proxy service for your project. This means that you'll need to get the IPs from the `CF-Connecting-IP` header. Use the example below to restrict access to your backoffice using IP filtering.
+Cloudflare is used as a reverse proxy service for your Cloud project. This means that you'll need to get the IPs from the `CF-Connecting-IP` header. Use the example below to restrict access to your backoffice using IP filtering.
 
 You can read more about the HTTP request headers coming from Cloudflare in the [Cloudflare Documentation.](https://developers.cloudflare.com/fundamentals/get-started/reference/http-request-headers/).
 
@@ -154,7 +154,8 @@ You can read more about the HTTP request headers coming from Cloudflare in the [
 ```
 {% endtab %}
 {% tab title="Legacy (non-reverse proxy)" %}
-**Projects from before December 8th, 2020 (Non-Reverse Proxy, eg. non-Cloudflare)**
+
+**Non-reverse proxy (projects created before 2021)**
 
 If you created the Cloud project earlier than December 8th, 2020, Cloudflare is not used on your project.
 
