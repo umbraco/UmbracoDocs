@@ -165,11 +165,10 @@ This means that the content item resides under the root node with "docs-portal" 
 
 The start item is also quite helpful when obtaining content from the API. By supplying either the start item `id` or `path` in the `Start-Item` header, you can instruct the Delivery API to use the corresponding root node as the starting point for the requested content operation:
 
-<pre class="language-http"><code class="lang-http">GET
-/umbraco/delivery/api/v1/content/item/articles/2023/getting-started
-<strong>
-</strong><strong>Start-Item: docs-portal
-</strong></code></pre>
+```http
+GET /umbraco/delivery/api/v1/content/item/articles/2023/getting-started
+Start-Item: docs-portal
+```
 
 </details>
 
@@ -190,8 +189,7 @@ The following JSON snippet demonstrates the default output of a content item (wi
 #### Request
 
 ```http
-GET
-/umbraco/delivery/api/v1/content/item/9bdac0e9-66d8-4bfd-bba1-e954ed9c780d
+GET /umbraco/delivery/api/v1/content/item/9bdac0e9-66d8-4bfd-bba1-e954ed9c780d
 ```
 
 #### Response
@@ -234,8 +232,7 @@ And here is an example of how an expanded representation might look for the `lin
 #### Request
 
 ```http
-GET
-/umbraco/delivery/api/v1/content/item/9bdac0e9-66d8-4bfd-bba1-e954ed9c780d?expand=property:linkedItem
+GET /umbraco/delivery/api/v1/content/item/9bdac0e9-66d8-4bfd-bba1-e954ed9c780d?expand=property:linkedItem
 ```
 
 #### Response
@@ -295,9 +292,7 @@ The built-in property editors in Umbraco that allow for output expansion are:  &
 Similar to the preview concept in Umbraco, the Delivery API allows for requesting unpublished content through its endpoints. This can be done by setting a `Preview` header to `true` in the API request. However, accessing draft versions of your content nodes requires authorization via an API key configured in `appsettings.json` file - `Umbraco:CMS:DeliveryApi:ApiKey` setting. To obtain preview data, you must add the `Api-Key` request header containing the configured API key to the appropriate endpoints, like:&#x20;
 
 ```http
-GET
-/umbraco/delivery/api/v1/content/item/11fb598b-5c51-4d1a-8f2e-0c7594361d15
-
+GET /umbraco/delivery/api/v1/content/item/11fb598b-5c51-4d1a-8f2e-0c7594361d15
 Preview: true
 Api-Key: my-api-key
 ```
@@ -313,9 +308,7 @@ Draft content is not going to be included in the JSON response otherwise.
 If your content is available in multiple languages, the Delivery API can resolve localized content. When querying content by `id`, the `Accept-Language` header can be used to request variant content.
 
 ```http
-GET
-/umbraco/delivery/api/v1/content/item/11fb598b-5c51-4d1a-8f2e-0c7594361d15
-
+GET /umbraco/delivery/api/v1/content/item/11fb598b-5c51-4d1a-8f2e-0c7594361d15
 Accept-Language: en-US
 ```
 
