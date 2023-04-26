@@ -60,7 +60,8 @@ Once the Delivery API has been configured on your project, all your published co
                 "Enabled": true,
                 "PublicAccess": true,
                 "ApiKey": "my-api-key",
-                "DisallowedContentTypeAliases": ["alias1", "alias2", "alias3"]
+                "DisallowedContentTypeAliases": ["alias1", "alias2", "alias3"],
+                "RichTextOutputAsJson": false
             }
         }
     }
@@ -71,6 +72,10 @@ Once the Delivery API has been configured on your project, all your published co
 * `Umbraco:CMS:DeliveryApi:PublicAccess` determines whether the Delivery API (_if enabled_) should be publicly accessible or if access should require an API key.
 * `Umbraco:CMS:DeliveryApi:ApiKey` specifies the API key to use for authorizing access to the API when public access is disabled. This setting is also used for accessing draft content for preview.
 * `Umbraco:CMS:DeliveryApi:DisallowedContentTypeAliases` contains the aliases of the content types that should never be exposed through the Delivery API, regardless of any other configurations.
+
+Another valuable configuration option to consider when working with the Delivery API is `RichTextOutputAsJson`:
+
+* `Umbraco:CMS:DeliveryApi:RichTextOutputAsJson` enables outputting rich text content as JSON rather than the default HTML output. JSON can be a preferred format in many scenarios, not least because it supports the routing of internal links better than HTML does.
 
 {% hint style="info" %}
 To test the functionality of the API, you need to create some content first.
@@ -138,9 +143,33 @@ The Delivery API outputs the JSON structure outlined below to represent the retr
 
 <summary>Start item</summary>
 
-The start item indicates the root node to which a content item belongs. This concept is particularly useful for omitting the root node URL segment in the output, especially in cases where multiple Umbraco sites are configured under a single domain. The start item is represented by a header and is included in the JSON response of the Delivery API as the `startItem` property. This property contains both the item’s `id` and `path`. Note that the start item path segment will not be included in the value of the `path` JSON property.
+When working headlessly in a multi-site setup, sometimes it can be difficult to determine the site context of a particular content item. This is where the _start item_ comes into play.
 
-In Umbraco, `Umbraco.CMS.Global.HideTopLevelNodeFromPath` setting can be used to enable or disable including the top-level node in the URL of your content items. If the setting is set to `false`, you can still use the root node URL segment in the `path` parameter of the "_Get by route_" endpoint. However, the preferred approach is to make use of the `Start-Item` header to specify the URL segment or `id` of the root content node. This way, you can omit the root node URL segment from the content item path when querying for a content item. The `HideTopLevelNodeFromPath` setting does not affect the output URLs when rendering the content output.
+The start item represents the root of a content item and is commonly returned from the API in conjunction with a content path. For instance:
+
+```json
+{
+  "route": {
+    "path": "/articles/2023/getting-started",
+    "startItem": {
+      "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "path": "docs-portal"
+    }
+  }
+}
+```
+
+This means that the content item resides under the root node with "docs-portal" as an alias and can be retrieved using the path "/articles/2023/getting-started".
+
+
+
+The start item is also quite helpful when obtaining content from the API. By supplying either the start item `id` or `path` in the `Start-Item` header, you can instruct the Delivery API to use the corresponding root node as the starting point for the requested content operation:
+
+<pre class="language-http"><code class="lang-http">GET
+/umbraco/delivery/api/v1/content/item/articles/2023/getting-started
+<strong>
+</strong><strong>Start-Item: docs-portal
+</strong></code></pre>
 
 </details>
 
@@ -160,7 +189,7 @@ The following JSON snippet demonstrates the default output of a content item (wi
 
 #### Request
 
-```
+```http
 GET
 /umbraco/delivery/api/v1/content/item/9bdac0e9-66d8-4bfd-bba1-e954ed9c780d
 ```
@@ -204,7 +233,7 @@ And here is an example of how an expanded representation might look for the `lin
 
 #### Request
 
-```
+```http
 GET
 /umbraco/delivery/api/v1/content/item/9bdac0e9-66d8-4bfd-bba1-e954ed9c780d?expand=property:linkedItem
 ```
@@ -263,7 +292,7 @@ The built-in property editors in Umbraco that allow for output expansion are:  &
 
 <summary>Preview</summary>
 
-Similar to the preview concept in Umbraco, the Delivery API allows for requesting unpublished content through its endpoints. This can be done by setting a `Preview` header to `true` in the API request. However, accessing draft versions of your content nodes requires authorization via an API key configured in `appsettings.json` file - `Umbraco.CMS.DeliveryApi.ApiKey` setting. To obtain preview data, you must add the `Api-Key` request header containing the configured API key to the appropriate endpoints. Draft content is not going to be included in the JSON response otherwise.
+Similar to the preview concept in Umbraco, the Delivery API allows for requesting unpublished content through its endpoints. This can be done by setting a `Preview` header to `true` in the API request. However, accessing draft versions of your content nodes requires authorization via an API key configured in `appsettings.json` file - `Umbraco:CMS:DeliveryApi:ApiKey` setting. To obtain preview data, you must add the `Api-Key` request header containing the configured API key to the appropriate endpoints. Draft content is not going to be included in the JSON response otherwise.
 
 </details>
 
