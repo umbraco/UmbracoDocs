@@ -26,18 +26,18 @@ All Workflow configuration is optional and will fallback to defaults, if not set
 
 ```json
 {
-  “Workflow”: {
-    “ReminderNotificationPeriod”: Timespan.FromHours(8),
-    “EnableTestLicense”: false,
-    “EmailTemplatePath”: “~/Views/Partials/WorkflowEmails”,
-    “DateFormats”: {
-      “DateFormat”: “MMMM d, yyyy h:mm tt”,
-      “DateFormatNoMinute”: “MMMM d, yyyy h tt”,
-      “DateFormatShort”: “MMMM d, yyyy”,
-      “TimeFormat”: “h:mm tt”,
-      “TimeFormatShort”: “HH:mm”
+  "Workflow": {
+    "ReminderNotificationPeriod": Timespan.FromHours(8),
+    "EnableTestLicense": false,
+    "EmailTemplatePath": "~/Views/Partials/WorkflowEmails",
+    "DateFormats": {
+      "DateFormat": "MMMM d, yyyy h:mm tt",
+      "DateFormatNoMinute": "MMMM d, yyy h tt",
+      "DateFormatShort": "MMMM d, yyyy",
+      "TimeFormat": "h:mm tt",
+      "TimeFormatShort": "HH:mm"
     },
-    “SettingsCustomization”: {...}
+    "SettingsCustomization”: {...}
   }
 ```
 
@@ -77,10 +77,10 @@ Both are dictionaries of `SettingsCustomizationDetail` objects. The value is set
 ```json
 {
   …
-  “MySettingKey”: {
-    “IsHidden”: false,
-    “IsReadOnly”: false,
-    “Value”: 42
+  "MySettingKey": {
+    "IsHidden": false,
+    "IsReadOnly": false,
+    "Value": 42
   }
   …
 }
@@ -94,32 +94,35 @@ All available `SettingsCustomization` options are illustrated below along with t
 
 ```json
 {
-  “Workflow”: {
+  "Workflow": {
     …
-    “SettingsCustomization”: {
-      “General”: {
-        “FlowType”: 0|1|2 matching the FlowType enum values,
-        “LockIfActive”: bool,
+    "SettingsCustomization": {
+      "General": {
+        "FlowType": 0|1|2 matching the FlowType enum values,
+        "ApprovalThreshold": 0|1|2 matching the ApprovalThreshold enum values,
+        "ConfigureApprovalThreshold": bool,
+        "RejectionResetsApprovals": bool,
+        "LockIfActive": bool,
         "MandatoryComments": bool,
-        “AllowAttachments”: bool,
-        “AllowScheduling”: bool,
-        “RequireUnpublish”: bool,
-        “ExtendPermissions”: bool,
-        “SendNotifications”: bool,
-        “Email”: string,
-        “ReminderDelay”: int,
-        “EditUrl”: string,
-        “SiteUrl”: string,
-        “NewNodeApprovalFlow”: *,
-        “DocumentTypeApprovalFlow”: *,
-        “ExcludeNodes”: *,
+        "AllowAttachments": bool,
+        "AllowScheduling": bool,
+        "RequireUnpublish": bool,
+        "ExtendPermissions": bool,
+        "SendNotifications": bool,
+        "Email": string,
+        "ReminderDelay": int,
+        "EditUrl": string,
+        "SiteUrl": string,
+        "NewNodeApprovalFlow": *,
+        "DocumentTypeApprovalFlow": *,
+        "ExcludeNodes": *,
       },
-      “ContentReviews”: {
-        “EnableContentReviews”: bool,
-        “ReviewPeriod”: int,
-        “ReminderThreshold”: int,
-        “SendNotifications”: bool,
-        “PublishIsReview”: bool
+      "ContentReviews": {
+        "EnableContentReviews": bool,
+        "ReviewPeriod": int,
+        "ReminderThreshold": int,
+        "SendNotifications": bool,
+        "PublishIsReview": bool
       }
     }
   }
@@ -139,6 +142,22 @@ Sets the workflow type to one of Explicit (0), Implicit (1), or Exclude (2):
 - Explicit requires all steps be approved, including steps where the original change author is a group member
 - Implicit auto-approves steps where the author is a member of the approving group
 - Exclude behaves similar to Explicit, but excludes the original author from any notifications (that is the author can not approve their own work)
+
+#### ApprovalThreshold (int, requires a license)
+
+Sets the default approval threshold to one of One (0), Most (1), or All (2):
+
+- One: pending task requires approval from any member of the assigned approval group. This is the default behaviour for all installations (trial and licensed)
+- Most: pending task requires an absolute majority of group members. For example, a group with three members requires two approvals, a group with four members requires three approvals, and a group with six members requires four approvals.
+- All: pending task requires approval from all group members.
+
+#### ConfigureApprovalThreshold (bool, requires a license)
+
+When true, allows configuring approval threshold on individual workflow stages.
+
+#### RejectionResetsApprovals (bool, requires a license)
+
+When true, and ApprovalThreshold is Most or All, rejecting a task resets progress towards the approval threshold for the current workflow stage.
 
 #### LockIfActive (bool)
 
@@ -222,18 +241,18 @@ For example: To set the site URL, hide it in the backoffice, and set the content
 
 ```json
 {
-  “Workflow”: {
-    “SettingsCustomization”: {
-      “General”: {
-        “SiteUrl”: {
-          “IsHidden”: true,
-          “Value”: “https://www.myawesomesite.com”
+  "Workflow": {
+    "SettingsCustomization": {
+      "General": {
+        "SiteUrl": {
+          "IsHidden": true,
+          "Value": "https://www.myawesomesite.com"
         }
       },
-      “ContentReviews”: {
-        “ReviewPeriod”: {
-          “IsReadOnly”: true,
-          “Value”: 42
+      "ContentReviews": {
+        "ReviewPeriod": {
+          "IsReadOnly": true,
+          "Value": 42
         }
       }
     }

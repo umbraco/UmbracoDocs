@@ -12,10 +12,14 @@ In this section, you can find the release notes for each version of Umbraco Work
 
 <summary>Version 10</summary>
 
+### [10.2.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.0) (May 9th 2023)
+
+* **FEATURE** => Introduces [approval thresholds](getting-starting/approval-thresholds.md). 
+
 ### [10.1.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.2) (April 18th 2023)
 
-* FEATURE => Introduces optional configuration for mandatory comments
-* FEATURE => Modifies content lock to allow edits until first workflow action is completed
+* **FEATURE** => Introduces optional configuration for manadatory comments
+* **FEATURE** => Modifies content lock to allow edits until first workflow action is completed
 * Ensure notifications inheriting from ObjectNotification have a public Target property [#13](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/13)
 * Improve UI notification when publish fails on workflow completion
 * Improve logged messages when publish fails on workflow completion
@@ -29,7 +33,7 @@ In this section, you can find the release notes for each version of Umbraco Work
 
 ### [10.1.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.01) (March 7th 2023)
 
-* FEATURE => History cleanup and retention policies
+* **FEATURE** => History cleanup and retention policies
 * Fixes tree collision issue when multiple trees share class names [#11](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/11)
 * Ensure version number is included in package manifest
 * Improve UI/UX in submit workflow component
