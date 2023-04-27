@@ -11,13 +11,13 @@ In this article, you will be able to find information on how to manage your subs
 
 ## Manage Subscriptions
 
-To manage your subscription on Umbraco Cloud, go to the menu in the top right corner and select "Manage subscription".
+To manage your subscription on Umbraco Cloud, go to the menu in the top right corner and select "Organization".
 
 ![manage subscriptions](images/manage-subscriptions-new.png)
 
-You will see an overview of the subscriptions that you have running on your Umbraco Cloud account.
+You will see an overview of your organization on Umbraco Cloud. From here you can see the information about the organization.
 
-Here you can find information about the projects you are currently paying for on Umbraco Cloud.
+To see the 
 
 ![Your subscriptions](images/subscriptions.png)
 
@@ -37,13 +37,14 @@ Once a credit card has been added it will show up in a drop-down when creating n
 
 On Umbraco Cloud, we are sending out one single invoice with all the projects that you are paying for via email every month.
 
-If you want to watch the Payment history and download an invoice from a previous month, you do this from the Payment setting in the dropdown menu on your projects.
+You can watch the invoices for your projects under your organization in the Payment history section. From here you can see the following for each invoice:
 
-![Payment setting](images/payment-settings.png)
-
-From here you can see a history of the payments that have been done on the respective project that you are looking at.
-
-You can see the Invoice number, the date the invoice was issued, the total amount that has been paid, and the payment status, as well as change which Credit card you are using to pay for the specific project.
+* The payment number
+* The total amount paid
+* When the invoice was created 
+* The due date
+* The status of the invoice
+* Download the invoice
 
 ![payment history](images/payment-history.png)
 
