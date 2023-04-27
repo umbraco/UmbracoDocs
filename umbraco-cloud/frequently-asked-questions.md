@@ -75,7 +75,7 @@ HTTP requests headers can be useful for for example multilingual purposes to red
 - `cf-ipcontinent`: The visitor's continent
 - `cf-iplongitude`: The visitor's longitude
 - `cf-iplatitude`: The visitor's latitude
-- `uc-ipcountry`: The visitor’s country. `uc-ipcountry` header is a carbon copy of [uf-ipcountry](https://developers.cloudflare.com/fundamentals/get-started/reference/http-request-headers/#cf-ipcountry).
+- `uc-ipcountry`: The visitor’s country. `uc-ipcountry` header is a carbon copy of [cf-ipcountry](https://developers.cloudflare.com/fundamentals/get-started/reference/http-request-headers/#cf-ipcountry).
 
 Note, the HTTP requests headers are available on all custom hostnames created through Umbraco Cloud. But not the default hostname for the Umbraco Cloud project such as project.euwest01.umbraco.io.
 
