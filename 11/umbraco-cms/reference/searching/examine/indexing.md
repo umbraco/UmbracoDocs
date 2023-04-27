@@ -230,7 +230,12 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
 
                 options.FieldDefinitions = new(
                     new("id", FieldDefinitionTypes.Integer),
-                    new("name", FieldDefinitionTypes.FullText)
+                    new("name", FieldDefinitionTypes.FullText),
+                    //the examine dashboard uses nodeName in search results
+                    new("nodeName", FieldDefinitionTypes.InvariantCultureIgnoreCase),
+                    //__Published and path both required if using the ContentValueSetValidator
+                    new("__Published", FieldDefinitionTypes.Raw),
+                    new("path",FieldDefinitionTypes.InvariantCultureIgnoreCase)
                     );
 
                 options.UnlockIndex = true;
@@ -273,6 +278,11 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
                 {
                     ["name"] = content.Name,
                     ["id"] = content.Id,
+                    // nodeName used in the Examine Dashboard backoffice search results
+                    ["nodeName"] = content.Name,
+                    //__Published and path are required if using core ContentValueSetValidator to apply a Validation option to filter results
+                    ["__Published"] = content.Published ? "y" : "n",
+                    ["path"] = content.Path
                 };
 
                 yield return new ValueSet(content.Id.ToString(), IndexTypes.Content, content.ContentType.Alias, indexValues);
