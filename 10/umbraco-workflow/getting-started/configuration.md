@@ -1,3 +1,9 @@
+---
+description: >-
+  Get an overview of various options for customizing the configuration of your
+  Umbraco Workflow installation.
+---
+
 # Configuration
 
 With Umbraco Workflow, it is possible to customize the functionality with different configuration values.
@@ -6,7 +12,7 @@ With Umbraco Workflow, it is possible to customize the functionality with differ
 
 All configuration for Umbraco Workflow is held in the `appSettings.json` file found at the root of your Umbraco website. If the configuration has been customized to use another source, then the same keys and values discussed in this article can be applied there.
 
-The convention for Umbraco configuration is to have package based options stored as a child structure. The child structure is added below the Umbraco element and as a sibling of the CMS. Workflow configuration follows this pattern, i.e.:
+The convention for Umbraco configuration is to have package-based options stored as a child structure. The child structure is added below the Umbraco element and as a sibling of the CMS. Workflow configuration follows this pattern, i.e.:
 
 ```json
 {
@@ -22,7 +28,7 @@ The convention for Umbraco configuration is to have package based options stored
 }
 ```
 
-All Workflow configuration is optional and will fallback to defaults, if not set. The following structure represents the full set of configuration options along with the default values:
+All Workflow configuration is optional and will a fallback to defaults, if not set. The following structure represents the full set of configuration options along with the default values:
 
 ```json
 {
@@ -65,12 +71,12 @@ An instance of `ColorSettings` allowing customization of colors used in email no
 
 ## SettingsCustomization
 
-All Workflow settings can be customized in the `appSettings.json` file. Settings can be read-only or hidden entirely in the BackOffice. Optionally you can set the values here.
+All Workflow settings can be customized in the `appSettings.json` file. Settings can be read-only or hidden entirely in the backoffice. Optionally you can set the values here.
 
 The `SettingsCustomization` object has two child properties:
 
-- `General`
-- `ContentReviews`
+* `General`
+* `ContentReviews`
 
 Both are dictionaries of `SettingsCustomizationDetail` objects. The value is set to the following structure that contains three settings:
 
@@ -86,9 +92,9 @@ Both are dictionaries of `SettingsCustomizationDetail` objects. The value is set
 }
 ```
 
-- `IsHidden` - When true, the corresponding property is not displayed in the BackOffice UI
-- `IsReadOnly` - When true, the corresponding property is displayed in the BackOffice UI, but is not editable
-- `Value` - Sets the value for the corresponding property. This value takes priority over existing values set via the BackOffice
+* `IsHidden` - When true, the corresponding property is not displayed in the backoffice UI
+* `IsReadOnly` - When true, the corresponding property is displayed in the backoffice UI but is not editable
+* `Value` - Sets the value for the corresponding property. This value takes priority over existing values set via the backoffice
 
 All available `SettingsCustomization` options are illustrated below along with their respective values:
 
@@ -130,7 +136,7 @@ All available `SettingsCustomization` options are illustrated below along with t
 ```
 
 {% hint style="info" %}
-These are complex types and not recommended to have values set from Configuration. Instead, these values can be set from the BackOffice to hidden or readonly to prevent further changes.
+These are complex types and are not recommended to have values set from Configuration. Instead, these values can be set from the backoffice to hidden or read-only to prevent further changes.
 {% endhint %}
 
 ### General
@@ -139,21 +145,25 @@ These are complex types and not recommended to have values set from Configuratio
 
 Sets the workflow type to one of Explicit (0), Implicit (1), or Exclude (2):
 
-- Explicit requires all steps be approved, including steps where the original change author is a group member
-- Implicit auto-approves steps where the author is a member of the approving group
-- Exclude behaves similar to Explicit, but excludes the original author from any notifications (that is the author can not approve their own work)
+| Value         | Name     | Description                                                                                                                                 |
+| ------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0 (_default_) | Explicit | Requires all steps be approved, including steps where the original change author is a group member.                                         |
+| 1             | Implicit | Auto-approves steps where the author is a member of the approving group.                                                                    |
+| 2             | Exclude  | Behaves similarly to Explicit, but excludes the original author from any notifications (that is the author can not approve their own work). |
 
 #### ApprovalThreshold (int, requires a license)
 
 Sets the default approval threshold to one of One (0), Most (1), or All (2):
 
-- One: pending task requires approval from any member of the assigned approval group. This is the default behaviour for all installations (trial and licensed)
-- Most: pending task requires an absolute majority of group members. For example, a group with three members requires two approvals, a group with four members requires three approvals, and a group with six members requires four approvals.
-- All: pending task requires approval from all group members.
+| Value         | Name | Description                                                                                                                                                                                                  |
+| ------------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 0 (_default_) | One  | Pending tasks require approval from **any** member of the assigned approval group.                                                                                                                           |
+| 1             | Most | <p>Pending tasks require approval from an absolute <strong>majority</strong> of group members. <br>Example: A group with 3 members requires 2 approvals and a group with 4 members requires 3 approvals.</p> |
+| 2             | All  | Pending tasks require approval from **all** group members.                                                                                                                                                   |
 
 #### ConfigureApprovalThreshold (bool, requires a license)
 
-When true, allows configuring approval threshold on individual workflow stages.
+When true, allows configuring the approval threshold on individual workflow stages.
 
 #### RejectionResetsApprovals (bool, requires a license)
 
@@ -177,7 +187,7 @@ When true, displays optional controls for scheduling publish/unpublish when init
 
 #### RequireUnpublish (bool)
 
-When true, content must be approved via a workflow when unpublishing. When false, user with appropriate permission can unpublish content without workflow approval.
+When true, content must be approved via a workflow when unpublishing. When false, a user with appropriate permission can unpublish content without workflow approval.
 
 #### ExtendPermissions (bool)
 
@@ -213,7 +223,7 @@ Sets workflow permissions for Document Types (that is: all items of `BlogItem` t
 
 #### ExcludeNodes (complex type, requires a license)
 
-Allows excluding segements of the content tree from the workflow model. This is a complex type and ideally would not be set via configuration.
+Allows excluding segments of the content tree from the workflow model. This is a complex type and ideally would not be set via configuration.
 
 ### ContentReviews
 
@@ -223,7 +233,7 @@ When true, the content review engine will monitor publication dates to determine
 
 #### ReviewPeriod (int)
 
-Sets the number of days between mandatory reviews. This is a global value which can be overridden at the node or content type level.
+Sets the number of days between mandatory reviews. This is a global value that can be overridden at the node or content type level.
 
 #### ReminderThreshold (int)
 
@@ -237,7 +247,7 @@ When true, Workflow will send email notifications to approval groups, with a dig
 
 When true, publishing a node is treated as a review, and will generate a new review date. When false, content must be explicitly reviewed via the review banner rendered at the top of the editor.
 
-For example: To set the site URL, hide it in the backoffice, and set the content review period but keep the property readonly. The configuration would look like this:
+For example: To set the site URL, hide it in the backoffice, and set the content review period but keep the property read-only. The configuration would look like this:
 
 ```json
 {
