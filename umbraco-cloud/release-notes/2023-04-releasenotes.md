@@ -13,7 +13,7 @@ The latest addition to the multi-factor-authentication feature of Umbraco Cloud 
 
 This could be very handy in situations where the member is switching to another authenticator app, starts using a new phone, or due to another reason want to reset the current entry in his authenticator app.
 
-When the setting has been reset, the member will during his next login in Umbraco Cloud have to re-register an entry in his authenticator app of choice.
+When the setting has been reset, the member will during his next login have to re-register an entry in his authenticator app of choice.
 
 ## Other Umbraco Cloud Portal updates
 
