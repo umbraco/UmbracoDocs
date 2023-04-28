@@ -8,7 +8,7 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 
 ## \[Contentment] Data List
 
-**Editor Alias**: `Umbraco.Community.Contentment.DataList`\
+**Editor Alias**: `Umbraco.Community.Contentment.DataList`
 
 
 **List editor**: `Checkbox List` or `Tags`\
@@ -119,7 +119,7 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 
 ## List view
 
-**Editor Alias**: `Umbraco.ListView`\
+**Editor Alias**: `Umbraco.ListView`
 {% hint style="info" %} This editor is not supported and will not be present in the generated schema {% endhint %}
 
 ## Markdown Editor
@@ -154,17 +154,17 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 
 ## Member Picker
 
-**Editor Alias**: `Umbraco.MemberPicker`\
+**Editor Alias**: `Umbraco.MemberPicker`
 {% hint style="info" %} This editor is not supported and will not be present in the generated schema {% endhint %}
 
 ## Member Group Picker
 
-**Editor Alias**: `Umbraco.MemberGroupPicker`\
+**Editor Alias**: `Umbraco.MemberGroupPicker`
 {% hint style="info" %} This editor is not supported and will not be present in the generated schema {% endhint %}
 
 ## Multi Url Picker
 
-**Editor Alias**: `Umbraco.MultiUrlPicker`\
+**Editor Alias**: `Umbraco.MultiUrlPicker`
 
 
 **Maximum number of items**: `1`\
@@ -197,7 +197,7 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 **GraphQL Type**: [`[Media]`](schema-generation.md#media)\
 **Can be used for filtering**: `true`
 
-**Node type**: `Member`\
+**Node type**: `Member`
 {% hint style="info" %} This editor configuration is not supported and will not be present in the generated schema {% endhint %}
 
 ## Nested Content
@@ -260,5 +260,5 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 
 ## User Picker
 
-**Editor Alias**: `Umbraco.UserPicker`\
+**Editor Alias**: `Umbraco.UserPicker`
 {% hint style="info" %} This editor is not supported and will not be present in the generated schema {% endhint %}
