@@ -21,7 +21,7 @@ During March and April, we made multiple minor fixes and improvements to the Umb
 
 - The **auto-upgrade** feature and its handling of particular Umbraco7 and Umbraco8 projects have been **improved** significantly. We consider the upgrade feature to be more solid than ever.
 - When a user starts a new project creation flow based on a baseline project, the **potential baselines will load a lot faster** than earlier.
-- New versions of the project subpages **“Security”** and **“CDN Cahing and Optimization”** have been released and the documentation updated accordingly.
+- New versions of the project subpages **“Security”** and **“CDN Caching and Optimization”** have been released and the documentation updated accordingly.
 - When a user decides to send a project invite to an email that represents a user that already is part of the project, an **informative error message** will be shown.
 - The **UmbracoID login dialog** has received some minor tweaks in the front end.
 - And a whole lot of other minor tweaks and improvements.
