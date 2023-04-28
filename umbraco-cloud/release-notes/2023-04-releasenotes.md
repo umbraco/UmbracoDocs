@@ -11,7 +11,7 @@ The latest addition to the multi-factor-authentication feature of Umbraco Cloud 
 
 ![ResetAuthenticatorApp](images/ResetAuthenticatorApp.gif)
 
-This could be very handy in situations where the member is switching to another authenticator app, starts using a new phone, or due to another reason want to reset the current entry in his authenticator app.
+This can be handy in situations where the member is switching to another authenticator app and then starts using a new phone. Or it could be due to another reason to reset the authenticator app.
 
 When the setting has been reset, the member will during his next login have to re-register an entry in his authenticator app of choice.
 
