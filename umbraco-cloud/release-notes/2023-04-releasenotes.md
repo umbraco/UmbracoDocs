@@ -7,7 +7,7 @@
 
 ## Reset Authenticator App settings
 
-The latest addition to the multi-factor-authentication feature is the option for **administrators of an organization to reset the authenticator app settings**. This can be done for every member of the organization that is using an authenticator app during the login process to Umbraco Clou.
+The latest addition to the multi-factor-authentication feature is the option for **administrators of an organization to reset the authenticator app settings**. This can be done for every member of the organization that is using an authenticator app during the login process to Umbraco Cloud.
 
 ![ResetAuthenticatorApp](images/ResetAuthenticatorApp.gif)
 
