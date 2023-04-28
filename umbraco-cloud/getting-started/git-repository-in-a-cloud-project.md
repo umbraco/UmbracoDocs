@@ -15,7 +15,7 @@ Ideally, your Umbraco Cloud setup should look like this:
 
 Source control is a way to control changes to files and directories. You can keep a record of changes and revert to specific versions of a file in the event you would like to back up to an earlier time. A source control repository is used as the single source of truth that has the latest version of your project source code with all the git branches.
 
-There are different source code management tools that you can use such as GitHub, Git, GitLab, Apache Subversion (SVN), Mercurial, etc.
+There are different source code management tools that you can use such as GitHub, Git, [GitLab](https://skrift.io/issues/using-gitlab-bidirectional-mirroring-azure-devops-release-pipelines-to-auto-deploy-into-umbraco-cloud/), Apache Subversion (SVN), Mercurial, etc.
 
 {% tabs %}
 {% tab title="Umbraco 10+" %}
