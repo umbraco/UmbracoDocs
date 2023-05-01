@@ -7,29 +7,32 @@ This article is only for customers in the payment system released on the 5th of 
 For customers on Umbraco Cloud before the 5th of May, 2021 handling subscriptions is done through [the shop on Umbraco.com](https://shop.umbraco.com/profile/sign-in?returnURL=%2fprofile).
 {% endhint %}
 
-In this article, you will be able to find information on how to manage your subscriptions, download and pay invoices, and change your credit card on Umbraco Cloud.
+In this article, you will be able to find information on the following:
+- How to manage your subscriptions 
+- Download and pay invoices
+- And change your credit card on Umbraco Cloud.
 
 ## Manage Subscriptions
 
 To manage your subscription on Umbraco Cloud, go to the menu in the top right corner and select "Organization".
 
-![manage subscriptions](images/manage-subscriptions-new.png)
+![manage subscriptions](images/org-view.png)
 
 You will see an overview of your organization on Umbraco Cloud. From here you can see the information about the organization.
 
-To see the 
+To see the subscribtions running under your organization click on "Subscriptions" in the side menu
 
 ![Your subscriptions](images/subscriptions.png)
 
 ## Payment methods
 
-To change your payment method on Umbraco Cloud, go to your profile and select "Payment Methods" in the left side menu.
+To change your payment method on Umbraco Cloud, go to your organization and select "Payment Methods" in the left side menu.
 
 ![Select Payment Methods](images/select_payment.png)
 
 On this page you can see the credit cards you have already added or you can add a new one.
 
-Once a credit card has been added it will show up in a drop-down when creating new projects and you can change the payment method for a specific project.
+Once a credit card has been added it will show up in a drop-down when creating new projects. You can also change the payment method for a specific project from here.
 
 ![Select Payment Methods](images/Payment_methods.png)
 
@@ -46,7 +49,7 @@ You can watch the invoices for your projects under your organization in the Paym
 * The status of the invoice
 * Download the invoice
 
-![payment history](images/payment-history.png)
+![payment history](images/org-payments.png)
 
 When downloading an invoice for a given month, the invoice will contain all the projects that you were paying for during the month.
 
