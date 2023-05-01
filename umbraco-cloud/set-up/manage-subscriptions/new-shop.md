@@ -40,7 +40,7 @@ Once a credit card has been added it will show up in a drop-down when creating n
 
 On Umbraco Cloud, we are sending out one single invoice with all the projects that you are paying for via email every month.
 
-You can watch the invoices for your projects under your organization in the Payment history section. From here you can see the following for each invoice:
+You can view the invoices for your projects under your organization in the Payment History section. From here you can see the following for each invoice:
 
 * The payment number
 * The total amount paid
