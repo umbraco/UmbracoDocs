@@ -14,7 +14,8 @@ When you start with a fresh Umbraco 12 installation, the Delivery API will be en
 
 ### Register the Content Delivery API dependencies
 
-In the `Startup.cs` file, register the API dependencies in the `ConfigureServices` by adding `.AddDeliveryApi()`:
+1. Open your project's `Startup.cs` file.
+2. Register the API dependencies in the `ConfigureServices` method by adding `.AddDeliveryApi()`:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -31,7 +32,9 @@ public void ConfigureServices(IServiceCollection services)
 
 ### Enable the Content Delivery API
 
-Add the `DeliveryApi` configuration section in `appsettings.json` and set the value of the `Enabled` key to `true`:
+1. Open your project's `appsettings.json`.
+2. Insert the `DeliveryApi` configuration section under `Umbraco:CMS`.
+3. Add the `Enabled` key and set its value to `true`:
 
 {% code title="appsettings.json" %}
 ```json
@@ -49,7 +52,7 @@ Add the `DeliveryApi` configuration section in `appsettings.json` and set the va
 
 ### Additional configuration
 
-Once the Delivery API has been configured on your project, all your published content will be made available to the public by default. However, there are a few additional configuration options that you can use to restrict access to the Delivery API endpoints and limit the content that is returned.
+Once the Delivery API has been configured on your project, all your published content will be made available to the public by default. However, a few additional configuration options will allow you to restrict access to the Delivery API endpoints and limit the content that is returned.
 
 {% code title="appsettings.json" %}
 ```json
@@ -159,7 +162,7 @@ The start item represents the root of a content item and is commonly returned fr
 }
 ```
 
-This means that the content item resides under the root node with "docs-portal" as an alias and can be retrieved using the path "/articles/2023/getting-started".
+This means that the content item resides under the `docs-portal` root node and can be retrieved using the path `/articles/2023/getting-started`.
 
 
 
