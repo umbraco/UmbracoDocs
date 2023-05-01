@@ -47,10 +47,10 @@ You can view the invoices for your projects under your organization in the Payme
 * When the invoice was created 
 * The due date
 * The status of the invoice
-* Download the invoice
 
 ![payment history](images/org-payments.png)
 
+It is also possible to download the invoice.
 When downloading an invoice for a given month, the invoice will contain all the projects that you were paying for during the month.
 
 ![Invoice for projects](images/invoice.png)
