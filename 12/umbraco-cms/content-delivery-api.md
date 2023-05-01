@@ -4,13 +4,13 @@ description: Get started with the Content Delivery API.
 
 # Content Delivery API
 
-## Overview
-
-The Content Delivery API delivers headless capabilities built directly into Umbraco. It allows you to retrieve your content items in a JSON format and lets you preset them in different channels, using your preferred technology stack. This feature preserves the friendly editing experience of Umbraco, while also ensuring a performant delivery of content in a headless fashion. And with its several extension points, you can tailor this API to fit a broad range of requirements.
+The Content Delivery API delivers headless capabilities built directly into Umbraco. It allows you to retrieve your content items in a JSON format and lets you preset them in different channels, using your preferred technology stack. This feature preserves the friendly editing experience of Umbraco, while also ensuring a performant delivery of content in a headless fashion. And with its different extension points, you can tailor this API to fit a broad range of requirements.
 
 ## Getting Started
 
-When upgrading an existing project to version 12, you would need to opt-in explicitly for using the Delivery API. Below you will find the steps you need to take in order to configure it for your Umbraco project. If you start with a fresh Umbraco 12 installation, the Delivery API will be enabled by default and therefore you can skip straight to the [Additional configuration](content-delivery-api.md#additional-configuration) section.
+When upgrading an existing project to Umbraco 12, you will need to opt-in explicitly for using the Delivery API. Below you will find the steps you need to take in order to configure it for your Umbraco project.
+
+When you start with a fresh Umbraco 12 installation, the Delivery API will be enabled by default. This means that you can skip straight to the [Additional configuration](content-delivery-api.md#additional-configuration) section.
 
 ### Register the Content Delivery API dependencies
 
@@ -178,13 +178,13 @@ Start-Item: docs-portal
 
 **Output expansion** allows you to retrieve additional data about related content in the API output for a given content item.
 
-By default, a content property that allows picking a different content item (for example a content picker property) outputs a shallow representation of the picked item. That means, only the basic information about the picked item, without the item properties. However, with output expansion, it is possible to include the properties of the picked item in the API output.
+By default, a content property that allows picking a different content item (like a content picker property) outputs a shallow representation of the item. That means, only the basic information about the picked item, without the item properties. However, with output expansion, it is possible to include the properties of the picked item in the API output.
 
-This feature can be used both when querying for single and multiple content items, by adding an `expand` parameter to the query. The value of this parameter can be either `"all"` to expand all properties of the requested content item or `"property:alias, alias, alias"` to expand specific ones.
+This feature can be used when querying for both single and multiple content items, by adding an `expand` parameter to the query. The value of this parameter can be either `"all"` to expand all properties of the requested content item or `"property:alias, alias, alias"` to expand specific ones.
 
 
 
-The following JSON snippet demonstrates the default output of a content item (without expanding any properties):
+The following JSON snippet demonstrates the default output of a content item (without expanding any properties).
 
 #### Request
 
@@ -465,6 +465,8 @@ Which properties to expand and therefore include in the output if they refer to 
 
 ## Current Limitations
 
-While the Content Delivery API provides a powerful and flexible way to retrieve content from the Umbraco CMS, there are certain limitations to be aware of. In this section, we'll discuss some of the known limitations of the API, and how to work around them if necessary.
+The Content Delivery API provides a powerful and flexible way to retrieve content from the Umbraco CMS. There are, however, certain limitations to be aware of.&#x20;
+
+In this section, we will discuss some of the known limitations of the API, and how to work around them if necessary.
 
 _TBD_
