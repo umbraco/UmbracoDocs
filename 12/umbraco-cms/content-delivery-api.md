@@ -227,7 +227,7 @@ GET /umbraco/delivery/api/v1/content/item/9bdac0e9-66d8-4bfd-bba1-e954ed9c780d
 
 
 
-And here is an example of how an expanded representation might look for the `linkedItem` property that references another content item with properties `title` and `description`:
+Below is an example of how an expanded representation might look for the `linkedItem` property that references another content item with properties `title` and `description`:
 
 #### Request
 
