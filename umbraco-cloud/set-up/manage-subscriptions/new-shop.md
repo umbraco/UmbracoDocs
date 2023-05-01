@@ -8,9 +8,10 @@ For customers on Umbraco Cloud before the 5th of May, 2021 handling subscription
 {% endhint %}
 
 In this article, you will be able to find information on the following:
-- How to manage your subscriptions 
-- Download and pay invoices
-- And change your credit card on Umbraco Cloud.
+
+- How to manage your subscriptions.
+- How to download and pay invoices.
+- How to change your credit card for payments.
 
 ## Manage Subscriptions
 
