@@ -164,9 +164,7 @@ The start item represents the root of a content item and is commonly returned fr
 
 This means that the content item resides under the `docs-portal` root node and can be retrieved using the path `/articles/2023/getting-started`.
 
-
-
-The start item is also quite helpful when obtaining content from the API. By supplying either the start item `id` or `path` in the `Start-Item` header, you can instruct the Delivery API to use the corresponding root node as the starting point for the requested content operation:
+The start item can alse be helpful through the `Start-Item` request header when obtaining content from the Delivery API. Supplying a root node `id` or `path` as the header value, allows you to specify which is the starting point for the requested content operation:
 
 ```http
 GET /umbraco/delivery/api/v1/content/item/articles/2023/getting-started
