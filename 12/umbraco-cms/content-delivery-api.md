@@ -10,7 +10,7 @@ The Content Delivery API delivers headless capabilities built directly into Umbr
 
 When upgrading an existing project to Umbraco 12, you will need to opt-in explicitly for using the Delivery API. Below you will find the steps you need to take in order to configure it for your Umbraco project.
 
-When you start with a fresh Umbraco 12 installation, the Delivery API will be enabled by default. This means that you can skip straight to the [Additional configuration](content-delivery-api.md#additional-configuration) section.
+When you start with a fresh Umbraco 12 installation, the Delivery API will be enabled by default. This means that you can skip straight to the [Additional Configuration](content-delivery-api.md#additional-configuration) section.
 
 ### Register the Content Delivery API dependencies
 
@@ -162,7 +162,7 @@ The start item represents the root of a content item and is commonly returned fr
 
 This means that the content item resides under the `docs-portal` root node and can be retrieved using the path `/articles/2023/getting-started`.
 
-The start item can alse be helpful through the `Start-Item` request header when obtaining content from the Delivery API. Supplying a root node `id` or `path` as the header value, allows you to specify which is the starting point for the requested content operation:
+The start item can also be helpful through the `Start-Item` request header when obtaining content from the Delivery API. Supplying a root node `id` or `path` as the header value, allows you to specify which is the starting point for the requested content operation:
 
 ```http
 GET /umbraco/delivery/api/v1/content/item/articles/2023/getting-started
@@ -179,7 +179,7 @@ Start-Item: docs-portal
 
 By default, a content property that allows picking a different content item (like a content picker property) outputs a shallow representation of the item. That means, only the basic information about the picked item, without the item properties. However, with output expansion, it is possible to include the properties of the picked item in the API output.
 
-This feature can be used when querying for both single and multiple content items, by adding an `expand` parameter to the query. The value of this parameter can be either `"all"` to expand all properties of the requested content item or `"property:alias, alias, alias"` to expand specific ones.
+This feature can be used when querying for both single and multiple content items, by adding a `expand` parameter to the query. The value of this parameter can be either `"all"` to expand all properties of the requested content item or `"property:alias, alias, alias"` to expand specific ones.
 
 The following JSON snippet demonstrates the default output of a content item (without expanding any properties).
 
@@ -191,7 +191,7 @@ GET /umbraco/delivery/api/v1/content/item/9bdac0e9-66d8-4bfd-bba1-e954ed9c780d
 
 **Response**
 
-{% code title="Shallow output for 'linkedItem' property" %}
+{% code title="Shallow output for " %}
 ```json
 {
     "name": "My post",
@@ -232,7 +232,7 @@ GET /umbraco/delivery/api/v1/content/item/9bdac0e9-66d8-4bfd-bba1-e954ed9c780d?e
 
 **Response**
 
-{% code title="Expanded output for 'linkedItem' property" %}
+{% code title="Expanded output for " %}
 ```json
 {
     "name": "My post",
@@ -445,7 +445,7 @@ Which properties to expand and therefore include in the output if they refer to 
 
 ## Feature Capabilities
 
-* Querying for content item(s)
+* Querying for content items
 * Localization support
 * Output expansion
 * Preview
