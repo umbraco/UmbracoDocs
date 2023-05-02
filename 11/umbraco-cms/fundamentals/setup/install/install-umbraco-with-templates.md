@@ -89,7 +89,7 @@ Options:
 
 ## Create an Umbraco project
 
-1. Create a new empty Umbraco solution using MS SQL Azure/Server:\
+1. Create a new empty Umbraco solution:\
    `dotnet new umbraco -n MyCustomUmbracoProject`
 
 You will now have a new project with the name _MyCustomUmbracoProject_, or the name you chose to use. The new project can be opened and run using your favorite IDE or you can continue using the CLI commands.
