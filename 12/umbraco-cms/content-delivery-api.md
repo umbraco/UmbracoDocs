@@ -191,7 +191,7 @@ GET /umbraco/delivery/api/v1/content/item/9bdac0e9-66d8-4bfd-bba1-e954ed9c780d
 
 **Response**
 
-{% code title="Shallow output for "linkedItem" property" %}
+{% code title="Shallow output for 'linkedItem' property" %}
 ```json
 {
     "name": "My post",
@@ -232,7 +232,7 @@ GET /umbraco/delivery/api/v1/content/item/9bdac0e9-66d8-4bfd-bba1-e954ed9c780d?e
 
 **Response**
 
-{% code title="Expanded output for "linkedItem" property" %}
+{% code title="Expanded output for 'linkedItem' property" %}
 ```json
 {
     "name": "My post",
