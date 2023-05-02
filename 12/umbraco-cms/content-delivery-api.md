@@ -84,17 +84,15 @@ Another valuable configuration option to consider when working with the Delivery
 To test the functionality of the API, you need to create some content first.
 {% endhint %}
 
-## Endpoints
+## Concepts
 
-The output produced by the Delivery API can either represent a specific content item or a paged list of multiple items. Before exploring the API endpoints, there are a few concepts to keep in mind.
-
-### Concepts
+Before exploring the API endpoints detailed below, there are a few concepts to keep in mind.
 
 <details>
 
 <summary>Content item JSON structure</summary>
 
-The Delivery API outputs the JSON structure outlined below to represent the retrieved content items, which consist of a range of properties:&#x20;
+The Delivery API outputs the JSON structure outlined below to represent the retrieved content items, which consist of a range of properties:
 
 * Basic properties for any content item include `name`, `id` and `contentType`.
 * All editorial properties from the content type can be found in the `properties` collection. Depending on the configured property editor, the property output value can be a _string_, _number_, _boolean expression_, _array_, _object_ or _`null`_.
@@ -183,19 +181,17 @@ By default, a content property that allows picking a different content item (lik
 
 This feature can be used when querying for both single and multiple content items, by adding an `expand` parameter to the query. The value of this parameter can be either `"all"` to expand all properties of the requested content item or `"property:alias, alias, alias"` to expand specific ones.
 
-
-
 The following JSON snippet demonstrates the default output of a content item (without expanding any properties).
 
-#### Request
+**Request**
 
 ```http
 GET /umbraco/delivery/api/v1/content/item/9bdac0e9-66d8-4bfd-bba1-e954ed9c780d
 ```
 
-#### Response
+**Response**
 
-{% code title="Shallow output for "linkedItem" property" %}
+{% code title="Shallow output for " %}
 ```json
 {
     "name": "My post",
@@ -226,19 +222,17 @@ GET /umbraco/delivery/api/v1/content/item/9bdac0e9-66d8-4bfd-bba1-e954ed9c780d
 ```
 {% endcode %}
 
-
-
 Below is an example of how an expanded representation might look for the `linkedItem` property that references another content item with properties `title` and `description`:
 
-#### Request
+**Request**
 
 ```http
 GET /umbraco/delivery/api/v1/content/item/9bdac0e9-66d8-4bfd-bba1-e954ed9c780d?expand=property:linkedItem
 ```
 
-#### Response
+**Response**
 
-{% code title="Expanded output for "linkedItem" property" %}
+{% code title="Expanded output for " %}
 ```json
 {
     "name": "My post",
@@ -277,9 +271,7 @@ GET /umbraco/delivery/api/v1/content/item/9bdac0e9-66d8-4bfd-bba1-e954ed9c780d?e
 ```
 {% endcode %}
 
-
-
-The built-in property editors in Umbraco that allow for output expansion are:  &#x20;
+The built-in property editors in Umbraco that allow for output expansion are:
 
 * `Umbraco.ContentPicker`
 * `Umbraco.MultiNodeTreePicker`
@@ -290,7 +282,7 @@ The built-in property editors in Umbraco that allow for output expansion are:  &
 
 <summary>Preview</summary>
 
-Similar to the preview concept in Umbraco, the Delivery API allows for requesting unpublished content through its endpoints. This can be done by setting a `Preview` header to `true` in the API request. However, accessing draft versions of your content nodes requires authorization via an API key configured in `appsettings.json` file - `Umbraco:CMS:DeliveryApi:ApiKey` setting. To obtain preview data, you must add the `Api-Key` request header containing the configured API key to the appropriate endpoints, like:&#x20;
+Similar to the preview concept in Umbraco, the Delivery API allows for requesting unpublished content through its endpoints. This can be done by setting a `Preview` header to `true` in the API request. However, accessing draft versions of your content nodes requires authorization via an API key configured in `appsettings.json` file - `Umbraco:CMS:DeliveryApi:ApiKey` setting. To obtain preview data, you must add the `Api-Key` request header containing the configured API key to the appropriate endpoints, like:
 
 ```http
 GET /umbraco/delivery/api/v1/content/item/11fb598b-5c51-4d1a-8f2e-0c7594361d15
@@ -317,11 +309,13 @@ When querying content by path, the culture is already known and included in the 
 
 </details>
 
-### Get by id
+## Endpoints
+
+The output produced by the Delivery API can either represent a specific content item or a paged list of multiple items.
 
 {% swagger method="get" path="/content/item/{id}" baseUrl="/umbraco/delivery/api/v1" summary="Gets a content item by id" %}
 {% swagger-description %}
-Returns a single item
+Returns a single item.
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name="id" type="String" required="true" %}
@@ -357,11 +351,9 @@ Which properties to expand and therefore include in the output if they refer to 
 {% endswagger-response %}
 {% endswagger %}
 
-### Get by route
-
 {% swagger method="get" path="/content/item/{path}" baseUrl="/umbraco/delivery/api/v1" summary="Gets a content item by route" %}
 {% swagger-description %}
-Returns a single item
+Returns a single item.
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name="path" type="String" required="true" %}
@@ -397,11 +389,9 @@ Which properties to expand and therefore include in the output if they refer to 
 {% endswagger-response %}
 {% endswagger %}
 
-### Get all
-
-{% swagger method="get" path="/content" baseUrl="/umbraco/delivery/api/v1" summary="Gets content item(s) from query" %}
+{% swagger method="get" path="/content" baseUrl="/umbraco/delivery/api/v1" summary="Gets content item(s) from a query" %}
 {% swagger-description %}
-Returns a single or multiple items
+Returns single or multiple items.
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="fetch" type="String" required="false" %}
@@ -455,7 +445,7 @@ Which properties to expand and therefore include in the output if they refer to 
 
 ## Feature Capabilities
 
-* Querying for content item(s)
+* the Querying for the content item(s)
 * Localization support
 * Output expansion
 * Preview
@@ -466,7 +456,7 @@ Which properties to expand and therefore include in the output if they refer to 
 
 ## Current Limitations
 
-The Content Delivery API provides a powerful and flexible way to retrieve content from the Umbraco CMS. There are, however, certain limitations to be aware of.&#x20;
+The Content Delivery API provides a powerful and flexible way to retrieve content from the Umbraco CMS. There are, however, certain limitations to be aware of.
 
 In this section, we will discuss some of the known limitations of the API, and how to work around them if necessary.
 
