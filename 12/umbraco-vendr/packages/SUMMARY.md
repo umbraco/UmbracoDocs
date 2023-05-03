@@ -6,7 +6,6 @@
 
 * [Vendr Cart Documentation](cart/README.md)
 * [Unreleased](cart/changelog.md)
-* [Versions](cart/versions.md)
 
 ## Checkout
 
@@ -17,7 +16,6 @@
   * [Screenshots](checkout/getting-started/screenshots.md)
   * [Useful Links](checkout/getting-started/useful-links.md)
 * [Changelog](checkout/changelog.md)
-* [Versions](checkout/versions.md)
 
 ## Deploy
 
@@ -27,7 +25,6 @@
   * [Installation](deploy/getting-started/installation.md)
   * [Useful Links](deploy/getting-started/useful-links.md)
 * [Changelog](deploy/changelog.md)
-* [Versions](deploy/versions.md)
 
 ## uSync
 
@@ -38,4 +35,3 @@
   * [Screenshots](usync/getting-started/screenshots.md)
   * [Useful Links](usync/getting-started/useful-links.md)
 * [Changelog](usync/changelog.md)
-* [Versions](usync/versions.md)
