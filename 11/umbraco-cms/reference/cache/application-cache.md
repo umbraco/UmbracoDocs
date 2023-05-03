@@ -30,6 +30,8 @@ public class MyClass
         _isolatedCaches = appCaches.IsolatedCaches;
     }
 
+    // One example would be to get relations based on a node id. The RelationService hits the database each time and is not something you should call fx from a view that could get hit many times.
+    // To get around that limitation you can wrap it in the cache so it only has to retrieve the value from the db once every minute (or whatever you set the timespan to).
     public void DocsService(int nodeId)
     {
         // Gets child relations from the cache if it exists, otherwise gets them and caches them for 1 min.
