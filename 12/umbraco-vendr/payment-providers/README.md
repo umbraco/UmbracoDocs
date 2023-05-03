@@ -1,0 +1,1 @@
+# Umbraco Vendr Payment Providers
