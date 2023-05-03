@@ -1,18 +1,20 @@
 ---
-title: PayPal
-description: Documentation for the PayPal payment provider for Vendr, the eCommerce solution for Umbraco v8+
+title: Overview
+description: Getting Started with the PayPal payment provider for Vendr, the eCommerce solution for Umbraco v8+
 ---
+
+## About this Payment Provider
+
+The PayPal payment provider provides functionality to capture payments via the [PayPal](https://paypal.com) payment gateway. It is a fully featured payment provider allowing full control of the payment flow directly from the Vendr back-office.
+
+## In this Section
+
+In this section we will guide you through the key steps necessary to get you started with the Stripe payment provider for Vendr.
+
+It is assumed that before we begin that you already have an Umbraco v8+ website configured, with Vendr installed. If you are not at this stage yet, please read the [core Vendr documentation](../../../../../core/) to learn how to get started with Vendr and return to this section once you have these requirements in place.
 
 ## Using These Docs
 
 **These docs are aimed at developers** looking to implement the [PayPal](https://paypal.com) payment gateway into a Vendr eCommerce store. It is expected that you have at least a basic understanding of [Umbraco](https://umbraco.com), as well the [Vendr core product](../../../../core/).
 
 These docs are broken up into two keys sections, a [Getting Started](getting-started/) section for documentation on how to get up and running with the PayPal payment provider for Vendr, and a [How-to Guides](how-to-guides/) section for short guides on how to perform additional, non essential, PayPal related tasks.
-
-## Getting Help
-
-If you require further assistance, or if you are having a particular issue you can't find an answer to, you can get community support via our support forum over on the [Umbraco developer portal](https://our.umbraco.com/packages/website-utilities/vendr/vendr-support/).
-
-## About Vendr
-
-Vendr is the eCommerce solution for Umbraco v8+ created by Outfield Digital, the team behind Tea Commerce for Umbraco v7. Vendr is the successor to Tea Commerce and follows much of the same principles but has been vastly improved for use on Umbraco v8+.

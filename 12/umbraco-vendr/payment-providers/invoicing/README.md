@@ -1,16 +1,18 @@
 ---
-title: Invoicing
-description: Documentation for the Invoicing payment provider for Vendr, the eCommerce solution for Umbraco v8+
+title: Overview
+description: Getting Started with the Invoicing payment provider for Vendr, the eCommerce solution for Umbraco v8+
 ---
+
+## About this Payment Provider
+
+The Invoicing payment provider is a "pass through" payment provider that doesn't capture any payment information itself, rather it allows orders to go through in an `Authorized` state where it assumed that payments will be captured manually in an external system. Once captured, orders can then by updated to the `Captured` payment status via the back-office.
+
+## In this Section
+
+In this section we will guide you through the key steps necessary to get you started with the Invoicing payment provider for Vendr.
+
+It is assumed that before we begin that you already have an Umbraco v8+ website configured, with Vendr installed. If you are not at this stage yet, please read the [core Vendr documentation](../../../../../core/) to learn how to get started with Vendr and return to this section once you have these requirements in place.
 
 ## Using These Docs
 
 **These docs are aimed at developers** looking to implement basic invoice payments in a Vendr eCommerce store. It is expected that you have at least a basic understanding of [Umbraco](https://umbraco.com), as well the [Vendr core product](../../../../core/).
-
-## Getting Help
-
-If you require further assistance, or if you are having a particular issue you can't find an answer to, you can get community support via our support forum over on the [Umbraco developer portal](https://our.umbraco.com/packages/website-utilities/vendr/vendr-support/).
-
-## About Vendr
-
-Vendr is the eCommerce solution for Umbraco v8+ created by Outfield Digital, the team behind Tea Commerce for Umbraco v7. Vendr is the successor to Tea Commerce and follows much of the same principles but has been vastly improved for use on Umbraco v8+.
