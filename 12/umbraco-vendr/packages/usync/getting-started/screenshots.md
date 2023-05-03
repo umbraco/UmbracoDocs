@@ -7,12 +7,12 @@ Checkout the screenshots below to see what you get with Vendr uSync straight out
 
 ## Serialization
 
-![Vendr uSync Serialized Entity](/media/screenshots/usync/vendr_usync_serialized.png)
+![Vendr uSync Serialized Entity](../media/usync/vendr_usync_serialized.png)
 
 ## Import Report
 
-![Vendr uSync Import Report](/media/screenshots/usync/vendr_usync_report.png)
+![Vendr uSync Import Report](../media/usync/vendr_usync_report.png)
 
 ## Import Status
 
-![Vendr uSync Shipping Method](/media/screenshots/usync/vendr_usync_imported.png)
+![Vendr uSync Shipping Method](../media/usync/vendr_usync_imported.png)

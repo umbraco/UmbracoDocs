@@ -15,7 +15,7 @@ PM> Install-Package Vendr.Deploy
 
 Alternatively, you can also find and install the NuGet package via the NuGet Package Manager GUI.
 
-![Installing Vendr Deploy via the NuGet Package Manager GUI](/media/screenshots/deploy/nuget_package.png)
+![Installing Vendr Deploy via the NuGet Package Manager GUI](../media/deploy/nuget_package.png)
 
 ## Upgrading
 

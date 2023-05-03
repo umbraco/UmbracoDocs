@@ -13,14 +13,14 @@ Depending how you have uSync configured to perform imports, importing may occur 
 
 To review any changes awaiting importing, from within the **Settings > uSync** section, under the **Report** button, you can click the **Report Vendr Settings** link to run a full uSync report.
 
-![Report Changes Menu Option](/media/screenshots/usync/report.png)
+![Report Changes Menu Option](../media/usync/report.png)
 
-![Report Changes](/media/screenshots/usync/vendr_usync_report.png)
+![Report Changes](../media/usync/vendr_usync_report.png)
 
 ## Importing Changes
 
 To import changes, from within the **Settings > uSync** section, under the **Import** button, you can click the **Import Vendr Settings** link to run a full uSync import.
 
-![Import Menu Option](/media/screenshots/usync/import.png)
+![Import Menu Option](../media/usync/import.png)
 
-![Imported Report](/media/screenshots/usync/vendr_usync_imported.png)
+![Imported Report](../media/usync/vendr_usync_imported.png)

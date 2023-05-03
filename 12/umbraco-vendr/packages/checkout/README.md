@@ -7,7 +7,7 @@ description: Documentation for Vendr Checkout, an add-on package for Vendr, the 
 
 [Vendr Checkout](https://vendr.net/add-ons/vendr-checkout/) is a free and open source add-on package for Vendr, providing a no-code solution for creating an instant checkout flow in your Vendr stores. Minimal and configurable, Vendr Checkout allows you to set up your checkout flow in no time at all.
 
-![Vendr Checkout](/media/screenshots/checkout/checkout.png)
+![Vendr Checkout](../media/checkout/checkout.png)
 
 ## Using These Docs
 

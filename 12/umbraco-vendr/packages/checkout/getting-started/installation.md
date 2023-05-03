@@ -9,11 +9,11 @@ There are currently two ways to install the Vendr Checkout package for Vendr int
 
 To install the Vendr Checkout Umbraco package, you will need to download the package file manually from the Vendr package page on the [Umbraco Developer Portal](https://our.umbraco.com/packages/website-utilities/vendr-checkout/). On this page, scroll down to the **Package Files** section and locate the Vendr Checkout package, clicking it to initiate a download.
 
-![Umbraco package files list](/media/screenshots/checkout/our_package_list.png)
+![Umbraco package files list](../media/checkout/our_package_list.png)
 
 Once downloaded you should manually install the package by uploading it to the **local package installer** located in your back-office **Packages > Install Local** section. Once uploaded, follow the on-screen instructions provided to complete the install.
 
-![Installing an Umbraco Package via Local Umbraco Package](/media/screenshots/umbraco_local_package_install.png)
+![Installing an Umbraco Package via Local Umbraco Package](../media/umbraco_local_package_install.png)
 
 ## NuGet Package Installation
 
@@ -25,7 +25,7 @@ PM> Install-Package Vendr.Checkout
 
 Alternatively, you can also find and install the NuGet package via the NuGet Package Manager GUI.
 
-![Installing Vendr Checkout via the NuGet Package Manager GUI](/media/screenshots/checkout/nuget_package.png)
+![Installing Vendr Checkout via the NuGet Package Manager GUI](../media/checkout/nuget_package.png)
 
 ## Content Installation
 
@@ -33,11 +33,11 @@ When Vendr Checkout is installed, all relevant database configurations automatic
 
 To install the relevant Vendr Checkout content (mainly the checkout content doc types + pages and updates to the Vendr store configuration) navigate to the **Settings** section and locate the Vendr Checkout dashboard in the root of the section.
 
-![Vendr Checkout Dashboard](/media/screenshots/checkout/install_dashboard.png)
+![Vendr Checkout Dashboard](../media/checkout/install_dashboard.png)
 
 On this dashboard, click the **Install** button then in the dialog select your site root node which is configured with a Vendr store picker linked to a Vendr store and then click **Install**
 
-![Vendr Checkout Dashboard](/media/screenshots/checkout/install_dashboard_dialog.png)
+![Vendr Checkout Dashboard](../media/checkout/install_dashboard_dialog.png)
 
 During this install, Vendr checkout will perform the following tasks:
 

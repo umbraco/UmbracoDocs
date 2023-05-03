@@ -7,7 +7,7 @@ After installing Vendr Checkout, a series of content nodes will be created for y
 
 ## Configuring Vendr Checkout
 
-![Vendr Checkout Configuration](/media/screenshots/checkout/checkout_configuration.png)
+![Vendr Checkout Configuration](../media/checkout/checkout_configuration.png)
 
 | Name | Description |
 | ---- | ----------- |

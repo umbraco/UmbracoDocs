@@ -1,29 +1,41 @@
 # Table of contents
 
 * [Umbraco Vendr Packages](README.md)
+
+## Cart
+
 * [Vendr Cart Documentation](cart/README.md)
-  * [Unreleased](cart/changelog.md)
-  * [Versions](cart/versions.md)
+* [Unreleased](cart/changelog.md)
+* [Versions](cart/versions.md)
+
+## Checkout
+
 * [Vendr Checkout Documentation](checkout/README.md)
-  * [Changelog](checkout/changelog.md)
-  * [Versions](checkout/versions.md)
-  * [Introduction](checkout/getting-started/README.md)
-    * [Configuring Umbraco](checkout/getting-started/configuring-umbraco.md)
-    * [Installation](checkout/getting-started/installation.md)
-    * [Screenshots](checkout/getting-started/screenshots.md)
-    * [Useful Links](checkout/getting-started/useful-links.md)
+* [Introduction](checkout/getting-started/README.md)
+  * [Configuring Umbraco](checkout/getting-started/configuring-umbraco.md)
+  * [Installation](checkout/getting-started/installation.md)
+  * [Screenshots](checkout/getting-started/screenshots.md)
+  * [Useful Links](checkout/getting-started/useful-links.md)
+* [Changelog](checkout/changelog.md)
+* [Versions](checkout/versions.md)
+
+## Deploy
+
 * [Vendr Deploy Documentation](deploy/README.md)
-  * [Changelog](deploy/changelog.md)
-  * [Versions](deploy/versions.md)
-  * [Introduction](deploy/getting-started/README.md)
-    * [Deploying Changes](deploy/getting-started/deploying-changes.md)
-    * [Installation](deploy/getting-started/installation.md)
-    * [Useful Links](deploy/getting-started/useful-links.md)
+* [Introduction](deploy/getting-started/README.md)
+  * [Deploying Changes](deploy/getting-started/deploying-changes.md)
+  * [Installation](deploy/getting-started/installation.md)
+  * [Useful Links](deploy/getting-started/useful-links.md)
+* [Changelog](deploy/changelog.md)
+* [Versions](deploy/versions.md)
+
+## uSync
+
 * [Vendr uSync Documentation](usync/README.md)
-  * [Changelog](usync/changelog.md)
-  * [Versions](usync/versions.md)
-  * [Introduction](usync/getting-started/README.md)
-    * [Deploying Changes](usync/getting-started/deploying-changes.md)
-    * [Installation](usync/getting-started/installation.md)
-    * [Screenshots](usync/getting-started/screenshots.md)
-    * [Useful Links](usync/getting-started/useful-links.md)
+* [Introduction](usync/getting-started/README.md)
+  * [Deploying Changes](usync/getting-started/deploying-changes.md)
+  * [Installation](usync/getting-started/installation.md)
+  * [Screenshots](usync/getting-started/screenshots.md)
+  * [Useful Links](usync/getting-started/useful-links.md)
+* [Changelog](usync/changelog.md)
+* [Versions](usync/versions.md)
