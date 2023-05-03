@@ -1,0 +1,17 @@
+id: Vendr.PaymentProviders.Opayo
+name: Opayo
+logo: opayo.svg
+type: PaymentProvider
+supportedBy: core
+
+packageVersion: 2.0.1
+docVersions:
+  next: 
+  current: 1.0.0
+  previous: 
+
+links:
+  - title: Versions
+    link: /versions/
+  - title: Changelog
+    link: /changelog/

@@ -1,0 +1,17 @@
+id: Vendr.PaymentProviders.Mollie
+name: Mollie
+logo: mollie.svg
+type: PaymentProvider
+supportedBy: core
+
+packageVersion: 2.0.2
+docVersions:
+  next: 
+  current: 2.0.0
+  previous: 
+
+links:
+  - title: Versions
+    link: /versions/
+  - title: Changelog
+    link: /changelog/

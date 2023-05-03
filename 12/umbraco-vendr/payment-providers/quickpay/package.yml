@@ -1,0 +1,18 @@
+id: Vendr.Contrib.PaymentProviders.QuickPay
+name: QuickPay
+logo: quickpay.svg
+type: PaymentProvider
+supportedBy: community
+
+packageVersion: 2.0.0
+docVersions:
+  next: 
+  current: 2.0.0
+  previous: 
+    - 1.0.0
+
+links:
+  - title: Versions
+    link: /versions/
+  - title: Changelog
+    link: /changelog/

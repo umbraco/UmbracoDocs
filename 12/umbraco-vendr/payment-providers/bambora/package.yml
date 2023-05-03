@@ -1,0 +1,17 @@
+id: Vendr.PaymentProviders.Bambora
+name: Bambora
+logo: bambora.svg
+type: PaymentProvider
+supportedBy: core
+
+packageVersion: 1.1.0
+docVersions:
+  next: 
+  current: 1.0.0
+  previous: 
+
+links:
+  - title: Versions
+    link: /versions/
+  - title: Changelog
+    link: /changelog/

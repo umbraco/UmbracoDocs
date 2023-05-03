@@ -1,0 +1,18 @@
+id: Vendr.Deploy
+name: Deploy
+type: Package
+description: 
+supportedBy: core
+
+packageVersion: 3.1.0
+docVersions:
+  next: 
+  current: 3.0.0
+  pervious: 
+  - 0.1.0
+
+links:
+  - title: Versions
+    link: /versions/
+  - title: Changelog
+    link: /changelog/

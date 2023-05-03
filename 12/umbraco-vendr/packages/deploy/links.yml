@@ -1,0 +1,10 @@
+- title: Getting Started
+  items:
+    - title: Overview
+      link: /getting-started/
+    - title: Installation
+      link: /getting-started/installation/
+    - title: Deploying Changes
+      link: /getting-started/deploying-changes/
+    - title: Useful Links
+      link: /getting-started/useful-links/

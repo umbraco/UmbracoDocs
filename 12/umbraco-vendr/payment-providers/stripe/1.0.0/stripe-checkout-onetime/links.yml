@@ -1,0 +1,21 @@
+- title: Getting Started
+  items:
+    - title: Overview
+      link: /getting-started/
+    - title: Installation
+      link: /getting-started/installation/
+    - title: Configuring Stripe
+      link: /getting-started/configuring-stripe/
+    - title: Configuring Umbraco
+      link: /getting-started/configuring-umbraco/
+    - title: Useful Links
+      link: /getting-started/useful-links/
+
+- title: How-To Guides
+  items:
+    - title: Overview
+      link: /how-to-guides/
+    - title: How to block payments from non billing country sources
+      link: /how-to-guides/radar-billing-country-rule/
+    - title: How to test Stripe webhooks locally
+      link: /how-to-guides/testing-stripe-webhooks-locally/
