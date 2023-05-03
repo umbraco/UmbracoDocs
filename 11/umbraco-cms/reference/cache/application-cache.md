@@ -16,17 +16,27 @@ If you wish to use the AppCaches in a class, you need to use Dependency Injectio
 ```csharp
 public class MyClass
 {
+    private readonly IRelationService _relationService;
 
     private readonly IAppPolicyCache _runtimeCache;
     private readonly IAppCache _requestCache;
     private readonly IsolatedCaches _isolatedCaches;
     
-    public MyClass(AppCaches appCaches)
+    public MyClass(AppCaches appCaches, IRelationService relationService)
     {
+        _relationService = relationService;
         _runtimeCache = appCaches.RuntimeCache;
         _requestCache = appCaches.RequestCache;
         _isolatedCaches = appCaches.IsolatedCaches;
     }
 
+    public void DocsService(int nodeId)
+    {
+        // Gets child relations from the cache if it exists, otherwise gets them and caches them for 1 min.
+        var relations = _runtimeCache.GetCacheItem(
+            $"ChildRelations_{nodeId}",
+            () => _relationService.GetByChildId(nodeId, "umbDocument"), 
+            TimeSpan.FromMinutes(1));
+    }
 }
 ```
