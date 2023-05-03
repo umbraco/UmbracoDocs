@@ -70,14 +70,6 @@ The authentication cookie which is set in the browser when a backoffice user log
 
 The authentication cookie which is set in the browser when a backoffice user logs in is automatically set to the current domain.
 
-### Allow Edit Invariant From Non-Default
-
-Invariant properties are properties on a multilingual site that are not varied by culture. This means that they share the same value across all languages added to the website.
-
-When the setting is set to `false` the invariant properties that are shared between all languages can only be edited from the default language. This means you need access to the default language, in order to edit the property.
-
-When set to `true` (default) the invariant properties will need to be unlocked before they can be edited. The lock exists in order to make it clear that this change will affect more languages.
-
 ### Username is email
 
 This setting specifies whether the username and email address are separate fields in the backoffice editor. When set to "false", you can specify an email address and username, only the username can be used to log on. When set to "true" (the default value) the username is hidden and always the same as the email address.
