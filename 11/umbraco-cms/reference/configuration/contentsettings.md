@@ -58,6 +58,14 @@ The following snippet will give an overview of the keys and values in the conten
 
 In the root level section, that is those without a seperate sub section like Imaging, you can configure:
 
+### Allow Edit Invariant From Non-Default
+
+Invariant properties are properties on a multilingual site that are not varied by culture. This means that they share the same value across all languages added to the website.
+
+When the setting is set to `false` the invariant properties that are shared between all languages can only be edited from the default language. This means you need access to the default language, in order to edit the property.
+
+When set to `true` (default) the invariant properties will need to be unlocked before they can be edited. The lock exists in order to make it clear that this change will affect more languages.
+
 ### Allowed upload files
 
 If greater control is required than available from the above, this setting can be used to store a list of file extensions. If provided, only files with these extensions can be uploaded via the backoffice.
