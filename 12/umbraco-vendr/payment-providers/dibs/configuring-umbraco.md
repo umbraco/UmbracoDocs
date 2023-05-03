@@ -7,7 +7,7 @@ description: Documentation for the DIBS D2 payment provider for Vendr, the eComm
 
 In the Umbraco back-office, in the **Settings > Vendr > Stores > {Store Name} > Payment Methods** section, click the **Create Payment Method** button to create a new payment method, choosing **DIBS D2** from the list of available payment providers.
 
-![Create Payment Method](/media/screenshots/dibs/d2/umbraco_create_payment_method.png)
+![Create Payment Method](../media/dibs/d2/umbraco_create_payment_method.png)
 
 ## Configure Payment Provider Settings
 
@@ -30,4 +30,4 @@ In the payment method editor, configure the standard payment method settings as 
 | Calculate Fee |Whether the transaction fees are paid by the customer |
 | Test Mode | Toggle indicating whether this provider should run in test mode |
 
-![Create Payment Provider Settings](/media/screenshots/dibs/d2/umbraco_configure_dibs-d2_settings.png)
+![Create Payment Provider Settings](../media/dibs/d2/umbraco_configure_dibs-d2_settings.png)

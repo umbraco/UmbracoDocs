@@ -11,7 +11,7 @@ Before you create a payment method for Mollie, it's important to know that this 
 
 In the Umbraco back-office, in the **Settings > Vendr > Stores > {Store Name} > Payment Methods** section, click the **Create Payment Method** button to create a new payment method, choosing **Mollie (One Time)** from the list of available payment providers.
 
-![Create Payment Method](/media/screenshots/mollie/umbraco_create_payment_method.png)
+![Create Payment Method](../media/mollie/umbraco_create_payment_method.png)
 
 ## Configure Payment Provider Settings
 
@@ -39,4 +39,4 @@ An addition to these core settings, there are also a number of optional advanced
 | Order Line Product Type Property Alias | The order line property alias containing a Mollie product type for the order line. Can be either 'physical' or 'digital'. |
 | Order Line Product Category Property Alias | The order line property alias containing a Mollie product category for the order line. Can be 'meal', 'eco' or 'gift'. |
 
-![Create Payment Provider Settings](/media/screenshots/mollie/umbraco_configure_mollie_settings.png)
+![Create Payment Provider Settings](../media/mollie/umbraco_configure_mollie_settings.png)

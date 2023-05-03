@@ -7,7 +7,7 @@ description: Documentation for the Klarna payment provider for Vendr, the eComme
 
 In the Umbraco back-office, in the **Settings > Vendr > Stores > {Store Name} > Payment Methods** section, click the **Create Payment Method** button to create a new payment method, choosing **Klarna (HPP)** from the list of available payment providers.
 
-![Create Payment Method](/media/screenshots/klarna/umbraco_create_payment_method.png)
+![Create Payment Method](../media/klarna/umbraco_create_payment_method.png)
 
 ## Configure Payment Provider Settings
 
@@ -42,4 +42,4 @@ An addition to these core settings, there are also a number of optional advanced
 | Payment Method Category | The payment method category to show on the payment page. Options are `DIRECT_DEBIT`, `DIRECT_BANK_TRANSFER`, `PAY_NOW`, `PAY_LATER` and `PAY_OVER_TIME` |
 | Enable Fallbacks | Set whether to fallback to other payment options if the initial payment attempt fails before redirecting back to the site |
 
-![Create Payment Provider Settings](/media/screenshots/klarna/umbraco_configure_provider_settings.png)
+![Create Payment Provider Settings](../media/klarna/umbraco_configure_provider_settings.png)

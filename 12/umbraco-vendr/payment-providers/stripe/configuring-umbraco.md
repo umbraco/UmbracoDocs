@@ -7,7 +7,7 @@ description: Documentation for the Stripe Checkout payment provider for Vendr, t
 
 In the Umbraco back-office, in the **Settings > Vendr > Stores > {Store Name} > Payment Methods** section, click the **Create Payment Method** button to create a new payment method, choosing **Stripe Checkout** from the list of available payment providers.
 
-![Create Payment Method](/media/screenshots/stripe/umbraco_create_payment_method2.png)
+![Create Payment Method](../media/stripe/umbraco_create_payment_method2.png)
 
 ## Configure Payment Provider Settings
 
@@ -42,4 +42,4 @@ An addition to these core settings, there are also a number of optional advanced
 | One-Time Items Heading | A heading to display for the total one-time payment items order line when the order consists of both subscription and one-time payment items |
 | Order Properties | A comma separated list of order properties to copy to the transactions meta data |
 
-![Create Payment Provider Settings](/media/screenshots/stripe/umbraco_configure_stripe_settings2.png)
+![Create Payment Provider Settings](../media/stripe/umbraco_configure_stripe_settings2.png)

@@ -9,11 +9,11 @@ There are currently two ways to install the Mollie payment provider for Vendr in
 
 To install the Mollie payment provider Umbraco package, you will need to download the package file manually from the Vendr package page on the [Umbraco Developer Portal](https://our.umbraco.com/packages/website-utilities/vendr/). On this page, scroll down to the **Package Files** section and locate the Mollie payment provider package, clicking it to initiate a download.
 
-![Umbraco package files list](/media/screenshots/package-files-list.png)
+![Umbraco package files list](../media/package-files-list.png)
 
 Once downloaded you should manually install the package by uploading it to the **local package installer** located in your back-office **Packages > Install Local** section. Once uploaded, follow the on-screen instructions provided to complete the install.
 
-![Installing an Umbraco Package via Local Umbraco Package](/media/screenshots/umbraco_local_package_install.png)
+![Installing an Umbraco Package via Local Umbraco Package](../media/umbraco_local_package_install.png)
 
 ## NuGet Package Installation
 
@@ -25,7 +25,7 @@ PM> Install-Package Vendr.PaymentProviders.Mollie
 
 Alternatively, you can also find and install the NuGet package via the NuGet Package Manager GUI.
 
-![Installing Vendr via the NuGet Package Manager GUI](/media/screenshots/nuget_package_manager_gui.png)
+![Installing Vendr via the NuGet Package Manager GUI](../media/nuget_package_manager_gui.png)
 
 ## Upgrading
 

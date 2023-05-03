@@ -7,7 +7,7 @@ description: Documentation for the PayPal payment provider for Vendr, the eComme
 
 In the Umbraco back-office, in the **Settings > Vendr > Stores > {Store Name} > Payment Methods** section, click the **Create Payment Method** button to create a new payment method, choosing **PayPal Checkout (One Time)** from the list of available payment providers.
 
-![Create Payment Method](/media/screenshots/paypal/umbraco_create_payment_method.png)
+![Create Payment Method](../media/paypal/umbraco_create_payment_method.png)
 
 ## Configure Payment Provider Settings
 
@@ -33,4 +33,4 @@ An addition to these core settings, there are also a number of optional advanced
 | ---- | ----------- |
 | Brand Name | A Brand Name to display in the PayPal Checkout screen. |
 
-![Create Payment Provider Settings](/media/screenshots/paypal/umbraco_configure_paypal_settings.png)
+![Create Payment Provider Settings](../media/paypal/umbraco_configure_paypal_settings.png)
