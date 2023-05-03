@@ -118,7 +118,7 @@ The deployment might take a bit longer than normal as a lot of changes have been
      * `Last deployment operation completed`
        * Everything checks out: The Development environment has been upgraded.
 5. Transfer Content and Media from the local clone to the **Development** environment.
-   * To transfer members make sure that the following Deploy settings are configured in the `appsettings.json`: [`AllowMembersDeploymentOperations` and `TransferMemberGroupsAsContent`](https://docs.umbraco.com/umbraco-deploy/deploy-settings).
+   * To transfer members make sure that the following Deploy settings are configured in the `appsettings.json`: [`AllowMembersDeploymentOperations` and `TransferMemberGroupsAsContent`](https://docs.umbraco.com/umbraco-deploy/deploy-settings#allowmembersdeploymentoperations-and-transfermembergroupsascontent).
 6. Test **everything** in the **Development** environment.
 7. Deploy to the **Live** environment.
 
