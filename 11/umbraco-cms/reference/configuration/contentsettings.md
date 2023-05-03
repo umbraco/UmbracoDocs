@@ -17,6 +17,7 @@ The following snippet will give an overview of the keys and values in the conten
         "KeepAllVersionsNewerThanDays": 7,
         "KeepLatestVersionPerDayForDays": 90
       },
+      "AllowEditInvariantFromNonDefault": true,
       "AllowedUploadFiles": [],
       "AllowedMediaHosts":  [],
       "AllowedUploadedFileExtensions": [],

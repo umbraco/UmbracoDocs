@@ -17,7 +17,6 @@ A full configuration with all default values can be seen here:
       "AllowPasswordReset": true,
       "AuthCookieName": "UMB_UCONTEXT",
       "AuthCookieDomain": "",
-      "AllowEditInvariantFromNonDefault": true,
       "UsernameIsEmail": true,
       "UserPassword": {
         "RequiredLength": 10,
