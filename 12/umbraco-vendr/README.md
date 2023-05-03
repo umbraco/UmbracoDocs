@@ -1,3 +1,7 @@
+---
+layout: landing
+---
+
 # Umbraco Vendr
 
 This is the official documentation Umbraco Vendr.
