@@ -18,7 +18,7 @@ Source control is a way to control changes to files and directories. You can kee
 There are different source code management tools that you can use such as GitHub, Git, GitLab, Apache Subversion (SVN), Mercurial, etc.
 
 {% hint style="info" %}
-An example of how to use GitLab for setting up automatic deployments with Umbraco Cloud can be found on the [online Umbraco Community magazine Skrift.io](https://skrift.io/issues/using-gitlab-bidirectional-mirroring-azure-devops-release-pipelines-to-auto-deploy-into-umbraco-cloud/).
+An example of how to use GitLab for setting up automatic deployments can be found on the [online Umbraco Community magazine Skrift.io](https://skrift.io/issues/using-gitlab-bidirectional-mirroring-azure-devops-release-pipelines-to-auto-deploy-into-umbraco-cloud/).
 {% endhint %}
 
 {% tabs %}
