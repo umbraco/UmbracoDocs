@@ -413,6 +413,7 @@
   * [Integrating services with a property editor](tutorials/creating-a-property-editor/part-3.md)
   * [Adding server-side data to a property editor](tutorials/creating-a-property-editor/part-4.md)
 * [Creating a Multilingual Site](tutorials/multilanguage-setup.md)
+* [Creating a Backoffice Tour](tutorials/creating-a-backoffice-tour.md)
 * [Add Google Authentication](tutorials/add-google-authentication.md)
 * [The Starter Kit](tutorials/starter-kit/README.md)
   * [Lessons](tutorials/starter-kit/lessons/README.md)
