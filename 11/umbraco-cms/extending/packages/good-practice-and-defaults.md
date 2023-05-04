@@ -4,9 +4,9 @@ description: Information on good practice and common defaults for Umbraco packag
 
 # Good practice and defaults
 
-_This document provides some guides and notes on package development, and good practice that will help you maintain and support your package through multiple releases and versions of Umbraco. These good practices are not prescriptive, but mearly offer a guide as to what we have found works well, and not-so-well, when developing packages for Umbraco._
+This document provides guides and notes on package development. It includes good practice guidelines that will help you maintain and support your package through multiple releases and versions of Umbraco. These good practices are not prescriptive, but offer a guide as to what often works well, and not-so-well, when developing packages for Umbraco.
 
-## App_Plugins
+## App Plugins
 
 To extend the Umbraco backoffice, a package can provide files (like a `package.manifest` and AngularJS views/controlers) that should be stored within the `App_Plugins` folder. It's recommended to put all files in a subfolder with a unique name, preferrably using the package name, e.g. `App_Plugins\MyPackage`.
 
