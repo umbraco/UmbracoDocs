@@ -8,13 +8,13 @@ This document provides guides and notes on package development. It includes good
 
 ## App Plugins
 
-To extend the Umbraco backoffice, a package can provide files (like a `package.manifest` and AngularJS views/controlers) that should be stored within the `App_Plugins` folder. It's recommended to put all files in a subfolder with a unique name, preferrably using the package name, e.g. `App_Plugins\MyPackage`.
+To extend the Umbraco backoffice, a package can provide files such as a `package.manifest` and AngularJS views/controlers that should be stored within the `App_Plugins` folder. It's recommended to put all files in a subfolder with a unique name, preferrably using the package name, like `App_Plugins\MyPackage`.
 
-Files in the `App_Plugins` folder will be publicly available on the website even though they are not in the wwwroot folder. You should not store sensitive information in the `App_Plugins` folder.
+Files in the `App_Plugins` folder will be publicly available on the website even though they are not in the root folder. You should not store sensitive information in the `App_Plugins` folder.
 
-Files in the `App_Plugins` folder should be considered immutable, that is they are not something a user of your package should be expecting to change on their site.
+Files in the `App_Plugins` folder should be considered immutable. This means that they are not something a user of your package should be expecting to change on their site.
 
-The default delivery method for files to the `App_Plugins` folder is via a `.targets` file within a package: this means when a website is built, the files in this folder are copied over from the NuGet cache and any changes a user might have made to these files will be lost. Equally, if the user performs a `dotnet clean` on a solution, all files in the `App_Plugins` folder will be deleted.
+The default delivery method for files to the `App_Plugins` folder is via a `.targets` file within a package. This means when a website is built, the files in this folder are copied over from the NuGet cache. When this happens, any changes a user might have made to these files will be lost. Equally, if the user performs a `dotnet clean` on a solution, all files in the `App_Plugins` folder will be deleted.
 
 If you have files that you expect users of your package to alter you should not place them in the `App_Plugins` folder.
 
