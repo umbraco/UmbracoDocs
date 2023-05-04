@@ -12,20 +12,21 @@ See the [Microsoft documentation](https://docs.microsoft.com/en-us/azure/storage
 
 ## Installing the package
 
-Before you begin, you need to install the `Umbraco.StorageProviders.AzureBlob` NuGet package. There are two approaches to installing the package:
+Before you begin, you need to install the `Umbraco.StorageProviders.AzureBlob` and the `Umbraco.StorageProviders.AzureBlob.ImageSharp` NuGet packages. There are two approaches to installing the packages:
 
-1. Use your favorite IDE and open up the NuGet Package Manager to search and install the package
-2. Use the command line to install the package
+1. Use your favorite IDE and open up the NuGet Package Manager to search and install the packages
+2. Use the command line to install the packages
 
 ### Installing through command line
 
-Navigate to your project folder, which is the folder that contains your `.csproj` file. Now use the following `dotnet add package` command to install the package:
+Navigate to your project folder, which is the folder that contains your `.csproj` file. Now use the following `dotnet add package` commands to install the packages:
 
 ```
 dotnet add package Umbraco.StorageProviders.AzureBlob
+dotnet add package Umbraco.StorageProviders.AzureBlob.ImageSharp
 ```
 
-The correct package will have be installed in your project.
+The correct packages will have been installed in your project.
 
 ## Configuring Blob storage
 
@@ -62,7 +63,7 @@ You can get your connection string from your Azure Portal under "Access Keys".
 
 You're almost there. The last step is to set up the required services and middleware. This may sound daunting, but thankfully there are extension methods that do all this for you. All you need to do is invoke them in the `ConfigureServices` and `Configure` methods in the `startup.cs` file.
 
-Invoke the `.AddAzureBlobMediaFileSystem()` extention method in the `ConfigureServices` method:
+Invoke the `.AddAzureBlobMediaFileSystem()` and the `.AddAzureBlobImageSharpCache()` extension methods in the `ConfigureServices` method:
 
 ```
         public void ConfigureServices(IServiceCollection services)
@@ -72,7 +73,8 @@ Invoke the `.AddAzureBlobMediaFileSystem()` extention method in the `ConfigureSe
                 .AddBackOffice()
                 .AddWebsite()
                 .AddComposers()
-                .AddAzureBlobMediaFileSystem() // This configures the required services 
+                .AddAzureBlobMediaFileSystem() // This configures the required services for Media
+                .AddAzureBlobImageSharpCache() // This configures the required services for the Image Sharp cache
                 .Build();
 #pragma warning restore IDE0022 // Use expression body for methods
 
@@ -96,9 +98,8 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         .WithMiddleware(u =>
         {
             u.UseBackOffice();
-            u.UseWebsite();
-            // This enables the Azure Blob storage middleware for media.
-            u.UseAzureBlobMediaFileSystem();
+            u.UseWebsite();         
+            u.UseAzureBlobMediaFileSystem(); // This enables the Azure Blob storage middleware for media.
         })
         .WithEndpoints(u =>
         {
