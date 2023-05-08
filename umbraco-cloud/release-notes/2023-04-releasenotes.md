@@ -1,9 +1,10 @@
-# Release Notes, April 2023
+# April 2023
 
-## Key Takeaways
+## Highlights video
 
-* **Reset Authenticator App settings** - It is now a easy task for your cloud organization administrator to reset your authenticator app settings if you start using a new mobile or want to switch to another authenticator app.
-* **Other Umbraco Cloud updates** - Umbraco Cloud has been updated with a few other features and updates worth mentioning.
+{% embed url="https://youtu.be/uvQrf9KDbDM" %}
+Cloud highlights April 2023
+{% endembed %}
 
 ## Reset Authenticator App settings
 
@@ -19,9 +20,9 @@ When the setting has been reset, the member will during his next login have to r
 
 During March and April, we made multiple minor fixes and improvements to the Umbraco Cloud Portal. Here are some of the highlights.
 
-- The **auto-upgrade** feature and its handling of particular Umbraco 7 and Umbraco 8 projects have been **improved**. We consider the upgrade feature to be more solid than ever.
-- When a user starts a new project creation flow based on a baseline project, the **potential baselines will load a lot faster** than earlier.
-- New versions of the project subpages **“Security”** and **“CDN Caching and Optimization”** have been released and the documentation updated accordingly.
-- When a user decides to send a project invite to an email that represents a user that already is part of the project, an **informative error message** will be shown.
-- The **UmbracoID login dialog** has received some minor tweaks in the front end.
-- And a whole lot of other minor tweaks and improvements.
+* The **auto-upgrade** feature and its handling of particular Umbraco 7 and Umbraco 8 projects have been **improved**. We consider the upgrade feature to be more solid than ever.
+* When a user starts a new project creation flow based on a baseline project, the **potential baselines will load a lot faster** than earlier.
+* New versions of the project subpages **“Security”** and **“CDN Caching and Optimization”** have been released and the documentation updated accordingly.
+* When a user decides to send a project invite to an email that represents a user that already is part of the project, an **informative error message** will be shown.
+* The **UmbracoID login dialog** has received some minor tweaks in the front end.
+* And a whole lot of other minor tweaks and improvements.

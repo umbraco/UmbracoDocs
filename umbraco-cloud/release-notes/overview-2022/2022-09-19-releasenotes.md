@@ -1,10 +1,10 @@
 # September 2022
 
-## Key Takeaways
+## Highlights video&#x20;
 
-* **MFA authentication** - You can now secure your Umbraco Cloud account by enabling Multi-Factor Authentication (MFA). Select between Email, Phone, or Authenticator App.
-* **US Region Hosting** - From the 1st of September, you can select a brand new US region in addition to the existing West Europe option.
-* **Projects Dashboard** - The first version of the Projects Dashboard has been released. Organize your Umbraco Cloud projects as per your preference and get a complete overview of product versions in all your environments.
+{% embed url="https://youtu.be/POZ3UtUXd7Y" %}
+Cloud highlights September 2022
+{% endembed %}
 
 ## [MFA authentication](../../set-up/multi-factor-authentication-on-cloud.md)
 
