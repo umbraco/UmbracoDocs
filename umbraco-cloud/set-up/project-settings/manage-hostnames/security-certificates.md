@@ -13,7 +13,7 @@ To manually upload your certificate on the Umbraco Cloud Portal and assign it to
 1. Go to your project on the Umbraco Cloud portal.
 2.  Click **Settings** -> **Certificates**. The **Manual Certificates** window opens.
 
-    <figure><img src="../../../.gitbook/assets/manual-certificates.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/manual-certificates.png" alt=""><figcaption><p>Manual certificates</p></figcaption></figure>
 
 Your certificates need to be:
 
