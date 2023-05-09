@@ -448,6 +448,3 @@ The Authorized Services package is open-source and we welcome issues, suggestion
 You can find the [source code and issue tracker at GitHub](https://github.com/umbraco/Umbraco.AuthorizedServices).
 
 The readme file there contains further information, expanding on the documentation you have read here. This will help anyone interested in understanding how it has been developed and interested in contributing to the solution.
-
-
-
