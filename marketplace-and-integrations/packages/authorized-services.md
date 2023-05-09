@@ -1,6 +1,6 @@
 ---
 description: >-
-  Details a package supporting creation of integrations with external services using OAuth flows.
+  Details a package supporting creation of integrations with external services that use an OAuth flow for authentication and authorization.
 ---
 
 # Authorized Services
