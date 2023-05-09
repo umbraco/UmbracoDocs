@@ -117,7 +117,7 @@ If that is not set, the [Global Settings](https://docs.umbraco.com/umbraco-cms/r
     }
 ```
 
-The fallback behavior to find the sender email address described also applies to the other email workflows.
+The fallback behavior also applies to the other email workflows.
 
 ## **Send Email with Template (Razor)**
 
