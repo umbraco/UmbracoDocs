@@ -30,8 +30,12 @@ Once you add a hostname to one of your environments, ensure to update the hostna
 We recommend setting a CNAME record for your hostname using **dns.umbraco.io**. Although a CNAME cannot be placed at the root domain level, some providers support CNAME flattening to overcome this limitation.
 
 However, if your provider doesn't support setting a CNAME record for your hostname, you can manually set the following records:
-* An A record using an IP, either `104.19.191.28` or `104.19.208.28`. 
-* If you need IPv6 support add an AAAA record using one of the following addresses, `2606:4700::6813:bf1c` or `2606:4700::6813:d01c`.
+* A records to either or both IPv4 addresses:
+  * `104.19.191.28`
+  * `104.19.208.28`
+* Optionally, AAAA records to either or both IPv6 addresses (to support IPv6 connectivity):
+  * `2606:4700::6813:bf1c`
+  * `2606:4700::6813:d01c`
 
 {% hint style="info" %}
 Once you have updated your DNS, we recommend that you check if the correct records are being picked up using a site like [whatsmydns.net](https://www.whatsmydns.net/) before adding the hostname on Umbraco Cloud.
