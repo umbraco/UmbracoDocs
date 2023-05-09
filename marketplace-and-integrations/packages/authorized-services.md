@@ -7,9 +7,9 @@ description: >-
 
 ## Introduction
 
-**Umbraco Authorized Services** is an Umbraco package designed to reduce the effort needed to integrate third party solutions that require authentication and authorization via an OAuth flow into Umbraco solutions.  It's based on the premise that working with these services requires a fair bit of plumbing code to handle creating an authorized connection.  This is necessary before the developer working with the service can get to actually using the provided API to implement the business requirements.
+**Umbraco Authorized Services** is an Umbraco package designed to reduce the effort needed to integrate third party solutions into Umbraco solutions.  Many such services require an OAuth flow fir authentication and authorization.  Working with these services requires a fair bit of plumbing code to handle creating an authorized connection.  This is necessary before the developer working with the service can get to using the provided API to implement the business requirements.
 
-Having worked with a few OAuth integrations across different providers, as would be expected, there are quite a few similarities to the flow that needs to be implemented.  Steps include:
+There are similarities to the flow that needs to be implemented for different services.  Steps include:
 
 - Redirecting to an authentication endpoint.
 - Handling the response including an authentication code and exchanging it for an access token.
@@ -20,7 +20,7 @@ Having worked with a few OAuth integrations across different providers, as would
 
 There are though also differences, across request and response structures and variations in the details of the flow itself.
 
-The idea of the package is to try to implement a single, best practice implementation of working with OAuth that can be customized, via configuration or code, for particular providers.
+The package tries to implement a single, best practice implementation of working with OAuth. For particular providers the specific flow required can be customized via configuration or code.
 
 ## Features
 
@@ -30,7 +30,7 @@ Firstly there's an tree available in the _Settings_ section of the backoffice, c
 
 [insert pic]
 
-Each tree entry has a management screen where an administrator can authenticate with an app that has been setup with the service.  The status of each service, in terms of whether the authentication and authorization flow has been completed and an access token stored, is shown on this screen.
+Each tree entry has a management screen where an administrator can authenticate with an app that has been setup with the service.  The status of each service is shown on this screen. When authorized, the authentication and authorization flow has been completed and an access token stored.
 
 [insert pic]
 
@@ -40,7 +40,7 @@ Secondly, the developer has access to an interface - `IAuthorizedServiceCaller` 
 
 ### App Creation
 
-Services that this package are intended to support will offer an OAuth authentication and authorization flow against an "app" that the developer will need to create with the service.  From this various information will be available, including for example a "client ID" and "client secret" that will need to be applied in configuration.
+Services that this package are intended to support will offer an OAuth authentication and authorization flow against an "app". The developer will need to create this "app" with the service.  By doing this information such as the "client ID" and "client secret" can be applied in configuration.
 
 ### Installation
 
@@ -106,7 +106,7 @@ Provides a friendly name for the service used for identification in the user int
 
 ###### ApiHost *
 
-The host name for the service API that will be called to deliver business functionality.  E.g. for Github this is `https://api.github.com`.
+The host name for the service API that will be called to deliver business functionality. For example, for Github this is `https://api.github.com`.
 
 ###### IdentityHost *
 
@@ -149,10 +149,12 @@ This value will be retrieved from the registered service app.
 This value will be retrieved from the registered service app.  As the name suggests, it should be kept secret and so is probably best not added directly to `appSettings.json` and checked into source control.
 
 ###### UseProofKeyForCodeExchange *
-This flag will extend the OAuth flow with an additional security layer called [PKCE - Proof Key for Code Exchange](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow-with-proof-key-for-code-exchange-pkce).
-In the OAuth with PKCE flow, a random code will be generated on the client and stored under the name `code_verifier`, and then using the `SHA-256` algorithm it will be hashed under the name `code_challenge`.
-When the authorization URL is generated, the `code_challenge` will be sent to the OAuth Server, which will store it. The next request for access token will pass the `code_verifier` as a header key, and the OAuth Server will
-compare it with the previously sent `code_challenge`.
+
+This flag will extend the OAuth flow with an additional security layer called [PKCE (Proof Key for Code Exchange)](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow-with-proof-key-for-code-exchange-pkce).
+
+In the OAuth with PKCE (Proof Key for Code Exchange) flow, a random code will be generated on the client and stored under the name `code_verifier`. Using the `SHA-256` algorithm it will be hashed under the name `code_challenge`.
+
+When the authorization URL is generated, the `code_challenge` will be sent to the OAuth Server, which will store it. The next request for access token will pass the `code_verifier` as a header key. The OAuth Server will compare it with the previously sent `code_challenge`.
 
 ###### Scopes *
 
@@ -180,7 +182,7 @@ With one or more service configured, it will be available from the items within 
 
 Clicking on an item will show some details about the configured service, and it's authentication status.
 
-If the service is not yet authorized, click the _Authorize Service_ button to trigger the authentication and authorization flow. You will be directed to the service to login, and optionally choose an account.  You will then be asked to agree to the permissions requested by the app. Finally you will be redirect back to the Umbraco backoffice and should see confirmation that an access token has been retrieved and stored such that the service is now authorized. If provided, you can click the _Verify Sample Request_ button to ensure that service's API can be called.
+If the service is not yet authorized, click the _Authorize Service_ button to trigger the authentication and authorization flow. You will be directed to the service to login, and optionally choose an account.  You will then be asked to agree to the permissions requested by the app. Finally you will be redirected back to the Umbraco backoffice. You should see confirmation that an access token has been retrieved and stored such that the service is now authorized. If provided, you can click the _Verify Sample Request_ button to ensure that service's API can be called.
 
 ### Calling an Service
 
@@ -201,7 +203,7 @@ The parameters for the request are as follows:
 There is also a type parameter:
 - `TResponse` - defines the strongly typed representation of the service method's response, that the raw response content will be deserialized into.
 
-If you need to provide data in the request, as is usually the case for POST or PUT requests that required the creation or update of a resource, an overload is available:
+If you need to provide data in the request an overload is available. This can be used for POST or PUT requests that trigger the creation or update of a resource:
 
 ```csharp
 Task<TResponse> SendRequestAsync<TRequest, TResponse>(string serviceAlias, string path, HttpMethod httpMethod, TRequest? requestContent = null)
@@ -225,7 +227,7 @@ Task<string> SendRequestRawAsync<TRequest>(string serviceAlias, string path, Htt
     where TRequest : class;
 ```
 
-Finally, there are convenience extension methods available for each of the common HTTP verbs, allowing you to simplify the requests and omit the `HttpMethod` parameter, e.g.
+Finally, there are convenience extension methods available for each of the common HTTP verbs. These allow you to simplify the requests and omit the `HttpMethod` parameter, e.g.
 
 ```csharp
 Task<TResponse> GetRequestAsync<TResponse>(string serviceAlias, string path);

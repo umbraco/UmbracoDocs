@@ -43,7 +43,7 @@ Within the [Integrations section of the documentation](integrations/categories.m
 
 ## Umbraco Packages
 
-Finally, we have scope to create and support open-source packages designed to improve the experience of creating integrations and developing Umbraco solutions as a DXP.
+Finally, we create and support open-source packages designed to improve the experience of creating integrations and developing Umbraco solutions as a DXP.
 
 Within the packages section of the documentation you'll find information on using a component called [Authorized Services](packages/authorized-services.md). This package is designed for the purpose of simplifying custom integrations with third-party services that use a OAuth flow for authentication and authorization.
 
