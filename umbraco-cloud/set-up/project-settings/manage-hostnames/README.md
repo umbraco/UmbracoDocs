@@ -27,10 +27,11 @@ You can bind any hostname to your project environments. Ensure that the hostname
 
 Once you add a hostname to one of your environments, ensure to update the hostname DNS entry to resolve to the `umbraco.io` service.
 
-We recommend:
+We recommend setting a CNAME record for your hostname using **dns.umbraco.io**.
+In cases where providers don't offer this option on the root domain you can add the CNAME for the desired subdomain(s) and create the following records for the root domain:
 
-* Setting a CNAME record for your hostname using **dns.umbraco.io** or
-* An A record using an IP, either `104.19.191.28` or `104.19.208.28`.
+* An A record using an IP, either `104.19.191.28` or `104.19.208.28`. 
+* If you need IPv6 support add an AAAA record using one of the following addresses, `2606:4700::6813:bf1c` or `2606:4700::6813:d01c`.
 
 {% hint style="info" %}
 Once you have updated your DNS, we recommend that you check if the correct records are being picked up using a site like [whatsmydns.net](https://www.whatsmydns.net/) before adding the hostname on Umbraco Cloud.
