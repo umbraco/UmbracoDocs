@@ -383,7 +383,7 @@ namespace MyUmbracoProject.CustomAuthentication
                             {
                                 // Callback path: Represents the URL to which the browser should be redirected to.
                                 // The default value is '/signin-provider'.
-                                // The value here should match what you have configured in you external login provider.
+                                // The value here should match what you have configured in your external login provider.
                                 // The value needs to be unique.
                                 options.CallbackPath = "/umbraco-provider-signin";
 
@@ -438,8 +438,8 @@ namespace MyUmbracoProject.CustomAuthentication
                             options =>
                             {
                                 // Callback path: Represents the URL to which the browser should be redirected to.
-                                // The default value is /signin-oidc.
-                                // The value here should match what you have configured in you external login provider.
+                                // The default value is `/signin-oidc`.
+                                // The value here should match what you have configured in your external login provider.
                                 // The value needs to be unique.
                                 options.CallbackPath = "/umbraco-provider-signin";
 
