@@ -381,7 +381,10 @@ namespace MyUmbracoProject.CustomAuthentication
                             backOfficeAuthenticationBuilder.SchemeForBackOffice(ProviderBackOfficeExternalLoginProviderOptions.SchemeName),
                             options =>
                             {
-                                //  By default this is '/signin-provider' but it needs to be changed to this
+                                // Callback path: Represents the URL to which the browser should be redirected to.
+                                // The default value is '/signin-provider'.
+                                // The value here should match what you have configured in you external login provider.
+                                // The value needs to be unique.
                                 options.CallbackPath = "/umbraco-provider-signin";
 
                                 options.ClientId = "YOURCLIENTID";
@@ -436,7 +439,8 @@ namespace MyUmbracoProject.CustomAuthentication
                             {
                                 // Callback path: Represents the URL to which the browser should be redirected to.
                                 // The default value is /signin-oidc.
-                                // This needs to be unique.
+                                // The value here should match what you have configured in you external login provider.
+                                // The value needs to be unique.
                                 options.CallbackPath = "/umbraco-provider-signin";
 
                                 options.ClientId = "YOURCLIENTID";

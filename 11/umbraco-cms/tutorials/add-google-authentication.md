@@ -149,7 +149,7 @@ To use an external login provider such as Google on your Umbraco CMS project, yo
 * A custom-named configuration class.
 * A static extension class.
 
-You can create these files in a location of your choice. In this tutorial, the files will be added to an `App_Code/Google_Authentication` folder.
+You can create these files in a location of your choice. In this tutorial, the files will be added to an `ExternalUserLogin/GoogleAuthentication` folder.
 
 1. Create a new class:`GoogleBackOfficeExternalLoginProviderOptions.cs`.
 2. Add the following code to the file:
@@ -160,7 +160,7 @@ using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Web.BackOffice.Security;
 
-namespace MyCustomUmbracoProject.App_Code.Google_Authentication
+namespace MyCustomUmbracoProject.ExternalUserLogin.GoogleAuthentication
 {
     public class GoogleBackOfficeExternalLoginProviderOptions : IConfigureNamedOptions<BackOfficeExternalLoginProviderOptions>
     {
@@ -257,7 +257,7 @@ using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace MyCustomUmbracoProject.App_Code.Google_Authentication
+namespace MyCustomUmbracoProject.ExternalUserLogin.GoogleAuthentication
 {
     public static class GoogleAuthenticationExtensions
     {
@@ -276,7 +276,10 @@ namespace MyCustomUmbracoProject.App_Code.Google_Authentication
                             backOfficeAuthenticationBuilder.SchemeForBackOffice(GoogleBackOfficeExternalLoginProviderOptions.SchemeName),
                             options =>
                             {
-                                //  By default this is '/signin-google' but it needs to be changed to this
+                                // Callback path: Represents the URL to which the browser should be redirected to.
+                                // The default value is '/signin-google'.
+                                // The value here should match what you have configured in you external login provider.
+                                // The value needs to be unique.
                                 options.CallbackPath = "/umbraco-google-signin";
                                 options.ClientId = "YOURCLIENTID"; // Replace with your client id generated while creating OAuth client ID
                                 options.ClientSecret = "YOURCLIENTSECRET"; // Replace with your client secret generated while creating OAuth client ID
@@ -295,7 +298,7 @@ namespace MyCustomUmbracoProject.App_Code.Google_Authentication
 
 {% code title="Startup.cs" lineNumbers="true" %}
 ```csharp
-using MyCustomUmbracoProject.App_Code.Google_Authentication;
+using MyCustomUmbracoProject.ExternalUserLogin.GoogleAuthentication;
 
 public void ConfigureServices(IServiceCollection services)
 {
