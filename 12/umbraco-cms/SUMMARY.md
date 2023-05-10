@@ -2,6 +2,7 @@
 
 * [Umbraco CMS Documentation](README.md)
 * [Test the Release Candidate](test-the-release-candidate.md)
+* [Content Delivery API](content-delivery-api.md)
 * [Contribute](https://docs.umbraco.com/welcome/contribute/)
 
 ## Implementation

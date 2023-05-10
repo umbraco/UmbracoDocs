@@ -8,6 +8,8 @@ description: >-
 
 On Umbraco Cloud, you can add Multi-Factor Authentication (MFA) for your Umbraco Cloud account.
 
+It is also possible on the organizational level to [enforce Multi-Factor Authentication](../getting-started/the-umbraco-cloud-portal/organizations.md#mfa-enforcement) for the members.
+
 You can use Email, Phone, or an Authenticator App when logging in to the Umbraco Cloud Portal or the Umbraco Backoffice.
 
 {% hint style="info" %}
@@ -38,6 +40,8 @@ You have the option to use an Authenticator App when logging in to the Umbraco C
 You can use the Microsoft Authenticator App for both iOS and Android or any other authenticator app of your choice.
 
 ![Authenticator app](images/auth-app.png)
+
+In case you want to reset the authenticator app settings for your user, an administrator in your Umbraco Cloud organization can do this. It may be relevant if you want to use another authenticator app on your current phone or transfer the authentication process to another device.
 
 ### Phone Authentication
 

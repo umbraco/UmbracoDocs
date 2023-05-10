@@ -8,8 +8,6 @@ The basic idea is that you have a project that contains all your standard Umbrac
 
 ![Baseline workflow](images/baseline-workflow.gif)
 
-For some more in-depth information have a look at the [High-level Overview](high-level-overview.md) article.
-
 ## Video Tutorial
 
 {% embed url="https://www.youtube.com/embed/Ci1Hm-bH98Y" %}

@@ -1,11 +1,10 @@
-# Release Notes, February 2023
+# February 2023
 
-## Key Takeaways
+## Highlights video
 
-* **Enforced Multi-factor Authentication (MFA) for Organizations** - As an administrator of a cloud organization, you will be able to enforce a specific MFA method for each member of your organization.
-* **New Project Creation Flow** - Introducing the new project creation flow in Umbraco Cloud with a more modern look and feel and an improved workflow.
-* **Improved Deployment and Error Handling** - You will now see a lot more information for each of your organization’s projects on the project page under your organization.
-* **Restore Content Optimization** - You will find some important improvements to deploy restore and transfer operations in the latest updates for Umbraco Deploy.
+{% embed url="https://youtu.be/5Qak7Z2aAW0" %}
+Cloud highlights February 2023
+{% endembed %}
 
 ## Enforced Multi-factor Authentication (MFA) for Organizations
 
@@ -33,7 +32,6 @@ Whether you're a seasoned Umbraco Cloud developer or new to Umbraco development,
 
 So why wait? Try out our new project creation flow today and start building your next cloud project based on the Friendly CMS on Umbraco Cloud.
 
-
 ## Improved Deployment and Error Handling
 
 We have made **significant improvements to the deployment process and error handling** in Umbraco Cloud. We understand that seamless deployment between environments is crucial for your developer experience working in Umbraco Cloud. We have therefore been hard at work to make it even better.
@@ -45,6 +43,7 @@ Some of the deployment issues reported by users are related to the configuration
 If you are experiencing a deployment error, a question, or a remark about the deployment feature, please **consult our experienced support team**. Both the Umbraco Support and Cloud Team are dedicated to removing any friction caused by deployments on Umbraco cloud. Our vision is to make the deployment process in Umbraco Cloud as perfect as it can be.
 
 ## Restore Content Optimization
+
 The latest patch releases for Umbraco Deploy have introduced some important improvements to deploy restore and transfer operations. The update contains significant performance improvements. It should ensure, **restoring and transferring content** in a setup with a four-digit number of content nodes are not in danger of timing out.
 
 The new configuration settings and options will work instantly on the cloud projects that previously have experienced long process times during restore and transfer operations. However, you might find more insight on the pages for [troubleshooting](https://docs.umbraco.com/umbraco-deploy/troubleshooting) and [configuration](https://docs.umbraco.com/umbraco-deploy/deploy-settings) for the deployment and restoring feature of Umbraco Cloud.

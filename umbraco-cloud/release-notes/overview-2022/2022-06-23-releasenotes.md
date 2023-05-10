@@ -1,10 +1,10 @@
 # June 2022
 
-## Key Takeaways
+## Highlights video
 
-* **Runtime setting for .NET version** - We have made it possible for you to change the .NET runtime for Umbraco 9 and Umbraco 10 cloud projects. You can change the runtime on a per-environment basis.
-* **New version of “Edit team” page** - The project subpage “Edit team” has received a noticeable facelift and reflects the future design of the Umbraco Cloud Portal.
-* **Improvements and bug fixes** - A whole bunch of improvements and bug fixes have been added to Umbraco Cloud recently. Here you will find a list of the most noticeable tweaks and improvements
+{% embed url="https://youtu.be/KgSHbi9ylZ0" %}
+Cloud highlights June 2022
+{% endembed %}
 
 ## Runtime setting for .NET version
 

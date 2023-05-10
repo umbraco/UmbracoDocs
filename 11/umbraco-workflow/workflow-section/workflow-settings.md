@@ -4,23 +4,29 @@ When working with Umbraco Workflow, you can handle the workflow settings directl
 
 * [General settings](workflow-settings.md#general-settings)
   * [New node approval flow](workflow-settings.md#new-node-approval-flow)
-  * [Document type approval flows](workflow-settings.md#document-type-approval-flows)
+  * [Document Type approval flows](workflow-settings.md#document-type-approval-flows)
   * [Exclude nodes](workflow-settings.md#exclude-nodes)
 * [Notification Settings](workflow-settings.md#notifications-settings)
   * [Email templates](workflow-settings.md#email-templates)
 
-![Workflow settings](../../umbraco-workflow/images/workflow-settings.png)
+![Workflow settings](../images/workflow-settings.png)
 
 ## General Settings
 
 You can configure the **General** Settings from the **Workflow** section in the **Settings** menu. The following settings are available:
 
-![General settings](../../umbraco-workflow/images/general-settings.png)
+![General settings](../images/general-settings.png)
 
 * **Flow type** - Determines the approval flow progress. These options manage how the Change Author is included in the workflow:
   * **Explicit** - All steps of the workflow must be completed and all users will be notified of tasks (including the Change Author).
   * **Implicit** - All steps where the original Change Author is _not_ a member of the group must be completed. Steps where the original Change Author is a member of the approving group will be completed automatically and noted in the workflow history as not required.
   * **Exclude** - Similar to Explicit. All steps must be completed but the original Change Author is not included in the notifications or shown in the dashboard tasks.
+* **Approval threshold** - Sets the global approval threshold to One, Most or All:
+  * **One** - Pending task requires approval from any member of the assigned approval group. This is the default behaviour for all installations (trial and licensed).
+  * **Most** - Pending task requires an absolute majority of group members. For example, a group with three members requires two approvals and a group with four members requires three approvals.
+  * **All** - Pending task requires approval from all group members. 
+* **Rejection resets approvals** - When true, and the approval threshold is Most or All, rejecting a task resets the previous approvals for the workflow stage.
+* **Allow configuring approval threshold** - Enables setting the approval threshold for any stage of a workflow (on a content node or Document Type).
 * **Lock active content** - Determines how the content in a workflow should be managed. Set to `true` or `false` depending on whether the approval group responsible for the active workflow step should make modifications to the content. Content is locked after the first approval in the workflow - until then, the content can be edited as normal.
 * **Mandatory comments** - Set to true to require comments when approving workflows. Comments are always required when submitting changes for approval, and are always optional for admin users.
 * **Allow attachments** - Provide an attachment (such as a supporting document or enable referencing a media item) when initiating a workflow. This feature is useful when a workflow requires supporting documentation.
@@ -38,10 +44,10 @@ To add an approval group to the workflow:
 2. Go to the **General** tab in the **Settings** menu.
 3. Click **Add** in the **New node approval flow** section.
 
-    <figure><img src="../../umbraco-workflow/images/new-node-approval-flow.png" alt=""><figcaption><p>New Node Approval Flow</p></figcaption></figure>
+    <figure><img src="../images/new-node-approval-flow.png" alt=""><figcaption><p>New Node Approval Flow</p></figcaption></figure>
 4. Select an **approval group** to add to the workflow.
 
-    <figure><img src="../../umbraco-workflow/images/add-approval-flow.png" alt=""><figcaption><p>Add Workflow Approval Groups</p></figcaption></figure>
+    <figure><img src="../images/add-approval-flow.png" alt=""><figcaption><p>Add Workflow Approval Groups</p></figcaption></figure>
 5. Click **Submit**.
 6. Click **Save Settings**.
 
@@ -59,15 +65,15 @@ To add a Document type approval flow:
 2. Go to the **General** tab in the **Settings** menu.
 3. Click **Add** in the **Document type approval flows** section.
 
-    <figure><img src="../../umbraco-workflow/images/doc-type-approval-flows.png" alt=""><figcaption><p>Document Type Approval Flows</p></figcaption></figure>
+    <figure><img src="../images/doc-type-approval-flows.png" alt=""><figcaption><p>Document Type Approval Flows</p></figcaption></figure>
 4. Select a **Document type** from the drop-down list.
 
-    <figure><img src="../../umbraco-workflow/images/add-doc-type-approval-flows.png" alt=""><figcaption><p>Add Document Type Approval Flows</p></figcaption></figure>
+    <figure><img src="../images/add-doc-type-approval-flows.png" alt=""><figcaption><p>Add Document Type Approval Flows</p></figcaption></figure>
 5. Select a **Language** from the drop-down list.
 6. **Add workflow approval groups** in the **Current flow** process.
 7. Click **Add condition** to add a condition to the workflow process.
 
-    <figure><img src="../../umbraco-workflow/images/add-doc-type-approval-flows-settings.png" alt=""><figcaption><p>Configure Document Type Approval Flow Settings</p></figcaption></figure>
+    <figure><img src="../images/add-doc-type-approval-flows-settings.png" alt=""><figcaption><p>Configure Document Type Approval Flow Settings</p></figcaption></figure>
 8. Click **Submit**.
 9. Click **Save Settings**.
 
@@ -77,12 +83,12 @@ To edit a Document type approval flow:
 2. Go to the **General** tab in the **Settings** menu.
 3. Click **Edit** next to the content node in the **Document type approval flows** section.
 
-    <figure><img src="../../umbraco-workflow/images/edit-doc-type-approval-flows.png" alt=""><figcaption><p>Edit Document Type Approval Flow</p></figcaption></figure>
+    <figure><img src="../images/edit-doc-type-approval-flows.png" alt=""><figcaption><p>Edit Document Type Approval Flow</p></figcaption></figure>
 4. Select a **Language** from the drop-down list.
 5. **Add**, **Edit**, or **Remove** approval groups from the current workflow.
 6. Click **Add condition** to add a condition to the workflow process.
 
-    <figure><img src="../../umbraco-workflow/images/edit-doc-type-approval-flows-settings.png" alt=""><figcaption><p>Configure Document Type Approval Flow</p></figcaption></figure>
+    <figure><img src="../images/edit-doc-type-approval-flows-settings.png" alt=""><figcaption><p>Configure Document Type Approval Flow</p></figcaption></figure>
 7. Click **Submit**.
 8. Click **Save Settings**.
 
@@ -96,10 +102,10 @@ To exclude a node from the workflow process:
 2. Go to the **General** tab in the **Settings** menu.
 3. Click **Add** in the **Exclude nodes** section.
 
-    <figure><img src="../../umbraco-workflow/images/exclude-nodes.png" alt=""><figcaption><p>Exclude Nodes</p></figcaption></figure>
-4.  Select the **Content node** from the Content tree.
+    <figure><img src="../images/exclude-nodes.png" alt=""><figcaption><p>Exclude Nodes</p></figcaption></figure>
+4. Select the **Content node** from the Content tree.
 
-    <figure><img src="../../umbraco-workflow/images/select-content-from-tree.png" alt=""><figcaption><p>Select Content Node</p></figcaption></figure>
+    <figure><img src="../images/select-content-from-tree.png" alt=""><figcaption><p>Select Content Node</p></figcaption></figure>
 5. Click **Submit**.
 6. Click **Save Settings**.
 
@@ -116,7 +122,7 @@ From the **Settings** view in the **Workflow** section, the **Notifications** ta
 * **Site URL:** The URL for the public website (including schema - http[s]). This is a mandatory field.
 * [**Email templates**](workflow-settings.md#email-templates)**:** Configure which users receive emails for which workflow actions and modify the templates for those emails.
 
-    ![Notifications tab in the Workflow Section](../../umbraco-workflow/images/Notifications-tab.png)
+    ![Notifications tab in the Workflow Section](../images/Notifications-tab.png)
 
 ## Notifications Overview
 

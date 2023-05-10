@@ -60,8 +60,6 @@ The extraction will end in one of two possible outcomes:
 
 It is also possible to see which version of Umbraco Deploy you are running, when the last operation was started and the status of the deployment operation.
 
-![Deploy Dashboard](../../../11/umbraco-deploy/deployment-workflow/images/Deploy-dahsboard.png)
+## [Deploy Dashboard](deploy-dashboard.md)
 
-{% embed url="https://www.youtube.com/embed/l5qdTsIddKM?rel=0" %}
-Umbraco Deploy - Content transfer and deploy
-{% endembed %}
+In Umbraco Deploy we have included a Deploy Dashboard in the Settings section of the Umbraco backoffice to make it easier to run operations like schema deployment from data files and extract schema to data files.

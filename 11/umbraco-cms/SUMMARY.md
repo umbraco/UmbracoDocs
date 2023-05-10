@@ -413,6 +413,7 @@
 * [Creating a Multilingual Site](tutorials/multilanguage-setup.md)
 * [Add Google Authentication (Users)](tutorials/add-google-authentication.md)
 * [Add Azure Active Directory authentication (Members)](tutorials/add-azure-active-directory-authentication.md)
+* [Creating a Backoffice Tour](tutorials/creating-a-backoffice-tour.md)
 * [The Starter Kit](tutorials/starter-kit/README.md)
   * [Lessons](tutorials/starter-kit/lessons/README.md)
     * [Customize the Starter Kit](tutorials/starter-kit/lessons/1-customize-the-starter-kit.md)

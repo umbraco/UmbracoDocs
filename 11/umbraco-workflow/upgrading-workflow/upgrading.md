@@ -10,8 +10,8 @@ If you are migrating from Plumber to Umbraco Workflow, see the [Migrate from Plu
 
 To get the latest version of Umbraco Workflow, you can upgrade using either of the two options:
 
-* [NuGet](#nuget)
-* [Visual Studio](#visual-studio)
+* [NuGet](upgrading.md#nuget)
+* [Visual Studio](upgrading.md#visual-studio)
 
 ### NuGet
 
@@ -26,7 +26,7 @@ To get the latest version of Umbraco Workflow, you can upgrade using either of t
 * Select **Umbraco.Workflow**.
 *   Select the latest version from the **Version** drop-down and click **Install**.
 
-    ![NuGet Package Manager](../../umbraco-workflow/images/Manage-packages-v11.png)
+    ![NuGet Package Manager](../../../12/umbraco-workflow/images/Manage-packages-v11.png)
 *   Open the **.csproj** file to make sure the package reference is updated:
 
     ```xml

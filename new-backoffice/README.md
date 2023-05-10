@@ -6,9 +6,9 @@ description: >-
 
 # The new Umbraco Backoffice
 
-Version 13 of Umbraco CMS will include a new backoffice. It will look more or less the same but be built on modern technology using a UI Library built for the purpose.
+The new Backoffice is currently targeting Umbraco version 14 for release. It will look more or less the same but be built on modern technology using a UI Library built for the purpose.
 
-On this site, we have collected all resources related to the ongoing with on the new backoffice. You can also find material to help you get into contributing if you want to put your own touch on the project.
+On this site, we have collected all resources related to the ongoing development of the new backoffice. You can also find material to help you get into contributing if you want to put your own touch on the project.
 
 ## Storybook Libraries
 
