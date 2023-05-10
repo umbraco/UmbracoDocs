@@ -186,7 +186,7 @@ If the service is not yet authorized, click the _Authorize Service_ button to tr
 
 ### Calling an Service
 
-To make a call to an authorized service, you first need to obtain an instance of `IAuthorizedServiceCaller`. This is registered with the dependency injection framework and as such can be injected into a controller, view or service class where it needs to be used.
+To make a call to an authorized service, you first need to obtain an instance of `IAuthorizedServiceCaller`. This is registered with the dependency injection framework. As such it can be injected into a controller, view or service class where it needs to be used.
 
 If making a request where all information is provided via the path and querystring, such as GET requests, the following method should be invoked:
 
