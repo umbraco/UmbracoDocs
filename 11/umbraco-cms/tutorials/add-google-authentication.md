@@ -126,7 +126,7 @@ A package manager console appears at the bottom where you can install packages w
 3. Type the following in the console:
 
 ```js
-Install-Package Microsoft.AspNetCore.Authentication.Google -Version 5.0.0
+Install-Package Microsoft.AspNetCore.Authentication.Google -Version 7.0.5
 ```
 
 #### Option 2: NuGet Package Manager
@@ -167,7 +167,7 @@ namespace MyCustomUmbracoProject.App_Code.Google_Authentication
         public const string SchemeName = "OpenIdConnect";
         public void Configure(string name, BackOfficeExternalLoginProviderOptions options)
         {
-            if (name != "Umbraco." + SchemeName)
+            if (name != Constants.Security.BackOfficeExternalAuthenticationTypePrefix + SchemeName)
             {
                 return;
             }

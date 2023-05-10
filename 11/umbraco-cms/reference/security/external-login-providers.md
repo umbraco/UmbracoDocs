@@ -76,7 +76,7 @@ For users specifically, if the `DenyLocalLogin` option is enabled, all password-
 
 In some cases, you may want to flow a Claim returned in your external login provider to the Umbraco backoffice identity's Claims. This could be the authentication cookie. Flowing Claims between the two can be done during the `OnAutoLinking` and `OnExternalLogin`.
 
-The reason for wanted to flow a Cloud could be to store the external login provider user ID into the backoffice identity cookie. It can then be retrieved on each request to look up data in another system needing the current user ID from the external login provider.
+The reason for wanted to flow a Claim could be to store the external login provider user ID into the backoffice identity cookie. It can then be retrieved on each request to look up data in another system needing the current user ID from the external login provider.
 
 {% hint style="warning" %}
 Do not flow large amounts of data into the backoffice identity. This information is stored in the backoffice authentication cookie and cookie limits will apply. Data like Json Web Tokens (JWT) needs to be [persisted](#storing-external-login-provider-data) somewhere to be looked up and not stored within the backoffice identity itself.
@@ -169,7 +169,7 @@ namespace MyUmbracoProject.CustomAuthentication
         public const string SchemeName = "OpenIdConnect";
         public void Configure(string name, BackOfficeExternalLoginProviderOptions options)
         {
-            if (name != "Umbraco." + SchemeName)
+            if (name != Constants.Security.BackOfficeExternalAuthenticationTypePrefix + SchemeName)
             {
                 return;
             }
@@ -263,7 +263,7 @@ namespace MyUmbracoProject.CustomAuthentication
         public const string SchemeName = "OpenIdConnect";
         public void Configure(string? name, MemberExternalLoginProviderOptions options)
         {
-            if (name != "Umbraco." + SchemeName)
+            if (name != Constants.Security.MemberExternalAuthenticationTypePrefix + SchemeName)
             {
                 return;
             }
@@ -294,7 +294,7 @@ namespace MyUmbracoProject.CustomAuthentication
                 // [OPTIONAL]
                 // Default: "Member"
                 // Specify the Member Type alias.
-                defaultMemberTypeAlias: "Member"
+                defaultMemberTypeAlias: Constants.Security.DefaultMemberTypeAlias
             )
             {
                 // [OPTIONAL] Callback
@@ -422,7 +422,7 @@ namespace MyUmbracoProject.CustomAuthentication
         {
             // [OPTIONAL]
             // Register ProviderMembersExternalLoginProviderOptions here rather than require it in startup
-            builder.Services.ConfigureOptions<GoogleMemberExternalLoginProviderOptions>();
+            builder.Services.ConfigureOptions<ProviderMembersExternalLoginProviderOptions>();
 
             builder.AddMemberExternalLogins(logins =>
             {
@@ -434,8 +434,16 @@ namespace MyUmbracoProject.CustomAuthentication
                             memberAuthenticationBuilder.SchemeForMembers(ProviderMembersExternalLoginProviderOptions.SchemeName),
                             options =>
                             {
+                                // Callback path: Represents the URL to which the browser should be redirected to.
+                                // The default value is /signin-oidc.
+                                // This needs to be unique.
+                                options.CallbackPath = "/umbraco-provider-signin";
+
                                 options.ClientId = "YOURCLIENTID";
                                 options.ClientSecret = "YOURCLIENTSECRET";
+                                
+                                 // Example: Save login tokens
+                                options.SaveTokens = true;
 
                             });
                     });

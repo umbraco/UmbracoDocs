@@ -132,10 +132,11 @@ namespace MyApp
 {
     public class AzureB2CMembersExternalLoginProviderOptions : IConfigureNamedOptions<MemberExternalLoginProviderOptions>
     {
-        public const string SchemeName = "OpenIdConnect";
+        public const string SchemeName = "ActiveDirectoryB2C";¨
+
         public void Configure(string? name, MemberExternalLoginProviderOptions options)
         {
-            if (name != "Umbraco." + SchemeName)
+            if (name != Constants.Security.MemberExternalAuthenticationTypePrefix + SchemeName)
             {
                 return;
             }
@@ -166,7 +167,7 @@ namespace MyApp
                 // [OPTIONAL]
                 // Default: "Member"
                 // Specify the Member Type alias.
-                defaultMemberTypeAlias: "Member"
+                defaultMemberTypeAlias: Constants.Security.DefaultMemberTypeAlias
 
             )
             {
@@ -175,7 +176,7 @@ namespace MyApp
                 {
                     // Customize the Member before it's linked.
                     // Modify the Members groups based on the Claims returned
-                    // in the external ogin info.
+                    // in the external login info.
                 },
                 OnExternalLogin = (user, loginInfo) =>
                 {
@@ -216,7 +217,7 @@ namespace MyApp
                             membersAuthenticationBuilder.SchemeForMembers(AzureB2CMembersExternalLoginProviderOptions.SchemeName),
                             options =>
                             {
-                                // Callbackpath: Tepresents the URL to which the browser should be redirected to.
+                                // Callbackpath: Represents the URL to which the browser should be redirected to.
                                 // The default value is /signin-oidc.
                                 // This needs to be unique.
                                 options.CallbackPath = "/umbraco-b2c-members-signin";
