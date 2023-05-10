@@ -1,6 +1,7 @@
-# Vendr to Umbraco Commerce Migration Steps
-
-This document provides a rough outline of the steps necesarry to migrate an up to date (v3) Vendr solution to the new Umbraco Commerce solution.
+---
+title: Migrating a Vendr solution to Umbraco Commerce
+description: How-To Guide to migrate a Vendr solution to Umbraco Commerce
+---
 
 ## Key Changes
 
@@ -28,7 +29,7 @@ Before outlining the exact steps, it's worth knowing a few key changes that have
 * All classes containing the `Vendr` keyword are now updated to `UmbracoCommerce`
   > ie: `IVendrApi` is now `IUmbracoCommerceApi`, `AddVendr()` is now `AddUmbracoCommerce()` etc
 
-### Javascript Changes
+### JavaScript Changes
 * All `vendr` modules have changed to `umbraco.commerce` modules
 * All `vendr` prefixed directives + services + resource are new prefixed `uc`
 * All `vendr` prefixed events now follow the format `Umbraco.Commerce.{target}.{action}`
@@ -39,7 +40,7 @@ Before outlining the exact steps, it's worth knowing a few key changes that have
 * The `App_Plugins` folder has been renamed from `Vendr` to `UmbracoCommerce`
 * UI Config files have changed from `.js` files to `.json`
 
-## Migration Steps
+## Core Migration Steps
 
 ### Step 1: Replace Vendr dependencies with Umbraco Commerce dependencies
 
@@ -240,7 +241,7 @@ Before outlining the exact steps, it's worth knowing a few key changes that have
 ### Step 8: Run the project
 * Launch the project and everything should have crossed over
 
-## Umbraco Commerce Checkout
+## Umbraco Commerce Checkout Migration Steps
 
 ### Step 1: Backup
 * Backup any custom templates / Umbraco Commerce UI config files
@@ -267,7 +268,7 @@ Before outlining the exact steps, it's worth knowing a few key changes that have
 * Copy any custom configs back 
 * Copy any custom Views to `~/Views/UmbracoCommerceCheckout/`
 
-## Payment Providers
+## Payment Provider Migration Steps
 
 ### Step 1: Replace Vendr dependencies with Umbraco Commerce dependencies
 
