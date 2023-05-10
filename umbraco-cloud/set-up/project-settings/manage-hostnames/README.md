@@ -29,7 +29,7 @@ Once you add a hostname to one of your environments, ensure to update the hostna
 
 We recommend setting a CNAME record for your hostname using **dns.umbraco.io**. Although a CNAME cannot be placed at the root domain level, some providers support CNAME flattening to overcome this limitation.
 
-However, if your provider doesn't support setting a CNAME record for your hostname, you can manually set the following records:
+If your provider doesn't support setting a CNAME record for your hostname, you can manually set the following records:
 * A records to either or both IPv4 addresses:
   * `104.19.191.28`
   * `104.19.208.28`
