@@ -168,9 +168,16 @@ If for any reason there was a need to revert to the previous implementation, the
 
 In order for Deploy to handle Forms data as content, you'll to ensure the `TransferFormsAsContent` setting is set to `true`. To transfer Forms data as schema, i.e. via .uda files committed to source control, use a value of `false`.
 
+{% hint style="info" %}
+On changing this value from `false` to `true`, make sure to remove any `.uda` files for Forms entities that have already been serialized to disk. These will no longer be updated. By deleting them you avoid any risk of them being processed in the future and inadvertently reverting a form to an earlier state.
+{% endhint %}
+
+
 ## TransferDictionaryAsContent
 
 In a similar way, Deploy can be configured to allow for backoffice transfers of dictionary items instead of using files serialized to disk, by setting `TransferDictionaryAsContent` as `true`.
+
+Please see the note above under _TransferFormsAsContent_ on the topic of removing any existing serialized files having changed this value to `true`.
 
 ## AllowMembersDeploymentOperations and TransferMemberGroupsAsContent
 
@@ -186,6 +193,8 @@ The `AllowMembersDeploymentOperations` setting can take four values:
 * `All` - restore and transfer of members from upstream environments via the backoffice is enabled
 
 With `TransferMemberGroupsAsContent` set to `true`, member groups can also be transferred via the backoffice, and groups identified as dependencies of members being transferred will be automatically deployed.
+
+Please see the note above under _TransferFormsAsContent_ on the topic of removing any existing serialized files having changed this value to `true`.
 
 ## ExportMemberGroups
 
