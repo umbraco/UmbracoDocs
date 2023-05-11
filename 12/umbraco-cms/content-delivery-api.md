@@ -523,7 +523,7 @@ GET /umbraco/delivery/api/v1/content?filter=contentType:article&filter=name:guid
 {% endtab %}
 
 {% tab title="sort" %}
-Specifying how the results should be ordered, can be achieved using the `sort` query option. You can use this parameter to sort the content items by various fields, including create date, level, name, sort order, and update date. For each field, you can specify whether the items should be sorted in ascending (_asc_) or descending (_desc_) order.
+Specifying how the results should be ordered, can be achieved using the `sort` query option. You can use this parameter to sort the content items by various fields, including create date, level, name, sort order, and update date. For each field, you can specify whether the items should be sorted in ascending (_asc_) or descending (_desc_) order. Without a `sort` query parameter, the order of the results will be determined by the relevance score of the **DeliveryApiContentIndex** for the given search term.
 
 `?sort=createDate:`_`{asc / desc}`_\
 _An option to sort the results based on the creation date of the content item._
