@@ -65,7 +65,7 @@ public class BlogContext : DbContext
             entity.ToTable("blogComment");
             entity.HasKey(e => e.Id);
             entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.BlogPostUmbracoId).HasColumnName("blogPostUmbracoId");
+            entity.Property(e => e.BlogPostUmbracoId).HasColumnName("blogPostUmbracoKey");
             entity.Property(e => e.Message).HasColumnName("message");
             entity.Property(e => e.Website).HasColumnName("website");
             entity.Property(e => e.Email).HasColumnName("email");
