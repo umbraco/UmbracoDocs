@@ -90,40 +90,6 @@ Our DbContext class was named `BlogContext`, but if you have renamed yours, reme
 
 You should now have a `Migrations` folder in your project, containing the `InitialCreate` migration (or whatever name you chose).
 
-### AddCommentsTableMigration class
-```
-using Microsoft.EntityFrameworkCore;
-using Umbraco.Cms.Infrastructure.Migrations;
-using Umbraco.Cms.Persistence.EFCore.Scoping;
-
-namespace Umbraco.Demo;
-
-public class AddCommentsTableMigration : MigrationBase
-{
-    private readonly IEFCoreScopeProvider<BlogContext> _efCoreScopeProvider;
-
-    public AddCommentsTableMigration(IMigrationContext context, IEFCoreScopeProvider<BlogContext> efCoreScopeProvider) : base(context) => _efCoreScopeProvider = efCoreScopeProvider;
-
-    protected override async void Migrate()
-    {
-        Logger.LogDebug("Running migration {MigrationStep}", "AddCommentsTable");
-
-        using IEfCoreScope<BlogContext> scope = _efCoreScopeProvider.CreateScope();
-        await scope.ExecuteWithContextAsync<Task>(async db =>
-        {
-            IEnumerable<string> pendingMigrations = await db.Database.GetPendingMigrationsAsync();
-
-            if (pendingMigrations.Any())
-            {
-                await db.Database.MigrateAsync();
-            }
-
-            scope.Complete();
-        });
-    }
-}
-```
-
 {% hint style="warning" %}
 This might be confusing at first, as when working with EFCore you would usually just inject your `Context` class.
 And while you can still do that, it is however not the recommended approach in Umbraco.
@@ -131,8 +97,7 @@ In Umbraco we use a concept called `Scope` which is our implementation of the `U
 This ensures that we start a transaction when using the database, and roll it back if the scope is not completed (for example when expections are thrown).
 {% endhint %}
 
-Great! Now we have the migration, we have to run it too. We can do this by adding an `UmbracoApplicationStartedNotification` handler class.
-
+Next lets create the notification handler that will handle our migrations.
 ### RunBlogCommentsMigration class
 ```
 using Umbraco.Cms.Core;
@@ -148,49 +113,29 @@ namespace Umbraco.Demo;
 
 public class RunBlogCommentsMigration : INotificationHandler<UmbracoApplicationStartedNotification>
 {
-    private readonly IRuntimeState _runtimeState;
-    private readonly IMigrationPlanExecutor _migrationPlanExecutor;
-    private readonly IKeyValueService _keyValueService;
-    private readonly ICoreScopeProvider _coreScopeProvider;
+    private readonly IEFCoreScopeProvider<BlogContext> _efCoreScopeProvider;
 
-    public RunBlogCommentsMigration(IRuntimeState runtimeState, IMigrationPlanExecutor migrationPlanExecutor, IKeyValueService keyValueService, ICoreScopeProvider coreScopeProvider)
+    public RunBlogCommentsMigration(IEFCoreScopeProvider<BlogContext> efCoreScopeProvider)
     {
-        _runtimeState = runtimeState;
-        _migrationPlanExecutor = migrationPlanExecutor;
-        _keyValueService = keyValueService;
-        _coreScopeProvider = coreScopeProvider;
+        _efCoreScopeProvider = efCoreScopeProvider;
     }
 
     public void Handle(UmbracoApplicationStartedNotification notification)
     {
-        if (_runtimeState.Level < RuntimeLevel.Run)
+        using IEfCoreScope<BlogContext> scope = _efCoreScopeProvider.CreateScope();
+        await scope.ExecuteWithContextAsync<Task>(async db =>
         {
-            return;
-        }
+            IEnumerable<string> pendingMigrations = await db.Database.GetPendingMigrationsAsync();
 
-        var migrationState = _keyValueService.GetValue("Umbraco.Core.Upgrader.State+BlogComments");
-        if (migrationState is not null)
-        {
-            return;
-        }
+            if (pendingMigrations.Any())
+            {
+                await db.Database.MigrateAsync();
+            }
 
-        // Create a migration plan for a specific project/feature
-        // We can then track that latest migration state/step for this project/feature
-        var migrationPlan = new MigrationPlan("BlogComments");
-
-        // This is the steps we need to take
-        // Each step in the migration adds a unique value
-        migrationPlan.From(string.Empty)
-            .To<AddCommentsTableMigration>("blogcomments-db");
-
-        // Go and upgrade our site (Will check if it needs to do the work or not)
-        // Based on the current/latest step
-        var upgrader = new Upgrader(migrationPlan);
-        upgrader.Execute(_migrationPlanExecutor, _coreScopeProvider, _keyValueService);
+            scope.Complete();
+        });
     }
 }
-
-
 ```
 
 Lastly we have to register the notification handler, we'll do this with an `IComposer` class.
