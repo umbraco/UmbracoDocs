@@ -189,7 +189,7 @@ The `allowMembersDeploymentOperations` setting can take four values:
 - `Transfer` - transfer of members to upstream environments via the backoffice is enabled
 - `All` - restore and transfer of members from upstream environments via the backoffice is enabled
 
-Note that it's important to ensure a common machine key is setup for all environments, to ensure hashed passwords remain usable in the destination environment.
+It's important to ensure a common machine key is setup for all environments. This will ensure hashed passwords remain usable in the destination environment.
 
 With `transferMemberGroupsAsContent` set to `true`, member groups can also be transferred via the backoffice, and groups identified as dependencies of members being transferred will be automatically deployed.
 
