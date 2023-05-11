@@ -26,15 +26,21 @@ The package tries to implement a single, best practice implementation of working
 
 For the solution developer, the Umbraco Authorized Services offers two primary features.
 
-Firstly there's an tree available in the _Settings_ section of the backoffice, called _Authorized Services_. The tree shows the list of services based on the details provided in configuration.
+Firstly there's a tree available in the _Settings_ section of the backoffice, called _Authorized Services_. The tree shows the list of services based on the details provided in configuration.
 
-[insert pic]
+![authorized-services-tree](images/authorized-services-tree.png)
 
-Each tree entry has a management screen where an administrator can authenticate with an app that has been setup with the service.  The status of each service is shown on this screen. When authorized, the authentication and authorization flow has been completed and an access token stored.
+Each tree entry has a management screen where an administrator can authenticate with an app that has been setup with the service. The status of each service is shown on this screen. When authorized, the authentication and authorization flow has been completed and an access token stored.
 
-[insert pic]
+![not-authorized-screen](images/not-authorized-screen.png)
+
+![authorized-screen](images/authorized-screen.png)
 
 Secondly, the developer has access to an interface - `IAuthorizedServiceCaller` - that they can inject instances of and use to make authorized requests to the service's API.
+
+Using a settings screen the administrator can review the service configuration.
+
+![settings-screen](images/settings-screen.png)
 
 ## Usage
 
@@ -65,10 +71,11 @@ Details of services available need to be applied to the Umbraco web application'
           "IdentityHost": "",
           "TokenHost": "",
           "RequestIdentityPath": "",
-          "AuthorizationRequestsRequireRedirectUri": true|false,
+          "AuthorizationUrlRequiresRedirectUrl": true|false,
           "RequestTokenPath": "",
           "JsonSerializer": "",
           "RequestTokenFormat": "",
+          "AuthorizationRequestRequiresAuthorizationHeaderWithBasicToken": true|false,
           "ClientId": "",
           "ClientSecret": "",
           "UseProofKeyForCodeExchange": true|false,
@@ -120,7 +127,7 @@ Some providers make available a separately hosted service for handling requests 
 
 Used, along with `IdentityHost` to construct a URL that the user is redirected to when initiating the authorization of the service via the backoffice. For GitHub, the required value is `/login/oauth/authorize`.
 
-###### AuthorizationRequestsRequireRedirectUri
+###### AuthorizationUrlRequiresRedirectUrl
 
 Some providers require a redirect URL to be provided with the authentication request. For others, instead it's necessary to configure this as part of the registered app. The default value if not provided via configuration is `false`, which is sufficient for the GitHub example.
 
@@ -132,13 +139,18 @@ Used, along with `TokenHost` to construct a URL used for retrieving access token
 
 An enum value that controls how the request to retrieve an access token is formatted. Options are `Querystring` and `FormUrlEncoded`. `Querystring` is the default value and is used for GitHub.
 
-###### RequestTokenFormat
+###### JsonSerializer
 
 An enum value that defines the JSON serializer to use when creating requests and deserializing responses. Options are `Default` and `JsonNet` and `SystemTextJson`.
 
 - `Default` - uses the Umbraco CMS default `IJsonSerializer`.
 - `JsonNet` - uses the JSON.Net serializer.
 - `SystemTextJson` - uses the System.Text.Json serializer.
+
+###### AuthorizationRequestRequiresAuthorizationHeaderWithBasicToken
+
+This flag indicates whether the basic token should be included in the request for access token. If true, a base64 encoding of <clientId>:<clientSecret> will be added to 
+the authorization header.
 
 ###### ClientId *
 
@@ -439,6 +451,320 @@ As integrations with more providers are successfully completed, we plan to maint
   "Scopes": "offline.access tweet.read users.read",
   "SampleRequest": "/2/users/me"
 },
+```
+
+### Yahoo
+
+```json
+{
+  "Alias": "yahoo",
+  "DisplayName": "Yahoo",
+  "ApiHost": "https://api.login.yahoo.com",
+  "IdentityHost": "https://api.login.yahoo.com",
+  "TokenHost": "https://api.login.yahoo.com",
+  "RequestIdentityPath": "/oauth2/request_auth",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "UseProofKeyForCodeExchange": false,
+  "RequestTokenPath": "/oauth2/get_token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "JsonSerializer": "SystemTextJson",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "",
+  "SampleRequest": "/openid/v1/userinfo"
+}
+```
+
+### Mailchimp
+
+```json
+{
+  "Alias": "mailchimp",
+  "DisplayName": "Mailchimp",
+  "ApiHost": "https://login.mailchimp.com",
+  "IdentityHost": "https://login.mailchimp.com",
+  "TokenHost": "https://login.mailchimp.com",
+  "RequestIdentityPath": "/oauth2/authorize",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "UseProofKeyForCodeExchange": false,
+  "RequestTokenPath": "/oauth2/token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "JsonSerializer": "SystemTextJson",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "",
+  "SampleRequest": "/oauth2/metadata"
+}
+```
+
+### Discord
+
+```json
+{
+  "Alias": "discord",
+  "DisplayName": "Discord",
+  "ApiHost": "https://discord.com",
+  "IdentityHost": "https://discord.com",
+  "TokenHost": "https://discord.com",
+  "RequestIdentityPath": "/oauth2/authorize",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "UseProofKeyForCodeExchange": false,
+  "RequestTokenPath": "/api/oauth2/token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "JsonSerializer": "SystemTextJson",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "email",
+  "SampleRequest": "/users/@me"
+}
+```
+
+### Slack
+
+```json
+{
+  "Alias": "slack",
+  "DisplayName": "Slack",
+  "ApiHost": "https://slack.com",
+  "IdentityHost": "https://slack.com",
+  "TokenHost": "https://slack.com",
+  "RequestIdentityPath": "/oauth/v2/authorize",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "UseProofKeyForCodeExchange": false,
+  "RequestTokenPath": "/api/oauth.v2.access",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "JsonSerializer": "SystemTextJson",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "users:read.email users:read channels:read groups:read mpim:read im:read",
+  "SampleRequest": "/api/conversations.list?limit=50"
+}
+```
+
+### Dropbox
+
+```json
+{
+  "Alias": "dropbox",
+  "DisplayName": "Dropbox",
+  "ApiHost": "https://api.dropboxapi.com",
+  "IdentityHost": "https://www.dropbox.com",
+  "TokenHost": "https://www.dropbox.com",
+  "RequestIdentityPath": "/oauth2/authorize",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "UseProofKeyForCodeExchange": true,
+  "RequestTokenPath": "/oauth2/token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "profile openid email account_info.read files.content.read files.metadata.read",
+  "SampleRequest": ""
+}
+```
+
+### Fitbit
+
+```json
+{
+  "Alias": "fitbit",
+  "DisplayName": "Fitbit",
+  "ApiHost": "https://api.fitbit.com",
+  "IdentityHost": "https://www.fitbit.com",
+  "TokenHost": "https://api.fitbit.com",
+  "RequestIdentityPath": "/oauth2/authorize",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "UseProofKeyForCodeExchange": true,
+  "RequestTokenPath": "/oauth2/token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "AuthorizationRequestRequiresAuthorizationHeaderWithBasicToken": true,
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "profile",
+  "SampleRequest": "/1/user/-/profile.json"
+}
+```
+
+### Figma
+
+```json
+{
+  "Alias": "figma",
+  "DisplayName": "Figma",
+  "ApiHost": "https://api.figma.com",
+  "IdentityHost": "https://www.figma.com",
+  "TokenHost": "https://www.figma.com",
+  "RequestIdentityPath": "/oauth",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "RequestTokenPath": "/api/oauth/token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "file_read",
+  "SampleRequest": "/v1/me"
+}
+```
+
+### Miro
+
+```json
+{
+  "Alias": "miro",
+  "DisplayName": "Miro",
+  "ApiHost": "https://api.miro.com",
+  "IdentityHost": "https://miro.com",
+  "TokenHost": "https://api.miro.com",
+  "RequestIdentityPath": "/oauth/authorize",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "RequestTokenPath": "/v1/oauth/token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "boards:read",
+  "SampleRequest": "/v2/boards?sort=default"
+}
+```
+
+### Calendly
+
+```json
+{
+  "Alias": "calendly",
+  "DisplayName": "Calendly",
+  "ApiHost": "https://api.calendly.com",
+  "IdentityHost": "https://auth.calendly.com",
+  "TokenHost": "https://auth.calendly.com",
+  "RequestIdentityPath": "/oauth/authorize",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "RequestTokenPath": "/oauth/token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "",
+  "SampleRequest": "/users/me"
+}
+```
+
+### Zendesk
+
+```json
+{
+  "Alias": "zendesk",
+  "DisplayName": "Zendesk",
+  "ApiHost": "https://api.getbase.com",
+  "IdentityHost": "https://api.getbase.com",
+  "TokenHost": "https://api.getbase.com",
+  "RequestIdentityPath": "/oauth2/authorize",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "RequestTokenPath": "/oauth2/token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "read",
+  "SampleRequest": "/v2/contacts"
+}
+```
+
+### Gitlab
+
+```json
+{
+  "Alias": "gitlab",
+  "DisplayName": "Gitlab",
+  "ApiHost": "https://gitlab.com",
+  "IdentityHost": "https://gitlab.com",
+  "TokenHost": "https://gitlab.com",
+  "RequestIdentityPath": "/oauth/authorize",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "UseProofKeyForCodeExchange": true,
+  "RequestTokenPath": "/oauth/token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "api read_api read_user",
+  "SampleRequest": "/api/v4/projects"
+}
+```
+
+### Atlasian
+
+```json
+{
+  "Alias": "atlasian",
+  "DisplayName": "Atlasian",
+  "ApiHost": "https://api.atlassian.com",
+  "IdentityHost": "https://auth.atlassian.com",
+  "TokenHost": "https://auth.atlassian.com",
+  "RequestIdentityPath": "/authorize",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "UseProofKeyForCodeExchange": true,
+  "RequestTokenPath": "/oauth/token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "read:jira-user read:jira-work",
+  "SampleRequest": "/oauth/token/accessible-resources"
+}
+```
+
+### Amazon
+
+```json
+{
+  "Alias": "amazon",
+  "DisplayName": "Amazon",
+  "ApiHost": "https://api.amazon.com",
+  "IdentityHost": "https://www.amazon.com",
+  "TokenHost": "https://api.amazon.com",
+  "RequestIdentityPath": "/ap/oa",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "UseProofKeyForCodeExchange": true,
+  "RequestTokenPath": "/auth/o2/token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "profile",
+  "SampleRequest": "/user/profile"
+}
+```
+
+### Bitbucket
+
+```json
+{
+  "Alias": "bitbucket",
+  "DisplayName": "Bitbucket",
+  "ApiHost": "https://api.bitbucket.org",
+  "IdentityHost": "https://bitbucket.org",
+  "TokenHost": "https://bitbucket.org",
+  "RequestIdentityPath": "/site/oauth2/authorize",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "RequestTokenPath": "/site/oauth2/access_token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "",
+  "SampleRequest": "/user/profile"
+}
+```
+
+### Timely
+
+```json
+{
+  "Alias": "timely",
+  "DisplayName": "Timely",
+  "ApiHost": "https://api.timelyapp.com/1.1",
+  "IdentityHost": "https://api.timelyapp.com/1.1",
+  "TokenHost": "https://api.timelyapp.com/1.1",
+  "RequestIdentityPath": "/oauth/authorize",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "RequestTokenPath": "/oauth/token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "",
+  "SampleRequest": "/1.1/accounts"
+}
 ```
 
 ## Contributing
