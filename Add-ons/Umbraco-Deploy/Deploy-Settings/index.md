@@ -153,6 +153,8 @@ In order for Deploy to handle Forms data as content, you'll need to add the foll
 </settings>
 ```
 
+On changing this value from `false` to `true`, make sure to remove any `.uda` files for Forms entities that have already been serialized to disk. These will no longer be updated. By deleting them you avoid any risk of them being processed in future and inadvertently reverting a form to an earlier state.
+
 ## Transfer dictionary items as content
 
 In a similar way, Deploy can be configured to allow for backoffice transfers of dictionary items instead of using files serialized to disk, by adding the following setting to `UmbracoDeploy.Settings.config`:
@@ -163,6 +165,8 @@ In a similar way, Deploy can be configured to allow for backoffice transfers of 
     <dictionary transferDictionaryAsContent="true" />
 </settings>
 ```
+
+Please see the note above under _TransferFormsAsContent_ on the topic of removing any existing serialized files having changed this value to `true`.
 
 ## Transfer members
 
@@ -185,9 +189,11 @@ The `allowMembersDeploymentOperations` setting can take four values:
 - `Transfer` - transfer of members to upstream environments via the backoffice is enabled
 - `All` - restore and transfer of members from upstream environments via the backoffice is enabled
 
+It's important to ensure a common machine key is setup for all environments. This will ensure hashed passwords remain usable in the destination environment.
+
 With `transferMemberGroupsAsContent` set to `true`, member groups can also be transferred via the backoffice, and groups identified as dependencies of members being transferred will be automatically deployed.
 
-Note that it's important to ensure a common machine key is setup for all environments, to ensure hashed passwords remain usable in the destination environment.
+Please see the note above under _TransferFormsAsContent_ on the topic of removing any existing serialized files having changed this value to `true`.
 
 ## Exporting member groups
 
