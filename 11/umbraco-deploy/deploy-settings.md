@@ -189,7 +189,9 @@ If for any reason there was a need to revert to the previous implementation, the
 
 In order for Deploy to handle Forms data as content, you'll to ensure the `TransferFormsAsContent` setting is set to `true`. To transfer Forms data as schema, i.e. via .uda files committed to source control, use a value of `false`.
 
-On changing this value from `false` to `true`, make sure to remove any `.uda` files for Forms entities that have already been serialized to disk. These will no longer be updated. By deleting them you avoid any risk of them being processed in future and inadvertently reverting a form to an earlier state.
+{% hint style="info" %}
+On changing this value from `false` to `true`, make sure to remove any `.uda` files for Forms entities that have already been serialized to disk. These will no longer be updated. By deleting them you avoid any risk of them being processed in the future and inadvertently reverting a form to an earlier state.
+{% endhint %}
 
 ## TransferDictionaryAsContent
 
