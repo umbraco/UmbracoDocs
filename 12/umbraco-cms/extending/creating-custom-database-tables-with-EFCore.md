@@ -30,7 +30,7 @@ public class BlogComment
 {
     public int Id { get; set; }
 
-    public int BlogPostUmbracoId { get; set; }
+    public Guid BlogPostUmbracoKey { get; set; }
 
     public required string Name { get; set; }
 
