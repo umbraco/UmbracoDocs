@@ -1,13 +1,13 @@
 # Table of contents
 
 * [Umbraco Vendr Payment Providers](README.md)
+* [Install payment providers](install-payment-providers.md)
 
 ## Dibs
 
 * [Overview](dibs/README.md)
 * [Configuring DIBS](dibs/configuring-dibs.md)
 * [Configuring Umbraco](dibs/configuring-umbraco.md)
-* [Installation](dibs/installation.md)
 * [Useful Links](dibs/useful-links.md)
 * [Changelog](dibs/changelog.md)
 
@@ -15,7 +15,6 @@
 
 * [Overview](invoicing/README.md)
 * [Configuring Umbraco](invoicing/configuring-umbraco.md)
-* [Installation](invoicing/installation.md)
 * [Changelog](invoicing/changelog.md)
 
 ## Klarna
@@ -23,7 +22,6 @@
 * [Overview](klarna/README.md)
 * [Configuring Klarna](klarna/configuring-klarna.md)
 * [Configuring Umbraco](klarna/configuring-umbraco.md)
-* [Installation](klarna/installation.md)
 * [Useful Links](klarna/useful-links.md)
 * [Overview](klarna/how-to-guides/README.md)
 * [Changelog](klarna/changelog.md)
@@ -33,7 +31,6 @@
 * [Overview](mollie/README.md)
 * [Configuring Mollie](mollie/configuring-mollie.md)
 * [Configuring Umbraco](mollie/configuring-umbraco.md)
-* [Installation](mollie/installation.md)
 * [Useful Links](mollie/useful-links.md)
 * [Overview](mollie/how-to-guides/README.md)
   * [How to test Mollie webhooks locally](mollie/how-to-guides/testing-mollie-webhooks-locally.md)
@@ -44,7 +41,6 @@
 * [Overview](paypal/README.md)
 * [Configuring PayPal](paypal/configuring-paypal.md)
 * [Configuring Umbraco](paypal/configuring-umbraco.md)
-* [Installation](paypal/installation.md)
 * [Useful Links](paypal/useful-links.md)
 * [Changelog](paypal/changelog.md)
 
@@ -53,7 +49,6 @@
 * [Overview](stripe/README.md)
 * [Configuring Stripe](stripe/configuring-stripe.md)
 * [Configuring Umbraco](stripe/configuring-umbraco.md)
-* [Installation](stripe/installation.md)
 * [Useful Links](stripe/useful-links.md)
 * [Overview](stripe/how-to-guides/README.md)
   * [How to Process Subscription Payments](stripe/how-to-guides/processing-subscription-payments.md)
@@ -66,7 +61,6 @@
 * [Overview](bambora/README.md)
 * [Configuring Bambora](bambora/configuring-bambora.md)
 * [Configuring Umbraco](bambora/configuring-umbraco.md)
-* [Installation](bambora/installation.md)
 * [Useful Links](bambora/useful-links.md)
 * [Changelog](bambora/changelog.md)
 
@@ -75,6 +69,5 @@
 * [Overview](opayo/README.md)
 * [Configuring Opayo](opayo/configuring-opayo.md)
 * [Configuring Umbraco](opayo/configuring-umbraco.md)
-* [Installation](opayo/installation.md)
 * [Useful Links](opayo/useful-links.md)
 * [Changelog](opayo/changelog.md)

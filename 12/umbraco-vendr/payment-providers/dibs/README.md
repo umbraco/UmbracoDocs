@@ -17,3 +17,12 @@ It is assumed that before we begin that you already have an Umbraco v8+ website 
 ## Using These Docs
 
 **These docs are aimed at developers** looking to implement the [DIBS D2](https://tech.dibspayment.com/D2) payment gateway into a Vendr eCommerce store. It is expected that you have at least a basic understanding of [Umbraco](https://umbraco.com), as well the [Vendr core product](../../../../core/).
+
+## Useful links
+
+As well as the content found in these docs, here are a few useful links that might come in handy should you wish to learn more about the provider itself, and the DIBS D2 API.
+
+* [Payment provider source code](https://github.com/vendrhub/vendr-payment-provider-dibs)
+* [Payment provider issue tracker](https://github.com/vendrhub/vendr-payment-provider-dibs/issues)
+* [DIBS D2 checkout information](https://tech.dibspayment.com/D2)
+* [DIBS D2 checkout documentation](https://tech.dibspayment.com/D2/Hosted)

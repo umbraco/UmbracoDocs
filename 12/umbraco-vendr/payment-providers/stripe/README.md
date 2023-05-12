@@ -20,3 +20,12 @@ It is assumed that before we begin that you already have an Umbraco v8+ website 
 **These docs are aimed at developers** looking to implement the [Stripe](https://stripe.com) payment gateway into a Vendr eCommerce store. It is expected that you have at least a basic understanding of [Umbraco](https://umbraco.com), as well the [Vendr core product](../../../../core/).
 
 These docs are broken up into two keys sections, a [Getting Started](getting-started/) section for documentation on how to get up and running with the Stripe payment provider for Vendr, and a [How-to Guides](how-to-guides/) section for short guides on how to perform additional, non essential, Stripe related tasks.
+
+## Useful links
+
+As well as the content found in these docs, here are a few useful links that might come in handy should you wish to learn more about the provider itself, and the Stripe API.
+
+* [Payment provider source code](https://github.com/vendrhub/vendr-payment-provider-stripe)
+* [Payment provider issue tracker](https://github.com/vendrhub/vendr-payment-provider-stripe/issues)
+* [Stripe checkout information](https://stripe.com/gb/payments/checkout)
+* [Stripe checkout documentation](https://stripe.com/docs/payments/checkout)
