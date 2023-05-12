@@ -10,7 +10,7 @@ The Content Delivery API delivers headless capabilities built directly into Umbr
 
 When upgrading an existing project to Umbraco 12, you will need to opt-in explicitly for using the Delivery API. Below you will find the steps you need to take in order to configure it for your Umbraco project.
 
-When you start with a fresh Umbraco 12 installation, the Delivery API will also be disabled by default. To enable it, you can proceed directly to the [Enable the Content Delivery API](content-delivery-api.md#enable-the-content-delivery-api) section, as the step below is already complete in this case.
+When you start with a fresh Umbraco 12 installation, the Delivery API is also disabled by default. To enable it, you can proceed directly to the [Enable the Content Delivery API](content-delivery-api.md#enable-the-content-delivery-api) section, as the step below is already complete in this case.
 
 ### Register the Content Delivery API dependencies
 
@@ -50,11 +50,11 @@ public void ConfigureServices(IServiceCollection services)
 ```
 {% endcode %}
 
-Once the Content Delivery API is enabled, you will need to manually build the Delivery API content index (**DeliveryApiContentIndex**). It can be found in the "Examine Management" dashboard under the "Settings" section. This ensures that the data in the index is up-to-date and that the API is able to serve the latest content from the multiple-items endpoint.
+Once the Content Delivery API is enabled, you will need to manually rebuild the Delivery API content index (**DeliveryApiContentIndex**). This can be done using the "Examine Management" dashboard in the "Settings" section. Once the index is rebuilt, the API will be able to serve the latest content from the multiple-items endpoint.
 
 ### Additional configuration
 
-Once the Delivery API has been configured on your project, all your published content will be made available to the public by default. However, a few additional configuration options will allow you to restrict access to the Delivery API endpoints and limit the content that is returned.
+When the Delivery API is enabled in your project, all your published content will be made available to the public by default. However, a few additional configuration options will allow you to restrict access to the Delivery API endpoints and limit the content that is returned.
 
 {% code title="appsettings.json" %}
 ```json
@@ -317,6 +317,10 @@ When querying content by path, the culture is already known and included in the 
 
 The output produced by the Delivery API can either represent a specific content item or a paged list of multiple items.
 
+{% hint style="info" %}
+Note that when referring to a specific content item in your API requests, the `id` parameter always refers to the item’s key (GUID) and not its integer node id.&#x20;
+{% endhint %}
+
 {% swagger method="get" path="/content/item/{id}" baseUrl="/umbraco/delivery/api/v1" summary="Gets a content item by id" %}
 {% swagger-description %}
 Returns a single item.
@@ -476,24 +480,24 @@ Refer to the [Output expansion](content-delivery-api.md#output-expansion) concep
 `?expand=all`\
 _All expandable properties on the retrieved content item will be expanded._
 
-`?expand=property:`_`{alias1}`_\
+`?expand=property:alias1`\
 _A specific expandable property with the property alias `alias1` will be expanded._
 
-`?expand=property:`_`{alias1,alias2,alias3}`_\
+`?expand=property:alias1,alias2,alias3`\
 _Several expandable properties with the specified property aliases will be expanded._
 {% endtab %}
 
 {% tab title="fetch" %}
-To query content items based on their structure, you can apply a selector option to the `/umbraco/delivery/api/v1/content` endpoint. The selector allows you to fetch different subsets of items based on a GUID or path of a content item. If no `fetch` parameter is provided, the Delivery API will search across all available content items. The following built-in selectors can be used out-of-the-box:
+To query content items based on their structure, you can apply a selector option to the `/umbraco/delivery/api/v1/content` endpoint. The selector allows you to fetch different subsets of items based on a GUID or path of a specific content item. If no `fetch` parameter is provided, the Delivery API will search across all available content items. The following built-in selectors can be used out-of-the-box:
 
-`?fetch=ancestors:`_`{id / path}`_\
-_All ancestors of a specific content item will be retrieved._
+`?fetch=ancestors:id/path`\
+_All ancestors of a content item specified by either its `id` or `path` will be retrieved._
 
-`?fetch=children:`_`{id / path}`_\
-_All immediate children of a specific content item will be retrieved._
+`?fetch=children:id/path`\
+_All immediate children of a content item specified by either its `id` or `path` will be retrieved._
 
-`?fetch=descendants:`_`{id / path}`_\
-_All descendants of a specific content item will be retrieved._
+`?fetch=descendants:id/path`\
+_All descendants of a content item specified by either its `id` or `path` will be retrieved._
 
 {% hint style="info" %}
 Only one selector option can be applied to a query at a time. This means that you can't combine multiple fetch parameters in a single query.
@@ -513,11 +517,11 @@ GET /umbraco/delivery/api/v1/content?fetch=children:dc1f43da-49c6-4d87-b104-a586
 {% tab title="filter" %}
 The `filter` query parameter allows you to specify one or more filters that must match in order for a content item to be included in the response. The API provides two built-in filters that you can use right away with the `/umbraco/delivery/api/v1/content` endpoint:
 
-`?filter=contentType:`_`{alias}`_\
-_This filter restricts the results to only include content items that belong to the specified content type. Replace `{alias}` with the alias of the content type you want to filter by._
+`?filter=contentType:alias`\
+_This filter restricts the results to only include content items that belong to the specified content type. Replace `alias` with the alias of the content type you want to filter by._
 
-`?filter=name:`_`{name}`_\
-_When this filter is applied, only content items whose name matches the specified value will be returned. Replace `{name}` with the name of the item that you want to filter by._
+`?filter=name:nodeName`\
+_When this filter is applied, only content items whose name matches the specified value will be returned. Replace `nodeName` with the name of the item that you want to filter by._
 
 Additionally, filters support negation. By using an exclamation mark (`!`) before the filter value, you can exclude content items from the result set that match the filter criteria. For example, to fetch all content items except those with the content type `article`, you can use the filter parameter like this: `?filter=contentType:!article`.
 
@@ -535,20 +539,20 @@ GET /umbraco/delivery/api/v1/content?filter=contentType:article&filter=name:guid
 {% tab title="sort" %}
 Specifying how the results should be ordered, can be achieved using the `sort` query option. You can use this parameter to sort the content items by various fields, including create date, level, name, sort order, and update date. For each field, you can specify whether the items should be sorted in ascending (_asc_) or descending (_desc_) order. Without a `sort` query parameter, the order of the results will be determined by the relevance score of the **DeliveryApiContentIndex** for the given search term.
 
-`?sort=createDate:`_`{asc / desc}`_\
-_An option to sort the results based on the creation date of the content item._
+`?sort=createDate:asc/desc`\
+_An option to sort the results based on the creation date of the content item in either `asc` or `desc` order._
 
-`?sort=level:`_`{asc / desc}`_\
-_An option to sort the results based on the level of the content item in the content tree._
+`?sort=level:asc/desc`\
+_An option to sort the results based on the level of the content item in the content tree in either `asc` or `desc` order._
 
-`?sort=name:`_`{asc / desc}`_\
-_An option to sort the results based on the name of the content item._
+`?sort=name:asc/desc`\
+_An option to sort the results based on the name of the content item in either `asc` or `desc` order._
 
-`?sort=sortOrder:`_`{asc / desc}`_\
-_An option to sort the results based on the sort order of the content item._
+`?sort=sortOrder:asc/desc`\
+_An option to sort the results based on the sort order of the content item in either `asc` or `desc` order._
 
-`?sort=updateDate:`_`{asc / desc}`_\
-_An option to sort the results based on the last update date of the content item._
+`?sort=updateDate:asc/desc`\
+_An option to sort the results based on the last update date of the content item in either `asc` or `desc` order._
 
 
 
