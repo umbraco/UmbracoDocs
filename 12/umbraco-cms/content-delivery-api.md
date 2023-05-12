@@ -318,7 +318,7 @@ When querying content by path, the culture is already known and included in the 
 The output produced by the Delivery API can either represent a specific content item or a paged list of multiple items.
 
 {% hint style="info" %}
-Note that when referring to a specific content item in your API requests, the `id` parameter always refers to the item’s key (GUID) and not its integer node id.&#x20;
+Note that when referring to a specific content item in your API requests, the `id` parameter always refers to the item’s key (GUID) and not its integer node id.
 {% endhint %}
 
 {% swagger method="get" path="/content/item/{id}" baseUrl="/umbraco/delivery/api/v1" summary="Gets a content item by id" %}
@@ -480,7 +480,7 @@ Refer to the [Output expansion](content-delivery-api.md#output-expansion) concep
 `?expand=all`\
 _All expandable properties on the retrieved content item will be expanded._
 
-`?expand=property:alias1`\
+<code>?expand=property:<b>alias1</b></code>\
 _A specific expandable property with the property alias `alias1` will be expanded._
 
 `?expand=property:alias1,alias2,alias3`\
