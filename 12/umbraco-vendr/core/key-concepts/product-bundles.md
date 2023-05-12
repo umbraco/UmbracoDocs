@@ -9,21 +9,20 @@ Occasionally you may need to create a product with multiple sub-products. A good
 
 To create a bundle, we first add the primary product to an order as we normally would, but in addition to the product/quantity information, we also provide a unique `bundleId` to identify that by adding this product, it should create a bundle order line.
 
-````csharp
+```csharp
 // Define a unique bundle id for the order line
 var bundleId = "MyUniqueBundleId";
 
 // Add the primary product to the order giving it a bundle ID
 order.AddProduct(productReference, productQuantity, bundleId);
-
-````
+```
 
 ## Adding Sub Products to a Bundle
 
 With the primary product added as a bundle, we can then add sub products to that bundle by calling one of the `AddProductToBundle` order methods.
 
 
-````csharp
+```csharp
 // Define a unique bundle id for the order line
 var bundleId = "MyUniqueBundleId";
 
@@ -34,7 +33,7 @@ order.AddProduct(productReference, productQuantity, bundleId);
 // passing in the same bundle ID as the primary order line
 order.AddProductToBundle(bundleId, subProductReference, subProductQuantity);
 
-````
+```
 
 ## Order Line Price Calculation
 

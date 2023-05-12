@@ -11,7 +11,7 @@ What this means for developers is that Product Adapters allow you to hook in alt
 
 An example of a Product Adapter would look something like this:
 
-````csharp
+```csharp
 public class MyCustomProductAdapter : IProductAdapter
 {
     public IProductSnapshot GetProductSnapshot(string productReference, string languageIsoCode)
@@ -30,14 +30,13 @@ public class MyCustomProductAdapter : IProductAdapter
     }
 }
 
-````
+```
 
 All Product Adapters implement the `IProductAdapter` interface which requires three method implementations. Two `GetProductSnapshot` methods which retrieve a Product Snapshot for either a product or product variant by reference parameters and a `TryGetProductReference` method which retrieves a product / variant reference for a product that belongs to a given `storeId` and has the given `sku`.
 
 A Product Snapshot consists of the following properties in order to present a Product to Vendr in a standard way. 
 
-
-````csharp
+```csharp
 public interface IProductSnapshot
 {
     // The unique reference for the product
@@ -71,13 +70,13 @@ public interface IProductSnapshot
     bool IsGiftCard { get; }
 }
 
-````
+```
 
 ## Support editable carts
 
 To support editable carts and to allow Vendr to be able to search for products / variants to add to a cart via the back office, Product Adapters can also implement 3 additional methods.
 
-````csharp
+```csharp
 public class MyCustomProductAdapter : ProductAdapterBase
 {
     ... 
@@ -98,12 +97,11 @@ public class MyCustomProductAdapter : ProductAdapterBase
     }
 }
 
-````
+```
 
 The `IProductSummary`, `Attribute` and `IProductVariantSummary` consists of the following properties in order to present a Product to Vendr in a standard way. 
 
-
-````csharp
+```csharp
 public interface IProductSnapshot
 {
     // The unique reference for the product
@@ -162,13 +160,13 @@ public interface IProductVariantSnapshot
     IReadOnlyDictionary<string, string> Attributes { get; }
 }
 
-````
+```
 
 ## Registering a Product Adapter
 
 Product Adapters are [registered via the IVendrBuilder](../vendr-builder/#registering-dependencies) interface using the `AddUnique<IProductAdapter, TReplacementAdapter>()` method on the `Services` property where the `TReplacementAdapter` parameter is the Type of our custom Product Adapter implementation.
 
-````csharp
+```csharp
 public static class VendrBuilderExtensions
 {
     public static IVendrBuilder AddMyServices(IVendrBuilder builder)
@@ -180,4 +178,4 @@ public static class VendrBuilderExtensions
         return builder;
     }
 }
-````
+```

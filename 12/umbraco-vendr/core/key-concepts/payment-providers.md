@@ -51,9 +51,9 @@ The Payment Capture workflow can be the hardest part of a Payment Provider, ofte
 
 Generally there are three methods within a Payment Provider that you may need to implement, and each one has a specific responsibility.
 
-* **GenerateForm \*** - The `GenerateForm` method is responsible for generating a HTML form which will redirect the customer to the given payment gateways payment form. In this method you may need to communicate with the payment gateway in order to initialize a payment, letting the payment gateway know how much to capture. This often results in some kind of code or redirect URL being returned which will need to be embedded in to the generated form. The generated form is then usually displayed on a checkout **Review** page, the last page before payment is captured, and will have an implementer defined **Continue to Payment** button to submit the form and redirect the customer to the gateway.
+* **GenerateForm** - The `GenerateForm` method is responsible for generating a HTML form which will redirect the customer to the given payment gateways payment form. In this method you may need to communicate with the payment gateway in order to initialize a payment, letting the payment gateway know how much to capture. This often results in some kind of code or redirect URL being returned which will need to be embedded in to the generated form. The generated form is then usually displayed on a checkout **Review** page, the last page before payment is captured, and will have an implementer defined **Continue to Payment** button to submit the form and redirect the customer to the gateway.
 
-* **ProcessCallback \*** - The `ProcessCallback` method is responsible for handling the response coming back from the payment gateway and processing whether the payment was successful or not. This can sometimes occur *synchronously*, if the payment gateway sends information back as part of the confirmation page redirect, or can occur *asynchronously*, if the payment gateway sends the information back via an out of band webhook request.
+* **ProcessCallback** - The `ProcessCallback` method is responsible for handling the response coming back from the payment gateway and processing whether the payment was successful or not. This can sometimes occur *synchronously*, if the payment gateway sends information back as part of the confirmation page redirect, or can occur *asynchronously*, if the payment gateway sends the information back via an out of band webhook request.
 
 * **GetOrderReference** - The `GetOrderReference` method is responsible for extracting an order reference number from a request when the payment gateway uses an asynchronous webhook to finalize an Order **AND** it uses a global webhook URL strategy for all notifications rather than a notification URL per transaction. Where a webhook URL can be passed per transaction, then Vendr provides you with a unique callback URL you can register with the gateway that already identifies the order reference as part of the URL parameters, making implementing this method unnecessary. 
 
@@ -92,23 +92,21 @@ For all implemented methods of a Payment Provider, all method return types suppo
 
 Any returned Meta Data from a Payment Provider method will be stored against the Order in it's [Properties](../properties/) collection. Should you need to retrieve these values from within some other area of the Payment Provider, you can use the passed in Orders Properties collection to do so.
 
-<message-box type="info" heading="Top Tip">
-
+{% hint style="info" %}
 As Meta Data is stored in an Orders Properties collection, it is recommended that you prefix your Meta Data keys with the Payment Providers alias in order to prevent possible conflicts.
-
-</message-box>
+{% endhint %}
 
 ### Meta Data Definitions
 
 Where the Meta Data that is returned could be a useful reference for the retailer, the Payment Provider can also expose a `TransactionMetaDataDefinitions` property consisting of a list of `TransactionMetaDataDefinition` values that each define the `alias`, `name` and optional `description` of a Meta Data entry that Vendr will use to display that information in the back-office.
 
-````csharp
+```csharp
 public override IEnumerable<TransactionMetaDataDefinition> TransactionMetaDataDefinitions => new[]{
     new TransactionMetaDataDefinition("stripeSessionId", "Stripe Session ID"),
     new TransactionMetaDataDefinition("stripePaymentIntentId", "Stripe Payment Intent ID"),
     new TransactionMetaDataDefinition("stripeChargeId", "Stripe Charge ID"),
     new TransactionMetaDataDefinition("stripeCardCountry", "Stripe Card Country")
 };
-````
+```
 
 ![Transaction Meta Data](../media/transaction_meta_data_dialog.png)

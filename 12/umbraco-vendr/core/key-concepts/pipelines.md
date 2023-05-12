@@ -36,8 +36,7 @@ All pipelines occur within a [Unit of Work](../unit-of-work/) and so should any 
 
 Pipeline tasks are [registered via the IVendrBuilder](../vendr-builder/#registering-dependencies) interface using the appropriate `With{PipelineName}Pipeline()` builder extension method to identify the pipeline you want to extend and then calling the `Append<TTask>()` method to append your task onto the end of that pipeline.
 
-
-````csharp
+```csharp
 public static class VendrBuilderExtensions
 {
     public static IVendrBuilder AddMyPipelineTasks(IVendrBuilder builder)
@@ -50,11 +49,11 @@ public static class VendrBuilderExtensions
         return builder;
     }
 }
-````
+```
 
 You can also control the order of when Pipeline tasks run, before or after another task, by appending them via the `InsertBefore<TTask>()` or `InsertAfter<TTask>()` methods respectively.
 
-````csharp
+```csharp
 public static class VendrBuilderExtensions
 {
     public static IVendrBuilder AddMyPipelineTasks(IVendrBuilder builder)
@@ -71,4 +70,4 @@ public static class VendrBuilderExtensions
         return builder;
     }
 }
-````
+```

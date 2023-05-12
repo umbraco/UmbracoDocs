@@ -13,7 +13,7 @@ Essentially, anything you need to remember about an Order / Order Line can be st
 
 In order to set a Property on an Order / Order Line, it first needs to be [in it's Writable state](../readonly-and-writable-entities/#converting-a-readonly-entity-into-a-writable-entity), and then it's a case of calling one of the related property setting methods: 
 
-````csharp
+```csharp
 // Set a single property
 order.SetProperty("propertyAlias", "Property Value");
 
@@ -27,19 +27,18 @@ order.SetProperties(new Dictionary<string, string>{
 // Remove a property
 order.RemoveProperty("propertyAlias");
 
-````
+```
 
  Property values can either be a `string`, or a Vendr `PropertyValue` which allows you to define a value as being Server Side Only meaning it won't returned via non-server APIs or Read Only meaning it can't be updated once set.
-
  
-````csharp
+```csharp
 // Set a string property
 order.SetProperty("propertyAlias", "Property Value");
 
 // Set a PropertyValue property as Read Only
 order.SetProperty("propertyAlias", new PropertyValue("Property Value", isReadOnly: true));
 
-````
+```
 
 ## System Properties
 

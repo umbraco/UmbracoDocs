@@ -14,7 +14,7 @@ Vendr has two types of adjustments:
 
 Adjustments are applied using a `IPriceAdjuster` or `IAmountAdjuster` with developers able to create their own adjusters to apply custom adjustments.
 
-````csharp
+```csharp
 public class MyPriceAdjuster : PriceAdjusterBase
 {
     public override void ApplyPriceAdjustments(PriceAdjusterArgs args)
@@ -31,11 +31,11 @@ public class MyPriceAdjuster : PriceAdjusterBase
         args.SubtotalPriceAdjustments.Add(adjustment);
     }
 }
-````
+```
 
 Adjusters apply adjustments to their given price they wish to affect. Adjustments are strongly typed and so each adjuster should define their own adjustment type, providing properties to collect any relevant information for the adjustment (this "meta data" gets serialized with the adjustment as is constantly available when accessing the given adjustment).  
 
-````csharp
+```csharp
 [Serializable]
 public class MyAdjustment : PriceAdjustment<MyAdjustment>
 {
@@ -53,11 +53,11 @@ public class MyAdjustment : PriceAdjustment<MyAdjustment>
         MyAdjustmentRef = reference;
     }
 }
-````
+```
 
 Adjustments inherit from either `PriceAdjustment<TSelf>` or `AmountAdjustment<TSelf>` depending on the type of adjustment being applied. Both base classes follow a similar structure, the difference being whether the adjustment value is a `Price` or `Amount`.
 
-````csharp
+```csharp
 public abstract class PriceAdjustment<TSelf> 
 {
     public Type Type { get; }
@@ -65,12 +65,12 @@ public abstract class PriceAdjustment<TSelf>
     public Price Price { get; }
     public Price OriginalPrice { get; }
 }
-````
+```
 
 Once defined, the adjuster should be registered with the DI container to enable Vendr to be aware of it and include it in it's calculation process.
 
 
-````csharp
+```csharp
 public static class VendrBuilderExtensions
 {
     public static IVendrBuilder AddMyServices(IVendrBuilder builder)
@@ -83,3 +83,4 @@ public static class VendrBuilderExtensions
         return builder;
     }
 }
+```

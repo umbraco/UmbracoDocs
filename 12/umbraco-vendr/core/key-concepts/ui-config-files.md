@@ -16,11 +16,9 @@ The configuration files supported by Vendr are.
 * **order.list.config.js** - Order list view configuration.
 * **order.editor.config.js** - Order editor view configuration.
 
-<message-box type="info" heading="Fallbacks">
-
+{% hint style="info" %}
 If there are no cart config files defined, then Vendr will fallback tot he order config files.
-
-</message-box>
+{% endhint %}
 
 ## Assigning a UI Config File to a Store
 
@@ -32,14 +30,14 @@ With these configuration file, you can customise the columns displayed in the Ca
 
 ### Example Cart/Order List Config File
 
-````javascript
+```javascript
 {
     properties: [
         { alias: "color", header: "Color", placeholder: "Undefined" },
         { alias: "size", header: "Size", placeholder: "Undefined", align: "right" }
     ]
 }
-````
+```
 
 The following properties are supported.
 
@@ -63,7 +61,7 @@ With these configuration files, you can completely customize the Cart/Order Edit
 
 An example of an Order Editor config file would look something like this:
 
-````javascript
+```javascript
 {
     orderLine: {
         properties: [
@@ -105,7 +103,7 @@ An example of an Order Editor config file would look something like this:
         { alias: "ipAddress", label: "IP Address", isReadOnly: true }
     ]
 }
-````
+```
 
 The Cart/Order Editor config file is broken up into a series of sections, each of which relate to a particular section of the Cart/Order Editor User Interface.
 
@@ -301,8 +299,8 @@ Clicking the Additional Info `Edit` button will display an edit interface like s
 
 If you wish to entirely replace the Cart/Order Editor view with a custom implementation you can create a Cart/Order Editor Config file with a single `view` config option which points the path of an alternative AngularJS view file to use for editing the Order.
 
-````javascript
+```javascript
 {
     view: '/app_plugins/myplugin/views/ordereditor/ordereditor.html'
 }
-````
+```
