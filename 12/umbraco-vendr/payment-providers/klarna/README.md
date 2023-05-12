@@ -13,6 +13,8 @@ This Klarna payment provider is based on Klarna's hosted payment page API and re
 Please make sure you are signed up with the correct agreement.
 {% endhint %}
 
+## [Install Klarna](../install-payment-providers)
+
 ## Using These Docs
 
 **These docs are aimed at developers** looking to implement the [Klarna](https://www.klarna.com/) payment gateway into a Vendr eCommerce store. It is expected that you have at least a basic understanding of [Umbraco](https://umbraco.com), as well the [Vendr core product](../../../../core/).
