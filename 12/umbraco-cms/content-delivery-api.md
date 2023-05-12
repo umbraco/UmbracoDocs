@@ -318,7 +318,7 @@ When querying content by path, the culture is already known and included in the 
 The output produced by the Delivery API can either represent a specific content item or a paged list of multiple items.
 
 {% hint style="info" %}
-Note that when referring to a specific content item in your API requests, the `id` parameter always refers to the item’s key (GUID) and not its integer node id.
+When referring to a specific content item in your API requests, the `id` parameter always refers to the item’s key (GUID) and not its integer node id.
 {% endhint %}
 
 {% swagger method="get" path="/content/item/{id}" baseUrl="/umbraco/delivery/api/v1" summary="Gets a content item by id" %}
@@ -411,15 +411,55 @@ Returns single or multiple items.
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="fetch" type="String" required="false" %}
-Structural query string option (e.g. "ancestors", "children", "descendants")
+Structural query string option (e.g. 
+
+`ancestors`
+
+, 
+
+`children`
+
+, 
+
+`descendants`
+
+)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="filter" type="String Array" required="false" %}
-Filtering query string options (e.g. "contentType", "name")
+Filtering query string options (e.g. 
+
+`contentType`
+
+, 
+
+`name`
+
+)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="sort" type="String Array" required="false" %}
-Sorting query string options (e.g. "createDate", "level", "name", "sortOrder", "updateDate")
+Sorting query string options (e.g. 
+
+`createDate`
+
+, 
+
+`level`
+
+, 
+
+`name`
+
+, 
+
+`sortOrder`
+
+, 
+
+`updateDate`
+
+)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="skip" type="Integer" required="false" %}
@@ -465,10 +505,10 @@ Which properties to expand and therefore include in the output if they refer to 
 
 ### Query parameters
 
-The Content Delivery API provides a number of query parameters that allow you to customize the content returned by the API to fit your needs. For each endpoint, the relevant query parameters are already specified within their corresponding documentation above. In addition to standard parameters like `skip` and `take`, the API provides several possibilities for the value of `expand`, `fetch`, `filter` and `sort` parameters. Below are the options supported out-of-the-box.
+The Content Delivery API provides a number of query parameters that allow you to customize the content returned by the API to fit your needs. For each endpoint, the relevant query parameters are already specified within their corresponding documentation above. In addition to standard parameters like `skip` and `take`, the API provides different possibilities for the value of `expand`, `fetch`, `filter` and `sort` parameters. Below are the options supported out-of-the-box.
 
 {% hint style="info" %}
-You can extend the built-in selectors, filters, and sorting capabilities of the Delivery API by creating your own custom selector, filter or sort query handlers.
+You can extend the built-in selector, filter, and sorting capabilities of the Delivery API by creating your own custom query handlers.
 {% endhint %}
 
 {% tabs %}
@@ -484,7 +524,7 @@ _All expandable properties on the retrieved content item will be expanded._
 _A specific expandable property with the property alias `alias1` will be expanded._
 
 `?expand=property:alias1,alias2,alias3`\
-_Several expandable properties with the specified property aliases will be expanded._
+_Multiple expandable properties with the specified property aliases will be expanded._
 {% endtab %}
 
 {% tab title="fetch" %}
@@ -502,8 +542,6 @@ _All descendants of a content item specified by either its `id` or `path` will b
 {% hint style="info" %}
 Only one selector option can be applied to a query at a time. This means that you can't combine multiple fetch parameters in a single query.
 {% endhint %}
-
-
 
 For example, the following API call will attempt to retrieve all the content items that are directly below an item with the id `dc1f43da-49c6-4d87-b104-a5864eca8152`:
 
@@ -525,8 +563,6 @@ _When this filter is applied, only content items whose name matches the specifie
 
 Additionally, filters support negation. By using an exclamation mark (`!`) before the filter value, you can exclude content items from the result set that match the filter criteria. For example, to fetch all content items except those with the content type `article`, you can use the filter parameter like this: `?filter=contentType:!article`.
 
-
-
 Multiple filters can be applied to the same request in addition to other query parameters:
 
 **Request**
@@ -537,7 +573,7 @@ GET /umbraco/delivery/api/v1/content?filter=contentType:article&filter=name:guid
 {% endtab %}
 
 {% tab title="sort" %}
-Specifying how the results should be ordered, can be achieved using the `sort` query option. You can use this parameter to sort the content items by various fields, including create date, level, name, sort order, and update date. For each field, you can specify whether the items should be sorted in ascending (_asc_) or descending (_desc_) order. Without a `sort` query parameter, the order of the results will be determined by the relevance score of the **DeliveryApiContentIndex** for the given search term.
+Specifying how the results should be ordered, can be achieved using the `sort` query option. You can use this parameter to sort the content items by different fields, including create date, level, name, sort order, and update date. For each field, you can specify whether the items should be sorted in ascending (_asc_) or descending (_desc_) order. Without a `sort` query parameter, the order of the results will be determined by the relevance score of the **DeliveryApiContentIndex** for the given search term.
 
 `?sort=createDate:asc/desc`\
 _An option to sort the results based on the creation date of the content item in either `asc` or `desc` order._
@@ -554,9 +590,7 @@ _An option to sort the results based on the sort order of the content item in ei
 `?sort=updateDate:asc/desc`\
 _An option to sort the results based on the last update date of the content item in either `asc` or `desc` order._
 
-
-
-Several sorting options can be combined for the `/umbraco/delivery/api/v1/content` endpoint, allowing for more advanced sorting functionality. Here is an example:
+Different sorting options can be combined for the `/umbraco/delivery/api/v1/content` endpoint, allowing for more advanced sorting functionality. Here is an example:
 
 **Request**
 
