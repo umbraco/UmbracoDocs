@@ -5,7 +5,7 @@ description: Documentation for the Klarna payment provider for Vendr, the eComme
 
 ## Create Payment Method
 
-In the Umbraco back-office, in the **Settings > Vendr > Stores > {Store Name} > Payment Methods** section, click the **Create Payment Method** button to create a new payment method, choosing **Klarna (HPP)** from the list of available payment providers.
+In the Umbraco backoffice, in the **Settings > Vendr > Stores > {Store Name} > Payment Methods** section, click the **Create Payment Method** button to create a new payment method, choosing **Klarna (HPP)** from the list of available payment providers.
 
 ![Create Payment Method](../media/klarna/umbraco_create_payment_method.png)
 

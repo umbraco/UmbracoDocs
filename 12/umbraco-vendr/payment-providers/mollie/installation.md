@@ -29,10 +29,8 @@ Alternatively, you can also find and install the NuGet package via the NuGet Pac
 
 ## Upgrading
 
-<message-box type="warn" heading="Before you upgrade">
-
+{% hint style="info" %}
 Before upgrading, it is always advisable to take a complete backup of your site/database. Every effort has been made to ensure that Vendr will upgrade gracefully, but there is always a risk that something may not install as expected.
-
-</message-box>
+{% endhint %}
 
 Vendr uses Umbraco Migrations to install all of it's features meaning upgrades follow the exact same process as the installation processes detailed above, installing the latest version of a package over the top of the existing package installation. Vendr is then clever enough to detect the current state of your site and only install the features that are missing.

@@ -11,7 +11,6 @@ If you haven't done so yet, head on over to [dashboard.stripe.com/register](http
 
 Or, if you already have an account, you can head over to [dashboard.stripe.com/login](https://dashboard.stripe.com/login) to sign in to your account.
 
-
 ![Stripe sign in](../media/stripe/stripe_signin.png)
 
 ## Test & Live mode
@@ -36,15 +35,15 @@ You'll need to generate API keys for both test and live modes, so be sure to run
 
 Once you have both sets of API keys, be sure to note them down as we will need to enter them into the Vendr UI shortly.
 
-## Webhook 
+## Webhook
 
 In order for Stripe to notify Vendr of a successful transaction, Stripe makes use of webhook technology to directly send notifications of the changing statuses of a transaction. By using webhooks it ensures that the system will always be notified of these status changes, even if the customer decides not to return to the store once a transaction is complete.
 
 To register a webhook, in the sidebar, click the **Developers** heading and then the **Webhooks** sub heading. On the right hand side, click the **Add Endpoint** button and enter the Vendr callback URL as follows (replacing the parameters in curly brackets with the corresponding values taken from your store):
 
-````
+```bash
 https://{store_domain}/umbraco/vendr/payment/callback/stripe-checkout/{payment_method_id}/
-````
+```
 
 ![Stripe Webhook](../media/stripe/stripe_webhook.png)
 

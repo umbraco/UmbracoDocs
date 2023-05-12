@@ -5,7 +5,7 @@ description: Documentation for the Stripe Checkout payment provider for Vendr, t
 
 Out of the box, Stripe already implements a lot of security features for you, making payments safe and secure by default, however you may have a need to provide additional security steps of your own. 
 
-One such example, especially if you are based in the EU selling digital goods, would be the requirement to capture two forms of proof of a customers location for VAT purposes. One recommended way of doing this is to capture the customers billing country, and bank country, and ensure these are both the same. Thankfully, the Stripe payment provider is setup to make this fairly straight forward to setup.
+One such example, especially if you are based in the EU selling digital goods, would be the requirement to capture two forms of proof of a customers location for VAT purposes. One recommended way of doing this is to capture the customers billing country, and bank country, and ensure these are both the same. Thankfully, the Stripe payment provider is setup to make this straight forward to setup.
 
 ## Step 1 - Capture the customers billing country
 
@@ -33,19 +33,16 @@ With the **Radar for Fraud Teams** feature enabled, navigate to the **Radar > Ru
 
 In the dialog that is displayed, enter the following rule:
 
-````
+```
 Block if ::customer:billingCountry:: != :card_country:
-````
+```
 
 ![Stripe Radar for Fraud Teams Setting](../../media/stripe/stripe_block_country_rule2.png)
 
 Finally, click the **Test rule** button to test the rule and then the **Add and enable** button add the rule to the list of block rules.
 
-
 ![Stripe Radar blocking rules](../../media/stripe/stripe_block_rules2.png)
 
-<message-box type="info" heading="Note">
-
+{% hint style="info" %}
 The rule test may fail when you click the **Test rule** button due to there being no transaction with the given meta data being attached to them, however you should be able to continue regardless.
-
-</message-box>
+{% endhint %}

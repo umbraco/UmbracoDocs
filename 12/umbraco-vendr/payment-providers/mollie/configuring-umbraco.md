@@ -9,7 +9,7 @@ Before you create a payment method for Mollie, it's important to know that this 
 
 ## Create Payment Method
 
-In the Umbraco back-office, in the **Settings > Vendr > Stores > {Store Name} > Payment Methods** section, click the **Create Payment Method** button to create a new payment method, choosing **Mollie (One Time)** from the list of available payment providers.
+In the Umbraco backoffice, in the **Settings > Vendr > Stores > {Store Name} > Payment Methods** section, click the **Create Payment Method** button to create a new payment method, choosing **Mollie (One Time)** from the list of available payment providers.
 
 ![Create Payment Method](../media/mollie/umbraco_create_payment_method.png)
 
@@ -22,10 +22,10 @@ In the payment method editor, configure the standard payment method settings as 
 | Continue URL | The URL of the page to navigate to after payment is successful - e.g. `/confirmation/` |
 | Cancel URL | The URL of the page to navigate to if the customer cancels the payment - e.g. `/cart/` |
 | Error URL | The URL of the page to navigate to if there is an error with the payment - e.g. `/error/` |
-| Billing Address (Line 1) Property Alias | The alias of the property containing line 1 of the billing address - e.g. addressLine1. |
-| Billing Address City Property Alias | The alias of the property containing the city of the billing address - e.g. city. |
-| Billing Address State Property Alias | The alias of the property containing the state of the billing address - e.g. state. |
-| Billing Address Zip Code Property Alias | The alias of the property containing the zip code of the billing address - e.g. zip. |
+| Billing Address (Line 1) Property Alias | The alias of the property containing line 1 of the billing address - for example addressLine1. |
+| Billing Address City Property Alias | The alias of the property containing the city of the billing address - for example city. |
+| Billing Address State Property Alias | The alias of the property containing the state of the billing address - for example state. |
+| Billing Address Zip Code Property Alias | The alias of the property containing the zip code of the billing address - for example zip. |
 | Test API Key | The test Mollie API key |
 | Live API Key | The live Mollie API key |
 | Test Mode | Toggle indicating whether this provider should run in test mode |

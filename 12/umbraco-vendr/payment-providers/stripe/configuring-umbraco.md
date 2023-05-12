@@ -5,7 +5,7 @@ description: Documentation for the Stripe Checkout payment provider for Vendr, t
 
 ## Create Payment Method
 
-In the Umbraco back-office, in the **Settings > Vendr > Stores > {Store Name} > Payment Methods** section, click the **Create Payment Method** button to create a new payment method, choosing **Stripe Checkout** from the list of available payment providers.
+In the Umbraco backoffice, in the **Settings > Vendr > Stores > {Store Name} > Payment Methods** section, click the **Create Payment Method** button to create a new payment method, choosing **Stripe Checkout** from the list of available payment providers.
 
 ![Create Payment Method](../media/stripe/umbraco_create_payment_method2.png)
 

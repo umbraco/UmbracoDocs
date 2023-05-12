@@ -5,7 +5,7 @@ description: Documentation for the DIBS D2 payment provider for Vendr, the eComm
 
 ## Create Payment Method
 
-In the Umbraco back-office, in the **Settings > Vendr > Stores > {Store Name} > Payment Methods** section, click the **Create Payment Method** button to create a new payment method, choosing **DIBS D2** from the list of available payment providers.
+In the Umbraco backoffice, in the **Settings > Vendr > Stores > {Store Name} > Payment Methods** section, click the **Create Payment Method** button to create a new payment method, choosing **DIBS D2** from the list of available payment providers.
 
 ![Create Payment Method](../media/dibs/d2/umbraco_create_payment_method.png)
 

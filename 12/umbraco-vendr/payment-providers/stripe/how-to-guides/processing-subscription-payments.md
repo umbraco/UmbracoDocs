@@ -32,10 +32,8 @@ Due to the way that Stripe works, there are a number of limitations when using t
 1. The `Capture` configuration setting is not supported by Subscription payments and as such all Subscription transactions will have their initial payment processed immediately. This includes any one-time fees defined on the initial invoice.
 2. No matter the number of recurring items in an order, each transaction will result in only one Subscription being created including all recurring items. You can't create for example a Subscription per order line. If you need to purchase multiple Subscriptions, these must be processed as individual transactions.
 3. You can not have non order line discounts or gift cards that result in the order total being less than the sum total of any recurring order lines. You can discount a recurring item as an order line discount rule (only if using ad-hoc prices, and the value remains above 0), but you couldn't for example give a 10% order discount unless you have other non recurring items that would cover the cost of the discount.
-4. The Stripe payment provider is only responsible for processing the initial Stripe transaction. All other "Subscription" integrations such as enabling member access etc will need to be custom developed using the [Stripe SDK](https://github.com/stripe/stripe-dotnet) and your own [webhook handler](https://stripe.com/docs/webhooks).
+4. The Stripe payment provider is only responsible for processing the initial Stripe transaction. All other "Subscription" integrations such as enabling member access etc. will need to be custom developed using the [Stripe Software Development Kit (SDK)](https://github.com/stripe/stripe-dotnet) and your own [webhook handler](https://stripe.com/docs/webhooks).
 
-<message-box type="info" heading="Top Tip">
-
+{% hint style="info" %}
 If you need a quick and ready to use management portal to allow management of your Subscriptions why not use the [Stripe Customer Portal](https://stripe.com/docs/billing/subscriptions/integrating-customer-portal). The Stripe payment provider already captures the required fields as order properties for you to access.
-
-</message-box>
+{% endhint %}

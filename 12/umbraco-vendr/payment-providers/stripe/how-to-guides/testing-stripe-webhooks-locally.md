@@ -25,11 +25,9 @@ You'll want to swap the local domain / port number at the end according to your 
 
 ![ngrok](../../media/ngrok.png)
 
-<message-box type="info" heading="Note">
-
+{% hint style="info" %}
 When you launch ngrok for the first time, it will ask you to sign in. Enter the credentials you used to sign up with. It will remember them from now on.
-
-</message-box>
+{% endhint %}
 
 ## Step 3 - Test the site
 
