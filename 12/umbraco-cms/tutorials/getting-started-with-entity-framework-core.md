@@ -1,16 +1,18 @@
 ﻿---
 versionFrom: 12.0.0
 meta.Title: Umbraco Database
-description: A guide to creating a custom Database table in Umbraco
+description: A guide to getting started with Entity Framework Core in Umbraco
 ---
 
-# Creating a Custom Database Table
+# Getting started with Entity Framework Core in Umbraco
 
 Using EFCore, it is possible to add custom database tables to your site to store additional data that should not be stored as normal content nodes.
 
 The end result looks like this:
 
 ![Database result of a migration](images/db-table.png)
+
+We can then work with this data through Entity framework.
 
 ## Using a Composer and Notification Handler
 
