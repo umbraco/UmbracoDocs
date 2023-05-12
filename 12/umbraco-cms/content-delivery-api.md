@@ -10,7 +10,7 @@ The Content Delivery API delivers headless capabilities built directly into Umbr
 
 When upgrading an existing project to Umbraco 12, you will need to opt-in explicitly for using the Delivery API. Below you will find the steps you need to take in order to configure it for your Umbraco project.
 
-When you start with a fresh Umbraco 12 installation, the Delivery API will be enabled by default. This means that you can skip straight to the [Additional Configuration](content-delivery-api.md#additional-configuration) section.
+When you start with a fresh Umbraco 12 installation, the Delivery API is also disabled by default. To enable it, you can proceed directly to the [Enable the Content Delivery API](content-delivery-api.md#enable-the-content-delivery-api) section, as the step below is already complete in this case.
 
 ### Register the Content Delivery API dependencies
 
@@ -50,9 +50,11 @@ public void ConfigureServices(IServiceCollection services)
 ```
 {% endcode %}
 
+Once the Content Delivery API is enabled, you will need to manually rebuild the Delivery API content index (**DeliveryApiContentIndex**). This can be done using the "Examine Management" dashboard in the "Settings" section. Once the index is rebuilt, the API will be able to serve the latest content from the multiple-items endpoint.
+
 ### Additional configuration
 
-Once the Delivery API has been configured on your project, all your published content will be made available to the public by default. However, a few additional configuration options will allow you to restrict access to the Delivery API endpoints and limit the content that is returned.
+When the Delivery API is enabled in your project, all your published content will be made available to the public by default. However, a few additional configuration options will allow you to restrict access to the Delivery API endpoints and limit the content that is returned.
 
 {% code title="appsettings.json" %}
 ```json
@@ -175,9 +177,9 @@ Start-Item: docs-portal
 
 <summary>Output expansion</summary>
 
-**Output expansion** allows you to retrieve additional data about related content in the API output for a given content item.
+**Output expansion** allows you to retrieve additional data about related content or media in the API output for a given content item.
 
-By default, a content property that allows picking a different content item (like a content picker property) outputs a shallow representation of the item. That means, only the basic information about the picked item, without the item properties. However, with output expansion, it is possible to include the properties of the picked item in the API output.
+By default, a content property that allows picking a different content item (like a content picker property) outputs a shallow representation of the item. That means, only the basic information about the picked item, without the item properties. However, with output expansion, it is possible to include the properties of the picked item in the API output. Similar shallow representation applies to media items, as well.
 
 This feature can be used when querying for both single and multiple content items, by adding a `expand` parameter to the query. The value of this parameter can be either `"all"` to expand all properties of the requested content item or `"property:alias, alias, alias"` to expand specific ones.
 
@@ -274,6 +276,8 @@ GET /umbraco/delivery/api/v1/content/item/9bdac0e9-66d8-4bfd-bba1-e954ed9c780d?e
 The built-in property editors in Umbraco that allow for output expansion are:
 
 * `Umbraco.ContentPicker`
+* `Umbraco.MediaPicker`
+* `Umbraco.MediaPicker3`
 * `Umbraco.MultiNodeTreePicker`
 
 </details>
@@ -313,6 +317,10 @@ When querying content by path, the culture is already known and included in the 
 
 The output produced by the Delivery API can either represent a specific content item or a paged list of multiple items.
 
+{% hint style="info" %}
+When referring to a specific content item in your API requests, the `id` parameter always refers to the item’s key (GUID) and not its integer node id.
+{% endhint %}
+
 {% swagger method="get" path="/content/item/{id}" baseUrl="/umbraco/delivery/api/v1" summary="Gets a content item by id" %}
 {% swagger-description %}
 Returns a single item.
@@ -343,6 +351,10 @@ Which properties to expand and therefore include in the output if they refer to 
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Content item" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="401: Unauthorized" description="Missing permissions after protection is set up" %}
 
 {% endswagger-response %}
 
@@ -384,6 +396,10 @@ Which properties to expand and therefore include in the output if they refer to 
 
 {% endswagger-response %}
 
+{% swagger-response status="401: Unauthorized" description="Missing permissions after protection is set up" %}
+
+{% endswagger-response %}
+
 {% swagger-response status="404: Not Found" description="Content item not found" %}
 
 {% endswagger-response %}
@@ -395,15 +411,15 @@ Returns single or multiple items.
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="fetch" type="String" required="false" %}
-Structural query string option
+Structural query string option (e.g. `ancestors`, `children`, `descendants`)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="filter" type="String Array" required="false" %}
-Filtering query string options
+Filtering query string options (e.g. `contentType`, `name`)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="sort" type="String Array" required="false" %}
-Sorting query string options
+Sorting query string options (e.g. `createDate`, `level`, `name`, `sortOrder`, `updateDate`)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="skip" type="Integer" required="false" %}
@@ -441,18 +457,114 @@ Which properties to expand and therefore include in the output if they refer to 
 {% swagger-response status="400: Bad Request" description="Invalid request" %}
 
 {% endswagger-response %}
+
+{% swagger-response status="404: Not Found" description="Start-Item not found" %}
+
+{% endswagger-response %}
 {% endswagger %}
 
-## Feature Capabilities
+### Query parameters
 
-* Querying for content items
-* Localization support
-* Output expansion
-* Preview
-* Multi-site support
-* API authorization
-* Denylist of document types
-* Custom property editors
+The Content Delivery API provides a number of query parameters that allow you to customize the content returned by the API to fit your needs. For each endpoint, the relevant query parameters are already specified within their corresponding documentation above. In addition to standard parameters like `skip` and `take`, the API provides different possibilities for the value of `expand`, `fetch`, `filter` and `sort` parameters. Below are the options supported out-of-the-box.
+
+{% hint style="info" %}
+You can extend the built-in selector, filter, and sorting capabilities of the Delivery API by creating your own custom query handlers.
+{% endhint %}
+
+{% tabs %}
+{% tab title="expand" %}
+{% hint style="info" %}
+Refer to the [Output expansion](content-delivery-api.md#output-expansion) concept for more information about the benefits of this parameter.
+{% endhint %}
+
+`?expand=all`\
+_All expandable properties on the retrieved content item will be expanded._
+
+`?expand=property:alias1`\
+_A specific expandable property with the property alias `alias1` will be expanded._
+
+`?expand=property:alias1,alias2,alias3`\
+_Multiple expandable properties with the specified property aliases will be expanded._
+{% endtab %}
+
+{% tab title="fetch" %}
+To query content items based on their structure, you can apply a selector option to the `/umbraco/delivery/api/v1/content` endpoint. The selector allows you to fetch different subsets of items based on a GUID or path of a specific content item. If no `fetch` parameter is provided, the Delivery API will search across all available content items. The following built-in selectors can be used out-of-the-box:
+
+`?fetch=ancestors:id/path`\
+_All ancestors of a content item specified by either its `id` or `path` will be retrieved._
+
+`?fetch=children:id/path`\
+_All immediate children of a content item specified by either its `id` or `path` will be retrieved._
+
+`?fetch=descendants:id/path`\
+_All descendants of a content item specified by either its `id` or `path` will be retrieved._
+
+{% hint style="info" %}
+Only one selector option can be applied to a query at a time. This means that you can't combine multiple fetch parameters in a single query.
+{% endhint %}
+
+
+
+For example, the following API call will attempt to retrieve all the content items that are directly below an item with the id `dc1f43da-49c6-4d87-b104-a5864eca8152`:
+
+**Request**
+
+```http
+GET /umbraco/delivery/api/v1/content?fetch=children:dc1f43da-49c6-4d87-b104-a5864eca8152
+```
+{% endtab %}
+
+{% tab title="filter" %}
+The `filter` query parameter allows you to specify one or more filters that must match in order for a content item to be included in the response. The API provides two built-in filters that you can use right away with the `/umbraco/delivery/api/v1/content` endpoint:
+
+`?filter=contentType:alias`\
+_This filter restricts the results to only include content items that belong to the specified content type. Replace `alias` with the alias of the content type you want to filter by._
+
+`?filter=name:nodeName`\
+_When this filter is applied, only content items whose name matches the specified value will be returned. Replace `nodeName` with the name of the item that you want to filter by._
+
+Additionally, filters support negation. By using an exclamation mark (`!`) before the filter value, you can exclude content items from the result set that match the filter criteria. For example, to fetch all content items except those with the content type `article`, you can use the filter parameter like this: `?filter=contentType:!article`.
+
+
+
+Multiple filters can be applied to the same request in addition to other query parameters:
+
+**Request**
+
+```http
+GET /umbraco/delivery/api/v1/content?filter=contentType:article&filter=name:guide&skip=0&take=10
+```
+{% endtab %}
+
+{% tab title="sort" %}
+Specifying how the results should be ordered, can be achieved using the `sort` query option. You can use this parameter to sort the content items by different fields, including create date, level, name, sort order, and update date. For each field, you can specify whether the items should be sorted in ascending (_asc_) or descending (_desc_) order. Without a `sort` query parameter, the order of the results will be determined by the relevance score of the **DeliveryApiContentIndex** for the given search term.
+
+`?sort=createDate:asc/desc`\
+_An option to sort the results based on the creation date of the content item in either `asc` or `desc` order._
+
+`?sort=level:asc/desc`\
+_An option to sort the results based on the level of the content item in the content tree in either `asc` or `desc` order._
+
+`?sort=name:asc/desc`\
+_An option to sort the results based on the name of the content item in either `asc` or `desc` order._
+
+`?sort=sortOrder:asc/desc`\
+_An option to sort the results based on the sort order of the content item in either `asc` or `desc` order._
+
+`?sort=updateDate:asc/desc`\
+_An option to sort the results based on the last update date of the content item in either `asc` or `desc` order._
+
+
+
+Different sorting options can be combined for the `/umbraco/delivery/api/v1/content` endpoint, allowing for more advanced sorting functionality. Here is an example:
+
+**Request**
+
+```http
+GET /umbraco/delivery/api/v1/content?sort=name:asc&sort=createDate:asc
+```
+{% endtab %}
+{% endtabs %}
 
 ## Current Limitations
 
