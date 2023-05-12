@@ -350,6 +350,10 @@ Which properties to expand and therefore include in the output if they refer to 
 
 {% endswagger-response %}
 
+{% swagger-response status="401: Unauthorized" description="Missing permissions after protection is set up" %}
+
+{% endswagger-response %}
+
 {% swagger-response status="404: Not Found" description="Content item not found" %}
 
 {% endswagger-response %}
@@ -388,10 +392,16 @@ Which properties to expand and therefore include in the output if they refer to 
 
 {% endswagger-response %}
 
+{% swagger-response status="401: Unauthorized" description="Missing permissions after protection is set up" %}
+
+{% endswagger-response %}
+
 {% swagger-response status="404: Not Found" description="Content item not found" %}
 
 {% endswagger-response %}
 {% endswagger %}
+
+
 
 {% swagger method="get" path="/content" baseUrl="/umbraco/delivery/api/v1" summary="Gets content item(s) from a query" %}
 {% swagger-description %}
