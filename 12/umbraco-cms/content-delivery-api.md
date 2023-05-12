@@ -511,6 +511,8 @@ _This filter restricts the results to only include content items that belong to 
 `?filter=name:`_`{name}`_\
 _When this filter is applied, only content items whose name matches the specified value will be returned. Replace `{name}` with the name of the item that you want to filter by._
 
+Additionally, filters support negation. By using an exclamation mark (`!`) before the filter value, you can exclude content items from the result set that match the filter criteria. For example, to fetch all content items except those with the content type `article`, you can use the filter parameter like this: `?filter=contentType:!article`.
+
 
 
 Multiple filters can be applied to the same request in addition to other query parameters:
