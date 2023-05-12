@@ -50,7 +50,7 @@ public void ConfigureServices(IServiceCollection services)
 ```
 {% endcode %}
 
-Once the Content Delivery API is enabled, you will need to manually build the Delivery API content index (**DeliveryApiContentIndex**). It can be found in the "Examine Management" dashboard under the "Settings" section. This ensures that the data in the index is up-to-date and that the API is able to serve the latest content items.
+Once the Content Delivery API is enabled, you will need to manually build the Delivery API content index (**DeliveryApiContentIndex**). It can be found in the "Examine Management" dashboard under the "Settings" section. This ensures that the data in the index is up-to-date and that the API is able to serve the latest content from the multiple-items endpoint.
 
 ### Additional configuration
 
