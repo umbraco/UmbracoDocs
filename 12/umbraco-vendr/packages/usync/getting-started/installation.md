@@ -13,9 +13,9 @@ To install the Vendr uSync package via NuGet you can run the following command d
 PM> Install-Package Vendr.uSync
 ```
 
-Alternatively, you can also find and install the NuGet package via the NuGet Package Manager GUI.
+Alternatively, you can also find and install the NuGet package via the NuGet Package Manager.
 
-![Installing Vendr uSync via the NuGet Package Manager GUI](../media/usync/nuget_package.png)
+![Installing Vendr uSync via the NuGet Package Manager](../media/usync/nuget_package.png)
 
 ## Upgrading
 

@@ -1,6 +1,6 @@
 ---
 title: Useful Links
-description: Useful links for Vendr Checkout, an add-on package for Vendr, the eCommerce solution for Umbraco v8+
+description: Useful links for Vendr Checkout, an add-on package for Vendr, the eCommerce solution for Umbraco.
 ---
 
 As well as the content found in these docs, here are a few useful links that might come in handy should you wish to learn more about the Vendr Checkout package itself.

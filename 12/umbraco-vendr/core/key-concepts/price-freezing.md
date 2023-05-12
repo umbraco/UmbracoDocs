@@ -17,12 +17,12 @@ All frozen prices have an `OrderId` property and a `Key` that uniquely identifie
 
 For example, to thaw all prices for a product with the reference `c0296b75-1764-4f62-b59c-7005c2348fdd` we could call:
 
-````csharp
+```csharp
 _priceFreezerService.ThawPrices(partialKey: "c0296b75-1764-4f62-b59c-7005c2348fdd");
-````
+```
 
 Or to thaw all prices for a given Currency that are greater than 30 days old we could call:
 
-````csharp
+```csharp
 _priceFreezerService.ThawPrices(currencyId: currency.Id, olderThan: DateTime.Now.AddDays(-30));
-````
+```

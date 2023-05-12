@@ -1,6 +1,6 @@
 ---
 title: Configuring Umbraco
-description: Configuring Umbraco for Vendr Checkout, an add-on package for Vendr, the eCommerce solution for Umbraco v8+
+description: Configuring Umbraco for Vendr Checkout, an add-on package for Vendr, the eCommerce solution for Umbraco CMS.
 ---
 
 After installing Vendr Checkout, a series of content nodes will be created for you in your site that will control the checkout flow. On the root of these nodes you can configure a series of options to customize the checkout flow to your needs.

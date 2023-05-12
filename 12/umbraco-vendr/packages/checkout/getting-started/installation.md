@@ -48,10 +48,8 @@ During this install, Vendr checkout will perform the following tasks:
 
 ## Upgrading
 
-<message-box type="warn" heading="Before you upgrade">
-
+{% hint style="info" %}
 Before upgrading, it is always advisable to take a complete backup of your site/database. Every effort has been made to ensure that Vendr Checkout will upgrade gracefully, but there is always a risk that something may not install as expected.
-
-</message-box>
+{% endhint %}
 
 Vendr Checkout uses a combination of database migrations and a manual install dashboard for both installs and upgrades. Upgrading is generally a case of installing the latest version over the top of the existing package and running through the installation steps again.

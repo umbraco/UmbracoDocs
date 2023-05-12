@@ -1,6 +1,6 @@
 ---
 title: Changelog
-description: Changelog for the Deploy package for Vendr, the eCommerce solution for Umbraco v8+
+description: Changelog for the Deploy package for Vendr, the eCommerce solution for Umbraco.
 ---
 
 ## v3.1.0   
