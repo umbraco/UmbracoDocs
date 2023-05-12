@@ -3,13 +3,13 @@ title: Fluent API
 description: Faster development thanks to the Fluent API of Vendr, the eCommerce solution for Umbraco
 ---
 
-An added side effect of having [ReadOnly and Writable entities](../readonly-and-wrtiable-entities/) is that all of an entities write operations are now performed via methods, rather than property setters, enabling to us convert Vendr's write API in a fluent API.
+An added side effect of having [ReadOnly and Writable entities](../readonly-and-wrtiable-entities/) is that all of an entities write operations are now performed via methods. This is instead of property setters, enabling to us convert Vendr's write API in a fluent API.
 
 ## Writing fluently
 
-Where we could perform a write operation as follows
+You could perform a write operation as follows:
 
-````csharp
+```csharp
 _uowProvider.Execute(uow =>
 {
     // Fetch the currency
@@ -28,11 +28,11 @@ _uowProvider.Execute(uow =>
     uow.Complete();
 });
 
-````
+```
 
-...if we preferred, we could simplify this further by defining these actions fluently, chaining all of the entity methods into a succinct command sequence as follows
+This could be simplified further by defining these actions fluently, chaining all of the entity methods into a succinct command sequence as follows:
 
-````csharp
+```csharp
 _uowProvider.Execute(uow =>
 {
     var currency = _currencyService.GetCurrency(currencyId)
@@ -44,10 +44,8 @@ _uowProvider.Execute(uow =>
     uow.Complete();
 });
 
-````
+```
 
-<message-box type="info" heading="Fluent API Optional">
-
+{% hint style="info" %}
 We know not everyone likes to write their code fluently and so the Vendr Fluent API is a completely optional feature. Both code examples above are valid coding styles which will both work as well as each other. The Fluent API is an opt-in layer of syntax sugar that developers can use depending on their preferred style of coding.
-
-</message-box>
+{% endhint %}

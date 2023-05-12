@@ -3,21 +3,21 @@ title: Events
 description: Listening for changes within Vendr, the eCommerce solution for Umbraco
 ---
 
-Much like the standard events in .NET, Vendr also has an events system to notify you when certain things happen within the application, however Vendr differs slightly in the types of events that are fired and how you register your event handlers.
+Much like the standard events in .NET, Vendr has an events system to notify you when certain things happen within the application. However, Vendr differs slightly in the types of events that are fired and how you register your event handlers.
 
-Events in Vendr are registered via the [`IVendrBuilder`](../vendr-builder/#registering-dependencies) interface, rather than via static event delegates. This has a number of advantages, such as being able to control the order of when event handlers are fired and it also allows us to inject dependencies into the event handlers making it a much more decoupled approach to eventing. 
+Events in Vendr are registered via the [`IVendrBuilder`](../vendr-builder/#registering-dependencies) interface, rather than via static event delegates. This has a number of advantages, such as being able to control the order of when event handlers are fired. It also allows us to inject dependencies into the event handlers making it a much more decoupled approach to eventing.
 
-In Vendr, there are two main types of events you can create handlers for, and these are:
+In Vendr, there are two main types of events you can create handlers for. Both are explained in detailed below.
 
 ## Validation events
 
-Validation events are events that fire immediately before a change is about to be made to an entity and allow you to inject your own logic to decide whether an action should be possible or not. We already have a number of validation handlers built in to maintain the consistency of your data, however Validation events allow you to extend this behavior with your own rules.
+Validation events are events that fire immediately before a change is about to be made to an entity. These events allow you to inject your own logic to decide whether an action should be possible or not. We already have a number of validation handlers built in to maintain the consistency of your data. Validation events allow you to extend this behavior with your own rules.
 
-### Example Validation event handler
+### Example: Validation event handler
 
 An example of a Validation event handler would look something like this:
 
-````csharp
+```csharp
 public class MyOrderProductAddValidationHandler : ValidationEventHandlerBase<ValidateOrderProductAdd>
 {
     public override void Validate(ValidateOrderProductAdd evt)
@@ -27,16 +27,15 @@ public class MyOrderProductAddValidationHandler : ValidationEventHandlerBase<Val
     }
 }
 
-````
+```
 
-All Validation event handlers inherit from a base class `ValidationEventHandlerBase<TEvent>` where `TEvent` is the Type of the event the handler is for. They then have a `Validate` method which accepts an instance of the event type, and inside which you can perform your custom logic. If the event fails the validation logic, you can call `evt.Fail("Your message here")` to block the related action from happening and have a `ValidationException` be thrown that can be captured in the front end to display a friendly error message.
+All Validation event handlers inherit from a base class `ValidationEventHandlerBase<TEvent>` where `TEvent` is the Type of the event the handler is for. They then have a `Validate` method which accepts an instance of the event type, and inside which you can perform your custom logic. If the event fails the validation logic, you can call `evt.Fail("Your message here")` to block the related action from happening and have a `ValidationException` be thrown. This can then be captured in the front end to display a friendly error message.
 
 ### Registering a Validation event handler
 
-Validation event handlers are [registered via the IVendrBuilder](../vendr-builder/#registering-dependencies) interface using the `WithValidationEvent<TEvent>()` builder extension method to identify the event you want to handle and then calling the `RegisterHandler<THandler>()` method to register your handler(s) for that event.
+Validation event handlers are [registered via the IVendrBuilder](../vendr-builder/#registering-dependencies) interface using the `WithValidationEvent<TEvent>()` builder extension method. This is done to identify the event you want to handle and then calling the `RegisterHandler<THandler>()` method to register your handler(s) for that event.
 
-
-````csharp
+```csharp
 public static class VendrBuilderExtensions
 {
     public static IVendrBuilder AddMyEventHandlers(IVendrBuilder builder)
@@ -49,11 +48,11 @@ public static class VendrBuilderExtensions
         return builder;
     }
 }
-````
+```
 
-You can also control the order of when Validation event handlers run, before or after another Validation event handler, by registering them via the `RegisterHandlerBefore<THandler>()` or `RegisterHandlerAfter<THandler>()` methods respectively.
+You can control the order of when Validation event handlers run, before or after another Validation event handler. This is done by registering them via the `RegisterHandlerBefore<THandler>()` or `RegisterHandlerAfter<THandler>()` methods respectively.
 
-````csharp
+```csharp
 public static class VendrBuilderExtensions
 {
     public static IVendrBuilder AddMyEventHandlers(IVendrBuilder builder)
@@ -70,20 +69,19 @@ public static class VendrBuilderExtensions
         return builder;
     }
 }
-````
+```
 
 ## Notification events
 
+Notification events are events that fire, often immediately before or after an action is executed. It provides you the ability to run custom logic to react to that action occurring. This is useful for scenarios such as sending emails when an Order is finalized, or allowing you synchronize stock updates with an external system.
 
-Notification events are events that fire, often immediately before and immediately after an action is about to be or has been executed, providing  you a means to run custom logic to react to that action occurring. This is useful for scenarios such as sending emails when an Order is finalized, or allowing you synchronize stock updates with an external system.
+Notification events won't allow you to change the behavior of how Vendr runs. They provide you with an effective means of reacting to when changes occur.
 
-Notification events won't allow you to change the behavior of how Vendr runs, but they do provide you with an effective means of reacting to when changes occur.
-
-### Example Notification event handler
+### Example: Notification event handler
 
 An example of a Notification event handler would look something like this:
 
-````csharp
+```csharp
 public class MyOrderFinalizedHandler : NotificationEventHandlerBase<OrderFinalizedNotification>
 {
     public override void Handle(OrderFinalizedNotification evt)
@@ -92,16 +90,15 @@ public class MyOrderFinalizedHandler : NotificationEventHandlerBase<OrderFinaliz
     }
 }
 
-````
+```
 
-All Notification event handlers inherit from a base class `NotificationEventHandlerBase<TEvent>` where `TEvent` is the Type of the event the handler is for. They then have a `Handle` method which accepts an instance of the event type, and inside which you can perform your custom logic. 
+All Notification event handlers inherit from a base class `NotificationEventHandlerBase<TEvent>` where `TEvent` is the Type of the event the handler is for. They then have a `Handle` method which accepts an instance of the event type, and inside which you can perform your custom logic.
 
 ### Registering a Notification event handler
 
-Notification event handlers are [registered via the IVendrBuilder](../vendr-builder/#registering-dependencies) interface using the `WithNotificationEvent<TEvent>()` builder extension method to identify the event you want to handle and then calling the `RegisterHandler<THandler>()` method to register your handler(s) for that event.
+Notification event handlers are [registered via the IVendrBuilder](../vendr-builder/#registering-dependencies) interface using the `WithNotificationEvent<TEvent>()` builder extension method. This is used to identify the event you want to handle and then calling the `RegisterHandler<THandler>()` method to register your handler(s) for that event.
 
-
-````csharp
+```csharp
 public static class VendrBuilderExtensions
 {
     public static IVendrBuilder AddMyEventHandlers(IVendrBuilder builder)
@@ -114,9 +111,9 @@ public static class VendrBuilderExtensions
         return builder;
     }
 }
-````
+```
 
-You can also control the order of when Notification event handlers run, before or after another Notification event handler, by registering them via the `RegisterHandlerBefore<THandler>()` or `RegisterHandlerAfter<THandler>()` methods respectively.
+You can also control the order of when Notification event handlers run by registering them via the `RegisterHandlerBefore<THandler>()` or `RegisterHandlerAfter<THandler>()` methods respectively.
 
 ````csharp
 public static class VendrBuilderExtensions
