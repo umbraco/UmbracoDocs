@@ -318,7 +318,7 @@ When querying content by path, the culture is already known and included in the 
 The output produced by the Delivery API can either represent a specific content item or a paged list of multiple items.
 
 {% hint style="info" %}
-Note that when referring to a specific content item in your API requests, the `id` parameter always refers to the item’s key (GUID) and not its integer node id.&#x20;
+Note that when referring to a specific content item in your API requests, the `id` parameter always refers to the item’s key (GUID) and not its integer node id.
 {% endhint %}
 
 {% swagger method="get" path="/content/item/{id}" baseUrl="/umbraco/delivery/api/v1" summary="Gets a content item by id" %}
