@@ -411,55 +411,15 @@ Returns single or multiple items.
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="fetch" type="String" required="false" %}
-Structural query string option (e.g. 
-
-`ancestors`
-
-, 
-
-`children`
-
-, 
-
-`descendants`
-
-)
+Structural query string option (e.g. `ancestors`, `children`, `descendants`)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="filter" type="String Array" required="false" %}
-Filtering query string options (e.g. 
-
-`contentType`
-
-, 
-
-`name`
-
-)
+Filtering query string options (e.g. `contentType`, `name`)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="sort" type="String Array" required="false" %}
-Sorting query string options (e.g. 
-
-`createDate`
-
-, 
-
-`level`
-
-, 
-
-`name`
-
-, 
-
-`sortOrder`
-
-, 
-
-`updateDate`
-
-)
+Sorting query string options (e.g. `createDate`, `level`, `name`, `sortOrder`, `updateDate`)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="skip" type="Integer" required="false" %}
@@ -543,6 +503,8 @@ _All descendants of a content item specified by either its `id` or `path` will b
 Only one selector option can be applied to a query at a time. This means that you can't combine multiple fetch parameters in a single query.
 {% endhint %}
 
+
+
 For example, the following API call will attempt to retrieve all the content items that are directly below an item with the id `dc1f43da-49c6-4d87-b104-a5864eca8152`:
 
 **Request**
@@ -562,6 +524,8 @@ _This filter restricts the results to only include content items that belong to 
 _When this filter is applied, only content items whose name matches the specified value will be returned. Replace `nodeName` with the name of the item that you want to filter by._
 
 Additionally, filters support negation. By using an exclamation mark (`!`) before the filter value, you can exclude content items from the result set that match the filter criteria. For example, to fetch all content items except those with the content type `article`, you can use the filter parameter like this: `?filter=contentType:!article`.
+
+
 
 Multiple filters can be applied to the same request in addition to other query parameters:
 
@@ -589,6 +553,8 @@ _An option to sort the results based on the sort order of the content item in ei
 
 `?sort=updateDate:asc/desc`\
 _An option to sort the results based on the last update date of the content item in either `asc` or `desc` order._
+
+
 
 Different sorting options can be combined for the `/umbraco/delivery/api/v1/content` endpoint, allowing for more advanced sorting functionality. Here is an example:
 
