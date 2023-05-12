@@ -13,7 +13,7 @@ This Klarna payment provider is based on Klarna's hosted payment page API and re
 Please make sure you are signed up with the correct agreement.
 {% endhint %}
 
-## [Install Klarna](../install-payment-providers)
+## [Install Klarna](../install-payment-providers.md)
 
 ## Using These Docs
 
