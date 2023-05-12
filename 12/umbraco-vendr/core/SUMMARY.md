@@ -2,7 +2,6 @@
 
 * [Umbraco Vendr Documentation](README.md)
 * [Changelog](changelog.md)
-* [Versions](versions.md)
 
 ## Getting Started
 

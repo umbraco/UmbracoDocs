@@ -5,9 +5,9 @@ description: Documentation for Vendr, the eCommerce solution for Umbraco
 
 ## Using These Docs
 
-**These docs are aimed at developers** who have at least a basic understanding of  [Umbraco](https://umbraco.com), as well as C# / MVC principals.
+**These docs are aimed at developers** who have at least a basic understanding of  [Umbraco](https://umbraco.com), as well as C#  and MVC principals.
 
- To help with the different stages of learning, they have been broken up into 5 key areas, each with a specific focus.
+To help with the different stages of learning, they have been broken up into 5 key areas, each with a specific focus.
 
 <div class="tile-grid mb-6">
   <div class="tile-grid__cell w-full">
@@ -69,8 +69,4 @@ description: Documentation for Vendr, the eCommerce solution for Umbraco
 
 ## Getting Help
 
-If you require further assistance, or if you are having a particular issue you can't find an answer to, you can get community support via our support forum over on the [Umbraco developer portal](https://our.umbraco.com/packages/website-utilities/vendr/vendr-support/).
-
-## About Vendr
-
-Vendr is the eCommerce solution for Umbraco created by Outfield Digital, the team behind Tea Commerce for Umbraco v7. Vendr is the successor to Tea Commerce and follows much of the same principles but has been vastly improved for use on Umbraco v8+.
+If you require assistance, or if you are unable to find the answers your looking for, you can use our support channels to seek assistance.
