@@ -74,9 +74,9 @@ A comma-separated list of all the folders in your directory to be left alone by 
 
 ### Timeout
 
-Configures the session timeout to determine how many minutes can pass without any requests being made before the user is required to log in again. This timeout period can be set in the format of HH:MM:SS, and any activity within the Umbraco backoffice will reset the timer for the session.
+Configure the session timeout to determine how much time can pass without a requests being made before the user is required to log in again. The session timeout format can be set as HH:MM:SS, any activity within the backoffice will reset the timer.
 
-{% hint style="info" %} If the session timeout is set too long, it may increase the risk of exposing confidential data or enable attackers to gain unauthorized access to the session. Therefore, it is imperative to establish a reasonable session timeout to minimize potential security risks. {% endhint %}
+{% hint style="info" %} Long session timeouts raise data exposure and unauthorized access risks. Thus, it's vital to establish a reasonable timeout to mitigate security risks. {% endhint %}
 
 ### Default UI language
 
