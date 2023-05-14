@@ -14,7 +14,7 @@ When done with the tutorial the end result will look like this:
 
 ![Database result of a migration](images/db-table.png)
 
-We can then work with this data through Entity framework.
+Once done with the tutorial, you can work with this data through the Entity framework.
 
 
 The following tutorial will show how this is done using a composer and a notification handler.
@@ -24,7 +24,7 @@ With this pattern you create and run a similar migration but trigger it in respo
 
 ### Step 1: Create BlogComment Class
 
-First, create a BlogComment class and add the following code to the class:
+First, create a `BlogComment` class and add the following code to the class:
 
 ```csharp
 namespace Umbraco.Demo;
@@ -79,7 +79,7 @@ public class BlogContext : DbContext
 
 ### Step 3: Register the DbContext
 
-We need to register this DbContext to use it, in Umbraco because we need to register a few other things to have Scopes working, we have a helpful extension method you use:
+We need to register this DbContext to use it, in Umbraco because we need to register a few other things to have Scopes working. To do this we have a helpful extension method you can use:
 `services.AddUmbracoEFCoreContext<BlogContext>("{YOUR CONNECTIONSTRING HERE}", "{YOUR PROVIDER NAME HERE}");`
 
 Now that we can access the database via the `BlogContext`, we need to first migrate the database to add our tables.
