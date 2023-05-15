@@ -5,6 +5,12 @@
 * [Content Delivery API](content-delivery-api.md)
 * [Contribute](https://docs.umbraco.com/welcome/contribute/)
 
+## Fundamentals
+
+* [Get to know Umbraco](fundamentals/get-to-know-umbraco.md)
+* [Setup](fundamentals/setup/README.md)
+  * [Requirements](fundamentals/setup/requirements.md)
+
 ## Implementation
 
 * [Learn how Umbraco works](implementation/learn-how-umbraco-works.md)
@@ -14,4 +20,5 @@
 * [Dive into the code](reference/dive-into-the-code.md)
 
 ## Tutorials
+
 * [Getting started with Entity Framework](tutorials/getting-started-with-entity-framework-core.md)
