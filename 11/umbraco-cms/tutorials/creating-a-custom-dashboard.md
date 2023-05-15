@@ -12,7 +12,7 @@ This guide takes you through the steps to set up a Custom Dashboard in Umbraco.
 
 A Dashboard is a tab on the right-hand side of a section eg. the Getting Started dashboard in the Content section:
 
-![Welcome dashboard](<images/whatisadashboard-v10 (1).jpg>)
+![Welcome dashboard](<../../../10/umbraco-cms/tutorials/images/whatisadashboardv10 (1) (1) (1).jpg>)
 
 ### Why provide a Custom Dashboard for your editors?
 
