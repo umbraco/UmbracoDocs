@@ -6,7 +6,7 @@ description: Getting Started with the DIBS D2 payment provider for Vendr, the eC
 
 The DIBS D2 payment provider provides functionality to capture payments via the [DIBS D2](https://tech.dibspayment.com/D2) payment gateway. It is a fully featured payment provider allowing full control of the payment flow directly from the Vendr backoffice.
 
-## [Install DIBS D2](../install-payment-providers)
+## [Install DIBS D2](../install-payment-providers.md)
 
 ## In this Section
 
