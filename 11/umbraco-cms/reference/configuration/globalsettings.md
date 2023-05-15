@@ -74,7 +74,9 @@ A comma-separated list of all the folders in your directory to be left alone by 
 
 ### Timeout
 
-Configures the number of minutes without any requests being made before the Umbraco user will be required to re-login. Any backoffice request will reset the clock. The format is HH:MM:SS.
+Configure the session timeout to determine how much time without a request being made can pass before the user is required to log in again. The session timeout format needs to be set as `HH:MM:SS`. Any activity within the backoffice will reset the timer.
+
+{% hint style="info" %} Long session timeouts raise data exposure and unauthorized access risks. Thus, it's vital to establish a reasonable timeout to mitigate security risks. {% endhint %}
 
 ### Default UI language
 
