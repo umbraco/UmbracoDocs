@@ -12,3 +12,6 @@
 ## Reference
 
 * [Dive into the code](reference/dive-into-the-code.md)
+
+## Tutorials
+* [Getting started with Entity Framework](tutorials/getting-started-with-entity-framework-core.md)
