@@ -14,7 +14,7 @@ When done with the tutorial the end result will look like this:
 
 ![Database result of a migration](images/db-table.png)
 
-Once done with the tutorial, you can work with this data through the Entity framework.
+And you can now work with this data through the Entity framework.
 
 
 The following tutorial will show how this is done using a composer and a notification handler.
@@ -87,7 +87,7 @@ With EFCore, you can autogenerate the migrations via the console, so lets open u
 
 1. Open your terminal and navigate to your project folder 
        - If you do not have the EFCore CLI tool installed, run `dotnet tool install --global dotnet-ef` to install it
-2. Generate the migration by running `dotnet ef migrations add InitialCreate --context BlogContext
+2. Generate the migration by running `dotnet ef migrations add InitialCreate --context BlogContext`
 
 {% hint style="warning" %}
 This example named the migration `InitialCreate` but you can choose whatever name you like!
