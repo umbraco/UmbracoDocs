@@ -56,7 +56,7 @@ When there are occasions that Vendr needs to capture some information about an O
 
 | Alias | Description |
 | ----- | ----------- |
-| `sku` | The SKU of the product, extracted from the product node via the [Product Adapter](../product-adapters/). |
+| `sku` | The `SKU` of the product, extracted from the product node via the [Product Adapter](../product-adapters/). |
 
 ## Automatic Properties
 

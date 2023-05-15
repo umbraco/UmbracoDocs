@@ -3,7 +3,7 @@ title: Installation
 description: Installing Vendr Checkout, an add-on package for Vendr, the eCommerce solution for Umbraco v8+
 ---
 
-There are currently two ways to install the Vendr Checkout package for Vendr into your solution. Using the Umbraco package distribution, installed via the Umbraco back-office, or using our NuGet packages, installed directly into your projects code base via the NuGet Package Manager. 
+There are currently two ways to install the Vendr Checkout package for Vendr into your solution. Using the Umbraco package distribution, installed via the Umbraco backoffice, or using our NuGet packages, installed directly into your projects code base via the NuGet Package Manager. 
 
 ## Umbraco Package Installation
 
@@ -11,7 +11,7 @@ To install the Vendr Checkout Umbraco package, you will need to download the pac
 
 ![Umbraco package files list](../media/checkout/our_package_list.png)
 
-Once downloaded you should manually install the package by uploading it to the **local package installer** located in your back-office **Packages > Install Local** section. Once uploaded, follow the on-screen instructions provided to complete the install.
+Once downloaded you should manually install the package by uploading it to the **local package installer** located in your backoffice **Packages > Install Local** section. Once uploaded, follow the on-screen instructions provided to complete the install.
 
 ![Installing an Umbraco Package via Local Umbraco Package](../media/umbraco_local_package_install.png)
 
@@ -23,9 +23,9 @@ To install the Vendr Checkout package via NuGet you can run the following comman
 PM> Install-Package Vendr.Checkout
 ```
 
-Alternatively, you can also find and install the NuGet package via the NuGet Package Manager GUI.
+Alternatively, you can also find and install the NuGet package via the NuGet Package Manager.
 
-![Installing Vendr Checkout via the NuGet Package Manager GUI](../media/checkout/nuget_package.png)
+![Installing Vendr Checkout via the NuGet Package Manager](../media/checkout/nuget_package.png)
 
 ## Content Installation
 

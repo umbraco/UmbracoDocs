@@ -117,11 +117,11 @@ The Order Line config block configures which Order Line properties should be vie
 | `label` | A friendly label to display for this property in the editor interface |
 | `description` | A friendly description to display for this property in the editor interface |
 | `isReadOnly` | Sets the property as read only and so doesn't provide a means of editing the value in the editor interface (Default: `false`) |
-| `showInOrderLineSummary` | Sets whether to display this property in the Order Lines summary next to the SKU in the Order editor interface (Default: `true`) |
+| `showInOrderLineSummary` | Sets whether to display this property in the Order Lines summary next to the `SKU` in the Order editor interface (Default: `true`) |
 | `view` | Sets the name or path of a Property Editor to use when editing this property |
 | `config` | Defines a JSON config for the Property Editor if required |
 
-Properties configured to display in the Order Line Summary will be displayed inline next to the Order Lines SKU as follows:
+Properties configured to display in the Order Line Summary will be displayed inline next to the "Order Lines `SKU`" as follows:
 
 ![Order Line Summary](../media/order_line_summary.png)
 

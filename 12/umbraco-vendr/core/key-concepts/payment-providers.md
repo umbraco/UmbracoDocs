@@ -34,7 +34,7 @@ public class MyPaymentProviderSettings
 
 ````
 
-All Payment Providers inherit from a base class `AsyncPaymentProviderBase<TSettings>` where `TSettings` is the Type of a POCO model class representing the Payment Providers settings. The class must be decorated with `PaymentProviderAttribute` which defines the Payment Providers `alias`, `name` and `description`, and can also specify an `icon` to be displayed in the Vendr back-office.
+All Payment Providers inherit from a base class `AsyncPaymentProviderBase<TSettings>` where `TSettings` is the Type of a Plan Old Class Object (POCO) model class representing the Payment Providers settings. The class must be decorated with `PaymentProviderAttribute` which defines the Payment Providers `alias`, `name` and `description`, and can also specify an `icon` to be displayed in the Vendr back-office.
 
 The settings class itself consists of a series of properties, each decorated with a `PaymentProviderSettingAttribute` defining a name, description, and possible angular editor view file which will all be used to dynamically build an editor interface for the given settings in the back-office.
 
@@ -55,7 +55,7 @@ Generally there are three methods within a Payment Provider that you may need to
 
 * **ProcessCallback** - The `ProcessCallback` method is responsible for handling the response coming back from the payment gateway and processing whether the payment was successful or not. This can sometimes occur *synchronously*, if the payment gateway sends information back as part of the confirmation page redirect, or can occur *asynchronously*, if the payment gateway sends the information back via an out of band webhook request.
 
-* **GetOrderReference** - The `GetOrderReference` method is responsible for extracting an order reference number from a request when the payment gateway uses an asynchronous webhook to finalize an Order **AND** it uses a global webhook URL strategy for all notifications rather than a notification URL per transaction. Where a webhook URL can be passed per transaction, then Vendr provides you with a unique callback URL you can register with the gateway that already identifies the order reference as part of the URL parameters, making implementing this method unnecessary. 
+* **GetOrderReference** - The `GetOrderReference` method is responsible for extracting an order reference number from a request when the payment gateway uses an asynchronous webhook to finalize an Order **and** it uses a global webhook URL strategy for all notifications rather than a notification URL per transaction. Where a webhook URL can be passed per transaction, then Vendr provides you with a unique callback URL you can register with the gateway that already identifies the order reference as part of the URL parameters, making implementing this method unnecessary. 
 
 *\* denotes a required method implementation*.
 

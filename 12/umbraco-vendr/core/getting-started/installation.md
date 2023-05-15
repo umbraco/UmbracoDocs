@@ -20,7 +20,7 @@ PM> dotnet add package Vendr
 
 Alternatively, you can also find and install the NuGet package via the NuGet Package Manager in Visual Studio. You will see a number of packages available, however you will want to install the main **Vendr** package.
 
-![Installing Vendr via the NuGet Package Manager GUI](../media/nuget_package_manager_gui.png)
+![Installing Vendr via the NuGet Package Manager](../media/nuget_package_manager_gui.png)
 
 For most sites using a single solution, the above will be all you need to install Vendr into your project. When you have a more complex solution structure consisting of multiple projects, Vendr is available in multiple sub-packages with varying dependencies.
 

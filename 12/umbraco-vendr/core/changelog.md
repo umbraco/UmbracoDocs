@@ -92,7 +92,7 @@ description: Changelog for the Core Vendr product
 <changelog-group category="Fixed"> 
 
 * Product Attribute value sort order is now correctly honored.
-* Fixed entity controllers actions not working for users with only `Commerce` role assigned. We missunderstood how the authorize attribute works as we assumed it enforced them as an OR opporation, but it appears it enforces them as an AND opperation and so we now have an explicit `SettingsOrCommerce` section policy.
+* Fixed entity controllers actions not working for users with only `Commerce` role assigned. We missunderstood how the authorize attribute works as we assumed it enforced them as an OR opporation, but it appears it enforces them as an `AND` opperation and so we now have an explicit `SettingsOrCommerce` section policy.
 
 </changelog-group>
 </changelog>
@@ -159,8 +159,8 @@ description: Changelog for the Core Vendr product
 <changelog>
 <changelog-group category="Fixed"> 
 
-* Fixed YSOD when using dictionary input fields due to resolution of a scoped service from a singleton ([#392](https://github.com/vendrhub/vendr/issues/392)).
-* Fixed YSOD when generating models builder models in Umbraco 10.3.0 RC due to changes in block editor base classes ([#393](https://github.com/vendrhub/vendr/issues/393)).
+* Fixed error screen when using dictionary input fields due to resolution of a scoped service from a singleton ([#392](https://github.com/vendrhub/vendr/issues/392)).
+* Fixed error screen when generating models builder models in Umbraco 10.3.0 RC due to changes in block editor base classes ([#393](https://github.com/vendrhub/vendr/issues/393)).
 
 </changelog-group>
 </changelog>
@@ -321,7 +321,7 @@ description: Changelog for the Core Vendr product
 
 * Fixed v10 regression causing indexing of products / variants in lucene to fail.
 * Fixed null error in `RaiseOrderLineChangeEvents` as original Tax Class ID can be null for new order lines.
-* Fixed XSS issue in custom order table cell rendering. Now HTML escapes all user input before rendering.
+* Fixed `XSS` issue in custom order table cell rendering. Now HTML escapes all user input before rendering.
 * Fixed bug on licenses dashboard now showing the Refresh button for subscription licenses.
 
 </changelog-group>
@@ -336,7 +336,7 @@ description: Changelog for the Core Vendr product
 <changelog>
 <changelog-group category="Fixed"> 
 
-* Fixed v10 regression due to Umbraco API change where saving / publishing content would cause a YSOD.
+* Fixed v10 regression due to Umbraco API change where saving / publishing content would cause an error screen.
 * Fixed v10 regression due to Umbraco API change where internal index would not rebuild and so Vendr store finders would not run.
 * Fixed bug in Content based store finder due to incorrectly overriding base method.
 
@@ -458,7 +458,7 @@ description: Changelog for the Core Vendr product
 </changelog-group>
 <changelog-group category="Changed">  
 
-* We no longer maintain a cache of ALL Gift Cards in memory, instead we do the same as we do with orders and just maintain active Gift Cards on a sliding expiration.
+* We no longer maintain a cache of all Gift Cards in memory, instead we do the same as we do with orders and just maintain active Gift Cards on a sliding expiration.
 
 </changelog-group>
 <changelog-group category="Fixed"> 
@@ -511,7 +511,7 @@ description: Changelog for the Core Vendr product
 * Added `ProductAdapterBase` as new base class for product adapters.
 * Added `Cart` category for email, print and export templates.
 * Added `cart.editor.config.js` file support for controlling editable cart fields differently to editable order fields.
-* Added `IUmbracoNodeStoreFinder` interface to allow custom ways of locating a store from an Umbraco node. OOTB finders and their order are `UmbracoPublishedContentStoreFinder`, `UmbracoLuceneStoreFinder` and `UmbracoContentStoreFinder`. Additional store finders can be added via the `WithUmbracoNodeStoreFinders` collection builder API available on the `IUmbracoBuilder` interface.
+* Added `IUmbracoNodeStoreFinder` interface to allow custom ways of locating a store from an Umbraco node. Default finders and their order are `UmbracoPublishedContentStoreFinder`, `UmbracoLuceneStoreFinder` and `UmbracoContentStoreFinder`. Additional store finders can be added via the `WithUmbracoNodeStoreFinders` collection builder API available on the `IUmbracoBuilder` interface.
 * Added Change Status bulk action to allow changing the order status of multiple orders at once ([#335](https://github.com/vendrhub/vendr/issues/335)).
 * Added advanced search filter feature to allow searching for orders / carts in a more targeted way. This can also be extended by adding custom `AdvancedFilterBase` implementations to the DI container.
 * Added Order tagging support to allow taging orders with custom tags that can be used for filtering ([#324](https://github.com/vendrhub/vendr/issues/324)).
@@ -554,7 +554,7 @@ description: Changelog for the Core Vendr product
 <changelog>
 <changelog-group category="Added">  
 
-* Added explicit checks for use of CloudFlares Flexible SSL feature when resolving Vendr URLs.
+* Added explicit checks for use of CloudFlares Flexible Secure Socket Layer (SSL) feature when resolving Vendr URLs.
 * Added extra null checks in exchange rate service implementations.
 * Added new `ExchangeRateHostCurrencyExchangeRateService` implementation.
 
@@ -986,7 +986,7 @@ description: Changelog for the Core Vendr product
 <changelog>
 <changelog-group category="Fixed">  
 
-* Fixed YSOD when fetching too many sub-entities in one SQL query. All sub-entity queries are now batched into groups of 2000 entities at a time ([#280](https://github.com/vendrhub/vendr/issues/280)).
+* Fixed error screen when fetching too many sub-entities in one SQL query. All sub-entity queries are now batched into groups of 2000 entities at a time ([#280](https://github.com/vendrhub/vendr/issues/280)).
 * Fixed regression in `ZeroValuePaymentProvider` since 1.4.0 release due to it not being updated to use the `TransactionAmount` property ([#281](https://github.com/vendrhub/vendr/issues/281)).
 
 </changelog-group>
@@ -1102,7 +1102,7 @@ description: Changelog for the Core Vendr product
 * Fixed spelling error in auto generated error email template alias.
 * Fixed regression where custom product adapter was not being allowed on trial license.
 * Updated discounts to apply percentage values differently depending on whether tax is included in prices or not (rounding issue).
-* Fixed YSOD when assigning an orders order status prior to finalization due to the activity logger. The activity logger now only logs activity for finalized orders.
+* Fixed error screen when assigning an orders order status prior to finalization due to the activity logger. The activity logger now only logs activity for finalized orders.
 
 </changelog-group>
 <changelog-group category="Updated">  
@@ -1380,7 +1380,7 @@ For more details on this release, including a recommended upgrade strategy, plea
 * Fixed bug in session manager SetDefaultCurrency and SetDefaultTaxClass where exception was thrown if `applyToCurrentOrder` is `true` ([#160](https://github.com/vendrhub/vendr/issues/160)).
 * Add null checks and error logs if there is a problem calculating order gift card amount if a gift card is deleted ([#167](https://github.com/vendrhub/vendr/issues/167)).
 * Fixed long order line names flowing off screen. They are now truncated with ... ([#147](https://github.com/vendrhub/vendr/issues/147)).
-* Fixed bug in Member Group Discount Rule throwing YSOD due to DI resource not being found. Now use `IMemberService` for everything.
+* Fixed bug in Member Group Discount Rule throwing an error screen due to DI resource not being found. Now use `IMemberService` for everything.
 * Fixed rounding issue when applying a discount amount but the order line totals calculation doesn't match the price + tax of the discount exactly.
 
 </changelog-group>
@@ -1425,11 +1425,11 @@ For more details on this release, including a recommended upgrade strategy, plea
 <changelog-group category="Fixed">  
 
 * Thawing prices now causes existing, unfinalized orders to recalculate and re-freeze prices at the current rate ([#145](https://github.com/vendrhub/vendr/issues/145)).
-* Fixed YSOD when applying a discount with multiple rewards for the same price target. Applied discounts now accumulate all rewards per price type ([#136](https://github.com/vendrhub/vendr/issues/136)).
+* Fixed error screen when applying a discount with multiple rewards for the same price target. Applied discounts now accumulate all rewards per price type ([#136](https://github.com/vendrhub/vendr/issues/136)).
 * Fixed bug in discounts where the "Block discount if previous discounts already apply" setting was not being honored ([#142](https://github.com/vendrhub/vendr/issues/142)).
 * Fixed bug in discounts where Order Total based percentage discounts were not being applied ([#143](https://github.com/vendrhub/vendr/issues/143)).
 * Fixed error when creating an order and adding order lines in the same UoW. This ultimately came down to the price freezing logic freezing prices too early. For new orders, prices are now frozen after the initial save ([#140](https://github.com/vendrhub/vendr/issues/140)).
-* Fixed issue in migrations where some installs seem to convert unique indexes into unique constraints and so a YSOD is thrown when attempting to drop the index. We now check to see if a constraint exists first and then perform the appropriate task ([#116](https://github.com/vendrhub/vendr/issues/116)).
+* Fixed issue in migrations where some installs seem to convert unique indexes into unique constraints and so an error is thrown when attempting to drop the index. We now check to see if a constraint exists first and then perform the appropriate task ([#116](https://github.com/vendrhub/vendr/issues/116)).
 
 </changelog-group>
 <changelog-group category="Breaking">  
@@ -1628,10 +1628,10 @@ For more details on this release, including a recommended upgrade strategy, plea
     
 * Fixed javaScript error when refreshing order list view after an order is deleted ([#96](https://github.com/vendrhub/vendr/issues/96)).
 * Fixed formatting issue in table view selection message where `X of Y` message was being displayed without spaces.
-* Fixed YSOD when deleting an order line that has discounts applied to it  ([#98](https://github.com/vendrhub/vendr/issues/98)).
+* Fixed error screen when deleting an order line that has discounts applied to it  ([#98](https://github.com/vendrhub/vendr/issues/98)).
 * Fixed order lines being limited to a max of 100 quantity ([#101](https://github.com/vendrhub/vendr/issues/101)).
-* Fixed YSOD in back-office when displaying the transaction info dialog when some keys have an empty value ([#104](https://github.com/vendrhub/vendr/issues/104)).
-* Fixed YSOD when adding a sub order line to a bundle ([#106](https://github.com/vendrhub/vendr/issues/106)).
+* Fixed error in back-office when displaying the transaction info dialog when some keys have an empty value ([#104](https://github.com/vendrhub/vendr/issues/104)).
+* Fixed error when adding a sub order line to a bundle ([#106](https://github.com/vendrhub/vendr/issues/106)).
 
 
 </changelog-group>
@@ -1683,9 +1683,9 @@ For more details on this release, including a recommended upgrade strategy, plea
 <changelog-group category="Fixed">  
 
     
-* Fixed bug in product uniqueness logic throwing a YSOD if you add a product with no uniqueness properties after one that has is already in the cart ([#88](https://github.com/vendrhub/vendr/issues/88)).
+* Fixed bug in product uniqueness logic throwing an error if you add a product with no uniqueness properties after one that has is already in the cart ([#88](https://github.com/vendrhub/vendr/issues/88)).
 * Fixed build script formatting the patch release timestamp incorrectly.
-* Fixed YSOD when removing items from a cart and using SQL CE. This was due to a SQL statement that doesn't work on SQL CE. Now updated to work across the board ([#89](https://github.com/vendrhub/vendr/issues/89)).
+* Fixed error when removing items from a cart and using SQL CE. This was due to a SQL statement that doesn't work on SQL CE. Now updated to work across the board ([#89](https://github.com/vendrhub/vendr/issues/89)).
 * Fixed bug where discount codes declared on deleted discounts couldn't be reused ([#91](https://github.com/vendrhub/vendr/issues/91)).
 * Discount aliases are now validated before save and display a friendly error message ([#91](https://github.com/vendrhub/vendr/issues/91)).
 
@@ -1740,7 +1740,7 @@ For more details on this release, including a recommended upgrade strategy, plea
 <changelog-group category="Fixed">  
 
     
-* Fixed YSOD when accessing transaction info for an order where the Payment Provider no longer existed. Now perform null checks on data ([#58](https://github.com/vendrhub/vendr/issues/58)).
+* Fixed error when accessing transaction info for an order where the Payment Provider no longer existed. Now perform null checks on data ([#58](https://github.com/vendrhub/vendr/issues/58)).
 * Fixed issue with NuGet packages not copying content files on upgrade. Added a PowerShell script to perform the copy.
 * Fixed bug where customer details weren't being persisted into the dedicated fields in the database table (they are still present in the properties collection where they are referenced from 99% of the time) ([#85](https://github.com/vendrhub/vendr/issues/85)).
 
@@ -1781,7 +1781,7 @@ For more details on this release, including a recommended upgrade strategy, plea
 
     
 * Product prices now thaw when the last product of a type is removed from the cart ([#71](https://github.com/vendrhub/vendr/issues/71)).
-* Fixed YSOD when saving a property with a null value. Property is now removed if the value is null  ([#78](https://github.com/vendrhub/vendr/issues/78)).
+* Fixed error when saving a property with a null value. Property is now removed if the value is null  ([#78](https://github.com/vendrhub/vendr/issues/78)).
 
 
 </changelog-group>

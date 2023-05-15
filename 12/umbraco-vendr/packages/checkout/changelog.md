@@ -19,7 +19,7 @@ description: Changelog for the Checkout package for Vendr, the eCommerce solutio
 </changelog-group>
 <changelog-group category="Fixed">  
 
-* Vendr Checkout confirmation email showing payment/shipping fees with TAX when all other prices are without TAX.
+* Vendr Checkout confirmation email showing payment/shipping fees with tax when all other prices are without tax.
 * Vendr Checkout confirmation email incorrectly showing payment country in place of shipping country.
 
 </changelog-group>
@@ -86,7 +86,7 @@ description: Changelog for the Checkout package for Vendr, the eCommerce solutio
 * Switched from an externally hosted Tailwind CSS file to a locally built and purged file of only the CSS used.
 * Updated to the latest Tailwind CSS colour scheme.
 * Removed the use of font-awesome in favour of a some embedded SVGs instead.
-* Removed the use of SSM.js for responsive javascript as it wasn't really necesarry.
+* Removed the use of `SSM.js` for responsive javascript as it wasn't really necesarry.
 * Removed the use of jQuery entirely in favour of vanilla javascript so that no external JS dependency is required.
 * Switched the logo picker on the checkout doc type to be an Image Media Picker.
 * Updated order summary to use the `TransactionAmount` value rather than `TotalPrice` which doesn't show gift card adjustments.

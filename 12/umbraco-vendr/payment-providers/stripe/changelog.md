@@ -5,7 +5,7 @@ description: Changelog for the Stripe Payment Provider for Vendr, the eCommerce 
 
 ## v2.1.0   
 **Date:** 2022-03-06   
-**Description:** Minor update with Stripe SDK dependency upgrade
+**Description:** Minor update with Stripe Software Development Kit (SDK) dependency upgrade
 
 ---  
 

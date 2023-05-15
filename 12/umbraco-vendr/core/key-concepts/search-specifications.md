@@ -26,7 +26,7 @@ var results = _orderService.SearchOrders(
         .And(where.HasOrderNumber(orderNumber).Or(where.ByCustomer(customerEmail))))
 ```
 
-The above is a relatively simple example, but it demonstrates the use of a delegate method that then uses a fluent specifications API to build up a query filter. The query filter itself can be made up of many different individual queries which themselves can be grouped using AND and OR query logic.
+The above is a relatively simple example, but it demonstrates the use of a delegate method that then uses a fluent specifications API to build up a query filter. The query filter itself can be made up of many different individual queries which themselves can be grouped using `AND` and `OR` query logic.
 
 Because the API is fluent it is also self documenting, with Visual Studio intellisense able to guide developers through all the available specifications.
 

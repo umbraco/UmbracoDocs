@@ -113,7 +113,7 @@ public decimal Quantity { get; }
 
 #### Sku
 
-Gets the unique SKU of the product of the order line
+Gets the unique `SKU` of the product of the order line
 
 ```csharp
 public string Sku { get; }
