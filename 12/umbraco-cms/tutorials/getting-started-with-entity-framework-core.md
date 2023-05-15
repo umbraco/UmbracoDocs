@@ -1,26 +1,26 @@
-﻿---
+---
 versionFrom: 12.0.0
 meta.Title: Umbraco Database
 description: A guide to getting started with Entity Framework Core in Umbraco
 ---
 
-# Getting started with Entity Framework Core in Umbraco
+# Getting started with Entity Framework
+
 ## Introduction
+
 Using the Entity Framework Core (EFCore), it is possible to add custom database tables to your site. These tables will store additional data that should not be stored as normal content nodes.
 
 In this tutorial, we will show you can use the Entity Framework to create custom tables.
 
 When done with the tutorial the end result will look like this:
 
-![Database result of a migration](images/db-table.png)
+![Database result of a migration](../../../10/umbraco-cms/extending/images/db-table.png)
 
 And you can now work with this data through the Entity framework.
-
 
 The following tutorial will show how this is done using a composer and a notification handler.
 
 With this pattern you create and run a similar migration but trigger it in response to a [notification handler](../fundamentals/code/subscribing-to-notifications.md).
-
 
 ### Step 1: Create BlogComment Class
 
@@ -79,34 +79,27 @@ public class BlogContext : DbContext
 
 ### Step 3: Register the DbContext
 
-We need to register this DbContext to use it, in Umbraco because we need to register a few other things to have Scopes working. To do this we have a helpful extension method you can use:
-`services.AddUmbracoEFCoreContext<BlogContext>("{YOUR CONNECTIONSTRING HERE}", "{YOUR PROVIDER NAME HERE}");`
+We need to register this DbContext to use it, in Umbraco because we need to register a few other things to have Scopes working. To do this we have a helpful extension method you can use: `services.AddUmbracoEFCoreContext<BlogContext>("{YOUR CONNECTIONSTRING HERE}", "{YOUR PROVIDER NAME HERE}");`
 
-Now that we can access the database via the `BlogContext`, we need to first migrate the database to add our tables.
-With EFCore, you can autogenerate the migrations via the console, so lets open up a terminal and do it!
+Now that we can access the database via the `BlogContext`, we need to first migrate the database to add our tables. With EFCore, you can autogenerate the migrations via the console, so lets open up a terminal and do it!
 
-1. Open your terminal and navigate to your project folder 
-       - If you do not have the EFCore CLI tool installed, run `dotnet tool install --global dotnet-ef` to install it
+1. Open your terminal and navigate to your project folder - If you do not have the EFCore CLI tool installed, run `dotnet tool install --global dotnet-ef` to install it
 2. Generate the migration by running `dotnet ef migrations add InitialCreate --context BlogContext`
 
 {% hint style="warning" %}
-This example named the migration `InitialCreate` but you can choose whatever name you like!
-Our DbContext class was named `BlogContext`, but if you have renamed yours, remember to also change that in the command!
+This example named the migration `InitialCreate` but you can choose whatever name you like! Our DbContext class was named `BlogContext`, but if you have renamed yours, remember to also change that in the command!
 {% endhint %}
 
 You should now have a `Migrations` folder in your project, containing the `InitialCreate` migration (or whatever name you chose).
 
 {% hint style="warning" %}
-This might be confusing at first, as when working with EFCore you would usually inject your `Context` class.
-While you can still do that, it is however not the recommended approach in Umbraco.
-In Umbraco we use a concept called `Scope` which is our implementation of the `Unit of work` pattern.
-This ensures that we start a transaction when using the database. If the scope is not completed (for example when exceptions are thrown) it will roll it back.
+This might be confusing at first, as when working with EFCore you would usually inject your `Context` class. While you can still do that, it is however not the recommended approach in Umbraco. In Umbraco we use a concept called `Scope` which is our implementation of the `Unit of work` pattern. This ensures that we start a transaction when using the database. If the scope is not completed (for example when exceptions are thrown) it will roll it back.
 {% endhint %}
 
 ### Step 4: Create the notification handler
 
-Next, let's create the notification handler that will handle our migrations.
-We need to create a new class called `RunBlogCommentsMigration` and add the following code to the class:
+Next, let's create the notification handler that will handle our migrations. We need to create a new class called `RunBlogCommentsMigration` and add the following code to the class:
+
 ```csharp
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Events;
@@ -148,8 +141,7 @@ public class RunBlogCommentsMigration : INotificationHandler<UmbracoApplicationS
 
 ### Step 5: Register the notification handler
 
-Lastly, we have to register the notification handler, we'll do this with an `IComposer` class.
-We will call it `BlogCommentsComposer` and add the following code:
+Lastly, we have to register the notification handler, we'll do this with an `IComposer` class. We will call it `BlogCommentsComposer` and add the following code:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;

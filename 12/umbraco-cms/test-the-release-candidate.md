@@ -8,7 +8,7 @@ This article will cover in detail how you can try out and test the Release Candi
 
 ## Prerequisites
 
-* Follow the [requirements](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/requirements) for running Umbraco CMS.
+* Follow the [requirements](fundamentals/setup/requirements.md) for running Umbraco CMS.
 
 ## Getting started with the RC
 
