@@ -25,3 +25,7 @@
   * [Workspace Editor Views](extending/workspaces/workspace-editor-views.md)
   * [Workspace Editor Actions](extending/workspaces/workspace-editor-actions.md)
 * [UI Library](extending/ui-library.md)
+
+## Tutorials
+
+* [Creating a Custom Dashboard](tutorials/creating-a-custom-dashboard.md)
