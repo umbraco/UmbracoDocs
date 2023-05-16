@@ -184,7 +184,8 @@ namespace Umbraco.Demo
     {
         private readonly IEFCoreScopeProvider<BlogContext> _efCoreScopeProvider;
 
-        public BlogCommentsController(IEFCoreScopeProvider<BlogContext> efCoreScopeProvider) => _efCoreScopeProvider = efCoreScopeProvider;
+        public BlogCommentsController(IEFCoreScopeProvider<BlogContext> efCoreScopeProvider) 
+            => _efCoreScopeProvider = efCoreScopeProvider;
 
         [HttpGet]
         public async Task<IActionResult> All()
