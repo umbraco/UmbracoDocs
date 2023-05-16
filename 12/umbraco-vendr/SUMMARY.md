@@ -1,3 +1,3 @@
-# Table on Contents
+# Table of contents
 
-* [Umbraco Vendr](README.md)
+* [Umbraco Vendr Documentation](README.md)
