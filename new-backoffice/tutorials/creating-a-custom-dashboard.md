@@ -53,7 +53,7 @@ The first thing we must do is create a new folder inside our site's '/App_Plugin
 
 ## Creating the dashboard view
 
-Next, we will create an HTML file inside this folder called `WelcomeDashboard.html`. The HTML file will contain a fragment of an HTML document and does not need \<html>\<head>\<body> entities.
+Next, we will create an HTML file inside this folder called `WelcomeDashboard.html`. The HTML file will contain a fragment of an HTML document and does not need `<html><head><body>` entities.
 
 Add the following HTML to the `WelcomeDashboard.html`.
 
@@ -607,7 +607,7 @@ To do this we can use the Umbraco UI library.
 
 The [Umbraco UI Library](../extending/ui-library.md) is a set of web components that we can use to build Umbraco User Interfaces.
 
-The Umbraco UI Library is already available in the backoffice, so we don't need to add it to our project, we can simply start using the components.
+As he Umbraco UI Library is available in the backoffice we can start using the components.
 
 Since we are showing our editors their recently edited content nodes on this dashboard, it makes sense to use the [Content Node Card](https://uui.umbraco.com/?path=/docs/uui-card-content-node--aaa-overview):
 
@@ -639,77 +639,128 @@ Let's make sure that the card shows the name of the content nodes that the edito
 <uui-card-content-node name="{{logEntry.Content.name}}"></uui-card-content-node>
 ```
 
-We also need to move the `ng-repeat` parameter from the
+We also need to move the `ng-repeat` parameter from the tag below into the `uui-card-content-node`.
 
--   tag below into the `uui-card-content-node` as well.
+Which then will look like this:
 
-    Which then will look like this:
+```html
+<uui-card-content-node
+    name="{{logEntry.Content.name}}"
+    ng-repeat="logEntry in vm.UserLogHistory.items"
+></uui-card-content-node>
+```
 
-    ```html
-    <uui-card-content-node
-        name="{{logEntry.Content.name}}"
-        ng-repeat="logEntry in vm.UserLogHistory.items"
-    ></uui-card-content-node>
-    ```
+At this point the code looks like this:
 
-    At this point the code looks like this:
+```html
+<uui-card-content-node
+    name="{{logEntry.Content.name}}"
+    ng-repeat="logEntry in vm.UserLogHistory.items"
+>
+    <ul class="unstyled">
+        <li>
+            <i class="{{logEntry.Content.icon}}"></i>
+            <a href="/Umbraco/#/{{logEntry.editUrl}}"
+                >{{logEntry.Content.name}}
+                <span ng-if="logEntry.comment"
+                    >- {{logEntry.comment}}</span
+                ></a
+            >
+            -
+            <span class="text-muted"
+                >(Edited on: {{logEntry.timestamp | date:'medium'}})</span
+            >
+        </li>
+    </ul>
+</uui-card-content-node>
+```
 
-    ```html
-    <uui-card-content-node
-        name="{{logEntry.Content.name}}"
-        ng-repeat="logEntry in vm.UserLogHistory.items"
+Now we also want the editors to go directly to the content node, let's move the `<a href="/Umbraco/#/{{logEntry.editUrl}}">{{logEntry.Content.name}} <span ng-if="logEntry.comment">- {{logEntry.comment}}</span></a>` line down under the `<uui-card-content-node>`.
+
+Make sure to add some text to the `<a>` tag like _"click here"_ or _"See Node"_ so that our code should look like this:
+
+```html
+<uui-card-content-node
+    name="{{logEntry.Content.name}}"
+    ng-repeat="logEntry in vm.UserLogHistory.items"
+>
+    <a href="/Umbraco/#/{{logEntry.editUrl}}"
+        ><span ng-if="logEntry.comment"> {{logEntry.comment}}</span
+        ><span style="font-weight: 700">See Node</span></a
     >
-        <ul class="unstyled">
-            <li>
-                <i class="{{logEntry.Content.icon}}"></i>
-                <a href="/Umbraco/#/{{logEntry.editUrl}}"
-                    >{{logEntry.Content.name}}
-                    <span ng-if="logEntry.comment"
-                        >- {{logEntry.comment}}</span
-                    ></a
-                >
-                -
-                <span class="text-muted"
-                    >(Edited on: {{logEntry.timestamp | date:'medium'}})</span
-                >
-            </li>
-        </ul>
-    </uui-card-content-node>
-    ```
+    <ul class="unstyled">
+        <li>
+            <i class="{{logEntry.Content.icon}}"></i
+            ><span class="text-muted"
+                >(Edited on: {{logEntry.timestamp | date:'medium'}})</span
+            >
+        </li>
+    </ul>
+</uui-card-content-node>
+```
 
-    Now we also want the editors to go directly to the content node, let's move the `<a href="/Umbraco/#/{{logEntry.editUrl}}">{{logEntry.Content.name}} <span ng-if="logEntry.comment">- {{logEntry.comment}}</span></a>` line down under the `<uui-card-content-node>`.
+Next up, let's go ahead and update the `<ul>` tag with the style from the UI library Card with the following:
 
-    Make sure to add some text to the `<a>` tag like _"click here"_ or _"See Node"_ so that our code should look like this:
+`style="list-style: none; padding-inline-start: 0px; margin: 0;`
 
-    ```html
-    <uui-card-content-node
-        name="{{logEntry.Content.name}}"
-        ng-repeat="logEntry in vm.UserLogHistory.items"
+We can also remove `<i class="{{logEntry.Content.icon}}"></i>` from our list as the card already has an icon by default.
+
+Once that is done, our code looks like this:
+
+```html
+<uui-card-content-node
+    name="{{logEntry.Content.name}}"
+    ng-repeat="logEntry in vm.UserLogHistory.items"
+>
+    <a href="/Umbraco/#/{{logEntry.editUrl}}"
+        ><span ng-if="logEntry.comment"> {{logEntry.comment}}</span
+        ><span style="font-weight: 700">See Node</span></a
     >
-        <a href="/Umbraco/#/{{logEntry.editUrl}}"
-            ><span ng-if="logEntry.comment"> {{logEntry.comment}}</span
-            ><span style="font-weight: 700">See Node</span></a
+    <ul style="list-style: none; padding-inline-start: 0px; margin: 0;">
+        <li>
+            <span class="text-muted"
+                >(Edited on: {{logEntry.timestamp | date:'medium'}})</span
+            >
+        </li>
+    </ul>
+</uui-card-content-node>
+```
+
+Lets for good measure add the styling from the **Content Node Card** to our `<li>` tag as well so it will look like this:
+
+```html
+<li>
+    <span style="font-weight:700" class="text-muted">Edited on:</span>
+    {{logEntry.timestamp | date:'medium'}}
+</li>
+```
+
+Once the styling has been added, we are finally done with editing our card.
+
+And your file should look like this:
+
+```html
+<!DOCTYPE html>
+<div
+    class="welcome-dashboard"
+    ng-controller="CustomWelcomeDashboardController as vm"
+>
+    <h1>
+        <localize key="welcomeDashboard_heading">Default heading</localize>
+        {{vm.UserName}}
+    </h1>
+    <p>
+        <localize key="welcomeDashboard_bodytext"
+            >Default bodytext</localize
         >
-        <ul class="unstyled">
-            <li>
-                <i class="{{logEntry.Content.icon}}"></i
-                ><span class="text-muted"
-                    >(Edited on: {{logEntry.timestamp | date:'medium'}})</span
-                >
-            </li>
-        </ul>
-    </uui-card-content-node>
-    ```
+    </p>
+    <p>
+        <localize key="welcomeDashboard_copyright"
+            >Default copyright</localize
+        >
+    </p>
 
-    Next up, let's go ahead and update the `<ul>` tag with the style from the UI library Card with the following:
-
-    `style="list-style: none; padding-inline-start: 0px; margin: 0;`
-
-    We can also go ahead and remove the `<i class="{{logEntry.Content.icon}}"></i>` from our list as we won't be using the icon as the card has one by default.
-
-    Once that is done, our code looks like this:
-
-    ```html
+    <h2>We know what you edited last week...</h2>
     <uui-card-content-node
         name="{{logEntry.Content.name}}"
         ng-repeat="logEntry in vm.UserLogHistory.items"
@@ -720,103 +771,50 @@ We also need to move the `ng-repeat` parameter from the
         >
         <ul style="list-style: none; padding-inline-start: 0px; margin: 0;">
             <li>
-                <span class="text-muted"
-                    >(Edited on: {{logEntry.timestamp | date:'medium'}})</span
+                <span style="font-weight:700" class="text-muted"
+                    >Edited on:</span
                 >
+                {{logEntry.timestamp | date:'medium'}}
             </li>
         </ul>
     </uui-card-content-node>
-    ```
-
-    Lets for good measure add the styling from the **Content Node Card** to our `<li>` tag as well so it will look like this:
-
-    ```html
-    <li>
-        <span style="font-weight:700" class="text-muted">Edited on:</span>
-        {{logEntry.timestamp | date:'medium'}}
-    </li>
-    ```
-
-    Once the styling has been added, we are finally done with editing our card.
-
-    And your file should look like this:
-
-    ```html
-    <!DOCTYPE html>
-    <div
-        class="welcome-dashboard"
-        ng-controller="CustomWelcomeDashboardController as vm"
-    >
-        <h1>
-            <localize key="welcomeDashboard_heading">Default heading</localize>
-            {{vm.UserName}}
-        </h1>
-        <p>
-            <localize key="welcomeDashboard_bodytext"
-                >Default bodytext</localize
-            >
-        </p>
-        <p>
-            <localize key="welcomeDashboard_copyright"
-                >Default copyright</localize
-            >
-        </p>
-
-        <h2>We know what you edited last week...</h2>
-        <uui-card-content-node
-            name="{{logEntry.Content.name}}"
-            ng-repeat="logEntry in vm.UserLogHistory.items"
+    <br />
+    <br />
+    <div>
+        <a
+            class="btn btn-primary btn-large"
+            href="/umbraco/#/content/content/edit/1065?doctype=BlogPost&create=true"
         >
-            <a href="/Umbraco/#/{{logEntry.editUrl}}"
-                ><span ng-if="logEntry.comment"> {{logEntry.comment}}</span
-                ><span style="font-weight: 700">See Node</span></a
-            >
-            <ul style="list-style: none; padding-inline-start: 0px; margin: 0;">
-                <li>
-                    <span style="font-weight:700" class="text-muted"
-                        >Edited on:</span
-                    >
-                    {{logEntry.timestamp | date:'medium'}}
-                </li>
-            </ul>
-        </uui-card-content-node>
-        <br />
-        <br />
-        <div>
-            <a
-                class="btn btn-primary btn-large"
-                href="/umbraco/#/content/content/edit/1065?doctype=BlogPost&create=true"
-            >
-                <i class="icon-edit"></i>
-                Create New Blog Post
-            </a>
-        </div>
+            <i class="icon-edit"></i>
+            Create New Blog Post
+        </a>
     </div>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@umbraco-ui/uui@latest/dist/uui.min.js"></script>
-    ```
+<script src="https://cdn.jsdelivr.net/npm/@umbraco-ui/uui@latest/dist/uui.min.js"></script>
+```
 
-    The last thing we need to do is to add a bit of styling to the UI.
+The last thing we need to do is to add a bit of styling to the UI.
 
-    Go to the **customwelcomedashboard.css** file and add the following:
+Go to the **customwelcomedashboard.css** file and add the following:
 
-    ```
-    uui-card-content-node {
-        margin-bottom: 20px;
-        width: 10%;
-    }
-    ```
+```
+uui-card-content-node {
+    margin-bottom: 20px;
+    width: 10%;
+}
+```
 
-    Once it has been added, we are done and it should look something like this:
+Once it has been added, we are done and it should look something like this:
 
-    ![Custom Dashboard extended with UI Library Card](images/extendedWithUiLibrary.png)
+![Custom Dashboard extended with UI Library Card](images/extendedWithUiLibrary.png)
 
-    **Custom External Data - creating your own angular resource**
+**Custom External Data - creating your own angular resource**
 
-    You can create your own custom Angular services/resources to interact with your own serverside data (using UmbracoAuthorizedJsonController).
+You can create your own custom Angular services/resources to interact with your own serverside data (using UmbracoAuthorizedJsonController).
 
-    The [property editor tutorial](creating-a-property-editor/) has a step explaining how to do this.
+The [property editor tutorial](creating-a-property-editor/) has a step explaining how to do this.
 
-    **The end**
+**The end**
 
-    With all of the steps completed, you should have a functional dashboard that will let the logged-in user see the changes they made! Hopefully, this tutorial has given you some ideas on what is possible to do when creating a dashboard.
+With all of the steps completed, you should have a functional dashboard that will let the logged-in user see the changes they made! Hopefully, this tutorial has given you some ideas on what is possible to do when creating a dashboard.
