@@ -21,4 +21,4 @@
 
 ## Tutorials
 
-* [Getting started with Entity Framework](tutorials/getting-started-with-entity-framework-core.md)
+* [Creating Custom Database Tables with Entity Framework](tutorials/getting-started-with-entity-framework-core.md)

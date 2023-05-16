@@ -1,30 +1,42 @@
 ---
 versionFrom: 12.0.0
 meta.Title: Umbraco Database
-description: A guide to getting started with Entity Framework Core in Umbraco
+description: >-
+  This tutorial will show you how to get started with creating custom database
+  tables with the Entity Framework Core in Umbraco.
 ---
 
-# Getting started with Entity Framework
+# Creating Custom Database Tables with Entity Framework
 
 ## Introduction
 
-Using the Entity Framework Core (EFCore), it is possible to add custom database tables to your site. These tables will store additional data that should not be stored as normal content nodes.
+Custom database tables let you store additional data in the Umbraco database that you don't want to be stored as normal content nodes.
 
-In this tutorial, we will show you can use the Entity Framework to create custom tables.
+Using custom tables can be great for many things such as storing massive amounts of data that you do not need to edit from the backoffice.
 
-When done with the tutorial the end result will look like this:
+Decoupling part of your data from being managed by Umbraco as content is a way to achieve better performance for your site. It will no longer take up space in indexes and caches, and the Umbraco database.
 
-![Database result of a migration](../../../10/umbraco-cms/extending/images/db-table.png)
+{% hint style="warning" %}
+Be aware that storing data in custom database tables is by default not manageable by Umbraco.
 
-And you can now work with this data through the Entity framework.
+This means that if you need to edit or display this data, you need to implement the underlying functionality to support this.
 
-The following tutorial will show how this is done using a composer and a notification handler.
+The case is the same if you need this data to be transferred or kept synchronized between multiple sites or environments.
 
-With this pattern you create and run a similar migration but trigger it in response to a [notification handler](../fundamentals/code/subscribing-to-notifications.md).
+Data stored in custom tables are not supported by default by add-ons such as Umbraco Deploy and will not be deployable by default.
+{% endhint %}
 
-### Step 1: Create BlogComment Class
+## Prerequisite
 
-First, create a `BlogComment` class and add the following code to the class:
+* An Umbraco project with content
+* EFCore CLI tool
+  * Can be installed by running `dotnet tool install --global dotnet-ef` in the terminal
+
+The tutorial will show how to create custom database tables using a composer and a notification handler. With this pattern, you create and run a similar migration but trigger it in response to a [notification handler](https://docs.umbraco.com/umbraco-cms/fundamentals/code/subscribing-to-notifications).
+
+## Step 1: Create Model Class
+
+First, create a class and add the following code:
 
 ```csharp
 namespace Umbraco.Demo;
@@ -45,9 +57,9 @@ public class BlogComment
 }
 ```
 
-### Step 2: Create DBContext class
+## Step 2: Create DBContext class
 
-Now that we have the model, create a `DbContext` class so we can interact with the database, we'll call this `BlogContext`:
+Now that we have the model, we create a `DbContext` class so we can interact with the database and add the following code:
 
 ```csharp
 using Microsoft.EntityFrameworkCore;
@@ -77,28 +89,53 @@ public class BlogContext : DbContext
 }
 ```
 
-### Step 3: Register the DbContext
+## Step 3: Register the DbContext
 
-We need to register this DbContext to use it, in Umbraco because we need to register a few other things to have Scopes working. To do this we have a helpful extension method you can use: `services.AddUmbracoEFCoreContext<BlogContext>("{YOUR CONNECTIONSTRING HERE}", "{YOUR PROVIDER NAME HERE}");`
+We need to register the `DbContext` to be able to use it in Umbraco.
 
-Now that we can access the database via the `BlogContext`, we need to first migrate the database to add our tables. With EFCore, you can autogenerate the migrations via the console, so lets open up a terminal and do it!
+To do this we can use this helpful extension method:
 
-1. Open your terminal and navigate to your project folder - If you do not have the EFCore CLI tool installed, run `dotnet tool install --global dotnet-ef` to install it
+```csharp
+services.AddUmbracoEFCoreContext<BlogContext>("{YOUR CONNECTIONSTRING HERE}", "{YOUR PROVIDER NAME HERE}");
+```
+
+Add the method in the `startup.cs` file under the `ConfigureServices`:
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddUmbracoEFCoreContext<BlogContext>("{YOUR CONNECTIONSTRING HERE}", "{YOUR PROVIDER NAME HERE}");
+    services.AddUmbraco(_env, _config)
+        .AddBackOffice()
+        .AddWebsite()
+        .AddDeliveryApi()
+        .AddComposers()
+        .Build();
+}
+```
+
+We can then access the database via the `BlogContext.` First, we need to migrate the database to add our tables. With EFCore, we can autogenerate the migrations with the terminal.
+
+1. Open your terminal and navigate to your project folder
 2. Generate the migration by running `dotnet ef migrations add InitialCreate --context BlogContext`
 
 {% hint style="warning" %}
-This example named the migration `InitialCreate` but you can choose whatever name you like! Our DbContext class was named `BlogContext`, but if you have renamed yours, remember to also change that in the command!
+In this example, we have named the migration `InitialCreate`. However, you can choose the name you like.&#x20;
+
+We've named the DbContext class`BlogContext`, however, if you have renamed it to something else, make sure to also change it when running the command.
 {% endhint %}
 
-You should now have a `Migrations` folder in your project, containing the `InitialCreate` migration (or whatever name you chose).
+You should now have a `Migrations` folder in your project, containing the `InitialCreate` migration (or the name of your choice).
 
 {% hint style="warning" %}
-This might be confusing at first, as when working with EFCore you would usually inject your `Context` class. While you can still do that, it is however not the recommended approach in Umbraco. In Umbraco we use a concept called `Scope` which is our implementation of the `Unit of work` pattern. This ensures that we start a transaction when using the database. If the scope is not completed (for example when exceptions are thrown) it will roll it back.
+This might be confusing at first, as when working with EFCore you would inject your `Context` class. You can still do that, it is however not the recommended approach in Umbraco.&#x20;
+
+In Umbraco, we use a concept called `Scope` which is our implementation of the `Unit of work` pattern. This ensures that we start a transaction when using the database. If the scope is not completed (for example when exceptions are thrown) it will roll it back.
 {% endhint %}
 
-### Step 4: Create the notification handler
+## Step 4: Create the notification handler
 
-Next, let's create the notification handler that will handle our migrations. We need to create a new class called `RunBlogCommentsMigration` and add the following code to the class:
+Next, we create the notification handler that will handle our migrations. We need to create a new class and add the following code to it:
 
 ```csharp
 using Umbraco.Cms.Core;
@@ -139,9 +176,9 @@ public class RunBlogCommentsMigration : INotificationHandler<UmbracoApplicationS
 }
 ```
 
-### Step 5: Register the notification handler
+## Step 5: Register the notification handler
 
-Lastly, we have to register the notification handler, we'll do this with an `IComposer` class. We will call it `BlogCommentsComposer` and add the following code:
+Lastly, we have to register the notification handler, with an `IComposer` class and add the following code:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -155,22 +192,22 @@ public class BlogCommentsComposer : IComposer
 }
 ```
 
-## Data stored in Custom Database Tables
+After registering the notification handler, build the project and take a look at the database and we can see our new table:
 
-When storing data in custom database tables, this is by default not manageable by Umbraco at all. This can be great for many purposes such as storing massive amounts of data that you do not need to edit from the backoffice. Decoupling part of your data from being managed by Umbraco as content can be a way of achieving better performance for your site. It will no longer take up space in indexes and caches, and the Umbraco database.
+![Database result of a migration](<images/db-table (1).png>)
 
-This also means that if you do need to edit or display this data, you need to implement the underlying functionality to support this. The same is the case if you need this data to be transferred or kept synchronized between multiple sites or environments. Data stored in custom tables are not supported by default by add-ons such as Umbraco Deploy and will not be deployable by default.
+We now have some custom database tables in our database that we can work with through the Entity framework.
 
-Figuring out how to manage data across multiple environments can be different between individual sites and there is not one solution that fits all. Some sites may have automated database synchronization set up to ensure specific tables in multiple databases are always kept in sync. Other sites may be better off with scripts moving data around manually on demand.
+## Going Further
 
-## Working with data in Custom Database Tables
+### Working with the data in the Custom Database Tables
 
 To create, read, update, or delete data from your custom database tables, use the `IEFCoreScopeProvider<T>` (T is your `DbContext` class) to access the EFCore context.
 
-The example below creates an `UmbracoApiController` to be able to fetch and insert blog comments.
+The example below creates a `UmbracoApiController` to be able to fetch and insert blog comments in a custom database table.
 
 {% hint style="warning" %}
-This example uses the `BlogComment` class, which is a database model. The recommended approach here would be to map these over to a ViewModel instead, that way your database & UI layers are not coupled. Also, be aware that things like error handling and data validation have been omitted for brevity.
+This example uses the `BlogComment` class, which is a database model. The recommended approach would be to map these over to a ViewModel instead, that way your database & UI layers are not coupled. Be aware that things like error handling and data validation have been omitted for brevity.
 {% endhint %}
 
 ```csharp
