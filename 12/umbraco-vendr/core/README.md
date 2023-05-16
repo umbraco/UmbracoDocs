@@ -1,72 +1,30 @@
 ---
 title: Vendr Documentation
-description: Documentation for Vendr, the eCommerce solution for Umbraco
+description: >-
+  Browse the Umbraco Vendr documentation to learn more about the addon and how
+  to use it.
 ---
 
-## Using These Docs
+# What is Umbraco Vendr?
 
-**These docs are aimed at developers** who have at least a basic understanding of  [Umbraco](https://umbraco.com), as well as C#  and MVC principals.
+Umbraco Vendr is the official Umbraco e-commerce addon for your Umbraco CMS website. It can be used to setup small webshops, while it can also be implemented for big-scale e-commerce solutions spanning multiple countries.
 
-To help with the different stages of learning, they have been broken up into 5 key areas, each with a specific focus.
+<table data-view="cards"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><strong>Getting Started</strong></td><td>Find all the information you need to get started using Umbraco Vendr with your Umbraco CMS implementation.</td></tr><tr><td><strong>How-to Guides</strong></td><td>Looking to configure and implement something specific? Take a look through the How-to section where you might find a guide that fits your needs.</td></tr><tr><td><strong>Key Concepts</strong></td><td>Looking to learn more about the different concepts and features of Umbraco Vendr? You can find detailed information about each of them in this section.</td></tr></tbody></table>
 
-<div class="tile-grid mb-6">
-  <div class="tile-grid__cell w-full">
-    <a href="getting-started/" class="tile flex">
-      <span class="pr-2">
-        <badge value="1"></badge>
-      </span>
-      <span>
-        <span class="tile__heading">Getting Started</span>
-        <span class="tile__body">Key information on how to get started with Vendr</span>
-      </span>
-    </a>
-  </div>
-  <div class="tile-grid__cell w-full md:w-1/2">
-    <a href="tutorials/" class="tile h-full flex">
-      <span class="pr-2">
-        <badge value="2"></badge> 
-      </span>
-      <span>
-        <span class="tile__heading">Tutorials</span>
-        <span class="tile__body">Hands-on tutorials to get you familiar with Vendr.</span>
-      </span>
-    </a>
-  </div>
-  <div class="tile-grid__cell w-full md:w-1/2">
-    <a href="how-to-guides/" class="tile h-full flex">
-      <span class="pr-2">
-        <badge value="3"></badge>
-      </span>
-      <span>
-        <span class="tile__heading">How-to Guides</span>
-        <span class="tile__body">Step-by-step guides explaining how to solve real-world problems.</span>
-      </span>
-    </a>
-  </div>
-  <div class="tile-grid__cell w-full md:w-1/2">
-    <a href="key-concepts/" class="tile h-full flex">
-      <span class="pr-2">
-        <badge value="4"></badge> 
-      </span>
-      <span>
-        <span class="tile__heading">Key Concepts</span>
-        <span class="tile__body">Explanation and discussion of key concepts.</span>
-      </span>
-    </a>
-  </div>
-  <div class="tile-grid__cell w-full md:w-1/2">
-    <a href="reference/" class="tile h-full flex">
-      <span class="pr-2">
-        <badge value="5"></badge>
-      </span>
-      <span>
-        <span class="tile__heading">Reference</span>
-        <span class="tile__body">Technical reference of the Vendr API.</span>
-      </span>
-    </a>
-  </div>
-</div>
+## Quick links
 
-## Getting Help
+{% content-ref url="reference/" %}
+[reference](reference/)
+{% endcontent-ref %}
 
-If you require assistance, or if you are unable to find the answers your looking for, you can use our support channels to seek assistance.
+{% content-ref url="changelog.md" %}
+[changelog.md](changelog.md)
+{% endcontent-ref %}
+
+### Using These Docs
+
+**These docs are aimed at developers** who have at least a basic understanding of [Umbraco](https://umbraco.com), as well as C# and MVC principals.
+
+### Getting Help
+
+If you require assistance, or if you are unable to find the answers you're looking for, you can use our support channels to seek assistance.

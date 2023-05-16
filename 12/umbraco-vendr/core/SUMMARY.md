@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Umbraco Vendr Documentation](README.md)
+* [What is Umbraco Vendr?](README.md)
 * [Changelog](changelog.md)
 
 ## Getting Started
@@ -12,14 +12,14 @@
 
 ## How-To Guides
 
-* [How-To Guides](how-to-guides/README.md)
+* [Overview](how-to-guides/README.md)
 * [Configuring SQLite support](how-to-guides/configuring-sqlite-support.md)
 * [Limit Order Line Quantity](how-to-guides/limit-orderline-quantity.md)
 * [Use an Alternative Database for Vendr Tables](how-to-guides/use-an-alternative-database-for-vendr-tables.md)
 
 ## Key Concepts
 
-* [Key Concepts](key-concepts/README.md)
+* [Get to know the main features](key-concepts/README.md)
 * [Base Currency](key-concepts/base-currency.md)
 * [Bulk Actions](key-concepts/bulk-actions.md)
 * [Calculators](key-concepts/calculators.md)
@@ -47,9 +47,13 @@
 * [Unit of Work](key-concepts/unit-of-work.md)
 * [Vendr Builder](key-concepts/vendr-builder.md)
 
+## Tutorials
+
+* [Overview](tutorials/README.md)
+
 ## Reference
 
-* [Reference](reference/README.md)
+* [Go behind the scenes](reference/README.md)
 * [Vendr.Common assembly](reference/vendr-common/README.md)
   * [Vendr.Common.Attributes namespace](reference/vendr-common/vendr-common-attributes/README.md)
     * [DeepEqualIgnoreAttribute](reference/vendr-common/vendr-common-attributes/deepequalignoreattribute.md)
@@ -1772,7 +1776,3 @@
   * [Vendr.Web.ViewEngines namespace](reference/vendr-web/vendr-web-viewengines/README.md)
     * [RazorViewEngine](reference/vendr-web/vendr-web-viewengines/razorviewengine.md)
     * [VendrRazorTemplateView\<TModel>](reference/vendr-web/vendr-web-viewengines/vendrrazortemplateview-1.md)
-
-## Tutorials
-
-* [Tutorials](tutorials/README.md)
