@@ -46,13 +46,13 @@ You can also create your own custom User Groups and add properties and tabs as y
 
 Go to the **Users** section and select the **Groups** tab in the top-right corner.
 
-![User Groups Tab](../../../../10/umbraco-cms/fundamentals/data/images/user-groups.png)
+![User Groups Tab](images/user-groups.png)
 
 Select **Create group** and you will be taken to the **User Group** editor. Here you can define and edit the User Group through custom settings and properties.
 
 ### User Group Parameters
 
-![Create User Group](../../../../10/umbraco-cms/fundamentals/data/images/create-user-group.png)
+![Create User Group](images/create-user-group.png)
 
 Shows basic information about the User Group and settings for custom properties.
 
@@ -69,7 +69,7 @@ Depending on which User Group a user is added to, each user has a set of permiss
 
 The available user permissions are defined under **Default Permissions** in the User group.
 
-![Default permissions](../../../../10/umbraco-cms/fundamentals/data/images/default-permissions.png)
+![Default permissions](images/default-permissions.png)
 
 ### Setting User Permissions
 

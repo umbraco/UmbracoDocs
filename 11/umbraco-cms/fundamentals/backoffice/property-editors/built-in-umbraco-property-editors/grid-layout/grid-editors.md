@@ -179,7 +179,7 @@ The `config.markup` is the string rendered server side in your template. `#value
 
 In this sample `config.size` will resize the image according to `height` and `width`. The above example will result in a rendered image that is 200x200 pixels no matter the size of the uploaded image. If the ratio of the size differs from the uploaded image it is possible to set a focal point that determines how the image should be cropped.
 
-<figure><img src="../../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/grid-layout/Images/grid-resizing.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../built-in-property-editors/grid-layout/Images/grid-resizing.png" alt=""><figcaption></figcaption></figure>
 
 **Sample macro config**
 

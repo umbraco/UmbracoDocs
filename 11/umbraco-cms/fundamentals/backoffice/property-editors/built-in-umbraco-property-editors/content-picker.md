@@ -8,11 +8,11 @@ The content picker opens a panel to pick a specific page from the content struct
 
 ## Data Type Definition Example
 
-![Content Picker Data Type Definition](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Content-Picker2-DataType-v10.png)
+![Content Picker Data Type Definition](../built-in-property-editors/images/Content-Picker2-DataType-v10.png)
 
 ## Content Example
 
-![Content Picker Content](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Content-Picker-Content-v10.png)
+![Content Picker Content](../built-in-property-editors/images/Content-Picker-Content-v10.png)
 
 ## MVC View Example
 

@@ -11,7 +11,7 @@ By default, there are two dashboards available:
 1. The **Getting Started** dashboard provides helpful information about Umbraco.
 2. The **Redirect URL Management** dashboard displays the original and redirected links of the published pages which are moved to a new location in your project.
 
-![The Dashboard](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/The-Dashboards-v9.png)
+![The Dashboard](images/The-Dashboards-v9.png)
 
 ### Search, Help, and Profile Settings
 
@@ -19,7 +19,7 @@ By default, there are two dashboards available:
 2. The **Help** icon provides different Help options such as Tours, Umbraco Learning Base YouTube videos, Umbraco Documentation, and your System Information.
 3. The **profile** icon allows you to edit your profile, change the password, and Logout from the application.
 
-![Search, help and profile.](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Search-and-help-v9.png)
+![Search, help and profile.](images/Search-and-help-v9.png)
 
 ### The Sections Menu
 
@@ -34,7 +34,7 @@ The following sections are available in the backoffice:
 * **Forms** - allows to create and manage your forms.
 * **Translation** - allows to manage dictionary items.
 
-![The Sections Menu.](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/The-Section-Menu-v9.png)
+![The Sections Menu.](images/The-Section-Menu-v9.png)
 
 The menu list will differ depending on your permissions for the project. For example: if you are an editor, then you will only have access to **Content**, **Media** and **Forms** as per default settings.
 
@@ -44,7 +44,7 @@ The section tree is different depending on the section you are in. The section p
 
 In this example, you are looking at the content section.
 
-<figure><img src="../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/The-Section-Tree-v9.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/The-Section-Tree-v9.png" alt=""><figcaption></figcaption></figure>
 
 The **Content** tab allows you to create content nodes and manage your content tree. When you hover over the sections, it is highlighted with a darker color indicating that you are hovering over it. A button with three dots will show up, left-click or right-click to view additional options.
 

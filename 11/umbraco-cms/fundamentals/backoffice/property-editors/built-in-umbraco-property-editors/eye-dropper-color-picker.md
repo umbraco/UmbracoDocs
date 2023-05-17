@@ -8,11 +8,11 @@ The Eye Dropper Color picker allows you to choose a color from the full color sp
 
 ## Data Type Definition Example
 
-![Eye Dropper Color Picker Data Type Definition](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Eye-Dropper-Color-Picker-DataType-v8.png)
+![Eye Dropper Color Picker Data Type Definition](../built-in-property-editors/images/Eye-Dropper-Color-Picker-DataType-v8.png)
 
 ## Content Example
 
-![Eye Dropper Color Picker Content](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Eye-Dropper-Color-Picker-Content-v8.png)
+![Eye Dropper Color Picker Content](../built-in-property-editors/images/Eye-Dropper-Color-Picker-Content-v8.png)
 
 ## Example with Modelsbuilder
 

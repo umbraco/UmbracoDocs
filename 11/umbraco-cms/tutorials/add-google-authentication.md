@@ -1,5 +1,7 @@
 ---
-description: A tutorial on setting up Google authentication for the Umbraco CMS backoffice users.
+description: >-
+  A tutorial on setting up Google authentication for the Umbraco CMS backoffice
+  users.
 ---
 
 # Add Google Authentication (Users)
@@ -12,7 +14,7 @@ In this tutorial, we will take you through the steps of setting up a Google logi
 
 When you log in to the Umbraco Backoffice, you need to enter your username and password. Integrating your website with Google authentication adds a button that you can click to log in with your Google account.
 
-![Google login screen](images/GoogleLoginScreen\_v9.png)
+![Google login screen](../../../10/umbraco-cms/tutorials/images/GoogleLoginScreen\_v9.png)
 
 ## Why?
 
@@ -40,24 +42,24 @@ The first thing to do is set up a Google API. To do this, you need to go to [htt
 
 1. Click the project dropdown and select **New Project**.
 
-<figure><img src="images/Project_dropdown_list.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../10/umbraco-cms/tutorials/images/Project_dropdown_list.png" alt=""><figcaption></figcaption></figure>
 
 2. Enter a **Project name**, **Organization**, and **Location**.
 3. **Create** the project.
 
-<figure><img src="images/Project_Details.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../10/umbraco-cms/tutorials/images/Project_Details.png" alt=""><figcaption></figcaption></figure>
 
 ### Enable the Google+ API
 
 1. Open the newly created project from the project dropdown.
-1. Select **Enable APIs and Services**.
+2. Select **Enable APIs and Services**.
 
-<figure><img src="images/Enable_Apis.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../10/umbraco-cms/tutorials/images/Enable_Apis.png" alt=""><figcaption></figcaption></figure>
 
 2. Use the search field to find the **Google+ API**.
 3. **Enable** the product to enable the API.
 
-<figure><img src="images/Enable_Google_API.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../10/umbraco-cms/tutorials/images/Enable_Google_API.png" alt=""><figcaption></figcaption></figure>
 
 ### Set up an OAuth Consent Screen
 
@@ -65,17 +67,17 @@ Before you can create the credentials, you need to configure your consent screen
 
 1. Select **OAuth Consent Screen** from the left-side navigation menu.
 
-<figure><img src="images/OAuth_Consent_Screen.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../10/umbraco-cms/tutorials/images/OAuth_Consent_Screen.png" alt=""><figcaption></figcaption></figure>
 
 2. Choose the **User Type** that fits your setup.
 3. Select **Create** to move to the next step.
 
-<figure><img src="images/User_Type.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../10/umbraco-cms/tutorials/images/User_Type.png" alt=""><figcaption></figcaption></figure>
 
 4. Fill in the required information:
-    * App name
-    * User support email
-    * Developer contact information
+   * App name
+   * User support email
+   * Developer contact information
 5. Select **Save and continue**.
 6. Select the scopes your project needs.
 7. Move to the next step by selecting **Save and Continue**.
@@ -87,16 +89,16 @@ Before you can create the credentials, you need to configure your consent screen
 1. Click on **Credentials** in the left-side navigation menu.
 2. Select **Create Credentials** and choose **OAuth Client ID** from the dropdown.
 
-<figure><img src="images/OAuth_Client_Id.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../10/umbraco-cms/tutorials/images/OAuth_Client_Id.png" alt=""><figcaption></figcaption></figure>
 
 3. Select **Web Application** from the **Application type** dropdown.
 4. Enter the following details:
-    * Application **Name**
-    * **Authorized JavaScript origins**
-    * **Authorized redirect URIs**
+   * Application **Name**
+   * **Authorized JavaScript origins**
+   * **Authorized redirect URIs**
 5. **Create** the OAuth Client ID.
 
-<figure><img src="images/Credentials_v9.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../10/umbraco-cms/tutorials/images/Credentials_v9.png" alt=""><figcaption></figcaption></figure>
 
 A popup appears displaying the **ClientId** and **ClientSecret**. You will need these values later while configuring your solution.
 
@@ -329,7 +331,7 @@ If auto-linking is disabled, the user will need to follow these steps in order t
 For future backoffice logins, the user will be able to use Google Authentication to login.
 {% endhint %}
 
-<figure><img src="images/GoogleLoginScreen_v9.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../10/umbraco-cms/tutorials/images/GoogleLoginScreen_v9.png" alt=""><figcaption></figcaption></figure>
 
 ## Related Links
 
