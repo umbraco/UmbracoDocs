@@ -22,24 +22,24 @@ The finished dashboard will give the editors an overview of which pages and medi
 
 Here's an overview of the steps that will be covered:
 
--   Setting up the dashboard plugin
--   Writing a basic Welcome Message view
--   Configure the Custom Welcome Dashboard to be displayed
--   Adding translations
--   Adding styles
--   Adding an AngularJS controller
--   Display the current user's name in our welcome message
--   Display the current user's recent updates
--   Create a shortcut button to add a new blog post
--   You can do anything...
+* Setting up the dashboard plugin
+* Writing a basic Welcome Message view
+* Configure the Custom Welcome Dashboard to be displayed
+* Adding translations
+* Adding styles
+* Adding an AngularJS controller
+* Display the current user's name in our welcome message
+* Display the current user's recent updates
+* Create a shortcut button to add a new blog post
+* You can do anything...
 
 ### Prerequisites
 
 This tutorial uses AngularJS with Umbraco, so it does not cover AngularJS itself, there are tons of resources on that already here:
 
--   [Egghead.io](https://egghead.io/courses/angularjs-fundamentals)
--   [AngularJS.org/tutorial](https://docs.angularjs.org/tutorial)
--   [Pluralsight](https://www.pluralsight.com/paths/angular-js)
+* [Egghead.io](https://egghead.io/courses/angularjs-fundamentals)
+* [AngularJS.org/tutorial](https://docs.angularjs.org/tutorial)
+* [Pluralsight](https://www.pluralsight.com/paths/angular-js)
 
 There are a lot of parallels with Creating a Property Editor. The tutorial '[Creating a Property Editor Tutorial](creating-a-property-editor/)' is worth a read too.
 
@@ -49,7 +49,7 @@ At the end of this guide, we should have a friendly welcoming dashboard displayi
 
 ## Setting up a plugin
 
-The first thing we must do is create a new folder inside our site's '/App_Plugins' folder. We will call it 'CustomWelcomeDashboard'
+The first thing we must do is create a new folder inside our site's '/App\_Plugins' folder. We will call it 'CustomWelcomeDashboard'
 
 ## Creating the dashboard view
 
@@ -58,7 +58,6 @@ Next, we will create an HTML file inside this folder called `WelcomeDashboard.ht
 Add the following HTML to the `WelcomeDashboard.html`.
 
 {% code title="WelcomeDashboard.html" lineNumbers="true" %}
-
 ```html
 <div class="welcome-dashboard">
     <h1>Welcome to Umbraco</h1>
@@ -71,7 +70,6 @@ Add the following HTML to the `WelcomeDashboard.html`.
     <p>You can put anything here...</p>
 </div>
 ```
-
 {% endcode %}
 
 ## Configuring the dashboard to appear
@@ -79,7 +77,6 @@ Add the following HTML to the `WelcomeDashboard.html`.
 Similar to a property editor you will now register the dashboard in a `package.manifest` file. Add a new file inside the `~/App_Plugins/CustomWelcomeDashboard` folder called `package.manifest`:
 
 {% code title="package.manifest" lineNumbers="true" %}
-
 ```json
 {
     "dashboards": [
@@ -93,7 +90,6 @@ Similar to a property editor you will now register the dashboard in a `package.m
     ]
 }
 ```
-
 {% endcode %}
 
 The above configuration is effectively saying:
@@ -424,7 +420,7 @@ Finally update our view to use the additional retrieved entity information:
 
 and we should have a list of recently saved content and media:
 
-![We know what you edited last week...](../../../10/umbraco-cms/tutorials/images/WeKnowWhatYouEditedLastWeek-v10.png)
+![We know what you edited last week...](../../10/umbraco-cms/tutorials/images/WeKnowWhatYouEditedLastWeek-v10.png)
 
 {% hint style="info" %}
 The URL `/umbraco/#/content/content/edit/1234` is the path to open up a particular entity (with id 1234) ready for editing.
@@ -611,7 +607,7 @@ As he Umbraco UI Library is available in the backoffice we can start using the c
 
 Since we are showing our editors their recently edited content nodes on this dashboard, it makes sense to use the [Content Node Card](https://uui.umbraco.com/?path=/docs/uui-card-content-node--aaa-overview):
 
-![Content Node Card](images/uiLibraryCard.png)
+![Content Node Card](../.gitbook/assets/uiLibraryCard.png)
 
 First, we need to wrap our unordered list and its content in the `<uui-card-content-node>` so it will look like this:
 
@@ -807,7 +803,7 @@ uui-card-content-node {
 
 Once it has been added, we are done and it should look something like this:
 
-![Custom Dashboard extended with UI Library Card](images/extendedWithUiLibrary.png)
+![Custom Dashboard extended with UI Library Card](../.gitbook/assets/extendedWithUiLibrary.png)
 
 **Custom External Data - creating your own angular resource**
 

@@ -8,6 +8,7 @@
 
 * [Extending the backoffice](getting-started/extending-the-backoffice.md)
 * [Prerequisites](getting-started/prerequisites.md)
+* [Alpha Release](getting-started/alpha-release.md)
 
 ## Extending
 
