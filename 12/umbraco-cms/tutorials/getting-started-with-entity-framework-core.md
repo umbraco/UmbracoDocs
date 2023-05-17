@@ -149,29 +149,23 @@ using Umbraco.Cms.Infrastructure.Migrations.Upgrade;
 
 namespace Umbraco.Demo;
 
-public class RunBlogCommentsMigration : INotificationHandler<UmbracoApplicationStartedNotification>
+public class RunBlogCommentsMigration : INotificationAsyncHandler<UmbracoApplicationStartedNotification>
 {
-    private readonly IEFCoreScopeProvider<BlogContext> _efCoreScopeProvider;
+    private readonly BlogContext _blogContext;
 
-    public RunBlogCommentsMigration(IEFCoreScopeProvider<BlogContext> efCoreScopeProvider)
+    public RunBlogCommentsMigration(BlogContext blogContext)
     {
-        _efCoreScopeProvider = efCoreScopeProvider;
+        _blogContext = blogContext;
     }
 
-    public void Handle(UmbracoApplicationStartedNotification notification)
+    public async Task HandleAsync(UmbracoApplicationStartedNotification notification, CancellationToken cancellationToken)
     {
-        using IEfCoreScope<BlogContext> scope = _efCoreScopeProvider.CreateScope();
-        await scope.ExecuteWithContextAsync<Task>(async db =>
+        IEnumerable<string> pendingMigrations = await _blogContext.Database.GetPendingMigrationsAsync();
+
+        if (pendingMigrations.Any())
         {
-            IEnumerable<string> pendingMigrations = await db.Database.GetPendingMigrationsAsync();
-
-            if (pendingMigrations.Any())
-            {
-                await db.Database.MigrateAsync();
-            }
-
-            scope.Complete();
-        });
+            await _blogContext.Database.MigrateAsync();
+        }
     }
 }
 ```
