@@ -6,20 +6,18 @@ description: Information on good practices and common defaults for Umbraco packa
 
 This document provides guides and notes on package development. It includes good practice guidelines that will help you maintain and support your package through multiple releases and versions of Umbraco. These good practices are not prescriptive, but offer a guide as to what often works well, and not-so-well, when developing packages for Umbraco.
 
-## App Plugins
+## Backoffice assets (JS/CSS/HTML)
 
 To extend the Umbraco backoffice, a package can provide files such as a `package.manifest` and AngularJS views/controllers that should be stored within the `App_Plugins` folder. It's recommended to put all files in a subfolder with a unique name, preferably using the package name, like `App_Plugins\MyPackage`.
 
-Files in the `App_Plugins` folder will be publicly available on the website even though they are not in the root folder. You should not store sensitive information in the `App_Plugins` folder.
+Files in the `App_Plugins` folder will be publicly available on the website even though they are not in the `wwwroot` folder. You should not store sensitive information in the `App_Plugins` folder.
 
 Files in the `App_Plugins` folder should be considered immutable. This means that they are not something a user of your package is expected to change on their site.
 
 The default delivery method for files to the `App_Plugins` folder is via a `.targets` file within a package. This means when a website is built, the files in this folder are copied over from the NuGet cache. When this happens, any changes a user might have made to these files will be lost. Equally, if the user performs a `dotnet clean` on a solution, all files in the `App_Plugins` folder will be deleted.
 
-If you have files that you expect users of your package to alter you should not place them in the `App_Plugins` folder.
-
 {% hint style="info" %}
-The `App_Plugins` folder does not exist on a fresh installation of Umbraco. You need to create it manually before you save your license file to this folder.
+If you have files that you expect users of your package to alter you should not place them in the `App_Plugins` folder.
 {% endhint %}
 
 ## Views
@@ -44,7 +42,7 @@ The `/umbraco/Licenses` folder does not exist on a fresh installation of Umbraco
 
 ## Operating system considerations
 
-Umbraco (version 9 and up) is an ASP.NET Core application and can be run on multiple operating systems incl. Windows, Linux, and macOS. When developing packages there are a few things you should be aware of for your package to run on all possible operating systems.
+Umbraco (version 9 and up) is an ASP.NET Core application and can be run on multiple operating systems (Windows, Linux and macOS). When developing packages there are a few things you should be aware of for your package to run on all possible operating systems.
 
 ### Case sensitivity
 
@@ -53,7 +51,7 @@ The Linux and macOS file systems are case-sensitive by default. This means that 
 A good way to ensure consistency is to use constants in your code to define file or folder locations.
 
 {% hint style="info" %}
-You can adjust the case sensitivity of a Windows folder by running a command against the folder.
+You can adjust the case sensitivity of a Windows folder by running a command against a newly created/empty folder:
 
 ```bash
 fsutil.exe file queryCaseSensitiveInfo <path>
@@ -63,20 +61,20 @@ fsutil.exe file queryCaseSensitiveInfo <path>
 
 #### Case sensitivity in default files and folders
 
-Some folders within Umbraco will already exist for all installations. If you access these folders you need to be aware of the case used to ensure you end up in the correct place:
+Some folders within Umbraco will already exist for all installations. If you access these folders, you need to be aware of the case used to ensure you end up in the correct place:
 
 | Folder | Note |
 |-|-|
 | /App_Plugins | Uppercase `A` and `P` |
-| /App_Plugins/[Ll]ang | Uppercase `L` but in later version of Umbraco 9.3+ can be upper or lowercase `L` |
+| /App_Plugins/[Ll]ang | Uppercase `L` (in Umbraco 9.3 and higher can be either uppercase `L` or lowercase `l` |
 | /Views | Uppercase `V` |
-| /umbraco/Licenses | Lowercase `u` uppercase `L` |
+| /umbraco/Licenses | Lowercase `u` and uppercase `L` |
 | /config | Lowercase `c` |
 
 {% hint style="info" %}
 If you create a custom section/tree, Umbraco will build paths based on the name of that section or tree. These folder paths will be case-sensitive.
 
-For example: if you have a custom tree with the `treeAlias` of `MyCustomTree` Umbraco will look for files in `App_Plugins\MyCustomTree\backoffice\MyCustomTree\`.
+For example: if you have a custom tree with the `treeAlias` of `MyCustomTree` Umbraco will look for files in `App_Plugins\MyPackage\backoffice\MyCustomTree\`.
 {% endhint %}
 
 ### File/folder locations
@@ -107,9 +105,9 @@ var webRootPath = hostEnvironment.MapPathWebRoot("~/");
 var absolutePath = hostEnvironment.ToAbsolute("~/");
 ```
 
-### Folder Access
+### Folder/file system access
 
-It is not recommended to assume things about the folder structure of a site or use direct IO commands to access the file system. Access to the disk within an ASP.NET Core site is usually managed with File Providers. You can access the file providers from the `IWebHostEnvironment` class.
+It is not recommended to assume things about the folder structure of a site or use direct I/O commands to access the file system. Access to the disk within an ASP.NET Core site is usually managed with File Providers. You can access the file providers from the `IWebHostEnvironment` class.
 
 Example: If you want to read `robots.txt` from the `wwwroot` folder, use `WebRootFileProvider` in a controller to get to the root of the site and read the file:
 
@@ -147,7 +145,7 @@ Building folder path strings manually can cause problems when swapping between f
 
 On Windows, a file might be located at `d:\website\robots.txt` while on Linux this might look like `/home/website/robots.txt` instead.
 
-You should use the .NET `Path` commands wherever possible when building paths to ensure that the correct path is built:
+You should use the .NET `Path` methods wherever possible when building paths to ensure that the correct path is built:
 
 ```csharp
 // WRONG: Don't build paths manually
@@ -181,7 +179,7 @@ Below you can find pros and cons for different places where you might save the s
 
 #### Save to the database
 
-Settings can be saved to the database. Settings can be stored in the database using the Umbraco `IKeyValueservice`, and for more complex settings you can use a custom database table.
+Settings can be saved to the database. Settings can be stored in the database using the Umbraco `IKeyValueService`, and for more complex settings you can use a custom database table.
 
 - Pros:
   - Settings will be accessible directly from the database, and not dependent on deployed files on disk.
@@ -197,11 +195,11 @@ You can choose to save the settings to disk. As an example, the settings can be 
   - Settings will be accessible to the site and can be included in deployments between sites.
 - Cons:
   - You cannot guarantee that the folder or files will be present on a site or that they will be writable.
-  - Using your own config means your users cannot harness the power of the .NET Core options system and move settings to the environment or key stores. This means that sensitive information may end up on disk.
+  - Using your own config means your users cannot harness the power of the .NET Core configuration system and move settings to environment variables or other key/value stores. This means that sensitive information may end up on disk.
 
 #### Provide the users with appsettings.json snippets
 
-You could choose to provide your users with a snippet they can copy into their appsettings.json file. This will ensure that the settings are stored in the correct location.
+You could choose to provide your users with a snippet they can copy into their `appsettings.json` file. This will ensure that the settings are stored in the correct location.
 
-- Pro: Allows your users to fully control how and where the settings are stored (eg. secure key vaults).
+- Pro: Allows your users to fully control how and where the settings are stored (eg. secure key/value stores).
 - Con: Requires the user to edit files on disk to get the settings in place.
