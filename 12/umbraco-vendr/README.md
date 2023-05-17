@@ -9,20 +9,22 @@ layout: landing
 
 Before you can start using this document you need to choose either the core Vendr product, one of the packages, or payment providers.
 
-<table data-view="cards"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><strong>Umbraco Vendr</strong></td><td>This is the core product which is a dependency for all the available add-ons. Find guides on getting started and for how to extend and customize the implementation.</td></tr><tr><td><strong>Umbraco Vendr Packages</strong></td><td>There are a few add-ons available to extend the Umbraco Vendr application. Learn more about each of them and how they can be used in your implementation.</td></tr><tr><td><strong>Umbraco Vendr Payment Providers</strong></td><td>A collection of payment provider integrations are available to extend the Umbraco Vendr core implementation. Learn more about each of them and how to configure them for your implementation.</td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><strong>Umbraco Vendr</strong></td><td>This is the core product which is a dependency for all the available add-ons. Find guides on getting started and for how to extend and customize the implementation.</td></tr><tr><td><strong>Packages</strong></td><td>There are a few add-ons available to extend the Umbraco Vendr application. Learn more about each of them and how they can be used in your implementation.</td></tr><tr><td><strong>Payment Providers</strong></td><td>A collection of payment provider integrations are available to extend the Umbraco Vendr core implementation. Learn more about each of them and how to configure them for your implementation.</td></tr></tbody></table>
 
 ## Quick links
 
-GETTING STARTED
+{% content-ref url="http://localhost:5000/s/s0xvC9Moj5Pqo3KonmTs/getting-started" %}
+[Getting Started](http://localhost:5000/s/s0xvC9Moj5Pqo3KonmTs/getting-started)
+{% endcontent-ref %}
 
-Install Vendr
+{% content-ref url="http://localhost:5000/s/s0xvC9Moj5Pqo3KonmTs/getting-started/installation" %}
+[Installation](http://localhost:5000/s/s0xvC9Moj5Pqo3KonmTs/getting-started/installation)
+{% endcontent-ref %}
 
-Upgrade (?)
+{% content-ref url="http://localhost:5000/s/s0xvC9Moj5Pqo3KonmTs/key-concepts" %}
+[Key Concepts](http://localhost:5000/s/s0xvC9Moj5Pqo3KonmTs/key-concepts)
+{% endcontent-ref %}
 
-Key Koncepts
-
-Install a payment provider
-
-## About Vendr
-
-Vendr is the eCommerce solution for Umbraco created by Outfield Digital, the team behind Tea Commerce for Umbraco v7. Vendr is the successor to Tea Commerce and follows much of the same principles but has been vastly improved for use on Umbraco v8+.
+{% content-ref url="http://localhost:5000/s/rUyw389L2IM1K1Sv4UmH/install-payment-providers" %}
+[Install payment providers](http://localhost:5000/s/rUyw389L2IM1K1Sv4UmH/install-payment-providers)
+{% endcontent-ref %}
