@@ -9,6 +9,8 @@ This is the Work in Progress (WIP) documentation for Umbraco 12. We will publish
 
 Do you want to help us update the documentation? Head on over to the [Contribute](https://docs.umbraco.com/welcome/contribute) section to learn how to get started.
 
+The **official release notes** can be found on [Our.umbraco.com](https://our.umbraco.com/download/releases/1200).
+
 Umbraco 12 is set to release on June 29th, 2023.
 {% endhint %}
 
@@ -22,8 +24,8 @@ Learn much more about Umbraco CMS and get an overview of the top features on [Um
 [test-the-release-candidate.md](test-the-release-candidate.md)
 {% endcontent-ref %}
 
-{% content-ref url="content-delivery-api.md" %}
-[content-delivery-api.md](content-delivery-api.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 {% content-ref url="tutorials/getting-started-with-entity-framework-core.md" %}

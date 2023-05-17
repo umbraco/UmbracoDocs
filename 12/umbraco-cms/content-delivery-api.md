@@ -411,15 +411,15 @@ Returns single or multiple items.
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="fetch" type="String" required="false" %}
-Structural query string option (e.g. 
+Structural query string option (e.g.
 
 `ancestors`
 
-, 
+,
 
 `children`
 
-, 
+,
 
 `descendants`
 
@@ -427,11 +427,11 @@ Structural query string option (e.g.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="filter" type="String Array" required="false" %}
-Filtering query string options (e.g. 
+Filtering query string options (e.g.
 
 `contentType`
 
-, 
+,
 
 `name`
 
@@ -439,23 +439,23 @@ Filtering query string options (e.g.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="sort" type="String Array" required="false" %}
-Sorting query string options (e.g. 
+Sorting query string options (e.g.
 
 `createDate`
 
-, 
+,
 
 `level`
 
-, 
+,
 
 `name`
 
-, 
+,
 
 `sortOrder`
 
-, 
+,
 
 `updateDate`
 
@@ -606,4 +606,42 @@ The Content Delivery API provides a powerful and flexible way to retrieve conten
 
 In this section, we will discuss some of the known limitations of the API, and how to work around them if necessary.
 
-_TBD_
+### Member authentication
+
+Currently, the Delivery API does not support authentication for members, which means that protected content cannot be accessed through any of our endpoints. This protection is typically implemented by setting public access restrictions on specific content nodes for certain members or member groups. To ensure those items remain protected, we filter out such content completely, at the moment.&#x20;
+
+As a result of this approach, lifting protection from a content item requires an additional step to ensure it becomes accessible through the Delivery API. The recommended way is to publish the content item again. Alternatively, you can manually rebuild the **DeliveryApiContentIndex** to reflect the changes.
+
+We are looking into adding support for member authentication.
+
+### Preview functionality
+
+There is no built-in functionality for editors to preview content in the Umbraco Backoffice using the Delivery API. However, this is something high on our list for potential future improvements.
+
+Content that is exclusively in a draft state is not available via the Delivery API's multi-items endpoint. However, once the content node is published, it will be available for retrieval, whether it is in a draft or published state. We will evaluate our options to improve this workflow.
+
+### Swagger
+
+There is a Swagger document available for the Umbraco Delivery API at `{your-Domain}/umbraco/swagger`. However, it does not offer complete documentation support for all APIs. This will be subject to change.
+
+### Property editors
+
+There are certain limitations associated with some of the built-in property editors in Umbraco. Let's go through these below:
+
+#### Grid Layout (legacy)
+
+The Legacy Grid in Umbraco is supported to a certain extent. However, it is important to note that it may not be suitable for headless content scenarios. Instead, we recommend using the Block Grid property editor.
+
+#### Rich Text Editor
+
+The Delivery API is not going to support the rendering of Macros within the Rich Text Editor. Therefore, any Macros included in the content will not be executed or output when retrieving content through the API.
+
+When outputting the Rich Text Editor content as HTML (_the default format_), it is important to be aware that internal links may be insufficient in a multi-site setup. There is a possibility that this limitation may be addressed in future updates. However, consider the alternative approach to rendering the RTE content as JSON.
+
+#### Member Picker
+
+The Member Picker property editor is not supported in the Delivery API to avoid the risk of leaking member data.
+
+#### Multinode Treepicker
+
+The Multinode Treepicker property editor, when configured for members, is also unsupported in the Delivery API. This is due to the same concern of potentially leaking member data.
