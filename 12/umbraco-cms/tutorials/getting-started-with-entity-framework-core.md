@@ -182,7 +182,7 @@ namespace Umbraco.Demo;
 
 public class BlogCommentsComposer : IComposer
 {
-    public void Compose(IUmbracoBuilder builder) => builder.AddNotificationHandler<UmbracoApplicationStartedNotification, RunBlogCommentsMigration>();
+    public void Compose(IUmbracoBuilder builder) => builder.AddNotificationAsyncHandler<UmbracoApplicationStartedNotification, RunBlogCommentsMigration>();
 }
 ```
 
