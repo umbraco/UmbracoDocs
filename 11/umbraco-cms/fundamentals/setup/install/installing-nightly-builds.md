@@ -66,7 +66,7 @@ Now the `NuGet` window will open, in the top right corner there is a dropdown `P
 
 ![Select the nightly NuGet feed](../../../../../10/umbraco-cms/fundamentals/setup/install/images/VS/select-nuget-feed.jpg)
 
-Now that the correct feed is selected we're almost ready to search for the package and choose a version, however since these are marked as prerelease, we have to tick the checkbox `Include prerelease` otherwise these will be filtered out. Next search for `Umbraco.Templates`, and choose that package. Now we can click on the `Version` drop down and see the available nightly builds for both V9 and V10. his is the _**template**_, not the Umbraco package itself, so it won't work to click install. Instead chose the applicable version and note down the version number
+Now that the correct feed is selected we're almost ready to search for the package and choose a version, however since these are marked as prerelease, we have to tick the checkbox `Include prerelease` otherwise these will be filtered out. Next search for `Umbraco.Templates`, and choose that package. Now we can click on the `Version` drop down and see the available nightly builds for both V9 and V10. This is the _**template**_, not the Umbraco package itself, so it won't work to click install. Instead chose the applicable version and note down the version number
 
 ![Find the version](../../../../../10/umbraco-cms/fundamentals/setup/install/images/VS/find-the-version.jpg)
 
