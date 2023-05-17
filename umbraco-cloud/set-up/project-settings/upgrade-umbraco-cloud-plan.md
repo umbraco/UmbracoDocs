@@ -37,7 +37,11 @@ Follow the below steps to upgrade your plan:
 1. Click on the **Select plan** button to choose the plan you want to upgrade to.
 2.  _\[Optional]_ Choose to upgrade to a **dedicated option** in the next step.&#x20;
 
+    <div align="left">
+
     <figure><img src="../images/dedicated-option.png" alt=""><figcaption><p>Dedicated option on Cloud</p></figcaption></figure>
+
+    </div>
 3.  Review the **Summary** to make sure that everything selected is correct in the last step.&#x20;
 
     <figure><img src="../images/upgrade-summary.png" alt=""><figcaption><p>Summary of project upgrade.</p></figcaption></figure>
