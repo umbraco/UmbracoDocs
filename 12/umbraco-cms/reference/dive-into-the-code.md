@@ -10,6 +10,6 @@ The developers' Reference section primarily consists of API references of the di
 
 The section also includes documentation about the different configuration options, security, advanced templating, and searching.
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="content-delivery-api.md" %}
+[content-delivery-api.md](content-delivery-api.md)
 {% endcontent-ref %}
