@@ -9,6 +9,8 @@ Umbraco CMS is a flexible and editor-friendly Content Management System (CMS) th
 {% hint style="info" %}
 A Release Candidate (RC) for the next upcoming major version of Umbraco CMS is now available for testing.
 
+Learn more about the release in [the official RC blog post](https://umbraco.com/blog/umbraco-12-release-candidate/).
+
 We will be documenting the release over the coming weeks. You can follow along on the [Umbraco 12 RC documentation site](http://localhost:5000/o/vHdmkfI8smZW50A5yIZD/s/8h0xdoteqcFVV1pGZgk0/) (or use the version drop-down at the top of this site, the change the version).
 {% endhint %}
 
