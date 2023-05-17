@@ -81,7 +81,7 @@ public class BlogContext : DbContext
             entity.ToTable("blogComment");
             entity.HasKey(e => e.Id);
             entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.BlogPostUmbracoId).HasColumnName("blogPostUmbracoKey");
+            entity.Property(e => e.BlogPostUmbracoKey).HasColumnName("blogPostUmbracoKey");
             entity.Property(e => e.Message).HasColumnName("message");
             entity.Property(e => e.Website).HasColumnName("website");
             entity.Property(e => e.Email).HasColumnName("email");
@@ -182,7 +182,7 @@ namespace Umbraco.Demo;
 
 public class BlogCommentsComposer : IComposer
 {
-    public void Compose(IUmbracoBuilder builder) => builder.AddNotificationHandler<UmbracoApplicationStartedNotification, RunBlogCommentsMigration>();
+    public void Compose(IUmbracoBuilder builder) => builder.AddNotificationAsyncHandler<UmbracoApplicationStartedNotification, RunBlogCommentsMigration>();
 }
 ```
 
