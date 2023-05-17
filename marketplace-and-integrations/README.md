@@ -10,7 +10,7 @@ Within this Umbraco DXP (Digital Experience Platform) area of the Umbraco docume
 
 Umbraco is used in solutions in both a "platform" and "composable" DXP context. With the former, Umbraco has responsibility for both content management and delivery, with extensions added as NuGet packages. In a composable DXP, Umbraco is often part of an overall architecture, focussed on management of content exposed via APIs for delivery. In both situations, backoffice integrations are an important part of providing an intuitive, unified editor experience.
 
-Our aim is to enhance the "platform DXP", support the CMS in a "composable DXP", and make it simpler to integrate with third-party services in solutions built with Umbraco.
+Our aim is to enhance the "platform DXP", support the CMS in a "composable DXP", and make it simpler to build integrations with Umbraco.
 
 ## Umbraco Commercial Products
 
