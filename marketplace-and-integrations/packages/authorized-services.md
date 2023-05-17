@@ -149,7 +149,7 @@ An enum value that defines the JSON serializer to use when creating requests and
 
 ###### AuthorizationRequestRequiresAuthorizationHeaderWithBasicToken
 
-This flag indicates whether the basic token should be included in the request for access token. If true, a base64 encoding of <clientId>:<clientSecret> will be added to 
+This flag indicates whether the basic token should be included in the request for access token. If true, a base64 encoding of <clientId>:<clientSecret> will be added to
 the authorization header.
 
 ###### ClientId *
@@ -251,6 +251,27 @@ The following service providers have been tested against the package implementat
 
 As integrations with more providers are successfully completed, we plan to maintain the details for each here. Pull requests updating this list with verified integrations are welcome.
 
+### Amazon
+
+```json
+{
+  "Alias": "amazon",
+  "DisplayName": "Amazon",
+  "ApiHost": "https://api.amazon.com",
+  "IdentityHost": "https://www.amazon.com",
+  "TokenHost": "https://api.amazon.com",
+  "RequestIdentityPath": "/ap/oa",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "UseProofKeyForCodeExchange": true,
+  "RequestTokenPath": "/auth/o2/token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "profile",
+  "SampleRequest": "/user/profile"
+}
+```
+
 ### Aprimo
 
 ```json
@@ -270,6 +291,109 @@ As integrations with more providers are successfully completed, we plan to maint
   "Scopes": "api offline_access",
   "SampleRequest": ""
 },
+```
+
+### Atlasian
+
+```json
+{
+  "Alias": "atlasian",
+  "DisplayName": "Atlasian",
+  "ApiHost": "https://api.atlassian.com",
+  "IdentityHost": "https://auth.atlassian.com",
+  "TokenHost": "https://auth.atlassian.com",
+  "RequestIdentityPath": "/authorize",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "UseProofKeyForCodeExchange": true,
+  "RequestTokenPath": "/oauth/token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "read:jira-user read:jira-work",
+  "SampleRequest": "/oauth/token/accessible-resources"
+}
+```
+
+### Bitbucket
+
+```json
+{
+  "Alias": "bitbucket",
+  "DisplayName": "Bitbucket",
+  "ApiHost": "https://api.bitbucket.org",
+  "IdentityHost": "https://bitbucket.org",
+  "TokenHost": "https://bitbucket.org",
+  "RequestIdentityPath": "/site/oauth2/authorize",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "RequestTokenPath": "/site/oauth2/access_token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "",
+  "SampleRequest": "/user/profile"
+}
+```
+### Calendly
+
+```json
+{
+  "Alias": "calendly",
+  "DisplayName": "Calendly",
+  "ApiHost": "https://api.calendly.com",
+  "IdentityHost": "https://auth.calendly.com",
+  "TokenHost": "https://auth.calendly.com",
+  "RequestIdentityPath": "/oauth/authorize",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "RequestTokenPath": "/oauth/token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "",
+  "SampleRequest": "/users/me"
+}
+```
+
+### Discord
+
+```json
+{
+  "Alias": "discord",
+  "DisplayName": "Discord",
+  "ApiHost": "https://discord.com",
+  "IdentityHost": "https://discord.com",
+  "TokenHost": "https://discord.com",
+  "RequestIdentityPath": "/oauth2/authorize",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "UseProofKeyForCodeExchange": false,
+  "RequestTokenPath": "/api/oauth2/token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "JsonSerializer": "SystemTextJson",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "email",
+  "SampleRequest": "/users/@me"
+}
+```
+
+### Dropbox
+
+```json
+{
+  "Alias": "dropbox",
+  "DisplayName": "Dropbox",
+  "ApiHost": "https://api.dropboxapi.com",
+  "IdentityHost": "https://www.dropbox.com",
+  "TokenHost": "https://www.dropbox.com",
+  "RequestIdentityPath": "/oauth2/authorize",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "UseProofKeyForCodeExchange": true,
+  "RequestTokenPath": "/oauth2/token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "profile openid email account_info.read files.content.read files.metadata.read",
+  "SampleRequest": ""
+}
 ```
 
 ### Facebook
@@ -292,6 +416,48 @@ As integrations with more providers are successfully completed, we plan to maint
 }
 ```
 
+### Figma
+
+```json
+{
+  "Alias": "figma",
+  "DisplayName": "Figma",
+  "ApiHost": "https://api.figma.com",
+  "IdentityHost": "https://www.figma.com",
+  "TokenHost": "https://www.figma.com",
+  "RequestIdentityPath": "/oauth",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "RequestTokenPath": "/api/oauth/token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "file_read",
+  "SampleRequest": "/v1/me"
+}
+```
+
+### Fitbit
+
+```json
+{
+  "Alias": "fitbit",
+  "DisplayName": "Fitbit",
+  "ApiHost": "https://api.fitbit.com",
+  "IdentityHost": "https://www.fitbit.com",
+  "TokenHost": "https://api.fitbit.com",
+  "RequestIdentityPath": "/oauth2/authorize",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "UseProofKeyForCodeExchange": true,
+  "RequestTokenPath": "/oauth2/token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "AuthorizationRequestRequiresAuthorizationHeaderWithBasicToken": true,
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "profile",
+  "SampleRequest": "/1/user/-/profile.json"
+}
+```
+
 ### GitHub
 
 ```json
@@ -309,6 +475,27 @@ As integrations with more providers are successfully completed, we plan to maint
   "Scopes": "repo",
   "SampleRequest": "/repos/Umbraco/Umbraco-CMS/contributors"
 },
+```
+
+### Gitlab
+
+```json
+{
+  "Alias": "gitlab",
+  "DisplayName": "Gitlab",
+  "ApiHost": "https://gitlab.com",
+  "IdentityHost": "https://gitlab.com",
+  "TokenHost": "https://gitlab.com",
+  "RequestIdentityPath": "/oauth/authorize",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "UseProofKeyForCodeExchange": true,
+  "RequestTokenPath": "/oauth/token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "api read_api read_user",
+  "SampleRequest": "/api/v4/projects"
+}
 ```
 
 ### Google Search Console
@@ -372,6 +559,28 @@ As integrations with more providers are successfully completed, we plan to maint
 },
 ```
 
+### Mailchimp
+
+```json
+{
+  "Alias": "mailchimp",
+  "DisplayName": "Mailchimp",
+  "ApiHost": "https://login.mailchimp.com",
+  "IdentityHost": "https://login.mailchimp.com",
+  "TokenHost": "https://login.mailchimp.com",
+  "RequestIdentityPath": "/oauth2/authorize",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "UseProofKeyForCodeExchange": false,
+  "RequestTokenPath": "/oauth2/token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "JsonSerializer": "SystemTextJson",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "",
+  "SampleRequest": "/oauth2/metadata"
+}
+```
+
 ### Microsoft Dynamics
 
 ```json
@@ -390,6 +599,27 @@ As integrations with more providers are successfully completed, we plan to maint
   "Scopes": "https://[instance].crm4.dynamics.com/.default",
   "SampleRequest": "/msdyncrm_marketingforms"
 },
+```
+
+
+### Miro
+
+```json
+{
+  "Alias": "miro",
+  "DisplayName": "Miro",
+  "ApiHost": "https://api.miro.com",
+  "IdentityHost": "https://miro.com",
+  "TokenHost": "https://api.miro.com",
+  "RequestIdentityPath": "/oauth/authorize",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "RequestTokenPath": "/v1/oauth/token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "boards:read",
+  "SampleRequest": "/v2/boards?sort=default"
+}
 ```
 
 ### Semrush
@@ -430,6 +660,48 @@ As integrations with more providers are successfully completed, we plan to maint
   "Scopes": "read_products",
   "SampleRequest": "/admin/api/2022-01/products.json"
 },
+```
+
+### Slack
+
+```json
+{
+  "Alias": "slack",
+  "DisplayName": "Slack",
+  "ApiHost": "https://slack.com",
+  "IdentityHost": "https://slack.com",
+  "TokenHost": "https://slack.com",
+  "RequestIdentityPath": "/oauth/v2/authorize",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "UseProofKeyForCodeExchange": false,
+  "RequestTokenPath": "/api/oauth.v2.access",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "JsonSerializer": "SystemTextJson",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "users:read.email users:read channels:read groups:read mpim:read im:read",
+  "SampleRequest": "/api/conversations.list?limit=50"
+}
+```
+
+### Timely
+
+```json
+{
+  "Alias": "timely",
+  "DisplayName": "Timely",
+  "ApiHost": "https://api.timelyapp.com/1.1",
+  "IdentityHost": "https://api.timelyapp.com/1.1",
+  "TokenHost": "https://api.timelyapp.com/1.1",
+  "RequestIdentityPath": "/oauth/authorize",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "RequestTokenPath": "/oauth/token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "",
+  "SampleRequest": "/1.1/accounts"
+}
 ```
 
 ### Twitter
@@ -475,175 +747,6 @@ As integrations with more providers are successfully completed, we plan to maint
 }
 ```
 
-### Mailchimp
-
-```json
-{
-  "Alias": "mailchimp",
-  "DisplayName": "Mailchimp",
-  "ApiHost": "https://login.mailchimp.com",
-  "IdentityHost": "https://login.mailchimp.com",
-  "TokenHost": "https://login.mailchimp.com",
-  "RequestIdentityPath": "/oauth2/authorize",
-  "AuthorizationUrlRequiresRedirectUrl": true,
-  "UseProofKeyForCodeExchange": false,
-  "RequestTokenPath": "/oauth2/token",
-  "RequestTokenFormat": "FormUrlEncoded",
-  "JsonSerializer": "SystemTextJson",
-  "ClientId": "",
-  "ClientSecret": "",
-  "Scopes": "",
-  "SampleRequest": "/oauth2/metadata"
-}
-```
-
-### Discord
-
-```json
-{
-  "Alias": "discord",
-  "DisplayName": "Discord",
-  "ApiHost": "https://discord.com",
-  "IdentityHost": "https://discord.com",
-  "TokenHost": "https://discord.com",
-  "RequestIdentityPath": "/oauth2/authorize",
-  "AuthorizationUrlRequiresRedirectUrl": true,
-  "UseProofKeyForCodeExchange": false,
-  "RequestTokenPath": "/api/oauth2/token",
-  "RequestTokenFormat": "FormUrlEncoded",
-  "JsonSerializer": "SystemTextJson",
-  "ClientId": "",
-  "ClientSecret": "",
-  "Scopes": "email",
-  "SampleRequest": "/users/@me"
-}
-```
-
-### Slack
-
-```json
-{
-  "Alias": "slack",
-  "DisplayName": "Slack",
-  "ApiHost": "https://slack.com",
-  "IdentityHost": "https://slack.com",
-  "TokenHost": "https://slack.com",
-  "RequestIdentityPath": "/oauth/v2/authorize",
-  "AuthorizationUrlRequiresRedirectUrl": true,
-  "UseProofKeyForCodeExchange": false,
-  "RequestTokenPath": "/api/oauth.v2.access",
-  "RequestTokenFormat": "FormUrlEncoded",
-  "JsonSerializer": "SystemTextJson",
-  "ClientId": "",
-  "ClientSecret": "",
-  "Scopes": "users:read.email users:read channels:read groups:read mpim:read im:read",
-  "SampleRequest": "/api/conversations.list?limit=50"
-}
-```
-
-### Dropbox
-
-```json
-{
-  "Alias": "dropbox",
-  "DisplayName": "Dropbox",
-  "ApiHost": "https://api.dropboxapi.com",
-  "IdentityHost": "https://www.dropbox.com",
-  "TokenHost": "https://www.dropbox.com",
-  "RequestIdentityPath": "/oauth2/authorize",
-  "AuthorizationUrlRequiresRedirectUrl": true,
-  "UseProofKeyForCodeExchange": true,
-  "RequestTokenPath": "/oauth2/token",
-  "RequestTokenFormat": "FormUrlEncoded",
-  "ClientId": "",
-  "ClientSecret": "",
-  "Scopes": "profile openid email account_info.read files.content.read files.metadata.read",
-  "SampleRequest": ""
-}
-```
-
-### Fitbit
-
-```json
-{
-  "Alias": "fitbit",
-  "DisplayName": "Fitbit",
-  "ApiHost": "https://api.fitbit.com",
-  "IdentityHost": "https://www.fitbit.com",
-  "TokenHost": "https://api.fitbit.com",
-  "RequestIdentityPath": "/oauth2/authorize",
-  "AuthorizationUrlRequiresRedirectUrl": true,
-  "UseProofKeyForCodeExchange": true,
-  "RequestTokenPath": "/oauth2/token",
-  "RequestTokenFormat": "FormUrlEncoded",
-  "AuthorizationRequestRequiresAuthorizationHeaderWithBasicToken": true,
-  "ClientId": "",
-  "ClientSecret": "",
-  "Scopes": "profile",
-  "SampleRequest": "/1/user/-/profile.json"
-}
-```
-
-### Figma
-
-```json
-{
-  "Alias": "figma",
-  "DisplayName": "Figma",
-  "ApiHost": "https://api.figma.com",
-  "IdentityHost": "https://www.figma.com",
-  "TokenHost": "https://www.figma.com",
-  "RequestIdentityPath": "/oauth",
-  "AuthorizationUrlRequiresRedirectUrl": true,
-  "RequestTokenPath": "/api/oauth/token",
-  "RequestTokenFormat": "FormUrlEncoded",
-  "ClientId": "",
-  "ClientSecret": "",
-  "Scopes": "file_read",
-  "SampleRequest": "/v1/me"
-}
-```
-
-### Miro
-
-```json
-{
-  "Alias": "miro",
-  "DisplayName": "Miro",
-  "ApiHost": "https://api.miro.com",
-  "IdentityHost": "https://miro.com",
-  "TokenHost": "https://api.miro.com",
-  "RequestIdentityPath": "/oauth/authorize",
-  "AuthorizationUrlRequiresRedirectUrl": true,
-  "RequestTokenPath": "/v1/oauth/token",
-  "RequestTokenFormat": "FormUrlEncoded",
-  "ClientId": "",
-  "ClientSecret": "",
-  "Scopes": "boards:read",
-  "SampleRequest": "/v2/boards?sort=default"
-}
-```
-
-### Calendly
-
-```json
-{
-  "Alias": "calendly",
-  "DisplayName": "Calendly",
-  "ApiHost": "https://api.calendly.com",
-  "IdentityHost": "https://auth.calendly.com",
-  "TokenHost": "https://auth.calendly.com",
-  "RequestIdentityPath": "/oauth/authorize",
-  "AuthorizationUrlRequiresRedirectUrl": true,
-  "RequestTokenPath": "/oauth/token",
-  "RequestTokenFormat": "FormUrlEncoded",
-  "ClientId": "",
-  "ClientSecret": "",
-  "Scopes": "",
-  "SampleRequest": "/users/me"
-}
-```
-
 ### Zendesk
 
 ```json
@@ -661,109 +764,6 @@ As integrations with more providers are successfully completed, we plan to maint
   "ClientSecret": "",
   "Scopes": "read",
   "SampleRequest": "/v2/contacts"
-}
-```
-
-### Gitlab
-
-```json
-{
-  "Alias": "gitlab",
-  "DisplayName": "Gitlab",
-  "ApiHost": "https://gitlab.com",
-  "IdentityHost": "https://gitlab.com",
-  "TokenHost": "https://gitlab.com",
-  "RequestIdentityPath": "/oauth/authorize",
-  "AuthorizationUrlRequiresRedirectUrl": true,
-  "UseProofKeyForCodeExchange": true,
-  "RequestTokenPath": "/oauth/token",
-  "RequestTokenFormat": "FormUrlEncoded",
-  "ClientId": "",
-  "ClientSecret": "",
-  "Scopes": "api read_api read_user",
-  "SampleRequest": "/api/v4/projects"
-}
-```
-
-### Atlasian
-
-```json
-{
-  "Alias": "atlasian",
-  "DisplayName": "Atlasian",
-  "ApiHost": "https://api.atlassian.com",
-  "IdentityHost": "https://auth.atlassian.com",
-  "TokenHost": "https://auth.atlassian.com",
-  "RequestIdentityPath": "/authorize",
-  "AuthorizationUrlRequiresRedirectUrl": true,
-  "UseProofKeyForCodeExchange": true,
-  "RequestTokenPath": "/oauth/token",
-  "RequestTokenFormat": "FormUrlEncoded",
-  "ClientId": "",
-  "ClientSecret": "",
-  "Scopes": "read:jira-user read:jira-work",
-  "SampleRequest": "/oauth/token/accessible-resources"
-}
-```
-
-### Amazon
-
-```json
-{
-  "Alias": "amazon",
-  "DisplayName": "Amazon",
-  "ApiHost": "https://api.amazon.com",
-  "IdentityHost": "https://www.amazon.com",
-  "TokenHost": "https://api.amazon.com",
-  "RequestIdentityPath": "/ap/oa",
-  "AuthorizationUrlRequiresRedirectUrl": true,
-  "UseProofKeyForCodeExchange": true,
-  "RequestTokenPath": "/auth/o2/token",
-  "RequestTokenFormat": "FormUrlEncoded",
-  "ClientId": "",
-  "ClientSecret": "",
-  "Scopes": "profile",
-  "SampleRequest": "/user/profile"
-}
-```
-
-### Bitbucket
-
-```json
-{
-  "Alias": "bitbucket",
-  "DisplayName": "Bitbucket",
-  "ApiHost": "https://api.bitbucket.org",
-  "IdentityHost": "https://bitbucket.org",
-  "TokenHost": "https://bitbucket.org",
-  "RequestIdentityPath": "/site/oauth2/authorize",
-  "AuthorizationUrlRequiresRedirectUrl": true,
-  "RequestTokenPath": "/site/oauth2/access_token",
-  "RequestTokenFormat": "FormUrlEncoded",
-  "ClientId": "",
-  "ClientSecret": "",
-  "Scopes": "",
-  "SampleRequest": "/user/profile"
-}
-```
-
-### Timely
-
-```json
-{
-  "Alias": "timely",
-  "DisplayName": "Timely",
-  "ApiHost": "https://api.timelyapp.com/1.1",
-  "IdentityHost": "https://api.timelyapp.com/1.1",
-  "TokenHost": "https://api.timelyapp.com/1.1",
-  "RequestIdentityPath": "/oauth/authorize",
-  "AuthorizationUrlRequiresRedirectUrl": true,
-  "RequestTokenPath": "/oauth/token",
-  "RequestTokenFormat": "FormUrlEncoded",
-  "ClientId": "",
-  "ClientSecret": "",
-  "Scopes": "",
-  "SampleRequest": "/1.1/accounts"
 }
 ```
 
