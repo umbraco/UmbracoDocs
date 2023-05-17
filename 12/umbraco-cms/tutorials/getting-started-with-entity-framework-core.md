@@ -209,50 +209,51 @@ using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Persistence.EFCore.Scoping;
 using Umbraco.Cms.Web.Common.Controllers;
 
-namespace Umbraco.Demo
+namespace Umbraco.Demo;
+
+public class BlogCommentsController : UmbracoApiController
 {
-    public class BlogCommentsController : UmbracoApiController
+    private readonly IEFCoreScopeProvider<BlogContext> _efCoreScopeProvider;
+
+    public BlogCommentsController(IEFCoreScopeProvider<BlogContext> efCoreScopeProvider) 
+        => _efCoreScopeProvider = efCoreScopeProvider;
+
+    [HttpGet]
+    public async Task<IActionResult> All()
     {
-        private readonly IEFCoreScopeProvider<BlogContext> _efCoreScopeProvider;
+        using IEfCoreScope<BlogContext> scope = _efCoreScopeProvider.CreateScope();
+        IEnumerable<BlogComment> comments = await scope.ExecuteWithContextAsync(async db => db.BlogComments.ToArray());
+        scope.Complete();
+        return Ok(comments);
+    }
 
-        public BlogCommentsController(IEFCoreScopeProvider<BlogContext> efCoreScopeProvider) 
-            => _efCoreScopeProvider = efCoreScopeProvider;
-
-        [HttpGet]
-        public async Task<IActionResult> All()
+    [HttpGet]
+    public async Task<IActionResult> GetComments(Guid umbracoNodeKey)
+    {
+        using IEfCoreScope<BlogContext> scope = _efCoreScopeProvider.CreateScope();
+        IEnumerable<BlogComment> comments = await scope.ExecuteWithContextAsync(async db =>
         {
-            using IEfCoreScope<BlogContext> scope = _efCoreScopeProvider.CreateScope();
-            IEnumerable<BlogComment> comments = await scope.ExecuteWithContextAsync(async db => db.BlogComments.ToArray());
-            scope.Complete();
-            return Ok(comments);
-        }
+            return db.BlogComments.Where(x => x.BlockPostUmbracoKey == umbracoNodeKey).ToArray();
+        });
 
-        [HttpGet]
-        public async Task<IActionResult> GetComments(int umbracoNodeId)
+        scope.Complete();
+        return Ok(comments);
+    }
+
+    [HttpPost]
+    public async Task InsertComment(BlogComment comment)
+    {
+        using IEfCoreScope<BlogContext> scope = _efCoreScopeProvider.CreateScope();
+
+        await scope.ExecuteWithContextAsync<Task>(async db =>
         {
-            using IEfCoreScope<BlogContext> scope = _efCoreScopeProvider.CreateScope();
-            IEnumerable<BlogComment> comments = await scope.ExecuteWithContextAsync(async db =>
-            {
-                return db.BlogComments.Where(x => x.BlogPostUmbracoId == umbracoNodeId);
-            });
-            scope.Complete();
-            return Ok(comments);
-        }
+            db.BlogComments.Add(comment);
+            await db.SaveChangesAsync();
+        });
 
-        [HttpPost]
-        public async Task InsertComment(BlogComment comment)
-        {
-            using IEfCoreScope<BlogContext> scope = _efCoreScopeProvider.CreateScope();
-
-            await scope.ExecuteWithContextAsync<Task>(async db =>
-            {
-                db.BlogComments.Add(comment);
-                await db.SaveChangesAsync();
-            });
-
-            scope.Complete();
-        }
+        scope.Complete();
     }
 }
+
 
 ```
