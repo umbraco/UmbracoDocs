@@ -54,6 +54,7 @@ These updates are more minor.  We don't expect many projects to be affected by t
 
 #### Behavior
 
+* The default value for configuration of request IP tracking has been changed to `None` from `RemoteIpAddress`.
 * The session variable `ContourMemberKey` is no longer set.
 * Exception handling in the Forms API has been aligned with the CMS leading to subtle differences in the population of the `ProblemDetails` exposed.
 
