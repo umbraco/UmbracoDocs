@@ -25,7 +25,7 @@ You want to transfer the whole site. You start from the `Home` node and choose t
    * If you’re currently editing the Home page you could also use the Actions dropdown to find **Queue for transfer**.
 4. Choose if you want to include all pages under the chosen page or only transfer the chosen node.
    * If you wish to transfer all your content at once, _right-click_ the top of the Content tree where you will also find **Queue for transfer** - this will queue all your content for transfer.
-5. Select the language versions that you want to queue for transfer.
+5. Select the language versions that you want to queue for transfer. Only languages for which you have permission to access will be selectable.
 6.  Set the publish date and time if you want to change when the transferred content should be published.
 
     {% hint style="info" %}

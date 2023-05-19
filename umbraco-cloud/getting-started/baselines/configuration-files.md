@@ -72,7 +72,7 @@ Here is a few examples of what could be transformed in the child sites.
                 <rule xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" name="Redirects umbraco.io to actual domain" stopProcessing="true">
                     <match url=".*" />
                     <conditions>
-                        <add input="{HTTP_HOST}" pattern="^(.*)?.s1.umbraco.io$" />
+			<add input="{HTTP_HOST}" pattern="^(.*)?.euwest01.umbraco.io$" />
                         <add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
                         <add input="{REQUEST_URI}" negate="true" pattern="^/DependencyHandler.axd" />
                         <add input="{REQUEST_URI}" negate="true" pattern="^/App_Plugins" />
@@ -86,13 +86,12 @@ Here is a few examples of what could be transformed in the child sites.
 </configuration>
 ```
 
-The above could either be added to its config files or be split up into one config file per setting. Umbraco Cloud will run through all the config files for the project.
-i.e. in one file
+The above could either be added to its config files or be split up into one config file per setting. Umbraco Cloud will run through all the config files for the project. i.e. in one file
 
-- child.web.live.xdt.config
+* child.web.live.xdt.config
 
 or having multiple files
 
-- child-appsettings.web.live.xdt.config
-- child-iisrewrite.web.live.xdt.config
-- child-smtpsettings.web.live.xdt.config
+* child-appsettings.web.live.xdt.config
+* child-iisrewrite.web.live.xdt.config
+* child-smtpsettings.web.live.xdt.config

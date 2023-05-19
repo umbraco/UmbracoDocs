@@ -16,7 +16,7 @@ Ensure to first read and follow the setup guides for either new or existing proj
 
 Here we will cover how to install and set up Umbraco Deploy on a new website.
 
-#### Requirement
+**Requirement**
 
 * Visual Studio 2017 v15.9.6 or later
 * Umbraco Deploy license
@@ -45,7 +45,7 @@ Here we will cover the steps in order for you to install Umbraco deploy on your 
 
 We will cover how to install and set up Umbraco deploy on your website and how to generate the UDA files based on your production website's database.
 
-#### Requirement
+**Requirement**
 
 * Visual Studio 2017 v15.9.6 or later
 * Umbraco Deploy license
@@ -187,7 +187,7 @@ Once the configuration has been set up with the correct information we can now g
 
 This can be done by going to the `/umbraco/Deploy/Revision` folder of the project and create a test `.uda` file, and then check in either your Git GUI or in the command line and verify whether the test file is being tracked.
 
-![Test UDA file](<images/test-UDA (1).png>)
+![Test UDA file](<../../../11/umbraco-deploy/getting-started/images/test-UDA (1) (1) (1).png>)
 
 We can see that the file has been created and it is being tracked by Git and we can go ahead and delete the test file.
 

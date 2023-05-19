@@ -306,7 +306,7 @@ To associate the hosted JSON schema file to all package.manifest files you will 
 To associate the hosted JSON schema file to all package.manifest files you will need to perform the following inside of Visual Studio Code editor.
 
 * File -> Preferences -> Settings. The **Settings** window opens.
-* In the **User** or **Workspace** tab, go to **Extensions** -> **JSON** -> **Schemas**. ![JSON Schemas](../../../../10/umbraco-cms/extending/property-editors/images/JSON-schema.png)
+* In the **User** or **Workspace** tab, go to **Extensions** -> **JSON** -> **Schemas**. ![JSON Schemas](images/JSON-schema.png)
 * Select **Edit in settings.json** from the **Schemas** section.
 *   Add the following snippet in the `settings.json` file:
 

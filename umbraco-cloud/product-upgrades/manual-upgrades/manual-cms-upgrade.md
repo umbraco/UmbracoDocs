@@ -6,6 +6,10 @@ description: >-
 
 # Manual upgrade of Umbraco CMS
 
+Projects on Cloud will either be automatically upgraded with patch releases or it can be done through the portal when new minors are available.
+
+In rare cases, your project might not be on the latest patch or minor and you will need to upgrade the project manually.
+
 This article will give you a step-by-step on how to manually upgrade your Umbraco Cloud project.
 
 ## Prepare for the upgrade
@@ -32,7 +36,7 @@ After you have added a package reference to your project by executing the `dotne
 
 Alternatively, you can update the CMS through the `NuGet Package Manager` in Visual studio:
 
-![NuGet Package Manager](../../../10/umbraco-forms/installation/images/Manage\_packages.png)
+![NuGet Package Manager](../../../12/umbraco-forms/installation/images/Manage\_packages.png)
 
 When the command completes, open the `.csproj` file to make sure the package reference was updated:
 

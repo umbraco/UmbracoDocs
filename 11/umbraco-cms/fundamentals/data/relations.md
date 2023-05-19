@@ -6,7 +6,7 @@ description: What are relations, how to create and manage them
 
 Umbraco sections are built around the concept of 'trees' and there is an implicit relationship between items in a section tree.
 
-![Parent, Siblings & Children](../../../../10/umbraco-cms/fundamentals/data/images/parent-siblings-children.png)
+![Parent, Siblings & Children](images/parent-siblings-children.png)
 
 We refer to these relationships in the manner of a 'Family Tree' - eg, One content item might be the 'Parent' of some content items, and those content items would be referred to as the 'Children' of that parent. Items within the same branch of the tree can also be described as 'Ancestors' or 'Descendants' of an item, depending if they are above or below them in the depth of the tree.
 
@@ -36,15 +36,15 @@ To create and use Relations in your Umbraco Website, you need to define a 'Relat
 
 Navigate to the **Settings** section in the Umbraco backoffice and you'll find the **Relation Types** folder in the Settings tree.
 
-![Relation Types Tree](../../../../10/umbraco-cms/fundamentals/data/images/relation-types-tree.png)
+![Relation Types Tree](images/relation-types-tree.png)
 
 If you expand the Relation Type tree, you can see that Umbraco 'ships' with some default Relation Types. These are used by the Umbraco backoffice to help deliver some key backoffice functionality:
 
-![Default Relation Types](../../../../10/umbraco-cms/fundamentals/data/images/default-relation-types.png)
+![Default Relation Types](images/default-relation-types.png)
 
 For example, there is a Relation Type that tracks when Media is picked in Content to be able to provide the functionality of warning an editor if they try to delete a Media Item that it is 'in use'. There is a Relation Type, to help 'restore' deleted content back to the place it was deleted from in the Recycle Bin.
 
-![Create Relation Type](../../../../10/umbraco-cms/fundamentals/data/images/create-relation-type.png)
+![Create Relation Type](images/create-relation-type.png)
 
 To create your new Relation Type, follow these steps:
 
@@ -60,17 +60,17 @@ To create your new Relation Type, follow these steps:
 
     Example: For relating Members to their uploaded Images, we might create a 'Member Images' relation
 
-    ![Member Images](../../../../10/umbraco-cms/fundamentals/data/images/member-images.png)
+    ![Member Images](images/member-images.png)
 6. Select **Is Dependency** as **Yes** if you wish this Relation Type to be used in Umbraco's 'tracking' functionality; that warns editors when trying to delete entities if they are 'used' in a Relation Type marked as 'Is Dependency'
 7.  Click **Create** and you'll see your new Relation Type created in the Relation Types folder. You can see the 'Alias' that you'll need to make note of when working with Relations.
 
-    ![Member Images](../../../../10/umbraco-cms/fundamentals/data/images/relation-alias.png)
+    ![Member Images](images/relation-alias.png)
 
 ## Viewing Relations
 
 To view one of the existing Relation Types, go to the **Relations** tab. It displays a long list of all the objects that have been related for this specific Relation Type.
 
-![View Relations](../../../../10/umbraco-cms/fundamentals/data/images/view-relations.png)
+![View Relations](images/view-relations.png)
 
 ## Creating Relations
 

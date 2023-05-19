@@ -3,6 +3,7 @@
 * [Umbraco Workflow Documentation](README.md)
 * [Installation](installing-workflow.md)
 * [Licensing](licensing.md)
+* [Release notes](release-notes.md)
 
 ## Getting Started
 
@@ -10,6 +11,7 @@
 * [Content App](getting-started/workflow-content-app.md)
 * [Notifications](getting-started/notifications.md)
 * [Configuration](getting-started/configuration.md)
+* [Approval thresholds](getting-started/approval-thresholds.md)
 * [History Cleanup](getting-started/history-cleanup.md)
 
 ## Upgrading Workflow

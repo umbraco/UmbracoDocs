@@ -1,15 +1,5 @@
 # March 2022
 
-## Key Takeaways
-
-* **Backoffice user group selection** - When inviting a new team member to a project you can now assign a backoffice user group for each environment as part of the invite workflow.
-* **Outgoing IPs for Umbraco Heartcore webhooks** - Is one or more of your Heartcore projects using the webhook feature and is this communication going through a firewall? Then you should consider the new two static outgoing IPs.
-* **Bandwidth usage top 10 (Beta)** - Do you want insight into which web page caused the most bandwidth in your Cloud project use? Then go visit the updated usage page and see the top 10 of HTTP referrers.
-* **Static Outbound IP Address** - Enable the static outbound IP address feature to ease communication with external firewall-protected services. Find the dynamic or static outbound IP addresses on the _Advanced_ page.
-* **Managing Transport Security** - Configure transport security options for your specific hostnames for your Umbraco Cloud Project.
-* **Content Comparison** - Explore the new feature in Umbraco Deploy feature that enables you to preview content changes prior to transferring them to another environment.
-* **Bandwidth Usage Top 10 for resources** - Wondering which resources of your Umbraco Cloud project contributes with the most bandwidth usage? Now you can find the answer in the new bandwidth Top 10 for resources on the project usage page.
-
 ### Backoffice user group selection
 
 On the project invites page users will now see more details for their project. As a user, you will see the **expiration date** of the invite, its **status**, and you are able to **remove** the ones that have expired.

@@ -29,7 +29,7 @@ You could consider creating Umbraco schema only during a package action, and the
 
 ### Creating files
 
-You may sometimes choose to save data in a file. Could be a seperate config file for your package or a [config transform file](https://docs.umbraco.com/umbraco-cloud/setup/config-transforms) to add an app setting to the web.config. If you do this be aware of two things:
+You may sometimes choose to save data in a file. Could be a separate config file for your package or a [config transform file](https://docs.umbraco.com/umbraco-cloud/setup/config-transforms) to add an app setting to the web.config. If you do this be aware of two things:
 
 1. If these files are generated on a Cloud environment they will not be stored in source control, and will be overwritten on next deployment. They need to be installed locally, committed to source control and then pushed up to the Cloud environments. We have an [existing feature request](../../reference/mapping.md) on allowing package creators to commit their files directly on Cloud, and it is possible to do so currently but not in a supported way, and it may change suddenly.
 2. If you need the content of the files to be different on the different environments you will need to use environment specific [config transforms](https://docs.umbraco.com/umbraco-cloud/setup/config-transforms).
@@ -42,7 +42,7 @@ An example of creating one for your package would be if you had a custom propert
 
 So you have a property editor with a textarea input, that saves an ID as a string. It could look like this:
 
-![Property editor](../../../../10/umbraco-cms/extending/packages/images/property-editor.png)
+![Property editor](images/property-editor.png)
 
 Then in the template you have something like this:
 
@@ -125,7 +125,7 @@ At this point we haven't done anything to the ValueConverter yet, other than ret
 
 It will hit your breakpoint, and if you continue you will then get an error. On the breakpoint you can see why the error occurs. It should look like this:
 
-![Hitting the breakpoint](../../../../10/umbraco-cms/extending/packages/images/hitting-breakpoints.png)
+![Hitting the breakpoint](images/hitting-breakpoints.png)
 
 Here you can see that value is null, and if you try to return `value.ToString()` you will get a null exception.
 
@@ -148,7 +148,7 @@ The workflow here is not optimal, but a lot quicker than trying to deploy to Clo
 
 After copying the dll and pdb files over we are synced up, now attach the debugger and attempt another transfer. Now you will see that `value` is null a few times, then your hardcoded ID a few times, but nothing breaks here. Eventually you will hit the `FromArtifact` method instead:
 
-![Hitting FromArtifact](../../../../10/umbraco-cms/extending/packages/images/fromArtifact.png)
+![Hitting FromArtifact](images/fromArtifact.png)
 
 Here you will notice that the value is what you had returned in `ToArtifact`.
 
@@ -212,7 +212,7 @@ You can find references on the methods used here in our API documentation:
 
 When stepping through the code we can see that everything seems to work fine:
 
-![Stepped through code](../../../../10/umbraco-cms/extending/packages/images/steppingThroughCode.png)
+![Stepped through code](images/steppingThroughCode.png)
 
 {% hint style="info" %}
 Note: Showing the variable values is a feature of [ReSharper](https://www.jetbrains.com/resharper/) .
@@ -239,7 +239,7 @@ public object FromArtifact(string value, PropertyType propertyType, object curre
 
 Here is a gif showing the ValueConnector in action. A new image is uploaded, the ID on the node is updated and transferred. Finally the image is on the new environment and the ID is updated:
 
-![Full workflow gif](../../../../10/umbraco-cms/extending/packages/images/valueconnector.gif)
+![Full workflow gif](images/valueconnector.gif)
 
 The final ValueConnector code will look like this:
 

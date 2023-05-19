@@ -30,23 +30,23 @@ Packages provide a wide variety of functionality, and can often span multiple ca
 
 #### Schema Extensions
 
-A package that can be categorised as a Schema Extension will extend the default Umbraco Schema. Schema in this sense refers to things like Data Types, Property Editors, Document Types and Media Types. By extending Umbraco with packages such as [Our.Umbraco.GMaps](https://our.umbraco.com/packages/backoffice-extensions/ourumbracogmaps-google-maps-for-umbraco-8/) editors are given greater capabilities when they are populating their content pages.
+A package that can be categorized as a Schema Extension will extend the default Umbraco Schema. Schema in this sense refers to things like Data Types, Property Editors, Document Types and Media Types. By extending Umbraco with packages such as [Our.Umbraco.GMaps](https://marketplace.umbraco.com/package/our.umbraco.gmaps) editors are given greater capabilities when they are populating their content pages.
 
 #### Management Extensions
 
-A Management Extension package helps you manage your site, and provides information to the users. Management extensions typically contain custom sections or dashboards to facilitate site management. [Diplo God Mode](https://our.umbraco.com/packages/developer-tools/diplo-god-mode/) is an example of a comprehensive management extension package with additional tools and information.
+A Management Extension package helps you manage your site, and provides information to the users. Management extensions typically contain custom sections or dashboards to facilitate site management. [Diplo God Mode](https://marketplace.umbraco.com/package/diplo.godmode) is an example of a comprehensive management extension package with additional tools and information.
 
 #### Starter Kits
 
-Starter kits are, as the name suggests, a package that helps you set up a starter version of whatever you want to build. Most starter kit packages are for starting a website, and include schema like Document Types and Templates as well as content nodes and media. There are also some specialized starter kits, for example for creating a blog. Umbraco HQ has released their [own starter kit](https://our.umbraco.com/packages/starter-kits/the-starter-kit/), that creates a small site with the most commonly used features.
+Starter kits are, as the name suggests, a package that helps you set up a starter version of whatever you want to build. Most starter kit packages are for starting a website, and include schema like Document Types and Templates as well as content nodes and media. There are also some specialized starter kits, for example for creating a blog. Umbraco HQ has released their [own starter kit](https://www.nuget.org/packages/Umbraco.TheStarterKit), that creates a small site with the most commonly used features.
 
 #### Content Apps
 
-Content apps are almost like dashboards for content nodes that are intended to display node specific information. A good example of this is the [Preflight](https://our.umbraco.com/packages/backoffice-extensions/preflight-content-health-checks-for-umbraco-8/) content app. It shows you readability scores for your written content, directly on each content node.
+Content apps are almost like dashboards for content nodes that are intended to display node specific information. A good example of this is the [Preflight](https://marketplace.umbraco.com/package/preflight.umbraco) content app. It shows you readability scores for your written content, directly on each content node.
 
 #### Integration extensions
 
-This type of package can be a lot of things, and can include a number of the other package types. They are generally integrating a larger system into Umbraco. A good example could be an e-commerce package such as [UCommerce](https://our.umbraco.com/packages/website-utilities/ucommerce/), that includes an entire webshop module for Umbraco.
+This type of package can be a lot of things, and can include a number of the other package types. They are generally integrating a larger system into Umbraco. A good example could be an e-commerce package such as [UCommerce](https://marketplace.umbraco.com/package/ucommerce.umbraco8), that includes an entire webshop module for Umbraco.
 
 ## [Types of Packages](types-of-packages.md)
 
@@ -60,9 +60,9 @@ This short tutorial will teach you how to create a package in the Umbraco backof
 
 Package authors who would like their UI to be multi-lingual can include their own set of language files as part of their package distribution.
 
-## [Uploading a Package to Our](uploading-to-our.md)
+## [Listing a Package on the Umbraco Marketplace](listing-on-marketplace.md)
 
-Once you've created a package upload it on Our to share it with the community.
+Once you've created a package make it available on the Umbraco Marketplace to share it with the community.
 
 ## [Packages on Umbraco Cloud](packages-on-umbraco-cloud.md)
 

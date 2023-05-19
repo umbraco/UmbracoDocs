@@ -39,6 +39,7 @@ To enforce a certain MFA for a member, follow these steps:
 5. Click on the cogwheel and select the **Enforced MFA Method** from the drop-down list for the member.
 
 Once it has been enabled, the next time the member logs in, they will be enforced to set up the MFA that has been chosen.
+It is possible for an administrator to reset the authenticator app settings for members of the organization.
 
 ### Projects
 

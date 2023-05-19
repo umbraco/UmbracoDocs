@@ -7,15 +7,15 @@ Depending on your requirements, this information may not be required or may only
 {% hint style="info" %}
 The workflow History exists in addition to Umbraco's audit trail information. It will always show the identity of the user who completes the workflow.
 {% endhint %}
-  
+
 Umbraco Workflow 11.1.0 introduces a history cleanup feature similar to those already available in Umbraco CMS and Umbraco Forms.
 
 ## How it works
 
 The History Cleanup feature is disabled by default. Applying the default history cleanup policy will:
 
-- Delete history older than 28 days. See the `KeepHistoryForDays` setting.
-- Only delete history where the workflow status is `Approved`, `Cancelled`, `CancelledByThirdParty`, or `Errored`. See the `StatusesToDelete` setting.
+* Delete history older than 28 days. See the `KeepHistoryForDays` setting.
+* Only delete history where the workflow status is `Approved`, `Cancelled`, `CancelledByThirdParty`, or `Errored`. See the `StatusesToDelete` setting.
 
 The feature can be enabled in the `appSettings.json`:
 
@@ -45,12 +45,12 @@ For sites with stricter or more complex requirements, it is possible to override
 
 The below example will apply the following policies:
 
-- History cleanup is enabled globally.
-- History items with `Approved` or `Cancelled` status are deleted after 90 days.
-- Workflow history for node `dcf18a51-6919-4cf8-89d1-36b94ce4d963` will never be deleted.
-- Workflow history for node `31523089-f648-4883-9087-ef9a0b83129f` will be deleted after 10 days for the statuses defined in the global `StatusesToDelete` property.
-- Workflow history for all nodes using the `ContentPage` Document Type will never be deleted.
-- Workflow history with `Cancelled` status for all nodes using the `NewsItem` Document Type will be deleted after 100 days (see also [StatusesToDelete configuration](#statusestodelete-configuration)).
+* History cleanup is enabled globally.
+* History items with `Approved` or `Cancelled` status are deleted after 90 days.
+* Workflow history for node `dcf18a51-6919-4cf8-89d1-36b94ce4d963` will never be deleted.
+* Workflow history for node `31523089-f648-4883-9087-ef9a0b83129f` will be deleted after 10 days for the statuses defined in the global `StatusesToDelete` property.
+* Workflow history for all nodes using the `ContentPage` Document Type will never be deleted.
+* Workflow history with `Cancelled` status for all nodes using the `NewsItem` Document Type will be deleted after 100 days (see also [StatusesToDelete configuration](history-cleanup.md#statusestodelete-configuration)).
 
 ```json
 {
@@ -138,4 +138,4 @@ Rules for content items and their Document Type are set from the History tab of 
 
 Content items with no custom cleanup rules defined will display the global defaults.
 
-![Workflow History Cleanup Modal](images/workflow-history-cleanup-modal.png)
+![Workflow History Cleanup Modal](../../../10/umbraco-workflow/getting-started/images/workflow-history-cleanup-modal.png)
