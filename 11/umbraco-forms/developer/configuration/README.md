@@ -80,7 +80,8 @@ For illustration purposes, the following structure represents the full set of op
         "Period": "1.00:00:00"
       },
       "DisableRecordIndexing": false,
-      "EnableFormsApi": false
+      "EnableFormsApi": false,
+      "RecordIpTrackingBehavior": "RemoteIpAddress"
     },
     "Security": {
       "DisallowedFileUploadExtensions": "config,exe,dll,asp,aspx",
@@ -353,6 +354,16 @@ If indexing has already occurred, you will still need to manually remove the fil
 ### EnableFormsApi
 
 Set this value to `true` to enable the Forms API supporting headless and AJAX forms.
+
+### RecordIpTrackingBehavior
+
+The user's IP address is tracked by default when a form is submitted and stored in the `UFRecords` database table.
+
+The default value for this setting is `RemoteIpAddress` which will use the IP obtained from the request's connection property.
+
+If in your environment that gives an incorrect value, you can change this to `ClientIpAddress`. With this option, HTTP headers will be examined to attempt to determine the user's client IP address.
+
+To remove this tracking set this value to `None`.
 
 ## Security configuration
 
