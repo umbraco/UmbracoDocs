@@ -14,7 +14,7 @@ When you are working with Umbraco Forms, you have the option to set up email wor
 
 To set up an email workflow to send out emails, you will need to configure the SMTP service. In some cases, you might also experience that you need to configure a _SenderEmail_ for notifications.
 
-Configure _SenderEmail_ in the `appsettings.json` file under `Umbraco:CMS:Global:Smtp`. For more details, see the [`Send Email`](../../umbraco-forms/editor/attaching-workflows/workflow-types.md#send-email) section in the [Workflow Types](https://docs.umbraco.com/umbraco-forms/editor/attaching-workflows/workflow-types#send-email) article.
+Configure _SenderEmail_ in the `appsettings.json` file under `Umbraco:CMS:Global:Smtp`. For more details, see the [`Send Email`](https://docs.umbraco.com/umbraco-forms/editor/attaching-workflows/workflow-types#send-email) section in the Workflow Types article.
 
 ```csharp
  "Umbraco": {

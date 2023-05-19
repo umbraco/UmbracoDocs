@@ -33,3 +33,4 @@ redirects:
     release-notes/2022-12-20-releasenotes: release-notes/overview-2022/2022-12-20-releasenotes.md
     upgrades/migrate-from-umbraco-7-to-8: product-upgrades/version-specific-upgrades/migrate-from-umbraco-7-to-8.md
     set-up/2-factor-authentication-on-cloud: setup/multi-factor-authentication-on-cloud
+    getting-started/baselines/high-level-overview: getting-started/baselines/README.md

@@ -1,10 +1,10 @@
 # September 2022
 
-## Key Takeaways
+## Highlights video&#x20;
 
-* **MFA authentication** - You can now secure your Umbraco Cloud account by enabling Multi-Factor Authentication (MFA). Select between Email, Phone, or Authenticator App.
-* **US Region Hosting** - From the 1st of September, you can select a brand new US region in addition to the existing West Europe option.
-* **Projects Dashboard** - The first version of the Projects Dashboard has been released. Organize your Umbraco Cloud projects as per your preference and get a complete overview of product versions in all your environments.
+{% embed url="https://youtu.be/POZ3UtUXd7Y" %}
+Cloud highlights September 2022
+{% endembed %}
 
 ## [MFA authentication](../../set-up/multi-factor-authentication-on-cloud.md)
 
@@ -18,7 +18,7 @@ To enable MFA for Umbraco Cloud, go to **Profile**, click **Edit Profile**, and 
 
 MFA code can be sent either to your email or as a text message on your phone. Alternatively, you can use an authentication app such as Google Authenticator, Authy, or similar.
 
-![Phone-auth](../../set-up/images/Phone-auth.png)
+![Phone-auth](../images/Phone-auth.png)
 
 As your Umbraco profile is used to log in to the backoffice for your projects, these are all now protected with MFA.
 

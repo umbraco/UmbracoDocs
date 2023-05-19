@@ -1,12 +1,5 @@
 # December 2022
 
-## Key Takeaways
-
-* **Secrets Management** - Secure your secrets in Azure key vaults in an intuitive user interface and easy access to secrets during the run-time of your Umbraco solution.
-* **Organization Project view** - You will now see a lot more information for each of your organization projects on the project page under your organization.
-* **Updated public access page** - We have added the option to specify a name when you choose to specify a new entry to the allowlist for an environment.
-* **Kudu quick link in Projects Dashboard** - You now have the option to navigate to Kudu for a cloud project environment from the "Projects Dashboard".
-
 ## [Secrets Management](../../set-up/project-settings/secrets-management.md)
 
 The new _secrets management_ feature in Umbraco Cloud enables you to store your secrets securely in Azure key vaults.
@@ -34,7 +27,7 @@ In addition to the name, plan, and status of the project, you can now also see:
 * Payment status.
 * The number of environments.
 
-![ProjectsDashboardHoverEnvironment](../images/OrganizationProjects.png)
+![ProjectsDashboardHoverEnvironment](<../images/Organization Projects.png>)
 
 You can sort your organization projects ascending and descending for all columns in the projects table.
 

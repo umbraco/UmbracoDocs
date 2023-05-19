@@ -12,6 +12,10 @@ In this section, you can find the release notes for each version of Umbraco Work
 
 <summary>Version 11</summary>
 
+#### [11.2.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.2.0) (May 9th 2023)
+
+* **FEATURE** => Introduces [approval thresholds](getting-started/approval-thresholds.md).
+
 #### [11.1.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.1.2) (April 18th 2023)
 
 * **FEATURE** => Introduces optional configuration for mandatory comments
@@ -43,6 +47,10 @@ In this section, you can find the release notes for each version of Umbraco Work
 <details>
 
 <summary>Version 10</summary>
+
+#### [10.2.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.0) (May 9th 2023)
+
+* **FEATURE** => Introduces [approval thresholds](getting-started/approval-thresholds.md)
 
 #### [10.1.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.1.2) (April 18th 2023)
 

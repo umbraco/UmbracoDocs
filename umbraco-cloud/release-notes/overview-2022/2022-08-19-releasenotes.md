@@ -1,9 +1,10 @@
 # August 2022
 
-## Key Takeaways
+## Highlights Video
 
-* **Dedicated Resources** - A new feature offering dedicated resources for your Umbraco Cloud project has been released. You can upgrade your projects to use dedicated resources with the click of a button.
-* **Projects Dashboard (Beta)** - The Beta version of the Projects Dashboard offers the first sneak preview of the future projects overview in the Umbraco Cloud Portal.
+{% embed url="https://youtu.be/TJvkGjau_RM" %}
+Cloud highlights August 2022
+{% endembed %}
 
 ## [Dedicated Resources](../../set-up/project-settings/dedicated-resources.md)
 

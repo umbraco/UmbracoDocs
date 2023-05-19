@@ -9,4 +9,4 @@ To reload a section of the content tree:
 1. Right-click on an item in the tree.
 2.  Choose **Reload**. The parent and child nodes are now reloaded and will reflect any new changes.
 
-    ![Reload Tree](../../../../../10/umbraco-cms/tutorials/editors-manual/tips-and-tricks/images/Reload.png)
+    ![Reload Tree](images/Reload.png)

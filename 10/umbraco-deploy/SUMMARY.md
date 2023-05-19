@@ -24,6 +24,9 @@
 * [Deploying deletions](deployment-workflow/deploying-deletions.md)
 * [Restoring content](deployment-workflow/restoring-content/README.md)
   * [Partial Restores](deployment-workflow/restoring-content/partial-restore.md)
+* [Deploy Dashboard](deployment-workflow/deploy-dashboard.md)
+
+
 
 ## Upgrading
 

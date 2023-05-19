@@ -1,5 +1,7 @@
 ---
-description: Follow this guide when upgrading your Cloud project to a new major version of Umbraco CMS. For example when upgrading from 10 to 11.
+description: >-
+  Follow this guide when upgrading your Cloud project to a new major version of
+  Umbraco CMS. For example when upgrading from 10 to 11.
 ---
 
 # Major Upgrades
@@ -30,11 +32,21 @@ These are extra steps needed when going from Umbraco 9 to the latest major.
   * Directly from your environment. See the [Database backups](../databases/backups.md) article,
   * Or clone down, restore the project, and backup the local database.
 
-## Video Tutorial
+## Video Tutorials
 
-{% embed url="https://www.youtube-nocookie.com/embed/80qwWxoNuKU" %}
-Video Tutorial
+{% tabs %}
+{% tab title="Umbraco 10+" %}
+{% embed url="https://youtu.be/80qwWxoNuKU" %}
+Upgrade tutorial Umbraco 10+
 {% endembed %}
+{% endtab %}
+
+{% tab title="Umbraco 9 to 10 specific video tutorial" %}
+{% embed url="https://youtu.be/AN5OOKLHmPE" %}
+Upgrade tutorial Umbraco 9 to 10 on Cloud
+{% endembed %}
+{% endtab %}
+{% endtabs %}
 
 ## Step 1: Enable .NET
 
@@ -150,7 +162,7 @@ Remove the following files and folders _manually_ from your local project:
 Once the Umbraco project runs locally without any errors, the next step is to deploy and test on the Cloud Development environment.
 
 <details>
-    
+
 <summary>Upgrading from Umbraco 9 - Remove files from the development environment.</summary>
 
 * `/wwwroot/umbraco`

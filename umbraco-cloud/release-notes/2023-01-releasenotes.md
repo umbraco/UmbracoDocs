@@ -1,10 +1,10 @@
 # January 2023
 
-## Key Takeaways
+## Highlights video
 
-* **UK Region Hosting** - Umbraco Cloud expands with UK regional hosting.
-* **Display of Multi-factor authentication setting for organization members** - As an administrator at a cloud organization, you can see the multi-factor authentication setting for all the organization's members.
-* **Prefixes for naming secrets** - When naming secrets, you can reference the security-related settings for Umbraco:CMS:Global:Smtp, Umbraco Forms API-key, and field reCAPTCHAS.
+{% embed url="https://youtu.be/IofB31h-Lpc" %}
+Cloud highlights January 2023
+{% endembed %}
 
 ## UK Region Hosting
 
@@ -24,7 +24,7 @@ Since October last year, users has the opportunity to enable Multi-Factor Authen
 
 Now we deliver the second part of the planned three steps of the Multi-Factor Authentication feature. We ensure that administrators in a cloud organization can see the multi-factor authentication settings for all organization members.
 
-![OrgMfaDisplay](images/OrgMfaDisplay2.png)
+![OrgMfaDisplay](images/OrgMfaDisplay.png)
 
 The third and final step will be the enforcement of Multi-Factor-Authentication per user level based on an organization setting. This means that an administrator can set the desired Multi-Factor-Authentication type (email, phone, or authenticator app) for each individual user. This will then be imposed on the user at the next login to Umbraco Cloud. The enforcement of multi-factor authentication for organization members is expected to be delivered in the first quarter of 2023.
 

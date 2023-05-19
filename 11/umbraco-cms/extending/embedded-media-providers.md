@@ -39,14 +39,14 @@ You can see the details of these, and any recent editions in the C# developer re
 
 ## Configuring a new provider
 
-Create a new provider by creating a C# class that implements the `IEmbedProvider` interface. Umbraco provides a convenient `EmbedProviderBase` class as a starting point.
+Create a new provider by creating a C# class that implements the `IEmbedProvider` interface. Umbraco provides a convenient `OEmbedProviderBase` class as a starting point.
 
 ```csharp
 namespace Umbraco.Cms.Core.Media.EmbedProviders
 {
-    public abstract class EmbedProviderBase : IEmbedProvider
+    public abstract class OEmbedProviderBase : IEmbedProvider
     {
-        protected EmbedProviderBase(IJsonSerializer jsonSerializer);
+        protected OEmbedProviderBase(IJsonSerializer jsonSerializer);
 
         public abstract string ApiEndpoint { get; }
         public abstract string[] UrlSchemeRegex { get; }
@@ -62,18 +62,6 @@ namespace Umbraco.Cms.Core.Media.EmbedProviders
 }
 ```
 
-If the provider supports _OEmbed_ format for website URL embedding, then use the `EmbedProviderBase` base methods to implement the request.
-
-```csharp
-    public override string GetMarkup(string url, int maxWidth = 0, int maxHeight = 0)
-        {
-            var requestUrl = base.GetEmbedProviderUrl(url, maxWidth, maxHeight);
-            var oembed = base.GetJsonResponse<OEmbedResponse>(requestUrl);
-
-            return oembed.GetHtml();
-        }
-```
-
 ### Adding a new OEmbed Provider Example
 
 Let's allow our editors to embed artwork from the popular DeviantArt website - the world's largest online social community for artists and art enthusiasts. We can see they have information on using OEmbed: [https://www.deviantart.com/developers/oembed](https://www.deviantart.com/developers/oembed). The format of their OEmbed implementation returns a JSON format, from a URL `https://backend.deviantart.com/oembed?url=[urltoembed]`. We'll need to use the `EmbedProviderBase` and the `base.GetJsonResponse` method. We can see 'links' to media shared on DeviantArt are in the format: `https://fav.me/[uniquemediaidentifier]`. We'll need a regex to match any urls pasted into the embed panel that start with _fav.me_, achieved by setting the `UrlSchemeRegex` property.
@@ -87,7 +75,7 @@ using Umbraco.Cms.Core.Serialization;
 
 namespace MyNamespace
 {
-    public class DeviantArtEmbedProvider : EmbedProviderBase
+    public class DeviantArtEmbedProvider : OEmbedProviderBase
     {
         public DeviantArtEmbedProvider(IJsonSerializer jsonSerializer)
           : base(jsonSerializer)
@@ -107,12 +95,12 @@ namespace MyNamespace
 
         public override Dictionary<string, string> RequestParams => new Dictionary<string, string>();
 
-        public override string GetMarkup(string url, int maxWidth = 0, int maxHeight = 0)
+        public override string? GetMarkup(string url, int maxWidth = 0, int maxHeight = 0)
         {
             var requestUrl = base.GetEmbedProviderUrl(url, maxWidth, maxHeight);
             var oembed = base.GetJsonResponse<OEmbedResponse>(requestUrl);
 
-            return oembed.GetHtml();
+            return oembed?.GetHtml();
         }
     }
 }
@@ -120,7 +108,7 @@ namespace MyNamespace
 
 #### Register the provider with the OEmbedProvidersCollection
 
-Create a new C# class that implements `IUserComposer` and add append your new provider to the EmbedProvidersCollection:
+Create a new C# class that implements `IComposer` and add append your new provider to the EmbedProvidersCollection:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -128,10 +116,10 @@ using Umbraco.Cms.Core.DependencyInjection;
 
 namespace MyNamespace
 {
-    public class RegisterEmbedProvidersComposer : IUserComposer
+    public class RegisterEmbedProvidersComposer : IComposer
     {
         public void Compose(IUmbracoBuilder builder)
-            => builder.OEmbedProviders().Append<DeviantArtEmbedProvider>();
+            => builder.EmbedProviders().Append<DeviantArtEmbedProvider>();
     }
 }
 ```
@@ -160,7 +148,7 @@ using Umbraco.Cms.Core.Serialization;
 
 namespace MyNamespace
 {
-    public class AzureVideoEmbedProvider : EmbedProviderBase
+    public class AzureVideoEmbedProvider : OEmbedProviderBase
     {
         public AzureVideoEmbedProvider(IJsonSerializer jsonSerializer)
           : base(jsonSerializer)
@@ -190,7 +178,7 @@ Here the markup to embed has been manually constructed based upon the iframe vid
 
 #### Register the Azure Embed Provider with the OEmbedProvidersCollection
 
-Create a new C# class that implements `IUserComposer` and add append your new provider to the EmbedProvidersCollection:
+Create a new C# class that implements `IComposer` and add append your new provider to the EmbedProvidersCollection:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -198,10 +186,10 @@ using Umbraco.Cms.Core.DependencyInjection;
 
 namespace MyNamespace
 {
-    public class RegisterEmbedProvidersComposer : IUserComposer
+    public class RegisterEmbedProvidersComposer : IComposer
     {
         public void Compose(IUmbracoBuilder builder)
-            => builder.OEmbedProviders().Append<AzureVideoEmbedProvider>();
+            => builder.EmbedProviders().Append<AzureVideoEmbedProvider>();
     }
 }
 ```

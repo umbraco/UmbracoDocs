@@ -64,7 +64,7 @@ You can download the latest version of Umbraco from [Our](https://our.umbraco.co
 
 If you need help upgrading your project, we have some [Upgrade instructions](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading) you can follow. Be thorough when upgrading, as the latest upgrade might contain breaking changes and/or updated configuration.
 
-If you have been using Umbraco Forms on your project, you will also need to upgrade this to the latest version. You can find and download the latest version of Umbraco Forms under [Projects on Our](https://our.umbraco.com/projects/developer-tools/umbraco-forms/). As with Umbraco CMS, we also have documentation on how to [Upgrade Umbraco Forms](../../../umbraco-forms/installation/manualupgrade.md).
+If you have been using Umbraco Forms on your project, you will also need to upgrade this to the latest version. You can find and download the latest version of Umbraco Forms under [Projects on Our](https://our.umbraco.com/projects/developer-tools/umbraco-forms/). As with Umbraco CMS, we also have documentation on how to [Upgrade Umbraco Forms](https://docs.umbraco.com/umbraco-forms/installation/manualupgrade).
 
 After upgrading your project make sure it runs without any errors. _Hint: Check the umbracoTraceLog.txt log file._
 
@@ -128,7 +128,6 @@ Merging your existing site into the Umbraco Cloud project is a matter of moving 
 
 {% tabs %}
 {% tab title="Site running on version 9 or above" %}
-
 1. Copy and replace the following folders from your project with the Umbraco Cloud project
    * `/wwwroot`
    * `/Views`
@@ -160,31 +159,26 @@ With that confirmed, it's time to prepare to migrate the project to Umbraco Clou
 {% endtab %}
 
 {% tab title="Site running on Legacy version 8" %}
-    
-  If you are on Umbraco 8, follow the steps below to move and merge your Umbraco Files.
-    
-1.  Copy and replace all folders from your own project to the Umbraco Cloud project
-    Do not copy and replace the following folders:
+If you are on Umbraco 8, follow the steps below to move and merge your Umbraco Files.
+
+1.  Copy and replace all folders from your own project to the Umbraco Cloud project Do not copy and replace the following folders:
+
     ```
     /Config
     /App_Data
     ```
+
     If your existing site uses Umbraco Forms, make sure you do not overwrite the `App_Plugins/UmbracoLicenses/umbracoForms.lic` file
-    
-2.  Merge the config files. Pay special attention to the following files:
-    * `/web.config` - in the web.config file for the Umbraco Cloud project you will see some new configuration related to Umbraco Deploy, Umbraco Identity, Licenses and  Forms. Make sure you **do not overwrite** these when you merge the files
-    * `/Config/UmbracoDeploy.config` - only relevant if you are migrating a Cloud project
-    
-3.  Copy the rest of the files in the `/Config` folder from your own project to the Cloud project
-    
-4.  If you are using SQL CE
-    * Make sure the SQL CE database from your own project replaces the one provided with your Umbraco Cloud project (`.mdf` or `.sdf`)
-    * You can find it in `App_Data/umbraco.sdf`
-    
-5.  If you are using a local SQL server make sure to update the connection string in the `web.config` for the Umbraco Cloud project.
-    
-6.  Copy the rest of the files/folders in the `/App_Data` folder from your own project to the Cloud project
-    
+2. Merge the config files. Pay special attention to the following files:
+   * `/web.config` - in the web.config file for the Umbraco Cloud project you will see some new configuration related to Umbraco Deploy, Umbraco Identity, Licenses and Forms. Make sure you **do not overwrite** these when you merge the files
+   * `/Config/UmbracoDeploy.config` - only relevant if you are migrating a Cloud project
+3. Copy the rest of the files in the `/Config` folder from your own project to the Cloud project
+4. If you are using SQL CE
+   * Make sure the SQL CE database from your own project replaces the one provided with your Umbraco Cloud project (`.mdf` or `.sdf`)
+   * You can find it in `App_Data/umbraco.sdf`
+5. If you are using a local SQL server make sure to update the connection string in the `web.config` for the Umbraco Cloud project.
+6. Copy the rest of the files/folders in the `/App_Data` folder from your own project to the Cloud project
+
 That's it! Now that you've merged your existing site with the local clone of the Cloud project, you need to make sure the project runs and verify that
 
 * You can login using your Umbraco ID user

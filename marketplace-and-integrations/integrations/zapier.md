@@ -73,7 +73,7 @@ If the following setting is present, the API key-based authentication will take 
 
 If no API key is present, the Umbraco application will validate the credentials entered and return a message in case the validation fails.
 
-To enhance security, you can specify a User Group that the user connecting needs to be a part of, by adding the following setting in the configuration file.
+To enhance security, you can specify a User Group that the user connecting needs to be a part of. You can achieve this by adding the following setting in the configuration file.
 
 {% tabs %}
 {% tab title="Versions 9 and above" %}
