@@ -1,5 +1,9 @@
 # Prerequisites
 
+{% hint style="warning" %}
+This page is subject to change and will be updated as the software evolves.&#x20;
+{% endhint %}
+
 ## Software
 
 * Get .NET from dot.net

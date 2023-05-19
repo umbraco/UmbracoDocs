@@ -1,5 +1,9 @@
 # Development Flow
 
+{% hint style="warning" %}
+This page is a work in progress. It will be updated as the software evolves.
+{% endhint %}
+
 * Choice of technology (be biased)
   * Lit
   * TypeScript

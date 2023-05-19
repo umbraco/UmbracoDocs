@@ -4,6 +4,10 @@ description: A guide to creating a custom dashboard in Umbraco
 
 # Creating a Custom Dashboard
 
+{% hint style="warning" %}
+This page is a work in progress. It will be updated as the software evolves.
+{% endhint %}
+
 ## Overview
 
 This guide takes you through the steps to set up a Custom Dashboard in Umbraco.
