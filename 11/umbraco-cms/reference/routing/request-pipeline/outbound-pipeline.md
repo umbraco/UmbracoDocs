@@ -282,8 +282,8 @@ public class ProductPageUrlProvider : DefaultUrlProvider
                     return new UrlInfo(customUrl, true, defaultUrlInfo.Culture);
                 }
             }
-            // Otherwise return the base GetUrl result:
-            return base.GetUrl(content, mode, culture, current);
+            // Otherwise return null
+            return null;
         }
     }
 }
@@ -306,6 +306,10 @@ namespace RoutingDocs.UrlProviders
     }
 }
 ```
+
+{% hint style="info" %}
+If you want to have multiple URL providers, you can add them one after the other with multiple `Insert` methods. Umbraco will cycle through all the providers registered until it finds one that doesn't return `null`. If all custom URL providers return `null` it will fall back to the default URL provider. The last added with `Insert` is the first that will be executed. 
+{% endhint %}
 
 ### GetOtherUrls
 
