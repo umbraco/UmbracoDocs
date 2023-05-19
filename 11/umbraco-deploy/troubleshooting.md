@@ -94,7 +94,7 @@ Following an upgrade, it's possible the contents of the file will no longer matc
 
 This can lead to situations where Deploy continues to process a file it considers changed, even though the item represented is up-to-date. This in turn means slow updates of Umbraco schema, as Deploy is processing more files than it needs to do.
 
-To resolve this situation, following an upgrade it is good practice to re=save the `.uda` files in the "left-most" environment. This will usually be the local one, or if not using that, the Development environment. You can do this via the _Export Schema To Data Files_ operation available on the _Settings > Deploy_ dashboard:
+To resolve this situation, following an upgrade, it is good practice to re-save the `.uda` files in the "left-most" environment. This will usually be the local one, or if not using that, the Development environment. You can do this via the _Export Schema To Data Files_ operation available on the _Settings > Deploy_ dashboard:
 
 ![Export schema](images/export-schema.png)
 
