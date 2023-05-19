@@ -14,13 +14,13 @@ If you are upgrading to a minor or patch of Deploy you can find the details abou
 
 <summary>Version 12</summary>
 
-Version 11 of Umbraco Deploy has a minimum dependency on Umbraco CMS core of `12.0.0`. It runs on .NET 7.
+Version 12 of Umbraco Deploy has a minimum dependency on Umbraco CMS core of `12.0.0`. It runs on .NET 7.
 
 The forms deployment component has a minimum dependency on Umbraco Forms of `12.0.0`.
 
 ### Breaking changes
 
-Version 11 contains a number of breaking changes. We don't expect many projects to be affected by them as they are in areas that are not typical extension points.  For reference though, the full details are listed here:
+Version 12 contains a number of breaking changes. We don't expect many projects to be affected by them as they are in areas that are not typical extension points.  For reference though, the full details are listed here:
 
 #### Code
 
