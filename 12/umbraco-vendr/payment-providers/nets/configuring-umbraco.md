@@ -1,5 +1,5 @@
 ---
-title: Configuring Umbraco
+title: Configure Umbraco
 description: Documentation for the Nets Easy payment provider for Vendr, the eCommerce solution for Umbraco v8+
 ---
 
