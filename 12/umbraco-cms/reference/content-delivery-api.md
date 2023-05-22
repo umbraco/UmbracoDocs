@@ -588,7 +588,7 @@ Currently, the Delivery API does not support authentication for members, which m
 
 As a result of this approach, lifting protection from a content item requires an additional step to ensure it becomes accessible through the Delivery API. The recommended way is to publish the content item again. Alternatively, you can manually rebuild the **DeliveryApiContentIndex** to reflect the changes.
 
-We are looking into adding support for member authentication.
+We are looking into adding support for member authentication which would enable querying for protected content.
 
 ### Preview functionality
 
