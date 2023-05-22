@@ -9,13 +9,6 @@
 * [Configure Umbraco](invoicing/configuring-umbraco.md)
 * [Changelog](invoicing/changelog.md)
 
-## Dibs
-
-* [Overview](dibs/README.md)
-* [Configure DIBS](dibs/configuring-dibs.md)
-* [Configure Umbraco](dibs/configuring-umbraco.md)
-* [Changelog](dibs/changelog.md)
-
 ## Klarna
 
 * [Overview](klarna/README.md)

@@ -1,18 +1,28 @@
 ---
-title: Nets Easy
 description: Documentation for the Nets Easy payment provider for Vendr, the eCommerce solution for Umbraco v8+
 ---
 
-## Using These Docs
+# Overview
 
-**These docs are aimed at developers** looking to implement the [Nets](https://www.nets.eu/payments/online) payment gateway into a Vendr eCommerce store. It is expected that you have at least a basic understanding of [Umbraco](https://umbraco.com), as well the [Vendr core product](../../../../core/).
+The Nets Easy payment provider provides functionality to capture payments via the [Nets Easy](https://developers.nets.eu/nets-easy/en-EU/docs/) payment gateway. It is a fully featured payment provider allowing full control of the payment flow directly from the Vendr back-office.
 
-These docs are broken up into two keys sections, a [Getting Started](getting-started/) section for documentation on how to get up and running with the Nets payment provider for Vendr.
+## [Install Nets Easy](../install-payment-providers.md)
 
-## Getting Help
+## In this Section
 
-If you require further assistance, or if you are having a particular issue you can't find an answer to, you can get community support via our support forum over on the [Umbraco developer portal](https://our.umbraco.com/packages/website-utilities/vendr/vendr-support/).
+In this section we will guide you through the key steps necessary to get you started with the Nets Easy payment provider for Vendr.
 
-## About Vendr
+It is assumed that before we begin that you already have an Umbraco website configured and Umbraco Vendr installed. If you are not at this stage yet, please read the [core Vendr documentation](../../../../../core/) to learn how to get started with Vendr.
 
-Vendr is the eCommerce solution for Umbraco v8+ created by Outfield Digital, the team behind Tea Commerce for Umbraco v7. Vendr is the successor to Tea Commerce and follows much of the same principles but has been vastly improved for use on Umbraco v8+.
+## Useful links
+
+As well as the content found in these docs, here are a few useful links that might come in handy should you wish to learn more about the provider itself, and the Nets Easy API.
+
+* [Payment provider source code](https://github.com/vendrcontrib/vendr-payment-provider-nets)  
+* [Payment provider issue tracker](https://github.com/vendrcontrib/vendr-payment-provider-nets/issues)  
+
+* [Nets (DIBS) Easy documentation](https://tech.dibspayment.com/easy) (legacy)  
+* [Nets (DIBS) Easy API reference](https://tech.dibspayment.com/easy/api) (legacy)  
+
+* [Nets Easy documentation](https://developers.nets.eu/nets-easy/en-EU/docs/) (new)  
+* [Nets Easy API reference](https://developers.nets.eu/nets-easy/en-EU/api/) (new)

@@ -34,14 +34,14 @@ Alternatively, you can also find and install the NuGet package via the NuGet Pac
 
 | Payment Provider | NuGet Package name |
 | ---- | ----------- |
-| DIBS | `Vendr.PaymentProviders.Dibs` |
 | Invoicing | `Vendr.PaymentProviders.Invoicing` |
 | Klarna | `Vendr.PaymentProviders.Klarna` |
 | Mollie | `Vendr.PaymentProviders.Mollie` |
-| Paypal | `Vendr.PaymentProviders.PayPal` |
-| Stripe | `Vendr.PaymentProviders.Stripe` |
-| Bambora | -- |
+| Nets | `Vendr.PaymentProviders.Nets` |
 | Opayo | -- |
+| Paypal | `Vendr.PaymentProviders.PayPal` |
+| QuickPay | Vendr.PaymentProviders.QuickPay |
+| Stripe | `Vendr.PaymentProviders.Stripe` |
 
 ## Upgrading
 
