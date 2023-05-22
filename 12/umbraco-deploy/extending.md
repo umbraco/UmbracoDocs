@@ -256,7 +256,7 @@ public class ExampleServiceConnector : ServiceConnectorBase<ExampleArtifact, Gui
 
 It's also necessary to provide an extension method to generate the appropriate identifier:
 
-```
+```csharp
 public static GuidUdi GetUdi(this Example entity)
 {
     if (entity == null) throw new ArgumentNullException("entity");
@@ -413,7 +413,7 @@ If custom entity types are introduced that will be handled by Umbraco Deploy, th
 
 This is done via the following code, which can be triggered from a Umbraco component or an `UmbracoApplicationStartingNotification` handler.
 
-```csharp
+```
 UdiParser.RegisterUdiType("mypackage-example", UdiType.GuidUdi);
 ```
 
@@ -499,11 +499,14 @@ The following code shows the registration of an entity for Backoffice deployment
 public class ExampleDataDeployComponent : IComponent
 {
     private readonly ITransferEntityService _transferEntityService;
+    private readonly IExampleDataService exampleDataService;
 
     public ExampleDataDeployComponent(
-        ITransferEntityService transferEntityService)
+        ITransferEntityService transferEntityService,
+        IExampleDataService exampleDataService)
     {
         _transferEntityService = transferEntityService;
+        _exampleDataService = exampleDataService;
     }
 
     public void Initialize()
@@ -524,7 +527,8 @@ public class ExampleDataDeployComponent : IComponent
             (string routePath, HttpContext httpContext) => true,
             (string nodeId, HttpContext httpContext) => true,
             (string nodeId, HttpContext httpContext, out Guid entityId) => Guid.TryParse(nodeId, out entityId),
-            new DeployRegisteredEntityTypeDetail.RemoteTreeDetail(FormsTreeHelper.GetExampleTree, "example", "externalExampleTree"));
+            new DeployRegisteredEntityTypeDetail.RemoteTreeDetail(FormsTreeHelper.GetExampleTree, "example", "externalExampleTree"),
+            entitiesGetter: () => _exampleDataService.Get());
     }
 
     public void Terminate()
@@ -573,15 +577,11 @@ _transferEntityService.RegisterTransferEntityType(
 
 If access to services is required when parsing the entity ID, where the `HttpContext` is provided as a parameter, a service can be retrieved. For example:
 
-```
+```csharp
 var localizationService = httpContext.RequestServices.GetRequiredService<ILocalizationService>();
 ```
 
-{% hint style="info" %}
-The `HttpContext` parameter for the `matchesRoutePath` and `matchesNodeId` functions was added in Deploy 11. Before that version, it is necessary to use the `StaticServiceProvider.Instance` to access registered services or the `HttpContext`.
-{% endhint %}
-
-Finally, the `remoteTree` optional parameter adds support for plugins to implement Deploy's "partial restore" feature. This gives the editor the option to select an item to restore, from a tree picker displaying details from a remote environment. The parameter is of type `DeployRegisteredEntityTypeDetail.RemoteTreeDetail` that defines three pieces of information:
+The `remoteTree` optional parameter adds support for plugins to implement Deploy's "partial restore" feature. This gives the editor the option to select an item to restore, from a tree picker displaying details from a remote environment. The parameter is of type `DeployRegisteredEntityTypeDetail.RemoteTreeDetail` that defines three pieces of information:
 
 * A function responsible for returning a level of a tree.
 * The name of the entity (or entities) that can be restored from the remote tree.
@@ -606,6 +606,8 @@ public static IEnumerable<RemoteTreeNode> GetExampleTree(string parentId, HttpCo
         .ToList();
 }
 ```
+
+Finally, the `entitiesGetter` parameter allows you to pass a function that will return all entities for the registered type. This is necessary to allow support for the "set signatures" operation available via the backoffice settings dashboard. By providing a function that returns the collection of entities, the triggered operation will be able to prepare the signature for each one.
 
 To complete the setup for partial restore support, an external tree controller needs to be added, attributed to match the registered tree alias. Using a base class available in `Umbraco.Deploy.Forms.Tree`, this can look like the following:
 

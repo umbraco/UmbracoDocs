@@ -86,6 +86,11 @@ In this section, you can find the release notes for each version of Umbraco Form
 * Fixed issue with the processing of magic string replacements following server-side validation failure [#872](https://github.com/umbraco/Umbraco.Forms.Issues/issues/872)
 * Fixed issue with editing legacy forms in the backoffice that have fieldsets without unique Ids [#944](https://github.com/umbraco/Umbraco.Forms.Issues/issues/944)
 
+### [11.0.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.0.0)
+
+* Compatibility with .NET 7 and Umbraco 11
+    * See full details of breaking changes under the [version specific upgrade guide](installation/version-specific.md).
+
 </details>
 
 <details>

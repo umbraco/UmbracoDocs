@@ -10,6 +10,10 @@ This page covers specific upgrade documentation for when migrating to a new majo
 If you are upgrading to a minor or patch of Deploy you can find the details about the changes in the [release notes](/11/umbraco-deploy/release-notes.md) article.
 {% endhint %}
 
+<details>
+
+<summary>Version 11</summary>
+
 ## Version 11
 
 Version 11 of Umbraco Deploy has a minimum dependency on Umbraco CMS core of `11.0.0`. It runs on .NET 7.
@@ -39,6 +43,12 @@ parameter.
 - Temporary interfaces for connectors, introduced to avoid breaking changes with the introduction of the `IContextCache` in 10.2, were removed and the method overloads added to the original interfaces.
 - The obsolete constructor was removed on `WorkItemFactory`.
 - The obsolete protected methods on `DeployRestoreWorkItemBase` were removed.
+
+</details>
+
+<details>
+
+<summary>Version 11</summary>
 
 ## Version 10
 
@@ -123,3 +133,5 @@ If you are upgrading from Umbraco 9 and already have a LocalDB instance, setting
 - `ITransferEntityService.RegisterTransferEntityType` has an additional parameter.
 - `DeployRegisteredEntityTypeDetail` was renamed to `DeployTransferRegisteredEntityTypeDetail`.
 - Removed unused class `SerializablePropertyValue`.
+
+</details>

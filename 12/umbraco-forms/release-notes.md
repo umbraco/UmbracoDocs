@@ -16,6 +16,17 @@ In this section, you can find the release notes for each version of Umbraco Form
 
 <details>
 
+<summary>Version 12</summary>
+
+### [12.0.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.0)
+
+* Compatibility with Umbraco 12
+    * See full details of breaking changes under the [version specific upgrade guide](installation/version-specific.md).
+
+</details>
+
+<details>
+
 <summary>Version 11</summary>
 
 ### [11.1.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.1.2) (April 18th 2023)
@@ -85,6 +96,11 @@ In this section, you can find the release notes for each version of Umbraco Form
 * Ensured reference to Configuration class in insert form macro partial view is globally specified to ensure it doesn't clash with other usings (V8 only)
 * Fixed issue with the processing of magic string replacements following server-side validation failure [#872](https://github.com/umbraco/Umbraco.Forms.Issues/issues/872)
 * Fixed issue with editing legacy forms in the backoffice that have fieldsets without unique Ids [#944](https://github.com/umbraco/Umbraco.Forms.Issues/issues/944)
+
+### [11.0.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.0.0)
+
+* Compatibility with .NET 7 and Umbraco 11
+    * See full details of breaking changes under the [version specific upgrade guide](installation/version-specific.md).
 
 </details>
 
