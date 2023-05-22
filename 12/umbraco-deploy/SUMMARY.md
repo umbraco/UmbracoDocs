@@ -1,7 +1,7 @@
 # Table of contents
 
 * [What is Umbraco Deploy?](README.md)
-* [Test the RC](test-the-release-candidate.md)
+* [Test the Release Candidate](test-the-release-candidate.md)
 * [Release notes](release-notes.md)
 
 ## Getting Started
