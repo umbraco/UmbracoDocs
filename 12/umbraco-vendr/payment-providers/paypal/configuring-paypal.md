@@ -1,45 +1,65 @@
 ---
 title: Configuring PayPal
-description: Documentation for the PayPal payment provider for Vendr, the eCommerce solution for Umbraco v8+
+description: >-
+  Learn how to configure PayPal in order to implement the integration with your
+  Umbraco Vendr installation.
 ---
 
-## Sign up & Sign In  
+# Configure PayPal
 
-To use the PayPal provider you will need to sign up for a Business PayPal account. If you haven't created one yet, head on over to [https://www.paypal.com](https://www.paypal.com/) and click the **Sign Up** button in the top corner to create an account, making sure to choose **Business Account** as the account type.
+## Step 1: Sign up & Sign In
 
-![PayPal Business Account Signup](../media/paypal/signup_business_account.png)
+To use the PayPal provider you will need to sign up for a Business PayPal account. If you haven't created one follow these steps:
 
-In addition to the live PayPal account, if you wish to test your system before go live, you will also need to sign up for a set of Sandbox accounts. To do this, you will first need to sign into a valid PayPal account (this doesn't have to be the final live account, any account will do) and then head on over to [https://developer.paypal.com/developer/accounts/](https://developer.paypal.com/developer/accounts/).
+1. Head over to the [PayPal site](https://www.paypal.com).
+2. Click the **Sign-Up** button in the top corner to create an account.
+3. Choose **Business Account** as the account type.
 
-![PayPal Sandbox Accounts](../media/paypal/sandbox_accounts.png)
+![PayPal Business Account Signup](../media/paypal/signup\_business\_account.png)
 
-From here you can view and modify any existing Sandbox accounts you have. If there aren't any Sandbox accounts created for you, click the **Create Account** to create both a business and personal set of accounts.
+### Sandbox accounts
 
-![Create PayPal Sandbox Accounts](../media/paypal/create_sandbox_accounts.png)
+If you wish to test your system before going live, you need to sign up for a set of Sandbox accounts.
 
-With Sandbox accounts created, in the **Managed Accounts** column, select **View/Edit account** for each account and note down both their **Email-ID** and **Password**.
+1. Sign in to a valid PayPal account - any account will do.
+2. Follow this link: [https://developer.paypal.com/developer/accounts/](https://developer.paypal.com/developer/accounts/).
 
-![PayPal Sandbox Account Details](../media/paypal/sandbox_account_details.png)
+![PayPal Sandbox Accounts](../media/paypal/sandbox\_accounts.png)
+
+From here you can view and modify any existing Sandbox accounts you have.
+
+3. Select **Create Account** to create both a business and a personal set of accounts.
+
+![Create PayPal Sandbox Accounts](../media/paypal/create\_sandbox\_accounts.png)
+
+4. Locate the **Managed Accounts** column.
+5. Select **View/Edit account** for each account.
+6. Note down **Email-ID** and **Password**.
+
+![PayPal Sandbox Account Details](../media/paypal/sandbox\_account\_details.png)
 
 ## Create a PayPal App
 
-In order for Vendr to perform actions in your PayPal account on your behalf, we need to create a PayPal App. In fact, we'll need to create two, one for the Sandbox account and one for our Live account. 
+In order for Umbraco Vendr to perform actions in your PayPal account on your behalf, we need to create a PayPal App. In fact, we'll need to create two: one for the Sandbox account and one for our Live account.
 
-We create an App via the PayPal Developer Portal at [https://developer.paypal.com/developer/applications/](https://developer.paypal.com/developer/applications/).
+1. Access the [PayPal Developer Portal](https://developer.paypal.com/developer/applications/).
 
 ![PayPal Apps](../media/paypal/applications.png)
 
-From here, we create our two apps by toggling the **Sandbox\Live** toggle buttons, and clicking the **Create App** button to create an App for each environment. 
+2. Create the two apps by toggling the **Sandbox\Live** toggle buttons.
+3. Clicking the **Create App** button to create an App for each environment.
+4. Give your app a name, and choose the **Sandbox Business Account** to associate the App with the Sandbox App.
+5. Click the **Create App** button to create the App.
 
-In the **Create New App** screen, give your app a name, and for the Sandbox App, choose the **Sandbox Business Account** to associated the App with and click the **Create App** button to create the App and be sent to the App details screen.
+![Create PayPal App](../media/paypal/create\_application.png)
 
-![Create PayPal App](../media/paypal/create_application.png)
+YOU ARE HERE!
 
 From the App details screen, note down the **Client ID** then click the **Show** link below the **Secret** heading, and note down the **Secret** displayed.
 
-![PayPal App Details](../media/paypal/application_details.png)
+![PayPal App Details](../media/paypal/application\_details.png)
 
-### Webhooks
+#### Webhooks
 
 On this same screen, you will then want to scroll down to the **Webhooks** section and click the **Add Webhook** button to create a new Webhook.
 
@@ -47,9 +67,9 @@ On this same screen, you will then want to scroll down to the **Webhooks** secti
 
 For the webhook, you'll want to provide the URL where the webhook notifications should be sent, which is a Vendr specific URL as follows (replacing the parameters in curly brackets with the corresponding values taken from your store):
 
-````bash
+```bash
 https://{store_domain}/umbraco/vendr/payment/callback/paypal-checkout-onetime/{payment_method_id}/
-````
+```
 
 You'll also want to select the **Event Types** to be notified of, for which you'll want to check the following options by checking the appropriate checkboxes next to those options and then clicking the **Save** button at the bottom.
 
@@ -62,7 +82,7 @@ You'll also want to select the **Event Types** to be notified of, for which you'
 * Payment capture refunded
 * Payment capture reversed
 
-![Create PayPal App Webhook](../media/paypal/sandbox_webhook.png)
+![Create PayPal App Webhook](../media/paypal/sandbox\_webhook.png)
 
 Once created, in the webhooks list, be sure to take a not of the **Webhook ID** of the webhook as we'll need this to verify webhook notifications later.
 

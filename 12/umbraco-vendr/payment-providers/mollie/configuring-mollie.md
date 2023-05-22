@@ -1,40 +1,55 @@
 ---
 title: Configuring Mollie
-description: Documentation for the Mollie (One Time) payment provider for Vendr, the eCommerce solution for Umbraco v8+
+description: >-
+  Learn how to configure Mollie (One Time) in order to implement the integration
+  with your Umbraco Vendr installation.
 ---
 
-## Sign up & Sign in
+# Configure Mollie
+
+## Step 1: Sign up & Sign in
 
 If you haven't done so yet, head on over to [mollie.com/signup](https://mollie.com/signup) to register for a Mollie account.
 
-![Mollie sign up](../media/mollie/mollie_signup.png)
+![Mollie sign up](../media/mollie/mollie\_signup.png)
 
-Or, if you already have an account, you can head over to [https://www.mollie.com/dashboard/login](https://www.mollie.com/dashboard/login) to sign in to your account.
+If you do not already have an account, you can head over to the [Mollie platform](https://www.mollie.com/dashboard/login) to sign in to your account.
 
-![Mollie sign in](../media/mollie/mollie_signin.png)
+![Mollie sign in](../media/mollie/mollie\_signin.png)
 
-## API Keys
+## Step 2: API Keys
 
-In order for Vendr to communicate with Mollie securely we will need to retrieve a series of API keys that Vendr can use to authenticate with.
+In order for Umbraco Vendr to communicate with Mollie securely we need to retrieve a series of API keys used for authentication.
 
-In the sidebar, click the **Developers** heading and then the **API keys** sub heading. On the right hand side you will find your **Live API key** and your **Test API key** displayed. Note these down as we will need to enter them into the Vendr UI shortly.
+1. Access the [Mollie Portal](https://www.mollie.com/dashboard/login).
+2. Click the **Developers** heading.
+3. Choose the **API keys** subheading.
 
-![Mollie API keys](../media/mollie/mollie_api_keys.png)
+On the right-hand side, you will find your **Live API key** and your **Test API key** displayed. Note these down as you will need to enter them into the Umbraco Vendr UI shortly.
 
-## Payment Methods
+![Mollie API keys](../media/mollie/mollie\_api\_keys.png)
 
-Before you can accept any payments in Mollie, you'll need to setup at least one payment method. 
+## Step 3: Payment Methods
 
-In the sidebar, click the **Settings** heading and then the **Website profiles** sub heading. On the right hand side you will find your sites profile displayed. 
+Before you can accept any payments in Mollie, you'll need to set up at least one payment method.
 
-![Mollie website profiles](../media/mollie/mollie_website_profiles.png)
+1. Click the **Settings** heading in the sidebar.
+2. Choose the **Website profiles** subheading.
+3. Find the profile of your site displayed on the right-hand side.
 
-In the site profile panel, click the **Payment methods** row to display the various payment methods you can enable. In the list displayed, make sure at least on of them is enabled (please note, enabling a payment method may require additional details to be entered).
+![Mollie website profiles](../media/mollie/mollie\_website\_profiles.png)
 
-![Mollie payment methods](../media/mollie/mollie_payment_methods.png)
+4. Click the **Payment Methods** row to display the various payment methods you can enable.&#x20;
+5. Ensure that at least one of the methods is enabled.
 
-## Test & Live Mode
+{% hint style="info" %}
+Enabling a payment method may require additional details to be entered.
+{% endhint %}
 
-When viewing your orders in the Mollie dashboard, you can switch between test and live mode via the **Test mode** toggle switch in the top right hand corner of the orders view accessed via the **Orders** heading in the sidebar.
+![Mollie payment methods](../media/mollie/mollie\_payment\_methods.png)
 
-![Mollie test mode](../media/mollie/mollie_test_mode.png)
+## Step 4: Test & Live Mode
+
+When viewing your orders in the Mollie dashboard, you can switch between test and live mode. This is done using the **Test mode** toggle switch in the top-right corner.
+
+![Mollie test mode](../media/mollie/mollie\_test\_mode.png)

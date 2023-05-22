@@ -1,18 +1,31 @@
 ---
 title: Configuring Umbraco
-description: Documentation for the Invoicing payment provider for Vendr, the eCommerce solution for Umbraco v8+
+description: >-
+  Learn how to configure the Umbraco backoffice for enabling the use of
+  Invoicing as a payment method.
 ---
 
-## Create Payment Method
+# Configure Umbraco
 
-In the Umbraco back-office, in the **Settings > Vendr > Stores > {Store Name} > Payment Methods** section, click the **Create Payment Method** button to create a new payment method, choosing **Invoicing** from the list of available payment providers.
+This article will give you details about how to configure Umbraco to start using the Invoicing payment method with your Umbraco Vendr implementation.
 
-![Create Payment Method](../media/invoicing/umbraco_create_payment_method.png)
+## Step 1: Create a Payment Method
 
-## Configure Payment Provider Settings
+The following steps are all handled through the Umbraco backoffice.
 
-In the payment method editor, configure the standard payment method settings as required, then configure the Stripe payment provider settings as follows:
+1. Navigate to **Settings > Vendr > Stores > {Store Name} > Payment Methods** section.
+2. Select the **Create Payment Method** button to create a new payment method.
+3. Choose **Invoicing** from the list of available payment providers.
 
-| Name | Description |
-| ---- | ----------- |
+![The "Create Payment Method" dialog in the Commerce section of the Umbraco CMS backoffice.](../media/invoicing/umbraco\_create\_payment\_method.png)
+
+## Step 2: Configure Payment Provider Settings
+
+The following steps are handled within the payment method editor in the Umbraco backoffice.
+
+1. Configure the standard payment method settings as required.
+2. Configure the Invoice payment provider settings as follows:
+
+| Name         | Description                                                              |
+| ------------ | ------------------------------------------------------------------------ |
 | Continue URL | The URL of the page to navigate to after payment - e.g. `/confirmation/` |

@@ -1,36 +1,47 @@
 ---
 title: How to test Mollie webhooks locally
-description: Documentation for the Mollie (One Time) payment provider for Vendr, the eCommerce solution for Umbraco v8+
+description: >-
+  This guide will take you through setting up and testing local tests of Mollie
+  Webhooks.
 ---
 
-Because the Mollie payment provider uses webhooks to finalize payments, it can make it tricky to be able to test payments locally as for Mollie to be able to notify you, the site must have a public facing URL.
+# How to test Mollie webhooks locally
 
-You could expose your website through your networks firewall, however there is a simpler way by using tools that can create temporary tunnels through your network such as [ngrok](https://ngrok.com/).
+The Mollie payment provider uses webhooks to finalize payments. Due to this, it can be tricky to test payments locally as Mollie must have a public-facing URL to be able to notify you.
 
-## Step 1 - Install ngrok
+You could expose your website through your network's firewall or use tools that to create temporary tunnels through your network.
 
-The first thing you'll want to do is install ngrok itself. Before you continue, be sure to head on over to [ngrok.com](https://ngrok.com/) and download an install the tool on your system.
+The following guide will use [ngrok](https://ngrok.com/) to create temporary tunnels through your network.
 
-## Step 2 - Launch ngrok
+## Step 1: Install ngrok
 
-With ngrok installed, we can launch it from the command line, but we find the easiest way is to create a batch file we can run at any time.
+1. Head on over to [ngrok.com](https://ngrok.com/).
+2. Download and install the tool on your system.
 
-To create the batch file, open notepad and enter the following:
+## Step 2: Launch ngrok
 
-````
+You can either launch ngrok from the command line or use the steps below to create a batch file to be run at any time.
+
+1. Open NotePad.
+2. Type the following:
+
+```
 C:\PROGRA~1\ngrok\ngrok.exe http -host-header=rewrite localhost:61191
-````
+```
 
-You'll want to swap the local domain / port number at the end according to your sites configuration, but with the contents above, save the file as `ngrok.bat` in the root of your web project. Now, you can run the batch file at any time to launch ngrok and create a publicly accessible tunnel to your website.
+3. Swap the local domain/port number at the end according to the configuration of your site.
+4. Save the file as `ngrok.bat` at the root of your web project.
 
-![ngrok](../media/ngrok.png)
+You can run the batch file at any time to launch ngrok and create a publicly accessible tunnel to your website.
+
+![The ngrok UI.](../../media/ngrok.png)
 
 {% hint style="info" %}
-When you launch ngrok for the first time, it will ask you to sign in. Enter the credentials you used to sign up with. It will remember them from now on.
+When you launch ngrok for the first time, it will ask you to sign in. Enter the credentials you used to sign up. It will remember them from now on.
 {% endhint %}
 
-## Step 3 - Test the site
+## Step 3: Test the site
 
-With ngrok running you can now test the site using the URLs displayed in the console window and the Mollie gateway will automatically be able to communicate back to your site instance.
+With ngrok running you can test the site using the URLs displayed in the console window. The Mollie gateway will automatically be able to communicate back to your site instance.
 
-You should see webhook requests displayed in the console window, and you can even debug into them in Visual Studio.
+You will see webhook requests displayed in the console window, and you can debug them using Visual Studio.
