@@ -1,28 +1,34 @@
 # Table of contents
 
-* [Umbraco Vendr Payment Providers](README.md)
+* [What are Payment Providers?](README.md)
 * [Install payment providers](install-payment-providers.md)
 
 ## Invoicing
 
 * [Overview](invoicing/README.md)
-* [Configuring Umbraco](invoicing/configuring-umbraco.md)
+* [Configure Umbraco](invoicing/configuring-umbraco.md)
 * [Changelog](invoicing/changelog.md)
+
+## Dibs
+
+* [Overview](dibs/README.md)
+* [Configure DIBS](dibs/configuring-dibs.md)
+* [Configure Umbraco](dibs/configuring-umbraco.md)
+* [Changelog](dibs/changelog.md)
 
 ## Klarna
 
 * [Overview](klarna/README.md)
-* [Configuring Klarna](klarna/configuring-klarna.md)
-* [Configuring Umbraco](klarna/configuring-umbraco.md)
-* [Overview](klarna/how-to-guides/README.md)
+* [Configure Klarna](klarna/configuring-klarna.md)
+* [Configure Umbraco](klarna/configuring-umbraco.md)
 * [Changelog](klarna/changelog.md)
 
 ## Mollie
 
 * [Overview](mollie/README.md)
-* [Configuring Mollie](mollie/configuring-mollie.md)
-* [Configuring Umbraco](mollie/configuring-umbraco.md)
-* [Overview](mollie/how-to-guides/README.md)
+* [Configure Mollie](mollie/configuring-mollie.md)
+* [Configure Umbraco](mollie/configuring-umbraco.md)
+* [How-to Guides](mollie/how-to-guides/README.md)
   * [How to test Mollie webhooks locally](mollie/how-to-guides/testing-mollie-webhooks-locally.md)
 * [Changelog](mollie/changelog.md)
 
@@ -42,7 +48,7 @@
 ## PayPal
 
 * [Overview](paypal/README.md)
-* [Configuring PayPal](paypal/configuring-paypal.md)
+* [Configure PayPal](paypal/configuring-paypal.md)
 * [Configuring Umbraco](paypal/configuring-umbraco.md)
 * [Changelog](paypal/changelog.md)
 
