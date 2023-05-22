@@ -120,7 +120,7 @@ We can then access the database via the `BlogContext.` First, we need to migrate
 2. Generate the migration by running `dotnet ef migrations add InitialCreate --context BlogContext`
 
 {% hint style="warning" %}
-In this example, we have named the migration `InitialCreate`. However, you can choose the name you like.&#x20;
+In this example, we have named the migration `InitialCreate`. However, you can choose the name you like.
 
 We've named the DbContext class`BlogContext`, however, if you have renamed it to something else, make sure to also change it when running the command.
 {% endhint %}
@@ -128,7 +128,7 @@ We've named the DbContext class`BlogContext`, however, if you have renamed it to
 You should now have a `Migrations` folder in your project, containing the `InitialCreate` migration (or the name of your choice).
 
 {% hint style="warning" %}
-This might be confusing at first, as when working with EFCore you would inject your `Context` class. You can still do that, it is however not the recommended approach in Umbraco.&#x20;
+This might be confusing at first, as when working with EFCore you would inject your `Context` class. You can still do that, it is however not the recommended approach in Umbraco.
 
 In Umbraco, we use a concept called `Scope` which is our implementation of the `Unit of work` pattern. This ensures that we start a transaction when using the database. If the scope is not completed (for example when exceptions are thrown) it will roll it back.
 {% endhint %}
@@ -188,7 +188,7 @@ public class BlogCommentsComposer : IComposer
 
 After registering the notification handler, build the project and take a look at the database and we can see our new table:
 
-![Database result of a migration](<images/db-table (1).png>)
+![Database result of a migration](<../../../10/umbraco-cms/extending/images/db-table (2).png>)
 
 We now have some custom database tables in our database that we can work with through the Entity framework.
 

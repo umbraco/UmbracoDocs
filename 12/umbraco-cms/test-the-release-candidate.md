@@ -14,16 +14,16 @@ This article will cover in detail how you can try out and test the Release Candi
 
 To get started working with the Umbraco release candidate, follow the steps below using the Command Line Interface (CLI)
 
-1. Install the new Umbraco dotnet template:&#x20;
+1. Install the new Umbraco dotnet template:
    * ```aspnet
-     dotnet new -i Umbraco.Templates::12.0.0-rc1
+     dotnet new -i Umbraco.Templates::12.0.0-rc2
      ```
-2. &#x20;Create a new empty Umbraco project once the template is installed:
+2. Create a new empty Umbraco project once the template is installed:
    * ```
      dotnet new umbraco -n MyCustomUmbracoSolution
      ```
 
-You can open the solution in your favorite Integrated Development Environment (IDE).&#x20;
+You can open the solution in your favorite Integrated Development Environment (IDE).
 
 It is also possible to continue using the CLI to run your project.
 
@@ -44,7 +44,7 @@ This will boot the project and write the log to the console. The website is now 
 
 Below you can see a list of features in the Umbraco 12-RC that we would like to get tested and receive feedback for.
 
-* [Content Delivery API](broken-reference)
+* [Content Delivery API](broken-reference/)
 * [Entity Framework Core Support](tutorials/getting-started-with-entity-framework-core.md)
 
 ## How to provide feedback
