@@ -1,28 +1,60 @@
 # Rendering Forms
 
-There are two options for rendering a form.
+There are several options available for rendering a form.
 
-## Rending Using a Macro
+## Rendering Using a View Component
 
-To display a form in your view, you use a macro and provide three parameters:
+To display a form in your view, you can make a call to a view component:
+
+```csharp
+@await Component.InvokeAsync("RenderForm", new { formId = Guid.Parse("<form guid>"), theme = "", includeScripts = true|false })
+```
+
+Four parameters can be provided:
+
+- `formId` is the GUID of a form.
+- `theme` is the name of a theme. If not provided, the default theme is used (see [Themes](./themes.md)).
+- `includeScripts` indicates whether scripts should be rendered with the form (see [Rendering Scripts](./rendering-scripts.md).
+- `recordId` is an optional existing record Id, used if editing records via the website is [enabled in configuration](../developer/configuration/README.md#alloweditableformsubmissions)
+
+Usually, rather than hard-coding the form's GUID, you'll use a form and/or theme picker property on your page:
+
+```csharp
+@await Component.InvokeAsync("RenderForm", new { formId = @Mode.Form, theme = @Model.Theme, includeScripts = false })
+```
+
+## Rendering Via a View Component and Tag Helper
+
+If you prefer a tag helper syntax, you can use:
+
+```csharp
+@if (Model.Form != null)
+{
+    <vc:render-form form-id="@(Guid)Model.ContactForm" theme="(Model.Theme ?? "default")" include-scripts=false />
+}
+```
+
+## Rendering Using a Macro
+
+With a grid or rich text editor, you need to use a macro. This is also available as an option to display a form in your view, where you provide three parameters:
 
 ```csharp
 @await Umbraco.RenderMacroAsync("renderUmbracoForm", new { FormGuid = "", FormTheme = "", ExcludeScripts = "0|1" })
 ```
 
-- `FormGuid` is the GUID of a form
-- `FormTheme` is the name of a theme. If not provided, the default theme is used (see [Themes](./themes.md))
-- `ExcludeScripts` takes a value of 0 or 1, indicating whether scripts should be excluded from rendering (see [Rendering Scripts](./rendering-scripts.md).
+- `FormGuid` is the GUID of a form.
+- `FormTheme` is the name of a theme. If not provided, the default theme is used.
+- `ExcludeScripts` takes a value of 0 or 1, indicating whether scripts should be excluded from rendering.
 
-Usually, rather than hard-coding the form's GUID, you'll use a form picker property on your page:
+Similarly, you can reference a form picker property on your page:
 
 ```csharp
 @await Umbraco.RenderMacroAsync("renderUmbracoForm", new { FormGuid = @Model.Form, ExcludeScripts = "1" })
 ```
 
-## Rending Via a Tag Helper
+## Rendering Via a Macro and Tag Helper
 
-As an alternative, you can use a [tag helper](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/intro?view=aspnetcore-7.0).
+As a final alternative, you can use a [tag helper](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/intro?view=aspnetcore-7.0) that wraps this macro.
 
 Firstly, in your `_ViewImports.cshtml` file, add a reference to the Umbraco Forms tag helpers with:
 
