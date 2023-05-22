@@ -1,11 +1,12 @@
 ---
-title: Configuring Umbraco
 description: Documentation for the QuickPay V10 (One Time) payment provider for Vendr, the eCommerce solution for Umbraco v8+
 ---
 
+# Configure Umbraco
+
 ## Create Payment Method
 
-In the Umbraco back-office, in the **Settings > Vendr > Stores > {Store Name} > Payment Methods** section, click the **Create Payment Method** button to create a new payment method, choosing **QuickPay V10 (One Time)** from the list of available payment providers.
+In the Umbraco backoffice, in the **Settings > Vendr > Stores > {Store Name} > Payment Methods** section, click the **Create Payment Method** button to create a new payment method, choosing **QuickPay V10 (One Time)** from the list of available payment providers.
 
 ![Create Payment Method](/media/screenshots/quickpay/umbraco_create_payment_method.png)
 

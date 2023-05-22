@@ -30,6 +30,7 @@
 * [Overview](nets/README.md)
 * [Configure Nets](nets/configuring-nets.md)
 * [Configure Umbraco](nets/configuring-umbraco.md)
+* [Changelog](nets/changelog.md)
 
 ## Opayo
 
@@ -46,6 +47,11 @@
 * [Changelog](paypal/changelog.md)
 
 ## Quickpay
+
+* [Overview](quickpay/README.md)
+* [Configure QuickPay](quickpay/configuring-quickpay.md)
+* [Configure Umbraco](quickpay/configuring-umbraco.md)
+* [Changelog](quickpay/changelog.md)
 
 ## Stripe
 

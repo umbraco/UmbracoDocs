@@ -1,7 +1,8 @@
 ---
-title: Configuring QuickPay
 description: Documentation for the QuickPay V10 (One Time) payment provider for Vendr, the eCommerce solution for Umbraco v8+
 ---
+
+# Configure QuickPay
 
 ## Sign up & Sign in
 
