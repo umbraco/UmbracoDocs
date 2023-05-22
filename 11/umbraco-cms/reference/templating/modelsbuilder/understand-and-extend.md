@@ -119,7 +119,7 @@ For more complex partial classes, you'll have to use the full version of the [Mo
 
 ### IModelsGenerator
 
-As of Umbraco 11.4, the IModelsGenerator interface has been added. The interface manipulates how to Models Builder works, allowing you to extend the different features.
+As of Umbraco 11.4, the IModelsGenerator interface has been added. If you want to customize how the models are generated, you can make your own implementation of the `IModelsGenerator` interface, and then overwrite the Umbraco implementation with dependency injection. 
 
 The interface can be accessed via `Infrastructure.ModelsBuilder.Building.ModelsGenerator`.
 
