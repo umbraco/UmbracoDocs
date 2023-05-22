@@ -7,18 +7,18 @@ description: Documentation for the Nets Easy payment provider for Vendr, the eCo
 
 If you haven't done so yet, head on over to [portal.dibspayment.eu/registration](https://portal.dibspayment.eu/registration) to register for a Nets Easy account.
 
-![Nets Easy sign up](/media/screenshots/nets/nets-easy_signup.png)
+![Nets Easy sign up](../media/nets/nets-easy_signup.png)
 
 Or, if you already have an account, you can head over to [portal.dibspayment.eu/dashboard](https://portal.dibspayment.eu/dashboard) to sign in to your account.
 
 
-![Nets Easy sign in](/media/screenshots/nets/nets-easy_signin.png)
+![Nets Easy sign in](../media/nets/nets-easy_signin.png)
 
 ## API Keys
 
 In order for Vendr to communicate with Nets Easy securely we will need to find the API keys from Nets Easy portal, which will be configured in Umbraco and that Vendr can use to authenticate with. These can be found under **Company > Integration** in Nets Easy portal. 
 
-![Nets Easy Integration Keys](/media/screenshots/nets/nets-easy_integration_keys.png)
+![Nets Easy Integration Keys](../media/nets/nets-easy_integration_keys.png)
 
 ## Webhook 
 

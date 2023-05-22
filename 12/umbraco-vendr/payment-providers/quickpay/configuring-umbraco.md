@@ -8,7 +8,7 @@ description: Documentation for the QuickPay V10 (One Time) payment provider for 
 
 In the Umbraco backoffice, in the **Settings > Vendr > Stores > {Store Name} > Payment Methods** section, click the **Create Payment Method** button to create a new payment method, choosing **QuickPay V10 (One Time)** from the list of available payment providers.
 
-![Create Payment Method](/media/screenshots/quickpay/umbraco_create_payment_method.png)
+![Create Payment Method](../media/quickpay/umbraco_create_payment_method.png)
 
 ## Configure Payment Provider Settings
 
@@ -28,4 +28,4 @@ In the payment method editor, configure the standard payment method settings as 
 | Auto Fee |Toggle indicating whether to automatically calculate and apply the fee from the acquirer |
 | Auto Capture | Toggle indicating whether to immediately capture the payment, or whether to authorize the payment for later (manual) capturing |
 
-![Create Payment Provider Settings](/media/screenshots/quickpay/umbraco_configure_quickpay_settings.png)
+![Create Payment Provider Settings](../media/quickpay/umbraco_configure_quickpay_settings.png)

@@ -7,7 +7,7 @@ description: Documentation for the Nets Easy payment provider for Vendr, the eCo
 
 In the Umbraco back-office, in the **Settings > Vendr > Stores > {Store Name} > Payment Methods** section, click the **Create Payment Method** button to create a new payment method, choosing **Nets Easy (One Time)** from the list of available payment providers.
 
-![Create Payment Method](/media/screenshots/nets/umbraco_create_payment_method.png)
+![Create Payment Method](../media/nets/umbraco_create_payment_method.png)
 
 ## Configure Payment Provider Settings
 
@@ -32,4 +32,4 @@ In the payment method editor, configure the standard payment method settings as 
 The following languages can be used in Nets Easy:
 [developers.nets.eu/nets-easy/en-EU/api/#localization](https://developers.nets.eu/nets-easy/en-EU/api/#localization)
 
-![Create Payment Provider Settings](/media/screenshots/nets/umbraco_configure_nets-easy_settings.png)
+![Create Payment Provider Settings](../media/nets/umbraco_configure_nets-easy_settings.png)
