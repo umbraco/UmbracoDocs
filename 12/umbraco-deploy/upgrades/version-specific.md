@@ -22,6 +22,14 @@ The forms deployment component has a minimum dependency on Umbraco Forms of `12.
 
 Version 12 contains a number of breaking changes. We don't expect many projects to be affected by them as they are in areas that are not typical extension points.  For reference though, the full details are listed here:
 
+#### License
+
+For anyone using Umbraco Deploy On-Premise, we've updated the licensing system in use for Umbraco 12.
+
+Please [reach out to your partner or sales representative](https://umbraco.com/products/umbraco-deploy/umbraco-deploy-on-premises/#order) to obtain a new license for an existing subscription.
+
+Use of Umbraco Deploy on Umbraco Cloud is not affected.
+
 #### Code
 
 * The obsolete constructor on `ConfigurePackageMigrationOptions` was removed.
