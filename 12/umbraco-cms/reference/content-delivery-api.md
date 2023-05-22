@@ -582,7 +582,7 @@ The Content Delivery API provides a powerful and flexible way to retrieve conten
 
 In this section, we will discuss some of the known limitations of the API, and how to work around them if necessary.
 
-### Member authentication
+### Protected content
 
 Currently, the Delivery API does not support authentication for members, which means that protected content cannot be accessed through any of our endpoints. This protection is typically implemented by setting public access restrictions on specific content nodes for certain members or member groups. To ensure those items remain protected, we filter out such content completely, at the moment.&#x20;
 
