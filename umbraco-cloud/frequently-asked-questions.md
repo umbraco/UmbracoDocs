@@ -65,6 +65,20 @@ Yes, you can. Please note that Umbraco Cloud also uses Cloudflare for DNS, so yo
 
 Generally, we recommend that you keep your DNS entry set to 'DNS Only' in your own Cloudflare account and let Umbraco Cloud handle the automatic TLS (HTTPS) certificates for the hostnames you point to your Umbraco Cloud project. Check with our support team, via chat or using support@umbraco.com, before bringing in your own Cloudflare setup.
 
+### Does Cloudflare add any additional HTTP request headers?
+HTTP headers are bits of information that are passed along within every communication between (web) servers and (browser) clients. All HTTP requests to custom hostnames on Umbraco Cloud pass through Cloudflare. 
+
+HTTP requests headers can be useful for for example multilingual purposes to redirect users of certain languages to a specific URL. Here, the collection of visitor location headers below will be helpful. The values for these location headers are derived from the visitor's IP address.
+
+- `cf-ipcity`: The visitor's city
+- `cf-ipcountry`: The visitor's country
+- `cf-ipcontinent`: The visitor's continent
+- `cf-iplongitude`: The visitor's longitude
+- `cf-iplatitude`: The visitor's latitude
+- `uc-ipcountry`: The visitor’s country. `uc-ipcountry` header is a carbon copy of [cf-ipcountry](https://developers.cloudflare.com/fundamentals/get-started/reference/http-request-headers/#cf-ipcountry).
+
+Note, the HTTP requests headers are available on all custom hostnames created through Umbraco Cloud. But not the default hostname for the Umbraco Cloud project such as project.euwest01.umbraco.io.
+
 ### What versions of .NET does Cloud support?
 
 By default, Umbraco Cloud runs all Umbraco version 8 projects on .NET 4.8, Umbraco 9 projects on .NET 5.0, Umbraco 10 projects on .NET 6.0, and Umbraco 11 projects on .NET 7.0.

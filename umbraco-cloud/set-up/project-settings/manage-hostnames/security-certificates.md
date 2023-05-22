@@ -11,9 +11,9 @@ See the full list of features in the [Umbraco Cloud Pricing Plans](https://umbra
 To manually upload your certificate on the Umbraco Cloud Portal and assign it to one of the hostnames you've added:
 
 1. Go to your project on the Umbraco Cloud portal.
-2.  Click **Settings** -> **Certificates**. The **Manual Certificates** window opens.&#x20;
+2.  Click **Settings** -> **Certificates**. The **Manual Certificates** window opens.
 
-    <figure><img src="../../manage-hostnames/images/Manual-certificate.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/manual-certificates.png" alt=""><figcaption><p>Manual certificates</p></figcaption></figure>
 
 Your certificates need to be:
 

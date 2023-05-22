@@ -14,7 +14,6 @@
   * [Baseline Merge Conflicts](getting-started/baselines/baseline-merge-conflicts.md)
   * [Break Reference between Baseline and Child Project](getting-started/baselines/break-baseline.md)
   * [Handling configuration files](getting-started/baselines/configuration-files.md)
-  * [High-level Overview](getting-started/baselines/high-level-overview.md)
   * [Pushing Upgrades to a Child Project](getting-started/baselines/upgrading-child-projects.md)
 * [Plans](getting-started/umbraco-cloud-plans.md)
 * [Migrating an Existing Site](getting-started/migrate-existing-site/README.md)
@@ -125,6 +124,8 @@
 
 ## Release Notes
 
+* [Overview 2023](release-notes/overview-2023.md)
+* [April 2023](release-notes/2023-04-releasenotes.md)
 * [March 2023](release-notes/2023-03-releasenotes.md)
 * [February 2023](release-notes/2023-02-releasenotes.md)
 * [January 2023](release-notes/2023-01-releasenotes.md)

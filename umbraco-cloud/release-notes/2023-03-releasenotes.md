@@ -1,11 +1,10 @@
-# Release Notes, February 2023
+# March 2023
 
-## Key Takeaways
+## Highlights video
 
-* **Umbraco Baseline Support For All Cloud Regions** - Umbraco Cloud now offers baseline support for all three regions - West Europe, East US, and South UK.
-* **Simplified Access to Project Team Page** - As an administrator for a Cloud organization you will be able to access the project team for all the cloud projects of the organization.
-* **Monthly Bandwidth Usage** - You find an update to the “Usage” page where you now can see the total bandwidth used for the past seven months.
-* **Upgrade Project Flow** - The previous Upgrade plan feature has been migrated into a new, improved Upgrade Project flow, where you can change the project plan and change to a dedicated resource in one go!
+{% embed url="https://youtu.be/4WHShY67EwM" %}
+Cloud highlights March 2023
+{% endembed %}
 
 ## Umbraco Baseline Support For All Cloud Regions
 
@@ -36,6 +35,7 @@ We've launched a minor update on the usage page. The update lets you see the **t
 With this new feature, you can track your website's bandwidth usage over time and identify any patterns or trends. We believe this new addition is valuable for customers running high-traffic websites and weekly need to monitor the bandwidth usage to ensure the project stays within the plan tier limit.
 
 ## Upgrade Project Flow
+
 The newest feature to launch in the new front end stack is “Upgrade project” flow. It replaces the current upgrade plan feature while adding a more modern and visually appealing design.
 
 While you can still change the project plan you’ll also get the opportunity to change to a new dedicated option or go back to a shared resource during the flow. And like the new project creation flow launched in the February update, you will see a summary at the very end before accepting the upgrade.

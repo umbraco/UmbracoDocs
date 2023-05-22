@@ -1,17 +1,5 @@
 # January 2022
 
-## Key Takeaways
-
-* **Break reference between baseline and child project** - As an admin, you can now break the reference between a baseline and child projects.
-* **New Project Overview Page** - See project information such as plan, payment status for your project on the new project overview page.
-* **Tweaks and improvements** - Since December we have provided a lot of small changes and improvements.
-* **Specify portal project roles on project invites** - When inviting a new user to a project you can specify the portal project role assigned to the user for each separate environment of the project.
-* **Improved available upgrade notifications** - We have improved the notifications for available upgrades on the project page.
-* **Baseline loading efficiency in create wizard** - When creating a new cloud project loading of potential baselines is now async for improved performance.
-* **Blob storage connection info** - The blob storage connection information for a project is now displayed on the _Connection details_ page.
-* **Project invitation link to clipboard** - To ease the project invite flow if a project invitation mail is bounced or accidentally lands in the spam folder you can now copy the invitation link to your clipboard.
-* **Release notes link in the portal** - As you are reading these pages you might already have noticed the new item in the profile menu of the portal; a link to the portal release notes.
-
 ### [Break reference between baseline and child project](../../getting-started/baselines/break-baseline.md)
 
 Umbraco Cloud Portal offers a powerful baseline-child relationship between projects, similar to a fork (forked repository) on GitHub. With this feature you can create a clone of an existing project while maintaining a connection between the two projects.

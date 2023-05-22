@@ -18,7 +18,7 @@ An example of this could be to have two dropdown Data Types both referencing the
 
 To create a new Data Type, go to the **Settings** section within the backoffice. Thereafter click the menu icon to the right of the **Data Types** folder and select **Create**->**New Data Type**. Name the Data Type - we'll call it _Dropdown Cities_.
 
-![Dropdown List](../../../../../10/umbraco-cms/fundamentals/data/data-types/images/creating-a-data-type-v10.png)
+![Dropdown List](images/creating-a-data-type-v10.png)
 
 * **Property Editor:** This is where you pick the Property Editor that our _Dropdown Cities_ Data Type will be referencing. Pick the **Dropdown** and now you will see the configuration options that are available for a Data Type referencing the Dropdown Property Editor.
 * **Enable multiple choice:** By enabling this it will be possible to select multiple options from the dropdown.
@@ -36,7 +36,7 @@ Besides the Data Types that are available out of the box there are some addition
 
 To view the Data Type reference, go to the **Settings** section and expand the **Data Types** folder. Select the **Data Type** you wish to view the reference for and click the **Info** tab.
 
-![Content Picker References](../../../../../10/umbraco-cms/fundamentals/data/data-types/images/viewing-data-type-reference.png)
+![Content Picker References](images/viewing-data-type-reference.png)
 
 This gives you an overview of the Types that currently use the Data Type.
 

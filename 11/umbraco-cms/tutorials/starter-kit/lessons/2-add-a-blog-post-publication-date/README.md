@@ -19,7 +19,7 @@ Learn how to:
 1. In the **Settings** section, expand **Document Types**.
 2.  Click on _Blogpost_. This is the Document Type that defines the fields for this type of page.
 
-    ![Blogpost Document Type](../../../../../../10/umbraco-cms/tutorials/starter-kit/lessons/2-add-a-blog-post-publication-date/images/Blogpost-Document-Type-v10.png)
+    ![Blogpost Document Type](images/Blogpost-Document-Type-v10.png)
 3. The Document Type contains 2 groups: _Content_ and _Navigation & SEO_.
    * At the bottom of the _Content_ group select **Add property**.
    * This opens the **Property Editor** dialog window.
@@ -31,7 +31,7 @@ Learn how to:
 7. In the validation section, enable the field to make it mandatory.
 8.  Submit to close the dialog and save the property.
 
-    ![Property settings](../../../../../../10/umbraco-cms/tutorials/starter-kit/lessons/2-add-a-blog-post-publication-date/images/property-settings-v10.png)
+    ![Property settings](images/property-settings-v10.png)
 9. Select the **Reorder** option near the top-right of the window, then drag the new property to be after _Page Title_.
    * A logical order to your properties will make things easier for your editors.
 10. Click **I am done reordering** near the top-right of the window and select **Save** the Document Type - a confirmation message should appear confirming that the Document Type was saved.

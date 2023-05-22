@@ -1,10 +1,10 @@
 # November 2022
 
-## Key Takeaways
+## Highlights video
 
-* **Dedicated for Starter and Standard plan** - You can now add a dedicated option for every Umbraco Cloud project plan to run on dedicated resources.
-* **Projects Dashboard Quick links** - When hovering an environment in the Projects Dashboard two links are shown for quick access to the backoffice and page, respectively.
-* **Other Umbraco Cloud Portal updates** - The Portal has been updated with a few other features and updates worth mentioning. These includes a quick invite for organization members, improved deployment messaging, region and dedicated information on the project information page, and a few fixes.
+{% embed url="https://youtu.be/Bdr-BNwAjv4" %}
+Cloud highlights November 2022
+{% endembed %}
 
 ## [Dedicated for Starter and Standard plan](../../set-up/project-settings/dedicated-resources.md)
 
