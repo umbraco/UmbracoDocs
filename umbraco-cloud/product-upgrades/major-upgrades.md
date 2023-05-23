@@ -25,7 +25,7 @@ These are extra steps needed when going from Umbraco 9 to the latest major.
 ## Prerequisites
 
 * Follow the **requirements** for [local development](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/requirements#local-development).
-* A Umbraco Cloud project running **the latest version of Umbraco**
+* A Umbraco Cloud project running [the latest version of Umbraco CMS](https://our.umbraco.com/download/releases)
 * The **latest** .[NET version](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks) is installed locally.
 * **At least 2 environments** on your Cloud project.
 * A backup of your project database.
