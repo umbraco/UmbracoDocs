@@ -23,7 +23,7 @@ Usually, rather than hard-coding the form's GUID, you'll use a form and/or theme
 @await Component.InvokeAsync("RenderForm", new { formId = @Mode.Form, theme = @Model.Theme, includeScripts = false })
 ```
 
-## Rendering Via a View Component and Tag Helper
+## Rendering Using a Tag Helper
 
 If you prefer a tag helper syntax, you can use one that ships with Umbraco Forms.
 
