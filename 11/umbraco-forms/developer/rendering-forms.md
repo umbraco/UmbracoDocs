@@ -1,6 +1,6 @@
 # Rendering Forms
 
-There are several options available for rendering a form.
+There are three options available for rendering a form.
 
 ## Rendering Using a View Component
 
