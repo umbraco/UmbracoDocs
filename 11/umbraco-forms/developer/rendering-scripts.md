@@ -18,6 +18,20 @@ In order to render your scripts where you want, you need to add the following sn
 }
 ```
 
+If you prefer to use a tag helper, that's an option too.
+
+Firstly, in your `_ViewImports.cshtml` file, ensure you have a reference to the Umbraco Forms tag helpers with:
+
+```csharp
+@addTagHelper *, Umbraco.Forms.Web
+```
+
+Then instead of invoking the view component directly, you can use:
+
+```csharp
+<umb-forms-render-scripts form-id="form" theme = "bootstrap3-horizontal" />
+```
+
 ## Enabling `ExcludeScripts`
 
 If you do not want to render the associated scripts with a Form, you need to explicitly say so. You need to make sure `ExcludeScripts` is checked/enabled, whether you are inserting your Form using a macro or adding it directly in your template.

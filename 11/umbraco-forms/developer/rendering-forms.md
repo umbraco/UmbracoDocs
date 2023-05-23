@@ -25,12 +25,20 @@ Usually, rather than hard-coding the form's GUID, you'll use a form and/or theme
 
 ## Rendering Via a View Component and Tag Helper
 
-If you prefer a tag helper syntax, you can use:
+If you prefer a tag helper syntax, you can use one that ships with Umbraco Forms.
+
+Firstly, in your `_ViewImports.cshtml` file, add a reference to the Umbraco Forms tag helpers with:
+
+```csharp
+@addTagHelper *, Umbraco.Forms.Web
+```
+
+Then in your view you can use:
 
 ```csharp
 @if (Model.Form != null)
 {
-    <vc:render-form form-id="@(Guid)Model.ContactForm" theme="(Model.Theme ?? "default")" include-scripts=false />
+    <umb-forms-render form-id="@(Guid)Model.Form" theme="@Model.Theme" include-scripts="false" />
 }
 ```
 
@@ -51,20 +59,3 @@ Similarly, you can reference a form picker property on your page:
 ```csharp
 @await Umbraco.RenderMacroAsync("renderUmbracoForm", new { FormGuid = @Model.Form, ExcludeScripts = "1" })
 ```
-
-## Rendering Via a Macro and Tag Helper
-
-As a final alternative, you can use a [tag helper](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/intro?view=aspnetcore-7.0) that wraps this macro.
-
-Firstly, in your `_ViewImports.cshtml` file, add a reference to the Umbraco Forms tag helpers with:
-
-```csharp
-@addTagHelper *, Umbraco.Forms.Web
-```
-
-Then in your view you can use:
-
-```csharp
-<umb-form form-guid="@Model.Form" theme="@Model.THeme" exclude-scripts="true" />
-```
-
