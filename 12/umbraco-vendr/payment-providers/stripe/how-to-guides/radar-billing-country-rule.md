@@ -1,48 +1,59 @@
 ---
 title: How to block payments from non billing country sources
-description: Documentation for the Stripe Checkout payment provider for Vendr, the eCommerce solution for Umbraco v8+
+description: >-
+  Learn how you can block different types of payments when using the Stripe
+  payment provider with Umbraco Vendr.
 ---
 
-Out of the box, Stripe already implements a lot of security features for you, making payments safe and secure by default, however you may have a need to provide additional security steps of your own. 
+# How to block payments from non billing country sources
 
-One such example, especially if you are based in the EU selling digital goods, would be the requirement to capture two forms of proof of a customers location for VAT purposes. One recommended way of doing this is to capture the customers billing country, and bank country, and ensure these are both the same. Thankfully, the Stripe payment provider is setup to make this straight forward to setup.
+Out of the box, Stripe implements a lot of security features for you, making payments safe and secure by default. You may still have a need to provide additional security steps of your own.
 
-## Step 1 - Capture the customers billing country
+If you are based in the EU selling digital goods it would be a requirement to capture two forms of proof of a customer's location for VAT purposes. One recommended way is to capture the customer's billing country, and bank country, and ensure these are the same. The Stripe payment provider allows you to set this up in a few steps.
 
-The first step will be to ensure you are capturing the customers billing address or more specifically, the billing address country. We will assume you have already learnt to do this based on the core Vendr documentation.
+## Step 1: Capture the customer's billing country
 
-## Step 2 - Pass the billing country to Stripe
+The first step is to ensure you are capturing the customer's billing address or more specifically, the billing address country. Learn how to do this in the core Vendr documentation.
 
-Thankfully there is nothing for you to do in this step. As long as you have populated your orders billing country, then the Stripe payment provider will automatically send the country to Stripe using custom meta data on the transactions customer entity. The only important thing to know here is that this will be passed via a meta data entry on the Stripe customer with the key `billingCountry`, with the value of the two letter ISO code of the given country.
+## Step 2: Pass the billing country to Stripe
 
-## Step 3 - Sign up for Radar for Fraud Teams
+As long as you have populated your orders billing country, it will automatically be sent to Stripe using custom metadata on the transactions customer entity. This will be passed via a metadata entry on the Stripe customer with the key `billingCountry`, with the value of the two-letter ISO code of the given country.
 
-In order to configure custom Radar rules you will need to sign up for the [Radar for Fraud Teams](https://stripe.com/gb/radar/fraud-teams) added feature. This does incur an additional fee per transaction, however the added security should far out way the minimal expense.
+## Step 3: Sign up for Radar for Fraud Teams
 
-To enable **Radar for Fraud Teams**, log into your Stripe dashboard, and navigate to the **Settings > Product Settings > Radar Settings** section.
+In order to configure custom Radar rules you need to sign up for the [Radar for Fraud Teams](https://stripe.com/radar/fraud-teams) added feature. This does incur an additional fee per transaction, however, the added security will outweigh the minimal expense.
 
-![Stripe Product Settings](../../media/stripe/stripe_product_settings.png)
+To enable **Radar for Fraud Teams** follow these steps:
 
-From there you can enable the feature, allowing us to define custom Radar rules.
+1. Log in to your Stripe dashboard.
+2. Navigate to the **Settings > Product Settings > Radar Settings** section.
 
-![Stripe Radar for Fraud Teams Setting](../../media/stripe/stripe_radar_for_fraud_teams.png)
+![Stripe Product Settings](../../media/stripe/stripe\_product\_settings.png)
 
-## Step 4 - Setup a Stripe Radar rule
+3. Enable the **Radar for Fraud Teams** feature, allowing us to define custom Radar rules.
 
-With the **Radar for Fraud Teams** feature enabled, navigate to the **Radar > Rules** section and in the **Then, when should a payment be blocked?** panel, click the **Add rule** button to add a new rule.
+![Stripe Radar for Fraud Teams Setting](../../media/stripe/stripe\_radar\_for\_fraud\_teams.png)
 
-In the dialog that is displayed, enter the following rule:
+## Step 4: Setup a Stripe Radar rule
+
+To set up a new Stripe Radar rule, follow these steps:
+
+1. Navigate to the **Radar > Rules** section.
+2. Locate the **Then, when should a payment be blocked?** panel.
+3. Click the **Add rule** button to add a new rule.
+4. Enter the following rule in the dialog:
 
 ```
 Block if ::customer:billingCountry:: != :card_country:
 ```
 
-![Stripe Radar for Fraud Teams Setting](../../media/stripe/stripe_block_country_rule2.png)
+![Stripe Radar for Fraud Teams Setting](../../media/stripe/stripe\_block\_country\_rule2.png)
 
-Finally, click the **Test rule** button to test the rule and then the **Add and enable** button add the rule to the list of block rules.
+5. Click the **Test rule** button to test the rule.
+6. Click the **Add and enable** button to add the rule to the list of block rules.
 
-![Stripe Radar blocking rules](../../media/stripe/stripe_block_rules2.png)
+![Stripe Radar blocking rules](../../media/stripe/stripe\_block\_rules2.png)
 
 {% hint style="info" %}
-The rule test may fail when you click the **Test rule** button due to there being no transaction with the given meta data being attached to them, however you should be able to continue regardless.
+The rule test may fail when you click the **Test rule** button due to there being no transaction with the given metadata being attached to them. You will, however, be able to continue regardless.
 {% endhint %}

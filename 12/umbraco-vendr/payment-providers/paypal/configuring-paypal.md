@@ -38,40 +38,51 @@ From here you can view and modify any existing Sandbox accounts you have.
 
 ![PayPal Sandbox Account Details](../media/paypal/sandbox\_account\_details.png)
 
-## Create a PayPal App
+## Step 2: Create a PayPal App
 
 In order for Umbraco Vendr to perform actions in your PayPal account on your behalf, we need to create a PayPal App. In fact, we'll need to create two: one for the Sandbox account and one for our Live account.
 
 1. Access the [PayPal Developer Portal](https://developer.paypal.com/developer/applications/).
 
-![PayPal Apps](../media/paypal/applications.png)
+![Overview of apps and credentials in the PayPal developer portal.](../media/paypal/applications.png)
 
 2. Create the two apps by toggling the **Sandbox\Live** toggle buttons.
 3. Clicking the **Create App** button to create an App for each environment.
 4. Give your app a name, and choose the **Sandbox Business Account** to associate the App with the Sandbox App.
 5. Click the **Create App** button to create the App.
 
-![Create PayPal App](../media/paypal/create\_application.png)
+![The options when creating a New App in the PayPal developer portal.](../media/paypal/create\_application.png)
 
-YOU ARE HERE!
+6. Note down the **Client ID**.
+7. Click the **Show** link below the **Secret** heading.
+8. Note down the **Secret**.
 
-From the App details screen, note down the **Client ID** then click the **Show** link below the **Secret** heading, and note down the **Secret** displayed.
+![API Credentials and secrets for an app in the PayPal developer portal.](../media/paypal/application\_details.png)
 
-![PayPal App Details](../media/paypal/application\_details.png)
+### Webhooks
 
-#### Webhooks
+Webhooks are used for communication between PayPal and the Umbraco Vendr installation. They are managed on the same PayPal portal page as the app secrets.
 
-On this same screen, you will then want to scroll down to the **Webhooks** section and click the **Add Webhook** button to create a new Webhook.
+1. Scroll down to the **Webhooks** section.
+2. Click the **Add Webhook** button to create a new Webhook.
 
-![PayPal App Webhooks](../media/paypal/webhooks.png)
+![The configuration options when add a new webhook through the PayPal developer portal.](../media/paypal/webhooks.png)
 
-For the webhook, you'll want to provide the URL where the webhook notifications should be sent, which is a Vendr specific URL as follows (replacing the parameters in curly brackets with the corresponding values taken from your store):
+3. Provide the URL where the webhook notifications should be sent. See the example below:
 
 ```bash
 https://{store_domain}/umbraco/vendr/payment/callback/paypal-checkout-onetime/{payment_method_id}/
 ```
 
-You'll also want to select the **Event Types** to be notified of, for which you'll want to check the following options by checking the appropriate checkboxes next to those options and then clicking the **Save** button at the bottom.
+{% hint style="info" %}
+The webhook needs to be a Vendr-specific URL. Remember to replace the parameters in curly brackets with the corresponding values taken from your store.
+{% endhint %}
+
+4. Select the **Event Types** to be notified of.
+5. **Save** the webhook settings.
+
+{% hint style="info" %}
+These are the recommended Event Types to configure notifications for:
 
 * Checkout order approved
 * Checkout order completed
@@ -81,11 +92,12 @@ You'll also want to select the **Event Types** to be notified of, for which you'
 * Payment capture pending
 * Payment capture refunded
 * Payment capture reversed
+{% endhint %}
 
-![Create PayPal App Webhook](../media/paypal/sandbox\_webhook.png)
+![Overview of available event types to subscribe to notifications through your webhook.](../media/paypal/sandbox\_webhook.png)
 
-Once created, in the webhooks list, be sure to take a not of the **Webhook ID** of the webhook as we'll need this to verify webhook notifications later.
+6. Note down the **Webhook ID** for the webhook.
 
-![PayPal App Webhooks](../media/paypal/webhooks2.png)
+![Overview of the created Webhook in the PayPal developer portal.](../media/paypal/webhooks2.png)
 
-As previously mentioned, you will need to create an App and webhook configuration for both Sandbox and Live environments. For the Live environment, this must be setup under the account that will be accepting the payments.
+Keep in mind that you will need to create an App and webhook configuration for both Sandbox and Live environments. For the Live environment, this must be set up under the account that will be accepting the payments.

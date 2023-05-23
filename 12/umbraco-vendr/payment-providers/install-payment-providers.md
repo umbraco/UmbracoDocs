@@ -1,8 +1,10 @@
 ---
-description: Learn how to install and add payment providers to your Umbraco Commerce implementation.
+description: >-
+  Learn how to install and add payment providers to your Umbraco Commerce
+  implementation.
 ---
 
-# Install Payment Providers
+# Install payment providers
 
 When you need to install a payment provider into your Umbraco Commerce implementation it is done via NuGet.
 
@@ -17,7 +19,7 @@ The installation can be handled in one of two ways as explained below.
 PM> Install-Package Vendr.PaymentProviders.PROVIDER
 ```
 
-Use the [table of available Payment Providers](#available-payment-providers) to ensure you get the correct package name for the provider you want to install.
+Use the [table of available Payment Providers](install-payment-providers.md#available-payment-providers) to ensure you get the correct package name for the provider you want to install.
 
 ## Install via the NuGet Package Manager
 
@@ -28,20 +30,19 @@ Use the [table of available Payment Providers](#available-payment-providers) to 
 
 Alternatively, you can also find and install the NuGet package via the NuGet Package Manager.
 
-![Installing Vendr via the NuGet Package Manager](../media/nuget_package_manager_gui.png)
+![Installing Vendr via the NuGet Package Manager](../media/nuget\_package\_manager\_gui.png)
 
 ## Available Payment Providers
 
-| Payment Provider | NuGet Package name |
-| ---- | ----------- |
-| Invoicing | `Vendr.PaymentProviders.Invoicing` |
-| Klarna | `Vendr.PaymentProviders.Klarna` |
-| Mollie | `Vendr.PaymentProviders.Mollie` |
-| Nets | `Vendr.PaymentProviders.Nets` |
-| Opayo | -- |
-| Paypal | `Vendr.PaymentProviders.PayPal` |
-| QuickPay | Vendr.PaymentProviders.QuickPay |
-| Stripe | `Vendr.PaymentProviders.Stripe` |
+| Payment Provider | NuGet Package name                 |
+| ---------------- | ---------------------------------- |
+| Invoicing        | `Vendr.PaymentProviders.Invoicing` |
+| Klarna           | `Vendr.PaymentProviders.Klarna`    |
+| Mollie           | `Vendr.PaymentProviders.Mollie`    |
+| Nets             | `Vendr.PaymentProviders.Nets`      |
+| Paypal           | `Vendr.PaymentProviders.PayPal`    |
+| QuickPay         | `Vendr.PaymentProviders.QuickPay`  |
+| Stripe           | `Vendr.PaymentProviders.Stripe`    |
 
 ## Upgrading
 
@@ -49,4 +50,4 @@ Alternatively, you can also find and install the NuGet package via the NuGet Pac
 Before upgrading, it is always advisable to take a complete backup of your site/database. Every effort has been made to ensure that Vendr will upgrade gracefully, but there is always a risk that something may not install as expected.
 {% endhint %}
 
-Vendr uses Umbraco Migrations to install all of it's features meaning upgrades follow the exact same process as the installation processes detailed above, installing the latest version of a package over the top of the existing package installation. Vendr is then clever enough to detect the current state of your site and only install the features that are missing.
+Vendr uses Umbraco Migrations to install all of its features meaning upgrades follow the exact same process as the installation processes detailed above, installing the latest version of a package over the top of the existing package installation. Vendr is then clever enough to detect the current state of your site and only install the features that are missing.

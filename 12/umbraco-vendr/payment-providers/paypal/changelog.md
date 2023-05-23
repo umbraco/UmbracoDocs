@@ -1,135 +1,63 @@
 ---
 title: Changelog
-description: Changelog for the PayPal Payment Provider for Vendr, the eCommerce solution for Umbraco v8+
+description: Changelog for the PayPal Payment Provider for Vendr.
 ---
 
-## v2.0.1   
-**Date:** 2022-01-27   
-**Description:** Patch release with minor bug fixes / enhancements 
+# Changelog
 
----  
+## v2.0.1
 
-<changelog>
-<changelog-group category="Added">  
+**Date:** 2022-01-27\
+**Description:** Patch release with minor bug fixes/enhancements
 
-    
 * Added order line descriptions.
+* Fixed an issue with the Webhook parser looking for request headers in the wrong location.
 
+## v2.0.0
 
-</changelog-group>
-<changelog-group category="Fixed">  
-
-    
-* Fixed issue with Webhook parser looking for request headers in the wrong location.
-
-
-</changelog-group>
-</changelog>
-
-## v2.0.0   
-**Date:** 2021-10-07   
+**Date:** 2021-10-07\
 **Description:** Major new release with breaking changes
 
----  
-
-<changelog>
-<changelog-group category="Breaking">  
-
-    
 * Rebuilt for Vendr 2.0.0.
 
+## v1.1.1
 
-</changelog-group>
-</changelog>
+**Date:** 2021-07-22\
+**Description:** Patch release with minor bug fixes/enhancements
 
-## v1.1.1  
-**Date:** 2021-07-22    
-**Description:** Patch release with minor bug fixes / enhancements 
+* Fixed decimal parsing issue by adding invariant culture to the parser ([#3](https://github.com/vendrhub/vendr-payment-provider-paypal/issues/3)).
 
----  
+## v1.1.0
 
-<changelog>
-<changelog-group category="Fixed">  
+**Date:** 2020-12-10\
+**Description:** Breaking change update targeting Vendr 1.4.0
 
-    
-* Fixed decimal parsing issue by adding invariant culture to parser  ([#3](https://github.com/vendrhub/vendr-payment-provider-paypal/issues/3)).
-
-
-</changelog-group>
-</changelog>
-
-## v1.1.0   
-**Date:** 2020-12-10    
-**Description:** Breaking change update targeting Vendr 1.4.0 
-
----  
-
-<changelog>
-<changelog-group category="Breaking">  
-
-    
 * Payment provider now uses new `TransactionAmount` from Vendr 1.4.0.
 
+## v1.0.3
 
-</changelog-group>
-</changelog>
+**Date:** 2020-07-10\
+**Description:** Patch release with minor bug fixes/enhancements
 
-## v1.0.3  
-**Date:** 2020-07-10  
-**Description:** Patch release with minor bug fixes / enhancements 
-
---- 
-
-<changelog>
-<changelog-group category="Added">  
-
-    
 * Added support for listening for all Payment related webhooks to ensure the payment status is kept in sync.
-
-
-</changelog-group>
-<changelog-group category="Fixed">  
-
-    
 * Fixed bug where cancel action was capturing payment.
 
+## v1.0.2
 
-</changelog-group>
-</changelog>
+**Date:** 2020-04-24\
+**Description:** Patch release with minor bug fixes/enhancements
 
-## v1.0.2  
-**Date:** 2020-04-24  
-**Description:** Patch release with minor bug fixes / enhancements 
-
---- 
-
-<changelog>
-<changelog-group category="Added">  
-
-    
 * Added check to ensure currency code is ISO4217 compatible.
-* Added required meta data to Umbraco package file.
+* Added required metadata to the Umbraco package file.
 
+## v1.0.1
 
-</changelog-group>
-</changelog>
+**Date:** 2020-04-09\
+**Description:** Change of PayPal settings
 
-## v1.0.1  
-**Date:** 2020-04-09  
-**Description:** Change of PayPal settings  
+* Removed the mode dropdown in favor of a "Sandbox Mode" checkbox as this is the standard we have been implementing in other providers.
 
---- 
+## v1.0.0
 
-<changelog>
-<changelog-group category="Breaking">  
-
-    
-* Removed the mode dropdown in favour of a "Sandbox Mode" checkbox as this is the standard we have been implementing in other providers.
-
-
-</changelog-group>
-</changelog>
-
-## v1.0.0  
-**Date:** 2020-03-30  
-**Description:** Initial Vendr PayPal Payment Provider release  
+**Date:** 2020-03-30\
+**Description:** Initial Vendr PayPal Payment Provider release

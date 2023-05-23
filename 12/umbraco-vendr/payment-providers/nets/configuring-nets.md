@@ -1,31 +1,42 @@
 ---
 title: Configure Nets
-description: Documentation for the Nets Easy payment provider for Vendr, the eCommerce solution for Umbraco v8+
+description: >-
+  Learn how to configure Nets Easy in order to implement the integration with
+  your Umbraco Vendr installation.
 ---
 
-## Sign up & Sign in
+# Configure Nets
 
-If you haven't done so yet, head on over to [portal.dibspayment.eu/registration](https://portal.dibspayment.eu/registration) to register for a Nets Easy account.
+## Step 1: Sign up & Sign in
 
-![Nets Easy sign up](../media/nets/nets-easy_signup.png)
+If you haven't done so yet, head on over to the [Nets portal](https://portal.dibspayment.eu/registration) to register for a Nets Easy account.
 
-Or, if you already have an account, you can head over to [portal.dibspayment.eu/dashboard](https://portal.dibspayment.eu/dashboard) to sign in to your account.
+![Sign up for Nets Easy on the Nets Portal.](../media/nets/nets-easy\_signup.png)
 
+Or [login to the portal](https://portal.dibspayment.eu/dashboard) if you already have an account.
 
-![Nets Easy sign in](../media/nets/nets-easy_signin.png)
+![Login to your Nets Easy account on the Nets Portal.](../media/nets/nets-easy\_signin.png)
 
-## API Keys
+## Step 2: API Keys
 
-In order for Vendr to communicate with Nets Easy securely we will need to find the API keys from Nets Easy portal, which will be configured in Umbraco and that Vendr can use to authenticate with. These can be found under **Company > Integration** in Nets Easy portal. 
+In order for Umbraco Vendr to communicate with Nets securely we need to retrieve a series of API keys used for authentication.
 
-![Nets Easy Integration Keys](../media/nets/nets-easy_integration_keys.png)
+The keys can be found under **Company > Integration** in the Nets Easy portal.
 
-## Webhook 
+![Nets Easy Integration Keys](../media/nets/nets-easy\_integration\_keys.png)
 
-In order for Nets Easy to notify Vendr of a successful transaction, Nets Easy makes use of webhook technology to directly send notifications of the changing statuses of a transaction. By using webhooks it ensures that the system will always be notified of these status changes, even if the customer decides not to return to the store once a transaction is complete.
+## Step 3: Webhook
 
-Registration of webhook notifications are handles as part of the payment request using the Vendr callback URL as follows (replacing the parameters in curly brackets with the corresponding values taken from your store):
+In order for Nets Easy to notify Vendr of a successful transaction, Nets Easy makes use of webhook technology. This enables sending notifications of changing transaction statuses directly between the two platforms.
 
-````
+Webhooks ensure that Umbraco Vendr will always be notified of status changes, even if the customer decides not to return to the store.
+
+Registration of webhook notifications is handled as part of the payment request using the Vendr callback URL.
+
+The following is an example of such a callback URL:
+
+```
 https://{store_domain}/umbraco/vendr/payment/callback/nets-easy-checkout/{payment_method_id}/
-````
+```
+
+When using this, be sure to replace the parameters in the curly brackets with the corresponding values taken from your store.

@@ -1,16 +1,17 @@
 ---
-description: Documentation for the QuickPay V10 (One Time) payment provider for Vendr, the eCommerce solution for Umbraco v8+
+description: >-
+  Learn how to configure QuickPay in order to implement the integration with
+  your Umbraco Vendr installation.
 ---
 
 # Configure QuickPay
 
 ## Sign up & Sign in
 
-If you haven't done so yet, head on over to [quickpay.net/signup](https://quickpay.net/signup) to register for a QuickPay account.
+If you haven't done so yet, head over to the [QuickPay portal](https://manage.quickpay.net/create-user) to register for a QuickPay account.
 
-![QuickPay Signup](../media/quickpay/quickpay_signup.png)
+![QuickPay Signup](../media/quickpay/quickpay\_signup.png)
 
-Or, if you already have an account, you can head over to [manage.quickpay.net](https://manage.quickpay.net) to sign in to your account.
+Or [login to the QuickPay portal](https://manage.quickpay.net/) if you already have an account.
 
-
-![QuickPay Signup](../media/quickpay/quickpay_signin.png)
+![The login form to the QuickPay portal.](../media/quickpay/quickpay\_signin.png)
