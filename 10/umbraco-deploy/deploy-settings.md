@@ -46,6 +46,7 @@ For illustration purposes, the following structure represents the full set of op
             "HttpClientTimeout": "0.0:20:00",
             "DiskOperationsTimeout": "0.0:05:00",
             "SourceDeployBatchSize": null,
+            "PackageBatchSize": null,
             "UseDatabaseBackedTransferQueue": true,
             "IgnoreBrokenDependenciesBehavior": "Restore",
             "AcceptInvalidCertificates": false,
@@ -56,7 +57,10 @@ For illustration purposes, the following structure represents the full set of op
             "ExportMemberGroups": true,
             "ReloadMemoryCacheFollowingDiskReadOperation": false,
             "AllowDomainsDeploymentOperations": "None",
-            "PreferLocalDbConnectionString": false
+            "PreferLocalDbConnectionString": false,
+            "NumberOfSignaturesToUseAllRelationCache": 100,
+            "ContinueOnMediaFilePathTooLongException": false,
+            "SuppressCacheRefresherNotifications": false
         }
     }
   }
@@ -152,9 +156,12 @@ All of these times are configured using [standard timespan format strings](https
 
 Even with appropriate settings of the above timeouts, Deploy's backoffice transfer operations can hit a hard limit imposed by the hosting environment. For Azure, this is around 4 minutes. This will typically only be reached if deploying a considerable amount of items in one go. For example, a media folder with thousands of items can reach this limit.
 
-An error message of `500 - The request timed out. The web server failed to respond within the specified time.` will be reported.
+An error message of "The remote API has returned a response indicating a platform timeout" will be reported.
 
-If encountering this issue, the `SourceDeployBatchSize` setting can be applied with an integer value (for example 1000). This will cause Deploy to transfer items in batches, up to a maximum size. This will allow each individual batch to complete within the time available.
+If encountering this issue, there are two batch settings that can be applied with integer values (for example 500). This will cause Deploy to transfer items in batches, up to a maximum size. This will allow each individual batch to complete within the time available.
+
+- `SourceDeployBatchSize` - applies a batch setting for the transfer of multiple selected items to an upstream environment (such as a media folder with many images).
+- `PackageBatchSize` - applies a batch setting to the processing of a Deploy "package", which contains all the items selected for a Deploy operation, plus all the determined dependencies and relations.
 
 ## UseDatabaseBackedTransferQueue
 
@@ -270,3 +277,29 @@ If you would prefer to use SQL Server LocalDb when it's available on your local 
         }
     }
 ```
+
+## MediaFileChecksumCalculationMethod
+
+Deploy will do comparisons between the entities in different environments to determine if they match and decide whether to include them in the operation. By default, for media files, a check is made on a portion of the initial bytes of the file.
+
+This corresponds to the default setting of `PartialFileContents`.
+
+If a lot of files need to be checked, this can be slow, and a faster option is available that uses the file metadata. The only downside of changing this option is a marginally increased chance of Deploy considering a media file hasn't changed when it has.  This would omit it from the deployment.
+
+To use this method, set the value to `Metadata`.
+
+## NumberOfSignaturesToUseAllRelationCache
+
+When reviewing a set of items for a deployment operation, Deploy will retrieve and include relations. It does this either via single database lookups, or by bringing all relations into memory in one step, and retrieving them from there.
+
+For small deployment operations, the former is the more optimal approach. It gets slow though when the number of items being transferred is large.
+
+The cut-off before switching methods is set by this configuration value, and it defaults to an operation size of `100` items.
+
+## SuppressCacheRefresherNotifications
+
+When a Deploy operation completes, cache refresher notifications are fired. These are used to update Umbraco's cache and search index.
+
+In production this setting shouldn't be changed from it's default value of `false`, to ensure these additional data stores are kept up to date.
+
+If attempting a one-off, large transfer operation, before a site is live, you could set this value to `true`. That would omit the firing and handling of these notifications and remove their performance overhead. Following which you would need to ensure to rebuild the cache and search index manually via the backoffice _Settings_ dashboards.
