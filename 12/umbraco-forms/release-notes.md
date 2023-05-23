@@ -21,7 +21,7 @@ In this section, you can find the release notes for each version of Umbraco Form
 #### [12.0.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.0)
 
 * Compatibility with Umbraco 12
-  * See full details of breaking changes under the [version specific upgrade guide](installation/version-specific.md).
+  * See full details of breaking changes under the [version specific upgrade guide](installation/version-specific.md#version-12).
 
 </details>
 
