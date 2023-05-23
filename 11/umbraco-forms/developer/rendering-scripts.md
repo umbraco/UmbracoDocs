@@ -9,12 +9,15 @@ In order to render your scripts where you want, you need to add the following sn
 ```csharp
 @using Umbraco.Forms.Web.Extensions;
 
-@if (TempData["UmbracoForms"] != null)
+@if (TempData.Get<Guid[]>("UmbracoForms") is Guid[] formIds)
 {
-    foreach (var form in TempData.Get<List<Guid>>("UmbracoForms"))
+    foreach (var formId in formIds)
     {
-        @await Component.InvokeAsync("RenderFormScripts", new {formId = form, theme = "bootstrap3-horizontal"})
+        <umb-forms-render-scripts form-id="formId"  />
+        @await Component.InvokeAsync("RenderFormScripts", new { formId = formId, theme = "bootstrap3-horizontal"})
     }
+
+    TempData.Remove("UmbracoForms");
 }
 ```
 
@@ -29,7 +32,7 @@ Firstly, in your `_ViewImports.cshtml` file, ensure you have a reference to the 
 Then instead of invoking the view component directly, you can use:
 
 ```csharp
-<umb-forms-render-scripts form-id="form" theme = "bootstrap3-horizontal" />
+<umb-forms-render-scripts form-id="formId" theme = "bootstrap3-horizontal" />
 ```
 
 ## Enabling `ExcludeScripts`

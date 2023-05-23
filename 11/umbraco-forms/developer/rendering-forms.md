@@ -36,9 +36,9 @@ Firstly, in your `_ViewImports.cshtml` file, add a reference to the Umbraco Form
 Then in your view you can use:
 
 ```csharp
-@if (Model.Form != null)
+@if (Model.Form is Guid formId)
 {
-    <umb-forms-render form-id="@(Guid)Model.Form" theme="@Model.Theme" include-scripts="false" />
+    <umb-forms-render form-id="formId" theme="Model.Theme" include-scripts="false" />
 }
 ```
 
