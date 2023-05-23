@@ -71,10 +71,9 @@ HTTP headers are bits of information that are passed along within every communic
 HTTP requests headers can be useful for for example multilingual purposes to redirect users of certain languages to a specific URL. Here, the collection of visitor location headers below will be helpful. The values for these location headers are derived from the visitor's IP address.
 
 - `cf-ipcity`: The visitor's city
-- `cf-ipcountry`: The visitor's country
 - `cf-ipcontinent`: The visitor's continent
-- `cf-iplongitude`: The visitor's longitude
 - `cf-iplatitude`: The visitor's latitude
+- `cf-iplongitude`: The visitor's longitude
 - `uc-ipcountry`: The visitor’s country. `uc-ipcountry` header is a carbon copy of [cf-ipcountry](https://developers.cloudflare.com/fundamentals/get-started/reference/http-request-headers/#cf-ipcountry).
 
 Note, the HTTP requests headers are available on all custom hostnames created through Umbraco Cloud. But not the default hostname for the Umbraco Cloud project such as project.euwest01.umbraco.io.
