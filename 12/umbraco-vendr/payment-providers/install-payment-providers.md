@@ -30,7 +30,7 @@ Use the [table of available Payment Providers](install-payment-providers.md#avai
 
 Alternatively, you can also find and install the NuGet package via the NuGet Package Manager.
 
-![Installing Vendr via the NuGet Package Manager](../media/nuget\_package\_manager\_gui.png)
+![Installing Vendr via the NuGet Package Manager](media/nuget-package-manager-gui.png)
 
 ## Available Payment Providers
 
