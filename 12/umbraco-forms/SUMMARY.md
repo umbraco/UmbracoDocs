@@ -8,3 +8,7 @@
 
 * [Installing Umbraco Forms](installation/install.md)
 * [Version Specific Upgrade Notes](installation/version-specific.md)
+
+## Editor
+
+* [Creating a Form - The basics](editor/creating-a-form/README.md)
