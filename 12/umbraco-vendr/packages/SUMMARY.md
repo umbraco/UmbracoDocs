@@ -5,18 +5,14 @@
 ## Checkout
 
 * [Vendr Checkout Documentation](checkout/README.md)
-* [Introduction](checkout/getting-started.md)
-* [Configuring Umbraco](checkout/configuring-umbraco.md)
 * [Installation](checkout/installation.md)
+* [Configuring Umbraco](checkout/configuring-umbraco.md)
 * [Screenshots](checkout/screenshots.md)
-* [Useful Links](checkout/useful-links.md)
 * [Changelog](checkout/changelog.md)
 
 ## Deploy
 
 * [Vendr Deploy Documentation](deploy/README.md)
-* [Introduction](deploy/getting-started.md)
-* [Deploying Changes](deploy/deploying-changes.md)
 * [Installation](deploy/installation.md)
-* [Useful Links](deploy/useful-links.md)
+* [Deploying Changes](deploy/deploying-changes.md)
 * [Changelog](deploy/changelog.md)
