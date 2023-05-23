@@ -3,17 +3,7 @@ title: Installation
 description: Installing Vendr Checkout, an add-on package for Vendr, the eCommerce solution for Umbraco v8+
 ---
 
-There are currently two ways to install the Vendr Checkout package for Vendr into your solution. Using the Umbraco package distribution, installed via the Umbraco backoffice, or using our NuGet packages, installed directly into your projects code base via the NuGet Package Manager. 
-
-## Umbraco Package Installation
-
-To install the Vendr Checkout Umbraco package, you will need to download the package file manually from the Vendr package page on the [Umbraco Developer Portal](https://our.umbraco.com/packages/website-utilities/vendr-checkout/). On this page, scroll down to the **Package Files** section and locate the Vendr Checkout package, clicking it to initiate a download.
-
-![Umbraco package files list](../media/checkout/our_package_list.png)
-
-Once downloaded you should manually install the package by uploading it to the **local package installer** located in your backoffice **Packages > Install Local** section. Once uploaded, follow the on-screen instructions provided to complete the install.
-
-![Installing an Umbraco Package via Local Umbraco Package](../media/umbraco_local_package_install.png)
+The Vendr Checkout package can be installed directly into your projects code base using our NuGet packages.
 
 ## NuGet Package Installation
 
