@@ -104,15 +104,21 @@ Add the method in the `startup.cs` file under the `ConfigureServices`:
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
-    services.AddUmbracoEFCoreContext<BlogContext>("{YOUR CONNECTIONSTRING HERE}", "{YOUR PROVIDER NAME HERE}");
     services.AddUmbraco(_env, _config)
         .AddBackOffice()
         .AddWebsite()
         .AddDeliveryApi()
         .AddComposers()
         .Build();
+        
+    services.AddUmbracoEFCoreContext<BlogContext>("{YOUR CONNECTIONSTRING HERE}", "{YOUR PROVIDER NAME HERE}");
 }
 ```
+
+{% hint style="warning" %}
+The registration of the `DbContext` must be done after the `AddUmbraco` method, but only if your connection string contains "|DataDirectory|".
+This is because we cannot translate the "|DataDirectory|" part of the connection string to the correct path until the Umbraco environment has been initialized.
+{% endhint %}
 
 We can then access the database via the `BlogContext.` First, we need to migrate the database to add our tables. With EFCore, we can autogenerate the migrations with the terminal.
 
