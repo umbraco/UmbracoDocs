@@ -118,12 +118,15 @@ Even with appropriate settings of the above timeouts, Deploy's backoffice transf
 
 An error message of `500 - The request timed out. The web server failed to respond within the specified time.` will be reported.
 
-If encountering this issue, the following setting can be applied to cause Deploy to transfer items in batches, up to a maximum size. This will allow each individual batch to complete within the time available.
+If encountering this issue, there are two batch settings that can be applied with integer values (for example 500). This will cause Deploy to transfer items in batches, up to a maximum size. This will allow each individual batch to complete within the time available.
+
+- `sourceDeployBatchSize` - applies a batch setting for the transfer of multiple selected items to an upstream environment (such as a media folder with many images).
+- `packageBatchSize` - applies a batch setting to the processing of a Deploy "package", which contains all the items selected for a Deploy operation, plus all the determined dependencies and relations.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <settings xmlns="urn:umbracodeploy-settings">
-    <deploy sourceDeployBatchSize="1000" />
+    <deploy sourceDeployBatchSize="1000" packageBatchSize="500" />
 </settings>
 ```
 
@@ -309,6 +312,21 @@ If you are happy to continue without throwing exceptions in these instances you 
 <?xml version="1.0" encoding="utf-8"?>
 <settings xmlns="urn:umbracodeploy-settings">
     <deploy continueOnMediaFilePathTooLongException="true|false" />
+</settings>
+```
+
+## Suppress Cache Refresher Notifications
+
+When a Deploy operation completes, cache refresher notifications are fired. These are used to update Umbraco's cache and search index.
+
+In production this setting shouldn't be changed from it's default value of `false`, to ensure these additional data stores are kept up to date.
+
+If attempting a one-off, large transfer operation, before a site is live, you could set this value to `true`. That would omit the firing and handling of these notifications and remove their performance overhead. Following which you would need to ensure to rebuild the cache and search index manually via the backoffice _Settings_ dashboards.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <deploy suppressCacheRefresherNotifications="true|false" />
 </settings>
 ```
 
