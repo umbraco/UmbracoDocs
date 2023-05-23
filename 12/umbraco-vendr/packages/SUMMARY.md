@@ -2,11 +2,6 @@
 
 * [Umbraco Vendr Packages](README.md)
 
-## Cart
-
-* [Vendr Cart Documentation](cart/README.md)
-* [Unreleased](cart/changelog.md)
-
 ## Checkout
 
 * [Vendr Checkout Documentation](checkout/README.md)
@@ -25,13 +20,3 @@
 * [Installation](deploy/installation.md)
 * [Useful Links](deploy/useful-links.md)
 * [Changelog](deploy/changelog.md)
-
-## uSync
-
-* [Vendr uSync Documentation](usync/README.md)
-* [Introduction](usync/getting-started.md)
-* [Deploying Changes](usync/deploying-changes.md)
-* [Installation](usync/installation.md)
-* [Screenshots](usync/screenshots.md)
-* [Useful Links](usync/useful-links.md)
-* [Changelog](usync/changelog.md)
