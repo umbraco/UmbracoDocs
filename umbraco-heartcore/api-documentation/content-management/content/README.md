@@ -539,7 +539,7 @@ All newly created content will be `DRAFT` by default. If you want to publish it 
 
 In this example only one language exists, so the properties are marked with `$invariant` in the create request. If multiple languages exists the culture for each of the languages would be defined for each of the properties - example: `"name": { "en-US": "Another one", "da-DK": "Endnu en" }`.
 
-When a property uses a multinode treepicker editor it is worth noting that the value for said property should be a comma seperated list of Umbraco UDI Identifiers. In the example the UDI Identifiers are referencing content items. See the [UDI Identifiers](https://docs.umbraco.com/umbraco-cms/reference/querying/udi-identifiers) documentation to learn more. 
+When a property uses a multinode treepicker editor it is worth noting that the value for said property should be a comma seperated list of Umbraco UDI Identifiers. In this example the UDI Identifiers are referencing content items. See the [UDI Identifiers](https://docs.umbraco.com/umbraco-cms/reference/querying/udi-identifiers) documentation to learn more. 
 
 ```json
 {
@@ -766,7 +766,7 @@ When content contains an upload field it is possible to send a file along with t
 
 In this example only one language exists, so the properties are marked with `$invariant`. If multiple languages existed the culture for each of the languages would be defined for each of the properties. Ie.: `"name": { "en-US": "Another one", "da-DK": "Endnu en" }`.
 
-When a property uses a multinode treepicker editor it is worth noting that the value for said property should be a comma seperated list of Umbraco UDI Identifiers. In the example the UDI Identifiers are referencing content items. See the [UDI Identifiers](https://docs.umbraco.com/umbraco-cms/reference/querying/udi-identifiers) documentation to learn more. 
+When a property uses a multinode treepicker editor it is worth noting that the value for said property should be a comma seperated list of Umbraco UDI Identifiers. In this example the UDI Identifiers are referencing content items. See the [UDI Identifiers](https://docs.umbraco.com/umbraco-cms/reference/querying/udi-identifiers) documentation to learn more. 
 
 ```json
 {
