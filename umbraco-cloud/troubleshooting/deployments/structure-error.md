@@ -9,8 +9,8 @@ This guide is for solving collision errors on your Umbraco Cloud project. Use th
     ---------------------------------------------
     Collisions for entity type "document-type":
     Collisions for unique identifier "home":
-        UdaFile: ~/data/revision/document-type__4c04d968448747d791b5eae254afc7ec.uda
-        UdaFile: ~/data/revision/document-type__f848c577f02b4ee5aea84f87458072a4.uda
+        UdaFile: ~/deploy/revision/document-type__4c04d968448747d791b5eae254afc7ec.uda
+        UdaFile: ~/deploy/revision/document-type__f848c577f02b4ee5aea84f87458072a4.uda
 
 The error means that two (or more) `.uda` files have been created for the same entity. The `.uda` files contain schema data for each of your entities e.g Document Types, Templates, Macros, Dictionary Items, Data types, etc (for a full list of these entities see [What are UDA files?](../../deployment/deploy-operations/extract-schema-to-data-files.md#what-are-uda-files)).
 
@@ -43,7 +43,7 @@ You can find a full playlist about Collision errors on our [YouTube Channel](htt
 
 ## Using the error message
 
-In the example above the entity involved is a Document Type with "home" as the alias. There are two colliding files both located in the `/data/revision` folder. The files are colliding because they share the same alias but have different GUIDs (also the name of the files).
+In the example above the entity involved is a Document Type with "home" as the alias. There are two colliding files both located in the `/deploy/revision` folder. The files are colliding because they share the same alias but have different GUIDs (also the name of the files).
 
 ## Deciding which file you want to use
 
@@ -58,8 +58,8 @@ Let's use the example from the beginning of this article, where two `.uda` files
     ---------------------------------------------
     Collisions for entity type "document-type":
     Collisions for unique identifier "home":
-        UdaFile: ~/data/revision/document-type__4c04d968448747d791b5eae254afc7ec.uda
-        UdaFile: ~/data/revision/document-type__f848c577f02b4ee5aea84f87458072a4.uda
+        UdaFile: ~/deploy/revision/document-type__4c04d968448747d791b5eae254afc7ec.uda
+        UdaFile: ~/deploy/revision/document-type__f848c577f02b4ee5aea84f87458072a4.uda
 
 For this example, it’s decided that the Document Type currently used on the Live environment is the one we want to use going forward.
 
@@ -102,12 +102,12 @@ We strongly recommend that you resolve this locally since this will ensure that 
 {% endhint %}
 
 1. Clone down the Development environment to your local machine
-2. Run the project locally and verify that you get the same extraction error as on your Cloud environments (*HINT: look for a `deploy-failed` marker in your local `/data ` folder*)
+2. Run the project locally and verify that you get the same extraction error as on your Cloud environments (*HINT: look for a `deploy-failed` marker in your local `/deploy ` folder*)
     * When you run the project, you should see an error message in the browser once the site starts to build
-3. Remove the wrong `.uda` file (It's the one we did not find in the live environment just before) from the `/data/revision` folder - you will not be able to see the Document Type in the backoffice because of the failed extraction.
+3. Remove the wrong `.uda` file (It's the one we did not find in the live environment just before) from the `/deploy/revision` folder - you will not be able to see the Document Type in the backoffice because of the failed extraction.
 4. Open the Umbraco Backoffice and go to Settings -> Deploy to see the Deploy dashboard.
 5. Select `Schema deployment from data files` in the dropdown.
-6. You will now see a `deploy-complete` marker in your local `/data` folder
+6. You will now see a `deploy-complete` marker in your local `/deploy` folder
 
 {% hint style="info" %}
 **Does the error mention Templates?**
