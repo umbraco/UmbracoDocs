@@ -1,13 +1,18 @@
 ---
-title: Migrating a Vendr solution to Umbraco Commerce
-description: How-To Guide to migrate a Vendr solution to Umbraco Commerce
+description: Learn how to migrate a Vendr solution to Umbraco Commerce.
 ---
 
-## Key Changes
+# Migrate a Vendr solution to Umbraco Commerce
 
-Before outlining the exact steps, it's worth knowing a few key changes that have been made which will dictate the steps to take.
+This guides provides a step-by-step approach to migrating a default Vendr solution to Umbraco Commerce.
 
-### Project / Package / Namespace Changes
+## Key changes
+
+Before outlining the exact steps, there are a few key changes to be aware of.
+
+These changes will dictate the steps to take in the process of migrating to Umbraco Commerce.
+
+### Project, Package, and Namespace changes
 
 | Vendr | Umbraco Commerce |
 | ----- | ---------------- |
@@ -24,56 +29,70 @@ Before outlining the exact steps, it's worth knowing a few key changes that have
 | Vendr.Umbraco.Startup | Umbraco.Commerce.Startup |
 | Vendr | Umbraco.Commerce |
 
-### C# Class Changes
-* Namespace changes as documented above
-* All classes containing the `Vendr` keyword are now updated to `UmbracoCommerce`
-  > ie: `IVendrApi` is now `IUmbracoCommerceApi`, `AddVendr()` is now `AddUmbracoCommerce()` etc
+### C# Class changes
 
-### JavaScript Changes
-* All `vendr` modules have changed to `umbraco.commerce` modules
-* All `vendr` prefixed directives + services + resource are new prefixed `uc`
-* All `vendr` prefixed events now follow the format `Umbraco.Commerce.{target}.{action}`
+* Namespace changes as documented above.
+* All classes containing the `Vendr` keyword are now updated to `UmbracoCommerce`.
+  * Examples: `IVendrApi` is now `IUmbracoCommerceApi` and `AddVendr()` is now `AddUmbracoCommerce()`.
+
+### JavaScript changes
+
+* All `vendr` modules have changed to `umbraco.commerce` modules.
+* All `vendr` prefixed directives, services and resources are new prefixed with `uc`.
+* All `vendr` prefixed events now follow this format: `Umbraco.Commerce.{target}.{action}`.
 
 ### UI Changes
-* All static UI assets are now surved via a Razor Compiled Library (RCL) and so are no longer found in the `App_Plugins` folder.
-* The `App_Plugins` folder still exists for the static assets that are user configurable
-* The `App_Plugins` folder has been renamed from `Vendr` to `UmbracoCommerce`
-* UI Config files have changed from `.js` files to `.json`
 
-## Core Migration Steps
+* All static UI assets are served via a Razor Compiled Library (RCL) and are no longer found in the `App_Plugins` folder.
+* The folder within `App_Plugins` still exists for the static assets that are user configurable.
+* The folder with `App_Plugins` has been renamed from `Vendr` to `UmbracoCommerce`.
+* UI Config files have changed from `.js` files to `.json`.
 
-### Step 1: Replace Vendr dependencies with Umbraco Commerce dependencies
+## Migration steps
 
-* Remove any installed Vendr packages (including Payment Providers)
-    ```
-    dotnet remove package Vendr
-    ```
+### Step 1: Replace dependencies
 
-* Delete the Vendr `App_Plugins` folder (backup any Vendr templates / config files you'll want to reuse)
-    ```
-    rmdir App_Plugins\Vendr
-    ```
+In this first step, we will be replacing all existing Vendr dependencies with Umbraco Commerce dependencies.
 
-* Install the `Umbraco.Commerce` packages (including Payment Providers)
-    ```
-    dotnet add package Umbraco.Commerce
-    ```
+1. Remove any installed Vendr packages (including Payment Providers).
 
-* Reapply any backed up config files in their new `App_Plugins` location.
-* Move any backed up templates into `~/Views/UmbracoCommerce/Templates/` folder
-* Rename any config files with a `.json` file extension rather than the previous `.js`
-* If your project is not already compiling against .NET 7.0 you should also update your package accordingly to do so
+```bash
+dotnet remove package Vendr
+```
 
-### Step 2: Update all namespaces / entity names
+2. Take a backup of any Vendr specific templates and config files you will want to reuse.
+3. Delete the Vendr `App_Plugins` folder.
 
-* Based on the map / C# changes oulined in [Key Changes](#key-changes) update all references to the old Vendr namespaces / entities, updating them to the new Umbraco Commerce alternatives (ensure you update any Views / Partials that also reference these)
+```bash
+rmdir App_Plugins\Vendr
+```
 
-## Step 3: Update database
+4. Install `Umbraco.Commerce`.
 
-* Backup your database
-* Rename database tables
+```bash
+dotnet add package Umbraco.Commerce
+```
+
+5. Install Umbraco Commerce packages including payment providers.
+6. Reapply any backed up config files in their new `App_Plugins` location.
+7. Move any backed up templates into the `~/Views/UmbracoCommerce/Templates/` folder.
+8. Rename any config files with a `.json` file extension rather than the previous `.js`
+9. Compile your project against .NET 7.0.
+
+### Step 2: Update namespaces and entity names
+
+Based on the [Key Changes](#key-changes) outlined above update all Vendr references to the new Umbraco Commerce alternatives. Ensure you update any Views/Partials that also reference these.
+
+## Step 3: Update the database
+
+In this step, we will cover updating the database for Umbraco Commerce.
+
+1. Backup your database
+2. Rename database tables using either of the following queries:
+
+THIS WILL BE ADDED TO A TAB ON GITBOOK:
   * Sql Server
-    ```
+    ```sql
     sp_rename vendrCurrency, umbracoCommerceCurrency;
     sp_rename vendrTaxClass, umbracoCommerceTaxClass;
     sp_rename vendrStock, umbracoCommerceStock;
@@ -119,7 +138,7 @@ Before outlining the exact steps, it's worth knowing a few key changes that have
     sp_rename vendrStore, umbracoCommerceStore;
     ```
   * SQLite
-    ````
+    ```sql
     ALTER TABLE vendrCurrency RENAME TO umbracoCommerceCurrency;
     ALTER TABLE vendrTaxClass RENAME TO umbracoCommerceTaxClass;
     ALTER TABLE vendrStock RENAME TO umbracoCommerceStock;
@@ -163,127 +182,138 @@ Before outlining the exact steps, it's worth knowing a few key changes that have
     ALTER TABLE vendrStoreEntityTag RENAME TO umbracoCommerceStoreEntityTag;
     ALTER TABLE vendrMigrations RENAME TO umbracoCommerceMigrations;
     ALTER TABLE vendrStore RENAME TO umbracoCommerceStore;
-    ````
-
-* Swap Vendr property editors for Umbraco Commerce property editors
-
-    ```
-    UPDATE umbracoDataType
-    SET propertyEditorAlias = REPLACE(propertyEditorAlias, 'Vendr.', 'Umbraco.Commerce.')
-    WHERE propertyEditorAlias LIKE 'Vendr.%'
     ```
 
-* Swap Vendr variants editor for the Umbraco Commerce variants editor in the block list data entry
+3. Swap Vendr property editors for Umbraco Commerce property editors:
 
-    ```
-    UPDATE umbracoPropertyData
-    SET textValue = REPLACE(textValue, 'Vendr.VariantsEditor', 'Umbraco.Commerce.VariantsEditor')
-    WHERE textValue LIKE '%Vendr.VariantsEditor%';
-    ```
+```sql
+UPDATE umbracoDataType
+SET propertyEditorAlias = REPLACE(propertyEditorAlias, 'Vendr.', 'Umbraco.Commerce.')
+WHERE propertyEditorAlias LIKE 'Vendr.%'
+```
 
-* Swap Vendr price / amount adjustments to Umbraco Commerce price / amount adjustments
+4. Swap Vendr variants editor for the Umbraco Commerce variants editor in the block list data entry:
 
-    ```
-    UPDATE umbracoCommerceOrderPriceAdjustment
-    SET type = REPLACE(type, 'Vendr.', 'Umbraco.Commerce.')
-    WHERE type LIKE '%Vendr.%';
-    UPDATE umbracoCommerceOrderAmountAdjustment
-    SET type = REPLACE(type, 'Vendr.', 'Umbraco.Commerce.')
-    WHERE type LIKE '%Vendr.%';
-    ```
+```sql
+UPDATE umbracoPropertyData
+SET textValue = REPLACE(textValue, 'Vendr.VariantsEditor', 'Umbraco.Commerce.VariantsEditor')
+WHERE textValue LIKE '%Vendr.VariantsEditor%';
+```
 
-* Update template paths
+5. Swap Vendr price/amount adjustments to Umbraco Commerce price/amount adjustments:
 
-    ```
-    UPDATE umbracoCommerceEmailTemplate
-    SET templateView = REPLACE(templateView, '/App_Plugins/Vendr/templates/email', '/Views/UmbracoCommerce/Templates/Email')
-    WHERE templateView LIKE '%/Vendr/%';
-    UPDATE umbracoCommercePrintTemplate
-    SET templateView = REPLACE(templateView, '/App_Plugins/Vendr/templates/print', '/Views/UmbracoCommerce/Templates/Print')
-    WHERE templateView LIKE '%/Vendr/%';
-    UPDATE umbracoCommerceExportTemplate
-    SET templateView = REPLACE(templateView, '/App_Plugins/Vendr/templates/email', '/Views/UmbracoCommerce/Templates/Export')
-    WHERE templateView LIKE '%/Vendr/%';
-    ```
+```sql
+UPDATE umbracoCommerceOrderPriceAdjustment
+SET type = REPLACE(type, 'Vendr.', 'Umbraco.Commerce.')
+WHERE type LIKE '%Vendr.%';
+UPDATE umbracoCommerceOrderAmountAdjustment
+SET type = REPLACE(type, 'Vendr.', 'Umbraco.Commerce.')
+WHERE type LIKE '%Vendr.%';
+```
 
-* Update migrations log
+6. Update template paths:
 
-    ```
-    UPDATE umbracoCommerceMigrations
-    SET migration = REPLACE(migration, 'Vendr.', 'Umbraco.Commerce.')
-    WHERE migration LIKE 'Vendr.%';
-    ```
+```sql
+UPDATE umbracoCommerceEmailTemplate
+SET templateView = REPLACE(templateView, '/App_Plugins/Vendr/templates/email', '/Views/UmbracoCommerce/Templates/Email')
+WHERE templateView LIKE '%/Vendr/%';
+UPDATE umbracoCommercePrintTemplate
+SET templateView = REPLACE(templateView, '/App_Plugins/Vendr/templates/print', '/Views/UmbracoCommerce/Templates/Print')
+WHERE templateView LIKE '%/Vendr/%';
+UPDATE umbracoCommerceExportTemplate
+SET templateView = REPLACE(templateView, '/App_Plugins/Vendr/templates/email', '/Views/UmbracoCommerce/Templates/Export')
+WHERE templateView LIKE '%/Vendr/%';
+```
 
-* Update activity logs
+7. Update the migrations log:
 
-    ```
-    UPDATE umbracoCommerceActivityLog
-    SET eventType = REPLACE(eventType, 'vendr/', 'commerce/')
-    WHERE eventType LIKE 'vendr/%';
-    ```
+```sql
+UPDATE umbracoCommerceMigrations
+SET migration = REPLACE(migration, 'Vendr.', 'Umbraco.Commerce.')
+WHERE migration LIKE 'Vendr.%';
+```
 
-### Step 4: Clear obj / bin folders
-* Delete any obj / bin folders in your projects to ensure a clean build.
+8. Update the activity logs:
 
-### Step 5: Recompile all projects
-* Recompile all projects and ensure all dependencies are restored correctly
+```sql
+UPDATE umbracoCommerceActivityLog
+SET eventType = REPLACE(eventType, 'vendr/', 'commerce/')
+WHERE eventType LIKE 'vendr/%';
+```
 
-### Step 6: Change license files?
-* TBD
+### Step 4: Finalizing the migration
 
-### Step 7: Update payment gateways
-* Any payment gateway with a global webhook (like Stripe) update the webhook URL to:
+1. Delete any obj/bin folders in your projects to ensure a clean build.
+2. Recompile all projects and ensure all dependencies are restored correctly
+3. Change license files - TBD
+4. Update any payment gateways that uses a global webhook:
 
-    ```
-    https://{site_url}/umbraco/commerce/payment/callback/{payment_provider_alias}/{payment_method_id}/
-    ```
+```none
+https://{site_url}/umbraco/commerce/payment/callback/{payment_provider_alias}/{payment_method_id}/
+```
 
-### Step 8: Run the project
-* Launch the project and everything should have crossed over
+5. Run the project.
 
-## Umbraco Commerce Checkout Migration Steps
+Before moving on to migrating the pakcages and payment providers, it is recommended to ensure everything works as expected.
+
+## Migrate Umbraco Commerce Checkout
+
+Throught the following steps we will migrate the Checkout package from Vendr to Umbraco Commerce.
 
 ### Step 1: Backup
-* Backup any custom templates / Umbraco Commerce UI config files
-* Make a note of all config values on the Vendr.Checkout checkout node
+
+1. Make a backup of any custom templates and Umbraco Commerce UI configuration files.
+2. Make a note of all configuration values on the Vendr.Checkout checkout node.
 
 ### Step 2: Uinstall Vendr.Checkout
-* Delete Vendr.Checkout generated checkout nodes
-* Delete all Vendr.Checkout generated doc types
-* Delete all Vendr.Checkout generated data types
-* Uninstall Vendr.Checkout nuget package
-    ```
-    dotnet remove package Vendr.Checkout
-    ```
-* Delete any remaining `~/App_Plugins/VendrCheckout` files / folders
+
+1. Delete Vendr.Checkout generated checkout nodes.
+2. Delete all Vendr.Checkout generated Document Types.
+3. Delete all Vendr.Checkout generated Data Types.
+4. Uninstall the Vendr.Checkout nuget package:
+
+```bash
+dotnet remove package Vendr.Checkout
+```
+
+5. Delete any remaining `~/App_Plugins/VendrCheckout` files and folders.
 
 ### Step 3: Install Umbraco.Commerce.Checkout
-* Install the Umbraco.Commerce.Checkout package
-    ```
+
+1. Install the Umbraco.Commerce.Checkout package
+
+    ```bash
     dotnet add package Umbraco.Commerce.Checkout
     ```
-* In the settings section, locate the Umbraco Commerce Checkout dashboard and reinstall into previous location
 
-### Step 4: Reapply any custom changes
-* Copy any custom configs back 
-* Copy any custom Views to `~/Views/UmbracoCommerceCheckout/`
+2. In the settings section, locate the Umbraco Commerce Checkout dashboard and reinstall into previous location.
 
-## Payment Provider Migration Steps
+### Step 4: Reapply custom changes
 
-### Step 1: Replace Vendr dependencies with Umbraco Commerce dependencies
+1. Copy any custom configuration files back into the solution. 
+2. Copy any custom Views in to the `~/Views/UmbracoCommerceCheckout/` folder.
 
-* Remove any installed Vendr packages
-    ```
-    dotnet remove package Vendr.Core
-    ```
+## Migrate Payment Providers
 
-* Install the `Umbraco.Commerce` packages (including Payment Providers)
-    ```
-    dotnet add package Umbraco.Commerce.Core
-    ```
-* Updated any namespace references
-* Update project framework to `net7.0`
+Through the following steps we will migrate payment providers used for Vendr into Umbraco Commerce.
+
+### Step 1: Replace dependencies
+
+1. Remove any installed Vendr packages
+
+```bash
+dotnet remove package Vendr.Core
+```
+
+2. Install the `Umbraco.Commerce` packages for the payment providers.
+
+```bash
+dotnet add package Umbraco.Commerce.Core
+```
+
+3. Update any namespace references.
+4. Update project framework to `net7.0`.
 
 ### Step 2: Update implementations
 
-* Update all async methods to accept an additional `CancellationToken` parameter
+The final step in the migration is to update all async methods to accept an additional `CancellationToken` parameter.
