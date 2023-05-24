@@ -26,7 +26,7 @@ In this section, you can find the release notes for each version of Umbraco Form
 * Fixed encoding and display of entries page title [#1009](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1009)
 * Fixed creation of primary keys for tables missing them with new installs on SQLite [#1008](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1008)
 * Handled a null reference issue that could occur with copying forms that had workflows will null setting values
-* Fixed placeholder parsing for mandatory and required validation methods using dictionary values
+* Fixed placeholder parsing for mandatory and regular expression pattern validation methods using dictionary values
 
 ### [10.3.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.2) (April 18th 2023)
 
