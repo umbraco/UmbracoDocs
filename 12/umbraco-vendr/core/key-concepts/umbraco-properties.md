@@ -1,9 +1,10 @@
 ---
-title: Umbraco Properties
 description: Key Umbraco node properties used by Vendr, the eCommerce solution for Umbraco
 ---
 
-Unlike other Umbraco eCommerce platforms where store and product information is often held in a separate repository, Vendr uses Umbraco nodes as it's source of information. In order for Vendr to gather the information it needs however, it requires that a number of properties be defined at various locations with specific property aliases.
+# Umbraco Properties
+
+Vendr uses Umbraco nodes as it's source of information. In order for Vendr to gather the information it needs however, it requires that a number of properties be defined at different locations with specific property aliases.
 
 ## Properties
 

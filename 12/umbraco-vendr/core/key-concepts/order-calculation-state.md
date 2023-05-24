@@ -1,7 +1,8 @@
 ---
-title: Order Calculation State
 description: Calculation context in Vendr, the eCommerce solution for Umbraco
 ---
+
+# Order Calculation State
 
 When extending the calculation process of Vendr, either by custom [calculators](../calculators/) or custom [pipeline tasks](../pipelines/) it is important to be aware of the `OrderCalculation` object.
 
@@ -11,7 +12,7 @@ When an order asks to be re-calculated, this triggers a calculation pipeline whi
 
 ## Accessing Price Values
 
-In the different calculation extension points Vendr will often pass you **both** an `Order` object and the `OrderCalculation` object. We pass the order so that you can get access to any information held on it that you may need for calculations, such as custom properties. This shouldn't be used for accessing any price related values of the order.
+In the different calculation extension points Vendr will often pass you **both** an `Order` object and the `OrderCalculation` object. We pass the order to get you access to any information held on it that you may need for calculations, such as custom properties. This shouldn't be used for accessing any price related values of the order.
 
 As mentioned above, in order to maintain data integrity during the calculation process, the order itself is not updated until the end. This means that any calculations based on the order entities price values would be based on the orders **previously calculated price values**.
 
@@ -66,5 +67,10 @@ From the `OrderCalculation` object you can access the different order prices, in
 By using the prices from the `OrderCalculation` object you can ensure that your calculation is based on the most up to date values for the order.
 
 {% hint style="info" %}
-If your values are based on another price held on an order and you have access to an `OrderCalculation` object that isn't `null`, then **always** base your price on the `OrderCalculation` object's price values. It should also only fall back to the order entity if there is no `OrderCalculation` available.
+You should **always** base your price on the `OrderCalculation` object's price values when the following applies:
+
+* Your values are based on another price held on an order
+* You have access to an `OrderCalculation` object that isn't `null`.
+
+It should also only fall back to the order entity if there is no `OrderCalculation` available.
 {% endhint %}

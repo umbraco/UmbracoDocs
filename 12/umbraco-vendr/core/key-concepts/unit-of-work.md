@@ -1,9 +1,10 @@
----
-title: Unit of Work
+--- 
 description: Transactional updates using the Unit of Work pattern in Vendr, the eCommerce solution for Umbraco
 ---
 
-When working with Vendr's API it is important that data integrity is maintained should any errors occur. In order to achieve this Vendr uses the [Unit of Work pattern](https://www.martinfowler.com/eaaCatalog/unitOfWork.html) to effectively create a transaction that wraps around sections of your code ensuring that all Vendr write operations that occur within that code block must succeed and be persisted in their entirety, otherwise none of them should, and the database should rollback to it's state prior to when those changes were made. 
+# Unit of Work
+
+When working with Vendr's API it is important that data integrity is maintained should any errors occur. In order to achieve this Vendr uses the [Unit of Work pattern](https://www.martinfowler.com/eaaCatalog/unitOfWork.html) to effectively create a transaction that wraps around sections of your code ensuring that all Vendr write operations that occur within that code block must succeed and be persisted in their entirety, otherwise none of them should, and the database should rollback to it's state prior to when those changes were made.
 
 ## Creating a Unit of Work
 
@@ -48,7 +49,9 @@ _uowProvider.Execute(uow =>
 });
 ```
 
-<tip type="bad" heading="Don't create a Unit of Work per write operation"></tip>
+{% hint style="info" %}
+It is not recommended to create a Unit of Work per write operation.
+{% endhint %}
 
 ```csharp
 _uowProvider.Execute(uow =>

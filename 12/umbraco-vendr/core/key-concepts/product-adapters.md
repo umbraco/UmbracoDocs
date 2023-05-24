@@ -1,11 +1,12 @@
 ---
-title: Product Adapters
 description: Converting product sources into understandable products for Vendr, the eCommerce solution for Umbraco
 ---
 
-The role of a Product Adapter in Vendr is to provide an interface between a product information source (which by default will be an Umbraco node) and convert it into a standardized format such that Vendr doesn't need to be tied to that source.
+# Product Adapters
 
-What this means for developers is that Product Adapters allow you to hook in alternative product information sources that may not be Umbraco node based. For example, you may hold your product information in a third party database table, and so a custom Product Adapter would provide a means for Vendr to interface with that custom data in the same way as it would the default Umbraco node data source.
+The role of a Product Adapter in Vendr is to provide an interface between a product information source and convert it into a standardized format. This is done to prevent the need for Vendr to be tied to that source.
+
+What this means for developers is that Product Adapters allow you to hook in alternative product information sources that may not be Umbraco node based. You may hold your product information in a third party database table. A custom Product Adapter would then allow Vendr to interface with that custom data in the same way it would the default Umbraco node data.
 
 ## Example Product Adapter
 
@@ -32,9 +33,12 @@ public class MyCustomProductAdapter : IProductAdapter
 
 ```
 
-All Product Adapters implement the `IProductAdapter` interface which requires three method implementations. Two `GetProductSnapshot` methods which retrieve a Product Snapshot for either a product or product variant by reference parameters and a `TryGetProductReference` method which retrieves a product / variant reference for a product that belongs to a given `storeId` and has the given `sku`.
+All Product Adapters implement the `IProductAdapter` interface which requires three method implementations:
 
-A Product Snapshot consists of the following properties in order to present a Product to Vendr in a standard way. 
+* Two `GetProductSnapshot` methods which retrieve a Product Snapshot for either a product or product variant by reference parameters.
+* A `TryGetProductReference` method which retrieves a product / variant reference for a product that belongs to a given `storeId` and has the given `sku`.
+
+A Product Snapshot consists of the following properties in order to present a Product to Vendr in a standard way.
 
 ```csharp
 public interface IProductSnapshot
@@ -74,7 +78,7 @@ public interface IProductSnapshot
 
 ## Support editable carts
 
-To support editable carts and to allow Vendr to be able to search for products / variants to add to a cart via the back office, Product Adapters can also implement 3 additional methods.
+To allow Vendr to search for products/variants to add to a cart via the backoffice, Product Adapters can implement 3 additional methods. This can also be done to support editable carts.
 
 ```csharp
 public class MyCustomProductAdapter : ProductAdapterBase
@@ -99,7 +103,7 @@ public class MyCustomProductAdapter : ProductAdapterBase
 
 ```
 
-The `IProductSummary`, `Attribute` and `IProductVariantSummary` consists of the following properties in order to present a Product to Vendr in a standard way. 
+The `IProductSummary`, `Attribute` and `IProductVariantSummary` consists of the following properties in order to present a Product to Vendr in a standard way.
 
 ```csharp
 public interface IProductSnapshot
@@ -164,7 +168,7 @@ public interface IProductVariantSnapshot
 
 ## Registering a Product Adapter
 
-Product Adapters are [registered via the IVendrBuilder](../vendr-builder/#registering-dependencies) interface using the `AddUnique<IProductAdapter, TReplacementAdapter>()` method on the `Services` property where the `TReplacementAdapter` parameter is the Type of our custom Product Adapter implementation.
+Product Adapters are [registered via the IVendrBuilder](../vendr-builder/#registering-dependencies) interface using the `AddUnique<IProductAdapter, TReplacementAdapter>()` method on the `Services` property. The `TReplacementAdapter` parameter is the Type of our custom Product Adapter implementation.
 
 ```csharp
 public static class VendrBuilderExtensions

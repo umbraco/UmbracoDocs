@@ -1,7 +1,8 @@
 ---
-title: Dependency Injection
 description: Minimising dependencies via dependency injection with Vendr, the eCommerce solution for Umbraco
 ---
+
+# Dependency Injection
 
 Dependency Injection (DI) can be an intimidating subject. DI reduces the number of hard coded dependencies within a codebase by providing a means to define dependencies independently and have them "injected" dynamically. These dependencies are often exposed as interfaces, rather than concrete types. This enables them to be swapped out or replaced with minimal effort.
 

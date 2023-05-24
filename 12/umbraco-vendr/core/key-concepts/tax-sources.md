@@ -1,9 +1,10 @@
 ---
-title: Tax Sources
 description: Identifying the source of taxation of an Order within Vendr, the eCommerce solution for Umbraco
 ---
 
-A Tax Source identifies which geographic location an Order should use in order to calculate its tax liability. Depending on the country that the web store is operating in, and the country an order is being purchased from / shipping to, this can dictate how your taxes should be calculated.
+# Tax Sources
+
+A Tax Source identifies which geographic location an Order should use in order to calculate its tax liability. Depending on the country that the web store is operating in, and the country an order is being purchased from/shipping to, this can dictate how your taxes should be calculated.
 
 To aid with this Vendr allows the Tax Source of a Store to be configured via the implementation of a Tax Source Factory. The Tax Source Factory is responsible for determining the source of Tax given the billing and shipping country of an Order.
 

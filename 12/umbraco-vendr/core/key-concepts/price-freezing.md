@@ -1,15 +1,16 @@
 ---
-title: Price Freezing
 description: Freezing prices for shopping carts in Vendr, the eCommerce solution for Umbraco
 ---
 
-Price Freezing in Vendr is the ability to freeze prices for products that are added to the shopping cart. Once an item is added to a cart, Vendr will take a snapshot of the products price and ensure that this price is honored for the life of the shopping cart. By freezing prices in this way it prevents a customers shopping cart suddenly changing in value should a price change occur whilst their cart session is in progress.
+# Price Freezing
 
-By default, a product's price is frozen from the point a product is added to the current Order, and only for the current Currency of the Order. Should the Customer change the Currency of their Order, then a new snapshot of the product price will be taken for that Currency.
+Price Freezing in Vendr is the ability to freeze prices for products that are added to the shopping cart. Vendr takes a snapshot of a products price once it's added to the shopping card. This is done in order to ensure the price is honored for the life of the shopping cart. This process prevents a customers shopping cart suddenly changing in value should a price change occur whilst their cart session is in progress.
+
+A product's price is frozen from the point it is added to the current Order, and only for the current Currency of the Order. Should the Customer change the Currency of their Order, then a new snapshot of the product price will be taken for that Currency.
 
 ## Controlling Price Freezing
 
-There are times when you may wish to control when a frozen price should expire, such as if a product was incorrectly priced, or if you have some pre-defined rules as to how long an Order session should be allowed to maintain a frozen price for.
+There are times when you may wish to control when a frozen price should expire. This could be if a product was incorrectly priced, or if you have rules on how long an Order-session is allowed to maintain price.
 
 In these occasions you can force frozen prices to expire by using the `IPriceFreezerService` and its `ThawPrices` method.
 

@@ -1,7 +1,8 @@
 ---
-title: Bulk Actions
 description: Perform bulk operations on entities in Vendr, the eCommerce solution for Umbraco
 ---
+
+# Bulk Actions
 
 When extending Vendr, there may come a time when you need the ability to perform a custom action for every entity in a given selection. For example, being able to trigger label printing for a series of orders, or printing physical gift cards for specific gift card entities.
 

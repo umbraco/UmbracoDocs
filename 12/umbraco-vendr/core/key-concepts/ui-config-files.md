@@ -1,11 +1,12 @@
 ---
-title: UI Config Files
 description: Customizing the UI in Vendr, the eCommerce solution for Umbraco
 ---
 
+# UI Config Files
+
 With Vendr, there are minimal rules about what information you are required to record about an Order, however, this does pose a problem for how we provide a User Interface for managing carts and orders when we don't know exactly what properties you are going to be recording.
 
-In order to allow this flexibility whilst still providing an ability to view and manage carts and orders in the back-office, Vendr supports a number of UI config files to map [Order/Order Line Properties](../properties/) to it's various UI elements.
+In order to allow this flexibility whilst still providing an ability to view and manage carts and orders in the backoffice, Vendr supports a number of UI config files to map [Order/Order Line Properties](../properties/) to it's UI elements.
 
 ## Supported UI Config Files
 
@@ -55,7 +56,7 @@ Properties configured to display in the list view will appear in order, after th
 
 ## Cart/Order Editor Config Files
 
-With these configuration files, you can completely customize the Cart/Order Editor interface to suit your particular needs.
+With these configuration files, you can customize the Cart/Order Editor interface to suit your particular needs.
 
 ### Example Cart/Order Editor Config File
 

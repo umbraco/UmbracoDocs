@@ -1,11 +1,10 @@
 ---
-title: Settings Objects
 description: Strongly typed Settings objects in Vendr, the eCommerce solution for Umbraco
 ---
 
-## Settings Objects
+# Settings Objects
 
-There are a number of places in Vendr where you can use Settings Objects to pass configuration to a Provider, such as Discount Rule Providers, Reward Providers and Payment Providers.
+There places in Vendr where you can use Settings Objects to pass configuration to a Provider, such as Discount Rule Providers, Reward Providers and Payment Providers.
 
 The settings objects have a number of responsibilities.
 
@@ -15,7 +14,7 @@ The settings objects have a number of responsibilities.
 
 * **JavaScript Settings Model** - The settings object also defines the JavaScript settings model passed to the Provider editor UI, using either the settings Property name as the object property key, or using the `key` property of the Setting Attribute declared on the given Property.
 
-### UI Scaffolding
+## UI Scaffolding
 
 An important element of the Settings object is UI Scaffolding. UI Scaffolding is where Vendr reads a series of Settings Attributes defined on your Settings object properties in order to dynamically build a User Interface for that Providers settings.
 
@@ -43,7 +42,7 @@ An example of a generated UI built from these properties would look something li
 
 ### Default Values
 
-To define default values for a settings object, you can simply asign a value to a property in your model and Vendr will automatically fallback to that value if no explicit value is defined.
+To define default values for a settings object, you can asign a value to a property in your model and Vendr will automatically fallback to that value if no explicit value is defined.
 
 ```csharp
 public class MyDiscountRewardProviderSettings

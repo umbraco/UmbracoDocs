@@ -1,9 +1,10 @@
 ---
-title: ReadOnly and Writable Entities
 description: Great performance and simplified change tracking using ReadOnly and Writable entities in Vendr, the eCommerce solution for Umbraco
 ---
 
-When working with the Vendr entities, it's important to know that all entities come in two states, ReadOnly and Writable, and that by default all Vendr API methods will return entities in their ReadOnly state. This means that when you are accessing Vendr entities directly from an API endpoint you will be able to read and iterate over any of it's properties freely, however you won't be able to make changes to that entity without first converting it into it's Writable state.
+# ReadOnly and Writable Entities
+
+When working with the Vendr entities, it's important to know that all entities come in two states, ReadOnly and Writable. By default all Vendr API methods will return entities in their ReadOnly state. This means that when you are accessing Vendr entities directly from an API endpoint you are able to read and iterate over it's properties. You won't, however, be able to make changes to that entity without first converting it into it's Writable state.
 
 ## Why have ReadOnly and Writable entities?
 

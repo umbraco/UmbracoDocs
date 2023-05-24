@@ -1,7 +1,8 @@
 ---
-title: Payment Forms
 description: Preparing to enter a Payment Providers payment gateway in Vendr, the eCommerce solution for Umbraco
 ---
+
+# Payment Forms
 
 In Vendr, a Payment Form is the form that is displayed immediately prior to redirecting to the Payment Gateway for payment processing. This is usually displayed on some kind of review page, allowing a final review of the Order before commencing payment.
 

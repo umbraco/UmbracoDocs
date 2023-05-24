@@ -1,7 +1,8 @@
 ---
-title: Calculators
 description: Performing calculations with Calculators in Vendr, the eCommerce solution for Umbraco
 ---
+
+# Calculators
 
 Calculators are small service implementations with the sole responsibility of calculating prices for a given aspect of an Order. There are five main Calculator service interfaces in Vendr:
 

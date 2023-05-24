@@ -1,7 +1,8 @@
 ---
-title: Vendr Builder
 description: Configuring Vendr, the eCommerce solution for Umbraco
 ---
+
+# Vendr Builder
 
 When it comes to configuring and extending Vendr, such as by registering your own event handlers, we achieve this with the `IVendrBuilder` interface that can be accessed via a delegate function passed in to the `AddVendr()` extension method called on the `IUmbracoBuilder` interface when explicitly registering Vendr.
 

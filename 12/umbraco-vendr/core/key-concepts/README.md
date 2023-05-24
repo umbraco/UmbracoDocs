@@ -1,11 +1,10 @@
 ---
-title: Key Concepts
 description: >-
   Learn everything you need to know about the main features and concepts of
   Umbraco Vendr.
 ---
 
-# Get to know the main features
+# Get to know the key concepts of Vendr
 
 In this section, we will look at all the key concepts you will need to understand in order to work with Vendr. Many of the concepts are based upon how Umbraco functions, although there are a number of Vendr-specific concepts you will need to be aware of.
 

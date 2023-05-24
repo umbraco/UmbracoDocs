@@ -1,7 +1,8 @@
 ---
-title: Search Specifications
 description: Flexible searching in Vendr, the eCommerce solution for Umbraco
 ---
+
+# Search Specifications
 
 Providing a search API for developers to be able to search for entities that match a given criteria is a bit of a balancing act. You want to provide a flexible API to allow for meaningful results to be returned but at the same time you don't want to allow every possible search combination as this can lead to performance problems.
 
@@ -26,7 +27,7 @@ var results = _orderService.SearchOrders(
         .And(where.HasOrderNumber(orderNumber).Or(where.ByCustomer(customerEmail))))
 ```
 
-The above is a relatively simple example, but it demonstrates the use of a delegate method that then uses a fluent specifications API to build up a query filter. The query filter itself can be made up of many different individual queries which themselves can be grouped using `AND` and `OR` query logic.
+The above is an example, but it demonstrates the use of a delegate method that then uses a fluent specifications API to build up a query filter. The query filter itself can be made up of many different individual queries which themselves can be grouped using `AND` and `OR` query logic.
 
 Because the API is fluent it is also self documenting, with Visual Studio intellisense able to guide developers through all the available specifications.
 
