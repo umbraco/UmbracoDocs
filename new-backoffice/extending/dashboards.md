@@ -5,7 +5,7 @@ description: A guide to creating custom dashboards in Umbraco
 # Dashboards
 
 {% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
+This page is a work in progress. It has been migrated but the content is waiting to be updated for the new Backoffice.
 {% endhint %}
 
 You can try and [create a custom dashboard](broken-reference) when you have read this article.

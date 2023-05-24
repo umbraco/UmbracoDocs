@@ -1,7 +1,7 @@
 # Searchable Trees (ISearchableTree)
 
 {% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
+This page is a work in progress. It has been migrated but the content is waiting to be updated for the new Backoffice.
 {% endhint %}
 
 When you type a search term into the Umbraco backoffice search field, you'll see search results from all the Section Trees that your user account has permission to access:

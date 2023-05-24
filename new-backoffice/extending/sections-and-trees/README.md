@@ -5,7 +5,7 @@ description: A guide to creating custom dashboards in Umbraco
 # Sections & Trees
 
 {% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
+This page is a work in progress. It has been migrated but the content is waiting to be updated for the new Backoffice.
 {% endhint %}
 
 The Umbraco backoffice consists of sections (sometimes referred to as applications) which contain Trees.

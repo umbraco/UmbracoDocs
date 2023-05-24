@@ -5,7 +5,7 @@ description: A guide to creating a custom tree action in Umbraco
 # Tree Actions
 
 {% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
+This page is a work in progress. It has been migrated but the content is waiting to be updated for the new Backoffice.
 {% endhint %}
 
 Items in an Umbraco Tree can have associated Actions. The actions visible to the currently logged in user can be controlled via User Permissions.

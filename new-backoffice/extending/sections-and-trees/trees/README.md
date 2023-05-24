@@ -5,7 +5,7 @@ description: A guide to creating a custom tree in Umbraco
 # Trees
 
 {% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
+This page is a work in progress. It has been migrated but the content is waiting to be updated for the new Backoffice.
 {% endhint %}
 
 This section describes how to work with and create trees with Umbraco APIs.&#x20;

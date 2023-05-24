@@ -5,7 +5,7 @@ description: An explanation on sections and trees in Umbraco
 # Sections
 
 {% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
+This page is a work in progress. It has been migrated but the content is waiting to be updated for the new Backoffice.
 {% endhint %}
 
 The Umbraco backoffice consists of Sections, also referred to as Applications, which contain Trees.
