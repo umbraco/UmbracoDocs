@@ -8,7 +8,7 @@ description: >-
 
 Payment providers are essential for your Umbraco Vendr installation when you want to give users and customers to option to pay for your products.
 
-While only the [Invoice](broken-reference) option comes with Umbraco Vendr out of the box, seven pre-built integrations for different providers are available for you to add to your site.
+The [Invoice](invoicing/README.md) option comes with Umbraco Vendr out of the box. Seven pre-built integrations for different providers are available for you to add additional payment options to your site.
 
 ## Available integrations
 
@@ -16,6 +16,4 @@ While only the [Invoice](broken-reference) option comes with Umbraco Vendr out o
 
 ## Using These Docs
 
-**These docs are aimed at developers and users** who have at least a basic understanding of  [Umbraco](https://umbraco.com), as well as Umbraco backoffice principles.
-
-As there is no code involved with using Vendr Deploy, the docs are purely a series of [Getting Started](getting-started/) steps to get Vendr Deploy installed and configured.
+**These docs are aimed at developers and users** who have at least a basic understanding of [Umbraco](https://umbraco.com), as well as Umbraco backoffice principles.

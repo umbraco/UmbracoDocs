@@ -27,4 +27,4 @@ Umbraco Vendr is the official Umbraco e-commerce addon for your Umbraco CMS webs
 
 ### Getting Help
 
-If you require assistance, or if you are unable to find the answers you're looking for, you can use our support channels to seek assistance.
+If you require assistance you can use our support channels to seek assistance.
