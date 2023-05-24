@@ -1,11 +1,10 @@
 ---
-title: Screenshots
 description: >-
   Take a closer look at how the default checkout flow looks when installing the
   Checkout package for Umbraco Vendr.
 ---
 
-# Checkout Screenshots
+# Screenshots
 
 Check out the screenshots below to see what you get with Vendr Checkout straight out of the box.
 

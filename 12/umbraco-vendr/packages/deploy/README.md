@@ -1,5 +1,4 @@
 ---
-title: Vendr Deploy Documentation
 description: This is the documentation for the Deploy package for Umbraco Vendr.
 ---
 
@@ -16,7 +15,7 @@ It is assumed that you already have one of the following setups:
 
 If you are not at this stage yet, please read the [core Vendr documentation](../../../../core/) to learn how to get started.
 
-### Useful links
+## Useful links
 
 As well as the content in these docs, the following links may prove useful when using this package:
 

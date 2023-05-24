@@ -1,5 +1,4 @@
 ---
-title: Installation
 description: >-
   Detailed instructions on how to install and configure Deploy into your Umbraco
   Vendr implementation.

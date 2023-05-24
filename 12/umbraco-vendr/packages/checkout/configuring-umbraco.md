@@ -1,5 +1,4 @@
 ---
-title: Configuring Umbraco
 description: Learn how to configure Umbraco in order to start using the Checkout package.
 ---
 
@@ -21,7 +20,7 @@ In addition to these root node settings, each checkout step page also has a numb
 
 ## Linking to the Checkout
 
-With the checkout setup and configured the final step is to configure your cart page to link through to the checkout flow. How you do this is completely up to you:
+With the checkout setup and configured the final step is to configure your cart page to link through to the checkout flow. How you do this is up to you:
 
 * Link to the URL `/checkout` or
 * Use a Content Picker to select the checkout node to link to.

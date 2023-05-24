@@ -1,5 +1,4 @@
 ---
-title: Changelog
 description: >-
   Changelog for the Deploy package for Vendr, the eCommerce solution for
   Umbraco.
@@ -21,7 +20,7 @@ description: >-
 **Description:** Major release targeted for Vendr v3
 
 * Added ability to deploy Product Attributes + Product Attribute Presets through the transfer queue.
-* Most dependency checks now just check if the entity exists rather than for exact matches.
+* Most dependency checks now check if the entity exists rather than for exact matches.
 * Dropped Umbraco v8 and v9 support
 * Retargeted for Umbraco v10+
 

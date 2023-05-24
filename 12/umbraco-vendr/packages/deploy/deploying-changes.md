@@ -1,5 +1,4 @@
 ---
-title: Deploying Changes
 description: >-
   Learn more about the advantages of using the Vendr Deploy package with Umbraco
   Vendr.

@@ -1,5 +1,4 @@
 ---
-title: Changelog
 description: Changelog for the Checkout package for Vendr.
 ---
 
@@ -55,9 +54,9 @@ description: Changelog for the Checkout package for Vendr.
 * Switched from an externally hosted Tailwind CSS file to a locally built and purged file of only the CSS used.
 * Updated to the latest Tailwind CSS color scheme.
 * Removed the use of font-awesome in favor of some embedded SVGs instead.
-* Removed the use of `SSM.js` for responsive javascript as it wasn't really necessary.
-* Removed the use of jQuery entirely in favor of vanilla javascript so that no external JS dependency is required.
-* Switched the logo picker on the checkout doc type to an Image Media Picker.
+* Removed the use of `SSM.js` for responsive JavaScript as it wasn't really necessary.
+* Removed the use of jQuery entirely in favor of vanilla JavaScript so that no external JS dependency is required.
+* Switched the logo picker on the checkout Document Type to an Image Media Picker.
 * Updated order summary to use the `TransactionAmount` value rather than `TotalPrice` which doesn't show gift card adjustments.
 * Updated order summary to show address regions when present.
 * Updated shipping/payment method selection screens to take regions into account when looking up options.
@@ -69,7 +68,7 @@ description: Changelog for the Checkout package for Vendr.
 
 ***
 
-* Fixed bug with doc types pipeline task failing due to changes in the doc type structure due to the tabs update.
+* Fixed bug with doc types pipeline task failing due to changes in the Document Type structure due to the tabs update.
 
 ## v2.0.0
 
@@ -106,7 +105,7 @@ description: Changelog for the Checkout package for Vendr.
 ***
 
 * Added support for JSON-based requests on the API controllers.
-* Added support for bypassing Vendr Checkout logic if a template is provided on the checkout document type.
+* Added support for bypassing Vendr Checkout logic if a template is provided on the checkout Document Type.
 * Added support for optional `VendrCheckout:ResetPaymentMethodOnShippingMethodChange` app setting to display resetting payment method on shipping method change.
 
 ## 1.1.6
@@ -168,8 +167,8 @@ description: Changelog for the Checkout package for Vendr.
 **Description:** Minor release with new features and some minor bug fixes/enhancements
 
 * Added gift card support.
-* Improved install script to try and add any missing doc type properties if the doc type already exists.
-* Improved install script to try and add any missing data type settings if the data type already exists.
+* Improved install script to try and add any missing Document Type properties if the Document Type already exists.
+* Improved install script to try and add any missing Data Type settings if the Data Type already exists.
 
 ## 1.0.0
 
