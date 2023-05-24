@@ -2,13 +2,31 @@
 description: A guide to creating custom dashboards in Umbraco
 ---
 
-# Dashboards
+# Sections & Trees
 
 {% hint style="warning" %}
 This page is a work in progress. It will be updated as the software evolves.
 {% endhint %}
 
-You can try and [create a custom dashboard](broken-reference) when you have read this article.
+The Umbraco backoffice consists of sections (sometimes referred to as applications) which contain Trees.
+
+Each section is identified by its name in the top navigation ribbon of the Umbraco Backoffice.
+
+For example, when you load the backoffice you'll see that the 'Content' section contains one tree: the content tree whereas the 'Settings' section contains a number of trees: Stylesheets, Document Types, Media Types, etc...
+
+You can create your own sections and trees to extend Umbraco.
+
+## Sections
+
+Describes Umbraco Sections, configuration and APIs.
+
+## Trees
+
+Describes Umbraco Trees, configuration, APIs and events.
+
+## Searchable Trees (ISearchableTree)
+
+Explains how to customise the backoffice search of a Section Tree.
 
 Each section of the Umbraco backoffice has its own set of default dashboards.
 
@@ -35,13 +53,13 @@ Add a file named 'package.manifest' to the 'App\_Plugins' folder, containing the
 }
 ```
 
-The section aliases can be found in the C# developer reference for [Umbraco.Cms.Core.Constants.Applications](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Constants.Applications.html).
+The section aliases can be found in the C# developer reference for Umbraco.Cms.Core.Constants.Applications.
 
 ### Registering with C# Type
 
 By creating a C# class that implements `IDashboard` from `Umbraco.Cms.Core.Dashboards` then this will automatically be discovered by Umbraco at application startup time.
 
-```csharp
+```jsx
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Dashboards;
 using Umbraco.Cms.Core;
@@ -78,7 +96,7 @@ For reference, here is a list of the weighting values for the default Umbraco da
 
 | Name                    | Weight | Language Key                         | C# Type                                          |
 | ----------------------- | ------ | ------------------------------------ | ------------------------------------------------ |
-| Getting Started         | 10     | dashboardTabs/contentIntro           | Umbraco.Cms.Core.Dashboards.ContentDashboard     |
+| Getting Started         | 10     | dashboardTabs/conentIntro            | Umbraco.Cms.Core.Dashboards.ContentDashboard     |
 | Redirect URL Management | 20     | dashboardTabs/contentRedirectManager | Umbraco.Cms.Core.Dashboards.RedirectUrlDashboard |
 
 **Media**
@@ -101,7 +119,7 @@ For reference, here is a list of the weighting values for the default Umbraco da
 
 | Name            | Weight | Language Key              | C# Type                                      |
 | --------------- | ------ | ------------------------- | -------------------------------------------- |
-| Getting Started | 10     | dashboardTabs/memberIntro | Umbraco.Cms.Core.Dashboards.MembersDashboard |
+| Getting Started | 10     | dashboardTabs/MemberIntro | Umbraco.Cms.Core.Dashboards.MembersDashboard |
 
 **Forms**
 
@@ -115,7 +133,9 @@ After registering your dashboard, it will appear in the backoffice - however, it
 
 If your dashboard is unique to your installation, you can add or modify the relevant language files: `config/lang/{language}.user.xml` (e.g. `config/lang/en-US.user.xml`). If the dashboard is to be released as an Umbraco package, you will need to create a _lang_ folder in your custom dashboard folder. You also need to create a package-specific language file: `App_Plugins/Mycustomdashboard/lang/en-US.xml`.
 
-```xml
+Read more about language files
+
+```jsx
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <language>
     <area alias="dashboardTabs">
@@ -130,7 +150,7 @@ You can configure which applications/sections a dashboard will appear in, in the
 
 Further to this, within this section, you can control which users can see a particular dashboard based on the _User Groups_ they belong to. This is done by setting the 'access' permissions based on the _User Group_ alias, you choose to deny or grant a particular User Group's access to the dashboard.
 
-```csharp
+```jsx
 {
   "dashboards": [
     {
