@@ -48,7 +48,7 @@ In this sample we are altering the external index and thus we name the class `Co
 
 When using the `ConfigureNamedOptions` pattern, we have to register this in a composer for it to configure our indexes, this can be done like this:
 
-```
+```csharp
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
@@ -235,8 +235,6 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
 
                 options.UnlockIndex = true;
 
-                options.Validator = new ContentValueSetValidator(true, false, _publicAccessService, _scopeProvider, includeItemTypes: new[] { "product" });
-                
                 if (_settings.Value.LuceneDirectoryFactory == LuceneDirectoryFactory.SyncedTempFileSystemDirectoryFactory)
                 {
                     // if this directory factory is enabled then a snapshot deletion policy is required
@@ -244,7 +242,7 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
                 }
             }
         }
-        
+
         public void Configure(LuceneDirectoryIndexOptions options)
         {
             throw new System.NotImplementedException();
@@ -271,11 +269,12 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
             {
                 var indexValues = new Dictionary<string, object>
                 {
-                    ["name"] = content.Name,
+                    ["name"] = content.Name!,
+                    ["nodeName"] = content.Name!,
                     ["id"] = content.Id,
                 };
 
-                yield return new ValueSet(content.Id.ToString(), IndexTypes.Content, content.ContentType.Alias, indexValues);
+                yield return new ValueSet(content.Id.ToString(), IndexTypes.Content, indexValues);
             }
         }
     }
@@ -305,29 +304,43 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
             _productIndexValueSetBuilder = productIndexValueSetBuilder;
             RegisterIndex("ProductIndex");
         }
+
         protected override void PopulateIndexes(IReadOnlyList<IIndex> indexes)
         {
-            foreach (var index in indexes)
+            foreach (IIndex index in indexes)
             {
-                var roots = _contentService.GetRootContent();
+                IContent[] roots = _contentService.GetRootContent().ToArray();
+                index.IndexItems(_productIndexValueSetBuilder.GetValueSets(roots));
 
-                index.IndexItems(_productIndexValueSetBuilder.GetValueSets(roots.ToArray()));
-
-                foreach (var root in roots)
+                foreach (IContent root in roots)
                 {
-                    var valueSets = _productIndexValueSetBuilder.GetValueSets(_contentService.GetPagedDescendants(root.Id, 0, Int32.MaxValue, out _).ToArray());
-                    index.IndexItems(valueSets);
+                    const int pageSize = 10000;
+                    var pageIndex = 0;
+                    IContent[] descendants;
+                    do
+                    {
+                        descendants = _contentService.GetPagedDescendants(root.Id, pageIndex, pageSize, out _).ToArray();
+                        IEnumerable<ValueSet> valueSets = _productIndexValueSetBuilder.GetValueSets(descendants);
+                        index.IndexItems(valueSets);
+
+                        pageIndex++;
+                    }
+                    while (descendants.Length == pageSize);
                 }
             }
-
         }
     }
 }
 ```
+{% hint style="info" %}
+Note here that this is just an example of how you could do indexing, this means that we're indexing all content, also unpublished & trashed content.
+If you want to filter those out, you'd have to make your own logic for that.
+You could as an example look at published status in the `ProductIndexValueSetBuilder.GetValueSets()` method and filter it there.
+{% endhint %}
 
 ### ExamineComposer
 
-```csharp
+```c#
 using Examine;
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.Composing;
@@ -340,9 +353,9 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
     {
         public void Compose(IUmbracoBuilder builder)
         {
-            builder.Services.ConfigureOptions<ConfigureProductIndexOptions>();
-
             builder.Services.AddExamineLuceneIndex<ProductIndex, ConfigurationEnabledDirectoryFactory>("ProductIndex");
+
+            builder.Services.ConfigureOptions<ConfigureProductIndexOptions>();
 
             builder.Services.AddSingleton<ProductIndexValueSetBuilder>();
 
@@ -352,8 +365,15 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
 }
 ```
 
+{% hint style="info" %}
+The order of registration may seem arbitrary, but it's important so register your index, before `ConfigureOptions`.
+{% endhint %}
 ### Result
-
 ![Custom product index](images/examine-management-product-index.png)
 
 ![Product document](images/examine-management-product-document.png)
+
+{% hint style="info" %}
+This index will only rebuild if you manually trigger it in the dashboard, and this is probably not always the behavior you want when using a custom index.
+The recommended way to go about it would be to use notification handlers, you can get inspiration from our UmbracoExamine.PDF package: https://github.com/umbraco/UmbracoExamine.PDF
+{% endhint %}
