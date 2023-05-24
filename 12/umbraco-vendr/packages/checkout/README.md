@@ -1,16 +1,18 @@
 ---
-description: Documentation for Vendr Checkout, an add-on package for Vendr, the eCommerce solution for Umbraco v8+
+description: This is the documentation for the Checkout package for Umbraco Vendr.
 ---
 
-# Vendr Checkout Documentation
+# Overview
 
-Vendr Checkout is a free and open source add-on package for Vendr, providing a no-code solution for creating an instant checkout flow in your Vendr stores. Minimal and configurable, Vendr Checkout allows you to set up your checkout flow in no time at all.
+Vendr Checkout is a free and open-source add-on package for Umbraco Vendr. It provides a no-code solution for creating an instant checkout flow in your Vendr stores.
 
-![Vendr Checkout](../media/checkout/checkout.png)
+Vendr Checkout allows you to set up your checkout flow with minimal configuration.
 
-In this section we will guide you through the key steps necessary to get you started with the Vendr Checkout package for Vendr.
+![A look at how the default Checkout flow appear on the frontend.](../media/checkout/002.png)
 
-It is assumed that before we begin that you already have an Umbraco website configured, with Vendr installed and a store set up. If you are not at this stage yet, please read the [core Vendr documentation](../../../../../core/) to learn how to get started with Vendr and return to this section once you have these requirements in place.
+In this section, we will guide you through the key steps necessary to get you started with the Checkout package for Vendr.
+
+It is assumed that before we begin that you already have an Umbraco website configured and Umbraco Vendr installed and a store set up. If you are not at this stage yet, please read the [core Vendr documentation](../../../../core/) to learn how to get started.
 
 ## Useful links
 

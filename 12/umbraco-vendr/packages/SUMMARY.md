@@ -1,18 +1,18 @@
 # Table of contents
 
-* [Umbraco Vendr Packages](README.md)
+* [Packages for Umbraco Vendr](README.md)
 
 ## Checkout
 
-* [Vendr Checkout Documentation](checkout/README.md)
+* [Overview](checkout/README.md)
 * [Installation](checkout/installation.md)
-* [Configuring Umbraco](checkout/configuring-umbraco.md)
-* [Screenshots](checkout/screenshots.md)
+* [Configure Umbraco](checkout/configuring-umbraco.md)
+* [Checkout Screenshots](checkout/screenshots.md)
 * [Changelog](checkout/changelog.md)
 
 ## Deploy
 
-* [Vendr Deploy Documentation](deploy/README.md)
+* [Overview](deploy/README.md)
 * [Installation](deploy/installation.md)
 * [Deploying Changes](deploy/deploying-changes.md)
 * [Changelog](deploy/changelog.md)

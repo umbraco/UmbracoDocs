@@ -1,13 +1,17 @@
 ---
 title: Installation
-description: Installing Vendr Deploy, an add-on package for Vendr, the eCommerce solution for Umbraco v8+
+description: >-
+  Detailed instructions on how to install and configure Deploy into your Umbraco
+  Vendr implementation.
 ---
 
-Vendr Deploy can be installed directly into your projects code base using our NuGet packages.
+# Installation
+
+The Vendr Deploy package can be installed directly into your project's code base using our NuGet packages.
 
 ## NuGet Package Installation
 
-To install the Vendr Deploy package via NuGet you can run the following command directly in the NuGet Manager Console window:
+To install the Vendr Deploy package via NuGet run the following command directly in the NuGet Manager Console window using Visual Studio:
 
 ```bash
 PM> Install-Package Vendr.Deploy
@@ -15,8 +19,8 @@ PM> Install-Package Vendr.Deploy
 
 Alternatively, you can also find and install the NuGet package via the NuGet Package Manager.
 
-![Installing Vendr Deploy via the NuGet Package Manager](../media/deploy/nuget_package.png)
+![Installing Vendr Deploy via the NuGet Package Manager](../media/deploy/nuget\_package.png)
 
-## Upgrading
+### Upgrading
 
-Vendr Deploy doesn't consist of any UI files, or database changes so it is generally ok to install the upgrade over the top of a previous install.
+Vendr Deploy does not consist of any UI files or database changes. It is generally ok to install the upgrade on top of a previous install.

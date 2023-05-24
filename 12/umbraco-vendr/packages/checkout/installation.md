@@ -1,13 +1,17 @@
 ---
 title: Installation
-description: Installing Vendr Checkout, an add-on package for Vendr, the eCommerce solution for Umbraco v8+
+description: >-
+  Detailed instructions on how to install and configure Checkout into your
+  Umbraco Vendr implementation.
 ---
 
-The Vendr Checkout package can be installed directly into your projects code base using our NuGet packages.
+# Installation
+
+The Checkout package can be installed directly into your project's code base using NuGet packages.
 
 ## NuGet Package Installation
 
-To install the Vendr Checkout package via NuGet you can run the following command directly in the NuGet Manager Console window:
+To install the Vendr Checkout package via NuGet run the following command directly in the NuGet Manager Console window in Visual Studio:
 
 ```bash
 PM> Install-Package Vendr.Checkout
@@ -15,31 +19,37 @@ PM> Install-Package Vendr.Checkout
 
 Alternatively, you can also find and install the NuGet package via the NuGet Package Manager.
 
-![Installing Vendr Checkout via the NuGet Package Manager](../media/checkout/nuget_package.png)
+![Installing Vendr Checkout via the NuGet Package Manager](../media/checkout/nuget\_package.png)
 
 ## Content Installation
 
-When Vendr Checkout is installed, all relevant database configurations automatically occur via Umbraco Migrations, however there are a series of content creation steps that need to be triggered manually as these types of migrations are not supported by the Umbraco migrations system. 
+When the Checkout package is installed, all relevant database configurations automatically occur via Umbraco Migrations. There are a series of content creation steps that need to be triggered manually as these types of migrations are not supported by Umbraco.
 
-To install the relevant Vendr Checkout content (mainly the checkout content doc types + pages and updates to the Vendr store configuration) navigate to the **Settings** section and locate the Vendr Checkout dashboard in the root of the section.
+To install the relevant Checkout content follow these steps:
 
-![Vendr Checkout Dashboard](../media/checkout/install_dashboard.png)
+1. Access the Umbraco CMS backoffice.
+2. Navigate to the **Settings** section.
+3. Locate the **Checkout Dashboard**.
 
-On this dashboard, click the **Install** button then in the dialog select your site root node which is configured with a Vendr store picker linked to a Vendr store and then click **Install**
+![The Checkout Dashboard in the Settings section of the Umbraco backoffice.](../media/checkout/install\_dashboard.png)
 
-![Vendr Checkout Dashboard](../media/checkout/install_dashboard_dialog.png)
+4. Click the **Install** button.
+5. Select your site's root node which is configured with a Vendr store.
+6. Click **Install**.
+
+![The dialog that appears when installing content through the Checkout dashboard.](../media/checkout/install\_dashboard\_dialog.png)
 
 During this install, Vendr checkout will perform the following tasks:
 
-1. Create the Vendr Checkout Data Types (Colour picker and checkout step picker)
-2. Create the Vendr Checkout Document Types (Checkout page and checkout step page)
-3. Create the Vendr Checkout content nodes beneath the select site root node (unpublished)
-4. Configure the Vendr store with custom Vendr Checkout email templates and required payment providers
+* [x] Create the Vendr Checkout Data Types (Colour picker and checkout step picker).
+* [x] Create the Vendr Checkout Document Types (Checkout page and checkout step page).
+* [x] Create the Vendr Checkout content nodes beneath the select site root node (unpublished).
+* [x] Configure the Vendr store with custom Vendr Checkout email templates and required payment providers.
 
 ## Upgrading
 
 {% hint style="info" %}
-Before upgrading, it is always advisable to take a complete backup of your site/database. Every effort has been made to ensure that Vendr Checkout will upgrade gracefully, but there is always a risk that something may not install as expected.
+Before upgrading, it is always advisable to take a complete backup of your site/database.
 {% endhint %}
 
-Vendr Checkout uses a combination of database migrations and a manual install dashboard for both installs and upgrades. Upgrading is generally a case of installing the latest version over the top of the existing package and running through the installation steps again.
+The Checkout package uses a combination of database migrations and a manual install dashboard for both installs and upgrades. Upgrading is generally a case of installing the latest version over the existing package and running through the installation steps.

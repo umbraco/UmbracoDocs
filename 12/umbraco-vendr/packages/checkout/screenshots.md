@@ -1,34 +1,46 @@
 ---
 title: Screenshots
-description: Screenshots of Vendr Checkout, an add-on package for Vendr, the eCommerce solution for Umbraco v8+
+description: >-
+  Take a closer look at how the default checkout flow looks when installing the
+  Checkout package for Umbraco Vendr.
 ---
 
-Checkout the screenshots below to see what you get with Vendr Checkout straight out of the box.
+# Checkout Screenshots
 
-## Settings
+Check out the screenshots below to see what you get with Vendr Checkout straight out of the box.
 
-![Vendr Checkout Settings](../media/checkout/001.png)
+<div align="left">
 
-## Customer Details
+<img src="../media/checkout/checkout_configuration.png" alt="Vendr Checkout Settings" width="375">
 
-![Vendr Checkout Customer Details](../media/checkout/002.png)
+ 
 
-## Shipping Method
+<figure><img src="../.gitbook/assets/002.png" alt="" width="375"><figcaption><p>Vendr Checkout Customer Details</p></figcaption></figure>
 
-![Vendr Checkout Shipping Method](../media/checkout/003.png)
+</div>
 
-## Payment Method
+<div>
 
-![Vendr Checkout Payment Method](../media/checkout/004.png)
+<figure><img src="../.gitbook/assets/003.png" alt=""><figcaption><p>Shipping methods</p></figcaption></figure>
 
-## Order Review
+ 
 
-![Vendr Checkout Order Review](../media/checkout/005.png)
+<figure><img src="../.gitbook/assets/004.png" alt=""><figcaption><p>Payment methods</p></figcaption></figure>
 
-## Order Confirmation
+</div>
 
-![Vendr Checkout Order Confirmation](../media/checkout/006.png)
+<div>
 
-## Order Email
+<figure><img src="../.gitbook/assets/005.png" alt=""><figcaption><p>Order review</p></figcaption></figure>
 
-![Vendr Checkout Order Email](../media/checkout/007.png)
+ 
+
+<figure><img src="../.gitbook/assets/006.png" alt=""><figcaption><p>Order confirmation</p></figcaption></figure>
+
+</div>
+
+<div align="left">
+
+<img src="../media/checkout/007.png" alt="Vendr Checkout Order Email" width="375">
+
+</div>
