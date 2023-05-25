@@ -4,7 +4,7 @@ description: >-
   Checkout package for Umbraco Vendr.
 ---
 
-# Screenshots
+# Checkout Screenshots
 
 Check out the screenshots below to see what you get with Vendr Checkout straight out of the box.
 
@@ -14,7 +14,7 @@ Check out the screenshots below to see what you get with Vendr Checkout straight
 
  
 
-<figure><img src="../.gitbook/assets/002.png" alt="" width="375"><figcaption><p>Vendr Checkout Customer Details</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/002 (2).png" alt="" width="375"><figcaption><p>Vendr Checkout Customer Details</p></figcaption></figure>
 
 </div>
 

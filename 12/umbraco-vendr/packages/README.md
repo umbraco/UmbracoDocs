@@ -8,7 +8,7 @@ description: >-
 
 Below is an overview of the different add-ons that you can install into your Umbraco Vendr implementation. All add-ons are meant to extend the features and functionality already available in the core product.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Checkout</strong></td><td>Use this package to add additional functionality to the checkout flow for your Umbraco Vendr implementation.</td><td><a href="broken-reference">Broken link</a></td></tr><tr><td><strong>Deploy</strong></td><td>This package is used to enable the use of Umbraco Deploy with your Umbraco Vendr implementation.</td><td><a href="broken-reference">Broken link</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Checkout</strong></td><td>Use this package to add additional functionality to the checkout flow for your Umbraco Vendr implementation.</td><td><a href="checkout/">checkout</a></td></tr><tr><td><strong>Deploy</strong></td><td>This package is used to enable the use of Umbraco Deploy with your Umbraco Vendr implementation.</td><td><a href="deploy/">deploy</a></td></tr></tbody></table>
 
 ## Using These Docs
 

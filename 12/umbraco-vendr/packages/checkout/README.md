@@ -8,7 +8,7 @@ Vendr Checkout is a free and open-source add-on package for Umbraco Vendr. It pr
 
 Vendr Checkout allows you to set up your checkout flow with minimal configuration.
 
-![A look at how the default Checkout flow appear on the frontend.](../media/checkout/002.png)
+![A look at how the default Checkout flow appear on the frontend.](../.gitbook/assets/002.png)
 
 In this section, we will guide you through the key steps necessary to get you started with the Checkout package for Vendr.
 
