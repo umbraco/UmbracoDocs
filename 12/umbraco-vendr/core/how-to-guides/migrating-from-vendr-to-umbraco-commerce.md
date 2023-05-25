@@ -73,10 +73,10 @@ rmdir App_Plugins\Vendr
 dotnet add package Umbraco.Commerce
 ```
 
-5. Install Umbraco Commerce packages including payment providers.
+5. Install Umbraco Commerce packages including any payment providers previously removed.
 6. Reapply any backed up config files in their new `App_Plugins` location.
 7. Move any backed up templates into the `~/Views/UmbracoCommerce/Templates/` folder.
-8. Rename any config files with a `.json` file extension rather than the previous `.js`
+8. Rename any config files with a `.json` file extension rather than the previous `.js` [^1]
 9. Compile your project against .NET 7.0.
 
 ### Step 2: Update namespaces and entity names
@@ -268,8 +268,20 @@ Throught the following steps we will migrate the Checkout package from Vendr to 
 ### Step 2: Uinstall Vendr.Checkout
 
 1. Delete Vendr.Checkout generated checkout nodes.
+  * Checkout
+    * Customer Information
+    * Shipping Method
+    * Payment Method
+    * Review Order
+    * Process Payment
+    * Order Confirmation
 2. Delete all Vendr.Checkout generated Document Types.
+  * [Vendr Checkout] Page
+    * [Vendr Checkout] Checkout Page
+    * [Vendr Checkout] Checkout Step Page
 3. Delete all Vendr.Checkout generated Data Types.
+  * [Vendr Checkout] Step Picker
+  * [Vendr Checkout] Theme Color Picker
 4. Uninstall the Vendr.Checkout nuget package:
 
 ```bash
@@ -286,14 +298,15 @@ dotnet remove package Vendr.Checkout
     dotnet add package Umbraco.Commerce.Checkout
     ```
 
-2. In the settings section, locate the Umbraco Commerce Checkout dashboard and reinstall into previous location.
+2. Locate the Umbraco Commerce Checkout dashboard in the Settings section
+3. Click the "install" button to reinstall the Checkout components into the previous location.
 
 ### Step 4: Reapply custom changes
 
 1. Copy any custom configuration files back into the solution. 
 2. Copy any custom Views in to the `~/Views/UmbracoCommerceCheckout/` folder.
 
-## Migrate Payment Providers
+## Migrate Custom Payment Providers
 
 Through the following steps we will migrate payment providers used for Vendr into Umbraco Commerce.
 
@@ -316,4 +329,6 @@ dotnet add package Umbraco.Commerce.Core
 
 ### Step 2: Update implementations
 
-The final step in the migration is to update all async methods to accept an additional `CancellationToken` parameter.
+The final step in the migration is to update all abstract async methods exposed by the base class. It needs to be updated to accept an additional `CancellationToken cancellationToken = default` parameter as the final method argument. Your Integrated Development Environment (IDE) should provide feedback on all the methods that have been updated.
+
+[^1]: Vendr previously used the `.js` file extension to serve JSON files without having to configure a new `.json` mimetype on the server. This is no long necesarry in Umbraco Commerce so we can now use the correct `.json` file extension.
