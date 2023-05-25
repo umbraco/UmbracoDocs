@@ -81,7 +81,7 @@ For illustration purposes, the following structure represents the full set of op
       },
       "DisableRecordIndexing": false,
       "EnableFormsApi": false,
-      "RecordIpTrackingBehavior": "RemoteIpAddress"
+      "EnableRecordingOfIpWithFormSubmission": "true"
     },
     "Security": {
       "DisallowedFileUploadExtensions": "config,exe,dll,asp,aspx",
@@ -355,15 +355,13 @@ If indexing has already occurred, you will still need to manually remove the fil
 
 Set this value to `true` to enable the Forms API supporting headless and AJAX forms.
 
-### RecordIpTrackingBehavior
+### EnableRecordingOfIpWithFormSubmission
 
-The user's IP address is tracked by default when a form is submitted and stored in the `UFRecords` database table.
+The user's IP address is recorded by default when a form is submitted and stored in the `UFRecords` database table.
 
-The default value for this setting is `RemoteIpAddress` which will use the IP obtained from the request's connection property.
+To remove this behavior set this value to `false`.
 
-If in your environment that gives an incorrect value, you can change this to `ClientIpAddress`. With this option, HTTP headers will be examined to attempt to determine the user's client IP address.
-
-To remove this tracking set this value to `None`.
+If recording IPs, we recommend using [ASP.NET's forwarded headers middleware](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/proxy-load-balancer?view=aspnetcore-7.0) to ensure the correct value for the client IP is resolved.
 
 ## Security configuration
 
