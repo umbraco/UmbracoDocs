@@ -8,14 +8,14 @@ Umbraco Cloud's "Availability & Performance" feature lets you see get an overvie
 
 Under Settings in the Umbraco Cloud Portal, you'll find Availability & Performance. This is where you find the page that shows visualization and statistics for four sections.
 
-![AP-Overview](../images/AP-Overview.png)
-
 The page consists of the following parts:
 - Time range and granularity selector
 - Panel view
 - Chart and statistics view
 
-Note: The page is initially shown for all project plans. More detailed visualization and tools intended for troubleshooting to be added in the future will be restricted to “Standard” and “Professional” project plans.
+![AP-Overview](../images/AP-Overview.png)
+
+Note: The page initially display metrics for the live environment for all Umbraco Cloud projects. More detailed visualization and tools intended for troubleshooting to be added in the future will be restricted to “Standard” and “Professional” project plans.
 
 ### Time range and granularity selector
 
