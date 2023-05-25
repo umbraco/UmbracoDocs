@@ -24,7 +24,7 @@ Four parameters can be provided:
 Usually, rather than hard-coding the form's GUID, you'll use a form and/or theme picker property on your page:
 
 ```csharp
-@await Component.InvokeAsync("RenderForm", new { formId = @Mode.Form, theme = @Model.Theme, includeScripts = false })
+@await Component.InvokeAsync("RenderForm", new { formId = @Model.Form, theme = @Model.Theme, includeScripts = false })
 ```
 
 ## Rendering Using a Tag Helper
@@ -40,9 +40,9 @@ Firstly, in your `_ViewImports.cshtml` file, add a reference to the Umbraco Form
 Then in your view you can use:
 
 ```csharp
-@if (Model.Form is Guid formId)
+@if (Model.Form.HasValue)
 {
-    <umb-forms-render form-id="formId" theme="Model.Theme" include-scripts="false" />
+    <umb-forms-render form-id="@Model.FormId.Value" theme="@Model.FormTheme" exclude-scripts="true" />
 }
 ```
 

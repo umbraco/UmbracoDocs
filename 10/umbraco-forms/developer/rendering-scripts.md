@@ -29,10 +29,10 @@ Firstly, in your `_ViewImports.cshtml` file, ensure you have a reference to the 
 @addTagHelper *, Umbraco.Forms.Web
 ```
 
-Then instead of invoking the view component directly, you can use:
+Then instead of reading from `TempData` and invoking the view component directly, you can use:
 
 ```csharp
-<umb-forms-render-scripts form-id="formId" theme = "bootstrap3-horizontal" />
+<umb-forms-render-scripts theme="bootstrap3-horizontal" />
 ```
 
 ## Enabling `ExcludeScripts`
@@ -41,10 +41,11 @@ If you do not want to render the associated scripts with a Form, you need to exp
 
 To enable `ExcludeScripts`:
 
-*   Using the **Insert Form with Theme** macro:
+- Using the **Insert Form with Theme** macro:
 
     ![Exclude scripts](../../../11/umbraco-forms/developer/images/exclude-scripts-v9.png)
-*   While inserting Forms **directly** in your template:
+
+- While inserting Forms **directly** in your template:
 
     ```csharp
     @await Umbraco.RenderMacroAsync("renderUmbracoForm", new {FormGuid="6c3f053c-1774-43fa-ad95-710a01d9cd12", FormTheme="bootstrap3-horizontal", ExcludeScripts="1"})

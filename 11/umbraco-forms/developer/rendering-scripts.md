@@ -29,10 +29,10 @@ Firstly, in your `_ViewImports.cshtml` file, ensure you have a reference to the 
 @addTagHelper *, Umbraco.Forms.Web
 ```
 
-Then instead of invoking the view component directly, you can use:
+Then instead of reading from `TempData` and invoking the view component directly, you can use:
 
 ```csharp
-<umb-forms-render-scripts form-id="formId" theme = "bootstrap3-horizontal" />
+<umb-forms-render-scripts theme="bootstrap3-horizontal" />
 ```
 
 ## Enabling `ExcludeScripts`
