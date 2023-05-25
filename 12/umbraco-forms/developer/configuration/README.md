@@ -6,7 +6,7 @@ description: >-
 
 # Configuration
 
-With Umbraco Forms it's possible to customize the functionality with various configuration values.
+With Umbraco Forms it's possible to customize the functionality using the available configuration values.
 
 ## Editing configuration values
 
@@ -117,11 +117,11 @@ For illustration purposes, the following structure represents the full set of op
 
 ### DisableAutomaticAdditionOfDataConsentField
 
-This configuration value expects a `true` or `false` value and can be used to disable the feature where all new forms are provided with a default "Consent for storing submitted data" field on creation. Defaults to `false`.
+This configuration value expects a `true` or `false` value. It can be used to disable the feature that provides all new forms with a default "Consent for storing submitted data" field on creation. Defaults to `false`.
 
 ### DisableDefaultWorkflow
 
-This configuration value expects a `true` or `false` value and can be used to toggle if new forms that are created adds an email workflow to send the result of the form to the current user who created the form. Defaults to `false`.
+This configuration value expects a `true` or `false` value. It can be used to toggle if new forms adds an email workflow to send the result of the form to the creator. Defaults to `false`.
 
 ### MaxNumberOfColumnsInFormGroup
 
@@ -129,13 +129,13 @@ This setting controls the maximum number of columns that can be created by edito
 
 ### DefaultTheme
 
-This setting allows you to configure the name of the theme to use when an editor has not specifically selected one for a form. If empty or missing, the default value of "default" is used. If a custom default theme is configured, it will be used for rendering forms where the requested file exists, and where not, will fall back to the out of the box default theme.
+This setting allows you to configure the name of the theme to use when an editor has not specifically selected one for a form. If empty or missing, the default value of "default" is used. If a custom default theme is configured, it will be used for rendering forms where the requested file exists. If this is not configured, it will fall back to use the out of the box default theme.
 
 ### DefaultEmailTemplate
 
 When creating an empty form, a single workflow is added that will send an email to the current user's address. By default, the template shipped with Umbraco Forms is available at `Forms/Emails/Example-Template.cshtml` is used.
 
-If you have created a custom template and would like to use that as the default instead, you can set the path here using this configuration setting.
+If you have created a custom template and want to use that as the default, you can set the path using this configuration setting.
 
 ### RemoveProvidedEmailTemplate
 
@@ -225,7 +225,7 @@ This setting needs to be a `true` or `false` value and will allow you to toggle 
 
 #### DisableStylesheet
 
-This setting needs to be a `true` or `false` value and will allow you to toggle if the form will include some default styling with the Umbraco Forms CSS stylesheet. Defaults to `false`.
+This setting needs to be a `true` or `false` value. It allows you to toggle whether the form will include some default styling with the Umbraco Forms CSS stylesheet. Defaults to `false`.
 
 #### MarkFieldsIndicator
 
@@ -249,11 +249,11 @@ This allows you to configure the invalid error validation message. By default th
 
 #### ShowValidationSummary
 
-This setting needs to be a `true` or `false` value and will allow you to toggle if the form will display all form validation error messages in a validation summary together. Defaults to `false`.
+This setting needs to be a `true` or `false` value. It allows you to toggle whether the form will display all form validation error messages in a validation summary together. Defaults to `false`.
 
 #### HideFieldValidationLabels
 
-This setting needs to be a `true` or `false` value and will allow you to toggle if the form will show inline validation error messages next to the form field that is invalid. Defaults to `false`.
+This setting needs to be a `true` or `false` value. It will allows you to toggle whether the form will show inline validation error messages next to the form field that is invalid. Defaults to `false`.
 
 #### NextPageButtonLabel, PreviousPageButtonLabel, SubmitButtonLabel
 
@@ -265,7 +265,7 @@ This allows you to configure what text is displayed when a form is submitted and
 
 #### StoreRecordsLocally
 
-This setting needs to be a `True` or `False` value and will allow you to toggle if form submission data should be stored in the Umbraco Forms database tables. By default this is set to `True`.
+This setting needs to be a `True` or `False` value. It will allows you to toggle whether form submission data should be stored in the Umbraco Forms database tables. By default this is set to `True`.
 
 #### AutocompleteAttribute
 
