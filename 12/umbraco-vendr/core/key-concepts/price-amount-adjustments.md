@@ -1,15 +1,15 @@
 ---
-description: Adjusting prices in Vendr, the eCommerce solution for Umbraco
+description: Learn about adjusting prices in Vendr.
 ---
 
-# Pice/Amount Adjustments
+# Price/Amount Adjustments
 
-In some cases you may want to tweak the figures of an order. It could be reducing the price of a product if a customer purchases a given amount of a product. To handle this, Vendr has the concept of Price/Amount Adjustments. What adjustments allow you to do is create a record/log of any changes that occur to a price/amount throughout the calculation process. Vendr uses the adjustments in the calculation process to work out its final pricing, and provide this list of the adjustments on the order. This makes it clear exactly how the price was calculated.
+In some cases, you may want to tweak the figures of an order. It could be reducing the price of a product if a customer purchases a given amount of a product. To handle this, Vendr has the concept of Price/Amount Adjustments. What adjustments allow you to do is create a record/log of any changes that occur to a price/amount throughout the calculation process. Vendr uses the adjustments in the calculation process to work out its final pricing and provides this list of the adjustments on the order. This makes it clear exactly how the price was calculated.
 
 Vendr has two types of adjustments:
 
-* **Price Adjustment** - Adjusts one of the orders price properties (discounts, fees).
-* **Amount Adjustment** - Adjusts the final transaction amount of an order (gift cards, loyalty points).
+* **Price Adjustment** - Adjusts one of the orders' price properties (discounts, fees).
+* **Amount Adjustment** - Adjusts the final transaction amount of the order (gift cards, loyalty points).
 
 ## Creating Custom Adjustments
 
@@ -34,7 +34,7 @@ public class MyPriceAdjuster : PriceAdjusterBase
 }
 ```
 
-Adjusters apply adjustments to their given price they wish to affect. Adjustments are strongly typed and each adjuster should define their own adjustment type, providing properties to collect any relevant information for the adjustment. This "meta data" gets serialized with the adjustment as is constantly available when accessing the given adjustment.  
+Adjusters apply adjustments to the given price they wish to affect. Adjustments are strongly typed and each adjuster should define their own adjustment type, providing properties to collect any relevant information for the adjustment. This "metadata" gets serialized with the adjustment as is constantly available when accessing the given adjustment.
 
 ```csharp
 [Serializable]
@@ -68,7 +68,7 @@ public abstract class PriceAdjustment<TSelf>
 }
 ```
 
-Once defined, the adjuster should be registered with the DI container to enable Vendr to be aware of it and include it in calculation process.
+Once defined, the adjuster should be registered with the DI container to enable Vendr to be aware of it and include it in the calculation process.
 
 ```csharp
 public static class VendrBuilderExtensions

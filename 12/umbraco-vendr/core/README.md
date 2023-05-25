@@ -7,24 +7,30 @@ description: >-
 
 # What is Umbraco Vendr?
 
-Umbraco Vendr is the official Umbraco e-commerce addon for your Umbraco CMS website. It can be used to setup small webshops, while it can also be implemented for big-scale e-commerce solutions spanning multiple countries.
+Umbraco Vendr is the official Umbraco e-commerce addon for your Umbraco CMS website. It can be used to set up small webshops, while it can also be implemented for big-scale e-commerce solutions spanning multiple countries.
 
 <table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Getting Started</strong></td><td>Find all the information you need to get started using Umbraco Vendr with your Umbraco CMS implementation.</td><td><a href="getting-started/introduction.md">introduction.md</a></td></tr><tr><td><strong>How-to Guides</strong></td><td>Looking to configure and implement something specific? Take a look through the How-to section where you might find a guide that fits your needs.</td><td><a href="how-to-guides/overview.md">overview.md</a></td></tr><tr><td><strong>Key Concepts</strong></td><td>Looking to learn more about the different concepts and features of Umbraco Vendr? You can find detailed information about each of them in this section.</td><td><a href="key-concepts/overview.md">overview.md</a></td></tr></tbody></table>
 
 ## Quick links
 
-{% content-ref url="reference/overview.md" %}
-[overview.md](reference/overview.md)
+{% content-ref url="reference/go-behind-the-scenes.md" %}
+[go-behind-the-scenes.md](reference/go-behind-the-scenes.md)
 {% endcontent-ref %}
 
 {% content-ref url="changelog.md" %}
 [changelog.md](changelog.md)
 {% endcontent-ref %}
 
+{% hint style="info" %}
+Are you looking for Vendr documentation?
+
+The articles and topics covered on this documentation site are for Umbraco Commerce.
+
+Documentation for Vendr is located on the [Vendr Documentation site](https://vendr.net/docs/).
+{% endhint %}
+
 ### Using These Docs
 
 **These docs are aimed at developers** who have at least a basic understanding of [Umbraco](https://umbraco.com), as well as C# and MVC principals.
-
-### Getting Help
 
 If you require assistance you can use our support channels to seek assistance.

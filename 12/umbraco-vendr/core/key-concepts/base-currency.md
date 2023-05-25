@@ -1,14 +1,14 @@
 ---
-description: Base Currency for standardized reporting in Vendr, the eCommerce solution for Umbraco.
+description: Base Currency for standardized reporting in Vendr.
 ---
 
 # Base Currency
 
-Within Vendr we have support for showing analytics reports, including summaries of sales figures. At the same time, Vendr also supports orders being placed in multiple currencies. These pose a problem of how to display a succinct sales figure, when the orders are placed in multiple currencies. The answer to this is the store's **Base Currency**.
+Within Vendr we have support for showing analytics reports, including summaries of sales figures. At the same time, Vendr also supports orders being placed in multiple currencies. These pose a problem of how to display a succinct sales figure when the orders are placed in multiple currencies. The answer to this is the store's **Base Currency**.
 
-When you configure a store you need to assign a base currency to it. This currency is there to identify which currency the store should use as it's basis for reports and sales figures. This will be used regardless of whatever currency the order was placed in.
+When you configure a store you need to assign a base currency to it. This currency is there to identify which currency the store should use as its basis for reports and sales figures. This will be used regardless of whatever currency the order was placed in.
 
-When a store has a base currency configured, any order placed will track the price of the order in the customers chosen currency. It will also track the current exchange rate between that currency and the stores base currency. Whenever a report is run the order total prices will be converted using this exchange rate. This means that they can all be automatically presented in the single base currency of the store.
+When a store has a base currency configured, any order placed will track the price of the order in the customer's chosen currency. It will also track the current exchange rate between that currency and the store's base currency. Whenever a report is run the order total prices will be converted using this exchange rate. This means that they can all be automatically presented in the single base currency of the store.
 
 ## Currency Exchange Rates
 
@@ -20,7 +20,7 @@ Out of the box, Vendr comes with a number of available services you can choose t
 * **FixerCurrencyExchangeRateService** uses the [fixer.io](https://fixer.io/) API which is a reliable paid option (with a reasonable free plan).
 * **CurrencyLayerCurrencyExchangeRateService** uses the [currencylayer.com](https://currencylayer.com/) API which is another reliable paid option (with a reasonable free plan).
 
-If you wish to change the currency exchange rate service used, you can do so via the [dependency injection](../dependency-injection/) approach. This is used to override the default service configuration. For services that require configuration to be passed in, such as service API keys, you'll need to use the factory based override as follows:
+If you wish to change the currency exchange rate service used, you can do so via the [dependency injection](../dependency-injection/) approach. This is used to override the default service configuration. For services that require configuration to be passed in, such as service API keys, you'll need to use the factory-based override as follows:
 
 ```csharp
 public static class VendrBuilderExtensions
@@ -38,6 +38,6 @@ public static class VendrBuilderExtensions
 
 ## Historic Orders
 
-Vendr has a background service that will attempt to ensure that all historic orders without an exchange rate defined get updated. This is done in case the third-party API's fail and we need a method of cleaning data. It is also done because in case the store base currency is ever changed. In this case, we need to re-process all orders again with the newly selected base currency.
+Vendr has a background service that will attempt to ensure that all historic orders without an exchange rate defined get updated. This is done in case the third-party APIs fail and we need a method of cleaning data. It is also done in case the store base currency is ever changed. In this case, we need to re-process all orders again with the newly selected base currency.
 
 The currency exchange rate background task will run once every 24 hours or after 20 seconds after an app pool recycle.

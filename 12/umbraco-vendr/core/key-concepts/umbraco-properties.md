@@ -1,20 +1,11 @@
 ---
-description: Key Umbraco node properties used by Vendr, the eCommerce solution for Umbraco
+description: Key Umbraco node properties used by Vendr.
 ---
 
 # Umbraco Properties
 
-Vendr uses Umbraco nodes as it's source of information. In order for Vendr to gather the information it needs however, it requires that a number of properties be defined at different locations with specific property aliases.
+Vendr uses Umbraco nodes as its source of information. In order for Vendr to gather the information it needs, however, it requires that a number of properties be defined at different locations with specific property aliases.
 
 ## Properties
 
-| Alias | Type | Description |
-| -- | -- | -- |
-| `store` | Vendr.StorePicker | Often placed on the site root node, but can be placed on any node higher than the product nodes themselves, this property links the website to a specific Vendr store configuration |
-| `productName` | Textstring | Optional product node property that allows you to define an explicit product name other than the product nodes `.Name` property, which will be used as fallback |
-| `sku` | Textstring | Product node property defining the unique `SKU` of the product |
-| `price` | Vendr.Price | Product node property defining the prices for the product |
-| `stock` | Vendr.Stock | Product node property defining the stock level of the product |
-| `taxClass` | Vendr.StoreEntityPicker | Optional product node property that allows you to define an explicit `Tax Class` for the product, should it differ from the stores default |
-| `isGiftCard` | True/False | Optional product node property that defined whether the product node should be considered a Gift Card product, in which case it triggers the automatic generation of a Gift Card in the backoffice and emails it directly to the customer on checkout |
-| `productSource` | ContentPicker | Optional product node property allowing you to link a product to another product outside of it's hierarchy to be used as it's source of product information |
+<table><thead><tr><th width="193.33333333333331">Alias</th><th width="212">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>store</code></td><td>Vendr.StorePicker</td><td>Often placed on the site root node, but can be placed on any node higher than the product nodes themselves, this property links the website to a specific Vendr store configuration.</td></tr><tr><td><code>productName</code></td><td>Textstring</td><td>Optional product node property that allows you to define an explicit product name other than the product nodes <code>.Name</code> property, which will be used as fallback.</td></tr><tr><td><code>sku</code></td><td>Textstring</td><td>Product node property defining the unique <code>SKU</code> of the product.</td></tr><tr><td><code>price</code></td><td>Vendr.Price</td><td>Product node property defining the prices for the product.</td></tr><tr><td><code>stock</code></td><td>Vendr.Stock</td><td>Product node property defining the stock level of the product.</td></tr><tr><td><code>taxClass</code></td><td>Vendr.StoreEntityPicker</td><td>Optional product node property that allows you to define an explicit <code>Tax Class</code> for the product, should it differ from the stores default.</td></tr><tr><td><code>isGiftCard</code></td><td>True/False</td><td>Optional product node property that defined whether the product node should be considered a Gift Card product, in which case it triggers the automatic generation of a Gift Card in the backoffice and emails it directly to the customer on checkout.</td></tr><tr><td><code>productSource</code></td><td>ContentPicker</td><td>Optional product node property allowing you to link a product to another product outside of it's hierarchy to be used as it's source of product information.</td></tr></tbody></table>

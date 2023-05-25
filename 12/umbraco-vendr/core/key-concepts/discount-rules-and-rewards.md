@@ -1,23 +1,22 @@
 ---
-description: Define when a Discount should apply and what should be the Reward in Vendr, the eCommerce solution for Umbraco.
+description: Define when a Discount should apply and what should be the Reward in Vendr.
 ---
 
-# Discount Rules and Rewards
+# Discount Rules / Rewards
 
 Discounts in Vendr are defined using a series of rules and reward builders that let you configure the following:
 
 * When a Discount should apply.
 * What the Reward should be for that Discount.
 
-These builders come with a handful of the most common Rules and Rewards that should suit the majority of web stores needs. When need to create your own Rules or Rewards then these are extendable via a Provider model allowing you to incorporate your own custom logic.
+These builders come with a handful of the most common Rules and Rewards that should suit the majority of web stores' needs. When need to create your own Rules or Rewards then these are extendable via a Provider model allowing you to incorporate your own custom logic.
 
 ## Discount Rules
 
 There are two types of Discount Rules in Vendr:
 
 * **Order Discount Rules**: Determine whether a discount should apply to an Order. Returns a Fulfilled/Unfulfilled status depending on whether the Rule logic has been met.
-
-* **Order Line Discount Rules**: Determine whether a discount should apply to an Order Line within an Order. Returns a Fulfilled/Unfulfilled status depending in whether the Rule logic has been met. Where the status is Fulfilled, a list of all Order Lines that are fulfilled by this Rule are also returned.
+* **Order Line Discount Rules**: Determine whether a discount should apply to an Order Line within an Order. Returns a Fulfilled/Unfulfilled status depending on whether the Rule logic has been met. Where the status is Fulfilled, a list of all Order Lines that are fulfilled by this Rule is also returned.
 
 ### Example: Custom Order Discount Rule Provider
 
@@ -48,19 +47,19 @@ public class MyCustomOrderRuleProviderSettings
 
 ```
 
-All Order Discount Rule Providers inherit from a base class `OrderDiscountRuleProviderBase<TSettings>`. `TSettings` is the Type of a Plain Old Class Object (POCO) model class representing the Discount Rule Providers settings.
+All Order Discount Rule Providers inherit from a base class `OrderDiscountRuleProviderBase<TSettings>`. `TSettings` is the type of a Plain Old Class Object (POCO) model class representing the Discount Rule Providers settings.
 
 {% hint style="info" %}
-See the [Settings Objects](#settings-objects) section below for more information on Settings objects.
+See the [Settings Objects](discount-rules-and-rewards.md#settings-objects) section below for more information on Settings objects.
 {% endhint %}
 
 The class must be decorated with `DiscountRuleProviderAttribute` which defines the Discount Rule Providers `alias` and `name`, and can also specify a `description` or `icon` to be displayed in the backoffice. The `DiscountRuleProviderAttribute` is also responsible for defining a `labelView` for the Provider.
 
 {% hint style="info" %}
-See the [Label views](#label-views) section below for more information on Label Views.
+See the [Label views](discount-rules-and-rewards.md#label-views) section below for more information on Label Views.
 {% endhint %}
 
-Rule Providers have a `ValidateRule` method which accepts a `DiscountRuleContext` as well as an instance of the Providers `TSettings` settings model. Inside this you can perform your custom logic, returning a `DiscountRuleResult` to notify Vendr of the Rule outcome.
+Rule Providers have a `ValidateRule` method that accepts a `DiscountRuleContext` as well as an instance of the Providers `TSettings` settings model. Inside this you can perform your custom logic, returning a `DiscountRuleResult` to notify Vendr of the Rule outcome.
 
 If the passed-in context (which contains a reference to the Order) meets the Rule's criteria, then a fulfilled `DiscountRuleResult` can be returned by calling `return Fulfilled();`. Alternatively, if the Order didn't meet the Rules criteria an unfulfilled `DiscountRuleResult` can be returned by calling `return Unfulfilled();`.
 
@@ -136,10 +135,10 @@ See the [Settings Objects](../settings-objects/) documentation for more informat
 The class must be decorated with `DiscountRewardProviderAttribute` which defines the Discount Reward Providers `alias` and `name`. It can also specify a `description` or `icon` to be displayed in the Vendr backoffice. The `DiscountRewardProviderAttribute` is responsible for defining a `labelView` for the Provider.
 
 {% hint style="info" %}
-See the [Label views](#label-views) section below for more information on Label Views.
+See the [Label views](discount-rules-and-rewards.md#label-views) section below for more information on Label Views.
 {% endhint %}
 
-Reward Providers have a `CalculateReward` method which accepts a `DiscountRewardContext` as well as an instance of the Providers `TSettings` settings model. Inside this, you can perform your custom calculation logic, returning a `DiscountRewardCalculation` instance which defines any Reward values to apply to the Order.
+Reward Providers have a `CalculateReward` method that accepts a `DiscountRewardContext` as well as an instance of the Providers `TSettings` settings model. Inside this, you can perform your custom calculation logic, returning a `DiscountRewardCalculation` instance that defines any Reward values to apply to the Order.
 
 ```csharp
 // Add a shipping total discount
@@ -165,9 +164,9 @@ Both the `DiscountRuleProviderAttribute` and the `DiscountRewardProviderAttribut
 
 `Type` is either `rules` or `rewards`, depending on the Type of Provider it refers to. `ProviderAlias` is the alias of the Provider.
 
-The Rule/Reward Label View should provide a user friendly summary of it's settings to display in the relevant Builder UI.
+The Rule/Reward Label View should provide a user-friendly summary of its settings to display in the relevant Builder UI.
 
-![Discount Rule Label Views](../media/discount_rule_builder_label_views.png)
+![Discount Rule Label Views](../media/discount\_rule\_builder\_label\_views.png)
 
 The Label View file will be passed a `model` property which will be a JavaScript representation of the given Providers settings object.
 

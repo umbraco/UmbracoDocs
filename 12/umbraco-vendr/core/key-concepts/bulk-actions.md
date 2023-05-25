@@ -1,5 +1,5 @@
 ---
-description: Perform bulk operations on entities in Vendr, the eCommerce solution for Umbraco
+description: Perform bulk operations on entities in Vendr.
 ---
 
 # Bulk Actions
@@ -10,7 +10,7 @@ Vendr allows extending the different table views, adding in **Bulk Actions** to 
 
 ## Injecting a Bulk Action
 
-Bulk actions are a client side concepts and so additional bulk actions are injected with JavaScript in an AngularJS configuration module.
+Bulk actions are client-side concepts and so additional bulk actions are injected with JavaScript in an AngularJS configuration module.
 
 To create a configuration module you can create a custom folder in the `App_Plugins` directory and create a JavaScript file to hold your configuration in.
 
@@ -62,32 +62,32 @@ angular.module('vendr')
 
 Once created, the bulk action will be displayed in the bulk actions bar for the configured entities.
 
-![Bulk Action Button](../media/custom_bulk_action.png)
+![Bulk Action Button](../media/custom\_bulk\_action.png)
 
 ## Bulk Action Options
 
-| Property | Description |
-| -------- | ----------- |
-| `name` | The name for your bulk action which will be displayed in the bulk action button. |
-| `icon` | An icon for your bulk action which will be displayed in the bulk action button next to the name. |
-| `sortOrder` | The order in which to display this action in the bulk actions bar. System bulk actions sort orders are in multiples of `100` in order to allow positioning of items between system bulk actions. |
+| Property    | Description                                                                                                                                                                                          |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `name`      | Name of your bulk action that will be displayed in the bulk action button.                                                                                                                           |
+| `icon`      | Icon for your bulk action that will be displayed in the bulk action button next to the name.                                                                                                         |
+| `sortOrder` | The order in which to display this action in the bulk actions bar. System bulk actions sort orders are in multiples of `100` in order to allow the positioning of items between system bulk actions. |
 
-| Method | Description |
-| ------ | ----------- |
-| `configure(items)` | A function to run before the bulk operation in order to provide configuration for the bulk action. Returns a Promise that returns an object which is then passed to the item/bulk action methods. |
-| `itemAction(item, config)` | An individual action to perform per selected item. A status will be displayed after each processed item showing progress. Returns an Promise. |
-| `bulkAction(items, config)` | A single action to be performed for all selected items in one go. Returns an Promise. |
-| `getConfirmMessage(total)` | A function that can provide a message to display before a bulk action is triggered should confirmation be required for the action to run. Returns an Promise that returns a string. |
-| `getStatusMessage(count, total)` | A function used to provide a status message after each item that has been processed. Displayed in the bulk actions bar after each `itemAction` has been called. Returns an Promise that returns a string. |
-| `getSuccessMessage(total)` | A function to return a success message after all bulk actions have been performed. Returns an Promise that returns a string. |
-| `condition(context)` | As all bulk actions are registered globally for all entity types, the `condition` function can be used to filer when, and for which entities a bulk action will display. |
+| Method                           | Description                                                                                                                                                                                       |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `configure(items)`               | A function to run before the bulk operation in order to provide configuration for the bulk action. Returns a Promise that returns an object which is then passed to the item/bulk action methods. |
+| `itemAction(item, config)`       | Individual action to perform per selected item. A status will be displayed after each processed item shows progress. Returns a Promise.                                                           |
+| `bulkAction(items, config)`      | Single action to be performed for all selected items in one go. Returns a Promise.                                                                                                                |
+| `getConfirmMessage(total)`       | A function that can provide a message to display before a bulk action is triggered should confirmation be required for the action to run. Returns a Promise that returns a string.                |
+| `getStatusMessage(count, total)` | Function used to provide a status message after each item has been processed. Displayed in the bulk actions bar after each `itemAction` has been called. Returns a Promise that returns a string. |
+| `getSuccessMessage(total)`       | A function to return a success message after all bulk actions have been performed. Returns a Promise that returns a string.                                                                       |
+| `condition(context)`             | As all bulk actions are registered globally for all entity types, the `condition` function can be used to filter when, and for which entities a bulk action will display.                         |
 
 Only an `itemAction` or a `bulkAction` method can be defined for a bulk action configuration. If both are present, the `bulkAction` will be used and the `itemAction` will be ignored. If processing of items can be done individually, it is better to use the `itemAction` in order to provide user feedback. The `bulkAction` can only be used where items need to be processed in a single action.
 
 ## Important Notes
 
-* Most methods apart from `itemAction` or `bulkAction` are optional. If methods aren't present, a default implementation will be used. Where the methods trigger, specific functionality such as the `configure` or `getConfirmMessage` methods, will become disabled.
-* The array based syntax for registering is a bulk action with angular dependencies. Each bulk action is registered as an array, where all dependencies are defined first and then a factory function is defined last which returns the actual bulk action definition.
+* Most methods apart from `itemAction` or `bulkAction` are optional. If methods aren't present, a default implementation will be used. Where the methods trigger, specific functionality such as the `configure` or `getConfirmMessage` methods will become disabled.
+* The array-based syntax for registering is a bulk action with angular dependencies. Each bulk action is registered as an array, where all dependencies are defined first and then a factory function is defined last which returns the actual bulk action definition.
 * Whilst these docs outline how to define a bulk action, you will likely need to register further resources or services that can perform the given bulk operation and include these as a dependency for your action.
 
 ## Examples

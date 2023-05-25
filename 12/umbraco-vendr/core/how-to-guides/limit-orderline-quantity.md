@@ -1,17 +1,17 @@
 ---
-description: How-To Guide to limit order line quantity in Vendr, the eCommerce solution for Umbraco.
+description: How-To Guide to limit order line quantity in Vendr.
 ---
 
 # Limit Order Line Quantity
 
-In this guide we will be looking at Validation events in Vendr. These enabled you to limit order line quantity based on:
+In this guide, we will be looking at Validation events in Vendr. These enabled you to limit order line quantity based on:
 
-* The existing stock value on the product, and
-* The existing quantities of the product in the cart.
+* The existing stock value of the product, and
+* The existing quantity of the product in the cart.
 
 ## ProductAddValidationHandler
 
-When adding a product to the cart we need to verify that the product is in stock. We also need to verify that the customer does not already have the remaining quantities in cart.
+When adding a product to the cart we need to verify that the product is in stock. We also need to verify that the customer does not already have the remaining quantities in the cart.
 
 ```csharp
 public class ProductAddValidationHandler : ValidationEventHandlerBase<ValidateOrderProductAdd>
@@ -41,7 +41,7 @@ public class ProductAddValidationHandler : ValidationEventHandlerBase<ValidateOr
 
 ## OrderLineQuantityValidationHandler
 
-When changing the order line quantity on cart page, we need to ensure that the quantities being changed are in stock.
+When changing the order line quantity on the cart page, we need to ensure that the quantities being changed are in stock.
 
 ```csharp
 public class OrderLineQuantityValidationHandler : ValidationEventHandlerBase<ValidateOrderLineQuantityChange>
@@ -69,7 +69,7 @@ public class OrderLineQuantityValidationHandler : ValidationEventHandlerBase<Val
 
 ## Register event handlers
 
-Finally we need to register the Vendr event handlers via an `IVendrBuilder` extension.
+Finally, we need to register the Vendr event handlers via an `IVendrBuilder` extension.
 
 ```csharp
 public static class VendrBuilderExtensions

@@ -1,5 +1,5 @@
 ---
-description: Getting Started with Vendr, the eCommerce solution for Umbraco.
+description: Getting Started with Vendr.
 ---
 
 # Introduction
@@ -18,7 +18,7 @@ The minimum requirements for using Vendr are as follows:
 
 * Umbraco CMS version 12+
 * SQL Server Database
-  * **SQLite** is fine for testing, but not recommended for live deployments. See [Configuring SQLite support](../how-to-guides/configuring-sqlite-support/) for more details.
+  * **SQLite** is fine for testing, but not recommended for live deployments. See [Configuring SQLite support](../how-to-guides/configure-sqlite-support.md) for more details.
 
 ## Versioning
 

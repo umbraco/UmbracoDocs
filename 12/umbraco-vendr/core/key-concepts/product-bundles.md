@@ -1,8 +1,8 @@
 ---
-description: Creating bundles of products with Vendr, the eCommerce solution for Umbraco
+description: Creating bundles of products with Vendr.
 ---
 
-# Product bundles
+# Product Bundles
 
 Occasionally you may need to create a product with multiple sub-products. A good example of this is when buying a computer where you may pick the computer as the main product. You can then choose the different components to make up the computer, such as the hard disk options. The final order line then becomes the composite order line of the selected primary product and all its sub-product options. To achieve this kind of configurable product in Vendr, we can use a feature called product bundling.
 
@@ -20,7 +20,7 @@ order.AddProduct(productReference, productQuantity, bundleId);
 
 ## Adding Sub Products to a Bundle
 
-With the primary product added as a bundle, we can then add sub products to that bundle by calling one of the `AddProductToBundle` order methods.
+With the primary product added as a bundle, we can then add sub-products to that bundle by calling one of the `AddProductToBundle` order methods.
 
 ```csharp
 // Define a unique bundle id for the order line
@@ -36,7 +36,7 @@ order.AddProductToBundle(bundleId, subProductReference, subProductQuantity);
 
 ## Order Line Price Calculation
 
-By adding sub products to a bundle, Vendr knows to automatically sum up all the sub product prices together. It will then add them to the unit price of the primary order line for you. This means that there is nothing extra you need to do in the calculation process.
+By adding sub-products to a bundle, Vendr knows to automatically sum up all the sub-product prices together. It will then add them to the unit price of the primary order line for you. This means that there is nothing extra you need to do in the calculation process.
 
 ## Displaying Bundles in the Back-Office
 

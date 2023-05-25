@@ -1,12 +1,14 @@
 ---
-description: How-To Guide to configure using an alternative database for the tables of Vendr, the eCommerce solution for Umbraco
+description: >-
+  How-To Guide to configure using an alternative database for the tables of
+  Vendr.
 ---
 
 # Use an Alternative Database for Vendr Tables
 
-By default Vendr will use the same database as Umbraco to store it's data in. As e-commerce and content management have different database needs, it may be benefitial to house the Vendr database tables in an alternative database.
+By default, Vendr will use the same database as Umbraco to store its data in. As e-commerce and content management have different database needs, it may be beneficial to house the Vendr database tables in an alternative database.
 
-To do this, you can configure a Vendr specific connection string in your app settings `ConnectionStrings` section using the `vendrDbDSN` prefix.
+To do this, you can configure a Vendr-specific connection string in your app settings `ConnectionStrings` section using the `vendrDbDSN` prefix.
 
 ```json
 {

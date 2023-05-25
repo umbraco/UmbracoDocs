@@ -1,12 +1,12 @@
 ---
-description: Converting product sources into understandable products for Vendr, the eCommerce solution for Umbraco
+description: Converting product sources into understandable products for Vendr.
 ---
 
 # Product Adapters
 
 The role of a Product Adapter in Vendr is to provide an interface between a product information source and convert it into a standardized format. This is done to prevent the need for Vendr to be tied to that source.
 
-What this means for developers is that Product Adapters allow you to hook in alternative product information sources that may not be Umbraco node based. You may hold your product information in a third party database table. A custom Product Adapter would then allow Vendr to interface with that custom data in the same way it would the default Umbraco node data.
+What this means for developers is that Product Adapters allow you to hook in alternative product information sources that may not be Umbraco node based. You may hold your product information in a third-party database table. A custom Product Adapter would then allow Vendr to interface with that custom data in the same way it would the default Umbraco node data.
 
 ## Example Product Adapter
 
@@ -35,8 +35,8 @@ public class MyCustomProductAdapter : IProductAdapter
 
 All Product Adapters implement the `IProductAdapter` interface which requires three method implementations:
 
-* Two `GetProductSnapshot` methods which retrieve a Product Snapshot for either a product or product variant by reference parameters.
-* A `TryGetProductReference` method which retrieves a product / variant reference for a product that belongs to a given `storeId` and has the given `sku`.
+* Two `GetProductSnapshot` methods that retrieve a Product Snapshot for either a product or product variant by reference parameters.
+* A `TryGetProductReference` method which retrieves a product/variant reference for a product that belongs to a given `storeId` and has the given `sku`.
 
 A Product Snapshot consists of the following properties in order to present a Product to Vendr in a standard way.
 
@@ -49,25 +49,25 @@ public interface IProductSnapshot
     // The unique reference for the variant (if this is a variant snapshot)
     string ProductVariantReference { get; }
 
-    // The unique SKU for this product / variant
+    // The unique SKU for this product/variant
     string Sku { get; }
 
-    // The name of this product / variant
+    // The name of this product/variant
     string Name { get; }
 
-    // The ID of the store this product / variant belongs to
+    // The ID of the store this product/variant belongs to
     Guid StoreId { get; }
 
-    // An optional Tax Class ID for this product / variant
+    // An optional Tax Class ID for this product/variant
     Guid? TaxClassId { get; }
 
-    // Any properties exposed by this product / variant that should be copied to the orderline
+    // Any properties exposed by this product/variant that should be copied to the orderline
     IDictionary<string, string> Properties { get; }
 
     // Any variant attributes for this product (if this is a variant snapshot)
     IEnumerable<AttributeCombination> Attributes { get; }
 
-    // The available prices for this product / variant
+    // The available prices for this product/variant
     IEnumerable<ProductPrice> Prices { get; }
 
     // Flag indicating whether this product is a gift card product
@@ -92,7 +92,7 @@ public class MyCustomProductAdapter : ProductAdapterBase
 
     public override IEnumerable<Attribute> GetProductVariantAttributes(Guid storeId, string productReference, string languageIsoCode)
     {
-        // Lookup the in use product attributes of a primary product
+        // Lookup the in-use product attributes of a primary product
     }
 
     public override PagedResult<IProductVariantSummary> SearchProductVariantSummaries(Guid storeId, string productReference, string languageIsoCode, string searchTerm, IDictionary<string, IEnumerable<string>> attributes, long currentPage = 1, long itemsPerPage = 50)
@@ -168,7 +168,7 @@ public interface IProductVariantSnapshot
 
 ## Registering a Product Adapter
 
-Product Adapters are [registered via the IVendrBuilder](../vendr-builder/#registering-dependencies) interface using the `AddUnique<IProductAdapter, TReplacementAdapter>()` method on the `Services` property. The `TReplacementAdapter` parameter is the Type of our custom Product Adapter implementation.
+typeProduct Adapters are [registered via the IVendrBuilder](vendr-builder.md) interface using the `AddUnique<IProductAdapter, TReplacementAdapter>()` method on the `Services` property. The `TReplacementAdapter` parameter is the type of our custom Product Adapter implementation.
 
 ```csharp
 public static class VendrBuilderExtensions

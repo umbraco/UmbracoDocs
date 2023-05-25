@@ -1,10 +1,10 @@
 ---
-description: How-To Guide to configure SQLite support for Vendr, the eCommerce solution for Umbraco
+description: How-To Guide to configure SQLite support for Vendr.
 ---
 
 # Configure SQLite support
 
-Out of the box Vendr only supports SQL Server based databases as this is the recomended database platform for live environments. To aid testing and rapid prototyping however, Vendr can be configured to use a SQLite database.
+Out of the box, Vendr only supports SQL Server-based databases as this is the recommended database platform for live environments. To aid testing and rapid prototyping, however, Vendr can be configured to use an SQLite database.
 
 {% hint style="warning" %}
 Whilst Vendr does support SQLite for testing, we do not recommend using it in a live environment. Due to the high levels of active connections required to manage concurrent shopping carts, this is not something SQLite handles well at all.
@@ -29,7 +29,7 @@ Once the NuGet package is installed, you need to register SQLite support with Ve
 
 ```
 
-When you have setup Umbraco CMS to use SQLite, the above is all you need to do as Vendr will use the same database configuration. If you wish to install Vendr into its own SQLite database you can configure its own connection string in the `appSettings.json` like so:
+When you have set up Umbraco CMS to use SQLite, the above is all you need to do as Vendr will use the same database configuration. If you wish to install Vendr into its own SQLite database you can configure its own connection string in the `appSettings.json` like so:
 
 ```json
 {

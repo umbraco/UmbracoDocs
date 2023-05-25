@@ -1,5 +1,5 @@
 ---
-description: Performing calculations with Calculators in Vendr, the eCommerce solution for Umbraco
+description: Performing calculations with Calculators in Vendr.
 ---
 
 # Calculators
@@ -14,7 +14,7 @@ Calculators are small service implementations with the sole responsibility of ca
 
 All Calculator services can be replaced with alternative implementations should you wish to change how Vendr performs its calculations.
 
-## Defining a custom Calculator implementation
+## Defining a Custom Calculator Implementation
 
 The individual Calculator interfaces may differ but the process for defining a custom Calculator implementation is the same for all of them. It is possible to create a new class that implements the default system Calculator that you wish to replace. You can then override the relevant calculation methods.
 
@@ -40,7 +40,7 @@ public class MyProductCalculator : ProductCalculator
 
 ## Registering a custom Calculator implementation
 
-Calculators are [registered via the IVendrBuilder](../vendr-builder/#registering-dependencies) interface using the `AddUnique<TServiceInterface, TReplacementService>()` method on the `Services` property. The `TServiceInterface` parameter in this case, is the Calculator interface Type you wish to replace and `TReplacementService` is the Type of your custom Calculator implementation.
+Calculators are [registered via the IVendrBuilder](../vendr-builder/#registering-dependencies) interface using the `AddUnique<TServiceInterface, TReplacementService>()` method on the `Services` property. The `TServiceInterface` parameter in this case is the Calculator interface Type you wish to replace and `TReplacementService` is the Type of your custom Calculator implementation.
 
 ```csharp
 public static class VendrBuilderExtensions

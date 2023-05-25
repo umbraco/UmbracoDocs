@@ -1,5 +1,5 @@
 ---
-description: Performing sequential tasks with Pipelines in Vendr, the eCommerce solution for Umbraco
+description: Performing sequential tasks with Pipelines in Vendr.
 ---
 
 # Pipelines
@@ -33,13 +33,13 @@ public class AddCustomAttachmentTask : PipelineTaskWithTypedArgsBase<EmailSendPi
 }
 ```
 
-All Pipeline tasks inherit from a base class `PipelineTaskWithTypedArgsBase<TPipelineArgs, TModel>`. `TPipelineArgs` is the Type of the arguments supported by the pipeline and `TModel` is the pipelines return model Type. You then need to implement an `Execute` method which accepts an instance of the arguments type as input and expects a `PipelineResult<TModel>` as it's output. Inside this method you can perform your custom logic as required. To complete the pipeline task, you can call `Ok(TModel)` if the task was successful. This will pass in the updated `TModel` instance to returnæ. Otherwise you can call `Fail()` to fail the whole pipeline.
+All Pipeline tasks inherit from a base class `PipelineTaskWithTypedArgsBase<TPipelineArgs, TModel>`. `TPipelineArgs` is the type of arguments supported by the pipeline and `TModel` is the pipeline's return model Type. You then need to implement an `Execute` method that accepts an instance of the argument's type as input and expects a `PipelineResult<TModel>` as its output. Inside this method, you can perform your custom logic as required. To complete the pipeline task, you can call `Ok(TModel)` if the task was successful. This will pass in the updated `TModel` instance to returnæ. Otherwise, you can call `Fail()` to fail the whole pipeline.
 
-All pipelines occur within a [Unit of Work](../unit-of-work/). In case a Pipeline task fails, the whole pipeline will fail and no changes will the persisted.
+All pipelines occur within a [Unit of Work](unit-of-work.md). In case a Pipeline task fails, the whole pipeline will fail and no changes will persist.
 
 ## Registering a Pipeline task
 
-Pipeline tasks are [registered via the IVendrBuilder](../vendr-builder/#registering-dependencies) interface using the appropriate `With{PipelineName}Pipeline()` builder extension method. This is done to identify the pipeline you want to extend. You can then call the `Append<TTask>()` method to append your task onto the end of that pipeline.
+Pipeline tasks are [registered via the IVendrBuilder](vendr-builder.md) interface using the appropriate `With{PipelineName}Pipeline()` builder extension method. This is done to identify the pipeline you want to extend. You can then call the `Append<TTask>()` method to append your task to the end of that pipeline.
 
 ```csharp
 public static class VendrBuilderExtensions
