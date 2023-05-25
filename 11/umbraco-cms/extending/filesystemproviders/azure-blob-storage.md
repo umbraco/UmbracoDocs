@@ -82,33 +82,12 @@ Invoke the `.AddAzureBlobMediaFileSystem()` and the `.AddAzureBlobImageSharpCach
 ```
 
 {% hint style="info" %}
-**If you are using Umbraco 9, follow this step before moving on**:
+**Upgrading from Umbraco 9/10**:
 
-Next invoke `UseAzureBlobMediaFileSystem();` in the `.WithMiddleware` call, like so:
+As of [version 11.0.0](https://github.com/umbraco/Umbraco.StorageProviders/releases/tag/release-11.0.0) of `Umbraco.StorageProviders`, the ImageSharp dependency has been separated into its own package.
 
-```
-public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-{
-    if (env.IsDevelopment())
-    {
-        app.UseDeveloperExceptionPage();
-    }
+Therefore, if you're planning on upgrading your site from Umbraco 9/10 to 11+, then don't forget to install and setup the new `Umbraco.StorageProviders.AzureBlob.ImageSharp` package; this will ensure that your ImageSharp cache continues to be stored in your blob storage container.
 
-    app.UseUmbraco()
-        .WithMiddleware(u =>
-        {
-            u.UseBackOffice();
-            u.UseWebsite();         
-            u.UseAzureBlobMediaFileSystem(); // This enables the Azure Blob storage middleware for media.
-        })
-        .WithEndpoints(u =>
-        {
-            u.UseInstallerEndpoints();
-            u.UseBackOfficeEndpoints();
-            u.UseWebsiteEndpoints();
-        });
-}
-```
 {% endhint %}
 
 Now when you launch your site again, the blob storage will be used to store media items as well as the ImageSharp cache. Do note though that the `/media` and `/cache` folders do not get created until a piece of media is uploaded.
