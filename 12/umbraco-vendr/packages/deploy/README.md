@@ -13,7 +13,7 @@ It is assumed that you already have one of the following setups:
 * A Umbraco Cloud site with Umbraco Vendr installed and configured.
 * A Umbraco CMS site configured with Umbraco Deploy and Umbraco Vendr installed and configured.
 
-If you are not at this stage yet, please read the [core Vendr documentation](../../../../core/) to learn how to get started.
+If you are not at this stage yet, please read the [core Vendr documentation](http://localhost:5000/o/vHdmkfI8smZW50A5yIZD/s/s0xvC9Moj5Pqo3KonmTs/) to learn how to get started.
 
 ## Useful links
 

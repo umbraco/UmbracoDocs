@@ -12,7 +12,7 @@ Vendr Checkout allows you to set up your checkout flow with minimal configuratio
 
 In this section, we will guide you through the key steps necessary to get you started with the Checkout package for Vendr.
 
-It is assumed that before we begin that you already have an Umbraco website configured and Umbraco Vendr installed and a store set up. If you are not at this stage yet, please read the [core Vendr documentation](../../../../core/) to learn how to get started.
+It is assumed that before we begin that you already have an Umbraco website configured and Umbraco Vendr installed and a store set up. If you are not at this stage yet, please read the [core Vendr documentation](http://localhost:5000/o/vHdmkfI8smZW50A5yIZD/s/s0xvC9Moj5Pqo3KonmTs/) to learn how to get started.
 
 ## Useful links
 
