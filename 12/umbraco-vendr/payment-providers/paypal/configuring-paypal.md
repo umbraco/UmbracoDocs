@@ -34,7 +34,7 @@ From here you can view and modify any existing Sandbox accounts you have.
 
 4. Locate the **Managed Accounts** column.
 5. Select **View/Edit account** for each account.
-6. Note down **Email-ID** and **Password**.
+6. Note down the **Email ID** and **Password**.
 
 ![PayPal Sandbox Account Details](../media/paypal/sandbox\_account\_details.png)
 

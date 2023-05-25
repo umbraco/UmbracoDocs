@@ -20,5 +20,5 @@ As well as the content in these docs, here are a few useful links that might com
 
 * [Payment provider source code](https://github.com/vendrcontrib/vendr-payment-provider-nets)
 * [Payment provider issue tracker](https://github.com/vendrcontrib/vendr-payment-provider-nets/issues)
-* [Nets Easy documentation](https://developers.nets.eu/nets-easy/en-EU/docs/) (new)
-* [Nets Easy API reference](https://developers.nets.eu/nets-easy/en-EU/api/) (new)
+* [Nets Easy documentation](https://developers.nets.eu/nets-easy/en-EU/docs/)
+* [Nets Easy API reference](https://developers.nets.eu/nets-easy/en-EU/api/)

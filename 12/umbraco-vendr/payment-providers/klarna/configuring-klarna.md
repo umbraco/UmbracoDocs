@@ -33,7 +33,7 @@ Both sign-up processes can take a while. Be sure to sign up well in advance of g
 ### Get your credentials
 
 1. Sign in to the two platforms mentioned below
-   * **Live** - [https://auth.eu.portal.klarna.com/](https://auth.eu.portal.klarna.com/)
+   * **Live** - [https://auth.eu.portal.klarna.com/](https://portal.klarna.com/?utm\_source=klarnacom\&utm\_campaign=/uk/business/merchant-support/login-merchant-portal/\&utm\_medium=referral\&utm\_content=klarnacom-link)
    * **Developer** - [https://playground.eu.portal.klarna.com/](https://playground.eu.portal.klarna.com/)
 2. Continue following the steps in this article, for each portal.
 

@@ -18,7 +18,7 @@ description: Changelog for the Stripe Payment Provider for Vendr.
 **Date:** 2021-10-18\
 **Description:** Bug fixes and minor enhancements
 
-* Fixed regression due to search and replace in metadata fields sent to Stripe.
+* Fixed regression due to search and replacement in metadata fields sent to Stripe.
 * Changed the webhook processing to parse the request as a stream so it can be reset before attempting to read.
 
 ## v2.0.0

@@ -13,7 +13,7 @@ The Stripe payment provider adds functionality to capture payments via the [Stri
 
 In this section, we will guide you through the key steps necessary to get you started with the Stripe payment provider for Vendr.
 
-It is assumed that before we begin that you already have an Umbraco website configured and Umbraco Vendr installed. If you are not at this stage yet, please read the [core Vendr documentation](../../../../core/) to learn how to get started.
+It is assumed that before we begin that you already have an Umbraco website configured and Umbraco Vendr installed. If you are not at this stage yet, please read the [core Vendr documentation](http://localhost:5000/o/vHdmkfI8smZW50A5yIZD/s/s0xvC9Moj5Pqo3KonmTs/) to learn how to get started.
 
 ## Useful links
 
