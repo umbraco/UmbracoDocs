@@ -10,8 +10,8 @@ There are three options available for rendering a form.
 
 To display a form in your view, you can make a call to a view component:
 
-```csharp
-@await Component.InvokeAsync("RenderForm", new { formId = Guid.Parse("<form guid>"), theme = "", includeScripts = true|false })
+```cshtml
+@await Component.InvokeAsync("RenderForm", new { formId = Guid.Parse("<form guid>"), theme = "default", includeScripts = false })
 ```
 
 Four parameters can be provided:
@@ -19,7 +19,7 @@ Four parameters can be provided:
 - `formId` is the GUID of a form.
 - `theme` is the name of a theme. If not provided, the default theme is used (see [Themes](./themes.md)).
 - `includeScripts` indicates whether scripts should be rendered with the form (see [Rendering Scripts](./rendering-scripts.md).
-- `recordId` is an optional existing record Id, used if editing records via the website is [enabled in configuration](../developer/configuration/README.md#alloweditableformsubmissions)
+- `recordId` is an optional existing record GUID, used if editing records via the website is [enabled in configuration](../developer/configuration/README.md#alloweditableformsubmissions)
 
 Usually, rather than hard-coding the form's GUID, you'll use a form and/or theme picker property on your page:
 
@@ -33,7 +33,7 @@ If you prefer a tag helper syntax, you can use one that ships with Umbraco Forms
 
 Firstly, in your `_ViewImports.cshtml` file, add a reference to the Umbraco Forms tag helpers with:
 
-```csharp
+```cshtml
 @addTagHelper *, Umbraco.Forms.Web
 ```
 
@@ -50,8 +50,8 @@ Then in your view you can use:
 
 With a grid or Rich Text Editor, you need to use a macro. This is also available as an option to display a form in your view, where you provide three parameters:
 
-```csharp
-@await Umbraco.RenderMacroAsync("renderUmbracoForm", new { FormGuid = "", FormTheme = "", ExcludeScripts = "0|1" })
+```cshtml
+@await Umbraco.RenderMacroAsync("renderUmbracoForm", new { FormGuid = "<form guid>", FormTheme = "default", ExcludeScripts = "1" })
 ```
 
 - `FormGuid` is the GUID of a form.
@@ -60,6 +60,9 @@ With a grid or Rich Text Editor, you need to use a macro. This is also available
 
 Similarly, you can reference a form picker property on your page:
 
-```csharp
-@await Umbraco.RenderMacroAsync("renderUmbracoForm", new { FormGuid = @Model.Form, ExcludeScripts = "1" })
+```cshtml
+@if (Model.FormId is Guid formId)
+{
+    @await Umbraco.RenderMacroAsync("renderUmbracoForm", new { FormGuid = formId, FormTheme = Model.FormTheme, ExcludeScripts = "1" })
+}
 ```

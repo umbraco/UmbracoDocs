@@ -362,7 +362,7 @@ The user's IP address is recorded by default when a form is submitted and stored
 
 To remove this behavior set this value to `false`.
 
-If recording IPs, we recommend using [ASP.NET's forwarded headers middleware](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/proxy-load-balancer?view=aspnetcore-7.0) to ensure the correct value for the client IP is resolved.
+If recording IPs and your site is behind a proxy, load balancer or CDN, we recommend using [ASP.NET's forwarded headers middleware](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/proxy-load-balancer?view=aspnetcore-7.0) to ensure the correct value for the client IP is resolved.
 
 ## Security configuration
 
