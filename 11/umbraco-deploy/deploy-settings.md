@@ -47,6 +47,7 @@ For illustration purposes, the following structure represents the full set of op
             "HttpClientTimeout": "0.0:20:00",
             "DiskOperationsTimeout": "0.0:05:00",
             "SourceDeployBatchSize": null,
+            "PackageBatchSize": null,
             "UseDatabaseBackedTransferQueue": true,
             "IgnoreBrokenDependenciesBehavior": "Restore",
             "AcceptInvalidCertificates": false,
@@ -60,7 +61,8 @@ For illustration purposes, the following structure represents the full set of op
             "PreferLocalDbConnectionString": false,
             "MediaFileChecksumCalculationMethod": "PartialFileContents",
             "NumberOfSignaturesToUseAllRelationCache": 100,
-            "ContinueOnMediaFilePathTooLongException": false
+            "ContinueOnMediaFilePathTooLongException": false,
+            "SuppressCacheRefresherNotifications": false
         }
     }
   }
@@ -173,9 +175,12 @@ All of these times are configured using [standard timespan format strings](https
 
 Even with appropriate settings of the above timeouts, Deploy's backoffice transfer operations can hit a hard limit imposed by the hosting environment. For Azure, this is around 4 minutes. This will typically only be reached if deploying a considerable amount of items in one go. For example, a media folder with thousands of items can reach this limit.
 
-An error message of `500 - The request timed out. The web server failed to respond within the specified time.` will be reported.
+An error message of "The remote API has returned a response indicating a platform timeout" will be reported.
 
-If encountering this issue, the `SourceDeployBatchSize` setting can be applied with an integer value (for example 1000). This will cause Deploy to transfer items in batches, up to a maximum size. This will allow each individual batch to complete within the time available.
+If encountering this issue, there are two batch settings that can be applied with integer values (for example 500). This will cause Deploy to transfer items in batches, up to a maximum size. This will allow each individual batch to complete within the time available.
+
+- `SourceDeployBatchSize` - applies a batch setting for the transfer of multiple selected items to an upstream environment (such as a media folder with many images).
+- `PackageBatchSize` - applies a batch setting to the processing of a Deploy "package", which contains all the items selected for a Deploy operation, plus all the determined dependencies and relations.
 
 ## UseDatabaseBackedTransferQueue
 
@@ -314,3 +319,11 @@ The cut-off before switching methods is set by this configuration value, and it 
 When restoring between different media systems exceptions can occur due to file paths. They can happen between a local file system and a remote system based on blob storage. What is accepted on one system may be rejected on another as the file path is too long. Normally this will only happen for files with particularly long names.
 
 If you are happy to continue without throwing exceptions in these instances you can set this value to `true`. For example, this may make sense if restoring to a local or development environment. If this is done such files will be skipped, and although the media item will exist there will be no associated file.
+
+## SuppressCacheRefresherNotifications
+
+When a Deploy operation completes, cache refresher notifications are fired. These are used to update Umbraco's cache and search index.
+
+In production this setting shouldn't be changed from it's default value of `false`, to ensure these additional data stores are kept up to date.
+
+If attempting a one-off, large transfer operation, before a site is live, you could set this value to `true`. That would omit the firing and handling of these notifications and remove their performance overhead. Following which you would need to ensure to rebuild the cache and search index manually via the backoffice _Settings_ dashboards.

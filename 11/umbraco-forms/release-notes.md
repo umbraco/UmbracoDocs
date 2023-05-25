@@ -18,6 +18,16 @@ In this section, you can find the release notes for each version of Umbraco Form
 
 <summary>Version 11</summary>
 
+### [11.1.3](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.1.2) (May 30th 2023)
+
+* Fixed issue with validation of uploaded files without extensions [#1020](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1020)
+* Fixed typo in Danish translation [#1017](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1017)
+* Allowed edit of field previously configured with a subsequently removed field type [#1015](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1015)
+* Fixed encoding and display of entries page title [#1009](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1009)
+* Fixed creation of primary keys for tables missing them with new installs on SQLite [#1008](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1008)
+* Handled a null reference issue that could occur when copying forms with null setting values
+* Fixed placeholder parsing for mandatory and regular expression pattern validation messages using dictionary values
+
 ### [11.1.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.1.2) (April 18th 2023)
 
 * Fixed issue with field mapper in Umbraco nodes workflow not respecting magic string placeholders [#1005](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1005)
@@ -86,11 +96,26 @@ In this section, you can find the release notes for each version of Umbraco Form
 * Fixed issue with the processing of magic string replacements following server-side validation failure [#872](https://github.com/umbraco/Umbraco.Forms.Issues/issues/872)
 * Fixed issue with editing legacy forms in the backoffice that have fieldsets without unique Ids [#944](https://github.com/umbraco/Umbraco.Forms.Issues/issues/944)
 
+### [11.0.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.0.0)
+
+* Compatibility with .NET 7 and Umbraco 11
+    * See full details of breaking changes under the [version specific upgrade guide](installation/version-specific.md).
+
 </details>
 
 <details>
 
 <summary>Version 10</summary>
+
+### [10.3.3](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.3) (May 30th 2023)
+
+* Fixed issue with validation of uploaded files without extensions [#1020](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1020)
+* Fixed typo in Danish translation [#1017](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1017)
+* Allowed edit of field previously configured with a subsequently removed field type [#1015](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1015)
+* Fixed encoding and display of entries page title [#1009](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1009)
+* Fixed creation of primary keys for tables missing them with new installs on SQLite [#1008](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1008)
+* Handled a null reference issue that could occur when copying forms with null setting values
+* Fixed placeholder parsing for mandatory and regular expression pattern validation messages using dictionary values
 
 ### [10.3.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.2) (April 18th 2023)
 
@@ -562,6 +587,13 @@ In this section, you can find the release notes for each version of Umbraco Form
 <details>
 
 <summary>Version 8</summary>
+
+### [8.13.9](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.13.9) (May 30th 2023)
+
+* Fixed issue with validation of uploaded files without extensions [#1020](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1020)
+* Fixed typo in Danish translation [#1017](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1017)
+* Fixed encoding and display of entries page title [#1009](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1009)
+* Handled a null reference issue that could occur when copying forms with null setting values
 
 ### [8.13.8](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.13.8) (April 4th 2023)
 

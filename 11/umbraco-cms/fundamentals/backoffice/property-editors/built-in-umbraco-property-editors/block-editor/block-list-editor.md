@@ -9,7 +9,7 @@
 {% hint style="info" %}
 A default Umbraco CMS installation does not ship with a defined _Data Type_ using the Block List editor. In order to start using the property, follow the steps outlined below.
 
-[Click here for an overview with a worked example and references back to the relevant documention.](https://umbraco.com/blog/deep-dive-the-block-list-editor/)
+[Click here for an overview with a worked example and references back to the relevant documentation.](https://umbraco.com/blog/deep-dive-the-block-list-editor/)
 {% endhint %}
 
 ## Configure Block List
@@ -59,7 +59,7 @@ It is possible to use two separate Element Types for your Block Types. Its requi
 
 ### Catalogue appearance
 
-These properties refers to how the Block is presented in the Block catalogue, when editors choose which Blocks to use for their content.
+These properties refer to how the Block is presented in the Block catalogue, when editors choose which Blocks to use for their content.
 
 * **Background color** - Define a background color to be displayed beneath the icon or thumbnail. Eg. `#424242`.
 * **Icon color** - Change the color of the Element Type icon. Eg. `#242424`.

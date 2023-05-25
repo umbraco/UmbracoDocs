@@ -199,4 +199,21 @@ Now that Umbraco Deploy has been installed on the project, we can go ahead and c
 
 Before moving on to setting up the build server, make sure that your license is included in your project.
 
-The file needs to be placed in the `/umbraco/Licenses` folder.
+For Umbraco Deploy On-Premise, this will be a key provided to you when taking out your subscription to the product. It should be added to your configuration at the key `Umbraco:Licenses:Umbraco.Deploy.OnPrem`.
+
+For example, in `appsettings.json`:
+
+```json
+  "Umbraco": {
+    "CMS": {
+      ...
+    },
+    "Licenses": {
+      "Umbraco.Deploy.OnPrem": "<your license key>"
+    },
+    "Deploy": {
+       ...
+    }
+```
+
+Umbraco Cloud projects use a license file placed in the `/umbraco/Licenses` folder that is provided when your project is created.
