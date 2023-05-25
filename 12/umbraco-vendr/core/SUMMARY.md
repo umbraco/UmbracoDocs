@@ -13,7 +13,8 @@
 ## How-To Guides
 
 * [Overview](how-to-guides/overview.md)
-* [Configuring SQLite support](how-to-guides/configuring-sqlite-support.md)
+* [Migrate from Vendr to Umbraco Commerce](how-to-guides/migrate-from-vendr-to-umbraco-commerce.md)
+* [Configure SQLite support](how-to-guides/configure-sqlite-support.md)
 * [Limit Order Line Quantity](how-to-guides/limit-orderline-quantity.md)
 * [Use an Alternative Database for Vendr Tables](how-to-guides/use-an-alternative-database-for-vendr-tables.md)
 
