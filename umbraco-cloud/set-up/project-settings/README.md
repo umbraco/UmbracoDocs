@@ -14,9 +14,9 @@ When working with a Umbraco Cloud project, you can handle a lot of the project c
 * [Upgrade Plan](./#upgrade-plan)
 * [Rename Project](./#rename-project)
 * [Advanced Settings](./#advanced)
+* [Dedicated Resources](./#dedicated-resources)
 * [Project Usage](./#usage)
 * [Availability & Performance](./#availability-performance)
-* [Dedicated Resources](./#dedicated-resources)
 * [Delete the project.](./#delete-project)
 
 ![settings](../images/project-settings-v10.png)
