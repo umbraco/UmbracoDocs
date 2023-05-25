@@ -333,8 +333,8 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
 }
 ```
 {% hint style="info" %}
-Note here that this is just an example of how you could do indexing, this means that we're indexing all content, also unpublished & trashed content.
-If you want to filter those out, you'd have to make your own logic for that.
+Note that this is only an example of how you could do indexing. In this example we're indexing all content, also unpublished content.
+If you want to filter those out, you will have to create your own logic for that.
 You could as an example look at published status in the `ProductIndexValueSetBuilder.GetValueSets()` method and filter it there.
 {% endhint %}
 
@@ -366,7 +366,7 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
 ```
 
 {% hint style="info" %}
-The order of registration may seem arbitrary, but it's important so register your index, before `ConfigureOptions`.
+The order of these registration matter. It is important to register your index with `AddExamineLuceneIndex` before calling `ConfigureOptions`.
 {% endhint %}
 ### Result
 ![Custom product index](images/examine-management-product-index.png)
@@ -374,6 +374,7 @@ The order of registration may seem arbitrary, but it's important so register you
 ![Product document](images/examine-management-product-document.png)
 
 {% hint style="info" %}
-This index will only rebuild if you manually trigger it in the dashboard, and this is probably not always the behavior you want when using a custom index.
-The recommended way to go about it would be to use notification handlers, you can get inspiration from our UmbracoExamine.PDF package: https://github.com/umbraco/UmbracoExamine.PDF
+The index will only update its content when you manually trigger an index rebuild in the Examine dashboard. This is not always the desired behaviour for a custom index.
+
+To update your index when content changes, you can use notification handlers. You can find inspiration for implementing those in the UmbracoExamine.PDF package: https://github.com/umbraco/UmbracoExamine.PDF
 {% endhint %}
