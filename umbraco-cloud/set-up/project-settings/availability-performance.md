@@ -8,7 +8,7 @@ Umbraco Cloud's "Availability & Performance" feature lets you see get an overvie
 
 Under Settings in the Umbraco Cloud Portal, you'll find Availability & Performance. This is where you find the page that shows visualization and statistics for four sections.
 
-![AP-Overview](../images/FailedRequests2.png)
+![AP-Overview](../images/AP-1-FailedRequests2.png)
 
 The page consists of the following parts:
 - Time range and granularity selector
