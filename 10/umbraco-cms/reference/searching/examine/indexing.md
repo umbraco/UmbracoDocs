@@ -322,9 +322,12 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
 }
 ```
 {% hint style="info" %}
-Note that this is only an example of how you could do indexing. In this example we're indexing all content. The problem is that the published status can change for sub pages, leaving potentially unroutable published content in the index.
-If you want to filter those out, you will have to create your own logic for that.
-For inspiration on how to go about this, you can look at the ContentIndexPopulator in Umbraco: `https://github.com/umbraco/Umbraco-CMS/blob/c878567633a6a3354c1414ccd130c9be518b25f0/src/Umbraco.Infrastructure/Examine/ContentIndexPopulator.cs#L115`
+Note that this is only an example of how you could do indexing. In this example we're indexing all content, both published and unpublished.
+
+In certain scenarios only published content should be added to the index.
+To achieve that, you will need to implement your own logic to filter out unpublished content.
+This can be somewhat tricky, because published state can vary throughout an entire structure of content in the content tree.
+For inspiration on how to go about such filtering you can look at the ContentIndexPopulator in Umbraco: `https://github.com/umbraco/Umbraco-CMS/blob/c878567633a6a3354c1414ccd130c9be518b25f0/src/Umbraco.Infrastructure/Examine/ContentIndexPopulator.cs#L115`
 {% endhint %}
 
 ### ExamineComposer
