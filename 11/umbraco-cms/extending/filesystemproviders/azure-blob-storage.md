@@ -86,7 +86,7 @@ Invoke the `.AddAzureBlobMediaFileSystem()` and the `.AddAzureBlobImageSharpCach
 
 As of [version 11.0.0](https://github.com/umbraco/Umbraco.StorageProviders/releases/tag/release-11.0.0) of `Umbraco.StorageProviders`, the ImageSharp dependency has been separated into its own package.
 
-Therefore, if you're planning on upgrading your site from Umbraco 9/10 to 11+, then don't forget to install and setup the new `Umbraco.StorageProviders.AzureBlob.ImageSharp` package; this will ensure that your ImageSharp cache continues to be stored in your blob storage container.
+Therefore, if you're planning on upgrading your site from Umbraco 9/10 to 11+, don't forget to install and setup the new `Umbraco.StorageProviders.AzureBlob.ImageSharp` package. This will ensure that your ImageSharp cache continues to be stored in your blob storage container.
 
 {% endhint %}
 
