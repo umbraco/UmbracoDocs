@@ -331,4 +331,4 @@ dotnet add package Umbraco.Commerce.Core
 
 The final step in the migration is to update all abstract async methods exposed by the base class. It needs to be updated to accept an additional `CancellationToken cancellationToken = default` parameter as the final method argument. Your Integrated Development Environment (IDE) should provide feedback on all the methods that have been updated.
 
-[^1]: Vendr previously used the `.js` file extension to serve JSON files without having to configure a new `.json` mimetype on the server. This is no long necesarry in Umbraco Commerce so we can now use the correct `.json` file extension.
+[^1]: Vendr previously used the `.js` file extension to serve JSON files without having to configure a new `.json` mimetype on the server. This is no longer necesarry in Umbraco Commerce so we can now use the correct `.json` file extension.
