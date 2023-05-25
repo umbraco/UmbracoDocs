@@ -6,7 +6,7 @@ description: "How to amend the built-in behavior of adding fields and associatin
 
 By default, a single workflow is added when a new form is created. This workflow will send a copy of the form to the email address of the current backoffice user.
 
-There will also be a single "data consent" field added (unless this has been disabled via configuration).
+A single "data consent" field will also be added unless it has been disabled via configuration.
 
 It's possible to amend this behavior and change it to fit your needs.
 

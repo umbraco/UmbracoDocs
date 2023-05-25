@@ -1,3 +1,7 @@
+---
+description: Learn the different ways of rendering a form on your website when using Umbraco Forms.
+---
+
 # Rendering Forms
 
 There are three options available for rendering a form.
@@ -44,7 +48,7 @@ Then in your view you can use:
 
 ## Rendering Using a Macro
 
-With a grid or rich text editor, you need to use a macro. This is also available as an option to display a form in your view, where you provide three parameters:
+With a grid or Rich Text Editor, you need to use a macro. This is also available as an option to display a form in your view, where you provide three parameters:
 
 ```csharp
 @await Umbraco.RenderMacroAsync("renderUmbracoForm", new { FormGuid = "", FormTheme = "", ExcludeScripts = "0|1" })
