@@ -322,9 +322,9 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
 }
 ```
 {% hint style="info" %}
-Note that this is only an example of how you could do indexing. In this example we're indexing all content, also unpublished content.
+Note that this is only an example of how you could do indexing. In this example we're indexing all content. The problem is that the published status can change for sub pages, leaving potentially unroutable published content in the index.
 If you want to filter those out, you will have to create your own logic for that.
-You could as an example look at published status in the `ProductIndexValueSetBuilder.GetValueSets()` method and filter it there.
+For inspiration on how to go about this, you can look at the ContentIndexPopulator in Umbraco: `https://github.com/umbraco/Umbraco-CMS/blob/c878567633a6a3354c1414ccd130c9be518b25f0/src/Umbraco.Infrastructure/Examine/ContentIndexPopulator.cs#L115`
 {% endhint %}
 
 ### ExamineComposer
