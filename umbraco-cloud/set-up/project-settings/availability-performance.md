@@ -4,15 +4,11 @@ In the Umbraco Cloud Settings menu you can find a page called _Availability & Pe
 
 Umbraco Cloud's "Availability & Performance" feature lets you see get an overview of your cloud projects' past and current health. Leveraging Azure metrics data, the page provides users with valuable insights into the availability and performance of the cloud project enabling them to monitor and address any issues that may impact the user experience.
 
-## Availability & Performance Overview
+## Overview
 
 Under Settings in the Umbraco Cloud Portal, you'll find Availability & Performance. This is where you find the page that shows visualization and statistics for four sections.
 
-In this overview, you will find the usage limitations for your Umbraco Cloud project as well as the plan that the project is on.
-
-![Usage on Cloud](../images/cloud-usage.png)
-
-The usage shown is for the Live environment of your project as it is the usage in this environment that is measured against the plan usage limits. For _media storage_ it is the size of all files in the blob storage including the cache that is considered.
+![AP-Overview](../images/FailedRequests2.png)
 
 The page consists of the following parts:
 - Time range and granularity selector
@@ -25,7 +21,7 @@ Note: The page is initially shown for all project plans. More detailed visualiza
 
 When you enter the page, you will a default visualization of the failed requests for the last 24 hours with a data point set for every fifth minute. You are able to change the time range to a predefined interval or define a specific start and end time. You can also select the granularity of the data points.
 
-!!!!
+![Time-range-selector](../images/AP-time-range-selector.png)
 
 Initially, you will only be able to set the time granularity to “5 minutes”.
 
