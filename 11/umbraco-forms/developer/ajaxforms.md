@@ -363,7 +363,7 @@ It also requires a `Content-Type` header of `application/json` and accepts a bod
 
 The `values` collection consists of a set of name/value pairs, where the name is the alias of a form field. The value is the value of the submitted field, which can either be a string, or an array of strings. In this way we support fields that accept multiple values, such as checkbox lists.
 
-The `contentId` and `culture` is optional, and if provided will be used to customize the response for the current page and language respectively.
+The `contentId` and `culture` parameters are optional. If provided they will be used to customize the response for the current page and language respectively.
 
 In the case of a validation error, a 422 "Unprocessable Entity" status code will be returned, along with a response similar to the following:
 

@@ -14,7 +14,7 @@ It's possible to amend this behavior and change it to fit your needs.
 
 Two interfaces are used to abstract the logic for setting default fields and workflows for a form. They are `IApplyDefaultFieldsBehavior` and `IApplyDefaultWorkflowsBehavior` respectively.
 
-The default behaviors are defined using built-in, internal classes that implements this interface.
+The default behaviors are defined using built-in, internal classes that implement this interface.
 
 You can create your own implementation of these interfaces.
 
@@ -197,7 +197,7 @@ You can see this in the example above, where the `IsMandatory` property of the c
 
 ### Example - Providing a Custom Apply Fields Behavior
 
-The following class hows the default implementation provided with Forms. You can copy this and customize it to your needs.
+The following class shows the default implementation provided with Forms. You can copy this and customize it to your needs.
 
 ```csharp
 using Microsoft.Extensions.Options;
