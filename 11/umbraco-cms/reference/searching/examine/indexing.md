@@ -153,21 +153,20 @@ Take a look at our [Examine Quick Start](quick-start.md) to see some examples of
 
 To create this index we need five things:
 
-1. An `UmbracoExamineIndex` implementation that defines the index
-2. An `IConfigureNamedOptions` implementation that configures the fields of the index
-3. An `IValueSetBuilder` implementation that builds the value sets for the index
-4. An `IndexPopulator` implementation that populates the index with the value sets
+1. An `UmbracoExamineIndex` implementation that defines the index.
+2. An `IConfigureNamedOptions` implementation that configures the index fields and options.
+3. An `IValueSetBuilder` implementation that builds index value sets a piece of content.
+4. An `IndexPopulator` implementation that populates the index with the value sets for all applicable content.
 5. A composer that adds all these services to the runtime.
 
 ### ProductIndex
 
 ```csharp
 using Examine.Lucene;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Umbraco.Cms.Core.Hosting;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Infrastructure.Examine;
+using IHostingEnvironment = Umbraco.Cms.Core.Hosting.IHostingEnvironment;
 
 namespace Umbraco.Docs.Samples.Web.CustomIndexing
 {
@@ -200,53 +199,41 @@ using Lucene.Net.Index;
 using Lucene.Net.Util;
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core.Configuration.Models;
-using Umbraco.Cms.Core.Scoping;
-using Umbraco.Cms.Core.Services;
-using Umbraco.Cms.Infrastructure.Examine;
 
 namespace Umbraco.Docs.Samples.Web.CustomIndexing
 {
     public class ConfigureProductIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
     {
         private readonly IOptions<IndexCreatorSettings> _settings;
-        private readonly IPublicAccessService _publicAccessService;
-        private readonly IScopeProvider _scopeProvider;
 
-        public ConfigureProductIndexOptions(
-            IOptions<IndexCreatorSettings> settings,
-            IPublicAccessService publicAccessService,
-            IScopeProvider scopeProvider)
-        {
-            _settings = settings;
-            _publicAccessService = publicAccessService;
-            _scopeProvider = scopeProvider;
-        }
+        public ConfigureProductIndexOptions(IOptions<IndexCreatorSettings> settings)
+            => _settings = settings;
 
-        public void Configure(string name, LuceneDirectoryIndexOptions options)
+        public void Configure(string? name, LuceneDirectoryIndexOptions options)
         {
-            if (name.Equals("ProductIndex"))
+            if (name?.Equals("ProductIndex") is false)
             {
-                options.Analyzer = new StandardAnalyzer(LuceneVersion.LUCENE_48);
+                return;
+            }
 
-                options.FieldDefinitions = new(
-                    new("id", FieldDefinitionTypes.Integer),
-                    new("name", FieldDefinitionTypes.FullText)
-                    );
+            options.Analyzer = new StandardAnalyzer(LuceneVersion.LUCENE_48);
 
-                options.UnlockIndex = true;
+            options.FieldDefinitions = new(
+                new("id", FieldDefinitionTypes.Integer),
+                new("name", FieldDefinitionTypes.FullText)
+            );
 
-                if (_settings.Value.LuceneDirectoryFactory == LuceneDirectoryFactory.SyncedTempFileSystemDirectoryFactory)
-                {
-                    // if this directory factory is enabled then a snapshot deletion policy is required
-                    options.IndexDeletionPolicy = new SnapshotDeletionPolicy(new KeepOnlyLastCommitDeletionPolicy());
-                }
+            options.UnlockIndex = true;
+
+            if (_settings.Value.LuceneDirectoryFactory == LuceneDirectoryFactory.SyncedTempFileSystemDirectoryFactory)
+            {
+                // if this directory factory is enabled then a snapshot deletion policy is required
+                options.IndexDeletionPolicy = new SnapshotDeletionPolicy(new KeepOnlyLastCommitDeletionPolicy());
             }
         }
 
-        public void Configure(LuceneDirectoryIndexOptions options)
-        {
-            throw new System.NotImplementedException();
-        }
+        // not used
+        public void Configure(LuceneDirectoryIndexOptions options) => throw new NotImplementedException();
     }
 }
 ```
@@ -254,10 +241,9 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
 ### ProductIndexValueSetBuilder
 
 ```csharp
-using System.Collections.Generic;
 using Examine;
 using Umbraco.Cms.Core.Models;
-using Umbraco.Cms.Infrastructure.Examine;
+using Umbraco.Cms.Infrastructure.Examine
 
 namespace Umbraco.Docs.Samples.Web.CustomIndexing
 {
@@ -265,18 +251,24 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
     {
         public IEnumerable<ValueSet> GetValueSets(params IContent[] contents)
         {
-            foreach (var content in contents)
+            foreach (IContent content in contents.Where(CanAddToIndex))
             {
                 var indexValues = new Dictionary<string, object>
                 {
+                    // this is a special field used to display the content name in the Examine dashboard
+                    [UmbracoExamineFieldNames.NodeNameFieldName] = content.Name!,
                     ["name"] = content.Name!,
+                    // add the fields you want in the index
                     ["nodeName"] = content.Name!,
                     ["id"] = content.Id,
                 };
 
-                yield return new ValueSet(content.Id.ToString(), IndexTypes.Content, indexValues);
+                yield return new ValueSet(content.Id.ToString(), IndexTypes.Content, content.ContentType.Alias, indexValues);
             }
         }
+
+        // filter out all content types except "product"
+        private bool CanAddToIndex(IContent content) => content.ContentType.Alias == "article";
     }
 }
 ```
@@ -284,10 +276,8 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
 ### ProductIndexPopulator
 
 ```csharp
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Examine;
+using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Infrastructure.Examine;
 
