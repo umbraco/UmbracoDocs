@@ -18,7 +18,7 @@ To add SQLite support, you will need to install the SQLite persistence layer NuG
 PM> dotnet add package Vendr.Persistence.Sqlite
 ```
 
-Once the NuGet package is installed, you need to register SQLite support with Vendr via the [`IVendrBuilder`](../key-concepts/vendr-builder/#registering-dependencies) interface.
+Once the NuGet package is installed, you need to register SQLite support with Vendr via the [`IVendrBuilder`](../key-concepts/vendr-builder.md) interface.
 
 ```csharp
 ...

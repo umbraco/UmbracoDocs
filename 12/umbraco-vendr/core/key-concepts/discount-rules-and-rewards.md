@@ -129,7 +129,7 @@ public class MyDiscountRewardProviderSettings
 All Discount Reward Providers inherit from a base class `DiscountRewardProviderBase<TSettings>`. `TSettings` is the Type of a POCO model class representing the Discount Reward Providers settings.
 
 {% hint style="info" %}
-See the [Settings Objects](../settings-objects/) documentation for more information on Settings objects.
+See the [Settings Objects](settings-objects.md) documentation for more information on Settings objects.
 {% endhint %}
 
 The class must be decorated with `DiscountRewardProviderAttribute` which defines the Discount Reward Providers `alias` and `name`. It can also specify a `description` or `icon` to be displayed in the Vendr backoffice. The `DiscountRewardProviderAttribute` is responsible for defining a `labelView` for the Provider.
@@ -153,7 +153,7 @@ result.SubtotalPriceAdjustments.Add(new DiscountAdjustment(ctx.Discount, price))
 ### Settings Objects
 
 {% hint style="info" %}
-See the [Settings Objects](../settings-objects/) documentation for more information on Settings objects.
+See the [Settings Objects](settings-objects.md) documentation for more information on Settings objects.
 {% endhint %}
 
 ### Label Views
