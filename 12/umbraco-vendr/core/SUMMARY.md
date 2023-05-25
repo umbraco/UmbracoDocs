@@ -5,21 +5,21 @@
 
 ## Getting Started
 
-* [Introduction](getting-started/README.md)
+* [Introduction](getting-started/introduction.md)
 * [Installation](getting-started/installation.md)
 * [Umbraco Configuration](getting-started/umbraco-configuration.md)
 * [User Interface](getting-started/user-interface.md)
 
 ## How-To Guides
 
-* [Overview](how-to-guides/README.md)
+* [Overview](how-to-guides/overview.md)
 * [Configuring SQLite support](how-to-guides/configuring-sqlite-support.md)
 * [Limit Order Line Quantity](how-to-guides/limit-orderline-quantity.md)
 * [Use an Alternative Database for Vendr Tables](how-to-guides/use-an-alternative-database-for-vendr-tables.md)
 
 ## Key Concepts
 
-* [Get to know the main features](key-concepts/README.md)
+* [Get to know the main features](key-concepts/overview.md)
 * [Base Currency](key-concepts/base-currency.md)
 * [Bulk Actions](key-concepts/bulk-actions.md)
 * [Calculators](key-concepts/calculators.md)
@@ -49,11 +49,11 @@
 
 ## Tutorials
 
-* [Overview](tutorials/README.md)
+* [Overview](tutorials/overview.md)
 
 ## Reference
 
-* [Go behind the scenes](reference/README.md)
+* [Go behind the scenes](reference/overview.md)
 * [Vendr.Common assembly](reference/vendr-common/README.md)
   * [Vendr.Common.Attributes namespace](reference/vendr-common/vendr-common-attributes/README.md)
     * [DeepEqualIgnoreAttribute](reference/vendr-common/vendr-common-attributes/deepequalignoreattribute.md)
