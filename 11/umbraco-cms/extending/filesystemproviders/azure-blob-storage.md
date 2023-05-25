@@ -14,7 +14,7 @@ See the [Microsoft documentation](https://docs.microsoft.com/en-us/azure/storage
 
 Before you begin, you need to install the `Umbraco.StorageProviders.AzureBlob` and the `Umbraco.StorageProviders.AzureBlob.ImageSharp` NuGet packages. There are two approaches to installing the packages:
 
-1. Use your favorite IDE and open up the NuGet Package Manager to search and install the packages
+1. Use your favorite Integrated Development Environment (IDE) and open up the NuGet Package Manager to search and install the packages
 2. Use the command line to install the packages
 
 ### Installing through command line
