@@ -29,7 +29,7 @@ Initially, you will only be able to set the time granularity to “5 minutes”.
 
 The panel selector consists of four tiles, each representing a specific segment of data. The four segments are failed request, App Performance, CPU Usage, and Memory Usage.
 
-!!!
+![Pane-view](../images/AP-Panel-Selector.png)
 
 Each tile includes relevant statistics and potentially a warning or an error indicator in case there is something you might want to consider.
 
@@ -55,15 +55,19 @@ The chart shows the breakdown of HTTP status codes for each data point with the 
 
 In the statistics panel on the right, you will find the total instances of the status code in the time range.
 
-<> 
+![Failed-request](../images/AP-1-FailedRequests.png)
 
 *App Performance*
 The chart shows the average response time during the selected time range. All requests to the Umbraco solution in the time periods with the length of the selected granularity count to average response time.
+
+![AppPerformance](../images/AP-2-AppPerformance.png)
 
 The statistics panel shows the average, maximum, and minimum response for the shown data points.
 
 *CPU Usage*
 The chart depicts the CPU time consumed by the application in the selected time range with time periods equalling the selected granularity.
+
+![Cpu usage](../images/AP-3-CpuUsage2.png)
 
 For cloud projects using a shared resource and a granularity of 5 minutes, the user will see both the assigned CPU time in seconds and a comparison against the plan quota. The plan quotas are described here<https://docs.umbraco.com/umbraco-cloud/getting-started/umbraco-cloud-plans>. 
 In this case, the statistics panel maximum CPU time, average CPU, plan quota, and the maximum and average percentage of the consumed CPU in a 5 minute period compared to the plan quota.
@@ -73,6 +77,8 @@ Here the statistics panel will display the maximum, average, and minimum CPU tim
 
 *Memory Usage*
 The chart shows the memory usage in private bytes consumed by the application in the selected time range with time periods equalling the selected granularity.
+
+![Memory usage](../images/AP-4-MemoryUsage.png)
 
 For cloud projects using a shared resource and a granularity of 5 minutes, the user will see both the assigned private bytes in mega bytes (MB) and a comparison against the plan quota. The plan quotas are described here<https://docs.umbraco.com/umbraco-cloud/getting-started/umbraco-cloud-plans>. 
 
