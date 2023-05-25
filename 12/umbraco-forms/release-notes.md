@@ -39,7 +39,7 @@ In this section, you can find the release notes for each version of Umbraco Form
 * Added [configuration options for IP recording](./developer/configuration/README.md#recordiptrackingbehavior) with form submissions [#1000](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1000)
 * Performance optimizations for tree rendering, form submission and workflow execution
 * Added tag helper for rendering a form
-* Provided messaging when using rich text fields in case of a missing rich text data type
+* Provided messaging when using rich text fields in case of a missing rich text datatype
 
 ### [11.1.3](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.1.2) (May 30th 2023)
 
@@ -140,7 +140,7 @@ In this section, you can find the release notes for each version of Umbraco Form
 * Added [configuration options for IP recording](./developer/configuration/README.md#recordiptrackingbehavior) with form submissions [#1000](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1000)
 * Performance optimizations for tree rendering, form submission and workflow execution
 * Added tag helper for rendering a form
-* Provided messaging when using rich text fields in case of a missing rich text data type
+* Provided messaging when using rich text fields in case of a missing rich text datatype
 
 If upgrading from a previous version and already using the headless API, please ensure to [enable the API via configuration](./developer/configuration/README.md#enableformsapi).
 
