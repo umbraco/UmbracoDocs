@@ -21,10 +21,10 @@ Before you can start using this document you need to choose either the core Vend
 [Installation](http://localhost:5000/s/s0xvC9Moj5Pqo3KonmTs/getting-started/installation)
 {% endcontent-ref %}
 
-{% content-ref url="http://localhost:5000/s/s0xvC9Moj5Pqo3KonmTs/key-concepts" %}
-[Key Concepts](http://localhost:5000/s/s0xvC9Moj5Pqo3KonmTs/key-concepts)
+{% content-ref url="http://localhost:5000/s/s0xvC9Moj5Pqo3KonmTs/key-concepts/overview" %}
+[Get to know the main features](http://localhost:5000/s/s0xvC9Moj5Pqo3KonmTs/key-concepts/overview)
 {% endcontent-ref %}
 
-{% content-ref url="http://localhost:5000/s/rUyw389L2IM1K1Sv4UmH/install-payment-providers" %}
-[Install payment providers](http://localhost:5000/s/rUyw389L2IM1K1Sv4UmH/install-payment-providers)
+{% content-ref url="http://localhost:5000/s/O8zV7PYqNxSkuGGGYa3P/install-payment-providers" %}
+[Install payment providers](http://localhost:5000/s/O8zV7PYqNxSkuGGGYa3P/install-payment-providers)
 {% endcontent-ref %}
