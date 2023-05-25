@@ -35,16 +35,15 @@ Each tile includes relevant statistics and potentially a warning or an error ind
 
 An error indicator is shown in the following situations:
 - Failed Requests: when one or more server errors have occurred in the selected time range.
-- CPU Usage: when the maximum CPU time has exceeded 100% of the plan quota in a five-minute period during the selected time range. *
-- Memory Usage: when the maximum private time has exceeded 100% the plan quota in a five-minute period during the selected time range. *
+- CPU Usage: when the maximum CPU time has exceeded 100% of the plan quota in a 5 minute period during the selected time range.
+- Memory Usage: when the maximum private time has exceeded 100% the plan quota in a 5 minute period during the selected time range.
 
 A warning is shown in case the CPU Usage or Memory Usage
 - Failed Requests: when one or more client errors (but no server errors) have occurred in the selected time range.
-- CPU Usage: when the maximum CPU time has exceeded 80% percent of the plan quota in a five-minute period during the selected time range. *
-- Memory Usage: when the maximum private time has exceeded 80% percent of the plan quota in a five-minute period during the selected time range. *
+- CPU Usage: when the maximum CPU time has exceeded 80% percent of the plan quota in a 5 minute period during the selected time range.
+- Memory Usage: when the maximum private time has exceeded 80% percent of the plan quota in a 5 minute period during the selected time range.
 
-* Only shown for cloud projects on a shared plan and with a granularity of five minutes selected.
-
+Errors and warnings for CPU Usage and Memory Usage are only shown for cloud projects on a shared plan and with a granularity of 5 minutes selected.
 
 ### Chart and statistics view
 
@@ -53,9 +52,9 @@ For each segment, there will be shown a chart and a set of related statistics.
 #### Failed request
 The chart shows the breakdown of HTTP status codes for each data point with the selected granularity. Only responses indicating a client (4xx region) or server errors (5xx region) are shown.
 
-In the statistics panel on the right, you will find the total instances of the status code in the time range.
-
 ![Failed-request](../images/AP-1-FailedRequests.png)
+
+In the statistics panel on the right, you will find the total instances of the status code in the time range.
 
 #### App Performance
 The chart shows the average response time during the selected time range. All requests to the Umbraco solution in the time periods with the length of the selected granularity count to average response time.
@@ -82,7 +81,7 @@ The chart shows the memory usage in private bytes consumed by the application in
 
 For cloud projects using a shared resource and a granularity of 5 minutes, the user will see both the assigned private bytes in mega bytes (MB) and a comparison against the plan quota. The plan quotas are described here<https://docs.umbraco.com/umbraco-cloud/getting-started/umbraco-cloud-plans>. 
 
-For cloud projects with a dedicated option (or a shared plan with another granularity than 5 minutes), the user will see the average assigned private bytes in bytes..
+For cloud projects with a dedicated option (or a shared plan with another granularity than 5 minutes), the user will see the average assigned private bytes in bytes.
 Here the statistics panel will display the maximum, average, and minimum allocation of private bytes based on selected granularity.
 
 ## Key benefits
