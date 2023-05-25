@@ -53,4 +53,4 @@
 
 ## Reference
 
-* [Go behind the scenes](reference/README.md)
+* [Go behind the scenes](reference/go-behind-the-scenes.md)
