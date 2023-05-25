@@ -58,7 +58,7 @@ Form events are raised during the submission life cycle and can be handled for e
 
 The default behavior when a new form is created is for a single workflow to be added, which will send a copy of the form to the current backoffice user's email address.
 
-There will also be a single "data consent" field added (unless this has been disabled via configuration).
+A single "data consent" field will also be added unless it has been disabled via configuration.
 
 It's possible to amend this behavior and change it to fit your needs.
 
