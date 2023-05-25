@@ -50,21 +50,21 @@ A warning is shown in case the CPU Usage or Memory Usage
 
 For each segment, there will be shown a chart and a set of related statistics.
 
-**Failed request**
+#### Failed request
 The chart shows the breakdown of HTTP status codes for each data point with the selected granularity. Only responses indicating a client (4xx region) or server errors (5xx region) are shown.
 
 In the statistics panel on the right, you will find the total instances of the status code in the time range.
 
 ![Failed-request](../images/AP-1-FailedRequests.png)
 
-**App Performance**
+#### App Performance
 The chart shows the average response time during the selected time range. All requests to the Umbraco solution in the time periods with the length of the selected granularity count to average response time.
 
 ![AppPerformance](../images/AP-2-AppPerformance.png)
 
 The statistics panel shows the average, maximum, and minimum response for the shown data points.
 
-**CPU Usage**
+#### CPU Usage
 The chart depicts the CPU time consumed by the application in the selected time range with time periods equalling the selected granularity.
 
 ![Cpu usage](../images/AP-3-CpuUsage2.png)
@@ -75,7 +75,7 @@ In this case, the statistics panel maximum CPU time, average CPU, plan quota, an
 For cloud projects with a dedicated option (or a shared plan with another granularity than 5 minutes), the user will see the average assigned CPU time in seconds.
 Here the statistics panel will display the maximum, average, and minimum CPU time based on selected granularity.
 
-**Memory Usage**
+#### Memory Usage
 The chart shows the memory usage in private bytes consumed by the application in the selected time range with time periods equalling the selected granularity.
 
 ![Memory usage](../images/AP-4-MemoryUsage.png)
