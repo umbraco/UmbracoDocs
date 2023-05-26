@@ -86,8 +86,8 @@ An example of doing this through the `appSettings.json` file is shown below. Oth
           "AuthorizationRequestRequiresAuthorizationHeaderWithBasicToken": true|false,
           "ClientId": "",
           "ClientSecret": "",
-          "UseProofKeyForCodeExchange": true|false,
           "Scopes": "",
+          "UseProofKeyForCodeExchange": true|false,
           "AccessTokenResponseKey": "access_token",
           "RefreshTokenResponseKey": "refresh_token",
           "ExpiresInResponseKey": "expires_in",
@@ -97,104 +97,43 @@ An example of doing this through the `appSettings.json` file is shown below. Oth
     }
 ```
 
-#### Configuration Elements
+`TokenEncryptionKey` is a single setting that provides an optional key used for token encryption when they are saved and retrieved from storage respectively.
 
-The following section describes each of the configuration elements. An example is provided for one service provider, GitHub.
+`Services` contains the a collection of details for all the configured services.
 
-Not all values are required for all services.  Those that are required are marked with an "*" below.
+The following table describes each of the service elements. Where appropriate, an example is provided for one service provider, GitHub.
 
-##### TokenEncryptionKey
+Not all values are required for all services.  Those that are required are indicated below.
 
-Provides an optional key used to encrypt and decrypt tokens when they are saved and retrieved from storage respectively.
+| Element                                                       | Description                                                                                                                                                                                                                                                  | Required? | Example                                    |
+|---------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|--------------------------------------------|
+| Alias                                                         | The alias of the service, which must be unique across the service collection.                                                                                                                                                                                | Yes       |                                            |
+| DisplayName                                                   | Provides a friendly name for the service used for identification in the user interface.                                                                                                                                                                      | Yes       |                                            |
+| ApiHost                                                       | The host name for the service API that will be called to deliver business functionality.                                                                                                                                                                     | Yes       | `https://api.github.com`                   |
+| IdentityHost                                                  | The host name for the service's authentication endpoint, used to initiate the authorization of the service by asking the user to login.                                                                                                                      | Yes       | `https://github.com`                       |
+| TokenHost                                                     | Some providers make available a separately hosted service for handling requests for access tokens. If that's the case, it can be provided here. If not provided, the value of `IdentityHost` is used.                                                        | No        |                                            |
+| RequestIdentityPath                                           | Used along with `IdentityHost` to construct a URL that the user is redirected to when initiating the authorization of the service via the backoffice.                                                                                                        | Yes       | `/login/oauth/authorize`                   |
+| AuthorizationUrlRequiresRedirectUrl                           | Some providers require a redirect URL to be provided with the authentication request. For others, instead it's necessary to configure this as part of the registered app. The default value if not provided via configuration is `false`.                    | No        |                                            |
+| RequestTokenPath                                              | Used, along with `TokenHost` to construct a URL used for retrieving access tokens.                                                                                                                                                                           | Yes       | `/login/oauth/access_token`                |
+| RequestTokenFormat                                            | An enum value that controls how the request to retrieve an access token is formatted. Options are `Querystring` and `FormUrlEncoded`. `Querystring` is the default value.                                                                                    | No        |                                            |
+| JsonSerializer                                                | An enum value that defines the JSON serializer to use when creating requests and deserializing responses. Options are `Default` and `JsonNet` and `SystemTextJson` as described below. If not provided, `Default` is used.                                   | No        |                                            |
+| AuthorizationRequestRequiresAuthorizationHeaderWithBasicToken | This flag indicates whether the basic token should be included in the request for an access token. If `true`, a base64 encoding of `<clientId>:<clientSecret>` will be added to the authorization header. Default is `false`.                                | No        |                                            |
+| ClientId                                                      | This value will be retrieved from the registered service app.                                                                                                                                                                                                | Yes       |                                            |
+| ClientSecret                                                  | This value will be retrieved from the registered service app.  As the name suggests, it should be kept secret and so is probably best not added directly to `appSettings.json` and checked into source control.                                              | Yes       |                                            |
+| Scopes                                                        | This value will be configured on the service app and retrieved from there. Best practice is to define only the set of permissions that the integration will need.                                                                                            | Yes       | `repo`                                     |
+| UseProofKeyForCodeExchange                                    | This flag will extend the OAuth flow with an additional security layer called [Proof Key for Code Exchange (PKCE)](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow-with-proof-key-for-code-exchange-pkce).  | No        |                                            |
+| AccessTokenResponseKey                                        | The expected key for retrieving an access token from a response. If not provided the default `access_token` is assumed.                                                                                                                                      | No        |                                            |
+| RefreshTokenResponseKey                                       | The expected key for retrieving a refresh token from a response. If not provided the default `refresh_token` is assumed.                                                                                                                                     | No        |                                            |
+| ExpiresInResponseKey                                          | The expected key for retrieving the datetime of token expiry from a response. If not provided the default `expires_in` is assumed.                                                                                                                           | No        |                                            |
+| SampleRequest                                                 | An optional sample request can be provided, which can be used to check that an authorized service is functioning as expected from the backoffice.                                                                                                            | No        | `/repos/Umbraco/Umbraco-CMS/contributors`  |
 
-##### Services
-
-The collection of services available for authorization and usage.
-
-###### Alias *
-
-The alias of the service, which must be unique across the service collection.
-
-###### DisplayName *
-
-Provides a friendly name for the service used for identification in the user interface.
-
-###### ApiHost *
-
-The host name for the service API that will be called to deliver business functionality. For example, for Github this is `https://api.github.com`.
-
-###### IdentityHost *
-
-The host name for the service's authentication endpoint, used to initiate the authorization of the service by asking the user to login. For GitHub, this is `https://github.com`.
-
-###### TokenHost
-
-Some providers make available a separately hosted service for handling requests for access tokens. If that's the case, it can be provided here. If not provided, the value of `IdentityHost` is used. For GitHub, this is not necessary as the value is `https://github.com`, the same as the identity host.
-
-###### RequestIdentityPath *
-
-Used along with `IdentityHost` to construct a URL that the user is redirected to when initiating the authorization of the service via the backoffice. For GitHub, the required value is `/login/oauth/authorize`.
-
-###### AuthorizationUrlRequiresRedirectUrl
-
-Some providers require a redirect URL to be provided with the authentication request. For others, instead it's necessary to configure this as part of the registered app. The default value if not provided via configuration is `false`, which is sufficient for the GitHub example.
-
-###### RequestTokenPath *
-
-Used, along with `TokenHost` to construct a URL used for retrieving access tokens. For GitHub, the required value is `/login/oauth/access_token`.
-
-###### RequestTokenFormat
-
-An enum value that controls how the request to retrieve an access token is formatted. Options are `Querystring` and `FormUrlEncoded`. `Querystring` is the default value and is used for GitHub.
-
-###### JsonSerializer
-
-An enum value that defines the JSON serializer to use when creating requests and deserializing responses. Options are `Default` and `JsonNet` and `SystemTextJson`.
+The options for `JsonSerializer` are:
 
 - `Default` - uses the Umbraco CMS default `IJsonSerializer`.
 - `JsonNet` - uses the JSON.Net serializer.
 - `SystemTextJson` - uses the System.Text.Json serializer.
 
-###### AuthorizationRequestRequiresAuthorizationHeaderWithBasicToken
-
-This flag indicates whether the basic token should be included in the request for an access token. If true, a base64 encoding of `<clientId>:<clientSecret>` will be added to
-the authorization header.
-
-###### ClientId *
-
-This value will be retrieved from the registered service app.
-
-###### ClientSecret *
-
-This value will be retrieved from the registered service app.  As the name suggests, it should be kept secret and so is probably best not added directly to `appSettings.json` and checked into source control.
-
-###### UseProofKeyForCodeExchange *
-
-This flag will extend the OAuth flow with an additional security layer called [Proof Key for Code Exchange (PKCE)](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow-with-proof-key-for-code-exchange-pkce).
-
-In the OAuth with PKCE flow, a random code will be generated on the client and stored under the name `code_verifier`. Using the `SHA-256` algorithm it will be hashed under the name `code_challenge`.
-
-When the authorization URL is generated, the `code_challenge` will be sent to the OAuth Server, which will store it. The next request for access token will pass the `code_verifier` as a header key. The OAuth Server will compare it with the previously sent `code_challenge`.
-
-###### Scopes *
-
-This value will be configured on the service app and retrieved from there. Best practice is to define only the set of permissions that the integration will need.  For GitHub, the single scope needed to retrieve details about a repository's contributors is `repo`.
-
-###### AccessTokenResponseKey
-
-The expected key for retrieving an access token from a response. If not provided the default `access_token` is assumed.
-
-###### RefreshTokenResponseKey
-
-The expected key for retrieving a refresh token from a response. If not provided the default `refresh_token` is assumed.
-
-###### ExpiresInResponseKey
-
-The expected key for retrieving the datetime of token expiry from a response. If not provided the default `expires_in` is assumed.
-
-###### SampleRequest
-
-An optional sample request can be provided, which can be used to check that an authorized service is functioning as expected from the backoffice.  For example, to retrieve the set of contributors to the Umbraco repository hosted at GitHub, this request can be used: `/repos/Umbraco/Umbraco-CMS/contributors`.
+With `UseProofKeyForCodeExchange` set to `true`, a random code will be generated on the client and stored under the name `code_verifier`. Using the `SHA-256` algorithm it will be hashed under the name `code_challenge`. When the authorization URL is generated, the `code_challenge` will be sent to the OAuth Server, which will store it. The next request for access token will pass the `code_verifier` as a header key. The OAuth Server will compare it with the previously sent `code_challenge`.
 
 ### Authorizing a Service
 
