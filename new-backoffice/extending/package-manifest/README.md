@@ -110,9 +110,14 @@ The `extensions` collection is an array of extension objects, each object descri
 
 ## A special note about `entryPoint`
 
-The `entryPoint` extension type is special, it is used to specify the entry point for a package. This is the only extension type that can be used to specify the entry point for a package. An entry point is a single javascript file that will be loaded when the Backoffice starts. This is useful if you want to load a single javascript file that will then load all the other files for your package. You can apply any conditional logic when registering your entry point, for example you can check if the user is logged in, or if the user has access to a specific section before registering additional extensions.
+The `entryPoint` extension type is special, it is used to specify the entry point for a package. This is the only extension type that can be used to specify the entry point for a package. An entry point is a single JavaScript file that will be loaded when the Backoffice starts. This is useful if you want to load a single JavaScript file that will then load all the other files for your package.
 
-This is also the way to go if you want to load in external libraries such as jQuery, Angular, React, etc. You can use the `entryPoint` to load in the external libraries to be shared by all your extensions. You can also load global CSS files in the `entryPoint` extension.
+You can apply any conditional logic when registering your entry point such as:
+
+-   Check if the user is logged in.
+-   Check if the user has access to a specific section before registering additional extensions.
+
+The `entryPoint` extension is also the way to go if you want to load in external libraries such as jQuery, Angular, React, etc. You can use the `entryPoint` to load in the external libraries to be shared by all your extensions. You can also load global CSS files in the `entryPoint` extension.
 
 Read more about the `entryPoint` extension type in the [Entry Point](./entry-point.md) article.
 
