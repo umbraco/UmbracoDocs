@@ -5,7 +5,7 @@ The "Availability & Performance" feature lets you see get an overview of your cl
 
 ## Overview
 
-Under Settings in the Umbraco Cloud Portal, you'll find Availability & Performance. This is where you find the page that shows visualization and statistics for four sections.
+Under Availability & Performance, you'll find visualization and statistics for four sections:
 
 The page consists of the following parts:
 - Time range and granularity selector
