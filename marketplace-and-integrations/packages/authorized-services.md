@@ -198,7 +198,9 @@ The following service providers have been tested against the package implementat
 
 As integrations with more providers are successfully completed, we plan to maintain the details for each here. Pull requests updating this list with verified integrations are welcome.
 
-### Amazon
+<details>
+
+<summary>Amazon</summary>
 
 ```json
 {
@@ -219,7 +221,11 @@ As integrations with more providers are successfully completed, we plan to maint
 }
 ```
 
-### Aprimo
+</details>
+
+<details>
+
+<summary>Aprimo</summary>
 
 ```json
 {
@@ -240,7 +246,12 @@ As integrations with more providers are successfully completed, we plan to maint
 },
 ```
 
-### Atlasian
+</details>
+
+<details>
+
+<summary>Atlasian</summary>
+
 
 ```json
 {
@@ -261,7 +272,12 @@ As integrations with more providers are successfully completed, we plan to maint
 }
 ```
 
-### Bitbucket
+</details>
+
+<details>
+
+<summary>Bitbucket</summary>
+
 
 ```json
 {
@@ -280,7 +296,13 @@ As integrations with more providers are successfully completed, we plan to maint
   "SampleRequest": "/user/profile"
 }
 ```
-### Calendly
+
+</details>
+
+<details>
+
+<summary>Calendly</summary>
+
 
 ```json
 {
@@ -300,7 +322,12 @@ As integrations with more providers are successfully completed, we plan to maint
 }
 ```
 
-### Discord
+</details>
+
+<details>
+
+<summary>Discord</summary>
+
 
 ```json
 {
@@ -322,7 +349,12 @@ As integrations with more providers are successfully completed, we plan to maint
 }
 ```
 
-### Dropbox
+</details>
+
+<details>
+
+<summary>Dropbox</summary>
+
 
 ```json
 {
@@ -343,7 +375,12 @@ As integrations with more providers are successfully completed, we plan to maint
 }
 ```
 
-### Facebook
+</details>
+
+<details>
+
+<summary>Facebook</summary>
+
 
 ```json
 {
@@ -363,7 +400,12 @@ As integrations with more providers are successfully completed, we plan to maint
 }
 ```
 
-### Figma
+</details>
+
+<details>
+
+<summary>Figma</summary>
+
 
 ```json
 {
@@ -383,7 +425,12 @@ As integrations with more providers are successfully completed, we plan to maint
 }
 ```
 
-### Fitbit
+</details>
+
+<details>
+
+<summary>Fitbit</summary>
+
 
 ```json
 {
@@ -405,7 +452,12 @@ As integrations with more providers are successfully completed, we plan to maint
 }
 ```
 
-### GitHub
+</details>
+
+<details>
+
+<summary>GitHub</summary>
+
 
 ```json
 {
@@ -424,7 +476,12 @@ As integrations with more providers are successfully completed, we plan to maint
 },
 ```
 
-### Gitlab
+</details>
+
+<details>
+
+<summary>Gitlab</summary>
+
 
 ```json
 {
@@ -445,7 +502,12 @@ As integrations with more providers are successfully completed, we plan to maint
 }
 ```
 
-### Google Search Console
+</details>
+
+<details>
+
+<summary>Google Search Console</summary>
+
 
 ```json
 {
@@ -465,7 +527,12 @@ As integrations with more providers are successfully completed, we plan to maint
 },
 ```
 
-### Hubspot
+</details>
+
+<details>
+
+<summary>HubSpot</summary>
+
 
 ```json
 {
@@ -486,7 +553,12 @@ As integrations with more providers are successfully completed, we plan to maint
 },
 ```
 
-### LinkedIn
+</details>
+
+<details>
+
+<summary>LinkedIn</summary>
+
 
 ```json
 {
@@ -506,7 +578,12 @@ As integrations with more providers are successfully completed, we plan to maint
 },
 ```
 
-### Mailchimp
+</details>
+
+<details>
+
+<summary>Mailchimp</summary>
+
 
 ```json
 {
@@ -528,7 +605,12 @@ As integrations with more providers are successfully completed, we plan to maint
 }
 ```
 
-### Microsoft Dynamics
+</details>
+
+<details>
+
+<summary>Microsoft Dynamics</summary>
+
 
 ```json
 {
@@ -548,8 +630,11 @@ As integrations with more providers are successfully completed, we plan to maint
 },
 ```
 
+</details>
 
-### Miro
+<details>
+
+<summary>Miro</summary>
 
 ```json
 {
@@ -569,7 +654,12 @@ As integrations with more providers are successfully completed, we plan to maint
 }
 ```
 
-### Semrush
+</details>
+
+<details>
+
+<summary>Semrush</summary>
+
 
 ```json
 {
@@ -589,7 +679,12 @@ As integrations with more providers are successfully completed, we plan to maint
 },
 ```
 
-### Shopify
+</details>
+
+<details>
+
+<summary>Shopify</summary>
+
 
 ```json
 {
@@ -609,7 +704,12 @@ As integrations with more providers are successfully completed, we plan to maint
 },
 ```
 
-### Slack
+</details>
+
+<details>
+
+<summary>Slack</summary>
+
 
 ```json
 {
@@ -631,7 +731,12 @@ As integrations with more providers are successfully completed, we plan to maint
 }
 ```
 
-### Timely
+</details>
+
+<details>
+
+<summary>Timely</summary>
+
 
 ```json
 {
@@ -651,7 +756,12 @@ As integrations with more providers are successfully completed, we plan to maint
 }
 ```
 
-### Twitter
+</details>
+
+<details>
+
+<summary>Twitter</summary>
+
 
 ```json
 {
@@ -672,12 +782,17 @@ As integrations with more providers are successfully completed, we plan to maint
 },
 ```
 
-### Yahoo
+</details>
+
+<details>
+
+<summary>Yahoo!</summary>
+
 
 ```json
 {
   "Alias": "yahoo",
-  "DisplayName": "Yahoo",
+  "DisplayName": "Yahoo!",
   "ApiHost": "https://api.login.yahoo.com",
   "IdentityHost": "https://api.login.yahoo.com",
   "TokenHost": "https://api.login.yahoo.com",
@@ -694,7 +809,12 @@ As integrations with more providers are successfully completed, we plan to maint
 }
 ```
 
-### Zendesk
+</details>
+
+<details>
+
+<summary>Zendesk</summary>
+
 
 ```json
 {
@@ -713,6 +833,8 @@ As integrations with more providers are successfully completed, we plan to maint
   "SampleRequest": "/v2/contacts"
 }
 ```
+
+</details>
 
 ## Contributing
 
