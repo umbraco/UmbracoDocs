@@ -20,9 +20,7 @@ To ensure stable performance of all websites hosted on Umbraco Cloud shared plan
 
 ## Plan quotas for shared Umbraco Cloud Plans
 
-Whenever a CPU or RAM quota is met, the website will be restarted within a minute to ensure stable performance for all websites in the pool. Meeting a disk quota will result in errors whenever performing write operations to disk. No plan limits exist for TCP connections per site, besides the total amount of TCP connections available to all sites in the pool set at 1,920, attempting to open new TCP connections afterwards will result in errors.
-
-These are hard plan quotas, as they can't be broken for more than a 5 minute period. When an cloud environment uses more CPU or memory as defined by the plan quota, the app service hosting the environment will restart. If the app service is restarted several times, we consider it as noisy neighbour and will to move it to dedicated environment to ensure other tenants in the shared pool aren't negatively affected.
+Whenever a CPU or memory plan quota is met, the website will be restarted within a minute to ensure stable performance for all websites in the pool. Meeting a disk quota will result in errors whenever performing write operations to disk. No plan limits exist for TCP connections per site, besides the total amount of TCP connections available to all sites in the pool set at 1,920, attempting to open new TCP connections afterwards will result in errors.
 
 Umbraco Cloud Starter plan
 
@@ -41,3 +39,5 @@ Umbraco Cloud Professional plan
 - CPU - 50% (210 sec of CPU time for a 5 minute period)
 - Memory - 2000 MB (in private bytes)
 - Disk - 10400 MB
+
+These are hard plan quotas, as they can't be broken for more than a 5 minute period. When an cloud environment uses more CPU or memory as defined by the plan quota, the app service hosting the environment will restart. If the app service is restarted several times, we consider it as noisy neighbour and will to move it to dedicated environment to ensure other tenants in the shared pool aren't negatively affected.
