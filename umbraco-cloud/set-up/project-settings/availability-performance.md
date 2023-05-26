@@ -85,7 +85,7 @@ For cloud projects with a dedicated option (or a shared plan with another granul
 Here the statistics panel will display the maximum, average, and minimum allocation of private bytes based on selected granularity.
 
 ## Key benefits
-Some of the benefits the “Availability & Performance” feature gives you are as follows.
+Below you can read about the benefits with the “Availability & Performance” feature gives.
 
 ### Health Monitoring
 Umbraco Cloud's "Availability and Performance" feature allows users to monitor the health of their cloud projects more effectively. By leveraging Azure metrics data, you can access critical information such as HTTPS status codes, response times, CPU time, and memory usage in private bytes.
