@@ -27,7 +27,7 @@ Initially, you will only be able to set the time granularity to “5 minutes”.
 
 ### Panel view
 
-The panel selector consists of four tiles, each representing a specific segment of data. The four segments are failed request, App Performance, CPU Usage, and Memory Usage.
+The panel selector consists of four tiles, each representing a specific segment of data. The four segments are **failed request**, **App Performance**, **CPU Usage**, and **Memory Usage**.
 
 ![Pane-view](../images/AP-Panel-Selector.png)
 
