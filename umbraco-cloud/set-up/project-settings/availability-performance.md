@@ -13,7 +13,9 @@ Under Availability & Performance, you'll find visualization and statistics for f
 
 ![AP-Overview](../images/AP-Overview.png)
 
-Note: The page initially display metrics for the live environment for all Umbraco Cloud projects. More detailed visualization and tools intended for troubleshooting to be added in the future will be restricted to “Standard” and “Professional” project plans.
+{% hint style="info" %}
+The page initially displays metrics for the live environment for all Umbraco Cloud projects. More detailed visualization and tools intended for troubleshooting to be added in the future will be restricted to “Standard” and “Professional” project plans.
+{% endhint %}
 
 ### Time range and granularity selector
 
