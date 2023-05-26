@@ -98,7 +98,7 @@ The feature enables users to discover application issues that may impact the ove
 Real-time monitoring of HTTPS status codes helps you identify any errors or disruptions to your application's availability. This proactive approach allows you to respond swiftly, ensuring that your website or application remains accessible and responsive to users.
 
 ### User-Friendly Interface
-Umbraco Cloud provides a user-friendly interface for accessing and interpreting the "Availability and Performance" feature. The interface presents Azure metrics data in a clear and understandable manner, making it easy for users to navigate and gain actionable insights. With intuitive SVG-based visualizations and highlighted statistics for the selected time range, you can monitor the health and performance of your cloud projects effortlessly.
+Umbraco Cloud provides a user-friendly interface for accessing and interpreting the "Availability and Performance" feature. The interface presents Azure metrics data in a clear and understandable manner, making it easier for users to navigate and gain actionable insights. With intuitive SVG-based visualizations and highlighted statistics for the selected time range, you can monitor the health and performance of your cloud projects effortlessly.
 
 ### Future updates
 The first version of the “Availability and Performance” feature released on May 26th, 2023 includes a basic visualization and a set of highlighted numbers for failed requests, application performance, CPU time, and memory usage.
