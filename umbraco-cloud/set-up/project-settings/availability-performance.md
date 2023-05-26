@@ -79,7 +79,7 @@ The chart shows the memory usage in private bytes consumed by the application in
 
 ![Memory usage](../images/AP-4-MemoryUsage.png)
 
-For cloud projects using a shared resource and a granularity of 5 minutes, the user will see both the assigned private bytes in mega bytes (MB) and a comparison against the plan quota. The plan quotas are described here<https://docs.umbraco.com/umbraco-cloud/getting-started/umbraco-cloud-plans>. 
+Cloud projects on shared resources with a granularity of 5 minutes, will see the assigned private bytes in megabytes (MB) and a comparison against the [plan quota](https://docs.umbraco.com/umbraco-cloud/getting-started/umbraco-cloud-plans).
 
 For cloud projects with a dedicated option (or shared plans with another granularity than 5 minutes), users will see the average assigned private bytes in bytes.
 Here the statistics panel will display the maximum, average, and minimum allocation of private bytes based on selected granularity.
