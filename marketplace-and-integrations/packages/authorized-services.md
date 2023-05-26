@@ -50,7 +50,7 @@ Services that this package are intended to support will offer an OAuth authentic
 
 ### Installation
 
-The package can be installed into your Umbraco solution from [NuGet](https://www.nuget.org/packages/Umbraco.AuthorizedServices).
+The package should be installed into your Umbraco solution from [NuGet](https://www.nuget.org/packages/Umbraco.AuthorizedServices).
 
 ### Configuring a Service
 
