@@ -5,9 +5,8 @@ description: >-
 
 # Authorized Services
 
-## Introduction
 
-**Umbraco Authorized Services** is an Umbraco package designed to reduce the effort needed to integrate third party solutions into Umbraco solutions.  Many such services require an OAuth flow fir authentication and authorization.  Working with these services requires a fair bit of plumbing code to handle creating an authorized connection.  This is necessary before the developer working with the service can get to using the provided API to implement the business requirements.
+**Umbraco Authorized Services** is an Umbraco package designed to reduce the effort needed to integrate third-party solutions into Umbraco solutions.  Many such services require an OAuth flow for authentication and authorization.  Working with these services requires a fair bit of plumbing code to handle creating an authorized connection.  This is necessary before the developer working with the service can get to using the provided API to implement the business requirements.
 
 There are similarities to the flow that needs to be implemented for different services.  Steps include:
 
@@ -18,13 +17,15 @@ There are similarities to the flow that needs to be implemented for different se
 - Serializing requests and deserializing the API responses.
 - Handling cases where the token has expired and obtaining a new one via a refresh token.
 
-There are though also differences, across request and response structures and variations in the details of the flow itself.
+There are also differences across the request and response structures and variations in the details of the flow itself.
 
 The package tries to implement a single, best practice implementation of working with OAuth. For particular providers the specific flow required can be customized via configuration or code.
 
 ## Features
 
 For the solution developer, the Umbraco Authorized Services offers two primary features.
+
+### Authorized Services in the backoffice
 
 Firstly there's a tree available in the _Settings_ section of the backoffice, called _Authorized Services_. The tree shows the list of services based on the details provided in configuration.
 
@@ -36,6 +37,8 @@ Each tree entry has a management screen where an administrator can authenticate 
 
 ![authorized-screen](images/authorized-screen.png)
 
+### IAuthorizedServiceCaller interface
+
 Secondly, the developer has access to an interface - `IAuthorizedServiceCaller` - that they can inject instances of and use to make authorized requests to the service's API.
 
 Using a settings screen the administrator can review the service configuration.
@@ -44,9 +47,12 @@ Using a settings screen the administrator can review the service configuration.
 
 ## Usage
 
+In the following, you can learn more about how to use the Umbraco Authorized Services package.
+
+
 ### App Creation
 
-Services that this package are intended to support will offer an OAuth authentication and authorization flow against an "app". The developer will need to create this "app" with the service.  By doing this information such as the "client ID" and "client secret" can be applied in configuration.
+Services that this package is intended to support will offer an OAuth authentication and authorization flow against an "app". The developer will need to create this "app" with the service.  By doing this, information such as the "client ID" and "client secret" can be applied to the configuration.
 
 ### Installation
 
@@ -54,7 +60,9 @@ The package can be installed into your Umbraco solution from [NuGet](https://www
 
 ### Configuring a Service
 
-Details of services available need to be applied to the Umbraco web application's configuration, which, if using the `appSettings.json` file, will look as follows. Other sources such as environment variables can also be used, as per standard .NET configuration.
+Details of services available need to be applied to the Umbraco web application's configuration.
+
+An example of doing this through the `appSettings.json` file is shown below. Other sources such as environment variables can also be used, as per standard .NET configuration.
 
 ```json
   "Umbraco": {
@@ -91,7 +99,7 @@ Details of services available need to be applied to the Umbraco web application'
 
 #### Configuration Elements
 
-The following section describes each of the configuration elements. An example is provided for one service provider (GitHub).
+The following section describes each of the configuration elements. An example is provided for one service provider, GitHub.
 
 Not all values are required for all services.  Those that are required are marked with an "*" below.
 
@@ -125,7 +133,7 @@ Some providers make available a separately hosted service for handling requests 
 
 ###### RequestIdentityPath *
 
-Used, along with `IdentityHost` to construct a URL that the user is redirected to when initiating the authorization of the service via the backoffice. For GitHub, the required value is `/login/oauth/authorize`.
+Used along with `IdentityHost` to construct a URL that the user is redirected to when initiating the authorization of the service via the backoffice. For GitHub, the required value is `/login/oauth/authorize`.
 
 ###### AuthorizationUrlRequiresRedirectUrl
 
@@ -149,7 +157,7 @@ An enum value that defines the JSON serializer to use when creating requests and
 
 ###### AuthorizationRequestRequiresAuthorizationHeaderWithBasicToken
 
-This flag indicates whether the basic token should be included in the request for access token. If true, a base64 encoding of <clientId>:<clientSecret> will be added to
+This flag indicates whether the basic token should be included in the request for an access token. If true, a base64 encoding of `<clientId>:<clientSecret>` will be added to
 the authorization header.
 
 ###### ClientId *
@@ -162,9 +170,9 @@ This value will be retrieved from the registered service app.  As the name sugge
 
 ###### UseProofKeyForCodeExchange *
 
-This flag will extend the OAuth flow with an additional security layer called [PKCE (Proof Key for Code Exchange)](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow-with-proof-key-for-code-exchange-pkce).
+This flag will extend the OAuth flow with an additional security layer called [Proof Key for Code Exchange (PKCE)](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow-with-proof-key-for-code-exchange-pkce).
 
-In the OAuth with PKCE (Proof Key for Code Exchange) flow, a random code will be generated on the client and stored under the name `code_verifier`. Using the `SHA-256` algorithm it will be hashed under the name `code_challenge`.
+In the OAuth with PKCE flow, a random code will be generated on the client and stored under the name `code_verifier`. Using the `SHA-256` algorithm it will be hashed under the name `code_challenge`.
 
 When the authorization URL is generated, the `code_challenge` will be sent to the OAuth Server, which will store it. The next request for access token will pass the `code_verifier` as a header key. The OAuth Server will compare it with the previously sent `code_challenge`.
 
@@ -192,7 +200,7 @@ An optional sample request can be provided, which can be used to check that an a
 
 With one or more service configured, it will be available from the items within a tree in the _Settings_ section.
 
-Clicking on an item will show some details about the configured service, and it's authentication status.
+Selecting an item will show some details about the configured service, and it's authentication status.
 
 If the service is not yet authorized, click the _Authorize Service_ button to trigger the authentication and authorization flow. You will be directed to the service to login, and optionally choose an account.  You will then be asked to agree to the permissions requested by the app. Finally you will be redirected back to the Umbraco backoffice. You should see confirmation that an access token has been retrieved and stored such that the service is now authorized. If provided, you can click the _Verify Sample Request_ button to ensure that service's API can be called.
 
@@ -200,7 +208,7 @@ If the service is not yet authorized, click the _Authorize Service_ button to tr
 
 To make a call to an authorized service, you first need to obtain an instance of `IAuthorizedServiceCaller`. This is registered with the dependency injection framework. As such it can be injected into a controller, view or service class where it needs to be used.
 
-If making a request where all information is provided via the path and querystring, such as GET requests, the following method should be invoked:
+When making a request where all information is provided via the path and querystring, such as GET requests, the following method will be invoked:
 
 ```csharp
 Task<TResponse> SendRequestAsync<TResponse>(string serviceAlias, string path, HttpMethod httpMethod);
@@ -215,7 +223,7 @@ The parameters for the request are as follows:
 There is also a type parameter:
 - `TResponse` - defines the strongly typed representation of the service method's response, that the raw response content will be deserialized into.
 
-If you need to provide data in the request an overload is available. This can be used for POST or PUT requests that trigger the creation or update of a resource:
+If you need to provide data in the request an overload is available. This can be used for `POST` or `PUT` requests that trigger the creation or update of a resource:
 
 ```csharp
 Task<TResponse> SendRequestAsync<TRequest, TResponse>(string serviceAlias, string path, HttpMethod httpMethod, TRequest? requestContent = null)
@@ -227,8 +235,8 @@ The additional parameter is:
 - `requestContent` - the strongly typed request content, which will be serialized and provided in the request.
 
 And additional type parameter:
-- `TRequest` - defines the strongly typed representation of the request content.
 
+- `TRequest` - defines the strongly typed representation of the requested content.
 
 If you need to work with the raw JSON response, there are equivalent methods for both of these that omit the deserialization step:
 
@@ -769,8 +777,8 @@ As integrations with more providers are successfully completed, we plan to maint
 
 ## Contributing
 
-The Authorized Services package is open-source and we welcome issues, suggestions for improvement or PRs.
+The Authorized Services package is open-source and we welcome Issues, suggestions for improvement, and PRs.
 
 You can find the [source code and issue tracker at GitHub](https://github.com/umbraco/Umbraco.AuthorizedServices).
 
-The readme file there contains further information, expanding on the documentation you have read here. This will help anyone interested in understanding how it has been developed and interested in contributing to the solution.
+The readme file there contains further information, expanding on the documentation you have read here. This will help anyone interested in understanding how it has been developed and how to contribute to the solution.
