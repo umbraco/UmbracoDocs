@@ -5,7 +5,7 @@ This page is a work in progress. It will be updated as the software evolves.
 {% endhint %}
 
 {% hint style="info" %}
-The Umbraco Package Manifest file has been renamed from `package.manifest` to `umbraco-package.json` in version 14.0.0. This is to separate the new package manifest from the old package manifest, and to ensure that the file extension indicates that it is a JSON file.
+The Umbraco Package Manifest file has been renamed from `package.manifest` to `umbraco-package.json` in version 14.0.0. This separates the new package manifest from the old package manifest, and ensures that the file extension indicates the JSON-format within.
 {% endhint %}
 
 The `umbraco-package.json` JSON file format is used to describe one or more custom Umbraco extensions such as property editors, dashboards, sections, or entity actions. This page outlines the file format and properties found in the JSON.
