@@ -42,7 +42,6 @@
     * [Custom Certificates](set-up/project-settings/manage-hostnames/security-certificates.md)
   * [External Services](set-up/project-settings/external-services.md)
   * [Usage](set-up/project-settings/usage.md)
-  * [Availability & Performance](umbraco-cloud/set-up/project-settings/availability-performance.md)
   * [Team Members](set-up/project-settings/team-members/README.md)
     * [Account Contacts](set-up/project-settings/team-members/accounts-contact.md)
     * [Technical Contact](set-up/project-settings/team-members/technical-contact.md)
