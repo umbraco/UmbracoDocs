@@ -19,7 +19,7 @@ Note: The page initially display metrics for the live environment for all Umbrac
 
 ### Time range and granularity selector
 
-When you enter the page, you will a default visualization of the failed requests for the last 24 hours with a data point set for every fifth minute. You are able to change the time range to a predefined interval or define a specific start and end time. You can also select the granularity of the data points.
+When entering the page, you'll see a default visualization of failed requests for the last 24 hours with a data point set for every fifth minute. You are able to change the time range to a predefined interval or define a specific start and end time. You can also select the granularity of the data points.
 
 ![Time-range-selector](../images/AP-time-range-selector.png)
 
