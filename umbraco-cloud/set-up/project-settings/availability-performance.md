@@ -90,7 +90,8 @@ Some of the benefits the “Availability & Performance” feature gives you are 
 ### Health Monitoring
 Umbraco Cloud's "Availability and Performance" feature allows users to monitor the health of their cloud projects more effectively. By leveraging Azure metrics data, you can access critical information such as HTTPS status codes, response times, CPU time, and memory usage in private bytes.
 
-The CPU and memory usage is particularly important to keep an eye on from time to time in case the cloud project is running on a shared plan to ensure that the plan quotas aren’t exceeded.
+ The CPU and memory usage is particularly important to keep an eye on from time to time. 
+ This is to ensure the cloud project running on a shared that the plan quotas aren’t exceeded.
 
 ### Issue Discovery
 The feature enables users to discover application issues that may impact the overall performance of their Umbraco Cloud projects. By analyzing Azure metrics data, you gain valuable insights into the performance of your app service, including response times and CPU/memory usage.
