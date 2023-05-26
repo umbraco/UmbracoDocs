@@ -127,7 +127,7 @@ Read more about the `entryPoint` extension type in the [Entry Point](./entry-poi
 From version 14.0.0 Umbraco will not automatically try to bundle the static assets of packages. This is to avoid any potential conflicts with other bundling packages and to allow for more flexibility in how you want to bundle your assets.
 {% endhint %}
 
-If you want to bundle your assets such as javascript, css, or images, you need to set up a bundler. You can read more about bundling in the [Development Flow](./development-flow/README.md) article.
+If you want to bundle your assets such as JavaScript, CSS, or images, you need to set up a bundler. You can read more about bundling in the [Development Flow](./development-flow/README.md) article.
 
 ## JSON Schema
 
