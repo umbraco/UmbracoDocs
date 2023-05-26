@@ -5,7 +5,7 @@ The "Availability & Performance" feature lets you see get an overview of your cl
 
 ## Overview
 
-Under Availability & Performance, you'll find visualization and statistics for four sections:
+Under Availability & Performance, you'll find visualization and statistics for three sections:
 
 - Time range and granularity selector
 - Panel view
