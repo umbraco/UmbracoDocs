@@ -69,7 +69,11 @@ The chart depicts the CPU time consumed by the application in the selected time 
 ![Cpu usage](../images/AP-3-CpuUsage2.png)
 
 Cloud projects using a shared resource and a granularity of 5 minutes, users will see the assigned CPU time in seconds and a comparison against the [plan quota](https://docs.umbraco.com/umbraco-cloud/getting-started/umbraco-cloud-plans).  
-In this case, the statistics panel maximum CPU time, average CPU, plan quota, and the maximum and average percentage of the consumed CPU in a 5 minute period compared to the plan quota.
+In this case, the statistics panel shows the following:
+- The maximum CPU time 
+- The average CPU time
+- The plan quota
+- The maximum and average percentage of the consumed CPU in a 5-minute period compared to the plan quota.
 
 Cloud projects on dedicated options (or a shared plan with another granularity than 5 minutes), users will see the average assigned CPU time in seconds.
 Here the statistics panel will display the maximum, average, and minimum CPU time based on selected granularity.
