@@ -1,6 +1,5 @@
 # Availability & Performance
 
-In the Umbraco Cloud Settings menu you can find a page called _Availability & Performance_.
 
 Umbraco Cloud's "Availability & Performance" feature lets you see get an overview of your cloud projects' past and current health. Leveraging Azure metrics data, the page provides users with valuable insights into the availability and performance of the cloud project enabling them to monitor and address any issues that may impact the user experience.
 
