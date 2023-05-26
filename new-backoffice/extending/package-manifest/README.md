@@ -131,7 +131,7 @@ If you want to bundle your assets such as JavaScript, CSS, or images, you need t
 
 ## JSON Schema
 
-The `umbraco-package.json` file has a JSON schema file that allows editors such as Visual Studio, Rider and Visual Studio Code to have autocomplete/IntelliSense support when creating and editing `umbraco-package.json` files. This helps to avoid mistakes or errors.
+The `umbraco-package.json` file has a JSON schema that allows editors such as Visual Studio, Rider and VSCode to add autocomplete/IntelliSense support. This helps to avoid mistakes or errors when editing the `umbraco-package.json` file.
 
 ### Adding inline schema
 
