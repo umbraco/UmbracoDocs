@@ -34,9 +34,9 @@ The panel selector consists of four tiles, each representing a specific segment 
 Each tile includes relevant statistics and potentially a warning or an error indicator in case there is something you might want to consider.
 
 An error indicator is shown in the following situations:
-- Failed Requests: when one or more server errors have occurred in the selected time range.
-- CPU Usage: when the maximum CPU time has exceeded 100% of the plan quota in a 5 minute period during the selected time range.
-- Memory Usage: when the maximum private time has exceeded 100% the plan quota in a 5 minute period during the selected time range.
+- **Failed Requests**: when one or more server errors have occurred in the selected time range.
+- **CPU Usage**: when the maximum CPU time has exceeded 100% of the plan quota in a 5-minute period during the selected time range.
+- **Memory Usage**: when the maximum private time has exceeded 100% of the plan quota in a 5-minute period during the selected time range.
 
 A warning indicator is shown in the following situations:
 - **Failed Requests**: when one or more client errors (but no server errors) have occurred in the selected time range.
