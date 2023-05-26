@@ -38,7 +38,7 @@ An error indicator is shown in the following situations:
 - CPU Usage: when the maximum CPU time has exceeded 100% of the plan quota in a 5 minute period during the selected time range.
 - Memory Usage: when the maximum private time has exceeded 100% the plan quota in a 5 minute period during the selected time range.
 
-A warning is shown in case the CPU Usage or Memory Usage
+A warning indicator is shown in the following situations:
 - **Failed Requests**: when one or more client errors (but no server errors) have occurred in the selected time range.
 - **CPU Usage**: when the maximum CPU time has exceeded 80% percent of the plan quota in a 5-minute period during the selected time range.
 - **Memory Usage**: when the maximum private time has exceeded 80% percent of the plan quota in a 5-minute period during the selected time range.
