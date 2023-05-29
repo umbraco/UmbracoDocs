@@ -26,6 +26,33 @@ An example of a web routing config with default values, and a placeholder for ap
 }
 ```
 
+## Using the webrouting options in code
+
+You can get the config values in code like thise:
+
+```csharp
+using Microsoft.Extensions.Options;
+using Umbraco.Cms.Core.Configuration.Models;
+
+namespace UmbracoDocs;
+
+public class TestService
+{
+    private readonly IOptionsMonitor<WebRoutingSettings> _webRoutingSettings;
+
+    public TestService(IOptionsMonitor<WebRoutingSettings> webRoutingSettings)
+    {
+        _webRoutingSettings = webRoutingSettings;
+    }
+
+    public void DocsExample()
+    {
+        var umbracoApplicationUrl = _webRoutingSettings.CurrentValue.UmbracoApplicationUrl;
+    }
+}
+```
+
+
 ## Try matching endpoints for all pages
 
 When set to `true` Umbraco will check if any routed endpoints match a front-end request. This happens before the Umbraco dynamic router tries to map the request to a Umbraco content item. This setting should not be necessary as long as the Umbraco catch-all route is registered last.
