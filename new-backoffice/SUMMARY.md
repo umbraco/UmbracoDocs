@@ -24,7 +24,7 @@
     * [Tree Actions](extending/sections-and-trees/trees/tree-actions.md)
     * [Searchable Trees (ISearchableTree)](extending/sections-and-trees/trees/searchable-trees-isearchabletree.md)
 * [Property Editors](extending/property-editors/README.md)
-  * [Register a Property Editor](extending/property-editors/register-a-property-editor.md)
+  * [Declaring your property editor](extending/property-editors/register-a-property-editor.md)
   * [Property Editor UI](extending/property-editors/property-editor-ui.md)
   * [Property Actions](extending/property-editors/property-actions.md)
 * [Workspaces](extending/workspaces/README.md)
