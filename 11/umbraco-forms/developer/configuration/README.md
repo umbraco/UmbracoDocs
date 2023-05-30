@@ -59,6 +59,7 @@ For illustration purposes, the following structure represents the full set of op
         "DaysToRetainApprovedRecordsFor": 0
       },
       "RemoveProvidedEmailTemplate": false,
+      "RemoveProvidedFormTemplates": false,
       "FormElementHtmlIdPrefix": "",
       "SettingsCustomization": {
         "DataSourceTypes": {},
@@ -139,7 +140,7 @@ If you have created a custom template and would like to use that as the default 
 
 The provided template can be removed from the selection if you have created email templates for the "send Razor email" workflow. To do this, set this value to `true`.
 
-### RemoveProvidedFormsTemplates
+### RemoveProvidedFormTemplates
 
 Similarly, the provided form templates available from the form creation dialog can be removed from selection. To do this, set this configuration value to `true`.
 
