@@ -11,7 +11,15 @@ In this section, you can find the release notes for each version of Umbraco Work
 <details>
 
 <summary>Version 10</summary>
+    
+#### [10.2.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.1) (May x 2023)
 
+* Ensure all Document Type properties are available when configuring conditional workflow stages
+* Ensure license prompt is displayed only when install is unlicensed
+* Fixes bug where default approval threshold wasn't set correctly when adding new workflow stages
+* Fixes bug where querying published nodes for content reviews resulted in an ambiguous column name in the generated query [#17](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/17)
+* Fixes bug where users were not persisted as approval group members if they were assigned as part of group creation
+    
 #### [10.2.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.0) (May 9th 2023)
 
 * **FEATURE** => Introduces [approval thresholds](workflow-section/approval-groups.md).
