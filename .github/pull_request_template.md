@@ -1,5 +1,3 @@
-**Please fill out this template with information about the Pull Request.**
-
 ## Description
 
 _What did you add/update/change?_
@@ -14,8 +12,7 @@ _What did you add/update/change?_
 
 ## Product & version (if relevant)
 
-_Is the content related to a specific product?_
-_Is the content related to a specific release?_
+
 
 ## Deadline
 
