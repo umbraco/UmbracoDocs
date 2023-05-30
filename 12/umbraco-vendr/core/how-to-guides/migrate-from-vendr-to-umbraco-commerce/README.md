@@ -6,7 +6,7 @@ description: Learn how to migrate a Vendr solution to Umbraco Commerce.
 
 This guide provides a step-by-step approach to migrating a default Vendr solution to Umbraco Commerce.
 
-You will also find steps for migrating the Checkout package as well as custom Payment Providers.
+You can find details on migrating the Checkout package as well as custom Payment Providers in the [Further Migrations section](./#further-migrations) of this article.
 
 ## Key changes
 
@@ -93,7 +93,7 @@ dotnet add package Umbraco.Commerce
 
 ## Step 2: Update namespaces and entity names
 
-Based on the [Key Changes](migrate-from-vendr-to-umbraco-commerce.md#key-changes) outlined above update all Vendr references to the new Umbraco Commerce alternatives. Ensure you update any Views/Partials that also reference these.
+Based on the [Key Changes](./#key-changes) outlined above update all Vendr references to the new Umbraco Commerce alternatives. Ensure you update any Views/Partials that also reference these.
 
 ## Step 3: Update the database
 
@@ -270,68 +270,20 @@ https://{site_url}/umbraco/commerce/payment/callback/{payment_provider_alias}/{p
 
 5. Run the project.
 
-Before moving on to migrating the packages and payment providers, it is recommended to ensure everything works as expected.
+It is highly recommended to ensure everything works as expected, before moving on to migrating packages and custom payment providers.&#x20;
 
-## Step 5: Migrate Umbraco Commerce Checkout
+## Further Migrations
 
-Throughout the following steps, we will migrate the Checkout package from Vendr to Umbraco Commerce.
+If you have been using the Vendr Checkout package, you will need to follow some additional steps to migrate this package to Umbraco Commerce. Follow the link below for a complete guide:
 
-1. Make a backup of any custom templates and Umbraco Commerce UI configuration files.
-2. Make a note of all configuration values on the Vendr.Checkout Checkout node.
-3. Delete Vendr.Checkout generated checkout nodes.
-   * Checkout
-     * Customer Information
-     * Shipping Method
-     * Payment Method
-     * Review Order
-     * Process Payment
-     * Order Confirmation
-4. Delete all Vendr.Checkout generated Document Types.
-   * \[Vendr Checkout] Page
-     * \[Vendr Checkout] Checkout Page
-     * \[Vendr Checkout] Checkout Step Page
-5. Delete all Vendr.Checkout generated Data Types.
-   * \[Vendr Checkout] Step Picker
-   * \[Vendr Checkout] Theme Color Picker
-6. Uninstall the Vendr.Checkout Nuget package:
+{% content-ref url="migrate-umbraco-commerce-checkout.md" %}
+[migrate-umbraco-commerce-checkout.md](migrate-umbraco-commerce-checkout.md)
+{% endcontent-ref %}
 
-```bash
-dotnet remove package Vendr.Checkout
-```
+Any custom payment providers used with Vendr also need to be migrated to Umbraco Commerce. Follow the link below to find detailed steps on how to perform this migration:
 
-5. Delete any remaining files and folder in the `~/App_Plugins/VendrCheckout` directory.
-6. Install the Umbraco.Commerce.Checkout package:
-
-```bash
-dotnet add package Umbraco.Commerce.Checkout
-```
-
-1. Locate the Umbraco Commerce Checkout dashboard in the Settings section
-2. Click the "Install" button to reinstall the Checkout components in the previous location.
-3. Copy any custom configuration files back into the solution.
-4. Copy any custom Views into the `~/Views/UmbracoCommerceCheckout/` folder.
-
-## Step 6: \[Optional] Migrate Custom Payment Providers
-
-Throughout the following steps, we will migrate custom payment providers used for Vendr into Umbraco Commerce.
-
-If you haven't used any custom payment providers with Vendr, you can skip this step.
-
-1. Remove any installed Vendr packages
-
-```bash
-dotnet remove package Vendr.Core
-```
-
-2. Install the `Umbraco.Commerce` packages for the payment providers.
-
-```bash
-dotnet add package Umbraco.Commerce.Core
-```
-
-3. Update any namespace references.
-4. Update project framework to `net7.0`.
-
-The final step in the migration is to update all abstract async methods exposed by the base class. It needs to be updated to accept an additional `CancellationToken cancellationToken = default` parameter as the final method argument. Your Integrated Development Environment (IDE) should provide feedback on all the methods that have been updated.
+{% content-ref url="migrate-custom-payment-providers.md" %}
+[migrate-custom-payment-providers.md](migrate-custom-payment-providers.md)
+{% endcontent-ref %}
 
 [^1]: Vendr previously used the `.js` file extension to serve JSON files without having to configure a new `.json` mime-type on the server. This is no longer necessary in Umbraco Commerce so we can now use the correct `.json` file extension.
