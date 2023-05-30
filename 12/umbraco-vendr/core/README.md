@@ -11,6 +11,10 @@ Umbraco Vendr is the official Umbraco e-commerce addon for your Umbraco CMS webs
 
 <table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Getting Started</strong></td><td>Find all the information you need to get started using Umbraco Vendr with your Umbraco CMS implementation.</td><td><a href="getting-started/introduction.md">introduction.md</a></td></tr><tr><td><strong>How-to Guides</strong></td><td>Looking to configure and implement something specific? Take a look through the How-to section where you might find a guide that fits your needs.</td><td><a href="how-to-guides/overview.md">overview.md</a></td></tr><tr><td><strong>Key Concepts</strong></td><td>Looking to learn more about the different concepts and features of Umbraco Vendr? You can find detailed information about each of them in this section.</td><td><a href="key-concepts/overview.md">overview.md</a></td></tr></tbody></table>
 
+## Extend Umbraco Commerce
+
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><strong>Umbraco Commerce Packages</strong></td><td>Choose between a selection of verified packages to extend the Umbraco Commerce implementation for your website.</td></tr><tr><td><strong>Umbraco Commerce Payment Providers</strong></td><td>You can integrate your Umbraco Commerce implementation with a series of different payment providers.</td></tr></tbody></table>
+
 ## Quick links
 
 {% content-ref url="reference/go-behind-the-scenes.md" %}
