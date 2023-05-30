@@ -27,7 +27,7 @@ In addition to the name, plan, and status of the project, you can now also see:
 * Payment status.
 * The number of environments.
 
-![ProjectsDashboardHoverEnvironment](<../images/Organization Projects.png>)
+![ProjectsDashboardHoverEnvironment](../images/OrganizationProjects.png)
 
 You can sort your organization projects ascending and descending for all columns in the projects table.
 
