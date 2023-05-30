@@ -1,19 +1,23 @@
+---
+description: >-
+  In this article, you'll find a step-by-step guide on how to apply a hotfix to
+  a Live environment by manually moving the changed, updated, and/or new files
+  from one local clone to another.
+---
+
 # Apply hotfix by manually moving files
 
-In this article, you'll find a step-by-step guide on how to apply a hotfix to a Live environment by manually moving the changed, updated, and/or new files from one local clone to another.
+### Tools
 
-The following tools have been used to create this guide:
-
-* Visual Studio Code
-* GitKraken
+* A [Git GUI](https://git-scm.com/downloads/guis)
 
 {% hint style="info" %}
-In GitKraken version 6.5.3, it is no longer possible to open private repositories with the free version - This affects all Umbraco Cloud repositories as well. 
+In this tutorial GitKraken has been used, however, you can use any Git GUI you prefer.
 {% endhint %}
 
 ## The Scenario
 
-You have an Umbraco Cloud project with two environments, Development and Live.
+You have an Umbraco Cloud project with two environments, **Development** and **Live**.
 
 You have been working on building the site on a local clone of the Development environment, and now you want to send some but not all changes to the Live environment.
 
@@ -33,18 +37,17 @@ For the sake of simplicity here's an explanation of the names I'll be using in t
 ### Move the files
 
 1. Clone down the Live environment.
-    * The _clone URL_ for the Live environment can be found in the Umbraco Cloud Portal:
+   *   The _clone URL_ for the Live environment can be found in the Umbraco Cloud Portal:
 
-        ![Live Clone URL](images/live-clone-url_v10.png)
+       <figure><img src="images/live-clone-URL_v10.png" alt=""><figcaption><p>Live Clone URL</p></figcaption></figure>
 
+       ![](images/live-clone-url\_v10.png)
 2. Locate the files from the Development repository that you want to move to Live.
-    * Check the commits in the Git history for the Development repository to verify which files you need.
+   *   Check the commits in the Git history for the Development repository to verify which files you need.
 
-        ![Files changes or added](images/commit-files-changed.png)
-
-    * The _new files_ can be moved from the Development repository to the Live repository.
-    * The same goes for _changed files_. You can also edit the files, and only move the code snippets you need on the Live environment.
-
+       ![Files changes or added](images/commit-files-changed.png)
+   * The _new files_ can be moved from the Development repository to the Live repository.
+   * The same goes for _changed files_. You can also edit the files, and only move the code snippets you need on the Live environment.
 3. Copy and paste the new and/or updated files from your Development repository to your Live repository.
 4. You can now _Stage_ and _Commit_ these changes to the Live repository in Git.
 
@@ -53,22 +56,24 @@ One of the benefits of having the Live environment cloned down, is that you can 
 ### Test changes locally
 
 1. Run the Live repository through IIS
-2. Open _CMD_ and navigate to the `/umbraco/Deploy/Revision` folder in your Live repository.
-{% hint style="info" %}
-In Umbraco version 8 and below, navigate to the `site/wwwroot/data/Revision` folder in your Live repository.
-{% endhint %}:
-3. Create a _deploy_ marker by typing the following: `echo > deploy` - learn more about this command in the [Power Tools](/umbraco-cloud/set-up/power-tools/README.md) articles.
-4. The changes will now be reflected in the backoffice of your local Live environment.
+2. Go to the backoffice of your project
+3. Navigate to the settings section
+4. Go to the Deploy Dashboard in the Settings section
+5. Run the Deploy operation `Update Umbraco Schema From Data Files`
+
+The changes will now be reflected in the backoffice of your local Live environment.
 
 Once you've checked that everything works locally, you are ready to push to the Live environment.
 
 ### Push to Live
 
 1. Push the committed changes to the Live environment using Git.
+
 {% hint style="info" %}
 When changes are pushed directly to a Live environment and you have more than one environment, the changes are not automatically extracted to the site.
 {% endhint %}
-2. Find a guide on how to extract the files, in the [Manual Extraction](../../set-up/power-tools/manual-extractions.md) article
+
+2\. Run the Deploy operation `Update Umbraco Schema From Data Files`from the Deploy Dashboard
 
 You have now applied a hotfix to the Live environment.
 
