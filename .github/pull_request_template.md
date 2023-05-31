@@ -14,6 +14,6 @@ _What did you add/update/change?_
 
 
 
-## Deadline
+## Deadline (if relevant)
 
 _When should the content be published?_
