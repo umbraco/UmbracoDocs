@@ -24,7 +24,11 @@ For cloud projects on a **shared** plan and when selecting a granularity of 5 mi
 ![Shared-multiple-warnings](images/AP-Shared-Multiple-warnings.png)
 
 ## What the future will bring to the feature
-The first version of the “Availability and Performance” feature released on May 26th, 2023 includes a basic visualization and a set of highlighted numbers for failed requests, application performance, CPU time, and memory usage.
+The first version of the “Availability and Performance” feature released on May 26th, 2023 includes a basic visualization and a set of highlighted numbers for:
+- Failed requests
+- Application performance
+- CPU time
+-Memory usage.
 
 We expect to add much more information about each of these domains in the future, which will enable you to get more details about a potential error, what might have caused it, and what likely fix to address information could be.
 
