@@ -36,6 +36,6 @@ The first version of the “Availability and Performance” feature released on 
 - CPU time
 -Memory usage.
 
-We expect to add much more information about each of these domains in the future, which will enable you to get more details about a potential error, what might have caused it, and what likely fix to address information could be.
+We expect to add even more information about each of these domains in the future. This will enable you to get more details about potential errors, what might have caused them, and what likely fix to address it could be.
 
 While the visualization and basic numbers are accessible for any project plan, some future extensions and improvements will only be available for Standard or Professional plans.
