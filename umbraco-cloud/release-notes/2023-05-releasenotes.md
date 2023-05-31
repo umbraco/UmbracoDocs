@@ -38,4 +38,4 @@ The first version of the “Availability and Performance” feature released on 
 
 We expect to add much more information about each of these domains in the future, which will enable you to get more details about a potential error, what might have caused it, and what likely fix to address information could be.
 
-While the visualization and basic numbers are accessible for any project plan, a subset of the future extensions and improvements would be provided to cloud projects on one of the higher cloud project plans (Standard or Professional).
+While the visualization and basic numbers are accessible for any project plan, some future extensions and improvements will only be available for Standard or Professional plans.
