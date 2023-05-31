@@ -6,7 +6,7 @@
 * **What the future will bring to the feature** - More exciting features and enhancements will be added to Availability & Performance in the future.
 
 ## Availability & Performance
-Umbraco Cloud's "Availability and Performance" feature offers you a new option to monitor the health and performance of your cloud projects. By leveraging HTTPS status codes, response times, CPU time, and memory usage, you can proactively identify and address issues, supporting you to deliver a seamless experience for the users of your cloud project.
+Umbraco Cloud's "Availability and Performance" feature offers you a new option to monitor the health and performance of your cloud projects. Leveraging HTTPS status codes, response times, CPU time, and memory usage, you can proactively identify and address issues. This will in turn support you in delivering a seamless experience for the users of your cloud project.
 
 ![FailedRequest](images/AP-1-FailedRequests-Com.png)
 
