@@ -21,7 +21,7 @@ Entering the page you will find a panel with four tiles where you have the optio
 You might also find an error or warning indicator for each tile if there is something you should consider.
 
 ## Specific views for dedicated and shared projects
-When selecting a specific topic the chart will be updated with specific data points in the selected time range and granularity. For cloud projects with a **dedicated** option enabled, you will for the CPU usage and memory usage find the average value for the CPU time and private bytes highlighted, respectively.
+When selecting a specific topic the chart will be updated with specific data points in the selected time range and granularity. Cloud projects with **dedicated** options enabled, you'll for the CPU usage and memory usage find the average value for the CPU time and private bytes highlighted.
 
 ![Demo-dedicated](images/AP-DemoDedicated.gif)
 
