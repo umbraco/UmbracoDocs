@@ -472,4 +472,4 @@ With this in place any request to the Forms API will be rejected unless the conf
 
 For an illustrative example showing how a form can be rendered, validated and submitted using the API and vanilla JavaScript, please [see this gist](https://gist.github.com/AndyButland/9371175d6acf24a5307b053398f08448).
 
-An example demonstrating how to handle a file upload is included.
+Examples demonstrating how to handle a file upload and use reCAPTCHA fields are included.
