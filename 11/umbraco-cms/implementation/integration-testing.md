@@ -19,10 +19,9 @@ dotnet new nunit
 dotnet add package Umbraco.Cms.Tests.Integration
 ```
 
-After the project is created and the package is added we have to create an ```appsettings.Tests.json``` file and a GlobalSetup class.
+After the project is created and the package is added we have to create an ```appsettings.Tests.Local.json``` file and a GlobalSetup class.
 
-The ```appsettings.Tests.json``` can be a bit tricky, as a file with the same name is provided by the package but currently isn't picked up properly.
-A workaround is to create the file as ```appsettings.json``` and then rename the file.
+The package already created an ```appsettings.Tests.json``` file. For both files make sure to go to "properties" and set "Copy to output directory" to "always" or "copy if newer".
 
 The GlobalSetup is necessary to call the ```GlobalSetupTeardown``` class present in the package. This class makes sure that configuration is read and everything is setup as needed.
 Here is a sample that can be used:

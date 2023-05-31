@@ -117,9 +117,15 @@ Furthermore a generated model will always be instantiated with its default const
 
 For more complex partial classes, you'll have to use the full version of the [Models Builder](https://github.com/zpqrtbnk/Zbu.ModelsBuilder).
 
+### IModelsGenerator
+
+As of Umbraco 11.4, the IModelsGenerator interface has been added. If you want to customize how the models are generated, you can make your own implementation of the `IModelsGenerator` interface. You can then overwrite the Umbraco implementation with dependency injection. 
+
+The interface can be accessed via `Infrastructure.ModelsBuilder.Building.ModelsGenerator`.
+
 ## Best Practices
 
-Extending models should be used to add stateless, local features to models, and *not* to transform *content* models into view models or manage trees of content.
+Extending models should be used to add stateless, local features to models. It should not be used to transform *content* models into view models or manage trees of content.
 
 ### Example of good practice
 

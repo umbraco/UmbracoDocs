@@ -539,6 +539,10 @@ All newly created content will be `DRAFT` by default. If you want to publish it 
 
 In this example only one language exists, so the properties are marked with `$invariant` in the create request. If multiple languages exists the culture for each of the languages would be defined for each of the properties - example: `"name": { "en-US": "Another one", "da-DK": "Endnu en" }`.
 
+{% hint style="info" %}
+If a property uses a multinode treepicker editor, the value should be a comma-separated list of Umbraco UDI Identifiers. In the example below, the UDI Identifiers are referencing content items. To learn more see the [UDI Identifiers](https://docs.umbraco.com/umbraco-cms/reference/querying/udi-identifiers) documentation.
+{% endhint %}  
+
 ```json
 {
     "name": {
@@ -568,6 +572,9 @@ In this example only one language exists, so the properties are marked with `$in
     },
     "excerpt": {
         "$invariant": "Donec sollicitudin molestie malesuada. Vivamus suscipit tortor eget felis porttitor volutpat. Sed porttitor lectus nibh."
+    },
+    "multinodeTreePicker": {
+        "$invariant": "umb://document/067c7c926709487ab01be84168b333cf,umb://document/8a4dec90cf394028a743eae0729d47ba,umb://document/5fdd887233394a3492000bbf74e3b005"
     },
     "bodyText": {
         "$invariant": "<p>Donec sollicitudin molestie malesuada. Proin eget tortor risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla porttitor accumsan tincidunt. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada.</p>\n<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget malesuada. Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Sed porttitor lectus nibh.</p>\n<p>Pellentesque in ipsum id orci porta dapibus. Curabitur aliquet quam id dui posuere blandit. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec rutrum congue leo eget malesuada. Donec rutrum congue leo eget malesuada. Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat.</p>"
@@ -761,6 +768,10 @@ When content contains an upload field it is possible to send a file along with t
 
 In this example only one language exists, so the properties are marked with `$invariant`. If multiple languages existed the culture for each of the languages would be defined for each of the properties. Ie.: `"name": { "en-US": "Another one", "da-DK": "Endnu en" }`.
 
+{% hint style="info" %}
+If a property uses a multinode treepicker editor, the value should be a comma-separated list of Umbraco UDI Identifiers. In the example below, the UDI Identifiers are referencing content items. To learn more see the [UDI Identifiers](https://docs.umbraco.com/umbraco-cms/reference/querying/udi-identifiers) documentation.
+{% endhint %} 
+
 ```json
 {
     "name": {
@@ -790,6 +801,9 @@ In this example only one language exists, so the properties are marked with `$in
     },
     "excerpt": {
         "$invariant": "Donec sollicitudin molestie malesuada. Vivamus suscipit tortor eget felis porttitor volutpat. Sed porttitor lectus nibh."
+    },
+    "multinodeTreePicker": {
+        "$invariant": "umb://document/067c7c926709487ab01be84168b333cf,umb://document/8a4dec90cf394028a743eae0729d47ba,umb://document/5fdd887233394a3492000bbf74e3b005"
     },
     "bodyText": {
         "$invariant": "<p>Lorem Ipsum</p>"

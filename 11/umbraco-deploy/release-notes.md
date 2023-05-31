@@ -61,6 +61,11 @@ Under each major version, you can find details about minor and patch releases fo
 * Added additional logging to indicate which item and pass causes a processing failure if and when one occurs [#144](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/144)
 * Tidied up initialization markers [#102](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/102)
 
+### [11.0.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.0.0)
+
+* Compatibility with .NET 7 Umbraco 11
+    * See full details of breaking changes under the [version specific upgrade guide](upgrades/version-specific.md).
+
 </details>
 
 <details>
