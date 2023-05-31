@@ -260,7 +260,7 @@ namespace My.Website
 }
 ```
 
-You can register a content app in the `ConfigureServices` method in the `Startup.cs`:
+You can register a content app in the `ConfigureServices` method in the `Startup.cs` class:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
