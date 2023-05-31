@@ -107,7 +107,7 @@ The above approach relies on two Macro partial views and a non-macro partial vie
 
 However, with the above approach, members will not be assigned to any group automatically - for this to happen, we would need to write a bit of custom code.
 
-## Assigning new members to groups automatically¨
+## Assigning new members to groups automatically
 
 ### Creating a new SurfaceController
 

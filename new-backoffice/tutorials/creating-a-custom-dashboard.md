@@ -16,7 +16,7 @@ This guide takes you through the steps to set up a Custom Dashboard in Umbraco.
 
 A Dashboard is a tab on the right-hand side of a section eg. the Getting Started dashboard in the Content section:
 
-![Welcome dashboard](<../../10/umbraco-cms/tutorials/images/whatisadashboardv10 (1) (1) (1).jpg>)
+![Welcome dashboard](<../../10/umbraco-cms/tutorials/images/whatisadashboard-v10 (1).jpg>)
 
 ### Why provide a Custom Dashboard for your editors?
 
@@ -147,7 +147,7 @@ Now create a stylesheet in our CustomWelcomeDashboard folder called 'customwelco
 
 This stylesheet will now be loaded and applied to your dashboard. Add images and HTML markup as required.
 
-![Custom Dashboard Welcome Message With styles...](../../10/umbraco-cms/tutorials/images/welcomemessagewithstyles-v10.png)
+![Custom Dashboard Welcome Message With styles...](<../../10/umbraco-cms/tutorials/images/welcomemessagewithstyles-v10 (1) (1).png>)
 
 {% hint style="info" %}
 One caveat is that the package.manifest file is loaded into memory when Umbraco starts up. If you are adding a new stylesheet or JavaScript file you will need to start and stop your application for it to be loaded.
@@ -251,7 +251,7 @@ Finally we can now update our view to incorporate the current user's name in our
 </h1>
 ```
 
-![Custom Dashboard Welcome Message With Current User's Name](../../10/umbraco-cms/tutorials/images/welcomemessagepersonalised-v10.png)
+![Custom Dashboard Welcome Message With Current User's Name](../../11/umbraco-cms/tutorials/images/welcomemessagepersonalised-v10.png)
 
 ## I know what you did last Tuesday
 
@@ -424,7 +424,7 @@ Finally update our view to use the additional retrieved entity information:
 
 and we should have a list of recently saved content and media:
 
-![We know what you edited last week...](../../10/umbraco-cms/tutorials/images/WeKnowWhatYouEditedLastWeek-v10.png)
+![We know what you edited last week...](<../../10/umbraco-cms/tutorials/images/WeKnowWhatYouEditedLastWeek-v10 (1) (1).png>)
 
 {% hint style="info" %}
 The URL `/umbraco/#/content/content/edit/1234` is the path to open up a particular entity (with id 1234) ready for editing.
@@ -454,7 +454,7 @@ Add the following to our view:
 
 `1065` is the ID of our blog section and `blogPost` is the alias of the type of document we want to create.
 
-![Handy shortcut buttons](../../10/umbraco-cms/tutorials/images/CreateNewBlogPost-v10.png)
+![Handy shortcut buttons](../../11/umbraco-cms/tutorials/images/CreateNewBlogPost-v10.png)
 
 At this point we are done with the tutorial, your files should contain this:
 
@@ -611,7 +611,7 @@ As he Umbraco UI Library is available in the backoffice we can start using the c
 
 Since we are showing our editors their recently edited content nodes on this dashboard, it makes sense to use the [Content Node Card](https://uui.umbraco.com/?path=/docs/uui-card-content-node--aaa-overview):
 
-![Content Node Card](../.gitbook/assets/uiLibraryCard.png)
+![Content Node Card](images/uiLibraryCard.png)
 
 First, we need to wrap our unordered list and its content in the `<uui-card-content-node>` so it will look like this:
 
@@ -807,7 +807,7 @@ uui-card-content-node {
 
 Once it has been added, we are done and it should look something like this:
 
-![Custom Dashboard extended with UI Library Card](../.gitbook/assets/extendedWithUiLibrary.png)
+![Custom Dashboard extended with UI Library Card](images/extendedWithUiLibrary.png)
 
 **Custom External Data - creating your own angular resource**
 

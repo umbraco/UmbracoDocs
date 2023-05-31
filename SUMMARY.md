@@ -487,7 +487,6 @@
       * [Custom Certificates](umbraco-cloud/set-up/project-settings/manage-hostnames/security-certificates.md)
     * [External Services](umbraco-cloud/set-up/project-settings/external-services.md)
     * [Usage](umbraco-cloud/set-up/project-settings/usage.md)
-    * [Availability & Performance](umbraco-cloud/set-up/project-settings/availability-performance.md)
     * [Team Members](umbraco-cloud/set-up/project-settings/team-members/README.md)
       * [Account Contacts](umbraco-cloud/set-up/project-settings/team-members/accounts-contact.md)
       * [Technical Contact](umbraco-cloud/set-up/project-settings/team-members/technical-contact.md)

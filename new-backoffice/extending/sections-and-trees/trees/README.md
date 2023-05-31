@@ -170,7 +170,7 @@ public class FavouriteThingsTreeController : TreeController
 }
 ```
 
-<figure><img src="../../../.gitbook/assets/favourite-things-custom-tree-v8.png" alt=""><figcaption><p>Favourite things custom tree</p></figcaption></figure>
+<figure><img src="../../../../10/umbraco-cms/extending/section-trees/trees/images/favourite-things-custom-tree-v8.png" alt=""><figcaption><p>Favourite things custom tree</p></figcaption></figure>
 
 #### Responding to Tree Actions
 
@@ -223,7 +223,7 @@ Our Tree Action View would then be wired to the loaded controller using the `ng-
 </div>
 ```
 
-<figure><img src="../../../.gitbook/assets/delete-raindrops-on-roses-v8.png" alt=""><figcaption><p>Delete Raindrops on Roses</p></figcaption></figure>
+<figure><img src="../../../../10/umbraco-cms/extending/section-trees/trees/images/delete-raindrops-on-roses-v8.png" alt=""><figcaption><p>Delete Raindrops on Roses</p></figcaption></figure>
 
 Take a look at the umbEditor directives in the backoffice API Documentation, for lots of common interaction directives. Those directives can be used to deliver a consistent backoffice editing experience for items in your custom tree.
 
@@ -270,7 +270,7 @@ protected override ActionResult<TreeNode> CreateRootNode(FormCollection queryStr
 
 The RoutePath should be in the format of: **section/treeAlias/method**. As our example controller uses the `PluginController` attribute, clicking the root node would now request `/App_Plugins/favouriteThing/backoffice/favouritistThingsAlias/overview.html`. If you are not using the `PluginController` attribute, then the request would be to `/umbraco/views/favouritistThingsAlias/overview.html`.
 
-<figure><img src="../../../.gitbook/assets/favourite-thing-custom-single-node-tree.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../10/umbraco-cms/extending/section-trees/trees/images/favourite-thing-custom-single-node-tree.png" alt=""><figcaption></figcaption></figure>
 
 **Full Width App - IsSingleNodeTree**
 
