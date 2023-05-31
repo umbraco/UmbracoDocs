@@ -25,7 +25,7 @@ When selecting a specific topic the chart will be updated with specific data poi
 
 ![Demo-dedicated](images/AP-DemoDedicated.gif)
 
-For cloud projects on a **shared** plan and when selecting a granularity of 5 minutes, you will find a comparison of the maximum CPU time compared to the plan quota of the shared project plan. In case the live environment project has exceeded the plan quota that will be highlighted with an error indicator on CPU usage tile. The same is the case for memory usage, where the memory consumption of the environment is held up against the project’s plan quota.
+Projects on **shared** plans and a selected granularity of 5 minutes, will find a comparison of the maximum CPU time compared to the shared plan quota. In case the live environment project has exceeded the plan quota that will be highlighted with an error indicator on CPU usage tile. The same is the case for memory usage, where the memory consumption of the environment is held up against the project’s plan quota.
 
 ![Shared-multiple-warnings](images/AP-Shared-Multiple-warnings.png)
 
