@@ -23,12 +23,14 @@ In this section, you can find the release notes for each version of Umbraco Form
 * Added customizable behavior for the fields added to newly created forms [#1013](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1013)
 * Added hook for custom validation for headless API [#1012](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1013)
 * Added optional culture parameter to headless API [#989](https://github.com/umbraco/Umbraco.Forms.Issues/issues/989)
-* Added configuration to enable or disable the headless API
+* Added support for use of reCAPTCHA fields with the headless API [#989](https://github.com/umbraco/Umbraco.Forms.Issues/issues/989)
+* Added configuration to enable or disable the headless API [#1027](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1027)
 * Resolved concurrency issue with prevalue sources [#997](https://github.com/umbraco/Umbraco.Forms.Issues/issues/997)
 * Added [configuration options for IP recording](./developer/configuration/README.md#recordiptrackingbehavior) with form submissions [#1000](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1000)
 * Performance optimizations for tree rendering, form submission and workflow execution
 * Added tag helper for rendering a form
 * Provided messaging when using rich text fields in case of a missing rich text Data Type
+* Fixed an issue with the configurable removal of the default form templates [#1025](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1025)
 
 If upgrading from a previous version and already using the headless API, please ensure to [enable the API via configuration](./developer/configuration/README.md#enableformsapi).
 
