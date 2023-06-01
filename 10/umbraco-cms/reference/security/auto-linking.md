@@ -1,15 +1,10 @@
----
-versionFrom: 9.3.0
-versionTo: 10.0.0
-keywords: oauth, security
----
-
 # Linking External Login Provider accounts
 
 Traditionally when using [External login providers (OAuth)](external-login-providers.md), a backoffice user or website member will need to exist first and then that user can link their user account to an external login provider in the backoffice or edit profile page.
 
-In many cases, however, the external login provider you install will be the source of truth for all of your users and you may want to provide a Single Sign On (SSO) approach to the backoffice or your member sections of your website. This is called Auto Linking.
+In many cases, however, the external login provider you install will be the source of truth for all of your users.
 
+In this case, you will want to provide a Single Sign On (SSO) approach to logging in. This would enable the creating of user accounts on the external login provider and then automatically give them access to Umbraco. This is called auto-Linking.
 
 ## Configure External Login provider
 
