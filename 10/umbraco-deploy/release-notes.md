@@ -20,6 +20,10 @@ Under each major version, you can find details about minor and patch releases fo
 
 <summary>Version 10</summary>
 
+#### [10.2.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.2) (May 30th 2023)
+
+* Resolved a low impact security issue found in internal testing when triggering a schema extraction.
+
 #### [10.2.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.1) (May 23rd 2023)
 
 * Added configuration for batch package processing and omitting post operation notification handlers.
@@ -102,6 +106,10 @@ Under each major version, you can find details about minor and patch releases fo
 <details>
 
 <summary>Version 9</summary>
+
+#### [9.6.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.6.1) (May 30th 2023)
+
+* Resolved a low impact security issue found in internal testing when triggering a schema extraction.
 
 #### [9.6.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.6.0) (April 11th 2023)
 
