@@ -2,7 +2,7 @@
 
 When you type a search term into the Umbraco backoffice search field, you'll see search results from all the Section Trees that your user account has permission to access:
 
-![Content Section Dashboards](images/backoffice-search-v8.png)
+![Content Section Dashboards](<images/backoffice-search-v8 (1).png>)
 
 The results are grouped by 'Section Tree' like Content, Media, Document Types. Each 'Tree' has its own associated search mechanism that receives the search term and looks for matches in the tree that is responsible for searching.
 
