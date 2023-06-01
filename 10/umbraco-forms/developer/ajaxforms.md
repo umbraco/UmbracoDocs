@@ -6,11 +6,27 @@ meta.Title: Headless/Asynchronous JavaScript and XML (AJAX)  Forms
 
 Umbraco Forms provides an API for client-side rendering and submission of forms. This will be useful when you want to handle forms in a headless style scenario.
 
+## Enabling the API
+
+The Forms API is disabled by default. To enable it, set the `Umbraco:Forms:Options:EnableFormsApi` configuration key to `true`.
+
+For example:
+
+```json
+  "Umbraco": {
+    "Forms": {
+      "Options": {
+        "EnableFormsApi": true
+      }
+    }
+  }
+```
+
 ## API Definition
 
 The API supports two endpoints, one for rendering a form and one for submitting it.
 
-As well as this docmentation, the definition of the API can also be reviewed via the Swagger UI, available at the following path: `/umbraco/forms/api/swagger/index.html`.
+As well as this documentation, the definition of the API can also be reviewed via the Swagger UI, available at the following path: `/umbraco/forms/api/swagger/index.html`.
 
 The Open API specification is available from: `/umbraco/forms/api/openapi.json`
 
@@ -25,6 +41,8 @@ GET /umbraco/forms/api/v1.0/definitions/{id}?contentId={contentId}
 The GET request requires the Guid identifying the form.
 
 An optional `contentId` parameter can be provided, which can either be the integer or GUID identifier for the current page. If provided, the content item identified will be used for Forms features requiring information from the page the form is hosted on. This includes the parsing of ["magic string" placeholders](magic-strings.md).
+
+A `culture` parameter can also be provided, expected as an ISO code identifying a language used in the Umbraco installation (for example, `en-US`). This will be used to ensure the correct translation for dictionary keys is used. It will also retrieve page content from the appropriate language variant. If the parameter is not provided in the request, the default Umbraco language will be used.
 
 If the requested form is not found, a 404 status code will be returned.
 
@@ -49,6 +67,7 @@ A successful request will return a 200 status code. An example response is as fo
                     "columns": [
                         {
                             "caption": "",
+                            "width": 12,
                             "fields": [
                                 {
                                     "alias": "name",
@@ -333,21 +352,22 @@ It also requires a `Content-Type` header of `application/json` and accepts a bod
 
 ```json
 {
-  "values": {
-      "name": "Fred",
-      "email": "fred@test.com",
-      "comment": "Test",
-      "country": "it",
-      "favouriteColours": ["red", "green"],
-      "dataConsent": "on"
-  },
-  "contentId": "ca4249ed-2b23-4337-b522-63cabe5587d1"
+    "values": {
+        "name": "Fred",
+        "email": "fred@test.com",
+        "comment": "Test",
+        "country": "it",
+        "favouriteColours": ["red", "green"],
+        "dataConsent": "on"
+    },
+    "contentId": "ca4249ed-2b23-4337-b522-63cabe5587d1",
+    "culture": "en-US"
 }
 ```
 
 The `values` collection consists of a set of name/value pairs, where the name is the alias of a form field. The value is the value of the submitted field, which can either be a string, or an array of strings. In this way we support fields that accept multiple values, such as checkbox lists.
 
-The `contentId` is optional, and if provided will be used to customize the response for the current page.
+The `contentId` and `culture` parameters are optional. If provided they will be used to customize the response for the current page and language respectively.
 
 In the case of a validation error, a 422 "Unprocessable Entity" status code will be returned, along with a response similar to the following:
 
@@ -416,3 +436,5 @@ With this in place any request to the Forms API will be rejected unless the conf
 ## Rendering and Submitting forms with JavaScript
 
 For an illustrative example showing how a form can be rendered, validated and submitted using the API and vanilla JavaScript, please [see this gist](https://gist.github.com/AndyButland/9371175d6acf24a5307b053398f08448).
+
+Examples demonstrating how to handle a file upload and use reCAPTCHA fields are included.

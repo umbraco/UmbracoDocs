@@ -29,6 +29,7 @@
 ## Developer
 
 * [Preparing Your Frontend](developer/prepping-frontend.md)
+* [Rendering Forms](developer/rendering-forms.md)
 * [Rendering Forms Scripts](developer/rendering-scripts.md)
 * [Themes](developer/themes.md)
 * [Custom Markup](developer/custom-markup.md)
