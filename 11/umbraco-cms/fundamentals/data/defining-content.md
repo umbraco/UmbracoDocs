@@ -12,7 +12,7 @@ Before a piece of content can be created it needs to be defined. That is why, wh
 
 A Document Type contains fieldsets (or groups) where you can apply rules about where the content can be created, allowed template(s), backoffice icons, etc.
 
-Document Types can define entire pages or more limited content that can be reused on other nodes ie. a Search Engine Optimization (SEO) group. This means that you are in complete control of what type of content can be created where.
+Document Types can define entire pages or more limited content that can be reused on other nodes ie. a Search Engine Optimization (SEO) group. This means that you are in complete control of what type of content can be created and where.
 
 Document Types define what an end user sees and can interact with when they are working in the Umbraco backoffice. For a "Blog post" Document Type containing a thumbnail, a name, and an author image, it needs to be defined in the Document Type. All blog posts using the "Blog post" Document Type, will allow the end user to fill in a thumbnail, author name, and an author image.
 
@@ -20,13 +20,13 @@ Document Types define what an end user sees and can interact with when they are 
 
 Each field on a Document Type is called a property. The property is given a name, an alias (used to output the properties contained in a template), and an editor. The editor determines what type of data the property will store and the input method. There is a wide range of default property editors available (Textstring, Richtext, Media Picker, and so forth) and you can customize additional editors.
 
-Some editors require configuration, a configured editor is saved as a Data Type and can be re-used for multiple properties and document types. These can be seen in the **Settings** section under **Data Types**.
+Some editors require configuration, a configured editor is saved as a Data Type and can be reused for multiple properties and document types. These can be seen in the **Settings** section under **Data Types**.
 
 ## Creating a Document Type
 
 A Document Type is created using the Document Type editor in the **Settings** section.
 
-Go to the **Settings** section in the backoffice. On the **Document Types** node click the menu icon (•••) to bring up the context menu. Here choose **Document Type with Template**. This will create a new Document Type with a template. The Template can be found under **Templates** in the **Settings** section that will be assigned as the default template for the Document Type.
+Go to the **Settings** section in the backoffice. On the **Document Types** node click the menu icon (•••) to bring up the context menu. Here choose **Document Type with Template**. This will create a new Document Type with a template. The Template can be found under **Templates** in the **Settings** section which will be assigned as the default template for the Document Type.
 
 <figure><img src="../../../../10/umbraco-cms/fundamentals/data/images/v8Screenshots/createDoctype.PNG" alt=""><figcaption></figcaption></figure>
 
@@ -38,13 +38,17 @@ You can also use **Composition** to create a new Document Type. Compositions all
 
 Finally, you can create a Document Type as an **Element Type** which can be used to build Block Grid and Block List editors. Learn more about [Element Types](defining-content.md#what-is-an-element-type) below.
 
-## What is an Element Type?
+<details>
+
+<summary>Element Types</summary>
 
 An Element Type is a Document Type without a template containing schema configurations for repeating a set of properties. These are for defining schema in the Block List Editor, Nested Content, Block Grid Editor, or other Element Type based editors. Element Types cannot be used to create content that resides in the Content tree. When you create an Element type, it automatically sets the **Is Element Type** flag to **True** on the **Permissions** tab.
 
-![Element Type](../../../../10/umbraco-cms/fundamentals/data/images/Element-Type.png)
+<img src="../../../../10/umbraco-cms/fundamentals/data/images/Element-Type.png" alt="Element Type" data-size="original">
 
 Element Types are created using the same workflow as regular Document Types but usually contain fewer properties. You can also create Element Types as part of configuring a Block Grid or Block List Data Type.
+
+</details>
 
 ### Exporting/Importing the Document Type
 
@@ -232,21 +236,19 @@ Go to the **Content** section and click the menu icon (•••) next to the _H
 
 Document Types are flexible and can be used for defining pieces of reusable content or an entire page, to acting as a container or repository.
 
-### More information
+## More information
 
 * [Rendering Content](../design/rendering-content.md)
 * [Customizing Data Types](data-types/)
 
-### Related Services
+## Related Services
 
 * [ContentService](../../reference/management/services/contentservice/)
 * [ContentTypeService](../../reference/management/services/contenttypeservice/)
 
-### Tutorials
+## Tutorials
 
 * [Creating a basic website with Umbraco](../../tutorials/creating-a-basic-website/)
-
-### Umbraco Learning Base Channel
 
 {% embed url="https://www.youtube.com/playlist?ab_channel=UmbracoLearningBase&list=PLgX62vUaGZsG98vy9HWuwpU4XVnbIAnHK" %}
 Playlist: Document Types in Umbraco
