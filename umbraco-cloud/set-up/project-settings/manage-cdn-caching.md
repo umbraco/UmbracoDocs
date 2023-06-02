@@ -1,6 +1,6 @@
 # CDN Caching and Optimizations
 
-After [adding hostnames](manage-hostnames/) to your project, it's possible to configure Content Delivery Network (CDN) Caching and minification. This can be done for all or for specific hostnames within your project.
+After [adding hostnames](manage-hostnames/) to your project, it's possible to configure Content Delivery Network (CDN) Caching. This can be done for all or for specific hostnames within your project.
 
 These caching options all relate to the traffic that goes through your hostname from the origin (Umbraco Cloud) to the end-user i.e. the traffic of your website and assets from the webserver to the browser.
 
@@ -9,9 +9,6 @@ The options that are currently available are:
 * Enable Cache (default: off)
 * Cache TTL (default: 120 minutes)
 * Cache Everything (default: off)
-* Minify CSS (default: off)
-* Minify JS (default: off)
-* Minify HTML (default: off)
 
 ![Default Options](../images/Caching-default-options.png)
 
@@ -81,16 +78,6 @@ In the Purge Cache section, you can see how many Purge requests you have availab
 The available number of Purge requests varies depending on your Cloud Plan. For more information, see the [Plan specific features](manage-cdn-caching.md#plan-specific-features).
 {% endhint %}
 
-## Minification
-
-![Minification](../images/minification.png)
-
-Minification can be enabled for CSS, JS, and HTML, and is done through the CDN as part of serving the request. Minification strips whitespace from the CSS, JS, and HTML files, so the request is smaller and thus faster to download for the end-user.
-
-{% hint style="info" %}
-Using minification through CDN can affect Content Security Policies, as the files are being changed after they leave the origin. If you are using Content Security Policies, we recommend doing minification within the Umbraco site.
-{% endhint %}
-
 ## Plan specific features
 
 Access to the different options varies depending on the Umbraco Cloud Plan your project is on. Currently, the features available are as follows:
@@ -98,22 +85,14 @@ Access to the different options varies depending on the Umbraco Cloud Plan your 
 * Starter:
   * Enable Cache
   * Cache TTL (see below for minimum TTL)
-  * Minify CSS
-  * Minify JS
 * Standard:
   * Enable Cache
   * Cache TTL (see below for minimum TTL)
   * Cache Everything
-  * Minify CSS
-  * Minify JS
-  * Minify HTML
 * Professional:
   * Enable Cache
   * Cache TTL (see below for minimum TTL)
   * Cache Everything
-  * Minify CSS
-  * Minify JS
-  * Minify HTML
 
 The minimum Cache TTL varies as follows:
 
