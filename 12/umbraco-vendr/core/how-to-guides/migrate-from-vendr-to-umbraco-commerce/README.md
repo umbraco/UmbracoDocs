@@ -261,14 +261,24 @@ WHERE eventType LIKE 'vendr/%';
 
 1. Delete any obj/bin folders in your projects to ensure a clean build.
 2. Recompile all projects and ensure all dependencies are restored correctly
-3. Change license files - TBD
-4. Update any payment gateways that use a global webhook:
+3. Delete the existing Vendr license files in the `umbraco\Licenses` folder.
+4. Add your new Umbraco.Commerce license key to the `appSettings.json` file:
+
+```json
+"Umbraco"" {
+  "Licenses": {
+    "Umbraco.Commerce": "YOUR_LICENSE_KEY"
+  }
+}
+```
+
+5. Update any payment gateways that use a global webhook:
 
 ```none
 https://{site_url}/umbraco/commerce/payment/callback/{payment_provider_alias}/{payment_method_id}/
 ```
 
-5. Run the project.
+6. Run the project.
 
 It is highly recommended to ensure everything works as expected, before moving on to migrating packages and custom payment providers.&#x20;
 

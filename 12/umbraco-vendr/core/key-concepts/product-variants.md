@@ -16,7 +16,7 @@ By using child variants the only thing you need to create is your own variant no
 
 When a child variant is added Vendr checks the primary product node for any properties that can't be found on the variant child node.
 
-This approach is how most of the official [Vendr Demo](https://try.vendr.net) store is set up.
+This approach is how most of [the official Demo store](https://github.com/umbraco/Umbraco.Commerce.DemoStore) is set up.
 
 ## Complex Variants
 

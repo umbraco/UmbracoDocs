@@ -12,12 +12,12 @@ You can also find information about how to upgrade and how to install and activa
 
 ## NuGet Package Installation
 
-Vendr is available via [NuGet.Org](https://www.nuget.org/packages/Vendr/).
+Vendr is available via [NuGet.Org](https://www.nuget.org/packages/Umbraco.Commerce/).
 
 To install Vendr via NuGet you can run the following command directly in the NuGet Manager Console window:
 
 ```bash
-PM> dotnet add package Vendr
+PM> dotnet add package Umbraco.Commerce
 ```
 
 Alternatively, you can also find and install the NuGet package via the NuGet Package Manager in Visual Studio. You will see a number of packages available, however, you will want to install the main **Vendr** package.
@@ -38,9 +38,19 @@ Vendr uses Umbraco Migrations to install all of its features. Upgrades follow th
 
 ## Installing a License
 
-Once you have purchased a license you can install it by dropping the license file directly into your sites `umbraco\Licenses` folder. Vendr will automatically scan this directory for any valid licenses.
+Once you have purchased a license it needs to be installed on your site.
 
-When you need to store your licenses in an alternative directory, you can change where Vendr looks for licenses. This is done by setting a `Vendr.Licensing.LicensesDirectory` appSetting with a path to the alternative location.
+1. Open the root directory for your project files.
+2. Locate and open the `appSettings.json` file.
+3. Add your Umbraco Commerce license key to `Umbraco:Licenses:Umbraco.Commerce`:
+
+```json
+"Umbraco": {
+  "Licenses": {
+    "Umbraco.Commerce": "YOUR_LICENSE_KEY"
+  }
+}
+```
 
 {% hint style="info" %}
 You only need to install your license when you are ready to go live.
@@ -57,6 +67,4 @@ If you require an unrestricted staging environment, all licenses support two met
 * `clientcom.agency.com` - Licenses allow a concatenation of the licensed domain as a subdomain of any other domain.
 
 If you wish to host the site on any other URL, then an additional license file will be required for that domain.
-
-Learn more about the licensing model in the [Licensing article](installation.md).
 {% endhint %}
