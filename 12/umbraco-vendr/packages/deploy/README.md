@@ -19,6 +19,6 @@ If you are not at this stage yet, please read the [core Vendr documentation](htt
 
 As well as the content in these docs, the following links may prove useful when using this package:
 
-* [Vendr Deploy source code](https://github.com/vendrhub/vendr-deploy)
-* [Vendr Deploy issue tracker](https://github.com/vendrhub/vendr-deploy/issues)
+* [Vendr Deploy source code](https://github.com/umbraco/Umbraco.Commerce.Packages.Deploy)
+* [Vendr Deploy issue tracker](https://github.com/umbraco/Umbraco.Commerce.Packages.Deploy/issues)
 * [Vendr Deploy Our Umbraco page](https://our.umbraco.com/packages/backoffice-extensions/vendr-deploy/)
