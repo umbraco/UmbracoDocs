@@ -29,11 +29,11 @@ The following steps are handled within the payment method editor in the Umbraco 
 | Continue URL                            | The URL of the page to navigate to after payment is successful - e.g. `/confirmation/`                                                 |
 | Cancel URL                              | The URL of the page to navigate to if the customer cancels the payment - e.g. `/cart/`                                                 |
 | Error URL                               | The URL of the page to navigate to if there is an error with the payment - e.g. `/error/`                                              |
-| Billing Address (Line 1) Property Alias | The alias of the property containing line 1 of the billing address - e.g. addressLine1. Passed to Stripe for Radar verification.       |
-| Billing Address (Line 2) Property Alias | The alias of the property containing line 2 of the billing address - e.g. addressLine1. Passed to Stripe for Radar verification.       |
-| Billing Address City Property Alias     | The alias of the property containing the city of the billing address - e.g. addressLine1. Passed to Stripe for Radar verification.     |
-| Billing Address State Property Alias    | The alias of the property containing the state of the billing address - e.g. addressLine1. Passed to Stripe for Radar verification.    |
-| Billing Address Zip Code Property Alias | The alias of the property containing the zip code of the billing address - e.g. addressLine1. Passed to Stripe for Radar verification. |
+| Billing Address (Line 1) Property Alias | The alias of the property containing line 1 of the billing address - e.g. addressLine1. Passed to Klarna for Radar verification.       |
+| Billing Address (Line 2) Property Alias | The alias of the property containing line 2 of the billing address - e.g. addressLine1. Passed to Klarna for Radar verification.       |
+| Billing Address City Property Alias     | The alias of the property containing the city of the billing address - e.g. addressLine1. Passed to Klarna for Radar verification.     |
+| Billing Address State Property Alias    | The alias of the property containing the state of the billing address - e.g. addressLine1. Passed to Klarna for Radar verification.    |
+| Billing Address Zip Code Property Alias | The alias of the property containing the zip code of the billing address - e.g. addressLine1. Passed to Klarna for Radar verification. |
 | API Region                              | The Region in which your account is under. Can be either `Europe`, `NorthAmerica` or `Oceana`                                          |
 | Test API Username                       | The Username to use when connecting to the test Klarna API                                                                             |
 | Test API Password                       | The Password to use when connecting to the test Klarna API                                                                             |

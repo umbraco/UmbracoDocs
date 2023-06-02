@@ -19,6 +19,6 @@ It is assumed that before we begin that you already have an Umbraco website conf
 
 As well as the content in these docs, here are a few useful links that might come in handy should you wish to learn more about the provider itself, and the PayPal API.
 
-* [Payment provider source code](https://github.com/vendrhub/vendr-payment-provider-paypal)
-* [Payment provider issue tracker](https://github.com/vendrhub/vendr-payment-provider-paypal/issues)
+* [Payment provider source code](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Paypal)
+* [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Paypal/issues)
 * [PayPal checkout documentation](https://developer.paypal.com/docs/checkout/)

@@ -19,7 +19,7 @@ It is assumed that before we begin that you already have an Umbraco website conf
 
 As well as the content in these docs, here are a few useful links that might come in handy should you wish to learn more about the provider itself, and the Mollie API.
 
-* [Payment provider source code](https://github.com/vendrhub/vendr-payment-provider-mollie)
-* [Payment provider issue tracker](https://github.com/vendrhub/vendr-payment-provider-mollie/issues)
+* [Payment provider source code](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Mollie)
+* [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Mollie/issues)
 * [Mollie information](https://www.mollie.com)
 * [Mollie API documentation](https://docs.mollie.com/reference/v2/payments-api/overview)

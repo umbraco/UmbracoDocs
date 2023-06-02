@@ -18,7 +18,7 @@ It is assumed that before we begin that you already have an Umbraco website conf
 
 As well as the content in these docs, here are a few useful links that might come in handy should you wish to learn more about the provider itself, and the Nets Easy API.
 
-* [Payment provider source code](https://github.com/vendrcontrib/vendr-payment-provider-nets)
-* [Payment provider issue tracker](https://github.com/vendrcontrib/vendr-payment-provider-nets/issues)
+* [Payment provider source code](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Nets)
+* [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Nets/issues)
 * [Nets Easy documentation](https://developers.nets.eu/nets-easy/en-EU/docs/)
 * [Nets Easy API reference](https://developers.nets.eu/nets-easy/en-EU/api/)

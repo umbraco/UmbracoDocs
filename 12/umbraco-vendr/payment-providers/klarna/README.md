@@ -21,6 +21,6 @@ Please make sure you are signed up with the correct agreement.
 
 As well as the content in these docs, here are a few useful links that might come in handy should you wish to learn more about the provider itself, and the Klarna API.
 
-* [Payment provider source code](https://github.com/vendrhub/vendr-payment-provider-klarna)
-* [Payment provider issue tracker](https://github.com/vendrhub/vendr-payment-provider-klarna/issues)
+* [Payment provider source code](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Klarna)
+* [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Klarna/issues)
 * [Klarna developer documentation](https://developers.klarna.com/)
