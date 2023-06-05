@@ -28,7 +28,7 @@ These changes will dictate the steps to take in the process of migrating to Umbr
 | Vendr.Umbraco.Web           | Umbraco.Commerce.Cms.Web               |
 | Vendr.Web                   | Umbraco.Commerce.Web                   |
 | Vendr.Web.UI                | Umbraco.Commerce.Web.StaticAssets      |
-| Vendr.Umbraco.Startup       | Umbraco.Commerce.Startup               |
+| Vendr.Umbraco.Startup       | Umbraco.Commerce.Cms.Startup           |
 | Vendr                       | Umbraco.Commerce                       |
 
 <details>
