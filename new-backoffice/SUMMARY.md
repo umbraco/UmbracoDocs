@@ -34,4 +34,5 @@
 
 ## Tutorials
 
+* [Creating your first extension](tutorials/creating-your-first-extension.md)
 * [Creating a Custom Dashboard](tutorials/creating-a-custom-dashboard.md)
