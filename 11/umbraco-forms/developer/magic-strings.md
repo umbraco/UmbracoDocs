@@ -23,6 +23,8 @@ Some examples of variables that are normally available in `HttpContext.Request`:
 
 The variables are not case-sensitive.
 
+But you can use it for any available querystring variable in the url as well. If you url has the querystring "?email=foobar@umbraco.com" for example, you can get the value of the querystring into your field by using `[@email]`.
+
 ### Dictionary Items
 
 For multi-lingual websites, rather than hard-coding labels like form field captions, a dictionary key can be entered as, for example, `#MyKey`. When the form is rendered, the placeholder will be replaced by the value of the dictionary item identified by the key, according to the current language.
