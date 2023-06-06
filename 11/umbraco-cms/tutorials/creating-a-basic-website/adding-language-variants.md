@@ -50,7 +50,7 @@ To add culture and hostnames, follow these steps:
 
 You will find a language dropdown above your content tree. If it's not there, you might need to refresh the page:
 
-![Language of Content Tree](../../../../10/umbraco-cms/tutorials/creating-a-basic-website/images/language-content-tree.png)
+![Language of Content Tree](images/language-content-tree.png)
 
 In the language dropdown, you will find all the languages that you have installed for your site. You can switch between them to update the content variations for each language.
 
@@ -58,15 +58,15 @@ To add language variants to the content, follow these steps:
 
 1.  Go to the **Home Page** node. You will find a language dropdown next to the title at the top:
 
-    ![Language Variant dropdown](../../../../10/umbraco-cms/tutorials/creating-a-basic-website/images/language-dropdown.png)
+    ![Language Variant dropdown](images/language-dropdown.png)
 2.  Click the dropdown and hover over the new language. You will see an **Open in Splitview** option will appear.
 
-    ![Open Language in Splitview](../../../../10/umbraco-cms/tutorials/creating-a-basic-website/images/open-in-splitview.png)
+    ![Open Language in Splitview](images/open-in-splitview.png)
 3.  Click **Open in Splitview**. In this splitview, we can see the content node with each language side by side.
 
     You may notice that the bodytext is greyed out - this is because we haven't checked the **Allow vary by culture** checkbox.
 
-    ![Splitview editing](../../../../10/umbraco-cms/tutorials/creating-a-basic-website/images/splitview-editing.png)
+    ![Splitview editing](images/splitview-editing.png)
 4. Enter the **Name** for your content node and the **Page Title** in the new language.
 5.  Click **Save and Publish**. The **Ready to Publish** window opens providing the option to publish in one or more languages.
 

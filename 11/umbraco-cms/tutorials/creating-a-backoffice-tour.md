@@ -111,7 +111,7 @@ To find the first `element`, follow the steps below:
 
 3. Locate the `data-element` for the top navigation called `section-settings`.
 
-<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption><p>Finding the data-element for the first tour step</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>Finding the data-element for the first tour step</p></figcaption></figure>
 
 4. Note down the `data-element`.
 

@@ -20,7 +20,7 @@ Learn how to:
 1. Go to the _Home_ page in the Content section.
 2.  Navigate to the _Design_ group by scrolling down or selecting it from the dropdown menu.
 
-    ![Home page Design Group](../../../../../10/umbraco-cms/tutorials/starter-kit/lessons/images/design-group.png)
+    ![Home page Design Group](images/design-group.png)
 3. Choose a different font and color theme.
    * Try different combinations and see what fits your site.
    * Save a draft of your changes by using `ctrl`+`s` or clicking the **Save** button. **Save** will not publish the changes to the website.
@@ -36,7 +36,7 @@ Learn how to:
 
 To see the changes you've made go to the **Info** tab and click on the link.
 
-![Link to page](../../../../../10/umbraco-cms/tutorials/starter-kit/lessons/images/link-to-page.png)
+![Link to page](images/link-to-page.png)
 
 ## Summary
 

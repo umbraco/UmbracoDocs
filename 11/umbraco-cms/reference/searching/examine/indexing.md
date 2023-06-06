@@ -322,13 +322,11 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
     }
 }
 ```
+
 {% hint style="info" %}
 This is only an example of how you could do indexing. In this example, we're indexing all content, both published and unpublished.
 
-In certain scenarios only published content should be added to the index.
-To achieve that, you will need to implement your own logic to filter out unpublished content.
-This can be somewhat tricky as the published state can vary throughout an entire structure of content nodes in the content tree.
-For inspiration on how to go about such filtering, you can look at the [ContentIndexPopulator in Umbraco](https://github.com/umbraco/Umbraco-CMS/blob/c878567633a6a3354c1414ccd130c9be518b25f0/src/Umbraco.Infrastructure/Examine/ContentIndexPopulator.cs#L115).
+In certain scenarios only published content should be added to the index. To achieve that, you will need to implement your own logic to filter out unpublished content. This can be somewhat tricky as the published state can vary throughout an entire structure of content nodes in the content tree. For inspiration on how to go about such filtering, you can look at the [ContentIndexPopulator in Umbraco](https://github.com/umbraco/Umbraco-CMS/blob/c878567633a6a3354c1414ccd130c9be518b25f0/src/Umbraco.Infrastructure/Examine/ContentIndexPopulator.cs#L115).
 {% endhint %}
 
 ### ExamineComposer
@@ -364,9 +362,9 @@ The order of these registrations matters. It is important to register your index
 
 ### Result
 
-![Custom product index](images/examine-management-product-index.png)
+![Custom product index](../../../../../10/umbraco-cms/reference/searching/examine/images/examine-management-product-index.png)
 
-![Product document](images/examine-management-product-document.png)
+![Product document](../../../../../10/umbraco-cms/reference/searching/examine/images/examine-management-product-document.png)
 
 {% hint style="info" %}
 The index will only update its content when you manually trigger an index rebuild in the Examine dashboard. This is not always the desired behavior for a custom index.
