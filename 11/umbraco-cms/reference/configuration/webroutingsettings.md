@@ -28,7 +28,7 @@ An example of a web routing config with default values, and a placeholder for ap
 
 ## Using the webrouting options in code
 
-You can get the config values in code like thise:
+The following is an example of how you can use code to get the value for the `UmbracoApplicationUrl` configuration key:
 
 ```csharp
 using Microsoft.Extensions.Options;
