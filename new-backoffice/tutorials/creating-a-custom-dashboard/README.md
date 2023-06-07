@@ -4,7 +4,7 @@ description: A guide to creating a custom dashboard in Umbraco
 
 # Creating a Custom Dashboard
 
-{% hint style="warning" %}
+{% hint style="info" %}
 This page is a work in progress. It will be updated as the software evolves.
 {% endhint %}
 
@@ -16,7 +16,7 @@ This guide takes you through the steps to set up a Custom Dashboard in Umbraco.
 
 A Dashboard is a tab on the right-hand side of a section eg. the Getting Started dashboard in the Content section:
 
-![Welcome dashboard](<../../10/umbraco-cms/tutorials/images/whatisadashboard-v10 (1) (1).jpg>)
+![Welcome dashboard](<../../../10/umbraco-cms/tutorials/images/whatisadashboard-v10 (1) (1).jpg>)
 
 ### Why provide a Custom Dashboard for your editors?
 
@@ -49,7 +49,7 @@ For resources on Typescript or Lit, you can find some here:
 * [Typescript Docs](https://www.typescriptlang.org/docs/)
 * [Lit Docs](https://lit.dev/docs/)
 
-There are a lot of parallels with Creating a Property Editor. The tutorial '[Creating a Property Editor Tutorial](creating-a-property-editor/)' is worth a read too.
+There are a lot of parallels with Creating a Property Editor. The tutorial '[Creating a Property Editor Tutorial](../creating-a-property-editor/)' is worth a read too.
 
 ### The end result
 
@@ -86,7 +86,7 @@ Create a `umbraco-package.json` file at the root of the `WelcomeDashboard` folde
 }
 ```
 
-For more information about the `umbraco-package.json` file, read the article [Package Manifest](../extending/package-manifest/). You should also read the [Dashboards](../extending/dashboards.md) article for more information about dashboard configurations.
+For more information about the `umbraco-package.json` file, read the article [Package Manifest](../../extending/package-manifest/). You should also read the [Dashboards](../../extending/dashboards.md) article for more information about dashboard configurations.
 
 {% hint style="info" %}
 One caveat is that the umbraco-package.json file is loaded into memory when Umbraco starts up. If you are changing or adding new configurations you will need to start and stop your application for it to be loaded.
