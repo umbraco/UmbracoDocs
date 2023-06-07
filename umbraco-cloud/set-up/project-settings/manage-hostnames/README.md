@@ -45,10 +45,10 @@ Once you have updated your DNS, we recommend that you check if the correct recor
 Check with your DNS host or hostname registrar regarding configuration details for your Hostnames.
 
 {% hint style="warning" %}
-Adding an A-Record to the static IP is only recommended when setting up a CNAME record is not an option. The static IP is highly volatile towards changes to the Umbraco Cloud infrastructure and as such, it may change.
+Adding an A-Record to the static IP is only recommended when setting up a CNAME record is not an option. The static IP is highly volatile towards changes to the Umbraco Cloud infrastructure and as such, it may change.[https://www.youtube-nocookie.com/embed/iBGM0AKg3Fw](https://www.youtube-nocookie.com/embed/iBGM0AKg3Fw)
 {% endhint %}
 
-{% embed url="https://www.youtube-nocookie.com/embed/iBGM0AKg3Fw" %}
+{% embed url="https://youtu.be/iBGM0AKg3Fw" %}
 Adding hostname and configuring CDN and Cache
 {% endembed %}
 
