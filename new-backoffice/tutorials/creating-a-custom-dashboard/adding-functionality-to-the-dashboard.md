@@ -6,7 +6,7 @@ description: This page is a work in progress. It will be updated as the software
 
 ## Overview
 
-This is step 2 in our guide to building a Custom Dashboard. This step continues work on the dashboard we built in [step 1](./), but goes further to show how to add functionality and data to our dashboard.
+This is step 2 in our guide to building a Custom Dashboard. This step continues work on the dashboard we built in [step 1](../creating-a-custom-dashboard.md), but goes further to show how to add functionality and data to our dashboard.
 
 ## Resources and services
 

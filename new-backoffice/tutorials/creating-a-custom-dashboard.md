@@ -12,11 +12,17 @@ This page is a work in progress. It will be updated as the software evolves.
 
 This guide takes you through the steps to set up a Custom Dashboard in Umbraco.
 
+The steps we will go through in part 1 are:
+
+* [Setting up a plugin](creating-a-custom-dashboard.md#step-1-setting-up-a-plugin)
+* [Creating the dashboard web component](creating-a-custom-dashboard.md#step-2-creating-the-dashboard-web-component)
+* [Add language keys](creating-a-custom-dashboard.md#step-3-add-language-keys)
+
 ### What is a Dashboard?
 
 A Dashboard is a tab on the right-hand side of a section eg. the Getting Started dashboard in the Content section:
 
-![Welcome dashboard](<../../../10/umbraco-cms/tutorials/images/whatisadashboard-v10 (1) (1).jpg>)
+![Welcome dashboard](<../../10/umbraco-cms/tutorials/images/whatisadashboard-v10 (1) (1).jpg>)
 
 ### Why provide a Custom Dashboard for your editors?
 
@@ -42,24 +48,26 @@ Here's an overview of the steps that will be covered:
 
 ### Prerequisites
 
-This tutorial uses Typescript and Lit with Umbraco, so it does not cover Typescript or Lit. It is expected that your package is already set up to use Typescript and Lit. To read about setting up an extension in Umbraco using Typescript and Lit, please read the article [Creating your first extension](broken-reference).
+This tutorial uses Typescript and Lit with Umbraco, so it does not cover Typescript or Lit. It is expected that your package is already set up to use Typescript and Lit. To read about setting up an extension in Umbraco using Typescript and Lit, please read the article [Creating your first extension](creating-your-first-extension.md).
 
 For resources on Typescript or Lit, you can find some here:
 
 * [Typescript Docs](https://www.typescriptlang.org/docs/)
 * [Lit Docs](https://lit.dev/docs/)
 
-There are a lot of parallels with Creating a Property Editor. The tutorial '[Creating a Property Editor Tutorial](../creating-a-property-editor/)' is worth a read too.
+There are a lot of parallels with Creating a Property Editor. The tutorial '[Creating a Property Editor Tutorial](creating-a-property-editor/)' is worth a read too.
 
 ### The end result
 
 At the end of this guide, we should have a friendly welcoming dashboard displaying a list of the most recent site logs.
 
-## Setting up a plugin
+## Step 1: Setting up a plugin
 
-Let's call our project for `WelcomeDashboard`
+Assuming you have read the tutorial [Creating your first extension](creating-your-first-extension.md), you should have a folder named App\_Plugins in your project. Let's call our project WelcomeDashboard. Start by creating a folder in App\_Plugins called `WelcomeDashboard`.
 
-Create a `umbraco-package.json` file at the root of the `WelcomeDashboard` folder. Here we define and configure our dashboard. Add the following code:
+Now create the manifest file named `umbraco-package.json` at the root of the `WelcomeDashboard` folder. Here we define and configure our dashboard.
+
+Add the following code:
 
 ```json
 {
@@ -86,13 +94,13 @@ Create a `umbraco-package.json` file at the root of the `WelcomeDashboard` folde
 }
 ```
 
-For more information about the `umbraco-package.json` file, read the article [Package Manifest](../../extending/package-manifest/). You should also read the [Dashboards](../../extending/dashboards.md) article for more information about dashboard configurations.
+For more information about the `umbraco-package.json` file, read the article [Package Manifest](../extending/package-manifest/). You should also read the [Dashboards](../extending/dashboards.md) article for more information about dashboard configurations.
 
 {% hint style="info" %}
-One caveat is that the umbraco-package.json file is loaded into memory when Umbraco starts up. If you are changing or adding new configurations you will need to start and stop your application for it to be loaded.
+Please note that the umbraco-package.json file is loaded into memory when Umbraco starts up. If you are changing or adding new configurations you will need to start and stop your application for it to be loaded.
 {% endhint %}
 
-## Creating the Dashboard Web Component
+## Step 2: Creating the Dashboard Web Component
 
 Next, inside the `src` folder let's create a new ts file called `welcome-dashboard.element.ts`. This file is our web component and will contain all of our HTML, CSS, and logic.
 
@@ -131,10 +139,14 @@ declare global {
 
 You can now start up the backoffice and see our new dashboard in the Content section.
 
-### Add Language Keys
+## Step 3: Add Language Keys
 
 {% hint style="info" %}
 Localization is not yet available in the new Backoffice. This section will be updated when it is ready.
 {% endhint %}
 
-In the next session, we will look into how to add more functionality to the dashboard using some of the resources and services that the umbraco-cms offers.
+## Going Further
+
+With all of the steps completed, you should have a functional dashboard welcoming your users to the Backoffice.
+
+In the next session, we will look into how to add more functionality to the dashboard using some of the resources and services that Umbraco offers.

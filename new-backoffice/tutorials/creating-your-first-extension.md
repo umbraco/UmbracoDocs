@@ -1,6 +1,6 @@
 # Creating your first extension
 
-This guide will help you set up your first extension using vanilla Javascript or Vite, Typescript, and Lit and is part of the prerequisites for [Creating a Property Editor](broken-reference) and [Creating a Custom Dashboard](creating-a-custom-dashboard/) tutorials.
+This guide will help you set up your first extension using vanilla Javascript or Vite, Typescript, and Lit and is part of the prerequisites for [Creating a Property Editor](broken-reference) and [Creating a Custom Dashboard](creating-a-custom-dashboard.md) tutorials.
 
 ## The end result:
 
