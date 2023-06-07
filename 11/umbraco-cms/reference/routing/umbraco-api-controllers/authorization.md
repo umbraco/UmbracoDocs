@@ -20,7 +20,7 @@ To secure your controller based on backoffice membership use the attribute: `Mic
 
 This attribute will ensure that a valid backoffice user is logged in. It is important to know that this only works if the controller is routed to `/umbraco/backoffice/*`.
 
-**Examples:**
+**Example:**
 
 This will only allow a logged in backoffice user to access the GetAllProducts action:
 
@@ -39,6 +39,30 @@ public class ProductsController : UmbracoApiController
     }
 }
 ```
+
+The `AuthorizationPolicies` has [quite a few](https://github.com/umbraco/Umbraco-CMS/blob/contrib/src/Umbraco.Web.Common/Authorization/AuthorizationPolicies.cs) other options you can set. A example is `UserBelongsToUserGroupInRequest`. Using this policy you can check if the current incoming request of the user is in a specific backoffice usergroup.
+
+**Example:**
+
+This will only allow a logged in backoffice user that has access to the SensitiveData usergroup to access the GetAllProducts action:
+
+```csharp
+public class ProductsController : UmbracoApiController
+{
+    [Authorize(Policy = AuthorizationPolicies.UserBelongsToUserGroupInRequest, Roles = Security.SensitiveDataGroupAlias)]
+    public string GetProduct(int? id)
+    {
+        if (id is not null)
+        {
+            return $"Monitor model {id}";
+        }
+        return "Base model Monitor";
+    }
+}
+```
+
+## Adding policies.
+You can relativly easy add new policies .. // TODO
 
 ## Using MemberAuthorizeAttribute
 
