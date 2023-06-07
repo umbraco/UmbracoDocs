@@ -60,6 +60,9 @@ These updates are more minor.  We don't expect many projects to be affected by t
 * The obsolete overload on the `ViewHelper.RenderPartialViewToString` method was removed and the `FakeController` class used in this method was made private.
 * The obsolete `Build` method overload was removed in `FormViewModel`.
 * The obsolete constructor on `FormRenderingService` was removed.
+* The Forms API model classes and serialization customizations were moved from `Umbraco.Forms.Web` into `Umbraco.Forms.Core`.
+* The `ISupportFileUploads` interface was moved to `Umbraco.Forms.Core.Interfaces`.
+* Additional parameters were added to the constructors of `FormPickerPropertyValueConverter` and `FormDtoFactory`.
 
 </details>
 

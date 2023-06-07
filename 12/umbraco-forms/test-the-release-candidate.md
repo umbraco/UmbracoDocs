@@ -20,7 +20,7 @@ To get started working with the Umbraco Forms release candidate, follow the step
      ```
 2. Install/Update Umbraco Forms:
    * ```aspnet
-     dotnet add package Umbraco.Forms --version 12.0.0-rc2
+     dotnet add package Umbraco.Forms --version 12.0.0-rc3
      ```
 3. Build the project by running the `dotnet build` command in the project folder
 4. Run the project using the `dotnet run` command
