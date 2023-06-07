@@ -6,6 +6,8 @@ description: >-
 
 # Extending the Dashboard using Umbraco UI library
 
+## Overview
+
 The [Umbraco UI Library](broken-reference) is a set of web components that we can use to build Umbraco User Interfaces. It is already part of the Backoffice, so you can already start using it.
 
 Let's start by wrapping a uui-box around everything we render. This makes our dashboard the same style as the built-in dashboards of Umbraco.
@@ -82,6 +84,8 @@ Let's put the `item.level` into a `uui-tag` for a better visual effect
 And here are the results:
 
 <figure><img src="../../.gitbook/assets/uui-table-and-tag.png" alt=""><figcaption></figcaption></figure>
+
+Your dashboard component should now look like this:
 
 <details>
 
@@ -211,4 +215,4 @@ declare global {
 
 </details>
 
-And that's it! The `uui-table-row` also have a selectable property. We advise you to continue to experiment with different UUI elements from the library and build some awesome interfaces!&#x20;
+And that's it! The `uui-table-row` also have a selectable property. We advise you to continue to experiment with different UUI elements from the UI library to build awesome interfaces!&#x20;

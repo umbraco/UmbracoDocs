@@ -1,16 +1,21 @@
----
-description: This page is a work in progress. It will be updated as the software evolves.
----
-
 # Adding functionality to the Dashboard
+
+{% hint style="info" %}
+This page is a work in progress. It will be updated as the software evolves.
+{% endhint %}
 
 ## Overview
 
 This is step 2 in our guide to building a Custom Dashboard. This step continues work on the dashboard we built in [step 1](../creating-a-custom-dashboard.md), but goes further to show how to add functionality and data to our dashboard.
 
-## Resources and services
+The steps we will go through in part 2 are:
 
-Umbraco has a fine selection of resources and services that you can use in your custom property editors and dashboards. For this example, it would be nice to welcome the editor by name. To achieve this we can make use of the umbraco-cms resources.
+1. [Resources and services](adding-functionality-to-the-dashboard.md#1.-resources-and-services)
+2. [Getting data from the server](adding-functionality-to-the-dashboard.md#2.-getting-data-from-the-server)
+
+## Step 1: Resources and services
+
+Umbraco has a fine selection of resources and services that you can use in your custom property editors and dashboards. For this example, it would be nice to welcome the editor by name. To achieve this we can make use of the Umbraco resources.
 
 To get the current user, we need to get the current user store. We get the store by consuming the corresponding context token.
 
@@ -172,7 +177,7 @@ declare global {
 
 </details>
 
-## Getting data from the server
+## Step 2: Getting data from the server
 
 Let's dive deeper into some new resources and see what we can do with them.
 
@@ -277,6 +282,8 @@ static styles = [
 We now have something that looks like this!
 
 <figure><img src="../../.gitbook/assets/dashboard-logviewer.png" alt=""><figcaption></figcaption></figure>
+
+Your dashboard component should now look like this:
 
 <details>
 
