@@ -44,6 +44,10 @@ The following example adds a cache-control header with 'no-cache' as the value w
 The webpage itself is not cached when CDN Caching is enabled.
 {% endhint %}
 
+{% hint style="info" %}
+Everything under the path /umbraco, is not being cached
+{% endhint %}
+
 ## Cache Everything
 
 ![Cache Everything](../images/CDN-caching-everything.png)
@@ -76,6 +80,10 @@ In the Purge Cache section, you can see how many Purge requests you have availab
 
 {% hint style="info" %}
 The available number of Purge requests varies depending on your Cloud Plan. For more information, see the [Plan specific features](manage-cdn-caching.md#plan-specific-features).
+{% endhint %}
+
+{% hint style="info" %}
+Everything under the path /umbraco is not being cached. Even 
 {% endhint %}
 
 ## Plan specific features
