@@ -5,6 +5,10 @@
 * [Release notes](release-notes.md)
 * [Extending](extending.md)
 
+## Getting Started
+
+* [Setting up Umbraco Deploy](getting-started/install-configure.md)
+
 ## Upgrading
 
 * [Version Specific Upgrade Details](upgrades/version-specific.md)
