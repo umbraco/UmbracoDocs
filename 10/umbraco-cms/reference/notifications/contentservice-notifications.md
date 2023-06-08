@@ -39,6 +39,8 @@ namespace Umbraco.Docs.Samples.Web.Notifications
 }
 ```
 
+The handler will also need to be registered, see https://docs.umbraco.com/umbraco-cms/reference/notifications#registering-notification-handlers 
+
 ## Notifications
 
 <table>
