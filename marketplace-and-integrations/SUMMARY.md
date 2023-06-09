@@ -33,3 +33,7 @@
 * [Shopify](integrations/shopify.md)
 * [Zapier](integrations/zapier.md)
 * [Zapier with Umbraco Forms](integrations/zapier-with-umbraco-forms.md)
+
+## Packages
+
+* [Authorized Services](packages/authorized-services.md)

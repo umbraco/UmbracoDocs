@@ -8,6 +8,10 @@ description: >-
 
 Within this Umbraco DXP (Digital Experience Platform) area of the Umbraco documentation, you'll find topics related to extending Umbraco CMS via packages and integrations.
 
+Umbraco is used in solutions in both a "platform" and "composable" DXP context. With the former, Umbraco has responsibility for both content management and delivery, with extensions added as NuGet packages. In a composable DXP, Umbraco is often part of an overall architecture, focussed on management of content exposed via APIs for delivery. In both situations, backoffice integrations are an important part of providing an intuitive, unified editor experience.
+
+Our aim is to enhance the "platform DXP", support the CMS in a "composable DXP", and make it simpler to build integrations with Umbraco.
+
 ## Umbraco Commercial Products
 
 Umbraco makes available three licensed add-ons that are available for purchase. They each have their dedicated documentation area:
@@ -36,3 +40,10 @@ Source code and issue trackers are found in the following GitHub repositories:
 * [Umbraco Forms Integrations](https://github.com/umbraco/Umbraco.Forms.Integrations/)
 
 Within the [Integrations section of the documentation](integrations/categories.md), you'll find details on installing and working with the integration packages developed by Umbraco HQ.
+
+## Umbraco Packages
+
+Finally, we create and support open-source packages designed to improve the experience of creating integrations and developing Umbraco solutions as a DXP.
+
+Within the packages section of the documentation you'll find information on using a component called [Authorized Services](packages/authorized-services.md). This package is designed for the purpose of simplifying custom integrations with third-party services that use a OAuth flow for authentication and authorization.
+
