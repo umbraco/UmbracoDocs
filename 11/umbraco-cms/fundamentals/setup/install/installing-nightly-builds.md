@@ -84,10 +84,10 @@ Now that the correct feed is selected we're almost ready to search for the packa
 
 Now that our feed is added and we know the exact version we're ready to install our template.
 
-Open up your command prompt of choice and execute the `dotnet new -i` command using the latest, version, at the time of writing the latest preview build is `9.4.0-preview20220228.85007` so to install the newest nightly build I'd have to execute:
+Open up your command prompt of choice and execute the `dotnet new install` command using the latest, version, at the time of writing the latest preview build is `9.4.0-preview20220228.85007` so to install the newest nightly build I'd have to execute:
 
 ```
-dotnet new -i Umbraco.Templates::9.4.0-preview20220228.85007
+dotnet new install Umbraco.Templates::9.4.0-preview20220228.85007
 ```
 
 The name and the versions are separated with two colons `::`, it's important that we specify the entire version including the `-preview20220228.85007`, otherwise the dotnet new command cannot find the package.
