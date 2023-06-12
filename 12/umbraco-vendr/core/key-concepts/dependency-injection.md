@@ -118,7 +118,7 @@ public static class UmbracoBuilderExtensions
 As well as registering dependencies, you will also need to know how to access Umbraco Commerce dependencies from within your Controllers. To do this, we add parameters to our Controllers constructor for the dependencies we require. Then, the IoC container will inject them automatically for us.
 
 ```csharp
-using Vendr.Core.Api;
+using Umbraco.Commerce.Core.Api;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ViewEngines;
 using Microsoft.Extensions.Logging;

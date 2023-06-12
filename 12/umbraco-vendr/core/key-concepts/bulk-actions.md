@@ -18,7 +18,7 @@ To create a configuration module you can create a custom folder in the `App_Plug
 2. Create a JavaScript file with this new folder.
 
 ```bash
-App_Plugins\MyPlugin\backoffice\config\vendr-bulk-actions-config.js
+App_Plugins\MyPlugin\backoffice\config\umbraco-commerce-bulk-actions-config.js
 ```
 
 3. Register the file in a `package.manifest` file within the same folder.
@@ -32,17 +32,17 @@ App_Plugins\MyPlugin\package.manifest
 ```javascript
 {
     "javascript": [
-        "~/App_Plugins/MyPlugin/backoffice/config/vendr-bulk-actions-config.js"
+        "~/App_Plugins/MyPlugin/backoffice/config/umbraco-commerce-bulk-actions-config.js"
     ]
 }
 ```
 
-5. Inject a bulk action inside the `vendr-bulk-actions-config.js` by adding the following:
+5. Inject a bulk action inside the `umbraco-commerce-bulk-actions-config.js` by adding the following:
 
 ```csharp
-angular.module('vendr')
-    .config(['vendrActionsProvider', function (vendrActionsProvider) {
-        vendrActionsProvider.bulkActions.push(['myResource', function (myResource)
+angular.module('umbracoCommerce')
+    .config(['umbracoCommerceActionsProvider', function (umbracoCommerceActionsProvider) {
+        umbracoCommerceActionsProvider.bulkActions.push(['myResource', function (myResource)
         {
             return {
                 name: 'My Action',
@@ -95,9 +95,9 @@ Only an `itemAction` or a `bulkAction` method can be defined for a bulk action c
 The following section display an example of a bulk action with dialog configuration step:
 
 ```csharp
-angular.module('vendr')
-    .config(['vendrActionsProvider', function (vendrActionsProvider) {
-        vendrActionsProvider.bulkActions.push(['$q', 'editorService', 'myResource', function ($q, editorService, myResource)
+angular.module('umbracoCommerce')
+    .config(['umbracoCommerceActionsProvider', function (umbracoCommerceActionsProvider) {
+        umbracoCommerceActionsProvider.bulkActions.push(['$q', 'editorService', 'myResource', function ($q, editorService, myResource)
         {
             return {
                 name: 'My Action',

@@ -71,9 +71,9 @@ public abstract class PriceAdjustment<TSelf>
 Once defined, the adjuster should be registered with the DI container to enable Umbraco Commerce to be aware of it and include it in the calculation process.
 
 ```csharp
-public static class VendrBuilderExtensions
+public static class UmbracoCommerceUmbracoBuilderExtensions
 {
-    public static IVendrBuilder AddMyServices(IVendrBuilder builder)
+    public static IUmbracoCommerceBuilder AddMyServices(IUmbracoCommerceBuilder builder)
     {
         // Register the price adjuster
         builder.WithPriceAdjusters()

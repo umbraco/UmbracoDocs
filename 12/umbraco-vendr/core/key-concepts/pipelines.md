@@ -39,12 +39,12 @@ All pipelines occur within a [Unit of Work](unit-of-work.md). In case a Pipeline
 
 ## Registering a Pipeline task
 
-Pipeline tasks are [registered via the IVendrBuilder](vendr-builder.md) interface using the appropriate `With{PipelineName}Pipeline()` builder extension method. This is done to identify the pipeline you want to extend. You can then call the `Append<TTask>()` method to append your task to the end of that pipeline.
+Pipeline tasks are [registered via the IUmbracoCommerceBuilder](vendr-builder.md) interface using the appropriate `With{PipelineName}Pipeline()` builder extension method. This is done to identify the pipeline you want to extend. You can then call the `Append<TTask>()` method to append your task to the end of that pipeline.
 
 ```csharp
-public static class VendrBuilderExtensions
+public static class UmbracoCommerceUmbracoBuilderExtensions
 {
-    public static IVendrBuilder AddMyPipelineTasks(IVendrBuilder builder)
+    public static IUmbracoCommerceBuilder AddMyPipelineTasks(IUmbracoCommerceBuilder builder)
     {
         // Add our custom pipeline tasks
         builder.WithSendEmailPipeline()
@@ -59,9 +59,9 @@ public static class VendrBuilderExtensions
 You can also control the order of when Pipeline tasks run, before or after another task, by appending them via the `InsertBefore<TTask>()` or `InsertAfter<TTask>()` methods respectively.
 
 ```csharp
-public static class VendrBuilderExtensions
+public static class UmbracoCommerceUmbracoBuilderExtensions
 {
-    public static IVendrBuilder AddMyPipelineTasks(IVendrBuilder builder)
+    public static IUmbracoCommerceBuilder AddMyPipelineTasks(IUmbracoCommerceBuilder builder)
     {
         // Register AddCustomAttachmentTask to execute before the SendSmtpEmail handler
         builder.WithSendEmailPipeline()

@@ -23,9 +23,9 @@ Out of the box, Umbraco Commerce comes with a number of available services you c
 If you wish to change the currency exchange rate service used, you can do so via the [dependency injection](../dependency-injection/) approach. This is used to override the default service configuration. For services that require configuration to be passed in, such as service API keys, you'll need to use the factory-based override as follows:
 
 ```csharp
-public static class VendrBuilderExtensions
+public static class UmbracoCommerceUmbracoBuilderExtensions
 {
-    public static IVendrBuilder AddMyServices(IVendrBuilder builder)
+    public static IUmbracoCommerceBuilder AddMyServices(IUmbracoCommerceBuilder builder)
     {
         // Register the fixer tax service with your API key
         builder.Services.AddUnique<ICurrencyExchangeRateService>(new FixerCurrencyExchangeRateService("YOUR_FIXER_API_KEY"));

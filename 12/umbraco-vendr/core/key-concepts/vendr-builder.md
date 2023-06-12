@@ -4,7 +4,7 @@ description: Learn more about the different options for configured Umbraco Comme
 
 # Umbraco Commerce Builder
 
-When it comes to configuring and extending Umbraco Commerce, such as by registering your own event handlers, we achieve this with the `IVendrBuilder` interface that can be accessed via a delegate function passed into the `AddVendr()` extension method called on the `IUmbracoBuilder` interface when explicitly registering Umbraco Commerce.
+When it comes to configuring and extending Umbraco Commerce, such as by registering your own event handlers, we achieve this with the `IUmbracoCommerceBuilder` interface that can be accessed via a delegate function passed into the `AddVendr()` extension method called on the `IUmbracoBuilder` interface when explicitly registering Umbraco Commerce.
 
 ```csharp
 public class Startup
@@ -28,7 +28,7 @@ public class Startup
 
 ## Registering Dependencies
 
-The `IVendrBuilder` interface gives you access to the current `IServiceCollection` and `IConfiguration` to allow you to register dependencies like you would with the [`IUmbracoBuilder` interface](dependency-injection.md#registering-dependencies) but its primary use case would be to access Umbraco Commerce's own collection builders, such as for registering validation or notification events, and any other Umbraco Commerce-specific configuration APIs.
+The `IUmbracoCommerceBuilder` interface gives you access to the current `IServiceCollection` and `IConfiguration` to allow you to register dependencies like you would with the [`IUmbracoBuilder` interface](dependency-injection.md#registering-dependencies) but its primary use case would be to access Umbraco Commerce's own collection builders, such as for registering validation or notification events, and any other Umbraco Commerce-specific configuration APIs.
 
 ```csharp
 ...
@@ -45,9 +45,9 @@ The `IVendrBuilder` interface gives you access to the current `IServiceCollectio
 As per the [Dependency Injection docs](dependency-injection.md), whilst you can register your dependencies directly within this configuration delegate, you may prefer to group your dependencies registration code into an extension method.
 
 ```csharp
-public static class VendrBuilderExtensions
+public static class UmbracoCommerceUmbracoBuilderExtensions
 {
-    public static IVendrBuilder AddMyDependencies(this IVendrBuilder builder)
+    public static IUmbracoCommerceBuilder AddMyDependencies(this IUmbracoCommerceBuilder builder)
     {
         // Register my dependencies here via the builder parameter
         ...

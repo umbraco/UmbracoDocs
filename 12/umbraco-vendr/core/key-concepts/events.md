@@ -6,7 +6,7 @@ description: Listening for changes within Umbraco Commerce.
 
 Much like the standard events in .NET, Umbraco Commerce has an events system to notify you when certain things happen within the application. However, Umbraco Commerce differs slightly in the types of events that are fired and how you register your event handlers.
 
-Events in Umbraco Commerce are registered via the [`IVendrBuilder`](vendr-builder.md) interface, rather than via static event delegates. This has a number of advantages, such as being able to control the order of when event handlers are fired. It also allows us to inject dependencies into the event handlers making it a much more decoupled approach to eventing.
+Events in Umbraco Commerce are registered via the [`IUmbracoCommerceBuilder`](vendr-builder.md) interface, rather than via static event delegates. This has a number of advantages, such as being able to control the order of when event handlers are fired. It also allows us to inject dependencies into the event handlers making it a much more decoupled approach to eventing.
 
 In Umbraco Commerce, there are two main types of events you can create handlers for. Both are explained in detail below.
 
@@ -34,12 +34,12 @@ All Validation event handlers inherit from a base class `ValidationEventHandlerB
 
 ### Registering a Validation event handler
 
-Validation event handlers are [registered via the IVendrBuilder](vendr-builder.md) interface using the `WithValidationEvent<TEvent>()` builder extension method. This is done to identify the event you want to handle and then call the `RegisterHandler<THandler>()` method to register your handler(s) for that event.
+Validation event handlers are [registered via the IUmbracoCommerceBuilder](vendr-builder.md) interface using the `WithValidationEvent<TEvent>()` builder extension method. This is done to identify the event you want to handle and then call the `RegisterHandler<THandler>()` method to register your handler(s) for that event.
 
 ```csharp
-public static class VendrBuilderExtensions
+public static class UmbracoCommerceUmbracoBuilderExtensions
 {
-    public static IVendrBuilder AddMyEventHandlers(IVendrBuilder builder)
+    public static IUmbracoCommerceBuilder AddMyEventHandlers(IUmbracoCommerceBuilder builder)
     {
         // Register my event handlers
         builder.WithValidationEvent<ValidateOrderProductAdd>()
@@ -54,9 +54,9 @@ public static class VendrBuilderExtensions
 You can control the order of when Validation event handlers run, before or after another Validation event handler. This is done by registering them via the `RegisterHandlerBefore<THandler>()` or `RegisterHandlerAfter<THandler>()` methods respectively.
 
 ```csharp
-public static class VendrBuilderExtensions
+public static class UmbracoCommerceUmbracoBuilderExtensions
 {
-    public static IVendrBuilder AddMyEventHandlers(IVendrBuilder builder)
+    public static IUmbracoCommerceBuilder AddMyEventHandlers(IUmbracoCommerceBuilder builder)
     {
         // Register MyOrderProductAddValidationHandler to execute before the SomeOtherValidationHandler handler
         builder.WithValidationEvent<ValidateOrderProductAdd>()
@@ -97,12 +97,12 @@ All Notification event handlers inherit from a base class `NotificationEventHand
 
 ### Registering a Notification event handler
 
-Notification event handlers are [registered via the IVendrBuilder](vendr-builder.md) interface using the `WithNotificationEvent<TEvent>()` builder extension method. This is used to identify the event you want to handle and then call the `RegisterHandler<THandler>()` method to register your handler(s) for that event.
+Notification event handlers are [registered via the IUmbracoCommerceBuilder](vendr-builder.md) interface using the `WithNotificationEvent<TEvent>()` builder extension method. This is used to identify the event you want to handle and then call the `RegisterHandler<THandler>()` method to register your handler(s) for that event.
 
 ```csharp
-public static class VendrBuilderExtensions
+public static class UmbracoCommerceUmbracoBuilderExtensions
 {
-    public static IVendrBuilder AddMyEventHandlers(IVendrBuilder builder)
+    public static IUmbracoCommerceBuilder AddMyEventHandlers(IUmbracoCommerceBuilder builder)
     {
         // Register my event handlers
         builder.WithNotificationEvent<OrderFinalizedNotification>()
@@ -117,9 +117,9 @@ public static class VendrBuilderExtensions
 You can also control the order of when Notification event handlers run by registering them via the `RegisterHandlerBefore<THandler>()` or `RegisterHandlerAfter<THandler>()` methods respectively.
 
 ```csharp
-public static class VendrBuilderExtensions
+public static class UmbracoCommerceUmbracoBuilderExtensions
 {
-    public static IVendrBuilder AddMyEventHandlers(IVendrBuilder builder)
+    public static IUmbracoCommerceBuilder AddMyEventHandlers(IUmbracoCommerceBuilder builder)
     {
         // Register MyOrderFinalizedHandler to execute before the SomeOtherNotificationHandler handler
         builder.WithNotificationEvent<OrderFinalizedNotification>()
