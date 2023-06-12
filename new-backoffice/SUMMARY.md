@@ -6,9 +6,15 @@
 
 ## Getting Started
 
-* [Extending the backoffice](getting-started/extending-the-backoffice.md)
-* [Prerequisites](getting-started/prerequisites.md)
-* [Alpha Release](getting-started/alpha-release.md)
+* [Getting Started With The New Backoffice](getting-started/getting-started-with-the-new-backoffice/README.md)
+  * [Prereleases](getting-started/getting-started-with-the-new-backoffice/alpha-release.md)
+
+## Fundamentals
+
+* [Setup](fundamentals/setup/README.md)
+  * [Requirements](fundamentals/setup/alpha-release.md)
+  * [Installation](fundamentals/setup/installation/README.md)
+    * [Installing Preview Builds](fundamentals/setup/installation/installing-preview-builds.md)
 
 ## Extending
 
