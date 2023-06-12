@@ -20,7 +20,7 @@ Out of the box, Umbraco Commerce comes with a number of available services you c
 * **FixerCurrencyExchangeRateService** uses the [fixer.io](https://fixer.io/) API which is a reliable paid option (with a reasonable free plan).
 * **CurrencyLayerCurrencyExchangeRateService** uses the [currencylayer.com](https://currencylayer.com/) API which is another reliable paid option (with a reasonable free plan).
 
-If you wish to change the currency exchange rate service used, you can do so via the [dependency injection](../dependency-injection/) approach. This is used to override the default service configuration. For services that require configuration to be passed in, such as service API keys, you'll need to use the factory-based override as follows:
+If you wish to change the currency exchange rate service used, you can do so via the [dependency injection](dependency-injection.md) approach. This is used to override the default service configuration. For services that require configuration to be passed in, such as service API keys, you'll need to use the factory-based override as follows:
 
 ```csharp
 public static class UmbracoCommerceUmbracoBuilderExtensions

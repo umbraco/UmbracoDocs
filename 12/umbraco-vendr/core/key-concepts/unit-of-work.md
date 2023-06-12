@@ -6,7 +6,7 @@ description: Transactional updates using the Unit of Work pattern in Umbraco Com
 
 ## Unit of Work
 
-When working with Umbraco Commerce's API it is important that data integrity is maintained should any errors occur. In order to achieve this Umbraco Commerce uses the [Unit of Work pattern](https://www.martinfowler.com/eaaCatalog/unitOfWork.html) to effectively create a transaction that wraps around sections of your code ensuring that all Umbraco Commerce write operations that occur within that code block must succeed and be persisted in their entirety, otherwise none of them should, and the database should rollback to its state prior to when those changes were made.
+When working with Umbraco Commerce's API it is important that data integrity is maintained should any errors occur. In order to achieve this Umbraco Commerce uses the [Unit of Work pattern](https://www.martinfowler.com/eaaCatalog/unitOfWork.html) to effectively create a transaction that wraps around sections of your code ensuring that all Umbraco Commerce write operations that occur within that code block must succeed and be persisted in their entirety, otherwise, none of them should, and the database should rollback to its state prior to when those changes were made.
 
 ### Creating a Unit of Work
 

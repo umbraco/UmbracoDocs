@@ -1,8 +1,8 @@
 ---
 title: Umbraco Commerce Documentation
 description: >-
-  Browse the Umbraco Commerce documentation to learn more about the addon and how
-  to use it.
+  Browse the Umbraco Commerce documentation to learn more about the addon and
+  how to use it.
 ---
 
 # What is Umbraco Commerce?
@@ -19,10 +19,6 @@ Umbraco Commerce is the official Umbraco e-commerce addon for your Umbraco CMS w
 
 {% content-ref url="reference/go-behind-the-scenes.md" %}
 [go-behind-the-scenes.md](reference/go-behind-the-scenes.md)
-{% endcontent-ref %}
-
-{% content-ref url="changelog.md" %}
-[changelog.md](changelog.md)
 {% endcontent-ref %}
 
 {% hint style="info" %}

@@ -28,7 +28,6 @@
 * [Bulk Actions](key-concepts/bulk-actions.md)
 * [Calculators](key-concepts/calculators.md)
 * [Dependency Injection](key-concepts/dependency-injection.md)
-* [Dictionary Inputs](key-concepts/dictionary-inputs.md)
 * [Discount Rules / Rewards](key-concepts/discount-rules-and-rewards.md)
 * [Events](key-concepts/events.md)
 * [Fluent API](key-concepts/fluent-api.md)
