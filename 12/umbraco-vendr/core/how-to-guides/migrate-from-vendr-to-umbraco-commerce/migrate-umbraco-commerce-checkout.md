@@ -4,7 +4,7 @@ description: >-
   Commerce.
 ---
 
-# Migrate Vendr Checkout
+# Migrate Umbraco Commerce Checkout
 
 Throughout the following steps, we will migrate the Checkout package from Vendr to Umbraco Commerce.
 

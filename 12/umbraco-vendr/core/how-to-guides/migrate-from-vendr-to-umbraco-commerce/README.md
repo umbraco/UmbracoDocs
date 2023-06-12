@@ -37,7 +37,7 @@ These changes will dictate the steps to take in the process of migrating to Umbr
 
 * Namespace changes as documented above.
 * All classes containing the `Vendr` keyword are now updated to `UmbracoCommerce`.
-  * Examples: `IVendrApi` is now `IUmbracoCommerceApi` and `AddVendr()` is now `AddUmbracoCommerce()`.
+  * Examples: `IUmbracoCommerceApi` is now `IUmbracoCommerceApi` and `AddVendr()` is now `AddUmbracoCommerce()`.
 
 </details>
 

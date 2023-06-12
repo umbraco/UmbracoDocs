@@ -129,18 +129,18 @@ namespace MyProject.Web.Controllers
 {
     public class HomeController : RenderController
     {
-        private readonly IVendrApi _vendrApi;
+        private readonly IUmbracoCommerceApi _umbracoCommerceApi;
 
-        public HomeController(IVendrApi vendrApi, ILogger<HomeController> logger, 
+        public HomeController(IUmbracoCommerceApi umbracoCommerceApi, ILogger<HomeController> logger, 
             ICompositeViewEngine compositeViewEngine, IUmbracoContextAccessor umbracoContextAccessor)
             : base(logger, compositeViewEngine, umbracoContextAccessor)
         {
-            _vendrApi = vendrApi;
+            _umbracoCommerceApi = umbracoCommerceApi;
         }
 
         public  override IActionResult Index()
         {
-            // Work with the _vendrApi here
+            // Work with the _umbracoCommerceApi here
 
             return CurrentTemplate(CurrentPage);
         }

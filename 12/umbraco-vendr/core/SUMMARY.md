@@ -14,12 +14,12 @@
 ## How-To Guides
 
 * [Overview](how-to-guides/overview.md)
-* [Migrate from Umbraco Commerce  to Umbraco Commerce](how-to-guides/migrate-from-Umbraco Commerce -to-umbraco-commerce/README.md)
-  * [Migrate Umbraco Commerce Checkout](how-to-guides/migrate-from-Umbraco Commerce -to-umbraco-commerce/migrate-umbraco-commerce-checkout.md)
-  * [Migrate custom Payment Providers](how-to-guides/migrate-from-Umbraco Commerce -to-umbraco-commerce/migrate-custom-payment-providers.md)
+* [Migrate from Vendr to Umbraco Commerce](how-to-guides/migrate-from-vendr-to-umbraco-commerce/README.md)
+  * [Migrate Umbraco Commerce Checkout](how-to-guides/migrate-from-vendr-to-umbraco-commerce/migrate-umbraco-commerce-checkout.md)
+  * [Migrate custom Payment Providers](how-to-guides/migrate-from-vendr-to-umbraco-commerce/migrate-custom-payment-providers.md)
 * [Configure SQLite support](how-to-guides/configure-sqlite-support.md)
 * [Limit Order Line Quantity](how-to-guides/limit-orderline-quantity.md)
-* [Use an Alternative Database for Umbraco Commerce  Tables](how-to-guides/use-an-alternative-database-for-vendr-tables.md)
+* [Use an Alternative Database for Umbraco Commerce Tables](how-to-guides/use-an-alternative-database-for-vendr-tables.md)
 
 ## Key Concepts
 
