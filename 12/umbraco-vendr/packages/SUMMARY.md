@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Packages for Umbraco Vendr](README.md)
+* [Packages for Umbraco Commerce](README.md)
 
 ## Checkout
 

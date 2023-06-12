@@ -1,12 +1,12 @@
 ---
 description: >-
-  Learn more about the advantages of using the Vendr Deploy package with Umbraco
-  Vendr.
+  Learn more about the advantages of using the Umbraco Commerce Deploy package with Umbraco
+  Commerce.
 ---
 
 # Deploying Changes
 
-After installing Vendr Deploy, it will automatically serialize any changes made in the Vendr settings section to disk. They will be added to the `data\revision` folder alongside Umbraco's own serialized content.
+After installing Umbraco Commerce Deploy, it will automatically serialize any changes made in the Umbraco Commerce settings section to disk. They will be added to the `data\revision` folder alongside Umbraco's own serialized content.
 
 These files should be committed to your repository. Umbraco Deploy will then monitor these files and automatically deploy changes between environments for you.
 

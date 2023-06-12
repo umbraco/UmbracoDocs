@@ -1,20 +1,20 @@
 ---
 description: >-
   Take a closer look at how the default checkout flow looks when installing the
-  Checkout package for Umbraco Vendr.
+  Checkout package for Umbraco Commerce.
 ---
 
 # Checkout Screenshots
 
-Check out the screenshots below to see what you get with Vendr Checkout straight out of the box.
+Check out the screenshots below to see what you get with Umbraco Commerce Checkout straight out of the box.
 
 <div align="left">
 
-<img src="../media/checkout/checkout_configuration.png" alt="Vendr Checkout Settings" width="375">
+<img src="../media/checkout/checkout_configuration.png" alt="Umbraco Commerce Checkout Settings" width="375">
 
  
 
-<figure><img src="../.gitbook/assets/002 (2).png" alt="" width="375"><figcaption><p>Vendr Checkout Customer Details</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/002 (2).png" alt="" width="375"><figcaption><p>Umbraco Commerce Checkout Customer Details</p></figcaption></figure>
 
 </div>
 
@@ -40,6 +40,6 @@ Check out the screenshots below to see what you get with Vendr Checkout straight
 
 <div align="left">
 
-<img src="../media/checkout/007.png" alt="Vendr Checkout Order Email" width="375">
+<img src="../media/checkout/007.png" alt="Umbraco Commerce Checkout Order Email" width="375">
 
 </div>

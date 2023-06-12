@@ -1,23 +1,23 @@
 ---
-description: This is the documentation for the Checkout package for Umbraco Vendr.
+description: This is the documentation for the Checkout package for Umbraco Commerce.
 ---
 
 # Overview
 
-Vendr Checkout is a free and open-source add-on package for Umbraco Vendr. It provides a no-code solution for creating an instant checkout flow in your Vendr stores.
+Umbraco Commerce Checkout is a free and open-source add-on package for Umbraco Commerce. It provides a no-code solution for creating an instant checkout flow in your Umbraco Commerce stores.
 
-Vendr Checkout allows you to set up your checkout flow with minimal configuration.
+Umbraco Commerce Checkout allows you to set up your checkout flow with minimal configuration.
 
 ![A look at how the default Checkout flow appear on the frontend.](../.gitbook/assets/002.png)
 
-In this section, we will guide you through the key steps necessary to get you started with the Checkout package for Vendr.
+In this section, we will guide you through the key steps necessary to get you started with the Checkout package for Umbraco Commerce.
 
-It is assumed that before we begin that you already have an Umbraco website configured and Umbraco Vendr installed and a store set up. If you are not at this stage yet, please read the [core Vendr documentation](http://localhost:5000/o/vHdmkfI8smZW50A5yIZD/s/s0xvC9Moj5Pqo3KonmTs/) to learn how to get started.
+It is assumed that before we begin that you already have an Umbraco website configured and Umbraco Commerce installed and a store set up. If you are not at this stage yet, please read the [core Umbraco Commerce documentation](http://localhost:5000/o/vHdmkfI8smZW50A5yIZD/s/s0xvC9Moj5Pqo3KonmTs/) to learn how to get started.
 
 ## Useful links
 
-As well as the content in these docs, here are a few useful links to learn more about the Vendr Checkout package itself.
+As well as the content in these docs, here are a few useful links to learn more about the Umbraco Commerce Checkout package itself.
 
-* [Vendr Checkout source code](https://github.com/umbraco/Umbraco.Commerce.Packages.Checkout)
-* [Vendr Checkout issue tracker](https://github.com/umbraco/Umbraco.Commerce.Packages.Checkout/issues)
-* [Vendr Checkout Our Umbraco page](https://our.umbraco.com/packages/backoffice-extensions/vendr-checkout/)
+* [Umbraco Commerce Checkout source code](https://github.com/umbraco/Umbraco.Commerce.Packages.Checkout)
+* [Umbraco Commerce Checkout issue tracker](https://github.com/umbraco/Umbraco.Commerce.Packages.Checkout/issues)
+* [Umbraco Commerce Checkout Our Umbraco page](https://our.umbraco.com/packages/backoffice-extensions/Umbraco Commerce-checkout/)

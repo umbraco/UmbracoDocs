@@ -1,7 +1,7 @@
 ---
 description: >-
   Detailed instructions on how to install and configure Checkout into your
-  Umbraco Vendr implementation.
+  Umbraco Commerce implementation.
 ---
 
 # Installation
@@ -10,15 +10,15 @@ The Checkout package can be installed directly into your project's code base usi
 
 ## NuGet Package Installation
 
-To install the Vendr Checkout package via NuGet run the following command directly in the NuGet Manager Console window in Visual Studio:
+To install the Umbraco Commerce Checkout package via NuGet run the following command directly in the NuGet Manager Console window in Visual Studio:
 
 ```bash
-PM> Install-Package Vendr.Checkout
+PM> Install-Package Umbraco.Commerce.Checkout
 ```
 
 Alternatively, you can also find and install the NuGet package via the NuGet Package Manager.
 
-![Installing Vendr Checkout via the NuGet Package Manager](../media/checkout/nuget\_package.png)
+![Installing Umbraco Commerce Checkout via the NuGet Package Manager](../media/checkout/nuget\_package.png)
 
 ## Content Installation
 
@@ -33,17 +33,17 @@ To install the relevant Checkout content follow these steps:
 ![The Checkout Dashboard in the Settings section of the Umbraco backoffice.](../media/checkout/install\_dashboard.png)
 
 4. Click the **Install** button.
-5. Select your site's root node which is configured with a Vendr store.
+5. Select your site's root node which is configured with a Umbraco Commerce store.
 6. Click **Install**.
 
 ![The dialog that appears when installing content through the Checkout dashboard.](../media/checkout/install\_dashboard\_dialog.png)
 
-During this install, Vendr checkout will perform the following tasks:
+During this install, Umbraco Commerce checkout will perform the following tasks:
 
-* [x] Create the Vendr Checkout Data Types (Colour picker and checkout step picker).
-* [x] Create the Vendr Checkout Document Types (Checkout page and checkout step page).
-* [x] Create the Vendr Checkout content nodes beneath the select site root node (unpublished).
-* [x] Configure the Vendr store with custom Vendr Checkout email templates and required payment providers.
+* [x] Create the Umbraco Commerce Checkout Data Types (Colour picker and checkout step picker).
+* [x] Create the Umbraco Commerce Checkout Document Types (Checkout page and checkout step page).
+* [x] Create the Umbraco Commerce Checkout content nodes beneath the select site root node (unpublished).
+* [x] Configure the Umbraco Commerce store with custom Umbraco Commerce Checkout email templates and required payment providers.
 
 ## Upgrading
 

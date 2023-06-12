@@ -118,7 +118,7 @@ description: Changelog for the Checkout package for Vendr.
 * Added ability to display regions if there are available for country [#8](https://github.com/vendrhub/vendr-checkout/issues/8).
 * Updated payment method/shipping method selection screens to only show options allowed in the payment/shipping country [#7](https://github.com/vendrhub/vendr-checkout/issues/7).
 * Updated payment method/shipping method selection screens to auto-select the default method of the payment/shipping country.
-* Fixed error when installing Vendr.Checkout into a second store in the same instance [#9](https://github.com/vendrhub/vendr-checkout/issues/9).
+* Fixed error when installing Umbraco.Commerce.Checkout into a second store in the same instance [#9](https://github.com/vendrhub/vendr-checkout/issues/9).
 
 ## 1.1.5
 
