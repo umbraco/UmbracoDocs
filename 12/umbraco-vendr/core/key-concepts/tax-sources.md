@@ -15,7 +15,7 @@ Out of the box, Umbraco Commerce comes with two Tax Source Factory implementatio
 
 ## Changing the Tax Source Factory
 
-Tax Source Factories are [registered via the IUmbracoCommerceBuilder](vendr-builder.md) interface using the `AddUnique<ITaxSourceFactory, TReplacementTaxSourceFactory>()` method on the `Services` property where the `TReplacementTaxSourceFactory` parameter is the type of your replacement Tax Source Factory implementation.
+Tax Source Factories are [registered via the IUmbracoCommerceBuilder](umbraco-commerce-builder.md) interface using the `AddUnique<ITaxSourceFactory, TReplacementTaxSourceFactory>()` method on the `Services` property where the `TReplacementTaxSourceFactory` parameter is the type of your replacement Tax Source Factory implementation.
 
 ```csharp
 public static class UmbracoCommerceUmbracoBuilderExtensions

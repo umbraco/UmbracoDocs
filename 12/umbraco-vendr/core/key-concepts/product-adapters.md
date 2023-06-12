@@ -168,7 +168,7 @@ public interface IProductVariantSnapshot
 
 ## Registering a Product Adapter
 
-typeProduct Adapters are [registered via the IUmbracoCommerceBuilder](vendr-builder.md) interface using the `AddUnique<IProductAdapter, TReplacementAdapter>()` method on the `Services` property. The `TReplacementAdapter` parameter is the type of our custom Product Adapter implementation.
+typeProduct Adapters are [registered via the IUmbracoCommerceBuilder](umbraco-commerce-builder.md) interface using the `AddUnique<IProductAdapter, TReplacementAdapter>()` method on the `Services` property. The `TReplacementAdapter` parameter is the type of our custom Product Adapter implementation.
 
 ```csharp
 public static class UmbracoCommerceUmbracoBuilderExtensions

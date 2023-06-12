@@ -40,7 +40,7 @@ public class MyProductCalculator : ProductCalculator
 
 ## Registering a custom Calculator implementation
 
-Calculators are [registered via the IUmbracoCommerceBuilder](vendr-builder.md) interface using the `AddUnique<TServiceInterface, TReplacementService>()` method on the `Services` property. The `TServiceInterface` parameter in this case is the Calculator interface Type you wish to replace and `TReplacementService` is the Type of your custom Calculator implementation.
+Calculators are [registered via the IUmbracoCommerceBuilder](umbraco-commerce-builder.md) interface using the `AddUnique<TServiceInterface, TReplacementService>()` method on the `Services` property. The `TServiceInterface` parameter in this case is the Calculator interface Type you wish to replace and `TReplacementService` is the Type of your custom Calculator implementation.
 
 ```csharp
 public static class UmbracoCommerceUmbracoBuilderExtensions

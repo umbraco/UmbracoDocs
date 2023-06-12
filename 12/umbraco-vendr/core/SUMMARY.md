@@ -19,7 +19,7 @@
   * [Migrate custom Payment Providers](how-to-guides/migrate-from-vendr-to-umbraco-commerce/migrate-custom-payment-providers.md)
 * [Configure SQLite support](how-to-guides/configure-sqlite-support.md)
 * [Limit Order Line Quantity](how-to-guides/limit-orderline-quantity.md)
-* [Use an Alternative Database for Umbraco Commerce Tables](how-to-guides/use-an-alternative-database-for-vendr-tables.md)
+* [Use an Alternative Database for Umbraco Commerce Tables](how-to-guides/use-an-alternative-database-for-umbraco-commerce-tables.md)
 
 ## Key Concepts
 
@@ -49,7 +49,7 @@
 * [UI Config Files](key-concepts/ui-config-files.md)
 * [Umbraco Properties](key-concepts/umbraco-properties.md)
 * [Unit of Work](key-concepts/unit-of-work.md)
-* [Umbraco Commerce Builder](key-concepts/vendr-builder.md)
+* [Umbraco Commerce Builder](key-concepts/umbraco-commerce-builder.md)
 
 ## Tutorials
 

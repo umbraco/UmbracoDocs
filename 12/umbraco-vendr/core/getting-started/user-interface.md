@@ -16,9 +16,9 @@ The **Settings** section is where the configuration of all Store settings is man
 
 The UI for the **Settings** section consists of a Tree which lists all available Stores and their key areas available for configuration. It also contains a right-hand editor panel. This can either act as an editor interface or as a list view interface for listing items within that given configuration area.
 
-![Umbraco Commerce Settings - Editor View](../media/vendr\_settings\_section\_editor\_view.png)
+![Umbraco Commerce Settings - Editor View](../media/umbraco-commerce\_settings\_section\_editor\_view.png)
 
-![Umbraco Commerce Settings - List View](../media/vendr\_settings\_section\_list\_view.png)
+![Umbraco Commerce Settings - List View](../media/umbraco-commerce\_settings\_section\_list\_view.png)
 
 Each Store has 8 key areas of configuration accessible within the **Settings** section:
 
