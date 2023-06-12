@@ -62,7 +62,7 @@ To register a webhook follow these steps:
 4. Enter the Umbraco Commerce callback URL. See an example below:
 
 ```bash
-  https://{store_domain}/umbraco/vendr/payment/callback/stripe-checkout/{payment_method_id}/
+  https://{store_domain}/umbraco/umbracocommerce/payment/callback/stripe-checkout/{payment_method_id}/
 ```
 
 {% hint style="info" %}
