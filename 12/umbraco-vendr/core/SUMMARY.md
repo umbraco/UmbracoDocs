@@ -3,7 +3,6 @@
 * [What is Umbraco Commerce?](README.md)
 * [Commerce Packages](https://docs.umbraco.com/umbraco-commerce-packages)
 * [Commerce Payment Providers](https://docs.umbraco.com/umbraco-commerce-payment-providers)
-* [Changelog](changelog.md)
 
 ## Getting Started
 
