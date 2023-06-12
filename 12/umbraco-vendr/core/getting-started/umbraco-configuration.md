@@ -1,14 +1,14 @@
 ---
-description: Configuring Umbraco for Vendr.
+description: Configuring Umbraco for Umbraco Commerce.
 ---
 
 # Umbraco Configuration
 
-Before you can start to use Vendr, you need to configure Umbraco to allow access to the relevant sections. The Vendr UI is split over three sections within the Umbraco backoffice:
+Before you can start to use Umbraco Commerce, you need to configure Umbraco to allow access to the relevant sections. The Umbraco Commerce UI is split over three sections within the Umbraco backoffice:
 
 * **Settings** for managing the different store settings.
 * **Commerce** for managing store-related content (orders, discounts, etc).
-* **Content** for managing the Vendr products.
+* **Content** for managing the Umbraco Commerce products.
 
 In order to access these sections, you will need to ensure a User account with the relevant permissions to do so. When logged in as Administrator, access to the **Settings** and **Content** sections is already granted.
 

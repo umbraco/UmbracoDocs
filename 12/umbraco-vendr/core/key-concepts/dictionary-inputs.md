@@ -1,5 +1,5 @@
 ---
-description: Multi-lingual values in Vendr.
+description: Multi-lingual values in Umbraco Commerce.
 ---
 
 # Dictionary Inputs

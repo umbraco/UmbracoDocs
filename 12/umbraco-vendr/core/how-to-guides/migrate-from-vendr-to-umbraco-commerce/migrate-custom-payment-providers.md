@@ -6,12 +6,12 @@ description: >-
 
 # Migrate custom Payment Providers
 
-Throughout the following steps, we will migrate custom payment providers used for Vendr into Umbraco Commerce.
+Throughout the following steps, we will migrate custom payment providers used for Umbraco Commerce into Umbraco Commerce.
 
-1. Remove any installed Vendr packages
+1. Remove any installed Umbraco Commerce packages
 
 ```bash
-dotnet remove package Vendr.Core
+dotnet remove package Umbraco.Commerce.Core
 ```
 
 2. Install the `Umbraco.Commerce` packages for the payment providers.

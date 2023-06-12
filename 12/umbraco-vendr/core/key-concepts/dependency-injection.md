@@ -1,23 +1,23 @@
 ---
-description: Minimizing dependencies via dependency injection with Vendr.
+description: Minimizing dependencies via dependency injection with Umbraco Commerce.
 ---
 
 # Dependency Injection
 
 Dependency Injection (DI) can be an intimidating subject. DI reduces the number of hard-coded dependencies within a codebase by providing a means to define dependencies independently and have them "injected" dynamically. These dependencies are often exposed as interfaces, rather than concrete types. This enables them to be swapped out or replaced with minimal effort.
 
-The ability to "swap out" dependencies is used in Vendr in a number of places to allow developers to provide alternative implementations of specific features. This could be the ability to:
+The ability to "swap out" dependencies is used in Umbraco Commerce in a number of places to allow developers to provide alternative implementations of specific features. This could be the ability to:
 
 * Swap out the default Product Calculator to change how product prices are calculated.
 * Swap out the default Order Number Generator should you wish to provide an alternative order numbering strategy.
 
-Vendr makes heavy use of the dependency injection mechanism in Umbraco to manage many of the features. It is important to understand how to work with the registration process.
+Umbraco Commerce makes heavy use of the dependency injection mechanism in Umbraco to manage many of the features. It is important to understand how to work with the registration process.
 
-What follows are examples of common tasks you'll need to be able to perform via the DI container in order to work effectively with Vendr. For more detailed documentation, it is highly recommended that you read the [Umbraco CMS Dependency Injection and IoC documentation](https://docs.umbraco.com/umbraco-cms/reference/using-ioc).
+What follows are examples of common tasks you'll need to be able to perform via the DI container in order to work effectively with Umbraco Commerce. For more detailed documentation, it is highly recommended that you read the [Umbraco CMS Dependency Injection and IoC documentation](https://docs.umbraco.com/umbraco-cms/reference/using-ioc).
 
 ## Registering Dependencies
 
-Registering dependencies is an important ability to understand as this is used to register Vendr event handlers and to extend system pipelines.
+Registering dependencies is an important ability to understand as this is used to register Umbraco Commerce event handlers and to extend system pipelines.
 
 To register a dependency you need to do so via the `IUmbracoBuilder` interface. This is exposed within the main `Startup` class, inside the `ConfigureServices` method between the `AddComposers()` method call and the `Build()` method call.
 
@@ -92,7 +92,7 @@ public static class UmbracoBuilderExtensions
 
 ## Replacing Dependencies
 
-Like it is possible to add new dependencies it is also possible to replace existing dependencies. This could be dependencies such as the different Calculators available in Vendr.
+Like it is possible to add new dependencies it is also possible to replace existing dependencies. This could be dependencies such as the different Calculators available in Umbraco Commerce.
 
 Where a feature is replaceable, replacing that dependency is also achieved via the `IUmbracoBuilder` API:
 
@@ -115,7 +115,7 @@ public static class UmbracoBuilderExtensions
 
 ## Injecting Dependencies
 
-As well as registering dependencies, you will also need to know how to access Vendr dependencies from within your Controllers. To do this, we add parameters to our Controllers constructor for the dependencies we require. Then, the IoC container will inject them automatically for us.
+As well as registering dependencies, you will also need to know how to access Umbraco Commerce dependencies from within your Controllers. To do this, we add parameters to our Controllers constructor for the dependencies we require. Then, the IoC container will inject them automatically for us.
 
 ```csharp
 using Vendr.Core.Api;

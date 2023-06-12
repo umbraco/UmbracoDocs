@@ -4,11 +4,11 @@ description: >-
   Commerce.
 ---
 
-# Migrate Umbraco Commerce Checkout
+# Migrate Vendr Checkout
 
 Throughout the following steps, we will migrate the Checkout package from Vendr to Umbraco Commerce.
 
-1. Make a backup of any custom templates and Umbraco Commerce UI configuration files.
+1. Make a backup of any custom templates and Vendr UI configuration files.
 2. Make a note of all configuration values on the Vendr.Checkout Checkout node.
 3. Delete Vendr.Checkout generated checkout nodes.
    * Checkout

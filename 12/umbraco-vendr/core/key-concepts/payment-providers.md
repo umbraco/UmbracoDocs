@@ -1,12 +1,12 @@
 ---
-description: Accepting payments via Payment Providers in Vendr.
+description: Accepting payments via Payment Providers in Umbraco Commerce.
 ---
 
 # Payment Providers
 
-Payment Providers are how Vendr is able to accept multiple different methods of payment on a Site. Their job is to provide a standard interface between third-party payment gateways and Vendr itself. This is done in order to allow the passing of information between the two platforms.
+Payment Providers are how Umbraco Commerce is able to accept multiple different methods of payment on a Site. Their job is to provide a standard interface between third-party payment gateways and Umbraco Commerce itself. This is done in order to allow the passing of information between the two platforms.
 
-How the integrations work is often different for each payment gateway. The Vendr Payment Providers add a flexible interface that should be able to work with most payment gateways.
+How the integrations work is often different for each payment gateway. The Umbraco Commerce Payment Providers add a flexible interface that should be able to work with most payment gateways.
 
 ## Example Payment Provider
 
@@ -35,7 +35,7 @@ public class MyPaymentProviderSettings
 
 ```
 
-All Payment Providers inherit from a base class `AsyncPaymentProviderBase<TSettings>`. `TSettings` is the type of a Plan Old Class Object (POCO) model class representing the Payment Providers settings. The class must be decorated with `PaymentProviderAttribute` which defines the Payment Providers `alias`, `name` and `description`, and can also specify an `icon` to be displayed in the Vendr backoffice.
+All Payment Providers inherit from a base class `AsyncPaymentProviderBase<TSettings>`. `TSettings` is the type of a Plan Old Class Object (POCO) model class representing the Payment Providers settings. The class must be decorated with `PaymentProviderAttribute` which defines the Payment Providers `alias`, `name` and `description`, and can also specify an `icon` to be displayed in the Umbraco Commerce backoffice.
 
 The settings class consists of a series of properties, each decorated with a `PaymentProviderSettingAttribute` defining a name, description, and possible angular editor view file. These will all be used to dynamically build an editor interface for the given settings in the backoffice.
 
@@ -54,7 +54,7 @@ Generally, there are three methods within a Payment Provider that you may need t
 
 * **GenerateForm** - The `GenerateForm` method is responsible for generating an HTML form that will redirect the customer to the given payment gateway payment form. In this method you may need to communicate with the payment gateway in order to initialize a payment, letting the payment gateway know how much to capture. This often results in some kind of code or redirect URL being returned which will need to be embedded into the generated form. The generated form is then usually displayed on a checkout **Review** page, the last page before payment is captured and will have an implementer-defined **Continue to Payment** button to submit the form and redirect the customer to the gateway.
 * **ProcessCallback** - The `ProcessCallback` method is responsible for handling the response coming back from the payment gateway and processing whether the payment was successful or not. This can sometimes occur _synchronously_, if the payment gateway sends information back as part of the confirmation page redirect, or can occur _asynchronously_ if the payment gateway sends the information back via an out-of-band webhook request.
-* **GetOrderReference** - The `GetOrderReference` method is responsible for extracting an order reference number from a request when the payment gateway uses an asynchronous webhook to finalize an Order **and** it uses a global webhook URL strategy for all notifications rather than a notification URL per transaction. Where a webhook URL can be passed per transaction, then Vendr provides you with a unique callback URL you can register with the gateway that already identifies the order reference as part of the URL parameters, making implementing this method unnecessary.
+* **GetOrderReference** - The `GetOrderReference` method is responsible for extracting an order reference number from a request when the payment gateway uses an asynchronous webhook to finalize an Order **and** it uses a global webhook URL strategy for all notifications rather than a notification URL per transaction. Where a webhook URL can be passed per transaction, then Umbraco Commerce provides you with a unique callback URL you can register with the gateway that already identifies the order reference as part of the URL parameters, making implementing this method unnecessary.
 
 _\* denotes a required method implementation_.
 
@@ -75,7 +75,7 @@ The implementable management methods are:
 * **CancelPayment** - The `CancelPayment` method communicates with the 3rd party payment gateway to cancel a previously authorized payment associated with the given transaction.
 * **RefundPayment** - The `RefundPayment` method communicates with the 3rd party payment gateway to refund a previously captured payment associated with the given transaction.
 
-For each implemented method above, developers should also implement a corresponding boolean property returning a `true` value. This is to let Vendr know that the given feature is supported by the Payment Provider.
+For each implemented method above, developers should also implement a corresponding boolean property returning a `true` value. This is to let Umbraco Commerce know that the given feature is supported by the Payment Provider.
 
 * **CanFetchPaymentStatus**
 * **CanCapturePayments**

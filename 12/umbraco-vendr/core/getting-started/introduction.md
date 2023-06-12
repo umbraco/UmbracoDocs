@@ -1,12 +1,12 @@
 ---
-description: Getting Started with Vendr.
+description: Getting Started with Umbraco Commerce.
 ---
 
 # Introduction
 
-In this section, you will find information about the key steps necessary to get you started with Vendr.
+In this section, you will find information about the key steps necessary to get you started with Umbraco Commerce.
 
-It is assumed that you have an Umbraco 12+ website configured, ready to install Vendr into.
+It is assumed that you have an Umbraco 12+ website configured, ready to install Umbraco Commerce into.
 
 {% hint style="info" %}
 Find detailed instructions on how to install the latest version of Umbraco in the [Umbraco CMS documentation](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/install).
@@ -14,7 +14,7 @@ Find detailed instructions on how to install the latest version of Umbraco in th
 
 ## System Requirements
 
-The minimum requirements for using Vendr are as follows:
+The minimum requirements for using Umbraco Commerce are as follows:
 
 * Umbraco CMS version 12+
 * SQL Server Database
@@ -22,4 +22,4 @@ The minimum requirements for using Vendr are as follows:
 
 ## Versioning
 
-This is an add-on product to Umbraco CMS. Umbraco Vendr follows the [versioning strategy laid out for Umbraco CMS](https://umbraco.com/products/knowledge-center/versioning-and-release-cadence/).
+This is an add-on product to Umbraco CMS. Umbraco Commerce follows the [versioning strategy laid out for Umbraco CMS](https://umbraco.com/products/knowledge-center/versioning-and-release-cadence/).

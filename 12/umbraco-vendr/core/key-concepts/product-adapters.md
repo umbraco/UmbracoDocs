@@ -1,12 +1,12 @@
 ---
-description: Converting product sources into understandable products for Vendr.
+description: Converting product sources into understandable products for Umbraco Commerce.
 ---
 
 # Product Adapters
 
-The role of a Product Adapter in Vendr is to provide an interface between a product information source and convert it into a standardized format. This is done to prevent the need for Vendr to be tied to that source.
+The role of a Product Adapter in Umbraco Commerce is to provide an interface between a product information source and convert it into a standardized format. This is done to prevent the need for Umbraco Commerce to be tied to that source.
 
-What this means for developers is that Product Adapters allow you to hook in alternative product information sources that may not be Umbraco node based. You may hold your product information in a third-party database table. A custom Product Adapter would then allow Vendr to interface with that custom data in the same way it would the default Umbraco node data.
+What this means for developers is that Product Adapters allow you to hook in alternative product information sources that may not be Umbraco node based. You may hold your product information in a third-party database table. A custom Product Adapter would then allow Umbraco Commerce to interface with that custom data in the same way it would the default Umbraco node data.
 
 ## Example Product Adapter
 
@@ -38,7 +38,7 @@ All Product Adapters implement the `IProductAdapter` interface which requires th
 * Two `GetProductSnapshot` methods that retrieve a Product Snapshot for either a product or product variant by reference parameters.
 * A `TryGetProductReference` method which retrieves a product/variant reference for a product that belongs to a given `storeId` and has the given `sku`.
 
-A Product Snapshot consists of the following properties in order to present a Product to Vendr in a standard way.
+A Product Snapshot consists of the following properties in order to present a Product to Umbraco Commerce in a standard way.
 
 ```csharp
 public interface IProductSnapshot
@@ -78,7 +78,7 @@ public interface IProductSnapshot
 
 ## Support editable carts
 
-To allow Vendr to search for products/variants to add to a cart via the backoffice, Product Adapters can implement 3 additional methods. This can also be done to support editable carts.
+To allow Umbraco Commerce to search for products/variants to add to a cart via the backoffice, Product Adapters can implement 3 additional methods. This can also be done to support editable carts.
 
 ```csharp
 public class MyCustomProductAdapter : ProductAdapterBase
@@ -103,7 +103,7 @@ public class MyCustomProductAdapter : ProductAdapterBase
 
 ```
 
-The `IProductSummary`, `Attribute` and `IProductVariantSummary` consists of the following properties in order to present a Product to Vendr in a standard way.
+The `IProductSummary`, `Attribute` and `IProductVariantSummary` consists of the following properties in order to present a Product to Umbraco Commerce in a standard way.
 
 ```csharp
 public interface IProductSnapshot

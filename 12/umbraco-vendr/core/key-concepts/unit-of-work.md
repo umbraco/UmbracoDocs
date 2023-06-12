@@ -1,16 +1,16 @@
 ---
-description: Transactional updates using the Unit of Work pattern in Vendr.
+description: Transactional updates using the Unit of Work pattern in Umbraco Commerce.
 ---
 
 # Unit of Work
 
 ## Unit of Work
 
-When working with Vendr's API it is important that data integrity is maintained should any errors occur. In order to achieve this Vendr uses the [Unit of Work pattern](https://www.martinfowler.com/eaaCatalog/unitOfWork.html) to effectively create a transaction that wraps around sections of your code ensuring that all Vendr write operations that occur within that code block must succeed and be persisted in their entirety, otherwise none of them should, and the database should rollback to its state prior to when those changes were made.
+When working with Umbraco Commerce's API it is important that data integrity is maintained should any errors occur. In order to achieve this Umbraco Commerce uses the [Unit of Work pattern](https://www.martinfowler.com/eaaCatalog/unitOfWork.html) to effectively create a transaction that wraps around sections of your code ensuring that all Umbraco Commerce write operations that occur within that code block must succeed and be persisted in their entirety, otherwise none of them should, and the database should rollback to its state prior to when those changes were made.
 
 ### Creating a Unit of Work
 
-Creating a unit of work will require access to Vendr's `IUnitOfWorkProvider` which can be [injected into your Controller directly](dependency-injection.md), or can also be accessed via the `UoW` property on the `IVendrApi` helper.
+Creating a unit of work will require access to Umbraco Commerce's `IUnitOfWorkProvider` which can be [injected into your Controller directly](dependency-injection.md), or can also be accessed via the `UoW` property on the `IUmbraco CommerceApi` helper.
 
 Once you have access to either of these entry points, you can define a Unit of Work as follows
 

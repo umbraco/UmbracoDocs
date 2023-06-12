@@ -1,18 +1,18 @@
 ---
-description: Calculation context in Vendr.
+description: Calculation context in Umbraco Commerce.
 ---
 
 # Order Calculation State
 
-When extending the calculation process of Vendr, either by custom [calculators](calculators.md) or custom [pipeline tasks](pipelines.md) it is important to be aware of the `OrderCalculation` object.
+When extending the calculation process of Umbraco Commerce, either by custom [calculators](calculators.md) or custom [pipeline tasks](pipelines.md) it is important to be aware of the `OrderCalculation` object.
 
 ## The Calculation Process
 
-When an order asks to be re-calculated, this triggers a calculation pipeline which in turn runs a series of calculation tasks. It then calls a number of extendable calculators in order to work out the orders' different prices. Throughout this process, Vendr needs to keep track of all these prices as they change. At the same time, it also needs to ensure that the calculation is transactional in case something goes wrong. To accomplish both of these requirements we use a temporary state object called `OrderCalculation` to store all the information. Only at the end of the calculation, if everything was successful, we can copy those calculated prices back to the order.
+When an order asks to be re-calculated, this triggers a calculation pipeline which in turn runs a series of calculation tasks. It then calls a number of extendable calculators in order to work out the orders' different prices. Throughout this process, Umbraco Commerce needs to keep track of all these prices as they change. At the same time, it also needs to ensure that the calculation is transactional in case something goes wrong. To accomplish both of these requirements we use a temporary state object called `OrderCalculation` to store all the information. Only at the end of the calculation, if everything was successful, we can copy those calculated prices back to the order.
 
 ## Accessing Price Values
 
-In the different calculation extension points, Vendr will often pass you **both** an `Order` object and the `OrderCalculation` object. We pass the order to get you access to any information held on it that you may need for calculations, such as custom properties. This shouldn't be used for accessing any price-related values of the order.
+In the different calculation extension points, Umbraco Commerce will often pass you **both** an `Order` object and the `OrderCalculation` object. We pass the order to get you access to any information held on it that you may need for calculations, such as custom properties. This shouldn't be used for accessing any price-related values of the order.
 
 As mentioned above, in order to maintain data integrity during the calculation process, the order itself is not updated until the end. This means that any calculations based on the order entities' price values would be based on the orders' **previously calculated price values**.
 

@@ -1,16 +1,16 @@
 ---
-description: Customizing the UI in Vendr.
+description: Customizing the UI in Umbraco Commerce.
 ---
 
 # UI Config Files
 
-With Vendr, there are minimal rules about what information you are required to record about an Order, however, this does pose a problem for how we provide a User Interface for managing carts and orders when we don't know exactly what properties you are going to be recording.
+With Umbraco Commerce, there are minimal rules about what information you are required to record about an Order, however, this does pose a problem for how we provide a User Interface for managing carts and orders when we don't know exactly what properties you are going to be recording.
 
-In order to allow this flexibility whilst still providing the ability to view and manage carts and orders in the backoffice, Vendr supports a number of UI config files to map [Order/Order Line Properties](properties.md) to its UI elements.
+In order to allow this flexibility whilst still providing the ability to view and manage carts and orders in the backoffice, Umbraco Commerce supports a number of UI config files to map [Order/Order Line Properties](properties.md) to its UI elements.
 
 ## Supported UI Config Files
 
-The configuration files supported by Vendr are.
+The configuration files supported by Umbraco Commerce are.
 
 * **cart.list.config.js** - Cart list view configuration.
 * **cart.editor.config.js** - Cart editor view configuration.
@@ -18,7 +18,7 @@ The configuration files supported by Vendr are.
 * **order.editor.config.js** - Order editor view configuration.
 
 {% hint style="info" %}
-If there are no cart config files defined, then Vendr will fall back to the order config files.
+If there are no cart config files defined, then Umbraco Commerce will fall back to the order config files.
 {% endhint %}
 
 ## Assigning a UI Config File to a Store

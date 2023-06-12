@@ -1,10 +1,10 @@
 ---
-description: Faster development thanks to the Fluent API of Vendr.
+description: Faster development thanks to the Fluent API of Umbraco Commerce.
 ---
 
 # Fluent API
 
-An added side effect of having [ReadOnly and Writable entities](readonly-and-writable-entities.md) is that all of an entity's write operations are now performed via methods. This is instead of property setters, enabling to us convert Vendr's write API in a fluent API.
+An added side effect of having [ReadOnly and Writable entities](readonly-and-writable-entities.md) is that all of an entity's write operations are now performed via methods. This is instead of property setters, enabling to us convert Umbraco Commerce's write API in a fluent API.
 
 ## Writing fluently
 
@@ -48,5 +48,5 @@ _uowProvider.Execute(uow =>
 ```
 
 {% hint style="info" %}
-We know not everyone likes to write their code fluently and so the Vendr Fluent API is an optional feature. Both code examples above are valid coding styles that will both work as well as each other. The Fluent API is an opt-in layer of syntax sugar that developers can use depending on their preferred style of coding.
+We know not everyone likes to write their code fluently and so the Umbraco Commerce Fluent API is an optional feature. Both code examples above are valid coding styles that will both work as well as each other. The Fluent API is an opt-in layer of syntax sugar that developers can use depending on their preferred style of coding.
 {% endhint %}

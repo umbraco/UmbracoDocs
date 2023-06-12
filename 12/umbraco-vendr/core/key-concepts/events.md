@@ -1,14 +1,14 @@
 ---
-description: Listening for changes within Vendr.
+description: Listening for changes within Umbraco Commerce.
 ---
 
 # Events
 
-Much like the standard events in .NET, Vendr has an events system to notify you when certain things happen within the application. However, Vendr differs slightly in the types of events that are fired and how you register your event handlers.
+Much like the standard events in .NET, Umbraco Commerce has an events system to notify you when certain things happen within the application. However, Umbraco Commerce differs slightly in the types of events that are fired and how you register your event handlers.
 
-Events in Vendr are registered via the [`IVendrBuilder`](vendr-builder.md) interface, rather than via static event delegates. This has a number of advantages, such as being able to control the order of when event handlers are fired. It also allows us to inject dependencies into the event handlers making it a much more decoupled approach to eventing.
+Events in Umbraco Commerce are registered via the [`IVendrBuilder`](vendr-builder.md) interface, rather than via static event delegates. This has a number of advantages, such as being able to control the order of when event handlers are fired. It also allows us to inject dependencies into the event handlers making it a much more decoupled approach to eventing.
 
-In Vendr, there are two main types of events you can create handlers for. Both are explained in detail below.
+In Umbraco Commerce, there are two main types of events you can create handlers for. Both are explained in detail below.
 
 ## Validation events
 
@@ -76,7 +76,7 @@ public static class VendrBuilderExtensions
 
 Notification events are events that fire, often immediately before or after an action is executed. It provides you the ability to run custom logic to react to that action occurring. This is useful for scenarios such as sending emails when an Order is finalized or allowing you to synchronize stock updates with an external system.
 
-Notification events won't allow you to change the behavior of how Vendr runs. They provide you with an effective means of reacting when changes occur.
+Notification events won't allow you to change the behavior of how Umbraco Commerce runs. They provide you with an effective means of reacting when changes occur.
 
 ### Example: Notification event handler
 

@@ -1,5 +1,5 @@
 ---
-description: Performing sequential tasks with Pipelines in Vendr.
+description: Performing sequential tasks with Pipelines in Umbraco Commerce.
 ---
 
 # Pipelines
@@ -8,7 +8,7 @@ Pipelines allow a series of tasks to be performed in a set sequence. This is don
 
 The Pipelines feature provides an approach to insert additional steps into the process as pipeline tasks can be added or removed from the pipeline sequence.
 
-Where Pipelines is used, it allows an additional point at which developers can interject some custom logic, tweaking how Vendr works.
+Where Pipelines is used, it allows an additional point at which developers can interject some custom logic, tweaking how Umbraco Commerce works.
 
 Consider these use-case examples:
 

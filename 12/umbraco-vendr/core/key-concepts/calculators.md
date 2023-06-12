@@ -1,10 +1,10 @@
 ---
-description: Performing calculations with Calculators in Vendr.
+description: Performing calculations with Calculators in Umbraco Commerce.
 ---
 
 # Calculators
 
-Calculators are small service implementations with the sole responsibility of calculating prices for a given aspect of an Order. There are five main Calculator service interfaces in Vendr:
+Calculators are small service implementations with the sole responsibility of calculating prices for a given aspect of an Order. There are five main Calculator service interfaces in Umbraco Commerce:
 
 * **IShippingCalculator** - Responsible for calculating the Shipping Method price/tax rate of a given Shipping Method.
 * **IPaymentCalculator** - Responsible for calculating the Payment Method price/tax rate of a given Payment Method.
@@ -12,7 +12,7 @@ Calculators are small service implementations with the sole responsibility of ca
 * **IOrderLineCalculator** - Responsible for calculating the price/tax rate of a given OrderLine.
 * **IOrderCalculator** - Responsible for calculating the entire Order.
 
-All Calculator services can be replaced with alternative implementations should you wish to change how Vendr performs its calculations.
+All Calculator services can be replaced with alternative implementations should you wish to change how Umbraco Commerce performs its calculations.
 
 ## Defining a Custom Calculator Implementation
 

@@ -1,10 +1,10 @@
 ---
-description: How-To Guide to limit order line quantity in Vendr.
+description: How-To Guide to limit order line quantity in Umbraco Commerce.
 ---
 
 # Limit Order Line Quantity
 
-In this guide, we will be looking at Validation events in Vendr. These enabled you to limit order line quantity based on:
+In this guide, we will be looking at Validation events in Umbraco Commerce. These enabled you to limit order line quantity based on:
 
 * The existing stock value of the product, and
 * The existing quantity of the product in the cart.
@@ -69,7 +69,7 @@ public class OrderLineQuantityValidationHandler : ValidationEventHandlerBase<Val
 
 ## Register event handlers
 
-Finally, we need to register the Vendr event handlers via an `IVendrBuilder` extension.
+Finally, we need to register the Umbraco Commerce event handlers via an `IVendrBuilder` extension.
 
 ```csharp
 public static class VendrBuilderExtensions

@@ -1,5 +1,5 @@
 ---
-description: Learn more about the flexible search functionaities in Vendr.
+description: Learn more about the flexible search functionaities in Umbraco Commerce.
 ---
 
 # Search Specifications

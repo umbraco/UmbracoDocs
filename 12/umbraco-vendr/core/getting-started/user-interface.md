@@ -1,14 +1,14 @@
 ---
-description: The User Interface for Vendr.
+description: The User Interface for Umbraco Commerce.
 ---
 
 # User Interface
 
-The Vendr UI consists of a number of key areas, split over three sections within the Umbraco backoffice:
+The Umbraco Commerce UI consists of a number of key areas, split over three sections within the Umbraco backoffice:
 
 * **Settings** for managing the different store settings.
 * **Commerce** for managing store-related content (orders, discounts, etc).
-* **Content** for managing the Vendr products.
+* **Content** for managing the Umbraco Commerce products.
 
 ## Settings Section
 
@@ -16,9 +16,9 @@ The **Settings** section is where the configuration of all Store settings is man
 
 The UI for the **Settings** section consists of a Tree which lists all available Stores and their key areas available for configuration. It also contains a right-hand editor panel. This can either act as an editor interface or as a list view interface for listing items within that given configuration area.
 
-![Vendr Settings - Editor View](../media/vendr\_settings\_section\_editor\_view.png)
+![Umbraco Commerce Settings - Editor View](../media/vendr\_settings\_section\_editor\_view.png)
 
-![Vendr Settings - List View](../media/vendr\_settings\_section\_list\_view.png)
+![Umbraco Commerce Settings - List View](../media/vendr\_settings\_section\_list\_view.png)
 
 Each Store has 8 key areas of configuration accessible within the **Settings** section:
 
@@ -35,12 +35,12 @@ Each Store has 8 key areas of configuration accessible within the **Settings** s
 
 The **Commerce** section contains a Tree to access the Stores and their different features, as well as a right-hand panel for managing the items.
 
-![Vendr Orders View](../media/commerce\_orders\_view.png)
+![Umbraco Commerce Orders View](../media/commerce\_orders\_view.png)
 
-![Vendr Order Editor](../media/commerce\_order\_details.png)
+![Umbraco Commerce Order Editor](../media/commerce\_order\_details.png)
 
 ## Content Section
 
-The **Content** section is where the Vendr product nodes are managed. Managing products with Umbraco Vendr is similar to working with regular content nodes.
+The **Content** section is where the Umbraco Commerce product nodes are managed. Managing products with Umbraco Commerce is similar to working with regular content nodes.
 
-![Vendr Store Picker Dialog](../media/content\_store\_picker.png)
+![Umbraco Commerce Store Picker Dialog](../media/content\_store\_picker.png)

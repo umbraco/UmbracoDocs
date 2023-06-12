@@ -1,12 +1,12 @@
 ---
-description: Order and Order Line metadata in Vendr.
+description: Order and Order Line metadata in Umbraco Commerce.
 ---
 
 # Properties
 
-There is little information that Vendr needs to know about a product in order for it to do its job. There are, however, times when developers require the ability to store additional information against an Order or Order Line. This could be the billing/shipping address of an Order, or any specific configuration details of a given Product on an Order Line.
+There is little information that Umbraco Commerce needs to know about a product in order for it to do its job. There are, however, times when developers require the ability to store additional information against an Order or Order Line. This could be the billing/shipping address of an Order, or any specific configuration details of a given Product on an Order Line.
 
-To help facilitate this Vendr has the concept of a Properties collection on both the Order entity and the Order Line entity respectively. The Properties collection of these entities can be thought of as a general store for additional information required by an implementation, but not strictly required by Vendr itself.
+To help facilitate this Umbraco Commerce has the concept of a Properties collection on both the Order entity and the Order Line entity respectively. The Properties collection of these entities can be thought of as a general store for additional information required by an implementation, but not strictly required by Umbraco Commerce itself.
 
 Anything you need to remember about an Order / Order Line can be stored in its Properties collection.
 
@@ -30,7 +30,7 @@ order.RemoveProperty("propertyAlias");
 
 ```
 
-Property values can either be a `string`, or a Vendr `PropertyValue` which allows you to define a value as being Server Side Only. This means that it won't be returned via non-server APIs or Read Only meaning it can't be updated once set.
+Property values can either be a `string`, or a Umbraco Commerce `PropertyValue` which allows you to define a value as being Server Side Only. This means that it won't be returned via non-server APIs or Read Only meaning it can't be updated once set.
 
 ```csharp
 // Set a string property
@@ -42,7 +42,7 @@ order.SetProperty("propertyAlias", new PropertyValue("Property Value", isReadOnl
 
 ## System Properties
 
-On occasions where Vendr needs to capture some information about an Order or Order Line, it uses the Properties collection to store this information. It's useful to know what these properties are as you should avoid using these system-related property keys.
+On occasions where Umbraco Commerce needs to capture some information about an Order or Order Line, it uses the Properties collection to store this information. It's useful to know what these properties are as you should avoid using these system-related property keys.
 
 ### Order System Properties
 
@@ -60,7 +60,7 @@ On occasions where Vendr needs to capture some information about an Order or Ord
 
 ## Automatic Properties
 
-Vendr has a built-in mechanism that can be configured to automatically copy properties from a Product information source to the Order Line automatically. This is done by using the **Product Property Aliases** field on the Store settings screen.
+Umbraco Commerce has a built-in mechanism that can be configured to automatically copy properties from a Product information source to the Order Line automatically. This is done by using the **Product Property Aliases** field on the Store settings screen.
 
 ![Product Property Aliases Configuration](../media/product\_property\_aliases.png)
 
@@ -72,7 +72,7 @@ This is useful for occasions such as rendering out the Order Lines on a Cart pag
 
 Another use of the Properties collection for an Order Line is that of identifying product "Uniqueness".
 
-Vendr uses Product Uniqueness to identify either of the two:
+Umbraco Commerce uses Product Uniqueness to identify either of the two:
 
 * Whether a Product is added to a Cart should be considered as a Quantity increase on an existing Order Line
 * Whether it should be considered as a unique product combination and so should be given an Order Line of its own.

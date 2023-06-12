@@ -1,10 +1,10 @@
 ---
-description: Learn more about the different options for configured Vendr.
+description: Learn more about the different options for configured Umbraco Commerce.
 ---
 
-# Vendr Builder
+# Umbraco Commerce Builder
 
-When it comes to configuring and extending Vendr, such as by registering your own event handlers, we achieve this with the `IVendrBuilder` interface that can be accessed via a delegate function passed into the `AddVendr()` extension method called on the `IUmbracoBuilder` interface when explicitly registering Vendr.
+When it comes to configuring and extending Umbraco Commerce, such as by registering your own event handlers, we achieve this with the `IVendrBuilder` interface that can be accessed via a delegate function passed into the `AddVendr()` extension method called on the `IUmbracoBuilder` interface when explicitly registering Umbraco Commerce.
 
 ```csharp
 public class Startup
@@ -28,7 +28,7 @@ public class Startup
 
 ## Registering Dependencies
 
-The `IVendrBuilder` interface gives you access to the current `IServiceCollection` and `IConfiguration` to allow you to register dependencies like you would with the [`IUmbracoBuilder` interface](dependency-injection.md#registering-dependencies) but its primary use case would be to access Vendr's own collection builders, such as for registering validation or notification events, and any other Vendr-specific configuration APIs.
+The `IVendrBuilder` interface gives you access to the current `IServiceCollection` and `IConfiguration` to allow you to register dependencies like you would with the [`IUmbracoBuilder` interface](dependency-injection.md#registering-dependencies) but its primary use case would be to access Umbraco Commerce's own collection builders, such as for registering validation or notification events, and any other Umbraco Commerce-specific configuration APIs.
 
 ```csharp
 ...
