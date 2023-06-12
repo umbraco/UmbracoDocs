@@ -160,7 +160,7 @@ See the [Settings Objects](settings-objects.md) documentation for more informati
 
 Both the `DiscountRuleProviderAttribute` and the `DiscountRewardProviderAttribute` allow you to define a `labelView` for the Provider. It should be the path to an Angular JS view file that will be used to render a label in the Rule/Reward Builder UI. Where no `labelView` is supplied, one will be looked for by convention at the following location:
 
-`~/app_plugins/vendr/views/discount/{Type}/labelViews/{ProviderAlias}.html`
+`~/app_plugins/umbracocommerce/views/discount/{Type}/labelViews/{ProviderAlias}.html`
 
 `Type` is either `rules` or `rewards`, depending on the Type of Provider it refers to. `ProviderAlias` is the alias of the Provider.
 
@@ -171,6 +171,6 @@ The Rule/Reward Label View should provide a user-friendly summary of its setting
 The Label View file will be passed a `model` property which will be a JavaScript representation of the given Providers settings object.
 
 ```html
-<span ng-if="model.priceType">Order {{ model.priceType | vendrSplitCamelCase }} Discount</span>
+<span ng-if="model.priceType">Order {{ model.priceType | umbracoCommerceSplitCamelCase }} Discount</span>
 
 ```

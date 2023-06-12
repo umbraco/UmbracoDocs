@@ -16,8 +16,8 @@ An example of a bare-bones Payment Provider would look something like this:
 [PaymentProvider("my-payment-provider-alias", "My Payment Provider Name", "My Payment Provider Description")]
 public class MyPaymentProvider :  AsyncPaymentProviderBase<MyPaymentProviderSettings>
 {
-    public MyPaymentProvider(VendrContext vendr)
-        : base(vendr)
+    public MyPaymentProvider(UmbracoCommerceContext umbracoCommerce)
+        : base(umbracoCommerce)
     { }
 
     ...

@@ -4,7 +4,7 @@ description: Learn more about the different options for configured Umbraco Comme
 
 # Umbraco Commerce Builder
 
-When it comes to configuring and extending Umbraco Commerce, such as by registering your own event handlers, we achieve this with the `IUmbracoCommerceBuilder` interface that can be accessed via a delegate function passed into the `AddVendr()` extension method called on the `IUmbracoBuilder` interface when explicitly registering Umbraco Commerce.
+When it comes to configuring and extending Umbraco Commerce, such as by registering your own event handlers, we achieve this with the `IUmbracoCommerceBuilder` interface that can be accessed via a delegate function passed into the `AddUmbracoCommerce()` extension method called on the `IUmbracoBuilder` interface when explicitly registering Umbraco Commerce.
 
 ```csharp
 public class Startup
@@ -15,8 +15,8 @@ public class Startup
         services.AddUmbraco(_env, _config)
             .AddBackOffice()
             .AddWebsite()
-            .AddVendr(vendrBuilder => {
-                // Configure Vendr here
+            .AddUmbracoCommerce(umbracoCommerceBuilder => {
+                // Configure Umbraco Commerce here
             })
             .AddComposers()
             .Build();
@@ -32,10 +32,10 @@ The `IUmbracoCommerceBuilder` interface gives you access to the current `IServic
 
 ```csharp
 ...
-.AddVendr(vendrBuilder => {
+.AddUmbracoCommerce(umbracoCommerceBuilder => {
     
     // Register validation events
-    vendrBuilder.WithValidationEvent<ValidateOrderProductAdd>()
+    umbracoCommerceBuilder.WithValidationEvent<ValidateOrderProductAdd>()
             .RegisterHandler<MyOrderProductAddValidationHandler>();
 
 })
@@ -60,9 +60,9 @@ public static class UmbracoCommerceUmbracoBuilderExtensions
 
 ```csharp
 ...
-.AddVendr(vendrBuilder => {
+.AddUmbracoCommerce(umbracoCommerceBuilder => {
     
-    vendrBuilder.AddMyDependencies();
+    umbracoCommerceBuilder.AddMyDependencies();
 
 })
 ...
