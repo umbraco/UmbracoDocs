@@ -2,7 +2,7 @@
 title: Configuring Stripe
 description: >-
   Learn how to configure Stripe in order to implement the integration with your
-  Umbraco Vendr installation.
+  Umbraco Commerce installation.
 ---
 
 # Configure Stripe
@@ -35,7 +35,7 @@ For each of these modes, multiple settings need to be configured.
 
 ## Step 2: API Keys
 
-In order for Vendr to communicate with Stripe securely we need to generate a series of API keys that Vendr can use to authenticate with.
+In order for Umbraco Commerce to communicate with Stripe securely we need to generate a series of API keys that Umbraco Commerce can use to authenticate with.
 
 1. Select the **Developers** heading in the sidebar.
 2. Select the **API Keys** sub-heading.
@@ -52,17 +52,17 @@ Complete the steps listed above for both the Test and the Live mode to generate 
 
 ## Step 3: Webhook
 
-For Stripe to notify Vendr of a transaction, Stripe makes use of webhook technology to send notifications of the changing transaction statuses. By using webhooks it ensures that the system will always be notified of these status changes. This is also the case if a customer decides not to return to the store once a transaction is complete.
+For Stripe to notify Umbraco Commerce of a transaction, Stripe makes use of webhook technology to send notifications of the changing transaction statuses. By using webhooks it ensures that the system will always be notified of these status changes. This is also the case if a customer decides not to return to the store once a transaction is complete.
 
 To register a webhook follow these steps:
 
 1. Select the **Developers** heading in the sidebar.&#x20;
 2. Select the **Webhooks** sub-heading.
 3. Click the **Add Endpoint** button on the right-hand side.
-4. Enter the Vendr callback URL. See an example below:
+4. Enter the Umbraco Commerce callback URL. See an example below:
 
 ```bash
-https://{store_domain}/umbraco/vendr/payment/callback/stripe-checkout/{payment_method_id}/
+  https://{store_domain}/umbraco/vendr/payment/callback/stripe-checkout/{payment_method_id}/
 ```
 
 {% hint style="info" %}

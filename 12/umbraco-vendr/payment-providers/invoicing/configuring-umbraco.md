@@ -7,13 +7,13 @@ description: >-
 
 # Configure Umbraco
 
-This article will give you details about how to configure Umbraco to start using the Invoicing payment method with your Umbraco Vendr implementation.
+This article will give you details about how to configure Umbraco to start using the Invoicing payment method with your Umbraco Commerce implementation.
 
 ## Step 1: Create a Payment Method
 
 The following steps are all handled through the Umbraco backoffice.
 
-1. Navigate to **Settings > Vendr > Stores > {Store Name} > Payment Methods** section.
+1. Navigate to **Settings > Umbraco Commerce > Stores > {Store Name} > Payment Methods** section.
 2. Select the **Create Payment Method** button to create a new payment method.
 3. Choose **Invoicing** from the list of available payment providers.
 

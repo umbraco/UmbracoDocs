@@ -2,7 +2,7 @@
 title: How to block payments from non billing country sources
 description: >-
   Learn how you can block different types of payments when using the Stripe
-  payment provider with Umbraco Vendr.
+  payment provider with Umbraco Commerce.
 ---
 
 # How to block payments from non billing country sources
@@ -13,7 +13,7 @@ If you are based in the EU selling digital goods it would be a requirement to ca
 
 ## Step 1: Capture the customer's billing country
 
-The first step is to ensure you are capturing the customer's billing address or more specifically, the billing address country. Learn how to do this in the core Vendr documentation.
+The first step is to ensure you are capturing the customer's billing address or more specifically, the billing address country. Learn how to do this in the core Umbraco Commerce documentation.
 
 ## Step 2: Pass the billing country to Stripe
 

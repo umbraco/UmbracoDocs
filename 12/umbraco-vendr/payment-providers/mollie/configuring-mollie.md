@@ -2,7 +2,7 @@
 title: Configuring Mollie
 description: >-
   Learn how to configure Mollie (One Time) in order to implement the integration
-  with your Umbraco Vendr installation.
+  with your Umbraco Commerce installation.
 ---
 
 # Configure Mollie
@@ -19,13 +19,13 @@ If you do not already have an account, you can head over to the [Mollie platform
 
 ## Step 2: API Keys
 
-In order for Umbraco Vendr to communicate with Mollie securely we need to retrieve a series of API keys used for authentication.
+In order for Umbraco Commerce to communicate with Mollie securely we need to retrieve a series of API keys used for authentication.
 
 1. Access the [Mollie Portal](https://www.mollie.com/dashboard/login).
 2. Click the **Developers** heading.
 3. Choose the **API keys** subheading.
 
-On the right-hand side, you will find your **Live API key** and your **Test API key** displayed. Note these down as you will need to enter them into the Umbraco Vendr UI shortly.
+On the right-hand side, you will find your **Live API key** and your **Test API key** displayed. Note these down as you will need to enter them into the Umbraco Commerce UI shortly.
 
 ![Mollie API keys](../media/mollie/mollie\_api\_keys.png)
 

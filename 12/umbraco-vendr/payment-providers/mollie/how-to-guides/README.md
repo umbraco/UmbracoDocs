@@ -2,7 +2,7 @@
 title: Overview
 description: >-
   Find guides to help you work with the Mollie (One Time) payment provider for
-  Umbraco Vendr.
+  Umbraco Commerce.
 ---
 
 # How-to Guides

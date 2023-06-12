@@ -11,7 +11,7 @@ description: >-
 
 The following steps are all handled through the Umbraco backoffice.
 
-1. Navigate to **Settings > Vendr > Stores > {Store Name} > Payment Methods** section.
+1. Navigate to **Settings > Commerce > Stores > {Store Name} > Payment Methods** section.
 2. Select the **Create Payment Method** button to create a new payment method.
 3. Choose **Nets Easy (One Time)** from the list of available payment providers.
 

@@ -1,6 +1,6 @@
 ---
 title: Changelog
-description: Changelog for the Klarna Payment Provider for Vendr.
+description: Changelog for the Klarna Payment Provider for Umbraco Commerce.
 ---
 
 # Changelog
@@ -31,14 +31,14 @@ description: Changelog for the Klarna Payment Provider for Vendr.
 **Date:** 2021-10-07\
 **Description:** Major new release with breaking changes
 
-* Rebuilt for Vendr 2.0.0.
+* Rebuilt for Umbraco Commerce 2.0.0.
 
 ## v0.2.0
 
 **Date:** 2020-12-10\
-**Description:** Breaking change update targeting Vendr 1.4.0
+**Description:** Breaking change update targeting Umbraco Vendr 1.4.0
 
-* Payment provider now uses new `TransactionAmount` from Vendr 1.4.0.
+* Payment provider now uses new `TransactionAmount` from Umbraco vendr 1.4.0.
 
 ## v0.1.0
 

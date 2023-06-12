@@ -2,7 +2,7 @@
 title: How to Process Subscription Payments
 description: >-
   Learn how to process subscription payments when using the Stripe payment
-  provider in Umbraco Vendr.
+  provider in Umbraco Commerce.
 ---
 
 # How to Process Subscription Payments
@@ -21,7 +21,7 @@ To process Subscription payments you first need to identify recurring products a
 | `stripeRecurringInterval`      | Relevant only if you don't provide a Stripe Price ID, this allows you to define the interval for the ad-hoc price created. Can be either `day`, `week`, `month` or `year`                                                                                                                                                                                                                                                                                                                                                                                                     |
 | `stripeRecurringIntervalCount` | Relevant only if you don't provide a Stripe Price ID, this allows you to define the interval count. For example, if the interval is `month` and the interval count is `2` then the item will be billed every two months                                                                                                                                                                                                                                                                                                                                                       |
 
-In addition to the product properties defined above, you also need to configure your Vendr Stores `Product Property Aliases` field to copy these product properties to the generated order line.
+In addition to the product properties defined above, you also need to configure your Umbraco Commerce Stores `Product Property Aliases` field to copy these product properties to the generated order line.
 
 | Name                     | Value                                                                                                |
 | ------------------------ | ---------------------------------------------------------------------------------------------------- |

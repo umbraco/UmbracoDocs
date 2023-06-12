@@ -1,18 +1,18 @@
 ---
-description: Getting Started with the Nets Easy payment provider for Umbraco Vendr.
+description: Getting Started with the Nets Easy payment provider for Umbraco Commerce.
 ---
 
 # Overview
 
-The Nets Easy payment provider provides functionality to capture payments via the [Nets Easy](https://developers.nets.eu/nets-easy/en-EU/docs/) payment gateway. It is a fully featured payment provider allowing full control of the payment flow directly from the Vendr back-office.
+The Nets Easy payment provider provides functionality to capture payments via the [Nets Easy](https://developers.nets.eu/nets-easy/en-EU/docs/) payment gateway. It is a fully featured payment provider allowing full control of the payment flow directly from the Umbraco Commerce back-office.
 
 ## [Install Nets Easy](../install-payment-providers.md)
 
 ## In this Section
 
-In this section, we will guide you through the key steps necessary to get you started with the Nets Easy payment provider for Vendr.
+In this section, we will guide you through the key steps necessary to get you started with the Nets Easy payment provider for Umbraco Commerce.
 
-It is assumed that before we begin that you already have an Umbraco website configured and Umbraco Vendr installed. If you are not yet at this stage, please read the core Vendr documentation to learn how to start with Vendr.
+It is assumed that before we begin that you already have an Umbraco website configured and Umbraco Commerce installed. If you are not yet at this stage, please read the core Umbraco Commerce documentation to learn how to start with Umbraco Commerce.
 
 ## Useful links
 

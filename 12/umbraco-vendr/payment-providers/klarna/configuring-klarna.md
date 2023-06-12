@@ -2,7 +2,7 @@
 title: Configuring Klarna
 description: >-
   Learn how to configure Klarna in order to implement the integration with your
-  Umbraco Vendr installation.
+  Umbraco Commerce installation.
 ---
 
 # Configure Klarna

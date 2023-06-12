@@ -2,7 +2,7 @@
 title: Configuring PayPal
 description: >-
   Learn how to configure PayPal in order to implement the integration with your
-  Umbraco Vendr installation.
+  Umbraco Commerce installation.
 ---
 
 # Configure PayPal
@@ -40,7 +40,7 @@ From here you can view and modify any existing Sandbox accounts you have.
 
 ## Step 2: Create a PayPal App
 
-In order for Umbraco Vendr to perform actions in your PayPal account on your behalf, we need to create a PayPal App. In fact, we'll need to create two: one for the Sandbox account and one for our Live account.
+In order for Umbraco Commerce to perform actions in your PayPal account on your behalf, we need to create a PayPal App. In fact, we'll need to create two: one for the Sandbox account and one for our Live account.
 
 1. Access the [PayPal Developer Portal](https://developer.paypal.com/developer/applications/).
 
@@ -61,7 +61,7 @@ In order for Umbraco Vendr to perform actions in your PayPal account on your beh
 
 ### Webhooks
 
-Webhooks are used for communication between PayPal and the Umbraco Vendr installation. They are managed on the same PayPal portal page as the app secrets.
+Webhooks are used for communication between PayPal and the Umbraco Commerce installation. They are managed on the same PayPal portal page as the app secrets.
 
 1. Scroll down to the **Webhooks** section.
 2. Click the **Add Webhook** button to create a new Webhook.
@@ -75,7 +75,7 @@ https://{store_domain}/umbraco/vendr/payment/callback/paypal-checkout-onetime/{p
 ```
 
 {% hint style="info" %}
-The webhook needs to be a Vendr-specific URL. Remember to replace the parameters in curly brackets with the corresponding values taken from your store.
+The webhook needs to be a Umbraco Commerce-specific URL. Remember to replace the parameters in curly brackets with the corresponding values taken from your store.
 {% endhint %}
 
 4. Select the **Event Types** to be notified of.

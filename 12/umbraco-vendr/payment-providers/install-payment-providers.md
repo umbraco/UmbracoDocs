@@ -16,7 +16,7 @@ The installation can be handled in one of two ways as explained below.
 2. Type in the following command:
 
 ```bash
-PM> Install-Package Vendr.PaymentProviders.PROVIDER
+PM> Install-Package Umbraco.Commerce.PaymentProviders.PROVIDER
 ```
 
 Use the [table of available Payment Providers](install-payment-providers.md#available-payment-providers) to ensure you get the correct package name for the provider you want to install.
@@ -30,24 +30,24 @@ Use the [table of available Payment Providers](install-payment-providers.md#avai
 
 Alternatively, you can also find and install the NuGet package via the NuGet Package Manager.
 
-![Installing Vendr via the NuGet Package Manager](media/nuget-package-manager-gui.png)
+![Installing Umbraco Commerce via the NuGet Package Manager](media/nuget-package-manager-gui.png)
 
 ## Available Payment Providers
 
 | Payment Provider | NuGet Package name                 |
 | ---------------- | ---------------------------------- |
-| Invoicing        | `Vendr.PaymentProviders.Invoicing` |
-| Klarna           | `Vendr.PaymentProviders.Klarna`    |
-| Mollie           | `Vendr.PaymentProviders.Mollie`    |
-| Nets             | `Vendr.PaymentProviders.Nets`      |
-| Paypal           | `Vendr.PaymentProviders.PayPal`    |
-| QuickPay         | `Vendr.PaymentProviders.QuickPay`  |
-| Stripe           | `Vendr.PaymentProviders.Stripe`    |
+| Invoicing        | `Umbraco.Commerce.PaymentProviders.Invoicing` |
+| Klarna           | `Umbraco.Commerce.PaymentProviders.Klarna`    |
+| Mollie           | `Umbraco.Commerce.PaymentProviders.Mollie`    |
+| Nets             | `Umbraco.Commerce.PaymentProviders.Nets`      |
+| Paypal           | `Umbraco.Commerce.PaymentProviders.PayPal`    |
+| QuickPay         | `Umbraco.Commerce.PaymentProviders.QuickPay`  |
+| Stripe           | `Umbraco.Commerce.PaymentProviders.Stripe`    |
 
 ## Upgrading
 
 {% hint style="info" %}
-Before upgrading, it is always advisable to take a complete backup of your site/database. Every effort has been made to ensure that Vendr will upgrade gracefully, but there is always a risk that something may not install as expected.
+Before upgrading, it is always advisable to take a complete backup of your site/database. Every effort has been made to ensure that Umbraco Commerce will upgrade gracefully, but there is always a risk that something may not install as expected.
 {% endhint %}
 
-Vendr uses Umbraco Migrations to install all of its features. Install the latest version of a package over the top of the existing package installation. Vendr is then clever enough to detect the current state of your site and only install the features that are missing.
+Umbraco Commerce uses Umbraco Migrations to install all of its features. Install the latest version of a package over the top of the existing package installation. Umbraco Commerce is then clever enough to detect the current state of your site and only install the features that are missing.

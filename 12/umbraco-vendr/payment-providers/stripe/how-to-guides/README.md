@@ -2,7 +2,7 @@
 title: Overview
 description: >-
   Find guides to help you work with the Stripe payment provider for Umbraco
-  Vendr.
+  Commerce.
 ---
 
 # How-to Guides

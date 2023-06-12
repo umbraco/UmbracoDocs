@@ -1,7 +1,7 @@
 ---
 description: >-
   Learn how to configure QuickPay in order to implement the integration with
-  your Umbraco Vendr installation.
+  your Umbraco Commerce installation.
 ---
 
 # Configure QuickPay
