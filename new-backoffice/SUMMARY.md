@@ -19,8 +19,7 @@
 ## Extending
 
 * [Customize the editing experience](extending/customize-the-editing-experience.md)
-* [Development Flow](extending/development-flow/README.md)
-  * [Umbraco CLI](extending/development-flow/umbraco-cli.md)
+* [Setup Your Development Environment](extending/development-flow.md)
 * [Package Manifest](extending/package-manifest/README.md)
   * [Entry Point](extending/package-manifest/entry-point.md)
 * [Dashboards](extending/dashboards.md)
