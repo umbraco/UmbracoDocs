@@ -461,4 +461,4 @@ declare global {
 
 When we save or publish, the value of the Data Type is now automatically synced to the current content object and sent to the server.
 
-Learn more about extending this service by visiting the [Property Editors page](https://docs.umbraco.com/umbraco-cms/extending/property-editors).
+Learn more about extending this service by visiting the [Property Editors page](../../extending/property-editors/).
