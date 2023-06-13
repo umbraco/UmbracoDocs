@@ -12,12 +12,11 @@ Umbraco Commerce Checkout allows you to set up your checkout flow with minimal c
 
 In this section, we will guide you through the key steps necessary to get you started with the Checkout package for Umbraco Commerce.
 
-It is assumed that before we begin that you already have an Umbraco website configured and Umbraco Commerce installed and a store set up. If you are not at this stage yet, please read the [core Umbraco Commerce documentation](http://localhost:5000/o/vHdmkfI8smZW50A5yIZD/s/s0xvC9Moj5Pqo3KonmTs/) to learn how to get started.
+It is assumed that before we begin that you already have an Umbraco website configured and Umbraco Commerce installed and a store set up. If you are not at this stage yet, please read the [core Umbraco Commerce documentation](http://localhost:5000/s/3rCehcwXc4nbpeGqcI2f/) to learn how to get started.
 
 ## Useful links
 
 As well as the content in these docs, here are a few useful links to learn more about the Umbraco Commerce Checkout package itself.
 
-* [Umbraco Commerce Checkout source code](https://github.com/umbraco/Umbraco.Commerce.Packages.Checkout)
-* [Umbraco Commerce Checkout issue tracker](https://github.com/umbraco/Umbraco.Commerce.Packages.Checkout/issues)
-* [Umbraco Commerce Checkout Our Umbraco page](https://our.umbraco.com/packages/backoffice-extensions/Umbraco Commerce-checkout/)
+* [Umbraco Commerce Checkout source code](https://github.com/umbraco/Umbraco.Commerce.Packages.Checkout) (pending)
+* [Umbraco Commerce Checkout issue tracker](https://github.com/umbraco/Umbraco.Commerce.Packages.Checkout/issues) (pending)

@@ -14,7 +14,7 @@ Check out the screenshots below to see what you get with Umbraco Commerce Checko
 
  
 
-<figure><img src="../.gitbook/assets/002 (2).png" alt="" width="375"><figcaption><p>Umbraco Commerce Checkout Customer Details</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/002 (2) (4).png" alt="" width="375"><figcaption><p>Umbraco Commerce Checkout Customer Details</p></figcaption></figure>
 
 </div>
 
@@ -40,6 +40,6 @@ Check out the screenshots below to see what you get with Umbraco Commerce Checko
 
 <div align="left">
 
-<img src="../media/checkout/007.png" alt="Umbraco Commerce Checkout Order Email" width="375">
+<img src="../media/checkout/007 (1).png" alt="Umbraco Commerce Checkout Order Email" width="375">
 
 </div>
