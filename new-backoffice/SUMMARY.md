@@ -45,3 +45,5 @@
   * [Adding functionality to the Dashboard](tutorials/creating-a-custom-dashboard/adding-functionality-to-the-dashboard.md)
   * [Extending the Dashboard using Umbraco UI library](tutorials/creating-a-custom-dashboard/extending-the-dashboard-using-umbraco-ui-library.md)
 * [Creating a Property Editor](tutorials/creating-a-property-editor.md)
+* [Adding configuration to a Property Editor](tutorials/adding-configuration-to-a-property-editor.md)
+* [Integrating services with a Property Editor](tutorials/integrating-services-with-a-property-editor.md)
