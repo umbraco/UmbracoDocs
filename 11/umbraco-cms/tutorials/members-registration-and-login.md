@@ -323,8 +323,8 @@ using (Html.BeginUmbracoForm<UmbRegisterController>(
 we have to instead use the custom controller we added, as well as include an anti-forgery token:
 
 ```csharp
-    using (Html.BeginUmbracoForm<UmbAlternativeRegisterController>(
-            "HandleRegisterMember",
+    using (Html.BeginUmbracoForm(
+            "HandleRegisterMember","UmbAlternativeRegister",
             new {
                 MemberTypeAlias = registerModel.MemberTypeAlias,
                 UsernameIsEmail = registerModel.UsernameIsEmail,
