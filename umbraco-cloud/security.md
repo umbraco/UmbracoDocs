@@ -70,10 +70,9 @@ public void ConfigureServices(IServiceCollection services)
                 options.Preload = true;
             });
         }
-
 ```
 
-This adds the "Strict-Transport-Security" header that tells browsers: for the next 63072000 seconds or 730 days (which is two years) the browser should not make any HTTP requests to this domain.
+This adds the "Strict-Transport-Security" header telling browsers how long the browser should not make any HTTP requests to this domain. In this example 63072000 seconds or 730 days is two years.
 
 ### TLS 1.2 by default in external services
 
