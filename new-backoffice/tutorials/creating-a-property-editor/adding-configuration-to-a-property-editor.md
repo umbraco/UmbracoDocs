@@ -82,7 +82,7 @@ Your `umbraco-package.json` file should now look something like this:
   "version": "0.1.0",
   "extensions": [
     {
-      "type": "PropertyEditorModel",
+      "type": "propertyEditorUi",
       "alias": "My.AwesomeSuggestions",
       "name": "My Awesome Suggestions",
       "js": "/App_Plugins/Suggestions/dist/awesome-suggestions.js",

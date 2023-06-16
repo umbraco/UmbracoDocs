@@ -47,7 +47,7 @@ Add the following code
   "version": "0.1.0",
   "extensions": [
     {
-      "type": "PropertyEditorModel",
+      "type": "propertyEditorUi",
       "alias": "My.Suggestions",
       "name": "My Suggestions",
       "js": "/App_Plugins/Suggestions/dist/my-suggestions.js",
@@ -65,7 +65,7 @@ Add the following code
 ```
 
 {% hint style="info" %}
-Make sure to restart the application after you create and update`umbraco-package.json`&#x20;
+Make sure to restart the application after you create and update`umbraco-package.json`
 {% endhint %}
 
 ### 2. Writing basic Web Components

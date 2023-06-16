@@ -22,9 +22,9 @@ You can also change the stylesheet of custom properties to see how the component
 
 ## Installing the UI Library Components
 
-You can download the UI Library package from [Github](https://github.com/umbraco/Umbraco.UI/tree/dev/packages/uui).
+The UI Library is generally available in the Backoffice from version 10.
 
-If you are installing a component via npm, there are two ways to import it:
+You can also work with the components on a code level. If you want to do so, you can install the UI Library via npm, and there are two ways to import it:
 
 1.  To import a specific component and register it at the same time, use the following command:
 
@@ -38,7 +38,7 @@ If you are installing a component via npm, there are two ways to import it:
     '@umbraco-ui/uui-button/lib/uui-button.element';
     ```
 
-For more information on installation, Content Delivery Networks (CDN), or included components, see the [Readme file](https://github.com/umbraco/Umbraco.UI/blob/dev/packages/uui/README.md) in the [Github](https://github.com/umbraco/Umbraco.UI/tree/dev/packages/uui) project.
+For more information on installation or included components, see the [Readme file](https://github.com/umbraco/Umbraco.UI/blob/dev/packages/uui/README.md) in the [Github](https://github.com/umbraco/Umbraco.UI/tree/dev/packages/uui) project.
 
 ## Getting Started with the UI Library
 
