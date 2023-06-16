@@ -35,7 +35,7 @@ Umbraco Cloud Websites support the following TLS ciphers in this order:
 
 ### HSTS - HTTP Strict Transport Security
 
-It's possible to enforce HTTP Strict Transport Security ([HSTS](https://en.wikipedia.org/wiki/HTTP\_Strict\_Transport\_Security)) by adding the headers to your website. This grants Umbraco Cloud Websites an A+ security rating on sslabs (March 2020). 
+It's possible to enforce HSTS: [HTTP Strict Transport Security](https://en.wikipedia.org/wiki/HTTP\_Strict\_Transport\_Security) by adding the headers to your website. This grants Umbraco Cloud Websites an A+ security rating on sslabs (March 2020). 
 
 You can add the header by modifying system.webServer/rewrite/outboundRules section in your web.config:
 
