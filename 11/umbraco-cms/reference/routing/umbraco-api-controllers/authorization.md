@@ -61,8 +61,23 @@ public class ProductsController : UmbracoApiController
 }
 ```
 
-## Adding policies.
-You can relativly easy add new policies .. // TODO
+## Adding custom policies.
+You can add custom policies so you can setup your own requirements. You can do this by adding a new Policy to your builder:
+
+```csharp
+builder.Services.AddAuthorization(options =>
+    options.AddPolicy(MyConstants.CustomPolicyName, policy => // Always good to use constants
+    {
+        policy.AuthenticationSchemes.Add(Constants.Security.BackOfficeAuthenticationType); // Default backoffice authentication scheme
+        policy.RequireRole(Constants.Security.SensitiveDataGroupAlias); // Add the Sensitive Group as an requirement
+    })
+);
+```
+
+After setting this, you can now use the Authorize attribute using the name of your policy:
+```csharp
+[Authorize(Policy = MyConstants.CustomPolicyName)]
+```
 
 ## Using MemberAuthorizeAttribute
 
