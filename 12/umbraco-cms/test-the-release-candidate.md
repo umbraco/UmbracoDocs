@@ -44,7 +44,7 @@ This will boot the project and write the log to the console. The website is now 
 
 Below you can see a list of features in the Umbraco 12-RC that we would like to get tested and receive feedback for.
 
-* [Content Delivery API](reference/content-delivery-api.md)
+* [Content Delivery API](reference/content-delivery-api/)
 * [Entity Framework Core Support](tutorials/getting-started-with-entity-framework-core.md)
 
 ## How to provide feedback

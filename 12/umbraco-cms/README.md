@@ -24,8 +24,8 @@ Learn much more about Umbraco CMS and get an overview of the top features on [Um
 [test-the-release-candidate.md](test-the-release-candidate.md)
 {% endcontent-ref %}
 
-{% content-ref url="reference/content-delivery-api.md" %}
-[content-delivery-api.md](reference/content-delivery-api.md)
+{% content-ref url="reference/content-delivery-api/" %}
+[content-delivery-api](reference/content-delivery-api/)
 {% endcontent-ref %}
 
 {% content-ref url="tutorials/getting-started-with-entity-framework-core.md" %}

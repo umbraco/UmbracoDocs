@@ -10,7 +10,7 @@ The Content Delivery API delivers headless capabilities built directly into Umbr
 
 When upgrading an existing project to Umbraco 12, you will need to opt-in explicitly for using the Delivery API. Below you will find the steps you need to take in order to configure it for your Umbraco project.
 
-When you start with a fresh Umbraco 12 installation, the Delivery API is also disabled by default. To enable it, you can proceed directly to the [Enable the Content Delivery API](content-delivery-api.md#enable-the-content-delivery-api) section, as the step below is already complete in this case.
+When you start with a fresh Umbraco 12 installation, the Delivery API is also disabled by default. To enable it, you can proceed directly to the [Enable the Content Delivery API](./#enable-the-content-delivery-api) section, as the step below is already complete in this case.
 
 ### Register the Content Delivery API dependencies
 
@@ -411,7 +411,7 @@ Returns single or multiple items.
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="fetch" type="String" required="false" %}
-Structural query string option (e.g. `ancestors`, `children`,&#x20;
+Structural query string option (e.g. `ancestors`, `children`,
 
 `descendants`)
 {% endswagger-parameter %}
@@ -480,7 +480,7 @@ You can extend the built-in selector, filter, and sorting capabilities of the De
 {% tabs %}
 {% tab title="expand" %}
 {% hint style="info" %}
-Refer to the [Output expansion](content-delivery-api.md#output-expansion) concept for more information about the benefits of this parameter.
+Refer to the [Output expansion](./#output-expansion) concept for more information about the benefits of this parameter.
 {% endhint %}
 
 **`?expand=all`**\

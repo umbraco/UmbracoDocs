@@ -13,7 +13,8 @@
 ## Reference
 
 * [Dive into the code](reference/dive-into-the-code.md)
-* [Content Delivery API](reference/content-delivery-api.md)
+* [Content Delivery API](reference/content-delivery-api/README.md)
+  * [Extension points](reference/content-delivery-api/extension-points.md)
 
 ## Tutorials
 
