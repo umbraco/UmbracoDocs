@@ -44,7 +44,7 @@ The `AuthorizationPolicies` has a [series of other options](https://github.com/u
 
 **Example:**
 
-This will only allow a logged in backoffice user that has access to the SensitiveData usergroup to access the GetAllProducts action:
+This will only allow a logged-in backoffice user that has access to the SensitiveData User Group to access the `GetAllProducts` action:
 
 ```csharp
 public class ProductsController : UmbracoApiController
@@ -61,8 +61,9 @@ public class ProductsController : UmbracoApiController
 }
 ```
 
-## Adding custom policies.
-You can add custom policies so you can setup your own requirements. You can do this by adding a new Policy to your builder:
+## Adding custom policies
+
+You can add custom policies so you can set up your own requirements. You can do this by adding a new Policy to your builder:
 
 **Example:**
 
@@ -77,7 +78,7 @@ builder.Services.AddAuthorization(options =>
 );
 ```
 
-After configuring, you can now use the Authorize attribute using the name of your policy:
+After configuring, you can now use the `Authorize` attribute using the name of your policy:
 
 ```csharp
 [Authorize(Policy = MyConstants.CustomPolicyName)]
