@@ -362,9 +362,9 @@ The order of these registrations matters. It is important to register your index
 
 ### Result
 
-![Custom product index](../../../../../10/umbraco-cms/reference/searching/examine/images/examine-management-product-index.png)
+![Custom product index](images/examine-management-product-index.png)
 
-![Product document](../../../../../10/umbraco-cms/reference/searching/examine/images/examine-management-product-document.png)
+![Product document](images/examine-management-product-document.png)
 
 {% hint style="info" %}
 The index will only update its content when you manually trigger an index rebuild in the Examine dashboard. This is not always the desired behavior for a custom index.
