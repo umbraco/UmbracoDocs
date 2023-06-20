@@ -411,9 +411,7 @@ Returns single or multiple items.
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="fetch" type="String" required="false" %}
-Structural query string option (e.g. `ancestors`, `children`,
-
-`descendants`)
+Structural query string option (e.g. `ancestors`, `children`, `descendants`)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="filter" type="String Array" required="false" %}
