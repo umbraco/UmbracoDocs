@@ -93,7 +93,7 @@ public class AuthorSelector : ISelectorHandler, IContentIndexHandler
 ```
 {% endcode %}
 
-The `AuthorSelector` class implements the `ISelectorHandler` and `IContentIndexHandler` interfaces. The `ISelectorHandler` allows for handling the custom selector in API queries through the `CanHandle()` and `BuildSelectorOption()` methods. The implementation of `CanHandle()` determines if the given `fetch` query corresponds to the `"featuredAuthors"` value. The `BuildSelectorOption()` method constructs the selector option to search for authors with a positive value (e.g., `"y"`) in a `"featured"` index field.&#x20;
+The `AuthorSelector` class implements the `ISelectorHandler` and `IContentIndexHandler` interfaces. The `ISelectorHandler` allows for handling the custom selector in API queries through the `CanHandle()` and `BuildSelectorOption()` methods. The implementation of `CanHandle()` determines if the given `fetch` query corresponds to the `"featuredAuthors"` value. The `BuildSelectorOption()` method constructs the selector option to search for authors with a positive value (e.g., `"y"`) in a `"featured"` index field. This implementation is very customizable, giving you the flexibility to define your own logic.&#x20;
 
 For indexing, both the `GetFieldValues()` and `GetFields()` methods play a crucial role in defining how the data should be indexed and made searchable. The `GetFieldValues()` method is responsible for retrieving the value of the _'Featured'_ field of content items of type _'author'_. Then creating an `IndexFieldValue` with the appropriate field value (`"y"` for featured, `"n"` otherwise) which will be used when populating the index. `GetFields()` defines the `"featured"` field in the **DeliveryApiContentIndex**, allowing for efficient and accurate searching.
 
@@ -117,6 +117,33 @@ GET /umbraco/delivery/api/v1/content?fetch=featuredAuthors
 ```
 
 ## Custom filter
+
+Staying within the topic of blog posts and their authors, we can introduce a custom filter which will narrow down our content retrieval. With this custom filter, we can fetch specific blog posts associated with one or more authors based on our filtering query. We can specify the author(s) by providing their content item's key (GUID) as the value of the `author:` filter option. Multiple authors can be included by listing their GUIDs as comma-separated-values, like:
+
+**Request**
+
+```http
+GET /umbraco/delivery/api/v1/content?filter=author:7c630f15-8d93-4980-a0fc-027314dc827a,75380b4f-6d6e-47a1-9222-975cdfb2ac5f
+```
+
+The response will include the blog posts associated with the provided authors' IDs, enabling us to get only the relevant results from the API.
+
+**Response**
+
+```json
+{
+    "total": 4,
+    "items": [
+        ...
+    ]
+}
+```
+
+Our filter implementation follows a similar structure to the custom selector we discussed earlier. We continue to utilize the `IContentIndexHandler` interface, but this time we introduce the `IFilterHandler`. This combination gives us flexibility and control over the filtering behaviour.
+
+The underlying idea remains consistent: we store the author's `Guid` in a new `"authorId"` field within the index. Consequently, we will need to rebuild the index to reflect the changes.
+
+To illustrate the implementation, consider the following code example:
 
 {% code title="AuthorFilter.cs" lineNumbers="true" %}
 ```csharp
@@ -181,26 +208,17 @@ public class AuthorFilter : IFilterHandler, IContentIndexHandler
 ```
 {% endcode %}
 
-**Request**
-
-```http
-GET /umbraco/delivery/api/v1/content?filter=author:7c630f15-8d93-4980-a0fc-027314dc827a,75380b4f-6d6e-47a1-9222-975cdfb2ac5f
-```
-
-**Response**
-
-```json
-{
-    "total": 4,
-    "items": [
-        ...
-    ]
-}
-```
-
-
+This filter performs an exact match for each specified GUID against the index. The Delivery API also supports "Contains" filters, which can be used, for instance, to create an author filter based on names instead of IDs. In this case, the `BuildFilterOption()` method should use the `FilterOperation.Contains` operator, and the `GetFields()` implementation should specify `FieldType.StringAnalyzed` for the returned `IndexField`.
 
 ## Custom sort
+
+Finally, adding a new custom sorting option can enable us to sort our blog posts based on a custom `"publishDate"` Date Picker property. This allows us to arrange the posts in ascending or descending order based on their publication dates.
+
+{% hint style="info" %}
+This sorting should only be used with content nodes that have a published date to ensure accurate results.
+{% endhint %}
+
+To demonstrate this, consider the following implementation example:
 
 {% code title="PublishDateSort.cs" lineNumbers="true" %}
 ```csharp
@@ -265,7 +283,9 @@ public class PublishDateSort : ISortHandler, IContentIndexHandler
 ```
 {% endcode %}
 
+The provided implementation follows the familiar structure defined by the `IContentIndexHandler` and `ISortHandler` interfaces. And another point to highlight is that we store the `"publishDate"` value in a `Date` format within the index, which requires regenerating the data in the **DeliveryApiContentIndex**.
 
+In the following example request, we also apply the author filter to retrieve only `"blogpost"` content nodes, which we know have the `"publishDate"` field. This helps to ensure that our sorting yields meaningful and relevant results.
 
 **Request**
 
@@ -283,5 +303,3 @@ GET /umbraco/delivery/api/v1/content?filter=author:7c630f15-8d93-4980-a0fc-02731
     ]
 }
 ```
-
-Custom sort
