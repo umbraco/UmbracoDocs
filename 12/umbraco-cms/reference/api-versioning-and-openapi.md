@@ -13,9 +13,9 @@ In this article we'll explore concrete solutions to overcome challenges with the
 {% hint style="info" %}
 Umbraco uses [Swashbuckle.AspNetCore](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/) to handle Swagger and the Swagger UI.
 
-If you have been using [NSwag](https://github.com/RicoSuter/NSwag) previous to Umbraco 12, chances are your Swagger setup will continue to work in Umbraco 12+ without any changes. At the time of writing, Swashbuckle.AspNetCore and NSwag can coexist within the same site, as long as there are no conflicting routes between the two.
+If you have been using [NSwag](https://github.com/RicoSuter/NSwag) previous to Umbraco 12, chances are your Swagger setup will continue to work in Umbraco 12+ without any changes. Swashbuckle.AspNetCore and NSwag can coexist within the same site, as long as there are no conflicting routes between the two.
 
-That being said, it would be sensible to consider migrating your API documentation to Swashbuckle.AspNetCore, to avoid having multiple dependencies that essentially perform the same tasks.
+That being said, it would be sensible to consider migrating your API documentation to Swashbuckle.AspNetCore. This way you can avoid having multiple dependencies that perform the same tasks.
 {% endhint %}
 
 ## API versioning
@@ -59,7 +59,7 @@ public static class MyConfigureApiVersioningUmbracoBuilderExtensions
 
 ## Swagger route and/or availability
 
-As mentioned in the beginning of this article, Umbraco exposes Swagger and the Swagger UI at `{yourdomain}/umbraco/swagger`, and they are disabled when the site is in production mode.
+As mentioned in the beginning of this article, Umbraco exposes Swagger and the Swagger UI at `{yourdomain}/umbraco/swagger`. Both are disabled when the site is in production mode.
 
 The code sample below shows how to change the Swagger route and availability.
 
@@ -118,9 +118,9 @@ public static class MyConfigureSwaggerRouteUmbracoBuilderExtensions
 
 ## Adding custom operation IDs
 
-Custom operation IDs can be a great way to make your API easier to use, specially for consumers that generate API contracts from your Swagger documents.
+Custom operation IDs can be a great way to make your API easier to use - specially for consumers that generate API contracts from your Swagger documents.
 
-The Umbraco APIs use custom operation IDs for that very reason. In order to remain as un-intrusive as possible, these custom operation IDs are not applied to your APIs.
+The Umbraco APIs use custom operation IDs for that exact reason. In order to remain as un-intrusive as possible, these custom operation IDs are not applied to your APIs.
 
 If you want to apply custom operation IDs to your APIs, you must ensure that the Umbraco APIs retain their custom operation IDs. The following code sample illustrates how this can be done.
 
@@ -172,7 +172,7 @@ public static class MyOperationIdUmbracoBuilderExtensions
 
 ## Adding custom schema IDs
 
-Just as with the custom operation IDs above, custom schema IDs can also make it easier for your API consumers to understand and work with your APIs. To that same end, Umbraco applies custom schema IDs to the Umbraco APIs - but not to your APIs.
+Custom schema IDs can also make it easier for your API consumers to understand and work with your APIs. To that same end, Umbraco applies custom schema IDs to the Umbraco APIs - but not to your APIs.
 
 If you want to create custom schema IDs for your APIs, you must ensure that the Umbraco APIs retain their custom schema IDs. The following code sample illustrates how that can be done.
 
@@ -223,7 +223,7 @@ Umbraco automatically adds a "default" Swagger document to contain all APIs that
 If you want to exercise more control over where your APIs show up in Swagger, you can do so by adding your own Swagger documents.
 
 {% hint style="info" %}
-Umbraco imposes no limitations on adding Swagger documents, and the code below is a very simplistic example.
+Umbraco imposes no limitations on adding Swagger documents, and the code below is a simplistic example.
 
 In the [Swashbuckle GitHib repository](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/) you will find comprehensive documentation for Swagger documents.
 {% endhint %}
