@@ -12,7 +12,7 @@ This article will cover in detail how you can try out and test the Release Candi
 
 ## Getting started with the RC
 
-To get started working with the Umbraco release candidate, follow the steps below using the Command Line Interface (CLI)
+To get started working with the Umbraco release candidate, follow the steps below using the Command Line Interface (CLI).
 
 1. Install the new Umbraco dotnet template:
    * ```aspnet
@@ -35,14 +35,14 @@ To run the project with the CLI, follow the steps below:
    * ```
      cd MyCustomUmbracoSolution
      ```
-2. Build the project by running the `dotnet build` command in the project folder
-3. Run the project using the `dotnet run` command
+2. Build the project by running the `dotnet build` command in the project folder.
+3. Run the project using the `dotnet run` command.
 
 This will boot the project and write the log to the console. The website is now running on the Kestrel server and will be available on the ports written in the console.
 
 ## What to focus on for testing
 
-Below you can see a list of features in the Umbraco 12-RC that we would like to get tested and receive feedback for.
+Below is a list of features in the Umbraco 12-RC that we would like to get tested and receive feedback for.
 
 * [Content Delivery API](reference/content-delivery-api.md)
 * [Entity Framework Core Support](tutorials/getting-started-with-entity-framework-core.md)
