@@ -14,6 +14,6 @@ The section also includes documentation about the different configuration option
 [content-delivery-api.md](content-delivery-api.md)
 {% endcontent-ref %}
 
-{% content-ref url="reference/api-versioning-and-openapi.md" %}
-[api-versioning-and-openapi.md](reference/api-versioning-and-openapi.md)
+{% content-ref url="api-versioning-and-openapi.md" %}
+[api-versioning-and-openapi.md](api-versioning-and-openapi.md)
 {% endcontent-ref %}
