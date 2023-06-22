@@ -223,3 +223,5 @@ GET /umbraco/delivery/api/v1/content/item/blog?expand=property:pickedItem
     "cultures": {}
 }
 ```
+
+The `itemDetails` property of the `pickedItem` in the JSON response contains the additional details of the selected content item.
