@@ -118,7 +118,7 @@ public static class MyConfigureSwaggerRouteUmbracoBuilderExtensions
 
 ## Adding custom operation IDs
 
-Custom operation IDs can be a great way to make your API easier to use. Specially for consumers that generate API contracts from your Swagger documents.
+Custom operation IDs can be a great way to make your API easier to use. Especially for consumers that generate API contracts from your Swagger documents.
 
 The Umbraco APIs use custom operation IDs for that exact reason. In order to remain as un-intrusive as possible, these custom operation IDs are not applied to your APIs.
 
