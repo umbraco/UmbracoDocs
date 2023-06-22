@@ -158,6 +158,7 @@ public class AuthorFilter : IFilterHandler, IContentIndexHandler
     private const string AuthorSpecifier = "author:";
     private const string FieldName = "authorId";
 
+    // Querying
     public bool CanHandle(string query)
         => query.StartsWith(AuthorSpecifier, StringComparison.OrdinalIgnoreCase);
 
@@ -176,6 +177,7 @@ public class AuthorFilter : IFilterHandler, IContentIndexHandler
         };
     }
 
+    // Indexing
     public IEnumerable<IndexFieldValue> GetFieldValues(IContent content, string? culture)
     {
         GuidUdi? authorUdi = content.GetValue<GuidUdi>("author");
@@ -233,6 +235,7 @@ public class PublishDateSort : ISortHandler, IContentIndexHandler
     private const string SortOptionSpecifier = "publishDate:";
     private const string FieldName = "publishDate";
 
+    // Querying
     public bool CanHandle(string query)
         => query.StartsWith(SortOptionSpecifier, StringComparison.OrdinalIgnoreCase);
 
@@ -249,7 +252,7 @@ public class PublishDateSort : ISortHandler, IContentIndexHandler
         };
     }
 
-
+    // Indexing
     public IEnumerable<IndexFieldValue> GetFieldValues(IContent content, string? culture)
     {
         var publishDate = content.GetValue<DateTime?>("publishDate");
