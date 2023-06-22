@@ -66,7 +66,7 @@ public void ConfigureServices(IServiceCollection services)
             services.AddHsts(options =>
             {
                 options.MaxAge = TimeSpan.FromDays(730);
-                options.IncludeSubDomains= true;
+                options.IncludeSubDomains = true;
                 options.Preload = true;
             });
         }
