@@ -32,7 +32,7 @@ In the following sections, we will explore the implementation details of creatin
 
 ## Custom selector
 
-To showcase how a custom selector is implemented consider a simple site structure with a few blog posts. Each post links to an author from a predefined list. Authors, on the other hand, can be marked as _'Featured'_ using a toggle on their document type, granting them additional visibility and recognition. We will use this marker as part of the indexing implementation for our selector option.
+To showcase how a custom selector is implemented consider a simple site structure with a few blog posts. Each post links to an author from a predefined list. Authors, on the other hand, can be marked as _'Featured'_ using a toggle on their Document Type, granting them additional visibility and recognition. We will use this marker as part of the indexing implementation for our selector option.
 
 The following example demonstrates the implementation of an `AuthorSelector`, which allows you to customize the querying behaviour specifically for finding all featured authors. This class contains both indexing and querying responsibilities. However, keep in mind that it is generally recommended to separate these responsibilities into dedicated classes.
 
@@ -97,7 +97,7 @@ The `AuthorSelector` class implements the `ISelectorHandler` and `IContentIndexH
 
 For indexing, both the `GetFieldValues()` and `GetFields()` methods play a crucial role in defining how the data should be indexed and made searchable. The `GetFieldValues()` method is responsible for retrieving the value of the _'Featured'_ field of content items of type _'author'_. Then creating an `IndexFieldValue` with the appropriate field value (`"y"` for featured, `"n"` otherwise) which will be used when populating the index. `GetFields()` defines the `"featured"` field in the **DeliveryApiContentIndex**, allowing for efficient and accurate searching.
 
-Since our custom query option modifies the index structure, we will need to rebuild the **DeliveryApiContentIndex** by navigating to the "Examine Management" dashboard in the "Settings" section. After that, we can make a request to the Delivery API query endpoint as follows:
+Since our custom query option modifies the index structure, we will need to rebuild the **DeliveryApiContentIndex**. You can find it by navigating to the "Examine Management" dashboard in the "Settings" section. After that, we can make a request to the Delivery API query endpoint as follows:
 
 **Request**
 
