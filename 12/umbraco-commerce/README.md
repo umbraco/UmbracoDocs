@@ -1,30 +1,42 @@
 ---
+title: Umbraco Commerce Documentation
 description: >-
-  Find documentation and guides for Umbraco Vendr including the different add-on
-  packages and available payment providers.
-layout: landing
+  Browse the Umbraco Commerce documentation to learn more about the addon and
+  how to use it.
 ---
 
-# Umbraco Vendr Documentation
+# What is Umbraco Commerce?
 
-Before you can start using this document you need to choose either the core Vendr product, one of the packages, or payment providers.
+{% hint style="info" %}
+This is the Work in Progress (WIP) documentation for the upcoming launch of Umbraco Commerce. We will publish content on the site as needed
 
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Umbraco Vendr</strong></td><td>This is the core product which is a dependency for all the available add-ons. Find guides on getting started and for how to extend and customize the implementation.</td><td><a href="http://localhost:5000/s/s0xvC9Moj5Pqo3KonmTs/">What is Umbraco Vendr?</a></td></tr><tr><td><strong>Packages</strong></td><td>There are a few add-ons available to extend the Umbraco Vendr application. Learn more about each of them and how they can be used in your implementation.</td><td><a href="http://localhost:5000/s/4kB9Trqs7XbQsP80vWVA/">Packages for Umbraco Vendr</a></td></tr><tr><td><strong>Payment Providers</strong></td><td>A collection of payment provider integrations are available to extend the Umbraco Vendr core implementation. Learn more about each of them and how to configure them for your implementation.</td><td><a href="http://localhost:5000/s/O8zV7PYqNxSkuGGGYa3P/">What are Payment Providers?</a></td></tr></tbody></table>
+We are aiming to release Umbraco Commerce on July 5th, 2023.
+{% endhint %}
+
+Umbraco Commerce is the official Umbraco e-commerce addon for your Umbraco CMS website. It can be used to set up small webshops, while it can also be implemented for big-scale e-commerce solutions spanning multiple countries.
+
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Getting Started</strong></td><td>Find all the information you need to get started using Umbraco Commerce with your Umbraco CMS implementation.</td><td><a href="getting-started/introduction.md">introduction.md</a></td><td><a href=".gitbook/assets/commerce-icon.png">commerce-icon.png</a></td></tr><tr><td><strong>How-to Guides</strong></td><td>Looking to configure and implement something specific? Take a look through the How-to section where you might find a guide that fits your needs.</td><td><a href="how-to-guides/overview.md">overview.md</a></td><td><a href=".gitbook/assets/umbraco_free_way_01.png">umbraco_free_way_01.png</a></td></tr><tr><td><strong>Key Concepts</strong></td><td>Looking to learn more about the different concepts and features of Umbraco Commerce? You can find detailed information about each of them in this section.</td><td><a href="key-concepts/overview.md">overview.md</a></td><td><a href=".gitbook/assets/Umbraco_Brand_Guidelines_2020_28_Illustration blocks.png">Umbraco_Brand_Guidelines_2020_28_Illustration blocks.png</a></td></tr></tbody></table>
+
+## Extend Umbraco Commerce
+
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Umbraco Commerce Packages</strong></td><td>Choose between a selection of verified packages to extend the Umbraco Commerce implementation for your website.</td><td><a href="http://localhost:5000/o/vHdmkfI8smZW50A5yIZD/s/4kB9Trqs7XbQsP80vWVA/">Commerce Packages</a></td></tr><tr><td><strong>Umbraco Commerce Payment Providers</strong></td><td>You can integrate your Umbraco Commerce implementation with a series of different payment providers.</td><td><a href="http://localhost:5000/o/vHdmkfI8smZW50A5yIZD/s/O8zV7PYqNxSkuGGGYa3P/">Commerce Payment Providers</a></td></tr></tbody></table>
 
 ## Quick links
 
-{% content-ref url="http://localhost:5000/s/s0xvC9Moj5Pqo3KonmTs/getting-started" %}
-[Getting Started](http://localhost:5000/s/s0xvC9Moj5Pqo3KonmTs/getting-started)
+{% content-ref url="reference/go-behind-the-scenes.md" %}
+[go-behind-the-scenes.md](reference/go-behind-the-scenes.md)
 {% endcontent-ref %}
 
-{% content-ref url="http://localhost:5000/s/s0xvC9Moj5Pqo3KonmTs/getting-started/installation" %}
-[Installation](http://localhost:5000/s/s0xvC9Moj5Pqo3KonmTs/getting-started/installation)
-{% endcontent-ref %}
+{% hint style="info" %}
+Are you looking for Vendr documentation?
 
-{% content-ref url="http://localhost:5000/s/s0xvC9Moj5Pqo3KonmTs/key-concepts/overview" %}
-[Get to know the main features](http://localhost:5000/s/s0xvC9Moj5Pqo3KonmTs/key-concepts/overview)
-{% endcontent-ref %}
+The articles and topics covered on this documentation site are for Umbraco Commerce.
 
-{% content-ref url="http://localhost:5000/s/O8zV7PYqNxSkuGGGYa3P/install-payment-providers" %}
-[Install payment providers](http://localhost:5000/s/O8zV7PYqNxSkuGGGYa3P/install-payment-providers)
-{% endcontent-ref %}
+Documentation for Vendr is located on the [Vendr Documentation site](https://vendr.net/docs/).
+{% endhint %}
+
+### Using These Docs
+
+**These docs are aimed at developers** who have at least a basic understanding of [Umbraco](https://umbraco.com), as well as C# and MVC principals.
+
+If you require assistance you can use our support channels to seek assistance.
