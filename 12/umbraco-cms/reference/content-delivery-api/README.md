@@ -612,4 +612,4 @@ As mentioned in the [Protected content](./#protected-content) limitation section
 
 The same applies when adding or removing aliases of content types from the `Umbraco:CMS:DeliveryApi:DisallowedContentTypeAliases` configuration setting.
 
-By re-publishing the affected content items, the changes will be reflected in both cases and that way it won't be necessary to rebuild the index.
+Republishing the relevant content items will ensure that the changes are reflected in both cases, eliminating the need to rebuild the index.
