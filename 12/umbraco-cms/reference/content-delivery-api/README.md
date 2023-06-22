@@ -621,3 +621,11 @@ The Member Picker property editor is not supported in the Delivery API to avoid 
 #### Multinode Treepicker
 
 The Multinode Treepicker property editor, when configured for members, is also unsupported in the Delivery API. This is due to the same concern of potentially leaking member data.
+
+### Rebuilding the **DeliveryApiContentIndex**
+
+As mentioned in the [Protected content](./#protected-content) limitation section, the **DeliveryApiContentIndex** should be rebuilt after removing the _"Restrict Public Access"_ protection from a content item.
+
+The same applies when adding or removing aliases of content types from the `Umbraco:CMS:DeliveryApi:DisallowedContentTypeAliases` configuration setting.
+
+By publishing the affected content items again, the changes will be reflected in both cases and that way it won't be necessary to rebuild the index.
