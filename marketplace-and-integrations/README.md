@@ -8,9 +8,16 @@ description: >-
 
 Within this Umbraco DXP (Digital Experience Platform) area of the Umbraco documentation, you'll find topics related to extending Umbraco CMS via packages and integrations.
 
-Umbraco is used in solutions in both a "platform" and "composable" DXP context. With the former, Umbraco has responsibility for both content management and delivery, with extensions added as NuGet packages. In a composable DXP, Umbraco is often part of an overall architecture, focussed on the management of content exposed via APIs for delivery. In both situations, backoffice integrations are an important part of providing an intuitive, unified editor experience.
+Both packages and integrations are defined as Umbraco Packages that can be either [NuGet packages (Umbraco 10+) or packages zip files (Umbraco 8 or earlier)](https://docs.umbraco.com/umbraco-cms/extending/packages/types-of-packages)
 
-Our aim is to enhance the "platform DXP", support the CMS in a "composable DXP", and make it simpler to build integrations with Umbraco.
+Integrations are defined as Umbraco Packages that provide functionality via a third-party service's API, whereas packages are Umbraco Packages that extend the functionality of the CMS (management or delivery). For visualisation of ways to extend Umbraco see the illustation below.
+![Packages and integrations](https://github.com/BoletteKern/UmbracoDocs/blob/main/marketplace-and-integrations/.gitbook/assets/Packages%20and%20intgerations.png)
+
+Umbraco is used in solutions in both a "platform" and "composable" DXP context. With the former, Umbraco has responsibility for both content management and delivery, with extensions added as NuGet packages. In a composable DXP, Umbraco is often a stand-alone service that take part of an overall architecture, focussed on the management of content exposed via APIs for delivery. Umbraco is also used in a hybrid DXP context where some values are added into the Umbraco platform, e.g Umbraco Forms or Umbraco Commerce, at the time as Umbraco is used as a component in a wider architecture. In all situations, backoffice integrations are an important part of providing an intuitive, unified editor experience.
+
+![Umbraco as a platform DXP, composable DXP og hybrid solution](https://github.com/BoletteKern/UmbracoDocs/blob/main/marketplace-and-integrations/.gitbook/assets/pDXP%20cDXP.png)
+
+Our aim is to support all the different ways of using Umbraco in a DXP setup and make it simpler to build integrations with Umbraco.
 
 ## Umbraco Commercial Products
 
