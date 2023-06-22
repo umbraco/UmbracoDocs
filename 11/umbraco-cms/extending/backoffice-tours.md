@@ -62,7 +62,7 @@ Below is an explanation of each of the properties on the tour configuration obje
 
     This is the name that is displayed in the help drawer for the tour.
 
-    ![Tour name highlighted](images/tourname-v8.png)
+    ![Tour name highlighted](../../../10/umbraco-cms/extending/images/tourname-v8.png)
 *   **alias**
 
     The unique alias of your tour. This is used to track the progress a user has made while taking a tour. The progress information is stored in the `TourData` column of the `UmbracoUsers` table in the database.
@@ -70,7 +70,7 @@ Below is an explanation of each of the properties on the tour configuration obje
 
     The group property is used to group related tours in the help drawer under a common subject (e.g. Getting started).
 
-    ![Tour group highlighted](images/tourgroup-v8.png)
+    ![Tour group highlighted](../../../10/umbraco-cms/extending/images/tourgroup-v8.png)
 *   **groupOrder**
 
     This is used to control the order of the groups in the help drawer. This must be an integer value.
@@ -78,7 +78,7 @@ Below is an explanation of each of the properties on the tour configuration obje
 
     A boolean value that indicates if the "Don't show this tour again" should be shown on the tour steps. If the user clicks this link the tour will no longer be shown in the help drawer.
 
-    ![Tour allow disable link highlighted](images/tourallowdisable-v8.png)
+    ![Tour allow disable link highlighted](../../../10/umbraco-cms/extending/images/tourallowdisable-v8.png)
 *   **culture**
 
     You can set a culture (e.g. nl-NL) and this tour will only be shown to users that have set this culture in their profile. If omitted or left empty the tour will be shown to all users.
@@ -88,7 +88,7 @@ Below is an explanation of each of the properties on the tour configuration obje
 
     The `contentType` property can also be used to limit the tours to content types that are using a specific composition. This will show the tour on all nodes that are using a specific composition.
 
-    ![Content Type specific tours](<../../../10/umbraco-cms/extending/images/contentTypespecific (1) (1) (1) (3).png>)
+    ![Content Type specific tours](<../../../10/umbraco-cms/extending/images/contentTypespecific (1) (1) (1) (1) (1).png>)
 
     In the image above, two tours are avaibable on the _Welcome_ node:
 
@@ -132,12 +132,12 @@ Below is an explanation of each of the properties on the tour step object.
 
     This the title shown on the tour step.
 
-    ![Tour step highlighted](images/steptitle-v8.png)
+    ![Tour step highlighted](../../../10/umbraco-cms/extending/images/steptitle-v8.png)
 *   **content**
 
     This text will be shown on the tour step, it can contain HTML markup.
 
-    ![Tour content highlighted](images/stepcontent-v8.png)
+    ![Tour content highlighted](../../../10/umbraco-cms/extending/images/stepcontent-v8.png)
 *   **type**
 
     The type of step. Currently, only one type is supported : "intro". This will center the step and show a "Start tour" button.
@@ -155,7 +155,7 @@ Below is an explanation of each of the properties on the tour step object.
     Use the developer tools from your browser to find the id, class and data-attribute.
     {% endhint %}
 
-<figure><img src="images/element-v8.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../10/umbraco-cms/extending/images/element-v8.png" alt=""><figcaption></figcaption></figure>
 
 *   **elementPreventClick**
 
@@ -181,7 +181,7 @@ Below is an explanation of each of the properties on the tour step object.
 
     The image below shows the entire tree highlighted, but requires the user to click on a specific tree element.
 
-    ![Step eventElement highlighted](images/step-event-element-v8.png)
+    ![Step eventElement highlighted](../../../10/umbraco-cms/extending/images/step-event-element-v8.png)
 *   **customProperties**
 
     A JSON object that is passed to the scope of a custom step view, so you can use this data in your view with `$scope.model.currentStep.customProperties`.

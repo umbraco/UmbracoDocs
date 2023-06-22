@@ -547,7 +547,7 @@ namespace Umbraco9.Controllers
 
 You can generate this ctor in Visual Studio by using either ctrl + . or alt + enter when your cursor is on the base class:
 
-<figure><img src="images/vs-di-constructor-generation-tip.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../10/umbraco-cms/implementation/services/images/vs-di-constructor-generation-tip.gif" alt=""><figcaption></figcaption></figure>
 
 #### Using the SiteService inside a View
 

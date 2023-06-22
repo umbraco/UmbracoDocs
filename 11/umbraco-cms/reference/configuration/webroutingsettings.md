@@ -1,12 +1,12 @@
 ---
-description: "Information on the web routing settings section"
+description: Information on the web routing settings section
 ---
 
 # Web routing
 
-This section allows you to configure the routing for your solution, all of these settings has either default values, or does not need to be configured. However you might want to tweak these settings in some scenarious, for instance if you're running in a load balanced setup.
+This section allows you to configure the routing for your solution, all of these settings have either default values, or do not need to be configured. However, you might want to tweak these settings in some scenarios, for instance, if you're running in a load-balanced setup.
 
-An example of a web routing config with default values, and a placeholder for application url can be seen here:
+An example of a web routing config with default values, and a placeholder for the application URL can be seen here:
 
 ```json
 "Umbraco": {
@@ -25,6 +25,12 @@ An example of a web routing config with default values, and a placeholder for ap
   }
 }
 ```
+
+{% hint style="warning" %}
+**Are you on Umbraco Cloud?**
+
+It is not possible to change the `UmbracoApplicationUrl setting` because the value is overwritten to the default Umbraco URL: `https://[project-alias].[region].umbraco.io/` on Umbraco Cloud.
+{% endhint %}
 
 ## Using the webrouting options in code
 
@@ -52,7 +58,6 @@ public class TestService
 }
 ```
 
-
 ## Try matching endpoints for all pages
 
 When set to `true` Umbraco will check if any routed endpoints match a front-end request. This happens before the Umbraco dynamic router tries to map the request to a Umbraco content item. This setting should not be necessary as long as the Umbraco catch-all route is registered last.
@@ -69,8 +74,7 @@ When true, an internal redirect does not reset the alternative template, if any.
 
 When true, the entire alternative templates feature of Umbraco is disabled.
 
-**validateAlternativeTemplates**
-will not load the template from the database. If `false` the template might not exists in the database. Otherwise the template need to exist in the database.
+**validateAlternativeTemplates** will not load the template from the database. If `false` the template might not exists in the database. Otherwise the template need to exist in the database.
 
 ## Validate alternative templates
 
@@ -88,10 +92,10 @@ When you move and rename pages in Umbraco, 301 permanent redirects are automatic
 
 Will set the URL provider mode, options are:
 
--   `Default`: Indicates that the URL provider should do what it has been configured to do.
--   `Relative`: Indicates that the URL provider should produce relative URLs exclusively.
--   `Absolute`: Indicates that the URL provider should produce absolute URLs exclusively.
--   `Auto`: Indicates that the URL provider should determine automatically whether to return relative or absolute URLs.
+* `Default`: Indicates that the URL provider should do what it has been configured to do.
+* `Relative`: Indicates that the URL provider should produce relative URLs exclusively.
+* `Absolute`: Indicates that the URL provider should produce absolute URLs exclusively.
+* `Auto`: Indicates that the URL provider should determine automatically whether to return relative or absolute URLs.
 
 ## Umbraco application URL
 

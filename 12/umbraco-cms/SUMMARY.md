@@ -17,6 +17,7 @@
   * [Extension points](reference/content-delivery-api/extension-points/README.md)
     * [Custom property editors support](reference/content-delivery-api/extension-points/custom-property-editors-support.md)
     * [Extension API for querying](reference/content-delivery-api/extension-points/extension-api-for-querying.md)
+* [API versioning and OpenAPI](reference/api-versioning-and-openapi.md)
 
 ## Tutorials
 
