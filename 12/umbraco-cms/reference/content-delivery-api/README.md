@@ -411,31 +411,15 @@ Returns single or multiple items.
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="fetch" type="String" required="false" %}
-Structural query string option (e.g. 
-
-`ancestors`
-
-, 
-
-`children`
-
-, 
-
-`descendants`
-
-)
+Structural query string option (e.g. `ancestors`, `children`, `descendants`)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="filter" type="String Array" required="false" %}
-Filtering query string options (e.g.
-
-`contentType`, `name`)
+Filtering query string options (e.g. `contentType`, `name`)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="sort" type="String Array" required="false" %}
-Sorting query string options (e.g.
-
-`createDate`, `level`, `name`, `sortOrder`, `updateDate`)
+Sorting query string options (e.g. `createDate`, `level`, `name`, `sortOrder`, `updateDate`)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="skip" type="Integer" required="false" %}
