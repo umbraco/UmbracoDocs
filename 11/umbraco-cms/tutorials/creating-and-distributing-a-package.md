@@ -39,7 +39,7 @@ If it says dotnet is an unknown command then you will need to install the [.NET 
 {% endhint %}
 
 ```
-dotnet new --install Umbraco.Tools.Packages.Templates::0.2.5
+dotnet new install Umbraco.Tools.Packages.Templates::0.2.5
 ```
 
 At the time of writing this guide the package templates should be version 0.2.5, but it's recommended you visit the [NuGet page](https://www.nuget.org/packages/Umbraco.Tools.Packages.templates/) and copy the install instructions at the top for the latest version.

@@ -36,7 +36,7 @@ After you have added a package reference to your project by executing the `dotne
 
 Alternatively, you can update the CMS through the `NuGet Package Manager` in Visual studio:
 
-![NuGet Package Manager](../../../10/umbraco-forms/installation/images/Manage\_packages.png)
+![NuGet Package Manager](../../../12/umbraco-forms/installation/images/Manage\_packages.png)
 
 When the command completes, open the `.csproj` file to make sure the package reference was updated:
 
@@ -50,7 +50,7 @@ When the command completes, open the `.csproj` file to make sure the package ref
 
 <summary>Manually upgrades for legacy Umbraco</summary>
 
-### Get the latest version of Umbraco
+#### Get the latest version of Umbraco
 
 * [Download the relevant version of Umbraco CMS from Our](https://our.umbraco.com/download/)
 * Unzip the folder to your computer
@@ -58,13 +58,13 @@ When the command completes, open the `.csproj` file to make sure the package ref
   * `/bin`
   * `/Umbraco`
 
-### Merge configuration files
+#### Merge configuration files
 
 In this step, you need to merge the configuration files containing changes. For this, we recommend using a tool like [WinMerge](http://winmerge.org/) or [DiffMerge](https://sourcegear.com/diffmerge/).
 
 The reason you shouldn't overwrite these files is that this will also overwrite any **custom configuration** you might have as well as **Umbraco Cloud-specific settings**. Read more about which Cloud-specific details you should watch out for in the following sections.
 
-#### `Web.config`
+**`Web.config`**
 
 When merging the `web.config` file make sure that you **do not overwrite/remove** the following settings:
 
@@ -107,7 +107,7 @@ When merging the `web.config` file make sure that you **do not overwrite/remove*
 </umbraco.deploy>
 ```
 
-#### `Dashboard.config`
+**`Dashboard.config`**
 
 This section only applies to Umbraco 7 projects.
 
@@ -164,7 +164,7 @@ When merging the `Dashboard.config` file make sure that you **do not overwrite/r
 </section>
 ```
 
-#### Other config files
+**Other config files**
 
 The following config files contain differences, and in most cases, you need to keep the ones from your Cloud project:
 

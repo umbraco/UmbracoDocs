@@ -14,6 +14,7 @@
 
 * [Dive into the code](reference/dive-into-the-code.md)
 * [Content Delivery API](reference/content-delivery-api.md)
+* [API versioning and OpenAPI](reference/api-versioning-and-openapi.md)
 
 ## Tutorials
 

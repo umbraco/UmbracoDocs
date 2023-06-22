@@ -411,19 +411,9 @@ Returns single or multiple items.
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="fetch" type="String" required="false" %}
-Structural query string option (e.g. 
+Structural query string option (e.g. `ancestors`, `children`,&#x20;
 
-`ancestors`
-
-, 
-
-`children`
-
-, 
-
-`descendants`
-
-)
+`descendants`)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="filter" type="String Array" required="false" %}
@@ -584,7 +574,7 @@ In this section, we will discuss some of the known limitations of the API, and h
 
 ### Protected content
 
-Currently, the Delivery API does not support authentication for members, which means that protected content cannot be accessed through any of our endpoints. This protection is typically implemented by setting public access restrictions on specific content nodes for certain members or member groups. To ensure those items remain protected, we filter out such content completely, at the moment.&#x20;
+Currently, the Delivery API does not support authentication for members, which means that protected content cannot be accessed through any of our endpoints. This protection is typically implemented by setting public access restrictions on specific content nodes for certain members or member groups. To ensure those items remain protected, we filter out such content completely, at the moment.
 
 As a result of this approach, lifting protection from a content item requires an additional step to ensure it becomes accessible through the Delivery API. The recommended way is to publish the content item again. Alternatively, you can manually rebuild the **DeliveryApiContentIndex** to reflect the changes.
 

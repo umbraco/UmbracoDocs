@@ -29,6 +29,24 @@ In this section, you can find the release notes for each version of Umbraco Form
 
 <summary>Version 11</summary>
 
+### [11.2.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.2.0) (June 13th 2023)
+
+* Ensured a case insensitive request check for protecting access to files uploaded to the media system.
+* Updated dependency on `aspnet-client-validation` to resolve an issue with validation of mandatory radio button or checkbox lists [#1028](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1028)
+* All updates noted under 11.2.0-rc1.
+
+### [11.2.0-rc1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.2.0) (June 1st 2023)
+
+* Added customizable behavior for the fields added to newly created forms [#1013](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1013)
+* Added hook for custom validation for headless API [#1012](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1013)
+* Added optional culture parameter to headless API [#989](https://github.com/umbraco/Umbraco.Forms.Issues/issues/989)
+* Added configuration to enable or disable the headless API
+* Resolved concurrency issue with prevalue sources [#997](https://github.com/umbraco/Umbraco.Forms.Issues/issues/997)
+* Added [configuration options for IP recording](./developer/configuration/README.md#recordiptrackingbehavior) with form submissions [#1000](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1000)
+* Performance optimizations for tree rendering, form submission and workflow execution
+* Added tag helper for rendering a form
+* Provided messaging when using rich text fields in case of a missing rich text datatype
+
 ### [11.1.3](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.1.2) (May 30th 2023)
 
 * Fixed issue with validation of uploaded files without extensions [#1020](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1020)
@@ -117,6 +135,26 @@ In this section, you can find the release notes for each version of Umbraco Form
 <details>
 
 <summary>Version 10</summary>
+
+### [10.4.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.4.0) (June 13th 2023)
+
+* Ensured a case insensitive request check for protecting access to files uploaded to the media system.
+* Updated dependency on `aspnet-client-validation` to resolve an issue with validation of mandatory radio button or checkbox lists [#1028](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1028)
+* All updates noted under 10.4.0-rc1.
+
+### [10.4.0-rc1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.4.0) (June 1st 2023)
+
+* Added customizable behavior for the fields added to newly created forms [#1013](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1013)
+* Added hook for custom validation for headless API [#1012](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1013)
+* Added optional culture parameter to headless API [#989](https://github.com/umbraco/Umbraco.Forms.Issues/issues/989)
+* Added configuration to enable or disable the headless API
+* Resolved concurrency issue with prevalue sources [#997](https://github.com/umbraco/Umbraco.Forms.Issues/issues/997)
+* Added [configuration options for IP recording](./developer/configuration/README.md#recordiptrackingbehavior) with form submissions [#1000](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1000)
+* Performance optimizations for tree rendering, form submission and workflow execution
+* Added tag helper for rendering a form
+* Provided messaging when using rich text fields in case of a missing rich text datatype
+
+If upgrading from a previous version and already using the headless API, please ensure to [enable the API via configuration](./developer/configuration/README.md#enableformsapi).
 
 ### [10.3.3](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.3) (May 30th 2023)
 

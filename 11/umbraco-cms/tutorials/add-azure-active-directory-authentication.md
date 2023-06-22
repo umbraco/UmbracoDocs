@@ -1,6 +1,7 @@
 ---
 description: >-
-  Learn how to use Azure Active Directory credentials to login to Umbraco as a member.
+  Learn how to use Azure Active Directory credentials to login to Umbraco as a
+  member.
 ---
 
 # Add Azure Active Directory authentication (Members)
@@ -177,4 +178,4 @@ public void ConfigureServices(IServiceCollection services)
 5. Build the project.
 6. Run the website.
 
-![AD Login Screen](images/AD\_Login\_Members.png)
+![AD Login Screen](<../../../10/umbraco-cms/reference/security/images/AD\_Login\_Members (1).png>)

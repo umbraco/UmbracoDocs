@@ -36,7 +36,7 @@ To download the latest version of Umbraco, refer to the [Installation article](.
 2.  Open the **index.html** from the folder in your preferred browser to see the template. The template contains some text with dummy links. We’re going to turn this into a fully fledged, Umbraco-powered site!\
 
 
-    <figure><img src="images/figure-5-retrospect-template-v8.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../../11/umbraco-cms/tutorials/creating-a-basic-website/images/figure-5-retrospect-template-v8.png" alt=""><figcaption></figcaption></figure>
 
 ### Logging in to Umbraco
 
@@ -47,4 +47,4 @@ You can login to Umbraco in two ways:
 3.  Enter the **Name** and **Password** used during the installation process. You should see a similar Umbraco Backoffice as the image below:\
 
 
-    <figure><img src="images/figure-6-umbraco-empty-v8.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../../11/umbraco-cms/tutorials/creating-a-basic-website/images/figure-6-umbraco-empty-v8.png" alt=""><figcaption></figcaption></figure>

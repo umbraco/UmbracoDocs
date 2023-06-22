@@ -6,15 +6,20 @@
 
 ## Getting Started
 
-* [Extending the backoffice](getting-started/extending-the-backoffice.md)
-* [Prerequisites](getting-started/prerequisites.md)
-* [Alpha Release](getting-started/alpha-release.md)
+* [Getting Started With The New Backoffice](getting-started/getting-started-with-the-new-backoffice/README.md)
+  * [Prereleases](getting-started/getting-started-with-the-new-backoffice/alpha-release.md)
+
+## Fundamentals
+
+* [Setup](fundamentals/setup/README.md)
+  * [Requirements](fundamentals/setup/alpha-release.md)
+  * [Installation](fundamentals/setup/installation/README.md)
+    * [Installing Preview Builds](fundamentals/setup/installation/installing-preview-builds.md)
 
 ## Extending
 
 * [Customize the editing experience](extending/customize-the-editing-experience.md)
-* [Development Flow](extending/development-flow/README.md)
-  * [Umbraco CLI](extending/development-flow/umbraco-cli.md)
+* [Setup Your Development Environment](extending/development-flow.md)
 * [Package Manifest](extending/package-manifest/README.md)
   * [Entry Point](extending/package-manifest/entry-point.md)
 * [Dashboards](extending/dashboards.md)
@@ -24,9 +29,7 @@
     * [Tree Actions](extending/sections-and-trees/trees/tree-actions.md)
     * [Searchable Trees (ISearchableTree)](extending/sections-and-trees/trees/searchable-trees-isearchabletree.md)
 * [Property Editors](extending/property-editors/README.md)
-  * [Declaring your property editor](extending/property-editors/register-a-property-editor.md)
-  * [Property Editor UI](extending/property-editors/property-editor-ui.md)
-  * [Property Actions](extending/property-editors/property-actions.md)
+  * [Property Editor Ui](extending/property-editors/property-editor-ui.md)
 * [Workspaces](extending/workspaces/README.md)
   * [Workspace Editor Views](extending/workspaces/workspace-editor-views.md)
   * [Workspace Editor Actions](extending/workspaces/workspace-editor-actions.md)
@@ -34,4 +37,10 @@
 
 ## Tutorials
 
+* [Creating your first extension](tutorials/creating-your-first-extension.md)
 * [Creating a Custom Dashboard](tutorials/creating-a-custom-dashboard.md)
+  * [Adding functionality to the Dashboard](tutorials/creating-a-custom-dashboard/adding-functionality-to-the-dashboard.md)
+  * [Extending the Dashboard using Umbraco UI library](tutorials/creating-a-custom-dashboard/extending-the-dashboard-using-umbraco-ui-library.md)
+* [Creating a Property Editor](tutorials/creating-a-property-editor/README.md)
+  * [Adding configuration to a Property Editor](tutorials/creating-a-property-editor/adding-configuration-to-a-property-editor.md)
+  * [Integrating services with a Property Editor](tutorials/creating-a-property-editor/integrating-services-with-a-property-editor.md)

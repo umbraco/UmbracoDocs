@@ -18,7 +18,7 @@ One way is to watch for error events and serve corresponding pages via C# code.
 
 ## 404 errors
 
-In this method we will use a 404 page created via the backoffice.
+In this method, we will use a 404 page created via the backoffice.
 
 ### Create a 404 page in the backoffice
 
@@ -60,7 +60,7 @@ With this approach, you can set different 404 pages for different languages (cul
 {% endhint %}
 
 {% hint style="warning" %}
-If you are hosting your site on Umbraco Cloud, the best approach would be using an XPath statement. This is because content IDs might differ across Cloud environments.
+If you are hosting your site on Umbraco Cloud, using an XPath statement is the best approach. This is because content IDs might differ across Cloud environments.
 {% endhint %}
 
 XPath example:
@@ -86,13 +86,34 @@ XPath example:
 In the above XPath example `//errorPages` is the DocTypeAlias
 {% endhint %}
 
+Id example:
+
+```json
+{
+    "Umbraco": {
+        "CMS": {
+            "Content": {
+                "Error404Collection": [
+                    {
+                        "Culture": "default",
+                        "ContentId": 1088
+                    }
+                ]
+            }
+        }
+    }
+}
+```
+
+The above example uses an integer Id value.
+
 ## Errors with booting a project
 
 Sometimes you might experience issues with booting up your Umbraco project. This could be a brand new project, or it could be an existing project after an upgrade.
 
-When there is an error during boot you will presented with a generic error page.
+When there is an error during boot you will be presented with a generic error page.
 
-![Boot Failed. Umbraco failed to boot, if you are the owner of the website please see the log file for more details.](images/BootFailedGeneric.png)
+![Boot Failed. Umbraco failed to boot, if you are the owner of the website please see the log file for more details.](../../../10/umbraco-cms/tutorials/images/BootFailedGeneric.png)
 
 In order to customize this error page it is recommend that you create a **new HTML file** using the name `BootFailed.html`. The file must be in a folder `config/errors` in the `wwwroot` on the Physical file system.
 
@@ -183,7 +204,7 @@ While upgrading Umbraco in the past it would redirect visitors of the website to
 
 To prevent this we have added a `maintenance page` that will be shown when visiting the website while Umbraco is in Upgrade runtime mode.
 
-![Maintenance page](images/maintenancePage.png)
+![Maintenance page](../../../10/umbraco-cms/tutorials/images/maintenancePage.png)
 
 It is possible to disable the maintenance page as most upgrades can be done without the website having to restart or go down.
 

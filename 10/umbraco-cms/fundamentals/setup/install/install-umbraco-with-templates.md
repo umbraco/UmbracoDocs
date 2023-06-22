@@ -12,7 +12,7 @@ Installing Umbraco using the .NET CLI
 
 1. Install the latest [.NET SDK](https://dotnet.microsoft.com/download).
 
-2. Run `dotnet new -i Umbraco.Templates` to install the project templates.  
+2. Run `dotnet new install Umbraco.Templates` to install the project templates.  
 *The solution is packaged up into the NuGet package [Umbraco.Templates](https://www.nuget.org/packages/Umbraco.Templates) and can be installed into the dotnet CLI*.
 
 > Once that is complete, you can see that Umbraco was added to the list of available projects types by running `dotnet new --list`:
@@ -38,7 +38,7 @@ Umbraco Package              umbracopackage           [C#]              Web/CMS/
 {% endtabs %}
 
 {% hint style="info" %}
-In some cases the templates may silently fail to install (usually this is an issue with NuGet sources). If this occurs you can try specifying the NuGet source in the command by running `dotnet new -i Umbraco.Templates --nuget-source "https://api.nuget.org/v3/index.json"`.
+In some cases the templates may silently fail to install (usually this is an issue with NuGet sources). If this occurs you can try specifying the NuGet source in the command by running `dotnet new install Umbraco.Templates --nuget-source "https://api.nuget.org/v3/index.json"`.
 {% endhint %}
 
 To get **help** on a project template with `dotnet new` run the following command:
