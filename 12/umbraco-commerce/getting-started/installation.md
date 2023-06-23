@@ -57,8 +57,6 @@ You only need to install your license when you are ready to go live.
 
 Umbraco Commerce is fully functional during development, and whilst it is hosted on a local server (`localhost` or `.local` domains).
 
-You can also host a staging site on a `*.azurewebsite.net` or `*.umbraco.io` (Umbraco Cloud) domain without the need for a license.
-
 Hosting on any other public domain without a license will be limited to a maximum of 20 orders.
 
 If you require an unrestricted staging environment, all licenses support two methods of allowing this:
