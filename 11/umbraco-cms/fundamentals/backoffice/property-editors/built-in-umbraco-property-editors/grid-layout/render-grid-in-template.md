@@ -27,12 +27,14 @@ or alternatively you can provide the path to where the file resides:
 ```csharp
 @Html.GetGridHtml(Model, "propertyAlias", "mycustomrenderer")
 ```
-And you can create a custom view in the `Views/Shared/grid/mycustomrenderer.cshtml` path. Possible other paths where we can create Grid layout views:
-`/Views/grid/mycustomrenderer.cshtml`
-`/Views/Shared/grid/mycustomrenderer.cshtml`
-`/Views/Partials/grid/mycustomrenderer.cshtml`
-`/Views/MacroPartials/grid/mycustomrenderer.cshtml`
-`/Views/Render/grid/mycustomrenderer.cshtml`
-`/Views/Shared/grid/mycustomrenderer.cshtml`
-`/Pages/Shared/grid/mycustomrenderer.cshtml`
+Possible paths where you can add the custom Grid layout views:
+
+```none
+/Views/grid/mycustomrenderer.cshtml
+/Views/Shared/grid/mycustomrenderer.cshtml
+/Views/Partials/grid/mycustomrenderer.cshtml
+/Views/MacroPartials/grid/mycustomrenderer.cshtml
+/Views/Render/grid/mycustomrenderer.cshtml
+/Views/Shared/grid/mycustomrenderer.cshtml
+/Pages/Shared/grid/mycustomrenderer.cshtml
 
