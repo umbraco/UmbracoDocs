@@ -37,4 +37,4 @@ Possible paths where you can add the custom Grid layout views:
 /Views/Render/grid/mycustomrenderer.cshtml
 /Views/Shared/grid/mycustomrenderer.cshtml
 /Pages/Shared/grid/mycustomrenderer.cshtml
-
+```
