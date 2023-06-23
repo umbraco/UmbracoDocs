@@ -64,5 +64,5 @@ If you require an unrestricted staging environment, all licenses support two met
 * `staging.client.com` - Licenses allow unlimited subdomains, meaning you can host the staging site on a subdomain of the licensed domain.
 * `clientcom.agency.com` - Licenses allow a concatenation of the licensed domain as a subdomain of any other domain.
 
-If you wish to host the site on any other URL, then an additional license file will be required for that domain.
+If you wish to host the site on any other URL such as a public dev / staging domain you want to access, please reach out to suits@umbraco.com for a test license.
 {% endhint %}
