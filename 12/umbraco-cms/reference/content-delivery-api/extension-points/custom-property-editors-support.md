@@ -132,6 +132,8 @@ GET /umbraco/delivery/api/v1/content/item/blog
 ```json
 {
     "name": "Blog",
+    "createDate": "2023-05-25T11:26:52.591927",
+    "updateDate": "2023-06-07T12:53:41.339963",
     "route": {
         "path": "/",
         "startItem": {
@@ -205,6 +207,8 @@ GET /umbraco/delivery/api/v1/content/item/blog?expand=property:pickedItem
 ```json
 {
     "name": "Blog",
+    "createDate": "2023-05-25T11:26:52.591927",
+    "updateDate": "2023-06-07T12:53:41.339963",
     "route": {
         "path": "/",
         "startItem": {
@@ -219,6 +223,8 @@ GET /umbraco/delivery/api/v1/content/item/blog?expand=property:pickedItem
             "id": "61df413c-02b2-480d-8cb5-8e3c35132838",
             "itemDetails": {
                 "name": "Codegarden",
+                "createDate": "2023-05-21T00:34:11.513868",
+                "updateDate": "2023-06-06T17:46:12.833186",
                 "route": {
                     "path": "/codegarden/",
                     "startItem": {

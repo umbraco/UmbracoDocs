@@ -96,7 +96,7 @@ Before exploring the API endpoints detailed below, there are a few concepts to k
 
 The Delivery API outputs the JSON structure outlined below to represent the retrieved content items, which consist of a range of properties:
 
-* Basic properties for any content item include `name`, `id` and `contentType`.
+* Basic properties for any content item include `name`, `createDate`, `updateDate`, `id` and `contentType`.
 * All editorial properties from the content type can be found in the `properties` collection. Depending on the configured property editor, the property output value can be a _string_, _number_, _boolean expression_, _array_, _object_ or _`null`_.
 * The `route` property provides the `path` of the content item, as well as details about the root node value that is represented by the `startItem` object. We will discuss the concept of a `startItem` in more detail in the next section.
 * If the content item varies by culture, the `cultures` property will contain information about all configured cultures for the content node, including the culture variant `path` and `startItem` for each one.
@@ -104,6 +104,8 @@ The Delivery API outputs the JSON structure outlined below to represent the retr
 ```json
 {
   "name": "string",
+  "createDate": "2023-06-23T11:31:07.281Z",
+  "updateDate": "2023-06-23T11:31:07.281Z",
   "route": {
     "path": "string",
     "startItem": {
@@ -197,6 +199,8 @@ GET /umbraco/delivery/api/v1/content/item/9bdac0e9-66d8-4bfd-bba1-e954ed9c780d
 ```json
 {
     "name": "My post",
+    "createDate": "2023-05-11T00:05:31.878211",
+    "updateDate": "2023-05-15T11:25:53.912058",
     "route": {...
     },
     "id": "9bdac0e9-66d8-4bfd-bba1-e954ed9c780d",
@@ -207,6 +211,8 @@ GET /umbraco/delivery/api/v1/content/item/9bdac0e9-66d8-4bfd-bba1-e954ed9c780d
         "bodyContent": "Congue, sollicitudin? Est fames maiores, sociis suspendisse et aliquet tristique excepturi, aliquam, nihil illum pretium penatibus exercitationem lacinia! Dolorem tempus convallis, nulla! Eius scelerisque voluptatum penatibus, dignissimos molestiae, soluta eum. Voluptatibus quod? Temporibus potenti voluptates dictumst? Cillum metus, nec asperiores? Impedit sit! Eum tellus cillum facilisis ullamco tempor? Sint nostrum luctus? Neque dictumst diam, minus? Itaque, minus, etiam dignissimos debitis occaecat aptent tempus! Praesent molestiae duis nihil recusandae, eius imperdiet aspernatur natus. Tempus mattis at architecto, augue, consequuntur ultricies eligendi, litora morbi ante nesciunt pretium laoreet quidem recusandae voluptates dapibus, iure sagittis donec ipsum mollit? Blanditiis! Laborum sit assumenda beatae.",
         "linkedItem": {
             "name": "Demo blog",
+            "createDate": "2023-05-11T00:26:52.591927",
+            "updateDate": "2023-05-16T12:43:41.339963",
             "route": {
                 "path": "/demo-blog/",
                 "startItem": {
@@ -238,6 +244,8 @@ GET /umbraco/delivery/api/v1/content/item/9bdac0e9-66d8-4bfd-bba1-e954ed9c780d?e
 ```json
 {
     "name": "My post",
+    "createDate": "2023-05-11T00:05:31.878211",
+    "updateDate": "2023-05-15T11:25:53.912058",
     "route": {
         "path": "/my-post/",
         "startItem": {
@@ -253,6 +261,8 @@ GET /umbraco/delivery/api/v1/content/item/9bdac0e9-66d8-4bfd-bba1-e954ed9c780d?e
         "bodyContent": "Congue, sollicitudin? Est fames maiores, sociis suspendisse et aliquet tristique excepturi, aliquam, nihil illum pretium penatibus exercitationem lacinia! Dolorem tempus convallis, nulla! Eius scelerisque voluptatum penatibus, dignissimos molestiae, soluta eum. Voluptatibus quod? Temporibus potenti voluptates dictumst? Cillum metus, nec asperiores? Impedit sit! Eum tellus cillum facilisis ullamco tempor? Sint nostrum luctus? Neque dictumst diam, minus? Itaque, minus, etiam dignissimos debitis occaecat aptent tempus! Praesent molestiae duis nihil recusandae, eius imperdiet aspernatur natus. Tempus mattis at architecto, augue, consequuntur ultricies eligendi, litora morbi ante nesciunt pretium laoreet quidem recusandae voluptates dapibus, iure sagittis donec ipsum mollit? Blanditiis! Laborum sit assumenda beatae.",
         "linkedItem": {
             "name": "Demo blog",
+            "createDate": "2023-05-11T00:26:52.591927",
+            "updateDate": "2023-05-16T12:43:41.339963",
             "route": {
                 "path": "/demo-blog/",
                 "startItem": {
