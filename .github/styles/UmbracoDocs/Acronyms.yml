@@ -57,3 +57,5 @@ exceptions:
   - VAT
   - SKU
   - UTC
+  - HEX
+  - RGBA
