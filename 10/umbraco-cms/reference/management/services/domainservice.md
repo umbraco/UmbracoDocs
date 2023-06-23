@@ -12,9 +12,13 @@ All samples in this document will require references to the following dll:
 All samples in this document will require the following using statements:
 
 ```csharp
-using Umbraco.Core;
-using Umbraco.Core.Models;
-using Umbraco.Core.Services;
+using Umbraco.Cms.Core.Services;
+```
+
+For Razor views:
+
+```csharp
+@using Umbraco.Cms.Core.Services
 ```
 
 ## Getting the service
@@ -45,10 +49,8 @@ public class MyClass
 }
 ```
 
-### Static accessor
-
-If neither a `Services` property or Dependency Injection is available, you can also reference the static Current class directly:
+In Razor views, you can access the Data Type service through the `@inject` directive:
 
 ```csharp
-IDomainService domainService = Umbraco.Core.Composing.Current.Services.DomainService;
+@inject IDomainService DomainService
 ```
