@@ -12,7 +12,7 @@ Property Actions appear as a small button next to the label of the property, whi
 
 ## Data Structure of Property Actions
 
-Property Editors are an array of objects defining each action. An action is defined by the following properties:
+Property Actions are an array of objects defining each action. An action is defined by the following properties:
 
 ```js
 {
