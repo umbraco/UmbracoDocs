@@ -153,7 +153,7 @@ GET /umbraco/delivery/api/v1/content/item/blog
 
 ## Output expansion support
 
-Output expansion allows us to conditionally add another level of detail to the Delivery API output. Usually, these additional details are "expensive" to retrieve (e.g. requiring database access to populate). By applying output expansion, we provide the option for the caller of the API to opt-in explicitly to this "expensive" operation. From the caller's perspective, the alternative might be an even more expensive additional round-trip to the server.
+Output expansion allows us to conditionally add another level of detail to the Delivery API output. Usually, these additional details are "expensive" to retrieve (for example, requiring database access to populate). By applying output expansion, we provide the option for the caller of the API to opt-in explicitly to this "expensive" operation. From the caller's perspective, the alternative might be an even more expensive additional round-trip to the server.
 
 In our example, output expansion is implemented within `ConvertIntermediateToDeliveryApiObject()`. By considering the value of the `expanding` parameter, we can modify the `BuildDeliveryApiCustomPicker()` method as follows:
 
