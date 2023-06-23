@@ -50,7 +50,7 @@ public void ConfigureServices(IServiceCollection services)
 ```
 {% endcode %}
 
-Once the Content Delivery API is enabled, you will need to manually rebuild the Delivery API content index (**DeliveryApiContentIndex**). This can be done using the "Examine Management" dashboard in the "Settings" section. Once the index is rebuilt, the API will be able to serve the latest content from the multiple-items endpoint.
+Once the Content Delivery API is enabled, you will need to manually rebuild the Delivery API content index (_DeliveryApiContentIndex_). This can be done using the "Examine Management" dashboard in the "Settings" section. Once the index is rebuilt, the API will be able to serve the latest content from the multiple-items endpoint.
 
 ### Additional configuration
 
@@ -533,7 +533,7 @@ GET /umbraco/delivery/api/v1/content?filter=contentType:article&filter=name:guid
 {% endtab %}
 
 {% tab title="sort" %}
-Specifying how the results should be ordered, can be achieved using the `sort` query option. You can use this parameter to sort the content items by different fields, including create date, level, name, sort order, and update date. For each field, you can specify whether the items should be sorted in ascending (_asc_) or descending (_desc_) order. Without a `sort` query parameter, the order of the results will be determined by the relevance score of the **DeliveryApiContentIndex** for the given search term.
+Specifying how the results should be ordered, can be achieved using the `sort` query option. You can use this parameter to sort the content items by different fields, including create date, level, name, sort order, and update date. For each field, you can specify whether the items should be sorted in ascending (_asc_) or descending (_desc_) order. Without a `sort` query parameter, the order of the results will be determined by the relevance score of the _DeliveryApiContentIndex_ for the given search term.
 
 **`?sort=createDate:asc/desc`**\
 An option to sort the results based on the creation date of the content item in either _`asc`_ or _`desc`_ order.
@@ -570,7 +570,7 @@ In this section, we will discuss some of the known limitations of the API, and h
 
 Currently, the Delivery API does not support authentication for members, which means that protected content cannot be accessed through any of our endpoints. This protection is typically implemented by setting public access restrictions on specific content nodes for certain members or member groups. To ensure those items remain protected, we filter out such content completely, at the moment.
 
-As a result of this approach, lifting protection from a content item requires an additional step to ensure it becomes accessible through the Delivery API. The recommended way is to publish the content item again. Alternatively, you can manually rebuild the **DeliveryApiContentIndex** to reflect the changes.
+As a result of this approach, lifting protection from a content item requires an additional step to ensure it becomes accessible through the Delivery API. The recommended way is to publish the content item again. Alternatively, you can manually rebuild the _DeliveryApiContentIndex_ to reflect the changes.
 
 We are looking into adding support for member authentication which would enable querying for protected content.
 
@@ -606,9 +606,9 @@ The Member Picker property editor is not supported in the Delivery API to avoid 
 
 The Multinode Treepicker property editor, when configured for members, is also unsupported in the Delivery API. This is due to the same concern of potentially leaking member data.
 
-### Rebuilding the **DeliveryApiContentIndex**
+### Rebuilding the _DeliveryApiContentIndex_
 
-As mentioned in the [Protected content](./#protected-content) limitation section, the **DeliveryApiContentIndex** should be rebuilt after removing the _"Restrict Public Access"_ protection from a content item.
+As mentioned in the [Protected content](./#protected-content) limitation section, the _DeliveryApiContentIndex_ should be rebuilt after removing the _"Restrict Public Access"_ protection from a content item.
 
 The same applies when adding or removing aliases of content types from the `Umbraco:CMS:DeliveryApi:DisallowedContentTypeAliases` configuration setting.
 

@@ -8,17 +8,17 @@ description: >-
 
 The Delivery API allows you to retrieve multiple items by utilizing the `/umbraco/delivery/api/v1/content` endpoint. With the built-in query parameters, you have the flexibility to get any number of content nodes based on your needs. For a comprehensive list of supported query options, please refer to the [Endpoints](../#endpoints) section.
 
-For the query endpoint, we have created a new Examine index (**DeliveryApiContentIndex**) that facilitates fast retrieval of the desired content. This index ensures quick indexing and searching of data, with the possibility for future extensions. In this article, we'll explore creating custom selecting, filtering, and sorting options to enhance the querying capabilities of the Delivery API.
+For the query endpoint, we have created a new Examine index (_DeliveryApiContentIndex_) that facilitates fast retrieval of the desired content. This index ensures quick indexing and searching of data, with the possibility for future extensions. In this article, we'll explore creating custom selecting, filtering, and sorting options to enhance the querying capabilities of the Delivery API.
 
 ## Query options
 
-Let's take a look at an example of using the query endpoint with query parameters for `fetch`, `filter`, and `sort`. For example, a request to the Delivery API may look like this:
+Let's take a look at an example of using the query endpoint with query parameters for `fetch`, `filter`, and `sort`.  A request might look like this:
 
 ```http
 GET /umbraco/delivery/api/v1/content?fetch=xxx&filter=yyy&filter=zzz&sort=aaa&sort=bbb
 ```
 
-The placeholders in the example stand in for the values that each query option checks to determine which one can handle the given query.&#x20;
+The placeholders in the example (`xxx`, `yyy`, etc.) represent the values that each query option evaluates in order to determine the suitable query handler.
 
 {% hint style="info" %}
 You can include only one `fetch` parameter, while multiple `filter` and `sort` parameters are allowed. Additionally, the order of the `sort` parameters influences the sorting behaviour. Refer to the [Query parameters](../#query-parameters) section for the currently supported options.
@@ -26,13 +26,18 @@ You can include only one `fetch` parameter, while multiple `filter` and `sort` p
 
 
 
-The implementation of each querying option consists of a class for indexing the data into the **DeliveryApiContentIndex** and another one for handling the query. By implementing the `IContentIndexHandler` interface, you can control how your relevant data is indexed and made available for querying through our index. And you can customize the querying behaviour to suit your needs by implementing the `ISelectorHandler`, `IFilterHandler`, and `ISortHandler` interfaces.
+The implementation of each querying option consists of a class for indexing the data into the _DeliveryApiContentIndex_ and another one for handling the query. By implementing the `IContentIndexHandler` interface, you can control how your relevant data is indexed and made available for querying through our index. And you can customize the querying behaviour to suit your needs by implementing the `ISelectorHandler`, `IFilterHandler`, and `ISortHandler` interfaces.
 
 In the following sections, we will explore the implementation details of creating custom querying functionality for the Delivery API.
 
 ## Custom selector
 
-To showcase how a custom selector is implemented consider a simple site structure with a few blog posts. Each post links to an author from a predefined list. Authors, on the other hand, can be marked as _'Featured'_ using a toggle on their Document Type, granting them additional visibility and recognition. We will use this marker as part of the indexing implementation for our selector option.
+Selectors handle the `fetch` part of a query.
+
+To showcase how to build a custom selector, consider a site structure with a few blog posts. A post is linked to an author, which is another content item.
+
+Authors can be marked as _'Featured'_ using a toggle, granting them additional visibility and recognition. We will use this marker as part of the indexing implementation for our selector option.
+
 
 The following example demonstrates the implementation of an `AuthorSelector`, which allows you to customize the querying behaviour specifically for finding all featured authors. This class contains both indexing and querying responsibilities. However, keep in mind that it is generally recommended to separate these responsibilities into dedicated classes.
 
@@ -86,18 +91,25 @@ public class AuthorSelector : ISelectorHandler, IContentIndexHandler
             {
                 FieldName = FieldName,
                 FieldType = FieldType.StringRaw,
-                VariesByCulture = false
+                VariesByCulture = false`
             }
         };
 }
 ```
 {% endcode %}
 
-The `AuthorSelector` class implements the `ISelectorHandler` and `IContentIndexHandler` interfaces. The `ISelectorHandler` allows for handling the custom selector in API queries through the `CanHandle()` and `BuildSelectorOption()` methods. The implementation of `CanHandle()` determines if the given `fetch` query corresponds to the `"featuredAuthors"` value. The `BuildSelectorOption()` method constructs the selector option to search for authors with a positive value (e.g., `"y"`) in a `"featured"` index field. This implementation is very customizable, giving you the flexibility to define your own logic.&#x20;
+The `AuthorSelector` class implements the `ISelectorHandler` and `IContentIndexHandler` interfaces.
 
-For indexing, both the `GetFieldValues()` and `GetFields()` methods play a crucial role in defining how the data should be indexed and made searchable. The `GetFieldValues()` method is responsible for retrieving the value of the _'Featured'_ field of content items of type _'author'_. Then creating an `IndexFieldValue` with the appropriate field value (`"y"` for featured, `"n"` otherwise) which will be used when populating the index. `GetFields()` defines the `"featured"` field in the **DeliveryApiContentIndex**, allowing for efficient and accurate searching.
+`ISelectorHandler` allows for handling the `fetch` value in API queries through the `CanHandle()` and `BuildSelectorOption()` methods.
 
-Since our custom query option modifies the index structure, we will need to rebuild the **DeliveryApiContentIndex**. You can find it by navigating to the "Examine Management" dashboard in the "Settings" section. After that, we can make a request to the Delivery API query endpoint as follows:
+* `CanHandle()` determines if the given `fetch` query corresponds to the `"featuredAuthors"` value. 
+* `BuildSelectorOption()` method constructs the selector option to search for authors with a positive value (e.g., `"y"`) in a `"featured"` index field.
+
+The `GetFields()` and `GetFieldValues()` methods each play a role in defining how the data should be indexed and made searchable.
+* `GetFields()` defines the behaviour of fields that are added to the index. In this example, the `"featured"` field is added as a "raw" string for efficient and accurate searching.
+* `GetFieldValues()` is responsible for retrieving the values of the defined index fields. In this case, the `"featured"` field of content items of type `"author"`. It creates an `IndexFieldValue` with the appropriate field value (`"y"` for featured, `"n"` otherwise), which will be added to the index.
+
+Since our custom query option modifies the index structure, we will need to rebuild the _DeliveryApiContentIndex_. You can find it by navigating to the "Examine Management" dashboard in the "Settings" section. Once rebuilt, we can make a request to the Delivery API query endpoint as follows:
 
 **Request**
 
@@ -117,8 +129,11 @@ GET /umbraco/delivery/api/v1/content?fetch=featuredAuthors
 ```
 
 ## Custom filter
+Filters handle the `filter` part of a query.
 
-Staying within the topic of blog posts and their authors, we can introduce a custom filter which will narrow down our content retrieval. With this custom filter, we can fetch specific blog posts associated with one or more authors based on our filtering query. We can specify the author(s) by providing their content item's key (GUID) as the value of the `author:` filter option. Multiple authors can be included by listing their GUIDs as comma-separated-values, like:
+Staying within the topic of blog posts and their authors, we will create a custom filter to find posts by specific author(s).
+
+This filter allows specifying the desired author(s) by their key (`Guid`) in an `author:` filter option. Multiple authors can be included by listing their keys as comma-separated-values, like:
 
 **Request**
 
@@ -126,7 +141,7 @@ Staying within the topic of blog posts and their authors, we can introduce a cus
 GET /umbraco/delivery/api/v1/content?filter=author:7c630f15-8d93-4980-a0fc-027314dc827a,75380b4f-6d6e-47a1-9222-975cdfb2ac5f
 ```
 
-The response will include the blog posts associated with the provided authors' IDs, enabling us to get only the relevant results from the API.
+The response will include the blog posts associated with the provided authors, enabling us to retrieve only the relevant results from the API.
 
 **Response**
 
@@ -141,7 +156,7 @@ The response will include the blog posts associated with the provided authors' I
 
 Our filter implementation follows a similar structure to the custom selector we discussed earlier. We continue to utilize the `IContentIndexHandler` interface, but this time we introduce the `IFilterHandler`. This combination gives us flexibility and control over the filtering behaviour.
 
-The underlying idea remains consistent: we store the author's `Guid` in a new `"authorId"` field within the index. Consequently, we will need to rebuild the index to reflect the changes.
+The procedure remains the same - we store and query the author key in a new `"authorId"` field within the index. Consequently, we will need to rebuild the index to reflect the changes.
 
 To illustrate the implementation, consider the following code example:
 
@@ -210,14 +225,18 @@ public class AuthorFilter : IFilterHandler, IContentIndexHandler
 ```
 {% endcode %}
 
-This filter performs an exact match for each specified GUID against the index. The Delivery API also supports "Contains" filters, which can be used, for instance, to create an author filter based on names instead of IDs. In this case, the `BuildFilterOption()` method should use the `FilterOperation.Contains` operator, and the `GetFields()` implementation should specify `FieldType.StringAnalyzed` for the returned `IndexField`.
+The principal difference from the selector is that the filter implements `BuildFilterOption()` instead of `BuildSelectorOption()`. Here, the filter performs an exact match for any specified `Guid` in the query. Efficiently, this makes the filter perform an `OR` operation against the index. 
+
+Since we need to perform an exact match, the index field (`authorId`) is once again defined as a "raw" string. Other options include "analyzed" and "sortable" strings. These support "contains" searches and alpha-numeric sorting, respectively.
 
 ## Custom sort
 
-Finally, adding a new custom sorting option can enable us to sort our blog posts based on a custom `"publishDate"` Date Picker property. This allows us to arrange the posts in ascending or descending order based on their publication dates.
+Finally, we can also add custom handling for the `sort` part of the query. 
+ 
+We'll add a custom sort handler that allows us to sort blog posts based on a custom `"publishDate"` Date Picker property. The implementation will allow for sorting the posts in ascending or descending order.
 
 {% hint style="info" %}
-This sorting should only be used with content nodes that have a published date to ensure accurate results.
+This sorting should only be used with query results that have a published date to ensure accurate results.
 {% endhint %}
 
 To demonstrate this, consider the following implementation example:
@@ -286,9 +305,13 @@ public class PublishDateSort : ISortHandler, IContentIndexHandler
 ```
 {% endcode %}
 
-The provided implementation follows the familiar structure defined by the `IContentIndexHandler` and `ISortHandler` interfaces. And another point to highlight is that we store the `"publishDate"` value in a `Date` format within the index, which requires regenerating the data in the **DeliveryApiContentIndex**.
+The implementation follows the same structure as the other examples, defined by the `IContentIndexHandler` and `ISortHandler` interfaces.
 
-In the following example request, we also apply the author filter to retrieve only `"blogpost"` content nodes, which we know have the `"publishDate"` field. This helps to ensure that our sorting yields meaningful and relevant results.
+One point to highlight is that we store the `"publishDate"` value as a "date" field in the index, which allows for correct date sorting.
+
+Once more, when adding fields to the index, we need to rebuild it to reflect the changes.
+
+In the following example request, we also apply the author filter to retrieve only `"blogpost"` content nodes, which we know have the `"publishDate"` field.
 
 **Request**
 
