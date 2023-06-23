@@ -103,7 +103,7 @@ The `AuthorSelector` class implements the `ISelectorHandler` and `IContentIndexH
 `ISelectorHandler` allows for handling the `fetch` value in API queries through the `CanHandle()` and `BuildSelectorOption()` methods.
 
 * `CanHandle()` determines if the given `fetch` query corresponds to the `"featuredAuthors"` value. 
-* `BuildSelectorOption()` method constructs the selector option to search for authors with a positive value (e.g., `"y"`) in a `"featured"` index field.
+* `BuildSelectorOption()` method constructs the selector option to search for authors with a positive value (for example, `"y"`) in a `"featured"` index field.
 
 The `GetFields()` and `GetFieldValues()` methods each play a role in defining how the data should be indexed and made searchable.
 * `GetFields()` defines the behaviour of fields that are added to the index. In this example, the `"featured"` field is added as a "raw" string for efficient and accurate searching.
