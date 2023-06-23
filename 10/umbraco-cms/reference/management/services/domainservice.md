@@ -23,17 +23,9 @@ For Razor views:
 
 ## Getting the service
 
-### Services property
-
-If you wish to use use the domain service in a class that inherits from one of the Umbraco base classes (eg. `SurfaceController`, `UmbracoApiController` or `UmbracoAuthorizedApiController`), you can access the domain service through a local `Services` property:
-
-```csharp
-IDomainService domainService = Services.DomainService;
-```
-
 ### Dependency Injection
 
-In other cases, you may be able to use Dependency Injection. For instance if you have registered your own class in Umbraco's dependency injection, you can specify the IDomainService interface in your constructor:
+If you wish to use the data type service in a class, you need to specify the `IDomainService` interface in your constructor:
 
 ```csharp
 public class MyClass
