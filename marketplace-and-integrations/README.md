@@ -23,7 +23,7 @@ Umbraco is also used in a hybrid DXP context. Here, some values are added to the
 
 ![Umbraco as a platform DXP, composable DXP og hybrid solution](https://github.com/BoletteKern/UmbracoDocs/blob/main/marketplace-and-integrations/.gitbook/assets/pDXP%20cDXP.png)
 
-Our aim is to support all the different ways of using Umbraco in a DXP setup and make it simpler to build integrations with Umbraco.
+Our aim is to support the different ways of using Umbraco in a DXP setup and provide resources for building integrations with Umbraco.
 
 ## Umbraco Commercial Products
 
