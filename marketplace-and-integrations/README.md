@@ -10,7 +10,11 @@ Within this Umbraco DXP (Digital Experience Platform) area of the Umbraco docume
 
 Both packages and integrations are defined as Umbraco Packages that can be either [NuGet packages (Umbraco 10+) or packages zip files (Umbraco 8 or earlier)](https://docs.umbraco.com/umbraco-cms/extending/packages/types-of-packages)
 
-Integrations are defined as Umbraco Packages that provide functionality via a third-party service's API, whereas packages are Umbraco Packages that extend the functionality of the CMS (management or delivery). For visualisation of ways to extend Umbraco see the illustation below.
+**Integrations** are defined as Umbraco Packages that provide functionality via a third-party service's API.
+
+**Packages** are defined as Umbraco Packages that extend the functionality of the Umbraco CMS (management or delivery).
+
+For visualization of ways to extend Umbraco see the illustration below.
 ![Packages and integrations](https://github.com/BoletteKern/UmbracoDocs/blob/main/marketplace-and-integrations/.gitbook/assets/Packages%20and%20intgerations.png)
 
 Umbraco is used in solutions in both a "platform" and "composable" DXP context. With the former, Umbraco has responsibility for both content management and delivery, with extensions added as NuGet packages. In a composable DXP, Umbraco is often a stand-alone service that take part of an overall architecture, focussed on the management of content exposed via APIs for delivery. Umbraco is also used in a hybrid DXP context where some values are added into the Umbraco platform, e.g Umbraco Forms or Umbraco Commerce, at the time as Umbraco is used as a component in a wider architecture. In all situations, backoffice integrations are an important part of providing an intuitive, unified editor experience.
