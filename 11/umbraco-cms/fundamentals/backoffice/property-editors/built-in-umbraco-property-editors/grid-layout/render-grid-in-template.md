@@ -24,9 +24,6 @@ You can create your own custom grid rendering files e.g for your favourite or cu
 
 or alternatively you can provide the path to where the file resides:
 
-```csharp
-@Html.GetGridHtml(Model, "propertyAlias", "mycustomrenderer")
-```
 Possible paths where you can add the custom Grid layout views:
 
 ```none
