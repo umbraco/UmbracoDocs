@@ -22,7 +22,7 @@ As an example, you cannot do the following:
 
 When following the steps above, the list will always be empty because the object has only been initialized.
 
-If you need persistence between notifications, we recommend you move that functionality into a service or similar, register it with the DI container, and inject it into your handler.
+If you need persistence between notifications, we recommend you move that functionality into a service or similar. You can then register it with the DI container, and inject it into your handler.
 
 As previously mentioned, many notifications exist in pairs, with a "before" and "after" notification. There may be cases where you want to add some information to the "before" notification, which will then be available to your "after" notification handler. In order to support this, the notification "pairs" are **stateful**. This means the notifications contain a dictionary that is shared between the "before" and "after" notifications. You can add values to the dictionary, and later retrieve them like this:
 
