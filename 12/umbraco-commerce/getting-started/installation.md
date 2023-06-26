@@ -22,7 +22,7 @@ PM> dotnet add package Umbraco.Commerce
 
 Alternatively, you can also find and install the NuGet package via the NuGet Package Manager in Visual Studio. You will see a number of packages available, however, you will want to install the main **Umbraco Commerce** package.
 
-![Installing Umbraco Commerce via the NuGet Package Manager](<../../payment-providers/media/nuget-package-manager-gui (1).png>)
+![Installing Umbraco Commerce via the NuGet Package Manager](../media/nuget-packages-overview.png)
 
 For most sites using a single solution, the above will be all you need to install Umbraco Commerce into your project. When you have a more complex solution structure consisting of multiple projects, Umbraco Commerce is available in multiple sub-packages with varying dependencies.
 
@@ -57,8 +57,6 @@ You only need to install your license when you are ready to go live.
 
 Umbraco Commerce is fully functional during development, and whilst it is hosted on a local server (`localhost` or `.local` domains).
 
-You can also host a staging site on a `*.azurewebsite.net` or `*.umbraco.io` (Umbraco Cloud) domain without the need for a license.
-
 Hosting on any other public domain without a license will be limited to a maximum of 20 orders.
 
 If you require an unrestricted staging environment, all licenses support two methods of allowing this:
@@ -66,5 +64,5 @@ If you require an unrestricted staging environment, all licenses support two met
 * `staging.client.com` - Licenses allow unlimited subdomains, meaning you can host the staging site on a subdomain of the licensed domain.
 * `clientcom.agency.com` - Licenses allow a concatenation of the licensed domain as a subdomain of any other domain.
 
-If you wish to host the site on any other URL, then an additional license file will be required for that domain.
+If you wish to host the site on any other URL like a public development domain, reach out to [suits@umbraco.com](mailto:suits@umbraco.com) for a test license.
 {% endhint %}
