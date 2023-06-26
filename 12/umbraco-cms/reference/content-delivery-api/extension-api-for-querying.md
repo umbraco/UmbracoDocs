@@ -6,7 +6,7 @@ description: >-
 
 # Extension API for querying
 
-The Delivery API allows you to retrieve multiple items by utilizing the `/umbraco/delivery/api/v1/content` endpoint. With the built-in query parameters, you have the flexibility to get any number of content nodes based on your needs. For a comprehensive list of supported query options, please refer to the [Endpoints](../#endpoints) section.
+The Delivery API allows you to retrieve multiple items by utilizing the `/umbraco/delivery/api/v1/content` endpoint. With the built-in query parameters, you have the flexibility to get any number of content nodes based on your needs. For a comprehensive list of supported query options, please refer to the [Endpoints](./#endpoints) section.
 
 For the query endpoint, we have created a new Examine index (_DeliveryApiContentIndex_) that facilitates fast retrieval of the desired content. This index ensures quick indexing and searching of data, with the possibility for future extensions.
 
@@ -14,7 +14,7 @@ In this article, we'll explore creating custom selecting, filtering, and sorting
 
 ## Query options
 
-Let's take a look at an example of using the query endpoint with query parameters for `fetch`, `filter`, and `sort`.  A request might look like this:
+Let's take a look at an example of using the query endpoint with query parameters for `fetch`, `filter`, and `sort`. A request might look like this:
 
 ```http
 GET /umbraco/delivery/api/v1/content?fetch=xxx&filter=yyy&filter=zzz&sort=aaa&sort=bbb
@@ -23,10 +23,8 @@ GET /umbraco/delivery/api/v1/content?fetch=xxx&filter=yyy&filter=zzz&sort=aaa&so
 The placeholders in the example (`xxx`, `yyy`, etc.) represent the values that each query option evaluates in order to determine the suitable query handler.
 
 {% hint style="info" %}
-You can include only one `fetch` parameter, while multiple `filter` and `sort` parameters are allowed. Additionally, the order of the `sort` parameters influences the sorting behaviour. Refer to the [Query parameters](../#query-parameters) section for the currently supported options.
+You can include only one `fetch` parameter, while multiple `filter` and `sort` parameters are allowed. Additionally, the order of the `sort` parameters influences the sorting behaviour. Refer to the [Query parameters](./#query-parameters) section for the currently supported options.
 {% endhint %}
-
-
 
 The implementation of each querying option consists of a class for indexing the data into the _DeliveryApiContentIndex_ and another one for handling the query. By implementing the `IContentIndexHandler` interface, you can control how your relevant data is indexed and made available for querying through our index. And you can customize the querying behaviour to suit your needs by implementing the `ISelectorHandler`, `IFilterHandler`, and `ISortHandler` interfaces.
 
@@ -39,7 +37,6 @@ Selectors handle the `fetch` part of a query.
 To showcase how to build a custom selector, consider a site structure with a few blog posts. A post is linked to an author, which is another content item.
 
 Authors can be marked as _'Featured'_ using a toggle, granting them additional visibility and recognition. We will use this marker as part of the indexing implementation for our selector option.
-
 
 The following example demonstrates the implementation of an `AuthorSelector`, which allows you to customize the querying behaviour specifically for finding all featured authors. This class contains both indexing and querying responsibilities. However, keep in mind that it is generally recommended to separate these responsibilities into dedicated classes.
 
@@ -104,10 +101,11 @@ The `AuthorSelector` class implements the `ISelectorHandler` and `IContentIndexH
 
 `ISelectorHandler` allows for handling the `fetch` value in API queries through the `CanHandle()` and `BuildSelectorOption()` methods.
 
-* `CanHandle()` determines if the given `fetch` query corresponds to the `"featuredAuthors"` value. 
+* `CanHandle()` determines if the given `fetch` query corresponds to the `"featuredAuthors"` value.
 * `BuildSelectorOption()` constructs the selector option to search for authors with a positive value (for example, `"y"`) in a `"featured"` index field.
 
 The `GetFields()` and `GetFieldValues()` methods each play a role in defining how the data should be indexed and made searchable.
+
 * `GetFields()` defines the behaviour of fields that are added to the index. In this example, the `"featured"` field is added as a "raw" string for efficient and accurate searching.
 * `GetFieldValues()` is responsible for retrieving the values of the defined index fields. In this case, the `"featured"` field of content items of type `"author"`. It creates an `IndexFieldValue` with the appropriate field value (`"y"` for featured, `"n"` otherwise), which will be added to the index.
 
@@ -131,6 +129,7 @@ GET /umbraco/delivery/api/v1/content?fetch=featuredAuthors
 ```
 
 ## Custom filter
+
 Filters handle the `filter` part of a query.
 
 Staying within the topic of blog posts and their authors, we will create a custom filter to find posts by specific author(s).
@@ -227,14 +226,14 @@ public class AuthorFilter : IFilterHandler, IContentIndexHandler
 ```
 {% endcode %}
 
-The principal difference from the selector is that the filter implements `BuildFilterOption()` instead of `BuildSelectorOption()`. Here, the filter performs an exact match for any specified `Guid` in the query. Efficiently, this makes the filter perform an `OR` operation against the index. 
+The principal difference from the selector is that the filter implements `BuildFilterOption()` instead of `BuildSelectorOption()`. Here, the filter performs an exact match for any specified `Guid` in the query. Efficiently, this makes the filter perform an `OR` operation against the index.
 
 Since we need to perform an exact match, the index field (`authorId`) is once again defined as a "raw" string. Other options include "analyzed" and "sortable" strings. These support "contains" searches and alpha-numeric sorting, respectively.
 
 ## Custom sort
 
-Finally, we can also add custom handling for the `sort` part of the query. 
- 
+Finally, we can also add custom handling for the `sort` part of the query.
+
 We'll add a custom sort handler that allows us to sort blog posts based on a custom `"publishDate"` Date Picker property. The implementation will allow for sorting the posts in ascending or descending order.
 
 {% hint style="info" %}
