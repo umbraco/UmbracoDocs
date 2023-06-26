@@ -13,7 +13,10 @@
 ## Reference
 
 * [Dive into the code](reference/dive-into-the-code.md)
-* [Content Delivery API](reference/content-delivery-api.md)
+* [Content Delivery API](reference/content-delivery-api/README.md)
+  * [Custom property editors support](reference/content-delivery-api/custom-property-editors-support.md)
+  * [Extension API for querying](reference/content-delivery-api/extension-api-for-querying.md)
+* [API versioning and OpenAPI](reference/api-versioning-and-openapi.md)
 
 ## Tutorials
 

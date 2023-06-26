@@ -1,12 +1,12 @@
-# How to handle hotfixes on Umbraco Cloud projects
+# Hotfixes
 
 When you have an Umbraco Cloud project with multiple environments, you might run into a situation where you need to push a hotfix to your Live environment but have pending changes elsewhere that are not ready for the Live site.
 
-Let's say you have 2 environments, a Live environment and a Development environment. You are currently working on building some changes on your local clone of the Development environment, but these changes won't be ready for the Live environment for another few weeks. Now you need to apply a minor change to your Live environment - a *hotfix*.
+Let's say you have 2 environments, a Live environment, and a Development environment. You are currently working on building some changes on your local clone of the Development environment, but these changes won't be ready for the Live environment for another few weeks. Now you need to apply a minor change to your Live environment - a _hotfix_.
 
 Normally you would do this, by making the hotfix locally, pushing it to the Development environment, and then deploying it to the Live environment. In this scenario that's not possible, as you do not want to deploy the other pending changes you are still working on.
 
-Following the workflow of Umbraco Cloud, you should never make changes directly to your Live environment. You should only make changes to the Live environment if that's the only environment you have. Read the [Project overview](/umbraco-cloud/getting-started/project-overview.md) article to learn more about environments on Umbraco Cloud.
+Following the workflow of Umbraco Cloud, you should never make changes directly to your Live environment. You should only make changes to the Live environment if that's the only environment you have. Read the [Project Overview](../../getting-started/project-overview.md) article to learn more about environments on Umbraco Cloud.
 
 With that said, it **is** possible to apply selected changes to your Live environment without breaking the workflow of Umbraco Cloud.
 

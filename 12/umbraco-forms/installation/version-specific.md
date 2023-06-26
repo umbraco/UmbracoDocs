@@ -18,6 +18,15 @@ Version 12 contains a number of breaking changes. If you do run into any, they s
 
 For reference, the full details are listed here:
 
+#### Behavior
+
+* The default value for configuration of request IP tracking has been changed to `None` from `RemoteIpAddress`.
+* The session variable `ContourMemberKey` is no longer set.
+* Exception handling in the Forms API has been aligned with the CMS Delivery API. This leads to subtle differences in the population of the `ProblemDetails` exposed.
+* Use of the Forms API has to be enabled in configuration, via setting the `Umbraco:Forms:Options:EnableFormsApi` key to `true`.
+* The Swagger document for the Forms API has been removed and is now combined with that for the CMS Delivery API, at `umbraco/swagger/index.html`.
+* The Forms API paths have had the `/v1.0/` segment renamed to `/v1/`, to align with the CMS Delivery API.
+
 #### Dependencies
 
 * Umbraco CMS dependency was updated to `12.0.0`.
@@ -51,13 +60,9 @@ These updates are more minor.  We don't expect many projects to be affected by t
 * The obsolete overload on the `ViewHelper.RenderPartialViewToString` method was removed and the `FakeController` class used in this method was made private.
 * The obsolete `Build` method overload was removed in `FormViewModel`.
 * The obsolete constructor on `FormRenderingService` was removed.
-
-#### Behavior
-
-* The default value for configuration of request IP tracking has been changed to `None` from `RemoteIpAddress`.
-* The session variable `ContourMemberKey` is no longer set.
-* Exception handling in the Forms API has been aligned with the CMS leading to subtle differences in the population of the `ProblemDetails` exposed.
-* Use of the Forms API has to be enabled in configuration, via setting the `Umbraco:Forms:Options:EnableFormsApi` key to `true`.
+* The Forms API model classes and serialization customizations were moved from `Umbraco.Forms.Web` into `Umbraco.Forms.Core`.
+* The `ISupportFileUploads` interface was moved to `Umbraco.Forms.Core.Interfaces`.
+* Additional parameters were added to the constructors of `FormPickerPropertyValueConverter` and `FormDtoFactory`.
 
 </details>
 

@@ -12,3 +12,8 @@
 ## Editor
 
 * [Creating a Form - The basics](editor/creating-a-form/README.md)
+
+## Developer
+
+* [Configuration](developer/configuration/README.md)
+* [Headless/AJAX Forms](developer/ajaxforms.md)

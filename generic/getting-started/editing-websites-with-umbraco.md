@@ -22,4 +22,4 @@ There is also information on how to use features such as translations, forms, an
 
 [What are the options for managing forms?](http://localhost:5000/s/2XErz7PeSuiFTiCbGF0w/editor)
 
-![Editing Umbraco](images/umbraco\_8\_2\_A.png)
+![Editing Umbraco](../../marketplace-and-integrations/.gitbook/assets/umbraco\_8\_2\_A.png)

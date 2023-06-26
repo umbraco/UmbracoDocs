@@ -10,7 +10,7 @@ description: >-
 
 In this tutorial we will show how you can create a backoffice tour, helping users get started with working in the Umbraco backoffice.
 
-A use case could be if you have a [custom dashboard](creating-a-custom-dashboard.md) then a backoffice tour can be used to show how it works.
+A use case could be if you have a [custom dashboard](creating-a-custom-dashboard/) then a backoffice tour can be used to show how it works.
 
 Before moving on, we recommend reading the [Backoffice Tours](../extending/backoffice-tours.md) documentation as it explains how each of the elements works in the tour.
 
@@ -111,7 +111,7 @@ To find the first `element`, follow the steps below:
 
 3. Locate the `data-element` for the top navigation called `section-settings`.
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>Finding the data-element for the first tour step</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption><p>Finding the data-element for the first tour step</p></figcaption></figure>
 
 4. Note down the `data-element`.
 

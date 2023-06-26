@@ -53,7 +53,7 @@ The following Validations are available:
 
 The autocomplete setting for the overall form can be changed from the default of "None" to "On" or "Off". Setting this explicitly will control how the browser offers automatic prompts to the user when completing the form.
 
-<figure><img src="images/FormSettingsAutocomplete.png" alt=""><figcaption><p>Form Settings Autocomplete</p></figcaption></figure>
+<figure><img src="../../../../12/umbraco-forms/editor/creating-a-form/images/FormSettingsAutocomplete.png" alt=""><figcaption><p>Form Settings Autocomplete</p></figcaption></figure>
 
 ### Moderation
 

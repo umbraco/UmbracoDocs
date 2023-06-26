@@ -59,6 +59,7 @@ For illustration purposes, the following structure represents the full set of op
         "DaysToRetainApprovedRecordsFor": 0
       },
       "RemoveProvidedEmailTemplate": false,
+      "RemoveProvidedFormTemplates": false,
       "FormElementHtmlIdPrefix": "",
       "SettingsCustomization": {
         "DataSourceTypes": {},
@@ -79,7 +80,9 @@ For illustration purposes, the following structure represents the full set of op
         "FirstRunTime": "",
         "Period": "1.00:00:00"
       },
-      "DisableRecordIndexing": false
+      "DisableRecordIndexing": false,
+      "EnableFormsApi": false,
+      "EnableRecordingOfIpWithFormSubmission": "true"
     },
     "Security": {
       "DisallowedFileUploadExtensions": "config,exe,dll,asp,aspx",
@@ -139,7 +142,7 @@ If you have created a custom template and would like to use that as the default 
 
 The provided template can be removed from the selection if you have created email templates for the "send Razor email" workflow. To do this, set this value to `true`.
 
-### RemoveProvidedFormsTemplates
+### RemoveProvidedFormTemplates
 
 Similarly, the provided form templates available from the form creation dialog can be removed from selection. To do this, set this configuration value to `true`.
 
@@ -348,6 +351,18 @@ Defines how often the record deletion process will run. The default value is `1.
 Set this value to `true` to disable the default behavior of indexing the form submissions into the Examine index.
 
 If indexing has already occurred, you will still need to manually remove the files (found in `App_Data\TEMP\ExamineIndexes\UmbracoFormsRecords`). They will be recreated if indexing is subsequently re-enabled.
+
+### EnableFormsApi
+
+Set this value to `true` to enable the Forms API supporting headless and AJAX forms.
+
+### EnableRecordingOfIpWithFormSubmission
+
+The user's IP address is recorded by default when a form is submitted and stored in the `UFRecords` database table.
+
+To remove this behavior set this value to `false`.
+
+If recording IPs and your site is behind a proxy, load balancer or CDN, we recommend using [ASP.NET's forwarded headers middleware](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/proxy-load-balancer?view=aspnetcore-7.0) to ensure the correct value for the client IP is resolved.
 
 ## Security configuration
 

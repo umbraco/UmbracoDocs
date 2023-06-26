@@ -42,6 +42,7 @@
     * [Custom Certificates](set-up/project-settings/manage-hostnames/security-certificates.md)
   * [External Services](set-up/project-settings/external-services.md)
   * [Usage](set-up/project-settings/usage.md)
+  * [Availability and Performance](set-up/project-settings/availability-performance.md)
   * [Team Members](set-up/project-settings/team-members/README.md)
     * [Account Contacts](set-up/project-settings/team-members/accounts-contact.md)
     * [Technical Contact](set-up/project-settings/team-members/technical-contact.md)
@@ -125,6 +126,7 @@
 ## Release Notes
 
 * [Overview 2023](release-notes/overview-2023.md)
+* [May 2023](release-notes/2023-05-releasenotes.md)
 * [April 2023](release-notes/2023-04-releasenotes.md)
 * [March 2023](release-notes/2023-03-releasenotes.md)
 * [February 2023](release-notes/2023-02-releasenotes.md)

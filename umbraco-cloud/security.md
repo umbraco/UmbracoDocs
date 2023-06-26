@@ -35,7 +35,9 @@ Umbraco Cloud Websites support the following TLS ciphers in this order:
 
 ### HSTS - HTTP Strict Transport Security
 
-It's possible to enforce HTTP Strict Transport Security by adding the [HSTS](https://en.wikipedia.org/wiki/HTTP\_Strict\_Transport\_Security) headers to your website. This grants Umbraco Cloud Websites an A+ security rating on sslabs (March 2020). You can add the header by modifying system.webServer/rewrite/outboundRules section in your web.config:
+It's possible to enforce HSTS: [HTTP Strict Transport Security](https://en.wikipedia.org/wiki/HTTP\_Strict\_Transport\_Security) by adding the headers to your website. This grants Umbraco Cloud Websites an A+ security rating on sslabs (March 2020). 
+
+You can add the header by modifying system.webServer/rewrite/outboundRules section in your web.config:
 
 ```xml
  <outboundRules>
@@ -50,7 +52,27 @@ It's possible to enforce HTTP Strict Transport Security by adding the [HSTS](htt
  </outboundRules>
 ```
 
-This adds the "Strict-Transport-Security" header that tells browsers: for the next 63072000 seconds (which is two years) the browser should not make any HTTP requests to this domain.
+Alternatively this can be done in Startup.cs inside of the **ConfigueServices** method with the following C#:
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddUmbraco(_env, _config)
+                .AddBackOffice()
+                .AddWebsite()
+                .AddComposers()
+                .Build();
+
+            services.AddHsts(options =>
+            {
+                options.MaxAge = TimeSpan.FromDays(730);
+                options.IncludeSubDomains = true;
+                options.Preload = true;
+            });
+        }
+```
+
+This adds the "Strict-Transport-Security" header telling browsers how long the browser should not make any HTTP requests to this domain. In this example 63072000 seconds or 730 days is two years.
 
 ### TLS 1.2 by default in external services
 

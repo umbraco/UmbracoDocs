@@ -54,11 +54,13 @@ Another option for extension via custom code is to hook into one of the many eve
 
 Form events are raised during the submission life cycle and can be handled for executing custom logic.
 
-### [Default Workflows](customize-default-workflows.md)
+### [Default Fields and Workflows](customize-default-workflows.md)
 
 The default behavior when a new form is created is for a single workflow to be added, which will send a copy of the form to the current backoffice user's email address.
 
-It's been possible to amend this behavior and change it to fit your needs.
+A single "data consent" field will also be added unless it has been disabled via configuration.
+
+It's possible to amend this behavior and change it to fit your needs.
 
 ## Responding to State Values
 

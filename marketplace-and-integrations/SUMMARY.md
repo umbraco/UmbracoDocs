@@ -7,6 +7,7 @@
 * [Umbraco Forms](https://docs.umbraco.com/umbraco-forms/)
 * [Umbraco Deploy](https://docs.umbraco.com/umbraco-deploy/)
 * [Umbraco Workflow](https://docs.umbraco.com/umbraco-workflow/)
+* [Umbraco Commerce](https://docs.umbraco.com/umbraco-commerce)
 
 ## Marketplace
 
@@ -33,3 +34,7 @@
 * [Shopify](integrations/shopify.md)
 * [Zapier](integrations/zapier.md)
 * [Zapier with Umbraco Forms](integrations/zapier-with-umbraco-forms.md)
+
+## Packages
+
+* [Authorized Services](packages/authorized-services.md)

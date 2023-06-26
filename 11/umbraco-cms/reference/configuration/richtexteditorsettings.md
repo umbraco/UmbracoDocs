@@ -1,3 +1,7 @@
+---
+description: "Information on the Rich text editor settings"
+---
+
 # Rich text editor settings
 
 This settings section allows you to configure the behaviour of the rich text editor, everything from plugins to commands. Everything has a default value, so it's not required to configure any of this yourself.

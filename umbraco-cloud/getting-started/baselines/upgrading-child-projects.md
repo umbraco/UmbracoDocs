@@ -6,43 +6,67 @@ When a project has one or more Child Projects it will appear on the Project page
 
 From this page, you will have an overview of all the Child Projects this Baseline project has. This is also where you go when you want to push upgrades from your Baseline Project to the Child Projects.
 
-## Upgrading Child Projects
+To do a minor or major upgrade of a Baseline project and its Child projects, the first task is to run the upgrade on the Baseline project itself.
 
-1. Go to the Baseline project.
-2. Click on Manage updates **here**.
-3. Select the Child Projects you want to push your upgrades to - you can select as many or as few as you like.
-4. Click **Update all child projects** or **Update selected**.
-5. Click **Confirm** once the selection looks correct.
+Follow the upgrade guides for [Minor](../../product-upgrades/minor-upgrades.md) and/or [Major](../../product-upgrades/major-upgrades.md) upgrade notes to upgrade your Baseline project.
 
-If the upgrade has been completed successfully, the Child Projects will be displayed under the **Successful updates/upgrades** section.
+Once the upgrade has been verified on the Baseline project, follow the guides outlined here to push the upgrade to the child projects.
+
+{% hint style="info" %}
+We recommend setting up a Development environment on your Child projects before deploying the updates/upgrades.&#x20;
+
+That way you'll have an environment to test on and verify that everything has been deployed correctly.
+
+Once you are happy with the Development environment, you can go ahead and deploy it to the Live environment as well.
+{% endhint %}
+
+## Upgrading Child Projects to a New Major Version
+
+{% hint style="info" %}
+If you've done any version-specific steps, when upgrading the baseline project, these also need to be done on the child projects before pushing the upgrade.
+{% endhint %}
+
+1. Go to the child projects you are upgrading.
+2. Go to the Advanced Setting tab.
+3. Update the .NET version to the corresponding one for the major version upgrading to.
+4. Go to the Baseline Project.
+5. Click on "Manage updates here".
+6. Select the Child Projects you want to push your upgrades to - you can select as many or as few as you like.
+7. Click **Update all child projects** or **Update selected**.
+8. Click **Confirm** once the selection looks correct.
+
+If the upgrade has been completed successfully, the Child Projects will be displayed under the **Successful Updates/upgrades** section.
 
 ![Upgrade Child Projects](images/manage-baseline-children\_v10.gif)
 
 ## Deploying Minor upgrades to Child projects
 
-To do a minor upgrade of a Baseline project and its Child projects, the initial task is to run the minor upgrade on the Baseline project itself. This is done in the Umbraco Cloud portal by clicking the "Upgrade available!" button on the Development environment, once the environments on the project are in sync.
+1. &#x20;Go to the **Manage child projects** page on the Baseline.
 
-Following [Minor upgrades](../../product-upgrades/minor-upgrades.md) guide and the process will leave the Baseline project upgraded to the latest version, while all the children are untouched for now.
+On this page, the Child projects will have an available upgrade.&#x20;
 
-Once the upgrade has been verified on the Baseline project, and you've made sure everything works as expected, you should go to the **Manage child projects** page on the Baseline.
+2. Select the projects you want to upgrade.
+3. Click the "Upgrade selected children" button.
 
-On this page, you'll notice that all the children now have an available upgrade. At this point, you can select the projects to upgrade.
+First, any pending changes made on the Baseline will be deployed to the child site.&#x20;
 
-At first, any pending changes made on the Baseline will be deployed to the child site. Once the changes have been deployed, the child site will be upgraded to the same version as the Baseline site. All the products (CMS, Courier to Deploy, and Forms) will be upgraded.
+Once the changes have been deployed, the child site will be upgraded to the same version as the Baseline site.&#x20;
+
+{% hint style="info" %}
+All products (CMS, Deploy, and Forms) will be upgraded.
+{% endhint %}
 
 ![Minor upgrade labels](images/minor-upgrades.png)
 
-{% hint style="info" %}
-We recommend that you set up a Development environment on your Child project before deploying the upgrade. That way you'll have an environment to test on and verify that everything has been deployed correctly.
+The upgrade itself will happen once you click the upgrade button. This will start by triggering the update, where all the files are updated on the children from the baseline.&#x20;
 
-Once you are happy with the Development environment, you can go ahead and deploy to the Live environment as well.
-{% endhint %}
+Once the files are in place, we also run the upgrade process, making sure that the children are fully upgraded.
 
-The upgrade itself will happen once you click the upgrade button. This will start by triggering the update, where all the files are updated on the children from the baseline. Once the files are in place, we also run the upgrade process, making sure that the children are fully upgraded.
+When using the feature, the Baseline Child projects must be set up following our [best practices for handling config files](configuration-files.md). This means that any changes to the Child project should be applied via a config transform file.&#x20;
 
-When using the feature, the Baseline Child projects must be set up following our [best practices for handling config files](configuration-files.md). This means that any changes to the Child project should be applied via a config transform file. The reason for this is that the Child projects config files will be merged by choosing the parent's config files first. That is to ensure that changes to config files, that have been made in the minor upgrade, will also be applied to the child projects.
+The reason for this is that the Child Projects config files will be merged by choosing the parent's config files first. That is to ensure that changes to config files, that have been made in the minor upgrade, will also be applied to the child projects.
 
-### Errors while upgrading children from baseline
+## Errors while upgrading children from baseline
 
 If the upgrade of a Child project fails, or the Child project is left in a bad state, it is most likely because the Child project was unable to be merged properly.
 

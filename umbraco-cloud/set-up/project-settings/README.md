@@ -14,8 +14,9 @@ When working with a Umbraco Cloud project, you can handle a lot of the project c
 * [Upgrade Plan](./#upgrade-plan)
 * [Rename Project](./#rename-project)
 * [Advanced Settings](./#advanced)
-* [Project Usage](./#usage)
 * [Dedicated Resources](./#dedicated-resources)
+* [Project Usage](./#usage)
+* [Availability & Performance](./#availability-performance)
 * [Delete the project.](./#delete-project)
 
 ![settings](../images/project-settings-v10.png)
@@ -113,13 +114,9 @@ You can change your Umbraco Cloud project to run in a dedicated setup with addit
 
 On your Umbraco Cloud project, it is possible to see the usage of Custom Domains, Media Storage, Content Nodes, and Bandwidth for the project. You can also check if it is using above or below the allowed amount for the plan that your project is on.
 
-## [Payment](../manage-subscriptions/new-shop.md)
+## [Availability & Performance](availability-performance.md)
 
-From here, you can see the payment history for your project, change the credit card, as well as download the latest invoices for your project.
-
-{% hint style="info" %}
-This only applies to new customers on Umbraco Cloud after the 28th of April, 2021. For old projects, the invoices and payment history are still available from the [Umbraco Shop](https://shop.umbraco.com/profile/sign-in).
-{% endhint %}
+You are able to see metrics related to the overall health and performance of the Azure app service hosting the live environment of your solution.
 
 ### Delete Project
 
