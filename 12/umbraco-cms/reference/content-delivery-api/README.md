@@ -10,7 +10,7 @@ The Content Delivery API delivers headless capabilities built directly into Umbr
 
 When upgrading an existing project to Umbraco 12, you will need to opt-in explicitly for using the Delivery API. Below you will find the steps you need to take in order to configure it for your Umbraco project.
 
-When you start with a fresh Umbraco 12 installation, the Delivery API is also disabled by default. To enable it, you can proceed directly to the [Enable the Content Delivery API](content-delivery-api.md#enable-the-content-delivery-api) section, as the step below is already complete in this case.
+When you start with a fresh Umbraco 12 installation, the Delivery API is also disabled by default. To enable it, you can proceed directly to the [Enable the Content Delivery API](./#enable-the-content-delivery-api) section, as the step below is already complete in this case.
 
 ### Register the Content Delivery API dependencies
 
@@ -50,7 +50,7 @@ public void ConfigureServices(IServiceCollection services)
 ```
 {% endcode %}
 
-Once the Content Delivery API is enabled, you will need to manually rebuild the Delivery API content index (**DeliveryApiContentIndex**). This can be done using the "Examine Management" dashboard in the "Settings" section. Once the index is rebuilt, the API will be able to serve the latest content from the multiple-items endpoint.
+Once the Content Delivery API is enabled, you will need to manually rebuild the Delivery API content index (_DeliveryApiContentIndex_). This can be done using the "Examine Management" dashboard in the "Settings" section. Once the index is rebuilt, the API will be able to serve the latest content from the multiple-items endpoint.
 
 ### Additional configuration
 
@@ -96,7 +96,7 @@ Before exploring the API endpoints detailed below, there are a few concepts to k
 
 The Delivery API outputs the JSON structure outlined below to represent the retrieved content items, which consist of a range of properties:
 
-* Basic properties for any content item include `name`, `id` and `contentType`.
+* Basic properties for any content item include `name`, `createDate`, `updateDate`, `id` and `contentType`.
 * All editorial properties from the content type can be found in the `properties` collection. Depending on the configured property editor, the property output value can be a _string_, _number_, _boolean expression_, _array_, _object_ or _`null`_.
 * The `route` property provides the `path` of the content item, as well as details about the root node value that is represented by the `startItem` object. We will discuss the concept of a `startItem` in more detail in the next section.
 * If the content item varies by culture, the `cultures` property will contain information about all configured cultures for the content node, including the culture variant `path` and `startItem` for each one.
@@ -104,6 +104,8 @@ The Delivery API outputs the JSON structure outlined below to represent the retr
 ```json
 {
   "name": "string",
+  "createDate": "2023-06-23T11:31:07.281Z",
+  "updateDate": "2023-06-23T11:31:07.281Z",
   "route": {
     "path": "string",
     "startItem": {
@@ -197,6 +199,8 @@ GET /umbraco/delivery/api/v1/content/item/9bdac0e9-66d8-4bfd-bba1-e954ed9c780d
 ```json
 {
     "name": "My post",
+    "createDate": "2023-05-11T00:05:31.878211",
+    "updateDate": "2023-05-15T11:25:53.912058",
     "route": {...
     },
     "id": "9bdac0e9-66d8-4bfd-bba1-e954ed9c780d",
@@ -207,6 +211,8 @@ GET /umbraco/delivery/api/v1/content/item/9bdac0e9-66d8-4bfd-bba1-e954ed9c780d
         "bodyContent": "Congue, sollicitudin? Est fames maiores, sociis suspendisse et aliquet tristique excepturi, aliquam, nihil illum pretium penatibus exercitationem lacinia! Dolorem tempus convallis, nulla! Eius scelerisque voluptatum penatibus, dignissimos molestiae, soluta eum. Voluptatibus quod? Temporibus potenti voluptates dictumst? Cillum metus, nec asperiores? Impedit sit! Eum tellus cillum facilisis ullamco tempor? Sint nostrum luctus? Neque dictumst diam, minus? Itaque, minus, etiam dignissimos debitis occaecat aptent tempus! Praesent molestiae duis nihil recusandae, eius imperdiet aspernatur natus. Tempus mattis at architecto, augue, consequuntur ultricies eligendi, litora morbi ante nesciunt pretium laoreet quidem recusandae voluptates dapibus, iure sagittis donec ipsum mollit? Blanditiis! Laborum sit assumenda beatae.",
         "linkedItem": {
             "name": "Demo blog",
+            "createDate": "2023-05-11T00:26:52.591927",
+            "updateDate": "2023-05-16T12:43:41.339963",
             "route": {
                 "path": "/demo-blog/",
                 "startItem": {
@@ -238,6 +244,8 @@ GET /umbraco/delivery/api/v1/content/item/9bdac0e9-66d8-4bfd-bba1-e954ed9c780d?e
 ```json
 {
     "name": "My post",
+    "createDate": "2023-05-11T00:05:31.878211",
+    "updateDate": "2023-05-15T11:25:53.912058",
     "route": {
         "path": "/my-post/",
         "startItem": {
@@ -253,6 +261,8 @@ GET /umbraco/delivery/api/v1/content/item/9bdac0e9-66d8-4bfd-bba1-e954ed9c780d?e
         "bodyContent": "Congue, sollicitudin? Est fames maiores, sociis suspendisse et aliquet tristique excepturi, aliquam, nihil illum pretium penatibus exercitationem lacinia! Dolorem tempus convallis, nulla! Eius scelerisque voluptatum penatibus, dignissimos molestiae, soluta eum. Voluptatibus quod? Temporibus potenti voluptates dictumst? Cillum metus, nec asperiores? Impedit sit! Eum tellus cillum facilisis ullamco tempor? Sint nostrum luctus? Neque dictumst diam, minus? Itaque, minus, etiam dignissimos debitis occaecat aptent tempus! Praesent molestiae duis nihil recusandae, eius imperdiet aspernatur natus. Tempus mattis at architecto, augue, consequuntur ultricies eligendi, litora morbi ante nesciunt pretium laoreet quidem recusandae voluptates dapibus, iure sagittis donec ipsum mollit? Blanditiis! Laborum sit assumenda beatae.",
         "linkedItem": {
             "name": "Demo blog",
+            "createDate": "2023-05-11T00:26:52.591927",
+            "updateDate": "2023-05-16T12:43:41.339963",
             "route": {
                 "path": "/demo-blog/",
                 "startItem": {
@@ -411,21 +421,15 @@ Returns single or multiple items.
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="fetch" type="String" required="false" %}
-Structural query string option (e.g. `ancestors`, `children`,&#x20;
-
-`descendants`)
+Structural query string option (e.g. `ancestors`, `children`, `descendants`)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="filter" type="String Array" required="false" %}
-Filtering query string options (e.g.
-
-`contentType`, `name`)
+Filtering query string options (e.g. `contentType`, `name`)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="sort" type="String Array" required="false" %}
-Sorting query string options (e.g.
-
-`createDate`, `level`, `name`, `sortOrder`, `updateDate`)
+Sorting query string options (e.g. `createDate`, `level`, `name`, `sortOrder`, `updateDate`)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="skip" type="Integer" required="false" %}
@@ -480,7 +484,7 @@ You can extend the built-in selector, filter, and sorting capabilities of the De
 {% tabs %}
 {% tab title="expand" %}
 {% hint style="info" %}
-Refer to the [Output expansion](content-delivery-api.md#output-expansion) concept for more information about the benefits of this parameter.
+Refer to the [Output expansion](./#output-expansion) concept for more information about the benefits of this parameter.
 {% endhint %}
 
 **`?expand=all`**\
@@ -539,7 +543,7 @@ GET /umbraco/delivery/api/v1/content?filter=contentType:article&filter=name:guid
 {% endtab %}
 
 {% tab title="sort" %}
-Specifying how the results should be ordered, can be achieved using the `sort` query option. You can use this parameter to sort the content items by different fields, including create date, level, name, sort order, and update date. For each field, you can specify whether the items should be sorted in ascending (_asc_) or descending (_desc_) order. Without a `sort` query parameter, the order of the results will be determined by the relevance score of the **DeliveryApiContentIndex** for the given search term.
+Specifying how the results should be ordered, can be achieved using the `sort` query option. You can use this parameter to sort the content items by different fields, including create date, level, name, sort order, and update date. For each field, you can specify whether the items should be sorted in ascending (_asc_) or descending (_desc_) order. Without a `sort` query parameter, the order of the results will be determined by the relevance score of the _DeliveryApiContentIndex_ for the given search term.
 
 **`?sort=createDate:asc/desc`**\
 An option to sort the results based on the creation date of the content item in either _`asc`_ or _`desc`_ order.
@@ -576,7 +580,7 @@ In this section, we will discuss some of the known limitations of the API, and h
 
 Currently, the Delivery API does not support authentication for members, which means that protected content cannot be accessed through any of our endpoints. This protection is typically implemented by setting public access restrictions on specific content nodes for certain members or member groups. To ensure those items remain protected, we filter out such content completely, at the moment.
 
-As a result of this approach, lifting protection from a content item requires an additional step to ensure it becomes accessible through the Delivery API. The recommended way is to publish the content item again. Alternatively, you can manually rebuild the **DeliveryApiContentIndex** to reflect the changes.
+As a result of this approach, lifting protection from a content item requires an additional step to ensure it becomes accessible through the Delivery API. The recommended way is to publish the content item again. Alternatively, you can manually rebuild the _DeliveryApiContentIndex_ to reflect the changes.
 
 We are looking into adding support for member authentication which would enable querying for protected content.
 
@@ -611,3 +615,20 @@ The Member Picker property editor is not supported in the Delivery API to avoid 
 #### Multinode Treepicker
 
 The Multinode Treepicker property editor, when configured for members, is also unsupported in the Delivery API. This is due to the same concern of potentially leaking member data.
+
+### Rebuilding the _DeliveryApiContentIndex_
+
+As mentioned in the [Protected content](./#protected-content) limitation section, the _DeliveryApiContentIndex_ should be rebuilt after removing the _"Restrict Public Access"_ protection from a content item.
+
+The same applies when adding or removing aliases of content types from the `Umbraco:CMS:DeliveryApi:DisallowedContentTypeAliases` configuration setting.
+
+Republishing the relevant content items will ensure that the changes are reflected in both cases, eliminating the need to rebuild the index.
+
+## Extension points
+
+The Delivery API has been designed with extensibility in mind, offering multiple extension points that provide greater flexibility and customization options. These extension points allow you to tailor the API's behaviour and expand its capabilities to meet your specific requirements.
+
+You'll find detailed information about the specific areas of extension in the articles below:
+
+* [Tailor the API's response for custom property editors](custom-property-editors-support.md)
+* [Extend the API with custom selecting, filtering, and sorting options](extension-api-for-querying.md)
