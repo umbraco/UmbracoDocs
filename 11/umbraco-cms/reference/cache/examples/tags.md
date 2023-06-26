@@ -44,7 +44,7 @@ namespace Doccers.Core.Services.Implement
         public CacheTagService(ITagQuery tagQuery, AppCaches appCaches)
         {
             _tagQuery = tagQuery;
-            // Grap RuntimeCache from appCaches
+            // Get the RuntimeCache from appCaches
             // and assign to our private field.
             _runtimeCache = appCaches.RuntimeCache;
         }
