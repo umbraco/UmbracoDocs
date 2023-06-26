@@ -12,7 +12,15 @@ The notification to use depends on what you want to achieve. If you want to be a
 
 ### Notification handlers lifetime
 
-It's important to note that the handlers you create and register to receive notifications will be **transient**; this means that they will be initialized every time they receive a notification, so you cannot rely on them having a specific state based on previous notifications. For instance, you cannot create a list in a handler, add something when a notification is received, and then check if that list contains what you added in an earlier notification. That list will always be empty because the object has just been initialized.
+It's important to know that the handlers you create and register to receive notifications will be **transient**. This means that they will be initialized every time they receive a notification. You can therefore not rely on them having a specific state based on previous notifications. 
+
+As an example, you cannot do the following:
+
+1. Create a list in a handler.
+2. Add something when a notification is received.
+3. Check if that list contains what you added in an earlier notification.
+
+When following the steps above, the list will always be empty because the object has only been initialized.
 
 If you need persistence between notifications, we recommend you move that functionality into a service or similar, register it with the DI container, and inject it into your handler.
 
