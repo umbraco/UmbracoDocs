@@ -41,7 +41,7 @@ public void Handle(TemplateSavedNotification notification)
 
 ### Registering notification handlers
 
-Once you've made your notification handlers, you need to register them with the `AddNotificationHandler` extension method on the `IUmbracoBuilder` to run them whenever a notification they subscribe to is published. There are two ways to do this: 
+Once you've made your notification handlers, you need to register them with the `AddNotificationHandler` extension method on the `IUmbracoBuilder`. This is done to be able to run them whenever a notification they subscribe to is published. There are two ways to do this: 
 
 1. In the **Startup** class, if you're making handlers for your site
 2. In a [**composer**](../../implementation/composing), if you're a package developer subscribing to notifications
@@ -208,9 +208,9 @@ See [Tree Notifications](../../extending/section-trees/) for a list of the tree 
 See [EditorModel Notifications](editormodel-notifications/) for a list of the EditorModel events
 
 {% hint style="info" %}
-Useful for manipulating the model before it is sent to an editor in the backoffice - e.g. to set a default value of a property on a new document.
+Useful for manipulating the model before it is sent to an editor in the backoffice. It could be used to set a default value of a property on a new document.
 {% endhint %}
 
 ## Creating and publishing your own custom notifications
 
-Umbraco uses notifications to allow people to hook into various workflow processes. This notification pattern is extensible, allowing you to create and publish your own custom notifications, thus allowing other people to observe and hook into your custom processes. This approach can be very useful when creating Umbraco packages. For more information on how you create and publish your own notifications, see the [creating and publishing notifications](creating-and-publishing-notifications.md) article.
+Umbraco uses notifications to allow people to hook into different workflow processes. This notification pattern is extensible, allowing you to create and publish custom notifications, and other people to observe and hook into your custom processes. This approach can be very useful when creating Umbraco packages. For more information on how you create and publish your own notifications, see the [creating and publishing notifications](creating-and-publishing-notifications.md) article.
