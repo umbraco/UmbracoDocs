@@ -41,7 +41,7 @@ public void Handle(TemplateSavedNotification notification)
 
 ### Registering notification handlers
 
-Once you've made your notification handlers, you need to register them with the `AddNotificationHandler` extension method on the `IUmbracoBuilder`. This is done to be able to run them whenever a notification they subscribe to is published. There are two ways to do this: 
+Once you've made your notification handlers, you need to register them with the `AddNotificationHandler` extension method on the `IUmbracoBuilder`. This enables them to run whenever a notification they subscribe to is published. There are two ways to do this: 
 
 1. In the **Startup** class, if you're making handlers for your site
 2. In a [**composer**](../../implementation/composing), if you're a package developer subscribing to notifications
