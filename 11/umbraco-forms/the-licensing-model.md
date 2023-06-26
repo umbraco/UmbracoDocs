@@ -10,8 +10,6 @@ Licenses are sold per domain and will also work on all subdomains. With every li
 The licenses are not bound to a specific product version. They will work for all versions of the related product.
 {% endhint %}
 
-### Example
-
 Let's say that you have a license configured for your domain, `mysite.com`, and you've configured two development domains, `devdomain.com` and `devdomain2.com`.
 
 The license will cover the following domains:
@@ -39,11 +37,11 @@ There are a few differences as to what the licenses cover:
 * The license allows for an unlimited number of forms.
 * The license also includes `localhost` as a valid domain.
 
-If you have multiple domains pointing at the same installation, you have the option to purchase and add **additional domains** to your license.
-
-Additional domains can be purchased from your account on [Umbraco.com](https://umbraco.com). Each additional domain includes 1 live domain and 2 development/testing domains.
-
 {% hint style="info" %}
+If you have multiple domains pointing at the same installation, you have the option to purchase and [add **additional domains**](the-licensing-model.md#add-additional-domains) to your license.
+
+Each additional domain includes 1 live domain and 2 development/testing domains.
+
 This is an add-on domain for existing licenses. Refunds will not be given for this product.
 {% endhint %}
 
@@ -52,6 +50,25 @@ This is an add-on domain for existing licenses. Refunds will not be given for th
 You can purchase the license at [Umbraco Forms Licenses](https://umbraco.com/products/umbraco-forms/).
 
 When you've bought a license you need to configure it with your domains. You can either configure your license right away or you can do it later by visiting your account on Umbraco.com.
+
+1. Login to your account at [shop.umbraco.com](https://shop.umbraco.com).
+2. Navigate to the **Manage Licenses** section.
+3. Locate your unconfigured Forms license and choose **Configure / Add domain**.
+4. Define the primary as well as up to two development domains for which the license will be used.
+
+### Add additional domains
+
+Once you have a configured Umbraco Forms license, you can add additional domains. This is relevant if you need your forms to be available on multiple public domains.
+
+1. Login to your account at [shop.umbraco.com](https://shop.umbraco.com).
+2. Navigate to the **Manage Licenses** section.
+3. Locate your configured Forms license.
+4. Choose **Configure / Add domain**.
+
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+5. Select **Click here to buy** at the bottom of the configuration page.
+6. Configure the additional domain after completing the purchase, or do it later via your account.
 
 ## Installing your license
 
@@ -62,15 +79,11 @@ Once you've configured your license with the correct domains, you are ready to i
 
 The `.lic` file must be placed in the `/umbraco/Licenses` directory to be registered by Umbraco Forms. If the file isn't placed correctly, the application will automatically switch to trial mode.
 
-## Alternative license location
+### Alternative license location
 
 If you can't include the license file in the `/umbraco/Licenses` directory for any reason, it is possible to configure an alternative location for the file.
 
-It can be configured in the Umbraco installation's `appSettings.json` file by adding the following appSetting. The value contains the path of your custom license directory relative to the root of your Umbraco installation.
-
-{% hint style="warning" %}
-This will also change the location for other Umbraco-related licenses in this project.
-{% endhint %}
+It can be configured in the Umbraco installation's `appSettings.json` file by adding the following configuration:
 
 ```json
 {
@@ -81,3 +94,9 @@ This will also change the location for other Umbraco-related licenses in this pr
   }
 }
 ```
+
+The value contains the path of your custom license directory relative to the root of your Umbraco installation.
+
+{% hint style="warning" %}
+This will also change the location for other Umbraco-related licenses in this project.
+{% endhint %}

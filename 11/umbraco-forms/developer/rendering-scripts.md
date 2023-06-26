@@ -40,11 +40,10 @@ If you do not want to render the associated scripts with a Form, you need to exp
 
 To enable `ExcludeScripts`:
 
-- Using the **Insert Form with Theme** macro:
+*   Using the **Insert Form with Theme** macro:
 
-    ![Exclude scripts](images/exclude-scripts-v9.png)
-
-- While inserting Forms **directly** in your template:
+    ![Exclude scripts](../../../10/umbraco-forms/developer/images/exclude-scripts-v9.png)
+*   While inserting Forms **directly** in your template:
 
     ```csharp
     @await Umbraco.RenderMacroAsync("renderUmbracoForm", new {FormGuid="6c3f053c-1774-43fa-ad95-710a01d9cd12", FormTheme="bootstrap3-horizontal", ExcludeScripts="1"})

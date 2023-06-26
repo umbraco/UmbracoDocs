@@ -1,5 +1,5 @@
 ---
-description: "Documentation on how to apply custom themes to Umbraco Forms"
+description: Documentation on how to apply custom themes to Umbraco Forms
 ---
 
 # Themes
@@ -20,8 +20,8 @@ Umbraco 10+ distributes these files as part of a Razor class library, so you won
 
 You can obtain the latest versions of the default theme for each Forms major version from the following links:
 
-- [Forms 10 Default Theme](https://umbra.co/umbraco-forms-default-theme)
-- [Forms 11 Default Theme](https://umbra.co/umbraco-forms-default-theme-11)
+* [Forms 10 Default Theme](https://umbra.co/umbraco-forms-default-theme)
+* [Forms 11 Default Theme](https://umbra.co/umbraco-forms-default-theme-11)
 
 The default theme for minor versions are available from the "Source Code" tab available at the bottom of [Umbraco Forms Package page](https://our.umbraco.com/packages/developer-tools/umbraco-forms/). Only versions where changes were made are available. So if you are running Umbraco 11.1, and no file for that version is available, use the one for Umbraco 11.0.
 
@@ -37,7 +37,7 @@ If adding or amending client-side scripts, you need to copy the `Script.cshtml` 
 
 To use a theme with a Form use the "Insert Form" macro where you will be presented with the options of the form you wish to insert along with an option to pick a theme. This displays the list of theme folders found at `Views/Partials/Forms/Themes`.
 
-![Choosing and using a theme](images/select-a-theme.png)
+![Choosing and using a theme](../../../10/umbraco-forms/developer/images/select-a-theme.png)
 
 When you are rendering your form directly in your template, you need to specify your theme by filling out the `FormTheme` attribute:
 
