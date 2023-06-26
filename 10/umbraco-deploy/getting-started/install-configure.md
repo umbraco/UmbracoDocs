@@ -195,7 +195,7 @@ Now that Umbraco Deploy has been installed on the project, we can go ahead and c
 
 **Do not push the files up yet** as a CI/CD build server will first need to be set up and connected to our repository.
 
-#### Include your Umbraco Deploy license
+#### Include your Umbraco Deploy license file
 
 Before moving on to setting up the build server, make sure that your license is included in your project.
 
