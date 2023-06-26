@@ -11,7 +11,7 @@ Version 12 of Umbraco Workflow has a minimum dependency on Umbraco CMS core of `
 
 **Breaking changes**
 
-Version 12 contains a number of breaking changes. We don't expect many projects to be affected by them as they are in areas that are not typical extension points. For reference though, the full details are listed here:
+Version 12 contains a number of breaking changes. Presentation changes are not typically considered breaking - for reference the full details are listed below.
 
 **Presentation**
 

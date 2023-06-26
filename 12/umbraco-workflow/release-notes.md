@@ -5,7 +5,7 @@ In this section, we have summarized the changes to Umbraco Workflow released in 
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
 {% hint style="info" %}
-If you are upgrading to a new major version, you can find information about the breaking changes in the [Version Specific Upgrade Notes](version-specific-upgrade-notes.md/version-specific.md) article
+If you are upgrading to a new major version, you can find information about the breaking changes in the [Version Specific Upgrade Notes](version-specific-upgrade-notes.md) article
 {% endhint %}
 
 ## Release History
