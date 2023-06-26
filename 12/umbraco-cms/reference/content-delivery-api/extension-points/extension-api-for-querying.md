@@ -8,7 +8,9 @@ description: >-
 
 The Delivery API allows you to retrieve multiple items by utilizing the `/umbraco/delivery/api/v1/content` endpoint. With the built-in query parameters, you have the flexibility to get any number of content nodes based on your needs. For a comprehensive list of supported query options, please refer to the [Endpoints](../#endpoints) section.
 
-For the query endpoint, we have created a new Examine index (_DeliveryApiContentIndex_) that facilitates fast retrieval of the desired content. This index ensures quick indexing and searching of data, with the possibility for future extensions. In this article, we'll explore creating custom selecting, filtering, and sorting options to enhance the querying capabilities of the Delivery API.
+For the query endpoint, we have created a new Examine index (_DeliveryApiContentIndex_) that facilitates fast retrieval of the desired content. This index ensures quick indexing and searching of data, with the possibility for future extensions.
+
+In this article, we'll explore creating custom selecting, filtering, and sorting options to enhance the querying capabilities of the Delivery API.
 
 ## Query options
 
@@ -103,7 +105,7 @@ The `AuthorSelector` class implements the `ISelectorHandler` and `IContentIndexH
 `ISelectorHandler` allows for handling the `fetch` value in API queries through the `CanHandle()` and `BuildSelectorOption()` methods.
 
 * `CanHandle()` determines if the given `fetch` query corresponds to the `"featuredAuthors"` value. 
-* `BuildSelectorOption()` method constructs the selector option to search for authors with a positive value (for example, `"y"`) in a `"featured"` index field.
+* `BuildSelectorOption()` constructs the selector option to search for authors with a positive value (for example, `"y"`) in a `"featured"` index field.
 
 The `GetFields()` and `GetFieldValues()` methods each play a role in defining how the data should be indexed and made searchable.
 * `GetFields()` defines the behaviour of fields that are added to the index. In this example, the `"featured"` field is added as a "raw" string for efficient and accurate searching.
