@@ -9,7 +9,7 @@ swap:
   doc-type: "'Document Type'"
   data-type: "'Data Type'"
   data type: "'Data Type'"
-  '(?<![\.\/])umbraco': "'Umbraco'"
+  '(?<![\.\/@])umbraco': "'Umbraco'"
   umbraco cloud: "'Umbraco Cloud'"
   umbraco forms: "'Umbraco Forms'"
   umbraco deploy: "'Umbraco Deploy'"

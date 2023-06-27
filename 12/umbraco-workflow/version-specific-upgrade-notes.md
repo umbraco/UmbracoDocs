@@ -15,7 +15,7 @@ Version 12 contains a number of breaking changes. Presentation changes are not t
 
 **Presentation**
 
-* Replaces promises with async/await in AngularJs components.
+* Replaces promises with async/await in AngularJS components.
 * Adds `StateFactoryBase` type.
 * Removes `getAllTasksForGroupForRange` from `WorkflowResource` - use `getAllTasksForGroup` instead, with query params.
 * Removes `safeVariant` from `WorkflowResource` - logic is moved to `generateQuery`.
@@ -34,7 +34,7 @@ Version 12 contains a number of breaking changes. Presentation changes are not t
 * Removes `EmailTemplatePath` from `WorkflowSettings` as value can not be modified.
 * Removes `FakeController` from `EmailTemplateRenderer`.
 * Removes `ProcessApproval(this WorkflowTaskPoco taskInstance, WorkflowAction action, int? userId, string comment, string? assignTo = null)` from `TaskInstanceExtensions`, use the implementation accepting an ActionWorkflowRequest and WorkflowInstancePoco instead.
-- removes `ActionedByAdmin(WorkflowTaskPoco taskInstance, int? userId)` from `TaskInstanceExtensions`, use the implementation accepting a WorkflowTaskPoco, ActionWorkflowRequest and WorkflowInstancePoco instead.
+- Removes `ActionedByAdmin(WorkflowTaskPoco taskInstance, int? userId)` from `TaskInstanceExtensions`, use the implementation accepting a WorkflowTaskPoco, ActionWorkflowRequest and WorkflowInstancePoco instead.
 * Removes `Cancel(this WorkflowTaskPoco taskInstance, int? userId, string reason, DateTime? completedDate)` from `TaskInstanceExtensions`, use the implementation accepting an ActionWorkflowRequest and WorkflowInstancePoco instead.
 * Removes parameterless constructor from `PackageVersionModel`, use the constructor accepting the `version` parameter instead.
 * Removes `IsNightly` from `PackageVersionModel`.
