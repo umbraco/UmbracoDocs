@@ -8,20 +8,11 @@ description: >-
 
 Within this Umbraco DXP (Digital Experience Platform) area of the Umbraco documentation, you'll find topics related to extending Umbraco CMS via packages and integrations.
 
-Both packages and integrations are defined as Umbraco Packages that can be either [NuGet packages (Umbraco 10+) or packages zip files (Umbraco 8 or earlier)](https://docs.umbraco.com/umbraco-cms/extending/packages/types-of-packages)
-
-**Integrations** are defined as Umbraco Packages that provide functionality via a third-party service's API.
-
-**Packages** are defined as Umbraco Packages that extend the functionality of the Umbraco CMS (management or delivery).
-
-For visualization of ways to extend Umbraco see the illustration below.
-![Packages and integrations](https://github.com/BoletteKern/UmbracoDocs/blob/main/marketplace-and-integrations/.gitbook/assets/Packages%20and%20intgerations.png)
-
 Umbraco is used in solutions in both a "platform" and "composable" DXP context. With the former, Umbraco has responsibility for both content management and delivery, with extensions added as NuGet packages. In a composable DXP, Umbraco is often a stand-alone service that takes part in an overall architecture. In these cases, Umbraco CMS is focused on the management of content exposed via APIs for delivery.
 
 Umbraco is also used in a hybrid DXP context. Here, some values are added to the Umbraco platform, like Umbraco Forms or Commerce, where Umbraco acts as a component in a wider architecture. In all situations, backoffice integrations are an important part of providing an intuitive, unified editor experience.
 
-![Umbraco as a platform DXP, composable DXP og hybrid solution](https://github.com/BoletteKern/UmbracoDocs/blob/main/marketplace-and-integrations/.gitbook/assets/pDXP%20cDXP.png)
+![Umbraco as a platform DXP, composable DXP og hybrid solution](.gitbook/assets/pDXPcDXP.png)
 
 Our aim is to support the different ways of using Umbraco in a DXP setup and provide resources for building integrations with Umbraco.
 
