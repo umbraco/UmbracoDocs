@@ -1,7 +1,9 @@
 Version Specific Upgrade Notes
 This page covers specific upgrade documentation for specific versions.
 
-{% hint style="info" %} If you are upgrading to a new minor or patch version, you can find information about the breaking changes in the [Release Notes](./release-notes.md) article. {% endhint %}
+{% hint style="info" %}
+If you are upgrading to a new minor or patch version, you can find information about the breaking changes in the [Release Notes](./release-notes.md) article.
+{% endhint %}
 
 <details>
 
@@ -34,7 +36,7 @@ Version 12 contains a number of breaking changes. Presentation changes are not t
 * Removes `EmailTemplatePath` from `WorkflowSettings` as value can not be modified.
 * Removes `FakeController` from `EmailTemplateRenderer`.
 * Removes `ProcessApproval(this WorkflowTaskPoco taskInstance, WorkflowAction action, int? userId, string comment, string? assignTo = null)` from `TaskInstanceExtensions`, use the implementation accepting an ActionWorkflowRequest and WorkflowInstancePoco instead.
-- Removes `ActionedByAdmin(WorkflowTaskPoco taskInstance, int? userId)` from `TaskInstanceExtensions`, use the implementation accepting a WorkflowTaskPoco, ActionWorkflowRequest and WorkflowInstancePoco instead.
+* Removes `ActionedByAdmin(WorkflowTaskPoco taskInstance, int? userId)` from `TaskInstanceExtensions`, use the implementation accepting a WorkflowTaskPoco, ActionWorkflowRequest and WorkflowInstancePoco instead.
 * Removes `Cancel(this WorkflowTaskPoco taskInstance, int? userId, string reason, DateTime? completedDate)` from `TaskInstanceExtensions`, use the implementation accepting an ActionWorkflowRequest and WorkflowInstancePoco instead.
 * Removes parameterless constructor from `PackageVersionModel`, use the constructor accepting the `version` parameter instead.
 * Removes `IsNightly` from `PackageVersionModel`.
@@ -45,4 +47,5 @@ Version 12 contains a number of breaking changes. Presentation changes are not t
 * Removes `GetFullyQualifiedContentEditorUrl(int? id, string baseUrl)` from `ISettingsService`, use the implementation accepting an optional `Referrer` parameter instead.
 * Removes `Generate(IDictionary<string, object> dictionary, IDictionary<string, object>? additionalData = null)` from `ServerVariablesSendingExecutor`, use the async implementation instead.
 * Moves `GetPathAndType` from `ConfigController` to `OfflineApprovalController`.
-- `OfflineApprovalController` constructor requires an additional parameter - `IConfigService`.
+* `OfflineApprovalController` constructor requires an additional parameter - `IConfigService`.
+</details>
