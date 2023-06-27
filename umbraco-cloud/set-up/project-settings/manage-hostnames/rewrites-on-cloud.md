@@ -93,6 +93,7 @@ For example, the following rule will redirect all requests for `https://mysite.c
     <add input="{REQUEST_URI}" pattern="^/DependencyHandler.axd" negate="true" />
     <add input="{REQUEST_URI}" pattern="^/App_Plugins" negate="true" />
     <add input="{REQUEST_URI}" pattern="^/\.well-known/acme-challenge" negate="true" />
+    <add input="{REQUEST_URI}" pattern="^/umbidlocallogin" negate="true" />
   </conditions>
   <action type="Redirect" url="{R:1}/" />
 </rule>
