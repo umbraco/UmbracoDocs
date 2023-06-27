@@ -35,7 +35,7 @@ public class MyPaymentProviderSettings
 
 ```
 
-All Payment Providers inherit from a base class `AsyncPaymentProviderBase<TSettings>`. `TSettings` is the type of a Plan Old Class Object (POCO) model class representing the Payment Providers settings. The class must be decorated with `PaymentProviderAttribute` which defines the Payment Providers `alias`, `name` and `description`, and can also specify an `icon` to be displayed in the Umbraco Commerce backoffice.
+All Payment Providers inherit from a base class `AsyncPaymentProviderBase<TSettings>`. `TSettings` is the type of a Plain Old Class Object (POCO) model class representing the Payment Providers settings. The class must be decorated with `PaymentProviderAttribute` which defines the Payment Providers `alias`, `name` and `description`, and can also specify an `icon` to be displayed in the Umbraco Commerce backoffice.
 
 The settings class consists of a series of properties, each decorated with a `PaymentProviderSettingAttribute` defining a name, description, and possible angular editor view file. These will all be used to dynamically build an editor interface for the given settings in the backoffice.
 
