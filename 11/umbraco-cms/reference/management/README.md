@@ -16,4 +16,4 @@ You can find up-to-date code references for all Models in our [API Documentation
 Here you will find references for the models in the public API. The models include Content, ContentType, DataTypeDefinition, DictionaryItem, Language, Media, MediaType, Relation, RelationType, Task, TaskType, and Template classes.
 
 ## [Services](services/)
-Here you will find references for the various services which are available for performing CRUD operations for the models mentioned above.
+Here you will find references for the services which are available for performing CRUD operations for the models mentioned above.
