@@ -68,18 +68,18 @@ The reason you shouldn't overwrite these files is that this will also overwrite 
 
 When merging the `web.config` file make sure that you **do not overwrite/remove** the following settings:
 
-**`< configSettings >`**
+**`<configSettings>`**
 
-```
+```xml
 <sectionGroup name="umbraco.deploy">
-<section name="environments" type="Umbraco.Deploy.Configuration.DeployEnvironmentsSection, Umbraco.Deploy" requirePermission="false" />
-<section name="settings" type="Umbraco.Deploy.Configuration.DeploySettingsSection, Umbraco.Deploy" requirePermission="false" />
+    <section name="environments" type="Umbraco.Deploy.Configuration.DeployEnvironmentsSection, Umbraco.Deploy" requirePermission="false" />
+    <section name="settings" type="Umbraco.Deploy.Configuration.DeploySettingsSection, Umbraco.Deploy" requirePermission="false" />
 </sectionGroup>
 ```
 
-**`< appSettings >`**
+**`<appSettings>`**
 
-```
+```xml
 <add key="umbracoConfigurationStatus" value="7.8.1" />
 ---
 <add key="UmbracoLicensesDirectory" value="~/App_Plugins/UmbracoLicenses/" />
@@ -88,9 +88,9 @@ When merging the `web.config` file make sure that you **do not overwrite/remove*
 <add key="Umbraco.Deploy.ApiKey" value="9BEA9EAA7333131EB93B6DB7EF5D79709985F3FB" />
 ```
 
-**`< connectionString >`**
+**`<connectionString>`**
 
-```
+```xml
 <connectionStrings>
     <remove name="umbracoDbDSN" />
     <add name="umbracoDbDSN" connectionString="Data Source=|DataDirectory|\Umbraco.sdf;Flush Interval=1;" providerName="System.Data.SqlServerCe.4.0" />
@@ -98,9 +98,9 @@ When merging the `web.config` file make sure that you **do not overwrite/remove*
 </connectionStrings>
 ```
 
-**`< umbraco.deploy >`**
+**`<umbraco.deploy>`**
 
-```
+```xml
 <umbraco.deploy>
     <environments configSource="config\UmbracoDeploy.config" />
     <settings configSource="config\UmbracoDeploy.Settings.config" />
@@ -115,7 +115,7 @@ When merging the `Dashboard.config` file make sure that you **do not overwrite/r
 
 **Deploy**
 
-```
+```xml
 <section alias="Deploy">
     <areas>
     <area>content</area>
@@ -128,7 +128,7 @@ When merging the `Dashboard.config` file make sure that you **do not overwrite/r
 
 **`StartupFormsDashboardSection`**
 
-```
+```xml
 <section alias="StartupFormsDashboardSection">
     <areas>
     <area>forms</area>
@@ -143,7 +143,7 @@ When merging the `Dashboard.config` file make sure that you **do not overwrite/r
 
 **Do not merge** the following section from the new version of Umbraco:
 
-```
+```xml
 <section alias="StartupDashboardSection">
     <access>
     <deny>translator</deny>
