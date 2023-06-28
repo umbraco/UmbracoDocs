@@ -16,7 +16,7 @@ To get started working with the Umbraco release candidate, follow the steps belo
 
 1. Install the new Umbraco dotnet template:
    * ```aspnet
-     dotnet new install Umbraco.Templates::12.0.0-rc4
+     dotnet new install Umbraco.Templates::12.0.0-rc5
      ```
 2. Create a new empty Umbraco project once the template is installed:
    * ```
