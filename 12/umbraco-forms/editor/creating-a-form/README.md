@@ -8,7 +8,7 @@ You can manage the Forms in the **Forms** section of the Umbraco backoffice. You
 
 If you do not see the **Forms** section, you might need to request access from the site Administrator. An Administrator can give permission to view the **Forms** section. This is done from within the **Users** section of the backoffice.
 
-![Forms Section](../../../../12/umbraco-forms/editor/creating-a-form/images/FormsSectionV9.png)
+![Forms Section](images/FormsSectionV9.png)
 
 ## Creating a Form
 
@@ -17,29 +17,29 @@ To create a Form, follow these steps:
 1. Navigate to the **Forms** section.
 2.  Click **...** next to the Forms folder.
 
-    ![Forms tree](../../../../12/umbraco-forms/editor/creating-a-form/images/FormsTree.png)
+    ![Forms tree](images/FormsTree.png)
 3.  The **Create a new Form** dialog opens.
 
-    ![Forms create dialog](../../../../12/umbraco-forms/editor/creating-a-form/images/FormsCreateDialogV9.png)
+    ![Forms create dialog](images/FormsCreateDialogV9.png)
 4.  Select **Empty Form**. The Form Designer opens in the editor.
 
-    ![Forms designer](../../../../12/umbraco-forms/editor/creating-a-form/images/FormDesignerStartV8.png)
+    ![Forms designer](images/FormDesignerStartV8.png)
 5. By default, there is a page, a fieldset, and a container available. The rest of the Form has to be added using the interface.
 6.  Enter the **Name** for the Form. Let's call it _Our first form_.
 
-    <figure><img src="../../../../12/umbraco-forms/editor/creating-a-form/images/FormDesignerFormNameV8.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/FormDesignerFormNameV8.png" alt=""><figcaption></figcaption></figure>
 7.  **\[Optional]** Enter the **Page Name**. We'll call it _The first page_. Click **Add new page** at the bottom of the Forms designer to add more pages.
 
-    <figure><img src="../../../../12/umbraco-forms/editor/creating-a-form/images/FormDesignerPageCaptionV8.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/FormDesignerPageCaptionV8.png" alt=""><figcaption></figcaption></figure>
 8.  **\[Optional]** Enter the **Group Name**. Click **Add new group** to add another group.
 
-    <figure><img src="../../../../12/umbraco-forms/editor/creating-a-form/images/FormDesignerPageGroupV8.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/FormDesignerPageGroupV8.png" alt=""><figcaption></figcaption></figure>
 9.  Click the **Add Question** button to add a new field.
 
-    <figure><img src="../../../../12/umbraco-forms/editor/creating-a-form/images/FormDesignerAddFieldV8.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/FormDesignerAddFieldV8.png" alt=""><figcaption></figcaption></figure>
 10. The **Add Question** dialog opens.
 
-    ![Forms add field dialog](../../../../12/umbraco-forms/editor/creating-a-form/images/FormDesignerAddFieldDialogV8.png)
+    ![Forms add field dialog](images/FormDesignerAddFieldDialogV8.png)
 11. Enter the following details:
 
     | Field Name         | Value                |
@@ -58,7 +58,7 @@ To create a Form, follow these steps:
     Some of the additional settings are dependent on which answer type was chosen. For example, since we selected _Short Answer_ as our answer type we got two additional settings (Default Value and Placeholder).
 19. Once the configuration is completed, click **Submit**. You will see that the field has been added to the Form designer.
 
-    <figure><img src="../../../../12/umbraco-forms/editor/creating-a-form/images/FormDesignerFieldAddedV8.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/FormDesignerFieldAddedV8.png" alt=""><figcaption></figcaption></figure>
 
 To edit a field that has already been added to the Form, click the little **cog** icon next to the field to open the dialog. To delete a field or a group, click the **Recycle Bin** icon.
 
@@ -66,11 +66,11 @@ To edit a field that has already been added to the Form, click the little **cog*
 
 Once you've added a few fields to your Form, you might want to change the order of questions. To do so, click **Reorder** in the top-right corner of the Form designer.
 
-<figure><img src="../../../../12/umbraco-forms/editor/creating-a-form/images/Reorder_Form.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/Reorder_Form.png" alt=""><figcaption></figcaption></figure>
 
 When reordering your Form, you can drag and drop the fields to make it look the way you want. Click **I am done reordering** to get back to the Form designer.
 
-<figure><img src="../../../../12/umbraco-forms/editor/creating-a-form/images/Reorder_Form_1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/Reorder_Form_1.png" alt=""><figcaption></figcaption></figure>
 
 ## Saving the Form
 
@@ -84,7 +84,7 @@ To create a folder, from the same dialog as you use to create a form, you'll hav
 
 You can create folders within folders, rename, move and delete them. You also have the ability to move or copy forms into folders, all via the tree operations available from the **...** menu.
 
-![Form save Form](../../../../12/umbraco-forms/editor/creating-a-form/images/FormDesignerSaveV8.png)
+![Form save Form](images/FormDesignerSaveV8.png)
 
 ## Adding the Form to the Umbraco site
 
@@ -93,14 +93,14 @@ To add the Form, follow these steps:
 1. Navigate to the **Content** section of the Umbraco Backoffice.
 2.  Select the content page where you want to insert the Form. The page you choose should either have an RTE field, a Grid Editor, or a form picker all of which you can add in the **Settings** section under **Document Types**.
 
-    ![Content page](../../../../12/umbraco-forms/editor/creating-a-form/images/ContentExamples.png)
+    ![Content page](images/ContentExamples.png)
 3. Click the **Insert macro** button in the toolbar of the RTE or Grid. The **Select Macro** dialog opens.
 4.  Click **Add** under **Choose a Form** and select the Form you want to insert. You will be able to select from the full list of forms. If available on your installation, you will also be able to select using a folder based view, which can be quicker to navigate when many forms have been prepared.
 
-    ![Content page add macro](../../../../12/umbraco-forms/editor/creating-a-form/images/ContentPageAddMacroDialog.png)
+    ![Content page add macro](images/ContentPageAddMacroDialog.png)
 5. **\[Optional]** Click **Add** under **Theme** to choose which theme the Form should use.
 6. Finally you have an option to **Exclude Scripts**.
 7. Click **Submit**.
 8.  The Form is inserted on to your page. Click the **Save and publish** button.
 
-    ![Content page with form](../../../../12/umbraco-forms/editor/creating-a-form/images/ContentExamplesWithForm.png)
+    ![Content page with form](images/ContentExamplesWithForm.png)
