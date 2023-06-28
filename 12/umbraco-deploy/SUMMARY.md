@@ -1,5 +1,6 @@
 # Table of contents
 
+* [What is Umbraco Deploy?](README.md)
 * [Getting started](get-started-with-deploy.md)
 * [Configuration](deploy-settings.md)
 * [Extending](extending.md)
