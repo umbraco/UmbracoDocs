@@ -11,7 +11,7 @@ Do you want to help us update the documentation? Head on over to the [Contribute
 
 The **official release notes** can be found on [Our.umbraco.com](https://our.umbraco.com/download/releases/1200).
 
-Umbraco 12 is set to release on June 29th, 2023.
+Umbraco 12 is set to release on Thursday June 29th, 2023.
 {% endhint %}
 
 Umbraco CMS is a flexible and editor-friendly Content Management System (CMS) that allows you to create beautiful and modern websites. Use the latest version of .NET, integrate with your favorite services, and help your customers launch a website tailored to their specific needs.
