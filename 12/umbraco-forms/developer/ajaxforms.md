@@ -34,7 +34,7 @@ The Open API specification is available from: `/umbraco/swagger/forms/swagger.js
 
 To request the definition of a form, the following request can be made:
 
-```
+```none
 GET /umbraco/forms/api/v1/definitions/{id}?contentId={contentId}&culture={culture}
 ```
 
@@ -371,7 +371,7 @@ When a redirect is configured, details of the content ID and a route will be inc
 
 To submit a form entry, the following request can be made:
 
-```
+```none
 POST /umbraco/forms/api/v1/entries/{id}
 ```
 
@@ -436,7 +436,9 @@ When retrieving a form definition, some additional detail is provided for fields
                 ],
                 "allowMultipleFileUploads": false
             },
-            ...
+        }
+    ]
+    ...
 ```
 
 When submitting a form, the value should be a JSON structure that provides a collection. Each item in the collection should contain the file name and the file contents as a base64 encoded data URL.
@@ -563,5 +565,3 @@ With [expanded output](https://docs.umbraco.com/umbraco-cms/v/12.latest/referenc
     }
 }
 ```
-
-
