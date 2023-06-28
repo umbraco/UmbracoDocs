@@ -26,7 +26,7 @@ To install the Umbraco Workflow package (Umbraco.Workflow), follow these steps:
 1.  Run the following command to add a package reference to your Umbraco project:
 
 ```
-dotnet add package Umbraco.Workflow --version 12.0.0
+dotnet add package Umbraco.Workflow
 ```
 
 2.  Restart the web application using the following command:

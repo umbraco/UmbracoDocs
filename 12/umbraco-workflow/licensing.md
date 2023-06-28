@@ -18,10 +18,6 @@ To add the license to your site update the `appSettings.json` file:
     }
     ```
 
-{% hint style="info" %}
-License validation _does not_ run on `Subscriber` servers.
-{% endhint %}
-
 ### Using a Trial License
 
 The trial license introduces some restrictions around advanced features but is otherwise a full-featured workflow platform. The paid license is valid for one top-level domain and all its subdomains.
@@ -41,5 +37,3 @@ To impersonate the full license on a local site, set `EnableTestLicense` to `tru
 {% hint style="info" %}
 The test license is restricted to sites running in a development environment with a debugger attached. Hit F5 in Visual Studio, in Debug mode to enable the test license.
 {% endhint %}
-
-##
