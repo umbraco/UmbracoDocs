@@ -74,3 +74,5 @@ When you've upgraded everything locally, and made sure that everything runs with
 * Push the changes to the Cloud environment
 * When everything is pushed, head on over to the Umbraco Cloud Portal
 * Make sure everything runs without errors before deploying to the next Cloud environment
+  
+  test
