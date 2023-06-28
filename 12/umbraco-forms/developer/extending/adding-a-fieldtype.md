@@ -4,7 +4,7 @@ _This builds on the "_[_adding a type to the provider model_](adding-a-type.md)_
 
 ## C\#
 
-Add a new class to the Visual Studio solution, make it inherit from `Umbraco.Forms.Core.FieldType` and fill in the constructor:
+Add a new class to the Visual Studio solution, make it inherit from `Umbraco.Forms.Core.FieldType`, and fill in the constructor:
 
 ```csharp
 using System;
@@ -52,7 +52,7 @@ namespace MyFormsExtensions
 
 In the constructor, we specify the standard provider information (remember to set the ID to a unique ID).
 
-And then we set the field type specific information. In this case, a preview Icon for the form builder UI and what kind of data it will return. This can either be string, longstring, integer, datetime, or boolean.
+And then we set the field type-specific information. In this case, a preview Icon for the form builder UI and what kind of data it will return. This can either be string, longstring, integer, datetime, or boolean.
 
 You will then need to register this new field as a dependency.
 
@@ -91,7 +91,7 @@ The file name for the partial view should match the value set on the `FieldTypeV
 
 This will be rendered when the default theme is used.
 
-If working with Umbraco 9 or earlier versions, you'll find the `Views\Partials\Forms\Themes\default\` folder on disk and can create the files in there.
+If working with Umbraco 9 or earlier versions, you'll find the `Views\Partials\Forms\Themes\default\` folder on disk and can create the files there.
 
 For Umbraco 10 and above, we've moved to [distributing the theme as part of a Razor Class Library](../../installation/version-specific.md#views-and-client-side-files) so the folder won't exist. However, you can create it for your custom field type. If you would like to reference the partial views of the default theme, you can download them as mentioned in the [Themes](../themes.md) article.
 
@@ -123,8 +123,8 @@ public override string GetDesignView() =>
 Field settings that will be managed in the backoffice by editors creating forms using the custom field type can be added to the C# class as properties with a `Setting` attribute:
 
 ```csharp
-    [Setting("My Setting", Description = "Help text for the setting", View = "TextField", SupportsPlaceholders = "true", DisplayOrder = 10)]
-    public virtual string MySetting { get; set; }
+[Setting("My Setting", Description = "Help text for the setting", View = "TextField", SupportsPlaceholders = "true", DisplayOrder = 10)]
+public virtual string MySetting { get; set; }
 ```
 
 The property `Name` names the setting in the backoffice with the `Description` providing the help text.  Both of these are translatable by providing a [user or package language file](../../../umbraco-cms/extending/language-files.md) containing appropriate keys:
@@ -151,12 +151,12 @@ Again though, you can use your own location, and configure with a full path to t
 To reference the file the setting should be configured with a full path to the view, e.g.:
 
 ```csharp
-    [Setting("My Setting",
-        Description = "Help text for the setting",
-        View = "~/App_Plugins/UmbracoFormsCustomFields/backoffice/Common/SettingTypes/mycustomsettingfield.html",
-        SupportsPlaceholders = "true"
-        DisplayOrder = 10)]
-    public virtual string MySetting { get; set; }
+[Setting("My Setting",
+    Description = "Help text for the setting",
+    View = "~/App_Plugins/UmbracoFormsCustomFields/backoffice/Common/SettingTypes/mycustomsettingfield.html",
+    SupportsPlaceholders = "true"
+    DisplayOrder = 10)]
+public virtual string MySetting { get; set; }
 ```
 
 `SupportsPlaceholders` is a flag indicating whether the setting can contain ["magic string" placeholders](../magic-strings.md) and controls whether they are parsed on rendering.
@@ -170,15 +170,15 @@ When creating a field or other provider type, you might choose to inherit from a
 All setting properties for the Forms provider types are marked as `virtual`, so you can override them and change the setting values:
 
 ```csharp
-    [Setting("My Setting", Description = "My custom help text for the setting", View = "TextField", SupportsPlaceholders = "true", DisplayOrder = 10)]
-    public override string MySetting { get; set; }
+[Setting("My Setting", Description = "My custom help text for the setting", View = "TextField", SupportsPlaceholders = "true", DisplayOrder = 10)]
+public override string MySetting { get; set; }
 ```
 
 If you want to hide a setting in your derived class you can use the `IsHidden` property:
 
 ```csharp
-    [Setting("My Setting", IsHidden = true)]
-    public override string MySetting { get; set; }
+[Setting("My Setting", IsHidden = true)]
+public override string MySetting { get; set; }
 ```
 
 ## Backoffice entry rendering
@@ -187,7 +187,7 @@ The third and final client-side view file used for settings is in the rendering 
 
 These are defined by the `RenderView` property of a field type and are found in `App_Plugins\UmbracoForms\backoffice\Common\RenderTypes\`.
 
-As for the other files, if you require a custom render type view, it's better to host them in different location, such as `App_Plugins\UmbracoFormsCustomFields\backoffice\Common\RenderTypes\mycustomrenderfield.html`.
+As for the other files, if you require a custom render type view, it's better to host them in a different location, such as `App_Plugins\UmbracoFormsCustomFields\backoffice\Common\RenderTypes\mycustomrenderfield.html`.
 
 To reference the file you should override the `RenderView` property, e.g.:
 
