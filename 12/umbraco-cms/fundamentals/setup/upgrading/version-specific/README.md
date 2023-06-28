@@ -17,6 +17,50 @@ Use the [general upgrade guide](../) to complete the upgrade of your project.
 
 <details>
 
+<summary>Umbraco 12</summary>
+
+Umbraco 12 does not include many binary breaking changes, but there are some.
+
+Most notable is a functional breaking change in Migrations, that from Umbraco 12. Each translation will be executed in its own transactions instead of all migrations in one big transaction. This change has been made to ease the support for Sqlite.
+
+**A type, enum, record, or struct visible outside the assembly is missing in the compared assembly when required to be present.**
+
+* PagedModel<T> has moved namespace from Umbraco.New.Cms.Core.Models to Umbraco.Cms.Core.Models
+* Umbraco.Cms.Infrastructure.Migrations.PostMigrations.ClearCsrfCookies is removed. The functionality can be archived by implementing a notification handler for the new UmbracoPlanExecutedNotification.
+* Umbraco.Cms.Core.Cache.DistributedCacheBinder is now divided into separate files for each notification handler
+* Umbraco.Cms.Infrastructure.Migrations.PostMigrations.DeleteLogViewerQueryFile was a no-op method removed.
+* Umbraco.Cms.Infrastructure.Migrations.PostMigrations.RebuildPublishedSnapshot replaced with a RebuildCache flag on the MigrationBase
+
+**A member that is visible outside of the assembly is missing in the compared assembly when required to be present.**
+
+* Umbraco.Cms.Core.Migrations.IMigrationPlanExecutor.Execute(Umbraco.Cms.Infrastructure.Migrations.MigrationPlan,System.String) replaced with Umbraco.Cms.Core.Migrations.IMigrationPlanExecutor.ExecutePlan(Umbraco.Cms.Infrastructure.* * Migrations.MigrationPlan,System.String) that returns an rich object instead of a string
+* Umbraco.Cms.Infrastructure.Migrations.IMigrationContext.AddPostMigration``1 Removed and replaced with notification
+* Umbraco.Cms.Infrastructure.Migrations.MigrationPlan.AddPostMigration``1
+* Removed and replaced with notification
+* Umbraco.Cms.Infrastructure.Migrations.MigrationPlan.get_PostMigrationTypes removed.
+* Umbraco.Cms.Infrastructure.Migrations.Upgrade.Upgrader.Execute(Umbraco.Cms.Core.Migrations.IMigrationPlanExecutor,Umbraco.Cms.Core.Scoping.IScopeProvider,Umbraco.Cms.Core.Services.IKeyValueService) was obsolete and is replaced by method taking a ICoreScopeProvider instead of a IScopeProvider
+
+**An abstract member was added to the right side of the comparison to an unsealed type.**
+
+* PublishedPropertyBase now requires inheritors to implement GetDeliveryApiValue(System.Boolean,System.String,System.String)
+
+**A member was added to an interface without a default implementation.**
+
+* Umbraco.Cms.Core.Events.IEventAggregator.Publish``2(System.Collections.Generic.IEnumerable{``0})
+* Umbraco.Cms.Core.Events.IEventAggregator.PublishAsync``2(System.Collections.Generic.IEnumerable{``0},System.Threading.CancellationToken)
+* Umbraco.Cms.Core.Models.PublishedContent.IPublishedProperty.GetDeliveryApiValue(System.Boolean,System.String,System.String)
+* Umbraco.Cms.Core.Models.PublishedContent.IPublishedPropertyType.ConvertInterToDeliveryApiObject(Umbraco.Cms.Core.Models.PublishedContent.IPublishedElement,Umbraco.Cms.Core.PropertyEditors.PropertyCacheLevel,System.Object,System.Boolean,System.Boolean)
+* Umbraco.Cms.Core.Models.PublishedContent.IPublishedPropertyType.ConvertInterToDeliveryApiObject(Umbraco.Cms.Core.Models.PublishedContent.IPublishedElement,Umbraco.Cms.Core.PropertyEditors.PropertyCacheLevel,System.Object,System.Boolean)
+* Umbraco.Cms.Core.Models.PublishedContent.IPublishedPropertyType.DeliveryApiCacheLevel
+* Umbraco.Cms.Core.Scoping.ICoreScope.Locks
+* Umbraco.Cms.Core.Migrations.IMigrationPlanExecutor.ExecutePlan(Umbraco.Cms.Infrastructure.Migrations.MigrationPlan,System.String)
+* Umbraco.Cms.Infrastructure.Search.IUmbracoIndexingHandler.RemoveProtectedContent
+* Umbraco.Cms.Infrastructure.Examine.IUmbracoIndex.SupportProtectedContent
+
+</details>
+
+<details>
+
 <summary>Umbraco 11</summary>
 
 Most breaking changes are introduced due to **updated dependencies**. The breaking changes in .NET 7 and ASP.NET Core 7 are documented by [Microsoft](https://learn.microsoft.com/en-us/dotnet/core/compatibility/7.0).
