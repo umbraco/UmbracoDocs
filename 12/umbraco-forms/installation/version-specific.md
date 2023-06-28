@@ -1,3 +1,9 @@
+---
+description: >-
+  Get an overview of the things changes and fixed in each version of Umbraco
+  Forms.
+---
+
 # Version Specific Upgrade Notes
 
 This page covers specific upgrade documentation for specific versions.
@@ -12,13 +18,13 @@ If you are upgrading to a new minor or patch version, you can find information a
 
 Version 12 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `12.0.0`. It runs on .NET 7.
 
-#### Breaking changes
+**Breaking changes**
 
 Version 12 contains a number of breaking changes. If you do run into any, they should be straightforward to adjust and recompile.
 
 For reference, the full details are listed here:
 
-#### Behavior
+**Behavior**
 
 * The default value for configuration of request IP tracking has been changed to `None` from `RemoteIpAddress`.
 * The session variable `ContourMemberKey` is no longer set.
@@ -27,13 +33,13 @@ For reference, the full details are listed here:
 * The Swagger document for the Forms API has been removed and is now combined with that for the CMS Delivery API, at `umbraco/swagger/index.html`.
 * The Forms API paths have had the `/v1.0/` segment renamed to `/v1/`, to align with the CMS Delivery API.
 
-#### Dependencies
+**Dependencies**
 
 * Umbraco CMS dependency was updated to `12.0.0`.
 * The dependency on `Hellang.Middleware.ProblemDetails` was removed.
 * The dependency on `NSwag.AspNetCore` was removed and replaced with `Swashbuckle.AspNetCore`.
 
-#### Code
+**Code**
 
 The following updates describe the more significant changes to the codebase and public API:
 
@@ -42,7 +48,7 @@ The following updates describe the more significant changes to the codebase and 
 * These changes affect service, repository and other interfaces and classes that previously used these interfaces. All methods have been updated to use the concrete classes as parameters and return values.
 * The now unused class `InterfaceJsonConverter` was removed.
 
-These updates are more minor.  We don't expect many projects to be affected by them as they are in areas that are not typical extension points:
+These updates are more minor. We don't expect many projects to be affected by them as they are in areas that are not typical extension points:
 
 * The obsolete constant `FormsConfigPath` was removed.
 * Obsolete constructor was removed on `DictionaryHelper`.
@@ -73,15 +79,15 @@ These updates are more minor.  We don't expect many projects to be affected by t
 
 Version 11 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `11.0.0`. It runs on .NET 7.
 
-#### Breaking changes
+**Breaking changes**
 
 Version 11 contains a number of breaking changes. We don't expect many projects to be affected by them as they are in areas that are not typical extension points. For reference though, the full details are listed here:
 
-#### Presentation
+**Presentation**
 
 * A CSS class for each field is rendered out matching the caption of the form field. This has been changed to use the alias of the form field, as this is considered less likely to change and potentially break custom styles.
 
-#### Code
+**Code**
 
 * The int `DeleteFormRecords(Form form, FormState formState, DateTime deleteRecordsCreatedEarlierThan)` method was added to `IRecordStorage`.
 * Name of `FormsUmbracoBuiderExtensions` was corrected to `FormsUmbracoBuilderExtensions`.
@@ -113,7 +119,7 @@ Version 11 contains a number of breaking changes. We don't expect many projects 
 
 <summary>Version 10.1</summary>
 
-#### Breaking changes
+**Breaking changes**
 
 * The default theme has been updated to render captions for field types that support prevalues. If you have created any custom themes, please review the default theme and ensure you make similar changes to make use of the new feature.
 * The method `PreValues` on the `FieldViewModel` type has been changed from a collection of strings to a collection of a `PrevalueViewModel` object that has a Value and Caption property.
@@ -131,7 +137,7 @@ To migrate to version 10, you should first update to the latest minor release of
 
 Either way will ensure you have all the database schema changes in place.
 
-#### Views and client-side files
+**Views and client-side files**
 
 Umbraco 10 distributes the views and client-side files as part of a Razor class library, distributed in the Umbraco.Forms.StaticAssets package. This means these assets are no longer individual files available on disk. The advantage of this approach is that that avoids changes made to them by solution developers being inadvertently lost when the project is rebuilt.
 
@@ -149,15 +155,15 @@ For example, with a custom email template, remove the file `Example-Template.csh
 
 Similarly, if you have a custom theme, remove the `default` and `bootstrap3-horizontal` folders from the `/Views/Partials/Forms/Themes/` folder but keep any custom theme folders.
 
-#### Breaking changes
+**Breaking changes**
 
 Version 10 contains a number of breaking changes. We do not expect many projects to be affected by them as they are in areas that are not typical extension points. For reference though, the full details are listed here.
 
-#### Configuration
+**Configuration**
 
 * Renamed the configuration option to allow editable form submissions on the front-end to `AllowEditableFormSubmissions` (fixing the typo in the previous value of `AllowEditableFormSubmissions`).
 
-#### Code
+**Code**
 
 * `DatabaseIntegrityHealthCheck` has an altered constructor taking an additional parameter.
 * The `EventExtensions` class is no longer used since V9 and has been removed.
@@ -240,13 +246,13 @@ Version 8 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `8.0.
 
 In order to upgrade from Umbraco Forms 7 to Umbraco Forms 8, you can use any of these options:
 
-### Download
+#### Download
 
 In order to upgrade you will want to [download the version of Forms you wish to upgrade to](https://our.umbraco.com/projects/developer-tools/umbraco-forms/). Instead of downloading the actual package, however, you want to download the `Umbraco.Forms.Files.x.y.z.zip` file (where x.y.z) is the version.
 
 The filename ends with `.Files.x.y.z.zip` and contains only the files that get installed when you install Umbraco Forms.
 
-### Copy
+#### Copy
 
 The easiest way to proceed is to unzip the file you downloaded and copy and overwrite (almost) everything into your website. Almost, because you might not want to overwrite `~/App_Plugins/UmbracoForms/UmbracoForms.config` because you might have updated it in the past. Make sure to compare your current version to the version in the zip file you downloaded. If there's any new configuration options in there then copy those into your website's `UmbracoForms.config` file.
 
@@ -261,17 +267,17 @@ You can upgrade to the latest version of Umbraco Forms through:
 * [Automatic Upgrades](version-specific.md#automatic-upgrade), or
 * [Download and upgrade manually.](version-specific.md#download-and-upgrade-manually)
 
-### Automatic Upgrade
+#### Automatic Upgrade
 
 Forms allows you to stay in sync with the latest releases, so you can take advantage of the new features and bug fixes.
 
-#### Checking for updates
+**Checking for updates**
 
 You won't have to check for updates manually. Umbraco Forms will inform you when a new update is available. Navigate to the Forms dashboard and if you see the following then a new version is already available.
 
 <img src="../../../10/umbraco-forms/installation/images/UpgradeAvailable.png" alt="Upgrade available" data-size="original">
 
-#### Installing update
+**Installing update**
 
 To upgrade your installation hit the _upgrade now_ button.
 
@@ -283,17 +289,17 @@ Umbraco will now fetch and install the upgrade.
 
 Once it's completed the upgrade notification should be gone and you can continue using a newly updated Umbraco Forms.
 
-### Download and upgrade manually
+#### Download and upgrade manually
 
 In order to upgrade you will want to [download the version of Forms you wish to upgrade to](https://our.umbraco.com/projects/developer-tools/umbraco-forms/). Instead of downloading the actual package, however, you want to download the `UmbracoForms.Files.x.y.z.zip` file (where x.y.z) is the version.
 
 The filename ends with `.Files.x.y.z.zip` and contains only the files that get installed when you install Umbraco Forms.
 
-#### Copy
+**Copy**
 
 Unzip the file you downloaded and copy and overwrite (almost) everything into your website. Almost, because you might not want to overwrite `~/App_Plugins/UmbracoForms/UmbracoForms.config` because you might have updated it in the past. Make sure to compare your current version to the version in the zip file you downloaded. If there's any new configuration options in there then copy those into your website's `UmbracoForms.config` file.
 
-#### Upgrade marker
+**Upgrade marker**
 
 Finally, you'll need to tell Umbraco Forms to update itself when you start the website next. In order to do that you need to have a `formsupdate` file (an empty text file without extension) in `~/App_Data/TEMP/`. The easiest way to create this file is by going into the root folder of your website and start a command line there. You can then type the following command: `echo > /App_Data/TEMP/formsupdate`.
 
@@ -316,7 +322,7 @@ With Umbraco you have many options to upgrade Umbraco Forms.
 * You can download a `.zip` file containing the updated files which you can unzip & apply over the top of your existing install.
 * You can upgrade Forms using NuGet. Doing this will require a few more steps, which you can find in the next section.
 
-#### Upgrading with NuGet
+**Upgrading with NuGet**
 
 Using NuGet to perform an the Forms major upgrade, you will see that the legacy MacroPartial view is removed from the site. This causes any existing Umbraco Forms rendered on the site to stop functioning.
 
@@ -324,7 +330,7 @@ Before running the site after the NuGet upgrade again; consider this may need to
 
 The file needs to be here before the site is restarted - due to the migration/upgrade tasks listed below.
 
-#### Upgrade tasks
+**Upgrade tasks**
 
 The following outlines for `version 6.0.0` what upgrade/migration tasks that are being performed:
 
@@ -333,7 +339,7 @@ The following outlines for `version 6.0.0` what upgrade/migration tasks that are
 * Moves JSON Form Storage files from `App_Plugins/UmbracoForms/Data` to `App_Data/UmbracoForms/Data` by default unless a custom Forms IFileSystem is configured such as Azure blob storage.
 * Moves any Form PreValue sources that uses text files that were uploaded to the media section & now stores in the Umbraco Forms IFileSystem.
 
-#### Recommendation
+**Recommendation**
 
 We recommend you make the switch away from the legacy macro and swap over to the newer macro that supports Themes. The legacy macro is there to ease the transition over and to avoid entire sites forms to stop working.
 
