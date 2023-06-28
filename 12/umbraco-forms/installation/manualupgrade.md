@@ -24,10 +24,10 @@ To get the latest version of Umbraco Forms, you can upgrade using:
 
 ![NuGet Package Manager](../../../10/umbraco-forms/installation/images/Manage\_packages\_v10.png)
 
-4.  When the command completes, open the **.csproj** file to make sure the package reference is updated:
+4. When the command completes, open the **.csproj** file to make sure the package reference is updated:
 
-    ```xml
-    <ItemGroup>
-      <PackageReference Include="Umbraco.Forms" Version="xx.x.x" />
-    </ItemGroup>
-    ```
+```xml
+<ItemGroup>
+  <PackageReference Include="Umbraco.Forms" Version="xx.x.x" />
+</ItemGroup>
+```

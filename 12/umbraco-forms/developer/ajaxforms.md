@@ -436,7 +436,9 @@ When retrieving a form definition, some additional detail is provided for fields
                 ],
                 "allowMultipleFileUploads": false
             },
-            ...
+        }
+    ]
+    ...
 ```
 
 When submitting a form, the value should be a JSON structure that provides a collection. Each item in the collection should contain the file name and the file contents as a base64 encoded data URL.
@@ -563,5 +565,3 @@ With [expanded output](https://docs.umbraco.com/umbraco-cms/v/12.latest/referenc
     }
 }
 ```
-
-
