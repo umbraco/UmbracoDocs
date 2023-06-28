@@ -23,7 +23,7 @@ This article will give you a step-by-step on how to manually upgrade your Umbrac
 {% hint style="info" %}
 If your Cloud project is running **legacy** **Umbraco (version 7 or 8)**, you will need to follow an approach specific to those versions.
 
-Find the steps you need in the [Manual upgrades for legacy Umbraco](manual-cms-upgrade.md#manually-upgrades-for-legacy-umbraco) section.
+Find the steps you need in the [Manual upgrades for legacy Umbraco](manual-cms-upgrade.md#manual-upgrades-for-legacy-umbraco) section.
 {% endhint %}
 
 To get the latest version of Umbraco you will need to upgrade the site using NuGet.
@@ -34,7 +34,7 @@ NuGet installs the latest version of the package when you use the `dotnet add pa
 
 After you have added a package reference to your project by executing the `dotnet add package Umbraco.Cms` command in the directory that contains your project file, run `dotnet restore` to install the package.
 
-Alternatively, you can update the CMS through the `NuGet Package Manager` in Visual studio:
+Alternatively, you can update the CMS through the `NuGet Package Manager` in Visual Studio:
 
 ![NuGet Package Manager](../../../12/umbraco-forms/installation/images/Manage\_packages.png)
 
@@ -48,7 +48,7 @@ When the command completes, open the `.csproj` file to make sure the package ref
 
 <details>
 
-<summary>Manually upgrades for legacy Umbraco</summary>
+<summary>Manual upgrades for legacy Umbraco</summary>
 
 #### Get the latest version of Umbraco
 
@@ -182,9 +182,10 @@ When you are done updating the NuGet packages as mentioned above, follow these s
 
 * Run the project locally
 * When the project spins up, you'll be prompted to log in to verify the upgrade
-* On the installation screen, you need to verify the upgrade:\
-  \
-  ![Verify upgrade](images/upgrade-screen.png)
+* On the installation screen, you need to verify the upgrade:
+
+<figure><img src="images/upgrade-screen.png" alt=""><figcaption></figcaption></figure>
+
 * Hit **Continue** - this will complete upgrading the database
 * The upgrade will finish up
 * When it's complete you will be sent to the Umbraco backoffice
