@@ -15,6 +15,10 @@
 * [Listing Your Package](marketplace/listing-your-package.md)
 * [Package Telemetry Data](marketplace/package-telemetry-data.md)
 
+## Packages
+
+* [Authorized Services](packages/authorized-services.md)
+
 ## Integrations
 
 * [Categories](integrations/categories.md)
@@ -34,7 +38,3 @@
 * [Shopify](integrations/shopify.md)
 * [Zapier](integrations/zapier.md)
 * [Zapier with Umbraco Forms](integrations/zapier-with-umbraco-forms.md)
-
-## Packages
-
-* [Authorized Services](packages/authorized-services.md)
