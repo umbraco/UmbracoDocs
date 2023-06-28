@@ -41,4 +41,3 @@ Make sure to follow the steps carefully when upgrading your Umbraco Cloud projec
 There are no Umbraco Cloud-related files to be aware of when upgrading Umbraco Forms. Therefore you can follow the general Umbraco Forms upgrade notes. Be sure to take a look at the [version-specific upgrade notes](../../../umbraco-forms/installation/version-specific.md), as there might be extra steps you need to take depending on the version you are upgrading from and to.
 
 ## [How to upgrade Umbraco Deploy manually](manual-upgrade-deploy.md)
-test
