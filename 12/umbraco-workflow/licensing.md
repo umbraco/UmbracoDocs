@@ -6,9 +6,7 @@ Umbraco Workflow is a licensed product that does not require a purchase. New ins
 
 If you want to buy an Umbraco Workflow license, reach out to the sales team at [**suits@umbraco.com**](mailto:suits@umbraco.com). Existing Plumber license holders who wish to upgrade to Umbraco Workflow should contact [**suits@umbraco.com**](mailto:suits@umbraco.com).
 
-To add the license to your site, follow these steps:
-
-1.  Update the `appSettings.json` file:
+To add the license to your site update the `appSettings.json` file:
 
     ```
     {
@@ -19,30 +17,6 @@ To add the license to your site, follow these steps:
       }  
     }
     ```
-2.  Create a class in your website, for example, `ServerRoleAccessor.cs` that implements the `IServerRoleAccessor` with `CurrentServerRole` set to either `Single` or `SchedulingPublisher` server role and register that class via a composer:
-
-    ```
-    using Umbraco.Cms.Core.Composing;
-    using Umbraco.Cms.Core.Sync;
-    using Umbraco.Cms.Infrastructure.DependencyInjection;
-
-    public class SiteComposer : IComposer
-    {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.SetServerRegistrar<SingleServerRoleAccessor>();
-        }
-    }
-
-    public class SingleServerRoleAccessor : IServerRoleAccessor
-    {
-        public ServerRole CurrentServerRole => ServerRole.Single;
-    }
-    ```
-
-{% hint style="info" %}
-License validation _only_ runs on `Single` or `SchedulingPublisher` servers.
-{% endhint %}
 
 ### Using a Trial License
 
