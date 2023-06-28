@@ -63,6 +63,7 @@ These updates are more minor.  We don't expect many projects to be affected by t
 * The Forms API model classes and serialization customizations were moved from `Umbraco.Forms.Web` into `Umbraco.Forms.Core`.
 * The `ISupportFileUploads` interface was moved to `Umbraco.Forms.Core.Interfaces`.
 * Additional parameters were added to the constructors of `FormPickerPropertyValueConverter` and `FormDtoFactory`.
+* The setting properties available on all field, workflow and other provider types have been made virtual.
 
 </details>
 
