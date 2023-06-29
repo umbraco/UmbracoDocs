@@ -15,6 +15,11 @@
 * [Creating a Form - The basics](editor/creating-a-form/README.md)
   * [Form Settings](editor/creating-a-form/form-settings.md)
   * [Overview Of The Field Types](editor/creating-a-form/fieldtypes/README.md)
+    * [Date](editor/creating-a-form/fieldtypes/date.md)
+    * [File Upload](editor/creating-a-form/fieldtypes/fileupload.md)
+    * [reCAPTCHA V2](editor/creating-a-form/fieldtypes/recaptcha2.md)
+    * [reCAPTCHA V3](editor/creating-a-form/fieldtypes/recaptcha3.md)
+  * [Setting-up Conditional Logic on Fields](editor/creating-a-form/conditional-logic.md)
 
 ## Developer
 
