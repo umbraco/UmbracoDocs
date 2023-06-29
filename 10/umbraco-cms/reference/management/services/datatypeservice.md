@@ -27,7 +27,7 @@ For Razor views:
 
 ### Dependency Injection
 
-If you wish to use the data type service in a class, you need to specify the `IDataTypeService` interface in your constructor:
+If you wish to use the Data Type service in a class, you need to specify the `IDataTypeService` interface in your constructor:
 
 ```
 public class MyClass
@@ -41,7 +41,7 @@ public class MyClass
 }
 ```
 
-In Razor views, you can access the data type service through the `@inject` directive:
+In Razor views, you can access the Data Type service through the `@inject` directive:
 
 ```csharp
 @inject IDataTypeService DataTypeService

@@ -4,7 +4,8 @@ level: error
 scope: text
 ignorecase: false
 # Ensures that the existence of 'first' implies the existence of 'second'.
-first: '\b([A-Z]{3,5})\b'
+# Require leading whitespace to avoid matching on URL substrings eg https://www.youtube.com/embed/OUD-PbWESAs?rel=0
+first: '\s\b([A-Z]{3,5})\b'
 second: '([A-Z]{3,5}): (?:\b[A-Z][a-z]+ )+|(?:\b[A-Z][a-z]+ )+\(([A-Z]{3,5})\)'
 # ... with the exception of these:
 exceptions:
@@ -59,3 +60,5 @@ exceptions:
   - UTC
   - HEX
   - RGBA
+  - IDE
+  - CPU
