@@ -23,6 +23,16 @@
     * [Version Specific Upgrades](fundamentals/setup/upgrading/version-specific/README.md)
       * [Upgrade to Umbraco 7](fundamentals/setup/upgrading/version-specific/upgrade-to-umbraco-7.md)
       * [Minor upgrades for Umbraco 7](fundamentals/setup/upgrading/version-specific/minor-upgrades-for-umbraco-7.md)
+  * [Server setup](fundamentals/setup/server-setup/README.md)
+    * [Running Umbraco On Azure Web Apps](fundamentals/setup/server-setup/azure-web-apps.md)
+    * [Hosting Umbraco in IIS](fundamentals/setup/server-setup/iis.md)
+    * [File And Folder Permissions](fundamentals/setup/server-setup/permissions.md)
+    * [Runtime Modes](fundamentals/setup/server-setup/runtime-modes.md)
+    * [Umbraco in Load Balanced Environments](fundamentals/setup/server-setup/load-balancing/README.md)
+      * [Load Balancing Azure Web Apps](fundamentals/setup/server-setup/load-balancing/azure-web-apps.md)
+      * [Standalone File System](fundamentals/setup/server-setup/load-balancing/file-system-replication.md)
+      * [Advanced Techniques With Flexible Load Balancing](fundamentals/setup/server-setup/load-balancing/flexible-advanced.md)
+      * [Logging With Load Balancing](fundamentals/setup/server-setup/load-balancing/logging.md)
 
 ## Reference
 
