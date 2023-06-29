@@ -6,7 +6,7 @@ description: Your main resource when building and managing an Umbraco CMS websit
 
 Umbraco CMS is a flexible and editor-friendly Content Management System (CMS) that allows you to create beautiful and modern websites. Use the latest version of .NET, integrate with your favorite services, and help your customers launch a website tailored to their specific needs.
 
-Learn much more about Umbraco CMS and get an overview of the top features on [Umbraco.com](https://umbraco.com/products/umbraco-cms/).
+Learn more about Umbraco CMS and get an overview of the top features on [Umbraco.com](https://umbraco.com/products/umbraco-cms/).
 
 ## Umbraco 12 updates
 
