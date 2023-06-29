@@ -23,7 +23,6 @@
 * [Attaching Workflows](editor/attaching-workflows/README.md)
   * [Workflow Types](editor/attaching-workflows/workflow-types.md)
 * [Viewing And Exporting Entries](editor/viewing-and-exporting-entries.md)
-* [Defining And Attaching Prevalue Sources](editor/defining-and-attaching-prevaluesources/README.md)
 
 ## Developer
 
