@@ -84,6 +84,12 @@
       * [Rich Text Editor](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/README.md)
         * [Rich Text Editor Configuration](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration.md)
         * [Rich Text Editor Styles](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-styles.md)
+  * [Login](fundamentals/backoffice/login.md)
+  * [Content Templates](fundamentals/backoffice/content-templates.md)
+  * [Infinite Editing](fundamentals/backoffice/infinite-editing.md)
+  * [Log Viewer](fundamentals/backoffice/logviewer.md)
+  * [Language Variants](fundamentals/backoffice/variants.md)
+  * [Settings Dashboards](fundamentals/backoffice/settings-dashboards.md)
 
 ## Reference
 
