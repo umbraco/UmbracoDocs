@@ -22,9 +22,6 @@
   * [Setting-up Conditional Logic on Fields](editor/creating-a-form/conditional-logic.md)
 * [Attaching Workflows](editor/attaching-workflows/README.md)
   * [Workflow Types](editor/attaching-workflows/workflow-types.md)
-* [Viewing And Exporting Entries](editor/viewing-and-exporting-entries.md)
-* [Defining And Attaching Prevalue Sources](editor/defining-and-attaching-prevaluesources/README.md)
-  * [Prevalue Source Types Overview](editor/defining-and-attaching-prevaluesources/prevalue-source-types.md)
 
 ## Developer
 
