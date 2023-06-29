@@ -10,14 +10,14 @@ We have listened to your feedback and are delighted to provide you with even mor
 
 By default, the Live environment is positioned as the first environment, followed by Staging and Development environment. However, we understand that different users may have different workflows and preferences. Therefore, we have introduced the ability to customize the ordering to align with the “left-to-right” deployment model.
 
-![CustomizeEnvironmentOrdering](images/certificates.gif)
+![CustomizeEnvironmentOrdering](images/ProjectsDashboardEnvReorder.gif)
 
 Whether you prefer the default order or wish to switch to the "left-to-right" model, the choice is now in your hands.
 
 ## All Project Sub-Pages Upgraded
 Great news! With the recent migration of the Certificates page to our new front-end tech stack, all project sub-pages of Umbraco Cloud have now been successfully converted. This transition marks an important milestone in our ongoing efforts to improve the overall user experience in the Umbraco Cloud Portal.
 
-![Certificates](images/certificates.gif)
+![Certificates](images/Certificates.gif)
 
 With the completion of this migration, our team is now shifting its focus to further enhancing the user experience and navigation within Umbraco Cloud. We understand the importance of intuitive navigation and streamlined workflows in providing you with a seamless and enjoyable experience while working on your Umbraco Cloud projects.
 
