@@ -26,9 +26,15 @@ The marketplace is available at [marketplace.umbraco.com](https://marketplace.um
 
 Within the [Marketplace section of the documentation](marketplace/introduction.md), you'll find details aimed at package developers looking to list their Umbraco CMS extensions and integrations.
 
+## Umbraco Packages
+
+We create and support open-source packages designed to improve the experience of creating integrations and developing Umbraco solutions as a DXP.
+
+Within the packages section of the documentation you'll find information on using a component called [Authorized Services](packages/authorized-services.md). This package is designed for the purpose of simplifying custom integrations with third-party services that use a OAuth flow for authentication and authorization.
+
 ## Umbraco Integrations
 
-As well as the commercial products, Umbraco HQ develops and makes available open-source integrations. These add functionality to the Umbraco CMS to support working with third-party services.
+Finally, Umbraco HQ develops and makes available open-source integrations. These add functionality to the Umbraco CMS to support working with third-party services.
 
 These integrations are helpful starting points for anyone looking to integrate such services into their Umbraco solution.
 
@@ -41,8 +47,4 @@ Source code and issue trackers are found in the following GitHub repositories:
 
 Within the [Integrations section of the documentation](integrations/categories.md), you'll find details on installing and working with the integration packages developed by Umbraco HQ.
 
-## Umbraco Packages
 
-Finally, we create and support open-source packages designed to improve the experience of creating integrations and developing Umbraco solutions as a DXP.
-
-Within the packages section of the documentation you'll find information on using a component called [Authorized Services](packages/authorized-services.md). This package is designed for the purpose of simplifying custom integrations with third-party services that use a OAuth flow for authentication and authorization.
