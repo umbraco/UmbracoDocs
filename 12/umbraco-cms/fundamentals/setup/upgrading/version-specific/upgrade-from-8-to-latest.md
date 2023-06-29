@@ -71,7 +71,7 @@ The latest version of Umbraco is different from Umbraco 8 in many ways. With all
 
 One of the changes is how published content is rendered through Template files. Due to this, it will be necessary to update **all** the Template files (`.cshtml`) to reflect these changes.
 
-Read more about these changes in the [IPublishedContent](../../../../reference/querying/ipublishedcontent) section of the Umbraco CMS documentation.
+Read more about these changes in the [IPublishedContent](../../../../reference/querying/ipublishedcontent/README.md) section of the Umbraco CMS documentation.
 
 * Template files need to inherit from `Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>` instead of `Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.HomePage>`
 * Template files need to use `ContentModels = Umbraco.Cms.Web.Common.PublishedModels` instead of `ContentModels = Umbraco.Web.PublishedModels`

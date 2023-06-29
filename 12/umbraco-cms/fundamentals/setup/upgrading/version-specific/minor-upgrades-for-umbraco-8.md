@@ -22,7 +22,7 @@ In this article you will find instructions for 3 different ways of upgrading:
 
 1. Open up the **Package Console** and type: `Update-Package UmbracoCms`
 2. Choose **"No to All"** by pressing the **"L"** when prompted.
-    * If there are any specific configuration changes required for the version you are upgrading to then they will be noted in the **[version-specific guide](version-specific.md)**.
+    * If there are any specific configuration changes required for the version you are upgrading to then they will be noted in the **[version-specific guide](README.md)**.
 
 Alternatively, you can use the Visual Studio **NuGet Package Manager** to upgrade:
 
