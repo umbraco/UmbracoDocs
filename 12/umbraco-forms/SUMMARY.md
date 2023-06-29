@@ -13,6 +13,8 @@
 ## Editor
 
 * [Creating a Form - The basics](editor/creating-a-form/README.md)
+  * [Form Settings](editor/creating-a-form/form-settings.md)
+  * [Overview Of The Field Types](editor/creating-a-form/fieldtypes/README.md)
 
 ## Developer
 
