@@ -121,6 +121,24 @@
     * [Logging](fundamentals/code/debugging/logging.md)
   * [Source Control](fundamentals/code/source-control.md)
 
+## Implementation
+
+* [Learn how Umbraco works](implementation/learn-how-umbraco-works.md)
+* [Routing](implementation/default-routing/README.md)
+  * [Controller & Action Selection](implementation/default-routing/controller-selection.md)
+  * [Execute Request](implementation/default-routing/execute-request.md)
+  * [Request Pipeline](implementation/default-routing/inbound-pipeline.md)
+* [Custom Routing](implementation/custom-routing/README.md)
+  * [Adding a hub with SignalR and Umbraco](implementation/custom-routing/signalR.md)
+* [Controllers](implementation/controllers.md)
+* [Data Persistence (CRUD)](implementation/data-persistence.md)
+* [Composing](implementation/composing.md)
+* [Integration Testing](implementation/integration-testing.md)
+* [Nullable Reference Types](implementation/nullable-reference-types.md)
+* [Services and Helpers](implementation/services/README.md)
+  * [Circular Dependencies](implementation/services/circular-dependencies.md)
+* [Unit Testing](implementation/unit-testing.md)
+
 ## Reference
 
 * [Dive into the code](reference/dive-into-the-code.md)
