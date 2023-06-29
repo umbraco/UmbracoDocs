@@ -1,7 +1,6 @@
 # Table of contents
 
 * [Umbraco CMS Documentation](README.md)
-* [Test the Release Candidate](test-the-release-candidate.md)
 * [Contribute](https://docs.umbraco.com/welcome/contribute/)
 
 ## Fundamentals
