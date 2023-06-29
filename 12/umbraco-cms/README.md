@@ -8,20 +8,26 @@ Umbraco CMS is a flexible and editor-friendly Content Management System (CMS) th
 
 Learn more about Umbraco CMS and get an overview of the top features on [Umbraco.com](https://umbraco.com/products/umbraco-cms/).
 
-## Umbraco 12 updates
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Fundamentals</strong></td><td>Learn the basics of working with Umbraco CMS. How to install and setup your very first site is also included in this section.</td><td><a href=".gitbook/assets/rocket-hero.png">rocket-hero.png</a></td><td><a href="fundamentals/setup/">setup</a></td></tr><tr><td><strong>Install Umbraco CMS</strong></td><td>Ready to get started with Umbraco? Head over to the Setup section to learn how to install Umbraco CMS.</td><td><a href=".gitbook/assets/docs-style-hero.png">docs-style-hero.png</a></td><td><a href="fundamentals/setup/install/">install</a></td></tr><tr><td><strong>Tutorials</strong></td><td>Find details step-by-step guides on everything from building a site from scratch to implementing a custom maintenance page.</td><td><a href=".gitbook/assets/reversed-heart-hero.png">reversed-heart-hero.png</a></td><td><a href="tutorials/creating-a-basic-website/">creating-a-basic-website</a></td></tr></tbody></table>
 
-{% content-ref url="test-the-release-candidate.md" %}
-[test-the-release-candidate.md](test-the-release-candidate.md)
+{% embed url="https://www.youtube-nocookie.com/embed/Yu29dE-0OoI" %}
+Watch this tutorial on how to get started building your very first Umbraco CMS website.
+{% endembed %}
+
+The documentation for Umbraco CMS holds information for the experienced Umbraco and .NET developers as well as guides and high-level articles for people starting out with the CMS.
+
+{% content-ref url="tutorials/creating-a-basic-website/" %}
+[creating-a-basic-website](tutorials/creating-a-basic-website/)
 {% endcontent-ref %}
 
-{% content-ref url="reference/content-delivery-api/" %}
-[content-delivery-api](reference/content-delivery-api/)
+{% content-ref url="reference/configuration/" %}
+[configuration](reference/configuration/)
 {% endcontent-ref %}
 
-{% content-ref url="reference/api-versioning-and-openapi.md" %}
-[api-versioning-and-openapi.md](reference/api-versioning-and-openapi.md)
+{% content-ref url="fundamentals/setup/requirements.md" %}
+[requirements.md](fundamentals/setup/requirements.md)
 {% endcontent-ref %}
 
-{% content-ref url="tutorials/getting-started-with-entity-framework-core.md" %}
-[getting-started-with-entity-framework-core.md](tutorials/getting-started-with-entity-framework-core.md)
+{% content-ref url="reference/notifications/" %}
+[notifications](reference/notifications/)
 {% endcontent-ref %}
