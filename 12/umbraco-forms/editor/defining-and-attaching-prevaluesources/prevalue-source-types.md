@@ -20,8 +20,6 @@ Here is a quick overview of the default types:
   * Choosing a node directly from the Content tree or
   * Using XPath
 
-![Umbraco Documents as Prevalue Source type](../../../.gitbook/assets/umbraco-docs-prevalue-source-type.png)
-
 Additional settings can be applied:
 
   * Select which **Value field** should be used for the value of the prevalue.
