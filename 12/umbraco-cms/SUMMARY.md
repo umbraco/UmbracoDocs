@@ -22,6 +22,7 @@
   * [Upgrade your project](fundamentals/setup/upgrading/README.md)
     * [Version Specific Upgrades](fundamentals/setup/upgrading/version-specific/README.md)
       * [Upgrade to Umbraco 7](fundamentals/setup/upgrading/version-specific/upgrade-to-umbraco-7.md)
+      * [Minor upgrades for Umbraco 7](fundamentals/setup/upgrading/version-specific/minor-upgrades-for-umbraco-7.md)
 
 ## Reference
 
