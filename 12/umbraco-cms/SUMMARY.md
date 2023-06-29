@@ -11,6 +11,14 @@
 * [Get to know Umbraco](fundamentals/get-to-know-umbraco.md)
 * [Setup](fundamentals/setup/README.md)
   * [Requirements](fundamentals/setup/requirements.md)
+  * [Installation](fundamentals/setup/install/README.md)
+    * [Install using .NET CLI](fundamentals/setup/install/install-umbraco-with-templates.md)
+    * [Install using Visual Studio](fundamentals/setup/install/visual-studio.md)
+    * [Local IIS With Umbraco](fundamentals/setup/install/iis.md)
+    * [Install using Visual Studio Code](fundamentals/setup/install/install-umbraco-with-vs-code.md)
+    * [Installing Nightly Builds](fundamentals/setup/install/installing-nightly-builds.md)
+    * [Running Umbraco On A Mac](fundamentals/setup/install/running-umbraco-on-a-mac.md)
+    * [Unattended Installs](fundamentals/setup/install/unattended-install.md)
 
 ## Reference
 
