@@ -46,4 +46,5 @@
   * [Adding a Validation Pattern](developer/extending/adding-a-validation-pattern.md)
   * [Customize Default Fields and Workflows For a Form](developer/extending/customize-default-workflows.md)
 * [Configuration](developer/configuration/README.md)
+  * [Forms Provider Type Details](developer/configuration/type-details.md)
 * [Headless/AJAX Forms](developer/ajaxforms.md)
