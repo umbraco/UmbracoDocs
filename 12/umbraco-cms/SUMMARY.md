@@ -20,6 +20,7 @@
     * [Running Umbraco On A Mac](fundamentals/setup/install/running-umbraco-on-a-mac.md)
     * [Unattended Installs](fundamentals/setup/install/unattended-install.md)
   * [Upgrade your project](fundamentals/setup/upgrading/README.md)
+    * [Version Specific Upgrades](fundamentals/setup/upgrading/version-specific/README.md)
 
 ## Reference
 
