@@ -15,13 +15,16 @@ This article will cover in detail how you can try out and test the Release Candi
 To get started working with the Umbraco release candidate, follow the steps below using the Command Line Interface (CLI).
 
 1. Install the new Umbraco dotnet template:
-   * ```aspnet
-     dotnet new install Umbraco.Templates::12.0.0-rc5
-     ```
+
+```none
+dotnet new install Umbraco.Templates::12.0.0-rc5
+```
+
 2. Create a new empty Umbraco project once the template is installed:
-   * ```
-     dotnet new umbraco -n MyCustomUmbracoSolution
-     ```
+
+```none
+dotnet new umbraco -n MyCustomUmbracoSolution
+```
 
 You can open the solution in your favorite Integrated Development Environment (IDE).
 
@@ -32,9 +35,11 @@ It is also possible to continue using the CLI to run your project.
 To run the project with the CLI, follow the steps below:
 
 1. Navigate to the folder:
-   * ```
-     cd MyCustomUmbracoSolution
-     ```
+
+```none
+cd MyCustomUmbracoSolution
+```
+
 2. Build the project by running the `dotnet build` command in the project folder.
 3. Run the project using the `dotnet run` command.
 
