@@ -10,7 +10,7 @@ We have listened to your feedback and are delighted to provide you with even mor
 
 By default, the Live environment is positioned as the first environment, followed by Staging and Development environment. However, we understand that different users may have different workflows and preferences. Therefore, we have introduced the ability to customize the ordering to align with the “left-to-right” deployment model.
 
-<image>
+![CustomizeEnvironmentOrdering](images/certificates.gif)
 
 Whether you prefer the default order or wish to switch to the "left-to-right" model, the choice is now in your hands.
 
@@ -31,6 +31,8 @@ Umbraco Cloud offers the creation of cloud projects based on the latest and grea
 Umbraco Cloud also offers you a hassle-free migration process for users who wish to upgrade their projects from Umbraco 11 to Umbraco 12. To assist you in this process, we highly recommend utilizing the Major Upgrade Guide available at [Umbraco Documentation](https://docs.umbraco.com/umbraco-cloud/product-upgrades/major-upgrades).
 
 The Major Upgrade Guide outlines the necessary steps and best practices to successfully upgrade your projects from Umbraco 11 to Umbraco 12. The guide is designed to simplify the migration process, providing clear instructions and insights into any potential challenges you may encounter.
+
+![Umbraco12](images/Umbraco12.png)
 
 For more information about the new great version 12 of Umbraco CMS, please read this great [blog post](https://umbraco.com/blog/umbraco-12-release/) that highlights the latest and greatest new improvements in Umbraco CMS such as headless capabilities out-of-the-box, built-in support for Entity Framework Core, and a bunch of updated dependencies and frameworks.
 
