@@ -6,7 +6,7 @@
 * **Umbraco 12 Support** - Umbraco Cloud always allows you to create new cloud projects with the latest versions. That now includes Umbraco 12 which was released on June 29th, 2023.
 
 ## Customize Environment Ordering
-We have listened to your feedback and are delighted to provide you with even more flexibility and control over the order of how the environments on the Projects Dashboard are listed.
+We've listened to your feedback and are delighted to provide more flexibility and control over how the environments on the Projects Dashboard are listed.
 
 By default, the Live environment is positioned as the first environment, followed by Staging and Development environment. However, we understand that different users may have different workflows and preferences. Therefore, we have introduced the ability to customize the ordering to align with the “left-to-right” deployment model.
 
