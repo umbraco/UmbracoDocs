@@ -34,6 +34,11 @@ The Major Upgrade Guide outlines the necessary steps and best practices to succe
 
 ![Umbraco12](images/Umbraco12.png)
 
-For more information about the new great version 12 of Umbraco CMS, please read this great [blog post](https://umbraco.com/blog/umbraco-12-release/) that highlights the latest and greatest new improvements in Umbraco CMS such as headless capabilities out-of-the-box, built-in support for Entity Framework Core, and a bunch of updated dependencies and frameworks.
+For more information about the new great version 12 of Umbraco CMS, please read this great [blog post](https://umbraco.com/blog/umbraco-12-release/).
+
+It highlights the latest and greatest new improvements in Umbraco CMS such as:
+* Headless capabilities out-of-the-box
+* Built-in support for Entity Framework Core, 
+* Updates of different dependencies and frameworks.
 
 We look forward to seeing the incredible projects you will create with Umbraco 12.
