@@ -19,7 +19,7 @@ Great news! With the recent migration of the Certificates page to our new front-
 
 ![Certificates](images/Certificates.gif)
 
-With the completion of this migration, our team is now shifting its focus to further enhancing the user experience and navigation within Umbraco Cloud. We understand the importance of intuitive navigation and streamlined workflows in providing you with a seamless and enjoyable experience while working on your Umbraco Cloud projects.
+With the completion of this migration, our team is now shifting its focus to further enhancing the user experience and navigation within Umbraco Cloud. We understand the importance of intuitive navigation and streamlined workflows in providing a seamless and enjoyable experience while working on your Umbraco Cloud projects.
 
 Our goal is to create a better navigation experience that enables you to effortlessly find and access the features and functionalities you need. We are committed to refining the user interface, optimizing the menu structure, and implementing intuitive navigation controls to simplify your interactions with Umbraco Cloud.
 
