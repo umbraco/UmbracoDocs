@@ -3,7 +3,7 @@ extends: substitution
 message: "We prefer %s over '%s.'"
 level: warning
 swap:
-  youtube: "'YouTube'"
+  '(?<![\.\/])youtube': "'YouTube'"
   microsoft: "'Microsoft'"
   slack: "'Slack'"
   azure: "'Azure'"

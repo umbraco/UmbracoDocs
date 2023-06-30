@@ -33,8 +33,8 @@ A video tutorial guiding you through the steps of upgrading from version 8 to th
 ## Step 1: Content Migration
 
 1. Create a backup of the database from your Umbraco 8 project using the [database backup guide](../../databases/backups.md).
-   * Alternatively you can clone the environment down and take a backup of the local Database.
    * Make sure to **restore both content and media** from your Cloud environment.
+   * Alternatively you can clone the environment down and take a backup of the local Database after restoring.
 2. Import the database backup into SQL Server Management Studio.
 3. Clone down the **Development** environment from the new Cloud project.
 4. Test the project and make sure to log in to the backoffice.

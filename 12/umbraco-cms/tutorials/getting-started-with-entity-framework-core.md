@@ -239,7 +239,7 @@ public class BlogCommentsController : UmbracoApiController
         using IEfCoreScope<BlogContext> scope = _efCoreScopeProvider.CreateScope();
         IEnumerable<BlogComment> comments = await scope.ExecuteWithContextAsync(async db =>
         {
-            return db.BlogComments.Where(x => x.BlockPostUmbracoKey == umbracoNodeKey).ToArray();
+            return db.BlogComments.Where(x => x.BlogPostUmbracoKey == umbracoNodeKey).ToArray();
         });
 
         scope.Complete();
