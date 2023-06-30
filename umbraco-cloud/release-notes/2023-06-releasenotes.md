@@ -15,7 +15,7 @@ By default, the Live environment is positioned as the first environment, followe
 Whether you prefer the default order or wish to switch to the "left-to-right" model, the choice is now in your hands.
 
 ## All Project Sub-Pages Upgraded
-Great news! With the recent migration of the Certificates page to our new front-end tech stack, all project sub-pages of Umbraco Cloud have now been successfully converted. This transition marks an important milestone in our ongoing efforts to improve the overall user experience in the Umbraco Cloud Portal.
+Great news! With the recent migration of the Certificates page to our new front-end tech stack, all project sub-pages have now been successfully converted. This transition marks an important milestone in our ongoing efforts to improve the overall user experience in the Umbraco Cloud Portal.
 
 ![Certificates](images/Certificates.gif)
 
