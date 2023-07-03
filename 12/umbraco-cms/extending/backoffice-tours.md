@@ -161,7 +161,7 @@ Below is an explanation of each of the properties on the tour step object.
 
     Setting this to true will prevent JavaScript events from being bound to the highlighted element. A "Next" button will be added to the tour step.
 
-    As an example, it is very useful when you would like to highlight a button, but would like to prevent the user clicking it.
+    As an example, it is useful when you would like to highlight a button, but would like to prevent the user clicking it.
 *   **backdropOpacity**
 
     A decimal value between 0 and 1 to indicate the transparency of the background overlay.
