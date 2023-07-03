@@ -68,7 +68,7 @@ Below is an explanation of each of the properties on the tour configuration obje
     The unique alias of your tour. This is used to track the progress a user has made while taking a tour. The progress information is stored in the `TourData` column of the `UmbracoUsers` table in the database.
 *   **group**
 
-    The group property is used to group related tours in the help drawer under a common subject (e.g. Getting started).
+    The group property is used to group related tours in the help drawer under a common subject (for example Getting started).
 
     ![Tour group highlighted](../../../10/umbraco-cms/extending/images/tourgroup-v8.png)
 *   **groupOrder**
@@ -81,10 +81,10 @@ Below is an explanation of each of the properties on the tour configuration obje
     ![Tour allow disable link highlighted](../../../10/umbraco-cms/extending/images/tourallowdisable-v8.png)
 *   **culture**
 
-    You can set a culture (e.g. nl-NL) and this tour will only be shown to users that have set this culture in their profile. If omitted or left empty the tour will be shown to all users.
+    You can set a culture (for example nl-NL) and this tour will only be shown to users that have set this culture in their profile. If omitted or left empty the tour will be shown to all users.
 *   **contentType**
 
-    Use this property if you want to limit the tour to a specific content type. E.g. if you want to make a tour that's specific to content nodes using the Home Page Document Type, use the alias of the Document Type, `homePage`, to set the `contentType` property.
+    Use this property if you want to limit the tour to a specific content type. For example if you want to make a tour that's specific to content nodes using the Home Page Document Type, use the alias of the Document Type, `homePage`, to set the `contentType` property.
 
     The `contentType` property can also be used to limit the tours to content types that are using a specific composition. This will show the tour on all nodes that are using a specific composition.
 
@@ -98,7 +98,7 @@ Below is an explanation of each of the properties on the tour configuration obje
     When the `contentType` property is set, the tour will **not** show as part of any groups.
 *   **requiredSections**
 
-    This is an array of section aliases that a user needs to have access to in order to see the tour. If the user does not have access to all the sections the tour will not be shown in the help drawer. E.g. if a tour requires Content, Media and Settings and the logged in user only has access to Content and Media, the tour will not be shown for this user.
+    This is an array of section aliases that a user needs to have access to in order to see the tour. If the user does not have access to all the sections the tour will not be shown in the help drawer. For example if a tour requires Content, Media and Settings and the logged in user only has access to Content and Media, the tour will not be shown for this user.
 *   **steps**
 
     This is an array of tour step JSON objects that a user needs to take to complete the tour.
@@ -167,7 +167,7 @@ Below is an explanation of each of the properties on the tour step object.
     A decimal value between 0 and 1 to indicate the transparency of the background overlay.
 *   **event**
 
-    The JavaScript event that is bound to the highlighted element that should trigger the next tour step e.g. click, hover, etc.
+    The JavaScript event that is bound to the highlighted element that should trigger the next tour step for example click, hover, etc.
 
     If not set or omitted a "Next" button will be added to the tour.
 *   **view**
