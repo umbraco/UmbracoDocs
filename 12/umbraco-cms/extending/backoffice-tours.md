@@ -93,7 +93,7 @@ Below is an explanation of each of the properties on the tour configuration obje
     In the image above, two tours are avaibable on the _Welcome_ node:
 
     1. "Setup the Welcome page" is available because the tour is limited to the `homePage` content type and
-    2. "Setup the SEO" is available because the content type uses the `SEO` composition, which is associated with a specific tour.
+    2. "Setup the Search Engine Optimization (SEO)" is available because the content type uses the `SEO` composition, which is associated with a specific tour.
 
     When the `contentType` property is set, the tour will **not** show as part of any groups.
 *   **requiredSections**
