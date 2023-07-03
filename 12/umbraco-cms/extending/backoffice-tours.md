@@ -68,7 +68,7 @@ Below is an explanation of each of the properties on the tour configuration obje
     The unique alias of your tour. This is used to track the progress a user has made while taking a tour. The progress information is stored in the `TourData` column of the `UmbracoUsers` table in the database.
 *   **group**
 
-    The group property is used to group related tours in the help drawer under a common subject (e.g. Getting started).
+    The group property is used to group related tours in the help drawer under a common subject (for example Getting started).
 
     ![Tour group highlighted](../../../10/umbraco-cms/extending/images/tourgroup-v8.png)
 *   **groupOrder**
@@ -81,10 +81,10 @@ Below is an explanation of each of the properties on the tour configuration obje
     ![Tour allow disable link highlighted](../../../10/umbraco-cms/extending/images/tourallowdisable-v8.png)
 *   **culture**
 
-    You can set a culture (e.g. nl-NL) and this tour will only be shown to users that have set this culture in their profile. If omitted or left empty the tour will be shown to all users.
+    You have the option to set a culture, such as nl-NL. This tour will exclusively be displayed to users who have set this culture in their profile.
 *   **contentType**
 
-    Use this property if you want to limit the tour to a specific content type. E.g. if you want to make a tour that's specific to content nodes using the Home Page Document Type, use the alias of the Document Type, `homePage`, to set the `contentType` property.
+    Use this property if you want to limit the tour to a specific content type. To create a tour for content nodes using the Home Page, set the `contentType` property with the alias `homePage`.
 
     The `contentType` property can also be used to limit the tours to content types that are using a specific composition. This will show the tour on all nodes that are using a specific composition.
 
@@ -93,12 +93,12 @@ Below is an explanation of each of the properties on the tour configuration obje
     In the image above, two tours are avaibable on the _Welcome_ node:
 
     1. "Setup the Welcome page" is available because the tour is limited to the `homePage` content type and
-    2. "Setup the SEO" is available because the content type uses the `SEO` composition, which is associated with a specific tour.
+    2. "Setup the Search Engine Optimization (SEO)" is available because the content type uses the `SEO` composition, which is associated with a specific tour.
 
     When the `contentType` property is set, the tour will **not** show as part of any groups.
 *   **requiredSections**
 
-    This is an array of section aliases that a user needs to have access to in order to see the tour. If the user does not have access to all the sections the tour will not be shown in the help drawer. E.g. if a tour requires Content, Media and Settings and the logged in user only has access to Content and Media, the tour will not be shown for this user.
+    This is an array of section aliases that a user needs to have access to in order to see the tour. If the user does not have access to all the sections the tour will not be shown in the help drawer. For example if a user lacks access to Settings but has access to Content and Media, the tour requiring all three will not be shown.
 *   **steps**
 
     This is an array of tour step JSON objects that a user needs to take to complete the tour.
@@ -161,13 +161,13 @@ Below is an explanation of each of the properties on the tour step object.
 
     Setting this to true will prevent JavaScript events from being bound to the highlighted element. A "Next" button will be added to the tour step.
 
-    As an example, it is very useful when you would like to highlight a button, but would like to prevent the user clicking it.
+    As an example, it is useful when you would like to highlight a button, but would like to prevent the user clicking it.
 *   **backdropOpacity**
 
     A decimal value between 0 and 1 to indicate the transparency of the background overlay.
 *   **event**
 
-    The JavaScript event that is bound to the highlighted element that should trigger the next tour step e.g. click, hover, etc.
+    The JavaScript event that is bound to the highlighted element that should trigger the next tour step for example click, hover, etc.
 
     If not set or omitted a "Next" button will be added to the tour.
 *   **view**
@@ -177,7 +177,7 @@ Below is an explanation of each of the properties on the tour step object.
     This is useful if you would like to validate input from the user during the tour step.
 *   **eventElement**
 
-    A CSS selector for the element you wish to attach the JavaScript event. This is useful for when you want to highlight a bigger portion of the backoffice but want the user to click on something inside the highlighted element. If not set, the selector in the element property will be used.
+    A CSS selector for the element you wish to attach the JavaScript event. Highlighting a larger section of the backoffice while encouraging users to click on a specific element can be useful.. If not set, the selector in the element property will be used.
 
     The image below shows the entire tree highlighted, but requires the user to click on a specific tree element.
 
@@ -190,7 +190,7 @@ Below is an explanation of each of the properties on the tour step object.
 
 It is possible to hide/disable tours using a C# composer by adding to the TourFilters collection.
 
-Here is an example of disabling all the CMS core tours based on the alias, along with examples on how you could filter out tours by its JSON filename and how to disable tours from specific packages.
+Here is an example of disabling all the CMS core tours based on the alias. Additionally, we provide examples of filtering tours by JSON filename and disabling tours from specific packages.
 
 ```
 using System.Text.RegularExpressions;
