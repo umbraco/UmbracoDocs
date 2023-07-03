@@ -35,6 +35,7 @@ For illustration purposes, the following structure represents the full set of op
     "Deploy": {
         "Settings": {
             "ApiKey": "<your API key here>",
+            "ApiSecret": "<your API secret here>",
             "Edition": "Default",
             "DefaultTimeoutSeconds": 60,
             "ExcludedEntityTypes": [],
@@ -69,9 +70,9 @@ For illustration purposes, the following structure represents the full set of op
 }
 ```
 
-## ApiKey
+## ApiKey or ApiSecret
 
-The API key is a 10 character random string applied with the same value to all environments in order to authenticate HTTP requests between them.
+The `ApiKey` is a random string (of at least 10 characters) that is set to the same value on all environments in order to authenticate HTTP requests between them. For improved security, set the `ApiSecret` to a cryptographically random value of 64 bytes instead (using Base64-encoding).
 
 ## Edition
 

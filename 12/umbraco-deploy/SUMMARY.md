@@ -26,10 +26,6 @@
   * [Partial Restores](deployment-workflow/restoring-content/partial-restore.md)
 * [Deploy Dashboard](deployment-workflow/deploy-dashboard.md)
 
-## Getting Started
-
-* [Setting up Umbraco Deploy](getting-started/install-configure.md)
-
 ## Upgrading
 
 * [Upgrading](upgrades/README.md)
