@@ -88,7 +88,7 @@ Media items are used to store assets like images and video within the Media sect
 
 ### Media Types
 
-Media Types are very similar to Document Types in Umbraco, except they are specifically for media items in the Media section.
+Media Types are similar to Document Types in Umbraco, except they are specifically for media items in the Media section.
 
 Umbraco comes with 3 default Media Types: **File**, **Folder,** and **Image**.
 
