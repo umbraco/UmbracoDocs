@@ -62,7 +62,7 @@ Content is what you find in the Content section. Each item in the tree is called
 
 ## Document Type
 
-Document Types define the types of content nodes that backoffice users can create in the content tree. Each Document Type contains different properties. Each property has a specific Data Type e.g. text or number.
+Document Types define the types of content nodes that backoffice users can create in the content tree. Each Document Type contains different properties. Each property has a specific Data Type for example text or number.
 
 ### Properties
 
