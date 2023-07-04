@@ -108,9 +108,9 @@ To be able to use Umbraco Forms with Umbraco Deploy, you need to install the `Um
 In order to deploy content based on certain rich core and community property editors - including Nested Content, Multi URL Picker and Block List/Grid Editor - there is one further NuGet package to install: `Umbraco.Deploy.Contrib`.
 {% endhint %}
 
-When Umbraco Deploy has been installed, to be able to use it in the project you will need to create and add configuration for an API key/secret.
+With Umbraco Deploy installed, to use it in the project you will need to create and add configuration for an API key/secret.
 
-For improved security, it is recommended to set the `ApiSecret` (instead of the `ApiKey`) setting to a **cryptographically random value of 64 bytes** (using Base64-encoding to get the string representation, resulting in a value of 88 characters). For versions prior to Deploy 12 or when not using the API secret setting, the recommendation is to set the `ApiKey` to a randomly generated string of 64 characters.
+For improved security, it is recommended to set the `ApiSecret` (instead of the `ApiKey`) setting to a **cryptographically random value of 64 bytes**. Using Base64-encoding to get the string representation, will result in a value of 88 characters. For versions prior to Deploy 12 or when not using the API secret setting, the recommendation is to set the `ApiKey` to a randomly generated string of 64 characters.
 
 <details>
 

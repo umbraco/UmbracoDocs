@@ -72,7 +72,7 @@ For illustration purposes, the following structure represents the full set of op
 
 ## ApiKey or ApiSecret
 
-The `ApiKey` is a random string (of at least 10 characters) that is set to the same value on all environments in order to authenticate HTTP requests between them. For improved security, set the `ApiSecret` to a cryptographically random value of 64 bytes instead (using Base64-encoding).
+The `ApiKey` is a random string (of at least 10 characters) set to the same value on all environments to authenticate HTTP requests between them. For improved security, set the `ApiSecret` to a cryptographically random value of 64 bytes instead (using Base64-encoding).
 
 ## Edition
 
