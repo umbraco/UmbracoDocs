@@ -38,7 +38,7 @@ You can expand trees by clicking the down arrow ![](../../../../10/umbraco-cms/f
 
 ## Node
 
-A node is an item in a tree. The images and folders in the Media section are shown as nodes in the Media tree, pages and content in the Content tree, and so forth.
+A node is an item in a tree. Media section items appear as nodes in the Media tree, while pages and content are displayed in the Content tree, and so on.
 
 ## [Dashboards](../../extending/dashboards.md)
 
