@@ -112,15 +112,36 @@ When Umbraco Deploy has been installed, to be able to use it in the project you 
 
 The API key should be a **randomly generated string of 64 characters (recommended)**. The minimum requirement is 10 characters.
 
-To generate the API key you can use a website like [passwordgenerator.net](https://passwordsgenerator.net/).
+You can use the following C# code to generate the API key:
+
+```csharp
+using System;
+using System.Security.Cryptography;
+
+byte[] secret = new byte[32];
+RandomNumberGenerator.Create().GetBytes(secret);
+
+var apiKey = new StringBuilder(secret.Length * 2);
+for (int i = 0; i < secret.Length; i++)
+{
+   apiKey.AppendFormat("{0:X2}", secret[i]);
+}
+
+Console.Write(apiKey.ToString());
+```
+
+Or by running the following PowerShell command:
+```pwsh
+$secret = [byte[]]::new(32); [System.Security.Cryptography.RandomNumberGenerator]::Create().GetBytes($secret); return -join ($secret | %{ '{0:X2}' -f $_ })
+```
 
 This same Deploy API key must be used on each environment for the same website.
 
 {% hint style="info" %}
-We strongly recommend generating different keys for different websites.
+We strongly recommend generating different keys for different websites/projects.
 {% endhint %}
 
-The key should be applied in `appSettings.json`.
+The key should be applied in `appsettings.json`.
 
 ```json
 {
@@ -136,20 +157,20 @@ The key should be applied in `appSettings.json`.
 
 #### Configuring Environments
 
-Once the `appSetting` and API key has been added, it is now time to configure the environments, also in the `appSettings.json` file.
+Once the API key has been added, it is now time to configure the environments, also in the `appsettings.json` file.
 
 An example configuration with a single upstream environment file will look like this:
 
 ```json
 {
-   "Umbraco":{
-      "Deploy":{
-         "Settings":{
+   "Umbraco": {
+      "Deploy": {
+         "Settings": {
             "ApiKey": "<your API key here>"
          },
-         "Project":{
+         "Project": {
             "CurrentWorkspaceName": "Live",
-            "Workspaces":[
+            "Workspaces": [
                {
                   "Id": "efef5e89-a19b-434b-b68a-26e022a0ad52",
                   "Name": "Live",
@@ -178,6 +199,11 @@ You will need to generate a unique GUID for each environment. This can be done i
 3. Use the Registry Format.
 4. Copy the GUID into the `id` value.
 5. Generate a "New GUID" for each environment you will be adding to your setup.
+
+Or by running the following PowerShell command:
+```pwsh
+[guid]::NewGuid().ToString()
+```
 
 The URL configured for each environment should be the root URL for the website and needs to be accessible by the other environments over **HTTPS**.
 

@@ -106,7 +106,7 @@ jobs:
           package: .
       - name:  Run Deploy Powershell - triggers deployment on remote env
         shell: powershell
-        run: .\TriggerDeploy.ps1 -InformationAction:Continue -Action TriggerWithStatus -ApiKey ${{ secrets.deployApiKey }} -BaseUrl  ${{ env.deployBaseUrl }} -Reason  ${{ env.umbracoDeployReason }} -Verbose       
+        run: .\TriggerDeploy.ps1 -InformationAction:Continue -Action TriggerWithStatus -ApiSecret ${{ secrets.deployApiSecret }} -BaseUrl  ${{ env.deployBaseUrl }} -Reason  ${{ env.umbracoDeployReason }} -Verbose       
 ```
 
 {% hint style="info" %}
@@ -122,14 +122,18 @@ We also need to add the License file and `TriggerDeploy.ps1` file in an item gro
 </ItemGroup>
 ```
 
-As well as enabling Unattended install in the **appSettings.json** file so Umbraco installs automatically:
+As well as enabling Unattended install in the **appsettings.json** file so Umbraco installs automatically:
 
 ```
-"Umbraco": {
+{
+  "Umbraco": {
     "CMS": {
       "Unattended": {
         "InstallUnattended": true
       }
+    }
+  }
+}
 ```
 
 Before the build can work, we will need to set up our generated API key to work with the build server in GitHub Actions.
@@ -138,8 +142,8 @@ Before the build can work, we will need to set up our generated API key to work 
 2. Navigate to Settings.
 3. Go to the Secrets tab.
 4. Select "New repository secret".
-5. Call the new secret **"DEPLOYAPIKEY"**.
-6. Add the API key from the `appSettings.json` file.
+5. Call the new secret **"DEPLOYAPISECRET"**.
+6. Add the API secret from the `appsettings.json` file (replace `ApiSecet` with `ApiKey` in the script and use the corresponding value if you're using the deprecated API key setting instead).
 7. Save the secret.
 
 We can now go ahead and commit the configured YAML file and push up all the files to the repository.

@@ -105,22 +105,91 @@ To be able to use Umbraco Forms with Umbraco Deploy, you need to install the `Um
 {% endhint %}
 
 {% hint style="info" %}
-In order to deploy content based on certain rich core and community property editors - including Nested Content, Multi URL Picker and Block List Editor - there is one further NuGet package to install: `Umbraco.Deploy.Contrib`.
+In order to deploy content based on certain rich core and community property editors - including Nested Content, Multi URL Picker and Block List/Grid Editor - there is one further NuGet package to install: `Umbraco.Deploy.Contrib`.
 {% endhint %}
 
-When Umbraco Deploy has been installed, to be able to use it in the project you will need to create and add configuration for an API key.
+With Umbraco Deploy installed, to use it in the project you will need to create and add configuration for an API key/secret.
 
-The API key should be a **randomly generated string of 64 characters (recommended)**. The minimum requirement is 10 characters.
+For improved security, it is recommended to set the `ApiSecret` (instead of the `ApiKey`) setting to a **cryptographically random value of 64 bytes**. Using Base64-encoding to get the string representation, will result in a value of 88 characters. For versions prior to Deploy 12 or when not using the API secret setting, the recommendation is to set the `ApiKey` to a randomly generated string of 64 characters.
 
-To generate the API key you can use a website like [passwordgenerator.net](https://passwordsgenerator.net/).
+<details>
+
+<summary>Generate and set API secret (recommended)</summary>
+
+You can use the following C# code to generate the API secret:
+
+```csharp
+using System;
+using System.Security.Cryptography;
+
+byte[] secret = new byte[64];
+RandomNumberGenerator.Create().GetBytes(secret);
+string apiSecret = Convert.ToBase64String(secret);
+
+Console.Write(apiSecret);
+```
+
+Or by running the following PowerShell command:
+```pwsh
+$secret = [byte[]]::new(64); [System.Security.Cryptography.RandomNumberGenerator]::Create().GetBytes($secret); return [System.Convert]::ToBase64String($secret)
+```
+
+This same Deploy API secret must be used on each environment for the website.
+
+{% hint style="info" %}
+We strongly recommend generating different secrets for different websites/projects.
+{% endhint %}
+
+The key should be applied in `appsettings.json`:
+
+```json
+{
+  "Umbraco": {
+    "Deploy": {
+        "Settings": {
+            "ApiSecret": "<your API secret here>",
+        }
+    }
+  }
+}
+```
+
+</details>
+
+<details>
+
+<summary>Generate and set API key (deprecated)</summary>
+
+You can use the following C# code to generate the API key:
+
+```csharp
+using System;
+using System.Security.Cryptography;
+
+byte[] secret = new byte[32];
+RandomNumberGenerator.Create().GetBytes(secret);
+
+var apiKey = new StringBuilder(secret.Length * 2);
+for (int i = 0; i < secret.Length; i++)
+{
+   apiKey.AppendFormat("{0:X2}", secret[i]);
+}
+
+Console.Write(apiKey.ToString());
+```
+
+Or by running the following PowerShell command:
+```pwsh
+$secret = [byte[]]::new(32); [System.Security.Cryptography.RandomNumberGenerator]::Create().GetBytes($secret); return -join ($secret | %{ '{0:X2}' -f $_ })
+```
 
 This same Deploy API key must be used on each environment for the website.
 
 {% hint style="info" %}
-We strongly recommend generating different keys for different websites.
+We strongly recommend generating different keys for different websites/projects.
 {% endhint %}
 
-The key should be applied in `appSettings.json`.
+The key should be applied in `appsettings.json`:
 
 ```json
 {
@@ -134,22 +203,24 @@ The key should be applied in `appSettings.json`.
 }
 ```
 
+</details>
+
 #### Configuring Environments
 
-hasOnce the `appSetting` and API key has been added, it is now time to configure the environments, also in the `appSettings.json` file.
+Once the API secret has been added, it is now time to configure the environments, also in the `appsettings.json` file.
 
 An example configuration with a single upstream environment file will look like this:
 
 ```json
 {
-   "Umbraco":{
-      "Deploy":{
-         "Settings":{
-            "ApiKey": "<your API key here>"
+   "Umbraco": {
+      "Deploy": {
+         "Settings": {
+            "ApiSecret": "<your API secret here>"
          },
-         "Project":{
+         "Project": {
             "CurrentWorkspaceName": "Live",
-            "Workspaces":[
+            "Workspaces": [
                {
                   "Id": "efef5e89-a19b-434b-b68a-26e022a0ad52",
                   "Name": "Live",
@@ -178,6 +249,11 @@ You will need to generate a unique GUID for each environment. This can be done i
 3. Use the Registry Format.
 4. Copy the GUID into the `id` value.
 5. Generate a "New GUID" for each environment you will be adding to your setup.
+
+Or by running the following PowerShell command:
+```pwsh
+[guid]::NewGuid().ToString()
+```
 
 The URL configured for each environment should be the root URL for the website and needs to be accessible by the other environments over **HTTPS**.
 
