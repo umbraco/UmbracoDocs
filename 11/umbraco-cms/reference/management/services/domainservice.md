@@ -1,6 +1,8 @@
 # DomainService
 
-The domain service acts as a "gateway" to Umbraco data for operations which are related to domains.
+The DomainService acts as a "gateway" to Umbraco data for operations which are related to domains.
+
+[Browse the API documentation for IDomainService](https://apidocs.umbraco.com/v11/csharp/api/Umbraco.Cms.Core.Services.IDomainService.html).
 
 * **Namespace:** `Umbraco.Cms.Core.Services`
 * **Assembly:** `Umbraco.Core.dll`
@@ -25,7 +27,7 @@ For Razor views:
 
 ### Dependency Injection
 
-If you wish to use the data type service in a class, you need to specify the `IDomainService` interface in your constructor:
+If you wish to use the domain service in a class, you need to specify the `IDomainService` interface in your constructor:
 
 ```csharp
 public class MyClass
@@ -41,7 +43,7 @@ public class MyClass
 }
 ```
 
-In Razor views, you can access the Data Type service through the `@inject` directive:
+In Razor views, you can access the domain service through the `@inject` directive:
 
 ```csharp
 @inject IDomainService DomainService
