@@ -38,7 +38,7 @@ You can expand trees by clicking the down arrow ![](../../../../10/umbraco-cms/f
 
 ## Node
 
-A node is an item in a tree. The images and folders in the Media section are shown as nodes in the Media tree, pages and content in the Content tree, and so forth.
+A node is an item in a tree. Media section items appear as nodes in the Media tree, while pages and content are displayed in the Content tree, and so on.
 
 ## [Dashboards](../../extending/dashboards.md)
 
@@ -62,7 +62,7 @@ Content is what you find in the Content section. Each item in the tree is called
 
 ## Document Type
 
-Document Types define the types of content nodes that backoffice users can create in the content tree. Each Document Type contains different properties. Each property has a specific Data Type e.g. text or number.
+Document Types define the types of content nodes that backoffice users can create in the content tree. Each Document Type contains different properties. Each property has a specific Data Type for example text or number.
 
 ### Properties
 
@@ -88,7 +88,7 @@ Media items are used to store assets like images and video within the Media sect
 
 ### Media Types
 
-Media Types are very similar to Document Types in Umbraco, except they are specifically for media items in the Media section.
+Media Types are similar to Document Types in Umbraco, except they are specifically for media items in the Media section.
 
 Umbraco comes with 3 default Media Types: **File**, **Folder,** and **Image**.
 
