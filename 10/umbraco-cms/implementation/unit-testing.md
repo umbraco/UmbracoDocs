@@ -157,7 +157,7 @@ public class PageSurfaceControllerTests
 ```
 
 {% hint style="info" %}
-`ServiceContext.CreatePartial()` has optional parameters, and by naming them you only need to mock the dependencies that you actually need, for example: `ServiceContext.CreatePartial(contentService: Mock.Of<IContentService>());`
+`ServiceContext.CreatePartial()` has optional parameters, and by naming them you only need to mock the dependencies that you need, for example: `ServiceContext.CreatePartial(contentService: Mock.Of<IContentService>());`
 {% endhint %}
 
 ## Testing an UmbracoApiController
