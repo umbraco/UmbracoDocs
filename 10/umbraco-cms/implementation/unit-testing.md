@@ -10,14 +10,14 @@ These examples inspire unit testing in Umbraco with Umbraco 9.x and 10.x, using 
 When testing components in Umbraco, such as controllers, helpers, services etc. these components often require that you provide a couple of dependencies in your classes using [dependency injection](../reference/using-ioc.md). This is because a lot of magic happens “under the hood” of Umbraco and these dependencies are needed for that magic to happen.
 
 {% hint style="info" %}
-When you are writing Unit Tests you will become a lot more aware of these underlying dependencies and what they do, which in return will make you an even better Umbraco developer.
+Writing Unit Tests increases awareness of underlying dependencies, enhancing your skills as an Umbraco developer.
 {% endhint %}
 
 ## Mocking
 
 These tests follows an approach thats based on isolating your tests from Umbraco and mock as much of Umbraco’s dependencies as possible. Think of it like you’re not testing Umbraco, you’re testing how your implementation code interacts with Umbraco’s behavior.
 
-Once you get familiar with these underlying dependencies you might want to start looking in to replacing them with actual implementations (leaning more towards integration or E2E testing) but that’s up to you. Again these examples should be a source of inspiration and the quickest way to get started with Unit Testing.
+Once you become familiar with these underlying dependencies, you may consider replacing them with actual implementations. This can lean towards integration or end-to-end testing, but the decision is yours. Again these examples should be a source of inspiration and the quickest way to get started with Unit Testing.
 
 {% hint style="info" %}
 If you are new to mocking you can read more on this topic [here](https://martinfowler.com/bliki/TestDouble.html) or use the [Moq Quickstart](https://github.com/Moq/moq4/wiki/Quickstart) guide. For more inspiration and other ways of how to write tests in Umbraco there's a blogpost from HQ member Bjarke Berg about [Automated Testing](https://umbraco.com/blog/automated-testing-in-umbraco/).
