@@ -12,8 +12,8 @@ The debug section has two settings you can configure, `"LogIncompletedScopes"` a
 "Umbraco": {
   "CMS": {
     "Debug": {
-      "DumpOnTimeoutThreadAbort": false
-      "LogIncompletedScopes": false,
+      "DumpOnTimeoutThreadAbort": false,
+      "LogIncompletedScopes": false
     }
   }
 }
