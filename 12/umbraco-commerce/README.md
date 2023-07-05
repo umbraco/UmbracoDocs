@@ -7,12 +7,6 @@ description: >-
 
 # What is Umbraco Commerce?
 
-{% hint style="info" %}
-This is the Work in Progress (WIP) documentation for the upcoming launch of Umbraco Commerce. We will publish content on the site as needed
-
-We are aiming to release Umbraco Commerce on July 5th, 2023.
-{% endhint %}
-
 Umbraco Commerce is the official Umbraco e-commerce addon for your Umbraco CMS website. It can be used to set up small webshops, while it can also be implemented for big-scale e-commerce solutions spanning multiple countries.
 
 <table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Getting Started</strong></td><td>Find all the information you need to get started using Umbraco Commerce with your Umbraco CMS implementation.</td><td><a href="getting-started/introduction.md">introduction.md</a></td><td><a href=".gitbook/assets/commerce-icon.png">commerce-icon.png</a></td></tr><tr><td><strong>How-to Guides</strong></td><td>Looking to configure and implement something specific? Take a look through the How-to section where you might find a guide that fits your needs.</td><td><a href="how-to-guides/overview.md">overview.md</a></td><td><a href=".gitbook/assets/umbraco_free_way_01.png">umbraco_free_way_01.png</a></td></tr><tr><td><strong>Key Concepts</strong></td><td>Looking to learn more about the different concepts and features of Umbraco Commerce? You can find detailed information about each of them in this section.</td><td><a href="key-concepts/overview.md">overview.md</a></td><td><a href=".gitbook/assets/Umbraco_Brand_Guidelines_2020_28_Illustration blocks.png">Umbraco_Brand_Guidelines_2020_28_Illustration blocks.png</a></td></tr></tbody></table>
