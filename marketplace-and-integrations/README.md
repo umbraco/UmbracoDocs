@@ -10,13 +10,20 @@ Within this Umbraco DXP (Digital Experience Platform) area of the Umbraco docume
 
 Umbraco is used in solutions in both a "platform" and "composable" DXP context. With the former, Umbraco has responsibility for both content management and delivery, with extensions added as NuGet packages. In a composable DXP, Umbraco is often a stand-alone service that takes part in an overall architecture. In these cases, Umbraco CMS is focused on the management of content exposed via APIs for delivery.
 
-Umbraco is also used in a hybrid DXP context. Here, some values are added to the Umbraco platform, like Umbraco Forms or Commerce, where Umbraco acts as a component in a wider architecture. In all situations, backoffice integrations are an important part of providing an intuitive, unified editor experience.
+Umbraco is also used in a hybrid DXP context. Here, some values are added to the Umbraco platform, like Umbraco Forms or Umbraco Commerce, where Umbraco acts as a component in a wider architecture. In all situations, backoffice integrations are an important part of providing an intuitive, unified editor experience.
 
 ![Umbraco as a platform DXP, composable DXP og hybrid solution](.gitbook/assets/pDXPcDXP.png)
 
 Our aim is to support the different ways of using Umbraco in a DXP setup and provide resources for building integrations with Umbraco.
 
+### Packages and integrations  
+Both packages and integrations are defined as Umbraco Packages that can be either [Nuget packages (Umbraco 10+) or packages zip files (Umbraco 8 or earlier)](https://docs.umbraco.com/umbraco-cms/extending/packages/types-of-packages)
+Integrations provides functionality via a third-party service's API, whereas packages extend the functionality of the CMS (management or delivery).
+![Ways to extend Umbraco](.gitbook/assets/PackagesAndIntegrations)
+
 ## Umbraco Commercial Products
+
+
 
 Umbraco makes available three licensed add-ons that are available for purchase. They each have their dedicated documentation area:
 
