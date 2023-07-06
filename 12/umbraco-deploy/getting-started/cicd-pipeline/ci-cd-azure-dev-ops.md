@@ -28,7 +28,7 @@ The deployment part of the pipeline stage consists of two steps.
 
 Firstly a web deployment (#4), takes the packaged build artifact and deploys it, in this case, to an Azure Web App slot.
 
-The final step (#5) is Umbraco Deploy specific - to call a function defined in the Powershell script and trigger the extraction.
+The final step (#5) is Umbraco Deploy specific - to call a function defined in the PowerShell script and trigger the extraction. Replace `ApiSecret` with `ApiKey` if you're using the deprecated API key setting instead.
 
 ## Full Example
 
@@ -49,7 +49,7 @@ variables:
   umbracoDeployTriggerDeploy: $(Build.SourcesDirectory)\$(vsSolutionName)\$(vsProjectName)\TriggerDeploy.ps1
   umbracoDeployReason: AzureDeployment
 
-  deployApiKey: <set in Azure Pipeline secret>
+  deployApiSecret: <set in Azure Pipeline secret>
   azureSubscription: <set in Azure Pipeline variable>
   webAppName: <set in Azure Pipeline variable>
   resourceGroupName: <set in Azure Pipeline variable>
@@ -94,5 +94,5 @@ steps:
   displayName: Run PowerShell script
   inputs:
     filePath: '$(umbracoDeployTriggerDeploy)'
-    arguments: '-InformationAction:Continue -Action TriggerWithStatus -ApiKey $(deployApiKey) -BaseUrl $(deployBaseUrl) -Reason $(umbracoDeployReason) -Verbose'
+    arguments: '-InformationAction:Continue -Action TriggerWithStatus -ApiSecret $(deployApiSecret) -BaseUrl $(deployBaseUrl) -Reason $(umbracoDeployReason) -Verbose'
 ```
