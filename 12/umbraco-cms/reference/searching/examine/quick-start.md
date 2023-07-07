@@ -131,7 +131,7 @@ namespace MyStarterKitSite.Services;
 public class SearchService : ISearchService
 {
     private readonly IExamineManager _examineManager;
-    public SearchServices(IExamineManager examineManager)
+    public SearchService(IExamineManager examineManager)
     {
         _examineManager = examineManager;
     }

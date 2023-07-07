@@ -21,6 +21,10 @@ You also need to make sure that the packages that you are using are available on
 {% hint style="info" %}
 We strongly recommend having at least **2 environments** on the new Umbraco project.
 
+{% hint style="info" %}
+If your Umbraco 8 site is using Umbraco Forms, make sure to configure it to store data in the database, before beginning this tutorial
+[Follow the guide for migrating Umbraco Forms data to the database.](https://docs.umbraco.com/umbraco-forms/developer/forms-in-the-database)
+
 Should something fail during the migration, the Development environment can be removed and re-added to start over on a clean slate.
 {% endhint %}
 
