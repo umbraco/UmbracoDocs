@@ -495,3 +495,5 @@ GET /umbraco/commerce/storefront/api/v1/order/af697207-d370-4aee-824c-15711d43a9
 ## Swagger UI
 
 You can access a Swagger document for the Storefront API at `{yourdomain}/umbraco/swagger`, selecting `Umbraco Commerce Storefront API` from the definitions dropdown in the top right. From here you can see a full list of supported APIs, the parameters they accept and the expected payloads and responses.
+
+![Storefront API Swagger](../../media/uc_storefront_api_swagger.png)
