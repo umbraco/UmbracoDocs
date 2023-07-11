@@ -490,7 +490,47 @@ GET /umbraco/commerce/storefront/api/v1/order/af697207-d370-4aee-824c-15711d43a9
 
 ## Endpoints
 
+The Storefront API is broken down into a number of endpoints grouped by resource type. Select a resource type below to review the available endpoints.
 
+{% content-ref url="endpoints/order.md" %}
+[Order](endpoints/order.md)
+{% endcontent-ref %}
+
+{% content-ref url="endpoints/checkout.md" %}
+[Checkout](endpoints/checkout.md)
+{% endcontent-ref %}
+
+{% content-ref url="endpoints/product.md" %}
+[Product](endpoints/product.md)
+{% endcontent-ref %}
+
+{% content-ref url="endpoints/customer.md" %}
+[Customer](endpoints/customer.md)
+{% endcontent-ref %}
+
+{% content-ref url="endpoints/store.md" %}
+[Store](endpoints/store.md)
+{% endcontent-ref %}
+
+{% content-ref url="endpoints/currency.md" %}
+[Currency](endpoints/currency.md)
+{% endcontent-ref %}
+
+{% content-ref url="endpoints/country.md" %}
+[Country](endpoints/country.md)
+{% endcontent-ref %}
+
+{% content-ref url="endpoints/payment-method.md" %}
+[Payment Method](endpoints/payment-method.md)
+{% endcontent-ref %}
+
+{% content-ref url="endpoints/shipping-method.md" %}
+[Shipping Method](endpoints/shipping-method.md)
+{% endcontent-ref %}
+
+{% content-ref url="endpoints/content.md" %}
+[Content](endpoints/content.md)
+{% endcontent-ref %}
 
 ## Swagger UI
 
