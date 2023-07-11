@@ -1,4 +1,4 @@
-# Storefront API Order Endpoints
+# Storefront Order API Endpoints
 
 The Order endpoints are where you will manage your carts/orders and perform cart management functionality such as adding items to the cart, or setting up billing and shipping details.
 

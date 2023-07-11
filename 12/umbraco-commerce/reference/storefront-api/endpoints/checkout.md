@@ -1,4 +1,4 @@
-# Storefront API Checkout Endpoints
+# Storefront Checkout API Endpoints
 
 The checkout endpoints provide ways of performing a checkout process against an Order. The Storefront API supports two ways of checking out an order, one using hosted checkout pages, and a more advanced option for inline payment processing.
 
