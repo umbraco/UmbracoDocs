@@ -52,7 +52,7 @@ To configure the PhysicalFileSystem to work with a virtual folder, you must crea
 
 ### Physical path
 
-If you want to store the media files in a separate folder, outside of the webroot folder, maybe on a NAS/SAN, there are a few more steps.
+If you want to store the media files in a separate folder, outside of the webroot folder, maybe on Network Attached Storage (NAS) or a Storage Area Network (SAN), there are a few more steps.
 
 First, you must register the folder as a static file provider in your `Startup.cs` file like so:
 
