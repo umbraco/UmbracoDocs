@@ -11,7 +11,8 @@
         "tags": [
           "Checkout (Hosted)"
         ],
-        "description": "Start the hosted payment process for the given order redirecting to the payment gateway.<br /><br />Endpoint URL should be launched in a WebView and developers should watch for changes in the WebView URL to detect the outcome of the transaction. Final endpoint URLs will be one of `{endpointUrl}/completed`, `{endpointUrl}/canceled` or `{endpointUrl}/errored`",
+        "summary": "Starts the hosted payment process",
+        "description": "Redirects to the given Orders selected payment gateway for payment processing.<br /><br />Endpoint URL should be launched in a WebView and developers should watch for changes in the WebView URL to detect the outcome of the transaction. Final endpoint URLs will be one of `{endpointUrl}/completed`, `{endpointUrl}/canceled` or `{endpointUrl}/errored`",
         "parameters": [
           {
             "name": "orderId",
@@ -22,7 +23,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "b94a2f67-3275-445d-b233-7adb30ef5b18"
+            "example": "ae5c13f6-5e02-435c-bb18-6aa496d33aa8"
           },
           {
             "name": "token",
@@ -32,7 +33,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "aa9020c6-d2ad-4b09-8bea-2ad5aedd5a32"
+            "example": "0e515c39-44ad-4579-aff0-8fc8a4f86e12"
           }
         ],
         "responses": {
@@ -67,7 +68,8 @@
         "tags": [
           "Checkout (Hosted)"
         ],
-        "description": "Initialize a hosted checkout flow, generating a checkout token to be passed to the `/pay` endpoint.",
+        "summary": "Initialize a hosted checkout flow",
+        "description": "Initialization prepares the order for checkout and produces a token to be passed to the `/pay` endpoint.",
         "parameters": [
           {
             "name": "Store",
@@ -79,7 +81,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "8529af4a-ec72-4009-bb49-2db54905b978"
+                "value": "3afb8bf3-adb6-4469-b92d-cbb1b326a1f8"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -95,7 +97,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "e342cb30-e142-4e16-bf43-3d5d3d384b60"
+            "example": "2848829f-f9c3-4885-82ef-b6869dae7373"
           }
         ],
         "responses": {
@@ -137,7 +139,8 @@
         "tags": [
           "Checkout (Inline)"
         ],
-        "description": "Confirms an order, updating the transaction info with the supplied details and transitions the order from a `open` to a `finalized` state",
+        "summary": "Confirms an inline checkout flow",
+        "description": "Updates the given Orders transaction info with the supplied details and transitions the order from a `open` to a `finalized` state",
         "parameters": [
           {
             "name": "Api-Key",
@@ -158,7 +161,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "ee80c123-b92c-491e-ba63-ce5170e7d6bf"
+                "value": "fee3245e-4fc3-4c13-beec-32607516c20b"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -174,7 +177,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "d4a18b34-5dcb-4b58-870c-34e5cd4c6565"
+            "example": "c9a3fd1a-b187-44f4-8b40-13be5d21e170"
           },
           {
             "name": "expand",
@@ -269,7 +272,8 @@
         "tags": [
           "Checkout (Inline)"
         ],
-        "description": "Initialize an inline checkout flow.<br /><br />With inline checkout flow it's the developers responsibility to capture the transaction and confirm the payment via the `/confirm` endpoint. The selected payment methods setting are returned to ease payment gateway configuation, along with details of any meta data the payment method expects to be captured.",
+        "summary": "Initialize an inline checkout flow",
+        "description": "With inline checkout flow it's the developers responsibility to capture the transaction and confirm the payment via the `/confirm` endpoint. The selected payment methods setting are returned to ease payment gateway configuation, along with details of any meta data the payment method expects to be captured.",
         "parameters": [
           {
             "name": "Api-Key",
@@ -290,7 +294,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "b03e5754-ad6c-491a-92a7-349ac2797421"
+                "value": "ee316b60-01d6-49b2-b94b-8e021452245a"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -306,7 +310,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "969ee77e-5ada-499a-b2ea-b0294604153a"
+            "example": "7c1b45b2-b52a-452b-92d1-f7ac4ae9da26"
           }
         ],
         "responses": {
@@ -348,7 +352,8 @@
         "tags": [
           "Content"
         ],
-        "description": "Fetches a variant from an Umbraco Commerce multi-variant property on the given content node with the supplied attribute combination.",
+        "summary": "Gets a multi-variants content",
+        "description": "By default the variants property editor from Umbraco Commerce will only return attribute information with a product node to save on excessive payload sizes. The variants endpoint can be called to dynamically fetch an attibute combinations content only when it is requested.",
         "parameters": [
           {
             "name": "id",
@@ -359,7 +364,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "6d60e787-6c9b-4a63-ab2b-6bfe045ad5a7"
+            "example": "fc81adf1-42bb-400f-80e2-fc7d0f304b55"
           },
           {
             "name": "attribute",
@@ -417,7 +422,7 @@
         "tags": [
           "Country"
         ],
-        "description": "Fetches all the countries belonging to a given store, optionally filtered by the supplied filter argument.",
+        "summary": "Gets all the Countries in a Store",
         "parameters": [
           {
             "name": "Api-Key",
@@ -438,7 +443,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "70871f11-93e7-4c0f-8b36-062e48a6f840"
+                "value": "151bcd1f-ddb8-42ea-9faf-54465b216efa"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -453,7 +458,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "2fc23673-a154-4926-9859-3d86b895d36d"
+            "example": "bcf0f3dd-e4e8-46a4-ab3d-1a8c81e527ea"
           },
           {
             "name": "Billing-Country",
@@ -464,7 +469,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "ec2e147a-7d0a-4a0e-ad9e-7afc32596bf4"
+                "value": "82558965-4184-430e-a089-659d9da3be96"
               },
               "Entity Alias": {
                 "value": "us"
@@ -480,7 +485,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "85b6e8cf-78f1-4dac-a054-79b568292542"
+                "value": "46ca1830-6a38-4423-a0bc-78da349c4751"
               },
               "Entity Alias": {
                 "value": "az"
@@ -496,7 +501,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "35fac243-8651-4214-bd96-5755bf9bf4f9"
+                "value": "c4654ef0-aa99-4a1a-812c-111c0ccb66bd"
               },
               "Entity Alias": {
                 "value": "us"
@@ -512,7 +517,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "c6ec34fc-cc89-436a-acdd-de459ff1a93c"
+                "value": "e60e0633-384d-49e8-a86b-e5aa4db70e54"
               },
               "Entity Alias": {
                 "value": "az"
@@ -528,7 +533,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "95536df2-e829-40ec-bf08-5e86c86eb357"
+                "value": "a58cf18a-976f-46e9-a996-c5951e45bfce"
               },
               "Entity Alias": {
                 "value": "or"
@@ -544,7 +549,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "932c38a1-268d-4055-ba8d-bce0097134b5"
+                "value": "f38a50d5-d113-4c81-a6c5-9847dfb25a5c"
               },
               "Entity Alias": {
                 "value": "or"
@@ -567,7 +572,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_48b4548d-faeb-4804-bfbc-c8d7194d904c"
+            "example": "cust_89ec64eb-8537-446a-a622-648e89d57f02"
           },
           {
             "name": "filter",
@@ -662,7 +667,7 @@
         "tags": [
           "Country"
         ],
-        "description": "Fetches all the payment methods allowed in the given region.",
+        "summary": "Gets the Payment Methods allowed in a Region",
         "parameters": [
           {
             "name": "Api-Key",
@@ -683,7 +688,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "bbafc67f-e6e4-4c52-ae18-0c20bdfe22d4"
+                "value": "4042bac8-6b8d-4a72-805d-270441cb3446"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -698,7 +703,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "b70c1137-f006-455d-b5fa-b0e0854b5bd4"
+            "example": "7a36f823-82e1-4773-9633-f935b54ec1d7"
           },
           {
             "name": "Billing-Country",
@@ -709,7 +714,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "177d2486-1985-4a8e-9345-cb239c0f1395"
+                "value": "fa5ea434-2a37-469e-8dc9-9339b49fc7ee"
               },
               "Entity Alias": {
                 "value": "us"
@@ -725,7 +730,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "a9fb5023-4407-433f-b592-b60db24d1c84"
+                "value": "ca933c59-cae5-498d-a605-30a395064ee9"
               },
               "Entity Alias": {
                 "value": "az"
@@ -741,7 +746,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "939d1cd9-cc1c-41a0-98ed-5c34ce301428"
+                "value": "7f53febc-bbe2-46b1-9a48-d692440ca2cb"
               },
               "Entity Alias": {
                 "value": "us"
@@ -757,7 +762,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "6597c80d-9102-4ed9-8f23-98c167210190"
+                "value": "da3d04d0-6bfd-447e-8508-f7a0d3a75094"
               },
               "Entity Alias": {
                 "value": "az"
@@ -773,7 +778,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "71a0c369-a679-49ae-a73a-03760ff0f6c1"
+                "value": "5f970247-ab01-4d4e-b238-691c1f1b984f"
               },
               "Entity Alias": {
                 "value": "or"
@@ -789,7 +794,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "a17cc9d7-d555-4b40-8322-e537f98df871"
+                "value": "91ae1493-833e-4c0d-8d4c-e1920b90859f"
               },
               "Entity Alias": {
                 "value": "or"
@@ -812,7 +817,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_cced036c-fc97-44ce-81dc-764accc11f7c"
+            "example": "cust_c1ccdb8b-5370-4a63-8879-c271b60aafa3"
           },
           {
             "name": "countryIdOrAlias",
@@ -824,7 +829,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "9fefd8ad-da8a-44b2-881d-9ea3d2428a64"
+                "value": "91de6928-088c-40e3-9587-1a369574e7ad"
               },
               "Entity Alias": {
                 "value": "alias"
@@ -841,7 +846,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "ae88548f-3596-4b80-9b0b-d4413c7e3b51"
+                "value": "20ca5d8f-615a-4d65-93d2-22569396cc19"
               },
               "Entity Alias": {
                 "value": "alias"
@@ -925,7 +930,7 @@
         "tags": [
           "Country"
         ],
-        "description": "Fetches all the shipping methods allowed in the given region.",
+        "summary": "Gets the Shipping Methods allowed in a Region",
         "parameters": [
           {
             "name": "Api-Key",
@@ -946,7 +951,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "fb6c03cc-c07e-4f1b-91a6-7e9f57199dbd"
+                "value": "b6a8dd91-924f-4006-966f-6ef3bf81d682"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -961,7 +966,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "ab4e15ce-cff0-4ea5-93bc-da85e870dda3"
+            "example": "88d12982-4c2c-4a81-bf7f-b000b985e0f8"
           },
           {
             "name": "Billing-Country",
@@ -972,7 +977,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "f42f6744-6382-4dbb-8384-20ba27c74d0b"
+                "value": "c9effc52-a873-4911-9f43-372a124c677b"
               },
               "Entity Alias": {
                 "value": "us"
@@ -988,7 +993,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "676e975c-deea-4aa4-a9a2-4296490baa89"
+                "value": "3bbabd88-dd32-41ae-a4a4-4fe995f4a3e9"
               },
               "Entity Alias": {
                 "value": "az"
@@ -1004,7 +1009,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "8d376667-4eeb-44fe-bdfa-c58f09aa4d73"
+                "value": "c3bd6e99-f305-41f3-98c6-1a2a05dfcfb2"
               },
               "Entity Alias": {
                 "value": "us"
@@ -1020,7 +1025,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "1dffba95-7798-4bcd-ae8e-0d2a421d1b4f"
+                "value": "c0b02e35-f316-4678-8a4d-a9552e3ab80a"
               },
               "Entity Alias": {
                 "value": "az"
@@ -1036,7 +1041,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "ce6bd991-89a4-490f-9396-108d951e4828"
+                "value": "8758ebdd-037e-4c88-9c53-4ac4699a1f65"
               },
               "Entity Alias": {
                 "value": "or"
@@ -1052,7 +1057,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "817d0273-b83f-4c31-aec2-98f577c4cd06"
+                "value": "6d4fb908-1ca9-4c0e-a67a-86788f7a2a6a"
               },
               "Entity Alias": {
                 "value": "or"
@@ -1075,7 +1080,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_e22aa1be-ed5e-4bfb-8a31-2a338f0b5511"
+            "example": "cust_222cef14-40ae-4bde-a75b-2a5ed6dd5309"
           },
           {
             "name": "countryIdOrAlias",
@@ -1087,7 +1092,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "ff5bf96b-0210-4355-9854-e68a9e840a05"
+                "value": "b93417c2-36af-4c24-8f22-740084b376bd"
               },
               "Entity Alias": {
                 "value": "alias"
@@ -1104,7 +1109,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "8d1e27cd-94f4-4546-8eb0-9fdcd3c51498"
+                "value": "0b42e022-35d6-4b63-abb3-f15aa983a04b"
               },
               "Entity Alias": {
                 "value": "alias"
@@ -1188,7 +1193,7 @@
         "tags": [
           "Country"
         ],
-        "description": "Fetches a country by ID or alias.",
+        "summary": "Gets a Country by ID or Alias",
         "parameters": [
           {
             "name": "Api-Key",
@@ -1209,7 +1214,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "4912846a-8f53-4e70-a2b5-23dfdebe3ed6"
+                "value": "ccfdb70d-2b6d-4ef3-af9e-71a266dd2008"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -1224,7 +1229,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "0dc57461-8641-475a-9979-59cbafa2f360"
+            "example": "befea817-9ca1-4b1f-83ed-57b51b08c348"
           },
           {
             "name": "Billing-Country",
@@ -1235,7 +1240,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "33e87258-83d3-44f1-b472-c68bb27cd052"
+                "value": "11167174-022f-48f7-8fb7-e6607612c73b"
               },
               "Entity Alias": {
                 "value": "us"
@@ -1251,7 +1256,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "7f407055-2cf7-4b39-81b2-708f4f48771f"
+                "value": "984fe078-0e23-47ea-b0af-98686d2fdf4f"
               },
               "Entity Alias": {
                 "value": "az"
@@ -1267,7 +1272,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "319e3619-2721-410f-96ee-52e313833337"
+                "value": "8a595d69-eddb-4bba-8e4f-b4a461c7f86a"
               },
               "Entity Alias": {
                 "value": "us"
@@ -1283,7 +1288,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "11719882-e230-4e24-a871-8c9413f867e9"
+                "value": "6ff74cb1-ace4-4fc3-9e23-a34b42e1c361"
               },
               "Entity Alias": {
                 "value": "az"
@@ -1299,7 +1304,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "421b35ae-2e9e-47e3-a1cc-063588ce7327"
+                "value": "30e7636f-6fa4-493b-a82f-ed96ce94ea5e"
               },
               "Entity Alias": {
                 "value": "or"
@@ -1315,7 +1320,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "23e5e05e-b884-4ef6-9a3d-71b3abf03989"
+                "value": "afdce610-72d6-4d69-9c38-033f83398737"
               },
               "Entity Alias": {
                 "value": "or"
@@ -1338,7 +1343,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_b2c627c1-d5d1-4e62-a6af-9a2e11908803"
+            "example": "cust_a493b0c4-5d08-4982-b605-461178260b49"
           },
           {
             "name": "idOrAlias",
@@ -1350,7 +1355,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "e7a1cb80-84cc-4052-bab7-f35e0588267f"
+                "value": "fc7d676d-7275-43c2-9924-48e1e0459281"
               },
               "Entity Alias": {
                 "value": "alias"
@@ -1431,7 +1436,7 @@
         "tags": [
           "Country"
         ],
-        "description": "Fetches all the currencies allowed in the given country.",
+        "summary": "Gets the Currencies allowed in a Country",
         "parameters": [
           {
             "name": "Api-Key",
@@ -1452,7 +1457,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "4614360d-795d-45ad-92a7-2644eb0f6df6"
+                "value": "6f27fb27-2d71-43c5-aff0-0d5d068e8c3a"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -1467,7 +1472,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "c62cf40e-efde-46fe-ac35-3a8f9511bdb0"
+            "example": "3715274d-813a-40a9-b584-a899eae951cf"
           },
           {
             "name": "Billing-Country",
@@ -1478,7 +1483,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "3010b200-b560-4636-9f46-6365a563f1e0"
+                "value": "22d9ee77-9a19-4701-9be9-8310bb3bfa8d"
               },
               "Entity Alias": {
                 "value": "us"
@@ -1494,7 +1499,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "94505d39-d1fb-4d5f-9923-8a147d2f1009"
+                "value": "36236f35-77ce-4f60-9fa4-e016f9593410"
               },
               "Entity Alias": {
                 "value": "az"
@@ -1510,7 +1515,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "297d8c0e-9f6f-49c1-ac4f-8f3e90ce57b6"
+                "value": "955ec80c-db94-42df-82aa-6644c494d9a6"
               },
               "Entity Alias": {
                 "value": "us"
@@ -1526,7 +1531,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "c7bdd11b-2ffb-493c-afd0-6a4a60274f66"
+                "value": "1ba256ef-1146-4f52-8d2e-37c127109485"
               },
               "Entity Alias": {
                 "value": "az"
@@ -1542,7 +1547,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "f846b350-736a-4e31-a86f-7a645576e676"
+                "value": "f0528530-7a90-43b6-b2aa-fb31a1cdf9d2"
               },
               "Entity Alias": {
                 "value": "or"
@@ -1558,7 +1563,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "046952e8-086c-4ca1-9a72-d088a86c3437"
+                "value": "2cae2296-7bb2-411d-bca2-49e5b2b4adad"
               },
               "Entity Alias": {
                 "value": "or"
@@ -1581,7 +1586,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_7f8c49be-2115-49a6-9628-7d35deda4522"
+            "example": "cust_40cc4ce5-b54c-4d0a-a009-660a6d9ba0c9"
           },
           {
             "name": "idOrAlias",
@@ -1593,7 +1598,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "f1932b0f-f847-4948-b1a8-41eb90e615b3"
+                "value": "b63c78bd-bf9c-4ef4-a7ca-5d64dbdbb54f"
               },
               "Entity Alias": {
                 "value": "alias"
@@ -1677,7 +1682,7 @@
         "tags": [
           "Country"
         ],
-        "description": "Fetches all the payment methods allowed in the given country.",
+        "summary": "Gets the Payment Methods allowed in a Country",
         "parameters": [
           {
             "name": "Api-Key",
@@ -1698,7 +1703,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "15f17707-5c5e-4d8e-b0b2-f1fc68e3eccb"
+                "value": "5ff6b886-2567-459b-87d9-460228224f45"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -1713,7 +1718,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "91b781a7-1a30-49c6-9ded-97c863542c93"
+            "example": "affe0285-d275-402c-93ca-faf04e4685e1"
           },
           {
             "name": "Billing-Country",
@@ -1724,7 +1729,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "21007121-1840-4f2d-8b7c-ff5aa65a35a3"
+                "value": "1464eb45-b17e-4ec9-9d96-d3ae1a2ec8ad"
               },
               "Entity Alias": {
                 "value": "us"
@@ -1740,7 +1745,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "915381c2-053c-4e58-b751-7abd104c13d1"
+                "value": "b3f983c3-3aba-412b-a24e-a50fb8f4d2e4"
               },
               "Entity Alias": {
                 "value": "az"
@@ -1756,7 +1761,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "4b48ccbe-b051-4a6b-80ac-b41894117d63"
+                "value": "062e65a4-bd74-424f-b9c8-3353cec3d6fc"
               },
               "Entity Alias": {
                 "value": "us"
@@ -1772,7 +1777,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "530ede0e-fd22-4059-9f6a-a836407bf9ef"
+                "value": "35b36973-74ff-4167-9e1d-49da0c59f48b"
               },
               "Entity Alias": {
                 "value": "az"
@@ -1788,7 +1793,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "7966cf13-df11-4c13-ab5b-ceb98c13e3d4"
+                "value": "2586eb9e-cbcd-419a-b463-8037caada878"
               },
               "Entity Alias": {
                 "value": "or"
@@ -1804,7 +1809,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "5293b300-c2cd-43ea-b4d8-845f06499d17"
+                "value": "74e14930-3cf2-4aef-8eb5-08c66527a766"
               },
               "Entity Alias": {
                 "value": "or"
@@ -1827,7 +1832,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_60db02d5-c1eb-4b2e-b582-43d9683bc7ed"
+            "example": "cust_cb91bb29-bbfb-4218-85b6-078a2674465a"
           },
           {
             "name": "idOrAlias",
@@ -1839,7 +1844,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "60e78971-301d-4f83-a665-7e420a704f82"
+                "value": "8484ab74-7336-4758-b0cb-53110c404edc"
               },
               "Entity Alias": {
                 "value": "alias"
@@ -1923,7 +1928,7 @@
         "tags": [
           "Country"
         ],
-        "description": "Fetches all the shipping methods allowed in the given country.",
+        "summary": "Gets the Shipping Methods allowed in a Country",
         "parameters": [
           {
             "name": "Api-Key",
@@ -1944,7 +1949,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "6aa5d3e6-f320-4b06-9b80-2b927b331950"
+                "value": "446649f1-153b-4d04-a509-42508a428547"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -1959,7 +1964,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "a639ad90-a6bf-43a8-ab22-5e06c72c77ca"
+            "example": "a0955115-f5e5-4dd0-a5d6-d7a46bf3fc6d"
           },
           {
             "name": "Billing-Country",
@@ -1970,7 +1975,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "63899879-9981-4d0d-b487-d3cd03e6e274"
+                "value": "e5e94734-2194-4b30-884c-86e7bdab5054"
               },
               "Entity Alias": {
                 "value": "us"
@@ -1986,7 +1991,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "013d0cbb-5444-49f9-ba3c-e1076ee124ce"
+                "value": "b339ce39-b639-46b7-b5f4-190c0fbfa2fc"
               },
               "Entity Alias": {
                 "value": "az"
@@ -2002,7 +2007,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "1124d53b-2d30-457b-bd9f-8f632d17f128"
+                "value": "08ed6daa-14f2-4abc-82ce-eb559969bef9"
               },
               "Entity Alias": {
                 "value": "us"
@@ -2018,7 +2023,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "b6a443b2-9e7b-4e71-84f6-03a4037f3580"
+                "value": "f1247089-6a49-4ca0-a416-faae6b72484a"
               },
               "Entity Alias": {
                 "value": "az"
@@ -2034,7 +2039,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "e823f12a-c5b9-4b61-8720-1f68f396aefb"
+                "value": "6e2bdf48-2cb5-4baa-837b-537f94e757a5"
               },
               "Entity Alias": {
                 "value": "or"
@@ -2050,7 +2055,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "35a09d8b-8a0f-45f0-b825-4ca596e03423"
+                "value": "dd7f647b-d18b-455d-8cf3-ab4fd3b383e2"
               },
               "Entity Alias": {
                 "value": "or"
@@ -2073,7 +2078,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_a7f3719f-808c-409a-8407-252f3593a550"
+            "example": "cust_fa216108-772c-4ae6-b6e0-9ef3c8520592"
           },
           {
             "name": "idOrAlias",
@@ -2085,7 +2090,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "18c3e372-49bc-4f3c-a28e-63d7f25cc2b1"
+                "value": "47e6a1c3-9ed7-4786-be69-19796ef0e8d4"
               },
               "Entity Alias": {
                 "value": "alias"
@@ -2169,7 +2174,7 @@
         "tags": [
           "Currency"
         ],
-        "description": "Fetches all the currencies belonging to a given store, optionally filtered by the supplied filter argument.",
+        "summary": "Gets all the Currencies in a Store",
         "parameters": [
           {
             "name": "Api-Key",
@@ -2190,7 +2195,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "6976d362-025f-4ddb-ae36-20f70dc11a51"
+                "value": "0cdb4f01-221f-4b45-89b1-d426e9c2d40e"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -2205,7 +2210,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "a8de8efb-5210-4808-a26d-6385aa0b497c"
+            "example": "d72a395d-2118-4931-9c6e-9bdbff6c9363"
           },
           {
             "name": "Billing-Country",
@@ -2216,7 +2221,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "3145765c-c2a1-4c76-8d61-b8ebbab1273d"
+                "value": "0900a1dd-cd7e-4e04-83fc-98f59fcef7c2"
               },
               "Entity Alias": {
                 "value": "us"
@@ -2232,7 +2237,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "8cd52ce5-0b4d-405d-b7db-69e06b901453"
+                "value": "8ec322f5-de62-4429-b8f3-d095c72d7d6b"
               },
               "Entity Alias": {
                 "value": "az"
@@ -2248,7 +2253,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "40f42d26-9fef-40ab-86ab-74ec0892c716"
+                "value": "786ffc26-fc9d-44ef-8342-0d18d87d454e"
               },
               "Entity Alias": {
                 "value": "us"
@@ -2264,7 +2269,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "4c1059b9-6b50-476e-8aa2-042985903398"
+                "value": "c0a04df7-0eb5-42ec-acd2-bad9dc0ae1d4"
               },
               "Entity Alias": {
                 "value": "az"
@@ -2280,7 +2285,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "6ea5ff91-d746-409c-95a5-46ede9c24046"
+                "value": "1abda57a-babd-4c3e-b6bc-610d8c82fdd1"
               },
               "Entity Alias": {
                 "value": "or"
@@ -2296,7 +2301,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "30a5f20a-81a7-4475-87cd-52ede97d5a85"
+                "value": "4a739ef3-3563-4077-9ede-1d2489171bc5"
               },
               "Entity Alias": {
                 "value": "or"
@@ -2319,7 +2324,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_e81620f5-0264-4d94-b1dc-ae65f64f054a"
+            "example": "cust_8192d05c-481b-4010-8a81-f79f2702120e"
           },
           {
             "name": "filter",
@@ -2414,7 +2419,7 @@
         "tags": [
           "Currency"
         ],
-        "description": "Fetches a currency by ID or alias.",
+        "summary": "Gets a Currency by ID or Alias",
         "parameters": [
           {
             "name": "Api-Key",
@@ -2435,7 +2440,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "70cd79b8-1e79-441a-be00-de1de3a4e68f"
+                "value": "1f845110-8d2f-4e3c-ab1f-5428d5460019"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -2450,7 +2455,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "4caa4ccd-99aa-40c7-8026-476941b56172"
+            "example": "7e5787bc-b010-4c20-934d-280e8ea870d8"
           },
           {
             "name": "Billing-Country",
@@ -2461,7 +2466,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "31b86f8b-0664-4313-8383-055486f4f53e"
+                "value": "9a2b02eb-52b0-4d72-a6db-5b6f8f78fdba"
               },
               "Entity Alias": {
                 "value": "us"
@@ -2477,7 +2482,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "7076bc93-1c88-48ef-a6c7-dad2bbc9a00b"
+                "value": "6b04ae53-8a09-4bbd-ad34-04c79aa47450"
               },
               "Entity Alias": {
                 "value": "az"
@@ -2493,7 +2498,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "0432e63f-59a3-4d6d-a5c3-fbf3b37f36f8"
+                "value": "53bb98dc-d464-49b6-a0ba-4b19c16be91e"
               },
               "Entity Alias": {
                 "value": "us"
@@ -2509,7 +2514,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "45f0d16d-bc5a-4163-81fc-65ea141b0f42"
+                "value": "09962053-e691-47fd-84bf-753c927e5927"
               },
               "Entity Alias": {
                 "value": "az"
@@ -2525,7 +2530,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "094ea964-c2cf-4498-b652-02f90c702179"
+                "value": "270f789a-4407-425d-98c9-9da79c6170d8"
               },
               "Entity Alias": {
                 "value": "or"
@@ -2541,7 +2546,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "d4924e80-1e84-4560-90c5-007a5c56a6e4"
+                "value": "3aac5de2-4f3a-4041-8940-6a7677fa8253"
               },
               "Entity Alias": {
                 "value": "or"
@@ -2564,7 +2569,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_775301d6-27bc-4ea4-bcd3-497a15fb7e69"
+            "example": "cust_7ac98061-7bf9-4d27-8e98-c42adfbdd956"
           },
           {
             "name": "idOrAlias",
@@ -2576,7 +2581,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "7dd89441-9086-47f2-8e4a-ccffe6fcc26d"
+                "value": "c20e820a-b3fe-4856-a8b9-f1fd4ce285c8"
               },
               "Entity Alias": {
                 "value": "alias"
@@ -2657,7 +2662,7 @@
         "tags": [
           "Customer"
         ],
-        "description": "Fetches all the orders belonging to a given customer",
+        "summary": "Gets all the finalized Order of a Customer",
         "parameters": [
           {
             "name": "Api-Key",
@@ -2678,7 +2683,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "bdb4b703-2a19-4dba-9732-49e9f892ee91"
+                "value": "8fd69499-b116-44ee-8bd3-3d1f775cd9cb"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -2693,7 +2698,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_446a6f01-464d-4e4b-b8d2-daf59dbfd0db"
+            "example": "cust_457bbd84-690d-4912-a8b5-79defdad74e6"
           },
           {
             "name": "expand",
@@ -2803,7 +2808,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "0ac6ccc0-5b50-4f8b-bd13-e3b85380d5ac"
+                "value": "c71c16dd-ed95-4e7f-a35d-0094576cdf40"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -2818,7 +2823,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "2bc63213-6baa-49e5-845b-5ced8bc831aa"
+            "example": "cd1555a7-506f-41d5-8d56-a5ab17cda47d"
           },
           {
             "name": "Billing-Country",
@@ -2829,7 +2834,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "cb93f5b7-25ed-4340-b364-a1517246c5c2"
+                "value": "fc90e18a-c439-4c95-b12d-755b131783d0"
               },
               "Entity Alias": {
                 "value": "us"
@@ -2845,7 +2850,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "6606e06b-d4f2-4baf-b4df-c971ad374c6c"
+                "value": "5cecc514-444a-4ae7-8367-bf6b21698bfa"
               },
               "Entity Alias": {
                 "value": "az"
@@ -2861,7 +2866,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "81a8ff09-5000-4d8c-bbea-0042d1c8babf"
+                "value": "37ef5a49-06b3-423a-9d91-2580eb76ae1f"
               },
               "Entity Alias": {
                 "value": "us"
@@ -2877,7 +2882,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "97a33c5f-dc8e-45fa-b5b1-da9d3d0ea8a3"
+                "value": "7451fcc5-681f-408b-80bb-55f0e5d4ab00"
               },
               "Entity Alias": {
                 "value": "az"
@@ -2893,7 +2898,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "72a426a1-7903-4c9d-9d0d-e14d677b4d42"
+                "value": "bd9db2c5-1175-4c5d-9613-688dd74d4d27"
               },
               "Entity Alias": {
                 "value": "or"
@@ -2909,7 +2914,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "98ffc5de-f91f-4e9e-885a-2f55fef7a5b8"
+                "value": "aa699072-0441-4f86-ae6a-e85713a60fd3"
               },
               "Entity Alias": {
                 "value": "or"
@@ -2932,7 +2937,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_085531d4-944b-431a-aefb-dbea05fd3a3d"
+            "example": "cust_e12d1f67-2514-470d-b6b7-225404b6ec3e"
           },
           {
             "name": "orderId",
@@ -2943,7 +2948,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "59cfcb4a-c722-4b52-9e11-e7aacb33748c"
+            "example": "48423886-1193-41cb-b202-a57cb9caa224"
           }
         ],
         "responses": {
@@ -2987,7 +2992,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "d8a83fdb-e029-433d-afdc-997a850793e9"
+                "value": "3c4e244e-6cad-496e-b462-66656691f547"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -3002,7 +3007,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "15829a4e-9b10-4d50-bb87-c5537cf7ab67"
+            "example": "c353afd2-172c-4c21-8ce7-baf5c498597b"
           },
           {
             "name": "Billing-Country",
@@ -3013,7 +3018,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "9527873e-c16d-45ab-af69-3c91b8672410"
+                "value": "d30b871c-0589-4d27-9bfd-73a945865cca"
               },
               "Entity Alias": {
                 "value": "us"
@@ -3029,7 +3034,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "717d4e56-e33f-4d48-ad7f-d5fea8565f8a"
+                "value": "265f384d-edc9-48c5-8be5-16144a9a8753"
               },
               "Entity Alias": {
                 "value": "az"
@@ -3045,7 +3050,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "e455e569-ebc9-4365-98f7-5d1fa0a68778"
+                "value": "923eda89-e87a-4701-b736-e1f1322f7ab5"
               },
               "Entity Alias": {
                 "value": "us"
@@ -3061,7 +3066,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "98a56b12-fa50-4a66-94a7-3cf9b3fd96ea"
+                "value": "5cc76ad6-c32f-4ac3-8ed2-ced033796003"
               },
               "Entity Alias": {
                 "value": "az"
@@ -3077,7 +3082,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "7dee5f8a-0e93-4f80-9231-bac4aadf6e33"
+                "value": "cffed322-176d-4f40-b02f-2f9dcb705e70"
               },
               "Entity Alias": {
                 "value": "or"
@@ -3093,7 +3098,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "7d51a316-1251-417b-b67a-6c78c7c294a1"
+                "value": "827aa41c-4303-45a2-a755-ffa129616e7d"
               },
               "Entity Alias": {
                 "value": "or"
@@ -3116,7 +3121,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_3f9ac25e-4cc5-40ce-9f1c-56f267813fe7"
+            "example": "cust_6a583ca3-b0e8-4bb4-9807-dada861e10d2"
           },
           {
             "name": "orderId",
@@ -3127,7 +3132,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "2da4fb51-4e75-453a-a8b5-ab01871f4d80"
+            "example": "b6ebbdfd-a505-44fb-a44e-cd765f947793"
           },
           {
             "name": "expand",
@@ -3232,7 +3237,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "61e6feab-47c5-4069-9f89-cf5caa266083"
+                "value": "5417f555-f2f4-4cd3-bc56-68b2722d51f7"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -3247,7 +3252,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "77131808-221f-4453-b84f-830db3275358"
+            "example": "fe2b6561-0eae-4dcf-914d-6f0ffcbd8954"
           },
           {
             "name": "Billing-Country",
@@ -3258,7 +3263,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "d3e84931-f581-436f-88a6-6dfbe7b73f41"
+                "value": "1a06b698-a905-4c42-bc1f-361e3643577f"
               },
               "Entity Alias": {
                 "value": "us"
@@ -3274,7 +3279,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "25c84c8f-4ddb-4996-9b72-39c09679510b"
+                "value": "c6d55075-f1a2-4ea6-9493-c4bb52b009cf"
               },
               "Entity Alias": {
                 "value": "az"
@@ -3290,7 +3295,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "e741ff69-fb47-4898-8a92-3aeddeef195d"
+                "value": "e92e34b5-4201-4a4e-8911-728a2529705c"
               },
               "Entity Alias": {
                 "value": "us"
@@ -3306,7 +3311,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "f85959d4-f12d-4433-8160-765515ef92a6"
+                "value": "5d9bdb98-35ab-42d5-a29a-ae1472e7e5f5"
               },
               "Entity Alias": {
                 "value": "az"
@@ -3322,7 +3327,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "4e6fe296-4406-445f-b09b-78bbf191ad8a"
+                "value": "4c976933-a2ec-4e3c-ab95-2223645d9584"
               },
               "Entity Alias": {
                 "value": "or"
@@ -3338,7 +3343,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "2aa41ccc-d1e1-41f6-894d-aa975338ccd4"
+                "value": "a7400522-1d46-4385-b2fe-bf9f1b3eb4d8"
               },
               "Entity Alias": {
                 "value": "or"
@@ -3361,7 +3366,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_ce0387b8-a35f-4ac1-bd37-d5500a7e9c59"
+            "example": "cust_beb36178-74f7-4022-bfa3-16a1383d5b1c"
           },
           {
             "name": "orderId",
@@ -3372,7 +3377,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "4e1002ac-b553-4e45-88af-1e05155bda34"
+            "example": "d8b5bc4b-cbe9-4dda-b074-51caf0887a26"
           },
           {
             "name": "expand",
@@ -3476,7 +3481,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "e2f71034-38a5-4837-bade-3134c7c16514"
+                "value": "d3612107-8c8d-4d81-9392-13dc8c9b026a"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -3491,7 +3496,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "4ba5aabe-c327-4e24-9f83-13fc189502d9"
+            "example": "f6f98567-df22-4f54-ab6a-3449c8eac2b6"
           },
           {
             "name": "Billing-Country",
@@ -3502,7 +3507,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "c3b1d5a6-6dff-4049-9156-8b67e417a376"
+                "value": "dbb1a0c3-e16f-4a9a-8c10-db4d5a7285db"
               },
               "Entity Alias": {
                 "value": "us"
@@ -3518,7 +3523,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "4038cfa4-f261-48cd-a0b0-f4cbc354519c"
+                "value": "30734081-504e-4386-8738-04f7e71d5660"
               },
               "Entity Alias": {
                 "value": "az"
@@ -3534,7 +3539,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "975b60f2-1a69-4ccf-b384-ec4de119a092"
+                "value": "ef43b433-b786-4925-8dac-8eae3fb6f29c"
               },
               "Entity Alias": {
                 "value": "us"
@@ -3550,7 +3555,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "7f70c3a0-e6ee-4a2b-8092-e128dd58779d"
+                "value": "01ebd058-af1c-4ec8-91dc-6c15e8dedf7c"
               },
               "Entity Alias": {
                 "value": "az"
@@ -3566,7 +3571,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "b233ab4b-d754-4806-85db-a800fe5a78fd"
+                "value": "67737da9-efaa-4e5f-9c09-b2a12d577a22"
               },
               "Entity Alias": {
                 "value": "or"
@@ -3582,7 +3587,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "bc8a847d-5928-4d37-b7ec-f4458d458445"
+                "value": "db0dca4e-bbfa-41d8-8b46-f11ae7e33181"
               },
               "Entity Alias": {
                 "value": "or"
@@ -3605,7 +3610,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_7e73cebf-0df5-486b-b4ff-2913cb76161d"
+            "example": "cust_68bab05f-6fa0-4bbd-9c26-d5c0a8a82644"
           },
           {
             "name": "orderId",
@@ -3616,7 +3621,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "307495b3-d90b-490c-9dd2-6d17089993a7"
+            "example": "0d8b1cbd-2ed4-4d83-b696-6f75f939773f"
           },
           {
             "name": "expand",
@@ -3722,7 +3727,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "d3917cfe-1e36-471f-a61f-8122289635bb"
+                "value": "c3abde5b-0f23-4855-98a8-16ea5658f81a"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -3737,7 +3742,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "725cfbf9-847f-491c-a19a-63adec5a82c8"
+            "example": "4040e074-fa26-4df4-8085-cd508e070251"
           },
           {
             "name": "Billing-Country",
@@ -3748,7 +3753,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "f49222d3-a129-4758-9cca-7c9ed43366ec"
+                "value": "e5e28c2c-d097-4fe2-a874-84ec599248a3"
               },
               "Entity Alias": {
                 "value": "us"
@@ -3764,7 +3769,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "a73514f7-bb5b-44de-8f03-3bc83bd3c9fd"
+                "value": "b2e095ad-c699-474e-a253-b6c34b18fc64"
               },
               "Entity Alias": {
                 "value": "az"
@@ -3780,7 +3785,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "7ad67946-e03c-4bce-9567-3281e4bc4076"
+                "value": "acbeec0d-f2c7-4e61-87d2-e759cf3d042e"
               },
               "Entity Alias": {
                 "value": "us"
@@ -3796,7 +3801,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "2627d4e4-de1a-49b3-8d9a-237540436571"
+                "value": "502272b4-0fbd-4bbe-b031-2dcca7475450"
               },
               "Entity Alias": {
                 "value": "az"
@@ -3812,7 +3817,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "b801d895-3171-4fcd-82d1-ea3ed186e68a"
+                "value": "f1ec1bee-b138-43fb-964f-c49b390ad67b"
               },
               "Entity Alias": {
                 "value": "or"
@@ -3828,7 +3833,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "6bd973ee-19fa-4d11-937b-1581b5a437fe"
+                "value": "456d7ce9-ebe5-45fa-b4d7-e1bb08ec84c6"
               },
               "Entity Alias": {
                 "value": "or"
@@ -3851,7 +3856,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_0b5dae05-c2b4-4951-90a8-a8c85b33b01e"
+            "example": "cust_04b41487-0679-4d59-beef-f5e516c6f940"
           },
           {
             "name": "orderId",
@@ -3862,7 +3867,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "f353c03d-92b0-4bd3-9c08-f0095b515a87"
+            "example": "14d7dfbb-a567-4702-b9c0-8ccf68f97e54"
           },
           {
             "name": "bundleId",
@@ -3872,7 +3877,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "5c4a6a6b-667b-4e0e-89f6-0f0cd30ca702"
+            "example": "faf7b604-3227-4ec7-8e1f-74ff6759997a"
           },
           {
             "name": "expand",
@@ -3978,7 +3983,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "d7cf19cc-60ea-477c-bd0c-b3dccf42019f"
+                "value": "45aba8a2-35d9-4ed1-b695-dd39f56a1142"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -3993,7 +3998,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "c042cb8c-33bf-4616-bffc-5f19e7473a50"
+            "example": "7200adc6-d38a-4231-b8de-e06fed51a97f"
           },
           {
             "name": "Billing-Country",
@@ -4004,7 +4009,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "cbc6cd32-a340-4f87-b160-5a9c76e4d48a"
+                "value": "fa30517a-03be-40c9-b26f-d5c041f1d507"
               },
               "Entity Alias": {
                 "value": "us"
@@ -4020,7 +4025,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "d4fcb284-31d7-4a1d-baca-58e9c52e6416"
+                "value": "5753d609-8343-4fa1-8781-c6649f0cfa03"
               },
               "Entity Alias": {
                 "value": "az"
@@ -4036,7 +4041,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "22138470-11bd-4abb-9433-95ae217b1b1a"
+                "value": "e7672cf8-e811-4a90-bb95-cc2668e4cae5"
               },
               "Entity Alias": {
                 "value": "us"
@@ -4052,7 +4057,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "a0c531a8-3d13-482e-b007-f18259b9a339"
+                "value": "8a0cb1ae-6ce6-476a-b6b3-045574b954f3"
               },
               "Entity Alias": {
                 "value": "az"
@@ -4068,7 +4073,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "e40f8fbf-982a-47cf-8170-50e91d0218d8"
+                "value": "4a887413-91e7-43de-9d1c-9c18c58f2bd7"
               },
               "Entity Alias": {
                 "value": "or"
@@ -4084,7 +4089,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "0b1b928b-5143-4afb-a445-66708486db75"
+                "value": "d7a2125b-b98f-46ce-94c2-7a15aacf3842"
               },
               "Entity Alias": {
                 "value": "or"
@@ -4107,7 +4112,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_d9d5fa6c-c55c-442b-bf7c-1d833aa98405"
+            "example": "cust_d25e81f9-3150-44b5-8723-ba49c51f9bd8"
           },
           {
             "name": "orderId",
@@ -4118,7 +4123,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "19162df0-4002-46c4-9b14-6d5d325c0d4d"
+            "example": "d90111ac-174d-4b2c-a8b3-7189b9ead75a"
           },
           {
             "name": "bundleId",
@@ -4128,7 +4133,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "410690b4-3b1d-4eae-a391-cde5d15c6775"
+            "example": "8f94a525-3348-4025-af95-00793b5032f3"
           },
           {
             "name": "orderLineId",
@@ -4139,7 +4144,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "8bbb0b78-1129-4615-b56b-bac314e38c16"
+            "example": "80064738-a0c9-41c8-ab22-f32076788cdb"
           },
           {
             "name": "expand",
@@ -4234,7 +4239,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "5c178e9a-25da-459b-88f5-4eb1afc30e3e"
+                "value": "e663b97c-6ee9-494b-ae47-ac15d10c94fa"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -4249,7 +4254,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "4aacb8ce-718f-4542-be3f-e0b0ca29e24b"
+            "example": "0b0b0752-3186-44d4-96ea-4bb69fd75956"
           },
           {
             "name": "Billing-Country",
@@ -4260,7 +4265,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "c91d2274-e5e1-4ab4-b5ef-eeb491b93fbd"
+                "value": "663e6c35-641b-4731-81cf-d4f85024849d"
               },
               "Entity Alias": {
                 "value": "us"
@@ -4276,7 +4281,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "f9ec143c-478e-4137-a04b-6594d1dacfda"
+                "value": "0aa9570a-d43f-4d37-8cbe-41fc13239b3a"
               },
               "Entity Alias": {
                 "value": "az"
@@ -4292,7 +4297,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "75618cf4-9cbb-4995-a7e5-2e2346305334"
+                "value": "87bdc152-9c93-4035-9f08-3204c1a9ec39"
               },
               "Entity Alias": {
                 "value": "us"
@@ -4308,7 +4313,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "83c7d6ab-a1f8-497f-9cdb-8c48985aba02"
+                "value": "cfea988c-38b9-4f2c-b555-65e1e8ddad18"
               },
               "Entity Alias": {
                 "value": "az"
@@ -4324,7 +4329,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "243ebcc6-81c6-4ddb-bdce-d9462e3a09f6"
+                "value": "195aaa33-16ec-44b4-bad2-3606b964a657"
               },
               "Entity Alias": {
                 "value": "or"
@@ -4340,7 +4345,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "857c702b-5517-47ba-bb51-2669af4241e7"
+                "value": "07abf6d3-917a-4295-8a11-da2bae46188f"
               },
               "Entity Alias": {
                 "value": "or"
@@ -4363,7 +4368,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_eca9921b-ccc6-40c0-82a8-29ab50d99793"
+            "example": "cust_9df04dd0-f4dd-42af-8ea4-86b71cecfa0c"
           },
           {
             "name": "orderId",
@@ -4374,7 +4379,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "3d638c1d-5ea4-4428-b2d5-fd9df9718702"
+            "example": "d4e340a5-8cda-4351-bd30-f7cb285bcb5a"
           },
           {
             "name": "bundleId",
@@ -4384,7 +4389,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "4ff34679-6cdb-41f6-a272-6b485b63acc4"
+            "example": "9009b61d-4982-4789-93e4-a31c067098cc"
           },
           {
             "name": "orderLineId",
@@ -4395,7 +4400,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "5939a9ad-89a4-4122-9a60-1a788fa08d79"
+            "example": "75bb9233-7004-411f-8ff5-03c7167b1cb7"
           },
           {
             "name": "expand",
@@ -4501,7 +4506,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "ecbd8dff-5216-4a17-9d4b-29aecbd3d0ff"
+                "value": "ca6df152-a276-497a-9532-2c964685f9d6"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -4516,7 +4521,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "4d21917e-59b7-4595-94ec-0312fa04c17e"
+            "example": "d045f1f4-283d-43df-8dc2-d56adf498d8a"
           },
           {
             "name": "Billing-Country",
@@ -4527,7 +4532,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "660df514-891b-48af-ab3d-b544f7dca1c2"
+                "value": "d0000b9b-23ba-47bb-be7f-18e3a01828df"
               },
               "Entity Alias": {
                 "value": "us"
@@ -4543,7 +4548,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "4db9e026-c140-4924-8c3d-c5a6bbb869e4"
+                "value": "9a7cc888-faa4-4fb0-9b69-4c2f02094d52"
               },
               "Entity Alias": {
                 "value": "az"
@@ -4559,7 +4564,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "e13ffb1a-649b-40aa-8401-c7e638aa9375"
+                "value": "d7b0b221-87c3-47b1-8926-04ae7dbdacc3"
               },
               "Entity Alias": {
                 "value": "us"
@@ -4575,7 +4580,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "adcc12a4-1a99-43b0-962f-6042684789fe"
+                "value": "e9b8a165-e520-42e2-bae6-3748b1a04d4b"
               },
               "Entity Alias": {
                 "value": "az"
@@ -4591,7 +4596,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "1bba1804-a9a2-4f7a-8baa-91ad31dc571b"
+                "value": "8bf2d020-8ba6-41dc-b1ee-e4331e385434"
               },
               "Entity Alias": {
                 "value": "or"
@@ -4607,7 +4612,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "c3b0c25c-79b7-44e1-8ef2-092b28db9cc2"
+                "value": "4edaf125-a022-4949-824f-4d3e3f6b803c"
               },
               "Entity Alias": {
                 "value": "or"
@@ -4630,7 +4635,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_3ec1c0e5-fcf5-4243-b300-5f360bf40518"
+            "example": "cust_08630eb5-f2bc-49ec-90b6-22cea361e6e4"
           },
           {
             "name": "orderId",
@@ -4641,7 +4646,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "cfb461ce-16ae-44a5-9cb9-7e1a1ab518c9"
+            "example": "acc0b027-43ab-429d-830e-93081d1f2933"
           },
           {
             "name": "bundleId",
@@ -4651,7 +4656,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "9c4fe0ba-bbe6-48fd-9b0e-cf7bf69edd02"
+            "example": "796e7f6c-17b6-4af1-8218-c8edc4ef9829"
           },
           {
             "name": "expand",
@@ -4746,7 +4751,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "1cdb57e9-4a7d-4a07-bed5-66b1ead32088"
+                "value": "80405355-d626-4e54-8787-da315ed0ba6b"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -4761,7 +4766,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "d9f9c844-7293-4ee9-ae15-94a390d596b6"
+            "example": "aaf2d2d6-29f1-4daa-a423-d92f7b77ae23"
           },
           {
             "name": "Billing-Country",
@@ -4772,7 +4777,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "1bca6973-2c72-4722-aac9-0c24ab3e9ee2"
+                "value": "48462142-2a47-411b-a63b-1c918afd43fc"
               },
               "Entity Alias": {
                 "value": "us"
@@ -4788,7 +4793,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "3a5b8d06-1a55-4b47-b375-6f5f924445ad"
+                "value": "25189b23-f1bb-4462-ba0d-22a8919cad0e"
               },
               "Entity Alias": {
                 "value": "az"
@@ -4804,7 +4809,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "91ca6461-8a67-4e3e-8429-dae8c73fe546"
+                "value": "305735c5-58b6-4e79-aba9-fff1b4fade1d"
               },
               "Entity Alias": {
                 "value": "us"
@@ -4820,7 +4825,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "4b4393bc-0221-4fbd-af8f-120c4a238325"
+                "value": "009692fa-7611-4645-ae3e-cc1e350974da"
               },
               "Entity Alias": {
                 "value": "az"
@@ -4836,7 +4841,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "6b7a76fa-9329-409c-ab32-99af5cec3337"
+                "value": "0f474803-7063-47ec-95c5-17bec6b4a335"
               },
               "Entity Alias": {
                 "value": "or"
@@ -4852,7 +4857,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "a26ddfff-3131-4c63-8764-8ae302d1231d"
+                "value": "2c2e8b91-47a7-486d-b45f-df0a5b3394de"
               },
               "Entity Alias": {
                 "value": "or"
@@ -4875,7 +4880,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_d7bc498d-7c3d-49da-85b8-8edd50520671"
+            "example": "cust_85409e37-5ff8-4a6a-9015-f19adf63653b"
           },
           {
             "name": "orderId",
@@ -4886,7 +4891,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "c769355c-f83f-40a2-adec-52e5a15a62de"
+            "example": "140dec37-8b38-4646-9187-d8d23729f139"
           },
           {
             "name": "bundleId",
@@ -4896,7 +4901,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "8cc9059a-5fff-4fee-a589-04b35174ee0b"
+            "example": "167b93af-de12-44f4-8e27-24a7acd04c06"
           },
           {
             "name": "expand",
@@ -5005,7 +5010,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "1af4f40f-ab87-4438-93b4-f9e316e51783"
+                "value": "18839e10-08df-4982-970a-b1e84c4d2cc0"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -5020,7 +5025,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "0929b441-b7f3-4fbf-ac88-01dbd4e1bc5e"
+            "example": "498dab44-6bf1-4d8a-9230-deb622f9b349"
           },
           {
             "name": "Billing-Country",
@@ -5031,7 +5036,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "3c375597-634d-44b9-a4ce-a2a42764b8ad"
+                "value": "402fbae4-2e6d-4604-9d5e-837aa9494407"
               },
               "Entity Alias": {
                 "value": "us"
@@ -5047,7 +5052,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "e44348f1-fc24-4026-8042-2a5f05909779"
+                "value": "d2a429ef-9255-4248-ac6f-ba3cd8a7b3a0"
               },
               "Entity Alias": {
                 "value": "az"
@@ -5063,7 +5068,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "d1a1bf0f-bc74-469f-90f8-148f9cfae519"
+                "value": "f6be4a90-258f-4663-b560-e56b8927d566"
               },
               "Entity Alias": {
                 "value": "us"
@@ -5079,7 +5084,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "c572b63d-bed8-4559-adcb-e29e444d1e5e"
+                "value": "8dca9b72-a9e1-43a6-9e30-5f6e0f1d299e"
               },
               "Entity Alias": {
                 "value": "az"
@@ -5095,7 +5100,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "0cce9a4b-8316-4d3a-a720-b51906c2fb72"
+                "value": "1d8834c8-5d80-493f-bf6b-8abcaf0a4a4d"
               },
               "Entity Alias": {
                 "value": "or"
@@ -5111,7 +5116,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "3bada001-fef3-498a-82aa-e2e5f7428740"
+                "value": "030fceb7-2bb0-494a-aba0-b45742999754"
               },
               "Entity Alias": {
                 "value": "or"
@@ -5134,7 +5139,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_21222726-d38d-45b7-a005-455824f5244d"
+            "example": "cust_c074be29-2a23-4495-b6ee-298dbc94c022"
           },
           {
             "name": "orderId",
@@ -5145,7 +5150,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "f2e5bbb5-9385-4f89-9f8f-0606b7c3efb4"
+            "example": "a6210cee-3b99-4fd0-98ee-702e8402f048"
           },
           {
             "name": "orderLineId",
@@ -5156,7 +5161,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "696beeeb-9e19-4fe1-b6fc-c31f3c332b4e"
+            "example": "590f37e4-d2f5-439e-bcf2-97c678ef68b5"
           },
           {
             "name": "expand",
@@ -5251,7 +5256,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "7193ad20-bc5f-4de3-9204-67343a4302d6"
+                "value": "2f0c5a9b-d8c3-42c2-9a2c-cfe8271cef7e"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -5266,7 +5271,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "6ed9dcf3-6568-485d-a387-1f70aa37147d"
+            "example": "c0a4f036-56ad-495d-9932-978420ad3e0c"
           },
           {
             "name": "Billing-Country",
@@ -5277,7 +5282,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "70dc8c14-e53d-402c-afe8-96de7c75f7fe"
+                "value": "fc599b42-0639-49d6-bacf-9c986ad8bd73"
               },
               "Entity Alias": {
                 "value": "us"
@@ -5293,7 +5298,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "a1abf0cc-3675-4787-9563-5fd46e8ba1dc"
+                "value": "c7d59f60-01c0-437b-92eb-246a46e0d586"
               },
               "Entity Alias": {
                 "value": "az"
@@ -5309,7 +5314,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "a6efe8c2-4ab1-4dee-b037-dc9969a5bb01"
+                "value": "ff6ee1e5-c1e0-471d-bcb1-0e9d446b734e"
               },
               "Entity Alias": {
                 "value": "us"
@@ -5325,7 +5330,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "b127e3db-8ad3-4178-a074-bde9093c854c"
+                "value": "57d531a1-a844-4dac-850c-16c1d05a0d72"
               },
               "Entity Alias": {
                 "value": "az"
@@ -5341,7 +5346,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "df13ef20-fef9-4451-98e2-acfc765ae3cb"
+                "value": "6a5c014e-0602-443c-bbf7-2172e11d2ca8"
               },
               "Entity Alias": {
                 "value": "or"
@@ -5357,7 +5362,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "d8da4eea-a018-4c71-af19-920ab9dc7720"
+                "value": "4e3c55f1-0b0c-43f9-bc8c-1b44a0191a66"
               },
               "Entity Alias": {
                 "value": "or"
@@ -5380,7 +5385,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_3e2780f2-1e19-4931-a0a6-9c4f7878188b"
+            "example": "cust_a2f37eea-03d1-4e4f-838e-a12c0641d434"
           },
           {
             "name": "orderId",
@@ -5391,7 +5396,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "d22a0f64-077b-4c12-9a2e-517b11ae89c4"
+            "example": "9dfd708a-e74d-41e9-ae5b-34ce6c80cd16"
           },
           {
             "name": "orderLineId",
@@ -5402,7 +5407,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "09a0da13-f187-4336-8102-18cfd2cc8372"
+            "example": "dd6a18cd-0ec0-46b9-8742-7c01f44cfcb9"
           },
           {
             "name": "expand",
@@ -5508,7 +5513,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "2df094a1-e25b-491f-b1f9-3518c7fb99a0"
+                "value": "d2dd4fbf-ee23-47cd-b67e-810c83a0878c"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -5523,7 +5528,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "e164d937-4b7b-4690-b002-3925b3a8ce63"
+            "example": "6475331f-4d55-4089-a2f0-9d17eededf25"
           },
           {
             "name": "Billing-Country",
@@ -5534,7 +5539,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "10394086-3c51-4413-b3ab-a04721b8e57a"
+                "value": "673cc10a-5364-49cb-85ae-40e664af24d1"
               },
               "Entity Alias": {
                 "value": "us"
@@ -5550,7 +5555,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "7d15b58a-f927-4291-8488-16172caf6fb6"
+                "value": "350d7a6c-6987-4caf-a9b1-263d696eac43"
               },
               "Entity Alias": {
                 "value": "az"
@@ -5566,7 +5571,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "b61bbfd9-6a7a-4234-be4a-e883fd6fcc7a"
+                "value": "a1dc368c-cea8-4374-b199-8584e7ff0c7e"
               },
               "Entity Alias": {
                 "value": "us"
@@ -5582,7 +5587,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "9517ab44-164d-4a3b-a495-fddcf7938d89"
+                "value": "b28ec65d-4368-43cb-9206-7f0afe6b151f"
               },
               "Entity Alias": {
                 "value": "az"
@@ -5598,7 +5603,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "6e9553a9-e8ee-4337-bf9b-486653c42213"
+                "value": "1e22e970-1692-43f5-bebb-0065b1473cb7"
               },
               "Entity Alias": {
                 "value": "or"
@@ -5614,7 +5619,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "dcbfd84d-a163-4f60-8167-1646d081547b"
+                "value": "b032d87a-1064-401f-84c4-db422af1b27c"
               },
               "Entity Alias": {
                 "value": "or"
@@ -5637,7 +5642,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_86f03275-34c8-45a1-bd2b-24f09cdcb4bc"
+            "example": "cust_1458a96c-5adf-4ae2-8ae0-683dab3a9d25"
           },
           {
             "name": "orderId",
@@ -5648,7 +5653,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "095654f9-a3b6-4f1f-9c62-6deb994e5c33"
+            "example": "5aed9f05-5400-4ae9-91df-1f523c3e64bd"
           },
           {
             "name": "expand",
@@ -5743,7 +5748,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "c2fdf7ca-8c3d-4b26-9c6c-8ef4a0a2b380"
+                "value": "226a50be-121c-4a8c-8594-2bae570cf01e"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -5758,7 +5763,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "5b31805c-b3df-4b06-b4aa-c93eb91e4810"
+            "example": "5ec92f23-f0a6-4f81-9dc4-e2d0d77ba6db"
           },
           {
             "name": "Billing-Country",
@@ -5769,7 +5774,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "c2f5508a-9a10-40f4-acb2-77d43fe9c6ba"
+                "value": "5cd18e9a-fa6b-4422-8961-984985ba43c0"
               },
               "Entity Alias": {
                 "value": "us"
@@ -5785,7 +5790,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "bde9756b-7e7f-40f7-890e-565108e1a2b2"
+                "value": "960cb9d7-cab4-4e66-af2d-dda9986000ad"
               },
               "Entity Alias": {
                 "value": "az"
@@ -5801,7 +5806,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "bcf25032-782e-4c32-9229-49901da6e3cb"
+                "value": "dbe925c3-7008-48d5-a8c3-fdf7cc1b1bf6"
               },
               "Entity Alias": {
                 "value": "us"
@@ -5817,7 +5822,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "fd53f593-f862-496b-8c23-277418b5869b"
+                "value": "ccc6b3ac-0316-4a1e-88eb-d580790ad912"
               },
               "Entity Alias": {
                 "value": "az"
@@ -5833,7 +5838,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "5195f6c1-1d29-40f5-9147-7feb91ff765d"
+                "value": "f3f53d41-c0cc-4e4b-b1ed-0d3ac070790a"
               },
               "Entity Alias": {
                 "value": "or"
@@ -5849,7 +5854,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "d971fc06-2a3a-40e5-9255-b2af569d298b"
+                "value": "8bfe35cb-9cc1-4480-8a92-75cfb72d1992"
               },
               "Entity Alias": {
                 "value": "or"
@@ -5872,7 +5877,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_cd1cf351-7084-411d-9d2c-dbe524f247f9"
+            "example": "cust_06835d92-c787-4db5-b19b-7b472e3ff7c9"
           },
           {
             "name": "orderId",
@@ -5883,7 +5888,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "ef5cee8d-43d6-4c5f-98a5-11334089003f"
+            "example": "b9164a65-b779-4b45-9ca9-2dd7f4e4fe8d"
           },
           {
             "name": "expand",
@@ -5992,7 +5997,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "6072e399-bc29-4d80-8c31-eb91ceb60e6d"
+                "value": "d365d5f1-cbae-4748-a009-b31f7b58ba23"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -6007,7 +6012,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "1cf1abfe-401b-4ef8-8899-2a5dbf668719"
+            "example": "ce46716c-6fd2-49da-8f32-1d4df4c9fabb"
           },
           {
             "name": "Billing-Country",
@@ -6018,7 +6023,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "1b4e23b8-35f8-4827-9d56-10423799c3a0"
+                "value": "7fc4c42f-0051-4213-be9f-656deeee7901"
               },
               "Entity Alias": {
                 "value": "us"
@@ -6034,7 +6039,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "3843b678-514e-4f47-b09c-98bfae4d2f8d"
+                "value": "de050f40-3a52-4590-997a-dcb60f1a7021"
               },
               "Entity Alias": {
                 "value": "az"
@@ -6050,7 +6055,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "eb2227a1-f961-41ff-854d-7527719ba216"
+                "value": "31b85c6f-6a68-44fb-bcbb-0cad8174db8a"
               },
               "Entity Alias": {
                 "value": "us"
@@ -6066,7 +6071,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "2bb8ff7d-27d6-42f9-bb2a-91f72385ee84"
+                "value": "e3a7b8ae-5ecf-44e1-907c-162a9ed11596"
               },
               "Entity Alias": {
                 "value": "az"
@@ -6082,7 +6087,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "7deab507-c02c-47f1-a4be-125142ee4030"
+                "value": "b9cbca7f-cc3c-48b8-a3aa-f1345ff2f1b6"
               },
               "Entity Alias": {
                 "value": "or"
@@ -6098,7 +6103,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "cf71c46e-0436-47c1-a6de-623865f7d3f7"
+                "value": "ff388afc-27b6-41b0-9967-181d51f5c5e7"
               },
               "Entity Alias": {
                 "value": "or"
@@ -6121,7 +6126,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_e627e8ac-4cc1-4459-b353-63d412b18c24"
+            "example": "cust_f1464335-0327-43ec-899a-634826bb04bc"
           },
           {
             "name": "expand",
@@ -6206,7 +6211,7 @@
         "tags": [
           "Payment Method"
         ],
-        "description": "Fetches a payment method by ID or alias.",
+        "summary": "Get a Payment Method by ID or Alias",
         "parameters": [
           {
             "name": "Api-Key",
@@ -6227,7 +6232,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "5f14b7bc-0aff-4682-9489-a59b44e76a86"
+                "value": "ca33786a-fd2b-4c53-8d5d-b6c6006326ef"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -6242,7 +6247,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "4ecd0dfc-5c2a-45f1-b6fe-bc945bc6336f"
+            "example": "94e1b0f7-788a-48e3-bba6-b1fa963ec91a"
           },
           {
             "name": "Billing-Country",
@@ -6253,7 +6258,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "c82fa08c-5dc4-4fba-9386-c6a35f7955b4"
+                "value": "bf10a16b-d9bc-4390-9184-6b363b47f493"
               },
               "Entity Alias": {
                 "value": "us"
@@ -6269,7 +6274,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "0befeb75-c691-44b0-ba90-f2534999048d"
+                "value": "6479ecad-67be-4a08-810c-9ac9fe2f7e35"
               },
               "Entity Alias": {
                 "value": "az"
@@ -6285,7 +6290,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "a63d54ae-bb6e-4f85-9df7-a08baf66e34e"
+                "value": "954b1c81-9bdf-457b-bdcc-46912217c4df"
               },
               "Entity Alias": {
                 "value": "us"
@@ -6301,7 +6306,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "888ac65e-b064-4f3f-b1e2-63b0b3e865c5"
+                "value": "6a89aca1-62f8-4389-bb81-ddd44e67fa7b"
               },
               "Entity Alias": {
                 "value": "az"
@@ -6317,7 +6322,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "2698c850-9156-4502-b41b-289cd4d59104"
+                "value": "4255795a-84c0-473a-b6b1-b68aa0cd960f"
               },
               "Entity Alias": {
                 "value": "or"
@@ -6333,7 +6338,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "31f89389-f818-42c1-99b0-9c5a7808238b"
+                "value": "bec20051-a2e5-4524-b6d3-5cdd17225e8e"
               },
               "Entity Alias": {
                 "value": "or"
@@ -6356,7 +6361,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_311b7db5-d754-4abd-bec8-d7bca880933a"
+            "example": "cust_1e4da218-4741-4b97-9fcd-8433d48c399c"
           },
           {
             "name": "idOrAlias",
@@ -6368,7 +6373,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "38390c8b-b89c-48b0-9891-3c6c3984d275"
+                "value": "a96969c8-bcf2-4ccd-8455-8baaea836480"
               },
               "Entity Alias": {
                 "value": "alias"
@@ -6449,7 +6454,7 @@
         "tags": [
           "Payment Method"
         ],
-        "description": "Fetches all the payment methods belonging to a given store, optionally filtered by the supplied filter argument.",
+        "summary": "Gets all the Payment Methods in a Store",
         "parameters": [
           {
             "name": "Api-Key",
@@ -6470,7 +6475,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "c23f6d7c-15d2-47bc-95ab-a8fe37ddc41e"
+                "value": "23e3e0fc-508d-40e9-93ba-91e13a284828"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -6485,7 +6490,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "092758e1-997b-42f8-8dc1-27e910d0ca6f"
+            "example": "b282cc9f-068c-4007-8c98-e52b19b79335"
           },
           {
             "name": "Billing-Country",
@@ -6496,7 +6501,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "8b39d770-a532-4a41-be5e-c67473302a21"
+                "value": "3bdf4170-2968-4aeb-8f00-cf52b4dd5bba"
               },
               "Entity Alias": {
                 "value": "us"
@@ -6512,7 +6517,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "ebd41b93-1c3e-474d-a5fb-1870b36dc6e1"
+                "value": "84393967-3073-4d82-ad56-4b90f85e82e8"
               },
               "Entity Alias": {
                 "value": "az"
@@ -6528,7 +6533,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "4fb62306-1538-4f3d-8155-f1a98b8618aa"
+                "value": "23982ddb-b477-4fb1-8141-6f26cb947225"
               },
               "Entity Alias": {
                 "value": "us"
@@ -6544,7 +6549,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "86152cad-f387-4df6-aa3a-9cca58265baf"
+                "value": "ea224724-956a-4e44-a167-7268ae08df06"
               },
               "Entity Alias": {
                 "value": "az"
@@ -6560,7 +6565,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "07296a14-c761-4b42-950b-08dcc15e3337"
+                "value": "1a7fb28d-86a2-4e99-ac37-594f174fe4d5"
               },
               "Entity Alias": {
                 "value": "or"
@@ -6576,7 +6581,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "f42f3398-f697-46e4-9f15-376fc367a5f3"
+                "value": "97a64d11-62b7-4c9b-bea8-0d4b51fd0c30"
               },
               "Entity Alias": {
                 "value": "or"
@@ -6599,7 +6604,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_4ed75b12-6475-49fc-b30f-cca70da445ed"
+            "example": "cust_7435eb0e-90e9-4f37-8af6-395e2c728612"
           },
           {
             "name": "filter",
@@ -6694,7 +6699,7 @@
         "tags": [
           "Product"
         ],
-        "description": "Fetches one or more products by product reference, including price and stock information.",
+        "summary": "Gets one or more Products by product reference",
         "parameters": [
           {
             "name": "Api-Key",
@@ -6715,7 +6720,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "0ebce886-3334-4d58-a73b-ec4991373ca5"
+                "value": "a0b77332-f50b-4d2b-9dff-002db5cd74ab"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -6730,7 +6735,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "5ec78bf7-1a14-47c9-9dbc-ed5461cfc5e1"
+            "example": "4c8df918-395e-4703-aff6-b497d7f8cef9"
           },
           {
             "name": "Billing-Country",
@@ -6741,7 +6746,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "eae376cf-07e3-4610-9535-386c213358f8"
+                "value": "81990532-bec4-4c71-a4ae-9108c1a59ea3"
               },
               "Entity Alias": {
                 "value": "us"
@@ -6757,7 +6762,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "ff9a78cc-f576-47d9-9007-7968922264f9"
+                "value": "ad013e08-3598-4b50-9ba9-a5db0bebea98"
               },
               "Entity Alias": {
                 "value": "az"
@@ -6773,7 +6778,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "d8bee33e-0aeb-4f50-8ecf-b6c5863b3018"
+                "value": "7d5b50b5-2da4-4750-a187-5dfb02974ccc"
               },
               "Entity Alias": {
                 "value": "us"
@@ -6789,7 +6794,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "a91f7f20-aa98-41d4-acd6-09c82d70800f"
+                "value": "2037bbf2-01d2-4e6e-b167-1f64f66be2bf"
               },
               "Entity Alias": {
                 "value": "az"
@@ -6805,7 +6810,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "b026b55d-3da2-4fa4-99b1-86fb4c0f0fbe"
+                "value": "3e1c6957-7a6d-4dad-8d18-577feb137b41"
               },
               "Entity Alias": {
                 "value": "or"
@@ -6821,7 +6826,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "fd88bcc9-3c7c-4722-af04-2de252dc7141"
+                "value": "14eed28c-c4cd-49d3-bfc3-0b6a3d12cb02"
               },
               "Entity Alias": {
                 "value": "or"
@@ -6844,7 +6849,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_b8a5c589-b3d5-4de2-b914-fcdd53ebd02a"
+            "example": "cust_f6172617-3bca-4fe8-8b51-5c51911cd4fa"
           },
           {
             "name": "productReference",
@@ -6855,10 +6860,10 @@
             },
             "examples": {
               "A product": {
-                "value": "eb9e6c1e-8221-42f9-ac53-2f0505cd5e9e"
+                "value": "234d6a59-a543-4a98-820a-cc33a838b906"
               },
               "A product variant": {
-                "value": "4e303479-2743-4db8-8db2-65876a80e494:aa5a077d-9a7d-4fcd-ab0e-543f024ed5bc"
+                "value": "b23c3d3d-0f73-42d0-a272-3d0d53385e45:2a49cf68-5fc6-4988-8f4a-7520957f7367"
               }
             }
           },
@@ -6939,7 +6944,7 @@
         "tags": [
           "Shipping Method"
         ],
-        "description": "Fetches a shipping method by ID or alias.",
+        "summary": "Get a Shipping Method by ID or Alias",
         "parameters": [
           {
             "name": "Api-Key",
@@ -6960,7 +6965,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "aa8f7051-62fb-477b-a944-f80c399d3e22"
+                "value": "778a1470-13bc-45db-8a88-43af90d75bc0"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -6975,7 +6980,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "86c4a979-38c0-4a77-923f-8cac3e736873"
+            "example": "f8b49dd3-e5c0-4ad4-b4b3-5ff969bac472"
           },
           {
             "name": "Billing-Country",
@@ -6986,7 +6991,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "7e4d52b2-593c-4404-845a-2f539e53d9e4"
+                "value": "29cd2584-f38b-4247-bc33-e8b6af8b53bc"
               },
               "Entity Alias": {
                 "value": "us"
@@ -7002,7 +7007,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "4d1c3f94-8e09-457e-ba63-c8bd714e7f92"
+                "value": "d0ddef37-69cc-4147-8915-383ea6af1701"
               },
               "Entity Alias": {
                 "value": "az"
@@ -7018,7 +7023,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "4a808a9a-2ecc-4485-94f0-b239edab6614"
+                "value": "a4f60a50-24c7-495e-96e5-c121e8b683f8"
               },
               "Entity Alias": {
                 "value": "us"
@@ -7034,7 +7039,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "2f0e5534-aada-4528-bca0-a9ee789f5aa3"
+                "value": "999d364e-b7d2-4246-91da-684acafd7c7a"
               },
               "Entity Alias": {
                 "value": "az"
@@ -7050,7 +7055,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "fa219a8f-41bc-4e91-918a-3859930978ce"
+                "value": "a0a2b192-b273-4a60-834c-e38e626879ac"
               },
               "Entity Alias": {
                 "value": "or"
@@ -7066,7 +7071,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "5c3aa018-4ead-41c3-9fdd-957502d5cc54"
+                "value": "c0f06b44-c047-4bbd-8c06-63e8c847b9d0"
               },
               "Entity Alias": {
                 "value": "or"
@@ -7089,7 +7094,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_db32d126-3513-44c1-9b44-18feb07e784d"
+            "example": "cust_c83315cb-bb0c-4332-bd16-19c065b03dc7"
           },
           {
             "name": "idOrAlias",
@@ -7101,7 +7106,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "b186ead3-f5b9-4b48-8e49-f130f11cb58e"
+                "value": "f3c33e64-f744-480c-a47c-73e4a9f57aab"
               },
               "Entity Alias": {
                 "value": "alias"
@@ -7182,7 +7187,7 @@
         "tags": [
           "Shipping Method"
         ],
-        "description": "Fetches all the shipping methods belonging to a given store, optionally filtered by the supplied filter argument.",
+        "summary": "Gets all the Shipping Methods in a Store",
         "parameters": [
           {
             "name": "Api-Key",
@@ -7203,7 +7208,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "f60dbc39-1291-4ad4-a829-c87a7a460f8e"
+                "value": "e82dfc49-a598-45bf-a68f-c31a01ce0fc4"
               },
               "Entity Alias": {
                 "value": "blendid"
@@ -7218,7 +7223,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "520b6253-e087-4c0f-8be0-4df827bebc22"
+            "example": "4d8223bb-dbfb-427b-86eb-a5e160b787bc"
           },
           {
             "name": "Billing-Country",
@@ -7229,7 +7234,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "746c74f6-6f5c-4a31-a9fd-890a0dc74e12"
+                "value": "5cf0361d-bc28-420e-aa86-0aafc71fa138"
               },
               "Entity Alias": {
                 "value": "us"
@@ -7245,7 +7250,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "279b6a71-56db-4d18-8f0a-1d867e8fbf4f"
+                "value": "23ea69d4-8611-49b8-9c0d-4c88b576b1c2"
               },
               "Entity Alias": {
                 "value": "az"
@@ -7261,7 +7266,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "4ae8c1f5-3e25-493d-8966-148c4dd4ad10"
+                "value": "ffcae352-ba48-4f06-bc13-0f928d6090ad"
               },
               "Entity Alias": {
                 "value": "us"
@@ -7277,7 +7282,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "c083bc15-7981-4c72-b2b9-aee94b663533"
+                "value": "8783d175-8aa2-4b70-ae8b-a737560be240"
               },
               "Entity Alias": {
                 "value": "az"
@@ -7293,7 +7298,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "ea8728d5-e6b8-48e3-97f4-442d19eedeac"
+                "value": "8a05c354-5a42-4fd4-a39e-3ff0f8d69497"
               },
               "Entity Alias": {
                 "value": "or"
@@ -7309,7 +7314,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "daac7355-9d79-4bed-b81c-0e1065701e23"
+                "value": "140f0ec7-ec92-4cdd-8322-b9ca47a1453f"
               },
               "Entity Alias": {
                 "value": "or"
@@ -7332,7 +7337,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_c0a74014-33df-4556-8eab-c10579b9e5af"
+            "example": "cust_be619822-ef5d-492f-adac-89e7a2784f89"
           },
           {
             "name": "filter",
@@ -7427,7 +7432,7 @@
         "tags": [
           "Store"
         ],
-        "description": "Fetches a store by ID or alias.",
+        "summary": "Gets a Store by ID or Alias",
         "parameters": [
           {
             "name": "Api-Key",
@@ -7446,7 +7451,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "example": "00fc49b6-605c-4b7c-bd9e-fe290c27271f"
+            "example": "43cbe2da-7456-42e8-87a0-73d74bf48245"
           },
           {
             "name": "Billing-Country",
@@ -7457,7 +7462,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "05b33dcd-974d-4ad0-9924-205a1b1b463c"
+                "value": "8a0882d2-c3f0-4c4c-ad28-82baed62d492"
               },
               "Entity Alias": {
                 "value": "us"
@@ -7473,7 +7478,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "b349b135-0f4a-4d26-afcb-3bfef93ec484"
+                "value": "ef5474d2-3883-4f21-bcc4-ca1da71f8fb2"
               },
               "Entity Alias": {
                 "value": "az"
@@ -7489,7 +7494,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "9360eb08-b8df-4786-a1be-bcd9603c0e8a"
+                "value": "b6368c93-4110-4527-a0ee-f7e4e9039b15"
               },
               "Entity Alias": {
                 "value": "us"
@@ -7505,7 +7510,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "6b1c19e0-0f03-4960-b3b4-8a6363fac458"
+                "value": "bb2727ba-f876-4909-abed-b6ed86c58ec9"
               },
               "Entity Alias": {
                 "value": "az"
@@ -7521,7 +7526,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "c9769bc9-860c-4920-bb03-17c12fc52225"
+                "value": "a4fcf00f-7546-42fa-8a09-09512dd7fb92"
               },
               "Entity Alias": {
                 "value": "or"
@@ -7537,7 +7542,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "45daa76e-2a88-4eab-8a86-bbb52660ed72"
+                "value": "7fe1a620-40f5-462f-95fe-b6867bc0c0e5"
               },
               "Entity Alias": {
                 "value": "or"
@@ -7560,7 +7565,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "cust_7c0fe13d-0cd1-4406-b308-b6ed76834bfe"
+            "example": "cust_3f24f0a0-3a86-4e4e-a73e-19642c5563d6"
           },
           {
             "name": "idOrAlias",
@@ -7572,7 +7577,7 @@
             },
             "examples": {
               "Entity ID": {
-                "value": "aad021d5-f2c7-44b9-8514-2c32ca184564"
+                "value": "11a369b0-a79c-4cba-9f33-3562e61926e8"
               },
               "Entity Alias": {
                 "value": "alias"
