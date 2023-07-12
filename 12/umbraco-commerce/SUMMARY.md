@@ -57,4 +57,5 @@
 ## Reference
 
 * [Storefront API](storefront-api/README.md)
+  * [Endpoints](storefront-api/endpoints/README.md)
 * [Go behind the scenes](reference/go-behind-the-scenes.md)
