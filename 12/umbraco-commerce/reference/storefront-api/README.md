@@ -537,3 +537,75 @@ The Storefront API is broken down into a number of endpoints grouped by resource
 You can access a Swagger document for the Storefront API at `{yourdomain}/umbraco/swagger`, selecting `Umbraco Commerce Storefront API` from the definitions dropdown in the top right. From here you can see a full list of supported APIs, the parameters they accept and the expected payloads and responses.
 
 ![Storefront API Swagger](../../media/uc_storefront_api_swagger.png)
+
+## Value Converters
+
+As Umbraco Commerce uses content nodes as products, the Storefront API comes with some replacement value converters that automatically extend the default value converter functionality to return Storefront entities when accessed through the Content Delivery API. You don't need to do anything to enable these.
+
+* **Store Picker** - Returns a Store "Reference" by default, or a complete Store response object if the store picker property is being expanded.
+* **Store Entity Picker** - Returns an entity "Reference" by default, or a complete entity response object if the store entity picker property is being expanded.
+* **Price** - Returns a price for the product based on session information passed through in headers. See the ["Session" concept detailed above](#concepts).
+* **Stock** - Returns the stock level of the given product.
+* **Variants** - See notes on the [variants value converter](#variants-value-converter) below.
+
+### Variants Value Converter
+
+To help with common scenarios when working with variants, the Variants value converter will return a series of data items used when building a relevant UI.
+
+```json
+{
+    attributes: [
+        {
+            alias: "color",
+            name: "Color",
+            values: [
+                {
+                    alias: "red",
+                    name: "Red"
+                },
+                {
+                    alias: "blue",
+                    name: "Blue"
+                }
+            ]
+        },
+        {
+            alias: "size",
+            name: "Size",
+            values: [
+                {
+                    alias: "md",
+                    name: "Medium"
+                },
+                {
+                    alias: "lg",
+                    name: "Large"
+                }
+            ]
+        }
+    ],
+    items: [
+        {
+            attributes: {
+                color: red,
+                size: md
+            },
+            isDefault: true,
+            content: { }
+        },
+        {
+            attributes: {
+                color: blue,
+                size: lg
+            },
+            isDefault: false,
+            content: { }
+        }
+    ],
+    variantContentUrl: "https://{your_domain}/umbraco/delivery/api/v1/content/item/8df5c8bd-b524-4513-805a-c119fc8090e3/variant"
+}
+```
+
+* `attributes` will contain a list of "in use" attributes which means there is at least one variant content item that makes use of that attribute. These should be used to build the attribute options UI.
+* `items` returns a list of variant items. By default this will just return the attribute combinations, and whether it is the default combination but it's content value will be empty. The content value can be populated by expanding the variants property through the Delivery API, however it's important to know this could return a lot of data and be quite intensive. Instead it is prefered to return the none expanded value and use the `variantContentUrl` to fetch individual content items as they are requested. The `items` collection should also be used to check if a combination exists as whilst the root level `attributes` collection contains all in use attributes, it doesn't mean every possible combination of those attributes exists so you can use the `items` collection to validate a combination.
+* `variantContentUrl` as the URL to specialized Delivery API route that can return a single variant items content based on a passed in attribute combination. 
