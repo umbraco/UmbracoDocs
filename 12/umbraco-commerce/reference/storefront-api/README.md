@@ -78,7 +78,7 @@ Before exploring the API endpoints detailed below, there are a few concepts to k
 
 <summary>Session</summary>
 
-When working with Umbraco Commerce's C# Api, Umbraco Commerce will normally keep track of a series of items for you, such as the current Order ID or the current Language, which it tracks in a cookie. When working in a headless manor however we can no longer rely on cookies for this behaviour and so it becomes the implementors responsibility to remember these items and pass them as Headers to the various endpoints that may need to use them for context.
+When working with Umbraco Commerce's C# Api, Umbraco Commerce will normally keep track of a series of items for you, such as the current Order ID or the current Language, which it tracks in a cookie. When working in a headless manor however we can no longer rely on cookies for this behaviour and so it becomes the implementors responsibility to remember these items and pass them as Headers to the endpoints that may need to use them for context.
 
 The following is a list of supported headers used for session management:
 
@@ -221,7 +221,7 @@ As well as expanding explicit properties, the Storefront API supports shortcut e
 
 #### $prices
 
-Prices in Umbraco Commerce can contain a lot of meta data, such as listing applied discounts/adjustments and all values including or excluding those discounts. These are useful when displaying a full order breakdown, but when just needing to present an orders total value, are not necesarry. By default, the Storefront API will only return the final `value` property of a price object, but should you wish to receive this full pricing breakdown you can pass the `$prices` shortcut key to expand all price values to include this extra meta data.
+Prices in Umbraco Commerce can contain a lot of meta data, such as listing applied discounts/adjustments and all values including or excluding those discounts. These are useful when displaying a full order breakdown, but when only needing to present an orders total value, are not necesarry. By default, the Storefront API will only return the final `value` property of a price object, but should you wish to receive this full pricing breakdown you can pass the `$prices` shortcut key to expand all price values to include this extra meta data.
 
 **Request**
 
@@ -306,9 +306,9 @@ GET /umbraco/commerce/storefront/api/v1/order/af697207-d370-4aee-824c-15711d43a9
 
 <summary>Fields</summary>
 
-A common pitfall of REST APIs is the problem of over-fetching, which is where an endpoint returns more information that you need. To help with this the Storefront API supports the passing of a `fields` which allows you to define exactly which properties of an object you wish to return, reducing the payload size significantly.
+A common pitfall of REST APIs is the problem of over-fetching, which is where an endpoint returns more information that you need. To help with this the Storefront API supports the passing of a `fields` which allows you to define exactly which properties of an object you wish to return, reducing the payload size.
 
-For example, when implementing a cart count feature to show the total number of items in a shopping cart, rather than fetching an entire order just to read it's `totalQuantity` field:
+For example, when implementing a cart count feature to show the total number of items in a shopping cart, rather than fetching an entire order for a single `totalQuantity` field, we can return only that field:
 
 **Request**
 
@@ -607,5 +607,5 @@ To help with common scenarios when working with variants, the Variants value con
 ```
 
 * `attributes` will contain a list of "in use" attributes which means there is at least one variant content item that makes use of that attribute. These should be used to build the attribute options UI.
-* `items` returns a list of variant items. By default this will just return the attribute combinations, and whether it is the default combination but it's content value will be empty. The content value can be populated by expanding the variants property through the Delivery API, however it's important to know this could return a lot of data and be quite intensive. Instead it is prefered to return the none expanded value and use the `variantContentUrl` to fetch individual content items as they are requested. The `items` collection should also be used to check if a combination exists as whilst the root level `attributes` collection contains all in use attributes, it doesn't mean every possible combination of those attributes exists so you can use the `items` collection to validate a combination.
+* `items` returns a list of variant items. By default this will return the attribute combinations, and whether it is the default combination but it's content value will be empty. The content value can be populated by expanding the variants property through the Delivery API, however it's important to know this could return a lot of data and be intensive. Instead it is prefered to return the none expanded value and use the `variantContentUrl` to fetch individual content items as they are requested. The `items` collection should also be used to check if a combination exists as whilst the root level `attributes` collection contains all in use attributes, it doesn't mean every possible combination of those attributes exists so you can use the `items` collection to validate a combination.
 * `variantContentUrl` as the URL to specialized Delivery API route that can return a single variant items content based on a passed in attribute combination. 
