@@ -85,6 +85,7 @@ Upgrade tutorial Umbraco 9 to 10 on Cloud
   * Umbraco.Forms
   * Umbraco.Deploy.Forms
   * Umbraco.Cloud.Identity.Cms
+  * Umbraco.Cloud.StorageProviders.AzureBlob
 * Checkmark the `Microsoft.Extensions.DependencyInjection.Abstractions` package if it appears in the list.
 * Select **Update**.
 
