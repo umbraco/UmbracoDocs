@@ -25,9 +25,7 @@ Integrations provide functionality via a third-party service's API, whereas pack
 
 ## Umbraco Commercial Products
 
-
-
-Umbraco makes available three licensed add-ons that are available for purchase. They each have their dedicated documentation area:
+Umbraco makes available four licensed add-ons that are available for purchase. They each have their dedicated documentation area:
 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Umbraco Forms</strong></td><td>Extend your Umbraco CMS website with custom forms in all shapes and sizes.</td><td><a href="https://docs.umbraco.com/umbraco-forms">https://docs.umbraco.com/umbraco-forms</a></td><td><a href=".gitbook/assets/forms7.png">forms7.png</a></td></tr><tr><td><strong>Umbraco Deploy</strong></td><td>Synchronize content and code changes between your Umbraco website environments.</td><td><a href="https://docs.umbraco.com/umbraco-deploy">https://docs.umbraco.com/umbraco-deploy</a></td><td><a href=".gitbook/assets/paperplane7.png">paperplane7.png</a></td></tr><tr><td><strong>Umbraco Workflow</strong></td><td>Structure content reviews and approval flows for Content Editors on your website.</td><td><a href="https://docs.umbraco.com/umbraco-workflow">https://docs.umbraco.com/umbraco-workflow</a></td><td><a href=".gitbook/assets/Workflow7.png">Workflow7.png</a></td></tr><tr><td><strong>Umbraco Commerce</strong></td><td>Setup shop within a familiar structure and interface that is the Umbraco CMS with Umbraco Commerce.</td><td><a href="http://localhost:5000/o/vHdmkfI8smZW50A5yIZD/s/3rCehcwXc4nbpeGqcI2f/">12.commerce.latest (RC)</a></td><td><a href=".gitbook/assets/Untitled presentation.png">Untitled presentation.png</a></td></tr></tbody></table>
 
@@ -39,9 +37,15 @@ The marketplace is available at [marketplace.umbraco.com](https://marketplace.um
 
 Within the [Marketplace section of the documentation](marketplace/introduction.md), you'll find details aimed at package developers looking to list their Umbraco CMS extensions and integrations.
 
+## Umbraco Packages
+
+We create and support open-source packages designed to improve the experience of creating integrations and developing Umbraco solutions as a DXP.
+
+Within the packages section of the documentation you'll find information on using a component called [Authorized Services](packages/authorized-services.md). This package is designed for the purpose of simplifying custom integrations with third-party services that use a OAuth flow for authentication and authorization.
+
 ## Umbraco Integrations
 
-As well as the commercial products, Umbraco HQ develops and makes available open-source integrations. These add functionality to the Umbraco CMS to support working with third-party services.
+Finally, Umbraco HQ develops and makes available open-source integrations. These add functionality to the Umbraco CMS to support working with third-party services.
 
 These integrations are helpful starting points for anyone looking to integrate such services into their Umbraco solution.
 
@@ -54,8 +58,4 @@ Source code and issue trackers are found in the following GitHub repositories:
 
 Within the [Integrations section of the documentation](integrations/categories.md), you'll find details on installing and working with the integration packages developed by Umbraco HQ.
 
-## Umbraco Packages
 
-Finally, we create and support open-source packages designed to improve the experience of creating integrations and developing Umbraco solutions as a DXP.
-
-Within the packages section of the documentation you'll find information on using a component called [Authorized Services](packages/authorized-services.md). This package is designed for the purpose of simplifying custom integrations with third-party services that use a OAuth flow for authentication and authorization.

@@ -21,6 +21,10 @@ You also need to make sure that the packages that you are using are available on
 {% hint style="info" %}
 We strongly recommend having at least **2 environments** on the new Umbraco project.
 
+{% hint style="info" %}
+If your Umbraco 8 site is using Umbraco Forms, make sure to configure it to store data in the database, before beginning this tutorial
+[Follow the guide for migrating Umbraco Forms data to the database.](https://docs.umbraco.com/umbraco-forms/developer/forms-in-the-database)
+
 Should something fail during the migration, the Development environment can be removed and re-added to start over on a clean slate.
 {% endhint %}
 
@@ -33,8 +37,8 @@ A video tutorial guiding you through the steps of upgrading from version 8 to th
 ## Step 1: Content Migration
 
 1. Create a backup of the database from your Umbraco 8 project using the [database backup guide](../../databases/backups.md).
-   * Alternatively you can clone the environment down and take a backup of the local Database.
    * Make sure to **restore both content and media** from your Cloud environment.
+   * Alternatively you can clone the environment down and take a backup of the local Database after restoring.
 2. Import the database backup into SQL Server Management Studio.
 3. Clone down the **Development** environment from the new Cloud project.
 4. Test the project and make sure to log in to the backoffice.
