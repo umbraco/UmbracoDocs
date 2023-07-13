@@ -44,7 +44,7 @@ Pipeline tasks are [registered via the IUmbracoCommerceBuilder](umbraco-commerce
 ```csharp
 public static class UmbracoCommerceUmbracoBuilderExtensions
 {
-    public static IUmbracoCommerceBuilder AddMyPipelineTasks(IUmbracoCommerceBuilder builder)
+    public static IUmbracoCommerceBuilder AddMyPipelineTasks(this IUmbracoCommerceBuilder builder)
     {
         // Add our custom pipeline tasks
         builder.WithSendEmailPipeline()
@@ -61,7 +61,7 @@ You can also control the order of when Pipeline tasks run, before or after anoth
 ```csharp
 public static class UmbracoCommerceUmbracoBuilderExtensions
 {
-    public static IUmbracoCommerceBuilder AddMyPipelineTasks(IUmbracoCommerceBuilder builder)
+    public static IUmbracoCommerceBuilder AddMyPipelineTasks(this IUmbracoCommerceBuilder builder)
     {
         // Register AddCustomAttachmentTask to execute before the SendSmtpEmail handler
         builder.WithSendEmailPipeline()
