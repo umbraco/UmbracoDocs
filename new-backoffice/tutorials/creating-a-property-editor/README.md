@@ -13,7 +13,7 @@ This guide explains how to set up a property editor, hook it into Umbraco's Data
 The steps we will go through in part 1 are:
 
 * ​[Setting up a Plugin](./#1.-setting-up-a-plugin)​
-* ​[Writing basic web components](./#2.-writing-basic-web-components)​
+* ​[Creating a simple Web Component​](./#2.-creating-a-simple-web-component)
 * ​[Registering the Data Type in Umbraco](./#3.-registering-the-data-type-in-umbraco)
 * [Adding styling and setting up events in Web Components](./#4.-adding-styling-and-setting-up-events-in-the-web-components)
 
@@ -42,25 +42,25 @@ Add the following code
 
 ```json
 {
-  "$schema": "../../umbraco-package-schema.json",
-  "name": "My.AwesomePackage",
-  "version": "0.1.0",
-  "extensions": [
-    {
-      "type": "propertyEditorUi",
-      "alias": "My.Suggestions",
-      "name": "My Suggestions",
-      "js": "/App_Plugins/Suggestions/dist/my-suggestions.js",
-      "elementName": "my-property-editor-ui-suggestions",
-      "meta": {
-        "label": "My Suggestions",
-        "pathname": "my-suggestions",
-        "icon": "document",
-        "group": "common",
-        "propertyEditorModel": "Umbraco.JSON"
-      }
-    }
-  ]
+    "$schema": "../../umbraco-package-schema.json",
+    "name": "My.AwesomePackage",
+    "version": "0.1.0",
+    "extensions": [
+        {
+            "type": "propertyEditorUi",
+            "alias": "My.PropertyEditorUi.Suggestions",
+            "name": "My Suggestions",
+            "js": "/App_Plugins/Suggestions/my-property-editor-ui-suggestions.js",
+            "elementName": "my-property-editor-ui-suggestions",
+            "meta": {
+                "label": "My Suggestions",
+                "pathname": "my-suggestions",
+                "icon": "umb:list",
+                "group": "common",
+                "propertyEditorSchemaAlias": "Umbraco.TextBox"
+            }
+        }
+    ]
 }
 ```
 
@@ -68,43 +68,28 @@ Add the following code
 Make sure to restart the application after you create and update`umbraco-package.json`
 {% endhint %}
 
-### 2. Writing basic Web Components
+### 2. Creating a simple Web Component
 
-Let's start with creating a folder `src` in our Suggestions folder. We want to start creating the web components we need for our property editor. Create two files in the `src` folder with the names
+Let's start with creating a folder `src` in our Suggestions folder. We want to start creating the web component we need for our property editor. Create a file in the `src` folder with the name `property-editor-ui-suggestions.element.ts`
 
-* property-editor-ui-suggestions.element.ts
-* suggestions-input.element.ts
-
-{% hint style="info" %}
-We will use the `property-editor-ui-suggestions.element` file to handle the Property Editor's configuration and the `suggestions-input.element` file for the visual input. Splitting the configuration and the visual aspect apart gives us the opportunity to reuse the web components for other things. We could for example have a different configuration using the same visuals, or a different visual for the the same configuration.
-{% endhint %}
-
-In the `property-editor-ui-suggestions.element` file we'll add:
+In this new file, we will add the following code:
 
 ```typescript
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { UmbPropertyEditorExtensionElement } from "@umbraco-cms/backoffice/extension-registry";
-import type { UmbDataTypePropertyCollection } from '@umbraco-cms/backoffice/components';
-import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
-import './suggestions-input.element.js';
 
 @customElement("my-property-editor-ui-suggestions")
 export class MyPropertyEditorUISuggestionsElement
-  extends UmbElementMixin(LitElement)
+  extends LitElement
   implements UmbPropertyEditorExtensionElement
 {
   @property({ type: String })
   public value = "";
 
-  @property({ type: Array, attribute: false })
-  public set config(config: UmbDataTypePropertyCollection) {
-    // we will add configuration here later
-  }
 
   render() {
-    return html`I'm a property editor element!  
-      <my-suggestions-input .value=${this.value}></my-suggestions-input>`;
+    return html`I'm a property editor!`;
   }
 }
 
@@ -117,45 +102,10 @@ declare global {
 }
 ```
 
-in the `suggestions-input.element` file we'll add:
-
-```typescript
-import { LitElement, html } from 'lit';
-import { customElement, state } from 'lit/decorators.js';
-import { FormControlMixin } from '@umbraco-ui/uui-base/lib/mixins';
-
-@customElement('my-suggestions-input')
-export class MySuggestionsInputElement extends FormControlMixin(LitElement) {
-	@state()
-	private _suggestions = [
-		'You should take a break',
-		'I suggest that you visit the Eiffel Tower',
-		'How about starting a book club today or this week?',
-		'Are you hungry?',
-	];
-
-	protected getFormElement() {
-		return undefined;
-	}
-
-	render() {
-		return html`I'm the property editor's input element!`;
-	}
-}
-
-export default MySuggestionsInputElement;
-
-declare global {
-	interface HTMLElementTagNameMap {
-		'my-suggestions-input': MySuggestionsInputElement;
-	}
-}
-```
-
 Now our basic parts of the editor are done, namely:
 
 * The package manifest, telling Umbraco what to load
-* The web components for the editor
+* The web component for the editor
 
 ### 3. Registering the Data Type in Umbraco
 
@@ -167,11 +117,11 @@ We can now edit the assigned property's value with our new property editor.
 
 We should now have a property editor that looks like this
 
-<figure><img src="../../.gitbook/assets/property-editor-first-spawn.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/NewPropertyEditor.png" alt=""><figcaption></figcaption></figure>
 
 ### 4. Adding styling and setting up events in the Web Components
 
-Let's start by creating an input field and some buttons that we can style and hook up to events. Open the `suggestions-input.element` file and update the render method to include some input fields and buttons:
+Let's start by creating an input field and some buttons that we can style and hook up to events. In the `property-editor-ui-suggestions.element` file, update the render method to include some input fields and buttons:
 
 {% hint style="info" %}
 The Umbraco UI library is already a part of the backoffice, which means we can start using it
@@ -179,56 +129,37 @@ The Umbraco UI library is already a part of the backoffice, which means we can s
 
 ```typescript
 render() {
-  return html`<div class="blue-text">${this.value}</div>
-    <uui-input
-      id="suggestion-input"
-      class="element"
-      label="text input"
-      .value="${this.value || ''}
-      @input=${this.#onInput}"></uui-input>		
-    <div id="wrapper">
-      <uui-button
-	id="suggestion-button"
-	class="element"
-	look="primary"
-	label="give me suggestions"
-	@click=${this.#onSuggestion}>
-	Give me suggestions!
-     </uui-button>
-     <uui-button
-       id="suggestion-trimmer"
-       class="element"
-       look="outline"
-       label="Trim text"
-       @click=${this.#onTextTrim}>
-       Trim text
-     </uui-button>
-   </div>
-   `;
-}
+    return html`
+      <uui-input
+        id="suggestion-input"
+        class="element"
+        label="text input"
+        .value=${this.value || ""}
+      >
+      </uui-input>
+      <div id="wrapper">
+        <uui-button
+          id="suggestion-button"
+          class="element"
+          look="primary"
+          label="give me suggestions"
+        >
+          Give me suggestions!
+        </uui-button>
+        <uui-button
+          id="suggestion-trimmer"
+          class="element"
+          look="outline"
+          label="Trim text"
+        >
+          Trim text
+        </uui-button>
+      </div>
+    `;
+  }
 ```
 
-To get rid of the errors let's create the methods that will be called when the events are triggered:
-
-```typescript
-#onInput(e: UUIInputEvent) {
-  /* Code will be added later! */
-}
-    
-#onSuggestion() {
-  /* Code will be added later! */
-}
-    
-#onTextTrim() {
-  /* This method will trim our text later! */
-}
-
-render() {
-  ....
-}
-```
-
-Next, let's add some styling Update the import from lit to include CSS:
+Next, let's add a little bit of styling. Update the import from lit to include CSS:
 
 ```typescript
 import { LitElement, html, css } from 'lit';
@@ -243,9 +174,6 @@ render() {
 
 static styles = [
   css`
-    .blue-text {
-      color: var(--uui-color-focus);
-    }
     #wrapper {
       margin-top: 10px;
       display: flex;
@@ -260,51 +188,49 @@ static styles = [
 
 It should now look something like this:
 
-<figure><img src="../../.gitbook/assets/property-editor-first-look.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/NewPropertyEditorButtons.png" alt=""><figcaption></figcaption></figure>
 
 It's starting to look good! Next, let's look into setting up the event logic.
 
-We will start by creating a new method called `dispatchChangeEvent` that we will call every time our property editor's value has changed. This way our other file `property-editor-ui-suggestions.element` will be able to update the value.
+Let's start with the input field. When we type something in the input field, we want the property editor's value to change to the input field's current value. We then have to dispatch a `property-value-change` event.
+
+<pre class="language-typescript"><code class="lang-typescript">  #onInput(e: InputEvent) {
+    this.value = (e.target as HTMLInputElement).value;
+    this.#dispatchEvent()
+  }
+
+  #dispatchEvent() {
+    this.dispatchEvent(new CustomEvent('property-value-change'));
+  }
+
+  render() {
+    return html`
+      &#x3C;uui-input
+        id="suggestion-input"
+        class="element"
+        label="text input"
+        .value=${this.value || ""}
+        @input=${this.#onInput}
+      >
+      &#x3C;/uui-input>
+      
+      ....
+<strong>  }
+</strong></code></pre>
+
+Let's look at the suggestions button next. When we press the suggestion button we want the text to update to the suggestion that we get. Just like the value of our property editor is going to change when we write in the input field, we also want the value to change when we press the suggestion button.
+
+First, update the import for lit decorators and add some suggestions to the property editor:
 
 ```typescript
-#dispatchChangeEvent() {
-  this.dispatchEvent(new CustomEvent('change', { bubbles: true, composed: true }));
-}
-
-render() {
-  ...
-}
+import { customElement, property, state } from "lit/decorators.js";
 ```
 
-We want our value to change when we enter a new in the input field, but also when we request a suggestion. Let's update the `onInput` and `onSuggestion` methods:
-
 ```typescript
-import { UUIInputEvent } from '@umbraco-ui/uui';
-```
 
-```typescript
-#onInput(e: UUIInputEvent) {
-  this.value = e.target.value as string;
-  this.#dispatchChangeEvent();
-}
-    
-#onSuggestion() {
-  const randomIndex = (this._suggestions.length * Math.random()) | 0;
-  this.value = this._suggestions[randomIndex];
-  this.#dispatchChangeEvent();
-}
-```
+  @property({ type: String })
+  public value = "";
 
-Our file should now look something like this:
-
-```typescript
-import { LitElement, html, css } from 'lit';
-import { customElement, state } from 'lit/decorators.js';
-import { UUIInputEvent } from '@umbraco-ui/uui';
-import { FormControlMixin } from '@umbraco-ui/uui-base/lib/mixins';
-
-@customElement('my-suggestions-input')
-export class MySuggestionsInputElement extends FormControlMixin(LitElement) {
   @state()
   private _suggestions = [
     'You should take a break',
@@ -312,64 +238,110 @@ export class MySuggestionsInputElement extends FormControlMixin(LitElement) {
     'How about starting a book club today or this week?',
     'Are you hungry?',
   ];
-	
-  protected getFormElement() {
-    return undefined;
-  } 
 
-  #onInput(e: UUIInputEvent) {
-    this.value = e.target.value as string;
-    this.#dispatchChangeEvent();
-  }
-	    
-  #onSuggestion() {
+```
+
+Then update the suggestion button in the render method to call a `onSuggestion` method when we press the button
+
+<pre class="language-typescript"><code class="lang-typescript">  #onSuggestion() {
     const randomIndex = (this._suggestions.length * Math.random()) | 0;
     this.value = this._suggestions[randomIndex];
     this.#dispatchChangeEvent();
   }
-	    
-  #onTextTrim() {
-  /* This method will trim our text later! */
+  
+ render() {
+    return html`
+    
+    ...
+    
+<strong>        &#x3C;uui-button
+</strong>          id="suggestion-button"
+          class="element"
+          look="primary"
+          label="give me suggestions"
+          @click=${this.#onSuggestion}
+        >
+          Give me suggestions!
+        &#x3C;/uui-button>
+
+    ...
+    
+  `;
+ }
+</code></pre>
+
+The `property-editor-ui-suggestions.element` file should now look something like this:
+
+```typescript
+import { LitElement, css, html } from "lit";
+import { customElement, property, state } from "lit/decorators.js";
+import { UmbPropertyEditorExtensionElement } from "@umbraco-cms/backoffice/extension-registry";
+
+@customElement("my-property-editor-ui-suggestions")
+export class MyPropertyEditorUISuggestionsElement
+  extends LitElement
+  implements UmbPropertyEditorExtensionElement
+{
+  @property({ type: String })
+  public value = "";
+
+  @state()
+  private _suggestions = [
+    "You should take a break",
+    "I suggest that you visit the Eiffel Tower",
+    "How about starting a book club today or this week?",
+    "Are you hungry?",
+  ];
+
+  #onInput(e: InputEvent) {
+    this.value = (e.target as HTMLInputElement).value;
+    this.#dispatchEvent();
   }
-		
-  #dispatchChangeEvent() {
-    this.dispatchEvent(new CustomEvent('change', { bubbles: true, composed: true }));
+
+  #onSuggestion() {
+    const randomIndex = (this._suggestions.length * Math.random()) | 0;
+    this.value = this._suggestions[randomIndex];
+    this.#dispatchEvent();
   }
-	
+
+  #dispatchEvent() {
+    this.dispatchEvent(new CustomEvent("property-value-change"));
+  }
+
   render() {
-    return html`<div class="blue-text">${this.value}</div>
+    return html`
       <uui-input
-	id="suggestion-input"
-	class="element"
-	label="text input"
-	.value="${this.value || ''}"
-	@input=${this.#onInput}></uui-input>	
+        id="suggestion-input"
+        class="element"
+        label="text input"
+        .value=${this.value || ""}
+        @input=${this.#onInput}
+      >
+      </uui-input>
       <div id="wrapper">
         <uui-button
           id="suggestion-button"
-	  class="element"
-	  look="primary"
-	  label="give me suggestions"
-	  @click=${this.#onSuggestion}>
-	  Give me suggestions!
-	</uui-button>
-	<uui-button
-	  id="suggestion-trimmer"
-	  class="element"
-	  look="outline"
-	  label="Trim text"
-	  @click=${this.#onTextTrim}>
-	  Trim text
-	</uui-button>
+          class="element"
+          look="primary"
+          label="give me suggestions"
+          @click=${this.#onSuggestion}
+        >
+          Give me suggestions!
+        </uui-button>
+        <uui-button
+          id="suggestion-trimmer"
+          class="element"
+          look="outline"
+          label="Trim text"
+        >
+          Trim text
+        </uui-button>
       </div>
     `;
   }
-  
+
   static styles = [
     css`
-      .blue-text {
-        color: var(--uui-color-focus);
-      }
       #wrapper {
         margin-top: 10px;
         display: flex;
@@ -382,82 +354,18 @@ export class MySuggestionsInputElement extends FormControlMixin(LitElement) {
   ];
 }
 
-export default MySuggestionsInputElement;
+export default MyPropertyEditorUISuggestionsElement;
 
 declare global {
   interface HTMLElementTagNameMap {
-    'my-suggestions-input': MySuggestionsInputElement;
-  }
-}
-```
-
-The last this we need to do is listen for the dispatched event in the property-editor-ui-suggestions.element.ts file and update our value. For now, we will also print the value output in the render method to make sure it works, you may remove it afterward.
-
-Go to the `property-editor-ui-suggestions.element` and add an event listener and method:
-
-```typescript
-import { MySuggestionsInputElement } from './suggestions-input.element.ts';
-```
-
-```typescript
-#onChange(e: CustomEvent) {
-  this.value = (e.target as MySuggestionsInputElement).value as string;
-  this.dispatchEvent(new CustomEvent('property-value-change'));
-}
-
-render() {
-  return html`${this.value}<my-suggestions-input
-    .value=${this.value}
-    @change=${this.#onChange}></my-suggestions-input>`;
+    "my-property-editor-ui-suggestions": MyPropertyEditorUISuggestionsElement;
+  }
 }
 ```
 
 Next, clear the cache, reload the document, and see the Suggestions Data Type running.
 
-<figure><img src="../../.gitbook/assets/are-you-hungry.png" alt=""><figcaption></figcaption></figure>
-
-The file `property-editor-ui-suggestions.element` should now look something like this:
-
-```typescript
-import { html } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-import { MySuggestionsInputElement } from './suggestions-input.element.js';
-import { UmbPropertyEditorExtensionElement } from '@umbraco-cms/backoffice/extension-registry';
-import { UmbLitElement } from '@umbraco-cms/internal/lit-element';
-import { UmbDataTypePropertyCollection } from '@umbraco-cms/backoffice/data-type';
-import './suggestions-input.element.js';
-
-@customElement('my-property-editor-ui-suggestions')
-export class MyPropertyEditorUISuggestionsElement extends UmbLitElement implements UmbPropertyEditorExtensionElement {
-	
-  @property({ type: String })
-  public value = '';  
-    
-  @property({ type: Array, attribute: false })
-  public set config(config: UmbDataTypePropertyCollection) {
-    // we will add configuration here later
-  }
-    
-  #onChange(e: CustomEvent) {
-    this.value = (e.target as MySuggestionsInputElement).value as string;
-    this.dispatchEvent(new CustomEvent('property-value-change'));
-  }
-
-  render() {
-    return html`${this.value}<my-suggestions-input
-      .value=${this.value}
-      @change=${this.#onChange}></my-suggestions-input>`;
-  }
-}
-
-export default MyPropertyEditorUISuggestionsElement;
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'my-property-editor-ui-suggestions': MyPropertyEditorUISuggestionsElement;
-  }
-}
-```
+<figure><img src="../../.gitbook/assets/NewPropertyEditorSuggestions.png" alt=""><figcaption></figcaption></figure>
 
 When we save or publish, the value of the Data Type is now automatically synced to the current content object and sent to the server.
 
