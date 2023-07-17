@@ -40,5 +40,3 @@ Images are stored and linked using relative paths to .md pages, and should by co
 And store the image as `/documentation/reference/partials/images/img.png`
 
 Images can have a maximum width of **800px**. Please always try to use the most efficient compression, `gif` or `png`. No `bmp`, `tiff` or `swf` (Flash).
-
-Test.
