@@ -50,7 +50,7 @@ An example of a configuration could look something like this:
 }
 ```
 
-`MaxRequestLength` is specified in kilobytes. This configuration would limit requests, and therefore uploaded files, to 2 megabytes, and a maximum query string length of 90 characters.
+`MaxRequestLength` is specified in kilobytes. This configuration will limit requests, and therefore uploaded files, to 2 megabytes, and a maximum query string length of 90 characters.
 
 ## [Using Nginx (external)](https://nginx.org/en/docs/http/ngx_http_core_module.html#client_max_body_size)
 
