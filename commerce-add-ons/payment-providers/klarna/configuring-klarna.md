@@ -53,7 +53,7 @@ Once you are signed in to the Klarna portal(s), follow the steps below to get yo
 
 You'll be presented with a username and password that you'll need to note down for later use.
 
-![The dialog where you create your Klarna API credentials](../media/klarna/generate\_credentials.png)
+![The dialog where you create your Klarna API credentials.](../media/klarna/generate\_credentials.png)
 
 ![The dialog that presents your Klarna credentials.](../media/klarna/credentials.png)
 
@@ -63,6 +63,6 @@ When you start taking orders, you'll be able to view and manage your Klarna orde
 
 * Navigate to the **Orders** section linked to from the menu on the left-hand side.
 
-![Overview of Klarna orders](../media/klarna/orders.png)
+![Overview of Klarna orders.](../media/klarna/orders.png)
 
 ![Overview over how an order looks like in the Klarna portal.](../media/klarna/order.png)
