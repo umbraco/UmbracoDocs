@@ -9,7 +9,7 @@ In this article, we will cover the steps required to install Umbraco Workflow on
 ### Video Tutorial
 
 {% embed url="https://www.youtube.com/embed/OUD-PbWESAs?rel=0" %}
-Installing Umbraco Workflow
+Installing Umbraco Workflow.
 {% endembed %}
 
 ## Umbraco Workflow Installation
@@ -23,13 +23,13 @@ There are different ways to install Umbraco Workflow:
 
 To install the Umbraco Workflow package (Umbraco.Workflow), follow these steps:
 
-1.  Run the following command to add a package reference to your Umbraco project:
+1. Run the following command to add a package reference to your Umbraco project:
 
 ```
 dotnet add package Umbraco.Workflow
 ```
 
-2.  Restart the web application using the following command:
+2. Restart the web application using the following command:
 
 ```
 dotnet run
@@ -61,8 +61,8 @@ Once the installation is completed, you will see the following in the Umbraco Ba
 
 ### A Workflow Dashboard
 
-![Workflow dashboard](getting-started/images/WorkflowDashboard-ContentSection.png)
+![Workflow dashboard.](getting-started/images/WorkflowDashboard-ContentSection.png)
 
 ### A Workflow section
 
-![Workflow section](images/workflow-section.png)
+![Workflow section.](images/workflow-section.png)
