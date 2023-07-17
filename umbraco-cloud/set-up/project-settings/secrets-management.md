@@ -120,7 +120,8 @@ While we have a number of prefixes that are not accepted, we do allow the use of
 * `Umbraco__CMS__Global__Smtp__`
 * `Umbraco__Forms__Security__FormsApiKey`
 * `Umbraco__Forms__FieldTypes__Recaptcha`
-* `Umbraco__CMS__Integrations` &#x20;
+* `Umbraco__CMS__Integrations`
+* `UMBRACO__CMS__DeliveryAPI` &#x20;
 
 It is also possible to use Secrets to save API keys, Passwords, and ReChaptcha for all our Umbraco products on Umbraco Cloud.
 
