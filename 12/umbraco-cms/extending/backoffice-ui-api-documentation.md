@@ -3,7 +3,7 @@
 A library of API Reference documentation is auto-generated from the comments within the Umbraco Source Code.
 
 {% hint style="info" %}
-A new backoffice for Umbraco CMS is currently being worked upon. It is planned to release with Umbraco version 13 in December 2023.
+A new backoffice for Umbraco CMS is currently being worked upon. It is expected to release with Umbraco version 14 in 2023.
 
 We have gathered all information and resources about the project in one place, giving you a full overview of what we're working on. You will also be able to find information about how to get involved in the project.
 
@@ -24,7 +24,7 @@ Opens a documentation browser that is different from the documentation section y
 
 ## [UI Examples](https://our.umbraco.com/packages/developer-tools/ui-examples/)
 
-There is a package available called 'UI Examples'. This package adds a new 'UI Examples' section to your Umbraco instance with working examples of how to customise the backoffice.
+There is a package available called 'UI Examples'. This package adds a new 'UI Examples' section to your Umbraco instance with working examples of how to customize the backoffice.
 
 {% hint style="info" %}
 Opens a documentation browser that is different from the documentation section you're viewing now.
