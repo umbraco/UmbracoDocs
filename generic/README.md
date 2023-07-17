@@ -15,11 +15,11 @@ Whether you're hosting your own Umbraco CMS website or you've chosen to go with 
 {% hint style="info" %}
 **Are you looking to get started?**
 
-In the [Getting Started](broken-reference) section, you find links to articles depending on what you're looking to do with Umbraco.
+In the [Getting Started](getting-started/managing-an-umbraco-project.md) section, you find links to articles depending on what you're looking to do with Umbraco.
 
 Whether you're just looking to create a website, set up hosting or looking to customize a Umbraco website, the Getting Started section will provide you with what you need.
 
-[Head on over to the Getting Started section](broken-reference)
+[Head on over to the Getting Started section](getting-started/managing-an-umbraco-project.md)
 {% endhint %}
 
 ## Digital Experience Platform (DXP)
