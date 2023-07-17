@@ -6,7 +6,7 @@ description: How deleting meta data and files work in Umbraco Deploy
 
 With Umbraco Deploy deletions are environment specific. This means that in order to delete something entirely from your project, you need to delete it on all environments.
 
-In this article you can read about the correct way of deleting files, schema and content when using Umbraco Deploy.
+In this article, you can read about the correct way of deleting files, schema, and content when using Umbraco Deploy.
 
 When you are using Umbraco Deploy, you might have more than one environment - including a local clone of the project. These environments each have their own database. The databases will contain references to all of your content and media, as well as to all of your schema files (e.g. Document Types, Templates etc).
 
@@ -14,7 +14,7 @@ The databases are environment specific. When you deploy from one environment to 
 
 The workflow described above does not pick up deletions of content and schema from the database, which is why you'll need to delete the content and/or schema on all your environments, in order to fully complete the deletion.
 
-The main reason Umbraco Deploy does not delete schema and content on deployments, is because it could lead to unrecoverable loss of data. Imagine that you delete a Document Type on your Development environment, and push this deletion to your production environment where you have a lot of content nodes based on the deleted Document Type. When the deployments goes through, all of those content nodes would be instantly removed with no option to roll back as the Document Type they are based on no longer exists. To avoid anyone ending up in this unfortunate situation, deletes are not automatically handled and will require an active decision from you on each environment in order to take place.
+The main reason Umbraco Deploy does not delete schema and content on deployments is that it could lead to an unrecoverable loss of data. Imagine that you delete a Document Type on your Development environment, and push this deletion to your production environment where you have a lot of content nodes based on the deleted Document Type. When the deployments go through, all of those content nodes would be instantly removed with no option to roll back as the Document Type they are based on no longer exists. To avoid anyone ending up in this unfortunate situation, deletes are not automatically handled and will require an active decision from you on each environment in order to take place.
 
 ## Example scenario
 
@@ -22,7 +22,7 @@ Let's say you've deleted a Document Type on your Development environment, and no
 
 Before you deploy the changes, in Git it will show that the following changes are ready to be committed and deployed:
 
-![Changes ready for deployment](../../../10/umbraco-deploy/deployment-workflow/images/deletions-of-doctype2.png)
+![Changes ready for deployment](images/deletions-of-doctype2.png)
 
 Commit the changes and push them to your repository and trigger a deployment to your environment.
 
