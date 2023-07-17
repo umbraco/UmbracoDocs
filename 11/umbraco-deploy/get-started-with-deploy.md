@@ -16,7 +16,7 @@ For example, when working locally you might create a new Document Type. This wil
 
 When you want this deployed to your next environment, you would trigger your CI/CD process (for example Azure DevOps or Github Actions). This will push the changes to your environment. Once the build deployment completes successfully, a Deployment Trigger would be executed as an HTTPS request to your target environment. All changes found in the `umbraco/Deploy/Revision` folder will then be extracted into the Umbraco target environment.
 
-![Deploy workflow](../../10/umbraco-deploy/images/Deploy\_concept.png)
+![Deploy workflow](images/Deploy\_concept.png)
 
 ## [Quick start (new sites)](getting-started/install-configure.md)
 

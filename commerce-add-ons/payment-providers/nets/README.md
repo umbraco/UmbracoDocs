@@ -12,7 +12,7 @@ The Nets Easy payment provider provides functionality to capture payments via th
 
 In this section, we will guide you through the key steps necessary to get you started with the Nets Easy payment provider for Umbraco Commerce.
 
-It is assumed that before we begin that you already have an Umbraco website configured and Umbraco Commerce installed. If you are not yet at this stage, please read the [core Umbraco Commerce documentation](http://localhost:5000/s/3rCehcwXc4nbpeGqcI2f/) to learn how to start with Umbraco Commerce.
+It is assumed that before we begin that you already have an Umbraco website configured and Umbraco Commerce installed. If you are not yet at this stage, please read the [core Umbraco Commerce documentation](http://127.0.0.1:5000/o/vHdmkfI8smZW50A5yIZD/s/3rCehcwXc4nbpeGqcI2f/) to learn how to start with Umbraco Commerce.
 
 ## Useful links
 

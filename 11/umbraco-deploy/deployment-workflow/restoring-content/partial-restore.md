@@ -37,7 +37,7 @@ Follow these steps to perform a partial restore to get only the parts you need:
 Keep in mind if you select a content node deeper down the tree, all the parents above it, required for the node to exist, will be restored as well.
 {% endhint %}
 
-![Partial restore on empty environment](../../../../10/umbraco-deploy/deployment-workflow/restoring-content/images/partialRestore-onEmpty-v9.gif)
+![Partial restore on empty environment](images/partialRestore-onEmpty-v9.gif)
 
 Partial Restores on empty environments are especially helpful when you have a large amount of content and media and do not necessarily need it all for the task you need to do.
 
