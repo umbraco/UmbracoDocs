@@ -12,16 +12,16 @@ Diving one step deeper, each individual topic is contained in its own directory.
 
 Each directory must have a `README.md` file which will act as a landing page for that directory. If images are used, these must be in an `images` directory next to the `.md` file referencing them using relative paths.
 
-* `/topic` *(directory)*
+* `/topic` _(directory)_
   * `README.md`
   * `another-page.md`
-  * `/images` *(directory)*
+  * `/images` _(directory)_
     * `images.png`
-  * `/subtopic` *(directory)*
+  * `/subtopic` _(directory)_
     * `README.md`
     * `topic.md`
     * `another-topic.md`
-    * `/images` *(directory)*
+    * `/images` _(directory)_
 
 ## File names
 

@@ -7,12 +7,17 @@
 * [Umbraco Forms](https://docs.umbraco.com/umbraco-forms/)
 * [Umbraco Deploy](https://docs.umbraco.com/umbraco-deploy/)
 * [Umbraco Workflow](https://docs.umbraco.com/umbraco-workflow/)
+* [Umbraco Commerce](https://docs.umbraco.com/umbraco-commerce)
 
 ## Marketplace
 
 * [Introduction](marketplace/introduction.md)
 * [Listing Your Package](marketplace/listing-your-package.md)
 * [Package Telemetry Data](marketplace/package-telemetry-data.md)
+
+## Packages
+
+* [Authorized Services](packages/authorized-services.md)
 
 ## Integrations
 

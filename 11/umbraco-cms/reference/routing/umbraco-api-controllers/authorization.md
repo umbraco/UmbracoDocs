@@ -40,11 +40,11 @@ public class ProductsController : UmbracoApiController
 }
 ```
 
-The `AuthorizationPolicies` has [quite a few](https://apidocs.umbraco.com/v11/csharp/api/Umbraco.Cms.Web.Common.Authorization.AuthorizationPolicies.html) other options you can set. A example is `UserBelongsToUserGroupInRequest`. By using this policy, you can check if the current incoming request of the user is in a specific backoffice usergroup.
+The `AuthorizationPolicies` has a [series of other options](https://apidocs.umbraco.com/v11/csharp/api/Umbraco.Cms.Web.Common.Authorization.AuthorizationPolicies.html) other options you can set. An example is `UserBelongsToUserGroupInRequest`. By using this policy, you can check if the current incoming request of the user is in a specific backoffice User Group.
 
 **Example:**
 
-This will only allow a logged-in backoffice user that has access to the Sensitive data User Group to access the `GetProduct` action:
+This will only allow a logged-in backoffice user that has access to the SensitiveData User Group to access the `GetProduct` action:
 
 ```csharp
 public class ProductsController : UmbracoApiController
@@ -62,8 +62,9 @@ public class ProductsController : UmbracoApiController
 }
 ```
 
-## Adding custom policies.
-You can add custom policies so you can setup your own requirements. You can do this by adding a new Policy to your builder:
+## Adding custom policies
+
+You can add custom policies so you can set up your own requirements. You can do this by adding a new Policy to your builder:
 
 **Example:**
 
