@@ -78,9 +78,11 @@ When the Delivery API is enabled in your project, all your published content wil
 * `Umbraco:CMS:DeliveryApi:ApiKey` specifies the API key to use for authorizing access to the API when public access is disabled. This setting is also used for accessing draft content for preview.
 
 {% hint style="info" %}
-If you're hosting your Umbraco website on Umbraco Cloud, it's crucial to prioritize security for sensitive information like the ApiKey. Rather than storing it as plain text in appsettings.json, we strongly suggest using Umbraco Cloud's built-in Secrets management. This feature allows you to securely store and manage sensitive data, keeping your ApiKey safe from potential exposure or unauthorized access. To learn more about implementing Secrets management, check out the [Secrets management documentation](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/secrets-management#accepted-prefixes).
+**Are you using Umbraco Cloud?**
+
+When hosting your Umbraco website on Umbraco Cloud, security should always be prioritized for sensitive information like API keys. Rather than storing it as plain text in the `appsettings.json` file, it is strongly encouraged to use Umbraco Cloud's built-in secrets management. This feature allows you to securely store and manage sensitive data, keeping your API key safe from potential exposure or unauthorized access. To learn more about implementing Secrets management, read the [Secrets management documentation](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/secrets-management#accepted-prefixes).
 {% endhint %}
-  
+
 * `Umbraco:CMS:DeliveryApi:DisallowedContentTypeAliases` contains the aliases of the content types that should never be exposed through the Delivery API, regardless of any other configurations.
 
 Another valuable configuration option to consider when working with the Delivery API is `RichTextOutputAsJson`:
@@ -426,15 +428,55 @@ Returns single or multiple items.
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="fetch" type="String" required="false" %}
-Structural query string option (e.g. `ancestors`, `children`, `descendants`)
+Structural query string option (e.g. 
+
+`ancestors`
+
+, 
+
+`children`
+
+, 
+
+`descendants`
+
+)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="filter" type="String Array" required="false" %}
-Filtering query string options (e.g. `contentType`, `name`)
+Filtering query string options (e.g. 
+
+`contentType`
+
+, 
+
+`name`
+
+)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="sort" type="String Array" required="false" %}
-Sorting query string options (e.g. `createDate`, `level`, `name`, `sortOrder`, `updateDate`)
+Sorting query string options (e.g. 
+
+`createDate`
+
+, 
+
+`level`
+
+, 
+
+`name`
+
+, 
+
+`sortOrder`
+
+, 
+
+`updateDate`
+
+)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="skip" type="Integer" required="false" %}
