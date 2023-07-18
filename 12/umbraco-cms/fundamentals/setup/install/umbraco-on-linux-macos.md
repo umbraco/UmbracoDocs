@@ -21,7 +21,7 @@ With the templates installed on your system, it is now possible to create Umbrac
 To create a project, there are two options:
 
 - Continue creating projects using the .NET CLI.
-- Create new projects using Visual Studio. (only macOS)
+- Create new projects using Visual Studio (only macOS).
 
 To create new projects using Visual Studio, you can use the [Install using Visual Studio](visual-studio.md) guide.
 
