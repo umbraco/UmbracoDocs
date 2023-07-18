@@ -6,7 +6,7 @@ description: >-
 
 # Use an Alternative Database for Umbraco Commerce Tables
 
-By default, Umbraco Commerce will use the same database as Umbraco to store its data in. As e-commerce and content management have different database needs, it may be beneficial to house the Umbraco Commerce database tables in an alternative database.
+By default, Umbraco Commerce will use the same database as Umbraco to store its data. As e-commerce and content management have different database needs, it may be beneficial to house the Umbraco Commerce database tables in an alternative database.
 
 To do this, you can configure a Umbraco Commerce-specific connection string in your app settings `ConnectionStrings` section using the `umbracoCommerceDbDSN` prefix.
 

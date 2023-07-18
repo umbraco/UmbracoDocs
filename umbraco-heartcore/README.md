@@ -1,6 +1,6 @@
 # What is Umbraco Heartcore?
 
-Umbraco Heartcore is a headless Software As A Service (SAAS) offered by Umbraco. The service enables you to create and manage content and media in the Umbraco backoffice and make it available to any platforms, devices, channels etc.
+Umbraco Heartcore is a headless Software As A Service (SAAS) offered by Umbraco. The service enables you to create and manage content and media in the Umbraco backoffice and make it available to any platforms, devices, channels and so forth.
 
 <table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Getting started</strong></td><td>Get started working with Umbraco Heartcore</td><td><a href="../generic/images/headless.png">headless.png</a></td><td><a href="api-documentation/content-delivery/content.md">content.md</a></td></tr><tr><td><strong>Umbraco Heartcore APIs</strong></td><td>See the different APIs available in Umbraco Heartcore</td><td><a href="../generic/images/code (1) (1) (1).png">code (1) (1) (1).png</a></td><td><a href="broken-reference">Broken link</a></td></tr><tr><td><strong>Client libraries</strong></td><td>Test out your Umbraco Hearcore project with the premade client libraries</td><td><a href="../generic/images/devices.png">devices.png</a></td><td><a href="broken-reference">Broken link</a></td></tr></tbody></table>
 
@@ -34,7 +34,7 @@ In this section, you will find documentation on how to work with Umbraco Heartco
 
 It includes REST API documentation, the basics of how to get started, and how to work with the available Client Libraries. Please note that Umbraco Heartcore is a specific type of project only available via Umbraco Cloud.
 
-## [API Documentation for the Umbraco Heartcore REST API endpoints](broken-reference/)
+## [API Documentation for the Umbraco Heartcore REST API endpoints](api-documentation/)
 
 Reference documentation for the APIs available, as well as details about common HTTP headers, versioning, REST Standard, and how to work with authentication and authorization.
 

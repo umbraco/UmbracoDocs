@@ -42,7 +42,7 @@ The website and the Github repository are now connected.
 
 If we go back to the Github repository we can see that a new folder have been created called Workflows:
 
-![Workflows](<../../../../10/umbraco-deploy/getting-started/images/workflows (1).png>)
+![Workflows](<../../../../10/umbraco-deploy/getting-started/images/workflows (1) (1) (1).png>)
 
 Inside the folder, we find that the YAML file has been created with the default settings from the Azure Portal. The file will need to be configured so it fits into your set up.
 
@@ -146,7 +146,7 @@ We can now go ahead and commit the configured YAML file and push up all the file
 
 Go to Github where you will now be able to see that the CI/CD build has started running:
 
-![Deployment build started](<../../../../10/umbraco-deploy/getting-started/images/Deploying-meta-data (1).png>)
+![Deployment build started](<../../../../10/umbraco-deploy/getting-started/images/Deploying-meta-data (1) (1) (1).png>)
 
 The build server will go through the steps in the YAML file, and once it is done the deployment have gone through successfully:
 

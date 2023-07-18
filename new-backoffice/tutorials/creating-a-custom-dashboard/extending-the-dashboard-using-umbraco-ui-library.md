@@ -8,9 +8,9 @@ description: >-
 
 ## Overview
 
-The [Umbraco UI Library](broken-reference) is a set of web components that we can use to build Umbraco User Interfaces. It is already part of the Backoffice, so you can already start using it.
+The [Umbraco UI Library](../../extending/ui-library.md) is a set of web components that we can use to build Umbraco User Interfaces. It is already part of the Backoffice, so you can already start using it.
 
-Let's start by wrapping a uui-box around everything we render. This makes our dashboard the same style as the built-in dashboards of Umbraco.
+Let's start by wrapping a `uui-box` around everything we render. This makes our dashboard the same style as the built-in dashboards of Umbraco.
 
 ```typescript
 render() {
