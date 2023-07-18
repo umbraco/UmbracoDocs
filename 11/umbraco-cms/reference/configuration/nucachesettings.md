@@ -24,7 +24,7 @@ It is possible to configure NuCache to work in memory only without reading/writi
 
 Startup duration may increase for larger sites during a "warm boot," but smaller sites should see minimal impact.
 
-Unfortunately the settings have not yet been exposed via the new configuration setup, instead you must configure with a composer.
+The settings have not yet been exposed via the new configuration setup, instead you must configure with a composer.
 
 ```csharp
 public class DisableNuCacheDatabaseComposer : IComposer
