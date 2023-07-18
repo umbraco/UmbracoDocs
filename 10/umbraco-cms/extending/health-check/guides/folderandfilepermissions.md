@@ -17,11 +17,11 @@ Here's an example of how to adjust permissions for a folder. This process works 
 
 First we see an example of an error from the health check
 
-![Failed health check for folder creation](../../../../../11/umbraco-cms/extending/health-check/guides/images/failed\_healthcheck\_folder\_permissions.png)
+![Failed health check for folder creation](images/failed\_healthcheck\_folder\_permissions.png)
 
 To fix this, we find the specified folder, from the report and choose `Properties` and the `Security` tab.
 
-![Folder properties](../../../../../11/umbraco-cms/extending/health-check/guides/images/folder\_properties.png) ![Folder properties - Security tab](../../../../../11/umbraco-cms/extending/health-check/guides/images/folder\_properties\_security.png)
+![Folder properties](images/folder\_properties.png) ![Folder properties - Security tab](images/folder\_properties\_security.png)
 
 From here you can edit the permissions for a specific user or user group.
 

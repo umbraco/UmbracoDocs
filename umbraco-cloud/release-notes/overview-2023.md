@@ -1,8 +1,15 @@
 ---
-description: Get an overview of release notes for each months in 2023.
+description: Get an overview of release notes for each month in 2023.
 ---
 
 # Overview 2023
+
+# [June 2023](2023-06-releasenotes.md)
+
+## Key Takeaways
+* **Customize Environment Ordering** - You are now able to change the order of environments in the _Projects Dashboard_ according to your preference.
+* **All Project Sub-Pages Upgraded** - With the migration of the _Certificates_ page to the new front-end tech stack, all project sub-pages have now been migrated. Next focus: a new navigation structure.
+* **Umbraco 12 Support** - Umbraco Cloud always allows you to create new cloud projects with the latest versions. That now includes Umbraco 12 which was released on June 29th, 2023.
 
 # [May 2023](2023-05-releasenotes.md)
 
@@ -10,7 +17,6 @@ description: Get an overview of release notes for each months in 2023.
 * **Availability & Performance** - With Umbraco Cloud's user-friendly interface, you will receive a new set of tools to monitor and optimize your cloud projects effectively.
 * **Specific views for dedicated and shared project plans** - The Availability & Performance feature will show different views for CPU Usage and Memory usage, highlighting a comparison to the plan quota for shared plans.
 * **What the future will bring to the feature** - More exciting features and enhancements will be added to Availability & Performance in the future.
-
 
 ## [April 2023](2023-04-releasenotes.md)
 

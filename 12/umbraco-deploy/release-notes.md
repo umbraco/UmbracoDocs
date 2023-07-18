@@ -5,7 +5,7 @@ In this section we have summarised the changes to Umbraco Deploy released in eac
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
 {% hint style="info" %}
-If you are upgrading to a new major version you can find the details about the breaking changes in the [version specific updates](broken-reference) article.
+If you are upgrading to a new major version you can find the details about the breaking changes in the [version specific updates](upgrades/version-specific.md) article.
 {% endhint %}
 
 We've listed here all changes going back to March 2021 for Deploy 4 and above. For details of releases prior to this date, or older versions, please refer to the [package page on our.umbraco.com](https://our.umbraco.com/packages/developer-tools/umbraco-deploy/).
@@ -67,7 +67,7 @@ Under each major version, you can find details about minor and patch releases fo
 #### [11.0.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.0.0)
 
 * Compatibility with .NET 7 Umbraco 11
-  * See full details of breaking changes under the [version specific upgrade guide](broken-reference).
+  * See full details of breaking changes under the [version specific upgrade guide](upgrades/version-specific.md).
 
 </details>
 

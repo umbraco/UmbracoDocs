@@ -4,7 +4,7 @@ level: warning
 swap:
   '(?:(?<!\.)css)' : CSS
   '(?:(?<!\.)[hH]tml)' : HTML
-  url: "'URL'"
+  'url(?!=)': "'URL'"
   '(?:(?<!\.)js|[jJ]ava[sS]cript)' : JavaScript
   .net: "'.NET'"
   dot net: "'.NET'"

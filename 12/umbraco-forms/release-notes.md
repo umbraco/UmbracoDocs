@@ -29,6 +29,12 @@ In this section, you can find the release notes for each version of Umbraco Form
 
 <summary>Version 11</summary>
 
+### [11.2.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.2.0) (June 13th 2023)
+
+* Ensured a case insensitive request check for protecting access to files uploaded to the media system.
+* Updated dependency on `aspnet-client-validation` to resolve an issue with validation of mandatory radio button or checkbox lists [#1028](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1028)
+* All updates noted under 11.2.0-rc1.
+
 ### [11.2.0-rc1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.2.0) (June 1st 2023)
 
 * Added customizable behavior for the fields added to newly created forms [#1013](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1013)
@@ -129,6 +135,12 @@ In this section, you can find the release notes for each version of Umbraco Form
 <details>
 
 <summary>Version 10</summary>
+
+### [10.4.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.4.0) (June 13th 2023)
+
+* Ensured a case insensitive request check for protecting access to files uploaded to the media system.
+* Updated dependency on `aspnet-client-validation` to resolve an issue with validation of mandatory radio button or checkbox lists [#1028](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1028)
+* All updates noted under 10.4.0-rc1.
 
 ### [10.4.0-rc1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.4.0) (June 1st 2023)
 

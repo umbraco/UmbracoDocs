@@ -90,16 +90,6 @@ var content = contentService.GetById(1234);
 return content.ContentTypeId;
 ```
 
-### .ContentSchedule
-
-Returns the `ContentScheduleCollection`.
-
-```csharp
-// Given a `ContentService` object get Content by its Id and return the content schedule
-var content = contentService.GetById(1234);
-return content.ContentSchedule;
-```
-
 ### .Id
 
 Returns the unique `Content` Id as a `Int`, this ID is based on a Database identity field, and is therefore not safe to reference in code which are moved between different instances, use Key instead.

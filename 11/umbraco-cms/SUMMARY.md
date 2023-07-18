@@ -189,6 +189,7 @@
   * [Creating a Package](extending/packages/creating-a-package.md)
   * [Language file for packages](extending/packages/language-files-for-packages.md)
   * [Listing a Package on the Umbraco Marketplace](extending/packages/listing-on-marketplace.md)
+  * [Good practice and defaults](extending/packages/good-practice-and-defaults.md)
   * [Packages on Umbraco Cloud](extending/packages/packages-on-umbraco-cloud.md)
   * [Installing and Uninstalling Packages](extending/packages/installing-and-uninstalling-packages.md)
   * [Maintaining packages](extending/packages/maintaining-packages.md)

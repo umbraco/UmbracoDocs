@@ -28,4 +28,4 @@ In this section you will also find information on areas such as load balancing, 
 
 * [External login providers](http://localhost:5000/s/OdQETpqkO0Kcv8KMquKL/reference/security/external-login-providers)
 
-![Umbraco Cloud](images/umbraco\_free\_way\_01.png)
+![Umbraco Cloud](../../marketplace-and-integrations/.gitbook/assets/umbraco\_free\_way\_01.png)

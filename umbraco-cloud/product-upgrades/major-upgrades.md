@@ -1,7 +1,7 @@
 ---
 description: >-
   Follow this guide when upgrading your Cloud project to a new major version of
-  Umbraco CMS. For example when upgrading from 10 to 11.
+  Umbraco CMS.
 ---
 
 # Major Upgrades
@@ -85,6 +85,7 @@ Upgrade tutorial Umbraco 9 to 10 on Cloud
   * Umbraco.Forms
   * Umbraco.Deploy.Forms
   * Umbraco.Cloud.Identity.Cms
+  * Umbraco.Cloud.StorageProviders.AzureBlob
 * Checkmark the `Microsoft.Extensions.DependencyInjection.Abstractions` package if it appears in the list.
 * Select **Update**.
 
