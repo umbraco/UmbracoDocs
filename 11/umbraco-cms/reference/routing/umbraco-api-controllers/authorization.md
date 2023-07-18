@@ -22,7 +22,7 @@ This attribute will ensure that a valid backoffice user is logged in. It is impo
 
 **Example:**
 
-This will only allow a logged in backoffice user to access the GetAllProducts action:
+This will only allow a logged in backoffice user to access the `GetProduct` action:
 
 ```csharp
 public class ProductsController : UmbracoApiController
@@ -40,16 +40,17 @@ public class ProductsController : UmbracoApiController
 }
 ```
 
-The `AuthorizationPolicies` has [quite a few](https://github.com/umbraco/Umbraco-CMS/blob/contrib/src/Umbraco.Web.Common/Authorization/AuthorizationPolicies.cs) other options you can set. A example is `UserBelongsToUserGroupInRequest`. Using this policy you can check if the current incoming request of the user is in a specific backoffice usergroup.
+The `AuthorizationPolicies` has [quite a few](https://apidocs.umbraco.com/v11/csharp/api/Umbraco.Cms.Web.Common.Authorization.AuthorizationPolicies.html) other options you can set. A example is `UserBelongsToUserGroupInRequest`. By using this policy, you can check if the current incoming request of the user is in a specific backoffice usergroup.
 
 **Example:**
 
-This will only allow a logged in backoffice user that has access to the SensitiveData usergroup to access the GetAllProducts action:
+This will only allow a logged-in backoffice user that has access to the Sensitive data User Group to access the `GetProduct` action:
 
 ```csharp
 public class ProductsController : UmbracoApiController
 {
     [Authorize(Policy = AuthorizationPolicies.UserBelongsToUserGroupInRequest, Roles = Security.SensitiveDataGroupAlias)]
+    [Route("umbraco/backoffice/product/{id?}")]
     public string GetProduct(int? id)
     {
         if (id is not null)
@@ -71,13 +72,14 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy(MyConstants.CustomPolicyName, policy => // Always good to use constants
     {
         policy.AuthenticationSchemes.Add(Constants.Security.BackOfficeAuthenticationType); // Default backoffice authentication scheme
-        policy.RequireRole(Constants.Security.SensitiveDataGroupAlias); // Add the Sensitive Group as an requirement
+        policy.RequireRole(Constants.Security.SensitiveDataGroupAlias); // Add the Sensitive Group as a requirement
+
         // Add more requirements as needed
     })
 );
 ```
 
-After configuring, you can now use the Authorize attribute using the name of your policy:
+After configuring, you can now use the `Authorize` attribute with the name of your policy:
 
 ```csharp
 [Authorize(Policy = MyConstants.CustomPolicyName)]
@@ -106,7 +108,7 @@ You can apply these attributes at the controller level or at the action level.
 
 **Examples:**
 
-This will only allow logged in members of type "Retailers" to access the GetAllProducts action:
+This will only allow logged in members of type "Retailers" to access the `GetAllProducts` action:
 
 ```csharp
 public class ProductsController : UmbracoApiController
