@@ -8,15 +8,29 @@ description: >-
 
 Within this Umbraco DXP (Digital Experience Platform) area of the Umbraco documentation, you'll find topics related to extending Umbraco CMS via packages and integrations.
 
-Umbraco is used in solutions in both a "platform" and "composable" DXP context. With the former, Umbraco has responsibility for both content management and delivery, with extensions added as NuGet packages. In a composable DXP, Umbraco is often part of an overall architecture, focussed on the management of content exposed via APIs for delivery. In both situations, backoffice integrations are an important part of providing an intuitive, unified editor experience.
+Umbraco is used in solutions in both a "platform" and "composable" DXP context. With the former, Umbraco has responsibility for both content management and delivery, with extensions added as NuGet packages. In a composable DXP, Umbraco is often a stand-alone service that takes part in an overall architecture. In these cases, Umbraco CMS is focused on the management of content exposed via APIs for delivery.
 
-Our aim is to enhance the "platform DXP", support the CMS in a "composable DXP", and make it simpler to build integrations with Umbraco.
+Umbraco is also used in a hybrid DXP context. Here, some features are added directly to the Umbraco platform, like Umbraco Forms or Umbraco Commerce, but Umbraco still acts as a component in a wider architecture.
+
+In all situations, backoffice integrations with third-party services are an important part of providing an intuitive, unified editor experience.
+
+Our aim is to support the different ways of using Umbraco in a DXP context and provid resources for building integrations with Umbraco.
+
+![Umbraco as a platform DXP, composable DXP og hybrid solution](.gitbook/assets/pDXPcDXP.png)
+
+
+### Packages and integrations  
+Packages for Umbraco are installed as [Nuget packages](https://docs.umbraco.com/umbraco-cms/extending/packages/types-of-packages).
+
+Integrations provide functionality via a third-party service's API, whereas packages extend the functionality of the CMS (management or delivery).
+
+![Ways to extend Umbraco](.gitbook/assets/PackagesAndIntegrations.png)
 
 ## Umbraco Commercial Products
 
 Umbraco makes available four licensed add-ons that are available for purchase. They each have their dedicated documentation area:
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Umbraco Forms</strong></td><td>Extend your Umbraco CMS website with custom forms in all shapes and sizes.</td><td><a href="https://docs.umbraco.com/umbraco-forms">https://docs.umbraco.com/umbraco-forms</a></td><td><a href=".gitbook/assets/Umbraco_Brand_Guidelines_2020_30_Illustrationbuilding.png">Umbraco_Brand_Guidelines_2020_30_Illustrationbuilding.png</a></td></tr><tr><td><strong>Umbraco Deploy</strong></td><td>Synchronize content and code changes between your Umbraco website environments.</td><td><a href="https://docs.umbraco.com/umbraco-deploy">https://docs.umbraco.com/umbraco-deploy</a></td><td><a href=".gitbook/assets/umbraco_free_way_01.png">umbraco_free_way_01.png</a></td></tr><tr><td><strong>Umbraco Workflow</strong></td><td>Structure content reviews and approval flows for Content Editors on your website.</td><td><a href="https://docs.umbraco.com/umbraco-workflow">https://docs.umbraco.com/umbraco-workflow</a></td><td><a href=".gitbook/assets/umbraco_8_2_A.png">umbraco_8_2_A.png</a></td></tr><tr><td><strong>Umbraco Commerce</strong></td><td>Setup shop within a familiar structure and interface that is the Umbraco CMS with Umbraco Commerce.</td><td><a href="http://localhost:5000/o/vHdmkfI8smZW50A5yIZD/s/3rCehcwXc4nbpeGqcI2f/">12.commerce.latest (RC)</a></td><td><a href=".gitbook/assets/Untitled presentation.png">Untitled presentation.png</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Umbraco Forms</strong></td><td>Extend your Umbraco CMS website with custom forms in all shapes and sizes.</td><td><a href="https://docs.umbraco.com/umbraco-forms">https://docs.umbraco.com/umbraco-forms</a></td><td><a href=".gitbook/assets/forms7.png">forms7.png</a></td></tr><tr><td><strong>Umbraco Deploy</strong></td><td>Synchronize content and code changes between your Umbraco website environments.</td><td><a href="https://docs.umbraco.com/umbraco-deploy">https://docs.umbraco.com/umbraco-deploy</a></td><td><a href=".gitbook/assets/paperplane7.png">paperplane7.png</a></td></tr><tr><td><strong>Umbraco Workflow</strong></td><td>Structure content reviews and approval flows for Content Editors on your website.</td><td><a href="https://docs.umbraco.com/umbraco-workflow">https://docs.umbraco.com/umbraco-workflow</a></td><td><a href=".gitbook/assets/Workflow7.png">Workflow7.png</a></td></tr><tr><td><strong>Umbraco Commerce</strong></td><td>Setup shop within a familiar structure and interface that is the Umbraco CMS with Umbraco Commerce.</td><td><a href="http://localhost:5000/o/vHdmkfI8smZW50A5yIZD/s/3rCehcwXc4nbpeGqcI2f/">12.commerce.latest (RC)</a></td><td><a href=".gitbook/assets/Untitled presentation.png">Untitled presentation.png</a></td></tr></tbody></table>
 
 ## Umbraco Marketplace
 
