@@ -1,7 +1,4 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Umbraco NuCache Settings"
 description: "Information on the NuCache settings section"
 ---
 
