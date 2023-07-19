@@ -140,7 +140,7 @@ If upgrading from a previous version and already using the headless API, please 
 * Ensured custom field settings applied to the data consent field type are used in the creation of new forms [#1034](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1034)
 * Fixed issue related to conditions applied to radio button or checkbox lists when a custom field ID prefix is configured [#1043](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1043)
 * Fixed a second issue related to conditions found when hiding a field based on a non-visible field [#1045](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1045)
-* Clarified labelling on selecting to include attachments in email workflows [#1044](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1044)
+* Clarified the labeling on selecting to include attachments in email workflows [#1044](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1044)
 * Fixed issue with Umbraco Documents prevalue source retrieving unpublished nodes [#1030](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1030)
 * Updated naming of primary keys to match database conventions [#1049](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1049)
 * Fixed issue with retrieving forms for a user with start folders defined [#1050](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1050)
