@@ -20,7 +20,15 @@ Under each major version, you can find details about minor and patch releases fo
 
 <summary>Version 12</summary>
 
-#### [12.0.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.0)
+[**12.0.1**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.1.3) **(August 1st 2023)**
+
+* Ensured that schema files are updated on entity container renames [#171](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/171).
+* Fixed issue with processing of marker files on Linux [#169](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/169).
+* Corrected logic for creating redirects on content deployment for variant content.
+* Reduced some logging to debug to reduce noise in log files.
+* Added the settings `IsSaaSHosted`, `HideConfigurationDetails` and `HideLocalEnvironment` for use by Umbraco Heartcore.
+
+[**12.0.0**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.0)
 
 * Compatibility with Umbraco 12
   * See full details of breaking changes under the [version-specific upgrade guide](upgrades/version-specific.md#version-12).
@@ -30,6 +38,25 @@ Under each major version, you can find details about minor and patch releases fo
 <details>
 
 <summary>Version 11</summary>
+
+[**11.1.3**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.1.3) **(August 1st 2023)**
+
+* Ensured that schema files are updated on entity container renames [#171](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/171).
+* Fixed issue with processing of marker files on Linux [#169](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/169).
+* Corrected logic for creating redirects on content deployment for variant content.
+* Reduced some logging to debug to reduce noise in log files.
+
+[**11.1.2**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.1.2) **(May 30th 2023)**
+
+* Resolved a low impact security issue found in internal testing when triggering a schema extraction.
+
+[**11.1.1**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.1.1) **(May 23rd 2023)**
+
+* Added configuration for batch package processing and omitting post operation notification handlers.
+* Handled use of trailing slash in configured environment URLs.
+* Added sort option for the "is up to date" column in the schema comparison [#165](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/165).
+* Ensured artifacts serialized to disk are no longer processed when the entity is configured to be transferred as content.
+* Handled updates to serialized document types on deletion of data types.
 
 [**11.1.0**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.1.0) **(April 11th 2023)**
 
@@ -74,6 +101,25 @@ Under each major version, you can find details about minor and patch releases fo
 <details>
 
 <summary>Version 10</summary>
+
+[**10.2.3**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.3) **(August 1st 2023)**
+
+* Ensured that schema files are updated on entity container renames [#171](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/171).
+* Fixed issue with processing of marker files on Linux [#169](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/169).
+* Corrected logic for creating redirects on content deployment for variant content.
+* Reduced some logging to debug to reduce noise in log files.
+
+[**10.2.2**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.2) **(May 30th 2023)**
+
+* Resolved a low impact security issue found in internal testing when triggering a schema extraction.
+
+[**10.2.1**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.1) **(May 23rd 2023)**
+
+* Added configuration for batch package processing and omitting post operation notification handlers.
+* Handled use of trailing slash in configured environment URLs.
+* Added sort option for the "is up to date" column in the schema comparison [#165](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/165).
+* Ensured artifacts serialized to disk are no longer processed when the entity is configured to be transferred as content.
+* Handled updates to serialized document types on deletion of data types.
 
 [**10.2.0**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.0) **(April 11th 2023)**
 
@@ -290,6 +336,19 @@ Under each major version, you can find details about minor and patch releases fo
 <details>
 
 <summary>Version 4</summary>
+
+[**4.8.2**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.8.2) **(August 1st 2023)**
+
+* Corrected logic for creating redirects on content deployment for variant content.
+* Reduced some logging to debug to reduce noise in log files.
+
+[**4.8.1**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.8.1) **(May 23rd 2023)**
+
+* Added configuration for batch package processing and omitting post operation notification handlers.
+* Handled use of trailing slash in configured environment URLs.
+* Added sort option for the "is up to date" column in the schema comparison [#165](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/165).
+* Ensured artifacts serialized to disk are no longer processed when the entity is configured to be transferred as content.
+* Handled updates to serialized document types on deletion of data types.
 
 [**4.8.0**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.8.0) **(April 11th 2023)**
 
