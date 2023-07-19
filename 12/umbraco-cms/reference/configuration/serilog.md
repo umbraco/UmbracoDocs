@@ -29,7 +29,7 @@ When you create a new Umbraco project the following Serilog section will be incl
 
 As you can see above, the CMS comes with a default Serilog config that defines the minimum log level with the `"MinimumLevel"` key.
 
-You can specify the overall minimum log level with the `"Default"` key, this will apply to all namespaces, however it's also possible to override this log level for specific names spaces with the `"Override"` key. In the example above, any logging coming from the `Microsoft` and `System` namespaces will only log warnings and up, however the `Microsoft.Hosting.Lifetime` namespace will log information and up.
+You can specify the overall minimum log level with the `"Default"` key. This will apply to all namespaces, however it's also possible to override this log level for specific names spaces with the `"Override"` key. In the example above, any logging coming from the `Microsoft` and `System` namespaces will only log warnings and up, however the `Microsoft.Hosting.Lifetime` namespace will log information and up.
 
 The possible values, from most verbose to least, is:
 
@@ -65,7 +65,7 @@ This can be done by updating the appsettings.json configuration file to specify 
 
 ## Logging to a different output
 
-Serilog has the ability to log to a huge amount of different mechanisms, from console to files, even to slack or email, this is all configured using what Serilog calls sinks.
+Serilog has the ability to log to a number of different mechanisms, from console to files, even to Slack or email. This is all configured using what Serilog calls sinks.
 
 An example of this can be seen in the default `appsettings.Development.json`, where Serilog is configured to log to the console using the Async wrapper sink:
 
