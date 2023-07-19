@@ -632,6 +632,12 @@ If upgrading from a previous version and already using the headless API, please 
 
 <summary>Version 8</summary>
 
+### [8.13.10](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.13.10) (August 1st 2023)
+
+* Updated dependency on `aspnet-client-validation` to resolve an issue with validation of mandatory radio button or checkbox lists [#1028](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1028)
+* Ensured a case insensitive request check for protecting access to files uploaded to the media system.
+* Made `RecordService` public to provide access to static events.
+
 #### [8.13.9](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.13.9) (May 30th 2023)
 
 * Fixed issue with validation of uploaded files without extensions [#1020](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1020)
