@@ -54,6 +54,20 @@ This can be useful if the recorded entries are used in any subsequent workflows 
 
 ![Prevalues with captions](../../../../11/umbraco-forms/editor/defining-and-attaching-prevaluesources/images/Prevalues-with-caption.png)
 
+### Defining Cache Options for the Prevalue Source
+
+Sometimes retrieving the list of options for a prevalue source can be a relatively expensive operation. If the source depends on data from external systems, it could be that the list changes regularly or very rarely.
+
+Given the variation here, we allow you to select an appropriate level of caching for the list of options.
+
+You can choose between:
+
+- `No Caching` - no caching will be applied and the list of options will be retrieved from source on every request. You will likely only want to choose this option if the information changes frequently and it's very important that the latest is presented to website visitors.
+- `Cache For Specified Time` - the list will be cached for the period of time provided.
+- `Cache With No Expiry` - the list will be cached on first request and not retrieved again until either the prevalue source is edited or the website is restarted. This most appropriate to use for information held within the prevalue source data itself (such as  when uploading a text file).
+
+![Prevalue cache options](./images/prevalue-cache-options.png)
+
 ## Attaching a Prevalue Source to a Field
 
 Once a prevalue source has been created, it can be used while building Forms in the Forms designer.
