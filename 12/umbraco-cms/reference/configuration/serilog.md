@@ -65,7 +65,7 @@ This can be done by updating the appsettings.json configuration file to specify 
 
 ## Logging to a different output
 
-Serilog has the ability to log to a huge amount of different mechanisms, from console to files, even to Slack or email, this is all configured using what Serilog calls sinks.
+Serilog has the ability to log to a number of different mechanisms, from console to files, even to Slack or email, this is all configured using what Serilog calls sinks.
 
 An example of this can be seen in the default `appsettings.Development.json`, where Serilog is configured to log to the console using the Async wrapper sink:
 
