@@ -56,7 +56,7 @@ This can be useful if the recorded entries are used in any subsequent workflows 
 
 ### Defining Cache Options for the Prevalue Source
 
-Sometimes retrieving the list of options for a prevalue source can be a relatively expensive operation. If the source depends on data from external systems, it could be that the list changes regularly or very rarely.
+Sometimes retrieving the list of options for a prevalue source can be an expensive operation. If the source depends on data from external systems, it could be that the list changes regularly or rarely.
 
 Given the variation here, we allow you to select an appropriate level of caching for the list of options.
 

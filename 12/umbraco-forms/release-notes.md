@@ -21,8 +21,8 @@ In this section, you can find the release notes for each version of Umbraco Form
 ### [12.1.0-rc1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.0) (July 27th 2023)
 
 * Added cache options to prevalue sources.
-* Added the option to use the www.recaptcha.net domain for the reCAPTCHA 3 field type.
-* Applied various accessibility improvements to markup in the Forms default theme [#1038](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1038)
+* Added the option to use the `www.recaptcha.net` domain for the reCAPTCHA 3 field type.
+* Applied accessibility improvements to markup in the Forms default theme [#1038](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1038)
 * Added behavior to scroll to the form when navigating multiple page forms [#1037](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1037)
 * Added setting for the files selected label text for the file upload field type [#1039](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1039)
 * Fixed a casing issue with the form picker [#1040](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1040)
