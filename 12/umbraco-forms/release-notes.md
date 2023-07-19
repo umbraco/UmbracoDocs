@@ -24,12 +24,12 @@ In this section, you can find the release notes for each version of Umbraco Form
 * Added the option to use the `www.recaptcha.net` domain for the reCAPTCHA 3 field type.
 * Applied accessibility improvements to markup in the Forms default theme [#1038](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1038)
 * Added behavior to scroll to the form when navigating multiple page forms [#1037](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1037)
-* Added setting for the files selected label text for the file upload field type [#1039](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1039)
+* Added a setting for the files selected label text for the file upload field type [#1039](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1039)
 * Fixed a casing issue with the form picker [#1040](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1040)
-* Ensured custom field settings applied to the data consent field type are used in creation of new forms [#1034](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1034)
+* Ensured custom field settings applied to the data consent field type are used in the creation of new forms [#1034](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1034)
 * Fixed issue related to conditions applied to radio button or checkbox lists when a custom field ID prefix is configured [#1043](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1043)
 * Fixed a second issue related to conditions found when hiding a field based on a non-visible field [#1045](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1045)
-* Clarified labelling on selecting to include attachments in email workflows [#1044](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1044)
+* Clarified the labeling on selecting to include attachments in email workflows [#1044](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1044)
 * Fixed issue with Umbraco Documents prevalue source retrieving unpublished nodes [#1030](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1030)
 * Updated naming of primary keys to match database conventions [#1049](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1049)
 * Fixed issue with retrieving forms for a user with start folders defined [#1050](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1050)
@@ -155,15 +155,15 @@ In this section, you can find the release notes for each version of Umbraco Form
 ### [10.5.0-rc1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.5.0) (July 27th 2023)
 
 * Added cache options to prevalue sources.
-* Added the option to use the www.recaptcha.net domain for the reCAPTCHA 3 field type.
+* Added the option to use the `www.recaptcha.net` domain for the reCAPTCHA 3 field type.
 * Applied accessibility improvements to markup in the Forms default theme [#1038](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1038)
 * Added behavior to scroll to the form when navigating multiple page forms [#1037](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1037)
-* Added setting for the files selected label text for the file upload field type [#1039](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1039)
+* Added a setting for the files selected label text for the file upload field type [#1039](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1039)
 * Fixed a casing issue with the form picker [#1040](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1040)
-* Ensured custom field settings applied to the data consent field type are used in creation of new forms [#1034](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1034)
+* Ensured custom field settings applied to the data consent field type are used in the creation of new forms [#1034](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1034)
 * Fixed issue related to conditions applied to radio button or checkbox lists when a custom field ID prefix is configured [#1043](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1043)
 * Fixed a second issue related to conditions found when hiding a field based on a non-visible field [#1045](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1045)
-* Clarified labelling on selecting to include attachments in email workflows [#1044](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1044)
+* Clarified labeling on selecting to include attachments in email workflows [#1044](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1044)
 * Fixed issue with Umbraco Documents prevalue source retrieving unpublished nodes [#1030](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1030)
 * Updated naming of primary keys to match database conventions [#1049](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1049)
 * Fixed issue with retrieving forms for a user with start folders defined [#1050](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1050)
