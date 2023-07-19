@@ -64,7 +64,7 @@ You can choose between:
 
 - `No Caching` - no caching will be applied and the list of options will be retrieved from source on every request. You will likely only want to choose this option if the information changes frequently and it's important that the latest is presented to website visitors.
 - `Cache For Specified Time` - the list will be cached for the period of time provided.
-- `Cache With No Expiry` - the list will be cached on first request and not retrieved again until either the prevalue source is edited or the website is restarted. This most appropriate to use for information held within the prevalue source data itself (such as  when uploading a text file).
+- `Cache With No Expiry` - the list will be cached on first request and not retrieved again until either the prevalue source is edited or the website is restarted. This is most appropriate to use for information held within the prevalue source data itself (such as  when uploading a text file).
 
 ![Prevalue cache options](./images/prevalue-cache-options.png)
 
