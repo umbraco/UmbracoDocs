@@ -13,7 +13,7 @@ Umbraco Commerce is the official Umbraco e-commerce addon for your Umbraco CMS w
 
 ## Extend Umbraco Commerce
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Umbraco Commerce Packages</strong></td><td>Choose between a selection of verified packages to extend the Umbraco Commerce implementation for your website.</td><td><a href="http://localhost:5000/o/vHdmkfI8smZW50A5yIZD/s/4kB9Trqs7XbQsP80vWVA/">Commerce Packages</a></td></tr><tr><td><strong>Umbraco Commerce Payment Providers</strong></td><td>You can integrate your Umbraco Commerce implementation with a series of different payment providers.</td><td><a href="http://localhost:5000/o/vHdmkfI8smZW50A5yIZD/s/O8zV7PYqNxSkuGGGYa3P/">Commerce Payment Providers</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Umbraco Commerce Packages</strong></td><td>Choose between a selection of verified packages to extend the Umbraco Commerce implementation for your website.</td><td><a href="https://docs.umbraco.com/umbraco-commerce-packages/">https://docs.umbraco.com/umbraco-commerce-packages/</a></td></tr><tr><td><strong>Umbraco Commerce Payment Providers</strong></td><td>You can integrate your Umbraco Commerce implementation with a series of different payment providers.</td><td><a href="https://docs.umbraco.com/umbraco-commerce-payment-providers/">https://docs.umbraco.com/umbraco-commerce-payment-providers/</a></td></tr></tbody></table>
 
 ## Quick links
 

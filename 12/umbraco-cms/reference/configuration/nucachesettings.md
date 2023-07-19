@@ -22,9 +22,9 @@ This is how NuCache is configured by default. It is important to mention that th
 
 It is possible to configure NuCache to work in memory only without reading/writing the NuCache database files.
 
-For larger sites this is likely to increase startup duration for a "warm boot" however for a smaller site there should be little to no impact.
+Startup duration may increase for larger sites during a "warm boot" but smaller sites should see minimal impact.
 
-Unfortunately the settings have not yet been exposed via the new configuration setup, instead you must configure with a composer.
+The settings have not yet been exposed via the new configuration setup, instead you must configure with a composer.
 
 ```csharp
 public class DisableNuCacheDatabaseComposer : IComposer
