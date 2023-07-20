@@ -4,7 +4,7 @@ description: Get started with the Storefront API.
 
 # Storefront API
 
-The Storefront API delivers headless capabilities built directly into Umbraco Commerce. It allows you to retrieve and manage orders and other store related entities in a JSON format and lets you connect with them in different channels, using your preferred technology stack. This feature preserves the friendly editing experience of Umbraco, while also ensuring performant cart management facilities in a headless fashion. And with its different extension points, you can tailor this API to fit a broad range of requirements.
+The Storefront API delivers headless capabilities built directly into Umbraco Commerce. It allows you to retrieve and manage orders and other store-related entities in a JSON format. It lets you connect with them in different channels, using your preferred technology stack. This feature preserves the friendly editing experience of Umbraco, while also ensuring performant cart management facilities in a headless fashion. With its different extension points, you can tailor this API to fit a broad range of requirements.
 
 ## Getting Started
 
