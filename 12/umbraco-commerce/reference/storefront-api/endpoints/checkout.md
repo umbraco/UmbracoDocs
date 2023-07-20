@@ -16,7 +16,7 @@ With the hosted checkout flow it is required that before redirecting to the paym
 
 ## Inline
 
-With the inline checkout flow it is left to the implementing developer to perform payment capture. Before a capture can begine, the order should be initialized using the `initialize` endpoint which prepare the Order for capture. To aid developers, the `initialize` endpoint will return the settings of the given Orders selected payment method, along with details of any expected meta data needed by the payment provider. Developers can then use this data to perform an inline capture opperation and then call the `confirm` endpoint when the capture is successull, passing back any meta data captured.
+With the inline checkout flow, it is left to the implementing developer to perform payment capture. Before a capture can begin, the order should be initialized using the `initialize` endpoint which prepares the Order for capture. To aid developers, the `initialize` endpoint will return the settings of the given Orders selected payment method, along with details of any expected metadata needed by the payment provider. Developers can then use this data to perform an inline capture operation and then call the `confirm` endpoint when the capture is successful, passing back any metadata captured.
 
 {% swagger src=".gitbook/assets/storefront_swagger.json" path="/umbraco/commerce/storefront/api/v1/checkout/{orderId}/initialize" method="get" %}
 [storefront_swagger.json](.gitbook/assets/storefront_swagger.json)
