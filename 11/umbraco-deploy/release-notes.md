@@ -25,6 +25,7 @@ Under each major version, you can find details about minor and patch releases fo
 * Ensured that schema files are updated on entity container renames [#171](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/171).
 * Fixed issue with processing of marker files on Linux [#169](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/169).
 * Corrected logic for creating redirects on content deployment for variant content.
+* Ensured consistent rendering of trailing zeros when using the rounded decimal converter.
 * Reduced some logging to debug to reduce noise in log files.
 
 [**11.1.2**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.1.2) **(May 30th 2023)**
@@ -88,6 +89,7 @@ Under each major version, you can find details about minor and patch releases fo
 * Ensured that schema files are updated on entity container renames [#171](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/171).
 * Fixed issue with processing of marker files on Linux [#169](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/169).
 * Corrected logic for creating redirects on content deployment for variant content.
+* Ensured consistent rendering of trailing zeros when using the rounded decimal converter.
 * Reduced some logging to debug to reduce noise in log files.
 
 [**10.2.2**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.2) **(May 30th 2023)**
@@ -325,6 +327,7 @@ Under each major version, you can find details about minor and patch releases fo
 [**4.8.2**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.8.2) **(August 1st 2023)**
 
 * Corrected logic for creating redirects on content deployment for variant content.
+* Ensured consistent rendering of trailing zeros when using the rounded decimal converter.
 * Reduced some logging to debug to reduce noise in log files.
 
 [**4.8.1**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.8.1) **(May 23rd 2023)**
