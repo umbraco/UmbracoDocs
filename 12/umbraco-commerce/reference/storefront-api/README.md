@@ -8,7 +8,9 @@ The Storefront API delivers headless capabilities built directly into Umbraco Co
 
 ## Getting Started
 
-The Storefront API works alongside the Content Delivery API so you must first have the [Content Delivery API setup and enabled](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#register-the-content-delivery-api-dependencies). With this enabled, you will need to explicitly opt-in to the Storefront API. Below you will find the steps you need to take in order to configure it for your Umbraco project.
+As the Storefront API works alongside the Content Delivery API you must first have the [Content Delivery API setup and enabled](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#register-the-content-delivery-api-dependencies).
+
+When the Content Delivery API is enabled, you will need to explicitly opt-in to the Storefront API. Below you will find the steps you need to take in order to configure it for your Umbraco project.
 
 ### Register the Storefront API dependencies
 1. Open your project's `Startup.cs` file.
