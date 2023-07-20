@@ -55,7 +55,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ### Securing the Storefront API
 
-In order to work with the Storefront API many of the endpoints require auhtorization, this authorization is implemented by means of an API Key that must be passed in the header of these requests. The API Key is defined as an additional app setting and can be any value you decide:
+In order to work with the Storefront API many of the endpoints require authorization. The authorization is implemented by means of an API Key that must be passed in the header of these requests. The API Key is defined as an additional app setting and can be any value you decide:
 
 {% code title="appsettings.json" %}
 ```json
