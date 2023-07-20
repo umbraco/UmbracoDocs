@@ -26,11 +26,11 @@ For example:
 
 The API supports two endpoints, one for rendering a form and one for submitting it.
 
-{% swagger src=".gitbook/assets/umbraco_forms_swagger_10.json" path="/umbraco/forms/api/v1/definitions/{id}" method="get" %}
+{% swagger src=".gitbook/assets/umbraco_forms_swagger_10.json" path="/umbraco/forms/api/v1.0/definitions/{id}" method="get" %}
 [umbraco_forms_swagger_10.json](.gitbook/assets/umbraco_forms_swagger_10.json)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/umbraco_forms_swagger_10.json" path="/umbraco/forms/api/v1/entries/{id}" method="post" %}
+{% swagger src=".gitbook/assets/umbraco_forms_swagger_10.json" path="/umbraco/forms/api/v1.0/entries/{id}" method="post" %}
 [umbraco_forms_swagger_10.json](.gitbook/assets/umbraco_forms_swagger_10.json)
 {% endswagger %}
 
