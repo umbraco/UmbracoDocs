@@ -462,7 +462,7 @@ GET /umbraco/commerce/storefront/api/v1/order/af697207-d370-4aee-824c-15711d43a9
 }
 ```
 
-**NB:** When using the `fields` query parameter to limit fields returned, `id` properties will always be included.
+When using the `fields` query parameter to limit fields returned, `id` properties will always be included.
 
 Inline with the expansion feature, the `fields` paramter can also retrieve multiple fields, and nested fields using comma seperate values and the `[...]` syntax.
 
