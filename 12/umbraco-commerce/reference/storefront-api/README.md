@@ -84,15 +84,15 @@ When working with Umbraco Commerce's C# Api, Umbraco Commerce will normally keep
 
 The following is a list of supported headers used for session management:
 
-* `Store` - The ID or Alias of the store the given opperation is being performed against.
+* `Store` - The ID or Alias of the store the given operation is being performed against.
 * `Current-Order` - The ID of any current "in-progress" order.
 * `Customer-Reference` - A unique reference for the current customer.
-* `Accept-Language` - The ISO Culture Code of the current front end language.
-* `Currency` - The ID or ISO Code of the current currency. If not supplied, will fallback to the default currency of the default country defined on the store.
-* `Tax-Class` - The ID or Alias of the default tax class. If not supplied, will fallback to the default defined on the store.
+* `Accept-Language` - The ISO Culture Code of the current front-end language.
+* `Currency` - The ID or ISO Code of the current currency. If not supplied, will fall back to the default currency of the default country defined on the store.
+* `Tax-Class` - The ID or Alias of the default tax class. If not supplied, will fall back to the default defined on the store.
 * `Billing-Country` - The ID or ISO Code of the default billing country. If not supplied, falls back to the default country defined on the store.
 * `Billing-Region` - The ID or ISO Code of the default billing region. 
-* `Shipping-Country` - The ID or ISO Code of the default shipping country. If not supplied, falls back to either the supplied billing country or default country defined on the store.
+* `Shipping-Country` - The ID or ISO Code of the default shipping country. If not supplied, falls back to either the supplied billing country or the default country defined on the store.
 * `Shipping-Region` - The ID or ISO Code of the default billing region.
 
 </details>
