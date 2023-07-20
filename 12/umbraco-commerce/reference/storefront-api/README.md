@@ -308,7 +308,7 @@ GET /umbraco/commerce/storefront/api/v1/order/af697207-d370-4aee-824c-15711d43a9
 
 <summary>Fields</summary>
 
-A common pitfall of REST APIs is the problem of over-fetching, which is where an endpoint returns more information that you need. The Storefront API supports the passing of `fields` which allows you to define exactly which properties of an object you wish to return. This will reduce the payload size.
+A common pitfall of REST APIs is the problem of over-fetching, which is where an endpoint returns more information than you need. The Storefront API supports the passing of `fields` which allows you to define exactly which properties of an object you wish to return. This will reduce the payload size.
 
 For example, when implementing a cart count feature to show the total number of items in a shopping cart, rather than fetching an entire order for a single `totalQuantity` field, we can return only that field:
 
