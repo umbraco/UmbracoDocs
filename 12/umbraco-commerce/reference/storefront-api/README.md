@@ -80,7 +80,7 @@ Before exploring the API endpoints detailed below, there are a few concepts to k
 
 <summary>Session</summary>
 
-When working with Umbraco Commerce's C# Api, Umbraco Commerce will normally keep track of a series of items for you, such as the current Order ID or the current Language, which it tracks in a cookie. When working in a headless manor however we can no longer rely on cookies for this behaviour and so it becomes the implementors responsibility to remember these items and pass them as Headers to the endpoints that may need to use them for context.
+When working with Umbraco Commerce's C# Api, Umbraco Commerce will normally keep track of a series of items for you. This could be the current Order ID or the current Language, which it tracks in a cookie. When working in a headless manner however we can no longer rely on cookies for this behavior. It becomes the implementor's responsibility to remember these items and pass them as Headers to the endpoints that need to use them for context.
 
 The following is a list of supported headers used for session management:
 
