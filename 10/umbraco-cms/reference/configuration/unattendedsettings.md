@@ -9,7 +9,7 @@ description: "Information on the unattended settings section"
 
 This settings lets you configure the unattended install & upgrade settings. This is a feature that allows Umbraco to install without using the UI. If you don't intended to use this feature, you don't need to configure this.
 
-It's important to note that the install feature will only work if there is a connection string configured pointing to an empty database, so a configuration for unattended install & upgrade can look something like:
+It's important to know that the install feature will only work if there is a connection string configured pointing to an empty database. A configuration for unattended install & upgrade can look something like:
 
 ```json
 {
