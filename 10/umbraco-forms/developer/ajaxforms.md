@@ -26,12 +26,12 @@ For example:
 
 The API supports two endpoints, one for rendering a form and one for submitting it.
 
-{% swagger src=".gitbook/assets/umbraco_forms_swagger_10.json" path="/umbraco/forms/api/v1.0/definitions/{id}" method="get" %}
-[umbraco_forms_swagger_10.json](.gitbook/assets/umbraco_forms_swagger_10.json)
+{% swagger src="./../.gitbook/assets/umbraco_forms_swagger.json" path="/umbraco/forms/api/v1.0/definitions/{id}" method="get" %}
+[umbraco_forms_swagger.json](./../.gitbook/assets/umbraco_forms_swagger.json)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/umbraco_forms_swagger_10.json" path="/umbraco/forms/api/v1.0/entries/{id}" method="post" %}
-[umbraco_forms_swagger_10.json](.gitbook/assets/umbraco_forms_swagger_10.json)
+{% swagger src="./../.gitbook/assets/umbraco_forms_swagger.json" path="/umbraco/forms/api/v1.0/entries/{id}" method="post" %}
+[umbraco_forms_swagger.json](./../.gitbook/assets/umbraco_forms_swagger.json)
 {% endswagger %}
 
 As well as this documentation, the definition of the API can also be reviewed via the Swagger UI, available at the following path: `/umbraco/forms/api/swagger/index.html`.
