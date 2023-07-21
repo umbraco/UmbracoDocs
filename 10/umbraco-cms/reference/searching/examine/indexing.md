@@ -24,7 +24,7 @@ We will start by creating a ConfigureExamineOptions class, that derives from `IC
 using Examine.Lucene;
 using Microsoft.Extensions.Options;
 
-namespace Umbraco.Docs.Samples.Web.CustomIndexing
+namespace Umbraco.Docs.Samples.Web.CustomIndexing;
 {
     public class ConfigureExternalIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
     {
@@ -52,7 +52,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 
-namespace Umbraco.Docs.Samples.Web.CustomIndexing
+namespace Umbraco.Docs.Samples.Web.CustomIndexing;
 {
     public class ExamineComposer : IComposer
     {
@@ -70,7 +70,7 @@ By default, Examine will store values into the Lucene index as "Full Text" field
 
 There is some documentation about this in the [Examine documentation](https://shazwazza.github.io/Examine/configuration).
 
-The easiest way to modify how a field is configured is using the ConfigureNamedOptions pattern like so:
+The easiest way to modify how a field is configured is using the `ConfigureNamedOptions` pattern like so:
 
 ```csharp
 using Examine;
@@ -78,7 +78,7 @@ using Examine.Lucene;
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
 
-namespace Umbraco.Docs.Samples.Web.CustomIndexing
+namespace Umbraco.Docs.Samples.Web.CustomIndexing;
 {
     public class ConfigureExternalIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
     {
@@ -115,7 +115,7 @@ using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Infrastructure.Examine;
 
-namespace Umbraco.Docs.Samples.Web.CustomIndexing
+namespace Umbraco.Docs.Samples.Web.CustomIndexing;
 {
     public class ConfigureMemberIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
     {
@@ -156,7 +156,8 @@ To create this index we need five things:
 2. An `IConfigureNamedOptions` implementation that configures the index fields and options.
 3. An `IValueSetBuilder` implementation that builds index value sets a piece of content.
 4. An `IndexPopulator` implementation that populates the index with the value sets for all applicable content.
-5. A composer that adds all these services to the runtime.
+5. An `INotificationHandler` implementation that updates the index when content changes.
+6. A composer that adds all these services to the runtime.
 
 ### ProductIndex
 
@@ -167,7 +168,7 @@ using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Infrastructure.Examine;
 using IHostingEnvironment = Umbraco.Cms.Core.Hosting.IHostingEnvironment;
 
-namespace Umbraco.Docs.Samples.Web.CustomIndexing
+namespace Umbraco.Docs.Samples.Web.CustomIndexing;
 {
     public class ProductIndex : UmbracoExamineIndex
     {
@@ -199,7 +200,7 @@ using Lucene.Net.Util;
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core.Configuration.Models;
 
-namespace Umbraco.Docs.Samples.Web.CustomIndexing
+namespace Umbraco.Docs.Samples.Web.CustomIndexing;
 {
     public class ConfigureProductIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
     {
@@ -208,9 +209,9 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
         public ConfigureProductIndexOptions(IOptions<IndexCreatorSettings> settings)
             => _settings = settings;
 
-        public void Configure(string name, LuceneDirectoryIndexOptions options)
+        public void Configure(string? name, LuceneDirectoryIndexOptions options)
         {
-            if (name.Equals("ProductIndex") is false)
+            if (name?.Equals("ProductIndex") is false)
             {
                 return;
             }
@@ -244,7 +245,7 @@ using Examine;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Infrastructure.Examine
 
-namespace Umbraco.Docs.Samples.Web.CustomIndexing
+namespace Umbraco.Docs.Samples.Web.CustomIndexing;
 {
     public class ProductIndexValueSetBuilder : IValueSetBuilder<IContent>
     {
@@ -267,7 +268,7 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
         }
 
         // filter out all content types except "product"
-        private bool CanAddToIndex(IContent content) => content.ContentType.Alias == "article";
+        private bool CanAddToIndex(IContent content) => content.ContentType.Alias == "product";
     }
 }
 ```
@@ -280,7 +281,7 @@ using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Infrastructure.Examine;
 
-namespace Umbraco.Docs.Samples.Web.CustomIndexing
+namespace Umbraco.Docs.Samples.Web.CustomIndexing;
 {
     public class ProductIndexPopulator : IndexPopulator
     {
@@ -321,13 +322,137 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing
     }
 }
 ```
+
 {% hint style="info" %}
 This is only an example of how you could do indexing. In this example, we're indexing all content, both published and unpublished.
 
-In certain scenarios only published content should be added to the index.
-To achieve that, you will need to implement your own logic to filter out unpublished content.
-This can be somewhat tricky as the published state can vary throughout an entire structure of content nodes in the content tree.
-For inspiration on how to go about such filtering, you can look at the [ContentIndexPopulator in Umbraco](https://github.com/umbraco/Umbraco-CMS/blob/c878567633a6a3354c1414ccd130c9be518b25f0/src/Umbraco.Infrastructure/Examine/ContentIndexPopulator.cs#L115).
+In certain scenarios only published content should be added to the index. To achieve that, you will need to implement your own logic to filter out unpublished content. This can be somewhat tricky as the published state can vary throughout an entire structure of content nodes in the content tree. For inspiration on how to go about such filtering, you can look at the [ContentIndexPopulator in Umbraco](https://github.com/umbraco/Umbraco-CMS/blob/c878567633a6a3354c1414ccd130c9be518b25f0/src/Umbraco.Infrastructure/Examine/ContentIndexPopulator.cs#L115).
+{% endhint %}
+
+### ProductIndexingNotificationHandler
+
+The index will only update its content when you manually trigger an index rebuild in the Examine dashboard. This is not always the desired behavior for a custom index.
+
+To update your index when content changes, you can use notification handlers. 
+
+{% hint style="info" %}
+The following handler class does not automatically update the descendant items of the modified content nodes, such as removing descendants of deleted content. If changes to the parent content item can affect its children or descendant items in your setup, please refer to the [UmbracoContentIndex.PerformDeleteFromIndex() in Umbraco](https://github.com/umbraco/Umbraco-CMS/blob/contrib/src/Umbraco.Examine.Lucene/UmbracoContentIndex.cs#L124-L153). Such logic should be applied when both removing and reindexing content items of type _product_.
+{% endhint %}
+
+```csharp
+using Examine;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Cache;
+using Umbraco.Cms.Core.Events;
+using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Core.Notifications;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Core.Services.Changes;
+using Umbraco.Cms.Core.Sync;
+using Umbraco.Cms.Infrastructure;
+using Umbraco.Cms.Infrastructure.Search;
+
+namespace Umbraco.Docs.Samples.Web.CustomIndexing;
+
+public class ProductIndexingNotificationHandler : INotificationHandler<ContentCacheRefresherNotification>
+{
+    private readonly IRuntimeState _runtimeState;
+    private readonly IUmbracoIndexingHandler _umbracoIndexingHandler;
+    private readonly IExamineManager _examineManager;
+    private readonly IContentService _contentService;
+    private readonly ProductIndexValueSetBuilder _productIndexValueSetBuilder;
+
+    public ProductIndexingNotificationHandler(
+        IRuntimeState runtimeState,
+        IUmbracoIndexingHandler umbracoIndexingHandler,
+        IExamineManager examineManager,
+        IContentService contentService,
+        ProductIndexValueSetBuilder productIndexValueSetBuilder)
+    {
+        _runtimeState = runtimeState;
+        _umbracoIndexingHandler = umbracoIndexingHandler;
+        _examineManager = examineManager;
+        _contentService = contentService;
+        _productIndexValueSetBuilder = productIndexValueSetBuilder;
+    }
+
+    /// <summary>
+    ///     Updates the index based on content changes.
+    /// </summary>
+    public void Handle(ContentCacheRefresherNotification notification)
+    {
+        if (NotificationHandlingIsDisabled())
+        {
+            return;
+        }
+
+        if (!_examineManager.TryGetIndex("ProductIndex", out IIndex? index))
+        {
+            throw new InvalidOperationException("Could not obtain the product index");
+        }
+
+        ContentCacheRefresher.JsonPayload[] payloads = GetNotificationPayloads(notification);
+
+        foreach (ContentCacheRefresher.JsonPayload payload in payloads)
+        {
+            // Remove
+            if (payload.ChangeTypes.HasType(TreeChangeTypes.Remove))
+            {
+                index.DeleteFromIndex(payload.Id.ToString());
+            }
+            // Reindex
+            else if (payload.ChangeTypes.HasType(TreeChangeTypes.RefreshNode) ||
+                     payload.ChangeTypes.HasType(TreeChangeTypes.RefreshBranch))
+            {
+                IContent? content = _contentService.GetById(payload.Id);
+                if (content == null || content.Trashed)
+                {
+                    index.DeleteFromIndex(payload.Id.ToString());
+                    continue;
+                }
+
+                IEnumerable<ValueSet> valueSets = _productIndexValueSetBuilder.GetValueSets(content);
+                index.IndexItems(valueSets);
+            }
+        }
+    }
+
+    private bool NotificationHandlingIsDisabled()
+    {
+        // Only handle events when the site is running.
+        if (_runtimeState.Level != RuntimeLevel.Run)
+        {
+            return true;
+        }
+
+        if (_umbracoIndexingHandler.Enabled == false)
+        {
+            return true;
+        }
+
+        if (Suspendable.ExamineEvents.CanIndex == false)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    private ContentCacheRefresher.JsonPayload[] GetNotificationPayloads(CacheRefresherNotification notification)
+    {
+        if (notification.MessageType != MessageType.RefreshByPayload ||
+            notification.MessageObject is not ContentCacheRefresher.JsonPayload[] payloads)
+        {
+            throw new NotSupportedException();
+        }
+
+        return payloads;
+    }
+}
+```
+
+{% hint style="info" %}
+You can find further inspiration for implementing notification handlers (_for example, for media updates_) in the [UmbracoExamine.PDF package](https://github.com/umbraco/UmbracoExamine.PDF).
 {% endhint %}
 
 ### ExamineComposer
@@ -339,21 +464,21 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Infrastructure.Examine;
 
-namespace Umbraco.Docs.Samples.Web.CustomIndexing
+namespace Umbraco.Docs.Samples.Web.CustomIndexing;
 {
     public class ExamineComposer : IComposer
     {
         public void Compose(IUmbracoBuilder builder)
         {
             builder.Services.AddExamineLuceneIndex<ProductIndex, ConfigurationEnabledDirectoryFactory>("ProductIndex");
-            
-            builder.Services.ConfigureOptions<ConfigureProductIndexOptions>();
 
             builder.Services.ConfigureOptions<ConfigureProductIndexOptions>();
 
             builder.Services.AddSingleton<ProductIndexValueSetBuilder>();
 
             builder.Services.AddSingleton<IIndexPopulator, ProductIndexPopulator>();
+
+            builder.AddNotificationHandler<ContentCacheRefresherNotification, ProductIndexingNotificationHandler>();
         }
     }
 }
@@ -368,9 +493,3 @@ The order of these registrations matters. It is important to register your index
 ![Custom product index](images/examine-management-product-index.png)
 
 ![Product document](images/examine-management-product-document.png)
-
-{% hint style="info" %}
-The index will only update its content when you manually trigger an index rebuild in the Examine dashboard. This is not always the desired behavior for a custom index.
-
-To update your index when content changes, you can use notification handlers. You can find inspiration for implementing those in the [UmbracoExamine.PDF package](https://github.com/umbraco/UmbracoExamine.PDF).
-{% endhint %}
