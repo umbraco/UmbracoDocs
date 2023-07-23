@@ -1,10 +1,8 @@
-# Working with Mac
+# Working with Linux/macOS
 
-One of the features built into Umbraco Cloud is the ability to work locally with your Umbraco site - without having a Windows machine with a local web server installed on it. This enables people on Mac or Linux-based OS to use their favorite editor to modify code in their Umbraco Cloud site.
+One of the features built into Umbraco Cloud is the ability to work locally with your Umbraco site - without having a Windows machine with a local web server installed on it. This enables people on macOS or Linux-based OS to use their favorite editor to modify code in their Umbraco Cloud site.
 
-## The Mac Solution
-
-To work with Mac:
+## The Solution
 
 1.  On the Umbraco Cloud portal, go to your project and clone the site using your favorite Git client.
 

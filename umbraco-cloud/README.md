@@ -30,7 +30,7 @@ The easiest way to get started with an Umbraco Cloud project is to take a [14-da
 
 Since we set up the entire project, we recommend that you get to know your project before you start building.
 
-To start working with and building your site, you can either work directly in the backoffice on the Cloud environment or you can [clone down the project to your local machine](set-up/working-locally.md). For Mac users, see [Working with Mac](set-up/working-with-mac.md).
+To start working with and building your site, you can either work directly in the backoffice on the Cloud environment or you can [clone down the project to your local machine](set-up/working-locally.md). For Linux or macOS users, see [Working with Linux/macOS](set-up/working-with-linux-macos.md).
 
 ### Umbraco Cloud Portal Project
 

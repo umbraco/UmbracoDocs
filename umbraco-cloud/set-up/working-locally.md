@@ -4,7 +4,7 @@ description: "In this article we explain how you can work with a local clone of 
 
 # Working with a Local Clone
 
-To work with a local copy of your site, you'll need to use Windows with a local web server installed (like WebMatrix/IIS). If you're using Mac, see the [Working with Mac](working-with-mac.md) article.
+To work with a local copy of your site, you'll need to use Windows with a local web server installed (like WebMatrix/IIS). If you're using macOS or Linux based OS, see the [Working with Linux/macOS](working-with-linux-macos.md) article.
 
 ## Video Tutorial
 
