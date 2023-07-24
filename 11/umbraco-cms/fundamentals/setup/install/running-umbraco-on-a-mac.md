@@ -1,16 +1,16 @@
 ---
-description: "Since Umbraco 9 it has been possible to run Umbraco CMS natively on Mac Os."
+description: "Since Umbraco 9 it has been possible to run Umbraco CMS natively on Linux/macOS."
 ---
 
-# Running Umbraco on a Mac
+# Running Umbraco on Linux/macOS
 
-With Umbraco CMS on .NET Core, Mac OS is natively supported with SQLite as the database.
+With Umbraco CMS on .NET Core, Linux/macOS is natively supported with SQLite as the database.
 
-In the below section, we describe how to get started with running Umbraco CMS on Mac.
+In the below section, we describe how to get started with running Umbraco CMS.
 
-## How to get started running Umbraco CMS on Mac
+## How to get started running Umbraco CMS on Linux/macOS
 
-To get started with Umbraco CMS on Mac OS first have a look at the [requirements for running Umbraco CMS with Mac OS](../requirements.md#local-development).
+To get started with Umbraco CMS first have a look at the [requirements for running Umbraco CMS with Linux/macOS](../requirements.md#local-development).
 
 Once you've made sure you meet the requirements it is time to install the Umbraco Templates on your system.
 
@@ -25,6 +25,6 @@ To create a project, there are two options:
 
 To create new projects using Visual Studio, you can use the [Install using Visual Studio](visual-studio.md) guide.
 
-Once you create a new project it will use SQLite by default on Mac.
+Once you create a new project it will use SQLite by default.
 
-If you want to use an SQL server database, you will need to [set up Docker](https://creativewebspecialist.co.uk/2021/09/07/how-to-run-netcore-umbraco-cms-on-a-macbook/) to be able to use SQL Server with Mac.
+If you want to use an SQL server database, you will need to [set up Docker](https://creativewebspecialist.co.uk/2021/09/07/how-to-run-netcore-umbraco-cms-on-a-macbook/).
