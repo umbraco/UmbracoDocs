@@ -61,7 +61,7 @@ If set to true alternative templates will be validated
 
 When true, content can't be found by their ID meaning that urls such as /1234 do _not_ find content with ID 1234.
 
-## Disable redirect url tracking
+## Disable redirect URL tracking
 
 When you move and rename pages in Umbraco, 301 permanent redirects are automatically created, set this to true if you do not want this behavior.
 
