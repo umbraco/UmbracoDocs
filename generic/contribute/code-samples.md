@@ -72,6 +72,28 @@ When reading any piece of text, there is nothing more frustrating than running i
 
 Any code that is added to articles in the documentation should be double-checked for syntax errors and typos.
 
+### Use File Scoped Namespaces
+The use of file scoped namespaces improves, among other things, the readability of the code samples. Therefore, use file scoped namespaces in the examples. See below how to use file scoped namespaces:
+
+```csharp
+namespace MyProject;
+
+public class Umbraco
+{
+}
+```
+
+Instead of: 
+
+```csharp
+namespace MyProject
+{
+    public class Umbraco
+    {
+    }
+}
+```
+
 ## When to use code samples
 
 Code samples are relevant for most types of articles. Potentially, any topic covered could benefit from a real-life code sample to support the contents of the article.
