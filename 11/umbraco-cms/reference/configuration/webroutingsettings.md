@@ -4,7 +4,7 @@ description: Information on the web routing settings section
 
 # Web routing
 
-This section allows you to configure the routing for your solution, all of these settings have either default values, or do not need to be configured. However, you might want to tweak these settings in some scenarios, for instance, if you're running in a load-balanced setup.
+This section allows you to configure routing for your solution, all of these settings have either default values, or do not need to be configured. However, you might want to tweak these settings in some scenarios, for instance, if you're running in a load-balanced setup.
 
 An example of a web routing config with default values, and a placeholder for the application URL can be seen here:
 
@@ -64,7 +64,7 @@ When set to `true` Umbraco will check if any routed endpoints match a front-end 
 
 ## Try skip IIS custom errors
 
-Defines the value of Response.TrySkipIisCustomErrors when an error (404, 400, 500...) is encountered. You probably want it to be true in order to prevent IIS from displaying its own 404 or 500 pages, and instead have your own page displayed.
+Defines the value of Response.TrySkipIisCustomErrors when an error (404, 400, 500...) is encountered. You probably want it to be true in order to prevent IIS from displaying its own 404 or 500 pages. Instead have your own page displayed.
 
 ## Internal redirect preserves template
 
@@ -84,7 +84,7 @@ If set to true alternative templates will be validated
 
 When true, content can't be found by their ID meaning that urls such as /1234 do _not_ find content with ID 1234.
 
-## Disable redirect url tracking
+## Disable redirect URL tracking
 
 When you move and rename pages in Umbraco, 301 permanent redirects are automatically created, set this to true if you do not want this behavior.
 
