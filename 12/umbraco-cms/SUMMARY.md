@@ -17,7 +17,7 @@
     * [Local IIS With Umbraco](fundamentals/setup/install/iis.md)
     * [Install using Visual Studio Code](fundamentals/setup/install/install-umbraco-with-vs-code.md)
     * [Installing Nightly Builds](fundamentals/setup/install/installing-nightly-builds.md)
-    * [Running Umbraco On A Mac](fundamentals/setup/install/running-umbraco-on-a-mac.md)
+    * [Running Umbraco linux/macOS](fundamentals/setup/install/running-umbraco-on-linux-macos.md)
     * [Unattended Installs](fundamentals/setup/install/unattended-install.md)
   * [Upgrade your project](fundamentals/setup/upgrading/README.md)
     * [Version Specific Upgrades](fundamentals/setup/upgrading/version-specific/README.md)

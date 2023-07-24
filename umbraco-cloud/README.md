@@ -82,7 +82,7 @@ The Overview Page consists of:
 
     ![Project Overview Page](getting-started/images/Cloud\_Overview\_Page.png)
 
-Umbraco Cloud takes care of installation, infrastructure, and security. You will also get the tools to work with your project in the Cloud or locally. Local development starts with cloning the project down to your PC or Mac.
+Umbraco Cloud takes care of installation, infrastructure, and security. You will also get the tools to work with your project in the Cloud or locally. Local development starts with cloning the project down to your PC or Linux/macOS.
 
 When you are ready to show your work to the world, Umbraco Cloud provides a safe deployment mechanism that lets you publish to the web. When you have changes or updates to your site, Umbraco Cloud follows the process of moving, testing, and deploying your changes to your public site.
 
