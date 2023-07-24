@@ -20,9 +20,9 @@ To secure your controller based on backoffice membership use the attribute: `Mic
 
 This attribute will ensure that a valid backoffice user is logged in. It is important to know that this only works if the controller is routed to `/umbraco/backoffice/*`.
 
-**Examples:**
+**Example:**
 
-This will only allow a logged in backoffice user to access the GetAllProducts action:
+This will only allow a logged in backoffice user to access the `GetProduct` action:
 
 ```csharp
 public class ProductsController : UmbracoApiController
@@ -38,6 +38,52 @@ public class ProductsController : UmbracoApiController
         return "Base model Monitor";
     }
 }
+```
+
+The `AuthorizationPolicies` has a [series of other options](https://apidocs.umbraco.com/v11/csharp/api/Umbraco.Cms.Web.Common.Authorization.AuthorizationPolicies.html) you can set. An example is `UserBelongsToUserGroupInRequest`. By using this policy, you can check if the current incoming request of the user is in a specific backoffice User Group.
+
+**Example:**
+
+This will only allow a logged-in backoffice user that has access to the SensitiveData User Group to access the `GetProduct` action:
+
+```csharp
+public class ProductsController : UmbracoApiController
+{
+    [Authorize(Policy = AuthorizationPolicies.UserBelongsToUserGroupInRequest, Roles = Security.SensitiveDataGroupAlias)]
+    [Route("umbraco/backoffice/product/{id?}")]
+    public string GetProduct(int? id)
+    {
+        if (id is not null)
+        {
+            return $"Monitor model {id}";
+        }
+        return "Base model Monitor";
+    }
+}
+```
+
+## Adding custom policies
+
+You can add custom policies so you can set up your own requirements. You can do this by adding a new Policy to your builder:
+
+**Example:**
+
+```csharp
+builder.Services.AddAuthorization(options =>
+    options.AddPolicy(MyConstants.CustomPolicyName, policy => // Always good to use constants
+    {
+        policy.AuthenticationSchemes.Add(Constants.Security.BackOfficeAuthenticationType); // Default backoffice authentication scheme
+        policy.RequireRole(Constants.Security.SensitiveDataGroupAlias); // Add the Sensitive Group as a requirement
+
+        // Add more requirements as needed
+    })
+);
+```
+
+After configuring, you can now use the `Authorize` attribute with the name of your policy:
+
+```csharp
+[Authorize(Policy = MyConstants.CustomPolicyName)]
 ```
 
 ## Using MemberAuthorizeAttribute
@@ -63,7 +109,7 @@ You can apply these attributes at the controller level or at the action level.
 
 **Examples:**
 
-This will only allow logged in members of type "Retailers" to access the GetAllProducts action:
+This will only allow logged in members of type "Retailers" to access the `GetAllProducts` action:
 
 ```csharp
 public class ProductsController : UmbracoApiController
