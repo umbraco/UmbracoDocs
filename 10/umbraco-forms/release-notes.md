@@ -33,6 +33,7 @@ In this section, you can find the release notes for each version of Umbraco Form
 * Fixed issue with Umbraco Documents prevalue source retrieving unpublished nodes [#1030](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1030)
 * Updated naming of primary keys to match database conventions [#1049](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1049)
 * Fixed issue with retrieving forms for a user with start folders defined [#1050](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1050)
+* Updated dependency on `aspnet-client-validation` to correct the rendering of the validation summary when validating mandatory single and multiple choice answers, [#1053](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1053)
 
 ### [10.4.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.4.0) (June 13th 2023)
 
@@ -539,7 +540,7 @@ If upgrading from a previous version and already using the headless API, please 
 
 ### [8.13.10](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.13.10) (August 1st 2023)
 
-* Updated dependency on `aspnet-client-validation` to resolve an issue with validation of mandatory radio button or checkbox lists [#1028](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1028)
+* Updated dependency on `aspnet-client-validation` to resolve two issues with validation of mandatory radio button or checkbox lists [#1028](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1028), [#1053](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1053)
 * Ensured a case insensitive request check for protecting access to files uploaded to the media system.
 * Made `RecordService` public to provide access to static events.
 
