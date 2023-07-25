@@ -63,7 +63,8 @@ For illustration purposes, the following structure represents the full set of op
             "MediaFileChecksumCalculationMethod": "PartialFileContents",
             "NumberOfSignaturesToUseAllRelationCache": 100,
             "ContinueOnMediaFilePathTooLongException": false,
-            "SuppressCacheRefresherNotifications": false
+            "SuppressCacheRefresherNotifications": false,
+            "HideConfigurationDetails": false
         }
     }
   }
@@ -328,3 +329,7 @@ When a Deploy operation completes, cache refresher notifications are fired. Thes
 In production this setting shouldn't be changed from it's default value of `false`, to ensure these additional data stores are kept up to date.
 
 If attempting a one-off, large transfer operation, before a site is live, you could set this value to `true`. That would omit the firing and handling of these notifications and remove their performance overhead. Following which you would need to ensure to rebuild the cache and search index manually via the backoffice _Settings_ dashboards.
+
+## HideConfigurationDetails
+
+If set to `true` the configuration details shown on the setting's dashboard will be hidden.
