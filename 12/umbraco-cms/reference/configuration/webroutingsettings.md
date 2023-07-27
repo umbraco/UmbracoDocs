@@ -64,7 +64,7 @@ When set to `true` Umbraco will check if any routed endpoints match a front-end 
 
 ## Try skip IIS custom errors
 
-Defines the value of Response.TrySkipIisCustomErrors when an error (404, 400, 500...) is encountered. You probably want it to be true in order to prevent IIS from displaying its own 404 or 500 pages. Instead have your own page displayed.
+Defines the value of Response.TrySkipIisCustomErrors when an error (404, 400, 500...) is encountered. In order to prevent IIS from displaying its own 404 or 500 pages, set this to `true` to have your own page displayed.
 
 ## Internal redirect preserves template
 
