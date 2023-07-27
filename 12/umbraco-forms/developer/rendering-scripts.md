@@ -20,9 +20,23 @@ In order to render your scripts where you want, you need to add the following sn
 }
 ```
 
+{% hint style="info" %}
+
+Due to GDPR compliance, TempData cookie is [disabled by default](https://learn.microsoft.com/en-us/aspnet/core/security/gdpr?view=aspnetcore-2.2#tempdata-provider-and-session-state-cookies-arent-essential). You need to mark the cookie as essential in `Startup.ConfigureServices`.
+
+```csharp
+services.Configure<CookieTempDataProviderOptions>(options => {
+    options.Cookie.IsEssential = true;
+});
+```
+
+{% endhint %}
+
 If you prefer to use a tag helper, that's an option too.
 
 Firstly, in your `_ViewImports.cshtml` file, ensure you have a reference to the Umbraco Forms tag helpers with:
+
+
 
 ```cshtml
 @addTagHelper *, Umbraco.Forms.Web
