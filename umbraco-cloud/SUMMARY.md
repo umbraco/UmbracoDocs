@@ -81,6 +81,7 @@
   * [Apply hotfix by using Git](deployment/hotfixes/using-git.md)
 * [Restoring Content](deployment/restoring-content/README.md)
   * [Partial Restores](deployment/restoring-content/partial-restore.md)
+* [Fun with Deploy](deployment/fun-with-deploys.md)
 
 ## Databases
 
