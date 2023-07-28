@@ -21,7 +21,7 @@ When you start with a fresh Umbraco 12 installation, the Delivery API is also di
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddUmbraco(_env, _config)
-        .AddBackOffice()             
+        .AddBackOffice()
         .AddWebsite()
         // Register all Delivery API dependencies
         .AddDeliveryApi()
@@ -428,15 +428,15 @@ Returns single or multiple items.
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="fetch" type="String" required="false" %}
-Structural query string option (e.g. 
+Structural query string option (e.g.
 
 `ancestors`
 
-, 
+,
 
 `children`
 
-, 
+,
 
 `descendants`
 
@@ -444,11 +444,11 @@ Structural query string option (e.g.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="filter" type="String Array" required="false" %}
-Filtering query string options (e.g. 
+Filtering query string options (e.g.
 
 `contentType`
 
-, 
+,
 
 `name`
 
@@ -456,23 +456,23 @@ Filtering query string options (e.g.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="sort" type="String Array" required="false" %}
-Sorting query string options (e.g. 
+Sorting query string options (e.g.
 
 `createDate`
 
-, 
+,
 
 `level`
 
-, 
+,
 
 `name`
 
-, 
+,
 
 `sortOrder`
 
-, 
+,
 
 `updateDate`
 
@@ -679,3 +679,37 @@ You'll find detailed information about the specific areas of extension in the ar
 
 * [Tailor the API's response for custom property editors](custom-property-editors-support.md)
 * [Extend the API with custom selecting, filtering, and sorting options](extension-api-for-querying.md)
+
+## Handling deeply nested JSON output
+
+.NET imposes a limit on the depth of object nesting within rendered JSON. This is done in an effort to detect cyclic references (read more [here](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.jsonserializeroptions.maxdepth)). If the limit is exceeded, .NET will throw a `JsonException`.
+
+In some cases the content models might be so deeply nested that the Delivery API produces JSON that exceeds this limit. If this happens, the `JsonException` will be logged and shown in the Umbraco log (in the _Settings_ section).
+
+Fortunately we can change the limit. And since the Delivery API has its own JSON configuration, we can do so without affecting the rest of our site.
+
+First we have to add these `using` statements to `Startup.cs`:.
+
+{% code title="Startup.cs" %}
+```csharp
+using Umbraco.Cms.Api.Common.DependencyInjection;
+using Umbraco.Cms.Core;
+```
+{% endcode %}
+
+Now we can add the following code snippet to the `ConfigureServices()` method in `Startup.cs`:
+
+{% code title="Startup.cs" %}
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddControllers().AddJsonOptions(
+        Constants.JsonOptionsNames.DeliveryApi,
+        options =>
+        {
+            // set the maximum allowed depth of
+            options.JsonSerializerOptions.MaxDepth = {desired max depth}
+        });
+    ...
+```
+{% endcode %}
