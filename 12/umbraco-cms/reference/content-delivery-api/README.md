@@ -686,7 +686,7 @@ You'll find detailed information about the specific areas of extension in the ar
 
 In some cases the content models might be so deeply nested that the Delivery API produces JSON that exceeds this limit. If this happens, the `JsonException` will be logged and shown in the Umbraco log (in the _Settings_ section).
 
-Fortunately we can change the limit. And since the Delivery API has its own JSON configuration, we can do so without affecting the rest of our site.
+To handle this we have to change the limit. Since the Delivery API has its own JSON configuration, we can do so without affecting the rest of our site.
 
 First we have to add these `using` statements to `Startup.cs`:.
 
