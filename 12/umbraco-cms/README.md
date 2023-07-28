@@ -14,7 +14,7 @@ Learn more about Umbraco CMS and get an overview of the top features on [Umbraco
 Watch this tutorial on how to get started building your first Umbraco CMS website.
 {% endembed %}
 
-The documentation for Umbraco CMS holds information for the experienced Umbraco and .NET developers as well as guides and high-level articles for people starting out with the CMS.
+The documentation for Umbraco CMS provides information for experienced Umbraco and .NET developers. It also offers guides and high-level articles for people starting out with the CMS.
 
 {% content-ref url="tutorials/creating-a-basic-website/" %}
 [creating-a-basic-website](tutorials/creating-a-basic-website/)
