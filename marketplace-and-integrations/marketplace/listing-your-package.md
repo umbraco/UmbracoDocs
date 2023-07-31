@@ -167,7 +167,8 @@ When providing a list of related packages, you have the option to organize them 
 
 When a group title is provided, the package, and subsequent ones that don't have a title assigned, will be presented within a group. If a later package has a group title, that will start a new group.
 
-So for example this JSON structure...
+The example below will be rendered as two separate groups, each with two packages:
+
 
 ```json
 "RelatedPackages": [
@@ -188,7 +189,7 @@ So for example this JSON structure...
   ],
 ```
 
-... would render as two groups, each with two packages.
+`Package.One` and `Package.Two` will be part of Group One, while `Package.Three` and `Package.Four` will be part of Group Two.
 
 ### Video URL
 
