@@ -34,3 +34,4 @@ redirects:
     upgrades/migrate-from-umbraco-7-to-8: product-upgrades/version-specific-upgrades/migrate-from-umbraco-7-to-8.md
     set-up/2-factor-authentication-on-cloud: setup/multi-factor-authentication-on-cloud
     getting-started/baselines/high-level-overview: getting-started/baselines/README.md
+    set-up/working-with-mac: set-up/working-with-linux-macos.md
