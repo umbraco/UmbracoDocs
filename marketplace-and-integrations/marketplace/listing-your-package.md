@@ -77,6 +77,7 @@ The [schema for the JSON file is available](https://marketplace.umbraco.com/umbr
       "PackagesByAuthor": [],
       "RelatedPackages": [
         {
+          "GroupTitle": "",
           "PackageId": "",
           "Description": ""
         }
@@ -121,7 +122,7 @@ The [schema for the JSON file is available](https://marketplace.umbraco.com/umbr
 | **LicenseTypes**                                 | Array of strings | The types of license available for the package.                                                                                                                                                                                                                                                                                                                                                                                     |
 | **PackageType**                                  | String value     | The type of package.                                                                                                                                                                                                                                                                                                                                                                                                                |
 | **PackagesByAuthor**                             | String array     | A collection of NuGet package IDs for packages that are built by the same author and are also listed on the Umbraco Marketplace. If this information isn't provided, the display of packages by the same author will be derived from the package owners specified for the NuGet package.                                                                                                                                            |
-| **RelatedPackages**                              | Object array     | A collection of complementary packages that are also listed on the Umbraco Marketplace. Each element should contain the package ID and an optional short description. The idea of the description is to provide additional context of why the two packages work well together.                                                                                                                                                      |
+| **RelatedPackages**                              | Object array     | A collection of complementary packages that are also listed on the Umbraco Marketplace. Each element should contain the package ID along with a short description amd group title (both optional). The idea of the description is to provide additional context of why the two packages work well together. The group title can be used to group the related packages (see below for details).                                      |
 | **Screenshots**                                  | Object array     | A collection of screenshots for displaying on the package details page. Each element should consist of a URL to the image file and a short caption.                                                                                                                                                                                                                                                                                 |
 | **Tags**                                         | String array     | One or more package owner-defined tags for the package. Multiple word tags are supported, e.g. "property editor".                                                                                                                                                                                                                                                                                                                   |
 | **Title**                                        | String value     | The package title. If omitted, if a title is defined in the NuGet package details this will be used. Otherwise, the package ID itself is displayed.                                                                                                                                                                                                                                                                                 |
@@ -159,6 +160,36 @@ When defining the Package Type for your package, use one of the following values
 * Integration
 
 An "Integration" provides a connection between Umbraco and a third-party service that a customer has an account with. All other add-ons are considered as a "Package", which is also the default when nothing is specified for this value.
+
+### Related Packages
+
+When providing a list of related packages, you have the option to organize them into separate groups, each with a title.
+
+When a group title is provided, the package, and subsequent ones that don't have a title assigned, will be presented within a group. If a later package has a group title, that will start a new group.
+
+The example below will be rendered as two separate groups, each with two packages:
+
+
+```json
+"RelatedPackages": [
+    {
+      "PackageId": "Package.One",
+      "GroupTitle": "Group One"
+    },
+    {
+      "PackageId": "Package.Two",
+    },
+    {
+      "PackageId": "Package.Three",
+      "GroupTitle": "Group Two"
+    },
+    {
+      "PackageId": "Package.Four",
+    }
+  ],
+```
+
+`Package.One` and `Package.Two` will be part of Group One, while `Package.Three` and `Package.Four` will be part of Group Two.
 
 ### Video URL
 
