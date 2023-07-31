@@ -27,7 +27,7 @@
 * [Set Up](set-up/set-up.md)
 * [Working with a Local Clone](set-up/working-locally.md)
   * [Legacy Umbraco Visual Studio Setup](set-up/legacy-umbraco-visual-studio-setup.md)
-* [Working with linux/macOS](set-up/working-with-linux-macos.md)
+* [Working with Linux/macOS](set-up/working-with-linux-macos.md)
 * [Manage Environments](set-up/manage-environments.md)
 * [Project Settings](set-up/project-settings/README.md)
   * [Managing Transport Security](set-up/project-settings/manage-security.md)
