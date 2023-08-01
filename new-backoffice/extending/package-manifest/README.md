@@ -144,7 +144,7 @@ Editors like Visual Studio can use the `$schema` notation in your file.
 }
 ```
 
-Hover over any of the properties to see the description of the property. You can also use the `Ctrl + Space` (Windows/Linux) or `CMD + Space` (MacOS) shortcut to see the available properties.
+Hover over any of the properties to see the description of the property. You can also use the `Ctrl + Space` (Windows/Linux) or `CMD + Space` (macOS) shortcut to see the available properties.
 
 ## Load Package Manifest files
 
