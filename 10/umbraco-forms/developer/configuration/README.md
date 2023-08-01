@@ -83,7 +83,8 @@ For illustration purposes, the following structure represents the full set of op
       },
       "DisableRecordIndexing": false,
       "EnableFormsApi": false,
-      "EnableRecordingOfIpWithFormSubmission": "true"
+      "EnableRecordingOfIpWithFormSubmission": "true",
+      "UseSemanticFieldsetRendering": false
     },
     "Security": {
       "DisallowedFileUploadExtensions": "config,exe,dll,asp,aspx",
@@ -106,7 +107,8 @@ For illustration purposes, the following structure represents the full set of op
       },
       "Recaptcha3": {
         "SiteKey": "",
-        "PrivateKey": ""
+        "PrivateKey": "",
+        "Domain": "www.google.com"
       },
       "RichText": {
         "DataTypeId": "ca90c950-0aff-4e72-b976-a30b1ac57dad"
@@ -365,6 +367,14 @@ To remove this behavior set this value to `false`.
 
 If recording IPs and your site is behind a proxy, load balancer or CDN, we recommend using [ASP.NET's forwarded headers middleware](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/proxy-load-balancer?view=aspnetcore-7.0) to ensure the correct value for the client IP is resolved.
 
+### UseSemanticFieldsetRendering
+
+In Forms 10.5 amends were made to the default theme for Forms that improved accessibility. Specifically we provide the option to use alternative markup for rendering checkbox and radio button lists. These use the more semantically correct `fieldset` and `legend` elements, instead of the previously used `div` and `label`.
+
+Although this semantic markup is preferred, it could be a presentational breaking change for those styling the default theme.  As such we have made this markup improvement optional. You can opt into using it by setting this configuration value to `true`.
+
+In Umbraco 13 this configuration option will be removed and the semantic rendering made the only option.
+
 ## Security configuration
 
 ### DisallowedFileUploadExtensions
@@ -440,6 +450,13 @@ Google has renamed these recently and the `Site Key` refers to `RecaptchaPublicK
 Both of these configuration values are needed in order to use the "_reCAPTCHA V3 with Score_" field type implementing ReCaptcha V3 from Google.
 
 You can obtain both of these values after signing up to create a ReCaptcha key here: [https://www.google.com/recaptcha/admin](https://www.google.com/recaptcha/admin).
+
+#### Domain
+
+This setting defines the domain from which the client-side assets for using the reCAPTCHA service are requested.
+
+Valid options are `www.google.com` (the default) or `www.recaptcha.net`. You may want to use the latter for control of which domains are setting cookies on your site. [Read more at the reCAPTCHA documentation](https://developers.google.com/recaptcha/docs/faq#does-recaptcha-use-cookies).
+
 
 ### Rich text field type configuration
 
