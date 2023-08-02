@@ -1,7 +1,7 @@
 ---
 description: >-
   Follow this guide when upgrading your Cloud project to a new major version of
-  Umbraco CMS. For example when upgrading from 10 to 11.
+  Umbraco CMS.
 ---
 
 # Major Upgrades

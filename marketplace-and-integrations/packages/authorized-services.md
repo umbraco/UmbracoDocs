@@ -5,7 +5,6 @@ description: >-
 
 # Authorized Services
 
-
 **Umbraco Authorized Services** is an Umbraco package designed to reduce the effort needed to integrate third-party solutions into Umbraco solutions.  Many such services require an OAuth flow for authentication and authorization.  Working with these services requires a fair bit of plumbing code to handle creating an authorized connection.  This is necessary before the developer working with the service can get to using the provided API to implement the business requirements.
 
 There are similarities to the flow that needs to be implemented for different services.  Steps include:
@@ -49,7 +48,6 @@ Using a settings screen the administrator can review the service configuration.
 
 In the following, you can learn more about how to use the Umbraco Authorized Services package.
 
-
 ### App Creation
 
 Services that this package is intended to support will offer an OAuth authentication and authorization flow against an "app". The developer will need to create this "app" with the service.  By doing this, information such as the "client ID" and "client secret" can be applied to the configuration.
@@ -71,35 +69,37 @@ An example of doing this through the `appSettings.json` file is shown below. Oth
     },
     "AuthorizedServices": {
       "TokenEncryptionKey": "",
-      "Services": [
+      "Services": {
         {
-          "Alias": "",
-          "DisplayName": "",
-          "ApiHost": "",
-          "IdentityHost": "",
-          "TokenHost": "",
-          "RequestIdentityPath": "",
-          "AuthorizationUrlRequiresRedirectUrl": true|false,
-          "RequestTokenPath": "",
-          "JsonSerializer": "",
-          "RequestTokenFormat": "",
-          "AuthorizationRequestRequiresAuthorizationHeaderWithBasicToken": true|false,
-          "ClientId": "",
-          "ClientSecret": "",
-          "Scopes": "",
-          "UseProofKeyForCodeExchange": true|false,
-          "AccessTokenResponseKey": "access_token",
-          "RefreshTokenResponseKey": "refresh_token",
-          "ExpiresInResponseKey": "expires_in",
-          "SampleRequest": ""
-        },
-      ]
+          "<serviceAlias>": {
+            "DisplayName": "",
+            "ApiHost": "",
+            "IdentityHost": "",
+            "TokenHost": "",
+            "RequestIdentityPath": "",
+            "AuthorizationUrlRequiresRedirectUrl": true|false,
+            "RequestTokenPath": "",
+            "JsonSerializer": "",
+            "RequestTokenFormat": "",
+            "AuthorizationRequestRequiresAuthorizationHeaderWithBasicToken": true|false,
+            "ClientId": "",
+            "ClientSecret": "",
+            "UseProofKeyForCodeExchange": true|false,
+            "Scopes": "",
+            "AccessTokenResponseKey": "access_token",
+            "RefreshTokenResponseKey": "refresh_token",
+            "ExpiresInResponseKey": "expires_in",
+            "SampleRequest": ""
+        }
+      }
     }
 ```
 
-`TokenEncryptionKey` is a single setting that provides an optional key used for token encryption when they are saved and retrieved from storage respectively.
+`TokenEncryptionKey` is a setting for an optional key used for token encryption when they are saved and retrieved from storage. It's only necessary and advisable when using the non-default `AesSecretEncryptor` implementation.
 
-`Services` contains the a collection of details for all the configured services.
+`Services` contains the a collection of details for all the configured services structured as a dictionary.
+
+The dictionary key is the alias of the service, which must be unique across the service collection.
 
 The following table describes each of the service elements. Where appropriate, an example is provided for one service provider, GitHub.
 
@@ -107,7 +107,6 @@ Not all values are required for all services.  Those that are required are indic
 
 | Element                                                       | Description                                                                                                                                                                                                                                                  | Required? | Example                                    |
 |---------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|--------------------------------------------|
-| Alias                                                         | The alias of the service, which must be unique across the service collection.                                                                                                                                                                                | Yes       |                                            |
 | DisplayName                                                   | Provides a friendly name for the service used for identification in the user interface.                                                                                                                                                                      | Yes       |                                            |
 | ApiHost                                                       | The host name for the service API that will be called to deliver business functionality.                                                                                                                                                                     | Yes       | `https://api.github.com`                   |
 | IdentityHost                                                  | The host name for the service's authentication endpoint, used to initiate the authorization of the service by asking the user to login.                                                                                                                      | Yes       | `https://github.com`                       |
@@ -203,8 +202,7 @@ As integrations with more providers are successfully completed, we plan to maint
 <summary>Amazon</summary>
 
 ```json
-{
-  "Alias": "amazon",
+"amazon": {
   "DisplayName": "Amazon",
   "ApiHost": "https://api.amazon.com",
   "IdentityHost": "https://www.amazon.com",
@@ -228,8 +226,7 @@ As integrations with more providers are successfully completed, we plan to maint
 <summary>Aprimo</summary>
 
 ```json
-{
-  "Alias": "aprimo",
+"aprimo": {
   "DisplayName": "Aprimo",
   "ApiHost": "https://[tenant].dam.aprimo.com/api/core",
   "IdentityHost": "https://[tenant].aprimo.com",
@@ -252,10 +249,8 @@ As integrations with more providers are successfully completed, we plan to maint
 
 <summary>Atlasian</summary>
 
-
 ```json
-{
-  "Alias": "atlasian",
+"atlasian": {
   "DisplayName": "Atlasian",
   "ApiHost": "https://api.atlassian.com",
   "IdentityHost": "https://auth.atlassian.com",
@@ -276,12 +271,34 @@ As integrations with more providers are successfully completed, we plan to maint
 
 <details>
 
-<summary>Bitbucket</summary>
-
+<summary>Asset Bank</summary>
 
 ```json
-{
-  "Alias": "bitbucket",
+"assetbank": {
+  "DisplayName": "Asset Bank",
+  "ApiHost": "https://my-assets-test.assetbank-server.com",
+  "IdentityHost": "https://my-assets-test.assetbank-server.com",
+  "TokenHost": "https://my-assets-test.assetbank-server.com",
+  "RequestIdentityPath": "/assetbank-my-assets-test/oauth/authorize",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "RequestTokenPath": "/assetbank-my-assets-test/oauth/token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "JsonSerializer": "SystemTextJson",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "",
+  "SampleRequest": "/assetbank-my-assets-test/rest/asset-search?assetIds=1234"
+}
+```
+
+</details>
+
+<details>
+
+<summary>Bitbucket</summary>
+
+```json
+"bitbucket": {
   "DisplayName": "Bitbucket",
   "ApiHost": "https://api.bitbucket.org",
   "IdentityHost": "https://bitbucket.org",
@@ -305,8 +322,7 @@ As integrations with more providers are successfully completed, we plan to maint
 
 
 ```json
-{
-  "Alias": "calendly",
+"calendly": {
   "DisplayName": "Calendly",
   "ApiHost": "https://api.calendly.com",
   "IdentityHost": "https://auth.calendly.com",
@@ -330,8 +346,7 @@ As integrations with more providers are successfully completed, we plan to maint
 
 
 ```json
-{
-  "Alias": "discord",
+"discord": {
   "DisplayName": "Discord",
   "ApiHost": "https://discord.com",
   "IdentityHost": "https://discord.com",
@@ -357,8 +372,7 @@ As integrations with more providers are successfully completed, we plan to maint
 
 
 ```json
-{
-  "Alias": "dropbox",
+"dropbox": {
   "DisplayName": "Dropbox",
   "ApiHost": "https://api.dropboxapi.com",
   "IdentityHost": "https://www.dropbox.com",
@@ -383,8 +397,7 @@ As integrations with more providers are successfully completed, we plan to maint
 
 
 ```json
-{
-  "Alias": "facebook",
+"facebook": {
   "DisplayName": "Facebook",
   "ApiHost": "https://graph.facebook.com",
   "IdentityHost": "https://www.facebook.com",
@@ -408,8 +421,7 @@ As integrations with more providers are successfully completed, we plan to maint
 
 
 ```json
-{
-  "Alias": "figma",
+"figma": {
   "DisplayName": "Figma",
   "ApiHost": "https://api.figma.com",
   "IdentityHost": "https://www.figma.com",
@@ -433,8 +445,7 @@ As integrations with more providers are successfully completed, we plan to maint
 
 
 ```json
-{
-  "Alias": "fitbit",
+"fitbit": {
   "DisplayName": "Fitbit",
   "ApiHost": "https://api.fitbit.com",
   "IdentityHost": "https://www.fitbit.com",
@@ -460,8 +471,7 @@ As integrations with more providers are successfully completed, we plan to maint
 
 
 ```json
-{
-  "Alias": "github",
+"github": {
   "DisplayName": "GitHub",
   "ApiHost": "https://api.github.com",
   "IdentityHost": "https://github.com",
@@ -484,8 +494,7 @@ As integrations with more providers are successfully completed, we plan to maint
 
 
 ```json
-{
-  "Alias": "gitlab",
+"gitlab": {
   "DisplayName": "Gitlab",
   "ApiHost": "https://gitlab.com",
   "IdentityHost": "https://gitlab.com",
@@ -510,8 +519,7 @@ As integrations with more providers are successfully completed, we plan to maint
 
 
 ```json
-{
-  "Alias": "google",
+"google": {
   "DisplayName": "Google Search Console",
   "ApiHost": "https://searchconsole.googleapis.com",
   "IdentityHost": "https://accounts.google.com",
@@ -535,8 +543,7 @@ As integrations with more providers are successfully completed, we plan to maint
 
 
 ```json
-{
-  "Alias": "hubspot",
+"hubspot": {
   "DisplayName": "HubSpot",
   "ApiHost": "https://api.hubapi.com",
   "IdentityHost": "https://app-eu1.hubspot.com",
@@ -561,8 +568,7 @@ As integrations with more providers are successfully completed, we plan to maint
 
 
 ```json
-{
-  "Alias": "linkedin",
+"linkedin": {
   "DisplayName": "LinkedIn",
   "ApiHost": "https://api.linkedin.com",
   "IdentityHost": "https://www.linkedin.com",
@@ -586,8 +592,7 @@ As integrations with more providers are successfully completed, we plan to maint
 
 
 ```json
-{
-  "Alias": "mailchimp",
+"mailchimp": {
   "DisplayName": "Mailchimp",
   "ApiHost": "https://login.mailchimp.com",
   "IdentityHost": "https://login.mailchimp.com",
@@ -613,8 +618,7 @@ As integrations with more providers are successfully completed, we plan to maint
 
 
 ```json
-{
-  "Alias": "dynamics",
+"dynamics": {
   "DisplayName": "Dynamics",
   "ApiHost": "https://[instance].crm4.dynamics.com/api/data/v9.2",
   "IdentityHost": "https://login.microsoftonline.com",
@@ -637,8 +641,7 @@ As integrations with more providers are successfully completed, we plan to maint
 <summary>Miro</summary>
 
 ```json
-{
-  "Alias": "miro",
+"miro": {
   "DisplayName": "Miro",
   "ApiHost": "https://api.miro.com",
   "IdentityHost": "https://miro.com",
@@ -662,8 +665,7 @@ As integrations with more providers are successfully completed, we plan to maint
 
 
 ```json
-{
-  "Alias": "semrush",
+"semrush": {
   "DisplayName": "Semrush",
   "ApiHost": "https://oauth.semrush.com",
   "IdentityHost": "https://oauth.semrush.com",
@@ -687,8 +689,7 @@ As integrations with more providers are successfully completed, we plan to maint
 
 
 ```json
-{
-  "Alias": "shopify",
+"shopify": {
   "DisplayName": "Shopify",
   "ApiHost": "https://[shop-name].myshopify.com",
   "IdentityHost": "https://[shop-name].myshopify.com",
@@ -712,8 +713,7 @@ As integrations with more providers are successfully completed, we plan to maint
 
 
 ```json
-{
-  "Alias": "slack",
+"slack": {
   "DisplayName": "Slack",
   "ApiHost": "https://slack.com",
   "IdentityHost": "https://slack.com",
@@ -739,8 +739,7 @@ As integrations with more providers are successfully completed, we plan to maint
 
 
 ```json
-{
-  "Alias": "timely",
+"timely": {
   "DisplayName": "Timely",
   "ApiHost": "https://api.timelyapp.com/1.1",
   "IdentityHost": "https://api.timelyapp.com/1.1",
@@ -764,8 +763,7 @@ As integrations with more providers are successfully completed, we plan to maint
 
 
 ```json
-{
-  "Alias": "twitter",
+"twitter": {
   "DisplayName": "Twitter",
   "ApiHost": "https://api.twitter.com",
   "IdentityHost": "https://twitter.com",
@@ -790,8 +788,7 @@ As integrations with more providers are successfully completed, we plan to maint
 
 
 ```json
-{
-  "Alias": "yahoo",
+"yahoo": {
   "DisplayName": "Yahoo!",
   "ApiHost": "https://api.login.yahoo.com",
   "IdentityHost": "https://api.login.yahoo.com",
@@ -817,8 +814,7 @@ As integrations with more providers are successfully completed, we plan to maint
 
 
 ```json
-{
-  "Alias": "zendesk",
+"zendesk": {
   "DisplayName": "Zendesk",
   "ApiHost": "https://api.getbase.com",
   "IdentityHost": "https://api.getbase.com",

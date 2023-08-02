@@ -420,4 +420,4 @@ declare global {
 
 With all of the steps completed, you should have a functional dashboard that will let the logged-in user see 10 log views. Hopefully, this tutorial has given you some ideas on what is possible to do when creating a dashboard.&#x20;
 
-You can also go further and [extend the dashboard](broken-reference) with UI elements from the Umbraco UI Library.
+You can also go further and [extend the dashboard](extending-the-dashboard-using-umbraco-ui-library.md) with UI elements from the Umbraco UI Library.

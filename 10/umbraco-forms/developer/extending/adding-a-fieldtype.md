@@ -25,19 +25,19 @@ namespace MyFormsExtensions
     {
         public MyCustomField()
         {
-            this.Id = new Guid("08b8057f-06c9-4ca5-8a42-fd1fc2a46eff"); // Replace this!
-            this.Name = "My Custom Field";
-            this.Description = "Render a custom text field.";
-            this.Icon = "icon-autofill";
-            this.DataType = FieldDataType.String;
-            this.SortOrder = 10;
-            this.SupportsRegex = true;
-            this.FieldTypeViewName = "FieldType.MyCustomField.cshtml";
+            Id = new Guid("08b8057f-06c9-4ca5-8a42-fd1fc2a46eff"); // Replace this!
+            Name = "My Custom Field";
+            Description = "Render a custom text field.";
+            Icon = "icon-autofill";
+            DataType = FieldDataType.String;
+            SortOrder = 10;
+            SupportsRegex = true;
+            FieldTypeViewName = "FieldType.MyCustomField.cshtml";
         }
 
         // You can do custom validation in here which will occur when the form is submitted.
-        // Any strings returned will cause the submit to be invalid!
-        // Where as returning an empty ienumerable of strings will say that it's okay.
+        // Any strings returned will cause the submission to be considered invalid.
+        // Returning an empty collection of strings will indicate that it's valid to proceed.
         public override IEnumerable<string> ValidateField(Form form, Field field, IEnumerable<object> postedValues, HttpContext context, IPlaceholderParsingService placeholderParsingService, IFieldTypeStorage fieldTypeStorage)
         {
             var returnStrings = new List<string>();
@@ -47,16 +47,24 @@ namespace MyFormsExtensions
                 returnStrings.Add("You need to include 'custom' in the field!");
             }
 
-            // Also validate it against the original default method.
-            return base.ValidateField(form, field, postedValues, context, placeholderParsingService, fieldTypeStorage, returnStrings));
+            // Also validate it against the default method (to handle mandatory fields and regular expressions)
+            return base.ValidateField(form, field, postedValues, context, placeholderParsingService, fieldTypeStorage, returnStrings);
         }
     }
 }
 ```
 
-In the constructor, we specify the standard provider information (remember to set the ID to a unique ID).
+In the constructor, we specify the standard provider information:
 
-And then we set the field type specific information. In this case, a preview Icon for the form builder UI and what kind of data it will return. This can either be string, longstring, integer, datetime, or boolean.
+- `Id` - should be set to a unique GUID.
+- `Alias` - an internal alias for the field, used for localized translation keys.
+- `Name` - the name of the field presented in the backoffice.
+- `Description` - the description of the field presented in the backoffice.
+- `Icon` - the icon of the field presented in the backoffice form builder user interface.
+- `DataType` - specifies the type of data stored by the field. Options are `String`, `LongString`, `Integer`, `DataTime` or `Bit` (boolean).
+- `SupportsRegex` - indicates whether pattern based validation using regular expressions can be used with the field.
+- `FieldTypeViewName` - indicates the name of the partial view used to render the field.
+- `RenderInputType`- indicates how the field should be rendered within the theme, as defined with the `RenderInputType` enum. The default is `Single` for a single input field. `Multiple` should be used for multiple input fields such as checkbox lists. `Custom` is used for fields without visible input fields.
 
 You will then need to register this new field as a dependency.
 

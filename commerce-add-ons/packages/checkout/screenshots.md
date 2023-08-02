@@ -20,17 +20,17 @@ Check out the screenshots below to see what you get with Umbraco Commerce Checko
 
 <div>
 
-<figure><img src="../.gitbook/assets/003.png" alt=""><figcaption><p>Shipping methods</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/003 (2).png" alt=""><figcaption><p>Shipping methods</p></figcaption></figure>
 
  
 
-<figure><img src="../.gitbook/assets/004.png" alt=""><figcaption><p>Payment methods</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/004 (2).png" alt=""><figcaption><p>Payment methods</p></figcaption></figure>
 
 </div>
 
 <div>
 
-<figure><img src="../.gitbook/assets/005.png" alt=""><figcaption><p>Order review</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/005 (2).png" alt=""><figcaption><p>Order review</p></figcaption></figure>
 
  
 

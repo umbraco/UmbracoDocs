@@ -18,7 +18,7 @@ PM> Install-Package Umbraco.Commerce.Checkout
 
 Alternatively, you can also find and install the NuGet package via the NuGet Package Manager.
 
-![Installing Umbraco Commerce Checkout via the NuGet Package Manager](<../media/checkout/nuget\_package (1).png>)
+![Installing Umbraco Commerce Checkout via the NuGet Package Manager.](<../media/checkout/nuget\_package (1).png>)
 
 ## Content Installation
 

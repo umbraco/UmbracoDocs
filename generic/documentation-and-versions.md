@@ -21,8 +21,6 @@ The documentation for Umbraco Cloud and Umbraco Heartcore is not following the C
 
 The Umbraco Documentation covers all supported versions of the Umbraco CMS as well as the official Umbraco add-ons. For each supported **major** version of Umbraco CMS, a version of the documentation for CMS and the add-ons exists.
 
-<figure><img src="broken-reference" alt=""><figcaption><p>An example of the file structure for documenting versioned and non-versioned products.</p></figcaption></figure>
-
 The documentation for each Umbraco product will always document the latest **minor** version of the current **major** version.
 
 When an RC for a new **major** version of an Umbraco product is released, a new version of that documentation will be available. When the major version is released, the documentation for it will be the new **default version of the Umbraco Documentation**.

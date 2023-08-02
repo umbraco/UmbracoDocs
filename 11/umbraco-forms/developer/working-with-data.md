@@ -1,10 +1,10 @@
 ---
-description: "Developer documentation on working with Forms record data."
+description: Developer documentation on working with Forms record data.
 ---
 
 # Working With Record Data
 
-Umbraco Forms includes some helper methods that return records of a given Form, which can be used to output records in your templates using razor.
+Umbraco Forms includes some helper methods that return records of a given Form, which can be used to output records in your templates using Razor code.
 
 ## Available Methods
 
@@ -60,7 +60,7 @@ Returns all records from the Form with the ID = formId as a `PagedResult<IRecord
 
 ## The returned objects
 
-All of these methods will return an object of type `PagedResult<IRecord>` so you can iterate through the `IRecord` objects.
+All of these methods will return an object of the type `PagedResult<IRecord>` so you can iterate through the `IRecord` objects.
 
 The properties available on a `IRecord` are:
 
@@ -79,7 +79,7 @@ Dictionary<Guid, RecordField> RecordFields
 
 In order to access custom Form fields, these are available in the `RecordFields` property. Furthermore there exists an extension method named `ValueAsString` on `IRecord` in `Umbraco.Forms.Core.Services`, such that you can get the value as string given the alias of the field.
 
-This extension method handle multi value fields by comma separating the values. E.g. "A, B, C"
+This extension method handles multi-value fields by comma separating the values. E.g. "A, B, C"
 
 ## Sample razor script
 

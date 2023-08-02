@@ -66,7 +66,7 @@ To render the created partial view into any template, use any of these helper me
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
-	Layout = null;
+ Layout = null;
 }
 
 @await Html.PartialAsync("Login")

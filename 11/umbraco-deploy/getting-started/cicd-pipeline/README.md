@@ -36,7 +36,7 @@ Umbraco Deploy On-Premises also ships with a Powershell script, that when execut
 
 So while it may be possible to have the CI/CD step directly write the file or call the endpoint, so long as the build used supports running Powershell scripts this is the method we’d recommend, as it has some necessary error checking and retry logic built-in.
 
-## [Setting up CI/CD pipeline with Github Actions](broken-reference)
+## [Setting up CI/CD pipeline with Github Actions](ci-cd-github-actions.md)
 
 Details the setup of a CI/CD pipeline using Github Actions.
 
