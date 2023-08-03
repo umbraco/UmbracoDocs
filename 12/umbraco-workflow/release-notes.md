@@ -16,6 +16,13 @@ In this section, you can find the release notes for each version of Umbraco Work
 
 <summary>Version 12</summary>
 
+#### [12.0.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.1) (August 1st 2023)
+
+* Adds Dutch localization [#23](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/23)
+* Additional localization cleanup and improvements
+* Fixes Swagger generation error [#29](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/29)
+* Updates migration to avoid constraint errors [#35](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/35)
+
 #### [12.0.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.0) (June 29th 2023)
 
 * Fixes filtering workflows initiated by the current user when FlowType is Exclude [#25](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/25)
@@ -29,6 +36,12 @@ In this section, you can find the release notes for each version of Umbraco Work
 <details>
 
 <summary>Version 11</summary>
+
+#### [11.2.3](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.2.3) (August 1st 2023)
+
+* Adds Dutch localization [#23](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/23)
+* Additional localization cleanup and improvements
+* Updates migration to avoid constraint errors [#35](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/35)
 
 #### [11.2.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.2.2) (June 29th 2023)
 
@@ -81,6 +94,12 @@ In this section, you can find the release notes for each version of Umbraco Work
 <details>
 
 <summary>Version 10</summary>
+
+#### [10.2.3](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.3) (August 1st 2023)
+
+* Adds Dutch localization [#23](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/23)
+* Additional localization cleanup and improvements
+* Updates migration to avoid constraint errors [#35](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/35)
 
 #### [10.2.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.2) (June 29th 2023)
 
