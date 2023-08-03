@@ -71,7 +71,7 @@ Webhooks are used for communication between PayPal and the Umbraco Commerce inst
 3. Provide the URL where the webhook notifications should be sent. See the example below:
 
 ```bash
-https://{store_domain}/umbraco/vendr/payment/callback/paypal-checkout-onetime/{payment_method_id}/
+https://{store_domain}/umbraco/commerce/payment/callback/paypal-checkout-onetime/{payment_method_id}/
 ```
 
 {% hint style="info" %}
