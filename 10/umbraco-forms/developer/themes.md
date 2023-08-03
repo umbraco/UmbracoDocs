@@ -27,7 +27,7 @@ If you are using a lower minor version of Forms than those listed, you should do
 
 The default theme for minor versions are available from the "Source Code" tab available at the bottom of [Umbraco Forms Package page](https://our.umbraco.com/packages/developer-tools/umbraco-forms/). Only versions where changes were made are available.
 
-You should use the theme available for the highest version that's less than or equal to than the version of Forms you have installed.
+You should use the theme available for the highest version that's less or equal to the version of Forms you have installed.
 
 For example, you might be using Umbraco Forms 10.4. No file for that version is available so you should use the one for 10.3.
 
