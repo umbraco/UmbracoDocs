@@ -23,7 +23,7 @@ Some examples of variables that are normally available in `HttpContext.Request`:
 
 The variables are not case-sensitive.
 
-You can use it for any available querystring variable in the URL as well. If your URL has the querystring "?email=foobar@umbraco.com", you can get the value of the querystring into your field by using `[@email]`.
+You can use it for any available query string variable in the URL as well. If your URL has the query string `?email=foobar@umbraco.com`, you can get the value of the query string into your field by using `[@email]`.
 
 ### Dictionary Items
 
