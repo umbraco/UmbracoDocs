@@ -5,6 +5,12 @@ description: >-
 
 # Upgrade from Umbraco 8 to the latest version
 
+{% hint style="warning" %}
+It is currently not  possible  to upgrade directly from Umbraco 8 to Umbraco 12.
+
+Instead, you can use this guide to upgrade from Umbraco 8 to Umbraco 10 and then repeat the same steps to upgrade to Umbraco 12.
+{% endhint %}
+
 Since the underlying framework going from Umbraco 8 to the latest version has changed, there is no direct upgrade path. That said, it is possible to re-use the database from your Umbraco 8 project on your new project in order to maintain the content.
 
 It is not possible to migrate the custom code as the underlying web framework has been updated from ASP.NET to ASP.NET Core. All templates and custom code will need to be reimplemented.
@@ -24,7 +30,7 @@ The video below shows how to complete the upgrade on an Umbraco Cloud project. M
 {% endhint %}
 
 {% embed url="https://www.youtube-nocookie.com/embed/wD9SGeRQR7o" %}
-A video tutorial guiding you through the steps of upgrading from version 8 to the latest version on Umbraco Cloud
+A video tutorial guiding you through the steps of upgrading from version 8 to the latest version on Umbraco Cloud.
 {% endembed %}
 
 ## Step 1: Content Migration
@@ -65,7 +71,7 @@ You need to manually update the view files and custom code implementation. For m
 
 ## Step 3: Custom Code in the latest version
 
-The latest version of Umbraco is different from Umbraco 8 in many ways. With all the files and data migrated, it is now time to rewrite and re-implement all custom code and templates.
+The latest version of Umbraco is different from Umbraco 8 in many ways. With all the files and data migrated it is now time to rewrite and re-implement all custom code and templates.
 
 ### Examples of changes
 
