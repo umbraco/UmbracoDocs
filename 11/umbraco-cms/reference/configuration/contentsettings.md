@@ -48,7 +48,8 @@ The following snippet will give an overview of the keys and values in the conten
       },
       "PreviewBadge": "<![CDATA[<b>My HTML here</b>]]>",
       "ResolveUrlsFromTextString": false,
-      "ShowDeprecatedPropertyEditors": false
+      "ShowDeprecatedPropertyEditors": false,
+      "ShowDomainWarnings": true
     }
   }
 }
@@ -169,6 +170,10 @@ This setting is used when you're running Umbraco in virtual directories. Setting
 This setting is used for controlling whether or not the Data Types marked as obsolete should be visible in the dropdown when creating new Data Types.
 
 By default this is set to `false`. To make the obsolete data types visible in the dropdown change the value to `true`.
+
+### Show Domain Warnings
+
+If you have a multilingual Umbraco site and you haven't configured Domains correctly for each language then every time you publish you will get the following warning: "Content published: Domains are not configured for multilingual site, please contact an administrator, see log for more information" - if however, you have a legitimate use case for not setting a Domain for a certain circumstance, these warnings every time an editor publishes a page can be annoying. This setting ShowDomainWarnings can be set to 'false' to stop them from displaying.
 
 ## ContentVersionCleanupPolicy
 
