@@ -128,8 +128,12 @@ A package manager console appears at the bottom where you can install packages w
 3. Type the following in the console:
 
 ```js
-Install-Package Microsoft.AspNetCore.Authentication.Google -Version 7.0.5
+Install-Package Microsoft.AspNetCore.Authentication.Google -Version 7.0.9
 ```
+
+{% hint style="info" %}
+Always check the latest version of the package before installing it.
+{% endhint %}
 
 #### Option 2: NuGet Package Manager
 
