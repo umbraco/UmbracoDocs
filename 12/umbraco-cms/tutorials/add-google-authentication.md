@@ -280,9 +280,16 @@ namespace MyCustomUmbracoProject.ExternalUserLogin.GoogleAuthentication
                 logins.AddBackOfficeLogin(
                     backOfficeAuthenticationBuilder =>
                     {
+
+                        // The scheme must be set with this method to work for the back office
+                        var schemeName =
+                            backOfficeAuthenticationBuilder.SchemeForBackOffice(GoogleBackOfficeExternalLoginProviderOptions
+                                .SchemeName);
+
+                        ArgumentNullException.ThrowIfNull(schemeName);
+
                         backOfficeAuthenticationBuilder.AddGoogle(
-                            // The scheme must be set with this method to work for the back office
-                            backOfficeAuthenticationBuilder.SchemeForBackOffice(GoogleBackOfficeExternalLoginProviderOptions.SchemeName),
+                            schemeName,
                             options =>
                             {
                                 // Callback path: Represents the URL to which the browser should be redirected to.
