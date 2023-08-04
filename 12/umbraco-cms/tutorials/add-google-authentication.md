@@ -188,12 +188,12 @@ namespace MyCustomUmbracoProject.ExternalUserLogin.GoogleAuthentication
         {
             // Customize the login button
             options.ButtonStyle = "btn-danger";
-            options.Icon = "fa fa-cloud";
+            options.Icon = "icon-cloud";
 
             // The following options are only relevant if you
             // want to configure auto-linking on the authentication.
             options.AutoLinkOptions = new ExternalSignInAutoLinkOptions(
-                
+
                 // Set to true to enable auto-linking
                 autoLinkExternalAccount: true,
 
