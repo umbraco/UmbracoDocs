@@ -4,7 +4,7 @@ description: Documentation on how to apply custom themes to Umbraco Forms
 
 # Themes
 
-Umbraco Forms supports Themes, allowing forms to be customised in a much simpler manner.
+Umbraco Forms supports Themes, allowing forms to be customized in a much simpler manner.
 
 ## Creating a Theme
 
@@ -20,11 +20,17 @@ Umbraco 10+ distributes these files as part of a Razor class library, so you won
 
 You can obtain the latest versions of the default theme for each Forms major version from the following links:
 
-* [Forms 10 Default Theme](https://umbra.co/umbraco-forms-default-theme)
-* [Forms 11 Default Theme](https://umbra.co/umbraco-forms-default-theme-11)
-* [Forms 12 Default Theme](https://umbra.co/umbraco-forms-default-theme-12)
+* [Forms 10 Default Theme](https://umbra.co/umbraco-forms-default-theme) (for 10.5.0.rc1 and above)
+* [Forms 11 Default Theme](https://umbra.co/umbraco-forms-default-theme-11) (for 11.1.0 and above)
+* [Forms 12 Default Theme](https://umbra.co/umbraco-forms-default-theme-12) (for 12.1.0.rc1 and above)
 
-The default theme for minor versions are available from the "Source Code" tab available at the bottom of [Umbraco Forms Package page](https://our.umbraco.com/packages/developer-tools/umbraco-forms/). Only versions where changes were made are available. So if you are running Umbraco 11.1, and no file for that version is available, use the one for Umbraco 11.0.
+If you are using a lower minor version of Forms than those listed, you should download an older version of the default theme.
+
+The default theme for minor versions are available from the "Source Code" tab available at the bottom of [Umbraco Forms Package page](https://our.umbraco.com/packages/developer-tools/umbraco-forms/). Only versions where changes were made are available.
+
+You should use the theme available for the highest version that's less or equal to the version of Forms you have installed.
+
+For example, when using Umbraco Forms 10.4, and no file for that version is available use version 10.3 instead.
 
 ### Amending Theme Files
 
