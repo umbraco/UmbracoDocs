@@ -30,7 +30,7 @@ The default theme for minor versions are available from the "Source Code" tab av
 
 You should use the theme available for the highest version that's less or equal to the version of Forms you have installed.
 
-For example, you might be using Umbraco Forms 10.4. No file for that version is available so you should use the one for 10.3.
+For example, when using Umbraco Forms 10.4, and no file for that version is available use version 10.3 instead.
 
 ### Amending Theme Files
 
