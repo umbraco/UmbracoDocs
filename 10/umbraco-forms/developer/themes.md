@@ -19,7 +19,7 @@ For Umbraco 9 and previous, it's straightforward to copy the files you need from
 
 Umbraco 10+ distributes these files as part of a Razor class library, so you won't find them on disk. Instead you should download the appropriate zip file for your Forms version and extract the ones you need.
 
-You can obtain the latest versions of the default theme for each Forms major version from the following links:
+You can obtain the latest version of the default theme Forms 10 from the following link:
 
 * [Forms 10 Default Theme](https://umbra.co/umbraco-forms-default-theme) (for 10.5.0.rc1 and above)
 
