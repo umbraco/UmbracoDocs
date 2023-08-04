@@ -161,6 +161,7 @@ You can create these files in a location of your choice. In this tutorial, the f
 2. Add the following code to the file:
 
 {% code title="GoogleBackOfficeExternalLoginProviderOptions.cs" lineNumbers="true" %}
+
 ```csharp
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
@@ -171,8 +172,10 @@ namespace MyCustomUmbracoProject.ExternalUserLogin.GoogleAuthentication
     public class GoogleBackOfficeExternalLoginProviderOptions : IConfigureNamedOptions<BackOfficeExternalLoginProviderOptions>
     {
         public const string SchemeName = "OpenIdConnect";
-        public void Configure(string name, BackOfficeExternalLoginProviderOptions options)
+        public void Configure(string? name, BackOfficeExternalLoginProviderOptions options)
         {
+            ArgumentNullException.ThrowIfNull(name);
+
             if (name != Constants.Security.BackOfficeExternalAuthenticationTypePrefix + SchemeName)
             {
                 return;
