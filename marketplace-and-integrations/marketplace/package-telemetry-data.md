@@ -42,9 +42,9 @@ Even if the package Id is provided in your package manifest though, only install
 
 If the package name or folder is used, this may not be the same as the NuGet package ID.  If not, we need to ensure your package is stored along with the alternate name that is used in the CMS and telemetry data.
 
-It's no longer possible to supply this via the `umbraco-marketplace.json` file. The field by which this was provided has been removed from the schema and if provided is no longer imported. This was due to the risks of two package developers providing the same alternate names.
+It's no longer possible to supply this via the `umbraco-marketplace.json` file. The field by which this was provided has been deprecated in the schema and if provided is no longer imported. This was due to the risks of two package developers providing the same alternate names.
 
-Instead we maintain this list at HQ. You may own a package that appears to not rank as expected via the "most active installs" measure. If you suspect it's due to the telemetry data not being correctly allocate, please let us know. We can make the necessary updates such that it's popularity is properly reflected. You can reach us at [packages.umbraco.com](mailto:packages.umbraco.com).
+Instead we maintain this list at HQ. You may own a package that appears to not rank as expected via the "most active installs" measure. If you suspect it's due to the telemetry data not being correctly allocated, please let us know the details of the alternate name for your package. We can make the necessary updates such that it's popularity is properly reflected. You can reach us at [packages.umbraco.com](mailto:packages.umbraco.com).
 
 ### What if I don't have a client-side component?
 
