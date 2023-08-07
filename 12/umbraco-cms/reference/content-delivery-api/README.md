@@ -690,7 +690,7 @@ In some cases the content models might be so deeply nested that the Delivery API
 
 To handle this we have to change the limit. Since the Delivery API has its own JSON configuration, we can do so without affecting the rest of our site.
 
-First we have to add these `using` statements to `Startup.cs`:.
+First, we have to add these `using` statements to `Startup.cs`:
 
 {% code title="Startup.cs" %}
 ```csharp
