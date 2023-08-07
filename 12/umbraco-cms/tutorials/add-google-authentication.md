@@ -128,8 +128,12 @@ A package manager console appears at the bottom where you can install packages w
 3. Type the following in the console:
 
 ```js
-Install-Package Microsoft.AspNetCore.Authentication.Google -Version 7.0.5
+Install-Package Microsoft.AspNetCore.Authentication.Google -Version 7.0.9
 ```
+
+{% hint style="info" %}
+Always check the latest version of the package before installing it.
+{% endhint %}
 
 #### Option 2: NuGet Package Manager
 
@@ -157,6 +161,7 @@ You can create these files in a location of your choice. In this tutorial, the f
 2. Add the following code to the file:
 
 {% code title="GoogleBackOfficeExternalLoginProviderOptions.cs" lineNumbers="true" %}
+
 ```csharp
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
@@ -167,8 +172,10 @@ namespace MyCustomUmbracoProject.ExternalUserLogin.GoogleAuthentication
     public class GoogleBackOfficeExternalLoginProviderOptions : IConfigureNamedOptions<BackOfficeExternalLoginProviderOptions>
     {
         public const string SchemeName = "OpenIdConnect";
-        public void Configure(string name, BackOfficeExternalLoginProviderOptions options)
+        public void Configure(string? name, BackOfficeExternalLoginProviderOptions options)
         {
+            ArgumentNullException.ThrowIfNull(name);
+
             if (name != Constants.Security.BackOfficeExternalAuthenticationTypePrefix + SchemeName)
             {
                 return;
@@ -181,12 +188,12 @@ namespace MyCustomUmbracoProject.ExternalUserLogin.GoogleAuthentication
         {
             // Customize the login button
             options.ButtonStyle = "btn-danger";
-            options.Icon = "fa fa-cloud";
+            options.Icon = "icon-cloud";
 
             // The following options are only relevant if you
             // want to configure auto-linking on the authentication.
             options.AutoLinkOptions = new ExternalSignInAutoLinkOptions(
-                
+
                 // Set to true to enable auto-linking
                 autoLinkExternalAccount: true,
 
@@ -273,9 +280,16 @@ namespace MyCustomUmbracoProject.ExternalUserLogin.GoogleAuthentication
                 logins.AddBackOfficeLogin(
                     backOfficeAuthenticationBuilder =>
                     {
+
+                        // The scheme must be set with this method to work for the back office
+                        var schemeName =
+                            backOfficeAuthenticationBuilder.SchemeForBackOffice(GoogleBackOfficeExternalLoginProviderOptions
+                                .SchemeName);
+
+                        ArgumentNullException.ThrowIfNull(schemeName);
+
                         backOfficeAuthenticationBuilder.AddGoogle(
-                            // The scheme must be set with this method to work for the back office
-                            backOfficeAuthenticationBuilder.SchemeForBackOffice(GoogleBackOfficeExternalLoginProviderOptions.SchemeName),
+                            schemeName,
                             options =>
                             {
                                 // Callback path: Represents the URL to which the browser should be redirected to.
