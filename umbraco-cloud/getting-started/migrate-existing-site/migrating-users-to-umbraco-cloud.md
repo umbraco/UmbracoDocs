@@ -45,7 +45,7 @@ dbo.umbracoUserGroup2Node
 dbo.umbracoUserGroup2Language
 ```
 
-1. Click **Next** and then click **Advanced**
+1. Click **Next** and then click **Advanced**.
 2. Find **Type of data to script** and choose **Data only**.
 3. Choose where to save the script and save it.
 4. Connect to your [Umbraco Cloud Database](../../databases/cloud-database.md).
