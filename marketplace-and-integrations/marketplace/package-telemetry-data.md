@@ -38,13 +38,13 @@ The most reliable way of matching up a package between the Marketplace and the t
 If you use a manifest filter and take a dependency on a lower version of Umbraco, the `PackageManifest.PackageId` isn't available. You can still have set it for Umbraco installations that run Umbraco 12 using reflection. An example of this technique can be found within the open-source [Umbraco AuthorizedServices package](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/287f284662d16cd9ae7218bae6512c7d86b36563/src/Umbraco.AuthorizedServices/Manifests/AuthorizedServicesManifestFilter.cs#L30).
 {% endhint %}
 
-Even if the package Id is provided in your package manifest though, only installations of Umbraco 12 and up will use it for telemetry reporting.  Older versions will use the package name or folder.
+Even if the package Id is provided in your package manifest, only installations of Umbraco 12 and up will use it for telemetry reporting. Older versions will use the package name or folder.
 
-If the package name or folder is used, this may not be the same as the NuGet package ID.  If not, we need to ensure your package is stored along with the alternate name that is used in the CMS and telemetry data.
+If the package name or folder is used, this may not be the same as the NuGet package ID. If not, we need to ensure your package is stored along with the alternate name that is used in the CMS and telemetry data.
 
 It's no longer possible to supply this via the `umbraco-marketplace.json` file. The field by which this was provided has been deprecated in the schema and if provided is no longer imported. This was due to the risks of two package developers providing the same alternate names.
 
-Instead we maintain this list at HQ. You may own a package that appears to not rank as expected via the "most active installs" measure. If you suspect it's due to the telemetry data not being correctly allocated, please let us know. We can make the necessary updates such that it's popularity is properly reflected. You can reach us at [packages.umbraco.com](mailto:packages.umbraco.com) and tell us the name used for your package in the package manifest or folder.
+Instead we maintain this list at HQ. You may own a package that appears to not rank as expected via the "most active installs" measure. If you suspect it's due to the telemetry data not being correctly allocated, please let us know. We can make the necessary updates such that it's popularity is properly reflected. You can reach us at [packages@umbraco.com](mailto:packages@umbraco.com) and tell us the name used for your package in the package manifest or folder.
 
 ### What if I don't have a client-side component?
 
