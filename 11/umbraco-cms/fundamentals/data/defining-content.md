@@ -253,3 +253,4 @@ Document Types are flexible and can be used for defining pieces of reusable cont
 {% embed url="https://www.youtube.com/playlist?ab_channel=UmbracoLearningBase&list=PLgX62vUaGZsG98vy9HWuwpU4XVnbIAnHK" %}
 Playlist: Document Types in Umbraco
 {% endembed %}
+
