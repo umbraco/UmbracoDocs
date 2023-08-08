@@ -32,8 +32,7 @@ Once the Member is created and saved you can access it by expanding the Members 
 
 ## [Sensitive data](../../reference/security/sensitive-data-on-members.md)
 
-Sensitive properties on a members data will not be displayed to backoffice users unless they have appropriate permissions. In order to see the values of the default properties in the **Member** tab you need to have the Sensitive data User Group.
-By having this group added to a user they will also have the option to mark member type properties as sensitive.
+Sensitive properties on a members data will not be displayed to backoffice users unless they have appropriate permissions. In order to see the values of the default properties in the **Member** tab you need to have the Sensitive data User Group. By having this group added to a user they will also have the option to mark member type properties as sensitive.
 
 More information can be found under [security](../../reference/security/sensitive-data-on-members.md).
 
@@ -43,7 +42,7 @@ You can create your own Member Types and add tabs, groups and properties as you 
 
 Go to the **Settings** section, right-click **Member Types** and select **Create**. You will now be taken to the Member Type editor that is used to define and edit the Member Type. Name the new Member Type and click **Save**.
 
-![Member Type Editor](../../../../12/umbraco-cms/fundamentals/data/images/member-type-composition.PNG)
+![Member Type Editor](images/member-type-composition.PNG)
 
 Once created, the Member Type will have no properties, so you have the freedom to add your own properties or compositions.
 
@@ -51,8 +50,9 @@ Once created, the Member Type will have no properties, so you have the freedom t
 
 When creating a Member Type you can assign compositions. Compositions allow you to inherit tabs and properties from existing member types instead of creating them from scratch.
 
-For example on the member type that you have created, click on **Composition**. Then you can choose the existing **Member** type which then you will inherit its tabs, groups, and properties.
-![Assigning a Member Composition](../../../../12/umbraco-cms/fundamentals/data/images/member-type-composition-setting.PNG)
+For example on the member type that you have created, click on **Composition**. Then you can choose the existing **Member** type which then you will inherit its tabs, groups, and properties.&#x20;
+
+<figure><img src="images/member-type-composition-setting.PNG" alt=""><figcaption><p>Composition Member Type</p></figcaption></figure>
 
 The default **Member** type has a **Membership** group which includes `umbracoMemberComments` property along with the other default properties. The other properties can be seen only in the **Member** tab when creating a member.
 
@@ -62,7 +62,7 @@ It is possible to add more groups and more properties to each of the Member Type
 
 Member Groups define roles for your members that can be used for role-based protection. A member can be in multiple groups.
 
-![Creating a Member Group](../../../../12/umbraco-cms/fundamentals/data/images/Member-group1.PNG)
+![Creating a Member Group](images/Member-group1.PNG)
 
 To create a new Member Group click the menu icon next to the **Member Groups** node in the Members section. Choose **Create**, name the group, and save the group.
 
@@ -70,7 +70,7 @@ To create a new Member Group click the menu icon next to the **Member Groups** n
 
 To assign a member to a specific group find the member you wish to assign and find the **Properties** group. Here you can see which groups the member is already part of. You can also add the member to more groups or remove the member from already assigned groups:
 
-![Assigning a Member Group](../../../../12/umbraco-cms/fundamentals/data/images/assign-member-group1.PNG)
+![Assigning a Member Group](images/assign-member-group1.PNG)
 
 ## Technical
 
@@ -115,9 +115,3 @@ You can find out more about the services methods in the reference section of the
 * [MemberService](../../reference/management/services/memberservice.md)
 * [MemberType Service](../../reference/management/services/membertypeservice.md)
 * [MemberGroup Service](../../reference/management/services/membergroupservice.md)
-
-<!-- ### Video tutorials
-
-{% embed url="https://www.youtube.com/playlist?ab_channel=UmbracoLearningBase&list=PLgX62vUaGZsHYlNtXGSolK5_Tg0AMkQBA" %}
-Playlist: Members in Umbraco
-{% endembed %} -->
