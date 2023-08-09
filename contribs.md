@@ -1,6 +1,6 @@
 # Contributing Guidelines
 
-To contribute to either the documentation or stubs, you can fork & clone our repository, make your edits, and push back to GitHub and send us a pull request. All items that get pulled into the main repository will automatically get pushed to [our.umbraco.com/documentation](https://our.umbraco.com/documentation).
+To contribute to either the documentation or stubs, you can fork & clone our repository, make your edits, and push back to GitHub and send us a pull request. All items that get pulled into the main repository will automatically get pushed to [docs.umbraco.com/umbraco-cms](https://docs.umbraco.com/umbraco-cms/).
 
 Find detailed instructions on how to work with and contribute to the Umbraco Documentation in the [Contribution section](Contribute/).
 
@@ -38,13 +38,13 @@ In this command, we're syncing with the `main` branch. You can choose another on
 
 ### Contributing documentation
 
-All documents are written in Markdown, using a basic structure and stored as .md files. These are then pulled to [our.umbraco.com/documentation](https://our.umbraco.com/documentation) for browsing.
+All documents are written in Markdown, using a basic structure and stored as .md files. These are then pulled to [docs.umbraco.com/umbraco-cms](https://docs.umbraco.com/umbraco-cms/) for browsing.
 
 First fork and clone the repository so that you have your own working copy. Then create a new branch on your local copy to make your changes. Once you are happy with your edits, use GitHub to issue a "pull request", which means your edits will be reviewed, and once accepted, merged into the main repository.
 
 **Note:** It's a good idea to pull in upstream changes, merge and commit to your own fork before submitting a pull request. Instructions on how to set up a remote repo and pull from upstream can be found on this [page](https://help.github.com/articles/fork-a-repo).
 
-Everything in the main repository will make it onto the [our.umbraco.com/documentation](https://our.umbraco.com/documentation) site, which is why we have chosen a pull request workflow to keep everything straightforward.
+Everything in the main repository will make it onto the [docs.umbraco.com/umbraco-cms](https://docs.umbraco.com/umbraco-cms/) site, which is why we have chosen a pull request workflow to keep everything straightforward.
 
 ## Planning & discussions
 
