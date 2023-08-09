@@ -38,7 +38,7 @@ In this command, we're syncing with the `main` branch. You can choose another on
 
 ### Contributing documentation
 
-All documents are written in Markdown, using a basic structure and stored as .md files. These are then pulled to [docs.umbraco.com/umbraco-cms](https://docs.umbraco.com/umbraco-cms/) for browsing.
+All documents are written in Markdown, using a basic structure and stored as .md files. These are then pulled to [docs.umbraco.com](https://docs.umbraco.com) for browsing.
 
 First fork and clone the repository so that you have your own working copy. Then create a new branch on your local copy to make your changes. Once you are happy with your edits, use GitHub to issue a "pull request", which means your edits will be reviewed, and once accepted, merged into the main repository.
 
