@@ -44,7 +44,7 @@ First fork and clone the repository so that you have your own working copy. Then
 
 **Note:** It's a good idea to pull in upstream changes, merge and commit to your own fork before submitting a pull request. Instructions on how to set up a remote repo and pull from upstream can be found on this [page](https://help.github.com/articles/fork-a-repo).
 
-Everything in the main repository will make it onto the [docs.umbraco.com/umbraco-cms](https://docs.umbraco.com/umbraco-cms/) site, which is why we have chosen a pull request workflow to keep everything straightforward.
+Everything in the main repository will merge onto the [docs.umbraco.com](https://docs.umbraco.com) site, which is why we have chosen a pull request workflow to keep everything straightforward.
 
 ## Planning & discussions
 
