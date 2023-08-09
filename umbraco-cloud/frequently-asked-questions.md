@@ -34,7 +34,7 @@ Yes, you can. Umbraco Cloud uses the very same Umbraco version that you can down
 
 Umbraco Cloud is best when used as the base for a new project. There is a specific way of working with Umbraco and Umbraco Cloud in order to take full advantage of the service. That’s not to say you can’t migrate an existing site, only that some changes may be required in order for your site to fully work with Umbraco Cloud. For more information [read our guide to moving an existing site](getting-started/migrate-existing-site/).
 
-***
+
 
 ## Technology
 
@@ -66,15 +66,16 @@ Yes, you can. Please note that Umbraco Cloud also uses Cloudflare for DNS, so yo
 Generally, we recommend that you keep your DNS entry set to 'DNS Only' in your own Cloudflare account and let Umbraco Cloud handle the automatic TLS (HTTPS) certificates for the hostnames you point to your Umbraco Cloud project. Check with our support team, via chat or using support@umbraco.com, before bringing in your own Cloudflare setup.
 
 ### Does Cloudflare add any additional HTTP request headers?
-HTTP headers are bits of information that are passed along within every communication between (web) servers and (browser) clients. All HTTP requests to custom hostnames on Umbraco Cloud pass through Cloudflare. 
+
+HTTP headers are bits of information that are passed along within every communication between (web) servers and (browser) clients. All HTTP requests to custom hostnames on Umbraco Cloud pass through Cloudflare.
 
 HTTP requests headers can be useful for for example multilingual purposes to redirect users of certain languages to a specific URL. Here, the collection of visitor location headers below will be helpful. The values for these location headers are derived from the visitor's IP address.
 
-- `cf-ipcity`: The visitor's city
-- `cf-ipcontinent`: The visitor's continent
-- `cf-iplatitude`: The visitor's latitude
-- `cf-iplongitude`: The visitor's longitude
-- `uc-ipcountry`: The visitor’s country. `uc-ipcountry` header is a carbon copy of [cf-ipcountry](https://developers.cloudflare.com/fundamentals/get-started/reference/http-request-headers/#cf-ipcountry).
+* `cf-ipcity`: The visitor's city
+* `cf-ipcontinent`: The visitor's continent
+* `cf-iplatitude`: The visitor's latitude
+* `cf-iplongitude`: The visitor's longitude
+* `uc-ipcountry`: The visitor’s country. `uc-ipcountry` header is a carbon copy of [cf-ipcountry](https://developers.cloudflare.com/fundamentals/get-started/reference/http-request-headers/#cf-ipcountry).
 
 Note, the HTTP requests headers are available on all custom hostnames created through Umbraco Cloud. But not the default hostname for the Umbraco Cloud project such as project.euwest01.umbraco.io.
 
@@ -82,7 +83,7 @@ Note, the HTTP requests headers are available on all custom hostnames created th
 
 By default, Umbraco Cloud runs all Umbraco version 8 projects on .NET 4.8, Umbraco 9 projects on .NET 5.0, Umbraco 10 projects on .NET 6.0, and Umbraco 11 projects on .NET 7.0.
 
-***
+
 
 ## Upgrades
 
@@ -123,7 +124,7 @@ Do note, however, that you will need to step through the upgrade installer manua
 
 You will have to assume that every time we upgrade your site, any file that comes with Umbraco by default will be overwritten. Generally, we only overwrite the files that have been changed in the newest release but there is no guarantee for that. So if you (for example) have customized the login page then you can assume it will be reverted on each upgrade.
 
-***
+
 
 ## Testing
 
@@ -145,7 +146,7 @@ We would like to talk to you beforehand about your test plan for a load test on 
 
 Please contact us using the chat button at the bottom right corner of the [Umbraco Cloud portal](https://www.s1.umbraco.io/).
 
-***
+
 
 ## Security and encryption
 
@@ -189,7 +190,7 @@ Learn more about this and how to set it up in our [Security section](security.md
 
 Yes, every site created after May 2nd, 2017 will have TDE enabled by default. For older sites, we can enable this by request.
 
-***
+
 
 ## Building and deploying
 
@@ -234,7 +235,7 @@ We will **only delete the files** and not the database entries, as this could po
 
 You can read much more about these deletions in the [Deploying Deletions](deployment/deploying-deletions.md) article.
 
-***
+
 
 ## Package support
 
@@ -263,7 +264,7 @@ The code in the contrib project has plenty of code comments to help you understa
 
 If you need help with this, don't hesitate to reach out to us and we'll be happy to give you some tips.
 
-***
+
 
 ## Regions
 
