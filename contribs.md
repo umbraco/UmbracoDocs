@@ -1,6 +1,6 @@
 # Contributing Guidelines
 
-To contribute to either the documentation or stubs, you can fork & clone our repository, make your edits, and push back to GitHub and send us a pull request. All items that get pulled into the main repository will automatically get pushed to [docs.umbraco.com/umbraco-cms](https://docs.umbraco.com/umbraco-cms/).
+To contribute to either the documentation or stubs, you can fork & clone our repository. Then you make your edits, and push back to GitHub and send us a pull request. All items that get pulled into the main repository will automatically get pushed to [docs.umbraco.com](https://docs.umbraco.com).
 
 Find detailed instructions on how to work with and contribute to the Umbraco Documentation in the [Contribution section](Contribute/).
 
