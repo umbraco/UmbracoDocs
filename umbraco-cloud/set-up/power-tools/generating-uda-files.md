@@ -1,7 +1,7 @@
 # Generate UDA files
 
 {% hint style="info" %}
-If you are running Deploy 4+, we recommend you generate Umbraco Deploy Artifact (UDA) files from the Deploy Dashboard instead of KUDU. For more information, see the [Deploy Dashboard](../../deployment/deploy-operations/extract-schema-to-data-files.md).
+If you are running Deploy 4+, we recommend you generate Umbraco Deploy Artifact (UDA) files from the Deploy Dashboard instead of KUDU. For more information, see the [Deploy Dashboard](../../deployments/deploy-operations/extract-schema-to-data-files.md).
 {% endhint %}
 
 Sometimes our guides require you to generate UDA files for your project's metadata. Every time you create something in the backoffice on your Umbraco Cloud project, UDA files will be generated.
@@ -119,7 +119,7 @@ Follow these steps to generate UDA files:
 4. Type the following command in the CMD console: `echo > deploy-export`
 5. The Deploy engine will generate UDA files for all the types in your project.
 6. When it's done, you'll end up with a `deploy-complete` marker.
-7. Run an extraction, making sure you can get a `deploy-complete` marker - see [**Run an extraction**](../../deployment/deploy-operations/extract-schema-to-data-files.md) article.
+7. Run an extraction, making sure you can get a `deploy-complete` marker - see [**Run an extraction**](../../deployments/deploy-operations/extract-schema-to-data-files.md) article.
 
 Generating UDA files manually might sometimes end up giving you collision errors on your environments due to duplicates. This can be resolved by following our [Structure Error](../../troubleshooting/deployments/structure-error.md) documentation.
 
