@@ -1,6 +1,6 @@
 # Order Endpoints
 
-The Order endpoints are where you will manage your carts/orders and perform cart management functionality such as adding items to the cart, or setting up billing and shipping details.
+The Order endpoints are where you will manage your carts/orders and perform cart management functionality. Some examples are adding items to the cart, or setting up billing and shipping details.
 
 {% swagger src="../../../.gitbook/assets/storefront_swagger.json" path="/umbraco/commerce/storefront/api/v1/orders" method="post" %}
 [storefront_swagger.json](../../../.gitbook/assets/storefront_swagger.json)
