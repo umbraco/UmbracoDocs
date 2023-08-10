@@ -1,5 +1,5 @@
 ---
-versionFrom: 10.6.2
+versionFrom: 11.4.2
 meta.Title: "Server-side File Validation"
 description: "This section describes how you can implement File Validation to improve"
 ---
