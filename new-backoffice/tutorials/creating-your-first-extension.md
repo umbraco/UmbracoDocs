@@ -43,9 +43,12 @@ Create a new file inside the `my-package` folder called `umbraco-package.json` a
 				"label": "My Dashboard",
 				"pathname": "my-dashboard"
 			},
-			"conditions": {
-				"sections": ["Umb.Section.Content"]
-			}
+			"conditions": [
+				{
+					"alias": "Umb.Condition.SectionAlias",
+					"matches": "Umb.Section.Content"
+				}
+			]
 		}
 	]
 }
@@ -226,13 +229,10 @@ Finally, add an `umbraco-package.json` file in the root of your package folder `
 				"label": "My Dashboard",
 				"pathname": "my-dashboard"
 			},
-            "conditions": [
-				{
-					"alias": "Umb.Condition.SectionAlias",
-					"match": "Umb.Section.Content"
-				}
-			]
-    	}
+			"conditions": {
+				"sections": ["Umb.Section.Content"]
+			}
+		}
 	]
 }
 ```

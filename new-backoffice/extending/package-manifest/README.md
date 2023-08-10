@@ -27,7 +27,7 @@ This is a sample manifest, it is always stored in a folder in `/App_Plugins/{You
             "js": "/App_Plugins/SirTrevor/SirTrevor.js",
             "meta": {
                 "label": "Sir Trevor",
-                "propertyEditorModel": "Umbraco.JSON",
+                "propertyEditorSchemaAlias": "Umbraco.TextBox",
                 "icon": "umb:code",
                 "group": "Pickers"
             }
@@ -59,9 +59,9 @@ The manifest can contain four root collections, none of them are mandatory:
 
 In version 9.2 some additional root elements were added. The purpose of these are to control and facilitate telemetry about the package, none of these are mandatory. The properties are:
 
--   `name` - Allows you to specify a friendly name for your package that will be used for telemetry, if no name is specified the name of the folder will be used instead
--   `version` - The version of your package, if this is not specified there will be no version specific information for your package
--   `allowPackageTelemetry` - Allows you to entirely disable telemetry for your package if set to false, defaults to true.
+* `name` - Allows you to specify a friendly name for your package that will be used for telemetry, if no name is specified the name of the folder will be used instead
+* `version` - The version of your package, if this is not specified there will be no version specific information for your package
+* `allowPackageTelemetry` - Allows you to entirely disable telemetry for your package if set to false, defaults to true.
 
 Example `umbraco-package.json` with telemetry elements:
 
@@ -77,36 +77,36 @@ Example `umbraco-package.json` with telemetry elements:
 
 The `extensions` collection is an array of extension objects, each object describes a single extension. The `type` property is mandatory, and must be one of the following values:
 
--   `entryPoint`
--   `collectionView`
--   `dashboard`
--   `dashboardCollection`
--   `entityAction`
--   `entityBulkAction`
--   `headerApp`
--   `healthCheck`
--   `itemStore`
--   `menu`
--   `menuItem`
--   `modal`
--   `packageView`
--   `propertyAction`
--   `propertyEditorModel`
--   `propertyEditorUI`
--   `repository`
--   `section`
--   `sectionSidebarApp`
--   `sectionView`
--   `store`
--   `theme`
--   `tree`
--   `treeItem`
--   `treeStore`
--   `userProfileApp`
--   `workspace`
--   `workspaceAction`
--   `workspaceEditorView`
--   `workspaceViewCollection`
+* `entryPoint`
+* `collectionView`
+* `dashboard`
+* `dashboardCollection`
+* `entityAction`
+* `entityBulkAction`
+* `headerApp`
+* `healthCheck`
+* `itemStore`
+* `menu`
+* `menuItem`
+* `modal`
+* `packageView`
+* `propertyAction`
+* `propertyEditorModel`
+* `propertyEditorUI`
+* `repository`
+* `section`
+* `sectionSidebarApp`
+* `sectionView`
+* `store`
+* `theme`
+* `tree`
+* `treeItem`
+* `treeStore`
+* `userProfileApp`
+* `workspace`
+* `workspaceAction`
+* `workspaceEditorView`
+* `workspaceViewCollection`
 
 ## A special note about `entryPoint`
 
@@ -114,12 +114,12 @@ The `entryPoint` extension type is special, it is used to specify the entry poin
 
 You can apply any conditional logic when registering your entry point such as:
 
--   Check if the user is logged in.
--   Check if the user has access to a specific section before registering additional extensions.
+* Check if the user is logged in.
+* Check if the user has access to a specific section before registering additional extensions.
 
 The `entryPoint` extension is also the way to go if you want to load in external libraries such as jQuery, Angular, React, etc. You can use the `entryPoint` to load in the external libraries to be shared by all your extensions. You can also load global CSS files in the `entryPoint` extension.
 
-Read more about the `entryPoint` extension type in the [Entry Point](./entry-point.md) article.
+Read more about the `entryPoint` extension type in the [Entry Point](entry-point.md) article.
 
 ## Bundling
 
@@ -127,7 +127,7 @@ Read more about the `entryPoint` extension type in the [Entry Point](./entry-poi
 From version 14.0.0 Umbraco will not automatically try to bundle the static assets of packages. This is to avoid any potential conflicts with other bundling packages and to allow for more flexibility in how you want to bundle your assets.
 {% endhint %}
 
-If you want to bundle your assets such as JavaScript, CSS, or images, you need to set up a bundler. You can read more about bundling in the [Development Flow](./development-flow/README.md) article.
+If you want to bundle your assets such as JavaScript, CSS, or images, you need to set up a bundler. You can read more about bundling in the [Development Flow](development-flow/) article.
 
 ## JSON Schema
 
