@@ -2,7 +2,7 @@
 description: "Documentation for GraphQL filtering in Umbraco Heartcore."
 ---
 
-# Introduction
+# Filtering and Ordering
 
 The GraphQL API allows for filtering and ordering root and traversion collections (ancestors, children and descendants).
 
