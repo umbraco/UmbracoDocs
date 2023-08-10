@@ -100,4 +100,4 @@ You cannot use this to search on integer types in the index, as an example `pare
 
 ## More advanced extensions
 
-For further extensibility of the Umbraco Backoffice search implementation check [ISearchableTree](section-trees/searchable-trees.md "https://our.umbraco.com/Documentation/Extending/Section-Trees/Searchable-Trees/index.md")
+For further extensibility of the Umbraco Backoffice search implementation check [ISearchableTree](section-trees/searchable-trees.md)

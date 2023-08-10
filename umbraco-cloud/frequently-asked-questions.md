@@ -95,7 +95,7 @@ We upgrade when we're very confident the release is solid.
 
 We automatically upgrade Cloud projects to the latest patch version of Umbraco CMS, Umbraco Forms, and Umbraco Deploy / Courier. For minor version upgrades of our products, you’ll get a button in the interface to decide if you want to move to that version when it is released. When we make a new patch version, we first run it through our test suite, then test it on 10 test-sites. When all that passes, we roll out the upgrade in batches of 100 to customer accounts.
 
-[Read more about upgrades](https://our.umbraco.com/documentation/Umbraco-Cloud/Upgrades/)
+[Read more about upgrades](https://docs.umbraco.com/umbraco-cloud/product-upgrades/product-upgrades)
 
 ### My project didn't receive the auto-upgrade. Why?
 
