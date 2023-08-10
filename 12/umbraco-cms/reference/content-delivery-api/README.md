@@ -682,7 +682,7 @@ You'll find detailed information about the specific areas of extension in the ar
 
 ## Handling deeply nested JSON output
 
-.NET imposes a limit on the depth of object nesting within rendered JSON. This is done in an effort to detect cyclic references. Learn more about it in [the official .NET API docs](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.jsonserializeroptions.maxdepth)).
+.NET imposes a limit on the depth of object nesting within rendered JSON. This is done in an effort to detect cyclic references. Learn more about it in [the official .NET API docs](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.jsonserializeroptions.maxdepth).
 
 If the limit is exceeded, .NET will throw a `JsonException`.
 
