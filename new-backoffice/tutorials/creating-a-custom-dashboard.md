@@ -86,9 +86,12 @@ Add the following code:
 				"label": "Welcome Dashboard",
 				"pathname": "welcome-dashboard"
 			},
-			"conditions": {
-				"sections": ["Umb.Section.Content"]
-			}
+			"conditions": [
+				{
+					"alias": "Umb.Condition.SectionAlias",
+					"matches": "Umb.Section.Content"
+				}
+			]
 		}
 	]
 }
@@ -142,7 +145,7 @@ You can now start up the backoffice and see our new dashboard in the Content sec
 ## 3. Add Language Keys
 
 {% hint style="info" %}
-Localization is not yet available in the new Backoffice. This section will be updated when it is ready.
+This section is still being updated.
 {% endhint %}
 
 ## Going Further

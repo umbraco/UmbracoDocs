@@ -369,7 +369,7 @@ In the query above we are also using field aliases, this means that in the respo
           "name": "Umbraco Heartcore Documentation",
           "target": "_blank",
           "type": "EXTERNAL",
-          "url": "https://our.umbraco.com/documentation/Umbraco-Heartcore/"
+          "url": "https://docs.umbraco.com/umbraco-heartcore/"
         }
       ]
     }

@@ -1,7 +1,7 @@
 # Manage Subscriptions
 
 {% hint style="info" %}
-This article is only for customers managing their subscriptions through Umbraco Shop. For customers who have joined Umbraco Cloud after the 5th of May, 2021, and are managing their subscriptions through Umbraco Cloud, see the [Manage Subscriptions on Umbraco Cloud](new-shop.md) article.
+This article is only for customers managing their subscriptions through Umbraco Shop. For customers who have joined Umbraco Cloud after the 5th of May, 2021, and are managing their subscriptions through Umbraco Cloud, see the [Manage Subscriptions on Umbraco Cloud](new-shop/) article.
 {% endhint %}
 
 In this article, you can find information on how to manage your Umbraco Cloud subscriptions from the Umbraco Shop. You can also find information on how to change ownership of your projects.

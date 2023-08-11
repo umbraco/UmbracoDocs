@@ -56,4 +56,16 @@
 
 ## Reference
 
+* [Storefront API](reference/storefront-api/README.md)
+  * [Endpoints](reference/storefront-api/endpoints/README.md)
+    * [Order](reference/storefront-api/endpoints/order.md)
+    * [Checkout](reference/storefront-api/endpoints/checkout.md)
+    * [Product](reference/storefront-api/endpoints/product.md)
+    * [Customer](reference/storefront-api/endpoints/customer.md)
+    * [Store](reference/storefront-api/endpoints/store.md)
+    * [Currency](reference/storefront-api/endpoints/currency.md)
+    * [Country](reference/storefront-api/endpoints/country.md)
+    * [Payment method](reference/storefront-api/endpoints/payment-method.md)
+    * [Shipping method](reference/storefront-api/endpoints/shipping-method.md)
+    * [Content](reference/storefront-api/endpoints/content.md)
 * [Go behind the scenes](reference/go-behind-the-scenes.md)
