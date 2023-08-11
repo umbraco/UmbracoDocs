@@ -1,5 +1,5 @@
 ---
-description: "Documentation for GraphQL filtering in Umbraco Heartcore."
+description: Documentation for GraphQL filtering in Umbraco Heartcore.
 ---
 
 # Filtering and Ordering
@@ -10,7 +10,7 @@ For information on the different filters available and how the filter ad order t
 
 ## Using filters
 
-To start filtering the content, an `where` argument can be passed to the collection query. E.g. to find all products where it's price is higher that 100 we can write the following query.
+To start filtering the content, an `where` argument can be passed to the collection query. E.g. to find all products where it's price is higher than 100 we can write the following query.
 
 ```graphql
 query {
@@ -101,7 +101,6 @@ query {
 ```
 
 Filtering can also be applied to types returning `Content` and `Media`, e.g. if we want all content of type `Post` where the author name is `Rasmus`, we can write the following query.
-
 
 ```graphql
 query {
@@ -200,9 +199,9 @@ query {
 We can then use the `cursor` from the last item to get items that appear after that one. We can also request the `PageInfo` object which holds information on the start and end cursors and if there are more pages.
 
 {% hint style="info" %}
-`first` can only be used in combination with `after`, and `last` can only used with `before`.
+`first` can only be used in combination with`after`, and `last` can only used with `before`.
 
-Also `hasNextPage` is only populated when doing forward paging and `hasPreviousPage` is populated when doing backward paging.
+Also `hasNextPage` is only populated when doing forward paging and`asPreviousPage` is populated when doing backward paging.
 {% endhint %}
 
 ```graphql
@@ -228,7 +227,6 @@ query {
 ## Combining filter, order, and paging
 
 Everything shown up until now can be combined in a single query, the following query will get the first 50 products where the `price` is greater than `100` and order the result in ascending order by `price` and then by `name`.
-
 
 ```graphql
 query {
