@@ -73,3 +73,5 @@ You can also view details about a certain element by selecting "View Details".
 This will show the difference between entities stored in Umbraco and the `.uda` file stored on disk.
 
 <figure><img src="images/image.png" alt=""><figcaption><p>Showing how you can compare schema in the deploy dashboard</p></figcaption></figure>
+
+
