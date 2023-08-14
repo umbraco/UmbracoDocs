@@ -23,7 +23,7 @@ The main configuration for extensions is loaded through package manifests. There
 
 ### Backoffice
 
-Extensions for the Backoffice are written in JavaScript/TypeScript. When working with them, there is a way to get IntelliSense by looking installing our node package, which has everything you need:
+Extensions for the Backoffice are written in JavaScript/TypeScript. When working with them, there is a way to get IntelliSense by installing our node package, which has everything you need:
 
 1. Make sure you are working in an npm workspace by typing the command `npm init`
 2.  Install the node package called @umbraco-cms/backoffice by running the command `npm install -D @umbraco-cms/backoffice`
