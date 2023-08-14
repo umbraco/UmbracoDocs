@@ -642,13 +642,15 @@ You'll find detailed information about the specific areas of extension in the ar
 
 ## Handling deeply nested JSON output
 
-.NET imposes a limit on the depth of object nesting within rendered JSON. This is done in an effort to detect cyclic references (read more [here](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.jsonserializeroptions.maxdepth)). If the limit is exceeded, .NET will throw a `JsonException`.
+.NET imposes a limit on the depth of object nesting within rendered JSON. This is done in an effort to detect cyclic references. Learn more about it in [the official .NET API docs](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.jsonserializeroptions.maxdepth).
 
-In some cases the content models might be so deeply nested that the Delivery API produces JSON that exceeds this limit. If this happens, the `JsonException` will be logged and shown in the Umbraco log (in the _Settings_ section).
+If the limit is exceeded, .NET will throw a `JsonException`.
+
+In some cases the content models might be so deeply nested that the Delivery API produces JSON that exceeds this limit. If this happens, the `JsonException` will be logged and shown in the [Umbraco log viewer](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/logviewer/).
 
 To handle this we have to change the limit. Since the Delivery API has its own JSON configuration, we can do so without affecting the rest of our site.
 
-First we have to add these `using` statements to `Startup.cs`:.
+First, we have to add these `using` statements to `Startup.cs`:
 
 {% code title="Startup.cs" %}
 ```csharp
