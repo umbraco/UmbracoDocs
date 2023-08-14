@@ -18,7 +18,15 @@ In this section, you can find the release notes for each version of Umbraco Form
 
 <summary>Version 12</summary>
 
-### [12.1.0-rc1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.0) (July 27th 2023)
+### [12.1.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.0) (August 17th 2023)
+
+* All items listed under 10.5.0-rc1.
+* Removed the unnecessary set of global JavaScript variable that could trigger a console error under certain conditions [#1056](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1056)
+* Ensured that files in form submissions are accessible without the "Manage Forms" permission [#1058](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1058)
+* Further updated the dependency on `aspnet-client-validation` to correct an issue with validating mandatory dropdown questions, [#1059](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1059)
+* Fixed issue where a race condition in creating a user security record on first access could lead to a one-off exception.
+
+### [12.1.0-rc1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.0) (August 1st 2023)
 
 * Added cache options to prevalue sources.
 * Added the option to use the `www.recaptcha.net` domain for the reCAPTCHA 3 field type.
@@ -153,7 +161,15 @@ In this section, you can find the release notes for each version of Umbraco Form
 
 <summary>Version 10</summary>
 
-### [10.5.0-rc1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.5.0) (July 27th 2023)
+### [10.5.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.5.0) (August 17th 2023)
+
+* All items listed under 10.5.0-rc1.
+* Removed the unnecessary set of global JavaScript variable that could trigger a console error under certain conditions [#1056](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1056)
+* Ensured that files in form submissions are accessible without the "Manage Forms" permission [#1058](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1058)
+* Further updated the dependency on `aspnet-client-validation` to correct an issue with validating mandatory dropdown questions, [#1059](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1059)
+* Fixed issue where a race condition in creating a user security record on first access could lead to a one-off exception.
+
+### [10.5.0-rc1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.5.0) (August 1st 2023)
 
 * Added cache options to prevalue sources.
 * Added the option to use the `www.recaptcha.net` domain for the reCAPTCHA 3 field type.
