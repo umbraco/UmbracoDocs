@@ -19,14 +19,14 @@ Make sure you have the following installed on your machine:
 
 ### Package manifests
 
-The main configuration for extensions is loaded through package manifests. There is a number of ways to work with them including getting IntelliSense. Please make sure you have read the article [Package Manifest](package-manifest/) to learn more about this.
+The main configuration for an extension is loaded through its package manifest. There are a number of ways to work with them including getting IntelliSense. Please make sure you have read the article [Package Manifest](package-manifest/) to learn more about this.
 
 ### Backoffice
 
-Extensions for the Backoffice are written in JavaScript/TypeScript. When working with them, there is a way to get IntelliSense by looking installing our node package, which has everything you need:
+Extensions for the Backoffice are written in JavaScript/TypeScript. When working with them, there is a way to get IntelliSense by installing our node package, which has everything you need:
 
 1. Make sure you are working in an npm workspace by typing the command `npm init`
-2.  Install the node package called @umbraco-cms/backoffice by running the command `npm install -D @umbraco-cms/backoffice`
+2. Install the node package called @umbraco-cms/backoffice by running the command `npm install -D @umbraco-cms/backoffice`
 
 
 
