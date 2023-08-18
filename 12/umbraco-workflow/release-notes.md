@@ -16,6 +16,19 @@ In this section, you can find the release notes for each version of Umbraco Work
 
 <summary>Version 12</summary>
 
+#### [12.1.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.0) (September 5th 2023)
+
+* Fixes bug where setting content review period to zero didn't exclude content from review [#28](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/28)
+* Improves configuration options and handling for content reviews [#31](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/31)
+* Fixes bug where variant workflows were not correctly scheduled [#42](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/42)
+* Fixes bug when Swedish culture broke to differing unicode symbols when representing negative numbers [#44](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/44)
+* Adds external reviewer option for content reviews
+* Adds ability to schedule a publish workflow for both release and expire [#43](https://github.com/umbraco/Umbraco.Workflow.Issues/discussions/43)
+* UX improvements for initiating workflows
+* Removes 'Applies to' option from node-level workflow configuration as it was superceded by the equivalent global setting
+
+* BREAKING CHANGE: `ContentReviewReminderEmailer.SendReviewReminders.reviews` parameter changes from `Dictionary<UserGroupPoco, List<ContentReviewConfigPoco>>` to `Dictionary<IWorkflowGroup, List<ContentReviewConfigPoco>>`, which in turn changes the type of the `SentEntities` property in `WorkflowContentReviewsEmailNotificationsSendingNotification` and `WorkflowContentReviewsEmailNotificationsSentNotification`. `UserGroupPoco` implements `IWorkflowGroup`, but contains properties not present on the interface. These can be accessed by casting to the implemented type.
+
 #### [12.0.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.1) (August 1st 2023)
 
 * Adds Dutch localization [#23](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/23)
@@ -36,6 +49,20 @@ In this section, you can find the release notes for each version of Umbraco Work
 <details>
 
 <summary>Version 11</summary>
+
+#### [11.3.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.3.0) (September 5th 2023)
+
+* Fixes bug where setting content review period to zero didn't exclude content from review [#28](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/28)
+* Improves configuration options and handling for content reviews [#31](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/31)
+* Fixes bug where variant workflows were not correctly scheduled [#42](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/42)
+* Fixes bug when Swedish culture broke to differing unicode symbols when representing negative numbers [#44](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/44)
+* Adds external reviewer option for content reviews
+* Adds ability to schedule a publish workflow for both release and expire [#43](https://github.com/umbraco/Umbraco.Workflow.Issues/discussions/43)
+* UX improvements for initiating workflows
+* Removes 'Applies to' option from node-level workflow configuration as it was superceded by the equivalent global setting
+* Aligns embedded licensing UI with Umbraco.Licenses
+
+* BREAKING CHANGE: `ContentReviewReminderEmailer.SendReviewReminders.reviews` parameter changes from `Dictionary<UserGroupPoco, List<ContentReviewConfigPoco>>` to `Dictionary<IWorkflowGroup, List<ContentReviewConfigPoco>>`, which in turn changes the type of the `SentEntities` property in `WorkflowContentReviewsEmailNotificationsSendingNotification` and `WorkflowContentReviewsEmailNotificationsSentNotification`. `UserGroupPoco` implements `IWorkflowGroup`, but contains properties not present on the interface. These can be accessed by casting to the implemented type.
 
 #### [11.2.3](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.2.3) (August 1st 2023)
 
@@ -94,6 +121,20 @@ In this section, you can find the release notes for each version of Umbraco Work
 <details>
 
 <summary>Version 10</summary>
+
+#### [10.3.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.0) (September 5th 2023)
+
+* Fixes bug where setting content review period to zero didn't exclude content from review [#28](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/28)
+* Improves configuration options and handling for content reviews [#31](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/31)
+* Fixes bug where variant workflows were not correctly scheduled [#42](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/42)
+* Fixes bug when Swedish culture broke to differing unicode symbols when representing negative numbers [#44](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/44)
+* Adds external reviewer option for content reviews
+* Adds ability to schedule a publish workflow for both release and expire [#43](https://github.com/umbraco/Umbraco.Workflow.Issues/discussions/43)
+* UX improvements for initiating workflows
+* Removes 'Applies to' option from node-level workflow configuration as it was superceded by the equivalent global setting
+* Aligns embedded licensing UI with Umbraco.Licenses
+
+* BREAKING CHANGE: `ContentReviewReminderEmailer.SendReviewReminders.reviews` parameter changes from `Dictionary<UserGroupPoco, List<ContentReviewConfigPoco>>` to `Dictionary<IWorkflowGroup, List<ContentReviewConfigPoco>>`, which in turn changes the type of the `SentEntities` property in `WorkflowContentReviewsEmailNotificationsSendingNotification` and `WorkflowContentReviewsEmailNotificationsSentNotification`. `UserGroupPoco` implements `IWorkflowGroup`, but contains properties not present on the interface. These can be accessed by casting to the implemented type.
 
 #### [10.2.3](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.3) (August 1st 2023)
 
