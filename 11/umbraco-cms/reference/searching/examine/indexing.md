@@ -334,7 +334,7 @@ In certain scenarios only published content should be added to the index. To ach
 
 The index will only update its content when you manually trigger an index rebuild in the Examine dashboard. This is not always the desired behavior for a custom index.
 
-To update your index when content changes, you can use notification handlers. 
+To update your index when content changes, you can use notification handlers.
 
 {% hint style="info" %}
 The following handler class does not automatically update the descendant items of the modified content nodes, such as removing descendants of deleted content. If changes to the parent content item can affect its children or descendant items in your setup, please refer to the [UmbracoContentIndex.PerformDeleteFromIndex() in Umbraco](https://github.com/umbraco/Umbraco-CMS/blob/contrib/src/Umbraco.Examine.Lucene/UmbracoContentIndex.cs#L124-L153). Such logic should be applied when both removing and reindexing content items of type _product_.
@@ -473,8 +473,6 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing;
         {
             builder.Services.AddExamineLuceneIndex<ProductIndex, ConfigurationEnabledDirectoryFactory>("ProductIndex");
                     
-            builder.Services.ConfigureOptions<ConfigureProductIndexOptions>();
-
             builder.Services.ConfigureOptions<ConfigureProductIndexOptions>();
 
             builder.Services.AddSingleton<ProductIndexValueSetBuilder>();
