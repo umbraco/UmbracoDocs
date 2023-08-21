@@ -173,7 +173,11 @@ By default this is set to `false`. To make the obsolete data types visible in th
 
 ### Show Domain Warnings
 
-If you have a multilingual Umbraco site and you haven't configured Domains correctly for each language then every time you publish you will get the following warning: "Content published: Domains are not configured for multilingual site, please contact an administrator, see log for more information" - if however, you have a legitimate use case for not setting a Domain for a certain circumstance, these warnings every time an editor publishes a page can be annoying. This setting ShowDomainWarnings can be set to 'false' to stop them from displaying.
+If you do not configure Domains for each language in a multilingual site then every time you publish your content you get this warning:
+
+`Content published: Domains are not configured for multilingual site, please contact an administrator, see log for more information.`
+
+If you have a use case for not setting the domains, you can set this setting **ShowDomainWarnings** to `false` to stop the warning from displaying.
 
 ## ContentVersionCleanupPolicy
 
