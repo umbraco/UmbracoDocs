@@ -42,7 +42,13 @@ To use rewrites with Umbraco 9 you have to register the middleware in your `Star
 ```csharp
 using Microsoft.AspNetCore.Rewrite;
 
-app.UseRewriter(new RewriteOptions().AddIISUrlRewrite(env.ContentRootFileProvider, "IISUrlRewrite.xml"));
+var rewriteOptions = new RewriteOptions()
+    .AddIISUrlRewrite(env.ContentRootFileProvider, "IISUrlRewrite.xml");
+
+app.UseRewriter(rewriteOptions);
+
+// This line is needed for the rewrites to take effect.
+app.UseStaticFiles();
 ```
 
 * In your csproj file add the XML file to a new item group and set `CopyToOutputDirectory` to `Always`:
@@ -58,6 +64,18 @@ app.UseRewriter(new RewriteOptions().AddIISUrlRewrite(env.ContentRootFileProvide
 {% hint style="info" %}
 On Umbraco Cloud the item group needs to be set to `<CopyToPublishDirectory>Always</CopyToPublishDirectory>` for the file to be published to your deployed site.
 {% endhint %}
+
+## Rewrite rule shortcuts
+
+`RewriteOptions` has a number of "shortcut" methods to implement commonly used rewrites including:
+
+* `AddRedirectToNonWww()`
+* `AddRedirectToWww()`
+* `AddRedirectToNonWwwPermanent()`
+* `AddRedirectToWwwPermanent()`
+* `AddRedirectToHttps()`
+
+For more details and other examples, take a look at the [URL Rewriting Middleware in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting) and [RewriteOptions Class](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.rewrite.rewriteoptions) documentation.
 
 ## Examples of rewrite rules
 
