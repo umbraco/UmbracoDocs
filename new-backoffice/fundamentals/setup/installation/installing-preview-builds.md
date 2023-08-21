@@ -10,6 +10,10 @@ Here we'll explain how you can get the latest bleeding-edge builds of Umbraco V9
 2. Finding the latest nightly version
 3. Installing the latest nightly version template
 
+{% hint style="info" %}
+If you experience any problems running any of the prerelease/nightly builds, please ensure that you have the required version of .NET. You can always find the latest on the [dot.net website](https://dotnet.microsoft.com/en-us/). For Umbraco 13 and 14 you will need at least .NET 8.
+{% endhint %}
+
 But let's take things one step at a time.
 
 ## Adding the feed as a NuGet source
@@ -18,7 +22,7 @@ There are two NuGet feeds to choose from to try out the latest Umbraco including
 
 **Prerelease feed**
 
-This feed contains prebuilt versions of Umbraco released along with the prerelease announcements. [You can read more about our preleases here](../../../getting-started/getting-started-with-the-new-backoffice/alpha-release.md).
+This feed contains prebuilt versions of Umbraco released along with the prerelease announcements. [You can read more about our prereleases here](../../../getting-started/getting-started-with-the-new-backoffice/alpha-release.md).
 
 The feed is available through this URL, which you have to use during the rest of the guide:
 
@@ -59,10 +63,10 @@ Now that our feed is added we're ready to install our template.
 Open up your command prompt of choice and execute the `dotnet new install` command and provide the version that we want to install. For the latest Umbraco 14 preview release, the command looks like this:
 
 ```
-dotnet new install Umbraco.Templates::14.0.0--preview001
+dotnet new install Umbraco.Templates::14.0.0--preview002
 ```
 
-The name and the versions are separated with two colons `::` and it's important that we specify the entire version including the `--preview001`, otherwise the dotnet new command cannot find the package.
+The name and the versions are separated with two colons `::` and it's important that we specify the entire version including the `--preview001` otherwise, the dotnet new command cannot find the package.
 
 With that, we've successfully installed the latest build of Umbraco! All we have to do now is to create a new site by executing the newly installed template:
 
@@ -75,9 +79,7 @@ This will create a folder on your system called "MyAwesomeNightlySite", which yo
 To run the newly created Umbraco site, you can execute the following command:
 
 ```bash
-dotnet run --urls https://localhost:44339
+dotnet run
 ```
-
-Please note that you have to specify the URL "44339" due to the way that authentication works in Umbraco 14.
 
 For more information about installing Umbraco see [the installation documentation](./).

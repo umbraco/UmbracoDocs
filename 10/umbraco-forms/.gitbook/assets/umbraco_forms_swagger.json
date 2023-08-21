@@ -1,0 +1,663 @@
+{
+  "x-generator": "NSwag v13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))",
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Umbraco Forms API",
+    "description": "Describes the Umbraco Forms API available for rendering and posting client-side forms.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://localhost:44336"
+    }
+  ],
+  "paths": {
+    "/umbraco/forms/api/v1.0/definitions/{id}": {
+      "get": {
+        "tags": [
+          "Forms"
+        ],
+        "summary": "Retrieves a single form by Id.",
+        "operationId": "Definitions_GetById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "contentId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          },
+          {
+            "name": "culture",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 3
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FormDto"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/umbraco/forms/api/v1.0/entries/{id}": {
+      "post": {
+        "tags": [
+          "Forms"
+        ],
+        "summary": "Processes a submission for a form.",
+        "operationId": "Entries_SubmitEntry",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "requestBody": {
+          "x-name": "entry",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FormEntryDto"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 2
+        },
+        "responses": {
+          "202": {
+            "description": ""
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "FormDto": {
+        "type": "object",
+        "description": "Defines a form object exposed by the headless/AJAX API.",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Gets or sets the form's ID.",
+            "format": "guid"
+          },
+          "name": {
+            "type": "string",
+            "description": "Gets or sets the form's name."
+          },
+          "indicator": {
+            "type": "string",
+            "description": "Gets or sets the form's indicator for mandatory fields."
+          },
+          "cssClass": {
+            "type": "string",
+            "description": "Gets or sets the form's CSS class.",
+            "nullable": true
+          },
+          "nextLabel": {
+            "type": "string",
+            "description": "Gets or sets the form's label for the next page button.",
+            "nullable": true
+          },
+          "previousLabel": {
+            "type": "string",
+            "description": "Gets or sets the form's label for the previous page button.",
+            "nullable": true
+          },
+          "submitLabel": {
+            "type": "string",
+            "description": "Gets or sets the form's button submit label.",
+            "nullable": true
+          },
+          "disableDefaultStylesheet": {
+            "type": "boolean",
+            "description": "Gets or sets a value indicating whether to disable the form's default stylesheet."
+          },
+          "fieldIndicationType": {
+            "description": "Gets or sets the form's field mandatory or optional field indication type.",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/FormFieldIndication"
+              }
+            ]
+          },
+          "hideFieldValidation": {
+            "type": "boolean",
+            "description": "Gets or sets a value indicating whether to hide field validation."
+          },
+          "messageOnSubmit": {
+            "type": "string",
+            "description": "Gets or sets the form's message to display on submission.",
+            "nullable": true
+          },
+          "messageOnSubmitIsHtml": {
+            "type": "boolean",
+            "description": "Gets or sets a value indicating whether the form's message to display on submission is in HTML format."
+          },
+          "showValidationSummary": {
+            "type": "boolean",
+            "description": "Gets or sets a value indicating whether to show the form's validation summary."
+          },
+          "gotoPageOnSubmit": {
+            "type": "string",
+            "description": "Gets or sets the form's page to redirect to following submission.",
+            "format": "guid",
+            "nullable": true
+          },
+          "pages": {
+            "type": "array",
+            "description": "Gets or sets the form's pages.",
+            "items": {
+              "$ref": "#/components/schemas/FormPageDto"
+            }
+          }
+        }
+      },
+      "FormFieldIndication": {
+        "type": "integer",
+        "description": "Enumeration for field indications.",
+        "x-enumNames": [
+          "NoIndicator",
+          "MarkMandatoryFields",
+          "MarkOptionalFields"
+        ],
+        "enum": [
+          0,
+          1,
+          2
+        ]
+      },
+      "FormPageDto": {
+        "type": "object",
+        "description": "Defines a form's page object exposed by the headless/AJAX API.",
+        "additionalProperties": false,
+        "properties": {
+          "caption": {
+            "type": "string",
+            "description": "Gets or sets the form page's caption.",
+            "nullable": true
+          },
+          "condition": {
+            "description": "Gets or sets the form page's condition.",
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/FormConditionDto"
+              }
+            ]
+          },
+          "fieldsets": {
+            "type": "array",
+            "description": "Gets or sets the form page's fieldsets.",
+            "items": {
+              "$ref": "#/components/schemas/FormFieldsetDto"
+            }
+          }
+        }
+      },
+      "FormConditionDto": {
+        "type": "object",
+        "description": "Defines a form's condition object exposed by the headless/AJAX API.",
+        "additionalProperties": false,
+        "properties": {
+          "actionType": {
+            "description": "Gets or sets the form condition's action type.",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/FieldConditionActionType"
+              }
+            ]
+          },
+          "logicType": {
+            "description": "Gets or sets the form condition's logic type.",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/FieldConditionLogicType"
+              }
+            ]
+          },
+          "rules": {
+            "type": "array",
+            "description": "Gets or sets the form condition's rules.",
+            "items": {
+              "$ref": "#/components/schemas/FormConditionRuleDto"
+            }
+          }
+        }
+      },
+      "FieldConditionActionType": {
+        "type": "integer",
+        "description": "Enumeration for field condition display options.",
+        "x-enumNames": [
+          "Show",
+          "Hide"
+        ],
+        "enum": [
+          0,
+          1
+        ]
+      },
+      "FieldConditionLogicType": {
+        "type": "integer",
+        "description": "Enumeration for field condition logic matches.",
+        "x-enumNames": [
+          "All",
+          "Any"
+        ],
+        "enum": [
+          0,
+          1
+        ]
+      },
+      "FormConditionRuleDto": {
+        "type": "object",
+        "description": "Defines a form condition's rule object exposed by the headless/AJAX API.",
+        "additionalProperties": false,
+        "properties": {
+          "field": {
+            "type": "string",
+            "description": "Gets or sets fhe form condition rules's field."
+          },
+          "operator": {
+            "description": "Gets or sets fhe form condition rules's operator.",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/FieldConditionRuleOperator"
+              }
+            ]
+          },
+          "value": {
+            "type": "string",
+            "description": "Gets or sets fhe form condition rules's value."
+          }
+        }
+      },
+      "FieldConditionRuleOperator": {
+        "type": "integer",
+        "description": "Enumeration for field condition rule operators.",
+        "x-enumNames": [
+          "Is",
+          "IsNot",
+          "GreaterThen",
+          "LessThen",
+          "Contains",
+          "StartsWith",
+          "EndsWith"
+        ],
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "FormFieldsetDto": {
+        "type": "object",
+        "description": "Defines a form's fieldset object exposed by the headless/AJAX API.",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Gets or sets the form fieldset's ID.",
+            "format": "guid"
+          },
+          "caption": {
+            "type": "string",
+            "description": "Gets or sets the form fieldset's caption.",
+            "nullable": true
+          },
+          "condition": {
+            "description": "Gets or sets the form fieldset's condition.",
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/FormConditionDto"
+              }
+            ]
+          },
+          "columns": {
+            "type": "array",
+            "description": "Gets or sets the form fieldset's columns.",
+            "items": {
+              "$ref": "#/components/schemas/FormFieldsetColumnDto"
+            }
+          }
+        }
+      },
+      "FormFieldsetColumnDto": {
+        "type": "object",
+        "description": "Defines a form fieldset's column (or container) object exposed by the headless/AJAX API.",
+        "additionalProperties": false,
+        "properties": {
+          "caption": {
+            "type": "string",
+            "description": "Gets or sets the form fieldset column's caption.",
+            "nullable": true
+          },
+          "width": {
+            "type": "integer",
+            "description": "Gets or sets the form fieldset column's width.",
+            "format": "int32"
+          },
+          "fields": {
+            "type": "array",
+            "description": "Gets or sets the form fieldset column's fields.",
+            "items": {
+              "$ref": "#/components/schemas/FormFieldDto"
+            }
+          }
+        }
+      },
+      "FormFieldDto": {
+        "type": "object",
+        "description": "Defines a form's field object exposed by the headless/AJAX API.",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Gets or sets the form field's ID.",
+            "format": "guid"
+          },
+          "caption": {
+            "type": "string",
+            "description": "Gets or sets the form field's catpion."
+          },
+          "helpText": {
+            "type": "string",
+            "description": "Gets or sets the form field's help text.",
+            "nullable": true
+          },
+          "placeholder": {
+            "type": "string",
+            "description": "Gets or sets the form field's placeholder.",
+            "nullable": true
+          },
+          "cssClass": {
+            "type": "string",
+            "description": "Gets or sets the form field's CSS class.",
+            "nullable": true
+          },
+          "alias": {
+            "type": "string",
+            "description": "Gets or sets the form field's alias."
+          },
+          "required": {
+            "type": "boolean",
+            "description": "Gets or sets a value indicating whether the form field is required to be completed."
+          },
+          "requiredErrorMessage": {
+            "type": "string",
+            "description": "Gets or sets the form field's message to display if the required field is not completed.",
+            "nullable": true
+          },
+          "pattern": {
+            "type": "string",
+            "description": "Gets or sets the form field's validation pattern (regular expression).",
+            "nullable": true
+          },
+          "patternInvalidErrorMessage": {
+            "type": "string",
+            "description": "Gets or sets the form field's message to display if the field does not match the provided pattern.",
+            "nullable": true
+          },
+          "condition": {
+            "description": "Gets or sets the form field's condition.",
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/FormConditionDto"
+              }
+            ]
+          },
+          "fileUploadOptions": {
+            "description": "Gets or sets the form field's file upload options.",
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/FormFileUploadOptionsDto"
+              }
+            ]
+          },
+          "preValues": {
+            "type": "array",
+            "description": "Gets or sets the form field's prevalues.",
+            "items": {
+              "$ref": "#/components/schemas/FormFieldPrevalueDto"
+            }
+          },
+          "settings": {
+            "type": "object",
+            "description": "Gets or sets the form field's settings.",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "type": {
+            "description": "Gets or sets the form field's type.",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/FormFieldTypeDto"
+              }
+            ]
+          }
+        }
+      },
+      "FormFileUploadOptionsDto": {
+        "type": "object",
+        "description": "Defines a form's file upload options object exposed by the headless/AJAX API.",
+        "additionalProperties": false,
+        "properties": {
+          "allowAllUploadExtensions": {
+            "type": "boolean",
+            "description": "Gets or sets a value indicating whether all file extensions are allowed."
+          },
+          "allowedUploadExtensions": {
+            "type": "array",
+            "description": "Gets or sets the allowed file extensions.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "allowMultipleFileUploads": {
+            "type": "boolean",
+            "description": "Gets or sets a value indicating whether multiple file uploads are allowed."
+          }
+        }
+      },
+      "FormFieldPrevalueDto": {
+        "type": "object",
+        "description": "Defines a form field's prevalue object exposed by the headless/AJAX API.",
+        "additionalProperties": false,
+        "properties": {
+          "value": {
+            "type": "string",
+            "description": "Gets or sets the form field prevalue's value."
+          },
+          "caption": {
+            "type": "string",
+            "description": "Gets or sets the form field prevalue's caption.",
+            "nullable": true
+          }
+        }
+      },
+      "FormFieldTypeDto": {
+        "type": "object",
+        "description": "Defines a form's field type object exposed by the headless/AJAX API.",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Gets or sets the form type's ID.",
+            "format": "guid"
+          },
+          "name": {
+            "type": "string",
+            "description": "Gets or sets the form type's name."
+          },
+          "supportsPreValues": {
+            "type": "boolean",
+            "description": "Gets or sets a value indicating whether the form type's supports prevalues."
+          },
+          "supportsUploadTypes": {
+            "type": "boolean",
+            "description": "Gets or sets a value indicating whether the form type's supports file uploads."
+          },
+          "renderInputType": {
+            "type": "string",
+            "description": "Gets or sets a value indicating how the the field should be rendered, as a single input, multiple inputs within an an HTML fieldset (e.g. a radio button or check box list)."
+          }
+        }
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "additionalProperties": {
+          "nullable": true
+        },
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "FormEntryDto": {
+        "type": "object",
+        "description": "Defines a form entry submitted to the headless/AJAX API.",
+        "additionalProperties": false,
+        "properties": {
+          "values": {
+            "type": "object",
+            "description": "Gets or sets the form entry's values.",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "contentId": {
+            "type": "string",
+            "description": "Gets or sets an optional ID of the content page through which the form was submitted.",
+            "nullable": true
+          },
+          "culture": {
+            "type": "string",
+            "description": "Gets or sets an optional culture code for which the form submission should be processed.",
+            "nullable": true
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Forms"
+    }
+  ]
+}

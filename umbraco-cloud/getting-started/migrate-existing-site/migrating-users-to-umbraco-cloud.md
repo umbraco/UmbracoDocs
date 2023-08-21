@@ -6,6 +6,10 @@ description: >-
 
 # Migrating Users to Umbraco Cloud
 
+{% hint style="warning" %}
+This guide is currently being re-evaluated, so it might not work as intended.
+{% endhint %}
+
 In this guide, we show you how you can migrate users from your on-premises site to Umbraco Cloud and Umbraco ID.
 
 We will use SQL Server Management Studio to generate a script of the user tables in your SQL Database.
@@ -45,7 +49,7 @@ dbo.umbracoUserGroup2Node
 dbo.umbracoUserGroup2Language
 ```
 
-1. Click **Next** and then click **Advanced**
+1. Click **Next** and then click **Advanced**.
 2. Find **Type of data to script** and choose **Data only**.
 3. Choose where to save the script and save it.
 4. Connect to your [Umbraco Cloud Database](../../databases/cloud-database.md).

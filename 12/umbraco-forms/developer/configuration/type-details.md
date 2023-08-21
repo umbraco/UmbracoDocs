@@ -65,6 +65,10 @@ The intention is to be able to make available details such as IDs, aliases and p
 
 **Alias:** `fileUpload`
 
+**Settings:**
+
+* `SelectedFilesListHeading`
+
 </details>
 
 <details>

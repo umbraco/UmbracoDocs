@@ -201,9 +201,9 @@ using System;
 using System.Runtime.Serialization;
 using System.Threading.Tasks;
 using Google.Authenticator;
+using Umbraco.Cms.Core.Models.Membership;
 using Umbraco.Cms.Core.Security;
 using Umbraco.Cms.Core.Services;
-using Umbraco.Extensions;
 
 namespace Umbraco9
 {
@@ -230,7 +230,7 @@ namespace Umbraco9
         public const string Name = "UmbracoUserAppAuthenticator";
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UmbracoAppAuthenticator"/> class.
+        /// Initializes a new instance of the <see cref="UmbracoUserAppAuthenticator"/> class.
         /// </summary>
         public UmbracoUserAppAuthenticator(IUserService userService)
         {
@@ -254,7 +254,9 @@ namespace Umbraco9
         /// <returns>The required data to setup the authenticator app</returns>
         public Task<object> GetSetupDataAsync(Guid userOrMemberKey, string secret)
         {
-            var user = _userService.GetByKey(userOrMemberKey);
+            IUser? user = _userService.GetByKey(userOrMemberKey);
+
+            ArgumentNullException.ThrowIfNull(user);
 
             var twoFactorAuthenticator = new TwoFactorAuthenticator();
             SetupCode setupInfo = twoFactorAuthenticator.GenerateSetupCode("My application name", user.Username, secret, false);

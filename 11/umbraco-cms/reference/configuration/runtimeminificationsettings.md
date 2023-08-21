@@ -16,9 +16,13 @@ This section allows you to configure the runtime minifications (defaults shown),
   }
 }
 ```
-## Use 'in memory' cache 
+## Use 'in memory' cache
 
 This setting determines whether Smidge should save it's cached output in memory, or in a file on disk. If set to false, then the folder will be created at the wwwroot of your Umbraco site in a folder called 'Smidge'/
+
+{% hint style="info" %}
+It is not possible to disable in memory caching when `Timestamp` is chosen as `CacheBuster` method.
+{% endhint %}
 
 ## Cache buster
 

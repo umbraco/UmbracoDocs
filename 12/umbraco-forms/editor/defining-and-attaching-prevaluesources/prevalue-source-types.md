@@ -2,13 +2,7 @@
 
 There are some default prevalue source types that can be used.
 
-For each prevalue source you setup, a `json` file will be generated in `~/App_Data/UmbracoForms/Data/prevaluesources`.
-
-{% hint style="info" %}
-It is _only_ possible to store Forms data in the database. If upgrading to Umbraco version 9 and using Forms, you should first migrate the Forms to the database using Forms version 8. For more information, see [Umbraco Forms in the Database](../../developer/forms-in-the-database.md).
-{% endhint %}
-
-Here is a quick overview of the default types:
+Here is a quick overview of them:
 
 * **Get values from textfile**
 

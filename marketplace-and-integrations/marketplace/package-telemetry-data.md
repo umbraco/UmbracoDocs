@@ -16,41 +16,41 @@ We have two measures that we can use to rank packages by popularity:
 
 Both of these are available for website users to select when filtering the list of packages they are reviewing.
 
-Currently, the "Total Number of NuGet Downloads" is used as the measure for "Most popular" packages shown on the Marketplace home page.
-
-We plan to switch this in the near future to use the measure of "Number of Active Installs".
+"Number of Active Installs" is used as the measure for "Most popular" packages shown on the Marketplace home page.
 
 ## How Number of Active Installs is Collected
 
 Umbraco installations that have opted into sending telemetry data will send information periodically to a central collection service. This may include information about packages that are installed.
 
-On a nightly basis this information is aggregated and stored in the database that serves the Marketplace API and website.
+On a regular basis this information is aggregated and stored in the database that serves the Marketplace API and website.
 
 ## Package Identification
 
 Packages are identified in the telemetry service based on one of the following:
 
-- The package name provided in a `package.manifest` file.
+- The package NuGet ID provided in a [package manifest file or manifest filter](https://docs.umbraco.com/umbraco-cms/extending/property-editors/package-manifest).
+- The package name provided in a package manifest file or manifest filter.
 - The name of the folder within `/App_Plugins/` that the package creates.
 
-This may not be the same as the NuGet package ID.
+The most reliable way of matching up a package between the Marketplace and the telemetry data is if the package NuGet Id is provided. This can be included in your manifest file or filter if your package depends on Umbraco 12 or above.
 
-If not, please ensure to supply the name that will be found by the package telemetry in your `umbraco-marketplace.json` file, under the `AlternatePackageNames` key. For more details see the article on [listing your package](listing-your-package.md).
+{% hint style="info" %}
+If you use a manifest filter and take a dependency on a lower version of Umbraco, the `PackageManifest.PackageId` isn't available. You can still have set it for Umbraco installations that run Umbraco 12 using reflection. An example of this technique can be found within the open-source [Umbraco AuthorizedServices package](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/287f284662d16cd9ae7218bae6512c7d86b36563/src/Umbraco.AuthorizedServices/Manifests/AuthorizedServicesManifestFilter.cs#L30).
+{% endhint %}
 
-For example, a package may be registered at NuGet with `Umbraco.Community.MyPackage` as the alias and create a folder at `/App_Plugins/MyPackage`. The following should be added to the `umbraco-marketplace.json` file to ensure it's telemetry data is correctly allocated:
+Even if the package Id is provided in your package manifest, only installations of Umbraco 12 and up will use it for telemetry reporting. Older versions will use the package name or folder.
 
-```json
-    {
-      "$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json",
-      "AlternatePackageNames": [ "MyPackage" ],
-    }
-```
+If the package name or folder is used, this may not be the same as the NuGet package ID. If not, we need to ensure your package is stored along with the alternate name that is used in the CMS and telemetry data.
+
+It's no longer possible to supply this via the `umbraco-marketplace.json` file. The field by which this was supplied has been deprecated in the schema and if provided will no be longer imported. This was due to the risks of two package developers providing the same alternate names.
+
+Instead we maintain this list at HQ. You may own a package that appears to not rank as expected via the "most active installs" measure. If you suspect it's due to the telemetry data not being correctly allocated, please let us know. We can make the necessary updates such that it's popularity is properly reflected. You can reach us at [packages@umbraco.com](mailto:packages@umbraco.com) and tell us the name used for your package in the package manifest or folder.
 
 ### What if I don't have a client-side component?
 
-Some packages may not have either of the two identifying methods available. This would normally be the case if the package is providing only server-side functionality, and is written purely in C#.
+Some packages may not have either a `package.manifest.json` file nor create a folder in `/App_Plugins/`. This would normally be the case if the package is providing only server-side functionality, and is written purely in C#.
 
-For these cases there's an option to add and register a class that ensures the name is set.
+For these cases there's an option to add and register a manifest filter that ensures the name and Id is set.
 
 An example is shown here:
 
@@ -65,7 +65,8 @@ namespace Umbraco.Community.MyPackage
         public void Filter(List<PackageManifest> manifests) =>
             manifests.Add(new PackageManifest
             {
-                PackageName = "MyPackage",
+                PackageId = "MyPackage",
+                PackageName = "My Package",
             });
     }
 }

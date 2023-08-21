@@ -5,23 +5,39 @@ description: Documentation on how to apply custom themes to Umbraco Forms
 
 # Themes
 
-Umbraco Forms supports Themes, allowing forms to be customised in a much simpler manner.
+Umbraco Forms supports Themes, allowing forms to be customized in a much simpler manner.
 
 ## Creating a Theme
 
 To create a theme, you need to create a folder at `/Views/Partials/Forms/Themes/`. The name of the folder is the name of theme that will be visible in the backoffice when choosing it.
 
-Copy the explicit files you wish to override in your theme, it may be a single file or all files from the default theme folder. Make the necessary changes you desire to CSS class names, markup etc.
+Copy the explicit files you wish to override in your theme, it may be a single file or all files from the `default` theme folder. Make the necessary changes you desire to CSS class names, markup etc.
 
-For Umbraco 9 and previous, it's straightforward to simply copy the files you need from the default theme folder. Umbraco 10 distributes these files as part of a Razor class library, so you won't find them on disk. The easiest way to obtain copies of the files included in the default theme is to [download this zip file](https://our.umbraco.com/FileDownload?id=23911) and extract the ones you need.
+### Obtaining the Default Theme Files
+
+For Umbraco 9 and previous, it's straightforward to copy the files you need from the default theme folder. We highly recommend that you never customize any files found in the `default` themes folder. There is a risk that any customizations to these files will be lost with any future upgrades you do to Umbraco Forms.
+
+Umbraco 10+ distributes these files as part of a Razor class library, so you won't find them on disk. Instead you should download the appropriate zip file for your Forms version and extract the ones you need.
+
+You can obtain the latest version of the default theme Forms 10 from the following link:
+
+* [Forms 10 Default Theme](https://umbra.co/umbraco-forms-default-theme) (for 10.5.0.rc1 and above)
+
+If you are using a lower minor version of Forms than those listed, you should download an older version of the default theme.
+
+The default theme for minor versions are available from the "Source Code" tab available at the bottom of [Umbraco Forms Package page](https://our.umbraco.com/packages/developer-tools/umbraco-forms/). Only versions where changes were made are available.
+
+You should use the theme available for the highest version that's less or equal to the version of Forms you have installed.
+
+For example, when using Umbraco Forms 10.4, and no file for that version is available use version 10.3 instead.
+
+### Amending Theme Files
 
 {% hint style="info" %}
 Umbraco Forms conditional JavaScript logic depends on some CSS classes currently and it is advised that you add any additional classes you require but **do not remove those already being set**.
 {% endhint %}
 
-When using your own theme, you need to copy the `Script.cshtml` file from the `default` themes folder and amend the js references to reference your own js files. Your js files are probably best located in `/js` or `/scripts` along with your other js files. You can't put these in `/Views` since they won't be served because of restrictions on that folder by the web.config file.
-
-We highly recommend you never customize any files found in the `default` themes folder, as any customizations to these files will most likely be lost with any future upgrades you do to Umbraco Forms.
+If adding or amending client-side scripts, you need to copy the `Script.cshtml` file from the `default` themes folder. In your copy, amend the `.js` references to reference your own script files.
 
 ## Using a Theme
 

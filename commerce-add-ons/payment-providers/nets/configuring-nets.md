@@ -36,7 +36,7 @@ Registration of webhook notifications is handled as part of the payment request 
 The following is an example of such a callback URL:
 
 ```
-https://{store_domain}/umbraco/umbracocommerce/payment/callback/nets-easy-checkout/{payment_method_id}/
+https://{store_domain}/umbraco/commerce/payment/callback/nets-easy-checkout/{payment_method_id}/
 ```
 
 When using this, be sure to replace the parameters in the curly brackets with the corresponding values taken from your store.

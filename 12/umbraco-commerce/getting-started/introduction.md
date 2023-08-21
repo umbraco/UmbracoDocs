@@ -17,7 +17,7 @@ Find detailed instructions on how to install the latest version of Umbraco in th
 The minimum requirements for using Umbraco Commerce are as follows:
 
 * Umbraco CMS version 12+
-* SQL Server Database
+* SQL Server 2015+ Database
   * **SQLite** is fine for testing, but not recommended for live deployments. See [Configuring SQLite support](../how-to-guides/configure-sqlite-support.md) for more details.
 
 ## Versioning

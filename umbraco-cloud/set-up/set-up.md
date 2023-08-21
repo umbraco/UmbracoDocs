@@ -21,10 +21,11 @@ Articles about configuring settings on your project, as well as managing members
 Articles about how to work locally with your Umbraco Cloud project.
 
 * [Working with your site locally](working-locally.md)
-* [Working with a Mac](working-with-mac.md)
+* [Working with Linux/macOS](working-with-linux-macos.md)
 
 ## Related topics
 
 * [Media on Umbraco Cloud](media/)
 * [Power Tools (Kudu)](power-tools/)
 * [Config transforms for each environment](config-transforms.md)
+* small change for testing
