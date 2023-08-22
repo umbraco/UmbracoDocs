@@ -20,7 +20,7 @@ To install the Umbraco Workflow package (Umbraco.Workflow), follow these steps:
 1.  Run the following command to add a package reference to your Umbraco project:
 
     ```
-    dotnet add package Umbraco.Workflow --version 10.0.0
+    dotnet add package Umbraco.Workflow --version 10.*
     ```
 2.  Add `AddWorkflowEmailTemplateProvider()` in the `ConfigureServices` method in the `Startup.cs` file:
 
