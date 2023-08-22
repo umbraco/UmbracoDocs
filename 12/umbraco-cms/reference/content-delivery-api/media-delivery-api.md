@@ -46,7 +46,7 @@ The `Media` configuration can only become more restrictive than the `DeliveryApi
 
 - If `DeliveryApi::Enabled` is `false`, the `DeliveryApi::Media::Enabled` configuration option has no effect. The Media Delivery API cannot be enabled on its own.
 - If `DeliveryApi::PublicAccess` is `false`, the `DeliveryApi::Media::PublicAccess` configuration option has no effect. The Media Delivery API cannot be publicly available if the Content Delivery API is not.
-  {% endhint %}
+{% endhint %}
 
 ## Endpoints
 
