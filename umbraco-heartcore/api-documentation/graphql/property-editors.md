@@ -197,6 +197,10 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 **GraphQL Type**: [`[Media]`](schema-generation.md#media)\
 **Can be used for filtering**: `true`
 
+**Node type**: `Member`
+{% hint style="info" %} The Member editor configuration is not supported and will not be present in the generated schema {% endhint %}
+
+
 ## Nested Content
 
 **Editor Alias**: `Umbraco.NestedContent`\
