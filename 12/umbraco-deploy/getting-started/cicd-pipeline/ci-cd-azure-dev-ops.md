@@ -8,7 +8,7 @@ In this section, we provide a full example of how Umbraco Deploy running on Umbr
 
 ## Discussion on the Provided Example
 
-We have defined a single stage build and deployment pipeline, configured in YAML format. Although initially this isn’t as easy to read as the drag and drop list of tasks, it does have the benefit of being managed in source control.
+We have defined a single stage build and deployment pipeline, configured in YAML format. Although initially this isn’t as to read as the drag and drop list of tasks, it does have the benefit of being managed in source control.
 
 We then have a number of variables defined, that are used in the build configuration below. By using variables we have the ability to modify the script for use on other web applications. Some values are set in the script, and some via Azure DevOps variables or secrets.
 
