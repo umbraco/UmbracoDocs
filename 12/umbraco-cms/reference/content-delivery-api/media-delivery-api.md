@@ -53,7 +53,7 @@ The `Media` configuration can only become more restrictive than the `DeliveryApi
 The Media Delivery API can either be queried for a specific media item or a paged list of multiple items.
 
 {% hint style="info" %}
-When referring to a specific content item in your API requests, the `id` parameter always refers to the item’s key (`Guid`) and not its integer node id.
+In the Media Delivery API, `id` parameters always refer to media item keys (`Guid`), not node ids (`integer`).
 {% endhint %}
 
 {% swagger method="get" path="/media/item/{id}" baseUrl="/umbraco/delivery/api/v1" summary="Gets a media item by id" %}
@@ -191,7 +191,7 @@ GET /umbraco/delivery/api/v1/media?fetch=children:/root level folder/child folde
 The Media Delivery API outputs the JSON structure outlined below to represent media items:
 
 - Item `path`, `createDate`, `updateDate`, `id`, `name`, and `mediaType` are always included in the response.
-- `url`, `extension` and the size in `bytes` are included for all files (i.e. not for folders).
+- `url`, `extension` and the size in `bytes` are included for all files (not for folders).
 - `width` and `height` (in pixels) are included for most images.
 - Depending on Umbraco Data Type configuration, `focalPoint` and `crops` are included for most images.
 - Additional editorial properties from the media type can be found in the `properties` collection.
