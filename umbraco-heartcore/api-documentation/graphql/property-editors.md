@@ -198,7 +198,8 @@ This page contains a list of all the built-in Umbraco Property Editors and their
 **Can be used for filtering**: `true`
 
 **Node type**: `Member`
-{% hint style="info" %} This editor configuration is not supported and will not be present in the generated schema {% endhint %}
+{% hint style="info" %} The Member editor configuration is not supported and will not be present in the generated schema {% endhint %}
+
 
 ## Nested Content
 
