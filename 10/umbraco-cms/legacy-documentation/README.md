@@ -4,7 +4,7 @@ description: "Resources and links for older versions of Umbrco CMS."
 
 # Legacy Documentation
 
-As this documentation platform covers only major versions of the Umbraco CMS since Umbraco 9, you will need to go elsewhere if you are using an older version of Umbraco CMS.
+This documentation platform covers only major versions of the Umbraco CMS since Umbraco 9. If you are using an older version of Umbraco CMS, you will need to go elsewhere.
 
 The documentation for Umbraco 7 and 8 lives on [our.umbraco.com](https://our.umbraco.com/documentation/).
 

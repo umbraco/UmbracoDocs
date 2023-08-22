@@ -51,6 +51,10 @@ app.UseRewriter(rewriteOptions);
 app.UseStaticFiles();
 ```
 
+{% hint style="info" %}
+On Linux, make sure to place the `app.UseStaticFiles()` after the `app.UseUmbraco()` statements for the redirect to work as intended.
+{% endhint %}
+
 * In your csproj file add the XML file to a new item group and set `CopyToOutputDirectory` to `Always`:
 
 ```xml
