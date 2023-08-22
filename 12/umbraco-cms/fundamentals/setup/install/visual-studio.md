@@ -71,7 +71,7 @@ Follow the installation wizard and after a few steps, you will get a message say
 
 You are now ready to start building your Umbraco project. Have a look below for different resources on the next steps.
 
-* [Getting Started with Umbraco](../../../../getting-started/)
+* [Getting Started with Umbraco](../../../tutorials/creating-a-basic-website/getting-started.md)
 * [Tutorial: Create a website from scratch](../../../tutorials/creating-a-basic-website/)
 * [Find different options for hosting your Umbraco website](../server-setup/)
 * [Learn about configuration in Umbraco CMS](../../../reference/configuration/)
