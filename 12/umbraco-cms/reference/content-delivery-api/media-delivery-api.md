@@ -116,6 +116,33 @@ Which properties to expand in the response
 {% endswagger-response %}
 {% endswagger %}
 
+{% swagger method="get" path="/media/item" baseUrl="/umbraco/delivery/api/v1" summary="Gets media item(s) by id" %}
+{% swagger-description %}
+Returns single or multiple items by id.
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="id" type="String Array" required="true" %}
+GUIDs of the media items
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Api-Key" type="String" required="false" %}
+Access token
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="expand" type="String" required="false" %}
+Which properties to expand in the response
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="List of media items" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="401: Unauthorized" description="Missing permissions after protection is set up" %}
+
+{% endswagger-response %}
+
+{% endswagger %}
+
 {% swagger method="get" path="/media" baseUrl="/umbraco/delivery/api/v1" summary="Gets media item(s) from a query" %}
 {% swagger-description %}
 Returns single or multiple items.
@@ -155,33 +182,6 @@ Which properties to expand in the response
 {% endswagger-response %}
 
 {% swagger-response status="400: Bad Request" description="Invalid request" %}
-
-{% endswagger-response %}
-
-{% endswagger %}
-
-{% swagger method="get" path="/media/item" baseUrl="/umbraco/delivery/api/v1" summary="Gets media item(s) by id" %}
-{% swagger-description %}
-Returns single or multiple items by id.
-{% endswagger-description %}
-
-{% swagger-parameter in="query" name="id" type="String Array" required="true" %}
-GUIDs of the media items
-{% endswagger-parameter %}
-
-{% swagger-parameter in="header" name="Api-Key" type="String" required="false" %}
-Access token
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="expand" type="String" required="false" %}
-Which properties to expand in the response
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="List of media items" %}
-
-{% endswagger-response %}
-
-{% swagger-response status="401: Unauthorized" description="Missing permissions after protection is set up" %}
 
 {% endswagger-response %}
 
