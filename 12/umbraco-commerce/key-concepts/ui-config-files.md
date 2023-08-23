@@ -12,10 +12,10 @@ In order to allow this flexibility whilst still providing the ability to view an
 
 The configuration files supported by Umbraco Commerce are.
 
-* **cart.list.config.js** - Cart list view configuration.
-* **cart.editor.config.js** - Cart editor view configuration.
-* **order.list.config.js** - Order list view configuration.
-* **order.editor.config.js** - Order editor view configuration.
+* **cart.list.config.json** - Cart list view configuration.
+* **cart.editor.config.json** - Cart editor view configuration.
+* **order.list.config.json** - Order list view configuration.
+* **order.editor.config.json** - Order editor view configuration.
 
 {% hint style="info" %}
 If there are no cart config files defined, then Umbraco Commerce will fall back to the order config files.
@@ -23,7 +23,7 @@ If there are no cart config files defined, then Umbraco Commerce will fall back 
 
 ## Assigning a UI Config File to a Store
 
-To assign a UI config file to a Store, this is done by file name convention where configs are looked for in `App_Plugins/UmbracoCommerce/config` with the following file name format `{storeAlias}.{entityType}.{viewType}.config.js`. If no store-specific file is found, it will fallback into the default `{entityType}.{viewType}.config.js`.
+To assign a UI config file to a Store, this is done by file name convention where configs are looked for in `App_Plugins/UmbracoCommerce/config` with the following file name format `{storeAlias}.{entityType}.{viewType}.config.json`. If no store-specific file is found, it will fallback into the default `{entityType}.{viewType}.config.json`.
 
 ## Cart/Order List Config Files
 
