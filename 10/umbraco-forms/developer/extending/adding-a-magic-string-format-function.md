@@ -10,6 +10,14 @@ These values can be formatted using [filter functions](../magic-strings.md#forma
 
 Filter functions for common operations such as truncating a string or formatting a date or number are provided.  It's also possible to create custom ones in code.
 
+## Dependency
+
+You need to install the following nuget package for Umbraco.Forms.Core.Providers: 
+
+```
+https://www.nuget.org/packages/Umbraco.Forms.Core.Providers
+```
+
 ## Creating a custom format function
 
 To create a custom format function, create a class that implements `IParsedPlaceholderFormatter`.
@@ -69,6 +77,8 @@ namespace Umbraco.Forms.Core.Providers.ParsedPlacholderFormatters
 As with other provider types, the custom function needs to be registered. An example registration using the `IUmbracoBuilder` is shown below:
 
 ```csharp
+using Umbraco.Forms.Core.Providers.Extensions;
+ 
 public static IUmbracoBuilder AddCustomProviders(this IUmbracoBuilder builder)
 {
     builder.FormsParsedPlaceholderFormatters()
