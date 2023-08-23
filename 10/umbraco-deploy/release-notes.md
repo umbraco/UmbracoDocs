@@ -133,7 +133,7 @@ Under each major version, you can find details about minor and patch releases fo
 
 #### [9.5.3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.5.3) (February 14th 2023)
 
-* Applied various updates to improve performance and reduce likelihood of timeouts when transferring or restoring items in bulk [#128](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/128) [#152](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/152) [#148](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/148) [#110](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/110) [#106](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/106)
+* Applied multiple updates to improve performance and reduce likelihood of timeouts when transferring or restoring items in bulk [#128](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/128) [#152](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/152) [#148](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/148) [#110](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/110) [#106](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/106)
   * Added a task to set signatures via the backoffice settings dashboard, ensuring these are calculated and cached before a restore is commenced.
   * Provided a configuration option to allow for use of the media file metadata instead of file contents when calculating a checksum.
   * Made a new default behaviour which can be tweaked via configuration, of loading all relations into memory once we know we are processing a lot of artifact signatures, and doing look-ups for the relations for each entity from there.
