@@ -501,7 +501,7 @@ It offers connectors for the most popular Umbraco community packages. These are 
 
 ### Deploy Contrib 4.1.1 (April 26th 2022)
 
-* Fixes issue with deployment of nested content properties within doc type grid editor values. [#82](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/82)
+* Fixes issue with deployment of nested content properties within Document Type grid editor values. [#82](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/82)
 
 ### Deploy Contrib 4.2.1 (February 21st 2023)
 
