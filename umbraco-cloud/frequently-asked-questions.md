@@ -243,7 +243,7 @@ You can read much more about these deletions in the [Deploying Deletions](deploy
 
 Umbraco Cloud uses Azure App Service Plans for website hosting services. This is a typical platform used for hosting web applications and it offers all features necessary for running Umbraco websites.
 
-Given that, packages that run in your local development environment, or on other hosting platforms, are very likely to also be supported on Umbraco Cloud.
+Given that, packages that run in your local development environment, or on other hosting platforms, are likely to also be supported on Umbraco Cloud.
 
 The only potential issue to be aware of is if your package stores custom data in the Umbraco database. Most packages don't do this, either purely adding functionality, or using existing Umbraco services for any data storage they require.
 
@@ -263,7 +263,7 @@ Some packages save data into custom Umbraco database tables, and if so, it may b
 
 Umbraco Cloud uses the [Umbraco Deploy](https://docs.umbraco.com/umbraco-deploy/) tool to for the purpose of transfer of Umbraco information between environments. This includes Umbraco "schema" (such as document types) as well as "content" (such as content or media).
 
-In order for support of custom data transfer between environments to be offered, the package or solution developer needs to build an add-on to their package. This extends Umbraco Deploy with a "connector" that details of how the data for the package should be handled.
+In order to support custom data transfer between environments, the package or solution developer needs to build an add-on to their package. This extends Umbraco Deploy with a "connector" that details of how the data for the package should be handled.
 
 Specific care needs to be taken when developing the connector if the package stores references to content nodes, media items, or members in Umbraco.
 
@@ -278,7 +278,7 @@ Umbraco Deploy Contrib is included in all Cloud sites and we keep it upgraded to
 
 We have a dedicated documentation page discussing the process of [extending Umbraco Deploy via the creation of connectors for custom data](https://docs.umbraco.com/umbraco-deploy/extending).
 
-The code in these projects should also help you understand what is going on and how you can build something like that for your own package.
+The code in these projects should also help you understand the steps and how to build something similar for your own package.
 
 If you need help with this, don't hesitate to reach out to us and we'll be happy to give you some tips.
 
