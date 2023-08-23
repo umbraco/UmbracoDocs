@@ -97,10 +97,6 @@ As a developer you are able to leverage your website when you build on the Membe
 
 You can find out more about the services methods in the reference section of the documentation by following the links below.
 
-### More information
-
-* [Customizing Data Types](data-types/)
-
 ### Related Services
 
 * [MemberService](../../reference/management/services/memberservice.md)
