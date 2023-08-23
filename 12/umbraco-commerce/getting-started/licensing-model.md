@@ -1,10 +1,10 @@
 # Licensing
 
-Umbraco Commerce is a commercial product. You can run an Umbraco Commerce unrestricted locally without the need a license. Running Umbraco Commerce on a public domain will display a warning banner in the backoffice and will limit the maximum number of orders you can accepts to 20. To remove these restrictions, you'll need to have a **valid license**.
+Umbraco Commerce is a commercial product. You can run an Umbraco Commerce unrestricted locally without the need a license. Running Umbraco Commerce on a public domain will display a warning banner in the backoffice and will limit the maximum number of orders (20). To remove these restrictions, you'll need to have a **valid license**.
 
 ## How does it work?
 
-Licenses are sold per backoffice domain and will also work on all subdomains. If you have custom staging/qa environment domains that are not subdomains of the license domain, additional domains can be added to the license on request.
+Licenses are sold per backoffice domain and will also work on all subdomains. If you have alternative staging/qa environment domains, additional domains can be added to the license on request.
 
 {% hint style="info" %}
 The licenses are not bound to a specific product version. They will work for all versions of the related product.
@@ -45,7 +45,7 @@ This is an add-on domain for existing licenses. Refunds will not be given for th
 
 ## Configuring your license
 
-You can purchase a license via the [Umbraco Commerce](https://umbraco.com/products/umbraco-commerce/) project page. A member of the [SUITS team](mailto:suits@umbraco.com) will manage this process and ask for the primary domain you wish to license along with any staging/qa domains you'd also like to be covered by the license. You should then receive a license code to be installed in your solution.
+You can purchase a license via the [Umbraco Commerce](https://umbraco.com/products/umbraco-commerce/) project page. A member of the [SUITS team](mailto:suits@umbraco.com) will manage this process. In the process, you will need to provide all domains you wish to have covered by the license such as primary and staging/qa domains. You should then receive a license code to be installed in your solution.
 
 ### Add additional domains
 
