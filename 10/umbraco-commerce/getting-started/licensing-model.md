@@ -4,7 +4,7 @@ Umbraco Commerce is a commercial product. You can run an Umbraco Commerce unrest
 
 ## How does it work?
 
-Licenses are sold per backoffice domain and will also work on all subdomains. If you have custom staging/qa environment domains that are not subdomains of the license domain, additional domains can be added to the license on request.
+Licenses are sold per backoffice domain and will also work on all subdomains. If you have alternative staging/qa environment domains, additional domains can be added to the license on request.
 
 {% hint style="info" %}
 The licenses are not bound to a specific product version. They will work for all versions of the related product.
