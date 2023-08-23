@@ -1,5 +1,8 @@
 ---
-description: This document covers specific upgrade steps if a version requires them. Most versions do not require specific upgrade steps. In most cases, you will be able to upgrade directly from your current version.
+description: >-
+  This document covers specific upgrade steps if a version requires them. Most
+  versions do not require specific upgrade steps. In most cases, you will be
+  able to upgrade directly from your current versi
 ---
 
 # Version Specific Upgrades
@@ -22,7 +25,7 @@ Most notable is a functional breaking change in Migrations, that from Umbraco 12
 
 **A type, enum, record, or struct visible outside the assembly is missing in the compared assembly when required to be present.**
 
-* PagedModel<T> has moved namespace from Umbraco.New.Cms.Core.Models to Umbraco.Cms.Core.Models
+* PagedModel has moved namespace from Umbraco.New.Cms.Core.Models to Umbraco.Cms.Core.Models
 * Umbraco.Cms.Infrastructure.Migrations.PostMigrations.ClearCsrfCookies is removed. The functionality can be archived by implementing a notification handler for the new UmbracoPlanExecutedNotification.
 * Umbraco.Cms.Core.Cache.DistributedCacheBinder is now divided into separate files for each notification handler
 * Umbraco.Cms.Infrastructure.Migrations.PostMigrations.DeleteLogViewerQueryFile was a no-op method removed.
@@ -30,11 +33,11 @@ Most notable is a functional breaking change in Migrations, that from Umbraco 12
 
 **A member that is visible outside of the assembly is missing in the compared assembly when required to be present.**
 
-* Umbraco.Cms.Core.Migrations.IMigrationPlanExecutor.Execute(Umbraco.Cms.Infrastructure.Migrations.MigrationPlan,System.String) replaced with Umbraco.Cms.Core.Migrations.IMigrationPlanExecutor.ExecutePlan(Umbraco.Cms.Infrastructure.* * Migrations.MigrationPlan,System.String) that returns an rich object instead of a string
-* Umbraco.Cms.Infrastructure.Migrations.IMigrationContext.AddPostMigration``1 Removed and replaced with notification
-* Umbraco.Cms.Infrastructure.Migrations.MigrationPlan.AddPostMigration``1
+* Umbraco.Cms.Core.Migrations.IMigrationPlanExecutor.Execute(Umbraco.Cms.Infrastructure.Migrations.MigrationPlan,System.String) replaced with Umbraco.Cms.Core.Migrations.IMigrationPlanExecutor.ExecutePlan(Umbraco.Cms.Infrastructure.\* \* Migrations.MigrationPlan,System.String) that returns an rich object instead of a string
+* Umbraco.Cms.Infrastructure.Migrations.IMigrationContext.AddPostMigration\`\`1 Removed and replaced with notification
+* Umbraco.Cms.Infrastructure.Migrations.MigrationPlan.AddPostMigration\`\`1
 * Removed and replaced with notification
-* Umbraco.Cms.Infrastructure.Migrations.MigrationPlan.get_PostMigrationTypes removed.
+* Umbraco.Cms.Infrastructure.Migrations.MigrationPlan.get\_PostMigrationTypes removed.
 * Umbraco.Cms.Infrastructure.Migrations.Upgrade.Upgrader.Execute(Umbraco.Cms.Core.Migrations.IMigrationPlanExecutor,Umbraco.Cms.Core.Scoping.IScopeProvider,Umbraco.Cms.Core.Services.IKeyValueService) was obsolete and is replaced by method taking a ICoreScopeProvider instead of a IScopeProvider
 
 **An abstract member was added to the right side of the comparison to an unsealed type.**
@@ -43,8 +46,8 @@ Most notable is a functional breaking change in Migrations, that from Umbraco 12
 
 **A member was added to an interface without a default implementation.**
 
-* Umbraco.Cms.Core.Events.IEventAggregator.Publish``2(System.Collections.Generic.IEnumerable{``0})
-* Umbraco.Cms.Core.Events.IEventAggregator.PublishAsync``2(System.Collections.Generic.IEnumerable{``0},System.Threading.CancellationToken)
+* Umbraco.Cms.Core.Events.IEventAggregator.Publish`2(System.Collections.Generic.IEnumerable{`0})
+* Umbraco.Cms.Core.Events.IEventAggregator.PublishAsync`2(System.Collections.Generic.IEnumerable{`0},System.Threading.CancellationToken)
 * Umbraco.Cms.Core.Models.PublishedContent.IPublishedProperty.GetDeliveryApiValue(System.Boolean,System.String,System.String)
 * Umbraco.Cms.Core.Models.PublishedContent.IPublishedPropertyType.ConvertInterToDeliveryApiObject(Umbraco.Cms.Core.Models.PublishedContent.IPublishedElement,Umbraco.Cms.Core.PropertyEditors.PropertyCacheLevel,System.Object,System.Boolean,System.Boolean)
 * Umbraco.Cms.Core.Models.PublishedContent.IPublishedPropertyType.ConvertInterToDeliveryApiObject(Umbraco.Cms.Core.Models.PublishedContent.IPublishedElement,Umbraco.Cms.Core.PropertyEditors.PropertyCacheLevel,System.Object,System.Boolean)
@@ -898,7 +901,7 @@ If you're using ModelsBuilder in `AppData` mode and you have your generated mode
 
 Umbraco 8.1 replaces AutoMapper with [UmbracoMapper](../../../../reference/mapping.md). This in itself will not break anything on your site. If you have used AutoMapper in your own code you will have to either include the package yourself or switch your implementation to use UmbracoMapper.
 
-#### Follow the [**upgrade guide for Umbraco 8**](minor-upgrades-for-umbraco-8.md) to complete the upgrade
+**Follow the** [**upgrade guide for Umbraco 8**](minor-upgrades-for-umbraco-8.md) **to complete the upgrade**
 
 </details>
 
@@ -912,7 +915,7 @@ It is not possible to upgrade an Umbraco 7 site to Umbraco 8 because the codebas
 
 In Umbraco 8 we have added improvements and updated dependencies. We have also done a thorough clean-up to make it simpler for you to work with and extend your Umbraco project.
 
-#### [Migrate your content to Umbraco 8](migrate-content-to-umbraco-8.md)
+[**Migrate your content to Umbraco 8**](migrate-content-to-umbraco-8.md)
 
 </details>
 
@@ -1136,7 +1139,7 @@ There are [**important Forms upgrade documentation that you will need to read.**
 
 Umbraco Courier 3.1.0 has been released to be compatible with Umbraco 7.6. If you are using Courier, you will need to update it to version 3.1.0.
 
-#### Follow the [upgrade guide for Umbraco 7](minor-upgrades-for-umbraco-7.md) to complete the upgrade
+**Follow the** [**upgrade guide for Umbraco 7**](minor-upgrades-for-umbraco-7.md) **to complete the upgrade**
 
 </details>
 
@@ -1251,7 +1254,7 @@ Follow the [**upgrade guide for Umbraco 7**](minor-upgrades-for-umbraco-7.md) to
 
 <summary>6.latest to 7</summary>
 
-Read and follow [the full v7 upgrade guide](upgrade-to-v7.md)
+Read and follow [the full v7 upgrade guide](minor-upgrades-for-umbraco-7.md)
 
 </details>
 

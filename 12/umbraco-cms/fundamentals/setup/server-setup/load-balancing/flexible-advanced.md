@@ -101,4 +101,4 @@ Options:
 * `TimeBetweenSyncOperations` - The timespan to wait between each sync operations
 * `TimeBetweenPruneOperations` - The timespan to wait between each prune operation
 
-These setting would normally be applied to all environments as they are added to the global app settings. If you need these settings to be environment specific, we recommend using [environment specific `appSetting` files](../../../../reference/configuration/#managing-configuration).
+These setting would normally be applied to all environments as they are added to the global app settings. If you need these settings to be environment specific, we recommend using [environment specific `appSetting` files](../../../../reference/configuration/).
