@@ -201,6 +201,12 @@ Fetch a media item inside a folder structure by its full path, and expand its `a
 GET /umbraco/delivery/api/v1/media/item/root level folder/child folder/media item name/&expand=property:author
 ```
 
+Fetch two media items by their ids:
+
+```http
+GET /umbraco/delivery/api/v1/media/item?id=11178b4f-f8e2-4686-9697-6d990851a081&id=7cd00706-de93-4db8-8fc2-4b20e8419c30
+```
+
 Fetch the first 10 media items of type `Image` at root level. Return the found items sorted by name ascending:
 
 ```http
