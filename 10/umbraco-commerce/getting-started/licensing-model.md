@@ -45,7 +45,7 @@ This is an add-on domain for existing licenses. Refunds will not be given for th
 
 ## Configuring your license
 
-You can purchase a license via the [Umbraco Commerce](https://umbraco.com/products/umbraco-commerce/) project page. A member of the [SUITS team](mailto:suits@umbraco.com) will manage this process and ask for the primary domain you wish to license along with any staging/qa domains you'd also like to be covered by the license. You should then receive a license code to be installed in your solution.
+You can purchase a license via the [Umbraco Commerce](https://umbraco.com/products/umbraco-commerce/) project page. A member of the [SUITS team](mailto:suits@umbraco.com) will manage this process. In the process, you will need to provide all domains you wish to have covered by the license such as primary and staging/qa domains. You should then receive a license code to be installed in your solution.
 
 ### Add additional domains
 
