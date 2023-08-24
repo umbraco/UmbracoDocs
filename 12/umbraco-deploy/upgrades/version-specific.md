@@ -63,7 +63,7 @@ Version 11 contains a number of breaking changes. We don't expect many projects 
 **Code**
 
 * The property `PreValues` on `FormArtifact` was changed from an `IEnumerable<string>` to an `IEnumerable<FieldPrevalue>`, where `FieldPrevalue` contains a `Value` and `Caption`.
-* Nullable checks were enabled in the `Umbraco.Deploy.Forms` project and issues resolved by applying appropriate nullable settings to various properties.
+* Nullable checks were enabled in the `Umbraco.Deploy.Forms` project and issues resolved by applying appropriate nullable settings to multiple properties.
 * The `TreeNodeGetter` function set as a property on `DeployTransferRegisteredEntityTypeDetail.RemoteTreeDetail` now takes a non-nullable `HttpContext` parameter.
 * The `matchesRoutePath` and `matchesNodeId` parameters provided to `ITransferEntityService.RegisterTransferEntityType`, and which populate the `MatchesRoutePath` and `MatchesNodeId` properties on `DeployTransferRegisteredEntityTypeDetail`, now take an HttpContext argument.
 * The `MultiNodeTreePickerPreValueConnector` was removed (as the format for Umbraco 8+ is as UDIs, and hence there is no processing to do).
