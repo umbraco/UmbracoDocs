@@ -52,7 +52,9 @@ Make sure that everything works on the local clone and that you can **run the pr
 If you are on Umbraco 7 or Umbraco 8, follow the steps below to manually upgrade Umbraco Deploy to a later version of your project.
 
 1. Download **Storage Explorer** here: [https://azure.microsoft.com/en-us/products/storage/storage-explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer) and install it.
-2. Click the **"Plug"** Button (Open Connect Dialog):![Click the "Plug" Button (Open Connect Dialog)](../../.gitbook/assets/image.png)
+2. Click the **"Plug"** Button (Open Connect Dialog):\
+   \
+   ![Click the "Plug" Button (Open Connect Dialog)](../../.gitbook/assets/image.png)
 
 <!---->
 
@@ -75,6 +77,19 @@ If you are on Umbraco 7 or Umbraco 8, follow the steps below to manually upgrade
 <!---->
 
 7. Download the latest version of Umbraco Deploy. Check [Product Dependencies](https://docs.umbraco.com/umbraco-cloud/product-upgrades/product-dependencies) to be sure you download the correct version of Deploy.
+8. Download the to your computer&#x20;
+9. Unzip the file on your computer
+10. Copy/Paste the files from the unzipped folder to your local project folder You should not overwrite the following files:
+
+    ```
+        Config/UmbracoDeploy.config
+        Config/UmbracoDeploy.Settings.config
+    ```
+11. Run the project locally - make sure it runs without any errors
+12. Commit and deploy the changes to the Cloud environment
+13. Again, make sure everything runs without errors before deploying to the next Cloud environment
+
+
 
 </details>
 
