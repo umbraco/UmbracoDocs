@@ -367,3 +367,7 @@ So what can we do to mitigate this? Unfortunately, there is no silver bullet tha
 ## Be mindful about memory
 
 When memory is used, for instance creating 5,000 recipe models with a `Select` statement, Garbage Collection needs to occur and this turnover can cause performance problems. The more objects created, the more items allocated in memory, the harder the job is for the Garbage Collector == more performance problems. Even worse is when you allocate tons of items in memory and/or really large items in memory. They will remain in memory for a long time because they'll end up in something called "Generation 3" which the GC tries to ignore for as long as possible. It does so because it knows it's going to take a lot of resources to clean up!
+
+## Best practices when using Models Builder
+
+Extending models should be used to add stateless, local features to models. It should not be used to transform content models into view models or manage trees of content. You can read more about this in the [Understanding and Extending Models Builder](../../umbraco-cms/reference/templating/modelsbuilder/understand-and-extend.md)
