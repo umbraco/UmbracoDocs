@@ -146,7 +146,7 @@ If you are upgrading from Umbraco 9 and already have a LocalDB instance, you can
 * The boolean property `IgnoreBrokenDependencies` has been removed, and the option is now controlled only by the `IgnoreBrokenDependenciesBehavior` configuration key, which takes an enumeration value.
   * The default value has changed to `IgnoreBrokenDependenciesBehavior.Restore`, as this will most likely be what developers require (allowing broken dependencies when restoring, but not when pushing to an upstream environment).
 * `CurrentWorkspaceName` has been added to the `Project` configuration section. This will be used by on-premises installations.
-  * Previously this used EnvironmentName in the `Debug` configuration section, which will still be used if defined to support upgrades. We recommend using the new configuration as it's more intuitively placed (i.e. it's not really a "debug" setting for on-premises installations).
+  * Previously this used EnvironmentName in the `Debug` configuration section, which will still be used if defined to support upgrades. We recommend using the new configuration as it's more intuitively placed (that is not really a "debug" setting for on-premises installations).
 
 **Code**
 
