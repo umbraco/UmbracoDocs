@@ -95,7 +95,7 @@ To migrate to version 10 you should first update to the latest minor release of 
 
 #### Breaking changes
 
-Version 10 contains a number of breaking changes but we won't expect many projects to be affected by them as they are in areas that are not typical extension points. For reference though, the full details are listed here.
+Version 10 includes  a number of breaking changes. These changes are unlikely to affect many projects because they're not in typical extension points. For reference though, the full details are listed here.
 
 **Database Initialization**
 
@@ -139,7 +139,7 @@ Or set the configuration value of `Umbraco:Deploy:Settings:PreferLocalDbConnecti
 }
 ```
 
-If you are upgrading from Umbraco 9 and already have a LocalDB instance, setting this value to `true` will ensure it is used rather than a new, empty SQLite database.
+If you are upgrading from Umbraco 9 and already have a LocalDB instance, you can set this value to `true`. This will ensure it is used rather than a new, empty SQLite database.
 
 **Configuration**
 
