@@ -241,29 +241,46 @@ You can read much more about these deletions in the [Deploying Deletions](deploy
 
 ### Do you support package "x" on Umbraco Cloud?
 
-We have an indicator on each package in [the projects section of Our Umbraco](https://our.umbraco.com/projects/) which either says "Works on Umbraco Cloud" or "Untested or doesn't work on Umbraco Cloud".
+Umbraco Cloud uses Azure App Service Plans for website hosting services. This is a typical platform used for hosting web applications and it offers all features necessary for running Umbraco websites.
 
-If the indicator says "Works on Umbraco Cloud" it means that Umbraco HQ has tested this package on Cloud and it works and changes made using this package are also deployable to the next environment.
+Given that, packages that run in your local development environment, or on other hosting platforms, are likely to also be supported on Umbraco Cloud.
 
-If the indicator says "Untested or doesn't work on Umbraco Cloud" then we have not tested it and cannot vouch for it on Cloud. It might work, and we're happy for you to test it on Cloud.
+The only potential issue to be aware of is if your package stores custom data in the Umbraco database. Most packages don't do this, either purely adding functionality, or using existing Umbraco services for any data storage they require.
 
-We're happy to hear from and work with package developers to make their packages Cloud-compatible where possible. Make sure to reach out to us using the chat button at the bottom right corner of the [Umbraco Cloud portal](https://www.s1.umbraco.io/).
+If a package does save data into a custom table within the Umbraco database, it will still operate as expected on Umbraco Cloud. However, unless the package developer has taken additional steps to support this, you won't be able to transfer the saved information between environments.
+
+This may not be important if you don't have a need to do this. For example [Umbraco Workflow](https://docs.umbraco.com/umbraco-workflow/) is typically used in a single environment, either staging or production. Even though it does save custom data, there's no requirement to move it between environments.
+
+In some cases though, you may want to be able to transfer data prepared in a staging environment to production. Or conversely, to restore it into a local development environment for debugging purposes. The package may or may not be built to support this.
+
+If you find you are unable to move information between the environments you should contact the package's developer to ask about plans for support. How a package developer can offer this feature is described in the following section.
 
 ### How do I make my package support Umbraco Cloud?
 
-The biggest problem concerning Cloud support is when a package store references to nodes, media items, or members in Umbraco.
+As discussed in the section above, most packages will work fine in Umbraco Cloud without any modification.
+
+Some packages save data into custom Umbraco database tables, and if so, it may be useful to be able to transfer that data between environments. If this is the case, then there is an extra step you should take to fully support usage of your package on Umbraco Cloud.
+
+Umbraco Cloud uses the [Umbraco Deploy](https://docs.umbraco.com/umbraco-deploy/) tool to for the purpose of transfer of Umbraco information between environments. This includes Umbraco "schema" (such as document types) as well as "content" (such as content or media).
+
+In order to support custom data transfer between environments, the package or solution developer needs to build an add-on to their package. This extends Umbraco Deploy with a "connector" that details of how the data for the package should be handled.
+
+Specific care needs to be taken when developing the connector if the package stores references to content nodes, media items, or members in Umbraco.
 
 There are two challenges here:
 
 1. Your package is referring to an integer identifier, for example, a content item with the id `1023`. On the next environment that same content item exists but since the content is a bit different there, the id is `1039` instead. Umbraco Deploy needs to know how to connect the correct identifier.
 2. Even if the identifier is correct in both environments your package might rely on the other item (the one you're referring to) to exist in the next environment. So if the content item you're referring to (`1023`) does not exist in the environment where you're pushing the content you might see errors in your package.
 
-These problems can be solved with so-called Umbraco Deploy connectors. We've set up a project called [Umbraco Deploy Contrib](https://github.com/umbraco/Umbraco.Deploy.Contrib/) to collect these connectors together. Umbraco Deploy Contrib is included in all Cloud sites and we keep it upgraded to the latest version for every site.
+Open-source examples of connectors can be found in the [Umbraco Commerce Deploy](https://github.com/umbraco/Umbraco.Commerce.Deploy) and the [Umbraco Deploy Contrib](https://github.com/umbraco/Umbraco.Deploy.Contrib/) projects.
 
-The code in the contrib project has plenty of code comments to help you understand what is going on and how you can build something like that for your own package.
+Umbraco Deploy Contrib is included in all Cloud sites and we keep it upgraded to the latest version for every site.
+
+We have a dedicated documentation page discussing the process of [extending Umbraco Deploy via the creation of connectors for custom data](https://docs.umbraco.com/umbraco-deploy/extending).
+
+The code in these projects should also help you understand the steps and how to build something similar for your own package.
 
 If you need help with this, don't hesitate to reach out to us and we'll be happy to give you some tips.
-
 
 
 ## Regions
