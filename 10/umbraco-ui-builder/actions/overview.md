@@ -1,10 +1,10 @@
 ---
-description: Configuring actions in Konstrukt, the backoffice UI builder for Umbraco.
+description: Configuring actions in Umbraco UI Builder, the backoffice UI builder for Umbraco.
 ---
 
 # Actions
 
-Actions provides an API to perform custom tasks against a collection and it's entities from various locations in the UI, be that menu actions, bulk actions or individual table row actions.
+Actions provide an API to perform custom tasks against a collection and its entities from multiple locations in the UI. Examples: menu actions, bulk actions, or individual table row actions.
 
 ![Bulk Actions UI](../images/bulk_actions.png)
 

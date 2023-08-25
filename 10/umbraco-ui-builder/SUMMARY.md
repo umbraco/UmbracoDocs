@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Konstrukt Documentation](README.md)
+* [Umbraco UI Builder Documentation](README.md)
 
 ## Getting Started
 
@@ -50,7 +50,7 @@
 
 * [Overview](actions/overview.md)
 * [The Basics](actions/the-basics.md)
-* [Action Visbility](actions/action-visibility.md)
+* [Action Visibility](actions/action-visibility.md)
 * [Inbuilt Actions](actions/inbuilt-actions.md)
 
 ## Cards
@@ -76,6 +76,6 @@
 
 * [Conventions](extras/conventions.md)
 * [Umbraco Aliases](extras/umbraco-aliases.md)
-* [Konstrukt vs UI-O-Matic](extras/konstrukt-vs-uiomatic.md)
+* [Umbraco UI Builder vs UI-O-Matic](extras/konstrukt-vs-uiomatic.md)
 * [Known Issues](extras/known-issues.md)
 * [Changelog](extras/changelog.md)

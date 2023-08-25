@@ -1,10 +1,10 @@
 ---
-description: Controlling the visibility of actions in Konstrukt, the backoffice UI builder for Umbraco.
+description: Controlling the visibility of actions in Umbraco UI Builder, the backoffice UI builder for Umbraco.
 ---
 
 # Action Visibility
 
-By default actions are not visible in the UI and you must expressly define when and were an action should display. This can be achived in two ways, either on the action definition itself or at the point of registration on the collections config.
+By default actions are not visible in the UI and you must expressly define when and where an action should display. This can be achived in two ways, either on the action definition itself or at the point of registration on the collections config.
 
 ## Controlling the default action visibility
 
@@ -30,7 +30,7 @@ The `IsVisible` method is passed a `KonstruktActionVisibilityContext` which you 
 
 Overriding an actions visibility is controlled via the [collections](../collections/overview.md) configuration.
 
-#### **AddAction&lt;TMenuActionType&gt;(Lambda actionConfig = null) : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
+### **AddAction&lt;TMenuActionType&gt;(Lambda actionConfig = null) : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
 
 Adds an action of the given type to the collection with the given visibility.
 
@@ -42,7 +42,7 @@ collectionConfig.AddAction<ExportMenuAction>(actionConfig => actionConfig
 );
 ````
 
-#### **AddAction(Type actionType, Lambda actionConfig = null) : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
+### **AddAction(Type actionType, Lambda actionConfig = null) : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
 
 Adds an action of the given type to the collection with the given visibility.
 
@@ -54,7 +54,7 @@ collectionConfig.AddAction(typeof(ExportMenuAction), actionConfig => actionConfi
 );
 ````
 
-#### **AddAction(IKonstruktAction action, Lambda actionConfig = null) : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
+### **AddAction(IKonstruktAction action, Lambda actionConfig = null) : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
 
 Adds the given action to the collection with the given visibility.
 
@@ -76,7 +76,7 @@ The action type property is an enum property that define which area of the UI it
 
 #### ContainerMenu
 
-The `ContainerMenu` action type determines that the action will be displayed in both the tree of the collection as well as it's list view actions menu.
+The `ContainerMenu` action type determines that the action will be displayed in both the tree of the collection and its list view actions menu.
 
 ![Container Menu](../images/container_actions_menu.png)
 
@@ -106,4 +106,4 @@ The `Save` action type determines that the action will be displayed as a sub but
 
 ### UserGroups
 
-The user groups collection contains a list of Umbraco `IReadOnlyUserGroup` objects for the current logged in backoffice user and allows you to control the visibility of actions for given user group members.
+The user groups collection contains a list of Umbraco `IReadOnlyUserGroup` objects for the current logged-in backoffice user. This allows you to control the visibility of actions for given user group members.

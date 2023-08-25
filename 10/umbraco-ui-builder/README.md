@@ -1,29 +1,29 @@
 ---
-description: Documentation for Konstrukt, the backoffice UI builder for Umbraco.
+description: Documentation for Umbraco UI Builder, the backoffice UI builder for Umbraco.
 ---
 
 # Konstrukt Documentation
 
-Konstrukt is the Umbraco v10+ backoffice UI builder for custom data structures configured via a fluent API.
+Umbraco UI Builder is the Umbraco v10+ backoffice UI builder for custom data structures configured via a fluent API.
 
-![Example Konstrukt UI](/images//comments_listview.png)
+![Example Umbraco UI Builder UI](/images//comments_listview.png)
 
-If you have a custom data store that you’d like to be able to content manage from within Umbraco then Konstrukt will allow you to quickly configure a custom administration UI, reusing many core components and with a consistent look and feel, in just a few lines of code.
+If you have a custom data store that you want to content manage from within Umbraco, then you can use Umbraco UI Builder. With some lines of code, you can configure a custom administration UI, and reuse many core components with a consistent look and feel.
 
-With Konstrukt, custom backoffice integrations can now take a matter of minutes, rather than days.
+With Umbraco UI Builder, custom backoffice integrations can now take a matter of minutes, rather than days.
 
-## Using These Docs
+## Using the Documentation
 
-**These docs are aimed at developers** who have at least a basic understanding of Umbraco, as well as C# / MVC principals.
+**This documentation is aimed at developers** who have at least a basic understanding of Umbraco, as well as C# / MVC principals.
 
-If you are new to Konstrukt, you may want to start by taking a look at the [Getting Started](./getting-started/overview.md) section for details on how to install Konstrukt and any system requirements. 
+If you are new to Umbraco UI Builder, it is recommended that you start by taking a look at the [Getting Started](./getting-started/overview.md) section. This provides details on the system requirements and how to install Umbraco UI Builder.
 
-If you have Konstrukt installed and are wondering "what next?" then you'll want to take a look at the [Guides](./guides/creating-your-first-integration.md) section for some quick-start examples of how to configure Konstrukt.
+Once you have Umbraco UI Builder installed and are wondering "what next?" then you'll want to take a look at the [Guides](./guides/creating-your-first-integration.md) section. This provides a quick-start examples of how to configure Umbraco UI Builder.
 
-To dive deeper into Konstrukt and get to know all of it's features in detail, use the main menu to jump to the specific topic you are interested in to find out more.
+Use the main menu to dive deeper into Umbraco UI Builder and get to know all of its features in detail. You can then jump to the specific topic you are interested in to find out more.
 
 Finally, for all other resources / useful information you can head over to the [Extras](./extras/property-editors/README.md) section.
 
 ## Getting Help
 
-If you require further assistance, or if you are having a particular issue you can't find an answer to, you can get community support via our support forum over on the Umbraco developer portal.
+If you require assistance you can use our support channels to seek assistance.
