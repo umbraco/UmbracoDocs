@@ -1,5 +1,5 @@
 ---
-description: Configuring data views builders in Konstrukt, the back office UI builder for Umbraco.
+description: Configuring data views builders in Konstrukt, the backoffice UI builder for Umbraco.
 ---
 
 # Data Views Builders

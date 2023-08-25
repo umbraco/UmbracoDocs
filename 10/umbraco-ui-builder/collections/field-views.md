@@ -1,5 +1,5 @@
 ---
-description: Configuring field views in Konstrukt, the back office UI builder for Umbraco.
+description: Configuring field views in Konstrukt, the backoffice UI builder for Umbraco.
 ---
 
 # Field Views

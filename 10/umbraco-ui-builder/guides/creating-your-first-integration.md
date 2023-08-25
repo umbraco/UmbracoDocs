@@ -1,5 +1,5 @@
 ---
-description: Creating your first integration with Konstrukt, the back office UI builder for Umbraco.
+description: Creating your first integration with Konstrukt, the backoffice UI builder for Umbraco.
 ---
 
 # Creating your first integration
@@ -104,7 +104,7 @@ For our example, we will use the following configuration.
 
 ## Access your UI
 
-With your configuration defined and your project compiled, before you can access your UI there is one last step to perform and that is to give your back office user account permission to access the newly defined  section. To do this you'll need to login to the back office and head to the users section and update the user group your user belongs to to allow access.
+With your configuration defined and your project compiled, before you can access your UI there is one last step to perform and that is to give your backoffice user account permission to access the newly defined  section. To do this you'll need to login to the backoffice and head to the users section and update the user group your user belongs to to allow access.
 
 ![User group permissions](../images/permissions.png)
 

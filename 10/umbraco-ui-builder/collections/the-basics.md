@@ -1,5 +1,5 @@
 ---
-description: The basics of a collection configuration in Konstrukt, the back office UI builder for Umbraco.
+description: The basics of a collection configuration in Konstrukt, the backoffice UI builder for Umbraco.
 ---
 
 # The Basics

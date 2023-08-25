@@ -1,5 +1,5 @@
 ---
-description: Controlling the visibility of actions in Konstrukt, the back office UI builder for Umbraco.
+description: Controlling the visibility of actions in Konstrukt, the backoffice UI builder for Umbraco.
 ---
 
 # Action Visibility
@@ -106,4 +106,4 @@ The `Save` action type determines that the action will be displayed as a sub but
 
 ### UserGroups
 
-The user groups collection contains a list of Umbraco `IReadOnlyUserGroup` objects for the current logged in back office user and allows you to control the visibility of actions for given user group members.
+The user groups collection contains a list of Umbraco `IReadOnlyUserGroup` objects for the current logged in backoffice user and allows you to control the visibility of actions for given user group members.

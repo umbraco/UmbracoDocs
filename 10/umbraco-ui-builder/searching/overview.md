@@ -1,5 +1,5 @@
 ---
-description: Configuring searching in Konstrukt, the back office UI builder for Umbraco.
+description: Configuring searching in Konstrukt, the backoffice UI builder for Umbraco.
 ---
 
 # Searching

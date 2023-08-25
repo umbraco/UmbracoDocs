@@ -1,5 +1,5 @@
 ---
-description: Configuring dashboards in Konstrukt, the back office UI builder for Umbraco.
+description: Configuring dashboards in Konstrukt, the backoffice UI builder for Umbraco.
 ---
 
 # Dashboards

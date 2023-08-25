@@ -1,5 +1,5 @@
 ---
-description: Configuring cards in Konstrukt, the back office UI builder for Umbraco.
+description: Configuring cards in Konstrukt, the backoffice UI builder for Umbraco.
 ---
 
 # Cards

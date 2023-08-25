@@ -1,5 +1,5 @@
 ---
-description: Choosing an area to connect Konstrukt, the back office UI builder for Umbraco.
+description: Choosing an area to connect Konstrukt, the backoffice UI builder for Umbraco.
 ---
 
 # Areas

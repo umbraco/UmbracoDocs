@@ -1,5 +1,5 @@
 ---
-description: Conventions used by Konstrukt, the back office UI builder for Umbraco.
+description: Conventions used by Konstrukt, the backoffice UI builder for Umbraco.
 ---
 
 # Conventions

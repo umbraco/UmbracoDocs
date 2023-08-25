@@ -1,5 +1,5 @@
 ---
-description: Configuring repositories in Konstrukt, the back office UI builder for Umbraco.
+description: Configuring repositories in Konstrukt, the backoffice UI builder for Umbraco.
 ---
 
 # Repositories

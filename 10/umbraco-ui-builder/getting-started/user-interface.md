@@ -1,5 +1,5 @@
 ---
-description: Key User Interface Concepts used by Konstrukt, the back office UI builder for Umbraco.
+description: Key User Interface Concepts used by Konstrukt, the backoffice UI builder for Umbraco.
 ---
 
 # User Interface

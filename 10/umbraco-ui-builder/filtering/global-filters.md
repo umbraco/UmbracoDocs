@@ -1,5 +1,5 @@
 ---
-description: Configuring a global filter in Konstrukt, the back office UI builder for Umbraco.
+description: Configuring a global filter in Konstrukt, the backoffice UI builder for Umbraco.
 ---
 
 # Global Filters

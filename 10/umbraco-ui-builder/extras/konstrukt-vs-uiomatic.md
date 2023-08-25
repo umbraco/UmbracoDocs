@@ -1,10 +1,10 @@
 ---
-description: Differences between Konstrukt and UI-O-Matic, the back office UI builders for Umbraco.
+description: Differences between Konstrukt and UI-O-Matic, the backoffice UI builders for Umbraco.
 ---
 
 # Konstrukt vs UI-O-Matic
 
-For anyone familiar with Umbraco you may already know of the open source back office UI builder, UI-O-Matic and be wondering why you should choose Kostrukt instead. To help with that decision, we've put together the following feature matrix to compare some of their major differences.
+For anyone familiar with Umbraco you may already know of the open source backoffice UI builder, UI-O-Matic and be wondering why you should choose Kostrukt instead. To help with that decision, we've put together the following feature matrix to compare some of their major differences.
 
 ## API
 

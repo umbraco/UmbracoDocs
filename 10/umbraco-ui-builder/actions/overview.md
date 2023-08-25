@@ -1,5 +1,5 @@
 ---
-description: Configuring actions in Konstrukt, the back office UI builder for Umbraco.
+description: Configuring actions in Konstrukt, the backoffice UI builder for Umbraco.
 ---
 
 # Actions

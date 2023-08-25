@@ -1,5 +1,5 @@
 ---
-description: A list of inbuilt actions that come with Konstrukt, the back office UI builder for Umbraco.
+description: A list of inbuilt actions that come with Konstrukt, the backoffice UI builder for Umbraco.
 ---
 
 # Inbuilt Actions

@@ -1,5 +1,5 @@
 ---
-description: Getting Started with Konstrukt, the back office UI builder for Umbraco.
+description: Getting Started with Konstrukt, the backoffice UI builder for Umbraco.
 ---
 
 # Getting Started

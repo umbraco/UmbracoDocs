@@ -1,5 +1,5 @@
 ---
-description: Configuring sections in Konstrukt, the back office UI builder for Umbraco.
+description: Configuring sections in Konstrukt, the backoffice UI builder for Umbraco.
 ---
 
 # Sections

@@ -1,5 +1,5 @@
 ---
-description: Configuring child collection groups in Konstrukt, the back office UI builder for Umbraco.
+description: Configuring child collection groups in Konstrukt, the backoffice UI builder for Umbraco.
 ---
 
 # Child Collection Groups

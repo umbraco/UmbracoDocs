@@ -1,5 +1,5 @@
 ---
-description: Configuring value mappers in Konstrukt, the back office UI builder for Umbraco.
+description: Configuring value mappers in Konstrukt, the backoffice UI builder for Umbraco.
 ---
 
 # Value Mappers

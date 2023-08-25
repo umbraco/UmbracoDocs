@@ -1,5 +1,5 @@
 ---
-description: Installing Konstrukt, the back office UI builder for Umbraco.
+description: Installing Konstrukt, the backoffice UI builder for Umbraco.
 ---
 
 # Installation

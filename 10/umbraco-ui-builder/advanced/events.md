@@ -1,5 +1,5 @@
 ---
-description: Configuring event handlers in Konstrukt, the back office UI builder for Umbraco.
+description: Configuring event handlers in Konstrukt, the backoffice UI builder for Umbraco.
 ---
 
 # Events

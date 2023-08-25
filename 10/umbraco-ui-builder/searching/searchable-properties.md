@@ -1,5 +1,5 @@
 ---
-description: Configuring searchable properties in Konstrukt, the back office UI builder for Umbraco.
+description: Configuring searchable properties in Konstrukt, the backoffice UI builder for Umbraco.
 ---
 
 # Searchable Properties

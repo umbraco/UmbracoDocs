@@ -1,5 +1,5 @@
 ---
-description: Using the entity picker property editor with Konstrukt, the back office UI builder for Umbraco.
+description: Using the entity picker property editor with Konstrukt, the backoffice UI builder for Umbraco.
 ---
 
 # Entity Picker
@@ -8,7 +8,7 @@ The Entity Picker property editor is an Umbraco property editor that lets you se
 
 ## Configuring an entity picker
 
-To configure an entity picker you'll firstly want to create a data type in the Umbraco back office choosing 'Konstrukt Entity Picker' from the property editor dropdown.
+To configure an entity picker you'll firstly want to create a data type in the Umbraco backoffice choosing 'Konstrukt Entity Picker' from the property editor dropdown.
 
 ![Datatype config](../../images/entity_picker_config.png) 
 

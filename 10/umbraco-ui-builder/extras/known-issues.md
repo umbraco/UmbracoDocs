@@ -1,5 +1,5 @@
 ---
-description: Known issues in Konstrukt, the back office UI builder for Umbraco.
+description: Known issues in Konstrukt, the backoffice UI builder for Umbraco.
 ---
 
 # Known Issues
@@ -18,4 +18,4 @@ When using a Multi Node Tree Picker with an XPath filter, only filters starting 
 
 ### RTE Macros
 
-Macros in Rich Text Editors don't appear to work properly due to the preview mechanism. They will save and may run on the front end, but you'll get an error notification in the back office as it tries to render a preview.
+Macros in Rich Text Editors don't appear to work properly due to the preview mechanism. They will save and may run on the front end, but you'll get an error notification in the backoffice as it tries to render a preview.

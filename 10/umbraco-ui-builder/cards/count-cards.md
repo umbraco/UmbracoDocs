@@ -1,5 +1,5 @@
 ---
-description: Configuring count cards in Konstrukt, the back office UI builder for Umbraco.
+description: Configuring count cards in Konstrukt, the backoffice UI builder for Umbraco.
 ---
 
 # Count Cards
