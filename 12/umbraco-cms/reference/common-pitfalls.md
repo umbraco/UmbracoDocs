@@ -370,4 +370,5 @@ When memory is used, for instance creating 5,000 recipe models with a `Select` s
 
 ## Best practices when using Models Builder
 
-Extending models should be used to add stateless, local features to models. It should not be used to transform content models into view models or manage trees of content. You can read more about this in the [Understanding and Extending Models Builder](../../umbraco-cms/reference/templating/modelsbuilder/understand-and-extend.md)
+Extending models should be used to add stateless, local features to models. It should not be used to transform content models into view models or manage trees of content.
+You can read more about this in the [Understanding and Extending Models Builder Documentation](../../umbraco-cms/reference/templating/modelsbuilder/understand-and-extend.md).
