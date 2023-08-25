@@ -2,15 +2,37 @@
 
 ### Differences between Heartcore and Umbraco CMS
 
-There are four differences between Heartcore and Umbraco CMS.
+There are some differences between Heartcore and Umbraco CMS.
 
 <details>
 
-<summary>Package Section</summary>
+<summary>Setup </summary>
 
-As a SaaS, it is not possible to install packages in Umbraco Heartcore as the code base is Closed source.
+You can set up a new project with a few clicks through the [**Umbraco Cloud Portal**](https://umbraco.io/)**.**
 
-Instead, other features like **GraphQL**, an out-of-the-box **Content Delivery Network** (CDN) by Cloudflare and a **Preview API** are available in Umbraco Heartcore.
+Your project will then be up and running within a couple of minutes.
+
+</details>
+
+<details>
+
+<summary>Managed Upgrades</summary>
+
+With **Umbraco Heartcore** you won't need to worry about upgrading your project.
+
+As **Heartcore** is a SasS product, we manage upgrades for your Heartcore project.
+
+</details>
+
+<details>
+
+<summary>Packages</summary>
+
+Heartcore comes out of the box with [**Umbraco Forms**](api-documentation/content-management/forms.md) installed on the starter plan and above.
+
+It is however not possible to install other packages in Umbraco Heartcore as the code base is Closed source.
+
+Instead, other features like **GraphQL**, an out-of-the-box **Content Delivery Network** (CDN) by Cloudflare, and a **Preview API** are available in Umbraco Heartcore.
 
 </details>
 
