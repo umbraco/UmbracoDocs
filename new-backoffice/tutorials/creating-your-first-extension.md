@@ -46,7 +46,7 @@ Create a new file inside the `my-package` folder called `umbraco-package.json` a
 			"conditions": [
 				{
 					"alias": "Umb.Condition.SectionAlias",
-					"matches": "Umb.Section.Content"
+					"match": "Umb.Section.Content"
 				}
 			]
 		}
@@ -136,7 +136,15 @@ We will use their preset of Lit and TypeScript here, so navigate to the root of 
 npm create vite@latest -- --template lit-ts my-package
 ```
 
-Now go into the newly created `my-package` folder and create a new file called `vite.config.ts` and insert the following code:
+Now go into the newly created `my-package` and install the dependencies:
+
+```bash
+npm install
+```
+
+If you see any errors during this process, make sure that you have the right tools installed (Node, .NET and so on) make sure you have followed the steps on how to [Setup Your Development Environment](../extending/development-flow.md).
+
+Next, create a new file called `vite.config.ts` and insert the following code:
 
 ```javascript
 import { defineConfig } from "vite";
@@ -232,7 +240,7 @@ Finally, add an `umbraco-package.json` file in the root of your package folder `
 			"conditions": [
 				{
 					"alias": "Umb.Condition.SectionAlias",
-					"matches": "Umb.Section.Content"
+					"match": "Umb.Section.Content"
 				}
 			]
 		}
