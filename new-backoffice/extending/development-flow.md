@@ -12,8 +12,8 @@ This page is a work in progress. It will be updated as the software evolves.
 
 Make sure you have the following installed on your machine:
 
-* .NET 8
-* Node.js 18.16
+* **.NET 8**
+* **Node.js 18.16** (Tip: use nvm (Node Version Manager for [Windows](https://github.com/coreybutler/nvm-windows) or [Mac/Linux](https://github.com/nvm-sh/nvm))
 
 ## IntelliSense
 
