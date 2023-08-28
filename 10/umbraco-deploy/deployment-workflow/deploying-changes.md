@@ -23,7 +23,7 @@ Here's a quick step-by-step on how you deploy these changes to your environment:
 
 ## Deploying without using a Git client
 
-If you don't have a Git client installed on your local machine, you can use Git Bash for command-line Git operations. Execute the following commands:
+If you don't have a Git client installed on your local machine, you can use Git or Git Bash for command-line Git operations. Run the following commands:
 
 ```
 # Navigate to the repository folder
