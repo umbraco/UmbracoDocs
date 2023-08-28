@@ -142,7 +142,7 @@ Now go into the newly created `my-package` and install the dependencies:
 npm install
 ```
 
-If you see any errors during this process, make sure that you have the right tools installed (Node, .NET and so on) make sure you have followed the steps on how to [Setup Your Development Environment](../extending/development-flow.md).
+If you see any errors during this process, make sure that you have the right tools installed (Node, .NET, and so on). Also, make sure you have followed the steps on how to [Setup Your Development Environment](../extending/development-flow.md).
 
 Next, create a new file called `vite.config.ts` and insert the following code:
 
