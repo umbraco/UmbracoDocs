@@ -21,7 +21,7 @@ Here's a quick step-by-step on how you deploy these changes to your environment:
 
 ## Deploying without using a Git client
 
-If you don't have a Git client installed on your local machine, you can use Git Bash for command-line Git operations. Execute the following commands:
+If you don't have a Git client installed on your local machine, you can use Git or Git Bash for command-line Git operations. Run the following commands:
 
 ```
 # Navigate to the repository folder
@@ -41,7 +41,7 @@ git pull
 git push
 ```
 
-When pulling new commits, it is a good idea to see if any of these commits contained changes to the schema (anything in `umbraco/Deploy/Revision/`). To ensure your local site is up-to-date, confirm compatibility with the updated schema. You can do this by navigating to the `umbraco/Deploy/` folder and creating a deploy marker if it doesn't exist. From a command line type the following command:
+When pulling new commits, it is a good idea to see if any of these commits contained changes to the schema (anything in `umbraco/Deploy/Revision/`). To ensure your local schema is up-to-date, you can navigate to the `umbraco/Deploy/` folder and create a deploy marker if it doesn't exist. From a command line type the following command:
 
 `/…mysite/umbraco/Deploy> echo > deploy`
 
