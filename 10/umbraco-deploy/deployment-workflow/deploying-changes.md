@@ -43,7 +43,7 @@ git pull
 git push
 ```
 
-When pulling new commits, it is a good idea to see if any of these commits contained changes to the schema (anything in `umbraco/Deploy/Revision/`). To ensure your local site is up-to-date, confirm compatibility with the updated schema. You can do this by navigating to the `umbraco/Deploy/` folder and creating a deploy marker if it doesn't exist. From a command line type the following command:
+When pulling new commits, it is a good idea to see if any of these commits contained changes to the schema (anything in `umbraco/Deploy/Revision/`). To ensure your local schema is up-to-date, you can navigate to the `umbraco/Deploy/` folder and create a deploy marker if it doesn't exist. From a command line type the following command:
 
 `/…mysite/umbraco/Deploy> echo > deploy`
 
