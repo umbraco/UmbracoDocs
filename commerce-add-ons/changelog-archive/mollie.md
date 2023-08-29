@@ -20,7 +20,7 @@ description: Changelog for the Mollie Payment Provider for Vendr.
 **Date:** 2022-01-27\
 **Description:** Patch release with minor bug fixes/enhancements
 
-* Fixed issue with webhooks updating orders that haven't actually been finalized due to Mollie sending notifications in a weird way ([#6](https://github.com/vendrhub/vendr-payment-provider-mollie/issues/6)).
+* Fixed issue with webhooks updating orders that haven't been finalized due to Mollie sending notifications in a weird way ([#6](https://github.com/vendrhub/vendr-payment-provider-mollie/issues/6)).
 
 ## v2.0.0
 
