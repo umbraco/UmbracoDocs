@@ -50,6 +50,14 @@ Each `InstallData` setting can be one of the following values:
 * `ExceptValues` - all default data except those specified will be installed.
 * `None` - no default data of the type will be installed.
 
+{% hint style="warning" %}
+Be cautious when changing a data type configuration, as there are some dependencies between the different types. Make sure to check the reference information in the `info` tab to ensure they are not referenced somewhere else.
+{% endhint %}
+
+For example, if you check the info tab of the `Label (bigint)` Data Type, you can see that it is referenced by the `Media Types`:
+
+<figure><img src="../../.gitbook/assets/ReferencedDataTypes.PNG" alt=""><figcaption><p>Data Type referenced by Media Type</p></figcaption></figure>
+
 ## Data Identifiers
 
 For `DataTypes`, `MediaTypes` and `MemberTypes` the Guid identifiers for the default data items need to be provided in the `Values` collection.

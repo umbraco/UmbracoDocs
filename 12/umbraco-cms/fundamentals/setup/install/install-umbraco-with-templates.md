@@ -4,8 +4,8 @@ We have made custom Umbraco templates that are available for use with `dotnet ne
 
 ## Video Tutorial
 
-{% embed url="https://www.youtube.com/watch?ab_channel=UmbracoLearningBase&v=U309rfT_4ns" %}
-Installing Umbraco using the .NET CLI
+{% embed url="https://www.youtube-nocookie.com/embed/ZByL3qILNnI" %}
+Video Tutorial
 {% endembed %}
 
 ## Install the template
