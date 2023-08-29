@@ -14,7 +14,7 @@ At this time, the minimum requirements for using Konstrukt are as follows:
 * **SQL Server Database** (SQLite is fine for testing, but not recommend for live deployments)
 
 ## Versioning
-It's important to understanding Konstrukt's versioning strategy so that you can perform informed upgrades during the life of a project. For Konstrukt, our version numbers can be interpreted as follows **Product.Feature.Patch**.
+its important to understanding Konstrukt's versioning strategy so that you can perform informed upgrades during the life of a project. For Konstrukt, our version numbers can be interpreted as follows **Product.Feature.Patch**.
 
 * **Product** - A distinct version of the Konstrukt product which has significant breaking changes from the product version before it.
 * **Feature** - A version with one or more new features that have been added. The release could be breaking or non-breaking so it is important to review the changelog before upgrading to a new feature release.

@@ -25,11 +25,22 @@ withTreeConfig.AddVirtualSubTree(ctx => ctx.Source.Id == 1056, contextAppConfig 
 
 ### **AddVirtualSubTreeBefore(string sectionAlias, string treeAlias, Lambda visibilityExpression, Lambda matchExpression, Lambda virtualSubTreeConfig = null) : KonstruktVirtualSubTreeConfigBuilder**
 
-Adds a virtual subtree to the current tree, before the tree node matches the match expression, with its visibility controlled via the visibility expression.
+Adds a virtual subtree to the current tree, **before** the tree node matches the match expression, with its visibility controlled via the visibility expression.
 
 ````csharp
 // Example
 withTreeConfig.AddVirtualSubTreeBefore(ctx => ctx.Source.Id == 1056, treeNode => treeNode.Name == "Settings", contextAppConfig => {
+    ...
+});
+````
+
+### **AddVirtualSubTreeAfter(string sectionAlias, string treeAlias, Lambda visibilityExpression, Lambda matchExpression, Lambda virtualSubTreeConfig = null) : KonstruktVirtualSubTreeConfigBuilder**
+
+Adds a virtual subtree to the current tree, **after** the tree node matches the match expression, with its visibility controlled via the visibility expression.
+
+````csharp
+// Example
+withTreeConfig.AddVirtualSubTreeAfter(ctx => ctx.Source.Id == 1056, treeNode => treeNode.Name == "Settings", contextAppConfig => {
     ...
 });
 ````
@@ -101,7 +112,7 @@ treeNode => treeNode.alias == "settings"
 
 ## Configuring a Virtual SubTrees
 
-Virtual subtrees share the same API as the `Tree` config builder API including support for folders and collections. There is an exception when adding collections to a subtree where you will have an additional foreign key expression parameter to define. The foreign key expression links the entities of the collection to the parent node of the subtree. For more information please see the [Core Trees Documentation](../areas/trees.md).
+Virtual subtrees share the same API as the `Tree` config builder API including support for folders and collections. There is an exception when adding collections to a subtree where you will have an additional foreign key expression parameter to define. The foreign key expression links the entities of the collection to the parent node of the subtree. For more information check the [Core Trees Documentation](../areas/trees.md).
 
 ## Injecting Virtual SubTrees into 3rd party trees
 

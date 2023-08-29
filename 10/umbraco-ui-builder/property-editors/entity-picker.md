@@ -8,7 +8,7 @@ The Entity Picker property editor is an Umbraco property editor that lets you se
 
 ## Configuring an entity picker
 
-To configure an entity picker you'll firstly want to create a data type in the Umbraco backoffice choosing 'Konstrukt Entity Picker' from the property editor dropdown.
+To configure an entity picker you'll firstly want to create a Data Type in the Umbraco backoffice choosing 'Konstrukt Entity Picker' from the property editor dropdown.
 
 ![Datatype config](../../images/entity_picker_config.png) 
 
@@ -16,7 +16,7 @@ From there choose the 'Section' and then 'Collection' you'd like to pick entitie
 
 You can also set a minimum and maximum number of items to be able to pick if required.
 
-With an entity picker data type defined, finish off the configuration by adding it to the desired document type definition.
+With an entity picker Data Type defined, finish off the configuration by adding it to the desired document type definition.
 
 ![Doctype config](../../images/entity_picker_setup.png) 
 

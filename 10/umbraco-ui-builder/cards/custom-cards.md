@@ -1,12 +1,12 @@
 ---
-description: Configuring custom cards in Konstrukt, the backoffice UI builder for Umbraco.
+description: Configuring custom cards in Umbraco UI Builder, the backoffice UI builder for Umbraco.
 ---
 
 # Custom Cards
 
 Custom cards allow you to perform more complex metric calculations and are defined via a class implementing the `KonstruktCard` base class.
 
-When Konstrukt resolves a card it will attempt to do so from the global DI container which means you can inject amy dependencies that you require for your card to calculate it's value. If there is no such type defined in the DI container, Konstrukt will then fallback to maually instantiating a new instance of the card.
+When Umbraco UI Builder resolves a card it will attempt to do so from the global DI container. This means you can inject any dependencies that you require for your card to calculate its value. If there is no such type defined in the DI container, Umbraco UI Builder will fall-back to manually instantiating a new instance of the card.
 
 ## Defining a custom card
 
@@ -43,7 +43,7 @@ Additional optional configuration options are:
 
 ## Adding a custom card to a collection
 
-#### **AddCard<TCardType>() : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
+### **AddCard<TCardType>() : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
 
 Adds a card of the given type to the collection.
 
@@ -52,7 +52,7 @@ Adds a card of the given type to the collection.
 collectionConfig.AddCard<AvgPersonAgeCard>();
 ````
 
-#### **AddCard(Type cardType) : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
+### **AddCard(Type cardType) : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
 
 Adds a card of the given type to the collection.
 

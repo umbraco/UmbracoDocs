@@ -7,7 +7,7 @@ description: Configuring encrypted properties in Umbraco UI Builder, the backoff
 If needed to collect sensitive information in a collection but don't want to persist in a plain text format to the data storage mechanism. Umbraco UI Builder can help with this by allowing you to define properties as encrypted. After which any time the value is persisted or retrieved from persistence, Umbraco UI Builder will automatically encrypt and decrypt the value.
 
 {% hint style="info" %}
-Umbraco UI Builder uses the `IDataProtectionProvider` instance registered in the DI container to perform it's encryption/decryption. If you need to change the encryption algorithm, you should replace the `IDataProtectionProvider` instance in the DI container.
+Umbraco UI Builder uses the `IDataProtectionProvider` instance registered in the DI container to perform its encryption/decryption. If you need to change the encryption algorithm, you should replace the `IDataProtectionProvider` instance in the DI container.
 {% endhint %}
 
 ## Defining encrypted properties

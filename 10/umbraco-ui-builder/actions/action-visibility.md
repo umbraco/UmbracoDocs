@@ -24,7 +24,7 @@ public class MyAction : KonstruktAction<KonstruktActionResult>
 }
 ````
 
-The `IsVisible` method is passed a `KonstruktActionVisibilityContext` which you should use to decide whether the action should display, returning `true` if it should, or `false` if it should not. See [Action visibility context](#action-visibility-context) bellow for more info.
+The `IsVisible` method is passed a `KonstruktActionVisibilityContext` which you should use to decide whether the action should display, returning `true` if it should, or `false` if it should not. For more information check the [Action visibility context](#action-visibility-context).
 
 ## Overriding an actions visibility
 

@@ -1,10 +1,10 @@
 ---
-description: Configuring a summary dashboard in Konstrukt, the backoffice UI builder for Umbraco.
+description: Configuring a summary dashboard in Umbraco UI Builder, the backoffice UI builder for Umbraco.
 ---
 
 # Summary Dashboards
 
-A summary dashboard is automatically displayed at the root of a Konstrukt defined section and it will display summaries of collections found within it that are told to display on the dashboard. It will also provide quick links to jump to that collections list view or to quickly add a new entry to that collection (if the collection isn't read only). 
+A summary dashboard is automatically displayed at the root of a defined Umbraco UI Builder section. It displays summaries of collections found within it that are told to display on the dashboard. It also provides quick links to jump to that collections list view. It can also add quickly a new entry to that collection (if the collection isn't read-only).
 
 ![Summary Dashboard](../images/section_dashboard.png)
 
@@ -12,7 +12,7 @@ A summary dashboard is automatically displayed at the root of a Konstrukt define
 
 Showing a collection in the summary dashboard is controlled via the collection configuration.
 
-#### **ShowOnSummaryDashboard() : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
+### **ShowOnSummaryDashboard() : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
 
 Sets the collection to display on the summary dashboard.
 

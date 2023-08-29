@@ -36,7 +36,7 @@ withTreeConfig.AddContextApp("Comments", "icon-chat", contextAppConfig => {
 
 ### **AddContextAppBefore(string beforeAlias, string name, Lambda contextAppConfig = null) : KonstruktContextAppConfigBuilder**
 
-Adds a context app with the given name and default icon before the context app with the given alias.
+Adds a context app with the given name and default icon **before** the context app with the given alias.
 
 ```csharp
 // Example
@@ -47,7 +47,7 @@ withTreeConfig.AddContextAppBefore("umbContent", "Comments", contextAppConfig =>
 
 ### **AddContextAppBefore(string beforeAlias, string name, string icon, Lambda contextAppConfig = null) : KonstruktContextAppConfigBuilder**
 
-Adds a context app to the Umbraco menu with the given name and icon before the context app with the given alias.
+Adds a context app to the Umbraco menu with the given name and icon **before** the context app with the given alias.
 
 ```csharp
 // Example
@@ -58,7 +58,7 @@ withTreeConfig.AddContextAppBefore("umbContent", "Comments", "icon-chat", contex
 
 ### **AddContextAppAfter(string afterAlias, string name, Lambda contextAppConfig = null) : KonstruktContextAppConfigBuilder**
 
-Adds a context app with the given name and default icon after the context app with the given alias.
+Adds a context app with the given name and default icon **after** the context app with the given alias.
 
 ```csharp
 // Example
@@ -69,7 +69,7 @@ withTreeConfig.AddContextAppAfter("umbContent", "Comments", contextAppConfig => 
 
 ### **AddContextAppAfter(string afterAlias, string name, string icon, Lambda contextAppConfig = null) : KonstruktContextAppConfigBuilder**
 
-Adds a context app to the Umbraco menu with the given name and icon after the context app with the given alias.
+Adds a context app to the Umbraco menu with the given name and icon **after** the context app with the given alias.
 
 ```csharp
 // Example

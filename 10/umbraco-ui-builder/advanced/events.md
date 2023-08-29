@@ -79,7 +79,7 @@ public class MyEntitySavedEventHandler :  INotificationHandler<KonstruktEntitySa
 
 ### **KonstruktEntityDeletingNotification**
 
-Raised when the repository `Delete` method is called and before the entity is deleted. The notification contains an `Entity` property providing access to a copy of the entity about to be deleted. If the `Cancel` property of notification is set to `true` then the delete operation will be cancelled and entity won't be deleted.
+Raised when the repository `Delete` method is called and **before** the entity is deleted. The notification contains an `Entity` property providing access to a copy of the entity about to be deleted. If the `Cancel` property of notification is set to `true` then the delete operation will be cancelled and entity won't be deleted.
 
 ````csharp
 // Example
@@ -98,7 +98,7 @@ public class MyEntityDeletingEventHandler :  INotificationHandler<KonstruktEntit
 
 ### **KonstruktEntityDeletedNotification**
 
-Raised when the repository `Delete` method is called and after the entity has been deleted. The notification contains an `Entity` property providing access to a copy of the entity that´s deleted.
+Raised when the repository `Delete` method is called and **after** the entity has been deleted. The notification contains an `Entity` property providing access to a copy of the entity that´s deleted.
 
 ````csharp
 // Example
@@ -117,7 +117,7 @@ public class MyEntityDeletedEventHandler :  INotificationHandler<KonstruktEntity
 
 ### **KonstruktSqlQueryBuildingNotification**
 
-Raised when the repository is preparing a SQL query. The notification contains the collection alias + type, the NPoco `Sql<ISqlContext>` object, and the where clause/order by clauses. These will be used to generate the SQL query.
+Raised when the repository is **preparing** a SQL query. The notification contains the collection alias + type, the NPoco `Sql<ISqlContext>` object, and the where clause/order by clauses. These will be used to generate the SQL query.
 
 ````csharp
 // Example
@@ -133,7 +133,7 @@ public class MySqlQueryBuildingEventHandler :  INotificationHandler<KonstruktSql
 
 ### **KonstruktSqlQueryBuiltNotification**
 
-Raised when the repository has repaired a SQL query. The notification contains the collection alias + type, the NPoco `Sql<ISqlContext>` object and the where clause/order by clauses that was used to generate the SQL query.
+Raised when the repository has **repaired** a SQL query. The notification contains the collection alias + type, the NPoco `Sql<ISqlContext>` object and the where clause/order by clauses that was used to generate the SQL query.
 
 ````csharp
 // Example

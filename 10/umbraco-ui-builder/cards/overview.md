@@ -1,10 +1,10 @@
 ---
-description: Configuring cards in Konstrukt, the backoffice UI builder for Umbraco.
+description: Configuring cards in Umbraco UI Builder, the backoffice UI builder for Umbraco.
 ---
 
 # Cards
 
-Cards provide an API to display simple summary info in a card based format and are useful for displaying key metrics about a collection.
+Cards provide an API to display basic summary information in a card-based format and are useful for displaying key metrics about a collection.
 
 ![Cards](../images/cards.png)
 

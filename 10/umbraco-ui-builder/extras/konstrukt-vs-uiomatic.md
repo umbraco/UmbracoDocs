@@ -23,7 +23,7 @@ For anyone familiar with Umbraco you may already know of the open source backoff
 | Feature | Konstrukt | UI-O-Matic |
 | -- | -- | -- |
 | Dashboards | Yes | No |
-| Context Apps | Yes | Ish - There is an API to define context apps, but it's just a shortcut for Umbraco's Content Apps API, so doesn't support associating a collection with the context app |
+| Context Apps | Yes | Ish - There is an API to define context apps, but its just a shortcut for Umbraco's Content Apps API, so doesn't support associating a collection with the context app |
 | Sections | Yes | Yes - Requies custom tree controller |
 | Section Dashboard | Yes | Yes |
 | Cards | Yes | No |

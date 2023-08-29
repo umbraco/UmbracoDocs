@@ -1,20 +1,20 @@
 ---
-description: Configuring count cards in Konstrukt, the backoffice UI builder for Umbraco.
+description: Configuring count cards in Umbraco UI Builder, the backoffice UI builder for Umbraco.
 ---
 
 # Count Cards
 
-Count cards allow you to define cards directly against the [collection](../collections/overview.md) configuration, providing a basic where clause to use in a count SQL statement. These work perfectly for simple data visualizations based on simple counts of entities in a collection.
+Count cards allow you to define cards directly against the [collection](../collections/overview.md) configuration, providing a basic **where clause** to use in a count SQL statement. These work perfectly for basic data visualizations based on counts of entities in a collection.
 
-If you need to do more than a simple count, you'll want to take a look at the [custom cards](custom-cards.md) documentation.
+If you need to do more than a basic count, you'll want to take a look at the [custom cards](custom-cards.md) documentation.
 
 ## Adding a count card to a collection
 
-Cards allow you to display simple summaries of key information that may be useful to the editor.
+Cards allow you to display basic summaries of key information that may be useful to the editor.
 
-#### **AddCard(string name, Lambda whereClauseExpression, Lambda cardConfig = null) : KonstruktCardConfigBuilder**
+### **AddCard(string name, Lambda whereClauseExpression, Lambda cardConfig = null) : KonstruktCardConfigBuilder**
 
-Adds a card with the given name and where clause filter expression. Expression must be a `boolean` expression.
+Adds a card with the given name and **where clause** filter expression. Expression must be a `boolean` expression.
 
 ````csharp
 // Example
@@ -23,9 +23,9 @@ collectionConfig.AddCard("Older than 30", p => p.Age > 30, cardConfig => {
 });
 ````
 
-#### **AddCard(string name, string icon, Lambda whereClauseExpression, Lambda cardConfig = null) : KonstruktCardConfigBuilder**
+### **AddCard(string name, string icon, Lambda whereClauseExpression, Lambda cardConfig = null) : KonstruktCardConfigBuilder**
 
-Adds a card with the given name + icon and where clause filter expression. Expression must be a `boolean` expression.
+Adds a card with the given name + icon and **where clause** filter expression. Expression must be a `boolean` expression.
 
 ````csharp
 // Example

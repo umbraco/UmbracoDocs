@@ -4,7 +4,7 @@ description: Known issues in Konstrukt, the backoffice UI builder for Umbraco.
 
 # Known Issues
 
-Konstrukt tries it's best to mimic the content pipeline as closely as possible whilst sticking to public and supported APIs. This is in order to be able to use the full data type suite for editing properties. Unfortunately there are some features in the Umbraco Core that are locked away in internal methods and so does mean some features may not be fully supported. Bellow are a list of known issues to date.
+Konstrukt tries its best to mimic the content pipeline as closely as possible whilst sticking to public and supported APIs. This is in order to be able to use the full Data Type suite for editing properties. Unfortunately there are some features in the Umbraco Core that are locked away in internal methods and so does mean some features may not be fully supported. Bellow are a list of known issues to date.
 
 ## Property Editors
 

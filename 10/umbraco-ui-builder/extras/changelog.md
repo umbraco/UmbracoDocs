@@ -67,7 +67,7 @@ description: Changelog for Konstrukt, the backoffice UI builder for Umbraco.
 - Added ability to control editor tab visbility at runtime.
 - Added ability to control editor fieldset visbility at runtime.
 - Added ability to control editor field visibility at runtime.
-- Added ability to control whether an editor field is read only or not at runtime.
+- Added ability to control whether an editor field is read-only or not at runtime.
 - Added ability to add custom dashboards to Konstrukt sections.
 - Added child collections support to dashboard collections.
 - Updated Konstrukt API to null check sections / collections first and throw exceptions if not found.
@@ -89,7 +89,7 @@ description: Changelog for Konstrukt, the backoffice UI builder for Umbraco.
 - Added [`HideLabel`](../collections/editors.md#hiding-the-label-of-a-field) support to editor fields to explicitly hide the label.
 - Added explicit Insert / Update methods to IKonstruktRepository and we now internaly use these instead of the Save method as the Save method isn't reliably able to determine if an entity is new or not.
 - Added better support for transient / scoped repository dependencies (ie better support for EF Core DB contexts which are by default registered as scoped)
-- Obsoleted root level APIs for `AddSection`, `AddDashboard` and `AddVirtualSubTree` which have now moved to sub configurations of the [`WithSection`](../areas/sections.md#extending-an-existing-section) or [`WithTree`](../areas/trees.md#extending-an-existing-tree) APIs.
+- Obsoleted root level APIs for `AddSection`, `AddDashboard` and `AddVirtualSubTree` which have now moved to sub-configurations of the [`WithSection`](../areas/sections.md#extending-an-existing-section) or [`WithTree`](../areas/trees.md#extending-an-existing-tree) APIs.
 - Fixed bug with DataViews resolving the wrong filter when using groups and the data view has the same name as a view in a different group. We now prefix the data view alias with the group name to ensure uniqueness across groups.
 - Fixed bug in child collections create dialog thinking it was always editing an existing entity and so wrongfuly trying to load an entity from the DB due to the fact the entity ID passed through to the dialog "0" when it should be "-1".
 
