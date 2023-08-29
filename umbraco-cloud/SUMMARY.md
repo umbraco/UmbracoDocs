@@ -124,6 +124,7 @@
 ## Release Notes
 
 * [Overview 2023](release-notes/overview-2023.md)
+* [August 2023](release-notes/2023-08-releasenotes.md)
 * [June 2023](release-notes/2023-06-releasenotes.md)
 * [May 2023](release-notes/2023-05-releasenotes.md)
 * [April 2023](release-notes/2023-04-releasenotes.md)
