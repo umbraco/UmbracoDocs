@@ -89,7 +89,7 @@ Add the following code:
 			"conditions": [
 				{
 					"alias": "Umb.Condition.SectionAlias",
-					"matches": "Umb.Section.Content"
+					"match": "Umb.Section.Content"
 				}
 			]
 		}

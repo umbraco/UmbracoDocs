@@ -1,265 +1,403 @@
 ---
-description: "Documentation for Umbraco Heartcore GraphQL property editors and their types"
+description: Documentation for Umbraco Heartcore GraphQL property editors and their types
 ---
 
 # Property Editors
 
-This page contains a list of all the built-in Umbraco Property Editors and their GraphQL types. The type may depend on the configuration of the specific Property Editor.
+## Supported Property Editors
 
-## \[Contentment] Data List
+Below is a list of all the supported built-in Umbraco Property Editors and their GraphQL types. The type may depend on the configuration of the specific Property Editor.
 
-**Editor Alias**: `Umbraco.Community.Contentment.DataList`
+<details>
 
+<summary>[Contentment] Data List</summary>
 
-**List editor**: `Checkbox List` or `Tags`\
-**GraphQL Type**: `[String]`\
-**Can be used for filtering**: `true`
+Editor Alias: `Umbraco.Community.Contentment.DataList`
 
-**Other editors configured with `Multiple selection`**: `true`\
-**GraphQL Type**: `[String]`\
-**Can be used for filtering**: `true`
+List editor: `Checkbox List` or `Tags`\
+GraphQL Type: `[String]`\
+Can be used for filtering: `true`
 
-**Other editors and configuration**: `true`\
-**GraphQL Type**: `String`\
-**Can be used for filtering**: `true`
+Other editors configured with `Multiple selection`: `true`\
+GraphQL Type: `[String]`\
+Can be used for filtering: `true`
 
-## Block List
+Other editors and configuration: `true`\
+GraphQL Type: `String`\
+Can be used for filtering: `true`
 
-**Editor Alias**: `Umbraco.BlockList`\
-**GraphQL Type**: [`BlockListItem`](schema-generation.md#block-list-item) **Can be used for filtering**: `false`
+</details>
 
-## Checkbox
+<details>
 
-**Editor Alias**: `Umbraco.TrueFalse`\
-**GraphQL Type**: `Boolean`\
-**Can be used for filtering**: `true`
+<summary>Block List</summary>
 
-## Checkbox list
+Editor Alias: `Umbraco.BlockList`\
+GraphQL Type: [`BlockListItem`](schema-generation.md#block-list-item)&#x20;
 
-**Editor Alias**: `Umbraco.CheckBoxList`\
-**GraphQL Type**: `[String]`\
-**Can be used for filtering**: `false`
+Can be used for filtering: `false`
 
-## Color Picker
+</details>
 
-**Editor Alias**: `Umbraco.ColorPicker`
+<details>
 
-**Include labels?**: `true`\
-**GraphQL Type**: [`PickedColor`](schema-generation.md#picked-color)
+<summary>Checkbox</summary>
 
-**Include labels?**: `false`\
-**GraphQL Type**: `String`\
-**Can be used for filtering**: `true`
+Editor Alias: `Umbraco.TrueFalse`\
+GraphQL Type: `Boolean`\
+Can be used for filtering: `true`
 
-## Content Picker
+</details>
 
-**Editor Alias**: `Umbraco.ContentPicker`\
-**GraphQL Type**: [`Content`](schema-generation.md#content)\
-**Can be used for filtering**: \`true
+<details>
 
-## Date/Time
+<summary>Checkbox list</summary>
 
-**Editor Alias**: `Umbraco.DateTime`\
-**GraphQL Type**: `DateTime`\
-**Can be used for filtering**: `true`
+Editor Alias: `Umbraco.CheckBoxList`\
+GraphQL Type: `[String]`\
+Can be used for filtering: `false`
 
-## Decimal
+</details>
 
-**Editor Alias**: `Umbraco.Decimal`\
-**GraphQL Type**: `Decimal`\
-**Can be used for filtering**: `true`
+<details>
 
-## Dropdown
+<summary>Color Picker</summary>
 
-**Editor Alias**: `Umbraco.DropDown.Flexible`\
-**GraphQL Type**: `[String]`\
-**Can be used for filtering**: `true`
+Editor Alias: `Umbraco.ColorPicker`
 
-## Email address
+Include labels?: `true`\
+GraphQL Type: [`PickedColor`](schema-generation.md#picked-color)
 
-**Editor Alias**: `Umbraco.EmailAddress`\
-**GraphQL Type**: `String`\
-**Can be used for filtering**: `true`
+Include labels?: `false`\
+GraphQL Type: `String`\
+Can be used for filtering: `true`
 
-## File upload
+</details>
 
-**Editor Alias**: `Umbraco.UploadField`\
-**GraphQL Type**: `String`\
-**Can be used for filtering**: `true`
+<details>
 
-## Form Picker
+<summary>Content Picker</summary>
 
-**Editor Alias**: `UmbracoForms.FormPicker`\
-**GraphQL Type**: [`JSON`](schema-generation.md#json)\
-**Can be used for filtering**: `false`
+Editor Alias: `Umbraco.ContentPicker`\
+GraphQL Type: [`Content`](schema-generation.md#content)\
+Can be used for filtering: `true`
 
-## Google Maps Single Marker
+</details>
 
-**Editor Alias**: `Our.Umbraco.GMaps`\
-**GraphQL Type**: [`OurUmbracoGMaps`](schema-generation.md#our-umbraco-gmaps)\
-**Can be used for filtering**: `false`
+<details>
 
-## Grid layout
+<summary>Date/Time</summary>
 
-**Editor Alias**: `Umbraco.Grid`\
-**GraphQL Type**: [`JSON`](schema-generation.md#json)\
-**Can be used for filtering**: `false`
+Editor Alias: `Umbraco.DateTime`\
+GraphQL Type: `DateTime`\
+Can be used for filtering: `true`
 
-## Image Cropper
+</details>
 
-**Editor Alias**: `Umbraco.ImageCropper`\
-**GraphQL Type**: [`ImageCropper`](schema-generation.md#image-cropper)\
-**Can be used for filtering**: `false`
+<details>
 
-## Label
+<summary>Decimal</summary>
 
-**Editor Alias**: `Umbraco.Label`\
-**GraphQL Type**: `String`\
-**Can be used for filtering**: `true`
+Editor Alias: `Umbraco.Decimal`\
+GraphQL Type: `Decimal`\
+Can be used for filtering: `true`
 
-## List view
+</details>
 
-**Editor Alias**: `Umbraco.ListView`
-{% hint style="info" %} This editor is not supported and will not be present in the generated schema {% endhint %}
+<details>
 
-## Markdown Editor
+<summary>Dropdown</summary>
 
-**Editor Alias**: `Umbraco.MarkdownEditor`\
-**GraphQL Type**: [`HTML`](schema-generation.md#html)\
-**Can be used for filtering**: `false`
+Editor Alias: `Umbraco.DropDown.Flexible`\
+GraphQL Type: `[String]`\
+Can be used for filtering: `true`
 
-## Media Picker
+</details>
 
-**Editor Alias**: `Umbraco.MediaPicker3`
+<details>
 
-**Pick Multiple items**: `true`\
-**GraphQL Type**: [`[MediaWithCrops]`](schema-generation.md#media-with-crops)\
-**Can be used for filtering**: `false`
+<summary>Email address</summary>
 
-**Pick Multiple items**: `false`\
-**GraphQL Type**: [`MediaWithCrops`](schema-generation.md#media-with-crops)\
-**Can be used for filtering**: `false`
+Editor Alias: `Umbraco.EmailAddress`\
+GraphQL Type: `String`\
+Can be used for filtering: `true`
 
-## Media Picker (legacy)
+</details>
 
-**Editor Alias**: `Umbraco.MediaPicker`
+<details>
 
-**Pick Multiple items**: `true`\
-**GraphQL Type**: [`[Media]`](schema-generation.md#media)\
-**Can be used for filtering**: `true`
+<summary>File upload</summary>
 
-**Pick Multiple items**: `false`\
-**GraphQL Type**: [`Media`](schema-generation.md#media)\
-**Can be used for filtering**: `true`
+Editor Alias: `Umbraco.UploadField`\
+GraphQL Type: `String`\
+Can be used for filtering: `true`
 
-## Member Picker
+</details>
 
-**Editor Alias**: `Umbraco.MemberPicker`
-{% hint style="info" %} This editor is not supported and will not be present in the generated schema {% endhint %}
+<details>
 
-## Member Group Picker
+<summary>Form Picker</summary>
 
-**Editor Alias**: `Umbraco.MemberGroupPicker`
-{% hint style="info" %} This editor is not supported and will not be present in the generated schema {% endhint %}
+Editor Alias: `UmbracoForms.FormPicker`\
+GraphQL Type: [`JSON`](schema-generation.md#json)\
+Can be used for filtering: `false`
 
-## Multi Url Picker
+</details>
 
-**Editor Alias**: `Umbraco.MultiUrlPicker`
+<details>
 
+<summary>Google Maps Single Marker</summary>
 
-**Maximum number of items**: `1`\
-**GraphQL Type**: [`Link`](schema-generation.md#link) **Can be used for filtering**: `false`
+Editor Alias: `Our.Umbraco.GMaps`\
+GraphQL Type: [`OurUmbracoGMaps`](schema-generation.md#our-umbraco-gmaps)\
+Can be used for filtering: `false`
 
-**Maximum number of items**: not `1`\
-**GraphQL Type**: [`[Link]`](schema-generation.md#link) **Can be used for filtering**: `false`
+</details>
 
-## Multinode Treepicker
+<details>
 
-**Editor Alias**: `Umbraco.MultiNodeTreePicker`
+<summary>Grid layout</summary>
 
-**Node type**: `Content`\
-**Maximum number of items**: `1`\
-**GraphQL Type**: [`Content`](schema-generation.md#content)\
-**Can be used for filtering**: `true`
+Editor Alias: `Umbraco.Grid`\
+GraphQL Type: [`JSON`](schema-generation.md#json)\
+Can be used for filtering: `false`
 
-**Node type**: `Content`\
-**Maximum number of items**: not `1`\
-**GraphQL Type**: [`[Content]`](schema-generation.md#content)\
-**Can be used for filtering**: `true`
+</details>
 
-**Node type**: `Media`\
-**Maximum number of items**: `1`\
-**GraphQL Type**: [`Media`](schema-generation.md#media)\
-**Can be used for filtering**: `true`
+<details>
 
-**Node type**: `Media`\
-**Maximum number of items**: not `1`\
-**GraphQL Type**: [`[Media]`](schema-generation.md#media)\
-**Can be used for filtering**: `true`
+<summary>Image Cropper</summary>
 
-**Node type**: `Member`
-{% hint style="info" %} The Member editor configuration is not supported and will not be present in the generated schema {% endhint %}
+Editor Alias: `Umbraco.ImageCropper`\
+GraphQL Type: [`ImageCropper`](schema-generation.md#image-cropper)\
+Can be used for filtering: `false`
 
+</details>
 
-## Nested Content
+<details>
 
-**Editor Alias**: `Umbraco.NestedContent`\
-**GraphQL Type**: [`[Element]`](schema-generation.md#element)\
-**Can be used for filtering**: `false`
+<summary>Label</summary>
 
-## Numeric
+Editor Alias: `Umbraco.Label`\
+GraphQL Type: `String`\
+Can be used for filtering: `true`
 
-**Editor Alias**: `Umbraco.Integer`\
-**GraphQL Type**: `Int` **Can be used for filtering**: `true`
+</details>
 
-## Radio button List
+<details>
 
-**Editor Alias**: `Umbraco.RadioButtonList`\
-**GraphQL Type**: `[String]` **Can be used for filtering**: `true`
+<summary>Markdown Editor</summary>
 
-## Repeatable textstrings
+Editor Alias: `Umbraco.MarkdownEditor`\
+GraphQL Type: [`HTML`](schema-generation.md#html)\
+Can be used for filtering: `false`
 
-**Editor Alias**: `Umbraco.MultipleTextstring`\
-**GraphQL Type**: `[String]`\
-**Can be used for filtering**: `true`
+</details>
 
-## Rich Text Editor
+<details>
 
-**Editor Alias**: `Umbraco.TinyMCE`\
-**GraphQL Type**: [`HTML`](schema-generation.md#html)\
-**Can be used for filtering**: `false`
+<summary>Media Picker</summary>
 
-## Slider
+Editor Alias: `Umbraco.MediaPicker3`
 
-**Editor Alias**: `Umbraco.Slider`
+Pick Multiple items: `true`\
+GraphQL Type: [`[MediaWithCrops]`](schema-generation.md#media-with-crops)\
+Can be used for filtering: `false`
 
-**Enable Range**: `true`\
-**GraphQL Type** [`DecimalRange`](schema-generation.md#decimal-range)\
-**Can be used for filtering**: `false`
+Pick Multiple items: `false`\
+GraphQL Type: [`MediaWithCrops`](schema-generation.md#media-with-crops)\
+Can be used for filtering: `false`
 
-**Enable Range**: `false`\
-**GraphQL Type** `Decimal`\
-**Can be used for filtering**: `true`
+</details>
 
-## Tags
+<details>
 
-**Editor Alias**: `Umbraco.Tags`\
-**GraphQL Type**: `[String]`\
-**Can be used for filtering**: `true`
+<summary>Media Picker (legacy)</summary>
 
-## Textarea
+Editor Alias: `Umbraco.MediaPicker`
 
-**Editor Alias**: `Umbraco.TextArea`\
-**GraphQL Type**: `String`\
-**Can be used for filtering**: `true`
+Pick Multiple items: `true`\
+GraphQL Type: [`[Media]`](schema-generation.md#media)\
+Can be used for filtering: `true`
 
-## Textbox
+Pick Multiple items: `false`\
+GraphQL Type: [`Media`](schema-generation.md#media)\
+Can be used for filtering: `true`
 
-**Editor Alias**: `Umbraco.TextBox`\
-**GraphQL Type**: `String`\
-**Can be used for filtering**: `true`
+</details>
 
-## User Picker
+<details>
 
-**Editor Alias**: `Umbraco.UserPicker`
-{% hint style="info" %} This editor is not supported and will not be present in the generated schema {% endhint %}
+<summary>Multi Url Picker</summary>
+
+Editor Alias: `Umbraco.MultiUrlPicker`
+
+Maximum number of items: `1`\
+GraphQL Type: [`Link`](schema-generation.md#link) Can be used for filtering: `false`
+
+Maximum number of items: not `1`\
+GraphQL Type: [`[Link]`](schema-generation.md#link) Can be used for filtering: `false`
+
+</details>
+
+<details>
+
+<summary>Multinode Treepicker</summary>
+
+Editor Alias: `Umbraco.MultiNodeTreePicker`
+
+Node type: `Content`\
+Maximum number of items: `1`\
+GraphQL Type: [`Content`](schema-generation.md#content)\
+Can be used for filtering: `true`
+
+Node type: `Content`\
+Maximum number of items: not `1`\
+GraphQL Type: [`[Content]`](schema-generation.md#content)\
+Can be used for filtering: `true`
+
+Node type: `Media`\
+Maximum number of items: `1`\
+GraphQL Type: [`Media`](schema-generation.md#media)\
+Can be used for filtering: `true`
+
+Node type: `Media`\
+Maximum number of items: not `1`\
+GraphQL Type: [`[Media]`](schema-generation.md#media)\
+Can be used for filtering: `true`
+
+Node type: `Member`
+
+**Note:** The Member editor configuration is not supported in the Multinode Treeepicker and will not be present in the generated schema.
+
+</details>
+
+<details>
+
+<summary>Nested Content</summary>
+
+Editor Alias: `Umbraco.NestedContent`\
+GraphQL Type: [`[Element]`](schema-generation.md#element)\
+Can be used for filtering: `false`
+
+</details>
+
+<details>
+
+<summary>Numeric</summary>
+
+Editor Alias: `Umbraco.Integer`\
+GraphQL Type: `Int` Can be used for filtering: `true`
+
+</details>
+
+<details>
+
+<summary>Radio button List</summary>
+
+Editor Alias: `Umbraco.RadioButtonList`\
+GraphQL Type: `[String]` Can be used for filtering: `true`
+
+</details>
+
+<details>
+
+<summary>Repeatable textstrings</summary>
+
+Editor Alias: `Umbraco.MultipleTextstring`\
+GraphQL Type: `[String]`\
+Can be used for filtering: `true`
+
+</details>
+
+<details>
+
+<summary>Rich Text Editor</summary>
+
+Editor Alias: `Umbraco.TinyMCE`\
+GraphQL Type: [`HTML`](schema-generation.md#html)\
+Can be used for filtering: `false`
+
+</details>
+
+<details>
+
+<summary>Slider</summary>
+
+Editor Alias: `Umbraco.Slider`
+
+Enable Range: `true`\
+GraphQL Type [`DecimalRange`](schema-generation.md#decimal-range)\
+Can be used for filtering: `false`
+
+Enable Range: `false`\
+GraphQL Type `Decimal`\
+Can be used for filtering: `true`
+
+</details>
+
+<details>
+
+<summary>Tags</summary>
+
+Editor Alias: `Umbraco.Tags`\
+GraphQL Type: `[String]`\
+Can be used for filtering: `true`
+
+</details>
+
+<details>
+
+<summary>Textarea</summary>
+
+Editor Alias: `Umbraco.TextArea`\
+GraphQL Type: `String`\
+Can be used for filtering: `true`
+
+</details>
+
+<details>
+
+<summary>Textbox</summary>
+
+Editor Alias: `Umbraco.TextBox`\
+GraphQL Type: `String`\
+Can be used for filtering: `true`
+
+</details>
+
+## Unsupported Editors
+
+Below is a list of property editors which is not supported in GraphQL and will not be present in the generated schema.
+
+<details>
+
+<summary>List view</summary>
+
+Editor Alias: `Umbraco.ListView`
+
+</details>
+
+<details>
+
+<summary>Member Picker</summary>
+
+Editor Alias: `Umbraco.MemberPicker`
+
+</details>
+
+<details>
+
+<summary>Member Group Picker</summary>
+
+Editor Alias: `Umbraco.MemberGroupPicker`
+
+</details>
+
+<details>
+
+<summary>User Picker</summary>
+
+Editor Alias: `Umbraco.UserPicker`
+
+</details>

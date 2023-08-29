@@ -37,7 +37,7 @@ While familiarizing yourself with the Starter Kit you might have spotted some pl
 
 [Head on over to the lessons](lessons/)
 
-***
+
 
 ## Contribute to the Starter kit
 
