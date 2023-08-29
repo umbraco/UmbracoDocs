@@ -1,44 +1,39 @@
 # August 2023
 
 ## Key Takeaways
-* **New Australia cloud region ** -  Umbraco Cloud expands its regional hosting offerings with the addition of _Australia East_, catering to a wider range of hosting preferences.
+* **New Australia cloud region** -  Umbraco Cloud expands its regional hosting offerings with the addition of _Australia East_, catering to a wider range of hosting preferences.
 * **Visualization of Events on “Availability & Performance”** - Elevate project insights with Umbraco Cloud's Event Visualization. Track critical events and their impact on your project's journey.
 * **Improved trial flow for Umbraco Cloud** - The trial flow has undergone a significant visual upgrade, now offering a more engaging and intuitive experience.
 
-## Customize Environment Ordering
-We've listened to your feedback and are delighted to provide more flexibility and control over how the environments on the Projects Dashboard are listed.
+## New Australia cloud region
+As the interest in adopting Umbraco Cloud as the preferred development and hosting platform for Umbraco projects continues to grow, there is a corresponding surge in demand for expanded regional hosting choices. This demand is particularly pronounced given factors like privacy regulations and data governance standards, as the physical location of data holds increasing significance.
 
-By default, the Live environment is positioned as the first environment, followed by Staging and Development environment. However, we understand that different users may have different workflows and preferences. Therefore, we have introduced the ability to customize the ordering to align with the “left-to-right” deployment model.
+The availability of **_regional hosting_** options empowers you to pinpoint the exact location for hosting and storing your Umbraco Cloud project, encompassing all its environments and data with a significant improvement in performance for users close to the selected hosting center.
 
 ![CustomizeEnvironmentOrdering](images/ProjectsDashboardEnvReorder.gif)
 
-Whether you prefer the default order or wish to switch to the "left-to-right" model, the choice is now in your hands.
+Another significant stride for Umbraco Cloud is the introduction of the East Australia regional hosting option, marking the fourth supported region. This addition is met with great enthusiasm by professionals within this region and those collaborating with clients here
 
-## All Project Sub-Pages Upgraded
-Great news! With the recent migration of the Certificates page to our new front-end tech stack, all project sub-pages have now been successfully converted. This transition marks an important milestone in our ongoing efforts to improve the overall user experience in the Umbraco Cloud Portal.
+Read the entire [blog post](https://umbraco.com/blog/umbraco-cloud-expands-with-regional-hosting-option-in-australia/) for more information.
+
+## Visualization of Events on “Availability & Performance”
+Umbraco Cloud introduces a pragmatic enhancement – Event Visualization on the "Availability & Performance" dashboard. This feature seamlessly incorporates event monitoring into the SVG visualization for each metrics panel.
+
+Gain insight into critical project events, such as restarts, automatic and manual upgrades, updates involving environment deployments, and changes in plans. This concise display allows for a comprehensive understanding of the events affecting your project.
 
 ![Certificates](images/Certificates.gif)
 
-With the completion of this migration, our team is now shifting its focus to further enhancing the user experience and navigation within Umbraco Cloud. We understand the importance of intuitive navigation and streamlined workflows in providing a seamless and enjoyable experience while working on your Umbraco Cloud projects.
+Stay informed about pivotal alterations, ranging from routine restarts to intricate deployments and upgrades. Whether it's a system restart, an environment deployment, or an upgrade, you'll have gained more of the information you need to assist you in potential troubleshooting, make informed decisions, and ensure smooth project management.
 
-Our goal is to create a better navigation experience that enables you to effortlessly find and access the features and functionalities you need. We are committed to refining the user interface, optimizing the menu structure, and implementing intuitive navigation controls to simplify your interactions with Umbraco Cloud.
+Next, we will be improving the deployment events to be aligned in a time range instead of two individual events. And to offer support for other environments than the live environment on the “Availability & Performance” page.
 
-Stay tuned for significant improvements to the navigation structure of Umbraco Cloud in Q3.
+## Improved Trial Flow for Umbraco Cloud 
+We're pleased to introduce that the trial flow has undergone a significant visual upgrade, now offering a more engaging and intuitive experience. We've enhanced it by incorporating key links and resources that provide new users with the most valuable starting points for effectively working with Umbraco
 
-## Support of Umbraco 12 
-Umbraco Cloud offers the creation of cloud projects based on the latest and greatest Umbraco CMS versions. Starting from the release date on June 29, 2023, you can now select Umbraco 12 when creating a new cloud project.
-
-Umbraco Cloud also offers you a hassle-free migration process for users who wish to upgrade their projects from Umbraco 11 to Umbraco 12. To assist you in this process, we highly recommend utilizing the Major Upgrade Guide available at [Umbraco Documentation](https://docs.umbraco.com/umbraco-cloud/product-upgrades/major-upgrades).
-
-The Major Upgrade Guide outlines the necessary steps and best practices to successfully upgrade your projects from Umbraco 11 to Umbraco 12. The guide is designed to simplify the migration process, providing clear instructions and insights into any potential challenges you may encounter.
+New users to Umbraco get the option to explore the new trial flow for Umbraco Cloud and Heartcore projects to better understand their capabilities.
 
 ![Umbraco12](images/Umbraco12.png)
 
-For more information about the new great version 12 of Umbraco CMS, please read this great [blog post](https://umbraco.com/blog/umbraco-12-release/).
+And maybe it is also something for you! Whether you're an experienced developer or new to web development, this enhanced trial flow caters to your needs. Embrace Umbraco Cloud or Umbraco Heartcore with confidence, benefitting from a robust and user-friendly environment.
 
-It highlights the latest and greatest new improvements in Umbraco CMS such as:
-* Headless capabilities out-of-the-box
-* Built-in support for Entity Framework Core, 
-* Updates of different dependencies and frameworks.
-
-We look forward to seeing the incredible projects you will create with Umbraco 12.
+Experience the upgraded trial flow today at [try.umbraco.com](try.umbraco.com) for Umbraco Cloud projects and [try.umbraco.com/heartcore](try.umbraco.com/heartcore) for Heartcore projects.
