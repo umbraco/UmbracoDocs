@@ -10,7 +10,7 @@ description: Changelog for the Mollie Payment Provider for Vendr.
 **Date:** 2023-03-28\
 **Description:** Patch release with minor bug fixes/enhancements
 
-* Added refund, cancel and capture support via the back office.
+* Added refund, cancel and capture support via the backoffice.
 * Added Mollie's order ID and selected payment method to the transaction metadata log.
 * Upgraded `Mollie.Api` to 2.2.0.4.
 * Fixed issue where pending orders are not being finalized because Mollie doesn't send a webhook request until payment is confirmed. Order is now finalized during the redirect routine.
