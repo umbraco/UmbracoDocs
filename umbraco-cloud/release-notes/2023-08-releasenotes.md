@@ -17,7 +17,7 @@ Another significant stride for Umbraco Cloud is the introduction of the East Aus
 Read the entire [blog post](https://umbraco.com/blog/umbraco-cloud-expands-with-regional-hosting-option-in-australia/) for more information.
 
 ## Visualization of Events on “Availability & Performance”
-Umbraco Cloud introduces a pragmatic enhancement – Event Visualization on the "Availability & Performance" dashboard. This feature seamlessly incorporates event monitoring into the SVG visualization for each metrics panel.
+Umbraco Cloud introduces a pragmatic enhancement – Event Visualization on the "Availability & Performance" dashboard. This feature seamlessly incorporates event monitoring into the Scalable Vector Graphics (SVG) visualization for each metrics panel.
 
 ![Event 1](images/Event1.png)
 
