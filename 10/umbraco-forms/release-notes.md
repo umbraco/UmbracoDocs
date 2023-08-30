@@ -45,6 +45,10 @@ In this section, you can find the release notes for each version of Umbraco Form
 
 ### [10.4.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.4.0) (June 13th 2023)
 
+:::note
+If upgrading from a previous version and already using the headless API, please ensure to [enable the API via configuration](./developer/configuration/README.md#enableformsapi).
+:::
+
 * Ensured a case insensitive request check for protecting access to files uploaded to the media system.
 * Updated dependency on `aspnet-client-validation` to resolve an issue with validation of mandatory radio button or checkbox lists [#1028](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1028)
 * All updates noted under 10.4.0-rc1.
@@ -62,8 +66,6 @@ In this section, you can find the release notes for each version of Umbraco Form
 * Added tag helper for rendering a form
 * Provided messaging when using rich text fields in case of a missing rich text Data Type
 * Fixed an issue with the configurable removal of the default form templates [#1025](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1025)
-
-If upgrading from a previous version and already using the headless API, please ensure to [enable the API via configuration](./developer/configuration/README.md#enableformsapi).
 
 ### [10.3.3](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.3) (May 30th 2023)
 
