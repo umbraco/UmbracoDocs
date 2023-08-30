@@ -235,7 +235,7 @@ namespace Umbraco.Forms.Web.Behaviors
             };
             fieldset.Containers.Add(container);
 
-            // As all forms default to having StoreRecordsLocally we need to add the GDPR field to the the form
+            // As all forms default to having StoreRecordsLocally we need to add the data consent field to the the form
             // (unless this feature has been explicitly disabled).
             if (_formDesignSettings.DisableAutomaticAdditionOfDataConsentField)
             {
