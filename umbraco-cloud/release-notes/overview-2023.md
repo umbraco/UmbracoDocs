@@ -4,6 +4,13 @@ description: Get an overview of release notes for each month in 2023.
 
 # Overview 2023
 
+# [August 2023](2023-08-releasenotes.md)
+
+## Key Takeaways
+* **Australia region hosting** -  Umbraco Cloud expands its regional hosting offerings with the addition of _Australia East_, catering to a wider range of hosting preferences.
+* **Visualization of Events on “Availability & Performance”** - Elevate project insights with Umbraco Cloud's Event Visualization. Track critical events and their impact on your project's journey.
+* **Improved trial flow for Umbraco Cloud** - The trial flow has undergone a significant visual upgrade, now offering a more engaging and intuitive experience.
+
 # [June 2023](2023-06-releasenotes.md)
 
 ## Key Takeaways

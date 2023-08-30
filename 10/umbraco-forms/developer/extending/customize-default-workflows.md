@@ -237,10 +237,12 @@ namespace Umbraco.Forms.Web.Behaviors
 
             // As all forms default to having StoreRecordsLocally we need to add the data consent field to the the form
             // (unless this feature has been explicitly disabled).
-            if (_formDesignSettings.DisableAutomaticAdditionOfDataConsentField == false)
+            if (_formDesignSettings.DisableAutomaticAdditionOfDataConsentField)
             {
-                container.AddDataConsentField();
+                return;
             }
+
+            container.AddDataConsentField(_formDesignSettings, _fieldCollection);
 
             // Add any further fields you require.
         }
