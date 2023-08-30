@@ -25,7 +25,7 @@ Gain insight into critical project events, such as restarts, automatic and manua
 
 ![Event 2](images/Event2.png)
 
-Stay informed about pivotal alterations, ranging from routine restarts to intricate deployments and upgrades. Whether it's a system restart, an environment deployment, or an upgrade, you'll have gained more of the information you need to assist you in potential troubleshooting, make informed decisions, and ensure smooth project management.
+Stay informed about pivotal alterations, ranging from routine restarts to intricate deployments and upgrades. Whether it's a system restart, an environment deployment, or an upgrade, you'll have gained more of the information you need. This information will assist you in potential troubleshooting, make informed decisions, and ensure smooth project management.
 
 Next, we will be improving the deployment events to be aligned in a time range instead of two individual events. And to offer support for other environments than the live environment on the “Availability & Performance” page.
 
