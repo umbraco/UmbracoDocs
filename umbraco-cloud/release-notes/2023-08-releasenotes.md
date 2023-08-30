@@ -6,7 +6,7 @@
 * **Improved trial flow for Umbraco Cloud** - The trial flow has undergone a significant visual upgrade, now offering a more engaging and intuitive experience.
 
 ## Australia region hosting
-As the interest in adopting Umbraco Cloud as the preferred development and hosting platform for Umbraco projects continues to grow, there is a corresponding surge in demand for expanded regional hosting choices. This demand is particularly pronounced given factors like privacy regulations and data governance standards, as the physical location of data holds increasing significance.
+There is an interest increase in expanding the regional hosting choices for Umbraco Cloud as the preferred development and hosting platform for Umbraco projects. This demand is particularly pronounced given factors like privacy regulations and data governance standards, as the physical location of data holds increasing significance.
 
 The availability of **_regional hosting_** options empowers you to pinpoint the exact location for hosting and storing your Umbraco Cloud project, encompassing all its environments and data with a significant improvement in performance for users close to the selected hosting center.
 
