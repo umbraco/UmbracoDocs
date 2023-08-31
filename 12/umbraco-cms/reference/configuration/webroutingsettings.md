@@ -101,4 +101,4 @@ Will set the URL provider mode, options are:
 
 Defines the Umbraco application URL that the server should reach itself. By default, Umbraco will guess that URL from the first request made to the server. Use this setting if the guess is not correct (because you are behind a load-balancer, for example). Format is: `http://www.mysite.com/`, ensure to contain the scheme (http/https) and complete hostname.
 
-Note that previously it was also to specify BackOffice path as this was customizable (`/umbraco` by default), but this is no longer possible in Umbraco 9+ so using the full URL including scheme and hostname is sufficient.
+Note that previously it was also required to specify BackOffice path as this was customizable (`/umbraco` by default), but this is no longer possible in Umbraco 9+ so using the full URL including scheme and hostname is sufficient.
