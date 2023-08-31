@@ -1,16 +1,16 @@
 ---
-description: Configuring data views builders in Konstrukt, the backoffice UI builder for Umbraco.
+description: Configuring data views builders in Umbraco UI Builder, the backoffice UI builder for Umbraco.
 ---
 
 # Data Views Builders
 
-Data views builders allow you to create a collection data views list dynamically at run time. By default Konstrukt will use the hard coded data views defined in your Konstrukt config, however if you need to build your data views list dynamically, then is is when you'd use a data views builder.
+Data views builders allow you to create a collection data views list dynamically at run time. By default, Umbraco UI Builder will use the hard-coded data views defined in your Umbraco UI Builder config. However, if you need to build your data views list dynamically, then this is when you'd use a data views builder.
 
-When Konstrukt resolves a data views builder it will attempt to do so from the global DI container which means you can inject amy dependencies that you require for your builder. If there is no such type defined in the DI container, Konstrukt will then fall-backto maually instantiating a new instance of the data views builder.
+When Umbraco UI Builder resolves a data views builder it will attempt to do so from the global DI container. This means you can inject any dependencies that you require for your builder. If there is no such type defined in the DI container, Umbraco UI Builder will fall-back to manually instantiating a new instance of value mapper.
 
 ## Defining a data views builder
 
-To define a data views builder you create a class that inherits from the base class `KonstruktDataViewsBuilder<TEntityType>` and implements the abstract methods.
+To define a data views builder you can create a class that inherits from the base class `KonstruktDataViewsBuilder<TEntityType>` and implements the abstract methods.
 
 ````csharp
 // Example
@@ -31,13 +31,13 @@ public class PersonDataViewsBuilder : KonstruktDataViewsBuilder<Person>
 The required methods are:
 
 * **GetDataViews:** Returns the list of data views to choose from.
-* **GetDataViewWhereClause:** Returns the boolean where clause expression for the given data views alias.
+* **GetDataViewWhereClause:** Returns the boolean **where clause** expression for the given data views alias.
 
 ## Setting the data views builder of a collection
 
 Setting a data views builder is controlled via the [collections](../collections/overview.md) configuration.
 
-#### **SetDataViewsBuilder&lt;TDataViewsBuilder&gt;() : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
+### **SetDataViewsBuilder&lt;TDataViewsBuilder&gt;() : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
 
 Sets the collections data views builder which allows you to define the data views dynamically at run time.
 
@@ -46,16 +46,16 @@ Sets the collections data views builder which allows you to define the data view
 collectionConfig.SetDataViewsBuilder<PersonDataViewsBuilder>();
 ````
 
-#### **SetDataViewsBuilder(Type dataViewsBuilderType) : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
+### **SetDataViewsBuilder(Type dataViewsBuilderType) : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
 
-Sets the collections data views builder which allows you to define the data views dynamically at run time. 
+Sets the collections data views builder which allows you to define the data views dynamically at run time.
 
 ````csharp
 // Example
 collectionConfig.SetDataViewsBuilder(typeof(PersonDataViewsBuilder));
 ````
 
-#### **SetDataViewsBuilder(KonstruktDataViewsBuilder&lt;TEntityType&gt; dataViewsBuilder) : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
+### **SetDataViewsBuilder(KonstruktDataViewsBuilder&lt;TEntityType&gt; dataViewsBuilder) : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
 
 Sets the collections data views builder which allows you to define the data views dynamically at run time.
 

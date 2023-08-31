@@ -1,16 +1,16 @@
 ---
-description: Creating your first integration with Konstrukt, the backoffice UI builder for Umbraco.
+description: Creating your first integration with Umbraco UI Builder, the backoffice UI builder for Umbraco.
 ---
 
 # Creating your first integration
 
-In this guide we'll take you through the steps needed for a basic implementation using Konstrukt to manage a single custom database table.
+In this guide, you can find the necessary steps needed for a basic implementation using Umbraco UI Builder to manage a single custom database table.
 
 ## Set up the database
 
-Out of the box Konstrukt works using PetaPoco as the persistence layer as this is what ships with Umbraco. It is possible to use a custom [Repository](../advanced/repositories.md) if you prefer, but for the sake of getting started, we’ll assume you are using this default strategy.
+Out of the box, Umbraco UI Builder works using PetaPoco as the persistence layer as this is what ships with Umbraco. If you prefer, it is possible to use a custom [Repository](../advanced/repositories.md). However, for getting started, it is expected that you are using this default strategy.
 
-Start by setting up a database table for your model (you might want to populate it with some dummy data as well whilst learning). We’ll use the following as an example:
+Start by setting up a database table for your model (you might want to populate it with some dummy data as well while learning). We’ll use the following as an example:
 
 ```sql
 CREATE TABLE [Person] (
@@ -26,7 +26,7 @@ CREATE TABLE [Person] (
 
 ## Set up your model
 
-With the database table setup we then need to create the associated poco model in our project.
+With the database table setup, we then need to create the associated Poco model in our project.
 
 ```csharp
 [TableName("Person")]
@@ -44,9 +44,9 @@ public class Person
 }
 ```
 
-## Configure Konstrukt
+## Configure Umbraco UI Builder
 
-With the database and model setup, we can now start to configure Konstrukt itself. The entry point for a Konstrukt configuration is via the `AddKonstrukt` extension method that we call on the `IUmbracoBuilder` instance within the `ConfigureServices` method of the `Startup` class.
+With the database and model setup, we can now start to configure Umbraco UI Builder itself. The entry point for the Umbraco UI Builder configuration is via the `AddKonstrukt` extension method. On this method, we call on the `IUmbracoBuilder` instance within the `ConfigureServices` method of the `Startup` class.
 
 ```csharp
 public class Startup
@@ -67,7 +67,7 @@ public class Startup
 }
 ```
 
-For our example, we will use the following configuration.
+For our example, we will use the following configuration:
 
 ```csharp
 ...
@@ -104,7 +104,7 @@ For our example, we will use the following configuration.
 
 ## Access your UI
 
-With your configuration defined and your project compiled, before you can access your UI there is one last step to perform and that is to give your backoffice user account permission to access the newly defined  section. To do this you'll need to login to the backoffice and head to the users section and update the user group your user belongs to to allow access.
+With your configuration defined and your project compiled, there is one last step to perform before you can access your UI. And that is to give your backoffice user account permission to access the newly defined section. To do this you'll need to login to the backoffice, head to the user's section, and update the user group. There you will need to make sure that your user belongs to the allowed access.
 
 ![User group permissions](../images/permissions.png)
 
@@ -116,4 +116,4 @@ With the permissions set, you can refresh your browser and you should now see yo
 
 ## Summary
 
-As you can see, with very little code you can start to create very powerful interfaces for your custom data structures.
+As you can see, with little code you can start to create powerful interfaces for your custom data structures.

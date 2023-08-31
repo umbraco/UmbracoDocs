@@ -1,5 +1,5 @@
 ---
-description: Configuring data views in Konstrukt, the backoffice UI builder for Umbraco.
+description: Configuring data views in Umbraco UI Builder, the backoffice UI builder for Umbraco.
 ---
 
 # Data Views
@@ -12,18 +12,18 @@ Data views allow you to define multiple, pre-filtered views of the same data sou
 
 Data views are defined via the [collections](../collections/overview.md) configuration.
 
-#### **AddDataView(string name, Lambda whereClauseExpression) : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
+### **AddDataView(string name, Lambda whereClauseExpression) : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
 
-Adds a data view with the given name and where clause filter expression. Expression must be a `boolean` expression.
+Adds a data view with the given name and **where clause** filter expression. Expression must be a `boolean` expression.
 
 ````csharp
 // Example
 collectionConfig.AddDataView("Active", p => p.IsActive);
 ````
 
-#### **AddDataView(string group, string name, Lambda whereClauseExpression) : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
+### **AddDataView(string group, string name, Lambda whereClauseExpression) : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
 
-Adds a data view with the given group, name and where clause filter expression. Expression must be a `boolean` expression.
+Adds a data view with the given group, name and **where clause** filter expression. Expression must be a `boolean` expression.
 
 ````csharp
 // Example

@@ -1,10 +1,10 @@
 ---
-description: Configuring filtering in Konstrukt, the backoffice UI builder for Umbraco.
+description: Configuring filtering in Umbraco UI Builder, the backoffice UI builder for Umbraco.
 ---
 
 # Filtering
 
-Beyond [searching](../searching/overview.md) there are also times when you need to be able to create specific views of a collections data. To help with this Konstrukt has a number of different filtering mechanisms available.
+Beyond [searching](../searching/overview.md) there might be times when you need to be able to create specific views of a collection's data. To help with this Umbraco UI Builder has different filtering mechanisms available.
 
 ![Filterable Properties](../images/filterable_properties.png)
 

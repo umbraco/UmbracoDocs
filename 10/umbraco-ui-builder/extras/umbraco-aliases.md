@@ -1,27 +1,27 @@
 ---
-description: A list of useful Umbraco aliases for use with Konstrukt, the backoffice UI builder for Umbraco.
+description: A list of useful Umbraco aliases for use with Umbraco UI Builder, the backoffice UI builder for Umbraco.
 ---
 
 # Umbraco Aliases
 
-In a number of places in the Konstrukt API you are required to know the aliases of other elements such as when you are adding sections, context apps or dashboard before/after other instances. This is easy enough when its referencing aliases of things defined in the Konstrukt config, but for existing Umbraco instances it can be hard to find them so below is documented a number of known aliases for various elements.
+In a number of places in the Umbraco UI Builder API, you are required to know the aliases of other elements. For example, when you are adding sections, context apps, or dashboards before/after other instances. This is basic enough when it's referencing aliases of things defined in the Umbraco UI Builder config. However, for existing Umbraco instances it can be hard to find them so below is documented a number of known aliases for different elements.
 
 ## Dashboard aliases
 
-#### **Content**
+### **Content**
 
 | Name | Alias |
 | -- | -- |
 | Getting Started | `contentIntro` |
 | Redirect URL Management | `contentRedirectManager` |
 
-#### **Media**
+### **Media**
 
 | Name | Alias |
 | -- | -- |
 | Content | `mediaFolderBrowser` |
 
-#### **Settings**
+### **Settings**
 
 | Name | Alias |
 | -- | -- |
@@ -31,7 +31,7 @@ In a number of places in the Konstrukt API you are required to know the aliases 
 | Models Builder | `settingsModelsBuilder` |
 | Health Check | `settingsHealthCheck` |
 
-#### **Members**
+### **Members**
 
 | Name | Alias |
 | -- | -- |
@@ -39,28 +39,28 @@ In a number of places in the Konstrukt API you are required to know the aliases 
 
 ## Content App aliases
 
-#### **Content**
+### **Content**
 
 | Name | Alias |
 | -- | -- |
 | Content | `umbContent` |
 | Info | `umbInfo` |
 
-#### **Media**
+### **Media**
 
 | Name | Alias |
 | -- | -- |
 | Content | `umbContent` |
 | Info | `umbInfo` |
 
-#### **Members**
+### **Members**
 
 | Name | Alias |
 | -- | -- |
 | Content | `umbContent` |
 | Info | `umbInfo` |
 
-#### **ContentTypes**
+### **ContentTypes**
 
 | Name | Alias |
 | -- | -- |

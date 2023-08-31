@@ -6,7 +6,7 @@ description: Configuring value mappers in Umbraco UI Builder, the backoffice UI 
 
 A value mapper is an Umbraco UI Builder helper class that sits between the editor UI and the database. It also lets you tweak the stored value of a field. By default Umbraco UI Builder will save a datatype value as it would be stored in Umbraco. Value mappers let you change this.
 
-When Umbraco UI Builder resolves a value mapper it will attempt to do so from the global DI container. This means you can inject any dependencies that you require for your mapper. If there is no such type defined in the DI container, Umbraco UI Builder will fall-backto manually instantiating a new instance of value mapper.
+When Umbraco UI Builder resolves a value mapper it will attempt to do so from the global DI container. This means you can inject any dependencies that you require for your mapper. If there is no such type defined in the DI container, Umbraco UI Builder will fall-back to manually instantiating a new instance of value mapper.
 
 ## Defining a value mapper
 
