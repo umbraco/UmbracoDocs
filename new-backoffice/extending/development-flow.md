@@ -19,7 +19,7 @@ Make sure you have the following installed on your machine:
 
 ### Package manifests
 
-The main configuration for an extension is loaded through its package manifest. There are a number of ways to work with them including getting IntelliSense. Please make sure you have read the article [Package Manifest](package-manifest/) to learn more about this.
+The main configuration for an extension is loaded through its package manifest. There multiple ways to work with them including getting IntelliSense. Please make sure you have read the article [Package Manifest](package-manifest/) to learn more about this.
 
 ### Backoffice
 
