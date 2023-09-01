@@ -6,7 +6,7 @@ description: Configuring custom cards in Umbraco UI Builder, the backoffice UI b
 
 Custom cards allow you to perform more complex metric calculations and are defined via a class implementing the `KonstruktCard` base class.
 
-When Umbraco UI Builder resolves a card it will attempt to do so from the global DI container. This means you can inject any dependencies that you require for your card to calculate its value. If there is no such type defined in the DI container, Umbraco UI Builder will fall-back to manually instantiating a new instance of value mapper.
+When Umbraco UI Builder resolves a card it will attempt to do so from the global DI container. This means you can inject any dependencies that you require for your card to calculate its value. If there is no type defined in the DI container, Umbraco UI Builder will fall-back to manually instantiating a new instance of value mapper.
 
 ## Defining a custom card
 

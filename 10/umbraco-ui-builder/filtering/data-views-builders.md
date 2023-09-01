@@ -6,7 +6,7 @@ description: Configuring data views builders in Umbraco UI Builder, the backoffi
 
 Data views builders allow you to create a collection data views list dynamically at run time. By default, Umbraco UI Builder will use the hard-coded data views defined in your Umbraco UI Builder config. However, if you need to build your data views list dynamically, then this is when you'd use a data views builder.
 
-When Umbraco UI Builder resolves a data views builder it will attempt to do so from the global DI container. This means you can inject any dependencies that you require for your builder. If there is no such type defined in the DI container, Umbraco UI Builder will fall-back to manually instantiating a new instance of value mapper.
+When Umbraco UI Builder resolves a data views builder it will attempt to do so from the global DI container. This means you can inject any dependencies that you require for your builder. If there is no type defined in the DI container, Umbraco UI Builder will fall-back to manually instantiating a new instance of value mapper.
 
 ## Defining a data views builder
 

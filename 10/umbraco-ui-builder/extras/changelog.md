@@ -17,8 +17,8 @@ description: Changelog for Konstrukt/Umbraco UI Builder, the backoffice UI build
 **Date:** 2023-01-16  
 **Description:** Patch release with bug fixes
 
-- Moved encrypted properties implementation to the base repository class so encryption is honored when performing save/load operation directly against the repository API ([#44](https://github.com/outfielddigital/konstrukt/issues/44)). 
-- Made `SecurityHelper` swappable so you can use something other than the default `DataProtectionProvider` implementation that comes OOTB.
+- Moved encrypted properties implementation to the base repository class so encryption is honored when performing save/load operation directly against the repository API ([#44](https://github.com/outfielddigital/konstrukt/issues/44)).
+- Made `SecurityHelper` swappable so you can use something other than the default `DataProtectionProvider` implementation that comes out of the box (OOTB).
 - Fixed issue with advanced filters that use the lambda `ParameterReplacer` due to the parameter being replaced in the function, but not in the Lambda parameters list ([#45](https://github.com/outfielddigital/konstrukt/issues/45)).
 - Fixed date filters not working on mobile resolution devices ([#46](https://github.com/outfielddigital/konstrukt/issues/46)).
 
@@ -60,9 +60,9 @@ description: Changelog for Konstrukt/Umbraco UI Builder, the backoffice UI build
 **Date:** 2022-08-22  
 **Description:** Patch release with bug fixes
 
-- Fixed searchable properties not being searched in a case-insensitive way for repositories that don't used Umbraco's NPoco extension methods ([#36](https://github.com/outfielddigital/konstrukt/issues/36)).
+- Fixed searchable properties not being searched in a case-insensitive way for repositories that don't use Umbraco's NPoco extension methods ([#36](https://github.com/outfielddigital/konstrukt/issues/36)).
 - Fixed regression in Konstrukt repository not correctly combining filters.
-- Fixed exception due to `ServiceProvider` not getting passed to DTO mapper.
+- Fixed exception due to `ServiceProvider` not getting passed to Data transfer object (DTO) mapper.
 
 ## v1.5.0
 
@@ -91,14 +91,14 @@ description: Changelog for Konstrukt/Umbraco UI Builder, the backoffice UI build
 
 - Added [`WithSection`](../areas/sections.md#extending-an-existing-section) / [`WithTree`](../areas/trees.md#extending-an-existing-tree) API to create more logical API groupings and to set context for some APIs.
 - Added [`AddTree`](../areas/trees.md#adding-a-tree-to-an-existing-section) support to allow adding a tree to an existing section (currently only able to add 1 Konstrukt tree per section).
-- Added [Tree Group](../areas/trees.md#adding-a-group-to-a-tree) support to allow grouping root level tree folders/collections.
-- Added [Tab Sidebar](../collections/editors.md#configuring-a-sidebar-to-a-tab) support to allow showing meta data on the right-hand side of the editor.
+- Added [Tree Group](../areas/trees.md#adding-a-group-to-a-tree) support to allow grouping root-level tree folders/collections.
+- Added [Tab Sidebar](../collections/editors.md#configuring-a-sidebar-to-a-tab) support to allow showing metadata on the right-hand side of the editor.
 - Added file upload support to the actions dialog
-- Added a simple [Comma-separated values (CSV) Import](../actions/inbuilt-actions.md#konstruktimportentityaction) action
+- Added a basic [Comma-separated values (CSV) Import](../actions/inbuilt-actions.md#konstruktimportentityaction) action
 - Added [`HideLabel`](../collections/editors.md#hiding-the-label-of-a-field) support to editor fields to explicitly hide the label.
 - Added explicit Insert / Update methods to IKonstruktRepository. Internally we use these now instead of the Save method as the Save method isn't reliably able to determine if an entity is new.
-- Added better support for transient / scoped repository dependencies (i.e. better support for EF Core DB contexts which are by default registered as scoped)
-- Obsoleted root level APIs for `AddSection`, `AddDashboard` and `AddVirtualSubTree` which have now moved to sub-configurations of the [`WithSection`](../areas/sections.md#extending-an-existing-section) or [`WithTree`](../areas/trees.md#extending-an-existing-tree) APIs.
+- Added better support for transient / scoped repository dependencies (example: better support for EF Core DB contexts which are by default registered as scoped)
+- Obsoleted root-level APIs for `AddSection`, `AddDashboard` and `AddVirtualSubTree` which have now moved to sub-configurations of the [`WithSection`](../areas/sections.md#extending-an-existing-section) or [`WithTree`](../areas/trees.md#extending-an-existing-tree) APIs.
 - Fixed bug with DataViews resolving the wrong filter when using groups and the data view has the same name as a view in a different group. We now prefix the data view alias with the group name to ensure uniqueness across groups.
 - Fixed bug in child collections creating dialog thinking it was always editing an existing entity and so wrongfully trying to load an entity from the DB due to the fact the entity ID passed through to the dialog "0" when it should be "-1".
 
@@ -112,15 +112,17 @@ description: Changelog for Konstrukt/Umbraco UI Builder, the backoffice UI build
 - Fixed bug where connection strings with no provider cause an error
 
 ## v1.2.0
+
 **Date:** 2022-06-20  
 **Description:** Minor release with some breaking changes / additional features
 
-- Added `DeletedProperty` support where the column type is an `int`, and the value is a UNIX timestamp
+- Added `DeletedProperty` support where the column type is an `int`, and the value is a unix timestamp
 - Fixed bug with encrypted properties not handling `null` values
 - **[Breaking]** - Updated minimum Umbraco dependency to v10
 - **[Breaking]** - Updated UI assets to be a (RCL) Razor Compiled Library. **Be sure to clean your solution to remove old files**.
 
 ## v1.1.1
+
 **Date:** 2022-06-08  
 **Description:** Minor patch release with non-breaking changes
 

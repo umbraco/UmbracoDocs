@@ -58,7 +58,7 @@ collectionConfig.SetIconColor("blue");
 
 ## Defining an entity name
 
-Within Umbraco, it is expected that an entity has a name property. So we need to let Umbraco UI Builder know which property to use for the name. If the entity doesn't have a single name property, then it needs to know how to construct a name from an entity's other properties. We do this by using either the `SetNameProperty` or `SetNameFormat` methods on a `Collection` config builder instance.
+Within Umbraco, it is expected that an entity has a name property. So we need to let Umbraco UI Builder know which property to use for the name. If the entity doesn't have a name property, then it needs to know how to construct a name from an entity's other properties. We do this by using either the `SetNameProperty` or `SetNameFormat` methods on a `Collection` config builder instance.
 
 ### **SetNameProperty(Lambda nameProperytyExpression) : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
 
@@ -120,7 +120,7 @@ collectionConfig.SetDateModifiedProperty(p => p.DateModified);
 
 ## Configuring soft deletes
 
-By default, in Umbraco UI Builder any entity that is deleted via the Umbraco UI Builder repository is definitively removed from the system. Sometimes you want to keep the records in the data repository but wish to have them marked as deleted so they don't appear in UI. This is where the `SetDeletedProperty` method comes in handy.
+By default, in Umbraco UI Builder any entity that is deleted via the Umbraco UI Builder repository is definitively removed from the system. The `SetDeletedProperty` method can be used if needed to keep the records in the data repository despite having them marked as deleted. This is so they do not show the the UI.
 
 ### **SetDeletedProperty(Lambda deletedPropertyExpression) : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
 
