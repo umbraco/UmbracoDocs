@@ -1,10 +1,10 @@
 ---
-description: Property Editors available with Konstrukt, the backoffice UI builder for Umbraco.
+description: Property Editors available with Umbraco UI Builder, the backoffice UI builder for Umbraco.
 ---
 
 # Property Editors
 
-As well as the API for managing your custom data source, Konstrukt also comes with a number of property editors to help you work with your data inside Umbraco content nodes.
+As well as the API for managing your custom data source, Umbraco UI Builder also comes with some property editors. Those property editors help you work with your data inside Umbraco content nodes.
 
 The property editors available are:
 

@@ -1,10 +1,10 @@
 ---
-description: Configuring searching in Konstrukt, the backoffice UI builder for Umbraco.
+description: Configuring searching in Umbraco UI Builder, the backoffice UI builder for Umbraco.
 ---
 
 # Searching
 
-Beyond listing collection entities, there are times when you need to be able to locate specific entities within a collection and for that Konstrukt provides a simple search API. 
+Beyond listing collection entities, if you need to be able to locate specific entities within a collection then Umbraco UI Builder provides a search API.
 
 ![Search](../images/search.png)
 
