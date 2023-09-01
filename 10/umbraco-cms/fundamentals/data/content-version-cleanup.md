@@ -42,7 +42,7 @@ For sites with stricter requirements, it is possible to opt-out of both options 
 
 Additionally, it is possible to keep the feature enabled but mark specific versions to keep forever.
 
-It is worth noting that whilst we delete rows, we do not shrink database files or rebuild indexes. For upgraded sites with a lot of history you may wish to perform these tasks. I f they are not part of your regular database maintenance plan already.
+It is worth noting that whilst we delete rows, we do not shrink database files or rebuild indexes. For upgraded sites with a lot of history you may wish to perform these tasks. If they are not part of your regular database maintenance plan already.
 
 ## Overriding global settings
 

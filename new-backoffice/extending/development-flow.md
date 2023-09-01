@@ -19,7 +19,7 @@ Make sure you have the following installed on your machine:
 
 ### Package manifests
 
-The main configuration for an extension is loaded through its package manifest. There are a number of ways to work with them including getting IntelliSense. Please make sure you have read the article [Package Manifest](package-manifest/) to learn more about this.
+The main configuration for an extension is loaded through its package manifest. There multiple ways to work with them including getting IntelliSense. Please make sure you have read the article [Package Manifest](package-manifest/) to learn more about this.
 
 ### Backoffice
 
@@ -30,7 +30,7 @@ Extensions for the Backoffice are written in JavaScript/TypeScript. When working
 
 
 
-If you are working with a prerelease of Umbraco, make sure to use the [MyGet registry](https://www.myget.org/feed/umbracoprereleases/package/npm/@umbraco-cms/backoffice) to find the proper version, for example, this command will give you the typings for version 14.0.0--preview001:
+If you are working with a prerelease of Umbraco, make sure to use the [MyGet registry](https://www.myget.org/feed/umbracoprereleases/package/npm/@umbraco-cms/backoffice) to find the proper version. For example, this command will give you the typings for version 14.0.0--preview001:
 
 ```
 npm install -D --registry https://www.myget.org/F/umbracoprereleases/npm @umbraco-cms/backoffice@14.0.0--preview001
