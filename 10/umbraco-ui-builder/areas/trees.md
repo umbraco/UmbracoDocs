@@ -77,8 +77,8 @@ withSectionConfig.AddTreeAfter("member", "My Tree", "icon-folder", treeConfig =>
 
 Sets the trees icon color to the given color.  The options that are possible are `black`, `green`, `yellow`, `orange`, `blue` or `red`.
 
-{% hint style="info" %}
-**NB:** Only trees added to existing sections have an icon. Trees added to Umbraco UI Builder sections don't show a tree icon instead they go straight into displaying the tree contents.
+{% hint style="warning" %}
+Only trees added to existing sections have an icon. Trees added to Umbraco UI Builder sections don't show a tree icon instead they go straight into displaying the tree contents.
 {% endhint %}
 
 ````csharp
@@ -92,8 +92,8 @@ collectionConfig.SetIconColor("blue");
 
 Adds a group to the current tree with the given name.
 
-{% hint style="info" %}
-**NB:** Only Umbraco UI Builder section trees can configure groups, where trees added to existing sections cannot.
+{% hint style="warning" %}
+Only Umbraco UI Builder section trees can configure groups, where trees added to existing sections cannot.
 {% endhint %}
 
 ```csharp

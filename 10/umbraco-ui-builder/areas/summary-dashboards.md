@@ -21,6 +21,6 @@ Sets the collection to display on the summary dashboard.
 collectionConfig.ShowOnSummaryDashboard();
 ````
 
-{% hint style="info" %}
-**NB:** Only section root level collections can be shown on the summary dashboard.
+{% hint style="warning" %}
+Only section root level collections can be shown on the summary dashboard.
 {% endhint %}
