@@ -16,10 +16,10 @@ Read on to get an overview of the different ways in which you can check up on th
 
 We will release a prebuilt version of Umbraco during the development phase of the new Backoffice. This happens as we see fit and will be [introduced on our blog](https://umbraco.com/blog).
 
-There are quite a few caveats to working with the prerelease of Umbraco 14. [You can read much more about the prereleases here](alpha-release.md).
+There are a few caveats to working with the prerelease of Umbraco 14. [You can read much more about the prereleases here](alpha-release.md).
 
 You can also skip directly to the article [Installing Preview Builds](../../fundamentals/setup/installation/installing-preview-builds.md) to learn more about how to work with the prelease.
 
 ### Building from source
 
-If you want to live on the bleeding edge and follow the latest development, you should check out [our public GitHub repository](https://github.com/umbraco/Umbraco.CMS.Backoffice) which will explain in more detail how to build and run the new Backoffice on its own or target an Umbraco instance.
+If you want to live on the bleeding edge and follow the latest development, you should check out [our public GitHub repository](https://github.com/umbraco/Umbraco.CMS.Backoffice). This article will explain in more detail how to build and run the new Backoffice on its own or target an Umbraco instance.
