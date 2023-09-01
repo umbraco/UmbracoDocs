@@ -22,4 +22,4 @@ You can also skip directly to the article [Installing Preview Builds](../../fund
 
 ### Building from source
 
-If you want to live on the bleeding edge and follow the latest development, you should check out [our public GitHub repository](https://github.com/umbraco/Umbraco.CMS.Backoffice) which will explain in more detail how to build and run the new Backoffice on its own or target an Umbraco instance.
+If you want to live on the bleeding edge and follow the latest development, you should check out [our public GitHub repository](https://github.com/umbraco/Umbraco.CMS.Backoffice). This article will explain in more detail how to build and run the new Backoffice on its own or target an Umbraco instance.
