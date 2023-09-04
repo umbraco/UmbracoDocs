@@ -58,8 +58,7 @@ You might know the open source backoffice UI builder, UI-O-Matic, and wondering 
 
 | Feature| Umbraco UI Builder | UI-O-Matic |
 | -- | -- | -- |
-| Supported by | Outfield Digital Ltd + Community | Community |
-| Our Umbraco Forum | Yes | No |
+| Supported by | Umbraco HQ + Community | Community |
 | Email Support | Yes - Commercial | Yes - Personal |
 | Issue Tracker | Yes | Yes |
 | Documentation | Yes | Yes |

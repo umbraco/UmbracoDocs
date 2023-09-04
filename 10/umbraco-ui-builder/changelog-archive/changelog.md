@@ -1,5 +1,5 @@
 ---
-description: Changelog for Konstrukt/Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: Changelog for Konstrukt, the backoffice UI builder for Umbraco.
 ---
 
 # Changelog

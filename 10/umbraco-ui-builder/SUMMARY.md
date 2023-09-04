@@ -1,6 +1,8 @@
 # Table of contents
 
 * [Umbraco UI Builder Documentation](README.md)
+* [Known Issues](known-issues.md)
+* [Release Notes](release-notes.md)
 
 ## Getting Started
 
@@ -9,7 +11,7 @@
 * [Configuration](getting-started/configuration.md)
 * [User Interface](getting-started/user-interface.md)
 
-## Guides
+## How-to Guides
 
 * [Creating your first integration](guides/creating-your-first-integration.md)
 
@@ -72,10 +74,8 @@
 * [Repositories](advanced/repositories.md)
 * [Events](advanced/events.md)
 
-## Extras
+## Miscellaneous
 
-* [Conventions](extras/conventions.md)
-* [Umbraco Aliases](extras/umbraco-aliases.md)
-* [Umbraco UI Builder vs UI-O-Matic](extras/konstrukt-vs-uiomatic.md)
-* [Known Issues](extras/known-issues.md)
-* [Changelog](extras/changelog.md)
+* [Conventions](miscellaneous/conventions.md)
+* [Umbraco Aliases](miscellaneous/umbraco-aliases.md)
+* [Umbraco UI Builder vs UI-O-Matic](miscellaneous/konstrukt-vs-uiomatic.md)

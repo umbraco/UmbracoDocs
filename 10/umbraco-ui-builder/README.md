@@ -22,7 +22,7 @@ Once you have Umbraco UI Builder installed and are wondering "What next?" then y
 
 Use the main menu to dive deeper into Umbraco UI Builder and get to know all of its features in detail. You can then jump to the specific topic you are interested in to find out more.
 
-Finally, for all other resources/useful information you can head over to the [Extras](./extras/umbraco-aliases.md) section.
+Finally, for all other resources/useful information you can head over to the [Miscellaneous](./miscellaneous/conventions.md) section.
 
 ## Getting Help
 
