@@ -256,7 +256,7 @@ renderTimestamp(t: string) {
 }
 ```
 
-To make it a bit easier to read, let's add a little bit of css as well:
+To make it a bit easier to read, let's add a little bit of CSS as well:
 
 ```typescript
 renderTimestamp(t: string {
