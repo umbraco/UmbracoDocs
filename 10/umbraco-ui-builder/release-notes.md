@@ -18,6 +18,6 @@ In this section, you can find the release notes for each version of Umbraco UI B
 
 ### versions (date)
 
-* description
+* Description
 
 </details>
