@@ -80,5 +80,5 @@ The format function can be used within a form's magic string in the same way as 
 For the example provided, it would be used like this:
 
 ```
-[#field bound: 1: 10]
+[#field | bound: 1: 10]
 ```
