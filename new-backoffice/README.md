@@ -6,7 +6,7 @@ description: >-
 
 # The new Umbraco Backoffice
 
-Bellissima is currently targeting Umbraco 14 for release in May 2024. It will look more or less the same but be built on modern technology using Umbraco's own UI Library built for the purpose using Web Components.
+Bellissima is currently targeting Umbraco 14 for release in May 2024. It will look almost the same but be built on modern technology using Umbraco's own UI Library built for the purpose using Web Components.
 
 On this site, we have collected all resources related to the ongoing development of the new backoffice. You can also find material to help you get into contributing if you want to put your own touch on the project.
 
