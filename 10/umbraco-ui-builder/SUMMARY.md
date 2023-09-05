@@ -10,6 +10,7 @@
 * [Installation](getting-started/installation.md)
 * [Configuration](getting-started/configuration.md)
 * [User Interface](getting-started/user-interface.md)
+* [Licensing](getting-started/licensing-model.md)
 
 ## How-to Guides
 

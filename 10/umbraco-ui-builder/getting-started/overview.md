@@ -18,12 +18,4 @@ At this time, the minimum requirements for using Umbraco UI Builder are as follo
 
 ## Versioning
 
-It's important to understand Umbraco UI Builder's versioning strategy so that you can perform informed upgrades during the life of a project. For Umbraco UI Builder, our version numbers can be interpreted as follows **Product.Feature.Patch**.
-
-* **Product** - A distinct version of the Umbraco UI Builder product that has significant breaking changes from the product version before it.
-* **Feature** - A version with one or more new features that have been added. The release could be breaking or non-breaking so it is important to review the changelog before upgrading to a new feature release.
-* **Patch** - A version consisting of minor, non-breaking bug fixes.
-
-{% hint style="info" %}
-**A note about SemVer:** It is common within the development community that version numbers should follow the [SemVer](https://semver.org/) specification. However, we don't feel that SemVer fits with how we wish to portray our versioning information. It is important then that developers understand the differences, especially when upgrading to a Feature/Minor release. Also, for what the SemVer expectation would be for it to be non-breaking which may not be the case.
-{% endhint %}
+Umbraco UI Builder follows the same [semantic versioning](https://semver.org/) as Umbraco CMS. You can find more information about this on the [Versioning and Release Cadence page](https://umbraco.com/products/knowledge-center/versioning-and-release-cadence/)
