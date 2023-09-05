@@ -38,18 +38,18 @@ There are a few differences as to what the licenses cover:
 * The license also includes `localhost` and `*.local` as a valid domain.
 
 {% hint style="info" %}
-If you have multiple backoffice domains pointing at the same installation, you have the option to purchase and [add **additional domains**](licensing-model.md#add-additional-domains) to your license.
+If you have multiple backoffice domains pointing at the same installation, you can purchase and [add **additional domains**](licensing-model.md#add-additional-domains) to your license.
 
 This is an add-on domain for existing licenses. Refunds will not be given for this product.
 {% endhint %}
 
 ## Configuring your license
 
-You can purchase a license via the [Umbraco UI Builder](https://umbraco.com/products/umbraco-commerce/) project page. A member of the [SUITS team](mailto:suits@umbraco.com) will manage this process. In the process, you will need to provide all domains you wish to have covered by the license such as primary and staging/qa domains. You should then receive a license code to be installed in your solution.
+You can purchase a license via the [Umbraco UI Builder](https://umbraco.com/products/umbraco-commerce/) project page. A member of the [Sales team](mailto:suits@umbraco.com) will manage this process. In the process, you will need to provide all domains you wish to have covered by the license such as primary and staging/qa domains. You should then receive a license code to be installed in your solution.
 
 ### Add additional domains
 
-If you require to add addition domains to the license, please reach out to a member of the [SUITS team](mailto:suits@umbraco.com) with your request and they will manage this process.
+If you require to add additional domains to the license, please reach out to a member of the [Sales team](mailto:suits@umbraco.com). They will manage your request and take care of the process.
 
 ## Installing your license
 
