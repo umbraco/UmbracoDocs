@@ -53,7 +53,7 @@ Upgrade tutorial Umbraco 9 to 10 on Cloud
 * Go to the project in the Umbraco Cloud portal.
 * Navigate to **Settings** -> **Advanced**.
 * Scroll down to the **Runtime Settings** section.
-* **Ensure that the latest version of .NET is enabled** for each environment on your Cloud project.
+* **Ensure that the latest version of .NET is enabled** for each environment on your Cloud project, by selecting it from the dropdown.
 
 <figure><img src="../../.gitbook/assets/runtime-settings.png" alt=""><figcaption><p>Runtime settings</p></figcaption></figure>
 
