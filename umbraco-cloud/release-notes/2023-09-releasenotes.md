@@ -10,6 +10,8 @@ We are thrilled to announce an important update to Umbraco Cloud’s _Secrets Ma
 
 The new "Shared Secrets" panel lets you define secrets that are critical during the build process of your Umbraco solution. These secrets are available across all environments, making it easier to manage configurations that are common to each environment.
 
+![Shared Secrets](images/SharedSecrets.gif)
+
 **The key benefits of shared secrets are:**
 - **Universal Access**: Shared secrets offer you the convenience of a one-time setup. Once a shared secret is set, it will be seamlessly integrated into existing environments and any new environment you create.
 - **Enhanced Security**: Just like environment-specific secrets, shared secrets are securely stored in Azure Key Vault, with end-to-end encryption, ensuring that they are only exposed during runtime.
