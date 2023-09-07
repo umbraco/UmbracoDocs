@@ -101,7 +101,7 @@ exceptions:
   - MIT
   - CTRL
   - SPACE
-  - HTML
+  - ENTER
   - ASCII
   - SSL
   - VIP
@@ -123,4 +123,9 @@ exceptions:
   - JWT
   - DEBUG
   - INFO
+  - TEMP
+  - RFC
+  - GIF
+  - SAS
+  - GDPR
 
