@@ -73,7 +73,7 @@ The final view should look like this:
 {% hint style="info" %}
 If you do not have Starter Kit installed, or experience issues with the properties not being picked up/showing up in HTML feel free to remove the fallback to siteName.
 
-If your meta properties do not show up on social media, make sure to inspect source HTML and make sure there are no inline HTML tags in `og:title`, `og:description` etc.
+If your meta properties do not show up on social media, make sure to inspect source HTML. Make sure there are no inline HTML tags in `og:title`, `og:description` etc.
 {% endhint %}
 
 **Pro tip:** To keep the lesson short and to the point, we have left out `null`-checks from the code examples. So remember to fill in the Open Graph properties, in the content section, to avoid exceptions when viewing the page.
