@@ -51,7 +51,7 @@ To set up scheduled publishing, follow these steps:
 3. Select **Schedule**.
 4.  In the **Scheduled Publishing** window, set the date and time in the **Publish at** field.
 
-    ![Schedualed publishing.](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Schedule\_publishing\_v9.png)
+    ![Scheduled publishing.](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Schedule\_publishing\_v9.png)
 5. Select **Schedule**.
 
 #### 2: Publish with descendants
@@ -90,7 +90,7 @@ To set up scheduled unpublishing, follow these steps:
 3. Select **Schedule**.
 4.  In the **Scheduled Publishing** window, set the date and time in the **Unpublish at** field.
 
-    ![Schedualed unpublishing.](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Schedule\_Unpublishing\_v9.png)
+    ![Scheduled unpublishing.](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Schedule\_Unpublishing\_v9.png)
 5. Select **Schedule**.
 
 ## Comparing Content between environments

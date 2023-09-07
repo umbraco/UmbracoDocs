@@ -40,6 +40,6 @@ To set the Document Type properties:
 
 Reload your homepage to view the content. You should see something similar like the image below:
 
-![Displaying Documen Type Properties](../../../../10/umbraco-cms/tutorials/creating-a-basic-website/images/figure-22-displaying-document-type-properties.png)
+![Displaying Document Type Properties](../../../../10/umbraco-cms/tutorials/creating-a-basic-website/images/figure-22-displaying-document-type-properties.png)
 
 Now, you can go back and add additional fields or update existing fields in the Document Type. Fill them out in the content node and then add them in the template to display the data in the website.
