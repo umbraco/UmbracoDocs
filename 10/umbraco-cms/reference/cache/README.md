@@ -35,11 +35,11 @@ The interface consists of the following methods:
 * `void RefreshAll();`
   * This would invalidate or refresh all caches of the caching type that this `ICacheRefresher` is created for. For example, if you were caching `Employee` objects, this method would invalidate all `Employee` caches.
 * `void Refresh(int Id);`
-  * This would invalidate or refresh a single cache for an object with the provided INT id.
+  * This would invalidate or refresh a single cache for an object with the provided `int` id.
 * `void Refresh(Guid Id);`
   * This would invalidate or refresh a single cache for an object with the provided GUID id.
 * `void Remove(int Id);`
-  * This would invalidate a single cache for an object with the provided INT id. In many cases Remove and Refresh perform the same operation but in some cases `Refresh` doesn't remove/invalidate a cache entry, it might update it. `Remove` is specifically used to remove/invalidate a cache entry.
+  * This would invalidate a single cache for an object with the provided `int` id. In many cases Remove and Refresh perform the same operation but in some cases `Refresh` doesn't remove/invalidate a cache entry, it might update it. `Remove` is specifically used to remove/invalidate a cache entry.
 
 _Some of these methods may not be relevant to the needs of your own cache invalidation so not all of them may need to perform logic._
 
