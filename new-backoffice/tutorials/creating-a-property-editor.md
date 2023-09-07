@@ -8,7 +8,7 @@ description: A guide to creating a property editor in Umbraco
 This page is a work in progress. It will be updated as the software evolves.
 {% endhint %}
 
-This guide explains how to set up a property editor, hook it into Umbraco's Data Types, create a basic property editor, and how we can test our property editor.
+This guide explains how to set up a property editor and hook it into Umbraco's Data Types. It also covers creating a basic property editor and how we can test our property editor.
 
 The steps we will go through in part 1 are:
 
@@ -30,7 +30,7 @@ There are a lot of parallels with Creating a Custom Dashboard. The tutorial [Cre
 
 ### The End Result
 
-By the end of this tutorial, we will have a Suggestions data type running inside of Umbraco, registered as a Data Type in the backoffice, and assigned to a Document Type. The data type can create and suggest values.
+At the tutorial's end, we'll have a working Suggestions Data Type integrated into Umbraco's backoffice and assigned to a Document Type. The Data Type can create and suggest values.
 
 ### 1. Setting up a plugin
 
