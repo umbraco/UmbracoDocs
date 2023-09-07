@@ -6,11 +6,31 @@ description: >-
 
 # Language Files & Localization
 
-Language files are used to translate:
+Language files are XML files used to translate:
 - The Umbraco backoffice user interface so that end users can use Umbraco in their native language. This is particularly important for content editors who do not speak English.
 - The member identity errors in an Umbraco website enabling end users to use Umbraco in the website language.
+- Add translations for your packages [see here for docs on how to include translations for your own package](packages/language-files-for-packages.md)
+- Override existing language files
 
-If you are a package developer, [see here for docs on how to include translations for your own package](packages/language-files-for-packages.md).
+This is an example of such a language file, the most important parts are the `alias` fields of the `<area>` and `<key>` elements. This is what you need to retrieve the values from .NET or Angular.
+```xml
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<language alias="en" intName="English (UK)" localName="English (UK)" lcid="" culture="en-GB">
+    <creator>
+        <name>The Umbraco community</name>
+        <link>https://our.umbraco.com</link>
+    </creator>
+    <area alias="actions">
+        <key alias="assignDomain">Culture and Hostnames</key>
+        <key alias="auditTrail">Audit Trail</key>
+    </area>
+    <area alias="buttons">
+        <key alias="buttonSave">Save</key>
+        <key alias="buttonCancel">Cancel</key>
+    </area>
+    ...
+</language>
+```
 
 ## Supported Languages
 
