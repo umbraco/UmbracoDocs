@@ -152,4 +152,4 @@ This section is still being updated.
 
 With all of the steps completed, you should have a functional dashboard welcoming your users to the Backoffice.
 
-In the next session, we will look into how to add more functionality to the dashboard using some of the resources and services that Umbraco offers.
+In the next session, we will look into how to add functionality to the dashboard using some of the resources and services that Umbraco offers.
