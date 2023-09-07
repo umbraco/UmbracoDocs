@@ -23,6 +23,7 @@ exceptions:
   - MVC
   - GET
   - ASP
+  - ADO
   - REST
   - HTTP
   - HTTPS
@@ -62,3 +63,64 @@ exceptions:
   - RGBA
   - IDE
   - CPU
+  - RTE 
+  - JIT
+  - MSDN
+  - CMD
+  - SMTP
+  - TLS
+  - HSTS
+  - GUI
+  - RAM
+  - TCP
+  - CNAME
+  - TLS
+  - TDE
+  - CIDR
+  - MFA
+  - CDN
+  - CAA
+  - SVG 
+  - SEO
+  - AAAA
+  - WAF
+  - TXT
+  - TTL
+  - SDK
+  - SCM
+  - PUT
+  - POST
+  - GET
+  - DELETE
+  - BCC
+  - RCL 
+  - MIME
+  - YSOD
+  - DTO
+  - ZIP
+  - MIT
+  - CTRL
+  - SPACE
+  - HTML
+  - ASCII
+  - SSL
+  - VIP
+  - LINQ
+  - CRUD
+  - AKA
+  - FIPS
+  - CSV
+  - DFS
+  - PVC
+  - POCO
+  - SUITS
+  - UUI
+  - EOL
+  - LTS
+  - TORT
+  - UTF
+  - CLR
+  - JWT
+  - DEBUG
+  - INFO
+
