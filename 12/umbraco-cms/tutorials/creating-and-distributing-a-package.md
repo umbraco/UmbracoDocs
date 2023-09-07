@@ -212,7 +212,7 @@ You don't have to worry too much about guid and orgName, they are references to 
 
 \~/App\_Plugins/PackageWorkshop/Dashboard/main.css \~/App\_Plugins/PackageWorkshop/ContentApp/main.css
 
-Both would have the same name and be thrown in the root of the zip file - this would cause a conflict and Umbraco would rename them to randomly generated names. These names would correspond to the `guid` property, while the `orgName` and `orgPath` would make up the original names - and would be where the package would place and name the file when being installed.
+Both would have the same name and be thrown in the root of the zip file - this would cause a conflict and Umbraco would rename them to randomly generated names. These names would correspond to the `guid` property, while the `orgName` and `orgPath` would make up the original names. These would be where the package would place and name the file when being installed.
 
 ## Creating a draft package on Our
 

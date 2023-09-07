@@ -4,7 +4,7 @@ description: Inversion of Control/Dependency Injection in Umbraco
 
 # Inversion of Control / Dependency injection
 
-Umbraco 9 supports dependency injection out of the box. Umbraco uses the [ASP.NET Core built-in dependency injection](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-5.0#service-lifetimes), this means that you don't have to install an external package to register and use your dependencies, and if you're familiar with ASP.NET Core, the experience will be similar.
+Umbraco 9 supports dependency injection out of the box. Umbraco uses the [ASP.NET Core built-in dependency injection](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-5.0#service-lifetimes). This means that you don't have to install external packages to register and use your dependencies. If you're familiar with ASP.NET Core, the experience will be similar.
 
 `IUmbracoBuilder` is a Umbraco-specific abstraction on top of the `IServiceCollection`, its purpose is to aid in adding and replacing Umbraco-specific services, such as notification handlers, filesystems, server role accessor, and so on. You can access the `IServiceCollection` directly to add your custom services through the `Services` property, see below for a concrete example:
 
