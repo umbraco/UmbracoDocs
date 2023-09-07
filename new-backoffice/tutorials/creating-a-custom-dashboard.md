@@ -107,7 +107,7 @@ Please be aware that the umbraco-package.json file is loaded into memory when Um
 
 Next, inside the `src` folder let's create a new ts file called `welcome-dashboard.element.ts`. This file is our web component and will contain all of our HTML, CSS, and logic.
 
-Let's start with setting it the web component with some simple HTML and CSS:
+Let's start with setting it the web component with some HTML and CSS:
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
