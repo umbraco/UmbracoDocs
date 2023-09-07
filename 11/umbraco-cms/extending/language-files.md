@@ -107,7 +107,7 @@ Using core or custom language keys from your code:
 
 ### From .NET
 
-`ILocalizedTextService` is used to localize strings, and is available through dependency injection. First, inject the service, and then use the `Localize()` method available in the namespace `Umbraco.Extensions` to localize the string with the format \[area]/\[key]:
+`ILocalizedTextService` is used to localize strings, and is available through dependency injection. First, inject the service, and then use the `Localize()` method available in the namespace `Umbraco.Extensions` to localize the string with the format `\[area]/\[key]`:
 
 ```csharp
 public MyClass(ILocalizedTextService textservice)
@@ -115,10 +115,11 @@ public MyClass(ILocalizedTextService textservice)
     var localizedLabel = textservice.Localize("dialog/mykey");
 }
 ```
+In this example it will try to get the value of the key `mykey` in the area `dialog`.
 
 ### From Angular
 
-In the Umbraco backoffice UI, labels can be localized with the `localize` directive:
+In the Umbraco backoffice UI, labels can be localized with the `localize` directive. The syntax is slightly different when compared to the .NET variant. Here the syntax is `\[area]_\[key]`:
 
 ```xml
 <button>
