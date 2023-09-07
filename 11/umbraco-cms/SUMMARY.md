@@ -374,6 +374,7 @@
   * [Setup Umbraco for a FIPS Compliant Server](reference/security/setup-umbraco-for-a-fips-server.md)
   * [HTTPS](reference/security/ssl-https.md)
   * [Two-factor Authentication](reference/security/two-factor-authentication.md)
+  * [Server-side file validation](reference/security/serverside-file-validation.md)
 * [Scheduling](reference/scheduling.md)
 * [Common Pitfalls & Anti-Patterns](reference/common-pitfalls.md)
 * [API Documentation](reference/api-documentation.md)

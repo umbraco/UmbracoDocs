@@ -1,5 +1,4 @@
 ---
-versionFrom: 11.4.2
 meta.Title: "Server-side File Validation"
 description: "This section describes how you can implement File Validation to improve"
 ---
@@ -7,22 +6,21 @@ description: "This section describes how you can implement File Validation to im
 # Validating file content before saving to disk
 Sometimes it might be necessary to validate the contents of a file before it gets saved to disk when uploading trough the backoffice.
 
-To help with this, Umbraco supplies a `FileStreamSecurityValidator` that runs all registered `IFileStreamSecurityAnalyzer` on the file streams it receives from it's different file upload endpoints.
-When any of the analyzers deem the file to be unsafe, the endpoint disregards the file and where appropriate shows a relevant validation message.
+To help with this, Umbraco supplies a `FileStreamSecurityValidator` that runs all registered `IFileStreamSecurityAnalyzer` implementations on the file streams it receives from it's different file upload endpoints.
+When any of the analyzers deem the file to be unsafe, the endpoint disregards the file and shows a relevant validation message where appropriate. This all happens in memory before the stream is written to a temporary file location.
 
 ### Implementing a FileStreamSecurityValidator
-The `IFileStreamSecurityAnalyzer` consists of 2 methods:
-- `FileContentMatchesFileType`: This method should return true if your validator believes it is responsible for checking this file
-- `IsConsideredSafe`: This method should return false if the analyzer finds reason not to trust the file
+The `IFileStreamSecurityAnalyzer` needs a single method to be implemented:
+- `IsConsideredSafe`: This method should return false if the analyzer finds a reason not to trust the file
 
 ### Example FileStreamSecurityValidator
 The following class shows how one could potentially guard against Cross-site scripting(XSS) vulnerabilities in an svg file.
 
-```
+```csharp
 public class SvgXssSecurityAnalyzer : IFileStreamSecurityAnalyzer
 {
 
-    public bool FileContentMatchesFileType(Stream fileStream)
+    private bool HasMatchingStartAndEndTags(Stream fileStream)
     {
         var startBuffer = new byte[256];
         var endBuffer = new byte[256];
@@ -44,6 +42,12 @@ public class SvgXssSecurityAnalyzer : IFileStreamSecurityAnalyzer
     /// </summary>
     public bool IsConsideredSafe(Stream fileStream)
     {
+        // reduce memory footprint by partially reading the file
+        if(HasMatchingStartAndEndTags(fileStream) == false){
+            return false;
+        }
+
+        fileStream.Seek(0, SeekOrigin.Begin);
         var streamReader = new StreamReader(fileStream); // do not use a using as this will dispose of the underlying stream
         var fileContent = streamReader.ReadToEnd();
         return !(fileContent.Contains("<script") && fileContent.Contains("/script>"));
