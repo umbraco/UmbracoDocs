@@ -422,61 +422,60 @@ Which properties to expand and therefore include in the output if they refer to 
 {% endswagger-response %}
 {% endswagger %}
 
+{% swagger method="get" path="/content/item" baseUrl="/umbraco/delivery/api/v1" summary="Gets content item(s) by id" %}
+{% swagger-description %}
+Returns single or multiple items by id.
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="id" type="String Array" required="true" %}
+GUIDs of the content items
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Accept-Language" type="String" required="false" %}
+Requested culture
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Api-Key" type="String" required="false" %}
+Access token
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Preview" type="Boolean" required="false" %}
+Whether draft content is requested
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Start-Item" type="String" required="false" %}
+URL segment or GUID of the root content item
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="expand" type="String" required="false" %}
+Which properties to expand in the response
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="List of content items" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="401: Unauthorized" description="Missing permissions after protection is set up" %}
+
+{% endswagger-response %}
+
+{% endswagger %}
+
 {% swagger method="get" path="/content" baseUrl="/umbraco/delivery/api/v1" summary="Gets content item(s) from a query" %}
 {% swagger-description %}
 Returns single or multiple items.
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="fetch" type="String" required="false" %}
-Structural query string option (e.g.
-
-`ancestors`
-
-, 
-
-`children`
-
-, 
-
-`descendants`
-
-)
+Structural query string option (e.g. `ancestors`, `children`, `descendants`)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="filter" type="String Array" required="false" %}
-Filtering query string options (e.g. 
-
-`contentType`
-
-, 
-
-`name`
-
-)
+Filtering query string options (e.g. `contentType`, `name`)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="sort" type="String Array" required="false" %}
-Sorting query string options (e.g. 
-
-`createDate`
-
-, 
-
-`level`
-
-, 
-
-`name`
-
-, 
-
-`sortOrder`
-
-, 
-
-`updateDate`
-
-)
+Sorting query string options (e.g. `createDate`, `level`, `name`, `sortOrder`, `updateDate`)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="skip" type="Integer" required="false" %}
