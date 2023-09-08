@@ -6,7 +6,7 @@ description: Learn how to create your first extension for Umbraco.
 
 This guide will help you set up your first extension using vanilla JavaScript or Vite, Typescript, and Lit and is part of the prerequisites for [Creating a Property Editor](creating-a-property-editor/) and [Creating a Custom Dashboard](creating-a-custom-dashboard.md) tutorials.
 
-## The end result:
+## The end result
 
 By the end of this tutorial, we will have an extension up and running with a Web Component made with vanilla JavaScript or set up with Vite, Typescript, and Lit.
 
