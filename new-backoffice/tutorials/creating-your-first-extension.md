@@ -4,21 +4,21 @@ description: Learn how to create your first extension for Umbraco.
 
 # Creating your first extension
 
-This guide will help you set up your first extension using vanilla Javascript or Vite, Typescript, and Lit and is part of the prerequisites for [Creating a Property Editor](creating-a-property-editor/) and [Creating a Custom Dashboard](creating-a-custom-dashboard.md) tutorials.
+This guide will help you set up your first extension using vanilla JavaScript or Vite, Typescript, and Lit and is part of the prerequisites for [Creating a Property Editor](creating-a-property-editor/) and [Creating a Custom Dashboard](creating-a-custom-dashboard.md) tutorials.
 
 ## The end result:
 
-By the end of this tutorial, we will have an extension up and running with a Web Component made with vanilla Javascript or set up with Vite, Typescript, and Lit.
+By the end of this tutorial, we will have an extension up and running with a Web Component made with vanilla JavaScript or set up with Vite, Typescript, and Lit.
 
 {% hint style="info" %}
-If you want to set up an extension with Vite, Typescript, and Lit, skip the "Extension with Vanilla Javascript" section.
+If you want to set up an extension with Vite, Typescript, and Lit, skip the "Extension with Vanilla JavaScript" section.
 {% endhint %}
 
 ## App\_Plugins
 
 All extensions will go into a folder called `App_Plugins`. If you don't have this folder, you can create it at the root of your Umbraco project.
 
-## Extension with Vanilla Javascript
+## Extension with Vanilla JavaScript
 
 We consider it best practice to use at least TypeScript and some kind of build system to write your extensions, but since Umbraco's extension system is written entirely in JavaScript, it is therefore possible to create extensions with vanilla JavaScript. For the sake of posterity, we will briefly go through what that looks like:
 
@@ -164,7 +164,7 @@ export default defineConfig({
 });
 ```
 
-This alters the Vite default output into a "library mode", where the output is a javascript file with the same name from package.json.
+This alters the Vite default output into a "library mode", where the output is a JavaScript file with the same name from package.json.
 
 {% hint style="info" %}
 You can read more about [Vite's build options here](https://vitejs.dev/config/build-options.html#build-lib).
