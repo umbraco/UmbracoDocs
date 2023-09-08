@@ -4,11 +4,11 @@ description: Learn how to create your first extension for Umbraco.
 
 # Creating your first extension
 
-This guide will help you set up your first extension using vanilla JavaScript or Vite, Typescript, and Lit and is part of the prerequisites for [Creating a Property Editor](creating-a-property-editor/) and [Creating a Custom Dashboard](creating-a-custom-dashboard.md) tutorials.
+This guide will help you set up your first extension using vanilla JavaScript or Vite, Typescript, and Lit. This is part of the prerequisites for [Creating a Property Editor](creating-a-property-editor/) and [Creating a Custom Dashboard](creating-a-custom-dashboard.md) tutorials.
 
 ## The end result
 
-By the end of this tutorial, we will have an extension up and running with a Web Component made with vanilla JavaScript or set up with Vite, Typescript, and Lit.
+By the end of this tutorial, we will have an extension up and running. This contains a Web Component made with vanilla JavaScript or set up with Vite, Typescript, and Lit.
 
 {% hint style="info" %}
 If you want to set up an extension with Vite, Typescript, and Lit, skip the "Extension with Vanilla JavaScript" section.
@@ -20,7 +20,7 @@ All extensions will go into a folder called `App_Plugins`. If you don't have thi
 
 ## Extension with Vanilla JavaScript
 
-We consider it best practice to use at least TypeScript and some kind of build system to write your extensions, but since Umbraco's extension system is written entirely in JavaScript, it is therefore possible to create extensions with vanilla JavaScript. For the sake of posterity, we will briefly go through what that looks like:
+We consider it best practice to use at least TypeScript and some kind of build system for extension development. However, Umbraco's extension system is written in JavaScript. Therefore, it's possible to create extensions with vanilla JavaScript. For the sake of posterity, we will briefly go through what that looks like:
 
 Go to the `App_Plugins` folder and create a new folder called `my-package`
 
@@ -108,7 +108,7 @@ export default class MyDashboardElement extends UmbElementMixin(HTMLElement) {
 customElements.define('my-custom-dashboard', MyDashboardElement);
 ```
 
-The code above defines a Web Component that is then registered with the element name my-custom-dashboard and can eventually be inserted in a browser using a code like this:
+The code above defines a Web Component as `my-custom-dashboard` for later insertion into a browser using a similar code:
 
 ```html
 <my-custom-dashboard></my-custom-dashboard>
@@ -118,19 +118,19 @@ Umbraco does this for you automatically, since we already referred to the "eleme
 
 ### Running it
 
-Now that we have a JavaScript entry module and linked it up through the manifest file, we are ready to start up the website. Press the F5 button in your favorite IDE or run `dotnet run` in a command line, and you should be able to see the new dashboard show up in the Content section.
+Now that we have a JavaScript entry module and linked it up through the manifest file, we are ready to start up the website. Press the F5 button in your favorite IDE or run `dotnet run` in a command line. You should be able to see the new dashboard show up in the Content section.ent section.
 
 You can read more on how to run Umbraco in the [Installation article](../fundamentals/setup/installation/).
 
 ## Extension with Vite, Typescript, and Lit
 
-The best way to build extensions is to use a setup with at least TypeScript and a build system. Umbraco expects you to hand it a native Web Component to wrap extensions and a really good way to build those is to use a library such as [Lit](https://lit.dev/) which we will be using throughout this guide.
+The best way to build extensions is to use a setup with at least TypeScript and a build system. Umbraco expects you to hand it a native Web Component to wrap extensions. A really good way to build those is to use a library such as [Lit](https://lit.dev/) which we will be using throughout this guide.
 
 ### Getting Started With Vite
 
-Vite comes with a set of really good presets to get you quickly up and running with libraries and languages such as Lit, Svelte, and vanilla Web Components with both JavaScript and TypeScript.
+Vite comes with a set of really good presets to get you quickly up and running. Libraries and languages such as Lit, Svelte, and vanilla Web Components are included with both JavaScript and TypeScript.
 
-We will use their preset of Lit and TypeScript here, so navigate to the root of your project and create a folder called "src" (or wherever you want to keep source files) and go into that folder and paste the following in the command line:
+We will use their preset of Lit and TypeScript here. So, navigate to the root of your project and create a folder called "src" (or wherever you want to keep source files). Go into that folder and paste the following in the command line.
 
 ```bash
 npm create vite@latest -- --template lit-ts my-package
@@ -252,6 +252,6 @@ The code above tells Umbraco to load an extension of type "dashboard" through th
 
 ### Running it
 
-Now that we have a JavaScript entry module and linked it up through the manifest file, we are ready to start up the website. Press the F5 button in your favorite IDE or run `dotnet run` in a command line, and you should be able to see the new dashboard show up in the Content section.
+Now that we have a JavaScript entry module and linked it up through the manifest file, we are ready to start up the website. Press the F5 button in your favorite IDE or run `dotnet run` in a command line. Now you should be able to see the new dashboard show up in the Content section.
 
 You can read more on how to run Umbraco in the [Installation article](../fundamentals/setup/installation/).
