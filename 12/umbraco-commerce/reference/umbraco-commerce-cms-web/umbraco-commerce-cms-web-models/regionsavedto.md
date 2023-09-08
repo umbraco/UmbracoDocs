@@ -10,7 +10,7 @@ public class RegionSaveDto : RegionDto, IValidatableObject
 
 **Inheritance**
 
-* class [RegionDto](regiondto.md)
+* Class [RegionDto](regiondto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

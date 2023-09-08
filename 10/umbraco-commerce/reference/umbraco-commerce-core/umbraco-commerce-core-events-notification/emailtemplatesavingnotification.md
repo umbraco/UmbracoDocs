@@ -10,7 +10,7 @@ public class EmailTemplateSavingNotification : EmailTemplateNotificationEventBas
 
 **Inheritance**
 
-* class [EmailTemplateNotificationEventBase&lt;TEntity&gt;](emailtemplatenotificationeventbase-1.md)
+* Class [EmailTemplateNotificationEventBase&lt;TEntity&gt;](emailtemplatenotificationeventbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

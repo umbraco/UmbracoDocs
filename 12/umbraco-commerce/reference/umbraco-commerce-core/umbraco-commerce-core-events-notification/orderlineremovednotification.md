@@ -10,7 +10,7 @@ public class OrderLineRemovedNotification : OrderLineRemoveNotification<OrderRea
 
 **Inheritance**
 
-* class [OrderLineRemoveNotification&lt;TEntity&gt;](orderlineremovenotification-1.md)
+* Class [OrderLineRemoveNotification&lt;TEntity&gt;](orderlineremovenotification-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

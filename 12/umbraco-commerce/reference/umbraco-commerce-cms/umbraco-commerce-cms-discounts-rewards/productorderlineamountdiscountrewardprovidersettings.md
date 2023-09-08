@@ -11,7 +11,7 @@ public class ProductOrderLineAmountDiscountRewardProviderSettings :
 
 **Inheritance**
 
-* class [OrderLineAmountDiscountRewardProviderSettingsBase](../../umbraco-commerce-core/umbraco-commerce-core-discounts/orderlineamountdiscountrewardprovidersettingsbase.md)
+* Class [OrderLineAmountDiscountRewardProviderSettingsBase](../../umbraco-commerce-core/umbraco-commerce-core-discounts/orderlineamountdiscountrewardprovidersettingsbase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Discounts.Rewards](README.md)

@@ -14,7 +14,7 @@ public abstract class OrderedComposedCollectionBuilderBase<TBuilder, TCollection
 
 **Inheritance**
 
-* class [ComposedCollectionBuilderBase&lt;TBuilder,TCollection,TItem&gt;](composedcollectionbuilderbase-3.md)
+* Class [ComposedCollectionBuilderBase&lt;TBuilder,TCollection,TItem&gt;](composedcollectionbuilderbase-3.md)
 * interface [IOrderedComposedCollectionBuilder&lt;TBuilder,TCollection,TItem&gt;](iorderedcomposedcollectionbuilder-3.md)
 
 **Namespace**

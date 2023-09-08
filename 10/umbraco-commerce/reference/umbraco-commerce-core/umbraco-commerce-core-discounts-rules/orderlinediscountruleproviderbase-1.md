@@ -12,7 +12,7 @@ public abstract class OrderLineDiscountRuleProviderBase<TSettings> :
 
 **Inheritance**
 
-* class [DiscountRuleProviderBase&lt;TSettingsType&gt;](discountruleproviderbase-1.md)
+* Class [DiscountRuleProviderBase&lt;TSettingsType&gt;](discountruleproviderbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Discounts.Rules](README.md)

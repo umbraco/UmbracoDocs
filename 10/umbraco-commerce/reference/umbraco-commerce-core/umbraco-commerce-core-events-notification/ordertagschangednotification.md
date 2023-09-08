@@ -10,7 +10,7 @@ public class OrderTagsChangedNotification : OrderTagsChangeNotificationBase<Orde
 
 **Inheritance**
 
-* class [OrderTagsChangeNotificationBase&lt;TEntity&gt;](ordertagschangenotificationbase-1.md)
+* Class [OrderTagsChangeNotificationBase&lt;TEntity&gt;](ordertagschangenotificationbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

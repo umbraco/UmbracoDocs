@@ -10,7 +10,7 @@ public class GiftCardEditDto : GiftCardDto, IHasPath, INotificationModel
 
 **Inheritance**
 
-* class [GiftCardDto](giftcarddto.md)
+* Class [GiftCardDto](giftcarddto.md)
 * interface [IHasPath](ihaspath.md)
 
 **Namespace**

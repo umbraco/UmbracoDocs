@@ -10,7 +10,7 @@ public class DiscountEditDto : DiscountDto, IHasPath, INotificationModel
 
 **Inheritance**
 
-* class [DiscountDto](discountdto.md)
+* Class [DiscountDto](discountdto.md)
 * interface [IHasPath](ihaspath.md)
 
 **Namespace**

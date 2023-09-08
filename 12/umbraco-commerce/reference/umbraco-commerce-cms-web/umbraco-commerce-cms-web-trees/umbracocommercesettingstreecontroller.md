@@ -10,7 +10,7 @@ public class UmbracoCommerceSettingsTreeController : UmbracoCommerceTreeControll
 
 **Inheritance**
 
-* class [UmbracoCommerceTreeControllerBase&lt;TEnum&gt;](umbracocommercetreecontrollerbase-1.md)
+* Class [UmbracoCommerceTreeControllerBase&lt;TEnum&gt;](umbracocommercetreecontrollerbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Trees](README.md)

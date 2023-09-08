@@ -10,7 +10,7 @@ public class CurrencyEditDto : CurrencyDto, IHasPath, INotificationModel
 
 **Inheritance**
 
-* class [CurrencyDto](currencydto.md)
+* Class [CurrencyDto](currencydto.md)
 * interface [IHasPath](ihaspath.md)
 
 **Namespace**

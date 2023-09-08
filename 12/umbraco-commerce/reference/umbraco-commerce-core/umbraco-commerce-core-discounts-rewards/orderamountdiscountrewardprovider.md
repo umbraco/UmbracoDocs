@@ -11,7 +11,7 @@ public class OrderAmountDiscountRewardProvider :
 
 **Inheritance**
 
-* class [DiscountRewardProviderBase&lt;TSettingsType&gt;](discountrewardproviderbase-1.md)
+* Class [DiscountRewardProviderBase&lt;TSettingsType&gt;](discountrewardproviderbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Discounts.Rewards](README.md)

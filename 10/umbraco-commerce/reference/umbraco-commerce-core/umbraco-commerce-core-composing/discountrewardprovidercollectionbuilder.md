@@ -11,7 +11,7 @@ public class DiscountRewardProviderCollectionBuilder :
 
 **Inheritance**
 
-* class [ComposedCollectionBuilderBase&lt;!0,!1,!2&gt;](../../umbraco-commerce-common/umbraco-commerce-common-composing/composedcollectionbuilderbase-3.md)
+* Class [ComposedCollectionBuilderBase&lt;!0,!1,!2&gt;](../../umbraco-commerce-common/umbraco-commerce-common-composing/composedcollectionbuilderbase-3.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Composing](README.md)

@@ -10,7 +10,7 @@ public class ExportTemplateSaveDto : ExportTemplateDto, IValidatableObject
 
 **Inheritance**
 
-* class [ExportTemplateDto](exporttemplatedto.md)
+* Class [ExportTemplateDto](exporttemplatedto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

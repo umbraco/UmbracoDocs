@@ -11,7 +11,7 @@ public class PaymentMethod : PaymentMethodReadOnly, IHasWritableServicePrices<Pa
 
 **Inheritance**
 
-* class [PaymentMethodReadOnly](paymentmethodreadonly.md)
+* Class [PaymentMethodReadOnly](paymentmethodreadonly.md)
 * interface [IHasWritableServicePrices&lt;TAggregate&gt;](ihaswritableserviceprices-1.md)
 * interface [IHasWrtiableAllowedCountries&lt;TAggregate&gt;](ihaswrtiableallowedcountries-1.md)
 * interface [IHasWrtiableAllowedCountryRegions&lt;TAggregate&gt;](ihaswrtiableallowedcountryregions-1.md)

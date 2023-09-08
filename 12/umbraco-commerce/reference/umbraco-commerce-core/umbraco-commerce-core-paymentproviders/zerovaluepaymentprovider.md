@@ -10,7 +10,7 @@ public class ZeroValuePaymentProvider : PaymentProviderBase<ZeroValuePaymentProv
 
 **Inheritance**
 
-* class [PaymentProviderBase&lt;TSettingsModel&gt;](paymentproviderbase-1.md)
+* Class [PaymentProviderBase&lt;TSettingsModel&gt;](paymentproviderbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.PaymentProviders](README.md)

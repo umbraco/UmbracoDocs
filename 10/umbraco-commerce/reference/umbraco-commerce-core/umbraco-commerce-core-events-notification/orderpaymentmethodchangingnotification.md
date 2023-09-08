@@ -11,7 +11,7 @@ public class OrderPaymentMethodChangingNotification :
 
 **Inheritance**
 
-* class [OrderPaymentMethodChangeNotificationBase&lt;TEntity&gt;](orderpaymentmethodchangenotificationbase-1.md)
+* Class [OrderPaymentMethodChangeNotificationBase&lt;TEntity&gt;](orderpaymentmethodchangenotificationbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

@@ -10,7 +10,7 @@ public class TaxClass : TaxClassReadOnly
 
 **Inheritance**
 
-* class [TaxClassReadOnly](taxclassreadonly.md)
+* Class [TaxClassReadOnly](taxclassreadonly.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

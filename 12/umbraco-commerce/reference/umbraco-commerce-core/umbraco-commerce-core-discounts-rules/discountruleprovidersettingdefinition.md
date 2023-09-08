@@ -10,7 +10,7 @@ public class DiscountRuleProviderSettingDefinition : UmbracoCommerceSettingDefin
 
 **Inheritance**
 
-* class [UmbracoCommerceSettingDefinition](../umbraco-commerce-core-models/umbracocommercesettingdefinition.md)
+* Class [UmbracoCommerceSettingDefinition](../umbraco-commerce-core-models/umbracocommercesettingdefinition.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Discounts.Rules](README.md)

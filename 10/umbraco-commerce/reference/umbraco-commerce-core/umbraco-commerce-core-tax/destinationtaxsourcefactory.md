@@ -10,7 +10,7 @@ public class DestinationTaxSourceFactory : TaxSourceFactoryBase
 
 **Inheritance**
 
-* class [TaxSourceFactoryBase](taxsourcefactorybase.md)
+* Class [TaxSourceFactoryBase](taxsourcefactorybase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Tax](README.md)

@@ -10,7 +10,7 @@ public class RegionReadOnly : StoreAggregateBase<RegionReadOnly, Region, RegionS
 
 **Inheritance**
 
-* class [StoreAggregateBase&lt;TReadOnlySelf,TWritableSelf,TState&gt;](storeaggregatebase-3.md)
+* Class [StoreAggregateBase&lt;TReadOnlySelf,TWritableSelf,TState&gt;](storeaggregatebase-3.md)
 * interface [IHasName](ihasname.md)
 
 **Namespace**

@@ -12,7 +12,7 @@ public class Order : OrderReadOnly, ITaggableWritableEntity<Order>
 
 **Inheritance**
 
-* class [OrderReadOnly](orderreadonly.md)
+* Class [OrderReadOnly](orderreadonly.md)
 * interface [ITaggableWritableEntity&lt;TEntity&gt;](itaggablewritableentity-1.md)
 
 **Namespace**

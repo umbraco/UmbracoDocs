@@ -10,7 +10,7 @@ public class ShippingMethodDto : ShippingMethodBasicDto
 
 **Inheritance**
 
-* class [ShippingMethodBasicDto](shippingmethodbasicdto.md)
+* Class [ShippingMethodBasicDto](shippingmethodbasicdto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

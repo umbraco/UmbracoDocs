@@ -10,7 +10,7 @@ public class OrderLanguageChangingNotification : OrderLanguageChangeNotification
 
 **Inheritance**
 
-* class [OrderLanguageChangeNotificationBase&lt;TEntity&gt;](orderlanguagechangenotificationbase-1.md)
+* Class [OrderLanguageChangeNotificationBase&lt;TEntity&gt;](orderlanguagechangenotificationbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

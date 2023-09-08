@@ -10,7 +10,7 @@ public class OrderStatusEditDto : OrderStatusDto, IHasPath, INotificationModel
 
 **Inheritance**
 
-* class [OrderStatusDto](orderstatusdto.md)
+* Class [OrderStatusDto](orderstatusdto.md)
 * interface [IHasPath](ihaspath.md)
 
 **Namespace**

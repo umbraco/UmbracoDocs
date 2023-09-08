@@ -10,7 +10,7 @@ public class StoreDto : StoreBasicDto
 
 **Inheritance**
 
-* class [StoreBasicDto](storebasicdto.md)
+* Class [StoreBasicDto](storebasicdto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

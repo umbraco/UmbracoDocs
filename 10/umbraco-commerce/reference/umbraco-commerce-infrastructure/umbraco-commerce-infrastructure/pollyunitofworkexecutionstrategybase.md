@@ -11,7 +11,7 @@ public abstract class PollyUnitOfWorkExecutionStrategyBase : PollyExecutionStrat
 
 **Inheritance**
 
-* class [PollyExecutionStrategyBase](../umbraco-commerce-infrastructure-resiliency/pollyexecutionstrategybase.md)
+* Class [PollyExecutionStrategyBase](../umbraco-commerce-infrastructure-resiliency/pollyexecutionstrategybase.md)
 * interface [IUnitOfWorkExecutionStrategy](../../umbraco-commerce-common/umbraco-commerce-common/iunitofworkexecutionstrategy.md)
 
 **Namespace**

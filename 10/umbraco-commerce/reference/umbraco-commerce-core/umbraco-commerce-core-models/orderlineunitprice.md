@@ -10,7 +10,7 @@ public class OrderLineUnitPrice : TotalPriceWithPreviousAdjustment
 
 **Inheritance**
 
-* class [TotalPriceWithPreviousAdjustment](totalpricewithpreviousadjustment.md)
+* Class [TotalPriceWithPreviousAdjustment](totalpricewithpreviousadjustment.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

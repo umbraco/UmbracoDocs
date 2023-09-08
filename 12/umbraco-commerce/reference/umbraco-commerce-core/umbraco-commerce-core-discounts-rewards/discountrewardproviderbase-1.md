@@ -12,7 +12,7 @@ public abstract class DiscountRewardProviderBase<TSettingsType> : DiscountReward
 
 **Inheritance**
 
-* class [DiscountRewardProviderBase](discountrewardproviderbase.md)
+* Class [DiscountRewardProviderBase](discountrewardproviderbase.md)
 * interface [IDiscountRewardProvider&lt;TSettingsType&gt;](idiscountrewardprovider-1.md)
 
 **Namespace**

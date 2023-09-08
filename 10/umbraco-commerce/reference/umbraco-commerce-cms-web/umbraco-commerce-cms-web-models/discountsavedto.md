@@ -10,7 +10,7 @@ public class DiscountSaveDto : DiscountDto, IValidatableObject
 
 **Inheritance**
 
-* class [DiscountDto](discountdto.md)
+* Class [DiscountDto](discountdto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

@@ -10,7 +10,7 @@ public class ProductAttributeEditDto : ProductAttributeDto, IHasPath, INotificat
 
 **Inheritance**
 
-* class [ProductAttributeDto](productattributedto.md)
+* Class [ProductAttributeDto](productattributedto.md)
 * interface [IHasPath](ihaspath.md)
 
 **Namespace**

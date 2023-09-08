@@ -10,7 +10,7 @@ public class UmbracoProductSummary : ProductSummaryBase
 
 **Inheritance**
 
-* class [ProductSummaryBase](../../umbraco-commerce-core/umbraco-commerce-core-models/productsummarybase.md)
+* Class [ProductSummaryBase](../../umbraco-commerce-core/umbraco-commerce-core-models/productsummarybase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Adapters](README.md)

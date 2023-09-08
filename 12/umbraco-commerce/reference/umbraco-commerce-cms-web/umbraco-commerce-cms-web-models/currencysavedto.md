@@ -10,7 +10,7 @@ public class CurrencySaveDto : CurrencyDto, IValidatableObject
 
 **Inheritance**
 
-* class [CurrencyDto](currencydto.md)
+* Class [CurrencyDto](currencydto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

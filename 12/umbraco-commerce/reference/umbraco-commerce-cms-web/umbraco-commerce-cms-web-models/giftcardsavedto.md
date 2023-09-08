@@ -10,7 +10,7 @@ public class GiftCardSaveDto : GiftCardDto, IValidatableObject
 
 **Inheritance**
 
-* class [GiftCardDto](giftcarddto.md)
+* Class [GiftCardDto](giftcarddto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

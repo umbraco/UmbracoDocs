@@ -11,7 +11,7 @@ public abstract class PriceAdjustment<TSelf> : PriceAdjustment
 
 **Inheritance**
 
-* class [PriceAdjustment](priceadjustment.md)
+* Class [PriceAdjustment](priceadjustment.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

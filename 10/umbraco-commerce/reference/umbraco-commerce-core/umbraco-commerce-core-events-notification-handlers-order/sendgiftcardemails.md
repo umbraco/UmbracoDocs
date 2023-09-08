@@ -10,7 +10,7 @@ public class SendGiftCardEmails : NotificationEventHandlerBase<OrderFinalizedNot
 
 **Inheritance**
 
-* class [NotificationEventHandlerBase&lt;!0&gt;](../../umbraco-commerce-common/umbraco-commerce-common-events/notificationeventhandlerbase-1.md)
+* Class [NotificationEventHandlerBase&lt;!0&gt;](../../umbraco-commerce-common/umbraco-commerce-common-events/notificationeventhandlerbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification.Handlers.Order](README.md)

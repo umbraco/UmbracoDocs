@@ -10,7 +10,7 @@ public class CartEditDto : CartDto, IHasPath, INotificationModel
 
 **Inheritance**
 
-* class [CartDto](cartdto.md)
+* Class [CartDto](cartdto.md)
 * interface [IHasPath](ihaspath.md)
 
 **Namespace**

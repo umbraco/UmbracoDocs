@@ -10,7 +10,7 @@ public class ChartReportDataDto<TValue, TChartDataValue> : ChartDataDto<TChartDa
 
 **Inheritance**
 
-* class [ChartDataDto&lt;TValue&gt;](chartdatadto-1.md)
+* Class [ChartDataDto&lt;TValue&gt;](chartdatadto-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models.Reporting](README.md)

@@ -10,7 +10,7 @@ public class PipelineArgs<T> : PipelineArgs
 
 **Inheritance**
 
-* class [PipelineArgs](pipelineargs.md)
+* Class [PipelineArgs](pipelineargs.md)
 
 **Namespace**
 * [Umbraco.Commerce.Common.Pipelines](README.md)

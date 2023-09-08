@@ -10,7 +10,7 @@ public class UmbracoContentStoreFinder : UmbracoPublishedContentStoreFinder
 
 **Inheritance**
 
-* class [UmbracoPublishedContentStoreFinder](umbracopublishedcontentstorefinder.md)
+* Class [UmbracoPublishedContentStoreFinder](umbracopublishedcontentstorefinder.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Finders](README.md)

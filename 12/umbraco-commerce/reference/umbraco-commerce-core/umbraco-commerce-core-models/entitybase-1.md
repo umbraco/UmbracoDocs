@@ -13,7 +13,7 @@ public abstract class EntityBase<TState> : EntityBase
 
 **Inheritance**
 
-* class [EntityBase](entitybase.md)
+* Class [EntityBase](entitybase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

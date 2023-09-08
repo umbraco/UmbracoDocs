@@ -10,7 +10,7 @@ public class ProductCalculator : ProductCalculatorBase
 
 **Inheritance**
 
-* class [ProductCalculatorBase](productcalculatorbase.md)
+* Class [ProductCalculatorBase](productcalculatorbase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Calculators](README.md)

@@ -11,7 +11,7 @@ public class UmbracoNodeStoreFinderCollectionBuilder :
 
 **Inheritance**
 
-* class [OrderedComposedCollectionBuilderBase&lt;!0,!1,!2&gt;](../../umbraco-commerce-common/umbraco-commerce-common-composing/orderedcomposedcollectionbuilderbase-3.md)
+* Class [OrderedComposedCollectionBuilderBase&lt;!0,!1,!2&gt;](../../umbraco-commerce-common/umbraco-commerce-common-composing/orderedcomposedcollectionbuilderbase-3.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Composing](README.md)
