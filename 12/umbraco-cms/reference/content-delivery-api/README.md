@@ -12,6 +12,10 @@ When upgrading an existing project to Umbraco 12, you will need to opt-in explic
 
 When you start with a fresh Umbraco 12 installation, the Delivery API is also disabled by default. To enable it, you can proceed directly to the [Enable the Content Delivery API](./#enable-the-content-delivery-api) section, as the step below is already complete in this case.
 
+{% embed url="https://www.youtube.com/watch?v=sh_AF-ZKJ28" %}
+Video tutorial
+{% endembed %}
+
 ### Register the Content Delivery API dependencies
 
 1. Open your project's `Startup.cs` file.
@@ -458,7 +462,6 @@ Which properties to expand in the response
 {% swagger-response status="401: Unauthorized" description="Missing permissions after protection is set up" %}
 
 {% endswagger-response %}
-
 {% endswagger %}
 
 {% swagger method="get" path="/content" baseUrl="/umbraco/delivery/api/v1" summary="Gets content item(s) from a query" %}
@@ -467,15 +470,55 @@ Returns single or multiple items.
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="fetch" type="String" required="false" %}
-Structural query string option (e.g. `ancestors`, `children`, `descendants`)
+Structural query string option (e.g. 
+
+`ancestors`
+
+, 
+
+`children`
+
+, 
+
+`descendants`
+
+)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="filter" type="String Array" required="false" %}
-Filtering query string options (e.g. `contentType`, `name`)
+Filtering query string options (e.g. 
+
+`contentType`
+
+, 
+
+`name`
+
+)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="sort" type="String Array" required="false" %}
-Sorting query string options (e.g. `createDate`, `level`, `name`, `sortOrder`, `updateDate`)
+Sorting query string options (e.g. 
+
+`createDate`
+
+, 
+
+`level`
+
+, 
+
+`name`
+
+, 
+
+`sortOrder`
+
+, 
+
+`updateDate`
+
+)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="skip" type="Integer" required="false" %}
