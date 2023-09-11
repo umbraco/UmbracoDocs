@@ -50,7 +50,7 @@ Some features are not complete yet but will land in upcoming alpha releases:
 
 ### .NET
 
-The Alpha version range ships with the latest preview release of .NET 8, which passes in our internal test suite, but some limitations may be imposed in the Software Development Kit (SDK) itself. [Read more on dot.net](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
+The Alpha version range ships with the latest preview release of .NET 8, which passes in our internal test suite. However some limitations may be imposed in the Software Development Kit (SDK) itself. [Read more on dot.net](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
 
 ### Website frontend
 
