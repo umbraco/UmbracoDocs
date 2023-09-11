@@ -54,6 +54,10 @@ The change in price will take effect from the next period of your subscription.
 Are you changing the plan in the middle of the month? The time from that date until the start of the next subscription period, will be added to the next invoice.
 {% endhint %}
 
+{% hint style="info" %}
+When upgrading or downgrading the plan, the ID of your project will change by either adding or removing a `-1` at the end of its project ID. If you use this ID anywhere, you might need to change the ID in that location.
+{% endhint %}
+
 ## Automatic plan upgrades
 
 If your project/website exceeds any of the usage limits, you will automatically get upgraded to a plan that fits your actual usage to ensure your website keeps running smoothly.
