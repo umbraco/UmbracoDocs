@@ -55,7 +55,7 @@ Are you changing the plan in the middle of the month? The time from that date un
 {% endhint %}
 
 {% hint style="info" %}
-When upgrading or downgrading the plan, the ID of your project will change by either adding or removing a `-1` at the end of its project ID. If you use this ID anywhere, you might need to change the ID in that location.
+When upgrading or downgrading the plan, the ID of your project will be appended with a `-1`. If there is already a `-1`, it will be removed. If you use this ID anywhere, you might need to change the ID in that location.
 {% endhint %}
 
 ## Automatic plan upgrades
