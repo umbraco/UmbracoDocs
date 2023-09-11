@@ -100,14 +100,14 @@ Add the following code:
 For more information about the `umbraco-package.json` file, read the article [Package Manifest](../extending/package-manifest/). You should also read the [Dashboards](../extending/dashboards.md) article for more information about dashboard configurations.
 
 {% hint style="info" %}
-Please note that the umbraco-package.json file is loaded into memory when Umbraco starts up. If you are changing or adding new configurations you will need to start and stop your application for it to be loaded.
+Please be aware that the umbraco-package.json file is loaded into memory when Umbraco starts up. If you are changing or adding new configurations you will need to start and stop your application for it to be loaded.
 {% endhint %}
 
 ## 2. Creating the Dashboard Web Component
 
 Next, inside the `src` folder let's create a new ts file called `welcome-dashboard.element.ts`. This file is our web component and will contain all of our HTML, CSS, and logic.
 
-Let's start with setting it the web component with some simple HTML and CSS:
+Let's start with setting it the web component with some HTML and CSS:
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
@@ -152,4 +152,4 @@ This section is still being updated.
 
 With all of the steps completed, you should have a functional dashboard welcoming your users to the Backoffice.
 
-In the next session, we will look into how to add more functionality to the dashboard using some of the resources and services that Umbraco offers.
+In the next session, we will look into how to add functionality to the dashboard using some of the resources and services that Umbraco offers.

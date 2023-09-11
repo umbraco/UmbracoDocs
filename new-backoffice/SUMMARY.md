@@ -33,6 +33,9 @@
 * [Workspaces](extending/workspaces/README.md)
   * [Workspace Editor Views](extending/workspaces/workspace-editor-views.md)
   * [Workspace Editor Actions](extending/workspaces/workspace-editor-actions.md)
+* [Localization](extending/localization/README.md)
+  * [.NET Localization](extending/localization/.net-localization.md)
+  * [UI Localization](extending/localization/ui-localization.md)
 * [UI Library](extending/ui-library.md)
 
 ## Tutorials
