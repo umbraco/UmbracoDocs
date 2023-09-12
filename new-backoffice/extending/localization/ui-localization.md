@@ -23,7 +23,7 @@ If you are a package developer, [see here for docs on how to include translation
 
 ## Layout of the localization files
 
-The localization files for the UI are simple JS modules with a default export containing a key-value structure organized in sections.
+The localization files for the UI are JS modules with a default export containing a key-value structure organized in sections.
 
 ```js
 export default {
