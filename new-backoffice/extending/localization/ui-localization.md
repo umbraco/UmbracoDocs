@@ -62,7 +62,7 @@ In the Umbraco backoffice UI, labels can be localized with the `umb-localize` di
 </button>
 ```
 
-The localize directive can also be used as an attribute like below where the value of the label attribute is then populated with the dictionary key "title\_name" from the localization file using `UmbLocalizeController`.
+The localize directive can also be used as an attribute, like below. The value of the label attribute is then populated with the dictionary key "title_name" from the localization file using `UmbLocalizeController`.
 
 #### **UmbElementMixin**
 
@@ -113,4 +113,4 @@ Instead of showing the default value we can show the key alias if we set `debug=
 <umb-localize key="general_ok_not_found" debug="true"></umb-localize>
 ```
 
-If you do update any of the core localization files or you add a new language, don't forget to help the rest of the community by [submitting a pull request](https://docs.umbraco.com/welcome/contribute/getting-started) so that your changes are merged into the core.
+If you update any of the core localization files or you add a new language, don't forget to help the rest of the community. You can do this by [submitting a pull request](https://docs.umbraco.com/welcome/contribute/getting-started) so that your changes are merged into the core.
