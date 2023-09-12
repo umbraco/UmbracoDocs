@@ -97,7 +97,7 @@ export class MyElement extends LitElement {
 
 ## Missing localization keys
 
-As Umbraco is a continually evolving product, it is inevitable that new text is added fairly regularly to the English language version of these files. This may mean that some of the above languages are no longer up to date.
+As Umbraco is a continually evolving product, it is inevitable that new text is added regularly to the English language version of these files. This may mean that some of the above languages are no longer up to date.
 
 If a key is not found in the current language, the fallback language will be used. The fallback language is **English (United States)**.
 
