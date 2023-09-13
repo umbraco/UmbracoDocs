@@ -14,12 +14,12 @@ Umbraco is also used in a hybrid DXP context. Here, some features are added dire
 
 In all situations, backoffice integrations with third-party services are an important part of providing an intuitive, unified editor experience.
 
-Our aim is to support the different ways of using Umbraco in a DXP context and provid resources for building integrations with Umbraco.
+Our aim is to support the different ways of using Umbraco in a DXP context and provide resources for building integrations with Umbraco.
 
 ![Umbraco as a platform DXP, composable DXP og hybrid solution](.gitbook/assets/pDXPcDXP.png)
 
 
-### Packages and integrations  
+### Packages and integrations
 Packages for Umbraco are installed as [Nuget packages](https://docs.umbraco.com/umbraco-cms/extending/packages/types-of-packages).
 
 Integrations provide functionality via a third-party service's API, whereas packages extend the functionality of the CMS (management or delivery).
