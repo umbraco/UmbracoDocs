@@ -1,4 +1,4 @@
-# Release notes
+# Release Notes
 
 In this section, we have summarized the changes to Deploy package for Umbraco Commerce released in each version. Each version is presented with a link to the [Umbraco Commerce Deploy issue tracker](https://github.com/umbraco/Umbraco.Commerce.Deploy/issues) showing a list of issues resolved in the release. We also link to the individual issues themselves from the detail.
 

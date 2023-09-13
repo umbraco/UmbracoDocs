@@ -15,4 +15,4 @@
 * [Overview](deploy/README.md)
 * [Installation](deploy/installation.md)
 * [Deploying Changes](deploy/deploying-changes.md)
-* [Release notes](<deploy/release-notes (1).md>)
+* [Release Notes](<deploy/release-notes (1).md>)
