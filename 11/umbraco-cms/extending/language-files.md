@@ -18,7 +18,7 @@ This is an example of such a language file, the most important parts are the `al
 <language alias="en" intName="English (UK)" localName="English (UK)" lcid="" culture="en-GB">
     <creator>
         <name>The Umbraco community</name>
-        <link>https://our.umbraco.com</link>
+        <link>https://community.umbraco.com</link>
     </creator>
     <area alias="actions">
         <key alias="assignDomain">Culture and Hostnames</key>
