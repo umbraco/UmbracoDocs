@@ -385,7 +385,9 @@ public void ConfigureServices(IServiceCollection services)
 
 The Swagger UI will now feature authorization.
 
+{% hint style="info" %}
 Remember to use `umbraco-member` as `client_id` when authorizing. `client_secret` can be omitted, as it is not used by the authorization flow.
+{% endhint %}
 
 ## Client configuration samples
 
