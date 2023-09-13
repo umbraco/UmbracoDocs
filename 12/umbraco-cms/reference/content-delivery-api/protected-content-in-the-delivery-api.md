@@ -24,7 +24,7 @@ Most programming languages have OpenId Connect client libraries to handle the co
 
 ### Enabling member authorization
 
-Member authorization is an opt-in feature of the Delivery API. To enable it, configure `MemberAuthorization::AuthorizationCodeFlow` in the `DeliveryApi` section of `appsettings.json`:
+Member authorization is an opt-in feature of the Delivery API. To enable it, configure `MemberAuthorization:AuthorizationCodeFlow` in the `DeliveryApi` section of `appsettings.json`:
 - `Enabled` must be `true`.
 - One or more `LoginRedirectUrls` must be configured. These specify where the server is allowed to redirect the client after a successful authorization.
 - Optionally one or more `LogoutRedirectUrls` must be configured. These specify where the server is allowed to redirect the client after successfully terminating a session.
