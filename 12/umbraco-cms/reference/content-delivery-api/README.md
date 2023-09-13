@@ -562,6 +562,8 @@ Which properties to expand and therefore include in the output if they refer to 
 {% endswagger-response %}
 {% endswagger %}
 
+All endpoints are documented in a Swagger document at `{yourdomain}/umbraco/swagger`. Keep in mind that this document is not available in production mode by default (see also [this article](https://docs.umbraco.com/umbraco-cms/reference/api-versioning-and-openapi)).
+
 ### Query parameters
 
 The Content Delivery API provides a number of query parameters that allow you to customize the content returned by the API to fit your needs. For each endpoint, the relevant query parameters are already specified within their corresponding documentation above. In addition to standard parameters like `skip` and `take`, the API provides different possibilities for the value of `expand`, `fetch`, `filter` and `sort` parameters. Below are the options supported out of the box.
@@ -678,10 +680,6 @@ We are looking into adding support for member authentication which would enable 
 There is no built-in functionality for editors to preview content in the Umbraco Backoffice using the Delivery API. However, this is something high on our list for potential future improvements.
 
 Content that is exclusively in a draft state is not available via the Delivery API's multi-items endpoint. However, once the content node is published, it will be available for retrieval, whether it is in a draft or published state. We will evaluate our options to improve this workflow.
-
-### Swagger
-
-There is a Swagger document available for the Umbraco Delivery API at `{yourdomain}/umbraco/swagger`. However, it does not offer complete documentation support for all APIs. This will be subject to change.
 
 ### Property editors
 
