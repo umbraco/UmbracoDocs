@@ -283,6 +283,7 @@
   * [Custom property editors support](reference/content-delivery-api/custom-property-editors-support.md)
   * [Extension API for querying](reference/content-delivery-api/extension-api-for-querying.md)
   * [Media Delivery API](reference/content-delivery-api/media-delivery-api.md)
+  * [Protected content in the Delivery API](reference/content-delivery-api/protected-content-in-the-delivery-api.md)
 * [API versioning and OpenAPI](reference/api-versioning-and-openapi.md)
 * [Searching](reference/searching/README.md)
   * [Examine](reference/searching/examine/README.md)
