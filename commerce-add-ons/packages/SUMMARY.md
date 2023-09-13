@@ -8,9 +8,11 @@
 * [Installation](checkout/installation.md)
 * [Configure Umbraco](checkout/configuring-umbraco.md)
 * [Checkout Screenshots](checkout/screenshots.md)
+* [Release Notes](../packages/deploy/release-notes.md)
 
 ## Deploy
 
 * [Overview](deploy/README.md)
 * [Installation](deploy/installation.md)
 * [Deploying Changes](deploy/deploying-changes.md)
+* [Release Notes](../packages/deploy/release-notes.md)

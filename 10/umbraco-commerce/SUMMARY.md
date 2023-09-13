@@ -3,11 +3,13 @@
 * [What is Umbraco Commerce?](README.md)
 * [Commerce Packages](https://docs.umbraco.com/umbraco-commerce-packages)
 * [Commerce Payment Providers](https://docs.umbraco.com/umbraco-commerce-payment-providers)
+* [Release Notes](release-notes.md)
 
 ## Getting Started
 
 * [Introduction](getting-started/introduction.md)
-* [Installation](getting-started/installation.md)
+* [Installation](getting-started/installation/README.md)
+  * [Version Specific Upgrade Notes](getting-started/installation/version-specific-upgrades.md)
 * [Umbraco Configuration](getting-started/umbraco-configuration.md)
 * [User Interface](getting-started/user-interface.md)
 * [Licensing](getting-started/licensing-model.md)
