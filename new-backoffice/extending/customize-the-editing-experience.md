@@ -12,4 +12,4 @@ Whether you're building Umbraco packages or implementing backoffice extensions, 
 
 ## Backoffice Library on Storybook
 
-Documentation for the new backoffice is still in the very early days. For now, you can find documentation for working with and using the new backoffice components on the [**Backoffice Library on Storybook**](https://apidocs.umbraco.com/v14/ui/).
+Documentation for the new backoffice is still in the early days. For now, you can find documentation for working with and using the new backoffice components on the [**Backoffice Library on Storybook**](https://apidocs.umbraco.com/v14/ui/).
