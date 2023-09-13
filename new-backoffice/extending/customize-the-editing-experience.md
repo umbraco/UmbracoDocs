@@ -8,7 +8,7 @@ description: Learn the new process of extending the Umbraco backoffice.
 This page is a work in progress. It will be updated as the software evolves.
 {% endhint %}
 
-Whether you're building Umbraco packages or implementing simple backoffice extensions, you can find resources for development here.
+Whether you're building Umbraco packages or implementing backoffice extensions, you can find resources for development here.
 
 ## Backoffice Library on Storybook
 
