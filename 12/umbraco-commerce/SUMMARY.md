@@ -7,7 +7,8 @@
 ## Getting Started
 
 * [Introduction](getting-started/introduction.md)
-* [Installation](getting-started/installation.md)
+* [Installation](getting-started/installation/README.md)
+  * [Version Specific Upgrade Notes](getting-started/installation/version-specific-upgrades.md)
 * [Umbraco Configuration](getting-started/umbraco-configuration.md)
 * [User Interface](getting-started/user-interface.md)
 * [Licensing](getting-started/licensing-model.md)
