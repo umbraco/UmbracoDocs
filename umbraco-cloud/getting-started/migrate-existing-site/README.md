@@ -77,10 +77,10 @@ While the site is running you need to:
 * Go to the backoffice of your project
 * Empty the recycle bins from both the Content and Media sections
 
-Now, shut down the project, and delete the following files and folders from `/Umbraco/Data`
+Now, shut down the project, and delete the following files and folders from `/Umbraco/`
 
-* `/TEMP`
-* `/Umbraco/Logs`
+* `/Data/TEMP`
+* `/Logs`
 
 That was it! Now you are ready to start the actual migration process, or in other words: **now the real fun begins!**
 
