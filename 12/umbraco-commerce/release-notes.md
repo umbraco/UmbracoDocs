@@ -5,7 +5,7 @@ In this section, we have summarized the changes to Umbraco Commerce released in 
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
 {% hint style="info" %}
-If you are upgrading to a new major version, you can find information about the breaking changes in the [Version Specific Upgrade Notes](getting-started/installation/version-specific.md) article
+If you are upgrading to a new major version, you can find information about the breaking changes in the [Version Specific Upgrade Notes](getting-started/installation/version-specific-upgrades.md) article
 {% endhint %}
 
 We've listed here all the changes going back to launch of Umbraco Commerce in 2023. For details of Vendr releases before this date, refer to the [Vendr changlog archive](https://github.com/umbraco/UmbracoDocs/blob/main/12/umbraco-commerce/changelog-archive/Vendr-core.md).
