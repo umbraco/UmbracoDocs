@@ -11,7 +11,7 @@ public class OrderStatusService : ServiceBase<OrderStatusService>,
 
 **Inheritance**
 
-* class [ServiceBase&lt;TSelf&gt;](servicebase-1.md)
+* Class [ServiceBase&lt;TSelf&gt;](servicebase-1.md)
 * interface [ICachedEntityService&lt;TEntityType&gt;](icachedentityservice-1.md)
 * interface [IOrderStatusService](iorderstatusservice.md)
 

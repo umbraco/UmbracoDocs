@@ -11,7 +11,7 @@ public class OrderShippingMethodChangedNotification :
 
 **Inheritance**
 
-* class [OrderShippingMethodChangeNotificationBase&lt;TEntity&gt;](ordershippingmethodchangenotificationbase-1.md)
+* Class [OrderShippingMethodChangeNotificationBase&lt;TEntity&gt;](ordershippingmethodchangenotificationbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

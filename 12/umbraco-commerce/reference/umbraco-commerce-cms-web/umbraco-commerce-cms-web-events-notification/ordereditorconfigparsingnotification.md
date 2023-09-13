@@ -10,7 +10,7 @@ public class OrderEditorConfigParsingNotification : ConfigParsingNotificationBas
 
 **Inheritance**
 
-* class [ConfigParsingNotificationBase](configparsingnotificationbase.md)
+* Class [ConfigParsingNotificationBase](configparsingnotificationbase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Events.Notification](README.md)

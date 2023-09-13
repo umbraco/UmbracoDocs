@@ -10,7 +10,7 @@ public class PriceAdjusterArgs : AdjusterArgsBase
 
 **Inheritance**
 
-* class [AdjusterArgsBase](adjusterargsbase.md)
+* Class [AdjusterArgsBase](adjusterargsbase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Adjusters](README.md)

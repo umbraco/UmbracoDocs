@@ -11,7 +11,7 @@ public class RaiseSendingEventTask :
 
 **Inheritance**
 
-* class [NotificationEventTaskBase&lt;!0,!1&gt;](../../umbraco-commerce-common/umbraco-commerce-common-pipelines/notificationeventtaskbase-2.md)
+* Class [NotificationEventTaskBase&lt;!0,!1&gt;](../../umbraco-commerce-common/umbraco-commerce-common-pipelines/notificationeventtaskbase-2.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Pipelines.Email.Tasks](README.md)

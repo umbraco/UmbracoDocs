@@ -11,7 +11,7 @@ public class GiftCardReadOnly : StoreAggregateBase<GiftCardReadOnly, GiftCard, G
 
 **Inheritance**
 
-* class [StoreAggregateBase&lt;TReadOnlySelf,TWritableSelf,TState&gt;](storeaggregatebase-3.md)
+* Class [StoreAggregateBase&lt;TReadOnlySelf,TWritableSelf,TState&gt;](storeaggregatebase-3.md)
 * interface [IHasReadableProperties](ihasreadableproperties.md)
 
 **Namespace**

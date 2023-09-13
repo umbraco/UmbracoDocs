@@ -10,7 +10,7 @@ public class ValidationPipelineException : PipelineException
 
 **Inheritance**
 
-* class [PipelineException](pipelineexception.md)
+* Class [PipelineException](pipelineexception.md)
 
 **Namespace**
 * [Umbraco.Commerce.Common.Pipelines](README.md)

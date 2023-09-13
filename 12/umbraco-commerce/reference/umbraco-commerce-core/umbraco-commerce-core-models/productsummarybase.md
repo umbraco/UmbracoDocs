@@ -10,7 +10,7 @@ public abstract class ProductSummaryBase : ProductSummaryCommonBase, IProductSum
 
 **Inheritance**
 
-* class [ProductSummaryCommonBase](productsummarycommonbase.md)
+* Class [ProductSummaryCommonBase](productsummarycommonbase.md)
 * interface [IProductSummary](iproductsummary.md)
 
 **Namespace**

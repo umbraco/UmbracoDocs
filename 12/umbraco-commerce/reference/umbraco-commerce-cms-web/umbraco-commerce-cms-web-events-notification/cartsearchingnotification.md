@@ -10,7 +10,7 @@ public class CartSearchingNotification : NotificationEventBase
 
 **Inheritance**
 
-* class [NotificationEventBase](../../umbraco-commerce-common/umbraco-commerce-common-events/notificationeventbase.md)
+* Class [NotificationEventBase](../../umbraco-commerce-common/umbraco-commerce-common-events/notificationeventbase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Events.Notification](README.md)

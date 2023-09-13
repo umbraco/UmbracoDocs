@@ -12,7 +12,7 @@ public abstract class PipelineTaskWithTypedArgsBase<TArgs, T, TResult> :
 
 **Inheritance**
 
-* class [PipelineTaskBase&lt;T,TResult&gt;](pipelinetaskbase-2.md)
+* Class [PipelineTaskBase&lt;T,TResult&gt;](pipelinetaskbase-2.md)
 
 **Namespace**
 * [Umbraco.Commerce.Common.Pipelines.Tasks](README.md)

@@ -11,7 +11,7 @@ public abstract class UmbracoCommerceStockServiceBase<TSelf> : ServiceBase<TSelf
 
 **Inheritance**
 
-* class [ServiceBase&lt;TSelf&gt;](servicebase-1.md)
+* Class [ServiceBase&lt;TSelf&gt;](servicebase-1.md)
 * interface [IStockService](istockservice.md)
 
 **Namespace**

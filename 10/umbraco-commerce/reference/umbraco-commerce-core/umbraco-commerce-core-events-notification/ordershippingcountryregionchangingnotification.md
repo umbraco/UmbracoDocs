@@ -11,7 +11,7 @@ public class OrderShippingCountryRegionChangingNotification :
 
 **Inheritance**
 
-* class [OrderShippingCountryRegionChangeNotificationBase&lt;TEntity&gt;](ordershippingcountryregionchangenotificationbase-1.md)
+* Class [OrderShippingCountryRegionChangeNotificationBase&lt;TEntity&gt;](ordershippingcountryregionchangenotificationbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

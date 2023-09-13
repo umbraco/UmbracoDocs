@@ -10,7 +10,7 @@ public class GiftCardSearchDto : SearchDtoBase
 
 **Inheritance**
 
-* class [SearchDtoBase](searchdtobase.md)
+* Class [SearchDtoBase](searchdtobase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

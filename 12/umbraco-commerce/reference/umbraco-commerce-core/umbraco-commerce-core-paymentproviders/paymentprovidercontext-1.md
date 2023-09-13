@@ -10,7 +10,7 @@ public class PaymentProviderContext<TSettings> : PaymentProviderContext
 
 **Inheritance**
 
-* class [PaymentProviderContext](paymentprovidercontext.md)
+* Class [PaymentProviderContext](paymentprovidercontext.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.PaymentProviders](README.md)

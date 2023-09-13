@@ -10,7 +10,7 @@ public class ProductAttributePresetEditDto : ProductAttributePresetDto, IHasPath
 
 **Inheritance**
 
-* class [ProductAttributePresetDto](productattributepresetdto.md)
+* Class [ProductAttributePresetDto](productattributepresetdto.md)
 * interface [IHasPath](ihaspath.md)
 
 **Namespace**

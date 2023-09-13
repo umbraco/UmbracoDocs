@@ -10,7 +10,7 @@ public class GiftCardAdjustment : AmountAdjustment<GiftCardAdjustment>
 
 **Inheritance**
 
-* class [AmountAdjustment&lt;TSelf&gt;](amountadjustment-1.md)
+* Class [AmountAdjustment&lt;TSelf&gt;](amountadjustment-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

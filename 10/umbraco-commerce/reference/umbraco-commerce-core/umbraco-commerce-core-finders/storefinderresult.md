@@ -10,7 +10,7 @@ public class StoreFinderResult : FinderResultBase<StoreReadOnly>
 
 **Inheritance**
 
-* class [FinderResultBase&lt;TModel&gt;](finderresultbase-1.md)
+* Class [FinderResultBase&lt;TModel&gt;](finderresultbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Finders](README.md)

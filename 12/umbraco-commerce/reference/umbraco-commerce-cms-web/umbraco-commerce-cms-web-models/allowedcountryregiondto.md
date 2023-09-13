@@ -10,7 +10,7 @@ public class AllowedCountryRegionDto : AllowedCountryDto
 
 **Inheritance**
 
-* class [AllowedCountryDto](allowedcountrydto.md)
+* Class [AllowedCountryDto](allowedcountrydto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

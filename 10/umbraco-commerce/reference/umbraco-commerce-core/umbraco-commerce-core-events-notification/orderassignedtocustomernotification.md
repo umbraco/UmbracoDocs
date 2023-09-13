@@ -11,7 +11,7 @@ public class OrderAssignedToCustomerNotification :
 
 **Inheritance**
 
-* class [OrderAssignToCustomerNotificationBase&lt;TEntity&gt;](orderassigntocustomernotificationbase-1.md)
+* Class [OrderAssignToCustomerNotificationBase&lt;TEntity&gt;](orderassigntocustomernotificationbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

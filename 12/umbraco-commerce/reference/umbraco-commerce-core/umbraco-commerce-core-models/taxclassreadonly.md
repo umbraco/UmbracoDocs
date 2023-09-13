@@ -11,7 +11,7 @@ public class TaxClassReadOnly : StoreAggregateBase<TaxClassReadOnly, TaxClass, T
 
 **Inheritance**
 
-* class [StoreAggregateBase&lt;TReadOnlySelf,TWritableSelf,TState&gt;](storeaggregatebase-3.md)
+* Class [StoreAggregateBase&lt;TReadOnlySelf,TWritableSelf,TState&gt;](storeaggregatebase-3.md)
 * interface [IHasName](ihasname.md)
 
 **Namespace**

@@ -10,7 +10,7 @@ public class GiftCardSavedNotification : GiftCardNotificationEventBase<GiftCardR
 
 **Inheritance**
 
-* class [GiftCardNotificationEventBase&lt;TEntity&gt;](giftcardnotificationeventbase-1.md)
+* Class [GiftCardNotificationEventBase&lt;TEntity&gt;](giftcardnotificationeventbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

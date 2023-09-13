@@ -11,7 +11,7 @@ public abstract class PublishedElementWithParent<T> : PublishedElementWrapped<T>
 
 **Inheritance**
 
-* class [PublishedElementWrapped&lt;T&gt;](publishedelementwrapped-1.md)
+* Class [PublishedElementWrapped&lt;T&gt;](publishedelementwrapped-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Models](README.md)

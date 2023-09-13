@@ -10,7 +10,7 @@ public class OrderPropertiesChangingNotification : OrderPropertiesChangeNotifica
 
 **Inheritance**
 
-* class [OrderPropertiesChangeNotificationBase&lt;TEntity&gt;](orderpropertieschangenotificationbase-1.md)
+* Class [OrderPropertiesChangeNotificationBase&lt;TEntity&gt;](orderpropertieschangenotificationbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

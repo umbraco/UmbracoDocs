@@ -12,7 +12,7 @@ public class PipelineTaskCollectionBuilder<TCollection, TItem> :
 
 **Inheritance**
 
-* class [OrderedComposedCollectionBuilderBase&lt;!0,!1,!2&gt;](../../umbraco-commerce-common/umbraco-commerce-common-composing/orderedcomposedcollectionbuilderbase-3.md)
+* Class [OrderedComposedCollectionBuilderBase&lt;!0,!1,!2&gt;](../../umbraco-commerce-common/umbraco-commerce-common-composing/orderedcomposedcollectionbuilderbase-3.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Composing](README.md)

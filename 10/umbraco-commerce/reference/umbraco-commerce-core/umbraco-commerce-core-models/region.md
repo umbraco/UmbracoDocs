@@ -10,7 +10,7 @@ public class Region : RegionReadOnly
 
 **Inheritance**
 
-* class [RegionReadOnly](regionreadonly.md)
+* Class [RegionReadOnly](regionreadonly.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

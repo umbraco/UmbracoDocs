@@ -10,7 +10,7 @@ public class CartSaveDto : CartDto, IValidatableObject
 
 **Inheritance**
 
-* class [CartDto](cartdto.md)
+* Class [CartDto](cartdto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

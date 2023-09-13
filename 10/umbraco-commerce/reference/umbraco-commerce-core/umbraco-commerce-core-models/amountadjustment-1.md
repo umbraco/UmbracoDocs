@@ -11,7 +11,7 @@ public abstract class AmountAdjustment<TSelf> : AmountAdjustment
 
 **Inheritance**
 
-* class [AmountAdjustment](amountadjustment.md)
+* Class [AmountAdjustment](amountadjustment.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

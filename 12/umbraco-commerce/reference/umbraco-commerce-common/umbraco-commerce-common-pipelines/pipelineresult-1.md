@@ -10,7 +10,7 @@ public class PipelineResult<TResult> : PipelineResult
 
 **Inheritance**
 
-* class [PipelineResult](pipelineresult.md)
+* Class [PipelineResult](pipelineresult.md)
 
 **Namespace**
 * [Umbraco.Commerce.Common.Pipelines](README.md)

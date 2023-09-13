@@ -10,7 +10,7 @@ public class GiftCard : GiftCardReadOnly
 
 **Inheritance**
 
-* class [GiftCardReadOnly](giftcardreadonly.md)
+* Class [GiftCardReadOnly](giftcardreadonly.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

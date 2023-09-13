@@ -11,7 +11,7 @@ public abstract class OrderAdvancedFilterBase :
 
 **Inheritance**
 
-* class [AdvancedFilterBase&lt;TSpecFactory,TEntity&gt;](advancedfilterbase-2.md)
+* Class [AdvancedFilterBase&lt;TSpecFactory,TEntity&gt;](advancedfilterbase-2.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Filters](README.md)

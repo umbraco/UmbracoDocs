@@ -11,7 +11,7 @@ public abstract class NotificationEventTaskBase<TEvent, TModel> : NotificationEv
 
 **Inheritance**
 
-* class [NotificationEventTaskBase&lt;TModel&gt;](notificationeventtaskbase-1.md)
+* Class [NotificationEventTaskBase&lt;TModel&gt;](notificationeventtaskbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Common.Pipelines.Tasks](README.md)

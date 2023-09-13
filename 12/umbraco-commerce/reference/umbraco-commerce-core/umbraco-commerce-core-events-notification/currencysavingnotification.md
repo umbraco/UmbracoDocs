@@ -10,7 +10,7 @@ public class CurrencySavingNotification : CurrencyNotificationEventBase<Currency
 
 **Inheritance**
 
-* class [CurrencyNotificationEventBase&lt;TEntity&gt;](currencynotificationeventbase-1.md)
+* Class [CurrencyNotificationEventBase&lt;TEntity&gt;](currencynotificationeventbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

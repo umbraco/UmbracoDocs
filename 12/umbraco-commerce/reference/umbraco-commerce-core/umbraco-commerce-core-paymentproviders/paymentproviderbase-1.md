@@ -11,7 +11,7 @@ public abstract class PaymentProviderBase<TSettingsModel> : PaymentProviderBase
 
 **Inheritance**
 
-* class [PaymentProviderBase](paymentproviderbase.md)
+* Class [PaymentProviderBase](paymentproviderbase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.PaymentProviders](README.md)

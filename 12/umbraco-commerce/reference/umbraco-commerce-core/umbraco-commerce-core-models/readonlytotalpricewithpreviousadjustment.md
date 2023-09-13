@@ -10,7 +10,7 @@ public class ReadOnlyTotalPriceWithPreviousAdjustment : ReadOnlyTotalPrice
 
 **Inheritance**
 
-* class [ReadOnlyTotalPrice](readonlytotalprice.md)
+* Class [ReadOnlyTotalPrice](readonlytotalprice.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

@@ -10,7 +10,7 @@ public class ReadOnlyOrderTransactionAmount : ReadOnlyAdjustedAmount
 
 **Inheritance**
 
-* class [ReadOnlyAdjustedAmount](readonlyadjustedamount.md)
+* Class [ReadOnlyAdjustedAmount](readonlyadjustedamount.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

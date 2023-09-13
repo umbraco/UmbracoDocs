@@ -10,7 +10,7 @@ public class TaxClassDto : TaxClassBasicDto
 
 **Inheritance**
 
-* class [TaxClassBasicDto](taxclassbasicdto.md)
+* Class [TaxClassBasicDto](taxclassbasicdto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)
