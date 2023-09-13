@@ -20,7 +20,7 @@ If you are not familiar with members in Umbraco, please read [this article](http
 
 Member authentication and authorization in the Delivery API is performed using the OpenId Connect flow _Authorization Code Flow + PKCE_. This is a complex authorization flow, and it is beyond the scope of this article to explain it. Loads of articles can be found online that explain the flow in detail.
 
-Fortunately, most programming languages have OpenId Connect client libraries to handle the complexity for us. [`AppAuth`](https://appauth.io/) is a great example of such a library. In ASP.NET Core, OpenId Connect support is built into the framework.
+Most programming languages have OpenId Connect client libraries to handle the complexity for us. [`AppAuth`](https://appauth.io/) is a great example of such a library. In ASP.NET Core, OpenId Connect support is built into the framework.
 
 ### Enabling member authorization
 
@@ -213,7 +213,7 @@ For more inspiration on using the built-in member authentication, visit [this tu
 
 ### How to use external identity providers
 
-Umbraco allows adding external identity providers for both back-office users and members. The process is documented in detail in [this article](https://docs.umbraco.com/umbraco-cms/reference/security/external-login-providers/).
+Umbraco allows adding external identity providers for both backoffice users and members. The process is documented in detail in [this article](https://docs.umbraco.com/umbraco-cms/reference/security/external-login-providers/).
 
 The Delivery API supports the same functionality. In the following we'll be using GitHub to test this.
 
