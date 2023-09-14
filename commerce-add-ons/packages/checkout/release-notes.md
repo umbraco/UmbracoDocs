@@ -16,7 +16,7 @@ In this section, you can find the release notes for each version of Checkout pac
 
 <summary>Version 12</summary>
 
-### [12.0.0](https://github.com/umbraco/Umbraco.Commerce.Checkout/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.0) (July 5th 2023)
+#### [12.0.0](https://github.com/umbraco/Umbraco.Commerce.Checkout/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.0) (July 5th 2023)
 
 * [Initial product launch](https://umbraco.com/blog/umbraco-commerce-release/).
 
@@ -26,11 +26,11 @@ In this section, you can find the release notes for each version of Checkout pac
 
 <summary>Version 10</summary>
 
-### [10.0.1](https://github.com/umbraco/Umbraco.Commerce.Checkout?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.1) (August 15th 2023)
+#### [10.0.1](https://github.com/umbraco/Umbraco.Commerce.Checkout?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.1) (August 15th 2023)
 
 * Fixed [#1](https://github.com/umbraco/Umbraco.Commerce.Checkout/issues/1) where static assets weren't getting deployed with the NuGet package and so the installer dashboard was 404ing. Static assets are now correctly embedded.
 
-### [10.0.0](https://github.com/umbraco/Umbraco.Commerce.Checkout/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.0) (July 5th 2023)
+#### [10.0.0](https://github.com/umbraco/Umbraco.Commerce.Checkout/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.0) (July 5th 2023)
 
 * [Initial product launch](https://umbraco.com/blog/umbraco-commerce-release/).
 

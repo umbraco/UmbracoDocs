@@ -16,7 +16,7 @@ In this section, you can find the release notes for each version of Stripe Payme
 
 <summary>Version 10</summary>
 
-### versions (date)
+#### versions (date)
 
 * Description
 
