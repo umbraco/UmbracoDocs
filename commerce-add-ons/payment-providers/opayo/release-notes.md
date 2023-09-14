@@ -7,13 +7,3 @@ If there are any breaking changes or other issues to be aware of when upgrading 
 ## Release History
 
 In this section, you can find the release notes for each version of Opayo Payment Provider for Commerce. For each major version, you can find the details about each release.
-
-<!-- <details>
-
-<summary>Version 10</summary>
-
-#### versions (date)
-
-* Description
-
-</details> -->

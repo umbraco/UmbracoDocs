@@ -11,13 +11,3 @@ For details of releases for **Quickpay Payment Provider for Vendr**, refer to th
 ## Release History
 
 In this section, you can find the release notes for each version of Quickpay Payment Provider for Commerce. For each major version, you can find the details about each release.
-
-<!-- <details>
-
-<summary>Version 10</summary>
-
-#### versions (date)
-
-* Description
-
-</details> -->
