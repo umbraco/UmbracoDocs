@@ -301,7 +301,7 @@ public void ConfigureServices(IServiceCollection services)
 ```
 {% endcode %}
 
-Now we can test the setup. Again we'll be calling `https://{server-host}/umbraco/delivery/api/v1/security/member/authorize` as described previously, but we need to add one more query string parameter:
+Now we can test the setup. We'll be calling `https://{server-host}/umbraco/delivery/api/v1/security/member/authorize` as described previously, but we need to add one more query string parameter:
 
 - `identity_provider=UmbracoMembers.GitHub`
 
