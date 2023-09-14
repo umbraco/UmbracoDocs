@@ -93,7 +93,7 @@ For inspiration, the [samples section](./#basic-client-configuration) at the end
 
 ## Logging in members
 
-_Authorization Code Flow + PKCE_ requires the authentication service (identity provider) to be separate from the client application. This is to ensure that credentials are never exposed directly to the client application.
+_Authorization Code Flow +  Proof Key of Code Exchange (PKCE)_ requires the authentication service (identity provider) to be separate from the client application. This is to ensure that credentials are never exposed directly to the client application.
 
 As an authentication service, we can use both Umbraco's built-in member authentication and external identity providers. By default the Delivery API attempts to use the built-in member authentication.
 
