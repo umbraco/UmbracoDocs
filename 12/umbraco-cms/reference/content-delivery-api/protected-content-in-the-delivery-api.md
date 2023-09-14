@@ -13,7 +13,7 @@ Member authorization in the Delivery API was introduced in version 12.3.
 {% endhint %}
 
 {% hint style="info" %}
-If you are not familiar with members in Umbraco, please read [this article](https://docs.umbraco.com/umbraco-cms/fundamentals/data/members) to learn more.
+If you are not familiar with members in Umbraco, please read the [Members](https://docs.umbraco.com/umbraco-cms/fundamentals/data/members) article.
 {% endhint %}
 
 ## Member authorization
