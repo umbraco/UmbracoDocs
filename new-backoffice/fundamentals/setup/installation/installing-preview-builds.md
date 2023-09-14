@@ -74,7 +74,7 @@ With that, we've successfully installed the latest build of Umbraco! All we have
 dotnet new umbraco -n MyAwesomeNightlySite
 ```
 
-This creates a folder named "MyAwesomeNightlySite" on your system. You can open it in your IDE (like Rider) or use the command line to start working with it. If you choose to use the command line you have to change the dircectory to `MyAwesomeNightlySite` first.
+This creates a folder named "MyAwesomeNightlySite" on your system. You can open it in your IDE (like Rider) or use the command line to start working with it. If you choose to use the command line first you have to change the directory to `MyAwesomeNightlySite`.
 
 To run the newly created Umbraco site, you can execute the following command:
 
