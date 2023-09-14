@@ -562,7 +562,7 @@ Which properties to expand and therefore include in the output if they refer to 
 {% endswagger-response %}
 {% endswagger %}
 
-All endpoints are documented in a Swagger document at `{yourdomain}/umbraco/swagger`. Keep in mind that this document is not available in production mode by default (see also [this article](https://docs.umbraco.com/umbraco-cms/reference/api-versioning-and-openapi)).
+All endpoints are documented in a Swagger document at `{yourdomain}/umbraco/swagger`. Keep in mind that this document is not available in production mode by default. For more information check the [API versioning and OpenAPI](https://docs.umbraco.com/umbraco-cms/reference/api-versioning-and-openapi) article.
 
 ### Query parameters
 
