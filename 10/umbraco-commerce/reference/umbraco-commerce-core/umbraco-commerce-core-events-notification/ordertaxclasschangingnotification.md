@@ -10,7 +10,7 @@ public class OrderTaxClassChangingNotification : OrderTaxClassChangeNotification
 
 **Inheritance**
 
-* class [OrderTaxClassChangeNotificationBase&lt;TEntity&gt;](ordertaxclasschangenotificationbase-1.md)
+* Class [OrderTaxClassChangeNotificationBase&lt;TEntity&gt;](ordertaxclasschangenotificationbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

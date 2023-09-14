@@ -10,7 +10,7 @@ public class InitStorePipelineArgs : PipelineArgs<Store>
 
 **Inheritance**
 
-* class [PipelineArgs&lt;!0&gt;](../../umbraco-commerce-common/umbraco-commerce-common-pipelines/pipelineargs-1.md)
+* Class [PipelineArgs&lt;!0&gt;](../../umbraco-commerce-common/umbraco-commerce-common-pipelines/pipelineargs-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Pipelines.Store](README.md)

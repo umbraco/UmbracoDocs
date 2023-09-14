@@ -13,7 +13,7 @@ public class OrderLineReadOnly : EntityBase<OrderLineState>, IHasReadableOrderLi
 
 **Inheritance**
 
-* class [EntityBase&lt;TState&gt;](entitybase-1.md)
+* Class [EntityBase&lt;TState&gt;](entitybase-1.md)
 * interface [IHasReadableOrderLines](ihasreadableorderlines.md)
 * interface [IHasReadableOrderLines&lt;T&gt;](ihasreadableorderlines-1.md)
 * interface [IHasReadableProperties](ihasreadableproperties.md)

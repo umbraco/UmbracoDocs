@@ -10,7 +10,7 @@ public class OrderLineChangingNotification : OrderLineChangeNotification<Order>
 
 **Inheritance**
 
-* class [OrderLineChangeNotification&lt;TEntity&gt;](orderlinechangenotification-1.md)
+* Class [OrderLineChangeNotification&lt;TEntity&gt;](orderlinechangenotification-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

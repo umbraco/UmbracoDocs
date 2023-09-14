@@ -10,7 +10,7 @@ public class ProductAttributePreset : ProductAttributePresetReadOnly
 
 **Inheritance**
 
-* class [ProductAttributePresetReadOnly](productattributepresetreadonly.md)
+* Class [ProductAttributePresetReadOnly](productattributepresetreadonly.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

@@ -12,7 +12,7 @@ public class ShippingMethodReadOnly :
 
 **Inheritance**
 
-* class [StoreAggregateBase&lt;TReadOnlySelf,TWritableSelf,TState&gt;](storeaggregatebase-3.md)
+* Class [StoreAggregateBase&lt;TReadOnlySelf,TWritableSelf,TState&gt;](storeaggregatebase-3.md)
 * interface [IHasName](ihasname.md)
 * interface [IHasReadableAllowedCountryRegions](ihasreadableallowedcountryregions.md)
 * interface [IHasReadableServicePrices](ihasreadableserviceprices.md)

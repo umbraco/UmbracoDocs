@@ -12,7 +12,7 @@ public class OrderLineChangeNotification<TEntity> : OrderNotificationEventBase<T
 
 **Inheritance**
 
-* class [OrderNotificationEventBase&lt;TOrder&gt;](ordernotificationeventbase-1.md)
+* Class [OrderNotificationEventBase&lt;TOrder&gt;](ordernotificationeventbase-1.md)
 * interface [IHasEventKey](../../umbraco-commerce-common/umbraco-commerce-common-events/ihaseventkey.md)
 
 **Namespace**

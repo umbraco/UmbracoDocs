@@ -10,7 +10,7 @@ public class OrderStatusDto : OrderStatusBasicDto
 
 **Inheritance**
 
-* class [OrderStatusBasicDto](orderstatusbasicdto.md)
+* Class [OrderStatusBasicDto](orderstatusbasicdto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

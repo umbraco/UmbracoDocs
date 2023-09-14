@@ -10,7 +10,7 @@ public sealed class PropertyValue : ValueObjectBase
 
 **Inheritance**
 
-* class [ValueObjectBase](../../umbraco-commerce-common/umbraco-commerce-common-models/valueobjectbase.md)
+* Class [ValueObjectBase](../../umbraco-commerce-common/umbraco-commerce-common-models/valueobjectbase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

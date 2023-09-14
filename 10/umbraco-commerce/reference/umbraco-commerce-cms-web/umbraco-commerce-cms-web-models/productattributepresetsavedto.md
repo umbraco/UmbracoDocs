@@ -10,7 +10,7 @@ public class ProductAttributePresetSaveDto : ProductAttributePresetDto, IValidat
 
 **Inheritance**
 
-* class [ProductAttributePresetDto](productattributepresetdto.md)
+* Class [ProductAttributePresetDto](productattributepresetdto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

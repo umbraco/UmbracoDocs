@@ -10,7 +10,7 @@ public class ExportTemplateEditDto : ExportTemplateDto, IHasPath, INotificationM
 
 **Inheritance**
 
-* class [ExportTemplateDto](exporttemplatedto.md)
+* Class [ExportTemplateDto](exporttemplatedto.md)
 * interface [IHasPath](ihaspath.md)
 
 **Namespace**

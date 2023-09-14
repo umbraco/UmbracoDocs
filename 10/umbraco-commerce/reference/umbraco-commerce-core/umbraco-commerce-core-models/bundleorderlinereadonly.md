@@ -11,7 +11,7 @@ public class BundleOrderLineReadOnly : OrderLineReadOnly,
 
 **Inheritance**
 
-* class [OrderLineReadOnly](orderlinereadonly.md)
+* Class [OrderLineReadOnly](orderlinereadonly.md)
 * interface [IHasReadableOrderLines&lt;T&gt;](ihasreadableorderlines-1.md)
 
 **Namespace**

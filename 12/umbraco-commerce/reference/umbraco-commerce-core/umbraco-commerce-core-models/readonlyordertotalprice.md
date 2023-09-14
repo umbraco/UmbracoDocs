@@ -10,7 +10,7 @@ public class ReadOnlyOrderTotalPrice : ReadOnlyOrderSubtotalPrice
 
 **Inheritance**
 
-* class [ReadOnlyOrderSubtotalPrice](readonlyordersubtotalprice.md)
+* Class [ReadOnlyOrderSubtotalPrice](readonlyordersubtotalprice.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

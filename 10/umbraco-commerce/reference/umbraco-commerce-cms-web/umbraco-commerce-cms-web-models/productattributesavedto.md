@@ -10,7 +10,7 @@ public class ProductAttributeSaveDto : ProductAttributeDto, IValidatableObject
 
 **Inheritance**
 
-* class [ProductAttributeDto](productattributedto.md)
+* Class [ProductAttributeDto](productattributedto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

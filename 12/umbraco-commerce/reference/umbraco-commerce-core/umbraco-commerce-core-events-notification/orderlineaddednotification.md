@@ -10,7 +10,7 @@ public class OrderLineAddedNotification : OrderLineAddNotification<OrderReadOnly
 
 **Inheritance**
 
-* class [OrderLineAddNotification&lt;TEntity&gt;](orderlineaddnotification-1.md)
+* Class [OrderLineAddNotification&lt;TEntity&gt;](orderlineaddnotification-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

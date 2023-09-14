@@ -13,6 +13,7 @@ As the Storefront API works alongside the Content Delivery API you must first ha
 When the Content Delivery API is enabled, you will need to explicitly opt-in to the Storefront API. Below you will find the steps you need to take in order to configure it for your Umbraco project.
 
 ### Register the Storefront API dependencies
+
 1. Open your project's `Startup.cs` file.
 2. Register the API dependencies in the `ConfigureServices` method by adding `.AddStorefrontApi()` inside a `.AddUmbracoCommerce()` call:
 
@@ -91,7 +92,7 @@ The following is a list of supported headers used for session management:
 * `Currency` - The ID or ISO Code of the current currency. If not supplied, will fall back to the default currency of the default country defined on the store.
 * `Tax-Class` - The ID or Alias of the default tax class. If not supplied, will fall back to the default defined on the store.
 * `Billing-Country` - The ID or ISO Code of the default billing country. If not supplied, falls back to the default country defined on the store.
-* `Billing-Region` - The ID or ISO Code of the default billing region. 
+* `Billing-Region` - The ID or ISO Code of the default billing region.
 * `Shipping-Country` - The ID or ISO Code of the default shipping country. If not supplied, falls back to either the supplied billing country or the default country defined on the store.
 * `Shipping-Region` - The ID or ISO Code of the default billing region.
 
@@ -103,7 +104,7 @@ The following is a list of supported headers used for session management:
 
 **Expansion** allows you to retrive additional data about related entities in the API output for a given resource.
 
-By default, where a resource is connected with another resource, such as an Order holding a reference to it's Currency, the Storefront API will return those connected resources as "Reference" objects which usually only contain the resources ID and Alias/Code. 
+By default, where a resource is connected with another resource, such as an Order holding a reference to it's Currency, the Storefront API will return those connected resources as "Reference" objects which usually only contain the resources ID and Alias/Code.
 
 ```json
 {
@@ -217,11 +218,11 @@ GET /umbraco/commerce/storefront/api/v1.0/country/GB?expand=defaultCurrency[allo
 }
 ```
 
-### Shortcuts
+#### Shortcuts
 
-As well as expanding explicit properties, the Storefront API supports shortcut expansion keys that when passed will expand all entities of a given type. Shortcut keys are idenfitied by a `$` prefix. There is currently only one supported shortcut key which is `$prices`. 
+As well as expanding explicit properties, the Storefront API supports shortcut expansion keys that when passed will expand all entities of a given type. Shortcut keys are idenfitied by a `$` prefix. There is currently only one supported shortcut key which is `$prices`.
 
-#### $prices
+**$prices**
 
 Prices in Umbraco Commerce can contain a lot of meta data, such as listing applied discounts/adjustments and all values including or excluding those discounts. These are useful when displaying a full order breakdown, but when only needing to present an orders total value, are not necesarry. By default, the Storefront API will only return the final `value` property of a price object, but should you wish to receive this full pricing breakdown you can pass the `$prices` shortcut key to expand all price values to include this extra meta data.
 
@@ -495,50 +496,50 @@ GET /umbraco/commerce/storefront/api/v1/order/af697207-d370-4aee-824c-15711d43a9
 The Storefront API is broken down into a number of endpoints grouped by resource type. Select a resource type below to review the available endpoints.
 
 {% content-ref url="endpoints/order.md" %}
-[Order](endpoints/order.md)
+[order.md](endpoints/order.md)
 {% endcontent-ref %}
 
 {% content-ref url="endpoints/checkout.md" %}
-[Checkout](endpoints/checkout.md)
+[checkout.md](endpoints/checkout.md)
 {% endcontent-ref %}
 
 {% content-ref url="endpoints/product.md" %}
-[Product](endpoints/product.md)
+[product.md](endpoints/product.md)
 {% endcontent-ref %}
 
 {% content-ref url="endpoints/customer.md" %}
-[Customer](endpoints/customer.md)
+[customer.md](endpoints/customer.md)
 {% endcontent-ref %}
 
 {% content-ref url="endpoints/store.md" %}
-[Store](endpoints/store.md)
+[store.md](endpoints/store.md)
 {% endcontent-ref %}
 
 {% content-ref url="endpoints/currency.md" %}
-[Currency](endpoints/currency.md)
+[currency.md](endpoints/currency.md)
 {% endcontent-ref %}
 
 {% content-ref url="endpoints/country.md" %}
-[Country](endpoints/country.md)
+[country.md](endpoints/country.md)
 {% endcontent-ref %}
 
 {% content-ref url="endpoints/payment-method.md" %}
-[Payment Method](endpoints/payment-method.md)
+[payment-method.md](endpoints/payment-method.md)
 {% endcontent-ref %}
 
 {% content-ref url="endpoints/shipping-method.md" %}
-[Shipping Method](endpoints/shipping-method.md)
+[shipping-method.md](endpoints/shipping-method.md)
 {% endcontent-ref %}
 
 {% content-ref url="endpoints/content.md" %}
-[Content](endpoints/content.md)
+[content.md](endpoints/content.md)
 {% endcontent-ref %}
 
 ## Swagger UI
 
 You can access a Swagger document for the Storefront API at `{yourdomain}/umbraco/swagger`, selecting `Umbraco Commerce Storefront API` from the definitions dropdown in the top right. From here you can see a full list of supported APIs, the parameters they accept and the expected payloads and responses.
 
-![Storefront API Swagger](../../media/uc_storefront_api_swagger.png)
+![Storefront API Swagger](../../media/uc\_storefront\_api\_swagger.png)
 
 ## Value Converters
 
@@ -546,9 +547,9 @@ As Umbraco Commerce uses content nodes as products, the Storefront API comes wit
 
 * **Store Picker** - Returns a Store "Reference" by default, or a complete Store response object if the store picker property is being expanded.
 * **Store Entity Picker** - Returns an entity "Reference" by default, or a complete entity response object if the store entity picker property is being expanded.
-* **Price** - Returns a price for the product based on session information passed through in headers. See the ["Session" concept detailed above](#concepts).
+* **Price** - Returns a price for the product based on session information passed through in headers. See the ["Session" concept detailed above](./#concepts).
 * **Stock** - Returns the stock level of the given product.
-* **Variants** - See notes on the [variants value converter](#variants-value-converter) below.
+* **Variants** - See notes on the [variants value converter](./#variants-value-converter) below.
 
 ### Variants Value Converter
 
@@ -610,4 +611,4 @@ To help with common scenarios when working with variants, the Variants value con
 
 * `attributes` will contain a list of "in use" attributes which means there is at least one variant content item that makes use of that attribute. These should be used to build the attribute options UI.
 * `items` returns a list of variant items. By default, this will return the attribute combinations, and whether it is the default combination but its content value will be empty. The content value can be populated by expanding the variants property through the Delivery API, however, it's important to know this could return a lot of data and be intensive. Instead, it is preferred to return the non-expanded value and use the `variantContentUrl` to fetch individual content items as they are requested. The `items` collection should also be used to check if a combination exists as whilst the root level `attributes` collection contains all in-use attributes, it doesn't mean every possible combination of those attributes exists so you can use the `items` collection to validate a combination.
-* `variantContentUrl` as the URL to a specialized Delivery API route that can return a single variant item content based on a passed-in attribute combination. 
+* `variantContentUrl` as the URL to a specialized Delivery API route that can return a single variant item content based on a passed-in attribute combination.

@@ -10,7 +10,7 @@ public class UmbracoProductAdapter : ProductAdapterBase
 
 **Inheritance**
 
-* class [ProductAdapterBase](../../umbraco-commerce-core/umbraco-commerce-core-adapters/productadapterbase.md)
+* Class [ProductAdapterBase](../../umbraco-commerce-core/umbraco-commerce-core-adapters/productadapterbase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Adapters](README.md)

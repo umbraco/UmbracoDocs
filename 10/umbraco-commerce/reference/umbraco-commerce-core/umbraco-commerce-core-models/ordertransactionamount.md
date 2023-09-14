@@ -10,7 +10,7 @@ public class OrderTransactionAmount : AdjustedAmount
 
 **Inheritance**
 
-* class [AdjustedAmount](adjustedamount.md)
+* Class [AdjustedAmount](adjustedamount.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

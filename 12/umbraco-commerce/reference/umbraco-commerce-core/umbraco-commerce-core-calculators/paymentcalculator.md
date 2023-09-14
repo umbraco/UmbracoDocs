@@ -10,7 +10,7 @@ public class PaymentCalculator : PaymentCalculatorBase
 
 **Inheritance**
 
-* class [PaymentCalculatorBase](paymentcalculatorbase.md)
+* Class [PaymentCalculatorBase](paymentcalculatorbase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Calculators](README.md)

@@ -10,7 +10,7 @@ public class OrderCartNumberAdvancedFilter : OrderAdvancedFilterBase
 
 **Inheritance**
 
-* class [OrderAdvancedFilterBase](../umbraco-commerce-cms-filters/orderadvancedfilterbase.md)
+* Class [OrderAdvancedFilterBase](../umbraco-commerce-cms-filters/orderadvancedfilterbase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Filters.Implement](README.md)

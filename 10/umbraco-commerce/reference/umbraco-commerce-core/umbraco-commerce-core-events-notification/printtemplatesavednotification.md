@@ -11,7 +11,7 @@ public class PrintTemplateSavedNotification :
 
 **Inheritance**
 
-* class [PrintTemplateNotificationEventBase&lt;TEntity&gt;](printtemplatenotificationeventbase-1.md)
+* Class [PrintTemplateNotificationEventBase&lt;TEntity&gt;](printtemplatenotificationeventbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

@@ -23,7 +23,7 @@ If you are a package developer, [see here for docs on how to include translation
 
 ## Layout of the localization files
 
-The localization files for the UI are simple JS modules with a default export containing a key-value structure organized in sections.
+The localization files for the UI are JS modules with a default export containing a key-value structure organized in sections.
 
 ```js
 export default {
@@ -62,7 +62,7 @@ In the Umbraco backoffice UI, labels can be localized with the `umb-localize` di
 </button>
 ```
 
-The localize directive can also be used as an attribute like below where the value of the label attribute is then populated with the dictionary key "title\_name" from the localization file using `UmbLocalizeController`.
+The localize directive can also be used as an attribute, like below. The value of the label attribute is then populated with the dictionary key "title_name" from the localization file using `UmbLocalizeController`.
 
 #### **UmbElementMixin**
 
@@ -97,7 +97,7 @@ export class MyElement extends LitElement {
 
 ## Missing localization keys
 
-As Umbraco is a continually evolving product, it is inevitable that new text is added fairly regularly to the English language version of these files. This may mean that some of the above languages are no longer up to date.
+As Umbraco is a continually evolving product, it is inevitable that new text is added regularly to the English language version of these files. This may mean that some of the above languages are no longer up to date.
 
 If a key is not found in the current language, the fallback language will be used. The fallback language is **English (United States)**.
 
@@ -113,4 +113,4 @@ Instead of showing the default value we can show the key alias if we set `debug=
 <umb-localize key="general_ok_not_found" debug="true"></umb-localize>
 ```
 
-If you do update any of the core localization files or you add a new language, don't forget to help the rest of the community by [submitting a pull request](https://docs.umbraco.com/welcome/contribute/getting-started) so that your changes are merged into the core.
+If you update any of the core localization files or you add a new language, don't forget to help the rest of the community. You can do this by [submitting a pull request](https://docs.umbraco.com/welcome/contribute/getting-started) so that your changes are merged into the core.

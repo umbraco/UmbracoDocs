@@ -10,7 +10,7 @@ public class ShippingMethodEditDto : ShippingMethodDto, IHasPath, INotificationM
 
 **Inheritance**
 
-* class [ShippingMethodDto](shippingmethoddto.md)
+* Class [ShippingMethodDto](shippingmethoddto.md)
 * interface [IHasPath](ihaspath.md)
 
 **Namespace**

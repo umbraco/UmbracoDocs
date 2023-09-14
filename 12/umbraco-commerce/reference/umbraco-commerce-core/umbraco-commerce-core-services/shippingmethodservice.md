@@ -11,7 +11,7 @@ public class ShippingMethodService : ServiceBase<ShippingMethodService>,
 
 **Inheritance**
 
-* class [ServiceBase&lt;TSelf&gt;](servicebase-1.md)
+* Class [ServiceBase&lt;TSelf&gt;](servicebase-1.md)
 * interface [ICachedEntityService&lt;TEntityType&gt;](icachedentityservice-1.md)
 * interface [IShippingMethodService](ishippingmethodservice.md)
 

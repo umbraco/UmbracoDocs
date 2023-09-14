@@ -10,7 +10,7 @@ public class StoreSaveDto : StoreDto, IValidatableObject
 
 **Inheritance**
 
-* class [StoreDto](storedto.md)
+* Class [StoreDto](storedto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

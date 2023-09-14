@@ -10,7 +10,7 @@ public class ValidateOrderDiscountCodeRedeem : ValidateOrderCodeEvent
 
 **Inheritance**
 
-* class [ValidateOrderCodeEvent](validateordercodeevent.md)
+* Class [ValidateOrderCodeEvent](validateordercodeevent.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Validation](README.md)

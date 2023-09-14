@@ -10,7 +10,7 @@ public class ExportTemplateDto : ExportTemplateBasicDto
 
 **Inheritance**
 
-* class [ExportTemplateBasicDto](exporttemplatebasicdto.md)
+* Class [ExportTemplateBasicDto](exporttemplatebasicdto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)
