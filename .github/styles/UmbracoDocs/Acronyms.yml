@@ -90,7 +90,6 @@ exceptions:
   - SCM
   - PUT
   - POST
-  - GET
   - DELETE
   - BCC
   - RCL 
