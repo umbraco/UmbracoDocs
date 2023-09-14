@@ -36,6 +36,9 @@ Each tree entry has a management screen where an administrator can authenticate 
 
 ![authorized-screen](images/authorized-screen.png)
 
+If the service is configured to allow the addition of access tokens manually, using the `CanManuallyProvideToken` setting, a new section will be available for providing an access token.
+![provide-token](images/provide-token.png)
+
 ### IAuthorizedServiceCaller interface
 
 Secondly, the developer has access to an interface - `IAuthorizedServiceCaller` - that they can inject instances of and use to make authorized requests to the service's API.
@@ -44,13 +47,24 @@ Using a settings screen the administrator can review the service configuration.
 
 ![settings-screen](images/settings-screen.png)
 
+Depending on the authentication method of the service,
+- `OAuth1`
+- `OAuth2` (default)
+- `ApiKey`
+
+the interface provides two methods for retrieving the value of the access token or the API key:
+- `GetToken`
+- `GetApiKey` 
+
 ## Usage
 
 In the following, you can learn more about how to use the Umbraco Authorized Services package.
 
 ### App Creation
 
-Services that this package is intended to support will offer an OAuth authentication and authorization flow against an "app". The developer will need to create this "app" with the service.  By doing this, information such as the "client ID" and "client secret" can be applied to the configuration.
+Services that this package is intended to support will offer an OAuth2 default authentication and authorization flow against an "app". The developer will need to create this "app" with the service.  By doing this, information such as the "client ID" and "client secret" can be applied to the configuration.
+
+In addition, the package supports integration with OAuth1 or Api key based authentication and authorization services.
 
 ### Installation
 
@@ -73,6 +87,8 @@ An example of doing this through the `appSettings.json` file is shown below. Oth
         {
           "<serviceAlias>": {
             "DisplayName": "",
+            "AuthenticationMethod": "",
+            "CanManuallyProvideToken": true|false,
             "ApiHost": "",
             "IdentityHost": "",
             "TokenHost": "",
@@ -82,6 +98,11 @@ An example of doing this through the `appSettings.json` file is shown below. Oth
             "JsonSerializer": "",
             "RequestTokenFormat": "",
             "AuthorizationRequestRequiresAuthorizationHeaderWithBasicToken": true|false,
+            "ApiKey": "",
+            "ApiKeyProvision": {
+              "Method": "",
+              "Key": ""
+            },
             "ClientId": "",
             "ClientSecret": "",
             "UseProofKeyForCodeExchange": true|false,
@@ -108,6 +129,8 @@ Not all values are required for all services.  Those that are required are indic
 | Element                                                       | Description                                                                                                                                                                                                                                                  | Required? | Example                                    |
 |---------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|--------------------------------------------|
 | DisplayName                                                   | Provides a friendly name for the service used for identification in the user interface.                                                                                                                                                                      | Yes       |                                            |
+| CanManuallyProvideToken                                                   | Toggles an UI section in the backoffice for manually providing an access token.                                                                                                                                                                     | No       |                                            |
+| AuthenticationMethod                                                   | An enum value that controls the type of authentication. `OAuth2` is the default value; other available options are `OAuth1` and `ApiKey`.                                                                                                                                                               | No       |                                            |
 | ApiHost                                                       | The host name for the service API that will be called to deliver business functionality.                                                                                                                                                                     | Yes       | `https://api.github.com`                   |
 | IdentityHost                                                  | The host name for the service's authentication endpoint, used to initiate the authorization of the service by asking the user to login.                                                                                                                      | Yes       | `https://github.com`                       |
 | TokenHost                                                     | Some providers make available a separately hosted service for handling requests for access tokens. If that's the case, it can be provided here. If not provided, the value of `IdentityHost` is used.                                                        | No        |                                            |
@@ -117,6 +140,8 @@ Not all values are required for all services.  Those that are required are indic
 | RequestTokenFormat                                            | An enum value that controls how the request to retrieve an access token is formatted. Options are `Querystring` and `FormUrlEncoded`. `Querystring` is the default value.                                                                                    | No        |                                            |
 | JsonSerializer                                                | An enum value that defines the JSON serializer to use when creating requests and deserializing responses. Options are `Default` and `JsonNet` and `SystemTextJson` as described below. If not provided, `Default` is used.                                   | No        |                                            |
 | AuthorizationRequestRequiresAuthorizationHeaderWithBasicToken | This flag indicates whether the basic token should be included in the request for an access token. If `true`, a base64 encoding of `<clientId>:<clientSecret>` will be added to the authorization header. Default is `false`.                                | No        |                                            |
+| ApiKey                                                   | Provides the service's API key, if `"AuthenticationMethod": "ApiKey"`                                                                                                                                                              | No       |                                            |
+| ApiKeyProvision                                                   | Provides an object that dictates how the API key will be included with each request. This is configured using the `Method`(pass the API key as `QueryString` or `HttpHeader`) and `Key` (name of the key used to include the API key) properties.                                                                                                                                                                  | No       |                                            |
 | ClientId                                                      | This value will be retrieved from the registered service app.                                                                                                                                                                                                | Yes       |                                            |
 | ClientSecret                                                  | This value will be retrieved from the registered service app.  As the name suggests, it should be kept secret and so is probably best not added directly to `appSettings.json` and checked into source control.                                              | Yes       |                                            |
 | Scopes                                                        | This value will be configured on the service app and retrieved from there. Best practice is to define only the set of permissions that the integration will need.                                                                                            | Yes       | `repo`                                     |
@@ -189,6 +214,14 @@ Finally, there are convenience extension methods available for each of the commo
 
 ```csharp
 Task<TResponse> GetRequestAsync<TResponse>(string serviceAlias, string path);
+```
+
+Depending on the configured authentication method, there are two methods that can be used to retrieve the access token or the API key:
+
+```csharp
+string? GetToken(string serviceAlias);
+
+string? GetApiKey(string serviceAlias);
 ```
 
 ## Verified Providers
@@ -803,6 +836,36 @@ As integrations with more providers are successfully completed, we plan to maint
   "ClientSecret": "",
   "Scopes": "",
   "SampleRequest": "/openid/v1/userinfo"
+}
+```
+
+</details>
+
+<details>
+
+<summary>YouTube</summary>
+
+
+```json
+"youtube": {
+  "DisplayName": "YouTube",
+  "AuthenticationMethod": "ApiKey",
+  "ApiHost": "https://www.googleapis.com/youtube",
+  "IdentityHost": "",
+  "TokenHost": "",
+  "RequestIdentityPath": "",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "RequestTokenPath": "",
+  "RequestTokenFormat": "",
+  "ApiKey": "[youtube-api-key]",
+  "ApiKeyProvision": {
+    "Method": "QueryString",
+    "Key": "key"
+  },
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "",
+  "SampleRequest": "/v3/videos?id=[youtube-video-id]&part=snippet,contentDetails,statistics,status"
 }
 ```
 
