@@ -18,7 +18,7 @@ If you are not familiar with members in Umbraco, please read the [Members](https
 
 ## Member authorization
 
-Member authentication and authorization in the Delivery API is performed using the OpenId Connect flow _Authorization Code Flow + PKCE_. This is a complex authorization flow, and it is beyond the scope of this article to explain it. Loads of articles can be found online that explain the flow in detail.
+Member authentication and authorization in the Delivery API is performed using the OpenId Connect flow _Authorization Code Flow + Proof Key of Code Exchange (PKCE)_. This is a complex authorization flow, and it is beyond the scope of this article to explain it. Many articles can be found online that explain the flow in detail.
 
 Most programming languages have OpenId Connect client libraries to handle the complexity for us. [`AppAuth`](https://appauth.io/) is a great example of such a library. In ASP.NET Core, OpenId Connect support is built into the framework.
 
