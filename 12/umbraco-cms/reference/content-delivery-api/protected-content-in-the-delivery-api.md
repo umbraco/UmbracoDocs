@@ -213,7 +213,7 @@ For more inspiration on using the built-in member authentication, check the [Mem
 
 ### How to use external identity providers
 
-Umbraco allows adding external identity providers for both backoffice users and members. The process is documented in detail in [this article](https://docs.umbraco.com/umbraco-cms/reference/security/external-login-providers/).
+Umbraco allows adding external identity providers for both backoffice users and members. The process is documented in detail in the [External Login Providers](https://docs.umbraco.com/umbraco-cms/reference/security/external-login-providers/) article.
 
 The Delivery API supports the same functionality. In the following we'll be using GitHub to test this.
 
