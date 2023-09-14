@@ -213,7 +213,7 @@ Normally this is a useful fail-safe to ensure translations aren't lost in the tr
 
 If you have deleted languages that have already existing translations, you may want to temporarily remove this check. You can do that by setting this value to `true`.
 
-When this is in place a translation for a language that doesn't exist in the target environment will be ignored and a warning message output to the log.
+When this is in place a translation for a language that doesn't exist in the target environment will be ignored. A warning message will be output to the log.
 
 ## AllowMembersDeploymentOperations and TransferMemberGroupsAsContent
 
