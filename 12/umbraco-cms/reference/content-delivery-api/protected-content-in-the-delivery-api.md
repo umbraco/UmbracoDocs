@@ -209,7 +209,7 @@ If everything works as expected, the request will yield a redirect to the login 
 Do not worry about the URL construction and subsequent handling of the `code` parameter. This complexity is what the OpenId Connect client libraries handle for us.
 {% endhint %}
 
-For more inspiration on using the built-in member authentication, visit [this tutorial](https://docs.umbraco.com/umbraco-cms/tutorials/members-registration-and-login). Here you will also learn how to create member sign-up functionality.
+For more inspiration on using the built-in member authentication, check the [Members Registration and Login](https://docs.umbraco.com/umbraco-cms/tutorials/members-registration-and-login) article. Here you will also learn how to create member sign-up functionality.
 
 ### How to use external identity providers
 
