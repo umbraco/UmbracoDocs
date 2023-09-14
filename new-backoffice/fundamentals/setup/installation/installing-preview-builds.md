@@ -66,7 +66,7 @@ Open up your command prompt of choice and execute the `dotnet new install` comma
 dotnet new install Umbraco.Templates::14.0.0--preview002
 ```
 
-The name and the versions are separated with two colons `::` and it's important that we specify the entire version including the `--preview001` otherwise, the dotnet new command cannot find the package.
+The name and the versions are separated with two colons `::`. It's important that we specify the entire version, including the `--preview001`; otherwise, the `dotnet new` command cannot find the package.
 
 With that, we've successfully installed the latest build of Umbraco! All we have to do now is to create a new site by executing the newly installed template:
 
@@ -74,7 +74,7 @@ With that, we've successfully installed the latest build of Umbraco! All we have
 dotnet new umbraco -n MyAwesomeNightlySite
 ```
 
-This will create a folder on your system called "MyAwesomeNightlySite", which you can either open up in your favorite IDE such as Rider, or you can cd into it using the command line and start working with it.
+This creates a folder named "MyAwesomeNightlySite" on your system. You can open it in your IDE (like Rider) or use the command line to start working with it. If you choose to use the command line you have to change the dircectory to `MyAwesomeNightlySite` first.
 
 To run the newly created Umbraco site, you can execute the following command:
 
