@@ -1,7 +1,5 @@
 ---
-description: >-
-  Learn more about each of the available integrations for implementing payment
-  providers into your Umbraco Commerce installation.
+description: Learn more about each of the available integrations for implementing payment providers into your Umbraco Commerce installation.
 ---
 
 # What are Payment Providers?
