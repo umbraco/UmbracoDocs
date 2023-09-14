@@ -14,7 +14,7 @@ In this section, you can find the release notes for each version of Checkout pac
 
 <details>
 
-<summary>Version 12</summary>
+<summary>Version 12.</summary>
 
 #### [12.0.0](https://github.com/umbraco/Umbraco.Commerce.Checkout/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.0) (July 5th 2023)
 
