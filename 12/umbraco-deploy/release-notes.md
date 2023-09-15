@@ -33,6 +33,7 @@ Under each major version, you can find details about minor and patch releases fo
 * Include published name in content transfer data to avoid overwriting with draft name if different.
 * Optimized content transfers to include only draft and published versions when they exist.
 * Fixed issue with partial restore of forms [#178](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/178)
+* Updated to version 12.0.1 of `Umbraco.Licenses` used for Umbraco Deploy On-Premise.
 
 [**12.0.1**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.1) **(August 1st 2023)**
 
