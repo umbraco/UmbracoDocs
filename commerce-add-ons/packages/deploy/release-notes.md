@@ -11,3 +11,13 @@ For details of releases for **Deploy package for Vendr**, refer to the [Change l
 ## Release History
 
 In this section, you can find the release notes for each version of Deploy package for Umbraco Commerce. For each major version, you can find the details about each release.
+
+<!-- <details>
+
+<summary>Version</summary>
+
+[**version**](link) **(date)**
+
+* issue notes
+
+</details> -->

@@ -55,3 +55,13 @@
   * [How to block payments from non billing country sources](stripe/how-to-guides/radar-billing-country-rule.md)
   * [How to test Stripe webhooks locally](stripe/how-to-guides/testing-stripe-webhooks-locally.md)
 * [Release Notes](stripe/release-notes.md)
+
+## Opayo
+
+* [Overview](opayo/README.md)
+* [Release Notes](opayo/release-notes.md)
+
+## Worldpay
+
+* [Overview](worldpay/README.md)
+* [Release Notes](worldpay/release-notes.md)
