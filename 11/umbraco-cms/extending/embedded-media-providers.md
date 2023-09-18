@@ -127,7 +127,7 @@ Notice there isn't really any implementation written here. The regex maps the in
 
 ## Custom Embed Providers
 
-If your third-party media provider does not support OEmbed or there is some quirk with the content being embedded that requires custom HTML, then implement `GetMarkup()` without using the base helper methods.
+If your third-party media provider lacks OEmbed support or requires custom HTML due to content quirks, implement `GetMarkup()` without using base helper methods.
 
 ### Custom Embed Provider Example
 
