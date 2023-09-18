@@ -1,7 +1,4 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: Umbraco Embed Providers
 description: A guide to creating a custom embed providers in Umbraco
 ---
 
@@ -45,85 +42,80 @@ You can see the details of these, and any recent editions in the C# developer re
 Create a new provider by creating a C# class that implements the `IEmbedProvider` interface. Umbraco provides a convenient `OEmbedProviderBase` class as a starting point.
 
 ```csharp
-namespace Umbraco.Cms.Core.Media.EmbedProviders
+namespace Umbraco.Cms.Core.Media.EmbedProviders;
+
+public abstract class OEmbedProviderBase : IEmbedProvider
 {
-    public abstract class OEmbedProviderBase : IEmbedProvider
-    {
-        protected OEmbedProviderBase(IJsonSerializer jsonSerializer);
+    protected OEmbedProviderBase(IJsonSerializer jsonSerializer);
 
-        public abstract string ApiEndpoint { get; }
-        public abstract string[] UrlSchemeRegex { get; }
-        public abstract Dictionary<string, string> RequestParams { get; }
+    public abstract string ApiEndpoint { get; }
+    public abstract string[] UrlSchemeRegex { get; }
+    public abstract Dictionary<string, string> RequestParams { get; }
 
-        public abstract string GetMarkup(string url, int maxWidth = 0, int maxHeight = 0);
-        public virtual string GetEmbedProviderUrl(string url, int maxWidth, int maxHeight);
-        public virtual string DownloadResponse(string url);
-        public virtual T GetJsonResponse<T>(string url) where T : class;
-        public virtual XmlDocument GetXmlResponse(string url);
-        public virtual string GetXmlProperty(XmlDocument doc, string property);
-    }
+    public abstract string? GetMarkup(string url, int maxWidth = 0, int maxHeight = 0);
+    public virtual string GetEmbedProviderUrl(string url, int maxWidth, int maxHeight);
+    public virtual string DownloadResponse(string url);
+    public virtual T? GetJsonResponse<T>(string url) where T : class;
+    public virtual XmlDocument GetXmlResponse(string url);
+    public virtual string GetXmlProperty(XmlDocument doc, string property);
 }
 ```
 
 ### Adding a new OEmbed Provider Example
 
-Let's allow our editors to embed artwork from the popular DeviantArt website - the world's largest online social community for artists and art enthusiasts. We can see they have information on using OEmbed: [https://www.deviantart.com/developers/oembed](https://www.deviantart.com/developers/oembed). The format of their OEmbed implementation returns a JSON format, from a URL `https://backend.deviantart.com/oembed?url=[urltoembed]`. We'll need to use the `EmbedProviderBase` and the `base.GetJsonResponse` method. We can see 'links' to media shared on DeviantArt are in the format: `https://fav.me/[uniquemediaidentifier]`. We'll need a regex to match any urls pasted into the embed panel that start with _fav.me_, achieved by setting the `UrlSchemeRegex` property.
+Let's allow our editors to embed artwork from the popular DeviantArt website - the world's largest online social community for artists and art enthusiasts. We can see they have information on using OEmbed: [https://www.deviantart.com/developers/oembed](https://www.deviantart.com/developers/oembed). The format of their OEmbed implementation returns a JSON format, from a URL `https://backend.deviantart.com/oembed?url=[urltoembed]`. We'll need to use the `OEmbedProviderBase` and the `base.GetJsonResponse` method. We can see 'links' to media shared on DeviantArt are in the format: `https://fav.me/[uniquemediaidentifier]`. We'll need a regex to match any URLs pasted into the embed panel that start with _fav.me_, achieved by setting the `UrlSchemeRegex` property.
 
 The Provider would look like this:
 
 ```csharp
-using System.Collections.Generic;
 using Umbraco.Cms.Core.Media.EmbedProviders;
 using Umbraco.Cms.Core.Serialization;
 
-namespace MyNamespace
+namespace MyNamespace;
+
+public class DeviantArtEmbedProvider : OEmbedProviderBase
 {
-    public class DeviantArtEmbedProvider : OEmbedProviderBase
+    public DeviantArtEmbedProvider(IJsonSerializer jsonSerializer)
+        : base(jsonSerializer)
     {
-        public DeviantArtEmbedProvider(IJsonSerializer jsonSerializer)
-          : base(jsonSerializer)
-        {
-        }
+    }
 
-        public override string ApiEndpoint => "https://backend.deviantart.com/oembed?url=";
+    public override string ApiEndpoint => "https://backend.deviantart.com/oembed?url=";
 
-        public override string[] UrlSchemeRegex => new string[]
-        {
-            @"fav\.me/*",
-            @"\w+\.deviantart.com\/\w+\/art\/*",
-            @"\w+\.deviantart.com\/art\/*",
-            @"sta\.sh/*",
-            @"\w+\.deviantart.com\/\w+#\/d*",
-        };
+    public override string[] UrlSchemeRegex => new[]
+    {
+        @"fav\.me/*",
+        @"\w+\.deviantart.com\/\w+\/art\/*",
+        @"\w+\.deviantart.com\/art\/*",
+        @"sta\.sh/*",
+        @"\w+\.deviantart.com\/\w+#\/d*"
+    };
 
-        public override Dictionary<string, string> RequestParams => new Dictionary<string, string>();
+    public override Dictionary<string, string> RequestParams => new();
 
-        public override string? GetMarkup(string url, int maxWidth = 0, int maxHeight = 0)
-        {
-            var requestUrl = base.GetEmbedProviderUrl(url, maxWidth, maxHeight);
-            var oembed = base.GetJsonResponse<OEmbedResponse>(requestUrl);
+    public override string? GetMarkup(string url, int maxWidth = 0, int maxHeight = 0)
+    {
+        string requestUrl = base.GetEmbedProviderUrl(url, maxWidth, maxHeight);
+        OEmbedResponse? oembed = base.GetJsonResponse<OEmbedResponse>(requestUrl);
 
-            return oembed?.GetHtml();
-        }
+        return oembed?.GetHtml();
     }
 }
 ```
 
-#### Register the provider with the OEmbedProvidersCollection
+#### Register the provider with the `EmbedProvidersCollection`
 
-Create a new C# class that implements `IComposer` and add append your new provider to the EmbedProvidersCollection:
+Create a new C# class that implements `IComposer` and append your new provider to the `EmbedProvidersCollection`:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
 
-namespace MyNamespace
+namespace MyNamespace;
+
+public class RegisterEmbedProvidersComposer : IComposer
 {
-    public class RegisterEmbedProvidersComposer : IComposer
-    {
-        public void Compose(IUmbracoBuilder builder)
-            => builder.EmbedProviders().Append<DeviantArtEmbedProvider>();
-    }
+    public void Compose(IUmbracoBuilder builder)
+        => builder.EmbedProviders().Append<DeviantArtEmbedProvider>();
 }
 ```
 
@@ -135,7 +127,7 @@ Notice there isn't really any implementation written here. The regex maps the in
 
 ## Custom Embed Providers
 
-If your third-party media provider does not support OEmbed or there is some quirk with the content being embedded that requires custom HTML. then implement GetMarkup without using the base helper methods.
+If your third-party media provider does not support OEmbed or there is some quirk with the content being embedded that requires custom HTML, then implement `GetMarkup()` without using the base helper methods.
 
 ### Custom Embed Provider Example
 
@@ -144,56 +136,57 @@ Azure Media Services [(https://azure.microsoft.com/en-gb/services/media-services
 You can create a custom `EmbedProvider` to embed an IFrame video player in your content. This can be done by taking the Media asset URL and writing out the required markup.
 
 ```csharp
-using System.Collections.Generic;
 using System.Net;
 using Umbraco.Cms.Core.Media.EmbedProviders;
 using Umbraco.Cms.Core.Serialization;
 
-namespace MyNamespace
-{
-    public class AzureVideoEmbedProvider : OEmbedProviderBase
-    {
-        public AzureVideoEmbedProvider(IJsonSerializer jsonSerializer)
-          : base(jsonSerializer)
-        {
-        }
+namespace MyNamespace;
 
-        // no ApiEndpoint!
-        public override string ApiEndpoint => string.Empty;
-        public override string[] UrlSchemeRegex => new string[]
-        {
-            @"windows\.net/*"
-        };
-        public override Dictionary<string, string> RequestParams => new Dictionary<string, string>();
-        public override string GetMarkup(string url, int maxWidth, int maxHeight)
-        {
-            // format of markup
-            string videoFormat = "<div class=\"iplayer-container\"><iframe src=\"//aka.ms/ampembed?url={0}\" name=\"azuremediaplayer\" scrolling=\"no\" frameborder=\"no\" align=\"center\" autoplay=\"false\" width=\"{1}\" height=\"{2}\" allowfullscreen></iframe></div>";
-            // pass in encoded Url, with and height, and turn off autoplay...
-            var videoPlayerMarkup = string.Format(videoFormat, WebUtility.UrlEncode(url) + "&amp;autoplay=false", maxWidth, maxHeight);
-            return videoPlayerMarkup;
-        }
+public class AzureVideoEmbedProvider : OEmbedProviderBase
+{
+    public AzureVideoEmbedProvider(IJsonSerializer jsonSerializer)
+        : base(jsonSerializer)
+    {
+    }
+
+    // no ApiEndpoint!
+    public override string ApiEndpoint => string.Empty;
+    
+    public override string[] UrlSchemeRegex => new[]
+    {
+        @"windows\.net/*"
+    };
+
+    public override Dictionary<string, string> RequestParams => new();
+
+    public override string? GetMarkup(string url, int maxWidth = 0, int maxHeight = 0)
+    {
+        // format of markup
+        string videoFormat = "<div class=\"iplayer-container\"><iframe src=\"//aka.ms/ampembed?url={0}\" name=\"azuremediaplayer\" scrolling=\"no\" frameborder=\"no\" align=\"center\" autoplay=\"false\" width=\"{1}\" height=\"{2}\" allowfullscreen></iframe></div>";
+
+        // pass in encoded Url, with and height, and turn off autoplay...
+        var videoPlayerMarkup = string.Format(videoFormat, WebUtility.UrlEncode(url) + "&amp;autoplay=false", maxWidth, maxHeight);
+
+        return videoPlayerMarkup;
     }
 }
 ```
 
 Here the markup to embed has been manually constructed based upon the iframe video player, no request to an Api endpoint is made...
 
-#### Register the Azure Embed Provider with the OEmbedProvidersCollection
+#### Register the Azure Embed Provider with the `EmbedProvidersCollection`
 
-Create a new C# class that implements `IComposer` and add append your new provider to the EmbedProvidersCollection:
+Create a new C# class that implements `IComposer` and add append your new provider to the `EmbedProvidersCollection`:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
 
-namespace MyNamespace
+namespace MyNamespace;
+
+public class RegisterEmbedProvidersComposer : IComposer
 {
-    public class RegisterEmbedProvidersComposer : IComposer
-    {
-        public void Compose(IUmbracoBuilder builder)
-            => builder.EmbedProviders().Append<AzureVideoEmbedProvider>();
-    }
+    public void Compose(IUmbracoBuilder builder)
+        => builder.EmbedProviders().Append<AzureVideoEmbedProvider>();
 }
 ```
 
