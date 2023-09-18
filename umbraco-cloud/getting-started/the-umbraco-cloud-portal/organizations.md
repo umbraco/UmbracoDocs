@@ -22,7 +22,45 @@ In the **Members** section, you can get an overview, view pending invites, and t
 
 <figure><img src="../../../.gitbook/assets/members.png" alt=""><figcaption></figcaption></figure>
 
-### MFA enforcement
+Members added to your ogranization can see different information about the organization based on the user group they are added to. Currently there are three different groups, Read, Write and Admin.
+Below you can see what each user group has access to under the organization they are a part of.
+
+Organization Members with **Admin Access** can do the following in the organization:
+
+* Update the organization information
+* Invite to the organization
+* Invite Users to project under the organization
+* Edit organization team
+* See pending invitations
+* See organization information
+* See organization projects
+* See payment history
+* See subscriptions
+* See organization Members
+* See payment history
+* Handle Multi Factor Autentication (MFA) for users
+* Handle payment methods
+* Change permissions for Members
+* Remove role from users
+
+
+Organization members with **Write Access** can do the following in the organization:
+
+* See Organization information
+* See Organization Members
+* Invite to the organization
+* See pending invitations
+
+Organization Members with **Read Access**, can do the following in the organization:
+
+* See Organization information
+* See Organization Members
+
+{% hint style="info" %}
+Being a Member of an organization, does not give access to any projects under it. To get access to a project under an organization, you need to be [invited](/umbraco-cloud/set-up/users-on-cloud.md) to the project. This can be done by either someone that is part of a project or an administrator of your organization.
+{% endhint %}
+
+### Multi Factor Authentication (MFA) enforcement
 
 When working in organizations on Umbraco Cloud, as a company, you might want to enforce a certain type of MFA for members.
 
