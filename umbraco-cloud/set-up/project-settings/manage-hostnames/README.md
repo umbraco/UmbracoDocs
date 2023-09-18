@@ -9,11 +9,12 @@ Let's say you have a project named `Snoopy`. The default hostnames will be:
 * Development environment - dev-snoopy.euwest01.umbraco.io
 * Staging environment - stage-snoopy.euwest01.umbraco.io
 
-The hostnames contain the region your project is hosted on. Currently, there are 3 options available when choosing a region for your Umbraco project:
+The hostnames contain the region your project is hosted on. Currently, there are 4 options available when choosing a region for your Umbraco project:
 
 * West Europe (euwest01),
-* East US (useast01), and
-* South UK (uksouth01)
+* East US (useast01), 
+* South UK (uksouth01) and
+* Australian East (aueast01)
 
 To access the backoffice add `/umbraco` at the end of the Live, Development, or Staging URL.
 

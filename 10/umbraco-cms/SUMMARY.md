@@ -213,6 +213,7 @@
   * [Health checks](reference/configuration/healthchecks.md)
   * [Hosting settings](reference/configuration/hostingsettings.md)
   * [Imaging settings](reference/configuration/imagingsettings.md)
+  * [Indexing settings](reference/configuration/indexingsettings.md)
   * [Install Default Data Settings](reference/configuration/installdefaultdatasettings.md)
   * [Keep alive settings](reference/configuration/keepalivesettings.md)
   * [Logging settings](reference/configuration/loggingsettings.md)
