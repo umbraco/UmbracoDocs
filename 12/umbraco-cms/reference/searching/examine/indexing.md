@@ -80,24 +80,23 @@ using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
 
 namespace Umbraco.Docs.Samples.Web.CustomIndexing;
+public class ConfigureExternalIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
 {
-    public class ConfigureExternalIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
+    public void Configure(string name, LuceneDirectoryIndexOptions options)
     {
-        public void Configure(string name, LuceneDirectoryIndexOptions options)
+        if (name.Equals(Constants.UmbracoIndexes.ExternalIndexName))
         {
-            if (name.Equals(Constants.UmbracoIndexes.ExternalIndexName))
-            {
-                options.FieldDefinitions.AddOrUpdate(new FieldDefinition("price", FieldDefinitionTypes.Double));
-            }
-        }
-
-        // Part of the interface, but does not need to be implemented for this.
-        public void Configure(LuceneDirectoryIndexOptions options)
-        {
-            throw new System.NotImplementedException();
+            options.FieldDefinitions.AddOrUpdate(new FieldDefinition("price", FieldDefinitionTypes.Double));
         }
     }
+
+    // Part of the interface, but does not need to be implemented for this.
+    public void Configure(LuceneDirectoryIndexOptions options)
+    {
+        throw new System.NotImplementedException();
+    }
 }
+
 ```
 
 This will ensure that the `price` field in the index is treated as a `double` type (if the `price` field does not exist in the index, it is added).
