@@ -1,14 +1,13 @@
 # Organizations
 
-On Umbraco Cloud, you can get an Umbraco Cloud Organization. With an Organization, you get an overview of all the projects that have been created by you and the members of your Organization.
-
-If you are interested in getting an Organization, please reach out to our Support Team through the Chat box in your project overview.
-
-## Managing your Organization
+On Umbraco Cloud it is possible to get an Organization for all your projects. This is handy if you are a partner or are managing a lot of projects for different customers.
+With an organization you get an overview of all your projects, members a part of the organization and manage project payments and other options.
 
 In the following sections, we will go through the different options that are available in an Organization:
 
 ![Organization Overview](images/Cloud-org-overview.png)
+
+If you are interested in getting an Organization, please reach out to our Support Team through the Chat box in your project overview.
 
 ### Information
 
@@ -57,7 +56,7 @@ Organization Members with **Read Access**, can do the following in the organizat
 * See Organization Members
 
 {% hint style="info" %}
-Being a Member of an organization, does not give access to any projects under it. To get access to a project under an organization, you need to be [invited](/umbraco-cloud/set-up/users-on-cloud.md) to the project. This can be done by either someone that is part of a project or an administrator of your organization.
+Being a Member of an organization, does not give access to any projects under it. To get access to a project under an organization, you need to be [invited](/umbraco-cloud/set-up/users-on-cloud.md) to the project. This can be done by either someone that is part of the project or an administrator in your organization.
 {% endhint %}
 
 ### Multi Factor Authentication (MFA) enforcement
