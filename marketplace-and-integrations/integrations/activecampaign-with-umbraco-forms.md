@@ -6,7 +6,7 @@ description: >-
 
 # ActiveCampaign with Umbraco Forms
 
-This integration provides a custom workflow, allowing form entries to be mapped to an ActiveCampaign contact record. The record can be used to create a new contact or to associate a contact with an existing CRM (Customer Relationship Management) account.
+This integration provides a custom workflow, allowing form entries to be mapped to an ActiveCampaign contact record. The record can be used to create a new contact or to associate a contact with an existing Customer Relationship Management (CRM) account.
 
 ## Package Links
 
