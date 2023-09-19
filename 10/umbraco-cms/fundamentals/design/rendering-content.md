@@ -9,7 +9,7 @@ _The primary task of any template in Umbraco is to render the values of the curr
 
 ## Display a value in your template view
 
-Each property in your [Document Type](../data/defining-content.md#what-is-a-document-type) has an alias, this is used to specify where in the template view to display the value.
+Each property in your [Document Type](../data/defining-content/#what-is-a-document-type) has an alias, this is used to specify where in the template view to display the value.
 
 ```html
 <h1>@Model.Value("pageTitle")</h1>
