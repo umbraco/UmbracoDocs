@@ -1,5 +1,5 @@
 ---
-description: "How to amend the built-in behavior of adding fields and associating workflows with new forms"
+description: "How to amend the built-in behavior of adding/excluding fields and associating workflows with new forms"
 ---
 
 # Customize Default Fields and Workflows For a Form
@@ -254,4 +254,27 @@ Again, you will need to register your custom class, for example, in a composer w
 
 ```csharp
 builder.Services.AddUnique<IApplyDefaultFieldsBehavior, CustomApplyDefaultFieldsBehavior>();
+```
+
+### Example - Excluding a Built-in Field
+
+The following class shows how to exclude a built-in field types using a custom composer. The `Password`, `Recaptcha2` and `RichText` field types (or "answers") will no longer be available for selection when creating a form in the backoffice.
+
+```
+using Umbraco.Forms.Core.Providers;
+using Umbraco.Forms.Core.Providers.FieldTypes;
+
+namespace MyNamespace
+{
+    public class MyFormFieldsComposer : IComposer
+    {
+        public void Compose(IUmbracoBuilder builder)
+        {
+            builder.WithCollectionBuilder<FieldCollectionBuilder>()
+               .Exclude<Password>()
+                .Exclude<Recaptcha2>()
+                .Exclude<RichText>();
+        }
+    }
+}
 ```
