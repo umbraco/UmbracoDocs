@@ -258,7 +258,7 @@ builder.Services.AddUnique<IApplyDefaultFieldsBehavior, CustomApplyDefaultFields
 
 ### Example - Excluding a Built-in Field
 
-The following class shows how to exclude a built-in field types using a custom composer. The `Password`, `Recaptcha2` and `RichText` field types (or "answers") will no longer be available for selection when creating a form in the backoffice.
+The following class shows how to exclude built-in field types using a custom composer. The `Password`, `Recaptcha2` and `RichText` field types (or "answers") will no longer be available for selection when creating a form in the backoffice.
 
 ```
 using Umbraco.Forms.Core.Providers;
