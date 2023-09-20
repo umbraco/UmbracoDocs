@@ -18,7 +18,7 @@ To create a search for your own custom tree you need to create a C# class that i
 
 ### ISearchableTree
 
-```jsx
+```csharp
 using System.Collections.Generic;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Models.ContentEditing;
@@ -50,7 +50,7 @@ namespace My.Website
 
 Your implementation needs to return an IEnumerable of `SearchResultEntity` items:
 
-```jsx
+```csharp
 public class SearchResultEntity : EntityBasic
 {
     public SearchResultEntity() {
@@ -70,7 +70,7 @@ A `SearchResultEntity` consists of a Score (a Float value) identifying its relev
 
 If we have a custom section Tree with the alias 'favouriteThingsAlias' (see the custom tree example) then we could implement searchability by creating the following C# class in our site:
 
-```jsx
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -141,13 +141,13 @@ Or perhaps you want to replace Examine search in the backoffice with an external
 
 First create your replacement custom `ISearchableTree` implementation, using the same approach as above, but specifying the TreeAlias of the Tree you aim to replace, e.g. 'Member'.
 
-```jsx
+```csharp
 public string TreeAlias => "member";
 ```
 
 To avoid your custom implementation clashing with the default `ISearchableTree` for a Tree, you need to remove its `ISearchableTree` implementation from the collection of SearchableTrees using an `IComposer` when Umbraco starts up:
 
-```jsx
+```csharp
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Web.BackOffice.Trees;
