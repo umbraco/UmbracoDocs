@@ -44,8 +44,8 @@ As this configuration sample illustrates, it is possible to restrict public acce
 {% hint style="info" %}
 The `Media` configuration can only become more restrictive than the `DeliveryApi` configuration:
 
-- If `DeliveryApi::Enabled` is `false`, the `DeliveryApi::Media::Enabled` configuration option has no effect. The Media Delivery API cannot be enabled on its own.
-- If `DeliveryApi::PublicAccess` is `false`, the `DeliveryApi::Media::PublicAccess` configuration option has no effect. The Media Delivery API cannot be publicly available if the Content Delivery API is not.
+* If `DeliveryApi::Enabled` is `false`, the `DeliveryApi::Media::Enabled` configuration option has no effect. The Media Delivery API cannot be enabled on its own.
+* If `DeliveryApi::PublicAccess` is `false`, the `DeliveryApi::Media::PublicAccess` configuration option has no effect. The Media Delivery API cannot be publicly available if the Content Delivery API is not.
 {% endhint %}
 
 ## Endpoints
@@ -92,7 +92,11 @@ Returns a single item.
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name="path" type="String" required="true" %}
-Path of the media item. The path is composed by the names of any ancestor folders and the name of the media item itself, separated by `/`.
+Path of the media item. The path is composed by the names of any ancestor folders and the name of the media item itself, separated by 
+
+`/`
+
+.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Api-Key" type="String" required="false" %}
@@ -140,13 +144,13 @@ Which properties to expand in the response
 {% swagger-response status="401: Unauthorized" description="Missing permissions after protection is set up" %}
 
 {% endswagger-response %}
-
 {% endswagger %}
 
 {% swagger method="get" path="/media" baseUrl="/umbraco/delivery/api/v1" summary="Gets media item(s) from a query" %}
 {% swagger-description %}
 Returns single or multiple items.
 {% endswagger-description %}
+
 {% swagger-parameter in="query" name="fetch" type="String" required="true" %}
 Structural query string option (e.g. `ancestors`, `children`, `descendants`).
 
@@ -154,11 +158,35 @@ Structural query string option (e.g. `ancestors`, `children`, `descendants`).
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="filter" type="String Array" required="false" %}
-Filtering query string options (e.g. `mediaType`, `name`)
+Filtering query string options (e.g. 
+
+`mediaType`
+
+, 
+
+`name`
+
+)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="sort" type="String Array" required="false" %}
-Sorting query string options (e.g. `createDate`, `name`, `sortOrder`, `updateDate`)
+Sorting query string options (e.g. 
+
+`createDate`
+
+, 
+
+`name`
+
+, 
+
+`sortOrder`
+
+, 
+
+`updateDate`
+
+)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="skip" type="Integer" required="false" %}
@@ -184,7 +212,6 @@ Which properties to expand in the response
 {% swagger-response status="400: Bad Request" description="Invalid request" %}
 
 {% endswagger-response %}
-
 {% endswagger %}
 
 ### Request samples
@@ -223,11 +250,11 @@ GET /umbraco/delivery/api/v1/media?fetch=children:/root level folder/child folde
 
 The Media Delivery API outputs the JSON structure outlined below to represent media items:
 
-- Item `path`, `createDate`, `updateDate`, `id`, `name`, and `mediaType` are always included in the response.
-- `url`, `extension` and the size in `bytes` are included for all files (not for folders).
-- `width` and `height` (in pixels) are included for most images.
-- Depending on Umbraco Data Type configuration, `focalPoint` and `crops` are included for most images.
-- Additional editorial properties from the media type can be found in the `properties` collection.
+* Item `path`, `createDate`, `updateDate`, `id`, `name`, and `mediaType` are always included in the response.
+* `url`, `extension` and the size in `bytes` are included for all files (not for folders).
+* `width` and `height` (in pixels) are included for most images.
+* Depending on Umbraco Data Type configuration, `focalPoint` and `crops` are included for most images.
+* Additional editorial properties from the media type can be found in the `properties` collection.
 
 ```json
 {
