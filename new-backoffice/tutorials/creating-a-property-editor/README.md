@@ -5,7 +5,9 @@ description: A guide to creating a property editor in Umbraco
 # Creating a Property Editor
 
 {% hint style="info" %}
+
 This page is a work in progress. It will be updated as the software evolves.
+
 {% endhint %}
 
 This guide explains how to set up a property editor, hook it into Umbraco's Data Types, create a basic property editor, and how we can test our property editor.
@@ -13,7 +15,7 @@ This guide explains how to set up a property editor, hook it into Umbraco's Data
 The steps we will go through in part 1 are:
 
 * ​[Setting up a Plugin](./#1.-setting-up-a-plugin)​
-* ​[Creating a simple Web Component​](./#2.-creating-a-simple-web-component)
+* ​[Creating a Web Component​](./#2.-creating-a-simple-web-component)
 * ​[Registering the Data Type in Umbraco](./#3.-registering-the-data-type-in-umbraco)
 * [Adding styling and setting up events in Web Components](./#4.-adding-styling-and-setting-up-events-in-the-web-components)
 
