@@ -16,7 +16,7 @@ If you are developing a custom section, or a custom Dashboard, you might want to
 
 For example, on a custom dashboard you might add a quick 'Create a Blog Post' button for an editor, but only if that editor has permissions to create a blog post. You could create some sort of API endpoint, to call from your AngularJS controller, that in turn uses the UserService to return the current user's permissions. Then you can see whether they have the required permission to 'create' within the site's blog section.
 
-```jsx
+```csharp
 bool canCreateBlogs = false;
 var user = _userService.GetByEmail(email);
 var userPermissionsForBlog = _userService.GetPermissions(user, blogId);
@@ -33,7 +33,7 @@ foreach (var permission in userPermissionsForBlog)
 
 Each tree action in Umbraco implements the IAction interface, and each Action has a corresponding 'Letter', and a boolean value describing whether permissions can be assigned for an action.
 
-```
+```csharp
 public interface IAction : IDiscoverable
 {
     char Letter {get;}
