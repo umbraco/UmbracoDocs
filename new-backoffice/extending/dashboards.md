@@ -22,7 +22,7 @@ There are two approaches to registering a custom dashboard to appear in the Umbr
 
 Add a file named 'package.manifest' to the 'App\_Plugins' folder, containing the following JSON configuration pointing to your dashboard view:
 
-```json
+```jsx
 {
     "dashboards":  [
         {
