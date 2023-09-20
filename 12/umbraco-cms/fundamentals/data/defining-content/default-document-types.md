@@ -22,7 +22,7 @@ When using a mixed setup, you can take advantage of nesting and use compositions
 
 {% hint style="warning" %}
 
-If you create 2 compositions that contain some common properties then it will not be possible to pick both compositions in a Document Type. If preferred, those compositions that cannot be used can be marked as hidden by checkmarking the `Hide unavailable options`.
+If you create 2 compositions that contain some common properties it is only possible to pick one of the compositions in a Document Type. If preferred, those compositions that cannot be used can be marked as hidden by checkmarking the `Hide unavailable options`.
 <figure><img src="../../../../../12/umbraco-cms/fundamentals/data/images/Composition-hide-unavailable-options.PNG" alt=""><figcaption></figcaption></figure>
 
 {% endhint %}

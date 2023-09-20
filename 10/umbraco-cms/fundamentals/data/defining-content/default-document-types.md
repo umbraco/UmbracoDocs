@@ -22,7 +22,7 @@ When using a mixed setup, you can take advantage of nesting and use compositions
 
 {% hint style="warning" %}
 
-If you create 2 compositions that contain some common properties then it will not be possible to pick both compositions in a Document Type.
+If you create 2 compositions that contain some common properties it is only possible to pick one of the compositions in a Document Type.
 <figure><img src="../../../../../10/umbraco-cms/fundamentals/data/images/Composition-duplicates.PNG" alt=""><figcaption></figcaption></figure>
 
 {% endhint %}
