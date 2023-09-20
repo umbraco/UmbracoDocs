@@ -26,7 +26,7 @@ There are two approaches to registering a custom section to appear in the Umbrac
 
 Create a new file in the `/App_Plugins/MyFavouriteThings/` folder and name it `package.manifest`. In this new file, copy the code snippet below and save it.
 
-```jsx
+```json
 {
     "sections": [
         {
@@ -45,7 +45,7 @@ When registering your section this way, it is added to the end of the collection
 
 By creating a C# class that implements `ISection` from `Umbraco.Cms.Core.Sections`:
 
-```jsx
+```csharp
 using Umbraco.Cms.Core.Sections;
 
 namespace My.Website.Sections
@@ -63,7 +63,7 @@ For your C# type to be discovered by Umbraco at application start up, it needs t
 
 You can achieve this by updating the `ConfigureServices` method in the `Startup.cs` class:
 
-```jsx
+```csharp
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddUmbraco(_env, _config)
@@ -82,17 +82,17 @@ Similar to registering the section via a `package.manifest` file, the `Append<>`
 
 If you wish to control the order of your section a bit more, you can use some of the other methods on `SectionsCollectionBuilder`. For instance, you can add your section at a specific index:
 
-```jsx
+```csharp
 builder.Sections().Insert<MyFavouriteThingsSection>(2);
 ```
 
 Or before or after an existing section:
 
-```jsx
+```csharp
 builder.Sections().InsertBefore<SettingsSection, MyFavouriteThingsSection>();
 ```
 
-```jsx
+```csharp
 builder.Sections().InsertAfter<SettingsSection, MyFavouriteThingsSection>();
 ```
 
@@ -120,7 +120,7 @@ It is worth knowing that the `/lang` folder does not have to be directly in the 
 
 Inside this folder create a file called **en-us.xml**. This is the 'default' fallback language translation file. Add the following definition:
 
-```jsx
+```xml
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <language alias="en" intName="English (US)" localName="English (US)" lcid="" culture="en-US">
   <area alias="sections">
