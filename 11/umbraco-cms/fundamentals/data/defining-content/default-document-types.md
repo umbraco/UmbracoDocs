@@ -2,7 +2,7 @@
 
 On this page, you will find the default Document Types in Umbraco. If you want to use these document types, you can create them in the Settings section.
 
-<figure><img src="../../../../../10/umbraco-cms/fundamentals/data/images/v8Screenshots/createDoctype.PNG" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../11/umbraco-cms/fundamentals/data/images/v8Screenshots/createDoctype.PNG" alt=""><figcaption></figcaption></figure>
 
 ## Document type with template
 
@@ -10,7 +10,7 @@ Creating document types with templates allows you to define both the content str
 
 ## Document type
 
-Creating a document type (without a template) is about defining the content structure and fields that can be used across different content items. You might use document types without templates for creating consistent, structured content that doesn't require a predefined page layout. For example blog posts or product listings.
+Creating a Document Type (without a template) is about defining the content structure and fields that can be used across different content items. You might use document types without templates for creating consistent, structured content that doesn't require a predefined page layout. For example blog posts or product listings.
 
 ## Compositions
 
@@ -18,7 +18,14 @@ Compositions provide a way to create reusable sets of properties that can be add
 
 When using a mixed setup, you can take advantage of nesting and use compositions by clicking on "**Compositions**..." option.
 
-<figure><img src="../../../../../10/umbraco-cms/fundamentals/data/images/v8Screenshots/createGroup_new.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../11/umbraco-cms/fundamentals/data/images/v8Screenshots/createGroup_new.png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="warning" %}
+
+If you create 2 compositions that contain some common properties then it will not be possible to pick both compositions in a Document Type.
+<figure><img src="../../../../../11/umbraco-cms/fundamentals/data/images/Composition-duplicates.PNG" alt=""><figcaption></figcaption></figure>
+
+{% endhint %}
 
 ## Element Type
 
@@ -26,6 +33,6 @@ An Element Type is a Document Type without a template containing schema configur
 
 Element Types cannot be used to create content that resides in the Content tree. When you create an Element type, it automatically sets the **Is Element Type** flag to **True** on the **Permissions** tab.
 
-<figure><img src="../../../../../10/umbraco-cms/fundamentals/data/images/Element-Type.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../11/umbraco-cms/fundamentals/data/images/Element-Type.png" alt=""><figcaption></figcaption></figure>
 
 Element Types are created using the same workflow as regular Document Types but usually contain fewer properties. You can also create Element Types as part of configuring a Block Grid or Block List Data Type.
