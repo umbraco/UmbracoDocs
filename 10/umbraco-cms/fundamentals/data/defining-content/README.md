@@ -31,7 +31,7 @@ A Document Type is created using the Document Type editor in the **Settings** se
 
 <figure><img src="../../../../../11/umbraco-cms/fundamentals/data/images/v8Screenshots/createDoctype.PNG" alt=""><figcaption></figcaption></figure>
 
-You can also choose to create a **Document Type** without a template and create **Folders** to organize your Document Types. Other options are to create Compositions and Element types, which you can read more about in the [Default Document Types ](default-document-types.md)section.
+You can also choose to create a **Document Type** without a template and create **Folders** to organize your Document Types. Other options are to create Compositions and Element types, which you can read more about in the [Default Document Types](default-document-types.md)section.
 
 ## 2. Defining the root node
 
@@ -57,7 +57,7 @@ To set an icon for the Document Type click the document icon in the top left cor
 
 ### Setting Permissions
 
-This will allow this document type to be created as the first content in the **Content** section.
+This will allow this Document Type to be created as the first content in the **Content** section.
 
 * Go to the **Permissions** tab&#x20;
 * Tick the **Allow as root** toggle&#x20;
@@ -67,7 +67,7 @@ This will allow this document type to be created as the first content in the **C
 
 ## 3. Creating the content
 
-Now that we have the document type in place, we can create the content.
+Now that we have the Document Type in place, we can create the content.
 
 * Go to the **Content section**
 * Click on the menu icon next to **Content**
@@ -82,11 +82,11 @@ Let's add some properties of our own.
 
 ## 4. Groups and properties
 
-In order to add the option to create different content on the same document type, some groups and properties need to be added.
+In order to add the option to create different content on the same Document Type, some groups and properties need to be added.
 
 **Groups**
 
-Groups are a way to organize and structure the properties within the content, making it more manageable and user-friendly for content editors when creating or editing content on a website.
+Groups are a way to organize and structure the properties within the content, making it more manageable. It also makes it more user-friendly for content editors when creating or editing content on a website.
 
 A name can be added to the group and after properties can be added.&#x20;
 
@@ -94,7 +94,7 @@ A name can be added to the group and after properties can be added.&#x20;
 
 Each field on a Document Type is called a property. The property is given a **name**, an **alias** (used to output the properties contained in a template), and an **editor**.&#x20;
 
-The editor determines what type of data the property will store and the input method. There is a wide range of default [property editors ](../../backoffice/property-editors/built-in-umbraco-property-editors/)available and you can[ customize additional editors](../../../extending/property-editors/).
+The editor determines what type of data the property will store and the input method. There is a wide range of default [property editors](../../backoffice/property-editors/built-in-umbraco-property-editors/)available and you can [customize additional editors](../../../extending/property-editors/).
 
 Some editors require configuration where a configured editor is saved as a Data Type and can be reused for multiple properties and document types. These can be seen in the **Settings** section under **Data Types**.
 
@@ -103,6 +103,7 @@ Some editors require configuration where a configured editor is saved as a Data 
 * Select the "`Home`" Document Type.
 
 {% hint style="info" %}
+
 #### Keyboard Shortcuts
 
 Keyboard shortcuts are available when you are working with the Document Type editor. To see which shortcuts are available, click **ALT + SHIFT + K**.
@@ -117,7 +118,9 @@ Before we start adding properties to the Document Type we need to create a group
 ![Creating groups](../../../../../11/umbraco-cms/fundamentals/data/images/v8Screenshots/createGroup\_new.png)
 
 {% hint style="info" %}
-_If you have multiple groups and/or properties you can order them with drag and drop or by entering a numeric sort order value. This is done by clicking **Reorder**._
+
+If you have multiple groups and/or properties you can order them with drag and drop or by entering a numeric sort order value. This is done by clicking **Reorder**.
+
 {% endhint %}
 
 To convert a group to a tab, see the [Convert a group to a tab](../adding-tabs.md#convert-a-group-to-a-tab) section in the [Using Tabs](../adding-tabs.md) article.
@@ -141,7 +144,9 @@ Now that we have created a group we can start adding properties. Let's add a Ric
 ![Choosing the Rich Text editor](../../../../../11/umbraco-cms/fundamentals/data/images/v8Screenshots/selectEditor\_new.png)
 
 {% hint style="info" %}
+
 The name of the Data Type is based on the name of the Document Type, the name of the property, and the property editor. Flor example: _Home - Body Text - Rich Text editor_.
+
 {% endhint %}
 
 * Let's **rename** it to "`Basic Rich Text editor`" and only select the most necessary options.
@@ -154,9 +159,11 @@ The name of the Data Type is based on the name of the Document Type, the name of
 * When you are happy with the settings click **Submit**.
 
 {% hint style="info" %}
+
 Selecting the **Mandatory** toggle makes the property mandatory and the content cannot be saved if no value is entered (in this case, the Richtext editor).&#x20;
 
 You have the option to add additional validation by selecting a predefined validation method under the **Custom validation** dropdown (such as email, number, or URL). Or by selecting a custom validation and adding a regular expression.
+
 {% endhint %}
 
 * **Save** the Document Type.&#x20;
@@ -297,8 +304,10 @@ To import a Document Type:
 ![Importing a Document Type](../../../../../11/umbraco-cms/fundamentals/data/images/import-document-type.png)
 
 {% hint style="info" %}
+
 1. If your Document Type contains compositions or inherits from another Document Type, then you need to export/import the Composition/Document Type too.
 2. You cannot export/import document types on Umbraco Cloud.
+
 {% endhint %}
 
 ## More information

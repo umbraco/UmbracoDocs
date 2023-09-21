@@ -12,7 +12,7 @@ This page is a work in progress. It will be updated as the software evolves.
 
 This guide takes you through the steps to set up a Custom Dashboard in Umbraco.
 
-The steps we will go through in session 1 are:
+The steps we will go through session 1 are:
 
 1. [Setting up a package](creating-a-custom-dashboard.md#1.-setting-up-a-package)
 2. [Creating the dashboard web component](creating-a-custom-dashboard.md#2.-creating-the-dashboard-web-component)
@@ -96,7 +96,7 @@ Add the following code:
 
 Notice that the file for our dashboard extension is in the root of our WelcomeDashboard folder and is called `dashboard.js`with the element name `my-welcome-dashboard`.
 
-For more information about the `umbraco-package.json` file, read the article [Package Manifest](../extending/package-manifest/). You should also read the [Dashboards](../extending/dashboards.md) article for more information about dashboard configurations.
+For more information about the `umbraco-package.json` file, read the article [Package Manifest](../extending/package-manifest.md). You should also read the [Dashboards](../extending/dashboards.md) article for more information about dashboard configurations.
 
 {% hint style="info" %}
 Please note that the file`umbraco-package.json` is loaded into memory when Umbraco starts up. If you are changing or adding new configurations you will need to start and stop your application for it to be loaded.

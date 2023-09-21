@@ -12,7 +12,7 @@ These are the steps you need to go through to complete the migration successfull
 4. [Prepare your Cloud project](./#4.-prepare-your-cloud-project)
 5. [Clone down the Cloud project](./#5.-clone-down-the-cloud-project)
 6. [Move and Merge files](./#6.-move-and-merge-files)
-7. [Generate meta data](./#7-generate-meta-data)
+7. [Generate meta data](./#7.-generate-meta-data)
 8. [Deploy to Umbraco Cloud](./#8.-deploy-to-umbraco-cloud)
 
 ## Video tutorial

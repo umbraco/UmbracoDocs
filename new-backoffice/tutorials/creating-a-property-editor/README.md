@@ -13,7 +13,7 @@ This guide explains how to set up a property editor, hook it into Umbraco's Data
 The steps we will go through in part 1 are:
 
 * ​[Setting up a Plugin](./#1.-setting-up-a-plugin)​
-* ​[Creating a simple Web Component​](./#2.-creating-a-simple-web-component)
+* ​[Creating a Web Component​](./#2.-creating-a-simple-web-component)
 * ​[Registering the Data Type in Umbraco](./#3.-registering-the-data-type-in-umbraco)
 * [Adding styling and setting up events in Web Components](./#4.-adding-styling-and-setting-up-events-in-the-web-components)
 
@@ -115,7 +115,7 @@ We will now restart our application. In the Document Type, let's add our newly a
 
 We can now edit the assigned property's value with our new property editor.
 
-We should now have a property editor that looks like this
+We should now have a property editor that looks like this:
 
 <figure><img src="../../.gitbook/assets/NewPropertyEditor.png" alt=""><figcaption></figcaption></figure>
 
@@ -192,7 +192,7 @@ It should now look something like this:
 
 It's starting to look good! Next, let's look into setting up the event logic.
 
-Let's start with the input field. When we type something in the input field, we want the property editor's value to change to the input field's current value. We then have to dispatch a `property-value-change` event.
+Let's start with the input field. When we type something in the input field, we want the property editor's value to change to the input field's current value. We then have to dispatch an `property-value-change` event.
 
 <pre class="language-typescript"><code class="lang-typescript">  #onInput(e: InputEvent) {
     this.value = (e.target as HTMLInputElement).value;
@@ -369,4 +369,4 @@ Next, clear the cache, reload the document, and see the Suggestions Data Type ru
 
 When we save or publish, the value of the Data Type is now automatically synced to the current content object and sent to the server.
 
-Learn more about extending this service by visiting the [Property Editors page](../../extending/property-editors/).
+Learn more about extending this service by visiting the [Property Editors page](../../extending/extension-types/property-editors/).

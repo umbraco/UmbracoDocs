@@ -25,7 +25,7 @@ The Umbraco UI works in all modern browsers:
 * [.NET 8.0 Preview 7 Software Development Kit (SDK)](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 * SQL connection string (SQL Server or SQLite)
 
-When using Visual Studio as your primary Integrated Development Environment (IDE) we recommend [finding and downloading the Software Development Kits (SDKs) for Visual Studio](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks).
+When using Visual Studio as your primary Integrated Development Environment (IDE) we recommend finding and downloading the [Software Development Kits (SDKs) ](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks)for Visual Studio.
 
 ### Hosting <a href="#hosting" id="hosting"></a>
 

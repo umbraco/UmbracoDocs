@@ -12,7 +12,7 @@ This page is a work in progress. It will be updated as the software evolves.
 
 ## Overview
 
-This is session 4 and is the final session of the guide to building a Custom Dashboard. This session continues work on the dashboard we built in session 3: [Adding functionality to the Dashboard](adding-functionality-to-the-dashboard.md), but goes further to showcase how we can use the UI Library in our extension.&#x20;
+This is session 4 and is the final session of the guide to building a Custom Dashboard. This session continues work on the dashboard we built in session 3: [Adding functionality to the Dashboard](adding-functionality-to-the-dashboard.md). But it goes further to showcase how we can use the UI Library in our extension.&#x20;
 
 ## Umbraco UI Library
 
@@ -36,7 +36,7 @@ render() {
 ```
 {% endcode %}
 
-The uui-box has a headline property. Let's move our headline into the headline property.
+The `uui-box` has a headline property. Let's move our headline into the headline property.
 
 {% code title="welcome-dashboard.element.ts" %}
 ```typescript

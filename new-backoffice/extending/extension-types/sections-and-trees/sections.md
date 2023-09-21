@@ -102,13 +102,13 @@ The final order of the sections is down to the order of which the composers are 
 
 You will also need to allow your current Umbraco User group access to this new Custom Section via the backoffice! (you will need to logout and back in again to see the change)
 
-<figure><img src="../../.gitbook/assets/add-custom-section-v8.png" alt=""><figcaption><p>Add section for user</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/add-custom-section-v8.png" alt=""><figcaption><p>Add section for user</p></figcaption></figure>
 
 ### Adding a Language Translation (get rid of the square brackets)
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/custom-section-alias-v8.png" alt=""><figcaption><p>Custom section appears displaying Alias</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/custom-section-alias-v8.png" alt=""><figcaption><p>Custom section appears displaying Alias</p></figcaption></figure>
 
 </div>
 
@@ -137,4 +137,4 @@ To provide translations in other languages, duplicate the en-us.xml file in the 
 
 You will need to recycle the application pool, to see changes to the language translation files reflected in the backoffice.
 
-Now create a custom tree to load in your custom section!&#x20;
+Now create a custom tree to load in your custom section!
