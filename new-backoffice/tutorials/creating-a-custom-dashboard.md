@@ -99,7 +99,7 @@ Notice that the file for our dashboard extension is in the root of our WelcomeDa
 For more information about the `umbraco-package.json` file, read the article [Package Manifest](../extending/package-manifest.md). You should also read the [Dashboards](../extending/dashboards.md) article for more information about dashboard configurations.
 
 {% hint style="info" %}
-Please note that the file`umbraco-package.json` is loaded into memory when Umbraco starts up. If you are changing or adding new configurations you will need to start and stop your application for it to be loaded.
+Please be aware that the file`umbraco-package.json` is loaded into memory when Umbraco starts up. If you are changing or adding new configurations you will need to start and stop your application for it to be loaded.
 {% endhint %}
 
 ## 2. Creating the Dashboard Web Component
