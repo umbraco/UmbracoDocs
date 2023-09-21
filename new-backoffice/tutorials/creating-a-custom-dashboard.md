@@ -147,6 +147,6 @@ You can now start up the Backoffice and see our new dashboard in the content sec
 
 ## Going Further
 
-With all the steps completed, you should have a simple dashboard welcoming your users to the Backoffice.
+With all the steps completed, you should have a dashboard welcoming your users to the Backoffice.
 
 In the next session, we will look into how to add localization to the dashboard using our own custom translations.
