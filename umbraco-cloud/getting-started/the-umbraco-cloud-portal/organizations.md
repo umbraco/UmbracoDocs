@@ -31,7 +31,7 @@ Below you can see what each user group has access to under the organization they
 Organization Members with **Admin Access** can do the following in the organization:
 
 * Update the organization information
-* Invite to the organization
+* Invite others to the organization
 * Invite Users to project under the organization
 * Edit organization team
 * See pending invitations
