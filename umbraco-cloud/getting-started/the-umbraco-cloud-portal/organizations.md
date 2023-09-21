@@ -2,7 +2,7 @@
 
 On Umbraco Cloud it is possible to get an Organization. An organization is handy if you are a partner or are managing a lot of projects for different customers.
 
-With an organization you get an overview of all projects and members part of the organization and you manage project payments and other options.
+With an organization, you get an overview of all projects and members that are part of it, manage the project payments, and many others.
 
 In the following sections, we will go through the different options that are available in an Organization:
 
