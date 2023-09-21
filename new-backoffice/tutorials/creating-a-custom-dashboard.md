@@ -12,7 +12,7 @@ This page is a work in progress. It will be updated as the software evolves.
 
 This guide takes you through the steps to set up a Custom Dashboard in Umbraco.
 
-The steps we will go through session 1 are:
+The guide is divided into several parts. In this first part will go through:
 
 1. [Setting up a package](creating-a-custom-dashboard.md#1.-setting-up-a-package)
 2. [Creating the dashboard web component](creating-a-custom-dashboard.md#2.-creating-the-dashboard-web-component)
@@ -106,12 +106,12 @@ Please note that the file`umbraco-package.json` is loaded into memory when Umbra
 
 Next, let's create a new ts file called `welcome-dashboard.element.ts`. This file is our web component and will contain all our HTML, CSS, and logic.
 
-Let's start with setting the web component with some simple HTML and CSS:
+Let's start with setting the web component with some HTML and CSS:
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
 import { LitElement, css, html } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { customElement } from "lit/decorators.js";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
 @customElement("my-welcome-dashboard")
@@ -119,7 +119,7 @@ export class MyWelcomeDashboardElement extends UmbElementMixin(LitElement) {
 
   render() {
     return html`
-      <h1>Welcome Dashboard<h1>
+      <h1>Welcome Dashboard</h1>
       <div>
         <p>
           This is the Backoffice. From here, you can modify the content,
@@ -129,6 +129,15 @@ export class MyWelcomeDashboardElement extends UmbElementMixin(LitElement) {
       </div>
     `;
   }
+
+  static styles = [
+    css`
+      :host {
+        display: block;
+        padding: 24px;
+      }
+    `,
+  ];
 }
 
 declare global {
@@ -139,7 +148,7 @@ declare global {
 ```
 {% endcode %}
 
-Build the `ts` file and make sure the new `.js` file is in the correct path.
+Build the `ts` file and make sure to copy the output file to `dashboard.js` under `/App_Plugins/WelcomeDashboard/`.
 
 You can now start up the Backoffice and see our new dashboard in the content section:
 
@@ -147,6 +156,6 @@ You can now start up the Backoffice and see our new dashboard in the content sec
 
 ## Going Further
 
-With all the steps completed, you should have a simple dashboard welcoming your users to the Backoffice.
+With all the steps completed, you should have a dashboard welcoming your users to the Backoffice.
 
-In the next session, we will look into how to add localization to the dashboard using our own custom translations.
+In the next part, we will look into how to add localization to the dashboard using our own custom translations.
