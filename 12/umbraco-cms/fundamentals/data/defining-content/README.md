@@ -28,7 +28,7 @@ A Document Type is created using the Document Type editor in the **Settings** se
 * On the **Document Types** node click the menu icon (•••) to bring up the context menu.&#x20;
 * Here choose **Document Type with Template**. This will create a new Document Type with a template. The Template can be found under **Templates** in the **Settings** section which will be assigned as the default template for the Document Type.
 
-<figure><img src="../../../../../10/umbraco-cms/fundamentals/data/images/v8Screenshots/createDoctype.PNG" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../12/umbraco-cms/fundamentals/data/images/v8Screenshots/createDoctype.PNG" alt=""><figcaption></figcaption></figure>
 
 You can also choose to create a **Document Type** without a template and create **Folders** to organize your Document Types. Other options are to create Compositions and Element types, which you can read more about in the [Default Document Types](default-document-types.md) section.
 
@@ -38,7 +38,7 @@ You can also choose to create a **Document Type** without a template and create 
 
 First, we're prompted to give the Document Type a **name**. This first Document Type will be the root node for our content, name it "`Home`".
 
-<figure><img src="../../../../../10/umbraco-cms/fundamentals/data/images/v8Screenshots/homePage.PNG" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../12/umbraco-cms/fundamentals/data/images/v8Screenshots/homePage.PNG" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 The alias of the Document Type is automatically generated based on the property name. If you want to change the auto-generated alias, click the "**lock**" icon. The alias must be in camel case. For example: _`homePage`_.
@@ -52,28 +52,28 @@ Choosing appropriate icons for your content nodes is a good way to give editors 
 
 To set an icon for the Document Type click the document icon in the top left corner. This will open the icon select dialog. Search for "`Home"`and select the icon. This icon will be used in the content tree.
 
-<figure><img src="../../../../../10/umbraco-cms/fundamentals/data/images/v8Screenshots/docTypeIcon.PNG" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../12/umbraco-cms/fundamentals/data/images/v8Screenshots/docTypeIcon.PNG" alt=""><figcaption></figcaption></figure>
 
 ### Setting Permissions
 
-This will allow this document type to be created as the first content in the **Content** section.
+This will allow this Document Type to be created as the first content in the **Content** section.
 
 * Go to the **Permissions** tab&#x20;
 * Tick the **Allow as root** toggle&#x20;
 * Save the Document Type by clicking **save** in the bottom right corner.&#x20;
 
-<figure><img src="../../../../../10/umbraco-cms/fundamentals/data/images/v8Screenshots/docTypePermissions.PNG" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../12/umbraco-cms/fundamentals/data/images/v8Screenshots/docTypePermissions.PNG" alt=""><figcaption></figcaption></figure>
 
 ## 3. Creating the content
 
-Now that we have the document type in place, we can create the content.
+Now that we have the Document Type in place, we can create the content.
 
 * Go to the **Content section**
 * Click on the menu icon next to **Content**
 * Select the "`Home`" Document Type. We'll name it "`Home`"&#x20;
 * Then click the **Save and Publish** button.
 
-<figure><img src="../../../../../10/umbraco-cms/fundamentals/data/images/v8Screenshots/createHomepage.PNG" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../12/umbraco-cms/fundamentals/data/images/v8Screenshots/createHomepage.PNG" alt=""><figcaption></figcaption></figure>
 
 As we haven't created our properties, all we can see on the "`Home`" node is the Properties tab. This tab contains the default properties that are available on all content nodes in Umbraco.
 
@@ -81,11 +81,11 @@ Let's add some properties of our own.
 
 ## 4. Groups and properties
 
-In order to add the option to create different content on the same document type, some groups and properties need to be added.
+In order to add the option to create different content on the same Document Type, some groups and properties need to be added.
 
 **Groups**
 
-Groups are a way to organize and structure the properties within the content, making it more manageable and user-friendly for content editors when creating or editing content on a website.
+Groups are a way to organize and structure the properties within the content, making it more manageable. It also makes it more user-friendly for content editors when creating or editing content on a website.
 
 A name can be added to the group and after properties can be added.&#x20;
 
@@ -93,7 +93,7 @@ A name can be added to the group and after properties can be added.&#x20;
 
 Each field on a Document Type is called a property. The property is given a **name**, an **alias** (used to output the properties contained in a template), and an **editor**.&#x20;
 
-The editor determines what type of data the property will store and the input method. There is a wide range of default [property editors ](../../backoffice/property-editors/built-in-umbraco-property-editors/)available and you can[ customize additional editors](../../../extending/property-editors/).
+The editor determines what type of data the property will store and the input method. There is a wide range of default [property editors](../../backoffice/property-editors/built-in-umbraco-property-editors/)available and you can [customize additional editors](../../../extending/property-editors/).
 
 Some editors require configuration where a configured editor is saved as a Data Type and can be reused for multiple properties and document types. These can be seen in the **Settings** section under **Data Types**.
 
@@ -102,9 +102,11 @@ Some editors require configuration where a configured editor is saved as a Data 
 * Select the "`Home`" Document Type.
 
 {% hint style="info" %}
+
 #### Keyboard Shortcuts
 
 Keyboard shortcuts are available when you are working with the Document Type editor. To see which shortcuts are available, click **ALT + SHIFT + K**.
+
 {% endhint %}
 
 ### Adding groups
@@ -113,10 +115,12 @@ Before we start adding properties to the Document Type we need to create a group
 
 * Click **Add group** and name the group "`Content`".
 
-![Creating groups](../../../../../10/umbraco-cms/fundamentals/data/images/v8Screenshots/createGroup\_new.png)
+![Creating groups](../../../../../12/umbraco-cms/fundamentals/data/images/v8Screenshots/createGroup\_new.png)
 
 {% hint style="info" %}
+
 _If you have multiple groups and/or properties you can order them with drag and drop or by entering a numeric sort order value. This is done by clicking **Reorder**._
+
 {% endhint %}
 
 To convert a group to a tab, see the [Convert a group to a tab](../adding-tabs.md#convert-a-group-to-a-tab) section in the [Using Tabs](../adding-tabs.md) article.
@@ -129,7 +133,7 @@ Now that we have created a group we can start adding properties. Let's add a Ric
 * **Choose** which Data Type/property editor to use, and add validation if needed.
 * Give the property a **name.** The name will be shown to the editor to make it relevant and understandable. Notice the alias is automatically generated based on the name. We'll name this "`Body Text`".
 
-![Adding a property](../../../../../10/umbraco-cms/fundamentals/data/images/v8Screenshots/addproperty\_new.png)
+![Adding a property](../../../../../12/umbraco-cms/fundamentals/data/images/v8Screenshots/addproperty\_new.png)
 
 #### Property Editors
 
@@ -137,10 +141,12 @@ Now that we have created a group we can start adding properties. Let's add a Ric
 * To make it easier to find what you need use the **search field** to filter by typing "`Rich`". Filtering will display configured properties first (under **Available configurations**) and all available editors under that.
 * Select the **Rich Text editor** under **Create new**. This will let you configure the editor settings - the Rich Text editor for this property.
 
-![Choosing the Rich Text editor](../../../../../10/umbraco-cms/fundamentals/data/images/v8Screenshots/selectEditor\_new.png)
+![Choosing the Rich Text editor](../../../../../12/umbraco-cms/fundamentals/data/images/v8Screenshots/selectEditor\_new.png)
 
 {% hint style="info" %}
+
 The name of the Data Type is based on the name of the Document Type, the name of the property, and the property editor. Flor example: _Home - Body Text - Rich Text editor_.
+
 {% endhint %}
 
 * Let's **rename** it to "`Basic Rich Text editor`" and only select the most necessary options.
@@ -153,9 +159,11 @@ The name of the Data Type is based on the name of the Document Type, the name of
 * When you are happy with the settings click **Submit**.
 
 {% hint style="info" %}
+
 Selecting the **Mandatory** toggle makes the property mandatory and the content cannot be saved if no value is entered (in this case, the Richtext editor).&#x20;
 
 You have the option to add additional validation by selecting a predefined validation method under the **Custom validation** dropdown (such as email, number, or URL). Or by selecting a custom validation and adding a regular expression.
+
 {% endhint %}
 
 * **Save** the Document Type.&#x20;
@@ -241,7 +249,7 @@ This is *italic*
 ![Image alt text](https://media.giphy.com/media/bezxCUK2D2TuBCJ7r5/giphy.gif)
 ```
 
-![Makrdown description example](../../../../../10/umbraco-cms/fundamentals/data/images/md-description.gif)
+![Makrdown description example](../../../../../12/umbraco-cms/fundamentals/data/images/md-description.gif)
 
 ## 5. Defining child nodes
 
@@ -264,14 +272,14 @@ Before creating a Text Page in **Content** section, allow the Text Page Document
 * Click **Add child**&#x20;
 * **Select** "`Text Page`".
 
-<figure><img src="../../../../../10/umbraco-cms/fundamentals/data/images/v8Screenshots/setPagePermissions.PNG" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../12/umbraco-cms/fundamentals/data/images/v8Screenshots/setPagePermissions.PNG" alt=""><figcaption></figcaption></figure>
 
 * Go to the **Content** section&#x20;
 * Click the menu icon (•••) next to the "`Home`" node&#x20;
 * **Select** the "`Text page`" Document Type. We'll name the page "`About us`". \
   We now have a basic content structure.
 
-<figure><img src="../../../../../10/umbraco-cms/fundamentals/data/images/v8Screenshots/createAboutUs.PNG" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../12/umbraco-cms/fundamentals/data/images/v8Screenshots/createAboutUs.PNG" alt=""><figcaption></figcaption></figure>
 
 Document Types are flexible and can be used for defining pieces of reusable content or an entire page, to act as a container or repository.
 
@@ -283,7 +291,7 @@ You can also export document types from an already existing project/installation
 * Right-click the **Document type**
 * Select **Export**. When you click on the **Export** button, the Document Type is saved as a \*.udt file.
 
-![Exporting a Document Type](../../../../../10/umbraco-cms/fundamentals/data/images/v8Screenshots/export-document-type.png)
+![Exporting a Document Type](../../../../../12/umbraco-cms/fundamentals/data/images/v8Screenshots/export-document-type.png)
 
 To import a Document Type:
 
@@ -293,11 +301,13 @@ To import a Document Type:
 * Click on the **Import** button and browse to the Document Type you exported. The **Name** and **Alias** of the Document Type are displayed.&#x20;
 * Click **Import** to complete the process.
 
-![Importing a Document Type](../../../../../10/umbraco-cms/fundamentals/data/images/import-document-type.png)
+![Importing a Document Type](../../../../../12/umbraco-cms/fundamentals/data/images/import-document-type.png)
 
 {% hint style="info" %}
+
 1. If your Document Type contains compositions or inherits from another Document Type, then you need to export/import the Composition/Document Type too.
 2. You cannot export/import document types on Umbraco Cloud.
+
 {% endhint %}
 
 ## More information
