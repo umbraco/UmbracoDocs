@@ -6,6 +6,8 @@ description: >-
 
 # Content Templates
 
+Content Templates allows a content editor to create a blueprint for new content nodes based on an existing node.
+
 {% embed url="https://youtu.be/tz7dRStOo2Y" %}
 Learn how to use the Content Templates in Umbraco
 {% endembed %}
