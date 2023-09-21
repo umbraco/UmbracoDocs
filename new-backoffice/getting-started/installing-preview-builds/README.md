@@ -63,10 +63,10 @@ Now that our feed is added we're ready to install our template.
 Open up your command prompt of choice then execute the `dotnet new install` command and provide the version that we want to install. For the latest Umbraco 14 preview release, the command looks like this:
 
 ```
-dotnet new install Umbraco.Templates::14.0.0--preview002
+dotnet new install Umbraco.Templates::14.0.0--preview003
 ```
 
-The name and the versions are separated with two colons`::`. It's important that we specify the entire version, including the `--preview001`; Otherwise, the `dotnet new` command cannot find the package.
+The name and the versions are separated with two colons`::`. It's important that we specify the entire version, including the `--preview003`; Otherwise, the `dotnet new` command cannot find the package.
 
 With that, we've successfully installed the latest build of Umbraco! All we have to do now is create a new site by executing the newly installed template:
 
