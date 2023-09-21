@@ -9,7 +9,9 @@ In the following sections, we will go through the different options that are ava
 ![Organization Overview](images/Cloud-org-overview.png)
 
 {% hint style="info" %}
-If you are interested in getting an Organization, please reach out to our Support Team through the Chat box in your project overview.
+
+If you are interested in getting an Organization, please reach out to the Support Team through the Chat box in your [project overview](https://www.s1.umbraco.io/projects).
+
 {% endhint %}
 
 
