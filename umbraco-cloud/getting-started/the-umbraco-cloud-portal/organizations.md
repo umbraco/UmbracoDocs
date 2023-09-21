@@ -2,14 +2,16 @@
 
 On Umbraco Cloud it is possible to get an Organization. An organization is handy if you are a partner or are managing a lot of projects for different customers.
 
-With an organization you get an overview of all projects and members part of the organization and you manage project payments and other options.
+With an organization, you get an overview of all projects and members that are part of it, manage the project payments, and many others.
 
 In the following sections, we will go through the different options that are available in an Organization:
 
 ![Organization Overview](images/Cloud-org-overview.png)
 
 {% hint style="info" %}
-If you are interested in getting an Organization, please reach out to our Support Team through the Chat box in your project overview.
+
+If you are interested in getting an Organization, please reach out to the Support Team through the Chat box in your [project overview](https://www.s1.umbraco.io/projects).
+
 {% endhint %}
 
 
@@ -31,7 +33,7 @@ Below you can see what each user group has access to under the organization they
 Organization Members with **Admin Access** can do the following in the organization:
 
 * Update the organization information
-* Invite to the organization
+* Invite others to the organization
 * Invite Users to project under the organization
 * Edit organization team
 * See pending invitations
