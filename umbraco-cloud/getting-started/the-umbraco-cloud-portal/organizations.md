@@ -95,7 +95,7 @@ In the **Access Rights** section, you can get a list of all the Access Rights yo
 
 ## Payment methods
 
-In the **Payment methods** section, you can view the payment methods for your organization. From here, you can add or delete credit card details for your Organization. For more details on how to manage payments, visit the 
+In the **Payment methods** section, you can view the payment methods for your organization. From here, you can add or delete credit card details for your Organization. These payment options will be used, when you create new projects under your organization.
 
 ![Payment methods](images/payment-methods-v10.png)
 
