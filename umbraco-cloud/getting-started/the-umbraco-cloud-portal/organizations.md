@@ -86,7 +86,7 @@ It is possible for an administrator to reset the authenticator app settings for 
 
 In the **Projects** section, you can get an overview of all the Projects that have been created in your Organization.
 
-![Project overview](images/Projects-v10.png)
+![Project overview](images/org-projects.png)
 
 It is also possible to see the plan, project status, payment status, creation date, region and number of environments for each of your projects.
 
