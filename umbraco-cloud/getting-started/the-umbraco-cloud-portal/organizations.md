@@ -1,6 +1,6 @@
 # Organizations
 
-On Umbraco Cloud it is possible to get an Organization for all your projects. This is handy if you are a partner or are managing a lot of projects for different customers.
+On Umbraco Cloud it is possible to get an Organization. An organization is handy if you are a partner or are managing a lot of projects for different customers.
 
 With an organization you get an overview of all projects and members part of the organization and you manage project payments and other options.
 
@@ -8,7 +8,10 @@ In the following sections, we will go through the different options that are ava
 
 ![Organization Overview](images/Cloud-org-overview.png)
 
+{% hint style="info" %}
 If you are interested in getting an Organization, please reach out to our Support Team through the Chat box in your project overview.
+{% endhint %}
+
 
 ### Information
 
@@ -85,7 +88,9 @@ In the **Projects** section, you can get an overview of all the Projects that ha
 
 ![Project overview](images/Projects-v10.png)
 
-Additionally, you can view if any Projects have been disabled under your Organization.
+It is also possible to see the plan, project status, payment status, creation date, region and number of environments for each of your projects.
+
+As an administrator it is also possible to invite members of the organization to the different projects under the organization.
 
 ## Access Rights
 
