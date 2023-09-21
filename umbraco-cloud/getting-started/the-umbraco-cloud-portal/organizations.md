@@ -1,7 +1,8 @@
 # Organizations
 
 On Umbraco Cloud it is possible to get an Organization for all your projects. This is handy if you are a partner or are managing a lot of projects for different customers.
-With an organization you get an overview of all your projects, members a part of the organization and manage project payments and other options.
+
+With an organization you get an overview of all projects and members part of the organization and you manage project payments and other options.
 
 In the following sections, we will go through the different options that are available in an Organization:
 
@@ -21,7 +22,7 @@ In the **Members** section, you can get an overview, view pending invites, and t
 
 <figure><img src="../../../.gitbook/assets/members.png" alt=""><figcaption></figcaption></figure>
 
-Members added to your ogranization can see different information about the organization based on the user group they are added to. Currently there are three different groups, Read, Write and Admin.
+Members added to your ogranization can see different information about the organization based on the user group they are added to. Currently there are three different groups, **Read**, **Write** and **Admin**.
 Below you can see what each user group has access to under the organization they are a part of.
 
 Organization Members with **Admin Access** can do the following in the organization:
@@ -94,7 +95,7 @@ In the **Access Rights** section, you can get a list of all the Access Rights yo
 
 ## Payment methods
 
-In the **Payment methods** section, you can view the payment methods for your organization. From here, you can add or delete credit card details for your Organization.
+In the **Payment methods** section, you can view the payment methods for your organization. From here, you can add or delete credit card details for your Organization. For more details on how to manage payments, visit the 
 
 ![Payment methods](images/payment-methods-v10.png)
 
