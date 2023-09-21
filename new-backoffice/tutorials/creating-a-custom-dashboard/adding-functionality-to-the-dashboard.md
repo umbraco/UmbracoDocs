@@ -10,7 +10,7 @@ This page is a work in progress. It will be updated as the software evolves.
 
 ## Overview
 
-This is session 3 in our guide to building a custom dashboard. This session continues work on the dashboard we built in session 2: [Add localization to the dashboard](adding-localization-to-the-dashboard.md) but goes further to show how to add functionality and data to our dashboard.
+This is session 3 in our guide to building a custom dashboard. This session continues work on the dashboard we built in session 2: [Add localization to the dashboard](adding-localization-to-the-dashboard.md). But it goes further to show how to add functionality and data to our dashboard.
 
 The steps we will go through in session 3 are:
 

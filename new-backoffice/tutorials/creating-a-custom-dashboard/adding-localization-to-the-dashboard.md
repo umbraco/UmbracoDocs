@@ -14,7 +14,7 @@ This is session 2 of our guide to building a Custom Dashboard. This session cont
 
 ## Localization
 
-If you want the dashboard to be available in different languages, you can use the existing localizations that come with Umbraco or register your own localizations. The localizations are written as a key-value pair pattern.
+If you want the dashboard to be available in different languages, you can use the existing localizations from Umbraco or register your own localizations. The localizations are written as a key-value pair pattern.
 
 To register localizations to a language, you need to add a new manifest to the Extension API. The manifest can be added through the `umbraco-package.json` file like this:
 
@@ -38,7 +38,7 @@ To register localizations to a language, you need to add a new manifest to the E
 {% endcode %}
 
 {% hint style="info" %}
-Tip: If you do not have many translations, you can also choose to include the localizations directly in the meta object. Read more about translations in the [**Localization**](../../extending/localization/) article.
+Tip: If you do not have many translations, you can also choose to include the localizations directly in the meta-object. Read more about translations in the [**Localization**](../../extending/localization/) article.
 {% endhint %}
 
 Create two new files `en-us.js` and `da-dk.js`.
@@ -245,7 +245,7 @@ declare global {
 
 </details>
 
-The dashboard's text will appear depending on the user's language. If the user's language is Danish, the dashboard will use the text from our `da-dk` file, and if the user's language is English, the dashboard will use the text from our `en-us` file.
+The dashboard's text will appear depending on the user's language. If the user's language is Danish, the dashboard will use the text from our `da-dk` file. If the user's language is English, the dashboard will use the text from our `en-us` file.
 
 The text between the open and close tags of `umb-localize` is the fallback value in case the key can't be found or doesn't exist.
 

@@ -6,11 +6,11 @@ This page is a work in progress. It will be updated as the software evolves.
 
 ### Overview
 
-This is step 3 in the Property Editor tutorial. In this part, we will integrate one of the built-in Umbraco Services. For this sample, we will use the `UmbNotificationContext` for some pop-ups and the `UmbModalManagerContext` to show a dialog when you click the Trim button and the textbox's input length is longer than the `maxChars` configuration.
+This is step 3 in the Property Editor tutorial. In this part, we will integrate one of the built-in Umbraco Services. For this sample, we will use the `UmbNotificationContext` for some pop-ups and the `UmbModalManagerContext`. This is to show a dialog when clicking the Trim button and the textbox's input length is longer than the maxChars configuration.
 
 ### Setting up and using the contexts
 
-Update the class to extend from UmbElementMixin. This allows us to consume the contexts that we need. After, we can create the constructor where we can consume the contexts.
+Update the class to extend from `UmbElementMixin`. This allows us to consume the contexts that we need. After, we can create the constructor where we can consume the contexts.
 
 ```typescript
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
@@ -22,7 +22,7 @@ export class MyPropertyEditorUISuggestionsElement
   implements UmbPropertyEditorExtensionElement
 ```
 
-Let's start with the notification context. We will import the things we need and consume the contexts in the constructor
+Let's start with the notification context. We will import the things we need and consume the contexts in the constructor:
 
 ```typescript
 import {UMB_NOTIFICATION_CONTEXT_TOKEN, UmbNotificationDefaultData } from "@umbraco-cms/backoffice/notification";
@@ -41,7 +41,7 @@ import {UMB_NOTIFICATION_CONTEXT_TOKEN, UmbNotificationDefaultData } from "@umbr
 
 Now we can use the notification context when the trim text button is being clicked.
 
-We want to check if the length of our input is smaller or equal to our `maxChars` configuration. If it is, we have nothing to trim and will send a notification saying there is nothing to trim if the user clicked the button. Here we can use the NotificationContext's peek method. It has two parameters, `UmbNotificationColor` and an`UmbNotificationDefaultData` object.
+We want to check if the length of our input is smaller or equal to our `maxChars` configuration. If it is, we have nothing to trim and will send a notification saying there is nothing to trim if the user clicks the button. Here we can use the NotificationContext's peek method. It has two parameters `UmbNotificationColor` and an`UmbNotificationDefaultData` object.
 
 Add a `click` event to the trim text button
 
@@ -96,7 +96,7 @@ import { UMB_MODAL_MANAGER_CONTEXT_TOKEN, UMB_CONFIRM_MODAL } from '@umbraco-cms
   }
 ```
 
-Continue to add more logic in the `onTextTrim` method
+Continue to add more logic to the `onTextTrim` method:
 
 ```typescript
 #onTextTrim() {

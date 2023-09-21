@@ -1,6 +1,6 @@
 # Adding configuration to a Property Editor
 
-{% hint style="info" %}
+{% hint style="warning" %}
 This page is a work in progress. It will be updated as the software evolves.
 {% endhint %}
 
@@ -16,7 +16,7 @@ An editor can be used again and again, with different configurations, and that i
 
 ### umbraco-package.json
 
-To add a configuration to our Suggestion Data Type, open the `umbraco-package.json` file. Inside the meta we can add the settings object, which has the optional objects `properties` and `defaultData`. Let's start with the `properties`:
+To add a configuration to our Suggestion Data Type, open the `umbraco-package.json` file. Inside the meta, we can add the settings object, which has the optional objects `properties` and `defaultData`. Let's start with the `properties`:
 
 ```json
   ...
@@ -43,7 +43,7 @@ To add a configuration to our Suggestion Data Type, open the `umbraco-package.js
 
 So what did we add? We added a prevalue editor, with a `properties` collection. This collection contains information about the UI we will render on the Data Type configuration for this editor.
 
-The label "disabled" uses the "toggle" view. This will allow us to turn the suggestion button on/off and will provide the user with a toggle button. The name "toggle" comes from the convention that all preview editors are stored in `/umbraco/views/prevalueeditors/` and then found via `boolean.html`.
+The label "disabled" uses the "toggle" view. This will allow us to turn the suggestion button on/off and will provide the user with a toggle button. The name "`toggle`" comes from the convention that all preview editors are stored in `/umbraco/views/prevalueeditors/` and then found via `boolean.html`.
 
 We can now also set some default data on our new configurations:&#x20;
 
