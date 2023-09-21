@@ -11,7 +11,7 @@ Content Templates allows a content editor to create a blueprint for new content 
 ## Create - Method 1
 
 {% hint style="warning" %}
-Before following this method you should have some [content](../data/defining-content/) created beforehand.
+Before following this method you should have some [content](../data/defining-content/#3.-creating-the-content) created beforehand.
 {% endhint %}
 
 Select a **Content node** from the **Content** menu:
