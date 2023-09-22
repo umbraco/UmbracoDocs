@@ -99,14 +99,14 @@ Notice that the file for our dashboard extension is in the root of our WelcomeDa
 For more information about the `umbraco-package.json` file, read the article [Package Manifest](../extending/package-manifest.md). You should also read the [Dashboards](../extending/dashboards.md) article for more information about dashboard configurations.
 
 {% hint style="info" %}
-Please note that the file`umbraco-package.json` is loaded into memory when Umbraco starts up. If you are changing or adding new configurations you will need to start and stop your application for it to be loaded.
+Please be aware that the file`umbraco-package.json` is loaded into memory when Umbraco starts up. If you are changing or adding new configurations you will need to start and stop your application for it to be loaded.
 {% endhint %}
 
 ## 2. Creating the Dashboard Web Component
 
 Next, let's create a new ts file called `welcome-dashboard.element.ts`. This file is our web component and will contain all our HTML, CSS, and logic.
 
-Let's start with setting the web component with some simple HTML and CSS:
+Let's start with setting the web component with some HTML and CSS:
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
@@ -147,6 +147,6 @@ You can now start up the Backoffice and see our new dashboard in the content sec
 
 ## Going Further
 
-With all the steps completed, you should have a simple dashboard welcoming your users to the Backoffice.
+With all the steps completed, you should have a dashboard welcoming your users to the Backoffice.
 
 In the next session, we will look into how to add localization to the dashboard using our own custom translations.
