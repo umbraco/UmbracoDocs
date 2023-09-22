@@ -8,7 +8,7 @@ This guide will help you set up your first extension using vanilla JavaScript or
 
 ## The end result
 
-By the end of this tutorial, we will have a simple extension up and running with a Web Component. This will be made with Vanilla JavaScript or made and set up with Vite, Typescript, and Lit.
+By the end of this tutorial, we will have a extension up and running with a Web Component. This will be made with Vanilla JavaScript or made and set up with Vite, Typescript, and Lit.
 
 {% hint style="info" %}
 If you want to set up an extension with Vite, Typescript, and Lit, you can skip the section "Extension with Vanilla JavaScript".
