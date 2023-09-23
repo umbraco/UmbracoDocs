@@ -16,7 +16,7 @@ Create a folder in `/App_Plugins` and run the following command in that folder:
 npm create vite@latest
 ```
 
-This Guide will help you set up your new package, asking you to pick a framework and a compiler. We recommend Lit and TypeScript.
+This Guide will help you set up your new package, asking you to pick a framework and a compiler. We recommend *Lit* and *TypeScript*.
 
 This sets up our new project and creates a `package.json` file, which includes the necessary packages.
 
@@ -65,7 +65,7 @@ export default defineConfig({
 This alters the Vite default output into a **library mode**, where the output is a javascript file with the same name as the `name` attribute in `package.json`. The name is `my-extension` if you followed this tutorial with no changes.
 
 {% hint style="info" %}
-You can read more about [Vite's build options here](https://vitejs.dev/config/build-options.html#build-lib).
+The `build:lib:entry` parameter can accept an array which will allow you to export multiple files during the build. You can read more about [Vite's build options here](https://vitejs.dev/config/build-options.html#build-lib).
 {% endhint %}
 
 #### Build Package
