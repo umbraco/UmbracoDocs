@@ -16,7 +16,7 @@ Create a folder in `/App_Plugins` and run the following command in that folder:
 npm create vite@latest
 ```
 
-This Guide will help you set up your new package, asking you to pick a framework and a compiler. We recommend *Lit* and *TypeScript*.
+This Guide will help you set up your new package, asking you to pick a framework and a compiler. We recommend **Lit** and **TypeScript**.
 
 This sets up our new project and creates a `package.json` file, which includes the necessary packages.
 
