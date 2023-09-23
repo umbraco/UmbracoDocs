@@ -10,7 +10,7 @@ public class PaymentProviderScaffold : PaymentProviderDefinition
 
 **Inheritance**
 
-* class [PaymentProviderDefinition](paymentproviderdefinition.md)
+* Class [PaymentProviderDefinition](paymentproviderdefinition.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.PaymentProviders](README.md)

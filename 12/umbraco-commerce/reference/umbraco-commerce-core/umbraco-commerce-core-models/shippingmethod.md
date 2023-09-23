@@ -11,7 +11,7 @@ public class ShippingMethod : ShippingMethodReadOnly, IHasWritableServicePrices<
 
 **Inheritance**
 
-* class [ShippingMethodReadOnly](shippingmethodreadonly.md)
+* Class [ShippingMethodReadOnly](shippingmethodreadonly.md)
 * interface [IHasWritableServicePrices&lt;TAggregate&gt;](ihaswritableserviceprices-1.md)
 * interface [IHasWrtiableAllowedCountries&lt;TAggregate&gt;](ihaswrtiableallowedcountries-1.md)
 * interface [IHasWrtiableAllowedCountryRegions&lt;TAggregate&gt;](ihaswrtiableallowedcountryregions-1.md)

@@ -10,7 +10,7 @@ public class PrintTemplate : PrintTemplateReadOnly
 
 **Inheritance**
 
-* class [PrintTemplateReadOnly](printtemplatereadonly.md)
+* Class [PrintTemplateReadOnly](printtemplatereadonly.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

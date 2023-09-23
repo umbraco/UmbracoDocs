@@ -10,7 +10,7 @@ public class ProductSummaryDto : ProductSummaryCommonDto
 
 **Inheritance**
 
-* class [ProductSummaryCommonDto](productsummarycommondto.md)
+* Class [ProductSummaryCommonDto](productsummarycommondto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

@@ -10,7 +10,7 @@ public class DiscountCreatingNotification : DiscountNotificationEventBase<Discou
 
 **Inheritance**
 
-* class [DiscountNotificationEventBase&lt;TEntity&gt;](discountnotificationeventbase-1.md)
+* Class [DiscountNotificationEventBase&lt;TEntity&gt;](discountnotificationeventbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

@@ -10,7 +10,7 @@ public class DiscountCode : EntityBase
 
 **Inheritance**
 
-* class [EntityBase](entitybase.md)
+* Class [EntityBase](entitybase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

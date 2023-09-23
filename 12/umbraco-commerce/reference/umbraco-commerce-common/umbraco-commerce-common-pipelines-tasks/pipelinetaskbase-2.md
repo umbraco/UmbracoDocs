@@ -11,7 +11,7 @@ public abstract class PipelineTaskBase<T, TResult> : PipelineTaskBase, IPipeline
 
 **Inheritance**
 
-* class [PipelineTaskBase](pipelinetaskbase.md)
+* Class [PipelineTaskBase](pipelinetaskbase.md)
 * interface [IPipelineAction&lt;T&gt;](../umbraco-commerce-common-pipelines/ipipelineaction-1.md)
 * interface [IPipelineTask&lt;T,TResult&gt;](../umbraco-commerce-common-pipelines/ipipelinetask-2.md)
 

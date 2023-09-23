@@ -10,7 +10,7 @@ public abstract class ProductVariantSummaryBase : ProductSummaryCommonBase, IPro
 
 **Inheritance**
 
-* class [ProductSummaryCommonBase](productsummarycommonbase.md)
+* Class [ProductSummaryCommonBase](productsummarycommonbase.md)
 * interface [IProductVariantSummary](iproductvariantsummary.md)
 
 **Namespace**

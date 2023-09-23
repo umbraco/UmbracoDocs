@@ -10,7 +10,7 @@ public class PrintTemplateDto : PrintTemplateBasicDto
 
 **Inheritance**
 
-* class [PrintTemplateBasicDto](printtemplatebasicdto.md)
+* Class [PrintTemplateBasicDto](printtemplatebasicdto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

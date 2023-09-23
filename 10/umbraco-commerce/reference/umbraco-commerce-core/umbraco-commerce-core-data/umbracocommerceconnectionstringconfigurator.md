@@ -10,7 +10,7 @@ public class UmbracoCommerceConnectionStringConfigurator : ConnectionStringConfi
 
 **Inheritance**
 
-* class [ConnectionStringConfiguratorBase](connectionstringconfiguratorbase.md)
+* Class [ConnectionStringConfiguratorBase](connectionstringconfiguratorbase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Data](README.md)

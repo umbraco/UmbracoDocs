@@ -4,7 +4,7 @@ description: A guide to creating a custom dashboard in Umbraco
 
 # Creating a Custom Dashboard
 
-{% hint style="info" %}
+{% hint style="warning" %}
 This page is a work in progress. It will be updated as the software evolves.
 {% endhint %}
 
@@ -12,11 +12,10 @@ This page is a work in progress. It will be updated as the software evolves.
 
 This guide takes you through the steps to set up a Custom Dashboard in Umbraco.
 
-The steps we will go through in part 1 are:
+The steps we will go through session 1 are:
 
-1. [Setting up a plugin](creating-a-custom-dashboard.md#1.-setting-up-a-plugin)
+1. [Setting up a package](creating-a-custom-dashboard.md#1.-setting-up-a-package)
 2. [Creating the dashboard web component](creating-a-custom-dashboard.md#2.-creating-the-dashboard-web-component)
-3. [Add language keys](creating-a-custom-dashboard.md#3.-add-language-keys)
 
 ### What is a Dashboard?
 
@@ -35,16 +34,12 @@ Here's an overview of the steps that will be covered:
 * Setting up the dashboard plugin
 * Writing a basic Welcome Message view
 * Configure the Custom Welcome Dashboard to be displayed
-* Adding translations_\*_
+* Adding translations
 * Adding styles
 * Adding interactive functionality with Lit and Typescript
 * Display the current user's name in our welcome message
 * Display the most recent log viewer items
 * You can do anything...
-
-{% hint style="info" %}
-\*Features are still a work in progress and therefore not available.
-{% endhint %}
 
 ### Prerequisites
 
@@ -61,14 +56,15 @@ There are a lot of parallels with Creating a Property Editor. The tutorial '[Cre
 
 At the end of this guide, we should have a friendly welcoming dashboard displaying a list of the most recent site logs.
 
-## 1. Setting up a plugin
+## 1. Setting up a package
 
 Assuming you have read the tutorial [Creating your first extension](creating-your-first-extension.md), you should have a folder named App\_Plugins in your project. Let's call our project WelcomeDashboard. Start by creating a folder in App\_Plugins called `WelcomeDashboard`.
 
-Now create the manifest file named `umbraco-package.json` at the root of the `WelcomeDashboard` folder. Here we define and configure our dashboard.
+Create the manifest file `umbraco-package.json` at the root of the folder `WelcomeDashboard`. Here we define and configure our dashboard.
 
 Add the following code:
 
+{% code title="umbraco-package.json" lineNumbers="true" %}
 ```json
 {
 	"$schema": "../../umbraco-package-schema.json",
@@ -79,7 +75,7 @@ Add the following code:
 			"type": "dashboard",
 			"alias": "my.welcome.dashboard",
 			"name": "My Welcome Dashboard",
-			"js": "/App_Plugins/CustomWelcomeDashboard/dist/welcomedashboard.js",
+			"js": "/App_Plugins/WelcomeDashboard/dashboard.js",
 			"elementName": "my-welcome-dashboard",
 			"weight": -1,
 			"meta": {
@@ -96,18 +92,21 @@ Add the following code:
 	]
 }
 ```
+{% endcode %}
 
-For more information about the `umbraco-package.json` file, read the article [Package Manifest](../extending/package-manifest/). You should also read the [Dashboards](../extending/dashboards.md) article for more information about dashboard configurations.
+Notice that the file for our dashboard extension is in the root of our WelcomeDashboard folder and is called `dashboard.js`with the element name `my-welcome-dashboard`.
+
+For more information about the `umbraco-package.json` file, read the article [Package Manifest](../extending/package-manifest.md). You should also read the [Dashboards](../extending/dashboards.md) article for more information about dashboard configurations.
 
 {% hint style="info" %}
-Please note that the umbraco-package.json file is loaded into memory when Umbraco starts up. If you are changing or adding new configurations you will need to start and stop your application for it to be loaded.
+Please be aware that the file`umbraco-package.json` is loaded into memory when Umbraco starts up. If you are changing or adding new configurations you will need to start and stop your application for it to be loaded.
 {% endhint %}
 
 ## 2. Creating the Dashboard Web Component
 
-Next, inside the `src` folder let's create a new ts file called `welcome-dashboard.element.ts`. This file is our web component and will contain all of our HTML, CSS, and logic.
+Next, let's create a new ts file called `welcome-dashboard.element.ts`. This file is our web component and will contain all our HTML, CSS, and logic.
 
-Let's start with setting it the web component with some simple HTML and CSS:
+Let's start with setting the web component with some HTML and CSS:
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
@@ -140,16 +139,14 @@ declare global {
 ```
 {% endcode %}
 
-You can now start up the backoffice and see our new dashboard in the Content section.
+Build the `ts` file and make sure the new `.js` file is in the correct path.
 
-## 3. Add Language Keys
+You can now start up the Backoffice and see our new dashboard in the content section:
 
-{% hint style="info" %}
-This section is still being updated.
-{% endhint %}
+<figure><img src="../.gitbook/assets/spaces_G1Byxw7XfiZAj8zDMCTD_uploads_PtBQkEyVcGmoVx3ysAOJ_welcome.webp" alt=""><figcaption><p>First look of the dashboard</p></figcaption></figure>
 
 ## Going Further
 
-With all of the steps completed, you should have a functional dashboard welcoming your users to the Backoffice.
+With all the steps completed, you should have a dashboard welcoming your users to the Backoffice.
 
-In the next session, we will look into how to add more functionality to the dashboard using some of the resources and services that Umbraco offers.
+In the next session, we will look into how to add localization to the dashboard using our own custom translations.

@@ -10,7 +10,7 @@ public class PriceAdjusterCollection : ComposedCollection<IPriceAdjuster>
 
 **Inheritance**
 
-* class [ComposedCollection&lt;!0&gt;](../../umbraco-commerce-common/umbraco-commerce-common-composing/composedcollection-1.md)
+* Class [ComposedCollection&lt;!0&gt;](../../umbraco-commerce-common/umbraco-commerce-common-composing/composedcollection-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Adjusters](README.md)

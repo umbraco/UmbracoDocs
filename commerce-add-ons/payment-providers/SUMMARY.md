@@ -13,6 +13,7 @@
 * [Overview](klarna/README.md)
 * [Configure Klarna](klarna/configuring-klarna.md)
 * [Configure Umbraco](klarna/configuring-umbraco.md)
+* [Release Notes](klarna/release-notes.md)
 
 ## Mollie
 
@@ -21,24 +22,28 @@
 * [Configure Umbraco](mollie/configuring-umbraco.md)
 * [How-to Guides](mollie/how-to-guides/README.md)
   * [How to test Mollie webhooks locally](mollie/how-to-guides/testing-mollie-webhooks-locally.md)
+* [Release Notes](mollie/release-notes.md)
 
 ## Nets
 
 * [Overview](nets/README.md)
 * [Configure Nets](nets/configuring-nets.md)
 * [Configure Umbraco](nets/configuring-umbraco.md)
+* [Release Notes](nets/release-notes.md)
 
 ## PayPal
 
 * [Overview](paypal/README.md)
 * [Configure PayPal](paypal/configuring-paypal.md)
 * [Configure Umbraco](paypal/configuring-umbraco.md)
+* [Release Notes](paypal/release-notes.md)
 
 ## Quickpay
 
 * [Overview](quickpay/README.md)
 * [Configure QuickPay](quickpay/configuring-quickpay.md)
 * [Configure Umbraco](quickpay/configuring-umbraco.md)
+* [Release Notes](quickpay/release-notes.md)
 
 ## Stripe
 
@@ -49,3 +54,14 @@
   * [How to Process Subscription Payments](stripe/how-to-guides/processing-subscription-payments.md)
   * [How to block payments from non billing country sources](stripe/how-to-guides/radar-billing-country-rule.md)
   * [How to test Stripe webhooks locally](stripe/how-to-guides/testing-stripe-webhooks-locally.md)
+* [Release Notes](stripe/release-notes.md)
+
+## Opayo
+
+* [Overview](opayo/README.md)
+* [Release Notes](opayo/release-notes.md)
+
+## Worldpay
+
+* [Overview](worldpay/README.md)
+* [Release Notes](worldpay/release-notes.md)

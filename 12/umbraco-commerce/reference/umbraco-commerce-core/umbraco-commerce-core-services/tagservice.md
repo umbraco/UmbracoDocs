@@ -10,7 +10,7 @@ public class TagService : ServiceBase<TagService>, ITagService
 
 **Inheritance**
 
-* class [ServiceBase&lt;TSelf&gt;](servicebase-1.md)
+* Class [ServiceBase&lt;TSelf&gt;](servicebase-1.md)
 * interface [ITagService](itagservice.md)
 
 **Namespace**

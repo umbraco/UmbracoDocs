@@ -10,7 +10,7 @@ public class ShippingCalculator : ShippingCalculatorBase
 
 **Inheritance**
 
-* class [ShippingCalculatorBase](shippingcalculatorbase.md)
+* Class [ShippingCalculatorBase](shippingcalculatorbase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Calculators](README.md)

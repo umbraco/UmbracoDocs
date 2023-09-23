@@ -10,7 +10,7 @@ public class CartDto : CartBasicDto
 
 **Inheritance**
 
-* class [CartBasicDto](cartbasicdto.md)
+* Class [CartBasicDto](cartbasicdto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

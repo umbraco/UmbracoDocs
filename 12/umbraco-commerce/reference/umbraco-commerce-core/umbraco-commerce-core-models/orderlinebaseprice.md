@@ -10,7 +10,7 @@ public class OrderLineBasePrice : AdjustedPrice
 
 **Inheritance**
 
-* class [AdjustedPrice](adjustedprice.md)
+* Class [AdjustedPrice](adjustedprice.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

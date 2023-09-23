@@ -10,7 +10,7 @@ public class AnalyticsService : ServiceBase<AnalyticsService>, IAnalyticsService
 
 **Inheritance**
 
-* class [ServiceBase&lt;TSelf&gt;](servicebase-1.md)
+* Class [ServiceBase&lt;TSelf&gt;](servicebase-1.md)
 * interface [IAnalyticsService](ianalyticsservice.md)
 
 **Namespace**

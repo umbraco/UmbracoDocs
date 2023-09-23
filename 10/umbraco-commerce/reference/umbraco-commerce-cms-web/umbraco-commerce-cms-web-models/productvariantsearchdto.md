@@ -10,7 +10,7 @@ public class ProductVariantSearchDto : ProductSearchDto
 
 **Inheritance**
 
-* class [ProductSearchDto](productsearchdto.md)
+* Class [ProductSearchDto](productsearchdto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

@@ -11,7 +11,7 @@ public class ShippingMethodCreatingNotification :
 
 **Inheritance**
 
-* class [ShippingMethodNotificationEventBase&lt;TEntity&gt;](shippingmethodnotificationeventbase-1.md)
+* Class [ShippingMethodNotificationEventBase&lt;TEntity&gt;](shippingmethodnotificationeventbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

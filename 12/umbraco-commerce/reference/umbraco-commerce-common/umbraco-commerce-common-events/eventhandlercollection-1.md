@@ -11,7 +11,7 @@ public class EventHandlerCollection<TEvent> : ComposedCollection<IEventHandlerFo
 
 **Inheritance**
 
-* class [ComposedCollection&lt;T&gt;](../umbraco-commerce-common-composing/composedcollection-1.md)
+* Class [ComposedCollection&lt;T&gt;](../umbraco-commerce-common-composing/composedcollection-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Common.Events](README.md)

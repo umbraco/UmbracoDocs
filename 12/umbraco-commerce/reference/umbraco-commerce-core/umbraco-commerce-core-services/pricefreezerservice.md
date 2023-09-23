@@ -10,7 +10,7 @@ public class PriceFreezerService : ServiceBase<PriceFreezerService>, IPriceFreez
 
 **Inheritance**
 
-* class [ServiceBase&lt;TSelf&gt;](servicebase-1.md)
+* Class [ServiceBase&lt;TSelf&gt;](servicebase-1.md)
 * interface [IPriceFreezerService](ipricefreezerservice.md)
 
 **Namespace**

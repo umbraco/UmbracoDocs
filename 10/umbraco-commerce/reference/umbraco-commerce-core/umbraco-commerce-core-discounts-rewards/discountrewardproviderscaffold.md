@@ -10,7 +10,7 @@ public class DiscountRewardProviderScaffold : DiscountRewardProviderDefinition
 
 **Inheritance**
 
-* class [DiscountRewardProviderDefinition](discountrewardproviderdefinition.md)
+* Class [DiscountRewardProviderDefinition](discountrewardproviderdefinition.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Discounts.Rewards](README.md)

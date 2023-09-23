@@ -15,7 +15,7 @@ public abstract class AggregateBase<TReadOnlySelf, TWritableSelf, TState> : Enti
 
 **Inheritance**
 
-* class [EntityBase&lt;TState&gt;](entitybase-1.md)
+* Class [EntityBase&lt;TState&gt;](entitybase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

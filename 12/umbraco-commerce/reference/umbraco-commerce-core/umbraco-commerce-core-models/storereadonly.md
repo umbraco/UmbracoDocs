@@ -10,7 +10,7 @@ public class StoreReadOnly : AggregateBase<StoreReadOnly, Store, StoreState>, IH
 
 **Inheritance**
 
-* class [AggregateBase&lt;TReadOnlySelf,TWritableSelf,TState&gt;](aggregatebase-3.md)
+* Class [AggregateBase&lt;TReadOnlySelf,TWritableSelf,TState&gt;](aggregatebase-3.md)
 * interface [IHasName](ihasname.md)
 
 **Namespace**

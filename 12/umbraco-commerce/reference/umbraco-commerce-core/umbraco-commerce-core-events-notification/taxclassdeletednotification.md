@@ -10,7 +10,7 @@ public class TaxClassDeletedNotification : TaxClassNotificationEventBase<TaxClas
 
 **Inheritance**
 
-* class [TaxClassNotificationEventBase&lt;TEntity&gt;](taxclassnotificationeventbase-1.md)
+* Class [TaxClassNotificationEventBase&lt;TEntity&gt;](taxclassnotificationeventbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

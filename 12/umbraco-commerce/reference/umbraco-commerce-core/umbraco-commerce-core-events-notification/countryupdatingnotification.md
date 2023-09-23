@@ -10,7 +10,7 @@ public class CountryUpdatingNotification : CountryNotificationEventBase<Country>
 
 **Inheritance**
 
-* class [CountryNotificationEventBase&lt;TEntity&gt;](countrynotificationeventbase-1.md)
+* Class [CountryNotificationEventBase&lt;TEntity&gt;](countrynotificationeventbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

@@ -10,7 +10,7 @@ public class AttributeDto : AliasNamePairDto
 
 **Inheritance**
 
-* class [AliasNamePairDto](aliasnamepairdto.md)
+* Class [AliasNamePairDto](aliasnamepairdto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

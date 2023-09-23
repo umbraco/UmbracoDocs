@@ -10,7 +10,7 @@ public class TaxClassEditDto : TaxClassDto, IHasPath, INotificationModel
 
 **Inheritance**
 
-* class [TaxClassDto](taxclassdto.md)
+* Class [TaxClassDto](taxclassdto.md)
 * interface [IHasPath](ihaspath.md)
 
 **Namespace**

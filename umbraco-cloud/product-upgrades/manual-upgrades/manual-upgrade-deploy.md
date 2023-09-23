@@ -54,12 +54,12 @@ If you are on Umbraco 7 or Umbraco 8, follow the steps below to manually upgrade
 1. Download **Storage Explorer** here: [https://azure.microsoft.com/en-us/products/storage/storage-explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer) and install it.
 2. Click the **"Plug"** Button (Open Connect Dialog):\
    \
-   ![Click the "Plug" Button (Open Connect Dialog)](../../.gitbook/assets/image.png)
+   ![Click the "Plug" Button (Open Connect Dialog)](<../../.gitbook/assets/image (1).png>)
 
 <!---->
 
 3. Choose **"Blob container or directory"**:\
-   ![](<../../.gitbook/assets/image (1).png>)
+   ![](<../../.gitbook/assets/image (1) (1).png>)
 
 <!---->
 

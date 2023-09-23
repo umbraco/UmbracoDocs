@@ -11,7 +11,7 @@ public class CalculateOrderLinePricesTask :
 
 **Inheritance**
 
-* class [OrderLinesCalculationPipelineTaskBase&lt;TSelf,TOrderLinePipeline&gt;](orderlinescalculationpipelinetaskbase-2.md)
+* Class [OrderLinesCalculationPipelineTaskBase&lt;TSelf,TOrderLinePipeline&gt;](orderlinescalculationpipelinetaskbase-2.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Pipelines.Order.Tasks](README.md)

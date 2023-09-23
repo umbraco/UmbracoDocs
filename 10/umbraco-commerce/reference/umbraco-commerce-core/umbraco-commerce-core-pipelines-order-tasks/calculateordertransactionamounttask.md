@@ -11,7 +11,7 @@ public class CalculateOrderTransactionAmountTask :
 
 **Inheritance**
 
-* class [SubPipelineTaskBase&lt;!0,!1&gt;](../../umbraco-commerce-common/umbraco-commerce-common-pipelines/subpipelinetaskbase-2.md)
+* Class [SubPipelineTaskBase&lt;!0,!1&gt;](../../umbraco-commerce-common/umbraco-commerce-common-pipelines/subpipelinetaskbase-2.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Pipelines.Order.Tasks](README.md)

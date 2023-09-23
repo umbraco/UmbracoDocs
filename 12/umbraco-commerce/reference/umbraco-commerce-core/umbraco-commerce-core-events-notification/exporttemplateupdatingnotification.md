@@ -11,7 +11,7 @@ public class ExportTemplateUpdatingNotification :
 
 **Inheritance**
 
-* class [ExportTemplateNotificationEventBase&lt;TEntity&gt;](exporttemplatenotificationeventbase-1.md)
+* Class [ExportTemplateNotificationEventBase&lt;TEntity&gt;](exporttemplatenotificationeventbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

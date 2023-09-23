@@ -10,7 +10,7 @@ public class StoreSavedNotification : StoreNotificationEventBase<StoreReadOnly>
 
 **Inheritance**
 
-* class [StoreNotificationEventBase&lt;TEntity&gt;](storenotificationeventbase-1.md)
+* Class [StoreNotificationEventBase&lt;TEntity&gt;](storenotificationeventbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

@@ -11,7 +11,7 @@ public class PaymentMethodUpdatedNotification :
 
 **Inheritance**
 
-* class [PaymentMethodNotificationEventBase&lt;TEntity&gt;](paymentmethodnotificationeventbase-1.md)
+* Class [PaymentMethodNotificationEventBase&lt;TEntity&gt;](paymentmethodnotificationeventbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

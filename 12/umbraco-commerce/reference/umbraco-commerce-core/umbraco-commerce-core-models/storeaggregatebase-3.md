@@ -16,7 +16,7 @@ public abstract class StoreAggregateBase<TReadOnlySelf, TWritableSelf, TState> :
 
 **Inheritance**
 
-* class [AggregateBase&lt;TReadOnlySelf,TWritableSelf,TState&gt;](aggregatebase-3.md)
+* Class [AggregateBase&lt;TReadOnlySelf,TWritableSelf,TState&gt;](aggregatebase-3.md)
 * interface [IHasStore](ihasstore.md)
 
 **Namespace**

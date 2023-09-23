@@ -10,7 +10,7 @@ public class CurrencyLayerCurrencyExchangeRateService : CurrencyExchangeRateServ
 
 **Inheritance**
 
-* class [CurrencyExchangeRateServiceBase](currencyexchangerateservicebase.md)
+* Class [CurrencyExchangeRateServiceBase](currencyexchangerateservicebase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Infrastructure.Services](README.md)

@@ -11,7 +11,7 @@ public class StockCacheRefresher :
 
 **Inheritance**
 
-* class [UmbracoCommerceKeyedCacheRefresherBase&lt;TInstanceType,TService&gt;](umbracocommercekeyedcacherefresherbase-2.md)
+* Class [UmbracoCommerceKeyedCacheRefresherBase&lt;TInstanceType,TService&gt;](umbracocommercekeyedcacherefresherbase-2.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Cache.Refreshers](README.md)

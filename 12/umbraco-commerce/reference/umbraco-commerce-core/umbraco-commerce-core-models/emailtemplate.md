@@ -10,7 +10,7 @@ public class EmailTemplate : EmailTemplateReadOnly
 
 **Inheritance**
 
-* class [EmailTemplateReadOnly](emailtemplatereadonly.md)
+* Class [EmailTemplateReadOnly](emailtemplatereadonly.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

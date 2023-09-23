@@ -12,7 +12,7 @@ public abstract class OrderCurrencyChangeNotificationBase<TEntity> :
 
 **Inheritance**
 
-* class [OrderNotificationEventBase&lt;TOrder&gt;](ordernotificationeventbase-1.md)
+* Class [OrderNotificationEventBase&lt;TOrder&gt;](ordernotificationeventbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

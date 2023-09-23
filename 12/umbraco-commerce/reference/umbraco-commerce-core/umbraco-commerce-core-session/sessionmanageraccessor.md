@@ -10,7 +10,7 @@ public class SessionManagerAccessor : AccessorBase<ISessionManager>
 
 **Inheritance**
 
-* class [AccessorBase&lt;!0&gt;](../../umbraco-commerce-common/umbraco-commerce-common/accessorbase-1.md)
+* Class [AccessorBase&lt;!0&gt;](../../umbraco-commerce-common/umbraco-commerce-common/accessorbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Session](README.md)

@@ -63,62 +63,65 @@ Ordering of composers is important, the last one added can override a previously
 
 ### Example - Explicitly Registering a new custom OEmbedProvider
 
-This example shows a custom 'Spotify' OEmbed Provider which will allow Spotify URLs to be used via the 'embed' button in the Grid and Rich Text Editors. As the collection for OEmbedProviders is not 'typed scanned', we need to explicitly register the provider in the collection of OEmbedProviders. We create a C# class which implements `IUserComposer` and append our new Spotify OEmbedProvider to the OEmbedProviders() collection:
+This example shows a custom 'Spotify' OEmbed Provider which will allow Spotify URLs to be used via the 'embed' button in the Rich Text Editors. As the collection for OEmbedProviders is not 'typed scanned', we need to explicitly register the provider in the collection of OEmbedProviders. We create a C# class which implements `IComposer` and append our new Spotify OEmbedProvider to the `EmbedProvidersCollection`:
 
 ```csharp
-using System.Collections.Generic;
 using Umbraco.Cms.Core.Media.EmbedProviders;
 using Umbraco.Cms.Core.Serialization;
-namespace My.Website
+
+namespace My.Website;
+
+public class SpotifyEmbedProvider : OEmbedProviderBase
 {
-    public class Spotify : EmbedProviderBase
+    public SpotifyEmbedProvider(IJsonSerializer jsonSerializer)
+        : base(jsonSerializer)
     {
-        public Spotify(IJsonSerializer jsonSerializer)
-            : base(jsonSerializer)
-        {
-        }
-        public override string ApiEndpoint => "https://embed.spotify.com/oembed/";
-        // Playlist
-        // https://open.spotify.com/user/spotify/playlist/37i9dQZF1E4sNI4jZloSZr?si=cueBooBfTnqCGriSa4N_Kg
-        // spotify:user:spotify:playlist:37i9dQZF1E4sNI4jZloSZr
-        // Artist
-        // https://open.spotify.com/artist/0iirUbtgwt9jEkc2Grin8C?si=TLeUR2cHR-KPRJJhW6YiVg
-        // spotify:artist:0iirUbtgwt9jEkc2Grin8C
-        // Album
-        // https://open.spotify.com/album/0lvtdqkqIln6uDBBUT7DHL?si=XTVJIEmnS_OVv9l6ktPFiw
-        // spotify:album:0lvtdqkqIln6uDBBUT7DHL
-        // Track
-        // https://open.spotify.com/track/7aCk4XfXIEJM2MecU6Gmf2?si=vESDzI0xTNeA9FQ_dvf1eQ
-        // spotify:track:7aCk4XfXIEJM2MecU6Gmf2
-        public override string[] UrlSchemeRegex => new string[]
-        {
-            @".*.spotify.com/.*",
-            @"spotify:.*"
-        };
-        public override Dictionary<string, string> RequestParams => new Dictionary<string, string>();
-        public override string GetMarkup(string url, int maxWidth = 0, int maxHeight = 0)
-        {
-            var requestUrl = base.GetEmbedProviderUrl(url, maxWidth, maxHeight);
-            var oembed = base.GetJsonResponse<OEmbedResponse>(requestUrl);
-            return oembed.GetHtml();
-        }
+    }
+
+    public override string ApiEndpoint => "https://embed.spotify.com/oembed/";
+
+    // Playlist
+    // https://open.spotify.com/user/spotify/playlist/37i9dQZF1E4sNI4jZloSZr?si=cueBooBfTnqCGriSa4N_Kg
+    // spotify:user:spotify:playlist:37i9dQZF1E4sNI4jZloSZr
+    // Artist
+    // https://open.spotify.com/artist/0iirUbtgwt9jEkc2Grin8C?si=TLeUR2cHR-KPRJJhW6YiVg
+    // spotify:artist:0iirUbtgwt9jEkc2Grin8C
+    // Album
+    // https://open.spotify.com/album/0lvtdqkqIln6uDBBUT7DHL?si=XTVJIEmnS_OVv9l6ktPFiw
+    // spotify:album:0lvtdqkqIln6uDBBUT7DHL
+    // Track
+    // https://open.spotify.com/track/7aCk4XfXIEJM2MecU6Gmf2?si=vESDzI0xTNeA9FQ_dvf1eQ
+    // spotify:track:7aCk4XfXIEJM2MecU6Gmf2
+    public override string[] UrlSchemeRegex => new[]
+    {
+        @".*.spotify.com/.*",
+        @"spotify:.*"
+    };
+
+    public override Dictionary<string, string> RequestParams => new();
+
+    public override string? GetMarkup(string url, int maxWidth = 0, int maxHeight = 0)
+    {
+        string requestUrl = base.GetEmbedProviderUrl(url, maxWidth, maxHeight);
+        OEmbedResponse? oembed = base.GetJsonResponse<OEmbedResponse>(requestUrl);
+
+        return oembed?.GetHtml();
     }
 }
 ```
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
-namespace My.Website
+
+namespace My.Website;
+
+public class RegisterEmbedProvidersComposer : IComposer
 {
-    public class CustomOEmbedComposer : IComposer
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            // Change the OEmbedProviders collection
-            // by adding our new EmbedProvider for Spotify
-            builder.OEmbedProviders().Append<Spotify>();
-        }
+        // Change the EmbedProvidersCollection
+        // by adding our new EmbedProvider for Spotify
+        builder.EmbedProviders().Append<SpotifyEmbedProvider>();
     }
 }
 ```

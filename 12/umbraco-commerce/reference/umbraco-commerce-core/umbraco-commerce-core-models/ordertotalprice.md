@@ -10,7 +10,7 @@ public class OrderTotalPrice : OrderSubtotalPrice
 
 **Inheritance**
 
-* class [OrderSubtotalPrice](ordersubtotalprice.md)
+* Class [OrderSubtotalPrice](ordersubtotalprice.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

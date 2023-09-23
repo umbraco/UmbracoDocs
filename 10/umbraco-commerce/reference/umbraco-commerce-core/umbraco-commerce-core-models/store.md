@@ -10,7 +10,7 @@ public class Store : StoreReadOnly
 
 **Inheritance**
 
-* class [StoreReadOnly](storereadonly.md)
+* Class [StoreReadOnly](storereadonly.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

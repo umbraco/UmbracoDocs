@@ -14,7 +14,7 @@ public class OrderReadOnly : StoreAggregateBase<OrderReadOnly, Order, OrderState
 
 **Inheritance**
 
-* class [StoreAggregateBase&lt;TReadOnlySelf,TWritableSelf,TState&gt;](storeaggregatebase-3.md)
+* Class [StoreAggregateBase&lt;TReadOnlySelf,TWritableSelf,TState&gt;](storeaggregatebase-3.md)
 * interface [IHasReadableOrderLines](ihasreadableorderlines.md)
 * interface [IHasReadableOrderLines&lt;T&gt;](ihasreadableorderlines-1.md)
 * interface [IHasReadableProperties](ihasreadableproperties.md)
