@@ -8,6 +8,8 @@ description: "Setup your site to use Azure Blob storage for media and ImageSharp
 
 There are some scenarios where you may want or need to consider leveraging Azure Blob Storage. An example would be for media in Umbraco sites with substantial media libraries.
 
+Having your site's media in Azure Blob Storage can help your deployments complete more quickly. This has the potential to positively affect site performance, as the ImageSharp cache is moved to Azure Blob Storage.
+
 The setup consists of adding a package to your site, setting the correct configuration, and adding the services and middleware. Before you begin you’ll need to create an Azure Storage Account and a container for your media and ImageSharp cache. In this example, we assume your container name is "mysitestorage" and has already been created.
 
 See the [Microsoft documentation](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal) for a quickstart guide on how to create a blob storage container.
