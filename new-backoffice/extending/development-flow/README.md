@@ -37,4 +37,4 @@ npm install -D --registry https://www.myget.org/F/umbracoprereleases/npm @umbrac
 
 ## Visual Studio Code
 
-If you're using Visual Studio Code you can install the extension [Lit-Plugin](https://marketplace.visualstudio.com/items?itemName=runem.lit-plugin) to get intellisense for Lit Elements and UUI Components.
+If you're using Visual Studio Code you can install the extension [Lit-Plugin](https://marketplace.visualstudio.com/items?itemName=runem.lit-plugin) to get intellisense for Lit Elements and Umbraco UI Library Components.
