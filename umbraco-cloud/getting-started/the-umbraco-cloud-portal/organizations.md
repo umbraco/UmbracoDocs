@@ -10,7 +10,7 @@ In the following sections, we will go through the different options that are ava
 
 {% hint style="info" %}
 
-If you are interested in getting an Organization, please reach out to the Support Team through the Chat box in your [project overview](https://www.s1.umbraco.io/projects).
+If you are interested in getting, or need a project added to a organization please reach out to the Support Team in your [project overview](https://www.s1.umbraco.io/projects).
 
 {% endhint %}
 
