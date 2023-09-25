@@ -1,19 +1,22 @@
 ---
-meta.Title: "Server-side File Validation"
-description: "This section describes how you can implement File Validation to improve"
+meta.Title: Server-side File Validation
+description: This section describes how you can implement File Validation
 ---
 
-# Validating file content before saving to disk
+# Server-side file validation
+
 Sometimes it might be necessary to validate the contents of a file before it gets saved to disk when uploading trough the backoffice.
 
-To help with this, Umbraco supplies a `FileStreamSecurityValidator` that runs all registered `IFileStreamSecurityAnalyzer` implementations on the file streams it receives from it's different file upload endpoints.
-When any of the analyzers deem the file to be unsafe, the endpoint disregards the file and shows a relevant validation message where appropriate. This all happens in memory before the stream is written to a temporary file location.
+To help with this, Umbraco supplies a `FileStreamSecurityValidator` that runs all registered `IFileStreamSecurityAnalyzer` implementations on the file streams it receives from it's different file upload endpoints. When any of the analyzers deem the file to be unsafe, the endpoint disregards the file and shows a relevant validation message where appropriate. This all happens in memory before the stream is written to a temporary file location.
 
 ### Implementing a FileStreamSecurityValidator
+
 The `IFileStreamSecurityAnalyzer` needs a single method to be implemented:
-- `IsConsideredSafe`: This method should return false if the analyzer finds a reason not to trust the file
+
+* `IsConsideredSafe`: This method should return false if the analyzer finds a reason not to trust the file
 
 ### Example FileStreamSecurityValidator
+
 The following class shows how one could potentially guard against Cross-site scripting(XSS) vulnerabilities in an svg file.
 
 ```csharp
@@ -55,8 +58,8 @@ public class SvgXssSecurityAnalyzer : IFileStreamSecurityAnalyzer
 }
 ```
 
-You can [register it during startup or with a composer](https://docs.umbraco.com/umbraco-cms/reference/using-ioc#registering-dependencies).
-Then you can upload a file with the following content to the backoffice and see that it is not persisted.
+You can [register it during startup or with a composer](https://docs.umbraco.com/umbraco-cms/reference/using-ioc#registering-dependencies). Then you can upload a file with the following content to the backoffice and see that it is not persisted.
+
 ```
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
