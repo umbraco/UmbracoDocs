@@ -19,5 +19,5 @@ If you are not at this stage yet, please read the [core Umbraco Commerce documen
 
 As well as the content in these docs, the following links may prove useful when using this package:
 
-* [Umbraco Commerce Deploy source code](https://github.com/umbraco/Umbraco.Commerce.Packages.Deploy)
-* [Umbraco Commerce Deploy issue tracker](https://github.com/umbraco/Umbraco.Commerce.Packages.Deploy/issues)
+* [Umbraco Commerce Deploy source code](https://github.com/umbraco/Umbraco.Commerce.Deploy)
+* [Umbraco Commerce Deploy issue tracker](https://github.com/umbraco/Umbraco.Commerce.Deploy)
