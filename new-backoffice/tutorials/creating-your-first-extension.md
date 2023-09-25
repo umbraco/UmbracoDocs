@@ -124,13 +124,13 @@ Umbraco recommends building extensions with a setup using TypeScript and a build
 
 Vite comes with a set of really good presets to get you quickly up and running with libraries and languages. Examples: Lit, Svelte, and vanilla Web Components with both JavaScript and TypeScript. We will use their preset of Lit and TypeScript.
 
-Find a place where you want to keep your source files and paste the following command:
+Find a place where you want to keep your source files, this could be the App_Plugins folder in your Umbraco project. And paste the following command:
 
 ```bash
-npm create vite@latest -- --template lit-ts my-extension
+npm create vite@latest --template lit-ts my-extension
 ```
 
-This sets up our new project and creates a `package.json` file, which includes the necessary packages. Navigate to the new project folder and install the packages using:
+This sets up our new project in a folder named `my-extension` and creates a `package.json` file, which includes the necessary packages. Navigate to the new project folder and install the packages using:
 
 ```bash
 npm install
