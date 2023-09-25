@@ -12,7 +12,7 @@ This page is a work in progress. It will be updated as the software evolves.
 
 This guide takes you through the steps to set up a Custom Dashboard in Umbraco.
 
-The guide is divided into several parts. In this first part will go through:
+The guide is divided into four parts. The first part will go through the following:
 
 1. [Setting up a package](creating-a-custom-dashboard.md#1.-setting-up-a-package)
 2. [Creating the dashboard web component](creating-a-custom-dashboard.md#2.-creating-the-dashboard-web-component)
