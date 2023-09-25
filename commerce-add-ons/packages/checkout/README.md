@@ -18,5 +18,5 @@ It is assumed that before we begin that you already have an Umbraco website conf
 
 As well as the content in these docs, here are a few useful links to learn more about the Umbraco Commerce Checkout package itself.
 
-* [Umbraco Commerce Checkout source code](https://github.com/umbraco/Umbraco.Commerce.Packages.Checkout)
-* [Umbraco Commerce Checkout issue tracker](https://github.com/umbraco/Umbraco.Commerce.Packages.Checkout/issues)
+* [Umbraco Commerce Checkout source code](https://github.com/umbraco/Umbraco.Commerce.Checkout)
+* [Umbraco Commerce Checkout issue tracker](https://github.com/umbraco/Umbraco.Commerce.Checkout/issues)
