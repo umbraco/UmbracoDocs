@@ -10,7 +10,7 @@ This page is a work in progress. It will be updated as the software evolves.
 
 ## Overview
 
-This is session 2 of our guide to building a Custom Dashboard. This session continues work on the dashboard we built in session 1: [Creating a Custom Dashboard](../creating-a-custom-dashboard.md), but further shows how to handle localization in a custom dashboard.
+This is the second part of our guide to building a Custom Dashboard. This part continues work on the dashboard we built in part one: [Creating a Custom Dashboard](../creating-a-custom-dashboard.md), but further shows how to handle localization in a custom dashboard.
 
 ## Localization
 
@@ -21,7 +21,7 @@ To register localizations to a language, you need to add a new manifest to the E
 {% code title="umbraco-package.json" %}
 ```typescript
 {
-  ...  
+  ...
   "extensions": [
     {
       "type": "localization",
@@ -150,7 +150,7 @@ Now let's update our `umbraco-package.json` extensions object to register our ne
       "js": "/App_Plugins/WelcomeDashboard/Localization/da-dk.js"
     }
   ]
-} 
+}
 ```
 {% endcode %}
 
@@ -255,7 +255,7 @@ This is how our dashboard should now look like:
 
 <figure><img src="../../.gitbook/assets/welcome-eng.png" alt=""><figcaption><p>Dashboard if the user's language is English / Fallback</p></figcaption></figure>
 
- 
+
 
 <figure><img src="../../.gitbook/assets/welcome-da.png" alt=""><figcaption><p>Dashboard if the user's language is Danish</p></figcaption></figure>
 
@@ -263,6 +263,6 @@ This is how our dashboard should now look like:
 
 ## Going Further
 
-With the session completed, you should have a dashboard welcoming your users' language.
+With the part completed, you should have a dashboard welcoming your users' language.
 
-In the next session, we will look into how to add more functionality to the dashboard using some of the resources and services that Umbraco offers.
+In the next part, we will look into how to add more functionality to the dashboard using some of the resources and services that Umbraco offers.
