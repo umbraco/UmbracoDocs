@@ -1,5 +1,5 @@
 ---
-versionFrom: 9.0.0
+
 meta.Title: Creating a package
 description: Tutorial to create a package in Umbraco
 ---

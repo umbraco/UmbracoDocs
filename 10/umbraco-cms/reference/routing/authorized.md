@@ -1,6 +1,6 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+
+
 meta.Title: "Routing Requirements for Backoffice authentication"
 description: "Requirements for authenticating requests for the backoffice"
 ---

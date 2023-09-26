@@ -1,6 +1,6 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+
+
 meta.Title: Umbraco Healthcheck
 description: >-
   The Settings section of the Umbraco backoffice holds a dashboard named 'Health

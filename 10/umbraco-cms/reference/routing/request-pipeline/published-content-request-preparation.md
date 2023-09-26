@@ -1,6 +1,6 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+
+
 meta.Title: "Published Content Request Preparation"
 description: "How Umbraco prepares content requests"
 ---
