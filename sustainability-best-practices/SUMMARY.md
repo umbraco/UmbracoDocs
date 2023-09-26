@@ -3,16 +3,16 @@
 * [Introduction](README.md)
 
 ## Infrastructure
-* [Intro to infrascucture](README.md)
+* [Intro to infrascucture](infrastructure/README.md)
 
 ## Backend
-* [Intro to Backend](README.md)
+* [Intro to Backend](backend/README.md)
  
 
 
 ## Frontend
-* [Intro to Frontend](README.md)
+* [Intro to Frontend](frontend/README.md)
 
 
 ## Editor
-* [Intro to Editors](README.md)
+* [Intro to Editors](editor/README.md)
