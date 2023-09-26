@@ -1,5 +1,5 @@
 ---
-versionFrom: 9.0.0
+
 meta.Title: "Routing & Controllers Reference"
 description: "All about Umbraco's routing pipeline & the types of Controllers used in Umbraco"
 ---

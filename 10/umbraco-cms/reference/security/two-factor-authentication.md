@@ -1,6 +1,6 @@
 ---
 versionFrom: 9.5.0
-versionTo: 10.0.0
+
 keywords: 2fa, security, members, users
 meta.Title: Two-factor authentication
 description: >-

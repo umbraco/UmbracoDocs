@@ -1,6 +1,6 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+
+
 meta.Title: Learn how to enforce the use of HTTPS (UseHttps) on your Umbraco websites.
 description: >-
   In production environments it is highly recommend that you enforce the use of

@@ -1,5 +1,5 @@
 ---
-versionFrom: 10.0.0
+
 Meta.Title: Nullable Reference Types
 description: In this article we describe what Nullable reference types is.
 ---

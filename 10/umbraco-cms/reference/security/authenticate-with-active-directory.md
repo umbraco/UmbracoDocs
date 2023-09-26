@@ -1,6 +1,6 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+
+
 ---
 
 # Authenticating the Umbraco backoffice with Azure Active Directory credentials

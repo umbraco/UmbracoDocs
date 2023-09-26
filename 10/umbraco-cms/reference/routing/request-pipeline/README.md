@@ -1,6 +1,6 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+
+
 meta.Title: Routing in Umbraco
 description: What the Umbraco Request Pipeline is
 ---

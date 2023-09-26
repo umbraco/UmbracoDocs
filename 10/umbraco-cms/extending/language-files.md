@@ -1,6 +1,6 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+
+
 meta.Title: Language Files & Localization
 description: >-
   Language files are used to translate the Umbraco backoffice user interface so

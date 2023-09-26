@@ -1,6 +1,6 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+
+
 meta.Title: "Umbraco Logging Settings"
 description: "Information on the logging settings section"
 ---
