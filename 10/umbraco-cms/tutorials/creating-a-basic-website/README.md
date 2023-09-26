@@ -1,6 +1,6 @@
 ---
-versionFrom: 8.0.0
-versionTo: 10.0.0
+
+
 product: "CMS"
 meta.Title: "Creating a Basic Website using Umbraco"
 description: "A guide to creating a Basic Website using Umbraco"

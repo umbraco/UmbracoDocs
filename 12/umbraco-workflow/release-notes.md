@@ -16,6 +16,13 @@ In this section, you can find the release notes for each version of Umbraco Work
 
 <summary>Version 12</summary>
 
+#### [12.1.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.1) (September 26th 2023)
+
+* Fixes bug where inherited members were not always populated in the associated approval group [#39](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/39)
+* Corrects conditions for displaying alert banner in Workflow settings to ensure licensed settings are excluded from hidden or readonly calculations
+* Fixes bug where new nodes were not requiring workflow approval due to inherited permissions not being applied
+* Fixes bug where 'Lock active content' and 'Allow administrator edits' settings were not correctly applied 
+
 #### [12.1.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.0) (September 5th 2023)
 
 * Fixes bug where setting content review period to zero didn't exclude content from review [#28](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/28)
@@ -49,6 +56,14 @@ In this section, you can find the release notes for each version of Umbraco Work
 <details>
 
 <summary>Version 11</summary>
+
+#### [11.3.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.3.1) (September 26th 2023)
+
+* Fixes bug where inherited members were not always populated in the associated approval group [#39](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/39)
+* Corrects conditions for displaying alert banner in Workflow settings to ensure licensed settings are excluded from hidden or readonly calculations
+* Fixes bug where new nodes were not requiring workflow approval due to inherited permissions not being applied
+* Fixes bug where 'Lock active content' and 'Allow administrator edits' settings were not correctly applied 
+* Removes embedded licensing, replaced with Umbraco.Licenses
 
 #### [11.3.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.3.0) (September 5th 2023)
 
@@ -121,6 +136,14 @@ In this section, you can find the release notes for each version of Umbraco Work
 <details>
 
 <summary>Version 10</summary>
+
+#### [10.3.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.1) (September 26th 2023)
+
+* Fixes bug where inherited members were not always populated in the associated approval group [#39](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/39)
+* Corrects conditions for displaying alert banner in Workflow settings to ensure licensed settings are excluded from hidden or readonly calculations
+* Fixes bug where new nodes were not requiring workflow approval due to inherited permissions not being applied
+* Fixes bug where 'Lock active content' and 'Allow administrator edits' settings were not correctly applied 
+* Removes embedded licensing, replaced with Umbraco.Licenses
 
 #### [10.3.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.0) (September 5th 2023)
 

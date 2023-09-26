@@ -1,14 +1,19 @@
 # Organizations
 
-On Umbraco Cloud, you can get an Umbraco Cloud Organization. With an Organization, you get an overview of all the projects that have been created by you and the members of your Organization.
+On Umbraco Cloud it is possible to get an Organization. An organization is handy if you are a partner or are managing a lot of projects for different customers.
 
-If you are interested in getting an Organization, please reach out to our Support Team through the Chat box in your project overview.
-
-## Managing your Organization
+With an organization, you get an overview of all projects and members that are part of it, manage the project payments, and many others.
 
 In the following sections, we will go through the different options that are available in an Organization:
 
 ![Organization Overview](images/Cloud-org-overview.png)
+
+{% hint style="info" %}
+
+Are you interested in getting an organization, or need a project added to a different organization? Please reach out to the Support Team in the small chat box in your [project overview](https://www.s1.umbraco.io/projects).
+
+{% endhint %}
+
 
 ### Information
 
@@ -22,7 +27,45 @@ In the **Members** section, you can get an overview, view pending invites, and t
 
 <figure><img src="../../../.gitbook/assets/members.png" alt=""><figcaption></figcaption></figure>
 
-### MFA enforcement
+Members added to your ogranization can see different information about the organization based on the user group they are added to. Currently there are three different groups, **Read**, **Write** and **Admin**.
+Below you can see what each user group has access to under the organization they are a part of.
+
+Organization Members with **Admin Access** can do the following in the organization:
+
+* Update the organization information
+* Invite others to the organization
+* Invite Users to project under the organization
+* Edit organization team
+* See pending invitations
+* See organization information
+* See organization projects
+* See payment history
+* See subscriptions
+* See organization Members
+* See payment history
+* Handle Multi Factor Autentication (MFA) for users
+* Handle payment methods
+* Change permissions for Members
+* Remove role from users
+
+
+Organization members with **Write Access** can do the following in the organization:
+
+* See Organization information
+* See Organization Members
+* Invite to the organization
+* See pending invitations
+
+Organization Members with **Read Access**, can do the following in the organization:
+
+* See Organization information
+* See Organization Members
+
+{% hint style="info" %}
+Being a Member of an organization, does not give access to any projects under it. To get access to a project under an organization, you need to be [invited](/umbraco-cloud/set-up/users-on-cloud.md) to the project. This can be done by either someone that is part of the project or an administrator in your organization.
+{% endhint %}
+
+### Multi Factor Authentication (MFA) enforcement
 
 When working in organizations on Umbraco Cloud, as a company, you might want to enforce a certain type of MFA for members.
 
@@ -45,9 +88,11 @@ It is possible for an administrator to reset the authenticator app settings for 
 
 In the **Projects** section, you can get an overview of all the Projects that have been created in your Organization.
 
-![Project overview](images/Projects-v10.png)
+![Project overview](images/org-projects.png)
 
-Additionally, you can view if any Projects have been disabled under your Organization.
+It is also possible to see the plan, project status, payment status, creation date, region and number of environments for each of your projects.
+
+As an administrator it is also possible to invite members of the organization to the different projects under the organization.
 
 ## Access Rights
 
@@ -57,7 +102,7 @@ In the **Access Rights** section, you can get a list of all the Access Rights yo
 
 ## Payment methods
 
-In the **Payment methods** section, you can view the payment methods for your organization. From here, you can add or delete credit card details for your Organization.
+In the **Payment methods** section, you can view the payment methods for your organization. From here, you can add or delete credit card details for your Organization. These payment options will be used, when you create new projects under your organization.
 
 ![Payment methods](images/payment-methods-v10.png)
 

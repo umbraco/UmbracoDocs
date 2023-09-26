@@ -1,6 +1,6 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+
+
 meta-title: Umbraco Route Hijacking
 description: >-
   Use a custom MVC controller to handle and control incoming requests for

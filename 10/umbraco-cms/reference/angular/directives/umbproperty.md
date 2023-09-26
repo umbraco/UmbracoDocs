@@ -1,5 +1,5 @@
 ---
-versionFrom: 9.0.0
+
 ---
 
 # umbProperty

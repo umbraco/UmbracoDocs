@@ -1,5 +1,5 @@
 ---
-versionFrom: 12.0.0
+
 meta.Title: Umbraco Database
 description: >-
   This tutorial will show you how to get started with creating custom database

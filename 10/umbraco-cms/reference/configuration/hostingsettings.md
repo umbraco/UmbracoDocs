@@ -1,5 +1,5 @@
 ---
-versionFrom: 9.0.0
+
 meta.Title: "Umbraco Hosting Settings"
 description: "Information on the hosting settings section"
 ---
