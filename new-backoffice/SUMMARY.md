@@ -42,6 +42,12 @@
 * [Conditions](extending/conditions.md)
 * [UI Library](extending/ui-library.md)
 
+
+## Fundamentals
+
+* [Document Blueprints](fundamentals/backoffice/document-blueprints.md)
+
+
 ## Tutorials
 
 * [Creating your first extension](tutorials/creating-your-first-extension.md)
