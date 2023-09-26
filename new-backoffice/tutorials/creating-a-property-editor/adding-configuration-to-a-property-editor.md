@@ -63,7 +63,7 @@ We can now also set some default data on our new configurations:&#x20;
           "value": "Write a suggestion"
         }
       ]
-   }  
+   }
    ...
 ```
 
@@ -78,12 +78,11 @@ Your `umbraco-package.json` file should now look something like this:
         {
             "type": "propertyEditorUi",
             "alias": "My.PropertyEditorUi.Suggestions",
-            "name": "My Suggestions",
-            "js": "/App_Plugins/Suggestions/property-editor-ui-suggestions.element.js",
-            "elementName": "property-editor-ui-suggestions",
+            "name": "My Suggestions Property Editor UI",
+            "js": "/App_Plugins/Suggestions/dist/suggestions-property-editor-ui.element.js",
+            "elementName": "my-suggestions-property-editor-ui",
             "meta": {
-                "label": "My Suggestions",
-                "pathname": "my-suggestions",
+                "label": "Suggestions",
                 "icon": "umb:list",
                 "group": "common",
                 "propertyEditorSchemaAlias": "Umbraco.TextBox",
@@ -127,7 +126,7 @@ Since we are using the `Umbraco.TextBox` property editor schema, we also have a 
 
 ### Using the configuration
 
-The next step is to gain access to our new configuration options. For this, open the `property-editor-ui-suggestions.element` file.
+The next step is to gain access to our new configuration options. For this, open the `suggestions-property-editor-ui.element.ts` file.
 
 First, let's create some state variables that can store our configurations
 
@@ -145,12 +144,12 @@ First, let's create some state variables that can store our configurations
 Now let's create a config property. We look up the alias of the config and then grab the value by said alias.
 
 ```typescript
-import { UmbDataTypePropertyCollection } from "@umbraco-cms/backoffice/components";
+import { type UmbPropertyEditorConfigCollection } from "@umbraco-cms/backoffice/property-editor";
 ```
 
 ```typescript
   @property({ attribute: false })
-  public set config(config: UmbDataTypePropertyCollection) {
+  public set config(config: UmbPropertyEditorConfigCollection) {
     this._disabled = config.getValueByAlias("disabled");
     this._placeholder = config.getValueByAlias("placeholder");
     this._maxChars = config.getValueByAlias("maxChars");
@@ -162,7 +161,7 @@ We can now use the configurations. Let's use the `placeholder` and `maxChars` fo
 Add `ifDefined` to our imports and update the render method:
 
 ```typescript
-import { ifDefined } from 'lit/directives/if-defined.js';
+import { ifDefined } from "lit/directives/if-defined.js";
 ```
 
 ```typescript
@@ -209,112 +208,110 @@ import { ifDefined } from 'lit/directives/if-defined.js';
 ```typescript
 import { LitElement, css, html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
-import type { UmbPropertyEditorExtensionElement } from "@umbraco-cms/backoffice/extension-registry";
-import { UmbDataTypePropertyCollection } from "@umbraco-cms/backoffice/components";
+import { type UmbPropertyEditorExtensionElement } from "@umbraco-cms/backoffice/extension-registry";
+import { type UmbPropertyEditorConfigCollection } from "@umbraco-cms/backoffice/components";
 import { ifDefined } from "lit/directives/if-defined.js";
 
-@customElement("my-property-editor-ui-suggestions")
-export class MyPropertyEditorUISuggestionsElement
-  extends LitElement
-  implements UmbPropertyEditorExtensionElement
+@customElement("my-suggestions-property-editor-ui")
+export class MySuggestionsPropertyEditorUIElement
+    extends LitElement
+    implements UmbPropertyEditorExtensionElement
 {
-  @property({ type: String })
-  public value = "";
+    @property({ type: String })
+    public value = "";
 
-  @state()
-  private _disabled?: boolean;
+    @state()
+    private _disabled?: boolean;
 
-  @state()
-  private _placeholder?: string;
+    @state()
+    private _placeholder?: string;
 
-  @state()
-  private _maxChars?: number;
+    @state()
+    private _maxChars?: number;
 
-  @state()
-  private _suggestions = [
-    "You should take a break",
-    "I suggest that you visit the Eiffel Tower",
-    "How about starting a book club today or this week?",
-    "Are you hungry?",
-  ];
+    @state()
+    private _suggestions = [
+        "You should take a break",
+        "I suggest that you visit the Eiffel Tower",
+        "How about starting a book club today or this week?",
+        "Are you hungry?",
+    ];
 
-  @property({ attribute: false })
-  public set config(config: UmbDataTypePropertyCollection) {
-    this._disabled = config.getValueByAlias("disabled");
-    this._placeholder = config.getValueByAlias("placeholder");
-    this._maxChars = config.getValueByAlias("maxChars");
-  }
+    @property({ attribute: false })
+    public set config(config: UmbPropertyEditorConfigCollection) {
+        this._disabled = config.getValueByAlias("disabled");
+        this._placeholder = config.getValueByAlias("placeholder");
+        this._maxChars = config.getValueByAlias("maxChars");
+    }
 
-  #onInput(e: InputEvent) {
-    this.value = (e.target as HTMLInputElement).value;
-    this.#dispatchEvent();
-  }
+    #onInput(e: InputEvent) {
+        this.value = (e.target as HTMLInputElement).value;
+        this.#dispatchChangeEvent();
+    }
 
-  #onSuggestion() {
-    const randomIndex = (this._suggestions.length * Math.random()) | 0;
-    this.value = this._suggestions[randomIndex];
-    this.#dispatchEvent();
-  }
+    #onSuggestion() {
+        const randomIndex = (this._suggestions.length * Math.random()) | 0;
+        this.value = this._suggestions[randomIndex];
+        this.#dispatchChangeEvent();
+    }
 
-  #dispatchEvent() {
-    this.dispatchEvent(new CustomEvent("property-value-change"));
-  }
+    #dispatchChangeEvent() {
+        this.dispatchEvent(new CustomEvent("property-value-change"));
+    }
 
-  render() {
-    return html`
-      <uui-input
-        id="suggestion-input"
-        class="element"
-        label="text input"
-        placeholder=${ifDefined(this._placeholder)}
-        maxlength=${ifDefined(this._maxChars)}
-        .value=${this.value || ""}
-        @input=${this.#onInput}
-      >
-      </uui-input>
-      <div id="wrapper">
-        <uui-button
-          id="suggestion-button"
-          class="element"
-          look="primary"
-          label="give me suggestions"
-          ?disabled=${this._disabled}
-          @click=${this.#onSuggestion}
-        >
-          Give me suggestions!
-        </uui-button>
-        <uui-button
-          id="suggestion-trimmer"
-          class="element"
-          look="outline"
-          label="Trim text"
-        >
-          Trim text
-        </uui-button>
-      </div>
-    `;
-  }
+    render() {
+        return html`
+            <uui-input
+                id="suggestion-input"
+                class="element"
+                label="text input"
+                placeholder=${ifDefined(this._placeholder)}
+                maxlength=${ifDefined(this._maxChars)}
+                .value=${this.value || ""}
+                @input=${this.#onInput}
+            >
+            </uui-input>
+            <div id="wrapper">
+                <uui-button
+                    id="suggestion-button"
+                    class="element"
+                    look="primary"
+                    label="give me suggestions"
+                    ?disabled=${this._disabled}
+                    @click=${this.#onSuggestion}
+                >
+                    Give me suggestions!
+                </uui-button>
+                <uui-button
+                    id="suggestion-trimmer"
+                    class="element"
+                    look="outline"
+                    label="Trim text"
+                >
+                    Trim text
+                </uui-button>
+            </div>
+        `;
+    }
 
-  static styles = [
-    css`
-      #wrapper {
-        margin-top: 10px;
-        display: flex;
-        gap: 10px;
-      }
-      .element {
-        width: 100%;
-      }
-    `,
-  ];
+    static styles = [
+        css`
+            #wrapper {
+                margin-top: 10px;
+                display: flex;
+                gap: 10px;
+            }
+            .element {
+                width: 100%;
+            }
+        `,
+    ];
 }
 
-export default MyPropertyEditorUISuggestionsElement;
-
 declare global {
-  interface HTMLElementTagNameMap {
-    "my-property-editor-ui-suggestions": MyPropertyEditorUISuggestionsElement;
-  }
+    interface HTMLElementTagNameMap {
+        "my-suggestions-property-editor-ui": MySuggestionsPropertyEditorUIElement;
+    }
 }
 ```
 

@@ -4,21 +4,21 @@ description: Learn how to create your first extension for Umbraco.
 
 # Creating your first extension
 
-This guide will help you set up your first extension using vanilla Javascript or Vite, Typescript, and Lit. It is also part of the prerequisites for [Creating a Property Editor](creating-a-property-editor/) and [Creating a Custom Dashboard](creating-a-custom-dashboard.md) tutorials.
+This guide will help you set up your first extension using vanilla JavaScript or Vite, Typescript, and Lit. It is also part of the prerequisites for [Creating a Property Editor](creating-a-property-editor/) and [Creating a Custom Dashboard](creating-a-custom-dashboard.md) tutorials.
 
-## The end result:
+## The end result
 
-By the end of this tutorial, we will have a simple extension up and running with a Web Component. This will be made with Vanilla Javascript or made and set up with Vite, Typescript, and Lit.
+By the end of this tutorial, we will have a extension up and running with a Web Component. This will be made with Vanilla JavaScript or made and set up with Vite, Typescript, and Lit.
 
 {% hint style="info" %}
-If you want to set up an extension with Vite, Typescript, and Lit, you can skip the section "Extension with Vanilla Javascript".
+If you want to set up an extension with Vite, Typescript, and Lit, you can skip the section "Extension with Vanilla JavaScript".
 {% endhint %}
 
 ## App\_Plugins
 
 Extensions will go into a folder called `App_Plugins`. If you don't have this folder, you can create it at the root of your Umbraco project.
 
-## Extension with Vanilla Javascript
+## Extension with Vanilla JavaScript
 
 We consider it best practice to use at least TypeScript and some kind of build tool to write your extensions. However, since Umbraco's extension system is written entirely in JavaScript, it's possible to create extensions with vanilla JavaScript. For the sake of posterity, we will briefly go through what that looks like:
 
@@ -110,7 +110,7 @@ customElements.define('my-custom-dashboard', MyDashboardElement);
 
 ### Running it
 
-Now we have a Javascript file with a Web Component which gets linked to a Dashboard Extension as part of the Package Manifest JSON.
+Now we have a JavaScript file with a Web Component which gets linked to a Dashboard Extension as part of the Package Manifest JSON.
 
 Press the F5 button in your favorite IDE or run `dotnet run` in a command line. Then you should be able to see the new dashboard show up in the Content section.
 
@@ -124,13 +124,13 @@ Umbraco recommends building extensions with a setup using TypeScript and a build
 
 Vite comes with a set of really good presets to get you quickly up and running with libraries and languages. Examples: Lit, Svelte, and vanilla Web Components with both JavaScript and TypeScript. We will use their preset of Lit and TypeScript.
 
-Find a place where you want to keep your source files and paste the following command:
+Find a place where you want to keep your source files, this could be the App_Plugins folder in your Umbraco project. And paste the following command:
 
 ```bash
-npm create vite@latest -- --template lit-ts my-extension
+npm create vite@latest --template lit-ts my-extension
 ```
 
-This sets up our new project and creates a `package.json` file, which includes the necessary packages. Navigate to the new project folder and install the packages using:
+This sets up our new project in a folder named `my-extension` and creates a `package.json` file, which includes the necessary packages. Navigate to the new project folder and install the packages using:
 
 ```bash
 npm install
@@ -166,7 +166,7 @@ export default defineConfig({
 });
 ```
 
-This alters the Vite default output into a "library mode", where the output is a javascript file with the same name as the `name` attribute in `package.json`. The name is `my-extension` if you followed this tutorial with no changes.
+This alters the Vite default output into a "library mode", where the output is a JavaScript file with the same name as the `name` attribute in `package.json`. The name is `my-extension` if you followed this tutorial with no changes.
 
 {% hint style="info" %}
 You can read more about [Vite's build options here](https://vitejs.dev/config/build-options.html#build-lib).
@@ -257,7 +257,7 @@ Finally, add a file called `umbraco-package.json` the root of the folder`my-pack
 
 ### Running it
 
-Now we have a Javascript file with a Web Component which gets linked to a Dashboard Extension as part of the Package Manifest JSON.
+Now we have a JavaScript file with a Web Component which gets linked to a Dashboard Extension as part of the Package Manifest JSON.
 
 Press the F5 button in your favorite IDE or run `dotnet run` in a command line. Then you should be able to see the new dashboard show up in the Content section.
 

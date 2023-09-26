@@ -207,7 +207,7 @@ declare global {
 
 Let's try another uui element.
 
-Since we have a lot of information from the users, it could be a good idea to insert it into a proper table. The UUI Library also includes a [uui-table](https://uui.umbraco.com/?path=/docs/layout-table-table--docs), so let's use that.
+Since we have a lot of information from the users, it could be a good idea to insert it into a proper table. The Umbraco UI (UUI) Library also includes a [uui-table](https://uui.umbraco.com/?path=/docs/layout-table-table--docs), so let's use that.
 
 {% code title="welcome-dashboard.element.ts" %}
 ```typescript

@@ -35,3 +35,6 @@ If you are working with a prerelease of Umbraco, make sure to use the [MyGet reg
 npm install -D --registry https://www.myget.org/F/umbracoprereleases/npm @umbraco-cms/backoffice@14.0.0--preview001
 ```
 
+## Visual Studio Code
+
+If you're using Visual Studio Code you can install the extension [Lit-Plugin](https://marketplace.visualstudio.com/items?itemName=runem.lit-plugin) to get intellisense for Lit Elements and Umbraco UI Library Components.
