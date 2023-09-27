@@ -1,6 +1,0 @@
----
-description:
----
-
-# sustainability
-

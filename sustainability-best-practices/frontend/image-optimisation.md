@@ -1,0 +1,6 @@
+# Image optimisation
+
+Images typically make up [42% of the Largest Contentful Paint](https://paulcalvano.com/2021-06-07-lcp-httparchive/) element for websites. It's therefore vital that we optimise these before uploading to our website. This results in a smaller footprint for a user to download, but also will use less compute to upload. We can make use of better image formats. It could be AV1 Image File Format (AVIF) and WebP to see 50% and 26% smaller file sizes than JPEGs respectively. AV1 Image File Format (AVIF) is less well supported than Webp so it’s important to use a picture tag to ensure compatibility. The other benefit of using a picture tag is that we can denote which images to use based on screen size. This is helping us to provide the most appropriate image to the user.
+
+Other options when it comes to image optimisation could be to use external services. It could be to provide a Content Delivery Network (CDN) to deliver images at the edge with good optimisation and caching in place. Cloudflare and Cloudinary are examples of these.
+Stats: https://www.smashingmagazine.com/2021/09/modern-image-formats-avif-webp/ 
