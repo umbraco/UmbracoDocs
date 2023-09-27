@@ -1,0 +1,5 @@
+# Background tasks / batch up requests
+
+Implementing background tasks or batching up requests to run in sustainable cloud regions and during off-peak hours of power consumption is a commendable practice within the realm of sustainable system design. By strategically scheduling resource-intensive tasks in regions powered by renewable energy sources, or during times of reduced energy demand, organizations can significantly minimize their carbon footprint. 
+
+This approach not only optimizes the use of available resources but also aligns with the broader objectives of sustainable development. By harnessing the power of cloud computing in an environmentally responsible manner, businesses can make substantial strides towards creating more energy-efficient systems that operate in harmony with eco-conscious principles, reducing their overall environmental impact.
