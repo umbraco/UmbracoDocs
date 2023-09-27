@@ -13,10 +13,10 @@ Infrastructure as a service is another option, typically in the form of Virtual 
 On-prem should be avoided unless necessary as you do not benefit from the economy of scale of using a cloud provider. You are entirely responsible for operational maintenance (including patching, hardware, networking, fire suppression, cooling, security etc). And you have the same problem of maximising utilisation as you do with IaaS. Some use cases may mandate / require on-prem - but if yours doesn’t, avoid it.
 
 ### Cloud Native
-Cloud Native is a huge topic - the focus is on using cloud services and modern tools and approaches to enable you to deliver services with speed and agility. A happy byproduct is that it will likely make efficient use of the resources you employ (lowering your footprint), and as we’ve already covered, leveraging cloud services is highly likely to be consuming renewable energy.
+Cloud Native is an important topic. The focus is on using cloud services and modern tools and approaches to enable you to deliver services with speed and agility. A happy byproduct is that it will likely make efficient use of the resources you employ (lowering your footprint). And as we’ve already covered, leveraging cloud services is highly likely to be consuming renewable energy.
 
 ### Scale based on requirements, only use what’s needed
 Don’t overprovision your systems. Use metrics / telemetry / tooling to identify if you’re massively oversized for your use cases. Do you need that cloud service to be running at 20% capacity all the time? Leverage autoscaling, serverless technology, and SaaS services.
 
-### Turn off resources when not in use, e.g. dev/staging sites
-If you’ve got provisioned infrastructure sitting around at the weekend and your teams don’t work at the weekend - remove it. It’s a good excuse to adopt practices such as infrastructure-as-code - you will have repeatable, more reliable infrastructure, and you’ll be able to create and destroy new environments with ease.
+### Turn off resources when not in use, for example dev/staging sites
+If you’ve got provisioned infrastructure sitting around at the weekend and your teams don’t work at the weekend - remove it. It’s a good excuse to adopt practices such as infrastructure-as-code. You will have repeatable, more reliable infrastructure, and you’ll be able to create and destroy new environments with ease.
