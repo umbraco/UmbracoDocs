@@ -32,7 +32,7 @@ Use the following steps:
 * Complete the import dialog and the database will be restored.
 
 {% hint style="info" %}
-When restoring a `bacpac` to your SQL server if it fails, check that you have the configuration flag for 'Contained Database Authentication' set to true.
+If a `bacpac` restore fails in SQL server, ensure the 'Contained Database Authentication' flag is set to true for resolution.
 
 If it is not set the import will fail.
 
