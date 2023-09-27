@@ -5,7 +5,7 @@
 * Why: Text consumes the least amount of energy and bandwidth.
 
 ### Limit the Use of Images
-* Action: Use images only when they add value. Opt for compressed formats like WebP or SVG (Scalable Vector Graphics).
+* Action: Use images only when they add value. Opt for compressed formats like WebP or Scalable Vector Graphics (SVG).
 * Why: It reduces bandwidth and energy consumption.
 
 ### Be Mindful of Videos
