@@ -14,7 +14,7 @@ Here are the steps to specify your own logic for validating a username and passw
 
     For example, to always allow login when the user enters the password `test` you could do:
 
-    ```
+    ```csharp
     using System.Threading.Tasks;
     using Umbraco.Core.Models.Identity;
     using Umbraco.Core.Security;
@@ -36,7 +36,7 @@ Here are the steps to specify your own logic for validating a username and passw
     ```
 2.  Register the `MyPasswordChecker` in your `Startup.ConfigureServices` method:
 
-    ```
+    ```csharp
     public void ConfigureServices(IServiceCollection services)
     {
         ...

@@ -8,7 +8,7 @@ Umbraco 9 supports dependency injection out of the box. Umbraco uses the [ASP.NE
 
 `IUmbracoBuilder` is a Umbraco-specific abstraction on top of the `IServiceCollection`, its purpose is to aid in adding and replacing Umbraco-specific services, such as notification handlers, filesystems, server role accessor, and so on. You can access the `IServiceCollection` directly to add your custom services through the `Services` property, see below for a concrete example:
 
-```
+```csharp
 IUmbracoBuilder.Services
 ```
 
@@ -20,7 +20,7 @@ There are two strategies for registering your own dependencies to the container,
 
 When working with your site, and not a package, the recommended way to register dependencies is with the `ConfigureServices` method of the `Startup` class in `Startup.cs`:
 
-```
+```csharp
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddUmbraco(_env, _config)
@@ -69,7 +69,7 @@ Remember to add `Umbraco.Cms.Core.DependencyInjection` and `Microsoft.Extensions
 
 Depending on your scenario, you may have a lot of dependencies you need to register, in this case, your `Startup.cs` or Composer might become cluttered and hard to manage. A great way to manage multiple services is by creating your own custom extension methods for the `IUmbracoBuilder`, this way you can group similar dependencies in extension methods and register them all in as little as a single call:
 
-```
+```csharp
 using IOCDocs.NotificationHandlers;
 using IOCDocs.Services;
 using Microsoft.Extensions.DependencyInjection;
@@ -114,7 +114,7 @@ services.AddSingleton<Foobar>();
 
 Now you can call your `AddCustomServices` in either the `Startup.cs` file, or your composer like so:
 
-```
+```csharp
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddUmbraco(_env, _config)
@@ -127,7 +127,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-```
+```csharp
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 

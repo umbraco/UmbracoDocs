@@ -10,11 +10,15 @@ The **outbound pipeline** consists out of the following steps:
 2. [Create paths](outbound-pipeline.md#paths)
 3. [Create urls](outbound-pipeline.md#urls)
 
-To explain things we will use the following content tree: ![content tree](images/simple-content-tree-v8.png)
+To explain things we will use the following content tree:
+
+&#x20;
+
+<figure><img src="images/simple-content-tree-v8.png" alt=""><figcaption></figcaption></figure>
 
 ## 1. Create segments
 
-When the URL is constructed, Umbraco will convert every node in the tree into a segment. Each published [Content](../../management/models/content.md) item has a corresponding url segment.
+When the URL is constructed, Umbraco will convert every node in the tree into a segment. Each published [Content](../../management/models/content.md) item has a corresponding URL segment.
 
 In our example "Our Products" will become "our-products" and "Swibble" will become "swibble".
 
@@ -37,7 +41,7 @@ public interface IUrlSegmentProvider
 
 Note each 'culture' variation can have a different Url Segment!
 
-The returned string will be the Url Segment for this node. Any string value can be returned here but it cannot contain url segment separators `/` characters as this would create additional "segments", so something like `5678/swibble` is not allowed.
+The returned string will be the Url Segment for this node. Any string value can be returned here but it cannot contain url segment separator `/` characters as this would create additional "segments", so something like `5678/swibble` is not allowed.
 
 #### Example
 
@@ -76,7 +80,7 @@ namespace RoutingDocs.SegmentProviders
 
 The returned string becomes the native Url segment. No need for any Url rewriting.
 
-For our "swibble" product in our example content tree the `ProductPageUrlSegmentProvider`, would return a segment "swibble--123xyz" (where 123xyz is the unique product sku/reference for the swibble product).
+For our "swibble" product in our example content tree the `ProductPageUrlSegmentProvider`, would return a segment `swibble--123xyz`(where 123xyz is the unique product sku/reference for the swibble product).
 
 Register the custom UrlSegmentProvider with Umbraco, either using a composer or an extension method on the `IUmbracoBuilder`:
 
@@ -155,7 +159,7 @@ The DI container of an Umbraco implementation contains a collection of `UrlProvi
 
 ### DefaultUrlProvider
 
-Umbraco ships with a `DefaultUrlProvider`, which provides the implementation for the out of the box mapping of the structure of the content tree to the url.
+Umbraco ships with a `DefaultUrlProvider`, which provides the implementation for the out-of-the-box mapping of the structure of the content tree to the URL.
 
 ```csharp
 // This one is initialized by default
@@ -171,7 +175,7 @@ public class DefaultUrlProvider : IUrlProvider
 
 ### How the Default Url provider works
 
-* If the current domain matches a root domain of the target content.
+* If the current domain matches the root domain of the target content.
   * Return a relative Url.
   * Else must return an absolute Url.
 * If the target content has only one root domain.
@@ -204,9 +208,9 @@ public interface IUrlProvider
 }
 ```
 
-The url returned in the 'UrlInfo' object by GetUrl can be completely custom.
+The URL returned in the 'UrlInfo' object by GetUrl can be completely custom.
 
-If implementing a custom Url Provider, consider following things:
+If implementing a custom Url Provider, consider the following things:
 
 * Cache things.
 * Be sure to know how to handle schema's (http vs https) and hostnames.
@@ -218,7 +222,7 @@ If there is only a small change to the logic around Url generation, then a smart
 
 #### Example
 
-Add /fish on the end of every url. It's important to note here that since we're changing the outbound url, but not how we handle urls inbound, this **will** break the routing. In order to make the routing work again you have to implement a custom content finder, see [IContentFinder](icontentfinder.md) for more information on how to do that.
+Add /fish on the end of every URL. It's important to note here that since we're changing the outbound URL, but not how we handle URLs inbound, this **will** break the routing. In order to make the routing work again you have to implement a custom content finder, see [IContentFinder](icontentfinder.md) for more information on how to do that.
 
 ```csharp
 using System;
@@ -315,11 +319,11 @@ If you want to have multiple URL providers, you can add them one after the other
 
 The GetOtherUrls method is only used in the Umbraco Backoffice to provide a list to editors of other Urls which also map to the node.
 
-For example, let's consider a convention-led `umbracoUrlAlias` property that enables editors to specify a comma delimited list of alternative urls for the node. It has a corresponding `AliasUrlProvider` registered in the `UrlProviderCollecton` to display this list to the Editor in the backoffice Info Content app for a node.
+For example, let's consider a convention-led `umbracoUrlAlias` property that enables editors to specify a comma-delimited list of alternative URLs for the node. It has a corresponding `AliasUrlProvider` registered in the `UrlProviderCollecton` to display this list to the Editor in the backoffice Info Content app for a node.
 
 ### Url Provider Mode
 
-Specifies the type of urls that the url provider should produce, eg. absolute vs. relative Urls. Auto is the default
+Specifies the type of URLs that the URL provider should produce, eg. absolute vs. relative URLs. Auto is the default
 
 These are the different modes:
 
@@ -348,7 +352,7 @@ public enum UrlMode
 }
 ```
 
-Default setting can be changed in the Umbraco:CMS:WebRouting section of `appsettings.json`:
+Default setting can be changed in the `Umbraco:CMS:WebRouting` section of `appsettings.json`:
 
 ```json
 "Umbraco": {
@@ -401,11 +405,11 @@ namespace RoutingDocs.SiteDomainMapper
 
 ### Default SiteDomainMapper
 
-Umbraco ships with a default `SiteDomainMapper`. This has some useful functionality for grouping sets of domains together. With Umbraco Cloud, or another Umbraco development environment scenario, there maybe be multiple domains setup for a site 'live, 'staging', 'testing' or a seperate domain to access the backoffice. Each domain will be setup as a 'Culture and Hostname' inside Umbraco. By default editors will see the full list of possible Urls for each of their content items on each domain, which can be confusing. If the additional urls aren't present in Culture and Hostnames, then when testing the front-end of the site on a 'staging' url, will result in navigation links taking you to the registered domain!
+Umbraco ships with a default `SiteDomainMapper`. This has some useful functionality for grouping sets of domains together. With Umbraco Cloud, or another Umbraco development environment scenario, there maybe be multiple domains setup for a site 'live, 'staging', 'testing' or a separate domain to access the backoffice. Each domain will be setup as a 'Culture and Hostname' inside Umbraco. By default editors will see the full list of possible URLs for each of their content items on each domain, which can be confusing. If the additional URLs aren't present in Culture and Hostnames, then when testing the front-end of the site on a 'staging' URL, will result in navigation links taking you to the registered domain!
 
 ![Culture and Hostnames multiple domains](images/culture-and-hostnames-v8.png)
 
-What the editor sees without any SiteDomainMapper, visiting the backoffice url:
+What the editor sees without any SiteDomainMapper, visiting the backoffice URL:
 
 ![All domains listed](images/no-sitedomainhelp.png)
 

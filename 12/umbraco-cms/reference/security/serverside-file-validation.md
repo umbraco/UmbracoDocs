@@ -60,7 +60,7 @@ public class SvgXssSecurityAnalyzer : IFileStreamSecurityAnalyzer
 
 You can [register it during startup or with a composer](https://docs.umbraco.com/umbraco-cms/reference/using-ioc#registering-dependencies). Then you can upload a file with the following content to the backoffice and see that it is not persisted.
 
-```
+```xml
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 
