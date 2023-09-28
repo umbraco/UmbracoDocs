@@ -10,18 +10,18 @@ Controllers have the ability to declare the following methods:
 * `hostDisconnected()` — Called when the Host Element is Disconnected from the DOM.
 * `destroy()` — Called when the controller is taken out of commission.
 
-Additionally, the Umbraco Controllers implement a \`getHostElement()\` method, which enables any Controller to receive the Element that hosts the Controllers.
+Additionally, the Umbraco Controllers implement a `getHostElement()` method, which enables any Controller to receive the Element that hosts the Controllers.
 
 ### Host Element
 
 A Controller will have to be assigned to a Host Element. An assignment can be indirect as Controllers can host other Controllers.
 
-The Host Element is a Controller Host Web Component. The Umbraco Element turns any Web Component into a Controller Host, [read more on Umbraco Element here.](../)
+The Host Element is a Controller Host Web Component. The Umbraco Element turns any Web Component into a Controller Host. For more information check the [Umbraco Element](../) article.
 
 ### Controller Alias
 
-Any controller can be identified by a Controller Alias, using either a String or Symbol.\
-If you utilize a Controller with a Controller Alias, then that will be destroyed when another Controller with the same Alias gets Added to the same Host.\
+Any controller can be identified by a Controller Alias, using either a **String** or **Symbol**.\
+If you utilize a Controller with a Controller Alias, then it will be destroyed when another Controller with same Alias gets Added to same Host.\
 \
 In this way, you can easily keep your controllers tidy, without a lot of managing.\
 \

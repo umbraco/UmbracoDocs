@@ -59,4 +59,4 @@ With the `asObservablePart` method, you can set up an Observable that provides a
 );
 </code></pre>
 
-In the above example, the \`asObservablePart\` mapping function will be executed every time there is a change to the State. If the result of the method is different than before it will trigger an update to its observers.
+In the above example, the `asObservablePart` mapping function will be executed every time there is a change to the State. If the result of the method is different than before it will trigger an update to its observers.

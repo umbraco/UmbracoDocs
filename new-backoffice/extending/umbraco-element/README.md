@@ -4,6 +4,10 @@ description: Ease the integration with Backoffice by using a Umbraco Element
 
 # Umbraco Element
 
+{% hint style="warning" %}
+This page is a work in progress.&#x20;
+{% endhint %}
+
 This provides a few methods to easily connect with Backoffice, giving you the ability to:
 
 * Consume a Contex — [Learn more about Consuming Contexts](../context-api/)
@@ -22,4 +26,3 @@ You can turn any Web Component into an Umbraco Element by using the Umbraco Elem
 </strong><strong>
 </strong><strong>}
 </strong></code></pre>
-
