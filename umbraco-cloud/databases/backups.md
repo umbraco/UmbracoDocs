@@ -18,7 +18,7 @@ Follow these steps:
 * Once the "Connect to Server" dialog appears, enter your server name, login, and password (you will also need to be sure the authentication drop-down is set to "SQL Server Authentication" rather than "Windows Authentication").
 * Click the "Options >>" button.
 * In the "Connect to database" field, type your database name (this was listed on the Umbraco Cloud connection details page).
-* It is very important that you enter the database name. If you do not, the connection will fail.
+* It is important that you enter the database name. If you do not, the connection will fail.
 * Expand "Databases", right-click your database (it should be the only one listed), select "Tasks", then select "Export Data-tier Application...".
 * Proceed through the dialog, setting the options appropriate to your situation, to save the "bacpac" file. This is your database backup.
 
@@ -32,7 +32,7 @@ Use the following steps:
 * Complete the import dialog and the database will be restored.
 
 {% hint style="info" %}
-When restoring a `bacpac` to your SQL server if it fails, check that you have the configuration flag for 'Contained Database Authentication' set to true.
+If a `bacpac` restore fails in SQL server, ensure the 'Contained Database Authentication' flag is set to true for resolution.
 
 If it is not set the import will fail.
 
