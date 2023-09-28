@@ -106,7 +106,7 @@ To update the **Articles Main** template, follow these steps:
     ![Query parameters](../../../../10/umbraco-cms/tutorials/creating-a-basic-website/images/query-parameters.png)
 12. If you've set the correct parameters, you will get a preview of the items being selected with the query. Click **Submit**, and you will see a code snippet has been added to your template. It will look similar to this:
 
-    ```
+    ```html
     @{
        var selection = Umbraco.Content(Guid.Parse("e0a4f1ff-122e-41bd-941c-f9686f03019f"))
         .ChildrenOfType("articlesItem")
