@@ -451,6 +451,4 @@ Browsing `/umbraco/api/relations/getbyrelationtypealias?alias=homesick` now retu
 
 {% hint style="info" %}
 If you want to do something similar to this it is recommended that you wrap a caching layer around it, as the RelationService queries the database directly.
-
-[See an example of caching in V8](../../../cache/examples/tags.md)
 {% endhint %}

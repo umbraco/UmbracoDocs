@@ -1,6 +1,5 @@
 ---
 versionFrom: 9.5.0
-
 ---
 
 # Sending Allowed Children Notification
@@ -85,5 +84,5 @@ public void ConfigureServices(IServiceCollection services)
 ```
 
 {% hint style="info" %}
-For more information about registering notifications read the [Registering notification handlers](../index.md/#registering-notification-handlers) article.
+For more information about registering notifications read the [Registering notification handlers](./) article.
 {% endhint %}
