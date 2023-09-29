@@ -27,6 +27,6 @@ We've specifically updated the "Usage" page for those who have added extra bandw
 
 ![Extra usage 2](images/UsageExtra2.png)
 
-If you're considering expanding your resources, you have options. You can contact our support team to add even more bandwidth or storage to your existing plan, or switch to a plan with dedicated resources for greater flexibility.
+If you are considering expanding your resources, you can contact our support team to add even more bandwidth or storage to your existing plan. You can also switch to a plan with dedicated resources for greater flexibility.
 
 Feel free to reach out for any further assistance or clarification.
