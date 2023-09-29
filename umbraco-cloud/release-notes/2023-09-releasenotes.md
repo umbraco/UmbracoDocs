@@ -23,7 +23,7 @@ Besides the new shared secrets, we still have the **Environment Secrets**: For s
 For more detailed information on how to leverage secrets, please visit our [documentation](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/secrets-management).
 
 ## Upgraded "Usage" Page for Custom Plans
-We've specifically updated the "Usage" page for those who have added extra bandwidth or media storage to their project plan. Now, you'll see those custom additions accurately displayed. For example, if you're on a Professional plan and have purchased an additional 3000GB of bandwidth, your "Usage" page will now show 3000GB instead of the default 1000GB.
+We've specifically updated the "Usage" page for those who have added extra bandwidth or media storage to their project plan. Now, you'll see those custom additions accurately displayed. For example, if on a Professional plan, you purchase an additional 3000GB of bandwidth, your "Usage" page will show 3000GB instead of the default 1000GB.
 
 ![Extra usage 2](images/UsageExtra2.png)
 
