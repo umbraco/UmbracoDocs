@@ -9,7 +9,7 @@
 
 * [Introduction](getting-started/introduction.md)
 * [Installation](getting-started/installation/README.md)
-* [Upgrading](getting-started/upgrading/upgrading.md.md)
+* [Upgrading](getting-started/upgrading/README.md)
   * [Version Specific Upgrade Notes](getting-started/upgrading/version-specific-upgrades.md)
 * [Umbraco Configuration](getting-started/umbraco-configuration.md)
 * [User Interface](getting-started/user-interface.md)
