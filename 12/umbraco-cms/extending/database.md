@@ -338,3 +338,36 @@ namespace MyNamespace
     }
 }
 ```
+
+## Adding Foreign Keys
+
+To link one table to another via Foreign Key, you can use the in built `ForeignKeyAttribute` and pass in the type of the table you need to link to. For example, if we wanted to link BlogComments to a BlogPostUmbracoId table, we could add an attribute like so:
+
+```
+[TableName("BlogComments")]
+[PrimaryKey("Id", AutoIncrement = true)]
+[ExplicitColumns]
+public class BlogCommentSchema
+{
+    [PrimaryKeyColumn(AutoIncrement = true, IdentitySeed = 1)]
+    [Column("Id")]
+    public int Id { get; set; }
+
+    [Column("BlogPostUmbracoId")]
+    [ForeignKey(typeof(BlogPostUmbraco))]
+    public int BlogPostUmbracoId { get; set; }
+
+    [Column("Name")]
+    public required string Name { get; set; }
+
+    [Column("Email")]
+    public required string Email { get; set; }
+
+    [Column("Website")]
+    public required string Website { get; set; }
+
+    [Column("Message")]
+    [SpecialDbType(SpecialDbTypes.NVARCHARMAX)]
+    public string Message { get; set; }
+}
+```
