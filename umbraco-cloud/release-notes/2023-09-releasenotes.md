@@ -25,6 +25,8 @@ For more detailed information on how to leverage secrets, please visit our [docu
 ## Upgraded "Usage" Page for Custom Plans
 We've specifically updated the "Usage" page for those who have added extra bandwidth or media storage to their project plan. Now, you'll see those custom additions accurately displayed. For example, if you're on a Professional plan and have purchased an additional 3000GB of bandwidth, your "Usage" page will now show 3000GB instead of the default 1000GB.
 
+![Extra usage](images/UsageExtra.png)
+
 If you're considering expanding your resources, you have options. You can contact our support team to add even more bandwidth or storage to your existing plan, or switch to a plan with dedicated resources for greater flexibility.
 
 Feel free to reach out for any further assistance or clarification.
