@@ -46,7 +46,7 @@ To add a Data Type configuration fields when using our Suggestion Property Edito
     }
 ```
 
-Above we add a two configuration fields. Each entry of the `properties` collection represents a Configuration field. Each has the information needed for such field, notice you have to declare a Property Editor UI, this declares what User Interface that should be used for this field.
+Above we add two configuration fields. Each entry of the `properties` collection represents a Configuration field. Each has the information needed for a field. Notice you have to declare a Property Editor UI, this declares what User Interface should be used for this field.
 
 The field with the label "Disabled" uses the Toggle Property Editor UI. This will allow us to turn the suggestion button on/off and will provide the user with a toggle button.
 The field with the label "Placeholder text" uses the TextBox Property Editor UI. This will allow the user to write a text.
