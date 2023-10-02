@@ -8,41 +8,42 @@ description: This page is a work in progress. It will be updated as the software
 This page is a work in progress. It will be updated as the software evolves.
 {% endhint %}
 
-### Overview
+## Overview
 
 This is step 2 in our guide to building a Property Editor. This step continues work on the Suggestion Data Type we built in step 1, but goes further to show how to add configuration options to our editor.
 
-### Configuration
+## Configuration
 
 An important part of building good Property Editors is to build something flexible, so we can reuse it many times, for different things. Like the Rich Text Editor in Umbraco, which allows us to choose which buttons and stylesheets we want to use on each instance of the editor.
 
 An editor can be used again and again, with different configurations, and that is what we will be working on now.
 
-### umbraco-package.json
+## umbraco-package.json
 
 To add a Data Type configuration fields when using our Suggestion Property Editor, open the `umbraco-package.json` file. Inside the `meta` object, we can add the `settings` object, which has the optional objects `properties` and `defaultData`. Let's start by adding some  `properties`:
 
 ```json
-  ...
-  "meta": {
     ...
-    "settings": {
-      "properties": [
-	{
-		"alias": "disabled",
-		"label": "Disabled",
-		"description": "Disables the suggestion button",
-		"propertyEditorUiAlias": "Umb.PropertyEditorUi.Toggle"
-	},
-	{
-		"alias": "placeholder",
-		"label": "Placeholder text",
-		"description": "A nice placeholder description to help out our editor!",
-		"propertyEditorUiAlias": "Umb.PropertyEditorUi.TextBox"
-	},
-      ]
-  }
-  ...
+    "meta": {
+        ...
+        "settings": {
+            "properties": [
+                {
+                    "alias": "disabled",
+                    "label": "Disabled",
+                    "description": "Disables the suggestion button",
+                    "propertyEditorUiAlias": "Umb.PropertyEditorUi.Toggle"
+                },
+                {
+                    "alias": "placeholder",
+                    "label": "Placeholder text",
+                    "description": "A nice placeholder description to help out our editor!",
+                    "propertyEditorUiAlias": "Umb.PropertyEditorUi.TextBox"
+                },
+            ]
+        }
+        ...
+    }
 ```
 
 Above we add a two configuration fields. Each entry of the `properties` collection represents a Configuration field. Each has the information needed for such field, notice you have to declare a Property Editor UI, this declares what User Interface that should be used for this field.
@@ -129,7 +130,7 @@ Since we are using the `Umbraco.TextBox` Property Editor Schema, we inherits a `
 
 <figure><img src="../../.gitbook/assets/property-editor-config.png" alt=""><figcaption></figcaption></figure>
 
-### Using the configuration
+## Using the configuration
 
 The next step is to gain access to our new configuration options. For this, open the `suggestions-property-editor-ui.element.ts` file.
 
