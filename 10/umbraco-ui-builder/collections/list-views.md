@@ -12,7 +12,7 @@ A list view is a list-based view of a collection entity providing features: pagi
 
 The list view configuration is a sub-configuration of a [`Collection`](the-basics.md) config builder instance and is accessed via its `ListView` method.
 
-### **ListView(Lambda listViewConfig = null) : KonstruktListViewConfigBuilder&lt;TEntityType&gt;**
+### **ListView(Lambda listViewConfig = null) : ListViewConfigBuilder&lt;TEntityType&gt;**
 
 Accesses the list view config of the given collection.
 
@@ -25,7 +25,7 @@ collectionConfig.ListView(listViewConfig => {
 
 ## Adding a field to the list view
 
-### **AddField(Lambda propertyExpression, Lambda fieldConfig = null) : KonstruktListViewFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### **AddField(Lambda propertyExpression, Lambda fieldConfig = null) : ListViewFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
 
 Adds the given property to the list view.
 
@@ -38,7 +38,7 @@ listViewConfig.AddField(p => p.FirstName, fieldConfig => {
 
 ## Changing the heading of a field
 
-### **SetHeading(string heading) : KonstruktListViewFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### **SetHeading(string heading) : ListViewFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
 
 Sets the heading for the list view field.
 
@@ -49,7 +49,7 @@ fieldConfig.SetHeading("First Name");
 
 ## Formatting the value of a field
 
-### **SetFormat(Lambda formatExpression) : KonstruktListViewFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### **SetFormat(Lambda formatExpression) : ListViewFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
 
 Sets the format expression for the list view field.
 
@@ -62,7 +62,7 @@ fieldConfig.SetFormat((v, p) => $"{v} years old");
 
 With field views, you can customize the markup the list view's field so you can show richer visualizations of the field's content. For more information you can check the [Field Views Documentation](field-views.md).
 
-### **SetView(string viewComponentName) : KonstruktListViewFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### **SetView(string viewComponentName) : ListViewFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
 
 Sets the view component for the list view field.
 
@@ -71,7 +71,7 @@ Sets the view component for the list view field.
 fieldConfig.SetView("ImageFieldView");
 ````
 
-### **SetView&lt;TView&gt;() : KonstruktListViewFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### **SetView&lt;TView&gt;() : ListViewFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
 
 Sets the view component for the list view field.
 
@@ -82,7 +82,7 @@ fieldConfig.SetView<ImageFieldView>();
 
 ## Setting the visibility of a field
 
-### **SetVisibility(Predicate&lt;KonstruktListViewFieldVisibilityContext&gt; visibilityExpression) : KonstruktListViewFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### **SetVisibility(Predicate&lt;ListViewFieldVisibilityContext&gt; visibilityExpression) : ListViewFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
 
 Sets the runtime visibility of the list view field.
 
@@ -93,7 +93,7 @@ fieldConfig.SetVisibility(ctx => ctx.UserGroups.Any(x => x.Alias == "editor"));
 
 ## Changing the page size
 
-### **SetPageSize(int pageSize) : KonstruktListViewConfigBuilder&lt;TEntityType&gt;**
+### **SetPageSize(int pageSize) : ListViewConfigBuilder&lt;TEntityType&gt;**
 
 Sets the number of items to display per page for the given list view.
 

@@ -10,7 +10,7 @@ Searchable properties allow you to define any `String` based properties on a mod
 
 ## Defining searchable properties
 
-### **AddSearchableProperty(Lambda searchablePropertyExpression) : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
+### **AddSearchableProperty(Lambda searchablePropertyExpression) : CollectionConfigBuilder&lt;TEntityType&gt;**
 
 Adds the given property to the searchable properties collection.
 

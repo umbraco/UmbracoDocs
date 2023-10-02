@@ -62,7 +62,7 @@ Once you have received your license code it needs to be installed on your site.
 ```json
 "Umbraco": {
   "Licenses": {
-    "Umbraco.UI.Builder": "YOUR_LICENSE_KEY"
+    "Umbraco.UIBuilder": "YOUR_LICENSE_KEY"
   }
 }
 ```

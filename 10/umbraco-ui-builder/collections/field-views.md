@@ -4,18 +4,18 @@ description: Configuring field views in Umbraco UI Builder, the backoffice UI bu
 
 # Field Views
 
-Field Views allow you to customize the markup used by a field when displayed in a list view. Field Views are implemented as .NET Core View Components that are passed a single `KonstruktFieldViewsContext` argument with information about the entity/field being rendered.
+Field Views allow you to customize the markup used by a field when displayed in a list view. Field Views are implemented as .NET Core View Components that are passed a single `FieldViewsContext` argument with information about the entity/field being rendered.
 
 ## Defining a field view
 
 You can define a field view in one of two ways.
 
-### **1. A basic view file for the built in `KonstruktFieldView` view component**
+### **1. A basic view file for the built in `FieldView` view component**
 
-The simplest way to define a field view for non-complex fields is to place a view file in the `/Views/Shared/Components/KonstruktFieldView` folder with the following markup.
+The simplest way to define a field view for non-complex fields is to place a view file in the `/Views/Shared/Components/FieldView` folder with the following markup.
 
 ````csharp
-@model Konstrukt.Web.Models.KonstruktFieldViewContext
+@model Umbraco.UIBuilder.Web.Models.FieldViewContext
 <!-- Insert your markup here -->
 ````
 
@@ -29,7 +29,7 @@ To define a more complex field view you can create your own view component class
 // Example
 public class MyComplexFieldViewViewComponent : ViewComponent
 {
-    public async Task<IViewComponentResult> InvokeAsync(KonstruktFieldViewContext context)
+    public async Task<IViewComponentResult> InvokeAsync(FieldViewContext context)
     {
         // Do your custom logic here
 
@@ -39,7 +39,7 @@ public class MyComplexFieldViewViewComponent : ViewComponent
 ````
 
 {% hint style="info" %}
-It's important to know that the `KonstruktFieldViewContext` parameter to the `InvokeAsync` method **MUST** be named `context`.
+It's important to know that the `FieldViewContext` parameter to the `InvokeAsync` method **MUST** be named `context`.
 {% endhint %}
 
 For the view element of your component, based on the example above, you would place a file `Default.cshtml` into the  `/Views/Shared/Components/MyComplexFieldView` folder with the following markup:
@@ -51,10 +51,10 @@ For the view element of your component, based on the example above, you would pl
 
 ## The field view context
 
-Field view components are passed a `KonstruktFieldViewContext` object with the following information:
+Field view components are passed a `FieldViewContext` object with the following information:
 
 ````csharp
-public class KonstruktFieldViewContext
+public class FieldViewContext
 {
     public string ViewName { get; set; }
     public object Entity { get; set; }

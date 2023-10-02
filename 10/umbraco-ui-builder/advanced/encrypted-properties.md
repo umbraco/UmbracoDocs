@@ -12,7 +12,7 @@ Umbraco UI Builder uses the `IDataProtectionProvider` instance registered in the
 
 ## Defining encrypted properties
 
-### **AddEncryptedProperty(Lambda encryptedPropertyExpression) : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
+### **AddEncryptedProperty(Lambda encryptedPropertyExpression) : CollectionConfigBuilder&lt;TEntityType&gt;**
 
 Adds the given property to the encrypted properties collection. Property must be of type `String`. When set, the property will be encrypted/decrypted on write/read respectively.
 

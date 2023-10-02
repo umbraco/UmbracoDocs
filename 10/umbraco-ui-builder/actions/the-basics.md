@@ -8,18 +8,18 @@ Actions are a powerful way of adding custom functionality to Umbraco UI Builder 
 
 ## Defining an action
 
-To define an action create a class that inherits from the base class `KonstruktAction<>` and configure it like below:
+To define an action create a class that inherits from the base class `Action<>` and configure it like below:
 
 ````csharp
 // Example
-public class MyAction : KonstruktAction<KonstruktActionResult>
+public class MyAction : Action<ActionResult>
 {
     public override string Icon => "icon-settings";
     public override string Alias => "myaction";
     public override string Name => "My Action";
     public override bool ConfirmAction => true;
 
-    public override KonstruktActionResult Execute(string collectionAlias, object[] entityIds)
+    public override ActionResult Execute(string collectionAlias, object[] entityIds)
     {
         // Perform operation here...
     }
@@ -45,32 +45,32 @@ You can use dependency injection to inject any services you require to perform y
 
 ## Controlling the action result
 
-Actions by default will return a `KonstruktActionResult` but you can return other types of result by swapping the `KonstruktAction<>` generic argument.
+Actions by default will return a `ActionResult` but you can return other types of result by swapping the `Action<>` generic argument.
 
-* **`KonstruktActionResult`** - Standard result with a boolean `Success` value.
-* **`KonstruktFileActionResult`** - Returns a file stream / bytes and triggers a download dialog.
+* **`ActionResult`** - Standard result with a boolean `Success` value.
+* **`FileActionResult`** - Returns a file stream / bytes and triggers a download dialog.
 
 ## Capturing settings for an action
 
-Sometimes you may need to collect further user input before you can perform an action. To achieve this you can use the `KonstruktAction<>` base class that accepts an additional `TSetting` generic argument.
+Sometimes you may need to collect further user input before you can perform an action. To achieve this you can use the `Action<>` base class that accepts an additional `TSetting` generic argument.
 
 ````csharp
 // Example
-public class MyAction : KonstruktAction<MyBulkdActionSettings, KonstruktActionResult>
+public class MyAction : Action<MyBulkdActionSettings, ActionResult>
 {
     public override string Icon => "icon-settings";
     public override string Alias => "myaction";
     public override string Name => "My Action";
     public override bool ConfirmAction => true;
 
-    public override void Configure(KonstruktSettingsConfigBuilder<MyActionSettings> settingsConfig)
+    public override void Configure(SettingsConfigBuilder<MyActionSettings> settingsConfig)
     {
         settingsConfig.AddFielset("General", fieldsetConfig => fieldsetConfig
             .AddField(s => s.RecipientName).SetLabel("Recipient Name")
             .AddField(s => s.ReceipientEmail).SetLabel("Recipient Email"))
     }
 
-    public override KonstruktActionResult Execute(string collectionAlias, object[] entityIds, MyActionSettings settings)
+    public override ActionResult Execute(string collectionAlias, object[] entityIds, MyActionSettings settings)
     {
         // Perform operation here...
     }
@@ -83,7 +83,7 @@ public class MyActionSettings
 }
 ````
 
-By implementing this base class you are required to implement an additional `Configure` method which accepts a `KonstruktSettingsConfigBuilder<>` parameter. You should use this parameter calling the builders fluent API to define the settings dialog UI and how it maps to the settings type. With the settings config builder you are able to create fieldsets and fields with the same fluent API as defined in the [Collection Editors section](../collections/editors.md#adding-a-fieldset-to-a-tab).
+By implementing this base class you are required to implement an additional `Configure` method which accepts a `SettingsConfigBuilder<>` parameter. You should use this parameter calling the builders fluent API to define the settings dialog UI and how it maps to the settings type. With the settings config builder you are able to create fieldsets and fields with the same fluent API as defined in the [Collection Editors section](../collections/editors.md#adding-a-fieldset-to-a-tab).
 
 In addition to this `Configure` method, the `Execute` method will now accept an additional `settings` parameter of the settings type. This will be pre-populated by Umbraco UI Builder with the value entered by the user, allowing you to alter your actions behavior accordingly.
 
@@ -91,7 +91,7 @@ In addition to this `Configure` method, the `Execute` method will now accept an 
 
 Actions are added via the [Collections](../collections/overview.md) configuration.
 
-### **AddAction&lt;TMenuActionType&gt;() : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
+### **AddAction&lt;TMenuActionType&gt;() : CollectionConfigBuilder&lt;TEntityType&gt;**
 
 Adds an action of the given type to the collection.
 
@@ -100,7 +100,7 @@ Adds an action of the given type to the collection.
 collectionConfig.AddAction<ExportMenuAction>();
 ````
 
-#### **AddAction(Type actionType) : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
+#### **AddAction(Type actionType) : CollectionConfigBuilder&lt;TEntityType&gt;**
 
 Adds an action of the given type to the collection.
 
@@ -109,7 +109,7 @@ Adds an action of the given type to the collection.
 collectionConfig.AddAction(actionType);
 ````
 
-#### **AddAction(IKonstruktAction action) : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
+#### **AddAction(IAction action) : CollectionConfigBuilder&lt;TEntityType&gt;**
 
 Adds the given action to the collection.
 

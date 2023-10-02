@@ -2,7 +2,7 @@
 description: Differences between Umbraco UI Builder and UI-O-Matic, the backoffice UI builders for Umbraco.
 ---
 
-# Konstrukt vs UI-O-Matic
+# Umbraco UI Builder vs UI-O-Matic
 
 You might know the open source backoffice UI builder, UI-O-Matic, and wondering why you should choose Umbraco UI Builder instead. To help with that decision, we've put together the following feature matrix to compare some of their major differences.
 

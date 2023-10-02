@@ -4,17 +4,17 @@ description: Configuring custom cards in Umbraco UI Builder, the backoffice UI b
 
 # Custom Cards
 
-Custom cards allow you to perform more complex metric calculations and are defined via a class implementing the `KonstruktCard` base class.
+Custom cards allow you to perform more complex metric calculations and are defined via a class implementing the `Card` base class.
 
 When Umbraco UI Builder resolves a card it will attempt to do so from the global DI container. This means you can inject any dependencies that you require for your card to calculate its value. If there is no type defined in the DI container, Umbraco UI Builder will fall-back to manually instantiating a new instance of value mapper.
 
 ## Defining a custom card
 
-To define a card you create a class that inherits from the base class `KonstruktCard` and configure it within the constructor like so.
+To define a card you create a class that inherits from the base class `Card` and configure it within the constructor like so.
 
 ````csharp
 // Example
-public class AvgPersonAgeCard : KonstruktCard
+public class AvgPersonAgeCard : Card
 {
     public override string Alias => "avgPersonAge";
     public override string Name => "Average Age";
@@ -43,7 +43,7 @@ Additional optional configuration options are:
 
 ## Adding a custom card to a collection
 
-### **AddCard<TCardType>() : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
+### **AddCard<TCardType>() : CollectionConfigBuilder&lt;TEntityType&gt;**
 
 Adds a card of the given type to the collection.
 
@@ -52,7 +52,7 @@ Adds a card of the given type to the collection.
 collectionConfig.AddCard<AvgPersonAgeCard>();
 ````
 
-### **AddCard(Type cardType) : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
+### **AddCard(Type cardType) : CollectionConfigBuilder&lt;TEntityType&gt;**
 
 Adds a card of the given type to the collection.
 

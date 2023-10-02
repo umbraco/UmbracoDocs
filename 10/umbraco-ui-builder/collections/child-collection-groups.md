@@ -12,7 +12,7 @@ A child collection group is a container for other child collections. Its purpose
 
 You can define a child collection group by calling one of the `AddChildCollectionGroup` methods on a given collection config builder instance.
 
-### **AddChildCollectionGroup(string name, Lambda childCollectionGroupConfig = null) : KonstruktChildCollectionGroupConfigBuilder**
+### **AddChildCollectionGroup(string name, Lambda childCollectionGroupConfig = null) : ChildCollectionGroupConfigBuilder**
 
 Adds a child collection group to the current collection with the given name and default icon.
 
@@ -23,7 +23,7 @@ collectionConfig.AddChildCollectionGroup("Family", childCollectionGroupConfig =>
 });
 ```
 
-### **AddChildCollectionGroup(string name, string icon, Lambda childCollectionGroupConfig = null) : KonstruktChildCollectionGroupConfigBuilder**
+### **AddChildCollectionGroup(string name, string icon, Lambda childCollectionGroupConfig = null) : ChildCollectionGroupConfigBuilder**
 
 Adds a child collection group to the current collection with the given name and icon.
 

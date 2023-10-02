@@ -46,7 +46,7 @@ public class Person
 
 ## Configure Umbraco UI Builder
 
-With the database and model setup, we can now start to configure Umbraco UI Builder itself. The entry point for the Umbraco UI Builder configuration is via the `AddKonstrukt` extension method. On this method, we call on the `IUmbracoBuilder` instance within the `ConfigureServices` method of the `Startup` class.
+With the database and model setup, we can now start to configure Umbraco UI Builder itself. The entry point for the Umbraco UI Builder configuration is via the `AddUIBuilder` extension method. On this method, we call on the `IUmbracoBuilder` instance within the `ConfigureServices` method of the `Startup` class.
 
 ```csharp
 public class Startup
@@ -57,7 +57,7 @@ public class Startup
         services.AddUmbraco(_env, _config)
             .AddBackOffice()
             .AddWebsite()
-            .AddKonstrukt(cfg => {
+            .AddUIBuilder(cfg => {
                 // Apply your configuration here
             })
             .AddComposers()
@@ -71,7 +71,7 @@ For our example, we will use the following configuration:
 
 ```csharp
 ...
-.AddKonstrukt(cfg => {
+.AddUIBuilder(cfg => {
     
     cfg.AddSectionAfter("media", "Repositories", sectionConfig => sectionConfig
         .Tree(treeConfig => treeConfig

@@ -12,7 +12,7 @@ Before beginning, make sure that you already have an Umbraco v10+ website config
 
 At this time, the minimum requirements for using Umbraco UI Builder are as follows:
 
-* **Umbraco 10.0+**
+* **Umbraco 10.0/12.0+**
 
 * **SQL Server Database** (SQLite is fine for testing, but not recommended for live deployments)
 

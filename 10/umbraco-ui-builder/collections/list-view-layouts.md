@@ -8,17 +8,17 @@ description: Configuring list view layouts in Umbraco UI Builder, the backoffice
 **List View Layouts** in Umbraco UI Builder are now considered deprecated. Moving forward, only the table list view will be supported. Whilst you can continue to use this feature for the time being, it will be removed in a future release.
 {% endhint %}
 
-List view layouts allow you to provide custom angular views to be used by the list view UI. By default, there are two built-in layouts, `KonstruktTableListViewLayout` which displays results in a tabular layout, and `KonstruktGridListViewLayout` which displays results in a tiled grid layout.
+List view layouts allow you to provide custom angular views to be used by the list view UI. By default, there are two built-in layouts, `TableListViewLayout` which displays results in a tabular layout, and `GridListViewLayout` which displays results in a tiled grid layout.
 
 ## Defining a list view layout
 
-To define a list view layout you create a class that inherits from the base class `KonstruktListViewLayout` and implements the abstract configuration properties.
+To define a list view layout you create a class that inherits from the base class `ListViewLayout` and implements the abstract configuration properties.
 
 ````csharp
 // Example
-public class MyCustomListViewLayout : KonstruktListViewLayout
+public class MyCustomListViewLayout : ListViewLayout
 {
-    public KonstruktGridListViewLayout()
+    public GridListViewLayout()
     {
         Name = "My Custom List";
         Alias = "my-custom-list";

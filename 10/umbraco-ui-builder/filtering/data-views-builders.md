@@ -10,13 +10,13 @@ When Umbraco UI Builder resolves a data views builder it will attempt to do so f
 
 ## Defining a data views builder
 
-To define a data views builder you can create a class that inherits from the base class `KonstruktDataViewsBuilder<TEntityType>` and implements the abstract methods.
+To define a data views builder you can create a class that inherits from the base class `DataViewsBuilder<TEntityType>` and implements the abstract methods.
 
 ````csharp
 // Example
-public class PersonDataViewsBuilder : KonstruktDataViewsBuilder<Person>
+public class PersonDataViewsBuilder : DataViewsBuilder<Person>
 {
-    public override IEnumerable<KonstruktDataViewSummary> GetDataViews()
+    public override IEnumerable<DataViewSummary> GetDataViews()
     {
         // Generate and return a list of data views
     }
@@ -37,7 +37,7 @@ The required methods are:
 
 Setting a data views builder is controlled via the [collections](../collections/overview.md) configuration.
 
-### **SetDataViewsBuilder&lt;TDataViewsBuilder&gt;() : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
+### **SetDataViewsBuilder&lt;TDataViewsBuilder&gt;() : CollectionConfigBuilder&lt;TEntityType&gt;**
 
 Sets the collections data views builder which allows you to define the data views dynamically at run time.
 
@@ -46,7 +46,7 @@ Sets the collections data views builder which allows you to define the data view
 collectionConfig.SetDataViewsBuilder<PersonDataViewsBuilder>();
 ````
 
-### **SetDataViewsBuilder(Type dataViewsBuilderType) : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
+### **SetDataViewsBuilder(Type dataViewsBuilderType) : CollectionConfigBuilder&lt;TEntityType&gt;**
 
 Sets the collections data views builder which allows you to define the data views dynamically at run time.
 
@@ -55,7 +55,7 @@ Sets the collections data views builder which allows you to define the data view
 collectionConfig.SetDataViewsBuilder(typeof(PersonDataViewsBuilder));
 ````
 
-### **SetDataViewsBuilder(KonstruktDataViewsBuilder&lt;TEntityType&gt; dataViewsBuilder) : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
+### **SetDataViewsBuilder(DataViewsBuilder&lt;TEntityType&gt; dataViewsBuilder) : CollectionConfigBuilder&lt;TEntityType&gt;**
 
 Sets the collections data views builder which allows you to define the data views dynamically at run time.
 

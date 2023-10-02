@@ -12,7 +12,7 @@ If you need to do more than a basic count, you'll want to take a look at the [cu
 
 Cards allow you to display basic summaries of key information that may be useful to the editor.
 
-### **AddCard(string name, Lambda whereClauseExpression, Lambda cardConfig = null) : KonstruktCardConfigBuilder**
+### **AddCard(string name, Lambda whereClauseExpression, Lambda cardConfig = null) : CardConfigBuilder**
 
 Adds a card with the given name and **where clause** filter expression. Expression must be a `boolean` expression.
 
@@ -23,7 +23,7 @@ collectionConfig.AddCard("Older than 30", p => p.Age > 30, cardConfig => {
 });
 ````
 
-### **AddCard(string name, string icon, Lambda whereClauseExpression, Lambda cardConfig = null) : KonstruktCardConfigBuilder**
+### **AddCard(string name, string icon, Lambda whereClauseExpression, Lambda cardConfig = null) : CardConfigBuilder**
 
 Adds a card with the given name + icon and **where clause** filter expression. Expression must be a `boolean` expression.
 
@@ -36,7 +36,7 @@ collectionConfig.AddCard("Older than 30", "icon-umb-users", p => p.Age > 30, car
 
 ### Change the color of a count card
 
-#### **SetColor(string color) : KonstruktCardConfigBuilder**
+#### **SetColor(string color) : CardConfigBuilder**
 
 Sets the color of the card.
 
@@ -47,7 +47,7 @@ cardConfig.SetColor("blue");
 
 ### Add a suffix to a count value
 
-#### **SetSuffix(string suffix) : KonstruktCardConfigBuilder**
+#### **SetSuffix(string suffix) : CardConfigBuilder**
 
 Sets the suffix of the card value.
 
@@ -58,7 +58,7 @@ cardConfig.SetSuffix("years");
 
 ### Formatting the value of a count
 
-#### **SetFormat(Lambda formatExpression) : KonstruktCardConfigBuilder**
+#### **SetFormat(Lambda formatExpression) : CardConfigBuilder**
 
 Sets the format expression for the card.
 
