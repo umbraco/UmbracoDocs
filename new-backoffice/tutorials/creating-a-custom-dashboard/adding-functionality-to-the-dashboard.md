@@ -14,12 +14,12 @@ This is the third part of our guide to building a custom dashboard. This part co
 
 The steps we will go through in this part are:
 
-1. [Resources and services](adding-functionality-to-the-dashboard.md#1.-resources-and-services)
+1. [Contexts](adding-functionality-to-the-dashboard.md#1.-contexts)
 2. [Getting data from the server](adding-functionality-to-the-dashboard.md#2.-getting-data-from-the-server)
 
-## Step 1: Resources and services
+## Step 1: Contexts
 
-Umbraco has a large selection of resources and services that you can use in your custom property editors and dashboards. For this example, it would be nice to welcome the editor by name. To achieve this we can make use of the Umbraco resources.
+Umbraco has a large selection of contexts that you can use in your custom Property Editors and Dashboards. For this example, we will welcome the editor by name. To achieve this we can make use of the Umbraco Contexts.
 
 To get information on the current user that's currently logged in, we first need to get the context and its token. We use the Auth context to receive the user that is currently logged in.
 
@@ -27,7 +27,7 @@ Import the Auth token and the type for the logged-in user. We also need to updat
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
-import { customElement, state } from "lit/decorators.js";
+import { customElement, state } from "@umbraco-cms/backoffice/external/lit";
 import { UMB_AUTH, UmbLoggedInUser } from '@umbraco-cms/backoffice/auth';
 ```
 {% endcode %}
@@ -100,9 +100,8 @@ Your dashboard should now look something like this:
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
-import { LitElement, css, html } from "lit";
 import { UMB_AUTH, UmbLoggedInUser } from '@umbraco-cms/backoffice/auth';
-import { customElement, state } from "lit/decorators.js";
+import { LitElement, css, html, customElement, state } from "@umbraco-cms/backoffice/external/lit";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
 @customElement('my-welcome-dashboard')
@@ -174,7 +173,7 @@ declare global {
 ## Step 2: Getting data from the server
 
 {% hint style="danger" %}
-<mark style="color:red;">`UmbUserDetail`</mark> and <mark style="color:red;">`UmbUserRepository`</mark> is not available in Preview002
+<mark style="color:red;">`UmbUserDetail`</mark> and <mark style="color:red;">`UmbUserRepository`</mark> is not available in Preview003
 {% endhint %}
 
 Let's dive deeper into some new resources and see what we can do with them.
@@ -229,9 +228,8 @@ private async _getDataFromRepository() {
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
-import { LitElement, css, html } from "lit";
 import { UMB_AUTH, UmbLoggedInUser } from '@umbraco-cms/backoffice/auth';
-import { customElement, state } from "lit/decorators.js";
+import { LitElement, css, html, customElement, state } from "@umbraco-cms/backoffice/external/lit";
 import { UmbUserDetail, UmbUserRepository } from '@umbraco-cms/backoffice/users';
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
@@ -377,9 +375,8 @@ We now should have something that looks like this:
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
-import { LitElement, css, html } from "lit";
 import { UMB_AUTH, UmbLoggedInUser } from "@umbraco-cms/backoffice/auth";
-import { customElement, state } from "lit/decorators.js";
+import { LitElement, css, html, customElement, state } from "@umbraco-cms/backoffice/external/lit";
 import { UmbUserDetail, UmbUserRepository } from "@umbraco-cms/backoffice/users";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 

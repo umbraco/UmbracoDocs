@@ -196,8 +196,7 @@ render() {
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
-import { LitElement, css, html } from "lit";
-import { customElement } from "lit/decorators.js";
+import { LitElement, css, html, customElement } from "@umbraco-cms/backoffice/external/lit";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
 @customElement("my-welcome-dashboard")
@@ -265,4 +264,4 @@ This is how our dashboard should now look like:
 
 With the part completed, you should have a dashboard welcoming your users' language.
 
-In the next part, we will look into how to add more functionality to the dashboard using some of the resources and services that Umbraco offers.
+In the next part, we will look into how to add more functionality to the dashboard using some of the Contexts that Umbraco offers.

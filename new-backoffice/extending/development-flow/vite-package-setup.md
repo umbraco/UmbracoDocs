@@ -76,6 +76,24 @@ Next, we are going to build the `ts` file so we can use it in our package:
 npm run build
 ```
 
+### Watch for changes and build
+
+If you like to continuously work on the package and have each change built, you can change the `dev` script of your `package.json` to `vite build --watch`.
+The example below indicates where in the structure this change should be implemented:
+
+{% code title="package.json" lineNumbers="true" %}
+```json
+{
+  "name": "my-package",
+  ...
+  "scripts": {
+    "dev": "vite build --watch",
+    ...
+  },
+  ...
+```
+{% endcode %}
+
 ### Umbraco Package declaration
 
 Declare your package to Umbraco, via a file called `umbraco-package.json.` This should be added at the root of your package.

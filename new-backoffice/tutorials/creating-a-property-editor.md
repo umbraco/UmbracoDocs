@@ -82,8 +82,7 @@ We will use the `property-editor-ui-suggestions.element` file to handle the Prop
 In the `property-editor-ui-suggestions.element` file we'll add:
 
 ```typescript
-import { LitElement, html } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { LitElement, html, customElement, property } from "@umbraco-cms/backoffice/external/lit";
 import { UmbPropertyEditorExtensionElement } from "@umbraco-cms/backoffice/extension-registry";
 import type { UmbDataTypePropertyCollection } from '@umbraco-cms/backoffice/components';
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
@@ -120,9 +119,8 @@ declare global {
 in the `suggestions-input.element` file we'll add:
 
 ```typescript
-import { LitElement, html } from 'lit';
-import { customElement, state } from 'lit/decorators.js';
-import { FormControlMixin } from '@umbraco-ui/uui-base/lib/mixins';
+import { LitElement, html, customElement, state } from '@umbraco-cms/backoffice/external/lit';
+import { FormControlMixin } from '@umbraco-cms/backoffice/external/uui';
 
 @customElement('my-suggestions-input')
 export class MySuggestionsInputElement extends FormControlMixin(LitElement) {
@@ -185,7 +183,7 @@ render() {
       class="element"
       label="text input"
       .value="${this.value || ''}
-      @input=${this.#onInput}"></uui-input>		
+      @input=${this.#onInput}"></uui-input>
     <div id="wrapper">
       <uui-button
 	id="suggestion-button"
@@ -214,11 +212,11 @@ To get rid of the errors let's create the methods that will be called when the e
 #onInput(e: UUIInputEvent) {
   /* Code will be added later! */
 }
-    
+   
 #onSuggestion() {
   /* Code will be added later! */
 }
-    
+   
 #onTextTrim() {
   /* This method will trim our text later! */
 }
@@ -287,7 +285,7 @@ import { UUIInputEvent } from '@umbraco-ui/uui';
   this.value = e.target.value as string;
   this.#dispatchChangeEvent();
 }
-    
+   
 #onSuggestion() {
   const randomIndex = (this._suggestions.length * Math.random()) | 0;
   this.value = this._suggestions[randomIndex];
@@ -298,10 +296,8 @@ import { UUIInputEvent } from '@umbraco-ui/uui';
 Our file should now look something like this:
 
 ```typescript
-import { LitElement, html, css } from 'lit';
-import { customElement, state } from 'lit/decorators.js';
-import { UUIInputEvent } from '@umbraco-ui/uui';
-import { FormControlMixin } from '@umbraco-ui/uui-base/lib/mixins';
+import { LitElement, html, css, customElement, state } from '@umbraco-cms/backoffice/external/lit';
+import { UUIInputEvent, FormControlMixin } from '@umbraco-cms/backoffice/external/uui';
 
 @customElement('my-suggestions-input')
 export class MySuggestionsInputElement extends FormControlMixin(LitElement) {
@@ -312,30 +308,30 @@ export class MySuggestionsInputElement extends FormControlMixin(LitElement) {
     'How about starting a book club today or this week?',
     'Are you hungry?',
   ];
-	
+
   protected getFormElement() {
     return undefined;
-  } 
+  }
 
   #onInput(e: UUIInputEvent) {
     this.value = e.target.value as string;
     this.#dispatchChangeEvent();
   }
-	    
+	   
   #onSuggestion() {
     const randomIndex = (this._suggestions.length * Math.random()) | 0;
     this.value = this._suggestions[randomIndex];
     this.#dispatchChangeEvent();
   }
-	    
+	   
   #onTextTrim() {
   /* This method will trim our text later! */
   }
-		
+
   #dispatchChangeEvent() {
     this.dispatchEvent(new CustomEvent('change', { bubbles: true, composed: true }));
   }
-	
+
   render() {
     return html`<div class="blue-text">${this.value}</div>
       <uui-input
@@ -343,7 +339,7 @@ export class MySuggestionsInputElement extends FormControlMixin(LitElement) {
 	class="element"
 	label="text input"
 	.value="${this.value || ''}"
-	@input=${this.#onInput}></uui-input>	
+	@input=${this.#onInput}></uui-input>
       <div id="wrapper">
         <uui-button
           id="suggestion-button"
@@ -364,7 +360,7 @@ export class MySuggestionsInputElement extends FormControlMixin(LitElement) {
       </div>
     `;
   }
-  
+
   static styles = [
     css`
       .blue-text {
@@ -419,25 +415,24 @@ Next, clear the cache, reload the document, and see the Suggestions Data Type ru
 The file `property-editor-ui-suggestions.element` should now look something like this:
 
 ```typescript
-import { html } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { html, customElement, property, LitElement } from '@umbraco-cms/backoffice/external/lit';
 import { MySuggestionsInputElement } from './suggestions-input.element.js';
 import { UmbPropertyEditorExtensionElement } from '@umbraco-cms/backoffice/extension-registry';
-import { UmbLitElement } from '@umbraco-cms/internal/lit-element';
+import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 import { UmbDataTypePropertyCollection } from '@umbraco-cms/backoffice/data-type';
 import './suggestions-input.element.js';
 
 @customElement('my-property-editor-ui-suggestions')
-export class MyPropertyEditorUISuggestionsElement extends UmbLitElement implements UmbPropertyEditorExtensionElement {
-	
+export class MyPropertyEditorUISuggestionsElement extends UmbElementMixin(LitElement) implements UmbPropertyEditorExtensionElement {
+
   @property({ type: String })
-  public value = '';  
-    
+  public value = '';
+   
   @property({ type: Array, attribute: false })
   public set config(config: UmbDataTypePropertyCollection) {
     // we will add configuration here later
   }
-    
+   
   #onChange(e: CustomEvent) {
     this.value = (e.target as MySuggestionsInputElement).value as string;
     this.dispatchEvent(new CustomEvent('property-value-change'));
