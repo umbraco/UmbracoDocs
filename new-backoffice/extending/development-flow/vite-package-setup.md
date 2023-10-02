@@ -29,14 +29,14 @@ npm install
 The last thing we need to install now is our Backoffice package. You can install the package using the following command:
 
 ```bash
-npm install -D @umbraco-cms/backoffice
+npm install -D @umbraco-cms/backoffice@14.0.0--preview003
 ```
 
-If you are working with a prerelease of Umbraco, make sure to use the [MyGet registry](https://www.myget.org/feed/umbracoprereleases/package/npm/@umbraco-cms/backoffice) to find the proper version. For example, this command will give you the typings for version `14.0.0--preview001`
+{% hint style="info" %}
+The `--preview003` is required to install the correct version of the package. You have to specify the specific version. Otherwise you will get the latest version of the package, which may not be compatible with the version of Umbraco you are using.
+{% endhint %}
 
-```bash
-npm install -D --registry https://www.myget.org/F/umbracoprereleases/npm @umbraco-cms/backoffice@14.0.0--preview001
-```
+This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice.
 
 {% hint style="warning" %}
 If you see any errors during this process, make sure that you have the right tools installed (Node, .NET, and so on). Also, make sure you have followed the steps on how to [Setup Your Development Environment](./).
@@ -44,25 +44,25 @@ If you see any errors during this process, make sure that you have the right too
 
 Next, create a new file called `vite.config.ts` and insert the following code:
 
-```javascript
+```ts
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  build: {
-    lib: {
-      entry: "src/my-element.ts", // your web component source file
-      formats: ["es"],
+    build: {
+        lib: {
+            entry: "src/my-element.ts", // your web component source file
+            formats: ["es"],
+        },
+        outDir: "dist", // your web component will be saved in this location
+        sourcemap: true,
+        rollupOptions: {
+            external: [/^@umbraco/],
+        },
     },
-    outDir: "dist", // your web component will be saved in this location
-    sourcemap: true,
-    rollupOptions: {
-      external: [/^@umbraco/],
-    },
-  },
 });
 ```
 
-This alters the Vite default output into a **library mode**, where the output is a javascript file with the same name as the `name` attribute in `package.json`. The name is `my-extension` if you followed this tutorial with no changes.
+This alters the Vite default output into a **library mode**, where the output is a JavaScript file with the same name as the `name` attribute in `package.json`. The name is `my-extension` if you followed this tutorial with no changes.
 
 {% hint style="info" %}
 The `build:lib:entry` parameter can accept an array which will allow you to export multiple files during the build. You can read more about [Vite's build options here](https://vitejs.dev/config/build-options.html#build-lib).
@@ -85,25 +85,27 @@ This example declares a Dashboard as part of your Package, using the Vite exampl
 [Learn about the abilities of the Umbraco Package here.](../package-manifest.md)
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
+
 ```json
 {
-	"$schema": "../../umbraco-package-schema.json",
-	"name": "My Package",
-	"version": "0.1.0",
-	"extensions": [
-		{
-			"type": "dashboard",
-			"alias": "My.Dashboard.MyExtension",
-			"name": "My Dashboard",
-			"js": "/App_Plugins/my-package/dist/my-extension.js",
-			"meta": {
-				"label": "My Dashboard",
-				"pathname": "my-dashboard"
-			}
-		}
-	]
+    "$schema": "../../umbraco-package-schema.json",
+    "name": "My Package",
+    "version": "0.1.0",
+    "extensions": [
+        {
+            "type": "dashboard",
+            "alias": "My.Dashboard.MyExtension",
+            "name": "My Dashboard",
+            "js": "/App_Plugins/my-package/dist/my-extension.js",
+            "meta": {
+                "label": "My Dashboard",
+                "pathname": "my-dashboard"
+            }
+        }
+    ]
 }
 ```
+
 {% endcode %}
 
 ### Summary
