@@ -8,7 +8,7 @@ description: Get an overview of release notes for each month in 2023.
 
 ## Key Takeaways
 * **Shared Secrets** - Streamline your build process, enhance security, and say goodbye to repetitive environment configurations with "Shared Secrets" on Umbraco Cloud.
-* **Stay tuned for more updates later this month**
+* **Upgraded "Usage" Page for Custom Plans** - If you've added extra bandwidth or media storage to your cloud project, our updated "Usage" page on Umbraco Cloud now accurately reflects those additions.
 
 # [August 2023](2023-08-releasenotes.md)
 

@@ -289,7 +289,7 @@ You can edit the macro values after it has been added to the rich text editor:
 
 1. Highlight the macro in the rich text editor.
 2. Click the **Insert Macro** button. The **Select Macro** tree opens on the right-side of the editor.
-3. Here, you can edit the configuration as per your requirement.
+3. Here, you can edit the configuration as per your requirements.
 
 #### Removing macros
 

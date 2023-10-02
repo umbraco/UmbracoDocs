@@ -29,7 +29,7 @@ A consent _cannot be deleted_. It can only be revoked by registering a "revoked 
 
 ## Examples
 
-```
+```csharp
 // store a new consent
 var newConsent = _consentService.RegisterConsent("userId", "Our.Custom.Umbraco.Plugin", "AllowedToEmail", ConsentState.Granted, "some comments");
 

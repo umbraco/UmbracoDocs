@@ -1,5 +1,5 @@
 ---
-description: "Use hosted services to run a background task"
+description: Use hosted services to run a background task
 ---
 
 # Scheduling
@@ -87,7 +87,7 @@ public class CleanUpYourRoom : RecurringHostedServiceBase
 
 First we need to create our extension method where we register the hosted service with `AddHostedService`:
 
-```
+```csharp
 namespace Umbraco.Docs.Samples.Web.RecurringHostedService;
 
 public static class UmbracoBuilderHostedServiceExtensions
@@ -102,7 +102,7 @@ public static class UmbracoBuilderHostedServiceExtensions
 
 Now we can invoke it in the `ConfigureServices` method in `Startup.cs`:
 
-```
+```csharp
 public void ConfigureServices(IServiceCollection services)
 {
 #pragma warning disable IDE0022 // Use expression body for methods
@@ -120,7 +120,7 @@ public void ConfigureServices(IServiceCollection services)
 
 All we need to do here is to create the composer where we register the hosted service with `AddHostedService`, which will be run automatically:
 
-```
+```csharp
 using Umbraco.Cms.Core.Composing;
 
 namespace Umbraco.Docs.Samples.Web.RecurringHostedService;
@@ -150,7 +150,7 @@ In earlier versions of Umbraco, there were a series of events triggered by backg
 
 In the example above you could add the following switch case at the beginning to help determine the server role & thus if you don't want to run code on that type of server you can exit out early.
 
-```
+```csharp
 // Do not run the code on subscribers or unknown role servers
 // ONLY run for SchedulingPublisher server or Single server roles
 switch (_serverRoleAccessor.CurrentServerRole)

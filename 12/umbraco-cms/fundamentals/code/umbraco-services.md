@@ -1,4 +1,4 @@
-# Using Umbraco's service APIs
+# Service APIs
 
 _Whenever you need to modify an entity that Umbraco stores in the database, there are service APIs available to help you. This means that you can create, update and delete any of the core Umbraco entities directly from your custom code._
 
@@ -180,10 +180,9 @@ namespace DefaultNamespace
 }
 ```
 
-When creating Umbraco packages you don't have access to the Startup class, therefore  it's recommended to use a `IComposer` instead. A Composer gives you access to the `IUmbracoBuilder`.
+When creating Umbraco packages you don't have access to the Startup class, therefore it's recommended to use a `IComposer` instead. A Composer gives you access to the `IUmbracoBuilder`.
 
-If you don't have access to the Startup class 
-
+If you don't have access to the Startup class
 
 ```csharp
 public class CustomComposer : IComposer
@@ -243,12 +242,12 @@ There is full API coverage of all Umbraco core entities:
 
 * [AuditService](../../reference/management/services/auditservice.md)
 * [ConsentService](../../reference/management/services/consentservice.md)
-* [ContentService](../../reference/management/services/contentservice/README.md)
-* [ContentTypeService](../../reference/management/services/contenttypeservice/README.md)
+* [ContentService](../../reference/management/services/contentservice/)
+* [ContentTypeService](../../reference/management/services/contenttypeservice/)
 * [DataTypeService](../../reference/management/services/datatypeservice.md)
 * [EntityService](../../reference/management/services/entityservice.md)
 * [FileService](../../reference/management/services/fileservice.md)
-* [LocalizationService](../../reference/management/services/localizationservice/README.md)
+* [LocalizationService](../../reference/management/services/localizationservice/)
 * [MacroService](../../reference/management/services/macroservice.md)
 * [MediaService](../../reference/management/services/mediaservice.md)
 * [MemberService](../../reference/management/services/memberservice.md)
@@ -257,6 +256,6 @@ There is full API coverage of all Umbraco core entities:
 
 ### More information
 
-* [Umbraco Services API reference](../../reference/management/services/)
+* [Umbraco Services API reference](umbraco-services.md)
 * [Umbraco Notifications reference](../../reference/notifications/)
 * [Routes and controllers](../../reference/routing/)

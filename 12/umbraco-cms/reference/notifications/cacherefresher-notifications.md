@@ -6,7 +6,7 @@ Cache refresher notifications are sent when the cache has refreshed. There are m
 
 The base notification is implemented in the following way:
 
-```
+```csharp
 public abstract class CacheRefresherNotification : INotification
 {
     public CacheRefresherNotification(object messageObject, MessageType messageType)
@@ -23,7 +23,7 @@ public abstract class CacheRefresherNotification : INotification
 
 As you can see this notification contains two properties, a `MessageObject` and a `MessageType`. The `MessageType` specifies what kind of cache operation was performed, for example `RemoveById`. The possible message types is as follows:
 
-```
+```csharp
 public enum MessageType
 {
     RefreshAll,
@@ -40,7 +40,7 @@ The other parameter `MessageObject` will depend on what type of cache refresher 
 
 This object contains the Id and key of the item being updated, as well as an enum specifying how the tree is updated:
 
-```
+```csharp
 [Flags]
 public enum TreeChangeTypes : byte
 {
@@ -66,7 +66,7 @@ public enum TreeChangeTypes : byte
 
 An example of working with the `ContentCacheNotification` can be seen here:
 
-```
+```csharp
 using Umbraco.Cms.Core.Cache;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
