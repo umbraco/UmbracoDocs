@@ -1,10 +1,10 @@
 # Database
 
-In order for you to be able to work with your Cloud database there are a few steps you will need to do before you are able to work with it locally. This article will go through the needed steps. At the end of the article you will be ready to start working with the database.
+In order for you to be able to work with your Cloud database, there are a few steps you will need to do. You will need to do these steps before you are able to work with it locally. This article will go through the needed steps. At the end of the article you will be ready to start working with the database.
 
 ## Connecting to your Cloud database locally
 
-First, Umbraco Cloud automatically overrides whatever is in the 'umbracoDbDsn' connection string in the 'web.config' or the 'appSettings.json" when the site is running on Cloud. This means that any connection string in there named 'umbracoDbDsn' will only ever be used when you run the site locally (cloned). In rare cases, you might need the database timeout increased on Cloud, for that you'll need to reach out to support for assistance.
+First, Umbraco Cloud automatically overrides whatever is in the 'umbracoDbDsn' connection string in the `web.config` or the `appSettings.json` when the site is running on Cloud. This means that any connection string in there named 'umbracoDbDsn' will only ever be used when you run the site locally (cloned). In rare cases, you might need the database timeout increased on Cloud, for that you'll need to reach out to support for assistance.
 
 Second, for security, your database on Umbraco Cloud is running behind a firewall. In order to connect to the database, you'll need to open the firewall for the relevant IPs. This can be a single IP, a list of IPs, or even an IP range. It's done from the Connection Details page on your project. Click the "Settings" menu in the upper right corner of your project and select "Connection Details". If you don't see the menu item, it's due to permissions and you'll need to contact the administrator of your project.
 
@@ -22,9 +22,9 @@ When adding a new IP, it is required to give it a name. This gives an overview o
 
 ### Setting up SQL Management Studio
 
-Once the firewall is open, it's time to fire up SQL Management Studio and connect to the database. Be aware that a database exists for each environment you have on Umbraco Cloud and any changes you make to custom tables need to be done for each of them.
+Once the firewall is open, it's time to fire up SQL Management Studio and connect to the database. Be aware that a database exists for each environment you have on Umbraco Cloud. Any changes you make to custom tables need to be done for each of them.
 
-To connect, choose "Connect Database Engine" and copy the values from the Connection Details page on Umbraco Cloud where you'll find handy "copy" shortcut buttons to the right of each value. In the "Connect to Server" dialog in SQL Management Studio, choose "SQL Server Authentication" as the authentication type. Remember to click the "Options" button _before you connect_ and paste the name of your database in the "Database" input field (otherwise, security settings on Umbraco Cloud will prevent you from connecting). You can see it all in this short video:
+To connect, choose "Connect Database Engine" and copy the values from the Connection Details page on Umbraco Cloud. You'll find handy "copy" shortcut buttons to the right of each value. In the "Connect to Server" dialog in SQL Management Studio, choose "SQL Server Authentication" as the authentication type. Remember to click the "Options" button before you connect. Paste the name of your database in the "Database" input field; otherwise, security settings on Umbraco Cloud will prevent you from connecting. You can see it all in this short video:
 
 {% embed url="https://www.youtube.com/embed/yrCNsW-8_nU?rel=0" %}
 How to connecto to a Umbraco Cloud Database
@@ -40,7 +40,7 @@ Now that you've connected you can work with the databases on Umbraco Cloud, like
 LocalDB is no longer supported in the latest major version of Umbraco. The documentation below is only relevant if you are on Umbraco 9 and below.
 {% endhint %}
 
-When you clone a site locally, Umbraco Cloud automatically creates a local database and populates it with data from your website running on the Cloud. If you don't specify anything before starting up your site locally, it'll be a SQL CE database that lives in the `umbraco/Data`folder in Umbraco 9. If you wish to use a local SQL Server instead, you can update the connection string in the web.config or appSettings.json file, but it's important that you do so before your site starts up the first time.
+When you clone a site locally, Umbraco Cloud automatically creates a local database and populates it with data from your website running on the Cloud. If you don't specify settings before local site startup, it defaults to a SQL CE database located in the `umbraco/Data` folder in Umbraco 9. If you wish to use a local SQL Server instead, you can update the connection string in the web.config or appSettings.json file. However, it's important that you do so before your site starts up the first time.
 
 By default when Umbraco Cloud restores a local database it will be a Umbraco.sdf file in `/App_Data` folder. However, if LocalDB is installed and configured, the restore will create a Umbraco.mdf file. To use LocalDB ensure `applicationHost.config` is configured with `loadUserProfile="true"` and `setProfileEnvironment="true"`: https://blogs.msdn.microsoft.com/sqlexpress/2011/12/08/using-localdb-with-full-iis-part-1-user-profile/
 
