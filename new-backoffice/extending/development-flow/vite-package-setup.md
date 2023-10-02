@@ -32,10 +32,10 @@ The last thing we need to install now is our Backoffice package. You can install
 npm install -D @umbraco-cms/backoffice
 ```
 
-If you are working with a prerelease of Umbraco, make sure to use the [MyGet registry](https://www.myget.org/feed/umbracoprereleases/package/npm/@umbraco-cms/backoffice) to find the proper version. For example, this command will give you the typings for version `14.0.0--preview001`
+If you are working with a prerelease of Umbraco, make sure to use the [MyGet registry](https://www.myget.org/feed/umbracoprereleases/package/npm/@umbraco-cms/backoffice) to find the proper version. For example, this command will give you the typings for version `14.0.0--preview003`
 
 ```bash
-npm install -D --registry https://www.myget.org/F/umbracoprereleases/npm @umbraco-cms/backoffice@14.0.0--preview001
+npm install -D --registry https://www.myget.org/F/umbracoprereleases/npm @umbraco-cms/backoffice@14.0.0--preview003
 ```
 
 {% hint style="warning" %}

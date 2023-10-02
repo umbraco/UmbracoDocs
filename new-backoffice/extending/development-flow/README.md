@@ -29,10 +29,10 @@ Extensions will go into a folder called `App_Plugins`. If you don't have this fo
 
 * Install the node package called @umbraco-cms/backoffice by running the command `npm install -D @umbraco-cms/backoffice`
 
-If you are working with a prerelease of Umbraco, make sure to use the [MyGet registry](https://www.myget.org/feed/umbracoprereleases/package/npm/@umbraco-cms/backoffice) to find the proper version. For example, this command will give you the typings for version `14.0.0--preview001`:
+If you are working with a prerelease of Umbraco, make sure to use the [MyGet registry](https://www.myget.org/feed/umbracoprereleases/package/npm/@umbraco-cms/backoffice) to find the proper version. For example, this command will give you the typings for version `14.0.0--preview003`:
 
 ```
-npm install -D --registry https://www.myget.org/F/umbracoprereleases/npm @umbraco-cms/backoffice@14.0.0--preview001
+npm install -D --registry https://www.myget.org/F/umbracoprereleases/npm @umbraco-cms/backoffice@14.0.0--preview003
 ```
 
 ## Visual Studio Code
