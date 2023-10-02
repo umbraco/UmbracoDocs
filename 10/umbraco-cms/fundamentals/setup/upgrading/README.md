@@ -30,9 +30,13 @@ The steps outlined in this article apply to modern Umbraco from version 10 and l
 
 Are you upgrading to a minor for Umbraco 6, 7, or 8? You can find the appropriate guide below:
 
-{% content-ref url="version-specific/minor-upgrades-for-umbraco-8.md" %} version-specific/minor-upgrades-for-umbraco-8.md {% endcontent-ref %}
+{% content-ref url="version-specific/minor-upgrades-for-umbraco-8.md" %}
+[minor-upgrades-for-umbraco-8.md](version-specific/minor-upgrades-for-umbraco-8.md)
+{% endcontent-ref %}
 
-{% content-ref url="version-specific/minor-upgrades-for-umbraco-7.md" %} version-specific/minor-upgrades-for-umbraco-7.md {% endcontent-ref %}
+{% content-ref url="version-specific/minor-upgrades-for-umbraco-7.md" %}
+[minor-upgrades-for-umbraco-7.md](version-specific/minor-upgrades-for-umbraco-7.md)
+{% endcontent-ref %}
 
 ## Upgrade to a new Major
 
@@ -48,26 +52,41 @@ The package compatibility can be checked on the package's download page. Locate 
 
 Use the table below to determine which .NET version to upgrade to when going through the steps below.
 
-| CMS version | .NET version        |
-| ----------- | ------------------- |
-| 11          | 7.0                 |
-| 10          | 6.0.5               |
+| CMS version | .NET version |
+| ----------- | ------------ |
+| 12          | 7.0          |
+| 11          | 7.0          |
+| 10          | 6.0.5        |
 
 ### Upgrade your project using Visual Studio
 
 It's recommended that you upgrade the site offline and test the upgrade fully before deploying it to the production environment.
 
-1. Stop your site in IIS to prevent any changes being made while you are upgrading.
+1. Stop your site in IIS to prevent any changes from being made while you are upgrading.
 2. Open your Umbraco project in Visual Studio.
 3. Right-click on the project name in the Solution Explorer and select **Properties**.
 4. Select the **.NET** version from the **Target Framework** drop-down.
 5. Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**
 6. Go to the **Installed** tab in the NuGet Package manager.
-7. Choose **Umbraco.Cms**.
-8. Select the correct version from the **Version** drop-down.
-9. Click **Install** to upgrade your project.
-10. Consult the [version specific upgrade notes for Umbraco Forms](https://docs.umbraco.com/umbraco-forms/installation/version-specific) if relevant.
-11. Restart your site in IIS, build, and run your project to finish the installation.
+7.  Upgrade **Umbraco.Cms**.&#x20;
+
+    a. Select the correct version from the **Version** drop-down.
+
+    b. Click **Install** to upgrade your project.
+
+{% hint style="info" %}
+If you have other packages installed such as Umbraco Forms, then before upgrading **Umbraco.CMS** you will need to upgrade the packages first. Consult the [version specific upgrade notes for Umbraco Forms](https://docs.umbraco.com/umbraco-forms/installation/version-specific) if relevant.
+{% endhint %}
+
+8. Make sure that your connection string has `TrustServerCertificate=True` in order to complete successfully the upgrade:&#x20;
+
+```csharp
+"ConnectionStrings": {
+    "umbracoDbDSN": "Server=YourLocalSQLServerHere;Database=NameOfYourDatabaseHere;;User Id=NameOfYourUserHere;Password=YourPasswordHere;TrustServerCertificate=True"
+}
+```
+
+9. Restart your site in IIS, build, and run your project to finish the installation.
 
 ## Upgrade to a new Minor
 
