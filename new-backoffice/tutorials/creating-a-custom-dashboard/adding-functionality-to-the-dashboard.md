@@ -27,7 +27,7 @@ Import the Auth token and the type for the logged-in user. We also need to updat
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
-import { customElement, state } from "lit/decorators.js";
+import { customElement, state } from "@umbraco-cms/backoffice/external/lit";
 import { UMB_AUTH, UmbLoggedInUser } from '@umbraco-cms/backoffice/auth';
 ```
 {% endcode %}
@@ -100,9 +100,8 @@ Your dashboard should now look something like this:
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
-import { LitElement, css, html } from "lit";
 import { UMB_AUTH, UmbLoggedInUser } from '@umbraco-cms/backoffice/auth';
-import { customElement, state } from "lit/decorators.js";
+import { LitElement, css, html, customElement, state } from "@umbraco-cms/backoffice/external/lit";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
 @customElement('my-welcome-dashboard')
@@ -229,9 +228,8 @@ private async _getDataFromRepository() {
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
-import { LitElement, css, html } from "lit";
 import { UMB_AUTH, UmbLoggedInUser } from '@umbraco-cms/backoffice/auth';
-import { customElement, state } from "lit/decorators.js";
+import { LitElement, css, html, customElement, state } from "@umbraco-cms/backoffice/external/lit";
 import { UmbUserDetail, UmbUserRepository } from '@umbraco-cms/backoffice/users';
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
@@ -377,9 +375,8 @@ We now should have something that looks like this:
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
-import { LitElement, css, html } from "lit";
 import { UMB_AUTH, UmbLoggedInUser } from "@umbraco-cms/backoffice/auth";
-import { customElement, state } from "lit/decorators.js";
+import { LitElement, css, html, customElement, state } from "@umbraco-cms/backoffice/external/lit";
 import { UmbUserDetail, UmbUserRepository } from "@umbraco-cms/backoffice/users";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 

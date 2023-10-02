@@ -136,11 +136,9 @@ It should look like this:
 <summary>property-editor-ui-suggestions.element.ts</summary>
 
 ```typescript
-import { LitElement, css, html } from "lit";
-import { customElement, property, state } from "lit/decorators.js";
+import { LitElement, css, html, customElement, property, state, ifDefined } from "@umbraco-cms/backoffice/external/lit";
 import { type UmbPropertyEditorExtensionElement } from "@umbraco-cms/backoffice/extension-registry";
 import { type UmbPropertyEditorConfigCollection } from "@umbraco-cms/backoffice/property-editor";
-import { ifDefined } from "lit/directives/if-defined.js";
 import {
     UMB_MODAL_MANAGER_CONTEXT_TOKEN,
     UMB_CONFIRM_MODAL,

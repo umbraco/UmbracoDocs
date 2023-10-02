@@ -74,8 +74,7 @@ Let's start with creating a folder `src` in our Suggestions folder. We want to s
 In this new file, we will add the following code:
 
 ```typescript
-import { LitElement, html } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { LitElement, html, customElement, property } from "@umbraco-cms/backoffice/external/lit";
 import { type UmbPropertyEditorExtensionElement } from "@umbraco-cms/backoffice/extension-registry";
 
 @customElement("my-suggestions-property-editor-ui")
@@ -217,10 +216,10 @@ Let's start with the input field. When we type something in the input field, we 
 
 Let's look at the suggestions button next. When we press the suggestion button we want the text to update to the suggestion that we get. Just like the value of our property editor is going to change when we write in the input field, we also want the value to change when we press the suggestion button.
 
-First, update the import for lit decorators and add some suggestions to the property editor:
+First, update the import for Lit and add some suggestions to the property editor:
 
 ```typescript
-import { customElement, property, state } from "lit/decorators.js";
+import { customElement, property, state } from "@umbraco-cms/backoffice/external/lit";
 ```
 
 ```typescript
@@ -269,8 +268,7 @@ Then update the suggestion button in the render method to call a `onSuggestion` 
 The `suggestions-property-editor-ui.element.ts` file should now look something like this:
 
 ```typescript
-import { LitElement, css, html } from "lit";
-import { customElement, property, state } from "lit/decorators.js";
+import { LitElement, css, html, customElement, property, state } from "@umbraco-cms/backoffice/external/lit";
 import { UmbPropertyEditorExtensionElement } from "@umbraco-cms/backoffice/extension-registry";
 
 @customElement("my-suggestions-property-editor-ui")

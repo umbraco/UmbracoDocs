@@ -167,7 +167,7 @@ We can now use the configurations. Let's use the `placeholder` and `maxChars` fo
 Add `ifDefined` to our imports and update the render method:
 
 ```typescript
-import { ifDefined } from "lit/directives/if-defined.js";
+import { ifDefined } from "@umbraco-cms/backoffice/external/lit";
 ```
 
 ```typescript
@@ -212,11 +212,9 @@ import { ifDefined } from "lit/directives/if-defined.js";
 <summary>property-editor-ui-suggestions.element.ts</summary>
 
 ```typescript
-import { LitElement, css, html } from "lit";
-import { customElement, property, state } from "lit/decorators.js";
+import { LitElement, css, html, customElement, property, state, ifDefined } from "@umbraco-cms/backoffice/external/lit";
 import { type UmbPropertyEditorExtensionElement } from "@umbraco-cms/backoffice/extension-registry";
 import { type UmbPropertyEditorConfigCollection } from "@umbraco-cms/backoffice/components";
-import { ifDefined } from "lit/directives/if-defined.js";
 
 @customElement("my-suggestions-property-editor-ui")
 export class MySuggestionsPropertyEditorUIElement

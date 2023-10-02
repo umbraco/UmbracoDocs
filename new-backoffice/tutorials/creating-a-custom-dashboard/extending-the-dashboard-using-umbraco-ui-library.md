@@ -100,9 +100,8 @@ This already looks a lot better!
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
-import { LitElement, css, html } from "lit";
 import { UMB_AUTH, UmbLoggedInUser } from "@umbraco-cms/backoffice/auth";
-import { customElement, state } from "lit/decorators.js";
+import { LitElement, css, html, customElement, state } from "@umbraco-cms/backoffice/external/lit";
 import { UmbUserDetail, UmbUserRepository } from '@umbraco-cms/backoffice/users';
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
@@ -275,9 +274,8 @@ Your dashboard component should now look like this:
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
-import { LitElement, css, html } from "lit";
 import { UMB_AUTH, UmbLoggedInUser } from "@umbraco-cms/backoffice/auth";
-import { customElement, state } from "lit/decorators.js";
+import { LitElement, css, html, customElement, state } from "@umbraco-cms/backoffice/external/lit";
 import { UmbUserDetail, UmbUserRepository } from '@umbraco-cms/backoffice/users';
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 

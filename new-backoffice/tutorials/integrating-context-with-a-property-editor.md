@@ -99,10 +99,8 @@ It should look like this:
 <summary>suggestions-input.element.ts</summary>
 
 ```typescript
-import { LitElement, css, html } from 'lit';
-import { customElement, property, state } from 'lit/decorators.js';
-import { UUIInputEvent } from '@umbraco-ui/uui';
-import { FormControlMixin } from '@umbraco-ui/uui-base/lib/mixins';
+import { LitElement, css, html, customElement, property, state } from '@umbraco-cms/backoffice/external/lit';
+import { UUIInputEvent, FormControlMixin } from '@umbraco-cms/backoffice/external/uui';
 import { UmbModalContext, UMB_MODAL_CONTEXT_TOKEN, UMB_CONFIRM_MODAL } from '@umbraco-cms/backoffice/modal';
 import {
 	UMB_NOTIFICATION_CONTEXT_TOKEN,
