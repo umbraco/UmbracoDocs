@@ -265,4 +265,4 @@ This is how our dashboard should now look like:
 
 With the part completed, you should have a dashboard welcoming your users' language.
 
-In the next part, we will look into how to add more functionality to the dashboard using some of the resources and services that Umbraco offers.
+In the next part, we will look into how to add more functionality to the dashboard using some of the Contexts that Umbraco offers.

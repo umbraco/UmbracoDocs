@@ -2,11 +2,11 @@
 description: This page is a work in progress. It will be updated as the software evolves.
 ---
 
-# Integrating services with a Property Editor
+# Integrating context with a Property Editor
 
 ### Overview
 
-This is step 3 in the Property Editor tutorial. In this part, we will integrate one of the built-in Umbraco Services. For this sample, we will use the `UmbNotificationContext` for some pop-ups and the `UmbMdalContext` to show a dialog when you click the Trim button and the textbox's input length is longer than the maxLength configuration.
+This is step 3 in the Property Editor tutorial. In this part, we will integrate one of the built-in Umbraco Contexts. For this sample, we will use the `UmbNotificationContext` for some pop-ups and the `UmbMdalContext` to show a dialog when you click the Trim button and the textbox's input length is longer than the maxLength configuration.
 
 ### Setting up the contexts
 
@@ -70,7 +70,7 @@ Let's continue to add more logic. If the length is more than the maxLength confi
 ```typescript
 #onTextTrim() {
   ...
-  
+
   const trimmed = (this.value as string).substring(0, this.maxLength);
   const modalHandler = this._modalContext?.open(UMB_CONFIRM_MODAL, {
     headline: `Trim text`,

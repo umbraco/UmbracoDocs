@@ -1,4 +1,4 @@
-# Integrating services with a Property Editor
+# Integrating Contexts with a Property Editor
 
 {% hint style="info" %}
 This page is a work in progress. It will be updated as the software evolves.
@@ -6,7 +6,7 @@ This page is a work in progress. It will be updated as the software evolves.
 
 ### Overview
 
-This is step 3 in the Property Editor tutorial. In this part, we will integrate one of the built-in Umbraco Services. For this sample, we will use the `UmbNotificationContext` for some pop-ups and the `UmbModalManagerContext`. This is to show a dialog when clicking the Trim button and the textbox's input length is longer than the maxChars configuration.
+This is step 3 in the Property Editor tutorial. In this part, we will integrate one of the built-in Umbraco Contexts. For this sample, we will use the `UmbNotificationContext` for some pop-ups and the `UmbModalManagerContext`. This is to show a dialog when clicking the Trim button and the textbox's input length is longer than the maxChars configuration.
 
 ### Setting up and using the contexts
 
