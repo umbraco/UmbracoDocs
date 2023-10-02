@@ -47,7 +47,7 @@ withTreeConfig.AddVirtualSubTreeAfter(ctx => ctx.Source.Id == 1056, treeNode => 
 
 ## Controlling where to inject the Virtual SubTrees
 
-Controlling where a virtual subtree is injected is done via the visibility expression passed to one of the `AddVirtualSubTree` methods on the root `ConfigBuilder` instance. Without a visibility expression, Umbraco UI Builder would inject the virtual subtree under every node in the given tree. This expression can be used to identify the exact location where our tree should go.
+Controlling where a virtual subtree is injected is done via the visibility expression passed to one of the `AddVirtualSubTree` methods on the root `UIBuilderConfigBuilder` instance. Without a visibility expression, Umbraco UI Builder would inject the virtual subtree under every node in the given tree. This expression can be used to identify the exact location where our tree should go.
 
 To help with this, the visibility expression is passed a single `VirtualSubTreeFilterContext` argument with relevant contextual information. This information is about the current node being rendered, alongside a list of the current user's user groups for permission-based visibility control. It also includes access to an `IServiceProvider` in case you need to resolve a service to determine the correct node to inject below.
 
