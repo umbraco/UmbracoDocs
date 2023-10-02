@@ -78,8 +78,8 @@ npm run build
 
 ### Watch for changes and build
 
-If you like to continuously work on the package and have each change built, you can change the `dev` script of your `package.json` to this `vite build --watch`.
-The example below indicated where in the structure this change should be implemented:
+If you like to continuously work on the package and have each change built, you can change the `dev` script of your `package.json` to `vite build --watch`.
+The example below indicates where in the structure this change should be implemented:
 
 {% code title="package.json" lineNumbers="true" %}
 ```json
