@@ -19,7 +19,7 @@ The steps we will go through in this part are:
 
 ## Step 1: Contexts
 
-Umbraco has a large selection of contexts that you can use in your custom Property Editors and Dashboards. For this example, it would be nice to welcome the editor by name. To achieve this we can make use of the Umbraco Contexts.
+Umbraco has a large selection of contexts that you can use in your custom Property Editors and Dashboards. For this example, we will welcome the editor by name. To achieve this we can make use of the Umbraco Contexts.
 
 To get information on the current user that's currently logged in, we first need to get the context and its token. We use the Auth context to receive the user that is currently logged in.
 
