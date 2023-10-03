@@ -31,11 +31,11 @@ The CI/CD process for Umbraco projects involves several key steps, from code dev
 3. **Customer pipeline**: The code is compiled and built. Tests can be run automatically in the associated pipeline to ensure code quality. Finally, the code is packaged into a zip file and prepared for deployment.
 4. **Deployment**: The deployments starts. This triggers queueing of the build in Umbraco services. It will be possible to poll for status updates.
 
-Image tbd
+![Basic overview](../images/BasicFlow.png)
 
 In a bit more detail the flow will look like this from a pipeline perspective.
 
-Image tbd
+![Detailed overview](../images/items.png)
 
 ## Next Steps: Dive into the Documentation
 
