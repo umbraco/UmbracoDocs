@@ -22,29 +22,28 @@ using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Web.Common;
 using Umbraco.Cms.Web.Common.Controllers;
 
-namespace UmbracoHelperDocs.Controllers
+namespace UmbracoHelperDocs.Controllers;
+
+[Route("customcontent/[action]")]
+public class CustomContentController : Controller
 {
-    [Route("customcontent/[action]")]
-    public class CustomContentController : Controller
+    private readonly UmbracoHelper _umbracoHelper;
+
+    public CustomContentController(UmbracoHelper umbracoHelper)
+        => _umbracoHelper = umbracoHelper;
+
+    public IActionResult GetHomeNodeName()
     {
-        private readonly UmbracoHelper _umbracoHelper;
+        IPublishedContent rootNode = _umbracoHelper
+            .ContentAtRoot()
+            .FirstOrDefault();
 
-        public CustomContentController(UmbracoHelper umbracoHelper)
-            => _umbracoHelper = umbracoHelper;
-
-        public IActionResult GetHomeNodeName()
+        if (rootNode is null)
         {
-            IPublishedContent rootNode = _umbracoHelper
-                .ContentAtRoot()
-                .FirstOrDefault();
-
-            if (rootNode is null)
-            {
-                return NotFound();
-            }
-
-            return Ok(rootNode.Name);
+            return NotFound();
         }
+
+        return Ok(rootNode.Name);
     }
 }
 ```
