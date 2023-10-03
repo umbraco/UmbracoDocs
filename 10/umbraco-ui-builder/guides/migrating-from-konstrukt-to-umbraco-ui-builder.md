@@ -112,7 +112,7 @@ public class Startup
 4. Add your new Umbraco.UIBuilder license key to the `appSettings.json` file:
 
 ```json
-"Umbraco"" {
+"Umbraco": {
   "Licenses": {
     "Umbraco.UIBuilder": "YOUR_LICENSE_KEY"
   }
