@@ -10,7 +10,7 @@ public class PaymentService : ServiceBase<PaymentService>, IPaymentService
 
 **Inheritance**
 
-* class [ServiceBase&lt;TSelf&gt;](servicebase-1.md)
+* Class [ServiceBase&lt;TSelf&gt;](servicebase-1.md)
 * interface [IPaymentService](ipaymentservice.md)
 
 **Namespace**

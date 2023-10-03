@@ -10,7 +10,7 @@ public class PrintTemplateEditDto : PrintTemplateDto, IHasPath, INotificationMod
 
 **Inheritance**
 
-* class [PrintTemplateDto](printtemplatedto.md)
+* Class [PrintTemplateDto](printtemplatedto.md)
 * interface [IHasPath](ihaspath.md)
 
 **Namespace**

@@ -10,7 +10,7 @@ public class OrderStatus : OrderStatusReadOnly
 
 **Inheritance**
 
-* class [OrderStatusReadOnly](orderstatusreadonly.md)
+* Class [OrderStatusReadOnly](orderstatusreadonly.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

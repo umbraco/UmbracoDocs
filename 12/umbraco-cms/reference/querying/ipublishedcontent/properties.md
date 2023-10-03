@@ -1,4 +1,4 @@
-# Property Access & Extension Methods
+# IPublishedContent Property Access & Extension Methods
 
 ## Umbraco Properties
 
@@ -191,12 +191,11 @@ Returns the DateTime the page was modified
 @Model.UpdateDate.ToString("D")
 ```
 
----
+***
 
 ## Custom properties
 
-All content and media items contain a reference to all the data defined by their document type.
-Custom property access is achieved using variations of the method: `Value`
+All content and media items contain a reference to all the data defined by their document type. Custom property access is achieved using variations of the method: `Value`
 
 ### Model.Value(IPublishedValueFallback, string)
 
@@ -207,12 +206,11 @@ Returns the property value for the specified property alias
 @Model.Value(PublishedValueFallback, "siteName")
 ```
 
-The type returned of this property value is `object` which is fine in most cases since when using
-the above syntax, Razor will automatically execute a `ToString()` on the result value.
+The type returned of this property value is `object` which is fine in most cases since when using the above syntax, Razor will automatically execute a `ToString()` on the result value.
 
 See `Model.Value<T>(string)` for how to return a strongly typed object for the property
 
-### Model.Value&lt;T>(string)
+### Model.Value\<T>(string)
 
 Returns the property value for the specified property alias converted to 'T' - the requested output type of the property value.
 

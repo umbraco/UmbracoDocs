@@ -139,7 +139,7 @@ For more information, see the [Global Settings](../../configuration/globalsettin
 
 To use attribute routing, add the `Microsoft.AspNetCore.Mvc.Route` attribute to the controller or controller action you want to route. If you want to attribute route an entire controller you have to add the `[action]` token in order to route to an action, for instance:
 
-```
+```csharp
 [Route("products/[action]")]
 public class ProductsController : UmbracoApiController
 {
@@ -161,7 +161,7 @@ This route the controllers actions like so:
 
 If you use the route attribute for a specific action the `[action]` token is not nececary, but you can request parameters from the path in a similar manner, using the `{parameterName}` syntax, for instance:
 
-```
+```csharp
 public class ProductsController : UmbracoApiController
 {
     public IEnumerable<string> GetAllProducts()

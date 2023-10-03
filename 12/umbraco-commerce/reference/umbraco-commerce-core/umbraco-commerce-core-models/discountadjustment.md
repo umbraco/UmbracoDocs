@@ -10,7 +10,7 @@ public class DiscountAdjustment : PriceAdjustment<DiscountAdjustment>
 
 **Inheritance**
 
-* class [PriceAdjustment&lt;TSelf&gt;](priceadjustment-1.md)
+* Class [PriceAdjustment&lt;TSelf&gt;](priceadjustment-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

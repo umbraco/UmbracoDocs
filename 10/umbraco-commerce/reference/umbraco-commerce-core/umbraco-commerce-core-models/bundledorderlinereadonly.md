@@ -10,7 +10,7 @@ public class BundledOrderLineReadOnly : OrderLineReadOnly
 
 **Inheritance**
 
-* class [OrderLineReadOnly](orderlinereadonly.md)
+* Class [OrderLineReadOnly](orderlinereadonly.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

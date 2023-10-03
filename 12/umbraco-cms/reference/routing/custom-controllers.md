@@ -1,25 +1,27 @@
 ---
-description: "Use a custom MVC controller to handle and control incoming requests for content pages based on a specific Document Type, also called Route Hijacking."
+description: >-
+  Use a custom MVC controller to handle and control incoming requests for
+  content pages based on a specific Document Type, also called Route Hijacking.
 ---
 
-# Umbraco Route Hijacking
+# Custom MVC controllers (Umbraco Route Hijacking)
 
 _Use a custom controller to handle and control incoming requests for content pages based on a specific Document Type_
 
 ## What is Umbraco Route Hijacking?
 
-By default, all front end requests to an Umbraco site are auto-routed via the 'Index' action of a core Controller: `Umbraco.Cms.Web.Common.Controllers.RenderController`. This core controller handles the incoming request, builds the associated PublishedContent model, and passes this to the appropriate Umbraco Template/MVC View.
+By default, all front-end requests to an Umbraco site are auto-routed via the 'Index' action of a core Controller: `Umbraco.Cms.Web.Common.Controllers.RenderController`. This core controller handles the incoming request, builds the associated PublishedContent model, and passes this to the appropriate Umbraco Template/MVC View.
 
 It is however possible to implement a custom Controller to replace this default implementation to give complete control over this execution.
 
 For example:
 
-- To enrich the view model passed to the template with additional properties (from other published content items or outside Umbraco)
-- To implement serverside paging
-- To implement any custom/granular security
-- To return alternative templates depending on some custom business logic
+* To enrich the view model passed to the template with additional properties (from other published content items or outside Umbraco)
+* To implement serverside paging
+* To implement any custom/granular security
+* To return alternative templates depending on some custom business logic
 
-This replacement of the default controller can either be made 'globally' for all requests (see last example) or by *'hijacking'* requests for types of pages based on their specific Document Type following a this controller naming convention: `[DocumentTypeAlias]Controller`.
+This replacement of the default controller can either be made 'globally' for all requests (see last example) or by _'hijacking'_ requests for types of pages based on their specific Document Type following a this controller naming convention: `[DocumentTypeAlias]Controller`.
 
 ## Creating a custom controller
 
@@ -61,7 +63,7 @@ namespace My.Website
 
 ```
 
-All requests to any 'product' pages in the site will be'hijacked' and routed through the custom ProductPageController.
+All requests to any **product** pages in the site will be **hijacked** and routed through the custom ProductPageController.
 
 If you prefer to use an async controller your need to override both the sync and the async Index()-methods. This is done to disable the default behavior from the base controller.
 
@@ -79,7 +81,7 @@ public class ProductPageController : RenderController
 }
 ```
 
-This example shows the default behaviour that Umbraco's core RenderController provides. The 'Index' action of the controller is executed, and the CurrentTemplate helper sends the model containing the details of the published content item related to the request to the relevant template/view.
+This example shows the default behavior that Umbraco's core RenderController provides. The 'Index' action of the controller is executed, and the CurrentTemplate helper sends the model containing the details of the published content item related to the request to the relevant template/view.
 
 ## Routing via template
 
@@ -134,9 +136,9 @@ The page in Umbraco will have a single 'template' selected as it's default templ
 
 ### Summary - How the route hijacking convention works
 
-- Document Type name = controller name
-- Template name = action name (if no action matches or is not specified - then the 'Index' action will be executed).
-- Controller Inherits from `Umbraco.Cms.Web.Common.Controllers.RenderController`
+* Document Type name = controller name
+* Template name = action name (if no action matches or is not specified - then the 'Index' action will be executed).
+* Controller Inherits from `Umbraco.Cms.Web.Common.Controllers.RenderController`
 
 ## Returning a view with a custom model
 
@@ -152,7 +154,7 @@ The default inherits statement:
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 ```
 
-or if you are using modelsbuilder:
+or if you are using **modelsbuilder**:
 
 ```csharp
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ProductPage>
@@ -169,15 +171,11 @@ So for example, if your custom model is of type 'MyProductViewModel' then your `
 ```
 
 {% hint style="info" %}
-Views will likely specify a master view to use as the common layout for the site HTML. When using a custom view model it's necessary to make sure this doesn't conflict with any implementation in the master layout view.
-Eg. if your master layout view is inheriting from a specific model `UmbracoViewPage<SpecificModel>` and using a property from SpecificModel that isn't available in your custom model an exception will be thrown.
-To avoid this you could:
+Views will likely specify a master view to use as the common layout for the site HTML. When using a custom view model it's necessary to make sure this doesn't conflict with any implementation in the master layout view. Eg. if your master layout view is inheriting from a specific model `UmbracoViewPage<SpecificModel>` and using a property from SpecificModel that isn't available in your custom model an exception will be thrown. To avoid this you could:
 
-- Keep your Master layout view 'generically typed', eg. only have `@inherits UmbracoViewPage`, and use Model.Value syntax to access properties.
-or
-- Break the dependency on `Umbraco.Cms.Core.Models` in your master layout by having it instead inherit from `Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ISomeInterface>`. This would be where ISomeInterface is implemented by all your models and contains the properties that the master layout view uses.
-or
-- Ensure your custom models inherit from whichever class is used to strongly type the master layout view.
+* Keep your Master layout view 'generically typed', eg. only have `@inherits UmbracoViewPage`, and use Model.Value syntax to access properties. or
+* Break the dependency on `Umbraco.Cms.Core.Models` in your master layout by having it instead inherit from `Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ISomeInterface>`. This would be where ISomeInterface is implemented by all your models and contains the properties that the master layout view uses. or
+* Ensure your custom models inherit from whichever class is used to strongly type the master layout view.
 {% endhint %}
 
 In most cases you will need your custom model to build upon the underlying existing PublishedContent model for the page. This can be achieved by making your custom model inherit from a special base class called `PublishedContentWrapped`:
@@ -293,9 +291,11 @@ Layout = "Master";
 
 You can also pass values directly into the controller action using the query string.
 
-    ?page=1&andanotherthing=umbraco
+```
+?page=1&andanotherthing=umbraco
+```
 
-The values in the querystring will be bound to the matching parameters defined in the controller's action:
+The values in the `querystring` will be bound to the matching parameters defined in the controller's action:
 
 ```csharp
 public class ProductListingPageController : Umbraco.Cms.Web.Common.Controllers.RenderController
@@ -316,7 +316,7 @@ public class ProductListingPageController : Umbraco.Cms.Web.Common.Controllers.R
 
 ## Controller Injection
 
-Injecting services into your controller constructors is possible with Umbraco's underlying dependency injection implementation. See [Services and Helpers](../../implementation/services/README.md#custom-services-and-helpers) for more info on this.
+Injecting services into your controller constructors is possible with Umbraco's underlying dependency injection implementation. See [Services and Helpers](../../implementation/services/#custom-services-and-helpers) for more info on this.
 
 For example:
 
@@ -360,12 +360,11 @@ See [Composing](../../implementation/composing.md) for further information.
 
 ## Replace Umbraco's default `RenderController`
 
-You can replace Umbraco's default implementation of RenderController with your own custom controller for all MVC requests.
-This is possible by assigning your own default controller type in the Umbraco setup during initialization.
+You can replace Umbraco's default implementation of RenderController with your own custom controller for all MVC requests. This is possible by assigning your own default controller type in the Umbraco setup during initialization.
 
-You can achieve this by updating the options for `UmbracoRenderingDefaultsOptions` in the  `ConfigureServices` method in the `Startup.cs` class.
+You can achieve this by updating the options for `UmbracoRenderingDefaultsOptions` in the `ConfigureServices` method in the `Startup.cs` class.
 
-First of all you have to create your own controller. Your custom implementation of RenderController should either inherit from the core `RenderController` as in the examples above or implement the `IRenderController` interface.
+First of all, you have to create your own controller. Your custom implementation of RenderController should either inherit from the core `RenderController` as in the examples above or implement the `IRenderController` interface.
 
 Implement the `IRenderController`:
 

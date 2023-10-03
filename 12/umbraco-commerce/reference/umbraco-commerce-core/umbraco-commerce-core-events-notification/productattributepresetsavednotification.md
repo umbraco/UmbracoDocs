@@ -11,7 +11,7 @@ public class ProductAttributePresetSavedNotification :
 
 **Inheritance**
 
-* class [ProductAttributePresetNotificationEventBase&lt;TEntity&gt;](productattributepresetnotificationeventbase-1.md)
+* Class [ProductAttributePresetNotificationEventBase&lt;TEntity&gt;](productattributepresetnotificationeventbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

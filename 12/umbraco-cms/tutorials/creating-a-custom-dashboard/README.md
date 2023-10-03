@@ -35,7 +35,7 @@ At the end of this guide, we should have a friendly welcoming dashboard displayi
 3. Add the following HTML to the `WelcomeDashboard.html`:
 
 {% code title="WelcomeDashboard.html" lineNumbers="true" %}
-```markup
+```html
 <div class="welcome-dashboard">
     <h1>Welcome to Umbraco</h1>
     <p>We hope you find the experience of editing your content with Umbraco enjoyable and delightful. If you discover any problems with the site please report them to the support team at <a href="mailto:">support@popularumbracopartner.com</a></p>
@@ -44,9 +44,9 @@ At the end of this guide, we should have a friendly welcoming dashboard displayi
 ```
 {% endcode %}
 
-Similar to a property editor you will now register the dashboard in a `package.manifest` file.&#x20;
+Similar to a property editor you will now register the dashboard in a `package.manifest` file.
 
-4\.  Add a new file inside the `~/App_Plugins/CustomWelcomeDashboard` folder called `package.manifest`:
+4\. Add a new file inside the `~/App_Plugins/CustomWelcomeDashboard` folder called `package.manifest`:
 
 {% code title="package.manifest" lineNumbers="true" %}
 ```json
@@ -81,7 +81,7 @@ You can specify multiple controls to appear on a particular tab and multiple tab
 
 After registering your dashboard, it will appear in the backoffice - however, it will have its dashboard alias \[WelcomeDashboard] wrapped in square brackets. This is because it is missing a language key. The language key allows people to provide a translation of the dashboard name in multilingual environments. To remove the square brackets - add a language key:
 
-1. Create a _Lang_ folder in your custom dashboard folder&#x20;
+1. Create a _Lang_ folder in your custom dashboard folder
 2. Create a package-specific language file: `~/App_Plugins/CustomWelcomeDashboard/Lang/en-US.xml`
 
 {% hint style="info" %}
@@ -105,7 +105,7 @@ This is how our dashboard looks so far:
 
 <figure><img src="../../../../10/umbraco-cms/tutorials/images/welcomemessage-v8 (1) (2).PNG" alt=""><figcaption></figcaption></figure>
 
-We can apply the same workflow to elements inside the dashboard, not only the name/alias.&#x20;
+We can apply the same workflow to elements inside the dashboard, not only the name/alias.
 
 3\. Extend the translation file `xml` with the following code:
 
@@ -250,7 +250,7 @@ One caveat is that the `package.manifest` file is loaded into memory when Umbrac
 {% hint style="info" %}
 **For version 9 and above**
 
-If the title doesn't change color, [Smidge](https://github.com/shazwazza/smidge) may be caching the CSS and JavaScript. To clear the cache and get it to load in the new JavaScript and CSS, you can configure the [Runtime minification settings](../../reference/configuration/runtimeminificationsettings.md#runtime-minification-settings) in the `appsettings.json` file. When you reload the page, you'll see the colorful title.
+If the title doesn't change color, [Smidge](https://github.com/shazwazza/smidge) may be caching the CSS and JavaScript. To clear the cache and get it to load in the new JavaScript and CSS, you can configure the [Runtime minification settings](../../reference/configuration/runtimeminificationsettings.md) in the `appsettings.json` file. When you reload the page, you'll see the colorful title.
 
 For information on creating bundles of your site's CSS or JavaScript files in your code, see the [Bundling & Minification for JavaScript and CSS](../../fundamentals/design/stylesheets-javascript.md#bundling--minification-for-javascript-and-css) section.
 {% endhint %}
@@ -262,7 +262,7 @@ Hopefully, now you can see the potential of what you can provide to an editor as
 We can add functionality to the dashboard by associating an AngularJS controller with the HTML view.
 
 1. Add a new file to the `CustomWelcomeDashboard` folder called `customwelcomedashboard.controller.js` where our controller code will live.
-2. &#x20;Register the AngularJS controller to the Umbraco Angular module:
+2. Register the AngularJS controller to the Umbraco Angular module:
 
 {% code title="customwelcomedashboard.controller.js" %}
 ```js
@@ -316,9 +316,9 @@ Once done, we should receive the 'Hello world' alert every time the dashboard is
 
 ## Step 5: Using Umbraco Angular Services and Directives
 
-Umbraco has a fine selection of angular directives, resources, and services that you can use in your custom property editors and dashboards.&#x20;
+Umbraco has a fine selection of angular directives, resources, and services that you can use in your custom property editors and dashboards.
 
-The details are in the [Backoffice UI](../../reference/api-documentation.md#backoffice-ui). For this example, it would be nice to welcome the editor by name. To achieve this we can use the `userService` to customize our dashboard welcome message and increase friendliness.
+The details are in the [Backoffice UI](../../reference/api-documentation.md). For this example, it would be nice to welcome the editor by name. To achieve this we can use the `userService` to customize our dashboard welcome message and increase friendliness.
 
 1. Inject the `userService` into our AngularJS controller:
 
@@ -362,7 +362,7 @@ Notice you can use `console.log()` to write out to the browser console window wh
 
 An editor may find it useful to see a list of articles they have been editing along with a link to load and continue editing. This could be instead of having to remember and find the item again in the Umbraco Content Tree.
 
-We can make use of Umbraco's Angular resource for retrieving audit log information.&#x20;
+We can make use of Umbraco's Angular resource for retrieving audit log information.
 
 We add `logResource` to the method and use the `getPagedUserLog` method to return a list of activities the current user has performed recently.
 
@@ -408,7 +408,7 @@ var userLogOptions = {
 ```
 {% endcode %}
 
-These options should retrieve the last ten activities for the current user in descending order since the start of 2018.&#x20;
+These options should retrieve the last ten activities for the current user in descending order since the start of 2018.
 
 5. Pass the options into the `getPagedUserLog` like so:
 
@@ -460,7 +460,7 @@ We need to loop through the log items from the `logResource`. Since this include
 
 The `entityResource` has a `getById` method that accepts the `ID` of the item and the entity `type` to retrieve useful information about the entity. For example, its Name and Icon.
 
-The `getById` method is supported on the following entity types:&#x20;
+The `getById` method is supported on the following entity types:
 
 * Document (content)
 * Media
@@ -568,7 +568,7 @@ The URL `/umbraco/#/content/content/edit/1234` is the path to open up a particul
 The `logResource` has a few bugs prior to version 8.1.4. If you are on a lower version this may not give the expected result.
 {% endhint %}
 
-### Creating a shortcut for creating new content&#x20;
+### Creating a shortcut for creating new content
 
 A key user journeys an editor will make in the backoffice is to create content. If it is a person's job to create new blog entries, why not create a handy shortcut to help them achieve this common task?
 
@@ -727,8 +727,8 @@ Have a look at the [property editor tutorial](../creating-a-property-editor/part
 
 ## Going Further
 
-With all of the steps completed, you should have a functional dashboard that will let the logged-in user see the changes they made! Hopefully, this tutorial has given you some ideas on what is possible to do when creating a dashboard.&#x20;
+With all of the steps completed, you should have a functional dashboard that will let the logged-in user see the changes they made! Hopefully, this tutorial has given you some ideas on what is possible to do when creating a dashboard.
 
 You can also go further and [extend the dashboard](extending-the-dashboard-using-the-umbraco-ui-library.md) with UI elements from the Umbraco UI Library.
 
-Remember to check out the [Angular API docs](../../reference/api-documentation.md#backoffice-ui) for more info on all of the resources and services you can find for the backoffice.
+Remember to check out the [Angular API docs](../../reference/api-documentation.md) for more info on all of the resources and services you can find for the backoffice.

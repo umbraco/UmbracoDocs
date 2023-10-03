@@ -1,4 +1,4 @@
-﻿# Running Umbraco on Azure Web Apps
+# Running Umbraco On Azure Web Apps
 
 This section describes best practices with running Umbraco on Azure Web Apps
 
@@ -36,8 +36,7 @@ You need to add these configuration values. E.g in a json configuration source l
 
 The minimum recommended Azure SQL Tier is "S2", however noticeable performance improvements are seen in higher Tiers
 
-If you are load balancing or require the scaling ("scale out") ability of Azure Web Apps then you need to consult the
-[Load Balancing documentation](load-balancing/README.md). This is due to the fact that a lot more needs to be configured to support scaling/auto-scaling.
+If you are load balancing or require the scaling ("scale out") ability of Azure Web Apps then you need to consult the [Load Balancing documentation](load-balancing/). This is due to the fact that a lot more needs to be configured to support scaling/auto-scaling.
 
 ## Storage
 
@@ -51,7 +50,7 @@ For example, Azure's [Run from Package feature](https://docs.microsoft.com/en-us
 
 ## Scaling
 
-If you require the scaling ("scale out") ability of Azure Web Apps you need to consult the [Load Balancing documentation](load-balancing/README.md). This is due to the fact that a lot more needs to be configured to support scaling/auto-scaling.
+If you require the scaling ("scale out") ability of Azure Web Apps you need to consult the [Load Balancing documentation](load-balancing/). This is due to the fact that a lot more needs to be configured to support scaling/auto-scaling.
 
 ## Web worker migrations
 
@@ -71,4 +70,4 @@ You can also find this in the KUDU console by clicking **Advanced Tools** > **Lo
 
 ## Web App secret management
 
-Consult the [Azure Key Vault documentation](../../../extending/key-vault.md#use-key-vault-references-for-azure-app-service) if you would like to directly reference Azure Key Vault Secrets to your Azure Web App.
+Consult the [Azure Key Vault documentation](../../../extending/key-vault.md) if you would like to directly reference Azure Key Vault Secrets to your Azure Web App.

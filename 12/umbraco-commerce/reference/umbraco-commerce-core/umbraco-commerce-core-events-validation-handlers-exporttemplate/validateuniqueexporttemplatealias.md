@@ -11,7 +11,7 @@ public class ValidateUniqueExportTemplateAlias :
 
 **Inheritance**
 
-* class [ValidationEventHandlerBase&lt;!0&gt;](../../umbraco-commerce-common/umbraco-commerce-common-events/validationeventhandlerbase-1.md)
+* Class [ValidationEventHandlerBase&lt;!0&gt;](../../umbraco-commerce-common/umbraco-commerce-common-events/validationeventhandlerbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Validation.Handlers.ExportTemplate](README.md)

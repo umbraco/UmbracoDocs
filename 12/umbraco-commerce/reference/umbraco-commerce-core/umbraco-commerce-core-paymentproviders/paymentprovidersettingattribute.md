@@ -11,7 +11,7 @@ public class PaymentProviderSettingAttribute : UmbracoCommerceSettingAttribute
 
 **Inheritance**
 
-* class [UmbracoCommerceSettingAttribute](../umbraco-commerce-core-attributes/umbracocommercesettingattribute.md)
+* Class [UmbracoCommerceSettingAttribute](../umbraco-commerce-core-attributes/umbracocommercesettingattribute.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.PaymentProviders](README.md)

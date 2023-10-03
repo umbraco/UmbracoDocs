@@ -52,6 +52,7 @@ For illustration purposes, the following structure represents the full set of op
             "AcceptInvalidCertificates": false,
             "TransferFormsAsContent": true,
             "TransferDictionaryAsContent": false,
+            "IgnoreMissingLanguagesForDictionaryItems": false,
             "AllowMembersDeploymentOperations": "None",
             "TransferMemberGroupsAsContent": false,
             "ExportMemberGroups": true,
@@ -158,7 +159,7 @@ Even with appropriate settings of the above timeouts, Deploy's backoffice transf
 
 An error message of "The remote API has returned a response indicating a platform timeout" will be reported.
 
-If encountering this issue, there are two batch settings that can be applied with integer values (for example 500). This will cause Deploy to transfer items in batches, up to a maximum size. This will allow each individual batch to complete within the time available.
+If encountering this issue, there are two batch settings that can be applied with integer values (for example 500). This will cause Deploy to transfer items in batches, up to a maximum size. This will allow each individual batch to complete within the time available. The higher the value, the bigger the batches.
 
 - `SourceDeployBatchSize` - applies a batch setting for the transfer of multiple selected items to an upstream environment (such as a media folder with many images).
 - `PackageBatchSize` - applies a batch setting to the processing of a Deploy "package", which contains all the items selected for a Deploy operation, plus all the determined dependencies and relations.
@@ -185,6 +186,16 @@ On changing this value from `false` to `true`, make sure to remove any `.uda` fi
 In a similar way, Deploy can be configured to allow for backoffice transfers of dictionary items instead of using files serialized to disk, by setting `TransferDictionaryAsContent` as `true`.
 
 Please see the note above under _TransferFormsAsContent_ on the topic of removing any existing serialized files having changed this value to `true`.
+
+## IgnoreMissingLanguagesForDictionaryItems
+
+When deploying dictionary items, an exception will be thrown if a translation is provided for a language that doesn't exist in the target environment.
+
+Normally this is a useful fail-safe to ensure translations aren't lost in the transfer operation.
+
+If you have deleted languages that have already existing translations, you may want to temporarily remove this check. You can do that by setting this value to `true`.
+
+When this is in place a translation for a language that doesn't exist in the target environment will be ignored. A warning message will be output to the log.
 
 ## AllowMembersDeploymentOperations and TransferMemberGroupsAsContent
 

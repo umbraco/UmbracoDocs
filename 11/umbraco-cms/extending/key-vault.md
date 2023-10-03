@@ -1,5 +1,5 @@
 ---
-description: "A guide for configuring Azure Key Vault"
+description: A guide for configuring Azure Key Vault
 ---
 
 # Configuring Azure Key Vault
@@ -10,15 +10,15 @@ This article tells you how to configure your application so it is ready to use a
 
 Depending on your hosting situation there are a few approaches to incorporating Azure Key Vault into your application.
 
-1. [Install Key Vault via Nuget (for most Hosting scenarios)](#install-key-vault-via-nuget)
-2. [Use Key Vault references for Azure App Service (For Azure Web App Hosting) - **Only available in Umbraco 10**](#use-key-vault-references-for-azure-app-service)
+1. [Install Key Vault via Nuget (for most Hosting scenarios)](key-vault.md#install-key-vault-via-nuget)
+2. [Use Key Vault references for Azure App Service (For Azure Web App Hosting)](key-vault.md#use-key-vault-references-for-azure-app-service)
 
 ## Install Key Vault via Nuget
 
 Before you begin, you need to install the `Azure.Extensions.AspNetCore.Configuration.Secrets` and the `Azure.Identity` NuGet packages. There are two approaches to installing the packages:
 
 1. Use your favorite Integrated Development Environment (IDE) and open up the NuGet Package Manager to search and install the packages
-1. Use the command line to install the package
+2. Use the command line to install the package
 
 ### Installing through command line
 
@@ -30,7 +30,8 @@ dotnet add package Azure.Identity
 ```
 
 ### Configuration
-The next step is to add the Azure Key Vault endpoint to the `appsettings.json` file (or create as an Environment Variable). 
+
+The next step is to add the Azure Key Vault endpoint to the `appsettings.json` file (or create as an Environment Variable). You can add this endpoint in the root or anywhere in the `appsettings.json` as long as it is resolved in the `ConfigureAppConfiguration` method.
 
 ```json
 {
@@ -60,22 +61,18 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
         });
 ```
 
-### Authentication 
+### Authentication
 
-There are different ways to access the Azure Key Vault. It is important that the user you are logging in with has access to the Key Vault. You can assign roles using the Azure Portal. 
+There are different ways to access the Azure Key Vault. It is important that the user you are logging in with has access to the Key Vault. You can assign roles using the Azure Portal.
 
-1. Navigate to your Key Vault. 
-1. Select Access Control.
-1. Select Add -> Add role assignment.
-1. Select the preferred role.
-1. Search for the user. 
-1. Click review + assign
+1. Navigate to your Key Vault.
+2. Select Access Control.
+3. Select Add -> Add role assignment.
+4. Select the preferred role.
+5. Search for the user.
+6. Click review + assign
 
 ## Use Key Vault references for Azure App Service
-
-{% hint style="info" %}
-This option is only recommended for Umbraco 10.
-{% endhint %}
 
 Azure Web Apps offers the ability to directly reference Key Vault secrets as App Settings. The benefit of this is you can securely store your secrets in Key Vault without any code changes required in your application.
 
@@ -107,7 +104,7 @@ You will now be presented with different permissions to set for your Web App. Yo
 
 ![image](https://user-images.githubusercontent.com/11179749/196052668-124d1496-4486-4098-9198-eff809876c80.png)
 
-Enter the GUID you took note of earlier, into the **Search Box**. You will see your Web App listed. 
+Enter the GUID you took note of earlier, into the **Search Box**. You will see your Web App listed.
 
 ![image](https://user-images.githubusercontent.com/11179749/196052706-15431bf4-80ea-4bb7-b40e-ebda45264fb7.png)
 
@@ -125,17 +122,16 @@ In your Azure Web App head to **Configuration** under **Settings**.
 
 ![image](https://user-images.githubusercontent.com/11179749/196053006-3a95fc5f-1038-4228-9ae4-467050ea5759.png)
 
-Here we can add App Settings and Connection Strings to the environment. Let us start off with the Umbraco Database Connection String.
+Here we can add **App Settings** and **Connection Strings** to the environment.&#x20;
+
+1. Let us start off with the **Umbraco Database Connection String.**
 
 Under Connection Strings, select **Advanced Edit**.
 
 ![image](https://user-images.githubusercontent.com/11179749/196053130-8fb6c2b9-61c7-4c02-a419-8570174c6646.png)
 
-You can obtain the Secret Uri by visiting the specific version of your secret and copying the Url:
+Once you click on "**Advanced Edit"** a new window will open up. There you will need to paste in the following JSON Object inside the square brackets. Ensure you update `{keyvault-name}`, `{secret-name}` and `{version-id}`.
 
-![image](https://user-images.githubusercontent.com/11179749/196054001-cc215c04-d29c-435a-ae7b-6e8efb7f3faa.png)
-
-Paste in the following JSON Object inside the square brackets. Ensure you update `{keyvault-name}`, `{secret-name}` and `{version-id}`.
 ```json
 {
     "name": "umbracoDbDSN",
@@ -144,14 +140,20 @@ Paste in the following JSON Object inside the square brackets. Ensure you update
     "slotSetting": false
 }
 ```
+
+{% hint style="info" %}
+You can obtain the Secret Uri by visiting the specific version of your secret and copying the Url:
+{% endhint %}
+
+![image](https://user-images.githubusercontent.com/11179749/196054001-cc215c04-d29c-435a-ae7b-6e8efb7f3faa.png)
+
 The ID is optional but recommended as it enables you to control which version of the secret is used at your discretion. Leave it out if you always want the Web App to pull the latest version of the secret.
 
 Wait a moment and refresh the screen. You should see a Green tick. If you do not have a Green tick you need to review your Access Policies in the previous step.
 
 ![image](https://user-images.githubusercontent.com/11179749/196053419-f53feba2-b8ed-4b98-99f0-ee68f58ac8e4.png)
 
-
-We will perform the same approach for our App Settings. We will be updating the following App Settings for Azure Blob Storage.
+2. We will perform the same approach for our **App Settings**. We will be updating the following App Settings for Azure Blob Storage.
 
 ```json
 "Umbraco": {
@@ -167,10 +169,11 @@ We will perform the same approach for our App Settings. We will be updating the 
 
 Due to the secrets being nested we need to use double underscore `__` to correctly reference the value on our Web App.
 
-On the Web App select **Advanced Edit** for Application Settings:
-![image](https://user-images.githubusercontent.com/11179749/196053630-dd90f240-0116-4471-bf7e-73bdbcfcc28a.png)
+On the Web App select **Advanced Edit** for Application Settings:&#x20;
 
-Paste in the following JSON Objects inside the square brackets. Ensure you update `{keyvault-name}`, `{secret-name}` and `{version-id}`.
+<figure><img src="https://user-images.githubusercontent.com/11179749/196053630-dd90f240-0116-4471-bf7e-73bdbcfcc28a.png" alt=""><figcaption></figcaption></figure>
+
+When clicking on "Advanced Edit", a new window will open up. There you will need to paste in the following JSON Objects inside the square brackets. Ensure you update `{keyvault-name}`, `{secret-name}` and `{version-id}`.
 
 ```json
 {
@@ -184,15 +187,17 @@ Paste in the following JSON Objects inside the square brackets. Ensure you updat
     "slotSetting": false
 }
 ```
+
 The ID is optional but recommended as it enables you to control which version of the secret is used at your discretion. Leave it out if you always want the Web App to pull the latest version of the secret.
 
-Wait a moment and refresh the screen. You should see Green ticks for both values. If you do not have a Green tick you need to review your Access Policies in the previous step.
-![image](https://user-images.githubusercontent.com/11179749/196053743-e507f057-8fe7-4a68-9e2f-7229f1a340d7.png)
+Wait a moment and refresh the screen. You should see Green ticks for both values. If you do not have a Green tick you need to review your Access Policies in the previous step.&#x20;
 
-### Local Development 
+<figure><img src="https://user-images.githubusercontent.com/11179749/196053743-e507f057-8fe7-4a68-9e2f-7229f1a340d7.png" alt=""><figcaption></figcaption></figure>
 
-1. [Sign in to Visual Studio using the credentials that can access the Key Vault.](https://docs.microsoft.com/en-us/visualstudio/ide/signing-in-to-visual-studio) 
-1. [Use Azure CLI to store your preferred account into the credential cache.](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli)
+### Local Development
+
+1. [Sign in to Visual Studio using the credentials that can access the Key Vault.](https://docs.microsoft.com/en-us/visualstudio/ide/signing-in-to-visual-studio)
+2. [Use Azure CLI to store your preferred account into the credential cache.](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli)
 
 ### Staging/Production
 

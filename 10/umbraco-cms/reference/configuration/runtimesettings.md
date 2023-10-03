@@ -1,6 +1,6 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+
+
 meta.Title: Umbraco Runtime Settings
 description: Information on the runtime settings section
 ---

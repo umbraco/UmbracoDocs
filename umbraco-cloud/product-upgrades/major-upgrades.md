@@ -25,7 +25,7 @@ These are extra steps needed when going from Umbraco 9 to the latest major.
 ## Prerequisites
 
 * Follow the **requirements** for [local development](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/requirements#local-development).
-* A Umbraco Cloud project running [the latest version of Umbraco CMS](https://our.umbraco.com/download/releases)
+* A Umbraco Cloud project running [the latest version of your current Umbraco CMS installation](https://our.umbraco.com/download/releases)
 * The **latest** .[NET version](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks) is installed locally.
 * **At least 2 environments** on your Cloud project.
 * A backup of your project database.
@@ -53,7 +53,7 @@ Upgrade tutorial Umbraco 9 to 10 on Cloud
 * Go to the project in the Umbraco Cloud portal.
 * Navigate to **Settings** -> **Advanced**.
 * Scroll down to the **Runtime Settings** section.
-* **Ensure that the latest version of .NET is enabled** for each environment on your Cloud project.
+* **Ensure that the latest version of .NET is enabled** for each environment on your Cloud project, by selecting it from the dropdown.
 
 <figure><img src="../../.gitbook/assets/runtime-settings.png" alt=""><figcaption><p>Runtime settings</p></figcaption></figure>
 

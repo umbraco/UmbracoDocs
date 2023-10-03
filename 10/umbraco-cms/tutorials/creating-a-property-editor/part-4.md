@@ -1,5 +1,5 @@
 ---
-versionFrom: 8.0.0
+
 needsV9Update: "true"
 ---
 
@@ -48,10 +48,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-using Umbraco.Web.WebApi;
-using Umbraco.Web.Editors;
-using Umbraco.Core.Persistence;
-using Umbraco.Core.Scoping;
+using Umbraco.Cms.Web.BackOffice.Controllers;
+using Umbraco.Cms.Web.Common.Attributes;
 
 namespace My.Controllers
 {

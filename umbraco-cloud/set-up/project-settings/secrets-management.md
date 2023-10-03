@@ -1,6 +1,21 @@
+---
+description: >-
+  If your Umbraco Cloud project uses sensitive information such as API keys,
+  encryption keys, and connection strings, it is recommended to store these as
+  secrets.
+---
+
 # Secrets Management
 
-Secrets can be added for each of the environments that you have added to your Cloud project.
+There are two ways to add secrets to your Cloud project, as an **Environment Secrets** or as a **Shared Secrets**.
+
+&#x20;**Environment Secrets** are intended to be utilized exclusively within a particular environment during the runtime of your Umbraco solution.
+
+**Shared Secrets** are utilized across all environments and will be seamlessly integrated into any new environment you create. Shared Secrets are particularly well-suited for safeguarding credentials necessary for project development, such as access to private NuGet feeds.
+
+{% hint style="warning" %}
+Utilizing environment-specific secrets for private NuGet feeds will result in the unsuccessful creation of new environments due to the unknown status of the secret. In such instances, **Shared Secrets** should be used.
+{% endhint %}
 
 Typical secrets are **Private Keys**, **3rd-party API tokens**, **database passwords**, or otherwise **sensitive data** that needs to be kept secret.
 
@@ -8,7 +23,7 @@ When the secrets have been added they will be exposed exclusively to the assigne
 
 It will be assigned as an environment variable at runtime using the assigned name for the secret.
 
-Then it will use a reference that only the managed identity of the environment has access to.
+It will then use a reference that only the managed identity of the environment has access to.
 
 {% hint style="info" %}
 You can add secrets to your Umbraco Cloud environments if you are on a standard plan or higher.
@@ -24,9 +39,10 @@ To add a secret to your environment follow these steps:
 
 1. Go to your Umbraco Cloud project
 2. Go to the settings section and go to Secret Management
-3. Choose the environment to add the secret and click Add secret
-4. Add the Key and the Value in the fields and click Add secret
-5. Save the key to the environment.
+3. Choose either shared or environment secrets
+4. Choose the environment to add the secret and click Add secret
+5. Add the Key and the Value in the fields and click Add secret
+6. Save the key to the environment.
 
 ## Working locally with secrets
 
@@ -38,7 +54,7 @@ The app setting should not be committed to the code repository or it needs to be
 
 An example could be that you have a secret in a cloud environment with the key name "ApiKey",
 
-you should specify this with a corresponding name in a configuration file such as `appsettings.development.json`:
+You should specify this with a corresponding name in a configuration file such as `appsettings.development.json`:
 
 ```json
 {
@@ -87,7 +103,7 @@ There are some reserved words that cannot be accepted:
 * `REGION_NAME`
 * `CONNECTIONSTRINGS__UMBRACODBDSN`
 
-There is also a number of prefixes that are not accepted.
+There are also a number of prefixes that are not accepted.
 
 The list consists of:
 
@@ -127,4 +143,4 @@ It is also possible to use Secrets to save API keys, Passwords, and ReChaptcha f
 
 Do you have an existing or new secret that you want to add to a key vault that conflicts with the name restrictions?
 
-Then please contact Umbraco support, then we will then consider it as soon as possible.\\
+Then please contact Umbraco support, then we will then consider it as soon as possible.

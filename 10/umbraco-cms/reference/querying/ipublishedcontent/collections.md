@@ -1,12 +1,11 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+
+
 ---
 
-# Collections
+# IPublishedContent Collections
 
-All collections of `IPublishedContent` are `IEnumerable<IPublishedContent>`.
-This means that all C# LINQ statements can be used to filter and query the collections.
+All collections of `IPublishedContent` are `IEnumerable<IPublishedContent>`. This means that all C# LINQ statements can be used to filter and query the collections.
 
 ## Collections
 
@@ -126,7 +125,7 @@ Filters a collection of content by content type alias
 </ul>
 ```
 
------
+
 
 ## Filtering, Ordering & Extensions
 
@@ -221,4 +220,4 @@ If you create a checkbox property on a document type with an alias `umbracoNaviH
 IEnumerable<IPublishedContent> sectionPages =  Model.Children.Where(x => x.IsVisible());
 ```
 
-Use case: When displaying a navigation menu for a section of the site, following this convention gives editors the option to 'hide' certain pages from appearing in the section navigation. (hence the unusual *umbracoNaviHide* property alias!)
+Use case: When displaying a navigation menu for a section of the site, following this convention gives editors the option to 'hide' certain pages from appearing in the section navigation. (hence the unusual _umbracoNaviHide_ property alias!)

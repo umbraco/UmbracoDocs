@@ -1,5 +1,7 @@
 # Adding a Magic String Format Function
 
+_This builds on the "_[_adding a type to the provider model_](adding-a-type.md)_" chapter_
+
 Umbraco Forms [Magic Strings](../magic-strings.md) can be used to replace placeholders within form elements with values from different sources. Sources include the HTTP request or the Umbraco page where the form is hosted.
 
 These values can be formatted using [filter functions](../magic-strings.md#formatting-magic-strings).
@@ -80,5 +82,5 @@ The format function can be used within a form's magic string in the same way as 
 For the example provided, it would be used like this:
 
 ```
-[#field bound: 1: 10]
+[#field | bound: 1: 10]
 ```

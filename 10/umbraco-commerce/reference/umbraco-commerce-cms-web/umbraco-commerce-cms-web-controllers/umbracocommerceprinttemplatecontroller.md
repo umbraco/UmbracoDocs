@@ -10,7 +10,7 @@ public class UmbracoCommercePrintTemplateController : UmbracoCommerceAuthorizedJ
 
 **Inheritance**
 
-* class [UmbracoCommerceAuthorizedJsonControllerBase](umbracocommerceauthorizedjsoncontrollerbase.md)
+* Class [UmbracoCommerceAuthorizedJsonControllerBase](umbracocommerceauthorizedjsoncontrollerbase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Controllers](README.md)

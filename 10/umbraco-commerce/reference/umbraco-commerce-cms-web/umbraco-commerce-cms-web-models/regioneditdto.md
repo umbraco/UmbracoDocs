@@ -10,7 +10,7 @@ public class RegionEditDto : RegionDto, IHasPath, INotificationModel
 
 **Inheritance**
 
-* class [RegionDto](regiondto.md)
+* Class [RegionDto](regiondto.md)
 * interface [IHasPath](ihaspath.md)
 
 **Namespace**

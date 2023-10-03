@@ -4,6 +4,19 @@ description: Get an overview of release notes for each month in 2023.
 
 # Overview 2023
 
+# [September 2023](2023-09-releasenotes.md)
+
+## Key Takeaways
+* **Shared Secrets** - Streamline your build process, enhance security, and say goodbye to repetitive environment configurations with "Shared Secrets" on Umbraco Cloud.
+* **Upgraded "Usage" Page for Custom Plans** - If you've added extra bandwidth or media storage to your cloud project, our updated "Usage" page on Umbraco Cloud now accurately reflects those additions.
+
+# [August 2023](2023-08-releasenotes.md)
+
+## Key Takeaways
+* **Australia region hosting** -  Umbraco Cloud expands its regional hosting offerings with the addition of _Australia East_, catering to a wider range of hosting preferences.
+* **Visualization of Events on “Availability & Performance”** - Elevate project insights with Umbraco Cloud's Event Visualization. Track critical events and their impact on your project's journey.
+* **Improved trial flow for Umbraco Cloud** - The trial flow has undergone a significant visual upgrade, now offering a more engaging and intuitive experience.
+
 # [June 2023](2023-06-releasenotes.md)
 
 ## Key Takeaways

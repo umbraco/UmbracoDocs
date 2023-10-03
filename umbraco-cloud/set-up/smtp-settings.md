@@ -51,19 +51,17 @@ You can reset your Umbraco ID password from the Umbraco Cloud login page. Find m
 
 ## Configure SMTP Settings
 
-As Umbraco Cloud doesn't provide SMTP servers, you will need to find hosting elsewhere. There are many services out there, here are a few we know work with Umbraco Cloud:
-
 * [Sparkpost](https://www.sparkpost.com/) - quick to set up and developer-friendly.
 * [SendGrid](https://sendgrid.com/) - quick to set up.
 * [MailGun](https://www.mailgun.com/) - mainly for developers, as it is a bit more on the technical side.
 * [Rapidmail](https://www.rapidmail.com/) - EU-based and GDPR compliant.
 
-{% embed url="https://www.youtube.com/embed/CFYuF7eNTF4?rel=0" %}
+{% embed url="https://youtu.be/VQZFXqwV6ZU" %}
 A video tutorial covering how to configure SMTP settings on an Umbraco Cloud project.
 {% endembed %}
 
 1. Set up the SMTP server.
-2. Configure the service:&#x20;
+2. Configure the service:
 
 {% tabs %}
 {% tab title="Umbraco 10 +" %}

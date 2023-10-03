@@ -11,7 +11,7 @@ description: Changelog for the Stripe Payment Provider for Vendr.
 **Description:** Minor update with Stripe Software Development Kit (SDK) dependency upgrade
 
 * Added Locale to Stripe order for localizing Stripe UI / emails.
-* Updated Stripe SDK dependency to v41 ([#12](https://github.com/vendrhub/vendr-payment-provider-stripe/pull/12)).
+* Updated Stripe Software Development Kit (SDK) dependency to v41 ([#12](https://github.com/vendrhub/vendr-payment-provider-stripe/pull/12)).
 
 ## v2.0.1
 

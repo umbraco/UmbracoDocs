@@ -12,6 +12,10 @@ When upgrading an existing project to Umbraco 12, you will need to opt-in explic
 
 When you start with a fresh Umbraco 12 installation, the Delivery API is also disabled by default. To enable it, you can proceed directly to the [Enable the Content Delivery API](./#enable-the-content-delivery-api) section, as the step below is already complete in this case.
 
+{% embed url="https://www.youtube.com/watch?v=sh_AF-ZKJ28" %}
+Video tutorial
+{% endembed %}
+
 ### Register the Content Delivery API dependencies
 
 1. Open your project's `Startup.cs` file.
@@ -21,7 +25,7 @@ When you start with a fresh Umbraco 12 installation, the Delivery API is also di
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddUmbraco(_env, _config)
-        .AddBackOffice()             
+        .AddBackOffice()
         .AddWebsite()
         // Register all Delivery API dependencies
         .AddDeliveryApi()
@@ -422,6 +426,44 @@ Which properties to expand and therefore include in the output if they refer to 
 {% endswagger-response %}
 {% endswagger %}
 
+{% swagger method="get" path="/content/item" baseUrl="/umbraco/delivery/api/v1" summary="Gets content item(s) by id" %}
+{% swagger-description %}
+Returns single or multiple items by id.
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="id" type="String Array" required="true" %}
+GUIDs of the content items
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Accept-Language" type="String" required="false" %}
+Requested culture
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Api-Key" type="String" required="false" %}
+Access token
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Preview" type="Boolean" required="false" %}
+Whether draft content is requested
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Start-Item" type="String" required="false" %}
+URL segment or GUID of the root content item
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="expand" type="String" required="false" %}
+Which properties to expand in the response
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="List of content items" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="401: Unauthorized" description="Missing permissions after protection is set up" %}
+
+{% endswagger-response %}
+{% endswagger %}
+
 {% swagger method="get" path="/content" baseUrl="/umbraco/delivery/api/v1" summary="Gets content item(s) from a query" %}
 {% swagger-description %}
 Returns single or multiple items.
@@ -519,6 +561,8 @@ Which properties to expand and therefore include in the output if they refer to 
 
 {% endswagger-response %}
 {% endswagger %}
+
+All endpoints are documented in a Swagger document at `{yourdomain}/umbraco/swagger`. Keep in mind that this document is not available in production mode by default. For more information check the [API versioning and OpenAPI](https://docs.umbraco.com/umbraco-cms/reference/api-versioning-and-openapi) article.
 
 ### Query parameters
 
@@ -637,10 +681,6 @@ There is no built-in functionality for editors to preview content in the Umbraco
 
 Content that is exclusively in a draft state is not available via the Delivery API's multi-items endpoint. However, once the content node is published, it will be available for retrieval, whether it is in a draft or published state. We will evaluate our options to improve this workflow.
 
-### Swagger
-
-There is a Swagger document available for the Umbraco Delivery API at `{yourdomain}/umbraco/swagger`. However, it does not offer complete documentation support for all APIs. This will be subject to change.
-
 ### Property editors
 
 There are certain limitations associated with some of the built-in property editors in Umbraco. Let's go through these below:
@@ -679,3 +719,39 @@ You'll find detailed information about the specific areas of extension in the ar
 
 * [Tailor the API's response for custom property editors](custom-property-editors-support.md)
 * [Extend the API with custom selecting, filtering, and sorting options](extension-api-for-querying.md)
+
+## Handling deeply nested JSON output
+
+.NET imposes a limit on the depth of object nesting within rendered JSON. This is done in an effort to detect cyclic references. Learn more about it in [the official .NET API docs](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.jsonserializeroptions.maxdepth).
+
+If the limit is exceeded, .NET will throw a `JsonException`.
+
+In some cases the content models might be so deeply nested that the Delivery API produces JSON that exceeds this limit. If this happens, the `JsonException` will be logged and shown in the [Umbraco log viewer](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/logviewer/).
+
+To handle this we have to change the limit. Since the Delivery API has its own JSON configuration, we can do so without affecting the rest of our site.
+
+First, we have to add these `using` statements to `Startup.cs`:
+
+{% code title="Startup.cs" %}
+```csharp
+using Umbraco.Cms.Api.Common.DependencyInjection;
+using Umbraco.Cms.Core;
+```
+{% endcode %}
+
+Now we can add the following code snippet to the `ConfigureServices()` method in `Startup.cs`:
+
+{% code title="Startup.cs" %}
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddControllers().AddJsonOptions(
+        Constants.JsonOptionsNames.DeliveryApi,
+        options =>
+        {
+            // set the maximum allowed depth of
+            options.JsonSerializerOptions.MaxDepth = {desired max depth}
+        });
+    ...
+```
+{% endcode %}

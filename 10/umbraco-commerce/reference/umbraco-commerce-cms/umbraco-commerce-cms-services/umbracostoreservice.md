@@ -10,7 +10,7 @@ public class UmbracoStoreService : StoreService, IUmbracoStoreService
 
 **Inheritance**
 
-* class [StoreService](../../umbraco-commerce-core/umbraco-commerce-core-services/storeservice.md)
+* Class [StoreService](../../umbraco-commerce-core/umbraco-commerce-core-services/storeservice.md)
 * interface [IUmbracoStoreService](iumbracostoreservice.md)
 
 **Namespace**

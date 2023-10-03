@@ -10,7 +10,7 @@ public class PaymentMethodBasicDto : NamedEntityBasicDto
 
 **Inheritance**
 
-* class [NamedEntityBasicDto](namedentitybasicdto.md)
+* Class [NamedEntityBasicDto](namedentitybasicdto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

@@ -10,7 +10,7 @@ public class CurrencyDto : CurrencyBasicDto
 
 **Inheritance**
 
-* class [CurrencyBasicDto](currencybasicdto.md)
+* Class [CurrencyBasicDto](currencybasicdto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

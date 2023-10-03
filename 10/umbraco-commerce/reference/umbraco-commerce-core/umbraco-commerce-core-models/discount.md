@@ -10,7 +10,7 @@ public class Discount : DiscountReadOnly
 
 **Inheritance**
 
-* class [DiscountReadOnly](discountreadonly.md)
+* Class [DiscountReadOnly](discountreadonly.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

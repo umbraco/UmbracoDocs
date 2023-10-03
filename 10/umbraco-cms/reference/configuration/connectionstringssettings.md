@@ -1,5 +1,5 @@
 ---
-versionFrom: 10.0.0
+
 meta.Title: "Umbraco Connection Strings Settings"
 description: "Information on the connection strings settings section"
 ---

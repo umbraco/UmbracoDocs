@@ -1,6 +1,6 @@
 ---
 versionFrom: 9.3.0
-versionTo: 10.0.0
+
 meta.Title: "Serverside Sanitizing"
 description: "This section describes how to sanitize the Rich Text Editor serverside"
 ---

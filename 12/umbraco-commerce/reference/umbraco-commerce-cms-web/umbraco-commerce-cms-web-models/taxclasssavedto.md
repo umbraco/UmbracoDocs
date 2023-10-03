@@ -10,7 +10,7 @@ public class TaxClassSaveDto : TaxClassDto, IValidatableObject
 
 **Inheritance**
 
-* class [TaxClassDto](taxclassdto.md)
+* Class [TaxClassDto](taxclassdto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

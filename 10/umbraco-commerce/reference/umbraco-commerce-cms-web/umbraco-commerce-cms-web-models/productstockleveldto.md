@@ -10,7 +10,7 @@ public class ProductStockLevelDto : ProductReferencePairDto
 
 **Inheritance**
 
-* class [ProductReferencePairDto](productreferencepairdto.md)
+* Class [ProductReferencePairDto](productreferencepairdto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

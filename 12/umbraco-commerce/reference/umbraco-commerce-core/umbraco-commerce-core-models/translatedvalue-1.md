@@ -10,7 +10,7 @@ public class TranslatedValue<T> : ReadOnlyTranslatedValue<T>, IDeepCloneable
 
 **Inheritance**
 
-* class [ReadOnlyTranslatedValue&lt;T&gt;](readonlytranslatedvalue-1.md)
+* Class [ReadOnlyTranslatedValue&lt;T&gt;](readonlytranslatedvalue-1.md)
 * interface [IDeepCloneable](../../umbraco-commerce-common/umbraco-commerce-common/ideepcloneable.md)
 
 **Namespace**

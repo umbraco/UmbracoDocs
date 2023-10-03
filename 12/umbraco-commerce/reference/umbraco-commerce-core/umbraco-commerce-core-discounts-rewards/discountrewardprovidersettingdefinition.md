@@ -10,7 +10,7 @@ public class DiscountRewardProviderSettingDefinition : UmbracoCommerceSettingDef
 
 **Inheritance**
 
-* class [UmbracoCommerceSettingDefinition](../umbraco-commerce-core-models/umbracocommercesettingdefinition.md)
+* Class [UmbracoCommerceSettingDefinition](../umbraco-commerce-core-models/umbracocommercesettingdefinition.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Discounts.Rewards](README.md)

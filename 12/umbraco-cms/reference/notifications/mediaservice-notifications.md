@@ -6,7 +6,7 @@ The MediaService class implements IMediaService. It provides access to operation
 
 Example usage of the MediaService notifications:
 
-```
+```csharp
 using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;

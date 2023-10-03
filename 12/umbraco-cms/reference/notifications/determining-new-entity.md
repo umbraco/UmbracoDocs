@@ -8,14 +8,14 @@ We know that if an entity is new and hasn't been persisted that it will not have
 
 Here's the snippet of code that does that:
 
-```
+```csharp
 var dirty = (IRememberBeingDirty)entity;
 var isNew = dirty.WasPropertyDirty("Id");
 ```
 
 To check if an entity is new in the ContentSavingNotification use the following:
 
-```
+```csharp
 var isNew = entity.HasIdentity is false;
 ```
 

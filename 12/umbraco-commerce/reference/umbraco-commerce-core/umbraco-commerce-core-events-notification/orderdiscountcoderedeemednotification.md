@@ -10,7 +10,7 @@ public class OrderDiscountCodeRedeemedNotification : OrderCodeNotificationBase<O
 
 **Inheritance**
 
-* class [OrderCodeNotificationBase&lt;TEntity&gt;](ordercodenotificationbase-1.md)
+* Class [OrderCodeNotificationBase&lt;TEntity&gt;](ordercodenotificationbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

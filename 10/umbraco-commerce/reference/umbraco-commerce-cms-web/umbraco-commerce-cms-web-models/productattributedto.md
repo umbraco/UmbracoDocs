@@ -10,7 +10,7 @@ public class ProductAttributeDto : ProductAttributeBasicDto
 
 **Inheritance**
 
-* class [ProductAttributeBasicDto](productattributebasicdto.md)
+* Class [ProductAttributeBasicDto](productattributebasicdto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

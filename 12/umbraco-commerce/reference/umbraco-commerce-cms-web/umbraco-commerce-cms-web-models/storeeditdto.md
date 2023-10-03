@@ -10,7 +10,7 @@ public class StoreEditDto : StoreDto, IHasPath, INotificationModel
 
 **Inheritance**
 
-* class [StoreDto](storedto.md)
+* Class [StoreDto](storedto.md)
 * interface [IHasPath](ihaspath.md)
 
 **Namespace**

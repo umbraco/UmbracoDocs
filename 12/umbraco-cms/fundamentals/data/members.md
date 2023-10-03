@@ -50,7 +50,7 @@ Once created, the Member Type will have no properties, so you have the freedom t
 
 When creating a Member Type you can assign compositions. Compositions allow you to inherit tabs and properties from existing member types instead of creating them from scratch.
 
-For example on the member type that you have created, click on **Composition**. Then you can choose the existing **Member** type which then you will inherit its tabs, groups, and properties.&#x20;
+For example on the member type that you have created, click on **Composition**. Then you can choose the existing **Member** type which then you will inherit its tabs, groups, and properties.
 
 <figure><img src="images/member-type-composition-setting.PNG" alt=""><figcaption><p>Composition Member Type</p></figcaption></figure>
 
@@ -106,9 +106,11 @@ As a developer you are able to leverage your website when you build on the Membe
 
 You can find out more about the services methods in the reference section of the documentation by following the links below.
 
-### More information
+## References
 
-* [Customizing Data Types](data-types/)
+* Video:[ Adding a member](https://www.youtube.com/watch?v=gdvfrqQcAGY)
+* Video: [Member types properties](https://www.youtube.com/watch?v=\_aMZJWxdNHg)
+* Video: [Role-Based Protection](https://www.youtube.com/watch?v=wVR9OBnaNZQ)
 
 ### Related Services
 

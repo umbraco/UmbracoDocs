@@ -21,7 +21,7 @@ Here's a quick step-by-step on how you deploy these changes to your environment:
 
 ## Deploying without using a Git client
 
-If you don't have a Git client installed on your local machine, or prefer to work with Git through command line, you can use eg. Git Bash and the following commands:
+If you don't have a Git client installed on your local machine, you can use Git or Git Bash for command-line Git operations. Run the following commands:
 
 ```
 # Navigate to the repository folder
@@ -41,10 +41,10 @@ git pull
 git push
 ```
 
-If you had to pull down new commits, it is a good idea to see if any of these commits contained changes to the schema (anything in `umbraco/Deploy/Revision/`). In order to ensure that your local site is up-to-date, and your changes work with the updated schema, you can navigate to the `umbraco/Deploy/` folder and create a deploy marker if one doesn't already exist. From a command line type the following command:
+When pulling new commits, it is a good idea to see if any of these commits contained changes to the schema (anything in `umbraco/Deploy/Revision/`). To ensure your local schema is up-to-date, you can navigate to the `umbraco/Deploy/` folder and create a deploy marker if it doesn't exist. From a command line type the following command:
 
 `/…mysite/umbraco/Deploy> echo > deploy`
 
 The local site should be running when you do this. The deploy marker will change to `deploy-progress` while updating the site and to `deploy-complete` when done. If there are any conflicts/errors you will see a `deploy-failed` marker instead, which contains an error message with a description of what went wrong.
 
-Another way is to use the Deploy Dashboard in the Settings section of the Umbraco backoffice. Here you can see the status of ongoing or completed deployment processes. The status will show whether an operation has been triggered and whether it is in progress, has completed or has failed. The dashboard will show the status based on the marker files on the disk, eg. `deploy-progress`. From the Deploy Dashboard it is also possible to trigger various processes. Learn more about this dashboard in the [Deployment ](README.md#deploy-dashboard)article.
+Another way is to use the Deploy Dashboard in the Settings section of the Umbraco backoffice. Here you can see the status of ongoing or completed deployment processes. The status will show whether an operation has been triggered and whether it is in progress, has completed or has failed. The dashboard will show the status based on the marker files on the disk, eg. `deploy-progress`. From the Deploy Dashboard it is also possible to trigger processes. Learn more about this dashboard in the [Deployment ](README.md#deploy-dashboard)article.

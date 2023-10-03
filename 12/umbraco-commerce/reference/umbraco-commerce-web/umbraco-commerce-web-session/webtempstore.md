@@ -10,7 +10,7 @@ public class WebTempStore : WebStoreBase, ITempStore
 
 **Inheritance**
 
-* class [WebStoreBase](webstorebase.md)
+* Class [WebStoreBase](webstorebase.md)
 * interface [ITempStore](../../umbraco-commerce-core/umbraco-commerce-core-session/itempstore.md)
 
 **Namespace**

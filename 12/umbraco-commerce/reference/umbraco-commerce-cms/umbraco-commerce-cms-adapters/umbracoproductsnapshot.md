@@ -10,7 +10,7 @@ public class UmbracoProductSnapshot : ProductSnapshotBase, IUmbracoProductSnapsh
 
 **Inheritance**
 
-* class [ProductSnapshotBase](../../umbraco-commerce-core/umbraco-commerce-core-models/productsnapshotbase.md)
+* Class [ProductSnapshotBase](../../umbraco-commerce-core/umbraco-commerce-core-models/productsnapshotbase.md)
 * interface [IUmbracoProductSnapshot](iumbracoproductsnapshot.md)
 
 **Namespace**

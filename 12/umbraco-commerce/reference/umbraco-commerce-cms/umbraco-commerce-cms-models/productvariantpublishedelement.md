@@ -11,7 +11,7 @@ public class ProductVariantPublishedElement :
 
 **Inheritance**
 
-* class [PublishedElementWithParent&lt;T&gt;](publishedelementwithparent-1.md)
+* Class [PublishedElementWithParent&lt;T&gt;](publishedelementwithparent-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Models](README.md)

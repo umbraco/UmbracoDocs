@@ -1,6 +1,6 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+
+
 meta.Title: "Umbraco Keep Alive Settings"
 description: "Information on the keep alive settings section"
 ---

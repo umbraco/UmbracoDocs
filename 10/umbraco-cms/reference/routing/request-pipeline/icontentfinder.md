@@ -1,6 +1,6 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+
+
 meta.Title: Creating content finders
 description: Information about creating your own content finders
 ---
@@ -143,7 +143,7 @@ namespace RoutingDocs.ContentFinders
 
 To set your own 404 finder create an IContentLastChanceFinder and set it as the ContentLastChanceFinder. (perhaps you have a multilingual site and need to find the appropriate 404 page in the correct language)
 
-A ContentLastChanceFinder will always return a 404 status code. This example creates a new implementation of the IContentLastChanceFinder and checks whether the requested content could not be found by using the default `Is404` property presented in the `PublishedRequest` class.
+A `IContentLastChanceFinder` will always return a 404 status code. This example creates a new implementation of the `IContentLastChanceFinder` and gets the 404 page for the current language of the request.
 
 ```csharp
 using System.Linq;

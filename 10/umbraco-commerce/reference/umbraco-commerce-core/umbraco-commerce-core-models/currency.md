@@ -10,7 +10,7 @@ public class Currency : CurrencyReadOnly, IHasWrtiableAllowedCountries<Currency>
 
 **Inheritance**
 
-* class [CurrencyReadOnly](currencyreadonly.md)
+* Class [CurrencyReadOnly](currencyreadonly.md)
 * interface [IHasWrtiableAllowedCountries&lt;TAggregate&gt;](ihaswrtiableallowedcountries-1.md)
 
 **Namespace**

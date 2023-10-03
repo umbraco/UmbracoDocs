@@ -12,7 +12,7 @@ To make this task as easy as possible we've added an abstraction called `IHtmlSa
 
 To add your own sanitizer you must first create a class the implements the interface:
 
-```
+```csharp
 using Umbraco.Cms.Core.Security;
 
 namespace MySite.HtmlSanitization
@@ -36,7 +36,7 @@ You can register it directly in the `Startup.cs`, for instance using an extensio
 
 Extension method:
 
-```
+```csharp
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Security;
 using Umbraco.Extensions;
@@ -56,7 +56,7 @@ namespace MySite.HtmlSanitization
 
 Calling the extension method:
 
-```
+```csharp
         public void ConfigureServices(IServiceCollection services)
         {
 #pragma warning disable IDE0022 // Use expression body for methods
@@ -72,7 +72,7 @@ Calling the extension method:
 
 Or you can use a Composer:
 
-```
+```csharp
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Security;

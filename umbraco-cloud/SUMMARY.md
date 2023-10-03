@@ -17,7 +17,6 @@
   * [Pushing Upgrades to a Child Project](getting-started/baselines/upgrading-child-projects.md)
 * [Plans](getting-started/umbraco-cloud-plans.md)
 * [Migrating an Existing Site](getting-started/migrate-existing-site/README.md)
-  * [Migrating Users to Umbraco Cloud](getting-started/migrate-existing-site/migrating-users-to-umbraco-cloud.md)
 * [Repositories in a Cloud Project](getting-started/git-repository-in-a-cloud-project.md)
 * [Best Practice for Working in Teams](getting-started/team-workflow-on-cloud.md)
 * [Migrate between regions](getting-started/migrate-between-regions.md)
@@ -124,6 +123,8 @@
 ## Release Notes
 
 * [Overview 2023](release-notes/overview-2023.md)
+* [September 2023](release-notes/2023-09-releasenotes.md)
+* [August 2023](release-notes/2023-08-releasenotes.md)
 * [June 2023](release-notes/2023-06-releasenotes.md)
 * [May 2023](release-notes/2023-05-releasenotes.md)
 * [April 2023](release-notes/2023-04-releasenotes.md)

@@ -4,7 +4,7 @@ The MemberService implements IMemberService and provides access to operations in
 
 ## Usage
 
-```
+```csharp
 using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Services.Notifications;

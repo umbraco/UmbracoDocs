@@ -10,7 +10,7 @@ public class GiftCardDto : GiftCardBasicDto
 
 **Inheritance**
 
-* class [GiftCardBasicDto](giftcardbasicdto.md)
+* Class [GiftCardBasicDto](giftcardbasicdto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

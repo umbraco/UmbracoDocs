@@ -10,7 +10,7 @@ public class EmailTemplateEditDto : EmailTemplateDto, IHasPath, INotificationMod
 
 **Inheritance**
 
-* class [EmailTemplateDto](emailtemplatedto.md)
+* Class [EmailTemplateDto](emailtemplatedto.md)
 * interface [IHasPath](ihaspath.md)
 
 **Namespace**

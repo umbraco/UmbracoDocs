@@ -1,8 +1,10 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Umbraco Install Default Data Settings"
-description: "Information on configuration allowing for the modification of default data installed in new projects"
+
+
+meta.Title: Umbraco Install Default Data Settings
+description: >-
+  Information on configuration allowing for the modification of default data
+  installed in new projects
 ---
 
 # Install Default Data Settings
@@ -46,10 +48,18 @@ The following example configuration shows how this default data installation can
 
 Each `InstallData` setting can be one of the following values:
 
-- `All` - all default data for the type will be installed (this is the default behavior if the configuration is omitted).
-- `Values` - only the default data specified will be installed.  For languages, the values are the ISO codes for the language. For all other types, the Guid for the type should be listed.
-- `ExceptValues` - all default data except those specified will be installed.
-- `None` - no default data of the type will be installed.
+* `All` - all default data for the type will be installed (this is the default behavior if the configuration is omitted).
+* `Values` - only the default data specified will be installed. For languages, the values are the ISO codes for the language. For all other types, the Guid for the type should be listed.
+* `ExceptValues` - all default data except those specified will be installed.
+* `None` - no default data of the type will be installed.
+
+{% hint style="warning" %}
+Be cautious when changing a data type configuration, as there are some dependencies between the different types. Make sure to check the reference information in the `info` tab to ensure they are not referenced somewhere else.
+{% endhint %}
+
+For example, if you check the info tab of the `Label (bigint)` Data Type, you can see that it is referenced by the `Media Types`:
+
+<figure><img src="../../.gitbook/assets/ReferencedDataTypes.PNG" alt=""><figcaption><p>Data Type referenced by Media Type</p></figcaption></figure>
 
 ## Data Identifiers
 
@@ -57,7 +67,7 @@ For `DataTypes`, `MediaTypes` and `MemberTypes` the Guid identifiers for the def
 
 For `Languages`, the `Values` collection expects the standard language ISO codes to be provided. Given this code is enough to fully specify a language, it's possible to use this collection to install additional default data.
 
-As an example, the following configuration would omit the default "English (United States)" language and instead install the "English (United Kingdom)" and "Italian" languages.  As "English (United Kingdom)" is provided first, it would be created as Umbraco's default language for content creation.
+As an example, the following configuration would omit the default "English (United States)" language and instead install the "English (United Kingdom)" and "Italian" languages. As "English (United Kingdom)" is provided first, it would be created as Umbraco's default language for content creation.
 
 ```json
 "Umbraco": {
@@ -73,7 +83,7 @@ As an example, the following configuration would omit the default "English (Unit
     }
   }
 }
-``` 
+```
 
 ## Reference
 

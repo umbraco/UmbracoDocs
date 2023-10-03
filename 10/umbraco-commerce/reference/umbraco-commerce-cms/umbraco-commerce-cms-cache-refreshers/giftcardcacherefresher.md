@@ -11,7 +11,7 @@ public class GiftCardCacheRefresher :
 
 **Inheritance**
 
-* class [UmbracoCommerceEntityStateCacheRefresherBase&lt;TInstanceType,TService,TEntity&gt;](umbracocommerceentitystatecacherefresherbase-3.md)
+* Class [UmbracoCommerceEntityStateCacheRefresherBase&lt;TInstanceType,TService,TEntity&gt;](umbracocommerceentitystatecacherefresherbase-3.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Cache.Refreshers](README.md)

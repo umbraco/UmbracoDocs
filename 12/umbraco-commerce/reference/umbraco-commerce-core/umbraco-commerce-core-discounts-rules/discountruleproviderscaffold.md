@@ -10,7 +10,7 @@ public class DiscountRuleProviderScaffold : DiscountRuleProviderDefinition
 
 **Inheritance**
 
-* class [DiscountRuleProviderDefinition](discountruleproviderdefinition.md)
+* Class [DiscountRuleProviderDefinition](discountruleproviderdefinition.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Discounts.Rules](README.md)

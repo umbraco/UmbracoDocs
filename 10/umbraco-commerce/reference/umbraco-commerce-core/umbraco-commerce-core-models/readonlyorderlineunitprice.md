@@ -10,7 +10,7 @@ public class ReadOnlyOrderLineUnitPrice : ReadOnlyTotalPriceWithPreviousAdjustme
 
 **Inheritance**
 
-* class [ReadOnlyTotalPriceWithPreviousAdjustment](readonlytotalpricewithpreviousadjustment.md)
+* Class [ReadOnlyTotalPriceWithPreviousAdjustment](readonlytotalpricewithpreviousadjustment.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

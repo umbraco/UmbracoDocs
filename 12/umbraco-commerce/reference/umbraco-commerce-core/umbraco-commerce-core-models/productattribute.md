@@ -12,7 +12,7 @@ public class ProductAttribute : ProductAttributeReadOnly
 
 **Inheritance**
 
-* class [ProductAttributeReadOnly](productattributereadonly.md)
+* Class [ProductAttributeReadOnly](productattributereadonly.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

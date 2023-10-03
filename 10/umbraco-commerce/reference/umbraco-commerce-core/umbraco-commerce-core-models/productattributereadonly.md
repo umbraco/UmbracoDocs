@@ -13,7 +13,7 @@ public class ProductAttributeReadOnly :
 
 **Inheritance**
 
-* class [StoreAggregateBase&lt;TReadOnlySelf,TWritableSelf,TState&gt;](storeaggregatebase-3.md)
+* Class [StoreAggregateBase&lt;TReadOnlySelf,TWritableSelf,TState&gt;](storeaggregatebase-3.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

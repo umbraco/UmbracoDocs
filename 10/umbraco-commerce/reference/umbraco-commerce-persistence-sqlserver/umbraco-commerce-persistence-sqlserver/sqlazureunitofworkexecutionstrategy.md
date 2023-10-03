@@ -10,7 +10,7 @@ public class SqlAzureUnitOfWorkExecutionStrategy : PollyUnitOfWorkExecutionStrat
 
 **Inheritance**
 
-* class [PollyUnitOfWorkExecutionStrategyBase](../../umbraco-commerce-infrastructure/umbraco-commerce-infrastructure/pollyunitofworkexecutionstrategybase.md)
+* Class [PollyUnitOfWorkExecutionStrategyBase](../../umbraco-commerce-infrastructure/umbraco-commerce-infrastructure/pollyunitofworkexecutionstrategybase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Persistence.SqlServer](README.md)

@@ -16,7 +16,7 @@ If you need an `UmbracoHelper` in your own controllers, you need to inject an in
 
 Example of getting `UmbracoHelper` in a controller:
 
-```
+```csharp
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Web.Common;

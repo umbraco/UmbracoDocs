@@ -1,5 +1,5 @@
 ---
-versionFrom: 10.0.0
+
 ---
 
 # Backoffice UI API Documentation

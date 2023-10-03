@@ -4,7 +4,7 @@
 
 `Returns: IEnumerable<BlockListItem>`
 
-**Block List** is a list editing property editor, using [Element Types](../../../../data/defining-content.md#what-is-an-element-type) to define the list item schema.
+**Block List** is a list editing property editor, using [Element Types](../../../../data/defining-content/#element-types) to define the list item schema.
 
 {% hint style="info" %}
 A default Umbraco CMS installation does not ship with a defined _Data Type_ using the Block List editor. In order to start using the property, follow the steps outlined below.

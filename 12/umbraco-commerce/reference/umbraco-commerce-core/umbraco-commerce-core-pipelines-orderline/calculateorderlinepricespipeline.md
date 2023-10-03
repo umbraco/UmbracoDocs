@@ -10,7 +10,7 @@ public class CalculateOrderLinePricesPipeline : PipelineTaskCollection<OrderLine
 
 **Inheritance**
 
-* class [PipelineTaskCollection&lt;!0&gt;](../../umbraco-commerce-common/umbraco-commerce-common-pipelines/pipelinetaskcollection-1.md)
+* Class [PipelineTaskCollection&lt;!0&gt;](../../umbraco-commerce-common/umbraco-commerce-common-pipelines/pipelinetaskcollection-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Pipelines.OrderLine](README.md)

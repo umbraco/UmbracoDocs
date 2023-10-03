@@ -10,7 +10,7 @@ public class ExportTemplate : ExportTemplateReadOnly
 
 **Inheritance**
 
-* class [ExportTemplateReadOnly](exporttemplatereadonly.md)
+* Class [ExportTemplateReadOnly](exporttemplatereadonly.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)
