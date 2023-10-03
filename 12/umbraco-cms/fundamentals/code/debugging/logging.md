@@ -61,24 +61,23 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Web.Common.Controllers;
 
-namespace Umbraco.Cms.Web.UI.NetCore
+namespace Umbraco.Cms.Web.UI.NetCore;
+
+public class MyApiController : UmbracoApiController
 {
-    public class MyApiController : UmbracoApiController
+    private readonly ILogger<MyApiController> _logger;
+
+    public MyApiController(ILogger<MyApiController> logger)
     {
-        private readonly ILogger<MyApiController> _logger;
+        _logger = logger;
+    }
 
-        public MyApiController(ILogger<MyApiController> logger)
-        {
-            _logger = logger;
-        }
-
-        /// /umbraco/api/MyApi/SayHello?name=John
-        [HttpGet]
-        public string SayHello(string name)
-        {
-            _logger.LogInformation("We are saying hello to {Name}", name);
-            return $"Hello {name}";
-        }
+    /// /umbraco/api/MyApi/SayHello?name=John
+    [HttpGet]
+    public string SayHello(string name)
+    {
+        _logger.LogInformation("We are saying hello to {Name}", name);
+        return $"Hello {name}";
     }
 }
 ```
