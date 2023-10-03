@@ -4,12 +4,21 @@ Learn how to configure a CI/CD pipeline in Azure DevOps and GitHub Actions Workf
 
 You'll find example shell scripts and pipeline configurations in the section "Sample scripts", covering both Azure DevOps and GitHub Actions Workflows.
 
+# Why should one configure a sample ci/cd pipeline?
+"Umbraco Cloud repositories are not meant to be used as source code repositories. More details on our official documentation.
+Once you commit your code to Cloud the build pipeline converts your C# code to DLLs and deploys it on the respective environment.
+It is important to note that only C# code is built, and all frontend artifacts need to be built and committed to the repository.
+You can use AzureDevops as an external repository and with the pipelines it will automatically keep your azure devops source code repository in sync with the git repository of Umbraco Cloud of development environment.
+
+!INSERT IMAGE AS PROVIDED BY ALINA!
+
+
 # Prerequisites: Setting Up an Umbraco Cloud Project
 
 Before proceeding, you'll need an initial Umbraco Cloud project. You can either create a new project or use an existing one. If you already have a cloud project, feel free to skip this section.
 
 1. Navigate to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects) and create a new project.
-   ![image.png](/.attachments/image-8e3e2036-ea1e-4b46-83bf-b6a2bfbb7eda.png)
+   !INSERT IMAGE WHEN UPDATE IS READY IN PORTAL!
 
 2. Adding a Development environment is optional but recommended for the purposes of this sample documentation. 
 
