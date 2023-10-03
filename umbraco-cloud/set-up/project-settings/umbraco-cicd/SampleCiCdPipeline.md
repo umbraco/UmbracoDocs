@@ -18,7 +18,6 @@ You can use AzureDevops as an external repository and with the pipelines it will
 Before proceeding, you'll need an initial Umbraco Cloud project. You can either create a new project or use an existing one. If you already have a cloud project, feel free to skip this section.
 
 1. Navigate to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects) and create a new project.
-   !INSERT IMAGE WHEN UPDATE IS READY IN PORTAL!
 
 2. Adding a Development environment is optional but recommended for the purposes of this sample documentation. 
 
@@ -30,7 +29,6 @@ To get started with API interactions, you'll need to obtain your Project ID and 
 
 1. Navigate to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects) and select your project.
 2. Go to `Settings` -> `Advanced`. This is where you can generate an API key and find your Project ID.
-   <IMG  src="https://umbraco.com/media/y2wiebnp/umbraco-cloud-enable-cicd_1042x582px.jpg?quality=80"  alt="Umbraco Cloud Enable CICD 1042X582px"/>
 
 **Important Note**: The API key is tied to the specific project for which it is generated. Make sure to keep it secure, as it will be used for all subsequent API interactions related to that project.
 
@@ -83,25 +81,25 @@ This section provides a step-by-step guide to setting up a CI/CD pipeline in Azu
 
     Begin by loading your existing repositories into Azure DevOps.
 
-    ![Pipeline1.png](/.attachments/Pipeline1-26e42b6e-5192-467c-b968-c1ad4db22def.png)
+    ![Pipeline1.png](../../images/Pipeline1.png)
 
 2. **Select the Repository**
 
     Choose the repository you want to use for the pipeline.
 
-    ![Pipeline2.png](/.attachments/Pipeline2-af0cf25e-7a2d-4cb4-8558-5b22a1b7d704.png)
+    ![Pipeline2.png](../../images/Pipeline2.png)
 
 3. **Configure the Pipeline**
 
     Next, configure the pipeline to use the existing YAML file from your selected repository.
 
-    ![Pipeline3.png](/.attachments/Pipeline3-dfcacb75-6bf3-46a4-8dce-ac05cd45b45c.png)
+    ![Pipeline3.png](../../images/Pipeline3.png)
 
 4. **Select the YAML File from the Repository**
 
     Finally, specify the YAML file that defines your pipeline. You can find a YAML file for Azure DevOps and Google Actions, respectively here [link to the “Sample Script” section]
 
-    ![Pipeline4.png](/.attachments/Pipeline4-87a8ed8d-a107-469b-8773-95cf57b1703c.png)
+    ![Pipeline4.png](../../images/Pipeline4.png)
 
 By following these steps, you'll have successfully set up a CI/CD pipeline in Azure DevOps for your Umbraco Cloud project.
 
@@ -157,17 +155,17 @@ Feedback on the deployment's progress can be obtained by polling the "Get Status
 Upon running the pipeline for the first time without making any modifications to the Umbraco CMS codebase, no deployment will be initiated in the leftmost environment. Consequently, it will also be impossible to generate any difference reports, as no deployment has taken place.
 
 **Umbraco Cloud Project Overview (After the First Run)**  
-![UmbracoCloudProjectPage.png](/.attachments/UmbracoCloudProjectPage-ff68f522-4fbe-4ea3-bd6e-5f5d308422ed.png)
+![After first run](../../images/UmbracoCloudProjectPage.png)
 
 ### Triggering a New Deployment
 
 The pipeline is designed to be triggered automatically upon any changes to the local repository. When you update and push a change, the pipeline will initiate.
 
 **Pipeline Overview (After a Run with Changes)**  
-![UmbracoCloudDemoSite2.png](/.attachments/UmbracoCloudDemoSite2-8648f9ce-1a03-4949-a91e-b226b4180f3e.png)
+![Pipeline Overview (After a Run with Changes)](../../images/UmbracoCloudDemoSite2.png)
 
 **Umbraco Cloud Project Overview (After the Second Run)**  
-![UmbracoCloudDemoSite3.png](/.attachments/UmbracoCloudDemoSite3-fe5d230f-01ed-4110-a61d-dcba2cb42efb.png)
+![Umbraco Cloud Project Overview (After the Second Run)](../../images/UmbracoCloudDemoSite3.png)
 
 These changes are also synchronized to the Umbraco Cloud Git repositories. The red box in the image below indicates the code that was changed locally and pushed to the local repository. The pink box shows the state of the Umbraco Cloud Git repositories after the pipeline execution.
 
@@ -176,7 +174,7 @@ These changes are also synchronized to the Umbraco Cloud Git repositories. The r
 Once changes have been made and tested in the Development environment, you can deploy them to the Live environment using Umbraco Cloud's standard deployment process. Simply click the green "Deploy Change to Live" button to initiate this.
 
 **Changes Deployed to the Live Environment**  
-![image.png](/.attachments/image-1cde1039-5cea-4149-9566-04bd9a1be0e5.png)
+![Changes Deployed to the Live Environment](../../images/UmbracoCloudDemoSite5.png)
 
 
 ## Sample scripts
