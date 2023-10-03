@@ -106,27 +106,22 @@ Part of the returned response will be the actual `deploymentId`. The response fr
 ```
 
 ### Upload zip source file
+To deploy content to the Umbraco Cloud repository, you need to perform an HTTP POST request to the Umbraco Cloud API. The deployment content should be packaged as a ZIP file, which must mirror the expected structure of the Umbraco Cloud repository. This ZIP file should include all relevant files such as project and solution files, and compiled frontend code. If your setup includes a frontend project with custom elements, the build artifacts from that project should also be included in the ZIP file, placed in the appropriate directory within the repository structure.
 
-To deploy content to the Umbraco Cloud repository, you need to perform an HTTP POST request to the Umbraco Cloud API. The deployment content should be packaged as a ZIP file, which must mirror the expected structure of the Umbraco Cloud repository. This ZIP file should include all relevant files such as project and solution files, Umbraco CMS files, and compiled frontend code. If your setup includes a frontend project with custom elements, the build artifacts from that project should also be included in the ZIP file, and placed in the appropriate directory within the repository structure.
 The HTTP POST request should be made using the `multipart/form-data` content type. The request URL should incorporate both the `projectId` and `deploymentId` obtained from the previous step in the API path.
 
-For example, having a structure like this:
-- website-frontend-project/dist/pretty-view/*.js|css
-- website-umbraco-project/src/UmbracoProject/*
-- website-umbraco-project/.umbraco (+ other files - this is just for the example)
-- The packaged zip file should have files like this:
-- src/UmbracoProject/wwwroot//dist/pretty-view/*.js|css
-- src/UmbracoProject/*
-- .umbraco (+ other files - this is just for the example)
+The ZIP file must be structured the same way as described in the Readme.md included in all cloud projects starting from Umbraco 9. This also means if you need to change the name and/or structure of the project, you should follow the guide in the same Readme. 
 
 By adhering to these guidelines, you ensure that the uploaded content is an exact match with what is expected in the Umbraco Cloud repository, facilitating a seamless deployment process.
 
 The purpose of packaging your content into a ZIP file is to replace the existing content in the Umbraco Cloud repository upon unpackaging. This ensures that the repository is updated with the latest version of your project files.
 
-Note: If the .gitignore file within the ZIP package does not exclude bin/ and obj/ directories, these will also be committed to the Umbraco Cloud repository. It is recommended that Dan and Jesper review and update this workflow accordingly.
+#### A note about .gitignore
+Umbraco Cloud environments are using git internally. This means you should be careful about the .gitignore file you add to the package. If you have “git ignored” build js assets locally, you need to handle this so that this is not being ignored in the cloud repository. 
 
-If your local repository's .gitignore file differs from the one intended for the Umbraco Cloud repository, it's advisable to create a separate .cloud_gitignore file. Include this file in the ZIP package and rename it to .gitignore before uploading. This ensures that only the necessary files and directories are committed to the Umbraco Cloud repository.
+**Note:** If the .gitignore file within the ZIP package does not exclude bin/ and obj/ directories, these will also be committed to the Umbraco Cloud repository. It is recommended that Dan and Jesper review and update this workflow accordingly.
 
+**Best Practice:** If you have frontend assets your local repository's .gitignore file will most likely differ from the one intended for the Umbraco Cloud repository, it's advisable to create a separate .cloud_gitignore file. Include this file in the ZIP package and rename it to .gitignore before packaging. This ensures that only the necessary files and directories are uploaded and finally committed to the Umbraco Cloud repository.
 
 In curl uploading the source file will be:
 
