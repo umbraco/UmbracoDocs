@@ -20,6 +20,10 @@ Under each major version, you can find details about minor and patch releases fo
 
 <summary>Version 11</summary>
 
+[**11.1.5**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.1.5) **(October 10th 2023)**
+
+* Fixed regression issue introduced in 11.1.5 with deployment of properties of content templates [#182](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/182)
+
 [**11.1.4**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.1.4) **(September 19th 2023)**
 
 * Updated the transfer of user picker values to resolve the user by username in the target environment [#180](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/180)
@@ -97,6 +101,10 @@ Under each major version, you can find details about minor and patch releases fo
 <details>
 
 <summary>Version 10</summary>
+
+[**10.2.5**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.5) **(October 10th 2023)**
+
+* Fixed regression issue introduced in 10.2.4 with deployment of properties of content templates [#182](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/182)
 
 [**10.2.4**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.4) **(September 19th 2023)**
 
@@ -351,6 +359,10 @@ Under each major version, you can find details about minor and patch releases fo
 <details>
 
 <summary>Version 4</summary>
+
+[**4.8.4**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.8.4) **(October 10th 2023)**
+
+* Fixed regression issue introduced in 4.8.3 with deployment of properties of content templates [#182](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/182)
 
 [**4.8.3**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.8.3) **(September 19th 2023)**
 
