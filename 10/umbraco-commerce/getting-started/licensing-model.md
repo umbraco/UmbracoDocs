@@ -75,9 +75,10 @@ You can verify that your license is successfully installed by logging into your 
 
 ### When and how to configure an `UmbracoApplicationUrl`
 
-If you are running on a single domain for both your front end and back end environments, it's not necesarry to configure a `UmbracoApplicationUrl`. 
+If you are running on a single domain for both your frontend and backend environments, it's not necessary to configure a `UmbracoApplicationUrl`. 
 
-If you have different domains for your front end and back end however, it is advised that you configure an `UmbracoApplicationUrl` set to your back office URL. This helps the licensing engine know which URL should be used for validation checks. Without this configuration setting, the licensing engine will try and work out the domain to validate from the HTTP request object and so can lead to errors when switching between domains.
+If you have different domains for your frontend and backend, then it's advised that you configure an `UmbracoApplicationUrl` set to your backoffice URL. This helps the licensing engine know which URL should be used for validation checks. Without this configuration setting, the licensing engine will try and work out the domain to validate from the HTTP request object. This can lead to errors when switching between domains.
+
 
 An `UmbracoApplicationUrl` can be configured in your `appSettings.json` file like so:
 
