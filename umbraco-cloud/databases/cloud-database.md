@@ -40,7 +40,7 @@ Now that you've connected you can work with the databases on Umbraco Cloud, like
 LocalDB is no longer supported in the latest major version of Umbraco. The documentation below is only relevant if you are on Umbraco 9 and below.
 {% endhint %}
 
-When you clone a site locally, Umbraco Cloud automatically creates a local database and populates it with data from your website running on the Cloud. If you don't specify database settings before the local site startup, it defaults to a SQL CE database located in the `umbraco/Data` folder. If you wish to use a local SQL Server instead, you can update the connection string in the web.config or appSettings.json file (from v9+). However, it's important that you do so before your site starts up the first time.
+When you clone a site locally, Umbraco Cloud automatically creates a local database and populates it with data from your website running on the Cloud. If you don't specify database settings before the local site startup, it defaults to a SQL CE database located in the `umbraco/Data` folder. If you wish to use a local SQL Server instead, you can update the connection string in the `web.config` or `appSettings.json` file (from v9+). However, it's important that you do so before your site starts up the first time.
 
 By default when Umbraco Cloud restores a local database it will be a Umbraco.sdf file in `/App_Data` folder. However, if LocalDB is installed and configured, the restore will create a Umbraco.mdf file. To use LocalDB ensure `applicationHost.config` is configured with `loadUserProfile="true"` and `setProfileEnvironment="true"`: https://blogs.msdn.microsoft.com/sqlexpress/2011/12/08/using-localdb-with-full-iis-part-1-user-profile/
 
