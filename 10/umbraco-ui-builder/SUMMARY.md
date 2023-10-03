@@ -8,6 +8,8 @@
 
 * [Overview](getting-started/overview.md)
 * [Installation](getting-started/installation.md)
+* [Upgrading](getting-started/upgrading/README.md)
+  * [Version Specific Upgrade Notes](getting-started/upgrading/version-specific-upgrades.md)
 * [Configuration](getting-started/configuration.md)
 * [User Interface](getting-started/user-interface.md)
 * [Licensing](getting-started/licensing-model.md)
@@ -15,6 +17,7 @@
 ## How-to Guides
 
 * [Creating your first integration](guides/creating-your-first-integration.md)
+* [Migrate from Konstrukt to Umbraco UI Builder](guides/migrate-from-konstrukt-to-umbraco-ui-builder.md)
 
 ## Areas
 
