@@ -82,7 +82,8 @@ Based on the [Key Changes](./#key-changes) outlined above update all Konstrukt r
 
 ## Step 3: Update your configuration
 
-If all your configuration is in a single statement, it should just be a cause of swapping `AddKonstrukt` to `AddUIBuilder`. If you have broken your configuration up into multiple steps, or you are using `Action` or `Card` classes, you will need to update the config builder classes / base classes to their UI Builder alternative names as detailed in [Key Changes](./#key-changes).
+If all your configuration is in a single statement, it would be a case of swapping `AddKonstrukt` to `AddUIBuilder`. If you broke your configuration into multiple steps, or are using `Action` or `Card` classes, you will need to update the config builder/base classes. Those classes need to be updated to their UI Builder alternative names as detailed in [Key Changes](./#key-changes).
+
 
 ```csharp
 public class Startup
