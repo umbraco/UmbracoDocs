@@ -32,7 +32,11 @@ import { UMB_AUTH, UmbLoggedInUser } from '@umbraco-cms/backoffice/auth';
 ```
 {% endcode %}
 
-Now that we have the Auth token, we can consume it in the constructor to obtain the current user. We do this using the `consumeContext` method, which is available on our element because we extended using `UmbElementMixin`. Add the following to the element implementation:
+Now that we have the Auth token, we can consume it in the constructor to obtain the current user. We do this using the `consumeContext` method, which is available on our element because we extended using `UmbElementMixin`. Add the following to the element implementation as the first thing in the `export class MyWelcomeDashboardElement`:
+
+{% hint style="info" %}
+The entire welcome-dashbord.element.ts file is available for reference at the end of the step to confirm your placement for code snippets.
+{% endhint %}
 
 {% code title="welcome-dashboard.element.ts" %}
 ```typescript
