@@ -1,6 +1,6 @@
 # Database
 
-In order for you to be able to work with your Cloud database, there are a few steps you will need to do. You will need to do these steps before you are able to work with it locally. This article will go through the needed steps. At the end of the article you will be ready to start working with the database.
+In order for you to be able to work with your Cloud database, there are a few steps you will need to do. At the end of the article, you will be ready to start working with the database.
 
 ## Connecting to your Cloud database locally
 
