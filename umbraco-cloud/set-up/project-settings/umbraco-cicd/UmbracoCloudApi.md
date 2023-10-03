@@ -20,7 +20,7 @@ The initial certificate for this DNS is self-signed which can give curl and othe
 ### How to enable CI/CD Integrator in the Umbraco Cloud Portal
 To authenticate with the Umbraco Cloud API, you'll need your Project ID and API Key. These credentials can be found in your cloud project under the 'Settings' tab, and then navigating to the 'Advanced' page.
 
-<IMG  src="https://umbraco.com/media/y2wiebnp/umbraco-cloud-enable-cicd_1042x582px.jpg?quality=80"  alt="Umbraco Cloud Enable CICD 1042X582px"/>
+![CI/CD Flow settings](../../images/TBD.png)
 
 The two elements to be used for the authentication are:
 - **Cloud Project ID**: The ID of your Umbraco project.
@@ -318,7 +318,7 @@ Currently, the feature to transition from a development environment to staging o
 When working with the API-key, several types of errors can occur. The API-key is project-specific, meaning it can only be used to update a particular project. The content of the error message will vary depending on the nature of the issue. Here are a few examples:
 
 Invalid API-key - this is usually a bad configuration on the Umbraco side of things:
-![errorCodeExample.png](/.attachments/errorCodeExample-d2c8b938-ba70-402b-a2ba-6963987d20e4.png)
+![Https status 401 error code example](../../images/errorCodeExample.png)
 
 Invalid API-key - this is usually a bad configuration on the Umbraco side of things:
-![errorCodeExample2.png](/.attachments/errorCodeExample2-1b1dc3a7-aed0-4044-a3b3-c01d5906a8cb.png)
+![Https status 401 error code example 2](../../images/errorCodeExample2.png)
