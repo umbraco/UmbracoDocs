@@ -63,4 +63,4 @@ By setting this to true, you specify that the models directory is allowed to be 
 
 ## Debug level
 
-This setting specifies the logging level for the models builder, by default this is set to 0, which means minimal logging, anything higher that 0 means increased logging. Be aware that this setting should only be set to something higher than 0 for development use, not on live sites.
+This setting specifies the logging level for the models builder. By default this is set to 0, which means minimal logging. Anything higher that 0 means increased logging. Be aware that this setting should only be set to something higher than 0 for development use, not on live sites.
