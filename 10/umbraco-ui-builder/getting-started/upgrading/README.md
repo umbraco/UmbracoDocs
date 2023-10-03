@@ -10,6 +10,7 @@ Before upgrading, it is always advisable to take a complete backup of your site 
 ## Get the latest version of Umbraco UI Builder
 
 To upgrade to the latest version of Umbraco UI Builder you can use:
+
 - NuGet
 - Visual Studio
 
@@ -26,6 +27,7 @@ To upgrade to the latest version of Umbraco UI Builder you can use:
 2. Select **Umbraco.UIBuilder**.
 3. Select the latest version from the Version drop-down and click Install.
 4. When the command completes, open the **.csproj** file to make sure the package reference is updated:
+
 ```xml
 <ItemGroup>
   <PackageReference Include="Umbraco.UIBuilder" Version="xx.x.x" />

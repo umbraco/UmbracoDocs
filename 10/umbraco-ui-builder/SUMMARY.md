@@ -17,7 +17,7 @@
 ## How-to Guides
 
 * [Creating your first integration](guides/creating-your-first-integration.md)
-* [Migrate from Konstrukt to Umbraco UI Builder](guides/migrate-from-konstrukt-to-umbraco-ui-builder.md)
+* [Migrate from Konstrukt to Umbraco UI Builder](guides/migrating-from-konstrukt-to-umbraco-ui-builder.md)
 
 ## Areas
 
