@@ -74,7 +74,7 @@ rmdir App_Plugins\Konstrukt
 dotnet add package Umbraco.UIBuilder
 ```
 
-4. Compile your project against .NET 8.0.
+4. Compile your project against .NET 7.0.
 
 ## Step 2: Update namespaces and entity names
 
