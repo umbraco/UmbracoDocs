@@ -26,7 +26,7 @@ The segments are created by the "Url Segment provider"
 
 The DI container of an Umbraco implementation contains a collection of `UrlSegmentProviders`. This collection is populated during Umbraco boot up. Umbraco ships with a 'DefaultUrlSegmentProvider' - but custom implementations can be added to the collection.
 
-When the `GetUrlSegment` extension method is called for a content item + culture combination, each registered `IUrlSegmentProvider` in the collection is executed in 'collection order' until a particular `UrlSegmentProvider` returns a segment value for the content, and no further `UrlSegmentProviders` in the collection will be executed. If no segment is returned by any provider in the collection a `DefaultUrlSegmentProvider` will be used to create a segment - this is done to ensure that a segment will always be created, in case the default provider was removed from the collection without a new being added or something similar.
+When the `GetUrlSegment` extension method is called for a content item + culture combination, each registered `IUrlSegmentProvider` in the collection is executed in 'collection order'. This continues until a particular `UrlSegmentProvider` returns a segment value for the content, and no further `UrlSegmentProviders` in the collection will be executed. If no segment is returned by any provider in the collection a `DefaultUrlSegmentProvider` will be used to create a segment. This ensures that a segment is always created, like when a default provider is removed from a collection without a new one being added.
 
 To create a new Url Segment Provider, implement the following interface:
 
@@ -78,7 +78,7 @@ namespace RoutingDocs.SegmentProviders
 
 The returned string becomes the native Url segment - there is no need for any Url rewriting.
 
-For our "swibble" product in our example content tree, the `ProductPageUrlSegmentProvider` would return a segment "swibble--123xyz" (where 123xyz is the unique product sku/reference for the swibble product).
+For our "swibble" product in our example content tree, the `ProductPageUrlSegmentProvider` would return a segment "swibble--123xyz". In this case, 123xyz is the unique product sku/reference for the swibble product.
 
 Register the custom UrlSegmentProvider with Umbraco, either using a composer or an extension method on the `IUmbracoBuilder`:
 
