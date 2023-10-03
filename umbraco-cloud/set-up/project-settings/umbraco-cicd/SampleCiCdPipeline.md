@@ -174,7 +174,7 @@ These changes are also synchronized to the Umbraco Cloud Git repositories. The r
 Once changes have been made and tested in the Development environment, you can deploy them to the Live environment using Umbraco Cloud's standard deployment process. Simply click the green "Deploy Change to Live" button to initiate this.
 
 **Changes Deployed to the Live Environment**  
-![Changes Deployed to the Live Environment](../../images/UmbracoCloudDemoSite5.png)
+![Changes Deployed to the Live Environment](../../images/UmbracoCloudDemoSite6.png)
 
 
 ## Sample scripts
