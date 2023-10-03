@@ -14,10 +14,20 @@ In this section, you can find the release notes for each version of Umbraco UI B
 
 <details>
 
+<summary>Version 12</summary>
+
+[**12.0.0**](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.0) **(Date TBD)**
+
+* Initial product launch.
+
+</details>
+
+<details>
+
 <summary>Version 10</summary>
 
-#### [10.0.0](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.0) (Date TBD)
+[**10.0.0**](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.0) **(Date TBD)**
 
-* Initial product launch.&#x20;
+* Initial product launch.
 
 </details>
