@@ -12,7 +12,7 @@ A folder can appear in either a tree or as a sub folder to other folders. Folder
 
 You can define a folder by calling one of the `AddFolder` methods on a given [`Tree`](trees.md) or parent `Folder` config builder instance.
 
-### **AddFolder(string name, Lambda folderConfig = null) : KonstruktFolderConfigBuilder**
+### **AddFolder(string name, Lambda folderConfig = null) : FolderConfigBuilder**
 
 Adds a folder to the current tree with the given name and a default folder icon.
 
@@ -23,7 +23,7 @@ treeConfig.AddFolder("Settings", folderConfig => {
 });
 ````
 
-### **AddFolder(string name, string icon, Lambda folderConfig = null) : KonstruktFolderConfigBuilder**
+### **AddFolder(string name, string icon, Lambda folderConfig = null) : FolderConfigBuilder**
 
 Adds a folder to the current tree with the given name + icon.
 
@@ -36,7 +36,7 @@ treeConfig.AddFolder("Settings", "icon-settings", folderConfig => {
 
 ## Changing a folder alias
 
-### **SetAlias(string alias) : KonstruktFolderConfigBuilder**
+### **SetAlias(string alias) : FolderConfigBuilder**
 
 Sets the alias of the folder.  
 
@@ -49,7 +49,7 @@ folderConfig.SetAlias("settings");
 
 ## Changing a folder icon color
 
-### **SetIconColor(string color) : KonstruktFolderConfigBuilder**
+### **SetIconColor(string color) : FolderConfigBuilder**
 
 Sets the folder icon color to the given color. The options that are possible are `black`, `green`, `yellow`, `orange`, `blue` or `red`.
 
@@ -60,7 +60,7 @@ folderConfig.SetIconColor("blue");
 
 ## Adding a sub folder to a folder
 
-### **AddFolder (string name, Lambda folderConfig = null) : KonstruktFolderConfigBuilder**
+### **AddFolder (string name, Lambda folderConfig = null) : FolderConfigBuilder**
 
 Adds a sub folder to the current folder with the given name and a default folder icon.
 
@@ -71,7 +71,7 @@ folderConfig.AddFolder("Categories", subFolderConfig => {
 });
 ````
 
-### **AddFolder (string name, string icon, Lambda folderConfig = null) : KonstruktFolderConfigBuilder**
+### **AddFolder (string name, string icon, Lambda folderConfig = null) : FolderConfigBuilder**
 
 Adds a sub folder to the current folder with the given name + icon.
 
@@ -84,7 +84,7 @@ folderConfig.AddFolder("Categories", "icon-tags", subFolderConfig => {
 
 ## Adding a collection to a folder
 
-### **AddCollection&lt;TEntityType&gt;(Lambda idFieldExpression, string nameSingular, string namePlural, string description, Lambda collectionConfig = null) : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
+### **AddCollection&lt;TEntityType&gt;(Lambda idFieldExpression, string nameSingular, string namePlural, string description, Lambda collectionConfig = null) : CollectionConfigBuilder&lt;TEntityType&gt;**
 
 Adds a collection to the current folder with the given names, descriptions, and default icons. An ID property accessor expression is required so that Umbraco UI Builder knows which property is the ID property. For more information check the [Collections documentation](../collections/overview.md).
 
@@ -95,7 +95,7 @@ folderConfig.AddCollection<Person>(p => p.Id, "Person", "People", "A collection 
 });
 ````
 
-### **AddCollection&lt;TEntityType&gt;(Lambda idFieldExpression, string nameSingular, string namePlural, string description, string iconSingular, string iconPlural, Lambda collectionConfig = null) : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
+### **AddCollection&lt;TEntityType&gt;(Lambda idFieldExpression, string nameSingular, string namePlural, string description, string iconSingular, string iconPlural, Lambda collectionConfig = null) : CollectionConfigBuilder&lt;TEntityType&gt;**
 
 Adds a collection to the current folder with the given names, description and icons. An ID property accessor expression is required so that Umbraco UI Builder knows which property is the ID property. For more information check the [Collections documentation](../collections/overview.md).
 

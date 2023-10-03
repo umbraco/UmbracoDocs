@@ -12,7 +12,7 @@ A summary dashboard is automatically displayed at the root of a defined Umbraco 
 
 Showing a collection in the summary dashboard is controlled via the collection configuration.
 
-### **ShowOnSummaryDashboard() : KonstruktCollectionConfigBuilder&lt;TEntityType&gt;**
+### **ShowOnSummaryDashboard() : CollectionConfigBuilder&lt;TEntityType&gt;**
 
 Sets the collection to display on the summary dashboard.
 

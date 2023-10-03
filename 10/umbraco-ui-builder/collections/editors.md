@@ -12,7 +12,7 @@ An editor is the user interface used to edit an entity and is made up of tabs an
 
 The editor configuration is a sub-configuration of a [`Collection`](the-basics.md) config builder instance and is accessed via its `Editor` method.
 
-### **Editor(Lambda editorConfig = null) : KonstruktEditorConfig&lt;TEntityType&gt;**
+### **Editor(Lambda editorConfig = null) : EditorConfig&lt;TEntityType&gt;**
 
 Accesses the editor config of the given collection.
 
@@ -25,7 +25,7 @@ collectionConfig.Editor(editorConfig => {
 
 ## Adding a tab to an editor
 
-### **AddTab(string name, Lambda tabConfig = null) : KonstruktEditorTabConfigBuilder&lt;TEntityType&gt;**
+### **AddTab(string name, Lambda tabConfig = null) : EditorTabConfigBuilder&lt;TEntityType&gt;**
 
 Adds a tab to the editor.
 
@@ -40,7 +40,7 @@ editorConfig.AddTab("General", tabConfig => {
 
 A slidebar is a smaller area that is displayed to the right of the main editor. The sidebar can also contain fieldsets and fields in the same way tabs can. However, it is a much more limited display area so you'll need to choose your field types carefully. The sidebar is a great location to display entity metadata.
 
-### **Sidebar(Lambda sidebarConfig = null) : KonstruktEditorTabSidebarConfigBuilder&lt;TEntityType&gt;**
+### **Sidebar(Lambda sidebarConfig = null) : EditorTabSidebarConfigBuilder&lt;TEntityType&gt;**
 
 Configures the sidebar for the tab.
 
@@ -53,18 +53,18 @@ tabConfig.Sidebar(sidebarConfig => {
 
 ## Setting the visibility of a tab
 
-### **SetVisibility(Predicate&lt;KonstruktEditorTabVisibilityContext&gt; visibilityExpression) : KonstruktEditorTabConfigBuilder&lt;TEntityType&gt;**
+### **SetVisibility(Predicate&lt;EditorTabVisibilityContext&gt; visibilityExpression) : EditorTabConfigBuilder&lt;TEntityType&gt;**
 
 Sets the runtime visibility of the tab.
 
 ````csharp
 // Example
-tabConfig.SetVisibility(ctx => ctx.EditorMode == KonstruktEditorMode.Create);
+tabConfig.SetVisibility(ctx => ctx.EditorMode == EditorMode.Create);
 ````
 
 ## Adding a fieldset to a tab
 
-### **AddFieldset(string name, Lambda fieldsetConfig = null) : KonstruktEditorFieldsetConfigBuilder&lt;TEntityType&gt;**
+### **AddFieldset(string name, Lambda fieldsetConfig = null) : EditorFieldsetConfigBuilder&lt;TEntityType&gt;**
 
 Adds the given fieldset to the tab.
 
@@ -77,18 +77,18 @@ tabConfig.AddFieldset("Contact", fieldsetConfig => {
 
 ## Setting the visibility of a fieldset
 
-### **SetVisibility(Predicate&lt;KonstruktEditorFieldsetVisibilityContext&gt; visibilityExpression) : KonstruktEditorFieldsetConfigBuilder&lt;TEntityType&gt;**
+### **SetVisibility(Predicate&lt;EditorFieldsetVisibilityContext&gt; visibilityExpression) : EditorFieldsetConfigBuilder&lt;TEntityType&gt;**
 
 Sets the runtime visibility of the fieldset.
 
 ````csharp
 // Example
-fieldsetConfig.SetVisibility(ctx => ctx.EditorMode == KonstruktEditorMode.Create);
+fieldsetConfig.SetVisibility(ctx => ctx.EditorMode == EditorMode.Create);
 ````
 
 ## Adding a field to a fieldset
 
-### **AddField(Lambda propertyExpression, Lambda propertyConfig = null) : KonstruktEditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### **AddField(Lambda propertyExpression, Lambda propertyConfig = null) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
 
 Adds the given property to the editor.
 
@@ -103,7 +103,7 @@ fieldsetConfig.AddField(p => p.FirstName, fieldConfig => {
 
 By default, Umbraco UI Builder will build the label from the property name, including splitting camel case names into sentence cases. However, you can set an explicit label if preferred.
 
-### **SetLabel(string label) : KonstruktEditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### **SetLabel(string label) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
 
 Sets the label for the editor field.
 
@@ -116,7 +116,7 @@ fieldConfig.SetLabel("First Name");
 
 Sometimes you may have a field editor that would work better in full width. You can achieve this by explicitly hiding the field label.
 
-### **HideLabel() : KonstruktEditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### **HideLabel() : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
 
 Hides the label for the editor field.
 
@@ -127,7 +127,7 @@ fieldConfig.HideLabel();
 
 ## Adding a description to a field
 
-### **SetDescription(string description) : KonstruktEditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### **SetDescription(string description) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
 
 Sets the description for the editor field.
 
@@ -140,7 +140,7 @@ fieldConfig.SetDescription("Enter your age in years");
 
 By default, Umbraco UI Builder will automatically choose a relevant Data Type for basic field types. However, if you wish to use an alternative Data Type then you can override this.
 
-### **SetDataType(string dataTypeName) : KonstruktEditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### **SetDataType(string dataTypeName) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
 
 Set the Data Type of the current field to the Umbraco Data Type with the given name.
 
@@ -149,7 +149,7 @@ Set the Data Type of the current field to the Umbraco Data Type with the given n
 fieldConfig.SetDataType("Richtext Editor");
 ````
 
-### **SetDataType(int dataTypeId) : KonstruktEditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### **SetDataType(int dataTypeId) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
 
 Set the Data Type of the current field to the Umbraco Data Type with the given id.
 
@@ -160,7 +160,7 @@ fieldConfig.SetDataType(-88);
 
 ## Setting the default value of a field
 
-### **SetDefaultValue(TValueType defaultValue) : KonstruktEditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### **SetDefaultValue(TValueType defaultValue) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
 
 Sets the default value to a known constant.
 
@@ -169,7 +169,7 @@ Sets the default value to a known constant.
 fieldConfig.SetDefaultValue(10);
 ````
 
-### **SetDefaultValue(Func<TValueType> defaultValueFunc) : KonstruktEditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### **SetDefaultValue(Func<TValueType> defaultValueFunc) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
 
 Sets the default value via a function that gets evaluated at time of entity creation.
 
@@ -180,7 +180,7 @@ fieldConfig.SetDefaultValue(() => DateTime.Now);
 
 ## Making a field required
 
-### **MakeRequired() : KonstruktEditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### **MakeRequired() : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
 
 Makes the given field required.
 
@@ -191,7 +191,7 @@ fieldConfig.MakeRequired();
 
 ## Validating a field
 
-### **SetValidationRegex(string regex) : KonstruktEditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### **SetValidationRegex(string regex) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
 
 Defines the regular expression to use when validating the field.
 
@@ -202,7 +202,7 @@ fieldConfig.SetValidationRegex("[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}");
 
 ## Making a field read-only
 
-### **MakeReadOnly() : KonstruktEditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### **MakeReadOnly() : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
 
 Makes the current field read-only disabling editing in the UI.
 
@@ -211,7 +211,7 @@ Makes the current field read-only disabling editing in the UI.
 fieldConfig.MakeReadOnly();
 ````
 
-### **MakeReadOnly(Func&lt;TValueType, string&gt; format) : KonstruktEditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### **MakeReadOnly(Func&lt;TValueType, string&gt; format) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
 
 Makes the current field read-only disabling editing in the UI. Provides a custom formatting expression to use when rendering the value as a string.
 
@@ -220,7 +220,7 @@ Makes the current field read-only disabling editing in the UI. Provides a custom
 fieldConfig.MakeReadOnly(distanceProp => $"{distanceProp:## 'km'}");
 ````
 
-### **MakeReadOnly(object dataTypeNameOrId) : KonstruktEditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### **MakeReadOnly(object dataTypeNameOrId) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
 
 Makes the current field read-only disabling editing in the UI. Provides the name or id of a datatype to use when in read-only mode.
 
@@ -229,40 +229,40 @@ Makes the current field read-only disabling editing in the UI. Provides the name
 fieldConfig.MakeReadOnly("myReadOnlyEditor");
 ````
 
-### **MakeReadOnly(Predicate&lt;KonstruktEditorFieldReadOnlyContext&gt; readOnlyExp) : KonstruktEditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### **MakeReadOnly(Predicate&lt;EditorFieldReadOnlyContext&gt; readOnlyExp) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
 
 Makes the current field read-only disabling editing in the UI if the given runtime predicate is true.
 
 ````csharp
 // Example
-fieldConfig.MakeReadOnly(ctx => ctx.EditorMode == KonstruktEditorMode.Create);
+fieldConfig.MakeReadOnly(ctx => ctx.EditorMode == EditorMode.Create);
 ````
 
-### **MakeReadOnly(Predicate&lt;KonstruktEditorFieldReadOnlyContext&gt; readOnlyExp, Func&lt;TValueType, string&gt; format) : KonstruktEditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### **MakeReadOnly(Predicate&lt;EditorFieldReadOnlyContext&gt; readOnlyExp, Func&lt;TValueType, string&gt; format) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
 
 Makes the current field read-only disabling editing in the UI if the given runtime predicate is true. Provides a custom formatting expression to use when rendering the value as a string.
 
 ````csharp
 // Example
-fieldConfig.MakeReadOnly(ctx => ctx.EditorMode == KonstruktEditorMode.Create, distanceProp => $"{distanceProp:## 'km'}");
+fieldConfig.MakeReadOnly(ctx => ctx.EditorMode == EditorMode.Create, distanceProp => $"{distanceProp:## 'km'}");
 ````
 
-### **MakeReadOnly(Predicate&lt;KonstruktEditorFieldReadOnlyContext&gt; readOnlyExp, object dataTypeNameOrId) : KonstruktEditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### **MakeReadOnly(Predicate&lt;EditorFieldReadOnlyContext&gt; readOnlyExp, object dataTypeNameOrId) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
 
 Makes the current field read-only disabling editing in the UI if the given runtime predicate is true. Provides the name or id of a datatype to use when in read-only mode.
 
 ````csharp
 // Example
-fieldConfig.MakeReadOnly(ctx => ctx.EditorMode == KonstruktEditorMode.Create, "myReadOnlyEditor");
+fieldConfig.MakeReadOnly(ctx => ctx.EditorMode == EditorMode.Create, "myReadOnlyEditor");
 ````
 
 ## Setting the visibility of a field
 
-### **SetVisibility(Predicate&lt;KonstruktEditorFieldVisibilityContext&gt; visibilityExpression) : KonstruktEditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### **SetVisibility(Predicate&lt;EditorFieldVisibilityContext&gt; visibilityExpression) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
 
 Sets the runtime visibility of the field.
 
 ````csharp
 // Example
-fieldConfig.SetVisibility(ctx => ctx.EditorMode == KonstruktEditorMode.Create);
+fieldConfig.SetVisibility(ctx => ctx.EditorMode == EditorMode.Create);
 ````

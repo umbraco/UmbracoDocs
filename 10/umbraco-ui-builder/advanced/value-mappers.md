@@ -10,11 +10,11 @@ When Umbraco UI Builder resolves a value mapper it will attempt to do so from th
 
 ## Defining a value mapper
 
-To define a mapper create a class that inherits from the base class `KonstruktValueMapper` and implements the methods `EditorToModel` and `ModelToEditor`.
+To define a mapper create a class that inherits from the base class `ValueMapper` and implements the methods `EditorToModel` and `ModelToEditor`.
 
 ````csharp
 // Example
-public class MyValueMapper : KonstruktValueMapper
+public class MyValueMapper : ValueMapper
 {
     public override object EditorToModel(object input)
     {
@@ -34,7 +34,7 @@ public class MyValueMapper : KonstruktValueMapper
 
 Value mappers are defined as part of a collection editor field configuration.
 
-### **SetValueMapper&lt;TMapperType&gt;() : KonstruktEditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### **SetValueMapper&lt;TMapperType&gt;() : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
 
 Set the value mapper for the current field.
 
@@ -43,7 +43,7 @@ Set the value mapper for the current field.
 fieldConfig.SetValueMapper<MyValueMapper>();
 ````
 
-### **SetValueMapper(Type mapperType) : KonstruktEditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### **SetValueMapper(Type mapperType) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
 
 Set the value mapper for the current field.
 
@@ -52,7 +52,7 @@ Set the value mapper for the current field.
 fieldConfig.SetValueMapper(typeof(MyValueMapper));
 ````
 
-### **SetValueMapper(KonstruktMapper mapper) : KonstruktEditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
+### **SetValueMapper(Mapper mapper) : EditorFieldConfigBuilder&lt;TEntityType, TValueType&gt;**
 
 Set the value mapper for the current field.
 
