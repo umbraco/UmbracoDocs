@@ -39,7 +39,7 @@ public interface IUrlSegmentProvider
 
 Note each 'culture' variation can have a different Url Segment!
 
-The returned string will be the Url Segment for this node. Any string value can be returned here but it cannot contain the url segment separator character `/` as this would create additional "segments" - something like `5678/swibble` is not allowed.
+The returned string will be the Url Segment for this node. Any string value can be returned here but it cannot contain the URL segment separator character `/`. This would create additional "segments" - something like `5678/swibble` is not allowed.
 
 #### Example
 
