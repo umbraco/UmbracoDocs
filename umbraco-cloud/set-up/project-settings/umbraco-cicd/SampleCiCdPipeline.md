@@ -1,4 +1,4 @@
-# Getting started
+# Getting started with configuring a CI/CD pipeline
 
 Learn how to configure a CI/CD pipeline in Azure DevOps and GitHub Actions Workflows using the scripts provided.
 
