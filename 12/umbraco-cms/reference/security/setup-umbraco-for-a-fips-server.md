@@ -3,7 +3,7 @@
 _This tutorial walks through configuring Umbraco and Lucene to be FIPS compliant and serve up websites on a server with FIPS enabled._
 
 {% hint style="warning" %}
-FIPS should only be added for compliance. It is **NOT** a recommended approach for added security. For more information read [Why Microsoft is not recommending "FIPS Mode" anymore.](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/why-we-8217-re-not-recommending-8220-fips-mode-8221-anymore/ba-p/701037)
+FIPS should only be added for compliance. It is **not** a recommended approach for added security. For more information read [Why Microsoft is not recommending "FIPS Mode" anymore.](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/why-we-8217-re-not-recommending-8220-fips-mode-8221-anymore/ba-p/701037)
 {% endhint %}
 
 ## What is FIPS?

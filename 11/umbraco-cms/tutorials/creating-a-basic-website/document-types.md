@@ -36,7 +36,7 @@ With the help of icons, you can identify different Document Types in the **Conte
 1.  Select the icon placeholder next to the document name. The **Select Icon** dialog appears on the right-side of the website.
 
     ![Selecting an icon](images/figure-9-adding-an-icon-to-document-type-v11.png)
-2. Browse through the icon list and selct the icon of your choice.
+2. Browse through the icon list and select the icon of your choice.
 3. Click **Submit**.
 
 ### Setting Permissions

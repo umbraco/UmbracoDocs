@@ -39,6 +39,7 @@
 * [Extending](developer/extending/README.md)
   * [Adding A Type To The Provider Model](developer/extending/adding-a-type.md)
   * [Adding A Field Type To Umbraco Forms](developer/extending/adding-a-fieldtype.md)
+    * [Excluding a built-in field](developer/extending/excluding-a-built-in-field.md)
   * [Adding A Prevalue Source Type To Umbraco Forms](developer/extending/adding-a-prevaluesourcetype.md)
   * [Adding A Workflow Type To Umbraco Forms](developer/extending/adding-a-workflowtype.md)
   * [Adding An Export Type To Umbraco Forms](developer/extending/adding-a-exporttype.md)

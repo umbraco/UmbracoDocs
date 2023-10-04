@@ -16,7 +16,7 @@ You can copy a page in two ways:
 
     ![Copy Option 1](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Copy-options-v9.png)
 4. Toggle **Relate to original** button if you want to keep the links linked to the original page.
-5. Toggle **Include descendants** if you want to copy the child pages alongwith the parent page.
+5. Toggle **Include descendants** if you want to copy the child pages alongside the parent page.
 6. Click **Copy**.
 7. A confirmation message appears. Click **OK** to dismiss the confirmation message.
 
@@ -32,7 +32,7 @@ You can copy a page in two ways:
 
     ![Copy Option 1](../../../../../10/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Copy-options-v9.png)
 6. Toggle **Relate to original** button if you want to keep the links linked to the original page.
-7. Toggle **Include descendants** if you want to copy the child pages alongwith the parent page.
+7. Toggle **Include descendants** if you want to copy the child pages alongside the parent page.
 8. Click **Copy**.
 9. A confirmation message appears. Click **OK** to dismiss the confirmation message.
 

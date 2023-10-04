@@ -1,13 +1,15 @@
 # Table of contents
 
-* [Introduction](introduction.md)
+* [Introduction](README.md)
 
 ## Infrastructure
+
 * [Hosting](infrastructure/hosting.md)
 * [Architecture](infrastructure/architecture.md)
 * [Security and Bots](infrastructure/security-and-bots.md)
 
 ## Backend
+
 * [Upgrades and patches](backend/upgrades-and-patches.md)
 * [Cache responses](backend/cache-responses.md)
 * [Sustainable Design Patterns](backend/sustainable-design-patterns.md)
@@ -21,6 +23,7 @@
 * [Background tasks](backend/background-tasks.md)
 
 ## Frontend
+
 * [Page weight budget](frontend/page-weight-budgets.md)
 * [Image optimization](frontend/image-optimisation.md)
 * [Asset optimization](frontend/assets-optimisation.md)
@@ -29,6 +32,7 @@
 * [Mobile first](frontend/mobile-first.md)
 
 ## Editor
+
 * [Content Types](editor/content-types.md)
 * [Content Optimization](editor/content-optimisation.md)
 * [Design Choices](editor/design-choices.md)

@@ -23,6 +23,7 @@ exceptions:
   - MVC
   - GET
   - ASP
+  - ADO
   - REST
   - HTTP
   - HTTPS
@@ -62,4 +63,20 @@ exceptions:
   - RGBA
   - IDE
   - CPU
+  - RAM
+  - CNAME
+  - AAAA
+  - TXT
+  - PUT
+  - DELETE
+  - ZIP
+  - CTRL
+  - SPACE
+  - ENTER
+  - VIP
+  - DEBUG
+  - INFO
+  - TEMP
+  - GIF
+  - GDPR
   - NPM
