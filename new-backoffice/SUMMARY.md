@@ -60,5 +60,5 @@
   * [Extending the Dashboard using Umbraco UI library](tutorials/creating-a-custom-dashboard/extending-the-dashboard-using-umbraco-ui-library.md)
 * [Creating a Property Editor](tutorials/creating-a-property-editor/README.md)
   * [Adding configuration to a Property Editor](tutorials/creating-a-property-editor/adding-configuration-to-a-property-editor.md)
-  * [Integrating services with a Property Editor](tutorials/creating-a-property-editor/integrating-services-with-a-property-editor.md)
+  * [Integrating context with a Property Editor](tutorials/creating-a-property-editor/integrating-context-with-a-property-editor.md)
 * [Write your own Context API](tutorials/write-your-own-context.md)

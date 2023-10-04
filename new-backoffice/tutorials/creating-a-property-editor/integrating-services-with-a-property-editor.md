@@ -1,4 +1,4 @@
-# Integrating services with a Property Editor
+# Integrating Contexts with a Property Editor
 
 {% hint style="info" %}
 This page is a work in progress. It will be updated as the software evolves.
@@ -6,7 +6,7 @@ This page is a work in progress. It will be updated as the software evolves.
 
 ### Overview
 
-This is step 3 in the Property Editor tutorial. In this part, we will integrate one of the built-in Umbraco Services. For this sample, we will use the `UmbNotificationContext` for some pop-ups and the `UmbModalManagerContext`. This is to show a dialog when clicking the Trim button and the textbox's input length is longer than the maxChars configuration.
+This is step 3 in the Property Editor tutorial. In this part, we will integrate one of the built-in Umbraco Contexts. For this sample, we will use the `UmbNotificationContext` for some pop-ups and the `UmbModalManagerContext`. This is to show a dialog when clicking the Trim button and the textbox's input length is longer than the maxChars configuration.
 
 ### Setting up and using the contexts
 
@@ -136,11 +136,9 @@ It should look like this:
 <summary>property-editor-ui-suggestions.element.ts</summary>
 
 ```typescript
-import { LitElement, css, html } from "lit";
-import { customElement, property, state } from "lit/decorators.js";
+import { LitElement, css, html, customElement, property, state, ifDefined } from "@umbraco-cms/backoffice/external/lit";
 import { type UmbPropertyEditorExtensionElement } from "@umbraco-cms/backoffice/extension-registry";
 import { type UmbPropertyEditorConfigCollection } from "@umbraco-cms/backoffice/property-editor";
-import { ifDefined } from "lit/directives/if-defined.js";
 import {
     UMB_MODAL_MANAGER_CONTEXT_TOKEN,
     UMB_CONFIRM_MODAL,
