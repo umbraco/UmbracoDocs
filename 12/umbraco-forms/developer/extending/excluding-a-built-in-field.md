@@ -1,7 +1,7 @@
 # Excluding a Built-in Field
 
 Umbraco Forms comes with some built-in fields however it is possible to exclude/remove them if necessary.
-There might some use cases where you have no use for file upload and don't want editors using them. Or it could be there's some new functionality you need you want to build yourself.
+There might some use cases where you have no use for file upload and don't want editors using them. Or perhaps you want to remove a field to replace it with one with enhanced functionality that you build yourself.
 
 ## Example
 
