@@ -10,7 +10,7 @@ public class EmailTemplateSaveDto : EmailTemplateDto, IValidatableObject
 
 **Inheritance**
 
-* class [EmailTemplateDto](emailtemplatedto.md)
+* Class [EmailTemplateDto](emailtemplatedto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

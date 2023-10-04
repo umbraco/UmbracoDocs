@@ -11,7 +11,7 @@ public abstract class ProductAttributeNotificationEventBase<TEntity> : Notificat
 
 **Inheritance**
 
-* class [NotificationEventBase](../../umbraco-commerce-common/umbraco-commerce-common-events/notificationeventbase.md)
+* Class [NotificationEventBase](../../umbraco-commerce-common/umbraco-commerce-common-events/notificationeventbase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

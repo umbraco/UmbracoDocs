@@ -10,7 +10,7 @@ public class GiftCardsAmountAdjuster : AmountAdjusterBase
 
 **Inheritance**
 
-* class [AmountAdjusterBase](amountadjusterbase.md)
+* Class [AmountAdjusterBase](amountadjusterbase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Adjusters](README.md)

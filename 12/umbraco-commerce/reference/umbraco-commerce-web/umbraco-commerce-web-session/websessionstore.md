@@ -10,7 +10,7 @@ public class WebSessionStore : WebStoreBase, ISessionStore
 
 **Inheritance**
 
-* class [WebStoreBase](webstorebase.md)
+* Class [WebStoreBase](webstorebase.md)
 * interface [ISessionStore](../../umbraco-commerce-core/umbraco-commerce-core-session/isessionstore.md)
 
 **Namespace**

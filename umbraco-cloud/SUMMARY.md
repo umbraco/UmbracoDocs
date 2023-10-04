@@ -17,7 +17,6 @@
   * [Pushing Upgrades to a Child Project](getting-started/baselines/upgrading-child-projects.md)
 * [Plans](getting-started/umbraco-cloud-plans.md)
 * [Migrating an Existing Site](getting-started/migrate-existing-site/README.md)
-  * [Migrating Users to Umbraco Cloud](getting-started/migrate-existing-site/migrating-users-to-umbraco-cloud.md)
 * [Repositories in a Cloud Project](getting-started/git-repository-in-a-cloud-project.md)
 * [Best Practice for Working in Teams](getting-started/team-workflow-on-cloud.md)
 * [Migrate between regions](getting-started/migrate-between-regions.md)

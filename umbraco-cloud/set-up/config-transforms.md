@@ -16,6 +16,12 @@ Config Transforms are a way to transform your config files without changing the 
 
 To transform a config file, you need to create a new file in your project with the following naming convention: `{config-file name}.{environment}.config`.
 
+{% hint style="info" %}
+**Legacy Umbraco**
+
+If your project is on Umbraco 7 and 8 the naming convention is the following: `{config-file name}.{environment}.xdt.config.` Find more details on this in the [Legacy Documentation](https://github.com/umbraco/UmbracoDocs/blob/legacy-cloud/Umbraco-Cloud/Set-Up/Config-Transforms/index.md).
+{% endhint %}
+
 If you want to do a transform on your `Web.config` file for the Live environment of your project, the config transform you need to create will look like this:
 
 `Web.Production.config`

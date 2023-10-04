@@ -1,11 +1,9 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
-meta.Title: "Umbraco configuration"
-description: "Information on configuring Umbraco"
+meta.Title: Umbraco configuration
+description: Information on configuring Umbraco
 ---
 
-# Configuration Files
+# Configuration
 
 In Umbraco 9+, we have moved away from the previous configuration using `.config` files, to instead using the .NET built-in configuration pattern. This means that there is no longer separate files for different configuration, the configuration is now primarily done using `IConfiguration` with diffent sources. E.g. The `appsettings.json` file.
 
@@ -61,7 +59,7 @@ Now it's possible to store the connection string with this command:
 
 `dotnet user-secrets set "ConnectionStrings:umbracoDbDSN" "CONNECTION_STRING_IN_HERE"`
 
-The name of the key is created in the same way as in the [Command Line](#using-command-line-arguments-configuration) example above, and thus corresponds to this JSON chunk:
+The name of the key is created in the same way as in the [Command Line](./#using-command-line-arguments-configuration) example above, and thus corresponds to this JSON chunk:
 
 ```json
 "ConnectionStrings": {
@@ -121,6 +119,7 @@ A complete list of all the configuration sections included in Umbraco, by defaul
 * [Health checks settings](healthchecks.md)
 * [Hosting settings](hostingsettings.md)
 * [Imaging settings](imagingsettings.md)
+* [Indexing settings](indexingsettings.md)
 * [Install default data setting](installdefaultdatasettings.md)
 * [Keep alive settings](keepalivesettings.md)
 * [Logging settings](loggingsettings.md)
@@ -142,4 +141,4 @@ A complete list of all the configuration sections included in Umbraco, by defaul
 
 ## Configured by code
 
-* [FileSystemProviders](filesystemProviders.md)
+* [FileSystemProviders](filesystemproviders.md)

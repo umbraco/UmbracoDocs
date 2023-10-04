@@ -1,5 +1,5 @@
 ---
-versionFrom: 9.0.0
+
 meta.Title: "Working with the runtime cache in Umbraco"
 description: "Information on how to insert and delete from the runtime cache"
 ---

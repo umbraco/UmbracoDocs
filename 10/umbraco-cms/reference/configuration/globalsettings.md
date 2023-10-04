@@ -1,5 +1,5 @@
 ---
-versionFrom: 10.0.0
+
 meta.Title: Umbraco Global Settings
 description: Information on the global settings section
 ---

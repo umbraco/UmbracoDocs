@@ -12,7 +12,7 @@ public class PagedResult<T> : PagedResultBase
 
 **Inheritance**
 
-* class [PagedResultBase](pagedresultbase.md)
+* Class [PagedResultBase](pagedresultbase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Common.Models](README.md)

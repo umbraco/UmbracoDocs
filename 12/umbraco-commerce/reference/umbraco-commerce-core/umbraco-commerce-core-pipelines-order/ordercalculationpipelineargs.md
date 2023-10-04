@@ -10,7 +10,7 @@ public class OrderCalculationPipelineArgs : PipelineArgs<OrderCalculation>
 
 **Inheritance**
 
-* class [PipelineArgs&lt;!0&gt;](../../umbraco-commerce-common/umbraco-commerce-common-pipelines/pipelineargs-1.md)
+* Class [PipelineArgs&lt;!0&gt;](../../umbraco-commerce-common/umbraco-commerce-common-pipelines/pipelineargs-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Pipelines.Order](README.md)

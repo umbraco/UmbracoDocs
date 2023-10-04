@@ -29,7 +29,7 @@ For Razor views:
 
 If you wish to use the localization service in a class, you need to specify the `ILocalizationService` interface in your constructor:
 
-```
+```csharp
 public class MyClass
 {
     private ILocalizationService _localizationService;

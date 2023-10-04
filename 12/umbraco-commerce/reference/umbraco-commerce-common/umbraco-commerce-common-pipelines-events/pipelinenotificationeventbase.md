@@ -10,7 +10,7 @@ public abstract class PipelineNotificationEventBase : NotificationEventBase
 
 **Inheritance**
 
-* class [NotificationEventBase](../umbraco-commerce-common-events/notificationeventbase.md)
+* Class [NotificationEventBase](../umbraco-commerce-common-events/notificationeventbase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Common.Pipelines.Events](README.md)

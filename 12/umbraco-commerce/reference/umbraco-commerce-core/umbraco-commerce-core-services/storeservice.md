@@ -11,7 +11,7 @@ public class StoreService : ServiceBase<StoreService>, ICachedEntityService<Stor
 
 **Inheritance**
 
-* class [ServiceBase&lt;TSelf&gt;](servicebase-1.md)
+* Class [ServiceBase&lt;TSelf&gt;](servicebase-1.md)
 * interface [ICachedEntityService&lt;TEntityType&gt;](icachedentityservice-1.md)
 * interface [IStoreAnalyticsService](istoreanalyticsservice.md)
 * interface [IStoreService](istoreservice.md)

@@ -10,7 +10,7 @@ public class PipelineSuccessNotification : PipelineNotificationEventBase, INotif
 
 **Inheritance**
 
-* class [PipelineNotificationEventBase](pipelinenotificationeventbase.md)
+* Class [PipelineNotificationEventBase](pipelinenotificationeventbase.md)
 * interface [INotificationEvent](../umbraco-commerce-common-events/inotificationevent.md)
 
 **Namespace**

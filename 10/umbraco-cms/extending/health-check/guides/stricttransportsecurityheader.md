@@ -1,6 +1,6 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+
+
 ---
 
 # Health check: Cookie hijacking and protocol downgrade attacks Protection (Strict-Transport-Security Header (HSTS))

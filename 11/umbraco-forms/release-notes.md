@@ -129,6 +129,14 @@ In this section, you can find the release notes for each version of Umbraco Form
 
 <summary>Version 10</summary>
 
+#### [10.5.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.5.1) (September 19th 2023)
+
+* Ensured uploaded file protection is based on permission to view rather than edit entries [#1058](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1058)
+* Improved markup for screen reader access when creating a form [#1067](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1067)
+* Styled the workflow name field to be full width to avoid cut-off of the text [#1079](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1079)
+* Fixed field icon styling [#1065](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1065)
+* Ensured the default theme supports anchoring to the post submission message [#1066](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1066)
+
 #### [10.5.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.5.0) (August 17th 2023)
 
 * All items listed under 10.5.0-rc1.
@@ -656,6 +664,17 @@ In this section, you can find the release notes for each version of Umbraco Form
 <details>
 
 <summary>Version 8</summary>
+
+#### [8.13.11](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.13.11) (September 19th 2023)
+
+* Fixed JavaScript console error visible when loading form for editing [#1056](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1056)
+* Ensured uploaded file protection is based on permission to view rather than edit entries [#1058](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1058)
+* Further updated the dependency on `aspnet-client-validation` to correct an issue with validating mandatory dropdown questions [#1059](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1059)
+* Restored the `UmbracoFormController.GoForward` method to have a `protected` access modifier (following a breaking change to `private` in 8.7) [#1061](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1061)
+* Improved markup for screen reader access when creating a form [#1067](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1067)
+* Fixed null reference exception triggered when deleting a record in a background task [#1069](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1069)
+* Styled the workflow name field to be full width to avoid cut-off of the text [#1079](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1079)
+* Prevented unpublished nodes from being returned in the prevalue source based on Umbraco documents [#1030](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1030)
 
 #### [8.13.10](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.13.10) (August 1st 2023)
 

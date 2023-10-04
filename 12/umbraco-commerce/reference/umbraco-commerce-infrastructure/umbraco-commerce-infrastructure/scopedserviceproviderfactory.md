@@ -10,7 +10,7 @@ public class ScopedServiceProviderFactory : ServiceProviderFactoryBase, IScopedF
 
 **Inheritance**
 
-* class [ServiceProviderFactoryBase](serviceproviderfactorybase.md)
+* Class [ServiceProviderFactoryBase](serviceproviderfactorybase.md)
 * interface [IScopedFactory](../../umbraco-commerce-common/umbraco-commerce-common/iscopedfactory.md)
 
 **Namespace**

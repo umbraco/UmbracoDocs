@@ -10,7 +10,7 @@ public class GiftCardSortByOrderNumberSpecification : SortSpecificationBase<Gift
 
 **Inheritance**
 
-* class [SortSpecificationBase&lt;!0&gt;](../../umbraco-commerce-common/umbraco-commerce-common-specifications/sortspecificationbase-1.md)
+* Class [SortSpecificationBase&lt;!0&gt;](../../umbraco-commerce-common/umbraco-commerce-common-specifications/sortspecificationbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Specifications.GiftCard](README.md)

@@ -6,3 +6,4 @@ root: ./
 
 redirects:
     
+getting-started/installation/version-specific-upgrades: getting-started/upgrading/version-specific-upgrades.md

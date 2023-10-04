@@ -14,7 +14,7 @@ A Umbraco application is restarted after an install or upgrade has been complete
 
 Example usage of the UmbracoApplicationLifetime notifications:
 
-```
+```csharp
 using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Events;

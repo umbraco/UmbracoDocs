@@ -10,7 +10,7 @@ public abstract class StoreEntityStateBase : EntityStateBase
 
 **Inheritance**
 
-* class [EntityStateBase](entitystatebase.md)
+* Class [EntityStateBase](entitystatebase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

@@ -118,6 +118,7 @@ A complete list of all the configuration sections included in Umbraco, by defaul
 * [Health checks settings](healthchecks.md)
 * [Hosting settings](hostingsettings.md)
 * [Imaging settings](imagingsettings.md)
+* [Indexing settings](indexingsettings.md)
 * [Install default data setting](installdefaultdatasettings.md)
 * [Keep alive settings](keepalivesettings.md)
 * [Logging settings](loggingsettings.md)
@@ -139,4 +140,4 @@ A complete list of all the configuration sections included in Umbraco, by defaul
 
 ## Configured by code
 
-* [FileSystemProviders](filesystemProviders.md)
+* [FileSystemProviders](filesystemproviders.md)

@@ -10,7 +10,7 @@ public class UmbracoStockService : UmbracoCommerceStockServiceBase<UmbracoStockS
 
 **Inheritance**
 
-* class [UmbracoCommerceStockServiceBase&lt;!0&gt;](../../umbraco-commerce-core/umbraco-commerce-core-services/umbracocommercestockservicebase-1.md)
+* Class [UmbracoCommerceStockServiceBase&lt;!0&gt;](../../umbraco-commerce-core/umbraco-commerce-core-services/umbracocommercestockservicebase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Services](README.md)

@@ -12,6 +12,10 @@ When upgrading an existing project to Umbraco 12, you will need to opt-in explic
 
 When you start with a fresh Umbraco 12 installation, the Delivery API is also disabled by default. To enable it, you can proceed directly to the [Enable the Content Delivery API](./#enable-the-content-delivery-api) section, as the step below is already complete in this case.
 
+{% embed url="https://www.youtube.com/watch?v=sh_AF-ZKJ28" %}
+Video tutorial
+{% endembed %}
+
 ### Register the Content Delivery API dependencies
 
 1. Open your project's `Startup.cs` file.
@@ -458,7 +462,6 @@ Which properties to expand in the response
 {% swagger-response status="401: Unauthorized" description="Missing permissions after protection is set up" %}
 
 {% endswagger-response %}
-
 {% endswagger %}
 
 {% swagger method="get" path="/content" baseUrl="/umbraco/delivery/api/v1" summary="Gets content item(s) from a query" %}
@@ -467,15 +470,55 @@ Returns single or multiple items.
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="fetch" type="String" required="false" %}
-Structural query string option (e.g. `ancestors`, `children`, `descendants`)
+Structural query string option (e.g. 
+
+`ancestors`
+
+, 
+
+`children`
+
+, 
+
+`descendants`
+
+)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="filter" type="String Array" required="false" %}
-Filtering query string options (e.g. `contentType`, `name`)
+Filtering query string options (e.g. 
+
+`contentType`
+
+, 
+
+`name`
+
+)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="sort" type="String Array" required="false" %}
-Sorting query string options (e.g. `createDate`, `level`, `name`, `sortOrder`, `updateDate`)
+Sorting query string options (e.g. 
+
+`createDate`
+
+, 
+
+`level`
+
+, 
+
+`name`
+
+, 
+
+`sortOrder`
+
+, 
+
+`updateDate`
+
+)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="skip" type="Integer" required="false" %}
@@ -518,6 +561,8 @@ Which properties to expand and therefore include in the output if they refer to 
 
 {% endswagger-response %}
 {% endswagger %}
+
+All endpoints are documented in a Swagger document at `{yourdomain}/umbraco/swagger`. Keep in mind that this document is not available in production mode by default. For more information check the [API versioning and OpenAPI](https://docs.umbraco.com/umbraco-cms/reference/api-versioning-and-openapi) article.
 
 ### Query parameters
 
@@ -635,10 +680,6 @@ We are looking into adding support for member authentication which would enable 
 There is no built-in functionality for editors to preview content in the Umbraco Backoffice using the Delivery API. However, this is something high on our list for potential future improvements.
 
 Content that is exclusively in a draft state is not available via the Delivery API's multi-items endpoint. However, once the content node is published, it will be available for retrieval, whether it is in a draft or published state. We will evaluate our options to improve this workflow.
-
-### Swagger
-
-There is a Swagger document available for the Umbraco Delivery API at `{yourdomain}/umbraco/swagger`. However, it does not offer complete documentation support for all APIs. This will be subject to change.
 
 ### Property editors
 

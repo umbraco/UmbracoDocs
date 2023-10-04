@@ -10,7 +10,7 @@ public class UmbracoCommerceOrderController : UmbracoCommerceOrderControllerBase
 
 **Inheritance**
 
-* class [UmbracoCommerceOrderControllerBase](umbracocommerceordercontrollerbase.md)
+* Class [UmbracoCommerceOrderControllerBase](umbracocommerceordercontrollerbase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Controllers](README.md)

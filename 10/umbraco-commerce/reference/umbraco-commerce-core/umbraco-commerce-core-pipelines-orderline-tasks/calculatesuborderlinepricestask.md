@@ -11,7 +11,7 @@ public class CalculateSubOrderLinePricesTask :
 
 **Inheritance**
 
-* class [SubOrderLinesCalculationPipelineBase&lt;TSelf,TSubOrderLinePipeline&gt;](suborderlinescalculationpipelinebase-2.md)
+* Class [SubOrderLinesCalculationPipelineBase&lt;TSelf,TSubOrderLinePipeline&gt;](suborderlinescalculationpipelinebase-2.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Pipelines.OrderLine.Tasks](README.md)

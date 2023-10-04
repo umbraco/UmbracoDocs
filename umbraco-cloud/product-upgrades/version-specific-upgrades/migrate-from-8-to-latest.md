@@ -6,6 +6,12 @@ description: >-
 
 # Migrate from Umbraco 8 to the latest version
 
+{% hint style="warning" %}
+It is currently not possible to upgrade directly from Umbraco 8 to Umbraco 12.
+
+Instead, you can use this guide to upgrade from Umbraco 8 to Umbraco 10 and then repeat the same steps to upgrade to Umbraco 12.
+{% endhint %}
+
 Since the underlying framework going from Umbraco 8 to the latest version has changed, there is no direct upgrade path. That said, it is possible to re-use the database from your Umbraco 8 project on your new project in order to maintain the content.
 
 It is not possible to migrate the custom code as the underlying web framework has been updated from ASP.NET to ASP.NET Core. All templates and custom code will need to be reimplemented.
@@ -18,12 +24,10 @@ You also need to make sure that the packages that you are using are available on
 * A clean Cloud project running the latest version of Umbraco with **at least 2 environments**.
 * A backup of your Umbraco 8 project database.
 
-{% hint style="info" %}
 We strongly recommend having at least **2 environments** on the new Umbraco project.
 
 {% hint style="info" %}
-If your Umbraco 8 site is using Umbraco Forms, make sure to configure it to store data in the database, before beginning this tutorial
-[Follow the guide for migrating Umbraco Forms data to the database.](https://docs.umbraco.com/umbraco-forms/developer/forms-in-the-database)
+If your Umbraco 8 site is using Umbraco Forms, make sure to configure it to store data in the database, before beginning this tutorial [Follow the guide for migrating Umbraco Forms data to the database.](https://docs.umbraco.com/umbraco-forms/developer/forms-in-the-database)
 
 Should something fail during the migration, the Development environment can be removed and re-added to start over on a clean slate.
 {% endhint %}

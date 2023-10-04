@@ -11,7 +11,7 @@ public class PaymentMethodDiscountRuleProvider :
 
 **Inheritance**
 
-* class [OrderDiscountRuleProviderBase&lt;TSettings&gt;](orderdiscountruleproviderbase-1.md)
+* Class [OrderDiscountRuleProviderBase&lt;TSettings&gt;](orderdiscountruleproviderbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Discounts.Rules](README.md)

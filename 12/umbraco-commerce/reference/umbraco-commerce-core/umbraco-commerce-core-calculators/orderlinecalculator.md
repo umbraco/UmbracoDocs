@@ -10,7 +10,7 @@ public class OrderLineCalculator : OrderLineCalculatorBase
 
 **Inheritance**
 
-* class [OrderLineCalculatorBase](orderlinecalculatorbase.md)
+* Class [OrderLineCalculatorBase](orderlinecalculatorbase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Calculators](README.md)

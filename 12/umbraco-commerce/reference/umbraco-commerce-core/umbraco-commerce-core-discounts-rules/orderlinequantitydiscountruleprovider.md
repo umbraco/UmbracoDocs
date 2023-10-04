@@ -11,7 +11,7 @@ public class OrderLineQuantityDiscountRuleProvider :
 
 **Inheritance**
 
-* class [OrderLineDiscountRuleProviderBase&lt;TSettings&gt;](orderlinediscountruleproviderbase-1.md)
+* Class [OrderLineDiscountRuleProviderBase&lt;TSettings&gt;](orderlinediscountruleproviderbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Discounts.Rules](README.md)

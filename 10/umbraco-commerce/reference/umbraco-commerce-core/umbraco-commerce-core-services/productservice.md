@@ -10,7 +10,7 @@ public class ProductService : ServiceBase<ProductService>, IProductService
 
 **Inheritance**
 
-* class [ServiceBase&lt;TSelf&gt;](servicebase-1.md)
+* Class [ServiceBase&lt;TSelf&gt;](servicebase-1.md)
 * interface [IProductService](iproductservice.md)
 
 **Namespace**

@@ -10,7 +10,7 @@ public class ShippingMethodSaveDto : ShippingMethodDto, IValidatableObject
 
 **Inheritance**
 
-* class [ShippingMethodDto](shippingmethoddto.md)
+* Class [ShippingMethodDto](shippingmethoddto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

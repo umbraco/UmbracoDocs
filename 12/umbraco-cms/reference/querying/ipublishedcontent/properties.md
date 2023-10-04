@@ -191,7 +191,7 @@ Returns the DateTime the page was modified
 @Model.UpdateDate.ToString("D")
 ```
 
-
+***
 
 ## Custom properties
 

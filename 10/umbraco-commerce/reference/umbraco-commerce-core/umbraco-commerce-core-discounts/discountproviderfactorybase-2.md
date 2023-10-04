@@ -10,7 +10,7 @@ public abstract class DiscountProviderFactoryBase<TResult, TConfig> : DynamicFac
 
 **Inheritance**
 
-* class [DynamicFactoryBase](../../umbraco-commerce-common/umbraco-commerce-common/dynamicfactorybase.md)
+* Class [DynamicFactoryBase](../../umbraco-commerce-common/umbraco-commerce-common/dynamicfactorybase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Discounts](README.md)

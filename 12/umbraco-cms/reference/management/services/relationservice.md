@@ -304,7 +304,7 @@ Odd example, I know.. but why not?
 
 To perform the said task we need a component in which we can register to the `ContentService.Published` event:
 
-([You can read more about composing Umbraco here](../../../../implementation/composing/index.md))
+([You can read more about composing Umbraco here](../../../implementation/composing.md))
 
 ```csharp
 using System.Linq;
@@ -451,6 +451,4 @@ Browsing `/umbraco/api/relations/getbyrelationtypealias?alias=homesick` now retu
 
 {% hint style="info" %}
 If you want to do something similar to this it is recommended that you wrap a caching layer around it, as the RelationService queries the database directly.
-
-[See an example of caching in V8](../../../cache/examples/tags.md)
 {% endhint %}

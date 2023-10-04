@@ -29,7 +29,7 @@ The installation will take a couple of minutes to complete. Once the installatio
 
     ![Default template homepage](../../../../10/umbraco-cms/tutorials/creating-a-basic-website/images/figure-5-retrospect-template-v8.png)
 
-The template contains some text with dummy links. We’re going to turn this into a fully fledged, Umbraco-powered site!
+The template contains some text with dummy links. We’re going to turn this into a fully-fledged, Umbraco-powered site!
 
 ## Logging in to Umbraco
 

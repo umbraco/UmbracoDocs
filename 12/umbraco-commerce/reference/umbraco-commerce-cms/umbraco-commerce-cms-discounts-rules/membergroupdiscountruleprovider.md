@@ -11,7 +11,7 @@ public class MemberGroupDiscountRuleProvider :
 
 **Inheritance**
 
-* class [OrderDiscountRuleProviderBase&lt;!0&gt;](../../umbraco-commerce-core/umbraco-commerce-core-discounts/orderdiscountruleproviderbase-1.md)
+* Class [OrderDiscountRuleProviderBase&lt;!0&gt;](../../umbraco-commerce-core/umbraco-commerce-core-discounts/orderdiscountruleproviderbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Discounts.Rules](README.md)

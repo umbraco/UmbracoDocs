@@ -12,7 +12,7 @@ public abstract class DiscountRuleProviderBase<TSettingsType> : DiscountRuleProv
 
 **Inheritance**
 
-* class [DiscountRuleProviderBase](discountruleproviderbase.md)
+* Class [DiscountRuleProviderBase](discountruleproviderbase.md)
 * interface [IDiscountRuleProvider&lt;TSettingsType&gt;](idiscountruleprovider-1.md)
 
 **Namespace**

@@ -10,7 +10,7 @@ public class PaymentMethodSaveDto : PaymentMethodDto, IValidatableObject
 
 **Inheritance**
 
-* class [PaymentMethodDto](paymentmethoddto.md)
+* Class [PaymentMethodDto](paymentmethoddto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

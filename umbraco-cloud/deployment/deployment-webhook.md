@@ -44,7 +44,7 @@ Contents of the payload contain general information about the current deployment
     "Id":"40810bf1bbbfc16dd273162509de297ad386fb4e",
     "Status":"success",
     "StatusText":"",
-    "AuthorEmail":"laughing@unicorn.dk",
+    "AuthorEmail":"laughingunicorn@example.com",
     "Author":"Laughing Unicorn",
     "Message":"Adding document type 'LaughingUnicornLaughs'",
     "Progress":"",
@@ -60,7 +60,7 @@ Contents of the payload contain general information about the current deployment
     "Commits":[
         {
             "AuthorName":"Laughing Unicorn",
-            "AuthorEmail":"laughing@unicorn.dk",
+            "AuthorEmail":"laughingunicorn@example.com",
             "Message":"Adding document-type 'LaughingUnicornLaughs'\n",
             "Timestamp":"2017-10-02T07:16:39",
             "ChangedFiles":[
@@ -69,7 +69,7 @@ Contents of the payload contain general information about the current deployment
         },
         {
             "AuthorName":"Laughing Unicorn",
-            "AuthorEmail":"laughing@unicorn.dk",
+            "AuthorEmail":"laughingunicorn@example.com",
             "Message":"Adding template 'LaughingUnicornLaughs'\n",
             "Timestamp":"2017-10-02T07:16:38",
             "ChangedFiles":[

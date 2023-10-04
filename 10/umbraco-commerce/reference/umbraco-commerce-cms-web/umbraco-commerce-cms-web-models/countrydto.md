@@ -10,7 +10,7 @@ public class CountryDto : CountryBasicDto
 
 **Inheritance**
 
-* class [CountryBasicDto](countrybasicdto.md)
+* Class [CountryBasicDto](countrybasicdto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

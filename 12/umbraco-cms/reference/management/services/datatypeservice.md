@@ -29,7 +29,7 @@ For Razor views:
 
 If you wish to use the Data Type service in a class, you need to specify the `IDataTypeService` interface in your constructor:
 
-```
+```csharp
 public class MyClass
 {
     private IDataTypeService _dataTypeService;

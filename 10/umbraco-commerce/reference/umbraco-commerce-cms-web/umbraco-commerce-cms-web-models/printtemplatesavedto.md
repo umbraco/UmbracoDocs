@@ -10,7 +10,7 @@ public class PrintTemplateSaveDto : PrintTemplateDto, IValidatableObject
 
 **Inheritance**
 
-* class [PrintTemplateDto](printtemplatedto.md)
+* Class [PrintTemplateDto](printtemplatedto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

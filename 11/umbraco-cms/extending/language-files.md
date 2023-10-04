@@ -6,11 +6,31 @@ description: >-
 
 # Language Files & Localization
 
-Language files are used to translate:
+Language files are XML files used to translate:
 - The Umbraco backoffice user interface so that end users can use Umbraco in their native language. This is particularly important for content editors who do not speak English.
 - The member identity errors in an Umbraco website enabling end users to use Umbraco in the website language.
+-  Read [Add translations for your packages](packages/language-files-for-packages.md) to see how to include translations for your own package.
+- Override existing language files
 
-If you are a package developer, [see here for docs on how to include translations for your own package](packages/language-files-for-packages.md).
+This is an example of such a language file, the most important parts are the `alias` fields of the `<area>` and `<key>` elements. This is what you need to retrieve the values from .NET or Angular.
+```xml
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<language alias="en" intName="English (UK)" localName="English (UK)" lcid="" culture="en-GB">
+    <creator>
+        <name>The Umbraco community</name>
+        <link>https://community.umbraco.com</link>
+    </creator>
+    <area alias="actions">
+        <key alias="assignDomain">Culture and Hostnames</key>
+        <key alias="auditTrail">Audit Trail</key>
+    </area>
+    <area alias="buttons">
+        <key alias="buttonSave">Save</key>
+        <key alias="buttonCancel">Cancel</key>
+    </area>
+    ...
+</language>
+```
 
 ## Supported Languages
 
@@ -87,7 +107,7 @@ Using core or custom language keys from your code:
 
 ### From .NET
 
-`ILocalizedTextService` is used to localize strings, and is available through dependency injection. First, inject the service, and then use the `Localize()` method available in the namespace `Umbraco.Extensions` to localize the string with the format \[area]/\[key]:
+`ILocalizedTextService` is used to localize strings, and is available through dependency injection. First, inject the service, and then use the `Localize()` method available in the namespace `Umbraco.Extensions` to localize the string with the format `\[area]/\[key]`:
 
 ```csharp
 public MyClass(ILocalizedTextService textservice)
@@ -95,10 +115,11 @@ public MyClass(ILocalizedTextService textservice)
     var localizedLabel = textservice.Localize("dialog/mykey");
 }
 ```
+In this example it will try to get the value of the key `mykey` in the area `dialog`.
 
 ### From Angular
 
-In the Umbraco backoffice UI, labels can be localized with the `localize` directive:
+In the Umbraco backoffice UI, labels can be localized with the `localize` directive. The syntax is slightly different when compared to the .NET variant. Here the syntax is `\[area]_\[key]`:
 
 ```xml
 <button>

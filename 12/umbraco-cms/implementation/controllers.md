@@ -1,8 +1,10 @@
 ---
-description: "An Umbraco API Controller is an ASP.NET WebApi controller that is used for creating REST services."
+description: >-
+  An Umbraco API Controller is an ASP.NET WebApi controller that is used for
+  creating REST services.
 ---
 
-# Controllers in Umbraco
+# Controllers
 
 Umbraco contains different types of controllers to perform different tasks:
 
@@ -105,7 +107,7 @@ The `UmbracoMemberAuthorizeAttribute()` and `UmbracoMemberAuthorizeFilter()` con
 * `AllowGroup` - Comma delimited list of allowed member groups.
 * `AllowMembers` - Comma delimited list of allowed members.
 
-For more details, see the [Using MemberAuthorizeAttribute](../reference/routing/umbraco-api-controllers/authorization.md#using-memberauthorizeattribute) section in the Umbraco API - Authorization article.
+For more details, see the [Using MemberAuthorizeAttribute](../reference/routing/umbraco-api-controllers/authorization.md) section in the Umbraco API - Authorization article.
 
 ### Routing
 
