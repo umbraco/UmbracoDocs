@@ -10,6 +10,7 @@ The following class shows how to exclude built-in field types using a custom com
 ```csharp
 using Umbraco.Forms.Core.Providers;
 using Umbraco.Forms.Core.Providers.FieldTypes;
+
 namespace MyNamespace
 {
     public class MyFormFieldsComposer : IComposer
