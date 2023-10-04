@@ -57,7 +57,7 @@ Current languages that are included in new Umbraco installations are:
 * Czech
 * Turkish
 * Welsh
-* Ukranian
+* Ukrainian
 
 ## Where to find the language files
 

@@ -2,7 +2,7 @@
 
 In this article, we will look at some of the best practices and recommendations when you are working in teams on your Umbraco Cloud projects.
 
-## Working with GIT in Teams
+## Working with Git in Teams
 
 ### Pull before you Push
 
@@ -10,7 +10,7 @@ Always start by making a pull request from your project before you push anything
 
 ### Create branches locally
 
-Umbraco Cloud is built on top of GIT which means that you can create branches locally as either a feature or developer branch. You can then work on the project and test out the new features before merging it into the master branch which can then be pushed up to your cloud environments.
+Umbraco Cloud is built on top of Git which means that you can create branches locally as either a feature or developer branch. You can then work on the project and test out the new features before merging it into the master branch. The branch can then be pushed up to your cloud environments.
 
 ## Working with Environments in a team
 

@@ -74,7 +74,7 @@ This list defines the different types of macro parameters:
 * Checkbox(`Umbraco.TrueFalse`) - A true/false value
 * Content Type picker (`contentType`) - Choose a type from existing Document Types
 * Decimal (`Umbraco.Decimal`) - accepts only numbers
-* Email address (`Umbraco.EmailAddress`) - validates to valid email adresses
+* Email address (`Umbraco.EmailAddress`) - validates to valid email addresses
 * Multiple Content Picker (`Umbraco.MultiNodeTreePicker`) - pick 1 or more nodes from the Content tree
 * Multiple Content Type Picker (`contentTypeMultiple`) - pick 1 or more types from existing Document Types
 * Multiple Media Picker (`Umbraco.MultipleMediaPicker`) - pick 1 or more media items
@@ -87,7 +87,7 @@ This list defines the different types of macro parameters:
 * Textbox (`Umbraco.TextBox`) - single line of text
 * Media picker (`Umbraco.MediaPicker`) - select a single media item
 * Content Picker (`Umbraco.ContentPicker`) - select a single content node from the Content tree
-* Form Picker (`UmbracoForms.FormsPicker`) - choose from exising Umbraco Forms
+* Form Picker (`UmbracoForms.FormsPicker`) - choose from existing Umbraco Forms
 * Forms Theme Picker (`UmbracoForms.ThemePicker`) - choose from existing Forms Themes
 
 ## Enable Inline Macro
