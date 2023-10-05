@@ -13,7 +13,7 @@ You will find relevant examples using Curl and Powershell in the sections below.
 
 ## Getting started
 
-To integrate Umbraco Cloud into your CI/CD pipeline, you'll need to make API calls to the following endpointhttps://api.cloud.umbraco.com.
+To integrate Umbraco Cloud into your CI/CD pipeline, you'll need to make API calls to the following endpoint: ```https://api.cloud.umbraco.com.```
 
 The initial certificate for this DNS is self-signed which can give curl and other tools some issues. We are working on changing this, for now, allowing an insecure connection will make it possible to circumvent this certificate issue.
 
