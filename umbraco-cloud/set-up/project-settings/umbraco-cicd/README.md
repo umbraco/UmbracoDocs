@@ -9,7 +9,7 @@ Umbraco Cloud continues to be a cornerstone in this setup, providing a cloud-bas
 Explore the practical benefits of using Umbraco CI/CD Flow for your development and deployment needs. This solution aims to simplify your workflow, improve team collaboration, and reduce deployment time. Here are some key advantages to consider:
 
 _Seamless Integration with Existing CI/CD_
-- Umbraco CI/CD Flow allows customers to easily connect their existing CI/CD pipelines to Umbraco Cloud, making the transition smoother and reducing the learning curve.
+- Umbraco CI/CD Flow allows customers to connect their existing CI/CD pipelines to Umbraco Cloud, making the transition smoother and reducing the learning curve.
 
 _Enhanced CI/CD Features_
 - The feature enables unique CI/CD features like PR-flows and automated tests, which are not natively available in Umbraco Cloud. This adds a layer of quality assurance and streamlines the development workflow.
