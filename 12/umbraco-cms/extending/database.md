@@ -374,11 +374,11 @@ public class BlogCommentSchema
 
 ## Adding Nullable Columns
 
-To allow nulls in the database, add the `[NullSetting]` attribute and remove the `required` keyword, like so:
+To allow nulls in the database, add the `[NullSetting]` attribute, use a nullable datatype, and remove the `required` keyword, like so:
 
 ```
     [Column("Website")]
     [NullSetting]
-    public string Website { get; set; }
+    public string? Website { get; set; }
 }
 ```
