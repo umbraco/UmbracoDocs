@@ -6,7 +6,7 @@ _Format Restrictions_
 - The packaged artifact from your CI/CD pipeline must adhere to the Umbraco Cloud API's required format, which is a zip source file. This could necessitate changes to your existing build and packaging scripts.
 
 _Back Office Limitations_
-- To ensure smooth execution of the Umbraco CI/CD Flow, it is highly recommended to adhere to a specific principle: refrain from making any alterations to the schema, except in the leftmost environment within the Umbraco Cloud back offices. The intention behind this principle is to prevent conflicts that could potentially arise due to simultaneous modifications made in various environments.
+- To ensure smooth execution of the Umbraco CI/CD Flow, it is highly recommended to adhere to a specific principle: refrain from making any alterations to the schema, except in the leftmost environment within the Umbraco Cloud back offices. The intention behind this principle is to prevent conflicts that could potentially arise due to simultaneous modifications made in different environments.
 
 _Additional Build Step_
 - The flow feature adds an extra build to the deployment process. As a result, it takes longer to post to Umbraco Cloud using Umbraco CI/CD Flow compared to standard deployments.
