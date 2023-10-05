@@ -40,7 +40,7 @@
     * [Rewrite rules](set-up/project-settings/manage-hostnames/rewrites-on-cloud.md)
     * [Custom Certificates](set-up/project-settings/manage-hostnames/security-certificates.md)
   * [Umbraco CI/CD Flow](set-up/project-settings/umbraco-cicd/README.md)
-    * [Umbraco Cloud API For Umbraco CI/CD Flow](set-up/project-settings/umbraco-cicd/UmbracoCloudApi.md)
+    * [Cloud API For CI/CD Flow](set-up/project-settings/umbraco-cicd/UmbracoCloudApi.md)
     * [Getting started with configuring a CI/CD pipeline](set-up/project-settings/umbraco-cicd/SampleCiCdPipeline.md)
     * [Known Limitations and Considerations](set-up/project-settings/umbraco-cicd/KnownLimitationsAndConsiderations.md)
   * [External Services](set-up/project-settings/external-services.md)
