@@ -16,7 +16,7 @@ _Conflict Management_
 
 As we continue to prototype and gather insights from beta users, there are a number of known limitations and considerations to be aware of:
 
-## Key Points to Consider:
+## Key Points to Consider
 
 * **Direct Commits to Umbraco Git Repos**: Any commits made directly to the umbraco-git-repos will cause the process to fail.
 * **Remote Build/Test Options**: It is currently no possible to skip the first build step before committing.
