@@ -30,7 +30,7 @@ To export content and schema, you can select either a specific item of content, 
 
 [insert pic - of menu]
 
-When exporting, you can choose to include associated media files.  Bear in mind that including media for a large site can lead to a very big zip file.  So even with this option, you might want to consider methods options for transferring very large amounts of media. For example using direct transfer between Cloud storage accounts or File Transfer Protocol (FTP).
+When exporting, you can choose to include associated media files.  Bear in mind that including media for a large site can lead to a big zip file.  So even with this option, you might want to consider methods options for transferring very large amounts of media. For example using direct transfer between Cloud storage accounts or File Transfer Protocol (FTP).
 
 If your account has access to the Settings section, you can also choose to include the schema information and related files as well.
 
@@ -56,7 +56,7 @@ If the zip file size isn't so large as to not be accepted, you can upload the fi
 
 [insert pic - of dialog to upload file or indicate location]
 
-Similar to when exporting, you can choose to import everything from the archive file, or just content, schema or files.
+Similar to when exporting, you can choose to import everything from the archive file, or only content, schema or files.
 
 [insert pic]
 
@@ -90,11 +90,11 @@ We also provide implementations to handle common migrations:
 
 [TBC - technical detail of each class with a brief description as to what it does]
 
-We've also made available various base implementations that you can use to build your own migrations. You can use these to migrate between any other obsolete and replacement property editors that you have in your solution:
+We've also made available base implementations that you can use to build your own migrations. You can use these to migrate between any other obsolete and replacement property editors that you have in your solution:
 
 [TBC - technica details of each class with a brief description as to what it does]
 
-Migrators will only run if you've registered them to, hence you can enable just the ones needed for your solution:
+Migrators will only run if you've registered them to, hence you can enable only the ones needed for your solution:
 
 [TBC - code sample]
 
