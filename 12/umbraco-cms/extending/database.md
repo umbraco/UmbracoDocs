@@ -341,7 +341,7 @@ namespace MyNamespace
 
 ## Adding Foreign Keys
 
-To link one table to another via Foreign Key, you can use the in built `ForeignKeyAttribute` and pass in the type of the table you need to link to. For example, if we wanted to link BlogComments to a BlogPostUmbracoId table, we could add an attribute like so:
+To link one table to another via Foreign Key, you should use the `ForeignKeyAttribute` and pass in the type of the table you need to link to. For example, if we wanted to link BlogComments to a BlogPostUmbraco table, we could add an attribute like so:
 
 ```
 [TableName("BlogComments")]
@@ -369,5 +369,16 @@ public class BlogCommentSchema
     [Column("Message")]
     [SpecialDbType(SpecialDbTypes.NVARCHARMAX)]
     public string Message { get; set; }
+}
+```
+
+## Adding Nullable Columns
+
+To allow nulls in the database, add the `[NullSetting]` attribute and remove the `required` keyword, like so:
+
+```
+    [Column("Website")]
+    [NullSetting]
+    public string Website { get; set; }
 }
 ```
