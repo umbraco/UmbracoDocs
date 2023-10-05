@@ -20,7 +20,7 @@ To add configuration options to our Suggestion Data Type, open the `package.mani
 ...
 "editor": {
                 "view": "~/App_Plugins/Suggestions/suggestion.html"
-            }, // Remeber a comma seperator here at the end of the editor block!
+            }, // Remember a comma separator here at the end of the editor block!
  "prevalues": {
                 "fields": [
                     {
@@ -79,7 +79,7 @@ Your `package.manifest` file should now look something like this:
         "hideLabel": true,
         /*Optional: Add 'read-only' support. Available from Umbraco 10.2+*/
         "supportsReadOnly": true
-      }, // Remeber a comma seperator here at the end of the editor block!
+      }, // Remember a comma separator here at the end of the editor block!
       "prevalues": {
         "fields": [
           {

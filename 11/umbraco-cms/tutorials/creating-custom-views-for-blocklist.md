@@ -161,7 +161,7 @@ Additionally, we need to update our stylesheet to use the color configuration. F
 @import url(https://fonts.googleapis.com/css?family=Montserrat|Source+Sans+Pro:400,700,300,600,600italic,400italic);
 
 body {
- font-family: 'Source Sans Pro', sans-seif;   
+ font-family: 'Source Sans Pro', sans-serif;   
 }
 
 h1{
@@ -198,7 +198,7 @@ Now that we have updated our view and stylesheet let's assign it to our block.
 1. Go to **Product** in the **Settings** tree.
 2. Click the `cog` wheel next to **Features**.
 3. Select the **Product - Features - Block List**. The **Editor Settings** window opens.
-4. Select **Feature** from the **Availabe Blocks** configuration. The **Configuration of 'Feature'** window opens.
+4. Select **Feature** from the **Available Blocks** configuration. The **Configuration of 'Feature'** window opens.
 5.  Select **Add Stylesheet** and browse to **style.css**.
 
     <figure><img src="../../../10/umbraco-cms/tutorials/images/Stylesheet-location.png" alt=""><figcaption></figcaption></figure>
