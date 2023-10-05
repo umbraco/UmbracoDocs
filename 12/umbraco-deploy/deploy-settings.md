@@ -346,7 +346,7 @@ If attempting a one-off, large transfer operation, before a site is live, you co
 
 With this setting assigned a value of `true`, Umbraco Deploy will attempt to resolve users when transfers are made to new environments.
 
-Users and user groups are maintained separately in the different environments, so it isn't always the case that an editor has accounts across all environments. When an account exists with the same email address, Deploy will associate the changes made in upstream environments with the user that initiated the transfer. Allowing the expected information about save and publish operations will be available in the audit log of the environment where the Umbraco data was transferred.
+Users and user groups are maintained separately in different environments, so it isn't always the case that an editor has accounts across all environments. When an account exists matching by email address, Deploy will associate the changes made in upstream environments with the user that initiated the transfer. Allowing the expected information about save and publish operations to be available in the audit log of the environment where the data was transferred.
 
 When the setting is set to `false`, or if a matching account isn't found, the audit records will be associated with the super-user administrator account.
 
