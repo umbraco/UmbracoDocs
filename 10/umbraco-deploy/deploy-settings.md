@@ -61,7 +61,8 @@ For illustration purposes, the following structure represents the full set of op
             "PreferLocalDbConnectionString": false,
             "NumberOfSignaturesToUseAllRelationCache": 100,
             "ContinueOnMediaFilePathTooLongException": false,
-            "SuppressCacheRefresherNotifications": false
+            "SuppressCacheRefresherNotifications": false,
+            "ResolveUserInTargetEnvironment": false
         }
     }
   }
@@ -314,3 +315,11 @@ When a Deploy operation completes, cache refresher notifications are fired. Thes
 In production this setting shouldn't be changed from it's default value of `false`, to ensure these additional data stores are kept up to date.
 
 If attempting a one-off, large transfer operation, before a site is live, you could set this value to `true`. That would omit the firing and handling of these notifications and remove their performance overhead. Following which you would need to ensure to rebuild the cache and search index manually via the backoffice _Settings_ dashboards.
+
+## ResolveUserInTargetEnvironment
+
+With this setting assigned a value of `true`, Umbraco Deploy will attempt to resolve users when transfers are made to new environments.
+
+Users and user groups are maintained separately in the different environments, so it isn't always the case that an editor has accounts across all environments. When an account exists with the same email address, Deploy will associate the changes made in upstream environments with the user that initiated the transfer. Allowing the expected information about save and publish operations will be available in the audit log of the environment where the Umbraco data was transferred.
+
+When the setting is set to `false`, or if a matching account isn't found, the audit records will be associated with the super-user administrator account.
