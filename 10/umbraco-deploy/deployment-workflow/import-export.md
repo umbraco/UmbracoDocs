@@ -30,7 +30,7 @@ To export content and schema, you can select either a specific item of content, 
 
 [insert pic - of menu]
 
-When exporting, you can choose to include associated media files.  Bear in mind that including media for a large site can lead to a big zip file.  So even with this option, you might want to consider methods options for transferring very large amounts of media. For example using direct transfer between Cloud storage accounts or File Transfer Protocol (FTP).
+When exporting, you can choose to include associated media files.  Bear in mind that including media for a large site can lead to a big zip file.  So even with this option, you might want to consider methods options for transferring large amounts of media. For example using direct transfer between Cloud storage accounts or File Transfer Protocol (FTP).
 
 If your account has access to the Settings section, you can also choose to include the schema information and related files as well.
 
@@ -52,7 +52,7 @@ Having previously exported content and schema to a zip file, you can import this
 
 [insert pic - of menu]
 
-If the zip file size isn't so large as to not be accepted, you can upload the file via the browser.  Or if not, you can use File Transfer Protocol (FTP) or some other method to place the file into a known location on your web server. It can be picked up there for processing.
+If the zip file size isn't so large as to not be accepted, you can upload the file via the browser.  Or if not, you can use File Transfer Protocol (FTP) or similar to place the file into a known location on your web server. It can be picked up there for processing.
 
 [insert pic - of dialog to upload file or indicate location]
 
