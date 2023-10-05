@@ -52,7 +52,7 @@ Having previously exported content and schema to a zip file, you can import this
 
 [insert pic - of menu]
 
-If the zip file size isn't so large as to not be accepted, you can upload the file via the browser.  Or if not, you can use FTP or some other method to place the file into a known location on your web server. It can be picked up there for processing.
+If the zip file size isn't so large as to not be accepted, you can upload the file via the browser.  Or if not, you can use File Transfer Protocol (FTP) or some other method to place the file into a known location on your web server. It can be picked up there for processing.
 
 [insert pic - of dialog to upload file or indicate location]
 
