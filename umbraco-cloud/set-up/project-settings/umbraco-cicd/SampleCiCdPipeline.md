@@ -9,7 +9,12 @@ Umbraco Cloud repositories are not meant to be used as source code repositories.
 
 Once you commit your code to Cloud the build pipeline converts your C# code to DLLs and deploys it on the respective environment.
 
-It is important to note that only C# code is built, and all frontend artifacts need to be built and committed to the repository.
+{% hint style="info" %}
+
+Only C# code is built, and all frontend artifacts need to be built and committed to the repository.
+
+{% endhint %}
+
 
 You can use AzureDevops as an external repository and with the pipelines, it will automatically keep your Azure Devops source code repository in sync with the git repository of Umbraco Cloud of the development environment.
 
