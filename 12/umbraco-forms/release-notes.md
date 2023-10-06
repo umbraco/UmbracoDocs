@@ -20,7 +20,7 @@ In this section, you can find the release notes for each version of Umbraco Form
 
 #### [12.2.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.0) (TBC 2023)
 
-* Added an overload to the `RenderUmbracoFormDependencies` HTML helper method to allow provision of a dictionary parameter containing attributes to use when rendering script references. [#1074](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1074)
+* Added an overload to the `RenderUmbracoFormDependencies` HTML helper method to allow provision of a dictionary parameter containing attributes to use when rendering script references. Also a new configuration option `DisableClientSideValidationDependencyCheck` to disable the client-side validation framework check. This is necessary when using the overload to provide an `async` attribute. [#1074](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1074)
 
 #### [12.1.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.1) (September 19th 2023)
 
