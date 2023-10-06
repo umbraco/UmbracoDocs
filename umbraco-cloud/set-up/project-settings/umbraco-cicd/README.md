@@ -15,7 +15,7 @@ _Enhanced CI/CD Features_
 - The feature enables unique CI/CD features like PR-flows and automated tests, which are not natively available in Umbraco Cloud. This adds a layer of quality assurance and streamlines the development workflow.
 
 _Scalability and Flexibility_
-- Umbraco CI/CD Flow allows for greater scalability and flexibility in your deployment process. You can easily adapt your existing CI/CD pipeline to handle larger projects or more complex workflows without having to overhaul your Umbraco Cloud setup.
+- Umbraco CI/CD Flow allows for greater scalability and flexibility in your deployment process. You can adapt your existing CI/CD pipeline to handle larger projects or more complex workflows without having to overhaul your Umbraco Cloud setup.
 
 _Centralized Management_
 - With Umbraco CI/CD Flow, you can centralize the management of your deployments, tests, and workflows. This makes it easier to monitor, troubleshoot, and optimize your processes, leading to more efficient and reliable deployments. Automating deployment minimizes the risc for human errors that could have a negative effect on the target environment.
