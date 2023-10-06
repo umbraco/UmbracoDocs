@@ -79,7 +79,7 @@ This creates a folder named "MyAwesomeNightlySite" on your system. You can open 
 If you choose to use the command line first you have to change the directory to `MyAwesomeNightlySite`.
 
 ```bash
-cd .\MyAwesomeNightlySite\
+cd MyAwesomeNightlySite
 ```
 
 To run the newly created Umbraco site, you can execute the following command:
