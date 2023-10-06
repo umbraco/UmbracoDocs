@@ -18,7 +18,7 @@ Only C# code is built, and all frontend artifacts need to be built and committed
 
 You can use AzureDevops as an external repository and with the pipelines, it will automatically keep your Azure Devops source code repository in sync. The sync is done with the git repository of Umbraco Cloud of the development environment.
 
-![UmbracoCloud CICD sample pipeline](../../images/UmbracoCloudCicdSample.png)
+![UmbracoCloud CI/CD sample pipeline](../../images/UmbracoCloudCicdSample.png)
 
 
 # Prerequisites: Setting Up an Umbraco Cloud Project
