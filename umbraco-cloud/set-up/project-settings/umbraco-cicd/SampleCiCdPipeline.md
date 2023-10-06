@@ -20,9 +20,9 @@ You can use AzureDevops as an external repository and with the pipelines, it wil
 
 Before proceeding, you'll need a Umbraco Cloud project, a CI/Cd pipeline, and the required files to add to your pipeline for successful interaction with the Umbraco Cloud API.
 
-1. Create a Umbraco Cloud Project: Preferably with a development environment. You can either create a trial,  create a new project, or use an existing one.
+1. Create an Umbraco Cloud Project: Preferably with a development environment. You can either create a trial,  create a new project, or use an existing one.
 2. Create a new or use an existing CI/CD pipeline: For Azure DevOps see this [page](https://learn.microsoft.com/en-us/azure/devops/organizations/projects/create-project?view=azure-devops&tabs=browser). 
-3. Get your set of supporting files: Download sample files as a [zip-file](https://drive.google.com/file/d/1Wpxib2F5-eIyVsSdm3EBvA54eOrgiwLi/view?usp=drive_link). 
+3. Get your set of supporting files: Download sample files as a [zip-file](https://drive.google.com/file/d/1Wpxib2F5-eIyVsSdm3EBvA54eOrgiwLi/view?usp=drive_link). Note, that the only file you properly need to make changes to is the .yaml file. 
 
 **Note**: On the page "What is Umbraco CI/CD Flow", deployments are targeted at the leftmost environment in your Umbraco Cloud setup. This means if you have a Development environment, it will be automatically selected for deployment. If no Development environment exists, the Live environment will be used.
 
