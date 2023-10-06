@@ -2,13 +2,16 @@
 
 Learn how to configure a CI/CD pipeline in Azure DevOps and GitHub Actions Workflows using the scripts provided.
 
-You'll find example shell scripts and pipeline configurations in the section "Sample scripts", covering both Azure DevOps and GitHub Actions Workflows.
+You'll find example shell scripts and pipeline configurations in the "Sample scripts" section, covering both Azure DevOps and GitHub Actions Workflows.
 
 # Why should one configure a sample CI/CD pipeline?
-"Umbraco Cloud repositories are not meant to be used as source code repositories. More details on our official documentation.
+Umbraco Cloud repositories are not meant to be used as source code repositories. More details on our official documentation.
+
 Once you commit your code to Cloud the build pipeline converts your C# code to DLLs and deploys it on the respective environment.
+
 It is important to note that only C# code is built, and all frontend artifacts need to be built and committed to the repository.
-You can use AzureDevops as an external repository and with the pipelines it will automatically keep your azure devops source code repository in sync with the git repository of Umbraco Cloud of development environment.
+
+You can use AzureDevops as an external repository and with the pipelines, it will automatically keep your Azure Devops source code repository in sync with the git repository of Umbraco Cloud of the development environment.
 
 ![UmbracoCloud CICD sample pipeline](../../images/UmbracoCloudCicdSample.png)
 
