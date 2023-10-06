@@ -148,7 +148,12 @@ By following these steps, you'll have a staged pipeline configured in Azure DevO
 
 This stage involves making an API call to retrieve the latest completed deployment. The goal is to identify any remote changes that may have occurred since the last successful deployment. If such changes are detected, they are applied to a new Git branch and pushed. A manual validation gate is introduced if changes are found.
 
-Note: The current pipeline script has room for improvement. For instance, it may falsely indicate remote changes even after a patch has been applied. It also requires manual intervention twice, as changes persist until they are deployed.
+{% hint style="info" %}
+
+The current pipeline script has room for improvement. For instance, it may falsely indicate remote changes even after a patch has been applied. It also requires manual intervention twice, as changes persist until they are deployed.
+
+{% endhint %}
+
 
 ### Pipeline Stage: Build, Test, and Package
 
