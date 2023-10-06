@@ -314,11 +314,20 @@ The API response will vary based on whether or not there are changes to report. 
 Currently, the feature to transition from a development environment to staging or live, and from staging to live, is pending implementation. In the meantime, you can manage these transitions manually through the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects)  [link to relevant page in docs.umbraco.com, e.g. the section “Utilizing the Pipeline” of the new page “How To Configure A Sample CI|CD Pipeline”]..
 
 ### Possible errors
+When interacting with the Umbraco Cloud API, you may encounter various HTTP status codes that indicate the success or failure of your API request. Below is a table summarizing the possible status codes, their corresponding errors, and basic root causes to guide your troubleshooting:
 
-When working with the API-key, several types of errors can occur. The API-key is project-specific, meaning it can only be used to update a particular project. The content of the error message will vary depending on the nature of the issue. Here are a few examples:
+| Status Code       | Error              | Basic Root Cause                                              |
+|-------------------|--------------------|--------------------------------------------------------------|
+| 400               | BadRequest         | Check the requested path, supplied headers and query-parameters|
+| 401               | Unauthorized       | Check the Project Id and Api Key                              |
+| 404               | NotFound           | Usually related to the supplied deploymentId in path not being found|
+| 409               | Conflict           | The state of the referenced deployment is not ready for the work you are requesting|
+| 500               | InternalServerError| InternalServerError                                           |
 
-Invalid API-key - this is usually a bad configuration on the Umbraco side of things:
-![Https status 401 error code example](../../images/errorCodeExample.png)
+Most errors have a response body that corresponds to this JSON,  and the “detail” field will have a more complete error message.
 
-Invalid API-key - this is usually a bad configuration on the Umbraco side of things:
-![Https status 401 error code example 2](../../images/errorCodeExample2.png)
+{
+  “title”: string,
+  “status”: number,
+  “detail”: string,
+}
