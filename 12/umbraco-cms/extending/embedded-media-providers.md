@@ -20,22 +20,22 @@ Embed Providers are registered with the `EmbedProvidersCollection` during Compos
 
 The list of available default Embed Providers in an Umbraco install are as follows:
 
-* YouTube
-* YouTube Shorts
-* Twitter
-* Vimeo
-* Dailymotion
-* Flickr
-* SlideShare
-* Kickstarter
-* Getty Images
-* Ted
-* SoundCloud
-* Issuu
-* Hulu
-* Giphy
+-   YouTube
+-   YouTube Shorts
+-   Twitter
+-   Vimeo
+-   Dailymotion
+-   Flickr
+-   SlideShare
+-   Kickstarter
+-   Getty Images
+-   Ted
+-   SoundCloud
+-   Issuu
+-   Hulu
+-   Giphy
 
-You can see the details of these, and any recent editions in the C# developer reference for [Umbraco.Web.Media.EmbedProviders](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Cms.Core.Media.EmbedProviders.html).
+You can see the details of these, and any recent editions in the C# developer reference for [Umbraco.Web.Media.EmbedProviders](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Media.EmbedProviders.html).
 
 ## Configuring a new provider
 
@@ -151,7 +151,7 @@ public class AzureVideoEmbedProvider : OEmbedProviderBase
 
     // no ApiEndpoint!
     public override string ApiEndpoint => string.Empty;
-    
+
     public override string[] UrlSchemeRegex => new[]
     {
         @"windows\.net/*"

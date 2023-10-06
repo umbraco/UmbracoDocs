@@ -2,14 +2,14 @@
 
 The ContentService acts as a "gateway" to Umbraco data for operations which are related to Content.
 
-[Browse the v9 API documentation for ContentService](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Services.IContentService.html).
+[Browse the v9 API documentation for ContentService](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Services.IContentService.html).
 
- * **Namespace:** `Umbraco.Cms.Core.Services`
- * **Assembly:** `Umbraco.Core.dll`
+-   **Namespace:** `Umbraco.Cms.Core.Services`
+-   **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
 
-* Umbraco.Core.dll
+-   Umbraco.Core.dll
 
 All samples in this document will require the following using statements:
 
@@ -18,6 +18,7 @@ using Umbraco.Cms.Core.Services;
 ```
 
 For Razor views:
+
 ```csharp
 @using Umbraco.Cms.Core.Services
 ```
@@ -30,7 +31,7 @@ If you wish to use the content service in a class, you need to use Dependency In
 public class MyClass
 {
     private IContentService _contentService;
-    
+
     public MyClass(IContentService contentService)
     {
         _contentService = contentService;
