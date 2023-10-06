@@ -18,7 +18,7 @@ You can use AzureDevops as an external repository and with the pipelines, it wil
 
 # Prerequisites: Setting Up an Umbraco Cloud Project
 
-Before proceeding, you'll need an Umbraco Cloud project, a CI/CD pipeline, and the required files to add to your pipeline for successful interaction with the Umbraco Cloud API.
+Before proceeding, you'll need an Umbraco Cloud project and a CI/CD pipeline. You will also need the required files to add to your pipeline for successful interaction with the Umbraco Cloud API.
 
 1. Create an Umbraco Cloud Project: Preferably with a development environment. You can either create a trial,  create a new project, or use an existing one.
 2. Create a new or use an existing CI/CD pipeline: For Azure DevOps see this [page](https://learn.microsoft.com/en-us/azure/devops/organizations/projects/create-project?view=azure-devops&tabs=browser). 
