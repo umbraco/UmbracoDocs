@@ -231,3 +231,29 @@ Zip is done using explicit zip action excluding the folders that should not be p
 * Upload zip package for deployment [upload_package.sh](https://gist.github.com/stoffer13/e055b450e6c0ca18eb90511044d53fc0)
 * Start deployment [start_deployment.sh](https://gist.github.com/stoffer13/f5b52ce78626e61f636c7a13fca775aa)
 * Get deployment status: [get_deployment_status.sh](https://gist.github.com/stoffer13/7c318b6c2354e2e0db5d40c7defd383b)
+
+## Steps to get the GitHub Actions sample pipeline and scripts working properly
+
+1. Create your repository in GitHub and clone the code down locally. This will probably be an empty repository at this stage.
+2. In GitHub go to the Actions section and click on New Workflow.
+3. Under Choose Workflow, click the link to skip this and set up a workflow yourself.
+4. This will create an empty main.yml file. Copy this contents of [this main.yml](https://gist.github.com/stoffer13/908cdd61c924eb154f85411ae00e42ef) file and paste it in to your new file. Then click commit changes.
+5. Now pull the git repository and you should see a folder called .github and in that a folder called workflows. Inside this folder you will find your main.yml file.
+6. Open that file in VS Code or another editor and have a look at the contents. You will notice references to a PROJECT_ID and UMBRACO_CLOUD_API_KEY. You can get these from the Settings > Advanced section inside the Umbraco Cloud portal for your project.
+7. In GitHub, click on the Settings section and in the left hand menu titled Security expand the secrets and variables and click on Actions.
+8. In here, create a Secret called UMBRACO_CLOUD_API_KEY with the value from the Umbraco Portal > Settings > Advanced section.
+9. Then create a variable with the name PROJECT_ID and the value from the Umbraco Portal > Settings > Avanced section.
+10. Now go to your local folder where the workflows folder is and inside that create a folder called scripts.
+11. In this folder, create these 4 scripts with their names as they are in this list:
+- [create_deployment.sh](https://gist.github.com/stoffer13/3774493ee4e84fcc07574784106a87ba)
+- [upload_package.sh](https://gist.github.com/stoffer13/e055b450e6c0ca18eb90511044d53fc0) make sure it is named upload_package.sh
+- [start_deployment.sh](https://gist.github.com/stoffer13/f5b52ce78626e61f636c7a13fca775aa)
+- [get_deployment_status.sh](https://gist.github.com/stoffer13/7c318b6c2354e2e0db5d40c7defd383b)
+13. Next we need to give permission for these scripts to be able to run. So from within the workflows > scripts folder in your command line run these commands:
+- `git update-index --chmod=+x create_deployment.sh`
+- `git update-index --chmod=+x upload_package.sh`
+- `git update-index --chmod=+x start_deployment.sh`
+- `git update-index --chmod=+x get_deployment_status.sh`
+14. Commit all of these changes and push it up to GitHub and the pipeline will probably fail.
+15. Now you need to copy the files and folders from your Umbraco Cloud local Development repository and paste it into your GitHub local repository that you have just been working on the actions for (but don't copy over the git folder).
+16. Push all of the changes up and you should find that the build finished successfully and it should deploy your Development Umbraco Cloud site correctly. 
