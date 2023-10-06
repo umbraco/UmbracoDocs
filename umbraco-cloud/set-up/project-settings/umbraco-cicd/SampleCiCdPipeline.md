@@ -79,7 +79,7 @@ By executing this command, you'll disconnect the local repository from the Umbra
 
 ## Optional: Renaming the Master Branch to Main
 
-If you prefer to use the term "main" instead of "master" for your primary branch, you can easily rename it with the following commands:
+If you prefer to use the term "main" instead of "master" for your primary branch, you can rename it with the following commands:
 
 ```sh
 # Rename the 'master' branch to 'main'
