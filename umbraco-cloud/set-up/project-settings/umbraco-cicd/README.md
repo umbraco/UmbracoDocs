@@ -29,13 +29,14 @@ The CI/CD process for Umbraco projects involves some key steps, from code develo
 1. **Code Development**: Developers work on features or bug fixes in their local environments.
 2. **Customer code repository**: Changes are committed and pushed to a version control system like Git in the customer's own repository.
 3. **Customer pipeline**: The code is compiled and built. Tests can be run automatically in the associated pipeline to ensure code quality. Finally, the code is packaged into a zip file and prepared for deployment.
-4. **Deployment**: The deployments starts. This triggers queueing of the build in Umbraco services. It will be possible to poll for status updates.
+4. **Umbraco Cloud API**: The customer pipeline uploads the source packed as a zip file to Umbraco Cloud API.
+5. **Umbraco cloud repository**: The deployments start which triggers the queueing of the build in Umbraco services. It then pushed the Umbraco Cloud repository to the left-most environment. And if a live environment, the website has been updated.
 
-![Basic overview](../../images/BasicFlow.png)
+![Basic overview](../../images/NewBasicFlow.png)
 
 In a bit more detail the flow will look like this from a pipeline perspective.
 
-![Detailed overview](../../images/items.png)
+![Detailed overview](../../images/NewAdvancedFlow.png)
 
 ## Next Steps: Dive into the Documentation
 
