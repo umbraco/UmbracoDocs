@@ -11,6 +11,9 @@ To integrate Umbraco Cloud into your CI/CD pipeline, you'll need to make API cal
 
 You will find relevant examples using Curl and Powershell in the sections below.
 
+**Note: Beta Feature Alert**
+Please be aware that this feature is currently in beta mode. During this beta period, we welcome your feedback and are particularly interested in any issues or concerns you may encounter. For all support-related questions, please direct your inquiries to [umbraco-cicd@umbraco.dk](mailto:umbraco-cicd@umbraco.dk).
+
 ## Getting started
 
 To integrate Umbraco Cloud into your CI/CD pipeline, you'll need to make API calls to the following endpoint: ```https://api.cloud.umbraco.com.```
