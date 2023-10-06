@@ -12,7 +12,7 @@ Errors on the frontend are presented in three ways:
 * Blank / not loading
 * 404 (Page not found)
 
-A **500 error** will either show a generic error message like the one shown above or the full error stack trace if debug mode is enabled. The full error message can be found in the [Umbraco Logs](log-files.md).
+A **500 error** will show a generic error message like the one shown above or the full error stack trace if debug mode is enabled. The full error message can be found in the [Umbraco Logs](log-files.md).
 
 A **blank page or a page that is not loading** is likely due to bad rewrite rules ending in a rewrite loop. Make sure you do not rewrite anything on these paths:
 

@@ -30,14 +30,14 @@ Umbraco comes with the following checks by default:
 * Category **Security**
   * **Application URL Configuration (id: `6708CA45-E96E-40B8-A40A-0607C1CA7F28`)** - checks if the Umbraco application URL is configured for your site.
   * **Click-Jacking Protection (id: `ED0D7E40-971E-4BE8-AB6D-8CC5D0A6A5B0`)** - checks to see if a header or meta-tag is in place to indicate whether the site can be hosted in an IFRAME. Normally this is best set to deny permission for this to be done, to prevent what is known as [click-jacking](https://www.owasp.org/index.php/Clickjacking) attacks
-  * **Content/MIME Sniffing Protection (id: `1CF27DB3-EFC0-41D7-A1BB-EA912064E071`)** - checks that your site contains a header used to protect against MIME sniffing vulnerabilities
+  * **Content/MIME Sniffing Protection (id: `1CF27DB3-EFC0-41D7-A1BB-EA912064E071`)** - checks that your site contains a header used to protect against Multipurpose Internet Mail Extensions (MIME) sniffing vulnerabilities
   * **Cookie hijacking and protocol downgrade attacks Protection (HSTS) (id: `E2048C48-21C5-4BE1-A80B-8062162DF124`)** - checks if your HTTPS site contains the Strict-Transport-Security Header (HSTS). If not - adds with a default of 18 weeks
   * **Cross-site scripting Protection (id: `F4D2B02E-28C5-4999-8463-05759FA15C3A`)** - checks for the presence of the X-XSS-Protection-header
   * **Excessive Headers (id: `92ABBAA2-0586-4089-8AE2-9A843439D577`)** - checks to ensure that various headers that can provide details about the technology used to build and host the website have been removed
   * **HTTPS Configuration (id: `EB66BB3B-1BCD-4314-9531-9DA2C1D6D9A7`)** - to determine if the current site is running on a secure connection
   * **UseHttps check** - when the site is running on HTTPS, `Umbraco.Cms.Core.Configuration.Models.GlobalSettings.UseHttps` needs to be enabled to secure the backoffice. The setting can be found under `Umbraco:CMS:Global` in the `appsettings.json` file
 * Category **Services**
-  * **SMTP Settings (id: `1B5D221B-CE99-4193-97CB-5F3261EC73DF`)** - checks that an SMTP server is configured and is accepting requests for sending emails
+  * **SMTP Settings (id: `1B5D221B-CE99-4193-97CB-5F3261EC73DF`)** - checks that an Simple Mail Tranfer Protocol (SMTP) server is configured and is accepting requests for sending emails
 
 Each check returns a message indicating whether or not the issue in question has been found on the website installation. This could be an error that should be fixed, or a warning you should be aware of.
 
@@ -413,4 +413,4 @@ If a custom configuration is required for a custom notification method, the foll
 }
 ```
 
-If you want to get the notifications by email, SMTP settings should also be configured in the same JSON file.
+If you want to get the notifications by email, Simple Mail Transport Protocol (SMTP) settings should also be configured in the same JSON file.
