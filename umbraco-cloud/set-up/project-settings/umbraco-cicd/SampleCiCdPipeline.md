@@ -43,7 +43,13 @@ To get started with API interactions, you'll need to obtain your Project ID and 
 1. Navigate to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects) and select your project.
 2. Go to `Settings` -> `Advanced`. This is where you can generate an API key and find your Project ID.
 
-**Important Note**: The API key is tied to the specific project for which it is generated. Make sure to keep it secure, as it will be used for all subsequent API interactions related to that project.
+
+{% hint style="info" %}
+
+The API key is tied to the specific project for which it is generated. Make sure to keep it secure, as it will be used for all subsequent API interactions related to that project.
+
+{% endhint %}
+
 
 ## Cloning the Umbraco Cloud Repository
 
