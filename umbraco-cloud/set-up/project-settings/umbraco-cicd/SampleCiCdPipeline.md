@@ -10,7 +10,7 @@ Once you commit your code to Cloud the build pipeline converts your C# code to D
 It is important to note that only C# code is built, and all frontend artifacts need to be built and committed to the repository.
 You can use AzureDevops as an external repository and with the pipelines it will automatically keep your azure devops source code repository in sync with the git repository of Umbraco Cloud of development environment.
 
-!INSERT IMAGE AS PROVIDED BY ALINA!
+![UmbracoCloud CICD sample pipeline](../../images/UmbracoCloudCicdSample.png)
 
 
 # Prerequisites: Setting Up an Umbraco Cloud Project
