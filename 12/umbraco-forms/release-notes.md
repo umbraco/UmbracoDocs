@@ -18,6 +18,10 @@ In this section, you can find the release notes for each version of Umbraco Form
 
 <summary>Version 12</summary>
 
+#### [12.2.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.0) (TBC 2023)
+
+* Added an overload to the `RenderUmbracoFormDependencies` HTML helper method to allow provision of a dictionary parameter containing attributes to use when rendering script references. [#1074](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1074)
+
 #### [12.1.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.1) (September 19th 2023)
 
 * Ensured uploaded file protection is based on permission to view rather than edit entries [#1058](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1058)
