@@ -157,7 +157,7 @@ The current pipeline script has room for improvement. For instance, it may false
 
 ### Pipeline Stage: Build, Test, and Package
 
-In this stage, the Umbraco CMS project is built and tested. While this step is optional, it provides significant value, especially if you're running custom frontend builds with different npm versions for both the back office and website views.
+In this stage, the Umbraco CMS project is built and tested. While this step is optional, it provides significant value. Especially if you're running custom frontend builds with different npm versions for both the backoffice and website views.
 
 Automated tests can be run to ensure everything is functioning as expected. Additionally, manual verification steps can be included, such as deploying to a local server for QA validation.
 
