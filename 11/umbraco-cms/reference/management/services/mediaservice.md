@@ -2,14 +2,14 @@
 
 The MediaService acts as a "gateway" to Umbraco data for operations which are related to media.
 
-[Browse the API documentation for IMediaService interface](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Services.IMediaService.html).
+[Browse the API documentation for IMediaService interface](https://apidocs.umbraco.com/v11/csharp/api/Umbraco.Cms.Core.Services.IMediaService.html).
 
- * **Namespace:** `Umbraco.Cms.Core.Services` 
- * **Assembly:** `Umbraco.Core.dll`
+-   **Namespace:** `Umbraco.Cms.Core.Services`
+-   **Assembly:** `Umbraco.Core.dll`
 
- All samples in this document will require reference to the following packages:
+All samples in this document will require reference to the following packages:
 
-* [`Umbraco.Cms.Core`](https://www.nuget.org/packages/Umbraco.Cms.Core/)
+-   [`Umbraco.Cms.Core`](https://www.nuget.org/packages/Umbraco.Cms.Core/)
 
 Samples in this document will require the following using statements:
 
@@ -33,7 +33,7 @@ If you wish to use the media service in a class, you need to specify the `IMedia
 public class MyClass
 {
     private IMediaService _mediaService;
-    
+
     public MyClass(IMediaService mediaService)
     {
         _mediaService = mediaService;
@@ -79,7 +79,6 @@ The third parameter is the alias of the Media Type. As Umbraco comes with a Fold
 
 In addition to the three mandatory parameters as shown above, you may also specify a numeric ID for a user to which the creation of the media should be attributed. If not specified, the media will be attributed to the user with ID `-1`, which corresponds to the built-in "Administrator" user.
 
-
 ### Creating a new media item from a stream
 
 You can specify a `Stream` for the contents of the file that should be created.
@@ -87,12 +86,13 @@ You can specify a `Stream` for the contents of the file that should be created.
 As an example, if you have an image on disk named `unicorn.jpg` in the images folder of `wwwroot`. You can open a new stream for a file on the disk, and then create a new media item for that file in Umbraco:
 
 Note that you will need to inject the following services:
-- `MediaFileManager _mediaFileManager`
-- `IShortStringHelper _shortStringHelper`
-- `IContentTypeBaseServiceProvider _contentTypeBaseServiceProvider`
-- `MediaUrlGeneratorCollection _mediaUrlGeneratorCollection`
-- `IMediaService _mediaService`
-- `IWebHostEnvironment _webHostEnvironment`
+
+-   `MediaFileManager _mediaFileManager`
+-   `IShortStringHelper _shortStringHelper`
+-   `IContentTypeBaseServiceProvider _contentTypeBaseServiceProvider`
+-   `MediaUrlGeneratorCollection _mediaUrlGeneratorCollection`
+-   `IMediaService _mediaService`
+-   `IWebHostEnvironment _webHostEnvironment`
 
 ```csharp
 string webRootPath = _webHostEnvironment.WebRootPath;
