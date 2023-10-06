@@ -25,7 +25,6 @@ Under each major version, you can find details about minor and patch releases fo
 * Added feature of [content import and export with migrations](./deployment-workflow/import-export.md).
 * Added option to [resolve user accounts in target environments](./deploy-settings.md#resolveuserintargetenvironment).
 
-
 #### [10.2.5](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.5) (October 10th 2023)
 
 * Fixed regression issue introduced in 10.2.4 with deployment of properties of content templates [#182](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/182)
