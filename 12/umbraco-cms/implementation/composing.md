@@ -143,27 +143,44 @@ public class SubscribeToContentServiceSavingComposer : ComponentComposer<Subscri
 
 Below is a list of collections with their corresponding 'collection type' and how items for this collection 'out of the box' are registered.
 
-| Collection              | Type     | Registration                                                   |
-| ----------------------- | -------- | -------------------------------------------------------------- |
-| Actions                 | Lazy     | Type scanned for `IAction`                                     |
-| CacheRefreshers         | Lazy     | Type scanned for `ICacheRefresher`                             |
-| Components              | Ordered  | Explicit Registration                                          |
-| ContentApps             | Ordered  | Package.manifest & Explicit Registration                       |
-| ContentFinders          | Ordered  | Explicit Registration                                          |
-| Dashboards              | Weighted | Package.manifest & Explicit Registration                       |
-| DataEditors             | Lazy     | Type scanned for `IDataEditor`                                 |
-| EditorValidators        | Lazy     | Type scanned for `IEditorValidator`                            |
-| HealthChecks            | Lazy     | Type scanned for `HealthCheck`                                 |
-| ManifestValueValidators | Set      | Explicit Registration                                          |
-| OEmbedProviders         | Ordered  | Explicit Registration                                          |
-| PropertyValueConverters | Ordered  | Type scanned for `IPropertyValueConverter`                     |
-| SearchableTrees         | Lazy     | Type scanned for `ISearchableTree`                             |
-| Sections                | Ordered  | Package.manifest & Explicit Registration                       |
-| TourFilters             | Base     | Empty collection                                               |
-| Trees                   | Base     | Type scanned. Must inherit `TreeControllerBase` & use `[Tree]` |
-| UrlProviders            | Ordered  | Explicit Registration                                          |
-| UrlSegmentProviders     | Ordered  | Explicit Registration                                          |
-| Validators              | Lazy     | Explicit Registration                                          |
+| Collection                     | Type     | Registration                                                   |
+| -----------------------        | -------- | -------------------------------------------------------------- |
+| Actions                        | Lazy     | Type scanned for `IAction`                                     |
+| BackOfficeAssets               | Ordered  | Explicit Registration - Empty by default                       |
+| CacheRefreshers                | Lazy     | Type scanned for `ICacheRefresher`                             |
+| Components                     | Ordered  | Explicit Registration                                          |
+| ContentApps                    | Ordered  | Package.manifest & Explicit Registration                       |
+| ContentFinders                 | Ordered  | Explicit Registration                                          |
+| ContentIndexHandlers           | Lazy     | Type scanned for `IContentIndexHandler`                        |
+| Dashboards                     | Weighted | Package.manifest & Explicit Registration                       |
+| DataEditors                    | Lazy     | Type scanned for `IDataEditor`                                 |
+| DataValueReferenceFactories    | Ordered  | Explicit Registration - Empty by default                       | 
+| EditorValidators               | Lazy     | Type scanned for `IEditorValidator`                            |
+| EmbedProviders                 | Ordered  | Explicit Registration                                          |
+| FilterHandlers                 | Lazy     | Type scanned for `IFilterHandler`                              |
+| HealthChecks                   | Lazy     | Type scanned for `HealthCheck`                                 |
+| HealthCheckNotificationMethods | Lazy     | Type scanned for `IHealthCheckNotificationMethod`              |
+| ManifestFilters                | Ordered  | Explicit Registration - Empty by default                       |
+| ManifestValueValidators        | Set      | Explicit Registration                                          |
+| MapDefinitions                 | Set      | Explicit Registration                                          |
+| Mappers                        | Set      | Explicit Registration                                          |
+| MediaUrlGenerators             | Set      | Explicit Registration                                          |
+| MediaUrlProviders              | Ordered  | Explicit Registration                                          |
+| NPocoMappers                   | Set      | Explicit Registration                                          |
+| PackageMigrationPlans          | Lazy     | Type scanned for `PackageMigrationPlan`                        |
+| PartialViewMacroSnippets       | Lazy     | Explicit Registration. Reads .cshtml files from `Umbraco.Cms.Core.EmbeddedResources.Snippets` assembly & any files found on disk at `/umbraco/PartialViewMacros/Templates` |
+| PartialViewSnippets            | Lazy     | Explicit Registration. Reads .cshtml files from `Umbraco.Cms.Core.EmbeddedResources.Snippets` assembly |
+| PropertyValueConverters        | Ordered  | Type scanned for `IPropertyValueConverter`                     |
+| RuntimeModeValidators          | Set      | Explicit Registration                                          |
+| SearchableTrees                | Lazy     | Type scanned for `ISearchableTree`                             |
+| Sections                       | Ordered  | Package.manifest & Explicit Registration                       |
+| SelectorHandlers               | Lazy     | Type scanned for `ISelectorHandler`                            |
+| SortHandlers                   | Lazy     | Type scanned for `ISortHandler`                                |
+| TourFilters                    | Base     | Empty collection                                               |
+| Trees                          | Base     | Type scanned. Must inherit `TreeControllerBase` & use `[Tree]` |
+| UrlProviders                   | Ordered  | Explicit Registration                                          |
+| UrlSegmentProviders            | Ordered  | Explicit Registration                                          |
+| Validators                     | Lazy     | Explicit Registration                                          |
 
 ### Types of Collections
 
