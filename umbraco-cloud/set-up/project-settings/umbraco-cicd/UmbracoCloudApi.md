@@ -20,7 +20,7 @@ The initial certificate for this DNS is self-signed which can give curl and othe
 ### How to enable CI/CD Integrator in the Umbraco Cloud Portal
 To authenticate with the Umbraco Cloud API, you'll need your Project ID and API Key. These credentials can be found in your cloud project under the 'Settings' tab, and then navigating to the 'Advanced' page.
 
-![CI/CD Flow settings](../../images/TBD.png)
+![Umbraco CI/CD Flow](../../images/AdvancedSection.png)
 
 The two elements to be used for the authentication are:
 - **Cloud Project ID**: The ID of your Umbraco project.
