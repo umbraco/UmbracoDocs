@@ -42,7 +42,8 @@ To get started with API interactions, you'll need to obtain your Project ID and 
 
 ## Cloning the Umbraco Cloud Repository
 
-To get started with your local development, you'll need to clone the repository of the environment you intend to work with—either the development or live environment. Once cloned, make a copy of it in a new folder. In this example, we'll create a new folder named `local-cicd-demo-site` for the local repository.
+To get started with your local development, you'll need to clone the repository of the environment you intend to work with. Once cloned, make a copy of it in a new folder. In this example, we'll create a new folder named `local-cicd-demo-site` for the local repository.
+
 
 ```sh
 # Clone the development environment repository
