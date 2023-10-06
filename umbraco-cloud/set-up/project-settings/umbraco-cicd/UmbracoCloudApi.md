@@ -329,8 +329,10 @@ When interacting with the Umbraco Cloud API, you may encounter various HTTP stat
 
 Most errors have a response body that corresponds to this JSON,  and the “detail” field will have a more complete error message.
 
+```
 {
   “title”: string,
   “status”: number,
   “detail”: string,
 }
+```
