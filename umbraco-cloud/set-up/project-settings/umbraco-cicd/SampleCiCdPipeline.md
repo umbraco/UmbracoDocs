@@ -93,7 +93,7 @@ By executing these commands, you'll rename the local 'master' branch to 'main' a
 
 ## Setting Up the Pipeline in Azure DevOps
 
-This section provides a step-by-step guide to setting up a CI/CD pipeline in Azure DevOps using the provided sample scripts[link to "Sample scripts" section of this document]. The pipeline is defined in an Azure YAML file and includes several steps that call custom shell scripts to interact with the Umbraco Cloud API.
+This section provides a step-by-step guide to setting up a CI/CD pipeline in Azure DevOps using the provided sample scripts[link to "Sample scripts" section of this document]. The pipeline is defined in an Azure YAML file and includes some steps that call custom shell scripts to interact with the Umbraco Cloud API.
 
 ### Creating the Pipeline in Azure DevOps
 
