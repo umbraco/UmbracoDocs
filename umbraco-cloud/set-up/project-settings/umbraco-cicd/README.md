@@ -24,7 +24,7 @@ Umbraco CI/CD Flow serves as a bridge between your existing CI/CD pipeline and U
 
 ## Overview of Flow
 
-The CI/CD process for Umbraco projects involves several key steps, from code development locally to deployment to Umbraco Cloud. The flow is generally as follows:
+The CI/CD process for Umbraco projects involves some key steps, from code development locally to deployment to Umbraco Cloud. The flow is generally as follows:
 
 1. **Code Development**: Developers work on features or bug fixes in their local environments.
 2. **Customer code repository**: Changes are committed and pushed to a version control system like Git in the customer's own repository.
