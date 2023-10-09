@@ -11,9 +11,13 @@ description: >-
 
 You need to ensure that any packages you use are available in the latest version of Umbraco. You also need to ensure that your custom code is valid with the new .NET Framework version.
 
+
+
 **Breaking Changes**
 
 Make sure you know the [Breaking changes](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific#breaking-changes) in the latest version of Umbraco CMS.
+
+
 
 **Upgrading from Umbraco 9**
 
@@ -155,7 +159,8 @@ Remove the following files and folders _manually_ from your local project:
 * Enable the [Unattended Upgrades](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading#run-an-unattended-upgrade) feature.
 * Run the **project locally**.
 * Log in to the Umbraco backoffice to **verify the upgrade** has happened.
-* **Disable** the Unattended Upgrades feature.
+  * If you are unable to login locally via Umbraco ID and URL shows `/umbraco/authorizeupgrade?redir=` then this is because of the Unattended Upgrades setting. It needs to be set to `true` and deployed to the environment before performing the upgrade.
+* **Disable** the Unattended Upgrades feature if necessary.
 * **Build and run** the project to verify everything works as expected.
 
 ![Target Framework](images/verify-v10-upgrade-locally.png)
@@ -211,5 +216,3 @@ Once everything works as expected in the development environment, you can push t
 
 * [Working locally with Umbraco Cloud](../set-up/working-locally.md)
 * [KUDU on Umbraco Cloud](../set-up/power-tools/)
-
-
