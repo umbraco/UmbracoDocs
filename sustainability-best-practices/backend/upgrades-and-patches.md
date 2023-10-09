@@ -1,6 +1,12 @@
-# Apply upgrades and patches
+---
+description: >-
+  Implementing upgrades and patches, such as migrating to Umbraco 10+, is highly
+  advantageous from the standpoint of sustainable system design.
+---
 
-Implementing upgrades and patches, such as migrating to Umbraco 10+, is highly advantageous from the standpoint of sustainable system design. Staying up-to-date with the latest software versions ensures that the system benefits from enhanced performance, security, and efficiency.
+# Upgrades and patches
+
+Staying up-to-date with the latest software versions ensures that the system benefits from enhanced performance, security, and efficiency.
 
 Regular updates often include optimizations that reduce resource consumption and streamline processes, aligning with the principles of sustainable design by maximizing resource efficiency. Additionally, newer versions typically integrate eco-friendly features and improved coding practices, contributing to reduced energy consumption and minimized environmental impact.
 
