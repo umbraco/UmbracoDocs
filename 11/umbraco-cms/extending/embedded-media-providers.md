@@ -35,7 +35,7 @@ The list of available default Embed Providers in an Umbraco install are as follo
 * Hulu
 * Giphy
 
-You can see the details of these, and any recent editions in the C# developer reference for [Umbraco.Web.Media.EmbedProviders](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Cms.Core.Media.EmbedProviders.html).
+You can see the details of these, and any recent editions in the C# developer reference for [Umbraco.Web.Media.EmbedProviders](https://apidocs.umbraco.com/v11/csharp/api/Umbraco.Cms.Core.Media.EmbedProviders.html).
 
 ## Configuring a new provider
 
@@ -151,7 +151,7 @@ public class AzureVideoEmbedProvider : OEmbedProviderBase
 
     // no ApiEndpoint!
     public override string ApiEndpoint => string.Empty;
-    
+
     public override string[] UrlSchemeRegex => new[]
     {
         @"windows\.net/*"
