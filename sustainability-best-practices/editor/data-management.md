@@ -1,6 +1,6 @@
 # Data Management
 
-## Only Collect necessary data
+## Only Collect the necessary data
 
 * Action: Review forms and only ask for essential information.
 * Why: Less data means less storage and energy use, plus it's General Data Protection Regulation (GDPR)-friendly.
