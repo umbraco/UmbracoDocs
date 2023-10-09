@@ -65,5 +65,5 @@ The database account used in the connection string will need permissions to read
 For more information on the Database-level roles, see the [Microsoft documentation](https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-ver16#fixed-database-roles).
 
 {% hint style="info" %}
-For more information on how to create a db user via SQL, you can check the [Microsoft documentation](https://learn.microsoft.com/en-us/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-ver16#a--adding-a-user-to-a-database-level-role).
+For more information on how to create a database user via SQL, you can check the [Microsoft documentation](https://learn.microsoft.com/en-us/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-ver16#a--adding-a-user-to-a-database-level-role).
 {% endhint %}
