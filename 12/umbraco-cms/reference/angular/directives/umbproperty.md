@@ -1,6 +1,6 @@
 # umbProperty
 
-The [umb-property](https://apidocs.umbraco.com/v12/ui#/api/umbraco.directives.directive:umbProperty) directive can along with [umb-property-editor](https://apidocs.umbraco.com/v12/ui#/api/umbraco.directives.directive:umbPropertyEditor) be used for rendering property editors in the backoffice.
+The [umb-property](https://apidocs.umbraco.com/v9/ui#/api/umbraco.directives.directive:umbProperty) directive can along with [umb-property-editor](https://apidocs.umbraco.com/v9/ui#/api/umbraco.directives.directive:umbPropertyEditor) be used for rendering property editors in the backoffice.
 
 The two directives are typically used together. For instance, if your Angular model has an array of properties, your view could look something like:
 
@@ -20,7 +20,7 @@ var property = {
     label: "My property",
     description: "This is my property.",
     value: "Cupcake ipsum dolor sit amet oat cake marzipan...",
-    view: "textbox",
+    view: "textbox"
 };
 ```
 

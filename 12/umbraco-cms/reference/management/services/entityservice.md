@@ -2,14 +2,14 @@
 
 The EntityService acts as a "gateway" to Umbraco data for operations which are related to entities.
 
-[Browse the API documentation for IEntityService interface](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Services.IEntityService.html).
+[Browse the API documentation for IEntityService interface](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Services.IEntityService.html).
 
--   **Namespace:** `Umbraco.Cms.Core.Services`
--   **Assembly:** `Umbraco.Core.dll`
+ * **Namespace:** `Umbraco.Cms.Core.Services` 
+ * **Assembly:** `Umbraco.Core.dll`
 
-All samples in this document will require references to the following dll:
+ All samples in this document will require references to the following dll:
 
--   Umbraco.Core.dll
+* Umbraco.Core.dll
 
 All samples in this document will require the following using statements:
 
@@ -18,7 +18,6 @@ using Umbraco.Cms.Core.Services;
 ```
 
 For Razor views:
-
 ```csharp
 @using Umbraco.Cms.Core.Services
 ```

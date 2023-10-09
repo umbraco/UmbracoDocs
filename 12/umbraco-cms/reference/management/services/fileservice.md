@@ -1,15 +1,14 @@
 # FileService
-
 The FileService acts as a "gateway" to Umbraco data for operations which are related to Scripts, Stylesheets and Templates.
 
-[Browse the API documentation for IFileService](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Services.IFileService.html).
+[Browse the API documentation for IFileService](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Services.IFileService.html).
 
--   **Namespace:** `Umbraco.Cms.Core.Services`
--   **Assembly:** `Umbraco.Core.dll`
+ * **Namespace:** `Umbraco.Cms.Core.Services`
+ * **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
 
--   Umbraco.Core.dll
+* Umbraco.Core.dll
 
 All samples in this document will require the following using statements:
 
@@ -18,7 +17,6 @@ using Umbraco.Cms.Core.Services;
 ```
 
 For Razor views:
-
 ```csharp
 @using Umbraco.Cms.Core.Services
 ```
@@ -33,7 +31,7 @@ If you wish to use the file service in a class, you need to specify the `IFileSe
 public class MyClass
 {
     private IFileService _fileService;
-
+    
     public MyClass(IFileService fileService)
     {
         _fileService = fileService;

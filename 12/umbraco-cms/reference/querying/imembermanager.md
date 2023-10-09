@@ -4,7 +4,7 @@ description: "Using the IMemberManager"
 
 # IMemberManager
 
-`IMemberManager` is an user manager interface for accessing member data in the form of `MemberIdentityUser` and converting it to `IPublishedContent`. `IMemberManager` has a variety of methods that are useful in views and controllers. For the list of methods, see the [IMemberManager Interface API Documentation](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Security.IMemberManager.html#methods).
+`IMemberManager` is an user manager interface for accessing member data in the form of `MemberIdentityUser` and converting it to `IPublishedContent`. `IMemberManager` has a variety of methods that are useful in views and controllers. For the list of methods, see the [IMemberManager Interface API Documentation](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Security.IMemberManager.html#methods).
 
 ## How to reference IMemberManager
 
@@ -29,7 +29,7 @@ If you wish to use the `IMemberManager` in a class that inherits from one of the
 public class MemberAuthenticationSurfaceController : SurfaceController
 {
     private readonly IMemberManager _memberManager;
-
+    
     public MemberAuthenticationSurfaceController(IMemberManager memberManager)
     {
         _memberManager = memberManager;

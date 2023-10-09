@@ -5,7 +5,7 @@
 Umbraco stores identifiers in UDI format for most Umbraco object types. This identifier stores all of the metadata required to retrieve an Umbraco object and is parse-able within text. Example: `umb://document/4fed18d8c5e34d5e88cfff3a5b457bf2`. UDI's can be used in many of the querying APIs.
 
 {% hint style="info" %}
-UDI is currently not an acronym for something. There is no official definition of what it's short for. Therefore it's called _UDI_
+UDI is currently not an acronym for something. There is no official definition of what it's short for. Therefore it's called *UDI*
 {% endhint %}
 
 ## Format
@@ -26,8 +26,9 @@ There are 2 types of UDIs:
 
 ## GUID UDI
 
--   [API Reference for Umbraco 11](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.GuidUdi.html)
+* [API Reference for Umbraco 11](https://apidocs.umbraco.com/v11/csharp/api/Umbraco.Cms.Core.GuidUdi.html)
+
 
 ## String UDI
 
--   [API Reference for Umbraco 11](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.StringUdi.html)
+* [API Reference for Umbraco 11](https://apidocs.umbraco.com/v11/csharp/api/Umbraco.Cms.Core.StringUdi.html)
