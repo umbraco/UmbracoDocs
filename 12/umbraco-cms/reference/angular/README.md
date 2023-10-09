@@ -14,7 +14,7 @@ You can also raise an issue on the [official UmbracoDocs GitHub Issue Tracker](h
 
 Generally, you can find information about these via the [Backoffice UI API documentation](https://apidocs.umbraco.com/v12/ui). This part of the documentation is auto-generated from the Umbraco source code.
 
-Please look below for more in-depth descriptions and examples of AngularJS directives and services.
+Below you can find more in-depth descriptions and examples of AngularJS directives and services.
 
 ## Directives
 
