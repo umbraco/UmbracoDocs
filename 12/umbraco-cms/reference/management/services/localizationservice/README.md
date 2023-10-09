@@ -2,7 +2,7 @@
 
 The LocalizationService acts as a "gateway" to Umbraco data for operations which are related to Dictionary items and Languages.
 
-[Browse the API documentation for ILocalizationService](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Services.ILocalizationService.html).
+[Browse the API documentation for ILocalizationService](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Services.ILocalizationService.html).
 
 * **Namespace:** `Umbraco.Cms.Core.Services`
 * **Assembly:** `Umbraco.Core.dll`
@@ -33,7 +33,7 @@ If you wish to use the localization service in a class, you need to specify the 
 public class MyClass
 {
     private ILocalizationService _localizationService;
-    
+
     public MyClass(ILocalizationService localizationService)
     {
         _localizationService = localizationService;

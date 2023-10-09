@@ -76,7 +76,7 @@ Note the constructor minimum needs to inject what is required for the base `Back
 
 ## Notifications
 
-There are [several notifications](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Web.Common.Security.BackOfficeUserManager.html) you can handle on the `BackOfficeUserManager`.
+There are [several notifications](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Web.Common.Security.BackOfficeUserManager.html) you can handle on the `BackOfficeUserManager`.
 Internally these are mostly used for auditing but there are some that allow you to customize some workflows:
 
 [comment]: <> (* `BackOfficeUserManager.SendingUserInvite`)

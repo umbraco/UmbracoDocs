@@ -29,7 +29,7 @@ Add a file named 'package.manifest' to the 'App_Plugins' folder, containing the 
 }
 ```
 
-The section aliases can be found in the C# developer reference for [Umbraco.Cms.Core.Constants.Applications](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Constants.Applications.html).
+The section aliases can be found in the C# developer reference for [Umbraco.Cms.Core.Constants.Applications](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Constants.Applications.html).
 
 ### Registering with C# Type
 
@@ -57,7 +57,7 @@ namespace Umbraco.Docs.Samples.Web.Dashboards
         public string View => "/App_Plugins/MyCustomDashboard/dashboard.html";
 
         public IAccessRule[] AccessRules => Array.Empty<IAccessRule>();
-       
+
     }
 }
 ```
@@ -328,7 +328,7 @@ namespace Umbraco.Docs.Samples.Web.Dashboards
         // override explicit implementation
         IAccessRule[] IDashboard.AccessRules { get; } = new IAccessRule[]
         {
-            new AccessRule {Type = AccessRuleType.Deny, Value = Constants.Security.WriterGroupAlias},            
+            new AccessRule {Type = AccessRuleType.Deny, Value = Constants.Security.WriterGroupAlias},
             new AccessRule {Type = AccessRuleType.Grant, Value = Constants.Security.AdminGroupAlias},
             new AccessRule {Type = AccessRuleType.Grant, Value = "marketing"}
         };
