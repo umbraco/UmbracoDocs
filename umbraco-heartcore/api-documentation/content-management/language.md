@@ -162,7 +162,7 @@ Get a specific langauge by its ISO code.
 Create a new language for use on content.
 
 {% hint style="info" %}
-Please note that the number of languages that can be created is defined by the [pricing tier](https://umbraco.com/products/umbraco-heartcore/pricing/).
+The number of languages that can be created is determined by the [pricing tier](https://umbraco.com/products/umbraco-heartcore/pricing/).
 {% endhint %}
 
 **URL**: `/language`
@@ -260,7 +260,7 @@ Updates an existing language.
 Deletes an existing language.
 
 {% hint style="info" %}
-Please note that deleting a language, which is in use means that content based on this language will be set to `invariant`.
+Deleting a language that is in use will result in setting the content based on this language to `invariant`.
 {% endhint %}
 
 **URL**: `/language/{id}`
