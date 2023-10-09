@@ -12,18 +12,18 @@ To Create a Tree in a section of the Umbraco backoffice, you need to take multip
 
 Create a `TreeController` class in C#. A new controller which inherits from the abstract `Umbraco.Cms.Web.BackOffice.Trees.TreeController` class and provides an implementation for two abstract methods:
 
--   GetTreeNodes (returns a `TreeNodeCollection`) - Responsible for rendering the content of the tree structure;
--   GetMenuForNode (returns a `MenuItemCollection`) - Responsible for returning the menu structure to use for a particular node within a tree.
+* GetTreeNodes (returns a `TreeNodeCollection`) - Responsible for rendering the content of the tree structure;
+* GetMenuForNode (returns a `MenuItemCollection`) - Responsible for returning the menu structure to use for a particular node within a tree.
 
 You will need to add a constructor as `TreeController` requires this. See full code snippet in the "Implementing the Tree" section below.
 
 The `Tree` attribute used to decorate the `TreeController` has multiple properties.
 
--   `SectionAlias` - Alias of the section in which the tree appears
--   `TreeAlias` - Alias of the tree
--   `TreeTitle` - The title of the tree
--   `TreeGroup` - The tree group, the tree belongs to
--   `SortOrder` - Sort order of the tree
+* `SectionAlias` - Alias of the section in which the tree appears
+* `TreeAlias` - Alias of the tree
+* `TreeTitle` - The title of the tree
+* `TreeGroup` - The tree group, the tree belongs to
+* `SortOrder` - Sort order of the tree
 
 For example:
 
@@ -37,7 +37,7 @@ The example above would register a custom tree with a title 'Favourite Things Na
 
 ### Tree Groups
 
-Tree Groups enable you to group trees in a section. You provide the alias of the Tree Group name, you wish to add your tree to. See [Constants.Trees.Groups](https://apidocs.umbraco.com/v11/csharp/api/Umbraco.Cms.Core.Constants.Trees.Groups.html) for a list of existing group alias. An example of tree groups in the backoffice would be the _Settings_ tree group and the _Templating_ tree group in the _Settings_ section.
+Tree Groups enable you to group trees in a section. You provide the alias of the Tree Group name, you wish to add your tree to. See [Constants.Trees.Groups](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Constants.Trees.Groups.html) for a list of existing group alias. An example of tree groups in the backoffice would be the _Settings_ tree group and the _Templating_ tree group in the _Settings_ section.
 
 If you add your own alias, you'll need to add a translation key. This can be done by adding a language file to a `lang` folder with your application folder in `App_Plugins`: `App_Plugins/favouriteThings/lang/en-us.xml`. This will avoid the alias appearing as the header in \[square brackets].
 
@@ -222,7 +222,7 @@ Our Tree Action View would then be wired to the loaded controller using the `ng-
 
 ![Delete Raindrops on Roses](<../../../../../10/umbraco-cms/extending/section-trees/trees/images/delete-raindrops-on-roses-v8 (1).png>)
 
-Take a look at the [umbEditor directives in the backoffice API Documentation](https://apidocs.umbraco.com/v11/ui/#/api/umbraco.directives.directive:umbEditorHeader), for lots of common interaction directives. Those directives can be used to deliver a consistent backoffice editing experience for items in your custom tree.
+Take a look at the [umbEditor directives in the backoffice API Documentation](https://apidocs.umbraco.com/v9/ui/#/api/umbraco.directives.directive:umbEditorHeader), for lots of common interaction directives. Those directives can be used to deliver a consistent backoffice editing experience for items in your custom tree.
 
 [see Tree Actions for a list of tree _ActionMenuItems_ and _IActions_](tree-actions.md)
 
@@ -292,9 +292,9 @@ The `RootNodeRenderingNotification` is published whenever a tree's root node is 
 
 **Members:**
 
--   `TreeNode Node`
--   `FormCollection QueryString`
--   `string TreeAlias`
+* `TreeNode Node`
+* `FormCollection QueryString`
+* `string TreeAlias`
 
 **Usage:**
 
@@ -315,9 +315,9 @@ The `TreeNodesRenderingNotification` is published whenever a list of child nodes
 
 **Members:**
 
--   `TreeNodeCollection Nodes`
--   `FormCollection QueryString`
--   `string TreeAlias`
+* `TreeNodeCollection Nodes`
+* `FormCollection QueryString`
+* `string TreeAlias`
 
 **Usage:**
 
@@ -353,10 +353,10 @@ The `MenuRenderingNotification` is raised whenever a menu is generated for a tre
 
 **Members:**
 
--   `MenuItemCollection Menu`
--   `string NodeId`
--   `FormCollection QueryString`
--   `string TreeAlias`
+* `MenuItemCollection Menu`
+* `string NodeId`
+* `FormCollection QueryString`
+* `string TreeAlias`
 
 **Usage:**
 

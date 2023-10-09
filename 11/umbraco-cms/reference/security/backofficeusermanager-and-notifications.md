@@ -76,24 +76,24 @@ Note the constructor minimum needs to inject what is required for the base `Back
 
 ## Notifications
 
-There are [several notifications](https://apidocs.umbraco.com/v11/csharp/api/Umbraco.Cms.Web.Common.Security.BackOfficeUserManager.html) you can handle on the `BackOfficeUserManager`.
+There are [several notifications](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Web.Common.Security.BackOfficeUserManager.html) you can handle on the `BackOfficeUserManager`.
 Internally these are mostly used for auditing but there are some that allow you to customize some workflows:
 
-[comment]: <> (\* `BackOfficeUserManager.SendingUserInvite`)
+[comment]: <> (* `BackOfficeUserManager.SendingUserInvite`)
 
-[comment]: <> ( \* Allows you to take control over how a user in the backoffice is invited. This might be handy if you are using an [External Login Provider]&#40;external-login-providers.md&#41; that has the `DenyLocalLogin` option assigned and you still want to have the user invite functionality available. In this setup, all of your users are controlled by your external login provider so you would need to handle the user invite flow yourself by using this event and inviting the user via your external provider. If you are using this event to replace the default functionality you will need to tell Umbraco that you've handled the invite by setting the `UserInviteEventArgs.InviteHandled` property to `true`.)
+[comment]: <> (  * Allows you to take control over how a user in the backoffice is invited. This might be handy if you are using an [External Login Provider]&#40;external-login-providers.md&#41; that has the `DenyLocalLogin` option assigned and you still want to have the user invite functionality available. In this setup, all of your users are controlled by your external login provider so you would need to handle the user invite flow yourself by using this event and inviting the user via your external provider. If you are using this event to replace the default functionality you will need to tell Umbraco that you've handled the invite by setting the `UserInviteEventArgs.InviteHandled` property to `true`.)
 
--   `SendEmailNotification`
-    -   This is a generic notification but it has a property `EmailType` that specify the email type. This type can be `UserInvite`.
-        In that case, it allows you to take control over how a user in the backoffice is invited.
-        This might be handy if you are using an [External Login Provider](external-login-providers.md) that has the `DenyLocalLogin` option assigned
-        and you still want to have the user invite functionality available.
-        In this setup, all of your users are controlled by your external login provider so you would need to handle the user invite flow yourself by using this event and inviting the user via your external provider.
-        If you are using this event to replace the default functionality you will need to tell Umbraco that you've handled the invite by calling the
-        `SendEmailNotification.HandleEmail()` method.)
--   `UserLogoutSuccessNotification`
+* `SendEmailNotification`
+  * This is a generic notification but it has a property `EmailType` that specify the email type. This type can be `UserInvite`.
+    In that case, it allows you to take control over how a user in the backoffice is invited.
+    This might be handy if you are using an [External Login Provider](external-login-providers.md) that has the `DenyLocalLogin` option assigned
+    and you still want to have the user invite functionality available.
+    In this setup, all of your users are controlled by your external login provider so you would need to handle the user invite flow yourself by using this event and inviting the user via your external provider.
+    If you are using this event to replace the default functionality you will need to tell Umbraco that you've handled the invite by calling the
+   `SendEmailNotification.HandleEmail()` method.)
+* `UserLogoutSuccessNotification`
 
-    -   This is specifically used if you have an [External Login Provider](external-login-providers.md) in use
-        and you want to log out of that external provider when the user is logged out of the backoffice (i.e. Log out of everywhere).
-        The notification has a property `SignOutRedirectUrl`. If this property is assigned then Umbraco will redirect to that URL upon successful
-        backoffice sign out in order to sign the user out of the external login provider.
+  * This is specifically used if you have an [External Login Provider](external-login-providers.md) in use
+    and you want to log out of that external provider when the user is logged out of the backoffice (i.e. Log out of everywhere).
+    The notification has a property `SignOutRedirectUrl`. If this property is assigned then Umbraco will redirect to that URL upon successful
+    backoffice sign out in order to sign the user out of the external login provider.

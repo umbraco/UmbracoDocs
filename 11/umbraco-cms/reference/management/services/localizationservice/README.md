@@ -2,14 +2,14 @@
 
 The LocalizationService acts as a "gateway" to Umbraco data for operations which are related to Dictionary items and Languages.
 
-[Browse the API documentation for ILocalizationService](https://apidocs.umbraco.com/v11/csharp/api/Umbraco.Cms.Core.Services.ILocalizationService.html).
+[Browse the API documentation for ILocalizationService](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Services.ILocalizationService.html).
 
--   **Namespace:** `Umbraco.Cms.Core.Services`
--   **Assembly:** `Umbraco.Core.dll`
+* **Namespace:** `Umbraco.Cms.Core.Services`
+* **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
 
--   Umbraco.Core.dll
+* Umbraco.Core.dll
 
 All samples in this document will require the following using statements:
 
@@ -33,7 +33,7 @@ If you wish to use the localization service in a class, you need to specify the 
 public class MyClass
 {
     private ILocalizationService _localizationService;
-
+    
     public MyClass(ILocalizationService localizationService)
     {
         _localizationService = localizationService;
@@ -49,5 +49,5 @@ In Razor views, you can access the localization service through the `@inject` di
 
 ## Samples
 
--   [**Retrieving languages**](retrieving-languages.md)\
-    See examples on how to retrieve languages via the localization service - either individually or as a collection.
+* [**Retrieving languages**](retrieving-languages.md)\
+  See examples on how to retrieve languages via the localization service - either individually or as a collection.

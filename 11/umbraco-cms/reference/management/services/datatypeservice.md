@@ -2,14 +2,14 @@
 
 The DataTypeService acts as a "gateway" to Umbraco data for operations which are related to DataTypes and DataTypeDefinitions.
 
-[Browse the API documentation for IDataTypeService](https://apidocs.umbraco.com/v11/csharp/api/Umbraco.Cms.Core.Services.IDataTypeService.html).
+[Browse the API documentation for IDataTypeService](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Services.IDataTypeService.html).
 
--   **Namespace:** `Umbraco.Cms.Core.Services`
--   **Assembly:** `Umbraco.Core.dll`
+* **Namespace:** `Umbraco.Cms.Core.Services`
+* **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
 
--   Umbraco.Core.dll
+* Umbraco.Core.dll
 
 All samples in this document will require the following using statements:
 
@@ -33,7 +33,7 @@ If you wish to use the Data Type service in a class, you need to specify the `ID
 public class MyClass
 {
     private IDataTypeService _dataTypeService;
-
+    
     public MyClass(IDataTypeService dataTypeService)
     {
         _dataTypeService = dataTypeService;
