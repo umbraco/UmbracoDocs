@@ -1,39 +1,45 @@
-# Umbraco Cloud API For Umbraco CI/CD Flow
+# Cloud API For CI/CD Flow
 
-The Umbraco Cloud API serves as a publicly accessible endpoint that customers can utilize to execute relevant tasks. While its initial focus is on automating and managing deployments in Umbraco Cloud projects via the "Umbraco CI/CD Flow," future enhancements will broaden its capabilities to encompass a wider range of activities and options for Umbraco Cloud users.
-For the scope of this discussion, we will concentrate solely on the endpoints associated with interactions within the Umbraco CI/CD Flow. 
-To integrate Umbraco Cloud into your CI/CD pipeline, you'll need to make API calls to the following endpoint: [https://api.cloud.umbraco.com](https://api.cloud.umbraco.com):
+The Umbraco Cloud API serves as a publicly accessible endpoint that customers can utilize to execute relevant tasks.&#x20;
 
-- /$projectId/deployments
-- /$projectId/deployments/$deploymentId
-- /$projectId/deployments/$deploymentId/package
-- /$projectId/deployments/$latestCompletedDeploymentId/diff
+While its initial focus is on automating and managing deployments in Umbraco Cloud projects via the "Umbraco CI/CD Flow," future enhancements will broaden its capabilities to encompass a wider range of activities and options for Umbraco Cloud users.&#x20;
 
-You will find relevant examples using Curl and Powershell in the sections below.
+For the scope of this discussion, we will concentrate solely on the endpoints associated with interactions within the Umbraco CI/CD Flow. To integrate Umbraco Cloud into your CI/CD pipeline, you'll need to make API calls to the following endpoint [`https://api.cloud.umbraco.com`](https://api.cloud.umbraco.com):&#x20;
 
-**Note: Beta Feature Alert**
+* `/$projectId/deployments`
+* `/$projectId/deployments/$deploymentId`
+* `/$projectId/deployments/$deploymentId/package`
+* `/$projectId/deployments/$latestCompletedDeploymentId/diff`
+
+You will find relevant examples using `Curl` and `Powershell` in the sections below.
+
+{% hint style="info" %}
 Please be aware that this feature is currently in beta mode. During this beta period, we welcome your feedback and are particularly interested in any issues or concerns you may encounter. For all support-related questions, please direct your inquiries to [umbraco-cicd@umbraco.dk](mailto:umbraco-cicd@umbraco.dk).
+{% endhint %}
 
 ## Getting started
 
-To integrate Umbraco Cloud into your CI/CD pipeline, you'll need to make API calls to the following endpoint: ```https://api.cloud.umbraco.com.```
+To integrate Umbraco Cloud into your CI/CD pipeline, you'll need to make API calls to the following endpoint: `https://api.cloud.umbraco.com.`
 
 The initial certificate for this DNS is self-signed which can give curl and other tools some issues. We are working on changing this, for now, allowing an insecure connection will make it possible to circumvent this certificate issue.
 
 ### How to enable CI/CD Integrator in the Umbraco Cloud Portal
+
 To authenticate with the Umbraco Cloud API, you'll need your Project ID and API Key. These credentials can be found in your cloud project under the 'Settings' tab, and then navigating to the 'Advanced' page.
 
 ![Umbraco CI/CD Flow](../../images/Advanced-Section.png)
 
 The two elements to be used for the authentication are:
-- **Cloud Project ID**: The ID of your Umbraco project.
-- **CI/CD API Key**: Your unique identifier.
+
+* **Cloud Project ID**: The ID of your Umbraco project.
+* **CI/CD API Key**: Your unique identifier.
 
 By including the API key header in your HTTP requests, you ensure secure access to your Umbraco Cloud project's resources.
 
 For enhanced security, it's crucial to store the provided API key in a secure location. Options include a variable group in Azure DevOps or using the Secrets feature in GitHub Actions. It's important to note that each API key is tightly coupled with a specific Umbraco Cloud project and can only be used for deployments related to that project.
 
 ### How to authenticate your requests
+
 To authenticate your requests, include the API key in a custom HTTP header named API key.
 
 _PowerShell_ is a command-line shell and scripting language commonly used for automating tasks and managing configurations. It offers a versatile set of cmdlets that allow you to interact with APIs, manipulate files, and much more. Within the context of the Umbraco Cloud API, PowerShell can be employed to authenticate your requests by incorporating your unique API key.
@@ -42,22 +48,29 @@ _Curl_ (Client URL) is a command-line tool commonly used for making HTTP request
 
 To authenticate your API requests using curl, you'll need to include your API key in a custom HTTP header named Umbraco-Cloud-Api-Key. Here's how typical Powershell and curl commands would look for this purpose:
 
-``` Powershell
+{% tabs %}
+{% tab title="Powershell" %}
+```powershell
 Invoke-RestMethod -Uri $url -Headers @{ "Umbraco-Cloud-Api-Key" = $apiKey } -Method Get
 ```
+{% endtab %}
 
-``` curl
+{% tab title="Curl" %}
+```
 curl -s -X GET $url -H "Umbraco-Cloud-Api-Key: $apiKey"
 ```
+{% endtab %}
+{% endtabs %}
 
 ## How to make a deployment to Umbraco Cloud using the Umbraco CI/CD API
 
 ### Create the deployment
+
 The Create Deployment endpoint initiates a new deployment and returns a unique `deploymentId`. This call serves as the initial step in the deployment process. It requires a `projectId` specified in the URL path and a commit message included in the request body. Essentially, this establishes the metadata necessary for initiating the deployment process. If a deployment is already underway, initiating a new one will be possible but should be avoided.
 
 To create a deployment, you'll need to make an HTTP POST request. The request body should contain a simple JSON object with the commit message:
 
-``` json
+```json
 {
     "commitMessage": "New dashboard for customer sales numbers"
 }
@@ -65,7 +78,7 @@ To create a deployment, you'll need to make an HTTP POST request. The request bo
 
 In Powershell, the command to initiate a new deployment would be as follows
 
-``` sh
+```powershell
 ...
 $url = "https://api.cloud.umbraco.com/v1/projects/$projectId/deployments"
 $headers = @{
@@ -82,7 +95,7 @@ Invoke-RestMethod -Uri $url -Headers $headers -Method Post -Body $body
 
 In curl, the command to initiate a new deployment would be as follows
 
-``` sh
+```sh
 ...
 url="https://api.cloud.umbraco.com/v1/projects/$projectId/deployments"
 
@@ -94,7 +107,7 @@ curl -s -X POST $url \
 
 Part of the returned response will be the actual `deploymentId`. The response from the API should be an HTTP 201 Created response including a `deploymentId`. This ID can be stored in the pipeline variables so it can be used in later steps.
 
-``` json
+```json
 {
     "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
     "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
@@ -109,26 +122,28 @@ Part of the returned response will be the actual `deploymentId`. The response fr
 ```
 
 ### Upload zip source file
-To deploy content to the Umbraco Cloud repository, you need to perform an HTTP POST request to the Umbraco Cloud API. The deployment content should be packaged as a ZIP file, which must mirror the expected structure of the Umbraco Cloud repository. This ZIP file should include all relevant files such as project and solution files, and compiled frontend code. If your setup includes a frontend project with custom elements, the build artifacts from that project should also be included in the ZIP file, placed in the appropriate directory within the repository structure.
+
+To deploy content to the Umbraco Cloud repository, you need to perform an HTTP POST request to the Umbraco Cloud API. The deployment content should be packaged as a ZIP file, which must mirror the expected structure of the Umbraco Cloud repository. This ZIP file should include all relevant files such as project and solution files, and compiled frontend code. If your setup includes a frontend project with custom elements, the build artifacts from that project should also be included in the ZIP file, and placed in the appropriate directory within the repository structure.
 
 The HTTP POST request should be made using the `multipart/form-data` content type. The request URL should incorporate both the `projectId` and `deploymentId` obtained from the previous step in the API path.
 
-The ZIP file must be structured the same way as described in the Readme.md included in all cloud projects starting from Umbraco 9. This also means if you need to change the name and/or structure of the project, you should follow the guide in the same Readme. 
+The ZIP file must be structured the same way as described in the `Readme.md` included in all cloud projects starting from Umbraco 9. This also means if you need to change the name and/or structure of the project, you should follow the guide in the same Readme.
 
 By adhering to these guidelines, you ensure that the uploaded content is an exact match with what is expected in the Umbraco Cloud repository, facilitating a seamless deployment process.
 
 The purpose of packaging your content into a ZIP file is to replace the existing content in the Umbraco Cloud repository upon unpackaging. This ensures that the repository is updated with the latest version of your project files.
 
 #### A note about .gitignore
-Umbraco Cloud environments are using git internally. This means you should be careful about the .gitignore file you add to the package. If you have “git ignored” build js assets locally, you need to handle this so that this is not being ignored in the cloud repository. 
 
-**Note:** If the .gitignore file within the ZIP package does not exclude bin/ and obj/ directories, these will also be committed to the Umbraco Cloud repository. It is recommended that Dan and Jesper review and update this workflow accordingly.
+Umbraco Cloud environments are using git internally. This means you should be careful about the .gitignore file you add to the package. If you have “git ignored” build js assets locally, you need to handle this so that this is not being ignored in the cloud repository.
 
-**Best Practice:** If you have frontend assets your local repository's .gitignore file will most likely differ from the one intended for the Umbraco Cloud repository, it's advisable to create a separate .cloud_gitignore file. Include this file in the ZIP package and rename it to .gitignore before packaging. This ensures that only the necessary files and directories are uploaded and finally committed to the Umbraco Cloud repository.
+**Note:** If the `.gitignore` file within the ZIP package does not exclude bin/ and obj/ directories, these will also be committed to the Umbraco Cloud repository. It is recommended that Dan and Jesper review and update this workflow accordingly.
+
+**Best Practice:** If you have frontend assets your local repository's .gitignore file will most likely differ from the one intended for the Umbraco Cloud repository, it's advisable to create a separate .cloud\_gitignore file. Include this file in the ZIP package and rename it to .gitignore before packaging. This ensures that only the necessary files and directories are uploaded and finally committed to the Umbraco Cloud repository.
 
 In curl uploading the source file will be:
 
-``` sh
+```sh
 ...
 url="https://api.cloud.umbraco.com/v1/projects/$projectId/deployments/$deploymentId/package"
 
@@ -140,7 +155,7 @@ curl -s -X POST $url \
 
 The response of this call will be the same deployment object (in JSON) as when creating a new deployment, but the deploymentState should now be 'Pending':
 
-``` json
+```json
 {
     "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
     "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
@@ -160,7 +175,7 @@ After the source file has been uploaded the deployment can be started. This will
 
 In curl starting a deployment will be:
 
-``` sh
+```sh
 ...
 url="https://api.cloud.umbraco.com/v1/projects/$projectId/deployments/$deploymentId"
 
@@ -172,7 +187,7 @@ curl -s -X PATCH $url \
 
 The response of this call will be the same deployment object (in JSON) as when creating a new deployment, but the deploymentState should now be 'Queued':
 
-``` json
+```json
 {
     "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
     "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
@@ -194,7 +209,7 @@ Deployments in Umbraco services can take varying amounts of time to complete. Th
 
 Using a curl command, polling for the deployment status would look like this:
 
-``` sh
+```sh
 ...
 url="https://api.cloud.umbraco.com/v1/projects/$projectId/deployments/$deploymentId"
 
@@ -234,7 +249,7 @@ fi
 
 The response from this API call will return the same deployment object in JSON format as you would receive from other API interactions. Ultimately, the `deploymentState` field will indicate either 'Completed' or 'Failed'. Should the deployment fail, the 'ErrorMessage' field will provide additional details regarding the issue.
 
-``` json
+```json
 {
     "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
     "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
@@ -254,7 +269,7 @@ You can retrieve a list of deployments via the API, although currently, this is 
 
 To fetch the list of deployments using a curl command, the syntax would be as follows:
 
-``` sh
+```sh
 ...
 url="https://api.cloud.umbraco.com/v1/projects/$projectId/deployments?skip=0&take=1"
 
@@ -267,7 +282,7 @@ latestDeploymentId=$(echo $response | jq -r '.deployments[0].deploymentId')
 
 The response from this API call will return a list of deployment objects, formatted in JSON, consistent with the structure used in other API responses.
 
-``` json
+```json
 [
   {
     "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
@@ -289,7 +304,7 @@ Sometimes updates are done directly on the Umbraco Cloud repository. We encourag
 
 Using a curl command, fetching the potential differences would look like this:
 
-``` sh
+```sh
 url="https://apim-dev-global.azure-api.net/projects/$projectId/deployments/$latestCompletedDeploymentId/diff"
 downloadFolder="tmp"
 mkdir -p $downloadFolder # ensure folder exists
@@ -314,20 +329,21 @@ The API response will vary based on whether or not there are changes to report. 
 
 ### Promote Deployment
 
-Currently, the feature to transition from a development environment to staging or live, and from staging to live, is pending implementation. In the meantime, you can manage these transitions manually through the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects)  [link to relevant page in docs.umbraco.com, e.g. the section “Utilizing the Pipeline” of the new page “How To Configure A Sample CI|CD Pipeline”]..
+Currently, the feature to transition from a development environment to staging or live, and from staging to live, is pending implementation. In the meantime, you can manage these transitions manually through the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects) \[link to relevant page in docs.umbraco.com, e.g. the section “Utilizing the Pipeline” of the new page “How To Configure A Sample CI|CD Pipeline”]..
 
 ### Possible errors
+
 When interacting with the Umbraco Cloud API, you may encounter various HTTP status codes that indicate the success or failure of your API request. Below is a table summarizing the possible status codes, their corresponding errors, and basic root causes to guide your troubleshooting:
 
-| Status Code       | Error              | Basic Root Cause                                              |
-|-------------------|--------------------|--------------------------------------------------------------|
-| 400               | BadRequest         | Check the requested path, supplied headers and query-parameters|
-| 401               | Unauthorized       | Check the Project Id and Api Key                              |
-| 404               | NotFound           | Usually related to the supplied deploymentId in path not being found|
-| 409               | Conflict           | The state of the referenced deployment is not ready for the work you are requesting|
-| 500               | InternalServerError| InternalServerError                                           |
+| Status Code | Error               | Basic Root Cause                                                                    |
+| ----------- | ------------------- | ----------------------------------------------------------------------------------- |
+| 400         | BadRequest          | Check the requested path, supplied headers and query-parameters                     |
+| 401         | Unauthorized        | Check the Project Id and Api Key                                                    |
+| 404         | NotFound            | Usually related to the supplied deploymentId in path not being found                |
+| 409         | Conflict            | The state of the referenced deployment is not ready for the work you are requesting |
+| 500         | InternalServerError | InternalServerError                                                                 |
 
-Most errors have a response body that corresponds to this JSON,  and the “detail” field will have a more complete error message.
+Most errors have a response body that corresponds to this JSON, and the “detail” field will have a more complete error message.
 
 ```
 {
