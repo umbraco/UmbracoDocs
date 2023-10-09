@@ -200,23 +200,25 @@ Once changes have been made and tested in the Development environment, you can d
 
 <figure><img src="../../images/UmbracoCloudDemoSite6.png" alt=""><figcaption><p><strong>Changes Deployed to the Live Environment</strong></p></figcaption></figure>
 
-### Sample scripts
+### Azure DevOps sample scripts
 
-The script samples are currently shared as GitHub Gists:
+You can download the Azure DevOps sample scripts below:
 
-#### Azure DevOps
+{% file src="../../../.gitbook/assets/AzureDevOpsSampleScripts.zip" %}
 
-* Azure pipeline including stages and preflight check for building and releasing [azure-release-pipeline.yaml](https://gist.github.com/stoffer13/83282d6efde25c1d57b25ea8554070f6)
-* Create new deployment [create\_deployment.sh](https://gist.github.com/stoffer13/dc784556d94844e0301a0a554945fb9e)
-* List of files and folders to include in zip [project-files-to-zip-list](https://gist.github.com/stoffer13/5ac1800b560bf410598a70fda3acaa09)
-* Upload zip package for deployment [upload\_package.sh](https://gist.github.com/stoffer13/f1ca570a45640160f1bbb1674044ded0)
-* Start deployment [start\_deployment.sh](https://gist.github.com/stoffer13/47580af6c41493d075262d19e12b4fdc)
-* Get deployment status: [get\_deployment\_status.sh](https://gist.github.com/stoffer13/2abe249246f8c0d537c8071d31031a50)
-* Get diff since latest deployment: [get\_changes\_since\_last\_deployment.sh](https://gist.github.com/stoffer13/fd8bc2629657263aa7d3a586f5519073)
+The zip file includes the following:
 
-#### Github Actions
+* Azure pipeline including stages and preflight checks for building and releasing `azure-release-pipeline.yaml`
+* Create new deployment `create_deployment.sh`
+* List of files and folders to include in `zip project-files-to-zip-list`
+* Upload zip package for deployment `upload_package.sh`
+* Start Deployment `start_deployment.sh`
+* Get deployment status: `get_deployment_status.sh`
+* Get diff since latest deployment: `get_changes_since_last_deployment.sh`
 
-Zip is done using explicit zip action excluding the folders that should not be part of git-source. api-key (Umbraco-Cloud-Api-Key) is stored in the GitHub Secrets, project Id is stored as a variable.
+#### GitHub Actions
+
+Zip is done using explicit zip action excluding the folders that should not be part of git-source. api-key (Umbraco-Cloud-Api-Key) is stored in the GitHub Secrets, project ID is stored as a variable.
 
 * GitHub Action workflow pipeline [main.yaml](https://gist.github.com/stoffer13/908cdd61c924eb154f85411ae00e42ef)
 * Create new deployment [create\_deployment.sh](https://gist.github.com/stoffer13/3774493ee4e84fcc07574784106a87ba)
