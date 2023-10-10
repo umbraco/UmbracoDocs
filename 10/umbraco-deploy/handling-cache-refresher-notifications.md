@@ -7,13 +7,13 @@ description: "How to respond to deployment events using cache refresher notifica
 
 ## Background
 
-When you deploy content or other Umbraco data between environments, several notifications that are normally fired in CMS operations are suppressed.
+When you deploy content or other Umbraco data between environments, some notifications that are normally fired in CMS operations are suppressed.
 
 For example, you may handle a `ContentPublishedNotification` to apply some custom logic when a content item is published. This code will run in a normal CMS publish operation. However, when deploying a content item into another environment and triggering it's publishing there, the notification will not be issued. And the custom logic in the notification handler will not run.
 
 This behavior is deliberate and done for performance and reliability reasons. A normal save and publish operation by an editor operates on one item at a time. With deployments, we may have many, and publishing these notifications may lead to at best slow operations, and at worst inconsistent data.
 
-However, what if you do want to run some code on the save of some Umbraco data, even if this is happening as part of a Deploy operation?
+However, what if you do want to run some code on an update, even if this is happening as part of a Deploy operation?
 
 There's an option here using cache refresher notifications. Not all events are suppressed by Umbraco Deploy. Some that are batched up and fired after the deploy operation is completed include those related to refreshing the Umbraco cache.
 
@@ -85,7 +85,7 @@ public class ContentCacheRefresherNotificationHandler : INotificationHandler<Con
 }
 ```
 
-The second example is similar, but handles an update to a dictionary item. With this one we get a parameter that consists of just the item's ID. Again we can retrieve it and carry out some further processing.
+The second example is similar, but handles an update to a dictionary item. With this one we get a parameter that consists of the item's ID. Again we can retrieve it and carry out some further processing.
 
 ```csharp
 using Umbraco.Cms.Core.Events;
