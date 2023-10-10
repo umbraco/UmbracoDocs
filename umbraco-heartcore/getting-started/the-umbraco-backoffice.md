@@ -119,7 +119,7 @@ From the Headless tree you can browse and explore the REST API endpoints as well
 
 ## Users
 
-In this section you can manage all the users that are currently working on the project. Users are not to be confused with Members as members are people who has a login to your websites frontend whereas Users can be developers, content creators etc that has access to the backoffice.
+In this section you can manage all the users that are currently working on the project. Users are not to be confused with Members as members are people who has a login to your websites frontend whereas Users can be developers, content creators and so on that has access to the backoffice.
 
 You can segment your users into different User Groups. You can add Users to existing Groups or create your own custom User Groups. How many of these groups you can create depends on the plan your project is on.
 
