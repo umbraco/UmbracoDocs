@@ -16,7 +16,7 @@ From here you are able to log in with the credentials used when the project was 
 
 ## Sections
 
-The backoffice is divided into specific sections e.g. Content, Media and Settings. This will allow you to do work related to a specific section of your project.
+The backoffice is divided into specific sections for example Content, Media and Settings. This will allow you to do work related to a specific section of your project.
 
 ![Sections of the backoffice](images/sections.png)
 
