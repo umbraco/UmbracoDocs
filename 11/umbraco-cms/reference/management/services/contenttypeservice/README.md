@@ -2,7 +2,7 @@
 
 The content type service acts as a "gateway" to Umbraco data for operations which are related to both content types and media types.
 
-[Browse the API documentation for IContentTypeService](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Services.IContentTypeService.html).
+[Browse the API documentation for IContentTypeService](https://apidocs.umbraco.com/v11/csharp/api/Umbraco.Cms.Core.Services.IContentTypeService.html).
 
  * **Namespace:** `Umbraco.Cms.Core.Services`
  * **Assembly:** `Umbraco.Core.dll`
@@ -32,7 +32,7 @@ If you wish to use the content type service in a class, you need to specify the 
 public class MyClass
 {
     private IContentTypeService _contentTypeService;
-    
+
     public MyClass(IContentTypeService contentTypeService)
     {
         _contentTypeService = contentTypeService;
