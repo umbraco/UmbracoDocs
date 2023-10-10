@@ -5,6 +5,7 @@
   * [Umbraco 8 Documentation](https://our.umbraco.com/documentation/)
   * [Umbraco 7 Documentation](https://our.umbraco.com/documentation/)
 * [Contribute](https://docs.umbraco.com/welcome/contribute/)
+* [Sustainability Best Practices](https://docs.umbraco.com/sustainability-best-practices)
 
 ## Fundamentals
 
