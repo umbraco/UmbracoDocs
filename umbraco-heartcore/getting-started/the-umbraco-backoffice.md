@@ -36,7 +36,7 @@ Every item you have is considered a node. It could be a media item or content in
 
 ## Dashboard
 
-Every section in the Umbraco backoffice has one or more dashboard associated with them. The first thing you will see when accessing the backoffice on your Umbraco Heartcore project is the "Getting Started" dashboard, where you can find links to news and resources useful to your project.
+Every section in the Umbraco backoffice has one or more dashboard associated with them. The first thing you will see when accessing the backoffice on your Umbraco Heartcore project is the "Getting Started" dashboard. Here you can find links to news and resources useful to your project.
 
 ![Getting Started](images/dashboard.png)
 
@@ -54,7 +54,7 @@ On the left you can see what properties the highlighted Content Node has. In the
 
 ![Overview of the Content info](images/content-info.png)
 
-At the top you can see the automatically generated URL to the specific Content Node. Below you also get a handy history overview that shows who has done what at what time. Lastly you can see some general information such as Status, Creation Date and a direct link to the Document Type so you can edit it without leaving the current view.
+At the top you can see the automatically generated URL to the specific Content Node. Below you also get a handy history overview that shows who has done what at what time. Lastly you can see some general information such as Status, Creation Date and a direct link to the Document Type. You can edit it without leaving the current view.
 
 Lastly you can either Save, Save and publish, Schedule a publication or unpublish the Content Node. You can change the action by clicking the small up arrow next in the green button in the lower right corner.
 
@@ -64,7 +64,7 @@ Media items are used to store images and videos in the Media section. These item
 
 ![Overview of the Media section](images/media.png)
 
-A handy feature is that if you have a Media Picker in your Content Node and you upload an image it will automatically be added in the Media Section.
+A handy feature is that if you have a Media Picker in your Content Node and you upload an image. This image will automatically be added in the Media Section.
 
 ## Settings
 
@@ -88,7 +88,7 @@ Each Document Type property consists of a Data Type which defines what kind of i
 
 ### Relation Types
 
-In this section you are able to create two way relationships in order to be able to query the parent for the children and the children for the parent.
+In this section, you can establish two-way relationships for querying both parent-to-children and children-to-parent connections.
 
 ### Log Viewer
 
@@ -110,7 +110,7 @@ The dashboard shows you:
 
 ![Headless Dashboard](images/headless-dashboard.png)
 
-In addition you are able to set the Content Delivery API to either Public or Private. If the API is set to private you will have to have an[ API key assigned](backoffice-users-and-api-keys.md) to your user which you will need when fetching content from the APIs.
+In addition you are able to set the Content Delivery API to either Public or Private. If the API is private, you must have an [assigned API key](backoffice-users-and-api-keys.md) to fetch content from it.
 
 From the Headless tree you can browse and explore the REST API endpoints as well as create and manage your Webhooks.
 
@@ -119,7 +119,7 @@ From the Headless tree you can browse and explore the REST API endpoints as well
 
 ## Users
 
-In this section you can manage all the users that are currently working on the project. Users are not to be confused with Members as members are people who has a login to your websites frontend whereas Users can be developers, content creators and so on that has access to the backoffice.
+In this section you can manage all the users that are currently working on the project. Users are not to be confused with Members. Members are people who have a login to your website's frontend. Users can be developers, content creators, and so on, who have access to the backoffice.
 
 You can segment your users into different User Groups. You can add Users to existing Groups or create your own custom User Groups. How many of these groups you can create depends on the plan your project is on.
 
