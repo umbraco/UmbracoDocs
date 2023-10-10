@@ -2,9 +2,9 @@
 
 The AuditService acts as a "gateway" to Umbraco data for operations which are related to the audit trail.
 
-[Browse the API documentation for IAuditService interface](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Services.IAuditService.html).
+[Browse the API documentation for IAuditService interface](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Services.IAuditService.html).
 
- * **Namespace:** `Umbraco.Cms.Core.Services` 
+ * **Namespace:** `Umbraco.Cms.Core.Services`
  * **Assembly:** `Umbraco.Core.dll`
 
  All samples in this document will require references to the following dll:
@@ -32,7 +32,7 @@ If you wish to use the audit service in a class, you need to use Dependency Inje
 public class MyClass
 {
     private IAuditService _auditService;
-    
+
     public MyClass(IAuditService auditService)
     {
         _auditService = auditService;
