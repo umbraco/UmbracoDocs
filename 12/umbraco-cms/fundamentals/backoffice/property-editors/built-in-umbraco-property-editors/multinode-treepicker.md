@@ -26,6 +26,12 @@ $root
 $site: Ancestor node at level 1
 ```
 
+{% hint style="warning" %}
+
+The current implementation of XPath is suboptimal and will be removed entirely in a future version. It is currently obsolete and scheduled for removal in v14.
+
+{% endhint %}
+
 It is important to notice that all placeholders above act against published content only. So if you, therefore, try to fetch `$parent` of the current document, then Umbraco will return that or its closest published ancestor. So in case, the parent is not published, it will try the parent of that parent, and so on.
 
 **Filter out items with type:** allow or disallow tree nodes with a certain content type alias.

@@ -34,6 +34,12 @@ The value for error pages can be:
 * An XPath statement (example: //errorPages\[@nodeName='My cool error']
 * A content item's integer ID (example: 1234)
 
+{% hint style="warning" %}
+
+The current implementation of XPath is suboptimal and will be removed entirely in a future version. It is currently obsolete and scheduled for removal in v14.
+
+{% endhint %}
+
 That is where the value you grabbed earlier comes in. Fill it out like so:
 
 ```json
