@@ -13,15 +13,21 @@ For example, you may handle a `ContentPublishedNotification` to apply some custo
 
 This behavior is deliberate and done for performance and reliability reasons. A normal save and publish operation by an editor operates on one item at a time. With deployments, we may have many, and publishing these notifications may lead to at best slow operations, and at worst inconsistent data.
 
+The notification will also already be published on the environment where the actual operation was carried out. So repeating this with each content transfer might also result in unwanted behavior.
+
 However, what if you do want to run some code on an update, even if this is happening as part of a Deploy operation?
 
-There's an option here using cache refresher notifications. Not all events are suppressed by Umbraco Deploy. Some that are batched up and fired after the deploy operation is completed include those related to refreshing the Umbraco cache.
+Not all notifications are suppressed by Umbraco Deploy. Some are batched and fired after the deploy operation is complete. These include those related to refreshing the Umbraco cache and rebuilding indexes.
+
+You can use these cache refresher notifications to handle operations that should occur after a deployment is completed. All notification issued by the CMS are made available. So when deploying a set of content items, a refresher notification will be issued for each.
 
 ## Implementing a Cache Refresher Notification
 
 The following two code samples illustrate how this can be done.
 
 The first handles a content cache refresher, which takes a payload from where the content ID can be extracted. Using that the content can be retrieved in the local Umbraco instance and used as appropriate.
+
+For more details and further examples, please see the [CMS Cache Refresher Notifications documentation](https://docs.umbraco.com/umbraco-cms/reference/notifications/cacherefresher-notifications).
 
 ```csharp
 using Umbraco.Cms.Core.Cache;
