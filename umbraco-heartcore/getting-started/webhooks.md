@@ -22,7 +22,12 @@ Clicking **Create Webhook** will open the creation menu on the right side.
 
 From here you add the URL that the webhook should call and select the **Event** that should trigger the webhook. Lastly, you can choose a Content Type you wish the webhook to trigger on.
 
-Please be aware that selecting the event type is the initial step, and this field is not mandatory.
+{% hint style="info" %}
+
+Selecting the event type is the initial step. Also, this field is not mandatory.
+
+{% endhint %}
+
 
 Once the webhook has been created you can manage it from the list. 
 
