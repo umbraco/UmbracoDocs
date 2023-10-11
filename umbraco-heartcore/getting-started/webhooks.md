@@ -34,7 +34,7 @@ Should you at some point need to temporarily pause the webhook, you can disable 
 
 Webhooks will be fired from either of the two static IPs listed below.
 
-When working with an external service behind a firewall, ensure the following IPs can pass through for webhook data. The service requires access to your Umbraco Heartcore project. 
+When working with an external service behind a firewall, your service needs to communicate with your Umbraco Cloud project and receive webhook data. This can be done by ensuring that the following IPs are allowed to pass from the firewall
 
 ```
 20.86.53.156
