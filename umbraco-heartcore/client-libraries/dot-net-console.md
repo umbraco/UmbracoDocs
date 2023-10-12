@@ -55,7 +55,7 @@ Once you have entered the alias of the project, you are presented with the follo
 
 Option A - E uses the[ Content Delivery API](../api-documentation/content-delivery/) and can be used for any Heartcore Project, which has public content.
 
-Option F uses the [Content Management API. ](../api-documentation/content-management/). This means that an [API Key ](../getting-started/backoffice-users-and-api-keys.md)is required to run this part of the sample. Tis is because it will create a new folder in the Media Library and upload an image to a new Media item.
+Option F uses the [Content Management API.](../api-documentation/content-management/). This means that an [API Key](../getting-started/backoffice-users-and-api-keys.md) is required to run this part of the sample. This is because it will create a new folder in the Media Library and upload an image to a new Media item.
 
 ### Examples of the fetched data
 
