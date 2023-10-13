@@ -23,7 +23,7 @@ using Google.Authenticator;
 using Umbraco.Cms.Core.Security;
 using Umbraco.Cms.Core.Services;
 
-namespace Umbraco9
+namespace My.Website
 {
     /// <summary>
     /// Model with the required data to setup the authentication app.
@@ -116,7 +116,7 @@ using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Security;
 using Umbraco.Extensions;
 
-namespace Umbraco9
+namespace My.Website
 {
     public class UmbracoAppAuthenticatorComposer : IComposer
     {
@@ -135,7 +135,7 @@ At this point, the 2FA is active, but no members have set up 2FA yet. The setup 
 @using Umbraco.Cms.Core.Services
 @using Umbraco.Cms.Web.Website.Controllers
 @using Umbraco.Cms.Web.Website.Models
-@using Umbraco9  @* Or whatever your namespace with the QrCodeSetupData model is *@
+@using My.Website  @* Or whatever your namespace with the QrCodeSetupData model is *@
 @inject MemberModelBuilderFactory memberModelBuilderFactory
 @inject ITwoFactorLoginService twoFactorLoginService
 @{
@@ -205,7 +205,7 @@ using Umbraco.Cms.Core.Models.Membership;
 using Umbraco.Cms.Core.Security;
 using Umbraco.Cms.Core.Services;
 
-namespace Umbraco9
+namespace My.Website
 {
     [DataContract]
     public class TwoFactorAuthInfo
@@ -297,7 +297,7 @@ using Umbraco.Cms.Core.Security;
 using Umbraco.Cms.Web.BackOffice.Security;
 using Umbraco.Extensions;
 
-namespace Umbraco9
+namespace My.Website
 {
     public class UmbracoAppAuthenticatorComposer : IComposer
     {
