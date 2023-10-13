@@ -8,7 +8,7 @@ layout: landing
 
 # Umbraco Documentation
 
-Whether you're hosting your own Umbraco CMS website or you've chosen to go with Umbraco Cloud or Umbraco Heartcore, we got you covered when it comes to documentation.
+Whether you're running Umbraco CMS, Umbraco Cloud, or Umbraco Heartcore, our documentation has you covered for all your needs.
 
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Umbraco CMS</strong></td><td>Everything you need to know when building your Umbraco website.</td><td></td><td><a href="getting-started/images/tree.png">tree.png</a></td><td><a href="http://127.0.0.1:5000/o/vHdmkfI8smZW50A5yIZD/s/8h0xdoteqcFVV1pGZgk0/">12.latest</a></td></tr><tr><td><strong>Umbraco Cloud</strong></td><td>Learn how to get started with your Umbraco Cloud project.</td><td></td><td><a href="getting-started/images/cloud.png">cloud.png</a></td><td><a href="http://127.0.0.1:5000/o/vHdmkfI8smZW50A5yIZD/s/ZtqcoypStodmS9g6g8zC/">Umbraco Cloud</a></td></tr><tr><td><strong>Umbraco Heartcore</strong></td><td>Learn how to get the most out of your headless Umbraco solution.</td><td></td><td><a href="getting-started/developing-websites-with-umbraco/images/Headless_Email_hero_780x405px.png">Headless_Email_hero_780x405px.png</a></td><td><a href="http://127.0.0.1:5000/o/vHdmkfI8smZW50A5yIZD/s/ad8WDpzCbd6plrNqe51p/">Umbraco Heartcore</a></td></tr></tbody></table>
 
