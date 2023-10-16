@@ -10,7 +10,7 @@ Umbraco recommends building extensions with a setup using TypeScript and a build
 
 Vite comes with a set of really good presets to get you quickly up and running with libraries and languages. For example: Lit, Svelte, and Vanilla Web Components with both JavaScript and TypeScript.
 
-Create a folder in `/App_Plugins` and run the following command in that folder:
+Create an `/App_Plugins` folder if it doesn't exist yet and run the following command.
 
 ```bash
 npm create vite@latest
@@ -18,7 +18,9 @@ npm create vite@latest
 
 This Guide will help you set up your new package, asking you to pick a framework and a compiler. We recommend **Lit** and **TypeScript**.
 
-This sets up our new project and creates a `package.json` file, which includes the necessary packages.
+To follow this tutorial, we recommend you enter `my-dashboard` as the Project Name when prompted, although you can choose any other you like.
+
+This creates a new folder, sets up our new project, and creates a `package.json` file, which includes the necessary packages.
 
 Navigate to the new project folder and install the packages using:
 
@@ -42,7 +44,7 @@ This will add a package to your devDependencies containing the TypeScript defini
 If you see any errors during this process, make sure that you have the right tools installed (Node, .NET, and so on). Also, make sure you have followed the steps on how to [Setup Your Development Environment](./).
 {% endhint %}
 
-Next, create a new file called `vite.config.ts` and insert the following code:
+Next, in your project folder, create a new file called `vite.config.ts` and insert the following code:
 
 ```ts
 import { defineConfig } from "vite";
@@ -62,7 +64,9 @@ export default defineConfig({
 });
 ```
 
-This alters the Vite default output into a **library mode**, where the output is a JavaScript file with the same name as the `name` attribute in `package.json`. The name is `my-extension` if you followed this tutorial with no changes.
+This alters the Vite default output into a **library mode**, where the output is a JavaScript file with the same name as the `name` attribute in `package.json`. The name is `my-dashboard` if you followed this tutorial with no changes.
+
+The source code that is compiled lives in the `src` folder of your package folder. Here you can see a `my-element.js` file. You can confirm that this file is the one specified as our entry on the Vite config file that we just created.
 
 {% hint style="info" %}
 The `build:lib:entry` parameter can accept an array which will allow you to export multiple files during the build. You can read more about [Vite's build options here](https://vitejs.dev/config/build-options.html#build-lib).
@@ -114,7 +118,8 @@ This example declares a Dashboard as part of your Package, using the Vite exampl
             "type": "dashboard",
             "alias": "My.Dashboard.MyExtension",
             "name": "My Dashboard",
-            "js": "/App_Plugins/my-package/dist/my-extension.js",
+            "js": "/App_Plugins/my-dashboard/dist/my-element.js",
+            "elementName": "my-element",
             "meta": {
                 "label": "My Dashboard",
                 "pathname": "my-dashboard"
@@ -126,8 +131,36 @@ This example declares a Dashboard as part of your Package, using the Vite exampl
 
 {% endcode %}
 
+{% hint style="info" %}
+Umbraco needs the name of the element that will render as default when our dashboard loads. This is specify in the manifest as the `elementName`. Another approach would be to define your default element in the TS code.
+
+To do this, you should add `default` to your `MyElement` class in the `my-elemet.js` file like so 
+
+```ts
+export default class MyElement extends LitElement {
+```
+
+{% endhint %}
+
+{% hint style="info" %}
+
+For this to work on your Umbraco website, you need to include all the files in the `src` folder and the `umbraco-package.json` file. We recommend you do this by adding a few lines to your csproj file like so:
+
+```xml
+
+<ItemGroup>
+    <Content Include="App_Plugins\my-dashboard\src\**" />
+    <Content Include="App_Plugins\my-dashboard\umbraco-package.json" />
+  </ItemGroup>
+
+```
+
+If you try to include these resources via Visual Studio, it will try to be smart by including a few lines on your csproj file to compile the TypeScript code that exists in that folder. When you run your website, VS will try to compile these files and will fail.
+
+{% endhint %}
+
 ### Summary
 
-With this, you have setup your Package and created your a Extension to Backoffice.
+With this, you have set up your Package and created an Extension for the Backoffice.
 
 This Dashboard will appear on all sections, so please continue by following the tutorial on [Creating A Custom Dashboard](../../tutorials/creating-a-custom-dashboard.md)
