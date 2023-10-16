@@ -149,7 +149,7 @@ For this to work on your Umbraco website, you need to include all the files in t
 ```xml
 
 <ItemGroup>
-    <Content Include="App_Plugins\my-dashboard\src\**" />
+    <Content Include="App_Plugins\my-dashboard\dist\**" />
     <Content Include="App_Plugins\my-dashboard\umbraco-package.json" />
   </ItemGroup>
 
