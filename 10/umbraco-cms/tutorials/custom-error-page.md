@@ -117,10 +117,10 @@ If you set up everything correctly and the error pages are not showing correctly
 
 * Custom [ContentFinders](../reference/routing/request-pipeline/icontentfinder.md) in your solution,
 * Any packages that allow you to customize redirects, or
-* Rewrite rules in web.config that might interefere with custom error handling.
+* Rewrite rules in web.config that might interfere with custom error handling.
 
 {% hint style="warning" %}
-If your code or any packacges configures a custom `IContentLastChanceFinder`, the settings `appSettings.json` will not be used.
+If your code or any packages configures a custom `IContentLastChanceFinder`, the settings `appSettings.json` will not be used.
 {% endhint %}
 
 ## Handling errors in ASP.NET Core

@@ -149,4 +149,4 @@ If you are interested in learning more then the following resources will benefic
 * [Serilog Community Gitter Chatroom](https://gitter.im/serilog/serilog)
 * [Nicholas Blumhardt Blog, creator of Serilog](https://nblumhardt.com/)
 * [Serilog Pluralsight Course](https://www.pluralsight.com/courses/modern-structured-logging-serilog-seq)
-* [Seq](https://getseq.net/) This is FREE for a single machine such as your own local development computer
+* [Seq](https://getseq.net/) This is **free** for a single machine such as your own local development computer

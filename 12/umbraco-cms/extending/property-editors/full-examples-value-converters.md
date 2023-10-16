@@ -95,4 +95,11 @@ public class ContentPickerPropertyConverter : IPropertyValueConverter
         return inter.ToString();
     }
 }
+
+{% hint style="warning" %}
+
+The current implementation of XPath is suboptimal and will be removed entirely in a future version. It is currently obsolete and scheduled for removal in v14.
+
+{% endhint %}
+
 ```

@@ -34,6 +34,12 @@ The value for error pages can be:
 * An XPath statement (example: //errorPages\[@nodeName='My cool error']
 * A content item's integer ID (example: 1234)
 
+{% hint style="warning" %}
+
+The current implementation of XPath is suboptimal and will be removed entirely in a future version. It is currently obsolete and scheduled for removal in v14.
+
+{% endhint %}
+
 That is where the value you grabbed earlier comes in. Fill it out like so:
 
 ```json
@@ -238,7 +244,7 @@ If you set up everything correctly and the error pages are not showing correctly
 
 * Custom [ContentFinders](../reference/routing/request-pipeline/icontentfinder.md) in your solution,
 * Any packages that allow you to customize redirects, or
-* Rewrite rules in web.config that might interefere with custom error handling.
+* Rewrite rules in web.config that might interfere with custom error handling.
 
 {% hint style="warning" %}
 If your code or any packages configures a custom `IContentLastChanceFinder`, the settings in `appSettings.json` will not be used.

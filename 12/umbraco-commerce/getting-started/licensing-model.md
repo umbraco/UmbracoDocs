@@ -69,13 +69,13 @@ Once you have received your license code it needs to be installed on your site.
 
 ### Verify the license installation
 
-You can verify that your license is successfully installed by logging into your projects back office and navigating to the settings section. Here you will see a licenses dashboard which should display the status of your license.
+You can verify that your license is successfully installed by logging into your project's backoffice and navigating to the settings section. Here you will see a licenses dashboard which should display the status of your license.
 
 ![Umbraco Commerce License Dashboard](../media/license-dashboard.png)
 
 ### When and how to configure an `UmbracoApplicationUrl`
 
-If you are running on a single domain for both your frontend and backend environments, it's not necessary to configure a `UmbracoApplicationUrl`. 
+If you are running on a single domain for both your frontend and backend environments, it's not necessary to configure a `UmbracoApplicationUrl`.
 
 If you have different domains for your frontend and backend, then it's advised that you configure an `UmbracoApplicationUrl` set to your backoffice URL. This helps the licensing engine know which URL should be used for validation checks. Without this configuration setting, the licensing engine will try and work out the domain to validate from the HTTP request object. This can lead to errors when switching between domains.
 

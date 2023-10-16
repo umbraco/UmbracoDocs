@@ -2,6 +2,8 @@
 
 Umbraco Deploy is a commercial product. You will need a **valid license** to use the product.
 
+A license for Umbraco Deploy is included when hosting on Umbraco Cloud.
+
 ## How does it work?
 
 Licenses are sold per domain and will also work on all subdomains. With every license, you will also be able to configure two development/testing domains.
@@ -74,6 +76,30 @@ On start-up and on a schedule, Umbraco running Deploy On-premise will call out t
 You can view the status of the Umbraco Deploy On-premise license in the backoffice. This is available via the _Settings_ section, listed along with any other products using the same licensing service:
 
 ![Licenses screen in Umbraco backoffice](./images/licenses-screen.png)
+
+### When and how to configure an `UmbracoApplicationUrl`
+
+The website domain used for validating the license is determined from your Umbraco instance. To ensure the correct one is used, you can configure the `UmbracoApplicationUrl`.
+
+If you are running on a single domain for both your frontend and backend environments, it's not necessary to configure a `UmbracoApplicationUrl`.
+
+If you have different domains for your frontend and backend, then it's advised that you configure an `UmbracoApplicationUrl` set to your backoffice URL. This helps the licensing engine know which URL should be used for validation checks. Without this configuration setting, the licensing engine will try and work out the domain to validate from the HTTP request object. This can lead to errors when switching between domains.
+
+An `UmbracoApplicationUrl` can be configured in your `appSettings.json` file like so:
+
+```json
+{
+    "Umbraco": {
+        "CMS": {
+            "WebRouting": {
+                "UmbracoApplicationUrl": "https://admin.my-custom-domain.com/"
+            }
+        }
+    }
+}
+```
+
+See the [Fixed Application URL](https://docs.umbraco.com/umbraco-cms/extending/health-check/guides/fixedapplicationurl) documentation for more details about this setting.
 
 
 

@@ -24,11 +24,11 @@ In our example "Our Products" will become "our-products" and "Swibble" will beco
 
 The segments are created by the "Url Segment provider"
 
-### Url Segment provider
+### Url Segment Provider
 
-The DI container of an Umbraco implementation contains a collection of `UrlSegmentProviders` this collection is populated during Umbraco boot up. Umbraco ships with a 'DefaultUrlSegmentProvider' - but custom implementations can be added to the collection.
+The DI container of an Umbraco implementation contains a collection of `UrlSegmentProviders`. This collection is populated during Umbraco boot up. Umbraco ships with a 'DefaultUrlSegmentProvider' - but custom implementations can be added to the collection.
 
-When the `GetUrlSegment` extension method is called for a content item + culture combination, each registered `IUrlSegmentProvider` in the collection is executed in 'collection order' until a particular `UrlSegmentProvider` returns a segment value for the content, and no further `UrlSegementProviders` in the collection will be executed. If no segment is returned by any provider in the collection a `DefaultUrlSegmentProvider` will be used to create a segment, this is done to ensure that a segment will always be created, in case the default provider was removed from the collection without a new being added or something similar.
+When the `GetUrlSegment` extension method is called for a content item + culture combination, each registered `IUrlSegmentProvider` in the collection is executed in 'collection order'. This continues until a particular `UrlSegmentProvider` returns a segment value for the content, and no further `UrlSegmentProviders` in the collection will be executed. If no segment is returned by any provider in the collection a `DefaultUrlSegmentProvider` will be used to create a segment. This ensures that a segment is always created, like when a default provider is removed from a collection without a new one being added.
 
 To create a new Url Segment Provider, implement the following interface:
 
@@ -41,11 +41,11 @@ public interface IUrlSegmentProvider
 
 Note each 'culture' variation can have a different Url Segment!
 
-The returned string will be the Url Segment for this node. Any string value can be returned here but it cannot contain url segment separator `/` characters as this would create additional "segments", so something like `5678/swibble` is not allowed.
+The returned string will be the Url Segment for this node. Any string value can be returned here but it cannot contain the URL segment separator character `/`. This would create additional "segments" - something like `5678/swibble` is not allowed.
 
 #### Example
 
-For the segment of a 'product page' add its unique SKU / product ref to the existing url segment.
+For the segment of a 'product page', add its unique SKU / product ref to the existing Url segment.
 
 ```csharp
 using Umbraco.Cms.Core.Models;
@@ -77,9 +77,9 @@ public class ProductPageUrlSegmentProvider : IUrlSegmentProvider
 }
 ```
 
-The returned string becomes the native Url segment. No need for any Url rewriting.
+The returned string becomes the native Url segment - there is no need for any Url rewriting.
 
-For our "swibble" product in our example content tree the `ProductPageUrlSegmentProvider`, would return a segment `swibble--123xyz`(where 123xyz is the unique product sku/reference for the swibble product).
+For our "swibble" product in our example content tree the `ProductPageUrlSegmentProvider`, would return a segment `swibble--123xyz`. In this case, 123xyz is the unique product sku/reference for the swibble product.
 
 Register the custom UrlSegmentProvider with Umbraco, either using a composer or an extension method on the `IUmbracoBuilder`:
 
@@ -100,12 +100,10 @@ public class RegisterCustomSegmentProviderComposer : IComposer
 
 ### The Default Url Segment Provider
 
-The Default Url Segment provider builds its segments like this:
+The Default Url Segment provider builds its segments by looking for one of the below values, checked in this order:
 
-First it looks (in this order) for:
-
-* A property with alias _umbracoUrlName_ on the node. (this is a convention led way of giving editors control of the segment name - with variants - this can vary by culture).
-* The 'name' of the content item e.g. `content.Name`.
+1. A property with alias _umbracoUrlName_ on the node. (this is a convention led way of giving editors control of the segment name - with variants - this can vary by culture).
+2. The 'name' of the content item e.g. `content.Name`.
 
 The Umbraco string extension `ToUrlSegment()` is used to produce a clean 'Url safe' segment.
 

@@ -11,6 +11,7 @@ When working with a Umbraco Cloud project, you can handle a lot of the project c
 * [Public Access](./#public-access)
 * [Deployment Webhooks](./#webhooks)
 * [Secure Sockets Layer (SSL) certificates](./#certificates-only-available-on-professional-or-enterprise-plan)
+* [CI/CD Flow.](./#umbracocicd)
 * [Upgrade Plan](./#upgrade-plan)
 * [Rename Project](./#rename-project)
 * [Advanced Settings](./#advanced)
