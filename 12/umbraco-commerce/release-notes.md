@@ -18,7 +18,13 @@ In this section, you can find the release notes for each version of Umbraco Comm
 
 <summary>Version 12</summary>
 
-#### [12.1.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.0) (September 13th 2023)
+#### [12.1.2](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.2) (TBD)
+
+* Fixed various UI spelling mistakes as documented in issue [#427](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/427).
+* Fixed issue where adding a product with a uniqueness property, and then adding the same product without a uniqueness property would replace the initial orderline, rather than adding a new one [#438](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/438)
+* Fixed localization issue where `-1` in querystrings would get incorrectly formatted. Root ids are now formatted with an invarient culture.
+
+#### [12.1.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.1) (September 13th 2023)
 
 * Fixed issue with Storefront API causing value converter error due to multiple value converts for the same property editor being found. Storefront API value converters are now no longer discoverable. They are instead registered only when `AddStorefrontApi` is called on the `IUmbracoCommerceBuilder` instance [#429](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/429)
 
@@ -46,6 +52,12 @@ In this section, you can find the release notes for each version of Umbraco Comm
 <details>
 
 <summary>Version 10</summary>
+
+#### [10.0.3](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.3) (TBD)
+
+* Fixed various UI spelling mistakes as documented in issue [#427](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/427).
+* Fixed issue where adding a product with a uniqueness property, and then adding the same product without a uniqueness property would replace the initial orderline, rather than adding a new one [#438](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/438)
+* Fixed localization issue where `-1` in querystrings would get incorrectly formatted. Root ids are now formatted with an invarient culture.
 
 #### [10.0.2](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.2) (September 13th 2023)
 
