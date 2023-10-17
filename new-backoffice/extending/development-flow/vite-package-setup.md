@@ -146,16 +146,7 @@ export default class MyElement extends LitElement {
 
 For this to work on your Umbraco website, you need to include all the files in the `src` folder and the `umbraco-package.json` file. We recommend you do this by adding a few lines to your csproj file like so:
 
-```xml
-
-<ItemGroup>
-    <Content Include="App_Plugins\my-dashboard\dist\**" />
-    <Content Include="App_Plugins\my-dashboard\umbraco-package.json" />
-  </ItemGroup>
-
-```
-
-If you try to include these resources via Visual Studio, it will try to be smart by including a few lines on your csproj file to compile the TypeScript code that exists in that folder. When you run your website, VS will try to compile these files and will fail.
+If you try to include these resources via Visual Studio, be careful to include only the `dist` folder. Otherwise, VS will try to be smart by including a few lines on your csproj file to compile the TypeScript code that exists in your project folder. When you run your website, VS will try to compile these files and will fail.
 
 {% endhint %}
 
