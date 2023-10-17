@@ -66,7 +66,7 @@ export default defineConfig({
 
 This alters the Vite default output into a **library mode**, where the output is a JavaScript file with the same name as the `name` attribute in `package.json`. The name is `my-dashboard` if you followed this tutorial with no changes.
 
-The source code that is compiled lives in the `src` folder of your package folder. Here you can see a `my-element.js` file. You can confirm that this file is the one specified as our entry on the Vite config file that we just created.
+The source code that is compiled lives in the `src` folder of your package folder and that is where you can see a `my-element.js` file. You can confirm that this file is the one specified as our entry on the Vite config file that we recently created.
 
 {% hint style="info" %}
 The `build:lib:entry` parameter can accept an array which will allow you to export multiple files during the build. You can read more about [Vite's build options here](https://vitejs.dev/config/build-options.html#build-lib).
