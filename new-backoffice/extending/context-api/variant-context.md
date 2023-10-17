@@ -8,7 +8,7 @@ Property Editors UIs require the Variant Context to be present to work. This ena
 
 The Variant context holds a name and a set of properties. What makes a property can vary but an alias and a value are required.
 
-### Variant Context concerning Property Editors and Workspaces.
+### Variant Context concerning Property Editors and Workspaces
 
 A Variant Context is the connection point between a Property Editor and a Workspace.
 
