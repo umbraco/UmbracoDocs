@@ -118,7 +118,7 @@ This example declares a Dashboard as part of your Package, using the Vite exampl
             "type": "dashboard",
             "alias": "My.Dashboard.MyExtension",
             "name": "My Dashboard",
-            "js": "/App_Plugins/my-dashboard/dist/my-element.js",
+            "js": "/App_Plugins/my-dashboard/dist/my-dashboard.js",
             "elementName": "my-element",
             "meta": {
                 "label": "My Dashboard",
@@ -132,9 +132,9 @@ This example declares a Dashboard as part of your Package, using the Vite exampl
 {% endcode %}
 
 {% hint style="info" %}
-Umbraco needs the name of the element that will render as default when our dashboard loads. This is specify in the manifest as the `elementName`. Another approach would be to define your default element in the TS code.
+Umbraco needs the name of the element that will render as default when our dashboard loads. This is specified in the manifest as the `elementName`. Another approach would be to define your default element in the TS code.
 
-To do this, you should add `default` to your `MyElement` class in the `my-elemet.js` file like so 
+To do this, you should add `default` to your `MyElement` class in the `my-element.js` file like so 
 
 ```ts
 export default class MyElement extends LitElement {
