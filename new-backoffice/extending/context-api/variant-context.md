@@ -22,4 +22,4 @@ A variant context covers a set of properties, in some cases a workspace then nee
 
 ### Setup a Variant Context
 
-It would be good to have examples for developers to see how to set up a Variant Context, in code. (This might need to be a tutorial demonstrating implementing a simple workspace with a variant with Property Editor UIs)
+It would be good to have examples for developers to see how to set up a Variant Context, in code. (This might need to be a tutorial demonstrating implementing a workspace with a variant with Property Editor UIs)
