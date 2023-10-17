@@ -142,13 +142,12 @@ export default class MyElement extends LitElement {
 
 {% endhint %}
 
-{% hint style="info" %}
+### Testing your package
 
-For this to work on your Umbraco website, you need to include all the files in the `src` folder and the `umbraco-package.json` file. We recommend you do this by adding a few lines to your csproj file like so:
+In order to be able to test your package, you will need to run your site. Before you do this, you will need to include all the files in the `src` folder and the `umbraco-package.json` file into your project. We recommend you do this by adding a few lines to your csproj file like so:
 
 If you try to include these resources via Visual Studio, be careful to include only the `dist` folder. Otherwise, VS will try include a few lines on your csproj file to compile the TypeScript code that exists in your project folder. When you run your website, VS will try to compile these files and will fail.
 
-{% endhint %}
 
 ### Summary
 
