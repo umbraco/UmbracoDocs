@@ -129,4 +129,4 @@ The default lockout time for users is 30 days (43200 minutes).
 This setting was introduced in version 12.3.
 {% endhint %}
 
-When set to `false`, any user account is prevented from having several simultaneous sessions. In this mode, only one session per user can be active at any given time. This enhances security and prevents multiple concurrent logins with the same user credentials.
+When set to `false`, any user account is prevented from having multiple simultaneous sessions. In this mode, only one session per user can be active at any given time. This enhances security and prevents concurrent logins with the same user credentials.
