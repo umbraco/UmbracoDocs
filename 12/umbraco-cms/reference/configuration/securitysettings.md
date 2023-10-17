@@ -37,7 +37,8 @@ A full configuration with all default values can be seen here:
         "MaxFailedAccessAttemptsBeforeLockout": 5
       },
       "UserDefaultLockoutTimeInMinutes": 43200,
-      "MemberDefaultLockoutTimeInMinutes": 43200
+      "MemberDefaultLockoutTimeInMinutes": 43200,
+      "AllowConcurrentLogins": true
     }
   }
 }
@@ -121,3 +122,11 @@ The default lockout time for users is 30 days (43200 minutes).
 Use this setting to configure how long time a Member is locked out of the Umbraco website when a lockout occurs. The setting accepts an integer which defines the lockout in minutes.
 
 The default lockout time for users is 30 days (43200 minutes).
+
+## Allow concurrent logins
+
+{% hint style="info" %}
+This setting was introduced in version 12.3.
+{% endhint %}
+
+When set to `false`, user accounts are prevented from creating simultaneous sessions. In this mode, only one session can be active at a time, enhancing security and preventing multiple concurrent logins with the same user credentials.
