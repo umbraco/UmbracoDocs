@@ -26,7 +26,7 @@ In this section, you can find the release notes for each version of Deploy packa
 
 <summary>Version 12</summary>
 
-#### [12.0.1](https://github.com/umbraco/Umbraco.Commerce.Deploy/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.1) (TBD)
+#### [12.0.1](https://github.com/umbraco/Umbraco.Commerce.Deploy/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.1) (October 18th 2023)
 
 * Fixed issue where store entity pickers would fail to transfer correctly do to deserializing property editor config to the wrong format [#3](https://github.com/umbraco/Umbraco.Commerce.Deploy/issues/3).
 
@@ -40,7 +40,7 @@ In this section, you can find the release notes for each version of Deploy packa
 
 <summary>Version 10</summary>
 
-#### [10.0.1](https://github.com/umbraco/Umbraco.Commerce.Deploy/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.1) (TBD)
+#### [10.0.1](https://github.com/umbraco/Umbraco.Commerce.Deploy/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.1) (October 18th 2023)
 
 * Fixed issue where store entity pickers would fail to transfer correctly do to deserializing property editor config to the wrong format [#3](https://github.com/umbraco/Umbraco.Commerce.Deploy/issues/3).
 
