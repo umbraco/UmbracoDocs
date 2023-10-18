@@ -70,6 +70,11 @@ In the following, you can learn more about how to use the Umbraco Authorized Ser
 
 Services that this package is intended to support will offer an OAuth2/OAuth1 default authentication and authorization flow against an "app". The developer will need to create this "app" with the service.  By doing this, information such as the "client ID" (or "consumer key" for OAuth1) and "client secret" (or "consumer secret" for OAuth1) can be applied to the configuration.
 
+When creating the app it will usually be necessary to configure a call back URL. You should use the following:
+
+- For OAuth2: `/umbraco/api/AuthorizedServiceResponse/HandleOAuth2IdentityResponse`
+- For OAuth1: `/umbraco/api/AuthorizedServiceResponse/HandleOAuth1IdentityResponse`
+
 In addition, the package supports integration with OAuth1 or Api key based authentication and authorization services.
 
 ### Installation
