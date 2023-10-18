@@ -32,7 +32,7 @@ In this section, you can find the release notes for each version of Checkout pac
 
 #### [10.0.2](https://github.com/umbraco/Umbraco.Commerce.Checkout/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.2) **(October 18th 2023)**
 
-* Fixed additional issues [#1](https://github.com/umbraco/Umbraco.Commerce.Checkout/issues/1) due to front end views having lowercase asset paths, when they should be title case inline with the folder structure, thus causing a 404 on case sensitive file systems.
+* Fixed additional issues [#1](https://github.com/umbraco/Umbraco.Commerce.Checkout/issues/1) due to front-end views having lowercase asset paths, when they should be title case inline with the folder structure, thus causing a 404 on case-sensitive file systems.
   
 #### [10.0.1](https://github.com/umbraco/Umbraco.Commerce.Checkout?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.1) **(August 15th 2023)**
 
