@@ -6,7 +6,7 @@ description: >-
 
 # Configure QuickPay
 
-## Sign up & Sign in
+## Step 1: Sign up & Sign in
 
 If you haven't done so yet, head over to the [QuickPay portal](https://manage.quickpay.net/create-user) to register for a QuickPay account.
 
@@ -24,10 +24,14 @@ The keys can be found under **Settings > Integration** in the QuickPay portal.
 
 You will need the following keys:
 
-- Private key
+- Private key of your account
+  - You'll find that in the first option, where your account name is
 - Api key of the API user
+  - The second option, right below the Private key
 - Merchant id
+  - This is written below your account name
 - Agreement id
+  - This is written below API user, Payment Window and your user account name
 
 ![QuickPay Integration Keys](../media/quickpay/quickpay\_portal.png)
 
