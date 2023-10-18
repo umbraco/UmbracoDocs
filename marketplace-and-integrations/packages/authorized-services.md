@@ -25,6 +25,10 @@ There are also differences across the request and response structures and variat
 
 The package tries to implement a single, best practice implementation of working with OAuth. For particular providers the specific flow required can be customized via configuration or code.
 
+Services that this package is intended to support will offer an OAuth2/OAuth1 default authentication and authorization flow against an "app". The developer will need to create this "app" with the service.  By doing this, information such as the "client ID" (or "consumer key" for OAuth1) and "client secret" (or "consumer secret" for OAuth1) can be applied to the configuration.
+
+In addition, the package supports integration with OAuth1 or Api key based authentication and authorization services.
+
 ## Features
 
 For the solution developer, the Umbraco Authorized Services offers two primary features.
@@ -68,12 +72,6 @@ the interface provides two methods for retrieving the value of the access token 
 ## Usage
 
 In the following, you can learn more about how to use the Umbraco Authorized Services package.
-
-### App Creation
-
-Services that this package is intended to support will offer an OAuth2/OAuth1 default authentication and authorization flow against an "app". The developer will need to create this "app" with the service.  By doing this, information such as the "client ID" (or "consumer key" for OAuth1) and "client secret" (or "consumer secret" for OAuth1) can be applied to the configuration.
-
-In addition, the package supports integration with OAuth1 or Api key based authentication and authorization services.
 
 ### Installation
 
