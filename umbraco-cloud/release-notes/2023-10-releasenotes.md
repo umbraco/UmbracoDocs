@@ -22,7 +22,7 @@ Our [documentation](https://docs.umbraco.com/umbraco-cloud/set-up/project-settin
 ## Automatic Upgrades for Minor Versions
 We are pleased to announce an extension to our Automatic Upgrade feature. Previously limited to Patch versions, Automatic Upgrades for Umbraco CMS, Umbraco Forms, and Umbraco Deploy now include Minor versions. This update aims to further simplify your project management by automating more comprehensive updates.
 
-For those running existing Cloud projects, the good news is that you can opt-in to enable these Automatic Minor Upgrades directly from Umbraco Cloud on the new Automatic upgrade page.
+For those running existing Cloud projects, you can opt-in to enable Automatic Minor Upgrades directly from Umbraco Cloud on the new Automatic upgrade page.
 
 ![Automatic Updates](images/Automatic-Updates-Minor.png)
 
