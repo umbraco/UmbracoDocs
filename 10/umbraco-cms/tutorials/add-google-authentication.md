@@ -1,6 +1,6 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+
+
 meta.Title: Add Google Authentication
 description: A guide to set up a Google login for the Umbraco Backoffice.
 ---

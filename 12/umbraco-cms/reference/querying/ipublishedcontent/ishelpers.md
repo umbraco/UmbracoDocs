@@ -4,7 +4,7 @@ The IsHelper methods are a set of extension methods for IPublishedContent to hel
 
 IsHelper methods are ternary operators, however they work a little nicer in that they can be embedded in properties and quicker to write as you don't need so many brackets to make Razor understand them.
 
-
+***
 
 ## How to use
 
@@ -19,7 +19,7 @@ if(item.IsVisible())
 }
 ```
 
-
+***
 
 ## IsHelper Methods
 

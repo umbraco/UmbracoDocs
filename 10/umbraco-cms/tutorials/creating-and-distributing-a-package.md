@@ -1,6 +1,6 @@
 ---
-versionFrom: 8.0.0
-versionTo: 8.0.0
+
+
 ---
 
 # Creating And Distributing A Package
@@ -67,7 +67,7 @@ dotnet new umbraco-v8-package -n PackageWorkshop -d
 
 This will create a new package called `PackageWorkshop`, and add a custom Dashboard for us to use in this tutorial. By default you will also get a Github Action added that we will return to later.
 
-Afer running you will have a folder called `PackageWorkshop`, inside that you will have your site and solution files. So try to open it in Visual Studio or Rider by opening the `PackageWorkshop.sln` file.
+After running you will have a folder called `PackageWorkshop`, inside that you will have your site and solution files. So try to open it in Visual Studio or Rider by opening the `PackageWorkshop.sln` file.
 
 Run the site from VS/Rider and go through the installer - you can install with or without starter kit, we do not use the starter kit content in this tutorial.
 
@@ -217,7 +217,7 @@ You don't have to worry too much about guid and orgName, they are references to 
 
 \~/App\_Plugins/PackageWorkshop/Dashboard/main.css \~/App\_Plugins/PackageWorkshop/ContentApp/main.css
 
-Both would have the same name and be thrown in the root of the zip file - this would cause a conflict and Umbraco would rename them to randomly generated names. These names would correspond to the `guid` property, while the `orgName` and `orgPath` would make up the original names - and would be where the package would place and name the file when being intalled.
+Both would have the same name and be thrown in the root of the zip file. This would cause a conflict and Umbraco would rename them to randomly generated names. These names would correspond to the `guid` property, while the `orgName` and `orgPath` would make up the original names. These would be where the package would place and name the file when being installed.
 
 ## Creating a draft package on Our
 

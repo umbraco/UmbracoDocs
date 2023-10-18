@@ -19,7 +19,7 @@ Localization files are used to translate:
 * The Umbraco backoffice user interface so that end users can use Umbraco in their native language. This is particularly important for content editors who do not speak English.
 * The member identity errors in an Umbraco website enable end users to use Umbraco in the website language.
 
-If you are a package developer, [see here for docs on how to include translations for your own package](broken-reference).
+If you are a package developer, then check out the [Localization ](./)article to see how to include translations for your own package.&#x20;
 
 ## Layout of the localization files
 
@@ -34,7 +34,7 @@ export default {
 };
 ```
 
-The sections and keys will be formatted into a map in Umbraco with the format `section_key1` and `section_key2` which forms the unique key they are requested by.
+The sections and keys will be formatted into a map in Umbraco with the format `section_key1` and `section_key2.` These form the unique key they are requested.
 
 The values can be either a string or a function that returns a string:
 
@@ -50,49 +50,6 @@ export default {
 		},
 	},
 };	
-```
-
-## Using the localizations in the Umbraco backoffice
-
-In the Umbraco backoffice UI, labels can be localized with the `umb-localize` directive:
-
-```html
-<button>
-    <umb-localize key="dialog_myKey"></umb-localize>
-</button>
-```
-
-The localize directive can also be used as an attribute, like below. The value of the label attribute is then populated with the dictionary key "title_name" from the localization file using `UmbLocalizeController`.
-
-#### **UmbElementMixin**
-
-The controller is already initialized if you use the `UmbElementMixin` in your element:
-
-```typescript
-export class MyElement extends UmbElementMixin(LitElement) {
-    render() {
-        return html`<uui-button .label=${this.localize.term('title_name')}>
-        </uui-button>`;
-    }
-}
-```
-
-#### **Reactive controller**
-
-If you do not use the `UmbElementMixin` in your element, you can use the reactive controller like this:
-
-```typescript
-import { UmbLocalizeController } from '@umbraco-cms/backoffice/localization-api';
-
-export class MyElement extends LitElement {
-    // Create a new instance of the controller and attach it to the element
-    private localize = new UmbLocalizeController(this);
-    
-    render() {
-        return html` <uui-button .label=${this.localize.term('title_name')}>
-        </uui-button> `;
-    }
-}
 ```
 
 ## Missing localization keys
@@ -113,4 +70,4 @@ Instead of showing the default value we can show the key alias if we set `debug=
 <umb-localize key="general_ok_not_found" debug="true"></umb-localize>
 ```
 
-If you update any of the core localization files or you add a new language, don't forget to help the rest of the community. You can do this by [submitting a pull request](https://docs.umbraco.com/welcome/contribute/getting-started) so that your changes are merged into the core.
+If you do update any of the core language files or you add a new language, don't forget to help the rest of the community. This can be done by [submitting a pull request](https://docs.umbraco.com/welcome/contribute/getting-started) so that your changes are merged into the core.

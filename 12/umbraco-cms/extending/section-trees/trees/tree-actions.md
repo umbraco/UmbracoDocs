@@ -1,5 +1,5 @@
 ---
-description: "A guide to creating a custom tree action in Umbraco"
+description: A guide to creating a custom tree action in Umbraco
 ---
 
 # Tree Actions
@@ -55,34 +55,36 @@ If building a package or adding custom tree actions to your solution, it's impor
 
 If you have created a package using a custom tree action, please consider providing an update to this documentation page via a PR to the [documentation repository](https://github.com/umbraco/UmbracoDocs), such that other developers can discover and avoid using the same permission letter.
 
-|Type|Alias|Letter|Can Be Permission Assigned|
-|-|-|-|-|
-|Umbraco.Cms.Core.Actions.ActionAssignDomain|assignDomain|I|True|
-|Umbraco.Cms.Core.Actions.ActionBrowse|browse|F|True|
-|Umbraco.Cms.Core.Actions.ActionCopy|copy|O|True|
-|Umbraco.Cms.Core.Actions.ActionCreateBlueprintFromContent|createblueprint|ï|True|
-|Umbraco.Cms.Core.Actions.ActionDelete|delete|D|True|
-|Umbraco.Cms.Core.Actions.ActionMove|move|M|True|
-|Umbraco.Cms.Core.Actions.ActionNew|create|C|True|
-|Umbraco.Cms.Core.Actions.ActionNotify|notify|N|True|
-|Umbraco.Cms.Core.Actions.ActionProtect|protect|P|True|
-|Umbraco.Cms.Core.Actions.ActionPublish|publish|U|True|
-|Umbraco.Cms.Core.Actions.ActionRestore|restore|V|False|
-|Umbraco.Cms.Core.Actions.ActionRights|rights|R|True|
-|Umbraco.Cms.Core.Actions.ActionRollback|rollback|K|True|
-|Umbraco.Cms.Core.Actions.ActionSort|sort|S|True|
-|Umbraco.Cms.Core.Actions.ActionToPublish|sendtopublish|H|True|
-|Umbraco.Cms.Core.Actions.ActionUnpublish|unpublish|Z|True|
-|Umbraco.Cms.Core.Actions.ActionUpdate|update|A|True|
-|Umbraco.Deploy.UI.Actions.ActionDeployRestore|deployRestore|Q|True|
-|Umbraco.Deploy.UI.Actions.ActionDeployTreeRestore|deployTreeRestore|Ψ|True|
-|Umbraco.Deploy.UI.Actions.ActionPartialRestore|deployPartialRestore|Ø|True|
-|Umbraco.Deploy.UI.Actions.ActionQueueForTransfer|deployQueueForTransfer|T|True|
-|Jumoo.TranslationManager.Core.Actions.ActionTranslate|translate|5|True|
-|Jumoo.TranslationManager.Core.Actions.ActionManageTranslation|manageTranslations|Ť|True|
-|uSync.Publisher.Actions.PushToServer|pushContent|>|True|
-|uSync.Publisher.Actions.PullFromServer|pullContent|<|True|
-|uSync.Publisher.Action.PushButton|pushContentButton|^|True|
-|Our.Umbraco.LinkedPages.LinkedAction|linkPages|l|True|
+| Type                                                          | Alias                  | Letter | Can Be Permission Assigned |
+| ------------------------------------------------------------- | ---------------------- | ------ | -------------------------- |
+| Umbraco.Cms.Core.Actions.ActionAssignDomain                   | assignDomain           | I      | True                       |
+| Umbraco.Cms.Core.Actions.ActionBrowse                         | browse                 | F      | True                       |
+| Umbraco.Cms.Core.Actions.ActionCopy                           | copy                   | O      | True                       |
+| Umbraco.Cms.Core.Actions.ActionCreateBlueprintFromContent     | createblueprint        | ï      | True                       |
+| Umbraco.Cms.Core.Actions.ActionDelete                         | delete                 | D      | True                       |
+| Umbraco.Cms.Core.Actions.ActionMove                           | move                   | M      | True                       |
+| Umbraco.Cms.Core.Actions.ActionNew                            | create                 | C      | True                       |
+| Umbraco.Cms.Core.Actions.ActionNotify                         | notify                 | N      | True                       |
+| Umbraco.Cms.Core.Actions.ActionProtect                        | protect                | P      | True                       |
+| Umbraco.Cms.Core.Actions.ActionPublish                        | publish                | U      | True                       |
+| Umbraco.Cms.Core.Actions.ActionRestore                        | restore                | V      | False                      |
+| Umbraco.Cms.Core.Actions.ActionRights                         | rights                 | R      | True                       |
+| Umbraco.Cms.Core.Actions.ActionRollback                       | rollback               | K      | True                       |
+| Umbraco.Cms.Core.Actions.ActionSort                           | sort                   | S      | True                       |
+| Umbraco.Cms.Core.Actions.ActionToPublish                      | sendtopublish          | H      | True                       |
+| Umbraco.Cms.Core.Actions.ActionUnpublish                      | unpublish              | Z      | True                       |
+| Umbraco.Cms.Core.Actions.ActionUpdate                         | update                 | A      | True                       |
+| Umbraco.Deploy.UI.Actions.ActionDeployRestore                 | deployRestore          | Q      | True                       |
+| Umbraco.Deploy.UI.Actions.ActionDeployTreeRestore             | deployTreeRestore      | Ψ      | True                       |
+| Umbraco.Deploy.UI.Actions.ActionPartialRestore                | deployPartialRestore   | Ø      | True                       |
+| Umbraco.Deploy.UI.Actions.ActionQueueForTransfer              | deployQueueForTransfer | T      | True                       |
+| Jumoo.TranslationManager.Core.Actions.ActionTranslate         | translate              | 5      | True                       |
+| Jumoo.TranslationManager.Core.Actions.ActionManageTranslation | manageTranslations     | Ť      | True                       |
+| uSync.Publisher.Actions.PushToServer                          | pushContent            | >      | True                       |
+| uSync.Publisher.Actions.PullFromServer                        | pullContent            | <      | True                       |
+| uSync.Publisher.Action.PushButton                             | pushContentButton      | ^      | True                       |
+| Our.Umbraco.LinkedPages.LinkedAction                          | linkPages              | l      | True                       |
 
-*Note: up until Umbraco Deploy 9.2.0, the letter "N" was used for the "Queue For Transfer" action.  In 9.2.1 it was changed to be "T", to avoid clashing with the letter selected for the Umbraco CMS "Notify" action, introduced in CMS version 8.18.*
+{% hint style="info" %}
+_Up until Umbraco Deploy 9.2.0, the letter "N" was used for the "Queue For Transfer" action. In 9.2.1 it was changed to be "T". To avoid clashing with the letter selected for the Umbraco CMS "Notify" action, introduced in CMS version 8.18._
+{% endhint %}

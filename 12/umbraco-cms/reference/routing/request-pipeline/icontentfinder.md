@@ -1,5 +1,5 @@
 ---
-description: "Information about creating your own content finders"
+description: Information about creating your own content finders
 ---
 
 # IContentFinder
@@ -69,7 +69,7 @@ You either use an extension on the Umbraco builder or, a composer to access the 
 
 First create the extension method:
 
-```
+```csharp
 using RoutingDocs.ContentFinders;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Routing;
@@ -96,7 +96,7 @@ namespace RoutingDocs.Extensions
 
 Then invoke it in `ConfigureServices` in the `Startup.cs` file:
 
-```
+```csharp
 public void ConfigureServices(IServiceCollection services)
 {
 #pragma warning disable IDE0022 // Use expression body for methods
@@ -138,9 +138,9 @@ namespace RoutingDocs.ContentFinders
 
 ## NotFoundHandlers
 
-To set your own 404 finder create an IContentLastChanceFinder and set it as the ContentLastChanceFinder. (perhaps you have a multilingual site and need to find the appropriate 404 page in the correct language). 
+To set your own 404 finder create an IContentLastChanceFinder and set it as the ContentLastChanceFinder. (perhaps you have a multilingual site and need to find the appropriate 404 page in the correct language).
 
-A `IContentLastChanceFinder` will always return a 404 status code. This example creates a new implementation of the `IContentLastChanceFinder` and gets the 404 page for the current language of the request. 
+A `IContentLastChanceFinder` will always return a 404 status code. This example creates a new implementation of the `IContentLastChanceFinder` and gets the 404 page for the current language of the request.
 
 ```csharp
 using System.Linq;
@@ -219,4 +219,6 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-:::warning When adding a custom `IContentLastChanceFinder` to the pipeline any `Error404Collection`-settings in `appSettings.json` will be ignored. :::
+{% hint style="warning" %}
+When adding a custom `IContentLastChanceFinder` to the pipeline any `Error404Collection`-settings in `appSettings.json` will be ignored.
+{% endhint %}

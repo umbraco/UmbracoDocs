@@ -1,5 +1,5 @@
 ---
-versionFrom: 10.0.0
+
 meta.Title: Members Registration and Logins
 description: >-
   In this article you can learn about how to create Member registration and

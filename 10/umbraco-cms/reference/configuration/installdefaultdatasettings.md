@@ -1,6 +1,6 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+
+
 meta.Title: Umbraco Install Default Data Settings
 description: >-
   Information on configuration allowing for the modification of default data

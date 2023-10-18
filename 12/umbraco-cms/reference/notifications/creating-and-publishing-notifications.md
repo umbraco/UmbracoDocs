@@ -10,7 +10,7 @@ There may be many reasons why you would like to create your own custom notificat
 
 For a notification to be publishable there's only one requirement, it must implement the empty marker interface `INotification`, the rest is up to you. For instance, we might want to create a notification that just signals that the clean your room task has started and nothing else, in this case, we'll create an empty class implementing `INotification`
 
-```
+```csharp
 using Umbraco.Cms.Core.Notifications;
 
 namespace Umbraco.Docs.Samples.Web.RecurringHostedService;
@@ -23,7 +23,7 @@ public class CleanYourRoomStartedNotification : INotification
 
 This notification can now be published, and we can create a notification handler to receive it with, see [MediaService-Notifications](../MediaService-Notifications/index.md) for an example of how to implement a notification handler. But this notification alone might not be super helpful, we might want to be able to send some additional information with the notification, however, since this is, in essence, just a normal class, we can include whatever information we want. Let's try and create a `RoomCleanedNotification` which contains the number of nodes removed from the recycle bin:
 
-```
+```csharp
 using Umbraco.Cms.Core.Notifications;
 
 namespace Umbraco.Docs.Samples.Web.RecurringHostedService;
@@ -52,7 +52,7 @@ The method you use to publish notifications depends on what your needs are, the 
 
 ### Example
 
-```
+```csharp
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Scoping;

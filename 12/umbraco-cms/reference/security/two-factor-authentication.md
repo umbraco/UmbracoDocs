@@ -16,14 +16,14 @@ Since Umbraco does not control how the UI is for member login and profile edit, 
 
 In the following example, we will use the [GoogleAuthenticator NuGet Package](https://www.nuget.org/packages/GoogleAuthenticator/). Despite the name, this package works for both Google and Microsoft authenticator apps and can be used to generate the QR code needed to activate the app for the website.
 
-```
+```csharp
 using System;
 using System.Threading.Tasks;
 using Google.Authenticator;
 using Umbraco.Cms.Core.Security;
 using Umbraco.Cms.Core.Services;
 
-namespace Umbraco9
+namespace My.Website
 {
     /// <summary>
     /// Model with the required data to setup the authentication app.
@@ -110,13 +110,13 @@ First, we create a model with the information required to set up the 2FA provide
 
 Now we need to register the `UmbracoAppAuthenticator` implementation. This can be done on the `IUmbracoBuilder` in your startup or a composer.
 
-```
+```csharp
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Security;
 using Umbraco.Extensions;
 
-namespace Umbraco9
+namespace My.Website
 {
     public class UmbracoAppAuthenticatorComposer : IComposer
     {
@@ -131,11 +131,11 @@ namespace Umbraco9
 
 At this point, the 2FA is active, but no members have set up 2FA yet. The setup of 2FA depends on the type. In the case of App Authenticator, we will add the following to our view showing the edit profile of the member.
 
-```
+```csharp
 @using Umbraco.Cms.Core.Services
 @using Umbraco.Cms.Web.Website.Controllers
 @using Umbraco.Cms.Web.Website.Models
-@using Umbraco9  @* Or whatever your namespace with the QrCodeSetupData model is *@
+@using My.Website  @* Or whatever your namespace with the QrCodeSetupData model is *@
 @inject MemberModelBuilderFactory memberModelBuilderFactory
 @inject ITwoFactorLoginService twoFactorLoginService
 @{
@@ -196,7 +196,7 @@ Umbraco controls how the UI is for user login and user edits, but will still nee
 
 In the following example, we will use the [GoogleAuthenticator NuGet Package](https://www.nuget.org/packages/GoogleAuthenticator/). Despite the name, this package works for both Google and Microsoft authenticator apps and can be used to generate the QR code needed to activate the app for the website.
 
-```
+```csharp
 using System;
 using System.Runtime.Serialization;
 using System.Threading.Tasks;
@@ -205,7 +205,7 @@ using Umbraco.Cms.Core.Models.Membership;
 using Umbraco.Cms.Core.Security;
 using Umbraco.Cms.Core.Services;
 
-namespace Umbraco9
+namespace My.Website
 {
     [DataContract]
     public class TwoFactorAuthInfo
@@ -289,7 +289,7 @@ First, we create a model with the information required to set up the 2FA provide
 
 Now we need to register the `UmbracoUserAppAuthenticator` implementation and the view to show to set up this provider. This can be done on the `IUmbracoBuilder` in your startup or a composer.
 
-```
+```csharp
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
@@ -297,7 +297,7 @@ using Umbraco.Cms.Core.Security;
 using Umbraco.Cms.Web.BackOffice.Security;
 using Umbraco.Extensions;
 
-namespace Umbraco9
+namespace My.Website
 {
     public class UmbracoAppAuthenticatorComposer : IComposer
     {

@@ -1,6 +1,6 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+
+
 meta.Title: "Umbraco Maximum upload size settings"
 description: "Information on how to change the default cap of upload size"
 ---

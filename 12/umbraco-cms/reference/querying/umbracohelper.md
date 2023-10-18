@@ -16,7 +16,7 @@ If you need an `UmbracoHelper` in your own controllers, you need to inject an in
 
 Example of getting `UmbracoHelper` in a controller:
 
-```
+```csharp
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Web.Common;
@@ -91,6 +91,12 @@ Returns a collection of `IPublishedContent` objects from the Content tree.
 ```
 
 ### .ContentAtXPath(string xpath)
+
+{% hint style="warning" %}
+
+The current implementation of XPath is suboptimal and will be removed entirely in a future version. It is currently obsolete and scheduled for removal in v14.
+
+{% endhint %}
 
 Queries the cache for content matching a given XPath query and returns a collection of `IPublishedContent` objects.
 

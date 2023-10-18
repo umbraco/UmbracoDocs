@@ -715,6 +715,7 @@ In this section, you can find the release notes for each version of Umbraco Form
 * Improved markup for screen reader access when creating a form [#1067](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1067)
 * Fixed null reference exception triggered when deleting a record in a background task [#1069](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1069)
 * Styled the workflow name field to be full width to avoid cut-off of the text [#1079](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1079)
+* Prevented unpublished nodes from being returned in the prevalue source based on Umbraco documents [#1030](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1030)
 
 #### [8.13.10](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.13.10) (August 1st 2023)
 

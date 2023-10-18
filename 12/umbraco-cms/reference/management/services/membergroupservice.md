@@ -2,7 +2,7 @@
 
 The MemberGroupService acts as a "gateway" to Umbraco data for operations which are related to Member groups, which are also known as Member Roles.
 
-[Browse the API documentation for IMemberGroupService](https://apidocs.umbraco.com/v9/csharp/api/Umbraco.Cms.Core.Services.IMemberGroupService.html).
+[Browse the API documentation for IMemberGroupService](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Services.IMemberGroupService.html).
 
  * **Namespace:** `Umbraco.Cms.Core.Services`
  * **Assembly:** `Umbraco.Core.dll`
@@ -32,7 +32,7 @@ If you wish to use the member group service in a class, you need to specify the 
 public class MyClass
 {
     private IMemberGroupService _memberGroupService;
-    
+
     public MyClass(IMemberGroupService memberGroupService)
     {
         _memberGroupService = memberGroupService;

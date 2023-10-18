@@ -1,6 +1,6 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+
+
 ---
 
 # Articles and Article Items
@@ -15,11 +15,11 @@ To create **Articles Main** Document Type, follow these steps:
 
 1. Go to **Settings**.
 2. Select **...** next to the **Document Types** in the **Settings** tree.
-3.  Click **Document Type with Template**.
+3. Click **Document Type with Template**.
 
     ![Document Type with template](../../../../11/umbraco-cms/tutorials/creating-a-basic-website/images/Document\_type\_with\_template.png)
 4. Enter a **Name** for the **Document Type**. Let's call it _Articles Main_.
-5.  Let's add two fields with the following specifications:
+5. Let's add two fields with the following specifications:
 
     | Group | Field Name         | Alias            | Data Type        |
     | ----- | ------------------ | ---------------- | ---------------- |
@@ -33,11 +33,11 @@ To create **Articles Item** Document Type, follow these steps:
 
 1. Go to **Settings**.
 2. Select **...** next to the **Document Types** in the **Settings** tree.
-3.  Click **Document Type with Template**.
+3. Click **Document Type with Template**.
 
     ![Document Type with template](../../../../11/umbraco-cms/tutorials/creating-a-basic-website/images/Document\_type\_with\_template.png)
 4. Enter a **Name** for the **Document Type**. Let's call it _Articles Item_.
-5.  Let's add two fields with the following specifications:
+5. Let's add two fields with the following specifications:
 
     | Group   | Field Name      | Alias          | Data Type        |
     | ------- | --------------- | -------------- | ---------------- |
@@ -55,7 +55,7 @@ To update **Articles Main** Document Type permissions:
 2. Select **Add child** in the **Allowed child node types**. The **Choose child node** window opens.
 3. Select **Articles Main** and click **Save**.
 4. Navigate to the **Articles Main** Document Type and go to the **List View** tab.
-5.  Toggle **Enable List view** and click **Save**.
+5. Toggle **Enable List view** and click **Save**.
 
     ![Enabling List View](../../../../11/umbraco-cms/tutorials/creating-a-basic-website/images/figure-44-list-view-enabled.png)
 6. Go to the **Permissions** tab.
@@ -64,7 +64,7 @@ To update **Articles Main** Document Type permissions:
 
 To update **Articles Item** Document Type permissions:
 
-1. Navigate to the **Articles Item** Document Type and go to the **Permissions** tab.
+1. Navigate to the **Articles Main** Document Type and go to the **Permissions** tab.
 2. Select **Add child** in the **Allowed child node types**. The **Choose child node** window opens.
 3. Select **Articles Item** and click **Save**.
 
@@ -75,7 +75,7 @@ To add a content node:
 1. Go to **Content**.
 2. Select **...** next to the **HomePage** and select **Articles Main**.
 3. Enter the name for the article. We are going to call it _Articles_.
-4.  Enter the **Article Title**, **Article Content**, and click **Save and Publish**. When you click on Save and Publish, you will notice an empty list view is created.
+4. Enter the **Article Title**, **Article Content**, and click **Save and Publish**. When you click on Save and Publish, you will notice an empty list view is created.
 
     We still need to add the child nodes which will be displayed in the list view making it easier to view them. You can create new nodes from this section.
 
@@ -85,9 +85,7 @@ To add a content node:
 
 5\. Click \*\*Create Articles Item\*\* to add two child nodes called \*\*Article 1\*\*, \*\*Article 2\*\*, and click \*\*Save and Publish\*\*.
 
-```
-![Content Tree With Articles](images/figure-40-articles-created-v8.png)
-```
+<figure><img src="images/figure-40-articles-created-v8.png" alt=""><figcaption><p>Content Tree with Articles</p></figcaption></figure>
 
 ## Updating the Template
 
@@ -102,7 +100,7 @@ To update the **Articles Main** template, follow these steps:
 6. Remove everything from the `<html>` (around line 9) to the end of the `</div>` tag (around line 44) which is the `header` and `navigation` of the site since it is already mentioned in the master template.
 7. Remove everything from the `<!-- Footer -->` tag (around line 84) to the end of the `</html>` tag (around line 131)
 8. Replace the static text within the `<h1>` tags (around line 13) with the Model.Value reference to _**articlesTitle**_.
-9.  Replace the static text within the `<div>` tags (from line 24 to 30) with the Model.Value reference to _**articlesBodyText**_.
+9. Replace the static text within the `<div>` tags (from line 24 to 30) with the Model.Value reference to _**articlesBodyText**_.
 
     ![Articles Main Template](../../../../11/umbraco-cms/tutorials/creating-a-basic-website/images/articles-main-template-v9.png)
 10. Define a query for all articles, just below the `<h3>` tag (around line 32) of the `<!-- Latest blog posts -->` section.
@@ -129,6 +127,7 @@ To update the **Articles Main** template, follow these steps:
         }
     </ul>
     ```
+
 13. The above code will output a list of all the _**Article Items**_ as links using the name. We will modify the template a little, to add more information about the articles. Replace the `HTML` in the _foreach_ loop with this snippet:
 
     ```csharp
@@ -138,6 +137,7 @@ To update the **Articles Main** template, follow these steps:
         <div class="articlepreview">@Html.Truncate(item.Value("articleContent").ToString(), 20, true)<a href="@item.Url()">Read More..</a></div>
     </article>
     ```
+
 14. Click **Save**.
 
 To update the **Articles Item** template, follow these steps:
@@ -151,7 +151,7 @@ To update the **Articles Item** template, follow these steps:
 6. Remove everything from the `<html>` (around line 9) to the end of the `</div>` tag (around line 44) which is the `header` and `navigation` of the site since it is already mentioned in the master template.
 7. Remove everything from the `<!-- Footer -->` tag (around line 114) to the end of the `</html>` tag (around line 161)
 8. Replace the static text within the `<h1>` tags (around line 14) with the Model.Value reference to _**articleTitle**_.
-9.  Replace the static text within the `<div>` tags (from line 26 to 41) with the Model.Value reference to _**articleContent**_.
+9. Replace the static text within the `<div>` tags (from line 26 to 41) with the Model.Value reference to _**articleContent**_.
 
     ![Articles Item Template](../../../../11/umbraco-cms/tutorials/creating-a-basic-website/images/articles-item-template-v9.png)
 10. Click **Save**.

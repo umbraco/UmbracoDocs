@@ -1,5 +1,5 @@
 ---
-versionFrom: 10.0.0
+
 meta.Title: "Umbraco Data Types Settings"
 description: "Information on the data types settings section"
 ---

@@ -1,42 +1,55 @@
 # Table of contents
 
-* [The new Umbraco Backoffice](README.md)
-* [Request for Comments](request-for-comments.md)
+* [Upcoming Umbraco Backoffice](README.md)
 * [Contributing Guidelines](https://github.com/umbraco/Umbraco.CMS.Backoffice/blob/main/.github/CONTRIBUTING.md)
 
 ## Getting Started
 
-* [Getting Started With The New Backoffice](getting-started/getting-started-with-the-new-backoffice/README.md)
-  * [Prereleases](getting-started/getting-started-with-the-new-backoffice/alpha-release.md)
-
-## Fundamentals
-
-* [Setup](fundamentals/setup/README.md)
-  * [Requirements](fundamentals/setup/alpha-release.md)
-  * [Installation](fundamentals/setup/installation/README.md)
-    * [Installing Preview Builds](fundamentals/setup/installation/installing-preview-builds.md)
+* [Getting Started With Backoffice](getting-started/getting-started-with-the-new-backoffice.md)
+* [Installing Preview Builds](getting-started/installing-preview-builds/README.md)
+  * [Requirements](getting-started/installing-preview-builds/alpha-release.md)
 
 ## Extending
 
-* [Customize the editing experience](extending/customize-the-editing-experience.md)
-* [Setup Your Development Environment](extending/development-flow.md)
-* [Package Manifest](extending/package-manifest/README.md)
-  * [Entry Point](extending/package-manifest/entry-point.md)
-* [Dashboards](extending/dashboards.md)
-* [Sections & Trees](extending/sections-and-trees/README.md)
-  * [Sections](extending/sections-and-trees/sections.md)
-  * [Trees](extending/sections-and-trees/trees/README.md)
-    * [Tree Actions](extending/sections-and-trees/trees/tree-actions.md)
-    * [Searchable Trees (ISearchableTree)](extending/sections-and-trees/trees/searchable-trees-isearchabletree.md)
-* [Property Editors](extending/property-editors/README.md)
-  * [Property Editor Ui](extending/property-editors/property-editor-ui.md)
-* [Workspaces](extending/workspaces/README.md)
-  * [Workspace Editor Views](extending/workspaces/workspace-editor-views.md)
-  * [Workspace Editor Actions](extending/workspaces/workspace-editor-actions.md)
+* [Customize Backoffice](extending/customize-the-editing-experience.md)
+* [Setup Your Development Environment](extending/development-flow/README.md)
+  * [Vite Package Setup](extending/development-flow/vite-package-setup.md)
+* [Umbraco Package Manifest](extending/package-manifest.md)
+* [Extension Manifests](extending/extension-types/README.md)
+  * [Global Context](extending/extension-types/global-context.md)
+  * [Store](extending/extension-types/store.md)
+  * [Kind](extending/extension-types/kind.md)
+  * [Dashboard](extending/extension-types/dashboards.md)
+  * [Section](extending/extension-types/sections-and-trees.md)
+  * [Section View](extending/extension-types/section-view.md)
+  * [Property Editor](extending/extension-types/property-editors/README.md)
+    * [Property Editor Schema](extending/extension-types/property-editors/property-editor-schema.md)
+    * [Property Editor UI](extending/extension-types/property-editors/property-editor-ui.md)
+  * [Workspace](extending/extension-types/workspaces/README.md)
+    * [Workspace Context](extending/extension-types/workspaces/workspace-context.md)
+    * [Workspace Views](extending/extension-types/workspaces/workspace-editor-views.md)
+    * [Workspace Actions](extending/extension-types/workspaces/workspace-editor-actions.md)
+  * [Bundle](extending/extension-types/bundle.md)
+  * [Conditions](extending/extension-types/conditions.md)
+  * [Entry Point](extending/extension-types/entry-point.md)
+* [UI Library](extending/ui-library.md)
+* [Umbraco Element](extending/umbraco-element/README.md)
+  * [Controllers](extending/umbraco-element/controllers/README.md)
+    * [Write your own Controller](extending/umbraco-element/controllers/write-your-own-controller.md)
+* [Context API](extending/context-api/README.md)
+  * [Variant Context](extending/context-api/variant-context.md)
 * [Localization](extending/localization/README.md)
+  * [Use Localizations](extending/localization/use-localizations.md)
   * [.NET Localization](extending/localization/.net-localization.md)
   * [UI Localization](extending/localization/ui-localization.md)
-* [UI Library](extending/ui-library.md)
+* [States](extending/states.md)
+* [Conditions](extending/conditions.md)
+* [Modals](extending/modals/README.md)
+  * [Confirm Dialog](extending/modals/confirm-dialog.md)
+
+## Fundamentals
+
+* [Document Blueprints](fundamentals/backoffice/document-blueprints.md)
 
 ## Tutorials
 
@@ -47,4 +60,5 @@
   * [Extending the Dashboard using Umbraco UI library](tutorials/creating-a-custom-dashboard/extending-the-dashboard-using-umbraco-ui-library.md)
 * [Creating a Property Editor](tutorials/creating-a-property-editor/README.md)
   * [Adding configuration to a Property Editor](tutorials/creating-a-property-editor/adding-configuration-to-a-property-editor.md)
-  * [Integrating services with a Property Editor](tutorials/creating-a-property-editor/integrating-services-with-a-property-editor.md)
+  * [Integrating context with a Property Editor](tutorials/creating-a-property-editor/integrating-context-with-a-property-editor.md)
+* [Write your own Context API](tutorials/write-your-own-context.md)

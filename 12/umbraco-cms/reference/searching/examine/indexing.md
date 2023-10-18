@@ -80,24 +80,23 @@ using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
 
 namespace Umbraco.Docs.Samples.Web.CustomIndexing;
+public class ConfigureExternalIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
 {
-    public class ConfigureExternalIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
+    public void Configure(string name, LuceneDirectoryIndexOptions options)
     {
-        public void Configure(string name, LuceneDirectoryIndexOptions options)
+        if (name.Equals(Constants.UmbracoIndexes.ExternalIndexName))
         {
-            if (name.Equals(Constants.UmbracoIndexes.ExternalIndexName))
-            {
-                options.FieldDefinitions.AddOrUpdate(new FieldDefinition("price", FieldDefinitionTypes.Double));
-            }
-        }
-
-        // Part of the interface, but does not need to be implemented for this.
-        public void Configure(LuceneDirectoryIndexOptions options)
-        {
-            throw new System.NotImplementedException();
+            options.FieldDefinitions.AddOrUpdate(new FieldDefinition("price", FieldDefinitionTypes.Double));
         }
     }
+
+    // Part of the interface, but does not need to be implemented for this.
+    public void Configure(LuceneDirectoryIndexOptions options)
+    {
+        throw new System.NotImplementedException();
+    }
 }
+
 ```
 
 This will ensure that the `price` field in the index is treated as a `double` type (if the `price` field does not exist in the index, it is added).
@@ -334,7 +333,7 @@ In certain scenarios only published content should be added to the index. To ach
 
 The index will only update its content when you manually trigger an index rebuild in the Examine dashboard. This is not always the desired behavior for a custom index.
 
-To update your index when content changes, you can use notification handlers. 
+To update your index when content changes, you can use notification handlers.
 
 {% hint style="info" %}
 The following handler class does not automatically update the descendant items of the modified content nodes, such as removing descendants of deleted content. If changes to the parent content item can affect its children or descendant items in your setup, please refer to the [UmbracoContentIndex.PerformDeleteFromIndex() in Umbraco](https://github.com/umbraco/Umbraco-CMS/blob/contrib/src/Umbraco.Examine.Lucene/UmbracoContentIndex.cs#L124-L153). Such logic should be applied when both removing and reindexing content items of type _product_.
@@ -458,7 +457,7 @@ You can find further inspiration for implementing notification handlers (_for ex
 
 ### ExamineComposer
 
-```c#
+```csharp
 using Examine;
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.Composing;

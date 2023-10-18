@@ -12,7 +12,7 @@ This page is a work in progress. It will be updated as the software evolves.
 
 ## Overview
 
-This is session 4 and is the final session of the guide to building a Custom Dashboard. This session continues work on the dashboard we built in session 3: [Adding functionality to the Dashboard](adding-functionality-to-the-dashboard.md), but goes further to showcase how we can use the UI Library in our extension.&#x20;
+This is the fourth and final part of the guide to building a Custom Dashboard. This part continues work on the dashboard we built in part three: [Adding functionality to the Dashboard](adding-functionality-to-the-dashboard.md). But it goes further to showcase how we can use the UI Library in our extension.&#x20;
 
 ## Umbraco UI Library
 
@@ -27,25 +27,25 @@ Let's start by wrapping `uui-box` around our render output. This makes our dashb
 render() {
     return html`
         <uui-box>
-        
+
             // rest of the render code
-        
+
         </uui-box>
     `;
 }
 ```
 {% endcode %}
 
-The uui-box has a headline property. Let's move our headline into the headline property.
+The `uui-box` has a headline property. Let's move our headline into the headline property.
 
 {% code title="welcome-dashboard.element.ts" %}
 ```typescript
  render() {
     return html`
         <uui-box headline="${this.localize.term('welcomeDashboard_heading')} ${this._currentUser?.name ?? 'Unknown'}!">
-    
+
             // rest of the render code
-            
+
         </uui-box>
     `;
 }
@@ -63,9 +63,9 @@ render() {
                 <umb-localize key="welcomeDashboard_heading">Welcome</umb-localize>
                 ${this._currentUser?.name ?? 'Unknown'}!
             </span>
-    
+
             // rest of the render code
-            
+
         </uui-box>
     `;
 }
@@ -82,7 +82,7 @@ static styles = [
 			display: block;
 			padding: var(--uui-size-layout-1);
 		}
-		
+
 		...
 
 	`,
@@ -100,9 +100,8 @@ This already looks a lot better!
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
-import { LitElement, css, html } from "lit";
 import { UMB_AUTH, UmbLoggedInUser } from "@umbraco-cms/backoffice/auth";
-import { customElement, state } from "lit/decorators.js";
+import { LitElement, css, html, customElement, state } from "@umbraco-cms/backoffice/external/lit";
 import { UmbUserDetail, UmbUserRepository } from '@umbraco-cms/backoffice/users';
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
@@ -207,16 +206,16 @@ declare global {
 
 Let's try another uui element.
 
-Since we have a lot of information from the users, it could be a good idea to insert it into a proper table. The UUI Library also includes a [uui-table](https://uui.umbraco.com/?path=/docs/layout-table-table--docs), so let's use that.
+Since we have a lot of information from the users, it could be a good idea to insert it into a proper table. The Umbraco UI (UUI) Library also includes a [uui-table](https://uui.umbraco.com/?path=/docs/layout-table-table--docs), so let's use that.
 
 {% code title="welcome-dashboard.element.ts" %}
 ```typescript
 render() {
 	return html`
 		<uui-box>
-			
+
 			...
-		
+
 			<uui-table id="users-wrapper">
 				<uui-table-row>
 					<uui-table-head-cell>Name</uui-table-head-cell>
@@ -250,7 +249,7 @@ static styles = [
 			display: block;
 			padding: var(--uui-size-layout-1);
 		}
-		
+
 		uui-table-head-cell {
 			font-weight: bold;
 		}
@@ -275,9 +274,8 @@ Your dashboard component should now look like this:
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
-import { LitElement, css, html } from "lit";
 import { UMB_AUTH, UmbLoggedInUser } from "@umbraco-cms/backoffice/auth";
-import { customElement, state } from "lit/decorators.js";
+import { LitElement, css, html, customElement, state } from "@umbraco-cms/backoffice/external/lit";
 import { UmbUserDetail, UmbUserRepository } from '@umbraco-cms/backoffice/users';
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 

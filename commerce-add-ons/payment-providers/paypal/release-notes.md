@@ -11,13 +11,3 @@ For details of releases for **PayPal Payment Provider for Vendr**, refer to the 
 ## Release History
 
 In this section, you can find the release notes for each version of PayPal Payment Provider for Commerce. For each major version, you can find the details about each release.
-
-<!-- <details>
-
-<summary>Version 10</summary>
-
-### versions (date)
-
-* Description
-
-</details> -->

@@ -18,8 +18,8 @@ Our aim is to support the different ways of using Umbraco in a DXP context and p
 
 ![Umbraco as a platform DXP, composable DXP og hybrid solution](.gitbook/assets/pDXPcDXP.png)
 
-
 ### Packages and integrations
+
 Packages for Umbraco are installed as [Nuget packages](https://docs.umbraco.com/umbraco-cms/extending/packages/types-of-packages).
 
 Integrations provide functionality via a third-party service's API, whereas packages extend the functionality of the CMS (management or delivery).
@@ -30,7 +30,7 @@ Integrations provide functionality via a third-party service's API, whereas pack
 
 Umbraco makes available four licensed add-ons that are available for purchase. They each have their dedicated documentation area:
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Umbraco Forms</strong></td><td>Extend your Umbraco CMS website with custom forms in all shapes and sizes.</td><td><a href="https://docs.umbraco.com/umbraco-forms">https://docs.umbraco.com/umbraco-forms</a></td><td><a href=".gitbook/assets/forms7.png">forms7.png</a></td></tr><tr><td><strong>Umbraco Deploy</strong></td><td>Synchronize content and code changes between your Umbraco website environments.</td><td><a href="https://docs.umbraco.com/umbraco-deploy">https://docs.umbraco.com/umbraco-deploy</a></td><td><a href=".gitbook/assets/paperplane7.png">paperplane7.png</a></td></tr><tr><td><strong>Umbraco Workflow</strong></td><td>Structure content reviews and approval flows for Content Editors on your website.</td><td><a href="https://docs.umbraco.com/umbraco-workflow">https://docs.umbraco.com/umbraco-workflow</a></td><td><a href=".gitbook/assets/Workflow7.png">Workflow7.png</a></td></tr><tr><td><strong>Umbraco Commerce</strong></td><td>Setup shop within a familiar structure and interface that is the Umbraco CMS with Umbraco Commerce.</td><td><a href="http://localhost:5000/o/vHdmkfI8smZW50A5yIZD/s/3rCehcwXc4nbpeGqcI2f/">12.commerce.latest (RC)</a></td><td><a href=".gitbook/assets/Untitled presentation.png">Untitled presentation.png</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Umbraco Forms</strong></td><td>Extend your Umbraco CMS website with custom forms in all shapes and sizes.</td><td><a href="https://docs.umbraco.com/umbraco-forms">https://docs.umbraco.com/umbraco-forms</a></td><td><a href=".gitbook/assets/forms7.png">forms7.png</a></td></tr><tr><td><strong>Umbraco Deploy</strong></td><td>Synchronize content and code changes between your Umbraco website environments.</td><td><a href="https://docs.umbraco.com/umbraco-deploy">https://docs.umbraco.com/umbraco-deploy</a></td><td><a href=".gitbook/assets/paperplane7.png">paperplane7.png</a></td></tr><tr><td><strong>Umbraco Workflow</strong></td><td>Structure content reviews and approval flows for Content Editors on your website.</td><td><a href="https://docs.umbraco.com/umbraco-workflow">https://docs.umbraco.com/umbraco-workflow</a></td><td><a href=".gitbook/assets/Workflow7.png">Workflow7.png</a></td></tr><tr><td><strong>Umbraco Commerce</strong></td><td>Setup shop within a familiar structure and interface that is the Umbraco CMS with Umbraco Commerce.</td><td><a href="https://docs.umbraco.com/umbraco-commerce">https://docs.umbraco.com/umbraco-commerce</a></td><td><a href=".gitbook/assets/umbraco-commerce-logo.png">umbraco-commerce-logo.png</a></td></tr></tbody></table>
 
 ## Umbraco Marketplace
 
@@ -60,5 +60,3 @@ Source code and issue trackers are found in the following GitHub repositories:
 * [Umbraco Forms Integrations](https://github.com/umbraco/Umbraco.Forms.Integrations/)
 
 Within the [Integrations section of the documentation](integrations/categories.md), you'll find details on installing and working with the integration packages developed by Umbraco HQ.
-
-
