@@ -22,6 +22,6 @@ TODO: More points and examples:
 interface UmbWorkspaceContext {}
 ```
 
-### Examples of workspaces:
+### Examples of workspaces
 
 TODO: link to all workspaces in storybook. Can we somehow auto-generate this list?
