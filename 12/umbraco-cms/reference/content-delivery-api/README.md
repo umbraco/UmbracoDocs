@@ -488,25 +488,7 @@ Filtering query string options (e.g.
 {% swagger-parameter in="query" name="sort" type="String Array" required="false" %}
 Sorting query string options (e.g.
 
-`createDate`
-
-,
-
-`level`
-
-,
-
-`name`
-
-,
-
-`sortOrder`
-
-,
-
-`updateDate`
-
-)
+`createDate`, `level`, `name`, `sortOrder`, `updateDate`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="skip" type="Integer" required="false" %}
