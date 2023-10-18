@@ -268,6 +268,7 @@
   * [Routing requirements for backoffice authentication](reference/routing/authorized.md)
   * [Custom MVC controllers (Umbraco Route Hijacking)](reference/routing/custom-controllers.md)
   * [Custom MVC Routes](reference/routing/custom-routes.md)
+  * [Custom Middleware](reference/routing/custom-middleware.md)
   * [URL Rewrites in Umbraco](reference/routing/iisrewriterules.md)
   * [Special Property Type aliases for routing](reference/routing/routing-properties.md)
   * [URL Redirect Management](reference/routing/url-tracking.md)
