@@ -22,7 +22,12 @@ There are also differences across the request and response structures and variat
 
 The package tries to implement a single, best practice implementation of working with OAuth. For particular providers the specific flow required can be customized via configuration or code.
 
-Services that this package is intended to support will offer an OAuth2/OAuth1 default authentication and authorization flow against an "app". The developer will need to create this "app" with the service.  By doing this, information such as the "client ID" (or "consumer key" for OAuth1) and "client secret" (or "consumer secret" for OAuth1) can be applied to the configuration.
+The primary use case for this package is when working with services that offer an OAuth2/OAuth1 default authentication and authorization flow against an "app". The developer will need to create this "app" with the service.  By doing this, information such as the "client ID" (or "consumer key" for OAuth1) and "client secret" (or "consumer secret" for OAuth1) can be applied to the configuration.
+
+When creating the app it will usually be necessary to configure a call back URL. You should use the following:
+
+- For OAuth2: `/api/AuthorizedServiceResponse/HandleOAuth2IdentityResponse`
+- For OAuth1: `/api/AuthorizedServiceResponse/HandleOAuth1IdentityResponse`
 
 In addition, the package supports integration with OAuth1 or Api key based authentication and authorization services.
 
@@ -42,7 +47,7 @@ Each tree entry has a management screen where an administrator can authenticate 
 
 ![authorized-screen](images/authorized-screen.png)
 
-If the service is configured to allow the addition of access tokens/API keys manually, using the `CanManuallyProvideToken` or `CanManuallyProvideApiKey` settings, a new section will be available for providing them.
+A service can be configured to allow the manual entry of access tokens/API keys manually using the `CanManuallyProvideToken` or `CanManuallyProvideApiKey` settings. If this is set to `true`, a new section will be available for providing them.
 ![provide-oauth1-token](images/provide-oauth1-token.png)
 ![provide-oauth2-token](images/provide-oauth2-token.png)
 ![provide-api-key](images/provide-api-key.png)
@@ -62,9 +67,7 @@ Depending on the authentication method of the service,
 - `OAuth2ClientCredentials`
 - `ApiKey`
 
-the interface provides two methods for retrieving the value of the access token or the API key:
-- `GetToken`
-- `GetApiKey` 
+The interface provides methods for retrieving the value of the access tokens or API key - `GetOAuth1Token()`, `GetOAuth2Token()` and `GetApiKey()`. These will return null if the token or key is not found, or the service is not configured to use the authorization method related to these objects.
 
 ## Usage
 
