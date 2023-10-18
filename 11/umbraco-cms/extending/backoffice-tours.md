@@ -90,7 +90,7 @@ Below is an explanation of each of the properties on the tour configuration obje
 
     ![Content Type specific tours](<../../../10/umbraco-cms/extending/images/contentTypespecific (1) (1) (1) (1) (1).png>)
 
-    In the image above, two tours are avaibable on the _Welcome_ node:
+    In the image above, two tours are available on the _Welcome_ node:
 
     1. "Setup the Welcome page" is available because the tour is limited to the `homePage` content type and
     2. "Setup the Search Engine Optimization (SEO)" is available because the content type uses the `SEO` composition, which is associated with a specific tour.

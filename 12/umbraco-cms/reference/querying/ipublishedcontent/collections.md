@@ -120,7 +120,7 @@ Filters a collection of content by content type alias
 </ul>
 ```
 
-
+***
 
 ## Filtering, Ordering & Extensions
 

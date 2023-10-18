@@ -13,7 +13,7 @@ Language Variation allows you to have different variations of content based on a
 
 Here we would attempt to render the `pageTitle` property in the French variant. We want to fallback to the current culture language if it can't find it in French.
 
-The challenge arises when trying to display all values of an IPublishedContent model in a specific culture from a "current culture"-less context, like a [`SurfaceController`](outing/surface-controllers/).
+The challenge arises when trying to display all values of an IPublishedContent model in a specific culture from a "current culture"-less context, like a [`SurfaceController`](routing/surface-controllers/).
 
 If you do something like this:
 
@@ -106,4 +106,4 @@ namespace TestStuff
 
 So we access the `IVariationContextAccessor.VariationContext` and set it to a new one with our own specified culture (remember `using Umbraco.Core.Models.PublishedContent;` at the top to get access to it).
 
-The elements you get afterwards will be in the culture you have specified.
+The elements you get afterward will be in the culture you have specified.

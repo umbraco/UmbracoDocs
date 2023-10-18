@@ -1,5 +1,5 @@
 ---
-versionFrom: 9.0.0
+
 meta.Title: "Umbraco Request Context"
 description: "The UmbracoContext is a helpful service provided on each request to the website"
 ---

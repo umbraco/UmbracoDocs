@@ -1,6 +1,6 @@
 ---
-versionFrom: 8.0.0
-versionTo: 10.0.0
+
+
 ---
 
 # Document Types
@@ -43,7 +43,7 @@ With the help of icons, you can identify different Document Types in the **Conte
 
 
     <figure><img src="images/figure-9-adding-an-icon-to-document-type-v8.png" alt=""><figcaption></figcaption></figure>
-2. Browse through the icon list and selct the icon of your choice.
+2. Browse through the icon list and select the icon of your choice.
 3. Click **Submit**.
 
 ### Setting Permissions

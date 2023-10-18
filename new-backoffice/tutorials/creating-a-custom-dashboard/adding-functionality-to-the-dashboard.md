@@ -10,16 +10,16 @@ This page is a work in progress. It will be updated as the software evolves.
 
 ## Overview
 
-This is session 3 in our guide to building a custom dashboard. This session continues work on the dashboard we built in session 2: [Add localization to the dashboard](adding-localization-to-the-dashboard.md) but goes further to show how to add functionality and data to our dashboard.
+This is the third part of our guide to building a custom dashboard. This part continues work on the dashboard we built in part two: [Add localization to the dashboard](adding-localization-to-the-dashboard.md). But it goes further to show how to add functionality and data to our dashboard.
 
-The steps we will go through in session 3 are:
+The steps we will go through in this part are:
 
-1. [Resources and services](adding-functionality-to-the-dashboard.md#1.-resources-and-services)
+1. [Contexts](adding-functionality-to-the-dashboard.md#1.-contexts)
 2. [Getting data from the server](adding-functionality-to-the-dashboard.md#2.-getting-data-from-the-server)
 
-## Step 1: Resources and services
+## Step 1: Contexts
 
-Umbraco has a fine selection of resources and services that you can use in your custom property editors and dashboards. For this example, it would be nice to welcome the editor by name. To achieve this we can make use of the Umbraco resources.
+Umbraco has a large selection of contexts that you can use in your custom Property Editors and Dashboards. For this example, we will welcome the editor by name. To achieve this we can make use of the Umbraco Contexts.
 
 To get information on the current user that's currently logged in, we first need to get the context and its token. We use the Auth context to receive the user that is currently logged in.
 
@@ -27,13 +27,20 @@ Import the Auth token and the type for the logged-in user. We also need to updat
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
-import { customElement, state } from "lit/decorators.js";
+import { customElement, state } from "@umbraco-cms/backoffice/external/lit";
 import { UMB_AUTH, UmbLoggedInUser } from '@umbraco-cms/backoffice/auth';
 ```
 {% endcode %}
 
-Now that we have the token, we can consume it in the constructor. We already have the  `consumeContext` method available on our element since we extended using `UmbElementMixin`&#x20;
+Now that we have the Auth token, we can consume it in the constructor to obtain the current user. We do this using the `consumeContext` method, which is available on our element because we extended using `UmbElementMixin`. As the first thing in the `export class MyWelcomeDashboardElement` add the following to the element implementation :
 
+{% hint style="info" %}
+
+The entire `welcome-dashbord.element.ts` file is available for reference at the end of the step to confirm your placement for code snippets.
+
+{% endhint %}
+
+{% code title="welcome-dashboard.element.ts" %}
 ```typescript
 ...
 
@@ -59,6 +66,7 @@ private async _observeCurrentUser() {
 
 ...
 ```
+{% endcode %}
 
 Now that we have the current user, we can access a few different things. Let's get the `name` of the current user, so that we can welcome the user:
 
@@ -71,7 +79,7 @@ render() {
        ${this._currentUser?.name ?? "Unknown"}!
     </h1>
     <div>
-      <p> 
+      <p>
        <umb-localize key="welcomeDashboard_bodytext">
          This is the Backoffice. From here, you can modify the content,
          media, and settings of your website.
@@ -98,9 +106,8 @@ Your dashboard should now look something like this:
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
-import { LitElement, css, html } from "lit";
 import { UMB_AUTH, UmbLoggedInUser } from '@umbraco-cms/backoffice/auth';
-import { customElement, state } from "lit/decorators.js";
+import { LitElement, css, html, customElement, state } from "@umbraco-cms/backoffice/external/lit";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
 @customElement('my-welcome-dashboard')
@@ -172,7 +179,7 @@ declare global {
 ## Step 2: Getting data from the server
 
 {% hint style="danger" %}
-<mark style="color:red;">`UmbUserDetail`</mark> and <mark style="color:red;">`UmbUserRepository`</mark> is not available in Preview002
+<mark style="color:red;">`UmbUserDetail`</mark> and <mark style="color:red;">`UmbUserRepository`</mark> is not available in Preview003
 {% endhint %}
 
 Let's dive deeper into some new resources and see what we can do with them.
@@ -198,7 +205,7 @@ private _userRepository = new UmbUserRepository(this);
 
 constructor() {
 	...
-	
+
 	this._getDataFromRepository();
 }
 
@@ -227,9 +234,8 @@ private async _getDataFromRepository() {
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
-import { LitElement, css, html } from "lit";
 import { UMB_AUTH, UmbLoggedInUser } from '@umbraco-cms/backoffice/auth';
-import { customElement, state } from "lit/decorators.js";
+import { LitElement, css, html, customElement, state } from "@umbraco-cms/backoffice/external/lit";
 import { UmbUserDetail, UmbUserRepository } from '@umbraco-cms/backoffice/users';
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
@@ -321,7 +327,7 @@ render() {
     return html`
         ...
         ...
-        
+
 	<div id="users-wrapper">${this._userData?.map((user) => this._renderUser(user))}</div>
     `;
 }
@@ -346,7 +352,7 @@ static styles = [
 			display: block;
 			padding: 24px;
 		}
-		
+
 		#users-wrapper {
 			border: 1px solid lightgray;
 		}
@@ -362,7 +368,7 @@ static styles = [
 {% endcode %}
 
 {% hint style="info" %}
-We recommend using variables for colors and sizing. See why and how you could achieve this in the next session where we will use the Umbraco UI Library.
+We recommend using variables for colors and sizing. See why and how you could achieve this in the next part where we will use the Umbraco UI Library.
 {% endhint %}
 
 We now should have something that looks like this:
@@ -375,9 +381,8 @@ We now should have something that looks like this:
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
-import { LitElement, css, html } from "lit";
 import { UMB_AUTH, UmbLoggedInUser } from "@umbraco-cms/backoffice/auth";
-import { customElement, state } from "lit/decorators.js";
+import { LitElement, css, html, customElement, state } from "@umbraco-cms/backoffice/external/lit";
 import { UmbUserDetail, UmbUserRepository } from "@umbraco-cms/backoffice/users";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 

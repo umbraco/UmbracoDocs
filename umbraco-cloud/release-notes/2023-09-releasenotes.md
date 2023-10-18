@@ -3,6 +3,7 @@
 ## Key Takeaways
 
 * **Shared Secrets** - Streamline your build process, enhance security, and say goodbye to repetitive environment configurations with "Shared Secrets" on Umbraco Cloud.
+* **Upgraded "Usage" Page for Custom Plans** - If you've added extra bandwidth or media storage to your cloud project, our updated "Usage" page on Umbraco Cloud now accurately reflects those additions. 
 
 ## Shared Secrets
 
@@ -20,3 +21,12 @@ The new "Shared Secrets" panel lets you define secrets that are critical during 
 Besides the new shared secrets, we still have the **Environment Secrets**: For secrets that are specific to individual environments, continue to use the existing "Environment Secrets" panel. These secrets remain locked to the selected environment and won't be accessible by others.
 
 For more detailed information on how to leverage secrets, please visit our [documentation](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/secrets-management).
+
+## Upgraded "Usage" Page for Custom Plans
+We've specifically updated the "Usage" page for those who have added extra bandwidth or media storage to their project plan. Now, you'll see those custom additions accurately displayed. For example, if on a Professional plan, you purchase an additional 3000GB of bandwidth, your "Usage" page will show 3000GB instead of the default 1000GB.
+
+![Extra usage 2](images/UsageExtra2.png)
+
+If you are considering expanding your resources, you can contact our support team to add even more bandwidth or storage to your existing plan. You can also switch to a plan with dedicated resources for greater flexibility.
+
+Feel free to reach out for any further assistance or clarification.

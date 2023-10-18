@@ -1,6 +1,6 @@
 ---
-versionFrom: 8.0.0
-versionTo: 10.0.0
+
+
 meta.Title: Packages on Umbraco Cloud
 v9-equivalent: >-
   https://github.com/umbraco/UmbracoCMSDocs/blob/main/Articles/Packages/packages-on-Umbraco-Cloud.md

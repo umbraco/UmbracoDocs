@@ -54,6 +54,7 @@ For illustration purposes, the following structure represents the full set of op
             "AcceptInvalidCertificates": false,
             "TransferFormsAsContent": true,
             "TransferDictionaryAsContent": false,
+            "IgnoreMissingLanguagesForDictionaryItems": false,
             "AllowMembersDeploymentOperations": "None",
             "TransferMemberGroupsAsContent": false,
             "ExportMemberGroups": true,
@@ -205,6 +206,16 @@ On changing this value from `false` to `true`, make sure to remove any `.uda` fi
 In a similar way, Deploy can be configured to allow for backoffice transfers of dictionary items instead of using files serialized to disk, by setting `TransferDictionaryAsContent` as `true`.
 
 Please see the note above under _TransferFormsAsContent_ on the topic of removing any existing serialized files having changed this value to `true`.
+
+## IgnoreMissingLanguagesForDictionaryItems
+
+When deploying dictionary items, an exception will be thrown if a translation is provided for a language that doesn't exist in the target environment.
+
+Normally this is a useful fail-safe to ensure translations aren't lost in the transfer operation.
+
+If you have deleted languages that have already existing translations, you may want to temporarily remove this check. You can do that by setting this value to `true`.
+
+When this is in place a translation for a language that doesn't exist in the target environment will be ignored. A warning message will be output to the log.
 
 ## AllowMembersDeploymentOperations and TransferMemberGroupsAsContent
 

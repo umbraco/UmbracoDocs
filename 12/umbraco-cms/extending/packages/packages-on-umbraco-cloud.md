@@ -106,7 +106,7 @@ At this point I have two local sites:
 
 **Site 2**: A website served through VS Code (Could be IIS or anything else, doesn't matter) Running on http://localhost:17025/ (Randomly generated) Has the ValueConnector dll in the bin from the clone
 
-Now we will set up these two identical sites to transfer content between eachother.
+Now we will set up these two identical sites to transfer content between each other.
 
 To do so go to `site1/Config/UmbracoDeploy.config` and edit the live environment url to be Site 2's url (http://localhost:17025/ in my case). Then do the same for Site 2 but put in the domain for Site 1 as the "live" one.
 
@@ -154,19 +154,19 @@ Here you will notice that the value is what you had returned in `ToArtifact`.
 
 ### Creating our ValueConnector
 
-You may have realised at this point that the flow is something like this:
+You may have realized at this point that the flow is something like this:
 
-1. Site 1 content transfer initated
+1. Site 1 content transfer initiated
 2. Property data is fetched on Site 1
 3. Hit the `ToArtifact` method on Site 1
 4. Send to Site 2
 5. Hit the `FromArtifact` method on Site 2
 6. Property data is saved on Site 2
 
-So in our case, what we want to do is to ensure the ID from Site 1 is changed during the transfer to match what the new ID in Site 2 is. We do this by converting the ID to a GUID in the `ToArtifact` method on Site 1, which will then get transfered to Site 2. On site 2 we will convert it back to an ID in the `FromArtifact` method. This way the user will still see an ID on the content node, but the ID they see will be updated to the correct one.
+So in our case, what we want to do is to ensure the ID from Site 1 is changed during the transfer to match what the new ID in Site 2 is. We do this by converting the ID to a GUID in the `ToArtifact` method on Site 1, which will then get transferred to Site 2. On site 2 we will convert it back to an ID in the `FromArtifact` method. This way the user will still see an ID on the content node, but the ID they see will be updated to the correct one.
 
 {% hint style="warning" %}
-In this example there would be no way for Deploy to know to also transfer the image. We assume that you would transfer all content and images to ensure it is on the target environment under a different ID.
+In this example, there would be no way for Deploy to know to also transfer the image. We assume that you would transfer all content and images to ensure it is on the target environment under a different ID.
 
 That is not a good assumption, and you may have noticed that there is a parameter on the `ToArtifact` method that you could update by finding the image and adding it to `ICollection<ArtifactDependency> dependencies`.
 {% endhint %}
@@ -215,7 +215,7 @@ When stepping through the code we can see that everything seems to work fine:
 ![Stepped through code](../../../../10/umbraco-cms/extending/packages/images/steppingThroughCode.png)
 
 {% hint style="info" %}
-Note: Showing the variable values is a feature of [ReSharper](https://www.jetbrains.com/resharper/) .
+Note: Showing the variable values is a feature of [ReSharper](https://www.jetbrains.com/resharper/).
 {% endhint %}
 
 By the time we hit `FromArtifact` value of `"umb://media/00c9eff861654f52be7a33367c3561a4"` all that is left to do is convert back to an `int`.

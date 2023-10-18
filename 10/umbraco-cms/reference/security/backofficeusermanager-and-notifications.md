@@ -1,6 +1,6 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+
+
 meta.Title: "BackOfficeUserManager and Notifications"
 description: "The BackOfficeUserManager is the ASP.NET Core Identity UserManager implementation in Umbraco. It exposes APIs for working with Umbraco User's via the ASP.NET Core Identity including password handling."
 ---
@@ -79,8 +79,8 @@ Note the constructor minimum needs to inject what is required for the base `Back
 
 ## Notifications
 
-There are [several notifications](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Cms.Web.Common.Security.BackOfficeUserManager.html) you can handle on the `BackOfficeUserManager`.
-Internally these are mostly used for auditing but there are some that allow you to customize some workflows:
+There are [many notifications](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Cms.Web.Common.Security.BackOfficeUserManager.html) you can handle on the `BackOfficeUserManager`.
+Internally these are mainly used for auditing but there are some that allow you to customize some workflows:
 
 [comment]: <> (* `BackOfficeUserManager.SendingUserInvite`)
 

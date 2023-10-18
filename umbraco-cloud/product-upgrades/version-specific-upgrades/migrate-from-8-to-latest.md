@@ -6,6 +6,12 @@ description: >-
 
 # Migrate from Umbraco 8 to the latest version
 
+{% hint style="warning" %}
+It is currently not possible to upgrade directly from Umbraco 8 to Umbraco 12.
+
+The recommended approach for upgrading from v8 to v12 is to use this guide to upgrade from _Umbraco 8 to Umbraco 10_ and then use the [Major Upgrades](../major-upgrades.md) steps to upgrade from _Umbraco 10 to Umbraco 12_.
+{% endhint %}
+
 Since the underlying framework going from Umbraco 8 to the latest version has changed, there is no direct upgrade path. That said, it is possible to re-use the database from your Umbraco 8 project on your new project in order to maintain the content.
 
 It is not possible to migrate the custom code as the underlying web framework has been updated from ASP.NET to ASP.NET Core. All templates and custom code will need to be reimplemented.
@@ -18,12 +24,10 @@ You also need to make sure that the packages that you are using are available on
 * A clean Cloud project running the latest version of Umbraco with **at least 2 environments**.
 * A backup of your Umbraco 8 project database.
 
-{% hint style="info" %}
 We strongly recommend having at least **2 environments** on the new Umbraco project.
 
 {% hint style="info" %}
-If your Umbraco 8 site is using Umbraco Forms, make sure to configure it to store data in the database, before beginning this tutorial
-[Follow the guide for migrating Umbraco Forms data to the database.](https://docs.umbraco.com/umbraco-forms/developer/forms-in-the-database)
+If your Umbraco 8 site is using Umbraco Forms, make sure to configure it to store data in the database, before beginning this tutorial [Follow the guide for migrating Umbraco Forms data to the database.](https://docs.umbraco.com/umbraco-forms/developer/forms-in-the-database)
 
 Should something fail during the migration, the Development environment can be removed and re-added to start over on a clean slate.
 {% endhint %}
@@ -36,11 +40,14 @@ A video tutorial guiding you through the steps of upgrading from version 8 to th
 
 ## Step 1: Content Migration
 
+{% hint style="warning" %}
+If you use Umbraco Forms, make sure to have [`StoreUmbracoFormsInDbset`](https://docs.umbraco.com/umbraco-forms/developer/forms-in-the-database#enable-storing-forms-definitions-in-the-database)to `True` before **step 1**.
+{% endhint %}
+
 1. Create a backup of the database from your Umbraco 8 project using the [database backup guide](../../databases/backups.md).
-   * Make sure to **restore both content and media** from your Cloud environment.
-   * Alternatively you can clone the environment down and take a backup of the local Database after restoring.
+   * Alternatively, you can clone the environment down and take a backup of the local Database after restoring. Make sure to restore both content and media from your Cloud environment after cloning it down.&#x20;
 2. Import the database backup into SQL Server Management Studio.
-3. Clone down the **Development** environment from the new Cloud project.
+3. Clone down the **Development** environment from the **new** Cloud project.
 4. Test the project and make sure to log in to the backoffice.
 
 {% hint style="info" %}
@@ -51,17 +58,17 @@ As you are cloning down a brand new Cloud project there is nothing the restore. 
 
 ```json
 "ConnectionStrings": {
-    "umbracoDbDSN": "Server=YourLocalSQLServerHere;Database=NameOfYourDatabaseHere;Integrated Security=true"
+    "umbracoDbDSN": "Server=YourLocalSQLServerHere;Database=NameOfYourDatabaseHere;;User Id=NameOfYourUserHere;Password=YourPasswordHere;TrustServerCertificate=True"
 }
 ```
 
 6. Enable [Unattended Upgrades](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading#enable-the-unattended-upgrade-feature) to authorize the database upgrade.
-7. Run the new Cloud project locally.
-8. Wait for the site to finish upgrading.
-9. Stop the site and disable the unattended upgrade.
-10. Run the site and log in using Umbraco ID.
+7. Run the new Cloud project locally and login to authorize the upgrade.
+8. Select "Continue" when the upgrade wizard appears.
+9. After it has finished upgrading, stop the site and disable the unattended upgrade.
+10. Run the site and log in using Umbraco ID to verify if your project has been upgraded to the new version.
 
-{% hint style="info" %}
+{% hint style="success" %}
 This is **only content migration** and the database will be migrated.
 
 You need to manually upgrade the view files and custom code implementation. For more information, see Step 3 of this guide.
@@ -71,21 +78,24 @@ You need to manually upgrade the view files and custom code implementation. For 
 
 1. The following files/folders need to be copied from the Umbraco 8 folder into the new Cloud project folder:
    * `~/Views` - **Do not** overwrite the default Macro and Partial View Macro files unless changes have been made to these.
-   * `~/Media`
    * Any files/folders related to Stylesheets and JavaScript.
-2. Migrate custom configuration from the Umbraco 8 configuration files (`.config`) into the `appsettings.json` file on the new Cloud project.
+2. `~/Media` folder from v8 needs to be copied over into the `wwwroot - media` folder:
+   * Connect to [Azure Storage Explorer](../../set-up/media/connect-to-azure-storage-explorer.md) from the v8 project
+   * Download the media folder from Azure Storage Explorer
+   * Add the downloaded media folder from v8 to the Azure Storage Explorer of the new project.
+3. Migrate custom configuration from the Umbraco 8 configuration files (`.config`) into the `appsettings.json` file on the new Cloud project.
    * As of Umbraco version 9, the configuration no longer lives in the `Web.Config` file and has been replaced by the `appsettings.json` file.
-3. [Migrate Umbraco Forms data to the database](https://docs.umbraco.com/umbraco-forms/developer/forms-in-the-database), if relevant.
+4. [Migrate Umbraco Forms data to the database](https://docs.umbraco.com/umbraco-forms/developer/forms-in-the-database), if relevant.
    * As of Umbraco Forms version 9, it is only possible to store Forms data in the database. If Umbraco Forms was used on the Umbraco 8 project, the files need to be migrated to the database.
-4. Run the new Cloud project locally.
-   * It **will** give you a Yellow Screen of Death (YSOD)/error screen on the frontend as none of the Template files have been updated yet.
-5. Go to the backoffice of the project.
-6. Navigate to the **Settings** section and open the **Deploy** dashboard.
-7. Click on `Export Schema` in the **Deploy Operations** section in order to generate the UDA files.
+5. Run the new Cloud project locally.
+   * It **will** give you an error screen on the frontend as none of the Template files have been updated. Follow **Step 3** to resolve the errors.
+6. Go to the backoffice of the project.
+7. Navigate to the **Settings** section and open the **Deploy** dashboard.
+8. Click on `Export Schema to Data Files` in the **Deploy Operations** section in order to generate the UDA files.
    * Once the operation is completed, the status will change to `Last deployment operation completed`.
-8. Check `~\umbraco\Deploy\Revision` folder to ensure all the UDA files have been generated.
-9. Return to the **Deploy** dashboard.
-10. Click on `Update Umbraco Schema` in the **Deploy Operations** section to make sure everything checks out with the UDA files that were generated.
+9. Check `~\umbraco\Deploy\Revision` folder to ensure all the UDA files have been generated.
+10. Return to the **Deploy** dashboard.
+11. Click on `Update Umbraco Schema from Data Files` in the **Deploy Operations** section to make sure everything checks out with the UDA files that were generated.
 
 ## Step 3: Custom Code in the latest version
 
@@ -99,6 +109,10 @@ Read more about these changes in the [IPublishedContent](https://docs.umbraco.co
 
 * Template files need to inherit from `Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>` instead of `Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.HomePage>`
 * Template files need to use `ContentModels = Umbraco.Cms.Web.Common.PublishedModels` instead of `ContentModels = Umbraco.Web.PublishedModels`
+
+{% hint style="info" %}
+For more information on the correct namespaces or custom code, you can find the references in the [API Documentation](https://docs.umbraco.com/umbraco-cms/reference/api-documentation).
+{% endhint %}
 
 Depending on the extent of the project and the amount of custom code and implementations, this step is going to require a lot of work.
 
@@ -114,7 +128,7 @@ The deployment might take a bit longer than normal as a lot of changes have been
 
 2. Go to the backoffice of the **Development** environment once everything has been pushed.
 3. Go to **Settings** and open the **Deploy** Dashboard.
-4. Click on `Export Schema` in the **Deploy Operations** section.
+4. Click on `Export Schema to Data Files` in the **Deploy Operations** section.
    * The deployment will result in either of the two:
      * `Last deployment operation failed` - something failed during the check.
        * Select `Clear Signatures` from the **Deploy Operations** section.
@@ -129,8 +143,8 @@ The deployment might take a bit longer than normal as a lot of changes have been
 ## Step 5: Going live
 
 1. Test **everything** in the **Development** environment until it runs without any errors.
-2. Setup rewrites on the new Cloud project.
-3. Assign hostnames to the project.
+2. Setup rewrites on the new Cloud project if relevant.
+3. Assign hostnames to the project if relevant.
 
 {% hint style="info" %}
 Hostnames are unique and can only be added to one Cloud project at a time.

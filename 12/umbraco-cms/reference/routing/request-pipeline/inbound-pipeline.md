@@ -47,7 +47,7 @@ The published request is created using the `PublishedRequestBuilder` which imple
 
 You can subscribe to the 'routing request' notification, which is published right after the `PublishedRequestBuilder` has been prepared, but before the request is built, and processed. Here you can modify anything in the request before it is built and processed! e.g. content, template, etc:
 
-```
+```csharp
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
 

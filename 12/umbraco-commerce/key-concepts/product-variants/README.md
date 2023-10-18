@@ -28,7 +28,7 @@ For complex variants, Umbraco Commerce comes with a variants property editor whi
 For more information on how you can setup Complex Variants, head to the [Complex Variants](complex-variants.md) article.
 {% endhint %}
 
-### Product Attributes
+### [Product Attributes](complex-variants.md#product-attributes)
 
 To aid with the setup of the complex variants, Umbraco Commerce has the **Product Attributes** concept which defines the individual options that make up your product variants. This could be colors, sizes, and fits. Each product attribute is made up of a label and as many values as needed.
 

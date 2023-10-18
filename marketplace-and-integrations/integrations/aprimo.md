@@ -72,7 +72,7 @@ If the configuration is not valid, an error-tag will be displayed in the right u
 
 Otherwise, you will be able to select one of the two available options for picking assets:
 
-* Aprimo API - items are retrieved using the API and an overlay of the property editor will display the list of available items in the DAM (Digital Asset Management) workspace.
+* Aprimo API - items are retrieved using the API and an overlay of the property editor will display the list of available items in the Digital Asset Management (DAM) workspace.
 * Aprimo Content Selector - rich UI tool hosted on Aprimo Cloud where you can pick items using a familiar Aprimo interface.
 
 ### Browser information

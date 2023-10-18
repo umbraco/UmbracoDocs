@@ -1,5 +1,5 @@
 ---
-versionFrom: 10.0.0
+
 meta.Title: Azure Key Vault
 description: A guide for configuring Azure Key Vault
 ---

@@ -49,8 +49,7 @@ The following snippet will give an overview of the keys and values in the conten
 ```
 
 {% hint style="info" %}
-From 10.4, `AllowedUploadFiles` & `DisallowedUploadFiles` is deprecated, they will still work, but will be removed in a future version!
-You can use `AllowedUploadedFileExtensions` & `DisallowedUploadedFileExtensions` instead!
+From 10.4, `AllowedUploadFiles` & `DisallowedUploadFiles` is deprecated, they will still work, but will be removed in a future version! You can use `AllowedUploadedFileExtensions` & `DisallowedUploadedFileExtensions` instead!
 {% endhint %}
 
 ## Root level settings
@@ -71,16 +70,15 @@ If greater control is required than available from the above, this setting can b
 
 ### Allowed media hosts
 
-By default, only relative URLs are allowed when getting URLs for resized images or thumbnails using the ImagesController.
-If you need absolute URLs you will have to add the allowed hosts to this list. The value could be `["umbraco.com", "www.umbraco.com", "our.umbraco.com"]`.
+By default, only relative URLs are allowed when getting URLs for resized images or thumbnails using the ImagesController. If you need absolute URLs you will have to add the allowed hosts to this list. The value could be `["umbraco.com", "www.umbraco.com", "our.umbraco.com"]`.
 
 ### Disable delete when referenced
 
-This setting allows you to specify whether a user can delete content or media items that depend on other items. This also includes any descendants that have dependencies. Setting this to **true** will remove or disable the *Delete* button.
+This setting allows you to specify whether a user can delete content or media items that depend on other items. This also includes any descendants that have dependencies. Setting this to **true** will remove or disable the _Delete_ button.
 
 ### Disable unpublish when referenced
 
-This setting allows you to specify whether or not users can unpublish content items that depend on other items or have descendants that have dependencies. Setting this to **true** will disable the *Unpublish* button.
+This setting allows you to specify whether or not users can unpublish content items that depend on other items or have descendants that have dependencies. Setting this to **true** will disable the _Unpublish_ button.
 
 ### Disallowed upload files
 
@@ -106,11 +104,9 @@ The above example shows what you need to do if you only have a single site that 
 3. Enter the XPath to find the node (`"ContentXPath": "/root/Home//TextPage[@urlName = 'error404'"`)
 
 {% hint style="info" %}
-
-- Ids are usually local to the specific solution (so won't point to the same node in two different environments if you're using Umbraco Cloud).
-- GUIDs are universal and will point to the same node on different environments, provided the content was created in one environment and deployed to the other(s).
-- When using XPath, there is no "context" (like, you can't find the node based on "currentPage") so needs to be a global absolute path.
-
+* Ids are usually local to the specific solution (so won't point to the same node in two different environments if you're using Umbraco Cloud).
+* GUIDs are universal and will point to the same node on different environments, provided the content was created in one environment and deployed to the other(s).
+* When using XPath, there is no "context" (like, you can't find the node based on "currentPage") so needs to be a global absolute path.
 {% endhint %}
 
 If you have multiple sites, with different cultures, setup in your tree then you will need to setup the errors section like below:
@@ -176,7 +172,7 @@ The global settings for the scheduled job which cleans historic content versions
 
 Current draft and published versions will never be removed, nor will individual content versions which have been marked as "preventCleanup".
 
-See [Content Version Cleanup](../../../Fundamentals/Data/Content-Version-Cleanup/index.md) for more details on overriding configuration and preventing cleanup of specific versions.
+See [Content Version Cleanup](../../fundamentals/data/content-version-cleanup.md) for more details on overriding configuration and preventing cleanup of specific versions.
 
 ```json
 "ContentVersionCleanupPolicy": {
@@ -261,4 +257,4 @@ If you need to create a custom Media Type to handle images you need to add anoth
 
 ## Notifications
 
-Umbraco can send out email notifications. To set the SMTP server used to send the emails, edit the standard Simple Mail Transfer Protocol (SMTP) section in the global section. See the [Global settings](../GlobalSettings/) article for more information.
+Umbraco can send out email notifications. To set the SMTP server used to send the emails, edit the standard Simple Mail Transfer Protocol (SMTP) section in the global section. See the [Global settings](globalsettings.md) article for more information.

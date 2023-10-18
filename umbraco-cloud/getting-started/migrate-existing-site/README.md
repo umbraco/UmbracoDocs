@@ -12,7 +12,7 @@ These are the steps you need to go through to complete the migration successfull
 4. [Prepare your Cloud project](./#4.-prepare-your-cloud-project)
 5. [Clone down the Cloud project](./#5.-clone-down-the-cloud-project)
 6. [Move and Merge files](./#6.-move-and-merge-files)
-7. [Generate meta data](./#7-generate-meta-data)
+7. [Generate meta data](./#7.-generate-meta-data)
 8. [Deploy to Umbraco Cloud](./#8.-deploy-to-umbraco-cloud)
 
 ## Video tutorial
@@ -133,6 +133,7 @@ Merging your existing site into the Umbraco Cloud project is a matter of moving 
    * `/Views`
    * `/Umbraco`
    * If your existing site uses Umbraco Forms, make sure you **do not overwrite** the `\umbraco\Licenses\umbracoForms.lic` file
+   * When copying your `\umbraco\` folder, make sure you **do not delete** the `\umbraco\Licenses\umbracoDeploy.lic` file
    * If you have any custom code in your project, you should copy that code over too.
 2. Merge Appsettings.JSON files from your existing site with the cloud site.
    * Make sure that you merge your Appsetting.JSON files with the ones from your existing site so that the settings you used are moved over to your Cloud project
@@ -154,7 +155,7 @@ Umbraco Identity (Umbraco ID) is the Single Sign-On (SSO) feature across all Umb
 
 It is required to access any project pages as well as the backoffice.
 
-To migrate the users from your on-premises site to Umbraco Cloud and Umbraco ID, follow the [Migrate Users to Cloud guide](migrating-users-to-umbraco-cloud.md) article.
+To migrate the users from your on-premises site to Umbraco Cloud and Umbraco ID, follow the [Migrate Users to Cloud guide](broken-reference) article.
 {% endhint %}
 
 With that confirmed, it's time to prepare to migrate the project to Umbraco Cloud.

@@ -1,5 +1,5 @@
 ---
-versionFrom: 10.0.0
+
 ---
 
 # Backoffice UI API Documentation
@@ -7,7 +7,7 @@ versionFrom: 10.0.0
 A library of API Reference documentation is auto-generated from the comments within the Umbraco Source Code.
 
 {% hint style="info" %}
-A new backoffice for Umbraco CMS is currently being worked upon. It is planned to release with Umbraco version 13 in December 2023.
+A new backoffice for Umbraco CMS is currently being worked upon. It is planned to release with Umbraco version 14 in May 2024.
 
 We have gathered all information and resources about the project in one place, giving you a full overview of what we're working on. You will also be able to find information about how to get involved in the project.
 

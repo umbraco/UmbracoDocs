@@ -1,6 +1,6 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+
+
 ---
 
 # Partial View Macros
@@ -15,7 +15,7 @@ All Partial View Macro views inherit from `Umbraco.Cms.Web.Common.Macros.Partial
 @inherits Umbraco.Cms.Web.Common.Macros.PartialViewMacroPage
 ```
 
-The model type for a Partial View Macro is `Umbraco.Cms.Core.Models.PartialViewMacroModel` which contains all of the properties you need to render out content alongwith some additional
+The model type for a Partial View Macro is `Umbraco.Cms.Core.Models.PartialViewMacroModel`. This contains all of the properties you need to render out content alongside some additional
 properties about the macro itself: 
 
 - MacroName

@@ -54,11 +54,11 @@ _Default dashboard in the content section_
 
 An editor is what you use to edit different items within the backoffice. There are editors specific to editing stylesheets, there are editors for editing Macros and so forth.
 
-## [Content](../data/defining-content.md)
+## [Content](../data/defining-content/)
 
 Content is what you find in the Content section. Each item in the tree is called a **content node**. Each content node in the content tree consists of different fields, and each of them are defined by a Document Type.
 
-[Read more about Content](../data/defining-content.md)
+[Read more about Content](../data/defining-content/)
 
 ## Document Type
 

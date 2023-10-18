@@ -1,7 +1,5 @@
 ---
-description: >-
-  Find detailed documentation for each of the official packages available for
-  extending your Umbraco Commerce installation.
+description: Find detailed documentation for each of the official packages available for extending your Umbraco Commerce installation.
 ---
 
 # Packages for Umbraco Commerce

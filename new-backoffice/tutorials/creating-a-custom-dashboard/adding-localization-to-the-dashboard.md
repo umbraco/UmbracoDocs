@@ -10,18 +10,18 @@ This page is a work in progress. It will be updated as the software evolves.
 
 ## Overview
 
-This is session 2 of our guide to building a Custom Dashboard. This session continues work on the dashboard we built in session 1: [Creating a Custom Dashboard](../creating-a-custom-dashboard.md), but further shows how to handle localization in a custom dashboard.
+This is the second part of our guide to building a Custom Dashboard. This part continues work on the dashboard we built in part one: [Creating a Custom Dashboard](../creating-a-custom-dashboard.md), but further shows how to handle localization in a custom dashboard.
 
 ## Localization
 
-If you want the dashboard to be available in different languages, you can use the existing localizations that come with Umbraco or register your own localizations. The localizations are written as a key-value pair pattern.
+If you want the dashboard to be available in different languages, you can use the existing localizations from Umbraco or register your own localizations. The localizations are written as a key-value pair pattern.
 
 To register localizations to a language, you need to add a new manifest to the Extension API. The manifest can be added through the `umbraco-package.json` file like this:
 
 {% code title="umbraco-package.json" %}
 ```typescript
 {
-  ...  
+  ...
   "extensions": [
     {
       "type": "localization",
@@ -38,7 +38,7 @@ To register localizations to a language, you need to add a new manifest to the E
 {% endcode %}
 
 {% hint style="info" %}
-Tip: If you do not have many translations, you can also choose to include the localizations directly in the meta object. Read more about translations in the [**Localization**](../../extending/localization/) article.
+Tip: If you do not have many translations, you can also choose to include the localizations directly in the meta-object. Read more about translations in the [**Localization**](../../extending/localization/) article.
 {% endhint %}
 
 Create two new files `en-us.js` and `da-dk.js`.
@@ -150,7 +150,7 @@ Now let's update our `umbraco-package.json` extensions object to register our ne
       "js": "/App_Plugins/WelcomeDashboard/Localization/da-dk.js"
     }
   ]
-} 
+}
 ```
 {% endcode %}
 
@@ -196,8 +196,7 @@ render() {
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
-import { LitElement, css, html } from "lit";
-import { customElement } from "lit/decorators.js";
+import { LitElement, css, html, customElement } from "@umbraco-cms/backoffice/external/lit";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
 @customElement("my-welcome-dashboard")
@@ -245,7 +244,7 @@ declare global {
 
 </details>
 
-The dashboard's text will appear depending on the user's language. If the user's language is Danish, the dashboard will use the text from our `da-dk` file, and if the user's language is English, the dashboard will use the text from our `en-us` file.
+The dashboard's text will appear depending on the user's language. If the user's language is Danish, the dashboard will use the text from our `da-dk` file. If the user's language is English, the dashboard will use the text from our `en-us` file.
 
 The text between the open and close tags of `umb-localize` is the fallback value in case the key can't be found or doesn't exist.
 
@@ -255,7 +254,7 @@ This is how our dashboard should now look like:
 
 <figure><img src="../../.gitbook/assets/welcome-eng.png" alt=""><figcaption><p>Dashboard if the user's language is English / Fallback</p></figcaption></figure>
 
- 
+
 
 <figure><img src="../../.gitbook/assets/welcome-da.png" alt=""><figcaption><p>Dashboard if the user's language is Danish</p></figcaption></figure>
 
@@ -263,6 +262,6 @@ This is how our dashboard should now look like:
 
 ## Going Further
 
-With the session completed, you should have a dashboard welcoming your users' language.
+With the part completed, you should have a dashboard welcoming your users' language.
 
-In the next session, we will look into how to add more functionality to the dashboard using some of the resources and services that Umbraco offers.
+In the next part, we will look into how to add more functionality to the dashboard using some of the Contexts that Umbraco offers.

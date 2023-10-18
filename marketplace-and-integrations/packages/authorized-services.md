@@ -726,6 +726,28 @@ As integrations with more providers are successfully completed, we plan to maint
 </details>
 
 <details>
+<summary>Meetup</summary>
+
+
+```json
+"meetup": {
+  "DisplayName": "Meetup",
+  "ApiHost": "https://api.meetup.com",
+  "IdentityHost": "https://secure.meetup.com",
+  "TokenHost": "https://secure.meetup.com",
+  "RequestIdentityPath": "/oauth2/authorize",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "RequestTokenPath": "/oauth2/access",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "ClientId": "",
+  "ClientSecret": "",
+  "SampleRequest": "/gql"
+}
+```
+  
+</details>
+
+<details>
 
 <summary>Microsoft</summary>
 
@@ -745,8 +767,8 @@ As integrations with more providers are successfully completed, we plan to maint
   "Scopes": "https://graph.microsoft.com/.default",
   "IncludeScopesInAuthorizationRequest": true,
   "SampleRequest": "/me"
-}
-```
+=======
+
 
 </details>
 

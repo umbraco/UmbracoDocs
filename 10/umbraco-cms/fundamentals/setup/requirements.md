@@ -11,97 +11,57 @@ The Umbraco UI should work in all modern browsers:
 
 ## Local Development
 
-{% tabs %}
-{% tab title="Umbraco 10" %}
-* Either OS:
-  * Microsoft Windows 7 SP1, 8.1, 10 and 11
-  * MacOS High Sierra 10.13
+* One of the following OSs:
+  * Microsoft Windows 10 or 11
+  * MacOS High Sierra 10.13 or higher
   * Linux (Ubuntu, Alpine, CentOS, Debian, Fedora, openSUSE and other major distributions)
 * One of the following .NET Tools or Editors:
   * [Visual Studio Code](https://code.visualstudio.com/) with the [IISExpress extension](https://marketplace.visualstudio.com/items?itemName=warren-buckley.iis-express)
-  * [Microsoft Visual Studio](https://www.visualstudio.com/) 2022
-  * [JetBrains Rider](https://www.jetbrains.com/rider) **version 2020.3 and higher**
-  * .NET Core CLI
-* .NET 6.0.5+
-* SQL connection string (SQL Server)
-{% endtab %}
-
-{% tab title="Umbraco 9" %}
-* Either OS:
-  * Microsoft Windows 7 SP1, 8.1, 10 and 11
-  * MacOS High Sierra 10.13
-  * Linux (Ubuntu, Alpine, CentOS, Debian, Fedora, openSUSE and other major distributions)
-* One of the following .NET Tools or Editors:
-  * [Visual Studio Code](https://code.visualstudio.com/) with the [IISExpress extension](https://marketplace.visualstudio.com/items?itemName=warren-buckley.iis-express)
-  * [Microsoft Visual Studio](https://www.visualstudio.com/) 2019 **version 16.8 and higher**
-  * [JetBrains Rider](https://www.jetbrains.com/rider) **version 2020.3 and higher**
-  * .NET Core CLI
-* .NET 5.0
-* SQL connection string (SQL Server)
-{% endtab %}
-{% endtabs %}
+  * [Microsoft Visual Studio](https://www.visualstudio.com/) **2022 v17.4 and higher**
+  * [JetBrains Rider](https://www.jetbrains.com/rider) **version 2022.3 and higher**
+  * [.NET Core CLI](install/install-umbraco-with-templates.md)
+* [.NET 6.0.5 and higher](https://dotnet.microsoft.com/en-us/platform/support/policy)
+* [SQL connection string (SQL Server)](../../reference/configuration/connectionstringssettings.md)
 
 {% hint style="info" %}
+
 When using Visual Studio as your primary Integrated Development Environment (IDE) we recommend [finding and downloading the Software Development Kits (SDKs) for Visual Studio](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks).
+
 {% endhint %}
 
 ## Hosting
 
-### Recommendation
+### Recommendation and Minimum requirements to run Umbraco
 
-For the best experience, we would recommend that you ensure your hosting environment has the following to run Umbraco CMS:
+As Umbraco releases are aligned to the .NET release cadence, it's also aligned with Microsoft's Long-term support policy for the underlying framework. For the best experience, we would recommend that you ensure to be on latest and supported Microsoft versions to run and host Umbraco CMS:
 
-{% tabs %}
-{% tab title="Umbraco 10" %}
-* Windows Server 2019 and higher
-* IIS 10 and higher
-* SQL Server 2019 and higher
-* .NET 6.0.5+
-* Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
-{% endtab %}
+* [Windows Supported releases](https://learn.microsoft.com/en-us/dotnet/core/install/windows?tabs=net70#supported-releases)
+* [MacOs Supported releases](https://learn.microsoft.com/en-us/dotnet/core/install/macos#supported-releases)
+* [Ubuntu Supported distributions](https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#supported-distributions) and other [Linux Packages](https://learn.microsoft.com/en-us/dotnet/core/install/linux#packages)
+* [.NET Supported releases](https://dotnet.microsoft.com/en-us/platform/support/policy)
+* [IIS Supported releases](https://learn.microsoft.com/en-us/lifecycle/products/internet-information-services-iis)
+* [SQL Server Supported releases](https://learn.microsoft.com/en-us/sql/sql-server/end-of-support/sql-server-end-of-support-overview?view=sql-server-ver16#lifecycle-dates)
+* [SQLite](https://www.sqlite.org/index.html)
 
-{% tab title="Umbraco 9" %}
-* Windows Server 2019 and higher
-* IIS 10 and higher
-* SQL Server 2019 and higher
-* .NET 5.0
-* Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
-{% endtab %}
-{% endtabs %}
+_For more information, see the_ [_Host and deploy ASP.NET Core applications_](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/?view=aspnetcore-6.0) _article in the Microsoft documentation._
 
-{% hint style="info" %}
-You can use Umbraco Cloud to manage the hosting infrastructure. All Umbraco Cloud plans are hosted on Microsoft Azure, which gives your site a proven and solid foundation.
+{% hint style="success" %}
+You can use [Umbraco Cloud](https://umbraco.com/products/umbraco-cloud/) to manage the hosting infrastructure. All Umbraco Cloud plans are hosted on Microsoft Azure, which gives your site a proven and solid foundation.
 {% endhint %}
 
-### Miminium requirements to run Umbraco
+#### Other recommendation
 
-Umbraco can run on an environment with the minimum requirements stated below:
-
-{% tabs %}
-{% tab title="Umbraco 10" %}
-* Windows Server 2012 R2 and higher
-* IIS 8.5 and higher
-* SQL Server 2012 and higher
-* .NET 6.0.5+
-* Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
-{% endtab %}
-
-{% tab title="Umbraco 9" %}
-* Windows Server 2012 R2 and higher
-* IIS 8.5 and higher
-* SQL Server 2012 and higher
-* .NET 5.0
-* Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site (NETWORK SERVICE, typically)
-{% endtab %}
-{% endtabs %}
-
-_For more information, see the_ [_Host and deploy ASP.NET Core applications_](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/?view=aspnetcore-6.0) _article in the Microsoft documentation._
+* Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your sit. This would typically be **NETWORK SERVICE**.
 
 ## Database Account Roles
 
-The database account used in the connection string will need permissions to read and write from tables as well as create schema during installs and upgrades:
+The database account used in the connection string will need permissions to read and write from tables. It will also require permission to create schema during installs and upgrades:
 
 * The `db_owner` role has full permissions on the database.
 * To use an account with more restricted permissions, the `db_datareader` and `db_datawriter` roles will be needed for normal use to read from and write to the database. The `db_ddladmin` role, which can modify the database schema, is required for installs and upgrades of the CMS and/or any packages that create database tables.
 
 For more information on the Database-level roles, see the [Microsoft documentation](https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-ver16#fixed-database-roles).
+
+{% hint style="info" %}
+For more information on how to create a database user via SQL, you can check the [Microsoft documentation](https://learn.microsoft.com/en-us/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-ver16#a--adding-a-user-to-a-database-level-role).
+{% endhint %}

@@ -8,7 +8,7 @@ Webhooks from the backoffice works the same way as the webhooks from the portal.
 
 An example of when to use webhooks would be if you have a website created with a static page builder.
 
-By adding a webhook to a specific URL and selecting an **Event Trigger** you are able to automatically update the website by sending the data from the webhook to the static page builder.
+By adding a webhook to a specific URL and selecting an **Event Trigger**, you can automatically update the website. This is achieved by sending the data from the webhook to the static page builder.
 
 ## Setting up a webhook
 
@@ -22,7 +22,12 @@ Clicking **Create Webhook** will open the creation menu on the right side.
 
 From here you add the URL that the webhook should call and select the **Event** that should trigger the webhook. Lastly, you can choose a Content Type you wish the webhook to trigger on.
 
-Do note that you will have to choose the type of event first and that this field is not mandatory.
+{% hint style="info" %}
+
+Selecting the event type is the initial step. Also, this field is not mandatory.
+
+{% endhint %}
+
 
 Once the webhook has been created you can manage it from the list. 
 
@@ -34,7 +39,7 @@ Should you at some point need to temporarily pause the webhook, you can disable 
 
 Webhooks will be fired from either of the two static IPs listed below.
 
-When you are working with an external service that is behind a firewall and that service needs to communicate with your Umbraco Heartcore project in order to receive webhook data you need to make sure that the following IPs are allowed to pass through the firewall.
+When working with an external service behind a firewall, your service needs to communicate with your Umbraco Cloud project and receive webhook data. This can be done by ensuring that the following IPs are allowed to pass from the firewall
 
 ```
 20.86.53.156

@@ -6,11 +6,17 @@ description: >-
 
 # Content Templates
 
-_This tutorial was last tested on **Umbraco 9.0**_
-
 Content Templates allows a content editor to create a blueprint for new content nodes based on an existing node.
 
+{% embed url="https://youtu.be/tz7dRStOo2Y" %}
+Learn how to use the Content Templates in Umbraco
+{% endembed %}
+
 ## Create - Method 1
+
+{% hint style="warning" %}
+Before following this method you should have some [content](../data/defining-content/#3.-creating-the-content) created beforehand.
+{% endhint %}
 
 Select a **Content node** from the **Content** menu:
 
@@ -49,6 +55,10 @@ Right-click on the **Content Templates** tree and select the **Create** menu ite
 Select the Document Type you want to create a content template for:
 
 ![Select Content Type](../../../../10/umbraco-cms/fundamentals/backoffice/images/v8-09-Select-Content-Type.png)
+
+{% hint style="warning" %}
+You can create content templates only from **Document Types** or **Document Types with Templates**
+{% endhint %}
 
 Give your content template a **Name** and click the **Save** button:
 
