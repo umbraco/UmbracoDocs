@@ -5,7 +5,7 @@ description: >-
 
 # Authorized Services
 
-**Umbraco Authorized Services** is an Umbraco package designed to reduce the effort needed to integrate third-party services into Umbraco solutions. Many Software as a Service (SaaS) offerings require an OAuth flow for authentication and authorization. Working with them requires a fair bit of plumbing code to handle creating an authorized connection. This is necessary before the developer working with the service can get to using the provided API to implement the business requirements.
+**Umbraco Authorized Services** is an Umbraco package designed to reduce the effort needed to integrate third-party services into Umbraco solutions. Many Software as a Service (SaaS) offerings require an OAuth or API key based flow for authentication and authorization. Working with them requires a fair bit of plumbing code to handle creating an authorized connection. This is necessary before the developer working with the service can get to using the provided API to implement the business requirements.
 
 There are similarities to the flow that needs to be implemented for different services.  Steps include:
 
@@ -16,9 +16,20 @@ There are similarities to the flow that needs to be implemented for different se
 - Serializing requests and deserializing the API responses.
 - Handling cases where the token has expired and obtaining a new one via a refresh token.
 
+With API key based flows, the process is a little simpler.  But you still have to consider secure storage of the key, providing it correctly in API calls and handling serialization tasks.
+
 There are also differences across the request and response structures and variations in the details of the flow itself.
 
 The package tries to implement a single, best practice implementation of working with OAuth. For particular providers the specific flow required can be customized via configuration or code.
+
+The primary use case for this package is when working with services that offer an OAuth2/OAuth1 default authentication and authorization flow against an "app". The developer will need to create this "app" with the service. By doing this, for OAuth1 information such as "client ID"/"consumer key" and "client secret"/"consumer secret" can be applied to the configuration.
+
+When creating the app it is usually necessary to configure a call-back URL. You should use the following:
+
+- For OAuth2: `/api/AuthorizedServiceResponse/HandleOAuth2IdentityResponse`
+- For OAuth1: `/api/AuthorizedServiceResponse/HandleOAuth1IdentityResponse`
+
+In addition, the package supports integration with OAuth1 or Api key based authentication and authorization services.
 
 ## Features
 
@@ -36,6 +47,12 @@ Each tree entry has a management screen where an administrator can authenticate 
 
 ![authorized-screen](images/authorized-screen.png)
 
+A service can be configured to allow the manual entry of access tokens/API keys manually using the `CanManuallyProvideToken` or `CanManuallyProvideApiKey` settings. If this is set to `true`, a new section will be available for providing them.
+![provide-oauth1-token](images/provide-oauth1-token.png)
+![provide-oauth2-token](images/provide-oauth2-token.png)
+![provide-api-key](images/provide-api-key.png)
+
+
 ### IAuthorizedServiceCaller interface
 
 Secondly, the developer has access to an interface - `IAuthorizedServiceCaller` - that they can inject instances of and use to make authorized requests to the service's API.
@@ -44,13 +61,17 @@ Using a settings screen the administrator can review the service configuration.
 
 ![settings-screen](images/settings-screen.png)
 
+Depending on the authentication method of the service,
+- `OAuth1`
+- `OAuth2AuthorizationCode` (default)
+- `OAuth2ClientCredentials`
+- `ApiKey`
+
+The interface provides methods for retrieving the value of the access tokens or API key - `GetOAuth1Token()`, `GetOAuth2Token()` and `GetApiKey()`. These will return null if the token or key is not found. They will also return null if the service is not configured to use the authorization method related to these objects.
+
 ## Usage
 
-In the following, you can learn more about how to use the Umbraco Authorized Services package.
-
-### App Creation
-
-Services that this package is intended to support will offer an OAuth authentication and authorization flow against an "app". The developer will need to create this "app" with the service.  By doing this, information such as the "client ID" and "client secret" can be applied to the configuration.
+Below you can learn more about how to use the Umbraco Authorized Services package.
 
 ### Installation
 
@@ -73,23 +94,45 @@ An example of doing this through the `appSettings.json` file is shown below. Oth
         {
           "<serviceAlias>": {
             "DisplayName": "",
+            "AuthenticationMethod": "OAuth2AuthorizationCode|OAuth2ClientCredentials|OAuth1|ApiKey",
+            "ClientCredentialsProvision": "AuthHeader|RequestBody",
             "ApiHost": "",
             "IdentityHost": "",
             "TokenHost": "",
             "RequestIdentityPath": "",
+            "CanManuallyProvideToken": true|false,
+            "CanManuallyProvideApiKey": true|false,
+            "CanExchangeToken": true|false,
+            "ExchangeTokenProvision": {
+              "TokenHost": "",
+              "RequestTokenPath": "",
+              "TokenGrantType": "",
+              "RequestRefreshTokenPath": "",
+              "RefreshTokenGrantType": "",
+              "ExchangeTokenWhenExpiresWithin": ""
+            },
             "AuthorizationUrlRequiresRedirectUrl": true|false,
             "RequestTokenPath": "",
-            "JsonSerializer": "",
-            "RequestTokenFormat": "",
+            "RequestTokenMethod": "GET|POST",
+            "RequestAuthorizationPath": "",
+            "JsonSerializer": "Default|JsonNet|SystemTextJson",
+            "RequestTokenFormat": "Querystring|FormUrlEncoded",
             "AuthorizationRequestRequiresAuthorizationHeaderWithBasicToken": true|false,
+            "ApiKey": "",
+            "ApiKeyProvision": {
+              "Method": "HttpHeader|QueryString",
+              "Key": ""
+            },
             "ClientId": "",
             "ClientSecret": "",
             "UseProofKeyForCodeExchange": true|false,
             "Scopes": "",
+            "IncludeScopesInAuthorizationRequest": true|false,
             "AccessTokenResponseKey": "access_token",
             "RefreshTokenResponseKey": "refresh_token",
             "ExpiresInResponseKey": "expires_in",
-            "SampleRequest": ""
+            "SampleRequest": "",
+            "RefreshAccessTokenWhenExpiresWithin": ""
         }
       }
     }
@@ -108,6 +151,12 @@ Not all values are required for all services.  Those that are required are indic
 | Element                                                       | Description                                                                                                                                                                                                                                                  | Required? | Example                                    |
 |---------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|--------------------------------------------|
 | DisplayName                                                   | Provides a friendly name for the service used for identification in the user interface.                                                                                                                                                                      | Yes       |                                            |
+| CanManuallyProvideToken                                                   | Toggles an UI section in the backoffice for manually providing an access token.                                                                                                                                                                     | No       |                                            |
+| CanManuallyProvideApiKey | Toggles an UI section in the backoffice for manually providing an API key. | No |
+| CanExchangeToken | Specifies whether the access token can be exchanged with a long lived one. | No |
+| ExchangeTokenProvision | The available options for exchanging an access token. Configuration includes: `TokenHost`, `RequestTokenPath`, `TokenGrantType`, `RequestRefreshTokenPath`, `RefreshTokenGrantType` and `ExchangeTokenWhenExpiresWithin` | No |
+| AuthenticationMethod                                                   | An enum value that controls the type of authentication. `OAuth2AuthorizationCode` is the default value; other available options are `OAuth2ClientCredentials`, `OAuth1` and `ApiKey`.                                                                                                                                                               | No       |                                            |
+| ClientCredentialsProvision | The available options for providing credentials in an `OAuth2` flow: `AuthHeader` or `RequestBody`.| No | 
 | ApiHost                                                       | The host name for the service API that will be called to deliver business functionality.                                                                                                                                                                     | Yes       | `https://api.github.com`                   |
 | IdentityHost                                                  | The host name for the service's authentication endpoint, used to initiate the authorization of the service by asking the user to login.                                                                                                                      | Yes       | `https://github.com`                       |
 | TokenHost                                                     | Some providers make available a separately hosted service for handling requests for access tokens. If that's the case, it can be provided here. If not provided, the value of `IdentityHost` is used.                                                        | No        |                                            |
@@ -115,16 +164,21 @@ Not all values are required for all services.  Those that are required are indic
 | AuthorizationUrlRequiresRedirectUrl                           | Some providers require a redirect URL to be provided with the authentication request. For others, instead it's necessary to configure this as part of the registered app. The default value if not provided via configuration is `false`.                    | No        |                                            |
 | RequestTokenPath                                              | Used, along with `TokenHost` to construct a URL used for retrieving access tokens.                                                                                                                                                                           | Yes       | `/login/oauth/access_token`                |
 | RequestTokenFormat                                            | An enum value that controls how the request to retrieve an access token is formatted. Options are `Querystring` and `FormUrlEncoded`. `Querystring` is the default value.                                                                                    | No        |                                            |
+| RequestAuthorizationPath | `OAuth1` flow path for building the authorization URL. | No |
 | JsonSerializer                                                | An enum value that defines the JSON serializer to use when creating requests and deserializing responses. Options are `Default` and `JsonNet` and `SystemTextJson` as described below. If not provided, `Default` is used.                                   | No        |                                            |
 | AuthorizationRequestRequiresAuthorizationHeaderWithBasicToken | This flag indicates whether the basic token should be included in the request for an access token. If `true`, a base64 encoding of `<clientId>:<clientSecret>` will be added to the authorization header. Default is `false`.                                | No        |                                            |
-| ClientId                                                      | This value will be retrieved from the registered service app.                                                                                                                                                                                                | Yes       |                                            |
-| ClientSecret                                                  | This value will be retrieved from the registered service app.  As the name suggests, it should be kept secret and so is probably best not added directly to `appSettings.json` and checked into source control.                                              | Yes       |                                            |
+| ApiKey                                                   | Provides the service's API key, if `"AuthenticationMethod": "ApiKey"`                                                                                                                                                              | No       |                                            |
+| ApiKeyProvision                                                   | Provides an object that dictates how the API key will be included with each request. This is configured using the `Method`(pass the API key as `QueryString` or `HttpHeader`) and `Key` (name of the key used to include the API key) properties.                                                                                                                                                                  | No       |                                            |
+| ClientId                                                      | This value will be retrieved from the registered service app. For `OAuth1` registered apps, the matching value is `consumer key`.                                                                                                                                                                                                | Yes       |                                            |
+| ClientSecret                                                  | This value will be retrieved from the registered service app.  As the name suggests, it should be kept secret and so is probably best not added directly to `appSettings.json` and checked into source control. For `OAuth1` registered apps, the matching value is `consumer secret`.                                              | Yes       |                                            |
 | Scopes                                                        | This value will be configured on the service app and retrieved from there. Best practice is to define only the set of permissions that the integration will need.                                                                                            | Yes       | `repo`                                     |
+| IncludeScopesInAuthorizationRequest | Specifies whether the provided scopes should be included in the authorization request body. | No |
 | UseProofKeyForCodeExchange                                    | This flag will extend the OAuth flow with an additional security layer called [Proof Key for Code Exchange (PKCE)](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow-with-proof-key-for-code-exchange-pkce).  | No        |                                            |
 | AccessTokenResponseKey                                        | The expected key for retrieving an access token from a response. If not provided the default `access_token` is assumed.                                                                                                                                      | No        |                                            |
 | RefreshTokenResponseKey                                       | The expected key for retrieving a refresh token from a response. If not provided the default `refresh_token` is assumed.                                                                                                                                     | No        |                                            |
 | ExpiresInResponseKey                                          | The expected key for retrieving the datetime of token expiry from a response. If not provided the default `expires_in` is assumed.                                                                                                                           | No        |                                            |
 | SampleRequest                                                 | An optional sample request can be provided, which can be used to check that an authorized service is functioning as expected from the backoffice.                                                                                                            | No        | `/repos/Umbraco/Umbraco-CMS/contributors`  |
+| RefreshAccessTokenWhenExpiresWithin | Specifies a time interval for expiration of access tokens. | No |
 
 The options for `JsonSerializer` are:
 
@@ -149,7 +203,7 @@ To make a call to an authorized service, you first need to obtain an instance of
 When making a request where all information is provided via the path and querystring, such as GET requests, the following method will be invoked:
 
 ```csharp
-Task<TResponse> SendRequestAsync<TResponse>(string serviceAlias, string path, HttpMethod httpMethod);
+Task<Attempt<TResponse?>> SendRequestAsync<TResponse>(string serviceAlias, string path, HttpMethod httpMethod);
 ```
 
 The parameters for the request are as follows:
@@ -164,7 +218,7 @@ There is also a type parameter:
 If you need to provide data in the request an overload is available. This can be used for `POST` or `PUT` requests that trigger the creation or update of a resource:
 
 ```csharp
-Task<TResponse> SendRequestAsync<TRequest, TResponse>(string serviceAlias, string path, HttpMethod httpMethod, TRequest? requestContent = null)
+Task<Attempt<TResponse>> SendRequestAsync<TRequest, TResponse>(string serviceAlias, string path, HttpMethod httpMethod, TRequest? requestContent = null)
     where TRequest : class;
 ```
 
@@ -179,16 +233,26 @@ And additional type parameter:
 If you need to work with the raw JSON response, there are equivalent methods for both of these that omit the deserialization step:
 
 ```csharp
-Task<string> SendRequestRawAsync(string serviceAlias, string path, HttpMethod httpMethod);
+Task<Attempt<string?>> SendRequestRawAsync(string serviceAlias, string path, HttpMethod httpMethod);
 
-Task<string> SendRequestRawAsync<TRequest>(string serviceAlias, string path, HttpMethod httpMethod, TRequest? requestContent = null)
+Task<<Attempt<string?>> SendRequestRawAsync<TRequest>(string serviceAlias, string path, HttpMethod httpMethod, TRequest? requestContent = null)
     where TRequest : class;
 ```
 
 Finally, there are convenience extension methods available for each of the common HTTP verbs. These allow you to simplify the requests and omit the `HttpMethod` parameter, e.g.
 
 ```csharp
-Task<TResponse> GetRequestAsync<TResponse>(string serviceAlias, string path);
+Task<Attempt<TResponse?>> GetRequestAsync<TResponse>(string serviceAlias, string path);
+```
+
+Depending on the configured authentication method, there are some methods that can be used to retrieve the access token or the API key:
+
+```csharp
+string? GetOAuth1Token(string serviceAlias);
+
+string? GetOAuth2Token(string serviceAlias);
+
+string? GetApiKey(string serviceAlias);
 ```
 
 ## Verified Providers
@@ -320,7 +384,6 @@ As integrations with more providers are successfully completed, we plan to maint
 
 <summary>Calendly</summary>
 
-
 ```json
 "calendly": {
   "DisplayName": "Calendly",
@@ -343,7 +406,6 @@ As integrations with more providers are successfully completed, we plan to maint
 <details>
 
 <summary>Discord</summary>
-
 
 ```json
 "discord": {
@@ -370,7 +432,6 @@ As integrations with more providers are successfully completed, we plan to maint
 
 <summary>Dropbox</summary>
 
-
 ```json
 "dropbox": {
   "DisplayName": "Dropbox",
@@ -395,7 +456,6 @@ As integrations with more providers are successfully completed, we plan to maint
 
 <summary>Facebook</summary>
 
-
 ```json
 "facebook": {
   "DisplayName": "Facebook",
@@ -418,7 +478,6 @@ As integrations with more providers are successfully completed, we plan to maint
 <details>
 
 <summary>Figma</summary>
-
 
 ```json
 "figma": {
@@ -443,7 +502,6 @@ As integrations with more providers are successfully completed, we plan to maint
 
 <summary>Fitbit</summary>
 
-
 ```json
 "fitbit": {
   "DisplayName": "Fitbit",
@@ -467,8 +525,32 @@ As integrations with more providers are successfully completed, we plan to maint
 
 <details>
 
-<summary>GitHub</summary>
+<summary>Flickr</summary>
 
+```json
+"flickr": {
+  "DisplayName": "Flickr",
+  "AuthenticationMethod": "OAuth1",
+  "ApiHost": "https://www.flickr.com/services",
+  "IdentityHost": "https://www.flickr.com/services",
+  "TokenHost": "https://www.flickr.com/services",
+  "RequestAuthorizationPath": "/oauth/request_token",
+  "RequestIdentityPath": "/oauth/authorize",
+  "RequestTokenPath": "/oauth/access_token",
+  "RequestTokenFormat": "Querystring",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "",
+  "SampleRequest": "/v3.0/me"
+}
+```
+
+</details>
+
+<details>
+
+<summary>GitHub</summary>
 
 ```json
 "github": {
@@ -491,7 +573,6 @@ As integrations with more providers are successfully completed, we plan to maint
 <details>
 
 <summary>Gitlab</summary>
-
 
 ```json
 "gitlab": {
@@ -517,7 +598,6 @@ As integrations with more providers are successfully completed, we plan to maint
 
 <summary>Google Search Console</summary>
 
-
 ```json
 "google": {
   "DisplayName": "Google Search Console",
@@ -541,7 +621,6 @@ As integrations with more providers are successfully completed, we plan to maint
 
 <summary>HubSpot</summary>
 
-
 ```json
 "hubspot": {
   "DisplayName": "HubSpot",
@@ -564,8 +643,40 @@ As integrations with more providers are successfully completed, we plan to maint
 
 <details>
 
-<summary>LinkedIn</summary>
+<summary>Instagram</summary>
 
+```json
+"instagram": {
+  "DisplayName": "Instagram",
+  "ApiHost": "https://api.instagram.com",
+  "IdentityHost": "https://api.instagram.com",
+  "TokenHost": "https://api.instagram.com",
+  "RequestIdentityPath": "/oauth/authorize",
+  "RequestTokenPath": "/oauth/access_token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "user_profile",
+  "SampleRequest": "/v3.0/me",
+  "CanExchangeToken": true,
+  "ExchangeTokenProvision": {
+    "TokenHost": "https://graph.instagram.com",
+    "RequestTokenPath": "/access_token",
+    "TokenGrantType": "ig_exchange_token",
+    "RequestRefreshTokenPath": "/refresh_access_token",
+    "RefreshTokenGrantType": "ig_refresh_token",
+    "ExchangeTokenWhenExpiresWithin": "25.00:00:00"
+  },
+  "RefreshAccessTokenWhenExpiresWithin": "00.00:00:40"
+}
+```
+
+</details>
+
+<details>
+
+<summary>LinkedIn</summary>
 
 ```json
 "linkedin": {
@@ -613,7 +724,6 @@ As integrations with more providers are successfully completed, we plan to maint
 </details>
 
 <details>
-
 <summary>Meetup</summary>
 
 
@@ -632,9 +742,33 @@ As integrations with more providers are successfully completed, we plan to maint
   "SampleRequest": "/gql"
 }
 ```
-
+  
 </details>
 
+<details>
+
+<summary>Microsoft</summary>
+
+```json
+"microsoft": {
+  "DisplayName": "Microsoft",
+  "AuthenticationMethod": "OAuth2ClientCredentials",
+  "ClientCredentialsProvision": "RequestBody",
+  "ApiHost": "https://graph.microsoft.com",
+  "IdentityHost": "https://login.microsoftonline.com",
+  "TokenHost": "https://login.microsoftonline.com",
+  "RequestIdentityPath": "",
+  "RequestTokenPath": "/[tenant-id]/oauth2/v2.0/token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "https://graph.microsoft.com/.default",
+  "IncludeScopesInAuthorizationRequest": true,
+  "SampleRequest": "/me"
+}
+```
+
+</details>
 
 <details>
 
@@ -655,7 +789,7 @@ As integrations with more providers are successfully completed, we plan to maint
   "ClientSecret": "",
   "Scopes": "https://[instance].crm4.dynamics.com/.default",
   "SampleRequest": "/msdyncrm_marketingforms"
-},
+}
 ```
 
 </details>
@@ -733,6 +867,30 @@ As integrations with more providers are successfully completed, we plan to maint
 
 <details>
 
+<summary>Salesforce</summary>
+
+```json
+"salesforce": {
+  "DisplayName": "Salesforce",
+  "AuthenticationMethod": "OAuth2ClientCredentials",
+  "ClientCredentialsProvision": "AuthHeader",
+  "ApiHost": "https://[sf-instance].my.salesforce.com",
+  "IdentityHost": "https://[sf-instance].my.salesforce.com",
+  "TokenHost": "https://[sf-instance].my.salesforce.com",
+  "RequestIdentityPath": "",
+  "RequestTokenPath": "/services/oauth2/token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "",
+  "SampleRequest": "/services/data/v59.0/sobjects"
+}
+```
+
+</details>
+
+<details>
+
 <summary>Slack</summary>
 
 
@@ -783,7 +941,7 @@ As integrations with more providers are successfully completed, we plan to maint
 
 <details>
 
-<summary>Twitter</summary>
+<summary>Twitter - OAuth2</summary>
 
 
 ```json
@@ -802,6 +960,32 @@ As integrations with more providers are successfully completed, we plan to maint
   "Scopes": "offline.access tweet.read users.read",
   "SampleRequest": "/2/users/me"
 },
+```
+
+</details>
+
+<details>
+
+<summary>Twitter - OAuth1</summary>
+
+```json
+"twitter-oauth1": {
+  "DisplayName": "Twitter with OAuth1",
+  "AuthenticationMethod": "OAuth1",
+  "ApiHost": "https://api.twitter.com",
+  "IdentityHost": "https://api.twitter.com",
+  "TokenHost": "https://api.twitter.com",
+  "RequestIdentityPath": "/oauth/authorize",
+  "RequestTokenPath": "/oauth/access_token",
+  "RequestTokenFormat": "FormUrlEncoded",
+  "RequestAuthorizationPath": "/oauth/request_token",
+  "AuthorizationUrlRequiresRedirectUrl": false,
+  "UseProofKeyForCodeExchange": true,
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "",
+  "SampleRequest": "/1.1/account/settings.json"
+}
 ```
 
 </details>
@@ -827,6 +1011,36 @@ As integrations with more providers are successfully completed, we plan to maint
   "ClientSecret": "",
   "Scopes": "",
   "SampleRequest": "/openid/v1/userinfo"
+}
+```
+
+</details>
+
+<details>
+
+<summary>YouTube</summary>
+
+
+```json
+"youtube": {
+  "DisplayName": "YouTube",
+  "AuthenticationMethod": "ApiKey",
+  "ApiHost": "https://www.googleapis.com/youtube",
+  "IdentityHost": "",
+  "TokenHost": "",
+  "RequestIdentityPath": "",
+  "AuthorizationUrlRequiresRedirectUrl": true,
+  "RequestTokenPath": "",
+  "RequestTokenFormat": "",
+  "ApiKey": "[youtube-api-key]",
+  "ApiKeyProvision": {
+    "Method": "QueryString",
+    "Key": "key"
+  },
+  "ClientId": "",
+  "ClientSecret": "",
+  "Scopes": "",
+  "SampleRequest": "/v3/videos?id=[youtube-video-id]&part=snippet,contentDetails,statistics,status"
 }
 ```
 
