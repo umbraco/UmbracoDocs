@@ -10,7 +10,7 @@ A store is the link between a Resource and a Repository. A store is mainly taken
 
 [See States for more information](../states.md)
 
-## A Simple Store:
+## A Basic Store:
 
 ```typescript
 class MyProductStore {
