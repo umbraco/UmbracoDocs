@@ -10,7 +10,7 @@ A store is the link between a Resource and a Repository. A store is mainly taken
 
 [See States for more information](../states.md)
 
-## A Basic Store:
+## A Basic Store
 
 ```typescript
 class MyProductStore {
@@ -58,7 +58,7 @@ class MyImplementation extends UmbLitElement {
 }
 ```
 
-### A bit more meaningful Store:
+### A bit more meaningful Store
 
 Here we added a method that returns an Observable that is specific to the requested product.
 
@@ -112,7 +112,7 @@ class MyImplementation extends UmbLitElement {
 }
 ```
 
-#### Create many Observables:
+#### Create many Observables
 
 A Store must hold different Observables some very general and others specific. All in perspective of what types of observers we like to accommodate.
 
@@ -132,7 +132,7 @@ class MyProductStore {
 
 An observer of an Observable will only be triggered if the specific part of that data has changed. With this we can make a high-performance application, only triggering the parts that need to update when data is changed.
 
-#### Ensure unique data:
+#### Ensure unique data
 
 For incoming data to replace existing data, we need to clarify what makes an entry of the array unique. In the examples of this guide, each product has an `id.W`e have clarified this to the State by giving it the little method `(product) => product.id` as part of its creation:
 
