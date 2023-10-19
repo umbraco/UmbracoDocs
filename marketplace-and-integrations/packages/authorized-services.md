@@ -24,7 +24,7 @@ The package tries to implement a single, best practice implementation of working
 
 The primary use case for this package is when working with services that offer an OAuth2/OAuth1 default authentication and authorization flow against an "app". The developer will need to create this "app" with the service. By doing this, for OAuth1 information such as "client ID"/"consumer key" and "client secret"/"consumer secret" can be applied to the configuration.
 
-When creating the app it will usually be necessary to configure a call back URL. You should use the following:
+When creating the app it is usually necessary to configure a call-back URL. You should use the following:
 
 - For OAuth2: `/api/AuthorizedServiceResponse/HandleOAuth2IdentityResponse`
 - For OAuth1: `/api/AuthorizedServiceResponse/HandleOAuth1IdentityResponse`
