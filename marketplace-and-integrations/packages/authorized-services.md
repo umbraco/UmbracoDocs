@@ -71,7 +71,7 @@ The interface provides methods for retrieving the value of the access tokens or 
 
 ## Usage
 
-In the following, you can learn more about how to use the Umbraco Authorized Services package.
+Below you can learn more about how to use the Umbraco Authorized Services package.
 
 ### Installation
 
