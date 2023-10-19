@@ -22,7 +22,7 @@ There are also differences across the request and response structures and variat
 
 The package tries to implement a single, best practice implementation of working with OAuth. For particular providers the specific flow required can be customized via configuration or code.
 
-The primary use case for this package is when working with services that offer an OAuth2/OAuth1 default authentication and authorization flow against an "app". The developer will need to create this "app" with the service.  By doing this, information such as the "client ID" (or "consumer key" for OAuth1) and "client secret" (or "consumer secret" for OAuth1) can be applied to the configuration.
+The primary use case for this package is when working with services that offer an OAuth2/OAuth1 default authentication and authorization flow against an "app". The developer will need to create this "app" with the service. By doing this, for OAuth1 information such as "client ID"/"consumer key" and "client secret"/"consumer secret" can be applied to the configuration.
 
 When creating the app it will usually be necessary to configure a call back URL. You should use the following:
 
