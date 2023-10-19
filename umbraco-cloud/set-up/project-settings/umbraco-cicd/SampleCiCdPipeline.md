@@ -155,7 +155,7 @@ Automated tests can be run to ensure everything is functioning as expected. Addi
 The deployment artifact consists of source files to maintain consistency with Umbraco Cloud's existing Git-based deployment flow. Only zip-archived files are currently supported, and the folder structure must align with a standard Umbraco Cloud project. 
 
 {% hint style="info" %}
-As part of the sample scripts we have included two text files to help you pack your source files. You should only use *ONE* of the approaches
+As part of the sample scripts we have included two text files to help you pack your source files. You should only use one of the approaches
 - the `.zipignore` file specifies which files and folders to exclude in the zipped archive, ensuring that only the necessary files are packaged, without too much extra configuration. (Recommended approach)
 - the `project-files-to-zip-list` file specifies which files and folders to include in the zipped archive, ensuring that only the necessary files are packaged. (If you change the project structure you will need to edit this file)
 
