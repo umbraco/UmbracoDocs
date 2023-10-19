@@ -11,5 +11,5 @@ The following diagram shows the Umbraco commercial products, their dependencies 
 
 Explanatory notes:
 
-- `Umbraco.Licensing` supports the older licensing mechanism for Umbraco's products, including Forms and Deploy when used on Umbraco Cloud.
+- `Umbraco.Licensing` supports the older licensing mechanism for Umbraco's products, including Forms, and Deploy when used on Umbraco Cloud.
 - `Umbraco.Licenses` is the newer component supporting subscription licensing, used for Workflow, Commerce and Deploy 12+ when used on-premise.
