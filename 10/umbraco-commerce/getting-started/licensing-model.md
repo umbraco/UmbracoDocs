@@ -69,13 +69,13 @@ Once you have received your license code it needs to be installed on your site.
 
 ### Verify the license installation
 
-You can verify that your license is successfully installed by logging into your projects back office and navigating to the settings section. Here you will see a licenses dashboard which should display the status of your license.
+You can verify that your license is successfully installed by logging into your project's backoffice and navigating to the settings section. Here you will see a licenses dashboard which should display the status of your license.
 
 ![Umbraco Commerce License Dashboard](../media/license-dashboard.png)
 
 ### When and how to configure an `UmbracoApplicationUrl`
 
-If you are running on a single domain for both your frontend and backend environments, it's not necessary to configure a `UmbracoApplicationUrl`. 
+If you are running on a single domain for both your frontend and backend environments, it's not necessary to configure a `UmbracoApplicationUrl`.
 
 If you have different domains for your frontend and backend, then it's advised that you configure an `UmbracoApplicationUrl` set to your backoffice URL. This helps the licensing engine know which URL should be used for validation checks. Without this configuration setting, the licensing engine will try and work out the domain to validate from the HTTP request object. This can lead to errors when switching between domains.
 
@@ -95,4 +95,20 @@ An `UmbracoApplicationUrl` can be configured in your `appSettings.json` file lik
 ```
 
 See the [Fixed Application URL](https://docs.umbraco.com/umbraco-cms/extending/health-check/guides/fixedapplicationurl) documentation for more details about this setting.
+
+#### Configuring `UmbracoApplicationUrl` on Umbraco Cloud
+
+If you are hosting on Umbraco Cloud you will find the configuration described above won't be reflected in your environment. The reason for this is that Umbraco Cloud sets this value as an environment variable set to the Cloud project domain (`<your project>.umbraco.io`). This overrides what is set via the `appSettings.json` file.
+
+There are two options in this case:
+- Either the domains for each of your Cloud environments can be added to your license.
+- Or, for more control and to ensure this value is set correctly for other reasons, you can apply the configuration via code.
+
+For example, in your `Startup.cs` file, you can add the following to the `ConfigureServices` method:
+
+```csharp
+services.Configure<WebRoutingSettings>(o => o.UmbracoApplicationUrl = "<your application URL>");
+```
+
+In practice, you will probably want to make this a bit more sophisticated. You can read the value from another configuration key, removing the need to hard-code it and have it set as appropriate in different environments. You can also move this code into a composer or an extension method if you prefer not to clutter up the `Startup.ConfigureServices` method.
 

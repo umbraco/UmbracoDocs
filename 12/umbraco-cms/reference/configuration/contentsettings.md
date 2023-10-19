@@ -112,6 +112,12 @@ The above example shows what you need to do if you only have a single site that 
 * When using XPath, there is no "context" (like, you can't find the node based on "currentPage") so needs to be a global absolute path.
 {% endhint %}
 
+{% hint style="warning" %}
+
+The current implementation of XPath is suboptimal and will be removed entirely in a future version. It is currently obsolete and scheduled for removal in v14.
+
+{% endhint %}
+
 If you have multiple sites, with different cultures, setup in your tree then you will need to setup the errors section like below:
 
 ```json

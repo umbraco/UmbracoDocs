@@ -470,27 +470,15 @@ Returns single or multiple items.
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="fetch" type="String" required="false" %}
-Structural query string option (e.g. 
-
-`ancestors`
-
-, 
-
-`children`
-
-, 
-
-`descendants`
-
-)
+Structural query string option (e.g. `ancestors`, `children`, `descendants`)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="filter" type="String Array" required="false" %}
-Filtering query string options (e.g. 
+Filtering query string options (e.g.
 
 `contentType`
 
-, 
+,
 
 `name`
 
@@ -498,27 +486,9 @@ Filtering query string options (e.g.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="sort" type="String Array" required="false" %}
-Sorting query string options (e.g. 
+Sorting query string options (e.g.
 
-`createDate`
-
-, 
-
-`level`
-
-, 
-
-`name`
-
-, 
-
-`sortOrder`
-
-, 
-
-`updateDate`
-
-)
+`createDate`, `level`, `name`, `sortOrder`, `updateDate`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="skip" type="Integer" required="false" %}
@@ -669,11 +639,11 @@ In this section, we will discuss some of the known limitations of the API, and h
 
 ### Protected content
 
-Currently, the Delivery API does not support authentication for members, which means that protected content cannot be accessed through any of our endpoints. This protection is typically implemented by setting public access restrictions on specific content nodes for certain members or member groups. To ensure those items remain protected, we filter out such content completely, at the moment.
+The Delivery API supports protected content and member authentication. This is however an opt-in feature. You can read more about it in the [Protected Content in the Delivery API](protected-content-in-the-delivery-api.md) article.
 
-As a result of this approach, lifting protection from a content item requires an additional step to ensure it becomes accessible through the Delivery API. The recommended way is to publish the content item again. Alternatively, you can manually rebuild the _DeliveryApiContentIndex_ to reflect the changes.
+If member authentication is _not_ explicitly enabled, protected content is ignored and never exposed by the Delivery API.
 
-We are looking into adding support for member authentication which would enable querying for protected content.
+As a result, lifting protection from a content item requires an additional step to ensure it becomes accessible through the Delivery API. The recommended way is to publish the content item again. Alternatively, you can manually rebuild the _DeliveryApiContentIndex_ to reflect the changes.
 
 ### Preview functionality
 
@@ -703,13 +673,11 @@ The Member Picker property editor is not supported in the Delivery API to avoid 
 
 The Multinode Treepicker property editor, when configured for members, is also unsupported in the Delivery API. This is due to the same concern of potentially leaking member data.
 
-### Rebuilding the _DeliveryApiContentIndex_
+### Making changes to `DisallowedContentTypeAliases`
 
-As mentioned in the [Protected content](./#protected-content) limitation section, the _DeliveryApiContentIndex_ should be rebuilt after removing the _"Restrict Public Access"_ protection from a content item.
+When changing the content type aliases in the `Umbraco:CMS:DeliveryApi:DisallowedContentTypeAliases` configuration setting, the _DeliveryApiContentIndex_ should be rebuilt. This ensures that the disallowed content types are not exposed through the Delivery API.
 
-The same applies when adding or removing aliases of content types from the `Umbraco:CMS:DeliveryApi:DisallowedContentTypeAliases` configuration setting.
-
-Republishing the relevant content items will ensure that the changes are reflected in both cases, eliminating the need to rebuild the index.
+Alternatively the relevant content items can be republished. This will ensure that the changes are reflected, eliminating the need to rebuild the index.
 
 ## Extension points
 
