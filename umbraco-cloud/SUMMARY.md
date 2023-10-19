@@ -128,6 +128,7 @@
 ## Release Notes
 
 * [Overview 2023](release-notes/overview-2023.md)
+* [October 2023](release-notes/2023-10-releasenotes.md)
 * [September 2023](release-notes/2023-09-releasenotes.md)
 * [August 2023](release-notes/2023-08-releasenotes.md)
 * [June 2023](release-notes/2023-06-releasenotes.md)
