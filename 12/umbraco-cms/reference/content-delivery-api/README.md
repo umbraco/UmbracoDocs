@@ -684,10 +684,6 @@ If member authentication is _not_ explicitly enabled, protected content is ignor
 
 As a result, lifting protection from a content item requires an additional step to ensure it becomes accessible through the Delivery API. The recommended way is to publish the content item again. Alternatively, you can manually rebuild the _DeliveryApiContentIndex_ to reflect the changes.
 
-### Preview functionality
-
-Content that is exclusively in a draft state is not available via the Delivery API's query endpoint. However, once the content node is published, it will be available for retrieval, whether it is in a draft or published state. We will evaluate our options to improve this workflow.
-
 ### Property editors
 
 There are certain limitations associated with some of the built-in property editors in Umbraco. Let's go through these below:
