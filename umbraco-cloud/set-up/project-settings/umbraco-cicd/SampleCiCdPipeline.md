@@ -152,7 +152,15 @@ In this stage, the Umbraco CMS project is built and tested. While this step is o
 
 Automated tests can be run to ensure everything is functioning as expected. Additionally, manual verification steps can be included, such as deploying to a local server for QA validation.
 
-The deployment artifact consists of source files to maintain consistency with Umbraco Cloud's existing Git-based deployment flow. Only zip-archived files are currently supported, and the folder structure must align with a standard Umbraco Cloud project. A configuration file, named `project-files-to-zip-list`, specifies which files and folders to include in the zipped archive, ensuring that only the necessary files are packaged.
+The deployment artifact consists of source files to maintain consistency with Umbraco Cloud's existing Git-based deployment flow. Only zip-archived files are currently supported, and the folder structure must align with a standard Umbraco Cloud project. 
+
+{% hint style="info" %}
+As part of the sample scripts we have included two text files to help you pack your source files. You should only use one of the approaches
+- the `.zipignore` file specifies which files and folders to exclude in the zipped archive, ensuring that only the necessary files are packaged, without too much extra configuration. **(Recommended approach)**
+- the `project-files-to-zip-list` file specifies which files and folders to include in the zipped archive, ensuring that only the necessary files are packaged. (If you change the project structure you will need to edit this file)
+
+The Azure pipeline sample has examples of how to use both of them.
+{% endhint %}
 
 #### Pipeline Stage: Deploy
 
@@ -210,7 +218,8 @@ The zip file includes the following:
 
 * Azure pipeline including stages and preflight checks for building and releasing `azure-release-pipeline.yaml`
 * Create new deployment `create_deployment.sh`
-* List of files and folders to include in `zip project-files-to-zip-list`
+* List of files and folder to exclude in `.zipignore`
+* List of files and folders to include in `project-files-to-zip-list`
 * Upload zip package for deployment `upload_package.sh`
 * Start Deployment `start_deployment.sh`
 * Get deployment status: `get_deployment_status.sh`
