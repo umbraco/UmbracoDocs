@@ -98,7 +98,7 @@ public class AdditionalPreviewUrlsNotificationHandlerComposer : IComposer
 
 ## Accessing preview environments
 
-Now that we have set up additional preview URLs for the Delivery API data, you can easily access them from the Content section. When you open a content node, you will see new preview options for the external environments you have configured. Next to the regular "Save and preview" button, there is an arrow for the multiple URLs that have been added. Click it to see all the available preview URLs, as shown below:
+Now that we have set up additional preview URLs for the Delivery API data, you can access them from the Content section. When you open a content node, you will see new preview options for the external environments you have configured. Next to the regular "Save and preview" button, there is an arrow for the multiple URLs that have been added. Click it to see all the available preview URLs, as shown below:
 
 ![Preview invariant content with Delivery API](images/preview-invariant-content.png)
 
