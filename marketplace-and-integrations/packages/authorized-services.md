@@ -245,7 +245,7 @@ Finally, there are convenience extension methods available for each of the commo
 Task<Attempt<TResponse?>> GetRequestAsync<TResponse>(string serviceAlias, string path);
 ```
 
-Depending on the configured authentication method, there are several methods that can be used to retrieve the access token or the API key:
+Depending on the configured authentication method, there are various methods that can be used to retrieve the access token or the API key:
 
 ```csharp
 string? GetOAuth1Token(string serviceAlias);
