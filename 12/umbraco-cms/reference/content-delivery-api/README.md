@@ -194,6 +194,10 @@ Start-Item: docs-portal
 
 By default, a content property that allows picking a different content item (like a content picker property) outputs a shallow representation of the item. That means, only the basic information about the picked item, without the item properties. However, with output expansion, it is possible to include the properties of the picked item in the API output. Similar shallow representation applies to media items, as well.
 
+{% hint style="info" %}
+Currently, output expansion allows you to retrieve one level of property data from the point of view of the requested content node. This means that you can expand the properties of the chosen content item, but not the properties of other related items within that item.
+{% endhint %}
+
 This feature can be used when querying for both single and multiple content items, by adding a `expand` parameter to the query. The value of this parameter can be either `"all"` to expand all properties of the requested content item or `"property:alias, alias, alias"` to expand specific ones.
 
 The following JSON snippet demonstrates the default output of a content item (without expanding any properties).
