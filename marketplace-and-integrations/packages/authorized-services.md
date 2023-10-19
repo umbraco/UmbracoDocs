@@ -67,7 +67,7 @@ Depending on the authentication method of the service,
 - `OAuth2ClientCredentials`
 - `ApiKey`
 
-The interface provides methods for retrieving the value of the access tokens or API key - `GetOAuth1Token()`, `GetOAuth2Token()` and `GetApiKey()`. These will return null if the token or key is not found, or the service is not configured to use the authorization method related to these objects.
+The interface provides methods for retrieving the value of the access tokens or API key - `GetOAuth1Token()`, `GetOAuth2Token()` and `GetApiKey()`. These will return null if the token or key is not found. They will also return null if the service is not configured to use the authorization method related to these objects.
 
 ## Usage
 
