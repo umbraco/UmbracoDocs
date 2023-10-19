@@ -134,7 +134,7 @@ An observer of an Observable will only be triggered if the specific part of that
 
 #### Ensure unique data
 
-For incoming data to replace existing data, we need to clarify what makes an entry of the array unique. In the examples of this guide, each product has an `id.W`e have clarified this to the State by giving it the little method `(product) => product.id` as part of its creation:
+For incoming data to replace existing data, we need to clarify what makes an entry of the array unique. In the examples of this guide, each product has an `id`. We have clarified this to the State by giving it the little method `(product) => product.id` as part of its creation:
 
 ```typescript
 class MyProductStore {
