@@ -198,7 +198,7 @@ By default, a content property that allows picking a different content item (lik
 Currently, output expansion allows you to retrieve one level of property data from the point of view of the requested content node. This means that you can expand the properties of the chosen content item, but not the properties of other related items within that item.
 {% endhint %}
 
-This feature can be used when querying for both single and multiple content items, by adding a `expand` parameter to the query. The value of this parameter can be either `"all"` to expand all properties of the requested content item or `"property:alias, alias, alias"` to expand specific ones.
+This feature can be used when querying for both single and multiple content items by adding an `expand` parameter to the query. The value of this parameter can be either `"all"` to expand all properties of the requested content item or `"property:alias, alias, alias"` to expand specific ones.
 
 The following JSON snippet demonstrates the default output of a content item (without expanding any properties).
 
