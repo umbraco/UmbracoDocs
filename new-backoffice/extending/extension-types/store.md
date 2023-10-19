@@ -114,7 +114,7 @@ class MyImplementation extends UmbLitElement {
 
 #### Create many Observables
 
-A Store must hold different Observables some very general and others specific. All in perspective of what types of observers we like to accommodate.
+A Store must hold different Observables, some exceptionally general and others highly specific, all in perspective of the types of observers we aim to accommodate.
 
 This example gives some inspiration to how fine-grained this can become:
 
