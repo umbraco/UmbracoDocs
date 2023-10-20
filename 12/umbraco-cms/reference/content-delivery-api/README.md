@@ -696,7 +696,7 @@ The Legacy Grid in Umbraco is supported to a certain extent. However, keep in mi
 
 The Delivery API is not going to support the rendering of Macros within the Rich Text Editor. Therefore, any Macros included in the content will not be executed or output when retrieving content through the API.
 
-When outputting the Rich Text Editor (RTE) content as HTML (_the default format_), be aware that internal links may be insufficient in a multi-site setup. There is a possibility that this limitation may be addressed in future updates. However, consider the alternative approach to rendering the RTE content as JSON.
+When outputting the Rich Text Editor content as HTML (_the default format_), be aware that internal links may be insufficient in a multi-site setup. There is a possibility that this limitation may be addressed in future updates. However, consider the alternative approach to rendering the Rich Text Editor content as JSON.
 
 #### Member Picker
 
