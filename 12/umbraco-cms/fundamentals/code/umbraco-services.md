@@ -139,7 +139,7 @@ Another approach is to create an extension method to `IUmbracoBuilder` and add i
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.DependencyInjection;
 
-namespace DefaultNamespace
+namespace DefaultNamespace;
 
 public static class UmbracoBuilderServiceExtensions
 {
