@@ -194,7 +194,11 @@ Start-Item: docs-portal
 
 By default, a content property that allows picking a different content item (like a content picker property) outputs a shallow representation of the item. That means, only the basic information about the picked item, without the item properties. However, with output expansion, it is possible to include the properties of the picked item in the API output. Similar shallow representation applies to media items, as well.
 
-This feature can be used when querying for both single and multiple content items, by adding a `expand` parameter to the query. The value of this parameter can be either `"all"` to expand all properties of the requested content item or `"property:alias, alias, alias"` to expand specific ones.
+{% hint style="info" %}
+Currently, output expansion allows you to retrieve one level of property data from the point of view of the requested content node. This means that you can expand the properties of the chosen content item, but not the properties of other related items within that item.
+{% endhint %}
+
+This feature can be used when querying for both single and multiple content items by adding an `expand` parameter to the query. The value of this parameter can be either `"all"` to expand all properties of the requested content item or `"property:alias, alias, alias"` to expand specific ones.
 
 The following JSON snippet demonstrates the default output of a content item (without expanding any properties).
 
@@ -474,21 +478,11 @@ Structural query string option (e.g. `ancestors`, `children`, `descendants`)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="filter" type="String Array" required="false" %}
-Filtering query string options (e.g.
-
-`contentType`
-
-,
-
-`name`
-
-)
+Filtering query string options (e.g. `contentType`, `name`)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="sort" type="String Array" required="false" %}
-Sorting query string options (e.g.
-
-`createDate`, `level`, `name`, `sortOrder`, `updateDate`
+Sorting query string options (e.g. `createDate`, `level`, `name`, `sortOrder`, `updateDate`)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="skip" type="Integer" required="false" %}
@@ -631,54 +625,6 @@ GET /umbraco/delivery/api/v1/content?sort=name:asc&sort=createDate:asc
 {% endtab %}
 {% endtabs %}
 
-## Current Limitations
-
-The Content Delivery API provides a powerful and flexible way to retrieve content from the Umbraco CMS. There are, however, certain limitations to be aware of.
-
-In this section, we will discuss some of the known limitations of the API, and how to work around them if necessary.
-
-### Protected content
-
-The Delivery API supports protected content and member authentication. This is however an opt-in feature. You can read more about it in the [Protected Content in the Delivery API](protected-content-in-the-delivery-api.md) article.
-
-If member authentication is _not_ explicitly enabled, protected content is ignored and never exposed by the Delivery API.
-
-As a result, lifting protection from a content item requires an additional step to ensure it becomes accessible through the Delivery API. The recommended way is to publish the content item again. Alternatively, you can manually rebuild the _DeliveryApiContentIndex_ to reflect the changes.
-
-### Preview functionality
-
-There is no built-in functionality for editors to preview content in the Umbraco Backoffice using the Delivery API. However, this is something high on our list for potential future improvements.
-
-Content that is exclusively in a draft state is not available via the Delivery API's multi-items endpoint. However, once the content node is published, it will be available for retrieval, whether it is in a draft or published state. We will evaluate our options to improve this workflow.
-
-### Property editors
-
-There are certain limitations associated with some of the built-in property editors in Umbraco. Let's go through these below:
-
-#### Grid Layout (legacy)
-
-The Legacy Grid in Umbraco is supported to a certain extent. However, it is important to note that it may not be suitable for headless content scenarios. Instead, we recommend using the Block Grid property editor.
-
-#### Rich Text Editor
-
-The Delivery API is not going to support the rendering of Macros within the Rich Text Editor. Therefore, any Macros included in the content will not be executed or output when retrieving content through the API.
-
-When outputting the Rich Text Editor content as HTML (_the default format_), it is important to be aware that internal links may be insufficient in a multi-site setup. There is a possibility that this limitation may be addressed in future updates. However, consider the alternative approach to rendering the RTE content as JSON.
-
-#### Member Picker
-
-The Member Picker property editor is not supported in the Delivery API to avoid the risk of leaking member data.
-
-#### Multinode Treepicker
-
-The Multinode Treepicker property editor, when configured for members, is also unsupported in the Delivery API. This is due to the same concern of potentially leaking member data.
-
-### Making changes to `DisallowedContentTypeAliases`
-
-When changing the content type aliases in the `Umbraco:CMS:DeliveryApi:DisallowedContentTypeAliases` configuration setting, the _DeliveryApiContentIndex_ should be rebuilt. This ensures that the disallowed content types are not exposed through the Delivery API.
-
-Alternatively the relevant content items can be republished. This will ensure that the changes are reflected, eliminating the need to rebuild the index.
-
 ## Extension points
 
 The Delivery API has been designed with extensibility in mind, offering multiple extension points that provide greater flexibility and customization options. These extension points allow you to tailor the API's behaviour and expand its capabilities to meet your specific requirements.
@@ -723,3 +669,45 @@ public void ConfigureServices(IServiceCollection services)
     ...
 ```
 {% endcode %}
+
+## Current Limitations
+
+The Content Delivery API provides a powerful and flexible way to retrieve content from the Umbraco CMS. There are, however, certain limitations to be aware of.
+
+In this section, we will discuss some of the known limitations of the API, and how to work around them if necessary.
+
+### Protected content
+
+The Delivery API supports protected content and member authentication. This is however an opt-in feature. You can read more about it in the [Protected Content in the Delivery API](protected-content-in-the-delivery-api.md) article.
+
+If member authentication is _not_ explicitly enabled, protected content is ignored and never exposed by the Delivery API.
+
+As a result, lifting protection from a content item requires an additional step to ensure it becomes accessible through the Delivery API. The recommended way is to publish the content item again. Alternatively, you can manually rebuild the _DeliveryApiContentIndex_ to reflect the changes.
+
+### Property editors
+
+There are certain limitations associated with some of the built-in property editors in Umbraco. Let's go through these below:
+
+#### Grid Layout (legacy)
+
+The Legacy Grid in Umbraco is supported to a certain extent. However, keep in mind that it may not be suitable for headless content scenarios. Instead, we recommend using the Block Grid property editor.
+
+#### Rich Text Editor
+
+The Delivery API is not going to support the rendering of Macros within the Rich Text Editor. Therefore, any Macros included in the content will not be executed or output when retrieving content through the API.
+
+When outputting the Rich Text Editor content as HTML (_the default format_), be aware that internal links may be insufficient in a multi-site setup. There is a possibility that this limitation may be addressed in future updates. However, consider the alternative approach to rendering the Rich Text Editor content as JSON.
+
+#### Member Picker
+
+The Member Picker property editor is not supported in the Delivery API to avoid the risk of leaking member data.
+
+#### Multinode Treepicker
+
+The Multinode Treepicker property editor, when configured for members, is also unsupported in the Delivery API. This is due to the same concern of potentially leaking member data.
+
+### Making changes to `DisallowedContentTypeAliases`
+
+When changing the content type aliases in the `Umbraco:CMS:DeliveryApi:DisallowedContentTypeAliases` configuration setting, the _DeliveryApiContentIndex_ should be rebuilt. This ensures that the disallowed content types are not exposed through the Delivery API.
+
+Alternatively the relevant content items can be republished. This will ensure that the changes are reflected, eliminating the need to rebuild the index.
