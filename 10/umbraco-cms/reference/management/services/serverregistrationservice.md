@@ -2,6 +2,8 @@
 
 The ServerRegistrationService manages server registrations in the database.
 
+[Browse the API documentation for IServerRegistrationService interface](https://apidocs.umbraco.com/v11/csharp/api/Umbraco.Cms.Core.Services.IServerRegistrationService.html).
+
 * **Namespace:** `Umbraco.Cms.Core.Services`
 * **Assembly:** `Umbraco.Core.dll`
 
@@ -32,14 +34,12 @@ If you wish to use the server registration service in a class, you need to speci
 ```csharp
 public class MyClass
 {
-
     private IServerRegistrationService _serverRegistrationService;
 
 	public MyClass(IServerRegistrationService serverRegistrationService)
 	{
 		_serverRegistrationService = serverRegistrationService;
 	}
-
 }
 ```
 

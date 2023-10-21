@@ -2,7 +2,9 @@
 
 The RedirectUrlService is used for CRUD operations related to Redirects.
 
-* **Namespace:** `Umbraco.Core.Services`
+[Browse the API documentation for IRedirectUrlService interface](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Cms.Core.Services.IRedirectUrlService.html).
+
+* **Namespace:** `Umbraco.Cms.Core.Services`
 * **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
@@ -12,20 +14,10 @@ All samples in this document will require references to the following dll:
 All samples in this document will require the following using statements:
 
 ```csharp
-using Umbraco.Core;
-using Umbraco.Core.Models;
-using Umbraco.Core.Services;
+using Umbraco.Cms.Core.Services;
 ```
 
 ## Getting the service
-
-### Services property
-
-If you wish to use the redirect url service in a class that inherits from one of the Umbraco base classes (eg. `SurfaceController`, `UmbracoApiController` or `UmbracoAuthorizedApiController`), you can access the redirect url service through a local `Services` property:
-
-```csharp
-IRedirectUrlService redirectUrlService = Services.RedirectUrlService;
-```
 
 ### Dependency Injection
 
@@ -34,21 +26,17 @@ In other cases, you may be able to use Dependency Injection. For instance if you
 ```csharp
 public class MyClass
 {
-
     private IRedirectUrlService _redirectUrlService;
 
 	public MyClass(IRedirectUrlService redirectUrlService)
 	{
 		_redirectUrlService = redirectUrlService;
 	}
-
 }
 ```
 
-### Static accessor
-
-If neither a `Services` property or Dependency Injection is available, you can also reference the static `Current` class directly:
+In Razor views, you can access the member service through the `@inject` directive:
 
 ```csharp
-IRedirectUrlService redirectUrlService = Umbraco.Core.Composing.Current.Services.RedirectUrlService;
+@inject IRedirectUrlService RedirectUrlService
 ```
