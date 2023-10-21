@@ -32,14 +32,12 @@ If you wish to use the domain service in a class, you need to specify the `IDoma
 ```csharp
 public class MyClass
 {
-
     private IDomainService _domainService;
     
     public MyClass(IDomainService domainService)
     {
         _domainService = domainService;
     }
-
 }
 ```
 

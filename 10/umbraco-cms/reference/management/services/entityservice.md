@@ -36,7 +36,7 @@ public class MyClass
 
 	public MyClass(IEntityService entityService)
 	{
-	_entityService = entityService;
+		_entityService = entityService;
 	}
 }
 ```
