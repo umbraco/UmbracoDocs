@@ -146,7 +146,7 @@ Then go to the **Content** section and create a new Frontpage with the name **Ho
 
 ## Querying the GraphQL API
 
-The GraphQL endpoint accepts `POST` requests with the content type `application/json`, the body should be an object containing as a minimum a `query` property, e.g.
+The GraphQL endpoint accepts `POST` requests with the content type `application/json`, the body should be an object containing as a minimum a `query` property, for example
 
 ```json
 {
