@@ -37,7 +37,7 @@ If you need to consume a Context API from a non-controller host, then look at th
 
 ## **Write your own Context Token**
 
-A Context Token is generally just a string matched with a type. In this way, users of the token can be sure to get the right type of context.
+A Context Token is generally a string matched with a type. In this way, users of the token can be sure to get the right type of context.
 
 ```ts
 import { ContextToken } from '@umbraco-cms/backoffice/context';
@@ -50,7 +50,7 @@ type MyContext = {
 const MY_CONTEXT_TOKEN = new ContextToken<MyContext>('My.Context.Token');
 ```
 
-### **Context Token with a Type Discriminator.**
+### **Context Token with a Type Discriminator**
 
 {% hint style="info" %}
 This is only relevant if you are going to make multiple context APIs for the same context.
