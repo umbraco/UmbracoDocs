@@ -184,7 +184,7 @@ Result:
 
 ### Making the Query Generic
 
-Up until now, we have been working on a single document type which in most cases is fine, but since we want to dynamically fetch content based on the url we can use the `content` field.
+Up until now, we have been working on a single Document Type which in most cases is fine, but since we want to dynamically fetch content based on the url we can use the `content` field.
 
 The `content` field returns the Content interface type that contains the default fields. To allow us to query the fields on the derived types we can use fragments.
 
