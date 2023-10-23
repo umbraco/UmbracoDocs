@@ -6,7 +6,7 @@ description: "Customizing the ASP.NET middleware pipeline in Umbraco"
 
 Middleware is a way of handling requests and responses before or after they are completed. An example can be checking if a user is logged in before adding an item to the cart. In this example it checks something before an http request is made.
 
-In Umbraco we configure some middleware by default and in a specific order based on the [Microsoft Documentation](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-7.0#middleware-order).
+Umbraco automatically configures all required middleware in the `WithMiddleware()` method in a specific order based on the [Microsoft documentation](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-7.0#middleware-order).
 
 You are also able to add your own in-between middleware by using the Umbraco pipeline filters. In addtion you can also add settings such as: the `PrePipeline`, `PostPipeline`, `PreRouting`, `PostRouting`, and [`Endpoints`](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/routing?view=aspnetcore-7.0#endpoints) callbacks.
 
