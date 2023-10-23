@@ -23,7 +23,7 @@ The Host Element is a Controller Host Web Component. The Umbraco Element turns a
 Any controller can be identified by a Controller Alias, using either a **String** or **Symbol**.\
 If you utilize a Controller with a Controller Alias, then it will be destroyed when another Controller with same Alias gets Added to same Host.\
 \
-In this way, you can easily keep your controllers tidy, without a lot of managing.\
+In this way, you can keep your controllers tidy, without a lot of managing.\
 \
 The example below shows how to initialize a Controller with a Controller Alias.&#x20;
 
