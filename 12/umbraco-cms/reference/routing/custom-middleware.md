@@ -23,7 +23,7 @@ The addition of the `PostRouting` callback is to allow correctly configuring the
 
 {% hint style="warning" %}
 
-Using `WithCustomMiddleware()` instead of `WithMiddelware()` should only be used as a last resort, as Umbraco can break if you forget to add middleware or add them in the wrong order.
+Using `WithCustomMiddleware()` instead of `WithMiddelware()` should only be used as a last resort. This is because Umbraco can break if you forget to add middleware or add them in the wrong order.
 
 {% endhint %}
 
