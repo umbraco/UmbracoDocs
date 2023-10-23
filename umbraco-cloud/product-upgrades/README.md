@@ -1,5 +1,4 @@
-
-# Umbraco Cloud Product Upgrades
+# Product Upgrades
 
 _This document describes when & what product updates are rolled out on Umbraco Cloud_
 
@@ -14,9 +13,9 @@ When minor upgrades are available, you will need a Development environment on yo
 
 ## When do upgrades happen?
 
-* The status page will include all important rollout information: __[https://status.umbraco.io/](https://status.umbraco.io/)__
-* We will release product updates only on __Tuesday__
-* The decision to roll out an upgrade will be made no later than the __Thursday__ prior and the status page will be updated accordingly
+* The status page will include all important rollout information: [**https://status.umbraco.io/**](https://status.umbraco.io/)
+* We will release product updates only on **Tuesday**
+* The decision to roll out an upgrade will be made no later than the **Thursday** prior and the status page will be updated accordingly
 * A product upgrade will be rolled out if:
   * A fix needs to be shipped due to a critical issue in any product
   * A patch version of Umbraco Core is ready for release
@@ -48,7 +47,7 @@ This describes how a Umbraco Cloud project is auto-upgraded:
 * The payload is a set of files (such as DLLs, and other ASP.NET website files)
 * The upgrader will verify that the home page of all the environments (dev/staging/live) is healthy, meaning they don’t return an HTTP status error. If all environments are ok, it will proceed.
 * The upgrader will take a snapshot of the Dev site’s home page including its HTTP status code result and its HTML contents.
-* The payload is deployed to the Dev site’s Git repository and committed with a tag for the product version being updated. This new Git repository commit will replace the Umbraco product assembly (DLL) files along with other product files such as files located in /umbraco, /umbraco_client folders
+* The payload is deployed to the Dev site’s Git repository and committed with a tag for the product version being updated. This new Git repository commit will replace the Umbraco product assembly (DLL) files along with other product files such as files located in /umbraco, /umbraco\_client folders
 * The normal Umbraco Cloud deployment process is invoked and the repository files are deployed to the website
 * The upgrader will automatically ensure the web.config version and the database version are updated so that the Installer/upgrade page is not shown
 * The upgrader will verify that the new HTTP status code returned from the Dev site’s home page is OK and will verify that the html contents of the home page match that of the snapshot originally taken.
@@ -58,7 +57,7 @@ This describes how a Umbraco Cloud project is auto-upgraded:
 
 ## How do baseline updates work?
 
-If a project is a project that has had child projects created off it, the upgrade process for patch versions is the same as described above. The difference is that we always upgrade the baseline as the first project, and afterward we upgrade the child projects. This ensures that if for some reason an update is done from the baseline to the children in the meantime, the patch upgrade will also be sent to the children.
+If a project is a project that has had child projects created off it, the upgrade process for patch and minor versions is the same as described above. The difference is that we always upgrade the baseline as the first project, and afterward we upgrade the child projects. This ensures that if for some reason an update is done from the baseline to the children in the meantime, the upgrade will also be sent to the children.
 
 ## What is a breaking change?
 

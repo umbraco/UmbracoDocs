@@ -34,8 +34,6 @@ Yes, you can. Umbraco Cloud uses the very same Umbraco version that you can down
 
 Umbraco Cloud is best when used as the base for a new project. There is a specific way of working with Umbraco and Umbraco Cloud in order to take full advantage of the service. That’s not to say you can’t migrate an existing site, only that some changes may be required in order for your site to fully work with Umbraco Cloud. For more information [read our guide to moving an existing site](getting-started/migrate-existing-site/).
 
-
-
 ## Technology
 
 ### On what kind of server environment does my Cloud site run?
@@ -83,8 +81,6 @@ Note, the HTTP requests headers are available on all custom hostnames created th
 
 By default, Umbraco Cloud runs all Umbraco version 8 projects on .NET 4.8, Umbraco 9 projects on .NET 5.0, Umbraco 10 projects on .NET 6.0, and Umbraco 11 projects on .NET 7.0.
 
-
-
 ## Upgrades
 
 ### When does Umbraco get upgraded in the various projects?
@@ -93,7 +89,7 @@ We upgrade when we're very confident the release is solid.
 
 ### How do Automated Upgrades work?
 
-We automatically upgrade Cloud projects to the latest patch version of Umbraco CMS, Umbraco Forms, and Umbraco Deploy / Courier. For minor version upgrades of our products, you’ll get a button in the interface to decide if you want to move to that version when it is released. When we make a new patch version, we first run it through our test suite, then test it on 10 test-sites. When all that passes, we roll out the upgrade in batches of 100 to customer accounts.
+We automatically upgrade Cloud projects to the latest patch and minor version of Umbraco CMS, Umbraco Forms, and Umbraco Deploy. When we make a new patch version, we first run it through our test suite, then test it on 10 test sites. When all that passes, we roll out the upgrade in batches of 100 to customer accounts.
 
 [Read more about upgrades](https://docs.umbraco.com/umbraco-cloud/product-upgrades/product-upgrades)
 
@@ -124,8 +120,6 @@ Do note, however, that you will need to step through the upgrade installer manua
 
 You will have to assume that every time we upgrade your site, any file that comes with Umbraco by default will be overwritten. Generally, we only overwrite the files that have been changed in the newest release but there is no guarantee for that. So if you (for example) have customized the login page then you can assume it will be reverted on each upgrade.
 
-
-
 ## Testing
 
 ### Are we allowed to perform penetration tests on our Umbraco Cloud site?
@@ -145,8 +139,6 @@ It is strictly forbidden to attempt to do a denial of service attack on your Clo
 We would like to talk to you beforehand about your test plan for a load test on your Cloud site.
 
 Please contact us using the chat button at the bottom right corner of the [Umbraco Cloud portal](https://www.s1.umbraco.io/).
-
-
 
 ## Security and encryption
 
@@ -190,8 +182,6 @@ Learn more about this and how to set it up in our [Security section](security.md
 
 Yes, every site created after May 2nd, 2017 will have TDE enabled by default. For older sites, we can enable this by request.
 
-
-
 ## Building and deploying
 
 ### Umbraco Cloud creates a SQL CE / LocalDb database for me, can I use a shared SQL Server for my development team instead?
@@ -234,8 +224,6 @@ This is intended behavior.
 We will **only delete the files** and not the database entries, as this could potentially cause you to lose data on your Live/production environment.
 
 You can read much more about these deletions in the [Deploying Deletions](deployment/deploying-deletions.md) article.
-
-
 
 ## Package support
 
@@ -281,7 +269,6 @@ We have a dedicated documentation page discussing the process of [extending Umbr
 The code in these projects should also help you understand the steps and how to build something similar for your own package.
 
 If you need help with this, don't hesitate to reach out to us and we'll be happy to give you some tips.
-
 
 ## Regions
 
