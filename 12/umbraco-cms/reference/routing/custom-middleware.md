@@ -53,7 +53,7 @@ public class CorsComposer : IComposer
 }
 ```
 
-You should be able to request `/echo` from any origin, but get an error when trying to fetch `/echo2` from a foreign origin. You can test this by pasting the following JavaScript code in your browser console when not on the local origin/Umbraco website (such as umbraco.com):
+You should be able to request `/echo` from any origin, but get an error when trying to fetch `/echo2` from a foreign origin. This can be tested by pasting the following JavaScript code in browser console when not on the local origin/Umbraco website (such as umbraco.com):
 
 ```javascript
 fetch('https://localhost:44331/echo', {method: 'GET'}).then(result => result.text().then(text => console.log(text)));
