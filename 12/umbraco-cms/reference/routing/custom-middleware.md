@@ -12,7 +12,7 @@ You can use Umbraco pipeline filters in case you want to add your own middleware
 
 - `PrePipeline` - executed before any Umbraco-specific middleware is added, an example can be [URL rewrites](iisrewriterules.md).
 - `PreRouting` - executed after the static files middleware and before the [routing middleware](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/routing?view=aspnetcore-7.0) is added (using `UseRouting()`). It can also be used to change the incoming URL.
-- `PostRouting` - executed after the routing middleware is added and can be used to [configure CORS](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-7.0).
+- `PostRouting` - executed after the routing middleware is added and can be used to [configure Cross-origin resource sharing (CORS)](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-7.0).
 - `PostPipeline` - executed after all Umbraco-specific middleware is added.
 - `Endpoints` - executed right before the Umbraco-specific endpoints are added using `WithEndpoints()`.
 
