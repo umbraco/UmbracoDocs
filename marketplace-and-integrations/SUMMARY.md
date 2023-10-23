@@ -8,6 +8,7 @@
 * [Umbraco Deploy](https://docs.umbraco.com/umbraco-deploy/)
 * [Umbraco Workflow](https://docs.umbraco.com/umbraco-workflow/)
 * [Umbraco Commerce](https://docs.umbraco.com/umbraco-commerce)
+* [Commercial Products, Relations and dependencies](./commercial-product-dependencies.md)
 
 ## Marketplace
 
