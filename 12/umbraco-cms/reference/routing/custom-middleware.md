@@ -55,7 +55,7 @@ public class CorsComposer : IComposer
 
 You should be able to request /echo from any origin, but get an error when trying to fetch /echo2. You can test this by pasting the following JavaScript code in your browser console when not on the local Umbraco website (such as Umbraco.com):
 
-```json
+```javascript
 fetch('https://localhost:44331/echo', {method: 'GET'}).then(result => result.text().then(text => console.log(text)));
 fetch('https://localhost:44331/echo2', {method: 'GET'}).then(result => result.text().then(text => console.log(text)));
 ```
