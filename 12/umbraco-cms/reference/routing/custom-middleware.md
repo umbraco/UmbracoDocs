@@ -8,7 +8,7 @@ Middleware is a way of handling requests and responses before or after they are 
 
 Umbraco automatically configures all required middleware in the `WithMiddleware()` method in a specific order based on the [Microsoft documentation](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-7.0#middleware-order).
 
-You are also able to add your own in-between middleware by using the Umbraco pipeline filters. In addtion you can also add settings such as: the `PrePipeline`, `PostPipeline`, `PreRouting`, `PostRouting`, and [`Endpoints`](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/routing?view=aspnetcore-7.0#endpoints) callbacks.
+You can use Umbraco pipeline filters in case you want to add your own middleware before, in-between or after the default Umbraco middleware. Filters are added by configuring the `UmbracoPipelineOptions` and require an instance of `IUmbracoPipelineFilter` that contains the following callbacks:
 
 - `PrePipeline` occurs as an early stage of request pipeline and an influence how requests are processed. An example of using Prepipeline can be for [URL rewrites](iisrewriterules.md)
 - `PostPipeline`renders content. By using middleware, the response of content can be changed before being rendered.
