@@ -14,7 +14,7 @@ You can use Umbraco pipeline filters in case you want to add your own middleware
 - `PreRouting` - executed after the static files middleware and before the [routing middleware](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/routing?view=aspnetcore-7.0) is added (using `UseRouting()`). It can also be used to change the incoming URL.
 - `PostRouting` - executed after the routing middleware is added and can be used to [configure CORS](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-7.0).
 - `PostPipeline` - executed after all Umbraco-specific middleware is added.
-- `Endpoints` - executed just before the Umbraco-specific endpoints are added using `WithEndpoints()`.
+- `Endpoints` - executed right before the Umbraco-specific endpoints are added using `WithEndpoints()`.
 
 The addition of the `PostRouting` callback is to allow correctly configuring the Cross-Origin Resource Sharing (CORS) middleware without having to use the `WithCustomMiddleware()` method.
 
