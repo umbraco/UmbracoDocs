@@ -16,7 +16,7 @@ You can use Umbraco pipeline filters in case you want to add your own middleware
 - `PostPipeline` - executed after all Umbraco-specific middleware is added.
 - `Endpoints` - executed just before the Umbraco-specific endpoints are added using `WithEndpoints()`.
 
-The addition of the `PreRouting` and `PostRouting` is to allow correctly configuring the Cross-Origin Resource Sharing (CORS) middleware. This is done using the `IUmbracoPipelineFilters` without having to use the `WithCustomMiddleware()`.
+The addition of the `PostRouting` callback is to allow correctly configuring the Cross-Origin Resource Sharing (CORS) middleware without having to use the `WithCustomMiddleware()` method.
 
 - `IUmbracoPipelineFilter` is an interface in Umbraco that allows the creation of custom filters which then modifies the behavior of the request pipeline. It can be used to change different aspects of how Umbraco handles incoming requests, such as changing content or adding security checks.
 - `WithCustomMiddleware()` is a method that can be used in Umbraco for adding custom middleware. This includes some specific customizable instructions that run in the request processing pipeline. This method is often used in combination with IUmbracoPipelineFilter.
