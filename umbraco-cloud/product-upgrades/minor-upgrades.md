@@ -24,7 +24,7 @@ For semi-automatic upgrades, you can update your project with a click of a butto
 
 ## Troubleshooting Automated minor upgrades
 
-Umbraco Cloud supports doing minor upgrades to your projects in an automated manner. The feature is available when a new minor version of Umbraco is released (i.e. 10.5.0 or 10.6.0).
+Umbraco Cloud supports doing minor upgrades to your projects in an automated manner. The feature is available when a new minor version of Umbraco is released (for example 10.5.0 or 10.6.0).
 
 The upgrade will cover most issues it encounters, but at certain Umbraco configurations, it needs some manual intervention. This is usually related to custom code being dependent on some APIs that have either changed or been removed for the new minor upgrade.
 
