@@ -54,7 +54,7 @@ In order to get started with our first Document Type, follow these steps:
 
 ![Blank Home Page Document Type](images/Blank-Document-Type.png)
 
-We have now created our first Document Type. It's currently a blank slate, and in the next section we will start adding groups and properties in order to be able to add various types of data to our content.
+We have now created our first Document Type. It's currently a blank slate, and in the next section, we will start adding groups and properties. This way we are able to add different types of data to our content.
 
 ## Adding and defining properties
 
