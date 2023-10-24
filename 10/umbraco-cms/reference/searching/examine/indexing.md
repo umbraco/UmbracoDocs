@@ -68,7 +68,7 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing;
 
 By default, Examine will store values into the Lucene index as "Full Text" fields, meaning the values will be indexed and analyzed for a textual search. However, if a field value is numerical, date/time, or another non-textual value type, you might want to change how the value is stored in the index. This will let you take advantage of some value type-specific search features such as numerical or date range.
 
-There is some documentation about this in the [Examine documentation](https://shazwazza.github.io/Examine/configuration).
+There is some documentation about this in the [Examine documentation](https://shazwazza.github.io/Examine/articles/configuration.html).
 
 The easiest way to modify how a field is configured is using the `ConfigureNamedOptions` pattern like so:
 
