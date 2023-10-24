@@ -5,7 +5,7 @@
 
 ## Fundamentals
 
-* [Get to know Umbraco](fundamentals/get-to-know-umbraco.md)
+* [Get to know Umbraco](fundamentals/get-to-know-umbraco.md) 
 
 ## Implementation
 
