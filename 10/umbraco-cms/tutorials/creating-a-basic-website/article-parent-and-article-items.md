@@ -83,7 +83,7 @@ To add a content node:
     If you do not see the list view, try refreshing the page.
     {% endhint %}
 
-5\. Click \*\*Create Articles Item\*\* to add two child nodes called \*\*Article 1\*\*, \*\*Article 2\*\*, and click \*\*Save and Publish\*\*.
+5. Click **Create Articles Item** to add two child nodes called **Article 1**, **Article 2**, and click **Save and Publish**.
 
 <figure><img src="images/figure-40-articles-created-v8.png" alt=""><figcaption><p>Content Tree with Articles</p></figcaption></figure>
 
