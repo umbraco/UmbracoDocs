@@ -305,7 +305,7 @@ Sometimes updates are done directly on the Umbraco Cloud repository. We encourag
 Using a curl command, fetching the potential differences would look like this:
 
 ```sh
-url="https://apim-dev-global.azure-api.net/projects/$projectId/deployments/$latestCompletedDeploymentId/diff"
+url="https://api.cloud.umbraco.com/v1/projects/$projectId/deployments/$latestCompletedDeploymentId/diff"
 downloadFolder="tmp"
 mkdir -p $downloadFolder # ensure folder exists
 
