@@ -8,6 +8,8 @@ description: >-
 
 ## Setting up the pipeline in GitHub Actions
 
+Before setting up the pipeline in Azure DevOps, make sure that the steps in the [Configuring a CI/CD pipeline](./) are done.
+
 The pipeline is defined in a main YAML file and includes some steps that call custom shell scripts to interact with the Umbraco Cloud API.
 
 You can download the GitHub Actions sample scripts below:

@@ -1,6 +1,4 @@
 ---
-
-
 meta.Title: Multilanguage setup in Umbraco
 product: CMS
 description: A guide to multilanguage setup in Umbraco
@@ -214,7 +212,7 @@ To view the language variant on the browser, follow these steps:
 
     ![Viewing the Language Variant Link](../../../11/umbraco-cms/tutorials/images/viewing-langvariant-browser.png)
 5. Click on the link to view the new language varied node in the browser.
-6. Alternatively, you can add the domain name to your localhost in the browser. For example: [http://localhost:xxxx/da/](http:/localhost:xxxx/da/)
+6. Alternatively, you can add the domain name to your localhost in the browser. For example: `http://localhost:xxxx/da/`
 
 For viewing purposes, I've added a stylesheet to my website. The final result should look similar to the image below:
 
