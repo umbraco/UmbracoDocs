@@ -97,7 +97,7 @@ To restrict access you need to have made a member group, and a page containing t
 
 Congratulations! With all of that setup, the page you chose will redirect the user to the Login page if they are not logged in, and if they are logged in - they will be able to see the page's contents.
 
-In the navigation, you will be able to tell the content node is restricted - the small red icon that is added on top of the document type icon signifies that.
+In the navigation, you will be able to tell that the content node is restricted. This small red icon that is added on top of the Document Type icon signifies that.
 
 ![Protected content](images/v8-16-Protected-node.png)
 
