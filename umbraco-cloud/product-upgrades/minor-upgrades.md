@@ -4,11 +4,23 @@ description: This article explains how Minor upgrades on Umbraco Cloud works.
 
 # Minor Upgrades
 
-When a new minor version is released, your projects will be upgraded automatically.&#x20;
+When a new minor version is released, there are two ways of upgrading your project. For existing projects, you can opt-in for automatic minor upgrades.
 
-This is enabled for new projects and existing projects can opt-in for Automatic upgrades on the settings page on your projects.
+To enable Automatic Minor Upgrades follow these steps:
 
-The upgrade will be applied to all products on Umbraco Cloud: Umbraco CMS, Umbraco Forms, and Umbraco Deploy.
+1. Go to your Umbraco Cloud project.
+2.  Go to `Settings` -> `Automatic Upgrades`.
+
+    <figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption><p>Settings Umbraco Cloud</p></figcaption></figure>
+3.  Enable Automatic Minor Upgrades
+
+    <figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption><p>Enable Minor Upgrades</p></figcaption></figure>
+
+With automatic upgrades enabled it will be applied to all products on Umbraco Cloud: Umbraco CMS, Umbraco Forms, and Umbraco Deploy.
+
+If you create a new project on Umbraco Cloud the project will by default have automatic minor upgrades enabled.
+
+For semi-automatic upgrades, you can update your project with a click of a button in the portal when a new minor update is available. On Starter plans, you will need to add a Development environment before you can perform the upgrade. Find pricing details for Umbraco Cloud Starter plans on our [website](https://umbraco.com/products/umbraco-cloud/pricing).
 
 ## Troubleshooting Automated minor upgrades
 
@@ -20,18 +32,18 @@ In general, if anything should fail during this process, you can reach out for s
 
 ## Database upgrade failing
 
-Symptoms, and feedback given from the upgrade process: **Unable to run the Umbraco installer**
+Symptoms and feedback are given from the upgrade process: **Unable to run the Umbraco installer**
 
 The first step in the process, after having updated all the files, is to call the Umbraco install engine in order to get its database updated to support the new version. As this step is the first time the site gets requested after the updated files are run, it may fail. The reason is often code that is incompatible with the upgraded files.
 
-It can be code that references APIs that have been deprecated, or code that has some strong references to specific versions. If the error is clear, it will be shown on the screen. It will be a typical ASP.NET error message also called a Yellow Screen of Death (YSOD). You should request the site, and check the error it shows. If the error isn't descriptive, then it is time to clone the repository to your local machine, and fix the issue. The usual suspects would be:
+It can be code that references APIs that have been deprecated, or code that has some strong references to specific versions. If the error is clear, it will be shown on the screen. It will be a typical ASP.NET error message also called a Yellow Screen of Death (YSOD). You should request the site, and check the error it shows. If the error isn't descriptive, then it is time to clone the repository to your local machine and fix the issue. The usual suspects would be:
 
-* The code you have running is referencing an API that has been changed, that is being modified, is obsolete, or removed.
+* The code you have running is referencing an API that has been changed, is being modified, is obsolete, or removed.
 * The `web.config` had assembly bindings for a specific DLL version that doesn't exist anymore. During the upgrade process, we do update the references we are shipping, but there might be something missing.
 
 Once you have the site running locally, you should push your changes to the repository. This will update the site, and it should now be in a running state.
 
-The upgrade process left off when it was needing three more steps. These three steps now need to be done manually.
+The upgrade process left off when it needed three more steps. These three steps now need to be done manually.
 
 1. Complete the installer
    * To complete the installer, you should visit the site: `https://dev-YOURSITEALIAS.euwest01.umbraco.io`. This will show you the installer screen, where you should insert your backoffice credentials and follow the process. It will run through a few steps, and later Umbraco will be updated to the latest version.
