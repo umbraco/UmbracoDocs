@@ -122,14 +122,14 @@ To use this you need to setup your own app with HubSpot and use an extended conf
 
 The authorization mode is toggled by the `UseUmbracoAuthorization` flag, which by default is set to `true` meaning that previous versions are not impacted.
 
-Authorization specific methods are exposed by the [`IHubspotAuthorizationService`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Crm.Hubspot/Services/IHubspotAuthorizationService.cs) and implemented by two services:
+Authorization specific methods are exposed by the [`IHubspotAuthorizationService`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Crm.Hubspot.Core/Services/IHubspotAuthorizationService.cs) and implemented by two services:
 
-- [UmbracoAuthorizationService](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Crm.Hubspot/Services/UmbracoAuthorizationService.cs)
-- [AuthorizationService](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Crm.Hubspot/Services/AuthorizationService.cs)
+- [UmbracoAuthorizationService](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Crm.Hubspot.Core/Services/UmbracoAuthorizationService.cs)
+- [AuthorizationService](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Crm.Hubspot.Core/Services/AuthorizationService.cs)
 
 The used service is provided using the `AuthorizationImplementationFactory` method, depending on the type of authorization selected.
 
-If you are selecting your own authorization flow that uses the `AuthorizationService`, the redirect URL will be this one: `/umbraco/api/hubspotauthorization/oauth`, from [`HubspotAuthorizationController`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Crm.Hubspot/Controllers/HubspotAuthorizationController.cs). Make sure to set to correct URL in the settings of the website and in the configuration of your _Hubspot_ app.
+If you are selecting your own authorization flow that uses the `AuthorizationService`, the redirect URL will be this one: `/umbraco/api/hubspotauthorization/oauth`, from [`HubspotAuthorizationController`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Crm.Hubspot.Core/Controllers/HubspotAuthorizationController.cs). Make sure to set to correct URL in the settings of the website and in the configuration of your _Hubspot_ app.
 
 The authorization controller uses the `window.postMessage` interface for cross-window communications when redirecting from the Hubspot authorization server.
 
