@@ -16,6 +16,8 @@ You can download the Azure DevOps sample scripts below:
 
 {% file src="../../../../.gitbook/assets/AzureDevOpsSampleScripts.zip" %}
 
+Once unzipped, add the `devops` folder in the `local-cicd-demo-site` or your cloned project at the **root** folder.
+
 The zip file includes the following files:
 
 * Azure pipeline including stages and preflight checks for building and releasing `azure-release-pipeline.yaml`
@@ -65,7 +67,7 @@ Since we previously showed how to reconfigure the Git Remotes to the DevOps Repo
 
         The values can be found in the `Settings` -> `Advanced` section on your project in the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects).
     2. If you have renamed the `Master` Branch to `Main` then you will need to add `“main”`&#x20;
-    3. from the commented `‘stages‘`, replace the `git user.email` and `git user.name` and `git remote add tmp-pusher link` with preferred ones.
+    3. From the commented `‘stages‘`, replace the **email@email.com** from`git config user.email email@email.com` and `git remote add tmp-pusher link` with preferred ones.
     4. If you have changed the default name of the `UmbracoProject.csproj` file you need to change it as well in the `‘stage: BuildAndTestStage’ - ‘job: BuildAndTestJob’ - ‘task: DotNetCoreCLI@2’`
     5. You can also add a user name in the ‘`notifyUsers‘`
 
@@ -148,6 +150,20 @@ The pipeline is designed to be triggered automatically upon any changes to the l
 **Pipeline Overview (After a Run with Changes)**
 
 <figure><img src="../../../images/UmbracoCloudDemoSite2.png" alt=""><figcaption><p><strong>Pipeline Overview</strong></p></figcaption></figure>
+
+**After the first deployment**
+
+After the first deployment (with some schema changes) you will need to edit the .yaml file and uncomment the [Pipeline Stage: Preflight Checks](azure-devops.md#pipeline-stage-preflight-checks):
+
+<figure><img src="../../../../.gitbook/assets/pipelineUncomment.PNG" alt=""><figcaption></figcaption></figure>
+
+Once the pipeline has finished deploying, then you are able to transfer the content that you have locally directly to your environment on Umbraco Cloud.&#x20;
+
+{% hint style="info" %}
+You can edit the pipeline by going to your Pipelines -> Edit
+
+<img src="../../../../.gitbook/assets/pipelineEdit.PNG" alt="" data-size="original">
+{% endhint %}
 
 **Umbraco Cloud Project Overview (After the Second Run)**
 
