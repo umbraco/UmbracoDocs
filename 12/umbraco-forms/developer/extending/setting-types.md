@@ -4,7 +4,7 @@ Umbraco Forms field, prevalue source and workflow types are defined in C# and in
 
 These settings are completed by the editor when using the type on their form.
 
-Each setting type can have it's own user interface. So a simple string can use a text box but a more complicated JSON structure can use a more appropriate user interface.
+Each setting type can have it's own user interface. So a string can use a text box but a more complicated JSON structure can use a more appropriate user interface.
 
 The user interface used for a particular setting is defined by the `View` property:
 
@@ -20,7 +20,7 @@ The following setting types are available and are used for the field, prevalue s
 | Name                      | Description                                                       | Used in                                         |
 |---------------------------|-------------------------------------------------------------------|-------------------------------------------------|
 | Checkbox                  | Uses a single checkbox for entry                                  |                                                 |
-| DocumentMapper            | Used for selection of a document type                             | The "Save as Umbraco node" workflow             |
+| DocumentMapper            | Used for selection of a documenttype                             | The "Save as Umbraco node" workflow             |
 | Dropdownlist              | Used for selection from a list of options                         |                                                 |
 | EmailTemplatePicker       | Used for selection of an email template                           | The "Send email with Razor template" workflow   |
 | FieldMapper               | Used to map fields from a form to required aliases                | The "Send to URL" workflow                      |
@@ -43,12 +43,12 @@ All of the above setting types are used in one or more field, prevalue source an
 
 The one exception is the "TextWithFieldPicker".  This one we don't use within the package, but we make it available for developers to use when creating their own types.
 
-It offers the option of text field entry or the selection of a field from the form, so can be useful in workflows where you need to reference the value of a specific field.
+It offers the option of text field entry or the selection of a field from the form. This can be useful in workflows where you need to reference the value of a specific field.
 
 ![Text with field picker](./images/text-with-field-picker.png)
 
 ## Creating a setting type
 
-To create a custom setting type you will need to create an angularjs view and controller at the following location: `/App_Plugins/UmbracoForms/backoffice/Common/SettingTypes/mysettingview.html`.
+To create a custom setting type you will need to create an AngularJS view and controller at the following location: `/App_Plugins/UmbracoForms/backoffice/Common/SettingTypes/mysettingview.html`.
 
 You then add the name of the view as the `View` property on the `Setting` attribute defined on the type.

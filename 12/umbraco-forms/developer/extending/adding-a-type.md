@@ -85,7 +85,7 @@ For all types that use the provider model, settings work this way. By adding the
 
 Each setting value is stored as a string with the user interface for generating the value defined via the `View` property.
 
-Umbraco Forms ships with several [setting types and you can also create your own](./setting-types.md).
+Umbraco Forms ships with [setting types and you can also create your own](./setting-types.md).
 
 ## Validate type settings with ValidateSettings()
 
