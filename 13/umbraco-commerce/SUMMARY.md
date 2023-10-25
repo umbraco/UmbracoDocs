@@ -6,9 +6,9 @@
 * [Release Notes](release-notes.md)
 --->
 ## Getting Started
-
+<!---
 * [Introduction](getting-started/introduction.md)
-<!---* [Installation](getting-started/installation/README.md)
+* [Installation](getting-started/installation/README.md)
 * [Upgrading](getting-started/upgrading/README.md)
   * [Version Specific Upgrade Notes](getting-started/upgrading/version-specific-upgrades.md)
 * [Umbraco Configuration](getting-started/umbraco-configuration.md)
@@ -16,9 +16,9 @@
 * [Licensing](getting-started/licensing-model.md)--->
 
 ## How-To Guides
-
+<!--
 * [Overview](how-to-guides/overview.md)
-<!--* [Migrate from Vendr to Umbraco Commerce](how-to-guides/migrate-from-vendr-to-umbraco-commerce/README.md)
+* [Migrate from Vendr to Umbraco Commerce](how-to-guides/migrate-from-vendr-to-umbraco-commerce/README.md)
   * [Migrate Umbraco Commerce Checkout](how-to-guides/migrate-from-vendr-to-umbraco-commerce/migrate-umbraco-commerce-checkout.md)
   * [Migrate custom Payment Providers](how-to-guides/migrate-from-vendr-to-umbraco-commerce/migrate-custom-payment-providers.md)
 * [Configure SQLite support](how-to-guides/configure-sqlite-support.md)
@@ -27,8 +27,8 @@
 
 ## Key Concepts
 
-* [Get to know the main features](key-concepts/overview.md)
 <!--
+* [Get to know the main features](key-concepts/overview.md)
 * [Base Currency](key-concepts/base-currency.md)
 * [Bulk Actions](key-concepts/bulk-actions.md)
 * [Calculators](key-concepts/calculators.md)
@@ -58,13 +58,12 @@
 * -->
 
 ## Tutorials
-
+<!--
 * [Overview](tutorials/overview.md)
-
+-->
 ## Reference
-
-* [Storefront API](reference/storefront-api/README.md)
  <!--
+* [Storefront API](reference/storefront-api/README.md)
   * [Endpoints](reference/storefront-api/endpoints/README.md)
     * [Order](reference/storefront-api/endpoints/order.md)
     * [Checkout](reference/storefront-api/endpoints/checkout.md)
