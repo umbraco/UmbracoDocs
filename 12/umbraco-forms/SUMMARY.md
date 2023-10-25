@@ -38,6 +38,7 @@
 * [Umbraco Forms in the Database](developer/forms-in-the-database.md)
 * [Extending](developer/extending/README.md)
   * [Adding A Type To The Provider Model](developer/extending/adding-a-type.md)
+    * [Setting Types](developer/extending/setting-types.md)
   * [Adding A Field Type To Umbraco Forms](developer/extending/adding-a-fieldtype.md)
     * [Excluding a built-in field](developer/extending/excluding-a-built-in-field.md)
   * [Adding A Prevalue Source Type To Umbraco Forms](developer/extending/adding-a-prevaluesourcetype.md)
