@@ -46,8 +46,7 @@ In this mode the toolbar is hidden, and only shows up when content in the editor
 
 ## Blocks
 
-Blocks can be added as Elements of the Rich Text Editor.
-The Fields configuring Blocks are described as part of the [Blocks in Rich Text Editor](rte-blocks.md) article.
+Blocks can be added as elements in the Rich Text Editor. Configuration and rendering of Blocks is described in the [Blocks in Rich Text Editor](rte-blocks.md) article.
 
 ## Overlay Size
 
