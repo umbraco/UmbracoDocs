@@ -13,5 +13,3 @@
 * [Upgrading](upgrading-workflow/upgrading.md)
 
 ## Workflow Section
-
-* [Workflow Section](workflow-section/workflow-section-dashboard.md)
