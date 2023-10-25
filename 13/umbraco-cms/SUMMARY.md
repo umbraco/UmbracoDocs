@@ -1,16 +1,17 @@
 # Table of contents
 
 * [Umbraco CMS Documentation](README.md)
+<!--
 * [Legacy Documentation](legacy-documentation/README.md)
   * [Umbraco 8 Documentation](https://our.umbraco.com/documentation/)
   * [Umbraco 7 Documentation](https://our.umbraco.com/documentation/)
-* [Contribute](https://docs.umbraco.com/welcome/contribute/)
 * [Sustainability Best Practices](http://127.0.0.1:5000/o/vHdmkfI8smZW50A5yIZD/s/ZOU4fHcVxqYnC8V1dry6/)
+ -->
+* [Contribute](https://docs.umbraco.com/welcome/contribute/)
 
 ## Fundamentals
-
-* [Get to know Umbraco](fundamentals/get-to-know-umbraco.md)
 <!--
+* [Get to know Umbraco](fundamentals/get-to-know-umbraco.md)
 * [Setup](fundamentals/setup/README.md)
   * [Requirements](fundamentals/setup/requirements.md)
   * [Installation](fundamentals/setup/install/README.md)
@@ -129,9 +130,8 @@
 -->
 
 ## Implementation
-
-* [Learn how Umbraco works](implementation/learn-how-umbraco-works.md)
 <!--
+* [Learn how Umbraco works](implementation/learn-how-umbraco-works.md)
 * [Routing](implementation/default-routing/README.md)
   * [Controller & Action Selection](implementation/default-routing/controller-selection.md)
   * [Execute Request](implementation/default-routing/execute-request.md)
@@ -150,9 +150,8 @@
 -->
 
 ## Extending
-
-* [Customize the editing experience](extending/customize-the-editing-experience.md)
 <!--
+* [Customize the editing experience](extending/customize-the-editing-experience.md)
 * [Dashboards](extending/dashboards.md)
 * [Sections & Trees](extending/section-trees/README.md)
   * [Sections](extending/section-trees/sections.md)
@@ -206,9 +205,8 @@
 -->
 
 ## Reference
-
-* [Dive into the code](reference/dive-into-the-code.md)
 <!--
+* [Dive into the code](reference/dive-into-the-code.md)
 * [Configuration](reference/configuration/README.md)
   * [Basic Authentication Settings](reference/configuration/basicauthsettings.md)
   * [Connection strings settings](reference/configuration/connectionstringssettings.md)
@@ -412,9 +410,8 @@
 -->
 
 ## Tutorials
-
-* [Overview](tutorials/overview.md)
 <!--
+* [Overview](tutorials/overview.md)
 * [Creating a Basic Website](tutorials/creating-a-basic-website/README.md)
   * [Getting Started](tutorials/creating-a-basic-website/getting-started.md)
   * [Document Types](tutorials/creating-a-basic-website/document-types.md)

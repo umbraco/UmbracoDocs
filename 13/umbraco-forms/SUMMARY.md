@@ -4,18 +4,16 @@
 * [Release Notes](release-notes.md)
 
 ## Installation
-
-* [Installing Umbraco Forms](installation/install.md)
 <!--
+* [Installing Umbraco Forms](installation/install.md)
 * [Manually Upgrading Umbraco Forms](installation/manualupgrade.md)
 * [Version Specific Upgrade Notes](installation/version-specific.md)
 * [Licensing](the-licensing-model.md)
 -->
 
 ## Editor
-
-* [Creating a Form - The basics](editor/creating-a-form/README.md)
 <!--
+* [Creating a Form - The basics](editor/creating-a-form/README.md)
   * [Form Settings](editor/creating-a-form/form-settings.md)
   * [Overview Of The Field Types](editor/creating-a-form/fieldtypes/README.md)
     * [Date](editor/creating-a-form/fieldtypes/date.md)
@@ -31,9 +29,8 @@
 -->
 
 ## Developer
-
-* [Preparing Your Frontend](developer/prepping-frontend.md)
 <!--
+* [Preparing Your Frontend](developer/prepping-frontend.md)
 * [Rendering Forms](developer/rendering-forms.md)
 * [Rendering Forms Scripts](developer/rendering-scripts.md)
 * [Themes](developer/themes.md)
@@ -68,6 +65,7 @@
 -->
 
 ## Tutorials
-
+<!--
 * [Overview](tutorials/overview.md)
 * [Creating a Contact Form](tutorials/creating-a-contact-form.md)
+-->
