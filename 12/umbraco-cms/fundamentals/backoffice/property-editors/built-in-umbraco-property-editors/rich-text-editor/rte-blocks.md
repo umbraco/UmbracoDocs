@@ -60,9 +60,37 @@ These properties are relevant when you work with custom views.
 
 * **Force hide content editor** - If you made a custom view that enables you to edit the content part of a block and you are using default editing mode (not inline) you might want to hide the content-editor from the block editor overlay.
 
-## Rendering Block List Content
+## Rendering Blocks
 
-Rendering the Rich Text Editor Markup using Blocks for partial views.
+To render Blocks in the frontend, you must create Partial Views for each Block.
+
+The Partial Views must be:
+
+* Named by the alias of the Element Type that is being used as Content Model for the Block.
+* Placed in the folder `Views/Partials/RichText/Components/`.
+
+For example, if the Element Type alias of Content Model is `myBlockType`, a Partial View must be created at `Views/Partials/RichText/Components/MyBlockType.cshtml`.
+
+The Partial View will receive the model of `Umbraco.Cms.Core.Models.Blocks.RichTextBlockItem`. This gives you the option to access properties of the Content and Settings Models of your Block, as illustrated in the following sample:
+
+```csharp
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.RichTextBlockItem>
+
+@* Output the 'heading' field from the Content Model using the `backgroundColor` field from the Settings Model as background color *@
+<h1 style="background-color:@Model.Settings.Value("backgroundColor")">@Model.Content.Value("heading")</h1>
+```
+
+If you use ModelsBuilder, you can specify the Content Model (and optionally the Settings Model) in the Partial View model. This allows for type safe access to the Block data.
+
+The following example shows a Partial View for a Block with `MyBlockType` as Content Model and `MyBlockSettingsType` as Settings Model:
+
+```csharp
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.RichTextBlockItem<MyBlockType, MyBlockSettingsType>>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+@* Output the Heading of field with alias 'heading' from the 'MyBlockType' Content Model *@
+<h1 style="background-color:@Model.Settings.BackgroundColor">@Model.Content.Heading</h1>
+```
 
 ## Build a Custom Backoffice View
 
