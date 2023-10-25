@@ -55,7 +55,7 @@ To use this you need to setup your own app with Semrush and use an extended conf
       "SEO": {
         "Semrush": {
           "Settings": {
-            ...
+            "BaseUrl": "https://oauth.semrush.com/",
             "UseUmbracoAuthorization": true/false
           },
           "OAuthSettings": {
@@ -80,6 +80,7 @@ To use this you need to setup your own app with Semrush and use an extended conf
 ```xml
 <appSettings>
   ...
+  <add key="Umbraco.Cms.Integrations.SEO.Semrush.BaseUrl" value="https://oauth.semrush.com/" />
   <add key="Umbraco.Cms.Integrations.SEO.Semrush.UseUmbracoAuthorization" value="true/false" />
   <add key="Umbraco.Cms.Integrations.SEO.Semrush.ClientId" value="[your client id]" />
 	<add key="Umbraco.Cms.Integrations.SEO.Semrush.ClientSecret" value="[your client secret]" />

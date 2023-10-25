@@ -23,6 +23,7 @@ Under each major version, you can find details about minor and patch releases fo
 #### [10.2.6](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.6) (October 17th 2023)
 
 * Fixed issue with deployment of content when scheduled for a future release date.
+* Prevent dictionary items from being serialized to `.uda` files on disk when configured for transfer as content [#184](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/184).
 
 #### [10.2.5](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.5) (October 10th 2023)
 

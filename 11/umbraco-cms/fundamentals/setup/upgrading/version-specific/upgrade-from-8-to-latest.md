@@ -111,4 +111,4 @@ This concludes this tutorial. Find related information and further reading in th
 
 * [Issue tracker for known issues with Content Migration](https://github.com/umbraco/UmbracoDocs/issues)
 * [Configuration in modern Umbraco](../../../../reference/configuration/)
-* [Configuration in legacy Umrbaco](https://our.umbraco.com/documentation/Reference/Configuration-for-Umbraco-7-and-8/)
+* [Configuration in legacy Umbraco](https://our.umbraco.com/documentation/Reference/Configuration-for-Umbraco-7-and-8/)

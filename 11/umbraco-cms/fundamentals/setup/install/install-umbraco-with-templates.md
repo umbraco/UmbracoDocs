@@ -95,7 +95,8 @@ Options:
 You will now have a new project with the name _MyCustomUmbracoProject_, or the name you chose to use. The new project can be opened and run using your favorite IDE or you can continue using the CLI commands.
 
 {% hint style="info" %}
-If you want to create a solution file as well you can run the commands below. `dotnet new sln`\
+If you want to create a solution file as well you can run the commands below.\
+`dotnet new sln`\
 `dotnet sln add MyCustomUmbracoProject`
 {% endhint %}
 

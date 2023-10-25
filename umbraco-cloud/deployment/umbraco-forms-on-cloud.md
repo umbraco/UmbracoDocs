@@ -4,7 +4,7 @@ In this article, you can learn about how Umbraco Forms is handled on Umbraco Clo
 
 Umbraco Forms is a package that is included with your Umbraco Cloud project. It gives you a nice integrated UI, where you can create Forms for your website. The package is built specifically for Umbraco and is maintained by Umbraco HQ.
 
-Read more about the product in the [Umbraco Forms](../../umbraco-forms/overview.md) section.
+Read more about the product in the [Umbraco Forms](https://docs.umbraco.com/umbraco-forms/) documentation.
 
 ## How Forms are handled on Umbraco Cloud
 
@@ -28,7 +28,7 @@ For more information on how to handle content transfer/restores on Umbraco Cloud
 
 ## Upgrades
 
-Umbraco Forms is part of the [auto-upgrades on Umbraco Cloud](../upgrades/). Whenever a new patch is ready for release, we will automatically apply it to your Cloud project. There will be a notification in the Umbraco Cloud Portal at least 5 days before we roll out new versions.
+Umbraco Forms is part of the [auto-upgrades on Umbraco Cloud](../product-upgrades/). Whenever a new patch is ready for release, we will automatically apply it to your Cloud project. There will be a notification in the Umbraco Cloud Portal at least 5 days before we roll out new versions.
 
 To avoid having the auto-upgrades overwrite any of your custom settings, we strongly encourage that you use [config transforms](../set-up/config-transforms.md) when you need custom configuration and [Themes](https://docs.umbraco.com/umbraco-forms/developer/themes) when you need to customize your forms.
 
