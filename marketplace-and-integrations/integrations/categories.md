@@ -130,7 +130,7 @@ Umbraco HQ has developed and made available integrations with different SaaS (So
         </tr>
         <tr>
             <td><strong>Hubspot with Umbraco Forms</strong></td>
-            <td>A custom workflow that allows form entries to be mapped to a HubSpot contact record, and then stored within the CRM platform.</td>
+            <td>A custom workflow that allows form entries to be mapped to a HubSpot contact record, and then stored within the Customer Relationship Management (CRM) platform.</td>
             <td><a href="hubspot-with-umbraco-forms.md">hubspot-with-umbraco-forms.md</a></td>
             <td><a href="../.gitbook/assets/hubspot.png">hubspot.png</a></td>
         </tr>
