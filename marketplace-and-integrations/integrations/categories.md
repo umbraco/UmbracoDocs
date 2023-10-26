@@ -113,7 +113,7 @@ Umbraco HQ has developed and made available integrations with different SaaS (So
         <tr>
             <td><strong>ActiveCampaign with Umbraco Forms</strong></td>
             <td>A custom workflow that allows form entries to be mapped to an ActiveCampaign contact and is stored within the Customer Relationship Management (CRM) platform.</td>
-            <td><a href="activecampaign-with-umbarco-forms.md">activecampaign-with-umbarco-forms.md</a></td>
+            <td><a href="activecampaign-with-umbraco-forms.md">activecampaign-with-umbraco-forms.md</a></td>
             <td><a href="../.gitbook/assets/activecampaign (1).png">activecampaign (1).png</a></td>
         </tr>
         <tr>
