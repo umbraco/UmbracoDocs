@@ -1,7 +1,7 @@
 # Upgrading Umbraco UI Builder
 
 This article shows how to manually upgrade Umbraco UI Builder to run the latest version.
-When upgrading Umbraco UI Builder, be sure to also consult the [version specific upgrade](/10/umbraco-ui-builder/getting-started/upgrading/version-specific-upgrades.md) notes to learn about potential breaking changes and common pitfalls.
+When upgrading Umbraco UI Builder, be sure to also consult the [version specific upgrade](version-specific-upgrades.md) notes to learn about potential breaking changes and common pitfalls.
 
 {% hint style="warning" %}
 Before upgrading, it is always advisable to take a complete backup of your site and database.
