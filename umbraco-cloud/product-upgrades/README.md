@@ -50,7 +50,7 @@ This describes how a Umbraco Cloud project is auto-upgraded:
 * The payload is deployed to the Dev site’s Git repository and committed with a tag for the product version being updated. This new Git repository commit will replace the Umbraco product assembly (DLL) files along with other product files such as files located in /umbraco, /umbraco\_client folders
 * The normal Umbraco Cloud deployment process is invoked and the repository files are deployed to the website
 * The upgrader will automatically ensure the web.config version and the database version are updated so that the Installer/upgrade page is not shown
-* The upgrader will verify that the new HTTP status code returned from the Dev site’s home page is OK and will verify that the html contents of the home page match that of the snapshot originally taken.
+* The upgrader will verify that the new HTTP status code returned from the Dev site’s home page is OK and will verify that the HTML contents of the home page match that of the snapshot originally taken.
 * If either of these tests fails we will be notified and Umbraco will take appropriate measures to roll back the site to its previous state
 * The failed upgrade is then tracked for reporting and the customer will be notified if necessary
 * When the Dev site is upgraded successfully, the upgrader will continue this same process for the next environment in the chain (i.e. Dev -> Staging -> Live) depending on the number of environments that exist for the project.
