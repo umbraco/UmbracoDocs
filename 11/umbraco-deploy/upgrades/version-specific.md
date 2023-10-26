@@ -16,13 +16,13 @@ If you are upgrading to a minor or patch of Deploy you can find the details abou
 
 <summary>Version 11</summary>
 
-### Version 11
+#### Version 11
 
 Version 11 of Umbraco Deploy has a minimum dependency on Umbraco CMS core of `11.0.0`. It runs on .NET 7.
 
 The forms deployment component has a minimum dependency on Umbraco Forms of `11.0.0`.
 
-#### Breaking changes
+**Breaking changes**
 
 Version 11 contains a number of breaking changes. We don't expect many projects to be affected by them as they are in areas that are not typical extension points. For reference though, the full details are listed here:
 
@@ -51,7 +51,7 @@ Version 11 contains a number of breaking changes. We don't expect many projects 
 
 <summary>Version 11</summary>
 
-### Version 10
+#### Version 10
 
 Version 10 of Umbraco Deploy has a minimum dependency on Umbraco CMS core of `10.0.0`. It runs on .NET 6.
 
@@ -59,7 +59,7 @@ The forms deployment component has a minimum dependency on Umbraco Forms of `10.
 
 To migrate to version 10 you should first update to the latest minor release of version 9. This will ensure you have all the database schema changes in place.
 
-#### Breaking changes
+**Breaking changes**
 
 Version 10 includes a number of breaking changes. These changes are unlikely to affect many projects because they're not in typical extension points. For reference though, the full details are listed here.
 
@@ -105,8 +105,7 @@ Or set the configuration value of `Umbraco:Deploy:Settings:PreferLocalDbConnecti
 }
 ```
 
-If you are upgrading from Umbraco 9 and already have a LocalDB instance, you can set this value to `true`. This will ensure it is used rather than a new, empty SQLite database.
-**Configuration**
+If you are upgrading from Umbraco 9 and already have a LocalDB instance, you can set this value to `true`. This will ensure it is used rather than a new, empty SQLite database. **Configuration**
 
 * The boolean property `IgnoreBrokenDependencies` has been removed, and the option is now controlled only by the `IgnoreBrokenDependenciesBehavior` configuration key, which takes an enumeration value.
   * The default value has changed to `IgnoreBrokenDependenciesBehavior.Restore`, as this will most likely be what developers require (allowing broken dependencies when restoring, but not when pushing to an upstream environment).
