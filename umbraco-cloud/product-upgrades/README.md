@@ -24,7 +24,7 @@ When minor upgrades are available, you will need a Development environment on yo
 * Umbraco Cloud reserves the right to roll out an emergency product fix to fix a critical issue at any time
 
 {% hint style="info" %}
-Your project will not be auto-upgraded if your environments aren't running the same **minor version**. For example if you are in the middle of upgrading to a new minor version, and one environment is running 8.6.x while another environment on the same project is running 8.7.x.
+Your project will not be auto-upgraded if your environments aren't running the same **minor version**. For example, if you are in the middle of upgrading to a new minor version, one environment is running 8.6.x. Meanwhile, another environment on the same project is running 8.7.x.
 {% endhint %}
 
 ## The auto upgrade rollout process
@@ -57,11 +57,11 @@ This describes how a Umbraco Cloud project is auto-upgraded:
 
 ## How do baseline updates work?
 
-If a project is a project that has had child projects created off it, the upgrade process for patch and minor versions is the same as described above. The difference is that we always upgrade the baseline as the first project, and afterward we upgrade the child projects. This ensures that if for some reason an update is done from the baseline to the children in the meantime, the upgrade will also be sent to the children.
+The upgrade process for patch and minor versions is the same for projects with child projects created off them. The difference is that we always upgrade the baseline as the first project, and afterward we upgrade the child projects. This ensures that any updates to the baseline will be automatically sent to the children if made in the meantime.
 
 ## What is a breaking change?
 
-It is important that developers understand what is considered a breaking change in Umbraco products. In most cases, an auto-upgrade will not have any breaking changes and we strive to ensure this is the case. However, in some rare cases developers may be using Umbraco’s internal code or Umbraco’s code that is not intended for public consumption, and in some releases that code may change. It is important for developers to understand the risks of using Umbraco code that is not considered a breaking change when it is updated since this may directly affect a site that is auto-upgraded.
+It is important that developers understand what is considered a breaking change in Umbraco products. In most cases, an auto-upgrade will not have any breaking changes and we strive to ensure this is the case. However, in some rare cases, developers may be using Umbraco's internal code or code not intended for public consumption. In some releases, that code may change. It is important for developers to understand the risks of using Umbraco code that is not considered a breaking change when it is updated. This may directly affect a site that is auto-upgraded.
 
 What is a breaking change is documented here: [https://our.umbraco.com/documentation/development-guidelines/breaking-changes](https://our.umbraco.com/documentation/development-guidelines/breaking-changes)
 
@@ -69,4 +69,4 @@ What is a breaking change is documented here: [https://our.umbraco.com/documenta
 
 No, it´s not possible to opt-out of product auto upgrades on Umbraco Cloud.
 
-In order for us to be able to support a site on Umbraco Cloud, we must ensure that all sites are running the latest versions of our products. That way, we know the sites are running in the most stable state.
+To support a site on Umbraco Cloud, all sites must run the latest versions of our products. That way, we know the sites are running in the most stable state.
