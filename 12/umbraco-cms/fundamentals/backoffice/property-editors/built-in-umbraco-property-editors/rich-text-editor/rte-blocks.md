@@ -50,7 +50,7 @@ These properties refer to how the Block is presented in the Block catalogue, whe
 
 * **Background color** - Define a background color to be displayed beneath the icon or thumbnail. Eg. `#424242`.
 * **Icon color** - Change the color of the Element Type icon. Eg. `#242424`.
-* **Thumbnail** - Pick an image or SVG file to replace the icon of this Block in the catalogue.
+* **Thumbnail** - Pick an image or Scalable Vector Graphics (SVG) file to replace the icon of this Block in the catalogue.
 
 The thumbnails for the catalogue are presented in the format of 16:10, and we recommend a resolution of 400px width and 250px height.
 
