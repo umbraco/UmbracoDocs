@@ -24,7 +24,7 @@ For semi-automatic upgrades, you can update your project with a click of a butto
 
 ## Troubleshooting Automated minor upgrades
 
-Umbraco Cloud supports doing minor upgrades to your projects in an automated manner. The feature is available when a new minor version of Umbraco is released (i.e. 10.5.0 or 10.6.0).
+Umbraco Cloud supports doing minor upgrades to your projects in an automated manner. The feature is available when a new minor version of Umbraco is released (for example 10.5.0 or 10.6.0).
 
 The upgrade will cover most issues it encounters, but at certain Umbraco configurations, it needs some manual intervention. This is usually related to custom code being dependent on some APIs that have either changed or been removed for the new minor upgrade.
 
@@ -34,7 +34,7 @@ In general, if anything should fail during this process, you can reach out for s
 
 Symptoms and feedback are given from the upgrade process: **Unable to run the Umbraco installer**
 
-The first step in the process, after having updated all the files, is to call the Umbraco install engine in order to get its database updated to support the new version. As this step is the first time the site gets requested after the updated files are run, it may fail. The reason is often code that is incompatible with the upgraded files.
+The first step in the process, after having updated all the files, is to call the Umbraco install engine. This is done in order to get its database updated to support the new version. As this step is the first time the site gets requested after the updated files are run, it may fail. The reason is often code that is incompatible with the upgraded files.
 
 It can be code that references APIs that have been deprecated, or code that has some strong references to specific versions. If the error is clear, it will be shown on the screen. It will be a typical ASP.NET error message also called a Yellow Screen of Death (YSOD). You should request the site, and check the error it shows. If the error isn't descriptive, then it is time to clone the repository to your local machine and fix the issue. The usual suspects would be:
 
