@@ -4,7 +4,7 @@ description: "Customizing the ASP.NET middleware pipeline in Umbraco"
 
 # Middleware
 
-Middleware is a way of handling requests and responses before or after they are completed. An example can be checking if a user is logged in before adding an item to the cart. In this example it checks something before an http request is made.
+Middleware is responsible for processing/customizing an incoming request before generating an outgoing response. Shortly defined the middleware is a step to check the requests before giving a response back. 
 
 Umbraco automatically configures all required middleware in the `WithMiddleware()` method in a specific order based on the [Microsoft documentation](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-7.0#middleware-order).
 
