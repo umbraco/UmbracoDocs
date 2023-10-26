@@ -21,7 +21,9 @@ Please be aware that this feature is currently in beta mode. During this beta pe
 
 To integrate Umbraco Cloud into your CI/CD pipeline, you'll need to make API calls to the following endpoint: `https://api.cloud.umbraco.com.`
 
+{% hint style="warning" %}
 The initial certificate for this DNS is self-signed which can give curl and other tools some issues. We are working on changing this, for now, allowing an insecure connection will make it possible to circumvent this certificate issue.
+{% endhint %}
 
 ### How to enable CI/CD Integrator in the Umbraco Cloud Portal
 
