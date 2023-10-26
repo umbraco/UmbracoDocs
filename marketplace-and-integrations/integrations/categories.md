@@ -80,7 +80,7 @@ Umbraco HQ has developed and made available integrations with different SaaS (So
         <tr>
             <td><strong>emerchantPay with Umbraco Forms</strong></td>
             <td>A custom workflow for handling online payments using a hosted payment page provided by emerchantpay.</td>
-            <td><a href="emerchantpay-with-umbarco-forms.md">emerchantpay-with-umbarco-forms.md</a></td>
+            <td><a href="emerchantpay-with-umbraco-forms.md">emerchantpay-with-umbraco-forms.md</a></td>
             <td><a href="../.gitbook/assets/emerchantpay (1).png">emerchantpay (1).png</a></td>
         </tr>
         <tr>
