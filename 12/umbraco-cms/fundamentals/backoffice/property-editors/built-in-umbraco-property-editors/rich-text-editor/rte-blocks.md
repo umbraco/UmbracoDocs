@@ -19,7 +19,7 @@ The Data Type editor allows you to configure the following properties:
 
 ## Setup Block Types
 
-Block Types are **Element Types** which need to be created before you can start configuring them as Block Types. This can be done either directly from the property editor setup process, or you can set them up beforehand and add them to the Rich Text Editor after.
+Block Types are **Element Types** which need to be created before you can start configuring them as Block Types. This can be done either directly from the property editor setup process, or you can set them up beforehand. If they are set beforehand then they need to be added to the Rich Text Editor afterward.
 
 Once you have added an Element Type as a Block Type on your Rich Text Editor Data Type you will have the option to configure it further.
 
