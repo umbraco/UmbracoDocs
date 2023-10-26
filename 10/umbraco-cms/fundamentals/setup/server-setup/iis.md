@@ -28,7 +28,11 @@ In Visual Studio right click on Umbraco web project in the _Solution Explorer_ a
 
 
 {% hint style="info" %}
-You can use the IIS Release task in Azure DevOps to deploy your website to your Web Server [Azure DevOps IIS Release Task](https://learn.microsoft.com/en-us/azure/devops/pipelines/release/deploy-webdeploy-iis-deploygroups). This task is a wrapper for MS Deploy and will allow you to configure MS Deploy to your liking.
+ 
+**Deploy a website for automated deployment with Azure DevOps to IIS**
+
+You can use the [IIS Release task in Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/pipelines/release/deploy-webdeploy-iis-deploygroups) to deploy your website to your Web Server. This task is a wrapper for `MSDeploy.exe` and can be configured as preferred.
+
 {% endhint %}
 
 ### Environment Variables in ApplicationHost.config
