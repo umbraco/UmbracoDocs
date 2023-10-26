@@ -92,7 +92,7 @@ In this next part, you are going to set up your Umbraco Cloud project and clone 
 
 Before the migration process can start, you will need to have a Umbraco Cloud project you can migrate your project into.
 
-![How to start a Umbraco Cloud trial](images/Cloud-trial-gif.gif)
+![How to start a Umbraco Cloud trial](https://github.com/umbraco/UmbracoDocs/assets/60339265/56beffee-70b9-4c2e-83a5-155549baf24d)
 
 1. The best way to get started with Umbraco Cloud is to [create a trial project](https://umbraco.com/)
 2. When your project is starting choose to start with a _clean slate_ - you need to have an empty Cloud project for the migration to be successful
