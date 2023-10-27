@@ -24,7 +24,7 @@ When minor upgrades are available, you will need a Development environment on yo
 * Umbraco Cloud reserves the right to roll out an emergency product fix to fix a critical issue at any time
 
 {% hint style="info" %}
-Your project will not be auto-upgraded if your environments aren't running the same **minor version**. For example, if you are in the middle of upgrading to a new minor version, one environment is running 8.6.x. Meanwhile, another environment on the same project is running 8.7.x.
+Your project will not be auto-upgraded if your environments aren't running the same **minor version**. For example, when trying to upgrade a project to a new minor version where one environment is running 8.6.x and another is running 8.7.x.
 {% endhint %}
 
 ## The auto upgrade rollout process
