@@ -57,7 +57,7 @@ This describes how a Umbraco Cloud project is auto-upgraded:
 
 ## How do baseline updates work?
 
-The upgrade process for patch and minor versions is the same for projects with child projects created off them. The difference is that we always upgrade the baseline as the first project, and afterward we upgrade the child projects. This ensures that any updates to the baseline will be automatically sent to the children if made in the meantime.
+The upgrade process for patch and minor versions is the same for projects with child projects created off them. The difference is that we always upgrade the baseline as the first project, and afterward we upgrade the child projects. This ensures that any updates done from the baseline will also send the upgrade to the children.
 
 ## What is a breaking change?
 
