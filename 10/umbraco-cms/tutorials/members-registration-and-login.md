@@ -70,6 +70,22 @@ With this partial in place, provided we put it in navigation or a layout page, w
 
 ## Member-only pages/Restricted access
 
+
+{% hint style="info" %} 
+If  you are using Umbraco Cloud then you should first go to Users section in the Backoffice, select your User and  add "Sensitive Data" Group to your user. 
+![Assign User Access group](images/v8-17-Assign-User-Access-Group.png)
+
+
+After that swith to the Members section in the backoffice, select each member and approve them by toggling the button.
+
+![Approve Member](images/v8-18-Approve-Member.png)
+
+
+
+
+ {% endhint %}
+
+
 Now that we have the options to:
 
 * Register a member
