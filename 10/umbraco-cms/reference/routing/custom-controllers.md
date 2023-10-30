@@ -4,7 +4,7 @@
 meta-title: Umbraco Route Hijacking
 description: >-
   Use a custom MVC controller to handle and control incoming requests for
-  content pages based on a specific Document Type, also called .
+  content pages based on a specific Document Type, also called Route Hijacking.
 ---
 
 # Custom MVC controllers (Umbraco Route Hijacking)
