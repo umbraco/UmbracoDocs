@@ -72,7 +72,11 @@ With this partial in place, provided we put it in navigation or a layout page, w
 
 
 {% hint style="info" %} 
-If  you are using Umbraco Cloud then you should first go to Users section in the Backoffice. Then select your User and  add "Sensitive Data" Group to your user. 
+If you are on Umbraco Cloud you need to do the following steps to be able to restrict access for your users:
+
+1. Go to the Users section in the Backoffice. 
+2. Select your User.
+3. add the "Sensitive Data" Group. 
 ![Assign User Access group](images/v8-17-Assign-User-Access-Group.png)
 
 
