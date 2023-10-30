@@ -80,7 +80,7 @@ If you are on Umbraco Cloud you need to do the following steps to be able to res
 ![Assign User Access group](images/v8-17-Assign-User-Access-Group.png)
 
 
-After that swith to the Members section in the backoffice, select each member and approve them by toggling the button.
+Once you have added the "Sensitive Data" group go to the Members section in the backoffice. In the Members section you need to select each member and approve them by toggling the Approved button.
 
 ![Approve Member](images/v8-18-Approve-Member.png)
 
