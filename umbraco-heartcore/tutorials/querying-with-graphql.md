@@ -146,7 +146,7 @@ Then go to the **Content** section and create a new Frontpage with the name **Ho
 
 ## Querying the GraphQL API
 
-The GraphQL endpoint accepts `POST` requests with the content type `application/json`, the body should be an object containing as a minimum a `query` property, e.g.
+The GraphQL endpoint accepts `POST` requests with the content type `application/json`, the body should be an object containing as a minimum a `query` property, for example
 
 ```json
 {
@@ -184,7 +184,7 @@ Result:
 
 ### Making the Query Generic
 
-Up until now, we have been working on a single document type which in most cases is fine, but since we want to dynamically fetch content based on the url we can use the `content` field.
+Up until now, we have been working on a single Document Type. In most cases this is fine, but since we want to dynamically fetch content based on the URL we can use the `content` field.
 
 The `content` field returns the Content interface type that contains the default fields. To allow us to query the fields on the derived types we can use fragments.
 
@@ -369,7 +369,7 @@ In the query above we are also using field aliases, this means that in the respo
           "name": "Umbraco Heartcore Documentation",
           "target": "_blank",
           "type": "EXTERNAL",
-          "url": "https://our.umbraco.com/documentation/Umbraco-Heartcore/"
+          "url": "https://docs.umbraco.com/umbraco-heartcore/"
         }
       ]
     }

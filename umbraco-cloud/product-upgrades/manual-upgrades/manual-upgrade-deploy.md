@@ -51,18 +51,45 @@ Make sure that everything works on the local clone and that you can **run the pr
 
 If you are on Umbraco 7 or Umbraco 8, follow the steps below to manually upgrade Umbraco Deploy to a later version of your project.
 
-1. Download the latest version of Umbraco Deploy here: [http://nightly.umbraco.org/?container=umbraco-deploy-release](https://nightly.umbraco.org/?container=umbraco-deploy-release) Check [Product Dependencies](https://docs.umbraco.com/umbraco-cloud/product-upgrades/product-dependencies) to be sure you download the correct version of Deploy
-2. Unzip the file on your computer
-3. Copy/Paste the files from the unzipped folder to your local project folder You should not overwrite the following files:
+1. Download **Storage Explorer** here: [https://azure.microsoft.com/en-us/products/storage/storage-explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer) and install it.
+2. Click the **"Plug"** Button (Open Connect Dialog):\
+   \
+   ![Click the "Plug" Button (Open Connect Dialog)](<../../.gitbook/assets/image (1).png>)
 
-```
-    Config/UmbracoDeploy.config
-    Config/UmbracoDeploy.Settings.config
-```
+<!---->
 
-4. Run the project locally - make sure it runs without any errors
-5. Commit and deploy the changes to the Cloud environment
-6. Again, make sure everything runs without errors before deploying to the next Cloud environment
+3. Choose **"Blob container or directory"**:\
+   ![](<../../.gitbook/assets/image (1) (1).png>)
+
+<!---->
+
+4. Choose **"Anonymously"** when prompted on how you will connect to the blob container.\
+   ![](<../../.gitbook/assets/image (2).png>)
+
+<!---->
+
+5. Enter [`https://umbraconightlies.blob.core.windows.net/umbraco-deploy-release`](https://umbraconightlies.blob.core.windows.net/umbraco-deploy-release) in the **"Blob container or directory URL":**<img src="../../.gitbook/assets/image (3).png" alt="" data-size="original">
+
+<!---->
+
+6. You will then get a list of files available to download:![](<../../.gitbook/assets/image (4).png>)
+
+<!---->
+
+7. Download the latest version of Umbraco Deploy. Check [Product Dependencies](https://docs.umbraco.com/umbraco-cloud/product-upgrades/product-dependencies) to be sure you download the correct version of Deploy.
+8. Download the to your computer&#x20;
+9. Unzip the file on your computer
+10. Copy/Paste the files from the unzipped folder to your local project folder You should not overwrite the following files:
+
+    ```
+        Config/UmbracoDeploy.config
+        Config/UmbracoDeploy.Settings.config
+    ```
+11. Run the project locally - make sure it runs without any errors
+12. Commit and deploy the changes to the Cloud environment
+13. Again, make sure everything runs without errors before deploying to the next Cloud environment
+
+
 
 </details>
 

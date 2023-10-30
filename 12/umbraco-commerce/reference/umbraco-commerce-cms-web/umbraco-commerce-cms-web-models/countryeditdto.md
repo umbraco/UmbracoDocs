@@ -10,7 +10,7 @@ public class CountryEditDto : CountryDto, IHasPath, INotificationModel
 
 **Inheritance**
 
-* class [CountryDto](countrydto.md)
+* Class [CountryDto](countrydto.md)
 * interface [IHasPath](ihaspath.md)
 
 **Namespace**

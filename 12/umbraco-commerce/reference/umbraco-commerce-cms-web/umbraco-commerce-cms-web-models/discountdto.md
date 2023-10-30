@@ -10,7 +10,7 @@ public class DiscountDto : DiscountBasicDto
 
 **Inheritance**
 
-* class [DiscountBasicDto](discountbasicdto.md)
+* Class [DiscountBasicDto](discountbasicdto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

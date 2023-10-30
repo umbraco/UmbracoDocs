@@ -16,10 +16,12 @@ Under Availability & Performance, you'll find visualization and statistics for t
 * Panel view
 * Chart and statistics view
 
-![Availability and performance Overview](../images/AP-Overview.png)
+&#x20;The visualization and statistics can be seen for all your different environments.
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Availability and performance Overview</p></figcaption></figure>
 
 {% hint style="info" %}
-The page initially displays metrics for the live environment for all Umbraco Cloud projects. More detailed visualization and tools intended for troubleshooting to be added in the future will be restricted to **Standard** and **Professional** project plans.
+More detailed visualization and tools intended for troubleshooting are to be added in the future and will be restricted to **Standard** and **Professional** project plans.
 {% endhint %}
 
 ### Time range and granularity selector

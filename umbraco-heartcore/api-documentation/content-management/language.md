@@ -1,17 +1,17 @@
-# Content Management API for Languages
+# Languages
 
 **BASE URL**: `https://api.umbraco.io`
 
-
 ## Table of Contents
-* [Common Headers](#common-headers)
-* [Authentication](#authentication)
-* [Errors](#errors)
-* [Get languages](#get-languages)
-* [Get by ISO code](#get-by-iso-code)
-* [Create language](#create-language)
-* [Update language](#update-language)
-* [Delete language](#delete-language)
+
+* [Common Headers](language.md#common-headers)
+* [Authentication](language.md#authentication)
+* [Errors](language.md#errors)
+* [Get languages](language.md#get-languages)
+* [Get by ISO code](language.md#get-by-iso-code)
+* [Create language](language.md#create-language)
+* [Update language](language.md#update-language)
+* [Delete language](language.md#delete-language)
 
 ## Common Headers
 
@@ -22,7 +22,7 @@ Umb-Project-Alias: {project-alias}
 
 ## Authentication
 
-Auth is required for this API meaning that you must supply a Bearer Token via an Authorization header or an API Key via an Authorization or Api-Key header.
+Authentication is required for this API. You must supply a Bearer Token via an Authorization header or an API Key via an Authorization or Api-Key header.
 
 ## Errors
 
@@ -162,7 +162,7 @@ Get a specific langauge by its ISO code.
 Create a new language for use on content.
 
 {% hint style="info" %}
-Please note that the number of languages that can be created is defined by the [pricing tier](LINK TO pricing tiers!).
+The number of languages that can be created is determined by the [pricing tier](https://umbraco.com/products/umbraco-heartcore/pricing/).
 {% endhint %}
 
 **URL**: `/language`
@@ -260,7 +260,7 @@ Updates an existing language.
 Deletes an existing language.
 
 {% hint style="info" %}
-Please note that deleting a language, which is in use means that content based on this language will be set to `invariant`.
+Deleting a language that is in use will result in setting the content based on this language to `invariant`.
 {% endhint %}
 
 **URL**: `/language/{id}`

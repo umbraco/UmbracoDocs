@@ -23,7 +23,7 @@ As we go through this tutorial and start building the content for our Umbraco He
 {% hint style="info" %}
 **New to Umbraco?**
 
-If you are completely new to Umbraco, we recommend that you take the **Backoffice Tour** we've created! You can find it by selecting the question mark in the top-right corner.
+If you are new to Umbraco, we recommend that you take the **Backoffice Tour** we've created! You can find it by selecting the question mark in the top-right corner.
 
 <img src="images/backoffice-tour.png" alt="Take the Backoffice Tour" data-size="original">
 {% endhint %}
@@ -54,7 +54,7 @@ In order to get started with our first Document Type, follow these steps:
 
 ![Blank Home Page Document Type](images/Blank-Document-Type.png)
 
-We have now created our very first Document Type. It's currently a blank slate, and in the next section we will start adding groups and properties in order to be able to add various types of data to our content.
+We have now created our first Document Type. It's currently a blank slate, and in the next section, we will start adding groups and properties. This way we are able to add different types of data to our content.
 
 ## Adding and defining properties
 

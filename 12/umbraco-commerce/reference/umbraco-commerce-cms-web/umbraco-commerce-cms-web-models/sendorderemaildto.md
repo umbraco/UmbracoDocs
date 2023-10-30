@@ -10,7 +10,7 @@ public class SendOrderEmailDto : SendEmailDto
 
 **Inheritance**
 
-* class [SendEmailDto](sendemaildto.md)
+* Class [SendEmailDto](sendemaildto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

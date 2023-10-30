@@ -11,7 +11,7 @@ public class NoRetryUnitOfWorkExecutionStrategy : NoRetryExecutionStrategy,
 
 **Inheritance**
 
-* class [NoRetryExecutionStrategy](../umbraco-commerce-common-resiliency/noretryexecutionstrategy.md)
+* Class [NoRetryExecutionStrategy](../umbraco-commerce-common-resiliency/noretryexecutionstrategy.md)
 * interface [IUnitOfWorkExecutionStrategy](iunitofworkexecutionstrategy.md)
 
 **Namespace**

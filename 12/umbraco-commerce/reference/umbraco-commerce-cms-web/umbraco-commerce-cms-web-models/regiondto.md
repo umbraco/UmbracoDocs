@@ -10,7 +10,7 @@ public class RegionDto : RegionBasicDto
 
 **Inheritance**
 
-* class [RegionBasicDto](regionbasicdto.md)
+* Class [RegionBasicDto](regionbasicdto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

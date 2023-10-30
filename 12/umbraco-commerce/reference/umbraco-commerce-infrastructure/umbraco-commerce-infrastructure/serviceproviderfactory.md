@@ -10,7 +10,7 @@ public class ServiceProviderFactory : ServiceProviderFactoryBase, IFactory
 
 **Inheritance**
 
-* class [ServiceProviderFactoryBase](serviceproviderfactorybase.md)
+* Class [ServiceProviderFactoryBase](serviceproviderfactorybase.md)
 * interface [IFactory](../../umbraco-commerce-common/umbraco-commerce-common/ifactory.md)
 
 **Namespace**

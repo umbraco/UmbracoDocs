@@ -34,7 +34,7 @@ In the top-right corner you will find the **invite member** option. This will al
 
 ## Settings
 
-Right next to the invite member option, you will find the **Settings** dropdown menu. Here you will find various links to more management and configuration options.
+Right next to the invite member option, you will find the **Settings** dropdown menu. Here you will find links to more management and configuration options.
 
 ### Edit Team
 

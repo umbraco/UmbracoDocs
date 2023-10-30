@@ -34,12 +34,12 @@ Alternatively, you can also find and install the NuGet package via the NuGet Pac
 
 ## Available Payment Providers
 
-<table><thead><tr><th width="181">Payment Provider</th><th>NuGet Package name</th></tr></thead><tbody><tr><td>Invoicing</td><td><code>Umbraco.Commerce.PaymentProviders.Invoicing</code></td></tr><tr><td>Klarna</td><td><code>Umbraco.Commerce.PaymentProviders.Klarna</code></td></tr><tr><td>Mollie</td><td><code>Umbraco.Commerce.PaymentProviders.Mollie</code></td></tr><tr><td>Nets</td><td><code>Umbraco.Commerce.PaymentProviders.Nets</code></td></tr><tr><td>Paypal</td><td><code>Umbraco.Commerce.PaymentProviders.PayPal</code></td></tr><tr><td>QuickPay</td><td><code>Umbraco.Commerce.PaymentProviders.QuickPay</code></td></tr><tr><td>Stripe</td><td><code>Umbraco.Commerce.PaymentProviders.Stripe</code></td></tr></tbody></table>
+<table><thead><tr><th width="181">Payment Provider</th><th>NuGet Package name</th></tr></thead><tbody><tr><td>Invoicing</td><td><code>Umbraco.Commerce.PaymentProviders.Invoicing</code></td></tr><tr><td>Klarna</td><td><code>Umbraco.Commerce.PaymentProviders.Klarna</code></td></tr><tr><td>Mollie</td><td><code>Umbraco.Commerce.PaymentProviders.Mollie</code></td></tr><tr><td>Nets</td><td><code>Umbraco.Commerce.PaymentProviders.Nets</code></td></tr><tr><td>Paypal</td><td><code>Umbraco.Commerce.PaymentProviders.PayPal</code></td></tr><tr><td>QuickPay</td><td><code>Umbraco.Commerce.PaymentProviders.QuickPay</code></td></tr><tr><td>Stripe</td><td><code>Umbraco.Commerce.PaymentProviders.Stripe</code></td></tr><tr><td>Opayo</td><td><code>Umbraco.Commerce.PaymentProviders.Opayo</code></td></tr><tr><td>Worldpay</td><td><code>Umbraco.Commerce.PaymentProviders.Worldpay</code></td></tr></tbody></table>
 
 ## Upgrading
 
-{% hint style="info" %}
-Before upgrading, it is always advisable to take a complete backup of your site/database. Every effort has been made to ensure that Umbraco Commerce will upgrade gracefully, but there is always a risk that something may not install as expected.
+{% hint style="warning" %}
+Before upgrading, it is always advisable to take a complete backup of your site and database.
 {% endhint %}
 
-Umbraco Commerce uses Umbraco Migrations to install all of its features. Install the latest version of a package over the top of the existing package installation. Umbraco Commerce is then clever enough to detect the current state of your site and only install the features that are missing.
+Umbraco Commerce uses Umbraco Migrations to install all of its features. Upgrades follow the same process as the installation processes detailed above, by installing the latest version over the top of the existing package installation. By using this process the installation will only install new features and features that are missing.

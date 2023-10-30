@@ -10,7 +10,7 @@ public class AttributeValue : AliasNamePair
 
 **Inheritance**
 
-* class [AliasNamePair](aliasnamepair.md)
+* Class [AliasNamePair](aliasnamepair.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

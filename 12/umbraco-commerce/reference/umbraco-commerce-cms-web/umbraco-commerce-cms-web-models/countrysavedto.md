@@ -10,7 +10,7 @@ public class CountrySaveDto : CountryDto, IValidatableObject
 
 **Inheritance**
 
-* class [CountryDto](countrydto.md)
+* Class [CountryDto](countrydto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

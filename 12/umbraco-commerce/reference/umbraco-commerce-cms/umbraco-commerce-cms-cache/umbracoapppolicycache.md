@@ -10,7 +10,7 @@ public class UmbracoAppPolicyCache : UmbracoAppCache, IPolicyCache
 
 **Inheritance**
 
-* class [UmbracoAppCache](umbracoappcache.md)
+* Class [UmbracoAppCache](umbracoappcache.md)
 * interface [IPolicyCache](../../umbraco-commerce-core/umbraco-commerce-core-cache/ipolicycache.md)
 
 **Namespace**

@@ -10,7 +10,7 @@ public class Country : CountryReadOnly
 
 **Inheritance**
 
-* class [CountryReadOnly](countryreadonly.md)
+* Class [CountryReadOnly](countryreadonly.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

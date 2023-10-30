@@ -60,7 +60,7 @@ With this setup, once you commit your code in the Umbraco Cloud Git repository, 
 
 In the above diagram, the external git repository contains the source code of a class library CS project, if you had a class library project that was used in your Cloud project.
 
-With this setup, you commit your changes twice. Once to commit your code in your source control and the other commit to the Umbraco Cloud GIT repository to deploy your website. Your source code is not hosted on Umbraco Cloud but only your cloned project will be in the Umbraco Cloud GIT Repository. Your code is built and compiled into the cloned project and then pushed to Umbraco Cloud. Thus updating the site with your latest code changes.
+With this setup, you commit your changes twice. Once to commit your code in your source control and the other commit to the Umbraco Cloud Git repository to deploy your website. Your source code is not hosted on Umbraco Cloud but only your cloned project will be in the Umbraco Cloud Git Repository. Your code is built and compiled into the cloned project and then pushed to Umbraco Cloud. Thus updating the site with your latest code changes.
 
 #### Disadvantages of using an Umbraco Cloud Project repository as a source code repository
 

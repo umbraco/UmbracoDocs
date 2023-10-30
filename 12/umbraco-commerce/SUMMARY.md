@@ -3,13 +3,17 @@
 * [What is Umbraco Commerce?](README.md)
 * [Commerce Packages](https://docs.umbraco.com/umbraco-commerce-packages)
 * [Commerce Payment Providers](https://docs.umbraco.com/umbraco-commerce-payment-providers)
+* [Release Notes](release-notes.md)
 
 ## Getting Started
 
 * [Introduction](getting-started/introduction.md)
-* [Installation](getting-started/installation.md)
+* [Installation](getting-started/installation/README.md)
+* [Upgrading](getting-started/upgrading/README.md)
+  * [Version Specific Upgrade Notes](getting-started/upgrading/version-specific-upgrades.md)
 * [Umbraco Configuration](getting-started/umbraco-configuration.md)
 * [User Interface](getting-started/user-interface.md)
+* [Licensing](getting-started/licensing-model.md)
 
 ## How-To Guides
 
@@ -39,7 +43,8 @@
 * [Price Freezing](key-concepts/price-freezing.md)
 * [Product Adapters](key-concepts/product-adapters.md)
 * [Product Bundles](key-concepts/product-bundles.md)
-* [Product Variants](key-concepts/product-variants.md)
+* [Product Variants](key-concepts/product-variants/README.md)
+  * [Complex Variants](key-concepts/product-variants/complex-variants.md)
 * [Properties](key-concepts/properties.md)
 * [ReadOnly and Writable Entities](key-concepts/readonly-and-writable-entities.md)
 * [Search Specifications](key-concepts/search-specifications.md)
@@ -56,4 +61,16 @@
 
 ## Reference
 
+* [Storefront API](reference/storefront-api/README.md)
+  * [Endpoints](reference/storefront-api/endpoints/README.md)
+    * [Order](reference/storefront-api/endpoints/order.md)
+    * [Checkout](reference/storefront-api/endpoints/checkout.md)
+    * [Product](reference/storefront-api/endpoints/product.md)
+    * [Customer](reference/storefront-api/endpoints/customer.md)
+    * [Store](reference/storefront-api/endpoints/store.md)
+    * [Currency](reference/storefront-api/endpoints/currency.md)
+    * [Country](reference/storefront-api/endpoints/country.md)
+    * [Payment method](reference/storefront-api/endpoints/payment-method.md)
+    * [Shipping method](reference/storefront-api/endpoints/shipping-method.md)
+    * [Content](reference/storefront-api/endpoints/content.md)
 * [Go behind the scenes](reference/go-behind-the-scenes.md)

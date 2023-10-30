@@ -1,6 +1,6 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+
+
 meta.Title: Maintaining Umbraco Packages
 description: >-
   Once you've created and published your package, here is what's involved in

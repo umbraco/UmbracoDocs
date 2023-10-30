@@ -10,7 +10,7 @@ public class UmbracoNodeStoreFinderCollection : ComposedCollection<IUmbracoNodeS
 
 **Inheritance**
 
-* class [ComposedCollection&lt;!0&gt;](../../umbraco-commerce-common/umbraco-commerce-common-composing/composedcollection-1.md)
+* Class [ComposedCollection&lt;!0&gt;](../../umbraco-commerce-common/umbraco-commerce-common-composing/composedcollection-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Finders](README.md)

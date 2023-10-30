@@ -1,9 +1,16 @@
 ---
 description: >-
-    Learn how to upgrade your Umbraco 8 project to the latest version of Umbraco CMS.
+  Learn how to upgrade your Umbraco 8 project to the latest version of Umbraco
+  CMS.
 ---
 
 # Upgrade from Umbraco 8 to the latest version
+
+{% hint style="danger" %}
+It is currently not possible to upgrade directly **from Umbraco 8 to Umbraco 12**.
+
+The recommended approach for upgrading from v8 to v12 is to use this guide to upgrade from _Umbraco 8 to Umbraco 10_ and then use the [Upgrading to Major](../#upgrade-to-a-new-major) steps to upgrade from _Umbraco 10 to Umbraco 12_.
+{% endhint %}
 
 Since the underlying framework going from Umbraco 8 to the latest version has changed, there is no direct upgrade path. That said, it is possible to re-use the database from your Umbraco 8 project on your new project in order to maintain the content.
 
@@ -17,6 +24,10 @@ You also need to make sure that the packages you are using are available on the 
 * A clean installation of the latest version of Umbraco.
 * A backup of your Umbraco 8 project database.
 
+{% hint style="info" %}
+If you use Umbraco Forms, then on the clean installation of Umbraco, you will need to install `Umbraco.Forms` package as well.
+{% endhint %}
+
 ## Video Tutorial
 
 {% hint style="warning" %}
@@ -29,22 +40,32 @@ A video tutorial guiding you through the steps of upgrading from version 8 to th
 
 ## Step 1: Content Migration
 
-1. Create a backup of the database from your Umbraco 8 project.
+{% hint style="warning" %}
+If you use Umbraco Forms, make sure to have [`StoreUmbracoFormsInDbset`](https://docs.umbraco.com/umbraco-forms/developer/forms-in-the-database#enable-storing-forms-definitions-in-the-database)to `True` before **step 1**.
+{% endhint %}
+
+1. Create a backup of the database from your Umbraco 8 project (after you have upgraded to the latest version of v8). For this, you can use the [database backup guide](https://docs.umbraco.com/umbraco-cloud/databases/backups#backup-with-sql-server-management-studio).
 2. Import the database backup into SQL Server Management Studio.
 3. Update the connection string in the new projects `appsettings.json` file so that it connects to the Umbraco 8 database:
+4. Create a backup of the database from your Umbraco 8 project.
+5. Import the database backup into SQL Server Management Studio.
+6. Update the connection string in the new projects `appsettings.json` file so that it connects to the Umbraco 8 database:
 
 ```json
 "ConnectionStrings": {
-    "umbracoDbDSN": "Server=YourLocalSQLServerHere;Database=NameOfYourDatabaseHere;Integrated Security=true"
+    "umbracoDbDSN": "Server=YourLocalSQLServerHere;Database=NameOfYourDatabaseHere;;User Id=NameOfYourUserHere;Password=YourPasswordHere;TrustServerCertificate=True"
 }
 ```
 
+{% hint style="info" %}
+You can also add the connection details if you spin up the clean installation&#x20;
+{% endhint %}
+
 4. Run the new project and login to authorize the upgrade.
 5. Select "Upgrade" when the upgrade wizard appears.
+6. Once the upgrade has been completed, it's recommended to login to the backoffice to verify if your project is upgraded to new version.
 
-Once the upgrade has completed, it is recommended to login to the backoffice to verify the upgrade.
-
-{% hint style="info" %}
+{% hint style="success" %}
 This is **only content migration** and the database will be migrated.
 
 You need to manually update the view files and custom code implementation. For more information, see Step 3 of this guide.
@@ -54,11 +75,11 @@ You need to manually update the view files and custom code implementation. For m
 
 1. The following files/folders need to be copied from the Umbraco 8 project into the new project:
    * `~/Views` - **Do not** overwrite the default Macro and Partial View Macro files unless changes have been made to these.
-   * `~/Media`
+   * `~/Media` - Media folder from v8 needs to be copied over into the `wwwroot - media` folder&#x20;
    * Any files/folders related to Stylesheets and JavaScript.
 2. Migrate custom configuration from the Umbraco 8 configuration files (`.config`) into the `appsettings.json` file on the new project.
-   * As of Umbraco version 9, the configuration no longer lives in the `Web.Config` file and has been replaced by the `appsettings.json` file. Learn more about this in the [Configuration](../../../../reference/configuration/README.md) article.
-3. [Migrate Umbraco Forms data to the database](https://docs.umbraco.com/umbraco-forms/developer/forms-in-the-database), if relevant.
+   * As of Umbraco version 9, the configuration no longer lives in the `Web.Config` file and has been replaced by the `appsettings.json` file. Learn more about this in the [Configuration](../../../../reference/configuration/) article.
+3. [Migrate Umbraco Forms data to the database](https://docs.umbraco.com/umbraco-forms/developer/forms-in-the-database#migrating-forms-in-files-into-a-site), if relevant.
    * As of Umbraco Forms version 9, it is only possible to store Forms data in the database. If Umbraco Forms was used on the Umbraco 8 project, the files need to be migrated to the database.
 4. Run the new project.
    * It **will** give you an error screen on the frontend as none of the Template files have been updated.
@@ -71,10 +92,14 @@ The latest version of Umbraco is different from Umbraco 8 in many ways. With all
 
 One of the changes is how published content is rendered through Template files. Due to this, it will be necessary to update **all** the Template files (`.cshtml`) to reflect these changes.
 
-Read more about these changes in the [IPublishedContent](../../../../reference/querying/ipublishedcontent) section of the Umbraco CMS documentation.
+Read more about these changes in the [IPublishedContent](../../../../reference/querying/ipublishedcontent/) section of the Umbraco CMS documentation.
 
 * Template files need to inherit from `Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>` instead of `Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.HomePage>`
 * Template files need to use `ContentModels = Umbraco.Cms.Web.Common.PublishedModels` instead of `ContentModels = Umbraco.Web.PublishedModels`
+
+{% hint style="info" %}
+For more information on the correct namespaces or custom code, you can find the references in the [API Documentation](../../../../reference/api-documentation.md) article.
+{% endhint %}
 
 Depending on the extent of the project and the amount of custom code and implementations, this step is going to require a lot of work.
 
@@ -85,5 +110,5 @@ This concludes this tutorial. Find related information and further reading in th
 ## Related Information
 
 * [Issue tracker for known issues with Content Migration](https://github.com/umbraco/UmbracoDocs/issues)
-* [Configuration in modern Umbraco](../../../../reference/configuration/README.md)
-* [Configuration in legacy Umrbaco](https://our.umbraco.com/documentation/Reference/Configuration-for-Umbraco-7-and-8/)
+* [Configuration in modern Umbraco](../../../../reference/configuration/)
+* [Configuration in legacy Umbraco](https://our.umbraco.com/documentation/Reference/Configuration-for-Umbraco-7-and-8/)

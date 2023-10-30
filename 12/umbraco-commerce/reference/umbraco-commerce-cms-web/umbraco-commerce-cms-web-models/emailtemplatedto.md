@@ -10,7 +10,7 @@ public class EmailTemplateDto : EmailTemplateBasicDto
 
 **Inheritance**
 
-* class [EmailTemplateBasicDto](emailtemplatebasicdto.md)
+* Class [EmailTemplateBasicDto](emailtemplatebasicdto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

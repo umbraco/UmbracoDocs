@@ -1,6 +1,6 @@
 # Frequently asked questions
 
-Here you will find answers to the questions we most commonly hear from people that are wondering if Umbraco Cloud is the right fit for their project. The answers you will find here are of a more technical nature and are directed at developers.
+Here you will find answers to the questions we most commonly hear from people who are wondering if Umbraco Cloud is the right fit for their project. The answers you will find here are of a more technical nature and are directed at developers.
 
 If you are interested in more general information about the product, you should [visit the FAQ on our website](https://umbraco.com/products/umbraco-cloud/faq/).
 
@@ -34,7 +34,889 @@ Yes, you can. Umbraco Cloud uses the very same Umbraco version that you can down
 
 Umbraco Cloud is best when used as the base for a new project. There is a specific way of working with Umbraco and Umbraco Cloud in order to take full advantage of the service. That’s not to say you can’t migrate an existing site, only that some changes may be required in order for your site to fully work with Umbraco Cloud. For more information [read our guide to moving an existing site](getting-started/migrate-existing-site/).
 
-***
+### What languages are available for content localization on Umbraco Cloud?
+
+Umbraco Cloud relies on the underlying Azure infrastructure for content localization in Umbraco CMS. Find the available languages in the dropdown below.
+
+<details>
+
+<summary>Languages Available in Umbraco Cloud</summary>
+
+{% code lineNumbers="true" %}
+```
+Afar
+Afar (Djibouti)
+Afar (Eritrea)
+Afar (Ethiopia)
+Afrikaans
+Afrikaans (Namibia)
+Afrikaans (South Africa)
+Aghem
+Aghem (Cameroon)
+Akan
+Akan (Ghana)
+Albanian
+Albanian (Albania)
+Albanian (Kosovo)
+Albanian (North Macedonia)
+Amharic
+Amharic (Ethiopia)
+Arabic
+Arabic (Algeria)
+Arabic (Bahrain)
+Arabic (Chad)
+Arabic (Comoros)
+Arabic (Djibouti)
+Arabic (Egypt)
+Arabic (Eritrea)
+Arabic (Iraq)
+Arabic (Israel)
+Arabic (Jordan)
+Arabic (Kuwait)
+Arabic (Lebanon)
+Arabic (Libya)
+Arabic (Mauritania)
+Arabic (Morocco)
+Arabic (Oman)
+Arabic (Palestinian Authority)
+Arabic (Qatar)
+Arabic (Saudi Arabia)
+Arabic (Somalia)
+Arabic (South Sudan)
+Arabic (Sudan)
+Arabic (Syria)
+Arabic (Tunisia)
+Arabic (United Arab Emirates)
+Arabic (World)
+Arabic (Yemen)
+Armenian
+Armenian (Armenia)
+Assamese
+Assamese (India)
+Asturian
+Asturian (Spain)
+Asu
+Asu (Tanzania)
+Azerbaijani
+Azerbaijani (Cyrillic, Azerbaijan)
+Azerbaijani (Cyrillic)
+Azerbaijani (Latin, Azerbaijan)
+Azerbaijani (Latin)
+Bafia
+Bafia (Cameroon)
+Bamanankan
+Bamanankan (Mali)
+Bangla
+Bangla (Bangladesh)
+Bangla (India)
+Basaa
+Basaa (Cameroon)
+Bashkir
+Bashkir (Russia)
+Basque
+Basque (Spain)
+Belarusian
+Belarusian (Belarus)
+Bemba
+Bemba (Zambia)
+Bena
+Bena (Tanzania)
+Blin
+Blin (Eritrea)
+Bodo
+Bodo (India)
+Bosnian
+Bosnian (Cyrillic, Bosnia &amp; Herzegovina)
+Bosnian (Cyrillic)
+Bosnian (Latin, Bosnia &amp; Herzegovina)
+Bosnian (Latin)
+Breton
+Breton (France)
+Bulgarian
+Bulgarian (Bulgaria)
+Burmese
+Burmese (Myanmar)
+Catalan
+Catalan (Andorra)
+Catalan (France)
+Catalan (Italy)
+Catalan (Spain)
+Cebuano
+Cebuano (Philippines)
+Central Atlas Tamazight
+Central Atlas Tamazight (Algeria)
+Central Atlas Tamazight (Arabic, Morocco)
+Central Atlas Tamazight (Arabic)
+Central Atlas Tamazight (Morocco)
+Central Atlas Tamazight (Tifinagh, Morocco)
+Central Atlas Tamazight (Tifinagh)
+Central Kurdish
+Central Kurdish (Iran)
+Central Kurdish (Iraq)
+Chakma
+Chakma (Bangladesh)
+Chakma (India)
+Chechen
+Chechen (Russia)
+Cherokee
+Cherokee (United States)
+Chiga
+Chiga (Uganda)
+Chinese
+Chinese (Simplified, China)
+Chinese (Simplified, Hong Kong SAR)
+Chinese (Simplified, Macao SAR)
+Chinese (Simplified, Singapore)
+Chinese (Simplified)
+Chinese (Traditional, Hong Kong SAR)
+Chinese (Traditional, Macao SAR)
+Chinese (Traditional, Taiwan)
+Chinese (Traditional)
+Church Slavic
+Church Slavic (Russia)
+Colognian
+Colognian (Germany)
+Cornish
+Cornish (United Kingdom)
+Corsican
+Corsican (France)
+Croatian
+Croatian (Bosnia &amp; Herzegovina)
+Croatian (Croatia)
+Czech
+Czech (Czechia)
+Danish
+Danish (Denmark)
+Danish (Greenland)
+Divehi
+Divehi (Maldives)
+Dogri
+Dogri (India)
+Duala
+Duala (Cameroon)
+Dutch
+Dutch (Aruba)
+Dutch (Belgium)
+Dutch (Bonaire, Sint Eustatius and Saba)
+Dutch (Curaçao)
+Dutch (Netherlands)
+Dutch (Sint Maarten)
+Dutch (Suriname)
+Dzongkha
+Dzongkha (Bhutan)
+Edo
+Edo (Nigeria)
+Embu
+Embu (Kenya)
+English
+English (American Samoa)
+English (Anguilla)
+English (Antigua &amp; Barbuda)
+English (Australia)
+English (Austria)
+English (Bahamas)
+English (Barbados)
+English (Belgium)
+English (Belize)
+English (Bermuda)
+English (Botswana)
+English (British Indian Ocean Territory)
+English (British Virgin Islands)
+English (Burundi)
+English (Cameroon)
+English (Canada)
+English (Caribbean)
+English (Cayman Islands)
+English (Christmas Island)
+English (Cocos [Keeling] Islands)
+English (Cook Islands)
+English (Cyprus)
+English (Denmark)
+English (Dominica)
+English (Eritrea)
+English (Eswatini)
+English (Europe)
+English (Falkland Islands)
+English (Fiji)
+English (Finland)
+English (Gambia)
+English (Germany)
+English (Ghana)
+English (Gibraltar)
+English (Grenada)
+English (Guam)
+English (Guernsey)
+English (Guyana)
+English (Hong Kong SAR)
+English (India)
+English (Indonesia)
+English (Ireland)
+English (Isle of Man)
+English (Israel)
+English (Jamaica)
+English (Jersey)
+English (Kenya)
+English (Kiribati)
+English (Lesotho)
+English (Liberia)
+English (Macao SAR)
+English (Madagascar)
+English (Malawi)
+English (Malaysia)
+English (Malta)
+English (Marshall Islands)
+English (Mauritius)
+English (Micronesia)
+English (Montserrat)
+English (Namibia)
+English (Nauru)
+English (Netherlands)
+English (New Zealand)
+English (Nigeria)
+English (Niue)
+English (Norfolk Island)
+English (Northern Mariana Islands)
+English (Pakistan)
+English (Palau)
+English (Papua New Guinea)
+English (Philippines)
+English (Pitcairn Islands)
+English (Puerto Rico)
+English (Rwanda)
+English (Samoa)
+English (Seychelles)
+English (Sierra Leone)
+English (Singapore)
+English (Sint Maarten)
+English (Slovenia)
+English (Solomon Islands)
+English (South Africa)
+English (South Sudan)
+English (St Helena, Ascension, Tristan da Cunha)
+English (St. Kitts &amp; Nevis)
+English (St. Lucia)
+English (St. Vincent &amp; Grenadines)
+English (Sudan)
+English (Sweden)
+English (Switzerland)
+English (Tanzania)
+English (Tokelau)
+English (Tonga)
+English (Trinidad &amp; Tobago)
+English (Turks &amp; Caicos Islands)
+English (Tuvalu)
+English (U.S. Outlying Islands)
+English (U.S. Virgin Islands)
+English (Uganda)
+English (United Arab Emirates)
+English (United Kingdom)
+English (United States, Computer)
+English (United States)
+English (Vanuatu)
+English (World)
+English (Zambia)
+English (Zimbabwe)
+Esperanto
+Esperanto (World)
+Estonian
+Estonian (Estonia)
+Ewe
+Ewe (Ghana)
+Ewe (Togo)
+Ewondo
+Ewondo (Cameroon)
+Faroese
+Faroese (Denmark)
+Faroese (Faroe Islands)
+Filipino
+Filipino (Philippines)
+Finnish
+Finnish (Finland)
+French
+French (Algeria)
+French (Belgium)
+French (Benin)
+French (Burkina Faso)
+French (Burundi)
+French (Cameroon)
+French (Canada)
+French (Caribbean)
+French (Central African Republic)
+French (Chad)
+French (Comoros)
+French (Congo [DRC])
+French (Congo)
+French (Côte d’Ivoire)
+French (Djibouti)
+French (Equatorial Guinea)
+French (France)
+French (French Guiana)
+French (French Polynesia)
+French (Gabon)
+French (Guadeloupe)
+French (Guinea)
+French (Haiti)
+French (Luxembourg)
+French (Madagascar)
+French (Mali)
+French (Martinique)
+French (Mauritania)
+French (Mauritius)
+French (Mayotte)
+French (Monaco)
+French (Morocco)
+French (New Caledonia)
+French (Niger)
+French (Réunion)
+French (Rwanda)
+French (Senegal)
+French (Seychelles)
+French (St. Barthélemy)
+French (St. Martin)
+French (St. Pierre &amp; Miquelon)
+French (Switzerland)
+French (Syria)
+French (Togo)
+French (Tunisia)
+French (Vanuatu)
+French (Wallis &amp; Futuna)
+Friulian
+Friulian (Italy)
+Fulah
+Fulah (Adlam, Burkina Faso)
+Fulah (Adlam, Cameroon)
+Fulah (Adlam, Gambia)
+Fulah (Adlam, Ghana)
+Fulah (Adlam, Guinea-Bissau)
+Fulah (Adlam, Guinea)
+Fulah (Adlam, Liberia)
+Fulah (Adlam, Mauritania)
+Fulah (Adlam, Niger)
+Fulah (Adlam, Nigeria)
+Fulah (Adlam, Senegal)
+Fulah (Adlam, Sierra Leone)
+Fulah (Adlam)
+Fulah (Latin, Burkina Faso)
+Fulah (Latin, Cameroon)
+Fulah (Latin, Gambia)
+Fulah (Latin, Ghana)
+Fulah (Latin, Guinea-Bissau)
+Fulah (Latin, Guinea)
+Fulah (Latin, Liberia)
+Fulah (Latin, Mauritania)
+Fulah (Latin, Niger)
+Fulah (Latin, Nigeria)
+Fulah (Latin, Senegal)
+Fulah (Latin, Sierra Leone)
+Fulah (Latin)
+Galician
+Galician (Spain)
+Ganda
+Ganda (Uganda)
+Georgian
+Georgian (Georgia)
+German
+German (Austria)
+German (Belgium)
+German (Germany)
+German (Italy)
+German (Liechtenstein)
+German (Luxembourg)
+German (Switzerland)
+Greek
+Greek (Cyprus)
+Greek (Greece)
+Guarani
+Guarani (Paraguay)
+Gujarati
+Gujarati (India)
+Gusii
+Gusii (Kenya)
+Hausa
+Hausa (Ghana)
+Hausa (Niger)
+Hausa (Nigeria)
+Hawaiian
+Hawaiian (United States)
+Hebrew
+Hebrew (Israel)
+Hindi
+Hindi (India)
+Hungarian
+Hungarian (Hungary)
+Ibibio
+Ibibio (Nigeria)
+Icelandic
+Icelandic (Iceland)
+Igbo
+Igbo (Nigeria)
+Inari Sami
+Inari Sami (Finland)
+Indonesian
+Indonesian (Indonesia)
+Interlingua
+Interlingua (World)
+Inuktitut
+Inuktitut (Canada)
+Inuktitut (Latin, Canada)
+Inuktitut (Latin)
+Invariant Language (Invariant Country)
+Irish
+Irish (Ireland)
+Irish (United Kingdom)
+isiXhosa
+isiXhosa (South Africa)
+isiZulu
+isiZulu (South Africa)
+Italian
+Italian (Italy)
+Italian (San Marino)
+Italian (Switzerland)
+Italian (Vatican City)
+Japanese
+Japanese (Japan)
+Javanese
+Javanese (Indonesia)
+Javanese (Javanese, Indonesia)
+Javanese (Javanese)
+Jola-Fonyi
+Jola-Fonyi (Senegal)
+Kabuverdianu
+Kabuverdianu (Cabo Verde)
+Kabyle
+Kabyle (Algeria)
+Kako
+Kako (Cameroon)
+Kalaallisut
+Kalaallisut (Greenland)
+Kalenjin
+Kalenjin (Kenya)
+Kamba
+Kamba (Kenya)
+Kannada
+Kannada (India)
+Kanuri
+Kanuri (Latin, Nigeria)
+Kanuri (Latin)
+Kashmiri
+Kashmiri (Arabic, India)
+Kashmiri (Arabic)
+Kashmiri (Devanagari, India)
+Kashmiri (Devanagari)
+Kazakh
+Kazakh (Kazakhstan)
+Khmer
+Khmer (Cambodia)
+Kikuyu
+Kikuyu (Kenya)
+Kinyarwanda
+Kinyarwanda (Rwanda)
+Kiswahili
+Kiswahili (Congo [DRC])
+Kiswahili (Kenya)
+Kiswahili (Tanzania)
+Kiswahili (Uganda)
+Konkani
+Konkani (India)
+Korean
+Korean (Korea)
+Korean (North Korea)
+Koyra Chiini
+Koyra Chiini (Mali)
+Koyraboro Senni
+Koyraboro Senni (Mali)
+Kwasio
+Kwasio (Cameroon)
+Kyrgyz
+Kyrgyz (Kyrgyzstan)
+Kʼicheʼ
+Kʼicheʼ (Guatemala)
+Lakota
+Lakota (United States)
+Langi
+Langi (Tanzania)
+Lao
+Lao (Laos)
+Latin
+Latin (Vatican City)
+Latvian
+Latvian (Latvia)
+Lingala
+Lingala (Angola)
+Lingala (Central African Republic)
+Lingala (Congo [DRC])
+Lingala (Congo)
+Lithuanian
+Lithuanian (Lithuania)
+Low German
+Low German (Germany)
+Low German (Netherlands)
+Lower Sorbian
+Lower Sorbian (Germany)
+Luba-Katanga
+Luba-Katanga (Congo [DRC])
+Lule Sami
+Lule Sami (Norway)
+Lule Sami (Sweden)
+Luo
+Luo (Kenya)
+Luxembourgish
+Luxembourgish (Luxembourg)
+Luyia
+Luyia (Kenya)
+Macedonian
+Macedonian (North Macedonia)
+Machame
+Machame (Tanzania)
+Maithili
+Maithili (India)
+Makhuwa-Meetto
+Makhuwa-Meetto (Mozambique)
+Makonde
+Makonde (Tanzania)
+Malagasy
+Malagasy (Madagascar)
+Malay
+Malay (Brunei)
+Malay (Indonesia)
+Malay (Malaysia)
+Malay (Singapore)
+Malayalam
+Malayalam (India)
+Maltese
+Maltese (Malta)
+Manipuri
+Manipuri (Bangla, India)
+Manipuri (Bangla)
+Manx
+Manx (Isle of Man)
+Maori
+Maori (New Zealand)
+Mapuche
+Mapuche (Chile)
+Marathi
+Marathi (India)
+Masai
+Masai (Kenya)
+Masai (Tanzania)
+Mazanderani
+Mazanderani (Iran)
+Meru
+Meru (Kenya)
+Metaʼ
+Metaʼ (Cameroon)
+Mohawk
+Mohawk (Canada)
+Mongolian
+Mongolian (Mongolia)
+Mongolian (Mongolian, China)
+Mongolian (Mongolian, Mongolia)
+Mongolian (Mongolian)
+Morisyen
+Morisyen (Mauritius)
+Mundang
+Mundang (Cameroon)
+N’Ko
+N’Ko (Guinea)
+Nama
+Nama (Namibia)
+Nepali
+Nepali (India)
+Nepali (Nepal)
+Ngiemboon
+Ngiemboon (Cameroon)
+Ngomba
+Ngomba (Cameroon)
+Nigerian Pidgin
+Nigerian Pidgin (Nigeria)
+North Ndebele
+North Ndebele (Zimbabwe)
+Northern Luri
+Northern Luri (Iran)
+Northern Luri (Iraq)
+Northern Sami
+Northern Sami (Finland)
+Northern Sami (Norway)
+Northern Sami (Sweden)
+Norwegian Bokmål
+Norwegian Bokmål (Norway)
+Norwegian Bokmål (Svalbard &amp; Jan Mayen)
+Norwegian Nynorsk
+Norwegian Nynorsk (Norway)
+Nuer
+Nuer (South Sudan)
+Nyankole
+Nyankole (Uganda)
+Occitan
+Occitan (France)
+Odia
+Odia (India)
+Oromo
+Oromo (Ethiopia)
+Oromo (Kenya)
+Ossetic
+Ossetic (Georgia)
+Ossetic (Russia)
+Papiamento
+Papiamento (Caribbean)
+Pashto
+Pashto (Afghanistan)
+Pashto (Pakistan)
+Persian
+Persian (Afghanistan)
+Persian (Iran)
+Polish
+Polish (Poland)
+Portuguese
+Portuguese (Angola)
+Portuguese (Brazil)
+Portuguese (Cabo Verde)
+Portuguese (Equatorial Guinea)
+Portuguese (Guinea-Bissau)
+Portuguese (Luxembourg)
+Portuguese (Macao SAR)
+Portuguese (Mozambique)
+Portuguese (Portugal)
+Portuguese (São Tomé &amp; Príncipe)
+Portuguese (Switzerland)
+Portuguese (Timor-Leste)
+Prussian
+Prussian (World)
+Punjabi
+Punjabi (Arabic, Pakistan)
+Punjabi (Arabic)
+Punjabi (Gurmukhi, India)
+Punjabi (Gurmukhi)
+Quechua
+Quechua (Bolivia)
+Quechua (Ecuador)
+Quechua (Peru)
+Romanian
+Romanian (Moldova)
+Romanian (Romania)
+Romansh
+Romansh (Switzerland)
+Rombo
+Rombo (Tanzania)
+Rundi
+Rundi (Burundi)
+Russian
+Russian (Belarus)
+Russian (Kazakhstan)
+Russian (Kyrgyzstan)
+Russian (Moldova)
+Russian (Russia)
+Russian (Ukraine)
+Rwa
+Rwa (Tanzania)
+Saho
+Saho (Eritrea)
+Sakha
+Sakha (Russia)
+Samburu
+Samburu (Kenya)
+Sango
+Sango (Central African Republic)
+Sangu
+Sangu (Tanzania)
+Sanskrit
+Sanskrit (India)
+Santali
+Santali (Ol Chiki, India)
+Santali (Ol Chiki)
+Scottish Gaelic
+Scottish Gaelic (United Kingdom)
+Sena
+Sena (Mozambique)
+Serbian
+Serbian (Cyrillic, Bosnia &amp; Herzegovina)
+Serbian (Cyrillic, Kosovo)
+Serbian (Cyrillic, Montenegro)
+Serbian (Cyrillic, Serbia)
+Serbian (Cyrillic)
+Serbian (Latin, Bosnia &amp; Herzegovina)
+Serbian (Latin, Kosovo)
+Serbian (Latin, Montenegro)
+Serbian (Latin, Serbia)
+Serbian (Latin)
+Sesotho
+Sesotho (Lesotho)
+Sesotho (South Africa)
+Sesotho sa Leboa
+Sesotho sa Leboa (South Africa)
+Setswana
+Setswana (Botswana)
+Setswana (South Africa)
+Shambala
+Shambala (Tanzania)
+Shona
+Shona (Zimbabwe)
+Sindhi
+Sindhi (Arabic, Pakistan)
+Sindhi (Arabic)
+Sindhi (Devanagari, India)
+Sindhi (Devanagari)
+Sinhala
+Sinhala (Sri Lanka)
+siSwati
+siSwati (Eswatini)
+siSwati (South Africa)
+Skolt Sami
+Skolt Sami (Finland)
+Slovak
+Slovak (Slovakia)
+Slovenian
+Slovenian (Slovenia)
+Soga
+Soga (Uganda)
+Somali
+Somali (Djibouti)
+Somali (Ethiopia)
+Somali (Kenya)
+Somali (Somalia)
+South Ndebele
+South Ndebele (South Africa)
+Southern Sami
+Southern Sami (Norway)
+Southern Sami (Sweden)
+Spanish
+Spanish (Argentina)
+Spanish (Belize)
+Spanish (Bolivia)
+Spanish (Brazil)
+Spanish (Chile)
+Spanish (Colombia)
+Spanish (Costa Rica)
+Spanish (Cuba)
+Spanish (Dominican Republic)
+Spanish (Ecuador)
+Spanish (El Salvador)
+Spanish (Equatorial Guinea)
+Spanish (Guatemala)
+Spanish (Honduras)
+Spanish (Latin America)
+Spanish (Mexico)
+Spanish (Nicaragua)
+Spanish (Panama)
+Spanish (Paraguay)
+Spanish (Peru)
+Spanish (Philippines)
+Spanish (Puerto Rico)
+Spanish (Spain)
+Spanish (United States)
+Spanish (Uruguay)
+Spanish (Venezuela)
+Standard Moroccan Tamazight
+Standard Moroccan Tamazight (Morocco)
+Sundanese
+Sundanese (Latin, Indonesia)
+Sundanese (Latin)
+Swedish
+Swedish (Åland Islands)
+Swedish (Finland)
+Swedish (Sweden)
+Swiss German
+Swiss German (France)
+Swiss German (Liechtenstein)
+Swiss German (Switzerland)
+Syriac
+Syriac (Syria)
+Tachelhit
+Tachelhit (Latin, Morocco)
+Tachelhit (Latin)
+Tachelhit (Tifinagh, Morocco)
+Tachelhit (Tifinagh)
+Taita
+Taita (Kenya)
+Tajik
+Tajik (Tajikistan)
+Tamil
+Tamil (India)
+Tamil (Malaysia)
+Tamil (Singapore)
+Tamil (Sri Lanka)
+Tasawaq
+Tasawaq (Niger)
+Tatar
+Tatar (Russia)
+Telugu
+Telugu (India)
+Teso
+Teso (Kenya)
+Teso (Uganda)
+Thai
+Thai (Thailand)
+Tibetan
+Tibetan (China)
+Tibetan (India)
+Tigre
+Tigre (Eritrea)
+Tigrinya
+Tigrinya (Eritrea)
+Tigrinya (Ethiopia)
+Tongan
+Tongan (Tonga)
+Turkish
+Turkish (Cyprus)
+Turkish (Turkey)
+Turkmen
+Turkmen (Turkmenistan)
+Ukrainian
+Ukrainian (Ukraine)
+Upper Sorbian
+Upper Sorbian (Germany)
+Urdu
+Urdu (India)
+Urdu (Pakistan)
+Uyghur
+Uyghur (China)
+Uzbek
+Uzbek (Arabic, Afghanistan)
+Uzbek (Arabic)
+Uzbek (Cyrillic, Uzbekistan)
+Uzbek (Cyrillic)
+Uzbek (Latin, Uzbekistan)
+Uzbek (Latin)
+Vai
+Vai (Latin, Liberia)
+Vai (Latin)
+Vai (Vai, Liberia)
+Vai (Vai)
+Venda
+Venda (South Africa)
+Vietnamese
+Vietnamese (Vietnam)
+Volapük
+Volapük (World)
+Vunjo
+Vunjo (Tanzania)
+Walser
+Walser (Switzerland)
+Welsh
+Welsh (United Kingdom)
+Western Frisian
+Western Frisian (Netherlands)
+Wolaytta
+Wolaytta (Ethiopia)
+Wolof
+Wolof (Senegal)
+Xitsonga
+Xitsonga (South Africa)
+Yangben
+Yangben (Cameroon)
+Yi
+Yi (China)
+Yiddish
+Yiddish (World)
+Yoruba
+Yoruba (Benin)
+Yoruba (Nigeria)
+Zarma
+Zarma (Niger)
+```
+{% endcode %}
+
+</details>
 
 ## Technology
 
@@ -66,23 +948,22 @@ Yes, you can. Please note that Umbraco Cloud also uses Cloudflare for DNS, so yo
 Generally, we recommend that you keep your DNS entry set to 'DNS Only' in your own Cloudflare account and let Umbraco Cloud handle the automatic TLS (HTTPS) certificates for the hostnames you point to your Umbraco Cloud project. Check with our support team, via chat or using support@umbraco.com, before bringing in your own Cloudflare setup.
 
 ### Does Cloudflare add any additional HTTP request headers?
-HTTP headers are bits of information that are passed along within every communication between (web) servers and (browser) clients. All HTTP requests to custom hostnames on Umbraco Cloud pass through Cloudflare. 
+
+HTTP headers are bits of information that are passed along within every communication between (web) servers and (browser) clients. All HTTP requests to custom hostnames on Umbraco Cloud pass through Cloudflare.
 
 HTTP requests headers can be useful for for example multilingual purposes to redirect users of certain languages to a specific URL. Here, the collection of visitor location headers below will be helpful. The values for these location headers are derived from the visitor's IP address.
 
-- `cf-ipcity`: The visitor's city
-- `cf-ipcontinent`: The visitor's continent
-- `cf-iplatitude`: The visitor's latitude
-- `cf-iplongitude`: The visitor's longitude
-- `uc-ipcountry`: The visitor’s country. `uc-ipcountry` header is a carbon copy of [cf-ipcountry](https://developers.cloudflare.com/fundamentals/get-started/reference/http-request-headers/#cf-ipcountry).
+* `cf-ipcity`: The visitor's city
+* `cf-ipcontinent`: The visitor's continent
+* `cf-iplatitude`: The visitor's latitude
+* `cf-iplongitude`: The visitor's longitude
+* `uc-ipcountry`: The visitor’s country. `uc-ipcountry` header is a carbon copy of [cf-ipcountry](https://developers.cloudflare.com/fundamentals/get-started/reference/http-request-headers/#cf-ipcountry).
 
 Note, the HTTP requests headers are available on all custom hostnames created through Umbraco Cloud. But not the default hostname for the Umbraco Cloud project such as project.euwest01.umbraco.io.
 
 ### What versions of .NET does Cloud support?
 
 By default, Umbraco Cloud runs all Umbraco version 8 projects on .NET 4.8, Umbraco 9 projects on .NET 5.0, Umbraco 10 projects on .NET 6.0, and Umbraco 11 projects on .NET 7.0.
-
-***
 
 ## Upgrades
 
@@ -92,9 +973,9 @@ We upgrade when we're very confident the release is solid.
 
 ### How do Automated Upgrades work?
 
-We automatically upgrade Cloud projects to the latest patch version of Umbraco CMS, Umbraco Forms, and Umbraco Deploy / Courier. For minor version upgrades of our products, you’ll get a button in the interface to decide if you want to move to that version when it is released. When we make a new patch version, we first run it through our test suite, then test it on 10 test-sites. When all that passes, we roll out the upgrade in batches of 100 to customer accounts.
+We automatically upgrade Cloud projects to the latest patch and minor version of Umbraco CMS, Umbraco Forms, and Umbraco Deploy. When we make a new patch version, we first run it through our test suite, then test it on 10 test sites. When all that passes, we roll out the upgrade in batches of 100 to customer accounts.
 
-[Read more about upgrades](https://our.umbraco.com/documentation/Umbraco-Cloud/Upgrades/)
+[Read more about upgrades](https://docs.umbraco.com/umbraco-cloud/product-upgrades/product-upgrades)
 
 ### My project didn't receive the auto-upgrade. Why?
 
@@ -123,8 +1004,6 @@ Do note, however, that you will need to step through the upgrade installer manua
 
 You will have to assume that every time we upgrade your site, any file that comes with Umbraco by default will be overwritten. Generally, we only overwrite the files that have been changed in the newest release but there is no guarantee for that. So if you (for example) have customized the login page then you can assume it will be reverted on each upgrade.
 
-***
-
 ## Testing
 
 ### Are we allowed to perform penetration tests on our Umbraco Cloud site?
@@ -144,8 +1023,6 @@ It is strictly forbidden to attempt to do a denial of service attack on your Clo
 We would like to talk to you beforehand about your test plan for a load test on your Cloud site.
 
 Please contact us using the chat button at the bottom right corner of the [Umbraco Cloud portal](https://www.s1.umbraco.io/).
-
-***
 
 ## Security and encryption
 
@@ -188,8 +1065,6 @@ Learn more about this and how to set it up in our [Security section](security.md
 ### Does Umbraco Cloud use Transparent Data Encryption (TDE) for databases?
 
 Yes, every site created after May 2nd, 2017 will have TDE enabled by default. For older sites, we can enable this by request.
-
-***
 
 ## Building and deploying
 
@@ -234,36 +1109,50 @@ We will **only delete the files** and not the database entries, as this could po
 
 You can read much more about these deletions in the [Deploying Deletions](deployment/deploying-deletions.md) article.
 
-***
-
 ## Package support
 
 ### Do you support package "x" on Umbraco Cloud?
 
-We have an indicator on each package in [the projects section of Our Umbraco](https://our.umbraco.com/projects/) which either says "Works on Umbraco Cloud" or "Untested or doesn't work on Umbraco Cloud".
+Umbraco Cloud uses Azure App Service Plans for website hosting services. This is a typical platform used for hosting web applications and it offers all features necessary for running Umbraco websites.
 
-If the indicator says "Works on Umbraco Cloud" it means that Umbraco HQ has tested this package on Cloud and it works and changes made using this package are also deployable to the next environment.
+Given that, packages that run in your local development environment, or on other hosting platforms, are likely to also be supported on Umbraco Cloud.
 
-If the indicator says "Untested or doesn't work on Umbraco Cloud" then we have not tested it and cannot vouch for it on Cloud. It might work, and we're happy for you to test it on Cloud.
+The only potential issue to be aware of is if your package stores custom data in the Umbraco database. Most packages don't do this, either purely adding functionality, or using existing Umbraco services for any data storage they require.
 
-We're happy to hear from and work with package developers to make their packages Cloud-compatible where possible. Make sure to reach out to us using the chat button at the bottom right corner of the [Umbraco Cloud portal](https://www.s1.umbraco.io/).
+If a package does save data into a custom table within the Umbraco database, it will still operate as expected on Umbraco Cloud. However, unless the package developer has taken additional steps to support this, you won't be able to transfer the saved information between environments.
+
+This may not be important if you don't have a need to do this. For example [Umbraco Workflow](https://docs.umbraco.com/umbraco-workflow/) is typically used in a single environment, either staging or production. Even though it does save custom data, there's no requirement to move it between environments.
+
+In some cases though, you may want to be able to transfer data prepared in a staging environment to production. Or conversely, to restore it into a local development environment for debugging purposes. The package may or may not be built to support this.
+
+If you find you are unable to move information between the environments you should contact the package's developer to ask about plans for support. How a package developer can offer this feature is described in the following section.
 
 ### How do I make my package support Umbraco Cloud?
 
-The biggest problem concerning Cloud support is when a package store references to nodes, media items, or members in Umbraco.
+As discussed in the section above, most packages will work fine in Umbraco Cloud without any modification.
+
+Some packages save data into custom Umbraco database tables, and if so, it may be useful to be able to transfer that data between environments. If this is the case, then there is an extra step you should take to fully support usage of your package on Umbraco Cloud.
+
+Umbraco Cloud uses the [Umbraco Deploy](https://docs.umbraco.com/umbraco-deploy/) tool to for the purpose of transfer of Umbraco information between environments. This includes Umbraco "schema" (such as document types) as well as "content" (such as content or media).
+
+In order to support custom data transfer between environments, the package or solution developer needs to build an add-on to their package. This extends Umbraco Deploy with a "connector" that details of how the data for the package should be handled.
+
+Specific care needs to be taken when developing the connector if the package stores references to content nodes, media items, or members in Umbraco.
 
 There are two challenges here:
 
 1. Your package is referring to an integer identifier, for example, a content item with the id `1023`. On the next environment that same content item exists but since the content is a bit different there, the id is `1039` instead. Umbraco Deploy needs to know how to connect the correct identifier.
 2. Even if the identifier is correct in both environments your package might rely on the other item (the one you're referring to) to exist in the next environment. So if the content item you're referring to (`1023`) does not exist in the environment where you're pushing the content you might see errors in your package.
 
-These problems can be solved with so-called Umbraco Deploy connectors. We've set up a project called [Umbraco Deploy Contrib](https://github.com/umbraco/Umbraco.Deploy.Contrib/) to collect these connectors together. Umbraco Deploy Contrib is included in all Cloud sites and we keep it upgraded to the latest version for every site.
+Open-source examples of connectors can be found in the [Umbraco Commerce Deploy](https://github.com/umbraco/Umbraco.Commerce.Deploy) and the [Umbraco Deploy Contrib](https://github.com/umbraco/Umbraco.Deploy.Contrib/) projects.
 
-The code in the contrib project has plenty of code comments to help you understand what is going on and how you can build something like that for your own package.
+Umbraco Deploy Contrib is included in all Cloud sites and we keep it upgraded to the latest version for every site.
+
+We have a dedicated documentation page discussing the process of [extending Umbraco Deploy via the creation of connectors for custom data](https://docs.umbraco.com/umbraco-deploy/extending).
+
+The code in these projects should also help you understand the steps and how to build something similar for your own package.
 
 If you need help with this, don't hesitate to reach out to us and we'll be happy to give you some tips.
-
-***
 
 ## Regions
 

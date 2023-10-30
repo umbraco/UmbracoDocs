@@ -10,7 +10,7 @@ public abstract class PaymentProviderBase : CommonPaymentProviderBase, IPaymentP
 
 **Inheritance**
 
-* class [CommonPaymentProviderBase](commonpaymentproviderbase.md)
+* Class [CommonPaymentProviderBase](commonpaymentproviderbase.md)
 * interface [IPaymentProvider](ipaymentprovider.md)
 
 **Namespace**

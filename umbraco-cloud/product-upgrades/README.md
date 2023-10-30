@@ -1,5 +1,4 @@
-
-# Umbraco Cloud Product Upgrades
+# Product Upgrades
 
 _This document describes when & what product updates are rolled out on Umbraco Cloud_
 
@@ -14,9 +13,9 @@ When minor upgrades are available, you will need a Development environment on yo
 
 ## When do upgrades happen?
 
-* The status page will include all important rollout information: __[https://status.umbraco.io/](https://status.umbraco.io/)__
-* We will release product updates only on __Tuesday__
-* The decision to roll out an upgrade will be made no later than the __Thursday__ prior and the status page will be updated accordingly
+* The status page will include all important rollout information: [**https://status.umbraco.io/**](https://status.umbraco.io/)
+* We will release product updates only on **Tuesday**
+* The decision to roll out an upgrade will be made no later than the **Thursday** prior and the status page will be updated accordingly
 * A product upgrade will be rolled out if:
   * A fix needs to be shipped due to a critical issue in any product
   * A patch version of Umbraco Core is ready for release
@@ -25,7 +24,9 @@ When minor upgrades are available, you will need a Development environment on yo
 * Umbraco Cloud reserves the right to roll out an emergency product fix to fix a critical issue at any time
 
 {% hint style="info" %}
-Your project will not be auto-upgraded if your environments aren't running the same **minor version**. E.g. if you are in the middle of upgrading to a new minor version, and one environment is running 8.6.x while another environment on the same project is running 8.7.x.
+
+Your project will not be auto-upgraded if your environments aren't running the same **minor version**. For example, when trying to upgrade a project to a new minor version where one environment is running 10.6.x and another is running 10.7.x.
+
 {% endhint %}
 
 ## The auto upgrade rollout process
@@ -48,21 +49,21 @@ This describes how a Umbraco Cloud project is auto-upgraded:
 * The payload is a set of files (such as DLLs, and other ASP.NET website files)
 * The upgrader will verify that the home page of all the environments (dev/staging/live) is healthy, meaning they don’t return an HTTP status error. If all environments are ok, it will proceed.
 * The upgrader will take a snapshot of the Dev site’s home page including its HTTP status code result and its HTML contents.
-* The payload is deployed to the Dev site’s Git repository and committed with a tag for the product version being updated. This new Git repository commit will replace the Umbraco product assembly (DLL) files along with other product files such as files located in /umbraco, /umbraco_client folders
+* The payload is deployed to the Dev site’s Git repository and committed with a tag for the product version being updated. This new Git repository commit will replace the Umbraco product assembly (DLL) files along with other product files such as files located in /umbraco, /umbraco\_client folders
 * The normal Umbraco Cloud deployment process is invoked and the repository files are deployed to the website
 * The upgrader will automatically ensure the web.config version and the database version are updated so that the Installer/upgrade page is not shown
-* The upgrader will verify that the new HTTP status code returned from the Dev site’s home page is OK and will verify that the html contents of the home page match that of the snapshot originally taken.
+* The upgrader will verify that the new HTTP status code returned from the Dev site’s home page is OK and will verify that the HTML contents of the home page match that of the snapshot originally taken.
 * If either of these tests fails we will be notified and Umbraco will take appropriate measures to roll back the site to its previous state
 * The failed upgrade is then tracked for reporting and the customer will be notified if necessary
-* When the Dev site is upgraded successfully, the upgrader will continue this same process for the next environment in the chain (i.e. Dev -> Staging -> Live) depending on the number of environments that exist for the project.
+* When the Dev site is upgraded successfully, the upgrader will continue this same process for the next environment in the chain (that is Dev -> Staging -> Live) depending on the number of environments that exist for the project.
 
 ## How do baseline updates work?
 
-If a project is a project that has had child projects created off it, the upgrade process for patch versions is the same as described above. The difference is that we always upgrade the baseline as the first project, and afterward we upgrade the child projects. This ensures that if for some reason an update is done from the baseline to the children in the meantime, the patch upgrade will also be sent to the children.
+The upgrade process for patch and minor versions is the same for projects with child projects created off them. The difference is that we always upgrade the baseline as the first project, and afterward we upgrade the child projects. This ensures that any updates done from the baseline will also send the upgrade to the children.
 
 ## What is a breaking change?
 
-It is important that developers understand what is considered a breaking change in Umbraco products. In most cases, an auto-upgrade will not have any breaking changes and we strive to ensure this is the case. However, in some rare cases developers may be using Umbraco’s internal code or Umbraco’s code that is not intended for public consumption, and in some releases that code may change. It is important for developers to understand the risks of using Umbraco code that is not considered a breaking change when it is updated since this may directly affect a site that is auto-upgraded.
+It is important that developers understand what is considered a breaking change in Umbraco products. In most cases, an auto-upgrade will not have any breaking changes and we strive to ensure this is the case. However, in some rare cases, developers may be using Umbraco's internal code not intended for public consumption. In some releases, that code may change. It is important for developers to understand the risks of using Umbraco code that is not considered a breaking change when it is updated. This may directly affect a site that is auto-upgraded.
 
 What is a breaking change is documented here: [https://our.umbraco.com/documentation/development-guidelines/breaking-changes](https://our.umbraco.com/documentation/development-guidelines/breaking-changes)
 
@@ -70,4 +71,4 @@ What is a breaking change is documented here: [https://our.umbraco.com/documenta
 
 No, it´s not possible to opt-out of product auto upgrades on Umbraco Cloud.
 
-In order for us to be able to support a site on Umbraco Cloud, we must ensure that all sites are running the latest versions of our products. That way, we know the sites are running in the most stable state.
+To support a site on Umbraco Cloud, all sites must run the latest versions of our products. That way, we know the sites are running in the most stable state.

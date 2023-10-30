@@ -16,60 +16,60 @@ It is recommended that you have some knowledge and prior experience working with
 
 ## Resources for extending
 
-* [Package manifest](http://localhost:5000/s/OdQETpqkO0Kcv8KMquKL/extending/property-editors/package-manifest)
-* [Angular docs / Backoffice UI API](http://localhost:5000/s/OdQETpqkO0Kcv8KMquKL/extending/backoffice-ui-api-documentation)
-* [C# API Docs](http://localhost:5000/s/OdQETpqkO0Kcv8KMquKL/reference/api-documentation)
+* [Package manifest](http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/extending/property-editors/package-manifest)
+* [Angular docs / Backoffice UI API](http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/extending/backoffice-ui-api-documentation)
+* [C# API Docs](http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/reference/api-documentation)
 
 ## What can be extended?
 
 To get you started here are some examples of what you can extend in Umbraco:
 
-{% content-ref url="http://localhost:5000/s/OdQETpqkO0Kcv8KMquKL/extending/property-editors" %}
-[Property Editors](http://localhost:5000/s/OdQETpqkO0Kcv8KMquKL/extending/property-editors)
+{% content-ref url="http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/extending/property-editors" %}
+[Property Editors](http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/extending/property-editors)
 {% endcontent-ref %}
 
-{% content-ref url="http://localhost:5000/s/OdQETpqkO0Kcv8KMquKL/extending/dashboards" %}
-[Dashboards](http://localhost:5000/s/OdQETpqkO0Kcv8KMquKL/extending/dashboards)
+{% content-ref url="http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/extending/dashboards" %}
+[Dashboards](http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/extending/dashboards)
 {% endcontent-ref %}
 
-{% content-ref url="http://localhost:5000/s/OdQETpqkO0Kcv8KMquKL/extending/backoffice-tours" %}
-[Backoffice Tours](http://localhost:5000/s/OdQETpqkO0Kcv8KMquKL/extending/backoffice-tours)
+{% content-ref url="http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/extending/backoffice-tours" %}
+[Backoffice Tours](http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/extending/backoffice-tours)
 {% endcontent-ref %}
 
-{% content-ref url="http://localhost:5000/s/OdQETpqkO0Kcv8KMquKL/extending/section-trees/sections" %}
-[Sections](http://localhost:5000/s/OdQETpqkO0Kcv8KMquKL/extending/section-trees/sections)
+{% content-ref url="http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/extending/section-trees/sections" %}
+[Sections](http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/extending/section-trees/sections)
 {% endcontent-ref %}
 
-{% content-ref url="http://localhost:5000/s/OdQETpqkO0Kcv8KMquKL/extending/section-trees/trees" %}
-[Trees](http://localhost:5000/s/OdQETpqkO0Kcv8KMquKL/extending/section-trees/trees)
+{% content-ref url="http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/extending/section-trees/trees" %}
+[Trees](http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/extending/section-trees/trees)
 {% endcontent-ref %}
 
-{% content-ref url="http://localhost:5000/s/OdQETpqkO0Kcv8KMquKL/extending/content-apps" %}
-[Content Apps](http://localhost:5000/s/OdQETpqkO0Kcv8KMquKL/extending/content-apps)
+{% content-ref url="http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/extending/content-apps" %}
+[Content Apps](http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/extending/content-apps)
 {% endcontent-ref %}
 
-{% content-ref url="http://localhost:5000/s/OdQETpqkO0Kcv8KMquKL/extending/backoffice-search" %}
-[Backoffice Search](http://localhost:5000/s/OdQETpqkO0Kcv8KMquKL/extending/backoffice-search)
+{% content-ref url="http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/extending/backoffice-search" %}
+[Backoffice Search](http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/extending/backoffice-search)
 {% endcontent-ref %}
 
-{% content-ref url="http://localhost:5000/s/OdQETpqkO0Kcv8KMquKL/extending/health-check" %}
-[Health Check](http://localhost:5000/s/OdQETpqkO0Kcv8KMquKL/extending/health-check)
+{% content-ref url="http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/extending/health-check" %}
+[Health Check](http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/extending/health-check)
 {% endcontent-ref %}
 
-{% content-ref url="http://localhost:5000/s/OdQETpqkO0Kcv8KMquKL/extending/filesystemproviders" %}
-[Custom File Systems (IFileSystem)](http://localhost:5000/s/OdQETpqkO0Kcv8KMquKL/extending/filesystemproviders)
+{% content-ref url="http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/extending/filesystemproviders" %}
+[Custom File Systems (IFileSystem)](http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/extending/filesystemproviders)
 {% endcontent-ref %}
 
 ## Tutorials
 
 If you're in a creative mood then why not experiment with some of our tutorials:
 
-[Creating a Property Editor](http://localhost:5000/s/OdQETpqkO0Kcv8KMquKL/tutorials/creating-a-property-editor)
+[Creating a Property Editor](http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/tutorials/creating-a-property-editor)
 
-[Creating Custom Content Apps](http://localhost:5000/s/OdQETpqkO0Kcv8KMquKL/extending/content-apps#creating-a-custom-content-app)
+[Creating Custom Content Apps](http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/extending/content-apps#creating-a-custom-content-app)
 
-[Creating a Custom Dashboard](http://localhost:5000/s/OdQETpqkO0Kcv8KMquKL/tutorials/creating-a-custom-dashboard)
+[Creating a Custom Dashboard](http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/tutorials/creating-a-custom-dashboard)
 
-[Creating a Package](http://localhost:5000/s/OdQETpqkO0Kcv8KMquKL/extending/packages/creating-a-package)
+[Creating a Package](http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/extending/packages/creating-a-package)
 
 ![Extending Umbraco](images/Headless\_Email\_hero\_780x405px.png)

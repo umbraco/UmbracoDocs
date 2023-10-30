@@ -11,7 +11,7 @@ public class ProductAttributeDeletingNotification :
 
 **Inheritance**
 
-* class [ProductAttributeNotificationEventBase&lt;TEntity&gt;](productattributenotificationeventbase-1.md)
+* Class [ProductAttributeNotificationEventBase&lt;TEntity&gt;](productattributenotificationeventbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

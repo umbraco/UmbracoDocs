@@ -10,7 +10,7 @@ public class OrderStatusSaveDto : OrderStatusDto, IValidatableObject
 
 **Inheritance**
 
-* class [OrderStatusDto](orderstatusdto.md)
+* Class [OrderStatusDto](orderstatusdto.md)
 
 **Namespace**
 * [Umbraco.Commerce.Cms.Web.Models](README.md)

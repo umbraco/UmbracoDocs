@@ -8,7 +8,7 @@ To access the Form Settings:
 2. Open a Form you wish to customize.
 3.  Click **Settings** in the top-right corner of the screen.
 
-    ![Form settings dialog](images/FormSettings.png)
+    ![Form settings dialog](<images/FormSettings (1).png>)
 
 ## Settings Options
 
@@ -18,25 +18,25 @@ The following options are available in Forms Settings:
 
 By default, all submitted records are saved in the database. This option allows you to view and export the saved records from the queries overview. If you do not want to store data (due to policies in your organisation), you can uncheck the box.
 
-![Form settings Store Records](images/Store-Records.png)
+![Form settings Store Records](<images/Store-Records (1).png>)
 
 ### Captions
 
 Customize the labels of the **Submit**, **Next**, and **Previous** buttons used in your Form.
 
-![Form settings stylesheet](images/FormSettingsCaptions-v9.png)
+![Form settings stylesheet](<images/FormSettingsCaptions-v9 (1).png>)
 
 ### Styling
 
 Set a stylesheet to give your Form custom styling. You have an option to disable the default styling. Enabling the **Disable default stylesheet** option will prevent a default stylesheet to be added to the pages where the Form is placed.
 
-![Form settings stylesheet](images/FormSettingsStyling.png)
+![Form settings stylesheet](<images/FormSettingsStyling (1).png>)
 
 ### Validation
 
 Define a message that is displayed when a field is mandatory, when a value is not supplied, or when the value is invalid.
 
-![Form settings validation](images/FormSettingsValidation.png)
+![Form settings validation](<images/FormSettingsValidation (1).png>)
 
 The following Validations are available:
 
@@ -59,7 +59,7 @@ The autocomplete setting for the overall form can be changed from the default of
 
 Enabling this feature allows the moderator to manage the approval status of a form. This can be used in a number of scenarios. For example, if the form submission will be publicly shown, you can control which are published.
 
-![Form settings Moderation](images/FormSettingsModeration.png)
+![Form settings Moderation](<images/FormSettingsModeration (1).png>)
 
 ### Fields displayed
 

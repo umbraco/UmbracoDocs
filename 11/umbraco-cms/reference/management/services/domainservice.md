@@ -34,7 +34,7 @@ public class MyClass
 {
 
     private IDomainService _domainService;
-    
+
     public MyClass(IDomainService domainService)
     {
         _domainService = domainService;

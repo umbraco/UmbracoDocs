@@ -10,7 +10,7 @@ public class RegionSavedNotification : RegionNotificationEventBase<RegionReadOnl
 
 **Inheritance**
 
-* class [RegionNotificationEventBase&lt;TEntity&gt;](regionnotificationeventbase-1.md)
+* Class [RegionNotificationEventBase&lt;TEntity&gt;](regionnotificationeventbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

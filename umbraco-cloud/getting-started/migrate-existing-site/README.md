@@ -12,7 +12,7 @@ These are the steps you need to go through to complete the migration successfull
 4. [Prepare your Cloud project](./#4.-prepare-your-cloud-project)
 5. [Clone down the Cloud project](./#5.-clone-down-the-cloud-project)
 6. [Move and Merge files](./#6.-move-and-merge-files)
-7. [Generate meta data](./#7-generate-meta-data)
+7. [Generate meta data](./#7.-generate-meta-data)
 8. [Deploy to Umbraco Cloud](./#8.-deploy-to-umbraco-cloud)
 
 ## Video tutorial
@@ -77,10 +77,10 @@ While the site is running you need to:
 * Go to the backoffice of your project
 * Empty the recycle bins from both the Content and Media sections
 
-Now, shut down the project, and delete the following files and folders from `/Umbraco/Data`
+Now, shut down the project, and delete the following files and folders from `/Umbraco/`
 
-* `/TEMP`
-* `/Umbraco/Logs`
+* `/Data/TEMP`
+* `/Logs`
 
 That was it! Now you are ready to start the actual migration process, or in other words: **now the real fun begins!**
 
@@ -92,7 +92,7 @@ In this next part, you are going to set up your Umbraco Cloud project and clone 
 
 Before the migration process can start, you will need to have a Umbraco Cloud project you can migrate your project into.
 
-![How to start a Umbraco Cloud trial](images/Cloud-trial-gif.gif)
+<figure><img src="../../.gitbook/assets/Umbraco-Cloud.Trial-Flow.gif" alt=""><figcaption><p>How to start a Umbraco Cloud trial</p></figcaption></figure>
 
 1. The best way to get started with Umbraco Cloud is to [create a trial project](https://umbraco.com/)
 2. When your project is starting choose to start with a _clean slate_ - you need to have an empty Cloud project for the migration to be successful
@@ -128,18 +128,21 @@ Merging your existing site into the Umbraco Cloud project is a matter of moving 
 
 {% tabs %}
 {% tab title="Site running on version 9 or above" %}
-1. Copy and replace the following folders from your project with the Umbraco Cloud project
+1. Copy and replace the following folders from your project in to the Umbraco Cloud project
    * `/wwwroot`
    * `/Views`
    * `/Umbraco`
    * If your existing site uses Umbraco Forms, make sure you **do not overwrite** the `\umbraco\Licenses\umbracoForms.lic` file
+   * When copying your `\umbraco\` folder, make sure you **do not delete** the `\umbraco\Licenses\umbracoDeploy.lic` file
+   * If you have any custom code in your project, you should copy that code over too.
 2. Merge Appsettings.JSON files from your existing site with the cloud site.
    * Make sure that you merge your Appsetting.JSON files with the ones from your existing site so that the settings you used are moved over to your Cloud project
 3. Merge your Program.cs and Startup.cs with the one from your existing site
-4. If you are using SQLite
+4. Merge your `ProjectName.csproj` with the `UmbracoProject.csproj` - especially if you have any packages installed on your project.
+5. If you are using SQLite
    * Make sure the `Umbraco.sqlite.db`, `Umbraco.sqlite.db-shm` and `Umbraco.sqlite.db-wal` files from your project replaces the ones provided with your Umbraco Cloud project
    * You can find them in `/umbraco/Data/Umbraco.sqlite.db`
-5. If you are using a local SQL server make sure to update the connection string in the `Appsettings.JSON` for the Umbraco Cloud project.
+6. If you are using a local SQL server make sure to update the connection string in the `Appsettings.JSON` for the Umbraco Cloud project.
 
 That's it! Now that you've merged your existing site with the local clone of the Cloud project, make sure the project runs and verify that
 
@@ -152,7 +155,7 @@ Umbraco Identity (Umbraco ID) is the Single Sign-On (SSO) feature across all Umb
 
 It is required to access any project pages as well as the backoffice.
 
-To migrate the users from your on-premises site to Umbraco Cloud and Umbraco ID, follow the [Migrate Users to Cloud guide](migrating-users-to-umbraco-cloud.md) article.
+To migrate the users from your on-premises site to Umbraco Cloud and Umbraco ID, follow the [Migrate Users to Cloud guide](broken-reference/) article.
 {% endhint %}
 
 With that confirmed, it's time to prepare to migrate the project to Umbraco Cloud.

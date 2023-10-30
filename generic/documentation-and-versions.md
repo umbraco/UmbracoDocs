@@ -39,7 +39,7 @@ We reserve the right to change the strategy for EOL versions. This is due to the
 
 ## Contributing to a specific version
 
-The Umbraco Documentation is synchronized with a GitHub repository, [UmbracoDocs](https://github.com/umbraco/UmbracoDocs), which is open source. Read the [Contribution documentation](../contribute/getting-started.md) to learn more about contributions and how to get started.
+The Umbraco Documentation is synchronized with a GitHub repository, [UmbracoDocs](https://github.com/umbraco/UmbracoDocs), which is open source. Read the [Contribution documentation](contribute/getting-started.md) to learn more about contributions and how to get started.
 
 The `main` branch on the repository holds all versions of the documentation for all Umbraco products, including Cloud and Heartcore. A directory exists for each published **major** version of Umbraco CMS, under which you can find the corresponding documentation for each Umbraco product.
 

@@ -19,17 +19,18 @@ In order to create a PR to the Umbraco Documentation it is required that you hav
 
 ## Option 1: Creating a PR directly on GitHub
 
-GitHub has a functionality that allows you to submit a PR directly from our [repository](https://github.com/umbraco/UmbracoDocs/). There is also a button on the right side of every article, which allows you to jump straight into GitHub to suggest your changes.
+GitHub has a functionality that allows you to submit a PR directly from our [repository](https://github.com/umbraco/UmbracoDocs/). There is also a button on the right side of every article title, which allows you to jump straight into GitHub to suggest your changes.
 
-![Highlighting the "Edit on GitHub" button in the right side of an article.](images/gb-edit-on-github.png)
+![Highlighting the "Edit on GitHub" button in the right side of an article title.](../.gitbook/assets/EditonGithub.png)
 
-1. Select "Edit on GitHub" from the article you want to suggest changes to.
-2. Select the pen icon to start editing the article.
-3. Make the changes.
-4. Add a title and description explaining what changes you have made and why you made them.
-5. Select **Propose changes**.
-6. Select **Create pull request** to preview your PR.
-7. Select **Create pull request** again to create the PR.
+1. On the right side of the article title at the top of the page, click on the icon with 3 dots `⋮`
+2. Select "Edit on GitHub" from the article you want to suggest changes to.
+3. Select the pen icon to start editing the article.
+4. Make the changes.
+5. Add a title and description explaining what changes you have made and why you made them.
+6. Select **Propose changes**.
+7. Select **Create pull request** to preview your PR.
+8. Select **Create pull request** again to create the PR.
 
 This is helpful to fix typing errors or add small things. If you are working on a larger update that includes pictures and editing files then it is not the best way to work. In that case, you will be better off creating a fork. See below for more thorough instructions on this approach.
 

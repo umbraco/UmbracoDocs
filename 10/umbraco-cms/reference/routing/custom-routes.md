@@ -1,6 +1,6 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+
+
 meta.Title: Custom Umbraco Routes
 description: >-
   Setting up your own controllers and routes that exist alongside the Umbraco

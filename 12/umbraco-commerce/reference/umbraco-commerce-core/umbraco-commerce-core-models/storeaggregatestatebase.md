@@ -10,7 +10,7 @@ public abstract class StoreAggregateStateBase : AggregateStateBase
 
 **Inheritance**
 
-* class [AggregateStateBase](aggregatestatebase.md)
+* Class [AggregateStateBase](aggregatestatebase.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models](README.md)

@@ -1,6 +1,6 @@
 ---
-versionFrom: 9.0.0
-versionTo: 10.0.0
+
+
 meta.Title: Add Google Authentication
 description: A guide to set up a Google login for the Umbraco Backoffice.
 ---
@@ -248,7 +248,7 @@ For more information on installing and managing packages in Visual Studio, see t
     * Ensure to replace **YOURCLIENTID** and **YOURCLIENTSECRET** in the code with the values from the **OAuth Client Ids Credentials** window.
 3.  Update `ConfigureServices` in your `Startup.cs` class to register your configuration with Umbraco. For example:
 
-    ***
+
 
     ```csharp
     using MyCustomUmbracoProject.App_Code.Google_Authentication;

@@ -5,6 +5,7 @@
   * [Umbraco 8 Documentation](https://our.umbraco.com/documentation/)
   * [Umbraco 7 Documentation](https://our.umbraco.com/documentation/)
 * [Contribute](https://docs.umbraco.com/welcome/contribute/getting-started)
+* [Sustainability Best Practices](http://127.0.0.1:5000/o/vHdmkfI8smZW50A5yIZD/s/ZOU4fHcVxqYnC8V1dry6/)
 
 ## Fundamentals
 
@@ -94,7 +95,8 @@
   * [Language Variants](fundamentals/backoffice/variants.md)
   * [Settings Dashboards](fundamentals/backoffice/settings-dashboards.md)
 * [Data](fundamentals/data/README.md)
-  * [Defining Content](fundamentals/data/defining-content.md)
+  * [Defining Content](fundamentals/data/defining-content/README.md)
+    * [Default Document Types](fundamentals/data/defining-content/default-document-types.md)
   * [Creating Media](fundamentals/data/creating-media/README.md)
     * [Default Data/Media Types](fundamentals/data/creating-media/default-media-types.md)
   * [Members](fundamentals/data/members.md)
@@ -213,6 +215,7 @@
   * [Health checks](reference/configuration/healthchecks.md)
   * [Hosting settings](reference/configuration/hostingsettings.md)
   * [Imaging settings](reference/configuration/imagingsettings.md)
+  * [Indexing settings](reference/configuration/indexingsettings.md)
   * [Install Default Data Settings](reference/configuration/installdefaultdatasettings.md)
   * [Keep alive settings](reference/configuration/keepalivesettings.md)
   * [Logging settings](reference/configuration/loggingsettings.md)
@@ -375,6 +378,7 @@
   * [Setup Umbraco for a FIPS Compliant Server](reference/security/setup-umbraco-for-a-fips-server.md)
   * [HTTPS](reference/security/ssl-https.md)
   * [Two-factor Authentication](reference/security/two-factor-authentication.md)
+  * [Server-side file validation](reference/security/serverside-file-validation.md)
 * [Scheduling](reference/scheduling.md)
 * [Common Pitfalls & Anti-Patterns](reference/common-pitfalls.md)
 * [API Documentation](reference/api-documentation.md)

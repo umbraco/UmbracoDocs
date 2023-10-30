@@ -24,7 +24,7 @@ Version 11 contains a number of breaking changes. We don't expect many projects 
 #### Code
 
 - The property `PreValues` on `FormArtifact` was changed from an `IEnumerable<string>`  to an `IEnumerable<FieldPrevalue>`, where `FieldPrevalue` contains a `Value` and `Caption`.
-- Nullable checks were enabled in the `Umbraco.Deploy.Forms` project and issues resolved by applying appropriate nullable settings to various properties.
+- Nullable checks were enabled in the `Umbraco.Deploy.Forms` project and issues resolved by applying appropriate nullable settings to multiple properties.
 - The `TreeNodeGetter` function set as a property on `DeployTransferRegisteredEntityTypeDetail.RemoteTreeDetail` now takes a non-nullable `HttpContext`
 parameter.
 - The `matchesRoutePath` and `matchesNodeId` parameters provided to `ITransferEntityService.RegisterTransferEntityType`, and which populate the `MatchesRoutePath` and `MatchesNodeId` properties on `DeployTransferRegisteredEntityTypeDetail`, now take an HttpContext argument.
@@ -51,7 +51,7 @@ To migrate to version 10 you should first update to the latest minor release of 
 
 ### Breaking changes
 
-Version 10 contains a number of breaking changes but we won't expect many projects to be affected by them as they are in areas that are not typical extension points.  For reference though, the full details are listed here.
+Version 10 includes a number of breaking changes. These changes are unlikely to affect many projects because they're not in typical extension points. For reference though, the full details are listed here.
 
 #### Database Initialization
 
@@ -95,14 +95,14 @@ Or set the configuration value of `Umbraco:Deploy:Settings:PreferLocalDbConnecti
 }
 ```
 
-If you are upgrading from Umbraco 9 and already have a LocalDB instance, setting this value to `true` will ensure it is used rather than a new, empty SQLite database.
+If you are upgrading from Umbraco 9 and already have a LocalDB instance, you can set this value to `true`. This will ensure it is used rather than a new, empty SQLite database.
 
 #### Configuration
 
 - The boolean property `IgnoreBrokenDependencies` has been removed, and the option is now controlled only by the `IgnoreBrokenDependenciesBehavior` configuration key, which takes an enumeration value.
   - The default value has changed to `IgnoreBrokenDependenciesBehavior.Restore`, as this will most likely be what developers require (allowing broken dependencies when restoring, but not when pushing to an upstream environment).
 - `CurrentWorkspaceName` has been added to the `Project` configuration section.  This will be used by on-premises installations.
-  - Previously this used EnvironmentName in the `Debug` configuration section, which will still be used if defined to support upgrades. We recommend using the new configuration as it's more intuitively placed (i.e. it's not really a "debug" setting for on-premises installations).
+  - Previously this used EnvironmentName in the `Debug` configuration section, which will still be used if defined to support upgrades. We recommend using the new configuration as it's more intuitively placed (that is not really a "debug" setting for on-premises installations).
 
 #### Code
 

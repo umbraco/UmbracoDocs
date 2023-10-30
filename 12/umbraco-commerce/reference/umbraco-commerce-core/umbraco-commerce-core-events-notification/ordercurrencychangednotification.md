@@ -10,7 +10,7 @@ public class OrderCurrencyChangedNotification : OrderCurrencyChangeNotificationB
 
 **Inheritance**
 
-* class [OrderCurrencyChangeNotificationBase&lt;TEntity&gt;](ordercurrencychangenotificationbase-1.md)
+* Class [OrderCurrencyChangeNotificationBase&lt;TEntity&gt;](ordercurrencychangenotificationbase-1.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Events.Notification](README.md)

@@ -10,7 +10,7 @@ public class ProductSalesData : ProductData
 
 **Inheritance**
 
-* class [ProductData](productdata.md)
+* Class [ProductData](productdata.md)
 
 **Namespace**
 * [Umbraco.Commerce.Core.Models.Reporting](README.md)

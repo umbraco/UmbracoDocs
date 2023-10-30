@@ -10,7 +10,7 @@ public class PaymentMethodEditDto : PaymentMethodDto, IHasPath, INotificationMod
 
 **Inheritance**
 
-* class [PaymentMethodDto](paymentmethoddto.md)
+* Class [PaymentMethodDto](paymentmethoddto.md)
 * interface [IHasPath](ihaspath.md)
 
 **Namespace**

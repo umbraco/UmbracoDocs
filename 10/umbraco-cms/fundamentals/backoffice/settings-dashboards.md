@@ -28,7 +28,7 @@ For more information about Examine Management, see the [Examine Management](../.
 
 <summary>Published Status</summary>
 
-The Published Status dashboard displays the status of your site in the Published Cache Status section alongwith the Content and Media nodes value. The Caches section provides three options: Memory Cache, Database Cache, and Internals (NuCache).
+The Published Status dashboard displays the status of your site in the Published Cache Status section alongside the Content and Media nodes value. The Caches section provides three options: Memory Cache, Database Cache, and Internals (NuCache).
 
 - Memory Cache - Reloads the in-memory cache by entirely reloading it from the database cache. Use it when you think that the memory cache has not been properly refreshed.
 

@@ -56,8 +56,6 @@ using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Infrastructure.Examine;
 using Umbraco.Cms.Infrastructure.Search;
 
-//https://our.umbraco.com/documentation/Extending/Backoffice-Search/
-
 namespace Umbraco.Docs.Samples.Web.BackofficeSearch
 {
     public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields, IUmbracoTreeSearcherFields
@@ -99,4 +97,4 @@ You cannot use this to search on integer types in the index, as an example `pare
 
 ## More advanced extensions
 
-For further extensibility of the Umbraco Backoffice search implementation check [ISearchableTree](section-trees/searchable-trees.md "https://our.umbraco.com/Documentation/Extending/Section-Trees/Searchable-Trees/index.md")
+For further extensibility of the Umbraco Backoffice search implementation check [ISearchableTree](section-trees/searchable-trees.md)

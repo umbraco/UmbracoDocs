@@ -20,6 +20,29 @@ Under each major version, you can find details about minor and patch releases fo
 
 <summary>Version 10</summary>
 
+#### [10.2.6](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.6) (October 17th 2023)
+
+* Fixed issue with deployment of content when scheduled for a future release date.
+* Prevent dictionary items from being serialized to `.uda` files on disk when configured for transfer as content [#184](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/184).
+
+#### [10.2.5](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.5) (October 10th 2023)
+
+* Fixed regression issue introduced in 10.2.4 with deployment of properties of content templates [#182](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/182)
+
+#### [10.2.4](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.4) (September 19th 2023)
+
+* Updated the transfer of user picker values to resolve the user by username in the target environment [#180](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/180)
+* Also updated the logic for the member picker to ensure values representing members that don't exist in the target environment are cleared.
+* Added configuration option to ignore missing languages when deploying translation items [#176](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/176)
+* Ensured consistent sort of translations within dictionary items `.uda` files [#175](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/175)
+* Ensured that alt text for images placed in grid cells are transferred [#174](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/174)
+* Further fix to logic for creating redirects on content deployment for variant content [#170](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/170)
+* Resolves issue with grid media items in a batched deployment operation.
+* Increased size of database fields storing references to account for longer values used in package data [Commerce #428](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/428)
+* Include published name in content transfer data to avoid overwriting with draft name if different.
+* Optimized content transfers to include only draft and published versions when they exist.
+* Fixed issue with partial restore of forms [#178](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/178)
+
 #### [10.2.3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.3) (August 1st 2023)
 
 * Ensured that schema files are updated on entity container renames [#171](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/171).
@@ -133,7 +156,7 @@ Under each major version, you can find details about minor and patch releases fo
 
 #### [9.5.3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F9.5.3) (February 14th 2023)
 
-* Applied various updates to improve performance and reduce likelihood of timeouts when transferring or restoring items in bulk [#128](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/128) [#152](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/152) [#148](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/148) [#110](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/110) [#106](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/106)
+* Applied multiple updates to improve performance and reduce likelihood of timeouts when transferring or restoring items in bulk [#128](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/128) [#152](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/152) [#148](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/148) [#110](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/110) [#106](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/106)
   * Added a task to set signatures via the backoffice settings dashboard, ensuring these are calculated and cached before a restore is commenced.
   * Provided a configuration option to allow for use of the media file metadata instead of file contents when calculating a checksum.
   * Made a new default behaviour which can be tweaked via configuration, of loading all relations into memory once we know we are processing a lot of artifact signatures, and doing look-ups for the relations for each entity from there.
@@ -259,6 +282,23 @@ Under each major version, you can find details about minor and patch releases fo
 <details>
 
 <summary>Version 4</summary>
+
+#### [4.8.4](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.8.4) (October 10th 2023)
+
+* Fixed regression issue introduced in 4.8.3 with deployment of properties of content templates [#182](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/182)
+
+#### [4.8.3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.8.3) (September 19th 2023)
+
+* Updated the transfer of user picker values to resolve the user by username in the target environment [#180](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/180)
+* Also updated the logic for the member picker to ensure values representing members that don't exist in the target environment are cleared.
+* Added configuration option to ignore missing languages when deploying translation items [#176](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/176)
+* Ensured consistent sort of translations within dictionary items `.uda` files [#175](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/175)
+* Ensured that alt text for images placed in grid cells are transferred [#174](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/174)
+* Further fix to logic for creating redirects on content deployment for variant content [#170](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/170)
+* Resolves issue with grid media items in a batched deployment operation.
+* Increased size of database fields storing references to account for longer values used in package data [Commerce #428](https://github.com/umbraco/Umbraco.Commerce.Issues/discussions/428)
+* Include published name in content transfer data to avoid overwriting with draft name if different.
+* Optimized content transfers to include only draft and published versions when they exist.
 
 #### [4.8.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.8.2) (August 1st 2023)
 
@@ -501,7 +541,7 @@ It offers connectors for the most popular Umbraco community packages. These are 
 
 ### Deploy Contrib 4.1.1 (April 26th 2022)
 
-* Fixes issue with deployment of nested content properties within doc type grid editor values. [#82](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/82)
+* Fixes issue with deployment of nested content properties within Document Type grid editor values. [#82](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/82)
 
 ### Deploy Contrib 4.2.1 (February 21st 2023)
 

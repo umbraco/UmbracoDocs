@@ -1,5 +1,5 @@
 ---
-description: "Information on the content settings section"
+description: Information on the content settings section
 ---
 
 # Content Settings
@@ -48,7 +48,8 @@ The following snippet will give an overview of the keys and values in the conten
       },
       "PreviewBadge": "<![CDATA[<b>My HTML here</b>]]>",
       "ResolveUrlsFromTextString": false,
-      "ShowDeprecatedPropertyEditors": false
+      "ShowDeprecatedPropertyEditors": false,
+      "ShowDomainWarnings": true
     }
   }
 }
@@ -72,12 +73,11 @@ If greater control is required than available from the above, this setting can b
 
 ### Allowed media hosts
 
-By default, only relative URLs are allowed when getting URLs for resized images or thumbnails using the ImagesController.
-If you need absolute URLs you will have to add the allowed hosts to this list. The value could be `["umbraco.com", "www.umbraco.com", "our.umbraco.com"]`.
+By default, only relative URLs are allowed when getting URLs for resized images or thumbnails using the ImagesController. If you need absolute URLs you will have to add the allowed hosts to this list. The value could be `["umbraco.com", "www.umbraco.com", "our.umbraco.com"]`.
 
 ### Disable delete when referenced
 
-This setting allows you to specify whether a user can delete content or media items that depend on other items. This also includes any descendants that have dependencies. Setting this to **true** will remove or disable the *Delete* button.
+This setting allows you to specify whether a user can delete content or media items that depend on other items. This also includes any descendants that have dependencies. Setting this to **true** will remove or disable the _Delete_ button.
 
 ### Disable unpublish when referenced
 
@@ -107,7 +107,6 @@ The above example shows what you need to do if you only have a single site that 
 3. Enter the XPath to find the node (`"ContentXPath": "/root/Home//TextPage[@urlName = 'error404'"`)
 
 {% hint style="info" %}
-
 * Ids are usually local to the specific solution (so won't point to the same node in two different environments if you're using Umbraco Cloud).
 * GUIDs are universal and will point to the same node on different environments, provided the content was created in one environment and deployed to the other(s).
 * When using XPath, there is no "context" (like, you can't find the node based on "currentPage") so needs to be a global absolute path.
@@ -169,6 +168,14 @@ This setting is used when you're running Umbraco in virtual directories. Setting
 This setting is used for controlling whether or not the Data Types marked as obsolete should be visible in the dropdown when creating new Data Types.
 
 By default this is set to `false`. To make the obsolete data types visible in the dropdown change the value to `true`.
+
+### Show Domain Warnings
+
+If you do not configure Domains for each language in a multilingual site then every time you publish your content you get this warning:
+
+`Content published: Domains are not configured for multilingual site, please contact an administrator, see log for more information.`
+
+If you have a use case for not setting the domains, you can set this setting **ShowDomainWarnings** to `false` to stop the warning from displaying.
 
 ## ContentVersionCleanupPolicy
 
@@ -261,4 +268,4 @@ If you need to create a custom Media Type to handle images you need to add anoth
 
 ## Notifications
 
-Umbraco can send out email notifications, set the sender email address for the notifications emails here. To set the SMTP server used to send the emails, edit the standard Simple Mail Transfer Protocol (SMTP) section in the global section, see [global settings](../GlobalSettings/) for more information.
+Umbraco can send out email notifications, set the sender email address for the notifications emails here. To set the SMTP server used to send the emails, edit the standard Simple Mail Transfer Protocol (SMTP) section in the global section, see [global settings](globalsettings.md) for more information.
