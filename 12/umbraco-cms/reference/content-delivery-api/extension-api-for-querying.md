@@ -230,6 +230,18 @@ The principal difference from the selector is that the filter implements `BuildF
 
 Since we need to perform an exact match, the index field (`authorId`) is once again defined as a "raw" string. Other options include "analyzed" and "sortable" strings. These support "contains" searches and alpha-numeric sorting, respectively.
 
+### Filter operations
+
+To define your custom filter, you currently have four options: `Is`, `IsNot`, `Contains` and `DoesNotContain`. `Contains` is a useful operator for passing in, for example, a list of tags that you want to use to filter a collection.
+
+It is worth noting, however that the operator currently works in "Contains Any" capacity e.g. if you were to pass in `tag1` and `tag2` to a custom filter that used this operation, then the operator would return any document containing __either__ of `tag1` __OR__ `tag2`. The request for this might look like this:
+
+`GET /umbraco/delivery/api/v1/content?filter=customTagFilter:tag1,tag2`
+
+If you require this functionality to be restrictive i.e. `tag1` __AND__ `tag2`, then the current approach would be to chain the custom filter, so the request would change to look more like this:
+
+`GET /umbraco/delivery/api/v1/content?filter=customTagFilter:tag1&filter=customTagFilter:tag2`
+
 ## Custom sort
 
 Finally, we can also add custom handling for the `sort` part of the query.
