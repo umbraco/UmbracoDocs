@@ -84,7 +84,7 @@ Once you have added the "Sensitive Data" group go to the Members section in the 
 
 ![Approve Member](images/v8-18-Approve-Member.png)
 
-
+Once the users have been approved, you can go ahead and continue the tutorial.
 
 
  {% endhint %}
