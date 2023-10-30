@@ -76,7 +76,7 @@ If you are on Umbraco Cloud you need to do the following steps to be able to res
 
 1. Go to the Users section in the Backoffice. 
 2. Select your User.
-3. add the "Sensitive Data" Group. 
+3. Add the "Sensitive Data" Group. 
 ![Assign User Access group](images/v8-17-Assign-User-Access-Group.png)
 
 
