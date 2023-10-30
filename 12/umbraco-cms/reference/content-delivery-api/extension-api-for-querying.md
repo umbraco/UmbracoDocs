@@ -232,9 +232,9 @@ Since we need to perform an exact match, the index field (`authorId`) is once ag
 
 ### Filter operations
 
-To define your custom filter, you currently have four options: `Is`, `IsNot`, `Contains` and `DoesNotContain`. `Contains` is a useful operator for passing in, for example, a list of tags that you want to use to filter a collection.
+To define your custom filter, you currently have four options: `Is`, `IsNot`, `Contains` and `DoesNotContain`.
 
-It is worth noting, however that the operator currently works in "Contains Any" capacity. For example, if you were to pass in `tag1` and `tag2` the operator would return _any_ document containing __either__ `tag1` __or__ `tag2`. The request for this might look like this:
+It is possible to pass multiple values to each operator, and these values will be treated inclusively as an __or__ operator. For example, if you were to pass in `tag1` and `tag2` into the `Is` operator would return _any_ document containing __either__ `tag1` __or__ `tag2`. The request for this might look like this:
 
 `GET /umbraco/delivery/api/v1/content?filter=customTagFilter:tag1,tag2`
 
