@@ -283,7 +283,7 @@ When deploying content items, public access rules based on member groups are tra
 
 * _None_ - no public access rules will be transferred</li>
 * _AddOrUpdate_ - public access rules added or updated in a source environment will be transferred to the destination</li>
-* _Removed_ - public access rules removed a source environment will be removed in the destination</li>
+* _Remove_ - public access rules removed a source environment will be removed in the destination</li>
 * _All_ - all public access information will be transferred</li>
 
 `AddOrUpdate` is the default setting used if no value is configured.
