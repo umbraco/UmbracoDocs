@@ -10,20 +10,22 @@ To set up your Block List Editor property, create a new _Data Type_ and select *
 
 Then you will see the configuration options for a Block List as shown below.
 
-![Rich Text Editor - Data Type Block Fields](./images/rte-data-type-block-fields.jpg)
+
+
+<figure><img src="../../../../../.gitbook/assets/rte-data-type-block-fields.jpg" alt=""><figcaption><p>Rich Text Editor - Data Type Block Fields</p></figcaption></figure>
 
 The Data Type editor allows you to configure the following properties:
 
 * **Available Blocks** - Here you will define the Block Types to be available for use in the property. Read more on how to set up Block Types below.
-* **Blocks Live editing mode** - Enabling this will make editing of a Block happening directly to the Rich Text Editor, making changes appear as you type.
+* **Blocks Live editing mode** - Enabling this will make editing of a Block happen directly to the Rich Text Editor, making changes appear as you type.
 
 ## Setup Block Types
 
-Block Types are **Element Types** which need to be created before you can start configuring them as Block Types. This can be done either directly from the property editor setup process, or you can set them up beforehand. If they are set beforehand then they need to be added to the Rich Text Editor afterward.
+Block Types are **Element Types** that need to be created before you can start configuring them as Block Types. This can be done either directly from the property editor setup process, or you can set them up beforehand. If they are set beforehand then they need to be added to the Rich Text Editor afterward.
 
-Once you added an Element Type as a Block Type on your Rich Text Editor Data Type you will have options to configure it further.
+Once you add an Element Type as a Block Type on your Rich Text Editor Data Type you will have options to configure it further.
 
-![Rich Text Editor - Data Type Block Configuration](./images/rte-data-type-block-type-editor.jpg)
+<figure><img src="../../../../../.gitbook/assets/rte-data-type-block-type-editor.jpeg" alt=""><figcaption><p>Rich Text Editor - Data Type Block Configuration</p></figcaption></figure>
 
 Each Block has a set of properties that are optional to configure. They are described below.
 
@@ -39,26 +41,26 @@ By configuring the properties in the group you can customize the user experience
 
 ### Data Models
 
-It is possible to use two separate Element Types for your Block Types. Its required to have one for Content and optional to add one for Settings.
+It is possible to use two separate Element Types for your Block Types. It's required to have one for Content and optional to add one for Settings.
 
-* **Content model** - This presents the Element Type used as model for the content section of this Block. This cannot be changed, but you can open the Element Type to perform edits or view the properties available. Useful when writing your Label.
+* **Content model** - This presents the Element Type used as a model for the content section of this Block. This cannot be changed, but you can open the Element Type to perform edits or view the properties available. Useful when writing your Label.
 * **Settings model** - Add a Settings section to your Block based on a given Element Type. When picked you can open the Element Type or choose to remove the settings section again.
 
 ### Catalogue appearance
 
-These properties refer to how the Block is presented in the Block catalogue, when editors choose which Blocks to use for their content.
+These properties refer to how the Block is presented in the Block catalog when editors choose which Blocks to use for their content.
 
 * **Background color** - Define a background color to be displayed beneath the icon or thumbnail. Eg. `#424242`.
-* **Icon color** - Change the color of the Element Type icon. Eg. `#242424`.
-* **Thumbnail** - Pick an image or Scalable Vector Graphics (SVG) file to replace the icon of this Block in the catalogue.
+* **Icon Color** - Change the color of the Element Type icon. Eg. `#242424`.
+* **Thumbnail** - Pick an image or Scalable Vector Graphics (SVG) file to replace the icon of this Block in the catalog.
 
-The thumbnails for the catalogue are presented in the format of 16:10, and we recommend a resolution of 400px width and 250px height.
+The thumbnails for the catalog are presented in the format of 16:10, and we recommend a resolution of 400px width and 250px height.
 
 ### Advanced
 
 These properties are relevant when you work with custom views.
 
-* **Force hide content editor** - If you made a custom view that enables you to edit the content part of a block and you are using default editing mode (not inline) you might want to hide the content-editor from the block editor overlay.
+* **Force hide content editor** - If you made a custom view that enables you to edit the content part of a block and you are using default editing mode (not inline) you might want to hide the content editor from the block editor overlay.
 
 ## Rendering Blocks
 
@@ -66,10 +68,10 @@ To render Blocks in the frontend, you must create Partial Views for each Block.
 
 The Partial Views must be:
 
-* Named by the alias of the Element Type that is being used as Content Model for the Block.
+* Named by the alias of the Element Type that is being used as the Content Model for the Block.
 * Placed in the folder `Views/Partials/RichText/Components/`.
 
-For example, if the Element Type alias of Content Model is `myBlockType`, a Partial View must be created at `Views/Partials/RichText/Components/MyBlockType.cshtml`.
+For example, if the Element Type alias of the Content Model is `myBlockType`, a Partial View must be created at `Views/Partials/RichText/Components/MyBlockType.cshtml`.
 
 The Partial View will receive the model of `Umbraco.Cms.Core.Models.Blocks.RichTextBlockItem`. This gives you the option to access properties of the Content and Settings Models of your Block, as illustrated in the following sample:
 
@@ -80,9 +82,9 @@ The Partial View will receive the model of `Umbraco.Cms.Core.Models.Blocks.RichT
 <h1 style="background-color:@Model.Settings.Value("backgroundColor")">@Model.Content.Value("heading")</h1>
 ```
 
-If you use ModelsBuilder, you can specify the Content Model (and optionally the Settings Model) in the Partial View model. This allows for type safe access to the Block data.
+If you use ModelsBuilder, you can specify the Content Model (and optionally the Settings Model) in the Partial View model. This allows for type-safe access to the Block data.
 
-The following example shows a Partial View for a Block with `MyBlockType` as Content Model and `MyBlockSettingsType` as Settings Model:
+The following example shows a Partial View of a Block with `MyBlockType` as Content Model and `MyBlockSettingsType` as Settings Model:
 
 ```csharp
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.RichTextBlockItem<MyBlockType, MyBlockSettingsType>>
