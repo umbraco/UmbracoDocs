@@ -25,6 +25,11 @@ Under each major version, you can find details about minor and patch releases fo
 * Added feature of [content import and export with migrations](./deployment-workflow/import-export.md).
 * Added option to [resolve user accounts in target environments](./deploy-settings.md#resolveuserintargetenvironment).
 
+[**12.0.4**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.4) **(October 17th 2023)**
+
+* Fixed issue with deployment of content when scheduled for a future release date.
+* Prevent dictionary items from being serialized to `.uda` files on disk when configured for transfer as content [#184](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/184).
+
 [**12.0.3**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.3) **(October 10th 2023)**
 
 * Fixed regression issue introduced in 12.0.3 with deployment of properties of content templates [#182](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/182)
@@ -68,6 +73,11 @@ Under each major version, you can find details about minor and patch releases fo
 
 * Added feature of [content import and export with migrations](./deployment-workflow/import-export.md).
 * Added option to [resolve user accounts in target environments](./deploy-settings.md#resolveuserintargetenvironment).
+
+[**11.1.6**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.1.6) **(October 17th 2023)**
+
+* Fixed issue with deployment of content when scheduled for a future release date.
+* Prevent dictionary items from being serialized to `.uda` files on disk when configured for transfer as content [#184](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/184).
 
 [**11.1.5**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F11.1.5) **(October 10th 2023)**
 
@@ -150,6 +160,11 @@ Under each major version, you can find details about minor and patch releases fo
 <details>
 
 <summary>Version 10</summary>
+
+[**10.2.6**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.6) **(October 17th 2023)**
+
+* Fixed issue with deployment of content when scheduled for a future release date.
+* Prevent dictionary items from being serialized to `.uda` files on disk when configured for transfer as content [#184](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/184).
 
 [**10.3.0**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.0) **(TBC 2023)**
 

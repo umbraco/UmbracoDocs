@@ -20,5 +20,5 @@ Below are a few useful links that might come in handy should you wish to learn m
 
 * [Payment provider source code](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Quickpay)
 * [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Quickpay/issues)
-* [QuickPay API information](https://quickpay.net/quickpayapi)
+* [QuickPay API information](https://quickpay.net/integrations/quickpay-api/)
 * [QuickPay API documentation](https://learn.quickpay.net/tech-talk/api/)

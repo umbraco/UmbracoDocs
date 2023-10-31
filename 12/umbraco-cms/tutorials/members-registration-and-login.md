@@ -68,12 +68,38 @@ With this partial in place, provided we put it in navigation or a layout page, w
 
 ## Member-only pages/Restricted access
 
+
+{% hint style="info" %} 
+If you are on Umbraco Cloud you need to do the following steps to be able to restrict access for your users:
+
+1. Go to the Users section in the Backoffice. 
+2. Select your User.
+3. Add the "Sensitive Data" Group. 
+![Assign User Access group](images/v8-17-Assign-User-Access-Group.png)
+
+
+Once you have added the "Sensitive Data" group go to the Members section in the backoffice. In the Members section you need to select each member and approve them by toggling the Approved button.
+
+![Approve Member](images/v8-18-Approve-Member.png)
+
+Once the users have been approved, you can go ahead and continue the tutorial.
+
+
+ {% endhint %}
+
+
+
+
 Now that we have the options to:
 
 * Register a member
 * Log in as a member
 * Check the current login status
 * Log out a member
+
+
+
+
 
 We can also go a bit further and specify which parts of our website should be accessible to logged-in members. To do this, head on over to the Member section in the Backoffice, and create a new Member Group.
 
@@ -97,7 +123,7 @@ To restrict access you need to have made a member group, and a page containing t
 
 Congratulations! With all of that setup, the page you chose will redirect the user to the Login page if they are not logged in, and if they are logged in - they will be able to see the page's contents.
 
-In the navigation, you will be able to tell the content node is restricted - the small red icon that is added on top of the document type icon signifies that.
+In the navigation, you will be able to tell that the content node is restricted. This small red icon that is added on top of the Document Type icon signifies that.
 
 ![Protected content](images/v8-16-Protected-node.png)
 

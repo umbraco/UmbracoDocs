@@ -152,7 +152,7 @@ A fifth timeout setting is available from Umbraco Deploy 9.5 and 10.1, allowing 
 
 This setting defaults to 5 minutes.
 
-All of these times are configured using [standard timespan format strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-timespan-format-strings).
+All of these times are configured using [standard timespan format strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-timespan-format-strings). The values of the settings will have to be the same value on all timeout settings.
 
 ## Batch settings
 

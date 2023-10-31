@@ -5,6 +5,7 @@
   * [Umbraco 8 Documentation](https://our.umbraco.com/documentation/)
   * [Umbraco 7 Documentation](https://our.umbraco.com/documentation/)
 * [Contribute](https://docs.umbraco.com/welcome/contribute/)
+* [Sustainability Best Practices](http://127.0.0.1:5000/o/vHdmkfI8smZW50A5yIZD/s/ZOU4fHcVxqYnC8V1dry6/)
 
 ## Fundamentals
 
@@ -267,6 +268,7 @@
   * [Routing requirements for backoffice authentication](reference/routing/authorized.md)
   * [Custom MVC controllers (Umbraco Route Hijacking)](reference/routing/custom-controllers.md)
   * [Custom MVC Routes](reference/routing/custom-routes.md)
+  * [Custom Middleware](reference/routing/custom-middleware.md)
   * [URL Rewrites in Umbraco](reference/routing/iisrewriterules.md)
   * [Special Property Type aliases for routing](reference/routing/routing-properties.md)
   * [URL Redirect Management](reference/routing/url-tracking.md)
@@ -285,6 +287,8 @@
   * [Custom property editors support](reference/content-delivery-api/custom-property-editors-support.md)
   * [Extension API for querying](reference/content-delivery-api/extension-api-for-querying.md)
   * [Media Delivery API](reference/content-delivery-api/media-delivery-api.md)
+  * [Protected content in the Delivery API](reference/content-delivery-api/protected-content-in-the-delivery-api.md)
+  * [Additional preview environments support](reference/content-delivery-api/additional-preview-environments-support.md)
 * [API versioning and OpenAPI](reference/api-versioning-and-openapi.md)
 * [Searching](reference/searching/README.md)
   * [Examine](reference/searching/examine/README.md)

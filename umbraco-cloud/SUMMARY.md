@@ -3,6 +3,7 @@
 * [What is Umbraco Cloud?](README.md)
 * [Frequently asked questions](frequently-asked-questions.md)
 * [Security](security.md)
+* [Sustainability Best Practices](http://127.0.0.1:5000/o/vHdmkfI8smZW50A5yIZD/s/ZOU4fHcVxqYnC8V1dry6/)
 
 ## Getting Started
 
@@ -39,6 +40,12 @@
     * [New Certificate Authority for custom hostnames](set-up/project-settings/manage-hostnames/ca-record-migration.md)
     * [Rewrite rules](set-up/project-settings/manage-hostnames/rewrites-on-cloud.md)
     * [Custom Certificates](set-up/project-settings/manage-hostnames/security-certificates.md)
+  * [Umbraco CI/CD Flow](set-up/project-settings/umbraco-cicd/README.md)
+    * [Cloud API For CI/CD Flow](set-up/project-settings/umbraco-cicd/UmbracoCloudApi.md)
+    * [Configuring a CI/CD pipeline](set-up/project-settings/umbraco-cicd/samplecicdpipeline/README.md)
+      * [Azure DevOps](set-up/project-settings/umbraco-cicd/samplecicdpipeline/azure-devops.md)
+      * [GitHub Actions](set-up/project-settings/umbraco-cicd/samplecicdpipeline/github-actions.md)
+    * [Known Limitations and Considerations](set-up/project-settings/umbraco-cicd/KnownLimitationsAndConsiderations.md)
   * [External Services](set-up/project-settings/external-services.md)
   * [Usage](set-up/project-settings/usage.md)
   * [Availability and Performance](set-up/project-settings/availability-performance.md)
@@ -123,6 +130,7 @@
 ## Release Notes
 
 * [Overview 2023](release-notes/overview-2023.md)
+* [October 2023](release-notes/2023-10-releasenotes.md)
 * [September 2023](release-notes/2023-09-releasenotes.md)
 * [August 2023](release-notes/2023-08-releasenotes.md)
 * [June 2023](release-notes/2023-06-releasenotes.md)
