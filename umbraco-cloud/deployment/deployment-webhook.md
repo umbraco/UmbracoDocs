@@ -11,7 +11,7 @@ There are many use cases for deployment webhooks such as providing a detailed au
 
 1. Any deployments to the Live site could be relevant for many parties in a company. Posting information about a deployment in internal communication channels like _Slack_ is made possible using this feature.
 2. Monitoring of the whole deployment cycle. A successful deployment might cause an error to show on the website! Integrating the webhook with other monitoring services, you could find out which deployment caused the issue.
-3. Letting content editors know about particular deployments such as when a new document type was added. Will inform them that they can now use the new document type.
+3. Letting content editors know about particular deployments such as when a new Document Type was added. Will inform them that they can now use the new Document Type.
 
 ## Configuration steps
 
