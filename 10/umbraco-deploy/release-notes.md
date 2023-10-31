@@ -23,7 +23,8 @@ Under each major version, you can find details about minor and patch releases fo
 #### [10.3.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.0) (TBC 2023)
 
 * Added feature of [content import and export with migrations](./deployment-workflow/import-export.md).
-* Added option to [resolve user accounts in target environments](./deploy-settings.md#resolveuserintargetenvironment).
+* Added a new configuration option of `ResolveUserInTargetEnvironment` to allow resolving of user accounts in target environments (see [Deploy Settings](./deploy-settings.md)).
+* Added a new configuration option of `AllowPublicAccessDeploymentOperations` to amend the behavior of public access rule transfer (see [Deploy Settings](./deploy-settings.md)).
 
 #### [10.2.6](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.6) (October 17th 2023)
 * Fixed issue with deployment of content when scheduled for a future release date.
@@ -290,7 +291,8 @@ Under each major version, you can find details about minor and patch releases fo
 #### [4.9.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.9.0) (TBC 2023)
 
 * Added feature of [content import and export with migrations](./deployment-workflow/import-export.md).
-* Added option to [resolve user accounts in target environments](./deploy-settings.md#resolveuserintargetenvironment).
+* Added a new configuration option of `ResolveUserInTargetEnvironment` to allow resolving of user accounts in target environments (see [Deploy Settings](./deploy-settings.md)).
+* Added a new configuration option of `AllowPublicAccessDeploymentOperations` to amend the behavior of public access rule transfer (see [Deploy Settings](./deploy-settings.md)).
 
 #### [4.8.4](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.8.4) (October 10th 2023)
 
