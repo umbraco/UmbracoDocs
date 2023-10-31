@@ -4,7 +4,6 @@
 
 ## Fundamentals
 
-* [Get to know Umbraco](fundamentals/get-to-know-umbraco.md)
 * [Backoffice](fundamentals/backoffice/README.md)
   * [Property Editors](fundamentals/backoffice/property-editors/README.md)
     * [Built-in Property Editors](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/README.md)
