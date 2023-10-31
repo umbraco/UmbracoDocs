@@ -7,11 +7,11 @@ You can now configure a deployment webhook to be triggered upon successful deplo
 
 ## Use cases
 
-There are many 'audit' cases when you would like to let others know about what is happening with your site. Here are some examples of cases where this feature could be useful:
+There are many use cases for deployment webhooks such as providing a detailed audit trail. Here are some scenarios where Webhooks could be useful:
 
-1. Any deployments to the Live site could be relevant for many parties in a company. Posting information about them in internal communication channels like _Slack_ is made possible using this feature.
-2. Monitoring of the whole deployment cycle. A successful deployment might result in a potentially breaking change. Integrating the webhook with other monitoring services, you could find out which deployment has caused the issue.
-3. Letting content editors know about particular deployments when a new document type was added as they can now use the new document type.
+1. Any deployments to the Live site could be relevant for many parties in a company. Posting information about a deployment in internal communication channels like _Slack_ is made possible using this feature.
+2. Monitoring of the whole deployment cycle. A successful deployment might cause an error to show on the website! Integrating the webhook with other monitoring services, you could find out which deployment caused the issue.
+3. Letting content editors know about particular deployments such as when a new document type was added. Will inform them that they can now use the new document type.
 
 ## Configuration steps
 
