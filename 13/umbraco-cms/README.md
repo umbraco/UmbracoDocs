@@ -8,7 +8,7 @@ description: >-
 
 ## Getting started with the Umbraco 13 RC
 
-Below you will find the steps on how you can create a new Umbraco 13 RC project the Command Line.
+Below you will find the steps on how you can create a new Umbraco 13 RC project using the Command Line.
 
 #### Install using Command Line
 
