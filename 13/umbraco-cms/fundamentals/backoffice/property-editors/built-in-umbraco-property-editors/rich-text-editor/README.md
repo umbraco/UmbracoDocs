@@ -4,7 +4,7 @@
 
 `Returns: HTML`
 
-The Rich Text Editor (RTE) is based on [tinymce](https://www.tinymce.com/) and is highly configurable. Depdending on the configuration, it will give your content editors more flexibility when working with content that should be more than only plain text.
+The Rich Text Editor (RTE) is based on [tinymce](https://www.tinymce.com/) and is highly configurable. Depending on the configuration, it will give your content editors more flexibility when working with content that should be more than only plain text.
 
 {% hint style="info" %}
 **Are you using custom configuration or plugins with TinyMCE?**
@@ -17,13 +17,17 @@ If your site is upgraded from an older version, follow the migration guides belo
 * [Migrate from version 5 to version 6](https://www.tiny.cloud/docs/tinymce/6/migration-from-5x/)
 {% endhint %}
 
-## [Configuration options](configuration.md)
+## [Configuration options](broken-reference)
 
 Customize everything from toolbar options to editor size to where pasted images are saved.
 
-## [RTE Styles](rte-styles.md)
+## [Styles](broken-reference)
 
-Use CSS to define specific editor styles and add them to the RTE.
+Use CSS to define specific editor styles and add them as formatting options of the Rich Text Editor.
+
+## [Blocks](rte-blocks.md)
+
+Use Blocks to define specific parts which can be added as part of the markup of the Rich Text Editor.
 
 ## Data Type Definition Example
 
@@ -76,7 +80,7 @@ See the example below to see how a value can be added or changed programmaticall
     // Create a variable for the desired value
     var htmlValue = new HtmlString("Add some text <strong>here</strong>");
 
-    // Set the value of the property with alias 'richText'. 
+    // Set the value of the property with alias 'richText'.
     content.SetValue("richText", htmlValue);
 
     // Save the change
@@ -89,7 +93,7 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 ```csharp
 @{
     // Get the page using it's id
-    var content = contentService.GetById(1234); 
+    var content = contentService.GetById(1234);
 }
 ```
 

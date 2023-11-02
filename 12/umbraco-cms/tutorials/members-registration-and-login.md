@@ -68,12 +68,38 @@ With this partial in place, provided we put it in navigation or a layout page, w
 
 ## Member-only pages/Restricted access
 
+
+{% hint style="info" %} 
+If you are on Umbraco Cloud you need to do the following steps to be able to restrict access for your users:
+
+1. Go to the Users section in the Backoffice. 
+2. Select your User.
+3. Add the "Sensitive Data" Group. 
+![Assign User Access group](images/v8-17-Assign-User-Access-Group.png)
+
+
+Once you have added the "Sensitive Data" group go to the Members section in the backoffice. In the Members section you need to select each member and approve them by toggling the Approved button.
+
+![Approve Member](images/v8-18-Approve-Member.png)
+
+Once the users have been approved, you can go ahead and continue the tutorial.
+
+
+ {% endhint %}
+
+
+
+
 Now that we have the options to:
 
 * Register a member
 * Log in as a member
 * Check the current login status
 * Log out a member
+
+
+
+
 
 We can also go a bit further and specify which parts of our website should be accessible to logged-in members. To do this, head on over to the Member section in the Backoffice, and create a new Member Group.
 
