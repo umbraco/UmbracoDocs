@@ -67,7 +67,7 @@ Add the following code
 Make sure to restart the application after you create and update`umbraco-package.json`
 {% endhint %}
 
-### 2. Creating a simple Web Component
+### 2. Creating a Web Component
 
 Let's start with creating a folder `src` in our Suggestions folder. We want to start creating the web component we need for our property editor. Create a file in the `src` folder with the name `suggestions-property-editor-ui.element.ts`
 
