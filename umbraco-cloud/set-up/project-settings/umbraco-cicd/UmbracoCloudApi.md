@@ -21,7 +21,9 @@ Please be aware that this feature is currently in beta mode. During this beta pe
 
 To integrate Umbraco Cloud into your CI/CD pipeline, you'll need to make API calls to the following endpoint: `https://api.cloud.umbraco.com.`
 
+{% hint style="warning" %}
 The initial certificate for this DNS is self-signed which can give curl and other tools some issues. We are working on changing this, for now, allowing an insecure connection will make it possible to circumvent this certificate issue.
+{% endhint %}
 
 ### How to enable CI/CD Integrator in the Umbraco Cloud Portal
 
@@ -137,7 +139,7 @@ The purpose of packaging your content into a ZIP file is to replace the existing
 
 Umbraco Cloud environments are using git internally. This means you should be careful about the .gitignore file you add to the package. If you have “git ignored” build js assets locally, you need to handle this so that this is not being ignored in the cloud repository.
 
-**Note:** If the `.gitignore` file within the ZIP package does not exclude bin/ and obj/ directories, these will also be committed to the Umbraco Cloud repository. It is recommended that Dan and Jesper review and update this workflow accordingly.
+**Note:** If the `.gitignore` file within the ZIP package does not exclude bin/ and obj/ directories, these will also be committed to the Umbraco Cloud repository.
 
 **Best Practice:** If you have frontend assets your local repository's .gitignore file will most likely differ from the one intended for the Umbraco Cloud repository, it's advisable to create a separate .cloud\_gitignore file. Include this file in the ZIP package and rename it to .gitignore before packaging. This ensures that only the necessary files and directories are uploaded and finally committed to the Umbraco Cloud repository.
 
@@ -305,7 +307,7 @@ Sometimes updates are done directly on the Umbraco Cloud repository. We encourag
 Using a curl command, fetching the potential differences would look like this:
 
 ```sh
-url="https://apim-dev-global.azure-api.net/projects/$projectId/deployments/$latestCompletedDeploymentId/diff"
+url="https://api.cloud.umbraco.com/v1/projects/$projectId/deployments/$latestCompletedDeploymentId/diff"
 downloadFolder="tmp"
 mkdir -p $downloadFolder # ensure folder exists
 

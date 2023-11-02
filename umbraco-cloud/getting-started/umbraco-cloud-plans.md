@@ -40,4 +40,4 @@ Umbraco Cloud Professional plan
 - Memory - 2000 MB (in private bytes)
 - Disk - 10400 MB
 
-These are hard plan quotas, as they can't be broken for more than a 5 minute period. When an cloud environment uses more CPU or memory as defined by the plan quota, the app service hosting the environment will restart. If the app service is restarted several times, we consider it as noisy neighbour and will to move it to dedicated environment to ensure other tenants in the shared pool aren't negatively affected.
+These are hard plan quotas, which cannot be exceeded for more than a 5-minute interval. When a cloud environment surpasses the CPU or memory limits defined by the plan quota, the app service hosting the environment will automatically restart. If the app service experiences multiple restarts, we classify it as a noisy neighbor. Then it will be relocated to a dedicated environment to guarantee that other tenants in the shared pool are not negatively impacted.

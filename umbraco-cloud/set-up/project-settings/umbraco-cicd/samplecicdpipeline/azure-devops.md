@@ -8,11 +8,15 @@ description: >-
 
 ## Setting Up the pipeline in Azure DevOps
 
+Before setting up the pipeline in Azure DevOps, make sure that the steps in the [Configuring a CI/CD pipeline](./) are done.
+
 The pipeline is defined in an Azure YAML file and includes some steps that call custom shell scripts to interact with the Umbraco Cloud API.
 
 You can download the Azure DevOps sample scripts below:
 
 {% file src="../../../../.gitbook/assets/AzureDevOpsSampleScripts.zip" %}
+
+Once unzipped, add the `devops` folder in the `local-cicd-demo-site` or your cloned project at the **root** folder.
 
 The zip file includes the following files:
 
@@ -24,6 +28,12 @@ The zip file includes the following files:
 * Start Deployment `start_deployment.sh`
 * Get deployment status: `get_deployment_status.sh`
 * Get diff since latest deployment: `get_changes_since_last_deployment.sh`
+
+### Pushing changes to the Azure DevOps repository
+
+Before setting up the pipeline in Azure DevOps make sure to unzip the AzureDevOpsSampleScripts.zip in the root folder of the local-cicd-demo-site. Once it has been unzipped push the changes to the repository.
+
+Since we previously showed how to reconfigure the Git Remotes to the DevOps Repository, these changes will be pushed to that repository.
 
 #### Creating the Pipeline in Azure DevOps
 
@@ -44,13 +54,32 @@ The zip file includes the following files:
     ![Pipeline3.png](../../../images/Pipeline3.png)
 4.  **Select the YAML File from the Repository**
 
-    Finally, specify the YAML file that defines your pipeline. You can find a YAML file for Azure DevOps and Google Actions, respectively here \[link to the “Sample Script” section]
+    Finally, specify the YAML file that defines your pipeline. The file is a part of the sample script file.
 
     ![Pipeline4.png](../../../images/Pipeline4.png)
+5.  **Review your pipeline YAML**\
+    The next step is reviewing the YAML pipeline. You  need to replace the following:
 
-By following these steps, you'll have successfully set up a CI/CD pipeline in Azure DevOps for your Umbraco Cloud project.
+    1.  The value of umbraco-cloud-API-key and The value of project-id.&#x20;
 
-### Configuring a Staged Pipeline in Azure DevOps
+        * The API key is needed to access the Umbraco Cloud API.
+        * The ID of the project that the pipeline will be used for.
+
+        The values can be found in the `Settings` -> `Advanced` section on your project in the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects).
+    2. If you have renamed the `Master` Branch to `Main` then you will need to add `“main”`&#x20;
+    3. From the commented `‘stages‘`, replace the **email@email.com** from`git config user.email email@email.com` and `git remote add tmp-pusher link` with preferred ones.
+    4. If you have changed the default name of the `UmbracoProject.csproj` file you need to change it as well in the `‘stage: BuildAndTestStage’ - ‘job: BuildAndTestJob’ - ‘task: DotNetCoreCLI@2’`
+    5. You can also add a user name in the ‘`notifyUsers‘`
+
+
+
+    <figure><img src="https://lh7-us.googleusercontent.com/wSFuXOXSY2PrE4xisffq-mjzLYTmPut0ZN5bO9n-nFQ8TVjsUDI8mLFgmpvUplXNZ8NKLPooZ15PoyE8KZ4GFVPBk_k4kZQAtAZ6n22armrZaC7bKzUiAQkMMg1MVOlBcmQynZJgvJ-worp-g_0oPBY" alt=""><figcaption><p>Changes for the  pipeline.yaml file.</p></figcaption></figure>
+
+    Once the changes have been made “save and run” the pipeline.
+
+Following these steps, you'll have successfully set up a CI/CD pipeline in Azure DevOps for your Umbraco Cloud project.
+
+### Overview of the example pipeline.
 
 This guide outlines setting up a multi-stage pipeline in Azure DevOps using the provided sample scripts. The pipeline is defined in an Azure YAML file and consists of three key stages:
 
@@ -67,7 +96,7 @@ This guide outlines setting up a multi-stage pipeline in Azure DevOps using the 
    * `git-pat`: A Personal Access Token (PAT) for Git interactions.
    * `project-id`: The ID of the project that the pipeline will be used for.
 
-By following these steps, you'll have a staged pipeline configured in Azure DevOps tailored for your Umbraco Cloud project.
+Following these steps, you'll have a staged pipeline configured in Azure DevOps tailored for your Umbraco Cloud project.
 
 #### Pipeline Stage: Preflight Checks
 
@@ -118,11 +147,25 @@ Upon running the pipeline for the first time without making any modifications to
 
 The pipeline is designed to be triggered automatically upon any changes to the local repository. When you update and push a change, the pipeline will initiate.
 
-**Pipeline Overview (After a Run with Changes)**\\
+**Pipeline Overview (After a Run with Changes)**
 
 <figure><img src="../../../images/UmbracoCloudDemoSite2.png" alt=""><figcaption><p><strong>Pipeline Overview</strong></p></figcaption></figure>
 
-**Umbraco Cloud Project Overview (After the Second Run)**\\
+**After the first deployment**
+
+After the first deployment (with some schema changes) you will need to edit the .yaml file and uncomment the [Pipeline Stage: Preflight Checks](azure-devops.md#pipeline-stage-preflight-checks):
+
+<figure><img src="../../../../.gitbook/assets/pipelineUncomment.PNG" alt=""><figcaption></figcaption></figure>
+
+Once the pipeline has finished deploying, then you are able to transfer the content that you have locally directly to your environment on Umbraco Cloud.&#x20;
+
+{% hint style="info" %}
+You can edit the pipeline by going to your Pipelines -> Edit
+
+<img src="../../../../.gitbook/assets/pipelineEdit.PNG" alt="" data-size="original">
+{% endhint %}
+
+**Umbraco Cloud Project Overview (After the Second Run)**
 
 <figure><img src="../../../images/UmbracoCloudDemoSite3.png" alt=""><figcaption><p><strong>Umbraco Cloud Project Overview (After the Second Run)</strong></p></figcaption></figure>
 

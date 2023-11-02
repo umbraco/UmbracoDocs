@@ -9,13 +9,13 @@ You can now configure a deployment webhook to be triggered upon successful deplo
 
 There are many 'audit' cases when you would like to let others know about what is happening with your site. Here are some examples of cases where this feature could be useful:
 
-1. Any deployments to the Live site could be relevant for many parties in a company. Posting information about them in internal communication channels like *Slack* is made possible using this feature.
+1. Any deployments to the Live site could be relevant for many parties in a company. Posting information about them in internal communication channels like _Slack_ is made possible using this feature.
 2. Monitoring of the whole deployment cycle. A successful deployment might result in a potentially breaking change. Integrating the webhook with other monitoring services, you could find out which deployment has caused the issue.
 3. Letting content editors know about particular deployments when a new document type was added as they can now use the new document type.
 
 ## Configuration steps
 
-![Adding deployment webhook](images/DeployWebhook-v10.gif)
+![Adding deployment webhook](images/Post-deployment-webhooks.gif)
 
 1. From the Umbraco Cloud Portal go to **Settings** -> **Webhooks**
 2. Select the environment to register a webhook.
@@ -41,38 +41,38 @@ Contents of the payload contain general information about the current deployment
 
 ```json
 {
-    "Id":"40810bf1bbbfc16dd273162509de297ad386fb4e",
-    "Status":"success",
-    "StatusText":"",
-    "AuthorEmail":"laughingunicorn@example.com",
-    "Author":"Laughing Unicorn",
-    "Message":"Adding document type 'LaughingUnicornLaughs'",
-    "Progress":"",
-    "ReceivedTime":"2017-10-02T11:19:00.4984213Z",
-    "StartTime":"2017-10-02T11:19:04.1328336Z",
-    "EndTime":"2017-10-02T11:19:24.3470224Z",
-    "LastSuccessEndTime":"2017-10-02T11:19:24.3470224Z",
-    "Complete":true,
-    "ProjectName":"laughingUnicorn",
-    "ProjectUrl":"s1.umbraco.io/project/laughingunicorn",
-    "SiteUrl":"laughingunicorn.s1.umbraco.io",
-    "EnvironmentName":"Live",
-    "Commits":[
+    "Id": "40810bf1bbbfc16dd273162509de297ad386fb4e",
+    "Status": "success",
+    "StatusText": "",
+    "AuthorEmail": "laughingunicorn@example.com",
+    "Author": "Laughing Unicorn",
+    "Message": "Adding document type 'LaughingUnicornLaughs'",
+    "Progress": "",
+    "ReceivedTime": "2017-10-02T11:19:00.4984213Z",
+    "StartTime": "2017-10-02T11:19:04.1328336Z",
+    "EndTime": "2017-10-02T11:19:24.3470224Z",
+    "LastSuccessEndTime": "2017-10-02T11:19:24.3470224Z",
+    "Complete": true,
+    "ProjectName": "laughingUnicorn",
+    "ProjectUrl": "s1.umbraco.io/project/laughingunicorn",
+    "SiteUrl": "laughingunicorn.s1.umbraco.io",
+    "EnvironmentName": "Live",
+    "Commits": [
         {
-            "AuthorName":"Laughing Unicorn",
-            "AuthorEmail":"laughingunicorn@example.com",
-            "Message":"Adding document-type 'LaughingUnicornLaughs'\n",
-            "Timestamp":"2017-10-02T07:16:39",
-            "ChangedFiles":[
+            "AuthorName": "Laughing Unicorn",
+            "AuthorEmail": "laughingunicorn@example.com",
+            "Message": "Adding document-type 'LaughingUnicornLaughs'\n",
+            "Timestamp": "2017-10-02T07:16:39",
+            "ChangedFiles": [
                 "data\\revision\\document-type__9ac71ecba6d84344af4bcbf43ab6cd80.uda"
             ]
         },
         {
-            "AuthorName":"Laughing Unicorn",
-            "AuthorEmail":"laughingunicorn@example.com",
-            "Message":"Adding template 'LaughingUnicornLaughs'\n",
-            "Timestamp":"2017-10-02T07:16:38",
-            "ChangedFiles":[
+            "AuthorName": "Laughing Unicorn",
+            "AuthorEmail": "laughingunicorn@example.com",
+            "Message": "Adding template 'LaughingUnicornLaughs'\n",
+            "Timestamp": "2017-10-02T07:16:38",
+            "ChangedFiles": [
                 "Views\\laughingunicornlaughs.cshtml",
                 "data\\revision\\template__80d64e8172df46479ccf330bb9f63f2c.uda"
             ]

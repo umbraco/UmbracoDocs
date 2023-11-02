@@ -26,6 +26,6 @@ Along with the client library you will also find two samples based on the librar
 
 Test your Umbraco Heartcore project against a small MVC site. You can choose to use our sample project and content, or connect to your own project and build your own views and controllers.
 
-## [Content Management sample](Content-Management-Sample)
+## [Content Management sample](content-management-sample.md)
 
 Get to know the content management service and how to use it to manage content and media programmatically.

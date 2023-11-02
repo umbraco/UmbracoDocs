@@ -6,7 +6,7 @@ description: A kind extension provides the preset for other extensions to use
 
 A kind is matched with a specific type. When another extension uses that type and kind it will inherit the preset manifest of the kind extension.
 
-The registration of Kinds is done in the same manner as the registration of other extensions. But the format of it is quite different. Let's take a look at an example of how to implement  the `Kind registration` for a **Header App Button Kind**.
+The registration of Kinds is done in the same manner as the registration of other extensions. But the format of it is different. Let's take a look at an example of how to implement  the `Kind registration` for a **Header App Button Kind**.
 
 ### Kind example
 
