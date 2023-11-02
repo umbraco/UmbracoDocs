@@ -10,6 +10,10 @@ description: >-
 
 Below you will find the steps on how you can create a new Umbraco 13 RC project using the Command Line.
 
+### prerequisite
+
+* [.NET 8.0.0.rc.2](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) installed
+
 #### Install using Command Line
 
 1. Run `dotnet new -i Umbraco.Templates::13.0.0-rc1` in the command line to install the Umbraco 13 RC templates.
