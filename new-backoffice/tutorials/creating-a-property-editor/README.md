@@ -214,7 +214,7 @@ Let's start with the input field. When we type something in the input field, we 
 }
 ```
 
-Let's look at the suggestions button next. When we press the suggestion button we want the text to update to the suggestion that we get. Just like the value of our property editor is going to change when we write in the input field, we also want the value to change when we press the suggestion button.
+Let's look at the suggestions button next. When we press the suggestion button we want the text to update to the suggestion that we get. Similar to how the value of our property editor changes when we write in the input field, we also want the value to change when we press the suggestion button.
 
 First, update the import for Lit and add some suggestions to the property editor:
 
