@@ -37,7 +37,7 @@ For reference, the full details are listed here:
 
 The following updates describe the more significant changes to the codebase and public API:
 
-* Amended `IWorkflowExecutionService`, `IRecordService`, `IRecordSetActionType` and `IWorkflowType` methods related to workflow execution to be asynchronous
+* Amended `IWorkflowExecutionService`, `IRecordService`, `IRecordSetActionType` and `IWorkflowType` methods related to workflow execution to be asynchronous. These methods now have an `Async` suffix and will return a awaitable `Task`.
 
 These updates are more minor. We don't expect many projects to be affected by them as they are in areas that are not typical extension points:
 
