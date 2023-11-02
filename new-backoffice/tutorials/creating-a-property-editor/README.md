@@ -30,7 +30,7 @@ There are a lot of parallels with Creating a Custom Dashboard. The tutorial [Cre
 
 ### The End Result
 
-By the end of this tutorial, we will have a Suggestions data type running inside of Umbraco, registered as a Data Type in the backoffice, and assigned to a Document Type. The data type can create and suggest values.
+By the end of this tutorial, we will have a Suggestions Data Type running inside of Umbraco, registered as a Data Type in the backoffice, and assigned to a Document Type. The Data Type can create and suggest values.
 
 ### 1. Setting up a plugin
 
