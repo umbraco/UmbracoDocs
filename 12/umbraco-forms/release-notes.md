@@ -26,6 +26,7 @@ In this section, you can find the release notes for each version of Umbraco Form
 * Added a caption property for display adjacent to the input field when using the checkbox field type [#816](https://github.com/umbraco/Umbraco.Forms.Issues/issues/816)
 * Added a new setting type that allows entry of text or selection of a field from the current form [#1071](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1071)
 * Added a response object to the headless API providing details of post submission behavior for the form [#1104](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1104)
+* Tracked relations between forms and content and displayed in new "Info" content app [#937](https://github.com/umbraco/Umbraco.Forms.Issues/issues/#937)
 
 #### [12.1.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.1) (September 19th 2023)
 
