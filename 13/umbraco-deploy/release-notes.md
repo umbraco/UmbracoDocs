@@ -18,6 +18,17 @@ Under each major version, you can find details about minor and patch releases fo
 
 <details>
 
+<summary>Version 13</summary>
+
+[**13.0.0**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.0)
+
+* Compatibility with Umbraco 13
+  * See full details of breaking changes under the [version specific upgrade guide](upgrades/version-specific.md).
+
+</details>
+
+<details>
+
 <summary>Version 12</summary>
 
 [**12.0.4**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.4) **(October 17th 2023)**
