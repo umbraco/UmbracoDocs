@@ -6,7 +6,7 @@ description: >-
 
 # Introduction
 
-As a global society, we should be making an effort to [be on track with the necessary changes](https://climateactiontracker.org/publications/state-of-climate-action-2022/). These changes are needed to keep global temperature increases below 1.5°C compared to pre-industrialised times. According to various studies[attribution needed], that temperature will likely be breached in 2023 with the additional impact of the warming weather pattern, for example more extreme weather events driven by El Niño.
+As a global society, we should be making an effort to [be on track with the necessary changes](https://climateactiontracker.org/publications/state-of-climate-action-2022/). These changes are needed to keep global temperature increases below 1.5°C compared to pre-industrialised times. According to studies[attribution needed], that temperature will likely be breached in 2023.  This will have additional impacts of the warming weather pattern, for example more extreme weather events driven by El Niño.
 
 The severe disruption to society will also extend to businesses with physical and digital infrastructure suffering damage, affecting employee’s ability to work.
 
@@ -18,7 +18,7 @@ Digital industry organizations have a part to play in meeting the challenge of r
 * Since the Paris Agreement, the [average web page size has increased by 64% on desktop and 132% on mobile](https://httparchive.org/reports/page-weight?start=2015\_12\_01\&end=latest\&view=list).
 * This is worsening because more people are consuming heavier-weight software; [internet users have increased by 60%, while internet traffic has increased by 440%](https://www.iea.org/energy-system/buildings/data-centres-and-data-transmission-networks).
 
-Given the above, this documentation site describes some of the best practices that can be applied when developing digital experiences. The recommendations are given by a group of Umbraco Community members in [the Sustainability Team](https://umbraco.com/blog/meet-the-new-community-sustainability-team/).
+Given the above, this documentation describes some of the best practices that can be applied when developing digital experiences. The recommendations are given by a group of Umbraco Community members in [the Sustainability Team](https://umbraco.com/blog/meet-the-new-community-sustainability-team/).
 
 ## Read our best practice guide for developers
 
