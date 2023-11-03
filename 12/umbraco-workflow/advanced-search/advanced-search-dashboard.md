@@ -34,7 +34,7 @@ The additional fields are all optional.
 
 ## Search results
 
-Results are displayed in a familiar format, linking to nodes in an infinite editors to make it easy to return to the search results.
+Results are displayed in a familiar format, linking to nodes in an infinite editors, which allows users to retain their search results.
 
 Search results include published, unpublished and trashed content, and are filtered according to the current user's content start node(s).
 
