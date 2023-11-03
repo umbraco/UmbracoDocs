@@ -14,4 +14,8 @@
   * [Upgrade your project](fundamentals/setup/upgrading/README.md)
     * [Version Specific Upgrades](fundamentals/setup/upgrading/version-specific/README.md)
 
+## Reference
+* [Security](reference/security/README.md)
+  * [External login providers](reference/security/external-login-providers.md)
+
 ## Tutorials
