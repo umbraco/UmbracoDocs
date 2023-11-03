@@ -156,7 +156,7 @@ The configuration file is used to configure a handful of different options for t
 {% tabs %}
 {% tab title="User Authentication" %}
 
-{% hint style="info" %}
+{% hint style="warning" %}
 In earlier versions of Umbraco up to version 12, the options included only a "ButtonStyle" property to style the button. In version 13+ the default button is now rendered using the Umbraco UI library. This means that the "ButtonStyle" property has been deprecated and changed to map to "ButtonColor" and "ButtonLook". You can define these directly by using the "ButtonColor" and "ButtonLook" properties to style the button.
 {% endhint %}
 
@@ -337,7 +337,7 @@ Additionally, more advanced custom properties can be added to the `BackOfficeExt
 
 `BackOfficeExternalLoginProviderOptions.CustomBackOfficeView`
 
-{% hint style="info" %}
+{% hint style="warning" %}
 In earlier versions of Umbraco up to version 12, this property had to define an AngularJS HTML view. This is no longer the case. You can now define a JavaScript module that will render a Custom Element in place of the default external login button.
 
 It is still supported to load a HTML file as a view. However, Umbraco no longer supports AngularJS and the HTML file will be loaded into the DOM as-is. You will have to implement all logic yourself.
