@@ -327,11 +327,11 @@ public class ProviderMembersExternalLoginProviderOptions : IConfigureNamedOption
 {% endtab %}
 {% endtabs %}
 
-#### Advanced properties
+### Advanced properties
 
 Additionally, more advanced custom properties can be added to the `BackOfficeExternalLoginProviderOptions`.
 
-**BackOfficeExternalLoginProviderOptions.CustomBackOfficeView**
+#### BackOfficeExternalLoginProviderOptions.CustomBackOfficeView
 
 {% hint style="warning" %}
 In earlier versions of Umbraco up to version 12, this property had to define an AngularJS HTML view. This is no longer the case. You can now define a JavaScript module to render a Custom Element instead of the default external login button.
@@ -343,10 +343,6 @@ The `CustomBackofficeView` allows for specifying a JavaScript module to render a
 
 * You want to display something different where external login providers are listed: in the login screen vs the backoffice panel vs on the logged-out screen. This same view will render in all of these cases but you can use the current route parameters to customize what is shown.
 * You want to change how the button interacts with the external login provider. For example, instead of having the site redirect on button-click, you want to open a popup window to load the external login provider.
-
-<details>
-
-<summary>Read more about CustomBackOfficeView</summary>
 
 The path to the custom view is a virtual path, like this example: `"~/App_Plugins/MyPlugin/BackOffice/my-external-login.js"`.
 
@@ -470,8 +466,6 @@ export default MyLitView;
 {% endtab %}
 
 {% endtabs %}
-
-</details>
 
 ### Static extension class
 
