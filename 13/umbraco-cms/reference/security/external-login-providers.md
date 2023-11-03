@@ -156,91 +156,95 @@ The configuration file is used to configure a handful of different options for t
 {% tabs %}
 {% tab title="User Authentication" %}
 
+{% hint style="info" %}
+In earlier versions of Umbraco up to version 12, the options included only a `ButtonStyle` property to style the button. In version 13+ the default button is now rendered using the Umbraco UI library. This means that the `ButtonStyle` property has been deprecated and changed to map to `ButtonColor` and `ButtonLook`. You can define these directly by using the `ButtonColor` and `ButtonLook` properties to style the button.
+{% endhint %}
+
 {% code title="ProviderBackOfficeExternalLoginProviderOptions.cs" lineNumbers="true" %}
 ```csharp
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Web.BackOffice.Security;
 
-namespace MyUmbracoProject.CustomAuthentication
+namespace MyUmbracoProject.CustomAuthentication;
+
+public class ProviderBackOfficeExternalLoginProviderOptions : IConfigureNamedOptions<BackOfficeExternalLoginProviderOptions>
 {
-    public class ProviderBackOfficeExternalLoginProviderOptions : IConfigureNamedOptions<BackOfficeExternalLoginProviderOptions>
+    public const string SchemeName = "OpenIdConnect";
+    public void Configure(string name, BackOfficeExternalLoginProviderOptions options)
     {
-        public const string SchemeName = "OpenIdConnect";
-        public void Configure(string name, BackOfficeExternalLoginProviderOptions options)
+        if (name != Constants.Security.BackOfficeExternalAuthenticationTypePrefix + SchemeName)
         {
-            if (name != Constants.Security.BackOfficeExternalAuthenticationTypePrefix + SchemeName)
+            return;
+        }
+
+        Configure(options);
+    }
+
+    public void Configure(BackOfficeExternalLoginProviderOptions options)
+    {
+        // Customize the login button
+        options.ButtonColor = UuiButtonColor.Danger;
+        options.ButtonLook = UuiButtonLook.Primary;
+        options.Icon = "icon-cloud";
+
+        // The following options are relevant if you
+        // want to configure auto-linking on the authentication.
+        options.AutoLinkOptions = new ExternalSignInAutoLinkOptions(
+
+            // Set to true to enable auto-linking
+            autoLinkExternalAccount: true,
+
+            // [OPTIONAL]
+            // Default: "Editor"
+            // Specify User Group.
+            defaultUserGroups: new[] { Constants.Security.EditorGroupAlias },
+
+            // [OPTIONAL]
+            // Default: The culture specified in appsettings.json.
+            // Specify the default culture to create the User as.
+            // It can be dynamically assigned in the OnAutoLinking callback.
+            defaultCulture: null,
+
+            // [OPTIONAL]
+            // Disable the ability to link/unlink manually from within
+            // the Umbraco backoffice.
+            // Set this to false if you don't want the user to unlink
+            // from this external provider.
+            allowManualLinking: false
+        )
+        {
+            // [OPTIONAL] Callback
+            OnAutoLinking = (autoLinkUser, loginInfo) =>
             {
-                return;
+                // Customize the user before it's linked.
+                // Modify the User's groups based on the Claims returned
+                // in the external login info.
+            },
+
+            // [OPTIONAL] Callback
+            OnExternalLogin = (user, loginInfo) =>
+            {
+                // Customize the User before it is saved whenever they have
+                // logged in with the external provider.
+                // Sync the Users name based on the Claims returned
+                // in the external login info
+
+                // Returns a boolean indicating if sign-in should continue or not.
+                return true;
             }
+        };
 
-            Configure(options);
-        }
+        // [OPTIONAL]
+        // Disable the ability for users to login with a username/password.
+        // If set to true, it will disable username/password login
+        // even if there are other external login providers installed.
+        options.DenyLocalLogin = false;
 
-        public void Configure(BackOfficeExternalLoginProviderOptions options)
-        {
-            // Customize the login button
-            options.ButtonStyle = "btn-danger";
-            options.Icon = "fa fa-cloud";
-
-            // The following options are relevant if you
-            // want to configure auto-linking on the authentication.
-            options.AutoLinkOptions = new ExternalSignInAutoLinkOptions(
-
-                // Set to true to enable auto-linking
-                autoLinkExternalAccount: true,
-
-                // [OPTIONAL]
-                // Default: "Editor"
-                // Specify User Group.
-                defaultUserGroups: new[] { Constants.Security.EditorGroupAlias },
-
-                // [OPTIONAL]
-                // Default: The culture specified in appsettings.json.
-                // Specify the default culture to create the User as.
-                // It can be dynamically assigned in the OnAutoLinking callback.
-                defaultCulture: null,
-
-                // [OPTIONAL]
-                // Disable the ability to link/unlink manually from within
-                // the Umbraco backoffice.
-                // Set this to false if you don't want the user to unlink 
-                // from this external provider.
-                allowManualLinking: false
-            )
-            {
-                // [OPTIONAL] Callback
-                OnAutoLinking = (autoLinkUser, loginInfo) =>
-                {
-                    // Customize the user before it's linked.
-                    // Modify the User's groups based on the Claims returned
-                    // in the external ogin info.
-                },
-
-                // [OPTIONAL] Callback
-                OnExternalLogin = (user, loginInfo) =>
-                {
-                    // Customize the User before it is saved whenever they have
-                    // logged in with the external provider.
-                    // Sync the Users name based on the Claims returned
-                    // in the external login info
-
-                    // Returns a boolean indicating if sign-in should continue or not.
-                    return true;
-                }
-            };
-
-            // [OPTIONAL]
-            // Disable the ability for users to login with a username/password.
-            // If set to true, it will disable username/password login
-            // even if there are other external login providers installed.
-            options.DenyLocalLogin = false;
-
-            // [OPTIONAL]
-            // Choose to automatically redirect to the external login provider
-            // effectively removing the login button.
-            options.AutoRedirectLoginToExternalProvider = false;
-        }
+        // [OPTIONAL]
+        // Choose to automatically redirect to the external login provider
+        // effectively removing the login button.
+        options.AutoRedirectLoginToExternalProvider = false;
     }
 }
 ```
