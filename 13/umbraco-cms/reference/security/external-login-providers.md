@@ -337,14 +337,135 @@ Additionally, more advanced custom properties can be added to the `BackOfficeExt
 
 `BackOfficeExternalLoginProviderOptions.CustomBackOfficeView`
 
-The `CustomBackofficeView` allows for specifying a custom Angular HTML view that will render in place of the default external login button. Use this in case you want to change the UI or one of the following:
+{% hint style="info" %}
+In earlier versions of Umbraco up to version 12, this property had to define an AngularJS HTML view. This is no longer the case. You can now define a JavaScript module that will render a Custom Element in place of the default external login button.
+
+It is still supported to load a HTML file as a view. However, Umbraco no longer supports AngularJS and the HTML file will be loaded into the DOM as-is. You will have to implement all logic yourself.
+{% endhint %}
+
+The `CustomBackofficeView` allows for specifying a JavaScript module that will render a Custom Element in place of the default external login button. Use this in case you want to change the UI or one of the following:
 
 * You want to display something different where external login providers are listed: in the login screen vs the backoffice panel vs on the logged-out screen. This same view will render in all of these cases but you can use the current route parameters to customize what is shown.
 * You want to change how the button interacts with the external login provider. For example, instead of having the site redirect on button-click, you want to open a popup window to load the external login provider.
 
-The path to the custom view is a virtual path, like this example: `"~/App_Plugins/MyPlugin/BackOffice/my-external-login.html"`.
+The path to the custom view is a virtual path, like this example: `"~/App_Plugins/MyPlugin/BackOffice/my-external-login.js"`.
 
-When a custom view is specified it is 100% up to this view and affiliated Angular controllers to perform all required logic.
+When a custom view is specified it is 100% up to this module to perform all required logic.
+
+The module should define a Custom Element and export it as default. The Custom Element can optionally declare a number of properties to be passed to it. These properties are:
+
+* `providerName`: The name of the provider. This is the same name as the provider's scheme name.
+* `displayName`: The display name of the provider. This is the same display name as the provider's display name.
+* `externalLoginUrl`: The URL to redirect to when the button is clicked.
+
+The Custom Element can be implemented in a number of ways with many different libraries or frameworks. The following examples show how to make a button appear and redirect to the external login provider. You will learn how to use the `externalLoginUrl` property to redirect to the external login provider. The login form should look like this when you open Umbraco:
+
+![Login form with custom external login button](./images/external-login-provider-javascript.png)
+
+When you click the button, the form will submit a POST request to the `externalLoginUrl` property. The external login provider will then redirect back to the Umbraco site with the user logged in.
+
+{% tabs %}
+
+{% tab title="Vanilla (JavaScript)" %}
+
+We have to define a template first and then the custom element itself. The template is a small HTML form with a button. The button will submit the form to the `externalLoginUrl` property. The custom element will then render the template and attach it to the shadow DOM and wire up the `externalLoginUrl` property in the `connectedCallback` method.
+
+{% code title="~/App_Plugins/MyPlugin/BackOffice/my-external-login.js" lineNumbers="true" %}
+```javascript
+const template = document.createElement('template');
+template.innerHTML = `
+  <style>
+    :host {
+      display: block;
+      width: 100%;
+    }
+    #button {
+      width: 100%;
+    }
+  </style>
+  <form method="post" action="/404">
+    <h3>My Company's Provider</h3>
+    <p>If you have signed up with MyProvider, you can sign in to Umbraco by clicking the button below.</p>
+    <uui-button type="submit" id="button" look="primary">
+      <uui-icon name="icon-cloud"></uui-icon>
+      Sign in with MyProvider
+    </uui-button>
+  </form>
+`;
+
+export class MyCustomView extends HTMLElement {
+  externalLoginUrl;
+
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
+  }
+
+  connectedCallback() {
+    this.shadowRoot.querySelector('form').setAttribute('action', this.externalLoginUrl);
+  }
+}
+
+customElements.define('my-custom-view', MyCustomView);
+
+export default MyCustomView;
+
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Lit (JavaScript)" %}
+
+It is also possible to use a library like [Lit](https://lit.dev/) to render the custom element. The following example shows how to use Lit to render the custom element. The custom element will render a form with a button. The button will submit the form to the `externalLoginUrl` property. We do not have to perform any logic in the `connectedCallback` method because Lit will automatically update the `action` attribute on the form when the `externalLoginUrl` property changes. We can even include other properties like `displayName` and `providerName` in the template without having to react to changes in those properties. Styling is also handled by Lit in the `static styles` property.
+
+We are using Lit version 3 in this example imported directly from a JavaScript delivery network to keep the example slim. You can also use a bundler like [Vite](https://vitejs.dev) to bundle the Lit library with your custom element.
+
+{% code title="~/App_Plugins/MyPlugin/BackOffice/my-external-login.js" lineNumbers="true" %}
+```javascript
+import {LitElement, css, html} from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
+
+class MyLitView extends LitElement {
+  static get properties() {
+    return {
+      providerName: { type: String },
+      displayName: { type: String },
+      externalLoginUrl: { type: String }
+    };
+  }
+
+  render() {
+    return html`
+      <form method="post" action=${this.externalLoginUrl}>
+        <h3>My Company's Provider</h3>
+        <p>If you have signed up with ${this.displayName}, you can sign in to Umbraco by clicking the button below.</p>
+        <uui-button type="submit" id="button" look="primary">
+          <uui-icon name="icon-cloud"></uui-icon>
+          Sign in with ${this.displayName}
+        </uui-button>
+      </form>
+    `;
+  }
+
+  static styles = css`
+    :host {
+      display: block;
+      width: 100%;
+    }
+    #button {
+      width: 100%;
+    }
+  `;
+}
+
+customElements.define('my-lit-view', MyLitView);
+
+export default MyLitView;
+```
+{% endcode %}
+{% endtab %}
+
+{% endtabs %}
 
 </details>
 
