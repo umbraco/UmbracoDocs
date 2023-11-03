@@ -32,6 +32,10 @@ We recommend setting a CNAME record for your hostname using `dns.umbraco.io`. Al
 
 If your provider doesn't support setting a CNAME record for your hostname, you can manually set the following records:
 
+{% hint style="warning" %}
+Please note: The current values may not function correctly. We will update the documentation with new, tested values once they are available.
+{% endhint %}
+
 * A Records to either or both IPv4 addresses:
   * `104.19.191.28`
   * `104.19.208.28`
