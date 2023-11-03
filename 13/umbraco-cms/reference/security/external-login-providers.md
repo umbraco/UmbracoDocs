@@ -157,7 +157,7 @@ The configuration file is used to configure a handful of different options for t
 {% tab title="User Authentication" %}
 
 {% hint style="info" %}
-In earlier versions of Umbraco up to version 12, the options included only a `ButtonStyle` property to style the button. In version 13+ the default button is now rendered using the Umbraco UI library. This means that the `ButtonStyle` property has been deprecated and changed to map to `ButtonColor` and `ButtonLook`. You can define these directly by using the `ButtonColor` and `ButtonLook` properties to style the button.
+In earlier versions of Umbraco up to version 12, the options included only a "ButtonStyle" property to style the button. In version 13+ the default button is now rendered using the Umbraco UI library. This means that the "ButtonStyle" property has been deprecated and changed to map to "ButtonColor" and "ButtonLook". You can define these directly by using the "ButtonColor" and "ButtonLook" properties to style the button.
 {% endhint %}
 
 {% code title="ProviderBackOfficeExternalLoginProviderOptions.cs" lineNumbers="true" %}
