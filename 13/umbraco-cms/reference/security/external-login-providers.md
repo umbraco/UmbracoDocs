@@ -354,6 +354,8 @@ The module should define a Custom Element and export it as default. The Custom E
 * `displayName`: The display name of the provider. This is the same display name as the provider's display name.
 * `externalLoginUrl`: The URL to redirect to when the button is clicked.
 
+**Examples**
+
 The Custom Element can be implemented in a number of ways with many different libraries or frameworks. The following examples show how to make a button appear and redirect to the external login provider. You will learn how to use the `externalLoginUrl` property to redirect to the external login provider. The login form should look like this when you open Umbraco:
 
 ![Login form with custom external login button](./images/external-login-provider-javascript.png)
