@@ -14,7 +14,7 @@ If you are upgrading to a new minor or patch version, you can find information a
 
 <details>
 
-<summary>Version 12</summary>
+<summary>Version 13</summary>
 
 Version 13 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `13.0.0`. It runs on .NET 8.
 
@@ -31,7 +31,7 @@ For reference, the full details are listed here:
 
 **Dependencies**
 
-* Umbraco CMS dependency was updated to `12.0.0`.
+* Umbraco CMS dependency was updated to `13.0.0`.
 
 **Code**
 
@@ -56,6 +56,8 @@ These updates are more minor. We don't expect many projects to be affected by th
 * `PreValueFileController` has a changed constructor.
 * `FileUpload` has a changed constructor.
 * `ExecuteWorkflowsWithResult` on `IWorkflowExecutionService` was renamed to `ExecuteWorkflows` and the void method with that name was removed.
+* The string constants used to define GUIDs for each provider type were made consistently upper-case.
+* `FileUpload` and `PreValueFileController` have changed constructors to add support for server-side file validation.
 
 </details>
 
