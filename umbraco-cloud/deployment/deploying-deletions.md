@@ -62,7 +62,7 @@ Not deleted:
 * The entry in the database
 * The template file will be empty, but still be visible in the backoffice
 
-### Deleting Files (css files, config files, etc.)
+### Deleting Files (CSS files, config files, etc.)
 
 As these are **only** files, everything will be deleted in the next environment upon deployment.
 
