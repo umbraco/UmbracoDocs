@@ -4,7 +4,7 @@ On Umbraco Cloud, deletions are environment specific. To delete something entire
 
 In this article, you can read about the correct way of deleting files, schema, and content from your Umbraco Cloud project.
 
-When you have an Umbraco Cloud project, you might have couple of environments including a local clone of the project. Each of these environments have their own database. These databases contain references to all of your content and media, as well as to all of your schema files (e.g. Document Types, Templates, etc).
+When you have an Umbraco Cloud project, you might have couple of environments including a local clone of the project. Each of these environments have their own database. These databases contain references to all of your content and media, as well as to all of your schema files (for example Document Types, Templates, etc).
 
 The databases are environment specific. When you deploy from one environment to another, the engine behind Umbraco Cloud will compare incoming schema files with references to these in the databases using both *alias* and *GUID*. If something doesn't add up, for example, there is a mismatch between the database references and the files deployed, you will see an error. Learn more about this in the [Troubleshooting section](../troubleshooting/deployments).
 
