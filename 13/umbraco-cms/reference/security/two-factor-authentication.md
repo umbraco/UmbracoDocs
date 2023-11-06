@@ -518,6 +518,12 @@ You should only customize the 2FA login screen in certain cases, for example:
 
 You need to create a JavaScript module that exports a default custom element to be used in the login screen. This module should be placed in the `App_Plugins` folder. The module should be registered using a composer.
 
+{% hint style="warning" %}
+In earlier versions of Umbraco up to version 12, you had to define an AngularJS HTML view. This is no longer the case. You can now define a JavaScript module to render a Custom Element instead of the default two-factor login screen.
+
+It is still supported to load an HTML file as a view. However, Umbraco no longer supports AngularJS and the HTML file will be loaded into the DOM as-is. You will have to implement all the logic yourself.
+{% endhint %}
+
 You can use the following code as a starting point. This will give you a view looking like this, where the user can enter a code and click a button to verify the code. This is similar to the built-in view in Umbraco. In a real world scenario, you would probably want to authenticate the user in a different way.
 
 ![Custom 2FA login](images/2fa-login-custom-view.png)
