@@ -489,7 +489,7 @@ To disable the two-factor authentication on your user, it is required to enter t
 
 ![Verify disable](images/verify-disable.png)
 
-While the 2FA is enabled, the user will be presented with this screen after entering the username and password. ![Verify disable](images/login-2fa.png)
+If the code is correct, the provider is disabled.
 
 ### Notification when 2FA is requested for a user
 
