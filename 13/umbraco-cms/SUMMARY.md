@@ -18,5 +18,6 @@
 ## Reference
 * [Security](reference/security/README.md)
   * [External login providers](reference/security/external-login-providers.md)
+  * [Two-factor Authentication](reference/security/two-factor-authentication.md)
 
 ## Tutorials
