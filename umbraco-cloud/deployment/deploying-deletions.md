@@ -37,7 +37,7 @@ You should however keep in mind that if you at any point during the process, sav
 
 Every **file** that's deleted, will also be deleted on the next environment when you deploy. However, there are some differences depending on what you have deleted.
 
-Here's an overview of what happens when you deploy various deletions to the next environment.
+Here's an overview of what happens when you deploy deletions to the next environment.
 
 ### Deleting Schema (Document Types, Datatypes, etc.)
 
