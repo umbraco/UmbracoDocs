@@ -3,7 +3,7 @@
 
 # Deployment Webhook
 
-You can now configure a deployment webhook to be triggered upon successful deployments to any of your Umbraco Cloud environments, e.g. when deploying from your local environment to your Cloud Development environment. Upon successful deployment, general information about the deployment will be posted in a JSON format to the specific URL you have configured.
+You can now configure a deployment webhook to be triggered upon successful deployments to any of your Umbraco Cloud environments, for example when deploying from your local environment to your Cloud Development environment. Upon successful deployment, general information about the deployment will be posted in a JSON format to the specific URL you have configured.
 
 ## Use cases
 
