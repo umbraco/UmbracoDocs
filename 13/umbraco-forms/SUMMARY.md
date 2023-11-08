@@ -13,9 +13,4 @@
   * [Overview Of The Field Types](editor/creating-a-form/fieldtypes/README.md)
     * [File Upload](editor/creating-a-form/fieldtypes/fileupload.md)
 
-## Developer
-
 ## Tutorials
-
-
-
