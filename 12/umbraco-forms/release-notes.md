@@ -748,7 +748,7 @@ In this section, you can find the release notes for each version of Umbraco Form
 * Fixed issue with display of newly created forms in the tree where permissions are managed with user groups and user specific override exists [#1102](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1102).
 * Fixed issue magic string replacement in email field names [#1107](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1107).
 * Fixed broken link in magic string notice [#1109](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1109).
-* Back-ported various backoffice form list rendering optimization from Forms 10+.
+* Back-ported backoffice form list rendering optimization from Forms 10+.
 
 #### [8.13.11](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.13.11) (September 19th 2023)
 
