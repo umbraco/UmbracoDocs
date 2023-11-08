@@ -183,7 +183,7 @@ Ensure your template has a reference to the following using statement:
 Assuming a property based on the created Data Type with the alias `shopifyProductPicker` has been created, render the form using:
 
 ```csharp
-@Html.RenderProductsList(Model.ShopifyProductPicker)
+@Html.RenderShopifyProductsList(Model.ShopifyProductPicker)
 ```
 
 You can use the default rendering view and style using the existing CSS classes, or use it as inspiration for your views. The path to your custom view will be then passed as a parameter to the HTML helper method.
