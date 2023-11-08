@@ -34,7 +34,7 @@ Explicitly writing the conn string in startup is a problem if deploying across e
 
 ### Same project, using the configured database connection
 
-If you use localDb or Sql Server across all environments then you can use this format to just get the umbraco dbs connection string
+If you use localDb or Sql Server across all environments then you can use this format to get the Umbraco dbs connection string
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
