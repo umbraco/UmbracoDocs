@@ -1,8 +1,4 @@
-# Common Pitfalls
-
-{% hint style="warning" %}
-This documentation is currently a work in progress.
-{% endhint %}
+# Troubleshooting
 
 ## Deployment failed
 
