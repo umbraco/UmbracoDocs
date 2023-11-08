@@ -175,6 +175,8 @@ public virtual string MySetting { get; set; }
 
 `HtmlEncodeReplacedPlaceholderValues` takes effect only if `SupportsPlaceholders` is `true`. It controls whether the replaced placeholder values should be HTML encoded (as is necessary for rendering within content from a rich text editor).
 
+`IsMandatory` if set to `true` will provide client-side validation in the backoffice to ensure the value is completed.
+
 ### Settings when inheriting
 
 When creating a field or other provider type, you might choose to inherit from an existing class. This could be if one of the types provided with Umbraco Forms almost meets your needs but you want to make some changes.
