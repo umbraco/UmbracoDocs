@@ -39,7 +39,7 @@ If your provider doesn't support setting a CNAME record for your hostname, you c
 * A Records to either or both IPv4 addresses:
   * `104.19.191.28`
   * `104.19.208.28`
-* Optionally, AAAA Records to either or both IPv6 ad
+* Optionally, AAAA Records to either or both IPv6
   * `2606:4700::6813:bf1c`
   * `2606:4700::6813:d01c`
 
