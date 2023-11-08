@@ -36,13 +36,16 @@ If your provider doesn't support setting a CNAME record for your hostname, you c
 
 <summary>Former A and AAAA records</summary>
 
-* A Records to either or both IPv4 addresses:
+The following records will become obsolete in the near future. Please refrain from using them.
+
+* Former A and AAAA records
   * `104.19.191.28`
   * `104.19.208.28`
-* Optionally, AAAA Records to either or both IPv6
+* AAAA Records
   * `2606:4700::6813:bf1c`
   * `2606:4700::6813:d01c`
-
+  
+If you are using the above records please consider changing them to the new Records below
 </details>
 
 * A Records to either or both IPv4 addresses:
