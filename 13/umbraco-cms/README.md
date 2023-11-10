@@ -27,6 +27,8 @@ Below you will find a list of new and updated articles for the Umbraco 13 Releas
 The list will be updated as more articles have been created and updated.
 
 * [Blocks in Rich Text Editor](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-blocks.md)
+* [External Login Providers](reference/security/external-login-providers.md)
+* [Two-factor Authentication](reference/security/two-factor-authentication.md)
 
 ### Breaking Changes
 
