@@ -20,6 +20,10 @@ Under each major version, you can find details about minor and patch releases fo
 
 <summary>Version 10</summary>
 
+#### [10.2.7](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.7) (November 14th 2023)
+
+* Fixed action menu for queue for transfer with list view [#185](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/185).
+
 #### [10.2.6](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.6) (October 17th 2023)
 
 * Fixed issue with deployment of content when scheduled for a future release date.
