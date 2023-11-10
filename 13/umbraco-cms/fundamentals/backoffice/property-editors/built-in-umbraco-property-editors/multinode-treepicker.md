@@ -129,7 +129,7 @@ Set a limit on the number of items allowed to be selected.
 ![Multinode Treepicker Data Type Definition](../../images/mntp.png)
 ## Content Example
 
-Consider the following tree structure where document type alias is presented in square brackets.
+Consider the following tree structure where Document Type alias is presented in square brackets.
 
 - Codegarden
     - 2023 \[_year_\]
