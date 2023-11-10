@@ -1,5 +1,5 @@
 ﻿---
-description: Using property expansion and limiting to shape the Delivery API output.
+description: Using property expansion and limiting to shape the Delivery API output
 ---
 
 # Property expansion and limiting
@@ -1371,4 +1371,4 @@ Start-Item: articles
 
 Property expansion and limiting is a powerful feature that can boost our application performance. With this we can prevent additional requests to obtain data for linked items, and we can tailor the output to specific use cases.
 
-However, it is also a complex feature. The query syntax quickly gets complicated, particularly when targeting block editors. You will likely need to experiment some to get the query just right. Hopefully the examples in this article will guide you in applying expansion and limiting to your own content.
+However, it is also a complex feature. The query syntax quickly gets complicated, particularly when targeting block editors. You will likely need to experiment some to get the query exactly right. Hopefully the examples in this article will guide you in applying expansion and limiting to your own content.

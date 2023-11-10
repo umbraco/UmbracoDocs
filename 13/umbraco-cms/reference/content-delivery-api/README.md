@@ -194,7 +194,7 @@ Property expansion and limiting allows you to:
 - Include properties from related content or media in the API output for a given content item.
 - Limit the content properties in the API output.
 
-By default, a content property that allows picking a different content item (i.e. a content picker) outputs a "shallow" representation of the picked item. This means that the output only includes basic information about the picked item, without the item properties.
+By default, a content property that allows picking a different content item (for example a content picker) outputs a "shallow" representation of the picked item. This means that the output only includes basic information about the picked item, without the item properties.
 
 If we apply property expansion to the content property, the properties of the picked item are included in the output. This functionality applies to media items and block editors, as well.
 
