@@ -67,7 +67,7 @@ public class CustomQueryStepComposer : IComposer
 }
 ```
 
-The implementation of a query step takes in a collection of origins and information about the query step, from where the name specified in the UI can be found.
+The implementation of a query step takes in a collection of origins and information about the query step. The collection is taken from where the name specified in the UI can be found.
 
 ```csharp
 public class CustomQueryStepComposer : IComposer
