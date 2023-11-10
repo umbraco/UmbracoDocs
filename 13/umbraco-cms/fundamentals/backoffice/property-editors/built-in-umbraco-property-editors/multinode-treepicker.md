@@ -149,7 +149,7 @@ Consider the following tree structure where document type alias is presented in 
             - The Barn \[_stage_\]
             - The Theatre \[_stage_\]
 
-Consider configuring a picker on the _talk_ document type to chose a stage of the talk. Here you only want to present the stages for the actual year.
+Consider configuring a picker on the _talk_ Document Type to choose a stage of the talk. Here you only want to present the stages for the actual year.
 To do this, you can first choose the parent as origin.
 
 Imaging being on the `Umbraco anno MMXXIII` node.
