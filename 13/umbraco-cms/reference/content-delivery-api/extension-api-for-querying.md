@@ -6,7 +6,7 @@ description: >-
 
 # Extension API for querying
 
-The Delivery API allows you to retrieve multiple items by utilizing the `/umbraco/delivery/api/v1/content` endpoint. With the built-in query parameters, you have the flexibility to get any number of content nodes based on your needs. For a comprehensive list of supported query options, please refer to the [Endpoints](./#endpoints) section.
+The Delivery API allows you to retrieve multiple items by utilizing the `/umbraco/delivery/api/v2/content` endpoint. With the built-in query parameters, you have the flexibility to get any number of content nodes based on your needs. For a comprehensive list of supported query options, please refer to the [Endpoints](./#endpoints) section.
 
 For the query endpoint, we have created a new Examine index (_DeliveryApiContentIndex_) that facilitates fast retrieval of the desired content. This index ensures quick indexing and searching of data, with the possibility for future extensions.
 
@@ -17,7 +17,7 @@ In this article, we'll explore creating custom selecting, filtering, and sorting
 Let's take a look at an example of using the query endpoint with query parameters for `fetch`, `filter`, and `sort`. A request might look like this:
 
 ```http
-GET /umbraco/delivery/api/v1/content?fetch=xxx&filter=yyy&filter=zzz&sort=aaa&sort=bbb
+GET /umbraco/delivery/api/v2/content?fetch=xxx&filter=yyy&filter=zzz&sort=aaa&sort=bbb
 ```
 
 The placeholders in the example (`xxx`, `yyy`, etc.) represent the values that each query option evaluates in order to determine the suitable query handler.
@@ -114,7 +114,7 @@ Since our custom query option modifies the index structure, we will need to rebu
 **Request**
 
 ```http
-GET /umbraco/delivery/api/v1/content?fetch=featuredAuthors
+GET /umbraco/delivery/api/v2/content?fetch=featuredAuthors
 ```
 
 **Response**
@@ -139,7 +139,7 @@ This filter allows specifying the desired author(s) by their key (`Guid`) in an 
 **Request**
 
 ```http
-GET /umbraco/delivery/api/v1/content?filter=author:7c630f15-8d93-4980-a0fc-027314dc827a,75380b4f-6d6e-47a1-9222-975cdfb2ac5f
+GET /umbraco/delivery/api/v2/content?filter=author:7c630f15-8d93-4980-a0fc-027314dc827a,75380b4f-6d6e-47a1-9222-975cdfb2ac5f
 ```
 
 The response will include the blog posts associated with the provided authors, enabling us to retrieve only the relevant results from the API.
@@ -317,7 +317,7 @@ In the following example request, we also apply the author filter to retrieve on
 **Request**
 
 ```http
-GET /umbraco/delivery/api/v1/content?filter=author:7c630f15-8d93-4980-a0fc-027314dc827a&sort=publishDate:asc
+GET /umbraco/delivery/api/v2/content?filter=author:7c630f15-8d93-4980-a0fc-027314dc827a&sort=publishDate:asc
 ```
 
 **Response**

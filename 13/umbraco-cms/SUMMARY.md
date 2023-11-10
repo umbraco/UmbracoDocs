@@ -14,6 +14,16 @@
   * [Upgrade your project](fundamentals/setup/upgrading/README.md)
     * [Version Specific Upgrades](fundamentals/setup/upgrading/version-specific/README.md)
 
+## Reference
+
+* [Content Delivery API](reference/content-delivery-api/README.md)
+    * [Custom property editors support](reference/content-delivery-api/custom-property-editors-support.md)
+    * [Extension API for querying](reference/content-delivery-api/extension-api-for-querying.md)
+    * [Media Delivery API](reference/content-delivery-api/media-delivery-api.md)
+    * [Protected content in the Delivery API](reference/content-delivery-api/protected-content-in-the-delivery-api.md)
+    * [Additional preview environments support](reference/content-delivery-api/additional-preview-environments-support.md)
+    * [Property expansion and limiting](reference/content-delivery-api/property-expansion-and-limiting.md)
+
 ## Tutorials
 
 
