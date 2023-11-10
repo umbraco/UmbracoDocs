@@ -3,7 +3,7 @@
 
 # Deployment Webhook
 
-You can now configure a deployment webhook to be triggered upon successful deployments to any of your Umbraco Cloud environments, e.g. when deploying from your local environment to your Cloud Development environment. Upon successful deployment, general information about the deployment will be posted in a JSON format to the specific URL you have configured.
+You can now configure a deployment webhook to be triggered upon successful deployments to any of your Umbraco Cloud environments. For example, when deploying from your local environment to your Cloud Development environment. Upon successful deployment, general information about the deployment will be posted in a JSON format to the specific URL you have configured.
 
 ## Use cases
 
@@ -37,7 +37,7 @@ Content-Type: application/json; charset=utf-8
 
 ### Contents
 
-Contents of the payload contain general information about the current deployment with links to the project in the Portal and the frontend of the environment. The last part of the contents is a collection/enumeration of commits that were deployed to the environment, mentioning the author, the commit message, and changed files.
+Contents of the payload contain general information about the current deployment with links to the project in the Portal and the frontend of the environment. The final section lists deployed commits, including author, commit message, and changed files in the environment.
 
 ```json
 {
