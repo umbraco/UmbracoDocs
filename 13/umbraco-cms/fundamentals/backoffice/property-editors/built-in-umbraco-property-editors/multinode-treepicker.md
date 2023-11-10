@@ -32,7 +32,7 @@ You have the following options:
 - Specific node
   - A specific node that you have to choose in the tree
 
-Often a origin is a good dynamic root, but you also have the option to execute multiple steps from the origin to navigate the tree to find another root.
+Often an origin is a good dynamic root. It is also possible to execute multiple steps from the origin to navigate the tree to find another root.
 ![Multinode Treepicker Data Type Definition](../../images/mntp_node_type_dynamic_root_steps.png)
 
 Yoy have the following options:
