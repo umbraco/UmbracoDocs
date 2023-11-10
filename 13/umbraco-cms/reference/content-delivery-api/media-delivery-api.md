@@ -74,7 +74,7 @@ Which properties to expand in the response
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="fields" type="String" required="false" %}
-Explicitly defines which properties that should be included in the response (by default all properties are included)
+Which properties to include in the response (_by default all properties are included_)
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Media item" %}
@@ -112,7 +112,7 @@ Which properties to expand in the response
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="fields" type="String" required="false" %}
-Explicitly defines which properties that should be included in the response (by default all properties are included)
+Which properties to include in the response (_by default all properties are included_)
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Media item" %}
@@ -128,7 +128,7 @@ Explicitly defines which properties that should be included in the response (by 
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="get" path="/media/item" baseUrl="/umbraco/delivery/api/v2" summary="Gets media item(s) by id" %}
+{% swagger method="get" path="/media/items" baseUrl="/umbraco/delivery/api/v2" summary="Gets media item(s) by id" %}
 {% swagger-description %}
 Returns single or multiple items by id.
 {% endswagger-description %}
@@ -146,7 +146,7 @@ Which properties to expand in the response
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="fields" type="String" required="false" %}
-Explicitly defines which properties that should be included in the response (by default all properties are included)
+Which properties to include in the response (_by default all properties are included_)
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="List of media items" %}
@@ -194,7 +194,7 @@ Which properties to expand in the response
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="fields" type="String" required="false" %}
-Explicitly defines which properties that should be included in the response (by default all properties are included)
+Which properties to include in the response (_by default all properties are included_)
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Paginated list of media items" %}

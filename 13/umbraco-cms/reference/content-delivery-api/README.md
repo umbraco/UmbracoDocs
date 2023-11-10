@@ -277,7 +277,7 @@ Which properties to expand and therefore include in the output if they refer to 
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="fields" type="String" required="false" %}
-Explicitly defines which properties that should be included in the response (by default all properties are included)
+Which properties to include in the response (_by default all properties are included_)
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Content item" %}
@@ -323,7 +323,7 @@ Which properties to expand and therefore include in the output if they refer to 
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="fields" type="String" required="false" %}
-Explicitly defines which properties that should be included in the response (by default all properties are included)
+Which properties to include in the response (_by default all properties are included_)
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Content item" %}
@@ -369,7 +369,7 @@ Which properties to expand in the response
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="fields" type="String" required="false" %}
-Explicitly defines which properties that should be included in the response (by default all properties are included)
+Which properties to include in the response (_by default all properties are included_)
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="List of content items" %}
@@ -427,7 +427,7 @@ Which properties to expand and therefore include in the output if they refer to 
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="fields" type="String" required="false" %}
-Explicitly defines which properties that should be included in the response (by default all properties are included)
+Which properties to include in the response (_by default all properties are included_)
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Paginated list of content items" %}
