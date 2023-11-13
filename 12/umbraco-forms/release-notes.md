@@ -20,14 +20,16 @@ In this section, you can find the release notes for each version of Umbraco Form
 
 #### [12.2.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.0) (TBC 2023)
 
-* Added an overload to the `RenderUmbracoFormDependencies` HTML helper method to allow provision of a dictionary parameter containing attributes to use when rendering script references. Also a new configuration option `DisableClientSideValidationDependencyCheck` to disable the client-side validation framework check. This is necessary when using the overload to provide an `async` attribute. [#1074](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1074)
-* Added further conditional operators, for inverse and case insensitive checks [#1081](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1081)
-* Provided option for setting a custom field to be mandatory by default [#928](https://github.com/umbraco/Umbraco.Forms.Issues/issues/928)
-* Added a caption property for display adjacent to the input field when using the checkbox field type [#816](https://github.com/umbraco/Umbraco.Forms.Issues/issues/816)
-* Added a new setting type that allows entry of text or selection of a field from the current form [#1071](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1071)
-* Added a response object to the headless API providing details of post submission behavior for the form [#1104](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1104)
-* Tracked relations between forms and content and displayed in new "Info" content app [#937](https://github.com/umbraco/Umbraco.Forms.Issues/issues/#937)
-* Added an mandatory option for field and workflow type settings [#1108](https://github.com/umbraco/Umbraco.Forms.Issues/issues/#1108)
+* Added an overload to the `RenderUmbracoFormDependencies` HTML helper method to allow provision of a dictionary parameter containing attributes to use when rendering script references. Also a new configuration option `DisableClientSideValidationDependencyCheck` to disable the client-side validation framework check. This is necessary when using the overload to provide an `async` attribute. [#1074](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1074).
+* Added further conditional operators, for inverse and case insensitive checks [#1081](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1081).
+* Provided option for setting a custom field to be mandatory by default [#928](https://github.com/umbraco/Umbraco.Forms.Issues/issues/928).
+* Added a caption property for display adjacent to the input field when using the checkbox field type [#816](https://github.com/umbraco/Umbraco.Forms.Issues/issues/816).
+* Added a new setting type that allows entry of text or selection of a field from the current form [#1071](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1071).
+* Added a response object to the headless API providing details of post submission behavior for the form [#1104](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1104).
+* Tracked relations between forms and content and displayed in new "Info" content app [#937](https://github.com/umbraco/Umbraco.Forms.Issues/issues/#937).
+* Added an mandatory option for field and workflow type settings [#1108](https://github.com/umbraco/Umbraco.Forms.Issues/issues/#1108).
+* Added a "select/deselect all" toggle for the user security list of forms [#1092](https://github.com/umbraco/Umbraco.Forms.Issues/issues/#1092).
+* Added an additional button allowing a form editor to add a new page at the top or bottom of the form [#1029](https://github.com/umbraco/Umbraco.Forms.Issues/issues/#1029).
 
 #### [12.1.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.1) (September 19th 2023)
 
