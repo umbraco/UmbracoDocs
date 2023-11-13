@@ -1,7 +1,5 @@
 # Umbraco CI/CD Flow
 
-
-
 {% hint style="warning" %}
 This documentation is currently a work in progress.
 {% endhint %}
@@ -55,7 +53,7 @@ To ensure you make the most of Umbraco CI/CD Flow, we suggest exploring the docu
 Here are three essential pages to get you started:
 
 1. [**How to use the Umbraco Cloud API for CI/CD Flow**](UmbracoCloudApi.md): Gain a comprehensive understanding of how to interact with the Umbraco Cloud API for seamless deployments and management.
-2. [**How To Configure A Sample CI/CD Pipeline**](SampleCiCdPipeline.md): Follow our step-by-step guide to set up a sample pipeline, making your development and deployment process more efficient.
+2. [**How To Configure A Sample CI/CD Pipeline**](samplecicdpipeline/): Follow our step-by-step guide to set up a sample pipeline, making your development and deployment process more efficient.
 3. [**Known Limitations and Considerations**](KnownLimitationsAndConsiderations.md): Familiarize yourself with the current limitations and considerations to ensure you're making the most out of Umbraco CI/CD Flow.
 
 These resources will provide you with the knowledge and tools you need to successfully implement and optimize your use of Umbraco CI/CD Flow.

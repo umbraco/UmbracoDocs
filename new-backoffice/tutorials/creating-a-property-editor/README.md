@@ -8,7 +8,7 @@ description: A guide to creating a property editor in Umbraco
 This page is a work in progress. It will be updated as the software evolves.
 {% endhint %}
 
-This guide explains how to set up a property editor, hook it into Umbraco's Data Types, create a basic property editor, and how we can test our property editor.
+This guide explains how to set up a property editor and hook it into Umbraco's Data Types. It also covers the creation of a basic property editor and how we can test our property editor.
 
 The steps we will go through in part 1 are:
 
@@ -30,7 +30,7 @@ There are a lot of parallels with Creating a Custom Dashboard. The tutorial [Cre
 
 ### The End Result
 
-By the end of this tutorial, we will have a Suggestions data type running inside of Umbraco, registered as a Data Type in the backoffice, and assigned to a Document Type. The data type can create and suggest values.
+At the tutorial's end, we'll have a Umbraco Suggestions Data Type, registered in the backoffice, and assigned to a Document Type. This Data Type can create and suggest values.
 
 ### 1. Setting up a plugin
 
@@ -67,7 +67,7 @@ Add the following code
 Make sure to restart the application after you create and update`umbraco-package.json`
 {% endhint %}
 
-### 2. Creating a simple Web Component
+### 2. Creating a Web Component
 
 Let's start with creating a folder `src` in our Suggestions folder. We want to start creating the web component we need for our property editor. Create a file in the `src` folder with the name `suggestions-property-editor-ui.element.ts`
 
@@ -214,7 +214,7 @@ Let's start with the input field. When we type something in the input field, we 
 }
 ```
 
-Let's look at the suggestions button next. When we press the suggestion button we want the text to update to the suggestion that we get. Just like the value of our property editor is going to change when we write in the input field, we also want the value to change when we press the suggestion button.
+Let's look at the suggestions button next. When we press the suggestion button we want the text to update to the suggestion that we get. Similar to how the value of our property editor changes when we write in the input field. We also want the value to change when we press the suggestion button.
 
 First, update the import for Lit and add some suggestions to the property editor:
 
