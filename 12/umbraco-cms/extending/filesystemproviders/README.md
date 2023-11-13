@@ -23,27 +23,26 @@ using Umbraco.Cms.Core.Hosting;
 using Umbraco.Cms.Core.IO;
 using Umbraco.Cms.Infrastructure.DependencyInjection;
 
-namespace UmbracoExamples.Composition
-{
-    public class SetMediaFileSystemComposer : IComposer
-    {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.SetMediaFileSystem((factory) =>
-            {
-                IHostingEnvironment hostingEnvironment = factory.GetRequiredService<IHostingEnvironment>();
-                var folderLocation = "~/CustomMediaFolder";
-                var rootPath = hostingEnvironment.MapPathWebRoot(folderLocation);
-                var rootUrl = hostingEnvironment.ToAbsolute(folderLocation);
+namespace UmbracoExamples.Composition;
 
-                return new PhysicalFileSystem(
-                    factory.GetRequiredService<IIOHelper>(),
-                    hostingEnvironment,
-                    factory.GetRequiredService<ILogger<PhysicalFileSystem>>(),
-                    rootPath,
-                    rootUrl);
-            });
-        }
+public class SetMediaFileSystemComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.SetMediaFileSystem((factory) =>
+        {
+            IHostingEnvironment hostingEnvironment = factory.GetRequiredService<IHostingEnvironment>();
+            var folderLocation = "~/CustomMediaFolder";
+            var rootPath = hostingEnvironment.MapPathWebRoot(folderLocation);
+            var rootUrl = hostingEnvironment.ToAbsolute(folderLocation);
+
+            return new PhysicalFileSystem(
+                factory.GetRequiredService<IIOHelper>(),
+                hostingEnvironment,
+                factory.GetRequiredService<ILogger<PhysicalFileSystem>>(),
+                rootPath,
+                rootUrl);
+        });
     }
 }
 ```

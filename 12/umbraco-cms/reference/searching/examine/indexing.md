@@ -26,18 +26,17 @@ using Examine.Lucene;
 using Microsoft.Extensions.Options;
 
 namespace Umbraco.Docs.Samples.Web.CustomIndexing;
-{
-    public class ConfigureExternalIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
-    {
-        public void Configure(string name, LuceneDirectoryIndexOptions options)
-        {
-            throw new System.NotImplementedException();
-        }
 
-        public void Configure(LuceneDirectoryIndexOptions options)
-        {
-            throw new System.NotImplementedException();
-        }
+public class ConfigureExternalIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
+{
+    public void Configure(string name, LuceneDirectoryIndexOptions options)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void Configure(LuceneDirectoryIndexOptions options)
+    {
+        throw new System.NotImplementedException();
     }
 }
 ```
