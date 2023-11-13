@@ -194,12 +194,12 @@ private DeliveryApiCustomPicker? BuildDeliveryApiCustomPicker(object inter, bool
 
 If the `expanding` parameter is `false`, the method returns the same shallow representation of the referenced content item as before. Otherwise, we retrieve the corresponding `IPublishedContent` and construct our response object accordingly.
 
-To see the expanded output in the API response, we need to add the `expand` query parameter to our request. We can use either `?expand=all` to expand all properties or `?expand=property:pickedItem` to expand the specific `'pickedItem'` property.
+To see the expanded output in the API response, we need to add the `expand` query parameter to our request. We can use either `?expand=properties[$all]` to expand all properties or `?expand=properties[pickedItem]` to expand the specific `'pickedItem'` property.
 
 **Request**
 
 ```http
-GET /umbraco/delivery/api/v2/content/item/blog?expand=property:pickedItem
+GET /umbraco/delivery/api/v2/content/item/blog?expand=properties[pickedItem]
 ```
 
 **Response**
