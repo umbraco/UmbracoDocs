@@ -418,7 +418,7 @@ Get a single published content by its ID.
 }
 ```
 
-## Get by url
+## Get by URL
 
 Get a single published content by its URL.
 
