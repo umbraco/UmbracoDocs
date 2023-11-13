@@ -1437,7 +1437,7 @@ If you want the value of a property to match on both "page" and "pages" then you
 }
 ```
 
-Please note that filtering is done on individual content items meaning that content match is not done on related content or media.
+Filtering is performed on individual content items, indicating that content matching is not conducted on related content or media.
 
 **URL**: `/content/filter`
 
