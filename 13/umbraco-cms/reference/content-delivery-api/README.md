@@ -198,11 +198,11 @@ By default, a content property that allows picking a different content item (for
 
 If we apply property expansion to the content property, the properties of the picked item are included in the output. This functionality applies to media items and block editors, as well.
 
-Property expansion can be applied to expanded properties too, thus obtaining nested property expansion. As a consequence the output grows in size, and this is where property limiting comes into the picture.
+Property expansion can be applied to expanded properties too, thus obtaining nested property expansion. As a consequence, the output grows in size, and this is where property limiting comes into the picture.
 
 By default, all content properties (including expanded properties) are included in the output. Property limiting allows us to specify exactly which content properties to include in the output. This means we can tailor the output specifically to concrete use cases without over-fetching.
 
-Property expansion and limiting can be used when querying for both single and multiple content or media items.
+Property expansion and limiting can be used when querying for both single and multiple content or media items. You can expand properties by adding an `expand` parameter to the query and limit them by the `fields` query parameter.
 
 Please refer to [this article](./property-expansion-and-limiting) for an in-depth explanation of this feature.
 
@@ -447,7 +447,7 @@ All endpoints are documented in a Swagger document at `{yourdomain}/umbraco/swag
 
 ### Query parameters
 
-The Content Delivery API provides a number of query parameters that allow you to customize the content returned by the API to fit your needs. For each endpoint, the relevant query parameters are already specified within their corresponding documentation above. In addition to standard parameters like `skip` and `take`, the API provides different possibilities for the value of `expand`, `fetch`, `filter` and `sort` parameters. Below are the options supported out of the box.
+The Content Delivery API provides a number of query parameters that allow you to customize the content returned by the API to fit your needs. For each endpoint, the relevant query parameters are already specified within their corresponding documentation above. In addition to standard parameters like `skip` and `take`, the API provides different possibilities for the value of `expand`, `fields`, `fetch`, `filter` and `sort` parameters. Below are the options supported out of the box.
 
 {% hint style="info" %}
 You can extend the built-in selector, filter, and sorting capabilities of the Delivery API by creating your own custom query handlers.
@@ -478,7 +478,7 @@ Refer to the [Property expansion and limiting](./#property-expansion-and-limitin
 {% endhint %}
 
 **`?fields=properties[$all]`**\
-Includes all properties on the retrieved content item in the output.
+Includes all properties of the retrieved content item in the output.
 
 **`?fields=properties[alias1]`**\
 Includes only the property with the property alias _`alias1`_ in the output.

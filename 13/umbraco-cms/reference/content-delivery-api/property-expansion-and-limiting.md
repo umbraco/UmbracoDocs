@@ -1,4 +1,4 @@
-﻿---
+---
 description: Using property expansion and limiting to shape the Delivery API output
 ---
 
@@ -15,7 +15,7 @@ Property expansion and limiting applies only to select property editors. The fol
   - Media Picker
   - Media Picker (legacy)
   - Multinode Treepicker
-- Block based editors
+- Block-based editors
   - Block List
   - Block Grid
   - Rich Text Editor (with blocks)
@@ -29,7 +29,7 @@ When working with property expansion and limiting in API queries, there are two 
 
 ## Working with picker editors
 
-In the following we will be querying a content tree with blog posts and blog authors:
+In the following, we will be querying a content tree with blog posts and blog authors:
 
 - All blog posts are located under a root content item called "Posts".
 - All authors are located under a root content item called "Authors".
@@ -39,7 +39,7 @@ The blog post content type (`post`) contains two properties that support expansi
 - `author`: A content picker for picking the author of the post.
 - `coverImage`: A media picker for picking an image for the post.
 
-The author content type (`author`) contains a single property that support expansion and limiting:
+The author content type (`author`) contains a single property that supports expansion and limiting:
 
 - `picture`: A media picker for picking a picture of the author.
 
@@ -115,7 +115,7 @@ Start-Item: posts
 ```
 {% endcode %}
 
-If we want to show the author picture when rendering the blog post, we need to _expand_ the `author` property. By expanding the property, the author properties (including `picture`) are included in the output. We can achieve this by appending the `expand` parameter to our request.
+If we want to show the author's picture when rendering the blog post, we need to _expand_ the `author` property. By expanding the property, the author properties (including `picture`) are included in the output. We can achieve this by appending the `expand` parameter to our request.
 
 The `expand` parameter syntax is as follows:
 
@@ -214,9 +214,9 @@ Start-Item: posts
 ```
 {% endcode %}
 
-Now we have the `picture` data in the `properties` collection of `author`. However, the rest of the author properties (`biography` and `dateOfBirth`) are also present in our output, so we are slightly over-fetching. We will take care of that later.
+Now we have the `picture` data in the `properties` collection of `author`. However, the rest of the author's properties (`biography` and `dateOfBirth`) are also present in our output, so we are slightly over-fetching. We will take care of that later.
 
-First we need to get the alt texts of our images (the blog post `coverImage` and the author `picture`). The alt text in this case is a text string property (`altText`) on the media type. Fetching the alt texts is possible because property expansion can be performed both across multiple properties and in a nested fashion.
+First, we need to get the alt texts of our images (the blog post `coverImage` and the author `picture`). The alt text in this case is a text string property (`altText`) on the media type. Fetching the alt texts is possible because property expansion can be performed both across multiple properties and in a nested fashion.
 
 For nested property expansion, the `expand` parameter syntax is as follows:
 
@@ -227,7 +227,7 @@ Nested property expansion can also be combined with the `$all` operator:
 `expand=properties[$all[properties[nestedPropertyAlias1,nestedPropertyAlias2]]]`
 
 {% hint style="info" %}
-There is no API limit to how "deep" the nesting can go. Eventually though, the total length of request URL may become a hard limit to the size of the query.
+There is no API limit to how "deep" the nesting can go. Eventually though, the total length of the request URL may become a hard limit to the size of the query.
 {% endhint %}
 
 Let's amend the `expand` parameter to accommodate expansion of the images:
@@ -325,7 +325,7 @@ Start-Item: posts
 ```
 {% endcode %}
 
-As mentioned above we are slightly over-fetching. We don't need all the author data - we are only interested in the author `picture`. To fix this we can apply property limiting by adding the `fields` parameter to our request.
+As mentioned above we are slightly over-fetching. We don't need all the author data - we are only interested in the author's `picture`. To fix this we can apply property limiting by adding the `fields` parameter to our request.
 
 The `fields` parameter allows us to limit the properties in the output to only those specified. The parameter uses the same syntax as the `expand` parameter.
 
@@ -334,7 +334,7 @@ Our ideal blog post output contains:
 - All the properties of the blog post, including the `altText` of the post `coverImage`.
 - Only the `picture` property of `author`, including the `altText` of the author `picture`.
 
-As with property expansion we can use the `$all` operator in the `fields` parameter. This will include everything at any given query level. We'll use this to include all the blog post properties in the output without having to specify each property explicitly:
+As with property expansion, we can use the `$all` operator in the `fields` parameter. This will include everything at any given query level. We'll use this to include all the blog post properties in the output without having to specify each property explicitly:
 
 **Request**
 
@@ -430,7 +430,7 @@ Start-Item: posts
 
 Now the API output contains only the properties we need to render the blog post.
 
-Property limiting is particularly useful when querying multiple items. For example, if we were building condensed list of blog posts, we likely wouldn't need the author data nor the blog post content. By applying limiting to a filtered query, we can tailor the API output specifically to this scenario:
+Property limiting is particularly useful when querying multiple items. For example, if we were building a condensed list of blog posts, we likely wouldn't need the author data nor the blog post content. By applying limiting to a filtered query, we can tailor the API output specifically to this scenario:
 
 **Request**
 
@@ -534,10 +534,10 @@ Start-Item: posts
 ```
 {% endcode %}
 
-## Working with block based editors
+## Working with block-based editors
 
 {% hint style="info" %}
-If you are not familiar with block based editors, please refer to [this article](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor) for the general concepts of these.
+If you are not familiar with block-based editors, please refer to [this article](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor) for the general concepts of these.
 {% endhint %}
 
 In the API output, a block has little value without its contained properties. Therefore, the content and settings properties of blocks are always included in the output. However, these properties are not expanded. As such, we can apply expansion and limiting to the contained properties.
@@ -545,7 +545,7 @@ In the API output, a block has little value without its contained properties. Th
 In the following we'll request different types of articles, all of which are located under a root content item called "Articles":
 
 - An article with a Block List property (`blockList`).
-- An article a Block Grid property (`blockGrid`).
+- An article with a Block Grid property (`blockGrid`).
 - An article with a Rich Text Editor property (`richText`).
 
 All these properties are configured with a "Featured Post" block which consists of:
@@ -562,12 +562,14 @@ The goal is once again to build a condensed list of blog posts. But this time we
 To build the list we need the block `title`, the `coverImage` and `excerpt` from the picked post, and the `backgroundColor` from the block settings. Thus, we need to:
 
 - Expand the `post` property to retrieve the `altText` of the post `coverImage`.
-- Limit both the block level properties and the nested `post` properties, as to only output the properties relevant for building the condensed list.
+- Limit both the block-level properties and the nested `post` properties, as to only output the properties relevant for building the condensed list.
 
+{% hint style="info" %}
 For comparison, the samples show both the default output and the output with expansion and limiting applied. Notice that:
 
 - The `expand` and `fields` parameter syntax is the same for all editors, even though their rendered output is structurally different.
 - The `expand` and `fields` parameters target both the content and settings parts of each block.
+{% endhint %}
 
 ### Block List
 
@@ -1369,6 +1371,6 @@ Start-Item: articles
 
 ## Closing remarks
 
-Property expansion and limiting is a powerful feature that can boost our application performance. With this we can prevent additional requests to obtain data for linked items, and we can tailor the output to specific use cases.
+Property expansion and limiting is a powerful feature that can boost our application performance. With this, we can prevent additional requests to obtain data for linked items, and we can tailor the output to specific use cases.
 
-However, it is also a complex feature. The query syntax quickly gets complicated, particularly when targeting block editors. You will likely need to experiment some to get the query exactly right. Hopefully the examples in this article will guide you in applying expansion and limiting to your own content.
+However, it is also a complex feature. The query syntax quickly gets complicated, particularly when targeting block editors. You will likely need to experiment to get the query exactly right. Hopefully, the examples in this article will guide you in applying expansion and limiting to your own content.
