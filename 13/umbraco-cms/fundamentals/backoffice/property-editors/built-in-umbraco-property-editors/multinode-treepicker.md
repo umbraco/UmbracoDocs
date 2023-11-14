@@ -53,7 +53,7 @@ Each query step takes the output from the last step (or the origin) as input.
 
 #### Adding a custom query step
 
-Custom query steps can be used to solve some very specific use cases.
+Custom query steps can be used to solve some specific use cases.
 
 To add a custom query step you need to append it to the existing query steps. This can be done from a composer:
 
