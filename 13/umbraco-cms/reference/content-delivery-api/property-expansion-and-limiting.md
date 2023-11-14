@@ -29,7 +29,7 @@ When working with property expansion and limiting in API queries, there are two 
 
 ## Working with picker editors
 
-In the following, we will be querying a content tree with blog posts and blog authors:
+In the following examples, we will be querying a content tree with blog posts and blog authors:
 
 - All blog posts are located under a root content item called "Posts".
 - All authors are located under a root content item called "Authors".
@@ -542,7 +542,7 @@ If you are not familiar with block-based editors, please refer to [this article]
 
 In the API output, a block has little value without its contained properties. Therefore, the content and settings properties of blocks are always included in the output. However, these properties are not expanded. As such, we can apply expansion and limiting to the contained properties.
 
-In the following we'll request different types of articles, all of which are located under a root content item called "Articles":
+In the following examples we'll request different types of articles, all of which are located under a root content item called "Articles":
 
 - An article with a Block List property (`blockList`).
 - An article with a Block Grid property (`blockGrid`).
