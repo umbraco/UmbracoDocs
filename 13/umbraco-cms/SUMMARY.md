@@ -8,7 +8,6 @@
 * [Backoffice](fundamentals/backoffice/README.md)
   * [Property Editors](fundamentals/backoffice/property-editors/README.md)
     * [Built-in Property Editors](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/README.md)
-      * [Multinode Treepicker](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/multinode-treepicker.md)
       * [Rich Text Editor](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/README.md)
         * [Blocks in Rich Text Editor](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-blocks.md)
   * [Login](fundamentals/backoffice/login.md)
@@ -17,10 +16,9 @@
     * [Version Specific Upgrades](fundamentals/setup/upgrading/version-specific/README.md)
 
 ## Reference
+
 * [Security](reference/security/README.md)
   * [External login providers](reference/security/external-login-providers.md)
   * [Two-factor Authentication](reference/security/two-factor-authentication.md)
 
 ## Tutorials
-
-
