@@ -3,15 +3,15 @@
 
 # Deployment Webhook
 
-You can now configure a deployment webhook to be triggered upon successful deployments to any of your Umbraco Cloud environments, e.g. when deploying from your local environment to your Cloud Development environment. Upon successful deployment, general information about the deployment will be posted in a JSON format to the specific URL you have configured.
+You can now configure a deployment webhook to be triggered upon successful deployments to any of your Umbraco Cloud environments. For example, when deploying from your local environment to your Cloud Development environment. Upon successful deployment, general information about the deployment will be posted in a JSON format to the specific URL you have configured.
 
 ## Use cases
 
-There are many 'audit' cases when you would like to let others know about what is happening with your site. Here are some examples of cases where this feature could be useful:
+There are many use cases for deployment webhooks such as providing a detailed audit trail. Here are some scenarios where Webhooks could be useful:
 
-1. Any deployments to the Live site could be relevant for many parties in a company. Posting information about them in internal communication channels like _Slack_ is made possible using this feature.
-2. Monitoring of the whole deployment cycle. A successful deployment might result in a potentially breaking change. Integrating the webhook with other monitoring services, you could find out which deployment has caused the issue.
-3. Letting content editors know about particular deployments when a new document type was added as they can now use the new document type.
+1. Any deployments to the Live site could be relevant for many parties in a company. Posting information about a deployment in internal communication channels like _Slack_ is made possible using this feature.
+2. Monitoring of the whole deployment cycle. A successful deployment might cause an error to show on the website! Integrating the webhook with other monitoring services, you could find out which deployment caused the issue.
+3. Letting content editors know about particular deployments such as when a new Document Type was added. Will inform them that they can now use the new Document Type.
 
 ## Configuration steps
 
@@ -37,7 +37,7 @@ Content-Type: application/json; charset=utf-8
 
 ### Contents
 
-Contents of the payload contain general information about the current deployment with links to the project in the Portal and the frontend of the environment. The last part of the contents is a collection/enumeration of commits that were deployed to the environment, mentioning the author, the commit message, and changed files.
+Contents of the payload contain general information about the current deployment with links to the project in the Portal and the frontend of the environment. The final section lists deployed commits, including author, commit message, and changed files in the environment.
 
 ```json
 {

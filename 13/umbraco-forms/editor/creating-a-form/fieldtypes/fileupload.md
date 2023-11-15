@@ -13,7 +13,7 @@ You can choose to specify which files you want to allow the user to upload, when
 To allow only specific files:
 
 1. Select the File Type checkbox the user should be able to upload.
-2. Click **Submit**.  
+2. Click **Submit**.
 
 {% hint style="info" %}
 We recommend selecting **Allow only specified files**, to limit malicious code to be uploaded, whenever the user is submitting the Form.
@@ -27,3 +27,9 @@ To add new file type:
 
 1. Type a file extension name in the **User defined allowed file types** field and click add.
 2. Click **Submit**.
+
+## Server-side file validation
+
+The file upload field type will verify the file contents using the registered set of `IFileStreamSecurityValidator` instances.
+
+To read more about this feature, see [Server-side file validation](https://docs.umbraco.com/umbraco-cms/v/10.latest-lts/reference/security/serverside-file-validation) in the CMS documentation.

@@ -8,45 +8,156 @@
 
 The Multinode Treepicker allows you to configure the type of tree to render and what part of the tree that should be rendered. For content it allows you to select a dynamic root node based on the current document using the multinode tree picker.
 
-**Node type:** set the type of node, the root node of the tree, or query for the root node
+### Node type
+set the type of node, the root node of the tree, or query for the root node
 
-For querying for a root node, you can use dynamic placeholders in the XPath query, following the below sample queries
+For querying content you can specify a dynamic root
+![Multinode Treepicker Data Type Definition](../../images/mntp_node_type.png)
 
+When you specify the dynamic root, you have are able to navigate the tree relative to a node.
+![Multinode Treepicker Data Type Definition](../../images/mntp_node_type_dynamic_root.png)
+
+First you have to specify a origin, from where the query will start.
+![Multinode Treepicker Data Type Definition](../../images/mntp_node_type_dynamic_root_origin.png)
+
+You have the following options:
+- Root
+  - The root is the first level item of the current nodes subtree.
+- Parent
+  - The parent is the nearest ancestor of the current node.
+- Current
+    - The current node. Be aware a picker that uses the current node, cannot pick anything when the current node is created, because it do not have any children.
+- Site
+  - The nearest ancestor of the current node that has a domain assigned.
+- Specific node
+  - A specific node that you have to choose in the tree
+
+Often an origin is a good dynamic root. It is also possible to execute multiple steps from the origin to navigate the tree to find another root.
+![Multinode Treepicker Data Type Definition](../../images/mntp_node_type_dynamic_root_steps.png)
+
+Yoy have the following options:
+- Nearest Ancestor or Self
+  -  Finds the nearest ancestor or the item itself, that fits with one of the configured document types.
+- Furthest Ancestor or Self
+  -  Finds the furthest ancestor or the item itself, that fits with one of the configured document types.
+- Nearest Descendant or Self
+  -  Finds the nearest descendant or the item itself, that fits with one of the configured document types.
+- Furthest Descendant or Self
+  -  Finds the furthest descendant or the item itself, that fits with one of the configured document types.
+- Custom
+  - Execute a custom query step by specifying the name. This requires custom code to add the new query step.
+
+Each query step takes the output from the last step (or the origin) as input.
+
+![Multinode Treepicker Data Type Definition](../../images/mntp_node_type_dynamic_root_overview.png)
+
+#### Adding a custom query step
+
+Custom query steps can be used to solve some specific use cases.
+
+To add a custom query step you need to append it to the existing query steps. This can be done from a composer:
+
+```csharp
+public class CustomQueryStepComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.DynamicRootSteps().Append<MyCustomDynamicRootQueryStep>();
+    }
+}
 ```
-// get the first textpage below the current document
-$current/textpage: current page or closest found ancestor
 
-// get a descendant of type news article somewhere below the parent
-$parent//newsArticle: parent page or closest found ancestor
+The implementation of a query step takes in a collection of origins and information about the query step. The collection is taken from where the name specified in the UI can be found.
 
-// go to the root of the content tree
-$root
-
-// go the ancestor at @level=1 where your website root usually is.
-$site: Ancestor node at level 1
+```csharp
+public class CustomQueryStepComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.DynamicRootSteps().Append<MyCustomDynamicRootQueryStep>();
+    }
+}
 ```
 
-{% hint style="warning" %}
+The code required to create a custom query step is like in the below example.
 
-The current implementation of XPath is suboptimal and will be removed entirely in a future version. It is currently obsolete and scheduled for removal in v14.
+You can inject dependencies into the constructor.
+Some interesting dependencies could be custom repositories, or the `IVariationContextAccessor`, if you wanna use the current culture.
 
-{% endhint %}
+The `ExecuteAsync` method gets a collection of content keys from the last executed query step or the origin. It has to return a new collection of content keys.
 
-It is important to notice that all placeholders above act against published content only. So if you, therefore, try to fetch `$parent` of the current document, then Umbraco will return that or its closest published ancestor. So in case, the parent is not published, it will try the parent of that parent, and so on.
+```csharp
+public class MyCustomDynamicRootQueryStep : IDynamicRootQueryStep
+{
+    private readonly IMyCustomRepository _myCustomRepository;
 
-**Filter out items with type:** allow or disallow tree nodes with a certain content type alias.
+    public MyCustomDynamicRootQueryStep(IMyCustomRepository myCustomRepository)
+    {
+        _myCustomRepository = myCustomRepository;
+    }
+
+    public async Task<Attempt<ICollection<Guid>>> ExecuteAsync(ICollection<Guid> origins, DynamicRootQueryStep filter)
+    {
+        if (filter.Alias != "MyCustom") // This is the string you will have to write in the UI
+        {
+            return Attempt<ICollection<Guid>>.Fail();
+        }
+
+        if (origins.Any() is false)
+        {
+            return Attempt<ICollection<Guid>>.Succeed(Array.Empty<Guid>());
+        }
+
+        // TODO replace with your own logic
+        var result = await _myCustomRepository.GetWhateverIWantAsync(origins);
+
+        return Attempt<ICollection<Guid>>.Succeed(result);
+    }
+}
+```
+
+### Filter out items with type
+Allow or disallow tree nodes with a certain content type alias.
 
 Enter `typeAlias,altTypeAlias` to only allow selecting nodes with those alias'. Enter `!typeAlias,altTypeAlias` to only allow selecting nodes **not** with those alias'.
 
-**Minimum/maximum number of items:** set a limit on the number of items allowed to be selected.
+### Minimum/maximum number of items
+Set a limit on the number of items allowed to be selected.
 
 ## Data Type Definition Example
 
-![Multinode Treepicker Data Type Definition](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Multinode-Treepicker-DataType-8\_1.png)
-
+![Multinode Treepicker Data Type Definition](../../images/mntp.png)
 ## Content Example
 
-![Multinode Treepicker](../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Multinode-Treepicker-Content-v8.png)
+Consider the following tree structure where Document Type alias is presented in square brackets.
+
+- Codegarden
+    - 2023 \[_year_\]
+        - Talks \[_talks_\]
+            - ...
+            - Umbraco anno MMXXIII \[_talk_\]
+        - Stages \[_stages_\]
+            - Social Space \[_stage_\]
+            - No 10 \[_stage_\]
+            - No 16 \[_stage_\]
+            - The Theatre \[_stage_\]
+    - 2022 \[_year_\]
+        - Talks \[_talks_\]
+            - ...
+        - Stages  \[_stages_\]
+            - Main Stage \[_stage_\]
+            - The Barn \[_stage_\]
+            - The Theatre \[_stage_\]
+
+Consider configuring a picker on the _talk_ Document Type to choose a stage of the talk. Here you only want to present the stages for the actual year.
+To do this, you can first choose the parent as origin.
+
+Imaging being on the `Umbraco anno MMXXIII` node.
+This means the collection of content keys passed into the first query step will only contain the `Talks` content node.
+First you can then query for nearest ancestors of type `year`. This means the the `2023` will be returned.
+Next you can query for nearest descendants of type `stages`.
+
+When opening the picker on the `Umbraco anno MMXXIII` node, it will now show the children of the node on path  `Codegarden => 2023 => Stages`.
 
 ## MVC View Example
 
@@ -82,7 +193,7 @@ See the example below to see how a value can be added or changed programmaticall
 ```csharp
 @inject IContentService Services;
 @using Umbraco.Cms.Core;
-@using Umbraco.Cms.Core.Services 
+@using Umbraco.Cms.Core.Services
 
 @{
     // Get access to ContentService
@@ -105,7 +216,7 @@ See the example below to see how a value can be added or changed programmaticall
     // Create a list of the page udi's
     var udis = new List<string>{pageUdi.ToString(), anotherPageUdi.ToString()};
 
-    // Set the value of the property with alias 'featuredArticles'. 
+    // Set the value of the property with alias 'featuredArticles'.
     content.SetValue("featuredArticles", string.Join(",", udis));
 
     // Save the change
@@ -118,7 +229,7 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 ```csharp
 @{
     // Get the page using it's id
-    var content = contentService.GetById(1234); 
+    var content = contentService.GetById(1234);
 }
 ```
 
