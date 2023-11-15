@@ -22,7 +22,7 @@ Five parameters can be provided:
 - `recordId` is an optional existing record GUID, used if editing records via the website is [enabled in configuration](../developer/configuration/README.md#alloweditableformsubmissions)
 - `redirectToPageId` is an optional GUID for a content page that, if provided, is redirected to once the form has been submitted. It will be used in preference to post-submission behavior defined on the form itself.
 
-Usually, rather than hard-coding the form's GUID and other details, you'll use a form, theme and/or content picker property on your page:
+Usually, rather than hard-coding the form's GUID and other details, you'll use a form, theme or content picker on your page:
 
 ```csharp
 @await Component.InvokeAsync("RenderForm", new { formId = @Model.Form, theme = @Model.Theme, includeScripts = false })
