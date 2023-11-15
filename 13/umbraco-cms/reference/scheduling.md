@@ -9,7 +9,7 @@ It is possible to run recurring code using a recurring background job. Backgroun
 Once you've created your background job class, register it using a Composer. It will be detected at startup and a new `HostedService` will be created to run your job.
 
 {% hint style="warning" %}
-Be aware you may or may not want this background job to run on all servers, if you are using Load Balancing with multiple servers, see [load balancing documentation](../fundamentals/setup/server-setup/load-balancing/) for more information
+Be aware you may or may not want this background job to run on all servers. If you are using Load Balancing with multiple servers, see [load balancing documentation](../fundamentals/setup/server-setup/load-balancing/) for more information
 {% endhint %}
 
 ## `IRecurringBackgroundJob`
@@ -57,7 +57,7 @@ Be aware you may or may not want this background job to run on all servers, if y
     }
     ```
 
-## Simple example
+## Minimal example
 
 ```csharp
 using Umbraco.Cms.Core;
@@ -242,9 +242,9 @@ public class CleanUpYourRoomComposer : IComposer
 
 ## Base Classes
 
-`RecurringHostedServiceBase` is a very low-level base class. It implements the dotnetcore interface `IHostedService` to run itself in the background, and creates and manages the timer that runs the job on a recurring basis.
+`RecurringHostedServiceBase` is a low-level base class. It implements the dotnetcore interface `IHostedService` to run itself in the background, and creates and manages the timer that runs the job on a recurring basis.
 
-`RecurringBackgroundJobHostedService` is an Umbraco specific Hosted Service that extends `RecurringHostedServiceBase`. It has a few system-level Umbraco services injected into it to ensure that your recurring background jobs only run when Umbraco is up and running. It checks:
+`RecurringBackgroundJobHostedService` is an Umbraco specific Hosted Service that extends `RecurringHostedServiceBase`. It uses some system-level Umbraco services to ensure that your jobs only execute once Umbraco is up and running. It checks:
 
 -   Server Roles - see above for more discussion about Server roles
 
@@ -277,11 +277,11 @@ These notifications are there to support low-level debugging of background jobs 
 
 The Ignored notification is published when a background job's scheduled is triggered, but of the Umbraco runtime checks prevents it from running.
 
-This notification is there to support low-level debugging of background jobs to ascertain why they are / are not running. As the runtime checks include runtime state readiness, this event may be triggered during the install phase. Any notification handlers associated with this notification should **ALSO** conduct their own checks before relying on Umbraco services, including database access.
+This notification is there to support low-level debugging of background jobs to ascertain why they are / are not running. As the runtime checks include runtime state readiness, this event may be triggered during the install phase. Any notification handlers associated with this notification should **also** conduct their own checks before relying on Umbraco services, including database access.
 
 ### Executing / Executed / Failed
 
-These notifications will be triggered in pairs depending on the success / failure of the job itself. The executing notification is triggered before the job is run, while the executed / failed notification is triggered after the job completes or in the catch block if it fails.
+These notifications will be triggered in pairs depending on the success / failure of the job itself. The executing notification is triggered before the job is run. The executed notification is triggered after the job completes. The failed notification is triggered from the catch block if an exception is thrown.
 
 For **successful** job runs, the following notifications will be published:
 
