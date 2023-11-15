@@ -320,7 +320,7 @@ The [Login partial view](https://github.com/umbraco/Umbraco-CMS/blob/contrib/src
 When the authorization flow completes we'll obtain an access token. This token can be used as a bearer token to access protected content for the logged-in member:
 
 ```http
-GET /umbraco/delivery/api/v1/content/{query}
+GET /umbraco/delivery/api/v2/content/{query}
 Authentication: Bearer {access token}
 ```
 
