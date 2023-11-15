@@ -12,11 +12,11 @@ Below you will find the steps on how you can create a new Umbraco 13 RC project 
 
 ### prerequisite
 
-* [.NET 8.0.0.rc.2](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) installed
+* [.NET 8.0.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) installed
 
 #### Install using Command Line
 
-1. Run `dotnet new -i Umbraco.Templates::13.0.0-rc1` in the command line to install the Umbraco 13 RC templates.
+1. Run `dotnet new -i Umbraco.Templates::13.0.0-rc2` in the command line to install the Umbraco 13 RC templates.
 2. Run `dotnet new umbraco -n "MyProject"` to create a new project using Umbraco 13 RC.
 3. Run `dotnet run --project "MyProject"` to start the newly created project.
 
