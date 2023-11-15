@@ -31,7 +31,7 @@ Output caching can be a bad fit in some cases:
 
 - If editors require immediate publishing of content updates (see above).
 - When using personalization in the API output.
-- If a custom property editor requires re-rendering for every request (i.e. if a property value converter outputs the current time).
+- If a custom property editor requires re-rendering for every request (for example if a property value converter outputs the current time).
 
 ## Configuring output caching
 
