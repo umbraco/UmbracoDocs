@@ -29,7 +29,10 @@ The list will be updated as more articles have been created and updated.
 * [Blocks in Rich Text Editor](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-blocks.md)
 * [External Login Providers](reference/security/external-login-providers.md)
 * [Two-factor Authentication](reference/security/two-factor-authentication.md)
+* [Multinode Treepicker](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/multinode-treepicker.md)
 
 ### Breaking Changes
 
 Some breaking changes have been introduced in the Umbraco 13 Release Candidate, you can find the list of breaking changes in the [Version Specific Upgrades](fundamentals/setup/upgrading/version-specific/) article.
+
+test
