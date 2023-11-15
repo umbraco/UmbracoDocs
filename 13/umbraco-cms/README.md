@@ -30,6 +30,12 @@ The list will be updated as more articles have been created and updated.
 * [External Login Providers](reference/security/external-login-providers.md)
 * [Two-factor Authentication](reference/security/two-factor-authentication.md)
 * [Multinode Treepicker](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/multinode-treepicker.md)
+* [Content Delivery API](reference/content-delivery-api/)
+  * [Custom property editors support](reference/content-delivery-api/custom-property-editors-support.md)
+  * [Extension API querying](reference/content-delivery-api/extension-api-for-querying.md)
+  * [Media Delivery API](reference/content-delivery-api/media-delivery-api.md)
+  * [Protected content in the Delivery API](reference/content-delivery-api/protected-content-in-the-delivery-api.md)
+  * [Property expansion and limiting](reference/content-delivery-api/property-expansion-and-limiting.md)
 
 ### Breaking Changes
 
