@@ -28,5 +28,6 @@
     * [Media Delivery API](reference/content-delivery-api/media-delivery-api.md)
     * [Protected content in the Delivery API](reference/content-delivery-api/protected-content-in-the-delivery-api.md)
     * [Property expansion and limiting](reference/content-delivery-api/property-expansion-and-limiting.md)
+    * [Output caching](reference/content-delivery-api/output-caching.md)
 
 ## Tutorials
