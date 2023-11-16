@@ -2,7 +2,7 @@
 
 In this article you can learn more about the .NET client library that you can clone and use with your Umbraco Heartcore projects.
 
-It is a library for .NET Core and is based on .NET Standard 2.0. This means that it can be used on the most .NET frameworks, e.g. UWP, Xamarin.Android, Xamarin.Mac and Desktop .NET 4.6.1.
+It is a library for .NET Core and is based on .NET Standard 2.0. This means that it can be used on the most .NET frameworks, for example UWP, Xamarin.Android, Xamarin.Mac and Desktop .NET 4.6.1.
 
 ## Download and install
 
