@@ -15,10 +15,10 @@ You can also install it through NuGet:
 ```
 
 {% hint style="info" %}
-Please be aware that the minimum NuGet client version requirement has been updated to 2.12 in order to support multiple .NET Standard targets in the NuGet package.
+Please be aware that the minimum NuGet client version requirement has been updated to 2.12. This change is made to support multiple .NET Standard targets in the NuGet package.
 {% endhint %}
 
-You will get a Visual Studio solution file which references the client library itself (Umbraco.Headless.Client.Net) as well as a test project (Umbraco.Headless.Client.Net.Tests) which uses xUnit for unit and integration tests.
+You will receive a Visual Studio solution file that references the client library (Umbraco.Headless.Client.Net). Additionally, there is a test project (Umbraco.Headless.Client.Net.Tests) utilizing xUnit for unit and integration tests.
 
 Along with the client library you will also find two samples based on the library. We have built an MVC sample and a console sample.
 
