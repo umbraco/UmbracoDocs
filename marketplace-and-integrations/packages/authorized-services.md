@@ -225,11 +225,11 @@ Task<Attempt<TResponse?>> GetRequestAsync<TResponse>(string serviceAlias, string
 Depending on the configured authentication method, there are some methods that can be used to retrieve the access token or the API key:
 
 ```csharp
-string? GetOAuth1Token(string serviceAlias);
+Task<string?> GetOAuth1Token(string serviceAlias);
 
-string? GetOAuth2Token(string serviceAlias);
+Task<string?> GetOAuth2Token(string serviceAlias);
 
-string? GetApiKey(string serviceAlias);
+Task<string?> GetApiKey(string serviceAlias);
 ```
 
 ## Verified Providers
