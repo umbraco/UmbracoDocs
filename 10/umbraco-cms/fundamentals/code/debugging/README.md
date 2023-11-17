@@ -22,7 +22,7 @@ Debug should always be set to false in production.
 
 ## Tracing
 
-Logging and tracing are really two names for the same technique. You need to configure what log messages you wanna log.
+Tracing and trace logging are two names for the same technique. You need to configure which log messages you want to log.
 
 ### Enabling Trace Logging
 
