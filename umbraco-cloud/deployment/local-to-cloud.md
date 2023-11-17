@@ -23,7 +23,7 @@ Here's a quick step-by-step on how you deploy these changes to your Cloud enviro
 
 In the above example, Git Bash is used to stage, commit, and deploy changes made to a Document type plus a newly added Data Type from a local environment to a Cloud Development environment. You are welcome to use any Git client or command line interface of your choice.
 
-Once you've deployed your local changes to your Cloud environment deploying to your remaining Cloud environments (e.g. Staging and/or Live) is done using the **'Deploy changes to ..'** button in the Umbraco Cloud portal. For more information, see the [Deploying between Cloud environments](cloud-to-cloud.md) article.
+Once you've deployed your local changes to your Cloud environment deploying to your remaining Cloud environments (for example Staging and/or Live) is done using the **'Deploy changes to ..'** button in the Umbraco Cloud portal. For more information, see the [Deploying between Cloud environments](cloud-to-cloud.md) article.
 
 ## Deploying without using a Git client
 
