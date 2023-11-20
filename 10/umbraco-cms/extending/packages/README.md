@@ -72,6 +72,8 @@ Things you should know if you are developing for Umbraco Cloud.
 
 Some guidance on how to maintain your package after release.
 
-## [Maintaining Packages](maintaining-packages.md)
+## [An Example Package Repository](example-package-repository.md)
 
-There are many ways to build and deploy your pack
+There are many ways to build and deploy your package to NuGet. You will likely have your own approach for organizing a solution and preferred tools for build and deployment.
+
+If you are looking for inspiration to follow form some tried and tested packages, read more here.

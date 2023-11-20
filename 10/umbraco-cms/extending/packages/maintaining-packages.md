@@ -41,7 +41,7 @@ This states that the package is compatible with Umbraco 10, 11 and 12, but not 1
 
 If you want to encourage feedback, feature requests, and issue reports then you should make available an issue tracker.
 
-This can be [provided as information about your package](../../../../marketplace-and-integrations/marketplace/listing-your-package.md) and will be linked from your package's page on the Umbraco Marketplace. Specifically you should populate the `IssueTrackerUrl` field.
+This can be [provided as information about your package](https://docs.umbraco.com/umbraco-dxp/marketplace/listing-your-package) and will be linked from your package's page on the Umbraco Marketplace. Specifically you should populate the `IssueTrackerUrl` field.
 
 ## Package no longer required?
 
