@@ -15,9 +15,3 @@ Learn more about which versions of the API is available as well as what version 
 When using our [Client Libraries](client-libraries/), the `api-version` is handled as part of the library and generally not something you need to worry about.
 
 Be aware that the client library releases will have certain features available. The Forms API is unavailable in the initial release (1.0) of the .NET Core client library, for instance. This was made available in the 1.1 version of the client library.
-
-
-
-
-
-
