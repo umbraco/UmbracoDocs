@@ -1,6 +1,6 @@
 # Versions and updates
 
-Umbraco Heartcore is a software as a service (SaaS) offering, eliminates upgrade concerns. All maintenance related to the CMS, its features and APIs are handled by Umbraco HQ.
+Umbraco Heartcore is a software as a service (SaaS) offering, that eliminates upgrade concerns. All maintenance related to the CMS, its features, and APIs is handled by Umbraco HQ.
 
 Umbraco HQ will regularly be adding new features to the CMS and new capabilities to the REST APIs. Each time new endpoints are added to the REST API the `api-version` will be updated to reflect the changes. API releases and versioning is handled following the [ASP.NET API versioning guidelines](https://github.com/microsoft/aspnet-api-versioning).
 
