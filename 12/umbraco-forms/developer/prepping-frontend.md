@@ -9,7 +9,7 @@ You can use the following Razor helper to output script tags containing the depe
 ```csharp
 @using Umbraco.Forms.Web
 <head>
-    @Html.RenderUmbracoFormDependencies()
+    @Html.RenderUmbracoFormDependencies(Url)
 </head>
 ```
 
@@ -20,7 +20,7 @@ Alternatively, you can add the dependencies to the body tag:
 ...
 
 <body>
-    @Html.RenderUmbracoFormDependencies()
+    @Html.RenderUmbracoFormDependencies(Url)
 </body>
 ```
 
@@ -31,7 +31,7 @@ If you want to modify the rendering of the scripts, you can provide a dictionary
 You can use this to apply `async` or `defer` attributes. For example:
 
 ```csharp
-@Html.RenderUmbracoFormDependencies(new Dictionary<string, string?> { { "async", null } })
+@Html.RenderUmbracoFormDependencies(Url, new Dictionary<string, string?> { { "async", null } })
 ```
 
 If using `async`, please make sure to [disable the Forms client-side validation framework check](../developer/configuration/README.md#disableclientsidevalidationdependencycheck). This is necessary as it's not possible to guarantee that the asynchronous script will load in time to be recognized by the check. This can then cause a false positive warning.
