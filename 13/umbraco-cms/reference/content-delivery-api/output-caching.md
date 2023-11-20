@@ -22,7 +22,7 @@ However, output caching does come with a few trade-offs:
 - The cache does not expire automatically when content changes. Therefore, editors will experience increased publishing time when making changes to existing content.
 
 {% hint style="info" %}
-Request made in preview mode are not subject to output caching.
+Requests made in preview mode are not subject to output caching.
 {% endhint %}
 
 ## When _not_ to use output caching
