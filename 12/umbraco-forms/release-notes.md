@@ -32,6 +32,7 @@ In this section, you can find the release notes for each version of Umbraco Form
 * Added an additional button allowing a form editor to add a new page at the top or bottom of the form [#1029](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1029).
 * Added a parameter to set the "go to page" for different instances of forms are used on multiple pages [#331](https://github.com/umbraco/Umbraco.Forms.Issues/issues/331).
 * Added a "reject" state to forms and the ability to associate workflows [#716](https://github.com/umbraco/Umbraco.Forms.Issues/issues/716).
+* Made the Forms client-side validation service available globally for use in custom code [#1099](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1099).
 
 #### [12.1.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.2 (November 14th 2023)
 
