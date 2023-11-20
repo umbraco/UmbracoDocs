@@ -18,7 +18,7 @@ In this section, you can find the release notes for each version of Umbraco Form
 
 <summary>Version 12</summary>
 
-#### [12.2.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.0) (TBC 2023)
+#### [12.2.0-rc1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.0) (November 23rd 2023)
 
 * Added an overload to the `RenderUmbracoFormDependencies` HTML helper method to allow provision of a dictionary parameter containing attributes to use when rendering script references. Also a new configuration option `DisableClientSideValidationDependencyCheck` to disable the client-side validation framework check. This is necessary when using the overload to provide an `async` attribute. [#1074](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1074).
 * Added further conditional operators, for inverse and case insensitive checks [#1081](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1081).
@@ -31,6 +31,7 @@ In this section, you can find the release notes for each version of Umbraco Form
 * Added a "select/deselect all" toggle for the user security list of forms [#1092](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1092).
 * Added an additional button allowing a form editor to add a new page at the top or bottom of the form [#1029](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1029).
 * Added a parameter to set the "go to page" for different instances of forms are used on multiple pages [#331](https://github.com/umbraco/Umbraco.Forms.Issues/issues/331).
+* Added a "reject" state to forms and the ability to associate workflows [#716](https://github.com/umbraco/Umbraco.Forms.Issues/issues/716).
 
 #### [12.1.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.2 (November 14th 2023)
 

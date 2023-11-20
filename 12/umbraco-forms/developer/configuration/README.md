@@ -56,7 +56,8 @@ For illustration purposes, the following structure represents the full set of op
         "StoreRecordsLocally": true,
         "AutocompleteAttribute": "",
         "DaysToRetainSubmittedRecordsFor": 0,
-        "DaysToRetainApprovedRecordsFor": 0
+        "DaysToRetainApprovedRecordsFor": 0,
+        "DaysToRetainRejectedRecordsFor": 0
       },
       "RemoveProvidedEmailTemplate": false,
       "RemoveProvidedFormTemplates": false,
@@ -284,6 +285,10 @@ If set to a positive number, a date value calculated by taking away the number o
 #### DaysToRetainApprovedRecordsFor
 
 Applies as per `DaysToRetainSubmittedRecordsFor` but for records in the 'approved' state.
+
+#### DaysToRetainRejectedRecordsFor
+
+Applies as per `DaysToRetainSubmittedRecordsFor` but for records in the 'rejected' state.
 
 ## Package options configuration
 
