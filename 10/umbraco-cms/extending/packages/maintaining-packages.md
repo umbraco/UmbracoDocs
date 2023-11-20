@@ -11,7 +11,7 @@ Once you've created and published your package, what's involved in its ongoing m
 
 ## Updating with new Umbraco major versions
 
-Umbraco will regular release update to the CMS as patch or minor versions. These are verified to be backward compatible and as such there's no expectation that a package may break when a new version of this type comes out.
+Umbraco will regular release update to the CMS as patch or minor versions. These are verified to be backwards compatible. As such there's no expectation that a package may break when a new version of this type comes out.
 
 When a new major version of Umbraco is released, there will be breaking changes. You should test your package on this latest version to confirm it still works. Unless there's been a significant change to the CMS, many packages will continue to work with the new major version without any update. However you may be using a service or API that has undergone a breaking change.
 
