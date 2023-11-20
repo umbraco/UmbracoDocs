@@ -27,7 +27,7 @@ After deploying changes locally to your Cloud environment, use the Umbraco Cloud
 
 ## Deploying without using a Git client
 
-If you don't have a Git client installed on your local machine, you can use alternatives like [Git for Windows](https://gitforwindows.org/). Navigate to the command line and employ the following commands:
+If you don't have a Git client installed on your local machine, you can use alternatives like [Git for Windows](https://gitforwindows.org/). Navigate to the command line and use the following commands:
 
 ```cs
 # Navigate to the repository folder
