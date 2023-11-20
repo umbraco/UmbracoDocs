@@ -24,7 +24,7 @@ The [main package project](https://github.com/umbraco/Umbraco.AuthorizedServices
 <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="[10.0, 14)" />
 ```
 
-Note that we provide an upper bound on the package. This ensures that developers can only install it into projects that are using versions of Umbraco that we have tested the package with.
+Here we provide an upper bound on the package. This ensures that developers can only install it into projects that are using versions of Umbraco that we have tested the package with.
 
 When the next major version of Umbraco is released, we'll test and either extend the range or release a new version, as appropriate.
 
@@ -45,11 +45,11 @@ Finally there's an [example Umbraco website](https://github.com/umbraco/Umbraco.
 As well as the projects, the following files are added to the solution:
 
 - [.artifactignore](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/.artifactignore) - used by AzureDevOps services to [control which files are uploaded when you publish](https://learn.microsoft.com/en-us/azure/devops/artifacts/reference/artifactignore?view=azure-devops). This helps to reduce pipeline execution time.
-- [.editorconfig](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/.editorconfig) - used to [enforce consistent coding styles](https://editorconfig.org/) for multiple developers working on the same project across various editors and IDEs.
+- [.editorconfig](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/.editorconfig) - used to [enforce consistent coding styles](https://editorconfig.org/) for multiple developers working on the same project across editors and IDEs.
 - [.gitignore](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/.gitignore) - controls which files are added to source control.
 - [.globalconfig](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/.globalconfig) - provides [further styling rules for the project files, even if stored outside of the project directory](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/configuration-files#global-analyzerconfig).
 - [Directory.Build.props](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/Directory.Build.props) - used to provide common setting across all projects in the solution.
-- global.json - ensures that the solution is always [built with a consistent version of the .NET SDK](https://learn.microsoft.com/en-us/dotnet/core/tools/global-json). We add this when we have a solution that targets a single Umbraco major version.
+- global.json - ensures that the solution is always [built with a consistent version of .NET](https://learn.microsoft.com/en-us/dotnet/core/tools/global-json). We add this when we have a solution that targets a single Umbraco major version.
 - [LICENSE.md](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/LICENSE.md) - indicates the license through which the code is available.
 - [README.md](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/README.md) - a top-level documentation page for the source code repository.
 - [icon.png](https://github.com/umbraco/Umbraco.AuthorizedServices/blob/main/icon.png) - an icon used for the package on NuGet and the Umbraco Marketplace.
