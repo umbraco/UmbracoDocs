@@ -40,14 +40,14 @@ If you need to consume a Context API from a non-controller host, then look at th
 A Context Token is generally a string matched with a type. In this way, users of the token can be sure to get the right type of context.
 
 ```ts
-import { ContextToken } from '@umbraco-cms/backoffice/context';
+import { UmbContextToken } from '@umbraco-cms/backoffice/context';
 
 type MyContext = {
 	foo: string;
 	bar: number;
 };
 
-const MY_CONTEXT_TOKEN = new ContextToken<MyContext>('My.Context.Token');
+const MY_CONTEXT_TOKEN = new UmbContextToken<MyContext>('My.Context.Token');
 ```
 
 ### **Context Token with a Type Discriminator**
@@ -69,7 +69,7 @@ This example shows how to create a discriminator Context Token, that will discar
 Context token example:
 
 ```ts
-import { ContextToken } from '@umbraco-cms/backoffice/context';
+import { UmbContextToken } from '@umbraco-cms/backoffice/context';
 
 interface MyBaseContext {
 	foo: string;
@@ -80,7 +80,7 @@ interface MyPublishableContext extends MyBaseContext {
 	publish()
 };
 
-const MY_PUBLISHABLE_CONTEXT_TOKEN = new ContextToken<MyContext, MyPublishableContext>('My.Context.Token', (context): context is MyPublishableContext => {
+const MY_PUBLISHABLE_CONTEXT_TOKEN = new UmbContextToken<MyContext, MyPublishableContext>('My.Context.Token', (context): context is MyPublishableContext => {
 	return 'publish' in context;
 });
 ```
