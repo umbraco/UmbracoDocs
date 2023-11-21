@@ -15,7 +15,11 @@ If you have orphaned csproj-files you should remove them or rename them.
 Orphaned would be backup csproj files or files not referenced by the any of the main project-files.
 
 ### Could not find '/app/work/repository/Readme.md' to stat: No such file or directory
-Rename the `Readme.md` file in your repository to something else (it is okay if the file still has the markdown-extension). Commit the change to your repository and run the pipeline.
+
+In some instances we see an issue where filename casing is causing an error. 
+
+Rename the `Readme.md` file in the root of your repository to something different, the file can keep the markdown-extension.
+Commit the change to your repository and run the pipeline.
 
 If you want to you can change the filename back to `Readme.md` after a successfull CI/CD deployment.
 
