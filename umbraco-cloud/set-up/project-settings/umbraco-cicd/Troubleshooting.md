@@ -21,7 +21,7 @@ In some instances we see an issue where filename casing is causing an error.
 Rename the `Readme.md` file in the root of your repository to something different, the file can keep the markdown-extension.
 Commit the change to your repository and run the pipeline.
 
-If you want to you can change the filename back to `Readme.md` after a successfull CI/CD deployment.
+If you want you can change the filename back to `Readme.md` after a successful CI/CD deployment.
 
 ## Are you stuck?
 
