@@ -34,6 +34,7 @@ In this section, you can find the release notes for each version of Umbraco Form
 * Added a "reject" state to forms and the ability to associate workflows [#716](https://github.com/umbraco/Umbraco.Forms.Issues/issues/716).
 * Made the Forms client-side validation service available globally for use in custom code [#1099](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1099).
 * Fixed issue with styling of hidden fields in the "bootstrap" theme [#1120](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1120).
+* Implemented routing for form entries allowing direct links to an entry in the backoffice [#7](https://github.com/umbraco/Umbraco.Forms.Issues/issues/7).
 
 #### [12.1.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.2 (November 14th 2023)
 
