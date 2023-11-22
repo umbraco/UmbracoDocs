@@ -6,7 +6,7 @@ description: >-
 
 # Login
 
-To access the backoffice, you will need to login. You can do this by adding `/umbraco` at the end of your website URL, e.g. http://mywebsite.com/umbraco.
+To access the backoffice, you will need to login. You can do this by adding `/umbraco` at the end of your website URL, for example http://mywebsite.com/umbraco.
 
 You will be presented with a login form similar to this:
 
@@ -94,13 +94,13 @@ It is possible to customize the background image and the logo for the backoffice
 
 The `LoginBackgroundImage`, `LoginLogoImage`, and `LoginLogoImageAlternative` are referenced from the `/wwwroot/umbraco/` folder.
 
-The `LoginLogoImage` is displayed on top of the `LoginBackgroundImage` and the `LoginLogoImageAlternative` is displayed when the `LoginLogoImage` is not available, e.g. on small resolutions.
+The `LoginLogoImage` is displayed on top of the `LoginBackgroundImage` and the `LoginLogoImageAlternative` is displayed when the `LoginLogoImage` is not available, for example on small resolutions.
 
 ## Custom CSS
 
-You can also customize the login screen by adding a custom CSS file. To do this, you will need to add a new file inside the `~/App_Plugins` folder, e.g. `~/App_Plugins/MyCustomLoginScreen/my-custom-login-screen.css`.
+You can also customize the login screen by adding a custom CSS file. To do this, you will need to add a new file inside the `~/App_Plugins` folder, for example `~/App_Plugins/MyCustomLoginScreen/my-custom-login-screen.css`.
 
-You can then add your custom CSS to the file, e.g.:
+You can then add your custom CSS to the file:
 
 ```css
 :root {
