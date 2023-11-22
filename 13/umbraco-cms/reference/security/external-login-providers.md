@@ -156,7 +156,7 @@ The configuration file is used to configure a handful of different options for t
 {% tabs %}
 {% tab title="User Authentication" %}
 
-{% hint style="warning" %}
+{% hint style="info" %}
 In earlier versions of Umbraco up to version 12, the options included only a "ButtonStyle" property to style the button. In version 13+ the default button is now rendered using the Umbraco UI library. This means that the "ButtonStyle" property has been deprecated and should not be used. You can override the default styling of the button by using the "ButtonColor" and "ButtonLook" properties. We recommend leaving these properties empty to use the default styling. The default styling will give your users an optimal login experience.
 {% endhint %}
 
@@ -247,6 +247,21 @@ public class ProviderBackOfficeExternalLoginProviderOptions : IConfigureNamedOpt
 }
 ```
 {% endcode %}
+
+**Icons**
+
+If you want to use a custom icon for the login button, you need to add the icon to the Umbraco backoffice. You can do this by adding the icon to the `~/App_Plugins/MyPlugin/BackOffice/Icons` folder. The icon should be a SVG file. The icon should be named the same as the icon name you specify in the `options.Icon` property.
+
+{% hint style="info" %}
+You can use the [Umbraco Icon Picker](../../fundamentals/data/defining-content/README.md#adding-icons-to-the-document-type) to see available icons.
+{% endhint %}
+
+{% endtab %}
+
+{% tab title="Member Authentication" %}
+
+{% code title="ProviderMembersExternalLoginProviderOptions.cs" lineNumbers="true" %}
+```csharp
 
 {% endtab %}
 
