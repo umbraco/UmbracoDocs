@@ -2,7 +2,7 @@
 description: Append a view to any Workspace
 ---
 
-# Workspace Views
+# Workspace Editor Views
 
 Previously known as Content Apps, now generalized with the ability to take place in any workspace.
 
@@ -13,7 +13,7 @@ This page is a work in progress. It will be updated as the software evolves.
 **Manifest**
 
 <pre class="language-json"><code class="lang-json">{
-	"type": "workspaceView",
+	"type": "workspaceEditorView",
 	"alias": "My.WorkspaceView",
 	"name": "My Workspace View",
 	"meta": {
