@@ -17,7 +17,7 @@ The API will be initiated with the same host as the default Workspace Context.
     conditions: [
         {
             alias: 'Umb.Condition.WorkspaceAlias',
-            match: workspace.alias,
+            match: 'Umb.Workspace.Document',
         }
     ]
 }
