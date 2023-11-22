@@ -113,9 +113,9 @@ Part of the returned response will be the actual `deploymentId`. The response fr
 {
     "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
     "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
-    "projectAlias": "cicd-demo-site",
+    "projectAlias": "",
     "deploymentState": "Created",
-    "updateMessage": "Deployment created.",
+    "updateMessage": "",
     "errorMessage": "",
     "created": "2023-05-02T07:16:46.4183912",
     "lastModified": "2023-05-02T07:16:48.8544387",
@@ -163,7 +163,7 @@ The response of this call will be the same deployment object (in JSON) as when c
     "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
     "projectAlias": "cicd-demo-site",
     "deploymentState": "Pending",
-    "updateMessage": "Deployment created. Project metadata fetched. File uploaded.",
+    "updateMessage":"Project information set\nDeployment pending\nDownloadUri set",
     "errorMessage": "",
     "created": "2023-05-02T07:16:46.4183912",
     "lastModified": "2023-05-02T07:17:48.8544387",
@@ -195,7 +195,7 @@ The response of this call will be the same deployment object (in JSON) as when c
     "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
     "projectAlias": "cicd-demo-site",
     "deploymentState": "Queued",
-    "updateMessage": "Deployment created. Project metadata fetched. File uploaded. Deployment queued.",
+    "updateMessage": "Project information set\nDeployment pending\nDownloadUri set\nDeployment queued",
     "errorMessage": "",
     "created": "2023-05-02T07:16:46.4183912",
     "lastModified": "2023-05-02T07:18:48.8544387",
@@ -257,7 +257,7 @@ The response from this API call will return the same deployment object in JSON f
     "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
     "projectAlias": "cicd-demo-site",
     "deploymentState": "Completed",
-    "updateMessage": "Deployment created. Project metadata fetched. File uploaded. Deployment queued. Deployment started. Deployment Done",
+    "updateMessage":"Project information set\nDeployment pending\nDownloadUri set\nDeployment queued\nDeployment triggered\nDeployment started\nCheck blocking markers\nCreate updating marker\nGit Clone\nDownload update\nExtract Update\nChecking versions\nDeleting repository files\nCopying files to repository\nNuGet Restore\nDotnet Build\nGit Stage\nGit Commit\nGit Tag\nGit Push\nDelete updating marker\nDeployment successful",
     "errorMessage": "",
     "created": "2023-05-02T07:16:46.4183912",
     "lastModified": "2023-05-02T07:20:48.8544387",
@@ -267,7 +267,11 @@ The response from this API call will return the same deployment object in JSON f
 
 ### Get Deployments
 
-You can retrieve a list of deployments via the API, although currently, this is restricted to only those that have been completed. Future updates will introduce filtering options. The API allows you to limit the number of returned deployments using standard 'take' and 'skip' query parameters. Deployments are listed in descending order based on their creation timestamp. This operation is carried out through a standard HTTP GET request.
+You can retrieve a list of deployments via the API, although currently, this is restricted to only those that have been completed. Future updates will introduce filtering options.
+
+The API allows you to limit the number of returned deployments using standard 'take' and 'skip' query parameters. 
+
+This operation is carried out through a standard HTTP GET request.
 
 To fetch the list of deployments using a curl command, the syntax would be as follows:
 
@@ -281,8 +285,8 @@ response=$(curl -s -X GET $url \
 latestDeploymentId=$(echo $response | jq -r '.deployments[0].deploymentId')
 
 ```
-
 The response from this API call will return a list of deployment objects, formatted in JSON, consistent with the structure used in other API responses.
+Deployments are listed in descending order based on their creation timestamp.
 
 ```json
 [
@@ -291,7 +295,7 @@ The response from this API call will return a list of deployment objects, format
     "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
     "projectAlias": "cicd-demo-site",
     "deploymentState": "Completed",
-    "updateMessage": "Deployment completed. ...",
+    "updateMessage": "...",
     "errorMessage": "",
     "created": "2023-05-02T07:16:46.4183912",
     "lastModified": "2023-05-02T07:18:48.8544387",
