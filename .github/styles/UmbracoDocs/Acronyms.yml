@@ -80,4 +80,5 @@ exceptions:
   - GIF
   - GDPR
   - NPM
+  - SMTP
   - SVG
