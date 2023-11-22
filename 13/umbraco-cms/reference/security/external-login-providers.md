@@ -157,7 +157,7 @@ The configuration file is used to configure a handful of different options for t
 {% tab title="User Authentication" %}
 
 {% hint style="warning" %}
-In earlier versions of Umbraco up to version 12, the options included only a "ButtonStyle" property to style the button. In version 13+ the default button is now rendered using the Umbraco UI library. This means that the "ButtonStyle" property has been deprecated and changed to map to "ButtonColor" and "ButtonLook". You can define these directly by using the "ButtonColor" and "ButtonLook" properties to style the button.
+In earlier versions of Umbraco up to version 12, the options included only a "ButtonStyle" property to style the button. In version 13+ the default button is now rendered using the Umbraco UI library. This means that the "ButtonStyle" property has been deprecated and should not be used. You can override the default styling of the button by using the "ButtonColor" and "ButtonLook" properties. We recommend leaving these properties empty to use the default styling. The default styling will give your users an optimal login experience.
 {% endhint %}
 
 {% code title="ProviderBackOfficeExternalLoginProviderOptions.cs" lineNumbers="true" %}
@@ -184,8 +184,6 @@ public class ProviderBackOfficeExternalLoginProviderOptions : IConfigureNamedOpt
     public void Configure(BackOfficeExternalLoginProviderOptions options)
     {
         // Customize the login button
-        options.ButtonColor = UuiButtonColor.Danger;
-        options.ButtonLook = UuiButtonLook.Primary;
         options.Icon = "icon-cloud";
 
         // The following options are relevant if you
@@ -353,6 +351,28 @@ The module should define a Custom Element and export it as default. The Custom E
 * `providerName`: The name of the provider. This is the same name as the provider's scheme name.
 * `displayName`: The display name of the provider. This is the same display name as the provider's display name.
 * `externalLoginUrl`: The URL to redirect to when the button is clicked.
+* `userViewState`: The current view state of the user. This can be one of the following values:
+  * `loggingIn`: The user is on the login screen.
+  * `loggedIn`: The user is on the backoffice panel.
+  * `loggedOut`: The user clicked the logout button and is on the logged-out screen.
+  * `timedOut`: The user's session has timed out and they are on the timed-out screen.
+
+**TypeScript**
+
+If you use TypeScript, you can use this interface to define the properties:
+
+{% code title="login-types.ts" %}
+```typescript
+type UserViewState = 'loggingIn' | 'loggedIn' | 'loggedOut' | 'timedOut';
+
+interface IExternalLoginCustomViewElement {
+  displayName?: string;
+  providerName?: string;
+  externalLoginUrl?: string;
+  userViewState?: UserViewState;
+};
+```
+{% endcode %}
 
 **Examples**
 
@@ -432,7 +452,8 @@ class MyLitView extends LitElement {
     return {
       providerName: { type: String },
       displayName: { type: String },
-      externalLoginUrl: { type: String }
+      externalLoginUrl: { type: String },
+      userViewState: { type: String }
     };
   }
 
@@ -587,4 +608,4 @@ public static class ProviderMemberAuthenticationExtensions
 {% endtab %}
 {% endtabs %}
 
-For a more in-depth article on how to set up OAuth providers in .NET refer to the [Microsoft Documentation](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/?view=aspnetcore-5.0\&tabs=visual-studio).
+For a more in-depth article on how to set up OAuth providers in .NET refer to the [Microsoft Documentation](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/social/?view=aspnetcore-8.0&tabs=visual-studio).
