@@ -322,6 +322,7 @@ builder.CreateUmbracoBuilder()
 8. Log in to the backoffice using the Google Auth option.
 
 {% hint style="info" %}
+
 If auto-linking is disabled, the user will need to follow these steps in order to be able to use the Google Authentication:
 
 1. Login to the backoffice using Umbraco credentials.

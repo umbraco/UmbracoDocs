@@ -128,7 +128,9 @@ You can persist this data to the affiliated user's external login data via the `
 `IExternalLogin` contains a property called `UserData`. This is a blob text column which can store any arbitrary data for the external login provider.
 
 {% hint style="info" %}
+
 Be aware that the local Umbraco user must already exist and be linked to the external login provider before data can be stored here. In cases where auto-linking occurs and the user isn't yet created, you need to store the data in memory first during auto-linking. Then you can persist the data to the service once the user is linked and created.
+
 {% endhint %}
 
 ### Auto-linking on backoffice authentication
