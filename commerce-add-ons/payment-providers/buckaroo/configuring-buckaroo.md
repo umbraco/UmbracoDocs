@@ -45,11 +45,14 @@ In order for Umbraco Commerce to communicate with Buckaroo securely we need to g
 ## Step 3: Webhook
 For Buckaroo to notify Umbraco Commerce of a transaction, Buckaroo makes use of webhook technology to send notifications of the changing transaction statuses. By using webhooks it ensures that the system will always be notified of these status changes. This is also the case if a customer decides not to return to the store once a transaction is complete.
 
-To register a webhook follow these steps:
 When generating a payment request form, Umbraco Commerce set the callback URL to the value below automatically.
 ```bash
   https://{store_domain}/umbraco/commerce/payment/callback/buckaroo-checkout/{payment_method_id}/
 ```
+1. Go to [Buckaroo Dashboard](https://plaza.buckaroo.nl/).
+2. Settings > Websites > Push settings > Scroll to `Select push content type` and set it to `json`
+
 {% hint style="info" %}
 When testing the webhook, if you use a service like ngrok to forward requests from a public domain to your localhost server. In that case, you need to set `Webhook hostname for test mode` value to be the public domain.
 {% endhint %}
+
