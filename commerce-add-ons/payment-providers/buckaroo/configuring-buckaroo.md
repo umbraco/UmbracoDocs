@@ -29,8 +29,7 @@ In order to enable test mode, see [Buckaroo's docs](https://docs.buckaroo.io/doc
 For each of these modes, multiple settings need to be configured.
 
 ## Step 2: Website key and secrets
-
-In order for Umbraco Commerce to communicate with Buckaroo securely we need to generate a series of API keys that Umbraco Commerce can use to authenticate with.
+In order for Umbraco Commerce to communicate with Buckaroo securely, we need to generate an API key that Umbraco Commerce can use to authenticate with.
 
 #### Website key
 1. Go to [Buckaroo Dashboard](https://plaza.buckaroo.nl/).
