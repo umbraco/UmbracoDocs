@@ -253,7 +253,6 @@ using Umbraco.Cms.Core.Services;
 using Umbraco.Deploy.Core;
 using Umbraco.Deploy.Core.Migrators;
 using Umbraco.Deploy.Infrastructure.Extensions;
-using static Umbraco.Deploy.Infrastructure.Connectors.ValueConnectors.NestedContentValueConnector;
 
 /// <summary>
 /// Migrates the property value when the editor of a property type changed from <see cref="Constants.PropertyEditors.Aliases.NestedContent" /> to <see cref="Constants.PropertyEditors.Aliases.BlockList" />.
@@ -325,6 +324,7 @@ public class NestedContentPropertyTypeMigrator : PropertyTypeMigratorBase
 
         return JsonConvert.SerializeObject(blockValue, Formatting.None);
     }
+
     internal class NestedContentItem
     {
         [JsonProperty("key")]
