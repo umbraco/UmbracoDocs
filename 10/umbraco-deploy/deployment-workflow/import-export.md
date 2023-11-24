@@ -22,7 +22,7 @@ Import and export is intended more for larger transfer options, project upgrades
 
 As import and export is a two-step process, it doesn't require inter-environment communication. This allows us to process much larger batches of information without running into hard limits imposed by Cloud hosting platforms.
 
-We are also able provide hooks to allow for migrations of data types and property data when importing. This should allow you to migrate your Umbraco data from one Umbraco major version to a newer one.
+We are also able provide hooks to allow for migrations of artifacts (such as data types) and property data when importing. This should allow you to migrate your Umbraco data from one Umbraco major version to a newer one.
 
 ## Exporting content and schema
 
@@ -68,7 +68,7 @@ Once complete or on close of the dialog, the imported file will be deleted from 
 
 As well as importing the content and schema directly, we also provide support for modifying the items as part of the process.
 
-For example, you may have taken an export from an Umbraco 8 site, and are looking to import it into Umbraco 10 or 12.  In this situation, most content and schema will carry over without issue. However, you may have some items that are no longer compatible.  Usually this is due to a property editor - either a built-in Umbraco one or one provided by a package. These may no longer be available in the new version.
+For example, you may have taken an export from an Umbraco 8 site, and are looking to import it into a newer major version.  In this situation, most content and schema will carry over without issue. However, you may have some items that are no longer compatible.  Usually this is due to a property editor - either a built-in Umbraco one or one provided by a package. These may no longer be available in the new version.
 
 Often though there is a similar replacement. Using Deploy's import feature we can transform the exported content for the obsolete property into that used by the new one during the import. The migration to a content set compatible with the new versions can then be completed.
 
@@ -78,7 +78,7 @@ We provide the necessary migration hooks for this to happen, divided into two ty
 
 ### Artifact migrators
 
-Artifact migrators work by transforming the serialized artifact of data types on import, via two interfaces:
+Artifact migrators work by transforming the serialized artifact of any imported artifact, via two interfaces:
 
 - `IArtifactMigrator` - where the migration occurs at the artifact property level
 - `IArtifactJsonMigrator` - where the migration occurs at the lower level of transforming the serialized JSON itself.
@@ -123,8 +123,6 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Deploy.Core.Migrators;
 using Umbraco.Deploy.Infrastructure.Migrators;
 
-namespace MyTestSite;
-
 internal class ArtifactMigratorsComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
@@ -154,8 +152,6 @@ using Umbraco.Cms.Core.PropertyEditors;
 using Umbraco.Cms.Core.Serialization;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Deploy.Infrastructure.Artifacts;
-
-namespace Umbraco.Deploy.Infrastructure.Migrators;
 
 /// <summary>
 /// Migrates the <see cref="DataTypeArtifact" /> to replace the legacy/obsoleted <see cref="Constants.PropertyEditors.Aliases.NestedContent" /> editor with <see cref="Constants.PropertyEditors.Aliases.BlockList" />.
@@ -257,8 +253,6 @@ using Umbraco.Deploy.Core;
 using Umbraco.Deploy.Core.Migrators;
 using Umbraco.Deploy.Infrastructure.Extensions;
 using static Umbraco.Deploy.Infrastructure.Connectors.ValueConnectors.NestedContentValueConnector;
-
-namespace Umbraco.Deploy.Infrastructure.Migrators;
 
 /// <summary>
 /// Migrates the property value when the editor of a property type changed from <see cref="Constants.PropertyEditors.Aliases.NestedContent" /> to <see cref="Constants.PropertyEditors.Aliases.BlockList" />.
@@ -363,9 +357,11 @@ The service interface defines two methods:
     - `IArtifactImportProvider` defines methods for creating streams for reading serialized artifacts or files handled by Deploy (media, templates, stylesheets etc.).
 
 Implementations for `IArtifactExportProvider` and `IArtifactImportProvider` are provided for:
-- A physical directory - via `PhysicalDirectoryArtifactImportExportProvider`.
-- An Umbraco file system (`IFileSystem` - via `FileSystemArtifactImportExportProvider`.
-- A zip file - via `ZipArchiveArtifactImportExportProvider`.
+- A physical directory.
+- An Umbraco file system.
+- A zip file.
+
+These are all accessible for use via extension methods available on `IArtifactImportExportService` found in the `Umbraco.Deploy.Infrastructure.Extensions` namespace.
 
 The following example shows this service in use, importing and exporting from a zip file on startup.
 
