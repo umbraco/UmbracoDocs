@@ -28,45 +28,39 @@ We are also able provide hooks to allow for migrations of data types and propert
 
 To export content and schema, you can select either a specific item of content, or a whole tree or workspace.
 
-[insert pic - of menu]
-
 When exporting, you can choose to include associated media files.  Bear in mind that including media for a large site can lead to a big zip file.  So even with this option, you might want to consider methods options for transferring large amounts of media. For example using direct transfer between Cloud storage accounts or File Transfer Protocol (FTP).
 
 If your account has access to the Settings section, you can also choose to include the schema information and related files as well.
 
-[insert pic]
+![Export dialog](./images/export-dialog.png)
 
 Umbraco Deploy will then serialize all the selected items to individual files, archive them into a zip file and make that available for download.  You can download the file using the _Download_ button.
 
 After download you should also delete the archive file from the server. You can do this immediately via the _Delete_ button available on the dialog.
 
-[insert pic]
+![Export dialog complete](./images/export-dialog-complete.png)
 
 If you miss doing this, you can also clean up archive files from the Umbraco Deploy dashboard in the _Settings_ section.
 
-[insert pic]
+![Delete exports](./images/delete-exports.png)
 
 ## Importing content and schema
 
 Having previously exported content and schema to a zip file, you can import this into a new environment.
 
-[insert pic - of menu]
+![Import dialog](./images/import-dialog.png)
 
-If the zip file size isn't so large as to not be accepted, you can upload the file via the browser.  Or if not, you can use File Transfer Protocol (FTP) or similar to place the file into a known location on your web server. It can be picked up there for processing.
-
-[insert pic - of dialog to upload file or indicate location]
+You can upload the file via the browser.
 
 Similar to when exporting, you can choose to import everything from the archive file, or only content, schema or files.
 
-[insert pic]
+![Import dialog step 2](./images/import-dialog-2.png)
 
 We validate the file before importing.  Schema items that content depends on must either be in the upload itself, or already exist on the target environment with the same details.  If there are any issues that mean the import cannot proceed, it will be reported.  You may also be given warnings for review. You can choose to ignore these and proceed they aren't relevant for the action you are carrying out.
 
-[insert pic - showing warnings]
-
 The import then proceeds, processing all the items provided in the zip file.
 
-[insert pic]
+![Import dialog step 3](./images/import-dialog-3.png)
 
 Once complete or on close of the dialog, the imported file will be deleted from the server. If this is missed, perhaps via a closed browser, you can also delete archive files from the Umbraco Deploy dashboard in the _Settings_ section.
 
