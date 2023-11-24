@@ -129,11 +129,11 @@ internal class ArtifactMigratorsComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {
-        builder.WithCollectionBuilder<ArtifactMigratorCollectionBuilder>()
+        builder.DeployArtifactMigrators()
             .Append<ReplaceNestedContentDataTypeArtifactMigrator>()
             .Append<ReplaceMediaPickerDataTypeArtifactMigrator>();
 
-        builder.WithCollectionBuilder<PropertyTypeMigratorCollectionBuilder>()
+        builder.DeployPropertyTypeMigrators()
             .Append<NestedContentPropertyTypeMigrator>()
             .Append<MediaPickerPropertyTypeMigrator>();
     }
