@@ -28,7 +28,7 @@ We are also able provide hooks to allow for migrations of data types and propert
 
 To export content and schema, you can select either a specific item of content, or a whole tree or workspace.
 
-When exporting, you can choose to include associated media files.  Bear in mind that including media for a large site can lead to a big zip file.  So even with this option, you might want to consider methods options for transferring large amounts of media. For example using direct transfer between Cloud storage accounts or File Transfer Protocol (FTP).
+When exporting, you can choose to include associated media files. Bear in mind that including media files for a large site can lead to a big zip file.  So even with this option, you might want to consider a different method for transferring large amounts of media. For example using direct transfer between Cloud storage accounts or File Transfer Protocol (FTP).
 
 If your account has access to the Settings section, you can also choose to include the schema information and related files as well.
 
