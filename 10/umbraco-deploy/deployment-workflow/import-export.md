@@ -36,7 +36,7 @@ If your account has access to the Settings section, you can also choose to inclu
 
 Umbraco Deploy will then serialize all the selected items to individual files, archive them into a zip file and make that available for download.  You can download the file using the _Download_ button.
 
-After download you should also delete the archive file from the server. You can do this immediately via the _Delete_ button available on the dialog.
+After the download, you should also delete the archive file from the server. You can do this immediately via the _Delete_ button available in the dialog.
 
 ![Export dialog complete](./images/export-dialog-complete.png)
 
