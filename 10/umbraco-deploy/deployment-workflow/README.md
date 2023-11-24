@@ -51,7 +51,7 @@ Another approach for transferring content and schema between environments is to 
 
 That .zip file can then be uploaded into a new environment, where it will be validated and then processed to update Umbraco.
 
-As part of the import process, we provide hooks to allow for migrations of data types and property data. This should allow you to migrate your Umbraco data from one Umbraco major version to a newer one.
+As part of the import process, we provide hooks to allow for migrations of the imported artifacts (like data types) and property data. This should allow you to migrate your Umbraco data from one Umbraco major version to a newer one.
 
 We recommend using the content and media backoffice transfer options for day-to-day editorial activities. Import and export is intended more for larger transfer options, project upgrades, or one-off tasks when setting up new environments.
 
