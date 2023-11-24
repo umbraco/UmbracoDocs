@@ -56,7 +56,7 @@ Similar to when exporting, you can choose to import everything from the archive 
 
 ![Import dialog step 2](./images/import-dialog-2.png)
 
-We validate the file before importing.  Schema items that content depends on must either be in the upload itself, or already exist on the target environment with the same details.  If there are any issues that mean the import cannot proceed, it will be reported.  You may also be given warnings for review. You can choose to ignore these and proceed they aren't relevant for the action you are carrying out.
+We validate the file before importing.  Schema items that content depends on must either be in the upload itself or already exist on the target environment with the same details.  If there are any issues that mean the import cannot proceed, it will be reported.  You may also be given warnings for review. You can choose to ignore these and proceed if they aren't relevant to the action you are carrying out.
 
 The import then proceeds, processing all the items provided in the zip file.
 
