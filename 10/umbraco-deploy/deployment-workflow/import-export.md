@@ -74,31 +74,266 @@ Often though there is a similar replacement. Using Deploy's import feature we ca
 
 For example, we can migrate from a Nested Content property in Umbraco 8 to a Block List in Umbraco 12.
 
-[insert pic - before and after nested content and block list]
+We provide the necessary migration hooks for this to happen, divided into two types - **artifact migrators** and **property migrators**.
 
-We provide the necessary migration hooks for this to happen, via the following interfaces:
+### Artifact migrators
 
-[TBC - technical detail of each interface with a brief description as to what it is for]
+Artifact migrators work by transforming the serialized artifact of data types on import, via two interfaces:
 
-We also provide implementations to handle common migrations:
+- `IArtifactMigrator` - where the migration occurs at the artifact property level
+- `IArtifactJsonMigrator` - where the migration occurs at the lower level of transforming the serialized JSON itself.
 
-[TBC - technical detail of each class with a brief description as to what it does]
+Implementations to handle common migrations of data types from obsoleted property editors are available:
 
-We've also made available base implementations that you can use to build your own migrations. You can use these to migrate between any other obsolete and replacement property editors that you have in your solution:
+- `ReplaceMediaPickerDataTypeArtifactMigrator` - migrates a data type from using the legacy media picker to the current version of this property editor
+ - `ReplaceNestedContentDataTypeArtifactMigrator` - migrated from a data type based on the obsolete nested content property editor to the block list.
 
-[TBC - technica details of each class with a brief description as to what it does]
+We've also made available base implementations that you can use to build your own migrations, if there is a need to handle transfer of information between any other obsolete and replacement property editors that you have in your Umbraco application:
 
-Migrators will only run if you've registered them to, hence you can enable only the ones needed for your solution:
+- `ArtifactMigratorBase<TArtifact>`
+- `DataTypeArtifactMigratorBase`
+- `ReplaceDataTypeArtifactMigratorBase`
+- `ArtifactJsonMigratorBase<TArtifact>`
 
-[TBC - code sample]
+### Property migrators
+
+Property migrators work to transform the content property data itself.  They are used in the Deploy content connectors (documents, media and members) when the property editor is changed during an import:
+
+Again we have an interface:
+
+- `IPropertyTypeMigrator`
+
+Implementations for common migrations:
+
+- `MediaPickerPropertyTypeMigrator`
+- `NestedContentPropertyTypeMigrator`
+
+And a base type to help you build your own migrations:
+
+ - `PropertyTypeMigratorBase`
+
+### Registering migrators
+
+Migrators will only run if you've registered them to, hence you can enable just the ones needed for your solution.
+
+You can do this via a composer, as in the following example. Here we register two of the migrators shipped with Umbraco Deploy:
+
+```csharp
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Deploy.Core.Migrators;
+using Umbraco.Deploy.Infrastructure.Migrators;
+
+namespace MyTestSite;
+
+internal class ArtifactMigratorsComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.WithCollectionBuilder<ArtifactMigratorCollectionBuilder>()
+            .Append<ReplaceNestedContentDataTypeArtifactMigrator>()
+            .Append<ReplaceMediaPickerDataTypeArtifactMigrator>();
+
+        builder.WithCollectionBuilder<PropertyTypeMigratorCollectionBuilder>()
+            .Append<NestedContentPropertyTypeMigrator>()
+            .Append<MediaPickerPropertyTypeMigrator>();
+    }
+}
+ ```
 
 ### A custom migration example - Nested Content to Block List
 
-In order to help writing your own migrations, we share here the source code of an example that ships with Umbraco Deploy. This migration converts Nested Content to Block List:
+In order to help writing your own migrations, we share here the source code of an example that ships with Umbraco Deploy. This migration converts Nested Content to Block List.
 
-[TBC - code sample]
+First we have the artifact migrator that handles the conversion of the configuration stored with a data type:
 
-Moving forward, other migrators may be built by HQ or the community for property editors found in community packages. We'll make them available for [use](https://www.nuget.org/packages/Umbraco.Deploy.Contrib) and [review](https://github.com/umbraco/Umbraco.Deploy.Contrib) via the `Umbraco.Deploy.Contrib`` package.
+```csharp
+using System.Globalization;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Core.PropertyEditors;
+using Umbraco.Cms.Core.Serialization;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Deploy.Infrastructure.Artifacts;
+
+namespace Umbraco.Deploy.Infrastructure.Migrators;
+
+/// <summary>
+/// Migrates the <see cref="DataTypeArtifact" /> to replace the legacy/obsoleted <see cref="Constants.PropertyEditors.Aliases.NestedContent" /> editor with <see cref="Constants.PropertyEditors.Aliases.BlockList" />.
+/// </summary>
+public class ReplaceNestedContentDataTypeArtifactMigrator : ReplaceDataTypeArtifactMigratorBase<NestedContentConfiguration, BlockListConfiguration>
+{
+    private readonly IContentTypeService _contentTypeService;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ReplaceNestedContentDataTypeArtifactMigrator" /> class.
+    /// </summary>
+    /// <param name="propertyEditors">The property editors.</param>
+    /// <param name="configurationEditorJsonSerializer">The configuration editor JSON serializer.</param>
+    /// <param name="contentTypeService">The content type service.</param>
+    public ReplaceNestedContentDataTypeArtifactMigrator(PropertyEditorCollection propertyEditors, IConfigurationEditorJsonSerializer configurationEditorJsonSerializer, IContentTypeService contentTypeService)
+        : base(Constants.PropertyEditors.Aliases.NestedContent, Constants.PropertyEditors.Aliases.BlockList, propertyEditors, configurationEditorJsonSerializer)
+        => _contentTypeService = contentTypeService;
+
+    protected override BlockListConfiguration? MigrateConfiguration(NestedContentConfiguration configuration)
+    {
+        var blockListConfiguration = new BlockListConfiguration()
+        {
+            UseInlineEditingAsDefault = true // Similar to how Nested Content looks/works
+        };
+
+        if (configuration.MinItems > 0)
+        {
+            blockListConfiguration.ValidationLimit.Min = configuration.MinItems;
+        }
+
+        if (configuration.MaxItems > 0)
+        {
+            blockListConfiguration.ValidationLimit.Max = configuration.MaxItems;
+        }
+
+        if (configuration.ContentTypes is not null)
+        {
+            var blocks = new List<BlockListConfiguration.BlockConfiguration>();
+            foreach (NestedContentConfiguration.ContentType nestedContentType in configuration.ContentTypes)
+            {
+                if (nestedContentType.Alias is not null &&
+                    GetContentTypeKey(nestedContentType.Alias) is Guid contentTypeKey)
+                {
+                    blocks.Add(new BlockListConfiguration.BlockConfiguration()
+                    {
+                        Label = nestedContentType.Template,
+                        ContentElementTypeKey = contentTypeKey
+                    });
+                }
+            }
+
+            blockListConfiguration.Blocks = blocks.ToArray();
+        }
+
+        if (blockListConfiguration.ValidationLimit.Min == 1 &&
+            blockListConfiguration.ValidationLimit.Max == 1 &&
+            blockListConfiguration.Blocks.Length == 1)
+        {
+            blockListConfiguration.UseSingleBlockMode = true;
+        }
+
+        return blockListConfiguration;
+    }
+
+    protected virtual Guid? GetContentTypeKey(string alias)
+    {
+        if (_contentTypeService.Get(alias) is IContentType contentTypeByAlias)
+        {
+            return contentTypeByAlias.Key;
+        }
+
+        string aliasPrefix = alias + "__";
+        foreach (IContentType contentType in _contentTypeService.GetAll())
+        {
+            if (contentType.Alias.StartsWith(aliasPrefix) &&
+                int.TryParse(contentType.Alias[aliasPrefix.Length..], NumberStyles.HexNumber, null, out _))
+            {
+                return contentType.Key;
+            }
+        }
+
+        return null;
+    }
+}
+```
+
+And secondly we have the property migrator that handles restructuring the content property data:
+
+```csharp
+using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Deploy;
+using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Core.Models.Blocks;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Deploy.Core;
+using Umbraco.Deploy.Core.Migrators;
+using Umbraco.Deploy.Infrastructure.Extensions;
+using static Umbraco.Deploy.Infrastructure.Connectors.ValueConnectors.NestedContentValueConnector;
+
+namespace Umbraco.Deploy.Infrastructure.Migrators;
+
+/// <summary>
+/// Migrates the property value when the editor of a property type changed from <see cref="Constants.PropertyEditors.Aliases.NestedContent" /> to <see cref="Constants.PropertyEditors.Aliases.BlockList" />.
+/// </summary>
+public class NestedContentPropertyTypeMigrator : PropertyTypeMigratorBase
+{
+    private readonly ILogger<NestedContentPropertyTypeMigrator> _logger;
+    private readonly IContentTypeService _contentTypeService;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="NestedContentPropertyTypeMigrator" /> class.
+    /// </summary>
+    /// <param name="logger">The logger.</param>
+    /// <param name="contentTypeService">The content type service.</param>
+    public NestedContentPropertyTypeMigrator(ILogger<NestedContentPropertyTypeMigrator> logger, IContentTypeService contentTypeService)
+        : base(Constants.PropertyEditors.Aliases.NestedContent, Constants.PropertyEditors.Aliases.BlockList)
+    {
+        _logger = logger;
+        _contentTypeService = contentTypeService;
+    }
+
+    public override object? Migrate(IPropertyType propertyType, object? value, IDictionary<string, string> propertyEditorAliases, IContextCache contextCache)
+    {
+        if (value is not string stringValue || !stringValue.TryParseJson(out NestedContentItem[]? nestedContentItems) || nestedContentItems is null)
+        {
+            if (value is not null)
+            {
+                _logger.LogWarning("Skipping migration of Nested Content items ({PropertyTypeAlias}), because value could not be parsed: {Value}.", propertyType.Alias, value);
+            }
+
+            return null;
+        }
+
+        var layoutItems = new List<BlockListLayoutItem>();
+        var contentData = new List<BlockItemData>();
+
+        foreach (NestedContentItem nestedContentItem in nestedContentItems)
+        {
+            IContentType? contentType = contextCache.GetContentTypeByAlias(_contentTypeService, nestedContentItem.ContentTypeAlias);
+            if (contentType is null)
+            {
+                _logger.LogWarning("Skipping migration of Nested Content item ({Id}), because content type does not exist: {ContentTypeAlias}.", nestedContentItem.Id, nestedContentItem.ContentTypeAlias);
+                continue;
+            }
+
+            var udi = new GuidUdi(Constants.UdiEntityType.Element, nestedContentItem.Id);
+
+            layoutItems.Add(new BlockListLayoutItem()
+            {
+                ContentUdi = udi
+            });
+
+            contentData.Add(new BlockItemData()
+            {
+                Udi = udi,
+                ContentTypeKey = contentType.Key,
+                RawPropertyValues = nestedContentItem.RawPropertyValues
+            });
+        }
+
+        var blockValue = new BlockValue()
+        {
+            Layout = new Dictionary<string, JToken>()
+            {
+                { Constants.PropertyEditors.Aliases.BlockList, JToken.FromObject(layoutItems) }
+            },
+            ContentData = contentData
+        };
+
+        return JsonConvert.SerializeObject(blockValue, Formatting.None);
+    }
+}
+```
+
+Moving forward, other migrators may be built by HQ or the community for property editors found in community packages. We'll make them available for [use](https://www.nuget.org/packages/Umbraco.Deploy.Contrib) and [review](https://github.com/umbraco/Umbraco.Deploy.Contrib) via the `Umbraco.Deploy.Contrib` package.
 
 ### Migrating from Umbraco 7
 
@@ -113,6 +348,91 @@ This is possible via code - by temporarily applying a composer to an Umbraco 7 s
 An example follows:
 
 [TBC - code sample]
+
+## Service details
+
+Underlying the functionality of import/export with Deploy is the import/export service, defined by the `IArtifactImportExportService`.
+
+You may have need to make use of this service directly if building something custom with the feature. For example you might want to import from or export to some custom storage.
+
+The service interface defines two methods:
+
+- `ExportArtifactsAsync` - takes a collection of artifacts and a storage provider defined by the `IArtifactExportProvider` interface. The artifacts are serialized and exported to storage.
+    - `IArtifactExportProvider` defines methods for creating streams for writing serialized artifacts or files handled by Deploy (media, templates, stylesheets etc.).
+- `ImportArtifactsAsync` - takes storage provider containing an import defined by the `IArtifactImportProvider` interface. The artifacts from storage are imported into Umbraco.
+    - `IArtifactImportProvider` defines methods for creating streams for reading serialized artifacts or files handled by Deploy (media, templates, stylesheets etc.).
+
+Implementations for `IArtifactExportProvider` and `IArtifactImportProvider` are provided for:
+- A physical directory - via `PhysicalDirectoryArtifactImportExportProvider`.
+- An Umbraco file system (`IFileSystem` - via `FileSystemArtifactImportExportProvider`.
+- A zip file - via `ZipArchiveArtifactImportExportProvider`.
+
+The following example shows this service in use, importing and exporting from a zip file on startup.
+
+```csharp
+using System.IO.Compression;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.Deploy;
+using Umbraco.Cms.Core.Events;
+using Umbraco.Cms.Core.Extensions;
+using Umbraco.Cms.Core.Notifications;
+using Umbraco.Deploy.Core;
+using Umbraco.Deploy.Core.Connectors.ServiceConnectors;
+using Umbraco.Deploy.Infrastructure;
+using Umbraco.Deploy.Infrastructure.Extensions;
+​
+internal class ArtifactImportExportComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+        => builder.AddNotificationAsyncHandler<UmbracoApplicationStartedNotification, ArtifactImportExportStartedAsyncHandler>();
+​
+    private sealed class ArtifactImportExportStartedAsyncHandler : INotificationAsyncHandler<UmbracoApplicationStartedNotification>
+    {
+        private readonly IHostEnvironment _hostEnvironment;
+        private readonly IArtifactImportExportService _diskImportExportService;
+        private readonly IServiceConnectorFactory _serviceConnectorFactory;
+        private readonly IFileTypeCollection _fileTypeCollection;
+​
+        public ArtifactImportExportStartedAsyncHandler(IHostEnvironment hostEnvironment, IArtifactImportExportService diskImportExportService, IServiceConnectorFactory serviceConnectorFactory, IFileTypeCollection fileTypeCollection)
+        {
+            _hostEnvironment = hostEnvironment;
+            _diskImportExportService = diskImportExportService;
+            _serviceConnectorFactory = serviceConnectorFactory;
+            _fileTypeCollection = fileTypeCollection;
+        }
+​
+        public async Task HandleAsync(UmbracoApplicationStartedNotification notification, CancellationToken cancellationToken)
+        {
+            var deployPath = _hostEnvironment.MapPathContentRoot(Constants.SystemDirectories.Data + "/Deploy");
+            await ImportAsync(Path.Combine(deployPath, "import.zip"));
+​
+            Directory.CreateDirectory(deployPath);
+            await ExportAsync(Path.Combine(deployPath, $"export-{DateTimeOffset.UtcNow.ToUnixTimeSeconds()}.zip"));
+        }
+​
+        private async Task ImportAsync(string zipFilePath)
+        {
+            if (File.Exists(zipFilePath))
+            {
+                using ZipArchive zipArchive = ZipFile.OpenRead(zipFilePath);
+                await _diskImportExportService.ImportArtifactsAsync(zipArchive);
+            }
+        }
+​
+        private async Task ExportAsync(string zipFilePath)
+        {
+            using ZipArchive zipArchive = ZipFile.Open(zipFilePath, ZipArchiveMode.Create);
+​
+            IEnumerable<Udi> udis = DeployEntityTypes.GetEntityTypes(_fileTypeCollection, DeployEntityTypeCategories.ContentAndSchema).Select(Udi.Create);
+            var contextCache = new DictionaryCache();
+            string[] dependencyEntityTypes = DeployEntityTypes.GetEntityTypes(_fileTypeCollection, DeployEntityTypeCategories.All);
+​
+            await _diskImportExportService.ExportArtifactsAsync(_serviceConnectorFactory, udis, Constants.DeploySelector.ThisAndDescendants, contextCache, zipArchive, dependencyEntityTypes: dependencyEntityTypes);
+        }
+    }
+}
+```
 
 
 
