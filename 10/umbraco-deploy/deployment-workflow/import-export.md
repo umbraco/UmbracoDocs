@@ -28,7 +28,7 @@ We are also able provide hooks to allow for migrations of artifacts (such as dat
 
 To export content and schema, you can select either a specific item of content, or a whole tree or workspace.
 
-When exporting, you can choose to include associated media files.  Bear in mind that including media for a large site can lead to a big zip file.  So even with this option, you might want to consider methods options for transferring large amounts of media. For example using direct transfer between Cloud storage accounts or File Transfer Protocol (FTP).
+When exporting, you can choose to include associated media files. Bear in mind that including media files for a large site can lead to a big zip file.  So even with this option, you might want to consider a different method for transferring large amounts of media. For example using direct transfer between Cloud storage accounts or File Transfer Protocol (FTP).
 
 If your account has access to the Settings section, you can also choose to include the schema information and related files as well.
 
@@ -127,11 +127,11 @@ internal class ArtifactMigratorsComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {
-        builder.WithCollectionBuilder<ArtifactMigratorCollectionBuilder>()
+        builder.DeployArtifactMigrators()
             .Append<ReplaceNestedContentDataTypeArtifactMigrator>()
             .Append<ReplaceMediaPickerDataTypeArtifactMigrator>();
 
-        builder.WithCollectionBuilder<PropertyTypeMigratorCollectionBuilder>()
+        builder.DeployPropertyTypeMigrators()
             .Append<NestedContentPropertyTypeMigrator>()
             .Append<MediaPickerPropertyTypeMigrator>();
     }
@@ -223,6 +223,7 @@ public class ReplaceNestedContentDataTypeArtifactMigrator : ReplaceDataTypeArtif
             return contentTypeByAlias.Key;
         }
 
+        // New content types are initially saved by Deploy with a custom postfix (to avoid duplicate aliases), so try to get the first matching item
         string aliasPrefix = alias + "__";
         foreach (IContentType contentType in _contentTypeService.GetAll())
         {
@@ -323,6 +324,23 @@ public class NestedContentPropertyTypeMigrator : PropertyTypeMigratorBase
         };
 
         return JsonConvert.SerializeObject(blockValue, Formatting.None);
+    }
+    internal class NestedContentItem
+    {
+        [JsonProperty("key")]
+        public Guid Id { get; set; } = Guid.NewGuid(); // Ensure a unique key is set, even if the JSON doesn't have one
+
+        [JsonProperty("name")]
+        public string? Name { get; set; }
+
+        [JsonIgnore]
+        public object? PropType { get; set; } // Ensure this property is ignored
+
+        [JsonProperty("ncContentTypeAlias")]
+        public string ContentTypeAlias { get; set; } = null!;
+
+        [JsonExtensionData]
+        public Dictionary<string, object?> RawPropertyValues { get; set; } = null!;
     }
 }
 ```
