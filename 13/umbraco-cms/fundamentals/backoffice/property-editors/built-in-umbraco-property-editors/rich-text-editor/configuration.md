@@ -44,6 +44,10 @@ In this mode the toolbar is hidden, and only shows up when content in the editor
 
 ![Rich Text Editor Inline mode](../../built-in-property-editors/rich-text-editor/images/inline-mode-new.png)
 
+## Blocks
+
+Blocks can be added as elements in the Rich Text Editor. Configuration and rendering of Blocks is described in the [Blocks in Rich Text Editor](rte-blocks.md) article.
+
 ## Overlay Size
 
 Select the width of the link picker overlay. The overlay size comes in three sizes: Small, Medium, and Large.
@@ -99,4 +103,4 @@ Sometimes you want to allow your content editors to be able to add `<script>` ta
       }
 }
 ```
-      
+

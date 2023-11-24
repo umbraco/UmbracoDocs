@@ -937,6 +937,8 @@ We also have a limitation for hostnames on the different plans on Umbraco Cloud.
 
 In our experience, there are only a few Cloud sites that have experienced these limitations and we're happy to work with people who have sites affected by these limitations.
 
+You can monitor your site's usage and performance via the '[Usage](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/usage)' and the '[Availability & Performance](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/availability-performance)' pages on Umbraco Cloud. Inside the 'Usage' page you can view Bandwidth consumption and inside the 'Availability & Performance' page you can monitor CPU and Memory usage.
+
 {% hint style="info" %}
 If you have questions about how many resources your site is using, then please reach out to our friendly support team.
 {% endhint %}

@@ -29,3 +29,5 @@ We have decided to target our best practices to specific roles. As a result, we 
 ## Are you an Editor? - You can also do a lot for the environment
 
 <table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Editors</strong></td><td>Take a look at our sustainability guide for editors</td><td><a href="assets/composing-image.png">composing-image.png</a></td><td><a href="editor/content-types.md">content-types.md</a></td></tr></tbody></table>
+
+
