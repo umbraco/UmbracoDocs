@@ -331,6 +331,23 @@ public class NestedContentPropertyTypeMigrator : PropertyTypeMigratorBase
 
         return JsonConvert.SerializeObject(blockValue, Formatting.None);
     }
+    internal class NestedContentItem
+    {
+        [JsonProperty("key")]
+        public Guid Id { get; set; } = Guid.NewGuid(); // Ensure a unique key is set, even if the JSON doesn't have one
+
+        [JsonProperty("name")]
+        public string? Name { get; set; }
+
+        [JsonIgnore]
+        public object? PropType { get; set; } // Ensure this property is ignored
+
+        [JsonProperty("ncContentTypeAlias")]
+        public string ContentTypeAlias { get; set; } = null!;
+
+        [JsonExtensionData]
+        public Dictionary<string, object?> RawPropertyValues { get; set; } = null!;
+    }
 }
 ```
 
