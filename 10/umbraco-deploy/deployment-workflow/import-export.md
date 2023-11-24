@@ -85,10 +85,10 @@ Artifact migrators work by transforming the serialized artifact of data types on
 
 Implementations to handle common migrations of data types from obsoleted property editors are available:
 
-- `ReplaceMediaPickerDataTypeArtifactMigrator` - migrates a data type from using the legacy media picker to the current version of this property editor
- - `ReplaceNestedContentDataTypeArtifactMigrator` - migrated from a data type based on the obsolete nested content property editor to the block list.
+- `ReplaceMediaPickerDataTypeArtifactMigrator` - migrates a datatype from using the legacy media picker to the current version of this property editor
+ - `ReplaceNestedContentDataTypeArtifactMigrator` - migrated from a datatype based on the obsolete nested content property editor to the block list.
 
-We've also made available base implementations that you can use to build your own migrations, if there is a need to handle transfer of information between any other obsolete and replacement property editors that you have in your Umbraco application:
+We've also made available base implementations that you can use to build your own migrations. You may have a need to handle transfer of information between other obsolete and replacement property editors that you have in your Umbraco application.
 
 - `ArtifactMigratorBase<TArtifact>`
 - `DataTypeArtifactMigratorBase`
@@ -114,7 +114,7 @@ And a base type to help you build your own migrations:
 
 ### Registering migrators
 
-Migrators will only run if you've registered them to, hence you can enable just the ones needed for your solution.
+Migrators will run if you've registered them to, hence you can enable only the ones needed for your solution.
 
 You can do this via a composer, as in the following example. Here we register two of the migrators shipped with Umbraco Deploy:
 
@@ -144,7 +144,7 @@ internal class ArtifactMigratorsComposer : IComposer
 
 In order to help writing your own migrations, we share here the source code of an example that ships with Umbraco Deploy. This migration converts Nested Content to Block List.
 
-First we have the artifact migrator that handles the conversion of the configuration stored with a data type:
+First we have the artifact migrator that handles the conversion of the configuration stored with a datatype:
 
 ```csharp
 using System.Globalization;
