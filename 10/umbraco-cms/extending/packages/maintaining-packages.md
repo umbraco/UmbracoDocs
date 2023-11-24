@@ -45,6 +45,6 @@ This can be [provided as information about your package](https://docs.umbraco.co
 
 ## Package no longer required?
 
-After time it could be that your package should no longer be used. Perhaps it is now too old, or it has been superseded by another one that you recommend instead.
+After some time it could be that your package should no longer be used. Perhaps it is now too old, or it has been superseded by another one that you recommend instead.
 
 You can indicate this by [deprecating your package on NuGet](https://learn.microsoft.com/en-us/nuget/nuget-org/deprecate-packages).
