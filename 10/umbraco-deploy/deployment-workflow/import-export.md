@@ -227,6 +227,7 @@ public class ReplaceNestedContentDataTypeArtifactMigrator : ReplaceDataTypeArtif
             return contentTypeByAlias.Key;
         }
 
+        // New content types are initially saved by Deploy with a custom postfix (to avoid duplicate aliases), so try to get the first matching item
         string aliasPrefix = alias + "__";
         foreach (IContentType contentType in _contentTypeService.GetAll())
         {
