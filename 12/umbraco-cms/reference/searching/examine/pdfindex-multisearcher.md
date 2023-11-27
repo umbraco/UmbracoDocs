@@ -23,15 +23,14 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using UmbracoExamine.PDF;
 
-namespace MySite.MyCustomIndex
+namespace MySite.MyCustomIndex;
+
+[ComposeAfter(typeof(ExaminePdfComposer))]
+public class ExamineComposer : IComposer
 {
-    [ComposeAfter(typeof(ExaminePdfComposer))]
-    public class ExamineComposer : IComposer
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.Services.AddExamineLuceneMultiSearcher("MultiSearcher", new[] {Constants.UmbracoIndexes.ExternalIndexName, PdfIndexConstants.PdfIndexName});
-        }
+        builder.Services.AddExamineLuceneMultiSearcher("MultiSearcher", new[] {Constants.UmbracoIndexes.ExternalIndexName, PdfIndexConstants.PdfIndexName});
     }
 }
 ```

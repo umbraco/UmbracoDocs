@@ -10,19 +10,18 @@ The `IPublishedContentQuery` interface contains different query methods for acce
 
 In order to inject the `IPublishedContentQuery` into your services, you must add a using statement for `Umbraco.Cms.Core` and inject the service using the constructor.
 
-```
+```csharp
 using Umbraco.Cms.Core;
 
-namespace Umbraco.Docs.Samples.Web.Services
-{
-    public class SearchService
-    {
-        private readonly IPublishedContentQuery _publishedContentQuery;
+namespace Umbraco.Docs.Samples.Web.Services;
 
-        public SearchService(IPublishedContentQuery publishedContentQuery)
-        {
-            _publishedContentQuery = publishedContentQuery;
-        }
+public class SearchService
+{
+    private readonly IPublishedContentQuery _publishedContentQuery;
+
+    public SearchService(IPublishedContentQuery publishedContentQuery)
+    {
+        _publishedContentQuery = publishedContentQuery;
     }
 }
 ```
@@ -72,33 +71,32 @@ using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Infrastructure.Examine;
 using Umbraco.Extensions;
 
-namespace Umbraco.Docs.Samples.Web.Services
-{
-    public class SearchService
-    {
-        private readonly IPublishedContentQuery _publishedContentQuery;
-        private readonly IExamineManager _examineManager;
+namespace Umbraco.Docs.Samples.Web.Services;
 
-        public SearchService(IPublishedContentQuery publishedContentQuery, IExamineManager examineManager)
+public class SearchService
+{
+    private readonly IPublishedContentQuery _publishedContentQuery;
+    private readonly IExamineManager _examineManager;
+
+    public SearchService(IPublishedContentQuery publishedContentQuery, IExamineManager examineManager)
+    {
+        _publishedContentQuery = publishedContentQuery;
+        _examineManager = examineManager;
+    }
+
+    public IEnumerable<PublishedSearchResult> Search(string searchTerm)
+    {
+        if (!_examineManager.TryGetIndex(Constants.UmbracoIndexes.ExternalIndexName, out IIndex index))
         {
-            _publishedContentQuery = publishedContentQuery;
-            _examineManager = examineManager;
+            throw new InvalidOperationException($"No index found by name{Constants.UmbracoIndexes.ExternalIndexName}");
         }
 
-        public IEnumerable<PublishedSearchResult> Search(string searchTerm)
+        var query = index.Searcher.CreateQuery(IndexTypes.Content);
+        var queryExecutor = query.NodeTypeAlias("blogPost").And().ManagedQuery(searchTerm);
+
+        foreach (var result in _publishedContentQuery.Search(queryExecutor))
         {
-            if (!_examineManager.TryGetIndex(Constants.UmbracoIndexes.ExternalIndexName, out IIndex index))
-            {
-                throw new InvalidOperationException($"No index found by name{Constants.UmbracoIndexes.ExternalIndexName}");
-            }
-
-            var query = index.Searcher.CreateQuery(IndexTypes.Content);
-            var queryExecutor = query.NodeTypeAlias("blogPost").And().ManagedQuery(searchTerm);
-
-            foreach (var result in _publishedContentQuery.Search(queryExecutor))
-            {
-                yield return result;
-            }
+            yield return result;
         }
     }
 }

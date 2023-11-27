@@ -130,24 +130,23 @@ using Umbraco.Cms.Core.PropertyEditors;
 using Umbraco.Cms.Core.WebAssets;
 using Umbraco.Cms.Infrastructure.WebAssets;
 
-namespace UmbracoEightExamples.PropertyEditors
+namespace UmbracoEightExamples.PropertyEditors;
+
+[DataEditor(
+    "Sir.Trevor",
+    EditorType.PropertyValue,
+    "Sir Trevor",
+    "/App_Plugins/SirTrevor/SirTrevor.html",
+    ValueType = ValueTypes.Json,
+    HideLabel = true)]
+[PropertyEditorAsset(AssetType.Javascript, "/App_Plugins/SirTrevor/SirTrevor.controller.js")]
+public class SirTrevorEditor : DataEditor
 {
-    [DataEditor(
-        "Sir.Trevor",
-        EditorType.PropertyValue,
-        "Sir Trevor",
-        "/App_Plugins/SirTrevor/SirTrevor.html",
-        ValueType = ValueTypes.Json,
-        HideLabel = true)]
-    [PropertyEditorAsset(AssetType.Javascript, "/App_Plugins/SirTrevor/SirTrevor.controller.js")]
-    public class SirTrevorEditor : DataEditor
+    public SirTrevorEditor(
+        IDataValueEditorFactory dataValueEditorFactory,
+        EditorType type = EditorType.PropertyValue)
+        : base(dataValueEditorFactory, type)
     {
-        public SirTrevorEditor(
-            IDataValueEditorFactory dataValueEditorFactory,
-            EditorType type = EditorType.PropertyValue)
-            : base(dataValueEditorFactory, type)
-        {
-        }
     }
 }
 ```
@@ -190,28 +189,27 @@ using Umbraco.Cms.Core.PropertyEditors;
 using Umbraco.Cms.Core.WebAssets;
 using Umbraco.Cms.Infrastructure.WebAssets;
 
-namespace UmbracoEightExamples.PropertyEditors
+namespace UmbracoEightExamples.PropertyEditors;
+
+[DataEditor(
+    "Sir.Trevor",
+    EditorType.PropertyValue,
+    "Sir Trevor",
+    "/App_Plugins/SirTrevor/SirTrevor.html",
+    ValueType = ValueTypes.Json,
+    HideLabel = true)]
+[PropertyEditorAsset(AssetType.Javascript, "/App_Plugins/SirTrevor/SirTrevor.controller.js")]
+public class SirTrevorEditor : DataEditor
 {
-    [DataEditor(
-        "Sir.Trevor",
-        EditorType.PropertyValue,
-        "Sir Trevor",
-        "/App_Plugins/SirTrevor/SirTrevor.html",
-        ValueType = ValueTypes.Json,
-        HideLabel = true)]
-    [PropertyEditorAsset(AssetType.Javascript, "/App_Plugins/SirTrevor/SirTrevor.controller.js")]
-    public class SirTrevorEditor : DataEditor
+    public SirTrevorEditor(
+        IDataValueEditorFactory dataValueEditorFactory,
+        EditorType type = EditorType.PropertyValue)
+        : base(dataValueEditorFactory, type)
     {
-        public SirTrevorEditor(
-            IDataValueEditorFactory dataValueEditorFactory,
-            EditorType type = EditorType.PropertyValue)
-            : base(dataValueEditorFactory, type)
-        {
-        }
-
-        protected override IConfigurationEditor CreateConfigurationEditor() => new SirTrevorConfigurationEditor();
-
     }
+
+    protected override IConfigurationEditor CreateConfigurationEditor() => new SirTrevorConfigurationEditor();
+
 }
 ```
 
@@ -222,13 +220,12 @@ using Umbraco.Cms.Core.IO;
 using Umbraco.Cms.Core.PropertyEditors;
 using Umbraco.Cms.Core.Services;
 
-namespace UmbracoEightExamples.PropertyEditors
+namespace UmbracoEightExamples.PropertyEditors;
+
+public class SirTrevorConfigurationEditor : ConfigurationEditor<SirTrevorConfiguration>
 {
-    public class SirTrevorConfigurationEditor : ConfigurationEditor<SirTrevorConfiguration>
+    public SirTrevorConfigurationEditor(IIOHelper ioHelper, IEditorConfigurationParser editorConfigurationParser) : base(ioHelper, editorConfigurationParser)
     {
-        public SirTrevorConfigurationEditor(IIOHelper ioHelper, IEditorConfigurationParser editorConfigurationParser) : base(ioHelper, editorConfigurationParser)
-        {
-        }
     }
 }
 ```
@@ -238,31 +235,30 @@ The referenced `SirTrevorConfiguration` class is then what declares the configur
 ```csharp
 using Umbraco.Cms.Core.PropertyEditors;
 
-namespace UmbracoEightExamples.PropertyEditors
+namespace UmbracoEightExamples.PropertyEditors;
+
+public class SirTrevorConfiguration
 {
-    public class SirTrevorConfiguration
-    {
-        [ConfigurationField("blockLimit", "Maximum number of blocks", "requiredfield",
-            Description = "The total maximum number of blocks (of any type) that can be displayed (0 = infinite).")]
-        public int BlockLimit { get; set; }
+    [ConfigurationField("blockLimit", "Maximum number of blocks", "requiredfield",
+        Description = "The total maximum number of blocks (of any type) that can be displayed (0 = infinite).")]
+    public int BlockLimit { get; set; }
 
-        [ConfigurationField("editorAlignCentered", "Align editor centered", "boolean",
-            Description =
-                "If the editor doesn't span the entire width of the content editing area, center it. Otherwise left aligned.")]
-        public bool EditorAlignCentered { get; set; }
+    [ConfigurationField("editorAlignCentered", "Align editor centered", "boolean",
+        Description =
+            "If the editor doesn't span the entire width of the content editing area, center it. Otherwise left aligned.")]
+    public bool EditorAlignCentered { get; set; }
 
-        [ConfigurationField("editorWidth", "Editor width", "requiredfield",
-            Description = "The width the Sir Trevor editor will expand to, most likely 100%.")]
-        public int EditorWidth { get; set; }
+    [ConfigurationField("editorWidth", "Editor width", "requiredfield",
+        Description = "The width the Sir Trevor editor will expand to, most likely 100%.")]
+    public int EditorWidth { get; set; }
 
-        [ConfigurationField("editorMaxWidth", "Maximum editor width", "requiredfield",
-            Description = "The maximum width the Sir Trevor editor will expand to, i.e. 500px or 80%.")]
-        public int EditorMaxWidth { get; set; }
+    [ConfigurationField("editorMaxWidth", "Maximum editor width", "requiredfield",
+        Description = "The maximum width the Sir Trevor editor will expand to, i.e. 500px or 80%.")]
+    public int EditorMaxWidth { get; set; }
 
-        [ConfigurationField("blocktypes", "Block types", "/App_Plugins/SirTrevor/settings/blocktypes.html",
-            Description = "Configure the block types available to the user.")]
-        public object BlockTypes { get; set; }
-    }
+    [ConfigurationField("blocktypes", "Block types", "/App_Plugins/SirTrevor/settings/blocktypes.html",
+        Description = "Configure the block types available to the user.")]
+    public object BlockTypes { get; set; }
 }
 ```
 

@@ -15,15 +15,14 @@ To add your own sanitizer you must first create a class the implements the inter
 ```csharp
 using Umbraco.Cms.Core.Security;
 
-namespace MySite.HtmlSanitization
+namespace MySite.HtmlSanitization;
+
+public class MyHtmlSanitizer : IHtmlSanitizer
 {
-    public class MyHtmlSanitizer : IHtmlSanitizer
+    public string Sanitize(string html)
     {
-        public string Sanitize(string html)
-        {
-            // Sanitize the html parameter here
-            return "<h1>Sanitized HTML</h1>";
-        }
+        // Sanitize the html parameter here
+        return "<h1>Sanitized HTML</h1>";
     }
 }
 ```
@@ -41,15 +40,14 @@ using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Security;
 using Umbraco.Extensions;
 
-namespace MySite.HtmlSanitization
+namespace MySite.HtmlSanitization;
+
+public static class BuilderExtensions
 {
-    public static class BuilderExtensions
+    public static IUmbracoBuilder AddHtmlSanitizer(this IUmbracoBuilder builder)
     {
-        public static IUmbracoBuilder AddHtmlSanitizer(this IUmbracoBuilder builder)
-        {
-            builder.Services.AddUnique<IHtmlSanitizer, MyHtmlSanitizer>();
-            return builder;
-        }
+        builder.Services.AddUnique<IHtmlSanitizer, MyHtmlSanitizer>();
+        return builder;
     }
 }
 ```
@@ -57,17 +55,17 @@ namespace MySite.HtmlSanitization
 Calling the extension method:
 
 ```csharp
-        public void ConfigureServices(IServiceCollection services)
-        {
+public void ConfigureServices(IServiceCollection services)
+{
 #pragma warning disable IDE0022 // Use expression body for methods
-            services.AddUmbraco(_env, _config)
-                .AddBackOffice()
-                .AddWebsite()
-                .AddComposers()
-                .AddHtmlSanitizer() // Call you extension method here.
-                .Build();
+    services.AddUmbraco(_env, _config)
+        .AddBackOffice()
+        .AddWebsite()
+        .AddComposers()
+        .AddHtmlSanitizer() // Call you extension method here.
+        .Build();
 #pragma warning restore IDE0022 // Use expression body for methods
-        }
+}
 ```
 
 Or you can use a Composer:
@@ -78,14 +76,13 @@ using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Security;
 using Umbraco.Extensions;
 
-namespace MySite.HtmlSanitization
+namespace MySite.HtmlSanitization;
+
+public class SanitizerComposer : IComposer
 {
-    public class SanitizerComposer : IComposer
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.Services.AddUnique<IHtmlSanitizer, MyHtmlSanitizer>();
-        }
+        builder.Services.AddUnique<IHtmlSanitizer, MyHtmlSanitizer>();
     }
 }
 ```

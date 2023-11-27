@@ -52,41 +52,39 @@ using Umbraco.Cms.Core.Models.Editors;
 using Umbraco.Cms.Core.PropertyEditors;
 using Umbraco.Extensions;
 
-namespace Umbraco.Web.PropertyEditors
+namespace Umbraco.Web.PropertyEditors;
+
+public class ExampleComposer : IComposer
 {
-
-     public class ExampleComposer : IComposer
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.DataValueReferenceFactories().Append<TrackingExample>();
-        }
+        builder.DataValueReferenceFactories().Append<TrackingExample>();
     }
+}
 
-    public class TrackingExample : IDataValueReferenceFactory, IDataValueReference
+public class TrackingExample : IDataValueReferenceFactory, IDataValueReference
+{
+    public IDataValueReference GetDataValueReference() => this;
+
+    // Which Data Editor (Data Type) does this apply to - in this example it is the built in content picker of Umbraco
+    public bool IsForEditor(IDataEditor dataEditor) => dataEditor.Alias.InvariantEquals(Constants.PropertyEditors.Aliases.ContentPicker);
+
+
+    public IEnumerable<UmbracoEntityReference> GetReferences(object value)
     {
-        public IDataValueReference GetDataValueReference() => this;
+        // Value contains the raw data that is being saved for a property editor
+        // You can then analyse this data be it a complex JSON structure or something more trivial
+        // To add the chosen entities as references (as any UDI type including custom ones)
 
-        // Which Data Editor (Data Type) does this apply to - in this example it is the built in content picker of Umbraco
-        public bool IsForEditor(IDataEditor dataEditor) => dataEditor.Alias.InvariantEquals(Constants.PropertyEditors.Aliases.ContentPicker);
-
-
-        public IEnumerable<UmbracoEntityReference> GetReferences(object value)
-        {
-            // Value contains the raw data that is being saved for a property editor
-            // You can then analyse this data be it a complex JSON structure or something more trivial
-            // To add the chosen entities as references (as any UDI type including custom ones)
-
-            // A very simple example
-            // This will always ADD a specific media reference to the collection list
-            // When it's a ContentPicker datatype
-            var references = new List<UmbracoEntityReference>();
-            var udiType = ObjectTypes.GetUdiType(UmbracoObjectTypes.Media);
-            var udi = Udi.Create(udiType, Guid.Parse("fbbaa38d-bd93-48b9-b1d5-724c46b6693e"));
-            var entityRef = new UmbracoEntityReference(udi);
-            references.Add(entityRef);
-            return references;
-        }
+        // A very simple example
+        // This will always ADD a specific media reference to the collection list
+        // When it's a ContentPicker datatype
+        var references = new List<UmbracoEntityReference>();
+        var udiType = ObjectTypes.GetUdiType(UmbracoObjectTypes.Media);
+        var udi = Udi.Create(udiType, Guid.Parse("fbbaa38d-bd93-48b9-b1d5-724c46b6693e"));
+        var entityRef = new UmbracoEntityReference(udi);
+        references.Add(entityRef);
+        return references;
     }
 }
 ```
