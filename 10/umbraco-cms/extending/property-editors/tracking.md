@@ -9,7 +9,7 @@ description: >-
 
 # Tracking References
 
-Property editors can be extended further to track entity references that may be selected or referenced inside the property editor. For example in the core of the CMS we have added this to several property editors.
+Property editors can be extended further to track entity references that may be selected or referenced inside the property editor. For example in the core of the CMS we have added this to numerous property editors.
 
 A good example of this is the Media Picker where the CMS stores a reference to what media item was picked and thus allows to see what content nodes are using a media item. This avoids it being accidentally deleted if it is being used.
 
