@@ -258,7 +258,7 @@ Culture and hostname settings, defined per content item for culture invariant co
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <settings xmlns="urn:umbracodeploy-settings">
-    <deploy allowDomainsDeploymentOperations="None|Culture|Absolute|Hostname|All" />
+    <content allowDomainsDeploymentOperations="None|Culture|Absolute|Hostname|All" />
 </settings>
 ```
 
@@ -269,6 +269,24 @@ To enable this, set the configuration value as appropriate for the types of doma
 - *Hostname* - values defined under "Domains" with a full host name, e.g. "en.mysite.com"
 
 Combinations of settings can be applied, e.g. `Hostname,AbsolutePath`.
+
+## Deployment of public access settings
+
+When deploying content items, public access rules based on member groups are transferred. You can amend this behavior using this setting.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <content allowPublicAccessDeploymentOperations="None|AddOrUpdate|Remove|All" />
+</settings>
+```
+
+- *None* - no public access rules will be transferred
+- *AddOrUpdate* - public access rules added or updated in a source environment will be transferred to the destination
+- *Remove* - public access rules removed a source environment will be removed in the destination
+- *All* - all public access information will be transferred
+
+`AddOrUpdate` is the default setting used if no value is configured.
 
 ## Media File Checksum Calculation Method
 
@@ -330,3 +348,17 @@ If attempting a one-off, large transfer operation, before a site is live, you co
 </settings>
 ```
 
+## Resolve User In Target Environment
+
+With this setting assigned a value of `true`, Umbraco Deploy will attempt to resolve users when transfers are made to new environments.
+
+Users and user groups are maintained separately in different environments, so it isn't always the case that an editor has accounts across all environments. When an account exists matching by email address, Deploy will associate the changes made in upstream environments with the user that initiated the transfer. Allowing the expected information about save and publish operations to be available in the audit log of the environment where the data was transferred.
+
+When the setting is set to false, or a matching account isn't found, the audit records will be associated with the super-user administrator account.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <deploy resolveUserInTargetEnvironment="true|false" />
+</settings>
+```
