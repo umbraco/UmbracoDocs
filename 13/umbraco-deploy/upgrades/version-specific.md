@@ -26,6 +26,47 @@ Version 12 contains a number of breaking changes. We don't expect many projects 
 
 * The default value for the configuration option `ResolveUserInTargetEnvironment` was changed to `true`.
 
+**Configuration**
+
+* [Configuration of relations](../deploy-settings.md#relationtypes) was changed from a list to a dictionary.
+
+```json
+// Before
+"RelationTypes": [
+  {
+    "Alias": "relateParentDocumentOnDelete",
+    "Mode": "Weak",
+  },
+  {
+    "Alias": "relateShopItemOnCreate",
+    "Mode": "Exclude",
+  }
+],
+
+// After
+"RelationTypes": {
+  "relateParentDocumentOnDelete": "Weak",
+  "relateShopItemOnCreate": "Exclude"
+},
+```
+
+* [Configuration of value connectors](../deploy-settings.md#valueconnectors) was changed from a list to a dictionary.
+
+```json
+// Before
+"ValueConnectors": [
+  {
+    "Alias": "nuPickers.DotNetCheckBoxPicker",
+    "TypeName": "Umbraco.Deploy.Contrib.Connectors.ValueConnectors.NuPickersValueConnector,Umbraco.Deploy.Contrib.Connectors",
+  }
+],
+
+// After
+"ValueConnectors": {
+  "nuPickers.DotNetCheckBoxPicker": "Umbraco.Deploy.Contrib.Connectors.ValueConnectors.NuPickersValueConnector, Umbraco.Deploy.Contrib.Connectors"
+},
+```
+
 **Code**
 
 The following updates describe the more significant changes to the codebase and public API:

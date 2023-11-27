@@ -120,16 +120,10 @@ This setting allows you to manage how relations are deployed between environment
 As of Deploy 10.1.2 and 11.0.1, if this setting is left blank, the two relation types used for usage tracking are omitted. These are rebuilt by the CMS following a save of an item in the target environment and so don't need to be transferred. Unless you have specified otherwise, the effective default configuration is:
 
 ```json
-"RelationTypes": [
-    {
-        "Alias": "umbDocument",
-        "Mode": "Exclude",
-    },
-    {
-        "Alias": "umbMedia",
-        "Mode": "Exclude",
-    }
-],
+"RelationTypes": {
+  "relateParentDocumentOnDelete": "Weak",
+  "relateShopItemOnCreate": "Exclude"
+},
 ```
 
 If a particular relation type is not listed, it's considered as a "weak" relation.
@@ -141,12 +135,9 @@ This setting is used by package creators who want their custom editors to work w
 Here is an example of how the setting can look:
 
 ```json
-"ValueConnectors": [
-    {
-        "Alias": "nuPickers.DotNetCheckBoxPicker",
-        "TypeName": "Umbraco.Deploy.Contrib.Connectors.ValueConnectors.NuPickersValueConnector,Umbraco.Deploy.Contrib.Connectors",
-    }
-],
+"ValueConnectors": {
+  "nuPickers.DotNetCheckBoxPicker": "Umbraco.Deploy.Contrib.Connectors.ValueConnectors.NuPickersValueConnector, Umbraco.Deploy.Contrib.Connectors"
+},
 ```
 
 ## Timeout settings
