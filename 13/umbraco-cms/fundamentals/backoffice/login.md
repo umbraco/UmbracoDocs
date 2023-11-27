@@ -137,6 +137,9 @@ The following CSS properties are available for customization:
 | `--umb-login-background` | The background of the layout | `#f4f4f4` |
 | `--umb-login-primary-color` | The color of the headline and buttons | `#283a97` |
 | `--umb-login-text-color` | The color of the text | `#000` |
+| `--umb-login-header-font-size` | The font-size of the headline | `3rem` |
+| `--umb-login-header-font-size-large` | The font-size of the headline on large screens | `4rem` |
+| `--umb-login-header-secondary-font-size` | The font-size of the secondary headline | `2.4rem` |
 | `--umb-login-image` | The background of the image wrapper | The value of the [LoginBackgroundImage](#custom-background-image-and-logo) setting |
 | `--umb-login-image-display` | The display of the image wrapper | `flex` |
 | `--umb-login-image-border-radius` | The border-radius of the image wrapper | `38px` |
