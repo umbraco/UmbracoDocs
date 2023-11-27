@@ -358,7 +358,7 @@ If set to `true` the configuration details shown on the setting's dashboard will
 
 ### Webhook Events
 
-Umbraco Deploy can optionally register events that you can use with Umbraco webhooks.  You can add them via code, most easily using an extension method. The following example shows how you can do this using a composer.
+Umbraco Deploy can optionally register events that you can use with Umbraco webhooks.  You can add them via code, for which we provide an extension method. The following example shows how you can use this within a composer.
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
