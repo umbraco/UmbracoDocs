@@ -82,6 +82,7 @@ These updates are more minor. We don't expect many projects to be affected by th
 * An obsolete constructor was removed from `DictionaryItemConnector`.
 * `QueueItemDto` was moved into the `Umbraco.Deploy.Infrastructure.Persistence` namespace.
 * `DocumentConnector` has a changed constructor such that we can use redirect tracking logic now exposed from CMS.
+* Remove now unnecessary interfaces and extension methods for rich text parsing. These were introduced to ensure backward compatibility in older versions: `IMacroParser2`, `IImageSourceParser2` and `ILocaLinkParser2`.
 
 </details>
 
