@@ -25,7 +25,7 @@ Umb-Project-Alias: {project-alias}
 
 ## Authentication
 
-Auth is required for this API meaning that you must supply a Bearer Token via an Authorization header or an API Key via an Authorization or Api-Key header.
+Authentication is required for this API. You must supply a Bearer Token via an Authorization header or an API Key through an Authorization or Api-Key header.
 
 ## Errors
 
@@ -159,7 +159,7 @@ If the password field is omitted no password will be set.
 
 Update an existing member.
 
-A member can be unlocked by setting `isLockedOut` to `false` in the request, **note** that a member cannot be locked by setting the value to `true`, it will be ignored if the user is not already locked out .
+A member can be unlocked by setting `isLockedOut` to `false` in the request. **Note** that a member cannot be locked by setting the value to `true`; it will be ignored if the user is not already locked out.
 
 **URL**: `/member/{username}`
 
