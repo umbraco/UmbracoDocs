@@ -8,7 +8,7 @@ It is possible to add custom database tables to your site to store additional da
 
 The end result looks like this:
 
-![Database result of a migration](<../../../10/umbraco-cms/extending/images/db-table (1) (1) (1).png>)
+![Database result of a migration](<../../../../10/umbraco-cms/extending/images/db-table (1) (1) (1).png>)
 
 ## Using a Composer and Component
 
@@ -131,7 +131,7 @@ namespace MyNamespace
 
 ## Using a Notification Handler
 
-If building a new solution, you can adopt a new pattern. With this pattern you create and run a similar migration but trigger it in response to a [notification handler](../fundamentals/code/subscribing-to-notifications.md).
+If building a new solution, you can adopt a new pattern. With this pattern you create and run a similar migration but trigger it in response to a [notification handler](../../fundamentals/code/subscribing-to-notifications.md).
 
 The code for this approach is as follows:
 
