@@ -135,18 +135,13 @@ The following CSS properties are available for customization:
 | CSS Property | Description | Default Value |
 | --- | --- | --- |
 | `--umb-login-background` | The background of the layout | `#f4f4f4` |
-| `--umb-login-primary-color` | The color of the headline and buttons | `#283a97` |
-| `--umb-login-text-color` | The color of the text | `#000` |
 | `--umb-login-image` | The background of the image wrapper | The value of the [LoginBackgroundImage](#custom-background-image-and-logo) setting |
 | `--umb-login-image-display` | The display of the image wrapper | `flex` |
-| `--umb-login-image-border-radius` | The border-radius of the image wrapper | `38px` |
 | `--umb-login-content-background` | The background of the content wrapper | `none` |
 | `--umb-login-content-display` | The display of the content wrapper | `flex` |
 | `--umb-login-content-width` | The width of the content wrapper | `100%` |
 | `--umb-login-content-height` | The height of the content wrapper | `100%` |
-| `--umb-login-content-border-radius` | The border-radius of the content wrapper | `0` |
 | `--umb-login-align-items` | The align-items of the main wrapper | `unset` |
-| `--umb-login-button-border-radius` | The border-radius of the buttons | `45px` |
 | `--umb-curves-color` | The color of the curves | `#f5c1bc` |
 | `--umb-curves-display` | The display of the curves | `inline` |
 
