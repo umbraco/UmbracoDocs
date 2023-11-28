@@ -30,6 +30,7 @@ To use rewrites with Umbraco 9 you have to register the middleware in your `Star
         <add input="{HTTP_HOST}" pattern="\.umbraco\.io$" />
         <add input="{REQUEST_URI}" pattern="^/App_Plugins/" negate="true" />
         <add input="{REQUEST_URI}" pattern="^/umbraco" negate="true" />
+        <add input="{REQUEST_URI}" pattern="^/sb" negate="true" /> <!-- Don't redirect Smidge Bundle -->
       </conditions>
       <action type="Redirect" url="https://example.com/{R:0}" />
     </rule>
