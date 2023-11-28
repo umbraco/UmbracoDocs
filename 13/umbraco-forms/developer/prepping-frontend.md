@@ -9,7 +9,7 @@ You can use the following Razor helper to output script tags containing the depe
 ```csharp
 @using Umbraco.Forms.Web
 <head>
-    @Html.RenderUmbracoFormDependencies()
+    @Html.RenderUmbracoFormDependencies(Url)
 </head>
 ```
 
@@ -20,7 +20,7 @@ Alternatively, you can add the dependencies to the body tag:
 ...
 
 <body>
-    @Html.RenderUmbracoFormDependencies()
+    @Html.RenderUmbracoFormDependencies(Url)
 </body>
 ```
 
