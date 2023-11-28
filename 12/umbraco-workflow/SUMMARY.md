@@ -28,3 +28,7 @@
 * [Content Reviews](workflow-section/content-reviews.md)
 * [Workflow History](workflow-section/workflow-history.md)
 * [Workflow Settings](workflow-section/workflow-settings.md)
+
+## Advanced Search
+
+* [Advanced Search dashboard](advanced-search/advanced-search-dashboard.md)

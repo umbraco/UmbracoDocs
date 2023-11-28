@@ -38,6 +38,7 @@ For reference, the full details are listed here:
 The following updates describe the more significant changes to the codebase and public API:
 
 * Amended `IWorkflowExecutionService`, `IRecordService`, `IRecordSetActionType` and `IWorkflowType` methods related to workflow execution to be asynchronous. These methods now have an `Async` suffix and will return a awaitable `Task`.
+* An overload for the HTML helper `RenderUmbracoFormDependencies` that internally required service location was removed. It should now be called providing the parameter for an `IUrlHelper`, with `@Html.RenderUmbracoFormDependencies(Url)`.
 
 These updates are more minor. We don't expect many projects to be affected by them as they are in areas that are not typical extension points:
 
@@ -58,6 +59,7 @@ These updates are more minor. We don't expect many projects to be affected by th
 * `ExecuteWorkflowsWithResult` on `IWorkflowExecutionService` was renamed to `ExecuteWorkflows` and the void method with that name was removed.
 * The string constants used to define GUIDs for each provider type were made consistently upper-case.
 * `FileUpload` and `PreValueFileController` have changed constructors to add support for server-side file validation.
+* HTML helpers such as `RenderFormsScripts` now return `IHtmlContent`.
 
 </details>
 

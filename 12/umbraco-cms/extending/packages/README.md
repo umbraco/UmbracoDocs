@@ -48,7 +48,7 @@ This type of package can be a lot of things, and can include a number of the oth
 
 ## [Types of Packages](types-of-packages.md)
 
-There are two common types of package for Umbraco: Package zip files and NuGet Packages.
+Packages for Umbraco 10 and above are installed as NuGet packages.
 
 ## [Creating a Package](creating-a-package.md)
 
@@ -69,3 +69,9 @@ Things you should know if you are developing for Umbraco Cloud.
 ## [Maintaining Packages](maintaining-packages.md)
 
 Some guidance on how to maintain your package after release.
+
+## [An Example Package Repository](example-package-repository.md)
+
+There are many ways to build and deploy your package to NuGet. You will likely have your own approach for organizing a solution and preferred tools for build and deployment.
+
+If you are looking for inspiration to follow form some tried and tested packages, read more here.

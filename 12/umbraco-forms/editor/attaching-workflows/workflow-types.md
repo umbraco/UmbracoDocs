@@ -18,7 +18,7 @@ Workflow Types in Umbraco Forms
 
 ![Change Record state](images/change-record-state.png)
 
-Used to automatically **Approve Record** or **Delete Record** once it is submitted. Configure words that you want to match and select whether these words should trigger an approval or deletion of the record.
+Used to automatically **Approve Record**, **Reject Record** or **Delete Record** once it is submitted. Configure words that you want to match and select whether these words should trigger an approval or deletion of the record.
 
 ## **Post as XML**
 

@@ -18,14 +18,13 @@ In this example we'll create a basic contact form containing a name, email and m
 First, we're going to create the model for the contact form by adding a new class to the `/Models` folder. If the folder doesn't already exist, create it at the root of your website. Let's call it `ContactFormViewModel.cs`
 
 ```csharp
-namespace MyFirstForm.Models
+namespace MyFirstForm.Models;
+
+public class ContactFormViewModel 
 {
-    public class ContactFormViewModel 
-    {
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public string Message { get; set; }
-    }
+    public string Name { get; set; }
+    public string Email { get; set; }
+    public string Message { get; set; }
 }
 ```
 
@@ -77,32 +76,31 @@ using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Infrastructure.Persistence;
 using Umbraco.Cms.Web.Website.Controllers;
 
-namespace MyFirstForm.Controllers
+namespace MyFirstForm.Controllers;
+
+public class ContactFormController : SurfaceController
 {
-    public class ContactFormController : SurfaceController
+    public ContactFormController(
+        IUmbracoContextAccessor umbracoContextAccessor,
+        IUmbracoDatabaseFactory databaseFactory,
+        ServiceContext services,
+        AppCaches appCaches,
+        IProfilingLogger profilingLogger,
+        IPublishedUrlProvider publishedUrlProvider) 
+        : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+    {}
+
+    [HttpPost]
+    public IActionResult Submit(ContactFormViewModel model)
     {
-        public ContactFormController(
-            IUmbracoContextAccessor umbracoContextAccessor,
-            IUmbracoDatabaseFactory databaseFactory,
-            ServiceContext services,
-            AppCaches appCaches,
-            IProfilingLogger profilingLogger,
-            IPublishedUrlProvider publishedUrlProvider) 
-            : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
-        {}
-
-        [HttpPost]
-        public IActionResult Submit(ContactFormViewModel model)
+        if (!ModelState.IsValid)
         {
-            if (!ModelState.IsValid)
-            {
-                return CurrentUmbracoPage();
-            }
-            
-            // Work with form data here
-
-            return RedirectToCurrentUmbracoPage();
+            return CurrentUmbracoPage();
         }
+        
+        // Work with form data here
+
+        return RedirectToCurrentUmbracoPage();
     }
 }
 ```
