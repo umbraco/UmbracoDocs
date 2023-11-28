@@ -43,7 +43,7 @@ When a content node is saved it will save the entity references as relations.
 
 ## Example
 
-The following example shows how to implement tracking for the inbuilt CMS property editor **Content Picker**. It will always add a specific media reference, regardless of what value is picked in the content picker. In your own implementations, you will need to parse the value stored from the property editor you are implementing. Find any references to picked items in order to track their references.
+The following example shows how to implement tracking for the inbuilt CMS property editor **Content Picker**. It will always add a specific media reference, regardless of what value is picked in the content picker. In your own implementations, you will need to parse the value stored from the property editor you are implementing. You will also need to find any references to picked items in order to track their references.
 
 {% tabs %}
 {% tab title="Latest version" %}
