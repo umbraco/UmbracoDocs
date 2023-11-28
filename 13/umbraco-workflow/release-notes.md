@@ -18,3 +18,4 @@ In this section, you can find the release notes for Umbraco Workflow 13. For ear
   * For full details of breaking changes refer to the [Version Specific Upgrade Notes](version-specific-upgrade-notes.md)
 * **FEATURE** => Advanced Search dashboard. Refer to [Advanced Search dashboard](advanced-search/advanced-search-dashboard.md) for more details.
 * Update to use package migrations to avoid startup exception when Workflow is installed as part of a new Umbraco installation [#48](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/48)
+* Fixed issue with scheduled workflows on invariant content [#49](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/49)

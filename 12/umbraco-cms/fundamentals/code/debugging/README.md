@@ -82,32 +82,31 @@ using Umbraco.Cms.Core.Logging;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common.Controllers;
 
-namespace MyCustomUmbracoProject
+namespace MyCustomUmbracoProject;
+
+public class RootController : RenderController
 {
-    public class RootController : RenderController
+    private readonly IProfiler _profiler;
+
+    public RootController(
+        IProfiler profiler,
+        ILogger<RenderController> logger,
+        ICompositeViewEngine compositeViewEngine,
+        IUmbracoContextAccessor umbracoContextAccessor)
+        : base(logger, compositeViewEngine, umbracoContextAccessor)
     {
-        private readonly IProfiler _profiler;
+        _profiler = profiler;
+    }
 
-        public RootController(
-            IProfiler profiler,
-            ILogger<RenderController> logger,
-            ICompositeViewEngine compositeViewEngine,
-            IUmbracoContextAccessor umbracoContextAccessor)
-            : base(logger, compositeViewEngine, umbracoContextAccessor)
+    public override IActionResult Index()
+    {
+        // Perform a step
+        using (_profiler.Step("Sleep"))
         {
-            _profiler = profiler;
+            System.Threading.Thread.Sleep(1000);
         }
 
-        public override IActionResult Index()
-        {
-            // Perform a step
-            using (_profiler.Step("Sleep"))
-            {
-                System.Threading.Thread.Sleep(1000);
-            }
-
-            return base.Index();
-        }
+        return base.Index();
     }
 }
 ```

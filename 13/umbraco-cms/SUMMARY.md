@@ -30,3 +30,5 @@
     * [Property expansion and limiting](reference/content-delivery-api/property-expansion-and-limiting.md)
 
 ## Tutorials
+
+* [Add Google Authentication (Users)](tutorials/add-google-authentication.md)
