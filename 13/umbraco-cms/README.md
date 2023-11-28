@@ -26,7 +26,12 @@ Below you will find a list of new and updated articles for the Umbraco 13 Releas
 
 The list will be updated as more articles have been created and updated.
 
-* [Blocks in Rich Text Editor](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-blocks.md)
+* FUNDAMENTALS:
+  * BACKOFFICE:
+    * [Blocks in Rich Text Editor](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-blocks.md)
+    * [Login](fundamentals/backoffice/login.md)
+  * DATA:
+    * [Defining Content](fundamentals/data/defining-content/README.md)
 * [External Login Providers](reference/security/external-login-providers.md)
 * [Two-factor Authentication](reference/security/two-factor-authentication.md)
 * [Multinode Treepicker](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/multinode-treepicker.md)
@@ -36,9 +41,9 @@ The list will be updated as more articles have been created and updated.
   * [Media Delivery API](reference/content-delivery-api/media-delivery-api.md)
   * [Protected content in the Delivery API](reference/content-delivery-api/protected-content-in-the-delivery-api.md)
   * [Property expansion and limiting](reference/content-delivery-api/property-expansion-and-limiting.md)
+* TUTORIALS:
+  * [Add Google Authentication (Users)](tutorials/add-google-authentication.md)
 
 ### Breaking Changes
 
 Some breaking changes have been introduced in the Umbraco 13 Release Candidate, you can find the list of breaking changes in the [Version Specific Upgrades](fundamentals/setup/upgrading/version-specific/) article.
-
-test
