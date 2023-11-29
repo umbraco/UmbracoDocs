@@ -4,9 +4,6 @@ In this section, we have summarized the changes to Buckaroo Payment Provider for
 
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
-{% hint style="info" %}
-For details of releases for **Buckaroo Payment Provider for Umbraco Commerce**, refer to the [Change log file on Github](../../changelog-archive/buckaroo.md).
-{% endhint %}
 
 ## Release History
 
