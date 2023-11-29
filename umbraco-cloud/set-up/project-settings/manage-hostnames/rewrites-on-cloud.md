@@ -39,6 +39,7 @@ One approach for this is to add a new rewrite rule to the `<system.webServer><re
     <add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
     <add input="{REQUEST_URI}" negate="true" pattern="^/DependencyHandler.axd" />
     <add input="{REQUEST_URI}" negate="true" pattern="^/App_Plugins" />
+    <add input="{REQUEST_URI}" negate="true" pattern="^/sb" /> <!-- Don't redirect Smidge Bundle -->
     <add input="{REQUEST_URI}" negate="true" pattern="localhost" />
   </conditions>
   <action type="Redirect" url="http://<your actual domain here>.com/{R:0}"
