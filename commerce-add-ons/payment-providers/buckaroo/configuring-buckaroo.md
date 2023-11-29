@@ -15,11 +15,9 @@ You can sign up in 2 different ways:
 
 ### Test & Live mode
 
-When logged in to the [Buckaroo Dashboard](https://plaza.buckaroo.nl/) it is important to know that there are two modes you can view data and perform tasks under. These are **Test mode** and **Live mode**.
-
-**Test mode** allows you to perform test transactions to ensure your solution is set up correctly.
-
-**Live mode** is where real-life transactions will take place.
+When logged in to the [Buckaroo Dashboard](https://plaza.buckaroo.nl/) it is important to know that there are two modes you can view data and perform tasks under. These are **Test mode** and **Live mode**:
+- **Test mode** allows you to perform test transactions to ensure your solution is set up correctly.
+- **Live mode** is where real-life transactions will take place.
 
 In order to enable test mode, see [Buckaroo's docs](https://docs.buckaroo.io/docs/test-transactions#how-to-make-a-test-transaction).
 ![Enable test mode.](../media/buckaroo/enable-test-mode.png)
