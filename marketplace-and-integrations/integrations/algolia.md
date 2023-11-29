@@ -113,6 +113,8 @@ The list of default properties consists of:
 
 Indexing the content for Algolia is based on the `IDataEditor.PropertyIndexValueFactory` property from Umbraco CMS, the indexed value of the property being retrieved using the `GetIndexValues` method.
 
+The integration uses the same conversion process as Umbraco CMS uses for Examine, and apply a custom converter afterwards.
+
 The [`ContentBuilder`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Search.Algolia/Builders/ContentRecordBuilder.cs) is responsible for creating the record object that will be pushed to _Algolia_ and the [`AlgoliaSearchPropertyIndexValueFactory`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Search.Algolia/Services/AlgoliaSearchPropertyIndexValueFactory.cs) implementation of `IAlgoliaSearchPropertyIndexValueFactory` will return the property value.
 
 To customize the returned value from Umbraco CMS you would need to use a custom converter specific to the particular indexed Umbraco property editor.
