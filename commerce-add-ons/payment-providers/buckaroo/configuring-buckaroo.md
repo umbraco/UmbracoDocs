@@ -19,7 +19,7 @@ When logged in to the [Buckaroo Dashboard](https://plaza.buckaroo.nl/) it is imp
 - **Test mode** allows you to perform test transactions to ensure your solution is set up correctly.
 - **Live mode** is where real-life transactions will take place.
 
-In order to enable test mode, see [Buckaroo's docs](https://docs.buckaroo.io/docs/test-transactions#how-to-make-a-test-transaction).
+In order to enable test mode, you can check the [Buckaroo documentation](https://docs.buckaroo.io/docs/test-transactions#how-to-make-a-test-transaction).
 ![Enable test mode.](../media/buckaroo/enable-test-mode.png)
 
 For each of these modes, multiple settings need to be configured.
