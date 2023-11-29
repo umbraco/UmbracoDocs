@@ -120,7 +120,7 @@ consumerElement.consumeContext(MY_ADDITIONAL_API_TOKEN, (context) => {
 });
 ```
 
-The consumption of the Additional API will never happen as the token uses the same Context Alias as MY_API_TOKEN. That means the request will never go further up than its first encounter with this Context Alias. Securing that the addition was of this Context has to be local to the nearest present API of that Context Alias.
+The consumption of the Additional API will never happen as the token uses the same Context Alias as `MY_API_TOKEN`. That means the request will never go further up than its first encounter with this Context Alias. Securing that the addition was of this Context has to be local to the nearest present API of that Context Alias.
 
 ### **Context Token with a Type Discriminator**
 
