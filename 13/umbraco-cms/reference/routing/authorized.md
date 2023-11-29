@@ -33,7 +33,7 @@ For more information on authenticated/authorized controllers & attributes see th
 When you create a controller that inherits from `Umbraco.Cms.Web.Common.Controllers.UmbracoAuthorizedController` you need to explicitly define a route.
 Defining a route is done with the standard .NET Core MVC routing practices, however there is a handy extension method on the `IEndpointRouteBuilder` to help you.
 
-When creating custom routes you can either do it directly in the `Startup.cs` files, or with a pipeline filter in a composer which looks something like:
+When creating custom routes you can either do it directly in the `Program.cs` files, or with a pipeline filter in a composer which looks something like:
 
 ```csharp
 public class MyControllerComposer : IComposer

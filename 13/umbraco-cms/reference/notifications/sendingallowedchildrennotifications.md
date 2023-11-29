@@ -19,7 +19,7 @@ namespace Umbraco.Docs.Samples.Web.Notifications
         {
             const string contentIdKey = "contentId";
 
-            // Try get the id from the content item in the backoffice 
+            // Try get the id from the content item in the backoffice
             var queryStringCollection = HttpUtility.ParseQueryString(notification.UmbracoContext.OriginalRequestUrl.Query);
 
             if (!queryStringCollection.ContainsKey(contentIdKey))
@@ -68,15 +68,13 @@ namespace Umbraco.Docs.Samples.Web.Notifications
 You also need to register this notification handler. You can achieve this by updating the `Startup` class like:
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()             
-        .AddWebsite()
-        .AddComposers()
-        .AddNotificationHandler<SendingAllowedChildrenNotification, SendingAllowedChildrenNotificationHandler>()
-        .Build();
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .AddNotificationHandler<SendingAllowedChildrenNotification, SendingAllowedChildrenNotificationHandler>()
+    .Build();
 ```
 
 {% hint style="info" %}

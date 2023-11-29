@@ -127,18 +127,16 @@ namespace Umbraco.Docs.Samples.Web.Stylesheets_Javascript
 See below for the different [Bundling Options](stylesheets-javascript.md#bundling-options).
 {% endhint %}
 
-**Step 2:** Register the `INotificationHandler` in the `ConfigureServices` of `Startup.cs`
+**Step 2:** Register the `INotificationHandler` in the `Program.cs` file.
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()
-        .AddWebsite()
-        .AddComposers()
-        .AddNotificationHandler<UmbracoApplicationStartingNotification, CreateBundlesNotificationHandler>()
-        .Build();
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .AddNotificationHandler<UmbracoApplicationStartingNotification, CreateBundlesNotificationHandler>()
+    .Build();
 ```
 
 **Step 3:** Render the bundles by the bundle name in a view template file using the Smidge TagHelper:

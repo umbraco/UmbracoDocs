@@ -94,20 +94,16 @@ namespace RoutingDocs.Extensions
 }
 ```
 
-Then invoke it in `ConfigureServices` in the `Startup.cs` file:
+Then invoke in the `Program.cs` file:
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-#pragma warning disable IDE0022 // Use expression body for methods
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()
-        .AddWebsite()
-        .AddComposers()
-        .AddCustomContentFinders()
-        .Build();
-#pragma warning restore IDE0022 // Use expression body for methods
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .AddCustomContentFinders()
+    .Build();
 ```
 
 #### Composer
@@ -162,7 +158,7 @@ namespace RoutingDocs.ContentFinders
             _domainService = domainService;
             _umbracoContextAccessor = umbracoContextAccessor;
         }
-        
+
         public Task<bool> TryFindContent(IPublishedRequestBuilder contentRequest)
         {
             // Find the root node with a matching domain to the incoming request
@@ -204,19 +200,17 @@ namespace RoutingDocs.ContentFinders
 }
 ```
 
-You can configure Umbraco to use your own implementation in the `ConfigureServices` method of the `Startup` class in `Startup.cs`:
+You can configure Umbraco to use your own implementation in the `Program.cs` file:
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()
-        .AddWebsite()
-        .AddComposers()
-        // If you need to add something Umbraco specific, do it in the "AddUmbraco" builder chain, using the IUmbracoBuilder extension methods.
-        .SetContentLastChanceFinder<RoutingDocs.ContentFinders.My404ContentFinder>()
-        .Build();
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+     // If you need to add something Umbraco specific, do it in the "AddUmbraco" builder chain, using the IUmbracoBuilder extension methods.
+    .SetContentLastChanceFinder<RoutingDocs.ContentFinders.My404ContentFinder>()
+    .Build();
 ```
 
 {% hint style="warning" %}

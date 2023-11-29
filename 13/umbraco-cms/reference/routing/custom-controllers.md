@@ -70,7 +70,7 @@ If you prefer to use an async controller your need to override both the sync and
 ```csharp
 public class ProductPageController : RenderController
 {
-       
+
     [NonAction]
     public sealed override IActionResult Index() => throw new NotImplementedException();
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
@@ -251,11 +251,11 @@ namespace My.Website
             // set our custom properties
             var productViewModel = new MyProductViewModel(CurrentPage, new PublishedValueFallback(_serviceContext, _variationContextAccessor))
             {
-                StockLevel = 4, 
+                StockLevel = 4,
                 ProductDistributors = new List<Distributor>()
             };
 
-            
+
             // return our custom ViewModel
             return CurrentTemplate(productViewModel);
 
@@ -350,7 +350,7 @@ To wire up a concrete instance of IMadeUpProductService, use a composer:
             public void Compose(IUmbracoBuilder builder)
             {
                 builder.Services.AddUnique<IMadeUpProductService, MadeUpProductService>();
-             
+
             }
         }
     }
@@ -362,7 +362,7 @@ See [Composing](../../implementation/composing.md) for further information.
 
 You can replace Umbraco's default implementation of RenderController with your own custom controller for all MVC requests. This is possible by assigning your own default controller type in the Umbraco setup during initialization.
 
-You can achieve this by updating the options for `UmbracoRenderingDefaultsOptions` in the `ConfigureServices` method in the `Startup.cs` class.
+You can achieve this by updating the options for `UmbracoRenderingDefaultsOptions` in `Program.cs`.
 
 First of all, you have to create your own controller. Your custom implementation of RenderController should either inherit from the core `RenderController` as in the examples above or implement the `IRenderController` interface.
 
@@ -383,34 +383,31 @@ Or inherit from `RenderController`
 ```csharp
 public class MyRenderController : RenderController
 {
-    public MyRenderController(ILogger<RenderController> logger, ICompositeViewEngine compositeViewEngine, IUmbracoContextAccessor umbracoContextAccessor) 
+    public MyRenderController(ILogger<RenderController> logger, ICompositeViewEngine compositeViewEngine, IUmbracoContextAccessor umbracoContextAccessor)
         : base(logger, compositeViewEngine, umbracoContextAccessor)
     {
     }
 
     public override IActionResult Index()
     {
-        // Add some custom logic here. 
+        // Add some custom logic here.
         return CurrentTemplate(CurrentPage);
     }
 }
 ```
 
-The last step is to configure Umbraco to use your implementation. You can do that in the `ConfigureServices` method in the `Startup.cs` class.
+The last step is to configure Umbraco to use your implementation. You can do that in the `Program.cs` class.
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()             
-        .AddWebsite()
-        .AddComposers()
-        .Build();
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .Build();
 
-    // Configure Umbraco Render Controller Type
-    services.Configure<UmbracoRenderingDefaultsOptions>(c =>
-    {
-        c.DefaultControllerType = typeof(MyRenderController);
-    });
-}
+builder.Services.Configure<UmbracoRenderingDefaultsOptions>(c =>
+{
+    c.DefaultControllerType = typeof(MyRenderController);
+});
 ```

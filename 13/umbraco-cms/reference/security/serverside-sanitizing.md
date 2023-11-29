@@ -32,7 +32,7 @@ As you can see this specific implementation doesn't do a whole lot, but the `San
 
 Now that you've added your own custom `IHtmlSanitizer` you must register it in the container to replace the existing NoOp sanitizer.
 
-You can register it directly in the `Startup.cs`, for instance using an extension method on the `IUmbracoBuilder`:
+You can register it directly in the `Program.cs`, for instance using an extension method on the `IUmbracoBuilder`:
 
 Extension method:
 
@@ -57,17 +57,13 @@ namespace MySite.HtmlSanitization
 Calling the extension method:
 
 ```csharp
-        public void ConfigureServices(IServiceCollection services)
-        {
-#pragma warning disable IDE0022 // Use expression body for methods
-            services.AddUmbraco(_env, _config)
-                .AddBackOffice()
-                .AddWebsite()
-                .AddComposers()
-                .AddHtmlSanitizer() // Call you extension method here.
-                .Build();
-#pragma warning restore IDE0022 // Use expression body for methods
-        }
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .AddHtmlSanitizer() // Call you extension method here.
+    .Build();
 ```
 
 Or you can use a Composer:

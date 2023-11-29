@@ -139,7 +139,7 @@ namespace MyApp
                                 //Obtained from the AZURE AD B2C WEB APP
                                 options.ClientId = "YOURCLIENTID";
                                 //Obtained from the AZURE AD B2C WEB APP
-                                options.ClientSecret = "YOURCLIENTSECRET"; 
+                                options.ClientSecret = "YOURCLIENTSECRET";
 
                                 options.SaveTokens = true;
                             });
@@ -156,22 +156,18 @@ namespace MyApp
 Ensure to replace `YOURCLIENTID` and `YOURCLIENTSECRET` in the code with the values from the Azure AD tenant.
 {% endhint %}
 
-4. Add the Members authentication configuration to the `ConfigureServices` method in the `Startup.cs` file:
+4. Add the Members authentication configuration in the `Program.cs` file:
 
-{% code title="Startup.cs" lineNumbers="true" %}
+{% code title="Program.cs" lineNumbers="true" %}
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()
-        .AddWebsite()
-        .AddComposers()
-
-        //Add Members ConfigureAuthentication
-        .ConfigureAuthenticationMembers()
-
-        .Build();
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    //Add Members ConfigureAuthentication
+    .ConfigureAuthenticationMembers()
+    .Build();
 ```
 {% endcode %}
 

@@ -8,34 +8,26 @@ _Documentation about how to setup your own custom controllers and routes that ne
 
 ## Where to put your routing logic?
 
-There's two places you can specify your routing, depending on whether it's in the context of a package, or your own site. If it's your own site you can do it in the `Configure` method of `Startup.cs` within the `WithEndpoints` method call like so:
+There's two places you can specify your routing, depending on whether it's in the context of a package, or your own site. If it's your own site you can do it in the `Program.cs` file, within the `WithEndpoints` method call like so:
 
 ```csharp
-public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-{
-    if (env.IsDevelopment())
+app.UseUmbraco()
+    .WithMiddleware(u =>
     {
-        app.UseDeveloperExceptionPage();
-    }
-    
-    app.UseUmbraco()
-        .WithMiddleware(u =>
-        {
-            u.WithBackOffice();
-            u.WithWebsite();
-        })
-        .WithEndpoints(u =>
-        {
-            // This is where to put the custom routing
+        u.UseBackOffice();
+        u.UseWebsite();
+    })
+    .WithEndpoints(u =>
+    {
+        // This is where to put the custom routing
 
-            u.UseInstallerEndpoints();
-            u.UseBackOfficeEndpoints();
-            u.UseWebsiteEndpoints();
-        });
-}
+        u.UseInstallerEndpoints();
+        u.UseBackOfficeEndpoints();
+        u.UseWebsiteEndpoints();
+    });
 ```
 
-If you're creating a package you won't have access to the `Startup.cs` file, so instead you must use a composer, for an example of this, see the example below.
+If you're creating a package you won't have access to the `Program.cs` file, so instead you must use a composer, for an example of this, see the example below.
 
 ## User defined routes
 
@@ -81,7 +73,7 @@ namespace RoutingDocs.Controllers
             ICompositeViewEngine compositeViewEngine)
             : base(logger, compositeViewEngine)
         { }
-        
+
         public IPublishedContent FindContent(ActionExecutingContext actionExecutingContext)
         { }
     }
@@ -140,7 +132,7 @@ public class Product : ContentModel
     public Product(IPublishedContent content) : base(content)
     {
     }
-    
+
     public string Sku { get; set; }
     public IEnumerable<string> AvailableStores { get; set; }
 }
@@ -213,7 +205,7 @@ public IPublishedContent FindContent(ActionExecutingContext actionExecutingConte
                             return productRoot;
                         }
                  }
-            }           
+            }
 
             return productRoot;
         }
@@ -225,39 +217,31 @@ public IPublishedContent FindContent(ActionExecutingContext actionExecutingConte
 
 We start off by getting our product root using the `UmbracoContext` to get it based off its id. Next we need to figure out what action is being requested. To do this we cast the `actionExecutingContext.ActionDescriptor` to a `ControllerActionDescriptor` and use its `ActionName` propperty. If the action name is index, we return the product root. If it's product, we try to get the SKU from the route value `id`. Then we try to find the child node which matches the SKU and return that.
 
-There's only one last thing to do. We need to register our shop controller. If you're creating a controller for your own site you can do it in the `Configure` method of `Startup.cs` like so:
+There's only one last thing to do. We need to register our shop controller. If you're creating a controller for your own site you can do it in the `Program.cs` like so:
 
 ```csharp
-public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-{
-    if (env.IsDevelopment())
+app.UseUmbraco()
+    .WithMiddleware(u =>
     {
-        app.UseDeveloperExceptionPage();
-    }
-    
-    app.UseUmbraco()
-        .WithMiddleware(u =>
-        {
-            u.WithBackOffice();
-            u.WithWebsite();
-        })
-        .WithEndpoints(u =>
-        {
-            u.EndpointRouteBuilder.MapControllerRoute(
+        u.UseBackOffice();
+        u.UseWebsite();
+    })
+    .WithEndpoints(u =>
+    {
+        u.EndpointRouteBuilder.MapControllerRoute(
                 "Shop Controller",
                 "/shop/{action}/{id?}",
                 new {Controller = "Shop", Action = "Index"});
 
-            u.UseInstallerEndpoints();
-            u.UseBackOfficeEndpoints();
-            u.UseWebsiteEndpoints();
-        });
-}
+        u.UseInstallerEndpoints();
+        u.UseBackOfficeEndpoints();
+        u.UseWebsiteEndpoints();
+    });
 ```
 
 As you can see there's nothing Umbraco specific abouth the controller routing, it's using the default `MapController` route of the `EndpointRouteBuilder`, we give our mapping a name, a pattern for the controller and some default values, so if no action is specified it will default to `Index`.
 
-If you're creating a package you won't have access to the `Startup.cs`, so instead you can use a composer with an `UmbracoPipelineFilter` like so:
+If you're creating a package you won't have access to the `Program.cs`, so instead you can use a composer with an `UmbracoPipelineFilter` like so:
 
 ```csharp
 using Microsoft.AspNetCore.Builder;
@@ -306,10 +290,10 @@ Define your route as before, specifying the correct client type route:
 });
 ```
 
-You will need to configure your route request options within your **Startup.cs** class. For single routes:
+You will need to configure your route request options within your **Program.cs** class. For single routes:
 
 ```csharp
-services.Configure<UmbracoRequestOptions>(options =>
+builder.Services.Configure<UmbracoRequestOptions>(options =>
 {
     options.HandleAsServerSideRequest = httpRequest => httpRequest.Path.StartsWithSegments("/sitemap.xml");
 });
@@ -318,7 +302,7 @@ services.Configure<UmbracoRequestOptions>(options =>
 Or it can handle multiple routes:
 
 ```csharp
-services.Configure<UmbracoRequestOptions>(options =>
+builder.Services.Configure<UmbracoRequestOptions>(options =>
 {
     string[] allowList = new[] {"/sitemap.xml", ...};
     options.HandleAsServerSideRequest = httpRequest =>
@@ -372,28 +356,20 @@ public IActionResult Product(string id)
 Now all we need to do is change our routing to use `EndpointRouteBuilder.MapControllers();` instead of adding a specific route.
 
 ```csharp
-public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-{
-    if (env.IsDevelopment())
+app.UseUmbraco()
+    .WithMiddleware(u =>
     {
-        app.UseDeveloperExceptionPage();
-    }
-    
-    app.UseUmbraco()
-        .WithMiddleware(u =>
-        {
-            u.WithBackOffice();
-            u.WithWebsite();
-        })
-        .WithEndpoints(u =>
-        {
-            u.EndpointRouteBuilder.MapControllers();
+        u.UseBackOffice();
+        u.UseWebsite();
+    })
+    .WithEndpoints(u =>
+    {
+        u.EndpointRouteBuilder.MapControllers();
 
-            u.UseInstallerEndpoints();
-            u.UseBackOfficeEndpoints();
-            u.UseWebsiteEndpoints();
-        });
-}
+        u.UseInstallerEndpoints();
+        u.UseBackOfficeEndpoints();
+        u.UseWebsiteEndpoints();
+    });
 ```
 
 This will give us routing that's similar to what we have in the other example. It's worth noting that there's no defaults when using attribute routing, so to allow our index action to be accessed through both `/shop` and `/shop/index`, we add two attributes, specifying both routes individually.
@@ -496,7 +472,7 @@ The Umbraco magic will now instead happen where we route the controller, here we
             {
                 case nameof(ShopController.Index):
                     return productRoot;
-                
+
                 case nameof(ShopController.Product):
                     // Get the SKU/Id from the route values
                     if (actionExecutingContext.ActionArguments.TryGetValue("id", out var sku))

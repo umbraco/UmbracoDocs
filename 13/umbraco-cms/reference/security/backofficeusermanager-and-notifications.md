@@ -16,20 +16,13 @@ This may be required if you want to extend the functionality of the BackOfficeUs
 You can replace the BackOfficeUserManager in the startup class by using the `SetBackOfficeUserManager` extension on the `IUmbracoBuilder`.
 
 ```csharp
-public class Startup
-{
-   ...
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddUmbraco(_env, _config)
-            .AddBackOffice()
-            .AddWebsite()
-            .AddComposers()
-            .SetBackOfficeUserManager<CustomBackOfficeUserManager>()
-            .Build();
-    }
-  ...
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .SetBackOfficeUserManager<CustomBackOfficeUserManager>()
+    .Build();
 ```
 
 You can then implement your custom `BackOfficeUserManager`, like this.
