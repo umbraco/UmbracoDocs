@@ -61,5 +61,4 @@ Packages zip files can contain:
 * Media
 
 {% hint style="info" %}
-If you want to include media in your package, you must select it in both the "Media" section and the "Package Files" section under "Path to file"
-{% endhint %}
+To include media in your package, select it in the "Media" section. Additionally, choose it in the "Package Files" section under "Path to file."{% endhint %}
