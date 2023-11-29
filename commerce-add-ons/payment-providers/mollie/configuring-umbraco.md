@@ -34,7 +34,7 @@ The following steps are handled within the payment method editor in the Umbraco 
 
 | Name                                    | Description                                                                                    |
 | --------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| Continue URL                            | The URL of the page to navigate to after payment is successful - e.g. `/confirmation/`. Without this, you will receive a nu         |
+| Continue URL                            | The URL of the page to navigate to after payment is successful - e.g. `/confirmation/`. Without a value set, buyers will receive a null exception after they finish paying. |
 | Cancel URL                              | The URL of the page to navigate to if the customer cancels the payment - e.g. `/cart/`         |
 | Error URL                               | The URL of the page to navigate to if there is an error with the payment - e.g. `/error/`      |
 | Billing Address (Line 1) Property Alias | **\[Mandatory\]** The alias of the property containing line 1 of the billing address. Set it to `billingAddressLine1`.|
