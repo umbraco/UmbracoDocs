@@ -13,7 +13,7 @@ The following steps are all handled through the Umbraco backoffice.
 
 1. Navigate to **Settings > Commerce > Stores > {Store Name} > Payment Methods** section.
 2. Select the **Create Payment Method** button to create a new payment method.
-3. Choose **Buckaroo Checkout** from the list of available payment providers.
+3. Choose **Buckaroo One Time Payment** from the list of available payment providers.
 
 ![The "Create Payment Method" dialog in the Commerce section of the Umbraco CMS backoffice.](../media/buckaroo/umbraco/create-new-payment-method.png)
 
