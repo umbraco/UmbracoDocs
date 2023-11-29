@@ -9,9 +9,10 @@ description: >-
 
 # Tracking References
 
-Property editors can be extended further to track entity references that may be selected or referenced inside the property editor. For example in the core of the CMS we have added this to several property editors.
+Property editors can be extended further to track entity references that may be selected or referenced inside the property editor. For example in the core of the CMS we have added this to numerous property editors.
 
-A good example of this is the Media Picker where the CMS stores a reference to what media item was picked and thus allows to see what content nodes are using a media item. This avoids it being accidentally deleted if it is being used.
+
+A good example of this is the Media Picker. The CMS stores a reference to the selected media item, enabling the identification of content nodes that use that particular media item. This avoids it being accidentally deleted if it is being used.
 
 When a content node is saved it will save the entity references as relations.
 
@@ -42,7 +43,7 @@ When a content node is saved it will save the entity references as relations.
 
 ## Example
 
-The following example shows how to implement tracking for the inbuilt CMS property editor **Content Picker**, where it will always add a specific media reference regardless of what value is picked in the content picker. In your own implementations, you will need to parse the value stored from the property editor you are implmenting and find any references to picked items in order to track their references.
+The following example shows how to implement tracking for the inbuilt CMS property editor **Content Picker**. It will always add a specific media reference, regardless of what value is picked in the content picker. In your own implementations, you will need to parse the value stored from the property editor you are implementing. You will also need to find any references to picked items in order to track their references.
 
 {% tabs %}
 {% tab title="Latest version" %}
