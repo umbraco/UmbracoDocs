@@ -115,14 +115,70 @@ Indexing the content for Algolia is based on the `IDataEditor.PropertyIndexValue
 
 The [`ContentBuilder`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Search.Algolia/Builders/ContentRecordBuilder.cs) is responsible for creating the record object that will be pushed to _Algolia_ and the [`AlgoliaSearchPropertyIndexValueFactory`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.Search.Algolia/Services/AlgoliaSearchPropertyIndexValueFactory.cs) implementation of `IAlgoliaSearchPropertyIndexValueFactory` will return the property value.
 
-The current implementation contains a custom converter for the `Umbraco.MediaPicker3` property editor.
+To customize the returned value from Umbraco CMS you would need to use a custom converter specific to the particular indexed Umbraco property editor.
+
+To extend the behavior, there are available options:
+
+1. Version 2.0.0 and up 
+
+Starting with version 2.0.0, we provide a collection of converters for the following Umbraco property editors:
+- `Umbraco.TrueFalse`
+- `Umbraco.Decimal`
+- `Umbraco.Integer`
+- `Umbraco.MediaPicker3`
+- `Umbraco.Tags`
+
+To create a new converter one should implement the `IAlgoliaIndexValueConverter` interface, specify the name of the property editor and add the new implementation. The new converter will then need to be added to the `Algolia Converters` collection.
+
+To do so, you will need to follow these steps:
+
+a. Create the new converter
+```csharp
+ public class MyTagsConverter : IAlgoliaIndexValueConverter
+ {
+     public string Name => Core.Constants.PropertyEditors.Aliases.Tags;
+
+     public object ParseIndexValues(IEnumerable<object> indexValues)
+     {
+         return new[] { "Umbraco", "is", "awesome" };
+     }
+ }
+```
+b. Replace the default converter (if one exists) with the new one
+```csharp
+public static class MyUmbracoExtensions
+{
+    public static IUmbracoBuilder AddMyAlgoliaConverters(this IUmbracoBuilder builder)
+    {
+        builder.AlgoliaConverters()
+                .Remove<UmbracoTagsConverter>()
+                .Append<MyTagsConverter>();
+
+        return builder;
+    }
+}
+```
+c. Inject custom converters
+```csharp
+services.AddUmbraco(_env, _config)
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddMyAlgoliaConverters()
+    .AddComposers()
+    .Build();
+```
+
+2. Up to version 1.5.0
+
+These implementations contain a custom converter for the `Umbraco.MediaPicker3` property editor.
 
 If a different implementation is required, you will need to follow these steps:
 
-1. Inherit from `AlgoliaSearchPropertyIndexValueFactory`
-2. Override the `GetValue` method
-3. Add custom handlers to the [`Converters`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/fe5b17be519fff2c2420966febe73c8ed61c9374/src/Umbraco.Cms.Integrations.Search.Algolia/Services/AlgoliaSearchPropertyIndexValueFactory.cs#L26) dictionary
-4. Register your implementation in the composer
+a. Inherit from `AlgoliaSearchPropertyIndexValueFactory`
+b. Override the `GetValue` method
+c. Add custom handlers to the [`Converters`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/fe5b17be519fff2c2420966febe73c8ed61c9374/src/Umbraco.Cms.Integrations.Search.Algolia/Services/AlgoliaSearchPropertyIndexValueFactory.cs#L26) dictionary
+d. Register your implementation in the composer
 
 The following code sample demonstrates this approach:
 
