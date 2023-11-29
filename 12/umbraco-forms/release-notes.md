@@ -18,6 +18,11 @@ In this section, you can find the release notes for each version of Umbraco Form
 
 <summary>Version 12</summary>
 
+#### [12.2.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.0) (December 7th 2023)
+
+* All updates listed under 12.2.0-rc1
+* Resolved an issue where a workflow wasn't executed when conditionally based on a checkbox value [#1124](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1124).
+
 #### [12.2.0-rc1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.0) (November 23rd 2023)
 
 * Added an overload to the `RenderUmbracoFormDependencies` HTML helper method to allow provision of a dictionary parameter containing attributes to use when rendering script references. Also a new configuration option `DisableClientSideValidationDependencyCheck` to disable the client-side validation framework check. This is necessary when using the overload to provide an `async` attribute. [#1074](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1074).
