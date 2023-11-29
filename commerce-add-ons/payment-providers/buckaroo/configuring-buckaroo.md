@@ -9,11 +9,9 @@ description: >-
 
 ## Step 1: Sign up & Sign in
 
-If you haven't done so yet, head on over to the [Buckaroo Dashboard](https://www.buckaroo.eu/large-corporations/start) to register for a Buckaroo account.
-
-Or
-
-You can request a test account via this form: https://www.buckaroo.eu/large-corporations/solutions/request-form
+You can sign up in 2 different ways:
+1. For a business account, head over to the [Buckaroo site](https://www.buckaroo.eu/large-corporations/start) to register for a Buckaroo account.
+2. For a test account, you can fill in a request form: https://www.buckaroo.eu/large-corporations/solutions/request-form
 
 ### Test & Live mode
 
