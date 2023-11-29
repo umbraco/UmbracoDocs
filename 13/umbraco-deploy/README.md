@@ -28,6 +28,12 @@ Below you will find a list of new and updated articles for the Umbraco 13 Releas
 
 The list will be updated as more articles have been created and updated.
 
+* Table of Contents:
+  * [Configuration](deploy-settings.md)
+  * [Release notes](release-notes.md)
+* UPGRADING:
+  * [Version Specific Upgrade Details](upgrades/version-specific.md)
+
 ### Breaking Changes
 
 Some breaking changes have been introduced in the Umbraco 13 Release Candidate, you can find the list of breaking changes in the [Version Specific Upgrades](upgrades/version-specific.md#version-13) article.
