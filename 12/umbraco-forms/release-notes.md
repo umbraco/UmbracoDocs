@@ -22,6 +22,7 @@ In this section, you can find the release notes for each version of Umbraco Form
 
 * All updates listed under 12.2.0-rc1
 * Resolved an issue where a workflow wasn't executed when conditionally based on a checkbox value [#1124](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1124).
+* Added a missing language key for the Forms dashboard [#1125](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1125).
 
 #### [12.2.0-rc1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.0) (November 23rd 2023)
 
