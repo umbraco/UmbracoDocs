@@ -47,6 +47,8 @@ When generating a payment request form, Umbraco Commerce sets the callback URL t
 2. Then head to Settings > Websites > Push settings > Scroll. Then `Select push content type` and set it to `json`.
 
 {% hint style="info" %}
-When testing the webhook, if you use a service like ngrok to forward requests from a public domain to your localhost server. In that case, you need to set `Webhook hostname for test mode` value to be the public domain.
+
+When testing the webhook, you might use a service like ngrok to forward requests from a public domain to your localhost server. Then you need to set `Webhook hostname for test mode` value to be the public domain in order for it to work.
+
 {% endhint %}
 
