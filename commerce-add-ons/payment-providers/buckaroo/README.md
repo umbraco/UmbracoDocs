@@ -4,7 +4,7 @@ description: Getting Started with the Buckaroo payment provider for Umbraco Comm
 
 # Overview
 
-The Buckaroo payment provider adds functionality to capture payments via the [Buckaroo](https://buckaroo.com) payment gateway. It is a fully featured payment provider allowing full control of the payment flow directly from the Umbraco Commerce backoffice.
+The Buckaroo payment provider adds functionality to capture payments via the [Buckaroo](https://www.buckaroo.eu/) payment gateway. It is a fully featured payment provider allowing full control of the payment flow directly from the Umbraco Commerce backoffice.
 
 ## [Install Buckaroo](../install-payment-providers.md)
 
