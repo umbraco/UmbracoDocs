@@ -20,6 +20,10 @@ Under each major version, you can find details about minor and patch releases fo
 
 <summary>Version 12</summary>
 
+[**12.1.0**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.0) **(December 11th  2023)**
+
+* All items from 12.1.0-rc1.
+
 [**12.1.0-rc1**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.0) **(November 27th  2023)**
 
 * Added feature of [content import and export with migrations](./deployment-workflow/import-export.md).
@@ -165,6 +169,10 @@ Under each major version, you can find details about minor and patch releases fo
 <details>
 
 <summary>Version 10</summary>
+
+[**10.3.0**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.0) **(December 11th  2023)**
+
+* All items from 10.3.0-rc1.
 
 [**10.3.0-rc1**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.0) **(November 27th 2023)**
 
@@ -434,6 +442,10 @@ Under each major version, you can find details about minor and patch releases fo
 <details>
 
 <summary>Version 4</summary>
+
+[**4.9.0**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.9.0) **(December 11th  2023)**
+
+* All items from 4.9.0-rc1.
 
 [**4.9.0-rc1**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.9.0) **(November 27th 2023)**
 
