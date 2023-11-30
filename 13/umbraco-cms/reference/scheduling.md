@@ -275,7 +275,7 @@ These notifications are there to support low-level debugging of background jobs 
 
 ### Ignored
 
-The Ignored notification is published when a background job's scheduled is triggered, but of the Umbraco runtime checks prevents it from running.
+The Ignored notification is published when a background job's schedule is triggered, but the Umbraco runtime checks prevent it from running.
 
 This notification is there to support low-level debugging of background jobs to ascertain why they are / are not running. As the runtime checks include runtime state readiness, this event may be triggered during the install phase. Any notification handlers associated with this notification should **also** conduct their own checks before relying on Umbraco services, including database access.
 
