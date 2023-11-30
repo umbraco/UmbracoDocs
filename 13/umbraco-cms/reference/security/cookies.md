@@ -20,7 +20,7 @@ The below cookies are necessary while accessing the Umbraco Backoffice for funct
 The `UMB_SESSION` cookie is secure if you are using HTTPS pages. However, if you wish to secure the cookie in your code, add the following in the `Program.cs` file after `Build();`
 
 ```cs
-services.AddSession(options =>
+builder.Services.AddSession(options =>
     {
         options.Cookie.Name = "UMB_SESSION";
         options.Cookie.HttpOnly = true;
