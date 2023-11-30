@@ -15,8 +15,8 @@ For example the standard Umbraco Core "Content Picker" stores a nodeId as `Strin
 Published property values have four "Values":
 
 - **Source** - The raw data stored in the database, this is generally a `String`
-- **Intermediate** - An object of a type that is appropriate to the property, e.g. a nodeId should be an `Int` or a collection of nodeIds would be an integer array, `Int[]`
-- **Object** - The object to be used when accessing the property using a Published Content API, e.g. UmbracoHelper's `GetPropertyValue<T>` method
+- **Intermediate** - An object of a type that is appropriate to the property, for example a nodeId should be an `Int` or a collection of nodeIds would be an integer array, `Int[]`
+- **Object** - The object to be used when accessing the property using a Published Content API, for example UmbracoHelper's `GetPropertyValue<T>` method
 - **XPath** - The object to be used when the property is accessed by XPath; This should generally be a `String` or an `XPathNodeIterator`
 
 ## Registering PropertyValueConverters
