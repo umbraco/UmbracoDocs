@@ -38,7 +38,7 @@ Be aware you may or may not want this background job to run on all servers. If y
     ServerRole[] ServerRoles = Enum.GetValues<ServerRole>();
     ```
 
-    For more information about server roles, see the [../fundamentals/setup/server-setup/load-balancing#scheduling-and-server-role-election](Load Balancing) documentation.
+    For more information about server roles, see the [Load Balancing](../fundamentals/setup/server-setup/load-balancing#scheduling-and-server-role-election) documentation.
 
 -   `PeriodChanged` - an event you can trigger to tell the background job service that the period has changed. For example, if the period for your job is controlled by a configuration file setting.
 
