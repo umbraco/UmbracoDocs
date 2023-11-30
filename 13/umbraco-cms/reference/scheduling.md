@@ -281,7 +281,10 @@ This notification is there to support low-level debugging of background jobs to 
 
 ### Executing/Executed/Failed
 
-These notifications will be triggered in pairs depending on the success / failure of the job itself. The executing notification is triggered before the job is run. The executed notification is triggered after the job completes. The failed notification is triggered from the catch block if an exception is thrown.
+These notifications will be triggered in pairs depending on the success/failure of the job itself. 
+- The executing notification is triggered before the job is run. 
+- The executed notification is triggered after the job is completed. 
+- The failed notification is triggered from the catch block if an exception is thrown.
 
 For **successful** job runs, the following notifications will be published:
 
