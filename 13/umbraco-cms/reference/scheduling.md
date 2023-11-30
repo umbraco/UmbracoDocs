@@ -279,7 +279,7 @@ The Ignored notification is published when a background job's schedule is trigge
 
 This notification is there to support low-level debugging of background jobs to ascertain why they are/aren't running. As the runtime checks include runtime state readiness, this event may be triggered during the install phase. Any notification handlers associated with this notification should **also** conduct their own checks before relying on Umbraco services, including database access.
 
-### Executing / Executed / Failed
+### Executing/Executed/Failed
 
 These notifications will be triggered in pairs depending on the success / failure of the job itself. The executing notification is triggered before the job is run. The executed notification is triggered after the job completes. The failed notification is triggered from the catch block if an exception is thrown.
 
