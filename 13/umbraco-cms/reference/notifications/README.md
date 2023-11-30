@@ -107,7 +107,7 @@ namespace MySite
 }
 ```
 
-You can then register all these notifications by calling `AddDontShoutNotifications` in the `Program.cs` file or your composer, just like you would `AddNotificationHandler`:
+You can then register all these notifications by calling `AddDontShoutNotifications` in the `Program.cs` file or your composer, like you would `AddNotificationHandler`:
 
 ```csharp
 builder.CreateUmbracoBuilder()

@@ -37,7 +37,7 @@ To use rewrites with Umbraco 9 you have to register the middleware in your `Prog
 </rewrite>
 ```
 
-* In the `Program.cs` file you can add the URL Rewriting Middleware just before the call to `app.UseUmbraco()` and use [`AddIISUrlRewrite`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.rewrite.iisurlrewriteoptionsextensions.addiisurlrewrite?view=aspnetcore-5.0)) to add the rewrite rules from the XML file:
+* In the `Program.cs` file you can add the URL Rewriting Middleware before the call to `app.UseUmbraco()` and use [`AddIISUrlRewrite`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.rewrite.iisurlrewriteoptionsextensions.addiisurlrewrite?view=aspnetcore-5.0)) to add the rewrite rules from the XML file:
 
 ```csharp
 using Microsoft.AspNetCore.Rewrite;

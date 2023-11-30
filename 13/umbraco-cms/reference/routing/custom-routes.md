@@ -27,7 +27,7 @@ app.UseUmbraco()
     });
 ```
 
-If you're creating a package you won't have access to the `Program.cs` file, so instead you must use a composer, for an example of this, see the example below.
+If you're creating a package you won't have access to the `Program.cs` file. Instead you must use a composer, for an example of this, see the example below.
 
 ## User defined routes
 

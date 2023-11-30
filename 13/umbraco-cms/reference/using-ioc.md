@@ -33,7 +33,8 @@ builder.CreateUmbracoBuilder()
 
 ### Registering dependencies in packages
 
-When working with packages, you won't have access to the `Program.cs` file, so instead you must use a [composer](../implementation/composing.md) to register your own dependencies in the container, using the `Services` property, or appropriate extension method, of the `IUmbracoBuilder`:
+When working with packages, you won't have access to the `Program.cs` file, so instead you must use a [composer](../implementation/composing.md) to register your own dependencies in the container.
+Using the `Services` property, or appropriate extension method, of the `IUmbracoBuilder`:
 
 ```csharp
 using IOCDocs.NotificationHandlers;
