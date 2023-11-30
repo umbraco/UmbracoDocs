@@ -63,7 +63,7 @@ Remember to add `Umbraco.Cms.Core.DependencyInjection` and `Microsoft.Extensions
 
 ### Builder extension methods
 
-Depending on your scenario, you may have a lot of dependencies you need to register, in this case, your `Program.cs` or Composer might become cluttered and hard to manage. A great way to manage multiple services is by creating your own custom extension methods for the `IUmbracoBuilder`, this way you can group similar dependencies in extension methods and register them all in as little as a single call:
+Depending on your scenario, you may have a lot of dependencies you need to register. In this case, your `Program.cs` or Composer might become cluttered and hard to manage. A great way to manage multiple services is by creating your own custom extension methods for the `IUmbracoBuilder`. This way you can group similar dependencies in extension methods and register them all in as little as a single call:
 
 ```csharp
 using IOCDocs.NotificationHandlers;
