@@ -271,7 +271,7 @@ The following notifications are available:
 
 The Starting/Started and Stopping/Stopped notification pairs are published when the `RecurringBackgroundJobHostedService` is started or stopped. The start event normally occurs soon after application start as part of the .Net WebHost startup process. Similarly the stop event would happen as part of application shutdown.
 
-These notifications are there to support low-level debugging of background jobs to ensure they are starting / stopping correctly. Due to the timing of the notification, all handlers associated with these notifications should not depend on any Umbraco services, including database access.
+These notifications are there to support low-level debugging of background jobs to ensure they are starting/stopping correctly. Due to the timing of the notification, all handlers associated with these notifications should not depend on any Umbraco services, including database access.
 
 ### Ignored
 
