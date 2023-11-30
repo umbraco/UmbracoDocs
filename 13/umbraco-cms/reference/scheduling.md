@@ -267,7 +267,7 @@ The following notifications are available:
 -   Failed
 -   Ignored
 
-### Start / Stop
+### Start/Stop
 
 The Starting/Started and Stopping/Stopped notification pairs are published when the `RecurringBackgroundJobHostedService` is started or stopped. The start event normally occurs soon after application start as part of the .Net WebHost startup process. Similarly the stop event would happen as part of application shutdown.
 
