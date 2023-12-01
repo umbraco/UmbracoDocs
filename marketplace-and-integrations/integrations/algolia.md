@@ -160,7 +160,7 @@ public static class MyUmbracoExtensions
     }
 }
 ```
-c. Inject custom converters
+3. Inject custom converters
 ```csharp
 services.AddUmbraco(_env, _config)
     .AddBackOffice()
