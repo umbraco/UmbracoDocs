@@ -177,10 +177,10 @@ These implementations contain a custom converter for the `Umbraco.MediaPicker3` 
 
 If a different implementation is required, you will need to follow these steps:
 
-a. Inherit from `AlgoliaSearchPropertyIndexValueFactory`
-b. Override the `GetValue` method
-c. Add custom handlers to the [`Converters`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/fe5b17be519fff2c2420966febe73c8ed61c9374/src/Umbraco.Cms.Integrations.Search.Algolia/Services/AlgoliaSearchPropertyIndexValueFactory.cs#L26) dictionary
-d. Register your implementation in the composer
+1. Inherit from `AlgoliaSearchPropertyIndexValueFactory`
+2. Override the `GetValue` method
+3. Add custom handlers to the [`Converters`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/fe5b17be519fff2c2420966febe73c8ed61c9374/src/Umbraco.Cms.Integrations.Search.Algolia/Services/AlgoliaSearchPropertyIndexValueFactory.cs#L26) dictionary
+4. Register your implementation in the composer
 
 The following code sample demonstrates this approach:
 
