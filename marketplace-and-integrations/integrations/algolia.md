@@ -121,7 +121,7 @@ To customize the returned value from Umbraco CMS you would need to use a custom 
 
 To extend the behavior, there are available options:
 
-1. Version 2.0.0 and up 
+### Version 2.0.0 and up 
 
 Starting with version 2.0.0, we provide a collection of converters for the following Umbraco property editors:
 - `Umbraco.TrueFalse`
