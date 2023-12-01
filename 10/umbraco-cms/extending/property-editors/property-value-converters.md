@@ -15,17 +15,17 @@ For example the standard Umbraco Core "Content Picker" stores a nodeId as `Strin
 Published property values have four "Values":
 
 - **Source** - The raw data stored in the database, this is generally a `String`
-- **Intermediate** - An object of a type that is appropriate to the property, e.g. a nodeId should be an `Int` or a collection of nodeIds would be an integer array, `Int[]`
-- **Object** - The object to be used when accessing the property using a Published Content API, e.g. UmbracoHelper's `GetPropertyValue<T>` method
+- **Intermediate** - An object of a type that is appropriate to the property, for example a nodeId should be an `Int` or a collection of nodeIds would be an integer array, `Int[]`
+- **Object** - The object to be used when accessing the property using a Published Content API, for example UmbracoHelper's `GetPropertyValue<T>` method
 - **XPath** - The object to be used when the property is accessed by XPath; This should generally be a `String` or an `XPathNodeIterator`
 
 ## Registering PropertyValueConverters
 
 PropertyValueConverters are automatically registered when implementing the interface. Any given PropertyEditor can only utilize a single PropertyValueConverter.
 
-If you are implementing a PropertyValueConverter for a PropertyEditor that doesn't already have one, creating the PropertyValueConverter will automatically enable it and no further actions are needed.
+If you are implementing a PropertyValueConverter for a PropertyEditor that doesn't already have one, creating the PropertyValueConverter will automatically enable it. No further actions are needed.
 
-If you are attempting to override an existing PropertyValueConverter (this could be one included with Umbraco or in a package), you will however need to take some additional steps to deregister the existing one to avoid conflicts:
+If you aim to override an existing PropertyValueConverter, possibly from Umbraco or a package, additional steps are necessary. Deregister the existing one to prevent conflicts in this scenario.
 
 ```csharp
 using System.Linq;
@@ -115,13 +115,14 @@ This is the most commonly used cache level and should be your default, unless yo
 
 The property value will be cached until _any_ element (see above) is changed. This means that any change to any page will clear the property value cache. 
 
-This is particularly useful for property values that contain references to other content or elements. For example, the Content Picker uses this cache level to ensure that the Content Picker property values are cleared from the cache whenever the content is updated.
+This is particularly useful for property values that contain references to other content or elements. For example, this cache level is utilized by the Content Picker to clear its property values from the cache upon content updates.
+
 
 #### `PropertyCacheLevel.Snapshot`
 
 The property value will only be cached for the duration of the current _snapshot_.
 
-A snapshot represents a point in time. For example, a snapshot is created for every content request from the frontend. Any property accessed within a snapshot using this cache level will be converted and cached for the duration of the snapshot, and then cleared from the cache again.
+A snapshot represents a point in time. For example, a snapshot is created for every content request from the frontend. When accessing a property in a snapshot using this cache level, it gets converted, cached throughout the snapshot, and later cleared.
 
 For all intents and purposes, think of this cache level as "per request". If your property value should _only_ be cached per request, this is the cache level you should use. Use it with caution, as the added property conversions incur a performance penalty.
 
