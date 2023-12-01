@@ -132,7 +132,7 @@ Starting with version 2.0.0, we provide a collection of converters for the follo
 
 To create a new converter one should implement the `IAlgoliaIndexValueConverter` interface. Then specify the name of the property editor and add the new implementation. The new converter will then need to be added to the `Algolia Converters` collection.
 
-To do so, you will need to follow these steps:
+To do so, follow these steps:
 
 a. Create the new converter
 ```csharp
