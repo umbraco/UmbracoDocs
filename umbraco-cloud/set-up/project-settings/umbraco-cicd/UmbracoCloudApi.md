@@ -135,6 +135,8 @@ By adhering to these guidelines, you ensure that the uploaded content is an exac
 
 The purpose of packaging your content into a ZIP file is to replace the existing content in the Umbraco Cloud repository upon unpackaging. This ensures that the repository is updated with the latest version of your project files.
 
+Make sure your ZIP archive does not contain .git folder. If you're using `.zipignore` file, you can add the following line `.git/*` to exclude it. If you want to ignore all `git` files from your private repository, you can use `.git*` instead, but it ignores your `.gitignore` also.
+
 #### A note about .gitignore
 
 Umbraco Cloud environments are using git internally. This means you should be careful about the .gitignore file you add to the package. If you have “git ignored” build js assets locally, you need to handle this so that this is not being ignored in the cloud repository.
