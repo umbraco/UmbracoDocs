@@ -134,7 +134,7 @@ To create a new converter one should implement the `IAlgoliaIndexValueConverter`
 
 To do so, follow these steps:
 
-a. Create the new converter
+1. Create the new converter
 ```csharp
  public class MyTagsConverter : IAlgoliaIndexValueConverter
  {
