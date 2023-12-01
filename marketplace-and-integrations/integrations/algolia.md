@@ -171,7 +171,7 @@ services.AddUmbraco(_env, _config)
     .Build();
 ```
 
-2. Up to version 1.5.0
+### Up to version 1.5.0
 
 These implementations contain a custom converter for the `Umbraco.MediaPicker3` property editor.
 
