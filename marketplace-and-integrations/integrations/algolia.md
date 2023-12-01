@@ -146,7 +146,7 @@ To do so, follow these steps:
      }
  }
 ```
-b. Replace the default converter (if one exists) with the new one
+2. Replace the default converter (if one exists) with the new one
 ```csharp
 public static class MyUmbracoExtensions
 {
