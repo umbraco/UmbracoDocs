@@ -21,7 +21,9 @@ Please be aware that this feature is currently in beta mode. During this beta pe
 
 To integrate Umbraco Cloud into your CI/CD pipeline, you'll need to make API calls to the following endpoint: `https://api.cloud.umbraco.com.`
 
+{% hint style="warning" %}
 The initial certificate for this DNS is self-signed which can give curl and other tools some issues. We are working on changing this, for now, allowing an insecure connection will make it possible to circumvent this certificate issue.
+{% endhint %}
 
 ### How to enable CI/CD Integrator in the Umbraco Cloud Portal
 
@@ -111,9 +113,9 @@ Part of the returned response will be the actual `deploymentId`. The response fr
 {
     "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
     "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
-    "projectAlias": "cicd-demo-site",
+    "projectAlias": "",
     "deploymentState": "Created",
-    "updateMessage": "Deployment created.",
+    "updateMessage": "",
     "errorMessage": "",
     "created": "2023-05-02T07:16:46.4183912",
     "lastModified": "2023-05-02T07:16:48.8544387",
@@ -137,7 +139,7 @@ The purpose of packaging your content into a ZIP file is to replace the existing
 
 Umbraco Cloud environments are using git internally. This means you should be careful about the .gitignore file you add to the package. If you have “git ignored” build js assets locally, you need to handle this so that this is not being ignored in the cloud repository.
 
-**Note:** If the `.gitignore` file within the ZIP package does not exclude bin/ and obj/ directories, these will also be committed to the Umbraco Cloud repository. It is recommended that Dan and Jesper review and update this workflow accordingly.
+**Note:** If the `.gitignore` file within the ZIP package does not exclude bin/ and obj/ directories, these will also be committed to the Umbraco Cloud repository.
 
 **Best Practice:** If you have frontend assets your local repository's .gitignore file will most likely differ from the one intended for the Umbraco Cloud repository, it's advisable to create a separate .cloud\_gitignore file. Include this file in the ZIP package and rename it to .gitignore before packaging. This ensures that only the necessary files and directories are uploaded and finally committed to the Umbraco Cloud repository.
 
@@ -161,7 +163,7 @@ The response of this call will be the same deployment object (in JSON) as when c
     "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
     "projectAlias": "cicd-demo-site",
     "deploymentState": "Pending",
-    "updateMessage": "Deployment created. Project metadata fetched. File uploaded.",
+    "updateMessage":"Project information set\nDeployment pending\nDownloadUri set",
     "errorMessage": "",
     "created": "2023-05-02T07:16:46.4183912",
     "lastModified": "2023-05-02T07:17:48.8544387",
@@ -193,7 +195,7 @@ The response of this call will be the same deployment object (in JSON) as when c
     "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
     "projectAlias": "cicd-demo-site",
     "deploymentState": "Queued",
-    "updateMessage": "Deployment created. Project metadata fetched. File uploaded. Deployment queued.",
+    "updateMessage": "Project information set\nDeployment pending\nDownloadUri set\nDeployment queued",
     "errorMessage": "",
     "created": "2023-05-02T07:16:46.4183912",
     "lastModified": "2023-05-02T07:18:48.8544387",
@@ -255,7 +257,7 @@ The response from this API call will return the same deployment object in JSON f
     "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
     "projectAlias": "cicd-demo-site",
     "deploymentState": "Completed",
-    "updateMessage": "Deployment created. Project metadata fetched. File uploaded. Deployment queued. Deployment started. Deployment Done",
+    "updateMessage":"Project information set\nDeployment pending\nDownloadUri set\nDeployment queued\nDeployment triggered\nDeployment started\nCheck blocking markers\nCreate updating marker\nGit Clone\nDownload update\nExtract Update\nChecking versions\nDeleting repository files\nCopying files to repository\nNuGet Restore\nDotnet Build\nGit Stage\nGit Commit\nGit Tag\nGit Push\nDelete updating marker\nDeployment successful",
     "errorMessage": "",
     "created": "2023-05-02T07:16:46.4183912",
     "lastModified": "2023-05-02T07:20:48.8544387",
@@ -265,7 +267,11 @@ The response from this API call will return the same deployment object in JSON f
 
 ### Get Deployments
 
-You can retrieve a list of deployments via the API, although currently, this is restricted to only those that have been completed. Future updates will introduce filtering options. The API allows you to limit the number of returned deployments using standard 'take' and 'skip' query parameters. Deployments are listed in descending order based on their creation timestamp. This operation is carried out through a standard HTTP GET request.
+You can retrieve a list of deployments via the API, although currently, this is restricted to only those that have been completed. Future updates will introduce filtering options.
+
+The API allows you to limit the number of returned deployments using standard 'take' and 'skip' query parameters. 
+
+This operation is carried out through a standard HTTP GET request.
 
 To fetch the list of deployments using a curl command, the syntax would be as follows:
 
@@ -279,8 +285,8 @@ response=$(curl -s -X GET $url \
 latestDeploymentId=$(echo $response | jq -r '.deployments[0].deploymentId')
 
 ```
-
 The response from this API call will return a list of deployment objects, formatted in JSON, consistent with the structure used in other API responses.
+Deployments are listed in descending order based on their creation timestamp.
 
 ```json
 [
@@ -289,7 +295,7 @@ The response from this API call will return a list of deployment objects, format
     "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
     "projectAlias": "cicd-demo-site",
     "deploymentState": "Completed",
-    "updateMessage": "Deployment completed. ...",
+    "updateMessage": "...",
     "errorMessage": "",
     "created": "2023-05-02T07:16:46.4183912",
     "lastModified": "2023-05-02T07:18:48.8544387",
@@ -305,7 +311,7 @@ Sometimes updates are done directly on the Umbraco Cloud repository. We encourag
 Using a curl command, fetching the potential differences would look like this:
 
 ```sh
-url="https://apim-dev-global.azure-api.net/projects/$projectId/deployments/$latestCompletedDeploymentId/diff"
+url="https://api.cloud.umbraco.com/v1/projects/$projectId/deployments/$latestCompletedDeploymentId/diff"
 downloadFolder="tmp"
 mkdir -p $downloadFolder # ensure folder exists
 

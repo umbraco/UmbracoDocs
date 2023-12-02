@@ -4,7 +4,7 @@ In this article, you can learn about how Umbraco Forms is handled on Umbraco Clo
 
 Umbraco Forms is a package that is included with your Umbraco Cloud project. It gives you a nice integrated UI, where you can create Forms for your website. The package is built specifically for Umbraco and is maintained by Umbraco HQ.
 
-Read more about the product in the [Umbraco Forms](../../umbraco-forms/overview.md) section.
+Read more about the product in the [Umbraco Forms](https://docs.umbraco.com/umbraco-forms/) documentation.
 
 ## How Forms are handled on Umbraco Cloud
 
@@ -28,9 +28,9 @@ For more information on how to handle content transfer/restores on Umbraco Cloud
 
 ## Upgrades
 
-Umbraco Forms is part of the [auto-upgrades on Umbraco Cloud](../upgrades/). Whenever a new patch is ready for release, we will automatically apply it to your Cloud project. There will be a notification in the Umbraco Cloud Portal at least 5 days before we roll out new versions.
+Umbraco Forms is part of the [auto-upgrades on Umbraco Cloud](../product-upgrades/). Whenever a new patch is ready for release, we will automatically apply it to your Cloud project. There will be a notification in the Umbraco Cloud Portal at least 5 days before we roll out new versions.
 
-To avoid having the auto-upgrades overwrite any of your custom settings, we strongly encourage that you use [config transforms](../set-up/config-transforms.md) when you need custom configuration and [Themes](https://docs.umbraco.com/umbraco-forms/developer/themes) when you need to customize your forms.
+To avoid having the auto-upgrades overwrite any of your custom settings, we strongly encourage that you use [config transforms](../set-up/config-transforms.md) when you need custom configuration. Additionally, use [Themes](https://docs.umbraco.com/umbraco-forms/developer/themes) when you need to customize your forms.
 
 Whenever a new minor version of Umbraco Forms is ready, eg. 10.x or 11.x, you will get the option to apply the upgrade to your project. When your project is eligible to receive the new version, you will see an "_Upgrade available!_" label on your Development environment.
 
@@ -48,7 +48,7 @@ If you want to upgrade to Umbraco 9 and are using Forms, you should first migrat
 
 Prior to Umbraco 8.5.0, all forms data was saved as `.json` files in the `App_Data/UmbracoForms` directory in the file system.
 
-As of Umbraco 8.5.0, you have the option to persist all Forms data directly in the database. This behavior defaults to all new sites created on Umbraco Cloud since September 2020. If your Cloud project was created before, you will need to upgrade the Umbraco Forms version as well as apply a setting to perform the migration of the Umbraco Forms data.
+As of Umbraco 8.5.0, you have the option to persist all Forms data directly in the database. This behavior defaults to all new sites created on Umbraco Cloud since September 2020. If your Cloud project was created before, you will need to upgrade the Umbraco Forms version. Additionally, apply a setting to perform the migration of the Umbraco Forms data.
 
 To switch to persisting all definitions for Umbraco Forms data in the Umbraco database, follow these steps:
 

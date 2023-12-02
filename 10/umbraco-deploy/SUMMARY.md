@@ -4,6 +4,7 @@
 * [Getting started](get-started-with-deploy.md)
 * [Configuration](deploy-settings.md)
 * [Extending](extending.md)
+* [Handling Cache Refresher Notifications](handling-cache-refresher-notifications.md)
 * [Troubleshooting](troubleshooting.md)
 * [Licensing](the-licensing-model.md)
 * [Release notes](release-notes.md)
@@ -20,13 +21,12 @@
 
 * [Deployment](deployment-workflow/README.md)
 * [Transferring Content, Media and Forms](deployment-workflow/content-transfer.md)
+* [Import and Export](deployment-workflow/import-export.md)
 * [Deploying Changes](deployment-workflow/deploying-changes.md)
 * [Deploying deletions](deployment-workflow/deploying-deletions.md)
 * [Restoring content](deployment-workflow/restoring-content/README.md)
   * [Partial Restores](deployment-workflow/restoring-content/partial-restore.md)
 * [Deploy Dashboard](deployment-workflow/deploy-dashboard.md)
-
-
 
 ## Upgrading
 

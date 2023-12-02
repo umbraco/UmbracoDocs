@@ -4,6 +4,12 @@ description: Get an overview of release notes for each month in 2023.
 
 # Overview 2023
 
+# [October 2023](2023-10-releasenotes.md)
+
+## Key Takeaways
+* **Umbraco CI/CD Flow** - Elevate your deployment process with seamless integration between your existing CI/CD pipeline and Umbraco Cloud. Experience automated, efficient, and error-free deployments like never before.
+* **Automatic Upgrades for Minor Versions** - Experience enhanced efficiency with our expanded Automatic Minor Upgrades for Umbraco CMS, Umbraco Forms, and Umbraco Deploy.
+
 # [September 2023](2023-09-releasenotes.md)
 
 ## Key Takeaways

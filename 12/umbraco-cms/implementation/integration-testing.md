@@ -1,12 +1,10 @@
 ---
-description: "A guide to getting started with integration testing in Umbraco"
+description: A guide to getting started with integration testing in Umbraco
 ---
 
-# Integration Testing Umbraco
+# Integration Testing
 
-These examples are for Umbraco 10.
-They use [NUnit](https://nunit.org/) as the testing framework. Leveraging [Umbraco.Cms.Tests.Integration](https://github.com/umbraco/Umbraco-CMS/tree/v10/contrib/tests/Umbraco.Tests.Integration) providing base classes.
-Beware that the Nuget package has an issue fixed in v10.3.1. So it is recommended to use this version.
+These examples are for Umbraco 10. They use [NUnit](https://nunit.org/) as the testing framework. Leveraging [Umbraco.Cms.Tests.Integration](https://github.com/umbraco/Umbraco-CMS/tree/contrib/tests/Umbraco.Tests.Integration) providing base classes. Beware that the Nuget package has an issue fixed in v10.3.1. So it is recommended to use this version.
 
 ## Getting started
 
@@ -19,12 +17,11 @@ dotnet new nunit
 dotnet add package Umbraco.Cms.Tests.Integration
 ```
 
-After the project is created and the package is added we have to create an ```appsettings.Tests.Local.json``` file and a GlobalSetup class.
+After the project is created and the package is added we have to create an `appsettings.Tests.Local.json` file and a GlobalSetup class.
 
-The package already created an ```appsettings.Tests.json``` file. For both files make sure to go to "properties" and set "Copy to output directory" to "always" or "copy if newer".
+The package already created an `appsettings.Tests.json` file. For both files make sure to go to "properties" and set "Copy to output directory" to "always" or "copy if newer".
 
-The GlobalSetup is necessary to call the ```GlobalSetupTeardown``` class present in the package. This class makes sure that configuration is read and everything is setup as needed.
-Here is a sample that can be used:
+The GlobalSetup is necessary to call the `GlobalSetupTeardown` class present in the package. This class makes sure that configuration is read and everything is setup as needed. Here is a sample that can be used:
 
 ```csharp
 [SetUpFixture]
@@ -51,18 +48,17 @@ Important: The class shouldn't have a namespace!
 
 ## Creating a test
 
-To create a test you have to create a new class in your project. This class has to be derived from ```UmbracoIntegrationTest```. This gives you access to some helper methods that you can use.
+To create a test you have to create a new class in your project. This class has to be derived from `UmbracoIntegrationTest`. This gives you access to some helper methods that you can use.
 
-Second is the ```[UmbracoTest]```-attribute that has to be set on the class. This attribute is responsible to set which type of database setup you want to use in your test class.
+Second is the `[UmbracoTest]`-attribute that has to be set on the class. This attribute is responsible to set which type of database setup you want to use in your test class.
 
 The available options are:
 
-
-- None
-- NewEmptyPerFixture
-- NewEmptyPerTest
-- NewSchemaPerFixture
-- NewSchemaPerTest
+* None
+* NewEmptyPerFixture
+* NewEmptyPerTest
+* NewSchemaPerFixture
+* NewSchemaPerTest
 
 Basic sample:
 
@@ -98,10 +94,7 @@ public class MyNotificationHandler : INotificationHandler<ContentSavingNotificat
 }
 ```
 
-Then we can make an integration test, we do have to register our notification in the test like you would do with a composer, we can do this by overriding the `CustomTestSetupMethod` and adding the notification.
-After this, we can build our ContentType and Content with their respective builders.
-When we are saving both the ContentType & Content, we need the services to do so, so we use the `GetRequiredService<IService>` method that can get the services we need.
-We can then use `Assert.Multiple()` to do multiple asserts.
+Then we can make an integration test, we do have to register our notification in the test like you would do with a composer, we can do this by overriding the `CustomTestSetupMethod` and adding the notification. After this, we can build our ContentType and Content with their respective builders. When we are saving both the ContentType & Content, we need the services to do so, so we use the `GetRequiredService<IService>` method that can get the services we need. We can then use `Assert.Multiple()` to do multiple asserts.
 
 ```csharp
 [TestFixture]
@@ -147,11 +140,9 @@ public class Tests : UmbracoIntegrationTest
 
 ## Testing with a schema
 
-So one of the awesome things about integration tests, is that you can set up a site, download the package for it, and we can run this state for every test.
-This means that you do not have to go through and set up your tests with data like we do in the above example with the builder pattern.
+So one of the awesome things about integration tests, is that you can set up a site, download the package for it, and we can run this state for every test. This means that you do not have to go through and set up your tests with data like we do in the above example with the builder pattern.
 
-To start with we decorate our class with the `[UmbracoTest]` attribute and we again derive from `UmbracoIntegrationTest`.
-Then what you wanna do is set up your Umbraco site, go to the packages section and create your own package. Download the package and place the XML file next to your testing class. You want to have the build action of that XML file to be `EmbeddedResource`
+To start with we decorate our class with the `[UmbracoTest]` attribute and we again derive from `UmbracoIntegrationTest`. Then what you wanna do is set up your Umbraco site, go to the packages section and create your own package. Download the package and place the XML file next to your testing class. You want to have the build action of that XML file to be `EmbeddedResource`
 
 Now we're almost ready to start testing! The last thing we wanna do is have a Setup method to install the package on your site.
 
@@ -165,8 +156,7 @@ public void MySetup()
 }
 ```
 
-Now you're all set to start testing with your own site! Let's try and see how that would look!
-Here's an example test, where we test that content is deleted, if you delete the Document Types, as you can see, this time we do not have to use builder patterns to set up our site!
+Now you're all set to start testing with your own site! Let's try and see how that would look! Here's an example test, where we test that content is deleted, if you delete the Document Types, as you can see, this time we do not have to use builder patterns to set up our site!
 
 ```csharp
 [Test]
@@ -214,11 +204,10 @@ public class BackOfficeAssetsControllerTests: UmbracoTestServerTestBase
 
 In this example you have to note three things:
 
-- You still need the `CustomGlobalSetupTeardown` class
-- The PrepareUrl to get the URL of an Action and ensure all services use the URL information when requested. 
-- The Client which is a normal HttpClient, but the base URL points to the test server that is set up for each test.
+* You still need the `CustomGlobalSetupTeardown` class
+* The PrepareUrl to get the URL of an Action and ensure all services use the URL information when requested.
+* The Client which is a normal HttpClient, but the base URL points to the test server that is set up for each test.
 
 Note that you can still use GetRequiredService to get the services required to seed data.
 
-Keep in mind that integration tests require a lot of setup before the test executes.
-So execution time will be many times longer compared to a unit test.
+Keep in mind that integration tests require a lot of setup before the test executes. So execution time will be many times longer compared to a unit test.

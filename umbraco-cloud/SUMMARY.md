@@ -42,7 +42,10 @@
     * [Custom Certificates](set-up/project-settings/manage-hostnames/security-certificates.md)
   * [Umbraco CI/CD Flow](set-up/project-settings/umbraco-cicd/README.md)
     * [Cloud API For CI/CD Flow](set-up/project-settings/umbraco-cicd/UmbracoCloudApi.md)
-    * [Configuring a CI/CD pipeline](set-up/project-settings/umbraco-cicd/SampleCiCdPipeline.md)
+    * [Configuring a CI/CD pipeline](set-up/project-settings/umbraco-cicd/samplecicdpipeline/README.md)
+      * [Azure DevOps](set-up/project-settings/umbraco-cicd/samplecicdpipeline/azure-devops.md)
+      * [GitHub Actions](set-up/project-settings/umbraco-cicd/samplecicdpipeline/github-actions.md)
+    * [Troubleshooting](set-up/project-settings/umbraco-cicd/Troubleshooting.md)
     * [Known Limitations and Considerations](set-up/project-settings/umbraco-cicd/KnownLimitationsAndConsiderations.md)
   * [External Services](set-up/project-settings/external-services.md)
   * [Usage](set-up/project-settings/usage.md)
@@ -128,6 +131,7 @@
 ## Release Notes
 
 * [Overview 2023](release-notes/overview-2023.md)
+* [October 2023](release-notes/2023-10-releasenotes.md)
 * [September 2023](release-notes/2023-09-releasenotes.md)
 * [August 2023](release-notes/2023-08-releasenotes.md)
 * [June 2023](release-notes/2023-06-releasenotes.md)

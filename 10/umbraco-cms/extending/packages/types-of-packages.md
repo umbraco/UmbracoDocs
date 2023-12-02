@@ -4,16 +4,11 @@ description: Depending on which version of Umbraco CMS you are using, we disting
 
 # Package Types
 
-There are two main ways to install packages in Umbraco CMS: Package zip files and NuGet packages.
+Packages for Umbraco 10 and above are installed as NuGet packages.
 
 {% hint style="warning" %}
-The zip file package type is only available for Umbraco version 8 and earlier versions. Learn more about it in the [Package zip Files](#package-zip-files) section of this article.
+The legacy, zip file package type is only available for Umbraco version 8 and earlier versions. Learn more about it in the [Package zip Files](#package-zip-files) section of this article.
 {% endhint %}
-
-When developing a package you need to consider the Umbraco CMS version you're using before determining the package type.
-
-* Modern Umbraco (Umbraco 10+): Providing a NuGet package is the only option.
-* Legacy Umbraco (Umbraco 8 and earlier versions): It is recommended to provide both a zip file and a NuGet package.
 
 ## NuGet Packages
 
@@ -59,5 +54,5 @@ Packages zip files can contain:
 * Media
 
 {% hint style="info" %}
-If you want to include media in your package, you must select it in both the "Media" section and the "Package Files" section under "Path to file"
+To include media in your package, select it in the "Media" section. Additionally, choose it in the "Package Files" section under "Path to file."
 {% endhint %}

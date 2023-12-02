@@ -18,7 +18,7 @@ Umb-Project-Alias: {project-alias}
 
 ## Authentication
 
-Auth is required for this API meaning that you must supply a Bearer Token via an Authorization header or an API Key via an Authorization or Api-Key header.
+Authentication is required for this API. You must supply a Bearer Token via an Authorization header or an API Key through an Authorization or Api-Key header.
 
 ## Errors
 

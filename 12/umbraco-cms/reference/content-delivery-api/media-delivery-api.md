@@ -44,8 +44,8 @@ As this configuration sample illustrates, it is possible to restrict public acce
 {% hint style="info" %}
 The `Media` configuration can only become more restrictive than the `DeliveryApi` configuration:
 
-* If `DeliveryApi::Enabled` is `false`, the `DeliveryApi::Media::Enabled` configuration option has no effect. The Media Delivery API cannot be enabled on its own.
-* If `DeliveryApi::PublicAccess` is `false`, the `DeliveryApi::Media::PublicAccess` configuration option has no effect. The Media Delivery API cannot be publicly available if the Content Delivery API is not.
+* If `DeliveryApi:Enabled` is `false`, the `DeliveryApi:Media:Enabled` configuration option has no effect. The Media Delivery API cannot be enabled on its own.
+* If `DeliveryApi:PublicAccess` is `false`, the `DeliveryApi:Media:PublicAccess` configuration option has no effect. The Media Delivery API cannot be publicly available if the Content Delivery API is not.
 {% endhint %}
 
 ## Endpoints
@@ -158,35 +158,11 @@ Structural query string option (e.g. `ancestors`, `children`, `descendants`).
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="filter" type="String Array" required="false" %}
-Filtering query string options (e.g. 
-
-`mediaType`
-
-, 
-
-`name`
-
-)
+Filtering query string options (e.g. `mediaType`, `name`)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="sort" type="String Array" required="false" %}
-Sorting query string options (e.g. 
-
-`createDate`
-
-, 
-
-`name`
-
-, 
-
-`sortOrder`
-
-, 
-
-`updateDate`
-
-)
+Sorting query string options (e.g. `createDate`, `name`, `sortOrder`, `updateDate`)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="skip" type="Integer" required="false" %}

@@ -70,4 +70,4 @@ Instead of showing the default value we can show the key alias if we set `debug=
 <umb-localize key="general_ok_not_found" debug="true"></umb-localize>
 ```
 
-If you do update any of the core language files or you add a new language, don't forget to help the rest of the community. This can be done by [submitting a pull request](https://docs.umbraco.com/welcome/contribute/getting-started) so that your changes are merged into the core.
+If you modify core language files or introduce a new language, please assist the community by sharing your updates. This can be done by [submitting a pull request](https://docs.umbraco.com/welcome/contribute/getting-started) so that your changes are merged into the core.
