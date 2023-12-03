@@ -1,5 +1,62 @@
 # Troubleshooting
 
+## Upload Errors
+
+### Failed to read the request form. Multipart body length limit 134217728 exceeded
+
+We currently have a size limit set to 134217728 bytes or about ~128 MB. 
+
+Make sure that the package you are trying to upload does not contain anything unnessary.
+
+Our samples contains examples of how you could zip your repository before uploading it:
+
+{% tabs %}
+{% tab title="Github" %}
+```yaml
+## STEP FROM THE GITHUB YAML SAMPLE
+# zip everything, except what is defined in the '.zipignore'
+  - name: Zip Source Code
+    run: zip -r sources.zip . -x@.zipignore
+    shell: bash
+```
+{% endtab %}
+
+{% tab title="Azure Devops" %}
+```yaml
+## STEP FROM THE AZURE DEVOPS YAML SAMPLE
+# zip everything, except what is defined in the '.zipignore'
+  - script: zip -r dist/sources_$(Build.BuildNumber).zip . -x@.zipignore
+    displayName: Zip source files to package artifact
+```
+{% endtab %}
+
+{% tab title=".zipignore" %}
+```txt
+## user generated files
+.DS_Store
+.idea/*
+
+## Cloud has it's own git folder
+.git/*
+
+## no need for pipeline stuff in cloud - unless you just want to have it there also
+.github/*
+[Dd]evops/*
+
+## Ignore the obj and bin artefacts - cloud builds its own
+**/[Bb]in/*
+**/[Oo]bj/*
+
+## Do not include node modules - but do included your compiled js/frontend artifacts
+node_modules/*
+**/node_modules*
+
+## ignore this file
+.zipignore
+```
+{% endtab %}
+{% endtabs %}
+
 ## Deployment failed
 
 ### Cannot apply update because the following packages would be downgraded: Package: Umbraco.{abc}, Version: {x.y.z}
