@@ -41,7 +41,7 @@ Gets or Sets the DatabaseType as a `ValueStorageType` enum for which the DataTyp
 
 ### .Id
 
-Returns the unique `DataType` Id as a `Int`. The ID, derived from a database identity field, isn't safe for code across instances; use Key instead to ensure stability during transitions.
+Returns the unique `DataType` ID as an `Int`. The ID, derived from a database identity field, isn't safe for code references as they are moved across instances. Therefore it's recommended to use `Key` instead. 
 
 ### .Key
 
