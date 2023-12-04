@@ -17,10 +17,15 @@ To enable Automatic Minor Upgrades follow these steps:
     <figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption><p>Enable Minor Upgrades</p></figcaption></figure>
 
 With automatic upgrades enabled it will be applied to all products on Umbraco Cloud: Umbraco CMS, Umbraco Forms, and Umbraco Deploy.
+Your project does not need to be running the latest minor for automatic upgrades to work. The project will simply be upgraded to the latest minor when it is released.
 
 If you create a new project on Umbraco Cloud the project will by default have automatic minor upgrades enabled.
 
-For semi-automatic upgrades, you can update your project with a click of a button in the portal when a new minor update is available. On Starter plans, you will need to add a Development environment before you can perform the upgrade. Find pricing details for Umbraco Cloud Starter plans on our [website](https://umbraco.com/products/umbraco-cloud/pricing).
+{% hint style="info" %}
+You are required to have a Development environment on your project for both automatic and semi-automatic upgrades to work.
+A development environment is included in all Umbraco Cloud plans, except Starter. 
+Find pricing details for Umbraco Cloud Starter plans on our [website](https://umbraco.com/products/umbraco-cloud/pricing).
+{% endhint %}
 
 ## Troubleshooting Automated minor upgrades
 
