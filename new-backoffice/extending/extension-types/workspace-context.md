@@ -50,7 +50,9 @@ export class MyContextApi extends UmbBaseController {
 export const api = MyContextCounterApi;
 ```
 
-Note that Context APIs have to be self-providing. To do so it has to be an Umbraco Controller.
+{% hint style="info" %}
+ Context APIs have to be self-providing. To do so it has to be an Umbraco Controller.
+{% endhint %}
 
 A Context Token for a Workspace Context Extension should look like this:
 
