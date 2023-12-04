@@ -88,20 +88,6 @@ The intention is to be able to make available details such as IDs, aliases and p
 
 <details>
 
-<summary>Hidden</summary>
-
-**ID:** `DA206CAE-1C52-434E-B21A-4A7C198AF877`
-
-**Alias:** `hidden`
-
-**Settings:**
-
-* `DefaultValue`
-
-</details>
-
-<details>
-
 <summary>Long Answer</summary>
 
 **ID:** `023F09AC-1445-4bcb-B8FA-AB49F33BD046`
