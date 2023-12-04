@@ -97,7 +97,7 @@ consumerElement.consumeContext(MY_ADDITIONAL_API_TOKEN, (context) => {
 });
 ```
 
-This is no different from using two different Context Aliases, the difference first comes into play once one of these is not provided or provided on a parent element as displayed in the example below:
+This is no different than using two different Context Aliases. But has an important effect on what happens in one of them are not provided. This is begin demonstrated in the example below:
 
 ```ts
 const upperContextElement = new UmbLitElement();
