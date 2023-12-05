@@ -4,6 +4,10 @@ Learn how to configure a CI/CD pipeline in **Azure DevOps** and **GitHub Actions
 
 You'll find example shell scripts and pipeline configurations in the **Sample scripts** section, covering both Azure DevOps and GitHub Actions Workflows.
 
+{% hint style="info" %}
+Samples are provided "AS IS" to get you started. Please familiarize yourself with them, and feel free to change them to fit your needs.
+{% endhint %}
+
 ## Why should one configure a sample CI/CD pipeline?
 
 Umbraco Cloud repositories are not meant to be used as source code repositories. More details on our official documentation.
