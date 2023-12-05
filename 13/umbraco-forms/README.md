@@ -35,7 +35,7 @@ The list will be updated as more articles have been created and updated.
 
 ### Breaking Changes
 
-#### TESTING SOMETHING:
+#### TESTING SOMETHING
 Some breaking changes have been introduced in the Umbraco 13 Release Candidate, you can find the list of breaking changes in the [Version Specific Upgrades](installation/version-specific.md#version-13) article.
 
 Suspendisse potenti. Mauris sollicitudin fermentum libero. Vestibulum ullamcorper mauris at ligula. Fusce ac felis sit amet ligula pharetra condimentum. Quisque id mi.
