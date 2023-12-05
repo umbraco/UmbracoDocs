@@ -6,6 +6,7 @@
 ## Installation
 
 * [Version Specific Upgrade Notes](installation/version-specific.md)
+* [Licensing](the-licensing-model.md)
 
 ## Editor
 
