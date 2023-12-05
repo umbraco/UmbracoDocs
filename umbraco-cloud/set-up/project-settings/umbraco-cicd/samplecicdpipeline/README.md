@@ -1,9 +1,5 @@
 # Configuring a CI/CD pipeline
 
-{% hint style="warning" %}
-This documentation is currently a work in progress.
-{% endhint %}
-
 Learn how to configure a CI/CD pipeline in **Azure DevOps** and **GitHub Actions** Workflows using the sample scripts provided.
 
 You'll find example shell scripts and pipeline configurations in the **Sample scripts** section, covering both Azure DevOps and GitHub Actions Workflows.
