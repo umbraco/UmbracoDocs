@@ -36,7 +36,7 @@ Constructor for creating a new `MediaType` object where the necessary parameter 
 
 ### new MediaType(IShortStringHelper shortStringHelper, IMediaType parent, string alias)
 
-Constructor for creating a new `MediaType` object where the necessary parameters are a short string helper `IShortStringHelper`, the parent `MediaType` as an `IMediaType` object and the alias of the `MediaType` as a `string`.
+This constructor creates a new `MediaType` object and requires the following parameters: a short string helper `IShortStringHelper` and the parent `MediaType` as an `IMediaType` object. Additionally, the alias of the `MediaType` should be provided as a `string`.
 
 ## Properties
 
@@ -136,7 +136,7 @@ return mediaType.Icon;
 
 ### .Id
 
-Gets the unique `MediaType` Id as a `Int`, this ID is based on a Database identity field, and is therefore not safe to reference in code which are moved between different instances, use Key instead.
+Retrieves the unique `MediaType` ID as an `Int`. This ID is based on a Database identity field and is therefore not safe to reference in code when moved between different instances. 
 
 ### .Key
 
