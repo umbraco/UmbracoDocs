@@ -2,7 +2,7 @@
 description: How to take advantage of the built-in rate limiting middleware of ASP.NET Core in Umbraco.
 ---
 
-# API Rate limiting
+# API rate limiting
 
 Since ASP.NET Core 7, you can use the [built-in rate limiting middleware](https://learn.microsoft.com/en-us/aspnet/core/performance/rate-limit) to rate limit your APIs. You can apply the `EnableRateLimiting` and `DisableRateLimiting` attributes to add rate limiting on a controller or endpoint level. In this article, we will go through how you can configure and utilize different rate limiting strategies for Umbraco APIs.
 
