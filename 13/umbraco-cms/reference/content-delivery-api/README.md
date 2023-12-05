@@ -553,7 +553,7 @@ Multiple filters can be applied to the same request in addition to other query p
 GET /umbraco/delivery/api/v2/content?filter=contentType:article&filter=name:guide&skip=0&take=10
 ```
 
-This technique can also be used to perform range filtering - for example, fetch all articles created in 2023:
+This technique can also be used to perform range filtering. For example, fetch all articles created in 2023:
 
 **Request**
 
