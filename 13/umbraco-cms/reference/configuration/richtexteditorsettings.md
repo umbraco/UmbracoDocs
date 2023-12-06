@@ -211,3 +211,5 @@ Enable the [Power Paste plugin](https://www.tiny.cloud/docs/tinymce/6/introducti
 ```
 
 We have enabled the `powerpaste` plugin, and configured it to allow local images. It will prompt when pasting Word documents, but for HTML documents it will clean the HTML without prompting.
+
+See all the [available premium plugins](https://www.tiny.cloud/docs/tinymce/6/plugins/#premium-plugins).
