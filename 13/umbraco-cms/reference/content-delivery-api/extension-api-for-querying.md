@@ -235,7 +235,7 @@ Since we need to perform an exact match, the index field (`authorId`) is once ag
 When implementing a filter, you can use the following operators:  `Is`, `IsNot`, `Contains`, `DoesNotContain`, `GreaterThan`, `GreaterThanOrEqual`, `LessThan` and `LessThanOrEqual`.
 
 {% hint style="info" %}
-The range operators (the latter four) only work with number and date fields - `FieldType.Number` and `FieldType.Date` respectively.
+The range operators (_the latter four_) only work with number and date fields - `FieldType.Number` and `FieldType.Date` respectively.
 {% endhint %}
 
 It is possible to pass multiple values to each operator, and these values will be treated inclusively as an __or__ operator. For example, if `tag1` and `tag2` were passed into a filter using the `Is` operator, _any_ document containing __either__ `tag1` __or__ `tag2` would return. The request for this might look like this:
