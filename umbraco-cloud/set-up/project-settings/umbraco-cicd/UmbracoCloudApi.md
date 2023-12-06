@@ -261,17 +261,22 @@ The response from this API call will return the same deployment object in JSON f
 
 ### Get Deployments
 
-You can retrieve a list of deployments via the API, although currently, this is restricted to only those that have been completed. Future updates will introduce filtering options.
+The endpoint lets you retrieve a list of completed deployments. It can only list deployments that has been run throug the api.
 
-The API allows you to limit the number of returned deployments using standard 'take' and 'skip' query parameters. 
+The API allows you to filter and limit the number of returned deployments using query parameters:
+- _skip_ : optional, zero or positive integer
+- _take_ : optional, zero or positive integer
+- _includenulldeployments_ : optional, boolean, defaults to true
 
-This operation is carried out through a standard HTTP GET request.
+The "skip" and "take" parameters, while optional, are always required to be used together.
+
+With `includenulldeployments` set to true, you will get all completed deployments, including those that did not create any new changes in the cloud repository.
 
 To fetch the list of deployments using a curl command, the syntax would be as follows:
 
 ```sh
 ...
-url="https://api.cloud.umbraco.com/v1/projects/$projectId/deployments?skip=0&take=1"
+url="https://api.cloud.umbraco.com/v1/projects/$projectId/deployments?skip=0&take=1&includenulldeployments=false"
 
 response=$(curl -s -X GET $url \
     -H "Umbraco-Cloud-Api-Key: $apiKey" \
