@@ -240,11 +240,15 @@ The range operators (_the latter four_) only work with number and date fields - 
 
 It is possible to pass multiple values to each operator, and these values will be treated inclusively as an __or__ operator. For example, if `tag1` and `tag2` were passed into a filter using the `Is` operator, _any_ document containing __either__ `tag1` __or__ `tag2` would return. The request for this might look like this:
 
-`GET /umbraco/delivery/api/v2/content?filter=customTagFilter:tag1,tag2`
+```http
+GET /umbraco/delivery/api/v2/content?filter=customTagFilter:tag1,tag2
+```
 
 If you require this functionality to be restrictive i.e. `tag1` __and__ `tag2`, then the current approach would be to chain the custom filter. The request would change to look more like this:
 
-`GET /umbraco/delivery/api/v2/content?filter=customTagFilter:tag1&filter=customTagFilter:tag2`
+```http
+GET /umbraco/delivery/api/v2/content?filter=customTagFilter:tag1&filter=customTagFilter:tag2
+```
 
 ## Custom sort
 

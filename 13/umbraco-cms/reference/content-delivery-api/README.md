@@ -391,7 +391,7 @@ Structural query string option (e.g. `ancestors`, `children`, `descendants`)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="filter" type="String Array" required="false" %}
-Filtering query string options (e.g. `contentType`, `name`)
+Filtering query string options (e.g. `contentType`, `name`, `createDate`, `updateDate`)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="sort" type="String Array" required="false" %}
@@ -516,7 +516,7 @@ GET /umbraco/delivery/api/v2/content?fetch=children:dc1f43da-49c6-4d87-b104-a586
 {% endtab %}
 
 {% tab title="filter" %}
-The `filter` query parameter allows you to specify one or more filters that must match in order for a content item to be included in the response. The API provides two built-in filters that you can use right away with the `/umbraco/delivery/api/v2/content` endpoint:
+The `filter` query parameter allows you to specify one or more filters that must match in order for a content item to be included in the response. The API provides a few built-in filters that you can use right away with the `/umbraco/delivery/api/v2/content` endpoint:
 
 **`?filter=contentType:alias`**\
 This filter restricts the results to only include content items that belong to the specified content type. Replace _`alias`_ with the alias of the content type you want to filter by.
@@ -553,7 +553,7 @@ Multiple filters can be applied to the same request in addition to other query p
 GET /umbraco/delivery/api/v2/content?filter=contentType:article&filter=name:guide&skip=0&take=10
 ```
 
-This technique can also be used to perform range filtering. For example, fetch all articles created in 2023:
+This technique can also be used to perform range filtering. For example, fetch articles created in 2023:
 
 **Request**
 
