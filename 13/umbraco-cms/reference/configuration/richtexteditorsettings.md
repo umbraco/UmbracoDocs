@@ -120,13 +120,14 @@ Load a custom plugin that gives you the ability to interact with the global `tin
 
 Here we are loading a custom plugin called `myrteplugin` and adding a button to the editor called `myrtebutton`. When the button is clicked, it will insert the text `Hello World!` into the editor.
 
-{% code title="appsettings.json" %}
+{% tabs %}
+{% tab title="appsettings.json" %}
 ```json
   "Umbraco": {
     "CMS": {
       "RichTextEditor": {
         "CustomConfig": {
-          "external_plugins": "{\"myrteplugin\":\"/App_Plugins/CustomPlugin/plugin.js\"}"
+          "external_plugins": "{\"myrteplugin\":\"/App_Plugins/MyRtePlugin/plugin.js\"}"
         },
         "Commands": [
           {
@@ -139,9 +140,9 @@ Here we are loading a custom plugin called `myrteplugin` and adding a button to 
     }
   }
 ```
-{% endcode %}
+{% endtab %}
 
-{% code title="App_Plugins/CustomPlugin/plugin.js" %}
+{% tab title="App_Plugins/MyRtePlugin/plugin.js" %}
 ```js
 'use strict'
 ;(function () {
@@ -172,7 +173,8 @@ Here we are loading a custom plugin called `myrteplugin` and adding a button to 
     }
 })();
 ```
-{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 The button must be added to the toolbar in the rich text editor configuration.
 
