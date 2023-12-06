@@ -1,5 +1,15 @@
 # Troubleshooting
 
+## Upload Errors
+
+### Failed to read the request form. Multipart body length limit 134217728 exceeded
+
+We currently have a size limit set to 134217728 bytes or about ~128 MB. 
+
+Make sure that the package you are trying to upload does not contain anything unnessary.
+
+You can see an example of how you could zip your repository before uploading it, by refering to our [Github](samplecicdpipeline/github-actions.md) or [Azure Devops](samplecicdpipeline/azure-devops.md) samples. 
+
 ## Deployment failed
 
 ### Cannot apply update because the following packages would be downgraded: Package: Umbraco.{abc}, Version: {x.y.z}
