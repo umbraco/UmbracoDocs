@@ -60,6 +60,7 @@ These updates are more minor. We don't expect many projects to be affected by th
 * The string constants used to define GUIDs for each provider type were made consistently upper-case.
 * `FileUpload` and `PreValueFileController` have changed constructors to add support for server-side file validation.
 * HTML helpers such as `RenderFormsScripts` now return `IHtmlContent`.
+* The constructor for workflow notifications was amended to add a parameter for the current `Record`.
 
 </details>
 
