@@ -61,6 +61,7 @@ These updates are more minor. We don't expect many projects to be affected by th
 * `FileUpload` and `PreValueFileController` have changed constructors to add support for server-side file validation.
 * HTML helpers such as `RenderFormsScripts` now return `IHtmlContent`.
 * The constructor for workflow notifications was amended to add a parameter for the current `Record`.
+* The `IType` interface now defines a `Created` property.
 
 </details>
 
