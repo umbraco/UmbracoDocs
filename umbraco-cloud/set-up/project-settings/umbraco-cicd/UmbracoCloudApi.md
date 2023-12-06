@@ -4,7 +4,11 @@ The Umbraco Cloud API serves as a publicly accessible endpoint that customers ca
 
 While its initial focus is on automating and managing deployments in Umbraco Cloud projects via the "Umbraco CI/CD Flow," future enhancements will broaden its capabilities to encompass a wider range of activities and options for Umbraco Cloud users.&#x20;
 
-For the scope of this discussion, we will concentrate solely on the endpoints associated with interactions within the Umbraco CI/CD Flow. To integrate Umbraco Cloud into your CI/CD pipeline, you'll need to make API calls to the following endpoint [`https://api.cloud.umbraco.com`](https://api.cloud.umbraco.com):&#x20;
+For the scope of this discussion, we will concentrate solely on the endpoints associated with interactions within the Umbraco CI/CD Flow. 
+
+## Getting started
+
+To integrate Umbraco Cloud into your CI/CD pipeline, you'll need to make API calls to the following endpoint [`https://api.cloud.umbraco.com`](https://api.cloud.umbraco.com):&#x20;
 
 * `/$projectId/deployments`
 * `/$projectId/deployments/$deploymentId`
@@ -12,18 +16,6 @@ For the scope of this discussion, we will concentrate solely on the endpoints as
 * `/$projectId/deployments/$latestCompletedDeploymentId/diff`
 
 You will find relevant examples using `Curl` and `Powershell` in the sections below.
-
-{% hint style="info" %}
-Please be aware that this feature is currently in beta mode. During this beta period, we welcome your feedback and are particularly interested in any issues or concerns you may encounter. For all support-related questions, please direct your inquiries to [umbraco-cicd@umbraco.dk](mailto:umbraco-cicd@umbraco.dk).
-{% endhint %}
-
-## Getting started
-
-To integrate Umbraco Cloud into your CI/CD pipeline, you'll need to make API calls to the following endpoint: `https://api.cloud.umbraco.com.`
-
-{% hint style="warning" %}
-The initial certificate for this DNS is self-signed which can give curl and other tools some issues. We are working on changing this, for now, allowing an insecure connection will make it possible to circumvent this certificate issue.
-{% endhint %}
 
 ### How to enable CI/CD Integrator in the Umbraco Cloud Portal
 
