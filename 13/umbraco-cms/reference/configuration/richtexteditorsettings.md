@@ -46,7 +46,8 @@ A config with all the values can be seen underneath. Since there are a lot of de
       ],
       "CustomConfig": {
         "entity_encoding": "raw"
-      }
+      },
+      "CloudApiKey": "q8j4e5{...}w8c270p"
     }
   }
 }
@@ -62,7 +63,7 @@ Allows you to specify the valid HTML elements for the rich text editor as well a
 
 ## Invalid elements
 
-Specifies invalid HTML elements for the rich text editor
+Specifies invalid HTML elements for the rich text editor. For instance, in the config above the `font` element is not allowed.
 
 ## Commands
 
@@ -114,3 +115,99 @@ Use a text editor to find and replace `\"` with `"`. This will allow you to edit
     }
   }
 ```
+
+Load a custom plugin that gives you the ability to interact with the global `tinymce` editor object.
+
+Here we are loading a custom plugin called `myrteplugin` and adding a button to the editor called `myrtebutton`. When the button is clicked, it will insert the text `Hello World!` into the editor.
+
+{% code title="appsettings.json" %}
+```json
+  "Umbraco": {
+    "CMS": {
+      "RichTextEditor": {
+        "CustomConfig": {
+          "external_plugins": "{\"myrteplugin\":\"/App_Plugins/CustomPlugin/plugin.js\"}"
+        },
+        "Commands": [
+          {
+            "Alias": "myrtebutton",
+            "Name": "My RTE Button",
+            "Mode": "Insert"
+          }
+        ]
+      }
+    }
+  }
+```
+{% endcode %}
+
+{% code title="App_Plugins/CustomPlugin/plugin.js" %}
+```js
+'use strict'
+;(function () {
+    /**
+     * @param {import('tinymce').TinyMCE} tinymce
+     */
+    function plugin(tinymce) {
+
+        // Register a new plugin on the PluginManager
+        tinymce.PluginManager.add('myrteplugin', function (editor) {
+
+            // Register a new button
+            editor.ui.registry.addButton('myrtebutton', {
+                text: 'My RTE Button',
+                icon: 'code-sample',
+
+                // When the button is clicked, insert 'Hello World!' into the editor
+                onAction: function () {
+                    editor.insertContent('Hello World!')
+                }
+            })
+        })
+    }
+
+    // Initialize the plugin only if the global `tinymce` object exists
+    if (window && 'tinymce' in window) {
+        plugin(window.tinymce)
+    }
+})();
+```
+{% endcode %}
+
+The button must be added to the toolbar in the rich text editor configuration.
+
+![My Button](./images/my-rte-button.jpg)
+
+Once it is added, you can click the button to insert the text `Hello World!` into the editor.
+
+![Hello World!](./images/my-rte-button-editor.jpg)
+
+## Cloud API key
+
+Allows you to specify a Cloud API key for the rich text editor. Set this if you want to use the [TinyMCE Cloud](https://www.tiny.cloud/) service. This is a paid service that allows you to use [premium plugins](https://www.tiny.cloud/docs/tinymce/6/plugins/#premium-plugins) and other cloud services.
+
+{% hint style="info" %}
+Premium plugins are only available for [paid TinyMCE subscriptions](https://www.tiny.cloud/pricing/).
+{% endhint %}
+
+### Examples
+
+Enable the [Power Paste plugin](https://www.tiny.cloud/docs/tinymce/6/introduction-to-powerpaste/).
+
+```json
+  "Umbraco": {
+    "CMS": {
+      "RichTextEditor": {
+        "CloudApiKey": "q8j4e5{...}w8c270p",
+        "Plugins": ["powerpaste"],
+        "CustomConfig": {
+          "powerpaste_allow_local_images": "true",
+          "powerpaste_word_import": "prompt",
+          "powerpaste_html_import": "clean",
+        }
+      },
+    }
+  }
+```
+
+We have enabled the `powerpaste` plugin, and configured it to allow local images. It will prompt when pasting Word documents, but for HTML documents it will clean the HTML without prompting.
