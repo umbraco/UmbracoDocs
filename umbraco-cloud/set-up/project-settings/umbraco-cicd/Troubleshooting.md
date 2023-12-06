@@ -8,61 +8,7 @@ We currently have a size limit set to 134217728 bytes or about ~128 MB.
 
 Make sure that the package you are trying to upload does not contain anything unnessary.
 
-Our samples contains examples of how you could zip your repository before uploading it:
-
-{% tabs %}
-{% tab title="Github" %}
-
-Snippet of the Github pipeline sample
-
-```yaml
-# zip everything, except what is defined in the '.zipignore'
-  - name: Zip Source Code
-    run: zip -r sources.zip . -x@.zipignore
-    shell: bash
-```
-{% endtab %}
-
-{% tab title="Azure Devops" %}
-
-Snippet of the Azure Devops pipeline sample
-
-```yaml
-# zip everything, except what is defined in the '.zipignore'
-  - script: zip -r dist/sources_$(Build.BuildNumber).zip . -x@.zipignore
-    displayName: Zip source files to package artifact
-```
-{% endtab %}
-
-{% tab title=".zipignore" %}
-
-Content of the .zipignore file
-
-```txt
-#### User generated files
-.DS_Store
-.idea/*
-
-#### Umbraco Cloud repository has it's own git folder
-.git/*
-
-#### No need for pipeline stuff in Umbraco Cloud repository - unless you just want to have it there as well
-.github/*
-[Dd]evops/*
-
-#### Ignore the obj and bin artefacts - cloud builds its own
-**/[Bb]in/*
-**/[Oo]bj/*
-
-#### Do not include node modules - but do include your compiled js/frontend artifacts
-node_modules/*
-**/node_modules*
-
-#### Ignore this file
-.zipignore
-```
-{% endtab %}
-{% endtabs %}
+You can see an example of how you could zip your repository before uploading it, by refering to our [Github](samplecicdpipeline/github-actions.md) or [Azure Devops](samplecicdpipeline/azure-devops.md) samples. 
 
 ## Deployment failed
 
