@@ -264,9 +264,9 @@ The response from this API call will return the same deployment object in JSON f
 The endpoint lets you retrieve a list of completed deployments. It can only list deployments that has been run throug the api.
 
 The API allows you to filter and limit the number of returned deployments using query parameters:
-- _skip_ : optional, zero or positive integer
-- _take_ : optional, zero or positive integer
-- _includenulldeployments_ : optional, boolean, defaults to true
+- _Skip_ : optional, zero or positive integer
+- _Take_ : optional, zero or positive integer
+- _Includenulldeployments_ : optional, boolean, defaults to true
 
 The "skip" and "take" parameters, while optional, are always required to be used together.
 
