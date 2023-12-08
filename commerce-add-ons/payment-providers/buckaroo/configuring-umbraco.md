@@ -26,11 +26,10 @@ The following steps are handled within the payment method editor in the Umbraco 
 
 | Name                                    | Description                                                                                                                                                                    |
 | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Continue URL                            | The URL of the page to navigate to after payment is successful - e.g. `/confirmation/`                                                                                         |
+| Continue URL                            | The URL of the page to navigate to after payment is successful - e.g. `/continue/`                                                                                         |
 | Cancel URL                              | The URL of the page to navigate to if the customer cancels the payment - e.g. `/cart/`                                           |
 | Error URL                               | The URL of the page to navigate to if there is an error with the payment - e.g. `/error/`                                             |
-| Secret key for test mode                | **Required** when `Enable test mode` is checked  |
-| Website key for test mode               | **Required** when `Enable test mode` is checked  |
-| Secret Key                              | The live Buckaroo secret key, **Required** when `Enable test mode` is unchecked. Can be found in your Buckaroo Plaza dashboard. |
-| Secret Key                              | The live Buckaroo website key, **Required** when `Enable test mode` is unchecked. Can be found in your Buckaroo Plaza dashboard. |
+| Secret Key                              | **\[Required\]** The Buckaroo secret key, can be found in your Buckaroo Plaza dashboard. |
+| Secret Key                              | **\[Required\]** The Buckaroo website key, can be found in your Buckaroo Plaza dashboard. |
+| Webhook hostname overwrite              | The hostname where the buyer does checkout is a part of Buckaroo's payload signature. If you rewrite the host header for some reasons and make the hostname that your server sees different from the hostname where the buyer does checkout, you need to set this to the hostname where the buyer does checkout. Enter hostname only - e.g. `umbraco` |
 | Enable test mode                        | Toggle indicating whether this provider should run in test mode. |
