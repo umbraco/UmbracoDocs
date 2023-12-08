@@ -16,7 +16,7 @@ Below you will find the steps on how you can create a new Umbraco 13 RC project 
 
 #### Install using Command Line
 
-1. Run `dotnet new -i Umbraco.Templates::13.0.0-rc2` in the command line to install the Umbraco 13 RC templates.
+1. Run `dotnet new -i Umbraco.Templates::13.0.0-rc4` in the command line to install the Umbraco 13 RC templates.
 2. Run `dotnet new umbraco -n "MyProject"` to create a new project using Umbraco 13 RC.
 3. Run `dotnet run --project "MyProject"` to start the newly created project.
 
@@ -31,7 +31,7 @@ The list will be updated as more articles have been created and updated.
     * [Blocks in Rich Text Editor](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-blocks.md)
     * [Login](fundamentals/backoffice/login.md)
   * DATA:
-    * [Defining Content](fundamentals/data/defining-content/README.md)
+    * [Defining Content](fundamentals/data/defining-content/)
 * [External Login Providers](reference/security/external-login-providers.md)
 * [Two-factor Authentication](reference/security/two-factor-authentication.md)
 * [Multinode Treepicker](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/multinode-treepicker.md)
