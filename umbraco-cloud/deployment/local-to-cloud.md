@@ -8,7 +8,7 @@ In this article, you can learn more about how to deploy your code changes and me
 
 ## Deploying from local to your Cloud environments
 
-When you are working with your Umbraco Cloud project locally, all changes you make will automatically be identified and picked up by your local Git client.
+Local changes in your Umbraco Cloud project are automatically detected and synced with your Git client for seamless collaboration.
 
 Here's a quick step-by-step on how you deploy these changes to your Cloud environment:
 
@@ -21,13 +21,13 @@ Here's a quick step-by-step on how you deploy these changes to your Cloud enviro
 
 ![Deploy from Local to Remote](images/stage-commit-deploy_v10.gif)
 
-In the above example, Git Bash is used to stage, commit, and deploy changes made to a Document type plus a newly added data type from a local environment to a Cloud Development environment. You are welcome to use any Git client or command line interface of your choice.
+In the above example, Git Bash is used to stage, commit, and deploy changes made to a Document type. Additionally, it handles a newly added Data Type from a local environment to a Cloud Development environment.
 
-Once you've deployed your local changes to your Cloud environment deploying to your remaining Cloud environments (e.g. Staging and/or Live) is done using the **'Deploy changes to ..'** button in the Umbraco Cloud portal. For more information, see the [Deploying between Cloud environments](cloud-to-cloud.md) article.
+After deploying changes locally to your Cloud environment, use the Umbraco Cloud portal's **'Deploy changes to ..'** button for subsequent deployments to other environments. For more information, see the [Deploying between Cloud environments](cloud-to-cloud.md) article.
 
 ## Deploying without using a Git client
 
-If you don't have a Git client installed on your local machine, or prefer to work with Git through the command line, you can use eg. [Git for Windows](https://gitforwindows.org/) and the following commands:
+If you don't have a Git client installed on your local machine, you can use alternatives like [Git for Windows](https://gitforwindows.org/). Navigate to the command line and use the following commands:
 
 ```cs
 # Navigate to the repository folder
@@ -47,7 +47,7 @@ git pull
 git push
 ```
 
-If you have to pull down new commits, it is a good idea to see if any of these commits contain changes to the schema (anything in `umbraco/Deploy/Revision/`). To ensure that your local site is up-to-date, and your changes work with the updated schema, you can navigate to the `umbraco/Deploy/` folder and create a deploy marker if one doesn't already exist. From a command line type the following command:
+If you have to pull down, it is a good idea to see if any of these commits contain changes to the schema (anything in `umbraco/Deploy/Revision/`). To validate your local site and ensure compatibility with the updated schema, navigate to `umbraco/Deploy/`. Create a deploy marker if absent and run the specified command in the command line.
 
 ```cs
 /UmbracoProject/umbraco/Deploy> echo > deploy

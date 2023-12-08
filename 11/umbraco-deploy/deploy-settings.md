@@ -59,6 +59,7 @@ For illustration purposes, the following structure represents the full set of op
             "ExportMemberGroups": true,
             "ReloadMemoryCacheFollowingDiskReadOperation": false,
             "AllowDomainsDeploymentOperations": "None",
+            "AllowPublicAccessDeploymentOperations": "AddOrUpdate",
             "PreferLocalDbConnectionString": false,
             "MediaFileChecksumCalculationMethod": "PartialFileContents",
             "NumberOfSignaturesToUseAllRelationCache": 100,
@@ -288,6 +289,21 @@ To enable this, set the configuration value as appropriate for the types of doma
 * _Hostname_ - values defined under "Domains" with a full host name, e.g. "en.mysite.com"
 
 Combinations of settings can be applied, e.g. `Hostname,AbsolutePath`.
+
+## Deployment of public access settings
+
+When deploying content items, public access rules based on member groups are transferred. You can amend this behavior using this setting.
+
+```json
+    "AllowPublicAccessDeploymentOperations": "None|AddOrUpdate|Remove|All",
+```
+
+* _None_ - no public access rules will be transferred</li>
+* _AddOrUpdate_ - public access rules added or updated in a source environment will be transferred to the destination</li>
+* _Remove_ - public access rules removed a source environment will be removed in the destination</li>
+* _All_ - all public access information will be transferred</li>
+
+`AddOrUpdate` is the default setting used if no value is configured.
 
 ## PreferLocalDbConnectionString
 

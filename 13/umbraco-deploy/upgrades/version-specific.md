@@ -26,6 +26,47 @@ Version 12 contains a number of breaking changes. We don't expect many projects 
 
 * The default value for the configuration option `ResolveUserInTargetEnvironment` was changed to `true`.
 
+**Configuration**
+
+* [Configuration of relations](../deploy-settings.md#relationtypes) was changed from a list to a dictionary.
+
+```json
+// Before
+"RelationTypes": [
+  {
+    "Alias": "relateParentDocumentOnDelete",
+    "Mode": "Weak",
+  },
+  {
+    "Alias": "relateShopItemOnCreate",
+    "Mode": "Exclude",
+  }
+],
+
+// After
+"RelationTypes": {
+  "relateParentDocumentOnDelete": "Weak",
+  "relateShopItemOnCreate": "Exclude"
+},
+```
+
+* [Configuration of value connectors](../deploy-settings.md#valueconnectors) was changed from a list to a dictionary.
+
+```json
+// Before
+"ValueConnectors": [
+  {
+    "Alias": "nuPickers.DotNetCheckBoxPicker",
+    "TypeName": "Umbraco.Deploy.Contrib.Connectors.ValueConnectors.NuPickersValueConnector,Umbraco.Deploy.Contrib.Connectors",
+  }
+],
+
+// After
+"ValueConnectors": {
+  "nuPickers.DotNetCheckBoxPicker": "Umbraco.Deploy.Contrib.Connectors.ValueConnectors.NuPickersValueConnector, Umbraco.Deploy.Contrib.Connectors"
+},
+```
+
 **Code**
 
 The following updates describe the more significant changes to the codebase and public API:
@@ -41,6 +82,7 @@ These updates are more minor. We don't expect many projects to be affected by th
 * An obsolete constructor was removed from `DictionaryItemConnector`.
 * `QueueItemDto` was moved into the `Umbraco.Deploy.Infrastructure.Persistence` namespace.
 * `DocumentConnector` has a changed constructor such that we can use redirect tracking logic now exposed from CMS.
+* Remove now unnecessary interfaces and extension methods for rich text parsing. These were introduced to ensure backward compatibility in older versions: `IMacroParser2`, `IImageSourceParser2` and `ILocaLinkParser2`.
 
 </details>
 

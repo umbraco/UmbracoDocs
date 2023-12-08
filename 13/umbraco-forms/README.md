@@ -27,8 +27,14 @@ Below you will find a list of new and updated articles for the Umbraco 13 Releas
 The list will be updated as more articles have been created and updated.
 
 * [File Upload](editor/creating-a-form/fieldtypes/fileupload.md)
+* [Release Notes](release-notes.md)
+* INSTALLATION:
+  * [Version Specific Upgrade Notes](installation/version-specific.md)
+* DEVELOPER:
+  * [Preparing Your Frontend](developer/prepping-frontend.md)
 
 ### Breaking Changes
 
 Some breaking changes have been introduced in the Umbraco 13 Release Candidate, you can find the list of breaking changes in the [Version Specific Upgrades](installation/version-specific.md#version-13) article.
 
+test

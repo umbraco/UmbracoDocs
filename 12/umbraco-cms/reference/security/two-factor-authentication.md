@@ -23,86 +23,86 @@ using Google.Authenticator;
 using Umbraco.Cms.Core.Security;
 using Umbraco.Cms.Core.Services;
 
-namespace My.Website
+namespace My.Website;
+
+/// <summary>
+/// Model with the required data to setup the authentication app.
+/// </summary>
+public class QrCodeSetupData
+
 {
     /// <summary>
-    /// Model with the required data to setup the authentication app.
+    /// The secret unique code for the user and this ITwoFactorProvider.
     /// </summary>
-    public class QrCodeSetupData
-    {
-        /// <summary>
-        /// The secret unique code for the user and this ITwoFactorProvider.
-        /// </summary>
-        public string Secret { get; init; }
+    public string Secret { get; init; }
 
-        /// <summary>
-        /// The SetupCode from the GoogleAuthenticator code.
-        /// </summary>
-        public SetupCode SetupCode { get; init; }
+    /// <summary>
+    /// The SetupCode from the GoogleAuthenticator code.
+    /// </summary>
+    public SetupCode SetupCode { get; init; }
+}
+
+/// <summary>
+/// App Authenticator implementation of the ITwoFactorProvider
+/// </summary>
+public class UmbracoAppAuthenticator : ITwoFactorProvider
+{
+    /// <summary>
+    /// The unique name of the ITwoFactorProvider. This is saved in a constant for reusability.
+    /// </summary>
+    public const string Name = "UmbracoAppAuthenticator";
+
+    private readonly IMemberService _memberService;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="UmbracoAppAuthenticator"/> class.
+    /// </summary>
+    public UmbracoAppAuthenticator(IMemberService memberService)
+    {
+        _memberService = memberService;
     }
 
     /// <summary>
-    /// App Authenticator implementation of the ITwoFactorProvider
+    /// The unique provider name of ITwoFactorProvider implementation.
     /// </summary>
-    public class UmbracoAppAuthenticator : ITwoFactorProvider
+    /// <remarks>
+    /// This value will be saved in the database to connect the member with this  ITwoFactorProvider.
+    /// </remarks>
+    public string ProviderName => Name;
+
+    /// <summary>
+    /// Returns the required data to setup this specific ITwoFactorProvider implementation. In this case it will contain the url to the QR-Code and the secret.
+    /// </summary>
+    /// <param name="userOrMemberKey">The key of the user or member</param>
+    /// <param name="secret">The secret that ensures only this user can connect to the authenticator app</param>
+    /// <returns>The required data to setup the authenticator app</returns>
+    public Task<object> GetSetupDataAsync(Guid userOrMemberKey, string secret)
     {
-        /// <summary>
-        /// The unique name of the ITwoFactorProvider. This is saved in a constant for reusability.
-        /// </summary>
-        public const string Name = "UmbracoAppAuthenticator";
+        var member = _memberService.GetByKey(userOrMemberKey);
 
-        private readonly IMemberService _memberService;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UmbracoAppAuthenticator"/> class.
-        /// </summary>
-        public UmbracoAppAuthenticator(IMemberService memberService)
+        var twoFactorAuthenticator = new TwoFactorAuthenticator();
+        SetupCode setupInfo = twoFactorAuthenticator.GenerateSetupCode("My application name", member.Username, secret, false);
+        return Task.FromResult<object>(new QrCodeSetupData()
         {
-            _memberService = memberService;
-        }
-
-        /// <summary>
-        /// The unique provider name of ITwoFactorProvider implementation.
-        /// </summary>
-        /// <remarks>
-        /// This value will be saved in the database to connect the member with this  ITwoFactorProvider.
-        /// </remarks>
-        public string ProviderName => Name;
-
-        /// <summary>
-        /// Returns the required data to setup this specific ITwoFactorProvider implementation. In this case it will contain the url to the QR-Code and the secret.
-        /// </summary>
-        /// <param name="userOrMemberKey">The key of the user or member</param>
-        /// <param name="secret">The secret that ensures only this user can connect to the authenticator app</param>
-        /// <returns>The required data to setup the authenticator app</returns>
-        public Task<object> GetSetupDataAsync(Guid userOrMemberKey, string secret)
-        {
-            var member = _memberService.GetByKey(userOrMemberKey);
-
-            var twoFactorAuthenticator = new TwoFactorAuthenticator();
-            SetupCode setupInfo = twoFactorAuthenticator.GenerateSetupCode("My application name", member.Username, secret, false);
-            return Task.FromResult<object>(new QrCodeSetupData()
-            {
-                SetupCode = setupInfo,
-                Secret = secret
-            });
-        }
-
-        /// <summary>
-        /// Validated the code and the secret of the user.
-        /// </summary>
-        public bool ValidateTwoFactorPIN(string secret, string code)
-        {
-            var twoFactorAuthenticator = new TwoFactorAuthenticator();
-            return twoFactorAuthenticator.ValidateTwoFactorPIN(secret, code);
-        }
-
-        /// <summary>
-        /// Validated the two factor setup
-        /// </summary>
-        /// <remarks>Called to confirm the setup of two factor on the user. In this case we confirm in the same way as we login by validating the PIN.</remarks>
-        public bool ValidateTwoFactorSetup(string secret, string token) => ValidateTwoFactorPIN(secret, token);
+            SetupCode = setupInfo,
+            Secret = secret
+        });
     }
+
+    /// <summary>
+    /// Validated the code and the secret of the user.
+    /// </summary>
+    public bool ValidateTwoFactorPIN(string secret, string code)
+    {
+        var twoFactorAuthenticator = new TwoFactorAuthenticator();
+        return twoFactorAuthenticator.ValidateTwoFactorPIN(secret, code);
+    }
+
+    /// <summary>
+    /// Validated the two factor setup
+    /// </summary>
+    /// <remarks>Called to confirm the setup of two factor on the user. In this case we confirm in the same way as we login by validating the PIN.</remarks>
+    public bool ValidateTwoFactorSetup(string secret, string token) => ValidateTwoFactorPIN(secret, token);
 }
 ```
 
@@ -116,15 +116,15 @@ using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Security;
 using Umbraco.Extensions;
 
-namespace My.Website
+
+namespace My.Website;
+
+public class UmbracoAppAuthenticatorComposer : IComposer
 {
-    public class UmbracoAppAuthenticatorComposer : IComposer
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            var identityBuilder = new MemberIdentityBuilder(builder.Services);
-            identityBuilder.AddTwoFactorProvider<UmbracoAppAuthenticator>(UmbracoAppAuthenticator.Name);
-        }
+        var identityBuilder = new MemberIdentityBuilder(builder.Services);
+        identityBuilder.AddTwoFactorProvider<UmbracoAppAuthenticator>(UmbracoAppAuthenticator.Name);
     }
 }
 ```
@@ -205,83 +205,83 @@ using Umbraco.Cms.Core.Models.Membership;
 using Umbraco.Cms.Core.Security;
 using Umbraco.Cms.Core.Services;
 
-namespace My.Website
-{
-    [DataContract]
-    public class TwoFactorAuthInfo
-    {
-        [DataMember(Name = "qrCodeSetupImageUrl")]
-        public string? QrCodeSetupImageUrl { get; set; }
+namespace My.Website;
 
-        [DataMember(Name = "secret")]
-        public string? Secret { get; set; }
+[DataContract]
+public class TwoFactorAuthInfo
+
+{
+    [DataMember(Name = "qrCodeSetupImageUrl")]
+    public string? QrCodeSetupImageUrl { get; set; }
+
+    [DataMember(Name = "secret")]
+    public string? Secret { get; set; }
+}
+
+/// <summary>
+/// App Authenticator implementation of the ITwoFactorProvider
+/// </summary>
+public class UmbracoUserAppAuthenticator : ITwoFactorProvider
+{
+    private readonly IUserService _userService;
+
+    /// <summary>
+    /// The unique name of the ITwoFactorProvider. This is saved in a constant for reusability.
+    /// </summary>
+    public const string Name = "UmbracoUserAppAuthenticator";
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="UmbracoUserAppAuthenticator"/> class.
+    /// </summary>
+    public UmbracoUserAppAuthenticator(IUserService userService)
+    {
+        _userService = userService;
+
     }
 
     /// <summary>
-    /// App Authenticator implementation of the ITwoFactorProvider
+    /// The unique provider name of ITwoFactorProvider implementation.
     /// </summary>
-    public class UmbracoUserAppAuthenticator : ITwoFactorProvider
+    /// <remarks>
+    /// This value will be saved in the database to connect the member with this  ITwoFactorProvider.
+    /// </remarks>
+    public string ProviderName => Name;
+
+    /// <summary>
+    /// Returns the required data to setup this specific ITwoFactorProvider implementation. In this case it will contain the url to the QR-Code and the secret.
+    /// </summary>
+    /// <param name="userOrMemberKey">The key of the user or member</param>
+    /// <param name="secret">The secret that ensures only this user can connect to the authenticator app</param>
+    /// <returns>The required data to setup the authenticator app</returns>
+    public Task<object> GetSetupDataAsync(Guid userOrMemberKey, string secret)
     {
-        private readonly IUserService _userService;
+        IUser? user = _userService.GetByKey(userOrMemberKey);
 
-        /// <summary>
-        /// The unique name of the ITwoFactorProvider. This is saved in a constant for reusability.
-        /// </summary>
-        public const string Name = "UmbracoUserAppAuthenticator";
+        ArgumentNullException.ThrowIfNull(user);
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UmbracoUserAppAuthenticator"/> class.
-        /// </summary>
-        public UmbracoUserAppAuthenticator(IUserService userService)
+        var twoFactorAuthenticator = new TwoFactorAuthenticator();
+        SetupCode setupInfo = twoFactorAuthenticator.GenerateSetupCode("My application name", user.Username, secret, false);
+        return Task.FromResult<object>(new TwoFactorAuthInfo()
         {
-            _userService = userService;
-
-        }
-
-        /// <summary>
-        /// The unique provider name of ITwoFactorProvider implementation.
-        /// </summary>
-        /// <remarks>
-        /// This value will be saved in the database to connect the member with this  ITwoFactorProvider.
-        /// </remarks>
-        public string ProviderName => Name;
-
-        /// <summary>
-        /// Returns the required data to setup this specific ITwoFactorProvider implementation. In this case it will contain the url to the QR-Code and the secret.
-        /// </summary>
-        /// <param name="userOrMemberKey">The key of the user or member</param>
-        /// <param name="secret">The secret that ensures only this user can connect to the authenticator app</param>
-        /// <returns>The required data to setup the authenticator app</returns>
-        public Task<object> GetSetupDataAsync(Guid userOrMemberKey, string secret)
-        {
-            IUser? user = _userService.GetByKey(userOrMemberKey);
-
-            ArgumentNullException.ThrowIfNull(user);
-
-            var twoFactorAuthenticator = new TwoFactorAuthenticator();
-            SetupCode setupInfo = twoFactorAuthenticator.GenerateSetupCode("My application name", user.Username, secret, false);
-            return Task.FromResult<object>(new TwoFactorAuthInfo()
-            {
-                QrCodeSetupImageUrl = setupInfo.QrCodeSetupImageUrl,
-                Secret = secret
-            });
-        }
-
-        /// <summary>
-        /// Validated the code and the secret of the user.
-        /// </summary>
-        public bool ValidateTwoFactorPIN(string secret, string code)
-        {
-            var twoFactorAuthenticator = new TwoFactorAuthenticator();
-            return twoFactorAuthenticator.ValidateTwoFactorPIN(secret, code);
-        }
-
-        /// <summary>
-        /// Validated the two factor setup
-        /// </summary>
-        /// <remarks>Called to confirm the setup of two factor on the user. In this case we confirm in the same way as we login by validating the PIN.</remarks>
-        public bool ValidateTwoFactorSetup(string secret, string token) => ValidateTwoFactorPIN(secret, token);
+            QrCodeSetupImageUrl = setupInfo.QrCodeSetupImageUrl,
+            Secret = secret
+        });
     }
+
+    /// <summary>
+    /// Validated the code and the secret of the user.
+    /// </summary>
+    public bool ValidateTwoFactorPIN(string secret, string code)
+    {
+        var twoFactorAuthenticator = new TwoFactorAuthenticator();
+        return twoFactorAuthenticator.ValidateTwoFactorPIN(secret, code);
+    }
+
+    /// <summary>
+    /// Validated the two factor setup
+    /// </summary>
+    /// <remarks>Called to confirm the setup of two factor on the user. In this case we confirm in the same way as we login by validating the PIN.</remarks>
+    public bool ValidateTwoFactorSetup(string secret, string token) => ValidateTwoFactorPIN(secret, token);
 }
 ```
 
@@ -297,21 +297,21 @@ using Umbraco.Cms.Core.Security;
 using Umbraco.Cms.Web.BackOffice.Security;
 using Umbraco.Extensions;
 
-namespace My.Website
+namespace My.Website;
+
+public class UmbracoAppAuthenticatorComposer : IComposer
+
 {
-    public class UmbracoAppAuthenticatorComposer : IComposer
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
+        var identityBuilder = new BackOfficeIdentityBuilder(builder.Services);
+
+        identityBuilder.AddTwoFactorProvider<UmbracoUserAppAuthenticator>(UmbracoUserAppAuthenticator.Name);
+
+        builder.Services.Configure<TwoFactorLoginViewOptions>(UmbracoUserAppAuthenticator.Name, options =>
         {
-            var identityBuilder = new BackOfficeIdentityBuilder(builder.Services);
-
-            identityBuilder.AddTwoFactorProvider<UmbracoUserAppAuthenticator>(UmbracoUserAppAuthenticator.Name);
-
-            builder.Services.Configure<TwoFactorLoginViewOptions>(UmbracoUserAppAuthenticator.Name, options =>
-            {
-                options.SetupViewPath = "..\\App_Plugins\\TwoFactorProviders\\twoFactorProviderGoogleAuthenticator.html";
-            });
-        }
+            options.SetupViewPath = "..\\App_Plugins\\TwoFactorProviders\\twoFactorProviderGoogleAuthenticator.html";
+        });
     }
 }
 ```

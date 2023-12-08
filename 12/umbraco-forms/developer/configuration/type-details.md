@@ -20,7 +20,9 @@ The intention is to be able to make available details such as IDs, aliases and p
 
 **Settings:**
 
+* `Caption`
 * `DefaultValue`
+* `ShowLabel`
 
 </details>
 
@@ -36,6 +38,20 @@ The intention is to be able to make available details such as IDs, aliases and p
 
 * `AcceptCopy`
 * `ShowLabel`
+
+</details>
+
+<details>
+
+<summary>Date</summary>
+
+**ID:** `F8B4C3B8-AF28-11DE-9DD8-EF5956D89593`
+
+**Alias:** `date`
+
+**Settings:**
+
+* `Placeholder`
 
 </details>
 

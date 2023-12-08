@@ -4,6 +4,12 @@ description: Your main resource when building and managing an Umbraco CMS websit
 
 # Umbraco CMS Documentation
 
+{% hint style="warning" %}
+As of the 1st of December, Umbraco 11 has reached the [end of life](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/).
+
+If you are still running Umbraco 11 we highly recommend that you [upgrade](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading#upgrade-to-a-new-major) to Umbraco 12.
+{% endhint %}
+
 Umbraco CMS is a flexible and editor-friendly Content Management System (CMS) that allows you to create beautiful and modern websites. Use the latest version of .NET, integrate with your favorite services, and help your customers launch a website tailored to their specific needs.
 
 Learn much more about Umbraco CMS and get an overview of the top features on [Umbraco.com](https://umbraco.com/products/umbraco-cms/).

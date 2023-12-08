@@ -6,7 +6,7 @@ description: >-
 
 # Login
 
-To access the backoffice, you will need to login. You can do this by adding `/umbraco` at the end of your website URL, e.g. http://mywebsite.com/umbraco.
+To access the backoffice, you will need to login. You can do this by adding `/umbraco` at the end of your website URL, for example http://mywebsite.com/umbraco.
 
 You will be presented with a login form similar to this:
 
@@ -38,7 +38,7 @@ In the config folder create a folder called `lang` and create a file called: `en
 
 * Before the changes takes place you will need to restart the site.
 
-You can customize other text on the login screen as well. First, grab the default values and keys from the [en.xml](https://github.com/umbraco/Umbraco-CMS/blob/release-11.0.0/src/Umbraco.Core/EmbeddedResources/Lang/en.xml) in the Umbraco CMS Github repository. Thereafter copy the ones you want to translate into `~/config/lang/en_us.user.xml` file.
+You can customize other text on the login screen as well. First, grab the default values and keys from the [en_us.xml](https://github.com/umbraco/Umbraco-CMS/blob/contrib/src/Umbraco.Core/EmbeddedResources/Lang/en_us.xml) in the Umbraco CMS Github repository. Thereafter copy the ones you want to translate into `~/config/lang/en_us.user.xml` file.
 
 ## Password reset
 
@@ -47,7 +47,7 @@ The **Forgotten password?** link allows your backoffice users to reset their pas
 ```json
 "Umbraco": {
     "CMS": {
-      "Security": { 
+      "Security": {
         "AllowPasswordReset": true
       }
    }
@@ -56,7 +56,7 @@ The **Forgotten password?** link allows your backoffice users to reset their pas
 
 Set it to `true` to enable the password reset feature, and `false` to disable the feature.
 
-You will also need to configure an Simple Mail Transfer Protocol (SMTP) server in your `appsettings.json` file. When you get a successful result on the SMTP configuration when running a health check in the backoffice, you are good to go!
+You will also need to configure a Simple Mail Transfer Protocol (SMTP) server in your `appsettings.json` file. When you get a successful result on the SMTP configuration when running a health check in the backoffice, you are good to go!
 
 An example:
 
@@ -85,10 +85,64 @@ It is possible to customize the background image and the logo for the backoffice
     "CMS": {
       "Content": {
         "LoginBackgroundImage": "../myImagesFolder/myLogin.jpg",
-        "LoginLogoImage": "../myImagesFolder/myLogo.svg"
+        "LoginLogoImage": "../myImagesFolder/myLogo.svg",
+        "LoginLogoImageAlternative": "../myImagesFolder/myLogo.svg"
       }
    }
-} 
+}
 ```
 
-The `LoginBackgroundImage` and `LoginLogoImage` are referenced from the `/wwwroot/umbraco/` folder.
+The `LoginBackgroundImage`, `LoginLogoImage`, and `LoginLogoImageAlternative` are referenced from the `/wwwroot/umbraco/` folder.
+
+The `LoginLogoImage` is displayed on top of the `LoginBackgroundImage` and the `LoginLogoImageAlternative` is displayed when the `LoginLogoImage` is not available, for example on small resolutions.
+
+## Custom CSS
+
+You can also customize the login screen by adding a custom CSS file. To do this, you will need to add a new file inside the `~/App_Plugins` folder, for example `~/App_Plugins/MyCustomLoginScreen/my-custom-login-screen.css`.
+
+You can then add your custom CSS to the file:
+
+```css
+:root {
+    --umb-curves-color: rgba(0, 0, 0, 0.1);
+}
+```
+
+This will change the color of the SVG graphics (curves) shown on the login screen. You can also hide the curves by adding the following CSS:
+
+```css
+:root {
+    --umb-curves-display: none;
+}
+```
+
+### Load the custom CSS file
+To tell Umbraco about your custom CSS file, you will need to add a `package.manifest` file. The `package.manifest` file should look like this:
+
+```json
+{
+  "css": [
+    "~/App_Plugins/MyCustomLoginScreen/my-custom-login-screen.css"
+  ],
+  "bundleOptions": "None"
+}
+```
+
+### Custom CSS properties reference
+
+The following CSS properties are available for customization:
+
+| CSS Property | Description | Default Value |
+| --- | --- | --- |
+| `--umb-login-background` | The background of the layout | `#f4f4f4` |
+| `--umb-login-image` | The background of the image wrapper | The value of the [LoginBackgroundImage](#custom-background-image-and-logo) setting |
+| `--umb-login-image-display` | The display of the image wrapper | `flex` |
+| `--umb-login-content-background` | The background of the content wrapper | `none` |
+| `--umb-login-content-display` | The display of the content wrapper | `flex` |
+| `--umb-login-content-width` | The width of the content wrapper | `100%` |
+| `--umb-login-content-height` | The height of the content wrapper | `100%` |
+| `--umb-login-align-items` | The align-items of the main wrapper | `unset` |
+| `--umb-curves-color` | The color of the curves | `#f5c1bc` |
+| `--umb-curves-display` | The display of the curves | `inline` |
+
+The CSS custom properties may change in future versions of Umbraco. You can always find the latest values in the [login layout element](https://github.com/umbraco/Umbraco-CMS/blob/v13/dev/src/Umbraco.Web.UI.Login/src/components/layouts/auth-layout.element.ts) in the Umbraco CMS Github repository.
