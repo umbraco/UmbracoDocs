@@ -46,7 +46,7 @@ To convert a group to a tab, follow these steps:
 6. Click **Save**.
 
 {% hint style="info" %}
-It is not possible to convert a tab back into a group, because tabs can contain groups and nested groups are not supported. You need to create a new group, move all the properties from the tab into the new group and finally delete the empty tab.
+Converting a tab back into a group is not possible, as tabs can contain groups, and nested groups are unsupported. To overcome this, create a new group and transfer all tab properties into it, then delete the empty tab.
 {% endhint %}
 
 ## Managing the “Generic” tab
