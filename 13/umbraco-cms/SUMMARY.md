@@ -19,6 +19,7 @@
 ## Reference
 
 * [Security](reference/security/README.md)
+  * [API rate limiting](reference/security/api-rate-limiting.md)
   * [External login providers](reference/security/external-login-providers.md)
   * [Two-factor Authentication](reference/security/two-factor-authentication.md)
 
