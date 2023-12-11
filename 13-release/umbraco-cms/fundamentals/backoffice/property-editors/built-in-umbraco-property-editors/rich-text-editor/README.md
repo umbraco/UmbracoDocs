@@ -17,13 +17,17 @@ If your site is upgraded from an older version, follow the migration guides belo
 * [Migrate from version 5 to version 6](https://www.tiny.cloud/docs/tinymce/6/migration-from-5x/)
 {% endhint %}
 
-## [Configuration options](configuration.md)
+## [Configuration options](broken-reference)
 
 Customize everything from toolbar options to editor size to where pasted images are saved.
 
-## [Styles](rte-styles.md)
+## [Styles](broken-reference)
 
 Use CSS to define specific editor styles and add them as formatting options of the Rich Text Editor.
+
+## [Blocks](rte-blocks.md)
+
+Use Blocks to define specific parts which can be added as part of the markup of the Rich Text Editor.
 
 ## Data Type Definition Example
 
