@@ -67,7 +67,7 @@ Being a Member of an organization, does not give access to any projects under it
 
 ### Multi Factor Authentication (MFA) enforcement
 
-When working in organizations on Umbraco Cloud, as a company, you might want to enforce a certain type of MFA method for members.
+When working in organizations on Umbraco Cloud, as a company, you might want to enforce a certain type of Multi-Factor Authentication (MFA) method for members.
 
 ![MFA for members](images/mfa-page.png)
 
