@@ -1,0 +1,75 @@
+﻿---
+description: Get started with Webhooks.
+---
+
+# Webhooks.
+
+Webhooks provide real-time, event-driven communication within Umbraco. Seamlessly integrated, these lightweight, HTTP-based notifications empower you to trigger instant actions and synchronize data.  And with its different extension points, you can tailor these webhooks. to fit a broad range of requirements.
+
+## Getting Started
+
+To work with Webhooks, you need to go to the Webhooks within the Settings section:
+![img.png](img.png)
+
+From here we can create a webhook, by clicking the `Create webhook` button, this will take you to the create webhook screen:
+
+![img_1.png](img_1.png)
+
+## Url
+The `Url` should be the endpoint you want the webhook to send a request to, whenever a given `Event` is fired.
+
+## Events
+Events are when a given action happens, by default there are 5 events you can choose from.
+
+- Content Published - This event happens whenever a content gets published.
+- Content Unpublished - This event happens whenever a content gets unpublished
+- Content Deleted - This event happens whenever a content gets deleted.
+- Media Deleted - This event happens whenever a media item is deleted.
+- Media Saved - This event happens whenever a media item is saved.
+
+## Content type
+If you have selected a Content / Media event, you can specify if you only want your webhook to fire with a given Document/Media type.
+
+For example, if you have selected `Content Published` event, you can specify that you only want the webhook to fire, when the content is of a given content type.
+
+## Headers
+You can specify custom headers, that will be sent with your request.
+
+For example you could specify `Accept: application/json`, security headers, etc.
+
+# Defaults
+Umbraco webhooks have been configured with some defaults, such as default headers or some events send a payload, in this section we will take a look at those.
+
+## Json payload
+For example, the `Content Published` event will also send the given content that triggered the event. The json from is the same as the `Content Delivery Api`, an example of such a json object:
+```json
+{
+  "Name": "Root",
+  "CreateDate": "2023-12-11T12:02:38.9979314",
+  "UpdateDate": "2023-12-11T12:02:38.9979314",
+  "Route": {
+    "Path": "/",
+    "StartItem": {
+      "Id": "c1922956-7855-4fa0-8f2c-7af149a92135",
+      "Path": "root"
+    }
+  },
+  "Id": "c1922956-7855-4fa0-8f2c-7af149a92135",
+  "ContentType": "root",
+  "Properties": {}
+}
+```
+
+But the `Content deleted` does not send the entire content as json, instead it sends just the `Id` of the content like so:
+
+```json
+{
+  "Id": "c1922956-7855-4fa0-8f2c-7af149a92135"
+}
+```
+
+## Headers
+By default, webhook requests will include 3 headers
+- `user-agent: Umbraco-Cms/{version}`, where version is the current version of Umbraco.
+- `umb-webhook-retrycount: {number of retries}`, where number of retries, is the current retry count for a given webhook request.
+- `umb-webhook-event: {Umbraco.event}`, where event is the event that triggered the request, for example for Content published: `umb-webhook-event: Umbraco.ContentUnpublish`
