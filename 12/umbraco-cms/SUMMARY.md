@@ -372,6 +372,7 @@
     * [Working with caching](reference/cache/examples/tags.md)
 * [Response Caching](reference/response-caching.md)
 * [Security](reference/security/README.md)
+  * [API rate limiting](reference/security/api-rate-limiting.md)
   * [BackOfficeUserManager and Events](reference/security/backofficeusermanager-and-notifications.md)
   * [Cookies](reference/security/cookies.md)
   * [Replacing the basic username/password check](reference/security/custom-password-check.md)
