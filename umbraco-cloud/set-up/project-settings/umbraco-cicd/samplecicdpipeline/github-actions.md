@@ -14,7 +14,7 @@ The pipeline is defined in a main YAML file and includes some steps that call cu
 
 You can download the GitHub Actions sample scripts below:
 
-{% file src="../../../../.gitbook/assets/GithubActionsCICDFiles (2).zip" %}
+{% file src="../../../images/GithubActionsCICDFiles.zip" %}
 sample scripts for Github actions
 {% endfile %}
 
