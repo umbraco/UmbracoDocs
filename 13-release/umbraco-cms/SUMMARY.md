@@ -88,6 +88,8 @@
       * [Rich Text Editor](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/README.md)
         * [Rich Text Editor Configuration](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration.md)
         * [Rich Text Editor Styles](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-styles.md)
+        * [Blocks in Rich Text Editor](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-blocks.md)
+
   * [Login](fundamentals/backoffice/login.md)
   * [Content Templates](fundamentals/backoffice/content-templates.md)
   * [Infinite Editing](fundamentals/backoffice/infinite-editing.md)
