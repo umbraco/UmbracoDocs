@@ -87,7 +87,7 @@ With the setup of files above, you need to amend the `customBlock.controller.js`
 angular.module("umbraco").controller("customBlockController", function ($scope, mediaResource) {
 
     //your property is called image so the following will contain the udi:
-    var imageUdi = $scope.block.data.image;
+    var imageUdi = $scope.block.data.image[0].mediaKey;
     //the mediaResource has a getById method:
     mediaResource.getById(imageUdi).then(function (media) {
         console.log(media);
