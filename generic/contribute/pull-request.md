@@ -70,7 +70,7 @@ When you have had your fork for some time, you need to sync with the original re
 ```
 git remote add upstream https://github.com/umbraco/UmbracoDocs/
 git fetch upstream
-git rebase upstream/master
+git rebase upstream/main
 ```
 
 This can also be done by using the **Sync fork** option, which will be present once your fork is behind the original repository.

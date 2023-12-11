@@ -20,6 +20,12 @@ Under each major version, you can find details about minor and patch releases fo
 
 <summary>Version 13</summary>
 
+[**13.0.0-rc3**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.0)
+(November 28th 2023)
+
+* Added optional deployment of webhooks as part of schema updates.
+* Added Deploy specific webhook events.
+
 [**13.0.0-rc1**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.0)
 (November 6th 2023)
 
@@ -31,6 +37,16 @@ Under each major version, you can find details about minor and patch releases fo
 <details>
 
 <summary>Version 12</summary>
+
+[**12.1.0**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.0) **(December 11th  2023)**
+
+* All items from 12.1.0-rc1.
+
+[**12.1.0-rc1**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.0) **(November 27th  2023)**
+
+* Added feature of [content import and export with migrations](./deployment-workflow/import-export.md).
+* Added a new configuration option of `ResolveUserInTargetEnvironment` to allow resolving of user accounts in target environments (see [Deploy Settings](./deploy-settings.md)).
+* Added a new configuration option of `AllowPublicAccessDeploymentOperations` to amend the behavior of public access rule transfer (see [Deploy Settings](./deploy-settings.md)).
 
 [**12.0.5**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.5) (**November 14th 2023**)
 
@@ -171,6 +187,16 @@ Under each major version, you can find details about minor and patch releases fo
 <details>
 
 <summary>Version 10</summary>
+
+[**10.3.0**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.0) **(December 11th  2023)**
+
+* All items from 10.3.0-rc1.
+
+[**10.3.0-rc1**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.0) **(November 27th 2023)**
+
+* Added feature of [content import and export with migrations](./deployment-workflow/import-export.md).
+* Added a new configuration option of `ResolveUserInTargetEnvironment` to allow resolving of user accounts in target environments (see [Deploy Settings](./deploy-settings.md)).
+* Added a new configuration option of `AllowPublicAccessDeploymentOperations` to amend the behavior of public access rule transfer (see [Deploy Settings](./deploy-settings.md)).
 
 [**10.2.7**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.7) (**November 14th 2023**)
 
@@ -434,6 +460,16 @@ Under each major version, you can find details about minor and patch releases fo
 <details>
 
 <summary>Version 4</summary>
+
+[**4.9.0**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.9.0) **(December 11th  2023)**
+
+* All items from 4.9.0-rc1.
+
+[**4.9.0-rc1**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.9.0) **(November 27th 2023)**
+
+* Added feature of [content import and export with migrations](./deployment-workflow/import-export.md).
+* Added a new configuration option of `ResolveUserInTargetEnvironment` to allow resolving of user accounts in target environments (see [Deploy Settings](./deploy-settings.md)).
+* Added a new configuration option of `AllowPublicAccessDeploymentOperations` to amend the behavior of public access rule transfer (see [Deploy Settings](./deploy-settings.md)).
 
 [**4.8.4**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.8.4) **(October 10th 2023)**
 
