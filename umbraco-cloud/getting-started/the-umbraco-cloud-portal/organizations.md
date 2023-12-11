@@ -17,7 +17,7 @@ Are you interested in getting an organization, or need a project added to a diff
 
 ### Information
 
-In the **Information** section of the Organization, you can find all your details about your Organization. If there are any changes to your detais, you can change them here.
+In the **Information** section of the Organization, you can find all the details about your Organization. If there are any changes to your details, you can change them here.
 
 ![Information](images/Information-v10.png)
 
