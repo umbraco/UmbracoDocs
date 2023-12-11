@@ -23,7 +23,7 @@ In the **Information** section of the Organization, you can find all the details
 
 ### Members
 
-In the **Members** section, you can view current members, view pending invites, and see the Multi-Factor Authentication (MFA) status for the Members of your Organization. You can also set up different permissions for your Members, such as Read, Write, and Administrators for your organization by adjusting their **Role**.
+In the **Members** section, you can view current members, pending invites, and see the Multi-Factor Authentication (MFA) status for the Members of your Organization. You can also setup different permissions for your Members, such as Read, Write, and Administrators for your organization by adjusting their **Role**.
 
 <figure><img src="../../../.gitbook/assets/members.png" alt=""><figcaption></figcaption></figure>
 
