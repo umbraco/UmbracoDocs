@@ -72,6 +72,27 @@ When reordering your Form, you can drag and drop the fields to make it look the 
 
 <figure><img src="images/Reorder_Form_1.png" alt=""><figcaption></figcaption></figure>
 
+#### Form Pages
+
+Forms can be grouped into pages. When rendered, each page will be presented one at a time to the user. They will need to complete the first page before moving onto the second and can navigate back and forth between pages.
+
+To add a new page to the top or bottom of a form use the buttons available in the top right of the editing view.
+
+![Add new page button](./images/add-new-page.png)
+
+You can also add a new page directly to the bottom of the form via the **Add new page** button. This will appear below other pages when at least one exists.
+
+### Form Groups
+
+With a page, form fields can be arranged into groups. These will display all together on a single page but can be styled so the fields are appropriately grouped in fieldsets.
+
+New groups are added via the **Add new group** button.
+
+## Form Columns
+
+The last level of structure are columns that can be created within a group. To set the number of columns click the **cog** icon next to the group.  You will then be able to add or move fields to the new columns created.
+
+
 ## Saving the Form
 
 Once you are satisfied with the Form, you can save the design by clicking the **Save** button.
