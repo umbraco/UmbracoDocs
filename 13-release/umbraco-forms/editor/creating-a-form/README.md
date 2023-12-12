@@ -64,6 +64,8 @@ To edit a field that has already been added to the Form, click the little **cog*
 
 ### Structuring the Form
 
+#### Ordering Fields
+
 Once you've added a few fields to your Form, you might want to change the order of questions. To do so, click **Reorder** in the top-right corner of the Form designer.
 
 <figure><img src="images/Reorder_Form.png" alt=""><figcaption></figcaption></figure>
