@@ -299,7 +299,7 @@
     * [Examine Manager](reference/searching/examine/examine-manager.md)
     * [Custom indexing](reference/searching/examine/indexing.md)
     * [PDF indexes and multisearchers](reference/searching/examine/pdfindex-multisearcher.md)
-    * [quick-start](reference/searching/examine/quick-start.md)
+    * [Quick-start](reference/searching/examine/quick-start.md)
 * [Using Notifications](reference/notifications/README.md)
   * [CacheRefresher Notifications](reference/notifications/cacherefresher-notifications.md)
   * [ContentService Notifications](reference/notifications/contentservice-notifications.md)
