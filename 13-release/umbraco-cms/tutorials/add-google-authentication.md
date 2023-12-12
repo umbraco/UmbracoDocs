@@ -14,11 +14,11 @@ In this tutorial, we will take you through the steps of setting up a Google logi
 
 When you log in to the Umbraco Backoffice, you need to enter your username and password. Integrating your website with Google authentication adds a button that you can click to log in with your Google account.
 
-![Google login screen](images/GoogleLoginScreen\_v9.png)
+![Google login screen](images/googleLoginScreen.png)
 
 ## Why?
 
-I'm sure a lot of content editors and implementors of your Umbraco sites would love to have one less password to remember. Click **Sign in with Google** and if you are already logged in with your Google account, it will log you in directly.
+We are sure a lot of content editors and implementors of your Umbraco sites would love to have one less password to remember. Click **Sign in with Google** and if you are already logged in with your Google account, it will log you in directly.
 
 ### What the tutorial covers
 
@@ -128,7 +128,7 @@ A package manager console appears at the bottom where you can install packages w
 3. Type the following in the console:
 
 ```js
-Install-Package Microsoft.AspNetCore.Authentication.Google -Version 7.0.9
+Install-Package Microsoft.AspNetCore.Authentication.Google -Version 7.0.13
 ```
 
 {% hint style="info" %}
@@ -170,7 +170,8 @@ namespace MyCustomUmbracoProject.ExternalUserLogin.GoogleAuthentication;
 
 public class GoogleBackOfficeExternalLoginProviderOptions : IConfigureNamedOptions<BackOfficeExternalLoginProviderOptions>
 {
-    public const string SchemeName = "OpenIdConnect";
+    public const string SchemeName = "Google";
+
     public void Configure(string? name, BackOfficeExternalLoginProviderOptions options)
     {
         ArgumentNullException.ThrowIfNull(name);
@@ -186,13 +187,11 @@ public class GoogleBackOfficeExternalLoginProviderOptions : IConfigureNamedOptio
     public void Configure(BackOfficeExternalLoginProviderOptions options)
     {
         // Customize the login button
-        options.ButtonStyle = "btn-danger";
-        options.Icon = "icon-cloud";
+        options.Icon = "icon-google-fill";
 
         // The following options are only relevant if you
         // want to configure auto-linking on the authentication.
         options.AutoLinkOptions = new ExternalSignInAutoLinkOptions(
-
             // Set to true to enable auto-linking
             autoLinkExternalAccount: true,
 
@@ -210,7 +209,7 @@ public class GoogleBackOfficeExternalLoginProviderOptions : IConfigureNamedOptio
             // [OPTIONAL]
             // Enable the ability to link/unlink manually from within
             // the Umbraco backoffice.
-            // Set this to false if you don't want the user to unlink 
+            // Set this to false if you don't want the user to unlink
             // from this external login provider.
             allowManualLinking: true
         )
@@ -231,7 +230,7 @@ public class GoogleBackOfficeExternalLoginProviderOptions : IConfigureNamedOptio
 
                 // Returns a boolean indicating if sign-in should continue or not.
                 return true;
-            }
+            },
         };
 
         // [OPTIONAL]
@@ -260,10 +259,6 @@ Set the `autoLinkExternalAccount` to `false` in order to disable auto-linking in
 
 {% code title="GoogleAuthenticationExtensions.cs" lineNumbers="true" %}
 ```csharp
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Extensions;
-using Microsoft.Extensions.DependencyInjection;
-
 namespace MyCustomUmbracoProject.ExternalUserLogin.GoogleAuthentication;
 
 public static class GoogleAuthenticationExtensions
@@ -278,9 +273,10 @@ public static class GoogleAuthenticationExtensions
             logins.AddBackOfficeLogin(
                 backOfficeAuthenticationBuilder =>
                 {
-
                     // The scheme must be set with this method to work for the back office
-                    var schemeName = backOfficeAuthenticationBuilder.SchemeForBackOffice(GoogleBackOfficeExternalLoginProviderOptions.SchemeName);
+                    var schemeName =
+                        backOfficeAuthenticationBuilder.SchemeForBackOffice(GoogleBackOfficeExternalLoginProviderOptions
+                            .SchemeName);
 
                     ArgumentNullException.ThrowIfNull(schemeName);
 
@@ -300,29 +296,25 @@ public static class GoogleAuthenticationExtensions
         });
         return builder;
     }
+
 }
 ```
 {% endcode %}
 
 5. Replace **YOURCLIENTID** and **YOURCLIENTSECRET** with the values from the **OAuth Client Ids Credentials** window.
-6. Update `ConfigureServices` in your `Startup.cs` class to register your configuration with Umbraco.
+6. Update `builder` in your `Program.cs` class to register your configuration with Umbraco.
 
-{% code title="Startup.cs" lineNumbers="true" %}
+{% code title="Program.cs" lineNumbers="true" %}
 ```csharp
 using MyCustomUmbracoProject.ExternalUserLogin.GoogleAuthentication;
 
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()
-        .AddWebsite()
-        .AddComposers()
-
-        // Register your new static extension class
-        .AddGoogleAuthentication()
-
-        .Build();
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .AddGoogleAuthentication() // Add this line
+    .Build();
 ```
 {% endcode %}
 
@@ -330,6 +322,7 @@ public void ConfigureServices(IServiceCollection services)
 8. Log in to the backoffice using the Google Auth option.
 
 {% hint style="info" %}
+
 If auto-linking is disabled, the user will need to follow these steps in order to be able to use the Google Authentication:
 
 1. Login to the backoffice using Umbraco credentials.
@@ -340,7 +333,7 @@ If auto-linking is disabled, the user will need to follow these steps in order t
 For future backoffice logins, the user will be able to use Google Authentication to login.
 {% endhint %}
 
-<figure><img src="images/GoogleLoginScreen_v9.png" alt=""><figcaption></figcaption></figure>
+![Google login screen](images/googleLoginScreen.png)
 
 ## Related Links
 
