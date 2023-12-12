@@ -2,7 +2,7 @@
 
 The Umbraco Workflow DataGenerator tool is an extension package for quickly generating Umbraco users and Workflow approval groups and permissions.
 
-The generator gets you up and running for testing or product evaluation without having to manually create document types, content, users or any Workflow-specific configuration.
+The generator gets you up and running for testing or product evaluation without having to manually create any Workflow configuration.
 
 ## Installation
 
