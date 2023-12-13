@@ -8,7 +8,7 @@ Webhooks provide real-time, event-driven communication within Umbraco. Seamlessl
 
 ## Getting Started
 
-To work with Webhooks, you need to go to the Webhooks within the Settings section:
+To work with Webhooks, you need to go to Webhooks within the Settings section:
 ![Webhooks section](images/webhook-section.png)
 
 From here we can create a webhook, by clicking the `Create webhook` button, this will take you to the create webhook screen:
