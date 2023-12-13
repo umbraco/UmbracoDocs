@@ -475,7 +475,7 @@ Structural query string option (e.g. `ancestors`, `children`, `descendants`)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="filter" type="String Array" required="false" %}
-Filtering query string options (e.g. `contentType`, `name`)
+Filtering query string options (e.g. `contentType`, `name`, `createDate`, `updateDate`)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="sort" type="String Array" required="false" %}
@@ -575,7 +575,8 @@ GET /umbraco/delivery/api/v1/content?fetch=children:dc1f43da-49c6-4d87-b104-a586
 {% endtab %}
 
 {% tab title="filter" %}
-The `filter` query parameter allows you to specify one or more filters that must match in order for a content item to be included in the response. The API provides two built-in filters that you can use right away with the `/umbraco/delivery/api/v1/content` endpoint:
+
+The `filter` query parameter allows you to specify one or more filters that must match in order for a content item to be included in the response. The API provides a few built-in filters that you can use right away with the `/umbraco/delivery/api/v2/content` endpoint:
 
 **`?filter=contentType:alias`**\
 This filter restricts the results to only include content items that belong to the specified content type. Replace _`alias`_ with the alias of the content type you want to filter by.
@@ -583,7 +584,26 @@ This filter restricts the results to only include content items that belong to t
 **`?filter=name:nodeName`**\
 When this filter is applied, only content items whose name matches the specified value will be returned. Replace _`nodeName`_ with the name of the item that you want to filter by.
 
-Additionally, filters support negation. By using an exclamation mark (`!`) before the filter value, you can exclude content items from the result set that match the filter criteria. For example, to fetch all content items except those with the content type `article`, you can use the filter parameter like this: `?filter=contentType:!article`.
+{% hint style="info" %}
+The `contentType` and `name` filters support negation. By using an exclamation mark (`!`) before the filter value, you can exclude content items from the result set that match the filter criteria.
+
+For example, you can fetch all content items that are _not_ of type `article` like this: `?filter=contentType:!article`.
+{% endhint %}
+
+**`?filter=createDate>date`**\
+When this filter is applied, only content items that were created later than the specified value will be returned. Replace _`date`_ with the date that you want to filter by.
+
+**`?filter=updateDate>date`**\
+When this filter is applied, only content items that were updated later than the specified value will be returned. Replace _`date`_ with the date that you want to filter by.
+
+{% hint style="info" %}
+The `createDate` and `updateDate` filters support both "greater than", "greater than or equal", "less than" and "less than or equal":
+
+- Use `>` for "greater than" filtering.
+- Use `>:` for "greater than or equal" filtering.
+- Use `<` for "less than" filtering.
+- Use `<:` for "less than or equal" filtering.
+{% endhint %}
 
 Multiple filters can be applied to the same request in addition to other query parameters:
 
@@ -592,6 +612,15 @@ Multiple filters can be applied to the same request in addition to other query p
 ```http
 GET /umbraco/delivery/api/v1/content?filter=contentType:article&filter=name:guide&skip=0&take=10
 ```
+
+This technique can also be used to perform range filtering. For example, fetch articles created in 2023:
+
+**Request**
+
+```http
+GET /umbraco/delivery/api/v2/content?filter=contentType:article&filter=createDate>:2023-01-01&filter=createDate<2024-01-01&skip=0&take=10
+```
+
 {% endtab %}
 
 {% tab title="sort" %}
