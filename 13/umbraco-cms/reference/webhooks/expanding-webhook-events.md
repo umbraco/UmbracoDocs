@@ -20,7 +20,7 @@ The `WebhookEventBase<TNotification>` class serves as the foundation for creatin
 - **WebhookSettings**: The property containing the current webhook settings.
 - **ProcessWebhooks**: The method responsible for processing webhooks for a given notification.
 - **ShouldFireWebhookForNotification**: The method determining whether webhooks should be fired for a specific notification.
-- **ConvertNotificationToRequestPayload**: Optional method allowing customization of the notification payload before sending it to webhooks.
+- **ConvertNotificationToRequestPayload**: An optional method allowing customization of the notification payload before sending it to webhooks.
 
 ### Creating a Custom Webhook Event
 
