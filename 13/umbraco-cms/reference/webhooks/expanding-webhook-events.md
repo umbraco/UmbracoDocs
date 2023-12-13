@@ -132,7 +132,7 @@ To leverage the `WebhookEventContentBase<TNotification, TEntity>` class, follow 
     }
     ```
 
-2. **Override Required Methods**:
+2. **Override the Required Methods**:
 
     - **GetEntitiesFromNotification**: Implement this method to extract content entities from the notification.
 
