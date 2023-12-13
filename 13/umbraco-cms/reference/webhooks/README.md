@@ -23,7 +23,7 @@ Events are when a given action happens, by default there are 5 events you can ch
 
 - Content Published - This event happens whenever some content gets published.
 - Content Unpublished - This event happens whenever some content gets unpublished
-- Content Deleted - This event happens whenever a content gets deleted.
+- Content Deleted - This event happens whenever some content gets deleted.
 - Media Deleted - This event happens whenever a media item is deleted.
 - Media Saved - This event happens whenever a media item is saved.
 
