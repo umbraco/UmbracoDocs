@@ -60,7 +60,7 @@ For example, the `Content Published` event will also send the given content that
 }
 ```
 
-But the `Content deleted` does not send the entire content as json, instead it sends the `Id` of the content like so:
+however, the `Content deleted` does not send the entire content as JSON, instead, it sends the `Id` of the content like so:
 
 ```json
 {
