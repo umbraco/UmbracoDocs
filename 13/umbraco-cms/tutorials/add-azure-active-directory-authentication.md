@@ -121,30 +121,34 @@ public static class MemberAuthenticationExtensions
         builder.Services.ConfigureOptions<AzureB2CMembersExternalLoginProviderOptions>();
         builder.AddMemberExternalLogins(logins =>
         {
-            logins.AddMemberLogin(
-                membersAuthenticationBuilder =>
-                {
-                    membersAuthenticationBuilder.AddMicrosoftAccount(
+            builder.Services.ConfigureOptions<AzureB2CMembersExternalLoginProviderOptions>();
+            builder.AddMemberExternalLogins(logins =>
+            {
+                logins.AddMemberLogin(
+                    membersAuthenticationBuilder =>
+                    {
+                        membersAuthenticationBuilder.AddMicrosoftAccount(
 
-                        // The scheme must be set with this method to work for the external login.
-                        membersAuthenticationBuilder.SchemeForMembers(AzureB2CMembersExternalLoginProviderOptions.SchemeName),
-                        options =>
-                        {
-                            // Callbackpath: Represents the URL to which the browser should be redirected to.
-                            // The default value is /signin-oidc.
-                            // This needs to be unique.
-                            options.CallbackPath = "/umbraco-b2c-members-signin";
+                            // The scheme must be set with this method to work for the external login.
+                            membersAuthenticationBuilder.SchemeForMembers(AzureB2CMembersExternalLoginProviderOptions.SchemeName),
+                            options =>
+                            {
+                                // Callbackpath: Represents the URL to which the browser should be redirected to.
+                                // The default value is /signin-oidc.
+                                // This needs to be unique.
+                                options.CallbackPath = "/umbraco-b2c-members-signin";
 
-                            //Obtained from the AZURE AD B2C WEB APP
-                            options.ClientId = "YOURCLIENTID";
-                            //Obtained from the AZURE AD B2C WEB APP
-                            options.ClientSecret = "YOURCLIENTSECRET"; 
+                                //Obtained from the AZURE AD B2C WEB APP
+                                options.ClientId = "YOURCLIENTID";
+                                //Obtained from the AZURE AD B2C WEB APP
+                                options.ClientSecret = "YOURCLIENTSECRET";
 
-                            options.SaveTokens = true;
-                        });
-                });
-        });
-        return builder;
+                                options.SaveTokens = true;
+                            });
+                    });
+            });
+            return builder;
+        }
     }
 }
 ```
@@ -154,22 +158,18 @@ public static class MemberAuthenticationExtensions
 Ensure to replace `YOURCLIENTID` and `YOURCLIENTSECRET` in the code with the values from the Azure AD tenant.
 {% endhint %}
 
-4. Add the Members authentication configuration to the `ConfigureServices` method in the `Startup.cs` file:
+4. Add the Members authentication configuration in the `Program.cs` file:
 
-{% code title="Startup.cs" lineNumbers="true" %}
+{% code title="Program.cs" lineNumbers="true" %}
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()
-        .AddWebsite()
-        .AddComposers()
-
-        //Add Members ConfigureAuthentication
-        .ConfigureAuthenticationMembers()
-
-        .Build();
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    //Add Members ConfigureAuthentication
+    .ConfigureAuthenticationMembers()
+    .Build();
 ```
 {% endcode %}
 

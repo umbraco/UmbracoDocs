@@ -33,15 +33,17 @@ Here are the steps to specify your own logic for validating a username and passw
         }
     }
     ```
-2.  Register the `MyPasswordChecker` in your `Startup.ConfigureServices` method:
+2.  Register the `MyPasswordChecker` in your `Program.cs` file:
 
     ```csharp
-    public void ConfigureServices(IServiceCollection services)
-    {
-        ...
+    builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .Build();
 
-        services.AddUnique<IBackOfficeUserPasswordChecker, MyPasswordChecker>();
-    }
+    builder.Services.AddUnique<IBackOfficeUserPasswordChecker, MyPasswordChecker>();
     ```
 
 {% hint style="info" %}

@@ -4,7 +4,7 @@ description: Information on FileSystemProviders and how to configure them in Umb
 
 # FileSystemProviders Configuration
 
-Filesystem providers are configured via code, you can either configure it in a composer, or in the `Startup.cs` file.
+Filesystem providers are configured via code, you can either configure it in a composer, or in the `Program.cs` file.
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -54,19 +54,16 @@ To configure the PhysicalFileSystem for a virtual folder, create a new filesyste
 
 There are a few more steps involved if you want to store the media files in a separate folder outside the webroot.
 
-First you must register the folder as a static file provider in your `Startup.cs` file like so:
+First you must register the folder as a static file provider in your `Program.cs` file like so:
 
 ```csharp
-public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-{
-    {...}
-
-    app.UseStaticFiles(new StaticFileOptions
+...
+WebApplication app = builder.Build();
+app.UseStaticFiles(new StaticFileOptions
     {
         FileProvider = new PhysicalFileProvider(Path.Combine("C:", "storage", "umbracoMedia")),
         RequestPath = "/CustomPath"
     });
-}
 ```
 
 Now you can register the folder as the media filesystem

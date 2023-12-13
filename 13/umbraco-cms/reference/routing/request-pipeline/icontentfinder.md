@@ -93,20 +93,16 @@ public static class UmbracoBuilderExtensions
 }
 ```
 
-Then invoke it in `ConfigureServices` in the `Startup.cs` file:
+Then invoke in the `Program.cs` file:
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-#pragma warning disable IDE0022 // Use expression body for methods
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()
-        .AddWebsite()
-        .AddComposers()
-        .AddCustomContentFinders()
-        .Build();
-#pragma warning restore IDE0022 // Use expression body for methods
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .AddCustomContentFinders()
+    .Build();
 ```
 
 #### Composer
@@ -177,6 +173,22 @@ public class My404ContentFinder : IContentLastChanceFinder
             return Task.FromResult(false);
         }
 
+        public Task<bool> TryFindContent(IPublishedRequestBuilder contentRequest)
+        {
+            // Find the root node with a matching domain to the incoming request
+            var allDomains = _domainService.GetAll(true).ToList();
+            var domain = allDomains?
+                .FirstOrDefault(f => f.DomainName == contentRequest.Uri.Authority
+                                     || f.DomainName == $"https://{contentRequest.Uri.Authority}"
+                                     || f.DomainName == $"http://{contentRequest.Uri.Authority}");
+
+            var siteId = domain != null ? domain.RootContentId : allDomains.Any() ? allDomains.FirstOrDefault()?.RootContentId : null;
+
+            if (!_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
+            {
+                return Task.FromResult(false);
+            }
+
         if (umbracoContext.Content == null)
             return new Task<bool>(() => contentRequest.PublishedContent is not null);
 
@@ -201,19 +213,17 @@ public class My404ContentFinder : IContentLastChanceFinder
 }
 ```
 
-You can configure Umbraco to use your own implementation in the `ConfigureServices` method of the `Startup` class in `Startup.cs`:
+You can configure Umbraco to use your own implementation in the `Program.cs` file:
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()
-        .AddWebsite()
-        .AddComposers()
-        // If you need to add something Umbraco specific, do it in the "AddUmbraco" builder chain, using the IUmbracoBuilder extension methods.
-        .SetContentLastChanceFinder<RoutingDocs.ContentFinders.My404ContentFinder>()
-        .Build();
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+     // If you need to add something Umbraco specific, do it in the "AddUmbraco" builder chain, using the IUmbracoBuilder extension methods.
+    .SetContentLastChanceFinder<RoutingDocs.ContentFinders.My404ContentFinder>()
+    .Build();
 ```
 
 {% hint style="warning" %}

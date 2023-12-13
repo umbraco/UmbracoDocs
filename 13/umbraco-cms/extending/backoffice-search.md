@@ -18,16 +18,17 @@ An Umbraco implementation might have additional custom properties that it would 
 
 To add custom properties, it is required to register a custom implementation of `IUmbracoTreeSearcherFields`. We recommend to override the existing `UmbracoTreeSearcherFields`.
 
-Your custom implementation needs to be registered in the container. For example in the `Startup.ConfigureServices` method or in a composer, as an alternative.
+Your custom implementation needs to be registered in the container. For example in the `Program.cs` file or in a composer, as an alternative.
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-    ...
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .Build();
 
-    services.AddUnique<IUmbracoTreeSearcherFields, CustomUmbracoTreeSearcherFields>();
-}
+builder.Services.AddUnique<IUmbracoTreeSearcherFields, CustomUmbracoTreeSearcherFields>();
 ```
 
 or

@@ -63,24 +63,19 @@ You can get your connection string from your Azure Portal under "Access Keys".
 
 ## Setting the services and middleware
 
-You're almost there. The last step is to set up the required services and middleware. This may sound daunting, but thankfully there are extension methods that do all this for you. All you need to do is invoke them in the `ConfigureServices` and `Configure` methods in the `startup.cs` file.
+You're almost there. The last step is to set up the required services and middleware. This may sound daunting, but thankfully there are extension methods that do all this for you. All you need to do is invoke them in the `Program.cs` file.
 
-Invoke the `.AddAzureBlobMediaFileSystem()` and the `.AddAzureBlobImageSharpCache()` extension methods in the `ConfigureServices` method:
+Invoke the `.AddAzureBlobMediaFileSystem()` and the `.AddAzureBlobImageSharpCache()` extension methods.
 
-```
-        public void ConfigureServices(IServiceCollection services)
-        {
-#pragma warning disable IDE0022 // Use expression body for methods
-            services.AddUmbraco(_env, _config)
-                .AddBackOffice()
-                .AddWebsite()
-                .AddComposers()
-                .AddAzureBlobMediaFileSystem() // This configures the required services for Media
-                .AddAzureBlobImageSharpCache() // This configures the required services for the Image Sharp cache
-                .Build();
-#pragma warning restore IDE0022 // Use expression body for methods
-
-        }
+```csharp
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .AddAzureBlobMediaFileSystem() // This configures the required services for Media
+    .AddAzureBlobImageSharpCache() // This configures the required services for the Image Sharp cache
+    .Build();
 ```
 
 {% hint style="info" %}

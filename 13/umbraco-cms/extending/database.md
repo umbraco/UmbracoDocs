@@ -215,7 +215,7 @@ public class BlogCommentsComposer : IComposer
 }
 ```
 
-Or in an extension method called from `StartUp.cs` as is preferred:
+Or in an extension method called from `Program.cs` as is preferred:
 
 ```csharp
 using System.Linq;
@@ -235,34 +235,13 @@ public static class UmbracoBuilderExtensions
 ```
 
 ```csharp
-using System;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Extensions;
-
-namespace MyNamespace;
-
-public class Startup
-{
-    ...
-
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddUmbraco(_env, _config)
-            .AddBackOffice()
-            .AddWebsite()
-            .AddComposers()
-            .AddBlogComments()  // calls our extension method to register the notification handler
-            .Build();
-
-    }
-
-    ...
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .AddBlogComments()  // calls our extension method to register the notification handler
+    .Build();
 ```
 
 ## Which to use?

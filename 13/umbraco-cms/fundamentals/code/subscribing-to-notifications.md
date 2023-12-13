@@ -61,15 +61,16 @@ public class LogWhenPublishedHandler : INotificationHandler<ContentPublishedNoti
 {
     private readonly ILogger<LogWhenPublishedHandler> _logger;
 
-    public LogWhenPublishedHandler(ILogger<LogWhenPublishedHandler> logger)
-    {
-        _logger = logger;
-    }
-    
-    public void Handle(ContentPublishedNotification notification)
-    {
-        // The custom code to fire every time content is published goes here!
-        throw new System.NotImplementedException();
+        public LogWhenPublishedHandler(ILogger<LogWhenPublishedHandler> logger)
+        {
+            _logger = logger;
+        }
+
+        public void Handle(ContentPublishedNotification notification)
+        {
+            // The custom code to fire every time content is published goes here!
+            throw new System.NotImplementedException();
+        }
     }
 }
 ```
@@ -100,21 +101,16 @@ public void Handle(ContentPublishedNotification notification)
 
 Now we have a `NotificationHandler` that logs the name of a piece of content every time it's published, however, we're not done yet.
 
-Umbraco needs to know that our handler exists and that it handles `ContentPublishedNotification`. To tell Umbraco this, we open up the `Startup.cs` file in the root of the project. First, we need to add `using Umbraco.Cms.Core.Notifications;` to the top of this file as well, once we've done this we need to find the `ConfigureServices` method. We now add `.AddNotificationHandler<ContentPublishedNotification, LogWhenPublishedHandler>()` to the `ConfigureServices` method right before the `Build()` part. The method now looks like this:
+Umbraco needs to know that our handler exists and that it handles `ContentPublishedNotification`. To tell Umbraco this, we open up the `Program.cs` file in the root of the project. First, we need to add `using Umbraco.Cms.Core.Notifications;` to the top of this file as well. We now add `.AddNotificationHandler<ContentPublishedNotification, LogWhenPublishedHandler>()`  right before the `Build()` part. The method now looks like this:
 
-```
-        public void ConfigureServices(IServiceCollection services)
-        {
-#pragma warning disable IDE0022 // Use expression body for methods
-            services.AddUmbraco(_env, _config)
-                .AddBackOffice()             
-                .AddWebsite()
-                .AddComposers()
-                .AddNotificationHandler<ContentPublishedNotification, LogWhenPublishedHandler>()
-                .Build();
-#pragma warning restore IDE0022 // Use expression body for methods
-
-        }
+```csharp
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .AddNotificationHandler<ContentPublishedNotification, LogWhenPublishedHandler>()
+    .Build();
 ```
 
 The entire handler class should look like this:
@@ -129,17 +125,13 @@ namespace MyProject;
 public class LogWhenPublishedHandler : INotificationHandler<ContentPublishedNotification>
 {
     private readonly ILogger<LogWhenPublishedHandler> _logger;
-
-    public LogWhenPublishedHandler(ILogger<LogWhenPublishedHandler> logger)
-    {
-        _logger = logger;
-    }
     
-    public void Handle(ContentPublishedNotification notification)
-    {
-        // The custom code to fire every time content is published goes here!
-        _logger.LogInformation("Something has been published.");
-        foreach (var publishedItem in notification.PublishedEntities)
+        public LogWhenPublishedHandler(ILogger<LogWhenPublishedHandler> logger)
+        {
+            _logger = logger;
+        }
+
+        public void Handle(ContentPublishedNotification notification)
         {
             _logger.LogInformation("{ContentName} was published", publishedItem.Name);
         }

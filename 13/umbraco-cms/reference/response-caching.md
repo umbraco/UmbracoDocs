@@ -65,12 +65,17 @@ public class ConfigureStaticFileOptions : IConfigureOptions<StaticFileOptions>
 }
 ```
 
-Register the service in `Startup.cs`
+Register the service in `Program.cs`
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-	services.AddTransient<IConfigureOptions<StaticFileOptions>, ConfigureStaticFileOptions>();
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .Build();
+
+builder.Services.AddTransient<IConfigureOptions<StaticFileOptions>, ConfigureStaticFileOptions>();
 ```
 
 ## Modify the `Cache-Control` header for ImageSharp.Web

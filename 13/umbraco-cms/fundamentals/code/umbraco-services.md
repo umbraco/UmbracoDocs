@@ -117,20 +117,17 @@ When you're creating your own class, in order to make use of the dependency inje
 
 There are different ways that you can achieve the same outcome:
 
-Register directly into the **Startup.cs** class.
+Register directly into the **Program.cs** class.
 
 ```csharp
-using Microsoft.Extensions.DependencyInjection;
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .Build();
 
-namespace DefaultNamespace;
-
-public class Startup
-{
-    public void ConfigureServices(IServiceCollection services)
-    {   
-        services.AddScoped<ICustomNewsArticleService, CustomNewsArticleService>();
-    }
-}
+builder.Services.AddScoped<ICustomNewsArticleService, CustomNewsArticleService>();
 ```
 
 Another approach is to create an extension method to `IUmbracoBuilder` and add it to the startup pipeline.
@@ -145,35 +142,24 @@ public static class UmbracoBuilderServiceExtensions
 {
     public static IUmbracoBuilder AddCustomServices(this IUmbracoBuilder builder)
     {
-        builder.Services.AddScoped<ICustomNewsArticleService, CustomNewsArticleService>();
-        
-        return builder;
+        public static IUmbracoBuilder AddCustomServices(this IUmbracoBuilder builder)
+        {
+            builder.Services.AddScoped<ICustomNewsArticleService, CustomNewsArticleService>();
+
+            return builder;
+        }
     }
 }
 ```
 
 ```csharp
-using System;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Extensions;
-
-namespace DefaultNamespace;
-
-public class Startup
-{
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddUmbraco(_env, _config)
-            .AddBackOffice()             
-            .AddWebsite()
-            .AddComposers()
-            .AddCustomServices()
-            .Build();
-    }
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .AddCustomServices()
+    .Build();
 ```
 
 When creating Umbraco packages you don't have access to the Startup class, therefore it's recommended to use a `IComposer` instead. A Composer gives you access to the `IUmbracoBuilder`.

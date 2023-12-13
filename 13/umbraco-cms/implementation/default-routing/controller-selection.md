@@ -36,23 +36,21 @@ public class HomePageController : RenderController
 
 ## Change the Default Controllers
 
-It is possible to implement a custom Controller to replace the default implementation to give complete control during the Umbraco request pipeline execution. You can configure Umbraco to use your implementation in the `ConfigureServices` method in the `Startup.cs` class, for example:
+It is possible to implement a custom Controller to replace the default implementation to give complete control during the Umbraco request pipeline execution. You can configure Umbraco to use your implementation in the `Program.cs` file, for example:
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()             
-        .AddWebsite()
-        .AddComposers()
-        .Build();
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .Build();
 
-    // Configure Umbraco Render Controller Type
-    services.Configure<UmbracoRenderingDefaultsOptions>(c =>
-    {
-        c.DefaultControllerType = typeof(MyRenderController);
-    });
-}
+// Configure Umbraco Render Controller Type
+services.Configure<UmbracoRenderingDefaultsOptions>(c =>
+{
+    c.DefaultControllerType = typeof(MyRenderController);
+});
 ```
 
 Ensure that the controller inherits from the base controller `Umbraco.Cms.Web.Common.Controllers.RenderController`. You can override the `Index` method to perform any customizations of your choice.

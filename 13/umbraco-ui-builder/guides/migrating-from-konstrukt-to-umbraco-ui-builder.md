@@ -86,23 +86,15 @@ If all your configuration is in a single statement, it would be a case of swappi
 
 
 ```csharp
-public class Startup
-{
-    ...
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddUmbraco(_env, _config)
-            .AddBackOffice()
-            .AddWebsite()
-            .AddUIBuilder(cfg => {
-                // The rest of your configuration
-            })
-            .AddComposers()
-            .Build();
-    }
-    ...
-}
-
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .AddUIBuilder(cfg => {
+        // The rest of your configuration
+    })
+    .Build();
 ```
 
 ## Step 4: Finalizing the migration

@@ -18,20 +18,17 @@ Video tutorial
 
 ### Register the Content Delivery API dependencies
 
-1. Open your project's `Startup.cs` file.
-2. Register the API dependencies in the `ConfigureServices` method by adding `.AddDeliveryApi()`:
+1. Open your project's `Program.cs` file.
+2. Register the API dependencies by adding `.AddDeliveryApi()`:
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()
-        .AddWebsite()
-        // Register all Delivery API dependencies
-        .AddDeliveryApi()
-        .AddComposers()
-        .Build();
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    // Register all Delivery API dependencies
+    .AddDeliveryApi()
+    .AddComposers()
+    .Build();
 ```
 
 ### Enable the Content Delivery API
@@ -644,29 +641,26 @@ In some cases the content models might be so deeply nested that the Delivery API
 
 To handle this we have to change the limit. Since the Delivery API has its own JSON configuration, we can do so without affecting the rest of our site.
 
-First, we have to add these `using` statements to `Startup.cs`:
+First, we have to add these `using` statements to `Program.cs`:
 
-{% code title="Startup.cs" %}
+{% code title="Program.cs" %}
 ```csharp
 using Umbraco.Cms.Api.Common.DependencyInjection;
 using Umbraco.Cms.Core;
 ```
 {% endcode %}
 
-Now we can add the following code snippet to the `ConfigureServices()` method in `Startup.cs`:
+Now we can add the following code snippet to the `Program.cs` file:
 
-{% code title="Startup.cs" %}
+{% code title="Program.cs" %}
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddControllers().AddJsonOptions(
-        Constants.JsonOptionsNames.DeliveryApi,
-        options =>
-        {
-            // set the maximum allowed depth of
-            options.JsonSerializerOptions.MaxDepth = {desired max depth}
-        });
-    ...
+builder.Services.AddControllers().AddJsonOptions(
+    Constants.JsonOptionsNames.DeliveryApi,
+    options =>
+    {
+        // set the maximum allowed depth of
+        options.JsonSerializerOptions.MaxDepth = {desired max depth}
+    });
 ```
 {% endcode %}
 

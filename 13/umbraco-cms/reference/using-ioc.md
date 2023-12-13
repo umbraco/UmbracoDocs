@@ -18,27 +18,23 @@ There are two strategies for registering your own dependencies to the container,
 
 ### Registering dependencies for your site
 
-When working with your site, and not a package, the recommended way to register dependencies is with the `ConfigureServices` method of the `Startup` class in `Startup.cs`:
+When working with your site, and not a package, the recommended way to register dependencies is with the `Program.cs` file:
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()
-        .AddWebsite()
-        .AddComposers()
-        // If you need to add something Umbraco specific, do it in the "AddUmbraco" builder chain, using the IUmbracoBuilder extension methods.
-        .AddNotificationHandler<ContentTypeSavedNotification, ContentTypeSavedHandler>()
-        .Build();
-
-    // Regular services can be added outside the "AddUmbraco" builder chain, using the default IServiceCollection.
-    services.AddSingleton<IFooBar, Foobar>();
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    // If you need to add something Umbraco specific, do it in the "AddUmbraco" builder chain, using the IUmbracoBuilder extension methods.
+    .AddNotificationHandler<ContentTypeSavedNotification, ContentTypeSavedHandler>()
+    .Build();
 ```
 
 ### Registering dependencies in packages
 
-When working with packages, you won't have access to the `Startup.cs` file, so instead you must use a [composer](../implementation/composing.md) to register your own dependencies in the container, using the `Services` property, or appropriate extension method, of the `IUmbracoBuilder`:
+When working with packages, you won't have access to the `Program.cs` file. Instead you must use a [composer](../implementation/composing.md) to register your own dependencies in the container.
+Using the `Services` property, or appropriate extension method, of the `IUmbracoBuilder`:
 
 ```csharp
 using IOCDocs.NotificationHandlers;
@@ -66,7 +62,7 @@ Remember to add `Umbraco.Cms.Core.DependencyInjection` and `Microsoft.Extensions
 
 ### Builder extension methods
 
-Depending on your scenario, you may have a lot of dependencies you need to register, in this case, your `Startup.cs` or Composer might become cluttered and hard to manage. A great way to manage multiple services is by creating your own custom extension methods for the `IUmbracoBuilder`, this way you can group similar dependencies in extension methods and register them all in as little as a single call:
+Depending on your scenario, you may have a lot of dependencies you need to register. In this case, your `Program.cs` or Composer might become cluttered and hard to manage. A great way to manage multiple services is by creating your own custom extension methods for the `IUmbracoBuilder`. This way you can group similar dependencies in extension methods and register them all in as little as a single call:
 
 ```csharp
 using IOCDocs.NotificationHandlers;
@@ -110,19 +106,17 @@ services.AddSingleton<Foobar>();
 ```
 {% endhint %}
 
-Now you can call your `AddCustomServices` in either the `Startup.cs` file, or your composer like so:
+Now you can call your `AddCustomServices` in either the `Program.cs` file, or your composer like so:
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()
-        .AddWebsite()
-        .AddComposers()
-        // Register all our custom services in one go.
-        .AddCustomServices()
-        .Build();
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    // Register all our custom services in one go.
+    .AddCustomServices()
+    .Build();
 ```
 
 ```csharp
@@ -266,9 +260,20 @@ public class MyCustomScopedService
             // Failed to get UmbracoHelper, probably because it was accessed outside of a scoped/transient service.
             return null;
         }
-        
-        // We got Umbraco helper, now we can do something with it.
-        return umbracoHelper.ContentAtRoot();
+
+        public IEnumerable<IPublishedContent> GetContentAtRoot()
+        {
+            // Try and get the Umbraco helper
+            var success = _umbracoHelperAccessor.TryGetUmbracoHelper(out var umbracoHelper);
+            if (success is false)
+            {
+                // Failed to get UmbracoHelper, probably because it was accessed outside of a scoped/transient service.
+                return null;
+            }
+
+            // We got Umbraco helper, now we can do something with it.
+            return umbracoHelper.ContentAtRoot();
+        }
     }
 }
 ```
@@ -314,7 +319,23 @@ public class SearchService : ISearchService
 
         if (!(index is IUmbracoIndex umbracoIndex))
         {
-            throw new InvalidOperationException("Could not cast");
+            if (_examineManager.TryGetIndex(Constants.UmbracoIndexes.ExternalIndexName, out var index) is false)
+            {
+                throw new InvalidOperationException($"No index found by name {Constants.UmbracoIndexes.ExternalIndexName}");
+            }
+
+            if (!(index is IUmbracoIndex umbracoIndex))
+            {
+                throw new InvalidOperationException("Could not cast");
+            }
+
+            // Do stuff with the index
+            if (_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext) is false)
+            {
+                throw new InvalidOperationException("Could not get Umbraco context");
+            }
+
+            return umbracoIndex.Searcher.Search(searchTerm).ToPublishedSearchResults(umbracoContext.PublishedSnapshot.Content);
         }
         
         // Do stuff with the index

@@ -42,23 +42,22 @@ The next step is to add the Azure Key Vault endpoint to the `appsettings.json` f
 After adding the Key Vault endpoint you have to update the `CreateHostBuilder` method which you can find in the `Program.cs` file.
 
 ```csharp
-public static IHostBuilder CreateHostBuilder(string[] args) =>
-    Host.CreateDefaultBuilder(args)
-        .ConfigureUmbracoDefaults()
-        .ConfigureAppConfiguration((context, config) =>
+Host.CreateDefaultBuilder(args)
+    .ConfigureUmbracoDefaults()
+    .ConfigureAppConfiguration((context, config) =>
+    {
+        var settings = config.Build();
+        var keyVaultEndpoint = settings["AzureKeyVaultEndpoint"];
+        if (!string.IsNullOrEmpty(keyVaultEndpoint) && Uri.TryCreate(keyVaultEndpoint, UriKind.Absolute, out var validUri))
         {
-            var settings = config.Build();
-            var keyVaultEndpoint = settings["AzureKeyVaultEndpoint"];
-            if (!string.IsNullOrEmpty(keyVaultEndpoint) && Uri.TryCreate(keyVaultEndpoint, UriKind.Absolute, out var validUri))
-            {
-                config.AddAzureKeyVault(validUri, new DefaultAzureCredential());
-            }
-        })
-        .ConfigureWebHostDefaults(webBuilder =>
-        {
-            webBuilder.UseStaticWebAssets();
-            webBuilder.UseStartup<Startup>();
-        });
+            config.AddAzureKeyVault(validUri, new DefaultAzureCredential());
+        }
+    })
+    .ConfigureWebHostDefaults(webBuilder =>
+    {
+        webBuilder.UseStaticWebAssets();
+        webBuilder.UseStartup<Startup>();
+    });
 ```
 
 ### Authentication

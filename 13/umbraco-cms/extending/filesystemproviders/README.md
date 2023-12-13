@@ -59,19 +59,17 @@ The `rootUrl` is the base URL that your media files will be served from. In this
 
 If you want to store the media files outside of `wwwroot` there is an extra step involved; you need to instruct netcore to include static files from a different physical location.
 
-In the `Configure` method in `startup.cs`, register a new static file location like so:
+In the `Program.cs` file, register a new static file location like so:
 
 ```csharp
-public void Configure(IApplicationBuilder app)
-{
-    ...
+...
+WebApplication app = builder.Build();
 
-    app.UseStaticFiles(new StaticFileOptions
+app.UseStaticFiles(new StaticFileOptions
     {
         FileProvider = new PhysicalFileProvider(Path.Combine("C:", "storage", "umbracoMedia")),
         RequestPath = "/CustomPath"
     });
-}
 ```
 
 The PhysicalFileProvider takes a single parameter, the **`RootPath`**. This is the rooted filesystem path using directory separator chars and not ending with a directory separator, eg: `c:\storage\umbracoMedia` or `\\server\path`. The safest way to achieve this is using `Path.Combine`.
