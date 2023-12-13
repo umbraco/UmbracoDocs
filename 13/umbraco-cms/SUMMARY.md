@@ -291,6 +291,7 @@
   * [Media Delivery API](reference/content-delivery-api/media-delivery-api.md)
   * [Protected content in the Delivery API](reference/content-delivery-api/protected-content-in-the-delivery-api.md)
   * [Output caching](reference/content-delivery-api/output-caching.md)
+  * [Property expansion and limiting](reference/content-delivery-api/property-expansion-and-limiting.md)
   * [Additional preview environments support](reference/content-delivery-api/additional-preview-environments-support.md)
 * [API versioning and OpenAPI](reference/api-versioning-and-openapi.md)
 * [Searching](reference/searching/README.md)
