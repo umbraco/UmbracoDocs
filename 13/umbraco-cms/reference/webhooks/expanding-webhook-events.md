@@ -35,7 +35,7 @@ To create a custom webhook event, follow these steps:
     }
     ```
 
-2. **Override Alias Property**:
+2. **Override the Alias Property**:
 
    Provide a unique identifier for your event using the `Alias` property:
 
