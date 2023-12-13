@@ -14,36 +14,35 @@ using Umbraco.Cms.Core.Models.ContentEditing;
 using Umbraco.Cms.Core.Notifications;
 using Umbraco.Extensions;
 
-namespace Umbraco.Docs.Samples.Web.Notifications
+namespace Umbraco.Docs.Samples.Web.Notifications;
+
+public class EditorSendingContentNotificationHandler : INotificationHandler<SendingContentNotification>
 {
-    public class EditorSendingContentNotificationHandler : INotificationHandler<SendingContentNotification>
+    public void Handle(SendingContentNotification notification)
     {
-        public void Handle(SendingContentNotification notification)
+        if (notification.Content.ContentTypeAlias.Equals("blogpost"))
         {
-            if (notification.Content.ContentTypeAlias.Equals("blogpost"))
+            // Access the property you want to pre-populate
+            // each content item can have 'variations' - each variation is represented by the `ContentVariantDisplay` class.
+            // if your site uses variants, then you need to decide whether to set the default value for all variants or a specific variant
+            // eg. set by variant name:
+            // var variant = notification.Content.Variants.FirstOrDefault(f => f.Name == "specificVariantName");
+            // OR loop through all the variants:
+            foreach (var variant in notification.Content.Variants)
             {
-                // Access the property you want to pre-populate
-                // each content item can have 'variations' - each variation is represented by the `ContentVariantDisplay` class.
-                // if your site uses variants, then you need to decide whether to set the default value for all variants or a specific variant
-                // eg. set by variant name:
-                // var variant = notification.Content.Variants.FirstOrDefault(f => f.Name == "specificVariantName");
-                // OR loop through all the variants:
-                foreach (var variant in notification.Content.Variants)
+                // Check if variant is a 'new variant'
+                // we only want to set the default value when the content item is first created
+                if (variant.State == ContentSavedState.NotCreated)
                 {
-                    // Check if variant is a 'new variant'
-                    // we only want to set the default value when the content item is first created
-                    if (variant.State == ContentSavedState.NotCreated)
+                    // each variant has an IEnumerable of 'Tabs' (property groupings)
+                    // and each of these contain an IEnumerable of `ContentPropertyDisplay` properties
+                    // find the first property with alias 'publishDate'
+                    var pubDateProperty = variant.Tabs.SelectMany(f => f.Properties)
+                        .FirstOrDefault(f => f.Alias.InvariantEquals("publishDate"));
+                    if (pubDateProperty is not null)
                     {
-                        // each variant has an IEnumerable of 'Tabs' (property groupings)
-                        // and each of these contain an IEnumerable of `ContentPropertyDisplay` properties
-                        // find the first property with alias 'publishDate'
-                        var pubDateProperty = variant.Tabs.SelectMany(f => f.Properties)
-                            .FirstOrDefault(f => f.Alias.InvariantEquals("publishDate"));
-                        if (pubDateProperty is not null)
-                        {
-                            // set default value of the publish date property if it exists
-                            pubDateProperty.Value = DateTime.UtcNow;
-                        }
+                        // set default value of the publish date property if it exists
+                        pubDateProperty.Value = DateTime.UtcNow;
                     }
                 }
             }
@@ -62,48 +61,47 @@ using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
 using Umbraco.Cms.Core.Services;
 
-namespace Umbraco.Docs.Samples.Web.Notifications
-{
-    public class EditorSendingMemberNotificationHandler : INotificationHandler<SendingMemberNotification>
-    {
-        private readonly IMemberGroupService _memberGroupService;
+namespace Umbraco.Docs.Samples.Web.Notifications;
 
-        public EditorSendingMemberNotificationHandler(IMemberGroupService memberGroupService)
-        {
-            _memberGroupService = memberGroupService;
-        }
+public class EditorSendingMemberNotificationHandler : INotificationHandler<SendingMemberNotification>
+{
+    private readonly IMemberGroupService _memberGroupService;
+
+    public EditorSendingMemberNotificationHandler(IMemberGroupService memberGroupService)
+    {
+        _memberGroupService = memberGroupService;
+    }
+    
+    public void Handle(SendingMemberNotification notification)
+    {
+        var isNew = !int.TryParse(notification.Member.Id?.ToString(), out int id) || id == 0;
         
-        public void Handle(SendingMemberNotification notification)
+        // We only want to set the default member group when the member is initially created, eg doesn't have an Id yet
+        if (isNew is false)
         {
-            var isNew = !int.TryParse(notification.Member.Id?.ToString(), out int id) || id == 0;
-            
-            // We only want to set the default member group when the member is initially created, eg doesn't have an Id yet
-            if (isNew is false)
+            return;
+        }
+
+        // Set a default value member group for the member type `Member`
+        if (notification.Member.ContentTypeAlias.Equals("Member"))
+        {
+            var memberGroup = _memberGroupService.GetByName("Customer");
+            if (memberGroup is null)
             {
                 return;
             }
 
-            // Set a default value member group for the member type `Member`
-            if (notification.Member.ContentTypeAlias.Equals("Member"))
+            // Find member group property on member model
+            var property = notification.Member.MembershipProperties.FirstOrDefault(x =>
+                x.Alias.Equals($"{Constants.PropertyEditors.InternalGenericPropertiesPrefix}membergroup"));
+
+            if (property is not null)
             {
-                var memberGroup = _memberGroupService.GetByName("Customer");
-                if (memberGroup is null)
+                // Assign a default value for member group property
+                property.Value = new Dictionary<string, object>
                 {
-                    return;
-                }
-
-                // Find member group property on member model
-                var property = notification.Member.Properties.FirstOrDefault(x =>
-                    x.Alias.Equals($"{Constants.PropertyEditors.InternalGenericPropertiesPrefix}membergroup"));
-
-                if (property is not null)
-                {
-                    // Assign a default value for member group property
-                    property.Value = new Dictionary<string, object>
-                    {
-                        {memberGroup.Name, true}
-                    };
-                }
+                    {memberGroup.Name, true}
+                };
             }
         }
     }

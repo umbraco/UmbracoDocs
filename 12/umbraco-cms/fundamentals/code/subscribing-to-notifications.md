@@ -20,12 +20,11 @@ We now have a class that looks like this:
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
 
-namespace MyProject
+namespace MyProject;
+
+public class LogWhenPublishedHandler : INotificationHandler<ContentPublishedNotification>
 {
-    public class LogWhenPublishedHandler : INotificationHandler<ContentPublishedNotification>
-    {
-        // Here we'll handle a notification.
-    }
+    // Here we'll handle a notification.
 }
 ```
 
@@ -35,15 +34,14 @@ However, we have an error and a red squiggly line under our class. This is becau
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
 
-namespace MyProject
+namespace MyProject;
+
+public class LogWhenPublishedHandler : INotificationHandler<ContentPublishedNotification>
 {
-    public class LogWhenPublishedHandler : INotificationHandler<ContentPublishedNotification>
+    public void Handle(ContentPublishedNotification notification)
     {
-        public void Handle(ContentPublishedNotification notification)
-        {
-            // The custom code to fire every time content is published goes here!
-            throw new System.NotImplementedException();
-        }
+        // The custom code to fire every time content is published goes here!
+        throw new System.NotImplementedException();
     }
 }
 ```
@@ -57,22 +55,21 @@ using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
 
-namespace MyProject
-{
-    public class LogWhenPublishedHandler : INotificationHandler<ContentPublishedNotification>
-    {
-        private readonly ILogger<LogWhenPublishedHandler> _logger;
+namespace MyProject;
 
-        public LogWhenPublishedHandler(ILogger<LogWhenPublishedHandler> logger)
-        {
-            _logger = logger;
-        }
-        
-        public void Handle(ContentPublishedNotification notification)
-        {
-            // The custom code to fire every time content is published goes here!
-            throw new System.NotImplementedException();
-        }
+public class LogWhenPublishedHandler : INotificationHandler<ContentPublishedNotification>
+{
+    private readonly ILogger<LogWhenPublishedHandler> _logger;
+
+    public LogWhenPublishedHandler(ILogger<LogWhenPublishedHandler> logger)
+    {
+        _logger = logger;
+    }
+    
+    public void Handle(ContentPublishedNotification notification)
+    {
+        // The custom code to fire every time content is published goes here!
+        throw new System.NotImplementedException();
     }
 }
 ```
@@ -127,25 +124,24 @@ using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
 
-namespace MyProject
-{
-    public class LogWhenPublishedHandler : INotificationHandler<ContentPublishedNotification>
-    {
-        private readonly ILogger<LogWhenPublishedHandler> _logger;
+namespace MyProject;
 
-        public LogWhenPublishedHandler(ILogger<LogWhenPublishedHandler> logger)
+public class LogWhenPublishedHandler : INotificationHandler<ContentPublishedNotification>
+{
+    private readonly ILogger<LogWhenPublishedHandler> _logger;
+
+    public LogWhenPublishedHandler(ILogger<LogWhenPublishedHandler> logger)
+    {
+        _logger = logger;
+    }
+    
+    public void Handle(ContentPublishedNotification notification)
+    {
+        // The custom code to fire every time content is published goes here!
+        _logger.LogInformation("Something has been published.");
+        foreach (var publishedItem in notification.PublishedEntities)
         {
-            _logger = logger;
-        }
-        
-        public void Handle(ContentPublishedNotification notification)
-        {
-            // The custom code to fire every time content is published goes here!
-            _logger.LogInformation("Something has been published.");
-            foreach (var publishedItem in notification.PublishedEntities)
-            {
-                _logger.LogInformation("{ContentName} was published", publishedItem.Name);
-            }
+            _logger.LogInformation("{ContentName} was published", publishedItem.Name);
         }
     }
 }

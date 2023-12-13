@@ -7,15 +7,14 @@ In a class you can inject the IExamineManager interface:
 ```csharp
 using Examine;
 
-namespace MyCustomUmbracoSolution
+namespace MyCustomUmbracoSolution;
+
+public class MyClass
 {
-    public class MyClass
+    private readonly IExamineManager _examineManager;
+    public MyClass(IExamineManager examineManager)
     {
-        private readonly IExamineManager _examineManager;
-        public MyClass(IExamineManager examineManager)
-        {
-            _examineManager = examineManager;
-        }
+        _examineManager = examineManager;
     }
 }
 ```

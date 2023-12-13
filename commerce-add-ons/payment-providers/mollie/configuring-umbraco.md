@@ -34,13 +34,13 @@ The following steps are handled within the payment method editor in the Umbraco 
 
 | Name                                    | Description                                                                                    |
 | --------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| Continue URL                            | The URL of the page to navigate to after payment is successful - e.g. `/confirmation/`         |
+| Continue URL                            | The URL of the page to navigate to after payment is successful - e.g. `/confirmation/`. Without a value set, buyers will receive a null exception after they finish paying. |
 | Cancel URL                              | The URL of the page to navigate to if the customer cancels the payment - e.g. `/cart/`         |
 | Error URL                               | The URL of the page to navigate to if there is an error with the payment - e.g. `/error/`      |
-| Billing Address (Line 1) Property Alias | The alias of the property containing line 1 of the billing address - for example addressLine1. |
-| Billing Address City Property Alias     | The alias of the property containing the city of the billing address - for example city.       |
+| Billing Address (Line 1) Property Alias | **\[Mandatory\]** The alias of the property containing line 1 of the billing address. By default, you should set it to `billingAddressLine1` unless you [overwrite it in a ui config file](https://docs.umbraco.com/umbraco-commerce/key-concepts/ui-config-files#example-cart-order-editor-config-file).|
+| Billing Address City Property Alias     | **\[Mandatory\]** The alias of the property containing the city of the billing address. By default, you should set it to `billingCity` unless you [overwrite it in a ui config file](https://docs.umbraco.com/umbraco-commerce/key-concepts/ui-config-files#example-cart-order-editor-config-file).|
 | Billing Address State Property Alias    | The alias of the property containing the state of the billing address - for example state.     |
-| Billing Address Zip Code Property Alias | The alias of the property containing the zip code of the billing address - for example zip.    |
+| Billing Address Zip Code Property Alias | **\[Mandatory\]** The alias of the property containing the zip code of the billing address. By default, you should set it to `billingZipCode` unless you [overwrite it in a ui config file](https://docs.umbraco.com/umbraco-commerce/key-concepts/ui-config-files#example-cart-order-editor-config-file).|
 | Test API Key                            | The test Mollie API key                                                                        |
 | Live API Key                            | The live Mollie API key                                                                        |
 | Test Mode                               | Toggle indicating whether this provider should run in test mode                                |

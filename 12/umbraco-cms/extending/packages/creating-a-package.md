@@ -202,16 +202,15 @@ We can run a migration plan for each package that contains Umbraco content (_ref
 
 If you just want to ship a package that only installs the schema and the content you chose, then you can inherit from the `AutomaticPackageMigrationPlan` as seen below, and specify the package name that will be displayed under the packages _Installed_ tab in the backoffice. You will also need to embed the schema file in the same namespace.
 
-```
+```csharp
 using Umbraco.Cms.Infrastructure.Packaging;
 
-namespace CustomWelcomeDashboardProject.Migrations
+namespace CustomWelcomeDashboardProject.Migrations;
+
+public class PackageMigrationPlan : AutomaticPackageMigrationPlan
 {
-    public class PackageMigrationPlan : AutomaticPackageMigrationPlan
+    public PackageMigrationPlan() : base("Custom Welcome Dashboard")
     {
-        public PackageMigrationPlan() : base("Custom Welcome Dashboard")
-        {
-        }
     }
 }
 ```
@@ -226,7 +225,7 @@ Whenever the embedded package.xml file changes, the automatic package migration 
 
 Instead of creating an automatic package migration plan, we will inherit from the `PackageMigrationPlan` and again specify the name of the package in the base constructor. Further on, we will define the plan using a unique GUID - in the example below we have a single migration called `MyCustomMigration`.
 
-```
+```csharp
 using Umbraco.Cms.Core.Packaging;
 
 namespace CustomWelcomeDashboardProject.Migrations;
@@ -246,7 +245,7 @@ public class CustomPackageMigrationPlan : PackageMigrationPlan
 
 The custom migrations can inherit from `PackageMigrationBase` where we can use helper methods to pick up the schema. But we can also use the regular `MigrationBase` class.
 
-```
+```csharp
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core.Configuration.Models;
 using Umbraco.Cms.Core.IO;

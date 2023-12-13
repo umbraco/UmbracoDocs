@@ -72,19 +72,18 @@ using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Web.Common.Controllers;
 
-namespace RoutingDocs.Controllers
+namespace RoutingDocs.Controllers;
+
+public class ShopController : UmbracoPageController, IVirtualPageController
 {
-    public class ShopController : UmbracoPageController, IVirtualPageController
-    {
-        public ShopController(
-            ILogger<UmbracoPageController> logger,
-            ICompositeViewEngine compositeViewEngine)
-            : base(logger, compositeViewEngine)
-        { }
-        
-        public IPublishedContent FindContent(ActionExecutingContext actionExecutingContext)
-        { }
-    }
+    public ShopController(
+        ILogger<UmbracoPageController> logger,
+        ICompositeViewEngine compositeViewEngine)
+        : base(logger, compositeViewEngine)
+    { }
+    
+    public IPublishedContent FindContent(ActionExecutingContext actionExecutingContext)
+    { }
 }
 ```
 
@@ -266,26 +265,25 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Web.Common.ApplicationBuilder;
 
-namespace RoutingDocs.Controllers
+namespace RoutingDocs.Controllers;
+
+public class ShopControllerComposer : IComposer
 {
-    public class ShopControllerComposer : IComposer
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
+        builder.Services.Configure<UmbracoPipelineOptions>(options =>
         {
-            builder.Services.Configure<UmbracoPipelineOptions>(options =>
+            options.AddFilter(new UmbracoPipelineFilter(nameof(ShopController))
             {
-                options.AddFilter(new UmbracoPipelineFilter(nameof(ShopController))
+                Endpoints = app => app.UseEndpoints(endpoints =>
                 {
-                    Endpoints = app => app.UseEndpoints(endpoints =>
-                    {
-                        endpoints.MapControllerRoute(
-                            "Shop Controller",
-                            "/shop/{action}/{id?}",
-                            new {Controller = "Shop", Action = "Index"});
-                    })
-                });
+                    endpoints.MapControllerRoute(
+                        "Shop Controller",
+                        "/shop/{action}/{id?}",
+                        new {Controller = "Shop", Action = "Index"});
+                })
             });
-        }
+        });
     }
 }
 ```
@@ -410,45 +408,44 @@ using RoutingDocs.Models;
 using RoutingDocs.Persistence;
 using Umbraco.Cms.Web.Common.Controllers;
 
-namespace RoutingDocs.Controllers
+namespace RoutingDocs.Controllers;
+
+public class ShopController : UmbracoPageController
 {
-    public class ShopController : UmbracoPageController
+    public ShopController(
+        ILogger<UmbracoPageController> logger,
+        ICompositeViewEngine compositeViewEngine)
+        : base(logger, compositeViewEngine)
+    { }
+
+    [HttpGet]
+    public IActionResult Index()
     {
-        public ShopController(
-            ILogger<UmbracoPageController> logger,
-            ICompositeViewEngine compositeViewEngine)
-            : base(logger, compositeViewEngine)
-        { }
+        // CurrentPage (IPublishedContent) will be the content returned
+        // from the FindContent method.
 
-        [HttpGet]
-        public IActionResult Index()
+        // return the view with the IPublishedContent
+        return View(CurrentPage);
+    }
+
+    [HttpGet]
+    public IActionResult Product(string id)
+    {
+        // CurrentPage (IPublishedContent) will be the content returned
+        // from the FindContent method.
+
+        // One example of using a custom route would be to include additional
+        // model information based on external services. For example, if
+        // we wanted to return the stores the product is available in from
+        // a custom data store.
+        var dbProduct = DbContext.Products.GetBySku(id);
+        var shopModel = new Product(CurrentPage)
         {
-            // CurrentPage (IPublishedContent) will be the content returned
-            // from the FindContent method.
+            Sku = id,
+            AvailableStores = dbProduct.AvailableStores
+        };
 
-            // return the view with the IPublishedContent
-            return View(CurrentPage);
-        }
-
-        [HttpGet]
-        public IActionResult Product(string id)
-        {
-            // CurrentPage (IPublishedContent) will be the content returned
-            // from the FindContent method.
-
-            // One example of using a custom route would be to include additional
-            // model information based on external services. For example, if
-            // we wanted to return the stores the product is available in from
-            // a custom data store.
-            var dbProduct = DbContext.Products.GetBySku(id);
-            var shopModel = new Product(CurrentPage)
-            {
-                Sku = id,
-                AvailableStores = dbProduct.AvailableStores
-            };
-
-            return View(shopModel);
-        }
+        return View(shopModel);
     }
 }
 ```
@@ -458,7 +455,7 @@ As you can see we still inherit from `UmbracoPageController` to get access to th
 The Umbraco magic will now instead happen where we route the controller, here we will pass a `Func<ActionExecutingContext, IPublishedContent>` delegate to the `ForUmbracoPage` method, this delegate is then responsible for finding the content, for instance using a composer with the same logic as in the `IVirtualPageController` it will look like this:
 
 ```csharp
- public class ShopControllerComposer : IComposer
+public class ShopControllerComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {
