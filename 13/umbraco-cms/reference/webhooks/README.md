@@ -38,7 +38,7 @@ You can specify custom headers, that will be sent with your request.
 For example you could specify `Accept: application/json`, security headers, etc.
 
 # Defaults
-Umbraco webhooks have been configured with some defaults, such as default headers or some events send a payload. In this section we will take a look at those.
+Umbraco webhooks have been configured with some defaults, such as default headers or some events that send a payload. In this section, we will take a look at those.
 
 ## Json payload
 For example, the `Content Published` event will also send the given content that triggered the event. The json from is the same as the `Content Delivery Api`, an example of such a json object:
