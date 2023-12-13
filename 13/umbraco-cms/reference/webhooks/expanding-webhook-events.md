@@ -1,5 +1,5 @@
 ﻿---
-description: Creating your own webhook events.
+description: Creating your own webhook events
 ---
 
 # Creating your own webhook events

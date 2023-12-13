@@ -1,19 +1,19 @@
 ﻿---
-description: Get started with Webhooks.
+description: Get started with Webhooks
 ---
 
-# Webhooks.
+# Webhooks
 
 Webhooks provide real-time, event-driven communication within Umbraco. Seamlessly integrated, these lightweight, HTTP-based notifications empower you to trigger instant actions and synchronize data.  And with its different extension points, you can tailor these webhooks. to fit a broad range of requirements.
 
 ## Getting Started
 
 To work with Webhooks, you need to go to the Webhooks within the Settings section:
-![img.png](img.png)
+![Webhooks section](images/webhook-section.png)
 
 From here we can create a webhook, by clicking the `Create webhook` button, this will take you to the create webhook screen:
 
-![img_1.png](img_1.png)
+![Creating a webhook](images/create-webhook.png)
 
 ## Url
 The `Url` should be the endpoint you want the webhook to send a request to, whenever a given `Event` is fired.
@@ -30,7 +30,7 @@ Events are when a given action happens, by default there are 5 events you can ch
 ## Content type
 If you have selected a Content / Media event, you can specify if you only want your webhook to fire with a given Document/Media type.
 
-For example, if you have selected `Content Published` event, you can specify that you only want the webhook to fire, when the content is of a given content type.
+For example, if you have selected `Content Published` event. You can then specify that you only want the webhook to fire, when the content is of a given content type.
 
 ## Headers
 You can specify custom headers, that will be sent with your request.
@@ -38,7 +38,7 @@ You can specify custom headers, that will be sent with your request.
 For example you could specify `Accept: application/json`, security headers, etc.
 
 # Defaults
-Umbraco webhooks have been configured with some defaults, such as default headers or some events send a payload, in this section we will take a look at those.
+Umbraco webhooks have been configured with some defaults, such as default headers or some events send a payload. In this section we will take a look at those.
 
 ## Json payload
 For example, the `Content Published` event will also send the given content that triggered the event. The json from is the same as the `Content Delivery Api`, an example of such a json object:
@@ -60,7 +60,7 @@ For example, the `Content Published` event will also send the given content that
 }
 ```
 
-But the `Content deleted` does not send the entire content as json, instead it sends just the `Id` of the content like so:
+But the `Content deleted` does not send the entire content as json, instead it sends the `Id` of the content like so:
 
 ```json
 {
@@ -78,7 +78,7 @@ By default, webhook requests will include 3 headers
 
 ## Adding more events
 
-To add more than just the default events to Umbraco, you can leverage the provided `IUmbracoBuilder` and `IComposer` interfaces. Below is an example of how you can extend the list of available webhook events using a custom `WebhookComposer`:
+To add more than the default events to Umbraco, you can leverage the provided `IUmbracoBuilder` and `IComposer` interfaces. Below is an example of how you can extend the list of available webhook events using a custom `WebhookComposer`:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
