@@ -11,27 +11,26 @@ using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
 
-namespace MySite
-{
-    public class MediaNotificationHandler : INotificationHandler<MediaSavedNotification>
-    {
-        private readonly ILogger<MediaNotificationHandler> _logger;
+namespace MySite;
 
-        public MediaNotificationHandler(ILogger<MediaNotificationHandler> logger)
+public class MediaNotificationHandler : INotificationHandler<MediaSavedNotification>
+{
+    private readonly ILogger<MediaNotificationHandler> _logger;
+
+    public MediaNotificationHandler(ILogger<MediaNotificationHandler> logger)
+    {
+        _logger = logger;
+    }
+    
+    public void Handle(MediaSavedNotification notification)
+    {
+        foreach (var mediaItem in notification.SavedEntities)
         {
-            _logger = logger;
-        }
-        
-        public void Handle(MediaSavedNotification notification)
-        {
-            foreach (var mediaItem in notification.SavedEntities)
+            if (mediaItem.ContentType.Alias.Equals("Image"))
             {
-                if (mediaItem.ContentType.Alias.Equals("Image"))
-                {
-                    // Do something with the image, maybe send to Azure for AI analysis of image contents or something.
-                    _logger.LogDebug($"Sending {mediaItem.Name} to analysis");
-                    SendToAzure(mediaItem);
-                }
+                // Do something with the image, maybe send to Azure for AI analysis of image contents or something.
+                _logger.LogDebug($"Sending {mediaItem.Name} to analysis");
+                SendToAzure(mediaItem);
             }
         }
     }

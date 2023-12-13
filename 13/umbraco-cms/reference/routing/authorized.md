@@ -95,15 +95,14 @@ Using the `MapUmbracoRoute` extension method is optional though, it's a neat hel
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Web.Common.Controllers;
 
-namespace Umbraco.Cms.Web.UI.NetCore
+namespace Umbraco.Cms.Web.UI.NetCore;
+
+[Area("MyPackageName")]
+public class MyController : UmbracoAuthorizedController
 {
-    [Area("MyPackageName")]
-    public class MyController : UmbracoAuthorizedController
+    public IActionResult Index()
     {
-        public IActionResult Index()
-        {
-            return Content("Hello from authorized controller");
-        }
+        return Content("Hello from authorized controller");
     }
 }
 ```

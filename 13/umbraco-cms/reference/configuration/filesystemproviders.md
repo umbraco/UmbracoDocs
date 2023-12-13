@@ -68,7 +68,7 @@ app.UseStaticFiles(new StaticFileOptions
 
 Now you can register the folder as the media filesystem
 
-```
+```csharp
 using System.IO;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -78,26 +78,25 @@ using Umbraco.Cms.Core.Hosting;
 using Umbraco.Cms.Core.IO;
 using Umbraco.Cms.Infrastructure.DependencyInjection;
 
-namespace FilesystemProviders
-{
-    public class FilesystemComposer : IComposer
-    {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.SetMediaFileSystem((factory) =>
-            {
-                IHostingEnvironment hostingEnvironment = factory.GetRequiredService<IHostingEnvironment>();
-                var rootPath = Path.Combine("C:", "storage", "umbracoMedia");
-                var rootUrl = hostingEnvironment.ToAbsolute("/CustomPath");
+namespace FilesystemProviders;
 
-                return new PhysicalFileSystem(
-                    factory.GetRequiredService<IIOHelper>(),
-                    hostingEnvironment,
-                    factory.GetRequiredService<ILogger<PhysicalFileSystem>>(),
-                    rootPath,
-                    rootUrl);
-            });
-        }
+public class FilesystemComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.SetMediaFileSystem((factory) =>
+        {
+            IHostingEnvironment hostingEnvironment = factory.GetRequiredService<IHostingEnvironment>();
+            var rootPath = Path.Combine("C:", "storage", "umbracoMedia");
+            var rootUrl = hostingEnvironment.ToAbsolute("/CustomPath");
+
+            return new PhysicalFileSystem(
+                factory.GetRequiredService<IIOHelper>(),
+                hostingEnvironment,
+                factory.GetRequiredService<ILogger<PhysicalFileSystem>>(),
+                rootPath,
+                rootUrl);
+        });
     }
 }
 ```
@@ -137,49 +136,48 @@ using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Infrastructure.Persistence;
 using Umbraco.Cms.Web.Website.Controllers;
 
-namespace FilesystemProviders
+namespace FilesystemProviders;
+
+public class MediaController : SurfaceController
 {
-    public class MediaController : SurfaceController
+    private readonly MediaFileManager _mediaFileManager;
+    private readonly IHostingEnvironment _hostingEnvironment;
+
+    public MediaController(
+        IUmbracoContextAccessor umbracoContextAccessor,
+        IUmbracoDatabaseFactory databaseFactory,
+        ServiceContext services,
+        AppCaches appCaches,
+        IProfilingLogger profilingLogger,
+        IPublishedUrlProvider publishedUrlProvider,
+        MediaFileManager mediaFileManager,
+        IHostingEnvironment hostingEnvironment)
+        : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
     {
-        private readonly MediaFileManager _mediaFileManager;
-        private readonly IHostingEnvironment _hostingEnvironment;
+        _mediaFileManager = mediaFileManager;
+        _hostingEnvironment = hostingEnvironment;
+    }
 
-        public MediaController(
-            IUmbracoContextAccessor umbracoContextAccessor,
-            IUmbracoDatabaseFactory databaseFactory,
-            ServiceContext services,
-            AppCaches appCaches,
-            IProfilingLogger profilingLogger,
-            IPublishedUrlProvider publishedUrlProvider,
-            MediaFileManager mediaFileManager,
-            IHostingEnvironment hostingEnvironment)
-            : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+    public IActionResult Index(string id, string file)
+    {
+        var path = _hostingEnvironment.MapPathWebRoot($"/media/{id}/{file}");
+
+        if (_mediaFileManager.FileSystem.FileExists(path))
         {
-            _mediaFileManager = mediaFileManager;
-            _hostingEnvironment = hostingEnvironment;
-        }
+            var stream = _mediaFileManager.FileSystem.OpenFile(path);
+            stream.Seek(0, SeekOrigin.Begin);
 
-        public IActionResult Index(string id, string file)
-        {
-            var path = _hostingEnvironment.MapPathWebRoot($"/media/{id}/{file}");
-
-            if (_mediaFileManager.FileSystem.FileExists(path))
+            var provider = new FileExtensionContentTypeProvider();
+            string contentType;
+            if (!provider.TryGetContentType(file, out contentType))
             {
-                var stream = _mediaFileManager.FileSystem.OpenFile(path);
-                stream.Seek(0, SeekOrigin.Begin);
-
-                var provider = new FileExtensionContentTypeProvider();
-                string contentType;
-                if (!provider.TryGetContentType(file, out contentType))
-                {
-                    contentType = "application/octet-stream";
-                }
-
-                return new FileStreamResult(stream, contentType);
+                contentType = "application/octet-stream";
             }
 
-            return new NotFoundResult();
+            return new FileStreamResult(stream, contentType);
         }
+
+        return new NotFoundResult();
     }
 }
 ```

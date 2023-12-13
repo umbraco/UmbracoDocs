@@ -4,7 +4,7 @@ description: "A MediaType is almost the same as a ContentType. I.e. a model / da
 
 # MediaType
 
-A MediaType is almost the same as a [ContentType](contenttype.md). I.e. a model / data definition for your media nodes.
+A MediaType is almost the same as a [ContentType](contenttype.md), that is, a model / data definition for your media nodes
 
 You can set icon, thumbnail and description. It is also possible to add groups and properties.
 
@@ -36,7 +36,7 @@ Constructor for creating a new `MediaType` object where the necessary parameter 
 
 ### new MediaType(IShortStringHelper shortStringHelper, IMediaType parent, string alias)
 
-Constructor for creating a new `MediaType` object where the necessary parameters are a short string helper `IShortStringHelper`, the parent `MediaType` as an `IMediaType` object and the alias of the `MediaType` as a `string`.
+This constructor creates a new `MediaType` object and requires the following parameters: a short string helper `IShortStringHelper` and the parent `MediaType` as an `IMediaType` object. Additionally, the alias of the `MediaType` should be provided as a `string`.
 
 ## Properties
 
@@ -66,7 +66,7 @@ return mediaType.AllowedContentTypes;
 
 Gets a list of `MediaTypes` as `IContentTypeComposition` objects that make up a composition of PropertyGroups and PropertyTypes for the current MediaType.
 
-The `ContentTypeComposition` provides a mixin-type functionality in that you can compose a MediaType of one or more other MediaTypes in a complex structure. But please note that the backoffice does not fully support these complex structures yet.
+The `ContentTypeComposition` provides a mixin-type functionality in that you can compose a MediaType of one or more other MediaTypes in a complex structure. But please keep in mind that the backoffice does not fully support these complex structures yet
 
 ```csharp
 // Given a `MediaTypeService` object get MediaType by its Id and return ContentTypeComposition
@@ -136,7 +136,7 @@ return mediaType.Icon;
 
 ### .Id
 
-Gets the unique `MediaType` Id as a `Int`, this ID is based on a Database identity field, and is therefore not safe to reference in code which are moved between different instances, use Key instead.
+Retrieves the unique `MediaType` ID as an `Int`. This ID is based on a Database identity field and is therefore not safe to reference in code when moved between different instances.
 
 ### .Key
 

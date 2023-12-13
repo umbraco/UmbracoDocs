@@ -44,15 +44,14 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Notifications;
 
-namespace IOCDocs
+namespace IOCDocs;
+
+public class MyComposer : IComposer
 {
-    public class MyComposer : IComposer
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.AddNotificationHandler<ContentTypeSavedNotification, ContentTypeSavedHandler>();
-            builder.Services.AddSingleton<IFooBar, Foobar>();
-        }
+        builder.AddNotificationHandler<ContentTypeSavedNotification, ContentTypeSavedHandler>();
+        builder.Services.AddSingleton<IFooBar, Foobar>();
     }
 }
 ```
@@ -72,30 +71,29 @@ using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Notifications;
 
-namespace IOCDocs
+namespace IOCDocs;
+
+public static class MyCustomBuilderExtensions
 {
-    public static class MyCustomBuilderExtensions
+    public static IUmbracoBuilder RegisterCustomNotificationHandlers(this IUmbracoBuilder builder)
     {
-        public static IUmbracoBuilder RegisterCustomNotificationHandlers(this IUmbracoBuilder builder)
-        {
-            builder.AddNotificationHandler<ContentTypeSavedNotification, ContentTypeSavedHandler>();
-            {...}
-            return builder;
-        }
+        builder.AddNotificationHandler<ContentTypeSavedNotification, ContentTypeSavedHandler>();
+        {...}
+        return builder;
+    }
 
-        public static IUmbracoBuilder RegisterCustomServices(this IUmbracoBuilder builder)
-        {
-            builder.Services.AddSingleton<IFooBar, Foobar>();
-            {...}
-            return builder;
-        }
+    public static IUmbracoBuilder RegisterCustomServices(this IUmbracoBuilder builder)
+    {
+        builder.Services.AddSingleton<IFooBar, Foobar>();
+        {...}
+        return builder;
+    }
 
-        public static IUmbracoBuilder AddCustomServices(this IUmbracoBuilder builder)
-        {
-            builder.RegisterCustomNotificationHandlers();
-            builder.RegisterCustomServices();
-            return builder;
-        }
+    public static IUmbracoBuilder AddCustomServices(this IUmbracoBuilder builder)
+    {
+        builder.RegisterCustomNotificationHandlers();
+        builder.RegisterCustomServices();
+        return builder;
     }
 }
 ```
@@ -125,15 +123,14 @@ builder.CreateUmbracoBuilder()
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 
-namespace IOCDocs
+namespace IOCDocs;
+
+public class MyComposer : IComposer
 {
-    public class MyComposer : IComposer
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            // Register all our custom services in one go.
-            builder.AddCustomServices();
-        }
+        // Register all our custom services in one go.
+        builder.AddCustomServices();
     }
 }
 ```
@@ -172,22 +169,21 @@ If you need to inject your service into a controller, or another service, you'll
 using IOCDocs.Services;
 using Umbraco.Cms.Web.Common.Controllers;
 
-namespace IOCDocs.Controllers
+namespace IOCDocs.Controllers;
+
+public class FooController : UmbracoApiController
 {
-    public class FooController : UmbracoApiController
+    private readonly IFooBar _fooBar;
+
+    public FooController(IFooBar fooBar)
     {
-        private readonly IFooBar _fooBar;
+        _fooBar = fooBar;
+    }
 
-        public FooController(IFooBar fooBar)
-        {
-            _fooBar = fooBar;
-        }
-
-        public string Foo()
-        {
-            var bar = _fooBar.Foo();
-            return bar;
-        }
+    public string Foo()
+    {
+        var bar = _fooBar.Foo();
+        return bar;
     }
 }
 ```
@@ -195,12 +191,11 @@ namespace IOCDocs.Controllers
 If you place a breakpoint on `var bar = _foobar.Foo()`, open `/Umbraco/Api/foo/foo` in your browser and inspect the variable, you'll see that the value is `bar`, which is what you'd expect since all the `Foobar.Foo()` method does it to return `Bar` as a string:
 
 ```csharp
-namespace IOCDocs.Services
+namespace IOCDocs.Services;
+
+public class Foobar : IFooBar
 {
-    public class Foobar : IFooBar
-    {
-        public string Foo() => "Bar";
-    }
+    public string Foo() => "Bar";
 }
 ```
 
@@ -244,16 +239,26 @@ using System.Collections.Generic;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Web.Common;
 
-namespace IOCDocs.Services
-{
-    // This service must be scoped
-    public class MyCustomScopedService
-    {
-        private readonly IUmbracoHelperAccessor _umbracoHelperAccessor;
+namespace IOCDocs.Services;
 
-        public MyCustomScopedService(IUmbracoHelperAccessor umbracoHelperAccessor)
+// This service must be scoped
+public class MyCustomScopedService
+{
+    private readonly IUmbracoHelperAccessor _umbracoHelperAccessor;
+
+    public MyCustomScopedService(IUmbracoHelperAccessor umbracoHelperAccessor)
+    {
+        _umbracoHelperAccessor = umbracoHelperAccessor;
+    }
+    
+    public IEnumerable<IPublishedContent> GetContentAtRoot()
+    {
+        // Try and get the Umbraco helper
+        var success = _umbracoHelperAccessor.TryGetUmbracoHelper(out var umbracoHelper);
+        if (success is false)
         {
-            _umbracoHelperAccessor = umbracoHelperAccessor;
+            // Failed to get UmbracoHelper, probably because it was accessed outside of a scoped/transient service.
+            return null;
         }
 
         public IEnumerable<IPublishedContent> GetContentAtRoot()
@@ -291,21 +296,28 @@ using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Infrastructure.Examine;
 using Umbraco.Extensions;
 
-namespace IOCDocs.Services
-{
-    // This service must be scoped.
-    public class SearchService : ISearchService
-    {
-        private readonly IExamineManager _examineManager;
-        private readonly IUmbracoContextAccessor _umbracoContextAccessor;
+namespace IOCDocs.Services;
 
-        public SearchService(IExamineManager examineManager, IUmbracoContextAccessor umbracoContextAccessor)
+// This service must be scoped.
+public class SearchService : ISearchService
+{
+    private readonly IExamineManager _examineManager;
+    private readonly IUmbracoContextAccessor _umbracoContextAccessor;
+
+    public SearchService(IExamineManager examineManager, IUmbracoContextAccessor umbracoContextAccessor)
+    {
+        _examineManager = examineManager;
+        _umbracoContextAccessor = umbracoContextAccessor;
+    }
+
+    public IEnumerable<PublishedSearchResult> Search(string searchTerm)
+    {
+        if (_examineManager.TryGetIndex(Constants.UmbracoIndexes.ExternalIndexName, out var index) is false)
         {
-            _examineManager = examineManager;
-            _umbracoContextAccessor = umbracoContextAccessor;
+            throw new InvalidOperationException($"No index found by name {Constants.UmbracoIndexes.ExternalIndexName}");
         }
 
-        public IEnumerable<PublishedSearchResult> Search(string searchTerm)
+        if (!(index is IUmbracoIndex umbracoIndex))
         {
             if (_examineManager.TryGetIndex(Constants.UmbracoIndexes.ExternalIndexName, out var index) is false)
             {
@@ -325,6 +337,14 @@ namespace IOCDocs.Services
 
             return umbracoIndex.Searcher.Search(searchTerm).ToPublishedSearchResults(umbracoContext.PublishedSnapshot.Content);
         }
+        
+        // Do stuff with the index
+        if (_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext) is false)
+        {
+            throw new InvalidOperationException("Could not get Umbraco context");
+        }
+
+        return umbracoIndex.Searcher.Search(searchTerm).ToPublishedSearchResults(umbracoContext.PublishedSnapshot.Content);
     }
 }
 ```
@@ -337,21 +357,20 @@ namespace IOCDocs.Services
 using System;
 using Microsoft.Extensions.Logging;
 
-namespace IOCDocs.Services
+namespace IOCDocs.Services;
+
+public class Foobar : IFooBar
 {
-    public class Foobar : IFooBar
+    private readonly ILogger<Foobar> _logger;
+
+    public Foobar(ILogger<Foobar> logger)
     {
-        private readonly ILogger<Foobar> _logger;
+        _logger = logger;
+    }
 
-        public Foobar(ILogger<Foobar> logger)
-        {
-            _logger = logger;
-        }
-
-        public void Foo()
-        {
-            _logger.LogInformation("Method Foo called at {DateTime}", DateTime.UtcNow);
-        }
+    public void Foo()
+    {
+        _logger.LogInformation("Method Foo called at {DateTime}", DateTime.UtcNow);
     }
 }
 ```

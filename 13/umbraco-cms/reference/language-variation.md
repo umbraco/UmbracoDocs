@@ -28,29 +28,28 @@ using Umbraco.Cms.Infrastructure.Persistence;
 using Umbraco.Cms.Web.Website.Controllers;
 using Umbraco.Extensions;
 
-namespace TestStuff
+namespace TestStuff;
+
+public class TestController : SurfaceController
 {
-    public class TestController : SurfaceController
+
+    public TestController(
+        IUmbracoContextAccessor umbracoContextAccessor, 
+        IUmbracoDatabaseFactory databaseFactory, 
+        ServiceContext services, 
+        AppCaches appCaches, 
+        IProfilingLogger profilingLogger, 
+        IPublishedUrlProvider publishedUrlProvider) 
+        : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
     {
+    }
 
-        public TestController(
-            IUmbracoContextAccessor umbracoContextAccessor, 
-            IUmbracoDatabaseFactory databaseFactory, 
-            ServiceContext services, 
-            AppCaches appCaches, 
-            IProfilingLogger profilingLogger, 
-            IPublishedUrlProvider publishedUrlProvider) 
-            : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
-        {
-        }
+    public IActionResult Index()
+    {
+        var culturedRootNode = CurrentPage.Root();
+        TempData.Add("CulturedRootNode", culturedRootNode);
 
-        public IActionResult Index()
-        {
-            var culturedRootNode = CurrentPage.Root();
-            TempData.Add("CulturedRootNode", culturedRootNode);
-
-            return View();
-        }
+        return View();
     }
 }
 ```
@@ -69,37 +68,36 @@ using Umbraco.Cms.Infrastructure.Persistence;
 using Umbraco.Cms.Web.Website.Controllers;
 using Umbraco.Extensions;
 
-namespace TestStuff
+namespace TestStuff;
+
+public class TestController : SurfaceController
 {
-    public class TestController : SurfaceController
+    private readonly IVariationContextAccessor _variationContextAccessor;
+
+    public TestController(
+        IUmbracoContextAccessor umbracoContextAccessor, 
+        IUmbracoDatabaseFactory databaseFactory, 
+        ServiceContext services, 
+        AppCaches appCaches, 
+        IProfilingLogger profilingLogger, 
+        IPublishedUrlProvider publishedUrlProvider, 
+        IVariationContextAccessor variationContextAccessor) 
+        : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
     {
-        private readonly IVariationContextAccessor _variationContextAccessor;
+        _variationContextAccessor = variationContextAccessor;
+    }
 
-        public TestController(
-            IUmbracoContextAccessor umbracoContextAccessor, 
-            IUmbracoDatabaseFactory databaseFactory, 
-            ServiceContext services, 
-            AppCaches appCaches, 
-            IProfilingLogger profilingLogger, 
-            IPublishedUrlProvider publishedUrlProvider, 
-            IVariationContextAccessor variationContextAccessor) 
-            : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
-        {
-            _variationContextAccessor = variationContextAccessor;
-        }
+    public IActionResult Index()
+    {
+        const string culture = "af"; // Afrikaans
 
-        public IActionResult Index()
-        {
-            const string culture = "af"; // Afrikaans
+        // This is how the culture is set for the context we are in
+        _variationContextAccessor.VariationContext = new VariationContext(culture);
 
-            // This is how the culture is set for the context we are in
-            _variationContextAccessor.VariationContext = new VariationContext(culture);
+        var culturedRootNode = CurrentPage.Root();
+        TempData.Add("CulturedRootNode", culturedRootNode);
 
-            var culturedRootNode = CurrentPage.Root();
-            TempData.Add("CulturedRootNode", culturedRootNode);
-
-            return View();
-        }
+        return View();
     }
 }
 ```

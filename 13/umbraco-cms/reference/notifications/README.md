@@ -90,9 +90,11 @@ You may want to subscribe to many notifications, meaning your `Program.cs` file 
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Services.Notifications;
 
-namespace MySite
+namespace MySite;
+
+public static class UmbracoBuilderNotificationExtensions
 {
-    public static class UmbracoBuilderNotificationExtensions
+    public static IUmbracoBuilder AddDontShoutNotifications(this IUmbracoBuilder builder)
     {
         public static IUmbracoBuilder AddDontShoutNotifications(this IUmbracoBuilder builder)
         {

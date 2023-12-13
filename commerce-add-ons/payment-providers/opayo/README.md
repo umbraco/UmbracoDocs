@@ -16,7 +16,7 @@ This page is a work in progress.
 
 In this section, we will guide you through the key steps necessary to get you started with the Opayo payment provider for Umbraco Commerce.
 
-It is assumed that before we begin that you already have an Umbraco website configured and Umbraco Commerce installed. If you are not yet at this stage, please read the [core Umbraco Commerce documentation](https://docs.umbraco.com/umbraco-commerce/) to learn how to start with Umbraco Commerce.
+It is assumed that before we begin you already have an Umbraco website configured and Umbraco Commerce installed. If you are not yet at this stage, please read the [core Umbraco Commerce documentation](https://docs.umbraco.com/umbraco-commerce/) to learn how to start with Umbraco Commerce.
 
 ## Useful links
 

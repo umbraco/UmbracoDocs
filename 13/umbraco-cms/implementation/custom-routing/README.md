@@ -31,15 +31,14 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Extensions;
 
-namespace My.Website
+namespace My.Website;
+
+public class UpdateContentFindersComposer : IComposer
 {
-    public class UpdateContentFindersComposer : IComposer
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            //set the last chance content finder
-            builder.SetContentLastChanceFinder<My404ContentFinder>();
-        }
+        //set the last chance content finder
+        builder.SetContentLastChanceFinder<My404ContentFinder>();
     }
 }
 ```
@@ -63,36 +62,35 @@ using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common.ApplicationBuilder;
 using Umbraco.Extensions;
 
-namespace CustomRoutes
+namespace CustomRoutes;
+
+public class MyCustomRouteComposer : IComposer
 {
-    public class MyCustomRouteComposer : IComposer
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
+        builder.Services.Configure<UmbracoPipelineOptions>(options =>
         {
-            builder.Services.Configure<UmbracoPipelineOptions>(options =>
+            options.AddFilter(new UmbracoPipelineFilter(nameof(MyController))
             {
-                options.AddFilter(new UmbracoPipelineFilter(nameof(MyController))
+                Endpoints = app => app.UseEndpoints(endpoints =>
                 {
-                    Endpoints = app => app.UseEndpoints(endpoints =>
-                    {
-                        endpoints.MapControllerRoute(
-                            "My custom controller",
-                            "/custom/{action}",
-                            new {Controller = "My", Action = "Index"})
-                            .ForUmbracoPage(FindContent);
-                    })
-                });
+                    endpoints.MapControllerRoute(
+                        "My custom controller",
+                        "/custom/{action}",
+                        new {Controller = "My", Action = "Index"})
+                        .ForUmbracoPage(FindContent);
+                })
             });
-        }
+        });
+    }
 
-        private IPublishedContent FindContent(ActionExecutingContext actionExecutingContext)
-        {
-            var umbracoContextAccessor = actionExecutingContext.HttpContext.RequestServices
-                .GetRequiredService<IUmbracoContextAccessor>();
-            var umbracoContext = umbracoContextAccessor.GetRequiredUmbracoContext();
+    private IPublishedContent FindContent(ActionExecutingContext actionExecutingContext)
+    {
+        var umbracoContextAccessor = actionExecutingContext.HttpContext.RequestServices
+            .GetRequiredService<IUmbracoContextAccessor>();
+        var umbracoContext = umbracoContextAccessor.GetRequiredUmbracoContext();
 
-            return umbracoContext.Content.GetById(1064);
-        }
+        return umbracoContext.Content.GetById(1064);
     }
 }
 ```
@@ -109,15 +107,14 @@ You can subscribe to the `RoutingRequestNotification` which is published right a
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
 
-namespace CustomRoutes
+namespace CustomRoutes;
+
+public class PublishedRequestHandler : INotificationHandler<RoutingRequestNotification>
 {
-    public class PublishedRequestHandler : INotificationHandler<RoutingRequestNotification>
+    public void Handle(RoutingRequestNotification notification)
     {
-        public void Handle(RoutingRequestNotification notification)
-        {
-            var requestBuilder = notification.RequestBuilder;
-            // Do something with the IPublishedRequestBuilder here
-        }
+        var requestBuilder = notification.RequestBuilder;
+        // Do something with the IPublishedRequestBuilder here
     }
 }
 ```

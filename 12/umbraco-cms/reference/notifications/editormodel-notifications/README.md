@@ -92,7 +92,7 @@ public class EditorSendingMemberNotificationHandler : INotificationHandler<Sendi
             }
 
             // Find member group property on member model
-            var property = notification.Member.Properties.FirstOrDefault(x =>
+            var property = notification.Member.MembershipProperties.FirstOrDefault(x =>
                 x.Alias.Equals($"{Constants.PropertyEditors.InternalGenericPropertiesPrefix}membergroup"));
 
             if (property is not null)
