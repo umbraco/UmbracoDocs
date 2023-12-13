@@ -26,6 +26,20 @@ The following lists a few things to be aware of before initiating an upgrade of 
 It is necessary to run the upgrade installer on each environment of your Umbraco site. This means that you need to repeat the steps below on each of your environments in order to complete the upgrade.
 {% endhint %}
 
+## Legacy Umbraco
+
+The steps outlined in this article apply to modern Umbraco from version 10 and later versions.
+
+Are you upgrading to a minor for Umbraco 6, 7, or 8 you can find the appropriate guide below:
+
+{% content-ref url="version-specific/minor-upgrades-for-umbraco-8.md" %}
+[minor-upgrades-for-umbraco-8.md](version-specific/minor-upgrades-for-umbraco-8.md)
+{% endcontent-ref %}
+
+{% content-ref url="version-specific/minor-upgrades-for-umbraco-7.md" %}
+[minor-upgrades-for-umbraco-7.md](version-specific/minor-upgrades-for-umbraco-7.md)
+{% endcontent-ref %}
+
 ## Upgrade to a new Major
 
 You can upgrade to a new major of Umbraco CMS directly by using NuGet.
@@ -57,7 +71,7 @@ It's recommended that you upgrade the site offline and test the upgrade fully be
 4. Select the **.NET** version from the **Target Framework** drop-down.
 5. Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**
 6. Go to the **Installed** tab in the NuGet Package manager.
-7.  Upgrade **Umbraco.Cms**.
+7.  Upgrade **Umbraco.Cms**.&#x20;
 
     a. Select the correct version from the **Version** drop-down.
 
@@ -67,7 +81,7 @@ It's recommended that you upgrade the site offline and test the upgrade fully be
 If you have other packages installed such as Umbraco Forms, then before upgrading **Umbraco.CMS** you will need to upgrade the packages first. Consult the [version specific upgrade notes for Umbraco Forms](https://docs.umbraco.com/umbraco-forms/installation/version-specific) if relevant.
 {% endhint %}
 
-8. Make sure that your connection string has `TrustServerCertificate=True` in order to complete successfully the upgrade:
+8. Make sure that your connection string has `TrustServerCertificate=True` in order to complete successfully the upgrade:&#x20;
 
 ```csharp
 "ConnectionStrings": {

@@ -45,21 +45,19 @@ Create a folder named **ProductView**. In this folder, create a new class named 
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Umbraco.Docs.Samples.Web.Components.ProductView
-{
-    public class ProductViewViewComponent : ViewComponent
-    {
-        public IViewComponentResult Invoke()
-        {
-            List<string> products = new List<string>() {
-                "Product 1", "Product 2", "Product 3", "Product 4", "Product 5"
-            };
+namespace Umbraco.Docs.Samples.Web.Components.ProductView;
 
-            return View(products);
-        }
+public class ProductViewViewComponent : ViewComponent
+{
+    public IViewComponentResult Invoke()
+    {
+        List<string> products = new List<string>() {
+            "Product 1", "Product 2", "Product 3", "Product 4", "Product 5"
+        };
+
+        return View(products);
     }
 }
-
 ```
 
 ### Create a View for ViewComponent
