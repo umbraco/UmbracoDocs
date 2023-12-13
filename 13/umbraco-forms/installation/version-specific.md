@@ -11,7 +11,6 @@ This page covers specific upgrade documentation for specific versions.
 {% hint style="info" %}
 If you are upgrading to a new minor or patch version, you can find information about the breaking changes in the [Release Notes](../release-notes.md) article.
 {% endhint %}
-
 <details>
 
 <summary>Version 13</summary>
@@ -60,6 +59,8 @@ These updates are more minor. We don't expect many projects to be affected by th
 * The string constants used to define GUIDs for each provider type were made consistently upper-case.
 * `FileUpload` and `PreValueFileController` have changed constructors to add support for server-side file validation.
 * HTML helpers such as `RenderFormsScripts` now return `IHtmlContent`.
+* The constructor for workflow notifications was amended to add a parameter for the current `Record`.
+* The `IType` interface now defines a `Created` property.
 
 </details>
 

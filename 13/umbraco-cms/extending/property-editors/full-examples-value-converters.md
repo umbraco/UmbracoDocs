@@ -8,92 +8,91 @@ using Umbraco.Cms.Core.PropertyEditors;
 using Umbraco.Cms.Core.PublishedCache;
 using Umbraco.Extensions;
 
-namespace MyConverters
+namespace MyConverters;
+
+public class ContentPickerPropertyConverter : IPropertyValueConverter
 {
-    public class ContentPickerPropertyConverter : IPropertyValueConverter
+    private readonly IPublishedSnapshotAccessor _publishedSnapshotAccessor;
+
+    //Injecting the PublishedSnapshotAccessor for fetching content
+    public ContentPickerPropertyConverter(IPublishedSnapshotAccessor publishedSnapshotAccessor)
     {
-        private readonly IPublishedSnapshotAccessor _publishedSnapshotAccessor;
+        _publishedSnapshotAccessor = publishedSnapshotAccessor;
+    }
 
-        //Injecting the PublishedSnapshotAccessor for fetching content
-        public ContentPickerPropertyConverter(IPublishedSnapshotAccessor publishedSnapshotAccessor)
+    public bool IsConverter(IPublishedPropertyType propertyType)
+    {
+        return propertyType.EditorAlias.Equals("Umbraco.ContentPicker");
+    }
+
+    public bool? IsValue(object value, PropertyValueLevel level)
+    {
+        switch (level)
         {
-            _publishedSnapshotAccessor = publishedSnapshotAccessor;
+            case PropertyValueLevel.Source:
+                return value != null && (!(value is string) || string.IsNullOrWhiteSpace((string) value) == false);
+            default:
+                throw new NotSupportedException($"Invalid level: {level}.");
         }
+    }
 
-        public bool IsConverter(IPublishedPropertyType propertyType)
-        {
-            return propertyType.EditorAlias.Equals("Umbraco.ContentPicker");
-        }
+    public Type GetPropertyValueType(IPublishedPropertyType propertyType)
+    {
+        return typeof(IPublishedContent);
+    }
 
-        public bool? IsValue(object value, PropertyValueLevel level)
-        {
-            switch (level)
-            {
-                case PropertyValueLevel.Source:
-                    return value != null && (!(value is string) || string.IsNullOrWhiteSpace((string) value) == false);
-                default:
-                    throw new NotSupportedException($"Invalid level: {level}.");
-            }
-        }
+    public PropertyCacheLevel GetPropertyCacheLevel(IPublishedPropertyType propertyType)
+    {
+        return PropertyCacheLevel.Elements;
+    }
 
-        public Type GetPropertyValueType(IPublishedPropertyType propertyType)
-        {
-            return typeof(IPublishedContent);
-        }
+    public object ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType, object source, bool preview)
+    {
+        if (source == null) return null;
 
-        public PropertyCacheLevel GetPropertyCacheLevel(IPublishedPropertyType propertyType)
-        {
-            return PropertyCacheLevel.Elements;
-        }
+        var attemptConvertInt = source.TryConvertTo<int>();
+        if (attemptConvertInt.Success)
+            return attemptConvertInt.Result;
 
-        public object ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType, object source, bool preview)
-        {
-            if (source == null) return null;
+        var attemptConvertUdi = source.TryConvertTo<Udi>();
+        if (attemptConvertUdi.Success)
+            return attemptConvertUdi.Result;
 
-            var attemptConvertInt = source.TryConvertTo<int>();
-            if (attemptConvertInt.Success)
-                return attemptConvertInt.Result;
+        return null;
+    }
 
-            var attemptConvertUdi = source.TryConvertTo<Udi>();
-            if (attemptConvertUdi.Success)
-                return attemptConvertUdi.Result;
-
+    public object ConvertIntermediateToObject(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview)
+    {
+        if (inter == null)
             return null;
-        }
 
-        public object ConvertIntermediateToObject(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview)
+        if ((propertyType.Alias != null) == false)
         {
-            if (inter == null)
-                return null;
-
-            if ((propertyType.Alias != null) == false)
+            IPublishedContent content;
+            if (inter is int id)
             {
-                IPublishedContent content;
-                if (inter is int id)
-                {
-                    content = _publishedSnapshotAccessor.PublishedSnapshot.Content.GetById(id);
-                    if (content != null)
-                        return content;
-                }
-                else
-                {
-                    var udi = inter as GuidUdi;
-                    if (udi == null)
-                        return null;
-                    content = _publishedSnapshotAccessor.PublishedSnapshot.Content.GetById(udi.Guid);
-                    if (content != null && content.ContentType.ItemType == PublishedItemType.Content)
-                        return content;
-                }
+                content = _publishedSnapshotAccessor.PublishedSnapshot.Content.GetById(id);
+                if (content != null)
+                    return content;
             }
-
-            return inter;
+            else
+            {
+                var udi = inter as GuidUdi;
+                if (udi == null)
+                    return null;
+                content = _publishedSnapshotAccessor.PublishedSnapshot.Content.GetById(udi.Guid);
+                if (content != null && content.ContentType.ItemType == PublishedItemType.Content)
+                    return content;
+            }
         }
 
-        public object ConvertIntermediateToXPath(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview)
-        {
-            if (inter == null) return null;
-            return inter.ToString();
-        }
+        return inter;
+    }
+
+    public object ConvertIntermediateToXPath(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview)
+    {
+        if (inter == null) return null;
+        return inter.ToString();
     }
 }
 

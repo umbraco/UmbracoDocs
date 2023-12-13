@@ -18,7 +18,7 @@ In this section, you can find the release notes for each version of Umbraco Form
 
 <summary>Version 10</summary>
 
-#### [10.5.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.5.2 (November 14th 2023)
+#### [10.5.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.5.2) (November 14th 2023)
 
 * Ensured validation pattern's saved for a field are cleared when changing the field type [#1083](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1083).
 * Included input of type time in condition evaluation [#1084](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1084).
@@ -568,7 +568,7 @@ In this section, you can find the release notes for each version of Umbraco Form
 
 <summary>Version 8</summary>
 
-#### [8.13.12](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.13.12 (November 14th 2023)
+#### [8.13.12](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.13.12) (November 14th 2023)
 
 * Ensured validation pattern's saved for a field are cleared when changing the field type [#1083](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1083).
 * Included input of type time in condition evaluation [#1084](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1084).

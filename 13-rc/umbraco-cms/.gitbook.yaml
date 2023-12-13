@@ -1,0 +1,8 @@
+root: ./
+
+​structure:  
+    readme: README.md
+    summary: SUMMARY.md
+
+redirects:
+    fundamentals/setup/install/running-umbraco-on-a-mac: fundamentals/setup/install/running-umbraco-on-linux-macos.md
