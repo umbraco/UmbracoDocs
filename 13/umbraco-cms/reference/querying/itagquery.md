@@ -18,30 +18,29 @@ After this you can use `_tagQuery` to access the `ITagQuery`.
 
 If you're using it in controllers, you can inject it into the constructor like so:
 
-```
+```csharp
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Core.PublishedCache;
 using Umbraco.Cms.Web.Common.Controllers;
 
-namespace UmbracoHelperDocs.Controllers
+namespace UmbracoHelperDocs.Controllers;
+
+[Route("tags/[action]")]
+public class TagApiController : UmbracoApiController
 {
-    [Route("tags/[action]")]
-    public class TagApiController : UmbracoApiController
-    {
-        private readonly ITagQuery _tagQuery;
+	private readonly ITagQuery _tagQuery;
 
-        public TagApiController(ITagQuery tagQuery)
-        {
-            _tagQuery = tagQuery;
-        }
+	public TagApiController(ITagQuery tagQuery)
+	{
+		_tagQuery = tagQuery;
+	}
 
-        public ActionResult<IEnumerable<string>> GetMediaTags()
-        {
-            return _tagQuery.GetAllMediaTags().Select(tag => tag.Text).ToList();
-        }
-    }
+	public ActionResult<IEnumerable<string>> GetMediaTags()
+	{
+		return _tagQuery.GetAllMediaTags().Select(tag => tag.Text).ToList();
+	}
 }
 ```
 

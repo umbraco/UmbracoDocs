@@ -66,7 +66,7 @@ namespace MyFormsExtensions
 
 The handler will check the `ModelState` and `Form` field values provided in the notification. If validation fails, we add a `ModelError`.
 
-To register the handler, add the following code into the startup pipeline. In this example, the registration is implemented as an extension method to `IUmbracoBuilder` and should be called from `Startup.cs`:
+To register the handler, add the following code into the startup pipeline. In this example, the registration is implemented as an extension method to `IUmbracoBuilder` and should be called from `Program.cs`:
 
 ```csharp
 public static IUmbracoBuilder AddUmbracoFormsCoreProviders(this IUmbracoBuilder builder)

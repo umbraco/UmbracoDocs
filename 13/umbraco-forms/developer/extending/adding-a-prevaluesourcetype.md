@@ -198,7 +198,7 @@ namespace MyFormsExtensions
 }
 ```
 
-You will then need to register this new type as a dependency (either in `Startup.cs` or in your own IComposer, as shown here).
+You will then need to register this new type as a dependency (either in `Program.cs` or in your own IComposer, as shown here).
 
 ```csharp
 using Umbraco.Cms.Core.Composing;

@@ -71,40 +71,39 @@ using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Notifications;
 using Umbraco.Cms.Core.Services;
 
-namespace Umbraco.Cms.Core.Events
-{
-    public class CustomNotificationHandler : INotificationHandler<ContentSavedNotification>
-    {
-        // access to the MediaService by injection
-        private readonly IMediaService _mediaService;
-        private readonly IRuntimeState _runtimeState;
+namespace Umbraco.Cms.Core.Events;
 
-        public CustomNotificationHandler(IMediaService mediaService, IRuntimeState runtimeState)
+public class CustomNotificationHandler : INotificationHandler<ContentSavedNotification>
+{
+    // access to the MediaService by injection
+    private readonly IMediaService _mediaService;
+    private readonly IRuntimeState _runtimeState;
+
+    public CustomNotificationHandler(IMediaService mediaService, IRuntimeState runtimeState)
+    {
+        _mediaService = mediaService;
+        _runtimeState = runtimeState;
+    }
+
+    public void Handle(ContentSavedNotification notification)
+    {
+        if (_runtimeState.Level != RuntimeLevel.Run)
         {
-            _mediaService = mediaService;
-            _runtimeState = runtimeState;
+            return;
         }
 
-        public void Handle(ContentSavedNotification notification)
+        foreach (var contentItem in notification.SavedEntities)
         {
-            if (_runtimeState.Level != RuntimeLevel.Run)
+            // if this is a new landing page create a folder for associated media in the media section
+            if (contentItem.ContentType.Alias == "landingPage")
             {
-                return;
-            }
-
-            foreach (var contentItem in notification.SavedEntities)
-            {
-                // if this is a new landing page create a folder for associated media in the media section
-                if (contentItem.ContentType.Alias == "landingPage")
+                // we have injected in the mediaService in the constructor for the component see above.
+                bool hasExistingFolder = _mediaService.GetByLevel(1).Any(f => f.Name == contentItem.Name);
+                if (!hasExistingFolder)
                 {
-                    // we have injected in the mediaService in the constructor for the component see above.
-                    bool hasExistingFolder = _mediaService.GetByLevel(1).Any(f => f.Name == contentItem.Name);
-                    if (!hasExistingFolder)
-                    {
-                        // let's create one (-1 indicates the root of the media section)
-                        IMedia newFolder = _mediaService.CreateMedia(contentItem.Name, -1, "Folder");
-                        _mediaService.Save(newFolder);
-                    }
+                    // let's create one (-1 indicates the root of the media section)
+                    IMedia newFolder = _mediaService.CreateMedia(contentItem.Name, -1, "Folder");
+                    _mediaService.Save(newFolder);
                 }
             }
         }
@@ -118,21 +117,17 @@ When you're creating your own class, in order to make use of the dependency inje
 
 There are different ways that you can achieve the same outcome:
 
-Register directly into the **Startup.cs** class.
+Register directly into the **Program.cs** class.
 
 ```csharp
-using Microsoft.Extensions.DependencyInjection;
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .Build();
 
-namespace DefaultNamespace
-{
-    public class Startup
-    {
-        public void ConfigureServices(IServiceCollection services)
-        {   
-            services.AddScoped<ICustomNewsArticleService, CustomNewsArticleService>();
-        }
-    }
-}
+builder.Services.AddScoped<ICustomNewsArticleService, CustomNewsArticleService>();
 ```
 
 Another approach is to create an extension method to `IUmbracoBuilder` and add it to the startup pipeline.
@@ -141,14 +136,16 @@ Another approach is to create an extension method to `IUmbracoBuilder` and add i
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.DependencyInjection;
 
-namespace DefaultNamespace
+namespace DefaultNamespace;
+
+public static class UmbracoBuilderServiceExtensions
 {
-    public static class UmbracoBuilderServiceExtensions
+    public static IUmbracoBuilder AddCustomServices(this IUmbracoBuilder builder)
     {
         public static IUmbracoBuilder AddCustomServices(this IUmbracoBuilder builder)
         {
             builder.Services.AddScoped<ICustomNewsArticleService, CustomNewsArticleService>();
-            
+
             return builder;
         }
     }
@@ -156,28 +153,13 @@ namespace DefaultNamespace
 ```
 
 ```csharp
-using System;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Extensions;
-
-namespace DefaultNamespace
-{
-    public class Startup
-    {
-        public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddUmbraco(_env, _config)
-                .AddBackOffice()             
-                .AddWebsite()
-                .AddComposers()
-                .AddCustomServices()
-                .Build();
-        }
-    }
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .AddCustomServices()
+    .Build();
 ```
 
 When creating Umbraco packages you don't have access to the Startup class, therefore it's recommended to use a `IComposer` instead. A Composer gives you access to the `IUmbracoBuilder`.
@@ -204,34 +186,33 @@ using Umbraco.Cms.Core.PublishedCache;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Core.Web;
 
-namespace Umbraco.Cms.Infrastructure.Services.Implement
+namespace Umbraco.Cms.Infrastructure.Services.Implement;
+
+public class CustomNewsArticleService: ICustomNewsArticleService
 {
-    public class CustomNewsArticleService: ICustomNewsArticleService
+    private readonly IMediaService _mediaService;
+    private readonly ILogger<CustomNewsArticleService> _logger;
+    private readonly IUmbracoContextFactory _contextFactory;
+
+    public CustomNewsArticleService(ILogger<CustomNewsArticleService> logger, IUmbracoContextFactory contextFactory, IMediaService mediaService)
     {
-        private readonly IMediaService _mediaService;
-        private readonly ILogger<CustomNewsArticleService> _logger;
-        private readonly IUmbracoContextFactory _contextFactory;
+        _logger = logger;
+        _contextFactory = contextFactory;
+        _mediaService = mediaService;
+    }
 
-        public CustomNewsArticleService(ILogger<CustomNewsArticleService> logger, IUmbracoContextFactory contextFactory, IMediaService mediaService)
+    public void DoSomethingWithNewsArticles()
+    {
+        using (var contextReference = _contextFactory.EnsureUmbracoContext())
         {
-            _logger = logger;
-            _contextFactory = contextFactory;
-            _mediaService = mediaService;
-        }
-
-        public void DoSomethingWithNewsArticles()
-        {
-            using (var contextReference = _contextFactory.EnsureUmbracoContext())
+            IPublishedContentCache contentCache = contextReference.UmbracoContext.Content;
+            IPublishedContent newsSection = contentCache.GetAtRoot().FirstOrDefault().Children.FirstOrDefault(f => f.ContentType.Alias == "newsSection");
+            if (newsSection == null)
             {
-                IPublishedContentCache contentCache = contextReference.UmbracoContext.Content;
-                IPublishedContent newsSection = contentCache.GetAtRoot().FirstOrDefault().Children.FirstOrDefault(f => f.ContentType.Alias == "newsSection");
-                if (newsSection == null)
-                {
-                    _logger.LogDebug("News Section Not Found");
-                }
+                _logger.LogDebug("News Section Not Found");
             }
-            // etc
         }
+        // etc
     }
 }
 ```

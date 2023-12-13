@@ -42,68 +42,67 @@ using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Web.Common.Security;
 
-namespace MyApp
+namespace MyApp;
+
+public class AzureB2CMembersExternalLoginProviderOptions : IConfigureNamedOptions<MemberExternalLoginProviderOptions>
 {
-    public class AzureB2CMembersExternalLoginProviderOptions : IConfigureNamedOptions<MemberExternalLoginProviderOptions>
+    public const string SchemeName = "ActiveDirectoryB2C";¨
+
+    public void Configure(string? name, MemberExternalLoginProviderOptions options)
     {
-        public const string SchemeName = "ActiveDirectoryB2C";
-
-        public void Configure(string? name, MemberExternalLoginProviderOptions options)
+        if (name != Constants.Security.MemberExternalAuthenticationTypePrefix + SchemeName)
         {
-            if (name != Constants.Security.MemberExternalAuthenticationTypePrefix + SchemeName)
+            return;
+        }
+
+        Configure(options);
+    }
+
+    public void Configure(MemberExternalLoginProviderOptions options)
+    {
+        // The following options are relevant if you
+        // want to configure auto-linking on the authentication.
+        options.AutoLinkOptions = new MemberExternalSignInAutoLinkOptions(
+
+            // Set to true to enable auto-linking
+            autoLinkExternalAccount: true,
+
+            // [OPTIONAL]
+            // Default: The culture specified in appsettings.json.
+            // Specify the default culture to create the Member as.
+            // It can be dynamically assigned in the OnAutoLinking callback.
+            defaultCulture: null,
+
+            // [OPTIONAL]
+            // Specify the default "IsApproved" status.
+            // Must be true for auto-linking.
+            defaultIsApproved: true,
+
+            // [OPTIONAL]
+            // Default: "Member"
+            // Specify the Member Type alias.
+            defaultMemberTypeAlias: Constants.Security.DefaultMemberTypeAlias
+
+        )
+        {
+            // [OPTIONAL] Callbacks
+            OnAutoLinking = (autoLinkUser, loginInfo) =>
             {
-                return;
+                // Customize the Member before it's linked.
+                // Modify the Members groups based on the Claims returned
+                // in the external login info.
+            },
+            OnExternalLogin = (user, loginInfo) =>
+            {
+                // Customize the Member before it is saved whenever they have
+                // logged in with the external provider.
+                // Sync the Members name based on the Claims returned
+                // in the external login info
+
+                // Returns a boolean indicating if sign-in should continue or not.
+                return true;
             }
-
-            Configure(options);
-        }
-
-        public void Configure(MemberExternalLoginProviderOptions options)
-        {
-            // The following options are relevant if you
-            // want to configure auto-linking on the authentication.
-            options.AutoLinkOptions = new MemberExternalSignInAutoLinkOptions(
-
-                // Set to true to enable auto-linking
-                autoLinkExternalAccount: true,
-
-                // [OPTIONAL]
-                // Default: The culture specified in appsettings.json.
-                // Specify the default culture to create the Member as.
-                // It can be dynamically assigned in the OnAutoLinking callback.
-                defaultCulture: null,
-
-                // [OPTIONAL]
-                // Specify the default "IsApproved" status.
-                // Must be true for auto-linking.
-                defaultIsApproved: true,
-
-                // [OPTIONAL]
-                // Default: "Member"
-                // Specify the Member Type alias.
-                defaultMemberTypeAlias: Constants.Security.DefaultMemberTypeAlias
-
-            )
-            {
-                // [OPTIONAL] Callbacks
-                OnAutoLinking = (autoLinkUser, loginInfo) =>
-                {
-                    // Customize the Member before it's linked.
-                    // Modify the Members groups based on the Claims returned
-                    // in the external login info.
-                },
-                OnExternalLogin = (user, loginInfo) =>
-                {
-                    // Customize the Member before it is saved whenever they have
-                    // logged in with the external provider.
-                    // Sync the Members name based on the Claims returned
-                    // in the external login info
-
-                    // Returns a boolean indicating if sign-in should continue or not.
-                    return true;
-                }
-            };
-        }
+        };
     }
 }
 ```
@@ -113,11 +112,14 @@ namespace MyApp
 
 {% code title="MemberAuthenticationExtensions.cs" lineNumbers="true" %}
 ```csharp
-namespace MyApp
+namespace MyApp;
+
+public static class MemberAuthenticationExtensions
 {
-    public static class MemberAuthenticationExtensions
+    public static IUmbracoBuilder ConfigureAuthenticationMembers(this IUmbracoBuilder builder)
     {
-        public static IUmbracoBuilder ConfigureAuthenticationMembers(this IUmbracoBuilder builder)
+        builder.Services.ConfigureOptions<AzureB2CMembersExternalLoginProviderOptions>();
+        builder.AddMemberExternalLogins(logins =>
         {
             builder.Services.ConfigureOptions<AzureB2CMembersExternalLoginProviderOptions>();
             builder.AddMemberExternalLogins(logins =>
@@ -139,7 +141,7 @@ namespace MyApp
                                 //Obtained from the AZURE AD B2C WEB APP
                                 options.ClientId = "YOURCLIENTID";
                                 //Obtained from the AZURE AD B2C WEB APP
-                                options.ClientSecret = "YOURCLIENTSECRET"; 
+                                options.ClientSecret = "YOURCLIENTSECRET";
 
                                 options.SaveTokens = true;
                             });
@@ -156,22 +158,18 @@ namespace MyApp
 Ensure to replace `YOURCLIENTID` and `YOURCLIENTSECRET` in the code with the values from the Azure AD tenant.
 {% endhint %}
 
-4. Add the Members authentication configuration to the `ConfigureServices` method in the `Startup.cs` file:
+4. Add the Members authentication configuration in the `Program.cs` file:
 
-{% code title="Startup.cs" lineNumbers="true" %}
+{% code title="Program.cs" lineNumbers="true" %}
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()
-        .AddWebsite()
-        .AddComposers()
-
-        //Add Members ConfigureAuthentication
-        .ConfigureAuthenticationMembers()
-
-        .Build();
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    //Add Members ConfigureAuthentication
+    .ConfigureAuthenticationMembers()
+    .Build();
 ```
 {% endcode %}
 

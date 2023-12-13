@@ -14,12 +14,12 @@ Start by setting up a database table for your model (you might want to populate 
 
 ```sql
 CREATE TABLE [Person] (
-    [Id] int IDENTITY (1,1) NOT NULL, 
-    [Name] nvarchar(255) NOT NULL, 
-    [JobTitle] nvarchar(255) NOT NULL, 
-    [Email] nvarchar(255) NOT NULL, 
-    [Telephone] nvarchar(255) NOT NULL, 
-    [Age] int NOT NULL, 
+    [Id] int IDENTITY (1,1) NOT NULL,
+    [Name] nvarchar(255) NOT NULL,
+    [JobTitle] nvarchar(255) NOT NULL,
+    [Email] nvarchar(255) NOT NULL,
+    [Telephone] nvarchar(255) NOT NULL,
+    [Age] int NOT NULL,
     [Avatar] nvarchar(255) NOT NULL
 );
 ```
@@ -46,25 +46,18 @@ public class Person
 
 ## Configure Umbraco UI Builder
 
-With the database and model setup, we can now start to configure Umbraco UI Builder itself. The entry point for the Umbraco UI Builder configuration is via the `AddUIBuilder` extension method. On this method, we call on the `IUmbracoBuilder` instance within the `ConfigureServices` method of the `Startup` class.
+With the database and model setup, we can now start to configure Umbraco UI Builder itself. The entry point for the Umbraco UI Builder configuration is via the `AddUIBuilder` extension method. On this method, we call on the `IUmbracoBuilder` instance within the `Program.cs` class.
 
 ```csharp
-public class Startup
-{
-    ...
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddUmbraco(_env, _config)
-            .AddBackOffice()
-            .AddWebsite()
-            .AddUIBuilder(cfg => {
-                // Apply your configuration here
-            })
-            .AddComposers()
-            .Build();
-    }
-    ...
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .AddUIBuilder(cfg => {
+        // Apply your configuration here
+    })
+    .Build();
 ```
 
 For our example, we will use the following configuration:
@@ -72,7 +65,7 @@ For our example, we will use the following configuration:
 ```csharp
 ...
 .AddUIBuilder(cfg => {
-    
+
     cfg.AddSectionAfter("media", "Repositories", sectionConfig => sectionConfig
         .Tree(treeConfig => treeConfig
             .AddCollection<Person>(x => x.Id, "Person", "People", "A person entity", "icon-umb-users", "icon-umb-users", collectionConfig => collectionConfig
@@ -80,7 +73,7 @@ For our example, we will use the following configuration:
                 .ListView(listViewConfig => listViewConfig
                     .AddField(p => p.JobTitle).SetHeading("Job Title")
                     .AddField(p => p.Email)
-                ) 
+                )
                 .Editor(editorConfig => editorConfig
                     .AddTab("General", tabConfig => tabConfig
                         .AddFieldset("General", fieldsetConfig => fieldsetConfig
@@ -110,7 +103,7 @@ With your configuration defined and your project compiled, there is one last ste
 
 With the permissions set, you can refresh your browser and you should now see your new section available in the site navigation.
 
-![People list view](../images/people_listview.png)  
+![People list view](../images/people_listview.png)
 
 ![People editor](../images/people_editor.png)
 
