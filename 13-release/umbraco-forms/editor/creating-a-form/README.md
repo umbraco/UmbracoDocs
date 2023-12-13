@@ -94,6 +94,7 @@ New groups are added via the **Add new group** button.
 
 The last level of structure are columns that can be created within a group. To set the number of columns click the **cog** icon next to the group.  You will then be able to add or move fields to the new columns created.
 
+
 ## Saving the Form
 
 Once you are satisfied with the Form, you can save the design by clicking the **Save** button.
