@@ -20,7 +20,9 @@ The intention is to be able to make available details such as IDs, aliases and p
 
 **Settings:**
 
+* `Caption`
 * `DefaultValue`
+* `ShowLabel`
 
 </details>
 
@@ -52,6 +54,8 @@ The intention is to be able to make available details such as IDs, aliases and p
 * `Placeholder`
 
 </details>
+
+<details>
 
 <summary>Dropdown List</summary>
 

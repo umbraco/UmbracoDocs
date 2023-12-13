@@ -37,6 +37,7 @@ In this section, you can find the release notes for each version of Umbraco Form
 * Added a missing language key for the Forms dashboard [#1125](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1125).
 * Added details of the current record (form entry) to the workflow notification [#1042](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1042).
 * Update the copy form dialog to use standard CMS patterns for button state and disabling after click [#1121](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1121).
+* Added sortable column headers on the list of forms displayed in the user and user group security screens [#1122](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1122).
 
 #### [12.2.0-rc1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.0) (November 23rd 2023)
 
