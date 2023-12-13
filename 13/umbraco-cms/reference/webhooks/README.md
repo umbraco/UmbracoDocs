@@ -4,7 +4,7 @@ description: Get started with Webhooks
 
 # Webhooks
 
-Webhooks provide real-time, event-driven communication within Umbraco. Seamlessly integrated, these lightweight, HTTP-based notifications empower you to trigger instant actions and synchronize data.  And with its different extension points, you can tailor these webhooks. to fit a broad range of requirements.
+Webhooks provide real-time, event-driven communication within Umbraco. Seamlessly integrated, these lightweight, HTTP-based notifications empower you to trigger instant actions and synchronize data. With its different extension points, you can tailor these webhooks to fit a broad range of requirements.
 
 ## Getting Started
 
