@@ -1,6 +1,6 @@
 # Release Notes
 
-In this section, we have summarized the changes to Umbraco Commerce in since the start of this major version. For details of changes in other major versions, see that specific versions release notes documentation.
+In this section, we have summarized the changes to Umbraco Commerce in this particular major version and all of it's major / minor releases. For details of changes in other major versions, see the release notes of that specific versions documentation.
 
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
