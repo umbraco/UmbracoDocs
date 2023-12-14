@@ -34,7 +34,7 @@ In order for Umbraco Commerce to communicate with Buckaroo securely, we need to 
 
 #### Secret key
 1. Go to [Buckaroo Dashboard](https://plaza.buckaroo.nl/).
-2. Settings > Secret key.
+2. Then head to Settings > Secret key to find the secret key:
 ![Secret key in the Buckaroo Dashboard.](../media/buckaroo/secret-key.png)
 
 ## Step 3: Webhook
