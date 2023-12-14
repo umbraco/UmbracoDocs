@@ -27,7 +27,7 @@ For each of these modes, multiple settings need to be configured.
 ## Step 2: Website key and secrets
 In order for Umbraco Commerce to communicate with Buckaroo securely, we need to generate an API key that Umbraco Commerce can use to authenticate with.
 
-#### Website key
+### Website key
 1. Go to [Buckaroo Dashboard](https://plaza.buckaroo.nl/).
 2. Settings > Websites > General tab.
 ![Website key.](../media/buckaroo/website-key.png)
