@@ -293,6 +293,7 @@
   * [Output caching](reference/content-delivery-api/output-caching.md)
   * [Property expansion and limiting](reference/content-delivery-api/property-expansion-and-limiting.md)
   * [Additional preview environments support](reference/content-delivery-api/additional-preview-environments-support.md)
+* [Webhooks](reference/webhooks/README.md)
 * [API versioning and OpenAPI](reference/api-versioning-and-openapi.md)
 * [Searching](reference/searching/README.md)
   * [Examine](reference/searching/examine/README.md)
