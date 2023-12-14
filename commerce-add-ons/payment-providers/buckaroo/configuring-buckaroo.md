@@ -29,7 +29,7 @@ In order for Umbraco Commerce to communicate with Buckaroo securely, we need to 
 
 ### Website key
 1. Go to [Buckaroo Dashboard](https://plaza.buckaroo.nl/).
-2. Settings > Websites > General tab.
+2. Then head to Settings > Websites > General tab to find the website key:
 ![Website key.](../media/buckaroo/website-key.png)
 
 #### Secret key
