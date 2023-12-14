@@ -42,7 +42,7 @@ For Buckaroo to notify Umbraco Commerce of a transaction, Buckaroo makes use of 
 
 When generating a payment request form, Umbraco Commerce sets the callback URL to the value below automatically:
 ```bash
-  https://{store_domain}/umbraco/commerce/payment/callback/buckaroo-checkout/{payment_method_id}/
+  https://{store_domain}/umbraco/commerce/payment/callback/buckaroo-checkout/{payment_method_id}/```
 1. Go to [Buckaroo Dashboard](https://plaza.buckaroo.nl/).
 2. Then head to Settings > Websites > Push settings > Scroll. Then `Select push content type` and set it to `json`.
 
