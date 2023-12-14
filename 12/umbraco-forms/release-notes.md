@@ -18,6 +18,12 @@ In this section, you can find the release notes for each version of Umbraco Form
 
 <summary>Version 12</summary>
 
+#### [12.2.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.1) (December 19th 2023)
+
+* Fixed a regression issue with the use of the `SetFormFieldClass` method [#1127](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1127).
+* Fixed an issue loading the new form's info tab [#1128](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1128)
+* Fixed a caching issue causing problems with use of form relations after initial install.
+
 #### [12.2.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.0) (December 7th 2023)
 
 * All updates listed under 12.2.0-rc1
