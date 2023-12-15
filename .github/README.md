@@ -9,6 +9,7 @@ This is the End Of Life (EOL) documentation for Umbraco. In this branch, you can
 | ------------------------------- |
 | 11                              |
 | 7                               |
+| 9                               |
 
 
 ## License [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md)
