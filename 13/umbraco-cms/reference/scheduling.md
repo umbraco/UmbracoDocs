@@ -61,7 +61,7 @@ public class CleanUpYourRoom : RecurringHostedServiceBase
 
         // Wrap the three content service calls in a scope to do it all in one transaction.
         using ICoreScope scope = _scopeProvider.CreateCoreScope();
-            
+
         int numberOfThingsInBin = _contentService.CountChildren(Constants.System.RecycleBinContent);
         _logger.LogInformation("Go clean your room - {ServerRole}", _serverRoleAccessor.CurrentServerRole);
         _logger.LogInformation("You have {NumberOfThingsInTheBin} items to clean", numberOfThingsInBin);
@@ -100,20 +100,16 @@ public static class UmbracoBuilderHostedServiceExtensions
 }
 ```
 
-Now we can invoke it in the `ConfigureServices` method in `Startup.cs`:
+Now we can invoke it in `Program.cs`:
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-#pragma warning disable IDE0022 // Use expression body for methods
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()
-        .AddWebsite()
-        .AddComposers()
-        .AddCustomHostedServices() // Register CleanUpYourRoom
-        .Build();
-#pragma warning restore IDE0022 // Use expression body for methods
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .AddCustomHostedServices() // Register CleanUpYourRoom
+    .Build();
 ```
 
 ### Registering with a composer
@@ -160,6 +156,6 @@ switch (_serverRoleAccessor.CurrentServerRole)
         return Task.CompletedTask; // We return Task.CompletedTask to try again as the server role may change!
     case ServerRole.Unknown:
         _logger.LogDebug("Does not run on servers with unknown role.");
-        return Task.CompletedTask; // We return Task.CompletedTask to try again as the server role may change! 
+        return Task.CompletedTask; // We return Task.CompletedTask to try again as the server role may change!
 }
 ```

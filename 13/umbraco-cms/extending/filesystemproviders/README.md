@@ -23,27 +23,26 @@ using Umbraco.Cms.Core.Hosting;
 using Umbraco.Cms.Core.IO;
 using Umbraco.Cms.Infrastructure.DependencyInjection;
 
-namespace UmbracoExamples.Composition
-{
-    public class SetMediaFileSystemComposer : IComposer
-    {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.SetMediaFileSystem((factory) =>
-            {
-                IHostingEnvironment hostingEnvironment = factory.GetRequiredService<IHostingEnvironment>();
-                var folderLocation = "~/CustomMediaFolder";
-                var rootPath = hostingEnvironment.MapPathWebRoot(folderLocation);
-                var rootUrl = hostingEnvironment.ToAbsolute(folderLocation);
+namespace UmbracoExamples.Composition;
 
-                return new PhysicalFileSystem(
-                    factory.GetRequiredService<IIOHelper>(),
-                    hostingEnvironment,
-                    factory.GetRequiredService<ILogger<PhysicalFileSystem>>(),
-                    rootPath,
-                    rootUrl);
-            });
-        }
+public class SetMediaFileSystemComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.SetMediaFileSystem((factory) =>
+        {
+            IHostingEnvironment hostingEnvironment = factory.GetRequiredService<IHostingEnvironment>();
+            var folderLocation = "~/CustomMediaFolder";
+            var rootPath = hostingEnvironment.MapPathWebRoot(folderLocation);
+            var rootUrl = hostingEnvironment.ToAbsolute(folderLocation);
+
+            return new PhysicalFileSystem(
+                factory.GetRequiredService<IIOHelper>(),
+                hostingEnvironment,
+                factory.GetRequiredService<ILogger<PhysicalFileSystem>>(),
+                rootPath,
+                rootUrl);
+        });
     }
 }
 ```
@@ -60,19 +59,17 @@ The `rootUrl` is the base URL that your media files will be served from. In this
 
 If you want to store the media files outside of `wwwroot` there is an extra step involved; you need to instruct netcore to include static files from a different physical location.
 
-In the `Configure` method in `startup.cs`, register a new static file location like so:
+In the `Program.cs` file, register a new static file location like so:
 
 ```csharp
-public void Configure(IApplicationBuilder app)
-{
-    ...
+...
+WebApplication app = builder.Build();
 
-    app.UseStaticFiles(new StaticFileOptions
+app.UseStaticFiles(new StaticFileOptions
     {
         FileProvider = new PhysicalFileProvider(Path.Combine("C:", "storage", "umbracoMedia")),
         RequestPath = "/CustomPath"
     });
-}
 ```
 
 The PhysicalFileProvider takes a single parameter, the **`RootPath`**. This is the rooted filesystem path using directory separator chars and not ending with a directory separator, eg: `c:\storage\umbracoMedia` or `\\server\path`. The safest way to achieve this is using `Path.Combine`.
@@ -184,7 +181,7 @@ When replacing the stylesheet filesystem, you don't need to register it, since i
 
 The IUmbracoBuilder has an extension method for configuring the `FileSystems`, you need to invoke this method with an action that accepts an `IServiceProvider` and the `FileSystems` you will configure, configuring the `FileSystems` can look like this:
 
-```
+```csharp
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -195,29 +192,29 @@ using Umbraco.Cms.Core.Hosting;
 using Umbraco.Cms.Core.IO;
 using Umbraco.Cms.Infrastructure.DependencyInjection;
 
-namespace UmbracoExamples.Composition
+namespace UmbracoExamples.Composition;
+
+public class FileSystemComposer : IComposer
 {
-    public class FileSystemComposer : IComposer
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
+        builder.ConfigureFileSystems((factory, systems) =>
         {
-            builder.ConfigureFileSystems((factory, systems) =>
-            {
-                IIOHelper ioHelper = factory.GetRequiredService<IIOHelper>();
-                IHostingEnvironment hostingEnvironment = factory.GetRequiredService<IHostingEnvironment>();
-                ILogger<PhysicalFileSystem> logger = factory.GetRequiredService<ILogger<PhysicalFileSystem>>();
-                GlobalSettings settings = factory.GetRequiredService<IOptions<GlobalSettings>>().Value;
+            IIOHelper ioHelper = factory.GetRequiredService<IIOHelper>();
+            IHostingEnvironment hostingEnvironment = factory.GetRequiredService<IHostingEnvironment>();
+            ILogger<PhysicalFileSystem> logger = factory.GetRequiredService<ILogger<PhysicalFileSystem>>();
+            GlobalSettings settings = factory.GetRequiredService<IOptions<GlobalSettings>>().Value;
 
-                var path = settings.UmbracoCssPath;
-                var rootPath = hostingEnvironment.MapPathWebRoot(path);
-                var rootUrl = hostingEnvironment.ToAbsolute(path);
-                var fileSystem = new YourFileSystemImplementaion(ioHelper, hostingEnvironment, logger, rootPath, rootUrl);
+            var path = settings.UmbracoCssPath;
+            var rootPath = hostingEnvironment.MapPathWebRoot(path);
+            var rootUrl = hostingEnvironment.ToAbsolute(path);
+            var fileSystem = new YourFileSystemImplementaion(ioHelper, hostingEnvironment, logger, rootPath, rootUrl);
 
-                systems.SetStylesheetFilesystem(fileSystem);
-            });
-        }
+            systems.SetStylesheetFilesystem(fileSystem);
+        });
     }
 }
+
 ```
 
 Where `YourFileSystemImplementation` is a class that implements `IFileSystem`. This should always be done in a composer, since we do not recommend trying to change filesystems on the fly.

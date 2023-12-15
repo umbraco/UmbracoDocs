@@ -43,32 +43,23 @@ This options does multiple things when it is turned on:
 
 ## Redirect traffic in code
 
-The .NET5+ way to handle this, is by adding this `HttpsRedirectionMiddleware` to your pipeline in `Startup.cs`. This can be done by adding `app.UseHttpsRedirection();` before the call to `app.UseUmbraco()` in the `Configure` method:
+The .NET5+ way to handle this, is by adding this `HttpsRedirectionMiddleware` to your pipeline in `Program.cs`. This can be done by adding `app.UseHttpsRedirection();` before the call to `app.UseUmbraco()` in the `Configure` method:
 
 ```cs
-public class Startup
-{
-    ...
+app.UseHttpsRedirection();
 
-    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-    {
-        ...
-        app.UseHttpsRedirection();
-
-        app.UseUmbraco()
-            .WithMiddleware(u =>
-            {
-                u.UseBackOffice();
-                u.UseWebsite();
-            })
-            .WithEndpoints(u =>
-            {
-                u.UseInstallerEndpoints();
-                u.UseBackOfficeEndpoints();
-                u.UseWebsiteEndpoints();
-            });
-    }
-}
+    app.UseUmbraco()
+        .WithMiddleware(u =>
+        {
+            u.UseBackOffice();
+            u.UseWebsite();
+        })
+        .WithEndpoints(u =>
+        {
+            u.UseInstallerEndpoints();
+            u.UseBackOfficeEndpoints();
+            u.UseWebsiteEndpoints();
+        });
 ```
 
 ## Redirect traffic on IIS

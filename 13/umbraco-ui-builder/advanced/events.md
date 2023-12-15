@@ -21,19 +21,16 @@ public class MyEntitySavingEventHandler :  INotificationHandler<EntitySavingNoti
 }
 ```
 
-Then register your event handler in the `ConfigureServices` method of your `Startup.cs` file like below:
+Then register your event handler in the `Program.cs` file like below:
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()             
-        .AddWebsite()
-        .AddComposers()
-        .AddNotificationHandler<EntitySavingNotification, MyEntitySavingEventHandler>()
-        .Build();
-
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .AddNotificationHandler<EntitySavingNotification, MyEntitySavingEventHandler>()
+    .Build();
 ```
 
 ## Repository events
@@ -60,7 +57,7 @@ public class MyEntitySavingEventHandler :  INotificationHandler<EntitySavingNoti
 
 ### **EntitySavedNotification**
 
-Raised when the repository `Save` method is called and after the entity has been persisted. The notification contains an `Entity` property with `Before` and `After` inner properties. These properties provide access to a copy of the previously persisted entity (or null if a new entity) and the updated entity that´s saved.  
+Raised when the repository `Save` method is called and after the entity has been persisted. The notification contains an `Entity` property with `Before` and `After` inner properties. These properties provide access to a copy of the previously persisted entity (or null if a new entity) and the updated entity that´s saved.
 
 ````csharp
 // Example

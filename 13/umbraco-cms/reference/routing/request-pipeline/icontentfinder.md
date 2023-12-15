@@ -74,40 +74,35 @@ using RoutingDocs.ContentFinders;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Routing;
 
-namespace RoutingDocs.Extensions
+namespace RoutingDocs.Extensions;
+
+public static class UmbracoBuilderExtensions
 {
-    public static class UmbracoBuilderExtensions
+    public static IUmbracoBuilder AddCustomContentFinders(this IUmbracoBuilder builder)
     {
-        public static IUmbracoBuilder AddCustomContentFinders(this IUmbracoBuilder builder)
-        {
-            // Add our custom content finder just before the core ContentFinderByUrl
-            builder.ContentFinders().InsertBefore<ContentFinderByUrl, MyContentFinder>();
-            // You can also remove content finders, this is not required here though, since our finder runs before the url one
-            builder.ContentFinders().Remove<ContentFinderByUrl>();
-            // You use Append to add to the end of the collection
-            builder.ContentFinders().Append<AnotherContentFinderExample>();
-            // or Insert for a specific position in the collection
-            builder.ContentFinders().Insert<AndAnotherContentFinder>(3);
-            return builder;
-        }
+        // Add our custom content finder just before the core ContentFinderByUrl
+        builder.ContentFinders().InsertBefore<ContentFinderByUrl, MyContentFinder>();
+        // You can also remove content finders, this is not required here though, since our finder runs before the url one
+        builder.ContentFinders().Remove<ContentFinderByUrl>();
+        // You use Append to add to the end of the collection
+        builder.ContentFinders().Append<AnotherContentFinderExample>();
+        // or Insert for a specific position in the collection
+        builder.ContentFinders().Insert<AndAnotherContentFinder>(3);
+        return builder;
     }
 }
 ```
 
-Then invoke it in `ConfigureServices` in the `Startup.cs` file:
+Then invoke in the `Program.cs` file:
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-#pragma warning disable IDE0022 // Use expression body for methods
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()
-        .AddWebsite()
-        .AddComposers()
-        .AddCustomContentFinders()
-        .Build();
-#pragma warning restore IDE0022 // Use expression body for methods
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .AddCustomContentFinders()
+    .Build();
 ```
 
 #### Composer
@@ -117,21 +112,20 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Routing;
 
-namespace RoutingDocs.ContentFinders
+namespace RoutingDocs.ContentFinders;
+
+public class UpdateContentFindersComposer : IComposer
 {
-    public class UpdateContentFindersComposer : IComposer
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            // Add our custom content finder just before the core ContentFinderByUrl
-            builder.ContentFinders().InsertBefore<ContentFinderByUrl, MyContentFinder>();
-            // You can also remove content finders, this is not required here though, since our finder runs before the url one
-            builder.ContentFinders().Remove<ContentFinderByUrl>();
-            // You use Append to add to the end of the collection
-            builder.ContentFinders().Append<AnotherContentFinderExample>();
-            // or Insert for a specific position in the collection
-            builder.ContentFinders().Insert<AndAnotherContentFinder>(3);
-        }
+        // Add our custom content finder just before the core ContentFinderByUrl
+        builder.ContentFinders().InsertBefore<ContentFinderByUrl, MyContentFinder>();
+        // You can also remove content finders, this is not required here though, since our finder runs before the url one
+        builder.ContentFinders().Remove<ContentFinderByUrl>();
+        // You use Append to add to the end of the collection
+        builder.ContentFinders().Append<AnotherContentFinderExample>();
+        // or Insert for a specific position in the collection
+        builder.ContentFinders().Insert<AndAnotherContentFinder>(3);
     }
 }
 ```
@@ -150,19 +144,35 @@ using Umbraco.Cms.Core.Routing;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Core.Web;
 
-namespace RoutingDocs.ContentFinders
-{
-    public class My404ContentFinder : IContentLastChanceFinder
-    {
-        private readonly IDomainService _domainService;
-        private readonly IUmbracoContextAccessor _umbracoContextAccessor;
+namespace RoutingDocs.ContentFinders;
 
-        public My404ContentFinder(IDomainService domainService, IUmbracoContextAccessor umbracoContextAccessor)
+public class My404ContentFinder : IContentLastChanceFinder
+{
+    private readonly IDomainService _domainService;
+    private readonly IUmbracoContextAccessor _umbracoContextAccessor;
+
+    public My404ContentFinder(IDomainService domainService, IUmbracoContextAccessor umbracoContextAccessor)
+    {
+        _domainService = domainService;
+        _umbracoContextAccessor = umbracoContextAccessor;
+    }
+    
+    public Task<bool> TryFindContent(IPublishedRequestBuilder contentRequest)
+    {
+        // Find the root node with a matching domain to the incoming request
+        var allDomains = _domainService.GetAll(true).ToList();
+        var domain = allDomains?
+            .FirstOrDefault(f => f.DomainName == contentRequest.Uri.Authority
+                                    || f.DomainName == $"https://{contentRequest.Uri.Authority}"
+                                    || f.DomainName == $"http://{contentRequest.Uri.Authority}");
+
+        var siteId = domain != null ? domain.RootContentId : allDomains.Any() ? allDomains.FirstOrDefault()?.RootContentId : null;
+
+        if (!_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
         {
-            _domainService = domainService;
-            _umbracoContextAccessor = umbracoContextAccessor;
+            return Task.FromResult(false);
         }
-        
+
         public Task<bool> TryFindContent(IPublishedRequestBuilder contentRequest)
         {
             // Find the root node with a matching domain to the incoming request
@@ -179,44 +189,41 @@ namespace RoutingDocs.ContentFinders
                 return Task.FromResult(false);
             }
 
-            if (umbracoContext.Content == null)
-                return new Task<bool>(() => contentRequest.PublishedContent is not null);
+        if (umbracoContext.Content == null)
+            return new Task<bool>(() => contentRequest.PublishedContent is not null);
 
-            var siteRoot = umbracoContext.Content.GetById(false, siteId ?? -1);
+        var siteRoot = umbracoContext.Content.GetById(false, siteId ?? -1);
 
-            if (siteRoot is null)
-            {
-                return Task.FromResult(false);
-            }
-
-            // Assuming the 404 page is in the root of the language site with alias fourOhFourPageAlias
-            var notFoundNode = siteRoot.Children?.FirstOrDefault(f => f.ContentType.Alias == "fourOhFourPageAlias");
-
-            if (notFoundNode is not null)
-            {
-                contentRequest.SetPublishedContent(notFoundNode);
-            }
-
-            // Return true or false depending on whether our custom 404 page was found
-            return Task.FromResult(contentRequest.PublishedContent is not null);
+        if (siteRoot is null)
+        {
+            return Task.FromResult(false);
         }
+
+        // Assuming the 404 page is in the root of the language site with alias fourOhFourPageAlias
+        var notFoundNode = siteRoot.Children?.FirstOrDefault(f => f.ContentType.Alias == "fourOhFourPageAlias");
+
+        if (notFoundNode is not null)
+        {
+            contentRequest.SetPublishedContent(notFoundNode);
+        }
+
+        // Return true or false depending on whether our custom 404 page was found
+        return Task.FromResult(contentRequest.PublishedContent is not null);
     }
 }
 ```
 
-You can configure Umbraco to use your own implementation in the `ConfigureServices` method of the `Startup` class in `Startup.cs`:
+You can configure Umbraco to use your own implementation in the `Program.cs` file:
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()
-        .AddWebsite()
-        .AddComposers()
-        // If you need to add something Umbraco specific, do it in the "AddUmbraco" builder chain, using the IUmbracoBuilder extension methods.
-        .SetContentLastChanceFinder<RoutingDocs.ContentFinders.My404ContentFinder>()
-        .Build();
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+     // If you need to add something Umbraco specific, do it in the "AddUmbraco" builder chain, using the IUmbracoBuilder extension methods.
+    .SetContentLastChanceFinder<RoutingDocs.ContentFinders.My404ContentFinder>()
+    .Build();
 ```
 
 {% hint style="warning" %}
