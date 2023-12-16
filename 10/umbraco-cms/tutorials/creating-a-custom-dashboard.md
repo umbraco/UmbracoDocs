@@ -141,7 +141,7 @@ We can apply the same workflow to elements inside the dashboard, not only the na
     </area>
     <area alias="welcomeDashboard">
         <key alias="heading">Welcome!</key>
-        <key alias="bodytext">This is the Backoffice. From here, you can modify the content, media, and settings of your website.<key>
+        <key alias="bodytext">This is the Backoffice. From here, you can modify the content, media, and settings of your website.</key>
         <key alias="copyright">© Sample Company 20XX</key>
     </area>
 </language>
@@ -150,7 +150,7 @@ We can apply the same workflow to elements inside the dashboard, not only the na
 
 We are adding another area tag with a few keys. Let us adjust the dashboard HTML accordingly:
 
-{% code title="en-US.xml" lineNumbers="true" %}
+{% code title="WelcomeDashboard.html" lineNumbers="true" %}
 ```html
 <div class="welcome-dashboard">
     <h1><localize key="welcomeDashboard_heading">Default heading</localize></h1>
