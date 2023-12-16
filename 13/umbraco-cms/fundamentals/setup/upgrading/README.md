@@ -102,7 +102,7 @@ Add a package reference to your project by executing the `dotnet add package Umb
 Run `dotnet restore` to install the package.
 
 {% hint style="warning" %}
-If you are using SQL CE in your project you will need to run `dotnet add package Umbraco.Cms.SqlCe --version <VERSION>` too before running the `dotnet restore` command.
+If you are using SQL CE in your project you will need to run `dotnet add package Umbraco.Cms.Persistence.Sqlite --version <VERSION>` too before running the `dotnet restore` command.
 {% endhint %}
 
 When the command completes, open the **.csproj** file to make sure the package reference was updated:
