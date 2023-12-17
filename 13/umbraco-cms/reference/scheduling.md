@@ -59,6 +59,8 @@ Be aware you may or may not want this background job to run on all servers. If y
 
 ## Minimal example
 
+This example shows the minimum code necessary to implement the `IRecurringBackgroundJob` interface. The job runs every 60 minutes on all servers.
+
 ```csharp
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Logging;
@@ -87,6 +89,8 @@ public class CleanUpYourRoom : IRecurringBackgroundJob
 ```
 
 ## Example with dependency injection
+
+This example shows how to inject other Umbraco services into your background job. This example cleans the recycle bin every 60 minutes. In order to do so it injects an  an `IContentService` to access the Recycle bin, and an `IScopeProvider` to provide an ambient scope for the `EmptyRecycleBin` method. 
 
 ```csharp
 using Umbraco.Cms.Core;
@@ -138,6 +142,8 @@ public class CleanUpYourRoom : IRecurringBackgroundJob
 ```
 
 ## Complex example
+
+The complex example builds on the previous one by injecting additional services, including a logger to log error messages, a profiler to capture timings, and an `IServerRoleAccessor` to log the current server role. Additionally it injects an `IOptionsMonitor` to allow the period to be updated while the server is running, and demonstrates how to trigger the `PeriodChanged` event to signal the job's host.
 
 ```csharp
 using Umbraco.Cms.Core;
