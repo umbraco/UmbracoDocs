@@ -151,7 +151,7 @@ namespace Umbraco.Docs.Samples.Web.RecurringBackgroundJob;
 
 public class CleanUpYourRoom : IRecurringBackgroundJob
 {
-    public TimeSpan Period { get => TimeSpan.FromMinutes(60); }
+    public TimeSpan Period { get; set; } = TimeSpan.FromMinutes(60);
 
     // Runs on all servers
     public ServerRole[] ServerRoles { get => Enum.GetValues<ServerRole>(); }
@@ -189,7 +189,6 @@ public class CleanUpYourRoom : IRecurringBackgroundJob
         // if the settings are updated trigger the event to let the job host know
         healthChecksSettings.OnChange(x =>
         {
-            _healthChecksSettings = x;
             Period = x.Notification.Period;
             _periodChanged?.Invoke(this, EventArgs.Empty);
         });
