@@ -13,11 +13,11 @@ For a notification to be publishable there's only one requirement, it must imple
 ```csharp
 using Umbraco.Cms.Core.Notifications;
 
-namespace Umbraco.Docs.Samples.Web.RecurringHostedService;
+namespace Umbraco.Docs.Samples.Web.RecurringBackgroundJobs;
 
 public class CleanYourRoomStartedNotification : INotification
 {
-    
+
 }
 ```
 
@@ -26,7 +26,7 @@ This notification can now be published, and we can create a notification handler
 ```csharp
 using Umbraco.Cms.Core.Notifications;
 
-namespace Umbraco.Docs.Samples.Web.RecurringHostedService;
+namespace Umbraco.Docs.Samples.Web.RecurringBackgroundJobs;
 
 public class RoomCleanedNotification : INotification
 {
@@ -45,8 +45,8 @@ Now you can create a handler that receives the amount of items deleted through t
 
 Just creating the notification classes is not enough, we also want to be able to publish them. There's two ways of publishing notifications:
 
-* `IEventAggregator` - Notifications published with `IEventAggregator` will always be published immediately.
-* `IScope.Notifications` - Notifications published with a scope will only be published once the scope has been completed and disposed.
+-   `IEventAggregator` - Notifications published with `IEventAggregator` will always be published immediately.
+-   `IScope.Notifications` - Notifications published with a scope will only be published once the scope has been completed and disposed.
 
 The method you use to publish notifications depends on what your needs are, the benefits of publishing notifications with a scope is that the notification will only be published if you complete the scope, and then only once the scope is disposed of. This can be useful if you access the database, or do some other operation that might fail causing you to do a rollback, disposing of the scope without completing it, in this case, you might not want to publish a notification that signals that the operation was a success, using scopes will handle this for you. On the other hand, you might want to publish the notification immediately no matter what, for instance with the `CleanYourRoomStartedNotification`, for this, the `IEventAggregator` is the right choice.
 
@@ -57,32 +57,31 @@ using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Scoping;
 using Umbraco.Cms.Core.Services;
-using Umbraco.Cms.Infrastructure.HostedServices;
+using Umbraco.Cms.Infrastructure.BackgroundJobs;
 
-namespace Umbraco.Docs.Samples.Web.RecurringHostedService;
+namespace Umbraco.Docs.Samples.Web.RecurringBackgroundJobs;
 
-public class CleanUpYourRoom : RecurringHostedServiceBase
+public class CleanUpYourRoom : IRecurringBackgroundJob
 {
+    public TimeSpan Period { get; } = TimeSpan.FromMinutes(5);
+    public event EventHandler? PeriodChanged { add {} remove {} }
+
     private readonly IContentService _contentService;
     private readonly ICoreScopeProvider _coreScopeProvider;
     private readonly IEventAggregator _eventAggregator;
-        
-    private static TimeSpan HowOftenWeRepeat => TimeSpan.FromMinutes(5);
-    private static TimeSpan DelayBeforeWeStart => TimeSpan.FromMinutes(1);
 
     public CleanUpYourRoom(
         IContentService contentService,
         ICoreScopeProvider coreScopeProvider,
         IEventAggregator eventAggregator,
         ILogger<CleanUpYourRoom> logger)
-        : base(logger, HowOftenWeRepeat, DelayBeforeWeStart)
     {
         _contentService = contentService;
         _coreScopeProvider = coreScopeProvider;
         _eventAggregator = eventAggregator;
     }
 
-    public override Task PerformExecuteAsync(object state)
+    public Task RunJobAsync()
     {
         // This will be published immediately
         _eventAggregator.Publish(new CleanYourRoomStartedNotification());
