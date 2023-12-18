@@ -14,7 +14,7 @@ For details of releases for **Vendr**, refer to the [Change log file on Github](
 
 #### [12.1.4](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.4) (December 13th 2023)
 
-* Fixed XSS issue in email / print templates.
+* Fixed Cross-site scripting (XSS) issue in email/print templates.
   
 #### [12.1.3](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.3) (November 1st 2023)
 
