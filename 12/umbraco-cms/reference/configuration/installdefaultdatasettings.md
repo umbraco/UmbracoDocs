@@ -10,9 +10,9 @@ When Umbraco is installed for the first time, it creates a set of default data. 
 
 In certain setups, you may want to take control over what is installed and opt-out of the creation of certain items.
 
-When working in a team and using Umbraco Deploy for schema updates, consider the colleague's local project setup. The default data may not always be useful.
+When working in a team and using Umbraco Deploy for schema updates, consider your colleague's local project setup. The default installed data may not always be useful.
 
-For example, if different languages are set up in Umbraco, it's better not to recreate the default language (en-US). In other situations, certain Umbraco default Data, Member and Media Types may not be required.
+For example, if different languages are set up in Umbraco, it's better not to recreate them from the default language (en-US). In other situations, certain Umbraco default Data, Member and Media Types may not be required.
 
 The following example configuration shows how this default data installation can be customized:
 
