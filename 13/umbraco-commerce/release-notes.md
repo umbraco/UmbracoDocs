@@ -16,4 +16,4 @@ For details of releases for **Vendr**, refer to the [Change log file on Github](
 
 * Upgraded to run again Umbraco v13 and .NET 8
 * Upgraded all 3rd party dependencies
-* Fixed XSS issue in email / print templates 
+* Fixed Cross-site scripting (XSS) issue in email/print templates 
