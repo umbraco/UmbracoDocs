@@ -15,7 +15,7 @@ In certain setups, you may want to take control over what is installed and opt-o
 
 When working in a team and using Umbraco Deploy for schema updates, consider the colleague's local project setup. The default data may not always be useful.
 
-For example, if different languages are set up in Umbraco, it's better not to recreate the default language (en-US). In other situations, certain Umbraco default Data, Member and Media Types may not be required.
+For example, if different languages are set up in Umbraco, it's better not to recreate them from the default language (en-US). In other situations, certain Umbraco default Data, Member and Media Types may not be required.
 
 The following example configuration shows how this default data installation can be customized:
 
