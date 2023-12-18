@@ -1,35 +1,33 @@
 ---
-description: >-
-  This is the documentation for the Umbraco 13 Release Candidate. The next major
-  version of Umbraco.
+description: Your main resource when building and managing an Umbraco CMS website.
 ---
 
-# Umbraco 13 (RC) CMS Documentation
+# Umbraco CMS Documentation
 
-## Getting started with the Umbraco 13 RC
+Umbraco CMS is a flexible and editor-friendly Content Management System (CMS) that allows you to create beautiful and modern websites. Use the latest version of .NET, integrate with your favorite services, and help your customers launch a website tailored to their specific needs.
 
-Below you will find the steps on how you can create a new Umbraco 13 RC project using the Command Line.
+Learn more about Umbraco CMS and get an overview of the top features on [Umbraco.com](https://umbraco.com/products/umbraco-cms/).
 
-### prerequisite
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Fundamentals</strong></td><td>Learn the basics of working with Umbraco CMS. How to install and setup your first site is also included in this section.</td><td><a href=".gitbook/assets/rocket-hero.png">rocket-hero.png</a></td><td><a href="fundamentals/get-to-know-umbraco.md">get-to-know-umbraco.md</a></td></tr><tr><td><strong>Install Umbraco CMS</strong></td><td>Ready to get started with Umbraco? Head over to the Setup section to learn how to install Umbraco CMS.</td><td><a href=".gitbook/assets/docs-style-hero.png">docs-style-hero.png</a></td><td><a href="fundamentals/setup/install/">install</a></td></tr><tr><td><strong>Tutorials</strong></td><td>Find detailed step-by-step guides on everything from building a site from scratch to implementing a custom maintenance page.</td><td><a href=".gitbook/assets/reversed-heart-hero.png">reversed-heart-hero.png</a></td><td><a href="tutorials/overview.md">overview.md</a></td></tr></tbody></table>
 
-* [.NET 8.0.0.rc.2](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) installed
+{% embed url="https://www.youtube-nocookie.com/embed/Yu29dE-0OoI" %}
+Watch this tutorial on how to get started building your first Umbraco CMS website.
+{% endembed %}
 
-#### Install using Command Line
+The documentation for Umbraco CMS provides information for experienced Umbraco and .NET developers. It also offers guides and high-level articles for people starting out with the CMS.
 
-1. Run `dotnet new -i Umbraco.Templates::13.0.0-rc1` in the command line to install the Umbraco 13 RC templates.
-2. Run `dotnet new umbraco -n "MyProject"` to create a new project using Umbraco 13 RC.
-3. Run `dotnet run --project "MyProject"` to start the newly created project.
+{% content-ref url="tutorials/creating-a-basic-website/" %}
+[creating-a-basic-website](tutorials/creating-a-basic-website/)
+{% endcontent-ref %}
 
-## New and Updated articles
+{% content-ref url="reference/configuration/" %}
+[configuration](reference/configuration/)
+{% endcontent-ref %}
 
-Below you will find a list of new and updated articles for the Umbraco 13 Release Candidate.
+{% content-ref url="fundamentals/setup/requirements.md" %}
+[requirements.md](fundamentals/setup/requirements.md)
+{% endcontent-ref %}
 
-The list will be updated as more articles have been created and updated.
-
-* [Blocks in Rich Text Editor](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-blocks.md)
-* [External Login Providers](reference/security/external-login-providers.md)
-* [Two-factor Authentication](reference/security/two-factor-authentication.md)
-
-### Breaking Changes
-
-Some breaking changes have been introduced in the Umbraco 13 Release Candidate, you can find the list of breaking changes in the [Version Specific Upgrades](fundamentals/setup/upgrading/version-specific/) article.
+{% content-ref url="reference/notifications/" %}
+[notifications](reference/notifications/)
+{% endcontent-ref %}

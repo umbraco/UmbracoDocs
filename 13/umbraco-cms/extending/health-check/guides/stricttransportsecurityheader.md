@@ -18,19 +18,17 @@ Enabling HSTS on a domain will cause browsers to only use HTTPS (not HTTP) to co
 
 ASP.NET Core implements HSTS with the `UseHsts` extension method.
 
-You can add `UseHsts` after the `env.IsDevelopment()` check-in `Startup.cs`.
+You can add `UseHsts` after the `env.IsDevelopment()` check-in `Program.cs`.
 
 ```csharp
-public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+if (builder.Environment.IsDevelopment())
 {
-    if (env.IsDevelopment())
-    {
-        app.UseDeveloperExceptionPage();
-    }
-    else
-    {
-        app.UseHsts();
-    }
+    app.UseDeveloperExceptionPage();
+}
+else
+{
+    app.UseHsts();
+}
     //...
 }
 ```

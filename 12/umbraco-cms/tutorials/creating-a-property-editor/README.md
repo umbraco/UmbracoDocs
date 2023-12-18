@@ -75,20 +75,19 @@ You can also create a property editor with C# instead of defining it in a `packa
 ```csharp
 using Umbraco.Cms.Core.IO;
 
-namespace Umbraco.Cms.Core.PropertyEditors
+namespace Umbraco.Cms.Core.PropertyEditors;
+
+[DataEditor(
+    alias: "Suggestions editor",
+    name: "Suggestions",
+    view: "~/App_Plugins/Suggestions/suggestion.html",
+    Group = "Common",
+    Icon = "icon-list")]
+public class Suggestions : DataEditor
 {
-    [DataEditor(
-        alias: "Suggestions editor",
-        name: "Suggestions",
-        view: "~/App_Plugins/Suggestions/suggestion.html",
-        Group = "Common",
-        Icon = "icon-list")]
-    public class Suggestions : DataEditor
-    {
-        public Suggestions(IDataValueEditorFactory dataValueEditorFactory)
-            : base(dataValueEditorFactory)
-        {            
-        }
+    public Suggestions(IDataValueEditorFactory dataValueEditorFactory)
+        : base(dataValueEditorFactory)
+    {            
     }
 }
 ```

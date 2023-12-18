@@ -16,6 +16,14 @@ In this section, you can find the release notes for each version of Umbraco UI B
 
 <summary>Version 12</summary>
 
+#### [12.0.2](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.2) (December 1st 2023)
+
+* Run server side validation on action settings dialog [#34](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/34).
+* Saving a node does't close the editor [#57](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/57).
+* Entity Picker used in Konstrukt editor has validation issues [#61](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/61).
+* Angular error when adding a custom action in the ContainerMenu [#73](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/73).
+* Not populating $scope.model.dataTypeKey, problems using Contentment Data Picker [#76](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/76).
+
 #### [12.0.1](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.1) (November 1st 2023)
 
 * Null check text based filter clauses [#66](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/66).
@@ -32,6 +40,14 @@ In this section, you can find the release notes for each version of Umbraco UI B
 <details>
 
 <summary>Version 10</summary>
+
+#### [10.0.2](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.2) (December 1st 2023)
+
+* Run server side validation on action settings dialog [#34](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/34).
+* Saving a node does't close the editor [#57](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/57).
+* Entity Picker used in Konstrukt editor has validation issues [#61](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/61).
+* Angular error when adding a custom action in the ContainerMenu [#73](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/73).
+* Not populating $scope.model.dataTypeKey, problems using Contentment Data Picker [#76](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/76).
 
 #### [10.0.1](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.1) (November 1st 2023)
 

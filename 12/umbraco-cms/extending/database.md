@@ -28,103 +28,102 @@ using Umbraco.Cms.Infrastructure.Migrations;
 using Umbraco.Cms.Infrastructure.Migrations.Upgrade;
 using Umbraco.Cms.Infrastructure.Persistence.DatabaseAnnotations;
 
-namespace MyNamespace
+namespace MyNamespace;
+
+public class BlogCommentsComposer : ComponentComposer<BlogCommentsComponent>
 {
-    public class BlogCommentsComposer : ComponentComposer<BlogCommentsComponent>
+}
+
+public class BlogCommentsComponent : IComponent
+{
+    private readonly ICoreScopeProvider _coreScopeProvider;
+    private readonly IMigrationPlanExecutor _migrationPlanExecutor;
+    private readonly IKeyValueService _keyValueService;
+    private readonly IRuntimeState _runtimeState;
+
+    public BlogCommentsComponent(
+        ICoreScopeProvider coreScopeProvider,
+        IMigrationPlanExecutor migrationPlanExecutor,
+        IKeyValueService keyValueService,
+        IRuntimeState runtimeState)
     {
+        _coreScopeProvider = coreScopeProvider;
+        _migrationPlanExecutor = migrationPlanExecutor;
+        _keyValueService = keyValueService;
+        _runtimeState = runtimeState;
     }
 
-    public class BlogCommentsComponent : IComponent
+    public void Initialize()
     {
-        private readonly ICoreScopeProvider _coreScopeProvider;
-        private readonly IMigrationPlanExecutor _migrationPlanExecutor;
-        private readonly IKeyValueService _keyValueService;
-        private readonly IRuntimeState _runtimeState;
-
-        public BlogCommentsComponent(
-            ICoreScopeProvider coreScopeProvider,
-            IMigrationPlanExecutor migrationPlanExecutor,
-            IKeyValueService keyValueService,
-            IRuntimeState runtimeState)
+        if (_runtimeState.Level < RuntimeLevel.Run)
         {
-            _coreScopeProvider = coreScopeProvider;
-            _migrationPlanExecutor = migrationPlanExecutor;
-            _keyValueService = keyValueService;
-            _runtimeState = runtimeState;
+            return;
         }
 
-        public void Initialize()
+        // Create a migration plan for a specific project/feature
+        // We can then track that latest migration state/step for this project/feature
+        var migrationPlan = new MigrationPlan("BlogComments");
+
+        // This is the steps we need to take
+        // Each step in the migration adds a unique value
+        migrationPlan.From(string.Empty)
+            .To<AddCommentsTable>("blogcomments-db");
+
+        // Go and upgrade our site (Will check if it needs to do the work or not)
+        // Based on the current/latest step
+        var upgrader = new Upgrader(migrationPlan);
+        upgrader.Execute(_migrationPlanExecutor, _coreScopeProvider, _keyValueService);
+    }
+
+    public void Terminate()
+    {
+    }
+}
+
+public class AddCommentsTable : MigrationBase
+{
+    public AddCommentsTable(IMigrationContext context) : base(context)
+    {
+    }
+    protected override void Migrate()
+    {
+        Logger.LogDebug("Running migration {MigrationStep}", "AddCommentsTable");
+
+        // Lots of methods available in the MigrationBase class - discover with this.
+        if (TableExists("BlogComments") == false)
         {
-            if (_runtimeState.Level < RuntimeLevel.Run)
-            {
-                return;
-            }
-
-            // Create a migration plan for a specific project/feature
-            // We can then track that latest migration state/step for this project/feature
-            var migrationPlan = new MigrationPlan("BlogComments");
-
-            // This is the steps we need to take
-            // Each step in the migration adds a unique value
-            migrationPlan.From(string.Empty)
-                .To<AddCommentsTable>("blogcomments-db");
-
-            // Go and upgrade our site (Will check if it needs to do the work or not)
-            // Based on the current/latest step
-            var upgrader = new Upgrader(migrationPlan);
-            upgrader.Execute(_migrationPlanExecutor, _coreScopeProvider, _keyValueService);
+            Create.Table<BlogCommentSchema>().Do();
         }
-
-        public void Terminate()
+        else
         {
+            Logger.LogDebug("The database table {DbTable} already exists, skipping", "BlogComments");
         }
     }
 
-    public class AddCommentsTable : MigrationBase
+    [TableName("BlogComments")]
+    [PrimaryKey("Id", AutoIncrement = true)]
+    [ExplicitColumns]
+    public class BlogCommentSchema
     {
-        public AddCommentsTable(IMigrationContext context) : base(context)
-        {
-        }
-        protected override void Migrate()
-        {
-            Logger.LogDebug("Running migration {MigrationStep}", "AddCommentsTable");
+        [PrimaryKeyColumn(AutoIncrement = true, IdentitySeed = 1)]
+        [Column("Id")]
+        public int Id { get; set; }
 
-            // Lots of methods available in the MigrationBase class - discover with this.
-            if (TableExists("BlogComments") == false)
-            {
-                Create.Table<BlogCommentSchema>().Do();
-            }
-            else
-            {
-                Logger.LogDebug("The database table {DbTable} already exists, skipping", "BlogComments");
-            }
-        }
+        [Column("BlogPostUmbracoId")]
+        public int BlogPostUmbracoId { get; set; }
 
-        [TableName("BlogComments")]
-        [PrimaryKey("Id", AutoIncrement = true)]
-        [ExplicitColumns]
-        public class BlogCommentSchema
-        {
-            [PrimaryKeyColumn(AutoIncrement = true, IdentitySeed = 1)]
-            [Column("Id")]
-            public int Id { get; set; }
+        [Column("Name")]
+        public required string Name { get; set; }
 
-            [Column("BlogPostUmbracoId")]
-            public int BlogPostUmbracoId { get; set; }
+        [Column("Email")]
+        public required string Email { get; set; }
 
-            [Column("Name")]
-            public required string Name { get; set; }
+        [Column("Website")]
+        public required string Website { get; set; }
 
-            [Column("Email")]
-            public required string Email { get; set; }
-
-            [Column("Website")]
-            public required string Website { get; set; }
-
-            [Column("Message")]
-            [SpecialDbType(SpecialDbTypes.NVARCHARMAX)]
-            public string Message { get; set; }
-        }
+        [Column("Message")]
+        [SpecialDbType(SpecialDbTypes.NVARCHARMAX)]
+        public string Message { get; set; }
     }
 }
 ```
@@ -148,55 +147,54 @@ using Umbraco.Cms.Infrastructure.Migrations;
 using Umbraco.Cms.Infrastructure.Migrations.Upgrade;
 using Umbraco.Cms.Infrastructure.Persistence.DatabaseAnnotations;
 
-namespace MyNamespace
+namespace MyNamespace;
+
+public class RunBlogCommentsMigration : INotificationHandler<UmbracoApplicationStartingNotification>
 {
-    public class RunBlogCommentsMigration : INotificationHandler<UmbracoApplicationStartingNotification>
+    private readonly IMigrationPlanExecutor _migrationPlanExecutor;
+    private readonly ICoreScopeProvider _coreScopeProvider;
+    private readonly IKeyValueService _keyValueService;
+    private readonly IRuntimeState _runtimeState;
+
+    public RunBlogCommentsMigration(
+        ICoreScopeProvider coreScopeProvider,
+        IMigrationPlanExecutor migrationPlanExecutor,
+        IKeyValueService keyValueService,
+        IRuntimeState runtimeState)
     {
-        private readonly IMigrationPlanExecutor _migrationPlanExecutor;
-        private readonly ICoreScopeProvider _coreScopeProvider;
-        private readonly IKeyValueService _keyValueService;
-        private readonly IRuntimeState _runtimeState;
-
-        public RunBlogCommentsMigration(
-            ICoreScopeProvider coreScopeProvider,
-            IMigrationPlanExecutor migrationPlanExecutor,
-            IKeyValueService keyValueService,
-            IRuntimeState runtimeState)
-        {
-            _migrationPlanExecutor = migrationPlanExecutor;
-            _coreScopeProvider = coreScopeProvider;
-            _keyValueService = keyValueService;
-            _runtimeState = runtimeState;
-        }
-
-        public void Handle(UmbracoApplicationStartingNotification notification)
-        {
-            if (_runtimeState.Level < RuntimeLevel.Run)
-            {
-                return;
-            }
-
-            // Create a migration plan for a specific project/feature
-            // We can then track that latest migration state/step for this project/feature
-            var migrationPlan = new MigrationPlan("BlogComments");
-
-            // This is the steps we need to take
-            // Each step in the migration adds a unique value
-            migrationPlan.From(string.Empty)
-                .To<AddCommentsTable>("blogcomments-db");
-
-            // Go and upgrade our site (Will check if it needs to do the work or not)
-            // Based on the current/latest step
-            var upgrader = new Upgrader(migrationPlan);
-            upgrader.Execute(
-                _migrationPlanExecutor,
-                _coreScopeProvider,
-                _keyValueService);
-        }
+        _migrationPlanExecutor = migrationPlanExecutor;
+        _coreScopeProvider = coreScopeProvider;
+        _keyValueService = keyValueService;
+        _runtimeState = runtimeState;
     }
 
-    // Migration and schema defined as in the previous code sample.
+    public void Handle(UmbracoApplicationStartingNotification notification)
+    {
+        if (_runtimeState.Level < RuntimeLevel.Run)
+        {
+            return;
+        }
+
+        // Create a migration plan for a specific project/feature
+        // We can then track that latest migration state/step for this project/feature
+        var migrationPlan = new MigrationPlan("BlogComments");
+
+        // This is the steps we need to take
+        // Each step in the migration adds a unique value
+        migrationPlan.From(string.Empty)
+            .To<AddCommentsTable>("blogcomments-db");
+
+        // Go and upgrade our site (Will check if it needs to do the work or not)
+        // Based on the current/latest step
+        var upgrader = new Upgrader(migrationPlan);
+        upgrader.Execute(
+            _migrationPlanExecutor,
+            _coreScopeProvider,
+            _keyValueService);
+    }
 }
+
+// Migration and schema defined as in the previous code sample.
 ```
 
 The notification handler can either be registered in a composer:
@@ -206,14 +204,13 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Notifications;
 
-namespace TableMigrationTest
+namespace TableMigrationTest;
+
+public class BlogCommentsComposer : IComposer
 {
-    public class BlogCommentsComposer : IComposer
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.AddNotificationHandler<UmbracoApplicationStartingNotification, RunBlogCommentsMigration>();
-        }
+        builder.AddNotificationHandler<UmbracoApplicationStartingNotification, RunBlogCommentsMigration>();
     }
 }
 ```
@@ -225,15 +222,14 @@ using System.Linq;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Notifications;
 
-namespace MyNamespace
+namespace MyNamespace;
+
+public static class UmbracoBuilderExtensions
 {
-    public static class UmbracoBuilderExtensions
+    public static IUmbracoBuilder AddBlogComments(this IUmbracoBuilder builder)
     {
-        public static IUmbracoBuilder AddBlogComments(this IUmbracoBuilder builder)
-        {
-            builder.AddNotificationHandler<UmbracoApplicationStartingNotification, RunBlogCommentsMigration>();
-            return builder;
-        }
+        builder.AddNotificationHandler<UmbracoApplicationStartingNotification, RunBlogCommentsMigration>();
+        return builder;
     }
 }
 ```
@@ -248,25 +244,24 @@ using Microsoft.Extensions.Hosting;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Extensions;
 
-namespace MyNamespace
+namespace MyNamespace;
+
+public class Startup
 {
-    public class Startup
+    ...
+
+    public void ConfigureServices(IServiceCollection services)
     {
-        ...
+        services.AddUmbraco(_env, _config)
+            .AddBackOffice()
+            .AddWebsite()
+            .AddComposers()
+            .AddBlogComments()  // calls our extension method to register the notification handler
+            .Build();
 
-        public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddUmbraco(_env, _config)
-                .AddBackOffice()
-                .AddWebsite()
-                .AddComposers()
-                .AddBlogComments()  // calls our extension method to register the notification handler
-                .Build();
-
-        }
-
-        ...
     }
+
+    ...
 }
 ```
 
@@ -311,30 +306,30 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using Umbraco.Cms.Infrastructure.Scoping;
 using Umbraco.Cms.Web.Common.Controllers;
-namespace MyNamespace
+
+namespace MyNamespace;
+
+public class BlogCommentsApiController : UmbracoApiController
 {
-    public class BlogCommentsApiController : UmbracoApiController
+    private readonly IScopeProvider _scopeProvider;
+    public BlogCommentsApiController(IScopeProvider scopeProvider)
     {
-        private readonly IScopeProvider _scopeProvider;
-        public BlogCommentsApiController(IScopeProvider scopeProvider)
-        {
-            _scopeProvider = scopeProvider;
-        }
-        [HttpGet]
-        public IEnumerable<BlogComment> GetComments(int umbracoNodeId)
-        {
-            using var scope = _scopeProvider.CreateScope();
-            var queryResults = scope.Database.Fetch<BlogComment>("SELECT * FROM BlogComments WHERE BlogPostUmbracoId = @0", umbracoNodeId);
-            scope.Complete();
-            return queryResults;
-        }
-        [HttpPost]
-        public void InsertComment(BlogComment comment)
-        {
-            using var scope = _scopeProvider.CreateScope();
-            scope.Database.Insert<BlogComment>(comment);
-            scope.Complete();
-        }
+        _scopeProvider = scopeProvider;
+    }
+    [HttpGet]
+    public IEnumerable<BlogComment> GetComments(int umbracoNodeId)
+    {
+        using var scope = _scopeProvider.CreateScope();
+        var queryResults = scope.Database.Fetch<BlogComment>("SELECT * FROM BlogComments WHERE BlogPostUmbracoId = @0", umbracoNodeId);
+        scope.Complete();
+        return queryResults;
+    }
+    [HttpPost]
+    public void InsertComment(BlogComment comment)
+    {
+        using var scope = _scopeProvider.CreateScope();
+        scope.Database.Insert<BlogComment>(comment);
+        scope.Complete();
     }
 }
 ```

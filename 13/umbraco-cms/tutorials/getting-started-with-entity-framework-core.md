@@ -99,20 +99,17 @@ To do this we can use this helpful extension method:
 services.AddUmbracoEFCoreContext<BlogContext>("{YOUR CONNECTIONSTRING HERE}", "{YOUR PROVIDER NAME HERE}");
 ```
 
-Add the method in the `startup.cs` file under the `ConfigureServices`:
+Add the method in the `Program.cs` file:
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()
-        .AddWebsite()
-        .AddDeliveryApi()
-        .AddComposers()
-        .Build();
-        
-    services.AddUmbracoEFCoreContext<BlogContext>("{YOUR CONNECTIONSTRING HERE}", "{YOUR PROVIDER NAME HERE}");
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .Build();
+
+builder.Services.AddUmbracoEFCoreContext<BlogContext>("{YOUR CONNECTIONSTRING HERE}", "{YOUR PROVIDER NAME HERE}");
 ```
 
 {% hint style="warning" %}
@@ -221,7 +218,7 @@ public class BlogCommentsController : UmbracoApiController
 {
     private readonly IEFCoreScopeProvider<BlogContext> _efCoreScopeProvider;
 
-    public BlogCommentsController(IEFCoreScopeProvider<BlogContext> efCoreScopeProvider) 
+    public BlogCommentsController(IEFCoreScopeProvider<BlogContext> efCoreScopeProvider)
         => _efCoreScopeProvider = efCoreScopeProvider;
 
     [HttpGet]

@@ -22,6 +22,7 @@ It's possible to add a label to use with the color.
 
 ```csharp
 @{
+    // Model has a property called "Color" which holds a Color Picker editor
     var hexColor = Model.Color;
     // Define the label if you've included it
     String colorLabel = Model.Color.Label;
@@ -38,6 +39,7 @@ It's possible to add a label to use with the color.
 ```csharp
 @using Umbraco.Cms.Core.PropertyEditors.ValueConverters
 @{
+    // Model has a property called "Color" which holds a Color Picker editor
     var hexColor = Model.Value("Color");
     // Define the label if you've included it
     var colorLabel = Model.Value<ColorPickerValueConverter.PickedColor>("Color").Label;

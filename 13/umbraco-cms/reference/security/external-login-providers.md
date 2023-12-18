@@ -52,7 +52,7 @@ The process requires adding a couple of new classes (`.cs` files) to your Umbrac
 * **Custom-named configuration** to add additional configuration for handling different options related to the authentication. [See a generic example of the configuration class to learn more.](#custom-named-configuration)
 * A **static extention class** to extend on the default authentication implementation in Umbraco CMS for either Users or Members. [See a generic example of the static extension class to learn more.](#static-extension-class)
 
-To register these two classes in Umbraco CMS you need to add them to the `ConfigureServices` method in your `Startup.cs` class.
+To register these two classes in Umbraco CMS you need to add them to the `Program.cs` file.
 
 {% hint style="info" %}
 It is also possible to register the configuration class directly into the extension class. See examples of how this is done in the [generic examples for the static extension class](#static-extension-class).
@@ -128,7 +128,9 @@ You can persist this data to the affiliated user's external login data via the `
 `IExternalLogin` contains a property called `UserData`. This is a blob text column which can store any arbitrary data for the external login provider.
 
 {% hint style="info" %}
+
 Be aware that the local Umbraco user must already exist and be linked to the external login provider before data can be stored here. In cases where auto-linking occurs and the user isn't yet created, you need to store the data in memory first during auto-linking. Then you can persist the data to the service once the user is linked and created.
+
 {% endhint %}
 
 ### Auto-linking on backoffice authentication
@@ -156,8 +158,8 @@ The configuration file is used to configure a handful of different options for t
 {% tabs %}
 {% tab title="User Authentication" %}
 
-{% hint style="warning" %}
-In earlier versions of Umbraco up to version 12, the options included only a "ButtonStyle" property to style the button. In version 13+ the default button is now rendered using the Umbraco UI library. This means that the "ButtonStyle" property has been deprecated and changed to map to "ButtonColor" and "ButtonLook". You can define these directly by using the "ButtonColor" and "ButtonLook" properties to style the button.
+{% hint style="info" %}
+In earlier versions of Umbraco up to version 12, the options included only a "ButtonStyle" property to style the button. In version 13+ the default button is now rendered using the Umbraco UI library. This means that the "ButtonStyle" property has been deprecated and should not be used. You can override the default styling of the button by using the "ButtonColor" and "ButtonLook" properties. We recommend leaving these properties empty to use the default styling. The default styling will give your users an optimal login experience.
 {% endhint %}
 
 {% code title="ProviderBackOfficeExternalLoginProviderOptions.cs" lineNumbers="true" %}
@@ -184,8 +186,6 @@ public class ProviderBackOfficeExternalLoginProviderOptions : IConfigureNamedOpt
     public void Configure(BackOfficeExternalLoginProviderOptions options)
     {
         // Customize the login button
-        options.ButtonColor = UuiButtonColor.Danger;
-        options.ButtonLook = UuiButtonLook.Primary;
         options.Icon = "icon-cloud";
 
         // The following options are relevant if you
@@ -249,6 +249,21 @@ public class ProviderBackOfficeExternalLoginProviderOptions : IConfigureNamedOpt
 }
 ```
 {% endcode %}
+
+**Icons**
+
+If you want to use a custom icon for the login button, you need to add the icon to the Umbraco backoffice. You can do this by adding the icon to the `~/App_Plugins/MyPlugin/BackOffice/Icons` folder. The icon should be a SVG file. The icon should be named the same as the icon name you specify in the `options.Icon` property.
+
+{% hint style="info" %}
+You can use the [Umbraco Icon Picker](../../fundamentals/data/defining-content/README.md#adding-icons-to-the-document-type) to see available icons.
+{% endhint %}
+
+{% endtab %}
+
+{% tab title="Member Authentication" %}
+
+{% code title="ProviderMembersExternalLoginProviderOptions.cs" lineNumbers="true" %}
+```csharp
 
 {% endtab %}
 
@@ -353,6 +368,28 @@ The module should define a Custom Element and export it as default. The Custom E
 * `providerName`: The name of the provider. This is the same name as the provider's scheme name.
 * `displayName`: The display name of the provider. This is the same display name as the provider's display name.
 * `externalLoginUrl`: The URL to redirect to when the button is clicked.
+* `userViewState`: The current view state of the user. This can be one of the following values:
+  * `loggingIn`: The user is on the login screen.
+  * `loggedIn`: The user is on the backoffice panel.
+  * `loggedOut`: The user clicked the logout button and is on the logged-out screen.
+  * `timedOut`: The user's session has timed out and they are on the timed-out screen.
+
+**TypeScript**
+
+If you use TypeScript, you can use this interface to define the properties:
+
+{% code title="login-types.ts" %}
+```typescript
+type UserViewState = 'loggingIn' | 'loggedIn' | 'loggedOut' | 'timedOut';
+
+interface IExternalLoginCustomViewElement {
+  displayName?: string;
+  providerName?: string;
+  externalLoginUrl?: string;
+  userViewState?: UserViewState;
+};
+```
+{% endcode %}
 
 **Examples**
 
@@ -432,7 +469,8 @@ class MyLitView extends LitElement {
     return {
       providerName: { type: String },
       displayName: { type: String },
-      externalLoginUrl: { type: String }
+      externalLoginUrl: { type: String },
+      userViewState: { type: String }
     };
   }
 
@@ -587,4 +625,4 @@ public static class ProviderMemberAuthenticationExtensions
 {% endtab %}
 {% endtabs %}
 
-For a more in-depth article on how to set up OAuth providers in .NET refer to the [Microsoft Documentation](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/?view=aspnetcore-5.0\&tabs=visual-studio).
+For a more in-depth article on how to set up OAuth providers in .NET refer to the [Microsoft Documentation](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/social/?view=aspnetcore-8.0&tabs=visual-studio).

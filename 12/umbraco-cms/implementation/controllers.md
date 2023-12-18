@@ -76,27 +76,26 @@ using Umbraco.Cms.Infrastructure.Persistence;
 using Umbraco.Cms.Web.Common.Filters;
 using Umbraco.Cms.Web.Website.Controllers;
 
-namespace UmbracoProject.Controller
-{
-    [UmbracoMemberAuthorize]
-    public class AccountController : SurfaceController
-    {
-        public AccountController(
-                IUmbracoContextAccessor umbracoContextAccessor,
-                IUmbracoDatabaseFactory databaseFactory,
-                ServiceContext services,
-                AppCaches appCaches,
-                IProfilingLogger profilingLogger,
-                IPublishedUrlProvider publishedUrlProvider)
-                : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
-            {
-            }
+namespace UmbracoProject.Controller;
 
-        [HttpPost]
-        public IActionResult UpdateAccountInfo(AccountInfo accountInfo)
+[UmbracoMemberAuthorize]
+public class AccountController : SurfaceController
+{
+    public AccountController(
+            IUmbracoContextAccessor umbracoContextAccessor,
+            IUmbracoDatabaseFactory databaseFactory,
+            ServiceContext services,
+            AppCaches appCaches,
+            IProfilingLogger profilingLogger,
+            IPublishedUrlProvider publishedUrlProvider)
+            : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
         {
-            // TODO: Update the account info for the current member
         }
+
+    [HttpPost]
+    public IActionResult UpdateAccountInfo(AccountInfo accountInfo)
+    {
+        // TODO: Update the account info for the current member
     }
 }
 ```

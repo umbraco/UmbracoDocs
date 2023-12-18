@@ -190,6 +190,9 @@ The GraphQL type name is the Content Type `alias` converted to Pascal Case.
 {% endhint %}
 
 * BigInt
+* BlockGrid
+* BlockGridArea
+* BlockGridItem
 * BlockListItem
 * Byte
 * Content
@@ -1451,7 +1454,7 @@ interface Element {
 ### Content
 
 ```graphql
-interface Content @sqlTable(alwaysFetch: ["contentTypeAlias"], name: "content", uniqueKey: ["id"]) {
+interface Content {
     """
     The ancestors.
     """
@@ -1484,7 +1487,7 @@ interface Content @sqlTable(alwaysFetch: ["contentTypeAlias"], name: "content", 
         Sort the returned data.
         """
         orderBy: [ContentOrderByInput],
-    ): ContentConnection! @sqlJoin(otherKey: "id", thisKey: "ancestors", type: "ArrayManyToMany", orderBy: "level", orderByType: "System.Int32", paginate: true, checkCulture: true)
+    ): ContentConnection!
     """
     The children.
     """
@@ -1517,15 +1520,15 @@ interface Content @sqlTable(alwaysFetch: ["contentTypeAlias"], name: "content", 
         Sort the returned data.
         """
         orderBy: [ContentOrderByInput],
-    ): ContentConnection! @sqlJoin(otherKey: "parentId", thisKey: "id", type: "OneToMany" orderBy: "sortOrder", orderByType: "System.Int32",paginate: true, checkCulture: true)
+    ): ContentConnection!
     """
     The Content Type alias.
     """
-    contentTypeAlias: String! @sqlColumn(column: "contentTypeAlias")
+    contentTypeAlias: String!
     """
     The create date.
     """
-    createDate: DateTime! @sqlColumn(column: "createDate")
+    createDate: DateTime!
     """
     The descendants.
     """
@@ -1558,15 +1561,15 @@ interface Content @sqlTable(alwaysFetch: ["contentTypeAlias"], name: "content", 
         Sort the returned data.
         """
         orderBy: [ContentOrderByInput],
-    ): ContentConnection! @sqlJoin(otherKey: "ancestors", thisKey: "id", type: "OneToManyArray", orderBy: "treePath", orderByType: "System.Int32[]", paginate: true, checkCulture: true)
+    ): ContentConnection!
     """
     The unique identifier.
     """
-    id: ID! @sqlColumn(column: "id")
+    id: ID!
     """
     The level.
     """
-    level: Int! @sqlColumn(column: "level")
+    level: Int!
     """
     The name.
     """
@@ -1575,7 +1578,7 @@ interface Content @sqlTable(alwaysFetch: ["contentTypeAlias"], name: "content", 
         The culture to fetch the value in. If empty the contents culture will be used.
         """
         culture: String
-    ): String @sqlColumn(column: "data->'{culture}'->>'name'")
+    ): String
     """
     The parent Content, can be null if content is at root.
     """
@@ -1584,11 +1587,11 @@ interface Content @sqlTable(alwaysFetch: ["contentTypeAlias"], name: "content", 
         The culture to fetch the value in. If empty the contents culture will be used.
         """
         culture: String
-    ): Content @sqlJoin(otherKey: "id", thisKey: "parentId", checkCulture: false)
+    ): Content
     """
     The sort order.
     """
-    sortOrder: Int! @sqlColumn(column: "sortOrder")
+    sortOrder: Int!
     """
     The update date.
     """
@@ -1597,7 +1600,7 @@ interface Content @sqlTable(alwaysFetch: ["contentTypeAlias"], name: "content", 
         The culture to fetch the value in. If empty the contents culture will be used.
         """
         culture: String
-    ): DateTime @sqlColumn(column: "data->'{culture}'->>'updateDate'")
+    ): DateTime
     """
     The url.
     """
@@ -1606,7 +1609,7 @@ interface Content @sqlTable(alwaysFetch: ["contentTypeAlias"], name: "content", 
         The culture to fetch the value in. If empty the contents culture will be used.
         """
         culture: String
-    ): String @sqlColumn(column: "data->'{culture}'->>'url'")
+    ): String
 }
 ```
 
@@ -1616,7 +1619,7 @@ interface Content @sqlTable(alwaysFetch: ["contentTypeAlias"], name: "content", 
 """
 A connection from an object to a list of objects of type `Content`.
 """
-type ContentConnection @connection {
+type ContentConnection {
   """
   A list of all of the objects returned in the connection.
   This is a convenience field provided for quickly exploring the API;
@@ -1642,7 +1645,7 @@ type ContentConnection @connection {
 """
 An edge in a connection from an object to another object of type `Content`
 """
-type ContentEdge @edge {
+type ContentEdge {
   """
   A cursor for use in pagination.
   """
@@ -1657,7 +1660,7 @@ type ContentEdge @edge {
 ### Media
 
 ```graphql
-interface Media @sqlTable(alwaysFetch: ["mediaTypeAlias"], name: "media", uniqueKey: ["id"]) {
+interface Media {
   """
   The ancestors.
   """
@@ -1678,7 +1681,7 @@ interface Media @sqlTable(alwaysFetch: ["mediaTypeAlias"], name: "media", unique
       Only look at connected edges with cursors smaller than the value of `before`.
       """
       before: String
-  ): MediaConnection! @sqlJoin(otherKey: "id", thisKey: "ancestors", type: "ArrayManyToMany", orderBy: "level", orderByType: "System.Int32", paginate: true)
+  ): MediaConnection!
   """
   The children.
   """
@@ -1699,11 +1702,11 @@ interface Media @sqlTable(alwaysFetch: ["mediaTypeAlias"], name: "media", unique
     Only look at connected edges with cursors smaller than the value of `before`.
     """
     before: String
-  ): MediaConnection! @sqlJoin(otherKey: "parentId", thisKey: "id", type: "OneToMany", orderBy: "sortOrder", orderByType: "System.Int32", paginate: true)
+  ): MediaConnection!
   """
   The create date.
   """
-  createDate: DateTime! @sqlColumn(column: "createDate")
+  createDate: DateTime!
   """
   The descendants.
   """
@@ -1724,35 +1727,35 @@ interface Media @sqlTable(alwaysFetch: ["mediaTypeAlias"], name: "media", unique
     Only look at connected edges with cursors smaller than the value of `before`.
     """
     before: String
-  ): MediaConnection! @sqlJoin(otherKey: "ancestors", thisKey: "id", type: "OneToManyArray", orderBy: "treePath", orderByType: "System.Int32[]", paginate: true)
+  ): MediaConnection!
   """
   The unique identifier.
   """
-  id: ID! @sqlColumn(column: "id")
+  id: ID!
   """
   The level.
   """
-  level: Int! @sqlColumn(column: "level")
+  level: Int!
   """
   The Media Type alias
   """
-  mediaTypeAlias: String! @sqlColumn(column: "mediaTypeAlias")
+  mediaTypeAlias: String!
   """
   The name.
   """
-  name: String! @sqlColumn(column: "name")
+  name: String!
   """
   The parent Content, can be null if content is at root.
   """
-  parent: Media @sqlJoin(otherKey: "id", thisKey: "parentId")
+  parent: Media
   """
   The sort order.
   """
-  sortOrder: Int! @sqlColumn(column: "sortOrder")
+  sortOrder: Int!
   """
   The update date.
   """
-  updateDate: DateTime @sqlColumn(column: "updateDate")
+  updateDate: DateTime
   """
   The url.
   """
@@ -1793,7 +1796,7 @@ interface Media @sqlTable(alwaysFetch: ["mediaTypeAlias"], name: "media", unique
     Change the format of the output image.
     """
     format: ImageCropFormat
-  ): String @imageCropUrlResolver
+  ): String
 }
 ```
 
@@ -1803,7 +1806,7 @@ interface Media @sqlTable(alwaysFetch: ["mediaTypeAlias"], name: "media", unique
 """
 A connection from an object to a list of objects of type `Media`.
 """
-type MediaConnection @connection {
+type MediaConnection {
   """
   A list of all of the objects returned in the connection.
   This is a convenience field provided for quickly exploring the API;
@@ -1829,7 +1832,7 @@ type MediaConnection @connection {
 """
 An edge in a connection from an object to another object of type `Media`
 """
-type MediaEdge @edge {
+type MediaEdge {
   """
   A cursor for use in pagination.
   """
@@ -1861,151 +1864,151 @@ input ContentFilterInput {
   """
   All of the filters must match.
   """
-  AND: [ContentFilterInput] @filter(type: "AND")
+  AND: [ContentFilterInput]
   """
   Some of the filters must match.
   """
-  OR: [ContentFilterInput] @filter(type: "OR")
+  OR: [ContentFilterInput]
   """
   None of the filters must match.
   """
-  NOT: [ContentFilterInput] @filter(type: "NOT")
+  NOT: [ContentFilterInput]
   """
   Field must equal value.
   """
-  contentTypeAlias: String @filter(column: "contentTypeAlias", op: "Equal")
+  contentTypeAlias: String
   """
   Field must match any of the values.
   """
-  contentTypeAlias_any: [String] @filter(column: "contentTypeAlias", op: "Any")
+  contentTypeAlias_any: [String]
   """
   Field must start with the value.
   """
-  contentTypeAlias_starts_with: String @filter(column: "contentTypeAlias", op: "StartsWith")
+  contentTypeAlias_starts_with: String
   """
   Field must end with the value.
   """
-  contentTypeAlias_ends_with: String @filter(column: "contentTypeAlias", op: "EndsWith")
+  contentTypeAlias_ends_with: String
   """
   Field must contain the value.
   """
-  contentTypeAlias_contains: String @filter(column: "contentTypeAlias", op: "Contains")
+  contentTypeAlias_contains: String
   """
   Field must equal value.
   """
-  createDate: DateTime @filter(column: "createDate", op: "Equal")
+  createDate: DateTime
   """
   Field must be greater than the value.
   """
-  createDate_gt: DateTime @filter(column: "createDate", op: "GreaterThan")
+  createDate_gt: DateTime
   """
   Field must be greater than or equal the value.
   """
-  createDate_gte: DateTime @filter(column: "createDate", op: "GreaterThanEqual")
+  createDate_gte: DateTime
   """
   Field must be less than the value.
   """
-  createDate_lt: DateTime @filter(column: "createDate", op: "LessThan")
+  createDate_lt: DateTime
   """
   Field must be less than or equal the value.
   """
-  createDate_lte: DateTime @filter(column: "createDate", op: "LessThanEqual")
+  createDate_lte: DateTime
   """
   Field must equal value.
   """
-  id: ID @filter(column: "id", op: "Equal")
+  id: ID
   """
   Field must match any of the values.
   """
-  id_any: [ID] @filter(column: "id", op: "Any")
+  id_any: [ID]
   """
   Field must equal value.
   """
-  level: Int @filter(column: "level", op: "Equal")
+  level: Int
   """
   Field must be greater than the value.
   """
-  level_gt: Int @filter(column: "level", op: "GreaterThan")
+  level_gt: Int
   """
   Field must be greater than or equal the value.
   """
-  level_gte: Int @filter(column: "level", op: "GreaterThanEqual")
+  level_gte: Int
   """
   Field must be less than the value.
   """
-  level_lt: Int @filter(column: "level", op: "LessThan")
+  level_lt: Int
   """
   Field must be less than or equal the value.
   """
-  level_lte: Int @filter(column: "level", op: "LessThanEqual")
+  level_lte: Int
   """
   Field must match any of the values.
   """
-  level_any: [Int] @filter(column: "level", op: "Any")
+  level_any: [Int]
   """
   Field must equal value.
   """
-  name: String @filter(column: "data->'{culture}'->>'name'", op: "Equal")
+  name: String
   """
   Field must match any of the values.
   """
-  name_any: [String] @filter(column: "data->'{culture}'->>'name'", op: "Any")
+  name_any: [String]
   """
   Field must start with the value.
   """
-  name_starts_with: String @filter(column: "data->'{culture}'->>'name'", op: "StartsWith")
+  name_starts_with: String
   """
   Field must end with the value.
   """
-  name_ends_with: String @filter(column: "data->'{culture}'->>'name'", op: "EndsWith")
+  name_ends_with: String
   """
   Field must contain the value.
   """
-  name_contains: String @filter(column: "data->'{culture}'->>'name'", op: "Contains")
+  name_contains: String
   """
   Field must equal value.
   """
-  sortOrder: Int @filter(column: "sortOrder", op: "Equal")
+  sortOrder: Int
   """
   Field must be greater than the value.
   """
-  sortOrder_gt: Int @filter(column: "sortOrder", op: "GreaterThan")
+  sortOrder_gt: Int
   """
   Field must be greater than or equal the value.
   """
-  sortOrder_gte: Int @filter(column: "sortOrder", op: "GreaterThanEqual")
+  sortOrder_gte: Int
   """
   Field must be less than the value.
   """
-  sortOrder_lt: Int @filter(column: "sortOrder", op: "LessThan")
+  sortOrder_lt: Int
   """
   Field must be less than or equal the value.
   """
-  sortOrder_lte: Int @filter(column: "sortOrder", op: "LessThanEqual")
+  sortOrder_lte: Int
   """
   Field must match any of the values.
   """
-  sortOrder_any: [Int] @filter(column: "sortOrder", op: "Any")
+  sortOrder_any: [Int]
   """
   Field must equal value.
   """
-  updateDate: DateTime @filter(column: "data->'{culture}'->>'updateDate'", op: "Equal", format: "YYYY-MM-DDTHH:MI:SS")
+  updateDate: DateTime
   """
   Field must be greater than the value.
   """
-  updateDate_gt: DateTime @filter(column: "data->'{culture}'->>'updateDate'", op: "GreaterThan", format: "YYYY-MM-DDTHH:MI:SS")
+  updateDate_gt: DateTime
   """
   Field must be greater than or equal the value.
   """
-  updateDate_gte: DateTime @filter(column: "data->'{culture}'->>'updateDate'", op: "GreaterThanEqual", format: "YYYY-MM-DDTHH:MI:SS")
+  updateDate_gte: DateTime
   """
   Field must be less than the value.
   """
-  updateDate_lt: DateTime @filter(column: "data->'{culture}'->>'updateDate'", op: "LessThan", format: "YYYY-MM-DDTHH:MI:SS")
+  updateDate_lt: DateTime
   """
   Field must be less than or equal the value.
   """
-  updateDate_lte: DateTime @filter(column: "data->'{culture}'->>'updateDate'", op: "LessThanEqual", format: "YYYY-MM-DDTHH:MI:SS")
+  updateDate_lte: DateTime
 }
 ```
 
@@ -2250,151 +2253,151 @@ input MediaFilterInput {
   """
   All of the filters must match.
   """
-  AND: [MediaFilterInput] @filter(type: "AND")
+  AND: [MediaFilterInput]
   """
   Some of the filters must match.
   """
-  OR: [MediaFilterInput] @filter(type: "OR")
+  OR: [MediaFilterInput]
   """
   None of the filters must match.
   """
-  NOT: [MediaFilterInput] @filter(type: "NOT")
+  NOT: [MediaFilterInput]
   """
   Field must equal value.
   """
-  mediaTypeAlias: String @filter(column: "mediaTypeAlias", op: "Equal")
+  mediaTypeAlias: String
   """
   Field must match any of the values.
   """
-  mediaTypeAlias_any: [String] @filter(column: "mediaTypeAlias", op: "Any")
+  mediaTypeAlias_any: [String]
   """
   Field must start with the value.
   """
-  mediaTypeAlias_starts_with: String @filter(column: "mediaTypeAlias", op: "StartsWith")
+  mediaTypeAlias_starts_with: String
   """
   Field must end with the value.
   """
-  mediaTypeAlias_ends_with: String @filter(column: "mediaTypeAlias", op: "EndsWith")
+  mediaTypeAlias_ends_with: String
   """
   Field must contain the value.
   """
-  mediaTypeAlias_contains: String @filter(column: "mediaTypeAlias", op: "Contains")
+  mediaTypeAlias_contains: String
   """
   Field must equal value.
   """
-  createDate: DateTime @filter(column: "createDate", op: "Equal")
+  createDate: DateTime
   """
   Field must be greater than the value.
   """
-  createDate_gt: DateTime @filter(column: "createDate", op: "GreaterThan")
+  createDate_gt: DateTime
   """
   Field must be greater than or equal the value.
   """
-  createDate_gte: DateTime @filter(column: "createDate", op: "GreaterThanEqual")
+  createDate_gte: DateTime
   """
   Field must be less than the value.
   """
-  createDate_lt: DateTime @filter(column: "createDate", op: "LessThan")
+  createDate_lt: DateTime
   """
   Field must be less than or equal the value.
   """
-  createDate_lte: DateTime @filter(column: "createDate", op: "LessThanEqual")
+  createDate_lte: DateTime
   """
   Field must equal value.
   """
-  id: ID @filter(column: "id", op: "Equal")
+  id: ID
   """
   Field must match any of the values.
   """
-  id_any: [ID] @filter(column: "id", op: "Any")
+  id_any: [ID]
   """
   Field must equal value.
   """
-  level: Int @filter(column: "level", op: "Equal")
+  level: Int
   """
   Field must be greater than the value.
   """
-  level_gt: Int @filter(column: "level", op: "GreaterThan")
+  level_gt: Int
   """
   Field must be greater than or equal the value.
   """
-  level_gte: Int @filter(column: "level", op: "GreaterThanEqual")
+  level_gte: Int
   """
   Field must be less than the value.
   """
-  level_lt: Int @filter(column: "level", op: "LessThan")
+  level_lt: Int
   """
   Field must be less than or equal the value.
   """
-  level_lte: Int @filter(column: "level", op: "LessThanEqual")
+  level_lte: Int
   """
   Field must match any of the values.
   """
-  level_any: [Int] @filter(column: "level", op: "Any")
+  level_any: [Int]
   """
   Field must equal value.
   """
-  name: String @filter(column: "name", op: "Equal")
+  name: String
   """
   Field must match any of the values.
   """
-  name_any: [String] @filter(column: "name", op: "Any")
+  name_any: [String]
   """
   Field must start with the value.
   """
-  name_starts_with: String @filter(column: "name", op: "StartsWith")
+  name_starts_with: String
   """
   Field must end with the value.
   """
-  name_ends_with: String @filter(column: "name", op: "EndsWith")
+  name_ends_with: String
   """
   Field must contain the value.
   """
-  name_contains: String @filter(column: "name", op: "Contains")
+  name_contains: String
   """
   Field must equal value.
   """
-  sortOrder: Int @filter(column: "sortOrder", op: "Equal")
+  sortOrder: Int
   """
   Field must be greater than the value.
   """
-  sortOrder_gt: Int @filter(column: "sortOrder", op: "GreaterThan")
+  sortOrder_gt: Int
   """
   Field must be greater than or equal the value.
   """
-  sortOrder_gte: Int @filter(column: "sortOrder", op: "GreaterThanEqual")
+  sortOrder_gte: Int
   """
   Field must be less than the value.
   """
-  sortOrder_lt: Int @filter(column: "sortOrder", op: "LessThan")
+  sortOrder_lt: Int
   """
   Field must be less than or equal the value.
   """
-  sortOrder_lte: Int @filter(column: "sortOrder", op: "LessThanEqual")
+  sortOrder_lte: Int
   """
   Field must match any of the values.
   """
-  sortOrder_any: [Int] @filter(column: "sortOrder", op: "Any")
+  sortOrder_any: [Int]
   """
   Field must equal value.
   """
-  updateDate: DateTime @filter(column: "updateDate", op: "Equal", format: "YYYY-MM-DDTHH:MI:SS")
+  updateDate: DateTime
   """
   Field must be greater than the value.
   """
-  updateDate_gt: DateTime @filter(column: "updateDate", op: "GreaterThan", format: "YYYY-MM-DDTHH:MI:SS")
+  updateDate_gt: DateTime
   """
   Field must be greater than or equal the value.
   """
-  updateDate_gte: DateTime @filter(column: "updateDate", op: "GreaterThanEqual", format: "YYYY-MM-DDTHH:MI:SS")
+  updateDate_gte: DateTime
   """
   Field must be less than the value.
   """
-  updateDate_lt: DateTime @filter(column: "updateDate", op: "LessThan", format: "YYYY-MM-DDTHH:MI:SS")
+  updateDate_lt: DateTime
   """
   Field must be less than or equal the value.
   """
-  updateDate_lte: DateTime @filter(column: "updateDate", op: "LessThanEqual", format: "YYYY-MM-DDTHH:MI:SS")
+  updateDate_lte: DateTime
 }
 ```
 
@@ -2470,59 +2473,59 @@ enum ContentOrderByInput {
   """
   Order by `contentTypeAlias` in ascending order.
   """
-  contentTypeAlias_ASC @orderBy(column: "contentTypeAlias", direction: "Ascending", type: "System.String")
+  contentTypeAlias_ASC
   """
   Order by `contentTypeAlias` in descending order.
   """
-  contentTypeAlias_DESC @orderBy(column: "contentTypeAlias", direction: "Descending", type: "System.String")
+  contentTypeAlias_DESC
   """
   Order by `createDate` in ascending order.
   """
-  createDate_ASC @orderBy(column: "createDate", direction: "Ascending", type: "System.DateTime")
+  createDate_ASC
   """
   Order by `createDate` in descending order.
   """
-  createDate_DESC @orderBy(column: "createDate", direction: "Descending", type: "System.DateTime")
+  createDate_DESC
   """
   Order by `level` in ascending order.
   """
-  level_ASC @orderBy(column: "level", direction: "Ascending", type: "System.Int32")
+  level_ASC
   """
   Order by `level` in descending order.
   """
-  level_DESC @orderBy(column: "level", direction: "Descending", type: "System.Int32")
+  level_DESC
   """
   Order by `name` in ascending order.
   """
-  name_ASC @orderBy(column: "data->'{culture}'->>'name'", direction: "Ascending", type: "System.String")
+  name_ASC
   """
   Order by `name` in descending order.
   """
-  name_DESC @orderBy(column: "data->'{culture}'->>'name'", direction: "Descending", type: "System.String")
+  name_DESC
   """
   Order by `path` in ascending order.
   """
-  path_ASC @orderBy(column: "treePath", direction: "Ascending", type: "System.Int32[]")
+  path_ASC
   """
   Order by `path` in descending order.
   """
-  path_DESC @orderBy(column: "treePath", direction: "Descending", type: "System.Int32[]")
+  path_DESC
   """
   Order by `sortOrder` in ascending order.
   """
-  sortOrder_ASC @orderBy(column: "sortOrder", direction: "Ascending", type: "System.Int32")
+  sortOrder_ASC
   """
   Order by `sortOrder` in descending order.
   """
-  sortOrder_DESC @orderBy(column: "sortOrder", direction: "Descending", type: "System.Int32")
+  sortOrder_DESC
   """
   Order by `updateDate` in ascending order.
   """
-  updateDate_ASC @orderBy(column: "data->'{culture}'->>'updateDate'", direction: "Ascending", type: "System.DateTime")
+  updateDate_ASC
   """
   Order by `updateDate` in descending order.
   """
-  updateDate_DESC @orderBy(column: "data->'{culture}'->>'updateDate'", direction: "Descending", type: "System.DateTime")
+  updateDate_DESC
 }`
 
 ### Custom OrderBy Fields

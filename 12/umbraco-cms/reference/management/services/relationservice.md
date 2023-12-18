@@ -14,16 +14,15 @@ using System.Web.Mvc;
 using Umbraco.Web.Models;
 using Umbraco.Web.Mvc;
 
-namespace Doccers.Core.Controllers
-{
-    public class HomeController : RenderMvcController
-    {
-        public ActionResult Home(ContentModel model)
-        {
-            var rs = Services.RelationService;
+namespace Doccers.Core.Controllers;
 
-            return CurrentTemplate(model);
-        }
+public class HomeController : RenderMvcController
+{
+    public ActionResult Home(ContentModel model)
+    {
+        var rs = Services.RelationService;
+
+        return CurrentTemplate(model);
     }
 }
 ```
@@ -34,21 +33,20 @@ You can also use the `RelationService` in any other class by injecting its inter
 using Umbraco.Core.Composing;
 using Umbraco.Core.Services;
 
-namespace Doccers.Core.Components
+namespace Doccers.Core.Components;
+
+public class RelationComponent : IComponent
 {
-    public class RelationComponent : IComponent
+    private readonly IRelationService _relationService;
+
+    public RelationComponent(IRelationService relationService)
     {
-        private readonly IRelationService _relationService;
-
-        public RelationComponent(IRelationService relationService)
-        {
-            _relationService = relationService;
-        }
-
-        public void Initialize() { }
-
-        public void Terminate() { }
+        _relationService = relationService;
     }
+
+    public void Initialize() { }
+
+    public void Terminate() { }
 }
 ```
 
@@ -313,49 +311,48 @@ using Umbraco.Core.Events;
 using Umbraco.Core.Services;
 using Umbraco.Core.Services.Implement;
 
-namespace Doccers.Core.Components
+namespace Doccers.Core.Components;
+
+public class RelationComponent : IComponent
 {
-    public class RelationComponent : IComponent
+    private readonly IRelationService _relationService;
+
+    public RelationComponent(IRelationService relationService)
     {
-        private readonly IRelationService _relationService;
+        _relationService = relationService;
+    }
 
-        public RelationComponent(IRelationService relationService)
+    public void Initialize()
+    {
+        ContentService.Published += ContentService_Published;
+    }
+
+    private void ContentService_Published(IContentService sender,
+        ContentPublishedEventArgs e)
+    {
+        // Should never be null, to be honest.
+        var home = sender.GetRootContent()?.FirstOrDefault();
+        if (home == null) return;
+
+        // Get the relation type by alias
+        var relationType = _relationService.GetRelationTypeByAlias("homesick");
+        if (relationType == null) return;
+
+        foreach (var entity in e.PublishedEntities
+            .Where(x => x.Id != home.Id))
         {
-            _relationService = relationService;
-        }
-
-        public void Initialize()
-        {
-            ContentService.Published += ContentService_Published;
-        }
-
-        private void ContentService_Published(IContentService sender,
-            ContentPublishedEventArgs e)
-        {
-            // Should never be null, to be honest.
-            var home = sender.GetRootContent()?.FirstOrDefault();
-            if (home == null) return;
-
-            // Get the relation type by alias
-            var relationType = _relationService.GetRelationTypeByAlias("homesick");
-            if (relationType == null) return;
-
-            foreach (var entity in e.PublishedEntities
-                .Where(x => x.Id != home.Id))
+            // Check if they are already related
+            if (!_relationService.AreRelated(home.Id, entity.Id))
             {
-                // Check if they are already related
-                if (!_relationService.AreRelated(home.Id, entity.Id))
-                {
-                    // If not then let us relate the currenty entity to home
-                    _relationService.Relate(home.Id, entity.Id, relationType);
-                }
+                // If not then let us relate the currenty entity to home
+                _relationService.Relate(home.Id, entity.Id, relationType);
             }
         }
+    }
 
-        public void Terminate() {
-          //unsubscribe during shutdown
-          ContentService.Published -= ContentService_Published;
-        }
+    public void Terminate() {
+        //unsubscribe during shutdown
+        ContentService.Published -= ContentService_Published;
     }
 }
 ```
@@ -367,15 +364,14 @@ using Doccers.Core.Components;
 using Umbraco.Core;
 using Umbraco.Core.Composing;
 
-namespace Doccers.Core.Composers
+namespace Doccers.Core.Composers;
+
+[RuntimeLevel(MinLevel = RuntimeLevel.Run)]
+public class RelationComposer : IUserComposer
 {
-    [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
-    public class RelationComposer : IUserComposer
+    public void Compose(Composition composition)
     {
-        public void Compose(Composition composition)
-        {
-            composition.Components().Append<RelationComponent>();
-        }
+        composition.Components().Append<RelationComponent>();
     }
 }
 ```
@@ -395,38 +391,37 @@ using System.Web.Http;
 using Umbraco.Core.Services;
 using Umbraco.Web.WebApi;
 
-namespace Doccers.Core.Controllers.Http
+namespace Doccers.Core.Controllers.Http;
+
+public class RelationsController : UmbracoApiController
 {
-    public class RelationsController : UmbracoApiController
+    private readonly IRelationService _relationService;
+
+    public RelationsController(IRelationService relationService)
     {
-        private readonly IRelationService _relationService;
+        // Alternatively you could also access
+        // the service via the service context:
+        // _relationService = Services.RelationService;
+        _relationService = relationService;
+    }
 
-        public RelationsController(IRelationService relationService)
-        {
-            // Alternatively you could also access
-            // the service via the service context:
-            // _relationService = Services.RelationService;
-            _relationService = relationService;
-        }
+    [HttpGet]
+    public HttpResponseMessage GetByRelationTypeAlias(string alias)
+    {
+        var relationType = _relationService.GetRelationTypeByAlias(alias);
+        if (relationType == null)
+            return Request.CreateResponse(HttpStatusCode.BadRequest,
+                "Invalid relation type alias");
 
-        [HttpGet]
-        public HttpResponseMessage GetByRelationTypeAlias(string alias)
-        {
-            var relationType = _relationService.GetRelationTypeByAlias(alias);
-            if (relationType == null)
-                return Request.CreateResponse(HttpStatusCode.BadRequest,
-                    "Invalid relation type alias");
+        var relations = _relationService.GetAllRelationsByRelationType(relationType.Id);
+        var content = relations.Select(x => Umbraco.Content(x.ChildId))
+            .Select(x => new Relation()
+            {
+                Name = x.Name,
+                UpdateDate = x.UpdateDate
+            });
 
-            var relations = _relationService.GetAllRelationsByRelationType(relationType.Id);
-            var content = relations.Select(x => Umbraco.Content(x.ChildId))
-                .Select(x => new Relation()
-                {
-                    Name = x.Name,
-                    UpdateDate = x.UpdateDate
-                });
-
-            return Request.CreateResponse(HttpStatusCode.OK, content);
-        }
+        return Request.CreateResponse(HttpStatusCode.OK, content);
     }
 }
 ```

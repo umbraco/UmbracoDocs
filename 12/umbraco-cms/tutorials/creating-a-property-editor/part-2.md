@@ -115,19 +115,18 @@ It is also possible to add configuration if you have chosen to create a property
 First create a `SuggestionConfiguration.cs` file with three configuration options: `Enabled?`, `Default Value`, and `Hide Label?`:
 
 ```csharp
-namespace Umbraco.Cms.Core.PropertyEditors
+namespace Umbraco.Cms.Core.PropertyEditors;
+
+public class SuggestionConfiguration
 {
-    public class SuggestionConfiguration
-    {
-        [ConfigurationField("isEnabled", "Enabled?", "boolean", Description = "Provides Suggestions")]
-        public bool Enabled { get; set; }
+    [ConfigurationField("isEnabled", "Enabled?", "boolean", Description = "Provides Suggestions")]
+    public bool Enabled { get; set; }
 
-        [ConfigurationField("defaultValue", "Default Value", "textarea", Description = "Provide a default value for the property")]
-        public string? DefaultValue { get; set; }
+    [ConfigurationField("defaultValue", "Default Value", "textarea", Description = "Provide a default value for the property")]
+    public string? DefaultValue { get; set; }
 
-        [ConfigurationField("hideLabel", "Hide Label?", "boolean", Description = "Hide the property label.")]
-        public bool HideLabel { get; set; }
-    }
+    [ConfigurationField("hideLabel", "Hide Label?", "boolean", Description = "Hide the property label.")]
+    public bool HideLabel { get; set; }
 }
 ```
 
@@ -136,15 +135,13 @@ Then create a `SuggestionConfigurationEditor.cs` file:
 ```csharp
 using Umbraco.Cms.Core.IO;
 
-namespace Umbraco.Cms.Core.PropertyEditors
-{
-    public class SuggestionConfigurationEditor : ConfigurationEditor<SuggestionConfiguration>
-    {
-        public SuggestionConfigurationEditor(IIOHelper ioHelper) : base(ioHelper)
-        {
-        }
-    }
+namespace Umbraco.Cms.Core.PropertyEditors;
 
+public class SuggestionConfigurationEditor : ConfigurationEditor<SuggestionConfiguration>
+{
+    public SuggestionConfigurationEditor(IIOHelper ioHelper) : base(ioHelper)
+    {
+    }
 }
 ```
 
@@ -153,27 +150,26 @@ Finally, edit the `Suggestion.cs` file from step one until it looks like the exa
 ```csharp
 using Umbraco.Cms.Core.IO;
 
-namespace Umbraco.Cms.Core.PropertyEditors
+namespace Umbraco.Cms.Core.PropertyEditors;
+
+[DataEditor(
+    alias: "Suggestions editor",
+    name: "Suggestions Editor",
+    view: "~/App_Plugins/Suggestions/suggestion.html",
+    Group = "Common",
+    Icon = "icon-list")]
+public class Suggestions : DataEditor
 {
-    [DataEditor(
-        alias: "Suggestions editor",
-        name: "Suggestions Editor",
-        view: "~/App_Plugins/Suggestions/suggestion.html",
-        Group = "Common",
-        Icon = "icon-list")]
-    public class Suggestions : DataEditor
+    private readonly IIOHelper _ioHelper;
+    public Suggestions(IDataValueEditorFactory dataValueEditorFactory,
+        IIOHelper ioHelper)
+        : base(dataValueEditorFactory)
+
     {
-        private readonly IIOHelper _ioHelper;
-        public Suggestions(IDataValueEditorFactory dataValueEditorFactory,
-            IIOHelper ioHelper)
-            : base(dataValueEditorFactory)
-
-        {
-            _ioHelper = ioHelper;
-        }
-        protected override IConfigurationEditor CreateConfigurationEditor() => new SuggestionConfigurationEditor(_ioHelper);
-
+        _ioHelper = ioHelper;
     }
+    protected override IConfigurationEditor CreateConfigurationEditor() => new SuggestionConfigurationEditor(_ioHelper);
+
 }
 ```
 
@@ -265,39 +261,38 @@ The next step is to gain access to our new configuration options. For this, open
     using Umbraco.Cms.Core.IO;
     using Umbraco.Cms.Core.Models;
 
-    namespace Umbraco.Cms.Core.PropertyEditors
+    namespace Umbraco.Cms.Core.PropertyEditors;
+
+    [DataEditor(
+        alias: "Suggestions editor",
+        name: "Suggestions Editor",
+        view: "~/App_Plugins/Suggestions/suggestion.html",
+        Group = "Common",
+        Icon = "icon-list")]
+    public class Suggestions : DataEditor
     {
-        [DataEditor(
-            alias: "Suggestions editor",
-            name: "Suggestions Editor",
-            view: "~/App_Plugins/Suggestions/suggestion.html",
-            Group = "Common",
-            Icon = "icon-list")]
-        public class Suggestions : DataEditor
+        private readonly IIOHelper _ioHelper;
+        public Suggestions(IDataValueEditorFactory dataValueEditorFactory,
+            IIOHelper ioHelper)
+            : base(dataValueEditorFactory)
+
         {
-            private readonly IIOHelper _ioHelper;
-            public Suggestions(IDataValueEditorFactory dataValueEditorFactory,
-                IIOHelper ioHelper)
-                : base(dataValueEditorFactory)
+            _ioHelper = ioHelper;
+        }
+        protected override IConfigurationEditor CreateConfigurationEditor() => new SuggestionConfigurationEditor(_ioHelper);
 
+        public override IDataValueEditor GetValueEditor(object? configuration)
+        {
+
+            var editor = base.GetValueEditor(configuration);
+
+            if (editor is DataValueEditor valueEditor && configuration is SuggestionConfiguration config)
             {
-                _ioHelper = ioHelper;
+                valueEditor.HideLabel = config.HideLabel;
             }
-            protected override IConfigurationEditor CreateConfigurationEditor() => new SuggestionConfigurationEditor(_ioHelper);
 
-            public override IDataValueEditor GetValueEditor(object? configuration)
-            {
+            return editor;
 
-                var editor = base.GetValueEditor(configuration);
-
-                if (editor is DataValueEditor valueEditor && configuration is SuggestionConfiguration config)
-                {
-                    valueEditor.HideLabel = config.HideLabel;
-                }
-
-                return editor;
-
-            }
         }
     }
     ```

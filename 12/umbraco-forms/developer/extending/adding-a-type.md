@@ -83,6 +83,10 @@ public override WorkflowExecutionStatus Execute(WorkflowExecutionContext context
 
 For all types that use the provider model, settings work this way. By adding the Setting attribute Forms automatically registers the property in the UI and sets the value when the class is instantiated.
 
+Each setting value is stored as a string with the user interface for generating the value defined via the `View` property.
+
+Umbraco Forms ships with [setting types and you can also create your own](./setting-types.md).
+
 ## Validate type settings with ValidateSettings()
 
 The `ValidateSettings()` method which can be found on all types supporting dynamic settings, is used for making sure the data entered by the user is valid and works with the type.

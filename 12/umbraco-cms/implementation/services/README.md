@@ -55,39 +55,38 @@ using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common.Controllers;
 
-namespace Umbraco9.Controllers
+namespace Umbraco9.Controllers;
+
+public class BlogPostController : RenderController
 {
-    public class BlogPostController : RenderController
+    private readonly ILogger<BlogPostController> _logger;
+    private readonly IPublishedContentQuery _publishedContentQuery;
+    private readonly IRelationService _relationService;
+
+    public BlogPostController(
+        ILogger<BlogPostController> logger,
+        ICompositeViewEngine compositeViewEngine,
+        IUmbracoContextAccessor umbracoContextAccessor,
+        IPublishedContentQuery publishedContentQuery,
+        IRelationService relationService)
+        : base(logger, compositeViewEngine, umbracoContextAccessor)
     {
-        private readonly ILogger<BlogPostController> _logger;
-        private readonly IPublishedContentQuery _publishedContentQuery;
-        private readonly IRelationService _relationService;
+        _logger = logger;
+        _publishedContentQuery = publishedContentQuery;
+        _relationService = relationService;
+    }
 
-        public BlogPostController(
-            ILogger<BlogPostController> logger,
-            ICompositeViewEngine compositeViewEngine,
-            IUmbracoContextAccessor umbracoContextAccessor,
-            IPublishedContentQuery publishedContentQuery,
-            IRelationService relationService)
-            : base(logger, compositeViewEngine, umbracoContextAccessor)
-        {
-            _logger = logger;
-            _publishedContentQuery = publishedContentQuery;
-            _relationService = relationService;
-        }
+    public override IActionResult Index()
+    {
+        // write helpful messages to the Umbraco logs to aid with debugging
+        _logger.LogInformation("Using core logger implementation");
+        // retrieve an item from Umbraco's published cache with id 123
+        IPublishedContent publishedContentItem = _publishedContentQuery.Content(123);
+        // it is unlikely to use a management service when rendering content from a custom controller
+        //(when using relationService like this you would want to provide a layer of caching)
+        var allRelatedUmbracoItems = _relationService.GetByParentId(CurrentPage.Id);
 
-        public override IActionResult Index()
-        {
-            // write helpful messages to the Umbraco logs to aid with debugging
-            _logger.LogInformation("Using core logger implementation");
-            // retrieve an item from Umbraco's published cache with id 123
-            IPublishedContent publishedContentItem = _publishedContentQuery.Content(123);
-            // it is unlikely to use a management service when rendering content from a custom controller
-            //(when using relationService like this you would want to provide a layer of caching)
-            var allRelatedUmbracoItems = _relationService.GetByParentId(CurrentPage.Id);
-
-            return base.Index();
-        }
+        return base.Index();
     }
 }
 ```
@@ -113,39 +112,38 @@ using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Notifications;
 using Umbraco.Cms.Core.Services;
 
-namespace Umbraco9.Components
+namespace Umbraco9.Components;
+
+public class SubscribeToContentSavedEventComposer : IComposer
 {
-    public class SubscribeToContentSavedEventComposer : IComposer
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.AddNotificationHandler<ContentSavedNotification, SubscribeToContentSavedNotification>();
-        }
+        builder.AddNotificationHandler<ContentSavedNotification, SubscribeToContentSavedNotification>();
     }
-    public class SubscribeToContentSavedNotification: INotificationHandler<ContentSavedNotification>
+}
+public class SubscribeToContentSavedNotification: INotificationHandler<ContentSavedNotification>
+{
+    private readonly IMediaService _mediaService;
+
+    public SubscribeToContentSavedNotification(IMediaService mediaService)
     {
-        private readonly IMediaService _mediaService;
+        _mediaService = mediaService;
+    }
 
-        public SubscribeToContentSavedNotification(IMediaService mediaService)
+    public void Handle(ContentSavedNotification notification)
+    {
+        foreach (var contentItem in notification.SavedEntities)
         {
-            _mediaService = mediaService;
-        }
-
-        public void Handle(ContentSavedNotification notification)
-        {
-            foreach (var contentItem in notification.SavedEntities)
+            // if this is a new landing page create a folder for associated media in the media section
+            if (contentItem.ContentType.Alias == "landingPage")
             {
-                // if this is a new landing page create a folder for associated media in the media section
-                if (contentItem.ContentType.Alias == "landingPage")
+                // we have injected in the mediaService in the constructor for the component see above.
+                bool hasExistingFolder = _mediaService.GetByLevel(1).Any(f => f.Name == contentItem.Name);
+                if (!hasExistingFolder)
                 {
-                    // we have injected in the mediaService in the constructor for the component see above.
-                    bool hasExistingFolder = _mediaService.GetByLevel(1).Any(f => f.Name == contentItem.Name);
-                    if (!hasExistingFolder)
-                    {
-                        // let's create one (-1 indicates the root of the media section)
-                        IMedia newFolder = _mediaService.CreateMedia(contentItem.Name, -1, "Folder");
-                        _mediaService.Save(newFolder);
-                    }
+                    // let's create one (-1 indicates the root of the media section)
+                    IMedia newFolder = _mediaService.CreateMedia(contentItem.Name, -1, "Folder");
+                    _mediaService.Save(newFolder);
                 }
             }
         }
@@ -175,48 +173,47 @@ using Umbraco.Cms.Core.PublishedCache;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Extensions;
 
-namespace Umbraco9.Components
+namespace Umbraco9.Components;
+
+public class HandleUnPublishingEventComposer : IComposer
 {
-    public class HandleUnPublishingEventComposer : IComposer
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.AddNotificationHandler<ContentUnpublishedNotification, HandleUnPublishingHandler>();
-        }
+        builder.AddNotificationHandler<ContentUnpublishedNotification, HandleUnPublishingHandler>();
+    }
+}
+
+public class HandleUnPublishingHandler : INotificationHandler<ContentUnpublishedNotification>
+{
+    private readonly IUmbracoContextFactory _umbracoContextFactory;
+
+    public HandleUnPublishingHandler(IUmbracoContextFactory umbracoContextFactory)
+    {
+        _umbracoContextFactory = umbracoContextFactory;
     }
 
-    public class HandleUnPublishingHandler : INotificationHandler<ContentUnpublishedNotification>
+    public void Handle(ContentUnpublishedNotification notification)
     {
-        private readonly IUmbracoContextFactory _umbracoContextFactory;
-
-        public HandleUnPublishingHandler(IUmbracoContextFactory umbracoContextFactory)
+        // for each unpublished item, we want to find the url that it was previously 'published under' and store in a database table or similar
+        using (UmbracoContextReference umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext())
         {
-            _umbracoContextFactory = umbracoContextFactory;
-        }
+            // the UmbracoContextReference provides access to the ContentCache
+            IPublishedContentCache contentCache = umbracoContextReference.UmbracoContext.Content;
 
-        public void Handle(ContentUnpublishedNotification notification)
-        {
-            // for each unpublished item, we want to find the url that it was previously 'published under' and store in a database table or similar
-            using (UmbracoContextReference umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext())
+            foreach (var item in notification.UnpublishedEntities)
             {
-                // the UmbracoContextReference provides access to the ContentCache
-                IPublishedContentCache contentCache = umbracoContextReference.UmbracoContext.Content;
-
-                foreach (var item in notification.UnpublishedEntities)
+                if (item.ContentType.Alias == "blogpost")
                 {
-                    if (item.ContentType.Alias == "blogpost")
+                    // item being unpublished will still be in the cache, as unpublishing event fires before the cache is updated.
+                    IPublishedContent soonToBeUnPublishedItem = contentCache.GetById(item.Id);
+
+                    if (soonToBeUnPublishedItem != null)
                     {
-                        // item being unpublished will still be in the cache, as unpublishing event fires before the cache is updated.
-                        IPublishedContent soonToBeUnPublishedItem = contentCache.GetById(item.Id);
+                        string previouslyPublishedUrl = soonToBeUnPublishedItem.Url();
 
-                        if (soonToBeUnPublishedItem != null)
+                        if (!string.IsNullOrEmpty(previouslyPublishedUrl) && previouslyPublishedUrl != "#")
                         {
-                            string previouslyPublishedUrl = soonToBeUnPublishedItem.Url();
-
-                            if (!string.IsNullOrEmpty(previouslyPublishedUrl) && previouslyPublishedUrl != "#")
-                            {
-                                _customFourTenService.InsertFourTenUrl(previouslyPublishedUrl, DateTime.UtcNow);
-                            }
+                            _customFourTenService.InsertFourTenUrl(previouslyPublishedUrl, DateTime.UtcNow);
                         }
                     }
                 }
@@ -283,17 +280,16 @@ using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Extensions;
 
-namespace Umbraco9.Components
+namespace Umbraco9.Components;
+
+public static class PublishedContentQueryExtensions
 {
-    public static class PublishedContentQueryExtensions
+    public static IPublishedContent GetNewsSection(this IPublishedContentQuery publishedContentQuery)
     {
-        public static IPublishedContent GetNewsSection(this IPublishedContentQuery publishedContentQuery)
-        {
-            // assuming a single site with a single News Section at the top level
-            IPublishedContent siteRoot = publishedContentQuery.ContentAtRoot().FirstOrDefault();
-            // make sure siteRoot isn't null, then locate first child content item with alias 'newsSection'
-            return siteRoot?.FirstChild(f => f.ContentType.Alias == "newsSection") ?? null;
-        }
+        // assuming a single site with a single News Section at the top level
+        IPublishedContent siteRoot = publishedContentQuery.ContentAtRoot().FirstOrDefault();
+        // make sure siteRoot isn't null, then locate first child content item with alias 'newsSection'
+        return siteRoot?.FirstChild(f => f.ContentType.Alias == "newsSection") ?? null;
     }
 }
 ```
@@ -317,13 +313,12 @@ Create an interface to define the service:
 ```csharp
 using Umbraco.Cms.Core.Models.PublishedContent;
 
-namespace Umbraco9.Services
+namespace Umbraco9.Services;
+
+public interface ISiteService
 {
-    public interface ISiteService
-    {
-        IPublishedContent GetNewsSection();
-        IPublishedContent GetContactUsPage();
-    }
+    IPublishedContent GetNewsSection();
+    IPublishedContent GetContactUsPage();
 }
 ```
 
@@ -333,21 +328,20 @@ Create the concrete service class that implements the interface:
 using System;
 using Umbraco.Cms.Core.Models.PublishedContent;
 
-namespace Umbraco9.Services
-{
-    public class SiteService : ISiteService
-    {
-        public IPublishedContent GetNewsSection()
-        {
-            // TODO: implement this!
-            throw new NotImplementedException();
-        }
+namespace Umbraco9.Services;
 
-        public IPublishedContent GetContactUsPage()
-        {
-            // TODO: implement this!
-            throw new NotImplementedException();
-        }
+public class SiteService : ISiteService
+{
+    public IPublishedContent GetNewsSection()
+    {
+        // TODO: implement this!
+        throw new NotImplementedException();
+    }
+
+    public IPublishedContent GetContactUsPage()
+    {
+        // TODO: implement this!
+        throw new NotImplementedException();
     }
 }
 ```
@@ -359,14 +353,13 @@ using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 
-namespace Umbraco9.Services
+namespace Umbraco9.Services;
+
+public class RegisterSiteServiceComposer : IComposer
 {
-    public class RegisterSiteServiceComposer : IComposer
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.Services.AddSingleton<ISiteService, SiteService>();
-        }
+        builder.Services.AddSingleton<ISiteService, SiteService>();
     }
 }
 ```
@@ -399,27 +392,26 @@ using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Extensions;
 
-namespace Umbraco9.Services
+namespace Umbraco9.Services;
+
+public class SiteService : ISiteService
 {
-    public class SiteService : ISiteService
+    private readonly IPublishedContentQuery _contentQuery;
+    public SiteService(IPublishedContentQuery contentQuery)
     {
-        private readonly IPublishedContentQuery _contentQuery;
-        public SiteService(IPublishedContentQuery contentQuery)
-        {
-            _contentQuery = contentQuery;
-        }
-        public IPublishedContent GetNewsSection()
-        {
-            var siteRoot = _contentQuery.ContentAtRoot().FirstOrDefault();
-            var newsSection = siteRoot?.FirstChild(f => f.ContentType.Alias == "newsSection") ?? null;
-            return newsSection;
-        }
-        public IPublishedContent GetContactUsPage()
-        {
-            var siteRoot = _contentQuery.ContentAtRoot().FirstOrDefault();
-            var contactUs = siteRoot?.FirstChild(f => f.ContentType.Alias == "contactUs") ?? null;
-            return contactUs;
-        }
+        _contentQuery = contentQuery;
+    }
+    public IPublishedContent GetNewsSection()
+    {
+        var siteRoot = _contentQuery.ContentAtRoot().FirstOrDefault();
+        var newsSection = siteRoot?.FirstChild(f => f.ContentType.Alias == "newsSection") ?? null;
+        return newsSection;
+    }
+    public IPublishedContent GetContactUsPage()
+    {
+        var siteRoot = _contentQuery.ContentAtRoot().FirstOrDefault();
+        var contactUs = siteRoot?.FirstChild(f => f.ContentType.Alias == "contactUs") ?? null;
+        return contactUs;
     }
 }
 ```
@@ -432,32 +424,31 @@ using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Extensions;
 
-namespace Umbraco9.Services
-{
-    public class SiteService : ISiteService
-    {
-        private readonly IUmbracoContextFactory _umbracoContextFactory;
+namespace Umbraco9.Services;
 
-        public SiteService(IUmbracoContextFactory umbracoContextFactory)
-        {
-            _umbracoContextFactory = umbracoContextFactory;
-        }
-        public IPublishedContent GetNewsSection()
-        {
-            using var umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext();
-            var contentQuery = umbracoContextReference.UmbracoContext.Content;
-            var siteRoot = contentQuery.GetAtRoot().FirstOrDefault();
-            var newsSection = siteRoot?.FirstChild(f => f.ContentType.Alias == "newsSection") ?? null;
-            return newsSection;
-        }
-        public IPublishedContent GetContactUsPage()
-        {
-            using var umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext();
-            var contentQuery = umbracoContextReference.UmbracoContext.Content;
-            var siteRoot = contentQuery.GetAtRoot().FirstOrDefault();
-            var contactUs = siteRoot?.FirstChild(f => f.ContentType.Alias == "contactUs") ?? null;
-            return contactUs;
-        }
+public class SiteService : ISiteService
+{
+    private readonly IUmbracoContextFactory _umbracoContextFactory;
+
+    public SiteService(IUmbracoContextFactory umbracoContextFactory)
+    {
+        _umbracoContextFactory = umbracoContextFactory;
+    }
+    public IPublishedContent GetNewsSection()
+    {
+        using var umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext();
+        var contentQuery = umbracoContextReference.UmbracoContext.Content;
+        var siteRoot = contentQuery.GetAtRoot().FirstOrDefault();
+        var newsSection = siteRoot?.FirstChild(f => f.ContentType.Alias == "newsSection") ?? null;
+        return newsSection;
+    }
+    public IPublishedContent GetContactUsPage()
+    {
+        using var umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext();
+        var contentQuery = umbracoContextReference.UmbracoContext.Content;
+        var siteRoot = contentQuery.GetAtRoot().FirstOrDefault();
+        var contactUs = siteRoot?.FirstChild(f => f.ContentType.Alias == "contactUs") ?? null;
+        return contactUs;
     }
 }
 ```
@@ -482,19 +473,20 @@ using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 using Umbraco.Web.PublishedCache;
 
-namespace Umbraco9.Services
-{
-    public class SiteService : ISiteService
-    {
-        private readonly IUmbracoContextAccessor _umbracoContextAccessor;
-        private readonly IUmbracoContextFactory _umbracoContextFactory;
+namespace Umbraco9.Services;
 
-        public SiteService(IUmbracoContextAccessor umbracoContextAccessor, IUmbracoContextFactory umbracoContextFactory)
-        {
-            _umbracoContextAccessor = umbracoContextAccessor;
-            _umbracoContextFactory = umbracoContextFactory;
-            bool hasUmbracoContext = _umbracoContextAccessor.TryGetUmbracoContext(out _);
-        }
+public class SiteService : ISiteService
+{
+    private readonly IUmbracoContextAccessor _umbracoContextAccessor;
+    private readonly IUmbracoContextFactory _umbracoContextFactory;
+
+    public SiteService(IUmbracoContextAccessor umbracoContextAccessor, IUmbracoContextFactory umbracoContextFactory)
+    {
+        _umbracoContextAccessor = umbracoContextAccessor;
+        _umbracoContextFactory = umbracoContextFactory;
+        bool hasUmbracoContext = _umbracoContextAccessor.TryGetUmbracoContext(out _);
+    }
+}
 ```
 
 NB: With the `IUmbracoContextAccessor` and `IUmbracoContextFactory` you should NEVER have to inject the UmbracoContext itself directly into any of your constructors.
@@ -511,36 +503,35 @@ using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common.Controllers;
 using Umbraco9.Services;
 
-namespace Umbraco9.Controllers
+namespace Umbraco9.Controllers;
+
+public class BlogPostController : RenderController
 {
-    public class BlogPostController : RenderController
+    private readonly ISiteService _siteService;
+
+    public BlogPostController(
+        ILogger<RenderController> logger,
+        ICompositeViewEngine compositeViewEngine,
+        IUmbracoContextAccessor umbracoContextAccessor,
+        ISiteService siteService)
+        : base(logger, compositeViewEngine, umbracoContextAccessor)
     {
-        private readonly ISiteService _siteService;
-
-        public BlogPostController(
-            ILogger<RenderController> logger,
-            ICompositeViewEngine compositeViewEngine,
-            IUmbracoContextAccessor umbracoContextAccessor,
-            ISiteService siteService)
-            : base(logger, compositeViewEngine, umbracoContextAccessor)
+        _siteService = siteService;
+    }
+    public override IActionResult Index()
+    {
+        var newsSection = _siteService.GetNewsSection();
+        var blogPostViewModel = new BlogPostViewModel(CurrentPage);
+        blogPostViewModel.HasNewsSection = false;
+        if (newsSection != null)
         {
-            _siteService = siteService;
+            blogPostViewModel.HasNewsSection = true;
+            blogPostViewModel.NewsSection = newsSection;
         }
-        public override IActionResult Index()
-        {
-            var newsSection = _siteService.GetNewsSection();
-            var blogPostViewModel = new BlogPostViewModel(CurrentPage);
-            blogPostViewModel.HasNewsSection = false;
-            if (newsSection != null)
-            {
-                blogPostViewModel.HasNewsSection = true;
-                blogPostViewModel.NewsSection = newsSection;
-            }
 
-            // etc
-            // Do other stuff here!, then return the custom viewmodel to the template view.
-            return CurrentTemplate(blogPostViewModel);
-        }
+        // etc
+        // Do other stuff here!, then return the custom viewmodel to the template view.
+        return CurrentTemplate(blogPostViewModel);
     }
 }
 ```

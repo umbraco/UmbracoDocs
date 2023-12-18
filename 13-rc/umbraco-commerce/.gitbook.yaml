@@ -1,0 +1,9 @@
+root: ./
+
+​structure:  
+    readme: README.md
+    summary: SUMMARY.md
+
+redirects:
+    
+getting-started/installation/version-specific-upgrades: getting-started/upgrading/version-specific-upgrades.md

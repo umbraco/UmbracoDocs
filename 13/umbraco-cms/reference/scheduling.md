@@ -249,6 +249,18 @@ public class CleanUpYourRoomComposer : IComposer
 
 `RecurringHostedServiceBase` is a low-level base class. It implements the dotnetcore interface `IHostedService` to run itself in the background, and creates and manages the timer that runs the job on a recurring basis.
 
+Now we can invoke it in `Program.cs`:
+
+```csharp
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .AddCustomHostedServices() // Register CleanUpYourRoom
+    .Build();
+```
+
 `RecurringBackgroundJobHostedService` is an Umbraco specific Hosted Service that extends `RecurringHostedServiceBase`. It uses some system-level Umbraco services to ensure that your jobs only execute once Umbraco is up and running. It checks:
 
 -   Server Roles - see above for more discussion about Server roles
@@ -282,6 +294,7 @@ These notifications are there to support low-level debugging of background jobs 
 
 The Ignored notification is published when a background job's schedule is triggered, but the Umbraco runtime checks prevent it from running.
 
+
 This notification is there to support low-level debugging of background jobs to ascertain why they are/aren't running. As the runtime checks include runtime state readiness, this event may be triggered during the install phase. Any notification handlers associated with this notification should **also** conduct their own checks before relying on Umbraco services, including database access.
 
 ### Executing/Executed/Failed
@@ -300,3 +313,18 @@ For **failed** job runs, the following notifications will be published:
 
 1. Executing
 2. Failed
+
+```csharp
+// Do not run the code on subscribers or unknown role servers
+// ONLY run for SchedulingPublisher server or Single server roles
+switch (_serverRoleAccessor.CurrentServerRole)
+{
+    case ServerRole.Subscriber:
+        _logger.LogDebug("Does not run on subscriber servers.");
+        return Task.CompletedTask; // We return Task.CompletedTask to try again as the server role may change!
+    case ServerRole.Unknown:
+        _logger.LogDebug("Does not run on servers with unknown role.");
+        return Task.CompletedTask; // We return Task.CompletedTask to try again as the server role may change!
+}
+```
+

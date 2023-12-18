@@ -32,26 +32,25 @@ using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
 using Umbraco.Extensions;
 
-namespace My.Website
-{
-    public class SubscribeToContentServiceSavingComposer : IComposer
-    {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.AddNotificationHandler<ContentSavingNotification, CustomContentSavingNotificationHandler>();
-        }
-    }
+namespace My.Website;
 
-    public class CustomContentSavingNotificationHandler : INotificationHandler<ContentSavingNotification>
+public class SubscribeToContentServiceSavingComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Handle(ContentSavingNotification notification)
+        builder.AddNotificationHandler<ContentSavingNotification, CustomContentSavingNotificationHandler>();
+    }
+}
+
+public class CustomContentSavingNotificationHandler : INotificationHandler<ContentSavingNotification>
+{
+    public void Handle(ContentSavingNotification notification)
+    {
+        foreach (var content in notification.SavedEntities
+            // Check if the content item type has a specific alias
+            .Where(c => c.ContentType.Alias.InvariantEquals("MyContentType")))
         {
-            foreach (var content in notification.SavedEntities
-                // Check if the content item type has a specific alias
-                .Where(c => c.ContentType.Alias.InvariantEquals("MyContentType")))
-            {
-                // Do something if the content is using the MyContentType doctype
-            }
+            // Do something if the content is using the MyContentType doctype
         }
     }
 }
@@ -201,19 +200,18 @@ using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.HealthChecks.Checks.Permissions;
 using Umbraco.Cms.Core.HealthChecks.Checks.Security;
 
-namespace My.Website
-{
-    public class MyComposer: IComposer
-    {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            // Remove all HealthChecks
-            builder.HealthChecks().Clear();
+namespace My.Website;
 
-            // Explicitly add back the ones we want to use
-            builder.HealthChecks().Add<FolderAndFilePermissionsCheck>();
-            builder.HealthChecks().Add<ExcessiveHeadersCheck>();
-        }
+public class MyComposer: IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        // Remove all HealthChecks
+        builder.HealthChecks().Clear();
+
+        // Explicitly add back the ones we want to use
+        builder.HealthChecks().Add<FolderAndFilePermissionsCheck>();
+        builder.HealthChecks().Add<ExcessiveHeadersCheck>();
     }
 }
 ```
@@ -252,16 +250,15 @@ using Umbraco.Core;
 using Umbraco.Core.Composing;
 using Umbraco.Core.Dashboards;
 
-namespace Umbraco.Web.Dashboards
+namespace Umbraco.Web.Dashboards;
+
+[Weight(10)]
+public class FormsDashboard : IDashboard
 {
-    [Weight(10)]
-    public class FormsDashboard : IDashboard
-    {
-        public string Alias => "formsInstall";
-        public string[] Sections => new [] { Constants.Applications.Forms };
-        public string View => "views/dashboard/forms/formsdashboardintro.html";
-        public IAccessRule[] AccessRules => Array.Empty<IAccessRule>();
-    }
+    public string Alias => "formsInstall";
+    public string[] Sections => new [] { Constants.Applications.Forms };
+    public string View => "views/dashboard/forms/formsdashboardintro.html";
+    public IAccessRule[] AccessRules => Array.Empty<IAccessRule>();
 }
 ```
 
@@ -353,82 +350,81 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Web.BackOffice.Controllers;
 
-namespace TestCollections.Code
+namespace TestCollections.Code;
+
+public interface IMyThing
 {
-    public interface IMyThing
-    {
-        string Name { get; }
+    string Name { get; }
 
-        string DoSomething(string message);
+    string DoSomething(string message);
+}
+
+public class ExampleThing : IMyThing
+{
+    public string Name => "Example";
+
+    public string DoSomething(string message)
+    {
+        return $"Hello {message}";
+    }
+}
+
+// OrderedCollection - use when order of items is important (You may want to execute them in order)
+// Different types of collections.
+public class MyThingsCollectionBuilder : OrderedCollectionBuilderBase<MyThingsCollectionBuilder, MyThingsCollection, IMyThing>
+{
+    protected override MyThingsCollectionBuilder This => this;
+}
+
+public class MyThingsCollection : BuilderCollectionBase<IMyThing>
+{
+    public MyThingsCollection(Func<IEnumerable<IMyThing>> items)
+        : base(items)
+    {
+    }
+}
+
+public static class WebCompositionExtensions
+{
+    public static MyThingsCollectionBuilder MyThings(this IUmbracoBuilder builder)
+        => builder.WithCollectionBuilder<MyThingsCollectionBuilder>();
+}
+
+public class MyThingComposer : IUserComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        // Explicitly add to the collection a Type in a specific order
+        builder.MyThings().Append<ExampleThing>()
+            .Append<AnotherThing>()
+            .Append<SomeOtherThing>();
+    }
+}
+
+// An Umbraco Backoffice Web API Controller - Used in a dashboard or Property Editor perhaps?
+public class SomeBackofficeApiController : UmbracoAuthorizedApiController
+{
+    private MyThingsCollection _mythings;
+
+    public SomeBackofficeApiController()
+    {
     }
 
-    public class ExampleThing : IMyThing
+    public SomeBackofficeApiController(MyThingsCollection mythings)
     {
-        public string Name => "Example";
-
-        public string DoSomething(string message)
-        {
-            return $"Hello {message}";
-        }
+        _mythings = mythings;
     }
 
-    // OrderedCollection - use when order of items is important (You may want to execute them in order)
-    // Different types of collections.
-    public class MyThingsCollectionBuilder : OrderedCollectionBuilderBase<MyThingsCollectionBuilder, MyThingsCollection, IMyThing>
+    public List<string> GetMessages(string message)
     {
-        protected override MyThingsCollectionBuilder This => this;
-    }
+        var items = new List<string>();
 
-    public class MyThingsCollection : BuilderCollectionBase<IMyThing>
-    {
-        public MyThingsCollection(Func<IEnumerable<IMyThing>> items)
-            : base(items)
+        foreach (var thing in _mythings)
         {
-        }
-    }
-
-    public static class WebCompositionExtensions
-    {
-        public static MyThingsCollectionBuilder MyThings(this IUmbracoBuilder builder)
-            => builder.WithCollectionBuilder<MyThingsCollectionBuilder>();
-    }
-
-    public class MyThingComposer : IUserComposer
-    {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            // Explicitly add to the collection a Type in a specific order
-            builder.MyThings().Append<ExampleThing>()
-                .Append<AnotherThing>()
-                .Append<SomeOtherThing>();
-        }
-    }
-
-    // An Umbraco Backoffice Web API Controller - Used in a dashboard or Property Editor perhaps?
-    public class SomeBackofficeApiController : UmbracoAuthorizedApiController
-    {
-        private MyThingsCollection _mythings;
-
-        public SomeBackofficeApiController()
-        {
+            items.Add(thing.DoSomething(message));
         }
 
-        public SomeBackofficeApiController(MyThingsCollection mythings)
-        {
-            _mythings = mythings;
-        }
-
-        public List<string> GetMessages(string message)
-        {
-            var items = new List<string>();
-
-            foreach (var thing in _mythings)
-            {
-                items.Add(thing.DoSomething(message));
-            }
-
-            return items;
-        }
+        return items;
     }
 }
 ```
@@ -448,80 +444,79 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Web.BackOffice.Controllers;
 
-namespace TestCollections.Code
+namespace TestCollections.Code;
+
+// Implement `IDiscoverable` (To help with typescanning speed/perf)
+public interface IMyThing : IDiscoverable
 {
-    // Implement `IDiscoverable` (To help with typescanning speed/perf)
-    public interface IMyThing : IDiscoverable
+    string Name { get; }
+    string DoSomething(string message);
+}
+
+public class ExampleThing : IMyThing
+{
+    public string Name => "Example";
+
+    public string DoSomething(string message)
     {
-        string Name { get; }
-        string DoSomething(string message);
+        return $"Hello {message}";
+    }
+}
+
+public class MyThingsCollectionBuilder : LazyCollectionBuilderBase<MyThingsCollectionBuilder, MyThingsCollection, IMyThing>
+{
+    protected override MyThingsCollectionBuilder This => this;
+}
+
+public class MyThingsCollection : BuilderCollectionBase<IMyThing>
+{
+    public MyThingsCollection(Func<IEnumerable<IMyThing>> items)
+        : base(items)
+    {
+    }
+}
+
+public static class WebCompositionExtensions
+{
+    public static MyThingsCollectionBuilder MyThings(this IUmbracoBuilder builder)
+        => builder.WithCollectionBuilder<MyThingsCollectionBuilder>();
+}
+
+public class MyThingComposer : IUserComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        // Add types from assemblies - be conscious of doing type scanning
+        // as this adds time to boot up of Umbraco
+        // If you still need to use type scanning, ensure your Interface implements `IDiscoverable`
+        builder.MyThings().Add(() => builder.TypeLoader.GetTypes<IMyThing>());
+    }
+}
+
+// An Umbraco Backoffice Web API Controller - Used in a dashboard or Property Editor perhaps?
+public class SomeBackofficeApiController : UmbracoAuthorizedApiController
+{
+    private MyThingsCollection _mythings;
+
+    public SomeBackofficeApiController()
+    {
     }
 
-    public class ExampleThing : IMyThing
+    public SomeBackofficeApiController(MyThingsCollection mythings)
     {
-        public string Name => "Example";
-
-        public string DoSomething(string message)
-        {
-            return $"Hello {message}";
-        }
+        _mythings = mythings;
     }
 
-    public class MyThingsCollectionBuilder : LazyCollectionBuilderBase<MyThingsCollectionBuilder, MyThingsCollection, IMyThing>
+    public List<string> GetMessages(string message)
     {
-        protected override MyThingsCollectionBuilder This => this;
-    }
+        var items = new List<string>();
 
-    public class MyThingsCollection : BuilderCollectionBase<IMyThing>
-    {
-        public MyThingsCollection(Func<IEnumerable<IMyThing>> items)
-            : base(items)
+        foreach (var thing in _mythings)
         {
-        }
-    }
-
-    public static class WebCompositionExtensions
-    {
-        public static MyThingsCollectionBuilder MyThings(this IUmbracoBuilder builder)
-            => builder.WithCollectionBuilder<MyThingsCollectionBuilder>();
-    }
-
-    public class MyThingComposer : IUserComposer
-    {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            // Add types from assemblies - be conscious of doing type scanning
-            // as this adds time to boot up of Umbraco
-            // If you still need to use type scanning, ensure your Interface implements `IDiscoverable`
-            builder.MyThings().Add(() => builder.TypeLoader.GetTypes<IMyThing>());
-        }
-    }
-
-    // An Umbraco Backoffice Web API Controller - Used in a dashboard or Property Editor perhaps?
-    public class SomeBackofficeApiController : UmbracoAuthorizedApiController
-    {
-        private MyThingsCollection _mythings;
-
-        public SomeBackofficeApiController()
-        {
+            items.Add(thing.DoSomething(message));
         }
 
-        public SomeBackofficeApiController(MyThingsCollection mythings)
-        {
-            _mythings = mythings;
-        }
-
-        public List<string> GetMessages(string message)
-        {
-            var items = new List<string>();
-
-            foreach (var thing in _mythings)
-            {
-                items.Add(thing.DoSomething(message));
-            }
-
-            return items;
-        }
+        return items;
     }
 }
 ```

@@ -78,7 +78,7 @@ When a new user is created, you can set specific permissions for that user on di
 
 ## Technical
 
-As a developer you are only able to leverage your website from the backoffice when you build on the Users section of Umbraco, since the Users section is restricted to the Umbraco backoffice.
+As a developer you are only able to leverage your website from the backoffice when you build on the Users section of Umbraco. This is because the Users section is restricted to the Umbraco backoffice.
 
 ## [Managing Forms Security](https://docs.umbraco.com/umbraco-forms/developer/security)
 

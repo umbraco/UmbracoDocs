@@ -42,25 +42,23 @@ using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common.Controllers;
 
-namespace My.Website
+namespace My.Website;
+
+public class ProductPageController : RenderController
 {
-    public class ProductPageController : RenderController
+    public ProductPageController(ILogger<ProductPageController> logger, ICompositeViewEngine compositeViewEngine, IUmbracoContextAccessor umbracoContextAccessor)
+        : base(logger, compositeViewEngine, umbracoContextAccessor)
     {
-        public ProductPageController(ILogger<ProductPageController> logger, ICompositeViewEngine compositeViewEngine, IUmbracoContextAccessor umbracoContextAccessor)
-            : base(logger, compositeViewEngine, umbracoContextAccessor)
-        {
-        }
+    }
 
-        public override IActionResult Index()
-        {
-            // you are in control here!
+    public override IActionResult Index()
+    {
+        // you are in control here!
 
-            // return a 'model' to the selected template/view for this page.
-            return CurrentTemplate(CurrentPage);
-        }
+        // return a 'model' to the selected template/view for this page.
+        return CurrentTemplate(CurrentPage);
     }
 }
-
 ```
 
 All requests to any **product** pages in the site will be **hijacked** and routed through the custom ProductPageController.
@@ -70,7 +68,7 @@ If you prefer to use an async controller your need to override both the sync and
 ```csharp
 public class ProductPageController : RenderController
 {
-       
+
     [NonAction]
     public sealed override IActionResult Index() => throw new NotImplementedException();
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
@@ -101,29 +99,28 @@ using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common.Controllers;
 
 
-namespace My.Website
+namespace My.Website;
+
+public class ProductPageController : RenderController
 {
-    public class ProductPageController : RenderController
+    public ProductPageController(ILogger<ProductPageController> logger, ICompositeViewEngine compositeViewEngine, IUmbracoContextAccessor umbracoContextAccessor)
+        : base(logger, compositeViewEngine, umbracoContextAccessor)
     {
-        public ProductPageController(ILogger<ProductPageController> logger, ICompositeViewEngine compositeViewEngine, IUmbracoContextAccessor umbracoContextAccessor)
-            : base(logger, compositeViewEngine, umbracoContextAccessor)
-        {
-        }
+    }
 
-        // Any request for the 'ProductAmpPage' template will be handled by this Action
-        public IActionResult ProductAmpPage()
-        {
-            // Create AMP specific content here...
-            return CurrentTemplate(CurrentPage);
-        }
+    // Any request for the 'ProductAmpPage' template will be handled by this Action
+    public IActionResult ProductAmpPage()
+    {
+        // Create AMP specific content here...
+        return CurrentTemplate(CurrentPage);
+    }
 
-        public override IActionResult Index()
-        {
-            // you are in control here!
+    public override IActionResult Index()
+    {
+        // you are in control here!
 
-            // return a 'model' to the selected template/view for this page.
-            return CurrentTemplate(CurrentPage);
-        }
+        // return a 'model' to the selected template/view for this page.
+        return CurrentTemplate(CurrentPage);
     }
 }
 ```
@@ -230,38 +227,36 @@ using Umbraco.Cms.Web.Common.Controllers;
 using My.Website.Models;
 
 
-namespace My.Website
-{
-    public class ProductPageController : RenderController
-    {
-        private readonly IVariationContextAccessor _variationContextAccessor;
-        private readonly ServiceContext _serviceContext;
-        public ProductPageController(ILogger<ProductPageController> logger, ICompositeViewEngine compositeViewEngine, IUmbracoContextAccessor umbracoContextAccessor, IVariationContextAccessor variationContextAccessor, ServiceContext context)
-            : base(logger, compositeViewEngine, umbracoContextAccessor)
-        {
-            _variationContextAccessor = variationContextAccessor;
-            _serviceContext = context;
-        }
+namespace My.Website;
 
-        public override IActionResult Index()
-        {
+public class ProductPageController : RenderController
+{
+    private readonly IVariationContextAccessor _variationContextAccessor;
+    private readonly ServiceContext _serviceContext;
+    public ProductPageController(ILogger<ProductPageController> logger, ICompositeViewEngine compositeViewEngine, IUmbracoContextAccessor umbracoContextAccessor, IVariationContextAccessor variationContextAccessor, ServiceContext context)
+        : base(logger, compositeViewEngine, umbracoContextAccessor)
+    {
+        _variationContextAccessor = variationContextAccessor;
+        _serviceContext = context;
+    }
+
+    public override IActionResult Index()
+    {
 
             // you are in control here!
             // create our ViewModel based on the PublishedContent of the current request:
             // set our custom properties
             var productViewModel = new MyProductViewModel(CurrentPage, new PublishedValueFallback(_serviceContext, _variationContextAccessor))
             {
-                StockLevel = 4, 
+                StockLevel = 4,
                 ProductDistributors = new List<Distributor>()
             };
 
-            
+
             // return our custom ViewModel
             return CurrentTemplate(productViewModel);
 
-        }
     }
-
 }
 ```
 
@@ -321,9 +316,10 @@ Injecting services into your controller constructors is possible with Umbraco's 
 For example:
 
 ```csharp
-    public class ProductListingPageController : RenderController
-    {
+public class ProductListingPageController : RenderController
+{
     private readonly IMadeUpProductService _madeUpProductService;
+
     public ProductListingPageController(ILogger<RenderController> logger, ICompositeViewEngine compositeViewEngine, IUmbracoContextAccessor umbracoContextAccessor, IMadeUpProductService madeUpProductService)
     {
         _madeUpProductService = madeUpProductService;
@@ -332,28 +328,34 @@ For example:
     public override IActionResult Index()
     {
         var products = _madeUpProductService.GetProductsByPage(page);
-    ...
+        ...
     }
+}
 ```
 
 To wire up a concrete instance of IMadeUpProductService, use a composer:
 
 ```csharp
-    using Umbraco.Cms.Core.Composing;
-    using Umbraco.Cms.Core.DependencyInjection;
-    using Umbraco.Extensions;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Extensions;
 
-    namespace MyWebsite.Composers
+namespace MyWebsite.Composers;
+
+public class RegisterSuperSiteServiceComposer : IUserComposer
+{
+    public void Compose(IUmbracoBuilder builder)
     {
         public class RegisterSuperSiteServiceComposer : IUserComposer
         {
             public void Compose(IUmbracoBuilder builder)
             {
                 builder.Services.AddUnique<IMadeUpProductService, MadeUpProductService>();
-             
+
             }
         }
     }
+}
 ```
 
 See [Composing](../../implementation/composing.md) for further information.
@@ -362,7 +364,7 @@ See [Composing](../../implementation/composing.md) for further information.
 
 You can replace Umbraco's default implementation of RenderController with your own custom controller for all MVC requests. This is possible by assigning your own default controller type in the Umbraco setup during initialization.
 
-You can achieve this by updating the options for `UmbracoRenderingDefaultsOptions` in the `ConfigureServices` method in the `Startup.cs` class.
+You can achieve this by updating the options for `UmbracoRenderingDefaultsOptions` in `Program.cs`.
 
 First of all, you have to create your own controller. Your custom implementation of RenderController should either inherit from the core `RenderController` as in the examples above or implement the `IRenderController` interface.
 
@@ -383,34 +385,31 @@ Or inherit from `RenderController`
 ```csharp
 public class MyRenderController : RenderController
 {
-    public MyRenderController(ILogger<RenderController> logger, ICompositeViewEngine compositeViewEngine, IUmbracoContextAccessor umbracoContextAccessor) 
+    public MyRenderController(ILogger<RenderController> logger, ICompositeViewEngine compositeViewEngine, IUmbracoContextAccessor umbracoContextAccessor)
         : base(logger, compositeViewEngine, umbracoContextAccessor)
     {
     }
 
     public override IActionResult Index()
     {
-        // Add some custom logic here. 
+        // Add some custom logic here.
         return CurrentTemplate(CurrentPage);
     }
 }
 ```
 
-The last step is to configure Umbraco to use your implementation. You can do that in the `ConfigureServices` method in the `Startup.cs` class.
+The last step is to configure Umbraco to use your implementation. You can do that in the `Program.cs` class.
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()             
-        .AddWebsite()
-        .AddComposers()
-        .Build();
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .Build();
 
-    // Configure Umbraco Render Controller Type
-    services.Configure<UmbracoRenderingDefaultsOptions>(c =>
-    {
-        c.DefaultControllerType = typeof(MyRenderController);
-    });
-}
+builder.Services.Configure<UmbracoRenderingDefaultsOptions>(c =>
+{
+    c.DefaultControllerType = typeof(MyRenderController);
+});
 ```

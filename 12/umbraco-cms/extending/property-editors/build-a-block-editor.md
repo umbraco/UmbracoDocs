@@ -16,24 +16,22 @@ using Umbraco.Cms.Core.PropertyEditors;
 using Umbraco.Cms.Core.WebAssets;
 using Umbraco.Cms.Infrastructure.WebAssets;
 
-namespace MyNamespace
-{
-    [DataEditor(
-        "MyOwn.UnicornBlocksEditor",
-        "Unicorn Blocks",
-        "unicornblocks",
-        ValueType = ValueTypes.Json,
-        Group = Constants.PropertyEditors.Groups.Lists,
-        Icon = "icon-thumbnail-list")]
-    [PropertyEditorAsset(AssetType.Javascript, "/App_Plugins/UnicornBlocks/UnicornBlocks.controller.js")]
-    public class UnicornBlocksPropertyEditor : BlockEditorPropertyEditor
-    {
-        public UnicornBlocksPropertyEditor(IDataValueEditorFactory dataValueEditorFactory, PropertyEditorCollection propertyEditors)
-            : base(dataValueEditorFactory, propertyEditors)
-        {
-        }
-    }
+namespace MyNamespace;
 
+[DataEditor(
+    "MyOwn.UnicornBlocksEditor",
+    "Unicorn Blocks",
+    "unicornblocks",
+    ValueType = ValueTypes.Json,
+    Group = Constants.PropertyEditors.Groups.Lists,
+    Icon = "icon-thumbnail-list")]
+[PropertyEditorAsset(AssetType.Javascript, "/App_Plugins/UnicornBlocks/UnicornBlocks.controller.js")]
+public class UnicornBlocksPropertyEditor : BlockEditorPropertyEditor
+{
+    public UnicornBlocksPropertyEditor(IDataValueEditorFactory dataValueEditorFactory, PropertyEditorCollection propertyEditors)
+        : base(dataValueEditorFactory, propertyEditors)
+    {
+    }
 }
 ```
 

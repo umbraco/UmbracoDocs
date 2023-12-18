@@ -56,7 +56,7 @@ Some extra variables are:
 
 Some extra variables are:
 
-* `{record.id}`: The ID of the current record - this is only accessible on workflows triggered "on approve" rather than "on submit"
+* `{record.id}`: The ID of the current record - this is only accessible on workflows triggered "on approve" or "on reject" rather than "on submit"
 * `{record.updated}`: The updated date/time of the current record
 * `{record.created}`: The created date/time of the current record
 * `{record.umbracopageid}`: The Umbraco Page ID the form was submitted on

@@ -34,33 +34,32 @@ using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.PublishedCache;
 using Umbraco.Extensions;
 
-namespace Doccers.Core.Services.Implement
+namespace Doccers.Core.Services.Implement;
+
+public class CacheTagService : ICacheTagService
 {
-    public class CacheTagService : ICacheTagService
+    private readonly ITagQuery _tagQuery;
+    private readonly IAppPolicyCache _runtimeCache;
+
+    public CacheTagService(ITagQuery tagQuery, AppCaches appCaches)
     {
-        private readonly ITagQuery _tagQuery;
-        private readonly IAppPolicyCache _runtimeCache;
+        _tagQuery = tagQuery;
+        // Get the RuntimeCache from appCaches
+        // and assign to our private field.
+        _runtimeCache = appCaches.RuntimeCache;
+    }
 
-        public CacheTagService(ITagQuery tagQuery, AppCaches appCaches)
+    public IEnumerable<TagModel> GetAll(
+        string group,
+        string cacheKey,
+        TimeSpan? timeout = null)
+    {
+        // GetCacheItem will automatically insert the object
+        // into cache if it doesn't exist.
+        return _runtimeCache.GetCacheItem(cacheKey, () =>
         {
-            _tagQuery = tagQuery;
-            // Get the RuntimeCache from appCaches
-            // and assign to our private field.
-            _runtimeCache = appCaches.RuntimeCache;
-        }
-
-        public IEnumerable<TagModel> GetAll(
-            string group,
-            string cacheKey,
-            TimeSpan? timeout = null)
-        {
-            // GetCacheItem will automatically insert the object
-            // into cache if it doesn't exist.
-            return _runtimeCache.GetCacheItem(cacheKey, () =>
-            {
-                return _tagQuery.GetAllTags(group);
-            }, timeout);
-        }
+            return _tagQuery.GetAllTags(group);
+        }, timeout);
     }
 }
 ```
@@ -72,15 +71,14 @@ using System;
 using System.Collections.Generic;
 using Umbraco.Cms.Core.Models;
 
-namespace Doccers.Core.Services
+namespace Doccers.Core.Services;
+
+public interface ICacheTagService
 {
-    public interface ICacheTagService
-    {
-        IEnumerable<TagModel> GetAll(
-            string group,
-            string cacheKey,
-            TimeSpan? timeout = null);
-    }
+    IEnumerable<TagModel> GetAll(
+        string group,
+        string cacheKey,
+        TimeSpan? timeout = null);
 }
 ```
 
@@ -93,14 +91,13 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Doccers.Core
+namespace Doccers.Core;
+
+public class Composer : IComposer
 {
-    public class Composer : IComposer
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.Services.AddScoped<ICacheTagService, CacheTagService>();
-        }
+        builder.Services.AddScoped<ICacheTagService, CacheTagService>();
     }
 }
 ```
@@ -120,35 +117,34 @@ using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Web.Common.Controllers;
 
 
-namespace Doccers.Core.Controllers.Api
+namespace Doccers.Core.Controllers.Api;
+
+public class TagsController : UmbracoApiController
 {
-    public class TagsController : UmbracoApiController
+    private readonly ICacheTagService _tagService;
+
+    // Dependency injection rocks!
+    public TagsController(ICacheTagService tagService)
     {
-        private readonly ICacheTagService _tagService;
+        _tagService = tagService;
+    }
 
-        // Dependency injection rocks!
-        public TagsController(ICacheTagService tagService)
-        {
-            _tagService = tagService;
-        }
+    [HttpGet]
+    public IEnumerable<TagModel> GetDefaultTags()
+    {
+        // As mentioned earlier we want tags from "default"
+        // group to be cached for a minute.
+        return _tagService.GetAll("default", "defaultTags",
+            TimeSpan.FromMinutes(1));
+    }
 
-        [HttpGet]
-        public IEnumerable<TagModel> GetDefaultTags()
-        {
-            // As mentioned earlier we want tags from "default"
-            // group to be cached for a minute.
-            return _tagService.GetAll("default", "defaultTags",
-                TimeSpan.FromMinutes(1));
-        }
-
-        [HttpGet]
-        public IEnumerable<TagModel> GetBlogTags()
-        {
-            // If you don't specify a TimeSpan the object(s)
-            // will be cached until manually removed or
-            // if the site restarts.
-            return _tagService.GetAll("blog", "blogTags");
-        }
+    [HttpGet]
+    public IEnumerable<TagModel> GetBlogTags()
+    {
+        // If you don't specify a TimeSpan the object(s)
+        // will be cached until manually removed or
+        // if the site restarts.
+        return _tagService.GetAll("blog", "blogTags");
     }
 }
 ```
@@ -173,25 +169,24 @@ using Umbraco.Cms.Core.Cache;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
 
-namespace Doccers.Core
+namespace Doccers.Core;
+
+public class Notification : INotificationHandler<ContentPublishedNotification>
 {
-    public class Notification : INotificationHandler<ContentPublishedNotification>
+
+    private readonly IAppPolicyCache _runtimeCache;
+
+    public Notification(AppCaches appCaches)
+    {
+        _runtimeCache = appCaches.RuntimeCache;
+    }
+
+    public void Handle(ContentPublishedNotification notification)
     {
 
-        private readonly IAppPolicyCache _runtimeCache;
-
-        public Notification(AppCaches appCaches)
+        if (notification.PublishedEntities.Any(x => x.ContentType.Alias == "blogPost"))
         {
-            _runtimeCache = appCaches.RuntimeCache;
-        }
-
-        public void Handle(ContentPublishedNotification notification)
-        {
-
-            if (notification.PublishedEntities.Any(x => x.ContentType.Alias == "blogPost"))
-            {
-                _runtimeCache.ClearByKey("blogTags");
-            }
+            _runtimeCache.ClearByKey("blogTags");
         }
     }
 }

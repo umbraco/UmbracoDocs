@@ -38,14 +38,13 @@ using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Infrastructure.Examine;
 using Umbraco.Extensions;
 
-namespace Umbraco.Docs.Samples.Web.BackofficeSearch
+namespace Umbraco.Docs.Samples.Web.BackofficeSearch;
+
+public class BackofficeSearchComposer : IComposer
 {
-    public class BackofficeSearchComposer : IComposer
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.Services.AddUnique<IUmbracoTreeSearcherFields, CustomUmbracoTreeSearcherFields>();
-        }
+        builder.Services.AddUnique<IUmbracoTreeSearcherFields, CustomUmbracoTreeSearcherFields>();
     }
 }
 ```
@@ -56,37 +55,36 @@ using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Infrastructure.Examine;
 using Umbraco.Cms.Infrastructure.Search;
 
-namespace Umbraco.Docs.Samples.Web.BackofficeSearch
+namespace Umbraco.Docs.Samples.Web.BackofficeSearch;
+
+public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields, IUmbracoTreeSearcherFields
 {
-    public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields, IUmbracoTreeSearcherFields
+    public CustomUmbracoTreeSearcherFields(ILocalizationService localizationService) : base(localizationService)
     {
-        public CustomUmbracoTreeSearcherFields(ILocalizationService localizationService) : base(localizationService)
-        {
-        }
+    }
 
-        //Adding custom field to search in all nodes
-        public new IEnumerable<string> GetBackOfficeFields()
-        {
-            return new List<string>(base.GetBackOfficeFields()) { "nodeType" };
-        }
+    //Adding custom field to search in all nodes
+    public new IEnumerable<string> GetBackOfficeFields()
+    {
+        return new List<string>(base.GetBackOfficeFields()) { "nodeType" };
+    }
 
-        //Adding custom field to search in document types
-        public new IEnumerable<string> GetBackOfficeDocumentFields()
-        {
-            return new List<string>(base.GetBackOfficeDocumentFields()) { "nodeType" };
-        }
+    //Adding custom field to search in document types
+    public new IEnumerable<string> GetBackOfficeDocumentFields()
+    {
+        return new List<string>(base.GetBackOfficeDocumentFields()) { "nodeType" };
+    }
 
-        //Adding custom field to search in media
-        public new IEnumerable<string> GetBackOfficeMediaFields()
-        {
-            return new List<string>(base.GetBackOfficeMediaFields()) { "nodeType" };
-        }
+    //Adding custom field to search in media
+    public new IEnumerable<string> GetBackOfficeMediaFields()
+    {
+        return new List<string>(base.GetBackOfficeMediaFields()) { "nodeType" };
+    }
 
-        //Adding custom field to search in members
-        public new IEnumerable<string> GetBackOfficeMembersFields()
-        {
-            return new List<string>(base.GetBackOfficeMembersFields()) { "nodeType" };
-        }
+    //Adding custom field to search in members
+    public new IEnumerable<string> GetBackOfficeMembersFields()
+    {
+        return new List<string>(base.GetBackOfficeMembersFields()) { "nodeType" };
     }
 }
 ```

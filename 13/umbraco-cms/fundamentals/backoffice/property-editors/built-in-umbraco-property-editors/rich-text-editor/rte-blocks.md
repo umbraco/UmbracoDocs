@@ -10,9 +10,7 @@ To set up your Block List Editor property, create a new _Data Type_ and select *
 
 Then you will see the configuration options for a Block List as shown below.
 
-
-
-<figure><img src="../../../../../.gitbook/assets/rte-data-type-block-fields.jpg" alt=""><figcaption><p>Rich Text Editor - Data Type Block Fields</p></figcaption></figure>
+![Rich Text Editor - Data Type Block Fields](images/rte-data-type-block-fields.jpg)
 
 The Data Type editor allows you to configure the following properties:
 
@@ -25,7 +23,7 @@ Block Types are **Element Types** that need to be created before you can start c
 
 Once you add an Element Type as a Block Type on your Rich Text Editor Data Type you will have options to configure it further.
 
-<figure><img src="../../../../../.gitbook/assets/rte-data-type-block-type-editor.jpeg" alt=""><figcaption><p>Rich Text Editor - Data Type Block Configuration</p></figcaption></figure>
+![Rich Text Editor - Data Type Block Configuration](images/rte-data-type-block-type-editor.jpeg)
 
 Each Block has a set of properties that are optional to configure. They are described below.
 

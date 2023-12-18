@@ -95,29 +95,28 @@ using Umbraco.Cms.Core.Notifications;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Core.WebAssets;
 
-namespace Umbraco.Docs.Samples.Web.Stylesheets_Javascript
+namespace Umbraco.Docs.Samples.Web.Stylesheets_Javascript;
+
+public class CreateBundlesNotificationHandler : INotificationHandler<UmbracoApplicationStartingNotification>
 {
-    public class CreateBundlesNotificationHandler : INotificationHandler<UmbracoApplicationStartingNotification>
+    private readonly IRuntimeMinifier _runtimeMinifier;
+    private readonly IRuntimeState _runtimeState;
+
+    public CreateBundlesNotificationHandler(IRuntimeMinifier runtimeMinifier, IRuntimeState runtimeState) {
+        _runtimeMinifier = runtimeMinifier;
+        _runtimeState = runtimeState;
+    }
+    public void Handle(UmbracoApplicationStartingNotification notification)
     {
-        private readonly IRuntimeMinifier _runtimeMinifier;
-        private readonly IRuntimeState _runtimeState;
-
-        public CreateBundlesNotificationHandler(IRuntimeMinifier runtimeMinifier, IRuntimeState runtimeState) {
-            _runtimeMinifier = runtimeMinifier;
-            _runtimeState = runtimeState;
-        }
-        public void Handle(UmbracoApplicationStartingNotification notification)
+        if (_runtimeState.Level == RuntimeLevel.Run)
         {
-            if (_runtimeState.Level == RuntimeLevel.Run)
-            {
-                _runtimeMinifier.CreateJsBundle("registered-js-bundle",
-                BundlingOptions.NotOptimizedAndComposite,
-                new[] { "~/scripts/test-script1.js", "~/scripts/test-script2.js" });
+            _runtimeMinifier.CreateJsBundle("registered-js-bundle",
+            BundlingOptions.NotOptimizedAndComposite,
+            new[] { "~/scripts/test-script1.js", "~/scripts/test-script2.js" });
 
-                _runtimeMinifier.CreateCssBundle("registered-css-bundle",
-                    BundlingOptions.NotOptimizedAndComposite,
-                    new[] { "~/css/test-style.css" });
-            }
+            _runtimeMinifier.CreateCssBundle("registered-css-bundle",
+                BundlingOptions.NotOptimizedAndComposite,
+                new[] { "~/css/test-style.css" });
         }
     }
 }
@@ -127,18 +126,16 @@ namespace Umbraco.Docs.Samples.Web.Stylesheets_Javascript
 See below for the different [Bundling Options](stylesheets-javascript.md#bundling-options).
 {% endhint %}
 
-**Step 2:** Register the `INotificationHandler` in the `ConfigureServices` of `Startup.cs`
+**Step 2:** Register the `INotificationHandler` in the `Program.cs` file.
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()
-        .AddWebsite()
-        .AddComposers()
-        .AddNotificationHandler<UmbracoApplicationStartingNotification, CreateBundlesNotificationHandler>()
-        .Build();
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .AddNotificationHandler<UmbracoApplicationStartingNotification, CreateBundlesNotificationHandler>()
+    .Build();
 ```
 
 **Step 3:** Render the bundles by the bundle name in a view template file using the Smidge TagHelper:

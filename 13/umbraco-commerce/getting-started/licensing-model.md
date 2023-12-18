@@ -104,12 +104,12 @@ There are two options in this case:
 - Either the domains for each of your Cloud environments can be added to your license.
 - Or, for more control and to ensure this value is set correctly for other reasons, you can apply the configuration via code.
 
-For example, in your `Startup.cs` file, you can add the following to the `ConfigureServices` method:
+For example, in your `Program.cs`:
 
 ```csharp
 services.Configure<WebRoutingSettings>(o => o.UmbracoApplicationUrl = "<your application URL>");
 ```
 
-In practice, you will probably want to make this a bit more sophisticated. You can read the value from another configuration key, removing the need to hard-code it and have it set as appropriate in different environments. You can also move this code into a composer or an extension method if you prefer not to clutter up the `Startup.ConfigureServices` method.
+In practice, you will probably want to make this a bit more sophisticated. You can read the value from another configuration key, removing the need to hard-code it and have it set as appropriate in different environments. You can also move this code into a composer or an extension method if you prefer not to clutter up the `Program.cs` file.
 
 

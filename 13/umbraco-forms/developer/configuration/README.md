@@ -56,7 +56,8 @@ For illustration purposes, the following structure represents the full set of op
         "StoreRecordsLocally": true,
         "AutocompleteAttribute": "",
         "DaysToRetainSubmittedRecordsFor": 0,
-        "DaysToRetainApprovedRecordsFor": 0
+        "DaysToRetainApprovedRecordsFor": 0,
+        "DaysToRetainRejectedRecordsFor": 0
       },
       "RemoveProvidedEmailTemplate": false,
       "RemoveProvidedFormTemplates": false,
@@ -83,7 +84,8 @@ For illustration purposes, the following structure represents the full set of op
       "DisableRecordIndexing": false,
       "EnableFormsApi": false,
       "EnableRecordingOfIpWithFormSubmission": "true",
-      "UseSemanticFieldsetRendering": false
+      "UseSemanticFieldsetRendering": false,
+      "DisableClientSideValidationDependencyCheck": false
     },
     "Security": {
       "DisallowedFileUploadExtensions": "config,exe,dll,asp,aspx",
@@ -284,6 +286,10 @@ If set to a positive number, a date value calculated by taking away the number o
 
 Applies as per `DaysToRetainSubmittedRecordsFor` but for records in the 'approved' state.
 
+#### DaysToRetainRejectedRecordsFor
+
+Applies as per `DaysToRetainSubmittedRecordsFor` but for records in the 'rejected' state.
+
 ## Package options configuration
 
 ### IgnoreWorkFlowsOnEdit
@@ -373,6 +379,14 @@ In Forms 12.1 amends were made to the default theme for Forms that improved acce
 Although this semantic markup is preferred, it could be a presentational breaking change for those styling the default theme.  As such we have made this markup improvement optional. You can opt into using it by setting this configuration value to `true`.
 
 In Umbraco 13 this configuration option will be removed and the semantic rendering made the only option.
+
+### DisableClientSideValidationDependencyCheck
+
+When a form is rendered on the front-end website, a check is run to ensure that client-side validation framework is available and registered.
+
+You can disable this check by setting the value of this configuration key to `true`.
+
+If you are rendering your forms dependency scripts using the `async` attribute, you will need to disable this check.
 
 ## Security configuration
 

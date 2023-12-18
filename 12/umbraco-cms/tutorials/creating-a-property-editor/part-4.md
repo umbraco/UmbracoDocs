@@ -46,13 +46,12 @@ using System.Web;
 using Umbraco.Cms.Web.BackOffice.Controllers;
 using Umbraco.Cms.Web.Common.Attributes;
 
-namespace My.Controllers
+namespace My.Controllers;
+
+[Umbraco.Web.Mvc.PluginController("My")]
+public class PersonApiController : UmbracoAuthorizedJsonController
 {
-    [Umbraco.Web.Mvc.PluginController("My")]
-    public class PersonApiController : UmbracoAuthorizedJsonController
-    {
-        // we will add a method here later
-    }
+    // we will add a method here later
 }
 ```
 

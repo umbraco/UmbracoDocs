@@ -1,6 +1,6 @@
 # Licensing
 
-Umbraco UI Builder is a commercial product. You can run an Umbraco UI Builder unrestricted locally without the need a license. Running Umbraco UI Builder on a public domain will display a warning banner in the backoffice and will limit the maximum number of orders (20). To remove these restrictions, you'll need to have a **valid license**.
+Umbraco UI Builder is a commercial product. You can run an Umbraco UI Builder unrestricted locally without the need a license. Running Umbraco UI Builder on a public domain will display a warning banner in the backoffice and will limit usage to a single editable collection. To remove these restrictions, you'll need to have a **valid license**.
 
 ## How does it work?
 
@@ -34,7 +34,7 @@ There are a few differences as to what the licenses cover:
 * A single license covers the installation of Umbraco UI Builder in 1 production backoffice domain, as well as in any requested development domains.
 * The production domain includes **all subdomains** (e.g. `*.mysite.com`).
 * The development domains work with or without the `www` subdomain.
-* The license allows for an unlimited number of orders.
+* The license allows for an unlimited number of editable collections.
 * The license also includes `localhost` and `*.local` as a valid domain.
 
 {% hint style="info" %}
@@ -57,7 +57,7 @@ Once you have received your license code it needs to be installed on your site.
 
 1. Open the root directory for your project files.
 2. Locate and open the `appSettings.json` file.
-3. Add your Umbraco Commerce license key to `Umbraco:Licenses:Umbraco.UIBuilder`:
+3. Add your Umbraco UI builder license key to `Umbraco:Licenses:Umbraco.UIBuilder`:
 
 ```json
 "Umbraco": {

@@ -45,6 +45,7 @@
     * [Configuring a CI/CD pipeline](set-up/project-settings/umbraco-cicd/samplecicdpipeline/README.md)
       * [Azure DevOps](set-up/project-settings/umbraco-cicd/samplecicdpipeline/azure-devops.md)
       * [GitHub Actions](set-up/project-settings/umbraco-cicd/samplecicdpipeline/github-actions.md)
+    * [Troubleshooting](set-up/project-settings/umbraco-cicd/Troubleshooting.md)
     * [Known Limitations and Considerations](set-up/project-settings/umbraco-cicd/KnownLimitationsAndConsiderations.md)
   * [External Services](set-up/project-settings/external-services.md)
   * [Usage](set-up/project-settings/usage.md)

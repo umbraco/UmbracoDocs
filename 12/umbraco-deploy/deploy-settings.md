@@ -60,11 +60,13 @@ For illustration purposes, the following structure represents the full set of op
             "ExportMemberGroups": true,
             "ReloadMemoryCacheFollowingDiskReadOperation": false,
             "AllowDomainsDeploymentOperations": "None",
+            "AllowPublicAccessDeploymentOperations": "AddOrUpdate",
             "PreferLocalDbConnectionString": false,
             "MediaFileChecksumCalculationMethod": "PartialFileContents",
             "NumberOfSignaturesToUseAllRelationCache": 100,
             "ContinueOnMediaFilePathTooLongException": false,
             "SuppressCacheRefresherNotifications": false,
+            "ResolveUserInTargetEnvironment": false,
             "HideConfigurationDetails": false
         }
     }
@@ -172,7 +174,7 @@ A fifth timeout setting is available from Umbraco Deploy 9.5 and 10.1, allowing 
 
 This setting defaults to 5 minutes.
 
-All of these times are configured using [standard timespan format strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-timespan-format-strings). The values of the settings will have to be the same value on all timeout settings. 
+All of these times are configured using [standard timespan format strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-timespan-format-strings). The values of the settings will have to be the same value on all timeout settings.
 
 ## Batch settings
 
@@ -291,6 +293,21 @@ To enable this, set the configuration value as appropriate for the types of doma
 
 Combinations of settings can be applied, e.g. `Hostname,AbsolutePath`.
 
+## Deployment of public access settings
+
+When deploying content items, public access rules based on member groups are transferred. You can amend this behavior using this setting.
+
+```json
+    "AllowPublicAccessDeploymentOperations": "None|AddOrUpdate|Remove|All",
+```
+
+* _None_ - no public access rules will be transferred</li>
+* _AddOrUpdate_ - public access rules added or updated in a source environment will be transferred to the destination</li>
+* _Remove_ - public access rules removed a source environment will be removed in the destination</li>
+* _All_ - all public access information will be transferred</li>
+
+`AddOrUpdate` is the default setting used if no value is configured.
+
 ## PreferLocalDbConnectionString
 
 When using Umbraco Deploy with Umbraco Cloud, a development database is automatically created when restoring a project into a local environment for the first time.
@@ -340,6 +357,14 @@ When a Deploy operation completes, cache refresher notifications are fired. Thes
 In production this setting shouldn't be changed from it's default value of `false`, to ensure these additional data stores are kept up to date.
 
 If attempting a one-off, large transfer operation, before a site is live, you could set this value to `true`. That would omit the firing and handling of these notifications and remove their performance overhead. Following which you would need to ensure to rebuild the cache and search index manually via the backoffice _Settings_ dashboards.
+
+## ResolveUserInTargetEnvironment
+
+With this setting assigned a value of `true`, Umbraco Deploy will attempt to resolve users when transfers are made to new environments.
+
+Users and user groups are maintained separately in different environments, so it isn't always the case that an editor has accounts across all environments. When an account exists matching by email address, Deploy will associate the changes made in upstream environments with the user that initiated the transfer. Allowing the expected information about save and publish operations to be available in the audit log of the environment where the data was transferred.
+
+When the setting is set to `false`, or a matching account isn't found, the audit records will be associated with the super-user administrator account.
 
 ## HideConfigurationDetails
 
