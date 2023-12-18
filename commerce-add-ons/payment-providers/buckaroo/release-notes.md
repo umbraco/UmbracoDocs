@@ -8,3 +8,13 @@ If there are any breaking changes or other issues to be aware of when upgrading 
 ## Release History
 
 In this section, you can find the release notes for each version of Buckaroo Payment Provider for Commerce. For each major version, you can find the details about each release.
+
+<details>
+
+<summary>Version 13</summary>
+
+#### 13.0.0 (December 13th 2023)
+
+* Initial release
+  
+</details>
