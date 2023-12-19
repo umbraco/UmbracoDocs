@@ -36,7 +36,22 @@ public class MediaNotificationHandler : INotificationHandler<MediaSavedNotificat
     }
 }
 ```
+## Returning messages to the user
 
+You can return a custom message to the user. Use this to show information, a warning or maybe an error. 
+This is achieved using the ```Messages``` property of the notification. 
+### Example
+This example returns an informational message to the user when a Media item is saved.
+```csharp
+public void Handle(MediaSavedNotification notification)
+{
+    notification.Messages.Add(new EventMessage(
+        "Notification",
+        "You can return a message to the user, using the messages property on the notification.",
+        EventMessageType.Info));     
+}
+```
+![image](https://github.com/umbraco/UmbracoDocs/assets/6904597/67696298-2710-4aeb-bd0a-33c6d8414216)
 ## Events
 
 | Notification                        | Members                                                                                                                                                                                                              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
