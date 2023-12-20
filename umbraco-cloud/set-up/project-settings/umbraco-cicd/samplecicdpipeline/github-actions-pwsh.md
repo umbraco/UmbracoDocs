@@ -1,0 +1,145 @@
+---
+description: >-
+  This section provides a step-by-step guide to setting up a CI/CD pipeline in
+  GitHub Actions using the provided sample Powershell scripts.
+---
+
+# GitHub Actions with Powershell scripts
+
+Before setting up the pipeline in GitHub, make sure that the steps in the [Configuring a CI/CD pipeline](./) are done.
+
+You will need to define your pipeline in YAML, and find a way to interact with the Umbraco Cloud Api.
+
+
+{% hint style="info" %}
+We have created a sample pipeline for GitHub which includes YAML-files and custom PowerShell scripts to interact with the Umbraco Cloud API.
+
+You can get the samples for GitHub and Azure Devops from this [repository](https://GitHub.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
+
+For GitHub you will need the following files:
+- From `powershell` folder
+  - `Get-LatestDeployment.ps1`
+  - `Get-ChangesById.ps1`
+  - `New-Deployment.ps1`
+  - `Add-DeploymentPackage.ps1`
+  - `Start-Deployment.ps1`
+  - `Test-DeploymentStatus.ps1`
+- From the `powershell/github` folder
+  - `main.yml`
+  - `cloud-sync.yml` 
+  - `cloud-deployment.yml`
+- From the root folder
+  - `cloud.zipignore`
+
+{% endhint %}
+
+## Import Cloud project repository to GitHub
+Go to your repositories in GitHub and click on "New".
+
+- Create a new empty repository in GitHub, and note down the clone url.
+- Go to the Umbraco Cloud Portal and clone your cloud project down locally. [This article](../../../working-locally.md#cloning-an-umbraco-cloud-project) describes how you can find the clone url.
+- Now working locally remove the Git Remote called `origin``, which points to Umbraco Cloud
+
+ ```sh 
+ git remote remove origin
+ ```
+
+- Optionally rename branch `master` to `main`
+
+ ```sh 
+ # optional step
+ git branch -m  main
+ git symbolic-ref HEAD refs/heads/main
+ ```
+
+- Add a new remote called origin and pointing to the GitHub clone url
+
+ ```sh 
+ git remote add origin https://github.com/{your-organization}/{your-repository}.git
+ ```
+
+- Push local repository to Github
+
+Now we can move on to setting up a pipeline.
+
+## Set up Github
+
+The pipeline needs to know which Umbraco Cloud project to deploy to. In order to do this you will need the `Project ID` and the `API Key`. [This article](README.md#obtaining-the-project-id-and-api-key) describes how to get those values.
+
+- Create a new repository in GitHub
+- Now go to the repository in GitHub, and click on the Settings section.
+- Expand secrets and variables in the left-hand menu titled Security and click on Actions.
+
+<figure><img src="../../../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Security and Actions menu GitHub</p></figcaption></figure>
+
+- Create a `repository secret` called `UMBRACO_CLOUD_API_KEY` with the `API Key` value from the Umbraco Portal.
+- Create a `repository variable` with the name `PROJECT_ID` and the value `Project ID` value from the Umbraco Portal.
+
+{% hint style="info" %}
+If you want to use other names for the variable or secret, you simply need to rename the environment variables in `main.yml`.
+
+```yaml
+env:
+  projectId: ${{ vars.PROJECT_ID }} # change the part inside the curly braces
+  umbracoCloudApiKey: ${{ secrets.UMBRACO_CLOUD_API_KEY }} # change the part inside the curly braces
+```
+
+{% endhint %}
+
+Now Github is set up with all the needed information to be able to deploy your Cloud project back to Umbraco Cloud.
+
+## Set up the GitHub Actions pipeline
+
+While working with the project on you local machine, do the following to prepare the pipeline.
+- Copy the `cloud.zipignore` file to the root of your repository
+- Make a copy of the `.gitignore` and call it `cloud.gitignore`
+  - Both files should be in the root of your repository
+- Also in the root, create a folder called `.github`
+- Inside `.github` create two additional folders
+  - `workflows`
+  - `powershell`
+- Copy the 3 YAML files into the `workflows` folder
+  - Update the `main.yml` to point to the two other YAML files `cloud-sync.yml` and `cloud-deployment.yml` inside your repository
+- Copy the Powershell scripts to the `powershell` folder
+- Commit the all changes, and push to GitHub
+
+The push will start a new pipeline run.
+
+## High level overview of the pipeline components
+
+The scripts are provided as a starting point. It is recommended that you familiarize yourself with the scripts and with documentation related to how to use GitHub Actions.
+
+The scripts demonstrates two thing:
+ - How to sync your GitHub repository with the left-most project environment in Umbraco Cloud
+ - How to deploy changes to the left-most project environment in Umbraco Cloud 
+
+### Main
+
+The `main.yml` is the main pipeline, and is the one that will be triggered on a push to `main` branch.
+You can configure different trigger behavior in this file.
+
+You can add your Build and Test jobs between the `cloud-sync` and `cloud-deployment` jobs. 
+Keep in mind that you do not need to retain the dotnet build artifact for upload later. The `cloud-deployment` job will take care of packaging all your source code and upload to Umbraco Cloud. 
+
+### Cloud-sync
+
+The `cloud-sync.yml` shows how you can sync your Github repository with the left-most environment of your Cloud project.
+In this sample, it simply accepts any change from the api and applies and commits it back to the branch which triggered the pipeline. But the commit does not trigger the pipeline again.
+
+If you don't want the pipeline to directly commit back to the triggering branch, this is where you need to change the pipeline to fit your needs. 
+
+### Cloud-deployment
+
+The `cloud.deployment.yml` show how you can deploy your repository to the left-most environment of your Cloud project.
+The sample shows how to prepare for deployment, actually request the deployment and await for cloud to finish.
+
+There are a couple of things here to be aware of:
+- We are overwriting the `.gitignore` with the `cloud.gitignore`.
+  This is a way to accommodate your gitignore-needs when working locally. For instance you might want to ignore frontend builds, but you want them build and published to cloud.  
+- We have a special `cloud.zipignore`.
+  This is a convenient way to tell the pipeline which files **NOT** to include when creating the zip package to send to cloud.
+
+If you have frontend assets that needs to be build (using tools like npm/yarn or others), you should add the needed steps before `Zip Source Code`. This is to ensure that the fresh frontend assets will be part of the package to be sent to cloud. 
+
+## Further information
+- [GitHub Actions Documentation](https://docs.github.com/en/actions)
