@@ -133,7 +133,7 @@ If you don't want the pipeline to commit back to the triggering branch, this is 
 ### Cloud-deployment
 
 The `cloud.deployment.yml` show how you can deploy your repository to the left-most environment of your Cloud project.
-The sample shows how to prepare for deployment, actually request the deployment and await for cloud to finish.
+The sample shows how to prepare for deployment, request the deployment and await for cloud to finish.
 
 There are a couple of things here to be aware of:
 - We are overwriting the `.gitignore` with the `cloud.gitignore`.
