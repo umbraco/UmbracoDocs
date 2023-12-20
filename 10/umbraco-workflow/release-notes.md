@@ -8,6 +8,12 @@ If there are any breaking changes or other issues to be aware of when upgrading 
 
 In this section, you can find the release notes for Umbraco Workflow 10. 
 
+### [10.3.5](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.5) (December 20th 2023) 
+* Updates internal license validation to handle licenses registered with 'UmbracoWorkflow' or 'Umbraco.Workflow'
+
+### [10.3.4](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.4) (December 14th 2023) 
+* Introduces lazy constructor parameters to prevent database access when Workflow is installed as part of a new Umbraco install
+
 ### [10.3.3](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.3) (November 28th 2023) 
 
 * Update to use package migrations to avoid startup exception when Workflow is installed as part of a new Umbraco installation [#48](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/48)
