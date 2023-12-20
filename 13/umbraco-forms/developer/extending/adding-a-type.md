@@ -217,6 +217,6 @@ public class UmbracoFormsCustomProvidersComposer : IComposer
 
 Add a new HTML file as per the name of the field class (e.g. `textareawithcount.html`) to `\wwwroot\App_Plugins\umbracoforms\Backoffice\Common\FieldTypes\` within your project. For this example, we can copy the original `textarea.html` file used by the standard 'Long Answer' field.
 
-The angularjs client-side files are shipped with Umbraco Forms as part of a Razor Class Library. So you won't find these files on disk when you install the package.
+The AngularJS client-side files are shipped with Umbraco Forms as part of a Razor Class Library. So you won't find these files on disk when you install the package.
 
 However if you do want to reference them you can view and extract them from the [`Umbraco.Forms.StaticAssets` NuGet package](https://nuget.info/packages/Umbraco.Forms.StaticAssets).
