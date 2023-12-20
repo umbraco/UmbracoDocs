@@ -12,7 +12,7 @@ You will need to define your pipeline in YAML, and find a way to interact with t
 
 
 {% hint style="info" %}
-We have created a sample pipeline for Azure Devops which includes YAML-files and custom PowerShell scripts to interact with the Umbraco Cloud API.
+We have created a sample pipeline for Azure Devops.  It includes YAML-files and custom PowerShell scripts to interact with the Umbraco Cloud API.
 
 You can get the samples for Azure Devops and GitHub from this [repository](https://GitHub.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
 
@@ -36,8 +36,8 @@ For Azure Devops you will need the following files:
 ## Import Cloud project repository to Azure Devops
 Go to your repositories in Azure Devops and click on "Create a repository".
 
-- Create a new empty repository (don't add a README and don't add a .gitignore), and note down the clone url.
-- Go to the Umbraco Cloud Portal and clone your cloud project down locally. [This article](../../../working-locally.md#cloning-an-umbraco-cloud-project) describes how you can find the clone url.
+- Create a new empty repository (don't add a README and don't add a .gitignore), and note down the clone URL.
+- Go to the Umbraco Cloud Portal and clone your cloud project down locally. [This article](../../../working-locally.md#cloning-an-umbraco-cloud-project) describes how you can find the clone URL.
 - Now working locally remove the Git Remote called `origin``, which currently points to Umbraco Cloud
 
  ```sh 
@@ -52,7 +52,7 @@ Go to your repositories in Azure Devops and click on "Create a repository".
  git symbolic-ref HEAD refs/heads/main
  ```
 
-- Add a new remote called origin and pointing to the Azure Devops clone url and push
+- Add a new remote called origin and pointing to the Azure Devops clone URL and push
 
  ```sh 
  git remote add origin https://{your-organization}@dev.azure.com/{your-organization}/{azure-project-scope}/_git/{your-repository}
@@ -139,7 +139,7 @@ There are a couple of things here to be aware of:
 - We are overwriting the `.gitignore` with the `cloud.gitignore`.
   This is a way to accommodate your gitignore-needs when working locally. For instance you might want to ignore frontend builds, but you want them build and published to cloud.  
 - We have a special `cloud.zipignore`.
-  This is a convenient way to tell the pipeline which files **NOT** to include when creating the zip package to send to cloud.
+  This is a convenient way to tell the pipeline which files **not** to include when creating the zip package to send to cloud.
 
 If you have frontend assets that needs to be build (using tools like npm/yarn or others), you should add the needed steps before `Zip Source Code`. This is to ensure that the fresh frontend assets will be part of the package to be sent to cloud. 
 

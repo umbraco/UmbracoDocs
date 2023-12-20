@@ -12,7 +12,7 @@ You will need to define your pipeline in YAML, and find a way to interact with t
 
 
 {% hint style="info" %}
-We have created a sample pipeline for GitHub which includes YAML-files and custom PowerShell scripts to interact with the Umbraco Cloud API.
+We have created a sample pipeline for GitHub. It includes YAML-files and custom PowerShell scripts to interact with the Umbraco Cloud API.
 
 You can get the samples for GitHub and Azure Devops from this [repository](https://GitHub.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
 
@@ -36,8 +36,8 @@ For GitHub you will need the following files:
 ## Import Cloud project repository to GitHub
 Go to your repositories in GitHub and click on "New".
 
-- Create a new empty repository in GitHub, and note down the clone url.
-- Go to the Umbraco Cloud Portal and clone your cloud project down locally. [This article](../../../working-locally.md#cloning-an-umbraco-cloud-project) describes how you can find the clone url.
+- Create a new empty repository in GitHub, and note down the clone URL.
+- Go to the Umbraco Cloud Portal and clone your cloud project down locally. [This article](../../../working-locally.md#cloning-an-umbraco-cloud-project) describes how you can find the clone URL.
 - Now working locally remove the Git Remote called `origin``, which points to Umbraco Cloud
 
  ```sh 
@@ -52,7 +52,7 @@ Go to your repositories in GitHub and click on "New".
  git symbolic-ref HEAD refs/heads/main
  ```
 
-- Add a new remote called origin and pointing to the GitHub clone url
+- Add a new remote called origin and pointing to the GitHub clone URL
 
  ```sh 
  git remote add origin https://github.com/{your-organization}/{your-repository}.git
@@ -76,7 +76,7 @@ The pipeline needs to know which Umbraco Cloud project to deploy to. In order to
 - Create a `repository variable` with the name `PROJECT_ID` and the value `Project ID` value from the Umbraco Portal.
 
 {% hint style="info" %}
-If you want to use other names for the variable or secret, you simply need to rename the environment variables in `main.yml`.
+If you want to use other names for the variable or secret, you need to rename the environment variables in `main.yml`.
 
 ```yaml
 env:
@@ -124,20 +124,20 @@ Keep in mind that you do not need to retain the dotnet build artifact for upload
 ### Cloud-sync
 
 The `cloud-sync.yml` shows how you can sync your Github repository with the left-most environment of your Cloud project.
-In this sample, it simply accepts any change from the api and applies and commits it back to the branch which triggered the pipeline. But the commit does not trigger the pipeline again.
+In this sample, it accepts any change from the api and applies and commits it back to the branch which triggered the pipeline. But the commit does not trigger the pipeline again.
 
-If you don't want the pipeline to directly commit back to the triggering branch, this is where you need to change the pipeline to fit your needs. 
+If you don't want the pipeline to commit back to the triggering branch, this is where you need to change the pipeline. 
 
 ### Cloud-deployment
 
 The `cloud.deployment.yml` show how you can deploy your repository to the left-most environment of your Cloud project.
-The sample shows how to prepare for deployment, actually request the deployment and await for cloud to finish.
+The sample shows how to prepare for deployment, request the deployment and await for cloud to finish.
 
 There are a couple of things here to be aware of:
 - We are overwriting the `.gitignore` with the `cloud.gitignore`.
   This is a way to accommodate your gitignore-needs when working locally. For instance you might want to ignore frontend builds, but you want them build and published to cloud.  
 - We have a special `cloud.zipignore`.
-  This is a convenient way to tell the pipeline which files **NOT** to include when creating the zip package to send to cloud.
+  This is a convenient way to tell the pipeline which files **not** to include when creating the zip package to send to cloud.
 
 If you have frontend assets that needs to be build (using tools like npm/yarn or others), you should add the needed steps before `Zip Source Code`. This is to ensure that the fresh frontend assets will be part of the package to be sent to cloud. 
 
