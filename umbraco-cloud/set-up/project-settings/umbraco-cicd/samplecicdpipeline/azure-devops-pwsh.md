@@ -101,7 +101,7 @@ The pipeline needs to know which Umbraco Cloud project to deploy to. In order to
 
 
 {% hint style="info" %}
-If you want to use other names for the variable, you simply need to rename the affected variables in `azure-release-pipelin.yaml`.
+If you want to use other names for the variable, you need to rename the affected variables in `azure-release-pipelin.yaml`.
 
 {% endhint %}
 
@@ -126,9 +126,9 @@ Keep in mind that you do not need to retain the dotnet build artifact for upload
 ### Cloud-sync
 
 The `cloud-sync.yml` shows how you can sync your Azure Devops repository with the left-most environment of your Cloud project.
-In this sample, it simply accepts any change from the api and applies and commits it back to the branch which triggered the pipeline. But the commit does not trigger the pipeline again.
+In this sample, it accepts any change from the api and applies and commits it back to the branch which triggered the pipeline. But the commit does not trigger the pipeline again.
 
-If you don't want the pipeline to directly commit back to the triggering branch, this is where you need to change the pipeline to fit your needs. 
+If you don't want the pipeline to commit back to the triggering branch, this is where you need to change the pipeline. 
 
 ### Cloud-deployment
 
