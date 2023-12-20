@@ -12,7 +12,13 @@ If you are upgrading to a new major version, you can find information about the 
 
 In this section, you can find the release notes for Umbraco Workflow 12. For earlier versions, refer to the version-specific documentation.
 
-#### [12.2.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.0) (December 14th 2023)
+#### [12.2.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.2) (December 20th 2023)
+* Updates internal license validation to handle licenses registered with 'UmbracoWorkflow' or 'Umbraco.Workflow'
+
+#### [12.2.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.1) (December 14 2023)
+* Introduces lazy constructor parameters to prevent database access when Workflow is installed as part of a new Umbraco install
+
+#### [12.2.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.0) (November 28th 2023)
 
 * **FEATURE** => Advanced Search dashboard. Refer to [Advanced Search dashboard](advanced-search/advanced-search-dashboard.md) for more details.
 * Update to use package migrations to avoid startup exception when Workflow is installed as part of a new Umbraco installation [#48](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/48)
