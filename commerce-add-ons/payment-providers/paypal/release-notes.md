@@ -16,6 +16,10 @@ In this section, you can find the release notes for each version of PayPal Payme
 
 <summary>Version 13</summary>
 
+#### [13.0.1](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.PayPal/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.1) (December 20th 2023)
+
+* Fixed regression due to Flurl now using System.Text.Json by defualt and so serialization wasn't working correctly. Forced use of Newtonsoft serializer untill wil can fully test using System.Text.Json
+
 #### 13.0.0 (December 13th 2023)
 
 * Upgraded Umbraco & Umbraco Commerce dependencey to v13
