@@ -8,7 +8,7 @@ The Green Web Foundation has a [published list of green hosts](https://www.thegr
 
 ## SaaS/PaaS vs IaaS & On-prem
 
-Using **Software as a Service (SaaS) services** means you are offloading responsibility for a service to a third party so choose wisely. Use providers who can show they are using renewable energy and have committed to using reneewable energy and other sustainablity best practices. The best providers will balance the load on the underlying infrastructure so that overall utilization is high and they don’t have idle servers.
+Using **Software as a Service (SaaS) services** means you are offloading responsibility for a service to a third party so choose wisely. Use providers who can show they are using renewable energy and have committed to using renewable energy and other sustainability best practices. The best providers will balance the load on the underlying infrastructure so that overall utilization is high and they don’t have idle servers.
 
 **Infrastructure as a Service (IaaS)** is another option, typically in the form of Virtual Machines (VM) and other infrastructure in the cloud. This option means you have to deal with the overhead of running a VM, including patching and other operational concerns. This way, it can be difficult to ensure that `hardware` is fully utilized. Idling or non-efficient use of hardware means energy being used that isn’t doing effective work. Considering technology like Kubernetes may help with this.
 
