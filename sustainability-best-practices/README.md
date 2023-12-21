@@ -10,7 +10,7 @@ As a global society, we should be making an effort to [be on track with the nece
 
 The severe disruption to society will also extend to businesses with physical and digital infrastructure suffering damage, affecting employee’s ability to work.
 
-The [2023 Edelman Trust Barometer found that business is the most trusted institution](https://www.edelman.com/trust/2023/trust-barometer), above NGOs, governments, and media. Therefore, it is vital for businesses to live up that trust to that on issues like climate and ecological emergencies.
+The [2023 Edelman Trust Barometer found that business is the most trusted institution](https://www.edelman.com/trust/2023/trust-barometer), above NGOs, governments, and media. Therefore, businesses need to live up to that trust on issues like climate and ecological emergencies.
 
 Digital industry organizations have a part to play in meeting the challenge of reducing emissions:
 
