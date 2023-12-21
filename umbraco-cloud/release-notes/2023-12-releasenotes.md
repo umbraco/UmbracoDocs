@@ -40,7 +40,7 @@ For more in-depth information on the import/export feature and other additions i
 You can also visit the documentation page for the [export/import of schema and content](https://docs.umbraco.com/umbraco-deploy/deployment-workflow/import-export) for more details.
 
 ## TLS 1.3 For All Plans
-In our commitment to providing top-tier security, we have expanded the availability of TLS (Transport Layer Security) 1.3 to all Umbraco Cloud plans. This enhancement means users can now activate TLS 1.3 for their custom hostnames, bringing advanced security settings to all project plans.
+In our commitment to providing top-tier security, we have expanded the availability of Transport Layer Security (TLS) 1.3 to all Umbraco Cloud plans. This enhancement means users can now activate TLS 1.3 for their custom hostnames, bringing advanced security settings to all project plans.
 
 ![TLS 1.3 default enabled](images/TLS13.png)
 
