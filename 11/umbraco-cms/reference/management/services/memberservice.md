@@ -2,6 +2,8 @@
 
 The MemberService acts as a "gateway" to Umbraco data for operations which are related to Members.
 
+[Browse the API documentation for IMemberService interface](https://apidocs.umbraco.com/v11/csharp/api/Umbraco.Cms.Core.Services.IMemberService.html).
+
  * **Namespace:** `Umbraco.Cms.Core.Services`
  * **Assembly:** `Umbraco.Core.dll`
 
