@@ -2,52 +2,29 @@
 
 The `RelationService` is pretty awesome as it allows you to create relations between objects that would otherwise have no obvious connection.
 
-* **Namespace:** `Umbraco.Core.Services`
+[Browse the API documentation for IRelationService interface](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.Services.IRelationService.html).
+
+* **Namespace:** `Umbraco.Cms.Core.Services`
 * **Assembly:** `Umbraco.Core.dll`
 
 ## Getting the service
-
-When you are using an Umbraco controller class (Such as `SurfaceController` or `RenderMvcController`) you have access to the `RelationService` through the `ServiceContext`:
 
 ```csharp
 using System.Web.Mvc;
 using Umbraco.Web.Models;
 using Umbraco.Web.Mvc;
 
-namespace Doccers.Core.Controllers;
-
-public class HomeController : RenderMvcController
-{
-    public ActionResult Home(ContentModel model)
-    {
-        var rs = Services.RelationService;
-
-        return CurrentTemplate(model);
-    }
-}
-```
-
-You can also use the `RelationService` in any other class by injecting its interface:
+using Umbraco.Cms.Core.Services;
 
 ```csharp
-using Umbraco.Core.Composing;
-using Umbraco.Core.Services;
-
-namespace Doccers.Core.Components;
-
-public class RelationComponent : IComponent
+public class MyClass
 {
-    private readonly IRelationService _relationService;
+    private IRelationService _relationService_;
 
-    public RelationComponent(IRelationService relationService)
-    {
-        _relationService = relationService;
-    }
-
-    public void Initialize() { }
-
-    public void Terminate() { }
-}
+ public MyClass(IRelationService relationService)
+ {
+  _relationService_ = relationService;
+ }
 ```
 
 ## Methods
@@ -445,5 +422,7 @@ Browsing `/umbraco/api/relations/getbyrelationtypealias?alias=homesick` now retu
 ![Relations](../../../../../10/umbraco-cms/reference/management/services/images/relations-api.PNG)
 
 {% hint style="info" %}
+
 If you want to do something similar to this it is recommended that you wrap a caching layer around it, as the RelationService queries the database directly.
+
 {% endhint %}
