@@ -1,6 +1,6 @@
 # Image optimization
 
-Images typically make up [42% of the Largest Contentful Paint](https://paulcalvano.com/2021-06-07-lcp-httparchive/) element for websites, responsible for the largest over-the-wire transfer rates. We can reduce their size and deliver them with optimization in mind.
+Images typically make up [42% of the Largest Contentful Paint](https://paulcalvano.com/2021-06-07-lcp-httparchive/) element for websites, being responsible for the largest over-the-wire transfer rates. We can reduce their size and deliver them with optimization in mind.
 
 ## Optimize before upload
 
