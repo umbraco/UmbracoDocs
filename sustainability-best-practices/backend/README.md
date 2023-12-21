@@ -6,7 +6,7 @@ description: >-
 
 # Best Practice Goals for Backend Developers
 
-For a summary of subjects and areas to look at 
+Below you can find a summary of subjects and areas to look into:
 <table data-view="cards">
   <tbody>
     <tr>
