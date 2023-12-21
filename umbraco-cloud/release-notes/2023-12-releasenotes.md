@@ -24,7 +24,7 @@ The standout feature in the recent minor Deploy release introduces valuable opti
 A key aspect of the upgraded Umbraco Deploy is its focus on streamlining content operations, particularly beneficial for editors and website managers. This feature robustly supports substantial content transfers to upstream environments and ensures the efficient restoration of content to downstream environments. The enhanced functionality addresses the challenges of operational failures and timeouts, which are particularly prevalent in cloud-based environments like Azure web apps.
 
 ### Simplified Project Migration for Developers
-For developers, the latest iteration of Umbraco Deploy significantly improves the process of project migration. Whether transitioning projects into Umbraco Cloud or navigating between different Umbraco versions, the new Deploy feature simplifies these tasks. It offers an intuitive interface for selecting and exporting specific content items, content trees, or entire workspaces into a zip file format.
+For developers, the latest iteration of Umbraco Deploy improves the process of project migration. Whether transitioning projects into Umbraco Cloud or navigating between different Umbraco versions, the new Deploy feature simplifies these tasks. It offers an intuitive interface for selecting and exporting specific content items, content trees, or entire workspaces into a zip file format.
 
 This capability eases the migration process, allowing for the efficient handling and transfer of large data volumes. Upon importing this zip file into a new environment, the content is thoroughly read, validated, and seamlessly integrated, updating the information in Umbraco.
 
