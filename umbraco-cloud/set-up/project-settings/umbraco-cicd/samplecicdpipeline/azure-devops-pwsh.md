@@ -8,7 +8,7 @@ description: >-
 
 Before setting up the pipeline in Azure DevOps, make sure that the steps in the [Configuring a CI/CD pipeline](./) are done.
 
-You will need to define your pipeline in YAML, and find a way to interact with the Umbraco Cloud Api.
+You will need to define your pipeline in YAML, and find a way to interact with the Umbraco Cloud API.
 
 
 {% hint style="info" %}
@@ -126,7 +126,7 @@ Keep in mind that you do not need to retain the dotnet build artifact for upload
 ### Cloud-sync
 
 The `cloud-sync.yml` shows how you can sync your Azure DevOps repository with the left-most environment of your Cloud project.
-In this sample, it accepts any change from the api and applies and commits it back to the branch which triggered the pipeline. However the commit does not trigger the pipeline again.
+In this sample, it accepts any change from the API and applies and commits it back to the branch which triggered the pipeline. However the commit does not trigger the pipeline again.
 
 If you don't want the pipeline to commit back to the triggering branch, this is where you need to change the pipeline. 
 
