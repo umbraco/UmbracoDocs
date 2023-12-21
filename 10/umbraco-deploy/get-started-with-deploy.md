@@ -16,7 +16,7 @@ For example, when working locally you might create a new Document Type. This wil
 
 When you want this deployed to your next environment, you would trigger your CI/CD process (for example Azure DevOps or Github Actions). This will push the changes to your environment. Once the build deployment completes successfully, a Deployment Trigger would be executed as an HTTPS request to your target environment. All changes found in the `umbraco/Deploy/Revision` folder will then be extracted into the Umbraco target environment.
 
-![Deploy workflow](images/Deploy\_concept.png)
+![Deploy workflow](<images/Deploy\_concept (1).png>)
 
 ## [Quick start (new sites)](getting-started/install-configure.md)
 
@@ -26,5 +26,5 @@ There are three main steps you need to go through in order to start using Umbrac
    * Set up a repository and then install a new Umbraco project inside it.
 2. [Install Umbraco Deploy via NuGet](getting-started/install-configure.md#installing-and-configuring-umbraco-deploy)
    * Umbraco Deploy can be installed via NuGet.
-3. [Configure CI/CD build server](getting-started/cicd-pipeline/README.md)
+3. [Configure CI/CD build server](getting-started/cicd-pipeline/)
    * Umbraco Deploy needs a CI/CD build server needs to be set up to run when you want changes to be deployed to next upstream environment

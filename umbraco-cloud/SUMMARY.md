@@ -3,7 +3,7 @@
 * [What is Umbraco Cloud?](README.md)
 * [Frequently asked questions](frequently-asked-questions.md)
 * [Security](security.md)
-* [Sustainability Best Practices](http://127.0.0.1:5000/o/vHdmkfI8smZW50A5yIZD/s/ZOU4fHcVxqYnC8V1dry6/)
+* [Sustainability Best Practices](https://docs.umbraco.com/sustainability-best-practices/)
 
 ## Getting Started
 
@@ -45,6 +45,7 @@
     * [Configuring a CI/CD pipeline](set-up/project-settings/umbraco-cicd/samplecicdpipeline/README.md)
       * [Azure DevOps](set-up/project-settings/umbraco-cicd/samplecicdpipeline/azure-devops.md)
       * [GitHub Actions](set-up/project-settings/umbraco-cicd/samplecicdpipeline/github-actions.md)
+    * [Troubleshooting](set-up/project-settings/umbraco-cicd/Troubleshooting.md)
     * [Known Limitations and Considerations](set-up/project-settings/umbraco-cicd/KnownLimitationsAndConsiderations.md)
   * [External Services](set-up/project-settings/external-services.md)
   * [Usage](set-up/project-settings/usage.md)

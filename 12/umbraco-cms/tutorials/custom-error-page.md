@@ -149,23 +149,23 @@ The following steps guides you through setting up a page for internal server err
 
     ```csharp
     using Microsoft.AspNetCore.Mvc;
-    namespace [YOUR_PROJECT_NAME].Controllers
+    
+    namespace [YOUR_PROJECT_NAME].Controllers;
+    
+    public class ErrorController : Controller
     {
-        public class ErrorController : Controller
+        [Route("Error")]
+        public IActionResult Index()
         {
-            [Route("Error")]
-            public IActionResult Index()
+            if (Response.StatusCode == StatusCodes.Status500InternalServerError)
             {
-                if (Response.StatusCode == StatusCodes.Status500InternalServerError)
-                {
-                    return Redirect("/statuscodes/500");
-                }
-                else if (Response.StatusCode != StatusCodes.Status200OK)
-                {
-                    return Redirect("/statuscodes");
-                }
-                return Redirect("/");
+                return Redirect("/statuscodes/500");
             }
+            else if (Response.StatusCode != StatusCodes.Status200OK)
+            {
+                return Redirect("/statuscodes");
+            }
+            return Redirect("/");
         }
     }
     ```

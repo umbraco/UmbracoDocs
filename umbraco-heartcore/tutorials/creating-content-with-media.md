@@ -74,7 +74,7 @@ To use the Management API, you need an API key. You can get your API key by foll
 1. Go to the `Users` section in the backoffice and click the `API Keys` tab in the editor window.
 2. Click show on the API key you want to use.
 
-If you do not have an API key yet, you can create one under `Users > Your User > API Keys > Create API Key`. See the [Getting Started](../getting-started/#backoffice-users-and-api-keys) section for more information on how to do this.
+If you do not have an API key yet, you can create one under `Users > Your User > API Keys > Create API Key`. See the [Getting Started](broken-reference) section for more information on how to do this.
 
 ### Getting the content node ID
 

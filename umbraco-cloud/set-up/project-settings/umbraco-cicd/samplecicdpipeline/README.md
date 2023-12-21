@@ -1,14 +1,12 @@
 # Configuring a CI/CD pipeline
 
-Getting started with configuring a CI/CD pipeline
-
-{% hint style="warning" %}
-This documentation is currently a work in progress.
-{% endhint %}
-
 Learn how to configure a CI/CD pipeline in **Azure DevOps** and **GitHub Actions** Workflows using the sample scripts provided.
 
 You'll find example shell scripts and pipeline configurations in the **Sample scripts** section, covering both Azure DevOps and GitHub Actions Workflows.
+
+{% hint style="info" %}
+Samples are provided "AS IS" to get you started. Please familiarize yourself with them, and feel free to change them to fit your needs.
+{% endhint %}
 
 ## Why should one configure a sample CI/CD pipeline?
 
@@ -24,20 +22,15 @@ You can use AzureDevops as an external repository and with the pipelines, it wil
 
 ![UmbracoCloud CI/CD sample pipeline](../../../images/UmbracoCloudCicdSample.png)
 
-## Prerequisites: Setting Up an Umbraco Cloud Project
+## Setting Up an Umbraco Cloud Project
 
 Before proceeding, you'll need an Umbraco Cloud project and a CI/CD pipeline. You will also need the required files to add to your pipeline for successful interaction with the Umbraco Cloud API.
 
-1. Create an Umbraco Cloud Project: Preferably with a development environment. You can either create a trial, create a new project, or use an existing one.
-2. Create a new or use an existing CI/CD pipeline in [Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/organizations/projects/create-project?view=azure-devops\&tabs=browser).
-3. Get your set of supporting files: Download sample files as a [zip-file](https://drive.google.com/file/d/1Wpxib2F5-eIyVsSdm3EBvA54eOrgiwLi/view?usp=drive\_link).
+1. Create An Umbraco Cloud Project: Preferably with a development environment. You can either create a [trial](https://try.umbraco.com/cloud?utm\_source=github.com\&utm\_medium=referral\&utm\_campaign=), [create a new project](https://docs.umbraco.com/umbraco-cloud/#umbraco-cloud-portal-project), or use an existing one.
+2. Create a new or an existing CI/CD pipeline in [Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/organizations/projects/create-project?view=azure-devops\&tabs=browser) or [GitHub Actions](https://github.com/features/actions).
 
 {% hint style="info" %}
-The only file you need to make changes to is the `.yaml file`.
-{% endhint %}
-
-{% hint style="info" %}
-On the page "What is Umbraco CI/CD Flow", deployments are targeted at the leftmost environment in your Umbraco Cloud setup. This means if you have a Development environment, it will be automatically selected for deployment. If no Development environment exists, the Live environment will be used.
+In this guide, deployments are targeted at the leftmost environment in your Umbraco Cloud setup. This means if you have a Development environment, it will be automatically selected for deployment. If no Development environment exists, the Live environment will be used.
 {% endhint %}
 
 ### Obtaining the Project ID and API Key
@@ -47,36 +40,48 @@ To get started with API interactions, you'll need to obtain your Project ID and 
 1. Navigate to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects) and select your project.
 2. Go to `Settings` -> `Advanced`. This is where you can generate an API key and find your Project ID.
 
-{% hint style="info" %}
-The API key is tied to the specific project for which it is generated. Make sure to keep it secure, as it will be used for all subsequent API interactions related to that project.
+<figure><img src="../../../../.gitbook/assets/image (8).png" alt=""><figcaption><p>Advanced tab on Cloud.</p></figcaption></figure>
+
+{% hint style="warning" %}
+The API key is tied to the specific project for which it is generated. Make sure to keep it secure in Azure or GitHub, as it will be used for all subsequent API interactions related to that project.
 {% endhint %}
 
 ### Cloning the Umbraco Cloud Repository
 
-To get started with your local development, you'll need to clone the repository of the environment you intend to work with. Once cloned, make a copy of it in a new folder. In this example, we'll create a new folder named `local-cicd-demo-site` for the local repository.
+To get started with your local development, you'll need to [clone the repository](https://docs.umbraco.com/umbraco-cloud/set-up/working-locally) of the environment you intend to work with. Once cloned, make a copy of it in a new folder. In this example, we'll create a new folder named `local-cicd-demo-site` for the local repository by using Gitbash. The copy will be used in either Azure DevOps or GitHub actions repository.
 
 ```sh
 # Clone the development environment repository
-git clone https://scm.umbraco.io/euwest01/dev-cicd-demo-site.git
+git clone https://scm.umbraco.io/euwest01/your-cloud-project-alias.git
 
 # Copy the repository to a new local folder
-cp -r dev-cicd-demo-site local-cicd-demo-site
+cp -r your-cloud-project-alias local-cicd-demo-site
 ```
 
-This will set up your local workspace, allowing you to work on the project before pushing changes back to the Umbraco Cloud repository.
+{% hint style="info" %}
+If you use the command line (cmd) to clone the project then you can use `copy -r` instead of `cp -r` to make a copy of the folder.
+{% endhint %}
+
+This will set up your local workspace, allowing you to work on the project before pushing changes back to the Umbraco Cloud repository.&#x20;
 
 ### Reconfiguring Git Remotes
 
-After cloning the Umbraco Cloud repository, it's essential to remove its remote settings so that you can link it to your own company's repository. In this example, we'll be using an Azure DevOps-hosted repository as the new origin.&#x20;
+After cloning the Umbraco Cloud repository, it's essential to remove its remote settings so that you can link it to your own or your company's repository.&#x20;
+
+In the below example, we'll be using an Azure DevOps-hosted repository as the new origin.&#x20;
 
 Follow the steps below to reset the Git remote from the root folder of `local-cicd-demo-site`:
 
 ```sh
 # Reset the Git remote to point to the new Azure DevOps repository
-git remote set-url origin git@ssh.dev.azure.com:v3/umbraco/Cloud%20Team/local-cicd-demo-site
+git remote set-url origin https://company-repository-name@dev.azure.com/company-repository-name/azuredevops-project-name/_git/azuredevops-project-name
 ```
 
-By executing this command, you'll disconnect the local repository from the Umbraco Cloud repository and connect it to your company's Azure DevOps repository. This allows you to manage your project within your own version control system.
+{% hint style="info" %}
+You can get the origin link from your [Azure DevOps project repository](https://learn.microsoft.com/en-us/azure/devops/repos/git/clone?view=azure-devops\&tabs=visual-studio-2022): Repos -> under “Clone to your computer” choose “HTTPS” and then copy the link. `SSH` can also be used if preferred.
+{% endhint %}
+
+By executing this command, you'll disconnect the local repository from the Umbraco Cloud repository and connect it to your own or your company's Azure DevOps repository or GitHub Actions. This allows you to manage your project within your own version control system.
 
 ### Optional: Renaming the Master Branch to Main
 
@@ -103,9 +108,3 @@ Details the setup of a CI/CD pipeline using Azure DevOps.
 ### [GitHub Actions](github-actions.md)
 
 Details the setup of a CI/CD pipeline using GitHub Actions.
-
-###
-
-
-
-The deployment artifact consists of source files to maintain consistency with Umbraco Cloud's existing Git-based deployment flow. Only zip-archived files are currently supported, and the folder structure must align with a standard Umbraco Cloud project.

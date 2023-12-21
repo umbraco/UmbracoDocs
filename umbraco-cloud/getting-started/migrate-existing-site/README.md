@@ -92,7 +92,7 @@ In this next part, you are going to set up your Umbraco Cloud project and clone 
 
 Before the migration process can start, you will need to have a Umbraco Cloud project you can migrate your project into.
 
-![How to start a Umbraco Cloud trial](images/Cloud-trial-gif.gif)
+<figure><img src="../../.gitbook/assets/Umbraco-Cloud.Trial-Flow.gif" alt=""><figcaption><p>How to start a Umbraco Cloud trial</p></figcaption></figure>
 
 1. The best way to get started with Umbraco Cloud is to [create a trial project](https://umbraco.com/)
 2. When your project is starting choose to start with a _clean slate_ - you need to have an empty Cloud project for the migration to be successful
@@ -155,7 +155,6 @@ Umbraco Identity (Umbraco ID) is the Single Sign-On (SSO) feature across all Umb
 
 It is required to access any project pages as well as the backoffice.
 
-To migrate the users from your on-premises site to Umbraco Cloud and Umbraco ID, follow the [Migrate Users to Cloud guide](broken-reference) article.
 {% endhint %}
 
 With that confirmed, it's time to prepare to migrate the project to Umbraco Cloud.

@@ -27,7 +27,7 @@ Follow these steps:
 Use the following steps:
 
 * Connect to your SQL Server using Sql Server Management Studio (SSMS).
-* Expand "Databases", right-click "Databases", select "Tasks", then select "Import Data-tier Application...".
+* Expand "Databases", right-click "Databases", then select "Import Data-tier Application...".
 * Proceed through the dialog, by browsing to the saved location of your `bacpac` file, and then setting the options appropriate to your configuration
 * Complete the import dialog and the database will be restored.
 

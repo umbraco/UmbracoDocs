@@ -95,19 +95,18 @@ You may want to subscribe to many notifications, meaning your `ConfigureServices
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Services.Notifications;
 
-namespace MySite
+namespace MySite;
+
+public static class UmbracoBuilderNotificationExtensions
 {
-    public static class UmbracoBuilderNotificationExtensions
+    public static IUmbracoBuilder AddDontShoutNotifications(this IUmbracoBuilder builder)
     {
-        public static IUmbracoBuilder AddDontShoutNotifications(this IUmbracoBuilder builder)
-        {
-            builder
-                .AddNotificationHandler<ContentPublishingNotification, DontShout>()
-                .AddNotificationHandler<TemplateSavingNotification, DontShout>()
-                .AddNotificationHandler<MediaSavingNotification, DontShout>();
-            
-            return builder;
-        }
+        builder
+            .AddNotificationHandler<ContentPublishingNotification, DontShout>()
+            .AddNotificationHandler<TemplateSavingNotification, DontShout>()
+            .AddNotificationHandler<MediaSavingNotification, DontShout>();
+        
+        return builder;
     }
 }
 ```

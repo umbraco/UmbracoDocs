@@ -26,18 +26,17 @@ using Examine.Lucene;
 using Microsoft.Extensions.Options;
 
 namespace Umbraco.Docs.Samples.Web.CustomIndexing;
-{
-    public class ConfigureExternalIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
-    {
-        public void Configure(string name, LuceneDirectoryIndexOptions options)
-        {
-            throw new System.NotImplementedException();
-        }
 
-        public void Configure(LuceneDirectoryIndexOptions options)
-        {
-            throw new System.NotImplementedException();
-        }
+public class ConfigureExternalIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
+{
+    public void Configure(string name, LuceneDirectoryIndexOptions options)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void Configure(LuceneDirectoryIndexOptions options)
+    {
+        throw new System.NotImplementedException();
     }
 }
 ```
@@ -54,13 +53,12 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 
 namespace Umbraco.Docs.Samples.Web.CustomIndexing;
+
+public class ExamineComposer : IComposer
 {
-    public class ExamineComposer : IComposer
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.Services.ConfigureOptions<ConfigureExternalIndexOptions>();
-        }
+        builder.Services.ConfigureOptions<ConfigureExternalIndexOptions>();
     }
 }
 ```
@@ -69,7 +67,7 @@ namespace Umbraco.Docs.Samples.Web.CustomIndexing;
 
 By default, Examine will store values into the Lucene index as "Full Text" fields, meaning the values will be indexed and analyzed for a textual search. However, if a field value is numerical, date/time, or another non-textual value type, you might want to change how the value is stored in the index. This will let you take advantage of some value type-specific search features such as numerical or date range.
 
-There is some documentation about this in the [Examine documentation](https://shazwazza.github.io/Examine/configuration).
+There is some documentation about this in the [Examine documentation](https://shazwazza.github.io/Examine/articles/configuration.html).
 
 The easiest way to modify how a field is configured is using the `ConfigureNamedOptions` pattern like so:
 
@@ -80,22 +78,21 @@ using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
 
 namespace Umbraco.Docs.Samples.Web.CustomIndexing;
-{
-    public class ConfigureExternalIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
-    {
-        public void Configure(string name, LuceneDirectoryIndexOptions options)
-        {
-            if (name.Equals(Constants.UmbracoIndexes.ExternalIndexName))
-            {
-                options.FieldDefinitions.AddOrUpdate(new FieldDefinition("price", FieldDefinitionTypes.Double));
-            }
-        }
 
-        // Part of the interface, but does not need to be implemented for this.
-        public void Configure(LuceneDirectoryIndexOptions options)
+public class ConfigureExternalIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
+{
+    public void Configure(string name, LuceneDirectoryIndexOptions options)
+    {
+        if (name.Equals(Constants.UmbracoIndexes.ExternalIndexName))
         {
-            throw new System.NotImplementedException();
+            options.FieldDefinitions.AddOrUpdate(new FieldDefinition("price", FieldDefinitionTypes.Double));
         }
+    }
+
+    // Part of the interface, but does not need to be implemented for this.
+    public void Configure(LuceneDirectoryIndexOptions options)
+    {
+        throw new System.NotImplementedException();
     }
 }
 ```
@@ -117,22 +114,21 @@ using Umbraco.Cms.Core;
 using Umbraco.Cms.Infrastructure.Examine;
 
 namespace Umbraco.Docs.Samples.Web.CustomIndexing;
-{
-    public class ConfigureMemberIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
-    {
-        public void Configure(string name, LuceneDirectoryIndexOptions options)
-        {
-            if (name.Equals(Constants.UmbracoIndexes.MembersIndexName))
-            {
-                options.Validator = new MemberValueSetValidator(null, null, new[] {"email"}, null);
-            }
-        }
 
-        // Part of the interface, but does not need to be implemented for this.
-        public void Configure(LuceneDirectoryIndexOptions options)
+public class ConfigureMemberIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
+{
+    public void Configure(string name, LuceneDirectoryIndexOptions options)
+    {
+        if (name.Equals(Constants.UmbracoIndexes.MembersIndexName))
         {
-            throw new System.NotImplementedException();
+            options.Validator = new MemberValueSetValidator(null, null, new[] {"email"}, null);
         }
+    }
+
+    // Part of the interface, but does not need to be implemented for this.
+    public void Configure(LuceneDirectoryIndexOptions options)
+    {
+        throw new System.NotImplementedException();
     }
 }
 ```
@@ -170,22 +166,21 @@ using Umbraco.Cms.Infrastructure.Examine;
 using IHostingEnvironment = Umbraco.Cms.Core.Hosting.IHostingEnvironment;
 
 namespace Umbraco.Docs.Samples.Web.CustomIndexing;
+
+public class ProductIndex : UmbracoExamineIndex
 {
-    public class ProductIndex : UmbracoExamineIndex
+    public ProductIndex(
+        ILoggerFactory loggerFactory,
+        string name,
+        IOptionsMonitor<LuceneDirectoryIndexOptions> indexOptions,
+        IHostingEnvironment hostingEnvironment,
+        IRuntimeState runtimeState)
+        : base(loggerFactory,
+        name,
+        indexOptions,
+        hostingEnvironment,
+        runtimeState)
     {
-        public ProductIndex(
-            ILoggerFactory loggerFactory,
-            string name,
-            IOptionsMonitor<LuceneDirectoryIndexOptions> indexOptions,
-            IHostingEnvironment hostingEnvironment,
-            IRuntimeState runtimeState)
-            : base(loggerFactory,
-            name,
-            indexOptions,
-            hostingEnvironment,
-            runtimeState)
-        {
-        }
     }
 }
 ```
@@ -202,40 +197,39 @@ using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core.Configuration.Models;
 
 namespace Umbraco.Docs.Samples.Web.CustomIndexing;
+
+public class ConfigureProductIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
 {
-    public class ConfigureProductIndexOptions : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
+    private readonly IOptions<IndexCreatorSettings> _settings;
+
+    public ConfigureProductIndexOptions(IOptions<IndexCreatorSettings> settings)
+        => _settings = settings;
+
+    public void Configure(string? name, LuceneDirectoryIndexOptions options)
     {
-        private readonly IOptions<IndexCreatorSettings> _settings;
-
-        public ConfigureProductIndexOptions(IOptions<IndexCreatorSettings> settings)
-            => _settings = settings;
-
-        public void Configure(string? name, LuceneDirectoryIndexOptions options)
+        if (name?.Equals("ProductIndex") is false)
         {
-            if (name?.Equals("ProductIndex") is false)
-            {
-                return;
-            }
-
-            options.Analyzer = new StandardAnalyzer(LuceneVersion.LUCENE_48);
-
-            options.FieldDefinitions = new(
-                new("id", FieldDefinitionTypes.Integer),
-                new("name", FieldDefinitionTypes.FullText)
-            );
-
-            options.UnlockIndex = true;
-
-            if (_settings.Value.LuceneDirectoryFactory == LuceneDirectoryFactory.SyncedTempFileSystemDirectoryFactory)
-            {
-                // if this directory factory is enabled then a snapshot deletion policy is required
-                options.IndexDeletionPolicy = new SnapshotDeletionPolicy(new KeepOnlyLastCommitDeletionPolicy());
-            }
+            return;
         }
 
-        // not used
-        public void Configure(LuceneDirectoryIndexOptions options) => throw new NotImplementedException();
+        options.Analyzer = new StandardAnalyzer(LuceneVersion.LUCENE_48);
+
+        options.FieldDefinitions = new(
+            new("id", FieldDefinitionTypes.Integer),
+            new("name", FieldDefinitionTypes.FullText)
+        );
+
+        options.UnlockIndex = true;
+
+        if (_settings.Value.LuceneDirectoryFactory == LuceneDirectoryFactory.SyncedTempFileSystemDirectoryFactory)
+        {
+            // if this directory factory is enabled then a snapshot deletion policy is required
+            options.IndexDeletionPolicy = new SnapshotDeletionPolicy(new KeepOnlyLastCommitDeletionPolicy());
+        }
     }
+
+    // not used
+    public void Configure(LuceneDirectoryIndexOptions options) => throw new NotImplementedException();
 }
 ```
 
@@ -247,30 +241,29 @@ using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Infrastructure.Examine
 
 namespace Umbraco.Docs.Samples.Web.CustomIndexing;
+
+public class ProductIndexValueSetBuilder : IValueSetBuilder<IContent>
 {
-    public class ProductIndexValueSetBuilder : IValueSetBuilder<IContent>
+    public IEnumerable<ValueSet> GetValueSets(params IContent[] contents)
     {
-        public IEnumerable<ValueSet> GetValueSets(params IContent[] contents)
+        foreach (IContent content in contents.Where(CanAddToIndex))
         {
-            foreach (IContent content in contents.Where(CanAddToIndex))
+            var indexValues = new Dictionary<string, object>
             {
-                var indexValues = new Dictionary<string, object>
-                {
-                    // this is a special field used to display the content name in the Examine dashboard
-                    [UmbracoExamineFieldNames.NodeNameFieldName] = content.Name!,
-                    ["name"] = content.Name!,
-                    // add the fields you want in the index
-                    ["nodeName"] = content.Name!,
-                    ["id"] = content.Id,
-                };
+                // this is a special field used to display the content name in the Examine dashboard
+                [UmbracoExamineFieldNames.NodeNameFieldName] = content.Name!,
+                ["name"] = content.Name!,
+                // add the fields you want in the index
+                ["nodeName"] = content.Name!,
+                ["id"] = content.Id,
+            };
 
-                yield return new ValueSet(content.Id.ToString(), IndexTypes.Content, content.ContentType.Alias, indexValues);
-            }
+            yield return new ValueSet(content.Id.ToString(), IndexTypes.Content, content.ContentType.Alias, indexValues);
         }
-
-        // filter out all content types except "product"
-        private bool CanAddToIndex(IContent content) => content.ContentType.Alias == "product";
     }
+
+    // filter out all content types except "product"
+    private bool CanAddToIndex(IContent content) => content.ContentType.Alias == "product";
 }
 ```
 
@@ -283,41 +276,40 @@ using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Infrastructure.Examine;
 
 namespace Umbraco.Docs.Samples.Web.CustomIndexing;
+
+public class ProductIndexPopulator : IndexPopulator
 {
-    public class ProductIndexPopulator : IndexPopulator
+    private readonly IContentService _contentService;
+    private readonly ProductIndexValueSetBuilder _productIndexValueSetBuilder;
+
+    public ProductIndexPopulator(IContentService contentService, ProductIndexValueSetBuilder productIndexValueSetBuilder)
     {
-        private readonly IContentService _contentService;
-        private readonly ProductIndexValueSetBuilder _productIndexValueSetBuilder;
+        _contentService = contentService;
+        _productIndexValueSetBuilder = productIndexValueSetBuilder;
+        RegisterIndex("ProductIndex");
+    }
 
-        public ProductIndexPopulator(IContentService contentService, ProductIndexValueSetBuilder productIndexValueSetBuilder)
+    protected override void PopulateIndexes(IReadOnlyList<IIndex> indexes)
+    {
+        foreach (IIndex index in indexes)
         {
-            _contentService = contentService;
-            _productIndexValueSetBuilder = productIndexValueSetBuilder;
-            RegisterIndex("ProductIndex");
-        }
+            IContent[] roots = _contentService.GetRootContent().ToArray();
+            index.IndexItems(_productIndexValueSetBuilder.GetValueSets(roots));
 
-        protected override void PopulateIndexes(IReadOnlyList<IIndex> indexes)
-        {
-            foreach (IIndex index in indexes)
+            foreach (IContent root in roots)
             {
-                IContent[] roots = _contentService.GetRootContent().ToArray();
-                index.IndexItems(_productIndexValueSetBuilder.GetValueSets(roots));
-
-                foreach (IContent root in roots)
+                const int pageSize = 10000;
+                var pageIndex = 0;
+                IContent[] descendants;
+                do
                 {
-                    const int pageSize = 10000;
-                    var pageIndex = 0;
-                    IContent[] descendants;
-                    do
-                    {
-                        descendants = _contentService.GetPagedDescendants(root.Id, pageIndex, pageSize, out _).ToArray();
-                        IEnumerable<ValueSet> valueSets = _productIndexValueSetBuilder.GetValueSets(descendants);
-                        index.IndexItems(valueSets);
+                    descendants = _contentService.GetPagedDescendants(root.Id, pageIndex, pageSize, out _).ToArray();
+                    IEnumerable<ValueSet> valueSets = _productIndexValueSetBuilder.GetValueSets(descendants);
+                    index.IndexItems(valueSets);
 
-                        pageIndex++;
-                    }
-                    while (descendants.Length == pageSize);
+                    pageIndex++;
                 }
+                while (descendants.Length == pageSize);
             }
         }
     }
@@ -458,29 +450,27 @@ You can find further inspiration for implementing notification handlers (_for ex
 
 ### ExamineComposer
 
-```c#
+```csharp
 using Examine;
-using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.Notifications;
 using Umbraco.Cms.Infrastructure.Examine;
 
 namespace Umbraco.Docs.Samples.Web.CustomIndexing;
+
+public class ExamineComposer : IComposer
 {
-    public class ExamineComposer : IComposer
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.Services.AddExamineLuceneIndex<ProductIndex, ConfigurationEnabledDirectoryFactory>("ProductIndex");
-                    
-            builder.Services.ConfigureOptions<ConfigureProductIndexOptions>();
+        builder.Services.AddExamineLuceneIndex<ProductIndex, ConfigurationEnabledDirectoryFactory>("ProductIndex");
 
-            builder.Services.AddSingleton<ProductIndexValueSetBuilder>();
+        builder.Services.ConfigureOptions<ConfigureProductIndexOptions>();
 
-            builder.Services.AddSingleton<IIndexPopulator, ProductIndexPopulator>();
+        builder.Services.AddSingleton<ProductIndexValueSetBuilder>();
 
-            builder.AddNotificationHandler<ContentCacheRefresherNotification, ProductIndexingNotificationHandler>();
-        }
+        builder.Services.AddSingleton<IIndexPopulator, ProductIndexPopulator>();
+
+        builder.AddNotificationHandler<ContentCacheRefresherNotification, ProductIndexingNotificationHandler>();
     }
 }
 ```

@@ -11,7 +11,7 @@ You can restore the content in the following ways:
 1. [Restore when starting up the project locally](./#restore-when-starting-up-the-project-locally)
 2. [Workspace Restore](./#workspace-restore)
 3. [Tree Restore](./#tree-restore)
-4. [Partial Restore](Partial-Restore/)
+4. [Partial Restore](./#partial-restore)
 
 ### Restore when starting up the project locally
 

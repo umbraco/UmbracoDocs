@@ -83,6 +83,10 @@ public override WorkflowExecutionStatus Execute(WorkflowExecutionContext context
 
 For all types that use the provider model, settings work this way. By adding the Setting attribute Forms automatically registers the property in the UI and sets the value when the class is instantiated.
 
+Each setting value is stored as a string with the user interface for generating the value defined via the `View` property.
+
+Umbraco Forms ships with [setting types and you can also create your own](./setting-types.md).
+
 ## Validate type settings with ValidateSettings()
 
 The `ValidateSettings()` method which can be found on all types supporting dynamic settings, is used for making sure the data entered by the user is valid and works with the type.
@@ -212,4 +216,6 @@ public class UmbracoFormsCustomProvidersComposer : IComposer
 
 Add a new HTML file as per the name of the field class (e.g. `textareawithcount.html`) to `\wwwroot\App_Plugins\umbracoforms\Backoffice\Common\FieldTypes\` within your project. For this example, we can copy the original `textarea.html` file used by the standard 'Long Answer' field.
 
-If you do not have the original `\wwwroot\App_Plugins\umbracoforms\` folders/files they can be downloaded. This can be done from the 'Package Files' section of the [Umbraco Forms Package](https://our.umbraco.com/packages/developer-tools/umbraco-forms/#tab-package). It will typically be named `UmbracoForms.Files.{version}.zip`.
+The AngularJS client-side files are shipped with Umbraco Forms as part of a Razor Class Library. So you won't find these files on disk when you install the package.
+
+However if you do want to reference them you can view and extract them from the [`Umbraco.Forms.StaticAssets` NuGet package](https://nuget.info/packages/Umbraco.Forms.StaticAssets).

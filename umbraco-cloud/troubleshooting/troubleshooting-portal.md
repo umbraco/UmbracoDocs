@@ -29,7 +29,7 @@ We have some guides on how to fix the most common errors below:
 
 If your issue is not covered above here are some general guidelines on what you should do when you have error states on Cloud environments:
 
-An environment is in an error state because the Umbraco Deploy engine sets markers on the environment, the green one sets a `deploy` marker, the yellow one a `deploy-progress` marker, and the red one a `deploy-failed` marker.
+An environment is in an error state because the Umbraco Deploy engine sets markers on the environment. The green one sets a `deploy` marker, the yellow one a `deploy-progress` marker, and the red one a `deploy-failed` marker.
 
 Sometimes a deployment will fail due to another deployment in progress. You'll need to wait a bit before you can kick in another deployment. Doing this, the deployment will go from failure to complete without needing to do anything extra - read more about [manual data extractions](../set-up/power-tools/manual-extractions.md).
 

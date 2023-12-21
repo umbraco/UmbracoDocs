@@ -4,11 +4,11 @@ updatedLinks: true
 
 # Deploying between Cloud environments
 
-When you are working directly on your Development environment, any changes you make through the Backoffice will automatically be identified and committed to the site's Git repository. This includes Umbraco-specific items like Document types and templates.
+When your are Working in your Development environment, changes made through the Backoffice are automatically detected and committed to the site's Git repository. This includes Umbraco-specific items like Document types and templates.
 
-Changes made on your Cloud environments will show up in the Umbraco Cloud portal, where you will be able to see what files have been added/changed and by whom the changes were made.
+Changes made on your Cloud environments will show up in the Umbraco Cloud portal. You'll be able to see what files have been added/changed and who made the changes.
 
-To deploy metadata changes from one Cloud environment to another, click the **'Deploy changes to ..'** button on the environment where the changes have been made. The deployment will kick in, and you can follow the process in the **Activity Log** by clicking on **View Details** at the bottom of the Cloud portal.
+To deploy metadata changes from one Cloud environment to another, click the **'Deploy changes to ..'** button on the environment where the changes have been made. The deployment initiates, and you can track the process in the **Activity Log** by clicking **View Details** at the Cloud portal's bottom.
 
 ![Deployment in Portal](images/deploy-in-portal_v10.gif)
 
@@ -16,7 +16,7 @@ Once it's done, the changes will be deployed to the next Cloud environment. If y
 
 ## Important Notes
 
-When you deploy from i.e. your Development environment to your Live environment, any changes made to the Live environment will be merged back into the Development environment.
+When you deploy, for example, from your Development environment to your Live environment, changes are made to the Live environment. These changes will then be merged back into the Development environment.
 
 Here are the auto-magical steps Umbraco Cloud goes through when you hit the *"Deploy changes to .."* button:
 

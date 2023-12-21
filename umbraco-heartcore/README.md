@@ -49,7 +49,7 @@ Reference documentation and tutorials for the GraphQL API.
 * [GraphQL API Documentation](api-documentation/graphql/)
 * [GraphQL Filter and Ordering Documentation](api-documentation/graphql/#filtering-and-ordering)
 
-## [Versions and updates](../versions-and-updates.md)
+## [Versions and updates](versions-and-updates.md)
 
 Learn more about how we handle versioning and updates of Heartcore projects.
 

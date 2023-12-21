@@ -14,7 +14,7 @@ The products are:
 * Umbraco Forms
 * Umbraco Deploy
 
-In the table below you can see which version of Umbraco Forms and Deploy you should be running on your Umbraco Cloud project depending on which version of Umbraco CMS, you are running.
+In the table below, you can see which version of Umbraco Forms and Deploy you should be running on your Umbraco Cloud project. Those depend on which version of Umbraco CMS you are running.
 
 | Umbraco CMS | Umbraco Forms | Umbraco Deploy |
 | ----------- | ------------- | -------------- |

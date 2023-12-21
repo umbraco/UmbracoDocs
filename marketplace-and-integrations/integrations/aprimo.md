@@ -60,7 +60,7 @@ The configuration is split into two components:
 
 The authorization process is managed using the [OAuth flow - Authorization Code with Proof Key for Code Exchange (PKCE)](https://developers.aprimo.com/marketing-operations/rest-api/authorization/#module7). When making a request for an access token, you will need to generate a code verifier and a code challenge.
 
-`Client Id` and `Client Secret` details are retrieved from your [Aprimo Client Registration](https://developers.aprimo.com/marketing-operations/rest-api/authorization/#module2), which you will need to set up with the redirect URI pointing to the [`AprimoAuthorizationController`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/feature/aprimo-integration/src/Umbraco.Cms.Integrations.DAM.Aprimo/Controllers/AprimoAuthorizationController.cs) - `OAuth` action.
+`Client Id` and `Client Secret` details are retrieved from your [Aprimo Client Registration](https://developers.aprimo.com/marketing-operations/rest-api/authorization/#module2), which you will need to set up with the redirect URI pointing to the [`AprimoAuthorizationController`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.DAM.Aprimo/Controllers/AprimoAuthorizationController.cs) - `OAuth` action.
 
 Using the `offline_access` scope, the response from Aprimo API will contain a refresh token, with an expiration period of 10 days. This will keep the API access available for the front-end rendering of the images.
 

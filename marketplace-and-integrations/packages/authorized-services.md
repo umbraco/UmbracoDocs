@@ -125,7 +125,9 @@ An example of doing this through the `appSettings.json` file is shown below. Oth
             "ApiKey": "",
             "ApiKeyProvision": {
               "Method": "HttpHeader|QueryString",
-              "Key": ""
+              "Key": "",
+              "AdditionalParameters": {
+              }
             },
             "ClientId": "",
             "ClientSecret": "",
@@ -152,7 +154,7 @@ The following table describes each of the service elements. Where appropriate, a
 
 Not all values are required for all services. Those that are required are indicated below.
 
-<table><thead><tr><th width="203">Element</th><th>Description</th><th width="77">Required?</th><th>Example</th></tr></thead><tbody><tr><td>DisplayName</td><td>Provides a friendly name for the service used for identification in the user interface.</td><td>Yes</td><td></td></tr><tr><td>CanManuallyProvideToken</td><td>Toggles an UI section in the backoffice for manually providing an access token.</td><td>No</td><td></td></tr><tr><td>CanManuallyProvideApiKey</td><td>Toggles an UI section in the backoffice for manually providing an API key.</td><td>No</td><td></td></tr><tr><td>CanExchangeToken</td><td>Specifies whether the access token can be exchanged with a long lived one.</td><td>No</td><td></td></tr><tr><td>ExchangeTokenProvision</td><td>The available options for exchanging an access token. Configuration includes: <code>TokenHost</code>, <code>RequestTokenPath</code>, <code>TokenGrantType</code>, <code>RequestRefreshTokenPath</code>, <code>RefreshTokenGrantType</code> and <code>ExchangeTokenWhenExpiresWithin</code></td><td>No</td><td></td></tr><tr><td>AuthenticationMethod</td><td>An enum value that controls the type of authentication. <code>OAuth2AuthorizationCode</code> is the default value; other available options are <code>OAuth2ClientCredentials</code>, <code>OAuth1</code> and <code>ApiKey</code>.</td><td>No</td><td></td></tr><tr><td>ClientCredentialsProvision</td><td>The available options for providing credentials in an <code>OAuth2</code> flow: <code>AuthHeader</code> or <code>RequestBody</code>.</td><td>No</td><td></td></tr><tr><td>ApiHost</td><td>The host name for the service API that will be called to deliver business functionality.</td><td>Yes</td><td><code>https://api.github.com</code></td></tr><tr><td>IdentityHost</td><td>The host name for the service's authentication endpoint, used to initiate the authorization of the service by asking the user to login.</td><td>Yes</td><td><code>https://github.com</code></td></tr><tr><td>TokenHost</td><td>Some providers make available a separately hosted service for handling requests for access tokens. If that's the case, it can be provided here. If not provided, the value of <code>IdentityHost</code> is used.</td><td>No</td><td></td></tr><tr><td>RequestIdentityPath</td><td>Used along with <code>IdentityHost</code> to construct a URL that the user is redirected to when initiating the authorization of the service via the backoffice.</td><td>Yes</td><td><code>/login/oauth/authorize</code></td></tr><tr><td>AuthorizationUrlRequiresRedirectUrl</td><td>Some providers require a redirect URL to be provided with the authentication request. For others, instead it's necessary to configure this as part of the registered app. The default value if not provided via configuration is <code>false</code>.</td><td>No</td><td></td></tr><tr><td>RequestTokenPath</td><td>Used, along with <code>TokenHost</code> to construct a URL used for retrieving access tokens.</td><td>Yes</td><td><code>/login/oauth/access_token</code></td></tr><tr><td>RequestTokenFormat</td><td>An enum value that controls how the request to retrieve an access token is formatted. Options are <code>Querystring</code> and <code>FormUrlEncoded</code>. <code>Querystring</code> is the default value.</td><td>No</td><td></td></tr><tr><td>RequestAuthorizationPath</td><td><code>OAuth1</code> flow path for building the authorization URL.</td><td>No</td><td></td></tr><tr><td>JsonSerializer</td><td>An enum value that defines the JSON serializer to use when creating requests and deserializing responses. Options are <code>Default</code> and <code>JsonNet</code> and <code>SystemTextJson</code> as described below. If not provided, <code>Default</code> is used.</td><td>No</td><td></td></tr><tr><td>AuthorizationRequestRequiresAuthorizationHeaderWithBasicToken</td><td>This flag indicates whether the basic token should be included in the request for an access token. If <code>true</code>, a base64 encoding of <code>&#x3C;clientId>:&#x3C;clientSecret></code> will be added to the authorization header. Default is <code>false</code>.</td><td>No</td><td></td></tr><tr><td>ApiKey</td><td>Provides the service's API key, if <code>"AuthenticationMethod": "ApiKey"</code></td><td>No</td><td></td></tr><tr><td>ApiKeyProvision</td><td>Provides an object that dictates how the API key will be included with each request. This is configured using the <code>Method</code>(pass the API key as <code>QueryString</code> or <code>HttpHeader</code>) and <code>Key</code> (name of the key used to include the API key) properties.</td><td>No</td><td></td></tr><tr><td>ClientId</td><td>This value will be retrieved from the registered service app. For <code>OAuth1</code> registered apps, the matching value is <code>consumer key</code>.</td><td>Yes</td><td></td></tr><tr><td>ClientSecret</td><td>This value will be retrieved from the registered service app. As the name suggests, it should be kept secret and so is probably best not added directly to <code>appSettings.json</code> and checked into source control. For <code>OAuth1</code> registered apps, the matching value is <code>consumer secret</code>.</td><td>Yes</td><td></td></tr><tr><td>Scopes</td><td>This value will be configured on the service app and retrieved from there. Best practice is to define only the set of permissions that the integration will need.</td><td>Yes</td><td><code>repo</code></td></tr><tr><td>IncludeScopesInAuthorizationRequest</td><td>Specifies whether the provided scopes should be included in the authorization request body.</td><td>No</td><td></td></tr><tr><td>UseProofKeyForCodeExchange</td><td>This flag will extend the OAuth flow with an additional security layer called <a href="https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow-with-proof-key-for-code-exchange-pkce">Proof Key for Code Exchange (PKCE)</a>.</td><td>No</td><td></td></tr><tr><td>AccessTokenResponseKey</td><td>The expected key for retrieving an access token from a response. If not provided the default <code>access_token</code> is assumed.</td><td>No</td><td></td></tr><tr><td>RefreshTokenResponseKey</td><td>The expected key for retrieving a refresh token from a response. If not provided the default <code>refresh_token</code> is assumed.</td><td>No</td><td></td></tr><tr><td>ExpiresInResponseKey</td><td>The expected key for retrieving the datetime of token expiry from a response. If not provided the default <code>expires_in</code> is assumed.</td><td>No</td><td></td></tr><tr><td>SampleRequest</td><td>An optional sample request can be provided, which can be used to check that an authorized service is functioning as expected from the backoffice.</td><td>No</td><td><code>/repos/Umbraco/Umbraco-CMS/contributors</code></td></tr><tr><td>RefreshAccessTokenWhenExpiresWithin</td><td>Specifies a time interval for expiration of access tokens.</td><td>No</td><td></td></tr></tbody></table>
+<table><thead><tr><th width="203">Element</th><th>Description</th><th width="77">Required?</th><th>Example</th></tr></thead><tbody><tr><td>DisplayName</td><td>Provides a friendly name for the service used for identification in the user interface.</td><td>Yes</td><td></td></tr><tr><td>CanManuallyProvideToken</td><td>Toggles an UI section in the backoffice for manually providing an access token.</td><td>No</td><td></td></tr><tr><td>CanManuallyProvideApiKey</td><td>Toggles an UI section in the backoffice for manually providing an API key.</td><td>No</td><td></td></tr><tr><td>CanExchangeToken</td><td>Specifies whether the access token can be exchanged with a long lived one.</td><td>No</td><td></td></tr><tr><td>ExchangeTokenProvision</td><td>The available options for exchanging an access token. Configuration includes: <code>TokenHost</code>, <code>RequestTokenPath</code>, <code>TokenGrantType</code>, <code>RequestRefreshTokenPath</code>, <code>RefreshTokenGrantType</code> and <code>ExchangeTokenWhenExpiresWithin</code></td><td>No</td><td></td></tr><tr><td>AuthenticationMethod</td><td>An enum value that controls the type of authentication. <code>OAuth2AuthorizationCode</code> is the default value; other available options are <code>OAuth2ClientCredentials</code>, <code>OAuth1</code> and <code>ApiKey</code>.</td><td>No</td><td></td></tr><tr><td>ClientCredentialsProvision</td><td>The available options for providing credentials in an <code>OAuth2</code> flow: <code>AuthHeader</code> or <code>RequestBody</code>.</td><td>No</td><td></td></tr><tr><td>ApiHost</td><td>The host name for the service API that will be called to deliver business functionality.</td><td>Yes</td><td><code>https://api.github.com</code></td></tr><tr><td>IdentityHost</td><td>The host name for the service's authentication endpoint, used to initiate the authorization of the service by asking the user to login.</td><td>Yes</td><td><code>https://github.com</code></td></tr><tr><td>TokenHost</td><td>Some providers make available a separately hosted service for handling requests for access tokens. If that's the case, it can be provided here. If not provided, the value of <code>IdentityHost</code> is used.</td><td>No</td><td></td></tr><tr><td>RequestIdentityPath</td><td>Used along with <code>IdentityHost</code> to construct a URL that the user is redirected to when initiating the authorization of the service via the backoffice.</td><td>Yes</td><td><code>/login/oauth/authorize</code></td></tr><tr><td>AuthorizationUrlRequiresRedirectUrl</td><td>Some providers require a redirect URL to be provided with the authentication request. For others, instead it's necessary to configure this as part of the registered app. The default value if not provided via configuration is <code>false</code>.</td><td>No</td><td></td></tr><tr><td>RequestTokenPath</td><td>Used, along with <code>TokenHost</code> to construct a URL used for retrieving access tokens.</td><td>Yes</td><td><code>/login/oauth/access_token</code></td></tr><tr><td>RequestTokenFormat</td><td>An enum value that controls how the request to retrieve an access token is formatted. Options are <code>Querystring</code> and <code>FormUrlEncoded</code>. <code>Querystring</code> is the default value.</td><td>No</td><td></td></tr><tr><td>RequestAuthorizationPath</td><td><code>OAuth1</code> flow path for building the authorization URL.</td><td>No</td><td></td></tr><tr><td>JsonSerializer</td><td>An enum value that defines the JSON serializer to use when creating requests and deserializing responses. Options are <code>Default</code> and <code>JsonNet</code> and <code>SystemTextJson</code> as described below. If not provided, <code>Default</code> is used.</td><td>No</td><td></td></tr><tr><td>AuthorizationRequestRequiresAuthorizationHeaderWithBasicToken</td><td>This flag indicates whether the basic token should be included in the request for an access token. If <code>true</code>, a base64 encoding of <code>&#x3C;clientId>:&#x3C;clientSecret></code> will be added to the authorization header. Default is <code>false</code>.</td><td>No</td><td></td></tr><tr><td>ApiKey</td><td>Provides the service's API key, if <code>"AuthenticationMethod": "ApiKey"</code></td><td>No</td><td></td></tr><tr><td>ApiKeyProvision</td><td>Provides an object that dictates how the API key will be included with each request. This is configured using the <code>Method</code>(pass the API key as <code>QueryString</code> or <code>HttpHeader</code>) and <code>Key</code> (name of the key used to include the API key) properties. You can also provide additional parameters that will be included in the querystring or headers via the <code>AdditionalParameters</code> dictionary.</td><td>No</td><td></td></tr><tr><td>ClientId</td><td>This value will be retrieved from the registered service app. For <code>OAuth1</code> registered apps, the matching value is <code>consumer key</code>.</td><td>Yes</td><td></td></tr><tr><td>ClientSecret</td><td>This value will be retrieved from the registered service app. As the name suggests, it should be kept secret and so is probably best not added directly to <code>appSettings.json</code> and checked into source control. For <code>OAuth1</code> registered apps, the matching value is <code>consumer secret</code>.</td><td>Yes</td><td></td></tr><tr><td>Scopes</td><td>This value will be configured on the service app and retrieved from there. Best practice is to define only the set of permissions that the integration will need.</td><td>Yes</td><td><code>repo</code></td></tr><tr><td>IncludeScopesInAuthorizationRequest</td><td>Specifies whether the provided scopes should be included in the authorization request body.</td><td>No</td><td></td></tr><tr><td>UseProofKeyForCodeExchange</td><td>This flag will extend the OAuth flow with an additional security layer called <a href="https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow-with-proof-key-for-code-exchange-pkce">Proof Key for Code Exchange (PKCE)</a>.</td><td>No</td><td></td></tr><tr><td>AccessTokenResponseKey</td><td>The expected key for retrieving an access token from a response. If not provided the default <code>access_token</code> is assumed.</td><td>No</td><td></td></tr><tr><td>RefreshTokenResponseKey</td><td>The expected key for retrieving a refresh token from a response. If not provided the default <code>refresh_token</code> is assumed.</td><td>No</td><td></td></tr><tr><td>ExpiresInResponseKey</td><td>The expected key for retrieving the datetime of token expiry from a response. If not provided the default <code>expires_in</code> is assumed.</td><td>No</td><td></td></tr><tr><td>SampleRequest</td><td>An optional sample request can be provided, which can be used to check that an authorized service is functioning as expected from the backoffice.</td><td>No</td><td><code>/repos/Umbraco/Umbraco-CMS/contributors</code></td></tr><tr><td>RefreshAccessTokenWhenExpiresWithin</td><td>Specifies a time interval for expiration of access tokens.</td><td>No</td><td></td></tr></tbody></table>
 
 The options for `JsonSerializer` are:
 
@@ -223,11 +225,11 @@ Task<Attempt<TResponse?>> GetRequestAsync<TResponse>(string serviceAlias, string
 Depending on the configured authentication method, there are some methods that can be used to retrieve the access token or the API key:
 
 ```csharp
-string? GetOAuth1Token(string serviceAlias);
+Task<string?> GetOAuth1Token(string serviceAlias);
 
-string? GetOAuth2Token(string serviceAlias);
+Task<string?> GetOAuth2Token(string serviceAlias);
 
-string? GetApiKey(string serviceAlias);
+Task<string?> GetApiKey(string serviceAlias);
 ```
 
 ## Verified Providers
@@ -273,7 +275,7 @@ As integrations with more providers are successfully completed, we plan to maint
   "RequestIdentityPath": "/login/connect/authorize",
   "RequestTokenPath": "/login/connect/token",
   "RequestTokenFormat": "FormUrlEncoded",
-  "AuthorizationRequestsRequireRedirectUri": true,
+  "AuthorizationUrlRequiresRedirectUrl": true,
   "UseProofKeyForCodeExchange": true,
   "ClientId": "",
   "ClientSecret": "",
@@ -440,7 +442,7 @@ As integrations with more providers are successfully completed, we plan to maint
   "RequestIdentityPath": "/v3.0/dialog/oauth",
   "RequestTokenPath": "/v3.0/oauth/access_token",
   "RequestTokenFormat": "FormUrlEncoded",
-  "AuthorizationRequestsRequireRedirectUri": true,
+  "AuthorizationUrlRequiresRedirectUrl": true,
   "ClientId": "",
   "ClientSecret": "",
   "Scopes": "email public_profile",
@@ -582,7 +584,7 @@ As integrations with more providers are successfully completed, we plan to maint
   "RequestIdentityPath": "/o/oauth2/auth",
   "RequestTokenPath": "/token",
   "RequestTokenFormat": "FormUrlEncoded",
-  "AuthorizationRequestsRequireRedirectUri": true,
+  "AuthorizationUrlRequiresRedirectUrl": true,
   "ClientId": "",
   "ClientSecret": "",
   "Scopes": "https://www.googleapis.com/auth/webmasters https://www.googleapis.com/auth/webmasters.readonly",
@@ -603,7 +605,7 @@ As integrations with more providers are successfully completed, we plan to maint
   "IdentityHost": "https://app-eu1.hubspot.com",
   "TokenHost": "https://api.hubapi.com",
   "RequestIdentityPath": "/oauth/authorize",
-  "AuthorizationRequestsRequireRedirectUri": true,
+  "AuthorizationUrlRequiresRedirectUrl": true,
   "RequestTokenPath": "/oauth/v1/token",
   "RequestTokenFormat": "FormUrlEncoded",
   "JsonSerializer": "SystemTextJson",
@@ -662,7 +664,7 @@ As integrations with more providers are successfully completed, we plan to maint
   "RequestIdentityPath": "/oauth/v2/authorization",
   "RequestTokenPath": "/oauth/v2/accessToken",
   "RequestTokenFormat": "FormUrlEncoded",
-  "AuthorizationRequestsRequireRedirectUri": true,
+  "AuthorizationUrlRequiresRedirectUrl": true,
   "ClientId": "",
   "ClientSecret": "",
   "Scopes": "r_emailaddress r_liteprofile w_member_social",
@@ -757,7 +759,7 @@ As integrations with more providers are successfully completed, we plan to maint
   "RequestIdentityPath": "/common/oauth2/v2.0/authorize",
   "RequestTokenPath": "/common/oauth2/v2.0/token",
   "RequestTokenFormat": "FormUrlEncoded",
-  "AuthorizationRequestsRequireRedirectUri": true,
+  "AuthorizationUrlRequiresRedirectUrl": true,
   "ClientId": "",
   "ClientSecret": "",
   "Scopes": "https://[instance].crm4.dynamics.com/.default",
@@ -803,7 +805,7 @@ As integrations with more providers are successfully completed, we plan to maint
   "RequestIdentityPath": "/auth/login",
   "RequestTokenPath": "/oauth2/access_token",
   "RequestTokenFormat": "FormUrlEncoded",
-  "AuthorizationRequestsRequireRedirectUri": true,
+  "AuthorizationUrlRequiresRedirectUrl": true,
   "ClientId": "",
   "ClientSecret": "",
   "Scopes": "user.id,domains.info,url.info,positiontracking.info",
@@ -826,7 +828,7 @@ As integrations with more providers are successfully completed, we plan to maint
   "RequestIdentityPath": "/admin/oauth/authorize",
   "RequestTokenPath": "/oauth/access_token",
   "RequestTokenFormat": "FormUrlEncoded",
-  "AuthorizationRequestsRequireRedirectUri": true,
+  "AuthorizationUrlRequiresRedirectUrl": true,
   "ClientId": "",
   "ClientSecret": "",
   "Scopes": "read_products",
@@ -921,7 +923,7 @@ As integrations with more providers are successfully completed, we plan to maint
   "RequestIdentityPath": "/i/oauth2/authorize",
   "RequestTokenPath": "/2/oauth2/token",
   "RequestTokenFormat": "FormUrlEncoded",
-  "AuthorizationRequestsRequireRedirectUri": true,
+  "AuthorizationUrlRequiresRedirectUrl": true,
   "UseProofKeyForCodeExchange": true,
   "ClientId": "",
   "ClientSecret": "",

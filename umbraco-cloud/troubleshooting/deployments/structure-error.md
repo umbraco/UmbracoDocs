@@ -12,7 +12,7 @@ This guide is for solving collision errors on your Umbraco Cloud project. Use th
         UdaFile: ~/deploy/revision/document-type__4c04d968448747d791b5eae254afc7ec.uda
         UdaFile: ~/deploy/revision/document-type__f848c577f02b4ee5aea84f87458072a4.uda
 
-The error means that two (or more) `.uda` files have been created for the same entity. The `.uda` files contain schema data for each of your entities e.g Document Types, Templates, Macros, Dictionary Items, Data types, etc (for a full list of these entities see [What are UDA files?](../../deployment/deploy-operations/extract-schema-to-data-files.md#what-are-uda-files)).
+The error means that two (or more) `.uda` files have been created for the same entity. The `.uda` files contain schema data for each of your entities e.g Document Types, Templates, Macros, Dictionary Items, Data types, etc (for a full list of these entities see [What are UDA files?](../../set-up/power-tools/generating-uda-files.md#what-are-uda-files)).
 
 In this example, there are two `.uda` files that share the same alias which leads to a conflict: it is impossible for Deploy to know which of the files to use, so it gives up and sends an error back.
 

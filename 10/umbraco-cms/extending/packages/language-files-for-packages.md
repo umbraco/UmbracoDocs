@@ -1,6 +1,4 @@
 ---
-
-
 meta.Title: "Language file for packages"
 description: "Information on how to use language files to make your Umbraco package UI support multiple languages"
 ---

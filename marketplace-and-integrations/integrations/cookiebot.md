@@ -53,7 +53,7 @@ The banner script needs to be inserted as the **first script** of the website, b
 The Declaration script can be added to whatever page you want, using this syntax:
 
 ```csharp
-@await Html.PartialAsync("~/Views/Partials/UmbracoCms.Integrations/Scripts/Cookiebot/Declaration.cshtml")
+@await Html.PartialAsync("~/Views/Partials/UmbracoCms.Integrations/Analytics/Cookiebot/Declaration.cshtml")
 ```
 
 Both scripts "pick up" `CBID` from the website's configuration file and update the details accordingly.

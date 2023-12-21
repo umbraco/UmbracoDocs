@@ -2,7 +2,7 @@
 
 Having multiple environments on your Umbraco Heartcore project can be a great asset for testing and having a place where your content editors can work without interfering with anything on the Live environment.
 
-When working with multiple environments, it is very important to follow the correct workflow. In this article, you can learn more about the workflow and the best practices for using it.
+When working with multiple environments, it is important to follow the correct workflow. In this article, you can learn more about the workflow and the best practices for using it.
 
 The workflow uses a classic "left to right" deployment model, meaning that changes are first made on the Development environment and then deployed to the Staging or Live environment. The workflow depends on whether you have a Staging environment which further depends on the plan your project is on.
 

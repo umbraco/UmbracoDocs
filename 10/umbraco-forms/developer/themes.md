@@ -21,7 +21,7 @@ Umbraco 10+ distributes these files as part of a Razor class library, so you won
 
 You can obtain the latest version of the default theme Forms 10 from the following link:
 
-* [Forms 10 Default Theme](https://umbra.co/umbraco-forms-default-theme) (for 10.5.1 and above)
+* [Forms 10 Default Theme](https://umbra.co/umbraco-forms-default-theme) (for 10.5.2 and above)
 
 If you are using a lower minor version of Forms than those listed, you should download an older version of the default theme.
 

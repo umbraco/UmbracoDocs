@@ -26,6 +26,14 @@ In Visual Studio, select the Umbraco web project in the _Solution Explorer_ and 
 
 ![Publish...](../../../../../10/umbraco-cms/fundamentals/setup/server-setup/images/contextmenu-publish-command.jpg)
 
+{% hint style="info" %}
+ 
+**Deploy a website for automated deployment with Azure DevOps to IIS**
+
+You can use the [IIS Release task in Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/pipelines/release/deploy-webdeploy-iis-deploygroups) to deploy your website to your Web Server. This task is a wrapper for `MSDeploy.exe` and can be configured as preferred.
+
+{% endhint %}
+
 ### Environment Variables in ApplicationHost.config
 
 In the _Management_ section you find the _Configuration Editor_:

@@ -18,6 +18,20 @@ In this section, you can find the release notes for each version of Umbraco Form
 
 <summary>Version 10</summary>
 
+#### [10.5.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.5.2) (November 14th 2023)
+
+* Ensured validation pattern's saved for a field are cleared when changing the field type [#1083](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1083).
+* Included input of type time in condition evaluation [#1084](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1084).
+* Fixed issue with "ends with" condition [#1098](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1098).
+* Fixed issue with the display of selected records in the entries list view [#1100](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1100).
+* Fixed issue with display of newly created forms in the tree where permissions are managed with user groups and user specific override exists [#1102](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1102).
+* Fixed issue magic string replacement in email field names [#1107](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1107).
+* Fixed broken link in magic string notice [#1109](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1109).
+* Replaced save success message with a failed notification when cancelling form save via notifications [#1002](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1002).
+* Removed usage of inline styles from the form's default theme [#1110](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1110).
+* Ensured an index exists on the `UFForms.FolderKey` column.
+* Ensured that the Umbraco hooks for server-side sanitization are called when saving form field's input from a rich text editor.
+
 #### [10.5.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.5.1) (September 19th 2023)
 
 * Ensured uploaded file protection is based on permission to view rather than edit entries [#1058](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1058)
@@ -553,6 +567,17 @@ In this section, you can find the release notes for each version of Umbraco Form
 <details>
 
 <summary>Version 8</summary>
+
+#### [8.13.12](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.13.12) (November 14th 2023)
+
+* Ensured validation pattern's saved for a field are cleared when changing the field type [#1083](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1083).
+* Included input of type time in condition evaluation [#1084](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1084).
+* Fixed issue with "ends with" condition [#1098](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1098).
+* Fixed issue with the display of selected records in the entries list view [#1100](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1100).
+* Fixed issue with display of newly created forms in the tree where permissions are managed with user groups and user specific override exists [#1102](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1102).
+* Fixed issue magic string replacement in email field names [#1107](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1107).
+* Fixed broken link in magic string notice [#1109](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1109).
+* Back-ported backoffice form list rendering optimization from Forms 10+.
 
 #### [8.13.11](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.13.11) (September 19th 2023)
 

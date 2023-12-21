@@ -4,7 +4,11 @@ The Umbraco Cloud API serves as a publicly accessible endpoint that customers ca
 
 While its initial focus is on automating and managing deployments in Umbraco Cloud projects via the "Umbraco CI/CD Flow," future enhancements will broaden its capabilities to encompass a wider range of activities and options for Umbraco Cloud users.&#x20;
 
-For the scope of this discussion, we will concentrate solely on the endpoints associated with interactions within the Umbraco CI/CD Flow. To integrate Umbraco Cloud into your CI/CD pipeline, you'll need to make API calls to the following endpoint [`https://api.cloud.umbraco.com`](https://api.cloud.umbraco.com):&#x20;
+For the scope of this discussion, we will concentrate solely on the endpoints associated with interactions within the Umbraco CI/CD Flow. 
+
+## Getting started
+
+To integrate Umbraco Cloud into your CI/CD pipeline, you'll need to make API calls to the following endpoint [`https://api.cloud.umbraco.com`](https://api.cloud.umbraco.com):&#x20;
 
 * `/$projectId/deployments`
 * `/$projectId/deployments/$deploymentId`
@@ -12,16 +16,6 @@ For the scope of this discussion, we will concentrate solely on the endpoints as
 * `/$projectId/deployments/$latestCompletedDeploymentId/diff`
 
 You will find relevant examples using `Curl` and `Powershell` in the sections below.
-
-{% hint style="info" %}
-Please be aware that this feature is currently in beta mode. During this beta period, we welcome your feedback and are particularly interested in any issues or concerns you may encounter. For all support-related questions, please direct your inquiries to [umbraco-cicd@umbraco.dk](mailto:umbraco-cicd@umbraco.dk).
-{% endhint %}
-
-## Getting started
-
-To integrate Umbraco Cloud into your CI/CD pipeline, you'll need to make API calls to the following endpoint: `https://api.cloud.umbraco.com.`
-
-The initial certificate for this DNS is self-signed which can give curl and other tools some issues. We are working on changing this, for now, allowing an insecure connection will make it possible to circumvent this certificate issue.
 
 ### How to enable CI/CD Integrator in the Umbraco Cloud Portal
 
@@ -111,9 +105,9 @@ Part of the returned response will be the actual `deploymentId`. The response fr
 {
     "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
     "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
-    "projectAlias": "cicd-demo-site",
+    "projectAlias": "",
     "deploymentState": "Created",
-    "updateMessage": "Deployment created.",
+    "updateMessage": "",
     "errorMessage": "",
     "created": "2023-05-02T07:16:46.4183912",
     "lastModified": "2023-05-02T07:16:48.8544387",
@@ -133,11 +127,13 @@ By adhering to these guidelines, you ensure that the uploaded content is an exac
 
 The purpose of packaging your content into a ZIP file is to replace the existing content in the Umbraco Cloud repository upon unpackaging. This ensures that the repository is updated with the latest version of your project files.
 
+Make sure your ZIP archive does not contain .git folder. If you're using the `.zipignore` file, you can add the following line `.git/*` to exclude it. 
+
 #### A note about .gitignore
 
 Umbraco Cloud environments are using git internally. This means you should be careful about the .gitignore file you add to the package. If you have “git ignored” build js assets locally, you need to handle this so that this is not being ignored in the cloud repository.
 
-**Note:** If the `.gitignore` file within the ZIP package does not exclude bin/ and obj/ directories, these will also be committed to the Umbraco Cloud repository. It is recommended that Dan and Jesper review and update this workflow accordingly.
+**Note:** If the `.gitignore` file within the ZIP package does not exclude bin/ and obj/ directories, these will also be committed to the Umbraco Cloud repository.
 
 **Best Practice:** If you have frontend assets your local repository's .gitignore file will most likely differ from the one intended for the Umbraco Cloud repository, it's advisable to create a separate .cloud\_gitignore file. Include this file in the ZIP package and rename it to .gitignore before packaging. This ensures that only the necessary files and directories are uploaded and finally committed to the Umbraco Cloud repository.
 
@@ -161,7 +157,7 @@ The response of this call will be the same deployment object (in JSON) as when c
     "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
     "projectAlias": "cicd-demo-site",
     "deploymentState": "Pending",
-    "updateMessage": "Deployment created. Project metadata fetched. File uploaded.",
+    "updateMessage":"Project information set\nDeployment pending\nDownloadUri set",
     "errorMessage": "",
     "created": "2023-05-02T07:16:46.4183912",
     "lastModified": "2023-05-02T07:17:48.8544387",
@@ -193,7 +189,7 @@ The response of this call will be the same deployment object (in JSON) as when c
     "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
     "projectAlias": "cicd-demo-site",
     "deploymentState": "Queued",
-    "updateMessage": "Deployment created. Project metadata fetched. File uploaded. Deployment queued.",
+    "updateMessage": "Project information set\nDeployment pending\nDownloadUri set\nDeployment queued",
     "errorMessage": "",
     "created": "2023-05-02T07:16:46.4183912",
     "lastModified": "2023-05-02T07:18:48.8544387",
@@ -255,7 +251,7 @@ The response from this API call will return the same deployment object in JSON f
     "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
     "projectAlias": "cicd-demo-site",
     "deploymentState": "Completed",
-    "updateMessage": "Deployment created. Project metadata fetched. File uploaded. Deployment queued. Deployment started. Deployment Done",
+    "updateMessage":"Project information set\nDeployment pending\nDownloadUri set\nDeployment queued\nDeployment triggered\nDeployment started\nCheck blocking markers\nCreate updating marker\nGit Clone\nDownload update\nExtract Update\nChecking versions\nDeleting repository files\nCopying files to repository\nNuGet Restore\nDotnet Build\nGit Stage\nGit Commit\nGit Tag\nGit Push\nDelete updating marker\nDeployment successful",
     "errorMessage": "",
     "created": "2023-05-02T07:16:46.4183912",
     "lastModified": "2023-05-02T07:20:48.8544387",
@@ -265,13 +261,22 @@ The response from this API call will return the same deployment object in JSON f
 
 ### Get Deployments
 
-You can retrieve a list of deployments via the API, although currently, this is restricted to only those that have been completed. Future updates will introduce filtering options. The API allows you to limit the number of returned deployments using standard 'take' and 'skip' query parameters. Deployments are listed in descending order based on their creation timestamp. This operation is carried out through a standard HTTP GET request.
+The endpoint lets you retrieve a list of completed deployments. It can only list deployments that has been run throug the api.
+
+The API allows you to filter and limit the number of returned deployments using query parameters:
+- _Skip_ : optional, zero or positive integer
+- _Take_ : optional, zero or positive integer
+- _Includenulldeployments_ : optional, boolean, defaults to true
+
+The "skip" and "take" parameters, while optional, are always required to be used together.
+
+With `includenulldeployments` set to true, you will get all completed deployments, including those that did not create any new changes in the cloud repository.
 
 To fetch the list of deployments using a curl command, the syntax would be as follows:
 
 ```sh
 ...
-url="https://api.cloud.umbraco.com/v1/projects/$projectId/deployments?skip=0&take=1"
+url="https://api.cloud.umbraco.com/v1/projects/$projectId/deployments?skip=0&take=1&includenulldeployments=false"
 
 response=$(curl -s -X GET $url \
     -H "Umbraco-Cloud-Api-Key: $apiKey" \
@@ -279,23 +284,27 @@ response=$(curl -s -X GET $url \
 latestDeploymentId=$(echo $response | jq -r '.deployments[0].deploymentId')
 
 ```
-
-The response from this API call will return a list of deployment objects, formatted in JSON, consistent with the structure used in other API responses.
+The response from this API call will return an object containing a list of deployment objects. The deployment-objects are consistent with the structure used in other API responses.
+Deployments are listed in descending order based on their creation timestamp.
 
 ```json
-[
-  {
-    "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
-    "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
-    "projectAlias": "cicd-demo-site",
-    "deploymentState": "Completed",
-    "updateMessage": "Deployment completed. ...",
-    "errorMessage": "",
-    "created": "2023-05-02T07:16:46.4183912",
-    "lastModified": "2023-05-02T07:18:48.8544387",
-    "completed": "2023-05-02T07:22:48.8544387"
- }
-]
+{
+  "projectId": "abcdef12-cef8-4e92-8887-ceb123456789",
+  "deployments":
+    [
+      {
+        "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
+        "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
+        "projectAlias": "cicd-demo-site",
+        "deploymentState": "Completed",
+        "updateMessage": "...",
+        "errorMessage": "",
+        "created": "2023-05-02T07:16:46.4183912",
+        "lastModified": "2023-05-02T07:18:48.8544387",
+        "completed": "2023-05-02T07:22:48.8544387"
+      }
+    ]
+}
 ```
 
 ### Get Deployment diff
@@ -305,7 +314,7 @@ Sometimes updates are done directly on the Umbraco Cloud repository. We encourag
 Using a curl command, fetching the potential differences would look like this:
 
 ```sh
-url="https://apim-dev-global.azure-api.net/projects/$projectId/deployments/$latestCompletedDeploymentId/diff"
+url="https://api.cloud.umbraco.com/v1/projects/$projectId/deployments/$latestCompletedDeploymentId/diff"
 downloadFolder="tmp"
 mkdir -p $downloadFolder # ensure folder exists
 
