@@ -2,10 +2,10 @@
 
 The EntityService acts as a "gateway" to Umbraco data for operations which are related to entities.
 
-[Browse the API documentation for IEntityService interface](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Services.IEntityService.html).
+[Browse the API documentation for IEntityService interface](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.Services.IEntityService.html).
 
- * **Namespace:** `Umbraco.Cms.Core.Services`
- * **Assembly:** `Umbraco.Core.dll`
+* **Namespace:** `Umbraco.Cms.Core.Services`
+* **Assembly:** `Umbraco.Core.dll`
 
  All samples in this document will require references to the following dll:
 
@@ -18,6 +18,7 @@ using Umbraco.Cms.Core.Services;
 ```
 
 For Razor views:
+
 ```csharp
 @using Umbraco.Cms.Core.Services
 ```
@@ -31,12 +32,12 @@ If you wish to use the entity service in a class, you need to specify the `IEnti
 ```csharp
 public class MyClass
 {
-	private IEntityService _entityService;
+ private IEntityService _entityService;
 
-	public MyClass(IEntityService entityService)
-	{
-	_entityService = entityService;
-	}
+ public MyClass(IEntityService entityService)
+ {
+  _entityService = entityService;
+ }
 }
 ```
 
