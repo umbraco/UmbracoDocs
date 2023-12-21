@@ -36,8 +36,8 @@ That exported zip file can be used to import the content, files, and/or schema i
 
 <img src="images/ImportZip.png" alt="drawing" width="50%" />
 
-For more in-depth information on the import/export feature and other additions in the latest Deploy minor release, head over to this [blog post](https://umbraco.com/blog/umbraco-deploy-release-candidates-49103121/).
-And also visit the documentation page for the [export/import of schema and content](https://docs.umbraco.com/umbraco-deploy/deployment-workflow/import-export) for more details.
+For more in-depth information on the import/export feature and other additions in the latest Deploy minor release, see the [deploy release candidate blog post](https://umbraco.com/blog/umbraco-deploy-release-candidates-49103121/).
+You can also visit the documentation page for the [export/import of schema and content](https://docs.umbraco.com/umbraco-deploy/deployment-workflow/import-export) for more details.
 
 ## TLS 1.3 For All Plans
 In our commitment to providing top-tier security, we have expanded the availability of TLS (Transport Layer Security) 1.3 to all Umbraco Cloud plans. This enhancement means users can now activate TLS 1.3 for their custom hostnames, bringing advanced security settings to all project plans.
