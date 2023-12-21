@@ -18,7 +18,7 @@ There is a package available for Umbraco called [Slimsy](https://github.com/Jeav
 
 For icons or illustrations, these would be better suited to be included as an SVG than raster outputs (PNG, JPEG, WebP, AVIF, etc). These can also be [optimized](https://jakearchibald.github.io/svgomg/) and you can include them directly in the HTML to avoid additional requests. There is a tag helper `<our-svg>` for this included in a [community package](https://github.com/umbraco-community/Our-Umbraco-TagHelpers?tab=readme-ov-file#our-svg) for Umbraco, which reads the file contents of an SVG file and outputs it as an inline SVG in the DOM.
 
-However, if your SVG is fairly complex, then it would still likely be a smaller size in another image format. It's important to test for your use case to ensure the smallest file size.
+However, if your SVG is quite complex, then it would still likely be a smaller size in another image format. It's important to test for your use case to ensure the smallest file size.
 
 ## Image delivery
 
