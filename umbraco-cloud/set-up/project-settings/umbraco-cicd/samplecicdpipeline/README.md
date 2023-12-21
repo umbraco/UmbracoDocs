@@ -110,7 +110,7 @@ Details the setup of a CI/CD pipeline using Azure DevOps.
 
 ### GitHub Workflows
 
-Details the setup of a CI/CD pipeline using GitHub Workflows.
+Details the setup of a CI/CD pipeline using GitHub Actions.
 
-- [Example using Powershell scripts](github-workflows-pwsh.md)
+- [Example using Powershell scripts](github-actions-pwsh.md)
 - [Example using Bash scripts](github-actions.md)

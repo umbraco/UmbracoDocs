@@ -46,7 +46,7 @@
       * [Azure DevOps with Bash scripts](set-up/project-settings/umbraco-cicd/samplecicdpipeline/azure-devops.md)
       * [Azure DevOps with Powershell scripts](set-up/project-settings/umbraco-cicd/samplecicdpipeline/azure-devops-pwsh.md)
       * [GitHub Actions with Bash scripts](set-up/project-settings/umbraco-cicd/samplecicdpipeline/github-actions.md)
-      * [GitHub Actions with PowerShell scripts](set-up/project-settings/umbraco-cicd/samplecicdpipeline/github-actions-pwsh.md)
+      * [GitHub Actions with Powershell scripts](set-up/project-settings/umbraco-cicd/samplecicdpipeline/github-actions-pwsh.md)
     * [Troubleshooting](set-up/project-settings/umbraco-cicd/Troubleshooting.md)
     * [Known Limitations and Considerations](set-up/project-settings/umbraco-cicd/KnownLimitationsAndConsiderations.md)
   * [External Services](set-up/project-settings/external-services.md)

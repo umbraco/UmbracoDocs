@@ -12,11 +12,13 @@ You will need to define your pipeline in YAML, and find a way to interact with t
 
 
 {% hint style="info" %}
-We have created a sample pipeline for GitHub. It includes YAML-files and custom PowerShell scripts to interact with the Umbraco Cloud API.
+We have created a sample pipeline for GitHub. It includes YAML-files and custom Powershell scripts to interact with the Umbraco Cloud API.
 
-You can get the samples for GitHub and Azure Devops from this [repository](https://GitHub.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
+You can get the samples for GitHub and Azure DevOps from this [repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
 
 For GitHub you will need the following files:
+- From the root folder
+  - `cloud.zipignore`
 - From `powershell` folder
   - `Get-LatestDeployment.ps1`
   - `Get-ChangesById.ps1`
@@ -28,8 +30,6 @@ For GitHub you will need the following files:
   - `main.yml`
   - `cloud-sync.yml` 
   - `cloud-deployment.yml`
-- From the root folder
-  - `cloud.zipignore`
 
 {% endhint %}
 
@@ -38,7 +38,7 @@ Go to your repositories in GitHub and click on "New".
 
 - Create a new empty repository in GitHub, and note down the clone URL.
 - Go to the Umbraco Cloud Portal and clone your cloud project down locally. [This article](../../../working-locally.md#cloning-an-umbraco-cloud-project) describes how you can find the clone URL.
-- Now working locally remove the Git Remote called `origin``, which points to Umbraco Cloud
+- Now working locally remove the Git Remote called `origin`, which points to Umbraco Cloud
 
  ```sh 
  git remote remove origin
@@ -62,7 +62,7 @@ Go to your repositories in GitHub and click on "New".
 
 Now we can move on to setting up a pipeline.
 
-## Set up Github
+## Set up Github repository variables
 
 The pipeline needs to know which Umbraco Cloud project to deploy to. In order to do this you will need the `Project ID` and the `API Key`. [This article](README.md#obtaining-the-project-id-and-api-key) describes how to get those values.
 
@@ -107,16 +107,16 @@ The push will start a new pipeline run.
 
 ## High level overview of the pipeline components
 
-The scripts are provided as a starting point. It is recommended that you familiarize yourself with the scripts and with documentation related to how to use GitHub Actions.
+The mentioned scripts are provided as a starting point. It is recommended that you familiarize yourself with the scripts and with documentation related to how to use GitHub Actions.
 
-The scripts demonstrates two thing:
+The scripts demonstrates the following:
  - How to sync your GitHub repository with the left-most project environment in Umbraco Cloud
  - How to deploy changes to the left-most project environment in Umbraco Cloud 
 
 ### Main
 
 The `main.yml` is the main pipeline, and is the one that will be triggered on a push to `main` branch.
-You can configure different trigger behavior in this file.
+You can configure a different trigger behavior in this file.
 
 You can add your Build and Test jobs between the `cloud-sync` and `cloud-deployment` jobs. 
 Keep in mind that you do not need to retain the dotnet build artifact for upload later. The `cloud-deployment` job will take care of packaging all your source code and upload to Umbraco Cloud. 
@@ -124,14 +124,14 @@ Keep in mind that you do not need to retain the dotnet build artifact for upload
 ### Cloud-sync
 
 The `cloud-sync.yml` shows how you can sync your Github repository with the left-most environment of your Cloud project.
-In this sample, it accepts any change from the api and applies and commits it back to the branch which triggered the pipeline. But the commit does not trigger the pipeline again.
+In this sample, it accepts any change from the api and applies and commits it back to the branch which triggered the pipeline. However the commit does not trigger the pipeline again.
 
 If you don't want the pipeline to commit back to the triggering branch, this is where you need to change the pipeline. 
 
 ### Cloud-deployment
 
-The `cloud.deployment.yml` show how you can deploy your repository to the left-most environment of your Cloud project.
-The sample shows how to prepare for deployment, request the deployment and await for cloud to finish.
+The `cloud-deployment.yml` show how you can deploy your repository to the left-most environment of your Cloud project.
+The sample shows how to prepare for deployment, request the deployment and wait for cloud to finish.
 
 There are a couple of things here to be aware of:
 - We are overwriting the `.gitignore` with the `cloud.gitignore`.
