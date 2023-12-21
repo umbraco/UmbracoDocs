@@ -12,7 +12,7 @@ We can make use of better image formats. It could be AV1 Image File Format (AVIF
 
 The other benefit of using a `<picture>` tag is that we can denote which images to use based on screen size. This is helping us to provide the most appropriate image to the user, avoiding unnecessary downloads of larger images. 
 
-There is a package available for Umbraco called [Slimsy](https://github.com/Jeavon/Slimsy) that makes setting this up easier, using the `GetCropUrl` method to match the crop settings that can be configured within Umbraco with [Image Cropper](https://docs.umbraco.com/umbraco-cms/v/12.latest/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/image-cropper#sample-code).
+There is a package available for Umbraco called [Slimsy](https://github.com/Jeavon/Slimsy) that makes setting this up easier. This is done by using the `GetCropUrl` method to match the crop settings that can be configured within Umbraco with [Image Cropper](https://docs.umbraco.com/umbraco-cms/v/12.latest/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/image-cropper#sample-code).
 
 ## Consider using SVGs
 
