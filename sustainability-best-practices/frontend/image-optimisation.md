@@ -4,7 +4,7 @@ Images typically make up [42% of the Largest Contentful Paint](https://paulcalva
 
 ## Optimize before upload
 
-It's important that we optimize these **before uploading** to our website. This results in a smaller footprint for a user to download, but also will use less computing to upload. Using tools such as [Squoosh](https://squoosh.app/) or resizing to an appropriate maximum expected size that the image will be displayed on the website will help reduce the overall emissions during the website lifetime.
+It's important that we optimize these **before uploading** them to our website. This results in a smaller footprint for a user to download, but will also use less computing to upload. Tools such as [Squoosh](https://squoosh.app/) or resizing to an appropriate maximum expected size can be used for optimizing. Then the images displayed on the website will help reduce the overall emissions during the website's lifetime.
 
 ## Use the best file format
 
