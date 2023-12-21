@@ -30,11 +30,11 @@ This capability significantly eases the migration process, allowing for the effi
 
 When exporting, you can choose to include associated media files and, if your account has access to the Settings section, the schema information and files as well.
 
-![Export](images/ExportZip.png)
+<img src="images/ExportZip.png" alt="drawing" heigh="100"/>
 
 That exported zip file can be used to import the content, files, and/or schema into a new environment.  You can upload the file via the browser.
 
-![Import](images/ImportZip.png)
+![Import](images/ImportZip.png){:height="50%" width="50%"}
 
 For more in-depth information on the import/export feature and other additions in the latest Deploy minor release, head over to this blog post here.
 
