@@ -22,10 +22,14 @@ Your project does not need to be running the latest minor for automatic upgrades
 If you create a new project on Umbraco Cloud the project will by default have automatic minor upgrades enabled.
 
 {% hint style="info" %}
-You are required to have a Development environment on your project for both automatic and semi-automatic upgrades to work.
-A development environment is included in all Umbraco Cloud plans, except Starter. 
-Find pricing details for Umbraco Cloud Starter plans on our [website](https://umbraco.com/products/umbraco-cloud/pricing).
+
+For projects where automatic minor upgrades are enabled, having a Development environment is not compulsory. However, it is highly recommended to facilitate a smoother and more controlled upgrade experience. In cases where manual upgrades are necessary, a Development environment becomes essential.
+
 {% endhint %}
+
+A development environment is included in all Umbraco Cloud plans, except Starter. Find pricing details for Umbraco Cloud Starter plans on our [website](https://umbraco.com/products/umbraco-cloud/pricing).
+
+A manual upgrade involves a more hands-on approach, where the upgrade process is initiated and controlled by the user or development team. This allows for greater flexibility and oversight, enabling teams to test and adapt the upgrade to their specific needs and configurations. Particularly, it provides an opportunity to thoroughly test the new version in a controlled environment before applying it to live production environments. This ensures compatibility and minimizes disruptions.
 
 ## Troubleshooting Automated minor upgrades
 
