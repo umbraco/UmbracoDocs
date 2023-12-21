@@ -1,6 +1,6 @@
 ---
 description: >-
-  Here you can find the Sustainability Best Practices with focus on back end  techniques listed by the Umbraco
+  Here you can find the Sustainability Best Practices with focus on backend  techniques listed by the Umbraco
   Sustainability Community Team.
 ---
 
