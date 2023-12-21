@@ -1,4 +1,4 @@
-# October 2023
+# December 2023
 
 ## Key Takeaways
 
