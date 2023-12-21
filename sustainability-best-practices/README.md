@@ -6,7 +6,7 @@ description: >-
 
 # Introduction
 
-As a global society, we should be making an effort to [be on track with the necessary changes](https://climateactiontracker.org/publications/state-of-climate-action-2022/). These changes are needed to keep global temperature increases below 1.5°C compared to pre-industrialised times. According to studies[attribution needed], that temperature will likely be breached in 2023.  This will have additional impacts of the warming weather pattern, for example more extreme weather events driven by El Niño.
+As a global society, we should be making an effort to [be on track with the necessary changes](https://climateactiontracker.org/publications/state-of-climate-action-2022/). These changes are needed to keep global temperature increases below 1.5°C compared to pre-industrialised times. According to [the studies](https://climateactiontracker.org/publications/state-of-climate-action-2022/)], the temperature will likely be breached in 2023. This will have additional impacts on the warming weather pattern, for example more extreme weather events driven by El Niño.
 
 The severe disruption to society will also extend to businesses with physical and digital infrastructure suffering damage, affecting employee’s ability to work.
 
