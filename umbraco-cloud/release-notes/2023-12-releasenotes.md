@@ -32,7 +32,7 @@ When exporting, you can choose to include associated media files and, if your ac
 
 <img src="images/ExportZip.png" alt="drawing" width="50%" />
 
-That exported zip file can be used to import the content, files, and/or schema into a new environment.  You can upload the file via the browser.
+That exported zip file can be used to import the content, files, and/or schema into a new environment.  You can import the exported file in the content section from the backoffice of your Umbraco project. 
 
 <img src="images/ImportZip.png" alt="drawing" width="50%" />
 
