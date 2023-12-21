@@ -18,9 +18,9 @@ If you are upgrading to a minor or patch of Deploy you can find the details abou
 
 Version 13 of Umbraco Deploy has a minimum dependency on Umbraco CMS core of `13.0.0`. It runs on .NET 8.
 
-#### Breaking changes
+**Breaking changes**
 
-Version 12 contains a number of breaking changes. We don't expect many projects to be affected by them as they are in areas that are not typical extension points. For reference though, the full details are listed here:
+Version 13 contains a number of breaking changes. We don't expect many projects to be affected by them as they are in areas that are not typical extension points. For reference though, the full details are listed here:
 
 **Behavior**
 
@@ -76,7 +76,7 @@ The following updates describe the more significant changes to the codebase and 
 
 These updates are more minor. We don't expect many projects to be affected by them as they are in areas that are not typical extension points:
 
-* Removed the obsolete `IsHeadless` property from `UmbracoCloudClientConfigurationInfo``.
+* Removed the obsolete `IsHeadless` property from \`UmbracoCloudClientConfigurationInfo\`\`.
 * Made the `ProcessX` methods for each step of content connectors private.
 * Removed the obsolete overload of `SaveContentType` on `ContentTypeConnectorBase`.
 * An obsolete constructor was removed from `DictionaryItemConnector`.
@@ -94,7 +94,7 @@ Version 12 of Umbraco Deploy has a minimum dependency on Umbraco CMS core of `12
 
 The forms deployment component has a minimum dependency on Umbraco Forms of `12.0.0`.
 
-#### Breaking changes
+**Breaking changes**
 
 Version 12 contains a number of breaking changes. We don't expect many projects to be affected by them as they are in areas that are not typical extension points. For reference though, the full details are listed here:
 
@@ -124,13 +124,13 @@ Use of Umbraco Deploy on Umbraco Cloud is not affected.
 
 <summary>Version 11</summary>
 
-### Version 11
+#### Version 11
 
 Version 11 of Umbraco Deploy has a minimum dependency on Umbraco CMS core of `11.0.0`. It runs on .NET 7.
 
 The forms deployment component has a minimum dependency on Umbraco Forms of `11.0.0`.
 
-#### Breaking changes
+**Breaking changes**
 
 Version 11 contains a number of breaking changes. We don't expect many projects to be affected by them as they are in areas that are not typical extension points. For reference though, the full details are listed here:
 
@@ -159,7 +159,7 @@ Version 11 contains a number of breaking changes. We don't expect many projects 
 
 <summary>Version 10</summary>
 
-### Version 10
+#### Version 10
 
 Version 10 of Umbraco Deploy has a minimum dependency on Umbraco CMS core of `10.0.0`. It runs on .NET 6.
 
@@ -167,9 +167,9 @@ The forms deployment component has a minimum dependency on Umbraco Forms of `10.
 
 To migrate to version 10 you should first update to the latest minor release of version 9. This will ensure you have all the database schema changes in place.
 
-#### Breaking changes
+**Breaking changes**
 
-Version 10 includes  a number of breaking changes. These changes are unlikely to affect many projects because they're not in typical extension points. For reference though, the full details are listed here.
+Version 10 includes a number of breaking changes. These changes are unlikely to affect many projects because they're not in typical extension points. For reference though, the full details are listed here.
 
 **Database Initialization**
 
