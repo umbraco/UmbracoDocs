@@ -7,29 +7,47 @@
 * **TLS 1.3 For All Plans** - Now available for all plans, TLS 1.3 enhances security across Umbraco Cloud, offering advanced protection for every user.
 * **Umbraco CI/CD Flow out of beta**  - Fully launched post-beta, the Umbraco CI/CD Flow offers robust, reliable tools for improved continuous integration and delivery.
 
-## Umbraco CI/CD Flow: Bridging Your CI/CD Pipeline with the Cloud
+## Umbraco 13 On Cloud
 
-Umbraco CI/CD Flow represents a significant enhancement in how developers can integrate, test, and deploy their projects on Umbraco Cloud. The feature is engineered to function as an extension to your existing CI/CD pipeline, allowing automated deployments directly to Umbraco Cloud. This creates a synergy between your existing robust CI/CD setup and Umbraco Cloud's specialized hosting capabilities that are optimized for Umbraco CMS.
+As part of our continuous evolution, **_Umbraco 13_**, is now the default setting for all new cloud projects created in Umbraco Cloud.
 
-If you already have a CI/CD pipeline, you're halfway there. Umbraco CI/CD Flow brings an added layer of sophistication by allowing seamless integration with Umbraco Cloud through the "Umbraco Public API."
+We maintain a versatile approach in our offerings to support the unique needs and preferences of our diverse user community. While we position version 13 as the new benchmark for excellence and innovation in new projects, we also acknowledge the importance of choice and flexibility. To this end, we continue to offer access to other actively supported CMS versions, including 8, 10, and 12. 
 
-The basic flow is depicted in the sequence diagram below.
+![Basic Flow](images/CMS13.png)
 
-![Basic Flow](images/NewBasicFlow.png)
+For an in-depth understanding of how Umbraco 13 revolutionizes your experience, we encourage you to visit our detailed blog post.
 
-Whether you're a CI/CD novice or a seasoned developer, we offer tailored guidance for a frictionless deployment experience. If you're starting from scratch, our thorough documentation outlines how to establish a CI/CD pipeline with popular platforms like Azure DevOps or GitHub Actions. For those with an existing setup, integrate effortlessly with Umbraco Cloud's specialized hosting features.
+## Umbraco Deploy Enhanced Content Management
+The standout feature in the recent minor Deploy release introduces valuable options for handling large content transfer, restores, and migrations to Umbraco Cloud and between Umbraco versions. This feature is particularly beneficial in two key scenarios where **exporting** and **importing** Umbraco content, files and schema are crucial.
+
+### Streamlined Content Operations for Editors and Managers
+A key aspect of the upgraded Umbraco Deploy is its focus on streamlining content operations, particularly beneficial for editors and website managers. This feature robustly supports substantial content transfers to upstream environments and ensures the efficient restoration of content to downstream environments. The enhanced functionality addresses the challenges of operational failures and timeouts, which are particularly prevalent in cloud-based environments like Azure web apps.
+
+### Simplified Project Migration for Developers
+For developers, the latest iteration of Umbraco Deploy significantly improves the process of project migration. Whether transitioning projects into Umbraco Cloud or navigating between different Umbraco versions, the new Deploy feature simplifies these tasks. It offers an intuitive interface for selecting and exporting specific content items, content trees, or entire workspaces into a zip file format.
+
+This capability significantly eases the migration process, allowing for the efficient handling and transfer of large data volumes. Upon importing this zip file into a new environment, the content is thoroughly read, validated, and seamlessly integrated, updating the information in Umbraco.
+
+When exporting, you can choose to include associated media files and, if your account has access to the Settings section, the schema information and files as well.
+
+![Export](images/ExportZip.png)
+
+That exported zip file can be used to import the content, files, and/or schema into a new environment.  You can upload the file via the browser.
+
+![Import](images/ImportZip.png)
+
+For more in-depth information on the import/export feature and other additions in the latest Deploy minor release, head over to this blog post here.
+
+Alternatively, visit the documentation page for the export/import of schema and content.
+
+## TLS 1.3 For All Plans
+In our commitment to providing top-tier security, we have expanded the availability of TLS 1.3 to all Umbraco Cloud plans. This enhancement means users can now activate TLS 1.3 for their custom hostnames, bringing advanced security settings to all project plans.
+
+![TLS 1.3 default enabled](images/TLS13.png)
+
+The initiative also includes optimizing default settings for new projects where TLS 1.3 will be the standard protocol, alongside other security standards like HTTP/2 and the upcoming HTTP/3. This not only boosts security and performance but also contributes to sustainable digital operations by optimizing resource use.
+
+## Umbraco CI/CD Flow out of beta
+After a successful beta phase, the Umbraco CI/CD Flow is now fully operational. This feature, designed to refine and streamline the development process in Umbraco, is now out of beta and available for all users. This full-scale launch of the CI/CD Flow promises to enhance the development experience in Umbraco, offering robust and reliable tools for continuous integration and delivery.
 
 Our [documentation](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/umbraco-cicd) serves as a roadmap, detailing various routes tailored to your needs. Learn how to invoke the Umbraco Cloud API from within your CI/CD pipeline, explore the specific endpoint details, or discover how to call this endpoint from an already established pipeline. Each path culminates in a seamless, automated deployment experience, empowering you to deploy with confidence.
-
-## Automatic Upgrades for Minor Versions
-We are pleased to announce an extension to our Automatic Upgrade feature. Previously limited to Patch versions, Automatic Upgrades for Umbraco CMS, Umbraco Forms, and Umbraco Deploy now include Minor versions. This update aims to further simplify your project management by automating more comprehensive updates.
-
-For those running existing Cloud projects, you can opt-in to enable Automatic Minor Upgrades directly from Umbraco Cloud on the new Automatic upgrade page.
-
-![Automatic Updates](images/Automatic-Updates-Minor.png)
-
-If you're starting a new Cloud project, the feature will be enabled by default, ensuring you're always running on the latest and most secure version across Umbraco CMS, Umbraco Forms, and Umbraco Deploy.
-
-With Automatic Minor Upgrades, you can enjoy several benefits. First, you'll save a significant amount of time, allowing you to focus on more important aspects of your project. Second, you'll have access to the latest features and enhancements across all key components. Lastly, the most recent security patches are applied automatically, giving you peace of mind.
-
-For further details, please consult our Upgrading Documentation where you'll find details regarding the upgrade process. Our support team is also on standby to assist with any queries you may have.
