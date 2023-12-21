@@ -2,7 +2,7 @@
 
 ## Hosting - renewable and low-carbon energy
 
-All major cloud providers have committed to using renewable energy sources for their power needs. Some providers are going further and committing to more responsible utilization/recycling of water - thisis  a big deal, given the cooling requirements of data centers. Using a hosting provider that is powered by renewable will make a difference.
+All major cloud providers have committed to using renewable energy sources for their power needs. Some providers are going further and committing to more responsible utilization/recycling of water - this is a big deal, given the cooling requirements of data centers. Using a hosting provider that is powered by renewable will make a difference.
 
 The the Green Web Foundation has a [list of green hosts](https://www.thegreenwebfoundation.org/tools/directory/).
 
