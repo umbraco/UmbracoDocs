@@ -4,7 +4,7 @@
 
 * **Umbraco 13 On Cloud**  - As the default setting for new projects, Umbraco 13 brings enhanced features and compatibility for a modern digital experience.
 * **Umbraco Deploy Enhanced Content Management** - Improving content and schema import and export, simplifying large-scale content management and project transitions.
-* **TLS 1.3 For All Plans** - Now available for all plans, TLS (Transport Layer Security) 1.3 enhances security across Umbraco Cloud, offering advanced protection for every user.
+* **TLS 1.3 For All Plans** - Now available for all plans, Transport Layer Security (TLS) 1.3 enhances security across Umbraco Cloud, offering advanced protection for every user.
 * **Umbraco CI/CD Flow out of beta**  - Fully launched post-beta, the Umbraco CI/CD Flow offers robust, reliable tools for improved continuous integration and delivery.
 
 ## Umbraco 13 On Cloud
