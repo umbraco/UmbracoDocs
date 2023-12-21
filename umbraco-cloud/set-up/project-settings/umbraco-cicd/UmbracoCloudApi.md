@@ -284,23 +284,27 @@ response=$(curl -s -X GET $url \
 latestDeploymentId=$(echo $response | jq -r '.deployments[0].deploymentId')
 
 ```
-The response from this API call will return a list of deployment objects, formatted in JSON, consistent with the structure used in other API responses.
+The response from this API call will return an object containing a list of deployment objects. The deployment-objects are consistent with the structure used in other API responses.
 Deployments are listed in descending order based on their creation timestamp.
 
 ```json
-[
-  {
-    "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
-    "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
-    "projectAlias": "cicd-demo-site",
-    "deploymentState": "Completed",
-    "updateMessage": "...",
-    "errorMessage": "",
-    "created": "2023-05-02T07:16:46.4183912",
-    "lastModified": "2023-05-02T07:18:48.8544387",
-    "completed": "2023-05-02T07:22:48.8544387"
- }
-]
+{
+  "projectId": "abcdef12-cef8-4e92-8887-ceb123456789",
+  "deployments":
+    [
+      {
+        "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
+        "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
+        "projectAlias": "cicd-demo-site",
+        "deploymentState": "Completed",
+        "updateMessage": "...",
+        "errorMessage": "",
+        "created": "2023-05-02T07:16:46.4183912",
+        "lastModified": "2023-05-02T07:18:48.8544387",
+        "completed": "2023-05-02T07:22:48.8544387"
+      }
+    ]
+}
 ```
 
 ### Get Deployment diff
