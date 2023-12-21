@@ -12,6 +12,10 @@ In this section, you can find the release notes for each version of Opayo Paymen
 
 <summary>Version 13</summary>
 
+#### 13.0.1 (December 20th 2023)
+
+* Fixed regression due to Flurl now using System.Text.Json by default and so serialization wasn't working correctly. Forced use of Newtonsoft serializer until we can fully test using System.Text.Json
+
 #### 13.0.0 (December 13th 2023)
 
 * Upgraded Umbraco & Umbraco Commerce dependencey to v13
