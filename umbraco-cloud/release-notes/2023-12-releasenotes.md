@@ -26,7 +26,7 @@ A key aspect of the upgraded Umbraco Deploy is its focus on streamlining content
 ### Simplified Project Migration for Developers
 For developers, the latest iteration of Umbraco Deploy significantly improves the process of project migration. Whether transitioning projects into Umbraco Cloud or navigating between different Umbraco versions, the new Deploy feature simplifies these tasks. It offers an intuitive interface for selecting and exporting specific content items, content trees, or entire workspaces into a zip file format.
 
-This capability significantly eases the migration process, allowing for the efficient handling and transfer of large data volumes. Upon importing this zip file into a new environment, the content is thoroughly read, validated, and seamlessly integrated, updating the information in Umbraco.
+This capability eases the migration process, allowing for the efficient handling and transfer of large data volumes. Upon importing this zip file into a new environment, the content is thoroughly read, validated, and seamlessly integrated, updating the information in Umbraco.
 
 When exporting, you can choose to include associated media files and, if your account has access to the Settings section, the schema information and files as well.
 
@@ -40,7 +40,7 @@ For more in-depth information on the import/export feature and other additions i
 And also visit the documentation page for the [export/import of schema and content](https://docs.umbraco.com/umbraco-deploy/deployment-workflow/import-export) for more details.
 
 ## TLS 1.3 For All Plans
-In our commitment to providing top-tier security, we have expanded the availability of TLS 1.3 to all Umbraco Cloud plans. This enhancement means users can now activate TLS 1.3 for their custom hostnames, bringing advanced security settings to all project plans.
+In our commitment to providing top-tier security, we have expanded the availability of TLS (Transport Layer Security) 1.3 to all Umbraco Cloud plans. This enhancement means users can now activate TLS 1.3 for their custom hostnames, bringing advanced security settings to all project plans.
 
 ![TLS 1.3 default enabled](images/TLS13.png)
 
