@@ -15,7 +15,7 @@ We maintain a versatile approach in our offerings to support the unique needs an
 
 ![Basic Flow](images/CMS13.png)
 
-For an in-depth understanding of how Umbraco 13 revolutionizes your experience, we encourage you to visit our detailed blog post.
+For an in-depth understanding of how Umbraco 13 improves your developer and editor experience, we encourage you to visit our detailed [blog post](https://umbraco.com/blog/umbraco-13-lts-release/).
 
 ## Umbraco Deploy Enhanced Content Management
 The standout feature in the recent minor Deploy release introduces valuable options for handling large content transfer, restores, and migrations to Umbraco Cloud and between Umbraco versions. This feature is particularly beneficial in two key scenarios where **exporting** and **importing** Umbraco content, files and schema are crucial.
@@ -30,15 +30,14 @@ This capability significantly eases the migration process, allowing for the effi
 
 When exporting, you can choose to include associated media files and, if your account has access to the Settings section, the schema information and files as well.
 
-<img src="images/ExportZip.png" alt="drawing" heigh="100"/>
+<img src="images/ExportZip.png" alt="drawing" width="50%" />
 
 That exported zip file can be used to import the content, files, and/or schema into a new environment.  You can upload the file via the browser.
 
-![Import](images/ImportZip.png){:height="50%" width="50%"}
+<img src="images/ImportZip.png" alt="drawing" width="50%" />
 
-For more in-depth information on the import/export feature and other additions in the latest Deploy minor release, head over to this blog post here.
-
-Alternatively, visit the documentation page for the export/import of schema and content.
+For more in-depth information on the import/export feature and other additions in the latest Deploy minor release, head over to this [blog post](https://umbraco.com/blog/umbraco-deploy-release-candidates-49103121/).
+And also visit the documentation page for the [export/import of schema and content](https://docs.umbraco.com/umbraco-deploy/deployment-workflow/import-export) for more details.
 
 ## TLS 1.3 For All Plans
 In our commitment to providing top-tier security, we have expanded the availability of TLS 1.3 to all Umbraco Cloud plans. This enhancement means users can now activate TLS 1.3 for their custom hostnames, bringing advanced security settings to all project plans.
