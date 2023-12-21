@@ -2,52 +2,27 @@
 
 The `RelationService` is pretty awesome as it allows you to create relations between objects that would otherwise have no obvious connection.
 
-* **Namespace:** `Umbraco.Core.Services`
+* **Namespace:** `Umbraco.Cms.Core.Services`
 * **Assembly:** `Umbraco.Core.dll`
 
 ## Getting the service
-
-When you are using an Umbraco controller class (Such as `SurfaceController` or `RenderMvcController`) you have access to the `RelationService` through the `ServiceContext`:
 
 ```csharp
 using System.Web.Mvc;
 using Umbraco.Web.Models;
 using Umbraco.Web.Mvc;
 
-namespace Doccers.Core.Controllers;
-
-public class HomeController : RenderMvcController
-{
-    public ActionResult Home(ContentModel model)
-    {
-        var rs = Services.RelationService;
-
-        return CurrentTemplate(model);
-    }
-}
-```
-
-You can also use the `RelationService` in any other class by injecting its interface:
+using Umbraco.Cms.Core.Services;
 
 ```csharp
-using Umbraco.Core.Composing;
-using Umbraco.Core.Services;
-
-namespace Doccers.Core.Components;
-
-public class RelationComponent : IComponent
+public class MyClass
 {
-    private readonly IRelationService _relationService;
+    private IRelationService _relationService_;
 
-    public RelationComponent(IRelationService relationService)
-    {
-        _relationService = relationService;
-    }
-
-    public void Initialize() { }
-
-    public void Terminate() { }
-}
+	public MyClass(IRelationService relationService)
+	{
+		_relationService_ = relationService;
+	}
 ```
 
 ## Methods
