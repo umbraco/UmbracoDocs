@@ -11,11 +11,14 @@ This page covers specific upgrade documentation for specific versions.
 {% hint style="info" %}
 If you are upgrading to a new minor or patch version, you can find information about the breaking changes in the [Release Notes](../release-notes.md) article.
 {% endhint %}
+
 <details>
 
 <summary>Version 13</summary>
 
 Version 13 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `13.0.0`. It runs on .NET 8.
+
+Deploy add-on for Umbraco Forms has been renamed from `Umbraco.Deploy.Forms` to `Umbraco.Forms.Deploy`.
 
 **Breaking changes**
 
@@ -42,7 +45,7 @@ The following updates describe the more significant changes to the codebase and 
 These updates are more minor. We don't expect many projects to be affected by them as they are in areas that are not typical extension points:
 
 * `DataSourceCacheRefresher` was made internal.
-* `HideField` was removed from `FieldType` and `IFieldType`.  `RenderInputType` with a value of `RenderInputType.Hidden` can be used here instead.
+* `HideField` was removed from `FieldType` and `IFieldType`. `RenderInputType` with a value of `RenderInputType.Hidden` can be used here instead.
 * The default implementation for the `Exists` method previously added to `IBaseService` was removed.
 * The obsolete overload for method `AddDataConsentField` on `FieldsetContainerExtensions` was removed.
 * The method `CanUserViewEntries` was added to the `IFormsSecurity` interface.
@@ -298,13 +301,13 @@ Version 8 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `8.0.
 
 In order to upgrade from Umbraco Forms 7 to Umbraco Forms 8, you can use any of these options:
 
-#### Download
+**Download**
 
 In order to upgrade you will want to [download the version of Forms you wish to upgrade to](https://our.umbraco.com/projects/developer-tools/umbraco-forms/). Instead of downloading the actual package, however, you want to download the `Umbraco.Forms.Files.x.y.z.zip` file (where x.y.z) is the version.
 
 The filename ends with `.Files.x.y.z.zip` and contains only the files that get installed when you install Umbraco Forms.
 
-#### Copy
+**Copy**
 
 The easiest way to proceed is to unzip the file you downloaded and copy and overwrite (almost) everything into your website. Almost, because you might not want to overwrite `~/App_Plugins/UmbracoForms/UmbracoForms.config` because you might have updated it in the past. Make sure to compare your current version to the version in the zip file you downloaded. If there's any new configuration options in there then copy those into your website's `UmbracoForms.config` file.
 
@@ -319,7 +322,7 @@ You can upgrade to the latest version of Umbraco Forms through:
 * [Automatic Upgrades](version-specific.md#automatic-upgrade), or
 * [Download and upgrade manually.](version-specific.md#download-and-upgrade-manually)
 
-#### Automatic Upgrade
+**Automatic Upgrade**
 
 Forms allows you to stay in sync with the latest releases, so you can take advantage of the new features and bug fixes.
 
@@ -341,7 +344,7 @@ Umbraco will now fetch and install the upgrade.
 
 Once it's completed the upgrade notification should be gone and you can continue using a newly updated Umbraco Forms.
 
-#### Download and upgrade manually
+**Download and upgrade manually**
 
 In order to upgrade you will want to [download the version of Forms you wish to upgrade to](https://our.umbraco.com/projects/developer-tools/umbraco-forms/). Instead of downloading the actual package, however, you want to download the `UmbracoForms.Files.x.y.z.zip` file (where x.y.z) is the version.
 
