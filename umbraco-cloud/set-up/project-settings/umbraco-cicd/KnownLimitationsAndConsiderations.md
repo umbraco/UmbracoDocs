@@ -20,7 +20,7 @@ As we continue to gather insights from our users, there are some known limitatio
 
 * Given the necessity to avoid changes in other environments, the lack of strict coordination among multiple teams or individuals working on the same project elevates the risk of conflicts.
 
-###Usage of Private NuGet Feeds
+### Usage of Private NuGet Feeds
 
 It is possible to reference private NuGet feeds [by using the Secrets Management feature](../../private-nuget-feed.md) on Umbraco Cloud. 
 
