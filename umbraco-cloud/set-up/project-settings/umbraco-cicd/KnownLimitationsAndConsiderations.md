@@ -30,7 +30,7 @@ This is because Umbraco Cloud collects the private NuGet credentials from your l
 
 You can also add the correct credentials that reference your Umbraco Cloud secrets by following the steps below:
   1. Login to [Kudu](https://docs.umbraco.com/umbraco-cloud/set-up/power-tools) on your left-most environment.
-  2. Navigate to your NuGet.config file via the console (the default location is the repository root).
+  2. Navigate to your `NuGet.config` file via the console (the default location is the repository root).
   3. Edit the NuGet.config file to include your private feed and credentials.
   4. Save the file.
   5. Commit the changes while in Kudu.
