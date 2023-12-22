@@ -24,7 +24,7 @@ As we continue to gather insights from our users, there are some known limitatio
 
 It is possible to reference private NuGet feeds [by using the Secrets Management feature](../../private-nuget-feed.md) on Umbraco Cloud. 
 
-If you plan on using this feature, the first time you are setting up the configuration has to be done manually (as described in the guide). Setting it up through the CI/CD pipeline is not possible.
+If you plan on using this feature, the first time you are setting up the private feed configuration has to be done manually. The guide describes how to correctly set it up. The initial setup is not possible through the CI/CD pipeline.
 
 This is because Umbraco Cloud collects the private NuGet credentials from your leftmost environment. If your leftmost environment does not have the credentials, trying to push the NuGet.config changes through CI/CD will cause restore problems.
 
