@@ -37,7 +37,6 @@ For illustration purposes, the following structure represents the full set of op
             "ApiKey": "<your API key here>",
             "ApiSecret": "<your API secret here>",
             "Edition": "Default",
-            "DefaultTimeoutSeconds": 60,
             "ExcludedEntityTypes": [],
             "RelationTypes" : [],
             "ValueConnectors": [],
@@ -60,13 +59,14 @@ For illustration purposes, the following structure represents the full set of op
             "ExportMemberGroups": true,
             "ReloadMemoryCacheFollowingDiskReadOperation": false,
             "AllowDomainsDeploymentOperations": "None",
+            "AllowWebhooksDeploymentOperations": "None",
+            "TrashedContentDeploymentOperations": "Import",
             "PreferLocalDbConnectionString": false,
             "MediaFileChecksumCalculationMethod": "PartialFileContents",
             "NumberOfSignaturesToUseAllRelationCache": 100,
             "ContinueOnMediaFilePathTooLongException": false,
             "SuppressCacheRefresherNotifications": false,
-            "HideConfigurationDetails": false,
-            "AllowWebhooksDeploymentOperations": "None"
+            "HideConfigurationDetails": false
         }
     }
   }
@@ -98,7 +98,7 @@ However, we are aware that some customers prefer the option to use the backoffic
 This setting allows you to exclude a certain type of entity from being deployed. This is **not** recommended to set, but sometimes there may be issues with the way a custom media fileprovider works with your site and you will need to set it for media files. Here is an example:
 
 ```json
-"ExcludedEntityTypes": ['media-file'],
+"ExcludedEntityTypes": ["media-file"],
 ```
 
 ### RelationTypes
@@ -110,26 +110,13 @@ This setting allows you to manage how relations are deployed between environment
 * `Strong` - This requires the content item that is related is set as a dependency, so if anything is added as a relation it would also add it as a dependency.
 
 ```json
-"RelationTypes": [
-    {
-        "Alias": "relateParentDocumentOnDelete",
-        "Mode": "Weak",
-    },
-    {
-        "Alias": "relateShopItemOnCreate",
-        "Mode": "Exclude",
-    }
-],
-```
-
-As of Deploy 10.1.2 and 11.0.1, if this setting is left blank, the two relation types used for usage tracking are omitted. These are rebuilt by the CMS following a save of an item in the target environment and so don't need to be transferred. Unless you have specified otherwise, the effective default configuration is:
-
-```json
 "RelationTypes": {
   "relateParentDocumentOnDelete": "Weak",
   "relateShopItemOnCreate": "Exclude"
 },
 ```
+
+As of Deploy 10.1.2, 11.0.1 and higher, if this setting is left blank, the relation types used for usage tracking are omitted. These relations are rebuilt by the CMS following a save of an item in the target environment and so don't need to be transferred.
 
 If a particular relation type is not listed, it's considered as a "weak" relation.
 
@@ -251,14 +238,14 @@ To configure the behavior you prefer, amend this value to either `None`, `Transf
 For example, using the following settings, you will have an installation that ignores broken dependencies when restoring from an upstream environment. It will however still prevent deployment and report any dependency issues when attempting a transfer to an upstream environment.
 
 ```json
-    "IgnoreBrokenDependenciesBehavior": "Restore",
+"IgnoreBrokenDependenciesBehavior": "Restore",
 ```
 
 When configuring for Deploy 9, an additional `IgnoreBrokenDependencies` setting existed that took a value of `true` or `false`. To achieve the same result as the example above, the following configuration was required:
 
 ```json
-    "IgnoreBrokenDependencies": true,
-    "IgnoreBrokenDependenciesBehavior": "Restore",
+"IgnoreBrokenDependencies": true,
+"IgnoreBrokenDependenciesBehavior": "Restore",
 ```
 
 ### Memory cache reload
@@ -266,7 +253,7 @@ When configuring for Deploy 9, an additional `IgnoreBrokenDependencies` setting 
 Some customers have reported intermittent issues related to Umbraco's memory cache following deployments, which are resolved by a manual reload of the cache via the _Settings > Published Status > Caches_ dashboard. If you are running into such issues and are able to accommodate a cache clear after deployment, this workaround can be automated via the following setting:
 
 ```json
-    "ReloadMemoryCacheFollowingDiskReadOperation": true,
+"ReloadMemoryCacheFollowingDiskReadOperation": true,
 ```
 
 By upgrading to the most recent available version of the CMS major you are running, you'll be able to benefit from the latest bug fixes and optimizations in this area. That should be your first option if encountering cache related issues. Failing that, or if a CMS upgrade is not an option, then this workaround can be considered.
@@ -276,14 +263,14 @@ By upgrading to the most recent available version of the CMS major you are runni
 Culture and hostname settings, defined per content item for culture invariant content, are not deployed between environments by default but can be opted into via configuration.
 
 ```json
-    "AllowDomainsDeploymentOperations": "None|Culture|AbsolutePath|Hostname|All",
+"AllowDomainsDeploymentOperations": "None|Culture|AbsolutePath|Hostname|All",
 ```
 
 To enable this, set the configuration value as appropriate for the types of domains you want to allow:
 
-* _Culture_ - the language setting for the content, defined under "Culture"
-* _AbsolutePath_ - values defined under "Domains" with an absolute path, e.g. "/en"
-* _Hostname_ - values defined under "Domains" with a full host name, e.g. "en.mysite.com"
+* `Culture` - the language setting for the content, defined under "Culture"
+* `AbsolutePath` - values defined under "Domains" with an absolute path, e.g. "/en"
+* `Hostname` - values defined under "Domains" with a full host name, e.g. "en.mysite.com"
 
 Combinations of settings can be applied, e.g. `Hostname,AbsolutePath`.
 
@@ -292,13 +279,28 @@ Combinations of settings can be applied, e.g. `Hostname,AbsolutePath`.
 Webhooks may be considered environment specific or schema information that you would like to synchronize between environments. As such, by default, Umbraco Deploy does not include webhooks in schema deployment operations.
 
 ```json
-    "AllowWebhooksDeploymentOperations": "None|All",
+"AllowWebhooksDeploymentOperations": "None|All",
 ```
 
 If you would like you include them you can adjust this setting:
 
-* _None_ - webhooks are not deployed and are expected to be managed independently in each environment.
-* _All_ - webhooks included in schema deployments.
+* `None` - webhooks are not deployed and are expected to be managed independently in each environment.
+* `All` - webhooks included in schema deployments.
+
+## Deployment of trashed content
+
+Specifies options for handling trashed content (documents, media and members) on export or import:
+
+```json
+"TrashedContentDeploymentOperations": "None|Export|Import|All"
+```
+
+You can amend this behavior using this setting:
+
+* `None` - trashed content will not be exported or imported
+* `Export` - trashed content will be included in an export
+* `Import` - trashed content will be processed and moved to the recycle bin on import
+* `All` - trashed content will be included in an export, processed and moved to the recycle bin on import
 
 ### PreferLocalDbConnectionString
 
@@ -309,13 +311,7 @@ For Umbraco 10, by default, a SQLite database is created.
 If you would prefer to use SQL Server LocalDb when it's available on your local machine, set this value to `true`. If LocalDB isn't reported as being available by Umbraco, it will fallback to using a SQLite database instead.
 
 ```json
-    "Umbraco": {
-        "Deploy": {
-            "Settings": {
-                "PreferLocalDbConnectionString": true
-            }
-        }
-    }
+"PreferLocalDbConnectionString": true
 ```
 
 ### MediaFileChecksumCalculationMethod
@@ -358,7 +354,7 @@ If set to `true` the configuration details shown on the setting's dashboard will
 
 ### Webhook Events
 
-Umbraco Deploy can optionally register events that you can use with Umbraco webhooks.  You can add them via code, for which we provide an extension method. The following example shows how you can use this within a composer.
+Umbraco Deploy can optionally register events that you can use with Umbraco webhooks. You can add them via code, for which we provide an extension method. The following example shows how you can use this within a composer.
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -366,7 +362,8 @@ using Umbraco.Deploy.Infrastructure.Extensions;
 
 public class RegisterDeployWebhooksComposer : IComposer
 {
-    public void Compose(IUmbracoBuilder builder) => builder.WebhookEvents().AddDeploy(deployBuilder => deployBuilder.AddTask());
+    public void Compose(IUmbracoBuilder builder)
+      => builder.WebhookEvents().AddDeploy(deployBuilder => deployBuilder.AddTask());
 }
 ```
 
