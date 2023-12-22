@@ -35,7 +35,7 @@ You can also add the correct credentials that reference your Umbraco Cloud secre
   4. Save the file.
   5. Commit the changes while in Kudu.
 
-After making sure that your NuGet.config has the credentials for your private feed, copy the NuGet.config file to your local project. You should be able to trigger the CI/CD flow successfully afterwards.
+After making sure that your `NuGet.config` has the credentials for your private feed, copy the `NuGet.config` file to your local project. You should be able to trigger the CI/CD flow successfully afterward.
 
 ## Key Points to Consider
 
