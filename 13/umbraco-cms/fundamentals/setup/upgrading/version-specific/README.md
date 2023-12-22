@@ -19,7 +19,7 @@ Use the [general upgrade guide](../) to complete the upgrade of your project.
 
 <summary>Umbraco 13</summary>
 
-Below you can find the list of breaking changes introduced in Umbraco 13 Release Candidate. The list will be updated if more breaking changes are introduced the further we get to the final release of Umbraco 13.
+Below you can find the list of breaking changes introduced in Umbraco 13. 
 
 * [Use ISO codes instead of language IDs for fallback languages and translations](https://github.com/umbraco/Umbraco-CMS/issues/13751)
 * [Breaking changes for the Delivery API](https://github.com/umbraco/Umbraco-CMS/issues/14745)
@@ -31,7 +31,6 @@ Below you can find the list of breaking changes introduced in Umbraco 13 Release
 * [Updates and support for re-use of CMS logic in Deploy](https://github.com/umbraco/Umbraco-CMS/issues/14990)
 * [Dont explicitly index nested property by default](https://github.com/umbraco/Umbraco-CMS/issues/15028)
 * [Blocks in the Rich Text Editor](https://github.com/umbraco/Umbraco-CMS/issues/15029)
-* [Fix FurthestAncestorOrSelfDynamicRootQueryStep and FurthestDescendantOrSelfDynamicRootQueryStep](https://github.com/umbraco/Umbraco-CMS/issues/15113)
 * [Remove parameter value/return nullability in \`IImageSourceParser\`, \`ILocalLinkParser\` and \`IMacroParser\`](https://github.com/umbraco/Umbraco-CMS/issues/15130)
 * [Update PackageMigrationsPlans collection to be Weighted and not Lazy](https://github.com/umbraco/Umbraco-CMS/issues/15138)
 * &#x20;[Move IContextCache parameter to base Deploy interfaces and add checksum to artifact dependency](https://github.com/umbraco/Umbraco-CMS/issues/15144)
