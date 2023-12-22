@@ -2,10 +2,10 @@
 
 The AuditService acts as a "gateway" to Umbraco data for operations which are related to the audit trail.
 
-[Browse the API documentation for IAuditService interface](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Services.IAuditService.html).
+[Browse the API documentation for IAuditService interface](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.Services.IAuditService.html).
 
- * **Namespace:** `Umbraco.Cms.Core.Services`
- * **Assembly:** `Umbraco.Core.dll`
+* **Namespace:** `Umbraco.Cms.Core.Services`
+* **Assembly:** `Umbraco.Core.dll`
 
  All samples in this document will require references to the following dll:
 
@@ -18,6 +18,7 @@ using Umbraco.Cms.Core.Services;
 ```
 
 For Razor views:
+
 ```csharp
 @using Umbraco.Cms.Core.Services
 ```

@@ -2,7 +2,9 @@
 
 The TextService is the entry point to localize any key in the text storage source for a given culture.
 
- * **Namespace:** `Umbraco.Core.Services` 
+[Browse the API documentation for ILocalizedTextService interface](https://apidocs.umbraco.com/v11/csharp/api/Umbraco.Cms.Core.Services.ILocalizedTextService.html).
+
+ * **Namespace:** `Umbraco.Cms.Core.Services` 
  * **Assembly:** `Umbraco.Core.dll`
 
  All samples in this document will require references to the following dll:
@@ -12,20 +14,10 @@ The TextService is the entry point to localize any key in the text storage sourc
 All samples in this document will require the following using statements:
 
 ```csharp
-using Umbraco.Core;
-using Umbraco.Core.Models;
-using Umbraco.Core.Services;
+using Umbraco.Cms.Core.Services;
 ```
 
 ## Getting the service
-
-### Services property
-
-If you wish to use the text service in a class that inherits from one of the Umbraco base classes (eg. `SurfaceController`, `UmbracoApiController` or `UmbracoAuthorizedApiController`), you can access the text service through a local `Services` property:
-
-```csharp
-ILocalizedTextService localizedTextService = Services.TextService;
-```
 
 ### Dependency Injection
 
@@ -34,21 +26,17 @@ In other cases, you may be able to use Dependency Injection. For instance if you
 ```csharp
 public class MyClass
 {
-
     private ILocalizedTextService _textService;
 
 	public MyClass(ILocalizedTextService textService)
 	{
 		_textService = textService;
 	}
-
 }
 ```
 
-### Static accessor
-
-If neither a `Services` property or Dependency Injection is available, you can also reference the static `Current` class directly:
+In Razor views, you can access the member service through the `@inject` directive:
 
 ```csharp
-ILocalizedTextService textService = Umbraco.Core.Composing.Current.Services.TextService;
+@inject ILocalizedTextService LocalizedTextService
 ```
