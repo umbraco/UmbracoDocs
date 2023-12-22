@@ -26,7 +26,7 @@ Once the NuGet package is installed, you need to register SQLite support with Um
 })
 ```
 
-After configuring Umbraco CMS with SQLite, Umbraco Commerce will automatically utilize the same database setup. If you wish to install Umbraco Commerce into its own SQLite database you can configure its own connection string in the `appSettings.json` like so:
+After configuring Umbraco CMS with SQLite, Umbraco Commerce will automatically utilize the same database configuration. If you wish to install Umbraco Commerce into its own SQLite database you can configure its own connection string in the `appSettings.json` like so:
 
 ```json
 {
