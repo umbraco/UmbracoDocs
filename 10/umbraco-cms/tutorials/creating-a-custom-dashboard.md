@@ -148,7 +148,7 @@ We can apply the same workflow to elements inside the dashboard, not only the na
 ```
 {% endcode %}
 
-We are adding another area tag with a few keys. Let us adjust the dashboard HTML accordingly:
+We are adding another area tag with a few keys. We then need to add some HTML to the `WelcomeDashboard`. Adjust the dashboard HTML with the following code:
 
 {% code title="WelcomeDashboard.html" lineNumbers="true" %}
 ```html
