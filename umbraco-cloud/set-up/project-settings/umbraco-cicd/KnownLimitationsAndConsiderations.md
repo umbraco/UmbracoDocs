@@ -1,5 +1,7 @@
 # Known Limitations and Considerations
 
+As we continue to gather insights from our users, there are some known limitations and considerations to be aware of.
+
 ## Potential Limitations and Considerations
 
 **Format Restrictions**
@@ -19,17 +21,21 @@
 * Given the necessity to avoid changes in other environments, the lack of strict coordination among multiple teams or individuals working on the same project elevates the risk of conflicts.
 
 **Usage of Private NuGet Feeds**
-* If you have followed the [documentation](https://docs.umbraco.com/umbraco-cloud/set-up/private-nuget-feed) to use a private NuGet feed on Umbraco Cloud, you need to make sure that your NuGet.config file has the correct credentials on your leftmost environment. 
-* If your leftmost environment does not have the credentials, and you try to push the NuGet.config changes through CI/CD, you will encounter problems.
-* You can add the correct credentials that reference your Umbraco Cloud secrets by following the steps below:
+
+It is possible to reference private NuGet feeds [by using the Secrets Management feature](../../private-nuget-feed.md) on Umbraco Cloud. 
+
+If you plan on using this feature, the first time you are setting up the configuration has to be done manually (as described in the guide), instead of doing it through the CI/CD pipeline.
+
+This is because Umbraco Cloud collects the private NuGet  credentials from your leftmost environment. If your leftmost environment does not have the credentials, and you try to push the NuGet.config changes through CI/CD, you will encounter restore problems.
+
+You can also add the correct credentials that reference your Umbraco Cloud secrets by following the steps below:
   1. Login to Kudu on your leftmost environment.
   2. Navigate to your NuGet.config file via the console (the default location is the repository root).
   3. Edit the NuGet.config file to include your private feed and credentials.
   4. Save the file.
   5. Commit the changes while in Kudu.
-* After making sure that your NuGet.config has the credentials for your private feed, copy the NuGet.config file to your local project. You should be able to trigger the CI/CD flow successfully afterwards.
 
-As we continue to prototype and gather insights from beta users, there are some known limitations and considerations to be aware of:
+After making sure that your NuGet.config has the credentials for your private feed, copy the NuGet.config file to your local project. You should be able to trigger the CI/CD flow successfully afterwards.
 
 ## Key Points to Consider
 
