@@ -4,39 +4,30 @@ description: >-
   GitHub Actions using the provided sample Powershell scripts.
 ---
 
-# GitHub Actions with Powershell scripts
+# GitHub Actions using Powershell scripts
 
-Before setting up the pipeline in GitHub, make sure that the steps in the [Configuring a CI/CD pipeline](./) are done.
+Before setting up the pipeline in GitHub, make sure that the following steps from the [Configuring a CI/CD pipeline](./) are done:
+- Use an existing Cloud project or create a new one
+- Activate CI/CD Flow
 
 You will need to define your pipeline in YAML, and find a way to interact with the Umbraco Cloud API.
 
 
 {% hint style="info" %}
-We have created a sample pipeline for GitHub. It includes YAML-files and custom Powershell scripts to interact with the Umbraco Cloud API.
+The Umbraco CI/CD Team have created a sample pipeline for GitHub Actions. 
 
-You can get the samples for GitHub and Azure DevOps from this [repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
+The Scripts are provided as is - This means that the scripts will do the bare minimum for a pipeline that is utilizing the CI/CD flow. The idea is that they can be integrated into your own pipelines so they will have the ability to do deployments to your Umbraco Cloud projects.
 
-For GitHub you will need the following files:
-- From the root folder
-  - `cloud.zipignore`
-- From `powershell` folder
-  - `Get-LatestDeployment.ps1`
-  - `Get-ChangesById.ps1`
-  - `New-Deployment.ps1`
-  - `Add-DeploymentPackage.ps1`
-  - `Start-Deployment.ps1`
-  - `Test-DeploymentStatus.ps1`
-- From the `powershell/github` folder
-  - `main.yml`
-  - `cloud-sync.yml` 
-  - `cloud-deployment.yml`
+The sample includes YAML-files and custom Powershell scripts to interact with the Umbraco Cloud API.
+
+You can get the samples for GitHub and Azure DevOps from this [GitHub repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
 
 {% endhint %}
 
 ## Import Cloud project repository to GitHub
 Go to your repositories in GitHub and click on "New".
 
-- Create a new empty repository in GitHub, and note down the clone URL.
+- Create a new empty repository, and note down the clone URL.
 - Go to the Umbraco Cloud Portal and clone your cloud project down locally. [This article](../../../working-locally.md#cloning-an-umbraco-cloud-project) describes how you can find the clone URL.
 - Now working locally remove the Git Remote called `origin`, which points to Umbraco Cloud
 
@@ -56,6 +47,7 @@ Go to your repositories in GitHub and click on "New".
 
  ```sh 
  git remote add origin https://github.com/{your-organization}/{your-repository}.git
+ git push -u origin --all
  ```
 
 - Push local repository to Github
@@ -66,51 +58,96 @@ Now we can move on to setting up a pipeline.
 
 The pipeline needs to know which Umbraco Cloud project to deploy to. In order to do this you will need the `Project ID` and the `API Key`. [This article](README.md#obtaining-the-project-id-and-api-key) describes how to get those values.
 
-- Create a new repository in GitHub
 - Now go to the repository in GitHub, and click on the Settings section.
 - Expand secrets and variables in the left-hand menu titled Security and click on Actions.
 
 <figure><img src="../../../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Security and Actions menu GitHub</p></figcaption></figure>
 
 - Create a `repository secret` called `UMBRACO_CLOUD_API_KEY` with the `API Key` value from the Umbraco Portal.
-- Create a `repository variable` with the name `PROJECT_ID` and the value `Project ID` value from the Umbraco Portal.
+- Create another `repository secret` with the name `PROJECT_ID` and the `Project ID` value from the Umbraco Portal.
 
 {% hint style="info" %}
-If you want to use other names for the variable or secret, you need to rename the environment variables in `main.yml`.
+If you want to use other names for the secrets, you need to rename the `secrets` variables in each of `main.yml`'s jobs .
 
 ```yaml
-env:
-  projectId: ${{ vars.PROJECT_ID }} # change the part inside the curly braces
-  umbracoCloudApiKey: ${{ secrets.UMBRACO_CLOUD_API_KEY }} # change the part inside the curly braces
+jobs:
+  cloud-sync:
+    uses: ./.github/workflows/cloud-sync.yml
+    secrets:
+      projectId: ${{ secrets.PROJECT_ID }} # change the part inside the curly braces
+      umbracoCloudApiKey: ${{ secrets.UMBRACO_CLOUD_API_KEY }} # change the part inside the curly braces
+
+  cloud-deployment:
+    needs: cloud-sync
+    uses: ./.github/workflows/cloud-deployment.yml
+    secrets:
+      projectId: ${{ secrets.PROJECT_ID }} # change the part inside the curly braces
+      umbracoCloudApiKey: ${{ secrets.UMBRACO_CLOUD_API_KEY }} # change the part inside the curly braces
 ```
 
 {% endhint %}
 
-Now Github is set up with all the needed information to be able to deploy your Cloud project back to Umbraco Cloud.
+Now Github is set up with the needed information to be able to run a deployment back to Umbraco Cloud.
+
+Next up it setting up the actual pipeline.
 
 ## Set up the GitHub Actions pipeline
 
-While working with the project on you local machine, do the following to prepare the pipeline.
+While working with the project on you local machine, follow these steps to prepare the pipeline, using the [samples from the repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
+
+For GitHub Actions you will need the following files:
+- From the root folder
+  - `cloud.zipignore`
+- From `powershell` folder
+  - `Get-LatestDeployment.ps1`
+  - `Get-ChangesById.ps1`
+  - `New-Deployment.ps1`
+  - `Add-DeploymentPackage.ps1`
+  - `Start-Deployment.ps1`
+  - `Test-DeploymentStatus.ps1`
+- From the `powershell/github` folder
+  - `main.yml`
+  - `cloud-sync.yml` 
+  - `cloud-deployment.yml`
+
+{% hint style="info" %}
+
+Download the provided sample scripts as ZIP from the [GitHub repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples/tree/main). Click on "Code" and then choose "Download ZIP". Then unzip it and use those files for the next steps.
+
+{% endhint %}
+
+Do the following to prepare the pipeline:
 - Copy the `cloud.zipignore` file to the root of your repository
-- Make a copy of the `.gitignore` and call it `cloud.gitignore`
+- Make a copy of the `.gitignore` from your repository and call the copy `cloud.gitignore`
   - Both files should be in the root of your repository
+  - In the bottom of the `.gitignore` add the line `**/git-patch.diff`
 - Also in the root, create a folder called `.github`
 - Inside `.github` create two additional folders
   - `workflows`
   - `powershell`
-- Copy the 3 YAML files into the `workflows` folder
-  - Update the `main.yml` to point to the two other YAML files `cloud-sync.yml` and `cloud-deployment.yml` inside your repository
-- Copy the Powershell scripts to the `powershell` folder
+- Copy the 3 YAML files from the `github` folder into the `workflows` folder
+- Copy the Powershell scripts from the `powershell` folder to the `powershell` folder
 - Commit the all changes, and push to GitHub
 
 The push will start a new pipeline run.
+
+### Optional: Run a deployment to confirm
+
+With everything set up, you may want to confirm that Umbraco Cloud reflect the changes you are sending via your pipeline.
+
+While working on you project locally, ad a new simple Document type.
+
+Commit the change to main and push to your repository.
+The pipeline starts to run
+Once the pipeline is done log into Backoffice on your left-most environment in cloud
+Go to the Settings section and see that your new Document type has been deployed
 
 ## High level overview of the pipeline components
 
 The mentioned scripts are provided as a starting point. It is recommended that you familiarize yourself with the scripts and with documentation related to how to use GitHub Actions.
 
 The scripts demonstrates the following:
- - How to sync your GitHub repository with the left-most project environment in Umbraco Cloud
+ - How to sync your GitHub repository with the [left-most project environment](../../../../deployment/README.md) in Umbraco Cloud
  - How to deploy changes to the left-most project environment in Umbraco Cloud 
 
 ### Main
