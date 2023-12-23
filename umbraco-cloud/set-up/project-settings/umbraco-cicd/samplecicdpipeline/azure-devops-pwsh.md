@@ -16,7 +16,7 @@ Next you will need to define your pipeline in YAML, and use it to interact with 
 {% hint style="info" %}
 The Umbraco CI/CD Team have created a sample pipeline for Azure DevOps. 
 
-The Scripts are provided as is - This means that the scripts will do the bare minimum for a pipeline that is utilizing the CI/CD flow. The idea is that they can be integrated into your own pipelines so they will have the ability to do deployments to your Umbraco Cloud projects.
+The Scripts are provided as is. This means that the scripts will do the bare minimum for a pipeline that is utilizing the CI/CD flow. Adapt and integrate them into your own pipelines to gain the ability to do deployments to your Umbraco Cloud projects.
 
 The sample includes YAML-files and custom Powershell scripts to interact with the Umbraco Cloud API.
 
@@ -135,7 +135,7 @@ When you click on "Save and Run" your first deployment will be triggered. Which 
 
 With everything set up, you may want to confirm that Umbraco Cloud reflect the changes you are sending via your pipeline.
 
-While working on you project locally, ad a new simple Document type.
+While working on you project locally, ad a new Document type.
 - Commit the change to `main` and push to your repository.
 - The pipeline starts to run
 - Once the pipeline is done log into Backoffice on your left-most environment in cloud
