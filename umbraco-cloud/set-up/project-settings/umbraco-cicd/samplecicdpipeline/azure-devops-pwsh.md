@@ -4,32 +4,23 @@ description: >-
   Azure DevOps using the provided sample Powershell scripts.
 ---
 
-# Azure DevOps with Powershell scripts
+# Azure DevOps using Powershell scripts
 
-Before setting up the pipeline in Azure DevOps, make sure that the steps in the [Configuring a CI/CD pipeline](./) are done.
+Before setting up the pipeline in Azure DevOps, make sure that the following steps from the [Configuring a CI/CD pipeline](./) are done:
+- Use an existing Cloud project or create a new one
+- Activate CI/CD Flow
 
-You will need to define your pipeline in YAML, and find a way to interact with the Umbraco Cloud API.
+Next you will need to define your pipeline in YAML, and use it to interact with the Umbraco Cloud API.
 
 
 {% hint style="info" %}
-We have created a sample pipeline for Azure DevOps.  It includes YAML-files and custom Powershell scripts to interact with the Umbraco Cloud API.
+The Umbraco CI/CD Team have created a sample pipeline for Azure DevOps. 
 
-You can get the samples for Azure DevOps and GitHub from this [repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
+The Scripts are provided as is - This means that the scripts will do the bare minimum for a pipeline that is utilizing the CI/CD flow. The idea is that they can be integrated into your own pipelines so they will have the ability to do deployments to your Umbraco Cloud projects.
 
-For Azure DevOps you will need the following files:
-- From the root folder
-  - `cloud.zipignore`
-- From `powershell` folder
-  - `Get-LatestDeployment.ps1`
-  - `Get-ChangesById.ps1`
-  - `New-Deployment.ps1`
-  - `Add-DeploymentPackage.ps1`
-  - `Start-Deployment.ps1`
-  - `Test-DeploymentStatus.ps1`
-- From the `powershell/azuredevops` folder
-  - `azure-release-pipeline.yml`
-  - `cloud-sync.yml` 
-  - `cloud-deployment.yml`
+The sample includes YAML-files and custom Powershell scripts to interact with the Umbraco Cloud API.
+
+You can get the samples for Both `Azure DevOps` and `GitHub` from [here](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
 
 {% endhint %}
 
@@ -63,14 +54,38 @@ Now we can move on to setting up a pipeline.
 
 ## Set up the Azure DevOps pipeline files
 
-While working with the project on you local machine, do the following to prepare the pipeline.
+While working with the project on you local machine, follow these steps to prepare the pipeline, using the [samples from the repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
+
+For Azure DevOps you will need the following files:
+- From the root folder
+  - `cloud.zipignore`
+- From `powershell` folder
+  - `Get-LatestDeployment.ps1`
+  - `Get-ChangesById.ps1`
+  - `New-Deployment.ps1`
+  - `Add-DeploymentPackage.ps1`
+  - `Start-Deployment.ps1`
+  - `Test-DeploymentStatus.ps1`
+- From the `powershell/azuredevops` folder
+  - `azure-release-pipeline.yml`
+  - `cloud-sync.yml` 
+  - `cloud-deployment.yml`
+
+{% hint style="info" %}
+
+Download the provided sample scripts as ZIP from the [GitHub repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples/tree/main). Click on "Code" and then choose "Download ZIP". Then unzip it and use those files for the next steps.
+
+{% endhint %}
+
+Do the following to prepare the pipeline:
 - Copy the `cloud.zipignore` file to the root of your repository
-- Make a copy of the `.gitignore` and call it `cloud.gitignore`
+- Make a copy of the `.gitignore` from your repository and call the copy `cloud.gitignore`
   - Both files should be in the root of your repository
+  - In the bottom of the `.gitignore` add the line `**/git-patch.diff`
 - Also in the root, create a folder called `devops`
-- Copy the 3 YAML files into the `devops` folder
+- Copy the 3 YAML files from the `powershell/azuredevops` folder into the `devops` folder
 - Inside `devops` create an additional folder called `powershell`
-- Copy the Powershell scripts to the `powershell` folder
+- Copy the Powershell scripts from the `powershell` folder to the `powershell` folder
 - Commit the all changes, and push to Azure DevOps
 
 ## Configure Azure DevOps
@@ -95,24 +110,43 @@ The pipeline needs to know which Umbraco Cloud project to deploy to. In order to
 - Now you are on the "Review your pipeline YAML" screen
   - Replace the `##Your project Id here##` with the Project Id you got from Umbraco Cloud Portal
   - Click on "Variables"
+
+<figure><img src="../../../../.gitbook/assets/azdevops-pipeline-variables.png" alt=""><figcaption><p>Pipeline variables in Azure DevOps</p></figcaption></figure>
+
   - Add the variable `umbracoCloudApiKey` with the value of the API Key you got from Umbraco Cloud Portal
 
-
-
-
 {% hint style="info" %}
-If you want to use other names for the variable, you need to rename the affected variables in `azure-release-pipeline.yaml`.
+
+It is recommended to handle the `API Key` as a secret. This can be done by ticking the "Keep this value secret" checkbox.  
+
+<figure><img src="../../../../.gitbook/assets/azdevops-secret-variable.png" alt=""><figcaption><p>Make the variable secret in Azure DevOps</p></figcaption></figure>
 
 {% endhint %}
 
-When you click on "Run" your first deployment will be triggered. Which means that Azure DevOps is set up with all the needed information to be able to deploy your Cloud project back to Umbraco Cloud.
+
+{% hint style="info" %}
+You can customize the names for the variables as you like, however you then need to rename the affected variables in `azure-release-pipeline.yaml`.
+
+{% endhint %}
+
+When you click on "Save and Run" your first deployment will be triggered. Which means that Azure DevOps is set up with all the needed information to be able to deploy your Cloud project back to Umbraco Cloud.
+
+### Optional: Run a deployment to confirm
+
+With everything set up, you may want to confirm that Umbraco Cloud reflect the changes you are sending via your pipeline.
+
+While working on you project locally, ad a new simple Document type.
+- Commit the change to `main` and push to your repository.
+- The pipeline starts to run
+- Once the pipeline is done log into Backoffice on your left-most environment in cloud
+- Go to the Settings section and see that your new Document type has been deployed 
 
 ## High level overview of the pipeline components
 
 The mentioned scripts are provided as a starting point. It is recommended that you familiarize yourself with the scripts and with documentation related to how to use Azure DevOps.
 
 The scripts demonstrates the following:
- - How to sync your Azure DevOps repository with the left-most project environment in Umbraco Cloud
+ - How to sync your Azure DevOps repository with the [left-most project environment](../../../../deployment/README.md) in Umbraco Cloud
  - How to deploy changes to the left-most project environment in Umbraco Cloud 
 
 ### Main
