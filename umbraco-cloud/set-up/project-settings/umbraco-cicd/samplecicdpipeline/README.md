@@ -108,7 +108,7 @@ Details the setup of a CI/CD pipeline using Azure DevOps.
 - [Example using Powershell scripts](azure-devops-pwsh.md)
 - [Example using Bash scripts](azure-devops.md)
 
-### GitHub Workflows
+### GitHub Actions
 
 Details the setup of a CI/CD pipeline using GitHub Actions.
 
