@@ -91,6 +91,20 @@ Now Github is set up with the needed information to be able to run a deployment 
 
 Next up it setting up the actual pipeline.
 
+### Allow GitHub to commit to your repository
+
+If you want to use the sample scripts "out of the box", it is recommended to give the GITHUB_TOKEN read and write permissions to the repository during workflow runs.
+
+This is how you grant that permission:
+
+- Working in your repository on GitHub, click on Settings in the top right
+- In the left sidebar, click on "Actions" and then on "General"
+- Scroll down to the "Workflow permissions" sections
+- Select the "Read and write permissions"
+- Click save 
+
+<figure><img src="../../../../.gitbook/assets/github-workflow-permissions.png" alt=""><figcaption><p>GitHub Workflow permissions</p></figcaption></figure>
+
 ## Set up the GitHub Actions pipeline
 
 While working with the project on you local machine, follow these steps to prepare the pipeline, using the [samples from the repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
