@@ -113,7 +113,7 @@ While working with the project on you local machine, follow these steps to prepa
 For GitHub Actions you will need the following files:
 - From the root folder
   - `cloud.zipignore`
-- From `powershell` folder
+- From the `powershell` folder
   - `Get-LatestDeployment.ps1`
   - `Get-ChangesById.ps1`
   - `New-Deployment.ps1`
