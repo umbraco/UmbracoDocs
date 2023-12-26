@@ -215,35 +215,6 @@ public class BlogCommentsComposer : IComposer
 }
 ```
 
-Or in an extension method called from `Program.cs` as is preferred:
-
-```csharp
-using System.Linq;
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Cms.Core.Notifications;
-
-namespace MyNamespace;
-
-public static class UmbracoBuilderExtensions
-{
-    public static IUmbracoBuilder AddBlogComments(this IUmbracoBuilder builder)
-    {
-        builder.AddNotificationHandler<UmbracoApplicationStartingNotification, RunBlogCommentsMigration>();
-        return builder;
-    }
-}
-```
-
-```csharp
-builder.CreateUmbracoBuilder()
-    .AddBackOffice()
-    .AddWebsite()
-    .AddDeliveryApi()
-    .AddComposers()
-    .AddBlogComments()  // calls our extension method to register the notification handler
-    .Build();
-```
-
 ## Which to use?
 
 In short, it's up to you. If you are migrating from version 8 and want the quickest route to getting running with the latest version, then using a component makes sense.

@@ -218,58 +218,6 @@ namespace TableMigrationTest
 }
 ```
 
-Or in an extension method called from `StartUp.cs` as is preferred:
-
-```csharp
-using System.Linq;
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Cms.Core.Notifications;
-
-namespace MyNamespace
-{
-    public static class UmbracoBuilderExtensions
-    {
-        public static IUmbracoBuilder AddBlogComments(this IUmbracoBuilder builder)
-        {
-            builder.AddNotificationHandler<UmbracoApplicationStartingNotification, RunBlogCommentsMigration>();
-            return builder;
-        }
-    }
-}
-```
-
-```csharp
-using System;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Extensions;
-
-namespace MyNamespace
-{
-    public class Startup
-    {
-        ...
-
-        public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddUmbraco(_env, _config)
-                .AddBackOffice()
-                .AddWebsite()
-                .AddComposers()
-                .AddBlogComments()  // calls our extension method to register the notification handler
-                .Build();
-
-        }
-
-        ...
-    }
-}
-```
-
 ## Which to use?
 
 In short, it's up to you. If you are migrating from version 8 and want the quickest route to getting running with the latest version, then using a component makes sense.
