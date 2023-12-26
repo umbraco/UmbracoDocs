@@ -13,6 +13,12 @@ In this section, you can find the release notes for each version of Buckaroo Pay
 
 <summary>Version 13</summary>
 
+#### 13.1.0 (December 13th 2023)
+
+* Migrate from `Newtonsoft.Json` to `System.Text.Json`.
+* Return more meaningful exception messages when there are misconfigured settings.
+* Fix minor bugs in provider settings.
+
 #### 13.0.0 (December 13th 2023)
 
 * Initial release
