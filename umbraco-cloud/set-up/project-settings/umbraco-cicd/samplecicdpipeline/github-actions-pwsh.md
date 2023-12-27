@@ -146,7 +146,7 @@ The push will start a new pipeline run.
 
 ### Optional: Run a deployment to confirm
 
-With everything set up, you may want to confirm that Umbraco Cloud reflect the changes you are sending via your pipeline.
+With everything set up, you may want to confirm that Umbraco Cloud reflects the changes you are sending via your pipeline.
 
 While working on you project locally, ad a new Document type.
 - Commit the change to `main` and push to your repository.
