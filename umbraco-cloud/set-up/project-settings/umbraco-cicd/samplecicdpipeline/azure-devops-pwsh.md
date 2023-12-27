@@ -135,7 +135,7 @@ When you click on "Save and Run" your first deployment will be triggered. Which 
 
 With everything set up, you may want to confirm that Umbraco Cloud reflect the changes you are sending via your pipeline.
 
-While working on you project locally, ad a new Document type.
+While working on your project locally, add a new Document type.
 - Commit the change to `main` and push to your repository.
 - The pipeline starts to run
 - Once the pipeline is done log into Backoffice on your left-most environment in cloud
