@@ -54,7 +54,7 @@ Now we can move on to setting up a pipeline.
 
 ## Set up the Azure DevOps pipeline files
 
-While working with the project on you local machine, follow these steps to prepare the pipeline, using the [samples from the repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
+While working with the project on your local machine, follow these steps to prepare the pipeline, using the [samples from the repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
 
 For Azure DevOps you will need the following files:
 - From the root folder
