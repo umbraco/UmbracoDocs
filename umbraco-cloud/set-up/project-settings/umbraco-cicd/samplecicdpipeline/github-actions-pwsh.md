@@ -57,7 +57,7 @@ Now we can move on to setting up a pipeline.
 The pipeline needs to know which Umbraco Cloud project to deploy to. In order to do this you will need the `Project ID` and the `API Key`. [This article](README.md#obtaining-the-project-id-and-api-key) describes how to get those values.
 
 - Now go to the repository in GitHub, and click on the Settings section.
-- Expand secrets and variables in the left-hand menu titled Security and click on Actions.
+- Expand secrets and variables in the left-hand menu titled `Security` and click on `Actions`.
 
 <figure><img src="../../../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Security and Actions menu GitHub</p></figcaption></figure>
 
