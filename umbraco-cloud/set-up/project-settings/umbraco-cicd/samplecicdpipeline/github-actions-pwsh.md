@@ -20,7 +20,7 @@ The Scripts are provided as is. This means that the scripts will do the bare min
 
 The sample includes YAML-files and custom Powershell scripts to interact with the Umbraco Cloud API.
 
-You can get the samples for GitHub and Azure DevOps from this [GitHub repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
+You can get the samples for both `GitHub Actions` and `Azure DevOps` from the [Github repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
 
 {% endhint %}
 
