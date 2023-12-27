@@ -106,7 +106,7 @@ This is how you can grant these permission:
 
 ## Set up the GitHub Actions pipeline
 
-While working with the project on you local machine, follow these steps to prepare the pipeline, using the [samples from the repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
+While working with the project on your local machine, follow these steps to prepare the pipeline, using the [samples from the repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
 
 For GitHub Actions you will need the following files:
 - From the root folder
