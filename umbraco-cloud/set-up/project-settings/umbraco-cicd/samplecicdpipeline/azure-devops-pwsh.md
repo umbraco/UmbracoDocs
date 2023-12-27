@@ -133,7 +133,7 @@ When you click on "Save and Run" your first deployment will be triggered. Which 
 
 ### Optional: Run a deployment to confirm
 
-With everything set up, you may want to confirm that Umbraco Cloud reflect the changes you are sending via your pipeline.
+With everything set up, you may want to confirm that Umbraco Cloud reflects the changes you are sending via your pipeline.
 
 While working on your project locally, add a new Document type.
 - Commit the change to `main` and push to your repository.
