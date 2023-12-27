@@ -190,7 +190,11 @@ There are a couple of things here to be aware of:
 - We have a special `cloud.zipignore` file.
   This is a convenient way to tell the pipeline which files **not** to include when creating the zip package to send to cloud.
 
+{% hint style="info" %}
+
 If you have frontend assets that needs to be build (using tools like npm/yarn or others), you should add the needed steps before `Zip Source Code`. This is to ensure that the fresh frontend assets will be part of the package to be sent to cloud. 
+
+{% endhint %}
 
 ## Further information
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
