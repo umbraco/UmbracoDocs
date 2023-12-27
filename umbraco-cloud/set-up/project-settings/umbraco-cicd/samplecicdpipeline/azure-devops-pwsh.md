@@ -86,7 +86,7 @@ Do the following to prepare the pipeline:
 - Copy the 3 YAML files from the `powershell/azuredevops` folder into the `devops` folder
 - Inside `devops` create an additional folder called `powershell`
 - Copy the Powershell scripts from the `powershell` folder to the `powershell` folder
-- Commit the all changes, and push to Azure DevOps
+- Commit all changes, and push to Azure DevOps
 
 ## Configure Azure DevOps
 
