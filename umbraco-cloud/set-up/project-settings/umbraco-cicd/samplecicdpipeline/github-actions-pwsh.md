@@ -43,7 +43,7 @@ Go to your repositories in GitHub and click on "New".
  git symbolic-ref HEAD refs/heads/main
  ```
 
-- Add a new remote called origin and pointing to the GitHub clone URL
+- Add a new remote called origin and pointing to the GitHub clone URL and push
 
  ```sh 
  git remote add origin https://github.com/{your-organization}/{your-repository}.git
