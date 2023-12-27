@@ -92,7 +92,7 @@ Next up it setting up the actual pipeline.
 ### Allow GitHub to commit to your repository
 
 The sample pipelines has a job called `cloud-sync`. This job is responsible for checking for changes in you Umbraco Cloud project, fetch them and apply them back to your repository. 
-In order for this to work, you need to give the GITHUB_TOKEN write permissions to the repository during workflow runs.
+In order for this to work, you need to give the `GITHUB_TOKEN` write permissions to the repository during workflow runs.
 
 This is how you grant that permission:
 
