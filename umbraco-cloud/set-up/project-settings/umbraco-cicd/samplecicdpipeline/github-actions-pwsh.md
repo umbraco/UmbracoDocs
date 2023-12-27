@@ -133,7 +133,7 @@ Do the following to prepare the pipeline:
 - Copy the `cloud.zipignore` file to the root of your repository
 - Make a copy of the `.gitignore` from your repository and call the copy `cloud.gitignore`
   - Both files should be in the root of your repository
-  - In the bottom of the `.gitignore` add the line `**/git-patch.diff`
+  - In the bottom of the `.gitignore` file add the line `**/git-patch.diff`
 - Also in the root, create a folder called `.github`
 - Inside `.github` create two additional folders
   - `workflows`
