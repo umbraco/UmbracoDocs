@@ -1,10 +1,10 @@
 ---
 description: >-
   This section provides a step-by-step guide to setting up a CI/CD pipeline in
-  GitHub Actions using the provided sample scripts.
+  GitHub Actions using the provided sample bash scripts.
 ---
 
-# GitHub Actions
+# GitHub Actions using Bash scripts
 
 ## Setting up the pipeline in GitHub Actions
 

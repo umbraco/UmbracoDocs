@@ -101,10 +101,16 @@ Once the Umbraco Cloud project has been set up, it is time to set up a CI/CD pip
 
 Below we have two examples of how to set up a CI/CD Pipeline using either Azure DevOps or GitHub Actions.
 
-### [Azure DevOps](azure-devops.md)
+### Azure DevOps
 
 Details the setup of a CI/CD pipeline using Azure DevOps.
 
-### [GitHub Actions](github-actions.md)
+- [Example using Powershell scripts](azure-devops-pwsh.md)
+- [Example using Bash scripts](azure-devops.md)
+
+### GitHub Actions
 
 Details the setup of a CI/CD pipeline using GitHub Actions.
+
+- [Example using Powershell scripts](github-actions-pwsh.md)
+- [Example using Bash scripts](github-actions.md)
