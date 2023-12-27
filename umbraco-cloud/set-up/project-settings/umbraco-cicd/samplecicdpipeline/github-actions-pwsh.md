@@ -50,8 +50,6 @@ Go to your repositories in GitHub and click on "New".
  git push -u origin --all
  ```
 
-- Push local repository to Github
-
 Now we can move on to setting up a pipeline.
 
 ## Set up Github repository variables
