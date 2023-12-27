@@ -1,6 +1,6 @@
 # Managing Transport Security
 
-Once you have added your hostnames to your Umbraco Cloud project, it's possible to configure certain transport security options for all or specific hostnames within your project. These security options all relate to the traffic that goes through your hostname from the origin (Umbraco Cloud) to the end-user - meaning the protocols and encryption used to transport your website and assets from the webserver to the browser.
+Once you have added your custom hostnames to your Umbraco Cloud project, it's possible to configure certain transport security options for all or specific custom hostnames within your project. These security options all relate to the traffic that goes through your hostname from the origin (Umbraco Cloud) to the end-user - meaning the protocols and encryption used to transport your website and assets from the webserver to the browser.
 
 Currently, these options are available:
 
@@ -8,11 +8,11 @@ Currently, these options are available:
 * TLS 1.3 (default: off)
 * Minimum TLS Version (default: 1.2)
 
-When a new hostname is added to a Project it will have the default settings applied. But you can change the defaults for your Project, so new hostnames will get the default settings you have chosen.
+When a new custom hostname is added to a Project it will have the default settings applied. But you can change the defaults for your Project, so new custom hostnames will get the default settings you have chosen.
 
 ## HTTP/2 Explained
 
-The first usable version of HTTP was created in 1997. Because it went through different stages of development, this first version of HTTP was called HTTP/1.1. This version is still in use on the web. In 2015, a new version of HTTP called HTTP/2 was created. HTTP/2 progressively enhances your website’s performance. When a browser supports HTTP/2, Umbraco Cloud will take full advantage of HTTP/2 performance benefits end to end. For older browsers or non-HTTPS requests, the traffic will fall back to HTTP/1.1. You don’t need to choose between better performance and backward compatibility, which is why HTTP/2 is enabled by default for all new hostnames added to a Umbraco Cloud project.
+The first usable version of HTTP was created in 1997. Because it went through different stages of development, this first version of HTTP was called HTTP/1.1. This version is still in use on the web. In 2015, a new version of HTTP called HTTP/2 was created. HTTP/2 progressively enhances your website’s performance. When a browser supports HTTP/2, Umbraco Cloud will take full advantage of HTTP/2 performance benefits end to end. For older browsers or non-HTTPS requests, the traffic will fall back to HTTP/1.1. You don’t need to choose between better performance and backward compatibility, which is why HTTP/2 is enabled by default for all new custom hostnames added to a Umbraco Cloud project.
 
 ## TLS 1.3 Explained
 
@@ -32,12 +32,12 @@ Access to the different options varies depending on the Umbraco Cloud plan your 
 
 ## Security subpage
 
-Click **Security** from the **Settings** dropdown on your Umbraco Cloud Project. The Security settings are scoped per environment, so if you have multiple environments and add your hostnames to different environments you can select the environment at the top of the page.
+Click **Security** from the **Settings** dropdown on your Umbraco Cloud Project. The Security settings are scoped per environment, so if you have multiple environments and add your custom hostnames to different environments you can select the environment at the top of the page.
 
-Aside from the environments, the Security page is divided into two parts: 'Default Settings' and 'Hostname Specific Settings'. Use the **Default Settings** to configure what should be applied by default to new and existing hostnames.
+Aside from the environments, the Security page is divided into two parts: 'Default Settings' and 'Hostname Specific Settings'. Use the **Default Settings** to configure what should be applied by default to new and existing custom hostnames.
 
 ![Default Security Settings](../images/security-subpage.png)
 
-If you want to have different security options for different hostnames, then select the hostname under **Hostname Specific Settings** and adjust the options for that specific hostname. This might be useful if you want to test the different options on another hostname than your primary hostname.
+If you want to have different security options for different custom hostnames, then select the custom hostname under **Hostname Specific Settings** and adjust the options for that specific hostname. This might be useful if you want to test the different options on another custom hostname than your primary hostname.
 
 ![Hostnames Specific Security Settings](../images/security-subpage-hostname-specific.png)

@@ -362,10 +362,11 @@ Umbraco Deploy can optionally register events that you can use with Umbraco webh
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
+using Umbraco.Deploy.Infrastructure.Extensions;
 
 public class RegisterDeployWebhooksComposer : IComposer
 {
-    public void Compose(IUmbracoBuilder builder) => builder.WebhookEvents().AddDeployWebhookEvents();
+    public void Compose(IUmbracoBuilder builder) => builder.WebhookEvents().AddDeploy(deployBuilder => deployBuilder.AddTask());
 }
 ```
 

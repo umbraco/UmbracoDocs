@@ -1,10 +1,10 @@
 ---
 description: >-
   This section provides a step-by-step guide to setting up a CI/CD pipeline in
-  Azure DevOps using the provided sample bash scripts.
+  Azure DevOps using the provided sample scripts.
 ---
 
-# Azure DevOps using Bash scripts
+# Azure DevOps
 
 ## Setting Up the pipeline in Azure DevOps
 

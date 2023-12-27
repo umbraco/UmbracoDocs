@@ -2,7 +2,7 @@
 description: >-
   This document covers specific upgrade steps if a version requires them. Most
   versions do not require specific upgrade steps. In most cases, you will be
-  able to upgrade directly from your current versi
+  able to upgrade directly from your current version
 ---
 
 # Version Specific Upgrades
@@ -19,7 +19,7 @@ Use the [general upgrade guide](../) to complete the upgrade of your project.
 
 <summary>Umbraco 13</summary>
 
-Below you can find the list of breaking changes introduced in Umbraco 13 Release Candidate. The list will be updated if more breaking changes are introduced the further we get to the final release of Umbraco 13.
+Below you can find the list of breaking changes introduced in Umbraco 13. 
 
 * [Use ISO codes instead of language IDs for fallback languages and translations](https://github.com/umbraco/Umbraco-CMS/issues/13751)
 * [Breaking changes for the Delivery API](https://github.com/umbraco/Umbraco-CMS/issues/14745)
@@ -31,7 +31,6 @@ Below you can find the list of breaking changes introduced in Umbraco 13 Release
 * [Updates and support for re-use of CMS logic in Deploy](https://github.com/umbraco/Umbraco-CMS/issues/14990)
 * [Dont explicitly index nested property by default](https://github.com/umbraco/Umbraco-CMS/issues/15028)
 * [Blocks in the Rich Text Editor](https://github.com/umbraco/Umbraco-CMS/issues/15029)
-* [Fix FurthestAncestorOrSelfDynamicRootQueryStep and FurthestDescendantOrSelfDynamicRootQueryStep](https://github.com/umbraco/Umbraco-CMS/issues/15113)
 * [Remove parameter value/return nullability in \`IImageSourceParser\`, \`ILocalLinkParser\` and \`IMacroParser\`](https://github.com/umbraco/Umbraco-CMS/issues/15130)
 * [Update PackageMigrationsPlans collection to be Weighted and not Lazy](https://github.com/umbraco/Umbraco-CMS/issues/15138)
 * &#x20;[Move IContextCache parameter to base Deploy interfaces and add checksum to artifact dependency](https://github.com/umbraco/Umbraco-CMS/issues/15144)
@@ -799,9 +798,10 @@ When the upgrade is completed and tested, and prior to deploying to any publicly
    * `/umbraco/UmbracoWebsite`
    * `/umbraco/config/lang`
    * `/umbraco/config/appsettings-schema.json`
-4. Deploy the site how you normally would to your public facing environment.
-5. Start the site. At this point it will launch and upgrade the database, after which the site should become accessible and your upgrade is complete.
-6. Check the logs for any errors which may have occurred during the upgrade process.
+4. If you are using Umbraco Forms, update your files and folders according to the [Upgrading - version specific](https://docs.umbraco.com/umbraco-forms/installation/version-specific) for version 10 article.
+5. Deploy the site how you normally would to your public facing environment.
+6. Start the site. At this point it will launch and upgrade the database, after which the site should become accessible and your upgrade is complete.
+7. Check the logs for any errors which may have occurred during the upgrade process.
 
 </details>
 
