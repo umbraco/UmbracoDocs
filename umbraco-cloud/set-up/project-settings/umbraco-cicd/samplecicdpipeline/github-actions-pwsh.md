@@ -96,10 +96,10 @@ In order for this to work, you need to give the `GITHUB_TOKEN` write permissions
 
 This is how you can grant these permission:
 
-- Working in your repository on GitHub, click on Settings in the top right
-- In the left sidebar, click on "Actions" and then on "General"
-- Scroll down to the "Workflow permissions" sections
-- Select the "Read and write permissions"
+- Working in your repository on `GitHub`, click on `Settings` in the top right
+- In the left sidebar, click on `Actions` and then on `General`
+- Scroll down to the `Workflow permissions` sections
+- Select the `Read and write permissions`
 - Click save 
 
 <figure><img src="../../../../.gitbook/assets/github-workflow-permissions.png" alt=""><figcaption><p>GitHub Workflow permissions</p></figcaption></figure>
