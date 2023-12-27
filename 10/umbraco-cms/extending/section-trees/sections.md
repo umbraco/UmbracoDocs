@@ -44,14 +44,13 @@ By creating a C# class that implements `ISection` from `Umbraco.Cms.Core.Section
 ```csharp
 using Umbraco.Cms.Core.Sections;
 
-namespace My.Website.Sections
-{
-    public class MyFavouriteThingsSection : ISection
-    {
-        public string Alias => "myFavouriteThings";
+namespace My.Website.Sections;
 
-        public string Name => "My Favourite Things";
-    }
+public class MyFavouriteThingsSection : ISection
+{
+    public string Alias => "myFavouriteThings";
+
+    public string Name => "My Favourite Things";
 }
 ```
 
