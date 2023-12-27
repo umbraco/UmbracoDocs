@@ -187,7 +187,7 @@ The sample shows how to prepare for deployment, request the deployment and wait 
 There are a couple of things here to be aware of:
 - We are overwriting the `.gitignore` with the `cloud.gitignore`.
   This is a way to accommodate your gitignore-needs when working locally. For instance you might want to ignore frontend builds, but you want them build and published to cloud.  
-- We have a special `cloud.zipignore`.
+- We have a special `cloud.zipignore` file.
   This is a convenient way to tell the pipeline which files **not** to include when creating the zip package to send to cloud.
 
 If you have frontend assets that needs to be build (using tools like npm/yarn or others), you should add the needed steps before `Zip Source Code`. This is to ensure that the fresh frontend assets will be part of the package to be sent to cloud. 
