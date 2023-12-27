@@ -14,7 +14,7 @@ Next you will need to define your pipeline in YAML, and use it to interact with 
 
 
 {% hint style="info" %}
-The Umbraco CI/CD Team have created a sample pipeline for Azure DevOps. 
+The Umbraco CI/CD Team have created a sample pipeline for Azure DevOps.
 
 The Scripts are provided as is. This means that the scripts will do the bare minimum for a pipeline that is utilizing the CI/CD flow. Adapt and integrate them into your own pipelines to gain the ability to do deployments to your Umbraco Cloud projects.
 
@@ -31,13 +31,13 @@ Go to your repositories in Azure DevOps and click on "Create a repository".
 - Go to the Umbraco Cloud Portal and clone your cloud project down locally. [This article](../../../working-locally.md#cloning-an-umbraco-cloud-project) describes how you can find the clone URL.
 - Now working locally remove the Git Remote called `origin`, which currently points to Umbraco Cloud
 
- ```sh 
+ ```sh
  git remote remove origin
  ```
 
 - Optionally rename branch `master` to `main`
 
- ```sh 
+ ```sh
  # optional step
  git branch -m  main
  git symbolic-ref HEAD refs/heads/main
@@ -45,7 +45,7 @@ Go to your repositories in Azure DevOps and click on "Create a repository".
 
 - Add a new remote called origin and pointing to the Azure DevOps clone URL and push
 
- ```sh 
+ ```sh
  git remote add origin https://{your-organization}@dev.azure.com/{your-organization}/{azure-project-scope}/_git/{your-repository}
  git push -u origin --all
  ```

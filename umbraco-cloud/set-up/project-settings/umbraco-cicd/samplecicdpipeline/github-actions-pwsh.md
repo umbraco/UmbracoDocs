@@ -31,13 +31,13 @@ Go to your repositories in GitHub and click on "New".
 - Go to the Umbraco Cloud Portal and clone your cloud project down locally. [This article](../../../working-locally.md#cloning-an-umbraco-cloud-project) describes how you can find the clone URL.
 - Now working locally remove the Git Remote called `origin`, which points to Umbraco Cloud
 
- ```sh 
+ ```sh
  git remote remove origin
  ```
 
 - Optionally rename branch `master` to `main`
 
- ```sh 
+ ```sh
  # optional step
  git branch -m  main
  git symbolic-ref HEAD refs/heads/main
@@ -45,7 +45,7 @@ Go to your repositories in GitHub and click on "New".
 
 - Add a new remote called origin and pointing to the GitHub clone URL and push
 
- ```sh 
+ ```sh
  git remote add origin https://github.com/{your-organization}/{your-repository}.git
  git push -u origin --all
  ```
@@ -65,7 +65,7 @@ The pipeline needs to know which Umbraco Cloud project to deploy to. In order to
 - Create another `repository secret` with the name `PROJECT_ID` and the `Project ID` value from the Umbraco Portal.
 
 {% hint style="info" %}
-If you want to use other names for the secrets, you need to rename the `secrets` variables in each of `main.yml`'s jobs .
+If you want to use other names for the secrets, you need to rename the `secrets` variables in each of `main.yml`'s jobs.
 
 ```yaml
 jobs:
@@ -91,10 +91,10 @@ Next up it setting up the actual pipeline.
 
 ### Allow GitHub to commit to your repository
 
-The sample pipelines has a job called `cloud-sync`. This job is responsible for checking for changes in you Umbraco Cloud project, fetch them and apply them back to your repository. 
+The sample pipelines have a job called `cloud-sync`. This job is responsible for checking for changes in you Umbraco Cloud project, fetch them and apply them back to your repository. 
 In order for this to work, you need to give the `GITHUB_TOKEN` write permissions to the repository during workflow runs.
 
-This is how you can grant these permission:
+This is how you can grant these permissions:
 
 - Working in your repository on `GitHub`, click on `Settings` in the top right
 - In the left sidebar, click on `Actions` and then on `General`
