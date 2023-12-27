@@ -170,7 +170,7 @@ The `cloud-deployment.yml` shows how you can deploy your repository to the left-
 The sample shows how to prepare for deployment, request the deployment and wait for cloud to finish.
 
 There are a couple of things here to be aware of:
-- We are overwriting the `.gitignore` with the `cloud.gitignore`.
+- We are overwriting the `.gitignore` file with `cloud.gitignore`.
   This is a way to accommodate your gitignore-needs when working locally. For instance you might want to ignore frontend builds, but you want them build and published to cloud.  
 - We have a special `cloud.zipignore`.
   This is a convenient way to tell the pipeline which files **not** to include when creating the zip package to send to cloud.
