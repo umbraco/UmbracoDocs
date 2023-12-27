@@ -94,7 +94,7 @@ Next up it setting up the actual pipeline.
 The sample pipelines has a job called `cloud-sync`. This job is responsible for checking for changes in you Umbraco Cloud project, fetch them and apply them back to your repository. 
 In order for this to work, you need to give the `GITHUB_TOKEN` write permissions to the repository during workflow runs.
 
-This is how you grant that permission:
+This is how you can grant these permission:
 
 - Working in your repository on GitHub, click on Settings in the top right
 - In the left sidebar, click on "Actions" and then on "General"
