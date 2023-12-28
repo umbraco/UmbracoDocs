@@ -54,14 +54,14 @@ The zip file includes the following files:
 
 13. Give permission for these scripts to be able to run within the workflows > scripts folder using the following commands in the Command Line:
 
+{% hint style="info" %}
+Ensure you run **git add name-of-file.sh** before running the below commands to add untracked files to the git index.
+{% endhint %}
+
 * `git update-index --chmod=+x create_deployment.sh`
 * `git update-index --chmod=+x upload_package.sh`
 * `git update-index --chmod=+x start_deployment.sh`
 * `git update-index --chmod=+x get_deployment_status.sh`
-
-{% hint style="info" %}
-Ensure you run **git add name-of-file.sh** before running the above commands to add untracked files to the git index.
-{% endhint %}
 
 14. Commit all the changes and push it up to GitHub and the pipeline will fail.
 15. Copy the files from your Umbraco Cloud local Development repository and paste them into the GitHub local repository (don't copy over the git folder).
