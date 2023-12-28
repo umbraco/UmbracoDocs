@@ -91,11 +91,11 @@ The Telemetry Data dashboard is a consent screen that is used for collecting sys
 
 **Basic** contains:
 
-* Anonymized site ID, Umbraco version, and packages installed.
+- Anonymized site ID, Umbraco version, and packages installed.
 
 **Minimal** contains:
 
-* Anonymized site ID only
+- Anonymized site ID only
 
 You can see the specific data being sent on each of the levels directly in the **Telemetry Data** Dashboard.
 
