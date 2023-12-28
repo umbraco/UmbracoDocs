@@ -39,7 +39,7 @@ public class MediaNotificationHandler : INotificationHandler<MediaSavedNotificat
 ## Returning messages to the user
 
 You can return a custom message to the user. Use this to show information, a warning or maybe an error. 
-This is achieved using the ```Messages``` property of the notification. 
+This is achieved using the ```Messages``` property of the notification and a composer.
 ### Example
 This example returns an informational message to the user when a Media item is saved.
 ```csharp
