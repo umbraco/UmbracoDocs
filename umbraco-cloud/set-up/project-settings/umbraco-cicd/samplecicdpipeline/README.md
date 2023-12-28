@@ -62,13 +62,13 @@ cp -r your-cloud-project-alias local-cicd-demo-site
 If you use the command line (cmd) to clone the project then you can use `copy -r` instead of `cp -r` to make a copy of the folder.
 {% endhint %}
 
-This will set up your local workspace, allowing you to work on the project before pushing changes back to the Umbraco Cloud repository.&#x20;
+This will set up your local workspace, allowing you to work on the project before pushing changes back to the Umbraco Cloud repository.
 
 ### Reconfiguring Git Remotes
 
-After cloning the Umbraco Cloud repository, it's essential to remove its remote settings so that you can link it to your own or your company's repository.&#x20;
+After cloning the Umbraco Cloud repository, it's essential to remove its remote settings so that you can link it to your own or your company's repository.
 
-In the below example, we'll be using an Azure DevOps-hosted repository as the new origin.&#x20;
+In the below example, we'll be using an Azure DevOps-hosted repository as the new origin.
 
 Follow the steps below to reset the Git remote from the root folder of `local-cicd-demo-site`:
 
@@ -97,14 +97,20 @@ git push -u origin main
 
 By executing these commands, you'll rename the local 'master' branch to 'main' and update the remote repository to reflect this change. This is an optional step but aligns with the industry trend towards more inclusive language.
 
-Once the Umbraco Cloud project has been set up, it is time to set up a CI/CD pipeline.&#x20;
+Once the Umbraco Cloud project has been set up, it is time to set up a CI/CD pipeline.
 
 Below we have two examples of how to set up a CI/CD Pipeline using either Azure DevOps or GitHub Actions.
 
-### [Azure DevOps](azure-devops.md)
+### Azure DevOps
 
 Details the setup of a CI/CD pipeline using Azure DevOps.
 
-### [GitHub Actions](github-actions.md)
+* [Example using Powershell scripts](azure-devops-pwsh.md)
+* [Example using Bash scripts](azure-devops.md)
+
+### GitHub Actions
 
 Details the setup of a CI/CD pipeline using GitHub Actions.
+
+* [Example using Powershell scripts](github-actions-pwsh.md)
+* [Example using Bash scripts](github-actions.md)
