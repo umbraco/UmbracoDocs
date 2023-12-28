@@ -1,10 +1,10 @@
 ---
 description: >-
   This section provides a step-by-step guide to setting up a CI/CD pipeline in
-  GitHub Actions using the provided sample scripts.
+  GitHub Actions using the provided sample bash scripts.
 ---
 
-# GitHub Actions
+# GitHub Actions using Bash scripts
 
 ## Setting up the pipeline in GitHub Actions
 
@@ -36,7 +36,7 @@ The zip file includes the following files:
     <figure><img src="../../../../.gitbook/assets/image (5).png" alt=""><figcaption><p>"<em>set up a workflow yourself" on GitHub</em></p></figcaption></figure>
 5. Copy the contents of the `main.yml` file paste it into the new file and commit the changes.
 6. Pull the git repository and you will see a folder called `.github` with a folder called workflows. Inside this folder, you will find the `main.yml` file.
-7. Open the file in VS Code or another editor and look at the contents. You will notice references to a  `UMBRACO_CLOUD_PROJECT_ID` and `UMBRACO_CLOUD_API_KEY`. You can get these from the Advanced section inside the project settings for your Umbraco Cloud project.
+7. Open the file in VS Code or another editor and look at the contents. You will notice references to a `UMBRACO_CLOUD_PROJECT_ID` and `UMBRACO_CLOUD_API_KEY`. You can get these from the Advanced section inside the project settings for your Umbraco Cloud project.
 8. Go to the GitHub repository, and click on the Settings section,
 9.  Expand secrets and variables in the left-hand menu titled Security and click on Actions.
 

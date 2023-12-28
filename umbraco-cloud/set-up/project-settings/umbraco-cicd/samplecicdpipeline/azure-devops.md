@@ -1,10 +1,10 @@
 ---
 description: >-
   This section provides a step-by-step guide to setting up a CI/CD pipeline in
-  Azure DevOps using the provided sample scripts.
+  Azure DevOps using the provided sample bash scripts.
 ---
 
-# Azure DevOps
+# Azure DevOps using Bash scripts
 
 ## Setting Up the pipeline in Azure DevOps
 
@@ -58,22 +58,20 @@ Since we previously showed how to reconfigure the Git Remotes to the DevOps Repo
 
     ![Pipeline4.png](../../../images/Pipeline4.png)
 5.  **Review your pipeline YAML**\
-    The next step is reviewing the YAML pipeline. You  need to replace the following:
+    The next step is reviewing the YAML pipeline. You need to replace the following:
 
-    1.  The value of umbraco-cloud-API-key and The value of project-id.&#x20;
+    1.  The value of umbraco-cloud-API-key and The value of project-id.
 
         * The API key is needed to access the Umbraco Cloud API.
         * The ID of the project that the pipeline will be used for.
 
         The values can be found in the `Settings` -> `Advanced` section on your project in the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects).
-    2. If you have renamed the `Master` Branch to `Main` then you will need to add `“main”`&#x20;
+    2. If you have renamed the `Master` Branch to `Main` then you will need to add `“main”`
     3. From the commented `‘stages‘`, replace the **email@email.com** from`git config user.email email@email.com` and `git remote add tmp-pusher link` with preferred ones.
     4. If you have changed the default name of the `UmbracoProject.csproj` file you need to change it as well in the `‘stage: BuildAndTestStage’ - ‘job: BuildAndTestJob’ - ‘task: DotNetCoreCLI@2’`
     5. You can also add a user name in the ‘`notifyUsers‘`
 
-
-
-    <figure><img src="https://lh7-us.googleusercontent.com/wSFuXOXSY2PrE4xisffq-mjzLYTmPut0ZN5bO9n-nFQ8TVjsUDI8mLFgmpvUplXNZ8NKLPooZ15PoyE8KZ4GFVPBk_k4kZQAtAZ6n22armrZaC7bKzUiAQkMMg1MVOlBcmQynZJgvJ-worp-g_0oPBY" alt=""><figcaption><p>Changes for the  pipeline.yaml file.</p></figcaption></figure>
+    <figure><img src="https://lh7-us.googleusercontent.com/wSFuXOXSY2PrE4xisffq-mjzLYTmPut0ZN5bO9n-nFQ8TVjsUDI8mLFgmpvUplXNZ8NKLPooZ15PoyE8KZ4GFVPBk_k4kZQAtAZ6n22armrZaC7bKzUiAQkMMg1MVOlBcmQynZJgvJ-worp-g_0oPBY" alt=""><figcaption><p>Changes for the pipeline.yaml file.</p></figcaption></figure>
 
     Once the changes have been made “save and run” the pipeline.
 
@@ -157,7 +155,7 @@ After the first deployment (with some schema changes) you will need to edit the 
 
 <figure><img src="../../../../.gitbook/assets/pipelineUncomment.PNG" alt=""><figcaption></figcaption></figure>
 
-Once the pipeline has finished deploying, then you are able to transfer the content that you have locally directly to your environment on Umbraco Cloud.&#x20;
+Once the pipeline has finished deploying, then you are able to transfer the content that you have locally directly to your environment on Umbraco Cloud.
 
 {% hint style="info" %}
 You can edit the pipeline by going to your Pipelines -> Edit
