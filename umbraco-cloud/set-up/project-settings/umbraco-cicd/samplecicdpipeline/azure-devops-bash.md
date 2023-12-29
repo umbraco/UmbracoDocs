@@ -1,10 +1,10 @@
 ---
 description: >-
   This section provides a step-by-step guide to setting up a CI/CD pipeline in
-  Azure DevOps using the provided sample Powershell scripts.
+  Azure DevOps using the provided sample Bash scripts.
 ---
 
-# Azure DevOps using Powershell scripts
+# Azure DevOps using Bash scripts
 
 Before setting up the pipeline in Azure DevOps, make sure that the following steps from the [Configuring a CI/CD pipeline](./) are done:
 - Use an existing Cloud project or create a new one
@@ -18,7 +18,7 @@ The Umbraco CI/CD Team have created a sample pipeline for Azure DevOps.
 
 The Scripts are provided as is. This means that the scripts will do the bare minimum for a pipeline that is utilizing the CI/CD flow. Adapt and integrate them into your own pipelines to gain the ability to do deployments to your Umbraco Cloud projects.
 
-The sample includes YAML-files and custom Powershell and Bash scripts to interact with the Umbraco Cloud API.
+The sample includes YAML-files and custom Bash and Powershell scripts to interact with the Umbraco Cloud API.
 
 You can get the samples for both `Azure DevOps` and `GitHub Actions` from the [Github repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
 
@@ -59,14 +59,14 @@ While working with the project on your local machine, follow these steps to prep
 For Azure DevOps you will need the following files:
 - From the root folder
   - `cloud.zipignore`
-- From the `powershell` folder
-  - `Get-LatestDeployment.ps1`
-  - `Get-ChangesById.ps1`
-  - `New-Deployment.ps1`
-  - `Add-DeploymentPackage.ps1`
-  - `Start-Deployment.ps1`
-  - `Test-DeploymentStatus.ps1`
-- From the `powershell/azuredevops` folder
+- From the `bash` folder
+  - `get_latest_deployment.sh`
+  - `get_changes_by_id.sh`
+  - `create_deployment.sh`
+  - `upload_package.sh`
+  - `start_deployment.sh`
+  - `get_deployment_status.sh`
+- From the `bash/azuredevops` folder
   - `azure-release-pipeline.yml`
   - `cloud-sync.yml` 
   - `cloud-deployment.yml`
@@ -83,9 +83,9 @@ Do the following to prepare the pipeline:
   - Both files should be in the root of your repository
   - In the bottom of the `.gitignore` file add the line `**/git-patch.diff`
 - Also in the root, create a folder called `devops`
-- Copy the 3 YAML files from the `powershell/azuredevops` folder into the `devops` folder
-- Inside `devops` create an additional folder called `powershell`
-- Copy the Powershell scripts from the `powershell` folder to the `powershell` folder
+- Copy the 3 YAML files from the `bash/azuredevops` folder into the `devops` folder
+- Inside `devops` create an additional folder called `scripts`
+- Copy the Bash scripts from the `bash` folder to the `scripts` folder
 - Commit all changes, and push to Azure DevOps
 
 ## Configure Azure DevOps

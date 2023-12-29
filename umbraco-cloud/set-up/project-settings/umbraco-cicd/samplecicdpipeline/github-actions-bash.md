@@ -1,10 +1,10 @@
 ---
 description: >-
   This section provides a step-by-step guide to setting up a CI/CD pipeline in
-  GitHub Actions using the provided sample Powershell scripts.
+  GitHub Actions using the provided sample Bash scripts.
 ---
 
-# GitHub Actions using Powershell scripts
+# GitHub Actions using Bash scripts
 
 Before setting up the pipeline in GitHub, make sure that the following steps from the [Configuring a CI/CD pipeline](./) are done:
 - Use an existing Cloud project or create a new one
@@ -18,7 +18,7 @@ The Umbraco CI/CD Team have created a sample pipeline for GitHub Actions.
 
 The Scripts are provided as is. This means that the scripts will do the bare minimum for a pipeline that is utilizing the CI/CD flow. Adapt and integrate them into your own pipelines to gain the ability to do deployments to your Umbraco Cloud projects.
 
-The sample includes YAML-files and custom Powershell and Bash scripts to interact with the Umbraco Cloud API.
+The sample includes YAML-files and custom Bash and Powershell scripts to interact with the Umbraco Cloud API.
 
 You can get the samples for both `GitHub Actions` and `Azure DevOps` from the [Github repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
 
@@ -111,14 +111,14 @@ While working with the project on your local machine, follow these steps to prep
 For GitHub Actions you will need the following files:
 - From the root folder
   - `cloud.zipignore`
-- From the `powershell` folder
-  - `Get-LatestDeployment.ps1`
-  - `Get-ChangesById.ps1`
-  - `New-Deployment.ps1`
-  - `Add-DeploymentPackage.ps1`
-  - `Start-Deployment.ps1`
-  - `Test-DeploymentStatus.ps1`
-- From the `powershell/github` folder
+- From the `bash` folder
+  - `get_latest_deployment.sh`
+  - `get_changes_by_id.sh`
+  - `create_deployment.sh`
+  - `upload_package.sh`
+  - `start_deployment.sh`
+  - `get_deployment_status.sh`
+- From the `bash/github` folder
   - `main.yml`
   - `cloud-sync.yml` 
   - `cloud-deployment.yml`
@@ -137,9 +137,9 @@ Do the following to prepare the pipeline:
 - Also in the root, create a folder called `.github`
 - Inside `.github` create two additional folders
   - `workflows`
-  - `powershell`
+  - `scripts`
 - Copy the 3 YAML files from the `github` folder into the `workflows` folder
-- Copy the Powershell scripts from the `powershell` folder to the `powershell` folder
+- Copy the Bash scripts from the `bash` folder to the `scripts` folder
 - Commit the all changes, and push to GitHub
 
 The push will start a new pipeline run.
