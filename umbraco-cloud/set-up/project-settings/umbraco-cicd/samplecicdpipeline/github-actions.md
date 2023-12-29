@@ -55,7 +55,9 @@ The zip file includes the following files:
 13. Give permission for these scripts to be able to run within the workflows > scripts folder using the following commands in the Command Line:
 
 {% hint style="info" %}
+
 Ensure you run **git add name-of-file.sh** before running the below Windows commands to add untracked files to the git index.
+
 {% endhint %}
 
 * `git update-index --chmod=+x create_deployment.sh`
