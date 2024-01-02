@@ -8,7 +8,7 @@ A ContentType corresponds to the Document Type found in the backoffice. The Cont
 
 A Document Type is composed by Properties, which are grouped by Tabs (or PropertyGroups in the API). It can also inherit properties and tabs from other Document Types.
 
-It is also possible to link one or more Templates to a Document Type to choose how you want your model / data rendered to the user.
+It is possible to link one or more Templates to a Document Type. This determines how your model/data is rendered to the user.
 
 * **Namespace:** `Umbraco.Cms.Core.Models`
 * **Assembly:** `Umbraco.Core.dll`
@@ -28,7 +28,7 @@ using Umbraco.Cms.Core.Services;
 
 ### ContentType(IShortStringHelper shortStringHelper, IContentType parent, string alias)
 
-Constructor for creating a new `ContentType` object where the necessary parameters are a short string helper `IShortStringHelper`, the parent `ContentType` as an `IContentType` and the alias of the new `ContentType` as `string`.
+Constructor for creating a new `ContentType` object. The necessary parameters are a short string helper `IShortStringHelper`, the parent `ContentType` as an `IContentType` and the alias of the new `ContentType` as `string`.
 
 ### new ContentType(IShortStringHelper shortStringHelper, int parentId)
 
@@ -82,7 +82,7 @@ return contentType.AllowedTemplates;
 
 Gets a list of `ContentTypes` as `IContentTypeComposition` objects that make up a composition of PropertyGroups and PropertyTypes for the current ContentType.
 
-The ContentTypeComposition provides a mixin-type functionality in that you can compose a ContentType of one or more other ContentTypes in a complex structure. But please note that the backoffice does not fully support these complex structures yet.
+The ContentTypeComposition provides a mixin-type functionality in that you can compose a ContentType of one or more other ContentTypes in a complex structure. But please be aware that the backoffice does not fully support these complex structures yet.
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return ContentTypeComposition
@@ -162,7 +162,7 @@ return contentType.Icon;
 
 ### .Id
 
-Gets the unique `ContentType` Id as a `Int`, this ID is based on a Database identity field, and is therefore not safe to reference in code which are moved between different instances, use Key instead.
+Gets the unique `ContentType` Id as an `Int`, this ID is based on a Database identity field. It's not safe for code referencing across different instances, use Key instead.
 
 ### .Key
 
