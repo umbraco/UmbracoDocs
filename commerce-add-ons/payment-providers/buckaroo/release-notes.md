@@ -4,7 +4,6 @@ In this section, we have summarized the changes to Buckaroo Payment Provider for
 
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
-
 ## Release History
 
 In this section, you can find the release notes for each version of Buckaroo Payment Provider for Commerce. For each major version, you can find the details about each release.
