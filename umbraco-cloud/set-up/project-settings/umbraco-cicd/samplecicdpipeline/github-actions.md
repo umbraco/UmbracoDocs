@@ -107,6 +107,11 @@ This is how you can grant these permissions:
 
 While working with the project on your local machine, follow these steps to prepare the pipeline, using the [samples from the repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
 
+{% hint style="info" %}
+
+Download the provided sample scripts as ZIP from the [GitHub repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples/tree/main). Click on "Code" and then choose "Download ZIP". Then unzip it and use those files for the next steps.
+
+{% endhint %}
 
 Select your preferred scripting language:
 
@@ -178,18 +183,12 @@ For a pipeline that uses Bash scripts you will need the following files:
 
 The push will start a new pipeline run.
 
-{% hint style="info" %}
-
-Download the provided sample scripts as ZIP from the [GitHub repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples/tree/main). Click on "Code" and then choose "Download ZIP". Then unzip it and use those files for the next steps.
-
-{% endhint %}
-
-### Optional: Run a deployment to confirm
+### Optional: Test the pipeline
 
 With everything set up, you may want to confirm that Umbraco Cloud reflects the changes you are sending via your pipeline.
 
 While working on you project locally, add a new Document type.
-- Commit the change to `main` and push to your repository.
+- Commit the change to `main` branch (or `master` if you did not change the branch name) and push to your repository.
 - The pipeline starts to run
 - Once the pipeline is done log into Backoffice on your left-most environment in Umbraco Cloud
 - Go to the Settings section and see that your new Document type has been deployed 

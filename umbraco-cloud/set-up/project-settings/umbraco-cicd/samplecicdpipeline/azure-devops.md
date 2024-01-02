@@ -55,6 +55,12 @@ Now we can move on to setting up a pipeline.
 
 While working with the project on your local machine, follow these steps to prepare the pipeline, using the [samples from the repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).
 
+{% hint style="info" %}
+
+Download the provided sample scripts as ZIP from the [GitHub repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples/tree/main). Click on "Code" and then choose "Download ZIP". Then unzip it and use those files for the next steps.
+
+{% endhint %}
+
 Select your preferred scripting language:
 
 {% tabs %}
@@ -119,12 +125,6 @@ For a pipeline that uses Bash scripts you will need the following files:
 {% endtab %}
 {% endtabs %}
 
-{% hint style="info" %}
-
-Download the provided sample scripts as ZIP from the [GitHub repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples/tree/main). Click on "Code" and then choose "Download ZIP". Then unzip it and use those files for the next steps.
-
-{% endhint %}
-
 ## Configure Azure DevOps
 
 The pipeline needs to know which Umbraco Cloud project to deploy to. In order to do this you will need the `Project ID` and the `API Key`. [This article](README.md#obtaining-the-project-id-and-api-key) describes how to get those values.
@@ -168,12 +168,12 @@ You can customize the names for the variables as you like, however you then need
 
 When you click on "Save and Run" your first deployment will be triggered. Which means that Azure DevOps is set up with all the needed information to be able to deploy your Cloud project back to Umbraco Cloud.
 
-### Optional: Run a deployment to confirm
+### Optional: Test the pipeline
 
 With everything set up, you may want to confirm that Umbraco Cloud reflects the changes you are sending via your pipeline.
 
 While working on your project locally, add a new Document type.
-- Commit the change to `main` and push to your repository.
+- Commit the change to `main` branch (or `master` if you did not change the branch name) and push to your repository.
 - The pipeline starts to run
 - Once the pipeline is done log into Backoffice on your left-most environment in Umbraco Cloud
 - Go to the Settings section and see that your new Document type has been deployed 
