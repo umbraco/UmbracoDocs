@@ -82,10 +82,3 @@ Details the setup of a CI/CD pipeline using GitHub Actions.
 
 * [GitHub Actions Sample](github-actions.md)
 
-### Old sample files
-
-If you are new to the CI/CD Flow feature, it is recommended to stick one of the samples above.
-
-You may have used the scripts and pipelines that Umbraco provided initially. You can still read and look through that description here:
-
-* [Configuring a CI/CD pipeline](old-setup.md)
