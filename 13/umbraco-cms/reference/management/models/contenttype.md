@@ -176,7 +176,7 @@ return contentType.Key;
 
 ### .Level
 
-Gets or Sets the given `ContentType` level in the site hierarchy as an `Int`. ContentTypes placed at the root of the tree, will return 1, content right underneath will return 2, and so on.
+Gets the unique `ContentType` Id as an `Int`. The ID, derived from a database identity field, isn't safe for code references as they are moved across instances. Therefore it's recommended to use `Key` instead.
 
 ```csharp
 // Given a `ContentTypeService` object get ContentType by its Id and return the Level
