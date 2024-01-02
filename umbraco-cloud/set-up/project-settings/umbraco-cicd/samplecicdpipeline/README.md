@@ -15,7 +15,7 @@ Umbraco Cloud repositories are not meant to be used as source code repositories.
 Once you commit your code to Cloud the build pipeline converts your C# code to DLLs and deploys it on the respective environment.
 
 {% hint style="info" %}
-In Cloud only C# code is built, and all frontend artifacts need to be built and committed to the repository.
+In Umbraco Cloud only C# code is built, and all frontend artifacts need to be built and committed to the repository.
 {% endhint %}
 
 You can use Azure DevOps as an external repository and with the pipelines, it will automatically keep your Azure Devops source code repository in sync. The sync is done with the git repository of Umbraco Cloud of the development environment.
@@ -30,7 +30,7 @@ Before proceeding, you'll need an Umbraco Cloud project and a CI/CD pipeline. Yo
   * Create a new Umbraco Cloud Project. 
     * You can take a [trial here](https://try.umbraco.com/cloud?utm\_source=github.com\&utm\_medium=referral\&utm\_campaign=) 
     * [Create a new project](https://www.s1.umbraco.io/createproject) in the Umbraco Cloud Portal
-  * Use one of your [existing projects](https://sq.umbraco.io/projects).
+  * Use one of your [existing projects](https://www.s1.umbraco.io/projects).
 2. Create a new or an existing CI/CD pipeline in [Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/organizations/projects/create-project?view=azure-devops\&tabs=browser) or [GitHub Actions](https://github.com/features/actions).
 
 {% hint style="info" %}
