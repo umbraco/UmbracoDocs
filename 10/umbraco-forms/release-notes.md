@@ -742,6 +742,6 @@ Breaking changes:
 
 </details>
 
-### Legacy release notes
+## Legacy release notes
 
 You can find the release notes for versions out of support in the [Legacy documentation release notes](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-forms/release-notes.md) and [Umbraco Forms Package page](https://our.umbraco.com/packages/developer-tools/umbraco-forms/).
