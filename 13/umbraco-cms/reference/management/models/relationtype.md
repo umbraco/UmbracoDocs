@@ -23,7 +23,6 @@ using Umbraco.Cms.Core.Services;
 
 ### new RelationType(string name, string alias, bool isBidrectional, Guid? parentObjectType, Guid? childObjectType)
 
-
 Create a new RelationType object with this constructor. It requires a `string` alias, the relation type's name, and a `bool` for bidirectionality. Additionally, specify the `Guid?` keys for both child and parent object types involved in the relation.
 
 ## Properties
