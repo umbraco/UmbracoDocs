@@ -4,6 +4,10 @@ In this section, we have summarized the changes to Umbraco Workflow released in 
 
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
+{% hint style="info" %}
+If you are migrating from Plumber to Umbraco Workflow, see the [Migrate from Plumber to Workflow](upgrading-workflow/migrating-workflow.md) article.
+{% endhint %}
+
 ## Release History
 
 This section contains the release notes for Umbraco Workflow 10 including all changes for this version.
