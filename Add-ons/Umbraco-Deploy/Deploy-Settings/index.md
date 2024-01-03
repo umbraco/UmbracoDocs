@@ -264,9 +264,9 @@ Culture and hostname settings, defined per content item for culture invariant co
 
 To enable this, set the configuration value as appropriate for the types of domains you want to allow:
 
-- *Culture* - the language setting for the content, defined under "Culture"
-- *AbsolutePath* - values defined under "Domains" with an absolute path, e.g. "/en"
-- *Hostname* - values defined under "Domains" with a full host name, e.g. "en.mysite.com"
+- `Culture` - the language setting for the content, defined under "Culture"
+- `AbsolutePath` - values defined under "Domains" with an absolute path, e.g. "/en"
+- `Hostname` - values defined under "Domains" with a full host name, e.g. "en.mysite.com"
 
 Combinations of settings can be applied, e.g. `Hostname,AbsolutePath`.
 
@@ -281,12 +281,30 @@ When deploying content items, public access rules based on member groups are tra
 </settings>
 ```
 
-- *None* - no public access rules will be transferred
-- *AddOrUpdate* - public access rules added or updated in a source environment will be transferred to the destination
-- *Remove* - public access rules removed a source environment will be removed in the destination
-- *All* - all public access information will be transferred
+* `None` - no public access rules will be transferred
+* `AddOrUpdate` - public access rules added or updated in a source environment will be transferred to the destination
+* `Remove` - public access rules removed a source environment will be removed in the destination
+* `All` - all public access information will be transferred
 
 `AddOrUpdate` is the default setting used if no value is configured.
+
+## Deployment of trashed content
+
+Specifies options for handling trashed content (documents, media and members) on export or import:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <content trashedContentDeploymentOperations="None|Export|Import|All" />
+</settings>
+```
+
+You can amend this behavior using this setting:
+
+* `None` - trashed content will not be exported or imported
+* `Export` - trashed content will be included in an export
+* `Import` - trashed content will be processed and moved to the recycle bin on import
+* `All` - trashed content will be included in an export, processed and moved to the recycle bin on import
 
 ## Media File Checksum Calculation Method
 
