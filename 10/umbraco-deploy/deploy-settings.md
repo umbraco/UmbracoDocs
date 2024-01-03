@@ -260,7 +260,7 @@ By upgrading to the most recent available version of the CMS major you are runni
 
 ### Deployment of culture & hostnames settings
 
-Culture and hostname settings, defined per content item for culture invariant content, are not deployed between environments by default but can be opted into via configuration.
+Culture and hostname settings, defined per content item for culture invariant content, are not deployed between environments by default. They can be opted into via configuration.
 
 ```json
     "AllowDomainsDeploymentOperations": "None|Culture|AbsolutePath|Hostname|All",
