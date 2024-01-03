@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Umbraco Forms Documentation](README.md)
-* [Umbraco Forms Legacy Documentation](umbraco-forms-legacy-documentation.md)
+* [Legacy Documentation](legacy-documentation.md)
 * [Release Notes](release-notes.md)
 
 ## Installation
