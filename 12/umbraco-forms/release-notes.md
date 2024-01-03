@@ -99,6 +99,6 @@ This section contains the release notes for Umbraco Forms 12 including all chang
 * Compatibility with Umbraco 12
   * See full details of breaking changes under the [version specific upgrade guide](installation/version-specific.md#version-12).
 
-### Legacy release notes
+## Legacy release notes
 
 You can find the release notes for versions out of support in the [Legacy documentation release notes](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-forms/release-notes.md) and [Umbraco Forms Package page](https://our.umbraco.com/packages/developer-tools/umbraco-forms/).
