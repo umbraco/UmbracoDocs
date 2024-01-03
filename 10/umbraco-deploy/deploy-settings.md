@@ -59,6 +59,7 @@ For illustration purposes, the following structure represents the full set of op
             "ReloadMemoryCacheFollowingDiskReadOperation": false,
             "AllowDomainsDeploymentOperations": "None",
             "AllowPublicAccessDeploymentOperations": "AddOrUpdate",
+            "TrashedContentDeploymentOperations": "Import",
             "PreferLocalDbConnectionString": false,
             "NumberOfSignaturesToUseAllRelationCache": 100,
             "ContinueOnMediaFilePathTooLongException": false,
@@ -257,7 +258,7 @@ Some customers have reported intermittent issues related to Umbraco's memory cac
 
 By upgrading to the most recent available version of the CMS major you are running, you'll be able to benefit from the latest bug fixes and optimizations in this area. That should be your first option if encountering cache related issues. Failing that, or if a CMS upgrade is not an option, then this workaround can be considered.
 
-## Deployment of culture & hostnames settings
+### Deployment of culture & hostnames settings
 
 Culture and hostname settings, defined per content item for culture invariant content, are not deployed between environments by default but can be opted into via configuration.
 
@@ -267,9 +268,9 @@ Culture and hostname settings, defined per content item for culture invariant co
 
 To enable this, set the configuration value as appropriate for the types of domains you want to allow:
 
-* _Culture_ - the language setting for the content, defined under "Culture"
-* _AbsolutePath_ - values defined under "Domains" with an absolute path, e.g. "/en"
-* _Hostname_ - values defined under "Domains" with a full host name, e.g. "en.mysite.com"
+* `Culture` - the language setting for the content, defined under "Culture"
+* `AbsolutePath` - values defined under "Domains" with an absolute path, e.g. "/en"
+* `Hostname` - values defined under "Domains" with a full host name, e.g. "en.mysite.com"
 
 Combinations of settings can be applied, e.g. `Hostname,AbsolutePath`.
 
@@ -281,12 +282,27 @@ When deploying content items, public access rules based on member groups are tra
     "AllowPublicAccessDeploymentOperations": "None|AddOrUpdate|Remove|All",
 ```
 
-* _None_ - no public access rules will be transferred</li>
-* _AddOrUpdate_ - public access rules added or updated in a source environment will be transferred to the destination</li>
-* _Remove_ - public access rules removed a source environment will be removed in the destination</li>
-* _All_ - all public access information will be transferred</li>
+* `None` - no public access rules will be transferred</li>
+* `AddOrUpdate` - public access rules added or updated in a source environment will be transferred to the destination</li>
+* `Remove` - public access rules removed a source environment will be removed in the destination</li>
+* `All` - all public access information will be transferred</li>
 
 `AddOrUpdate` is the default setting used if no value is configured.
+
+## Deployment of trashed content
+
+Specifies options for handling trashed content (documents, media and members) on export or import:
+
+```json
+"TrashedContentDeploymentOperations": "None|Export|Import|All"
+```
+
+You can amend this behavior using this setting:
+
+* `None` - trashed content will not be exported or imported
+* `Export` - trashed content will be included in an export
+* `Import` - trashed content will be processed and moved to the recycle bin on import
+* `All` - trashed content will be included in an export, processed and moved to the recycle bin on import
 
 ## PreferLocalDbConnectionString
 

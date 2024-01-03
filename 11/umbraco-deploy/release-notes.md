@@ -111,15 +111,33 @@ Under each major version, you can find details about minor and patch releases fo
 
 <summary>Version 10</summary>
 
-[**10.3.0**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.0) **(December 11th  2023)**
+[**10.3.2**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.2) **(January 9th 2023)**
+
+* Fixed issue with transfer of content using language variants [#193](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/193)
+
+[**10.3.1**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.1) **(December 21th 2023)**
+
+* Fixes the display of the selected schedule date on queue for transfer.
+* Fixes parsing property values within Nested Content and Block List that were previously saved by the Contrib value connectors.
+* Fixed incorrectly including media files in export when 'Content files' wasn't selected.
+* Add maximum file size validation to import file upload.
+
+[**10.3.0**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.0) **(December 11th 2023)**
 
 * All items from 10.3.0-rc1.
+* Fixed a regression in 10.3.0-rc1 where content restore/transfers didn't use the same JSON converters when deserializing Deploy artifacts.
+* Fixed permissions not being correctly set for administrators on initial install.
+* Moved permissions from the Content to a new Deploy category (only affecting the UI).
+* Add support for migrating property values within Nested Content, Block List and Block Grid, and include Multi URL Picker value connector (an explicit value connector binding is used to override the ones provided in Deploy Contrib).
+* Added new configuration option of `TrashedContentDeploymentOperations` to allow exporting/importing of trashed content, ensuring referenced content in the recycle bin isn't exported by default and otherwise imports back into the recycle bin.
+* Changed the default value connector to use the property storage type, instead of using custom value prefixes to store the object type.
 
 [**10.3.0-rc1**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.0) **(November 27th 2023)**
 
 * Added feature of [content import and export with migrations](./deployment-workflow/import-export.md).
 * Added a new configuration option of `ResolveUserInTargetEnvironment` to allow resolving of user accounts in target environments (see [Deploy Settings](./deploy-settings.md)).
 * Added a new configuration option of `AllowPublicAccessDeploymentOperations` to amend the behavior of public access rule transfer (see [Deploy Settings](./deploy-settings.md)).
+* Improve performance of publishing multi-language content during restore/transfer and import.
 
 [**10.2.7**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.2.7) (**November 14th 2023**)
 
@@ -387,6 +405,17 @@ Under each major version, you can find details about minor and patch releases fo
 <details>
 
 <summary>Version 4</summary>
+
+[**4.9.2**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.9.2) **(January 9th 2023)**
+
+* Fixed issue with transfer of content using language variants [#193](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/193)
+
+[**4.9.1**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.9.1) **(December 21th  2023)**
+
+* Fixes the display of the selected schedule date on queue for transfer.
+* Fixes parsing property values within Nested Content and Block List that were previously saved by the Contrib value connectors.
+* Fixed incorrectly including media files in export when 'Content files' wasn't selected.
+* Add maximum file size validation to import file upload.
 
 [**4.9.0**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.9.0) **(December 11th  2023)**
 

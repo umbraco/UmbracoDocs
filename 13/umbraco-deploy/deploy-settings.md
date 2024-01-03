@@ -60,13 +60,14 @@ For illustration purposes, the following structure represents the full set of op
             "ExportMemberGroups": true,
             "ReloadMemoryCacheFollowingDiskReadOperation": false,
             "AllowDomainsDeploymentOperations": "None",
+            "AllowWebhooksDeploymentOperations": "None",
+            "TrashedContentDeploymentOperations": "Import",
             "PreferLocalDbConnectionString": false,
             "MediaFileChecksumCalculationMethod": "PartialFileContents",
             "NumberOfSignaturesToUseAllRelationCache": 100,
             "ContinueOnMediaFilePathTooLongException": false,
             "SuppressCacheRefresherNotifications": false,
-            "HideConfigurationDetails": false,
-            "AllowWebhooksDeploymentOperations": "None"
+            "HideConfigurationDetails": false
         }
     }
   }
@@ -281,11 +282,26 @@ Culture and hostname settings, defined per content item for culture invariant co
 
 To enable this, set the configuration value as appropriate for the types of domains you want to allow:
 
-* _Culture_ - the language setting for the content, defined under "Culture"
-* _AbsolutePath_ - values defined under "Domains" with an absolute path, e.g. "/en"
-* _Hostname_ - values defined under "Domains" with a full host name, e.g. "en.mysite.com"
+* `Culture` - the language setting for the content, defined under "Culture"
+* `AbsolutePath` - values defined under "Domains" with an absolute path, e.g. "/en"
+* `Hostname` - values defined under "Domains" with a full host name, e.g. "en.mysite.com"
 
 Combinations of settings can be applied, e.g. `Hostname,AbsolutePath`.
+
+## Deployment of public access settings
+
+When deploying content items, public access rules based on member groups are transferred. You can amend this behavior using this setting.
+
+```json
+    "AllowPublicAccessDeploymentOperations": "None|AddOrUpdate|Remove|All",
+```
+
+* `None` - no public access rules will be transferred</li>
+* `AddOrUpdate` - public access rules added or updated in a source environment will be transferred to the destination</li>
+* `Remove` - public access rules removed a source environment will be removed in the destination</li>
+* `All` - all public access information will be transferred</li>
+
+`AddOrUpdate` is the default setting used if no value is configured.
 
 ### Deployment of webhooks
 
@@ -297,8 +313,23 @@ Webhooks may be considered environment specific or schema information that you w
 
 If you would like you include them you can adjust this setting:
 
-* _None_ - webhooks are not deployed and are expected to be managed independently in each environment.
-* _All_ - webhooks included in schema deployments.
+* `None` - webhooks are not deployed and are expected to be managed independently in each environment.
+* `All` - webhooks included in schema deployments.
+
+## Deployment of trashed content
+
+Specifies options for handling trashed content (documents, media and members) on export or import:
+
+```json
+"TrashedContentDeploymentOperations": "None|Export|Import|All"
+```
+
+You can amend this behavior using this setting:
+
+* `None` - trashed content will not be exported or imported
+* `Export` - trashed content will be included in an export
+* `Import` - trashed content will be processed and moved to the recycle bin on import
+* `All` - trashed content will be included in an export, processed and moved to the recycle bin on import
 
 ### PreferLocalDbConnectionString
 
