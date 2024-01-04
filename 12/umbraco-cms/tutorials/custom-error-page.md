@@ -35,9 +35,7 @@ The value for error pages can be:
 * A content item's integer ID (example: 1234)
 
 {% hint style="warning" %}
-
 The current implementation of XPath is suboptimal and will be removed entirely in a future version. It is currently obsolete and scheduled for removal in v14.
-
 {% endhint %}
 
 That is where the value you grabbed earlier comes in. Fill it out like so:
@@ -149,9 +147,9 @@ The following steps guides you through setting up a page for internal server err
 
     ```csharp
     using Microsoft.AspNetCore.Mvc;
-    
+
     namespace [YOUR_PROJECT_NAME].Controllers;
-    
+
     public class ErrorController : Controller
     {
         [Route("Error")]
@@ -202,7 +200,13 @@ The following steps guides you through setting up a page for internal server err
     }
     ```
 
-For local testing in Visual Studio replace `app.UseDeveloperExceptionPage();` by `app.UseExceptionHandler("/error");`. Otherwise you will get the default error page with stack trace etc.
+{% hint style="info" %}
+To **test this locally**, in Visual Studio replace `app.UseDeveloperExceptionPage();` by `app.UseExceptionHandler("/error");`. Otherwise you will get the default error page with stack trace etc.&#x20;
+{% endhint %}
+
+#### Trigger a 500 error
+
+You can trigger a simple 500 error on your frontend by changing a Model.Value property in your template. For example, on a document type with a property called `test`. The way to render it in the frontend would be `Model.Value("test");` To trigger a 500 error page you can add anything after Value such as `Model.ValueTest("test");`
 
 ## Maintenance Page
 
