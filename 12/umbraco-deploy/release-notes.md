@@ -1,6 +1,6 @@
 # Release notes
 
-In this section we have summarised the changes to Umbraco Deploy released in each version. Each version is presented with a link to the [Deploy issue tracker](https://github.com/umbraco/Umbraco.Deploy.Issues/issues) showing a list of issues resolved in the release. We also link to the individual issues themselves from the detail.
+In this section we have summarised the changes to Umbraco Deploy and [Deploy Contrib](https://github.com/umbraco/Umbraco.Deploy.Contrib) released in each version. Each version is presented with a link to the [Deploy issue tracker](https://github.com/umbraco/Umbraco.Deploy.Issues/issues) showing a list of issues resolved in the release. We also link to the individual issues themselves from the detail.
 
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
@@ -86,43 +86,3 @@ This section contains the release notes for Umbraco Deploy 12 including all chan
 ## Legacy release notes
 
 You can find the release notes for versions out of support in the [Legacy documentation release notes ](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-deploy/release-notes.md)and[ Umbraco Deploy Package page.](https://our.umbraco.com/packages/developer-tools/umbraco-deploy/)
-
-## [Deploy Contrib](https://github.com/umbraco/Umbraco.Deploy.Contrib)
-
-{% hint style="info" %}
-Deploy Contrib contains community contributions for Umbraco Deploy targetted for version 8 and above.
-
-It offers connectors for the most popular Umbraco community packages. These are used by Deploy to aid with the deployment and transferring of content/property-data between environments.
-{% endhint %}
-
-#### Deploy Contrib 11.0.1 (February 14th 2023)
-
-* Block grid editor support and fix for null reference exception (10+)
-* Further caching for deploy operations.
-
-#### Deploy Contrib 10.1.1 (February 14th 2023)
-
-* Block grid editor support and fix for null reference exception (10+)
-* Further caching for deploy operations.
-
-#### Deploy Contrib 9.1.1 (February 14th 2023)
-
-* Block grid editor support and fix for null reference exception (10+)
-* Further caching for deploy operations.
-
-#### Deploy Contrib 4.2.0, 9.1.0 and 10.1.0 (September 7th 2022)
-
-* Used caching in value connectors to improve performance.
-* Fixed issue with transfer of nested content string values using item templates (for example commencing with "\{{") that were erroneously considered as JSON.
-
-#### Deploy Contrib 4.1.2, 9.0.2, 10.0.1 (July 12th 2022)
-
-* Optimized existence checks in connectors
-
-#### Deploy Contrib 4.1.1 (April 26th 2022)
-
-* Fixes issue with deployment of nested content properties within Document Type grid editor values. [#82](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/82)
-
-#### Deploy Contrib 4.2.1 (February 21st 2023)
-
-* All items listed under the 9.1.1, 10.1.1 and 11.0.1 releases (other than those indicated as only applying to higher versions).
