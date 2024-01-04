@@ -1,12 +1,12 @@
 ---
 description: >-
-  Get an overview of the things changed and fixed in each version of Umbraco
+  Version specific documentation for upgrading to new major versions of Umbraco
   Forms.
 ---
 
 # Version Specific Upgrade Notes
 
-This page covers specific upgrade documentation for Umbraco Forms 13.&#x20;
+This page covers specific upgrade documentation for when migrating to major 13 of Umbraco Forms.&#x20;
 
 {% hint style="info" %}
 If you are upgrading to a new minor or patch version, you can find information about the breaking changes in the [Release Notes](../release-notes.md) article.
