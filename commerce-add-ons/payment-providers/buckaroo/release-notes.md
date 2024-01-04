@@ -4,7 +4,6 @@ In this section, we have summarized the changes to Buckaroo Payment Provider for
 
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
-
 ## Release History
 
 In this section, you can find the release notes for each version of Buckaroo Payment Provider for Commerce. For each major version, you can find the details about each release.
@@ -13,8 +12,14 @@ In this section, you can find the release notes for each version of Buckaroo Pay
 
 <summary>Version 13</summary>
 
+#### [13.1.0](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Buckaroo/issues?q=label%3Arelease%2F13.1.0+is%3Aclosed) (January 2nd 2024)
+
+* Switch from `Newtonsoft.Json` to `System.Text.Json`.
+* Return more meaningful exception messages when there are misconfigured settings.
+* Fix minor bugs in provider settings.
+
 #### 13.0.0 (December 13th 2023)
 
-* Initial release
+* Initial release.
   
 </details>

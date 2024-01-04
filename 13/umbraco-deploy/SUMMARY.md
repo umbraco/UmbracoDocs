@@ -1,13 +1,14 @@
 # Table of contents
 
 * [What is Umbraco Deploy?](README.md)
+* [Legacy Documentation](legacy-documentation.md)
+* [Release notes](release-notes.md)
 * [Getting started](get-started-with-deploy.md)
 * [Configuration](deploy-settings.md)
 * [Extending](extending.md)
 * [Handling Cache Refresher Notifications](handling-cache-refresher-notifications.md)
 * [Troubleshooting](troubleshooting.md)
 * [Licensing](the-licensing-model.md)
-* [Release notes](release-notes.md)
 
 ## Getting Started
 

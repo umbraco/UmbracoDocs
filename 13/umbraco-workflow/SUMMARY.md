@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Umbraco Workflow Documentation](README.md)
+* [Legacy Documentation](legacy-documentation.md)
 * [Installation](installing-workflow.md)
 * [Licensing](licensing.md)
 * [Release notes](release-notes.md)

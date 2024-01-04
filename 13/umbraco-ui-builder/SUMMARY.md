@@ -82,4 +82,4 @@
 
 * [Conventions](miscellaneous/conventions.md)
 * [Umbraco Aliases](miscellaneous/umbraco-aliases.md)
-* [Umbraco-UI-Builder vs UI-O-Matic](miscellaneous/uibuilder-vs-uiomatic.md)
+* [Umbraco-UI-Builder vs UI-O-Matic](miscellaneous/umbraco-ui-builder-vs-ui-o-matic.md)
