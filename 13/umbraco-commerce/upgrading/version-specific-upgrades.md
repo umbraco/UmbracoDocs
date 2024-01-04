@@ -1,7 +1,6 @@
 ---
 description: >-
-  Version specific documentation for upgrading to new major versions of Umbraco
-  Commerce.
+  Version specific documentation for upgrading to new major versions of Umbraco Commerce.
 ---
 
 # Version Specific Upgrade Notes
@@ -9,14 +8,14 @@ description: >-
 This page covers specific upgrade documentation for when migrating to major 13 of Umbraco Commerce.
 
 {% hint style="info" %}
-If you are upgrading to a new minor or patch version, you can find information about the breaking changes in the [Release Notes](../../release-notes.md) article.
+If you are upgrading to a new minor or patch version, you can find information about the breaking changes in the [Release Notes](../release-notes.md) article.
 {% endhint %}
 
 ## Version Specific Upgrade Notes History
 
 Version 13 contains a number of breaking changes from the previous, Vendr product.
 
-See the [Migrate from Vendr to Umbraco Commerce guide](../../how-to-guides/migrate-from-vendr-to-umbraco-commerce/) for full details.
+See the [Migrate from Vendr to Umbraco Commerce guide](migrate-from-vendr-to-umbraco-commerce/) for full details.
 
 ## Legacy version specific upgrade notes
 

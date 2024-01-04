@@ -1,7 +1,6 @@
 ---
 description: >-
-  Version specific documentation for upgrading to new major versions of Umbraco
-  Forms.
+  Version specific documentation for upgrading to new major versions of Umbraco Forms.
 ---
 
 # Version Specific Upgrade Notes

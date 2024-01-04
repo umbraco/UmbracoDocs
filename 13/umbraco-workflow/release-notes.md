@@ -1,7 +1,6 @@
 ---
 description: >-
-  Get an overview of the things changed and fixed in each version of Umbraco
-  Workflow.
+  Get an overview of the things changed and fixed in each version of Umbraco Workflow.
 ---
 
 # Release notes
@@ -11,7 +10,7 @@ In this section, we have summarized the changes to Umbraco Workflow released in 
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
 {% hint style="info" %}
-If you are upgrading to a new major version, you can find information about the breaking changes in the [Version Specific Upgrade Notes](version-specific-upgrade-notes.md) article
+If you are upgrading to a new major version, you can find information about the breaking changes in the [Version Specific Upgrade Notes](upgrading/version-specific.md) article
 {% endhint %}
 
 ## Release History
@@ -25,7 +24,7 @@ This section contains the release notes for Umbraco Workflow 13 including all ch
 #### [13.0.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.0) (December 14th 2023)
 
 * Compatibility with Umbraco 13
-  * For full details of breaking changes refer to the [Version Specific Upgrade Notes](version-specific-upgrade-notes.md)
+  * For full details of breaking changes refer to the [Version Specific Upgrade Notes](upgrading/version-specific.md)
 * **FEATURE** => Advanced Search dashboard. Refer to [Advanced Search dashboard](advanced-search/advanced-search-dashboard.md) for more details.
 * Update to use package migrations to avoid startup exception when Workflow is installed as part of a new Umbraco installation [#48](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/48)
 * Fixed issue with scheduled workflows on invariant content [#49](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/49)
@@ -33,4 +32,4 @@ This section contains the release notes for Umbraco Workflow 13 including all ch
 
 ## Legacy release notes
 
-You can find the release notes for versions out of support in the[ Legacy documentation release notes.](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-workflow/release-notes.md)
+You can find the release notes for versions out of support in the [Legacy documentation on Github](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-workflow/release-notes.md)

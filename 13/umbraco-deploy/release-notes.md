@@ -1,7 +1,6 @@
 ---
 description: >-
-  Get an overview of the things changed and fixed in each version of Umbraco
-  Forms.
+  Get an overview of the things changed and fixed in each version of Umbraco Deploy.
 ---
 
 # Release notes
@@ -60,4 +59,4 @@ This section contains the release notes for Umbraco Deploy 13 including all chan
 
 ## Legacy release notes
 
-You can find the release notes for versions out of support in the [Legacy documentation release notes ](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-deploy/release-notes.md)and[ Umbraco Deploy Package page.](https://our.umbraco.com/packages/developer-tools/umbraco-deploy/)
+You can find the release notes for versions out of support in the [Legacy documentation on Github](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-deploy/release-notes.md) and [Umbraco Deploy Package page](https://our.umbraco.com/packages/developer-tools/umbraco-deploy/)

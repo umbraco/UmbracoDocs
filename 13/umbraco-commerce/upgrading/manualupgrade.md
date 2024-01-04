@@ -1,7 +1,7 @@
 # Upgrading Umbraco Commerce
 
 This article shows how to manually upgrade Umbraco Commerce to run the latest version.
-When upgrading Umbraco Commerce, be sure to also consult the [version specific upgrade](10/umbraco-commerce/getting-started/upgrading/version-specific-upgrades.md) notes to learn about potential breaking changes and common pitfalls.
+When upgrading Umbraco Commerce, be sure to also consult the [version specific upgrade](version-specific-upgrades.md) notes to learn about potential breaking changes and common pitfalls.
 
 {% hint style="warning" %}
 Before upgrading, it is always advisable to take a complete backup of your site and database.
@@ -9,7 +9,7 @@ Before upgrading, it is always advisable to take a complete backup of your site 
 
 ## Get the latest version of Umbraco Commerce
 
-To upgrade to the latest version of Umbraco Commerce you can use:
+To get the latest version of Umbraco Commerce you can upgrade using:
 - NuGet
 - Visual Studio
 

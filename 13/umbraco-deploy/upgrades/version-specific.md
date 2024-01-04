@@ -1,7 +1,6 @@
 ---
 description: >-
-  Version specific documentation for upgrading to new major versions of Umbraco
-  Deploy.
+  Version specific documentation for upgrading to new major versions of Umbraco Deploy.
 ---
 
 # Version Specific Upgrade Details
@@ -26,7 +25,7 @@ Version 13 contains a number of breaking changes. We don't expect many projects 
 
 #### **Configuration**
 
-* [Configuration of relations](../deploy-settings.md#relationtypes) was changed from a list to a dictionary.
+* [Configuration of relations](../getting-started/deploy-settings.md#relationtypes) was changed from a list to a dictionary.
 
 ```json
 // Before
@@ -48,7 +47,7 @@ Version 13 contains a number of breaking changes. We don't expect many projects 
 },
 ```
 
-* [Configuration of value connectors](../deploy-settings.md#valueconnectors) was changed from a list to a dictionary.
+* [Configuration of value connectors](../getting-started/deploy-settings.md#valueconnectors) was changed from a list to a dictionary.
 
 ```json
 // Before
