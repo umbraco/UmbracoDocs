@@ -6,7 +6,7 @@ description: >-
 
 # Version Specific Upgrade Details
 
-This page covers specific upgrade documentation for when upgrading to major 12 of Umbraco Deploy.
+This page covers specific upgrade documentation for when migrating to major 12 of Umbraco Deploy.
 
 {% hint style="info" %}
 If you are upgrading to a minor or patch of Deploy you can find the details about the changes in the [release notes](../release-notes.md) article.
