@@ -20,11 +20,11 @@ One way is to watch for error events and serve corresponding pages via C# code.
 
 In this method, we will use a 404 page created via the backoffice.
 
-### Create a 404 page in the backoffice
+#### Create a 404 page in the backoffice
 
 First, create a new Document Type (though you could also use a more generic Document Type if you already have one) called Page404. Make sure the permissions are set to create it under Content. Properties on this Document Type are optional - in most cases, the 404 not found page would be static. Make sure to assign (and fill out) the template for your error page, and then create it in Content.
 
-### Set a custom 404 page in appsettings.json
+#### Set a custom 404 page in appsettings.json
 
 Once all of that is done, grab your published error page's ID, GUID or path and head on over to the `appsettings.json`.
 
