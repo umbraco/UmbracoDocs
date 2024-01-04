@@ -39,3 +39,4 @@ One example that can be used in production
     }
 }
 ```
+{% hint style="info" %} If the site is hosted on Umbraco Cloud, changing the above configuration will have to effect. The site will always use the URL set in `umbraco-cloud.json`, which can not be changed. {% endhint %}
