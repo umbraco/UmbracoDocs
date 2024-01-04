@@ -1,3 +1,9 @@
+---
+description: >-
+  Get an overview of the things changed and fixed in each version of Umbraco
+  Forms.
+---
+
 # Release notes
 
 In this section we have summarised the changes to Umbraco Deploy and [Deploy Contrib](https://github.com/umbraco/Umbraco.Deploy.Contrib) released in each version. Each version is presented with a link to the [Deploy issue tracker](https://github.com/umbraco/Umbraco.Deploy.Issues/issues) showing a list of issues resolved in the release. We also link to the individual issues themselves from the detail.
