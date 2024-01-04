@@ -1,10 +1,18 @@
+---
+description: >-
+  Get an overview of the things changed and fixed in each version of Umbraco
+  Forms.
+---
+
 # Version Specific Upgrade Notes
 
-This page covers specific upgrade documentation for specific versions.
+This page covers specific upgrade documentation for Umbraco Forms 8 and 10.&#x20;
 
 {% hint style="info" %}
 If you are upgrading to a new minor or patch version, you can find information about the breaking changes in the [Release Notes](../release-notes.md) article.
 {% endhint %}
+
+## Version Specific Upgrade Notes History
 
 <details>
 
@@ -107,22 +115,6 @@ Version 10 contains a number of breaking changes. We do not expect many projects
 
 <details>
 
-<summary>Version 9</summary>
-
-Version 9 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `9.0.1` and runs on .NET 5.
-
-</details>
-
-<details>
-
-<summary>Version 9.5</summary>
-
-See notes under 10.1.
-
-</details>
-
-<details>
-
 <summary>Version 8.13</summary>
 
 See notes under 10.1.
@@ -137,101 +129,18 @@ Version 8 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `8.0.
 
 In order to upgrade from Umbraco Forms 7 to Umbraco Forms 8, you can use any of these options:
 
-#### Download
+**Download**
 
 In order to upgrade you will want to [download the version of Forms you wish to upgrade to](https://our.umbraco.com/projects/developer-tools/umbraco-forms/). Instead of downloading the actual package, however, you want to download the `Umbraco.Forms.Files.x.y.z.zip` file (where x.y.z) is the version.
 
 The filename ends with `.Files.x.y.z.zip` and contains only the files that get installed when you install Umbraco Forms.
 
-#### Copy
+**Copy**
 
 The easiest way to proceed is to unzip the file you downloaded and copy and overwrite (almost) everything into your website. Almost, because you might not want to overwrite `~/App_Plugins/UmbracoForms/UmbracoForms.config` because you might have updated it in the past. Make sure to compare your current version to the version in the zip file you downloaded. If there's any new configuration options in there then copy those into your website's `UmbracoForms.config` file.
 
 </details>
 
-<details>
+## Legacy version specific upgrade notes
 
-<summary>Version 7</summary>
-
-You can upgrade to the latest version of Umbraco Forms through:
-
-* [Automatic Upgrades](version-specific.md#automatic-upgrade), or
-* [Download and upgrade manually.](version-specific.md#download-and-upgrade-manually)
-
-#### Automatic Upgrade
-
-Forms allows you to stay in sync with the latest releases, so you can take advantage of the new features and bug fixes.
-
-**Checking for updates**
-
-You won't have to check for updates manually. Umbraco Forms will inform you when a new update is available. Navigate to the Forms dashboard and if you see the following then a new version is already available.
-
-<img src="images/UpgradeAvailable (1).png" alt="Upgrade available" data-size="original">
-
-**Installing update**
-
-To upgrade your installation hit the _upgrade now_ button.
-
-<img src="images/UpgradeNow (1).png" alt="Upgrade now" data-size="original">
-
-Umbraco will now fetch and install the upgrade.
-
-<img src="images/UpgradeProgress (1).png" alt="Upgrade Progress" data-size="original">
-
-Once it's completed the upgrade notification should be gone and you can continue using a newly updated Umbraco Forms.
-
-#### Download and upgrade manually
-
-In order to upgrade you will want to [download the version of Forms you wish to upgrade to](https://our.umbraco.com/projects/developer-tools/umbraco-forms/). Instead of downloading the actual package, however, you want to download the `UmbracoForms.Files.x.y.z.zip` file (where x.y.z) is the version.
-
-The filename ends with `.Files.x.y.z.zip` and contains only the files that get installed when you install Umbraco Forms.
-
-**Copy**
-
-Unzip the file you downloaded and copy and overwrite (almost) everything into your website. Almost, because you might not want to overwrite `~/App_Plugins/UmbracoForms/UmbracoForms.config` because you might have updated it in the past. Make sure to compare your current version to the version in the zip file you downloaded. If there's any new configuration options in there then copy those into your website's `UmbracoForms.config` file.
-
-**Upgrade marker**
-
-Finally, you'll need to tell Umbraco Forms to update itself when you start the website next. In order to do that you need to have a `formsupdate` file (an empty text file without extension) in `~/App_Data/TEMP/`. The easiest way to create this file is by going into the root folder of your website and start a command line there. You can then type the following command: `echo > /App_Data/TEMP/formsupdate`.
-
-This command creates the file and you should see it disappear the next time the website recycles. You may want to recycle the website manually after creating this file. If the file isn't automatically removed, it is safe to remove it manually.
-
-That's it! You're all set.
-
-</details>
-
-<details>
-
-<summary>Version 4 to Version 6</summary>
-
-Upgrading to Version 6 of Umbraco Forms, has a higher minimum dependency on Umbraco CMS core of `7.6.0` & higher. The reasoning behind this is due to some underlying changes to ensure Forms works with Umbraco Cloud & Deploy.
-
-With Umbraco you have many options to upgrade Umbraco Forms.
-
-* You can install the Forms package via the community package search from within the Developer Tab in the CMS.
-* Umbraco Forms can be downloaded directly from [our.umbraco.com](https://our.umbraco.com/packages/developer-tools/umbraco-forms/).
-* You can download a `.zip` file containing the updated files which you can unzip & apply over the top of your existing install.
-* You can upgrade Forms using NuGet. Doing this will require a few more steps, which you can find in the next section.
-
-**Upgrading with NuGet**
-
-Using NuGet to perform an the Forms major upgrade, you will see that the legacy MacroPartial view is removed from the site. This causes any existing Umbraco Forms rendered on the site to stop functioning.
-
-Before running the site after the NuGet upgrade again; consider this may need to be done on each environment depending on your deployment process/setup. You will need to copy/restore the following file `Views/MacroPartials/InsertUmbracoForm.cshtml` from your source control solution.
-
-The file needs to be here before the site is restarted - due to the migration/upgrade tasks listed below.
-
-**Upgrade tasks**
-
-The following outlines for `version 6.0.0` what upgrade/migration tasks that are being performed:
-
-* Rename legacy macro to make it easier to identify in the backoffice.
-* Adds new form macro to insert a form with a theme.
-* Moves JSON Form Storage files from `App_Plugins/UmbracoForms/Data` to `App_Data/UmbracoForms/Data` by default unless a custom Forms IFileSystem is configured such as Azure blob storage.
-* Moves any Form PreValue sources that uses text files that were uploaded to the media section & now stores in the Umbraco Forms IFileSystem.
-
-**Recommendation**
-
-We recommend you make the switch away from the legacy macro and swap over to the newer macro that supports Themes. The legacy macro is there to ease the transition over and to avoid entire sites forms to stop working.
-
-</details>
+You can find the version specific upgrade notes for versions out of support in the [Legacy documentation on Github](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-forms/installation/version-specific.md).&#x20;
