@@ -1,6 +1,6 @@
 # Table of contents
 
-* [What is Umbraco Commerce?](README.md)
+* [Umbraco Commerce Documentation](README.md)
 * [Commerce Packages](https://docs.umbraco.com/umbraco-commerce-packages)
 * [Commerce Payment Providers](https://docs.umbraco.com/umbraco-commerce-payment-providers)
 * [Release Notes](release-notes.md)
@@ -12,7 +12,7 @@
 
 ## Upgrading
 
-* [Upgrading Umbraco Commerce](upgrading/manualupgrade.md)
+* [Upgrading Umbraco Commerce](upgrading/upgrade.md)
 * [Version Specific Upgrade Notes](upgrading/version-specific.md)
 * [Migrate from Vendr to Umbraco Commerce](upgrading/migrate-from-vendr-to-umbraco-commerce/README.md)
   * [Migrate Umbraco Commerce Checkout](upgrading/migrate-from-vendr-to-umbraco-commerce/migrate-umbraco-commerce-checkout.md)
