@@ -38,7 +38,7 @@ return template.Alias;
 
 ### .IsMasterTemplate
 
-Returns true if the template is used as a layout for other templates (i.e. it has 'children')
+Returns true if the template is used as a layout for other templates (that is, it has 'children')
 
 ```csharp
 var template = new Template(shortStringHelper,"Page", "page");
