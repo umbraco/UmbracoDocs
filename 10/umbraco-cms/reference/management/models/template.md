@@ -23,7 +23,7 @@ using Umbraco.Cms.Core.Models;
 
 ### new Template(IShortStringHelper shortStringHelper, string name, string alias)
 
-Constructor for creating a new Template object where the necessary parameters are a short String Helper as a `IShortStringHelper`, the name of the Template as a `string` and the alias as a `string` for the Template being created.
+Constructor for creating a new Template object. The necessary parameters include a short String Helper as an `IShortStringHelper`. The name and alias of the Template must be provided as `string` values.
 
 ## Properties
 
