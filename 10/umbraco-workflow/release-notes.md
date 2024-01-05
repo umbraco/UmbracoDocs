@@ -1,7 +1,6 @@
 ---
 description: >-
-  Get an overview of the things changed and fixed in each version of Umbraco
-  Workflow.
+  Get an overview of the things changed and fixed in each version of Umbraco Workflow.
 ---
 
 # Release notes
@@ -11,7 +10,7 @@ In this section, we have summarized the changes to Umbraco Workflow released in 
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
 {% hint style="info" %}
-If you are migrating from Plumber to Umbraco Workflow, see the [Migrate from Plumber to Workflow](upgrading-workflow/migrating-workflow.md) article.
+If you are migrating from Plumber to Umbraco Workflow, see the [Migrate from Plumber to Workflow](./upgrading/migrating-workflow.md) article.
 {% endhint %}
 
 ## Release History
@@ -112,4 +111,4 @@ This section contains the release notes for Umbraco Workflow 10 including all ch
 
 ## Legacy release notes
 
-You can find the release notes for versions out of support in the[ Legacy documentation release notes.](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-workflow/release-notes.md)
+You can find the release notes for versions out of support in the [Legacy documentation on Github](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-workflow/release-notes.md)

@@ -17,7 +17,7 @@ Umbraco Workflow adds two Dashboards to your Umbraco project:
 
 When a workflow is active on the current node, the **Publish** button is replaced, linking to the workflow content app.
 
-![Buttons drawe](<../../../10/umbraco-workflow/images/Buttons (1).png>)
+![Buttons](../images/Buttons.png)
 
 When no workflow is active, the button state is determined by the current user's permissions.
 
@@ -25,8 +25,8 @@ Umbraco Workflow overrides Umbraco's User/Group publishing permissions. If the u
 
 In cases, where the content is already in a workflow, a notification is displayed at the top of the editor. Depending on the Workflow **Settings**, you can enable/disable editing access on a content node in a workflow.
 
-![Disabled content edits](<../../../10/umbraco-workflow/images/blocked\_content (1).png>)
+![Disabled content edits](../images/blocked_content.png)
 
 For nodes where the workflow has been disabled, the default Umbraco options are displayed.
 
-![Default Button](<../../../10/umbraco-workflow/images/Default\_Buttons (1).png>)
+![Default Button](../images/Default_Buttons.png)

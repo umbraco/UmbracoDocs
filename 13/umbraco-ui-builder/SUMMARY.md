@@ -11,7 +11,7 @@
 
 ## Upgrading
 
-* [Upgrading Umbraco UI Builder](upgrading/manualupgrade.md)
+* [Upgrading Umbraco UI Builder](upgrading/upgrade.md)
 * [Version Specific Upgrade Notes](upgrading/version-specific.md)
 * [Migrate from Konstrukt to Umbraco UI Builder](upgrading/migrating-from-konstrukt-to-umbraco-ui-builder.md)
 
@@ -88,4 +88,3 @@
 
 * [Conventions](miscellaneous/conventions.md)
 * [Umbraco Aliases](miscellaneous/umbraco-aliases.md)
-* [Umbraco-UI-Builder vs UI-O-Matic](miscellaneous/umbraco-ui-builder-vs-ui-o-matic.md)

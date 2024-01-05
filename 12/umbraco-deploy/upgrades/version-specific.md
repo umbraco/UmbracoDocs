@@ -1,7 +1,6 @@
 ---
 description: >-
-  Version specific documentation for upgrading to new major versions of Umbraco
-  Deploy.
+  Version specific documentation for upgrading to new major versions of Umbraco Deploy.
 ---
 
 # Version Specific Upgrade Details
