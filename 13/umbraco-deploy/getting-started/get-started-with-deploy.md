@@ -18,13 +18,13 @@ When you want this deployed to your next environment, you would trigger your CI/
 
 ![Deploy workflow](../../10/umbraco-deploy/images/Deploy\_concept.png)
 
-## [Quick start (new sites)](getting-started/install-configure.md)
+## [Quick start (new sites)](../installation/install-configure.md)
 
 There are three main steps you need to go through in order to start using Umbraco Deploy on your website.
 
-1. [Set up Git repository and new Umbraco project](getting-started/install-configure.md#prerequisites)
+1. [Set up Git repository and new Umbraco project](../installation/install-configure.md#prerequisites)
    * Set up a repository and then install a new Umbraco project inside it.
-2. [Install Umbraco Deploy via NuGet](getting-started/install-configure.md#installing-and-configuring-umbraco-deploy)
+2. [Install Umbraco Deploy via NuGet](../installation/install-configure.md#installing-and-configuring-umbraco-deploy)
    * Umbraco Deploy can be installed via NuGet.
-3. [Configure CI/CD build server](getting-started/cicd-pipeline/README.md)
+3. [Configure CI/CD build server](../getting-started/cicd-pipeline/README.md)
    * Umbraco Deploy needs a CI/CD build server needs to be set up to run when you want changes to be deployed to next upstream environment

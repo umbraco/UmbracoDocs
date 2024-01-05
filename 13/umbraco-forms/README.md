@@ -16,8 +16,8 @@ Umbraco Forms is a tool that lets you build forms of all shapes and sizes and pu
 
 ## Quick Links
 
-{% content-ref url="installation/manualupgrade.md" %}
-[manualupgrade.md](installation/manualupgrade.md)
+{% content-ref url="upgrading/manualupgrade.md" %}
+[upgrading/manualupgrade.md](upgrading/manualupgrade.md)
 {% endcontent-ref %}
 
 {% content-ref url="editor/attaching-workflows/" %}

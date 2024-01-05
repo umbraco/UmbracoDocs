@@ -100,9 +100,3 @@ An `UmbracoApplicationUrl` can be configured in your `appSettings.json` file lik
 ```
 
 See the [Fixed Application URL](https://docs.umbraco.com/umbraco-cms/extending/health-check/guides/fixedapplicationurl) documentation for more details about this setting.
-
-
-
-
-
-

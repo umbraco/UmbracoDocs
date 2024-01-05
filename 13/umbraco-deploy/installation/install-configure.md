@@ -294,4 +294,4 @@ For example, in `appsettings.json`:
 
 Umbraco Cloud projects use a license file placed in the `/umbraco/Licenses` folder that is provided when your project is created.
 
-Read more about the [Umbraco Deploy licensing model](../the-licensing-model.md).
+Read more about the [Umbraco Deploy licensing model](../installation/the-licensing-model.md).
