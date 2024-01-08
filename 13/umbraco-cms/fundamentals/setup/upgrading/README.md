@@ -71,7 +71,7 @@ It's recommended that you upgrade the site offline and test the upgrade fully be
 4. Select the **.NET** version from the **Target Framework** drop-down.
 5. Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**
 6. Go to the **Installed** tab in the NuGet Package manager.
-7.  Upgrade **Umbraco.Cms**.&#x20;
+7.  Upgrade **Umbraco.Cms**.
 
     a. Select the correct version from the **Version** drop-down.
 
@@ -81,7 +81,7 @@ It's recommended that you upgrade the site offline and test the upgrade fully be
 If you have other packages installed such as Umbraco Forms, then before upgrading **Umbraco.CMS** you will need to upgrade the packages first. Consult the [version specific upgrade notes for Umbraco Forms](https://docs.umbraco.com/umbraco-forms/installation/version-specific) if relevant.
 {% endhint %}
 
-8. Make sure that your connection string has `TrustServerCertificate=True` in order to complete successfully the upgrade:&#x20;
+8. Make sure that your connection string has `TrustServerCertificate=True` in order to complete the upgrade successfully:
 
 ```csharp
 "ConnectionStrings": {
@@ -89,7 +89,13 @@ If you have other packages installed such as Umbraco Forms, then before upgradin
 }
 ```
 
-9. Restart your site in IIS, build, and run your project to finish the installation.
+9. Restart your site in IIS, then build and run your project to finish the installation.
+
+{% hint style="info" %}
+In Umbraco 13, we have moved to using the [Minimal Hosting Model](https://github.com/umbraco/Umbraco-CMS/pull/14656).&#x20;
+
+If you have added custom code to the `startup.cs` file, we recommend moving the code into a Composer after upgrading.
+{% endhint %}
 
 ## Upgrade to a new Minor
 
