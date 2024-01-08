@@ -85,7 +85,8 @@ You can specify a `Stream` for the contents of the file that should be created.
 
 As an example, if you have an image on disk named `unicorn.jpg` in the images folder of `wwwroot`. You can open a new stream for a file on the disk, and then create a new media item for that file in Umbraco:
 
-Note that you will need to inject the following services:
+
+Please be aware that you will need to inject the following services:
 * `MediaFileManager _mediaFileManager`
 * `IShortStringHelper _shortStringHelper`
 * `IContentTypeBaseServiceProvider _contentTypeBaseServiceProvider`
