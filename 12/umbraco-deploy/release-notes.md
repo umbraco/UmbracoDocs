@@ -1,7 +1,6 @@
 ---
 description: >-
-  Get an overview of the things changed and fixed in each version of Umbraco
-  Forms.
+  Get an overview of the things changed and fixed in each version of Umbraco Deploy.
 ---
 
 # Release notes
@@ -42,8 +41,8 @@ This section contains the release notes for Umbraco Deploy 12 including all chan
 #### [**12.1.0-rc1**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.0) **(November 27th 2023)**
 
 * Added feature of [content import and export with migrations](deployment-workflow/import-export.md).
-* Added a new configuration option of `ResolveUserInTargetEnvironment` to allow resolving of user accounts in target environments (see [Deploy Settings](deploy-settings.md)).
-* Added a new configuration option of `AllowPublicAccessDeploymentOperations` to amend the behavior of public access rule transfer (see [Deploy Settings](deploy-settings.md)).
+* Added a new configuration option of `ResolveUserInTargetEnvironment` to allow resolving of user accounts in target environments (see [Deploy Settings](getting-started/deploy-settings.md)).
+* Added a new configuration option of `AllowPublicAccessDeploymentOperations` to amend the behavior of public access rule transfer (see [Deploy Settings](getting-started/deploy-settings.md)).
 * Improve performance of publishing multi-language content during restore/transfer and import.
 
 #### [**12.0.5**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.5) (**November 14th 2023**)
@@ -91,4 +90,4 @@ This section contains the release notes for Umbraco Deploy 12 including all chan
 
 ## Legacy release notes
 
-You can find the release notes for versions out of support in the [Legacy documentation release notes ](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-deploy/release-notes.md)and[ Umbraco Deploy Package page.](https://our.umbraco.com/packages/developer-tools/umbraco-deploy/)
+You can find the release notes for versions out of support in the [Legacy documentation on Github](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-deploy/release-notes.md) and [Umbraco Deploy Package page.](https://our.umbraco.com/packages/developer-tools/umbraco-deploy/)

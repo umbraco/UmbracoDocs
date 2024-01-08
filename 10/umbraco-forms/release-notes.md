@@ -1,7 +1,6 @@
 ---
 description: >-
-  Get an overview of the things changed and fixed in each version of Umbraco
-  Forms.
+  Get an overview of the things changed and fixed in each version of Umbraco Forms.
 ---
 
 # Release Notes
@@ -11,7 +10,7 @@ In this section, we have summarized the changes to Umbraco Forms released in eac
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
 {% hint style="info" %}
-If you are upgrading to a new major version, you can find information about the breaking changes in the [Version Specific Upgrade Notes](installation/version-specific.md) article
+If you are upgrading to a new major version, you can find information about the breaking changes in the [Version Specific Upgrade Notes](./upgrading/version-specific.md) article
 {% endhint %}
 
 ## Release History
@@ -750,4 +749,4 @@ Breaking changes:
 
 ## Legacy release notes
 
-You can find the release notes for versions out of support in the [Legacy documentation release notes](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-forms/release-notes.md) and [Umbraco Forms Package page](https://our.umbraco.com/packages/developer-tools/umbraco-forms/).
+You can find the release notes for versions out of support in the [Legacy documentation on Github](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-forms/release-notes.md) and [Umbraco Forms Package page](https://our.umbraco.com/packages/developer-tools/umbraco-forms/).
