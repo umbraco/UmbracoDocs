@@ -53,6 +53,8 @@ For illustration purposes, the following structure represents the full set of op
             "TransferFormsAsContent": true,
             "TransferDictionaryAsContent": false,
             "IgnoreMissingLanguagesForDictionaryItems": false,
+            "SetEmptyDictionaryItemsOnTransfer": true,
+            "IgnoreMissingLanguagesForDictionaryItems": false,
             "AllowMembersDeploymentOperations": "None",
             "TransferMemberGroupsAsContent": false,
             "ExportMemberGroups": true,
@@ -199,6 +201,14 @@ Normally this is a useful fail-safe to ensure translations aren't lost in the tr
 If you have deleted languages that have already existing translations, you may want to temporarily remove this check. You can do that by setting this value to `true`.
 
 When this is in place a translation for a language that doesn't exist in the target environment will be ignored. A warning message will be output to the log.
+
+### SetEmptyDictionaryItemsOnTransfer
+
+When deploying dictionary items, Umbraco Deploy will follow the approach used for all content, which is that empty values are transferred and set.
+
+As such, if you transfer a dictionary item with an empty translation to another environment that already contains a translation, it will be overwritten.
+
+Set this value to `false` to not overwrite already populated values with empty strings.
 
 ## AllowMembersDeploymentOperations and TransferMemberGroupsAsContent
 
