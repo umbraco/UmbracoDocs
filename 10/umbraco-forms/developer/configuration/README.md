@@ -490,7 +490,7 @@ Sets the Data Type Guid to use to obtain the configuration for the rich text fie
 
 #### AllowUnsafeHtmlRendering
 
-When using the title and description field type, it's possible for editors to provide HTML in the "description" field and have that rendered on the website.
+When using the "title and description" field type, editors can provide HTML in the "description" field and have that rendered on the website.
 
 As a tightened security measure, you can set this value to `false` which will ensure HTML is no longer rendered.
 
