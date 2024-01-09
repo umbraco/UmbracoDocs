@@ -21,7 +21,7 @@ This section contains the release notes for Umbraco Deploy 4 and 10 including al
 
 <summary>Version 10</summary>
 
-[**10.3.2**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.2) **(January 9th 2023)**
+[**10.3.2**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.2) **(January 9th 2024)**
 
 * Fixed issue with transfer of content using language variants [#193](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/193)
 
@@ -185,7 +185,7 @@ This section contains the release notes for Umbraco Deploy 4 and 10 including al
 
 <summary>Version 4</summary>
 
-[**4.9.2**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.9.2) **(January 9th 2023)**
+[**4.9.2**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.9.2) **(January 9th 2024)**
 
 * Fixed issue with transfer of content using language variants [#193](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/193)
 

@@ -17,7 +17,7 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 12 including all changes for this version.
 
-#### [**12.2.2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.2) **(January 16th 2023)**
+#### [**12.2.2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.2) **(January 16th 2024)**
 
 * Added configuration value `TitleAndDescription:AllowUnsafeHtmlRendering` to allow tighter security for HTML rendering of text entered in the "Title and description" field type.
     * See further details on the [configuration page](./developer/configuration/README.md#AllowUnsafeHtmlRendering).
