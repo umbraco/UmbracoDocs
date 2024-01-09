@@ -1,14 +1,18 @@
-# Runtime modes
+---
+description: >-
+  This section describes how to use the runtime mode setting to optimize Umbraco
+  for the best development experience or optimal production environment.
+---
 
-_This section describes how to use the runtime mode setting to optimize Umbraco for the best development experience or optimal production environment._
+# Runtime Modes
 
 ## Configuring the runtime mode
 
 You can configure the runtime mode to optimize Umbraco for different development experiences and environments by setting `Umbraco:CMS:Runtime:Mode` to one of the available modes:
 
-- `BackofficeDevelopment` (default)
-- `Development`
-- `Production`
+* `BackofficeDevelopment` (default)
+* `Development`
+* `Production`
 
 This can be done via the `appsettings.json` file, environment variables, or any other .NET configuration provider (like Azure Key Vault/App Configuration). Although this setting affects how Umbraco behaves at runtime, some modes have prerequisites on how the project is built/published. Make sure to read the descriptions of each mode before changing this setting from the default `BackofficeDevelopment` mode, as incorrect configuration can result in your application not starting (by throwing a `BootFailedException`).
 
@@ -21,7 +25,8 @@ The `BackofficeDevelopment` mode is the default behavior for Umbraco: it does no
 The `Development` mode can be used when you're developing from an IDE (like Visual Studio, VS Code, or Rider) or the dotnet CLI (e.g. using `dotnet watch`). It is a recommended prerequisite if you want to use the `Production` mode in your production environment.
 
 This mode disables in-memory ModelsBuilder generation and validates the following setting:
-- `Umbraco:CMS:ModelsBuilder:ModelsMode` is not set to `InMemoryAuto`.
+
+* `Umbraco:CMS:ModelsBuilder:ModelsMode` is **not set** to `InMemoryAuto`.
 
 If you want to use the generated models, use `SourceCodeAuto` or `SourceCodeManual`, which requires manually recompiling the project after the models have changed (e.g. after updating Document Types, Media Types, Member Types, or Data Types). Razor views (`cshtml` files) will still be automatically compiled at runtime, allowing you to quickly iterate on the rendered output from templates, (macro) partial views, and view components.
 
@@ -59,16 +64,16 @@ Ensure you have the `<CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGe
 
 Use `Production` mode to ensure your production environment is running optimally by disabling development features and validating whether specific settings are configured to their recommended production values.
 
-This mode disables both in-memory ModelsBuilder generation (see [Development mode](#development-mode)) and Razor (cshtml) runtime compilation. Production mode requires you to compile your views at build/publish time and enforces the following settings for optimal performance/security:
+This mode disables both in-memory ModelsBuilder generation (see [Development mode](runtime-modes.md#development-mode)) and Razor (cshtml) runtime compilation. Production mode requires you to compile your views at build/publish time and enforces the following settings for optimal performance/security:
 
-- The application is built/published in Release mode (with JIT optimization enabled), e.g. using `dotnet publish --configuration Release`;
-- `Umbraco:CMS:WebRouting:UmbracoApplicationUrl` is set to a valid URL;
-- `Umbraco:CMS:Global:UseHttps` is enabled;
-- `Umbraco:CMS:RuntimeMinification:CacheBuster` is set to a fixed cache buster like `Version` or `AppDomain`;
-- `Umbraco:CMS:ModelsBuilder:ModelsMode` is set to `Nothing`.
+* The application is built/published in Release mode (with JIT optimization enabled), e.g. using `dotnet publish --configuration Release`;
+* `Umbraco:CMS:WebRouting:UmbracoApplicationUrl` is set to a valid URL;
+* `Umbraco:CMS:Global:UseHttps` is enabled;
+* `Umbraco:CMS:RuntimeMinification:CacheBuster` is set to a fixed cache buster like `Version` or `AppDomain`;
+* `Umbraco:CMS:ModelsBuilder:ModelsMode` is set to `Nothing`.
 
 {% hint style="info" %}
-To compile your views at build/publish time, remove the `<RazorCompileOnBuild>` and `<RazorCompileOnPublish>` properties from your project file (see the [Development mode](#development-mode) section). If you don't, Umbraco can't find the templates and will return 404 (Page Not Found) errors.
+To compile your views at build/publish time, remove the `<RazorCompileOnBuild>` and `<RazorCompileOnPublish>` properties from your project file (see the [Development mode](runtime-modes.md#development-mode) section). If you don't, Umbraco can't find the templates and will return 404 (Page Not Found) errors.
 {% endhint %}
 
 The recommended approach to enable `Production` mode is to update the `appsettings.Production.json` file (or create one) with the following settings:
@@ -97,7 +102,16 @@ The recommended approach to enable `Production` mode is to update the `appsettin
 Although you can still edit document types and views (if not running from the published output), changes won't be picked up until you've rebuilt your project or republished the application.
 
 {% hint style="info" %}
-Models won't be generated by ModelsBuilder (because the mode is set to `Nothing`), requiring you to do all your changes while in `Development` mode.
+Models won't be generated by ModelsBuilder (because the mode is set to `Nothing`), requiring you to do all your changes while in `Development` mode.\
+\
+As Models Builder is set to `Nothing`, the Models Builder dashboard is disabled in the backoffice of live environment.&#x20;
+
+<img src="../../../.gitbook/assets/ModelsBuilderDisabledOnProduction.png" alt="" data-size="original">
+
+\
+Also, templates cannot be edited on live environment as runtime compilation is not enabled and is set to Production.
+
+<img src="../../../.gitbook/assets/TemplatedCannotBeEditedWhenRuntimeIsProduction.png" alt="" data-size="original">
 {% endhint %}
 
 Also ensure the `UmbracoApplicationUrl` is updated to the primary URL of your production environment, as this is used when sending emails (password reset, notifications, health check results, etc.) and the keep-alive task.
@@ -106,11 +120,11 @@ Also ensure the `UmbracoApplicationUrl` is updated to the primary URL of your pr
 
 Validation of the above-mentioned settings is done when determining the runtime level during startup using the new `IRuntimeModeValidationService` and when it fails, causes a `BootFailedException` to be thrown. The default implementation gets all registered `IRuntimeModeValidators` to do the validation, making it possible to remove default checks and/or add your own (inherit from `RuntimeModeProductionValidatorBase`, if you only want to validate against the production runtime mode). The following validators are added by default:
 
-- `JITOptimizerValidator` - Ensure the application is built/published in Release mode (with JIT optimization enabled) when in production runtime mode, e.g. using `dotnet publish --configuration Release`;
-- `UmbracoApplicationUrlValidator` - ensure `Umbraco:CMS:WebRouting:UmbracoApplicationUrl` is configured when in production runtime mode;
-- `UseHttpsValidator` - ensure `Umbraco:CMS:Global:UseHttps` is enabled when in production runtime mode;
-- `RuntimeMinificationValidator` - ensure `Umbraco:CMS:RuntimeMinification:CacheBuster` is set to a fixed cache buster like `Version` or `AppDomain` when in production runtime mode;
-- `ModelsBuilderModeValidator` - ensure `Umbraco:CMS:ModelsBuilder:ModelsMode` is not set to `InMemoryAuto` when in development runtime mode and set to `Nothing` when in production runtime mode.
+* `JITOptimizerValidator` - Ensure the application is built/published in Release mode (with JIT optimization enabled) when in production runtime mode, e.g. using `dotnet publish --configuration Release`;
+* `UmbracoApplicationUrlValidator` - ensure `Umbraco:CMS:WebRouting:UmbracoApplicationUrl` is configured when in production runtime mode;
+* `UseHttpsValidator` - ensure `Umbraco:CMS:Global:UseHttps` is enabled when in production runtime mode;
+* `RuntimeMinificationValidator` - ensure `Umbraco:CMS:RuntimeMinification:CacheBuster` is set to a fixed cache buster like `Version` or `AppDomain` when in production runtime mode;
+* `ModelsBuilderModeValidator` - ensure `Umbraco:CMS:ModelsBuilder:ModelsMode` is not set to `InMemoryAuto` when in development runtime mode and set to `Nothing` when in production runtime mode.
 
 The following example removes the default `UmbracoApplicationUrlValidator` and adds a new custom `DisableElectionForSingleServerValidator`:
 
