@@ -23,4 +23,4 @@ Since the IContent has not been saved yet, it's not necessary to cast it to `IRe
 
 ## How it works
 
-This is all possible because of the `IRememberBeingDirty` interface. Indeed the name of this interface is hilarious but it describes exactly what it does. All entities implement this interface which is extremely handy. It tracks not only the property data that has changed (because it inherits from yet another hilarious interface called `ICanBeDirty`) but also the property data that was changed before it was committed.
+This is all possible because of the `IRememberBeingDirty` interface. Indeed the name of this interface is hilarious but it describes exactly what it does. All entities implement this interface which is really handy. It tracks not only the property data that has changed (because it inherits from yet another hilarious interface called `ICanBeDirty`) but also the property data that was changed before it was committed.
