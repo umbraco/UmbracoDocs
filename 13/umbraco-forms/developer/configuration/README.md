@@ -401,11 +401,11 @@ If you would like to disable this feature, you can set the value of this setting
 
 ## TrackRenderedFormsStorageMethod
 
-Forms keeps track of the forms rendered on a page in order that the associated scripts can be placed in a different location within the HTML page. Usually this is used to [render the scripts](../rendering-scripts.md)) at the bottom of the page.
+Forms tracks the forms rendered on a page in order that the associated scripts can be placed in a different location within the HTML. Usually this is used to [render the scripts](../rendering-scripts.md)) at the bottom of the page.
 
 By default, `TempData` is used as the storage mechanism for this tracking.
 
-This can cause some issues when applying a CDN to your website, and as such an alternative is available using `HttpContext.Items`.
+This can cause some issues when applying a Content Delivery Network (CDN) to your website, and as such an alternative is available using `HttpContext.Items`.
 
 To switch to this storage mechanism change the value of this setting from the default of `TempData` to `HttpContextItems`.
 
@@ -503,7 +503,7 @@ Sets the Data Type Guid to use to obtain the configuration for the rich text fie
 
 #### AllowUnsafeHtmlRendering
 
-When using the title and description field type, it's possible for editors to provide HTML in the "description" field and have that rendered on the website.
+When using the "title and description" field type, editors can provide HTML in the "description" field and have that rendered on the website.
 
 As a tightened security measure, you can set this value to `false` which will ensure HTML is no longer rendered.
 
