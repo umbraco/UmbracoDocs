@@ -319,7 +319,7 @@ This section contains the release notes for Umbraco Forms 8 and 10 including all
 
 <summary>Version 8</summary>
 
-[**8.13.13**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.13.13) **(January 16th 2023)**
+[**8.13.13**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.13.13) **(January 16th 2024)**
 
 * Back-ported backoffice performance improvements introduced in later versions [#1119](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1119).
 * Fixed permissions issue with use of start folder and group permissions [#1118](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1118)
