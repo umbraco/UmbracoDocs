@@ -25,7 +25,6 @@
 * [Configuration](getting-started/deploy-settings.md)
 * [Extending](getting-started/extending.md)
 * [Handling Cache Refresher Notifications](getting-started/handling-cache-refresher-notifications.md)
-* [Troubleshooting](troubleshooting.md)
 
 ## Deployment Workflow
 
