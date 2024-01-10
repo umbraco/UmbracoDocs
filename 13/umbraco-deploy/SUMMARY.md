@@ -14,6 +14,8 @@
 * [Upgrading Umbraco Deploy](upgrades/README.md)
 * [Version Specific Upgrade Details](upgrades/version-specific.md)
 
+* [Troubleshooting](troubleshooting.md)
+
 ## Getting Started
 
 * [Getting started](getting-started/get-started-with-deploy.md)
@@ -24,7 +26,6 @@
 * [Configuration](getting-started/deploy-settings.md)
 * [Extending](getting-started/extending.md)
 * [Handling Cache Refresher Notifications](getting-started/handling-cache-refresher-notifications.md)
-* [Troubleshooting](troubleshooting.md)
 
 ## Deployment Workflow
 
