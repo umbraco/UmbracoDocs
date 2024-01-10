@@ -21,7 +21,7 @@ This section contains the release notes for Umbraco Forms 8 and 10 including all
 
 <summary>Version 10</summary>
 
-[**10.5.3**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.5.3) **(January 16th 2023)**
+[**10.5.3**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.5.3) **(January 16th 2024)**
 
 * Added configuration value `TitleAndDescription:AllowUnsafeHtmlRendering` to allow tighter security for HTML rendering of text entered in the "Title and description" field type.
     * See further details on the [configuration page](./developer/configuration/README.md#AllowUnsafeHtmlRendering).
