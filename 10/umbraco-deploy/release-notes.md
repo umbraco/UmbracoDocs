@@ -21,6 +21,12 @@ This section contains the release notes for Umbraco Deploy 4 and 10 including al
 
 <summary>Version 10</summary>
 
+[**10.3.3**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.3) **(January 16th 2024)**
+
+* Added configurable option to avoid overwriting of dictionary items with empty values [#191](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/191)
+    * For more details see the page on [Deploy's settings](./getting-started/deploy-settings.md).
+* Fixed regression issue with transfer of date values.
+
 [**10.3.2**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.2) **(January 9th 2024)**
 
 * Fixed issue with transfer of content using language variants [#193](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/193)
@@ -184,6 +190,12 @@ This section contains the release notes for Umbraco Deploy 4 and 10 including al
 <details>
 
 <summary>Version 4</summary>
+
+[**4.9.3**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.9.3) **(January 16th 2024)**
+
+* Added configurable option to avoid overwriting of dictionary items with empty values [#191](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/191)
+    * For more details see the page on [Deploy's settings](./getting-started/deploy-settings.md).
+* Fixed regression issue with transfer of date values.
 
 [**4.9.2**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.9.2) **(January 9th 2024)**
 
