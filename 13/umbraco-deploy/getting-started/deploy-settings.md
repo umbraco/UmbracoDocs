@@ -218,9 +218,9 @@ When this is in place a translation for a language that doesn't exist in the tar
 
 ### SetEmptyDictionaryItemsOnTransfer
 
-When deploying dictionary items, Umbraco Deploy will follow the approach used for all content, which is that empty values are transferred and set.
+When deploying dictionary items, Umbraco Deploy follows the approach used for all content, emptying values that are transferred and set.
 
-As such, if you transfer a dictionary item with an empty translation to another environment that already contains a translation, it will be overwritten.
+If you transfer a dictionary item with an empty translation to another environment that already contains a translation, it will be overwritten.
 
 Set this value to `false` to not overwrite already populated values with empty strings.
 
