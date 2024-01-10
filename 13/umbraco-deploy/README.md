@@ -20,8 +20,8 @@ Umbraco Deploy Overview
 [getting-started/extending.md](getting-started/extending.md)
 {% endcontent-ref %}
 
-{% content-ref url="getting-started/troubleshooting.md" %}
-[getting-started/troubleshooting.md](getting-started/troubleshooting.md)
+{% content-ref url="troubleshooting.md" %}
+[getting-started/troubleshooting.md](troubleshooting.md)
 {% endcontent-ref %}
 
 Umbraco Deploy is also the engine that runs behind the scenes on [Umbraco Cloud](https://docs.umbraco.com/umbraco-cloud/). Here it takes care of all the deployment processes of both code, schema and content on projects.

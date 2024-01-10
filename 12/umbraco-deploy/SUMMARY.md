@@ -3,6 +3,7 @@
 * [Umbraco Deploy Documentation](README.md)
 * [Legacy Documentation](legacy-documentation.md)
 * [Release notes](release-notes.md)
+* [Troubleshooting](troubleshooting.md)
 
 ## Installation
 
@@ -24,7 +25,6 @@
 * [Configuration](getting-started/deploy-settings.md)
 * [Extending](getting-started/extending.md)
 * [Handling Cache Refresher Notifications](getting-started/handling-cache-refresher-notifications.md)
-* [Troubleshooting](getting-started/troubleshooting.md)
 
 ## Deployment Workflow
 
