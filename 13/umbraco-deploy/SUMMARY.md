@@ -3,6 +3,7 @@
 * [Umbraco Deploy Documentation](README.md)
 * [Legacy Documentation](legacy-documentation.md)
 * [Release notes](release-notes.md)
+* [Troubleshooting](troubleshooting.md)
 
 ## Installation
 
@@ -13,8 +14,6 @@
 
 * [Upgrading Umbraco Deploy](upgrades/README.md)
 * [Version Specific Upgrade Details](upgrades/version-specific.md)
-
-* [Troubleshooting](troubleshooting.md)
 
 ## Getting Started
 

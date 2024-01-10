@@ -3,6 +3,7 @@
 * [Umbraco Deploy Documentation](README.md)
 * [Legacy Documentation](legacy-documentation.md)
 * [Release notes](release-notes.md)
+* [Troubleshooting](troubleshooting.md)
 
 ## Installation
 
