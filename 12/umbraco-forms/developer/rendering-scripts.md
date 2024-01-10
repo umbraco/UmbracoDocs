@@ -36,7 +36,7 @@ If you have changed the configuration value `TrackRenderedFormsStorageMethod` to
 }
 ```
 
-Read more about this configuration option [here](./configuration/README.md#TrackRenderedFormsStorageMethod).
+Read more about this configuration option in the [configuration](./configuration/README.md#TrackRenderedFormsStorageMethod) article.
 
 If you prefer to use a tag helper, that's an option too.
 
