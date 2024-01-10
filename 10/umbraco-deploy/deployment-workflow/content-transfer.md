@@ -70,4 +70,4 @@ Sometimes a content transfer might not be possible. For example if you add a new
 
 ![clone dialog](../../../umbraco-cloud/deployment/images/schema-mismatch.png)
 
-If you are seeing this type of issue when trying to transfer content, head over to our article about [Schema Mismatch errors](../getting-started/troubleshooting.md), where you can read about how to resolve the issues.
+If you are seeing this type of issue when trying to transfer content, head over to our article about [Schema Mismatch errors](../troubleshooting.md), where you can read about how to resolve the issues.

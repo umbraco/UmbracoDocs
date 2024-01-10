@@ -78,7 +78,7 @@ It's recommended that you upgrade the site offline and test the upgrade fully be
     b. Click **Install** to upgrade your project.
 
 {% hint style="info" %}
-If you have other packages installed such as Umbraco Forms, then before upgrading **Umbraco.CMS** you will need to upgrade the packages first. Consult the [version specific upgrade notes for Umbraco Forms](https://docs.umbraco.com/umbraco-forms/installation/version-specific) if relevant.
+If you have other packages installed such as Umbraco Forms, then before upgrading **Umbraco.CMS** you will need to upgrade the packages first. Consult the [version specific upgrade notes for Umbraco Forms](https://docs.umbraco.com/umbraco-forms/upgrading/version-specific) if relevant.
 {% endhint %}
 
 8. Make sure that your connection string has `TrustServerCertificate=True` in order to complete the upgrade successfully:
