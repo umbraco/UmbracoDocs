@@ -1,3 +1,8 @@
+---
+description: >-
+  Get an overview of the things changed and fixed in each version of Umbraco UI Builder.
+---
+
 # Release Notes
 
 In this section, we have summarized the changes to Umbraco UI Builder released in each version. Each version is presented with a link to the [UI Builder issue tracker](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues) showing a list of issues resolved in the release. We also link to the individual issues themselves from the detail.
@@ -5,59 +10,24 @@ In this section, we have summarized the changes to Umbraco UI Builder released i
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
 {% hint style="info" %}
-For details of releases for **Konstrukt** refer to the [Change log file on Github](changelog-archive/changelog.md).
+If you are upgrading to a new major version, check the breaking changes in the [Version Specific Upgrade Notes](./upgrading/version-specific.md) article.
 {% endhint %}
 
 ## Release History
 
-In this section, you can find the release notes for each version of Umbraco UI Builder. For each major version, you can find the details about each release.
+This section contains the release notes for Umbraco UI Builder 13 including all changes for this version.
 
-<details>
+#### [13.0.1](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=label%3Arelease%2F13.0.1+is%3Aclosed) (January 11th 2024)
 
-<summary>Version 12</summary>
+* Fix built-in export/import actions errors [#84](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/84)
+* Update list view `editorState` to support integration with `Contentment Data Types` [#83](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/83)
 
-#### [12.0.2](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.2) (December 1st 2023)
+#### [13.0.0](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13+label%3Arelease%2F13.0.0) (December 13th 2023)
 
-* Run server side validation on action settings dialog [#34](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/34).
-* Saving a node does't close the editor [#57](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/57).
-* Entity Picker used in Konstrukt editor has validation issues [#61](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/61).
-* Angular error when adding a custom action in the ContainerMenu [#73](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/73).
-* Not populating $scope.model.dataTypeKey, problems using Contentment Data Picker [#76](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/76).
+* Upgraded to run again Umbraco v13 and .NET 8
+* Upgraded all 3rd party dependencies
+* Nullable references
 
-#### [12.0.1](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.1) (November 1st 2023)
+## Legacy release notes
 
-* Null check text based filter clauses [#66](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/66).
-* Allow setting an editor fields Data Type by Guid key [#67](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/67).
-* Updated child entity creation routine to cast the parent id to the childs FK type, allowing conversion via Type Converters [#68](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/68).
-* Updated entity service `FetchEntitiesByIds` to maintain the order of results based on the order of the IDs passed in [#70](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/70).
-
-[**12.0.0**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues) **(October 25th 2023)**
-
-* Initial product launch.
-
-</details>
-
-<details>
-
-<summary>Version 10</summary>
-
-#### [10.0.2](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.2) (December 1st 2023)
-
-* Run server side validation on action settings dialog [#34](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/34).
-* Saving a node does't close the editor [#57](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/57).
-* Entity Picker used in Konstrukt editor has validation issues [#61](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/61).
-* Angular error when adding a custom action in the ContainerMenu [#73](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/73).
-* Not populating $scope.model.dataTypeKey, problems using Contentment Data Picker [#76](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/76).
-
-#### [10.0.1](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.1) (November 1st 2023)
-
-* Null check text based filter clauses [#66](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/66).
-* Allow setting an editor fields Data Type by Guid key [#67](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/67).
-* Updated child entity creation routine to cast the parent id to the childs FK type, allowing conversion via Type Converters [#68](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/68).
-* Updated entity service `FetchEntitiesByIds` to maintain the order of results based on the order of the IDs passed in [#70](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/70).
-
-[**10.0.0**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues) **(October 25th 2023)**
-
-* Initial product launch.
-
-</details>
+You can find the release notes for **Konstrukt** in the [Change log file on Github](../umbraco-commerce/changelog-archive/Vendr-core.md).

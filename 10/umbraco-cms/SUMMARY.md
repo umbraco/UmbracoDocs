@@ -2,6 +2,7 @@
 
 * [Umbraco CMS Documentation](README.md)
 * [Legacy Documentation](legacy-documentation/README.md)
+  * [Umbraco 11 Documentation](https://github.com/umbraco/UmbracoDocs/tree/umbraco-eol-versions)
   * [Umbraco 8 Documentation](https://our.umbraco.com/documentation/)
   * [Umbraco 7 Documentation](https://our.umbraco.com/documentation/)
 * [Contribute](https://docs.umbraco.com/welcome/contribute/getting-started)

@@ -4,7 +4,7 @@ For a content item, Umbraco will show a **Links** box within the **Info** conten
 
 ![image](../../../../../10/umbraco-cms/reference/notifications/editormodel-notifications/images/properties-info-app.png)
 
-With the `SendingContentNotification` event, we can manipulate the links in the `Urls` property. This could be by replace it with custom links although a URL provider would be more suitable:
+With the `SendingContentNotification` event, we can manipulate the links in the `Urls` property. This could be by replacing it with custom links although a URL provider would be more suitable:
 
 ```csharp
 public void Handle(SendingContentNotification notification)

@@ -14,6 +14,8 @@ The major version of Umbraco CMS is currently used for versioning the documentat
 * Umbraco Forms
 * Umbraco Deploy
 * Umbraco Workflow
+* Umbraco Commerce
+* Umbraco UI Builder
 
 The documentation for Umbraco Cloud and Umbraco Heartcore is not following the CMS versioning as these are both Software as a Service (SaaS) projects.
 

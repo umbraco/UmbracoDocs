@@ -52,7 +52,7 @@ Media items are transferred the same way as content:
 
 ### Umbraco Forms
 
-In order for Deploy to handle Forms data as content, you will need to ensure that the `transferFormsAsContent` setting in configuration is set to `true`. See details in the [Deploy Settings for Umbraco 9](../deploy-settings.md) article.
+In order for Deploy to handle Forms data as content, you will need to ensure that the `transferFormsAsContent` setting in configuration is set to `true`. See details in the [Deploy Settings for Umbraco 9+](../getting-started/deploy-settings.md) article.
 
 Once the setting have been added to the source and target environment forms can be transferred the same way as content and media:
 
@@ -68,6 +68,6 @@ This does not include entries submitted via the forms.
 
 Sometimes a content transfer might not be possible. For example if you add a new property to the HomePage Document type and you don’t have that property in both environments, you’ll get an error with a hint on how to fix this.
 
-![clone dialog](../../umbraco-cloud/deployment/images/schema-mismatch.png)
+![clone dialog](../../../umbraco-cloud/deployment/images/schema-mismatch.png)
 
 If you are seeing this type of issue when trying to transfer content, head over to our article about [Schema Mismatch errors](../troubleshooting.md), where you can read about how to resolve the issues.

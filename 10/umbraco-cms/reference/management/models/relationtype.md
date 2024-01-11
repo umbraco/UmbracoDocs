@@ -4,7 +4,7 @@ description: "The `RelationType` class represents a relation definition between 
 
 # RelationType
 
-The `RelationType` class represents a relation definition between two node types (content or media). For example keeping track of node usage across the site, in order to avoid deleting content that is used else where. When querying a relation this is done using the parent node key unless the `RelationType` is set to bidirectional in which case you can also query using the child node key.
+The `RelationType` class represents a relation definition between two node types (content or media). For example keeping track of node usage across the site, in order to avoid deleting content that is used else where. When querying a relation, it is typically done using the parent node key. However, if the `RelationType` is bidirectional, querying with the child node key is also possible.
 
 * **Namespace:** `Umbraco.Cms.Core.Models`
 * **Assembly:** `Umbraco.Core.dll`
@@ -24,7 +24,7 @@ using Umbraco.Cms.Core.Services;
 
 ### new RelationType(string name, string alias, bool isBidrectional, Guid? parentObjectType, Guid? childObjectType)
 
-Constructor for creating a new RelationType object where the necessary parameters are the string alias and name of the relation type, a `bool` to indicate whether the relation is bidirectional, and the `Guid?` key of the child object type, parent object type the relation type will be for.
+Create a new RelationType object with this constructor. It requires a `string` alias, the relation type's name, and a `bool` for bidirectionality. Additionally, specify the `Guid?` keys for both child and parent object types involved in the relation.
 
 ## Properties
 

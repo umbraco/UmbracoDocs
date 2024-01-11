@@ -11,27 +11,24 @@ The Umbraco UI should work in all modern browsers:
 
 ## Local Development
 
-* One of the following OSs:
-  * Microsoft Windows 10 or 11
-  * MacOS High Sierra 10.13 or higher
-  * Linux (Ubuntu, Alpine, CentOS, Debian, Fedora, openSUSE and other major distributions)
+Below you can find the minimum requirements to run Umbraco 10 on your machine:
+
+* [.NET 6.0.5 and higher](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+* One of the [.NET 6 - Supported OS versions](https://github.com/dotnet/core/blob/main/release-notes/6.0/supported-os.md)
 * One of the following .NET Tools or Editors:
   * [Visual Studio Code](https://code.visualstudio.com/) with the [IISExpress extension](https://marketplace.visualstudio.com/items?itemName=warren-buckley.iis-express)
-  * [Microsoft Visual Studio](https://www.visualstudio.com/) **2022 v17.4 and higher**
-  * [JetBrains Rider](https://www.jetbrains.com/rider) **version 2022.3 and higher**
+  * [Microsoft Visual Studio](https://www.visualstudio.com/) 2022 version 17.0 or higher.
+    * Optional: [JetBrains Rider](https://www.jetbrains.com/rider) version 2022.3 and higher
   * [.NET Core CLI](install/install-umbraco-with-templates.md)
-* [.NET 6.0.5 and higher](https://dotnet.microsoft.com/en-us/platform/support/policy)
 * [SQL connection string (SQL Server)](../../reference/configuration/connectionstringssettings.md)
 
 {% hint style="info" %}
-
 When using Visual Studio as your primary Integrated Development Environment (IDE) we recommend [finding and downloading the Software Development Kits (SDKs) for Visual Studio](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks).
-
 {% endhint %}
 
 ## Hosting
 
-### Recommendation and Minimum requirements to run Umbraco
+### Recommendation requirements to run Umbraco
 
 As Umbraco releases are aligned to the .NET release cadence, it's also aligned with Microsoft's Long-term support policy for the underlying framework. For the best experience, we would recommend that you ensure to be on latest and supported Microsoft versions to run and host Umbraco CMS:
 
@@ -39,9 +36,16 @@ As Umbraco releases are aligned to the .NET release cadence, it's also aligned w
 * [MacOs Supported releases](https://learn.microsoft.com/en-us/dotnet/core/install/macos#supported-releases)
 * [Ubuntu Supported distributions](https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#supported-distributions) and other [Linux Packages](https://learn.microsoft.com/en-us/dotnet/core/install/linux#packages)
 * [.NET Supported releases](https://dotnet.microsoft.com/en-us/platform/support/policy)
+
+{% hint style="info" %}
+For the above, as Umbraco version 10 is based on .NET 6 you will need to follow the .NET 6 supported versions.
+{% endhint %}
+
 * [IIS Supported releases](https://learn.microsoft.com/en-us/lifecycle/products/internet-information-services-iis)
 * [SQL Server Supported releases](https://learn.microsoft.com/en-us/sql/sql-server/end-of-support/sql-server-end-of-support-overview?view=sql-server-ver16#lifecycle-dates)
 * [SQLite](https://www.sqlite.org/index.html)
+
+As Umbraco version 10 is based on .NET 6 follow the requirements for .NET 6.
 
 _For more information, see the_ [_Host and deploy ASP.NET Core applications_](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/?view=aspnetcore-6.0) _article in the Microsoft documentation._
 
@@ -49,9 +53,9 @@ _For more information, see the_ [_Host and deploy ASP.NET Core applications_](ht
 You can use [Umbraco Cloud](https://umbraco.com/products/umbraco-cloud/) to manage the hosting infrastructure. All Umbraco Cloud plans are hosted on Microsoft Azure, which gives your site a proven and solid foundation.
 {% endhint %}
 
-#### Other recommendation
+### Other recommendation
 
-* Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your sit. This would typically be **NETWORK SERVICE**.
+* Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site. This would typically be **NETWORK SERVICE**.
 
 ## Database Account Roles
 

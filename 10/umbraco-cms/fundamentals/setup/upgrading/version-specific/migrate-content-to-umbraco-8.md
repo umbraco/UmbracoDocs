@@ -13,7 +13,7 @@ A content migration tool has been implemented in Umbraco 8.1.0, to help you with
 In this guide you can read more about the tool, its limitations, and how to use it in practice.
 
 {% hint style="info" %}
-### Migrating Umbraco Cloud sites
+#### Migrating Umbraco Cloud sites
 
 Follow the [steps outlined in the Umbraco Cloud documentation](../../../../../umbraco-cloud/upgrades/migrate-from-umbraco-7-to-8.md) to upgrade your Umbraco 7 site on Cloud.
 {% endhint %}
@@ -55,7 +55,7 @@ The migration will transform the data stored in third party editors as well. How
 
 <summary>Learn more about that in the Data Types Migrations</summary>
 
-#### Migrating data types
+**Migrating data types**
 
 When migrating content from Umbraco 7 to Umbraco 8, the Data Type 'pre-value' structure has changed. In Umbraco 8, the term 'pre-values' no longer exists and is instead referred to as `property editor configuration`.
 
@@ -67,7 +67,7 @@ When upgrading from Umbraco 7 to Umbraco 8, Umbraco has no way of knowing how cu
 
 There are 3 options that a developer can choose to do to work around this automatic data conversion:
 
-#### 1: Implement a custom `IPreValueMigrator`
+**1: Implement a custom `IPreValueMigrator`**
 
 This option requires you to create a custom C# migrator for each of your custom property editors that store custom configuration data. It will also require that you implement these migrators before you run the Umbraco 8 content migration.
 
@@ -93,11 +93,11 @@ public class PreValueMigratorComposer : IUserComposer
 
 When running the migrations and encountering a custom configuration, Umbraco will utilize the `PreValueMigrator` when converting the old pre-values into the new JSON format.
 
-#### 2: Update your Angular configuration (pre-value) and property editor
+**2: Update your Angular configuration (pre-value) and property editor**
 
 This option means that you will choose to use the automatically converted JSON data format. In this case, it will mean updating your pre-value and property editors to use the new JSON configuration data. The converted data won't be much different than the original/intended data format so this might not be too much work.
 
-#### 3: Update the Angular configuration (pre-value) editor
+**3: Update the Angular configuration (pre-value) editor**
 
 With this option the configuration/pre-value editor needs to be updated to transform the JSON converted data into the data structure you want. When this is done and when the Data Type is saved again, the JSON data structure will be saved back to the database. Your property editor will then continue to work.
 

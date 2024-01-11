@@ -2,7 +2,7 @@
 description: >-
   This document covers specific upgrade steps if a version requires them. Most
   versions do not require specific upgrade steps. In most cases, you will be
-  able to upgrade directly from your current version
+  able to upgrade directly from your current versi
 ---
 
 # Version Specific Upgrades
@@ -19,31 +19,31 @@ Use the [general upgrade guide](../) to complete the upgrade of your project.
 
 <summary>Umbraco 10</summary>
 
-#### [Update 'diff' from 3.5.0 to 5.0.0](https://github.com/umbraco/Umbraco-CMS/issues/12337)
+[**Update 'diff' from 3.5.0 to 5.0.0**](https://github.com/umbraco/Umbraco-CMS/issues/12337)
 
 The `diff` library used in the Backoffice client has been updated and introduces a breaking change since the exposed global object has been renamed from `JsDiff` to `Diff`.
 
-#### [Content Schedule performance](https://github.com/umbraco/Umbraco-CMS/pull/11398)
+[**Content Schedule performance**](https://github.com/umbraco/Umbraco-CMS/pull/11398)
 
 Removes mutable ContentSchedule property from `IContent/Content` to `read/write` content schedules.
 
 Use _IContentService.GetContentScheduleByContentId && IContentService.PersistContentSchedule_ or the optional _contentSchedule parameter_ on _IContentService.Save_ instead.
 
-#### [Removed redundant event handling code](https://github.com/umbraco/Umbraco-CMS/pull/11842)
+[**Removed redundant event handling code**](https://github.com/umbraco/Umbraco-CMS/pull/11842)
 
 * Removed public methods: `PublishedSnapshotServiceEventHandler.Dispose`, `PublishedSnapshotServiceEventHandler.Dispose(bool)`, and `.PublishedSnapshotServiceEventHandler.Initialize`.
 * Removed public `ctor`.
 
-#### [Scope provider cleanup](https://github.com/umbraco/Umbraco-CMS/pull/11859)
+[**Scope provider cleanup**](https://github.com/umbraco/Umbraco-CMS/pull/11859)
 
 * Some public classes in the `Cms.Core.Services` namespace have moved assembly from **`Umbraco.Cms.Infrastructure`** to **`Umbraco.Cms.Core`**.
 * These same public classes have changed namespace from **`Umbraco.Cms.Core.Services.Implement`** to **`Umbraco.Cms.Core.Services`**.
 
-#### [Update to NPoco5](https://github.com/umbraco/Umbraco-CMS/pull/11880)
+[**Update to NPoco5**](https://github.com/umbraco/Umbraco-CMS/pull/11880)
 
 NPoco types and interfaces are part of our public interface which means that this upgrade imposes breaking changes.
 
-#### [SQLite support](https://github.com/umbraco/Umbraco-CMS/pull/11922)
+[**SQLite support**](https://github.com/umbraco/Umbraco-CMS/pull/11922)
 
 * Removed support for Microsoft SQL Server Compact (SQL CE).
 * Removed `ReadLock` and `WriteLock` methods from `ISqlSyntaxProvider` interface. Use `IDistributedLockingMechanism` (or IScope which delegates to `IDistributedLockingMechanism`) instead.
@@ -60,7 +60,7 @@ NPoco types and interfaces are part of our public interface which means that thi
 * `ISqlSyntaxProvider.AppendForUpdateHint(Sql)`
 * `ISqlSyntaxProvider.LeftJoinWithNestedJoin(Sql,Func<Sql,Sql>,String)`
 
-#### [Update to ImageSharp v2](https://github.com/umbraco/Umbraco-CMS/pull/12185)
+[**Update to ImageSharp v2**](https://github.com/umbraco/Umbraco-CMS/pull/12185)
 
 **Update dependency versions**:
 
@@ -76,7 +76,7 @@ Moved **ImageSharp** configuration from the `AddUmbracoImageSharp()` extension m
 * The middleware is configured in ConfigureImageSharpMiddlewareOptions (which also replaces ImageSharpConfigurationOptions that previously only set the default ImageSharp configuration);
 * The default physical cache is configured in ConfigurePhysicalFileSystemCacheOptions.
 
-#### [Migrate Member properties to columns on the Member table](https://github.com/umbraco/Umbraco-CMS/pull/12205)
+[**Migrate Member properties to columns on the Member table**](https://github.com/umbraco/Umbraco-CMS/pull/12205)
 
 This is breaking because it is no longer possible to access the properties listed below through the _IMember.Properties_ collection. You must now access them through their specific properties that is _IMember.IsLockedOut_.
 
@@ -91,14 +91,14 @@ Additionally, when previously you resolved a Member as published content, all th
 
 Lastly the nullable dates on a user, i.e. `LastLoginLate` will now be null instead of `DateTime.MinValue` when getting a user with the UserService.
 
-#### [Update examine to version 3](https://github.com/umbraco/Umbraco-CMS/pull/12307)
+[**Update examine to version 3**](https://github.com/umbraco/Umbraco-CMS/pull/12307)
 
 **Examine 3 breaking changes:**
 
 * `ValueSet` immutable.
 * `ValueSetValidationResult` is renamed to `ValueSetValidationStatus` and `ValueSetValidationResult` is now a type.
 
-#### [Async support for content finders](https://github.com/umbraco/Umbraco-CMS/pull/12340)
+[**Async support for content finders**](https://github.com/umbraco/Umbraco-CMS/pull/12340)
 
 ```CSharp
 bool TryFindContent(IPublishedRequestBuilder request);
@@ -110,16 +110,16 @@ Has changed to:
 Task<bool> TryFindContent(IPublishedRequestBuilder request);
 ```
 
-#### [Improve redirect Content finder scalability](https://github.com/umbraco/Umbraco-CMS/pull/12341)
+[**Improve redirect Content finder scalability**](https://github.com/umbraco/Umbraco-CMS/pull/12341)
 
 * Added more methods to `IRedirectUrlRepository` and `IRedirectUrlService.cs`.
 
-#### [Fix Block List settings exception and optimize PVCs](https://github.com/umbraco/Umbraco-CMS/pull/12342)
+[**Fix Block List settings exception and optimize PVCs**](https://github.com/umbraco/Umbraco-CMS/pull/12342)
 
 * Added a new method on `IPublishedModelFactory`: Type `GetModelType(string? alias)`;
 * The generic types of a `BlockListItem<TContent`, TSettings>`instance in the`BlockListModel`returned by`BlockListPropertyValueConverter`is now determined by calling this new method, which can be different and cause a`ModelBindingException\` in your views.
 
-#### [Async tree search](https://github.com/umbraco/Umbraco-CMS/pull/12344)
+[**Async tree search**](https://github.com/umbraco/Umbraco-CMS/pull/12344)
 
 ```CSharp
 IEnumerable<SearchResultEntity?> Search(string query, int pageSize, long pageIndex, out long totalFound, string? searchFrom 
@@ -132,11 +132,11 @@ Has changed to:
 Task<EntitySearchResults> SearchAsync(string query, int pageSize, long pageIndex, string? searchFrom = null);
 ```
 
-#### [Moved StackQueue to correct namespace](https://github.com/umbraco/Umbraco-CMS/pull/12347)
+[**Moved StackQueue to correct namespace**](https://github.com/umbraco/Umbraco-CMS/pull/12347)
 
 StackQueue has been moved from `Umbraco.Core.Collections` to the `Umbraco.Cms.Core.Collections` namespace.
 
-#### Globalsetting SqlWriteLockTimeOut has been removed
+**Globalsetting SqlWriteLockTimeOut has been removed**
 
 This setting has been superseded by `DistributedLockingWriteLockDefaultTimeout`.
 
@@ -164,7 +164,7 @@ Watch the ['Upgrading from Umbraco 9 to Umbraco 10 video tutorial'](https://www.
 
 The upgrade path between Umbraco 9 and Umbraco 10 can be done directly by upgrading your project using NuGet. You will need to ensure the packages you are using are available in Umbraco 10.
 
-#### SQL CE is no longer a supported database engine
+**SQL CE is no longer a supported database engine**
 
 There is no official migration path from SQL CE to another database engine.
 
@@ -175,7 +175,7 @@ The following options may suit your needs:
 * Setup a new database for v10 and use a premium tool such as [redgate SQL Data Compare](https://www.red-gate.com/products/sql-development/sql-data-compare/) to copy database contents across.
 * Setup a new database for v10 and use a premium tool such as [Umbraco Deploy](https://umbraco.com/products/umbraco-deploy) to transfer document types and content across.
 
-#### Steps to upgrade using Visual Studio
+**Steps to upgrade using Visual Studio**
 
 It's recommended that you upgrade the site offline, and test the upgrade fully before deploying it to the production environment.
 
@@ -234,7 +234,7 @@ To:
 
 To upgrade to Umbraco 10, your database needs to be at least on Umbraco 8.18.
 
-#### Upgrade of any publicly hosted environment
+**Upgrade of any publicly hosted environment**
 
 When the upgrade is completed and tested, and prior to deploying to any publicly accessible environment, you should consider the following:
 
@@ -277,7 +277,7 @@ It is not possible to take this step while maintaining full compatibility with U
 
 There are a few breaking changes from 8.0.x to 8.1.0. Make sure to check the [full list](https://github.com/umbraco/Umbraco-CMS/issues?q=is%3Aissue+label%3Arelease%2F8.1.0+is%3Aclosed+label%3Acategory%2Fbreaking).
 
-#### IPublishedContent breaking changes in 8.1.0
+**IPublishedContent breaking changes in 8.1.0**
 
 Due to the [changes in `IPublishedContent`](https://github.com/umbraco/Umbraco-CMS/issues/5170) there are a few steps you will need to take, to make sure that your site works.
 
@@ -300,7 +300,7 @@ The general idea underlying these changes is that:
 
 The rest of this document presents each change in details.
 
-#### More interfaces
+**More interfaces**
 
 It was possible to mock and test the `IPublishedContent` interface in version 7. It has been improved in version 8, but it still relies on concrete `PublishedContentType` and `PublishedPropertyType` classes to represent the content types, which complicates things.
 
@@ -310,25 +310,25 @@ In version 8.1, these two classes are abstracted as `IPublishedContentType` and 
 
 The following `IPublishedContent` members change:
 
-#### Name
+**Name**
 
 The `document.Name` property is complemented by the `document.Name(string culture = null)` extension method. The property returns the name for the current culture. The `document.GetCulture(...).Name` syntax is removed.
 
 **CHANGE**: Calls to `document.GetCulture(culture).Name` must be replaced with `document.Name(culture)`.
 
-#### UrlSegment
+**UrlSegment**
 
 The `document.UrlSegment` property is complemented by the `document.UrlSegment(string culture = null)` extension method. The property returns the Url segment for the current culture. The `document.GetCulture(...).UrlSegment` syntax is removed.
 
 **CHANGE**: Calls to `document.GetCulture(culture).UrlSegment` must be replaced with `document.UrlSegment(culture)`.
 
-#### Culture
+**Culture**
 
 The `document.GetCulture()` method is removed. The proper way to get a culture date is `document.CultureDate(string culture = null)`. The `document.Cultures` property now returns the invariant culture, for invariant documents.
 
 **CHANGE**: Calls to `document.GetCulture(culture).Date` must be replaced with `document.CultureDate(culture)`. Calls to `document.Cultures` must take into account the invariant culture.
 
-#### Children
+**Children**
 
 The `document.Children` property is complemented by the `document.Children(string culture = null)` extension method which, when a culture is specified always return children available for the specified culture. The property returns the children available for the current culture.
 
@@ -336,13 +336,13 @@ A new `document.ChildrenForAllCultures` property is introduced, which returns _a
 
 **CHANGE**: Calls to `document.Children` may have to be replaced by `document.ChildrenForAllCultures` depending on if the 8.0.x usage of this was relying on it returning unfiltered/all children regardless of the current routed culture.
 
-#### Url
+**Url**
 
 The `document.Url` property is complemented by the `document.Url(string culture = null, UrlMode mode = UrlMode.Auto)` extension method. The `document.GetUrl(...)` and `document.UrlAbsolute()` methods are removed. The `UrlProviderMode` enumeration is renamed `UrlMode`.
 
 **CHANGE**: Calls to `document.GetUrl(...)` must be replaced with `document.Url(...)`. Calls to `document.UrlAbsolute()` must be replaced with `document.Url(mode: UrlMode.Absolute)`.
 
-#### UmbracoContext
+**UmbracoContext**
 
 Due to the `UrlProviderMode` enumeration being renamed `UrlMode`, the signature of some overloads of the `Url(...)` method has changed. Methods that do not have a mode parameter remain unchanged.
 
@@ -352,7 +352,7 @@ The `UmbracoContext` class gives access to the rendering layer, which is more th
 
 **CHANGE**: None required in 8.1, but code such as `context.ContentCache.GetById(1234)` should eventually be converted to `context.Content.GetById(1234)` as the obsolete properties may be removed in a further release.
 
-#### GetCulture
+**GetCulture**
 
 Version 7 had a `document.GetCulture()` method that was deriving a culture from domains configured in the tree. Somehow, that method was lost during version 8 development (issue [#5269](https://github.com/umbraco/Umbraco-CMS/issues/5269)).
 
@@ -360,23 +360,23 @@ Because that method is useful, especially when building traditional, non-multili
 
 **CHANGE**: None.
 
-#### DomainHelper
+**DomainHelper**
 
 `DomainHelper` has been replaced with a static `DomainUtilities` class.
 
 **CHANGE**: It is rare that `DomainHelper` is used in code since it only contains one public method but if developers are using this, it can no longer be injected since it's now a static class called `DomainUtilities`.
 
-#### Models Builder
+**Models Builder**
 
 If you're using ModelsBuilder in `dll` mode you need to delete the dlls before upgrading. Otherwise, they're going to be wrong and cause your whole site to throw errors.
 
 If you're using ModelsBuilder in `AppData` mode and you have your generated models in your solution you need to update them after upgrading. `PublishedContentType` will need to be replaced with `IPublishedContentType`. If you have an implementation of the `PropertyValueConverter` class, you need to replace all references to `PublishedPropertyType` with `IPublishedPropertyType` within that class. Only after you do that will your solution build again.
 
-#### AutoMapper
+**AutoMapper**
 
 Umbraco 8.1 replaces AutoMapper with [UmbracoMapper](../../../../reference/mapping.md). This in itself will not break anything on your site. If you have used AutoMapper in your own code you will have to either include the package yourself or switch your implementation to use UmbracoMapper.
 
-### Follow the [**upgrade guide for Umbraco 8**](minor-upgrades-for-umbraco-8.md) to complete the upgrade
+#### Follow the [**upgrade guide for Umbraco 8**](minor-upgrades-for-umbraco-8.md) to complete the upgrade
 
 </details>
 
@@ -390,7 +390,7 @@ It is not possible to upgrade an Umbraco 7 site to Umbraco 8 because the codebas
 
 In Umbraco 8 we have added improvements and updated dependencies. We have also done a thorough clean-up to make it simpler for you to work with and extend your Umbraco project.
 
-### [Migrate your content to Umbraco 8](migrate-content-to-umbraco-8.md)
+#### [Migrate your content to Umbraco 8](migrate-content-to-umbraco-8.md)
 
 </details>
 
@@ -426,7 +426,7 @@ In Umbraco version 7.6.2 we made a mistake in the Property Value Converts (PVCs)
 
 Depending on whether you tried to fix the problem with those, you will need to fix them after you upgrade to 7.6.3.
 
-#### Property Value Converters (PVC)
+**Property Value Converters (PVC)**
 
 Umbraco stores data for Data Types in different ways. For a lot of pickers it will store `1072` or `1083,1283`. These numbers refer to the identifier of the item in Umbraco. In the past, when building your templates, you would manually have to take that value and find the content item it belongs to. Then you would be able to get the data you wanted from there. An example of that is shown below:
 
@@ -489,39 +489,39 @@ The three most important things to note are:
 2. In umbracoSettings.config leave `EnablePropertyValueConverters` set to `false` - this will help your existing content queries to still work.
 3. In tinyMceConfig.config make sure to remove `<plugin loadOnFrontend="true">umbracolink</plugin>` so that the rich text editor works as it should.
 
-#### Breaking Changes
+**Breaking Changes**
 
-#### Dependencies
+**Dependencies**
 
-#### UrlRewriting.Net ([U4-9004](https://issues.umbraco.org/issue/U4-9004))
+**UrlRewriting.Net (**[**U4-9004**](https://issues.umbraco.org/issue/U4-9004)**)**
 
 `UrlRewriting` was old, leaking memory, and slowing down website startup when dealing with more than a few rules. It's entirely replaced by the [IIS Url Rewrite](https://www.iis.net/downloads/microsoft/url-rewrite) extension.
 
-#### Json.Net ([U4-9499](https://issues.umbraco.org/issue/U4-9499))
+**Json.Net (**[**U4-9499**](https://issues.umbraco.org/issue/U4-9499)**)**
 
 Json.Net has been updated to version 10.0.0 to benefit from improvements in features, fixes, and performances (see [release notes](https://github.com/JamesNK/Newtonsoft.Json/releases)). This might be a breaking change for people relying on one of the changed functionality.
 
-#### Log4net ([U4-1324](https://issues.umbraco.org/issue/U4-1324))
+**Log4net (**[**U4-1324**](https://issues.umbraco.org/issue/U4-1324)**)**
 
 Umbraco has used a custom build of an old (1.2.11) version of log4net that supported Medium Trust. However, Umbraco itself does not support Medium Trust anymore, and therefore log4net has been upgraded to the standard, latest build of log4net 2.0.8.
 
-#### ImageProcessor ([U4-8963](https://issues.umbraco.org/issue/U4-8963))
+**ImageProcessor (**[**U4-8963**](https://issues.umbraco.org/issue/U4-8963)**)**
 
 An optional parameter has been added to the `GetCropUrl` method in order to support the background color parameter. This breaks the method signature and therefore might require a recompile of user's code.
 
-#### HtmlAgilityPack ([U4-9655](https://issues.umbraco.org/issue/U4-9655))
+**HtmlAgilityPack (**[**U4-9655**](https://issues.umbraco.org/issue/U4-9655)**)**
 
 The HtmlAgilityPack has been upgraded to version 1.4.9.5. The Umbraco upgrade process should take care of setting up the binding redirects appropriately.
 
-#### Core
+**Core**
 
-#### Membership Provider Encoding ([U4-6566](https://issues.umbraco.org/issue/U4-6566))
+**Membership Provider Encoding (**[**U4-6566**](https://issues.umbraco.org/issue/U4-6566)**)**
 
 The Membership Provider `useLegacyEncoding` setting is now `false` by default, as the legacy password encoding has weaknesses.
 
 This change only impacts new installs (no change for upgrades).
 
-#### Property Value Converters ([U4-7318](https://issues.umbraco.org/issue/U4-7318))
+**Property Value Converters (**[**U4-7318**](https://issues.umbraco.org/issue/U4-7318)**)**
 
 A large amount of property value converters contributed by the community have been merged in and are now the default value converters. These converters change the object types returned by `GetPropertyValue` for more convenient types.
 
@@ -531,7 +531,7 @@ This change only impacts new installs (no change for upgrades).
 
 The new property value converters are controlled by an `umbracoSettings.config` setting. In the section `settings/content`, setting `EnablePropertyValueConverters` needs to be present and `true` to activate them.
 
-#### Database ([U4-9201](https://issues.umbraco.org/issue/U4-9201))
+**Database (**[**U4-9201**](https://issues.umbraco.org/issue/U4-9201)**)**
 
 Umbraco has been using a PetaPoco-managed `UmbracoDatabase` instance since version 7 came out. We realized that some of our legacy code still bypassed that mechanism and used parallel, out-of-band database connections, causing issues with transactions.
 
@@ -539,7 +539,7 @@ The legacy code has been refactored to rely on the `UmbracoDatabase` instance. H
 
 More details are available on [issue 146](https://github.com/kipusoep/UrlTracker/issues/146) on the 301 Redirect Tracker GitHub issue tracker.
 
-#### Scopes ([U4-9406](https://issues.umbraco.org/issue/U4-9406))
+**Scopes (**[**U4-9406**](https://issues.umbraco.org/issue/U4-9406)**)**
 
 Version 7.6 introduces the notion of _scopes_, which allow for wrapping multiple service-level operations in one single transaction. The scopes API is partially public. Scopes are not meant for public use at this stage and we need a few more releases to ensure that the APIs are stable.
 
@@ -547,23 +547,23 @@ Scopes _should not_ change how Umbraco functions.
 
 Introducing scopes means that some public APIs signatures are changing. Most of these changes target internal and/or non-breaking APIs (as per our [guidelines](https://our.umbraco.com/Documentation/Development-Guidelines/breaking-changes)). This should therefore have no impact on sites but may break unit tests.
 
-#### Property Editors storing UDI instead of ID ([U4-9310](https://issues.umbraco.org/issue/U4-9310))
+**Property Editors storing UDI instead of ID (**[**U4-9310**](https://issues.umbraco.org/issue/U4-9310)**)**
 
 The property editors for pickers for content, media, members, and related links have been updated to store UDI instead of the node ID. Pickers in sites being upgraded have been marked as obsolete but will continue to work as they always did.
 
 New sites will have the obsolete pickers filtered out from the list of available property editors, but they can be enabled by a configuration flag.
 
-#### Rich Text Editor (RTE) Images attributes ([U4-6228](https://issues.umbraco.org/issue/U4-6228), [U4-6595](http://issues.umbraco.org/issue/U4-6595))
+**Rich Text Editor (RTE) Images attributes (**[**U4-6228**](https://issues.umbraco.org/issue/U4-6228)**,** [**U4-6595**](http://issues.umbraco.org/issue/U4-6595)**)**
 
 For a long time, we had a `rel` attribute on an `<img>` tag when inserted into the RTE. This is invalid HTML markup. We worked around this by stripping this attribute using a Property Editor Value converter. Some developers relied on this attribute so we didn't change it to a "data-id" attribute which would have been valid. In 7.6 we are not storing integer IDs in these attributes. Instead of storing UDI values so with this change we no longer use `rel` or `data-id` and instead there will be a "data-udi" attribute. This change should affect only a small amount of people that were previously relying on the values from the "rel" attribute.
 
-#### Others
+**Others**
 
 We are shipping with SignalR in the core at version 2.2.1. If you already have SignalR installed into your app and are using an older version there may be conflicts.
 
 The creation and editing of WebForms templates will no longer be supported as for version 7.6.0.
 
-#### Upgrading via NuGet
+**Upgrading via NuGet**
 
 This is an important one and there was no perfect solution to this. We have removed the UrlRewriting dependency and no longer ship with it. However, if you are using it we didn't want to have NuGet delete all of your rewrites. The good news is that if you are using it, the NuGet upgrade will not delete your rewrite file and everything should continue to work.
 
@@ -604,17 +604,17 @@ and
 </system.webServer>
 ```
 
-#### Forms
+**Forms**
 
 Umbraco Forms 6.0.0 has been released to be compatible with Umbraco 7.6. It is a new major version release of Forms primarily due to the strict dependency on 7.6+. If you are using Forms, you will need to update it to version 6.0.0
 
 There are [**important Forms upgrade documentation that you will need to read.**](https://docs.umbraco.com/umbraco-forms/installation/version-specific.md#version-4-to-version-6).
 
-#### Courier
+**Courier**
 
 Umbraco Courier 3.1.0 has been released to be compatible with Umbraco 7.6. If you are using Courier, you will need to update it to version 3.1.0.
 
-### Follow the [upgrade guide for Umbraco 7](minor-upgrades-for-umbraco-7.md) to complete the upgrade
+#### Follow the [upgrade guide for Umbraco 7](minor-upgrades-for-umbraco-7.md) to complete the upgrade
 
 </details>
 
@@ -746,11 +746,11 @@ Read and follow [the full v7 upgrade guide](upgrade-to-v7.md)
 
 <summary>Version 4</summary>
 
-#### Version 4.10.x to 4.11.x
+**Version 4.10.x to 4.11.x**
 
 * If your site was ever a version between 4.10.0 and 4.11.4 install the [fixup package](https://our.umbraco.com/projects/developer-tools/path-fixup) and run it after the upgrade process is finished.
 
-#### Version 4.8.0 to 4.10.0
+**Version 4.8.0 to 4.10.0**
 
 * Delete the `bin/umbraco.linq.core.dll` file
 * Copy the new files and folders from the zip file into your site's folder
@@ -759,18 +759,18 @@ Read and follow [the full v7 upgrade guide](upgrade-to-v7.md)
   * `Global.asax`
 * Remove the `Config/formHandlers.config` file
 
-#### Version 4.7.2 to 4.8.0
+**Version 4.7.2 to 4.8.0**
 
 * Delete the `bin/App_Browsers.dll` file
 * Delete the `bin/App_global.asax.dll` file
 * Delete the `bin/Fizzler.Systems.HtmlAgilityPack.dll` file
 * For people using uComponents 3.1.2 or below, 4.8.0 breaks support for it. Either upgrade to a newer version beforehand or follow the workaround [posted here](https://our.umbraco.com/projects/backoffice-extensions/ucomponents/questionssuggestions/33021-Upgrading-to-Umbraco-48-breaks-support-for-uComponents)
 
-#### Version 4.7.1.1 to 4.7.2
+**Version 4.7.1.1 to 4.7.2**
 
 * Delete the `bin/umbraco.MacroEngines.Legacy.dll` file
 
-#### Version 4.6.1 to 4.7.1.1
+**Version 4.6.1 to 4.7.1.1**
 
 * Delete `bin/Iron*.dll` (all dll files starting with "Iron")
 * Delete `bin/RazorEngine*.dll` (all dll files starting with "RazorEngine")

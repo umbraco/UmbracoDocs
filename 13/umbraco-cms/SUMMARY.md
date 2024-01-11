@@ -2,6 +2,7 @@
 
 * [Umbraco CMS Documentation](README.md)
 * [Legacy Documentation](legacy-documentation/README.md)
+  * [Umbraco 11 Documentation](https://github.com/umbraco/UmbracoDocs/tree/umbraco-eol-versions)
   * [Umbraco 8 Documentation](https://our.umbraco.com/documentation/)
   * [Umbraco 7 Documentation](https://our.umbraco.com/documentation/)
 * [Contribute](https://docs.umbraco.com/welcome/contribute/)
@@ -89,7 +90,6 @@
         * [Rich Text Editor Configuration](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration.md)
         * [Rich Text Editor Styles](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-styles.md)
         * [Blocks in Rich Text Editor](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-blocks.md)
-
   * [Login](fundamentals/backoffice/login.md)
   * [Content Templates](fundamentals/backoffice/content-templates.md)
   * [Infinite Editing](fundamentals/backoffice/infinite-editing.md)
@@ -482,4 +482,3 @@
 * [Creating an XML Sitemap](tutorials/creating-an-xml-site-map.md)
 * [Creating And Distributing A Package](tutorials/creating-and-distributing-a-package.md)
 * [Implementing Custom Error Pages](tutorials/custom-error-page.md)
-

@@ -1,14 +1,18 @@
 # Table of contents
 
 * [Umbraco Forms Documentation](README.md)
+* [Legacy Documentation](legacy-documentation.md)
 * [Release Notes](release-notes.md)
 
 ## Installation
 
 * [Installing Umbraco Forms](installation/install.md)
-* [Manually Upgrading Umbraco Forms](installation/manualupgrade.md)
-* [Version Specific Upgrade Notes](installation/version-specific.md)
-* [Licensing](the-licensing-model.md)
+* [Licensing](installation/the-licensing-model.md)
+
+## Upgrading
+
+* [Upgrading Umbraco Forms](upgrading/manualupgrade.md)
+* [Version Specific Upgrade Notes](upgrading/version-specific.md)
 
 ## Editor
 

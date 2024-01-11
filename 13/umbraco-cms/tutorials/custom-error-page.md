@@ -20,11 +20,11 @@ One way is to watch for error events and serve corresponding pages via C# code.
 
 In this method, we will use a 404 page created via the backoffice.
 
-### Create a 404 page in the backoffice
+#### Create a 404 page in the backoffice
 
 First, create a new Document Type (though you could also use a more generic Document Type if you already have one) called Page404. Make sure the permissions are set to create it under Content. Properties on this Document Type are optional - in most cases, the 404 not found page would be static. Make sure to assign (and fill out) the template for your error page, and then create it in Content.
 
-### Set a custom 404 page in appsettings.json
+#### Set a custom 404 page in appsettings.json
 
 Once all of that is done, grab your published error page's ID, GUID or path and head on over to the `appsettings.json`.
 
@@ -35,9 +35,7 @@ The value for error pages can be:
 * A content item's integer ID (example: 1234)
 
 {% hint style="warning" %}
-
 The current implementation of XPath is suboptimal and will be removed entirely in a future version. It is currently obsolete and scheduled for removal in v14.
-
 {% endhint %}
 
 That is where the value you grabbed earlier comes in. Fill it out like so:
@@ -149,9 +147,9 @@ The following steps guides you through setting up a page for internal server err
 
     ```csharp
     using Microsoft.AspNetCore.Mvc;
-    
+
     namespace [YOUR_PROJECT_NAME].Controllers;
-    
+
     public class ErrorController : Controller
     {
         [Route("Error")]
@@ -184,7 +182,7 @@ The following steps guides you through setting up a page for internal server err
         ...
     ```
 * Create the redirect pages from 1. step as regular content nodes in the backoffice. They should neither appear in navigation menus or sitemaps. In this example you would create under root node `Statuscodes` with a subnode `500`.
-*   Update `Program.cs`
+* Update `Program.cs`
 
 ```csharp
 ...
@@ -198,9 +196,15 @@ else
 {
     app.UseExceptionHandler("/error");
 }
- ```
+```
 
-For local testing in Visual Studio replace `app.UseDeveloperExceptionPage();` by `app.UseExceptionHandler("/error");`. Otherwise you will get the default error page with stack trace etc.
+{% hint style="info" %}
+To **test this locally**, in Visual Studio replace `app.UseDeveloperExceptionPage();` by `app.UseExceptionHandler("/error");`. Otherwise you will get the default error page with stack trace etc.&#x20;
+{% endhint %}
+
+#### Trigger a 500 error
+
+You can trigger a simple 500 error on your frontend by changing a Model.Value property in your template. For example, on a document type with a property called `test`. The way to render it in the frontend would be `Model.Value("test");` To trigger a 500 error page you can add anything after Value such as `Model.ValueTest("test");`
 
 ## Maintenance Page
 
