@@ -36,8 +36,7 @@ For illustration purposes, the following structure represents the full set of op
         "Settings": {
             "ApiKey": "<your API key here>",
             "ApiSecret": "<your API secret here>",
-            "Edition": "Default",
-            "DefaultTimeoutSeconds": 60,
+            "Edition": "Default",            
             "ExcludedEntityTypes": [],
             "RelationTypes" : [],
             "ValueConnectors": [],
@@ -101,7 +100,7 @@ However, we are aware that some customers prefer the option to use the backoffic
 This setting allows you to exclude a certain type of entity from being deployed. This is **not** recommended to set, but sometimes there may be issues with the way a custom media fileprovider works with your site and you will need to set it for media files. Here is an example:
 
 ```json
-"ExcludedEntityTypes": ['media-file'],
+"ExcludedEntityTypes": ["media-file"],
 ```
 
 ### RelationTypes
@@ -113,26 +112,13 @@ This setting allows you to manage how relations are deployed between environment
 * `Strong` - This requires the content item that is related is set as a dependency, so if anything is added as a relation it would also add it as a dependency.
 
 ```json
-"RelationTypes": [
-    {
-        "Alias": "relateParentDocumentOnDelete",
-        "Mode": "Weak",
-    },
-    {
-        "Alias": "relateShopItemOnCreate",
-        "Mode": "Exclude",
-    }
-],
-```
-
-As of Deploy 10.1.2 and 11.0.1, if this setting is left blank, the two relation types used for usage tracking are omitted. These are rebuilt by the CMS following a save of an item in the target environment and so don't need to be transferred. Unless you have specified otherwise, the effective default configuration is:
-
-```json
 "RelationTypes": {
   "relateParentDocumentOnDelete": "Weak",
   "relateShopItemOnCreate": "Exclude"
 },
 ```
+
+As of Deploy 10.1.2, 11.0.1 and higher, if this setting is left blank, the relation types used for usage tracking are omitted. These relations are rebuilt by the CMS following a save of an item in the target environment and so don't need to be transferred.
 
 If a particular relation type is not listed, it's considered as a "weak" relation.
 
@@ -181,8 +167,8 @@ An error message of "The remote API has returned a response indicating a platfor
 
 If encountering this issue, there are two batch settings that can be applied with integer values (for example 500). This will cause Deploy to transfer items in batches, up to a maximum size. This will allow each individual batch to complete within the time available. The higher the value, the bigger the batches.
 
-- `SourceDeployBatchSize` - applies a batch setting for the transfer of multiple selected items to an upstream environment (such as a media folder with many images).
-- `PackageBatchSize` - applies a batch setting to the processing of a Deploy "package", which contains all the items selected for a Deploy operation, plus all the determined dependencies and relations.
+* `SourceDeployBatchSize` - applies a batch setting for the transfer of multiple selected items to an upstream environment (such as a media folder with many images).
+* `PackageBatchSize` - applies a batch setting to the processing of a Deploy "package", which contains all the items selected for a Deploy operation, plus all the determined dependencies and relations.
 
 ### UseDatabaseBackedTransferQueue
 
@@ -306,10 +292,10 @@ When deploying content items, public access rules based on member groups are tra
     "AllowPublicAccessDeploymentOperations": "None|AddOrUpdate|Remove|All",
 ```
 
-* `None` - no public access rules will be transferred</li>
-* `AddOrUpdate` - public access rules added or updated in a source environment will be transferred to the destination</li>
-* `Remove` - public access rules removed a source environment will be removed in the destination</li>
-* `All` - all public access information will be transferred</li>
+* `None` - no public access rules will be transferred
+* `AddOrUpdate` - public access rules added or updated in a source environment will be transferred to the destination
+* `Remove` - public access rules removed a source environment will be removed in the destination
+* `All` - all public access information will be transferred
 
 `AddOrUpdate` is the default setting used if no value is configured.
 
@@ -350,13 +336,7 @@ For Umbraco 10, by default, a SQLite database is created.
 If you would prefer to use SQL Server LocalDb when it's available on your local machine, set this value to `true`. If LocalDB isn't reported as being available by Umbraco, it will fallback to using a SQLite database instead.
 
 ```json
-    "Umbraco": {
-        "Deploy": {
-            "Settings": {
-                "PreferLocalDbConnectionString": true
-            }
-        }
-    }
+"PreferLocalDbConnectionString": true
 ```
 
 ### MediaFileChecksumCalculationMethod
@@ -399,7 +379,7 @@ If set to `true` the configuration details shown on the setting's dashboard will
 
 ### Webhook Events
 
-Umbraco Deploy can optionally register events that you can use with Umbraco webhooks.  You can add them via code, for which we provide an extension method. The following example shows how you can use this within a composer.
+Umbraco Deploy can optionally register events that you can use with Umbraco webhooks. You can add them via code, for which we provide an extension method. The following example shows how you can use this within a composer.
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -407,14 +387,15 @@ using Umbraco.Deploy.Infrastructure.Extensions;
 
 public class RegisterDeployWebhooksComposer : IComposer
 {
-    public void Compose(IUmbracoBuilder builder) => builder.WebhookEvents().AddDeploy(deployBuilder => deployBuilder.AddTask());
+    public void Compose(IUmbracoBuilder builder) 
+        => builder.WebhookEvents().AddDeploy(deployBuilder => deployBuilder.AddTask());
 }
 ```
 
 With that in place you should see two new events available that you can use in creating your webhooks.
 
-- Deploy operation was completed
-- Deploy operation failed
+* Deploy operation was completed
+* Deploy operation failed
 
 An example of the payload sent is shown below:
 
