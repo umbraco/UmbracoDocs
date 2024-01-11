@@ -38,7 +38,7 @@ A full configuration with all default values can be seen here:
       },
       "UserDefaultLockoutTimeInMinutes": 43200,
       "MemberDefaultLockoutTimeInMinutes": 43200,
-      "AllowConcurrentLogins": true
+      "AllowConcurrentLogins": false
     }
   }
 }
