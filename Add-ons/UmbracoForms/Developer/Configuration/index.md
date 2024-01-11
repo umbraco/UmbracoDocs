@@ -75,6 +75,14 @@ You can obtain both of these values after signing up to create a ReCaptcha key h
 ### DatePickerYearRange
 This setting is used to configure the Date Picker form field range of years that is available in the date picker. By default this is a small range of 10 years.
 
+### TitleAndDescriptionAllowUnsafeHtmlRendering
+
+When using the "title and description" field type, editors can provide HTML in the "description" field and have that rendered on the website.
+
+As a tightened security measure, you can set this value to `false`` which will ensure HTML is no longer rendered.
+
+As some installations may be relying on HTML rendering, to preserve backward compatible behavior the default value of this setting is `true`.
+
 ### EnableAntiForgeryToken
 This setting needs to be a `True` or `False` value and will enable the ASP.NET Anti Forgery Token and we recommend that you enable this and set this to `True`.
 
