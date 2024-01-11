@@ -17,11 +17,17 @@ If you are upgrading to a new major version you can find the details about the b
 
 This section contains the release notes for Umbraco Deploy 12 including all changes for this version.
 
-#### [**12.2.2**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.2) **(January 9th 2023)**
+#### [**12.1.3**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.3) **(January 16th 2024)**
+
+* Added configurable option to avoid overwriting of dictionary items with empty values [#191](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/191)
+    * For more details see the page on [Deploy's settings](./getting-started/deploy-settings.md).
+* Fixed regression issue with transfer of date values.
+
+#### [**12.1.2**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.2) **(January 9th 2024)**
 
 * Fixed issue with transfer of content using language variants [#193](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/193)
 
-#### [**12.2.1**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.1) **(December 21th 2023)**
+#### [**12.1.1**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.1) **(December 21th 2023)**
 
 * Fixes the display of the selected schedule date on queue for transfer.
 * Fixes parsing property values within Nested Content and Block List that were previously saved by the Contrib value connectors.

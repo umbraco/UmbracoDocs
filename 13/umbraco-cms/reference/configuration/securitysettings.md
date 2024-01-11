@@ -1,5 +1,5 @@
 ---
-description: "Information on the security settings section"
+description: Information on the security settings section
 ---
 
 # Security Settings
@@ -38,7 +38,7 @@ A full configuration with all default values can be seen here:
       },
       "UserDefaultLockoutTimeInMinutes": 43200,
       "MemberDefaultLockoutTimeInMinutes": 43200,
-      "AllowConcurrentLogins": true
+      "AllowConcurrentLogins": false
     }
   }
 }
@@ -124,9 +124,5 @@ Use this setting to configure how long time a Member is locked out of the Umbrac
 The default lockout time for users is 30 days (43200 minutes).
 
 ## Allow concurrent logins
-
-{% hint style="info" %}
-This setting was introduced in version 12.3.
-{% endhint %}
 
 When set to `false`, any user account is prevented from having multiple simultaneous sessions. In this mode, only one session per user can be active at any given time. This enhances security and prevents concurrent logins with the same user credentials.

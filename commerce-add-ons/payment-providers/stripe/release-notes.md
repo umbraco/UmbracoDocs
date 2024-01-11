@@ -16,6 +16,9 @@ In this section, you can find the release notes for each version of Stripe Payme
 
 <summary>Version 13</summary>
 
+#### [13.1.0 (December 28th 2023)](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Stripe/issues?q=label%3Arelease%2F13.1.0+)
+* Migrate from Newtonsoft.Json to System.Text.Json.
+
 #### 13.0.0 (December 13th 2023)
 
 * Upgraded Umbraco & Umbraco Commerce dependencey to v13

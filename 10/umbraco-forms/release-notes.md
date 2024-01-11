@@ -21,6 +21,20 @@ This section contains the release notes for Umbraco Forms 8 and 10 including all
 
 <summary>Version 10</summary>
 
+[**10.5.3**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.5.3) **(January 16th 2024)**
+
+* Added configuration value `TitleAndDescription:AllowUnsafeHtmlRendering` to allow tighter security for HTML rendering of text entered in the "Title and description" field type.
+    * See further details on the [configuration page](./developer/configuration/README.md#AllowUnsafeHtmlRendering).
+* Added forms dashboard translation for support of custom dashboards [#1125](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1125).
+* Resolved an issue where a workflow wasn't executed when conditionally based on a checkbox value [#1124](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1124).
+* Added details of the current record (form entry) to the workflow notification [#1042](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1042).
+* Fixed issue with styling of hidden fields in the "bootstrap" theme [#1120](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1120).
+* Rendered dictionary translations of field captions in backoffice entries view [#1131](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1131).
+* Ensured valid format string before rendering validation methods with placeholders [#1132](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1132).
+* Ensured Examine re-index user interface completes when no records are available for indexing [#1137](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1137).
+* Fixed issue where use of a custom field HTML ID attribute prefix breaks conditional logic in multi-page forms [#1138](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1138).
+* Resolved an out of range exception when a condition hides all fields on the final page of a multi-page form.
+
 [**10.5.2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.5.2) **(November 14th 2023)**
 
 * Ensured validation pattern's saved for a field are cleared when changing the field type [#1083](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1083).
@@ -304,6 +318,15 @@ This section contains the release notes for Umbraco Forms 8 and 10 including all
 <details>
 
 <summary>Version 8</summary>
+
+[**8.13.13**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.13.13) **(January 16th 2024)**
+
+* Back-ported backoffice performance improvements introduced in later versions [#1119](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1119).
+* Fixed permissions issue with use of start folder and group permissions [#1118](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1118)
+* Added configuration value `TitleAndDescriptionAllowUnsafeHtmlRendering` to allow tighter security for HTML rendering of text entered in the "Title and description" field type.
+    * See further details on the [configuration page](./developer/configuration/README.md#AllowUnsafeHtmlRendering).
+* Added forms dashboard translation for support of custom dashboards [#1125](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1125).
+* Resolved an issue where a workflow wasn't executed when conditionally based on a checkbox value [#1124](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1124).
 
 [**8.13.12**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.13.12) **(November 14th 2023)**
 

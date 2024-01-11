@@ -1,6 +1,8 @@
 ---
 meta.Title: Umbraco Deploy settings
-description: "Learn about the different settings and configurations available in Umbraco Deploy."
+description: >-
+  Learn about the different settings and configurations available in Umbraco
+  Deploy.
 ---
 
 # Configuration
@@ -34,8 +36,7 @@ For illustration purposes, the following structure represents the full set of op
     "Deploy": {
         "Settings": {
             "ApiKey": "<your API key here>",
-            "Edition": "Default",
-            "DefaultTimeoutSeconds": 60,
+            "Edition": "Default",            
             "ExcludedEntityTypes": [],
             "RelationTypes" : [],
             "ValueConnectors": [],
@@ -51,7 +52,8 @@ For illustration purposes, the following structure represents the full set of op
             "IgnoreBrokenDependenciesBehavior": "Restore",
             "AcceptInvalidCertificates": false,
             "TransferFormsAsContent": true,
-            "TransferDictionaryAsContent": false,
+            "TransferDictionaryAsContent": false,            
+            "SetEmptyDictionaryItemsOnTransfer": true,
             "IgnoreMissingLanguagesForDictionaryItems": false,
             "AllowMembersDeploymentOperations": "None",
             "TransferMemberGroupsAsContent": false,
@@ -92,7 +94,7 @@ However, we are aware that some customers prefer the option to use the backoffic
 This setting allows you to exclude a certain type of entity from being deployed. This is **not** recommended to set, but sometimes there may be issues with the way a custom media fileprovider works with your site and you will need to set it for media files. Here is an example:
 
 ```json
-"ExcludedEntityTypes": ['media-file'],
+"ExcludedEntityTypes": ["media-file"],
 ```
 
 ## RelationTypes
@@ -164,8 +166,8 @@ An error message of "The remote API has returned a response indicating a platfor
 
 If encountering this issue, there are two batch settings that can be applied with integer values (for example 500). This will cause Deploy to transfer items in batches, up to a maximum size. This will allow each individual batch to complete within the time available. The higher the value, the bigger the batches.
 
-- `SourceDeployBatchSize` - applies a batch setting for the transfer of multiple selected items to an upstream environment (such as a media folder with many images).
-- `PackageBatchSize` - applies a batch setting to the processing of a Deploy "package", which contains all the items selected for a Deploy operation, plus all the determined dependencies and relations.
+* `SourceDeployBatchSize` - applies a batch setting for the transfer of multiple selected items to an upstream environment (such as a media folder with many images).
+* `PackageBatchSize` - applies a batch setting to the processing of a Deploy "package", which contains all the items selected for a Deploy operation, plus all the determined dependencies and relations.
 
 ## UseDatabaseBackedTransferQueue
 
@@ -183,7 +185,6 @@ In order for Deploy to handle Forms data as content, you'll to ensure the `Trans
 On changing this value from `false` to `true`, make sure to remove any `.uda` files for Forms entities that have already been serialized to disk. These will no longer be updated. By deleting them you avoid any risk of them being processed in the future and inadvertently reverting a form to an earlier state.
 {% endhint %}
 
-
 ## TransferDictionaryAsContent
 
 In a similar way, Deploy can be configured to allow for backoffice transfers of dictionary items instead of using files serialized to disk, by setting `TransferDictionaryAsContent` as `true`.
@@ -199,6 +200,14 @@ Normally this is a useful fail-safe to ensure translations aren't lost in the tr
 If you have deleted languages that have already existing translations, you may want to temporarily remove this check. You can do that by setting this value to `true`.
 
 When this is in place a translation for a language that doesn't exist in the target environment will be ignored. A warning message will be output to the log.
+
+### SetEmptyDictionaryItemsOnTransfer
+
+When deploying dictionary items, Umbraco Deploy follows the approach used for all content, emptying values that are transferred and set.
+
+If you transfer a dictionary item with an empty translation to another environment that already contains a translation, it will be overwritten.
+
+Set this value to `false` to not overwrite already populated values with empty strings.
 
 ## AllowMembersDeploymentOperations and TransferMemberGroupsAsContent
 
@@ -282,10 +291,10 @@ When deploying content items, public access rules based on member groups are tra
     "AllowPublicAccessDeploymentOperations": "None|AddOrUpdate|Remove|All",
 ```
 
-* `None` - no public access rules will be transferred</li>
-* `AddOrUpdate` - public access rules added or updated in a source environment will be transferred to the destination</li>
-* `Remove` - public access rules removed a source environment will be removed in the destination</li>
-* `All` - all public access information will be transferred</li>
+* `None` - no public access rules will be transferred
+* `AddOrUpdate` - public access rules added or updated in a source environment will be transferred to the destination
+* `Remove` - public access rules removed a source environment will be removed in the destination
+* `All` - all public access information will be transferred
 
 `AddOrUpdate` is the default setting used if no value is configured.
 
@@ -313,13 +322,7 @@ For Umbraco 10, by default, a SQLite database is created.
 If you would prefer to use SQL Server LocalDb when it's available on your local machine, set this value to `true`. If LocalDB isn't reported as being available by Umbraco, it will fallback to using a SQLite database instead.
 
 ```json
-    "Umbraco": {
-        "Deploy": {
-            "Settings": {
-                "PreferLocalDbConnectionString": true
-            }
-        }
-    }
+"PreferLocalDbConnectionString": true
 ```
 
 ## MediaFileChecksumCalculationMethod
@@ -328,7 +331,7 @@ Deploy will do comparisons between the entities in different environments to det
 
 This corresponds to the default setting of `PartialFileContents`.
 
-If a lot of files need to be checked, this can be slow, and a faster option is available that uses the file metadata. The only downside of changing this option is a marginally increased chance of Deploy considering a media file hasn't changed when it has.  This would omit it from the deployment.
+If a lot of files need to be checked, this can be slow, and a faster option is available that uses the file metadata. The only downside of changing this option is a marginally increased chance of Deploy considering a media file hasn't changed when it has. This would omit it from the deployment.
 
 To use this method, set the value to `Metadata`.
 
