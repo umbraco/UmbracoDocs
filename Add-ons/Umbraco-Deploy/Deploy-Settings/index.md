@@ -171,6 +171,38 @@ In a similar way, Deploy can be configured to allow for backoffice transfers of 
 
 Please see the note above under _TransferFormsAsContent_ on the topic of removing any existing serialized files having changed this value to `true`.
 
+## Ignoring missing languages For dictionary items
+
+When deploying dictionary items, an exception will be thrown if a translation is provided for a language that doesn't exist in the target environment.
+
+Normally this is a useful fail-safe to ensure translations aren't lost in the transfer operation.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <dictionary ignoreMissingLanguagesForDictionaryItems="false" />
+</settings>
+```
+
+If you have deleted languages that have already existing translations, you may want to temporarily remove this check. You can do that by setting this value to `true`.
+
+When this is in place a translation for a language that doesn't exist in the target environment will be ignored. A warning message will be output to the log.
+
+## Setting empty dictionary items on transfer
+
+When deploying dictionary items, Umbraco Deploy follows the approach used for all content, emptying values that are transferred and set.
+
+If you transfer a dictionary item with an empty translation to another environment that already contains a translation, it will be overwritten.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="urn:umbracodeploy-settings">
+    <dictionary transferDictionaryAsContent="true" setEmptyDictionaryItemsOnTransfer="true" />
+</settings>
+```
+
+Set this value to `false` to not overwrite already populated values with empty strings.
+
 ## Transfer members
 
 As of version 4.5.0, it's also possible to transfer members and member groups via the back-office between environments.  This is disabled by default as a deliberate decision to make use of the feature needs to be taken, as for most installations it will make sense to have member data created and managed only in production. There are obvious potential privacy concerns to consider too.  However, if being able to deploy and restore this information between environments makes sense for the specific workflow of your project, it's a supported scenario.
@@ -301,10 +333,10 @@ Specifies options for handling trashed content (documents, media and members) on
 
 You can amend this behavior using this setting:
 
-* `None` - trashed content will not be exported or imported
-* `Export` - trashed content will be included in an export
-* `Import` - trashed content will be processed and moved to the recycle bin on import
-* `All` - trashed content will be included in an export, processed and moved to the recycle bin on import
+- *None* - trashed content will not be exported or imported
+- *Export* - trashed content will be included in an export
+- *Import* - trashed content will be processed and moved to the recycle bin on import
+- *All* - trashed content will be included in an export, processed and moved to the recycle bin on import
 
 ## Media File Checksum Calculation Method
 
