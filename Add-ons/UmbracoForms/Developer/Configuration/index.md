@@ -79,7 +79,7 @@ This setting is used to configure the Date Picker form field range of years that
 
 When using the "title and description" field type, editors can provide HTML in the "description" field and have that rendered on the website.
 
-As a tightened security measure, you can set this value to `false`` which will ensure HTML is no longer rendered.
+As a tightened security measure, you can set this value to `false` which will ensure HTML is no longer rendered.
 
 As some installations may be relying on HTML rendering, to preserve backward compatible behavior the default value of this setting is `true`.
 
