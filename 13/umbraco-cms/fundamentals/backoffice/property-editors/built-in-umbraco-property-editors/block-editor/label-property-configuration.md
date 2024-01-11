@@ -57,7 +57,7 @@ An example `package.manifest` file is:
     "version": "1.0.0",
     "allowPackageTelemetry": false,
     "javascript": [
-        "/App_Plugins/MyFilters/myFilter.filter.js"
+        "~/App_Plugins/MyFilters/myFilter.filter.js"
     ]
 }
 ```
