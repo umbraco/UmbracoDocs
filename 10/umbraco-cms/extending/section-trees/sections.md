@@ -56,8 +56,6 @@ public class MyFavouriteThingsSection : ISection
 
 For your C# type to be discovered by Umbraco at application start up, it needs to be appended to the `SectionCollectionBuilder`.
 
-{% tabs %}
-{% tab title="Latest version" %}
 You can achieve this by creating a `Composer` and call the `Append` method:
 
 ```csharp
@@ -73,8 +71,6 @@ public class SectionComposer : IComposer
     }
 }
 ```
-{% endtab %}
-{% endtabs %}
 
 This would also create a new section called 'My Favourite Things' in your Umbraco Backoffice.
 

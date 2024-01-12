@@ -384,7 +384,7 @@ namespace Doccers.Core.Composers
 
 If I know `Save and Publish` my `Products` node I get the following result:
 
-![Relations](../../../../../11/umbraco-cms/reference/management/services/images/relations.PNG)
+![Relations](images/relations.PNG)
 
 Cool! Now let us try and fetch the data from an API.
 
@@ -449,7 +449,7 @@ public class Relation
 
 Browsing `/umbraco/api/relations/getbyrelationtypealias?alias=homesick` now returns the following:
 
-![Relations](../../../../../11/umbraco-cms/reference/management/services/images/relations-api.PNG)
+![Relations](images/relations-api.PNG)
 
 {% hint style="info" %}
 If you want to do something similar to this it is recommended that you wrap a caching layer around it, as the RelationService queries the database directly.

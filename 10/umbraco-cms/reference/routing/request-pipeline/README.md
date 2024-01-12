@@ -1,6 +1,4 @@
 ---
-
-
 meta.Title: Routing in Umbraco
 description: What the Umbraco Request Pipeline is
 ---
@@ -15,7 +13,7 @@ _This section describes what the Umbraco Request Pipeline is, how Umbraco matche
 
 The request pipeline is the process of building up the URL for a node, resolving a request to a specified node and making sure that the right content is sent back.
 
-![what is the pipeline](../../../../../11/umbraco-cms/reference/routing/request-pipeline/images/what-is-the-pipeline.png)
+![what is the pipeline](images/what-is-the-pipeline.png)
 
 ### Outbound vs Inbound
 

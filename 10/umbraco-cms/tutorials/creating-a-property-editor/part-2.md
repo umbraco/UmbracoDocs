@@ -179,7 +179,7 @@ namespace Umbraco.Cms.Core.PropertyEditors
 
 Save the file, rebuild the application and have a look at the Suggestions Data Type. You should see that you have one configuration option.
 
-![An example of how the configuration will look](../../../../11/umbraco-cms/tutorials/creating-a-property-editor/images/suggestion-editor-config\_1.png)
+![An example of how the configuration will look](images/suggestion-editor-config\_1.png)
 
 ## Using the configuration
 
@@ -304,6 +304,6 @@ The next step is to gain access to our new configuration options. For this, open
 
 Save the files and rebuild the application. To access the configuration options, enable/disable the `Enabled?` and `Hide Label?` options. Additionally, you can set a default value in the `Default Value` field and see the Suggestions Data Type at play.
 
-![An example of setting the configuration](../../../../11/umbraco-cms/tutorials/creating-a-property-editor/images/suggestion-editor-config\_2.png)
+![An example of setting the configuration](images/suggestion-editor-config\_2.png)
 
-![Backoffice view](../../../../11/umbraco-cms/tutorials/creating-a-property-editor/images/suggestion-editor-backoffice\_1.png)
+![Backoffice view](images/suggestion-editor-backoffice\_1.png)

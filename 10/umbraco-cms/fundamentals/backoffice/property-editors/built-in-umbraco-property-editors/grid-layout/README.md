@@ -4,7 +4,7 @@
 
 Gives editors a grid layout editor which allows them to insert different types of content in a predefined layout.
 
-<figure><img src="../../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/grid-layout/Images/editor.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../built-in-property-editors/grid-layout/Images/editor.png" alt=""><figcaption></figcaption></figure>
 
 ## [What are Grid Layouts](what-are-grid-layouts.md)
 

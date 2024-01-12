@@ -483,4 +483,4 @@ The order of these registrations matters. It is important to register your index
 
 ![Custom product index](images/examine-management-product-index.png)
 
-![Product document](images/examine-management-product-document.png)
+![Product document](<images/examine-management-product-document (1).png>)

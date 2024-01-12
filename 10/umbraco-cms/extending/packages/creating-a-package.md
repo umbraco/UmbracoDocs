@@ -1,5 +1,4 @@
 ---
-
 meta.Title: Creating a package
 description: Tutorial to create a package in Umbraco
 ---
@@ -318,6 +317,6 @@ By default, all these package migrations are executed unattended during startup 
   }
 ```
 
-![Attended package install](../../../../11/umbraco-cms/extending/packages/images/package-install-attended.png)
+![Attended package install](images/package-install-attended.png)
 
 The configuration of package migrations can be different for each environment and makes it possible to have the migration executed unattended on the development environment, but leave them out or manually execute them on other environments. This is useful when you use a tool like Umbraco Deploy or USync as these will migrate the content.

@@ -1,8 +1,3 @@
----
-
-
----
-
 # Creating Your First Template
 
 Umbraco creates a corresponding template when you select the **Document Type with Template** option when creating a Document Type.
@@ -14,7 +9,7 @@ To edit the template:
 3.  Open the template. It will contain a little bit of _**Razor code**_.\
     \\
 
-    <figure><img src="../../../../11/umbraco-cms/tutorials/creating-a-basic-website/images/figure-13-empty-homepage-template-v9.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/figure-13-empty-homepage-template-v9.png" alt=""><figcaption></figcaption></figure>
 4. Leaving the code that's there (if you don't understand it, don't worry!) let's copy our template code in.
    * We are using files from the [Custom Umbraco Template](https://umbra.co/Umbracotemplate).
 5. Open the **Custom Umbraco Template** folder and copy the contents of **index.html**.
@@ -36,7 +31,7 @@ To add a content node:
 
     * If you cannot see the content node, check that \[Settings] > \[Document Types] > \[HomePage] > \[Permissions tab] > \[Allow at root] is checked. The Home Page opens in the content editor.
 
-    <figure><img src="../../../../11/umbraco-cms/tutorials/creating-a-basic-website/images/figure-15-create-a-homepage-v8.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/figure-15-create-a-homepage-v8.png" alt=""><figcaption></figcaption></figure>
 3. Enter the name for the content node. We are going to call this _Homepage_.
    * The name will show up in the node list and will be used to create a url for the page. Try to keep it short but descriptive.
 4.  Enter the following details:
@@ -59,4 +54,4 @@ The default Umbraco page will now be gone and we'll now see a very bare, unstyle
 If you see a blank page, check if the template is entered and remember to save it.
 {% endhint %}
 
-![An Unstyled Homepage](../../../../11/umbraco-cms/tutorials/creating-a-basic-website/images/figure-16-unstyled-homepage-v8.png)
+![An Unstyled Homepage](images/figure-16-unstyled-homepage-v8.png)

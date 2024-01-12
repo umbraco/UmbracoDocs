@@ -1,7 +1,5 @@
 ---
 meta.Title: Creating a Custom Dashboard
-
-
 description: A guide to creating a custom dashboard in Umbraco
 ---
 
@@ -346,7 +344,7 @@ Finally we can now update our view to incorporate the current user's name in our
 <h1><localize key="welcomeDashboard_heading">Default heading</localize> {{vm.UserName}}</h1>
 ```
 
-![Custom Dashboard Welcome Message With Current User's Name](../../../11/umbraco-cms/tutorials/images/welcomemessagepersonalised-v10.png)
+![Custom Dashboard Welcome Message With Current User's Name](images/welcomemessagepersonalised-v10.png)
 
 ## I know what you did last Tuesday
 
@@ -544,7 +542,7 @@ Add the following to our view:
 
 `1065` is the ID of our blog section and `blogPost` is the alias of the type of document we want to create.
 
-![Handy shortcut buttons](../../../11/umbraco-cms/tutorials/images/CreateNewBlogPost-v10.png)
+![Handy shortcut buttons](images/CreateNewBlogPost-v10.png)
 
 At this point we are done with the tutorial, your files should contain this:
 
