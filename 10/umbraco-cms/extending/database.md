@@ -394,7 +394,7 @@ namespace MyNamespace
 {% endtab %}
 {% endtabs %}
 
-The notification handler can either be registered in a composer:
+The notification handler can be registered in a composer:
 
 ```
 using Umbraco.Cms.Core.Composing;
