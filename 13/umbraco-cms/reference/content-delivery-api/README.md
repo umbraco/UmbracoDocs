@@ -18,7 +18,7 @@ Video tutorial
 
 ### Register the Content Delivery API dependencies
 
-1. Open your project's `Program.cs` file.
+1. Open your project's `Statup.cs` file.
 2. Register the API dependencies by adding `.AddDeliveryApi()`:
 
 ```csharp
