@@ -30,4 +30,4 @@ This section contains the release notes for Umbraco UI Builder 13 including all 
 
 ## Legacy release notes
 
-You can find the release notes for **Umbraco UI Builder** in the [Change log file on Github](changelog-archive/changelog.md).
+You can find the release notes for **Konstrukt** in the [Change log file on Github](changelog-archive/changelog.md).
