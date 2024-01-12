@@ -197,7 +197,7 @@ public class RunBlogCommentsMigration : INotificationHandler<UmbracoApplicationS
 // Migration and schema defined as in the previous code sample.
 ```
 
-The notification handler can either be registered in a composer:
+The notification handler can be registered in a composer:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -212,56 +212,6 @@ public class BlogCommentsComposer : IComposer
     {
         builder.AddNotificationHandler<UmbracoApplicationStartingNotification, RunBlogCommentsMigration>();
     }
-}
-```
-
-Or in an extension method called from `StartUp.cs` as is preferred:
-
-```csharp
-using System.Linq;
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Cms.Core.Notifications;
-
-namespace MyNamespace;
-
-public static class UmbracoBuilderExtensions
-{
-    public static IUmbracoBuilder AddBlogComments(this IUmbracoBuilder builder)
-    {
-        builder.AddNotificationHandler<UmbracoApplicationStartingNotification, RunBlogCommentsMigration>();
-        return builder;
-    }
-}
-```
-
-```csharp
-using System;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Extensions;
-
-namespace MyNamespace;
-
-public class Startup
-{
-    ...
-
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddUmbraco(_env, _config)
-            .AddBackOffice()
-            .AddWebsite()
-            .AddComposers()
-            .AddBlogComments()  // calls our extension method to register the notification handler
-            .Build();
-
-    }
-
-    ...
 }
 ```
 
