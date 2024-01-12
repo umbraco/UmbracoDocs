@@ -56,17 +56,20 @@ public class MyFavouriteThingsSection : ISection
 
 For your C# type to be discovered by Umbraco at application start up, it needs to be appended to the `SectionCollectionBuilder`.
 
-You can achieve this by updating the `Program.cs` class:
+You can achieve this by creating a `Composer` and call the `Append` method:
 
 ```csharp
-builder.CreateUmbracoBuilder()
-    .AddBackOffice()
-    .AddWebsite()
-    .AddDeliveryApi()
-    .AddComposers()
-    // Register the section
-    .AddSection<MyFavouriteThingsSection>()
-    .Build();
+using Umbraco.Cms.Core.Composing;
+
+namespace My.Website.Sections;
+
+public class SectionComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.Sections().Append<MyFavouriteThingsSection>();
+    }
+}
 ```
 
 This would also create a new section called 'My Favourite Things' in your Umbraco Backoffice.
