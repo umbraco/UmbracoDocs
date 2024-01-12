@@ -197,7 +197,7 @@ public class RunBlogCommentsMigration : INotificationHandler<UmbracoApplicationS
 // Migration and schema defined as in the previous code sample.
 ```
 
-The notification handler can either be registered in a composer:
+The notification handler can be registered in a composer:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
