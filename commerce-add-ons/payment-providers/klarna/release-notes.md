@@ -36,7 +36,7 @@ In this section, you can find the release notes for each version of Klarna Payme
 
 * Fixed Gift Cards not being taken into account (#3)(https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Klarna/issues/3)
 * Fixed issue with total price adjustments not being taken into acount and so causing bad requests (#2)(https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Klarna/issues/2)
-* 
+
 #### 12.0.0 (July 5th 2023)
 
 * [Initial product launch](https://umbraco.com/blog/umbraco-commerce-release/).
