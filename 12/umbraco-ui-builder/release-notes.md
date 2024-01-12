@@ -38,4 +38,4 @@ This section contains the release notes for Umbraco UI Builder 12 including all 
 
 ## Legacy release notes
 
-You can find the release notes for **Konstrukt** in the [Change log file on Github](../../13/umbraco-commerce/changelog-archive/Vendr-core.md).
+You can find the release notes for **Umbraco UI Builder** in the [Change log file on Github](changelog-archive/changelog.md).
