@@ -344,7 +344,7 @@ using (Html.BeginUmbracoForm<UmbRegisterController>(
 {% endtab %}
 {% endtabs %}
 
-we have to instead use the custom controller we added, as well as include an anti-forgery token:
+we have to instead use the custom controller we added:
 
 {% tabs %}
 {% tab title="C#" %}
@@ -357,8 +357,6 @@ we have to instead use the custom controller we added, as well as include an ant
                 RedirectUrl = registerModel.RedirectUrl,
                 memberGroup = "Professionals"
             }))
-
-            @Html.AntiForgeryToken()
 ```
 {% endtab %}
 {% endtabs %}
