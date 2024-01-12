@@ -60,8 +60,6 @@ You can achieve this by creating a `Composer` and call the `Append` method:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Cms.Core.Sections;
 
 namespace My.Website.Sections;
 
