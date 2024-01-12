@@ -16,7 +16,7 @@ In this section, you can find the release notes for each version of Klarna Payme
 
 <summary>Version 13</summary>
 
-#### [13.1.0 (January 12th 2024)](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Klarna/issues?q=label%3Arelease%2F13.0.1+)
+#### [13.0.1 (January 12th 2024)](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Klarna/issues?q=label%3Arelease%2F13.0.1+)
 
 * Fixed Gift Cards not being taken into account (#3)(https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Klarna/issues/3)
 * Fixed issue with total price adjustments not being taken into acount and so causing bad requests (#2)(https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Klarna/issues/2)
@@ -32,7 +32,7 @@ In this section, you can find the release notes for each version of Klarna Payme
 
 <summary>Version 12</summary>
 
-#### [12.1.0 (January 12th 2024)](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Klarna/issues?q=label%3Arelease%2F12.0.1+)
+#### [12.0.1 (January 12th 2024)](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Klarna/issues?q=label%3Arelease%2F12.0.1+)
 
 * Fixed Gift Cards not being taken into account (#3)(https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Klarna/issues/3)
 * Fixed issue with total price adjustments not being taken into acount and so causing bad requests (#2)(https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Klarna/issues/2)
@@ -47,7 +47,7 @@ In this section, you can find the release notes for each version of Klarna Payme
 
 <summary>Version 10</summary>
 
-#### [10.1.0 (January 12th 2024)](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Klarna/issues?q=label%3Arelease%2F10.0.1+)
+#### [10.0.1 (January 12th 2024)](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Klarna/issues?q=label%3Arelease%2F10.0.1+)
 
 * Fixed Gift Cards not being taken into account (#3)(https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Klarna/issues/3)
 * Fixed issue with total price adjustments not being taken into acount and so causing bad requests (#2)(https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Klarna/issues/2)
