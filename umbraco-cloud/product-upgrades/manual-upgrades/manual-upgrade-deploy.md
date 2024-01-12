@@ -54,30 +54,30 @@ If you are on Umbraco 7 or Umbraco 8, follow the steps below to manually upgrade
 1. Download **Storage Explorer** here: [https://azure.microsoft.com/en-us/products/storage/storage-explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer) and install it.
 2. Click the **"Plug"** Button (Open Connect Dialog):\
    \
-   ![Click the "Plug" Button (Open Connect Dialog)](<../../.gitbook/assets/image (1).png>)
+   ![Click the "Plug" Button (Open Connect Dialog)](<../../.gitbook/assets/image (1) (1).png>)
 
 <!---->
 
 3. Choose **"Blob container or directory"**:\
-   ![](<../../.gitbook/assets/image (1) (1).png>)
+   ![](<../../.gitbook/assets/image (1) (1) (1).png>)
 
 <!---->
 
 4. Choose **"Anonymously"** when prompted on how you will connect to the blob container.\
-   ![](<../../.gitbook/assets/image (2).png>)
+   ![](<../../.gitbook/assets/image (2) (1).png>)
 
 <!---->
 
-5. Enter [`https://umbraconightlies.blob.core.windows.net/umbraco-deploy-release`](https://umbraconightlies.blob.core.windows.net/umbraco-deploy-release) in the **"Blob container or directory URL":**<img src="../../.gitbook/assets/image (3).png" alt="" data-size="original">
+5. Enter [`https://umbraconightlies.blob.core.windows.net/umbraco-deploy-release`](https://umbraconightlies.blob.core.windows.net/umbraco-deploy-release) in the **"Blob container or directory URL":**<img src="../../.gitbook/assets/image (3) (1).png" alt="" data-size="original">
 
 <!---->
 
-6. You will then get a list of files available to download:![](<../../.gitbook/assets/image (4).png>)
+6. You will then get a list of files available to download:![](<../../.gitbook/assets/image (4) (1).png>)
 
 <!---->
 
 7. Download the latest version of Umbraco Deploy. Check [Product Dependencies](https://docs.umbraco.com/umbraco-cloud/product-upgrades/product-dependencies) to be sure you download the correct version of Deploy.
-8. Download the to your computer&#x20;
+8. Download the to your computer
 9. Unzip the file on your computer
 10. Copy/Paste the files from the unzipped folder to your local project folder You should not overwrite the following files:
 
@@ -88,8 +88,6 @@ If you are on Umbraco 7 or Umbraco 8, follow the steps below to manually upgrade
 11. Run the project locally - make sure it runs without any errors
 12. Commit and deploy the changes to the Cloud environment
 13. Again, make sure everything runs without errors before deploying to the next Cloud environment
-
-
 
 </details>
 

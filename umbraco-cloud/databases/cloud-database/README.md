@@ -8,7 +8,7 @@ First, Umbraco Cloud automatically overrides whatever is in the 'umbracoDbDsn' c
 
 Second, for security, your database on Umbraco Cloud is running behind a firewall. In order to connect to the database, you'll need to open the firewall for the relevant IPs. This can be a single IP, a list of IPs, or even an IP range. It's done from the Connection Details page on your project. Click the "Settings" menu in the upper right corner of your project and select "Connection Details". If you don't see the menu item, it's due to permissions and you'll need to contact the administrator of your project.
 
-![Connecting to Umbraco.mdf in Visual Studio](images/connection-details.png)
+![Connecting to Umbraco.mdf in Visual Studio](../images/connection-details.png)
 
 ### Opening the firewall
 
@@ -18,7 +18,7 @@ If you need to open specific IP addresses, click the "Add New IP Address" button
 
 When adding a new IP, it is required to give it a name. This gives an overview of who the different IPs that have been added belong to.
 
-![Name of IPs](images/IPName.png)
+![Name of IPs](../images/IPName.png)
 
 ### Setting up SQL Management Studio
 
@@ -64,4 +64,4 @@ If you're using Visual Studio 2015+ check this path: `$(solutionDir)\.vs\config\
 
 In Visual Studio 2015+ you can also configure which `applicationhost.config` file is used by altering the `<UseGlobalApplicationHostFile>true|false</UseGlobalApplicationHostFile>` setting in the project file (eg: MyProject.csproj). Source: MicroSoft Developer Network (MSDN) forum.
 
-Now that you are all set and ready you can continue to work with your [database locally](local-database.md). ).
+Now that you are all set and ready you can continue to work with your [database locally](../local-database.md). ).

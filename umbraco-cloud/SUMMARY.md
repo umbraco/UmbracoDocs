@@ -91,7 +91,8 @@
 
 * [Working with databases](databases/README.md)
 * [Database backups](databases/backups.md)
-* [Database](databases/cloud-database.md)
+* [Database](databases/cloud-database/README.md)
+  * [Connecting to the Database on Mac](databases/cloud-database/connecting-to-the-database-on-mac.md)
 * [Working with a Cloud database locally](databases/local-database.md)
 
 ## Product Upgrades
