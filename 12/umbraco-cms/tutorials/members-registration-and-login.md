@@ -68,27 +68,19 @@ With this partial in place, provided we put it in navigation or a layout page, w
 
 ## Member-only pages/Restricted access
 
-
-{% hint style="info" %} 
+{% hint style="info" %}
 If you are on Umbraco Cloud you need to do the following steps to be able to restrict access for your users:
 
-1. Go to the Users section in the Backoffice. 
+1. Go to the Users section in the Backoffice.
 2. Select your User.
-3. Add the "Sensitive Data" Group. 
-![Assign User Access group](images/v8-17-Assign-User-Access-Group.png)
-
+3. Add the "Sensitive Data" Group. ![Assign User Access group](images/v8-17-Assign-User-Access-Group.png)
 
 Once you have added the "Sensitive Data" group go to the Members section in the backoffice. In the Members section you need to select each member and approve them by toggling the Approved button.
 
-![Approve Member](images/v8-18-Approve-Member.png)
+<img src="images/v8-18-Approve-Member.png" alt="Approve Member" data-size="original">
 
 Once the users have been approved, you can go ahead and continue the tutorial.
-
-
- {% endhint %}
-
-
-
+{% endhint %}
 
 Now that we have the options to:
 
@@ -96,10 +88,6 @@ Now that we have the options to:
 * Log in as a member
 * Check the current login status
 * Log out a member
-
-
-
-
 
 We can also go a bit further and specify which parts of our website should be accessible to logged-in members. To do this, head on over to the Member section in the Backoffice, and create a new Member Group.
 
@@ -345,7 +333,7 @@ using (Html.BeginUmbracoForm<UmbRegisterController>(
             }))
 ```
 
-we have to instead use the custom controller we added, as well as include an anti-forgery token:
+we have to instead use the custom controller we added:
 
 ```csharp
     using (Html.BeginUmbracoForm<UmbAlternativeRegisterController>(
@@ -356,8 +344,6 @@ we have to instead use the custom controller we added, as well as include an ant
                 RedirectUrl = registerModel.RedirectUrl,
                 memberGroup = "Professionals"
             }))
-
-            @Html.AntiForgeryToken()
 ```
 
 {% hint style="info" %}
