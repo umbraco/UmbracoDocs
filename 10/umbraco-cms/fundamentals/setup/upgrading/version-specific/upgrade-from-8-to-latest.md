@@ -50,7 +50,7 @@ If you use Umbraco Forms, make sure to have [`StoreUmbracoFormsInDbset`](https:/
 
 ```json
 "ConnectionStrings": {
-    "umbracoDbDSN": "Server=YourLocalSQLServerHere;Database=NameOfYourDatabaseHere;;User Id=NameOfYourUserHere;Password=YourPasswordHere;TrustServerCertificate=True"
+    "umbracoDbDSN": "Server=YourLocalSQLServerHere;Database=NameOfYourDatabaseHere;User Id=NameOfYourUserHere;Password=YourPasswordHere;TrustServerCertificate=True"
 }
 ```
 

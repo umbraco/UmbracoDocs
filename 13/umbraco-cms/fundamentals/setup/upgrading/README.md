@@ -85,7 +85,7 @@ If you have other packages installed such as Umbraco Forms, then before upgradin
 
 ```csharp
 "ConnectionStrings": {
-    "umbracoDbDSN": "Server=YourLocalSQLServerHere;Database=NameOfYourDatabaseHere;;User Id=NameOfYourUserHere;Password=YourPasswordHere;TrustServerCertificate=True"
+    "umbracoDbDSN": "Server=YourLocalSQLServerHere;Database=NameOfYourDatabaseHere;User Id=NameOfYourUserHere;Password=YourPasswordHere;TrustServerCertificate=True"
 }
 ```
 
