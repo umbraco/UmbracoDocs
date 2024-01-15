@@ -78,6 +78,8 @@ The RTE can also accept advanced configuration through the `appSettings.json` fi
 
 `CustomConfig` is slightly different from the rest as it extends the core config passed into TinyMCE.
 
+Read more about the advanced configuration and how to set it up in Umbraco in the [Rich Text Editor Settings](../../../../../reference/configuration/richtexteditorsettings.md) article.
+
 ## Allowing script tags in the RTE
 
 Sometimes you want to allow your content editors to be able to add `<script>` tags into the RTE. This tag is classed as invalid by default which means the configuration needs to be updated to allow it. This is not something that can be done through the CMS and requires advanced configuration in the `appSettings.json` file. It uses the `ValidElements` property to append `,script[*]` to the pre-existing list of valid elements as shown below.

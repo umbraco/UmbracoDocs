@@ -25,6 +25,14 @@ Customize everything from toolbar options to editor size to where pasted images 
 
 Use CSS to define specific editor styles and add them as formatting options of the Rich Text Editor.
 
+## [Blocks](rte-blocks.md)
+
+Use Blocks to define specific parts which can be added as part of the markup of the Rich Text Editor.
+
+## [Plugins](rte-plugins.md)
+
+Extend the functionality of the Rich Text Editor with plugins.
+
 ## Data Type Definition Example
 
 ![Rich Text Editor - Data Type](../../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/rich-text-editor/images/rte-datatype-v10.png)
