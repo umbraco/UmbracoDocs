@@ -149,4 +149,4 @@ You can go to any Document Type that uses the rich text editor and click the but
 ### Learn more
 
 * [TinyMCE documentation](https://www.tiny.cloud/docs/)
-* [TinyMCE tutorial: Creating a plugin](https://www.tiny.cloud/docs/tinymce/6/creating-a-plugin/)
+* [TinyMCE tutorial: Creating a plugin](https://www.tiny.cloud/docs/tinymce/latest/creating-a-plugin/)
