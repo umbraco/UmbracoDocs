@@ -72,7 +72,7 @@ You can go to [TinyMCE Cloud](https://www.tiny.cloud/) and sign up for a free tr
 
 ## Creating a Custom Plugin
 
-If you want to create your own plugin, you can follow the [TinyMCE documentation](https://www.tiny.cloud/docs/advanced/creating-a-plugin/).
+If you want to create your own plugin, you should in general follow the [TinyMCE documentation](https://www.tiny.cloud/docs/tinymce/latest/creating-a-plugin/). However, there are a few things you need to be aware of to load the plugin in Umbraco. See the example below.
 
 ### Examples
 
@@ -149,4 +149,4 @@ You can go to any Document Type that uses the rich text editor and click the but
 ### Learn more
 
 * [TinyMCE documentation](https://www.tiny.cloud/docs/)
-* [TinyMCE tutorial: Creating a plugin](https://www.tiny.cloud/docs/tinymce/6/creating-a-plugin/)
+* [TinyMCE tutorial: Creating a plugin](https://www.tiny.cloud/docs/tinymce/latest/creating-a-plugin/)
