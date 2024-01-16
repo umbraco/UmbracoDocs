@@ -17,6 +17,11 @@ If you are migrating from Plumber to Umbraco Workflow, see the [Migrate from Plu
 
 This section contains the release notes for Umbraco Workflow 10 including all changes for this version.
 
+#### [10.3.6](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.6) (January 17th 2024)
+
+* Fixes bug where workflow submission was not respecting user's language access permissions
+* Fixes bug where approval groups were not populated for new nodes using the new-node approval workflow [#51](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/51)
+
 #### [10.3.5](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.5) (December 20th 2023)
 
 * Updates internal license validation to handle licenses registered with 'UmbracoWorkflow' or 'Umbraco.Workflow'
