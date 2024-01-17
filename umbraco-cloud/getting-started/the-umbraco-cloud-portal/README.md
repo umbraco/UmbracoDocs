@@ -79,7 +79,7 @@ In the [Settings](../../set-up/project-settings/) section, you will find a lot m
 
 ### Manage Subscriptions
 
-For customers who have joined Umbraco Cloud before the 5th of May, 2021, can manage their subscriptions from Umbraco Shop. Umbraco Shop can be accessed through [Umbraco.com](https://umbraco.com). You can also click on the **Manage Subscriptions** link from the **Profile** dropdown on the Umbraco Cloud Portal. Find out more in the [Manage Subscriptions](../../set-up/manage-subscriptions/) article.
+For customers who joined Umbraco Cloud before 5th of May, 2021, subscriptions can be managed from Umbraco Shop. Umbraco Shop can be accessed through [shop.umbraco.com](https://shop.umbraco.com). You can also click on the **Manage Subscriptions** link from the **Profile** dropdown on the Umbraco Cloud Portal. Find out more in the [Manage Subscriptions](../../set-up/manage-subscriptions/) article.
 
 Customers who have joined Umbraco Cloud after the 5th of May, 2021, can manage their subscriptions directly through Umbraco Cloud. Find out more in the [Payments on Umbraco Cloud](../../set-up/manage-subscriptions/new-shop/) article.
 

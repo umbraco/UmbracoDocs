@@ -217,7 +217,7 @@ All of the Umbraco APIs use this route as a prefix, including Umbraco Deploy. So
 
 You will notice that the regex `^umbraco/backoffice/(.*)|^umbraco` also stops people from going to `yoursite.com/umbraco`, so even the login screen will not show up. Even if you remove the `|^umbraco` part in the end, it should be no problem. You'll get a login screen but any login attempts will be blocked before they reach Umbraco. This is because the login posts to `umbraco/backoffice/UmbracoApi/Authentication/PostLogin`, e.g. it's using the backoffice URL.
 
-The Autoupgrader on Umbraco Cloud needs to have access to the site to successfully run the upgrade process and apply new patches, by adding these two IP's it ensures that the site is accessible and the autoupgrader can apply the newly released patches.
+The Autoupgrader on Umbraco Cloud needs to have access to the site to successfully run the upgrade process and apply new patches. By adding these two IP's it ensures that the site is accessible and the autoupgrader can apply the newly released patches.
 
 The last IP address is an example. You can add the addresses that your organization uses as new items to this list.
 

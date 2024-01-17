@@ -2,7 +2,7 @@
 
 In the Umbraco Cloud Settings menu you can find a page called _Usage_.
 
-On the Usage page, you will find an usage overview that displays your usage and evaluates it against the plan limitations of your project. On the page you will also find top 10 for the bandwidth usage of your project that can give you important insight into where you can optimally optimize resource management.
+On the Usage page, you will find an overview that displays your usage and evaluates it against the plan limitations of your project. On the page you will also find top 10 for the bandwidth usage of your project. This can give you important insight into where you can optimize resource management.
 
 ## Usage overview
 
@@ -26,7 +26,7 @@ The first is displaying the 10 resources that are contributing the most to the t
 
 ### Top 10 - Bandwidth Usage Referrers
 
-The second you will find, is a top 10 of the HTTP Referrers causing the most bandwidth. A referer is the name of an optional HTTP header field that identifies the address of the web page, from which the resource has been requested. It is the bandwidth generated from these resource requests that counts in the monthly usage limit of the project.
+The second displays the top 10 HTTP Referrers causing the most bandwidth. A referer is an optional HTTP header field identifying the address of the web page from which the resource was requested. It is the bandwidth generated from these resource requests that counts in the monthly usage limit of the project.
 
 ![top 10 bandwidth](../images/Top10BandwidthReferer2.png)
 
