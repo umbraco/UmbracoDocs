@@ -14,7 +14,7 @@ In this section you will find information on the key concepts and requirements o
 
 [Is Umbraco right for me?](https://umbraco.com/why-choose-umbraco/)
 
-[What commerical options are available from Umbraco?](https://umbraco.com/products/)
+[What commercial options are available from Umbraco?](https://umbraco.com/products/)
 
 [Information on planning an Umbraco project](http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/fundamentals/setup/requirements)
 
