@@ -9,7 +9,7 @@ Umbraco internally does this via the `<umb-load-indicator />` directive, which y
 * [`<umbLoadIndicator />` in the **API documentation**](https://apidocs.umbraco.com/v12/ui/#/api/umbraco.directives.directive:umbLoadIndicator)
 * [`<umbLoadIndicator />` source code on **GitHub**](https://github.com/umbraco/Umbraco-CMS/blob/v8/contrib/src/Umbraco.Web.UI.Client/src/common/directives/components/umbloadindicator.directive.js)
 
-The directive doesn't have any parameters on it's own, but since you most likely only wish to show the load indicator during certain states of your code, you can control this either through `ng-if` or `ng-show`.
+The directive doesn't have any parameters on it's own. Since you most likely only wish to show the load indicator during certain states of your code, you can control this either through `ng-if` or `ng-show`.
 
 For instance if your controller sets the `loading` variable to `true` during busy states:
 
