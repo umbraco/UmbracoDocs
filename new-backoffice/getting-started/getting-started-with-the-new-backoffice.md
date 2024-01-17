@@ -8,7 +8,7 @@ description: This is how you get started with the new Backoffice and Umbraco 14.
 
 The new Backoffice of Umbraco is currently targeting version 14 of Umbraco, which is expected to be released in May 2024.
 
-There are a few ways to check out the new Backoffice, while it is being developed. This may interest you if you are a package or extension developer looking to get an early headstart to upgrade your extensions.
+There are a few ways to check out the new Backoffice, while it is being developed. This may interest you if you are a package or extension developer looking to get an early head-start to upgrade your extensions.
 
 Read on to get an overview of the different ways in which you can check up on the development of the Backoffice.
 
