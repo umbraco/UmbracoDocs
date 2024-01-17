@@ -41,6 +41,6 @@ If you are using one or more of the below sub-packages, they also need to be upg
 | Umbraco.UIBuilder.Core | Core UI Builder functionality that doesn't require any infrastructure-specific dependencies |
 | Umbraco.UIBuilder.Infrastructure | Infrastructure-specific project containing implementations of core UI Builder functionality |
 | Umbraco.UIBuilder.Web | The core UI Builder logic that requires a web context |
-| Umbraco.UIBuilder.Web.StaticAssets | The static asstes for the UI Builder presentation layer |
+| Umbraco.UIBuilder.Web.StaticAssets | The static assets for the UI Builder presentation layer |
 | Umbraco.UIBuilder.Startup | The main logic for registering UI Builder with Umbraco |
 | Umbraco.UIBuilder | The main UI Builder package |
