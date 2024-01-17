@@ -17,6 +17,11 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Workflow 12 including all changes for this version.
 
+#### [12.2.3](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.3) (January 17th 2024)
+
+* Fixes bug where workflow submission was not respecting user's language access permissions
+* Fixes bug where approval groups were not populated for new nodes using the new-node approval workflow [#51](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/51)
+
 #### [12.2.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.2) (December 20th 2023)
 
 * Updates internal license validation to handle licenses registered with 'UmbracoWorkflow' or 'Umbraco.Workflow'
