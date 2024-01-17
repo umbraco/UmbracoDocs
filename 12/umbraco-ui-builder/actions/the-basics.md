@@ -67,7 +67,7 @@ public class MyAction : Action<MyBulkdActionSettings, ActionResult>
     {
         settingsConfig.AddFielset("General", fieldsetConfig => fieldsetConfig
             .AddField(s => s.RecipientName).SetLabel("Recipient Name")
-            .AddField(s => s.ReceipientEmail).SetLabel("Recipient Email"))
+            .AddField(s => s.RecipientEmail).SetLabel("Recipient Email"))
     }
 
     public override ActionResult Execute(string collectionAlias, object[] entityIds, MyActionSettings settings)
@@ -78,8 +78,8 @@ public class MyAction : Action<MyBulkdActionSettings, ActionResult>
 
 public class MyActionSettings
 {
-    public string ReceipientName { get; set; }
-    public string ReceipientEmail { get; set; }
+    public string RecipientName { get; set; }
+    public string RecipientEmail { get; set; }
 }
 ````
 

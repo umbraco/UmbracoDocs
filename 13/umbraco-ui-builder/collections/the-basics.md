@@ -60,7 +60,7 @@ collectionConfig.SetIconColor("blue");
 
 Within Umbraco, it is expected that an entity has a name property. So we need to let Umbraco UI Builder know which property to use for the name. If the entity doesn't have a name property, then it needs to know how to construct a name from an entity's other properties. We do this by using either the `SetNameProperty` or `SetNameFormat` methods on a `Collection` config builder instance.
 
-### **SetNameProperty(Lambda nameProperytyExpression) : CollectionConfigBuilder&lt;TEntityType&gt;**
+### **SetNameProperty(Lambda namePropertyExpression) : CollectionConfigBuilder&lt;TEntityType&gt;**
 
 Sets which property of your entity to use as the name property. Property must be of type `string`. By defining a property as the name property, its value will be used as the label for the entity in trees and list views. It will also be editable in the header region of the editor interface. The property will also automatically be added to the searchable properties collection and be used for the default sort property.
 
@@ -124,7 +124,7 @@ By default, in Umbraco UI Builder any entity that is deleted via the Umbraco UI 
 
 ### **SetDeletedProperty(Lambda deletedPropertyExpression) : CollectionConfigBuilder&lt;TEntityType&gt;**
 
-Sets which property of our entity to use as the deleted property flag. Property must be of type `boolean` or `int`. When a deleted property is set, any delete actions will set the deleted flag instead of actualy deleting the entity. For `boolean` based properties, deleted entities will have a value of `True` when deleted. For `int` based properties, deleted entities will have a UTC Unix timestamp value of the date the entity was deleted. In addition, any fetch actions will also pre-filter out any deleted entities.
+Sets which property of our entity to use as the deleted property flag. Property must be of type `boolean` or `int`. When a deleted property is set, any delete actions will set the deleted flag instead of actually deleting the entity. For `boolean` based properties, deleted entities will have a value of `True` when deleted. For `int` based properties, deleted entities will have a UTC Unix timestamp value of the date the entity was deleted. In addition, any fetch actions will also pre-filter out any deleted entities.
 
 ````csharp
 // Example
