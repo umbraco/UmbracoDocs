@@ -188,7 +188,7 @@ Below is an example of the payload body when sending an entry back to the form r
 
 ```json
 {
-  "name": "Jonh Smith",
+  "name": "John Smith",
   "email": "johnsmith@example.org",
   "dataConsent": "on"
 }
@@ -226,7 +226,7 @@ Given that the form contains a Name, Email and Data Content field we can submit 
 
 ```typescript
 const entry = {
-  "name": "Jonh Smith",
+  "name": "John Smith",
   "email": "johnsmith@example.org",
   "dataConsent": "on"
 }

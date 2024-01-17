@@ -29,7 +29,7 @@ const { Client } = require('@umbraco/headless-client')
 //Connecting to the Heartcore project on Cloud
 const client = new Client({ projectAlias: 'demo-headless' })
 
-//If protection is turned on you will have to add the API Key that has been asigned to your user 
+//If protection is turned on you will have to add the API Key that has been assigned to your user 
 client.setAPIKey('')
 
 //Create an async function to fetch all content from the root of the project

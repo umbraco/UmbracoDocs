@@ -16,4 +16,4 @@ The screenshot above is from the Content section on a Development environment. R
 
 **Queue for transfer** gives you the option to queue all content in the Content tree for transfer to the next environment (Staging or Live). It is also possible to right-click single nodes in the content structure in order to only queue some of it for transfer.
 
-**Restore** gives you the option to restore all content from environments right of the current evironment. In some cases you might not want to restore all content as once, in which case you should use the _Partial restore_ option instead, which you can find by right-clicking a node in the content tree.
+**Restore** gives you the option to restore all content from environments right of the current environment. In some cases you might not want to restore all content as once, in which case you should use the _Partial restore_ option instead, which you can find by right-clicking a node in the content tree.
