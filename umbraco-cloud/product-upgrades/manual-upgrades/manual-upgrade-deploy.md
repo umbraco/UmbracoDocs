@@ -6,7 +6,7 @@ description: >-
 
 # Manual upgrade of Umbraco Deploy
 
-Deploy on Coud will either be automatically upgraded with patch releases or it can be done through the portal when new minors are available.
+Deploy on Cloud will either be automatically upgraded with patch releases or it can be done through the portal when new minors are available.
 
 In rare cases, Deploy might not be on the latest patch or minor and you will need to upgrade Deploy manually.
 

@@ -27,7 +27,7 @@ Once the firewall is open, it's time to fire up SQL Management Studio and connec
 To connect, choose "Connect Database Engine" and copy the values from the Connection Details page on Umbraco Cloud. You'll find handy "copy" shortcut buttons to the right of each value. In the "Connect to Server" dialog in SQL Management Studio, choose "SQL Server Authentication" as the authentication type. Remember to click the "Options" button before you connect. Paste the name of your database in the "Database" input field; otherwise, security settings on Umbraco Cloud will prevent you from connecting. You can see it all in this short video:
 
 {% embed url="https://www.youtube.com/embed/yrCNsW-8_nU?rel=0" %}
-How to connecto to a Umbraco Cloud Database
+How to connect to to a Umbraco Cloud Database
 {% endembed %}
 
 ### Moving on

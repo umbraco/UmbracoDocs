@@ -18,7 +18,7 @@ To manage your subscription on Umbraco Cloud, go to the menu in the top right co
 
 You will see an overview of your organization on Umbraco Cloud. From here you can see the information about the organization.
 
-To see the subscribtions running under your organization click on "Subscriptions" in the side menu
+To see the subscriptions running under your organization click on "Subscriptions" in the side menu
 
 ![Your subscriptions](../images/subscriptions.png)
 

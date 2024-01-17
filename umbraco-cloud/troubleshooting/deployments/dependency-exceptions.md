@@ -3,7 +3,7 @@
 
 if you delete a content node which might have a reference to another node and you delete the node you are referencing to, you will encounter the following error when trying to transfer the node:
 
-![Dependecy exception](images/dependency-exception-updated.png)
+![Dependency exception](images/dependency-exception-updated.png)
 
 The error indicates that on the `Home page`, a picker, for example, refers to another content item. This other content item has either been deleted or is in the recycle bin in the environment you're deploying from.
 

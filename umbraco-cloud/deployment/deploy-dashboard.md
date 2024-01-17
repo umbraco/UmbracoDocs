@@ -44,7 +44,7 @@ Running this operation will download a zip file with all the Deploy artifacts re
 
 This operation is useful if you want to move to another Umbraco instance and migrate the data with you.
 
-<figure><img src="images//image (9).png" alt=""><figcaption><p>Donwload the Deploy artifacts</p></figcaption></figure>
+<figure><img src="images//image (9).png" alt=""><figcaption><p>Download the Deploy artifacts</p></figcaption></figure>
 
 ## Configuration Details
 
