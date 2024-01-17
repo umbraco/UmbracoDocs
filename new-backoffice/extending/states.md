@@ -44,6 +44,20 @@ The example below creates a State and then turns the whole state into an Observa
 );
 </code></pre>
 
+### Change the value of a state
+
+The value of a state can be changed via the `setValue` method. This replaces the current data with new data.
+
+The following example shows how to change the value of the state to hold `item2` and `item3`. As the example extends the example from above, this then means that `item1` is no longer part of the value of this state.
+
+<pre class="language-typescript"><code class="lang-typescript">import { UmbArrayState } from '@umbraco-cms/backoffice/observable-api';
+<strong>
+</strong><strong>...
+</strong><strong>
+</strong>this.#selectionState.setValue(['item2', 'item3']);
+<strong>
+</code></pre>
+
 ### Observe part of a state
 
 With the `asObservablePart` method, you can set up an Observable that provides a transformed outcome, based on the State.
@@ -53,7 +67,8 @@ With the `asObservablePart` method, you can set up an Observable that provides a
 </strong><strong>this.observe(
 </strong>	this.selectionLength,
 	(length) => {
-		// This call will be executed, initially and on each change of the state
+		// This call will be executed, initially and on each change of the specific value that this observer provides.
+        // This means that this will only be executed when the length changed. Not if the value was replaced with a new value value with the exact same length.
 		console.log("Length of selection is now ", length)
 	}
 );
