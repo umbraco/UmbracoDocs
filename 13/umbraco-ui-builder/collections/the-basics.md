@@ -124,7 +124,7 @@ By default, in Umbraco UI Builder any entity that is deleted via the Umbraco UI 
 
 ### **SetDeletedProperty(Lambda deletedPropertyExpression) : CollectionConfigBuilder&lt;TEntityType&gt;**
 
-Sets which property of our entity to use as the deleted property flag. Property must be of type `boolean` or `int`. When a deleted property is set, any delete actions will set the deleted flag instead of actually deleting the entity. For `boolean` based properties, deleted entities will have a value of `True` when deleted. For `int` based properties, deleted entities will have a UTC Unix timestamp value of the date the entity was deleted. In addition, any fetch actions will also pre-filter out any deleted entities.
+Sets which property of our entity to use as the deleted property flag. Property must be of type `boolean` or `int`. When a deleted property is set, any delete actions will set the deleted flag instead of deleting the entity. For `boolean` based properties, deleted entities will have a value of `True` when deleted. For `int` based properties, deleted entities will have a UTC Unix timestamp value of the date the entity was deleted. In addition, any fetch actions will also pre-filter out any deleted entities.
 
 ````csharp
 // Example
