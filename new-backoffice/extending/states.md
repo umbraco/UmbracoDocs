@@ -48,7 +48,7 @@ The example below creates a State and then turns the whole state into an Observa
 
 The value of a state can be changed via the `setValue` method. This replaces the current data with new data.
 
-The following example shows how to change the value of the state to hold `item2` and `item3`. As the example extends the example from above, this then means that `item1` is no longer part of the value of this state.
+The following example shows how to change the value of the state to hold `item2` and `item3`. As the example extends the example from above, it means that `item1` is no longer part of the value of this state.
 
 <pre class="language-typescript"><code class="lang-typescript">import { UmbArrayState } from '@umbraco-cms/backoffice/observable-api';
 <strong>
