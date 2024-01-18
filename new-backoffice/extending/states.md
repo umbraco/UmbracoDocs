@@ -30,13 +30,13 @@ While observing all changes will result in the callback being executed.
 The example below creates a State and then turns the whole state into an Observable, which then can be observed.
 
 <pre class="language-typescript"><code class="lang-typescript">import { UmbArrayState } from '@umbraco-cms/backoffice/observable-api';
-<strong>
-</strong><strong>...
-</strong><strong>
-</strong><strong>this.#selectionState = UmbArrayState&#x3C;string>(['item1', 'item2']);
+
+<strong>...
+</strong>
+<strong>this.#selectionState = UmbArrayState&#x3C;string>(['item1', 'item2']);
 </strong>this.selection = this.#selectionState.asObservable();
-<strong>
-</strong><strong>this.observe(
+
+<strong>this.observe(
 </strong>	this.selection,
 	(selection) => {
 		// This call will be executed initially and on each change of the state
@@ -51,27 +51,27 @@ The value of a state can be changed via the `setValue` method. This replaces the
 The following example shows how to change the value of the state to hold `item2` and `item3`. As the example extends the example from above, it means that `item1` is no longer part of the value of this state.
 
 <pre class="language-typescript"><code class="lang-typescript">import { UmbArrayState } from '@umbraco-cms/backoffice/observable-api';
-<strong>
-</strong><strong>...
-</strong><strong>
-</strong>this.#selectionState.setValue(['item2', 'item3']);
-<strong>
+
+<strong>...
+</strong>
+this.#selectionState.setValue(['item2', 'item3']);
+
 </code></pre>
 
-### Observe part of a state
+**Observe part of a state**
 
 With the `asObservablePart` method, you can set up an Observable that provides a transformed outcome, based on the State.
 
-<pre class="language-typescript"><code class="lang-typescript">this.selectionLength = this.#selectionState.asObservablePart(data => data.length);
-<strong>
-</strong><strong>this.observe(
-</strong>	this.selectionLength,
-	(length) => {
-		// This call will be executed, initially and on each change of the specific value that this observer provides.
+```typescript
+this.selectionLength = this.#selectionState.asObservablePart(data => data.length);
+
+this.observe(
+    this.selectionLength, (length) => {
+        // This call will be executed, initially and on each change of the specific value that this observer provides.
         // This means that this will only be executed when the length changed. Not if the value was replaced with a new value value with the exact same length.
-		console.log("Length of selection is now ", length)
+        console.log("Length of selection is now ", length)
 	}
 );
-</code></pre>
+```
 
 In the above example, the `asObservablePart` mapping function will be executed every time there is a change to the State. If the result of the method is different than before it will trigger an update to its observers.
