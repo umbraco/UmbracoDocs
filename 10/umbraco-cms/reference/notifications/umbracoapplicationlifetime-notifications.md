@@ -72,7 +72,7 @@ public class UmbracoApplicationNotificationHandler : INotificationHandler<Umbrac
         Triggered when the application is starting after all <code>IComponents</code> are initialized but before any incoming requests are accepted.<br />
       <ol>
         <li>RuntimeLevel: Gets the runtime level.</li>
-        <li>IsRestarting: Gets a value indicating whether Umbraco is restarting (e.g. after an install or upgrade).</li>
+        <li>IsRestarting: Gets a value indicating whether Umbraco is restarting (for example after an install or upgrade).</li>
       </ol>
     </td>
   </tr>
@@ -87,7 +87,7 @@ public class UmbracoApplicationNotificationHandler : INotificationHandler<Umbrac
     <td>
       Triggered when the application has fully started and is accepting incoming requests.<br />
       <ol>
-        <li>IsRestarting: Gets a value indicating whether Umbraco is restarting (e.g. after an install or upgrade).</li>
+        <li>IsRestarting: Gets a value indicating whether Umbraco is restarting (for example after an install or upgrade).</li>
       </ol>
     </td>
   </tr>
@@ -102,7 +102,7 @@ public class UmbracoApplicationNotificationHandler : INotificationHandler<Umbrac
     <td>
       Triggered when the application is performing a graceful shutdown after all <code>IComponents</code> are terminated.<br />
       <ol>
-        <li>IsRestarting: Gets a value indicating whether Umbraco is restarting (e.g. after an install or upgrade).</li>
+        <li>IsRestarting: Gets a value indicating whether Umbraco is restarting (for example after an install or upgrade).</li>
       </ol>
     </td>
   </tr>
@@ -117,7 +117,7 @@ public class UmbracoApplicationNotificationHandler : INotificationHandler<Umbrac
     <td>
       Triggered when the application has performed a graceful shutdown.<br />
       <ol>
-        <li>IsRestarting: Gets a value indicating whether Umbraco is restarting (e.g. after an install or upgrade).</li>
+        <li>IsRestarting: Gets a value indicating whether Umbraco is restarting (for example after an install or upgrade).</li>
       </ol>
     </td>
   </tr>
