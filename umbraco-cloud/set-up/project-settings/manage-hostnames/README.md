@@ -41,19 +41,23 @@ The following Records will become obsolete in the near future. Please refrain fr
 * A Records
   * `104.19.191.28`
   * `104.19.208.28`
+  * `104.17.17.9`
+  * `104.17.18.9`
 * AAAA Records
   * `2606:4700::6813:bf1c`
   * `2606:4700::6813:d01c`
+  * `2606:4700:7::7d`
+  * `2a06:98c1:58::7d`
   
 If you are using the above Records please consider changing them to the new Records below
 </details>
 
 * A Records to either or both IPv4 addresses:
-  * `104.17.17.9`
-  * `104.17.18.9`
+  * `162.159.140.127`
+  * `172.66.0.125`
 * Optionally, AAAA Records to either or both IPv6 addresses (to support IPv6 connectivity):
-  * `2606:4700::6811:1209`
-  * `2606:4700::6811:1109`
+  * `2606:4700:7::7d`
+  * `2a06:98c1:58::7d`
 
 {% hint style="info" %}
 Once you have updated your DNS, we recommend that you check if the correct records are being picked up using a site like [whatsmydns.net](https://www.whatsmydns.net/) before adding the hostname on Umbraco Cloud.
