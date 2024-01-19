@@ -6,7 +6,9 @@ description: Creating Dictionary Items in Umbraco
 
 Depending on how your site is set up, not all content is edited through the **Content** section. There might be some text in your templates or macros that needs translation. Using Dictionary Items, you can store a value for each language. Dictionary Items have a unique key that is used to fetch the value of the Dictionary Item.
 
-Dictionary Items can be managed from the **Translation** section. Let's take a look at an example. In this example, we will translate "Welcome to Umbraco" from within the template and add it to the dictionary: ![Dictionary Item](../../../../10/umbraco-cms/fundamentals/data/images/dictionary-item.png)
+Dictionary Items can be managed from the **Translation** section. Let's take a look at an example. In this example, we will translate "Welcome to Umbraco" from within the template and add it to the dictionary:&#x20;
+
+<figure><img src="../../../../10/umbraco-cms/fundamentals/data/images/dictionary-item.png" alt=""><figcaption></figcaption></figure>
 
 ## Adding a Dictionary Item
 
@@ -55,7 +57,27 @@ It will only be possible to edit the language(s) that the given user has access 
 Which language a user has access to is determined by the "Language permissions" set on the User Group. Learn more about this feature in the [Users](users.md#creating-a-user-group) article.
 {% endhint %}
 
-## Fetching Dictionary Values
+## Using Dictionary Values in Document Types
+
+In some cases, you might want to render the dictionary values in the Document Type to display the labels depending on the language configured for the logged-in user.
+
+To use dictionary values in the Document Type, follow these steps:
+
+1. Go to the **Settings** section.
+2. Open the Document Type where you want to use the Dictionary value.
+3. Locate the label and type `#MyDictionaryKey`. For example: `#Welcome` or `#WelcomeDescription`.
+
+<figure><img src="../../.gitbook/assets/Using_Dictionary_Value.jpg" alt=""><figcaption><p>Using Dictionary Value in Document Type</p></figcaption></figure>
+
+4. Click **Save**.
+5. Go to the **Content** section.
+6. View the content node using the Welcome property. The property will display the dictionary value per the user's configured backoffice language.
+
+{% hint style="info" %}
+You can translate tabs and property groups in the backoffice as well. For more information, see [How to Translate Umbraco Backoffice Document Types](https://www.youtube.com/embed/OayHhOf47LA?si=iRZ7NE-ckv9LjrSv) video.
+{% endhint %}
+
+## Fetching Dictionary Values in the Template
 
 To fetch dictionary values in the template, replace the text with the following snippet:
 
