@@ -115,6 +115,25 @@ Part of the returned response will be the actual `deploymentId`. The response fr
 }
 ```
 
+{% swagger method="POST" path="/projects/{id}/deployments" baseUrl="https://api.cloud.umbraco.com/v1" summary="Create a new Deployment" %} {% swagger-description %} Creates a new deployment instance and returns a deployment id. {% endswagger-description %}
+
+{% swagger-parameter in="path" name="id" type="String" required="true" %} GUID of the project {% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Umbraco-Cloud-Api-Key" type="String" required="true" %} The api key you need to create a deployment {% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="Content item" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="401: Unauthorized" description="Missing permissions after protection is set up" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="404: Not Found" description="Content item not found" %}
+
+{% endswagger-response %} {% endswagger %}
+
+
 ### Upload zip source file
 
 To deploy content to the Umbraco Cloud repository, you need to perform an HTTP POST request to the Umbraco Cloud API. The deployment content should be packaged as a ZIP file, which must mirror the expected structure of the Umbraco Cloud repository. This ZIP file should include all relevant files such as project and solution files, and compiled frontend code. If your setup includes a frontend project with custom elements, the build artifacts from that project should also be included in the ZIP file, and placed in the appropriate directory within the repository structure.
