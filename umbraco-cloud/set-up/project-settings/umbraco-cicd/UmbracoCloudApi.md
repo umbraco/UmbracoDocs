@@ -123,7 +123,7 @@ Part of the returned response will be the actual `deploymentId`. The response fr
 
 {% swagger-parameter in="header" name="Umbraco-Cloud-Api-Key" type="String" required="true" %} The api key you need to create a deployment {% endswagger-parameter %}
 
-{% swagger-response status="200: OK" description="Content item" %}
+{% swagger-response status="201: Created" description="Deployment has been created and is waiting for the next steps" %}
 ```json
 {
     "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
@@ -138,16 +138,13 @@ Part of the returned response will be the actual `deploymentId`. The response fr
 }
 ```
 {% endswagger-response %}
-
-{% swagger-response status="401: Unauthorized" description="Missing permissions or missing Umbraco-Cloud-Api-Key header" %}
+{% swagger-response status="400: Bad Request" description="ProblemDetails" %}
 
 {% endswagger-response %}
+{% swagger-response status="401: Unauthorized" description="ProblemDetails" %}
 
-{% swagger-response status="404: Not Found" description="Project not found" %}
-
-{% endswagger-response %} 
-
-{% swagger-response status="409: Conflict" description="Project state does not allow " %}
+{% endswagger-response %}
+{% swagger-response status="409: Conflict" description="ProblemDetails" %}
 
 {% endswagger-response %} {% endswagger %}
 
@@ -186,8 +183,16 @@ curl -s -X POST $url \
     --form "file=@$file"
 ```
 
-The response of this call will be the same deployment object (in JSON) as when creating a new deployment, but the deploymentState should now be 'Pending':
+{% swagger method="POST" path="/projects/{id}/deployments/{deploymentId}/package" baseUrl="https://api.cloud.umbraco.com/v1" summary="Upload zip source file" %} {% swagger-description %} Upload src Package to be deployed for specified deployment id {% endswagger-description %}
 
+{% swagger-parameter in="path" name="id" type="String" required="true" %} GUID of the project {% endswagger-parameter %}
+{% swagger-parameter in="path" name="deploymentId" type="String" required="true" %} GUID of the deployment {% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Umbraco-Cloud-Api-Key" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
+
+{% swagger-parameter in="form" name="file" type="string" format="binary" required="true" %} A zip file of your repository {% endswagger-parameter %}
+{% swagger-request %}{% endswagger-request %}
+{% swagger-response status="202: Accepted" description="Deployment has been created" %}
 ```json
 {
     "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
@@ -201,39 +206,28 @@ The response of this call will be the same deployment object (in JSON) as when c
     "completed": null
 }
 ```
-
-{% swagger method="POST" path="/projects/{id}/deployments/{deploymentId}/package" baseUrl="https://api.cloud.umbraco.com/v1" summary="Upload zip source file" %} {% swagger-description %} Creates a new deployment instance and returns a deployment id. {% endswagger-description %}
-
-{% swagger-parameter in="path" name="id" type="String" required="true" %} GUID of the project {% endswagger-parameter %}
-
-{% swagger-parameter in="header" name="Umbraco-Cloud-Api-Key" type="String" required="true" %} The api key you need to create a deployment {% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="Content item" %}
+{% endswagger-response %}
+{% swagger-response status="400: Bad Request" description="ProblemDetails" %}
 ```json
 {
-    "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
-    "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
-    "projectAlias": "",
-    "deploymentState": "Created",
-    "updateMessage": "",
-    "errorMessage": "",
-    "created": "2023-05-02T07:16:46.4183912",
-    "lastModified": "2023-05-02T07:16:48.8544387",
-    "completed": null
+
+}
+```
+{}
+{% endswagger-response %}
+{% swagger-response status="404: Not found" description="ProblemDetails" %}
+```json
+{
+
 }
 ```
 {% endswagger-response %}
+{% swagger-response status="409: Conflict" description="ProblemDetails" %}
+```json
+{
 
-{% swagger-response status="401: Unauthorized" description="Missing permissions or missing Umbraco-Cloud-Api-Key header" %}
-
-{% endswagger-response %}
-
-{% swagger-response status="404: Not Found" description="Project not found" %}
-
-{% endswagger-response %} 
-
-{% swagger-response status="409: Conflict" description="Project state does not allow " %}
-
+}
+```
 {% endswagger-response %} {% endswagger %}
 
 ### Start Deployment
@@ -254,6 +248,17 @@ curl -s -X PATCH $url \
 
 The response of this call will be the same deployment object (in JSON) as when creating a new deployment, but the deploymentState should now be 'Queued':
 
+
+{% swagger method="POST" path="/projects/{id}/deployments/{deploymentId}/package" baseUrl="https://api.cloud.umbraco.com/v1" summary="Upload zip source file" %} {% swagger-description %} Upload src Package to be deployed for specified deployment id {% endswagger-description %}
+
+{% swagger-parameter in="path" name="id" type="String" required="true" %} GUID of the project {% endswagger-parameter %}
+{% swagger-parameter in="path" name="deploymentId" type="String" required="true" %} GUID of the deployment {% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Umbraco-Cloud-Api-Key" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="deploymentState" type="string" required="true" %} Value must be "Queued" {% endswagger-parameter %}
+
+{% swagger-response status="202: Accepted" description="Deployment has been created" %}
 ```json
 {
     "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
@@ -267,6 +272,29 @@ The response of this call will be the same deployment object (in JSON) as when c
     "completed": null
 }
 ```
+{% endswagger-response %}
+{% swagger-response status="400: Bad Request" description="ProblemDetails" %}
+```json
+{
+
+}
+```
+{}
+{% endswagger-response %}
+{% swagger-response status="404: Not found" description="ProblemDetails" %}
+```json
+{
+
+}
+```
+{% endswagger-response %}
+{% swagger-response status="409: Conflict" description="ProblemDetails" %}
+```json
+{
+
+}
+```
+{% endswagger-response %} {% endswagger %}
 
 ### Get Deployment status
 
