@@ -117,19 +117,37 @@ Part of the returned response will be the actual `deploymentId`. The response fr
 
 {% swagger method="POST" path="/projects/{id}/deployments" baseUrl="https://api.cloud.umbraco.com/v1" summary="Create a new Deployment" %} {% swagger-description %} Creates a new deployment instance and returns a deployment id. {% endswagger-description %}
 
+{% swagger-parameter in="body" name="commitMessage" type="String" required="true" %} Commit message you want in cloud for this deployment {% endswagger-parameter %}
+
 {% swagger-parameter in="path" name="id" type="String" required="true" %} GUID of the project {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Umbraco-Cloud-Api-Key" type="String" required="true" %} The api key you need to create a deployment {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Content item" %}
+```json
+{
+    "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
+    "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
+    "projectAlias": "",
+    "deploymentState": "Created",
+    "updateMessage": "",
+    "errorMessage": "",
+    "created": "2023-05-02T07:16:46.4183912",
+    "lastModified": "2023-05-02T07:16:48.8544387",
+    "completed": null
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="401: Unauthorized" description="Missing permissions or missing Umbraco-Cloud-Api-Key header" %}
 
 {% endswagger-response %}
 
-{% swagger-response status="401: Unauthorized" description="Missing permissions after protection is set up" %}
+{% swagger-response status="404: Not Found" description="Project not found" %}
 
-{% endswagger-response %}
+{% endswagger-response %} 
 
-{% swagger-response status="404: Not Found" description="Content item not found" %}
+{% swagger-response status="409: Conflict" description="Project state does not allow " %}
 
 {% endswagger-response %} {% endswagger %}
 
@@ -183,6 +201,40 @@ The response of this call will be the same deployment object (in JSON) as when c
     "completed": null
 }
 ```
+
+{% swagger method="POST" path="/projects/{id}/deployments/{deploymentId}/package" baseUrl="https://api.cloud.umbraco.com/v1" summary="Upload zip source file" %} {% swagger-description %} Creates a new deployment instance and returns a deployment id. {% endswagger-description %}
+
+{% swagger-parameter in="path" name="id" type="String" required="true" %} GUID of the project {% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Umbraco-Cloud-Api-Key" type="String" required="true" %} The api key you need to create a deployment {% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="Content item" %}
+```json
+{
+    "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
+    "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
+    "projectAlias": "",
+    "deploymentState": "Created",
+    "updateMessage": "",
+    "errorMessage": "",
+    "created": "2023-05-02T07:16:46.4183912",
+    "lastModified": "2023-05-02T07:16:48.8544387",
+    "completed": null
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="401: Unauthorized" description="Missing permissions or missing Umbraco-Cloud-Api-Key header" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="404: Not Found" description="Project not found" %}
+
+{% endswagger-response %} 
+
+{% swagger-response status="409: Conflict" description="Project state does not allow " %}
+
+{% endswagger-response %} {% endswagger %}
 
 ### Start Deployment
 
