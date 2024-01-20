@@ -213,7 +213,6 @@ curl -s -X POST $url \
 
 }
 ```
-{}
 {% endswagger-response %}
 {% swagger-response status="404: Not found" description="ProblemDetails" %}
 ```json
@@ -249,7 +248,7 @@ curl -s -X PATCH $url \
 The response of this call will be the same deployment object (in JSON) as when creating a new deployment, but the deploymentState should now be 'Queued':
 
 
-{% swagger method="POST" path="/projects/{id}/deployments/{deploymentId}/package" baseUrl="https://api.cloud.umbraco.com/v1" summary="Upload zip source file" %} {% swagger-description %} Upload src Package to be deployed for specified deployment id {% endswagger-description %}
+{% swagger method="PATCH" path="/projects/{id}/deployments/{deploymentId}" baseUrl="https://api.cloud.umbraco.com/v1" summary="Start Deployment" %} {% swagger-description %} Upload src Package to be deployed for specified deployment id {% endswagger-description %}
 
 {% swagger-parameter in="path" name="id" type="String" required="true" %} GUID of the project {% endswagger-parameter %}
 {% swagger-parameter in="path" name="deploymentId" type="String" required="true" %} GUID of the deployment {% endswagger-parameter %}
