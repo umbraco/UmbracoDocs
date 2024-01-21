@@ -62,7 +62,7 @@ curl -s -X GET $url -H "Umbraco-Cloud-Api-Key: $apiKey"
 You will need to call these endpoints to be able to sync you repository with the current state of the repository in cloud.
 
 The order needs to be:
-1. [Create Deployment](#get-deployments)
+1. [Get Deployments](#get-deployments)
 2. [Get Deployment diff](#get-deployment-diff)
 
 
@@ -147,6 +147,7 @@ curl -s -w "%{http_code}" -L -o "$downloadFolder/git-patch.diff" -X GET $url \
 ### Cloud Deployment
 
 You will need to call these endpoints to be able to create and complete a deployment trough the CI/CD Flow api.
+
 The order needs to be:
 1. [Create Deployment](#create-the-deployment)
 2. [Upload src package](#upload-zip-src-file)
@@ -154,25 +155,19 @@ The order needs to be:
 4. [Get deployment status](#get-deployment-status)
 
 {% swagger method="POST" path="/projects/{id}/deployments" baseUrl="https://api.cloud.umbraco.com/v1" summary="Create the deployment" %} {% swagger-description %}
-The Create Deployment endpoint initiates a new deployment and returns a unique `deploymentId`. This call serves as the initial step in the deployment process. It requires a `projectId` specified in the URL path and a commit message included in the request body. Essentially, this establishes the metadata necessary for initiating the deployment process. If a deployment is already underway, initiating a new one will be possible but should be avoided.
+The Create Deployment endpoint initiates a new deployment and returns a unique `deploymentId`. 
+The request body should contain a simple JSON object with the commit message, see example below.
 
-To create a deployment, you'll need to make an HTTP POST request. The request body should contain a simple JSON object with the commit message.
-
-
- {%endswagger-description %}
+{%endswagger-description %}
 
 {% swagger-parameter in="path" name="id" type="String" required="true" %} GUID of the project {% endswagger-parameter %}
 {% swagger-parameter in="header" name="Content-Type" type="String" required="true" %} application/json {% endswagger-parameter %}
 {% swagger-parameter in="header" name="Umbraco-Cloud-Api-Key" type="String" required="true" %} The api key you need to create a deployment {% endswagger-parameter %}
 {% swagger-parameter in="body" name="commitMessage" type="String" required="true" %} The commit message you want in the cloud repository for this deployment.
-```json
-{
-    "commitMessage": "New dashboard for customer sales numbers"
-}
-```
+
 {% endswagger-parameter %}
-{% swagger-response status="201: Created" description="Deployment has been created and is waiting for the next steps" %}
-Part of the returned response will be the actual `deploymentId`. The response from the API should be an HTTP 201 Created response including a `deploymentId`. This ID can be stored in the pipeline variables so it can be used in later steps.
+{% swagger-response status="201: Created" description="Deployment has been created" %}
+Part of the returned response will be the actual `deploymentId`. This ID can be stored in the pipeline variables so it can be used in later steps.
 
 ```json
 {
@@ -189,7 +184,6 @@ Part of the returned response will be the actual `deploymentId`. The response fr
 ```
 {% endswagger-response %}
 {% swagger-response status="400: Bad Request" description="ProblemDetails" %}
-
 {% endswagger-response %}
 {% swagger-response status="401: Unauthorized" description="ProblemDetails" %}
 {% endswagger-response %}
@@ -200,6 +194,12 @@ For all error responses [see possiple errors](#possible-errors) for a general de
 {% endswagger-response %} 
 {% endswagger %}
 
+Sample of a request body:
+```json
+{
+    "commitMessage": "New dashboard for customer sales numbers"
+}
+```
 
 {% tabs %}
 {% tab title="Powershell" %}
@@ -272,25 +272,6 @@ For all error responses [see possiple errors](#possible-errors) for a general de
 {% endswagger-response %} 
 {% endswagger %}
 
-To deploy content to the Umbraco Cloud repository, you need to perform an HTTP POST request to the Umbraco Cloud API. The deployment content should be packaged as a ZIP file, which must mirror the expected structure of the Umbraco Cloud repository. This ZIP file should include all relevant files such as project and solution files, and compiled frontend code. If your setup includes a frontend project with custom elements, the build artifacts from that project should also be included in the ZIP file, and placed in the appropriate directory within the repository structure.
-
-The ZIP file must be structured the same way as described in the `Readme.md` included in all cloud projects starting from Umbraco 9. This also means if you need to change the name and/or structure of the project, you should follow the guide in the same Readme.
-
-By adhering to these guidelines, you ensure that the uploaded content is an exact match with what is expected in the Umbraco Cloud repository, facilitating a seamless deployment process.
-
-The purpose of packaging your content into a ZIP file is to replace the existing content in the Umbraco Cloud repository upon unpackaging. This ensures that the repository is updated with the latest version of your project files.
-
-Make sure your ZIP archive does not contain .git folder. If you're using the `.zipignore` file, you can add the following line `.git/*` to exclude it. 
-
-#### A note about .gitignore
-
-Umbraco Cloud environments are using git internally. This means you should be careful about the .gitignore file you add to the package. If you have “git ignored” build js assets locally, you need to handle this so that this is not being ignored in the cloud repository.
-
-**Note:** If the `.gitignore` file within the ZIP package does not exclude bin/ and obj/ directories, these will also be committed to the Umbraco Cloud repository.
-
-**Best Practice:** If you have frontend assets your local repository's .gitignore file will most likely differ from the one intended for the Umbraco Cloud repository, it's advisable to create a separate .cloud\_gitignore file. Include this file in the ZIP package and rename it to .gitignore before packaging. This ensures that only the necessary files and directories are uploaded and finally committed to the Umbraco Cloud repository.
-
-
 ```sh
 # Curl example
 ...
@@ -302,19 +283,33 @@ curl -s -X POST $url \
     --form "file=@$file"
 ```
 
+### Zip-Package requirements
+The deployment content should be packaged as a ZIP file, which must mirror the expected structure of the Umbraco Cloud repository. This ZIP file should include all relevant files such as project and solution files, and compiled frontend code. If your setup includes a frontend project with custom elements, the build artifacts from that project should also be included in the ZIP file, and placed in the appropriate directory within the repository structure.
+
+The ZIP file must be structured the same way as described in the `Readme.md` included in all cloud projects starting from Umbraco 9. This also means if you need to change the name and/or structure of the project, you should follow the guide in the same Readme.
+
+By adhering to these guidelines, you ensure that the uploaded content is an exact match with what is expected in the Umbraco Cloud repository, facilitating a seamless deployment process.
+
+The purpose of packaging your content into a ZIP file is to replace the existing content in the Umbraco Cloud repository upon unpackaging. This ensures that the repository is updated with the latest version of your project files.
+
+Make sure your ZIP archive does not contain .git folder. You should do this by excluding `.git/*` when creating the zip-package. If you're using the `cloud.zipignore` file from the samples, the git-folder is already excluded. 
+
+#### A note about .gitignore
+
+Umbraco Cloud environments are using git internally. This means you should be careful about the `.gitignore` file you add to the package. If you have “git ignored” build js assets locally, you need to handle this so that this is not being ignored in the cloud repository.
+
+**Note:** If the `.gitignore` file within the ZIP package does not exclude bin/ and obj/ directories, these will also be committed to the Umbraco Cloud repository.
+
+**Best Practice:** If you have frontend assets your local repository's .gitignore file will most likely differ from the one intended for the Umbraco Cloud repository, it's advisable to create a separate .cloud\_gitignore file. Include this file in the ZIP package and rename it to .gitignore before packaging. This ensures that only the necessary files and directories are uploaded and finally committed to the Umbraco Cloud repository. *The samples we provide uses this approach.*
+
 {% swagger method="PATCH" path="/projects/{id}/deployments/{deploymentId}" baseUrl="https://api.cloud.umbraco.com/v1" summary="Start Deployment" %} {% swagger-description %} Upload src Package to be deployed for specified deployment id {% endswagger-description %}
 
 {% swagger-parameter in="path" name="id" type="String" required="true" %} GUID of the project {% endswagger-parameter %}
-{% swagger-parameter in="path" name="deploymentId" type="String" required="true" %} GUID of the deployment {% endswagger-parameter %}
+{% swagger-parameter in="path" name="deploymentId" type="String" required="true" %} GUID of the deployment obtained from the [Create the deployment](#create-the-deployment) endpoint {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Umbraco-Cloud-Api-Key" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="deploymentState" type="string" required="true" %} Value must be "Queued".
-```json
-{
-    "deploymentState": "Queued"
-}
-```
+{% swagger-parameter in="body" name="deploymentState" type="string" required="true" %} Value must be "Queued". The request body should contain a simple JSON object with the deploymentState, see example below.
  {% endswagger-parameter %}
 
 {% swagger-response status="202: Accepted" description="Deployment has been created" %}
@@ -344,6 +339,16 @@ For all error responses [see possiple errors](#possible-errors) for a general de
 {% endswagger-response %} 
 {% endswagger %}
 
+Sample of a request body:
+```json
+
+{
+  "deploymentState": "Queued"
+}
+```
+
+Invoke endpoint with curl:
+
 ```sh
 #Curl example
 ...
@@ -362,7 +367,7 @@ Deployments in Umbraco services can take varying amounts of time to complete. Th
  {% endswagger-description %}
 
 {% swagger-parameter in="path" name="id" type="String" required="true" %} GUID of the project {% endswagger-parameter %}
-{% swagger-parameter in="path" name="deploymentId" type="String" required="true" %} GUID of the deployment {% endswagger-parameter %}
+{% swagger-parameter in="path" name="deploymentId" type="String" required="true" %} GUID of the deployment obtained from the [Create the deployment](#create-the-deployment) endpoint {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Umbraco-Cloud-Api-Key" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
 {% swagger-parameter in="header" name="Content-Type" type="String" required="true" %} application/json {% endswagger-parameter %}
@@ -415,9 +420,8 @@ When interacting with the Umbraco Cloud API, you may encounter various HTTP stat
 | 409         | Conflict            | The state of the referenced deployment is not ready for the work you are requesting |
 | 500         | InternalServerError | InternalServerError                                                                 |
 
-Most errors have a response body that corresponds to this JSON, and the “detail” field will have a more complete error message.
-
 ### ProblemDetails model
+Most errors have a response body that corresponds to this JSON, and the “detail” field will have a more complete error message.
 
 ```json
 {
