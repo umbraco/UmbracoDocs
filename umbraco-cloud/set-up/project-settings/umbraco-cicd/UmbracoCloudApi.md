@@ -57,14 +57,18 @@ curl -s -X GET $url -H "Umbraco-Cloud-Api-Key: $apiKey"
 {% endtabs %}
 
 ## Endpoints
+
+The endpoints have been divided into two section: [Cloud Sync](#cloud-sync) and [Cloud Deployment](#cloud-deployment). 
+This also mimics how our pipeline samples and scripts are structured.
+[You can find our samples here.](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples)
+
 ### Cloud Sync
 
 You will need to call these endpoints to be able to sync you repository with the current state of the repository in cloud.
 
-The order needs to be:
+The order could be:
 1. [Get Deployments](#get-deployments)
 2. [Get Deployment diff](#get-deployment-diff)
-
 
 {% swagger method="GET" path="/projects/{id}/deployments" baseUrl="https://api.cloud.umbraco.com/v1" summary="Get Deployments" %} {% swagger-description %} The endpoint lets you retrieve a list of completed deployments. It can only list deployments that has been run through the api. {% endswagger-description %}
 {% swagger-parameter in="path" name="id" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
@@ -115,7 +119,8 @@ latestDeploymentId=$(echo $response | jq -r '.deployments[0].deploymentId')
 
 ```
 
-{% swagger method="GET" path="/projects/{id}/deployments/{olderDeploymentId}/diff" baseUrl="https://api.cloud.umbraco.com/v1" summary="Get Deployment diff" %} {% swagger-description %} Sometimes updates are done directly on the Umbraco Cloud repository. We encourage you to not do any actual work there, but auto-upgrades and environment changes will affect the umbraco-cloud-git-repos. To keep track of such changes, you can use the 'Get Deployment Diff' API. This API endpoint will provide you with a git-patch file detailing the changes between a specific deployment and the current state of the repository. To make this API call, you'll need to include both the `projectId` and the `deploymentId` of the deployment you want to check for differences against. This is a standard HTTP GET request. {% endswagger-description %}
+{% swagger method="GET" path="/projects/{id}/deployments/{olderDeploymentId}/diff" baseUrl="https://api.cloud.umbraco.com/v1" summary="Get Deployment diff" %} 
+{% swagger-description %} This API endpoint will provide you with a git-patch file detailing the changes between a specific deployment and the current state of the repository. {% endswagger-description %}
 {% swagger-parameter in="path" name="id" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
 {% swagger-parameter in="path" name="olderDeploymentId" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
 {% swagger-parameter in="header" name="Umbraco-Cloud-Api-Key" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
@@ -296,7 +301,7 @@ Make sure your ZIP archive does not contain .git folder. You should do this by e
 
 #### A note about .gitignore
 
-Umbraco Cloud environments are using git internally. This means you should be careful about the `.gitignore` file you add to the package. If you have “git ignored” build js assets locally, you need to handle this so that this is not being ignored in the cloud repository.
+Umbraco Cloud environments are using git internally. This means you should be careful about the `.gitignore` file you add to the package. If you have “git ignored” build java script assets locally, you need to handle this so that this is not being ignored in the cloud repository.
 
 **Note:** If the `.gitignore` file within the ZIP package does not exclude bin/ and obj/ directories, these will also be committed to the Umbraco Cloud repository.
 
@@ -309,7 +314,7 @@ Umbraco Cloud environments are using git internally. This means you should be ca
 
 {% swagger-parameter in="header" name="Umbraco-Cloud-Api-Key" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="deploymentState" type="string" required="true" %} Value must be "Queued". The request body should contain a simple JSON object with the deploymentState, see example below.
+{% swagger-parameter in="body" name="deploymentState" type="string" required="true" %} Value must be "Queued". The request body should contain a JSON object with the deploymentState, see example below.
  {% endswagger-parameter %}
 
 {% swagger-response status="202: Accepted" description="Deployment has been created" %}
