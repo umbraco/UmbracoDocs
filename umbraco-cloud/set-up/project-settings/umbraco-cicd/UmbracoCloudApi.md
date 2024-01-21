@@ -115,12 +115,20 @@ Part of the returned response will be the actual `deploymentId`. The response fr
 }
 ```
 
-{% swagger method="POST" path="/projects/{id}/deployments" baseUrl="https://api.cloud.umbraco.com/v1" summary="Create a new Deployment" %} {% swagger-description %} Creates a new deployment instance and returns a deployment id. {% endswagger-description %}
+{% swagger method="POST" path="/projects/{id}/deployments" baseUrl="https://api.cloud.umbraco.com/v1" summary="Creates a new deployment to project left most environment" %} {% swagger-description %}
+        Creates a new deployment to project left most environment. Deployment is created and identifier is returned to caller. Deployment information will be populated with additional information before being able to start.
+ {%endswagger-description %}
 
-{% swagger-parameter in="body" name="commitMessage" type="String" required="true" %} Commit message you want in cloud for this deployment {% endswagger-parameter %}
+{% swagger-parameter in="body" type="json" required="true" %} 
+```json
+{
+  "commitMessage": "Run 42"
+}
+```
+{% endswagger-parameter %}
 
 {% swagger-parameter in="path" name="id" type="String" required="true" %} GUID of the project {% endswagger-parameter %}
-
+{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %} application/json {% endswagger-parameter %}
 {% swagger-parameter in="header" name="Umbraco-Cloud-Api-Key" type="String" required="true" %} The api key you need to create a deployment {% endswagger-parameter %}
 
 {% swagger-response status="201: Created" description="Deployment has been created and is waiting for the next steps" %}
@@ -139,13 +147,13 @@ Part of the returned response will be the actual `deploymentId`. The response fr
 ```
 {% endswagger-response %}
 {% swagger-response status="400: Bad Request" description="ProblemDetails" %}
-
+[See possiple errors](#possible-errors)
 {% endswagger-response %}
 {% swagger-response status="401: Unauthorized" description="ProblemDetails" %}
-
+[See possiple errors](#possible-errors)
 {% endswagger-response %}
 {% swagger-response status="409: Conflict" description="ProblemDetails" %}
-
+Ususally happens due to a deployment is in progress
 {% endswagger-response %} {% endswagger %}
 
 
@@ -183,15 +191,18 @@ curl -s -X POST $url \
     --form "file=@$file"
 ```
 
-{% swagger method="POST" path="/projects/{id}/deployments/{deploymentId}/package" baseUrl="https://api.cloud.umbraco.com/v1" summary="Upload zip source file" %} {% swagger-description %} Upload src Package to be deployed for specified deployment id {% endswagger-description %}
+{% swagger method="POST" path="/projects/{id}/deployments/{deploymentId}/package" baseUrl="https://api.cloud.umbraco.com/v1" summary="Upload src Package to be deployed for specified deployment id" %} {% swagger-description %} Upload src Package to be deployed for specified deployment id {% endswagger-description %}
 
 {% swagger-parameter in="path" name="id" type="String" required="true" %} GUID of the project {% endswagger-parameter %}
+
 {% swagger-parameter in="path" name="deploymentId" type="String" required="true" %} GUID of the deployment {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Umbraco-Cloud-Api-Key" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
 
-{% swagger-parameter in="form" name="file" type="string" format="binary" required="true" %} A zip file of your repository {% endswagger-parameter %}
-{% swagger-request %}{% endswagger-request %}
+{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %} multipart/form-data {% endswagger-parameter %}
+{% swagger-parameter in="body" name="file" type="String" format="binary" required="true" %}
+
+{% endswagger-parameter %}
 {% swagger-response status="202: Accepted" description="Deployment has been created" %}
 ```json
 {
@@ -208,25 +219,13 @@ curl -s -X POST $url \
 ```
 {% endswagger-response %}
 {% swagger-response status="400: Bad Request" description="ProblemDetails" %}
-```json
-{
 
-}
-```
 {% endswagger-response %}
 {% swagger-response status="404: Not found" description="ProblemDetails" %}
-```json
-{
 
-}
-```
 {% endswagger-response %}
 {% swagger-response status="409: Conflict" description="ProblemDetails" %}
-```json
-{
 
-}
-```
 {% endswagger-response %} {% endswagger %}
 
 ### Start Deployment
@@ -273,26 +272,14 @@ The response of this call will be the same deployment object (in JSON) as when c
 ```
 {% endswagger-response %}
 {% swagger-response status="400: Bad Request" description="ProblemDetails" %}
-```json
-{
 
-}
-```
 {}
 {% endswagger-response %}
 {% swagger-response status="404: Not found" description="ProblemDetails" %}
-```json
-{
 
-}
-```
 {% endswagger-response %}
 {% swagger-response status="409: Conflict" description="ProblemDetails" %}
-```json
-{
 
-}
-```
 {% endswagger-response %} {% endswagger %}
 
 ### Get Deployment status
@@ -357,6 +344,33 @@ The response from this API call will return the same deployment object in JSON f
 }
 ```
 
+{% swagger method="GET" path="/projects/{id}/deployments/{deploymentId}" baseUrl="https://api.cloud.umbraco.com/v1" summary="Get Deployment Status" %} {% swagger-description %} Get the deployment by deployment id. Contains status and other information about the deployment {% endswagger-description %}
+
+{% swagger-parameter in="path" name="id" type="String" required="true" %} GUID of the project {% endswagger-parameter %}
+{% swagger-parameter in="path" name="deploymentId" type="String" required="true" %} GUID of the deployment {% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Umbraco-Cloud-Api-Key" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
+{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %} application/json {% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```json
+{
+    "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
+    "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
+    "projectAlias": "cicd-demo-site",
+    "deploymentState": "Completed",
+    "updateMessage":"Project information set\nDeployment pending\nDownloadUri set\nDeployment queued\nDeployment triggered\nDeployment started\nCheck blocking markers\nCreate updating marker\nGit Clone\nDownload update\nExtract Update\nChecking versions\nDeleting repository files\nCopying files to repository\nNuGet Restore\nDotnet Build\nGit Stage\nGit Commit\nGit Tag\nGit Push\nDelete updating marker\nDeployment successful",
+    "errorMessage": "",
+    "created": "2023-05-02T07:16:46.4183912",
+    "lastModified": "2023-05-02T07:20:48.8544387",
+    "completed": "2023-05-02T07:20:49.8544387"
+}
+```
+{% endswagger-response %}
+{% swagger-response status="404: Not found" description="ProblemDetails" %}
+
+{% endswagger-response %} {% endswagger %}
+
 ### Get Deployments
 
 The endpoint lets you retrieve a list of completed deployments. It can only list deployments that has been run throug the api.
@@ -405,6 +419,39 @@ Deployments are listed in descending order based on their creation timestamp.
 }
 ```
 
+{% swagger method="GET" path="/projects/{id}/deployments" baseUrl="https://api.cloud.umbraco.com/v1" summary="Get Deployments" %} {% swagger-description %} Lists all completed deployments registered for a project by project id. If no deployments are found, an empty list is returned. {% endswagger-description %}
+{% swagger-parameter in="path" name="id" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
+{% swagger-parameter in="header" name="Umbraco-Cloud-Api-Key" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
+{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %} application/json {% endswagger-parameter %}
+{% swagger-parameter in="query" name="skip" type="integer" required="false" %} If used, must be combined with the "take" query parameter {% endswagger-parameter %}
+{% swagger-parameter in="query" name="take" type="integer" required="false" %} If used, must be combined with the "skip" query parameter {% endswagger-parameter %}
+{% swagger-parameter in="query" name="includenulldeployments" type="boolean" required="false" %} Recommended to be set to false {% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="A list of completed deployment" %}
+```json
+{
+  "projectId": "abcdef12-cef8-4e92-8887-ceb123456789",
+  "deployments":
+    [
+      {
+        "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
+        "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
+        "projectAlias": "cicd-demo-site",
+        "deploymentState": "Completed",
+        "updateMessage": "...",
+        "errorMessage": "",
+        "created": "2023-05-02T07:16:46.4183912",
+        "lastModified": "2023-05-02T07:18:48.8544387",
+        "completed": "2023-05-02T07:22:48.8544387"
+      }
+    ]
+}
+```
+{% endswagger-response %}
+{% swagger-response status="400: Bad Request" description="ProblemDetails" %}
+
+{% endswagger-response %} {% endswagger %}
+
 ### Get Deployment diff
 
 Sometimes updates are done directly on the Umbraco Cloud repository. We encourage you to not do any actual work there, but auto-upgrades and environment changes will affect the umbraco-cloud-git-repos. To keep track of such changes, you can use the 'Get Deployment Diff' API. This API endpoint will provide you with a git-patch file detailing the changes between a specific deployment and the current state of the repository. To make this API call, you'll need to include both the `projectId` and the `deploymentId` of the deployment you want to check for differences against. This is a standard HTTP GET request.
@@ -434,9 +481,30 @@ fi
 
 The API response will vary based on whether or not there are changes to report. If no changes are detected, you'll receive an HTTP 204 No Content status. On the other hand, if there are changes, the API will return an HTTP 200 OK status along with a git-patch file as the content. This git-patch file can then be applied to your local repository to sync it with the changes.
 
+{% swagger method="GET" path="/projects/{id}/deployments/{olderDeploymentId}/diff" baseUrl="https://api.cloud.umbraco.com/v1" summary="Get Deployment diff" %} {% swagger-description %} Get diff for cloud-repository by deployment id. If there is a diff on the Umbraco cloud-repository, the diff will be returned as a git-patch file. If there is no diff, a 204 No Content will be returned. {% endswagger-description %}
+{% swagger-parameter in="path" name="id" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
+{% swagger-parameter in="path" name="olderDeploymentId" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
+{% swagger-parameter in="header" name="Umbraco-Cloud-Api-Key" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="A diff file is downloaded" %}
+
+{% endswagger-response %}
+{% swagger-response status="204: No Content" description="No diff to download" %}
+
+{% endswagger-response %}
+{% swagger-response status="404: Not Found" description="ProblemDetails" %}
+
+{% endswagger-response %} 
+{% swagger-response status="409: Conflict" description="ProblemDetails" %}
+
+{% endswagger-response %}
+{% endswagger %}
+
+
+
 ### Promote Deployment
 
-Currently, the feature to transition from a development environment to staging or live, and from staging to live, is pending implementation. In the meantime, you can manage these transitions manually through the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects) \[link to relevant page in docs.umbraco.com, e.g. the section “Utilizing the Pipeline” of the new page “How To Configure A Sample CI|CD Pipeline”]..
+Currently, the feature to transition from a development environment to staging or live, and from staging to live, is pending implementation. In the meantime, you can manage these transitions manually through the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects).
 
 ### Possible errors
 
@@ -452,10 +520,12 @@ When interacting with the Umbraco Cloud API, you may encounter various HTTP stat
 
 Most errors have a response body that corresponds to this JSON, and the “detail” field will have a more complete error message.
 
-```
+#### ProblemDetails model
+
+```json
 {
   “title”: string,
   “status”: number,
-  “detail”: string,
+  “detail”: string
 }
 ```
