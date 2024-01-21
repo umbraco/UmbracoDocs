@@ -59,7 +59,99 @@ curl -s -X GET $url -H "Umbraco-Cloud-Api-Key: $apiKey"
 ## Endpoints
 ### Cloud Sync
 
+You will need to call these endpoints to be able to sync you repository with the current state of the repository in cloud.
+
+The order needs to be:
+1. [Create Deployment](#get-deployments)
+2. [Get Deployment diff](#get-deployment-diff)
+
+
+{% swagger method="GET" path="/projects/{id}/deployments" baseUrl="https://api.cloud.umbraco.com/v1" summary="Get Deployments" %} {% swagger-description %} The endpoint lets you retrieve a list of completed deployments. It can only list deployments that has been run through the api. {% endswagger-description %}
+{% swagger-parameter in="path" name="id" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
+{% swagger-parameter in="header" name="Umbraco-Cloud-Api-Key" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
+{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %} application/json {% endswagger-parameter %}
+{% swagger-parameter in="query" name="skip" type="integer" required="false" %} If used, must be combined with the "take" query parameter {% endswagger-parameter %}
+{% swagger-parameter in="query" name="take" type="integer" required="false" %} If used, must be combined with the "skip" query parameter {% endswagger-parameter %}
+{% swagger-parameter in="query" name="includenulldeployments" type="boolean" required="false" %} Recommended to be set to false. With `includenulldeployments` set to true, you will get all completed deployments, including those that did not create any new changes in the cloud repository. {% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="A list of completed deployment" %}
+The response from this API call will return an object containing a list of deployment objects. The deployment-objects are consistent with the structure used in other API responses.
+Deployments are listed in descending order based on their creation timestamp.
+
+```json
+{
+  "projectId": "abcdef12-cef8-4e92-8887-ceb123456789",
+  "deployments":
+    [
+      {
+        "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
+        "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
+        "projectAlias": "cicd-demo-site",
+        "deploymentState": "Completed",
+        "updateMessage": "...",
+        "errorMessage": "",
+        "created": "2023-05-02T07:16:46.4183912",
+        "lastModified": "2023-05-02T07:18:48.8544387",
+        "completed": "2023-05-02T07:22:48.8544387"
+      }
+    ]
+}
+```
+{% endswagger-response %}
+{% swagger-response status="400: Bad Request" description="ProblemDetails" %}
+For all error responses [see possiple errors](#possible-errors) for a general description.
+{% endswagger-response %} 
+{% endswagger %}
+
+```sh
+# Curl example
+...
+url="https://api.cloud.umbraco.com/v1/projects/$projectId/deployments?skip=0&take=1&includenulldeployments=false"
+
+response=$(curl -s -X GET $url \
+    -H "Umbraco-Cloud-Api-Key: $apiKey" \
+    -H "Content-Type: application/json")
+latestDeploymentId=$(echo $response | jq -r '.deployments[0].deploymentId')
+
+```
+
+{% swagger method="GET" path="/projects/{id}/deployments/{olderDeploymentId}/diff" baseUrl="https://api.cloud.umbraco.com/v1" summary="Get Deployment diff" %} {% swagger-description %} Sometimes updates are done directly on the Umbraco Cloud repository. We encourage you to not do any actual work there, but auto-upgrades and environment changes will affect the umbraco-cloud-git-repos. To keep track of such changes, you can use the 'Get Deployment Diff' API. This API endpoint will provide you with a git-patch file detailing the changes between a specific deployment and the current state of the repository. To make this API call, you'll need to include both the `projectId` and the `deploymentId` of the deployment you want to check for differences against. This is a standard HTTP GET request. {% endswagger-description %}
+{% swagger-parameter in="path" name="id" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
+{% swagger-parameter in="path" name="olderDeploymentId" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
+{% swagger-parameter in="header" name="Umbraco-Cloud-Api-Key" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="Changes are detected and a diff file is downloaded" %}
+{% endswagger-response %}
+{% swagger-response status="204: No Content" description="No changes are detected and nothing to download" %}
+{% endswagger-response %}
+{% swagger-response status="404: Not Found" description="ProblemDetails" %}
+{% endswagger-response %} 
+{% swagger-response status="409: Conflict" description="ProblemDetails" %}
+{% endswagger-response %}
+{% swagger-response status="40x Status" description="ProblemDetails" %}
+For all error responses [see possiple errors](#possible-errors) for a general description.
+{% endswagger-response %} 
+{% endswagger %}
+
+```sh
+# Curl example
+url="https://api.cloud.umbraco.com/v1/projects/$projectId/deployments/$olderDeploymentId/diff"
+downloadFolder="tmp"
+mkdir -p $downloadFolder # ensure folder exists
+
+curl -s -w "%{http_code}" -L -o "$downloadFolder/git-patch.diff" -X GET $url \
+    -H "Umbraco-Cloud-Api-Key: $apiKey" \
+    -H "Content-Type: application/json"
+```
+
 ### Cloud Deployment
+
+You will need to call these endpoints to be able to create and complete a deployment trough the CI/CD Flow api.
+The order needs to be:
+1. [Create Deployment](#create-the-deployment)
+2. [Upload src package](#upload-zip-src-file)
+3. [Start deployment](#start-deployment)
+4. [Get deployment status](#get-deployment-status)
 
 {% swagger method="POST" path="/projects/{id}/deployments" baseUrl="https://api.cloud.umbraco.com/v1" summary="Create the deployment" %} {% swagger-description %}
 The Create Deployment endpoint initiates a new deployment and returns a unique `deploymentId`. This call serves as the initial step in the deployment process. It requires a `projectId` specified in the URL path and a commit message included in the request body. Essentially, this establishes the metadata necessary for initiating the deployment process. If a deployment is already underway, initiating a new one will be possible but should be avoided.
@@ -306,143 +398,12 @@ curl -s -X GET $url \
   -H "Content-Type: application/json"
 ```
 
-
-### Get Deployments
-
-The endpoint lets you retrieve a list of completed deployments. It can only list deployments that has been run throug the api.
-
-The API allows you to filter and limit the number of returned deployments using query parameters:
-- _Skip_ : optional, zero or positive integer
-- _Take_ : optional, zero or positive integer
-- _Includenulldeployments_ : optional, boolean, defaults to true
-
-The "skip" and "take" parameters, while optional, are always required to be used together.
-
-With `includenulldeployments` set to true, you will get all completed deployments, including those that did not create any new changes in the cloud repository.
-
-To fetch the list of deployments using a curl command, the syntax would be as follows:
-
-```sh
-...
-url="https://api.cloud.umbraco.com/v1/projects/$projectId/deployments?skip=0&take=1&includenulldeployments=false"
-
-response=$(curl -s -X GET $url \
-    -H "Umbraco-Cloud-Api-Key: $apiKey" \
-    -H "Content-Type: application/json")
-latestDeploymentId=$(echo $response | jq -r '.deployments[0].deploymentId')
-
-```
-The response from this API call will return an object containing a list of deployment objects. The deployment-objects are consistent with the structure used in other API responses.
-Deployments are listed in descending order based on their creation timestamp.
-
-```json
-{
-  "projectId": "abcdef12-cef8-4e92-8887-ceb123456789",
-  "deployments":
-    [
-      {
-        "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
-        "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
-        "projectAlias": "cicd-demo-site",
-        "deploymentState": "Completed",
-        "updateMessage": "...",
-        "errorMessage": "",
-        "created": "2023-05-02T07:16:46.4183912",
-        "lastModified": "2023-05-02T07:18:48.8544387",
-        "completed": "2023-05-02T07:22:48.8544387"
-      }
-    ]
-}
-```
-
-{% swagger method="GET" path="/projects/{id}/deployments" baseUrl="https://api.cloud.umbraco.com/v1" summary="Get Deployments" %} {% swagger-description %} Lists all completed deployments registered for a project by project id. If no deployments are found, an empty list is returned. {% endswagger-description %}
-{% swagger-parameter in="path" name="id" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
-{% swagger-parameter in="header" name="Umbraco-Cloud-Api-Key" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
-{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %} application/json {% endswagger-parameter %}
-{% swagger-parameter in="query" name="skip" type="integer" required="false" %} If used, must be combined with the "take" query parameter {% endswagger-parameter %}
-{% swagger-parameter in="query" name="take" type="integer" required="false" %} If used, must be combined with the "skip" query parameter {% endswagger-parameter %}
-{% swagger-parameter in="query" name="includenulldeployments" type="boolean" required="false" %} Recommended to be set to false {% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="A list of completed deployment" %}
-```json
-{
-  "projectId": "abcdef12-cef8-4e92-8887-ceb123456789",
-  "deployments":
-    [
-      {
-        "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
-        "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
-        "projectAlias": "cicd-demo-site",
-        "deploymentState": "Completed",
-        "updateMessage": "...",
-        "errorMessage": "",
-        "created": "2023-05-02T07:16:46.4183912",
-        "lastModified": "2023-05-02T07:18:48.8544387",
-        "completed": "2023-05-02T07:22:48.8544387"
-      }
-    ]
-}
-```
-{% endswagger-response %}
-{% swagger-response status="400: Bad Request" description="ProblemDetails" %}
-
-{% endswagger-response %} {% endswagger %}
-
-### Get Deployment diff
-
-Sometimes updates are done directly on the Umbraco Cloud repository. We encourage you to not do any actual work there, but auto-upgrades and environment changes will affect the umbraco-cloud-git-repos. To keep track of such changes, you can use the 'Get Deployment Diff' API. This API endpoint will provide you with a git-patch file detailing the changes between a specific deployment and the current state of the repository. To make this API call, you'll need to include both the `projectId` and the `deploymentId` of the deployment you want to check for differences against. This is a standard HTTP GET request.
-
-Using a curl command, fetching the potential differences would look like this:
-
-```sh
-url="https://api.cloud.umbraco.com/v1/projects/$projectId/deployments/$latestCompletedDeploymentId/diff"
-downloadFolder="tmp"
-mkdir -p $downloadFolder # ensure folder exists
-
-responseCode=$(curl -s -w "%{http_code}" -L -o "$downloadFolder/git-patch.diff" -X GET $url \
-    -H "Umbraco-Cloud-Api-Key: $apiKey" \
-    -H "Content-Type: application/json")
-
-if [[ 10#$responseCode -eq 204 ]]; then # Http 204 No Content means that there are no changes
-  echo "No changes"
-  rm -fr $downloadFolder/git-patch.diff
-elif [[ 10#$responseCode -eq 200 ]]; then # Http 200 downloads the file and set a few variables for pipeline
-  echo "Changes - check file - $downloadFolder/git-patch.diff"
-else
-  echo "Unexpected status: $responseCode"
-  exit 1
-fi
-
-```
-
-The API response will vary based on whether or not there are changes to report. If no changes are detected, you'll receive an HTTP 204 No Content status. On the other hand, if there are changes, the API will return an HTTP 200 OK status along with a git-patch file as the content. This git-patch file can then be applied to your local repository to sync it with the changes.
-
-{% swagger method="GET" path="/projects/{id}/deployments/{olderDeploymentId}/diff" baseUrl="https://api.cloud.umbraco.com/v1" summary="Get Deployment diff" %} {% swagger-description %} Get diff for cloud-repository by deployment id. If there is a diff on the Umbraco cloud-repository, the diff will be returned as a git-patch file. If there is no diff, a 204 No Content will be returned. {% endswagger-description %}
-{% swagger-parameter in="path" name="id" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
-{% swagger-parameter in="path" name="olderDeploymentId" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
-{% swagger-parameter in="header" name="Umbraco-Cloud-Api-Key" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="A diff file is downloaded" %}
-
-{% endswagger-response %}
-{% swagger-response status="204: No Content" description="No diff to download" %}
-
-{% endswagger-response %}
-{% swagger-response status="404: Not Found" description="ProblemDetails" %}
-
-{% endswagger-response %} 
-{% swagger-response status="409: Conflict" description="ProblemDetails" %}
-
-{% endswagger-response %}
-{% endswagger %}
-
-
-
 ### Promote Deployment
 
 Currently, the feature to transition from a development environment to staging or live, and from staging to live, is pending implementation. In the meantime, you can manage these transitions manually through the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects).
 
-### Possible errors
+
+## Possible errors
 
 When interacting with the Umbraco Cloud API, you may encounter various HTTP status codes that indicate the success or failure of your API request. Below is a table summarizing the possible status codes, their corresponding errors, and basic root causes to guide your troubleshooting:
 
@@ -456,7 +417,7 @@ When interacting with the Umbraco Cloud API, you may encounter various HTTP stat
 
 Most errors have a response body that corresponds to this JSON, and the “detail” field will have a more complete error message.
 
-#### ProblemDetails model
+### ProblemDetails model
 
 ```json
 {
