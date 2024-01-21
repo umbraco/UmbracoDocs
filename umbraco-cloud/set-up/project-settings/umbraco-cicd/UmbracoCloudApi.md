@@ -64,20 +64,21 @@ curl -s -X GET $url -H "Umbraco-Cloud-Api-Key: $apiKey"
 {% swagger method="POST" path="/projects/{id}/deployments" baseUrl="https://api.cloud.umbraco.com/v1" summary="Create the deployment" %} {% swagger-description %}
 The Create Deployment endpoint initiates a new deployment and returns a unique `deploymentId`. This call serves as the initial step in the deployment process. It requires a `projectId` specified in the URL path and a commit message included in the request body. Essentially, this establishes the metadata necessary for initiating the deployment process. If a deployment is already underway, initiating a new one will be possible but should be avoided.
 
-To create a deployment, you'll need to make an HTTP POST request. The request body should contain a simple JSON object with the commit message:
+To create a deployment, you'll need to make an HTTP POST request. The request body should contain a simple JSON object with the commit message.
 
-```json
-{
-    "commitMessage": "New dashboard for customer sales numbers"
-}
-```
 
  {%endswagger-description %}
 
 {% swagger-parameter in="path" name="id" type="String" required="true" %} GUID of the project {% endswagger-parameter %}
 {% swagger-parameter in="header" name="Content-Type" type="String" required="true" %} application/json {% endswagger-parameter %}
 {% swagger-parameter in="header" name="Umbraco-Cloud-Api-Key" type="String" required="true" %} The api key you need to create a deployment {% endswagger-parameter %}
-
+{% swagger-parameter in="body" name="commitMessage" type="String" required="true" %} The commit message you want in the cloud repository for this deployment.
+```json
+{
+    "commitMessage": "New dashboard for customer sales numbers"
+}
+```
+{% endswagger-parameter %}
 {% swagger-response status="201: Created" description="Deployment has been created and is waiting for the next steps" %}
 Part of the returned response will be the actual `deploymentId`. The response from the API should be an HTTP 201 Created response including a `deploymentId`. This ID can be stored in the pipeline variables so it can be used in later steps.
 
@@ -96,16 +97,14 @@ Part of the returned response will be the actual `deploymentId`. The response fr
 ```
 {% endswagger-response %}
 {% swagger-response status="400: Bad Request" description="ProblemDetails" %}
-[See possiple errors](#possible-errors)
+
 {% endswagger-response %}
 {% swagger-response status="401: Unauthorized" description="ProblemDetails" %}
-[See possiple errors](#possible-errors)
 {% endswagger-response %}
 {% swagger-response status="409: Conflict" description="ProblemDetails" %}
-Ususally happens due to a deployment is in progress
 {% endswagger-response %} 
-{% swagger-response status="40x" description="ProblemDetails" %}
-For all error responses [see possiple errors](#possible-errors)
+{% swagger-response status="40x Status" description="ProblemDetails" %}
+For all error responses [see possiple errors](#possible-errors) for a general description.
 {% endswagger-response %} 
 {% endswagger %}
 
@@ -171,20 +170,17 @@ File must be uploaded as part of a multipart/form-data request. We recommend to 
 ```
 {% endswagger-response %}
 {% swagger-response status="400: Bad Request" description="ProblemDetails" %}
-
 {% endswagger-response %}
 {% swagger-response status="404: Not found" description="ProblemDetails" %}
-
 {% endswagger-response %}
 {% swagger-response status="409: Conflict" description="ProblemDetails" %}
-
 {% endswagger-response %}
-
+{% swagger-response status="40x Status" description="ProblemDetails" %}
+For all error responses [see possiple errors](#possible-errors) for a general description.
+{% endswagger-response %} 
 {% endswagger %}
 
 To deploy content to the Umbraco Cloud repository, you need to perform an HTTP POST request to the Umbraco Cloud API. The deployment content should be packaged as a ZIP file, which must mirror the expected structure of the Umbraco Cloud repository. This ZIP file should include all relevant files such as project and solution files, and compiled frontend code. If your setup includes a frontend project with custom elements, the build artifacts from that project should also be included in the ZIP file, and placed in the appropriate directory within the repository structure.
-
-The HTTP POST request should be made using the `multipart/form-data` content type. The request URL should incorporate both the `projectId` and `deploymentId` obtained from the previous step in the API path.
 
 The ZIP file must be structured the same way as described in the `Readme.md` included in all cloud projects starting from Umbraco 9. This also means if you need to change the name and/or structure of the project, you should follow the guide in the same Readme.
 
@@ -202,9 +198,9 @@ Umbraco Cloud environments are using git internally. This means you should be ca
 
 **Best Practice:** If you have frontend assets your local repository's .gitignore file will most likely differ from the one intended for the Umbraco Cloud repository, it's advisable to create a separate .cloud\_gitignore file. Include this file in the ZIP package and rename it to .gitignore before packaging. This ensures that only the necessary files and directories are uploaded and finally committed to the Umbraco Cloud repository.
 
-In curl uploading the source file will be:
 
 ```sh
+# Curl example
 ...
 url="https://api.cloud.umbraco.com/v1/projects/$projectId/deployments/$deploymentId/package"
 
@@ -214,27 +210,6 @@ curl -s -X POST $url \
     --form "file=@$file"
 ```
 
-
-
-### Start Deployment
-
-After the source file has been uploaded the deployment can be started. This will queue the deployment in the Umbraco Cloud services which will start the deployment as soon as possible. Starting the deployment is an HTTP PATCH request to the Umbraco Cloud API. `projectId` and the `deploymentId` from the previous step must be included in the path, and the deployment state set to 'Queued' in the request body.
-
-In curl starting a deployment will be:
-
-```sh
-...
-url="https://api.cloud.umbraco.com/v1/projects/$projectId/deployments/$deploymentId"
-
-curl -s -X PATCH $url \
-    -H "Umbraco-Cloud-Api-Key: $apiKey" \
-    -H "Content-Type: application/json" \
-    -d "{\"deploymentState\": \"Queued\"}"
-```
-
-The response of this call will be the same deployment object (in JSON) as when creating a new deployment, but the deploymentState should now be 'Queued':
-
-
 {% swagger method="PATCH" path="/projects/{id}/deployments/{deploymentId}" baseUrl="https://api.cloud.umbraco.com/v1" summary="Start Deployment" %} {% swagger-description %} Upload src Package to be deployed for specified deployment id {% endswagger-description %}
 
 {% swagger-parameter in="path" name="id" type="String" required="true" %} GUID of the project {% endswagger-parameter %}
@@ -242,9 +217,16 @@ The response of this call will be the same deployment object (in JSON) as when c
 
 {% swagger-parameter in="header" name="Umbraco-Cloud-Api-Key" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="deploymentState" type="string" required="true" %} Value must be "Queued" {% endswagger-parameter %}
+{% swagger-parameter in="body" name="deploymentState" type="string" required="true" %} Value must be "Queued".
+```json
+{
+    "deploymentState": "Queued"
+}
+```
+ {% endswagger-parameter %}
 
 {% swagger-response status="202: Accepted" description="Deployment has been created" %}
+The response of this call will be the same deployment object (in JSON) as when creating a new deployment, but the deploymentState should now be 'Queued':
 ```json
 {
     "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
@@ -260,79 +242,32 @@ The response of this call will be the same deployment object (in JSON) as when c
 ```
 {% endswagger-response %}
 {% swagger-response status="400: Bad Request" description="ProblemDetails" %}
-
-{}
 {% endswagger-response %}
 {% swagger-response status="404: Not found" description="ProblemDetails" %}
-
 {% endswagger-response %}
 {% swagger-response status="409: Conflict" description="ProblemDetails" %}
-
-{% endswagger-response %} {% endswagger %}
-
-### Get Deployment status
-
-To monitor the status of a deployment—whether it's completed, successful, or otherwise — you can periodically query the 'Get Deployment Status' API. This API endpoint is an HTTP GET request to the Umbraco Cloud API, and it requires both the `projectId` and the `deploymentId` obtained from previous steps to be included in the path.
-
-Deployments in Umbraco services can take varying amounts of time to complete. Therefore, it's advisable to poll this API at regular intervals to stay updated on the deployment's current state. For example, in a simple project, you might choose to poll the API every 15 seconds for a duration of 15 minutes. These figures are just a starting point; the optimal polling frequency and duration may differ for your specific pipeline. Based on initial experience, a 15-minute window generally suffices, but we welcome your feedback to fine-tune these parameters.
-
-Using a curl command, polling for the deployment status would look like this:
+{% endswagger-response %} 
+{% swagger-response status="40x Status" description="ProblemDetails" %}
+For all error responses [see possiple errors](#possible-errors) for a general description.
+{% endswagger-response %} 
+{% endswagger %}
 
 ```sh
+#Curl example
 ...
 url="https://api.cloud.umbraco.com/v1/projects/$projectId/deployments/$deploymentId"
 
-# Define a function to call API and check the status
-function call_api {
-  response=$(curl -s -X GET $url \
+curl -s -X PATCH $url \
     -H "Umbraco-Cloud-Api-Key: $apiKey" \
-    -H "Content-Type: application/json")
-  echo "$response"
-  status=$(echo $response | jq -r '.deploymentState')
-}
-
-# Call API and check status
-call_api
-while [[ $status == "Pending" || $status == "InProgress" || $status == "Queued" ]]; do
-  echo "Status is $status, waiting 15 seconds..."
-  sleep 15
-  call_api
-  if [[ $SECONDS -gt 900 ]]; then
-    echo "Timeout reached, exiting loop."
-    break
-  fi
-done
-
-# Check final status
-if [[ $status == "Completed" ]]; then
-  echo "Deployment completed successfully."
-elif [[ $status == "Failed" ]]; then
-  echo "Deployment failed."
-  exit 1
-else
-  echo "Unexpected status: $status"
-  exit 1
-fi
-
+    -H "Content-Type: application/json" \
+    -d "{\"deploymentState\": \"Queued\"}"
 ```
 
-The response from this API call will return the same deployment object in JSON format as you would receive from other API interactions. Ultimately, the `deploymentState` field will indicate either 'Completed' or 'Failed'. Should the deployment fail, the 'ErrorMessage' field will provide additional details regarding the issue.
+{% swagger method="GET" path="/projects/{id}/deployments/{deploymentId}" baseUrl="https://api.cloud.umbraco.com/v1" summary="Get Deployment status" %} {% swagger-description %} 
+To monitor the status of a deployment—whether it's completed, successful, or otherwise — you can periodically query the 'Get Deployment Status' API. This API endpoint is an HTTP GET request to the Umbraco Cloud API, and it requires both the `projectId` and the `deploymentId` obtained from previous steps to be included in the path.
 
-```json
-{
-    "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
-    "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
-    "projectAlias": "cicd-demo-site",
-    "deploymentState": "Completed",
-    "updateMessage":"Project information set\nDeployment pending\nDownloadUri set\nDeployment queued\nDeployment triggered\nDeployment started\nCheck blocking markers\nCreate updating marker\nGit Clone\nDownload update\nExtract Update\nChecking versions\nDeleting repository files\nCopying files to repository\nNuGet Restore\nDotnet Build\nGit Stage\nGit Commit\nGit Tag\nGit Push\nDelete updating marker\nDeployment successful",
-    "errorMessage": "",
-    "created": "2023-05-02T07:16:46.4183912",
-    "lastModified": "2023-05-02T07:20:48.8544387",
-    "completed": "2023-05-02T07:20:49.8544387"
-}
-```
-
-{% swagger method="GET" path="/projects/{id}/deployments/{deploymentId}" baseUrl="https://api.cloud.umbraco.com/v1" summary="Get Deployment Status" %} {% swagger-description %} Get the deployment by deployment id. Contains status and other information about the deployment {% endswagger-description %}
+Deployments in Umbraco services can take varying amounts of time to complete. Therefore, it's advisable to poll this API at regular intervals to stay updated on the deployment's current state. For example, in a simple project, you might choose to poll the API every 15 seconds for a duration of 15 minutes. These figures are just a starting point; the optimal polling frequency and duration may differ for your specific pipeline. Based on initial experience, a 15-minute window generally suffices, but we welcome your feedback to fine-tune these parameters.
+ {% endswagger-description %}
 
 {% swagger-parameter in="path" name="id" type="String" required="true" %} GUID of the project {% endswagger-parameter %}
 {% swagger-parameter in="path" name="deploymentId" type="String" required="true" %} GUID of the deployment {% endswagger-parameter %}
@@ -341,6 +276,7 @@ The response from this API call will return the same deployment object in JSON f
 {% swagger-parameter in="header" name="Content-Type" type="String" required="true" %} application/json {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="" %}
+The response from this API call will return the same deployment object in JSON format as you would receive from other API interactions. Ultimately, the `deploymentState` field will indicate either 'Completed' or 'Failed'. Should the deployment fail, the 'ErrorMessage' field will provide additional details regarding the issue.
 ```json
 {
     "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
@@ -356,8 +292,20 @@ The response from this API call will return the same deployment object in JSON f
 ```
 {% endswagger-response %}
 {% swagger-response status="404: Not found" description="ProblemDetails" %}
-
+For all error responses [see possiple errors](#possible-errors) for a general description.
 {% endswagger-response %} {% endswagger %}
+
+
+```sh
+#Curl example
+...
+url="https://api.cloud.umbraco.com/v1/projects/$projectId/deployments/$deploymentId"
+
+curl -s -X GET $url \
+  -H "Umbraco-Cloud-Api-Key: $apiKey" \
+  -H "Content-Type: application/json"
+```
+
 
 ### Get Deployments
 
