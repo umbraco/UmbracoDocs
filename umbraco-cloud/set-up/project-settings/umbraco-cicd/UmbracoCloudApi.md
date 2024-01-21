@@ -156,7 +156,7 @@ The order needs to be:
 
 {% swagger method="POST" path="/projects/{id}/deployments" baseUrl="https://api.cloud.umbraco.com/v1" summary="Create the deployment" %} {% swagger-description %}
 The Create Deployment endpoint initiates a new deployment and returns a unique `deploymentId`. 
-The request body should contain a simple JSON object with the commit message, see example below.
+The request body should contain a JSON object with the commit message, see example below.
 
 {%endswagger-description %}
 
