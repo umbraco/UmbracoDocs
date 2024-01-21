@@ -56,7 +56,10 @@ curl -s -X GET $url -H "Umbraco-Cloud-Api-Key: $apiKey"
 {% endtab %}
 {% endtabs %}
 
-## How to make a deployment to Umbraco Cloud using the Umbraco CI/CD API
+## Endpoints
+### Cloud Sync
+
+### Cloud Deployment
 
 ### Create the deployment
 
@@ -99,27 +102,15 @@ curl -s -X POST $url \
     -d "{\"commitMessage\":\"$commitMessage\"}"
 ```
 
-Part of the returned response will be the actual `deploymentId`. The response from the API should be an HTTP 201 Created response including a `deploymentId`. This ID can be stored in the pipeline variables so it can be used in later steps.
 
-```json
-{
-    "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
-    "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
-    "projectAlias": "",
-    "deploymentState": "Created",
-    "updateMessage": "",
-    "errorMessage": "",
-    "created": "2023-05-02T07:16:46.4183912",
-    "lastModified": "2023-05-02T07:16:48.8544387",
-    "completed": null
-}
+
 ```
 
 {% swagger method="POST" path="/projects/{id}/deployments" baseUrl="https://api.cloud.umbraco.com/v1" summary="Creates a new deployment to project left most environment" %} {% swagger-description %}
         Creates a new deployment to project left most environment. Deployment is created and identifier is returned to caller. Deployment information will be populated with additional information before being able to start.
  {%endswagger-description %}
 
-{% swagger-parameter in="body" type="json" required="true" %} 
+{% swagger-parameter in="body" name="request" type="json" required="true" %} 
 ```json
 {
   "commitMessage": "Run 42"
@@ -132,6 +123,8 @@ Part of the returned response will be the actual `deploymentId`. The response fr
 {% swagger-parameter in="header" name="Umbraco-Cloud-Api-Key" type="String" required="true" %} The api key you need to create a deployment {% endswagger-parameter %}
 
 {% swagger-response status="201: Created" description="Deployment has been created and is waiting for the next steps" %}
+Part of the returned response will be the actual `deploymentId`. The response from the API should be an HTTP 201 Created response including a `deploymentId`. This ID can be stored in the pipeline variables so it can be used in later steps.
+
 ```json
 {
     "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
@@ -154,10 +147,52 @@ Part of the returned response will be the actual `deploymentId`. The response fr
 {% endswagger-response %}
 {% swagger-response status="409: Conflict" description="ProblemDetails" %}
 Ususally happens due to a deployment is in progress
-{% endswagger-response %} {% endswagger %}
+{% endswagger-response %} 
+
+For all error responses [see possiple errors](#possible-errors)
+
+{% endswagger %}
 
 
-### Upload zip source file
+{% swagger method="POST" path="/projects/{id}/deployments/{deploymentId}/package" baseUrl="https://api.cloud.umbraco.com/v1" summary="Upload zip source file" %} {% swagger-description %} Upload src Package to be deployed for specified deployment id {% endswagger-description %}
+
+{% swagger-parameter in="path" name="id" type="String" required="true" %} GUID of the project {% endswagger-parameter %}
+
+{% swagger-parameter in="path" name="deploymentId" type="String" required="true" %} GUID of the deployment obtained from the [Create the deployment](#create-the-deployment) endpoint {% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Umbraco-Cloud-Api-Key" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %} multipart/form-data {% endswagger-parameter %}
+{% swagger-parameter in="body" name="file" type="binary" required="true" %}
+File must be a zip-file.
+File must be uploaded as part of a multipart/form-data request. We recommend to use tools like `curl` or `Invoke-WebRequest` to handle this.  
+{% endswagger-parameter %}
+{% swagger-response status="202: Accepted" description="Deployment has been created" %}
+```json
+{
+    "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
+    "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
+    "projectAlias": "cicd-demo-site",
+    "deploymentState": "Pending",
+    "updateMessage":"Project information set\nDeployment pending\nDownloadUri set",
+    "errorMessage": "",
+    "created": "2023-05-02T07:16:46.4183912",
+    "lastModified": "2023-05-02T07:17:48.8544387",
+    "completed": null
+}
+```
+{% endswagger-response %}
+{% swagger-response status="400: Bad Request" description="ProblemDetails" %}
+
+{% endswagger-response %}
+{% swagger-response status="404: Not found" description="ProblemDetails" %}
+
+{% endswagger-response %}
+{% swagger-response status="409: Conflict" description="ProblemDetails" %}
+
+{% endswagger-response %}
+
+{% endswagger %}
 
 To deploy content to the Umbraco Cloud repository, you need to perform an HTTP POST request to the Umbraco Cloud API. The deployment content should be packaged as a ZIP file, which must mirror the expected structure of the Umbraco Cloud repository. This ZIP file should include all relevant files such as project and solution files, and compiled frontend code. If your setup includes a frontend project with custom elements, the build artifacts from that project should also be included in the ZIP file, and placed in the appropriate directory within the repository structure.
 
@@ -191,42 +226,7 @@ curl -s -X POST $url \
     --form "file=@$file"
 ```
 
-{% swagger method="POST" path="/projects/{id}/deployments/{deploymentId}/package" baseUrl="https://api.cloud.umbraco.com/v1" summary="Upload src Package to be deployed for specified deployment id" %} {% swagger-description %} Upload src Package to be deployed for specified deployment id {% endswagger-description %}
 
-{% swagger-parameter in="path" name="id" type="String" required="true" %} GUID of the project {% endswagger-parameter %}
-
-{% swagger-parameter in="path" name="deploymentId" type="String" required="true" %} GUID of the deployment {% endswagger-parameter %}
-
-{% swagger-parameter in="header" name="Umbraco-Cloud-Api-Key" type="String" required="true" %} The API key for the Umbraco Cloud public API {% endswagger-parameter %}
-
-{% swagger-parameter in="header" name="Content-Type" type="String" required="true" %} multipart/form-data {% endswagger-parameter %}
-{% swagger-parameter in="body" name="file" type="String" format="binary" required="true" %}
-
-{% endswagger-parameter %}
-{% swagger-response status="202: Accepted" description="Deployment has been created" %}
-```json
-{
-    "deploymentId": "bc0ebd6f-cef8-4e92-8887-ceb862a83bf0",
-    "projectId" : "abcdef12-cef8-4e92-8887-ceb123456789",
-    "projectAlias": "cicd-demo-site",
-    "deploymentState": "Pending",
-    "updateMessage":"Project information set\nDeployment pending\nDownloadUri set",
-    "errorMessage": "",
-    "created": "2023-05-02T07:16:46.4183912",
-    "lastModified": "2023-05-02T07:17:48.8544387",
-    "completed": null
-}
-```
-{% endswagger-response %}
-{% swagger-response status="400: Bad Request" description="ProblemDetails" %}
-
-{% endswagger-response %}
-{% swagger-response status="404: Not found" description="ProblemDetails" %}
-
-{% endswagger-response %}
-{% swagger-response status="409: Conflict" description="ProblemDetails" %}
-
-{% endswagger-response %} {% endswagger %}
 
 ### Start Deployment
 
