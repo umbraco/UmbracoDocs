@@ -61,8 +61,7 @@ curl -s -X GET $url -H "Umbraco-Cloud-Api-Key: $apiKey"
 
 ### Cloud Deployment
 
-### Create the deployment
-
+{% swagger method="POST" path="/projects/{id}/deployments" baseUrl="https://api.cloud.umbraco.com/v1" summary="Create the deployment" %} {% swagger-description %}
 The Create Deployment endpoint initiates a new deployment and returns a unique `deploymentId`. This call serves as the initial step in the deployment process. It requires a `projectId` specified in the URL path and a commit message included in the request body. Essentially, this establishes the metadata necessary for initiating the deployment process. If a deployment is already underway, initiating a new one will be possible but should be avoided.
 
 To create a deployment, you'll need to make an HTTP POST request. The request body should contain a simple JSON object with the commit message:
@@ -73,46 +72,7 @@ To create a deployment, you'll need to make an HTTP POST request. The request bo
 }
 ```
 
-In Powershell, the command to initiate a new deployment would be as follows
-
-```powershell
-...
-$url = "https://api.cloud.umbraco.com/v1/projects/$projectId/deployments"
-$headers = @{
-    "Umbraco-Cloud-Api-Key" = $apiKey
-    "Content-Type" = "application/json"
-}
-
-$body = @{
-    commitMessage = $commitMessage
-} | ConvertTo-Json
-
-Invoke-RestMethod -Uri $url -Headers $headers -Method Post -Body $body
-```
-
-In curl, the command to initiate a new deployment would be as follows
-
-```sh
-...
-url="https://api.cloud.umbraco.com/v1/projects/$projectId/deployments"
-
-curl -s -X POST $url \
-    -H "Umbraco-Cloud-Api-Key: $apiKey" \
-    -H "Content-Type: application/json" \
-    -d "{\"commitMessage\":\"$commitMessage\"}"
-```
-
-{% swagger method="POST" path="/projects/{id}/deployments" baseUrl="https://api.cloud.umbraco.com/v1" summary="Creates a new deployment to project left most environment" %} {% swagger-description %}
-        Creates a new deployment to project left most environment. Deployment is created and identifier is returned to caller. Deployment information will be populated with additional information before being able to start.
  {%endswagger-description %}
-
-{% swagger-parameter in="body" name="request" type="json" required="true" %} 
-```json
-{
-  "commitMessage": "Run 42"
-}
-```
-{% endswagger-parameter %}
 
 {% swagger-parameter in="path" name="id" type="String" required="true" %} GUID of the project {% endswagger-parameter %}
 {% swagger-parameter in="header" name="Content-Type" type="String" required="true" %} application/json {% endswagger-parameter %}
@@ -144,10 +104,42 @@ Part of the returned response will be the actual `deploymentId`. The response fr
 {% swagger-response status="409: Conflict" description="ProblemDetails" %}
 Ususally happens due to a deployment is in progress
 {% endswagger-response %} 
-
+{% swagger-response status="40x" description="ProblemDetails" %}
 For all error responses [see possiple errors](#possible-errors)
-
+{% endswagger-response %} 
 {% endswagger %}
+
+
+{% tabs %}
+{% tab title="Powershell" %}
+```powershell
+...
+$url = "https://api.cloud.umbraco.com/v1/projects/$projectId/deployments"
+$headers = @{
+    "Umbraco-Cloud-Api-Key" = $apiKey
+    "Content-Type" = "application/json"
+}
+
+$body = @{
+    commitMessage = $commitMessage
+} | ConvertTo-Json
+
+Invoke-RestMethod -Uri $url -Headers $headers -Method Post -Body $body
+```
+{% endtab %}
+
+{% tab title="Curl" %}
+```sh
+...
+url="https://api.cloud.umbraco.com/v1/projects/$projectId/deployments"
+
+curl -s -X POST $url \
+    -H "Umbraco-Cloud-Api-Key: $apiKey" \
+    -H "Content-Type: application/json" \
+    -d "{\"commitMessage\":\"$commitMessage\"}"
+```
+{% endtab %}
+{% endtabs %}
 
 
 {% swagger method="POST" path="/projects/{id}/deployments/{deploymentId}/package" baseUrl="https://api.cloud.umbraco.com/v1" summary="Upload zip source file" %} {% swagger-description %} Upload src Package to be deployed for specified deployment id {% endswagger-description %}
