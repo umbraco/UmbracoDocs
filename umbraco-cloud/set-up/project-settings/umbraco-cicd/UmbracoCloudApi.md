@@ -102,10 +102,6 @@ curl -s -X POST $url \
     -d "{\"commitMessage\":\"$commitMessage\"}"
 ```
 
-
-
-```
-
 {% swagger method="POST" path="/projects/{id}/deployments" baseUrl="https://api.cloud.umbraco.com/v1" summary="Creates a new deployment to project left most environment" %} {% swagger-description %}
         Creates a new deployment to project left most environment. Deployment is created and identifier is returned to caller. Deployment information will be populated with additional information before being able to start.
  {%endswagger-description %}
