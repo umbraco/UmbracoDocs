@@ -59,27 +59,27 @@ angular.module("umbraco")
                 $scope.model.value = $scope.model.config.defaultValue;
             }
 
-      // SuggestionPluginController assigns the suggestions list to the aSuggestions property of the scope
-        $scope.aSuggestions = ["You should take a break", "I suggest that you visit the Eiffel Tower", "How about starting a book club today or this week?", "Are you hungry?"];
-    
-        // The controller assigns the behavior to scope as defined by the getSuggestion method, which is invoked when the user clicks on the 'Give me Suggestions!' button.
-        $scope.getSuggestion = function () {
+            // SuggestionPluginController assigns the suggestions list to the aSuggestions property of the scope
+            $scope.aSuggestions = ["You should take a break", "I suggest that you visit the Eiffel Tower", "How about starting a book club today or this week?", "Are you hungry?"];
 
-        // The getSuggestion method reads a random value from an array and provides a Suggestion. 
-        $scope.model.value = $scope.aSuggestions[$scope.aSuggestions.length * Math.random() | 0];
+            // The controller assigns the behavior to scope as defined by the getSuggestion method, which is invoked when the user clicks on the 'Give me Suggestions!' button.
+            $scope.getSuggestion = function () {
 
-        }
-         
-        // The controller assigns the behavior to scope as defined by the getState method, which is invoked when the user toggles the enable button in the data type settings.
-        $scope.getState = function () {
+                // The getSuggestion method reads a random value from an array and provides a Suggestion. 
+                $scope.model.value = $scope.aSuggestions[$scope.aSuggestions.length * Math.random() | 0];
 
-        //If the data type is enabled in the Settings the 'Give me Suggestions!' button is enabled
-        if (Boolean(Number($scope.model.config.isEnabled))) {
-            return false;
-        }
-        return true;
             }
-            
+         
+            // The controller assigns the behavior to scope as defined by the getState method, which is invoked when the user toggles the enable button in the data type settings.
+            $scope.getState = function () {
+
+                //If the data type is enabled in the Settings the 'Give me Suggestions!' button is enabled
+                 if (Boolean(Number($scope.model.config.isEnabled))) {
+                    return false;
+                }
+                return true;
+            }
+
             //// function to show custom notification
             $scope.showNotification = function () {
                 if ($scope.model.value.length > 35) {
@@ -93,13 +93,13 @@ angular.module("umbraco")
                         }
                     });
                 }
-            };   
+            };
 
             // function to trim the text to a length of 35.
             $scope.TrimText = function () {
                 $scope.model.value = $scope.model.value.substring(0, 35);
             };
-            
+
         });
 ```
 
@@ -114,15 +114,15 @@ angular.module("umbraco")
 ```json
 {
  "javascript": [
-        "~/App_Plugins/Suggestions/suggestion.controller.js",
-        "~/App_Plugins/Suggestions/notification.controller.js"
+        "/App_Plugins/Suggestions/suggestion.controller.js",
+        "/App_Plugins/Suggestions/notification.controller.js"
     ]
 }
 ```
 
 ## Creating custom Notification View and Controller
 
-We will add 2 files to the /App\_Plugins/Suggestions/ folder:
+We will add 2 files to the `/App_Plugins/Suggestions/` folder:
 
 * `notification.html`
 * `notification.controller.js`
@@ -162,7 +162,7 @@ angular.module('umbraco')
 
 Restart the application and either enter a suggestion longer than 35 characters or click on the `Get Suggestions` button. When you do so and click in the textarea, you will be presented with a notification like this:
 
-![Suggestion Notification](images/suggestion-notification.png)
+![Suggestion Notification](../../../../10/umbraco-cms/tutorials/creating-a-property-editor/images/suggestion-notification.png)
 
 The notification object contains the `args` object that we passed to the view in our `suggestion.controller.js`. When we click the `Yes` button in the notification, we use the callback function from the Suggestions controller which is executed in the scope of our Suggestions Property Editor.
 

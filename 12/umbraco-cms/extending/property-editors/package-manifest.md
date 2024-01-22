@@ -8,17 +8,17 @@ This is a sample manifest, it is always stored in a folder in `/App_Plugins/{You
 
 ```json
 {
-    "name": "Sir Trevor",
+    "name": "Suggestions",
     "version": "1.0.0 beta",
     "allowPackageTelemetry": true,
     "bundleOptions": "Default",
-    "packageView": "/App_Plugins/SirTrevor/SirTrevor-config.html",
+    "packageView": "/App_Plugins/Suggestions/suggestion-config.html",
     "propertyEditors": [
         {
-            "alias": "Sir.Trevor",
-            "name": "Sir Trevor",
+            "alias": "Suggestions",
+            "name": "Suggestions",
             "editor": {
-                "view": "/App_Plugins/SirTrevor/SirTrevor.html",
+                "view": "/App_Plugins/Suggestions/suggestion.html",
                 "hideLabel": true,
                 "valueType": "JSON",
                 "supportsReadOnly": true
@@ -26,44 +26,54 @@ This is a sample manifest, it is always stored in a folder in `/App_Plugins/{You
         }
     ],
     "javascript": [
-        "/App_Plugins/SirTrevor/SirTrevor.controller.js"
+        "/App_Plugins/Suggestions/suggestion.controller.js"
     ]
 }
 ```
 
 ## Sample Manifest with Csharp
 
-You can also register your files by implementing a `IManifestFilter` instead of creating a `package.manifest`. Create a `ManifestFilter.cs` file and implement the `IManifestFilter` interface.
+You can also register your files by implementing a `IManifestFilter` instead of creating a `package.manifest`. Create a `ManifestFilter.cs` file and implement the `IManifestFilter` interface. Then define the composer using the `IComposer` interface.
 
 ```csharp
-public class ManifestFilter : IManifestFilter
+namespace MyProject
 {
-    public void Filter(List<PackageManifest> manifests)
-    {
-        manifests.Add(new PackageManifest
-        {
-            PackageName = "Sir Trevor",
-            Scripts = new[]
-            {
-                "/App_Plugins/SirTrevor/SirTrevor.controller.js"
-            }, 
-            Version = "1.0.0"
-        });
-    }
+	public class ManifestComposer : IComposer
+	{
+		//composer
+		public void Compose(IUmbracoBuilder builder)
+		{
+			builder.ManifestFilters().Append<ManifestFilter>();
+		}
+	}
+	public class ManifestFilter : IManifestFilter
+	{
+		private readonly IDataValueEditorFactory _dataValueEditorFactory;
+
+		public ManifestFilter(IDataValueEditorFactory dataValueEditorFactory)
+		{
+			_dataValueEditorFactory = dataValueEditorFactory;
+		}
+
+		public void Filter(List<PackageManifest> manifests)
+		{
+			manifests.Add(new PackageManifest
+			{
+				PackageName = "Suggestions",
+				Scripts = new[]
+				{
+					"/App_Plugins/Suggestions/suggestion.controller.js"
+				},				
+				Version = "1.0.0"
+			});
+		}
+	}
 }
 ```
 
-Then add the `ManifestFilter.cs` to the `CollectionBuilder`.
-
-```csharp
-public class ManifestComposer : IComposer
-{
-    public void Compose(IUmbracoBuilder builder)
-    {
-        builder.ManifestFilters().Append<ManifestFilter>();
-    }
-}
-```
+{% hint style="info" %}
+    For a functional example, you will need to register the editor and create the `HTML`, `JS` and `CSS` files in `App_Plugin/Suggestions` folder as well. Some examples of registering the editor is found in the `Suggestions.cs` along with the files from `App_Plugin` from the [Creating a property Editor article](https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-property-editor#setting-up-a-property-editor-with-csharp)
+{% endhint %}
 
 ## Root elements
 
@@ -84,7 +94,7 @@ The manifest can contain seven root collections, none of them are mandatory:
 
 ### Telemetry elements
 
-In version 9.2 some additional root elements was added, the purpose of these are to control and facilitate telemetry about the package, none of these are mandatory. The properties are:
+From version 9.2 some additional root elements was added, the purpose of these are to control and facilitate telemetry about the package, none of these are mandatory. The properties are:
 
 * `name` - Allows you to specify a friendly name for your package that will be used for telemetry, if no name is specified the name of the folder will be used instead
 * `version` - The version of your package, if this is not specified there will be no version specific information for your package
@@ -111,7 +121,7 @@ The basic values on any editor are `alias`, `name` and `editor`. These three **m
     "alias": "my.editor.alias",
     "name": "My friendly editor name",
     "editor": {
-        "view": "/App_Plugins/SirTrevor/view.html"
+        "view": "/App_Plugins/MyEditorName/view.html"
     },
     "prevalues": {
         "fields": []
@@ -135,7 +145,7 @@ The basic values on any editor are `alias`, `name` and `editor`. These three **m
 
 ```json
 "editor": {
-    "view": "/App_Plugins/SirTrevor/view.html",
+    "view": "/App_Plugins/MyEditorName/view.html",
     "hideLabel": true,
     "valueType": "TEXT",
     "validation": {},
@@ -246,8 +256,8 @@ The parameter editors array follows the same format as the property editors desc
 ```json
 {
   "javascript": [
-    "/App_Plugins/SirTrevor/SirTrevor.controller.js",
-    "/App_Plugins/SirTrevor/service.js"
+    "/App_Plugins/MyEditorName/MyEditorName.controller.js",
+    "/App_Plugins/MyEditorName/MyEditorName.js"
   ]
 }
 ```
@@ -259,8 +269,8 @@ The parameter editors array follows the same format as the property editors desc
 ```json
 {
   "css": [
-    "/App_Plugins/SirTrevor/SirTrevor.css",
-    "/App_Plugins/SirTrevor/hibba.css"
+    "/App_Plugins/MyEditorName/MyEditorName.css",
+    "/App_Plugins/MyEditorName/hibba.css"
   ]
 }
 ```
