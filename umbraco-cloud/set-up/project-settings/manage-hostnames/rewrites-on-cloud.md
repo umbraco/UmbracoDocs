@@ -36,7 +36,7 @@ One approach for this is to add a new rewrite rule to the `<system.webServer><re
   <match url=".*" />
   <conditions>
     <add input="{HTTP_HOST}" pattern="\.umbraco\.io$" />
-    <add input="{HTTP_HOST}" pattern="^localhost$" negate="true" />
+    <add input="{HTTP_HOST}" pattern="^localhost(:[0-9]+)?$" negate="true" />
     <add input="{REQUEST_URI}" pattern="^/umbraco" negate="true" />
     <add input="{REQUEST_URI}" pattern="^/DependencyHandler.axd" negate="true" />
     <add input="{REQUEST_URI}" pattern="^/App_Plugins/" negate="true" />
@@ -62,7 +62,7 @@ For example, the following rule will redirect all requests for the site http://e
   <match url=".*" />
   <conditions>
     <add input="{HTTPS}" pattern="^OFF$" />
-    <add input="{HTTP_HOST}" pattern="^localhost$" negate="true" />
+    <add input="{HTTP_HOST}" pattern="^localhost(:[0-9]+)?$" negate="true" />
     <add input="{REQUEST_URI}" pattern="^/\.well-known/acme-challenge/" negate="true" />
   </conditions>
   <action type="Redirect" url="https://{HTTP_HOST}/{R:0}" redirectType="Permanent" />
@@ -112,7 +112,7 @@ Another example would be to redirect from non-www to www:
   <match url=".*" />
   <conditions>
     <add input="{HTTP_HOST}" pattern="^www\." negate="true" />
-    <add input="{HTTP_HOST}" pattern="^localhost$" negate="true" />
+    <add input="{HTTP_HOST}" pattern="^localhost(:[0-9]+)?$" negate="true" />
     <add input="{HTTP_HOST}" pattern="\.azurewebsites\.net$" negate="true" />
     <add input="{HTTP_HOST}" pattern="\.umbraco\.io$" negate="true" />
   </conditions>
