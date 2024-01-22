@@ -1,8 +1,3 @@
----
-
-
----
-
 # Creating Pages and Using the Master Template
 
 ## Creating a Contact Us Page
@@ -31,7 +26,7 @@ Let's create a content-only contact page where we can provide a title and some r
     | Content | Page Title | pageTitle | Textstring       |
     | Content | Body Text  | bodyText  | Rich Text Editor |
 
-    ![Simple Content Page Template with Data Fields](../../../../11/umbraco-cms/tutorials/creating-a-basic-website/images/figure-35-contact-us-template-with-data-fields-v8.png)
+    ![Simple Content Page Template with Data Fields](images/figure-35-contact-us-template-with-data-fields-v8.png)
 8. Click **Save**.
 9. Go to **Templates** to view your _Simple Content Page_ template that was created automatically with the Document Type.
 10. Select the **Simple Content Page** template and then select **Master** as the **Master template**.
@@ -67,10 +62,9 @@ To update the Document Type permissions:
 1. Go to **Settings**.
 2. Open the **Homepage** Document Type and go to the **Permissions** tab.
 3. Select **Add child** in the **Allowed child node types**. The **Choose child node** dialog opens.
-4.  Select **Simple Content Page** and click **Save**.\
+4.  Select **Simple Content Page** and click **Save**.\\
 
-
-    <figure><img src="../../../../11/umbraco-cms/tutorials/creating-a-basic-website/images/figure-32-homepage-allowed-child-v8.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/figure-32-homepage-allowed-child-v8.png" alt=""><figcaption></figcaption></figure>
 
 ### Creating the content node
 
@@ -107,7 +101,7 @@ To view the **Contact Us** Page:
 3. Go to the **Info** tab.
 4.  Click the link to view the page. \\
 
-    <figure><img src="../../../../11/umbraco-cms/tutorials/creating-a-basic-website/images/figure-37-viewing-contact-us.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/figure-37-viewing-contact-us.png" alt=""><figcaption></figcaption></figure>
 
 ## Using Document Type Properties from the Homepage
 

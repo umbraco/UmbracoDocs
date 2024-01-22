@@ -10,7 +10,7 @@ description: Information on hosting Umbraco v9+ on IIS
 * Install the ["ASP.NET Core Runtime"](https://dotnet.microsoft.com/en-us/download/dotnet/5.0) and download the **Hosting Bundle**.
 * Once you have the hosting bundle installed and have restarted IIS (`net stop was /y` followed by `net start w3svc`), create a site in IIS as you would for a v8 site, however you need to ensure that ".NET CLR version" is set to "No Managed Code" for the Application Pool.
 
-![IIS Application Pool](../../../../../11/umbraco-cms/fundamentals/setup/server-setup/images/iis-app-pool-core.png)
+![IIS Application Pool](images/iis-app-pool-core.png)
 
 ### Publish website for manual deployment to IIS
 
@@ -24,29 +24,26 @@ Alternatively you can use folder or ftp publishing in Visual Studio to compile a
 
 In Visual Studio right click on Umbraco web project in the _Solution Explorer_ and choose _Publish..._ command.
 
-![Publish...](../../../../../11/umbraco-cms/fundamentals/setup/server-setup/images/contextmenu-publish-command.jpg)
-
+![Publish...](images/contextmenu-publish-command.jpg)
 
 {% hint style="info" %}
- 
 **Deploy a website for automated deployment with Azure DevOps to IIS**
 
 You can use the [IIS Release task in Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/pipelines/release/deploy-webdeploy-iis-deploygroups) to deploy your website to your Web Server. This task is a wrapper for `MSDeploy.exe` and can be configured as preferred.
-
 {% endhint %}
 
 ### Environment Variables in ApplicationHost.config
 
 In the _Management_ section you find the _Configuration Editor_:
 
-![IIS Website Configuration](../../../../../11/umbraco-cms/fundamentals/setup/server-setup/images/iis-core-website-config.png)
+![IIS Website Configuration](images/iis-core-website-config.png)
 
 One section is of particular interest:
 
 * In the first, left hand dropdown list (_Section:_) choose: `system.webServer/aspNetCore` section.
 * In the second, right hand dropdown list (_From:_) choose: `ApplicationHost.config <location path='[YOUR-SITENAME]'>`. This ensures your settings will be stored in a machine specific file and not the website's web.config. The web.config might end in a public repository and should not contain sensitive data like Connection Strings or SMTP configuration with username and password. Additionally by default the web.config will be overwritten during each publish processes.
 
-![IIS Configuration Editor](../../../../../11/umbraco-cms/fundamentals/setup/server-setup/images/iis-environment-variables.png)
+![IIS Configuration Editor](images/iis-environment-variables.png)
 
 Find the line named _environmentVariables_ and open the dialog to add environment variables. These work similar to the _launchSettings_. E.g. you can define `ASPNETCORE_ENVIRONMENT` and create an `appSettings.[ASPNETCORE_ENVIRONMENT].json` file. Or even better create environment variables for sensitive settings like passwords. There are some differences to `launchSettings.json` configuration:
 

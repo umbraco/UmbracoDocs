@@ -20,7 +20,7 @@ The **Nested Content** property editor is set-up/configured in the same way as a
 
 You should then be presented with the **Nested Content** property editors Data Type editor as shown below.
 
-![Nested Content - Data Type Definition](../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/NestedContent\_DataType-v8.png)
+![Nested Content - Data Type Definition](../built-in-property-editors/images/NestedContent\_DataType-v8.png)
 
 The Data Type editor allows you to configure the following properties:
 
@@ -49,31 +49,31 @@ There is a handful of editors that Nested Content does not support in its elemen
 * [File upload](file-upload.md)
 * [Image Cropper](image-cropper.md)
 
-![Editors that are not supported](../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/NestedContent\_NotSupported.png)
+![Editors that are not supported](../built-in-property-editors/images/NestedContent\_NotSupported.png)
 
 ## Editing Nested Content
 
 When viewing a **Nested Content** editor for the first time, you'll be presented with an icon and help text to get you started.
 
-![Nested Content - Add Content](../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/NestedContent\_AddContent.png)
+![Nested Content - Add Content](../built-in-property-editors/images/NestedContent\_AddContent.png)
 
 Click the plus icon to start creating a new item in the list.
 
 If your **Nested Content** editor is configured with multiple document-types you will be presented with a dialog window to select which Document Type you would like to use.
 
-![Nested Content - Select Schema](../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/NestedContent\_SelectSchema-v8.png)
+![Nested Content - Select Schema](../built-in-property-editors/images/NestedContent\_SelectSchema-v8.png)
 
 Click the icon of the Document Type you wish to use and a new item will be created in the list using that Document Type.
 
 If you only have one Document Type configured for your **Nested Content** editor, then clicking the plus icon will not display the dialog and instead will jump straight to inserting an entry in the editor for you ready to edit.
 
-![Nested Content - New Item](../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/NestedContent\_NewItem-v8.png)
+![Nested Content - New Item](../built-in-property-editors/images/NestedContent\_NewItem-v8.png)
 
 More items can be added to the list by clicking the plus icon for each additional item.
 
 To close the editor for an item or open the editor for another item in the list, you click the edit icon.
 
-![Nested Content - Edit Item](../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/NestedContent\_EditItem-v8.png)
+![Nested Content - Edit Item](../built-in-property-editors/images/NestedContent\_EditItem-v8.png)
 
 To reorder the list, click and drag the move icon up and down to place the items in the order you want.
 
@@ -87,7 +87,7 @@ In single item mode, there is no icon displayed to add new items, and the single
 
 In this mode, **Nested Content** works more like a fieldset than a list editor.
 
-![Nested Content - Single Item Mode](../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/NestedContent\_SingleItemMode-v8.png)
+![Nested Content - Single Item Mode](../built-in-property-editors/images/NestedContent\_SingleItemMode-v8.png)
 
 ## Rendering Nested Content
 

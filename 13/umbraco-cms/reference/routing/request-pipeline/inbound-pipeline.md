@@ -51,15 +51,14 @@ You can subscribe to the 'routing request' notification, which is published righ
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
 
-namespace Umbraco9.NotificationHandlers
+namespace Umbraco9.NotificationHandlers;
+
+public class PublishedRequestHandler : INotificationHandler<RoutingRequestNotification>
 {
-    public class PublishedRequestHandler : INotificationHandler<RoutingRequestNotification>
+    public void Handle(RoutingRequestNotification notification)
     {
-        public void Handle(RoutingRequestNotification notification)
-        {
-            var requestBuilder = notification.RequestBuilder;
-            // Do something with the IPublishedRequestBuilder here 
-        }
+        var requestBuilder = notification.RequestBuilder;
+        // Do something with the IPublishedRequestBuilder here 
     }
 }
 ```

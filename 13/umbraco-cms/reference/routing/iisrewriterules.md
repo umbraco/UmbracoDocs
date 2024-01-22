@@ -14,11 +14,11 @@ Make sure to check the official [URL Rewriting Middleware in ASP.NET Core](https
 
 ## Using the URL Rewriting Middleware
 
-To use rewrites with Umbraco 9 you have to register the middleware in your `Startup.cs` by using the [`UseRewriter`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.rewritebuilderextensions.userewriter?view=aspnetcore-5.0) extension method and then configure the rewrite options.
+To use rewrites with Umbraco 9 you have to register the middleware in your `Program.cs` by using the [`UseRewriter`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.rewritebuilderextensions.userewriter?view=aspnetcore-5.0) extension method and then configure the rewrite options.
 
 ### Example
 
-* Create an `IISUrlRewrite.xml` file in the root of your project (next to your `Startup.cs` file) containing:
+* Create an `IISUrlRewrite.xml` file in the root of your project (next to your `Program.cs` file) containing:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -37,7 +37,7 @@ To use rewrites with Umbraco 9 you have to register the middleware in your `Star
 </rewrite>
 ```
 
-* In the `Startup.cs` file you can add the URL Rewriting Middleware just before the call to `app.UseUmbraco()` and use [`AddIISUrlRewrite`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.rewrite.iisurlrewriteoptionsextensions.addiisurlrewrite?view=aspnetcore-5.0)) to add the rewrite rules from the XML file:
+* In the `Program.cs` file you can add the URL Rewriting Middleware before the call to `app.UseUmbraco()` and use [`AddIISUrlRewrite`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.rewrite.iisurlrewriteoptionsextensions.addiisurlrewrite?view=aspnetcore-5.0)) to add the rewrite rules from the XML file:
 
 ```csharp
 using Microsoft.AspNetCore.Rewrite;

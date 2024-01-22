@@ -100,11 +100,8 @@ public class SearchService : ISearchService
 And finally register the service in `Startup`.
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    // ... (removed for abbreviation)
-    services.AddTransient<ISearchService, SearchService>();
-}
+// ... (removed for abbreviation)
+builder.Services.AddTransient<ISearchService, SearchService>();
 ```
 
 #### Examine Search Index

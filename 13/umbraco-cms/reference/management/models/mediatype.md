@@ -136,7 +136,7 @@ return mediaType.Icon;
 
 ### .Id
 
-Retrieves the unique `MediaType` ID as an `Int`. This ID is based on a Database identity field and is therefore not safe to reference in code when moved between different instances. 
+Retrieves the unique `MediaType` ID as an `Int`. This ID is based on a Database identity field and is therefore not safe to reference in code when moved between different instances.
 
 ### .Key
 

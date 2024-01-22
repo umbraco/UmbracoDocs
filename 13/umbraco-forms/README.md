@@ -6,35 +6,24 @@ description: >-
 
 # Umbraco Forms Documentation
 
-## Getting started with the Umbraco 13 RC
+Umbraco Forms is a tool that lets you build forms of all shapes and sizes and put them on your Umbraco websites. Build forms using a long list of elements like multiple choice, dropdowns, text areas and checkboxes. Choose between a series of different workflow and control what happens once a form has been submitted.
 
-Below you will find the steps on how you can install the Umbraco Forms 13 RC using the Command Line.
+[Purchase Umbraco Forms](https://umbraco.com/products/umbraco-forms/) or sign up for an [Umbraco Cloud](https://try.umbraco.com/) project where Umbraco Forms is part of the package.
 
-### prerequisite
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Installing Umbraco Forms</strong></td><td>Install Umbraco Forms in a few steps.</td><td></td><td><a href="installation/install.md">install.md</a></td><td><a href=".gitbook/assets/_packageBlog_post_for_com_900x400px.png">_packageBlog_post_for_com_900x400px.png</a></td></tr><tr><td><strong>Creating a Form</strong></td><td>Create new Forms and add them to your Umbraco site in minutes.</td><td></td><td><a href="editor/creating-a-form/">creating-a-form</a></td><td><a href=".gitbook/assets/Blog_post_for_com_900x400px_1_8_7_.png">Blog_post_for_com_900x400px_1_8_7_.png</a></td></tr><tr><td><strong>Preparing your Frontend</strong></td><td>Ensure you have the necessary client dependencies before adding a Form to your site.</td><td></td><td><a href="developer/prepping-frontend.md">prepping-frontend.md</a></td><td><a href=".gitbook/assets/Umbraco 9.3RC- Blog_post_for_com_900x400px_1@2x-80.jpg">Umbraco 9.3RC- Blog_post_for_com_900x400px_1@2x-80.jpg</a></td></tr></tbody></table>
 
-* [.NET 8.0.0.rc.2](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) installed
+{% embed url="https://www.youtube-nocookie.com/embed/3Aojbp_1MPc" %}
 
-#### Install using Command Line
+## Quick Links
 
-To install Umbraco Forms 13 RC run the following in the command line:
+{% content-ref url="upgrading/manualupgrade.md" %}
+[upgrading/manualupgrade.md](upgrading/manualupgrade.md)
+{% endcontent-ref %}
 
-* Run `dotnet add package Umbraco.Forms --version 13.0.0-rc` in your project.
+{% content-ref url="editor/attaching-workflows/" %}
+[attaching-workflows](editor/attaching-workflows/)
+{% endcontent-ref %}
 
-## New and Updated articles
-
-Below you will find a list of new and updated articles for the Umbraco 13 Release Candidate.
-
-The list will be updated as more articles have been created and updated.
-
-* [File Upload](editor/creating-a-form/fieldtypes/fileupload.md)
-* [Release Notes](release-notes.md)
-* INSTALLATION:
-  * [Version Specific Upgrade Notes](installation/version-specific.md)
-* DEVELOPER:
-  * [Preparing Your Frontend](developer/prepping-frontend.md)
-
-### Breaking Changes
-
-Some breaking changes have been introduced in the Umbraco 13 Release Candidate, you can find the list of breaking changes in the [Version Specific Upgrades](installation/version-specific.md#version-13) article.
-
-test
+{% content-ref url="developer/forms-in-the-database.md" %}
+[forms-in-the-database.md](developer/forms-in-the-database.md)
+{% endcontent-ref %}

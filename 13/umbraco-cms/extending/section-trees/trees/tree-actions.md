@@ -78,6 +78,8 @@ If you have created a package using a custom tree action, please consider provid
 | Umbraco.Deploy.UI.Actions.ActionDeployTreeRestore             | deployTreeRestore      | Ψ      | True                       |
 | Umbraco.Deploy.UI.Actions.ActionPartialRestore                | deployPartialRestore   | Ø      | True                       |
 | Umbraco.Deploy.UI.Actions.ActionQueueForTransfer              | deployQueueForTransfer | T      | True                       |
+| Umbraco.Deploy.UI.Actions.Export                              | deployExport           | П      | True                       |
+| Umbraco.Deploy.UI.Actions.Import                              | deployImport           | Џ      | True                       |
 | Jumoo.TranslationManager.Core.Actions.ActionTranslate         | translate              | 5      | True                       |
 | Jumoo.TranslationManager.Core.Actions.ActionManageTranslation | manageTranslations     | Ť      | True                       |
 | uSync.Publisher.Actions.PushToServer                          | pushContent            | >      | True                       |

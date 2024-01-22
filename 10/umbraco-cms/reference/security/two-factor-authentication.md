@@ -1,6 +1,5 @@
 ---
 versionFrom: 9.5.0
-
 keywords: 2fa, security, members, users
 meta.Title: Two-factor authentication
 description: >-
@@ -566,25 +565,25 @@ At this point, the 2FA is active, but no users have set up 2FA yet.
 
 Each user can now enable the configured 2fa providers on their user. This can be done from the user panel by clicking the user avatar.
 
-![User panel](../../../../11/umbraco-cms/reference/security/images/user-panel.png)
+![User panel](images/user-panel.png)
 
 When clicking the `Configure Two-Factor` button, a new panel is shown, listing all enabled two-factor providers.
 
-![Configure 2fa](../../../../11/umbraco-cms/reference/security/images/configure-2fa.png)
+![Configure 2fa](images/configure-2fa.png)
 
 When clicking `Enable` on one of these, the configured view for the specific provider will be shown
 
-![Enable 2fa](../../../../11/umbraco-cms/reference/security/images/enable-2fa.png)
+![Enable 2fa](images/enable-2fa.png)
 
 When the authenticator is enabled correctly, a disable button is shown instead.
 
-![Disable 2fa](../../../../11/umbraco-cms/reference/security/images/disable-2fa.png)
+![Disable 2fa](images/disable-2fa.png)
 
 To disable the two-factor authentication on your user, it is required to enter the verification code, otherwise, admins are allowed to disable providers on other users.
 
-![Verify disable](../../../../11/umbraco-cms/reference/security/images/verify-disable.png)
+![Verify disable](images/verify-disable.png)
 
-While the 2FA is enabled, the user will be presented with this screen after entering the username and password. ![Verify disable](../../../../11/umbraco-cms/reference/security/images/login-2fa.png)
+While the 2FA is enabled, the user will be presented with this screen after entering the username and password. ![Verify disable](images/login-2fa.png)
 
 ## Notification when 2FA is requested for a user
 

@@ -68,21 +68,21 @@ It's recommended that you upgrade the site offline and test the upgrade fully be
 4. Select the **.NET** version from the **Target Framework** drop-down.
 5. Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**
 6. Go to the **Installed** tab in the NuGet Package manager.
-7.  Upgrade **Umbraco.Cms**.&#x20;
+7.  Upgrade **Umbraco.Cms**.
 
     a. Select the correct version from the **Version** drop-down.
 
     b. Click **Install** to upgrade your project.
 
 {% hint style="info" %}
-If you have other packages installed such as Umbraco Forms, then before upgrading **Umbraco.CMS** you will need to upgrade the packages first. Consult the [version specific upgrade notes for Umbraco Forms](https://docs.umbraco.com/umbraco-forms/installation/version-specific) if relevant.
+If you have other packages installed such as Umbraco Forms, then before upgrading **Umbraco.CMS** you will need to upgrade the packages first. Consult the [version specific upgrade notes for Umbraco Forms](https://docs.umbraco.com/umbraco-forms/upgrading/version-specific) if relevant.
 {% endhint %}
 
-8. Make sure that your connection string has `TrustServerCertificate=True` in order to complete successfully the upgrade:&#x20;
+8. Make sure that your connection string has `TrustServerCertificate=True` in order to complete successfully the upgrade:
 
 ```csharp
 "ConnectionStrings": {
-    "umbracoDbDSN": "Server=YourLocalSQLServerHere;Database=NameOfYourDatabaseHere;;User Id=NameOfYourUserHere;Password=YourPasswordHere;TrustServerCertificate=True"
+    "umbracoDbDSN": "Server=YourLocalSQLServerHere;Database=NameOfYourDatabaseHere;User Id=NameOfYourUserHere;Password=YourPasswordHere;TrustServerCertificate=True"
 }
 ```
 

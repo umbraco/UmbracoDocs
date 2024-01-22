@@ -56,6 +56,8 @@ When a form is submitted, any workflows associated with the "submit" stage of th
 
 Similarly, approval of a form entry, whether automatic or manual, will trigger the execution of the workflows associated with the "approve" stage.
 
+Rejection of an entry will trigger the execution of the workflows associated with the "reject" stage.
+
 If a workflow encounters an unexpected error, it will silently fail from the perspective of the user submitting the form. The exception along with the other details of the failed operation is recorded to the log.
 
 From Umbraco Forms versions 8.13.0 and 10.1, an audit trail has been made available. In the list of entries for a form, a summary is presented that shows how many workflows were executed, and how many were successful:

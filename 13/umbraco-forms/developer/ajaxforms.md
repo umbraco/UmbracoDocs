@@ -423,6 +423,23 @@ In the case of a validation error, a 422 "Unprocessable Entity" status code will
 
 A successful response will return a 202 "Accepted" status code.
 
+It will contain an object detailing the post-submission configured the form, for example:
+
+```json
+{
+    "gotoPageOnSubmit": "3cce2545-e3ac-44ec-bf55-a52cc5965db3",
+    "gotoPageOnSubmitRoute": {
+        "path": "/about-us/",
+        "startItem": {
+            "id": "ca4249ed-2b23-4337-b522-63cabe5587d1",
+            "path": "home"
+        }
+    },
+    "messageOnSubmit": "Thanks for your entry",
+    "messageOnSubmitIsHtml": false
+}
+```
+
 #### File Uploads
 
 The file upload field type is supported via the API for the rendering and submission of forms.

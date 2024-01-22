@@ -2,8 +2,10 @@
 
 The MemberService acts as a "gateway" to Umbraco data for operations which are related to Members.
 
- * **Namespace:** `Umbraco.Cms.Core.Services`
- * **Assembly:** `Umbraco.Core.dll`
+[Browse the API documentation for IMemberService interface](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.Services.IMemberService.html).
+
+* **Namespace:** `Umbraco.Cms.Core.Services`
+* **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
 
@@ -16,6 +18,7 @@ using Umbraco.Cms.Core.Services;
 ```
 
 For Razor views:
+
 ```csharp
 @using Umbraco.Cms.Core.Services
 ```

@@ -45,7 +45,7 @@ public class ManifestFilter : IManifestFilter
             PackageName = "Sir Trevor",
             Scripts = new[]
             {
-                "~/App_Plugins/SirTrevor/SirTrevor.controller.js"
+                "/App_Plugins/SirTrevor/SirTrevor.controller.js"
             }, 
             Version = "1.0.0"
         });
@@ -306,7 +306,7 @@ To associate the hosted JSON schema file to all package.manifest files you will 
 To associate the hosted JSON schema file to all package.manifest files you will need to perform the following inside of Visual Studio Code editor.
 
 * File -> Preferences -> Settings. The **Settings** window opens.
-*   In the **User** or **Workspace** tab, go to **Extensions** -> **JSON** -> **Schemas**.&#x20;
+*   In the **User** or **Workspace** tab, go to **Extensions** -> **JSON** -> **Schemas**.
 
     <figure><img src="../../../../10/umbraco-cms/extending/property-editors/images/JSON-schema.png" alt=""><figcaption></figcaption></figure>
 * Select **Edit in settings.json** from the **Schemas** section.

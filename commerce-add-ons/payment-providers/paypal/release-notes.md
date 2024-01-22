@@ -11,3 +11,38 @@ For details of releases for **PayPal Payment Provider for Vendr**, refer to the 
 ## Release History
 
 In this section, you can find the release notes for each version of PayPal Payment Provider for Commerce. For each major version, you can find the details about each release.
+
+<details>
+
+<summary>Version 13</summary>
+
+#### [13.0.1](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.PayPal/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.1) (December 20th 2023)
+
+* Fixed regression due to Flurl now using System.Text.Json by default and so serialization wasn't working correctly. Forced use of Newtonsoft serializer until we can fully test using System.Text.Json
+
+#### 13.0.0 (December 13th 2023)
+
+* Upgraded Umbraco & Umbraco Commerce dependencey to v13
+* Upgraded all 3rd party nuget dependencies
+
+</details>
+
+<details>
+
+<summary>Version 12</summary>
+
+#### 12.0.0 (July 5th 2023)
+
+* [Initial product launch](https://umbraco.com/blog/umbraco-commerce-release/).
+  
+</details>
+
+<details>
+
+<summary>Version 10</summary>
+
+#### 10.0.0 (July 5th 2023)
+
+* [Initial product launch](https://umbraco.com/blog/umbraco-commerce-release/).
+  
+</details>

@@ -70,13 +70,15 @@ Sometimes you might want to add the images to a specific folder. This folder can
 
 The RTE can also accept advanced configuration through the `appSettings.json` file fed into the TinyMCE configuration. This is within `Umbraco:CMS:RichTextEditor` and allows you to configure the following:
 
-* [Commands](https://www.tiny.cloud/docs/advanced/editor-command-identifiers/#executablecommands)
-* [Plugins](https://www.tiny.cloud/docs/configure/integration-and-setup/#plugins)
-* [CustomConfig](https://www.tiny.cloud/docs/configure/integration-and-setup/)
-* [ValidElements](https://www.tiny.cloud/docs/configure/content-filtering/#valid_elements)
-* [InvalidElements](https://www.tiny.cloud/docs/configure/content-filtering/#invalid_elements)
+* [Commands](https://www.tiny.cloud/docs/tinymce/latest/editor-command-identifiers/)
+* [Plugins](https://www.tiny.cloud/docs/tinymce/latest/plugins/)
+* [CustomConfig](hhttps://www.tiny.cloud/docs/tinymce/latest/editor-important-options/)
+* [ValidElements](https://www.tiny.cloud/docs/tinymce/latest/content-filtering/#valid_elements)
+* [InvalidElements](https://www.tiny.cloud/docs/tinymce/latest/content-filtering/#invalid_elements)
 
 `CustomConfig` is slightly different from the rest as it extends the core config passed into TinyMCE.
+
+Read more about the advanced configuration and how to set it up in Umbraco in the [Rich Text Editor Settings](../../../../../reference/configuration/richtexteditorsettings.md) article.
 
 ## Allowing script tags in the RTE
 

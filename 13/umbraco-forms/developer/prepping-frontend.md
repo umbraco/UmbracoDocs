@@ -26,6 +26,16 @@ Alternatively, you can add the dependencies to the body tag:
 
 All dependencies originate from your Umbraco Forms installation, which means that no external references are needed.
 
+If you want to modify the rendering of the scripts, you can provide a object parameter named `htmlAttributes`. The contents of the object will be written out as HTML attributes on the script tags.
+
+You can use this to apply `async` or `defer` attributes. For example:
+
+```csharp
+@Html.RenderUmbracoFormDependencies(Url, new { @async = "async" })
+```
+
+If using `async`, please make sure to [disable the Forms client-side validation framework check](../developer/configuration/README.md#disableclientsidevalidationdependencycheck). This is necessary as it's not possible to guarantee that the asynchronous script will load in time to be recognized by the check. This can then cause a false positive warning.
+
 ## Validation Using jQuery
 
 If you want to use jQuery as your validation framework for Umbraco Forms, you can manually add the following client dependencies without using the above Razor method:

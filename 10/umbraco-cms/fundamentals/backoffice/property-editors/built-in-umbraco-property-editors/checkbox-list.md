@@ -12,11 +12,11 @@ Unlike other property editors, the Prevalue IDs are not directly accessible in R
 
 ## Data Type Definition Example
 
-![True/Checkbox List Definition](../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/checkbox-list-setup-v8.png)
+![True/Checkbox List Definition](../built-in-property-editors/images/checkbox-list-setup-v8.png)
 
 ## Content Example
 
-![Checkbox List Example](../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/checkbox-list-content.png)
+![Checkbox List Example](../built-in-property-editors/images/checkbox-list-content.png)
 
 ## MVC View Example
 

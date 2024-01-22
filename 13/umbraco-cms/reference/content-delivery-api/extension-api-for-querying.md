@@ -230,6 +230,26 @@ The principal difference from the selector is that the filter implements `BuildF
 
 Since we need to perform an exact match, the index field (`authorId`) is once again defined as a "raw" string. Other options include "analyzed" and "sortable" strings. These support "contains" searches and alpha-numeric sorting, respectively.
 
+### Filter operators
+
+When implementing a filter, you can use the following operators:  `Is`, `IsNot`, `Contains`, `DoesNotContain`, `GreaterThan`, `GreaterThanOrEqual`, `LessThan` and `LessThanOrEqual`.
+
+{% hint style="info" %}
+The range operators (_the latter four_) only work with number and date fields - `FieldType.Number` and `FieldType.Date` respectively.
+{% endhint %}
+
+It is possible to pass multiple values to each operator, and these values will be treated inclusively as an __or__ operator. For example, if `tag1` and `tag2` were passed into a filter using the `Is` operator, _any_ document containing __either__ `tag1` __or__ `tag2` would return. The request for this might look like this:
+
+```http
+GET /umbraco/delivery/api/v2/content?filter=customTagFilter:tag1,tag2
+```
+
+If you require this functionality to be restrictive i.e. `tag1` __and__ `tag2`, then the current approach would be to chain the custom filter. The request would change to look more like this:
+
+```http
+GET /umbraco/delivery/api/v2/content?filter=customTagFilter:tag1&filter=customTagFilter:tag2
+```
+
 ## Custom sort
 
 Finally, we can also add custom handling for the `sort` part of the query.

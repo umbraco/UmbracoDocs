@@ -14,20 +14,24 @@ In Umbraco 11 the TinyMCE version supported has been upgraded from version 4 to 
 If your site is upgraded from an older version, follow the migration guides below to upgrade the TinyMCE version as well.
 
 * [Migrate from version 4 to version 5](https://www.tiny.cloud/docs/migration-from-4x/)
-* [Migrate from version 5 to version 6](https://www.tiny.cloud/docs/tinymce/6/migration-from-5x/)
+* [Migrate from version 5 to version 6](https://www.tiny.cloud/docs/tinymce/latest/migration-from-5x/)
 {% endhint %}
 
-## [Configuration options](broken-reference)
+## [Configuration options](configuration.md)
 
 Customize everything from toolbar options to editor size to where pasted images are saved.
 
-## [Styles](broken-reference)
+## [Styles](rte-styles.md)
 
 Use CSS to define specific editor styles and add them as formatting options of the Rich Text Editor.
 
 ## [Blocks](rte-blocks.md)
 
 Use Blocks to define specific parts which can be added as part of the markup of the Rich Text Editor.
+
+## [Plugins](rte-plugins.md)
+
+Extend the functionality of the Rich Text Editor with plugins.
 
 ## Data Type Definition Example
 

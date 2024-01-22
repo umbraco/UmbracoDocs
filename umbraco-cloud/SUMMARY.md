@@ -3,7 +3,7 @@
 * [What is Umbraco Cloud?](README.md)
 * [Frequently asked questions](frequently-asked-questions.md)
 * [Security](security.md)
-* [Sustainability Best Practices](http://127.0.0.1:5000/o/vHdmkfI8smZW50A5yIZD/s/ZOU4fHcVxqYnC8V1dry6/)
+* [Sustainability Best Practices](https://docs.umbraco.com/sustainability-best-practices/)
 
 ## Getting Started
 
@@ -91,7 +91,8 @@
 
 * [Working with databases](databases/README.md)
 * [Database backups](databases/backups.md)
-* [Database](databases/cloud-database.md)
+* [Database](databases/cloud-database/README.md)
+  * [Connecting to the Database on Mac](databases/cloud-database/connecting-to-the-database-on-mac.md)
 * [Working with a Cloud database locally](databases/local-database.md)
 
 ## Product Upgrades
@@ -131,6 +132,7 @@
 ## Release Notes
 
 * [Overview 2023](release-notes/overview-2023.md)
+* [December 2023](release-notes/2023-12-releasenotes.md)
 * [October 2023](release-notes/2023-10-releasenotes.md)
 * [September 2023](release-notes/2023-09-releasenotes.md)
 * [August 2023](release-notes/2023-08-releasenotes.md)

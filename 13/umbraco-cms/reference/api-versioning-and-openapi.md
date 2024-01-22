@@ -43,8 +43,8 @@ public class MyConfigureApiVersioningOptions : IConfigureOptions<ApiVersioningOp
 
 public static class MyConfigureApiVersioningUmbracoBuilderExtensions
 {
-    // call this from ConfigureServices() in Startup, i.e.:
-    //     services.AddUmbraco(_env, _config)
+    // call this from Program.cs, i.e.:
+    //     builder.CreateUmbracoBuilder()
     //         ...
     //         .ConfigureMyApiVersioning()
     //         .Build();
@@ -95,8 +95,8 @@ public class MySwaggerRouteTemplatePipelineFilter : SwaggerRouteTemplatePipeline
 
 public static class MyConfigureSwaggerRouteUmbracoBuilderExtensions
 {
-    // call this from ConfigureServices() in Startup, i.e.:
-    //     services.AddUmbraco(_env, _config)
+    // call this from Program.cs, i.e.:
+    //     CreateUmbracoBuilder()
     //         ...
     //         .ConfigureMySwaggerRoute()
     //         .Build();
@@ -158,8 +158,8 @@ public static class MyOperationIdUmbracoBuilderExtensions
 {
     public static IUmbracoBuilder ConfigureMyOperationId(this IUmbracoBuilder builder)
     {
-        // call this from ConfigureServices() in Startup, i.e.:
-        //     services.AddUmbraco(_env, _config)
+        // call this from Program.cs, i.e.:
+        //     CreateUmbracoBuilder()
         //         ...
         //         .ConfigureMyOperationId()
         //         .Build();
@@ -204,8 +204,8 @@ public static class MySchemaIdUmbracoBuilderExtensions
 {
     public static IUmbracoBuilder ConfigureMySchemaId(this IUmbracoBuilder builder)
     {
-        // call this from ConfigureServices() in Startup, i.e.:
-        //     services.AddUmbraco(_env, _config)
+        // call this from Program.cs, i.e.:
+        //     builder.CreateUmbracoBuilder()
         //         ...
         //         .ConfigureMySchemaId()
         //         .Build();
@@ -264,8 +264,8 @@ public static class MyConfigureSwaggerGenUmbracoBuilderExtensions
 {
     public static IUmbracoBuilder ConfigureMySwaggerGen(this IUmbracoBuilder builder)
     {
-        // call this from ConfigureServices() in Startup, i.e.:
-        //     services.AddUmbraco(_env, _config)
+        // call this from Program.cs, i.e.:
+        //     builder.CreateUmbracoBuilder()
         //         ...
         //         .ConfigureMySwaggerGen()
         //         .Build();
