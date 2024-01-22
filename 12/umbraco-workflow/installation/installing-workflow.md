@@ -51,13 +51,9 @@ To install via Visual Studio, follow these steps:
 
 ```xml
 <ItemGroup>
-<PackageReference Include="Umbraco.Workflow" Version="13.0.0" />
+<PackageReference Include="Umbraco.Workflow" Version="12.0.0" />
 </ItemGroup>
 ```
-
-{% hint style="info" %}
-To test-drive Umbraco Workflow consider installing the [Umbraco.Workflow.DataGenerator package](data-generator/data-generator).
-{% endhint %}
 
 ## Using Umbraco Workflow
 
