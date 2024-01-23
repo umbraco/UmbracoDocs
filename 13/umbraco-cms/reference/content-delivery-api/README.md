@@ -12,7 +12,7 @@ The Delivery API is an opt-in feature of Umbraco. It must be explicitly enabled 
 
 Umbraco projects started on version 11 or below also need to opt-in by code. Below you will find a description of how to do this.
 
-For a fresh Umbraco installation you can proceed directly to the [Enable the Content Delivery API](./#enable-the-content-delivery-api) section, as the code based opt-in is already complete in this case.
+For a fresh Umbraco installation you can proceed directly to the [Enable the Content Delivery API](./#enable-the-content-delivery-api) section.
 
 {% embed url="https://www.youtube.com/watch?v=sh_AF-ZKJ28" %}
 Video tutorial
