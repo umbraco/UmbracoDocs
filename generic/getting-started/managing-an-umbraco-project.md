@@ -16,11 +16,11 @@ In this section you will find information on the key concepts and requirements o
 
 [What commerical options are available from Umbraco?](https://umbraco.com/products/)
 
-[Information on planning an Umbraco project](http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/fundamentals/setup/requirements)
+[Information on planning an Umbraco project](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/fundamentals/setup/requirements)
 
-[How do I manage users with Umbraco?](http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/fundamentals/data/users)
+[How do I manage users with Umbraco?](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/fundamentals/data/users)
 
-[What is the deployment process for Umbraco?](http://127.0.0.1:5000/s/ZtqcoypStodmS9g6g8zC/deployments)
+[What is the deployment process for Umbraco?](https://app.gitbook.com/s/PzKn70Piyd2fd5UkYZGf/deployments/deployment)
 
 [What is the Umbraco Community?](https://community.umbraco.com)
 
