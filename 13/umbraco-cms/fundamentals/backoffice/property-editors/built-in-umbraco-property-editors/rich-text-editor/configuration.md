@@ -72,7 +72,7 @@ The RTE can also accept advanced configuration through the `appSettings.json` fi
 
 * [Commands](https://www.tiny.cloud/docs/tinymce/latest/editor-command-identifiers/)
 * [Plugins](https://www.tiny.cloud/docs/tinymce/latest/plugins/)
-* [CustomConfig](hhttps://www.tiny.cloud/docs/tinymce/latest/editor-important-options/)
+* [CustomConfig](https://www.tiny.cloud/docs/tinymce/latest/editor-important-options/)
 * [ValidElements](https://www.tiny.cloud/docs/tinymce/latest/content-filtering/#valid_elements)
 * [InvalidElements](https://www.tiny.cloud/docs/tinymce/latest/content-filtering/#invalid_elements)
 
