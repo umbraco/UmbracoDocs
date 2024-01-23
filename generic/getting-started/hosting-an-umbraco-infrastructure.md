@@ -6,7 +6,7 @@ description: >-
 
 # Hosting an Umbraco project
 
-You can find resources to guide you through the process of installing and hosting different types of Umbraco projects. Here you will find details on Azure setups, our [Umbraco Cloud](https://app.gitbook.com/s/7zCNR9rpMEvvshrRfAAz/umbraco-cloud-documentation#getting-started) hosting service, how to upgrade Umbraco, and much more.
+You can find resources to guide you through the process of installing and hosting different types of Umbraco projects. Here you will find details on Azure setups, our [Umbraco Cloud](https://app.gitbook.com/s/PzKn70Piyd2fd5UkYZGf/) hosting service, how to upgrade Umbraco, and much more.
 
 In this section you will also find information on areas such as load balancing, deployments and user management.
 
@@ -15,14 +15,14 @@ In this section you will also find information on areas such as load balancing, 
 ## How to install and configure an Umbraco installation
 
 * [Setup Umbraco](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/fundamentals/setup)
-* [Install Umbraco](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/fundamentals/setup#installation)
-* [Upgrading Umbraco](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/fundamentals/setup#upgrade-your-project)
+* [Install Umbraco](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/fundamentals/setup/install)
+* [Upgrading Umbraco](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/fundamentals/setup/upgrading)
 
 ## Server Requirements
 
-* [Server setup](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/fundamentals/setup#server-setup)
-* [Server setup requirements](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/fundamentals/setup#requirements)
-* [Running on Azure web apps](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/fundamentals/setup#server-setup)
+* [Server setup](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/fundamentals/setup/server-setup)
+* [Server setup requirements](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/fundamentals/setup/requirements)
+* [Running on Azure web apps](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/fundamentals/setup/server-setup/azure-web-apps)
 
 ## Related links
 
