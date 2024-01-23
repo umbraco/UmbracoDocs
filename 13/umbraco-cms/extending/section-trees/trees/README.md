@@ -37,7 +37,7 @@ The example above would register a custom tree with a title 'Favourite Things Na
 
 ### Tree Groups
 
-Tree Groups enable you to group trees in a section. You provide the alias of the Tree Group name, you wish to add your tree to. See [Constants.Trees.Groups](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Constants.Trees.Groups.html) for a list of existing group alias. An example of tree groups in the backoffice would be the _Settings_ tree group and the _Templating_ tree group in the _Settings_ section.
+Tree Groups enable you to group trees in a section. You provide the alias of the Tree Group name, you wish to add your tree to. See [Constants.Trees.Groups](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.Constants.Trees.Groups.html) for a list of existing group alias. An example of tree groups in the backoffice would be the _Settings_ tree group and the _Templating_ tree group in the _Settings_ section.
 
 If you add your own alias, you'll need to add a translation key. This can be done by adding a language file to a `lang` folder with your application folder in `App_Plugins`: `App_Plugins/favouriteThings/lang/en-us.xml`. This will avoid the alias appearing as the header in \[square brackets].
 
