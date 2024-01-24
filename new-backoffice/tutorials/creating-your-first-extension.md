@@ -6,6 +6,8 @@ description: Learn how to create your first extension for Umbraco.
 
 This guide will help you set up your first extension using vanilla JavaScript or Vite, Typescript, and Lit. It is also part of the prerequisites for [Creating a Property Editor](creating-a-property-editor/) and [Creating a Custom Dashboard](creating-a-custom-dashboard.md) tutorials.
 
+You should read the [Setup Your Development Environment](../extending/development-flow/README.md) article before you start this tutorial.
+
 ## The end result
 
 By the end of this tutorial, we will have a extension up and running with a Web Component. This will be made with Vanilla JavaScript or made and set up with Vite, Typescript, and Lit.
@@ -114,8 +116,6 @@ Now we have a JavaScript file with a Web Component which gets linked to a Dashbo
 
 Press the F5 button in your favorite IDE or run `dotnet run` in a command line. Then you should be able to see the new dashboard show up in the Content section.
 
-You can read more on how to run Umbraco in the [Installation article](broken-reference).
-
 ## Extension with Vite, Typescript, and Lit
 
 Umbraco recommends building extensions with a setup using TypeScript and a build tool such as Vite. Umbraco uses the library Lit for building web components which we will be using throughout this guide.
@@ -124,10 +124,16 @@ Umbraco recommends building extensions with a setup using TypeScript and a build
 
 Vite comes with a set of really good presets to get you quickly up and running with libraries and languages. Examples: Lit, Svelte, and vanilla Web Components with both JavaScript and TypeScript. We will use their preset of Lit and TypeScript.
 
-Find a place where you want to keep your source files, this could be the App_Plugins folder in your Umbraco project. And paste the following command:
+Find a place where you want to keep your source files, this could be a new `src` folder under the `App_Plugins/my-package` folder you created before.
+
+{% hint style="info" %}
+Be aware that any files in the `App_Plugins` folder are publicly available. If you want to keep your source files private, you should create a new folder outside of the `App_Plugins` folder. Your source files could be in a whole new project where you build your extension and then copy the build files to the `App_Plugins` folder.
+{% endhint %}
+
+Paste and run the following command in your terminal where you want to create your new project:
 
 ```bash
-npm create vite@latest --template lit-ts my-extension
+npm create vite@latest my-extension -- --template lit-ts
 ```
 
 This sets up our new project in a folder named `my-extension` and creates a `package.json` file, which includes the necessary packages. Navigate to the new project folder and install the packages using:
@@ -139,8 +145,10 @@ npm install
 The last thing we need to install now is our Backoffice package. You can install the package using the following command:
 
 ```bash
-npm install -D @umbraco-cms/backoffice
+npm install --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@latest
 ```
+
+This will install the latest version of the Backoffice package from our prereleases feed. Make sure that the version of the Backoffice package matches the version of Umbraco you are running.
 
 {% hint style="warning" %}
 If you see any errors during this process, make sure that you have the right tools installed (Node, .NET, and so on). Also, make sure you have followed the steps on how to [Setup Your Development Environment](../extending/development-flow/).
@@ -221,22 +229,22 @@ Next, we are going to build the `ts` file so we can use it in our package:
 npm run build
 ```
 
-After running the build, you will see a new file in the `dist` folder with the name `my-extension.js`. Copy this file and navigate to `App_Plugins` in your Umbraco project, and create a new folder called `my-package`. Here we are going to insert the copied file.
+After running the build, you will see a new file in the `dist` folder with the name `my-extension.js`. This is the file we will use in our package. To do so, you need to open the `umbraco-package.json` file and change the `js` property to point to your new file. If you chose to put the source code inside your `App_Plugins` folder, the path will be `/App_Plugins/my-package/my-extension/dist/my-extension.js`.
 
-Finally, add a file called `umbraco-package.json` the root of the folder`my-package`and insert the following code:
+The `umbraco-package.json` file should look like this:
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
 ```json
 {
 	"$schema": "../../umbraco-package-schema.json",
-	"name": "My Package",
+	"name": "My.Package",
 	"version": "0.1.0",
 	"extensions": [
 		{
 			"type": "dashboard",
-			"alias": "My.Dashboard.MyExtension",
+			"alias": "my.custom.dashboard",
 			"name": "My Dashboard",
-			"js": "/App_Plugins/my-package/my-extension.js",
+			"js": "/App_Plugins/my-package/my-extension/dist/my-extension.js",
 			"weight": -1,
 			"meta": {
 				"label": "My Dashboard",
@@ -259,5 +267,3 @@ Finally, add a file called `umbraco-package.json` the root of the folder`my-pack
 Now we have a JavaScript file with a Web Component which gets linked to a Dashboard Extension as part of the Package Manifest JSON.
 
 Press the F5 button in your favorite IDE or run `dotnet run` in a command line. Then you should be able to see the new dashboard show up in the Content section.
-
-You can read more on how to run Umbraco in the [Installation article](broken-reference).
