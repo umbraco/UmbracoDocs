@@ -1,8 +1,8 @@
-# December 2024
+# January 2024
 
 ## Key Takeaways
 
-* **Self-Service Cipher Suite Management **  - Effortlessly manage and disable cipher suites on the Security page for tailored, efficient control.
+* **Self-Service Cipher Suite Management**  - Effortlessly manage and disable cipher suites on the Security page for tailored, efficient control.
 
 ## Self-Service Cipher Suite Management 
 In our ongoing effort to enhance your experience with Umbraco Cloud, we've introduced a new feature that puts the power of cipher suite management right at your fingertips. Now available as a self-service option in the Cloud Portal's “Security Page”, this update enables you to enable or disable cipher suites directly through a user-friendly "Ciphers" dropdown menu.
