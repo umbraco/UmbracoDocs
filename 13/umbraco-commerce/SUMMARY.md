@@ -55,6 +55,9 @@
 * [ReadOnly and Writable Entities](key-concepts/readonly-and-writable-entities.md)
 * [Search Specifications](key-concepts/search-specifications.md)
 * [Settings Objects](key-concepts/settings-objects.md)
+* [Shipping Package Factories](key-concepts/shipping-package-factories.md)
+* [Shipping Providers](key-concepts/shipping-providers.md)
+* [Shipping Range / Rate Providers](key-concepts/shipping-range-and-rate-providers.md)
 * [Tax Sources](key-concepts/tax-sources.md)
 * [UI Config Files](key-concepts/ui-config-files.md)
 * [Umbraco Properties](key-concepts/umbraco-properties.md)
@@ -68,6 +71,12 @@
 
 ## Reference
 
+* [Configuration](reference/configuration/README.md)
+  * [Store settings](reference/configuration/store-settings.md)
+* [Shipping](reference/shipping/README.md)
+  * [Fixed Rate Shipping](reference/shipping/fixed-rate-shipping.md)
+  * [Dynamic Rate Shipping](reference/shipping/dynamic-rate-shipping.md)
+  * [Realtime Rate Shipping](reference/shipping/relatime-rate-shipping.md)
 * [Storefront API](reference/storefront-api/README.md)
   * [Endpoints](reference/storefront-api/endpoints/README.md)
     * [Order](reference/storefront-api/endpoints/order.md)
