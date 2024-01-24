@@ -51,7 +51,7 @@ _For more information, see the_ [_Host and deploy ASP.NET Core applications_](ht
 You can use [Umbraco Cloud](https://umbraco.com/products/umbraco-cloud/) to manage the hosting infrastructure. All Umbraco Cloud plans are hosted on Microsoft Azure, which gives your site a proven and solid foundation.
 {% endhint %}
 
-#### Other recommendation
+### Other recommendation
 
 * Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site. This would typically be **NETWORK SERVICE**.
 
