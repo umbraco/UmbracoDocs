@@ -20,7 +20,7 @@ The Umbraco UI works in all modern browsers:
   * [Microsoft Visual Studio](https://www.visualstudio.com/) **2022 v17.4 and higher**
   * [JetBrains Rider](https://www.jetbrains.com/rider) **version 2022.3 and higher**
   * [.NET Core CLI](install/install-umbraco-with-templates.md)
-* [.NET 8.0 and higher](https://dotnet.microsoft.com/en-us/platform/support/policy)
+* [.NET 8.0 and higher](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 * [SQL connection string (SQL Server)](../../reference/configuration/connectionstringssettings.md)
 
 {% hint style="info" %}
