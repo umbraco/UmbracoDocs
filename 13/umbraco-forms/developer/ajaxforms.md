@@ -538,7 +538,7 @@ Examples demonstrating how to handle a file upload and use reCAPTCHA fields are 
 
 The [Content Delivery API](https://docs.umbraco.com/umbraco-cms/v/12.latest/reference/content-delivery-api) provides headless capabilities within Umbraco by allowing you to retrieve content in JSON format.
 
-When retrieving content that contains an Umbraco Forms form picker, the output by default will consist of just the ID of the selected form:
+When retrieving content that contains an Umbraco Forms form picker, the output by default will consist of the ID of the selected form:
 
 ```json
 {
