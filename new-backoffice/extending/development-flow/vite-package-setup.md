@@ -31,14 +31,10 @@ npm install
 The last thing we need to install now is our Backoffice package. You can install the package using the following command:
 
 ```bash
-npm install -D @umbraco-cms/backoffice@14.0.0--preview003
+npm install --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@14.0.0--preview004
 ```
 
-{% hint style="info" %}
-The `--preview003` is required to install the correct version of the package. You have to specify the specific version. Otherwise you will get the latest version of the package, which may not be compatible with the version of Umbraco you are using.
-{% endhint %}
-
-This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice.
+This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `--preview004` is the version of the package, which will change as new versions are released.
 
 {% hint style="warning" %}
 If you see any errors during this process, make sure that you have the right tools installed (Node, .NET, and so on). Also, make sure you have followed the steps on how to [Setup Your Development Environment](./).
@@ -100,7 +96,7 @@ The example below indicates where in the structure this change should be impleme
 
 ### Umbraco Package declaration
 
-Declare your package to Umbraco, via a file called `umbraco-package.json.` This should be added at the root of your package.
+Declare your package to Umbraco via a file called `umbraco-package.json.` This should be added at the root of your package.
 
 This example declares a Dashboard as part of your Package, using the Vite example element.
 
