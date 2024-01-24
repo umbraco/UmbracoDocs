@@ -51,7 +51,7 @@ Realtime rates are returned by implementing the `GetShippingRatesAsync` method. 
 
 * **Order** - The Order and it's items to be shipped.
 * **MeasurementSystem** - The measurement system of the Store associated with the given Order.
-* **Packages** - A list of packages that make up this shippment. Each package contains a reference of the order lines it contains, it's overall dimensions and weight and both a sender and receiver address details.
+* **Packages** - A list of packages that make up this shippment. Each package contains a reference of the order lines it contains, it's overall dimensions and weight and both a sender and receiver address details. See the [Shipping Package Factories documentation](./shipping-package-factories.md) for more details on how these are created.
 * **Settings** - The shipping provider settings captured via the back office UI.
 * **AdditionalData** - A general dictionary store for any data that may need passing between methods.
 * **HttpContext** - A reference to the current HTTP context.
