@@ -134,7 +134,7 @@ This example declares a Dashboard as part of your Package, using the Vite exampl
 {% hint style="info" %}
 Umbraco needs the name of the element that will render as default when our dashboard loads. This is specified in the manifest as the `elementName`. Another approach would be to define your default element in the TS code.
 
-To do this, you should add `default` to your `MyElement` class in the `my-element.js` file like so 
+To do this, you should add `default` to your `MyElement` class in the `my-element.js` file like so
 
 ```ts
 export default class MyElement extends LitElement {
