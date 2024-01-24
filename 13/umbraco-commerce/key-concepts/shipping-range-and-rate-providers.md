@@ -35,7 +35,7 @@ public class MyShippingRateRangeProvider : ShippingRateRangeProvider<decimal?>
 }
 ```
 
-The class should be decorated with the `ShippingRateRangeProviderAttribute` which defines an alias, name, description and property editor view path for the provider. It implementes  a single method `TryFindRangeIndex` which, given a `ShippingRateRangeCalculationContext`, should find the index the current order falls within a series of preconfigured ranges created via the UI. The `ShippingRateRangeCalculationContext` contains a series of useful properties which you can use to form your calculation.
+The class should be decorated with the `ShippingRateRangeProviderAttribute` which defines an alias, name, description, editor view and label view for the provider. It implementes  a single method `TryFindRangeIndex` which, given a `ShippingRateRangeCalculationContext`, should find the index the current order falls within a series of preconfigured ranges created via the UI. The `ShippingRateRangeCalculationContext` contains a series of useful properties which you can use to form your calculation.
 
 * **Ranges** - A list of configured ranges from the UI from which to find the index of the given order.
 * **Order** - The order to use when finding the current range.
@@ -44,10 +44,6 @@ The class should be decorated with the `ShippingRateRangeProviderAttribute` whic
 * **TaxRate** - The tax rate for the shipping method.
 * **Packages** - A list of packages created for this shipment.
 * **OrderCalculation** - The current in progress order calculation, should there be one.
-
-#### Shipping Rate Range Provider UI
-
-Umbraco Commerce will automatically build the UI and management code for editing your rate ranges, however you should provide both an editor and label view to provide the specific logic for editing and viewing your range values. The editor view is defined as part of the `ShippingRateRangeProviderAttribute` declaration on your rate range provider class. The label view is resolved by convention, looking for an angular view at `~/App_Plugins/UmbracoCommerce/backoffice/views/shippingmethod/rateranges/labelviews/{PROVIDER_ALIAS}.html`
 
 #### Registering your custom Shipping Rate Range Provider
 
@@ -84,7 +80,7 @@ public class MyShippingRateProvider : ShippingRateProvider<int>
 }
 ```
 
-The class should be decorated with the `ShippingRateProviderAttribute` which defines an alias, name, description and property editor view path for the provider. It implementes a single method `TryGetRate` which, given a `ShippingRateCalculationContext`, should calculate the relevant rate. The `ShippingRateCalculationContext` contains a series of useful properties which you can use to form your calculation.
+The class should be decorated with the `ShippingRateProviderAttribute` which defines an alias, name, description, editor view and label view for the provider. It implementes a single method `TryGetRate` which, given a `ShippingRateCalculationContext`, should calculate the relevant rate. The `ShippingRateCalculationContext` contains a series of useful properties which you can use to form your calculation.
 
 * **Model** - The value for this rate provider captured from the UI.
 * **Order** - The order associated with this calculation.
@@ -93,10 +89,6 @@ The class should be decorated with the `ShippingRateProviderAttribute` which def
 * **TaxRate** - The tax rate for the shipping method.
 * **Packages** - A list of packages created for this shipment.
 * **OrderCalculation** - The current in progress order calculation, should there be one.
-
-#### Shipping Rate Provider UI
-
-Umbraco Commerce will automatically build the UI and management code for editing your rate, however you should provide both an editor and label view to provide the specific logic for editing and viewing your rate values. The editor view is defined as part of the `ShippingRateProviderAttribute` declaration on your rate provider class. The label view is resolved by convention, looking for an angular view at `~/App_Plugins/UmbracoCommerce/backoffice/views/shippingmethod/rates/labelviews/{PROVIDER_ALIAS}.html`
 
 #### Registering your custom Shipping Rate Provider
 
