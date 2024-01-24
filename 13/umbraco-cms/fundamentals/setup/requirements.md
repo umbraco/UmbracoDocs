@@ -11,16 +11,15 @@ The Umbraco UI works in all modern browsers:
 
 ## Local Development
 
-* One of the following OSs:
-  * Microsoft Windows 10 or 11
-  * MacOS High Sierra 10.13 or higher
-  * Linux (Ubuntu, Alpine, CentOS, Debian, Fedora, openSUSE and other major distributions)
+Below you can find the minimum requirements to run Umbraco 13 on your machine:
+
+* [.NET 8.0 and higher](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+* One of the [.NET 8 - Supported OS versions](https://github.com/dotnet/core/blob/main/release-notes/8.0/supported-os.md#net-8---supported-os-versions)
 * One of the following .NET Tools or Editors:
   * [Visual Studio Code](https://code.visualstudio.com/) with the [IISExpress extension](https://marketplace.visualstudio.com/items?itemName=warren-buckley.iis-express)
-  * [Microsoft Visual Studio](https://www.visualstudio.com/) **2022 v17.4 and higher**
-  * [JetBrains Rider](https://www.jetbrains.com/rider) **version 2022.3 and higher**
+  * [Microsoft Visual Studio](https://www.visualstudio.com/) 2022 version 17.8 or higher.
+    * Optional: [JetBrains Rider](https://www.jetbrains.com/rider) version 2022.3 and higher
   * [.NET Core CLI](install/install-umbraco-with-templates.md)
-* [.NET 8.0 and higher](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 * [SQL connection string (SQL Server)](../../reference/configuration/connectionstringssettings.md)
 
 {% hint style="info" %}
@@ -29,7 +28,7 @@ When using Visual Studio as your primary Integrated Development Environment (IDE
 
 ## Hosting
 
-### Recommendation and Minimum requirements to run Umbraco
+### Recommendation requirements to run Umbraco
 
 As Umbraco releases are aligned to the .NET release cadence, it's also aligned with Microsoft's Long-term support policy for the underlying framework. For the best experience, we would recommend that you ensure to be on the latest and supported Microsoft versions to run and host Umbraco CMS:
 
@@ -37,6 +36,11 @@ As Umbraco releases are aligned to the .NET release cadence, it's also aligned w
 * [MacOs Supported releases](https://learn.microsoft.com/en-us/dotnet/core/install/macos#supported-releases)
 * [Ubuntu Supported distributions](https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#supported-distributions) and other [Linux Packages](https://learn.microsoft.com/en-us/dotnet/core/install/linux#packages)
 * [.NET Supported releases](https://dotnet.microsoft.com/en-us/platform/support/policy)
+
+{% hint style="info" %}
+For the above, as Umbraco version 13 is based on .NET 8 you will need to follow the .NET 8 supported versions.
+{% endhint %}
+
 * [IIS Supported releases](https://learn.microsoft.com/en-us/lifecycle/products/internet-information-services-iis)
 * [SQL Server Supported releases](https://learn.microsoft.com/en-us/sql/sql-server/end-of-support/sql-server-end-of-support-overview?view=sql-server-ver16#lifecycle-dates)
 * [SQLite](https://www.sqlite.org/index.html)
