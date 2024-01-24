@@ -524,7 +524,7 @@ Firstly, with server-to-server integrations you will want to disable the antifor
 
 This is done by setting the `Umbraco:Forms:Security:EnableAntiForgeryTokenForFormsApi` configuration key to a value of `false`.
 
-You should then configure an API key `Umbraco:Forms:Security:FormsApiKey`.  This can be any string value, but shouldn't be easily guessable by a brute force attack.
+You should then configure an API key `Umbraco:Forms:Security:FormsApiKey`.  This can be any string value, but it should be complex enough to resist being guessed by a brute force attack.
 
 With this in place any request to the Forms API will be rejected unless the configured value is provided in an HTTP header named `Api-Key`.
 
