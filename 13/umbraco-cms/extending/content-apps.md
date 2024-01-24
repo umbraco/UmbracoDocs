@@ -281,19 +281,6 @@ public class WordCounterApp : IContentAppFactory
 }
 ```
 
-You can register a content app in the `Program.cs` class:
-
-```csharp
-builder.CreateUmbracoBuilder()
-    .AddBackOffice()
-    .AddWebsite()
-    .AddDeliveryApi()
-    .AddComposers()
-    // Register the content app
-    .AddContentApp<WordCounterApp>()
-    .Build();
-```
-
 You will still need to add all of the files you added above. However, because your C# code is adding the Content App, the `package.manifest` file can be simplified like this:
 
 ```json5
