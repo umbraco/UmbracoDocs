@@ -40,14 +40,14 @@ If you need to consume a Context API from a non-controller host, then look at th
 A Context Token is generally a string matched with a type. In this way, users of the token can be sure to get the right type of context.
 
 ```ts
-import { ContextToken } from '@umbraco-cms/backoffice/context';
+import { ContextToken } from "@umbraco-cms/backoffice/context";
 
 type MyContext = {
-	foo: string;
-	bar: number;
+    foo: string;
+    bar: number;
 };
 
-const MY_CONTEXT_TOKEN = new ContextToken<MyContext>('My.Context.Token');
+const MY_CONTEXT = new ContextToken<MyContext>("My.Context.Token");
 ```
 
 ### **Context Token with a Type Discriminator**
@@ -69,37 +69,40 @@ This example shows how to create a discriminator Context Token, that will discar
 Context token example:
 
 ```ts
-import { ContextToken } from '@umbraco-cms/backoffice/context';
+import { ContextToken } from "@umbraco-cms/backoffice/context";
 
 interface MyBaseContext {
-	foo: string;
-	bar: number;
-};
+    foo: string;
+    bar: number;
+}
 
 interface MyPublishableContext extends MyBaseContext {
-	publish()
-};
+    publish();
+}
 
-const MY_PUBLISHABLE_CONTEXT_TOKEN = new ContextToken<MyContext, MyPublishableContext>('My.Context.Token', (context): context is MyPublishableContext => {
-	return 'publish' in context;
+const MY_PUBLISHABLE_CONTEXT = new ContextToken<
+    MyContext,
+    MyPublishableContext
+>("My.Context.Token", (context): context is MyPublishableContext => {
+    return "publish" in context;
 });
 ```
 
 Implementation of context token example:
 
 ```ts
-
 const contextElement = new UmbLitElement();
-contextElement.provideContext(MY_PUBLISHABLE_CONTEXT_TOKEN, new MyPublishableContext());
-
+contextElement.provideContext(
+    MY_PUBLISHABLE_CONTEXT,
+    new MyPublishableContext()
+);
 
 const consumerElement = new UmbLitElement();
 contextElement.appendChild(contextElement);
-consumerElement.consumeContext(MY_PUBLISHABLE_CONTEXT_TOKEN, (context) => {
-	// context is of type 'MyPublishableContext'
-	console.log("I've got the context of the right type", context);
+consumerElement.consumeContext(MY_PUBLISHABLE_CONTEXT, (context) => {
+    // context is of type 'MyPublishableContext'
+    console.log("I've got the context of the right type", context);
 });
-
 ```
 
 This enables implementors to request a publishable context, without the knowledge about how to identify such, nor do they need to know about the Type.

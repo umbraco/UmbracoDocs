@@ -26,17 +26,17 @@ Let's start with the notification context. We will import the things we need and
 
 ```typescript
 import {
-    UMB_NOTIFICATION_CONTEXT_TOKEN,
+    UMB_NOTIFICATION_CONTEXT,
     UmbNotificationDefaultData,
 } from "@umbraco-cms/backoffice/notification";
 ```
 
 ```typescript
-  #notificationContext?: typeof UMB_NOTIFICATION_CONTEXT_TOKEN.TYPE;
+  #notificationContext?: typeof UMB_NOTIFICATION_CONTEXT.TYPE;
 
   constructor() {
     super();
-    this.consumeContext(UMB_NOTIFICATION_CONTEXT_TOKEN, (instance) => {
+    this.consumeContext(UMB_NOTIFICATION_CONTEXT, (instance) => {
       this.#notificationContext = instance;
     });
   }
@@ -81,22 +81,22 @@ Let's continue to add more logic. If the length is more than the `maxChars` conf
 
 ```typescript
 import {
-    UMB_MODAL_MANAGER_CONTEXT_TOKEN,
+    UMB_MODAL_MANAGER_CONTEXT,
     UMB_CONFIRM_MODAL,
 } from "@umbraco-cms/backoffice/modal";
 ```
 
 ```typescript
- #modalManagerContext?: typeof UMB_MODAL_MANAGER_CONTEXT_TOKEN.TYPE;
- #notificationContext?: typeof UMB_NOTIFICATION_CONTEXT_TOKEN.TYPE;
+ #modalManagerContext?: typeof UMB_MODAL_MANAGER_CONTEXT.TYPE;
+ #notificationContext?: typeof UMB_NOTIFICATION_CONTEXT.TYPE;
 
  constructor() {
     super();
-    this.consumeContext(UMB_MODAL_MANAGER_CONTEXT_TOKEN, (instance) => {
+    this.consumeContext(UMB_MODAL_MANAGER_CONTEXT, (instance) => {
       this.#modalManagerContext = instance;
     });
 
-    this.consumeContext(UMB_NOTIFICATION_CONTEXT_TOKEN, (instance) => {
+    this.consumeContext(UMB_NOTIFICATION_CONTEXT, (instance) => {
       this.#notificationContext = instance;
     });
   }
@@ -136,15 +136,23 @@ It should look like this:
 <summary>property-editor-ui-suggestions.element.ts</summary>
 
 ```typescript
-import { LitElement, css, html, customElement, property, state, ifDefined } from "@umbraco-cms/backoffice/external/lit";
+import {
+    LitElement,
+    css,
+    html,
+    customElement,
+    property,
+    state,
+    ifDefined,
+} from "@umbraco-cms/backoffice/external/lit";
 import { type UmbPropertyEditorExtensionElement } from "@umbraco-cms/backoffice/extension-registry";
 import { type UmbPropertyEditorConfigCollection } from "@umbraco-cms/backoffice/property-editor";
 import {
-    UMB_MODAL_MANAGER_CONTEXT_TOKEN,
+    UMB_MODAL_MANAGER_CONTEXT,
     UMB_CONFIRM_MODAL,
 } from "@umbraco-cms/backoffice/modal";
 import {
-    UMB_NOTIFICATION_CONTEXT_TOKEN,
+    UMB_NOTIFICATION_CONTEXT,
     UmbNotificationDefaultData,
 } from "@umbraco-cms/backoffice/notification";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
@@ -174,16 +182,16 @@ export class MySuggestionsPropertyEditorUIElement
         "Are you hungry?",
     ];
 
-    #modalManagerContext?: typeof UMB_MODAL_MANAGER_CONTEXT_TOKEN.TYPE;
-    #notificationContext?: typeof UMB_NOTIFICATION_CONTEXT_TOKEN.TYPE;
+    #modalManagerContext?: typeof UMB_MODAL_MANAGER_CONTEXT.TYPE;
+    #notificationContext?: typeof UMB_NOTIFICATION_CONTEXT.TYPE;
 
     constructor() {
         super();
-        this.consumeContext(UMB_MODAL_MANAGER_CONTEXT_TOKEN, (instance) => {
+        this.consumeContext(UMB_MODAL_MANAGER_CONTEXT, (instance) => {
             this.#modalManagerContext = instance;
         });
 
-        this.consumeContext(UMB_NOTIFICATION_CONTEXT_TOKEN, (instance) => {
+        this.consumeContext(UMB_NOTIFICATION_CONTEXT, (instance) => {
             this.#notificationContext = instance;
         });
     }
