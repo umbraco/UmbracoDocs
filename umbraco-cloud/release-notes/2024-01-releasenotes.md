@@ -9,6 +9,6 @@ In our ongoing effort to enhance your experience with Umbraco Cloud, we've intro
 
 We understand that managing security settings is a critical aspect of any cloud project, and our goal is to make this process as seamless as possible. With this latest update, you have the flexibility to tailor security settings to your specific needs, whether it's for an individual project or across multiple hostnames. By default, we've kept all cipher suites enabled, ensuring that you start with robust security measures in place
 
-
+![Disable Cipher Suites](images/DisableCipherSuites.gif)
 
 The interface for this feature has been designed with simplicity in mind. You can now adjust your security settings with just a few clicks, saving you time and effort and allowing you to focus on the more critical aspects of your work. We believe this streamlined approach will significantly enhance your overall efficiency and ease of use.
