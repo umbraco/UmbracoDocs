@@ -118,13 +118,17 @@ Press the F5 button in your favorite IDE or run `dotnet run` in a command line. 
 
 ## Extension with Vite, Typescript, and Lit
 
-Umbraco recommends building extensions with a setup using TypeScript and a build tool such as Vite. Umbraco uses the library Lit for building web components which we will be using throughout this guide.
+You now have a working extension with a dashboard Web Component written in plain JavaScript and no build tool. However, Umbraco recommends building extensions with a setup using TypeScript and a build tool such as [Vite](https://vitejs.dev). Umbraco uses the library [Lit](https://lit.dev) for building web components which we will be using throughout this guide.
 
 ### Getting Started With Vite
 
+{% hint style="info" %}
+If you want to learn more about Vite, you can read the [Vite Package Setup](../extending/development-flow/vite-package-setup.md) article. It will go into more detail about the setup and how to use Vite with Umbraco. For this tutorial, we will only cover the basics and assume you have no Vite setup yet.
+{% endhint %}
+
 Vite comes with a set of really good presets to get you quickly up and running with libraries and languages. Examples: Lit, Svelte, and vanilla Web Components with both JavaScript and TypeScript. We will use their preset of Lit and TypeScript.
 
-Find a place where you want to keep your source files, this could be a new `src` folder under the `App_Plugins/my-package` folder you created before.
+Find a place where you want to keep your source files, this could be a new folder under the `App_Plugins/my-package` folder you created before.
 
 {% hint style="info" %}
 Be aware that any files in the `App_Plugins` folder are publicly available. If you want to keep your source files private, you should create a new folder outside of the `App_Plugins` folder. Your source files could be in a whole new project where you build your extension and then copy the build files to the `App_Plugins` folder.
@@ -144,8 +148,12 @@ npm install
 
 The last thing we need to install now is our Backoffice package. You can install the package using the following command:
 
+{% hint style="warning" %}
+The Backoffice package currently relies on the older Lit 2.8 and the Vite template uses Lit 3. Because of this mismatch, you need to override the Lit version in the Backoffice package by installing with the `--force` option. This will be fixed in a future version when the Backoffice has been upgraded to Lit 3.
+{% endhint %}
+
 ```bash
-npm install --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@latest
+npm install --force --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@latest
 ```
 
 This will install the latest version of the Backoffice package from our prereleases feed. Make sure that the version of the Backoffice package matches the version of Umbraco you are running.
@@ -157,21 +165,22 @@ If you see any errors during this process, make sure that you have the right too
 Next, create a new file called `vite.config.ts` and insert the following code:
 
 ```javascript
-import { defineConfig } from "vite";
+import { defineConfig } from 'vite';
 
 export default defineConfig({
   build: {
     lib: {
-      entry: "src/my-element.ts", // your web component source file
-      formats: ["es"],
+      entry: 'src/my-element.ts', // your web component source file
+      formats: ['es'],
     },
-    outDir: "dist", // your web component will be saved in this location
+    outDir: 'dist', // your web component will be saved in this location
     sourcemap: true,
     rollupOptions: {
       external: [/^@umbraco/],
     },
   },
 });
+
 ```
 
 This alters the Vite default output into a "library mode", where the output is a JavaScript file with the same name as the `name` attribute in `package.json`. The name is `my-extension` if you followed this tutorial with no changes.
@@ -184,40 +193,49 @@ Navigate to `src/my-element.ts`, open the file and replace it with the following
 
 {% code title="src/my-element.ts" lineNumbers="true" %}
 ```typescript
-import { LitElement, html, customElement } from "@umbraco-cms/backoffice/external/lit";
+import {
+  LitElement,
+  html,
+  customElement,
+} from '@umbraco-cms/backoffice/external/lit';
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
-import { UmbNotificationContext, UMB_NOTIFICATION_CONTEXT_TOKEN } from '@umbraco-cms/backoffice/notification';
+import { UMB_NOTIFICATION_CONTEXT_TOKEN } from '@umbraco-cms/backoffice/notification';
 
 @customElement('my-element')
 export default class MyElement extends UmbElementMixin(LitElement) {
-	#notificationContext?: UmbNotificationContext;
+  #notificationContext?: typeof UMB_NOTIFICATION_CONTEXT_TOKEN.TYPE;
 
-	constructor() {
-		super();
-		this.consumeContext(UMB_NOTIFICATION_CONTEXT_TOKEN, (_instance) => {
-			this.#notificationContext = _instance;
-		});
-	}
+  constructor() {
+    super();
+    this.consumeContext(UMB_NOTIFICATION_CONTEXT_TOKEN, (_instance) => {
+      this.#notificationContext = _instance;
+    });
+  }
 
-	#onClick = () => {
-		this.#notificationContext?.peek('positive', { data: { message: '#h5yr' } });
-	}
+  #onClick = () => {
+    this.#notificationContext?.peek('positive', { data: { message: '#h5yr' } });
+  };
 
-	render() {
-		return html`
-			<uui-box headline="Welcome">
-				<p>A TypeScript Lit Dashboard</p>
-				<uui-button look="primary" label="Click me" @click=${this.#onClick}></uui-button>
-			</uui-box>
-		`;
-	}
+  render() {
+    return html`
+      <uui-box headline="Welcome">
+        <p>A TypeScript Lit Dashboard</p>
+        <uui-button
+          look="primary"
+          label="Click me"
+          @click=${this.#onClick}
+        ></uui-button>
+      </uui-box>
+    `;
+  }
 }
 
 declare global {
-	interface HTMLElementTagNameMap {
-		'my-element': MyElement;
-	}
+  interface HTMLElementTagNameMap {
+    'my-element': MyElement;
+  }
 }
+
 ```
 {% endcode %}
 
@@ -266,4 +284,15 @@ The `umbraco-package.json` file should look like this:
 
 Now we have a JavaScript file with a Web Component which gets linked to a Dashboard Extension as part of the Package Manifest JSON.
 
-Press the F5 button in your favorite IDE or run `dotnet run` in a command line. Then you should be able to see the new dashboard show up in the Content section.
+Press the F5 button in your favorite IDE or run `dotnet run` in a command line. Then you should be able to see the new dashboard show up in the Content section:
+
+![The Umbraco content section showing a dashboard called "My Dashboard"](./images/my-dashboard.jpg)
+
+Clicking the button will open a notification with the message "#h5yr".
+
+## Next
+
+Now that you have created your first extension, which is a dashboard, you can continue to the next tutorial: [Creating a Custom Dashboard](creating-a-custom-dashboard.md).
+
+You can also read more about the [Umbraco Package Manifest](../extending/package-manifest.md) to learn more about the different options you have when creating an extension.
+
