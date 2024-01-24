@@ -10,7 +10,7 @@ We have gathered all information and resources about the project in one place, g
 You can find it all on [docs.umbraco.com/umbraco-backoffice](https://docs.umbraco.com/umbraco-backoffice).
 {% endhint %}
 
-## [Backoffice UI](https://apidocs.umbraco.com/v12/ui)
+## [Backoffice UI](https://apidocs.umbraco.com/v13/ui)
 
 Angular, JavaScript, CSS & Less UI API references for building Umbraco backoffice components. V10 is using minified versions of the following files:
 
