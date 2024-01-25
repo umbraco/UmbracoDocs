@@ -8,7 +8,7 @@ With Umbraco Commerce's dynamic shipping rates feature it is possible to configu
 
 ## Shipping Rate Range Provider
 
-The role of a Shipping Rate Range Provider is to define a unit from which to calculate shipping rates (ie, weight, subtotal, etc), and then to determine within what range of values a given order falls within. It is also responsible for defining what editor view to use when entering range values in the UI.
+The role of a Shipping Rate Range Provider is to define a unit from which to calculate shipping rates (ie, weight, subtotal, etc). With this unit it is then able to determine within what range of values a given order falls within. It is also responsible for defining what editor view to use when entering range values in the UI.
 
 ### System Shipping Rate Ranger Providers
 
@@ -19,7 +19,7 @@ Out of the box Umbraco Commerce ships with the following Shipping Rate Range Pro
 
 ### Custom Shipping Rate Range Providers
 
-Should you wish to define some other unit on which to calculate rates upon, you can create your own Shipping Rate Range Providers by implementing the `ShippingRateRangeProvider<TRangeModel>` base class.
+Should you wish to define some other unit on which to calculate rates, you can create your own providers by implementing the `ShippingRateRangeProvider<TRangeModel>` base class.
 
 ```csharp
 [ShippingRateRangeProvider("myunit", "My Unit",
