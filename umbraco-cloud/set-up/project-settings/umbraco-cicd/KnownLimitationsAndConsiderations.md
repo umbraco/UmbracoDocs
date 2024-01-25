@@ -20,23 +20,6 @@ As we continue to gather insights from our users, there are some known limitatio
 
 * Given the necessity to avoid changes in other environments, the lack of strict coordination among multiple teams or individuals working on the same project elevates the risk of conflicts.
 
-### Usage of Private NuGet Feeds
-
-It is possible to reference private NuGet feeds [by using the Secrets Management feature](../../private-nuget-feed.md) on Umbraco Cloud. 
-
-If you plan on using this feature, the first time you are setting up the private feed configuration has to be done manually. The guide describes how to correctly set it up. 
-
-The initial setup is not possible through the CI/CD pipeline. This is because Umbraco Cloud collects the private NuGet credentials from your [left-most environment](https://docs.umbraco.com/umbraco-cloud/deployments/deployment). If your left-most environment doesn't have the credentials, then it will cause restore problems when trying to push the `NuGet.config` changes through CI/CD.
-
-You can also add the correct credentials that reference your Umbraco Cloud secrets by following the steps below:
-  1. Login to [Kudu](https://docs.umbraco.com/umbraco-cloud/set-up/power-tools) on your left-most environment.
-  2. Navigate to your `NuGet.config` file via the console (the default location is the repository root).
-  3. Edit the `NuGet.config` file to include your private feed and credentials.
-  4. Save the file.
-  5. Commit the changes while in Kudu.
-
-After making sure that your `NuGet.config` has the credentials for your private feed, copy the `NuGet.config` file to your local project. You should be able to trigger the CI/CD flow successfully afterward.
-
 ## Key Points to Consider
 
 * **Direct Commits to Umbraco Git Repos**: Any commits made directly to the Umbraco-git-repos will cause the process to fail.
