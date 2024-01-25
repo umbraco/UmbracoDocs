@@ -6,7 +6,7 @@ description: >-
 
 # Workflow Types
 
-There are multiple built-in Workflow Types that can be used to extend the functionality of your form. Do you want to post the submitted form as XML, send the data as an email, or send a notification through another messaging system? These are just a few of the options you can choose when working with Umbraco Forms.
+There are multiple built-in Workflow Types that can be used to extend the functionality of your form. Do you want to post the submitted form as XML, send the data as an email, or send a notification through another messaging system? These are a few of the options you can choose when working with Umbraco Forms.
 
 ## Video Tutorial
 
