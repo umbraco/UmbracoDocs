@@ -4,7 +4,7 @@ description: Realtime Rate Shipping in Umbraco Commerce.
 
 # Realtime Rate Shipping
 
-Realtime rate shipping in Umbraco Commerce allows you to connect to third party shipping opperators to fetch up to the minute realtime shipping rate estimates. This is the most accurate shipping calculation option, but does require you to have accounts setup at the relevant shipping opperators site, and an available Shipping Provider implementation for that opperator.
+Realtime rate shipping in Umbraco Commerce allows you to connect to third party shipping operators to fetch realtime shipping rate estimates. This is the most accurate shipping calculation option, but does require you to have accounts setup at the relevant shipping operators site, and an available Shipping Provider implementation for that operator.
 
 ## Configuration
 
@@ -25,7 +25,7 @@ Realtime rate shipping in Umbraco Commerce allows you to connect to third party 
 
 ![Shipping Method Details](../../media/dynamic_rate_shipping_details.png)
 
-* Populate any shipping provider settings required to connect to the shipping opperator
+* Populate any shipping provider settings required to connect to the shipping operator
 * Define a cache duration for retrieved rate values
 
 ![Shipping Method Settings](../../media/realtime_shipping_details.png)

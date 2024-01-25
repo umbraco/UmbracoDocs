@@ -4,7 +4,7 @@ description: Dynamic Rate Shipping in Umbraco Commerce.
 
 # Dynamic Rate Shipping
 
-Dynamic rate shipping in Umbraco Commerce allows you to define a series of ranges from which an order will be checked against to see which range it falls within. For each range a series of rate options can be configured such as a fixed rate per order, a fixed rate per order item or percentage based rates. By combining these configurable ranges, and different rating options it allows you to create a more dynamic rate algorythm than the basic fixed rate shipping option.
+Dynamic rate shipping in Umbraco Commerce allows you to define a series of ranges from which an order will be checked against. These checks find which range a given order falls within which in turn identifies the rates that apply. For each range a series of rate options can be configured. Examples include a fixed rate per order, a fixed rate per order item or percentage based rates. By combining these configurable ranges, and different rating options it allows you to create a more dynamic algorythm than the basic fixed rate shipping option.
 
 ## Configuration
 

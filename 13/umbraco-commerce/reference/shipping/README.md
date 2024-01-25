@@ -12,11 +12,11 @@ The fixed rate shipping option allows you to configure a single fixed rate for t
 
 ### [Dynamic Rate Shipping](./dynamic-rate-shipping.md)
 
-The dynamic rate shipping option allows you to configure a series of ranges from which an order will be checked against to see which range it falls within. For each range a series of rate options can be configured such as a fixed rate per order, a fixed rate per order item or percentage based rates.
+The dynamic rate shipping option allows you to configure a series of ranges from which an order will be checked against to see which range it falls within. For each range a series of rate options can be configured. Options include fixed rate per order, a fixed rate per order item, percentage based rates amongst others.
 
 ### [Realtime Rate Shipping](./relatime-rate-shipping.md)
 
-The realtime rate shipping option allows you to configure a connection to a shipping opperator to fetch up to the minutes realtime shipping rate estimates for an order.
+The realtime rate shipping option allows you to configure a connection to a shipping operator to fetch realtime shipping rate estimates for an order.
 
 ## Shipping Calculators
 
