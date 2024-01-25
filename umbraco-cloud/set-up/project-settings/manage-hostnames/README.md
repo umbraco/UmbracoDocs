@@ -46,8 +46,8 @@ The following Records will become obsolete in the near future. Please refrain fr
 * AAAA Records
   * `2606:4700::6813:bf1c`
   * `2606:4700::6813:d01c`
-  * `2606:4700:7::7d`
-  * `2a06:98c1:58::7d`
+  * `2606:4700::6811:1209`
+  * `2606:4700::6811:1109`
   
 If you are using the above Records please consider changing them to the new Records below
 </details>
