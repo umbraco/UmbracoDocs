@@ -4,7 +4,7 @@ description: Information on Umbraco Commerce Stores
 
 # Stores
 
-Stores represent a single shop / commercial entity and contain all the settings a configuration specific to that particular store. They are the root entity from which all other Umbraco Commerce entities are connected, and which can be linked to content nodes to connect a store to a site.
+Stores represent a single shop / commercial entity and contain all the settings a configuration specific to that particular store. They are the root entity from which all other Umbraco Commerce entities are connected. They are also able to be linked to content nodes to connect a store to a site.
 
 ## Store Settings
 
@@ -169,7 +169,7 @@ General settings for a store can be accessed via the UI by clicking on a store n
 
 ## Store Configuration
 
-Beyond the store node settings above, further store configuration can be achived by setting up various categories of configuration that can be accessed as child nodes to the store node.
+Further store configuration can be achived by setting up different categories of configuration that can be accessed as child nodes to the store node.
 
 The available configuration options are:
 

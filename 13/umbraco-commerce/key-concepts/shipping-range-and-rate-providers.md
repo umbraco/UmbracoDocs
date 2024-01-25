@@ -35,7 +35,7 @@ public class MyShippingRateRangeProvider : ShippingRateRangeProvider<decimal?>
 }
 ```
 
-The class should be decorated with the `ShippingRateRangeProviderAttribute` which defines an alias, name, description, editor view and label view for the provider. It implementes  a single method `TryFindRangeIndex` which, given a `ShippingRateRangeCalculationContext`, should find the index the current order falls within a series of preconfigured ranges created via the UI. The `ShippingRateRangeCalculationContext` contains a series of useful properties which you can use to form your calculation.
+The class should be decorated with the `ShippingRateRangeProviderAttribute` which defines an alias, name, description, editor view and label view for the provider. It implementes  a single method `TryFindRangeIndex` which, given a `ShippingRateRangeCalculationContext`, should find the index the current order falls within a series of preconfigured ranges. The `ShippingRateRangeCalculationContext` contains a series of useful properties which you can use to form your calculation.
 
 * **Ranges** - A list of configured ranges from the UI from which to find the index of the given order.
 * **Order** - The order to use when finding the current range.
@@ -51,7 +51,7 @@ Shipping Rate Range Providers are automatically added by type so there is no spe
 
 ## Shipping Rate Provider
 
-The role of a Shipping Rate Provider is to provide a specific rate calculation. Each range defined in a dynamic shipping method configuration can contain multiple Shipping Rate Provider configurations, allowing you to build up more advanced calculation logic. The set of rate providers to use in a given calculation is determined by the index returned from the Shipping Rate Range Provider.
+The role of a Shipping Rate Provider is to provide a specific rate calculation. Each range defined in a dynamic shipping method configuration can contain multiple Shipping Rate Provider configurations. By combining multiple rate provider this allows you to build up more advanced calculation logic. The set of rate providers to use in a given calculation is determined by the index returned from the Shipping Rate Range Provider.
 
 ### System Shipping Rate Providers
 
@@ -64,7 +64,7 @@ Out of the box Umbraco Commerce ships with the following Shipping Rate Providers
 
 ### Custom Shipping Rate Providers
 
-Should you wish to define some other rate calculation logic, you can create your own Shipping Rate Providers by implementing the `ShippingRateProvider<TConfigModel>` base class.
+Should you wish to define some other rate calculation logic, you can create your own providers by implementing the `ShippingRateProvider<TConfigModel>` base class.
 
 ```csharp
 [ShippingRateProvider("myrate", "My Rate",

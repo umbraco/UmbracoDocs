@@ -4,11 +4,11 @@ description: Creating Order Packages in Umbraco Commerce.
 
 # Shipping Package Factories
 
-When calculating shipping rates it is necessary to define how an order is packaged, the dimensions / weight of that package as well as the location from which and to which the package will be sent. All of this is the responsibility of the Shipping Package Factory to calculate.
+When calculating shipping rates it is necessary to define how an order is packaged. This includes the dimensions / weight of that package as well as the location from which and to which the package will be sent. All of this is the responsibility of the Shipping Package Factory to calculate.
 
 ## Stacked Shortest Dimension Package Factory
 
-The out of the box Package Factory that ships with Umbraco Commerce is the Stacked Shortest Dimension Package Factory. How this factory works is it aggregates the physical dimensions of each item in an order, stacking items on their shortest dimension to get the overall height of the package. The length and width are then calculated as the maximum dimension of any item in the order.
+The out of the box Package Factory that ships with Umbraco Commerce is the Stacked Shortest Dimension Package Factory. This factory works by aggregating the physical dimensions of each item in an order by stacking them on their shortest dimension. From these we get the overall height of the package, with the length and width being calculated as the maximum dimension of any item in the order.
 
 The receiver address of the package is calculated from the order, with the sender address being the address of the default location for a store.
 
