@@ -8,9 +8,9 @@ The Content Delivery API delivers headless capabilities built directly into Umbr
 
 ## Getting Started
 
-The Delivery API is an opt-in feature of Umbraco. It must be explicitly enabled by configuration before it can be utilized.
+The Delivery API is an opt-in feature of Umbraco. It must be explicitly enabled through configuration before it can be utilized.
 
-Umbraco projects started on version 11 or below also need to opt-in by code. Below you will find a description of how to do this.
+Umbraco projects started on version 11 or below also need to opt-in through code by [registering the delivery API dependencies](./#register-the-content-delivery-api-dependencies). Below you will find a description of how to do this.
 
 For a fresh Umbraco installation you can proceed directly to the [Enable the Content Delivery API](./#enable-the-content-delivery-api) section.
 
