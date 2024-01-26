@@ -6,7 +6,7 @@ description: Learn how to create your first extension for Umbraco.
 
 This guide will help you set up your first extension using vanilla JavaScript or Vite, Typescript, and Lit. It is also part of the prerequisites for [Creating a Property Editor](creating-a-property-editor/) and [Creating a Custom Dashboard](creating-a-custom-dashboard.md) tutorials.
 
-You should read the [Setup Your Development Environment](../extending/development-flow/README.md) article before you start this tutorial.
+Before following this tutorial make sure to read the [Setup Your Development Environment](../extending/development-flow/README.md) article.
 
 ## The end result
 
