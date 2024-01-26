@@ -83,4 +83,4 @@ You will need to create folder using the ID of the Form: `~\Views\Partials\Forms
 
 As an example if your Form ID is 0d3e6b2d-db8a-43e5-8f28-36241d712487 then you can overwrite the Form view by adding the `Form.cshtml` file to the directory. Start by copying the default one and then making your custom changes: `~\Views\Partials\Forms\0d3e6b2d-db8a-43e5-8f28-36241d712487\Form.cshtml`.
 
-You can also overwrite views for one or more fieldtypes by adding the views to the folder: `~\Views\Partials\Forms\0d3e6b2d-db8a-43e5-8f28-36241d712487\Fieldtypes\Fieldtype.Textfield.cshtml`.
+You can also overwrite views for one or more fieldtypes by adding the views to the `Fieldtypes` folder: `~\Views\Partials\Forms\0d3e6b2d-db8a-43e5-8f28-36241d712487\Fieldtypes\Fieldtype.Textfield.cshtml`.
