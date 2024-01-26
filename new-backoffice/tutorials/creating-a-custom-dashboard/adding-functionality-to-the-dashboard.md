@@ -179,7 +179,7 @@ declare global {
 ## Step 2: Getting data from the server
 
 {% hint style="danger" %}
-<mark style="color:red;">`UmbUserDetail`</mark> and <mark style="color:red;">`UmbUserRepository`</mark> is not available in Preview003
+<mark style="color:red;">`UmbUserDetail`</mark> and <mark style="color:red;">`UmbUserRepository`</mark> is not available yet.
 {% endhint %}
 
 Let's dive deeper into some new resources and see what we can do with them.

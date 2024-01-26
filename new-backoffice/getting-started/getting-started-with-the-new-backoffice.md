@@ -16,7 +16,7 @@ Read on to get an overview of the different ways in which you can check up on th
 
 We release prebuilt versions of Umbraco during the development phase of the new Backoffice. This happens as we see fit and will be [introduced on our blog](https://umbraco.com/blog).
 
-Learn how to get the latest Preview Version in the article [Installing Preview Builds](installing-preview-builds/)
+Learn how to get the latest Preview Version in the article [Installing Preview Builds](installing-preview-builds/README.md)
 
 ### Building from source
 
