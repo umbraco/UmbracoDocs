@@ -7,7 +7,7 @@ description: Installing Umbraco Forms
 
 Umbraco contains the **Forms** section, by default. You will see a similar interface, when you click on the **Forms** section in the **Umbraco Backoffice**.
 
-![Form section in backoffice](../../../11/umbraco-forms/installation/images/Forms\_Section\_Backoffice.png)
+![Form section in backoffice](images/Forms\_Section\_Backoffice.png)
 
 ## Video Tutorial
 
@@ -30,7 +30,7 @@ To install the Umbraco Forms package (**Umbraco.Forms**), follow these steps:
 
 Once the installation is successful, you will see a similar screen in the Forms section:
 
-![Create form](../../../11/umbraco-forms/installation/images/start-with-forms-v9.png)
+![Create form](images/start-with-forms-v9.png)
 
 ## Using Forms
 
