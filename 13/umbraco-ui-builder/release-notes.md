@@ -22,7 +22,7 @@ This section contains the release notes for Umbraco UI Builder 13 including all 
 * Doesn't work after upgrading to 13.0.3 [#88](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/88)
 * Dependency issue when installing UIBuilder alongside Umbraco Commerce in a v13 Umbraco website [#82] (https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/87)
 * Dependency issue when installing UIBuilder alongside uSync in a v13 Umbraco website [#85](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/85)
-* Fields in Sidbar are not included when creating item [#82](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/82)
+* Fields in Sidebar are not included when creating item [#82](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/82)
 
 #### [13.0.1](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=label%3Arelease%2F13.0.1+is%3Aclosed) (January 11th 2024)
 
