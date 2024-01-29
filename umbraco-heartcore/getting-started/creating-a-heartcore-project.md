@@ -121,7 +121,7 @@ So far, we've created a single Document Type with some text fields and a media p
 We will now expand on our site by adding a **Document Type Collection**.
 
 1. Right-click on the Document Types folder and choose **+ Create...**.
-   * Or select the three elipses on the right, when hovering the folder.
+   * Or select the three ellipses on the right, when hovering the folder.
 2. Choose the second option: **Document Type Collection...**.
 
 {% hint style="info" %}
@@ -184,7 +184,7 @@ In this next step of the tutorial, we will start creating content. The content w
 
 1. Go to the **Content** section.
 2. Right-click on the Content tree and choose **+ Create...**.
-   * Or select the three elipses on the right, when hovering the Content tree.
+   * Or select the three ellipses on the right, when hovering the Content tree.
 
 ![Creating our first content node](images/Create-First-Content.png)
 
@@ -214,7 +214,7 @@ So far, our Content section should look like this:
 ![Welcome to Umbraco Heartcore Content node](images/Welcome-to-Heartcore-Content.png)
 
 1. Right-click the root node, _Welcome to Umbraco Heartcore_, and choose **Create...**
-   * Or select the three elipses next to the node when hovering.
+   * Or select the three ellipses next to the node when hovering.
 2. Select to create a **Blog Area**.
 3. Give it a name: _Blog_.
 4. (Optional) Add some text to the _BlogDescription_ property.

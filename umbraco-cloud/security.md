@@ -52,7 +52,7 @@ You can add the header by modifying system.webServer/rewrite/outboundRules secti
  </outboundRules>
 ```
 
-Alternatively this can be done in Startup.cs inside of the **ConfigueServices** method with the following C#:
+Alternatively this can be done in Startup.cs inside of the **ConfigureServices** method with the following C#:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -80,7 +80,7 @@ In order to integrate older external applications to access Umbraco Cloud Websit
 
 For ASP.NET applications, inspect the `<system.web><httpRuntime targetFramework>` element of web.config to find the version of the .NET Framework your application is using. .NET applications on .NET 4.7+ are using the OS specified TLS protocols. In Windows 8 & 10, Windows Server 2012 & 2016 TLS 1.2+ is used by default, therefore no actions necessary. .NET applications lower then 4.7 require updates to ensure they can communicate using TLS 1.2 by default.
 
-More information specifically from Microsoft about .Net applications and TLS support can be found [in Microsofts official docs](https://docs.microsoft.com/en-us/dotnet/framework/network-programming/tls#audit-your-code-and-make-code-changes). For other application frameworks/languages we encourage to lookup their respective documentations.
+More information specifically from Microsoft about .Net applications and Transport Layer Security (TLS) support can be found [in Microsoft's official docs](https://docs.microsoft.com/en-us/dotnet/framework/network-programming/tls#audit-your-code-and-make-code-changes). For other application frameworks/languages we encourage to lookup their respective documentations.
 
 ### HTTP
 
@@ -217,7 +217,7 @@ All of the Umbraco APIs use this route as a prefix, including Umbraco Deploy. So
 
 You will notice that the regex `^umbraco/backoffice/(.*)|^umbraco` also stops people from going to `yoursite.com/umbraco`, so even the login screen will not show up. Even if you remove the `|^umbraco` part in the end, it should be no problem. You'll get a login screen but any login attempts will be blocked before they reach Umbraco. This is because the login posts to `umbraco/backoffice/UmbracoApi/Authentication/PostLogin`, e.g. it's using the backoffice URL.
 
-The Autoupgrader on Umbraco Cloud needs to have access to the site to succesfully run the upgrade process and apply new patches, by adding these two IP's it ensures that the site is accessible and the autoupgrader can apply the newly released patches.
+The Autoupgrader on Umbraco Cloud needs to have access to the site to successfully run the upgrade process and apply new patches. By adding these two IP's it ensures that the site is accessible and the autoupgrader can apply the newly released patches.
 
 The last IP address is an example. You can add the addresses that your organization uses as new items to this list.
 

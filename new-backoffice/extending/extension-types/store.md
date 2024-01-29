@@ -39,7 +39,7 @@ class MyImplementation extends UmbLitElement {
 	constructor() {
 		super();
 
-		// Notice the consume callback is triggered initially and everytime the Context is changed.
+		// Notice the consume callback is triggered initially and every time the Context is changed.
 		this.consume('MyStoreContextAlias', (context) => {
 			this._myProductStore = context;
 
@@ -69,7 +69,7 @@ class MyProductStore {
 
 	getByKey(id: string) {
 
-		// Request data via a Resource to then take part of this state when recieved.
+		// Request data via a Resource to then take part of this state when received.
 		tryExecuteAndNotify(this.host, ProductResource.getByKey({id})).then(({ data }) => {
 			if (data) {
 				this.#products.append(data.items);
@@ -93,7 +93,7 @@ class MyImplementation extends UmbLitElement {
 	constructor() {
 		super();
 
-		// Notice the consume callback is triggered initially and everytime the Context is changed.
+		// Notice the consume callback is triggered initially and every time the Context is changed.
 		this.consume('MyStoreContextAlias', (context) => {
 			this._myProductStore = context;
 

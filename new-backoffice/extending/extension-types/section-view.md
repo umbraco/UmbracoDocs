@@ -1,6 +1,6 @@
 ---
 description: >-
-  Append a secondary view for a Section, use it for additonal features or
+  Append a secondary view for a Section, use it for additional features or
   information.
 ---
 

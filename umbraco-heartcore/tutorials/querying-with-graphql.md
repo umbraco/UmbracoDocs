@@ -98,7 +98,7 @@ Add a new group called **Unique Selling Points** with the following properties:
 
 | Name                  | Alias                    | Property Editor | Property Editor Configuration                                                                                                                                                   |
 | --------------------- | ------------------------ | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Title                 | uniqueSellingPointsTitle | Textstring      | <p>Document Types:<br>Use defaulst</p>                                                                                                                                          |
+| Title                 | uniqueSellingPointsTitle | Textstring      | <p>Document Types:<br>Use defaults</p>                                                                                                                                          |
 | Unique Selling Points | uniqueSellingPoints      | Nested Content  | <p>Document Types:<br>Element Type: Unique Selling Point, Group: Content, Template: {{title}}<br>Confirm Deletes: checked<br>Show icons: not checked<br>Hide label: checked</p> |
 
 ![Nested Content Configured with Unique Selling Points](images/nested-content-unique-selling-points.png)
@@ -274,7 +274,7 @@ Since Nested Content is an interface named `Element` we can query the fields by 
 
 Now try to write a query that fetches the `title`, `text`, `link` and `image` fields for the Unique Selling Points property.
 
-### Quering the Main Navigation and Footer
+### Querying the Main Navigation and Footer
 
 The only thing we are missing now to be able to render the complete page is the main navigation and the footer.
 
@@ -417,7 +417,7 @@ Now that we have all the individual parts we can combine it all into a single qu
 query($url: String!) {
   content(url: $url) {
     ...Hero
-    ...UnigueSellingPoints
+    ...UniqueSellingPoints
     ...Elements
   }
   global: frontpage(url: "/home/") {
@@ -462,7 +462,7 @@ fragment Elements on ElementsComposition {
   }
 }
 
-fragment UnigueSellingPoints on UniqueSellingPointsComposition {
+fragment UniqueSellingPoints on UniqueSellingPointsComposition {
   uniqueSellingPointsTitle
   uniqueSellingPoints {
     ... on UniqueSellingPoint {

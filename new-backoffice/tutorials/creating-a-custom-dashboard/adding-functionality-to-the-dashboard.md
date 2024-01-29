@@ -36,7 +36,7 @@ Now that we have the Auth token, we can consume it in the constructor to obtain 
 
 {% hint style="info" %}
 
-The entire `welcome-dashbord.element.ts` file is available for reference at the end of the step to confirm your placement for code snippets.
+The entire `welcome-dashboard.element.ts` file is available for reference at the end of the step to confirm your placement for code snippets.
 
 {% endhint %}
 

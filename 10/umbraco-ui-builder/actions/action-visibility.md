@@ -4,11 +4,11 @@ description: Controlling the visibility of actions in Umbraco UI Builder, the ba
 
 # Action Visibility
 
-By default actions are not visible in the UI and you must expressly define when and where an action should display. This can be achived in two ways, either on the action definition itself or at the point of registration on the collections config.
+By default actions are not visible in the UI and you must expressly define when and where an action should display. This can be achieved in two ways, either on the action definition itself or at the point of registration on the collections config.
 
 ## Controlling the default action visibility
 
-To define the default visbility of an action at the action level you can do this by overriding the `IsVisible` method of the `Action<>` base class.
+To define the default visibility of an action at the action level you can do this by overriding the `IsVisible` method of the `Action<>` base class.
 
 ````csharp
 // Example
