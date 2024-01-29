@@ -1,7 +1,6 @@
 ---
 description: >-
-    Extension conditions are used to determine if an extension should be used or
-    not. Many of the Extension Types support conditions, but not all of them.
+    Extension conditions are used to determine if an extension should be used or not. Many of the Extension Types support conditions, but not all of them.
 ---
 
 # Conditions
