@@ -19,29 +19,29 @@ To add configuration options to our Suggestion Data Type, open the `package.mani
 ```json
 ...
 "editor": {
-                "view": "~/App_Plugins/Suggestions/suggestion.html"
-            }, // Remember a comma separator here at the end of the editor block!
- "prevalues": {
-                "fields": [
-                    {
-                        "label": "Enabled?",
-                        "description": "Provides Suggestions",
-                        "key": "isEnabled",
-                        "view": "boolean"
-                    },
-                    {
-                        "label": "Default value",
-                        "description": "Provide a default value for the property editor",
-                        "key": "defaultValue",
-                        "view": "textarea"
-                    }
-                ]
-            }
+    "view": "/App_Plugins/Suggestions/suggestion.html"
+}, // Remember a comma separator here at the end of the editor block!
+"prevalues": {
+    "fields": [
+        {
+            "label": "Enabled?",
+            "description": "Provides Suggestions",
+            "key": "isEnabled",
+            "view": "boolean"
+            },
+        {
+            "label": "Default value",
+            "description": "Provide a default value for the property editor",
+            "key": "defaultValue",
+            "view": "textarea"
+        }
+    ]
+}
 ```
 
 So what did we add? We added a prevalue editor, with a `fields` collection. This collection contains information about the UI we will render on the Data Type configuration for this editor.
 
-The label "Enabled?" uses the "boolean" view. This will allow us to turn the suggestions on/off and will provide the user with a toggle button. The name "boolean" comes from the convention that all preview editors are stored in `/umbraco/views/prevalueeditors/` and then found via `boolean.html`.
+The label "Enabled?" uses the "boolean" view. This will allow us to turn the suggestions on/off and will provide the user with a toggle button. The name "boolean" comes from the convention of all preview editors.
 
 Same with the "Default value" label, it will provide the user with a textarea. The user can input a default value for the property editor that should be displayed when the property editor is blank.
 
@@ -49,7 +49,7 @@ To hide the property editor label, add the `hideLabel` parameter in the `editor`
 
 ```json
  "editor": {
-        "view": "~/App_Plugins/Suggestions/suggestion.html",
+        "view": "/App_Plugins/Suggestions/suggestion.html",
         //Turn the label on or off by using true or false, respectively.
         "hideLabel": true,
         /*Optional: Add 'read-only' support. Available from Umbraco 10.2+*/
@@ -74,7 +74,7 @@ Your `package.manifest` file should now look something like this:
       "group": "Common",
       /*the HTML file we will load for the editor*/
       "editor": {
-        "view": "~/App_Plugins/Suggestions/suggestion.html",
+        "view": "/App_Plugins/Suggestions/suggestion.html",
         //Turn the label on or off by using true or false, respectively.
         "hideLabel": true,
         /*Optional: Add 'read-only' support. Available from Umbraco 10.2+*/
@@ -100,22 +100,24 @@ Your `package.manifest` file should now look something like this:
   ],
   // array of files we want to inject into the application on app_start
   "css": [
-    "~/App_Plugins/Suggestions/suggestion.css"
+    "/App_Plugins/Suggestions/suggestion.css"
   ],
   "javascript": [
-    "~/App_Plugins/Suggestions/suggestion.controller.js"
+    "/App_Plugins/Suggestions/suggestion.controller.js"
   ]
 }
 ```
 
 ## Csharp
 
-It is also possible to add configuration if you have chosen to create a property editor using C#. Create two new files in the `/App_Code/` folder and update the existing `Suggestion.cs` file to add configuration to the property editor.
+It is also possible to add configuration if you have chosen to create a property editor using C#. Create two new files at the root of your project and update the existing `Suggestion.cs` file to add configuration to the property editor.
 
 First create a `SuggestionConfiguration.cs` file with three configuration options: `Enabled?`, `Default Value`, and `Hide Label?`:
 
 ```csharp
-namespace Umbraco.Cms.Core.PropertyEditors;
+using Umbraco.Cms.Core.PropertyEditors;
+
+namespace YourProjectName;
 
 public class SuggestionConfiguration
 {
@@ -124,25 +126,27 @@ public class SuggestionConfiguration
 
     [ConfigurationField("defaultValue", "Default Value", "textarea", Description = "Provide a default value for the property")]
     public string? DefaultValue { get; set; }
-
+    
     [ConfigurationField("hideLabel", "Hide Label?", "boolean", Description = "Hide the property label.")]
     public bool HideLabel { get; set; }
 }
+
 ```
 
 Then create a `SuggestionConfigurationEditor.cs` file:
 
 ```csharp
 using Umbraco.Cms.Core.IO;
+using Umbraco.Cms.Core.PropertyEditors;
 
-namespace Umbraco.Cms.Core.PropertyEditors;
-
+namespace MyProject;
 public class SuggestionConfigurationEditor : ConfigurationEditor<SuggestionConfiguration>
-{
-    public SuggestionConfigurationEditor(IIOHelper ioHelper) : base(ioHelper)
     {
+        [Obsolete]
+        public SuggestionConfigurationEditor(IIOHelper ioHelper) : base(ioHelper)
+        {
+        }
     }
-}
 ```
 
 Finally, edit the `Suggestion.cs` file from step one until it looks like the example below:
@@ -150,12 +154,12 @@ Finally, edit the `Suggestion.cs` file from step one until it looks like the exa
 ```csharp
 using Umbraco.Cms.Core.IO;
 
-namespace Umbraco.Cms.Core.PropertyEditors;
+namespace YourProjectName;
 
 [DataEditor(
     alias: "Suggestions editor",
     name: "Suggestions Editor",
-    view: "~/App_Plugins/Suggestions/suggestion.html",
+    view: "/App_Plugins/Suggestions/suggestion.html",
     Group = "Common",
     Icon = "icon-list")]
 public class Suggestions : DataEditor
@@ -171,73 +175,76 @@ public class Suggestions : DataEditor
     protected override IConfigurationEditor CreateConfigurationEditor() => new SuggestionConfigurationEditor(_ioHelper);
 
 }
+
 ```
 
-Save the file, rebuild the application, and have a look at the Suggestions Data Type. You should see that you have three configuration options.
+Save the file, rebuild the application and have a look at the Suggestions Data Type. You should see that you have one configuration option.
 
-![An example of how the configuration will look](../../../../10/umbraco-cms/tutorials/creating-a-property-editor/images/suggestion-editor-config\_1.png)
+![An example of how the configuration will look](images/suggestion-editor-config\_1.png)
 
 ## Using the configuration
 
 The next step is to gain access to our new configuration options. For this, open the `suggestion.controller.js` file.
 
-1.  Let's add the `isEnabled` functionality. Before the closing tag, we will add a `getState` method:
+1. Let's add the `isEnabled` functionality. Before the closing tag, we will add a `getState` method:
 
-    ```javascript
-        // The controller assigns the behavior to scope as defined by the getState method, which is invoked when the user toggles the enable button in the data type settings.
-        $scope.getState = function () {
+```javascript
+// The controller assigns the behavior to scope as defined by the getState method, which is invoked when the user toggles the enable button in the data type settings.
+$scope.getState = function () {
             
-            //If the data type is enabled in the Settings the 'Give me Suggestions!' button is enabled
-             if (Boolean(Number($scope.model.config.isEnabled))) {
-                return false;
-            }
-            return true;
+//If the data type is enabled in the Settings the 'Give me Suggestions!' button is enabled
+    if (Boolean(Number($scope.model.config.isEnabled))) {
+            return false;
         }
-    ```
-2.  Next, we'll add the `defaultValue` functionality. When the `$scope.model.value` is empty or null, we want to use the default value. To do that, we add the following to the start of the controller:
+    return true;
+}
+```
 
-    ```js
-    if($scope.model.value === null || $scope.model.value === ""){
-        $scope.model.value = $scope.model.config.defaultValue;
-    }
-    ```
+2. Next, we'll add the `defaultValue` functionality. When the `$scope.model.value` is empty or null, we want to use the default value. To do that, we add the following to the start of the controller:
 
-    See what's new? The `$scope.model.config` object. Also, because of this configuration, we now have access to `$scope.model.config.defaultValue` which contains the configuration value for that key.
+```js
+if($scope.model.value === null || $scope.model.value === ""){
+    $scope.model.value = $scope.model.config.defaultValue;
+}
+```
 
-    Your `suggestion.controller.js` file should now look like:
+See what's new? The `$scope.model.config` object. Also, because of this configuration, we now have access to `$scope.model.config.defaultValue` which contains the configuration value for that key.
 
-    ```javascript
-    angular.module("umbraco")
-        .controller("SuggestionPluginController",
-            // Scope object is the main object which is used to pass information from the controller to the view.
-            function ($scope) {
-                if ($scope.model.value === null || $scope.model.value === "") {
-                    $scope.model.value = $scope.model.config.defaultValue;
+Your `suggestion.controller.js` file should now look like:
+
+```javascript
+angular.module("umbraco")
+    .controller("SuggestionPluginController",
+        // Scope object is the main object which is used to pass information from the controller to the view.
+        function ($scope) {
+            if ($scope.model.value === null || $scope.model.value === "") {
+                $scope.model.value = $scope.model.config.defaultValue;
+            }
+            // SuggestionPluginController assigns the suggestions list to the aSuggestions property of the scope
+            $scope.aSuggestions = ["You should take a break", "I suggest that you visit the Eiffel Tower", "How about starting a book club today or this week?", "Are you hungry?"];
+
+            // The controller assigns the behavior to scope as defined by the getSuggestion method, which is invoked when the user clicks on the 'Give me Suggestions!' button.
+            $scope.getSuggestion = function () {
+
+                // The getSuggestion method reads a random value from an array and provides a Suggestion. 
+                $scope.model.value = $scope.aSuggestions[$scope.aSuggestions.length * Math.random() | 0];
+            }
+        
+            // The controller assigns the behavior to scope as defined by the getState method, which is invoked when the user toggles the enable button in the data type settings.
+
+            $scope.getState = function () {
+
+                //If the data type is enabled in the Settings the 'Give me Suggestions!' button is enabled
+                if (Boolean(Number($scope.model.config.isEnabled))) {
+                    return false;
                 }
-                // SuggestionPluginController assigns the suggestions list to the aSuggestions property of the scope
-                $scope.aSuggestions = ["You should take a break", "I suggest that you visit the Eiffel Tower", "How about starting a book club today or this week?", "Are you hungry?"];
+                return true;
+            }
 
-                // The controller assigns the behavior to scope as defined by the getSuggestion method, which is invoked when the user clicks on the 'Give me Suggestions!' button.
-                $scope.getSuggestion = function () {
+});
+```
 
-                    // The getSuggestion method reads a random value from an array and provides a Suggestion. 
-                    $scope.model.value = $scope.aSuggestions[$scope.aSuggestions.length * Math.random() | 0];
-
-                }
-            
-                // The controller assigns the behavior to scope as defined by the getState method, which is invoked when the user toggles the enable button in the data type settings.
-                $scope.getState = function () {
-
-                    //If the data type is enabled in the Settings the 'Give me Suggestions!' button is enabled
-                     if (Boolean(Number($scope.model.config.isEnabled))) {
-                        return false;
-                    }
-                    return true;
-                }
-
-            });
-    ```
-3.  Finally, we'll add the `hideLabel` functionality. For this, we'll open the `Suggestion.cs` file and override the GetValueEditor method with configuration as a parameter.
+3. Finally, we'll add the `hideLabel` functionality. For this, we'll open the `Suggestion.cs` file and override the GetValueEditor method with configuration as a parameter.
 
     ```cs
     public override IDataValueEditor GetValueEditor(object? configuration)
@@ -260,15 +267,16 @@ The next step is to gain access to our new configuration options. For this, open
     ```cs
     using Umbraco.Cms.Core.IO;
     using Umbraco.Cms.Core.Models;
+    using Umbraco.Cms.Core.PropertyEditors;
 
-    namespace Umbraco.Cms.Core.PropertyEditors;
+    namespace YourProjectName;
 
     [DataEditor(
-        alias: "Suggestions editor",
-        name: "Suggestions Editor",
-        view: "~/App_Plugins/Suggestions/suggestion.html",
-        Group = "Common",
-        Icon = "icon-list")]
+	alias: "Suggestions editor",
+	name: "Suggestions Editor",
+	view: "/App_Plugins/Suggestions/suggestion.html",
+	Group = "Common",
+	Icon = "icon-list")]
     public class Suggestions : DataEditor
     {
         private readonly IIOHelper _ioHelper;
@@ -299,6 +307,6 @@ The next step is to gain access to our new configuration options. For this, open
 
 Save the files and rebuild the application. To access the configuration options, enable/disable the `Enabled?` and `Hide Label?` options. Additionally, you can set a default value in the `Default Value` field and see the Suggestions Data Type at play.
 
-![An example of setting the configuration](../../../../10/umbraco-cms/tutorials/creating-a-property-editor/images/suggestion-editor-config\_2.png)
+![An example of setting the configuration](images/suggestion-editor-config\_2.png)
 
-![Backoffice view](../../../../10/umbraco-cms/tutorials/creating-a-property-editor/images/suggestion-editor-backoffice\_1.png)
+![Backoffice view](images/suggestion-editor-backoffice\_1.png)
