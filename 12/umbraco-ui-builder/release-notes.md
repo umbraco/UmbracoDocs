@@ -17,6 +17,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco UI Builder 12 including all changes for this version.
 
+#### [**12.0.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.3) **(January 26th 2024)**
+
+* Fields in Sidebar are not included when creating item [#82](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/82).
+
 #### [**12.0.2**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.2) **(December 1st 2023)**
 
 * Run server side validation on action settings dialog [#34](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/34).
