@@ -80,7 +80,7 @@ In order to integrate older external applications to access Umbraco Cloud Websit
 
 For ASP.NET applications, inspect the `<system.web><httpRuntime targetFramework>` element of web.config to find the version of the .NET Framework your application is using. .NET applications on .NET 4.7+ are using the OS specified TLS protocols. In Windows 8 & 10, Windows Server 2012 & 2016 TLS 1.2+ is used by default, therefore no actions necessary. .NET applications lower then 4.7 require updates to ensure they can communicate using TLS 1.2 by default.
 
-More information specifically from Microsoft about .Net applications and TLS support can be found [in Microsoft's official docs](https://docs.microsoft.com/en-us/dotnet/framework/network-programming/tls#audit-your-code-and-make-code-changes). For other application frameworks/languages we encourage to lookup their respective documentations.
+More information specifically from Microsoft about .Net applications and Transport Layer Security (TLS) support can be found [in Microsoft's official docs](https://docs.microsoft.com/en-us/dotnet/framework/network-programming/tls#audit-your-code-and-make-code-changes). For other application frameworks/languages we encourage to lookup their respective documentations.
 
 ### HTTP
 
