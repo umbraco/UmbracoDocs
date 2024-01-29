@@ -4,7 +4,7 @@ description: A guide to creating a property editor in Umbraco
 
 # Creating a Property Editor
 
-This guide explains how to set up a property editor, hook it into Umbraco's Data Types, AngularJS modules, and its injector, and finally how we can test our property editor.
+This tutorial guides you through creating a property editor, integrating it with Umbraco's Data Types, AngularJS modules and its injector. Finally, it explains how we can test our property editor.
 
 The steps we will go through in part 1 are:
 
@@ -23,14 +23,14 @@ This tutorial covers how to use AngularJS with Umbraco, so it does not cover Ang
 
 ## The End Result
 
-By the end of this tutorial, we will have a "suggestions" data type running inside of Umbraco, registered as a Data Type in the backoffice, and assigned to a Document Type. The data type can create and suggest values.
+We will have a "Suggestions" Data Type in Umbraco. It is registered as a Data Type in the backoffice, and assigned to a Document Type. The Data Type can create and suggest values.
 
 ## Setting up a plugin
 
 To begin with, let's create a new folder inside `/App_Plugins` folder. We will call it `Suggestions`.
 
 {% hint style="warning" %}
-If you do not have an `/App_Plugins` folded, you can create it at the root of your project.
+If you do not have an `/App_Plugins` folder, you can create it at the root of your project.
 {% endhint %}
 
 Next, we will create a Package Manifest file to describe what the plugin does. This manifest will tell Umbraco about our new Property Editor and allow us to inject any needed files into the application.
@@ -199,7 +199,7 @@ angular.module("umbraco")
 ```
 
 {% hint style="info" %}
-Visit the [Property Editors page](../../extending/property-editors/) for more details about extending this service.
+Visit the [Property Editors page](../../extending/property-editors/README.md) for more details about extending this service.
 {% endhint %}
 
 Then update the HTML file with the following, where we add the id to the button:
@@ -218,4 +218,4 @@ Now, clear the cache, reload the document, and see the Suggestions Data Type run
 
 When we save or publish, the value of the Data Type is automatically synced to the current content object and sent to the server, all through the power of Angular and the `ng-model` attribute.
 
-Learn more about extending this service by visiting the [Property Editors page](../../extending/property-editors/).
+Learn more about extending this service by visiting the [Property Editors page](../../extending/property-editors/README.md).
