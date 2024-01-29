@@ -135,7 +135,7 @@ Merging your existing site into the Umbraco Cloud project is a matter of moving 
    * If your existing site uses Umbraco Forms, make sure you **do not overwrite** the `\umbraco\Licenses\umbracoForms.lic` file
    * When copying your `\umbraco\` folder, make sure you **do not delete** the `\umbraco\Licenses\umbracoDeploy.lic` file
    * If you have any custom code in your project, you should copy that code over too.
-2. Merge Appsettings.JSON files from your existing site with the cloud site.
+2. Merge `appsettings.json` files from your existing site with the cloud site.
    * Make sure that you merge your `appsettings.json` files with the ones from your existing site so that the settings you used are moved over to your Cloud project
 3. Merge your Program.cs and Startup.cs with the one from your existing site
 4. Merge your `ProjectName.csproj` with the `UmbracoProject.csproj` - especially if you have any packages installed on your project.
