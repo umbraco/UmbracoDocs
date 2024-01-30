@@ -17,7 +17,7 @@ Optimize images before uploading to a web page and make use of different file fo
 
 ## Asset Optimization
 
-Learn how to improve website performance, reduce carbon impact, and enhance user experience.
+Improve website performance by optimizing fonts, minifying assets and cache static assets.
 
 ## Limit use of 3rd parties
 
