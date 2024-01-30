@@ -25,7 +25,7 @@ To avoid excessive HTTP requests and potential data sharing, limit the use of th
 
 ## Lazyload Resources
 
-Learn how to optimize the loading of web pages using Lazyload resources.
+Optimize the loading of web pages by using Lazyload resources.
 
 ## Mobile First
 
