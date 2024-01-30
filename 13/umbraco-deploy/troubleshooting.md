@@ -28,6 +28,18 @@ In some cases, a hard limit imposed by the Cloud hosting platforms such as Azure
 
 If you find the process slow or reporting a platform timeout, there are a few options you can take.
 
+### Consider partial restore
+
+If restoring, you can choose to pull down a smaller set of content via the partial restore feature. With this you select an item in the remote environment to restore. You can select to include child items. Any items related to the selected ones, for example via content or media pickers, will also be restored.
+
+### Consider import/export
+
+In addition to transferring content via the backoffice, it is possible to move both content and schema between environments via Deploy's import/export feature. With this, a selection of Umbraco data can be exported from one environment to a .zip file. That file can then be imported into another environment.
+
+As this process requires less inter-environment communication, it's possible to transfer much larger amounts of content without running into the hard platform limits.
+
+[Read more about the import/export feature here](./deployment-workflow/import-export.md).
+
 ### Review timeouts
 
 Firstly, you can review and update the [timeout settings available with Deploy](./getting-started/deploy-settings.md#timeout-settings). Increasing these from the default values may help, but won't necessarily resolve all issues. This is because, as noted, some timeouts are fixed values set by the hosting environment.
