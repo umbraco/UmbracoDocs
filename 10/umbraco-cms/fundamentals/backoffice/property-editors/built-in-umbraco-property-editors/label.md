@@ -12,7 +12,7 @@ Label is a non-editable control and can only be used to display a pre-set value.
 
 ### Value type
 
-If you want to set a value other than a String, you can define the data using one of the other available Data Types: Decimal, Date/time, Time, Integer, and Big integer.
+If you want to set a value other than a String, you can define the data using one of the other available Data Types. These include Decimal, Date/time, Time, Integer, and Big integer.
 
 There is also a Value Type: Long string if you need to set a long string value for your Label.
 
