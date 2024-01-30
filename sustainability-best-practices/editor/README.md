@@ -17,7 +17,7 @@ Regularly review and audit content for ongoing relevance.
 
 ## Design Choices
 
-Opt for custom drawings, use card sorting, and UX reviews for simpler, energy-efficient, and user-friendly paths.
+Opt for custom illustrations. Use card sorting and UX reviews for simpler, energy-efficient, and user-friendly paths.
 
 ## Data Management
 
