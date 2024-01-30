@@ -9,7 +9,7 @@ In this section, you can find some tips to optimize your website's performance a
 
 ## Page Weight Budget
 
-Choose how to transfer data for web page access minimizing the impact on carbon emissions.
+Minimize the data transfer to access your web page as it has a big impact on carbon emissions.
 
 ## Image Optimization
 
