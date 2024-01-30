@@ -157,7 +157,7 @@ Sends the Form to a URL either as a HTTP POST or GET. The following configuratio
 
 When mapping fields, if any are selected, only those chosen will be sent in the request to the configured URL. If no fields are mapped, all will be sent.
 
-The endpoint extracts form fields and values using GET for querystrings and POST for form collections.
+The receiving endpoint extracts form fields and values using GET for querystrings and POST for form collections.
 
 As an illustrative example, the following code can be used to write the posted form information to a text file:
 
