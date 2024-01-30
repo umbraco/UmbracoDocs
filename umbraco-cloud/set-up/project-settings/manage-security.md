@@ -34,10 +34,20 @@ Access to the different options varies depending on the Umbraco Cloud plan your 
 
 Click **Security** from the **Settings** dropdown on your Umbraco Cloud Project. The Security settings are scoped per environment, so if you have multiple environments and add your custom hostnames to different environments you can select the environment at the top of the page.
 
-Aside from the environments, the Security page is divided into two parts: 'Default Settings' and 'Hostname Specific Settings'. Use the **Default Settings** to configure what should be applied by default to new and existing custom hostnames.
+Aside from the environments, the Security page is divided into 'Default Settings' and 'Hostname Specific Settings'. Use the **Default Settings** to configure what should be applied to new and existing custom hostnames by default.
 
-![Default Security Settings](../images/security-subpage.png)
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Security Settings Umbraco Cloud</p></figcaption></figure>
 
 If you want to have different security options for different custom hostnames, then select the custom hostname under **Hostname Specific Settings** and adjust the options for that specific hostname. This might be useful if you want to test the different options on another custom hostname than your primary hostname.
 
-![Hostnames Specific Security Settings](../images/security-subpage-hostname-specific.png)
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Hostname Specific settings</p></figcaption></figure>
+
+### Cipher Suite Management
+
+On the security page, it's possible to enable or disable the different cipher suites for your project.&#x20;
+
+Enabling or disabling the different ciphers can be done under the minimum TLS version in the Ciphers drop-down:
+
+<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption><p>Enable or disable Cipher Suites for your project.</p></figcaption></figure>
+
+Like the other Hostname Specific Settings, you can enable/disable specific ciphers for your custom hostname based on your needs.

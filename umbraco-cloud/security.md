@@ -16,7 +16,7 @@ As of April 2020, we've deprecated support for TLS 1.0 & TLS 1.1.
 
 TLS 1.2 is now the default supported TLS protocol going forward.
 
-On the Security page for your cloud project you can change the default settings for both TLS and HTTP.
+On the Security page for your cloud project, you can change the default settings for both TLS and HTTP.
 
 Learn more about how this in the [Manage Security](set-up/project-settings/manage-security.md) article.
 
@@ -33,9 +33,15 @@ Umbraco Cloud Websites support the following TLS ciphers in this order:
 * TLS\_DHE\_RSA\_WITH\_AES\_256\_CBC\_SHA
 * TLS\_DHE\_RSA\_WITH\_AES\_128\_CBC\_SHA
 
+The different Ciphers can be enabled or disabled on the security project settings page for your Cloud projects.
+
+<figure><img src=".gitbook/assets/image (7).png" alt=""><figcaption><p>Enable or disable TLS Ciphers</p></figcaption></figure>
+
+
+
 ### HSTS - HTTP Strict Transport Security
 
-It's possible to enforce HSTS: [HTTP Strict Transport Security](https://en.wikipedia.org/wiki/HTTP\_Strict\_Transport\_Security) by adding the headers to your website. This grants Umbraco Cloud Websites an A+ security rating on sslabs (March 2020). 
+It's possible to enforce HSTS: [HTTP Strict Transport Security](https://en.wikipedia.org/wiki/HTTP\_Strict\_Transport\_Security) by adding the headers to your website. This grants Umbraco Cloud Websites an A+ security rating on sslabs (March 2020).
 
 You can add the header by modifying system.webServer/rewrite/outboundRules section in your web.config:
 
@@ -175,8 +181,8 @@ You can read more about the HTTP request headers coming from Cloudflare in the [
 </rule>
 ```
 {% endtab %}
-{% tab title="Legacy (non-reverse proxy)" %}
 
+{% tab title="Legacy (non-reverse proxy)" %}
 **Non-reverse proxy (projects created before 2021)**
 
 If you created the Cloud project earlier than December 8th, 2020, Cloudflare is not used on your project.
