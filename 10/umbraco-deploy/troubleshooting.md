@@ -34,7 +34,7 @@ If restoring, you can choose to pull down a smaller set of content via the parti
 
 ### Consider import/export
 
-In addition to transfers via the backoffice, content (and schema) can be moved between environments via Deploy's import/export feature. With this a selection of Umbraco data can be exported from one environment to a `.zip` file. That file can then be imported into another environment.
+In addition to transferring content via the backoffice, it is possible to move both content and schema between environments via Deploy's import/export feature. With this, a selection of Umbraco data can be exported from one environment to a .zip file. That file can then be imported into another environment.
 
 As this process requires less inter-environment communication, it's possible to transfer much larger amounts of content without running into the hard platform limits.
 
