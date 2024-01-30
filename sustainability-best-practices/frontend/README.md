@@ -13,7 +13,7 @@ Minimize the data transfer to access your web page as it has a big impact on car
 
 ## Image Optimization
 
-Learn how to optimize images before uploading to a web page and usage of different file formats.
+Optimize images before uploading to a web page and make use of different file formats.
 
 ## Asset Optimization
 
