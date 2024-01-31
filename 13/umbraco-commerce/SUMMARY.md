@@ -3,6 +3,7 @@
 * [Umbraco Commerce Documentation](README.md)
 * [Commerce Packages](https://docs.umbraco.com/umbraco-commerce-packages)
 * [Commerce Payment Providers](https://docs.umbraco.com/umbraco-commerce-payment-providers)
+* [Commerce Shipping Providers](https://docs.umbraco.com/umbraco-commerce-shipping-providers)
 * [Release Notes](release-notes.md)
 
 ## Installation
