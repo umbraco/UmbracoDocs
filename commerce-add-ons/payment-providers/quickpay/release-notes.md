@@ -5,7 +5,7 @@ In this section, we have summarized the changes to Quickpay Payment Provider for
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
 {% hint style="info" %}
-For details of changes for **Quickpay Payment Provider for Umbraco Commerce**, refer to the [Releases section on Github](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Quickpay/releases).
+For details of releases for **Quickpay Payment Provider for Vendr**, refer to the [Change log file on Github](../../changelog-archive/quickpay.md).
 {% endhint %}
 For details of changes for **Quickpay Payment Provider for Umbraco Commerce**, refer to the [Releases section on Github](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Quickpay/releases).
 ## Release History
