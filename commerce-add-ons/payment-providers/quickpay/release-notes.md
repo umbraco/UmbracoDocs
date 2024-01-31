@@ -22,14 +22,18 @@ In this section, you can find the release notes for each version of Quickpay Pay
 
 #### [13.0.0 (December 13th 2023)](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Quickpay/releases/tag/release-13.0.0)
 
-* Upgraded Umbraco & Umbraco Commerce dependencey to v13
-* Upgraded all 3rd party nuget dependencies
+* Upgraded Umbraco & Umbraco Commerce dependencey to v13.
+* Upgraded all 3rd party nuget dependencies.
 
 </details>
 
 <details>
 
 <summary>Version 12</summary>
+
+#### [12.0.1 (January 30th 2024)](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Quickpay/releases/tag/release-12.0.1)
+
+* Fix incorrect order's payment status because of DbConcurrencyException when authorize event and capture event are fired at the same time.
 
 #### 12.0.0 (July 5th 2023)
 
