@@ -10,7 +10,7 @@ For details of changes for **Quickpay Payment Provider for Umbraco Commerce**, r
 
 ## Release History
 
-In this section, you can find the release notes for major version of Quickpay Payment Provider for Commerce. For each major version, you can find the details about each release.
+In this section, you can find the release notes for each version of Quickpay Payment Provider for Commerce. For each major version, you can find the details about each release.
 
 <details>
 
