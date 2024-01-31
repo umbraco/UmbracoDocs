@@ -78,7 +78,7 @@ angular.module("umbraco.filters").filter("myFilter", function () {
 });
 ```
 
-4. Then implement a [block editor](README.md) of your choice. When adding a label add `{{ myFilter }}` which is the property alias of the element type. The `myFilter` property has a `textstring` editor. When adding the content, the block editor will then display the data that you input.
+4. Implement a [block editor](README.md) of your choice. When adding a label add `{{ myFilter }}` which is the property alias of the element type. The `myFilter` property has a `textstring` editor. When adding the content, the block editor will then display the data that you input.
 
 ## Special variables
 
