@@ -68,17 +68,14 @@ namespace RoutingDocs.Controllers;
 
 public class ShopController : UmbracoPageController, IVirtualPageController
 {
-    public class ShopController : UmbracoPageController, IVirtualPageController
-    {
-        public ShopController(
-            ILogger<UmbracoPageController> logger,
-            ICompositeViewEngine compositeViewEngine)
-            : base(logger, compositeViewEngine)
-        { }
+    public ShopController(
+        ILogger<UmbracoPageController> logger,
+        ICompositeViewEngine compositeViewEngine)
+        : base(logger, compositeViewEngine)
+    { }
 
-        public IPublishedContent FindContent(ActionExecutingContext actionExecutingContext)
-        { }
-    }
+    public IPublishedContent FindContent(ActionExecutingContext actionExecutingContext)
+    { }
 }
 ```
 
