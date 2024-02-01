@@ -12,7 +12,7 @@ Let's say you have a project named `Snoopy`. The default hostnames will be:
 The hostnames contain the region your project is hosted on. Currently, there are 4 options available when choosing a region for your Umbraco project:
 
 * West Europe (euwest01),
-* East US (useast01), 
+* East US (useast01),
 * South UK (uksouth01) and
 * Australian East (aueast01)
 
@@ -36,7 +36,7 @@ If your provider doesn't support setting a CNAME record for your hostname, you c
 
 <summary>Former A and AAAA records</summary>
 
-The following Records will become obsolete in the near future. Please refrain from using them.
+The following Records will become obsolete in the near future. Refrain from using them.
 
 * A Records
   * `104.19.191.28`
@@ -48,9 +48,10 @@ The following Records will become obsolete in the near future. Please refrain fr
   * `2606:4700::6813:d01c`
   * `2606:4700::6811:1209`
   * `2606:4700::6811:1109`
-  
-If you are using the above Records please consider changing them to the new Records below
+
 </details>
+
+If you are using the [Former A and AAAA records](./#former-a-and-aaaa-records) consider changing them to the Records below as they will not become obsolete.
 
 * A Records to either or both IPv4 addresses:
   * `162.159.140.127`
