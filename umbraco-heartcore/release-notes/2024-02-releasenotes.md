@@ -1,10 +1,14 @@
 # February 2024
 
 ## Block Grid Editor
-The Block Grid Editor from core Umbraco is now available in Heartcore. A modern alternative to the Grid Editor, this type is particularly useful for allowing content authors to build page-like structures. See the core documentation for more information.
+The Block Grid Editor from core Umbraco is now available in Heartcore. A modern alternative to the Grid Editor, this type is particularly useful for allowing content authors to build page-like structures.
+
+![Block grid editor](../images/24-02-block-grid.png)
+
+See the [core CMS documentation](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-grid-editor) for more information about how to get started with the Block Grid.
 
 {% hint style="info" %}
-Note that unlike the core CMS, Heartcore does not yet support custom stylesheets or views to control block appearance in the backoffice. This is on the roadmap and support will be added later in the year.
+Unlike the core CMS, Heartcore does not yet support custom stylesheets or views to control block appearance in the backoffice. This is on the roadmap and support will be added later in the year.
 {% endhint %}
 
 ## Backoffice Performance
@@ -14,10 +18,12 @@ A lot of work has been put into increasing the performance of the backoffice in 
 Previously, deleting a content or media item that was linked to from another item may have resulted in broken links. Now, content authors will be warned when attempting to delete an item which other items are dependent upon. They are also informed *which* items linked to the deleted one, so that they can change those items if desired.
 
 ## Rich Text Enhancements
-TinyMCE, the library underpinning the Rich Text Editor (RTE) in Heartcore has been upgraded. This includes a slew of bug fixes and a slick new appearance, but has also allowed us to include some frequently-requested enhancements. Both of these must be enabled in the data type before being available to content authors.
+TinyMCE, the library underpinning the Rich Text Editor (RTE) in Heartcore has been upgraded. This includes a slew of bug fixes and a slick new appearance, but has also allowed us to include some frequently-requested enhancements. Both of these must be enabled in the Data Type before being available to content authors.
 
 * **Text color** - You may now select foreground and background colors for text.
 * **Language selection** - You may now choose a language for selected text from a dropdown menu. This will apply a `lang` attribute to the underlying markup. Browsers and screen readers that parse the markup will then be able to make smarter decisions about how to present that content to end-users.
+
+![Language selection in the RTE](../images/24-02-rte-language.png)
 
 ## Notable Bug Fixes
 In this release we have upgraded a lot of the technologies upon which Heartcore depends, including the core CMS. This means there is huge number of fixes to defective behaviors that we cannot hope to cover entirely here.
