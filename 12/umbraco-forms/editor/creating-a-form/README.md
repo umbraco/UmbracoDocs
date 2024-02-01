@@ -102,7 +102,7 @@ Once you are satisfied with the Form, you can save the design by clicking the **
 
 If installation of the product is configured for storage of form definitions in the database, you will have the option to store forms within folders. If you are planning to create a number of them, this may help with organization and locating them once created for modification.
 
-To create a folder, from the same dialog as you use to create a form, you'll have the option to create a folder, for which you need to provide a name.
+To create a folder, access the same dialog used for creating a form. Here, you'll have the option to create a folder, for which you need to provide a name.
 
 You can create folders within folders, rename, move and delete them. You also have the ability to move or copy forms into folders, all via the tree operations available from the **...** menu.
 
