@@ -42,4 +42,3 @@
 * [Design Choices](editor/design-choices.md)
 * [Data Management](editor/data-management.md)
 * [Housekeeping](editor/housekeeping.md)
-* [Test](editor/test.md)
