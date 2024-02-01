@@ -12,7 +12,7 @@ In this section, you can find the release notes for each version of EasyPost Shi
 
 <summary>Version 13</summary>
 
-#### 13.0.0 (Feb 1st 2024)
+#### 13.0.0-rc1 (TBC)
 
 * Initial release.
   
