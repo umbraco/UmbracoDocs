@@ -25,6 +25,7 @@ This section contains the release notes for Umbraco Commerce 13 including all ch
 * Adds store Measurement System setting.
 * Adds Measurements property editor for capturing product measurements for shipping calculations.
 * Adds shipping package factory concept for calculating packages for shipments.
+* Updates the shipping method create flow to require selecting a shipping provider and a shipping calculation mode.
 * Updates API for calculating shipping prices as payment methods can now return multiple rates.
 * Updates the order API for setting the shipping method to accept a `ShippingOption` for shipping methods that can supply multiple rates.
 * Updates the order editor to display the selected shipping option.
