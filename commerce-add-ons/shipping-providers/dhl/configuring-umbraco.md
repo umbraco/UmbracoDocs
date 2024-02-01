@@ -40,5 +40,4 @@ The following steps are handled within the shipping method editor in the Umbraco
 
 | Name | Description |
 | ---- | ----------- |
-| Product Type Code | Override the default product type code of 'all'. |
-| Customs Delcarable Property Alias | Define a property on the order line that dertmines if the shippment contains customs declarable content. |
+| Product Codes | Comma-seperates list of product codes to limit the rates to. |
