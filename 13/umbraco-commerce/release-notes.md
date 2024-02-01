@@ -31,6 +31,7 @@ This section contains the release notes for Umbraco Commerce 13 including all ch
 * Updates the order editor to display the selected shipping option.
 * Updates the cart editor to allow selecting a shipping option from realtime shipping methods.
 * Updates the cart editor to calculate shipping rates / payment fees based on the current in memory cart state.
+* Updates storefront API to incorporate new shipping rates endpoints
 
 #### [13.0.0](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.0) (December 13th 2023)
 
