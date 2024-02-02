@@ -19,6 +19,8 @@ This section contains the release notes for Umbraco Commerce 13 including all ch
 
 #### 13.1.0-rc1 (TBC)
 
+Read the [v13.1.0-RC release post](./v13.1.0-rc.md) further background on this release.
+
 * Adds dynamic shipping rate calculation option.
 * Adds realtime shipping rate calculation option via Shipping Providers.
 * Adds store locations for shipping calculations.
