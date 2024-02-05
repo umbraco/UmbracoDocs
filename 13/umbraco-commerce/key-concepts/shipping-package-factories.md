@@ -29,7 +29,7 @@ There are some limitations of the Stacked Shortest Dimension Package Factory tha
 
 ## Custom Package Factory
 
-Given limitations of the Stacked Shortest Dimension Package Factory, it may become necesarry to implement your own packaging algorithm. This can be achieved by implementing your own package factory class and swapping out the default one in the DI container.
+Given the limitations of the Stacked Shortest Dimension Package Factory, it may become necessary to implement your own packaging algorithm. This can be achieved by implementing your package factory class and swapping out the default one in the DI container.
 
 To implement your own package factory you need to implement the `ShippingPackageFactoryBase` class and implement the `CreatePackages` method.
 
