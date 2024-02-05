@@ -456,7 +456,19 @@ Building Custom Views for Block representations in Backoffice is based on the sa
 
 ## Creating a Block Grid programmatically
 
-In this example, we will be creating "spot" Blocks in a Block Grid on a content item. The spot content consists of a _title_ and a _text_ field, while the spot settings contains a _featured_ checkbox.
+In this example, we will be creating content programmatically for a "spot" Blocks in a Block Grid.
+1. On a document type add a property called **blockGrid**.
+2. Then add as editor **Block Grid**. 
+3. In the Block Grid add a new block and click to **Create new Element Type**
+4. Name this element type **spotElement** with the following properties:
+- a property called **title** with the editor of **Textstring**
+- a property called **text** with the editor of **Textstring**
+5. Then on the **Settings model** click to add a new Setting. 
+6. Then click to **Create new Element Type**.
+7. Name this element type **spotSettings** with the following properties:
+- a property called **featured** with the editor of **True/false**.
+
+![Block Grid - Block Configuration](../../../images/BlockEditorConfigurationProgramatically.png)
 
 The raw input data for the spots looks like this:
 
@@ -519,9 +531,9 @@ For each item in the raw data, we need to create:
 * One `settingsData` entry with the _featured_ value (the checkbox expects `"0"` or `"1"` as data value).
 * One `layout` entry with the desired column and row spans.
 
-All `contentData` and `layoutData` entries need their own unique `Udi` as well as the ID (key) of their corresponding Element Types. In this sample, we only have one Element Type for content (`spotElementType`) and one for settings (`spotSettingsType`). In a real life scenario, there could be any number of Element Type combinations.
+All `contentData` and `layoutData` entries need their own unique `Udi` as well as the ID (key) of their corresponding Element Types. In this sample, we only have one Element Type for content (`spotElement`) and one for settings (`spotSettings`). In a real life scenario, there could be any number of Element Type combinations.
 
-First and foremost, we need models to transform the raw data into Block Grid compatible JSON:
+8. First and foremost, we need models to transform the raw data into Block Grid compatible JSON. Create a class called **Model.cs** containing the following:
 
 {% code title="Models.cs" lineNumbers="true" %}
 ```csharp
@@ -610,7 +622,7 @@ public class BlockGridElementData
 ```
 {% endcode %}
 
-By injecting [ContentService](../../../../../reference/management/services/contentservice/) and [ContentTypeService](../../../../../reference/management/services/contenttypeservice/) into an API controller, we can transform the raw data into Block Grid JSON. It can then be saved to the target content item:
+9. By injecting [ContentService](../../../../../reference/management/services/contentservice/) and [ContentTypeService](../../../../../reference/management/services/contenttypeservice/) into an API controller, we can transform the raw data into Block Grid JSON. It can then be saved to the target content item. Create a class called **BlockGridTestController.cs** containing the following:
 
 {% code title="BlockGridTestController.cs" lineNumbers="true" %}
 ```csharp
@@ -704,3 +716,11 @@ public class BlockGridTestController : UmbracoApiController
 }
 ```
 {% endcode %}
+
+For the above code `IContent? content = _contentService.GetById(1203);` change the id with your content node that is using the Block Grid.
+
+10. In order to test this implementation, run the project and add `/umbraco/api/blockgridtest/create` after your domain name. If the result shows as **Saved** then check your content node and you will see the 2 spotElement contents.
+
+![Block Grid - Result](../../../images/BlockEditorContentCreated.png)
+
+_This can also be tested via Postman as well if preffered._
