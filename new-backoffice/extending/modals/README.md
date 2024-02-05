@@ -125,7 +125,7 @@ describe the additional features of the route Registration:
 **Hints:**
 
 -   Add unique parts to the path. (How is this done properly as part of a Property Editor)
--   A modal registered in a dashboard can be relatively simple.
+-   A modal registered in a dashboard can be basic
 -   A modal registered in a property editor needs to become specific for the property and the variant of that property.
 -   Build some data for the setup.
 -   Reject a modal by returning false in setup.
