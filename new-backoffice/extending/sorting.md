@@ -1,5 +1,5 @@
 ---
-description: Enable sorting elements via drag n' drop
+description: Enable sorting elements via drag and drop
 ---
 
 # Sorting of elements
