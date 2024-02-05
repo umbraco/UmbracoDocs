@@ -16,7 +16,7 @@ In all situations, backoffice integrations with third-party services are an impo
 
 Our aim is to support the different ways of using Umbraco in a DXP context and provide resources for building integrations with Umbraco.
 
-![Umbraco as a platform DXP, composable DXP og hybrid solution](.gitbook/assets/pDXPcDXP.png)
+![Umbraco as a platform DXP, composable DXP and hybrid solution](.gitbook/assets/pDXPcDXP.png)
 
 ### Packages and integrations
 

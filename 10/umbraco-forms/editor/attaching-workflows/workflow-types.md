@@ -1,6 +1,6 @@
 # Workflow Types
 
-There are several built-in workflow types that can be used to extend the functionality of your Form.
+There are multiple built-in workflow types that can be used to extend the functionality of your Form.
 
 * [Change Record State](workflow-types.md#change-record-state)
 * [Post as XML](workflow-types.md#post-as-xml)
@@ -20,13 +20,13 @@ Workflow Types in Umbraco Forms
 
 ## **Change Record State**
 
-![Change Record state](images/change-record-state.png)
+![Change Record state](<images/change-record-state (1).png>)
 
 Used to automatically **Approve Record** or **Delete Record** once it is submitted. Configure words that you want to match and select whether these words should trigger an approval or deletion of the record.
 
 ## **Post as XML**
 
-![Post as XML](images/post-as-xml.png)
+![Post as XML](<images/post-as-xml (1).png>)
 
 Used to post the Form as an XML to a specified URL. The following configuration can be set:
 
@@ -40,7 +40,7 @@ Used to post the Form as an XML to a specified URL. The following configuration 
 
 ## **Save as an XML file**
 
-![Save as XML](images/save-as-an-xml-file.png)
+![Save as XML](<images/save-as-an-xml-file (1).png>)
 
 Saves the result of the Form as an XML file by using XSLT. The following configuration can be set:
 
@@ -57,17 +57,17 @@ When storing the files within the `wwwroot` or `App_Plugins` folders, the files 
 
 ## **Save as Umbraco Content Node**
 
-![Save as content node](images/save-as-content-node.png)
+![Save as content node](<images/save-as-content-node (1).png>)
 
 Saves a submitted Form as a new content node. You need to choose a Document type and match the fields in the Form with the properties on the selected Document Type.
 
 You can also choose to set a static value to fill in the properties:
 
-![Save as content node](images/create-new-node.png)
+![Save as content node](<images/create-new-node (1).png>)
 
 In the example above, a Document Type called **Blogpost** is selected for creating the new Content node.
 
-The value from the **Name** field will be added as the **Node Name** property in the new Content node and the value from the **Email** field will be used as the **Content** property.
+The value from the **Name** field will be added as the **Node Name** property in the new Content node. The value from the **Email** field will be used as the **Content** property.
 
 The following configuration can be set:
 
@@ -77,7 +77,7 @@ The following configuration can be set:
 
 ## **Send Email**
 
-![Send email](images/send-email.png)
+![Send email](<images/send-email (1).png>)
 
 Sends the result of the Form to the specified email address. The following configuration can be set:
 
@@ -125,7 +125,7 @@ The fallback behavior also applies to the other email workflows.
 
 ## **Send Email with Template (Razor)**
 
-![Send email with template](images/send-email-razor.png)
+![Send email with template](<images/send-email-razor (1).png>)
 
 Uses a template to send the results of the Form to a specified email address.
 
@@ -147,7 +147,7 @@ The following configuration can be set:
 
 ## **Send Form to URL**
 
-![Send to URL](images/send-to-URL.png)
+![Send to URL](<images/send-to-URL (1).png>)
 
 Sends the Form to a URL either as a HTTP POST or GET. The following configuration can be set:
 
@@ -161,7 +161,7 @@ Sends the Form to a URL either as a HTTP POST or GET. The following configuratio
 
 When mapping fields, if any are selected, only those chosen will be sent in the request to the configured URL. If no fields are mapped, all will be sent.
 
-The receiving endpoint will be able to extract the form fields and values from the querystring or form collection when the method used is set to GET or POST respectively.
+The receiving endpoint extracts form fields and values using GET for querystrings and POST for form collections.
 
 As an illustrative example, the following code can be used to write the posted form information to a text file:
 
@@ -204,7 +204,7 @@ namespace RequestSaver.Controllers
 
 ## **Send XSLT Transformed Email**
 
-![Send XSLT Email](images/xslt-email.png)
+![Send XSLT Email](<images/xslt-email (1).png>)
 
 Sends the result of the Form to an email address with full control over the email contents by providing an xslt file. The following configuration can be set:
 
@@ -219,7 +219,7 @@ Sends the result of the Form to an email address with full control over the emai
 
 ## **Slack**
 
-![Send to Slack](images/email-slack.png)
+![Send to Slack](<images/email-slack (1).png>)
 
 Allows to post the Form data to a specific channel on Slack. The following configuration can be set:
 

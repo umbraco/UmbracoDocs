@@ -137,17 +137,18 @@ public static class ConfigureCustomMemberLoginPathExtensions
 ```
 {% endcode %}
 
-To invoke this code, we need to call `SetCustomMemberLoginPath()` in `Startup.cs`:
+To invoke this code, we need to call `SetCustomMemberLoginPath()` in `Program.cs`:
 
-{% code title="Startup.cs" %}
+{% code title="Program.cs" %}
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        // ...
-        .SetCustomMemberLoginPath()
-        .Build();
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    // add this line
+    .SetCustomMemberLoginPath()
+    .Build();
 ```
 {% endcode %}
 
@@ -287,17 +288,18 @@ public static class GitHubAuthenticationExtensions
 ```
 {% endcode %}
 
-Finally, we need to invoke the connection configuration by calling `AddGitHubAuthentication()` in `Startup.cs`.
+Finally, we need to invoke the connection configuration by calling `AddGitHubAuthentication()` in `Program.cs`.
 
-{% code title="Startup.cs" %}
+{% code title="Program.cs" %}
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        // ...
-        .AddGitHubAuthentication()
-        .Build();
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    // add this line
+    .AddGitHubAuthentication()
+    .Build();
 ```
 {% endcode %}
 
@@ -370,16 +372,18 @@ Before we can do that, we need two things in place:
 1. We have to implement a login page [as described above](./#logging-in-members).
 2. We must add `https://{server-host}/umbraco/swagger/oauth2-redirect.html` to the configured `LoginRedirectUrls`.
 
-With these in place, we can enable member authentication in Swagger for the Delivery API by adding the following to `Startup.cs`:
+With these in place, we can enable member authentication in Swagger for the Delivery API by adding the following to `Program.cs`:
 
-{% code title="Startup.cs" %}
+{% code title="Program.cs" %}
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.ConfigureOptions<Umbraco.Cms.Api.Delivery.Configuration.ConfigureUmbracoMemberAuthenticationDeliveryApiSwaggerGenOptions>();
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .Build();
 
-    // ...
-}
+builder.Services.ConfigureOptions<Umbraco.Cms.Api.Delivery.Configuration.ConfigureUmbracoMemberAuthenticationDeliveryApiSwaggerGenOptions>();
 ```
 {% endcode %}
 
@@ -397,9 +401,9 @@ To put these samples into context, please refer to the article above.
 
 ### Basic client configuration
 
-{% code title="Startup.cs" %}
+{% code title="Program.cs" %}
 ```csharp
-services.AddAuthentication(options =>
+builder.Services.AddAuthentication(options =>
     {
         options.DefaultAuthenticateScheme = "cookie";
         options.DefaultSignInScheme = "cookie";
@@ -435,9 +439,9 @@ services.AddAuthentication(options =>
 
 ### Using a named identity provider
 
-{% code title="Startup.cs" %}
+{% code title="Program.cs" %}
 ```csharp
-services.AddAuthentication(...)
+builder.Services.AddAuthentication(...)
     .AddOpenIdConnect("oidc", options =>
     {
         // ...

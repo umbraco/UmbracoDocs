@@ -1,8 +1,3 @@
----
-
-
----
-
 # Document Types
 
 The first step in any Umbraco site is to create a **Document Type**. A **Document Type** is a data container in Umbraco where you can add **Properties** (data fields/attributes) to input data. Each **Property** has a **Data Type** like text string, number, or rich text body. Umbraco outputs the input data using **Templates**.
@@ -22,14 +17,13 @@ To create a Document Type:
 1. Go to **Settings**.
 2.  Select **...** next to the **Document Types** in the **Settings** tree. \\
 
-    <figure><img src="../../../../11/umbraco-cms/tutorials/creating-a-basic-website/images/figure-7-creating-a-document-type-v8.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/figure-7-creating-a-document-type-v8.png" alt=""><figcaption></figcaption></figure>
 3. Select **Document Type with Template**.
    * Using folders can help you organise your **Document Types**.
 4. Enter a **Name** for the **Document Type**. Let's call it _HomePage_. You'll notice that an **Alias** is automatically created.
    * The alias of the Document Type is automatically generated based on the property name. If you want to change the auto-generated alias, click the "lock" icon. The alias must be in camel case. For example: _homePage_.
 5. Enter the **Description**. For example: _This is our homepage template_. The description helps to identify the correct **Document Type** when creating new **Content Nodes** in the **Content Section**.
-6.  Click **Save**. Our new Document Type is visible as a new item under **Document Types**.\
-
+6.  Click **Save**. Our new Document Type is visible as a new item under **Document Types**.\\
 
     <figure><img src="images/figure-8-name-your-document-type-v8.png" alt=""><figcaption></figcaption></figure>
 
@@ -39,8 +33,7 @@ To create a Document Type:
 
 With the help of icons, you can identify different Document Types in the **Content Tree**. To add an icon:
 
-1.  Select the icon placeholder next to the document name. The **Select Icon** dialog appears on the right-side of the website.\
-
+1.  Select the icon placeholder next to the document name. The **Select Icon** dialog appears on the right-side of the website.\\
 
     <figure><img src="images/figure-9-adding-an-icon-to-document-type-v8.png" alt=""><figcaption></figcaption></figure>
 2. Browse through the icon list and select the icon of your choice.
@@ -50,10 +43,9 @@ With the help of icons, you can identify different Document Types in the **Conte
 
 To create a Document Type at the root of the **Content Tree**:
 
-1.  Go to the **Permissions** tab.\
+1.  Go to the **Permissions** tab.\\
 
-
-    <figure><img src="../../../../11/umbraco-cms/tutorials/creating-a-basic-website/images/figure-9a-allow-document-type-as-root-v8.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/figure-9a-allow-document-type-as-root-v8.png" alt=""><figcaption></figcaption></figure>
 2. Toggle the **Allow as root** button.
    * If your **Document Types** do not have the **Allow as root** checked, you will not be able to create any content on your site.
 3. Click **Save**.
@@ -73,8 +65,7 @@ To add properties to your Document Type, follow these steps:
     \\
 
     <figure><img src="images/figure-11-creating-our-pagetitle-property-v8.png" alt=""><figcaption></figcaption></figure>
-6.  Select **Select Editor** and select the Data Type of your choice. We'll add _text_ in the search box and select the **Textstring** Data Type.\
-
+6.  Select **Select Editor** and select the Data Type of your choice. We'll add _text_ in the search box and select the **Textstring** Data Type.\\
 
     <figure><img src="images/figure-11a-selecting-textstring-data-type-v8.png" alt=""><figcaption></figcaption></figure>
 7. Click **Submit**.

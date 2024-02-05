@@ -1,10 +1,19 @@
 # Table of contents
 
 * [Umbraco Workflow Documentation](README.md)
-* [Installation](installing-workflow.md)
-* [Licensing](licensing.md)
+* [Legacy Documentation](legacy-documentation.md)
 * [Release notes](release-notes.md)
-* [Version Specific Upgrade Notes](version-specific-upgrade-notes.md)
+
+## Installation
+
+* [Installing Umbraco Workflow](installation/installing-workflow.md)
+* [Licensing](installation/licensing.md)
+
+## Upgrading
+
+* [Upgrading Umbraco Workflow](upgrading/upgrading.md)
+* [Version Specific Upgrade Notes](upgrading/version-specific.md)
+* [Migrate from Plumber to Workflow](upgrading/migrating-workflow.md)
 
 ## Getting Started
 
@@ -15,11 +24,6 @@
 * [Approval thresholds](getting-started/approval-thresholds.md)
 * [History Cleanup](getting-started/history-cleanup.md)
 
-## Upgrading Workflow
-
-* [Upgrading](upgrading-workflow/upgrading.md)
-  * [Migrate from Plumber to Workflow](upgrading-workflow/migrating-workflow.md)
-
 ## Workflow Section
 
 * [Workflow Section](workflow-section/workflow-section-dashboard.md)
@@ -28,3 +32,7 @@
 * [Content Reviews](workflow-section/content-reviews.md)
 * [Workflow History](workflow-section/workflow-history.md)
 * [Workflow Settings](workflow-section/workflow-settings.md)
+
+## Advanced Search
+
+* [Advanced Search dashboard](advanced-search/advanced-search-dashboard.md)

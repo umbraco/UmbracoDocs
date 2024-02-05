@@ -2,15 +2,15 @@
 
 ## Rich Text Editor Configuration
 
-The Rich Text Editor (RTE) in Umbraco can be configured in many different ways, and you have full control over which options you want to give you content editors.
-
-In this article you can learn about the various ways you can configure the RTE.
+{% embed url="https://www.youtube.com/watch?v=QRIWz9SotY4" %}
+Rich Text Editor default implementation
+{% endembed %}
 
 ### Toolbar
 
 You have full control over which options should be available on the RTE.
 
-![Toolbar: All options enabled](../../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/rich-text-editor/images/toolbar-all-options.png)
+![Toolbar: All options enabled](../../built-in-property-editors/rich-text-editor/images/toolbar-all-options.png)
 
 In the examble above, all 34 options have been enabled. The options include copy/paste buttons, font styles like bold and italics, bullet lists and options to embed videos and insert images.
 
@@ -38,7 +38,7 @@ The Rich Text Editor comes in two different modes: Classic and Distraction Free.
 
     The default mode, which displays the toolbar in the top.
 
-    ![RTE Mode: Classic](../../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/rich-text-editor/images/rte-mode-classic-new.png)
+    ![RTE Mode: Classic](../../built-in-property-editors/rich-text-editor/images/rte-mode-classic-new.png)
 *   Distraction Free
 
     In this mode the toolbar is hidden, and only shows up when content in the editor is highlighted.

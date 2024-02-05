@@ -162,85 +162,84 @@ using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Web.BackOffice.Security;
 
-namespace MyUmbracoProject.CustomAuthentication
+namespace MyUmbracoProject.CustomAuthentication;
+
+public class ProviderBackOfficeExternalLoginProviderOptions : IConfigureNamedOptions<BackOfficeExternalLoginProviderOptions>
 {
-    public class ProviderBackOfficeExternalLoginProviderOptions : IConfigureNamedOptions<BackOfficeExternalLoginProviderOptions>
+    public const string SchemeName = "OpenIdConnect";
+    public void Configure(string name, BackOfficeExternalLoginProviderOptions options)
     {
-        public const string SchemeName = "OpenIdConnect";
-        public void Configure(string name, BackOfficeExternalLoginProviderOptions options)
+        if (name != Constants.Security.BackOfficeExternalAuthenticationTypePrefix + SchemeName)
         {
-            if (name != Constants.Security.BackOfficeExternalAuthenticationTypePrefix + SchemeName)
+            return;
+        }
+
+        Configure(options);
+    }
+
+    public void Configure(BackOfficeExternalLoginProviderOptions options)
+    {
+        // Customize the login button
+        options.ButtonStyle = "btn-danger";
+        options.Icon = "fa fa-cloud";
+
+        // The following options are relevant if you
+        // want to configure auto-linking on the authentication.
+        options.AutoLinkOptions = new ExternalSignInAutoLinkOptions(
+
+            // Set to true to enable auto-linking
+            autoLinkExternalAccount: true,
+
+            // [OPTIONAL]
+            // Default: "Editor"
+            // Specify User Group.
+            defaultUserGroups: new[] { Constants.Security.EditorGroupAlias },
+
+            // [OPTIONAL]
+            // Default: The culture specified in appsettings.json.
+            // Specify the default culture to create the User as.
+            // It can be dynamically assigned in the OnAutoLinking callback.
+            defaultCulture: null,
+
+            // [OPTIONAL]
+            // Disable the ability to link/unlink manually from within
+            // the Umbraco backoffice.
+            // Set this to false if you don't want the user to unlink 
+            // from this external provider.
+            allowManualLinking: false
+        )
+        {
+            // [OPTIONAL] Callback
+            OnAutoLinking = (autoLinkUser, loginInfo) =>
             {
-                return;
+                // Customize the user before it's linked.
+                // Modify the User's groups based on the Claims returned
+                // in the external ogin info.
+            },
+
+            // [OPTIONAL] Callback
+            OnExternalLogin = (user, loginInfo) =>
+            {
+                // Customize the User before it is saved whenever they have
+                // logged in with the external provider.
+                // Sync the Users name based on the Claims returned
+                // in the external login info
+
+                // Returns a boolean indicating if sign-in should continue or not.
+                return true;
             }
+        };
 
-            Configure(options);
-        }
+        // [OPTIONAL]
+        // Disable the ability for users to login with a username/password.
+        // If set to true, it will disable username/password login
+        // even if there are other external login providers installed.
+        options.DenyLocalLogin = false;
 
-        public void Configure(BackOfficeExternalLoginProviderOptions options)
-        {
-            // Customize the login button
-            options.ButtonStyle = "btn-danger";
-            options.Icon = "fa fa-cloud";
-
-            // The following options are relevant if you
-            // want to configure auto-linking on the authentication.
-            options.AutoLinkOptions = new ExternalSignInAutoLinkOptions(
-
-                // Set to true to enable auto-linking
-                autoLinkExternalAccount: true,
-
-                // [OPTIONAL]
-                // Default: "Editor"
-                // Specify User Group.
-                defaultUserGroups: new[] { Constants.Security.EditorGroupAlias },
-
-                // [OPTIONAL]
-                // Default: The culture specified in appsettings.json.
-                // Specify the default culture to create the User as.
-                // It can be dynamically assigned in the OnAutoLinking callback.
-                defaultCulture: null,
-
-                // [OPTIONAL]
-                // Disable the ability to link/unlink manually from within
-                // the Umbraco backoffice.
-                // Set this to false if you don't want the user to unlink 
-                // from this external provider.
-                allowManualLinking: false
-            )
-            {
-                // [OPTIONAL] Callback
-                OnAutoLinking = (autoLinkUser, loginInfo) =>
-                {
-                    // Customize the user before it's linked.
-                    // Modify the User's groups based on the Claims returned
-                    // in the external ogin info.
-                },
-
-                // [OPTIONAL] Callback
-                OnExternalLogin = (user, loginInfo) =>
-                {
-                    // Customize the User before it is saved whenever they have
-                    // logged in with the external provider.
-                    // Sync the Users name based on the Claims returned
-                    // in the external login info
-
-                    // Returns a boolean indicating if sign-in should continue or not.
-                    return true;
-                }
-            };
-
-            // [OPTIONAL]
-            // Disable the ability for users to login with a username/password.
-            // If set to true, it will disable username/password login
-            // even if there are other external login providers installed.
-            options.DenyLocalLogin = false;
-
-            // [OPTIONAL]
-            // Choose to automatically redirect to the external login provider
-            // effectively removing the login button.
-            options.AutoRedirectLoginToExternalProvider = false;
-        }
+        // [OPTIONAL]
+        // Choose to automatically redirect to the external login provider
+        // effectively removing the login button.
+        options.AutoRedirectLoginToExternalProvider = false;
     }
 }
 ```
@@ -256,66 +255,65 @@ using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Web.Common.Security;
 
-namespace MyUmbracoProject.CustomAuthentication
+namespace MyUmbracoProject.CustomAuthentication;
+
+public class ProviderMembersExternalLoginProviderOptions : IConfigureNamedOptions<MemberExternalLoginProviderOptions>
 {
-    public class ProviderMembersExternalLoginProviderOptions : IConfigureNamedOptions<MemberExternalLoginProviderOptions>
+    public const string SchemeName = "OpenIdConnect";
+    public void Configure(string? name, MemberExternalLoginProviderOptions options)
     {
-        public const string SchemeName = "OpenIdConnect";
-        public void Configure(string? name, MemberExternalLoginProviderOptions options)
+        if (name != Constants.Security.MemberExternalAuthenticationTypePrefix + SchemeName)
         {
-            if (name != Constants.Security.MemberExternalAuthenticationTypePrefix + SchemeName)
+            return;
+        }
+
+        Configure(options);
+    }
+
+    public void Configure(MemberExternalLoginProviderOptions options)
+    {
+        // The following options are relevant if you
+        // want to configure auto-linking on the authentication.
+        options.AutoLinkOptions = new MemberExternalSignInAutoLinkOptions(
+
+            // Set to true to enable auto-linking
+            autoLinkExternalAccount: true,
+
+            // [OPTIONAL]
+            // Default: The culture specified in appsettings.json.
+            // Specify the default culture to create the Member as.
+            // It can be dynamically assigned in the OnAutoLinking callback.
+            defaultCulture: null,
+            
+            // [OPTIONAL]
+            // Specify the default "IsApproved" status.
+            // Must be true for auto-linking.
+            defaultIsApproved: true,
+
+            // [OPTIONAL]
+            // Default: "Member"
+            // Specify the Member Type alias.
+            defaultMemberTypeAlias: Constants.Security.DefaultMemberTypeAlias
+        )
+        {
+            // [OPTIONAL] Callback
+            OnAutoLinking = (autoLinkUser, loginInfo) =>
             {
-                return;
+                // Customize the Member before it's linked.
+                // Modify the Members groups based on the Claims returned
+                // in the external ogin info.
+            },
+            OnExternalLogin = (user, loginInfo) =>
+            {
+                // Customize the Member before it is saved whenever they have
+                // logged in with the external provider.
+                // Sync the Members name based on the Claims returned
+                // in the external login info
+
+                // Returns a boolean indicating if sign-in should continue or not.
+                return true;
             }
-
-            Configure(options);
-        }
-
-        public void Configure(MemberExternalLoginProviderOptions options)
-        {
-            // The following options are relevant if you
-            // want to configure auto-linking on the authentication.
-            options.AutoLinkOptions = new MemberExternalSignInAutoLinkOptions(
-
-                // Set to true to enable auto-linking
-                autoLinkExternalAccount: true,
-
-                // [OPTIONAL]
-                // Default: The culture specified in appsettings.json.
-                // Specify the default culture to create the Member as.
-                // It can be dynamically assigned in the OnAutoLinking callback.
-                defaultCulture: null,
-                
-                // [OPTIONAL]
-                // Specify the default "IsApproved" status.
-                // Must be true for auto-linking.
-                defaultIsApproved: true,
-
-                // [OPTIONAL]
-                // Default: "Member"
-                // Specify the Member Type alias.
-                defaultMemberTypeAlias: Constants.Security.DefaultMemberTypeAlias
-            )
-            {
-                // [OPTIONAL] Callback
-                OnAutoLinking = (autoLinkUser, loginInfo) =>
-                {
-                    // Customize the Member before it's linked.
-                    // Modify the Members groups based on the Claims returned
-                    // in the external ogin info.
-                },
-                OnExternalLogin = (user, loginInfo) =>
-                {
-                    // Customize the Member before it is saved whenever they have
-                    // logged in with the external provider.
-                    // Sync the Members name based on the Claims returned
-                    // in the external login info
-
-                    // Returns a boolean indicating if sign-in should continue or not.
-                    return true;
-                }
-            };
-        }
+        };
     }
 }
 ```
@@ -360,48 +358,47 @@ using Umbraco.Cms.Web.BackOffice.Security;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 
-namespace MyUmbracoProject.CustomAuthentication
+namespace MyUmbracoProject.CustomAuthentication;
+
+public static class ProviderBackofficeAuthenticationExtensions
 {
-    public static class ProviderBackofficeAuthenticationExtensions
+
+    public static IUmbracoBuilder AddProviderBackofficeAuthentication(this IUmbracoBuilder builder)
     {
+        // [OPTIONAL]
+        // Register ProviderBackOfficeExternalLoginProviderOptions here rather than require it in startup
+        builder.Services.ConfigureOptions<ProviderBackOfficeExternalLoginProviderOptions>();
 
-        public static IUmbracoBuilder AddProviderBackofficeAuthentication(this IUmbracoBuilder builder)
+        builder.AddBackOfficeExternalLogins(logins =>
         {
-            // [OPTIONAL]
-            // Register ProviderBackOfficeExternalLoginProviderOptions here rather than require it in startup
-            builder.Services.ConfigureOptions<ProviderBackOfficeExternalLoginProviderOptions>();
+            logins.AddBackOfficeLogin(
+                backOfficeAuthenticationBuilder =>
+                {
+                    backOfficeAuthenticationBuilder.AddProvider(
+                        // The scheme must be set with this method to work for the back office
+                        backOfficeAuthenticationBuilder.SchemeForBackOffice(ProviderBackOfficeExternalLoginProviderOptions.SchemeName),
+                        options =>
+                        {
+                            // Callback path: Represents the URL to which the browser should be redirected to.
+                            // The default value is '/signin-provider'.
+                            // The value here should match what you have configured in your external login provider.
+                            // The value needs to be unique.
+                            options.CallbackPath = "/umbraco-provider-signin";
 
-            builder.AddBackOfficeExternalLogins(logins =>
-            {
-                logins.AddBackOfficeLogin(
-                    backOfficeAuthenticationBuilder =>
-                    {
-                        backOfficeAuthenticationBuilder.AddProvider(
-                            // The scheme must be set with this method to work for the back office
-                            backOfficeAuthenticationBuilder.SchemeForBackOffice(ProviderBackOfficeExternalLoginProviderOptions.SchemeName),
-                            options =>
-                            {
-                                // Callback path: Represents the URL to which the browser should be redirected to.
-                                // The default value is '/signin-provider'.
-                                // The value here should match what you have configured in your external login provider.
-                                // The value needs to be unique.
-                                options.CallbackPath = "/umbraco-provider-signin";
+                            options.ClientId = "YOURCLIENTID";
+                            options.ClientSecret = "YOURCLIENTSECRET";
+                            
+                            // Example: Map Claims
+                            // Relevant when using auto-linking.
+                            options.GetClaimsFromUserInfoEndpoint = true;
+                            options.TokenValidationParameters.NameClaimType = "name";
 
-                                options.ClientId = "YOURCLIENTID";
-                                options.ClientSecret = "YOURCLIENTSECRET";
-                                
-                                // Example: Map Claims
-                                // Relevant when using auto-linking.
-                                options.GetClaimsFromUserInfoEndpoint = true;
-                                options.TokenValidationParameters.NameClaimType = "name";
-
-                                // Example: Add scopes
-                                options.Scope.Add("email");
-                            });
-                    });
-            });
-            return builder;
-        }
+                            // Example: Add scopes
+                            options.Scope.Add("email");
+                        });
+                });
+        });
+        return builder;
     }
 }
 ```
@@ -417,43 +414,42 @@ using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Extensions;
 
-namespace MyUmbracoProject.CustomAuthentication
+namespace MyUmbracoProject.CustomAuthentication;
+
+public static class ProviderMemberAuthenticationExtensions
 {
-    public static class ProviderMemberAuthenticationExtensions
+    public static IUmbracoBuilder AddProviderMemberAuthentication(this IUmbracoBuilder builder)
     {
-        public static IUmbracoBuilder AddProviderMemberAuthentication(this IUmbracoBuilder builder)
+        // [OPTIONAL]
+        // Register ProviderMembersExternalLoginProviderOptions here rather than require it in startup
+        builder.Services.ConfigureOptions<ProviderMembersExternalLoginProviderOptions>();
+
+        builder.AddMemberExternalLogins(logins =>
         {
-            // [OPTIONAL]
-            // Register ProviderMembersExternalLoginProviderOptions here rather than require it in startup
-            builder.Services.ConfigureOptions<ProviderMembersExternalLoginProviderOptions>();
+            logins.AddMemberLogin(
+                memberAuthenticationBuilder =>
+                {
+                    memberAuthenticationBuilder.AddProvider(
+                        // The scheme must be set with this method to work for the back office
+                        memberAuthenticationBuilder.SchemeForMembers(ProviderMembersExternalLoginProviderOptions.SchemeName),
+                        options =>
+                        {
+                            // Callback path: Represents the URL to which the browser should be redirected to.
+                            // The default value is `/signin-oidc`.
+                            // The value here should match what you have configured in your external login provider.
+                            // The value needs to be unique.
+                            options.CallbackPath = "/umbraco-provider-signin";
 
-            builder.AddMemberExternalLogins(logins =>
-            {
-                logins.AddMemberLogin(
-                    memberAuthenticationBuilder =>
-                    {
-                        memberAuthenticationBuilder.AddProvider(
-                            // The scheme must be set with this method to work for the back office
-                            memberAuthenticationBuilder.SchemeForMembers(ProviderMembersExternalLoginProviderOptions.SchemeName),
-                            options =>
-                            {
-                                // Callback path: Represents the URL to which the browser should be redirected to.
-                                // The default value is `/signin-oidc`.
-                                // The value here should match what you have configured in your external login provider.
-                                // The value needs to be unique.
-                                options.CallbackPath = "/umbraco-provider-signin";
+                            options.ClientId = "YOURCLIENTID";
+                            options.ClientSecret = "YOURCLIENTSECRET";
+                            
+                                // Example: Save login tokens
+                            options.SaveTokens = true;
 
-                                options.ClientId = "YOURCLIENTID";
-                                options.ClientSecret = "YOURCLIENTSECRET";
-                                
-                                 // Example: Save login tokens
-                                options.SaveTokens = true;
-
-                            });
-                    });
-            });
-            return builder;
-        }
+                        });
+                });
+        });
+        return builder;
     }
 }
 ```

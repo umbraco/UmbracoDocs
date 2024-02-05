@@ -24,20 +24,20 @@ Once you've created content based on the Document Types, they will be published 
 
 There are a lot of terminologies here! Let's look at breaking those terms down:
 
-[Defining content in Umbraco using Document Types](http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/fundamentals/data/defining-content)
+[Defining content in Umbraco using Document Types](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/fundamentals/data/defining-content)
 
-[What is a Data Type?](http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/fundamentals/data/data-types)
+[What is a Data Type?](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/fundamentals/data/data-types)
 
-[What is a Property Editor?](http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/fundamentals/backoffice/property-editors)
+[What is a Property Editor?](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/fundamentals/backoffice/property-editors)
 
-[Working with Templates](http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/fundamentals/design/templates)
+[Working with Templates](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/fundamentals/design/templates)
 
 ## Try it out
 
-[Learn how to create a website with Umbraco](http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/tutorials/creating-a-basic-website)
+[Learn how to create a website with Umbraco](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/tutorials/creating-a-basic-website)
 
 [Video: Create an Umbraco website](https://www.youtube.com/watch?v=Yu29dE-0OoI\&list=PLgX62vUaGZsFBcq9eSJ\_178rXgn82sJ-T)
 
 ## Other resources
 
-[How can translations be used with content?](http://127.0.0.1:5000/s/OdQETpqkO0Kcv8KMquKL/fundamentals/backoffice/variants)
+[How can translations be used with content?](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/fundamentals/backoffice/variants)

@@ -51,29 +51,28 @@ For the segment of a 'product page', add its unique SKU / product ref to the exi
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Strings;
 
-namespace RoutingDocs.SegmentProviders
+namespace RoutingDocs.SegmentProviders;
+
+public class ProductPageUrlSegmentProvider : IUrlSegmentProvider
 {
-    public class ProductPageUrlSegmentProvider : IUrlSegmentProvider
+    private readonly IUrlSegmentProvider _provider;
+
+    public ProductPageUrlSegmentProvider(IShortStringHelper stringHelper)
     {
-        private readonly IUrlSegmentProvider _provider;
-
-        public ProductPageUrlSegmentProvider(IShortStringHelper stringHelper)
+        _provider = new DefaultUrlSegmentProvider(stringHelper);
+    }
+    
+    public string GetUrlSegment(IContentBase content, string? culture = null)
+    {
+        // Only apply this rule for product pages
+        if (content.ContentType.Alias != "productPage")
         {
-            _provider = new DefaultUrlSegmentProvider(stringHelper);
+            return null;
         }
-        
-        public string GetUrlSegment(IContentBase content, string? culture = null)
-        {
-            // Only apply this rule for product pages
-            if (content.ContentType.Alias != "productPage")
-            {
-                return null;
-            }
 
-            var segment = _provider.GetUrlSegment(content, culture);
-            var productSku = content.GetValue<string>("productSKU");
-            return $"{segment}--{productSku}".ToLower();
-        }
+        var segment = _provider.GetUrlSegment(content, culture);
+        var productSku = content.GetValue<string>("productSKU");
+        return $"{segment}--{productSku}".ToLower();
     }
 }
 ```
@@ -88,14 +87,13 @@ Register the custom UrlSegmentProvider with Umbraco, either using a composer or 
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 
-namespace RoutingDocs.SegmentProviders
+namespace RoutingDocs.SegmentProviders;
+
+public class RegisterCustomSegmentProviderComposer : IComposer
 {
-    public class RegisterCustomSegmentProviderComposer : IComposer
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.UrlSegmentProviders().Insert<ProductPageUrlSegmentProvider>();
-        }
+        builder.UrlSegmentProviders().Insert<ProductPageUrlSegmentProvider>();
     }
 }
 ```
@@ -232,61 +230,60 @@ using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Routing;
 using Umbraco.Cms.Core.Web;
 
-namespace RoutingDocs.UrlProviders
-{
+namespace RoutingDocs.UrlProviders;
+
 public class ProductPageUrlProvider : DefaultUrlProvider
+{
+    public ProductPageUrlProvider(
+        IOptionsMonitor<RequestHandlerSettings> requestSettings,
+        ILogger<DefaultUrlProvider> logger,
+        ISiteDomainMapper siteDomainMapper,
+        IUmbracoContextAccessor umbracoContextAccessor,
+        UriUtility uriUtility,
+        ILocalizationService localizationService)
+        : base(requestSettings, logger, siteDomainMapper, umbracoContextAccessor, uriUtility, localizationService)
     {
-        public ProductPageUrlProvider(
-            IOptionsMonitor<RequestHandlerSettings> requestSettings,
-            ILogger<DefaultUrlProvider> logger,
-            ISiteDomainMapper siteDomainMapper,
-            IUmbracoContextAccessor umbracoContextAccessor,
-            UriUtility uriUtility,
-            ILocalizationService localizationService)
-            : base(requestSettings, logger, siteDomainMapper, umbracoContextAccessor, uriUtility, localizationService)
-        {
-        }
+    }
 
-        public override IEnumerable<UrlInfo> GetOtherUrls(int id, Uri current)
-        {
-            // Add custom logic to return 'additional urls' - this method populates a list of additional urls for the node to display in the Umbraco backoffice
-            return base.GetOtherUrls(id, current);
-        }
+    public override IEnumerable<UrlInfo> GetOtherUrls(int id, Uri current)
+    {
+        // Add custom logic to return 'additional urls' - this method populates a list of additional urls for the node to display in the Umbraco backoffice
+        return base.GetOtherUrls(id, current);
+    }
 
-        public override UrlInfo? GetUrl(IPublishedContent content, UrlMode mode, string? culture, Uri current)
+    public override UrlInfo? GetUrl(IPublishedContent content, UrlMode mode, string? culture, Uri current)
+    {
+        if (content is null)
         {
-            if (content is null)
+            return null;
+        }
+        
+        // Only apply this to product pages
+        if (content.ContentType.Alias == "productPage")
+        {
+            // Get the original base url that the DefaultUrlProvider would have returned,
+            // it's important to call this via the base, rather than .Url, or UrlProvider.GetUrl to avoid cyclically calling this same provider in an infinite loop!!)
+            UrlInfo? defaultUrlInfo = base.GetUrl(content, mode, culture, current);
+            if (defaultUrlInfo is null)
             {
                 return null;
             }
             
-            // Only apply this to product pages
-            if (content.ContentType.Alias == "productPage")
+            if (!defaultUrlInfo.IsUrl)
             {
-                // Get the original base url that the DefaultUrlProvider would have returned,
-                // it's important to call this via the base, rather than .Url, or UrlProvider.GetUrl to avoid cyclically calling this same provider in an infinite loop!!)
-                UrlInfo? defaultUrlInfo = base.GetUrl(content, mode, culture, current);
-                if (defaultUrlInfo is null)
-                {
-                    return null;
-                }
-                
-                if (!defaultUrlInfo.IsUrl)
-                {
-                    // This is a message (eg published but not visible because the parent is unpublished or similar)
-                    return defaultUrlInfo;
-                }
-                else
-                {
-                    // Manipulate the url somehow in a custom fashion:
-                    var originalUrl = defaultUrlInfo.Text;
-                    var customUrl = $"{originalUrl}fish/";
-                    return new UrlInfo(customUrl, true, defaultUrlInfo.Culture);
-                }
+                // This is a message (eg published but not visible because the parent is unpublished or similar)
+                return defaultUrlInfo;
             }
-            // Otherwise return null
-            return null;
+            else
+            {
+                // Manipulate the url somehow in a custom fashion:
+                var originalUrl = defaultUrlInfo.Text;
+                var customUrl = $"{originalUrl}fish/";
+                return new UrlInfo(customUrl, true, defaultUrlInfo.Culture);
+            }
         }
+        // Otherwise return null
+        return null;
     }
 }
 ```
@@ -297,14 +294,13 @@ Register the custom UrlProvider with Umbraco:
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 
-namespace RoutingDocs.UrlProviders
+namespace RoutingDocs.UrlProviders;
+
+public class RegisterCustomUrlProviderComposer : IComposer
 {
-    public class RegisterCustomUrlProviderComposer : IComposer
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.UrlProviders().Insert<ProductPageUrlProvider>();
-        }
+        builder.UrlProviders().Insert<ProductPageUrlProvider>();
     }
 }
 ```
@@ -389,14 +385,13 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Extensions;
 
-namespace RoutingDocs.SiteDomainMapper
+namespace RoutingDocs.SiteDomainMapper;
+
+public class RegisterCustomSiteDomainMapperComposer : IComposer
 {
-    public class RegisterCustomSiteDomainMapperComposer : IComposer
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.SetSiteDomainHelper<CustomSiteDomainMapper>();
-        }
+        builder.SetSiteDomainHelper<CustomSiteDomainMapper>();
     }
 }
 ```
@@ -421,42 +416,42 @@ Since the SiteDomainMapper is registered in the DI, we can't consume it directly
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Routing;
 
-namespace RoutingDocs.SiteDomainMapping
+namespace RoutingDocs.SiteDomainMapping;
+
+public class SiteDomainMapperComponent : IComponent
 {
-    public class SiteDomainMapperComponent : IComponent
+    private readonly SiteDomainMapper? _siteDomainMapper;
+
+    public SiteDomainMapperComponent(ISiteDomainMapper siteDomainMapper)
     {
-        private readonly SiteDomainMapper? _siteDomainMapper;
-
-        public SiteDomainMapperComponent(ISiteDomainMapper siteDomainMapper)
+        // SiteDomainMapper can be overwritten, so ensure it's the default one which contains the AddSite
+        if (siteDomainMapper is SiteDomainMapper concreteSiteDomainMapper)
         {
-            // SiteDomainMapper can be overwritten, so ensure it's the default one which contains the AddSite
-            if (siteDomainMapper is SiteDomainMapper concreteSiteDomainMapper)
-            {
-                _siteDomainMapper = concreteSiteDomainMapper;
-            }
+            _siteDomainMapper = concreteSiteDomainMapper;
         }
-        public void Initialize()
-        {
-            _siteDomainMapper?.AddSite("backoffice", "umbraco-v8-backoffice.localtest.me", "umbraco-v8.localtest.me");
-            _siteDomainMapper?.AddSite("preproduction", "umbraco-v8-preprod.localtest.me");
-            _siteDomainMapper?.AddSite("staging", "umbraco-v8-staging.localtest.me");
-        }
-
-        public void Terminate()
-        { }
     }
+
+    public void Initialize()
+    {
+        _siteDomainMapper?.AddSite("backoffice", "umbraco-v8-backoffice.localtest.me", "umbraco-v8.localtest.me");
+        _siteDomainMapper?.AddSite("preproduction", "umbraco-v8-preprod.localtest.me");
+        _siteDomainMapper?.AddSite("staging", "umbraco-v8-staging.localtest.me");
+    }
+
+    public void Terminate()
+    { }
 }
 ```
 
 Then add the component with a composer:
 
-```
+```csharp
 using Umbraco.Cms.Core.Composing;
 
-namespace RoutingDocs.SiteDomainMapping
-{
-    public class AddSiteComposer : ComponentComposer<SiteDomainMapperComponent>
-    { }
+namespace RoutingDocs.SiteDomainMapping;
+
+public class AddSiteComposer : ComponentComposer<SiteDomainMapperComponent>
+{ 
 }
 ```
 

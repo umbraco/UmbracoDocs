@@ -19,30 +19,31 @@ Here are the steps to specify your own logic for validating a username and passw
     using Umbraco.Core.Models.Identity;
     using Umbraco.Core.Security;
 
-    namespace MyNamespace
+    namespace MyNamespace;
+    
+    public class MyPasswordChecker : IBackOfficeUserPasswordChecker
     {
-        public class MyPasswordChecker : IBackOfficeUserPasswordChecker
+        public Task<BackOfficeUserPasswordCheckerResult> CheckPasswordAsync(BackOfficeIdentityUser user, string password)
         {
-            public Task<BackOfficeUserPasswordCheckerResult> CheckPasswordAsync(BackOfficeIdentityUser user, string password)
-            {
-                var result = (password == "test")
-                    ? Task.FromResult(BackOfficeUserPasswordCheckerResult.ValidCredentials)
-                    : Task.FromResult(BackOfficeUserPasswordCheckerResult.InvalidCredentials);
+            var result = (password == "test")
+                ? Task.FromResult(BackOfficeUserPasswordCheckerResult.ValidCredentials)
+                : Task.FromResult(BackOfficeUserPasswordCheckerResult.InvalidCredentials);
 
-                return result;
-            }
+            return result;
         }
     }
     ```
-2.  Register the `MyPasswordChecker` in your `Startup.ConfigureServices` method:
+2.  Register the `MyPasswordChecker` in your `Program.cs` file:
 
     ```csharp
-    public void ConfigureServices(IServiceCollection services)
-    {
-        ...
+    builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .Build();
 
-        services.AddUnique<IBackOfficeUserPasswordChecker, MyPasswordChecker>();
-    }
+    builder.Services.AddUnique<IBackOfficeUserPasswordChecker, MyPasswordChecker>();
     ```
 
 {% hint style="info" %}

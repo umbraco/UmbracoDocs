@@ -130,24 +130,23 @@ using Umbraco.Cms.Core.PropertyEditors;
 using Umbraco.Cms.Core.WebAssets;
 using Umbraco.Cms.Infrastructure.WebAssets;
 
-namespace UmbracoEightExamples.PropertyEditors
+namespace UmbracoEightExamples.PropertyEditors;
+
+[DataEditor(
+    "Sir.Trevor",
+    EditorType.PropertyValue,
+    "Sir Trevor",
+    "/App_Plugins/SirTrevor/SirTrevor.html",
+    ValueType = ValueTypes.Json,
+    HideLabel = true)]
+[PropertyEditorAsset(AssetType.Javascript, "/App_Plugins/SirTrevor/SirTrevor.controller.js")]
+public class SirTrevorEditor : DataEditor
 {
-    [DataEditor(
-        "Sir.Trevor",
-        EditorType.PropertyValue,
-        "Sir Trevor",
-        "/App_Plugins/SirTrevor/SirTrevor.html",
-        ValueType = ValueTypes.Json,
-        HideLabel = true)]
-    [PropertyEditorAsset(AssetType.Javascript, "/App_Plugins/SirTrevor/SirTrevor.controller.js")]
-    public class SirTrevorEditor : DataEditor
+    public SirTrevorEditor(
+        IDataValueEditorFactory dataValueEditorFactory,
+        EditorType type = EditorType.PropertyValue)
+        : base(dataValueEditorFactory, type)
     {
-        public SirTrevorEditor(
-            IDataValueEditorFactory dataValueEditorFactory,
-            EditorType type = EditorType.PropertyValue)
-            : base(dataValueEditorFactory, type)
-        {
-        }
     }
 }
 ```
@@ -156,12 +155,12 @@ Also notice how the `PropertyEditorAsset` attribute is used to load the `SirTrev
 
 ### DataEditor attribute
 
-The [DataEditor](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.PropertyEditors.DataEditorAttribute.html) attribute shown in the example above is the primary component to declaring the property editor in C#. Notice that the first four properties must be set through the constructor.
+The [DataEditor](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.PropertyEditors.DataEditorAttribute.html) attribute shown in the example above is the primary component to declaring the property editor in C#. Notice that the first four properties must be set through the constructor.
 
 | Name           | Type                                                         | Required | Description                                                  |
 |----------------| ------------------------------------------------------------ | -------- | ------------------------------------------------------------ |
 | `Alias`        | string                                                       | Yes      | Gets the unique alias of the editor.                         |
-| `EditorType`   | [EditorType](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.PropertyEditors.EditorType.html) | Yes      | Gets the type of the editor. Possible values are `EditorType.PropertyValue`, `EditorType.MacroParameter` or `EditorType.Nothing`. |
+| `EditorType`   | [EditorType](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.PropertyEditors.EditorType.html) | Yes      | Gets the type of the editor. Possible values are `EditorType.PropertyValue`, `EditorType.MacroParameter` or `EditorType.Nothing`. |
 | `Name`         | string                                                       | Yes      | Gets the friendly name of the editor.                        |
 | `View`         | string                                                       | Yes      | Gets the view to use to render the editor.                   |
 | `ValueType`    | string                                                       | No       | Gets or sets the type of the edited value.                   |
@@ -172,7 +171,7 @@ The [DataEditor](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Prop
 
 ### PropertyEditorAsset attribute
 
-As shown in the C# example, the [PropertyEditorAsset](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Web.PropertyEditors.PropertyEditorAssetAttribute.html) attribute was used to make Umbraco load the specified JavaScript file.
+As shown in the C# example, the [PropertyEditorAsset](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Infrastructure.WebAssets.PropertyEditorAssetAttribute.html) attribute was used to make Umbraco load the specified JavaScript file.
 
 The constructor of the attribute takes the type of the assets as the first parameter.
 Possible values are either `AssetType.Javascript` or `AssetType.Css`. The second parameter is the URL of the asset.
@@ -181,7 +180,7 @@ Possible values are either `AssetType.Javascript` or `AssetType.Css`. The second
 
 In the example above, the `SirTrevorEditor` class doesn't really do much. For more basic property editors, the C# approach may require a bit more work compared to that of `package.manifest` files. But as property editors grow in complexity, using C# becomes a bit more useful - and also lets you do things not possible with `package.manifest` files.
 
-The [DataEditor](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.PropertyEditors.DataEditor.html) class defines a virtual `CreateConfigurationEditor` method. It returns a model which is used for the Angular view when editing the prevalues of a Data Type.
+The [DataEditor](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.PropertyEditors.DataEditor.html) class defines a virtual `CreateConfigurationEditor` method. It returns a model which is used for the Angular view when editing the prevalues of a Data Type.
 
 Virtual methods are methods declared in a parent class. These methods have a default implementation that can be overridden in classes that inherit from the parent class. For instance in the example below, we can override the method and provide our own `SirTrevorConfigurationEditor` instead of what Umbraco returns by default.
 
@@ -190,28 +189,27 @@ using Umbraco.Cms.Core.PropertyEditors;
 using Umbraco.Cms.Core.WebAssets;
 using Umbraco.Cms.Infrastructure.WebAssets;
 
-namespace UmbracoEightExamples.PropertyEditors
+namespace UmbracoEightExamples.PropertyEditors;
+
+[DataEditor(
+    "Sir.Trevor",
+    EditorType.PropertyValue,
+    "Sir Trevor",
+    "/App_Plugins/SirTrevor/SirTrevor.html",
+    ValueType = ValueTypes.Json,
+    HideLabel = true)]
+[PropertyEditorAsset(AssetType.Javascript, "/App_Plugins/SirTrevor/SirTrevor.controller.js")]
+public class SirTrevorEditor : DataEditor
 {
-    [DataEditor(
-        "Sir.Trevor",
-        EditorType.PropertyValue,
-        "Sir Trevor",
-        "/App_Plugins/SirTrevor/SirTrevor.html",
-        ValueType = ValueTypes.Json,
-        HideLabel = true)]
-    [PropertyEditorAsset(AssetType.Javascript, "/App_Plugins/SirTrevor/SirTrevor.controller.js")]
-    public class SirTrevorEditor : DataEditor
+    public SirTrevorEditor(
+        IDataValueEditorFactory dataValueEditorFactory,
+        EditorType type = EditorType.PropertyValue)
+        : base(dataValueEditorFactory, type)
     {
-        public SirTrevorEditor(
-            IDataValueEditorFactory dataValueEditorFactory,
-            EditorType type = EditorType.PropertyValue)
-            : base(dataValueEditorFactory, type)
-        {
-        }
-
-        protected override IConfigurationEditor CreateConfigurationEditor() => new SirTrevorConfigurationEditor();
-
     }
+
+    protected override IConfigurationEditor CreateConfigurationEditor() => new SirTrevorConfigurationEditor();
+
 }
 ```
 
@@ -222,13 +220,12 @@ using Umbraco.Cms.Core.IO;
 using Umbraco.Cms.Core.PropertyEditors;
 using Umbraco.Cms.Core.Services;
 
-namespace UmbracoEightExamples.PropertyEditors
+namespace UmbracoEightExamples.PropertyEditors;
+
+public class SirTrevorConfigurationEditor : ConfigurationEditor<SirTrevorConfiguration>
 {
-    public class SirTrevorConfigurationEditor : ConfigurationEditor<SirTrevorConfiguration>
+    public SirTrevorConfigurationEditor(IIOHelper ioHelper, IEditorConfigurationParser editorConfigurationParser) : base(ioHelper, editorConfigurationParser)
     {
-        public SirTrevorConfigurationEditor(IIOHelper ioHelper, IEditorConfigurationParser editorConfigurationParser) : base(ioHelper, editorConfigurationParser)
-        {
-        }
     }
 }
 ```
@@ -238,31 +235,30 @@ The referenced `SirTrevorConfiguration` class is then what declares the configur
 ```csharp
 using Umbraco.Cms.Core.PropertyEditors;
 
-namespace UmbracoEightExamples.PropertyEditors
+namespace UmbracoEightExamples.PropertyEditors;
+
+public class SirTrevorConfiguration
 {
-    public class SirTrevorConfiguration
-    {
-        [ConfigurationField("blockLimit", "Maximum number of blocks", "requiredfield",
-            Description = "The total maximum number of blocks (of any type) that can be displayed (0 = infinite).")]
-        public int BlockLimit { get; set; }
+    [ConfigurationField("blockLimit", "Maximum number of blocks", "requiredfield",
+        Description = "The total maximum number of blocks (of any type) that can be displayed (0 = infinite).")]
+    public int BlockLimit { get; set; }
 
-        [ConfigurationField("editorAlignCentered", "Align editor centered", "boolean",
-            Description =
-                "If the editor doesn't span the entire width of the content editing area, center it. Otherwise left aligned.")]
-        public bool EditorAlignCentered { get; set; }
+    [ConfigurationField("editorAlignCentered", "Align editor centered", "boolean",
+        Description =
+            "If the editor doesn't span the entire width of the content editing area, center it. Otherwise left aligned.")]
+    public bool EditorAlignCentered { get; set; }
 
-        [ConfigurationField("editorWidth", "Editor width", "requiredfield",
-            Description = "The width the Sir Trevor editor will expand to, most likely 100%.")]
-        public int EditorWidth { get; set; }
+    [ConfigurationField("editorWidth", "Editor width", "requiredfield",
+        Description = "The width the Sir Trevor editor will expand to, most likely 100%.")]
+    public int EditorWidth { get; set; }
 
-        [ConfigurationField("editorMaxWidth", "Maximum editor width", "requiredfield",
-            Description = "The maximum width the Sir Trevor editor will expand to, i.e. 500px or 80%.")]
-        public int EditorMaxWidth { get; set; }
+    [ConfigurationField("editorMaxWidth", "Maximum editor width", "requiredfield",
+        Description = "The maximum width the Sir Trevor editor will expand to, i.e. 500px or 80%.")]
+    public int EditorMaxWidth { get; set; }
 
-        [ConfigurationField("blocktypes", "Block types", "/App_Plugins/SirTrevor/settings/blocktypes.html",
-            Description = "Configure the block types available to the user.")]
-        public object BlockTypes { get; set; }
-    }
+    [ConfigurationField("blocktypes", "Block types", "/App_Plugins/SirTrevor/settings/blocktypes.html",
+        Description = "Configure the block types available to the user.")]
+    public object BlockTypes { get; set; }
 }
 ```
 

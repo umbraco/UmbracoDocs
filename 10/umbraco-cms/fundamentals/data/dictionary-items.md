@@ -8,7 +8,7 @@ Depending on how your site is set up, not all content is edited through the **Co
 
 Dictionary Items can be managed from the **Translation** section. Let's take a look at an example. In this example, we will translate "Welcome to Umbraco" from within the template and add it to the dictionary:
 
-<figure><img src="../../../../11/umbraco-cms/fundamentals/data/images/dictionary-item.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../13/umbraco-cms/fundamentals/data/images/dictionary-item.png" alt=""><figcaption></figcaption></figure>
 
 ## Adding a Dictionary Item
 
@@ -18,11 +18,11 @@ To add a Dictionary Item:
 2. Click on **Dictionary** in the **Translation** tree and select **Create**.
 3.  Enter the **Name** for the dictionary item. Let's say _Welcome_.
 
-    <figure><img src="../../../../11/umbraco-cms/fundamentals/data/images/Create-dictionary-item.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../../13/umbraco-cms/fundamentals/data/images/Create-dictionary-item.png" alt=""><figcaption></figcaption></figure>
 4. Click **Create**.
 5.  Enter the values for the different language versions.
 
-    <figure><img src="../../../../11/umbraco-cms/fundamentals/data/images/dictionary-item-values.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../../13/umbraco-cms/fundamentals/data/images/dictionary-item-values.png" alt=""><figcaption></figcaption></figure>
 6. Click **Save**.
 
 ### Grouping Dictionary Items
@@ -38,7 +38,7 @@ To group dictionary items:
 7. Click **Create**.
 8.  Enter the values for the different language versions.
 
-    <figure><img src="../../../../11/umbraco-cms/fundamentals/data/images/display-dictionary-item.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../../13/umbraco-cms/fundamentals/data/images/display-dictionary-item.png" alt=""><figcaption></figcaption></figure>
 9. Click **Save**.
 
 ## Editing Dicionary Items
@@ -57,7 +57,27 @@ It will only be possible to edit the language(s) that the given user has access 
 Which language a user has access to is determined by the "Language permissions" set on the User Group. Learn more about this feature in the [Users](users.md#creating-a-user-group) article.
 {% endhint %}
 
-## Fetching Dictionary Values
+## Using Dictionary Values in Document Types
+
+In some cases, you might want to render the dictionary values in the Document Type. This is to display the labels depending on the language configured for the logged-in user.
+
+To use dictionary values in the Document Type, follow these steps:
+
+1. Go to the **Settings** section.
+2. Open the Document Type where you want to use the Dictionary value.
+3. Locate the label and type `#MyDictionaryKey`. For example: `#Welcome` or `#WelcomeDescription`.
+
+<figure><img src="../../.gitbook/assets/Using_Dictionary_Value.jpg" alt=""><figcaption><p>Using Dictionary Value in Document Type</p></figcaption></figure>
+
+4. Click **Save**.
+5. Go to the **Content** section.
+6. View the content node using the Welcome property. The property will display the dictionary value per the user's configured backoffice language.
+
+{% hint style="info" %}
+You can translate tabs and property groups in the backoffice as well. For more information, see [How to Translate Umbraco Backoffice Document Types](https://www.youtube.com/embed/OayHhOf47LA?si=iRZ7NE-ckv9LjrSv) video.
+{% endhint %}
+
+## Fetching Dictionary Values in the Template
 
 To fetch dictionary values in the template, replace the text with the following snippet:
 
@@ -65,7 +85,7 @@ To fetch dictionary values in the template, replace the text with the following 
 @Umbraco.GetDictionaryValue("Welcome")
 ```
 
-![Rendering dictionary item](../../../../11/umbraco-cms/fundamentals/data/images/rendering-dictionary-item.png)
+![Rendering dictionary item](../../../../13/umbraco-cms/fundamentals/data/images/rendering-dictionary-item.png)
 
 Alternatively, you can specify an `altText` which will be returned if the dictionary value is empty.
 
@@ -73,7 +93,7 @@ Alternatively, you can specify an `altText` which will be returned if the dictio
 @Umbraco.GetDictionaryValue("Welcome", "Another amazing day in Umbraco")
 ```
 
-![Rendering dictionary item](../../../../11/umbraco-cms/fundamentals/data/images/rendering-altvalue-dictionary-item.png)
+![Rendering dictionary item](../../../../13/umbraco-cms/fundamentals/data/images/rendering-altvalue-dictionary-item.png)
 
 ## Importing and exporting Dictionary Items
 
@@ -90,7 +110,7 @@ In some cases, you might want to use the same Dictionary Items on multiple Umbra
 
 This will download a `.udt` file which you can use to import the Dictionary items on another Umbraco website.
 
-![Right-click the Dictionary Item to open the options menu with the Export feature](../../../../11/umbraco-cms/fundamentals/data/images/export.png)
+![Right-click the Dictionary Item to open the options menu with the Export feature](../../../../13/umbraco-cms/fundamentals/data/images/export.png)
 
 ### Importing Dictionary Items
 
@@ -106,7 +126,7 @@ This will download a `.udt` file which you can use to import the Dictionary item
 
 The Dictionary Items have now been added to your website.
 
-![Review the Dictionary Items for import before confirming](../../../../11/umbraco-cms/fundamentals/data/images/import.png)
+![Review the Dictionary Items for import before confirming](../../../../13/umbraco-cms/fundamentals/data/images/import.png)
 
 ## Using Dictionary Item in a Multilingual website
 

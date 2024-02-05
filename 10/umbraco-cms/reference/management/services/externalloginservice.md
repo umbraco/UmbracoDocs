@@ -2,7 +2,9 @@
 
 The ExternalLoginService is used to store the external login info and can be replaced with your own implementation.
 
-* **Namespace:** `Umbraco.Core.Services`
+[Browse the API documentation for IEntityService interface](https://apidocs.umbraco.com/v10/csharp/api/Umbraco.Cms.Core.Services.IExternalLoginService.html).
+
+* **Namespace:** `Umbraco.Cms.Core.Services`
 * **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
@@ -12,43 +14,29 @@ All samples in this document will require references to the following dll:
 All samples in this document will require the following using statements:
 
 ```csharp
-using Umbraco.Core;
-using Umbraco.Core.Models;
-using Umbraco.Core.Services;
+using Umbraco.Cms.Core.Services;
 ```
 
 ## Getting the service
 
-### Services property
-
-If you wish to use use the external login service in a class that inherits from one of the Umbraco base classes (eg. `SurfaceController`, `UmbracoApiController` or `UmbracoAuthorizedApiController`), you can access the external login service through a local `Services` property:
-
-```csharp
-IExternalLoginService externalLoginService = Services.ExternalLoginService;
-```
-
 ### Dependency Injection
 
-In other cases, you may be able to use Dependency Injection. For instance if you have registered your own class in Umbraco's dependency injection, you can specify the `IExternalLoginService` interface in your constructor:
+If you wish to use the entity service in a class, you need to specify the `IExternalLoginService` interface in your constructor:
 
 ```csharp
 public class MyClass
 {
-
 	private IExternalLoginService _externalLoginService;
 
 	public MyClass(IExternalLoginService externalLoginService)
 	{
 		_externalLoginService = externalLoginService;
 	}
-
 }
 ```
 
-### Static accessor
-
-If neither a `Services` property or Dependency Injection is available, you can also reference the static `Current` class directly:
+In Razor views, you can access the entity service through the `@inject` directive:
 
 ```csharp
-IExternalLoginService externalLoginService = Umbraco.Core.Composing.Current.Services.ExternalLoginService;
+@inject IExternalLoginService ExternalLoginService
 ```

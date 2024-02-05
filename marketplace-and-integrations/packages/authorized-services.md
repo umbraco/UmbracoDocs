@@ -225,11 +225,11 @@ Task<Attempt<TResponse?>> GetRequestAsync<TResponse>(string serviceAlias, string
 Depending on the configured authentication method, there are some methods that can be used to retrieve the access token or the API key:
 
 ```csharp
-string? GetOAuth1Token(string serviceAlias);
+Task<string?> GetOAuth1Token(string serviceAlias);
 
-string? GetOAuth2Token(string serviceAlias);
+Task<string?> GetOAuth2Token(string serviceAlias);
 
-string? GetApiKey(string serviceAlias);
+Task<string?> GetApiKey(string serviceAlias);
 ```
 
 ## Verified Providers
@@ -275,7 +275,7 @@ As integrations with more providers are successfully completed, we plan to maint
   "RequestIdentityPath": "/login/connect/authorize",
   "RequestTokenPath": "/login/connect/token",
   "RequestTokenFormat": "FormUrlEncoded",
-  "AuthorizationRequestsRequireRedirectUri": true,
+  "AuthorizationUrlRequiresRedirectUrl": true,
   "UseProofKeyForCodeExchange": true,
   "ClientId": "",
   "ClientSecret": "",
@@ -442,7 +442,7 @@ As integrations with more providers are successfully completed, we plan to maint
   "RequestIdentityPath": "/v3.0/dialog/oauth",
   "RequestTokenPath": "/v3.0/oauth/access_token",
   "RequestTokenFormat": "FormUrlEncoded",
-  "AuthorizationRequestsRequireRedirectUri": true,
+  "AuthorizationUrlRequiresRedirectUrl": true,
   "ClientId": "",
   "ClientSecret": "",
   "Scopes": "email public_profile",
@@ -584,7 +584,7 @@ As integrations with more providers are successfully completed, we plan to maint
   "RequestIdentityPath": "/o/oauth2/auth",
   "RequestTokenPath": "/token",
   "RequestTokenFormat": "FormUrlEncoded",
-  "AuthorizationRequestsRequireRedirectUri": true,
+  "AuthorizationUrlRequiresRedirectUrl": true,
   "ClientId": "",
   "ClientSecret": "",
   "Scopes": "https://www.googleapis.com/auth/webmasters https://www.googleapis.com/auth/webmasters.readonly",
@@ -605,7 +605,7 @@ As integrations with more providers are successfully completed, we plan to maint
   "IdentityHost": "https://app-eu1.hubspot.com",
   "TokenHost": "https://api.hubapi.com",
   "RequestIdentityPath": "/oauth/authorize",
-  "AuthorizationRequestsRequireRedirectUri": true,
+  "AuthorizationUrlRequiresRedirectUrl": true,
   "RequestTokenPath": "/oauth/v1/token",
   "RequestTokenFormat": "FormUrlEncoded",
   "JsonSerializer": "SystemTextJson",
@@ -664,7 +664,7 @@ As integrations with more providers are successfully completed, we plan to maint
   "RequestIdentityPath": "/oauth/v2/authorization",
   "RequestTokenPath": "/oauth/v2/accessToken",
   "RequestTokenFormat": "FormUrlEncoded",
-  "AuthorizationRequestsRequireRedirectUri": true,
+  "AuthorizationUrlRequiresRedirectUrl": true,
   "ClientId": "",
   "ClientSecret": "",
   "Scopes": "r_emailaddress r_liteprofile w_member_social",
@@ -759,7 +759,7 @@ As integrations with more providers are successfully completed, we plan to maint
   "RequestIdentityPath": "/common/oauth2/v2.0/authorize",
   "RequestTokenPath": "/common/oauth2/v2.0/token",
   "RequestTokenFormat": "FormUrlEncoded",
-  "AuthorizationRequestsRequireRedirectUri": true,
+  "AuthorizationUrlRequiresRedirectUrl": true,
   "ClientId": "",
   "ClientSecret": "",
   "Scopes": "https://[instance].crm4.dynamics.com/.default",
@@ -805,7 +805,7 @@ As integrations with more providers are successfully completed, we plan to maint
   "RequestIdentityPath": "/auth/login",
   "RequestTokenPath": "/oauth2/access_token",
   "RequestTokenFormat": "FormUrlEncoded",
-  "AuthorizationRequestsRequireRedirectUri": true,
+  "AuthorizationUrlRequiresRedirectUrl": true,
   "ClientId": "",
   "ClientSecret": "",
   "Scopes": "user.id,domains.info,url.info,positiontracking.info",
@@ -828,7 +828,7 @@ As integrations with more providers are successfully completed, we plan to maint
   "RequestIdentityPath": "/admin/oauth/authorize",
   "RequestTokenPath": "/oauth/access_token",
   "RequestTokenFormat": "FormUrlEncoded",
-  "AuthorizationRequestsRequireRedirectUri": true,
+  "AuthorizationUrlRequiresRedirectUrl": true,
   "ClientId": "",
   "ClientSecret": "",
   "Scopes": "read_products",
@@ -923,7 +923,7 @@ As integrations with more providers are successfully completed, we plan to maint
   "RequestIdentityPath": "/i/oauth2/authorize",
   "RequestTokenPath": "/2/oauth2/token",
   "RequestTokenFormat": "FormUrlEncoded",
-  "AuthorizationRequestsRequireRedirectUri": true,
+  "AuthorizationUrlRequiresRedirectUrl": true,
   "UseProofKeyForCodeExchange": true,
   "ClientId": "",
   "ClientSecret": "",

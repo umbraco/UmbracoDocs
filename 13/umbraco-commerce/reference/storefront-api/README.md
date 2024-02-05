@@ -14,23 +14,20 @@ When the Content Delivery API is enabled, you will need to explicitly opt-in to 
 
 ### Register the Storefront API dependencies
 
-1. Open your project's `Startup.cs` file.
-2. Register the API dependencies in the `ConfigureServices` method by adding `.AddStorefrontApi()` inside a `.AddUmbracoCommerce()` call:
+1. Open your project's `Program.cs` file.
+2. Register the API dependencies by adding `.AddStorefrontApi()` inside a `.AddUmbracoCommerce()` call:
 
-{% code title="Startup.cs" %}
+{% code title="Program.cs" %}
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()             
-        .AddWebsite()
-        .AddDeliveryApi()
-        .AddUmbracoCommerce(builder => {
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddUmbracoCommerce(builder => {
             builder.AddStorefrontApi();
-        })
-        .AddComposers()
-        .Build();
-}
+    })
+    .AddComposers()
+    .Build();
 ```
 {% endcode %}
 
@@ -441,7 +438,7 @@ GET /umbraco/commerce/storefront/api/v1/order/af697207-d370-4aee-824c-15711d43a9
             "withoutTax": 27.60
         }
     },
-    "totalQuantity": 1, 
+    "totalQuantity": 1,
     "updateDate": "2023-07-06T14:20:26.1939545"
 }
 ```

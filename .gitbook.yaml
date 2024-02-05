@@ -5,4 +5,6 @@ root: ./
 
 redirects:
     umbraco-cms/fundamentals/setup/upgrading/general: umbraco-cms/fundamentals/setup/upgrading/README.md
+    umbraco-cms/v/13.latest-rc/fundamentals/backoffice/requirements: umbraco-cms/fundamentals/setup/requirements.md
+
     v/workflow: umbraco-workflow/README.md

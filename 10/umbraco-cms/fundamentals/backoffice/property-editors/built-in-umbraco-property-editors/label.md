@@ -8,17 +8,17 @@ Label is a non-editable control and can only be used to display a pre-set value.
 
 ## Data Type Definition Example
 
-![Label Data Type Definition](../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Label-Setup-v8.png)
+![Label Data Type Definition](../built-in-property-editors/images/Label-Setup-v8.png)
 
 ### Value type
 
-If you want to set a value other than a String, you can define the data using one of the other available Data Types: Decimal, Date/time, Time, Integer, and Big integer.
+If you want to set a value other than a String, you can define the data using one of the other available Data Types. These include Decimal, Date/time, Time, Integer, and Big integer.
 
 There is also a Value Type: Long string if you need to set a long string value for your Label.
 
 ## Content Example
 
-![Label Content Example](../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Label-Content-v8.png)
+![Label Content Example](../built-in-property-editors/images/Label-Content-v8.png)
 
 ## MVC View Example
 

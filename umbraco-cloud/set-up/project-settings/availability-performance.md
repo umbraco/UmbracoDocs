@@ -16,9 +16,9 @@ Under Availability & Performance, you'll find visualization and statistics for t
 * Panel view
 * Chart and statistics view
 
-&#x20;The visualization and statistics can be seen for all your different environments.
+The visualization and statistics can be seen for all your different environments.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Availability and performance Overview</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption><p>Availability and performance Overview</p></figcaption></figure>
 
 {% hint style="info" %}
 More detailed visualization and tools intended for troubleshooting are to be added in the future and will be restricted to **Standard** and **Professional** project plans.

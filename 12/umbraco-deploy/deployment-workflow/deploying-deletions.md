@@ -22,7 +22,7 @@ Let's say you've deleted a Document Type on your Development environment, and no
 
 Before you deploy the changes, in Git it will show that the following changes are ready to be committed and deployed:
 
-![Changes ready for deployment](../../../10/umbraco-deploy/deployment-workflow/images/deletions-of-doctype2.png)
+![Changes ready for deployment](./images/deletions-of-doctype2.png)
 
 Commit the changes and push them to your repository and trigger a deployment to your environment.
 

@@ -1,3 +1,8 @@
+---
+
+needsV9Update: "true"
+---
+
 # Adding server-side data to a property editor
 
 ## Overview
@@ -33,27 +38,20 @@ INSERT INTO people(name,town,country) VALUES('Aimee Sampson','Hawera','Antigua a
 
 Next we need to define an `ApiController` to expose a server-side route which our application will use to fetch the data.
 
-For this, we will create a file at: `/App_Code/PersonApiController.cs`. It must be in `App_Code` since we want our app to compile it on start. Alternatively, you can add it to a normal .NET project and compile it into a DLL as usual.
+For this, you can create a new class at the root of the project called `PersonApiController.cs`
 
 In the `PersonApiController.cs` file, add:
 
 ```csharp
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+    using Umbraco.Cms.Web.BackOffice.Controllers;
+    using Umbraco.Cms.Core.Web.Mvc;
 
-using Umbraco.Cms.Web.BackOffice.Controllers;
-using Umbraco.Cms.Web.Common.Attributes;
-
-namespace My.Controllers
-{
-    [Umbraco.Web.Mvc.PluginController("My")]
+    namespace YourProjectName;
+    [PluginControllerMetadata("My")]
     public class PersonApiController : UmbracoAuthorizedJsonController
     {
         // we will add a method here later
     }
-}
 ```
 
 This is a very basic API controller which inherits from `UmbracoAuthorizedJsonController` this specific class will only return JSON data and only to requests which are authorized to access the backoffice.

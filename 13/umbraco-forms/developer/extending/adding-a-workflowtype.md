@@ -2,7 +2,7 @@
 
 *This builds on the "[adding a type to the provider model](adding-a-type.md)" chapter*
 
-Add a new class to your project and have it inherit from `Umbraco.Forms.Core.WorkflowType`, implement the class. For this sample we will focus on the execute method. This method process the current record (the data submitted by the form) and have the ability to change data and state.
+Add a new class to your project and have it inherit from `Umbraco.Forms.Core.WorkflowType`, and implement the class. For this sample, we will focus on the execute method. This method processes the current record (the data submitted by the form) and have the ability to change data and state.
 
 ```csharp
 using Serilog;
@@ -32,7 +32,7 @@ namespace MyFormsExtensions
             this.Group = "Services";
         }
 
-        public override WorkflowExecutionStatus Execute(WorkflowExecutionContext context)
+        public override Task<WorkflowExecutionStatus> ExecuteAsync(WorkflowExecutionContext context)
         {
             // first we log it
             _logger.LogDebug("the IP " + context.Record.IP + " has submitted a record");
@@ -53,7 +53,7 @@ namespace MyFormsExtensions
             _logger.LogDebug("The record with unique id {RecordId} that was submitted via the Form {FormName} with id {FormId} has been changed to {RecordState} state",
                context.Record.UniqueId, context.Form.Name, context.Form.Id, "approved");
 
-            return WorkflowExecutionStatus.Completed;
+            return Task.FromResult(WorkflowExecutionStatus.Completed);
         }
 
         public override List<Exception> ValidateSettings()
@@ -68,7 +68,7 @@ namespace MyFormsExtensions
 
 ### Record information
 
-The `Execute()` method gets a `WorkflowExecutionContext` which has properties for the related `Form`, `Record`, and `FormState`.  This parameter contains all information related to the workflow.
+The `ExecuteAsync()` method gets a `WorkflowExecutionContext` which has properties for the related `Form`, `Record`, and `FormState`.  This parameter contains all information related to the workflow.
 
 The `Record` contains all data and metadata submitted by the form.  As shown in the example above, you can iterate over all `RecordField` values in the form. You can also retrieve a specific record field by alias using the following method:
 

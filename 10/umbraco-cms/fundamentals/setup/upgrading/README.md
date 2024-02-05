@@ -68,21 +68,21 @@ It's recommended that you upgrade the site offline and test the upgrade fully be
 4. Select the **.NET** version from the **Target Framework** drop-down.
 5. Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**
 6. Go to the **Installed** tab in the NuGet Package manager.
-7.  Upgrade **Umbraco.Cms**.&#x20;
+7.  Upgrade **Umbraco.Cms**.
 
     a. Select the correct version from the **Version** drop-down.
 
     b. Click **Install** to upgrade your project.
 
 {% hint style="info" %}
-If you have other packages installed such as Umbraco Forms, then before upgrading **Umbraco.CMS** you will need to upgrade the packages first. Consult the [version specific upgrade notes for Umbraco Forms](https://docs.umbraco.com/umbraco-forms/installation/version-specific) if relevant.
+If you have other packages installed such as Umbraco Forms, then before upgrading **Umbraco.CMS** you will need to upgrade the packages first. Consult the [version specific upgrade notes for Umbraco Forms](https://docs.umbraco.com/umbraco-forms/upgrading/version-specific) if relevant.
 {% endhint %}
 
-8. Make sure that your connection string has `TrustServerCertificate=True` in order to complete successfully the upgrade:&#x20;
+8. Make sure that your connection string has `TrustServerCertificate=True` in order to complete successfully the upgrade:
 
 ```csharp
 "ConnectionStrings": {
-    "umbracoDbDSN": "Server=YourLocalSQLServerHere;Database=NameOfYourDatabaseHere;;User Id=NameOfYourUserHere;Password=YourPasswordHere;TrustServerCertificate=True"
+    "umbracoDbDSN": "Server=YourLocalSQLServerHere;Database=NameOfYourDatabaseHere;User Id=NameOfYourUserHere;Password=YourPasswordHere;TrustServerCertificate=True"
 }
 ```
 
@@ -99,7 +99,8 @@ Add a package reference to your project by executing the `dotnet add package Umb
 Run `dotnet restore` to install the package.
 
 {% hint style="warning" %}
-If you are using SQL CE in your project you will need to run `dotnet add package Umbraco.Cms.SqlCe --version <VERSION>` too before running the `dotnet restore` command.
+For v9: If you are using SQL CE in your project you will need to run `dotnet add package Umbraco.Cms.SqlCe --version <VERSION>` before running the `dotnet restore` command.
+From v10, SQL CE has been replaced with SQLite so a `dotnet restore` should be sufficient. If this is not working then you will need to run `dotnet add package Umbraco.Cms.Persistence.Sqlite --version <VERSION>` and then `dotnet restore`.
 {% endhint %}
 
 When the command completes, open the **.csproj** file to make sure the package reference was updated:

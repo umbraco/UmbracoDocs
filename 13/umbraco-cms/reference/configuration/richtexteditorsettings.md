@@ -14,7 +14,7 @@ In Umbraco 11 the TinyMCE version supported has been upgraded from version 4 to 
 If your site is upgraded from an older version, follow the migration guides below to upgrade the TinyMCE version as well.
 
 * [Migrate from version 4 to version 5](https://www.tiny.cloud/docs/migration-from-4x/)
-* [Migrate from version 5 to version 6](https://www.tiny.cloud/docs/tinymce/6/migration-from-5x/)
+* [Migrate from version 5 to version 6](https://www.tiny.cloud/docs/tinymce/latest/migration-from-5x/)
 {% endhint %}
 
 A config with all the values can be seen underneath. Since there are a lot of defaults configured, some of these have been omitted for the sake of readability. Anywhere something has been omitted it is shown with `{...}`.
@@ -46,7 +46,8 @@ A config with all the values can be seen underneath. Since there are a lot of de
       ],
       "CustomConfig": {
         "entity_encoding": "raw"
-      }
+      },
+      "CloudApiKey": "q8j4e5{...}w8c270p"
     }
   }
 }
@@ -56,13 +57,15 @@ A config with all the values can be seen underneath. Since there are a lot of de
 
 Allows you to specify what plugins should be enabled for the rich text editor as a comma seperated list of the plugin names.
 
+To learn more about how to use the plugins, see the [Rich Text Editor Plugins](../../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-plugins.md) article.
+
 ## Valid elements
 
 Allows you to specify the valid HTML elements for the rich text editor as well as the allowed properties. For instance, in the config above the `a` element is allowed, and it's allowed to have `onclick`, `href`, and many more attributes.
 
 ## Invalid elements
 
-Specifies invalid HTML elements for the rich text editor
+Specifies invalid HTML elements for the rich text editor. For instance, in the config above the `font` element is not allowed.
 
 ## Commands
 
@@ -114,3 +117,13 @@ Use a text editor to find and replace `\"` with `"`. This will allow you to edit
     }
   }
 ```
+
+## Cloud API key
+
+Allows you to specify a Cloud API key for the rich text editor. Set this if you want to use the [TinyMCE Cloud](https://www.tiny.cloud/) service. After setting this the Backoffice automatically loads the plugins.js file from the cloud service, which is known as [cloud deployment of plugins only](https://www.tiny.cloud/docs/tinymce/6/features-only/).
+
+To learn more about how to use the Cloud API key, see the [Plugins](../../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-plugins.md#adding-a-premium-plugin) article.
+
+{% hint style="info" %}
+You can go to [TinyMCE Cloud](https://www.tiny.cloud/) and sign up for a free trial. You will get a Cloud API key that you can use to try out the premium plugins.
+{% endhint %}

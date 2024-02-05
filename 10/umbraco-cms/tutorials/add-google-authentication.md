@@ -1,6 +1,4 @@
 ---
-
-
 meta.Title: Add Google Authentication
 description: A guide to set up a Google login for the Umbraco Backoffice.
 ---
@@ -15,7 +13,7 @@ In this tutorial, we will take you through the steps of setting up a Google logi
 
 When you log in to the Umbraco Backoffice, you need to enter your username and password. Integrating your website with Google authentication adds a button that you can click to log in with your Google account.
 
-![Google login screen](../../../11/umbraco-cms/tutorials/images/GoogleLoginScreen\_v9.png)
+![Google login screen](images/GoogleLoginScreen\_v9.png)
 
 ## Why?
 
@@ -47,41 +45,41 @@ The first thing to do is set up a Google API. To do this, you need to go to [htt
 
 1.  At the top of the page, next to the Google Cloud Platform logo, select the project dropdown and click **New Project**.\\
 
-    <figure><img src="../../../11/umbraco-cms/tutorials/images/Project_dropdown_list.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/Project_dropdown_list.png" alt=""><figcaption></figcaption></figure>
 2.  Enter the **Project name**, **Organization**, **Location** and click **Create**.
 
-    <figure><img src="../../../11/umbraco-cms/tutorials/images/Project_Details.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/Project_Details.png" alt=""><figcaption></figcaption></figure>
 
 ### Enable Google+ API
 
 1.  From the project dropdown list, select the project you recently created and click **Enable APIs and Services**. \\
 
-    <figure><img src="../../../11/umbraco-cms/tutorials/images/Enable_Apis.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/Enable_Apis.png" alt=""><figcaption></figcaption></figure>
 2. In the **Welcome to the API Library** window, type **Google+ API** in the search field.
 3.  Click **Enable** to enable the API.\\
 
-    <figure><img src="../../../11/umbraco-cms/tutorials/images/Enable_Google_API.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/Enable_Google_API.png" alt=""><figcaption></figcaption></figure>
 
 ### Create Credentials
 
 1.  Before creating the credentials, you will need to configure your consent screen. Click on **OAuth Consent Screen** from the left-side navigation menu.\
     \\
 
-    <figure><img src="../../../11/umbraco-cms/tutorials/images/OAuth_Consent_Screen.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/OAuth_Consent_Screen.png" alt=""><figcaption></figcaption></figure>
 2.  In the **OAuth consent screen** window, select the **User Type** depending on how you want to configure and register your app. Click **Create**.\\
 
-    <figure><img src="../../../11/umbraco-cms/tutorials/images/User_Type.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/User_Type.png" alt=""><figcaption></figcaption></figure>
 3. In the **OAuth consent screen** tab of the **Edit app registration** window, enter the **App information**, **App domain**, **Authorized domains**, **Developer contact information** and click **Save and Continue**.
 4. In the **Scopes** tab, select the scopes your project uses. Click **Save and Continue**.
 5. \[Optional] In the **Test Users** tab, add the test users that can access the application. Click **Save and Continue**.
 6. In the **Summary** tab, verify the details provided. Click **Back to Dashboard** or **Submit for verification**.
 7.  Click on **Credentials** from the left-side navigation menu. Click on **Create Credentials** and select **OAuth Client ID**. \\
 
-    <figure><img src="../../../11/umbraco-cms/tutorials/images/OAuth_Client_Id.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/OAuth_Client_Id.png" alt=""><figcaption></figcaption></figure>
 8. Select **Web Application** from the **Application type** drop-down.
 9.  Enter the application **Name**, **Authorized JavaScript origins**, **Authorized redirect URIs** and click **Create**.\\
 
-    <figure><img src="../../../11/umbraco-cms/tutorials/images/Credentials_v9.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/Credentials_v9.png" alt=""><figcaption></figcaption></figure>
 
 A popup appears displaying the **ClientId** and **ClientSecret**. You will need these values later while configuring your solution.
 
@@ -116,7 +114,7 @@ The NuGet Package Manager UI in Visual Studio on Windows allows you to install, 
 2. In the Browse tab, type `Microsoft.AspNetCore.Authentication.Google` in the search field.
 3.  Select the **version** from the drop-down and click **Install**. \\
 
-    <figure><img src="../../../11/umbraco-cms/tutorials/images/Install_Package.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/Install_Package.png" alt=""><figcaption></figcaption></figure>
 
 For more information on installing and managing packages in Visual Studio, see the [Microsoft Documentation](https://docs.microsoft.com/en-us/nuget/consume-packages/install-use-packages-visual-studio).
 
@@ -248,8 +246,6 @@ For more information on installing and managing packages in Visual Studio, see t
     * Ensure to replace **YOURCLIENTID** and **YOURCLIENTSECRET** in the code with the values from the **OAuth Client Ids Credentials** window.
 3.  Update `ConfigureServices` in your `Startup.cs` class to register your configuration with Umbraco. For example:
 
-
-
     ```csharp
     using MyCustomUmbracoProject.App_Code.Google_Authentication;
 
@@ -266,11 +262,11 @@ For more information on installing and managing packages in Visual Studio, see t
 4. Build and run the website. The first time you will have to link the provider to your account from the Backoffice.
 5.  Log in to the Backoffice. Click on your user profile in the top-right corner and select **Link your Google account**:\\
 
-    <figure><img src="../../../11/umbraco-cms/tutorials/images/Link_Google_Account_Backoffice.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/Link_Google_Account_Backoffice.png" alt=""><figcaption></figcaption></figure>
 6. In the **Choose an account** window, select the account you wish to link with the google console project.
 7.  For future Backoffice logins, you can click on the **Sign in with Google** button and you will be logged in to the Backoffice.
 
-    <figure><img src="../../../11/umbraco-cms/tutorials/images/GoogleLoginScreen_v9.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/GoogleLoginScreen_v9.png" alt=""><figcaption></figcaption></figure>
 
 ## Related Links
 

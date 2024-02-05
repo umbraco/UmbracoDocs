@@ -12,6 +12,6 @@ A deployment from one environment (source) to another (target) goes through the 
 2. If changes are found, these are pulled down and merged into the source environment
 3. The changes on the source environment is then pushed to the target environment
 
-This process migth take a few minutes, depending on the amount of changes being deployed.
+This process might take a few minutes, depending on the amount of changes being deployed.
 
 Once your structure has been deployed, it will be possible to transfer your content and media as well. This is done from the Umbraco Backoffice - read more about this in the [Content transfer/restore article](content-transfer.md).

@@ -1,8 +1,6 @@
 # ConsentService
 
-**Applies to Umbraco 9 and newer**
-
-[Browse the API documentation for ConsentService](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Services.IConsentService.html).
+[Browse the API documentation for ConsentService](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.Services.IConsentService.html).
 
 * **Namespace:** `Umbraco.Cms.Core.Services`
 * **Assembly:** `Umbraco.Core.dll`
@@ -19,7 +17,7 @@ Consent can be given or revoked or changed via the `RegisterConsent` method, whi
 
 ## Get the current state
 
-Getter methods of this service return the current state of a consent, that is the latest [IConsent](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Models.IConsent.html) entity that was created.
+Getter methods of this service return the current state of a consent, that is the latest [IConsent](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.Models.IConsent.html) entity that was created.
 
 ## Revoking a consent
 

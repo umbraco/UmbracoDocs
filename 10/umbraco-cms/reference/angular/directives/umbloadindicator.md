@@ -1,16 +1,12 @@
----
-
----
-
 # umbLoadIndicator
 
 Many web sites and web applications use a form of load indicator to indicate a busy state to the user. Throughout the backoffice, Umbraco uses three animated circles as a load indicator - eg. as shown below:
 
-![Example of the load indicator](../../../../../11/umbraco-cms/reference/angular/directives/images/umbLoadIndicator.gif)
+![Example of the load indicator](images/umbLoadIndicator.gif)
 
 Umbraco internally does this via the `<umb-load-indicator />` directive, which you can also use in your own views for the backoffice.
 
-The directive doesn't have any parameters on it's own, but since you most likely only wish to show the load indicator during certain states of your code, you can control this either through `ng-if` or `ng-show`.
+The directive doesn't have any parameters on it's own. Since you most likely only wish to show the load indicator during certain states of your code, you can control this either through `ng-if` or `ng-show`.
 
 For instance if your controller sets the `loading` variable to `true` during busy states:
 

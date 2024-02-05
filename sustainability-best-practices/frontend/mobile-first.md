@@ -1,4 +1,4 @@
-# Mobile first
+# Mobile First
 
 When it comes to design, we should be making sustainable choices from the outset. Consider the use of images and large graphics that could contribute to page weight. If possible, remove the use of stock images that provide little to no value.
 
@@ -6,4 +6,4 @@ Choose more efficient colors and provide a [dark mode](https://www.purdue.edu/ne
 
 Start with mobile-first and scale up if necessary, introducing design tweaks at bigger viewports. The [Lowww Directory](https://www.lowww.directory/) provides some real-world examples of sustainable design in practice without compromising on the design quality.
 
-Introduce energy-saving toggles to adapt the design and turn on a low-carbon version of the website when the grid is at a higher intensity. By highlighting these options to the user, we can inform them and help them to make more sustainable choices. [Boohoo](https://boohoo.co.uk) and [Herning.dk](https://herning.dk) have both introduced this recently. There are tools such as the [Carbon Intensity API](https://www.carbonintensity.org.uk) and the [Carbon Aware Software Development Kit (SDK)](https://github.com/Green-Software-Foundation/carbon-aware-sdk). These tools allow you to pull information about the intensity of the grid in your location.
+Implement energy-saving toggles to activate a low-carbon website design during peak grid intensity. By highlighting these options to the user, we can inform them and help them to make more sustainable choices. [Boohoo](https://boohoo.co.uk) and [Herning.dk](https://herning.dk) have both introduced this recently. There are tools such as the [Carbon Intensity API](https://www.carbonintensity.org.uk) and the [Carbon Aware Software Development Kit (SDK)](https://github.com/Green-Software-Foundation/carbon-aware-sdk). These tools allow you to pull information about the intensity of the grid in your location.

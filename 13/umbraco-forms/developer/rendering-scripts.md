@@ -4,7 +4,11 @@ Forms output some JavaScript which is by default rendered right below the markup
 
 In many cases, you might prefer rendering your scripts at the bottom of the page. For example, before the closing `</body>` tag. This generally improves site performance.
 
-In order to render your scripts where you want, you need to add the following snippet to your template. Make sure you add it below your scripts, right before the closing `</body>` tag:
+In order to render your scripts where you want, you need to add a snippet to your template. Make sure you add it below your scripts, right before the closing `</body>` tag.
+
+By default, Forms uses `TempData` for tracking the forms rendered on a page. The stored values are used when rendering the form scripts and associated data.
+
+The following snippet should be used.
 
 ```csharp
 @using Umbraco.Forms.Web.Extensions;
@@ -20,6 +24,20 @@ In order to render your scripts where you want, you need to add the following sn
 }
 ```
 
+If you have changed the configuration value `TrackRenderedFormsStorageMethod` to use `HttpContext.Items`, the snippet is:
+
+```csharp
+@if (Context.Items.TryGetValue("UmbracoForms", out object? formIdsObject) && formIdsObject is IEnumerable<Guid> formIds)
+{
+    foreach (var formId in formIds)
+    {
+        @await Component.InvokeAsync("RenderFormScripts", new { formId, theme = "default" })
+    }
+}
+```
+
+Read more about this configuration option in the [configuration ](./configuration/README.md#TrackRenderedFormsStorageMethod) article.
+
 If you prefer to use a tag helper, that's an option too.
 
 Firstly, in your `_ViewImports.cshtml` file, ensure you have a reference to the Umbraco Forms tag helpers with:
@@ -33,6 +51,8 @@ Then instead of reading from `TempData` and invoking the view component directly
 ```cshtml
 <umb-forms-render-scripts theme="default" />
 ```
+
+This will use the appropriate storage method that you have configured.
 
 ## Enabling `ExcludeScripts`
 

@@ -67,7 +67,7 @@ class MyElement extends UmbElementMixin(LitElement) {
 
 #### Open a modal
 
-A modal can be opened in two ways. Either you register the modal with a route or at runtime open the modal. Notice the first one will enable users to deep-link to the modal, this might be preferable in some cases if not go for the last.
+A modal can be opened in two ways. Either you register the modal with a route or at runtime open the modal. The initial option allows users to deep-link to the modal, a potential preference in certain cases; otherwise, consider the latter.
 
 #### Directly open a Modal
 
@@ -134,8 +134,6 @@ describe the additional features of the route Registration:
 **Modal registration for UI as part of a Property Editor**
 
 ```ts
-
-
 	@property()
 	public set alias(value: string | undefined) {
 		this.myModalRegistration.setUniquePathValue('propertyAlias', value);

@@ -1,6 +1,4 @@
 ---
-
-
 meta.Title: Multisite setup in Umbraco
 product: CMS
 description: A guide to multisite setup in Umbraco
@@ -28,9 +26,9 @@ If your site is hosted on Umbraco Cloud, you will need to map your sites' hostna
 Before you can map your hostnames to individual websites in the solution, you should add them in the Hostnames page on the Cloud portal to ensure they are secured with TLS.
 {% endhint %}
 
-![Adding hostnames to the project](../../../11/umbraco-cms/tutorials/images/1-addinghostnames.png)
+![Adding hostnames to the project](images/1-addinghostnames.png)
 
-Keep in mind the [hostnames have to be configured in a specific way.](https://docs.umbraco.com/umbraco-cloud/setup/project-settings/manage-hostnames)
+Keep in mind the [hostnames have to be configured in a specific way.](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/manage-hostnames)
 
 ## Mapping the hostnames to individual websites/root nodes
 
@@ -40,18 +38,18 @@ At this point you should have several root nodes, where each is a separate websi
 2. Right-click on the content node you wish to assign the hostname.
 3.  Select **Allow access to assign culture and hostnames** option.
 
-    ![Culture and hostnames](../../../11/umbraco-cms/tutorials/images/2-culturehostnames-v10.png)
+    ![Culture and hostnames](images/2-culturehostnames-v10.png)
 4. In the **Domains** pane, click **Add new Domain**.
 5. Enter the domain in the **Domain** field and select the language from the **Language** drop-down list.
    *   If you have a multilanguage solution, you can map different hostnames to specific languages.\\
 
-       <figure><img src="../../../11/umbraco-cms/tutorials/images/3-culturehostnamesp2-v10.png" alt=""><figcaption></figcaption></figure>
+       <figure><img src="images/3-culturehostnamesp2-v10.png" alt=""><figcaption></figcaption></figure>
 
 6\. Click Save and that should do it!
 
 The sites you have should now be available under the hostnames you provided.
 
-![Dolphin site](../../../11/umbraco-cms/tutorials/images/6-dolphins.png) ![SWATO site](../../../11/umbraco-cms/tutorials/images/7-swato.png)
+![Dolphin site](images/6-dolphins.png) ![SWATO site](images/7-swato.png)
 
 ## Best practices
 

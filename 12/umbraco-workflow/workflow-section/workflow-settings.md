@@ -22,7 +22,7 @@ You can configure the **General** Settings from the **Workflow** section in the 
   * **Implicit** - All steps where the original Change Author is _not_ a member of the group must be completed. Steps where the original Change Author is a member of the approving group will be completed automatically and noted in the workflow history as not required.
   * **Exclude** - Similar to Explicit. All steps must be completed but the original Change Author is not included in the notifications or shown in the dashboard tasks.
 * **Approval threshold** - Sets the global approval threshold to One, Most or All:
-  * **One** - Pending task requires approval from any member of the assigned approval group. This is the default behaviour for all installations (trial and licensed).
+  * **One** - Pending task requires approval from any member of the assigned approval group. This is the default behavior for all installations (trial and licensed).
   * **Most** - Pending task requires an absolute majority of group members. For example, a group with three members requires two approvals and a group with four members requires three approvals.
   * **All** - Pending task requires approval from all group members. 
 * **Rejection resets approvals** - When true, and the approval threshold is Most or All, rejecting a task resets the previous approvals for the workflow stage.

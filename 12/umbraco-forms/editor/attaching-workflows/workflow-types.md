@@ -6,7 +6,7 @@ description: >-
 
 # Workflow Types
 
-There are several built-in Workflow Types that can be used to extend the functionality of your form. Do you want to post the submitted form as XML, send the data as an email, or send a notification through another messaging system? These are just a few of the options you can choose when working with Umbraco Forms.
+There are multiple built-in Workflow Types that can be used to extend the functionality of your form. Do you want to post the submitted form as XML, send the data as an email, or send a notification through another messaging system? These are a few of the options you can choose when working with Umbraco Forms.
 
 ## Video Tutorial
 
@@ -18,7 +18,7 @@ Workflow Types in Umbraco Forms
 
 ![Change Record state](images/change-record-state.png)
 
-Used to automatically **Approve Record** or **Delete Record** once it is submitted. Configure words that you want to match and select whether these words should trigger an approval or deletion of the record.
+Used to automatically **Approve Record**, **Reject Record** or **Delete Record** once it is submitted. Configure words that you want to match and select whether these words should trigger an approval or deletion of the record.
 
 ## **Post as XML**
 
@@ -63,7 +63,7 @@ You can also choose to set a static value to fill in the properties:
 
 In the example above, a Document Type called **Blogpost** is selected for creating the new Content node.
 
-The value from the **Name** field will be added as the **Node Name** property in the new Content node and the value from the **Email** field will be used as the **Content** property.
+The value from the **Name** field will be added as the **Node Name** property in the new Content node. The value from the **Email** field will be used as the **Content** property.
 
 The following configuration can be set:
 
@@ -157,7 +157,7 @@ Sends the Form to a URL either as a HTTP POST or GET. The following configuratio
 
 When mapping fields, if any are selected, only those chosen will be sent in the request to the configured URL. If no fields are mapped, all will be sent.
 
-The receiving endpoint will be able to extract the form fields and values from the querystring or form collection when the method used is set to GET or POST respectively.
+The receiving endpoint extracts form fields and values using GET for querystrings and POST for form collections.
 
 As an illustrative example, the following code can be used to write the posted form information to a text file:
 
