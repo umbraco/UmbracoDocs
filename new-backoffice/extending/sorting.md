@@ -41,7 +41,7 @@ The properties provided are the following:
 -   `containerSelector`: A query elector that matches the parent element of the items.
 -   `getUniqueOfElement`: A method that returns the unique element
 -   `getUniqueOfModel`: Provide a method that returns the unique of a given model entry
--   onChange: Provide a method to retrieve the changed model. This is called every time the model is changed, including when the user is dragging around.
+-   `onChange`: Provide a method to retrieve the changed model. This is called every time the model is changed, including when the user is dragging around.
 
 ### Data Model
 
