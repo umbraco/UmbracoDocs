@@ -1,19 +1,27 @@
 # Environments
 
+## What is an environment?
+
+An environment on an Umbraco Cloud project can be defined as a _workspace_ and is at the same time a Git repository. When you have more than one environment on your project, these environments will act as branches of the main repository.
+
+Umbraco Cloud uses a deployment model that relies on Git and other core technology, which gives you the option to move both content and structure files from one environment to another. Learn more in the [Deployment section](../deployment/).
+
 When you have multiple environments in your Umbraco Cloud project:
 
 *   The _Development_ environment is the first environment in the workflow.
 
-    This is the environment you are going to work with when building the structure of your website. This is also the environment you clone down when you want to work with your project locally.
+    This is the environment you are going to work with when building the structure of your website. This is also the environment you clone down when you want to work on your project locally.
 
     The Development environment is included in the Standard and Professional plans on Umbraco Cloud. In the Starter plan, you have the option to add the Development environment.
 *   The environment next in line in the workflow is the _Staging_ environment.
 
-    Having this environment enables you to give your team members different workspaces - the developers can work with code in the Development environment while the content editors can work with content in the Staging environment. All of this without affecting the actual public site.
+    This environment enables you to give your team members different workspaces - the developers can work with code in the Development environment while content editors can work with content in the Staging environment. All of this without affecting the actual public site.
 
     The Staging environment is included in the Professional plan. In the Standard plan, you have the option to add the Staging environment.
 
+{% hint style="info" %}
 Both the Development and the Staging environments are protected with **basic authentication**. This means that you must log in to see the frontend of these environments.
+{% endhint %}
 
 *   The final environment is the _Live_ environment.
 
@@ -33,7 +41,7 @@ The live site (`/site/wwwroot/`) contains the files used to show your website to
 
 ## Team Members/Invite Users
 
-All the team members you add through the Umbraco Cloud Portal will be added as backoffice users in your environments as well. As with any other Umbraco CMS installation, you can also add users directly in the backoffice of your Umbraco Cloud environments. If you do this, the user will not have the option to deploy changes between the environments.
+All the team members you add through the Umbraco Cloud Portal will also be added as backoffice users in your environments. As with any other Umbraco CMS installation, you can also add users directly in the backoffice of your Umbraco Cloud environments. If you do this, the user will not have the option to deploy changes between the environments.
 
 Read more about this and team member roles in the [Team Members](../set-up/project-settings/team-members/) article.
 

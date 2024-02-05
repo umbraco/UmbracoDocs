@@ -16,7 +16,7 @@ Use CSS to define specific editor styles and add them to the RTE.
 
 ## Data Type Definition Example
 
-![Rich Text Editor - Data Type](../../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/rich-text-editor/images/rte-datatype-v10.png)
+![Rich Text Editor - Data Type](../../built-in-property-editors/rich-text-editor/images/rte-datatype-v10.png)
 
 ## Content Example
 

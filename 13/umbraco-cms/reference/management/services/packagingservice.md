@@ -2,30 +2,22 @@
 
 The PackagingService provides import/export functionality for the Core models of the API.
 
- * **Namespace:** `Umbraco.Core.Services` 
- * **Assembly:** `Umbraco.Core.dll`
+[Browse the API documentation for IPackagingService interface](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.Services.IPackagingService.html).
 
- All samples in this document will require references to the following dll:
+* **Namespace:** `Umbraco.Cms.Core.Services`
+* **Assembly:** `Umbraco.Core.dll`
+
+All samples in this document will require references to the following dll:
 
 * Umbraco.Core.dll
 
 All samples in this document will require the following using statements:
 
 ```csharp
-using Umbraco.Core;
-using Umbraco.Core.Models;
-using Umbraco.Core.Services;
+using Umbraco.Cms.Core.Services;
 ```
 
 ## Getting the service
-
-### Services property
-
-If you wish to use use the packaging service in a class that inherits from one of the Umbraco base classes (eg. `SurfaceController`, `UmbracoApiController` or `UmbracoAuthorizedApiController`), you can access the packaging service through a local `Services` property:
-
-```csharp
-IPackagingService packagingService = Services.PackagingService;
-```
 
 ### Dependency Injection
 
@@ -34,21 +26,17 @@ In other cases, you may be able to use Dependency Injection. For instance if you
 ```csharp
 public class MyClass
 {
-
     private IPackagingService _packagingService;
 
-	public MyClass(IPackagingService packagingService)
-	{
-		_packagingService = packagingService;
-	}
-
+ public MyClass(IPackagingService packagingService)
+ {
+  _packagingService = packagingService;
+ }
 }
 ```
 
-### Static accessor
-
-If neither a `Services` property or Dependency Injection is available, you can also reference the static `Current` class directly:
+In Razor views, you can access the member service through the `@inject` directive:
 
 ```csharp
-IPackagingService packagingService = Umbraco.Core.Composing.Current.Services.PackagingService;
+@inject IPackagingService PackagingService
 ```

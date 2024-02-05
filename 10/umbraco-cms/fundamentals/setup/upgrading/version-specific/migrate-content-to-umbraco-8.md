@@ -13,7 +13,7 @@ A content migration tool has been implemented in Umbraco 8.1.0, to help you with
 In this guide you can read more about the tool, its limitations, and how to use it in practice.
 
 {% hint style="info" %}
-### Migrating Umbraco Cloud sites
+#### Migrating Umbraco Cloud sites
 
 Follow the [steps outlined in the Umbraco Cloud documentation](../../../../../umbraco-cloud/upgrades/migrate-from-umbraco-7-to-8.md) to upgrade your Umbraco 7 site on Cloud.
 {% endhint %}
@@ -55,7 +55,7 @@ The migration will transform the data stored in third party editors as well. How
 
 <summary>Learn more about that in the Data Types Migrations</summary>
 
-#### Migrating data types
+**Migrating data types**
 
 When migrating content from Umbraco 7 to Umbraco 8, the Data Type 'pre-value' structure has changed. In Umbraco 8, the term 'pre-values' no longer exists and is instead referred to as `property editor configuration`.
 
@@ -67,7 +67,7 @@ When upgrading from Umbraco 7 to Umbraco 8, Umbraco has no way of knowing how cu
 
 There are 3 options that a developer can choose to do to work around this automatic data conversion:
 
-#### 1: Implement a custom `IPreValueMigrator`
+**1: Implement a custom `IPreValueMigrator`**
 
 This option requires you to create a custom C# migrator for each of your custom property editors that store custom configuration data. It will also require that you implement these migrators before you run the Umbraco 8 content migration.
 
@@ -93,11 +93,11 @@ public class PreValueMigratorComposer : IUserComposer
 
 When running the migrations and encountering a custom configuration, Umbraco will utilize the `PreValueMigrator` when converting the old pre-values into the new JSON format.
 
-#### 2: Update your Angular configuration (pre-value) and property editor
+**2: Update your Angular configuration (pre-value) and property editor**
 
 This option means that you will choose to use the automatically converted JSON data format. In this case, it will mean updating your pre-value and property editors to use the new JSON configuration data. The converted data won't be much different than the original/intended data format so this might not be too much work.
 
-#### 3: Update the Angular configuration (pre-value) editor
+**3: Update the Angular configuration (pre-value) editor**
 
 With this option the configuration/pre-value editor needs to be updated to transform the JSON converted data into the data structure you want. When this is done and when the Data Type is saved again, the JSON data structure will be saved back to the database. Your property editor will then continue to work.
 
@@ -127,11 +127,11 @@ Before the content migration can start the site has to run Umbraco 7.14+. Make s
 
 The site in this example is an Umbraco 7.13.1 site, and we will use Nuget to update it.
 
-![v7 site with content](<../../../../../../11/umbraco-cms/fundamentals/setup/upgrading/images/v7-content (1) (1) (1).png>)
+![v7 site with content](<../images/v7-content (1) (1) (1).png>)
 
 Following the [general upgrade instructions](../) we will now upgrade via Nuget until we get to this point:
 
-![Upgrading to v7.14](<../../../../../../11/umbraco-cms/fundamentals/setup/upgrading/images/upgrading-7\_14 (1) (1) (1) (1).png>)
+![Upgrading to v7.14](<../images/upgrading-7\_14 (1) (1) (1) (1).png>)
 
 {% hint style="warning" %}
 When upgrading an old website, check if you are using obsolete properties in your Data Types. These should be changed to their updated counterparts. The migration **will fail if you are still using obsolete properties.**
@@ -157,7 +157,7 @@ Once it is upgraded and you have verified everything is working, move on to the 
 
 The first thing to do is to spin up a fresh new Umbraco 8.1+ site. Make sure everything works and that no content is there.
 
-![Fresh 8.1 site](<../../../../../../11/umbraco-cms/fundamentals/setup/upgrading/images/fresh-8\_1-site (1) (1) (1).png>)
+![Fresh 8.1 site](<../images/fresh-8\_1-site (1) (1) (1).png>)
 
 {% hint style="warning" %}
 If you have customized the `UsersMembershipProvider` on your Umbraco 7 site you need to copy that over to the 8.1 `web.config` as well. Additionally you need to update the `type` attribute to be `type="Umbraco.Web.Security.Providers.UsersMembershipProvider, Umbraco.Web"`.
@@ -169,17 +169,17 @@ Take a backup of your database from the **Umbraco 7.14 site**. Take the informat
 
 Once the connectionstring is set, the final step is to change the Umbraco version number in the `web.config` on the **Umbraco 8.1 site**. Chang it to `7.14.0`. This will indicate that there is an upgrade pending and it needs to run the migration.
 
-![Set Umbraco version in the web.config](<../../../../../../11/umbraco-cms/fundamentals/setup/upgrading/images/set-umbraco-version (1) (1) (1).png>)
+![Set Umbraco version in the web.config](<../images/set-umbraco-version (1) (1) (1).png>)
 
 The version will be set to 8.1.0, and you need to change it to the version you are currently migrating from.
 
 When you start the site it will ask you to login and then show you this screen:
 
-![Upgrade database to 8.1](<../../../../../../11/umbraco-cms/fundamentals/setup/upgrading/images/upgrade-to-8\_1 (1).png>)
+![Upgrade database to 8.1](<../../../../../../umbraco-cloud/product-upgrades/images/upgrade-to-8\_1 (1) (1).png>)
 
 From here, the automatic migration will take over, and after a little bit you can log in and see your content:
 
-![Content is on 8.1](<../../../../../../11/umbraco-cms/fundamentals/setup/upgrading/images/content-on-8\_1 (1) (1) (1).png>)
+![Content is on 8.1](<../images/content-on-8\_1 (1) (1) (1).png>)
 
 {% hint style="info" %}
 Please be aware that this is a **content migration**. If you go to the frontend after following these steps, it will throw errors.

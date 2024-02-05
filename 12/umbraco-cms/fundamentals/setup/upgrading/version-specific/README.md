@@ -774,9 +774,10 @@ When the upgrade is completed and tested, and prior to deploying to any publicly
    * `/umbraco/UmbracoWebsite`
    * `/umbraco/config/lang`
    * `/umbraco/config/appsettings-schema.json`
-4. Deploy the site how you normally would to your public facing environment.
-5. Start the site. At this point it will launch and upgrade the database, after which the site should become accessible and your upgrade is complete.
-6. Check the logs for any errors which may have occurred during the upgrade process.
+4. If you are using Umbraco Forms, update your files and folders according to the [Upgrading - version specific](https://docs.umbraco.com/umbraco-forms/installation/version-specific) for version 10 article.
+5. Deploy the site how you normally would to your public facing environment.
+6. Start the site. At this point it will launch and upgrade the database, after which the site should become accessible and your upgrade is complete.
+7. Check the logs for any errors which may have occurred during the upgrade process.
 
 </details>
 

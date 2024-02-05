@@ -1,9 +1,5 @@
 # Umbraco CI/CD Flow
 
-{% hint style="warning" %}
-This documentation is currently a work in progress.
-{% endhint %}
-
 _Umbraco CI/CD Flow_ is designed to facilitate the seamless integration of your existing CI/CD flow with Umbraco Cloud. The primary objective of this feature is to enable your automated workflows to deploy directly to Umbraco Cloud. This lets you leverage the best of both worlds: the robustness of your current CI/CD setup and the specialized hosting environment of Umbraco Cloud.
 
 Umbraco Cloud continues to be a cornerstone in this setup, providing a cloud-based hosting solution specifically optimized for Umbraco CMS. With integration to your Continuous Integration and Continuous Deployment (CI/CD) pipeline, Umbraco CI/CD allows the inclusion of automated workflows. These automated workflows include building, testing, and deploying your Umbraco projects.

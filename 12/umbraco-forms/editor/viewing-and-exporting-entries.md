@@ -56,7 +56,8 @@ Clicking on the _Name_ opens a view where you can see the entire entry details.
 
 ![Record bulk actions](../../../10/umbraco-forms/editor/images/BulkActions.png)
 
-Select at least 1 record to see the available actions in the top-right corner. By default, there are 2 possible actions:
+Select at least 1 record to see the available actions in the top-right corner. By default, there are 3 possible actions:
 
 * Approve
+* Reject
 * Delete

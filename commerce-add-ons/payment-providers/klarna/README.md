@@ -6,7 +6,7 @@ description: Getting Started with the Klarna payment provider for Umbraco Commer
 
 In this section, we will guide you through the key steps necessary to get you started with the Klarna payment provider for Umbraco Commerce.
 
-It is assumed that before we begin that you already have an Umbraco website configured and Umbraco Commerce installed. If you are not at this stage yet, please read the [core Umbraco Commerce documentation](https://docs.umbraco.com/umbraco-commerce/) to learn how to get started.
+It is assumed that before we begin you already have an Umbraco website configured and Umbraco Commerce installed. If you are not at this stage yet, please read the [core Umbraco Commerce documentation](https://docs.umbraco.com/umbraco-commerce/) to learn how to get started.
 
 {% hint style="info" %}
 This Klarna payment provider is based on Klarna's hosted payment page API and requires you to sign an agreement with their Klarna Payments platform. If you are signed up for their Klarna Checkout platform, your credentials will not work for this provider.

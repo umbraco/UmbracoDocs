@@ -71,6 +71,7 @@ export class MyExtensionCondition
             args.onChange();
         }, 10000);
     }
+
 }
 ```
 

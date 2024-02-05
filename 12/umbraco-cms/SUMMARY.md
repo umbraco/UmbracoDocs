@@ -2,10 +2,11 @@
 
 * [Umbraco CMS Documentation](README.md)
 * [Legacy Documentation](legacy-documentation/README.md)
+  * [Umbraco 11 Documentation](https://github.com/umbraco/UmbracoDocs/tree/umbraco-eol-versions)
   * [Umbraco 8 Documentation](https://our.umbraco.com/documentation/)
   * [Umbraco 7 Documentation](https://our.umbraco.com/documentation/)
 * [Contribute](https://docs.umbraco.com/welcome/contribute/)
-* [Sustainability Best Practices](http://127.0.0.1:5000/o/vHdmkfI8smZW50A5yIZD/s/ZOU4fHcVxqYnC8V1dry6/)
+* [Sustainability Best Practices](https://docs.umbraco.com/sustainability-best-practices/)
 
 ## Fundamentals
 
@@ -372,6 +373,7 @@
     * [Working with caching](reference/cache/examples/tags.md)
 * [Response Caching](reference/response-caching.md)
 * [Security](reference/security/README.md)
+  * [API rate limiting](reference/security/api-rate-limiting.md)
   * [BackOfficeUserManager and Events](reference/security/backofficeusermanager-and-notifications.md)
   * [Cookies](reference/security/cookies.md)
   * [Replacing the basic username/password check](reference/security/custom-password-check.md)

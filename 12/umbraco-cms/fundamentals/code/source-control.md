@@ -139,9 +139,9 @@ Any supporting custom code for your application should be in version control, eg
 
 #### Config
 
-Your site's `apsettings.json` and `appsettings.Development.json` files contain the configuration for your Umbraco site.
+Your site's `appsettings.json` and `appsettings.Development.json` files contain the configuration for your Umbraco site.
 
-In general, it is recommended to add these to source control. When you do this, be sure that the file(s) doesn't contain any secrets, like API keys and connection strings. These can be added as needed, but ommitted from any commits made to source control.
+In general, it is recommended to add these to source control. When you do this, be sure that the file(s) doesn't contain any secrets, like API keys and connection strings. These can be added as needed, but omitted from any commits made to source control.
 
 #### DocumentType - Backoffice Structure Changes
 

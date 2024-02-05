@@ -46,7 +46,7 @@ The `UmbracoMediaArticle` media type has the following properties:
 * `umbracoExtension` - Label (string)
 * `umbracoBytes` - Label (bigint)
 
-![MediaArticle](../../../../../11/umbraco-cms/fundamentals/data/creating-media/images/umbraco-media-article-media-type.png)
+![MediaArticle](images/umbraco-media-article-media-type.png)
 
 ### UmbracoMediaAudio
 
@@ -56,7 +56,7 @@ The `UmbracoMediaAudio` media type has the following properties:
 * `umbracoExtension` Label (string)
 * `umbracoBytes` Label (bigint)
 
-![MediaAudio](../../../../../11/umbraco-cms/fundamentals/data/creating-media/images/umbraco-media-audio-media-type.png)
+![MediaAudio](images/umbraco-media-audio-media-type.png)
 
 ### UmbracoMediaVectorGraphics
 
@@ -66,7 +66,7 @@ The `UmbracoMediaVectorGraphics` media type has the following properties:
 * `umbracoExtension` Label (string)
 * `umbracoBytes` Label (bigint)
 
-![MediaVectorGraphics](../../../../../11/umbraco-cms/fundamentals/data/creating-media/images/umbraco-media-vector-graphicsmedia-type.png)
+![MediaVectorGraphics](images/umbraco-media-vector-graphicsmedia-type.png)
 
 ### UmbracoMediaVideo
 
@@ -76,4 +76,4 @@ The `UmbracoMediaVideo` media type has the following properties:
 * `umbracoExtension` - Label (string)
 * `umbracoBytes` - Label (bigint)
 
-![MediaVideo](../../../../../11/umbraco-cms/fundamentals/data/creating-media/images/umbraco-media-video-media-type.png)
+![MediaVideo](images/umbraco-media-video-media-type.png)

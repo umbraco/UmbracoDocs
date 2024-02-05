@@ -26,7 +26,7 @@ Before you can map your hostnames to individual websites in the solution, you sh
 
 ![Adding hostnames to the project](../../../10/umbraco-cms/tutorials/images/1-addinghostnames.png)
 
-Keep in mind the [hostnames have to be configured in a specific way.](https://docs.umbraco.com/umbraco-cloud/setup/project-settings/manage-hostnames)
+Keep in mind the [hostnames have to be configured in a specific way.](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/manage-hostnames)
 
 ## Mapping the hostnames to individual websites/root nodes
 

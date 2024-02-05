@@ -145,3 +145,4 @@ Try to avoid relying on backoffice CSS-classes. Instead, it's recommended creati
 ## Related articles
 
 * [Creating a Custom Grid Editor](../tutorials/creating-a-custom-grid-editor.md)
+

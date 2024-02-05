@@ -1,7 +1,6 @@
 ---
 description: >-
-  Explore the core services and methods in Umbraco Commerce, used for extending
-  the product.
+  Explore the core services and methods in Umbraco Commerce, used for extending the product.
 ---
 
 # Go behind the scenes

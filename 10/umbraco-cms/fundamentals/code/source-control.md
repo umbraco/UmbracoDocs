@@ -63,15 +63,15 @@ appsettings-schema.json
 ## Umbraco CMS .NETCore
 ##
 
-# Dont commit Umbraco TEMP folder containing Examine Indexes, NuCache etc
+# Don't commit Umbraco TEMP folder containing Examine Indexes, NuCache etc
 **/umbraco/Data/TEMP/
 
-# Dont commit files that are generated and cached from the default ImageSharp location
+# Don't commit files that are generated and cached from the default ImageSharp location
 **/umbraco/mediacache/
 
 # Umbraco backoffice language files
 # Nuget package Umbraco.Cms.StaticAssets will copy them in during dotnet build
-# Customize langguage files in /config/lang/{language}.user.xml
+# Customize language files in /config/lang/{language}.user.xml
 **/umbraco/config/lang/
 
 # JSON Schema file for appsettings
@@ -98,7 +98,7 @@ For most projects, this gitignore will be enough, and this article will not be a
 
 However, we will go through the different files in order to give you an insight into the anatomy of an Umbraco website and therefore which parts to include in version control and which parts not to.
 
-![Typical set of Umbraco Project Folders](../../../../11/umbraco-cms/fundamentals/code/images/file-structure-v10.png)
+![Typical set of Umbraco Project Folders](images/file-structure-v10.png)
 
 #### The Umbraco Folder
 
@@ -213,9 +213,9 @@ Any supporting custom code for your application should be in version control, eg
 
 #### Config
 
-Your site's `apsettings.json` and `appsettings.Development.json` files contain the configuration for your Umbraco site.
+Your site's `appsettings.json` and `appsettings.Development.json` files contain the configuration for your Umbraco site.
 
-In general, it is recommended to add these to source control. When you do this, be sure that the file(s) doesn't contain any secrets, like API keys and connection strings. These can be added as needed, but ommitted from any commits made to source control.
+In general, it is recommended to add these to source control. When you do this, be sure that the file(s) doesn't contain any secrets, like API keys and connection strings. These can be added as needed, but omitted from any commits made to source control.
 
 #### DocumentType - Backoffice Structure Changes
 

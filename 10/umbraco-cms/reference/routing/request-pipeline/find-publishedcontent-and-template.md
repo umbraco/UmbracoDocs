@@ -1,5 +1,4 @@
 ---
-
 needsV8Update: 'true'
 ---
 
@@ -59,7 +58,7 @@ The followed method is called on the "PublishedContentRequest.PrepareRequest()" 
 
 #### HandleWildcardDomains()
 
-![](../../../../../11/umbraco-cms/reference/routing/request-pipeline/images/culture-and-hostnames.png)
+![](images/culture-and-hostnames.png)
 
 * Finds the deepest wildcard domain between
 * Domain root (or top)

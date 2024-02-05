@@ -1,6 +1,10 @@
 # Build a Block Editor
 
-Before reading this document we highly recommend that you familiarise yourself with the [basics of developing a custom Property Editor for Umbraco](build-a-block-editor.md).
+{% hint style="warning" %}
+This guide is currently being re-evaluated, as it might not work as intended.
+{% endhint %}
+
+Before reading this document we highly recommend that you familiarise yourself with the [basics of developing a custom Property Editor for Umbraco](../../tutorials/creating-a-property-editor/).
 
 {% hint style="info" %}
 [Click here for an overview with a working example and references back to the relevant documention.](https://umbraco.com/blog/deep-dive-the-block-list-editor/)
@@ -16,24 +20,22 @@ using Umbraco.Cms.Core.PropertyEditors;
 using Umbraco.Cms.Core.WebAssets;
 using Umbraco.Cms.Infrastructure.WebAssets;
 
-namespace MyNamespace
-{
-    [DataEditor(
-        "MyOwn.UnicornBlocksEditor",
-        "Unicorn Blocks",
-        "unicornblocks",
-        ValueType = ValueTypes.Json,
-        Group = Constants.PropertyEditors.Groups.Lists,
-        Icon = "icon-thumbnail-list")]
-    [PropertyEditorAsset(AssetType.Javascript, "/App_Plugins/UnicornBlocks/UnicornBlocks.controller.js")]
-    public class UnicornBlocksPropertyEditor : BlockEditorPropertyEditor
-    {
-        public UnicornBlocksPropertyEditor(IDataValueEditorFactory dataValueEditorFactory, PropertyEditorCollection propertyEditors)
-            : base(dataValueEditorFactory, propertyEditors)
-        {
-        }
-    }
+namespace MyNamespace;
 
+[DataEditor(
+    "MyOwn.UnicornBlocksEditor",
+    "Unicorn Blocks",
+    "unicornblocks",
+    ValueType = ValueTypes.Json,
+    Group = Constants.PropertyEditors.Groups.Lists,
+    Icon = "icon-thumbnail-list")]
+[PropertyEditorAsset(AssetType.Javascript, "/App_Plugins/UnicornBlocks/UnicornBlocks.controller.js")]
+public class UnicornBlocksPropertyEditor : BlockEditorPropertyEditor
+{
+    public UnicornBlocksPropertyEditor(IDataValueEditorFactory dataValueEditorFactory, PropertyEditorCollection propertyEditors)
+        : base(dataValueEditorFactory, propertyEditors)
+    {
+    }
 }
 ```
 

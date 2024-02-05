@@ -23,7 +23,7 @@ using Umbraco.Cms.Core.Models;
 
 ### new Relation(int parentId, int childId, IRelationType relationType)
 
-Constructor for creating a new Relation object where the necessary parameters are the Id of the parent item as an `int`, the Id of the child as an `int` and the relationType as `IRelationType`.
+Constructor for creating a new Relation object. The necessary parameters are the Id of the parent item as an `int`, the Id of the child as an `int` and the relationType as `IRelationType`.
 
 ### new Relation(int parentId, int childId, Guid parentObjectType, Guid childObjectType, IRelationType relationType)
 

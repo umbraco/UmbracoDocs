@@ -65,3 +65,10 @@
 
 * [Overview](worldpay/README.md)
 * [Release Notes](worldpay/release-notes.md)
+
+## Buckaroo
+
+* [Overview](buckaroo/README.md)
+* [Configure Buckaroo](buckaroo/configuring-buckaroo.md)
+* [Configure Umbraco](buckaroo/configuring-umbraco.md)
+* [Release Notes](buckaroo/release-notes.md)

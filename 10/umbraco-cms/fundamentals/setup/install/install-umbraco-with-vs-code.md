@@ -8,7 +8,7 @@ Follow these steps to set up an Umbraco project with VS Code. The benefit of usi
 2. Once installed, launch VS Code.
 3.  Click the extensions menu at the bottom on the left side. Then search for **C#**, install it then press reload.
 
-    ![VS Code install extension](../../../../../11/umbraco-cms/fundamentals/setup/install/images/VsCode/VsCodeExtension.png)
+    ![VS Code install extension](../../../../../13/umbraco-cms/fundamentals/setup/install/images/VsCode/VsCodeExtension.png)
 
 ## Creating your Umbraco project
 
@@ -18,31 +18,31 @@ Follow the [Templates Guide](install-umbraco-with-templates.md) to create your p
 
 Open your project folder in VS Code, your project will look something like this:
 
-![Fresh Umbraco installation](../../../../../11/umbraco-cms/fundamentals/setup/install/images/VsCode/netcoreStructure.png)
+![Fresh Umbraco installation](../../../../../13/umbraco-cms/fundamentals/setup/install/images/VsCode/netcoreStructure.png)
 
 Now we need to tell VS Code how to run your project.
 
 Open the command palette, you can use the shortcut `Ctrl+Shift+P`, and type in `Tasks: Configure` and select the `Tasks: Configure Task` option:
 
-![Configure task option](../../../../../11/umbraco-cms/fundamentals/setup/install/images/VsCode/ConfigureTask.png)
+![Configure task option](../../../../../13/umbraco-cms/fundamentals/setup/install/images/VsCode/ConfigureTask.png)
 
 Select "Create task.json from template"
 
-![Create task from template](../../../../../11/umbraco-cms/fundamentals/setup/install/images/VsCode/TaskJsonFromTemplate.png)
+![Create task from template](../../../../../13/umbraco-cms/fundamentals/setup/install/images/VsCode/TaskJsonFromTemplate.png)
 
 Now select ".NET Core" as your template.
 
-![Create .NET Core Template](../../../../../11/umbraco-cms/fundamentals/setup/install/images/VsCode/NetcoreTemplate.png)
+![Create .NET Core Template](../../../../../13/umbraco-cms/fundamentals/setup/install/images/VsCode/NetcoreTemplate.png)
 
 After this VS Code will have created a folder called `.vscode` that contains a file called `tasks.json`, it's this file that tells VS Code how to build your project.
 
 Now that we've told VS Code how to build your project, we need to tell it how to launch it. VS Code can do this for you. First, select the little play button in the left side menu, and then select the "create a launch.json file" link.
 
-![Creating launch.json file](../../../../../11/umbraco-cms/fundamentals/setup/install/images/VsCode/creatingLaunchFile.png)
+![Creating launch.json file](../../../../../13/umbraco-cms/fundamentals/setup/install/images/VsCode/creatingLaunchFile.png)
 
 This will prompt a menu to appear, select:
 
-<figure><img src="../../../../../11/umbraco-cms/fundamentals/setup/install/images/VsCode/NetcoreTask.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../13/umbraco-cms/fundamentals/setup/install/images/VsCode/NetcoreTask.png" alt=""><figcaption></figcaption></figure>
 
 Now you'll see a green play button appear with a dropdown where ".NET Core Launch" is selected. If you navigate to the files section again, you'll see that another file has been created in the `.vscode` folder, this one is called `launch.json`, it's this file that tells VS Code, to build your project, run it, and then open a browser when you press F5.
 
@@ -60,11 +60,11 @@ Depending on the database configuration you've chosen you will have the followin
 2. If you've enabled SqlCE, but still want to change the database type, click "Change Database".
 3. If you didn't enable SqlCE, you will see a "Next" button instead of "Install", which will take you to an extra step where you can configure your database.
 
-![Web Installer - Lets Get Started](../../../../../11/umbraco-cms/fundamentals/setup/install/images/installer.png)
+![Web Installer - Lets Get Started](../../../../../13/umbraco-cms/fundamentals/setup/install/images/installer.png)
 
 When the installer is done you will automatically be logged into the backoffice.
 
-<figure><img src="../../../../../11/umbraco-cms/fundamentals/setup/install/images/VsCode/dashboard-v8.PNG" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../13/umbraco-cms/fundamentals/setup/install/images/VsCode/dashboard-v8.PNG" alt=""><figcaption></figcaption></figure>
 
 Congratulations, you have installed an Umbraco site!
 

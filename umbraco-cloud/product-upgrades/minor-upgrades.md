@@ -17,10 +17,19 @@ To enable Automatic Minor Upgrades follow these steps:
     <figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption><p>Enable Minor Upgrades</p></figcaption></figure>
 
 With automatic upgrades enabled it will be applied to all products on Umbraco Cloud: Umbraco CMS, Umbraco Forms, and Umbraco Deploy.
+Your project does not need to be running the latest minor for automatic upgrades to work. The project will be upgraded to the latest minor when it is released.
 
 If you create a new project on Umbraco Cloud the project will by default have automatic minor upgrades enabled.
 
-For semi-automatic upgrades, you can update your project with a click of a button in the portal when a new minor update is available. On Starter plans, you will need to add a Development environment before you can perform the upgrade. Find pricing details for Umbraco Cloud Starter plans on our [website](https://umbraco.com/products/umbraco-cloud/pricing).
+{% hint style="info" %}
+
+For projects where automatic minor upgrades are enabled, having a Development environment is not compulsory. However, it is highly recommended to facilitate a smoother and more controlled upgrade experience. In cases where manual upgrades are necessary, a Development environment becomes essential.
+
+{% endhint %}
+
+A development environment is included in all Umbraco Cloud plans, except Starter. Find pricing details for Umbraco Cloud Starter plans on our [website](https://umbraco.com/products/umbraco-cloud/pricing).
+
+A manual upgrade involves a more hands-on approach, where the upgrade process is initiated and controlled by the user or development team. This allows for greater flexibility and oversight, enabling teams to test and adapt the upgrade to their specific needs and configurations. Particularly, it provides an opportunity to thoroughly test the new version in a controlled environment before applying it to live production environments. This ensures compatibility and minimizes disruptions.
 
 ## Troubleshooting Automated minor upgrades
 

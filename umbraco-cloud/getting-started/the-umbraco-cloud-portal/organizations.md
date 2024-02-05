@@ -1,10 +1,10 @@
 # Organizations
 
-On Umbraco Cloud it is possible to get an Organization. An organization is handy if you are a partner or are managing a lot of projects for different customers.
+On Umbraco Cloud it is possible to setup an Organization. An organization is handy if you are managing many projects for different customers. It is also handy if you need to manage permissions for multiple users (such as developers, content editors etc.). 
 
-With an organization, you get an overview of all projects and members that are part of it, manage the project payments, and many others.
+With an organization, you get an overview of all projects and members that are part of it. You can also manage payment methods for projects, as well as many other functions outlined on this page.
 
-In the following sections, we will go through the different options that are available in an Organization:
+In the following sections, we will go through the different options that are available to an Organization:
 
 ![Organization Overview](images/Cloud-org-overview.png)
 
@@ -17,17 +17,17 @@ Are you interested in getting an organization, or need a project added to a diff
 
 ### Information
 
-In the **Information** section of the Organization, you can find information about your Organization. If there are any changes to your Information, you can change them from this section.
+In the **Information** section of the Organization, you can find all the details about your Organization. If there are any changes to your details, you can change them here.
 
 ![Information](images/Information-v10.png)
 
 ### Members
 
-In the **Members** section, you can get an overview, view pending invites, and the Multi-Factor Authentication (MFA) for the Members of your Organization. It is also possible to set up different permissions for your Members, such as Read, Write, and Administrators for your organization.
+In the **Members** section, you can view current members, pending invites, and see the Multi-Factor Authentication (MFA) status for the Members of your Organization. You can also setup different permissions for your Members, such as Read, Write, and Administrators for your organization by adjusting their **Role**.
 
 <figure><img src="../../../.gitbook/assets/members.png" alt=""><figcaption></figcaption></figure>
 
-Members added to your ogranization can see different information about the organization based on the user group they are added to. Currently there are three different groups, **Read**, **Write** and **Admin**.
+Members added to your organization can see different details about their organization based on the user group they are added to. Currently there are three different groups, **Read**, **Write** and **Admin**.
 Below you can see what each user group has access to under the organization they are a part of.
 
 Organization Members with **Admin Access** can do the following in the organization:
@@ -43,7 +43,7 @@ Organization Members with **Admin Access** can do the following in the organizat
 * See subscriptions
 * See organization Members
 * See payment history
-* Handle Multi Factor Autentication (MFA) for users
+* Handle Multi Factor Authentication (MFA) for users
 * Handle payment methods
 * Change permissions for Members
 * Remove role from users
@@ -62,12 +62,12 @@ Organization Members with **Read Access**, can do the following in the organizat
 * See Organization Members
 
 {% hint style="info" %}
-Being a Member of an organization, does not give access to any projects under it. To get access to a project under an organization, you need to be [invited](/umbraco-cloud/set-up/users-on-cloud.md) to the project. This can be done by either someone that is part of the project or an administrator in your organization.
+Being a Member of an organization, does not give access to any projects under it. To get access to a project under an organization, you need to be [invited](/umbraco-cloud/set-up/users-on-cloud.md) to the project. This can be done by either someone that is already part of the project or an administrator in your organization.
 {% endhint %}
 
 ### Multi Factor Authentication (MFA) enforcement
 
-When working in organizations on Umbraco Cloud, as a company, you might want to enforce a certain type of MFA for members.
+When working in organizations on Umbraco Cloud, as a company, you can enforce a certain type of Multi-Factor Authentication (MFA) method for members.
 
 ![MFA for members](images/mfa-page.png)
 
@@ -81,7 +81,7 @@ To enforce a certain MFA for a member, follow these steps:
 4. Find the member that needs to have MFA enabled.
 5. Click on the cogwheel and select the **Enforced MFA Method** from the drop-down list for the member.
 
-Once it has been enabled, the next time the member logs in, they will be enforced to set up the MFA that has been chosen.
+Once it has been enabled, the next time the member logs in, they will be forced to setup the chosen Multi-Factor Authentication (MFA) method.
 It is possible for an administrator to reset the authenticator app settings for members of the organization.
 
 ### Projects
@@ -90,9 +90,9 @@ In the **Projects** section, you can get an overview of all the Projects that ha
 
 ![Project overview](images/org-projects.png)
 
-It is also possible to see the plan, project status, payment status, creation date, region and number of environments for each of your projects.
+It is possible to see the plan, project status, payment status, creation date, region and number of environments for each of your projects.
 
-As an administrator it is also possible to invite members of the organization to the different projects under the organization.
+As an administrator you can invite members of your organization to the different projects under the organization.
 
 ## Access Rights
 

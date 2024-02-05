@@ -4,7 +4,7 @@ description: A guide to creating a property editor in Umbraco
 
 # Creating a Property Editor
 
-This guide explains how to set up a property editor, hook it into Umbraco's Data Types, AngularJS' modules, and its injector, and finally how we can test our property editor.
+This tutorial guides you through creating a property editor, integrating it with Umbraco's Data Types, AngularJS modules and its injector. Finally, it explains how we can test our property editor.
 
 The steps we will go through in part 1 are:
 
@@ -23,11 +23,15 @@ This tutorial covers how to use AngularJS with Umbraco, so it does not cover Ang
 
 ## The End Result
 
-By the end of this tutorial, we will have a suggestion data type running inside of Umbraco, registered as a Data Type in the backoffice, and assigned to a Document Type. The data type can create and suggest values.
+We will have a "Suggestions" Data Type in Umbraco. It is registered as a Data Type in the backoffice, and assigned to a Document Type. The Data Type can create and suggest values.
 
 ## Setting up a plugin
 
 To begin with, let's create a new folder inside `/App_Plugins` folder. We will call it `Suggestions`.
+
+{% hint style="warning" %}
+If you do not have an `/App_Plugins` folder, you can create it at the root of your project.
+{% endhint %}
 
 Next, we will create a Package Manifest file to describe what the plugin does. This manifest will tell Umbraco about our new Property Editor and allow us to inject any needed files into the application.
 
@@ -52,7 +56,7 @@ Inside the `package.manifest` file, we will add the following JSON to describe t
             "group": "Common",
             /*the HTML file we will load for the editor*/
             "editor": {
-                "view": "~/App_Plugins/Suggestions/suggestion.html",
+                "view": "/App_Plugins/Suggestions/suggestion.html",
                 /*Optional: Add 'read-only' support. Available from Umbraco 10.2+*/
                 "supportsReadOnly": true
             }
@@ -60,56 +64,55 @@ Inside the `package.manifest` file, we will add the following JSON to describe t
     ],
      // array of files we want to inject into the application on app_start
     "css": [
-        "~/App_Plugins/Suggestions/suggestion.css"
+        "/App_Plugins/Suggestions/suggestion.css"
     ],
     "javascript": [
-        "~/App_Plugins/Suggestions/suggestion.controller.js"
+        "/App_Plugins/Suggestions/suggestion.controller.js"
     ]
 }
 ```
 
 ## Setting up a Property Editor with Csharp
 
-You can also create a property editor with C# instead of defining it in a `package.manifest`. Create a `Suggestion.cs` file in `/App_Code/` to register the editor this way.
+You can also create a property editor with C# instead of defining it in a `package.manifest`. Create a `Suggestion.cs` file at the root of your project to register the editor this way.
 
 ```csharp
-using Umbraco.Cms.Core.IO;
+using Umbraco.Cms.Core.PropertyEditors;
 
-namespace Umbraco.Cms.Core.PropertyEditors
+namespace YourProjectName;
+
+[DataEditor(
+    alias: "Suggestions editor",
+    name: "Suggestions",
+    view: "/App_Plugins/Suggestions/suggestion.html",
+    Group = "Common",
+    Icon = "icon-list")]
+public class Suggestions : DataEditor
 {
-    [DataEditor(
-        alias: "Suggestions editor",
-        name: "Suggestions",
-        view: "~/App_Plugins/Suggestions/suggestion.html",
-        Group = "Common",
-        Icon = "icon-list")]
-    public class Suggestions : DataEditor
-    {
-        public Suggestions(IDataValueEditorFactory dataValueEditorFactory)
-            : base(dataValueEditorFactory)
-        {            
-        }
+    public Suggestions(IDataValueEditorFactory dataValueEditorFactory)
+        : base(dataValueEditorFactory)
+    {            
     }
 }
 ```
 
-You will still need to add all of the files you added above but, because your `C#` code is adding the Property Editor, the `package.manifest` file can be simplified like this:
+As the above `C#` code is adding the Property Editor, the `package.manifest` file can be simplified like this:
 
 ```json
 {
     // array of files we want to inject into the application on app_start
     "css": [
-        "~/App_Plugins/Suggestions/suggestion.css"
+        "/App_Plugins/Suggestions/suggestion.css"
     ],
     "javascript": [
-        "~/App_Plugins/Suggestions/suggestion.controller.js"
+        "/App_Plugins/Suggestions/suggestion.controller.js"
     ]
 }
 ```
 
 ## Writing basic HTML and JavaScript
 
-Now, we will add 3 files to the /App\_Plugins/Suggestions/ folder:
+Now, we will add 3 files to the `/App_Plugins/Suggestions/` folder:
 
 * `suggestion.html`
 * `suggestion.controller.js`
@@ -161,13 +164,13 @@ Now our basic parts of the editor are done, namely:
 
 ## Registering the Data Type in Umbraco
 
-We will now restart our application. In the Document Type, let's add our newly added property editor "Suggestions" and save it.
+We will now restart our application. In the Document Type, add a new property called  "Suggestion" and add to it the newly created property editor "Suggestions" and save it.
 
-![Suggestion Property Editor](../../../../11/umbraco-cms/tutorials/creating-a-property-editor/images/suggestion-property-editor.png)
+![Suggestion Property Editor](../../../../10/umbraco-cms/tutorials/creating-a-property-editor/images/suggestion-property-editor.png)
 
 Now open the content item of that Document Type and there will be an alert message saying "The controller has landed", which means all is well.
 
-![Controller Landed](../../../../11/umbraco-cms/tutorials/creating-a-property-editor/images/Controller-landed.png)
+![Controller Landed](../../../../10/umbraco-cms/tutorials/creating-a-property-editor/images/Controller-landed.png)
 
 We can now edit the assigned property's value with our new property editor.
 
@@ -196,10 +199,10 @@ angular.module("umbraco")
 ```
 
 {% hint style="info" %}
-Visit the [Property Editors page](../../extending/property-editors/) for more details about extending this service.
+Visit the [Property Editors page](../../extending/property-editors/README.md) for more details about extending this service.
 {% endhint %}
 
-and add that id to the button in the HTML:
+Then update the HTML file with the following, where we add the id to the button:
 
 ```html
 <div class="suggestion" ng-controller="SuggestionPluginController">
@@ -211,8 +214,8 @@ and add that id to the button in the HTML:
 
 Now, clear the cache, reload the document, and see the Suggestions Data Type running.
 
-![Example of the Suggestions Data Type running](../../../../11/umbraco-cms/tutorials/creating-a-property-editor/images/suggestion-editor-backoffice.png)
+![Example of the Suggestions Data Type running](../../../../10/umbraco-cms/tutorials/creating-a-property-editor/images/suggestion-editor-backoffice.png)
 
 When we save or publish, the value of the Data Type is automatically synced to the current content object and sent to the server, all through the power of Angular and the `ng-model` attribute.
 
-Learn more about extending this service by visiting the [Property Editors page](../../extending/property-editors/).
+Learn more about extending this service by visiting the [Property Editors page](../../extending/property-editors/README.md).

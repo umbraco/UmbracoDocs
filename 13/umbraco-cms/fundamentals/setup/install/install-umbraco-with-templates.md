@@ -42,7 +42,7 @@ Options:
                                      string - Optional
                                      Default: 10.0.0
 
-  --use-https-redirect               Adds code to Startup.cs to redirect HTTP to HTTPS and enables the UseHttps setting.
+  --use-https-redirect               Adds code to Program.cs to redirect HTTP to HTTPS and enables the UseHttps setting.
                                      bool - Optional
                                      Default: false
 

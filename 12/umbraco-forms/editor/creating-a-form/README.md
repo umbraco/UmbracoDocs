@@ -64,6 +64,8 @@ To edit a field that has already been added to the Form, click the little **cog*
 
 ### Structuring the Form
 
+#### Ordering Fields
+
 Once you've added a few fields to your Form, you might want to change the order of questions. To do so, click **Reorder** in the top-right corner of the Form designer.
 
 <figure><img src="images/Reorder_Form.png" alt=""><figcaption></figcaption></figure>
@@ -71,6 +73,26 @@ Once you've added a few fields to your Form, you might want to change the order 
 When reordering your Form, you can drag and drop the fields to make it look the way you want. Click **I am done reordering** to get back to the Form designer.
 
 <figure><img src="images/Reorder_Form_1.png" alt=""><figcaption></figcaption></figure>
+
+#### Form Pages
+
+Forms can be grouped into pages. When rendered, each page will be presented one at a time to the user. They will need to complete the first page before moving onto the second and can navigate back and forth between pages.
+
+To add a new page to the top or bottom of a form use the buttons available in the top right of the editing view.
+
+![Add new page button](./images/add-new-page.png)
+
+You can also add a new page directly to the bottom of the form via the **Add new page** button. This will appear below other pages when at least one exists.
+
+### Form Groups
+
+With a page, form fields can be arranged into groups. These will display all together on a single page but can be styled so the fields are appropriately grouped in fieldsets.
+
+New groups are added via the **Add new group** button.
+
+## Form Columns
+
+The last level of structure are columns that can be created within a group. To set the number of columns click the **cog** icon next to the group.  You will then be able to add or move fields to the new columns created.
 
 ## Saving the Form
 
@@ -80,7 +102,7 @@ Once you are satisfied with the Form, you can save the design by clicking the **
 
 If installation of the product is configured for storage of form definitions in the database, you will have the option to store forms within folders. If you are planning to create a number of them, this may help with organization and locating them once created for modification.
 
-To create a folder, from the same dialog as you use to create a form, you'll have the option to create a folder, for which you need to provide a name.
+To create a folder, access the same dialog used for creating a form. Here, you'll have the option to create a folder, for which you need to provide a name.
 
 You can create folders within folders, rename, move and delete them. You also have the ability to move or copy forms into folders, all via the tree operations available from the **...** menu.
 

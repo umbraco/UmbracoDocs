@@ -1,13 +1,12 @@
 root: ./
 
-​structure:  
+​structure:
     readme: README.md
     summary: SUMMARY.md
 
 redirects:
-    configuration: getting-started/configuration.md
-    dashboards-and-buttons: getting-started/dashboards-and-buttons.md
-    notifications: getting-started/notifications.md
-    workflow-content-app: getting-started/workflow-content-app.md
-    upgrading-workflow/upgrading-workflow: upgrading-workflow/upgrading.md
-    workflow-section/workflow-section: workflow-section/workflow-section-dashboard.md
+    installing-workflow: installation/installing-workflow.md
+    licensing: installation/licensing.md
+    version-specific-upgrade-notes: upgrading/version-specific.md
+    upgrading-workflow/migrating-workflow: upgrading/migrating-workflow.md
+    upgrading-workflow/upgrading: upgrading/upgrading.md

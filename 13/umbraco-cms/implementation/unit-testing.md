@@ -30,7 +30,7 @@ See [Reference documentation on Executing an Umbraco request](default-routing/ex
 public class PageViewModel : ContentModel
 {
     public PageViewModel(IPublishedContent content) : base(content) { }
-    
+
     public string Heading => (string)this.Content.GetProperty(nameof(Heading)).GetValue();
 }
 
@@ -40,7 +40,7 @@ public class PageViewModelTests
     public void Given_PublishedContent_When_GetHeading_Then_ReturnPageViewModelWithHeading(string value, Mock<IPublishedContent> content)
     {
         SetupPropertyValue(content, nameof(PageViewModel.Heading), value);
-                        
+
         var viewModel = new PageViewModel(content.Object);
 
         Assert.AreEqual(value, viewModel.Heading);
@@ -210,7 +210,7 @@ public class ProductsControllerTests
 
 ## Testing ICultureDictionary using the UmbracoHelper
 
-See [Core documentation on the interface ICultureDictionary](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Dictionary.ICultureDictionary.html).
+See [Core documentation on the interface ICultureDictionary](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.Dictionary.ICultureDictionary.html).
 
 ```csharp
 public class HomeController : RenderController
@@ -253,7 +253,7 @@ public class HomeControllerTests
     [Test, AutoData]
     public void GivenMyDictionaryKey_WhenIndexAction_ThenReturnViewModelWithMyPropertyDictionaryValue(string expected)
     {
-        var model = new ContentModel(new Mock<IPublishedContent>().Object);            
+        var model = new ContentModel(new Mock<IPublishedContent>().Object);
         this.cultureDictionary.Setup(x => x["myDictionaryKey"]).Returns(expected);
 
         var result = (PageViewModel)((ViewResult)this.controller.Home(model)).Model;

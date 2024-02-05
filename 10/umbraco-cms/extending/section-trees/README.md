@@ -10,7 +10,7 @@ The Umbraco backoffice consists of sections (sometimes referred to as applicatio
 
 Each section is identified by its name in the top navigation ribbon of the Umbraco Backoffice.
 
-For example, when you load the backoffice you'll see that the 'Content' section contains one tree: the content tree whereas the 'Settings' section contains a number of trees: Stylesheets, Document Types, Media Types, etc...
+For example, when you load the backoffice, you'll see that the 'Content' section contains one tree: the content tree. Meanwhile, the 'Settings' section contains a number of trees such as Stylesheets, Document Types, Media Types, etc...
 
 You can create your own sections and trees to extend Umbraco.
 

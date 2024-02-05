@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Umbraco DXP](README.md)
+* [Sustainability Best Practices](https://docs.umbraco.com/sustainability-best-practices/)
 
 ## Commercial products
 

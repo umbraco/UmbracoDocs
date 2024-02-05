@@ -6,7 +6,7 @@ In this article you will get an overview of the file structure as well as a few 
 
 ## By product and topic
 
-The overall structure of the Umbraco documenation is divided by product. Each Umbraco product has its own directories with articles and images.
+The overall structure of the Umbraco documentation is divided by product. Each Umbraco product has its own directories with articles and images.
 
 Diving one step deeper, each individual topic is contained in its own directory.
 

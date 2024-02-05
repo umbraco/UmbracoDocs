@@ -395,7 +395,7 @@ Now that we have a working editor, let's add a couple of images to our page. Whe
 Note down the **Id** from the **Info** tab. We will need that in a bit.
 
 * Go to the **Settings** section.
-* Exapnd the **Headless** node.
+* Expand the **Headless** node.
 * Open the [API Browser](../getting-started/api-browser.md)
 * Type in `https://cdn.umbraco.io/content/<CONTENT_ID>` in the Explorer URL bar, replacing `<CONTENT-ID>` with the id we copied before.
 * Click **Go!**.

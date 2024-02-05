@@ -418,7 +418,7 @@ Get a single published content by its ID.
 }
 ```
 
-## Get by url
+## Get by URL
 
 Get a single published content by its URL.
 
@@ -1407,7 +1407,7 @@ Get descendants of a single published content.
 
 Get content filtered by property values and optionally content type.
 
-This endpoint can be used for advanced filtering of content based on the value of specific properties. You can choose to filter on one or more properties by their `alias` and a `value`, which will be matched on whether the property `contains` or is `like` the passed in value.
+This endpoint can be used for advanced filtering of content based on the value of specific properties. You can choose to filter on one or more properties by their `alias` and a `value`. The matching criteria include whether the property `contains` or is `like` the passed-in value.
 
 Say you have a property with an `alias` called "title" and you want all content, which `contains` the word "world". The payload you post to the `/content/filter` endpoint would be as shown below.
 
@@ -1422,7 +1422,7 @@ Say you have a property with an `alias` called "title" and you want all content,
 }
 ```
 
-If the value in the above properties was set to "hello world" then the content returned would have a "title" property where the value is "hello" and/or "world".
+Setting the above properties to "hello world" results in content with a "title" property containing either "hello" or "world" as values.
 
 If you want the value of a property to match on both "page" and "pages" then you could use `like` with a payload as shown below.
 
@@ -1437,7 +1437,7 @@ If you want the value of a property to match on both "page" and "pages" then you
 }
 ```
 
-Please note that filtering is done on individual content items meaning that content match is not done on related content or media.
+Filtering is performed on individual content items, indicating that content matching is not conducted on related content or media.
 
 **URL**: `/content/filter`
 
@@ -1462,7 +1462,7 @@ Umb-Project-Alias: {project-alias}
 
 ### Request
 
-In this example we do a filter where the match should contain a "productName"-property with the value "Jacket" and a "description"-property with the value "Vivamus" and the Document Type should have the alias "product".
+In this example, we perform a filter with criteria for a "productName"-property containing the value "Jacket" and a "description"-property containing the value "Vivamus". Additionally, the Document Type should have the alias "product."
 
 At least one object with `alias`, `value` and `match` in the `properties` array is required. The `contentTypeAlias` is optional and the `match` property can be either `CONTAINS` or `LIKE`.
 

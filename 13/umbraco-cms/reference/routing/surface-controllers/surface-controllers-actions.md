@@ -11,31 +11,30 @@ A surface controller can return a few Umbraco specific actions.
 Returns the current Umbraco page.
 
 ```csharp
-namespace RoutingDocs.Controllers
+namespace RoutingDocs.Controllers;
+
+public class MyController : SurfaceController
 {
-    public class MyController : SurfaceController
+    public MyController(
+        IUmbracoContextAccessor umbracoContextAccessor,
+        IUmbracoDatabaseFactory databaseFactory,
+        ServiceContext services,
+        AppCaches appCaches,
+        IProfilingLogger profilingLogger,
+        IPublishedUrlProvider publishedUrlProvider)
+        : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
     {
-        public MyController(
-            IUmbracoContextAccessor umbracoContextAccessor,
-            IUmbracoDatabaseFactory databaseFactory,
-            ServiceContext services,
-            AppCaches appCaches,
-            IProfilingLogger profilingLogger,
-            IPublishedUrlProvider publishedUrlProvider)
-            : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+    }
+
+    [HttpPost]
+    public IActionResult PostMethod()
+    {
+        if (!ModelState.IsValid)
         {
+            return CurrentUmbracoPage();
         }
 
-        [HttpPost]
-        public IActionResult PostMethod()
-        {
-            if (!ModelState.IsValid)
-            {
-                return CurrentUmbracoPage();
-            }
-
-            return RedirectToCurrentUmbracoPage();
-        }
+        return RedirectToCurrentUmbracoPage();
     }
 }
 ```
@@ -45,31 +44,30 @@ namespace RoutingDocs.Controllers
 Redirects to the currently rendered Umbraco page.
 
 ```csharp
-namespace RoutingDocs.Controllers
+namespace RoutingDocs.Controllers;
+
+public class MyController : SurfaceController
 {
-    public class MyController : SurfaceController
+    public MyController(
+        IUmbracoContextAccessor umbracoContextAccessor,
+        IUmbracoDatabaseFactory databaseFactory,
+        ServiceContext services,
+        AppCaches appCaches,
+        IProfilingLogger profilingLogger,
+        IPublishedUrlProvider publishedUrlProvider)
+        : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
     {
-        public MyController(
-            IUmbracoContextAccessor umbracoContextAccessor,
-            IUmbracoDatabaseFactory databaseFactory,
-            ServiceContext services,
-            AppCaches appCaches,
-            IProfilingLogger profilingLogger,
-            IPublishedUrlProvider publishedUrlProvider)
-            : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+    }
+
+    [HttpPost]
+    public IActionResult PostMethod()
+    {
+        if (!ModelState.IsValid)
         {
+            return CurrentUmbracoPage();
         }
 
-        [HttpPost]
-        public IActionResult PostMethod()
-        {
-            if (!ModelState.IsValid)
-            {
-                return CurrentUmbracoPage();
-            }
-
-            return RedirectToCurrentUmbracoPage();
-        }
+        return RedirectToCurrentUmbracoPage();
     }
 }
 ```
@@ -79,28 +77,27 @@ This action can also take in a `QueryString` object to be included in the redire
 ### Querystring parameter using a string value
 
 ```csharp
-namespace RoutingDocs.Controllers
-{
-    public class MyController : SurfaceController
-    {
-        public MyController(
-            IUmbracoContextAccessor umbracoContextAccessor,
-            IUmbracoDatabaseFactory databaseFactory,
-            ServiceContext services,
-            AppCaches appCaches,
-            IProfilingLogger profilingLogger,
-            IPublishedUrlProvider publishedUrlProvider)
-            : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
-        {
-        }
+namespace RoutingDocs.Controllers;
 
-        [HttpPost]
-        public IActionResult PostMethod()
-        {
-            var paramValue = "someValue";
-            var queryString = QueryString.Create("param", paramValue);
-            return RedirectToCurrentUmbracoPage(queryString);
-        }
+public class MyController : SurfaceController
+{
+    public MyController(
+        IUmbracoContextAccessor umbracoContextAccessor,
+        IUmbracoDatabaseFactory databaseFactory,
+        ServiceContext services,
+        AppCaches appCaches,
+        IProfilingLogger profilingLogger,
+        IPublishedUrlProvider publishedUrlProvider)
+        : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+    {
+    }
+
+    [HttpPost]
+    public IActionResult PostMethod()
+    {
+        var paramValue = "someValue";
+        var queryString = QueryString.Create("param", paramValue);
+        return RedirectToCurrentUmbracoPage(queryString);
     }
 }
 ```
@@ -110,26 +107,25 @@ namespace RoutingDocs.Controllers
 Redirects to the currently rendered Umbraco URL.
 
 ```csharp
-namespace RoutingDocs.Controllers
-{
-    public class MyController : SurfaceController
-    {
-        public MyController(
-            IUmbracoContextAccessor umbracoContextAccessor,
-            IUmbracoDatabaseFactory databaseFactory,
-            ServiceContext services,
-            AppCaches appCaches,
-            IProfilingLogger profilingLogger,
-            IPublishedUrlProvider publishedUrlProvider)
-            : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
-        {
-        }
+namespace RoutingDocs.Controllers;
 
-        [HttpPost]
-        public IActionResult PostMethod()
-        {
-            return RedirectToCurrentUmbracoUrl();
-        }
+public class MyController : SurfaceController
+{
+    public MyController(
+        IUmbracoContextAccessor umbracoContextAccessor,
+        IUmbracoDatabaseFactory databaseFactory,
+        ServiceContext services,
+        AppCaches appCaches,
+        IProfilingLogger profilingLogger,
+        IPublishedUrlProvider publishedUrlProvider)
+        : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+    {
+    }
+
+    [HttpPost]
+    public IActionResult PostMethod()
+    {
+        return RedirectToCurrentUmbracoUrl();
     }
 }
 ```
@@ -139,28 +135,27 @@ namespace RoutingDocs.Controllers
 Redirects to a given Umbraco page.
 
 ```csharp
-namespace RoutingDocs.Controllers
-{
-    public class MyController : SurfaceController
-    {
-        public MyController(
-            IUmbracoContextAccessor umbracoContextAccessor,
-            IUmbracoDatabaseFactory databaseFactory,
-            ServiceContext services,
-            AppCaches appCaches,
-            IProfilingLogger profilingLogger,
-            IPublishedUrlProvider publishedUrlProvider)
-            : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
-        {
-        }
+namespace RoutingDocs.Controllers;
 
-        [HttpPost]
-        public IActionResult PostMethod()
-        {
-            // Gets the first child page of the current page
-            var childPage = CurrentPage.FirstChild();
-            return RedirectToUmbracoPage(childPage);
-        }
+public class MyController : SurfaceController
+{
+    public MyController(
+        IUmbracoContextAccessor umbracoContextAccessor,
+        IUmbracoDatabaseFactory databaseFactory,
+        ServiceContext services,
+        AppCaches appCaches,
+        IProfilingLogger profilingLogger,
+        IPublishedUrlProvider publishedUrlProvider)
+        : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+    {
+    }
+
+    [HttpPost]
+    public IActionResult PostMethod()
+    {
+        // Gets the first child page of the current page
+        var childPage = CurrentPage.FirstChild();
+        return RedirectToUmbracoPage(childPage);
     }
 }
 ```
@@ -168,27 +163,26 @@ namespace RoutingDocs.Controllers
 You can also redirect to a page key (GUID).
 
 ```csharp
-namespace RoutingDocs.Controllers
-{
-    public class MyController : SurfaceController
-    {
-        public MyController(
-            IUmbracoContextAccessor umbracoContextAccessor,
-            IUmbracoDatabaseFactory databaseFactory,
-            ServiceContext services,
-            AppCaches appCaches,
-            IProfilingLogger profilingLogger,
-            IPublishedUrlProvider publishedUrlProvider)
-            : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
-        {
-        }
+namespace RoutingDocs.Controllers;
 
-        [HttpPost]
-        public IActionResult PostMethod()
-        {
-            var childPage = CurrentPage.FirstChild();
-            return RedirectToUmbracoPage(childPage.Key);
-        }
+public class MyController : SurfaceController
+{
+    public MyController(
+        IUmbracoContextAccessor umbracoContextAccessor,
+        IUmbracoDatabaseFactory databaseFactory,
+        ServiceContext services,
+        AppCaches appCaches,
+        IProfilingLogger profilingLogger,
+        IPublishedUrlProvider publishedUrlProvider)
+        : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+    {
+    }
+
+    [HttpPost]
+    public IActionResult PostMethod()
+    {
+        var childPage = CurrentPage.FirstChild();
+        return RedirectToUmbracoPage(childPage.Key);
     }
 }
 ```

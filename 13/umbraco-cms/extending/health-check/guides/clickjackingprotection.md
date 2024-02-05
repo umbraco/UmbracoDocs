@@ -13,15 +13,9 @@ Preferable you use a security library like [NWebSec](https://docs.nwebsec.com/).
 If you take a NuGet dependency on [NWebsec.AspNetCore.Middleware/](https://www.nuget.org/packages/NWebsec.AspNetCore.Middleware/), you can use third extension methods on `IApplicationBuilder`.
 
 ```csharp
-public class Startup
-{
-    public void Configure(IApplicationBuilder app)
-    {
-        app.UseXfo(options => options.SameOrigin());
-
-        ...
-    }
-}
+...
+WebApplication app = builder.Build();
+app.UseXfo(options => options.SameOrigin());
 ```
 
 ### Adding Click-Jacking Protection using manual middleware
@@ -29,17 +23,9 @@ public class Startup
 Avoid third-party library dependency by using custom middleware added to the request pipeline.
 
 ```csharp
-public class Startup
+app.Use(async (context, next) =>
 {
-    public void Configure(IApplicationBuilder app)
-    {
-        app.Use(async (context, next) =>
-        {
-            context.Response.Headers.Add("X-Frame-Options", "SAMEORIGIN");
-            await next();
-        });
-
-       ...
-    }
-}
+    context.Response.Headers.Add("X-Frame-Options", "SAMEORIGIN");
+    await next();
+});
 ```

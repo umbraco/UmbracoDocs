@@ -1,19 +1,16 @@
 ---
-description: Depending on which version of Umbraco CMS you are using, we distinguish between two package types, NuGet packages, and Package ZIP files.
+description: >-
+  Depending on which version of Umbraco CMS you are using, we distinguish
+  between two package types, NuGet packages, and Package ZIP files.
 ---
 
 # Package Types
 
-There are two main ways to install packages in Umbraco CMS: Package zip files and NuGet packages.
+Packages for Umbraco 10 and above are installed as NuGet packages.
 
 {% hint style="warning" %}
-The zip file package type is only available for Umbraco version 8 and earlier versions. Learn more about it in the [Package zip Files](#package-zip-files) section of this article.
+The legacy, zip file package type is only available for Umbraco version 8 and earlier versions. Learn more about it in the [Package zip Files](types-of-packages.md#package-zip-files) section of this article.
 {% endhint %}
-
-When developing a package you need to consider the Umbraco CMS version you're using before determining the package type.
-
-* Modern Umbraco (Umbraco 10+): Providing a NuGet package is the only option.
-* Legacy Umbraco (Umbraco 8 and earlier versions): It is recommended to provide both a zip file and a NuGet package.
 
 ## NuGet Packages
 
@@ -38,12 +35,12 @@ When adding or changing configuration of Umbraco as part of a NuGet package you 
 {% hint style="warning" %}
 Zip file packages are only available for Umbraco CMS 8 and earlier versions.
 
-Refer to the [NuGet Packages](#nuget-packages) section above, if your website is using Umbraco 10 or a later version.
+Refer to the [NuGet Packages](types-of-packages.md#nuget-packages) section above, if your website is using Umbraco 10 or a later version.
 {% endhint %}
 
 A package zip file can be installed directly through the Umbraco backoffice.
 
-![Zip packages can be installed via the Umbraco backoffice package section](images/backoffice-package-section.png)
+![Zip packages can be installed via the Umbraco backoffice package section](<images/backoffice-package-section (1).png>)
 
 Packages zip files can contain:
 
@@ -59,5 +56,5 @@ Packages zip files can contain:
 * Media
 
 {% hint style="info" %}
-If you want to include media in your package, you must select it in both the "Media" section and the "Package Files" section under "Path to file"
+To include media in your package, select it in the "Media" section. Additionally, choose it in the "Package Files" section under "Path to file."
 {% endhint %}

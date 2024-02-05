@@ -22,7 +22,7 @@ The Umbraco UI works in all modern browsers:
   * ​[Microsoft Visual Studio](https://www.visualstudio.com/) 2022 v17.4
   * ​[JetBrains Rider](https://www.jetbrains.com/rider) **version 2022.3 and higher**
   * .NET Core CLI
-* [.NET 8.0 Preview 7 Software Development Kit (SDK)](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+* [.NET 8.0 Software Development Kit (SDK)](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 * SQL connection string (SQL Server or SQLite)
 
 When using Visual Studio as your primary Integrated Development Environment (IDE) we recommend finding and downloading the [Software Development Kits (SDKs) ](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks)for Visual Studio.

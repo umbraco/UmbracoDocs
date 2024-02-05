@@ -80,18 +80,17 @@ When reading the configuration you need to inject an [`IOptions<>`](https://docs
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core.Configuration.Models;
 
-namespace MySite
+namespace MySite;
+
+public class SomeClass
 {
-    public class SomeClass
+    private GlobalSettings _globalSettings;
+
+    public SomeClass(IOptions<GlobalSettings> globalSettings)
     {
-        private GlobalSettings _globalSettings;
+        _globalSettings = globalSettings.Value;
 
-        public SomeClass(IOptions<GlobalSettings> globalSettings)
-        {
-            _globalSettings = globalSettings.Value;
-
-            var smtpHost = _globalSettings.Smtp.Host;
-        }
+        var smtpHost = _globalSettings.Smtp.Host;
     }
 }
 ```

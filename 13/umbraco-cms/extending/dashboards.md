@@ -29,7 +29,7 @@ Add a file named 'package.manifest' to the 'App_Plugins' folder, containing the 
 }
 ```
 
-The section aliases can be found in the C# developer reference for [Umbraco.Cms.Core.Constants.Applications](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Constants.Applications.html).
+The section aliases can be found in the C# developer reference for [Umbraco.Cms.Core.Constants.Applications](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.Constants.Applications.html).
 
 ### Registering with C# Type
 
@@ -40,25 +40,24 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Dashboards;
 using Umbraco.Cms.Core;
 
-namespace Umbraco.Docs.Samples.Web.Dashboards
+namespace Umbraco.Docs.Samples.Web.Dashboards;
+
+[Weight(-10)]
+public class MyCustomDashboard : IDashboard
 {
-    [Weight(-10)]
-    public class MyCustomDashboard : IDashboard
+    public string Alias => "myCustomDashboard";
+
+    public string[] Sections => new[]
     {
-        public string Alias => "myCustomDashboard";
+        Constants.Applications.Content,
+        Constants.Applications.Members,
+        Constants.Applications.Settings
+    };
 
-        public string[] Sections => new[]
-        {
-            Constants.Applications.Content,
-            Constants.Applications.Members,
-            Constants.Applications.Settings
-        };
+    public string View => "/App_Plugins/MyCustomDashboard/dashboard.html";
 
-        public string View => "/App_Plugins/MyCustomDashboard/dashboard.html";
+    public IAccessRule[] AccessRules => Array.Empty<IAccessRule>();
 
-        public IAccessRule[] AccessRules => Array.Empty<IAccessRule>();
-
-    }
 }
 ```
 
@@ -243,33 +242,32 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Dashboards;
 using Umbraco.Cms.Core;
 
-namespace Umbraco.Docs.Samples.Web.Dashboards
+namespace Umbraco.Docs.Samples.Web.Dashboards;
+
+[Weight(-10)]
+public class MyCustomDashboard : IDashboard
 {
-    [Weight(-10)]
-    public class MyCustomDashboard : IDashboard
+    public string Alias => "myCustomDashboard";
+
+    public string[] Sections => new[]
     {
-        public string Alias => "myCustomDashboard";
+        Constants.Applications.Content,
+        Constants.Applications.Members,
+        Constants.Applications.Settings
+    };
 
-        public string[] Sections => new[]
+    public string View => "/App_Plugins/MyCustomDashboard/dashboard.html";
+
+    public IAccessRule[] AccessRules
+    {
+        get
         {
-            Constants.Applications.Content,
-            Constants.Applications.Members,
-            Constants.Applications.Settings
-        };
-
-        public string View => "/App_Plugins/MyCustomDashboard/dashboard.html";
-
-        public IAccessRule[] AccessRules
-        {
-            get
+            var rules = new IAccessRule[]
             {
-                var rules = new IAccessRule[]
-                {
-                    new AccessRule {Type = AccessRuleType.Deny, Value = Constants.Security.TranslatorGroupAlias},
-                    new AccessRule {Type = AccessRuleType.Grant, Value = Constants.Security.AdminGroupAlias}
-                };
-                return rules;
-            }
+                new AccessRule {Type = AccessRuleType.Deny, Value = Constants.Security.TranslatorGroupAlias},
+                new AccessRule {Type = AccessRuleType.Grant, Value = Constants.Security.AdminGroupAlias}
+            };
+            return rules;
         }
     }
 }
@@ -286,14 +284,13 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Dashboards;
 using Umbraco.Cms.Core.DependencyInjection;
 
-namespace Umbraco.Docs.Samples.Web.Dashboards
+namespace Umbraco.Docs.Samples.Web.Dashboards;
+
+public class RemoveDashboard : IComposer
 {
-    public class RemoveDashboard : IComposer
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.Dashboards().Remove<ContentDashboard>();
-        }
+        builder.Dashboards().Remove<ContentDashboard>();
     }
 }
 ```
@@ -308,30 +305,29 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Dashboards;
 using Umbraco.Cms.Core.DependencyInjection;
 
-namespace Umbraco.Docs.Samples.Web.Dashboards
-{
-    public class MyDashboardComposer : IComposer
-    {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.Dashboards()
-                // Remove the default
-                .Remove<RedirectUrlDashboard>()
-                // Add the overridden one
-                .Add<MyRedirectUrlDashboard>();
-        }
-    }
+namespace Umbraco.Docs.Samples.Web.Dashboards;
 
-    // overridden redirect dashboard with custom rules
-    public class MyRedirectUrlDashboard : RedirectUrlDashboard, IDashboard
+public class MyDashboardComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
     {
-        // override explicit implementation
-        IAccessRule[] IDashboard.AccessRules { get; } = new IAccessRule[]
-        {
-            new AccessRule {Type = AccessRuleType.Deny, Value = Constants.Security.WriterGroupAlias},
-            new AccessRule {Type = AccessRuleType.Grant, Value = Constants.Security.AdminGroupAlias},
-            new AccessRule {Type = AccessRuleType.Grant, Value = "marketing"}
-        };
+        builder.Dashboards()
+            // Remove the default
+            .Remove<RedirectUrlDashboard>()
+            // Add the overridden one
+            .Add<MyRedirectUrlDashboard>();
     }
+}
+
+// overridden redirect dashboard with custom rules
+public class MyRedirectUrlDashboard : RedirectUrlDashboard, IDashboard
+{
+    // override explicit implementation
+    IAccessRule[] IDashboard.AccessRules { get; } = new IAccessRule[]
+    {
+        new AccessRule {Type = AccessRuleType.Deny, Value = Constants.Security.WriterGroupAlias},
+        new AccessRule {Type = AccessRuleType.Grant, Value = Constants.Security.AdminGroupAlias},
+        new AccessRule {Type = AccessRuleType.Grant, Value = "marketing"}
+    };
 }
 ```

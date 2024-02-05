@@ -1,5 +1,7 @@
 # Known Limitations and Considerations
 
+As we continue to gather insights from our users, there are some known limitations and considerations to be aware of.
+
 ## Potential Limitations and Considerations
 
 **Format Restrictions**
@@ -17,8 +19,6 @@
 **Conflict Management**
 
 * Given the necessity to avoid changes in other environments, the lack of strict coordination among multiple teams or individuals working on the same project elevates the risk of conflicts.
-
-As we continue to prototype and gather insights from beta users, there are some known limitations and considerations to be aware of:
 
 ## Key Points to Consider
 

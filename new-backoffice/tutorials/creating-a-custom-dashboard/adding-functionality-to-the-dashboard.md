@@ -36,7 +36,7 @@ Now that we have the Auth token, we can consume it in the constructor to obtain 
 
 {% hint style="info" %}
 
-The entire `welcome-dashbord.element.ts` file is available for reference at the end of the step to confirm your placement for code snippets.
+The entire `welcome-dashboard.element.ts` file is available for reference at the end of the step to confirm your placement for code snippets.
 
 {% endhint %}
 
@@ -179,7 +179,7 @@ declare global {
 ## Step 2: Getting data from the server
 
 {% hint style="danger" %}
-<mark style="color:red;">`UmbUserDetail`</mark> and <mark style="color:red;">`UmbUserRepository`</mark> is not available in Preview003
+<mark style="color:red;">`UmbUserDetail`</mark> and <mark style="color:red;">`UmbUserRepository`</mark> is not available yet.
 {% endhint %}
 
 Let's dive deeper into some new resources and see what we can do with them.

@@ -1,19 +1,24 @@
 # Table of contents
 
 * [Umbraco Forms Documentation](README.md)
+* [Legacy Documentation](legacy-documentation.md)
 * [Release Notes](release-notes.md)
 
 ## Installation
 
 * [Installing Umbraco Forms](installation/install.md)
-* [Manually Upgrading Umbraco Forms](installation/manualupgrade.md)
-* [Version Specific Upgrade Notes](installation/version-specific.md)
-* [Licensing](the-licensing-model.md)
+* [Licensing](installation/the-licensing-model.md)
+
+## Upgrading
+
+* [Upgrading Umbraco Forms](upgrading/manualupgrade.md)
+* [Version Specific Upgrade Notes](upgrading/version-specific.md)
 
 ## Editor
 
 * [Creating a Form - The basics](editor/creating-a-form/README.md)
   * [Form Settings](editor/creating-a-form/form-settings.md)
+  * [Form Information](editor/creating-a-form/form-info.md)
   * [Overview Of The Field Types](editor/creating-a-form/fieldtypes/README.md)
     * [Date](editor/creating-a-form/fieldtypes/date.md)
     * [File Upload](editor/creating-a-form/fieldtypes/fileupload.md)
@@ -38,6 +43,7 @@
 * [Umbraco Forms in the Database](developer/forms-in-the-database.md)
 * [Extending](developer/extending/README.md)
   * [Adding A Type To The Provider Model](developer/extending/adding-a-type.md)
+    * [Setting Types](developer/extending/setting-types.md)
   * [Adding A Field Type To Umbraco Forms](developer/extending/adding-a-fieldtype.md)
     * [Excluding a built-in field](developer/extending/excluding-a-built-in-field.md)
   * [Adding A Prevalue Source Type To Umbraco Forms](developer/extending/adding-a-prevaluesourcetype.md)

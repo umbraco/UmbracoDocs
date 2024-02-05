@@ -19,26 +19,19 @@ What follows are examples of common tasks you'll need to be able to perform via 
 
 Registering dependencies is an important ability to understand as this is used to register Umbraco Commerce event handlers and to extend system pipelines.
 
-To register a dependency you need to do so via the `IUmbracoBuilder` interface. This is exposed within the main `Startup` class, inside the `ConfigureServices` method between the `AddComposers()` method call and the `Build()` method call.
+To register a dependency you need to do so via the `IUmbracoBuilder` interface. This is exposed within the main `Program.cs` file, between the `AddComposers()` method call and the `Build()` method call.
 
 ```csharp
-public class Startup
-{
-    ...
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddUmbraco(_env, _config)
-            .AddBackOffice()
-            .AddWebsite()
-            .AddComposers()
-            // Append your dependencies here...
-            .Build();
-    }
-    ...
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    // Append your dependencies here...
+    .Build();
 ```
 
-You can also add your registration logic inside an `IUmbracoBuilder` extension method and then call that within the `ConfigureServices` method. This is the recommended approach.
+You can also add your registration logic inside an `IUmbracoBuilder` extension method and then call that within the `Program.cs` file. This is the recommended approach.
 
 ```csharp
 public static class UmbracoBuilderExtensions
@@ -55,20 +48,13 @@ public static class UmbracoBuilderExtensions
 ```
 
 ```csharp
-public class Startup
-{
-    ...
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddUmbraco(_env, _config)
-            .AddBackOffice()
-            .AddWebsite()
-            .AddComposers()
-            .AddMyDependencies()
-            .Build();
-    }
-    ...
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .AddMyDependencies()
+    .Build();
 ```
 
 Registering a dependency is achieved by working with the `IUmbracoBuilder` API:
@@ -131,7 +117,7 @@ namespace MyProject.Web.Controllers
     {
         private readonly IUmbracoCommerceApi _umbracoCommerceApi;
 
-        public HomeController(IUmbracoCommerceApi umbracoCommerceApi, ILogger<HomeController> logger, 
+        public HomeController(IUmbracoCommerceApi umbracoCommerceApi, ILogger<HomeController> logger,
             ICompositeViewEngine compositeViewEngine, IUmbracoContextAccessor umbracoContextAccessor)
             : base(logger, compositeViewEngine, umbracoContextAccessor)
         {

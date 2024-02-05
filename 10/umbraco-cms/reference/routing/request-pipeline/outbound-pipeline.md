@@ -12,7 +12,7 @@ The **outbound pipeline** consists out of the following steps:
 
 To explain things we will use the following content tree:
 
-![content tree](../../../../../11/umbraco-cms/reference/routing/request-pipeline/images/simple-content-tree-v8.png)
+![content tree](images/simple-content-tree-v8.png)
 
 ## 1. Create segments
 
@@ -117,7 +117,7 @@ If we look at our example, the "swibble" node will receive the path: "/our-produ
 
 But, what if there are multiple websites in a single Umbraco Implementation? in this multi-site scenario then an (internal) path to a node such as "/our-products/swibble-123xyz" could belong to any of the sites, or match multiple nodes in multiple sites. In this scenario additional sites will have their internal path prefixed by the node id of their root node. Any content node with a hostname defines a “new root” for paths.
 
-![path example](../../../../../11/umbraco-cms/reference/routing/request-pipeline/images/path-example-v8.png)
+![path example](images/path-example-v8.png)
 
 | Node         | Segment        | Internal Path                |
 | ------------ | -------------- | ---------------------------- |
@@ -399,11 +399,11 @@ namespace RoutingDocs.SiteDomainMapper
 
 Umbraco ships with a default `SiteDomainMapper`. This has some useful functionality for grouping sets of domains together. With Umbraco Cloud, or another Umbraco development environment scenario, there maybe be multiple domains setup for a site 'live, 'staging', 'testing' or a seperate domain to access the backoffice. Each domain will be setup as a 'Culture and Hostname' inside Umbraco. By default editors will see the full list of possible Urls for each of their content items on each domain, which can be confusing. If the additional urls aren't present in Culture and Hostnames, then when testing the front-end of the site on a 'staging' url, will result in navigation links taking you to the registered domain!
 
-![Culture and Hostnames multiple domains](../../../../../11/umbraco-cms/reference/routing/request-pipeline/images/culture-and-hostnames-v8.png)
+![Culture and Hostnames multiple domains](images/culture-and-hostnames-v8.png)
 
 What the editor sees without any SiteDomainMapper, visiting the backoffice url:
 
-![All domains listed](../../../../../11/umbraco-cms/reference/routing/request-pipeline/images/no-sitedomainhelp.png)
+![All domains listed](images/no-sitedomainhelp.png)
 
 Which is 'noise' and can lead to confusion: accidentally clicking the staging url, which is likely to be served from a different environment / different database etc may display the wrong content...
 
@@ -456,11 +456,11 @@ namespace RoutingDocs.SiteDomainMapping
 
 Now if an editor visits the backoffice via the staging url they will only see domains for the staging url:
 
-![Staging domain only](../../../../../11/umbraco-cms/reference/routing/request-pipeline/images/staging-only-staging.png)
+![Staging domain only](images/staging-only-staging.png)
 
 Now if an editor visits the backoffice via the backoffice url they will only see domains for the backoffice url and the production url:
 
-![Backoffice + production domains only](../../../../../11/umbraco-cms/reference/routing/request-pipeline/images/backoffice-see-prod.png)
+![Backoffice + production domains only](images/backoffice-see-prod.png)
 
 NB: it's not a 1-1 mapping, but a grouping. Multiple Urls can be added to a group. Think multilingual production and staging variations, and in the example above, if an editor logged in to the backoffice via the production url, eg umbraco-v8.localtest.me/umbraco - they would see the umbraco-v8-backoffice.localtest.me domain listed.
 

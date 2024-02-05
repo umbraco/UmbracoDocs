@@ -496,7 +496,7 @@ When a user with 2FA enabled logs in, they will be presented with a screen to en
 
 While the 2FA is enabled, the user will be presented with this screen after entering the username and password.
 
-![Default 2FA login](images/2fa-login-default-view.png)
+![Default 2FA login](images/2fa-login-default-view.jpg)
 
 If the code is correct, the user will be logged in. If the code is incorrect, the user will be presented with an error message.
 

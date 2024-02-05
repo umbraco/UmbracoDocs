@@ -56,7 +56,7 @@ Some extra variables are:
 
 Some extra variables are:
 
-* `{record.id}`: The ID of the current record - this is only accessible on workflows triggered "on approve" rather than "on submit"
+* `{record.id}`: The ID of the current record - this is only accessible on workflows triggered "on approve" or "on reject" rather than "on submit"
 * `{record.updated}`: The updated date/time of the current record
 * `{record.created}`: The created date/time of the current record
 * `{record.umbracopageid}`: The Umbraco Page ID the form was submitted on
@@ -93,7 +93,7 @@ Umbraco Forms ships with the following filters:
 | Format a date                 | `date`     | format string        | `[#field \| date: dd-MM-yyyy HH:mm]` |
 | HTML encode a string          | `html`     |                      | `[#field \| html]`                   |
 
-The format strings used for fomrmatting dates and numbers are the standard or custom .NET [date](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings) and [numeric](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings) format strings respectively.
+The format strings used for formatting dates and numbers are the standard or custom .NET [date](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings) and [numeric](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings) format strings respectively.
 
 Further magic string format functions can be [created in code](extending/adding-a-magic-string-format-function.md) for use in forms.
 

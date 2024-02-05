@@ -14,7 +14,7 @@ The two directives are typically used together. For instance, if your Angular mo
 </umb-property>
 ```
 
-As `properties` contains the model for each property, we can use `ng-repeat` to iterate over each property, which is then passed on to the two directives via the `property` and `model` attributes respectively.
+`Properties` contains the model for each property. `ng-repeat` can be used to iterate over each property, passing them to the two directives via `property` and `model` attributes.
 
 For a basic property with a textbox, the model for the property can be defined as:
 

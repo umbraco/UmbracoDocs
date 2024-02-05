@@ -4,20 +4,26 @@
 * [Known Issues](known-issues.md)
 * [Release Notes](release-notes.md)
 
+## Installation
+
+* [Installing Umbraco UI Builder](installation/installation.md)
+* [Licensing](installation/licensing-model.md)
+
+## Upgrading
+
+* [Upgrading Umbraco UI Builder](upgrading/upgrade.md)
+* [Version Specific Upgrade Notes](upgrading/version-specific.md)
+* [Migrate from Konstrukt to Umbraco UI Builder](upgrading/migrating-from-konstrukt-to-umbraco-ui-builder.md)
+
 ## Getting Started
 
 * [Overview](getting-started/overview.md)
-* [Installation](getting-started/installation.md)
-* [Upgrading](getting-started/upgrading/README.md)
-  * [Version Specific Upgrade Notes](getting-started/upgrading/version-specific-upgrades.md)
 * [Configuration](getting-started/configuration.md)
 * [User Interface](getting-started/user-interface.md)
-* [Licensing](getting-started/licensing-model.md)
 
 ## How-to Guides
 
 * [Creating your first integration](guides/creating-your-first-integration.md)
-* [Migrate from Konstrukt to Umbraco UI Builder](guides/migrating-from-konstrukt-to-umbraco-ui-builder.md)
 
 ## Areas
 
@@ -82,4 +88,3 @@
 
 * [Conventions](miscellaneous/conventions.md)
 * [Umbraco Aliases](miscellaneous/umbraco-aliases.md)
-* [Umbraco-UI-Builder vs UI-O-Matic](miscellaneous/uibuilder-vs-uiomatic.md)

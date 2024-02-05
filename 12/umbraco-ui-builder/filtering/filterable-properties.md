@@ -55,7 +55,7 @@ filterConfig.SetOptions(new Dictionary<string, string> {
 
 ## Defining options with custom compare clauses for a filterable property
 
-### **AddOption(object key, string label, Lambda compareExpresion) : FilterablePropertyConfigBuilder&lt;TEntityType, TValueType&gt;**
+### **AddOption(object key, string label, Lambda compareExpression) : FilterablePropertyConfigBuilder&lt;TEntityType, TValueType&gt;**
 
 ````csharp
 // Example

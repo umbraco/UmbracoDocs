@@ -1,5 +1,5 @@
 ---
-description: "Information on the NuCache settings section"
+description: Information on the NuCache settings section
 ---
 
 # NuCache Settings
@@ -17,6 +17,21 @@ This settings section allows you to specify the block size of the BTree used by 
 ```
 
 This is how NuCache is configured by default. It is important to mention that the block size must be a power of two, at least 512, and at most 65536 (64K).
+
+## UsePagedSqlQuery
+
+Setting `UsePagedSqlQuery` to `False`  your project will use the `Fetch` method instead of the `QueryPaged` method when rebuilding the NuCache files. This will increase performance on bigger Umbraco websites with a lot of content when rebuilding the NuCache.
+
+```json
+"Umbraco": {
+  "CMS": {
+    "NuCache": {
+      "UsePagedSqlQuery": false
+    }
+   }
+ }
+
+```
 
 ## Additional Settings
 

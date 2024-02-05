@@ -1,8 +1,10 @@
 root: ./
 
-​structure:  
+​structure:
     readme: README.md
     summary: SUMMARY.md
 
 redirects:
-    installation/upgrade: installation/manualupgrade
+    the-licensing-model: installation/the-licensing-model.md
+    installation/manualupgrade: upgrading/manualupgrade.md
+    installation/version-specific: upgrading/version-specific.md

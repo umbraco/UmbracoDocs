@@ -2,7 +2,7 @@
 
 The date picker uses a front-end library called [Pikaday](https://github.com/dbushell/Pikaday) to display a UI to pick dates.
 
-![Date picker on frontend](../../../../../11/umbraco-forms/editor/creating-a-form/fieldtypes/images/date-picker.png)
+![Date picker on frontend](images/date-picker.png)
 
 Pikaday date picker can be localised based on the page the Form is rendered on.
 

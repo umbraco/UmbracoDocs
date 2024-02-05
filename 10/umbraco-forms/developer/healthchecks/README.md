@@ -30,8 +30,8 @@ There shouldn't be - but without these constraints in place it's always possible
 
 To run the health check:
 
-1. Navigate to the **Health Check** dashboard in the **Settings** section in the Umbraco backoffice. ![Umbraco Forms Health Check](../../../../11/umbraco-forms/developer/healthchecks/images/Umb-backoffice.png)
-2. Click on the **Forms** button and select **Check Group**. You'll see a result that looks something like this: ![Umbraco Forms Health Check](../../../../11/umbraco-forms/developer/healthchecks/images/healthcheck.png)
+1. Navigate to the **Health Check** dashboard in the **Settings** section in the Umbraco backoffice. ![Umbraco Forms Health Check](<images/Umb-backoffice (1).png>)
+2. Click on the **Forms** button and select **Check Group**. You'll see a result that looks something like this: ![Umbraco Forms Health Check](<images/healthcheck (1).png>)
 
 If you have a full set of green ticks, then you're all good - and no need to read on!
 

@@ -22,7 +22,7 @@ Debug should always be set to false in production.
 
 ## Tracing
 
-Logging and tracing are really two names for the same technique. You need to configure what log messages you wanna log.
+Tracing and trace logging are two names for the same technique. You need to configure which log messages you want to log.
 
 ### Enabling Trace Logging
 
@@ -56,17 +56,17 @@ To display the profiler ensure that the configuration `Umbraco:CMS:Hosting:Debug
 
 Also, ensure your template calls `@Html.RenderProfiler()` as one of the last things.
 
-![?umbDebug=true](../../../../../11/umbraco-cms/fundamentals/code/debugging/images/v8-miniprofiler-view.png)
+![?umbDebug=true](images/v8-miniprofiler-view.png)
 
 If you click 'Show Trivial' you can seen the kind of detail the MiniProfiler makes available to you about the execution path of your page:
 
-![Show Trivial](../../../../../11/umbraco-cms/fundamentals/code/debugging/images/v8-miniprofiler-trivial.png)
+![Show Trivial](images/v8-miniprofiler-trivial.png)
 
 and any underlying SQL Statements that are being executed for a part of the execution:
 
-![Underlying SQL queries](../../../../../11/umbraco-cms/fundamentals/code/debugging/images/v8-miniprofiler-sql-trigger.png)
+![Underlying SQL queries](images/v8-miniprofiler-sql-trigger.png)
 
-![Underlying SQL query details](../../../../../11/umbraco-cms/fundamentals/code/debugging/images/v8-miniprofiler-sql-details.png)
+![Underlying SQL query details](images/v8-miniprofiler-sql-details.png)
 
 ### Writing to the MiniProfiler
 
@@ -114,7 +114,7 @@ namespace MyCustomUmbracoProject
 
 and now in the profiler you can see:
 
-![Show Trivial](../../../../../11/umbraco-cms/fundamentals/code/debugging/images/v8-miniprofiler-write.png)
+![Show Trivial](images/v8-miniprofiler-write.png)
 
 ## Umbraco Productivity Tool - Chrome Extension
 
@@ -122,7 +122,7 @@ If you are using the Google Chrome browser you can install this [Umbraco Product
 
 This will allow you to quickly switch between debugging with the MiniProfiler, Trace viewer and normal mode.
 
-![Umbraco Productivity Tool](../../../../../11/umbraco-cms/fundamentals/code/debugging/images/chrome-tool.png)
+![Umbraco Productivity Tool](images/chrome-tool.png)
 
 ## [Logging](logging.md)
 
