@@ -45,7 +45,7 @@ Once you select **Umbraco Project (Umbraco HQ)** navigate to the next step by cl
 
 In this step, you will be able to give your project a name specific to the project you are creating.
 
-![The Configure your new project dialog in Visual Studio.](../../../../../10/umbraco-cms/fundamentals/setup/install/images/VS/configure-project.png)
+![The Configure your new project dialog in Visual Studio.](../../../.gitbook/assets/New\_Project.jpg)
 
 {% hint style="info" %}
 Refrain from changing the Solution name, as this will cause a namespace conflict with the CMS itself.
@@ -55,11 +55,11 @@ Refrain from changing the Solution name, as this will cause a namespace conflict
 
 In the next step, you are able to specify some additional parameters like the _Target framework_. The rest are optional.
 
-![The Additional information dialog in Visual Studio.](../../../../../10/umbraco-cms/fundamentals/setup/install/images/VS/Umbraco10\_install.png)
+![The Additional information dialog in Visual Studio.](../../../.gitbook/assets/Additional\_Info.jpg)
 
 You can then click the _Create_ button and your Umbraco Project will be ready for you.
 
-![Overview of files in the project solution](../../../../../10/umbraco-cms/fundamentals/setup/install/images/VS/ready-solution.png)
+![Overview of files in the project solution](../../../.gitbook/assets/Solution\_Explorer.png)
 
 ### Running the site
 
