@@ -63,7 +63,7 @@ The model given to the Sorter must be an Array. The following example extends th
         }
     ]
 
-    // Set the Model, if you have changes to the model not coming from the Sorter, then set the model again:
+    // Set the Model, if you have changes to the model not coming from the Sorter. Then set the model again:
     this.#sorter.setModel(model);
 </code></pre>
 
