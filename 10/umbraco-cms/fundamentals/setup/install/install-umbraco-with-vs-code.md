@@ -54,12 +54,6 @@ This section continues from where we left off but covers the installation and co
 
 You will see the install screen where you will need to fill in some data before Umbraco can be installed.
 
-Depending on the database configuration you've chosen you will have the following options:
-
-1. If you've installed the template with `-ce` flag, to enable SqlCE, you only need to fill out your information and click "Install". The installer will then take care of the rest.
-2. If you've enabled SqlCE, but still want to change the database type, click "Change Database".
-3. If you didn't enable SqlCE, you will see a "Next" button instead of "Install", which will take you to an extra step where you can configure your database.
-
 ![Web Installer - Lets Get Started](../../../../../13/umbraco-cms/fundamentals/setup/install/images/installer.png)
 
 When the installer is done you will automatically be logged into the backoffice.
