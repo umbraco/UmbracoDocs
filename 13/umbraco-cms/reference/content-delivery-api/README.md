@@ -8,9 +8,11 @@ The Content Delivery API delivers headless capabilities built directly into Umbr
 
 ## Getting Started
 
-When upgrading an existing project to Umbraco 12, you will need to opt-in explicitly for using the Delivery API. Below you will find the steps you need to take in order to configure it for your Umbraco project.
+The Delivery API is an opt-in feature of Umbraco. It must be explicitly enabled through configuration before it can be utilized.
 
-When you start with a fresh Umbraco 12 installation, the Delivery API is also disabled by default. To enable it, you can proceed directly to the [Enable the Content Delivery API](./#enable-the-content-delivery-api) section, as the step below is already complete in this case.
+Umbraco projects started on version 11 or below also need to opt-in through code by [registering the delivery API dependencies](./#register-the-content-delivery-api-dependencies). Below you will find a description of how to do this.
+
+For a fresh Umbraco installation you can proceed directly to the [Enable the Content Delivery API](./#enable-the-content-delivery-api) section.
 
 {% embed url="https://www.youtube.com/watch?v=sh_AF-ZKJ28" %}
 Video tutorial
@@ -18,17 +20,24 @@ Video tutorial
 
 ### Register the Content Delivery API dependencies
 
-1. Open your project's `Program.cs` file.
+{% hint style="info" %}
+This step is only applicable for Umbraco projects started on version 11 or below.
+{% endhint %}
+
+1. Open your project's `Startup.cs` file and locate the `ConfigureServices` method.
 2. Register the API dependencies by adding `.AddDeliveryApi()`:
 
 ```csharp
-builder.CreateUmbracoBuilder()
-    .AddBackOffice()
-    .AddWebsite()
-    // Register all Delivery API dependencies
-    .AddDeliveryApi()
-    .AddComposers()
-    .Build();
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddUmbraco(_env, _config)
+        .AddBackOffice()
+        .AddWebsite()
+        // Register all Delivery API dependencies
+        .AddDeliveryApi()
+        .AddComposers()
+        .Build();
+}
 ```
 
 ### Enable the Content Delivery API
