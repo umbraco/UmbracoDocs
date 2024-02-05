@@ -37,7 +37,7 @@ this.#sorter = new UmbSorterController<ModelEntryType, HTMLElement>(this, {
 
 The properties provided are the following:
 
--   itemSelector: A query selector that matches the items that should be draggable.
+-   `itemSelector`: A query selector that matches the items that should be draggable.
 -   containerSelector: A query elector that matches the parent element of the items.
 -   getUniqueOfElement: A method that returns the unique
 -   getUniqueOfModel: Provide a method that returns the unique of a given model entry
