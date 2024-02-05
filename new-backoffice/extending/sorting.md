@@ -69,9 +69,9 @@ The model given to the Sorter must be an Array. The following example extends th
 
 ### Rendering
 
-The Sorter does not move elements, instead it updates the model as the user drags an item around. This puts higher pressure on the rendering of the sortable Elements. This means we need to make sure that the rendering re-uses the same element despite sorting the data differently.
+The Sorter does not move elements, instead, it updates the model as the user drags an item around. This puts higher pressure on the rendering of the sortable Elements. This means we need to make sure that the rendering re-uses the same element despite sorting the data differently.
 
-Lit does provide a render helper method called 'repeat' that does this for us, the following example shows a render method that continues the work of the examples above:
+Lit does provide a render helper method called `repeat` that does this for us. The following example shows a render method that continues the work of the examples above:
 
 <pre class="language-typescript"><code class="lang-typescript">
 
