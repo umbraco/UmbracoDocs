@@ -26,5 +26,4 @@ The plugins settings allow you to configure how Umbraco handles plugins, current
 }
 ```
 
-As you can see above, by default markup, styles, scripts, images, fonts, configurations and license type, if you were to for example remove the ".html" entry, then plugins would no longer be allowed to use html files.
-
+As you can see above, by default, markup, styles, scripts, images, fonts, configurations, and license type are included. If you were to, for example, remove the ".html" entry, then plugins would no longer be allowed to use HTML files.
