@@ -45,7 +45,7 @@ The properties provided are the following:
 
 ### Data Model
 
-The model given to the Sorter must be an Array, the following example extends the example from above:
+The model given to the Sorter must be an Array. The following example extends the example from above:
 
 <pre class="language-typescript"><code class="lang-typescript">
     const model: Array<ModelEntryType> = [
