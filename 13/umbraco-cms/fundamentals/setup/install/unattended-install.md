@@ -136,4 +136,4 @@ dotnet new umbraco -n MyNewProject --friendly-name "Friendly User" --email user@
 
 ### Visual Studio
 
-<figure><img src="../../../../../10/umbraco-cms/fundamentals/setup/install/images/unattended/VS-unattended-install.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Additional_Info (1).jpg" alt=""><figcaption></figcaption></figure>
