@@ -4,7 +4,8 @@ description: Creating Order Packages in Umbraco Commerce.
 
 # Shipping Package Factories
 
-When calculating shipping rates it is necessary to define how an order is packaged. This includes the dimensions / weight of that package as well as the location from which and to which the package will be sent. All of this is the responsibility of the Shipping Package Factory to calculate.
+When calculating shipping rates, defining how an order is packaged is necessary. This includes the dimensions/weight of that package as well as the location from which and to which the package will be sent. All of this is the responsibility of the Shipping Package Factory to calculate.
+
 
 ## Stacked Shortest Dimension Package Factory
 
