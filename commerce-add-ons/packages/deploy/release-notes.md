@@ -40,8 +40,6 @@ In this section, you can find the release notes for each version of Deploy packa
 
 <details>
 
-<details>
-
 <summary>Version 12</summary>
 
 #### [12.0.1](https://github.com/umbraco/Umbraco.Commerce.Deploy/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.1) (October 18th 2023)
