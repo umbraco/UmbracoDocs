@@ -10,7 +10,7 @@ As part of the configuration, you shall provide an `onChange` callback method, w
 
 ### Configuration
 
-The following example shows a simple setup of the Sorter.
+The following example shows a basic setup of the Sorter.
 
 <pre class="language-typescript"><code class="lang-typescript">
 type ModelEntryType = {
