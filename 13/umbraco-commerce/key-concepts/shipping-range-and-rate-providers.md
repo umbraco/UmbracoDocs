@@ -4,7 +4,7 @@ description: Dynamic shipping rate providers in Umbraco Commerce.
 
 # Shipping Rate Range / Rate Providers
 
-With Umbraco Commerce's dynamic shipping rates feature it is possible to configure diffrent rules for calculating an orders shipping rate. With the Shipping Rate Range Provider and Shipping Rate Provider feature, it is possible to extend these rules with your own logic.
+With Umbraco Commerce's dynamic shipping rates feature it is possible to configure different rules for calculating an order's shipping rate. With the Shipping Rate Range Provider and Shipping Rate Provider feature, it is possible to extend these rules with your own logic.
 
 ## Shipping Rate Range Provider
 
