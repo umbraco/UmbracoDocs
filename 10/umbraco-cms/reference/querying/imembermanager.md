@@ -212,7 +212,7 @@ Returns a `Task<bool>` specifying if the currently logged in member has access t
 
 ### ValidateCredentialsAsync(string username, string password)
 
-Validates that a user's credentials are correct without actually logging them in.
+Validates that a user's credentials are correct without logging them in.
 
 ```
 @{
