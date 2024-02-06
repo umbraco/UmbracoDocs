@@ -36,6 +36,7 @@ Dynamic rate shipping in Umbraco Commerce allows you to define a series of range
 
 ![Shipping Method Rate](../../media/dynamic_rate_shipping_rates_dialog.png)
 
-* Configure the countries this shipping method should be allowed in
+* Configure the countries in this shipping method should be allowed in
+
 
 ![Shipping Method Allowed Countries](../../media/shipping_method_allowed_countries.png)
