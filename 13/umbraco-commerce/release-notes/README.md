@@ -19,20 +19,20 @@ This section contains the release notes for Umbraco Commerce 13 including all ch
 
 #### 13.1.0-rc1 (February 6th 2024)
 
-Read the [v13.1.0-RC release post](./v13.1.0-rc.md) further background on this release.
+Read the [v13.1.0-RC release post](./v13.1.0-rc.md) for further background on this release.
 
 * Adds dynamic shipping rate calculation option.
-* Adds realtime shipping rate calculation option via Shipping Providers.
+* Adds real-time shipping rate calculation option via Shipping Providers.
 * Adds store locations for shipping calculations.
 * Adds store Measurement System setting.
 * Adds Measurements property editor for capturing product measurements for shipping calculations.
 * Adds shipping package factory concept for calculating packages for shipments.
-* Updates the shipping method create flow to require selecting a shipping provider and a shipping calculation mode.
+* Updates the shipping method create-flow to require selecting a shipping provider and a shipping calculation mode.
 * Updates API for calculating shipping prices as payment methods can now return multiple rates.
 * Updates the order API for setting the shipping method to accept a `ShippingOption` for shipping methods that can supply multiple rates.
 * Updates the order editor to display the selected shipping option.
-* Updates the cart editor to allow selecting a shipping option from realtime shipping methods.
-* Updates the cart editor to calculate shipping rates / payment fees based on the current in memory cart state.
+* Updates the cart editor to allow selecting a shipping option from real-time shipping methods.
+* Updates the cart editor to calculate shipping rates/payment fees based on the current in-memory cart state.
 * Updates storefront API to incorporate new shipping rates endpoints
 
 #### [13.0.0](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.0) (December 13th 2023)
