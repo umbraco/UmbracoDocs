@@ -35,4 +35,4 @@ The following steps are handled within the shipping method editor in the Umbraco
 
 | Name | Description |
 | ---- | ----------- |
-| Carrier Accounts | Comma-seperated list of carriers to limit which services to fetch rates for. |
+| Carrier Accounts | Comma-separated list of carriers to limit which services to fetch rates for. |
