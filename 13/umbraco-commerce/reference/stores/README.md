@@ -22,7 +22,8 @@ General settings for a store can be accessed via the UI by clicking on a store n
   <tbody>
     <tr>
       <td>Base Currency</td>
-      <td>Defines the base currency a store opperates in and for which all order values will be converted to for the basis of reporting and analytics.</td>
+      <td>Defines the base currency a store operates in and for which all order values will be converted for the basis of reporting and analytics.</td>
+
     </tr>
     <tr>
       <td>Default Location</td>
