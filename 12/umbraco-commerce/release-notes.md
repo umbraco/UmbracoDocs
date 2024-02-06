@@ -17,6 +17,12 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 12 including all changes for this version.
 
+#### 12.1.5 (February 6th 2024)
+
+* Added licensing fallback to use any previously validated license within the last 7 days
+* Updated `Umbraco.Licenses` version dependency to the latest
+* Made `WithUmbracoCommerceBuilder` extension public to allow accessing the `IUmbracoCommerceBuilder` instance outside of the `AddUmbracoCommerce` call
+
 #### [12.1.4](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.4) (December 13th 2023)
 
 * Fixed Cross-site scripting (XSS) issue in email/print templates.
