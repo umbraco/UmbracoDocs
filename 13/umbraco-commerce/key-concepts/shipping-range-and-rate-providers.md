@@ -80,7 +80,7 @@ public class MyShippingRateProvider : ShippingRateProvider<int>
 }
 ```
 
-The class should be decorated with the `ShippingRateProviderAttribute` which defines an alias, name, description, editor view and label view for the provider. It implementes a single method `TryGetRate` which, given a `ShippingRateCalculationContext`, should calculate the relevant rate. The `ShippingRateCalculationContext` contains a series of useful properties which you can use to form your calculation.
+The class should be decorated with the `ShippingRateProviderAttribute` which defines an alias, name, description, editor view, and label view for the provider. It implements a single method `TryGetRate` which, given a `ShippingRateCalculationContext`, should calculate the relevant rate. The `ShippingRateCalculationContext` contains a series of useful properties that you can use to form your calculation.
 
 * **Model** - The value for this rate provider captured from the UI.
 * **Order** - The order associated with this calculation.
