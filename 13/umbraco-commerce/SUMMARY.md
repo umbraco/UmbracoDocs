@@ -3,7 +3,9 @@
 * [Umbraco Commerce Documentation](README.md)
 * [Commerce Packages](https://docs.umbraco.com/umbraco-commerce-packages)
 * [Commerce Payment Providers](https://docs.umbraco.com/umbraco-commerce-payment-providers)
-* [Release Notes](release-notes.md)
+* [Commerce Shipping Providers](https://docs.umbraco.com/umbraco-commerce-shipping-providers)
+* [Release Notes](release-notes/README.md)
+  * [v13.1.0-RC](release-notes/v13.1.0-rc.md)
 
 ## Installation
 
@@ -55,6 +57,9 @@
 * [ReadOnly and Writable Entities](key-concepts/readonly-and-writable-entities.md)
 * [Search Specifications](key-concepts/search-specifications.md)
 * [Settings Objects](key-concepts/settings-objects.md)
+* [Shipping Package Factories](key-concepts/shipping-package-factories.md)
+* [Shipping Providers](key-concepts/shipping-providers.md)
+* [Shipping Range/Rate Providers](key-concepts/shipping-range-and-rate-providers.md)
 * [Tax Sources](key-concepts/tax-sources.md)
 * [UI Config Files](key-concepts/ui-config-files.md)
 * [Umbraco Properties](key-concepts/umbraco-properties.md)
@@ -68,6 +73,12 @@
 
 ## Reference
 
+* [Stores](reference/stores/README.md)
+* [Locations](reference/locations/README.md)
+* [Shipping](reference/shipping/README.md)
+  * [Fixed Rate Shipping](reference/shipping/fixed-rate-shipping.md)
+  * [Dynamic Rate Shipping](reference/shipping/dynamic-rate-shipping.md)
+  * [Realtime Rate Shipping](reference/shipping/relatime-rate-shipping.md)
 * [Storefront API](reference/storefront-api/README.md)
   * [Endpoints](reference/storefront-api/endpoints/README.md)
     * [Order](reference/storefront-api/endpoints/order.md)
