@@ -40,7 +40,8 @@ General settings for a store can be accessed via the UI by clicking on a store n
     </tr>
     <tr>
       <td>Error Order Status</td>
-      <td>Defines the order status to assign orders to when a error occurs during order processing.</td>
+      <td>Defines the order status to assign orders to when an error occurs during order processing.</td>
+
     </tr>
     <tr>
       <td>Measurement System</td>
