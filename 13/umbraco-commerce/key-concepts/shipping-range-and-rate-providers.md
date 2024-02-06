@@ -35,7 +35,7 @@ public class MyShippingRateRangeProvider : ShippingRateRangeProvider<decimal?>
 }
 ```
 
-The class should be decorated with the `ShippingRateRangeProviderAttribute` which defines an alias, name, description, editor view and label view for the provider. It implementes  a single method `TryFindRangeIndex` which, given a `ShippingRateRangeCalculationContext`, should find the index the current order falls within a series of preconfigured ranges. The `ShippingRateRangeCalculationContext` contains a series of useful properties which you can use to form your calculation.
+The class should be decorated with the `ShippingRateRangeProviderAttribute` which defines an alias, name, description, editor view and label view for the provider. It implements a single method `TryFindRangeIndex` which, given a `ShippingRateRangeCalculationContext`, should find the index the current order falls within a series of preconfigured ranges. The `ShippingRateRangeCalculationContext` contains a series of useful properties that you can use to form your calculation.
 
 * **Ranges** - A list of configured ranges from the UI from which to find the index of the given order.
 * **Order** - The order to use when finding the current range.
