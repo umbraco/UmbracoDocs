@@ -81,7 +81,7 @@
 * [Shipping](reference/shipping/README.md)
   * [Fixed Rate Shipping](reference/shipping/fixed-rate-shipping.md)
   * [Dynamic Rate Shipping](reference/shipping/dynamic-rate-shipping.md)
-  * [Realtime Rate Shipping](reference/shipping/relatime-rate-shipping.md)
+  * [Realtime Rate Shipping](reference/shipping/realtime-rate-shipping.md)
 * [Storefront API](reference/storefront-api/README.md)
   * [Endpoints](reference/storefront-api/endpoints/README.md)
     * [Order](reference/storefront-api/endpoints/order.md)
