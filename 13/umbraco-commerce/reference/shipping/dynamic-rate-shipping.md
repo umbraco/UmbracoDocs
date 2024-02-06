@@ -26,7 +26,8 @@ Dynamic rate shipping in Umbraco Commerce allows you to define a series of range
 ![Shipping Method Details](../../media/dynamic_rate_shipping_details.png)
 
 * Choose the range unit to base the rates upon
-* Click `Add Range` to define a each range
+* Click `Add Range` to define each range
+
 
 ![Shipping Method Rates](../../media/dynamic_rate_shipping_rates.png)
 
