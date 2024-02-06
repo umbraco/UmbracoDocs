@@ -59,7 +59,7 @@
 * [Settings Objects](key-concepts/settings-objects.md)
 * [Shipping Package Factories](key-concepts/shipping-package-factories.md)
 * [Shipping Providers](key-concepts/shipping-providers.md)
-* [Shipping Range / Rate Providers](key-concepts/shipping-range-and-rate-providers.md)
+* [Shipping Range/Rate Providers](key-concepts/shipping-range-and-rate-providers.md)
 * [Tax Sources](key-concepts/tax-sources.md)
 * [UI Config Files](key-concepts/ui-config-files.md)
 * [Umbraco Properties](key-concepts/umbraco-properties.md)
