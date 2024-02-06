@@ -41,7 +41,8 @@ The settings class consists of a series of properties, each decorated with a `Sh
 
 ## Shipping Provider Responsibilities
 
-There responsibilities of a Shipping Provider are:
+The responsibilities of a Shipping Provider are:
+
 
 * **Realtime Rates** - Calculating shipping rate options for a given Order.
 
