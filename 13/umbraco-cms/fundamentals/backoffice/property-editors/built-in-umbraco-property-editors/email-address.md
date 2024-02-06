@@ -35,7 +35,7 @@ The Email Address Property Editor does not come with any further configuration. 
 ### With Modelsbuilder
 
 ```csharp
-@if (Model.HasValue((nameof(Model.Email))
+@if (Model.HasValue((nameof(Model.Email))))
 {
     var emailAddress = Model.Email;
     <p>@emailAddress</p>
