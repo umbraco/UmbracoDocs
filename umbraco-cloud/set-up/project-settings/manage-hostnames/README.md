@@ -37,7 +37,7 @@ We recommend setting a CNAME record for your hostname. You can also use A & AAAA
   * `2606:4700:7::7d`
   * `2a06:98c1:58::7d`
 
-If you are using the [Former A and AAAA records](./#former-a-and-aaaa-records) consider changing them to the new A & AAAA records above.
+If you're using the [Former A and AAAA records](./#former-a-and-aaaa-records) consider changing them to the new A & AAAA records above.
 
 <details>
 
