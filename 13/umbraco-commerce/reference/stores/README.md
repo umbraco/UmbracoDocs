@@ -121,11 +121,12 @@ General settings for a store can be accessed via the UI by clicking on a store n
   <tbody>
     <tr>
       <td>Product Property Aliases</td>
-      <td>Defines a comma seperated list of property aliases to be copied to the order line when added to the cart. See the [Properties concept documentation](../../key-concepts/properties.md#automatic-properties) for more details.</td>
+      <td>Defines a comma-separated list of property aliases to be copied to the order line when added to the cart. See the [Properties concept documentation](../../key-concepts/properties.md#automatic-properties) for more details.</td>
     </tr>
     <tr>
       <td>Product Uniqueness Property Aliases</td>
-      <td>Defines a comma seperated list of property aliases to be used to define product uniqueness. See the [Properties concept documentation](../../key-concepts/properties.md#product-uniqueness-properties) for more details.</td>
+      <td>Defines a comma-separated list of property aliases to be used to define product uniqueness. See the [Properties concept documentation](../../key-concepts/properties.md#product-uniqueness-properties) for more details.</td>
+
     </tr>
   </tbody>
 </table>
