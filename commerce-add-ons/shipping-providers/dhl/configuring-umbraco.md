@@ -40,4 +40,4 @@ The following steps are handled within the shipping method editor in the Umbraco
 
 | Name | Description |
 | ---- | ----------- |
-| Product Codes | Comma-seperates list of product codes to limit the rates to. |
+| Product Codes | Comma-separated list of product codes to limit the rates to. |
