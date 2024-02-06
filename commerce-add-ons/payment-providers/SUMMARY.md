@@ -2,6 +2,9 @@
 
 * [What are Payment Providers?](README.md)
 * [Install payment providers](install-payment-providers.md)
+
+## Commerce Products
+
 * [Umbraco Commerce](https://docs.umbraco.com/umbraco-commerce/)
 * [Commerce Packages](https://docs.umbraco.com/umbraco-commerce-packages)
 * [Commerce Shipping Providers](https://docs.umbraco.com/umbraco-commerce-shipping-providers)
