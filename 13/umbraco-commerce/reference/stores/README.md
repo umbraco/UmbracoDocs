@@ -174,7 +174,7 @@ General settings for a store can be accessed via the UI by clicking on a store n
 
 ## Store Configuration
 
-Further store configuration can be achived by setting up different categories of configuration that can be accessed as child nodes to the store node.
+Further store configuration can be achieved by setting up different categories of configuration that can be accessed as child nodes to the store node.
 
 The available configuration options are:
 
@@ -184,14 +184,14 @@ The available configuration options are:
 * **Payment Methods** - Defines the different payment options available in the store.
 * **Countries** - Defines the different shipping countries supported by the store.
 * **Currencies** - Defines the different currencies accepted by the store.
-* **Taxes** - Defines the different rates supported by store.
-* **Templating** - Defines the different email, print and export templates available to the store.
+* **Taxes** - Defines the different rates supported by the store.
+* **Templating** - Defines the different email, print, and export templates available to the store.
 
 ## Store Permissions
 
 When editing a store, the permissions app allows you to control who can access the store management interface. The options are:
 
-* **User Groups** - A set of toggles to allow / deny access to members of a particular user group.
-* **Users** - A set of toggles to allow / deny access to explicit indvivuals.
+* **User Groups** - A set of toggles to allow/deny access to members of a particular user group.
+* **Users** - A set of toggles to allow/deny access to explicit individuals.
 
 In both cases, a positive access control will always override a deny control setting.
