@@ -31,7 +31,8 @@ General settings for a store can be accessed via the UI by clicking on a store n
     </tr>
     <tr>
       <td>Default Country</td>
-      <td>Defines the default country of the store and is used to set the default payment / shipping country of newly created orders.</td>
+      <td>Defines the default country of the store and is used to set the default payment/shipping country of newly created orders.</td>
+
     </tr>
     <tr>
       <td>Default Order Status</td>
