@@ -47,7 +47,7 @@ The class should be decorated with the `ShippingRateRangeProviderAttribute` whic
 
 #### Registering your custom Shipping Rate Range Provider
 
-Shipping Rate Range Providers are automatically added by type so there is no specific registration code you need to implement. By inheritting from the `ShippingRateRangeProvider<TRangeModel>` base class, Umbraco Commerce will automatically load your implementation and add it to the Shipping Rate Range Providers collection.
+Shipping Rate Range Providers are automatically added by type so there is no specific registration code you need to implement. By inheriting from the `ShippingRateRangeProvider<TRangeModel>` base class, Umbraco Commerce will automatically load your implementation and add it to the Shipping Rate Range Providers collection.
 
 ## Shipping Rate Provider
 
