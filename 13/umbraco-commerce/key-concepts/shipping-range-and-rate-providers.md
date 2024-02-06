@@ -92,4 +92,4 @@ The class should be decorated with the `ShippingRateProviderAttribute` which def
 
 #### Registering your custom Shipping Rate Provider
 
-Shipping Rate Providers are automatically added by type so there is no specific registration code you need to implement. By inheritting from the `ShippingRateProvider<TConfigModel>` base class, Umbraco Commerce will automatically load your implementation and add it to the Shipping Rate Providers collection.
+Shipping Rate Providers are automatically added by type so there is no specific registration code you need to implement. By inheriting from the `ShippingRateProvider<TConfigModel>` base class, Umbraco Commerce will automatically load your implementation and add it to the Shipping Rate Providers collection.
