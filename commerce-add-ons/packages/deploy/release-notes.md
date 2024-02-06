@@ -26,13 +26,13 @@ In this section, you can find the release notes for each version of Deploy packa
 
 <summary>Version 13</summary>
 
-#### 13.1.0-rc1 (TBC)
+#### 13.1.0-rc1 (February 6th 2024)
 
 * Adds support for Locations
 * Updates store to handle default location and measurement system.
 * Updates shipping methods to handle dynamic and realtime configurations.
 
-#### 13.0.0 ((December 13th 2023)
+#### 13.0.0 (December 13th 2023)
 
 * Umbraco v13 and Umbraco Commerce v13 support.
 

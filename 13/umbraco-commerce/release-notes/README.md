@@ -17,7 +17,7 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 13 including all changes for this version.
 
-#### 13.1.0-rc1 (TBC)
+#### 13.1.0-rc1 (February 6th 2024)
 
 Read the [v13.1.0-RC release post](./v13.1.0-rc.md) further background on this release.
 

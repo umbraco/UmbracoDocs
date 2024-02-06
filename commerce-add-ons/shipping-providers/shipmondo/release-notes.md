@@ -12,7 +12,7 @@ In this section, you can find the release notes for each version of Shipmondo Sh
 
 <summary>Version 13</summary>
 
-#### 13.0.0-rc1 (TBC)
+#### 13.0.0-rc1 (February 6th 2024)
 
 * Initial release.
   
