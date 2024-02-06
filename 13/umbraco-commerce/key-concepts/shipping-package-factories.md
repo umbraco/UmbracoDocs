@@ -17,7 +17,8 @@ The receiver address of the package is calculated from the order, with the sende
 The Stacked Shortest Dimension Package Factory currently only supports returning a single package containing the entire contents of the order.
 
 {% hint style="info" %}
-Umbraco Commerce as a whole only currently supports package factories returning a single package. Supporting multiple packages will come as a future feature.
+Umbraco Commerce currently supports only package factories returning a single package. Supporting multiple packages will come as a future feature.
+
 {% endhint %}
 
 ### Limitations
