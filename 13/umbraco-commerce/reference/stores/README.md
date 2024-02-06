@@ -45,7 +45,8 @@ General settings for a store can be accessed via the UI by clicking on a store n
     </tr>
     <tr>
       <td>Measurement System</td>
-      <td>Defines whether to use a Mertic or Imperial measurement system when capturing product measurement.</td>
+      <td>Defines whether to use a Metric or Imperial measurement system when capturing product measurement.</td>
+
     </tr>
     <tr>
       <td>Prices Include Tax</td>
