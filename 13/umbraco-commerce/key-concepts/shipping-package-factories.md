@@ -50,7 +50,8 @@ public class MyPackageFactory : ShippingPackageFactoryBase
 
 From within this method you can use whatever logic you need to create packages and calculate their dimensions.
 
-To replace the default factory, you register your factory implementation with the DI container in it's place. See the [Replacing Dependencies documentation](../key-concepts/dependency-injection.md#replacing-dependencies) for more details.
+To replace the default factory, register your factory implementation with the DI container in its place. See the [Replacing Dependencies documentation](../key-concepts/dependency-injection.md#replacing-dependencies) for more details.
+
 
 ```csharp
 builder.Services.AddUnique<IShippingPackageFactory, MyPackageFactory>();
