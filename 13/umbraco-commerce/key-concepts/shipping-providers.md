@@ -4,9 +4,9 @@ description: Realtime shipping features via Shipping Providers in Umbraco Commer
 
 # Shipping Providers
 
-Shipping Providers are how Umbraco Commerce is able to perform realtime shipping opperations. Their job is to provide a standard interface between third-party shipping opperators and Umbraco Commerce itself. This is done in order to allow the passing of information between the two platforms.
+Shipping Providers are how Umbraco Commerce can perform real-time shipping operations. Their job is to provide a standard interface between third-party shipping operators and Umbraco Commerce. This is done to allow the passing of information between the two platforms.
 
-How the integrations work is often different for each shipping opperator. The Umbraco Commerce Shipping Providers add a flexible interface that should be able to work with most shipping opperators.
+How the integrations work is often different for each shipping operator. The Umbraco Commerce Shipping Providers add a flexible interface that should work with most shipping operators.
 
 ## Example Shipping Provider
 
