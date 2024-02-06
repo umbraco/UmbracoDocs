@@ -143,11 +143,11 @@ General settings for a store can be accessed via the UI by clicking on a store n
   <tbody>
     <tr>
       <td>Code Length</td>
-      <td>Defines the length of a gift card code when auto generated.</td>
+      <td>Defines the length of a gift card code when auto-generated.</td>
     </tr>
     <tr>
       <td>Code Template</td>
-      <td>Defines a string formatting template to use when auto generating a gift card code, eg: 'GIFTCARD-{0}'.</td>
+      <td>Defines a string formatting template to use when auto-generating a gift card code, eg: 'GIFTCARD-{0}'.</td>
     </tr>
     <tr>
       <td>Valid For</td>
@@ -155,7 +155,7 @@ General settings for a store can be accessed via the UI by clicking on a store n
     </tr>
     <tr>
       <td>Gift Card Property Aliases</td>
-      <td>Defines a comma seperated list of property aliases to be copied to the gift card from the order line.</td>
+      <td>Defines a comma-separated list of property aliases to be copied to the gift card from the order line.</td>
     </tr>
     <tr>
       <td>Activation Method</td>
@@ -163,7 +163,7 @@ General settings for a store can be accessed via the UI by clicking on a store n
     </tr>
     <tr>
       <td>Activation Order Status</td>
-      <td>When the activtion method is `Order Status`, defines the order status that activates the gift card.</td>
+      <td>When the activation method is `Order Status`, it defines the order status that activates the gift card.</td>
     </tr>
     <tr>
       <td>Default Gift Card Email</td>
