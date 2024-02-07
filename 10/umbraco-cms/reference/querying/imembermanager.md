@@ -163,7 +163,7 @@ else
 
 ### IsMemberAuthorizedAsync(IEnumerable memberTypes, IEnumerable memberGroups, IEnumerable memberIds)
 
-Checks if the current member is authorized for content protected by types, groups or specific members. For instance, you can use this method to check if the current logged in member is authorized. This is particularly useful for pages only available to the VIP member group, like so.
+Checks if the current member is authorized for content protected by types, groups or specific members. For instance, you can use this method to check if the current logged in member is authorized. This is particularly useful for pages only available to the VIP member group, like so:
 
 ```
 @{
