@@ -64,7 +64,6 @@ In the constructor, or via overridden properties, we can specify details of the 
 - `SupportsPreValues` - indicates whether prevalues are supported by the field (defaults to `false`).
 - `FieldTypeViewName` - indicates the name of the partial view used to render the field.
 - `RenderInputType`- indicates how the field should be rendered within the theme, as defined with the `RenderInputType` enum. The default is `Single` for a single input field. `Multiple` should be used for multiple input fields such as checkbox lists. `Custom` is used for fields without visible input fields.
-- ``
 
 You will then need to register this new field as a dependency.
 
