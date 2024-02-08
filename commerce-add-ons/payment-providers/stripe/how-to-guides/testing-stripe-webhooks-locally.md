@@ -10,7 +10,7 @@ description: >-
 The Stripe payment provider uses webhooks to finalize payments. Due to this, it can be tricky to test payments locally as Mollie must have a public-facing URL to be able to notify you.
 
 You could expose your website through your network's firewall or use tools that to create temporary tunnels through your network.
-
+You could expose your website through your network's firewall or use tools to create temporary tunnels through your network.
 The following guide will use [ngrok](https://ngrok.com/) to create temporary tunnels through your network.
 
 ## Using Stripe CLI
