@@ -47,7 +47,7 @@ With the Stripe CLI running, you can now test the site using your local dev doma
 ## Using ngrok
 ### Step 1: Install ngrok
 
-1. Head on over to [ngrok.com](https://ngrok.com/).
+1. Go to the [ngrok website](https://ngrok.com/).
 2. Download and install the tool on your system.
 
 ### Step 2: Launch ngrok
