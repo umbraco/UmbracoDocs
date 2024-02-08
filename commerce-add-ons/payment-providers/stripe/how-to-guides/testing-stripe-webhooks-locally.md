@@ -11,7 +11,11 @@ The Stripe payment provider uses webhooks to finalize payments. Due to this, it 
 
 You could expose your website through your network's firewall or use tools that to create temporary tunnels through your network.
 You could expose your website through your network's firewall or use tools to create temporary tunnels through your network.
-The following guide will use [ngrok](https://ngrok.com/) to create temporary tunnels through your network.
+Below you can find two options to create temporary tunnels through your network:
+
+- [Using Stripe CLI](using-stripe-cli)
+- [Using ngrok](using-ngrok)
+
 
 ## Using Stripe CLI
 ### Step 1: Install the Stripe CLI and Login into the CLI
