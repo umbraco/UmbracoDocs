@@ -5,7 +5,7 @@
 
 # Querying & Models
 
-_Overview of various ways of querying, filtering and searching published content for use on your website._
+_Overview of multiple ways of querying, filtering, and searching published content for use on your website._
 
 ## [UDI identifiers](udi-identifiers.md)
 
