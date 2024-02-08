@@ -9,7 +9,6 @@ description: >-
 
 The Stripe payment provider uses webhooks to finalize payments. Due to this, it can be tricky to test payments locally as Mollie must have a public-facing URL to be able to notify you.
 
-You could expose your website through your network's firewall or use tools that to create temporary tunnels through your network.
 You could expose your website through your network's firewall or use tools to create temporary tunnels through your network.
 Below you can find two options to create temporary tunnels through your network:
 
@@ -18,14 +17,18 @@ Below you can find two options to create temporary tunnels through your network:
 
 
 ## Using Stripe CLI
+
 ### Step 1: Install the Stripe CLI
 
 Go to the [stripe documentation](https://stripe.com/docs/stripe-cli#install) and install the stripe CLI.
+
 ### Step 2: Log in to the Stripe CLI
+
 Go to the [stripe documentation](https://stripe.com/docs/stripe-cli#login-account) and log in to the CLI.
+
 ### Step 3: Forward the stripe events to your local environment
 
-While running the site locally, make a note of your local store domain. For example: `https:localhost:44321`. Using the Stripe CLI, you can configure Stripe to forward any events to that URL. 
+While running the site locally, make a note of your local store domain. For example: `https:localhost:44321`. Using the Stripe CLI, you can configure Stripe to forward any events to that URL.
 
 To do so, run the following from the command line.
 
@@ -35,7 +38,7 @@ stripe listen --forward-to {local_store_domain}/umbraco/commerce/payment/callbac
 
 The `{payment_method_id}` is configured as part of the Stripe [webhook configuration](../configuring-stripe.md#step-3-webhook) step.
 
-e.g. 
+e.g.
 ```
 stripe listen --forward-to https:localhost:44321/umbraco/commerce/payment/callback/stripe-checkout/7fb00000-0000-0000-0000-000019094a7a/
 ```
