@@ -20,7 +20,7 @@ Below you can find two options to create temporary tunnels through your network:
 ## Using Stripe CLI
 ### Step 1: Install the Stripe CLI
 
-Head over to [stripe.com/docs/stripe-cli](https://stripe.com/docs/stripe-cli) and follow steps 1 and 2 to install the CLI and to log in.
+Go to the [stripe documentation](https://stripe.com/docs/stripe-cli#install) and install the stripe CLI.
 
 ### Step 2: Forward the stripe events to your local environment.
 
