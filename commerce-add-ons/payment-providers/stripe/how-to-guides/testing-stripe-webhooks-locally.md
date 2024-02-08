@@ -23,7 +23,7 @@ Below you can find two options to create temporary tunnels through your network:
 Go to the [stripe documentation](https://stripe.com/docs/stripe-cli#install) and install the stripe CLI.
 ### Step 2: Log in to the Stripe CLI
 Go to the [stripe documentation](https://stripe.com/docs/stripe-cli#login-account) and log in to the CLI.
-### Step 2: Forward the stripe events to your local environment.
+### Step 3: Forward the stripe events to your local environment
 
 Whilst running the site locally, make a note of your local store domain, e.g. `https:localhost:44321`. Using the Stripe CLI, to can configure Stripe to forward any events to that url. 
 
