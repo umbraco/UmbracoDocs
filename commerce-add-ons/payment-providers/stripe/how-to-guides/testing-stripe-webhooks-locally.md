@@ -42,8 +42,11 @@ e.g.
 ```
 stripe listen --forward-to https:localhost:44321/umbraco/commerce/payment/callback/stripe-checkout/7fb00000-0000-0000-0000-000019094a7a/
 ```
+### Step 4: Configure your Stripe test webhook signing secret
 
-### Step 4: Test the site
+When you start listening to Stripe events, the command line will give you a webhook signing secret. This should be used to set the `Test Webhook Signing Secret` setting, shown in the Umbraco [configure payment provider settings](../configuring-umbraco.md##step-2-configure-payment-provider-settings) step.
+
+### Step 5: Test the site
 
 With the Stripe CLI running, you can now test the site using your local dev domain. You will see any configured stripe events configured for the webhook displayed in the console window and can debug them using Visual Studio.
 
