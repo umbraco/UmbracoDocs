@@ -42,7 +42,7 @@ stripe listen --forward-to https:localhost:44321/umbraco/commerce/payment/callba
 
 ### Step 4: Test the site
 
-With the Stripe CLI running, you can now test the site using your local dev domain. You will see any configured stripe events configured for the webhook displayed in the console window, and can debug them using Visual Studio.
+With the Stripe CLI running, you can now test the site using your local dev domain. You will see any configured stripe events configured for the webhook displayed in the console window and can debug them using Visual Studio.
 
 ## Using ngrok
 ### Step 1: Install ngrok
