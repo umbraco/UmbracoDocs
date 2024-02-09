@@ -36,7 +36,7 @@ If you want you can change the filename back to `Readme.md` after a successful C
 ### The site can't be upgraded as it's blocked with the following markers: updating
 
 In rare cases deployments fail, and the cloud infrastructure doesn't clean up correctly. 
-The next time you try to run your pipeline you get the error: "The site can't be upgraded as it's blocked with the following markers: updating".
+The next time you run your pipeline you encounter the error: "The site can't be upgraded as it's blocked with the following markers: updating".
 
 In order to fix this issue, you would need to use [KUDU](../../power-tools/README.md) to remove the leftover marker file.
 
