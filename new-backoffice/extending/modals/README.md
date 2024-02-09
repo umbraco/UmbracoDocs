@@ -42,8 +42,7 @@ export const MY_SOMETHING_PICKER_MODAL = new UmbModalToken<
 
 ## Make a custom Modal Element
 
-If you like to make your own modal, then please read this article before moving on:
-[Read implementing a Custom Modal article.](custom-modals.md)
+To create your own modal, read the [Implementing a Custom Modal article](custom-modals.md) before proceeding with this article.
 
 ### Basic Usage
 
