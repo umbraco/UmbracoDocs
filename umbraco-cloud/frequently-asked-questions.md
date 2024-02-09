@@ -931,7 +931,7 @@ All available Umbraco Cloud plans are utilizing P1V3 Azure App Service Plans as 
 
 ### How many resources do I have available for my website?
 
-In order to see quotas for the different plans on Umbraco Cloud see [Umbraco Cloud Plans](getting-started/umbraco-cloud-plans.md)
+To see quotas for the different plans on Umbraco Cloud see [Umbraco Cloud Plans](getting-started/umbraco-cloud-plans.md)
 
 We also have a limitation for hostnames on the different plans on Umbraco Cloud. You can see how many hostnames you can have on our [pricing list.](https://umbraco.com/umbraco-cloud-pricing/)
 

@@ -423,6 +423,23 @@ In the case of a validation error, a 422 "Unprocessable Entity" status code will
 
 A successful response will return a 202 "Accepted" status code.
 
+It will contain an object detailing the post-submission configured the form, for example:
+
+```json
+{
+    "gotoPageOnSubmit": "3cce2545-e3ac-44ec-bf55-a52cc5965db3",
+    "gotoPageOnSubmitRoute": {
+        "path": "/about-us/",
+        "startItem": {
+            "id": "ca4249ed-2b23-4337-b522-63cabe5587d1",
+            "path": "home"
+        }
+    },
+    "messageOnSubmit": "Thanks for your entry",
+    "messageOnSubmitIsHtml": false
+}
+```
+
 #### File Uploads
 
 The file upload field type is supported via the API for the rendering and submission of forms.
@@ -507,7 +524,7 @@ Firstly, with server-to-server integrations you will want to disable the antifor
 
 This is done by setting the `Umbraco:Forms:Security:EnableAntiForgeryTokenForFormsApi` configuration key to a value of `false`.
 
-You should then configure an API key `Umbraco:Forms:Security:FormsApiKey`.  This can be any string value, but shouldn't be easily guessable by a brute force attack.
+You should then configure an API key `Umbraco:Forms:Security:FormsApiKey`.  This can be any string value, but it should be complex enough to resist being guessed by a brute force attack.
 
 With this in place any request to the Forms API will be rejected unless the configured value is provided in an HTTP header named `Api-Key`.
 
@@ -521,7 +538,7 @@ Examples demonstrating how to handle a file upload and use reCAPTCHA fields are 
 
 The [Content Delivery API](https://docs.umbraco.com/umbraco-cms/v/12.latest/reference/content-delivery-api) provides headless capabilities within Umbraco by allowing you to retrieve content in JSON format.
 
-When retrieving content that contains an Umbraco Forms form picker, the output by default will consist of just the ID of the selected form:
+When retrieving content that contains an Umbraco Forms form picker, the output by default will consist of the ID of the selected form:
 
 ```json
 {

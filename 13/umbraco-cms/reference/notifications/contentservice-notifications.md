@@ -10,23 +10,22 @@ Example usage of the ContentPublishingNotification:
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
 
-namespace Umbraco.Docs.Samples.Web.Notifications
+namespace Umbraco.Docs.Samples.Web.Notifications;
+
+public class DontShout : INotificationHandler<ContentPublishingNotification>
 {
-    public class DontShout : INotificationHandler<ContentPublishingNotification>
+    public void Handle(ContentPublishingNotification notification)
     {
-        public void Handle(ContentPublishingNotification notification)
+        foreach (var node in notification.PublishedEntities)
         {
-            foreach (var node in notification.PublishedEntities)
+            if (node.ContentType.Alias.Equals("announcement"))
             {
-                if (node.ContentType.Alias.Equals("announcement"))
+                var newsArticleTitle = node.GetValue<string>("title");
+                if (!string.IsNullOrWhiteSpace(newsArticleTitle) && newsArticleTitle.Equals(newsArticleTitle.ToUpper()))
                 {
-                    var newsArticleTitle = node.GetValue<string>("title");
-                    if (!string.IsNullOrWhiteSpace(newsArticleTitle) && newsArticleTitle.Equals(newsArticleTitle.ToUpper()))
-                    {
-                        notification.CancelOperation(new EventMessage("Corporate style guideline infringement",
-                            "Don't put the announcement title in upper case, no need to shout!",
-                            EventMessageType.Error));
-                    }
+                    notification.CancelOperation(new EventMessage("Corporate style guideline infringement",
+                        "Don't put the announcement title in upper case, no need to shout!",
+                        EventMessageType.Error));
                 }
             }
         }

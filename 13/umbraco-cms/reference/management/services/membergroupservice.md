@@ -2,10 +2,10 @@
 
 The MemberGroupService acts as a "gateway" to Umbraco data for operations which are related to Member groups, which are also known as Member Roles.
 
-[Browse the API documentation for IMemberGroupService](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Services.IMemberGroupService.html).
+[Browse the API documentation for IMemberGroupService](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.Services.IMemberGroupService.html).
 
- * **Namespace:** `Umbraco.Cms.Core.Services`
- * **Assembly:** `Umbraco.Core.dll`
+* **Namespace:** `Umbraco.Cms.Core.Services`
+* **Assembly:** `Umbraco.Core.dll`
 
 All samples in this document will require references to the following dll:
 
@@ -18,6 +18,7 @@ using Umbraco.Cms.Core.Services;
 ```
 
 For Razor views:
+
 ```csharp
 @using Umbraco.Cms.Core.Services
 ```

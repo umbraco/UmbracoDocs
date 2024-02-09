@@ -12,16 +12,17 @@ It's possible to add a label to use with the color.
 
 ## Data Type Definition Example
 
-![Color Picker Data Type Definition](../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Color-Picker-DataType-v10.png)
+![Color Picker Data Type Definition](../built-in-property-editors/images/Color-Picker-DataType-v10.png)
 
 ## Content Example
 
-![Color Picker Content](../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Color-Picker-Content-v8.png)
+![Color Picker Content](../built-in-property-editors/images/Color-Picker-Content-v8.png)
 
 ## Example with Modelsbuilder
 
 ```csharp
 @{
+    // Model has a property called "Color" which holds a Color Picker editor
     var hexColor = Model.Color;
     // Define the label if you've included it
     String colorLabel = Model.Color.Label;
@@ -38,6 +39,7 @@ It's possible to add a label to use with the color.
 ```csharp
 @using Umbraco.Cms.Core.PropertyEditors.ValueConverters
 @{
+    // Model has a property called "Color" which holds a Color Picker editor
     var hexColor = Model.Value("Color");
     // Define the label if you've included it
     var colorLabel = Model.Value<ColorPickerValueConverter.PickedColor>("Color").Label;

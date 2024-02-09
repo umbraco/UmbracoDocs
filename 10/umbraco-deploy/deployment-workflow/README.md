@@ -1,6 +1,4 @@
 ---
-
-
 meta.Title: Deployments in Umbraco Deploy
 description: A description of the proper workflow when working with Umbraco Deploy
 ---
@@ -13,7 +11,7 @@ Umbraco Deploy uses a deployment model that relies on Git and Umbraco Deploy cor
 If your project contains a Staging environment, deployments will be made from Development to Staging and then from Staging to Live.
 {% endhint %}
 
-![Left to right model](../../../11/umbraco-deploy/deployment-workflow/images/left-to-right.png)
+![Left to right model](<../../../umbraco-cloud/deployment/images/left-to-right (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
 
 ## Deployment Approach
 
@@ -44,6 +42,18 @@ Transferring and restoring content and media is the same whether you are working
 {% embed url="https://www.youtube.com/embed/poRzuBB11pc?rel=0" %}
 Umbraco Deploy - Content transfer and deploy
 {% endembed %}
+
+### Import and Export
+
+Another approach for transferring content and schema between environments is to use import and export. In one environment, you can export selected content, a tree, or the whole workspace to a .zip file. There are options to include related media files, schema and code files such as templates and stylesheets.
+
+That .zip file can then be uploaded into a new environment, where it will be validated and then processed to update Umbraco.
+
+As part of the import process, we provide hooks to allow for migrations of the imported artifacts (like data types) and property data. This should allow you to migrate your Umbraco data from one Umbraco major version to a newer one.
+
+We recommend using the content and media backoffice transfer options for day-to-day editorial activities. Import and export is intended more for larger transfer options, project upgrades, or one-off tasks when setting up new environments.
+
+Read more about the [import and export feature](import-export.md).
 
 ## Deploy Dashboard
 

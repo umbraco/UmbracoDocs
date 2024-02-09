@@ -13,24 +13,23 @@ using Microsoft.AspNetCore.Mvc.ViewEngines;
 using Umbraco.Cms.Core.Web;
 using Microsoft.AspNetCore.Mvc;
 
-namespace UmbracoProject.Controller
+namespace UmbracoProject.Controller;
+
+public class HomePageController : RenderController
 {
-    public class HomePageController : RenderController
+
+    public HomePageController(ILogger<RenderController> logger, ICompositeViewEngine compositeViewEngine, IUmbracoContextAccessor umbracoContextAccessor)
+    : base(logger, compositeViewEngine, umbracoContextAccessor)
     {
+    }
+    public override IActionResult Index()
+    {
+        return CurrentTemplate(CurrentPage);
+    }
 
-        public HomePageController(ILogger<RenderController> logger, ICompositeViewEngine compositeViewEngine, IUmbracoContextAccessor umbracoContextAccessor)
-        : base(logger, compositeViewEngine, umbracoContextAccessor)
-        {
-        }
-        public override IActionResult Index()
-        {
-            return CurrentTemplate(CurrentPage);
-        }
-
-        public IActionResult HomePage()
-        {
-            return CurrentTemplate(CurrentPage);
-        }
+    public IActionResult HomePage()
+    {
+        return CurrentTemplate(CurrentPage);
     }
 }
 ```

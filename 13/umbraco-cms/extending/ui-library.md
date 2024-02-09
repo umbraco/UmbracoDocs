@@ -36,7 +36,7 @@ If you are installing a component via npm, there are two ways to import it:
 2.  To build on top of the components functionality, you can extend its class:
 
     ```sql
-    import { UUIButtonElement } from 
+    import { UUIButtonElement } from
     '@umbraco-ui/uui-button/lib/uui-button.element';
     ```
 

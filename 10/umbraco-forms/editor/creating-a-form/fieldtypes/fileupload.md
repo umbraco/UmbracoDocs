@@ -4,7 +4,7 @@ The File Upload field allows the users to upload a file along with the Form on y
 
 In this article, you will find details about the configuration options you have for the File Upload field.
 
-![fileupload](../../../../../11/umbraco-forms/editor/creating-a-form/fieldtypes/images/fileupload-types.png)
+![fileupload](images/fileupload-types.png)
 
 ## Predefined allowed File Types
 

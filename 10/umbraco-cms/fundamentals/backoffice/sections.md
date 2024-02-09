@@ -19,7 +19,7 @@ There are eight default sections that come with Umbraco:
 The Content section contains the content of the website. Content is displayed as nodes in the content tree. Nodes can also show content state:
 
 * Grayed out nodes have not been published
-* <img src="images/has-unpublished-version.svg" alt="" data-size="line"> Nodes have unpublished versions (but are currently published)
+* <img src="images/has-unpublished-version (1).svg" alt="" data-size="line"> Nodes have unpublished versions (but are currently published)
 * <img src="images/protected.svg" alt="" data-size="line"> Nodes are protected from the public (can only be accessed by a logged in Member)
 * <img src="images/locked.svg" alt="" data-size="line"> Nodes are currently locked/non-deletable
 * <img src="images/is-container.svg" alt="" data-size="line"> Nodes are containers (a List View for example)

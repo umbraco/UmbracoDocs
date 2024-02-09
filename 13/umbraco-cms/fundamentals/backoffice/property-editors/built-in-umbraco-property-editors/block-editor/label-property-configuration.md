@@ -20,10 +20,10 @@ As well as the [default AngularJS filters](https://docs.angularjs.org/api/ng/fil
 | ncRichText                                                                                         | Strips HTML                                             | Richtext editor             |                                                                                                                                                                                                               |
 | mediaItemResolver                                                                                  | Retrieves a Media Item object                           | Media Picker                |                                                                                                                                                                                                               |
 | [limitTo](https://docs.angularjs.org/api/ng/filter/limitTo)                                        | AngularJS native truncate                               | String                      | n: maximum length of the string                                                                                                                                                                               |
-| [truncate](https://apidocs.umbraco.com/v12/ui/#/api/umbraco.filters.filter:truncate)               | Umbraco's richer truncate function                      | String                      | <p>wordwise: boolean to indicate whether to truncate a string mid-word or not<br>max: maximum length of the string<br>tail (optional): string to indicate a truncated string, "<code>…</code>" by default</p> |
-| [umbWordLimit](https://apidocs.umbraco.com/v12/ui/#/api/umbraco.filters.filter:umbWordLimit)       | Truncates to a number of words (rather than characters) | String                      | n: maximum number of words in string                                                                                                                                                                          |
-| [umbCmsTitleCase](https://apidocs.umbraco.com/v12/ui/#/api/umbraco.filters.filter:umbCmsTitleCase) | Converts a string to title case                         | String                      |                                                                                                                                                                                                               |
-| [umbCmsJoinArray](https://apidocs.umbraco.com/v12/ui/#/api/umbraco.filters.filter:umbCmsJoinArray) | Joins an array into one string                          | Array (of string or object) | <p>separator: string used to join values together, e.g. "<code>,</code> "<br>prop (optional): string key indicating which property to join when used on an array of objects</p>                               |
+| [truncate](https://apidocs.umbraco.com/v13/ui/#/api/umbraco.filters.filter:truncate)               | Umbraco's richer truncate function                      | String                      | <p>wordwise: boolean to indicate whether to truncate a string mid-word or not<br>max: maximum length of the string<br>tail (optional): string to indicate a truncated string, "<code>…</code>" by default</p> |
+| [umbWordLimit](https://apidocs.umbraco.com/v13/ui/#/api/umbraco.filters.filter:umbWordLimit)       | Truncates to a number of words (rather than characters) | String                      | n: maximum number of words in string                                                                                                                                                                          |
+| [umbCmsTitleCase](https://apidocs.umbraco.com/v13/ui/#/api/umbraco.filters.filter:umbCmsTitleCase) | Converts a string to title case                         | String                      |                                                                                                                                                                                                               |
+| [umbCmsJoinArray](https://apidocs.umbraco.com/v13/ui/#/api/umbraco.filters.filter:umbCmsJoinArray) | Joins an array into one string                          | Array (of string or object) | <p>separator: string used to join values together, e.g. "<code>,</code> "<br>prop (optional): string key indicating which property to join when used on an array of objects</p>                               |
 
 ### Example: mediaItemResolver
 
@@ -47,9 +47,14 @@ The `ncNodeName` value expects a UDI like `umb://media/c7a4526c6b324665a0475b3e7
 
 ### Custom filters
 
-If the filters do not suit your needs, you can create custom filters by creating a plugin in `App_Plugins` and adding a filter module.
+If the filters do not suit your needs, you can create custom filters by creating a plugin in `App_Plugins` and adding a filter module. You can see an example below:
 
-An example `package.manifest` file is:
+{% hint style="warning" %}
+If you do not have an `/App_Plugins` folder, you can create it at the root of your project.
+{% endhint %}
+
+1. Create a plugin by adding a folder inside `App_Plugins` called `MyFilters`
+2. Inside the `MyFilters` folder add a `package.manifest` file containing:
 
 ```json
 {
@@ -62,7 +67,7 @@ An example `package.manifest` file is:
 }
 ```
 
-With `myFilter.filter.js` containing:
+3. Add a `myFilter.filter.js` file containing:
 
 ```javascript
 angular.module("umbraco.filters").filter("myFilter", function () {
@@ -72,6 +77,8 @@ angular.module("umbraco.filters").filter("myFilter", function () {
   }
 });
 ```
+
+4. Implement a [block editor](README.md) of your choice. When adding a label add `{{ myFilter }}` which is the property alias of the element type. The `myFilter` property has a `textstring` editor. When adding the content, the block editor will then display the data that you input.
 
 ## Special variables
 

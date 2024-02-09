@@ -63,9 +63,9 @@ export class MyExtensionCondition extends UmbBaseController implements UmbExtens
 
 	constructor(args: UmbConditionControllerArguments<MyConditionConfig>) {
 		super(args.host);
-		// This condition aproves after 10 seconds
+		// This condition approves after 10 seconds
 		setTimeout(() => {
-			this.permitted = strue;
+			this.permitted = true;
 			args.onChange();
 		}, 10000);
 	}

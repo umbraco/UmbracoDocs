@@ -72,24 +72,23 @@ using System.Collections.Generic;
 using Umbraco.Core.Deploy;
 using Umbraco.Core.Models;
 
-namespace valueconnector.Core.Controllers
+namespace valueconnector.Core.Controllers;
+
+public class BadMediaValueConnector : IValueConnector
 {
-    public class BadMediaValueConnector : IValueConnector
+    public BadMediaValueConnector()
     {
-        public BadMediaValueConnector()
-        {
-        }
-        public IEnumerable<string> PropertyEditorAliases => new[] {"BadMediaPicker"};
+    }
+    public IEnumerable<string> PropertyEditorAliases => new[] {"BadMediaPicker"};
 
-        public string ToArtifact(object value, PropertyType propertyType, ICollection<ArtifactDependency> dependencies)
-        {
-            return value.ToString();
-        }
+    public string ToArtifact(object value, PropertyType propertyType, ICollection<ArtifactDependency> dependencies)
+    {
+        return value.ToString();
+    }
 
-        public object FromArtifact(string value, PropertyType propertyType, object currentValue)
-        {
-            return currentValue;
-        }
+    public object FromArtifact(string value, PropertyType propertyType, object currentValue)
+    {
+        return currentValue;
     }
 }
 ```
@@ -252,59 +251,58 @@ using Umbraco.Core.Logging;
 using Umbraco.Core.Models;
 using Umbraco.Core.Services;
 
-namespace valueconnector.Core.Controllers
+namespace valueconnector.Core.Controllers;
+
+public class BadMediaValueConnector : IValueConnector
 {
-    public class BadMediaValueConnector : IValueConnector
+    private readonly IEntityService _entityService;
+    private readonly ILogger _logger;
+    public BadMediaValueConnector(IEntityService entityService, ILogger logger)
     {
-        private readonly IEntityService _entityService;
-        private readonly ILogger _logger;
-        public BadMediaValueConnector(IEntityService entityService, ILogger logger)
-        {
-            _entityService = entityService;
-            _logger = logger;
-        }
-        public IEnumerable<string> PropertyEditorAliases => new[] {"BadMediaPicker"};
+        _entityService = entityService;
+        _logger = logger;
+    }
+    public IEnumerable<string> PropertyEditorAliases => new[] {"BadMediaPicker"};
 
-        public string ToArtifact(object value, PropertyType propertyType, ICollection<ArtifactDependency> dependencies)
-        {
-            var svalue = value as string;
-            if (string.IsNullOrWhiteSpace(svalue))
-                return null;
-
-            if (!int.TryParse(svalue, out var intvalue))
-                return null;
-
-            var getKeyAttempt = _entityService.GetKey(intvalue, UmbracoObjectTypes.Media);
-
-            if (getKeyAttempt.Success)
-            {
-                var udi = new GuidUdi(Constants.UdiEntityType.Media, getKeyAttempt.Result);
-                dependencies.Add(new ArtifactDependency(udi, false, ArtifactDependencyMode.Exist));
-
-                return udi.ToString();
-            }
-            else
-            {
-                _logger.Debug<BadMediaValueConnector>($"Couldn't convert integer value #{intvalue} to UDI");
-            }
-
+    public string ToArtifact(object value, PropertyType propertyType, ICollection<ArtifactDependency> dependencies)
+    {
+        var svalue = value as string;
+        if (string.IsNullOrWhiteSpace(svalue))
             return null;
-        }
 
-        public object FromArtifact(string value, PropertyType propertyType, object currentValue)
+        if (!int.TryParse(svalue, out var intvalue))
+            return null;
+
+        var getKeyAttempt = _entityService.GetKey(intvalue, UmbracoObjectTypes.Media);
+
+        if (getKeyAttempt.Success)
         {
-            if (string.IsNullOrWhiteSpace(value))
-                return null;
+            var udi = new GuidUdi(Constants.UdiEntityType.Media, getKeyAttempt.Result);
+            dependencies.Add(new ArtifactDependency(udi, false, ArtifactDependencyMode.Exist));
 
-            if (!GuidUdi.TryParse(value, out var udi) || udi.Guid == Guid.Empty)
-                return null;
-
-            var getIdAttempt = _entityService.GetId(udi.Guid, UmbracoObjectTypes.Media);
-
-            if (!getIdAttempt.Success) return null;
-
-            return getIdAttempt.Result.ToString();
+            return udi.ToString();
         }
+        else
+        {
+            _logger.Debug<BadMediaValueConnector>($"Couldn't convert integer value #{intvalue} to UDI");
+        }
+
+        return null;
+    }
+
+    public object FromArtifact(string value, PropertyType propertyType, object currentValue)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+            return null;
+
+        if (!GuidUdi.TryParse(value, out var udi) || udi.Guid == Guid.Empty)
+            return null;
+
+        var getIdAttempt = _entityService.GetId(udi.Guid, UmbracoObjectTypes.Media);
+
+        if (!getIdAttempt.Success) return null;
+
+        return getIdAttempt.Result.ToString();
     }
 }
 ```

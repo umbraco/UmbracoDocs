@@ -32,6 +32,7 @@
   * [Bundle](extending/extension-types/bundle.md)
   * [Conditions](extending/extension-types/conditions.md)
   * [Entry Point](extending/extension-types/entry-point.md)
+  * [Workspace Context](extending/extension-types/workspace-context.md)
 * [UI Library](extending/ui-library.md)
 * [Umbraco Element](extending/umbraco-element/README.md)
   * [Controllers](extending/umbraco-element/controllers/README.md)

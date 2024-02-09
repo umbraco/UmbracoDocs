@@ -114,15 +114,15 @@ angular.module("umbraco")
 ```json
 {
  "javascript": [
-        "~/App_Plugins/Suggestions/suggestion.controller.js",
-        "~/App_Plugins/Suggestions/notification.controller.js"
+        "/App_Plugins/Suggestions/suggestion.controller.js",
+        "/App_Plugins/Suggestions/notification.controller.js"
     ]
 }
 ```
 
 ## Creating custom Notification View and Controller
 
-We will add 2 files to the /App\_Plugins/Suggestions/ folder:
+We will add 2 files to the `/App_Plugins/Suggestions/` folder:
 
 * `notification.html`
 * `notification.controller.js`

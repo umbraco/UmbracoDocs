@@ -1,5 +1,5 @@
 ---
-description: "Information on the security settings section"
+description: Information on the security settings section
 ---
 
 # Security Settings
@@ -38,7 +38,7 @@ A full configuration with all default values can be seen here:
       },
       "UserDefaultLockoutTimeInMinutes": 43200,
       "MemberDefaultLockoutTimeInMinutes": 43200,
-      "AllowConcurrentLogins": true
+      "AllowConcurrentLogins": false
     }
   }
 }

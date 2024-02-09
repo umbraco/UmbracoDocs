@@ -40,7 +40,7 @@ public class ProductsController : UmbracoApiController
 }
 ```
 
-The `AuthorizationPolicies` has a [series of other options](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Web.Common.Authorization.AuthorizationPolicies.html) you can set. An example is `UserBelongsToUserGroupInRequest`. By using this policy, you can check if the current incoming request of the user is in a specific backoffice User Group.
+The `AuthorizationPolicies` has a [series of other options](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Web.Common.Authorization.AuthorizationPolicies.html) you can set. An example is `UserBelongsToUserGroupInRequest`. By using this policy, you can check if the current incoming request of the user is in a specific backoffice User Group.
 
 **Example:**
 

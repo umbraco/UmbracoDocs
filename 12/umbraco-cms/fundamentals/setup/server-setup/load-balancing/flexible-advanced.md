@@ -31,7 +31,7 @@ public class SubscriberServerRoleAccessor : IServerRoleAccessor
 }
 ```
 
-then you'll need to replace the default `IServerRoleAccessor` for the your custom registrars. You'll can do this by using the `SetServerRegistrar()` extension method on `IUmbracoBuilder` from a [Composer](../../../../implementation/composing.md) or directly in your `startup.cs`.
+then you'll need to replace the default `IServerRoleAccessor` for the your custom registrars. You'll can do this by using the `SetServerRegistrar()` extension method on `IUmbracoBuilder` from a [Composer](../../../../implementation/composing.md).
 
 ```csharp
 // This should be executed on your single `SchedulingPublisher` server

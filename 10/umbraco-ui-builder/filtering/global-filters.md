@@ -10,7 +10,7 @@ If you want to work with a subset of data within a given collection then this is
 
 Applying a global filter is controlled via the [collections](../collections/overview.md) configuration.
 
-### **SetFilter(Lambda whereClauseExression) : CollectionConfigBuilder&lt;TEntityType&gt;**
+### **SetFilter(Lambda whereClauseExpression) : CollectionConfigBuilder&lt;TEntityType&gt;**
 
 Sets the filter **where clause** expression. Expression must be a `boolean` expression.
 

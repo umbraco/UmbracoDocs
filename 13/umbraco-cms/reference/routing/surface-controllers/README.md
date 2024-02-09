@@ -47,25 +47,24 @@ using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Infrastructure.Persistence;
 using Umbraco.Cms.Web.Website.Controllers;
 
-namespace RoutingDocs.Controllers
-{
-    public class MyController : SurfaceController
-    {
-        public MyController(
-            IUmbracoContextAccessor umbracoContextAccessor,
-            IUmbracoDatabaseFactory databaseFactory,
-            ServiceContext services,
-            AppCaches appCaches,
-            IProfilingLogger profilingLogger,
-            IPublishedUrlProvider publishedUrlProvider)
-            : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
-        {
-        }
+namespace RoutingDocs.Controllers;
 
-        public IActionResult Index()
-        {
-            return Content("Hello world");
-        }
+public class MyController : SurfaceController
+{
+    public MyController(
+        IUmbracoContextAccessor umbracoContextAccessor,
+        IUmbracoDatabaseFactory databaseFactory,
+        ServiceContext services,
+        AppCaches appCaches,
+        IProfilingLogger profilingLogger,
+        IPublishedUrlProvider publishedUrlProvider)
+        : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+    {
+    }
+
+    public IActionResult Index()
+    {
+        return Content("Hello world");
     }
 }
 ```
@@ -101,26 +100,25 @@ using Umbraco.Cms.Infrastructure.Persistence;
 using Umbraco.Cms.Web.Common.Attributes;
 using Umbraco.Cms.Web.Website.Controllers;
 
-namespace SurfaceControllerPackage
-{
-    [PluginController("SurfaceControllerPackage")]
-    public class MyController : SurfaceController
-    {
-        public MyController(
-            IUmbracoContextAccessor umbracoContextAccessor,
-            IUmbracoDatabaseFactory databaseFactory,
-            ServiceContext services,
-            AppCaches appCaches,
-            IProfilingLogger profilingLogger,
-            IPublishedUrlProvider publishedUrlProvider)
-            : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
-        {
-        }
+namespace SurfaceControllerPackage;
 
-        public IActionResult Index()
-        {
-            return Content("Hello world");
-        }
+[PluginController("SurfaceControllerPackage")]
+public class MyController : SurfaceController
+{
+    public MyController(
+        IUmbracoContextAccessor umbracoContextAccessor,
+        IUmbracoDatabaseFactory databaseFactory,
+        ServiceContext services,
+        AppCaches appCaches,
+        IProfilingLogger profilingLogger,
+        IPublishedUrlProvider publishedUrlProvider)
+        : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+    {
+    }
+
+    public IActionResult Index()
+    {
+        return Content("Hello world");
     }
 }
 ```
@@ -147,27 +145,26 @@ The controller itself should not be placed in the App_Plugins folder, the App_Pl
 If you only want a surface controller action to be available when it's used within an Umbraco form and not from the auto-routed URL, you can add the `[ValidateUmbracoFormRouteString]` attribute to the action method. This can be especially useful for plugin based controllers, as this makes sure the actions can only be activated from a form whenever it's used within the website.
 
 ```csharp
-namespace RoutingDocs.Controllers
-{
-    public class MyController : SurfaceController
-    {
-        public MyController(
-            IUmbracoContextAccessor umbracoContextAccessor,
-            IUmbracoDatabaseFactory databaseFactory,
-            ServiceContext services,
-            AppCaches appCaches,
-            IProfilingLogger profilingLogger,
-            IPublishedUrlProvider publishedUrlProvider)
-            : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
-        {
-        }
+namespace RoutingDocs.Controllers;
 
-        [HttpPost]
-        [ValidateUmbracoFormRouteString]
-        public IActionResult HandleSubmit()
-        {
-            return RedirectToCurrentUmbracoPage();
-        }
+public class MyController : SurfaceController
+{
+    public MyController(
+        IUmbracoContextAccessor umbracoContextAccessor,
+        IUmbracoDatabaseFactory databaseFactory,
+        ServiceContext services,
+        AppCaches appCaches,
+        IProfilingLogger profilingLogger,
+        IPublishedUrlProvider publishedUrlProvider)
+        : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+    {
+    }
+
+    [HttpPost]
+    [ValidateUmbracoFormRouteString]
+    public IActionResult HandleSubmit()
+    {
+        return RedirectToCurrentUmbracoPage();
     }
 }
 ```

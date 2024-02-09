@@ -10,7 +10,7 @@ The **Block Grid** property editor enables editors to layout their content in th
 
 When testing out the property editor, you can use a set of predefined Blocks. The option will only be possible when there are no other Data Types using the Block Grid property editor.
 
-<figure><img src="../../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/Install-Sample-Configuration.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../built-in-property-editors/block-editor/images/Install-Sample-Configuration.png" alt=""><figcaption></figcaption></figure>
 
 * Create a new **Data Type**.
 * Select the **Block Grid** as the **Property editor**.
@@ -31,7 +31,7 @@ To set up the Block Grid property editor, follow these steps:
 
 You will see the configuration options for a Block Grid property editor as shown below:
 
-![Block Grid - Data Type Configuration](../../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockGridEditor\_Configuration.png)
+![Block Grid - Data Type Configuration](../../built-in-property-editors/block-editor/images/BlockGridEditor\_Configuration.png)
 
 The Data Type editor allows you to configure the following properties:
 
@@ -49,7 +49,7 @@ Block Types are based on [**Element Types**](../../../../data/defining-content/#
 
 Once you have added an Element Type as a Block Type on your Block Grid Data Type you have the option to configure it.
 
-![Block Grid - Data Type Block Configuration](../../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockGridEditor\_DataType\_Blocks.png)
+![Block Grid - Data Type Block Configuration](../../built-in-property-editors/block-editor/images/BlockGridEditor\_DataType\_Blocks.png)
 
 [Examples and more details about configuring the Label property](label-property-configuration.md)
 
@@ -126,11 +126,11 @@ To scale an Area, click and drag the scale-button in the bottom-right corner of 
 * **Grid Columns for Areas** - Overwrites the amount of columns used for the Area grid.
 * **Areas** - Determines whether the Block can be created inside Areas of other Blocks.
 
-![Block Grid - Areas](../../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockGridEditor\_Areas.png)
+![Block Grid - Areas](../../built-in-property-editors/block-editor/images/BlockGridEditor\_Areas.png)
 
 ### Area configuration
 
-![Block Grid - Area Configuration](../../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockGridEditor\_AreasConfiguration.png)
+![Block Grid - Area Configuration](../../built-in-property-editors/block-editor/images/BlockGridEditor\_AreasConfiguration.png)
 
 * **Alias** - The alias is used to identify this Area. It is being printed by `GetBlockGridHTML()` and used as name for the Area slot in Custom Views. The alias is also available for CSS Selectors to target the HTML-Element representing an Area.
 * **Create Button Label** - Overwrites the Create Button Label of the Area.
@@ -157,25 +157,25 @@ Notice that any styling of a Block is scoped. This means that the default backof
 
 When viewing a **Block Grid** property editor in the **Content** section for the first time, you will be presented with the option to **Add content**.
 
-![Block Grid - Add Content](../../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockGridEditor\_AddContent.png)
+![Block Grid - Add Content](../../built-in-property-editors/block-editor/images/BlockGridEditor\_AddContent.png)
 
 Clicking the **Add content** button opens up the **Block Catalogue**.
 
-![Block Grid - Setup](../../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockGridEditor\_BlockPicker.png)
+![Block Grid - Setup](../../built-in-property-editors/block-editor/images/BlockGridEditor\_BlockPicker.png)
 
 The Block Catalogue looks different depending on the amount of available Blocks and their catalogue appearance.
 
-![Block Grid - example setup](../../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockGridEditor\_BlockPicker\_exsetup.png)
+![Block Grid - example setup](../../built-in-property-editors/block-editor/images/BlockGridEditor\_BlockPicker\_exsetup.png)
 
 Click the Block Type you wish to create and a new Block will appear in the layout.
 
 More Blocks can be added to the layout by clicking the Add content button. Alternatively, use the Add content button that appears on hover to add new Blocks between, besides, or above the existing Blocks.
 
-![Block Grid - Add Content Inline](../../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockGridEditor\_AddContentInline.png)
+![Block Grid - Add Content Inline](../../built-in-property-editors/block-editor/images/BlockGridEditor\_AddContentInline.png)
 
 To delete a Block, click the trash icon which appears on the mouse hover.
 
-![Block Grid - Delete Content](../../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockGridEditor\_DeleteContent.png)
+![Block Grid - Delete Content](../../built-in-property-editors/block-editor/images/BlockGridEditor\_DeleteContent.png)
 
 ## Sorting Blocks
 
@@ -183,7 +183,7 @@ Blocks can be rearranged using the click and drag feature. Move them up or down 
 
 Moving a Block from one Area to another is done in the same way. If a Block is not allowed in the given position, the area will display a red color and not allow the new position.
 
-![Block Grid - Sorting Blocks](../../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/Sorting\_BlockGrid\_Blocks.gif)
+![Block Grid - Sorting Blocks](../../built-in-property-editors/block-editor/images/Sorting\_BlockGrid\_Blocks.gif)
 
 ## Scaling Blocks
 
@@ -191,7 +191,7 @@ If a Block has multiple size options it can be scaled via the UI. This appears i
 
 The Block is resized using a click-and-drag feature. Moving the mouse will change the size to the size options closest to the mouse pointer.
 
-<figure><img src="../../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/resizing-block-block-grid.gif" alt=""><figcaption><p>Scale blocks in the grid by dragging from the bottom-right corner.</p></figcaption></figure>
+<figure><img src="../../built-in-property-editors/block-editor/images/resizing-block-block-grid.gif" alt=""><figcaption><p>Scale blocks in the grid by dragging from the bottom-right corner.</p></figcaption></figure>
 
 ## Rendering Block Grid Content
 
@@ -461,7 +461,19 @@ Building Custom Views for Block representations in Backoffice is based on the sa
 
 ## Creating a Block Grid programmatically
 
-In this example, we will be creating "spot" Blocks in a Block Grid on a content item. The spot content consists of a _title_ and a _text_ field, while the spot settings contains a _featured_ checkbox.
+In this example, we will be creating content programmatically for a "spot" Blocks in a Block Grid.
+1. On a document type add a property called **blockGrid**.
+2. Then add as editor **Block Grid**. 
+3. In the Block Grid add a new block and click to **Create new Element Type**
+4. Name this element type **spotElement** with the following properties:
+- a property called **title** with the editor of **Textstring**
+- a property called **text** with the editor of **Textstring**
+5. Then on the **Settings model** click to add a new Setting. 
+6. Then click to **Create new Element Type**.
+7. Name this element type **spotSettings** with the following properties:
+- a property called **featured** with the editor of **True/false**.
+
+![Block Grid - Block Configuration](../../../images/BlockEditorConfigurationProgramatically.png)
 
 The raw input data for the spots looks like this:
 
@@ -530,7 +542,7 @@ For each item in the raw data, we need to create:
 
 All `contentData` and `layoutData` entries need their own unique `Udi` as well as the ID (key) of their corresponding Element Types. In this sample, we only have one Element Type for content (`spotElementType`) and one for settings (`spotSettingsType`). In a real life scenario, there could be any number of Element Type combinations.
 
-First and foremost, we need models to transform the raw data into Block Grid compatible JSON:
+8. First and foremost, we need models to transform the raw data into Block Grid compatible JSON. Create a class called **Model.cs** containing the following:
 
 {% code title="Models.cs" lineNumbers="true" %}
 ```csharp
@@ -627,7 +639,7 @@ public class BlockGridElementData
 ```
 {% endcode %}
 
-By injecting [ContentService](../../../../../reference/management/services/contentservice/) and [ContentTypeService](../../../../../reference/management/services/contenttypeservice/) into an API controller, we can transform the raw data into Block Grid JSON. It can then be saved to the target content item:
+9. By injecting [ContentService](../../../../../reference/management/services/contentservice/) and [ContentTypeService](../../../../../reference/management/services/contenttypeservice/) into an API controller, we can transform the raw data into Block Grid JSON. It can then be saved to the target content item. Create a class called **BlockGridTestController.cs** containing the following:
 
 {% code title="BlockGridTestController.cs" lineNumbers="true" %}
 ```csharp
@@ -721,3 +733,11 @@ public class BlockGridTestController : UmbracoApiController
 }
 ```
 {% endcode %}
+
+For the above code `IContent? content = _contentService.GetById(1203);` change the id with your content node that is using the Block Grid.
+
+10. In order to test this implementation, run the project and add `/umbraco/api/blockgridtest/create` after your domain name. If the result shows as **Saved** then check your content node and you will see the 2 spotElement contents.
+
+![Block Grid - Result](../../../images/BlockEditorContentCreated.png)
+
+_This can also be tested via Postman as well if preffered._

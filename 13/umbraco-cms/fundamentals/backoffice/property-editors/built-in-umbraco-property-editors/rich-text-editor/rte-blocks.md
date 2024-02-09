@@ -10,9 +10,7 @@ To set up your Block List Editor property, create a new _Data Type_ and select *
 
 Then you will see the configuration options for a Block List as shown below.
 
-
-
-<figure><img src="../../../../../.gitbook/assets/rte-data-type-block-fields.jpg" alt=""><figcaption><p>Rich Text Editor - Data Type Block Fields</p></figcaption></figure>
+![Rich Text Editor - Data Type Block Fields](images/rte-data-type-block-fields.jpg)
 
 The Data Type editor allows you to configure the following properties:
 
@@ -25,7 +23,7 @@ Block Types are **Element Types** that need to be created before you can start c
 
 Once you add an Element Type as a Block Type on your Rich Text Editor Data Type you will have options to configure it further.
 
-<figure><img src="../../../../../.gitbook/assets/rte-data-type-block-type-editor.jpeg" alt=""><figcaption><p>Rich Text Editor - Data Type Block Configuration</p></figcaption></figure>
+![Rich Text Editor - Data Type Block Configuration](images/rte-data-type-block-type-editor.jpeg)
 
 Each Block has a set of properties that are optional to configure. They are described below.
 
@@ -33,7 +31,7 @@ Each Block has a set of properties that are optional to configure. They are desc
 
 By configuring the properties in the group you can customize the user experience for your content editors when they work with the blocks in the Content section.
 
-* **Label** - Define a label for the appearance of the Block in the editor. The label can use AngularJS template string syntax to display values of properties. [Examples and more details about labels and AngularJS templates.](label-property-configuration.md)
+* **Label** - Define a label for the appearance of the Block in the editor. The label can use AngularJS template string syntax to display values of properties. [Examples and more details about labels and AngularJS templates.](../block-editor/label-property-configuration.md)
 * **Display Inline with text** - When turned on the Block Element will be able to stay in line with text or other elements. If not the Block will stay on its own line.
 * **Custom view** - Overwrite the AngularJS view for the block presentation in the Content editor. Use this to make a more visual presentation of the block or even make your own editing experience by adding your own AngularJS controller to the view.
 * **Custom stylesheet** - Pick your own stylesheet to be used for this block in the Content editor. By adding a stylesheet the styling of this block will become scoped. Meaning that backoffice styles are no longer present for the view of this block.
@@ -96,4 +94,4 @@ The following example shows a Partial View of a Block with `MyBlockType` as Cont
 
 ## Build a Custom Backoffice View
 
-Building Custom Views for Block representations in Backoffice is the same for all Block Editors. [Read about building a Custom View for Blocks here](build-custom-view-for-blocks.md)
+Building Custom Views for Block representations in Backoffice is the same for all Block Editors. [Read about building a Custom View for Blocks here](../block-editor/build-custom-view-for-blocks.md)

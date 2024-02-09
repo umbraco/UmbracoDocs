@@ -42,6 +42,20 @@ The intention is to be able to make available details such as IDs, aliases and p
 
 <details>
 
+<summary>Date</summary>
+
+**ID:** `F8B4C3B8-AF28-11DE-9DD8-EF5956D89593`
+
+**Alias:** `date`
+
+**Settings:**
+
+* `Placeholder`
+
+</details>
+
+<details>
+
 <summary>Dropdown List</summary>
 
 **ID:** `0DD29D42-A6A5-11DE-A2F2-222256D89593`

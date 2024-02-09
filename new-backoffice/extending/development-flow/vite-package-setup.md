@@ -30,15 +30,15 @@ npm install
 
 The last thing we need to install now is our Backoffice package. You can install the package using the following command:
 
-```bash
-npm install -D @umbraco-cms/backoffice@14.0.0--preview003
-```
-
-{% hint style="info" %}
-The `--preview003` is required to install the correct version of the package. You have to specify the specific version. Otherwise you will get the latest version of the package, which may not be compatible with the version of Umbraco you are using.
+{% hint style="warning" %}
+The Backoffice package currently relies on the older Lit 2.8 and the Vite template uses Lit 3. Because of this mismatch, you need to override the Lit version in the Backoffice package by installing with the `--force` option. This will be fixed in a future version when the Backoffice has been upgraded to Lit 3.
 {% endhint %}
 
-This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice.
+```bash
+npm install --force --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@14.0.0--preview004
+```
+
+This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `--preview004` is the version of the package, which will change as new versions are released.
 
 {% hint style="warning" %}
 If you see any errors during this process, make sure that you have the right tools installed (Node, .NET, and so on). Also, make sure you have followed the steps on how to [Setup Your Development Environment](./).
@@ -100,7 +100,7 @@ The example below indicates where in the structure this change should be impleme
 
 ### Umbraco Package declaration
 
-Declare your package to Umbraco, via a file called `umbraco-package.json.` This should be added at the root of your package.
+Declare your package to Umbraco via a file called `umbraco-package.json.` This should be added at the root of your package.
 
 This example declares a Dashboard as part of your Package, using the Vite example element.
 
@@ -134,7 +134,7 @@ This example declares a Dashboard as part of your Package, using the Vite exampl
 {% hint style="info" %}
 Umbraco needs the name of the element that will render as default when our dashboard loads. This is specified in the manifest as the `elementName`. Another approach would be to define your default element in the TS code.
 
-To do this, you should add `default` to your `MyElement` class in the `my-element.js` file like so 
+To do this, you should add `default` to your `MyElement` class in the `my-element.js` file like so
 
 ```ts
 export default class MyElement extends LitElement {

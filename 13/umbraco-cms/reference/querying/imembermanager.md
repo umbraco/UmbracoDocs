@@ -4,7 +4,7 @@ description: "Using the IMemberManager"
 
 # IMemberManager
 
-`IMemberManager` is an user manager interface for accessing member data in the form of `MemberIdentityUser` and converting it to `IPublishedContent`. `IMemberManager` has a variety of methods that are useful in views and controllers. For the list of methods, see the [IMemberManager Interface API Documentation](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Security.IMemberManager.html#methods).
+`IMemberManager` is an user manager interface for accessing member data in the form of `MemberIdentityUser` and converting it to `IPublishedContent`. `IMemberManager` has a variety of methods that are useful in views and controllers. For the list of methods, see the [IMemberManager Interface API Documentation](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.Security.IMemberManager.html#methods).
 
 ## How to reference IMemberManager
 
@@ -160,7 +160,7 @@ else
 
 ### IsMemberAuthorizedAsync(IEnumerable memberTypes, IEnumerable memberGroups, IEnumerable memberIds)
 
-Checks if the current member is authorized for content protected by types, groups or specific members. For instance you can use this method to check if the current logged in member is authorized for pages only available to the VIP member group like so:
+Checks if the current member is authorized for content protected by types, groups or specific members. For instance, you can use this method to check if the current logged in member is authorized. This is particularly useful for pages only available to the VIP member group, like so:
 
 ```
 @{
@@ -209,7 +209,7 @@ Returns a `Task<bool>` specifying if the currently logged in member has access t
 
 ### ValidateCredentialsAsync(string username, string password)
 
-Validates that a user's credentials are correct without actually logging them in.
+Validates that a user's credentials are correct without logging them in.
 
 ```
 @{

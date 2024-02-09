@@ -8,11 +8,11 @@ Pretty much like the name indicates this Data type enables editors to choose fro
 
 ## Data Type Definition Example
 
-![Radiobutton List Data Type Definition](../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/RadioButton-List-DataType-v10.png)
+![Radiobutton List Data Type Definition](../built-in-property-editors/images/RadioButton-List-DataType-v10.png)
 
 ## Content Example
 
-![Radiobutton List Content](../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/RadioButton-List-Content-v8.png)
+![Radiobutton List Content](../built-in-property-editors/images/RadioButton-List-Content-v8.png)
 
 ## MVC View Example
 

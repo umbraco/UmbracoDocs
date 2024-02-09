@@ -1,15 +1,10 @@
----
-
-
----
-
 # Customizing the "Links" box
 
 For a content item, Umbraco will show a **Links** box within the **Info** content app. By default, this box will show one or more links to content item.
 
-![image](../../../../../11/umbraco-cms/reference/notifications/editormodel-notifications/images/properties-info-app.png)
+![image](images/properties-info-app.png)
 
-With the `SendingContentNotification` event, we can manipulate the links in the `Urls` property - e.g. replace it with some custom links (although a URL provider would be more suitable):
+With the `SendingContentNotification` event, we can manipulate the links in the `Urls` property. This could be by replacing it with custom links although a URL provider would be more suitable:
 
 ```C#
 public void Handle(SendingContentNotification notification)

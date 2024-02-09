@@ -2,36 +2,38 @@
 
 This guide is for solving collision errors on your Umbraco Cloud project. Use this guide when you encounter an error like this:
 
-    Some artifacts collide on unique identifiers.
-    This means that they have different Udis, yet
-    they refer to the same unique Umbraco object
-    and therefore cannot be processed.
-    ---------------------------------------------
-    Collisions for entity type "document-type":
-    Collisions for unique identifier "home":
-        UdaFile: ~/deploy/revision/document-type__4c04d968448747d791b5eae254afc7ec.uda
-        UdaFile: ~/deploy/revision/document-type__f848c577f02b4ee5aea84f87458072a4.uda
+```
+Some artifacts collide on unique identifiers.
+This means that they have different Udis, yet
+they refer to the same unique Umbraco object
+and therefore cannot be processed.
+---------------------------------------------
+Collisions for entity type "document-type":
+Collisions for unique identifier "home":
+    UdaFile: ~/deploy/revision/document-type__4c04d968448747d791b5eae254afc7ec.uda
+    UdaFile: ~/deploy/revision/document-type__f848c577f02b4ee5aea84f87458072a4.uda
+```
 
 The error means that two (or more) `.uda` files have been created for the same entity. The `.uda` files contain schema data for each of your entities e.g Document Types, Templates, Macros, Dictionary Items, Data types, etc (for a full list of these entities see [What are UDA files?](../../set-up/power-tools/generating-uda-files.md#what-are-uda-files)).
 
 In this example, there are two `.uda` files that share the same alias which leads to a conflict: it is impossible for Deploy to know which of the files to use, so it gives up and sends an error back.
 
 {% hint style="info" %}
-Does the collision error involve **Dictionary items**?
-Use this guide instead: [Troubleshooting duplicate dictionary items](duplicate-dictionary-items.md)
+Does the collision error involve **Dictionary items**? Use this guide instead: [Troubleshooting duplicate dictionary items](duplicate-dictionary-items.md)
 {% endhint %}
 
 You can run into an error like this on all of your Cloud environments. Sometimes you might also run into it, on a local clone of your project. This guide will use an example, where two files are colliding on a Development and a Live environment.
 
 ## Table of content
 
-* [Video tutorial](#video-tutorial)
-* [Using the error message](#using-the-error-message)
-* [Deciding which file you want to use](#deciding-which-file-you-want-to-use)
-* [Getting your environments in sync](#getting-your-environments-in-sync)
+* [Video tutorial](structure-error.md#video-tutorial)
+* [Using the error message](structure-error.md#using-the-error-message)
+* [Deciding which file you want to use](structure-error.md#deciding-which-file-you-want-to-use)
+* [Getting your environments in sync](structure-error.md#getting-your-environments-in-sync)
 
 {% hint style="info" %}
-When you have two or more Cloud environments, we recommend that you never create or make schema changes directly on the Live or Staging environments. You should work with schema only in your Development environment or even better, your local clone of the project.{% endhint %}
+When you have two or more Cloud environments, we recommend that you never create or make schema changes directly on the Live or Staging environments. You should work with schema only in your Development environment or even better, your local clone of the project.
+{% endhint %}
 
 ## Video tutorial
 
@@ -51,41 +53,51 @@ In order to fix this problem, you will have to decide which of the colliding ent
 
 Let's use the example from the beginning of this article, where two `.uda` files for the Document Type "home" are colliding.
 
-    Some artifacts collide on unique identifiers.
-    This means that they have different Udis, yet
-    they refer to the same unique Umbraco object
-    and therefore cannot be processed.
-    ---------------------------------------------
-    Collisions for entity type "document-type":
-    Collisions for unique identifier "home":
-        UdaFile: ~/deploy/revision/document-type__4c04d968448747d791b5eae254afc7ec.uda
-        UdaFile: ~/deploy/revision/document-type__f848c577f02b4ee5aea84f87458072a4.uda
+```
+Some artifacts collide on unique identifiers.
+This means that they have different Udis, yet
+they refer to the same unique Umbraco object
+and therefore cannot be processed.
+---------------------------------------------
+Collisions for entity type "document-type":
+Collisions for unique identifier "home":
+    UdaFile: ~/deploy/revision/document-type__4c04d968448747d791b5eae254afc7ec.uda
+    UdaFile: ~/deploy/revision/document-type__f848c577f02b4ee5aea84f87458072a4.uda
+```
 
 For this example, it’s decided that the Document Type currently used on the Live environment is the one we want to use going forward.
 
 In order to figure out which of the two colliding `.uda` files are the one for the Document Type being used on the Live environment follow these steps:
 
-1. Connect to the database of the Live environment using the [connect to your cloud database locally tutorial](../../databases/cloud-database.md#connecting-to-your-cloud-database-locally)
-2. Run one of the following queries on the database, depending on the type you see the error with
+1. Connect to the database of the Live environment using the [connect to your cloud database locally tutorial](../../databases/cloud-database/#connecting-to-your-cloud-database-locally)
+2.  Run one of the following queries on the database, depending on the type you see the error with
+
     * Run the following query, if the error states that the error is a `Collisions for entity type "document-type"`:
+
     ```sql
     SELECT uniqueId
     FROM umbracoNode
     WHERE id = (SELECT nodeId FROM cmsContentType WHERE alias = '[The alias from the error message eg. home]')
     ```
+
     * Run the following query, if the error states that the error is a `Collisions for entity type "template"`:
+
     ```sql
     SELECT uniqueId
     FROM umbracoNode
     WHERE id = (SELECT nodeId FROM cmsTemplate WHERE alias = '[The alias from the error message eg. home]')
     ```
+
     * Run the following query, if the error states that the error is a `Collisions for entity type "macro"`:
+
     ```sql
     SELECT uniqueId
     FROM cmsMacro
     WHERE macroAlias = '[The alias from the error message eg. home]'
     ```
+
     * Run the following query, if the error states that the error is a `Collisions for entity type "data-type"`:
+
     ```sql
     SELECT uniqueId
     FROM umbracoNode
@@ -102,16 +114,16 @@ We strongly recommend that you resolve this locally since this will ensure that 
 {% endhint %}
 
 1. Clone down the Development environment to your local machine
-2. Run the project locally and verify that you get the same extraction error as on your Cloud environments (*HINT: look for a `deploy-failed` marker in your local `/deploy ` folder*)
-    * When you run the project, you should see an error message in the browser once the site starts to build
+2. Run the project locally and verify that you get the same extraction error as on your Cloud environments (_HINT: look for a `deploy-failed` marker in your local `/deploy` folder_)
+   * When you run the project, you should see an error message in the browser once the site starts to build
 3. Remove the wrong `.uda` file (It's the one we did not find in the live environment just before) from the `/deploy/revision` folder - you will not be able to see the Document Type in the backoffice because of the failed extraction.
 4. Open the Umbraco Backoffice and go to Settings -> Deploy to see the Deploy dashboard.
 5. Select `Schema deployment from data files` in the dropdown.
 6. You will now see a `deploy-complete` marker in your local `/deploy` folder
 
 {% hint style="info" %}
-**Does the error mention Templates?**
-You might experience that `.uda` files for a template are colliding. When this is the case, we recommend that you copy the content of the `cshtml` file associated with the template you want to keep on your project - this way you'll have a backup of the code you want to use.{% endhint %}
+**Does the error mention Templates?** You might experience that `.uda` files for a template are colliding. When this is the case, we recommend that you copy the content of the `cshtml` file associated with the template you want to keep on your project - this way you'll have a backup of the code you want to use.
+{% endhint %}
 
 ## Getting your environments in sync
 
@@ -123,6 +135,6 @@ When the push from local to the Development environment has been completed, refr
 
 ### Does your Development still have the red indicator?
 
-Sometimes you might need to run another schema deployment on your Cloud environment after deploying to turn your environment *green*. To do this, follow the steps described in the [schema deployment guide](../../deployment/deploy-operations/deploy-schema.md).
+Sometimes you might need to run another schema deployment on your Cloud environment after deploying to turn your environment _green_. To do this, follow the steps described in the [schema deployment guide](../../deployment/deploy-operations/deploy-schema.md).
 
 The final step is to deploy the pending changes from Development to your Live environment, to ensure everything is completely in sync.

@@ -8,7 +8,6 @@ description: >-
 
 In this article you can learn more about the common terms and concepts that are used throughout the Umbraco backoffice.
 
-<!--
 ## [Login screen](login.md)
 
 When you go to the backoffice for the first time, you're presented with the login screen.
@@ -74,15 +73,12 @@ Every Document Type has properties. These are the fields that the content editor
 Each Document Type property has a Data Type that defines the type of input of that property. Data Types reference a Property Editor and are configured in the Umbraco backoffice in the Settings section. A Data Type can be something basic (text string, number, true/false) or more complex (multi-node tree picker, image cropper, etc).
 
 [Read more about Data Types](../data/data-types/)
--->
 
 ### [Property Editors](property-editors/)
 
 A property editor is a view used by Data Types to insert content into Umbraco. An example of a property editor is the _Textarea_. It's possible to have many Textarea Data Types with different settings that all use the Textarea property editor.
 
 [Read more about Property Editors](property-editors/)
-
-<!--
 
 ## [Media](../data/creating-media/)
 
@@ -135,5 +131,3 @@ A user is someone who has access to the **Umbraco backoffice** and is not to be 
 ## [Content Templates](content-templates.md)
 
 Content Templates provide a blueprint for content nodes based on an existing node.
-
--->

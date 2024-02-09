@@ -79,86 +79,85 @@ using Umbraco.Cms.Core.Macros;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Extensions;
 
-namespace Umbraco.Cms.Core.HealthChecks.Checks.Configuration
+namespace Umbraco.Cms.Core.HealthChecks.Checks.Configuration;
+
+/// <summary>
+/// Health check for the recommended production configuration for Macro Errors.
+/// </summary>
+[HealthCheck(
+    "D0F7599E-9B2A-4D9E-9883-81C7EDC5616F",
+    "Macro errors",
+    Description = "Checks to make sure macro errors are not set to throw a YSOD (yellow screen of death), which would prevent certain or all pages from loading completely.",
+    Group = "Configuration")]
+public class MacroErrorsCheck : AbstractSettingsCheck
 {
+    private readonly ILocalizedTextService _textService;
+    private readonly IOptionsMonitor<ContentSettings> _contentSettings;
+
     /// <summary>
-    /// Health check for the recommended production configuration for Macro Errors.
+    /// Initializes a new instance of the <see cref="MacroErrorsCheck"/> class.
     /// </summary>
-    [HealthCheck(
-        "D0F7599E-9B2A-4D9E-9883-81C7EDC5616F",
-        "Macro errors",
-        Description = "Checks to make sure macro errors are not set to throw a YSOD (yellow screen of death), which would prevent certain or all pages from loading completely.",
-        Group = "Configuration")]
-    public class MacroErrorsCheck : AbstractSettingsCheck
+    public MacroErrorsCheck(
+        ILocalizedTextService textService,
+        IOptionsMonitor<ContentSettings> contentSettings)
+        : base(textService)
     {
-        private readonly ILocalizedTextService _textService;
-        private readonly IOptionsMonitor<ContentSettings> _contentSettings;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MacroErrorsCheck"/> class.
-        /// </summary>
-        public MacroErrorsCheck(
-            ILocalizedTextService textService,
-            IOptionsMonitor<ContentSettings> contentSettings)
-            : base(textService)
-        {
-            _textService = textService;
-            _contentSettings = contentSettings;
-        }
-
-        /// <inheritdoc/>
-        public override string ReadMoreLink => Constants.HealthChecks.DocumentationLinks.Configuration.MacroErrorsCheck;
-
-        /// <inheritdoc/>
-        public override ValueComparisonType ValueComparisonType => ValueComparisonType.ShouldEqual;
-
-        /// <inheritdoc/>
-        public override string ItemPath => Constants.Configuration.ConfigContentMacroErrors;
-
-        /// <summary>
-        /// Gets the values to compare against.
-        /// </summary>
-        public override IEnumerable<AcceptableConfiguration> Values
-        {
-            get
-            {
-                var values = new List<AcceptableConfiguration>
-                {
-                    new AcceptableConfiguration
-                    {
-                        IsRecommended = true,
-                        Value = MacroErrorBehaviour.Inline.ToString()
-                    },
-                    new AcceptableConfiguration
-                    {
-                        IsRecommended = false,
-                        Value = MacroErrorBehaviour.Silent.ToString()
-                    }
-                };
-
-                return values;
-            }
-        }
-
-        /// <inheritdoc/>
-        public override string CurrentValue => _contentSettings.CurrentValue.MacroErrors.ToString();
-
-        /// <summary>
-        /// Gets the message for when the check has succeeded.
-        /// </summary>
-        public override string CheckSuccessMessage =>
-            _textService.Localize(
-                "healthcheck","macroErrorModeCheckSuccessMessage",
-                new[] { CurrentValue, Values.First(v => v.IsRecommended).Value });
-
-        /// <summary>
-        /// Gets the message for when the check has failed.
-        /// </summary>
-        public override string CheckErrorMessage =>
-            _textService.Localize(
-                "healthcheck","macroErrorModeCheckErrorMessage",
-                new[] { CurrentValue, Values.First(v => v.IsRecommended).Value });
+        _textService = textService;
+        _contentSettings = contentSettings;
     }
+
+    /// <inheritdoc/>
+    public override string ReadMoreLink => Constants.HealthChecks.DocumentationLinks.Configuration.MacroErrorsCheck;
+
+    /// <inheritdoc/>
+    public override ValueComparisonType ValueComparisonType => ValueComparisonType.ShouldEqual;
+
+    /// <inheritdoc/>
+    public override string ItemPath => Constants.Configuration.ConfigContentMacroErrors;
+
+    /// <summary>
+    /// Gets the values to compare against.
+    /// </summary>
+    public override IEnumerable<AcceptableConfiguration> Values
+    {
+        get
+        {
+            var values = new List<AcceptableConfiguration>
+            {
+                new AcceptableConfiguration
+                {
+                    IsRecommended = true,
+                    Value = MacroErrorBehaviour.Inline.ToString()
+                },
+                new AcceptableConfiguration
+                {
+                    IsRecommended = false,
+                    Value = MacroErrorBehaviour.Silent.ToString()
+                }
+            };
+
+            return values;
+        }
+    }
+
+    /// <inheritdoc/>
+    public override string CurrentValue => _contentSettings.CurrentValue.MacroErrors.ToString();
+
+    /// <summary>
+    /// Gets the message for when the check has succeeded.
+    /// </summary>
+    public override string CheckSuccessMessage =>
+        _textService.Localize(
+            "healthcheck","macroErrorModeCheckSuccessMessage",
+            new[] { CurrentValue, Values.First(v => v.IsRecommended).Value });
+
+    /// <summary>
+    /// Gets the message for when the check has failed.
+    /// </summary>
+    public override string CheckErrorMessage =>
+        _textService.Localize(
+            "healthcheck","macroErrorModeCheckErrorMessage",
+            new[] { CurrentValue, Values.First(v => v.IsRecommended).Value });
 }
 ```
 
@@ -295,90 +294,89 @@ using Umbraco.Cms.Core.Models.Email;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Extensions;
 
-namespace Umbraco.Cms.Core.HealthChecks.NotificationMethods
+namespace Umbraco.Cms.Core.HealthChecks.NotificationMethods;
+
+[HealthCheckNotificationMethod("email")]
+public class EmailNotificationMethod : NotificationMethodBase
 {
-    [HealthCheckNotificationMethod("email")]
-    public class EmailNotificationMethod : NotificationMethodBase
+    private readonly ILocalizedTextService? _textService;
+    private readonly IHostingEnvironment? _hostingEnvironment;
+    private readonly IEmailSender? _emailSender;
+    private readonly IMarkdownToHtmlConverter? _markdownToHtmlConverter;
+    private ContentSettings? _contentSettings;
+
+    public EmailNotificationMethod(
+        ILocalizedTextService textService,
+        IHostingEnvironment hostingEnvironment,
+        IEmailSender emailSender,
+        IOptionsMonitor<HealthChecksSettings> healthChecksSettings,
+        IOptionsMonitor<ContentSettings> contentSettings,
+        IMarkdownToHtmlConverter markdownToHtmlConverter)
+        : base(healthChecksSettings)
     {
-        private readonly ILocalizedTextService? _textService;
-        private readonly IHostingEnvironment? _hostingEnvironment;
-        private readonly IEmailSender? _emailSender;
-        private readonly IMarkdownToHtmlConverter? _markdownToHtmlConverter;
-        private ContentSettings? _contentSettings;
-
-        public EmailNotificationMethod(
-            ILocalizedTextService textService,
-            IHostingEnvironment hostingEnvironment,
-            IEmailSender emailSender,
-            IOptionsMonitor<HealthChecksSettings> healthChecksSettings,
-            IOptionsMonitor<ContentSettings> contentSettings,
-            IMarkdownToHtmlConverter markdownToHtmlConverter)
-            : base(healthChecksSettings)
+        var recipientEmail = Settings?["RecipientEmail"];
+        if (string.IsNullOrWhiteSpace(recipientEmail))
         {
-            var recipientEmail = Settings?["RecipientEmail"];
-            if (string.IsNullOrWhiteSpace(recipientEmail))
-            {
-                Enabled = false;
-                return;
-            }
-
-            RecipientEmail = recipientEmail;
-
-            _textService = textService ?? throw new ArgumentNullException(nameof(textService));
-            _hostingEnvironment = hostingEnvironment;
-            _emailSender = emailSender;
-            _markdownToHtmlConverter = markdownToHtmlConverter;
-            _contentSettings = contentSettings.CurrentValue ?? throw new ArgumentNullException(nameof(contentSettings));
-
-            contentSettings.OnChange(x => _contentSettings = x);
+            Enabled = false;
+            return;
         }
 
-        public string? RecipientEmail { get; }
+        RecipientEmail = recipientEmail;
 
-        public override async Task SendAsync(HealthCheckResults results)
+        _textService = textService ?? throw new ArgumentNullException(nameof(textService));
+        _hostingEnvironment = hostingEnvironment;
+        _emailSender = emailSender;
+        _markdownToHtmlConverter = markdownToHtmlConverter;
+        _contentSettings = contentSettings.CurrentValue ?? throw new ArgumentNullException(nameof(contentSettings));
+
+        contentSettings.OnChange(x => _contentSettings = x);
+    }
+
+    public string? RecipientEmail { get; }
+
+    public override async Task SendAsync(HealthCheckResults results)
+    {
+        if (ShouldSend(results) == false)
         {
-            if (ShouldSend(results) == false)
-            {
-                return;
-            }
-
-            if (string.IsNullOrEmpty(RecipientEmail))
-            {
-                return;
-            }
-
-            var message = _textService?.Localize("healthcheck","scheduledHealthCheckEmailBody", new[]
-            {
-                DateTime.Now.ToShortDateString(),
-                DateTime.Now.ToShortTimeString(),
-                _markdownToHtmlConverter?.ToHtml(results, Verbosity)
-            });
-
-            // Include the Umbraco Application URL host in the message subject so that
-            // you can identify the site that these results are for.
-            var host = _hostingEnvironment?.ApplicationMainUrl?.ToString();
-
-            var subject = _textService?.Localize("healthcheck","scheduledHealthCheckEmailSubject", new[] { host });
-
-
-            var mailMessage = CreateMailMessage(subject, message);
-            Task? task = _emailSender?.SendAsync(mailMessage, Constants.Web.EmailTypes.HealthCheck);
-            if (task is not null)
-            {
-                await task;
-            }
+            return;
         }
 
-        private EmailMessage CreateMailMessage(string? subject, string? message)
+        if (string.IsNullOrEmpty(RecipientEmail))
         {
-            var to = _contentSettings?.Notifications.Email;
-
-            if (string.IsNullOrWhiteSpace(subject))
-                subject = "Umbraco Health Check Status";
-
-            var isBodyHtml = message.IsNullOrWhiteSpace() == false && message!.Contains("<") && message.Contains("</");
-            return new EmailMessage(to, RecipientEmail, subject, message, isBodyHtml);
+            return;
         }
+
+        var message = _textService?.Localize("healthcheck","scheduledHealthCheckEmailBody", new[]
+        {
+            DateTime.Now.ToShortDateString(),
+            DateTime.Now.ToShortTimeString(),
+            _markdownToHtmlConverter?.ToHtml(results, Verbosity)
+        });
+
+        // Include the Umbraco Application URL host in the message subject so that
+        // you can identify the site that these results are for.
+        var host = _hostingEnvironment?.ApplicationMainUrl?.ToString();
+
+        var subject = _textService?.Localize("healthcheck","scheduledHealthCheckEmailSubject", new[] { host });
+
+
+        var mailMessage = CreateMailMessage(subject, message);
+        Task? task = _emailSender?.SendAsync(mailMessage, Constants.Web.EmailTypes.HealthCheck);
+        if (task is not null)
+        {
+            await task;
+        }
+    }
+
+    private EmailMessage CreateMailMessage(string? subject, string? message)
+    {
+        var to = _contentSettings?.Notifications.Email;
+
+        if (string.IsNullOrWhiteSpace(subject))
+            subject = "Umbraco Health Check Status";
+
+        var isBodyHtml = message.IsNullOrWhiteSpace() == false && message!.Contains("<") && message.Contains("</");
+        return new EmailMessage(to, RecipientEmail, subject, message, isBodyHtml);
     }
 }
 ```

@@ -56,7 +56,8 @@ For illustration purposes, the following structure represents the full set of op
         "StoreRecordsLocally": true,
         "AutocompleteAttribute": "",
         "DaysToRetainSubmittedRecordsFor": 0,
-        "DaysToRetainApprovedRecordsFor": 0
+        "DaysToRetainApprovedRecordsFor": 0,
+        "DaysToRetainRejectedRecordsFor": 0
       },
       "RemoveProvidedEmailTemplate": false,
       "RemoveProvidedFormTemplates": false,
@@ -83,7 +84,10 @@ For illustration purposes, the following structure represents the full set of op
       "DisableRecordIndexing": false,
       "EnableFormsApi": false,
       "EnableRecordingOfIpWithFormSubmission": "true",
-      "UseSemanticFieldsetRendering": false
+      "UseSemanticFieldsetRendering": false,
+      "DisableClientSideValidationDependencyCheck": false,
+      "DisableRelationTracking": false,
+      "TrackRenderedFormsStorageMethod": "TempData"
     },
     "Security": {
       "DisallowedFileUploadExtensions": "config,exe,dll,asp,aspx",
@@ -111,6 +115,9 @@ For illustration purposes, the following structure represents the full set of op
       },
       "RichText": {
         "DataTypeId": "ca90c950-0aff-4e72-b976-a30b1ac57dad"
+      },
+      "TitleAndDescription": {
+        "AllowUnsafeHtmlRendering": true
       }
     }
   }
@@ -284,6 +291,10 @@ If set to a positive number, a date value calculated by taking away the number o
 
 Applies as per `DaysToRetainSubmittedRecordsFor` but for records in the 'approved' state.
 
+#### DaysToRetainRejectedRecordsFor
+
+Applies as per `DaysToRetainSubmittedRecordsFor` but for records in the 'rejected' state.
+
 ## Package options configuration
 
 ### IgnoreWorkFlowsOnEdit
@@ -374,6 +385,32 @@ Although this semantic markup is preferred, it could be a presentational breakin
 
 In Umbraco 13 this configuration option will be removed and the semantic rendering made the only option.
 
+### DisableClientSideValidationDependencyCheck
+
+When a form is rendered on the front-end website, a check is run to ensure that client-side validation framework is available and registered.
+
+You can disable this check by setting the value of this configuration key to `true`.
+
+If you are rendering your forms dependency scripts using the `async` attribute, you will need to disable this check.
+
+### DisableRelationTracking
+
+Forms will by default track relations between forms and the content pages they are used on. This allows editors to see where forms are being used in their Umbraco website.
+
+If you would like to disable this feature, you can set the value of this setting to `false`.
+
+## TrackRenderedFormsStorageMethod
+
+Forms tracks the forms rendered on a page in order that the associated scripts can be placed in a different location within the HTML. Usually this is used to [render the scripts](../rendering-scripts.md)) at the bottom of the page.
+
+By default, `TempData` is used as the storage mechanism for this tracking.
+
+This can cause some issues when applying a Content Delivery Network (CDN) to your website, and as such an alternative is available using `HttpContext.Items`.
+
+To switch to this storage mechanism change the value of this setting from the default of `TempData` to `HttpContextItems`.
+
+We expect `HttpContextItems` to be the default option from Forms 14 onwards.
+
 ## Security configuration
 
 ### DisallowedFileUploadExtensions
@@ -461,3 +498,15 @@ Valid options are `www.google.com` (the default) or `www.recaptcha.net`. You may
 #### DataTypeId
 
 Sets the Data Type Guid to use to obtain the configuration for the rich text field type. If the setting is absent, the value of the default rich text Data Type created by Umbraco on a new install is used.
+
+### Title and description field type configuration
+
+#### AllowUnsafeHtmlRendering
+
+When using the "title and description" field type, editors can provide HTML in the "description" field and have that rendered on the website.
+
+As a tightened security measure, you can set this value to `false` which will ensure HTML is no longer rendered.
+
+As some installations may be relying on HTML rendering, to preserve backward compatible behavior the default value of this setting is `true`.
+
+We expect to make the default value of this option `false` from Forms 14 onwards.

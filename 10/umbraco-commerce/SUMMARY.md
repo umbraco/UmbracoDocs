@@ -1,26 +1,36 @@
 # Table of contents
 
-* [What is Umbraco Commerce?](README.md)
+* [Umbraco Commerce Documentation](README.md)
+* [Release Notes](release-notes.md)
+
+## Commerce Products
+
 * [Commerce Packages](https://docs.umbraco.com/umbraco-commerce-packages)
 * [Commerce Payment Providers](https://docs.umbraco.com/umbraco-commerce-payment-providers)
-* [Release Notes](release-notes.md)
+* [Commerce Shipping Providers](https://docs.umbraco.com/umbraco-commerce-shipping-providers)
+
+## Installation
+
+* [Installing Umbraco Commerce](installation/install.md)
+* [Licensing](installation/licensing-model.md)
+
+## Upgrading
+
+* [Upgrading Umbraco Commerce](upgrading/upgrade.md)
+* [Version Specific Upgrade Notes](upgrading/version-specific-upgrades.md)
+* [Migrate from Vendr to Umbraco Commerce](upgrading/migrate-from-vendr-to-umbraco-commerce/README.md)
+  * [Migrate Umbraco Commerce Checkout](upgrading/migrate-from-vendr-to-umbraco-commerce/migrate-umbraco-commerce-checkout.md)
+  * [Migrate custom Payment Providers](upgrading/migrate-from-vendr-to-umbraco-commerce/migrate-custom-payment-providers.md)
 
 ## Getting Started
 
 * [Introduction](getting-started/introduction.md)
-* [Installation](getting-started/installation/README.md)
-* [Upgrading](getting-started/upgrading/README.md)
-  * [Version Specific Upgrade Notes](getting-started/upgrading/version-specific-upgrades.md)
 * [Umbraco Configuration](getting-started/umbraco-configuration.md)
 * [User Interface](getting-started/user-interface.md)
-* [Licensing](getting-started/licensing-model.md)
 
 ## How-To Guides
 
 * [Overview](how-to-guides/overview.md)
-* [Migrate from Vendr to Umbraco Commerce](how-to-guides/migrate-from-vendr-to-umbraco-commerce/README.md)
-  * [Migrate Umbraco Commerce Checkout](how-to-guides/migrate-from-vendr-to-umbraco-commerce/migrate-umbraco-commerce-checkout.md)
-  * [Migrate custom Payment Providers](how-to-guides/migrate-from-vendr-to-umbraco-commerce/migrate-custom-payment-providers.md)
 * [Configure SQLite support](how-to-guides/configure-sqlite-support.md)
 * [Limit Order Line Quantity](how-to-guides/limit-orderline-quantity.md)
 * [Use an Alternative Database for Umbraco Commerce Tables](how-to-guides/use-an-alternative-database-for-umbraco-commerce-tables.md)

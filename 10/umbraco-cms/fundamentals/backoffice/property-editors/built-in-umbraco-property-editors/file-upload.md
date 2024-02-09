@@ -16,11 +16,11 @@ Find the full documentation for the property in the [Media Picker](media-picker-
 
 ## Data Type Definition Example
 
-![Data Type Definition Example](../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/definition-example-v10.png)
+![Data Type Definition Example](../built-in-property-editors/images/definition-example-v10.png)
 
 ## Content Example
 
-![Content Example Empty](../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/content-example-empty.png) ![Content Example](../../../../../../11/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/File-Upload-content-example.png)
+![Content Example Empty](../built-in-property-editors/images/content-example-empty.png) ![Content Example](../built-in-property-editors/images/File-Upload-content-example.png)
 
 In code, the property is a string, which references the location of the file.
 

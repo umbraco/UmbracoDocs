@@ -8,7 +8,7 @@ meta.Title: Content Apps
 
 They will appear after the default "Design" and "Settings" apps when editing a form in the backoffice:
 
-![Umbraco Forms Content App](../../../11/umbraco-forms/developer/images/content-app.png)
+![Umbraco Forms Content App](<images/content-app (1) (1).png>)
 
 A content app such as the following would display only in the forms section:
 

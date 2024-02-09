@@ -30,7 +30,7 @@ To read about SourceLink, you can take a look at the following websites:
 * Install the latest Umbraco CMS 9.0+ Nuget Packages from Nuget.org
 * Create an IComposer or similar code in your new site/SLN that you want to F11/Step Into. [Example Code Snippet to try with SourceLink](debugging.md#example-code-snippet-to-try-with-sourcelink)
 * Prompt will appear and the original source code file is fetched directly from GitHub. ![Visual Studio 2019 SourceLink dialog](../../../10/umbraco-cms/reference/images/VS19-sourcelink-prompt.png)
-* How far can you `F11` aka `Step Into` and go down the rabbit hole of the Umbraco CMS source code?
+* How far can you `F11`, also known as `Step Into`, and go down the rabbit hole of the Umbraco CMS source code?
 
 ### Example Code Snippet to try with SourceLink
 
@@ -40,41 +40,40 @@ using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Extensions;
 
-namespace WebApplication23
+namespace WebApplication23;
+
+public class MyComposer : IComposer
 {
-    public class MyComposer : IComposer
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
+        builder.Components().Append<MyComponent>();
+    }
+}
+
+public class MyComponent : IComponent
+{
+    private IContentService _contentService;
+
+    public MyComponent(IContentService contentService)
+    {
+        _contentService = contentService;
+    }
+
+    public void Initialize()
+    {
+        // Add break point & F11 into me
+        var root = _contentService.GetRootContent();
+
+        foreach (var item in root)
         {
-            builder.Components().Append<MyComponent>();
+            // Add break point & F11 into me
+            var udi = item.GetUdi();
+            var foo = 5;
         }
     }
 
-    public class MyComponent : IComponent
+    public void Terminate()
     {
-        private IContentService _contentService;
-
-        public MyComponent(IContentService contentService)
-        {
-            _contentService = contentService;
-        }
-
-        public void Initialize()
-        {
-            // Add break point & F11 into me
-            var root = _contentService.GetRootContent();
-
-            foreach (var item in root)
-            {
-                // Add break point & F11 into me
-                var udi = item.GetUdi();
-                var foo = 5;
-            }
-        }
-
-        public void Terminate()
-        {
-        }
     }
 }
 ```

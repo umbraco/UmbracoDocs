@@ -26,7 +26,7 @@ You can either launch ngrok from the command line or use the steps below to crea
 2. Type the following:
 
 ```
-C:\PROGRA~1\ngrok\ngrok.exe http -host-header=rewrite localhost:61191
+C:\PROGRA~1\ngrok\ngrok.exe http --host-header=rewrite localhost:61191
 ```
 
 3. Swap the local domain/port number at the end according to the configuration of your site.

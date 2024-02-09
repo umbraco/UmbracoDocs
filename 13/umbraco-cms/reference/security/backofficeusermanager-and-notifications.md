@@ -16,20 +16,13 @@ This may be required if you want to extend the functionality of the BackOfficeUs
 You can replace the BackOfficeUserManager in the startup class by using the `SetBackOfficeUserManager` extension on the `IUmbracoBuilder`.
 
 ```csharp
-public class Startup
-{
-   ...
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddUmbraco(_env, _config)
-            .AddBackOffice()
-            .AddWebsite()
-            .AddComposers()
-            .SetBackOfficeUserManager<CustomBackOfficeUserManager>()
-            .Build();
-    }
-  ...
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .SetBackOfficeUserManager<CustomBackOfficeUserManager>()
+    .Build();
 ```
 
 You can then implement your custom `BackOfficeUserManager`, like this.
@@ -76,7 +69,7 @@ Note the constructor minimum needs to inject what is required for the base `Back
 
 ## Notifications
 
-There are [many notifications](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Web.Common.Security.BackOfficeUserManager.html) you can handle on the `BackOfficeUserManager`.
+There are [many notifications](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Web.Common.Security.BackOfficeUserManager.html) you can handle on the `BackOfficeUserManager`.
 Internally these are mainly used for auditing but there are some that allow you to customize some workflows:
 
 [comment]: <> (* `BackOfficeUserManager.SendingUserInvite`)

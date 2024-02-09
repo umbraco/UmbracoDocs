@@ -26,6 +26,20 @@ The following lists a few things to be aware of before initiating an upgrade of 
 It is necessary to run the upgrade installer on each environment of your Umbraco site. This means that you need to repeat the steps below on each of your environments in order to complete the upgrade.
 {% endhint %}
 
+## Legacy Umbraco
+
+The steps outlined in this article apply to modern Umbraco from version 10 and later versions.
+
+Are you upgrading to a minor for Umbraco 6, 7, or 8 you can find the appropriate guide below:
+
+{% content-ref url="version-specific/minor-upgrades-for-umbraco-8.md" %}
+[minor-upgrades-for-umbraco-8.md](version-specific/minor-upgrades-for-umbraco-8.md)
+{% endcontent-ref %}
+
+{% content-ref url="version-specific/minor-upgrades-for-umbraco-7.md" %}
+[minor-upgrades-for-umbraco-7.md](version-specific/minor-upgrades-for-umbraco-7.md)
+{% endcontent-ref %}
+
 ## Upgrade to a new Major
 
 You can upgrade to a new major of Umbraco CMS directly by using NuGet.
@@ -64,18 +78,24 @@ It's recommended that you upgrade the site offline and test the upgrade fully be
     b. Click **Install** to upgrade your project.
 
 {% hint style="info" %}
-If you have other packages installed such as Umbraco Forms, then before upgrading **Umbraco.CMS** you will need to upgrade the packages first. Consult the [version specific upgrade notes for Umbraco Forms](https://docs.umbraco.com/umbraco-forms/installation/version-specific) if relevant.
+If you have other packages installed such as Umbraco Forms, then before upgrading **Umbraco.CMS** you will need to upgrade the packages first. Consult the [version specific upgrade notes for Umbraco Forms](https://docs.umbraco.com/umbraco-forms/upgrading/version-specific) if relevant.
 {% endhint %}
 
-8. Make sure that your connection string has `TrustServerCertificate=True` in order to complete successfully the upgrade:
+8. Make sure that your connection string has `TrustServerCertificate=True` in order to complete the upgrade successfully:
 
 ```csharp
 "ConnectionStrings": {
-    "umbracoDbDSN": "Server=YourLocalSQLServerHere;Database=NameOfYourDatabaseHere;;User Id=NameOfYourUserHere;Password=YourPasswordHere;TrustServerCertificate=True"
+    "umbracoDbDSN": "Server=YourLocalSQLServerHere;Database=NameOfYourDatabaseHere;User Id=NameOfYourUserHere;Password=YourPasswordHere;TrustServerCertificate=True"
 }
 ```
 
-9. Restart your site in IIS, build, and run your project to finish the installation.
+9. Restart your site in IIS, then build and run your project to finish the installation.
+
+{% hint style="info" %}
+In Umbraco 13, we have moved to using the [Minimal Hosting Model](https://github.com/umbraco/Umbraco-CMS/pull/14656).&#x20;
+
+If you have added custom code to the `startup.cs` file, we recommend moving the code into a Composer after upgrading.
+{% endhint %}
 
 ## Upgrade to a new Minor
 
@@ -88,7 +108,8 @@ Add a package reference to your project by executing the `dotnet add package Umb
 Run `dotnet restore` to install the package.
 
 {% hint style="warning" %}
-If you are using SQL CE in your project you will need to run `dotnet add package Umbraco.Cms.SqlCe --version <VERSION>` too before running the `dotnet restore` command.
+For v9: If you are using SQL CE in your project you will need to run `dotnet add package Umbraco.Cms.SqlCe --version <VERSION>` before running the `dotnet restore` command.
+From v10, SQL CE has been replaced with SQLite so a `dotnet restore` should be sufficient. If this is not working then you will need to run `dotnet add package Umbraco.Cms.Persistence.Sqlite --version <VERSION>` and then `dotnet restore`.
 {% endhint %}
 
 When the command completes, open the **.csproj** file to make sure the package reference was updated:

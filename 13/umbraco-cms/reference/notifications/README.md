@@ -12,7 +12,7 @@ The notification to use depends on what you want to achieve. If you want to be a
 
 ### Notification handlers lifetime
 
-It's important to know that the handlers you create and register to receive notifications will be **transient**. This means that they will be initialized every time they receive a notification. You can therefore not rely on them having a specific state based on previous notifications. 
+It's important to know that the handlers you create and register to receive notifications will be **transient**. This means that they will be initialized every time they receive a notification. You can therefore not rely on them having a specific state based on previous notifications.
 
 As an example, you cannot do the following:
 
@@ -27,42 +27,37 @@ If you need persistence between notifications, we recommend you move that functi
 As previously mentioned, many notifications exist in pairs, with a "before" and "after" notification. There may be cases where you want to add some information to the "before" notification, which will then be available to your "after" notification handler. In order to support this, the notification "pairs" are **stateful**. This means the notifications contain a dictionary that is shared between the "before" and "after" notifications. You can add values to the dictionary, and later retrieve them like this:
 
 ```csharp
-public void Handle(TemplateSavingNotification notification)  
-{  
- notification.State["SomeKey"] = "Some Value Relevant to the \"after\" notification handler";  
-}  
-  
-  
-public void Handle(TemplateSavedNotification notification)  
-{  
-  var valueFromSaving = notification.State["SomeKey"];  
+public void Handle(TemplateSavingNotification notification)
+{
+ notification.State["SomeKey"] = "Some Value Relevant to the \"after\" notification handler";
+}
+
+
+public void Handle(TemplateSavedNotification notification)
+{
+  var valueFromSaving = notification.State["SomeKey"];
 }
 ```
 
 ### Registering notification handlers
 
-Once you've made your notification handlers, you need to register them with the `AddNotificationHandler` extension method on the `IUmbracoBuilder`. This enables them to run whenever a notification they subscribe to is published. There are two ways to do this: 
+Once you've made your notification handlers, you need to register them with the `AddNotificationHandler` extension method on the `IUmbracoBuilder`. This enables them to run whenever a notification they subscribe to is published. There are two ways to do this:
 
 1. In the **Startup** class, if you're making handlers for your site
 2. In a [**composer**](../../implementation/composing.md), if you're a package developer subscribing to notifications
 
 #### Registering notification handlers in the startup class
 
-In the Startup class, register your notification handler in the `ConfigureServices` after `AddComposers()` but before `Build()`:
+In the `Program.cs` file, register your notification handler after `AddComposers()` but before `Build()`:
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-#pragma warning disable IDE0022 // Use expression body for methods
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()             
-        .AddWebsite()
-        .AddComposers()
-        .AddNotificationHandler<ContentPublishingNotification, DontShout>()
-        .Build();
-#pragma warning restore IDE0022 // Use expression body for methods
-
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .AddNotificationHandler<ContentPublishingNotification, DontShout>()
+    .Build();
 ```
 
 The extension method takes two generic type parameters. The first, `ContentPublishingNotification`, is the notification you wish to subscribe to. The second, `DontShout`, is the class that handles the notification. This class must implement `INotificationHandler<>` with the type of notification it handles as the generic type parameter. In this case, the `DontShout` class definition looks like this:
@@ -89,15 +84,17 @@ public class DontShoutComposer : IComposer
 
 #### Registering many notification handlers
 
-You may want to subscribe to many notifications, meaning your `ConfigureServices` method or composer might become cluttered. You can avoid this by creating your own `IUmbracoBuilder` extension method for your events, keeping everything neatly wrapped up in one place, as follows:
+You may want to subscribe to many notifications, meaning your `Program.cs` file or composer might become cluttered. You can avoid this by creating your own `IUmbracoBuilder` extension method for your events, keeping everything neatly wrapped up in one place, as follows:
 
 ```csharp
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Services.Notifications;
 
-namespace MySite
+namespace MySite;
+
+public static class UmbracoBuilderNotificationExtensions
 {
-    public static class UmbracoBuilderNotificationExtensions
+    public static IUmbracoBuilder AddDontShoutNotifications(this IUmbracoBuilder builder)
     {
         public static IUmbracoBuilder AddDontShoutNotifications(this IUmbracoBuilder builder)
         {
@@ -105,28 +102,23 @@ namespace MySite
                 .AddNotificationHandler<ContentPublishingNotification, DontShout>()
                 .AddNotificationHandler<TemplateSavingNotification, DontShout>()
                 .AddNotificationHandler<MediaSavingNotification, DontShout>();
-            
+
             return builder;
         }
     }
 }
 ```
 
-You can then register all these notifications by calling `AddDontShoutNotifications` in `ConfigureServices` or your composer, just like you would `AddNotificationHandler`:
+You can then register all these notifications by calling `AddDontShoutNotifications` in the `Program.cs` file or your composer, like you would `AddNotificationHandler`:
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-#pragma warning disable IDE0022 // Use expression body for methods
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()             
-        .AddWebsite()
-        .AddComposers()
-        .AddDontShoutNotifications()
-        .Build();
-#pragma warning restore IDE0022 // Use expression body for methods
-
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .AddDontShoutNotifications()
+    .Build();
 ```
 
 Now, your handler will handle all the notifications you registered in your extension method.
@@ -159,15 +151,13 @@ When using the `INotificationAsyncHandler`, register it using the `IUmbracoBuild
 Register your notification async handler to the `IUmbracoBuilder` in the Startup class:
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()             
-        .AddWebsite()
-        .AddComposers()
-        .AddNotificationAsyncHandler<ContentDeletedNotification, ContentDeletedHandler>()
-        .Build();
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .AddNotificationAsyncHandler<ContentDeletedNotification, ContentDeletedHandler>()
+    .Build();
 ```
 
 #### Registering notification async handlers in a composer

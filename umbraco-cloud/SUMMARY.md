@@ -3,7 +3,7 @@
 * [What is Umbraco Cloud?](README.md)
 * [Frequently asked questions](frequently-asked-questions.md)
 * [Security](security.md)
-* [Sustainability Best Practices](http://127.0.0.1:5000/o/vHdmkfI8smZW50A5yIZD/s/ZOU4fHcVxqYnC8V1dry6/)
+* [Sustainability Best Practices](https://docs.umbraco.com/sustainability-best-practices/)
 
 ## Getting Started
 
@@ -45,6 +45,7 @@
     * [Configuring a CI/CD pipeline](set-up/project-settings/umbraco-cicd/samplecicdpipeline/README.md)
       * [Azure DevOps](set-up/project-settings/umbraco-cicd/samplecicdpipeline/azure-devops.md)
       * [GitHub Actions](set-up/project-settings/umbraco-cicd/samplecicdpipeline/github-actions.md)
+    * [Troubleshooting](set-up/project-settings/umbraco-cicd/Troubleshooting.md)
     * [Known Limitations and Considerations](set-up/project-settings/umbraco-cicd/KnownLimitationsAndConsiderations.md)
   * [External Services](set-up/project-settings/external-services.md)
   * [Usage](set-up/project-settings/usage.md)
@@ -90,7 +91,8 @@
 
 * [Working with databases](databases/README.md)
 * [Database backups](databases/backups.md)
-* [Database](databases/cloud-database.md)
+* [Database](databases/cloud-database/README.md)
+  * [Connecting to the Database on Mac](databases/cloud-database/connecting-to-the-database-on-mac.md)
 * [Working with a Cloud database locally](databases/local-database.md)
 
 ## Product Upgrades
@@ -128,17 +130,19 @@
   * [Extraction error: "Type not found! "](troubleshooting/deployments/type-not-found.md)
 
 ## Release Notes
-
-* [Overview 2023](release-notes/overview-2023.md)
-* [October 2023](release-notes/2023-10-releasenotes.md)
-* [September 2023](release-notes/2023-09-releasenotes.md)
-* [August 2023](release-notes/2023-08-releasenotes.md)
-* [June 2023](release-notes/2023-06-releasenotes.md)
-* [May 2023](release-notes/2023-05-releasenotes.md)
-* [April 2023](release-notes/2023-04-releasenotes.md)
-* [March 2023](release-notes/2023-03-releasenotes.md)
-* [February 2023](release-notes/2023-02-releasenotes.md)
-* [January 2023](release-notes/2023-01-releasenotes.md)
+* [Overview 2024](release-notes/overview-2024.md)
+* [January 2024](release-notes/2024-01-releasenotes.md)
+* [Overview 2023](release-notes/overview-2023/README.md)
+  * [December 2023](release-notes/overview-2023/2023-12-releasenotes.md)
+  * [October 2023](release-notes/overview-2023/2023-10-releasenotes.md)
+  * [September 2023](release-notes/overview-2023/2023-09-releasenotes.md)
+  * [August 2023](release-notes/overview-2023/2023-08-releasenotes.md)
+  * [June 2023](release-notes/overview-2023/2023-06-releasenotes.md)
+  * [May 2023](release-notes/overview-2023/2023-05-releasenotes.md)
+  * [April 2023](release-notes/overview-2023/2023-04-releasenotes.md)
+  * [March 2023](release-notes/overview-2023/2023-03-releasenotes.md)
+  * [February 2023](release-notes/overview-2023/2023-02-releasenotes.md)
+  * [January 2023](release-notes/overview-2023/2023-01-releasenotes.md)
 * [Overview 2022](release-notes/overview-2022/README.md)
   * [December 2022](release-notes/overview-2022/2022-12-20-releasenotes.md)
   * [November 2022](release-notes/overview-2022/2022-11-07-releasenotes.md)
