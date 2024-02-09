@@ -51,7 +51,7 @@ public IEnumerable<PublishedSearchResult> Search(string searchTerm)
 
 ### .Search(string term, int skip, int take, out long totalRecords)
 
-Specifying the number of records 'to skip', and the number of records 'to take' is more performant when there are lots of matching search results and there is a requirement to implement paging.
+Specifying the number of records 'to skip' and the number of records 'to take' improves performance with many matching search results. This approach is beneficial when there is a requirement to implement paging.
 
 ```csharp
 public IEnumerable<PublishedSearchResult> Search(string searchTerm, int skip = 5, int take = 10)
