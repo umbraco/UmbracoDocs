@@ -47,6 +47,7 @@
 * [Conditions](extending/conditions.md)
 * [Modals](extending/modals/README.md)
   * [Confirm Dialog](extending/modals/confirm-dialog.md)
+* [Sorting](extending/sorting.md)
 
 ## Fundamentals
 
