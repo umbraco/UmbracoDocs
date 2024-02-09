@@ -284,6 +284,196 @@ The Umbraco Heartcore GraphQL schema contains some default types, below you can 
 
 The [Property Editors](property-editors.md) page contains a list of all the Property Editors and which GraphQL types they return.
 
+### Block Grid
+
+```graphql
+type BlockGrid {
+    """
+    Items in the grid.
+    """
+    items: [BlockGridItem]!
+
+    """
+    Number of columns in the grid.
+    """
+    gridColumns: Int!
+}
+```
+
+**Query**
+
+```graphql
+{
+  contentPage {
+    blocks {
+      gridColumns
+    }
+  }
+}
+```
+
+**Output**
+
+```json
+{
+  "data": {
+    "contentPage": {
+      "blocks": {
+        "gridColumns": 12
+      }
+    }
+  }
+}
+```
+
+### Block Grid Area
+
+```graphql
+type BlockGridArea {
+    """
+    Name of the area.
+    """
+    alias: String!
+
+    """
+    Items in the area.
+    """
+    items: [BlockGridItem]!
+
+    """
+    Number of rows spanned by the area.
+    """
+    rowSpan: Int!
+
+    """
+    Number of columns spanned by the area.
+    """
+    columnSpan: Int!
+}
+```
+
+**Query**
+
+```graphql
+{
+  contentPage {
+    blocks {
+      items {
+        areas: {
+          alias
+          columnSpan
+          items {
+            title
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Output**
+
+```json
+{
+  "data": {
+    "contentPage": {
+      "blocks": {
+        "items": [{
+          "areas": [{
+            "alias": "mainArea",
+            "columnSpan": 12,
+            "items": [{
+              "title": "Essential Heartcore Tips: Volume 4"
+            }]
+          }]
+        }]
+      }
+    }
+  }
+}
+```
+
+### Block Grid Item
+
+```graphql
+type BlockGridItem {
+    """
+    The content.
+    """
+    content: Element!
+
+    """
+    The settings.
+    """
+    settings: Element
+
+    """
+    Number of rows spanned by the item.
+    """
+    rowSpan: Int!
+
+    """
+    Number of columns spanned by the item.
+    """
+    columSpan: Int!
+
+    """
+    Number of columns in child areas.
+    """
+    areaGridColumns: Int!
+
+    """
+    Number of columns in child areas.
+    """
+    areas: [BlockGridArea]
+}
+```
+
+**Query**
+
+```graphql
+{
+  contentPage {
+    blocks {
+      items: {
+        content: {
+          title
+        }
+        settings: {
+          openLinkInNewTab
+        }
+        rowSpan
+        columnSpan
+      }
+    }
+  }
+}
+```
+
+**Output**
+
+```json
+{
+  "data": {
+    "contentPage": {
+      "blocks": {
+        "items": [{
+          "content": {
+            "title": "Essential Heartcore Tips: Volume 7"
+          },
+          "settings": {
+            "openLinkInNewTab": false
+          },
+          "rowSpan": 1,
+          "columnSpan": 4
+        }]
+      }
+    }
+  }
+}
+```
+
 ### Block List Item
 
 ```graphql
