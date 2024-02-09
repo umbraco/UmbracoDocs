@@ -154,7 +154,7 @@ interface MyPublishableContext extends MyBaseContext {
     publish();
 }
 
-const MY_PUBLISHABLE_CONTEXT = new ContextToken<
+const MY_PUBLISHABLE_CONTEXT = new UmbContextToken<
 
     MyContext,
     MyPublishableContext
