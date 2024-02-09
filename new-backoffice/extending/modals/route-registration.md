@@ -20,7 +20,7 @@ this.myModalRegistration = new UmbModalRouteRegistrationController(
     });
 ```
 
-The registration holds an instance of its UmbModalHandler when the modal is active. The modal registration accepts 4 different callbacks:
+The registration holds an instance of its `UmbModalHandler` when the modal is active. The modal registration accepts 4 different callbacks:
 
 -   `onSetup` - called when the modal is opened
 -   `onSubmit` - called when the modal is submitted
