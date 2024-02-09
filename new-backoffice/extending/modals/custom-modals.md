@@ -7,7 +7,7 @@ description: >-
 
 ## Register in the extension registry
 
-The manifest
+The manifest:
 
 ```json
 {
