@@ -9,12 +9,10 @@ description: >-
 
 The Stripe payment provider uses webhooks to finalize payments. Due to this, it can be tricky to test payments locally as Mollie must have a public-facing URL to be able to notify you.
 
-You could expose your website through your network's firewall or use tools to create temporary tunnels through your network.
-Below you can find two options to create temporary tunnels through your network:
+You could expose your website through your network's firewall or use tools to create temporary tunnels through your network. Below you can find two options to create temporary tunnels through your network:
 
-- [Using Stripe CLI](using-stripe-cli)
-- [Using ngrok](using-ngrok)
-
+* [Using Stripe CLI](testing-stripe-webhooks-locally.md#using-stripe-cli)
+* [Using ngrok](testing-stripe-webhooks-locally.md#using-ngrok)
 
 ## Using Stripe CLI
 
@@ -39,9 +37,11 @@ stripe listen --forward-to {local_store_domain}/umbraco/commerce/payment/callbac
 The `{payment_method_id}` is configured as part of the Stripe [webhook configuration](../configuring-stripe.md#step-3-webhook) step.
 
 e.g.
+
 ```
 stripe listen --forward-to https://localhost:44321/umbraco/commerce/payment/callback/stripe-checkout/7fb00000-0000-0000-0000-000019094a7a/
 ```
+
 ### Step 4: Configure your Stripe test webhook signing secret
 
 When you start listening to Stripe events, the command line will give you a webhook signing secret. This should be used to set the `Test Webhook Signing Secret` setting, shown in the Umbraco [configure payment provider settings](../configuring-umbraco.md##step-2-configure-payment-provider-settings) step.
@@ -51,6 +51,7 @@ When you start listening to Stripe events, the command line will give you a webh
 With the Stripe CLI running, you can now test the site using your local dev domain. You will see any configured stripe events configured for the webhook displayed in the console window and can debug them using Visual Studio.
 
 ## Using ngrok
+
 ### Step 1: Install ngrok
 
 1. Go to the [ngrok website](https://ngrok.com/).
