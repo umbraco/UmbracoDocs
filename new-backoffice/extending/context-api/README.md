@@ -47,7 +47,7 @@ type MyContext = {
     bar: number;
 };
 
-const MY_CONTEXT = new ContextToken<MyContext>("My.Context.Token");
+const MY_CONTEXT = new UmbContextToken <MyContext>("My.Context.Token");
 ```
 
 ### **Context Token with an API Alias**
