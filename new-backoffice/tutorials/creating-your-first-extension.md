@@ -16,7 +16,7 @@ By the end of this tutorial, we will have a extension up and running with a Web 
 If you want to set up an extension with Vite, Typescript, and Lit, you can skip the section "Extension with Vanilla JavaScript".
 {% endhint %}
 
-## App\_Plugins
+## App_Plugins
 
 Extensions will go into a folder called `App_Plugins`. If you don't have this folder, you can create it at the root of your Umbraco project.
 
@@ -24,50 +24,53 @@ Extensions will go into a folder called `App_Plugins`. If you don't have this fo
 
 We consider it best practice to use at least TypeScript and some kind of build tool to write your extensions. However, since Umbraco's extension system is written entirely in JavaScript, it's possible to create extensions with vanilla JavaScript. For the sake of posterity, we will briefly go through what that looks like:
 
-* Go to the `App_Plugins` folder and create a new folder called `my-package`
-* Navigate into the folder and create a file called `umbraco-package.json`, and paste the following code. This code sets up a basic package with a dashboard extension:
+-   Go to the `App_Plugins` folder and create a new folder called `my-package`
+-   Navigate into the folder and create a file called `umbraco-package.json`, and paste the following code. This code sets up a basic package with a dashboard extension:
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
+
 ```json
 {
-	"$schema": "../../umbraco-package-schema.json",
-	"name": "My.Package",
-	"version": "0.1.0",
-	"extensions": [
-		{
-			"type": "dashboard",
-			"alias": "my.custom.dashboard",
-			"name": "My Dashboard",
-			"js": "/App_Plugins/my-package/dashboard.js",
-			"weight": -1,
-			"meta": {
-				"label": "My Dashboard",
-				"pathname": "my-dashboard"
-			},
-			"conditions": [
-				{
-					"alias": "Umb.Condition.SectionAlias",
-					"match": "Umb.Section.Content"
-				}
-			]
-		}
-	]
+    "$schema": "../../umbraco-package-schema.json",
+    "name": "My.Package",
+    "version": "0.1.0",
+    "extensions": [
+        {
+            "type": "dashboard",
+            "alias": "my.custom.dashboard",
+            "name": "My Dashboard",
+            "js": "/App_Plugins/my-package/dashboard.js",
+            "weight": -1,
+            "meta": {
+                "label": "My Dashboard",
+                "pathname": "my-dashboard"
+            },
+            "conditions": [
+                {
+                    "alias": "Umb.Condition.SectionAlias",
+                    "match": "Umb.Section.Content"
+                }
+            ]
+        }
+    ]
 }
 ```
+
 {% endcode %}
 
 {% hint style="info" %}
 Adding `$schema` to `umbraco-package.json` will give you IntelliSense for this file to help you see different options for your package.
 {% endhint %}
 
-* Next, create a new JavaScript file called `dashboard.js` and insert the following code:
+-   Next, create a new JavaScript file called `dashboard.js` and insert the following code:
 
 {% code title="dashboard.js" lineNumbers="true" %}
-```javascript
-import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
-import { UMB_NOTIFICATION_CONTEXT_TOKEN } from '@umbraco-cms/backoffice/notification';
 
-const template = document.createElement('template');
+```javascript
+import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
+import { UMB_NOTIFICATION_CONTEXT } from "@umbraco-cms/backoffice/notification";
+
+const template = document.createElement("template");
 template.innerHTML = `
   <style>
     :host {
@@ -86,28 +89,33 @@ template.innerHTML = `
 `;
 
 export default class MyDashboardElement extends UmbElementMixin(HTMLElement) {
-	/** @type {import('@umbraco-cms/backoffice/notification').UmbNotificationContext} */
-	#notificationContext;
+    /** @type {import('@umbraco-cms/backoffice/notification').UmbNotificationContext} */
+    #notificationContext;
 
-	constructor() {
-		super();
-		this.attachShadow({ mode: 'open' });
-		this.shadowRoot.appendChild(template.content.cloneNode(true));
+    constructor() {
+        super();
+        this.attachShadow({ mode: "open" });
+        this.shadowRoot.appendChild(template.content.cloneNode(true));
 
-		this.shadowRoot.getElementById('clickMe').addEventListener('click', this.onClick.bind(this));
+        this.shadowRoot
+            .getElementById("clickMe")
+            .addEventListener("click", this.onClick.bind(this));
 
-		this.consumeContext(UMB_NOTIFICATION_CONTEXT_TOKEN, (instance) => {
-			this.#notificationContext = instance;
-		});
-	}
+        this.consumeContext(UMB_NOTIFICATION_CONTEXT, (instance) => {
+            this.#notificationContext = instance;
+        });
+    }
 
-	onClick = () => {
-		this.#notificationContext?.peek('positive', { data: { headline: 'Hello' } });
-	};
+    onClick = () => {
+        this.#notificationContext?.peek("positive", {
+            data: { headline: "Hello" },
+        });
+    };
 }
 
-customElements.define('my-custom-dashboard', MyDashboardElement);
+customElements.define("my-custom-dashboard", MyDashboardElement);
 ```
+
 {% endcode %}
 
 ### Running it
@@ -168,17 +176,18 @@ Next, create a new file called `vite.config.ts` and insert the following code:
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  build: {
-    lib: {
-      entry: 'src/my-element.ts', // your web component source file
-      formats: ['es'],
+    build: {
+        lib: {
+            entry: "src/my-element.ts", // your web component source file
+            formats: ["es"],
+        },
+        outDir: "dist", // your web component will be saved in this location
+        sourcemap: true,
+        rollupOptions: {
+            external: [/^@umbraco/],
+        },
+
     },
-    outDir: 'dist', // your web component will be saved in this location
-    sourcemap: true,
-    rollupOptions: {
-      external: [/^@umbraco/],
-    },
-  },
 });
 
 ```
@@ -194,49 +203,55 @@ Navigate to `src/my-element.ts`, open the file and replace it with the following
 {% code title="src/my-element.ts" lineNumbers="true" %}
 ```typescript
 import {
-  LitElement,
-  html,
-  customElement,
-} from '@umbraco-cms/backoffice/external/lit';
-import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
-import { UMB_NOTIFICATION_CONTEXT_TOKEN } from '@umbraco-cms/backoffice/notification';
+    LitElement,
+    html,
+    customElement,
+} from "@umbraco-cms/backoffice/external/lit";
+import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
+import {
+    UmbNotificationContext,
+    UMB_NOTIFICATION_CONTEXT,
+} from "@umbraco-cms/backoffice/notification";
 
-@customElement('my-element')
+@customElement("my-element")
 export default class MyElement extends UmbElementMixin(LitElement) {
-  #notificationContext?: typeof UMB_NOTIFICATION_CONTEXT_TOKEN.TYPE;
+    #notificationContext?: UmbNotificationContext;
 
-  constructor() {
-    super();
-    this.consumeContext(UMB_NOTIFICATION_CONTEXT_TOKEN, (_instance) => {
-      this.#notificationContext = _instance;
-    });
-  }
+    constructor() {
+        super();
+        this.consumeContext(UMB_NOTIFICATION_CONTEXT, (_instance) => {
+            this.#notificationContext = _instance;
+        });
+    }
 
-  #onClick = () => {
-    this.#notificationContext?.peek('positive', { data: { message: '#h5yr' } });
-  };
+    #onClick = () => {
+        this.#notificationContext?.peek("positive", {
+            data: { message: "#h5yr" },
+        });
+    };
 
-  render() {
-    return html`
-      <uui-box headline="Welcome">
-        <p>A TypeScript Lit Dashboard</p>
-        <uui-button
-          look="primary"
-          label="Click me"
-          @click=${this.#onClick}
-        ></uui-button>
-      </uui-box>
-    `;
-  }
+    render() {
+        return html`
+            <uui-box headline="Welcome">
+                <p>A TypeScript Lit Dashboard</p>
+                <uui-button
+                    look="primary"
+                    label="Click me"
+                    @click=${this.#onClick}
+                ></uui-button>
+            </uui-box>
+        `;
+    }
 }
 
 declare global {
-  interface HTMLElementTagNameMap {
-    'my-element': MyElement;
-  }
+    interface HTMLElementTagNameMap {
+        "my-element": MyElement;
+    }
 }
 
 ```
+
 {% endcode %}
 
 The code above defines a Web Component that contains a button that when clicked will open a notification with a message to the user.
@@ -252,32 +267,34 @@ After running the build, you will see a new file in the `dist` folder with the n
 The `umbraco-package.json` file should look like this:
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
+
 ```json
 {
-	"$schema": "../../umbraco-package-schema.json",
-	"name": "My.Package",
-	"version": "0.1.0",
-	"extensions": [
-		{
-			"type": "dashboard",
-			"alias": "my.custom.dashboard",
-			"name": "My Dashboard",
-			"js": "/App_Plugins/my-package/my-extension/dist/my-extension.js",
-			"weight": -1,
-			"meta": {
-				"label": "My Dashboard",
-				"pathname": "my-dashboard"
-			},
-			"conditions": [
-				{
-					"alias": "Umb.Condition.SectionAlias",
-					"match": "Umb.Section.Content"
-				}
-			]
-		}
-	]
+    "$schema": "../../umbraco-package-schema.json",
+    "name": "My Package",
+    "version": "0.1.0",
+    "extensions": [
+        {
+            "type": "dashboard",
+            "alias": "My.Dashboard.MyExtension",
+            "name": "My Dashboard",
+            "js": "/App_Plugins/my-package/my-extension.js",
+            "weight": -1,
+            "meta": {
+                "label": "My Dashboard",
+                "pathname": "my-dashboard"
+            },
+            "conditions": [
+                {
+                    "alias": "Umb.Condition.SectionAlias",
+                    "match": "Umb.Section.Content"
+                }
+            ]
+        }
+    ]
 }
 ```
+
 {% endcode %}
 
 ### Running it

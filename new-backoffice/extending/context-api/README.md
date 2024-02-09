@@ -47,7 +47,7 @@ type MyContext = {
     bar: number;
 };
 
-const MY_API_TOKEN = new UmbContextToken<MyContext>("My.Context.Token");
+const MY_CONTEXT = new UmbContextToken <MyContext>("My.Context.Token");
 ```
 
 ### **Context Token with an API Alias**
@@ -144,6 +144,7 @@ Context token example:
 ```ts
 import { UmbContextToken } from "@umbraco-cms/backoffice/context";
 
+
 interface MyBaseContext {
     foo: string;
     bar: number;
@@ -153,7 +154,8 @@ interface MyPublishableContext extends MyBaseContext {
     publish();
 }
 
-const MY_PUBLISHABLE_CONTEXT_TOKEN = new UmbContextToken<
+const MY_PUBLISHABLE_CONTEXT = new UmbContextToken<
+
     MyContext,
     MyPublishableContext
 >("My.Context.Token", (context): context is MyPublishableContext => {
@@ -166,13 +168,14 @@ Implementation of context token example:
 ```ts
 const contextElement = new UmbLitElement();
 contextElement.provideContext(
-    MY_PUBLISHABLE_CONTEXT_TOKEN,
+    MY_PUBLISHABLE_CONTEXT,
     new MyPublishableContext()
 );
 
 const consumerElement = new UmbLitElement();
-contextElement.appendChild(consumerElement);
-consumerElement.consumeContext(MY_PUBLISHABLE_CONTEXT_TOKEN, (context) => {
+contextElement.appendChild(contextElement);
+consumerElement.consumeContext(MY_PUBLISHABLE_CONTEXT, (context) => {
+
     // context is of type 'MyPublishableContext'
     console.log("I've got the context of the right type", context);
 });

@@ -11,18 +11,20 @@ This page is a work in progress.&#x20;
 ```typescript
 import { html, LitElement } from "@umbraco-cms/backoffice/external/lit";
 import { UmbElementMixin } from "@umbraco-cms/element";
-import { UMB_MODAL_MANAGER_CONTEXT_TOKEN } from "@umbraco-cms/modal";
+import {
+    UmbModalManagerContext,
+    UMB_MODAL_MANAGER_CONTEXT,
+} from "@umbraco-cms/modal";
 
 class MyElement extends UmbElementMixin(LitElement) {
-    #modalManagerContext?: typeof UMB_MODAL_MANAGER_CONTEXT_TOKEN.TYPE;
-
+    #modalManagerContext?: UmbmodalManagerContext;
     constructor() {
         super();
-        this.consumeContext(UMB_MODAL_MANAGER_CONTEXT_TOKEN, (instance) => {
+        this.consumeContext(UMB_MODAL_MANAGER_CONTEXT, (instance) => {
+
             this.#modalManagerContext = instance;
         });
     }
-
     #onRequestDisable() {
         const modalContext = this.#modalManagerContext?.open(
             UMB_CONFIRM_MODAL,
