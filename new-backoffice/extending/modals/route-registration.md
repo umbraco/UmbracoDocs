@@ -42,7 +42,7 @@ describe the additional features of the route Registration:
 
 ## Modal registration for UI as part of a Property Editor
 
-When configuring a routed modal from a Property Editor, it's important to be aware that the Property Editor shares the same URL path as other Property Editors. This means we need to ensure the registration is unique. So it does not collide with other Property Editors. To do so we will make use of the Property Alias and the Variant ID.
+When configuring a routed modal from a Property Editor, it's important to be aware of some facts. Those facts are that the Property Editor shares the same URL path as other Property Editors. This means we need to ensure the registration is unique so it doesn't collide with other Property Editors. To do so we will make use of the Property Alias and the Variant ID.
 
 ```ts
 
