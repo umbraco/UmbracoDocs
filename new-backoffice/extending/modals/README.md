@@ -98,4 +98,4 @@ modalContext
 
 You can register modals with a route, making it possible to link directly to that specific modal. This also means the user can navigate back and forth in the browser history. This makes it an ideal solution for modals containing an editorial experience.
 
-[See the implementing a Confirm Dialog for a more concrete example.](route-registration.md)
+For a more concrete example, check out the [Implementing a Confirm Dialog article](route-registration.md).
