@@ -20,7 +20,7 @@ The manifest:
 
 ## Create a modal token
 
-A modal token is a string that identifies a modal. It should be the modal extension alias. It is used to open a modal and is also to set default options for the modal.
+A modal token is a string that identifies a modal. This is the modal extension alias. It is used to open a modal and is also to set default options for the modal.
 
 ```ts
 interface MyModalData = {
