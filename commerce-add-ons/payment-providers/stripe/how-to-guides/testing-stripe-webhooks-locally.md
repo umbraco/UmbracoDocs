@@ -28,7 +28,7 @@ Go to the [stripe documentation](https://stripe.com/docs/stripe-cli#login-accoun
 
 ### Step 3: Forward the stripe events to your local environment
 
-While running the site locally, make a note of your local store domain. For example: `https:localhost:44321`. Using the Stripe CLI, you can configure Stripe to forward any events to that URL.
+While running the site locally, make a note of your local store domain. For example: `https://localhost:44321`. Using the Stripe CLI, you can configure Stripe to forward any events to that URL.
 
 To do so, run the following from the command line.
 
