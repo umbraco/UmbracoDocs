@@ -1,6 +1,6 @@
 ---
 description: >-
-    You can register modals with a route, making it possible to link directly to that specific modal. This also means the user can navigate forth and back in the browser history of their browser. Making this the ideal solution for modals containing an editorial experience.
+    You can register modals with a route, making it possible to link directly to that specific modal. This also means the user can navigate back and forth in the browser history. This makes it an ideal solution for modals containing an editorial experience.
 ---
 
 # Modal Route Registration
