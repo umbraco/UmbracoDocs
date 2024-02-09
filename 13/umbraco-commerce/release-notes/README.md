@@ -17,6 +17,12 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 13 including all changes for this version.
 
+#### 13.1.0-rc2 (February 8th 2024)
+
+* Fixed RC1 regression where discount/gift card tree icons were broken.
+* Fixed RC1 regression where localized translations were broken.
+* Fixed issue in dynamic shipping subtotal range provider not taking the current calculation context into account and so was selecting the wrong range.
+
 #### 13.1.0-rc1 (February 6th 2024)
 
 Read the [v13.1.0-RC release post](./v13.1.0-rc.md) for further background on this release.
