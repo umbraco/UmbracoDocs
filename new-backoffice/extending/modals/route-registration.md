@@ -5,7 +5,7 @@ description: >-
 
 # Modal Route Registration
 
-A modal can be registered via the UmbModalRouteRegistrationController. The registration will accept a modal token (or extension alias).
+A modal can be registered via the `UmbModalRouteRegistrationController`. The registration accepts a modal token (or extension alias).
 
 ```ts
 this.myModalRegistration = new UmbModalRouteRegistrationController(
