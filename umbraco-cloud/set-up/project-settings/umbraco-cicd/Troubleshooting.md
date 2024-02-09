@@ -33,6 +33,22 @@ Commit the change to your repository and run the pipeline.
 
 If you want you can change the filename back to `Readme.md` after a successful CI/CD deployment.
 
+### The site can't be upgraded as it's blocked with the following markers: updating
+
+In rare cases deployments fail, and the next time you try to run your pipeline you get the "The site can't be upgraded as it's blocked with the following markers: updating" error.
+
+In order to fix this issue, you would need to use [KUDU](../../power-tools/README.md) to remove the leftover marker file.
+
+1. Access KUDU on the "left-most" environment
+  * if you only have one environment you want the live environemnt
+  * if you have more than one environment, you want the development environment
+
+3. Navigate to `site` > `locks` folder
+
+4. In the folder, there should be a file named `updating`. Remove it
+
+Once the leftover marker file is removed, you are ready to run your pipeline again.
+
 ## Are you stuck?
 
 Help us get you and others unstuck by sending your queries, questions and comments to Umbraco via email at [umbraco-cicd@umbraco.dk](mailto:umbraco-cicd@umbraco.dk).
