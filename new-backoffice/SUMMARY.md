@@ -47,6 +47,8 @@
 * [Conditions](extending/conditions.md)
 * [Modals](extending/modals/README.md)
   * [Confirm Dialog](extending/modals/confirm-dialog.md)
+  * [Custom Modals](extending/modals/custom-modals.md)
+  * [Route Registration](extending/modals/route-registration.md)
 * [Sorting](extending/sorting.md)
 
 ## Fundamentals
