@@ -25,7 +25,7 @@ The registration holds an instance of its `UmbModalHandler` when the modal is ac
 -   `onSetup` - called when the modal is opened
 -   `onSubmit` - called when the modal is submitted
 -   `onReject` - called when the modal is rejected
--   `observeRouteBuilder` - called when the modal route changes, use the given route builder to build a route to open the modal.
+-   `observeRouteBuilder` - called when the modal route changes. Use the given route builder to build a route to open the modal
 
 **TODOS:**
 
