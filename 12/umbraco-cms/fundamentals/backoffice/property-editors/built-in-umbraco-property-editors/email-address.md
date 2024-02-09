@@ -35,7 +35,7 @@ The Email Address Property Editor does not come with any further configuration. 
 ### With Modelsbuilder
 
 ```csharp
-@if (!Model.HasValue(Model.Email))
+@if (!string.IsNullOrWhiteSpace(Model.Email))
 {
     var emailAddress = Model.Email;
     <p>@emailAddress</p>
