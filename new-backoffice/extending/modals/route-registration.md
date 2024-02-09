@@ -116,7 +116,7 @@ When configuring a routed modal from a Property Editor, it's important to be awa
 
 **Generate the URL to a Modal Route Registration**
 
-The Modal registration has an option to retrieve a URL Builder. This is a function that can be used to generate a URL to a modal.
+The Modal registration has an option to retrieve a URL Builder. This is a function that can be used to generate a URL to a modal:
 
 ```ts
 const modalLink = _myUrlBuilder?.({ alias: "my-input-alias" });
