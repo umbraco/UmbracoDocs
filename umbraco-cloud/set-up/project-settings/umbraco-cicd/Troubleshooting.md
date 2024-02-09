@@ -40,8 +40,8 @@ In rare cases deployments fail, and the next time you try to run your pipeline y
 In order to fix this issue, you would need to use [KUDU](../../power-tools/README.md) to remove the leftover marker file.
 
 1. Access KUDU on the "left-most" environment
-  * if you only have one environment you want the live environemnt
-  * if you have more than one environment, you want the development environment
+  * If you only have one environment you want the live environemnt
+  * If you have more than one environment, you want the development environment
 
 3. Navigate to `site` > `locks` folder
 
