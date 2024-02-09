@@ -14,7 +14,7 @@ The manifest
     "type": "modal",
     "alias": "My.Modal",
     "name": "My Modal",
-    "js": "../path/to/my-modal.element.js"
+    "element": "../path/to/my-modal.element.js"
 }
 ```
 
@@ -25,14 +25,13 @@ A modal token is a string that identifies a modal. It should be the modal extens
 ```ts
 interface MyModalData = {
 	headline: string;
-	content: string;
 }
 
-interface MyModalResult = {
-	myReturnData: string;
+interface MyModalValue = {
+	myData: string;
 }
 
-const MY_MODAL_TOKEN = new ModalToken<MyModalData, MyModalResult>('My.Modal', {
+const MY_MODAL_TOKEN = new ModalToken<MyModalData, MyModalValue>('My.Modal', {
 	type: 'sidebar',
 	size: 'small'
 });
@@ -43,19 +42,19 @@ The Modal element:
 ```ts
 import { html, LitElement } from "@umbraco-cms/backoffice/external/lit";
 import { UmbElementMixin } from "@umbraco-cms/element";
-import type { UmbModalHandler } from "@umbraco-cms/modal";
+import type { UmbModalContext } from "@umbraco-cms/modal";
 
 class MyDialog extends UmbElementMixin(LitElement) {
-    // the modal handler will be injected into the element when the modal is opened.
+    // the modal context will be injected into the element when the modal is opened.
     @property({ attribute: false })
-    modalContext?: UmbModalHandler<MyModalData, MyModalResult>;
+    modalContext?: UmbModalContext<MyModalData, MyModalValue>;
 
     private _handleCancel() {
         this.modalContext?.close();
     }
 
     private _handleSubmit() {
-        this.modalContext.updateValue({ myReturnData: "hello world" });
+        this.modalContext?.updateValue({ myData: "hello world" });
         this.modalContext?.submit();
     }
 
