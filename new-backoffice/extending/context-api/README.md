@@ -40,7 +40,7 @@ If you need to consume a Context API from a non-controller host, then look at th
 A Context Token is generally a string matched with a type. In this way, users of the token can be sure to get the right type of context.
 
 ```ts
-import { ContextToken } from "@umbraco-cms/backoffice/context";
+import { UmbContextToken } from "@umbraco-cms/backoffice/context";
 
 type MyContext = {
     foo: string;
