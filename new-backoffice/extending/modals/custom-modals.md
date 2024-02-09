@@ -1,6 +1,6 @@
 ---
 description: >-
-    New modals can be added to the system via the extension registry. This article goes through how that is done
+    New modals can be added to the system via the extension registry. This article goes through how this is done.
 ---
 
 # Create and register a custom modal
