@@ -18,14 +18,13 @@ import {
 
 class MyElement extends UmbElementMixin(LitElement) {
     #modalManagerContext?: UmbmodalManagerContext;
-
     constructor() {
         super();
         this.consumeContext(UMB_MODAL_MANAGER_CONTEXT, (instance) => {
+
             this.#modalManagerContext = instance;
         });
     }
-
     #onRequestDisable() {
         const modalContext = this.#modalManagerContext?.open(
             UMB_CONFIRM_MODAL,

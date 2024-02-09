@@ -24,19 +24,26 @@ Under **Settings** in the Umbraco Cloud Portal, you'll find **Hostnames**. This 
 
 <figure><img src="../../../.gitbook/assets/hostnames-umbraco-cloud.png" alt=""><figcaption><p>Manage Hostnames</p></figcaption></figure>
 
-You can bind any hostname to your project environments. Ensure that the hostname has a DNS entry so that it resolves to the Umbraco Cloud service.
+Ensure that the hostname you are binding to your Umbraco Cloud environment has a DNS entry that resolves to the Umbraco Cloud service.
 
-Once you add a hostname to one of your environments, ensure to update the hostname DNS entry to resolve to the `umbraco.io` service.
+We recommend setting a CNAME record for your hostname. You can also use A & AAAA records for the root of your domain.
 
-We recommend setting a CNAME record for your hostname using `dns.umbraco.io`. Although a CNAME cannot be placed at the root domain level, some providers support CNAME flattening to overcome this limitation.
+* CNAME record value:
+  * `dns.umbraco.io`
+* A records to either or both IPv4 addresses:
+  * `162.159.140.127`
+  * `172.66.0.125`
+* AAAA records to either or both IPv6 addresses (to support IPv6 connectivity):
+  * `2606:4700:7::7d`
+  * `2a06:98c1:58::7d`
 
-If your provider doesn't support setting a CNAME record for your hostname, you can manually set the following records:
+If you're using the [Former A and AAAA records](./#former-a-and-aaaa-records) consider changing them to the new A & AAAA records above.
 
 <details>
 
 <summary>Former A and AAAA records</summary>
 
-The following Records will become obsolete in the near future. Refrain from using them.
+The following Records will become obsolete in the future. Refrain from using them.
 
 * A Records
   * `104.19.191.28`
@@ -51,24 +58,11 @@ The following Records will become obsolete in the near future. Refrain from usin
 
 </details>
 
-If you are using the [Former A and AAAA records](./#former-a-and-aaaa-records) consider changing them to the Records below as they will not become obsolete.
-
-* A Records to either or both IPv4 addresses:
-  * `162.159.140.127`
-  * `172.66.0.125`
-* Optionally, AAAA Records to either or both IPv6 addresses (to support IPv6 connectivity):
-  * `2606:4700:7::7d`
-  * `2a06:98c1:58::7d`
-
 {% hint style="info" %}
-Once you have updated your DNS, we recommend that you check if the correct records are being picked up using a site like [whatsmydns.net](https://www.whatsmydns.net/) before adding the hostname on Umbraco Cloud.
+Once you have updated your DNS, you can check DNS propagation using a site like [whatsmydns.net](https://www.whatsmydns.net/) before adding the hostname on Umbraco Cloud.
 {% endhint %}
 
 Check with your DNS host or hostname registrar regarding configuration details for your Hostnames.
-
-{% hint style="warning" %}
-Adding an A-Record to the static IP is only recommended when setting up a CNAME record is not an option. The static IP is highly volatile towards changes to the Umbraco Cloud infrastructure and as such, it may change.[https://www.youtube-nocookie.com/embed/iBGM0AKg3Fw](https://www.youtube-nocookie.com/embed/iBGM0AKg3Fw)
-{% endhint %}
 
 {% embed url="https://youtu.be/iBGM0AKg3Fw" %}
 Adding hostname and configuring CDN and Cache
