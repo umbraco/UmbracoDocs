@@ -142,7 +142,7 @@ This example shows how to create a discriminator Context Token, that will discar
 Context token example:
 
 ```ts
-import { ContextToken } from "@umbraco-cms/backoffice/context";
+import { UmbContextToken } from "@umbraco-cms/backoffice/context";
 
 
 interface MyBaseContext {
