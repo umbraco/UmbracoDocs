@@ -1,6 +1,6 @@
 ---
 description: >-
-    A modal is a popup layer that darkens the background and has focus lock. There
+    A modal is a popup layer that darkens the surroundings and comes with a focus lock. There
     are two types of modals: "dialog" and "sidebar".
 ---
 
@@ -25,13 +25,13 @@ export type OurSomethingPickerModalData = {
     // We do not have any data to parse for this example
 };
 
-export type UmbLinkPickerModalValue = {
+export type OurSomethingPickerModalValue = {
     key: string;
 };
 
 export const MY_SOMETHING_PICKER_MODAL = new UmbModalToken<
     OurSomethingPickerModalData,
-    UmbLinkPickerModalValue
+    OurSomethingPickerModalValue
 >("Our.Modal.SomethingPicker", {
     modal: {
         type: "sidebar",
@@ -40,9 +40,13 @@ export const MY_SOMETHING_PICKER_MODAL = new UmbModalToken<
 });
 ```
 
+## Make a custom Modal Element
+
+To create your own modal, read the [Implementing a Custom Modal article](custom-modals.md) before proceeding with this article.
+
 ### Basic Usage
 
-Consume the `UmbModalManagerContext` and then use the modal manager context to open a modal. This examples shows how to consume the Modal Manager Context:
+Consume the `UmbModalManagerContext` and then use the modal manager context to open a modal. This example shows how to consume the Modal Manager Context:
 
 ```ts
 import { LitElement } from "@umbraco-cms/backoffice/external/lit";
@@ -92,196 +96,6 @@ modalContext
 
 **Modal Route Registration**
 
-A modal can be registered via the UmbModalRouteRegistrationController. The registration will accept a modal token (or extension alias).
+You can register modals with a route, making it possible to link directly to that specific modal. This also means the user can navigate back and forth in the browser history. This makes it an ideal solution for modals containing an editorial experience.
 
-Notice we are using a Controller here, this means your element has to be a Controller Host&#x20;
-
-(TODO: Insert link to story about Controller Host also available through the UmbElementMixin)
-
-```ts
-this.myModalRegistration = new UmbModalRouteRegistrationController(
-    this,
-    UMB_LINK_PICKER_MODAL
-)
-    .onSubmit((submitData) => {
-        console.log("Modal submitted with data".submitData);
-    })
-    .observeRouteBuilder((routeBuilder) => {
-        this._modalRouteBuilder = routeBuilder;
-    });
-```
-
-The registration holds an instance of its UmbModalHandler when the modal it active. The modal registration accepts 4 different callbacks:
-
--   `onSetup` - called when the modal is opened
--   `onSubmit` - called when the modal is submitted
--   `onReject` - called when the modal is rejected
--   `observeRouteBuilder` - called when the modal route changes, use the given route builder to build a route to open the modal.
-
-**TODOS:**
-
-describe the additional features of the route Registration:
-
-**Hints:**
-
--   Add unique parts to the path. (How is this done properly as part of a Property Editor)
--   A modal registered in a dashboard can be basic
--   A modal registered in a property editor needs to become specific for the property and the variant of that property.
--   Build some data for the setup.
--   Reject a modal by returning false in setup.
--   Use a param as part of the setup to determine the data going to the modal.
-
-**Modal registration for UI as part of a Property Editor**
-
-```ts
-	@property()
-	public set alias(value: string | undefined) {
-		this.myModalRegistration.setUniquePathValue('propertyAlias', value);
-	}
-
-	@property()
-	public set variantId(value: string | UmbVariantId | undefined) {
-		this.myModalRegistration.setUniquePathValue('variantId', value?.toString());
-	}
-
-	private _items = [
-		{ name: 'Item 1' },
-		{ name: 'Item 2' },
-		{ name: 'Item 3' },
-	]
-
-
-	constructor() {
-		super();
-
-		this.myModalRegistration = new UmbModalRouteRegistrationController(
-			this,
-			MY_MODAL_TOKEN
-		)
-		.addAdditionalPath(`:index`)
-		.addUniquePaths(['propertyAlias', 'variantId'])
-		.onSetup((params) => {
-			// Get item index:
-			const indexParam = params.index;
-			if (!indexParam) return false;
-			let index: number | null = parseInt(params.index);
-			if (Number.isNaN(index)) return false;
-
-			// Use the index to find data:
-			let data = null;
-			if (index >= 0 && index < this._items.length) {
-				data = this._items[index];
-			} else {
-				// If not then make a new pick:
-				index = null;
-			}
-
-			return { value: {
-				index: index,
-				itemData: {
-					name: data?.name
-				}},
-			};
-		})
-		.onSubmit((value) => {
-			if (!value) return;
-			this._items[value.index] = value.itemData;
-		})
-		.observeRouteBuilder((routeBuilder) => {
-			this._modalRouteBuilder = routeBuilder;
-		});
-	}
-
-	render() {
-		return html`
-			${this._items?.map((item, index) =>
-				html`<uui-button look="placeholder" label="Edit item ${index}" .href=${this._modalRouteBuilder?.({ index })}>Add</uui-button>`
-			)}
-		`;
-	}
-```
-
-**Generate the URL to a Modal Route Registration**
-
-The Modal registration has an option to retrieve a URL Builder. This is a function that can be used to generate a URL to a modal.
-
-```ts
-const modalLink = _myUrlBuilder?.({ alias: "my-input-alias" });
-```
-
-The `modalLink` from above could look like this: `/umbraco/backoffice/my/location/modal/Our.Modal.SomethingPicker/my-input-alias`
-
-Notice the Property Editor registration will add the property alias and variant ID to the URL, so it becomes:
-
-`/umbraco/backoffice/my/location/modal/Our.Modal.SomethingPicker/my-property-alias/en-us/my-input-alias`
-
-### Create a custom modal
-
-#### Register in the extension registry
-
-The manifest
-
-```json
-{
-    "type": "modal",
-    "alias": "My.Modal",
-    "name": "My Modal",
-    "js": "../path/to/my-modal.element.js"
-}
-```
-
-#### Create a modal token
-
-A modal token is a string that identifies a modal. It should be the modal extension alias. It is used to open a modal and is also to set default options for the modal.
-
-```ts
-interface MyModalData = {
-	headline: string;
-}
-
-interface MyModalValue = {
-	myData: string;
-}
-
-const MY_MODAL_TOKEN = new ModalToken<MyModalData, MyModalValue>('My.Modal', {
-	type: 'sidebar',
-	size: 'small'
-});
-```
-
-The Modal element:
-
-```ts
-import { html, LitElement } from "@umbraco-cms/backoffice/external/lit";
-import { UmbElementMixin } from "@umbraco-cms/element";
-import type { UmbModalHandler } from "@umbraco-cms/modal";
-
-class MyDialog extends UmbElementMixin(LitElement) {
-    // the modal handler will be injected into the element when the modal is opened.
-    @property({ attribute: false })
-    modalContext?: UmbModalHandler<MyModalData, MyModalResult>;
-
-    private _handleCancel() {
-        this.modalContext?.close();
-    }
-
-    private _handleSubmit() {
-        /*
-            We can update the value of the modal at any time, while editing things in a modal.
-            In this case we just set the value before submitting the modal:
-        */
-        this.modalContext?.updateValue({ myData: "hello world" });
-        this.modalContext?.submit();
-    }
-
-    render() {
-        return html`
-            <div>
-                <h1>My Modal</h1>
-                <button @click=${this._handleCancel}>Cancel</button>
-                <button @click=${this._handleSubmit}>Submit</button>
-            </div>
-        `;
-    }
-}
-```
+For a more concrete example, check out the [Implementing a Confirm Dialog article](route-registration.md).
