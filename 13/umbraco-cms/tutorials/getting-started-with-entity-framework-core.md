@@ -96,7 +96,10 @@ We need to register the `DbContext` to be able to use it in Umbraco.
 To do this we can use this helpful extension method:
 
 ```csharp
-services.AddUmbracoEFCoreContext<BlogContext>("{YOUR CONNECTIONSTRING HERE}", "{YOUR PROVIDER NAME HERE}");
+builder.Services.AddUmbracoDbContext<BlogContext>(options => 
+{
+    options.UseSqlServer("{YOUR CONNECTIONSTRING HERE}");
+});
 ```
 
 Add the method in the `Program.cs` file:
@@ -109,7 +112,10 @@ builder.CreateUmbracoBuilder()
     .AddComposers()
     .Build();
 
-builder.Services.AddUmbracoEFCoreContext<BlogContext>("{YOUR CONNECTIONSTRING HERE}", "{YOUR PROVIDER NAME HERE}");
+builder.Services.AddUmbracoDbContext<BlogContext>(options => 
+{
+    options.UseSqlServer("{YOUR CONNECTIONSTRING HERE}");
+});
 ```
 
 {% hint style="warning" %}
