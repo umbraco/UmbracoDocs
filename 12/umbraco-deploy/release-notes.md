@@ -22,6 +22,8 @@ This section contains the release notes for Umbraco Deploy 12 including all chan
 * Removed the no-longer supported "live edit" feature (Deploy on Cloud only).
 * Fixed issue where the removal of a master template couldn't be deployed [#201](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/201)
 * Ensured configuration for behavior following a "path too long" exception is respected for handling image cropper values [#200](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/200)
+* User experience and message improvements on content flow exception [#202](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/202)
+* Fixed issue with transfer of empty values to overwrite non-empty ones.
 
 #### [**12.1.3**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.3) **(January 16th 2024)**
 

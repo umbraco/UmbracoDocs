@@ -23,6 +23,8 @@ This section contains the release notes for Umbraco Deploy 13 including all chan
 * Fixed issue where the removal of a master template couldn't be deployed [#201](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/201)
 * Ensured configuration for behavior following a "path too long" exception is respected for handling image cropper values [#200](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/200)
 * Added configuration setting to allow hiding of version details on the settings dashboard.
+* User experience and message improvements on content flow exception [#202](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/202)
+* Fixed issue with transfer of empty values to overwrite non-empty ones.
 
 #### [**13.0.3**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.3) **(January 16th 2024)**
 
