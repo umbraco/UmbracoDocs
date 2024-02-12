@@ -26,7 +26,6 @@ This section contains the release notes for Umbraco Deploy 4 and 10 including al
 * Removed the no-longer supported "live edit" feature (Deploy on Cloud only).
 * Fixed issue where the removal of a master template couldn't be deployed [#201](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/201)
 * Ensured configuration for behavior following a "path too long" exception is respected for handling image cropper values [#200](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/200)
-* Added configuration setting to allow hiding of version details on the settings dashboard.
 
 [**10.3.3**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.3) **(January 16th 2024)**
 
@@ -203,7 +202,6 @@ This section contains the release notes for Umbraco Deploy 4 and 10 including al
 * Removed the no-longer supported "live edit" feature (Deploy on Cloud only).
 * Fixed issue where the removal of a master template couldn't be deployed [#201](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/201)
 * Ensured configuration for behavior following a "path too long" exception is respected for handling image cropper values [#200](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/200)
-* Added configuration setting to allow hiding of version details on the settings dashboard.
 
 [**4.9.3**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.9.3) **(January 16th 2024)**
 
