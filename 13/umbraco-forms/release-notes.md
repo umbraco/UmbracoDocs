@@ -17,6 +17,15 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
+#### [**13.0.2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.2) **(February 20th 2024)**
+
+* Ensured UI for the upload of a text file for a prevalue source only allows selection of expected .txt files.
+* Handled potential null value for prevalues for a form definition following an upgrade [#1157](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1157)
+* Fixed handling of API and traditional form posts in reCAPTCHA 3 checks [#1150](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1150)
+* Fixed display of validation error when a duplicate form field alias is created [#1150](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1152)
+* Fixed issue where file uploads weren't removed as records were deleted.
+* Updated Microsoft.Data.SqlClient dependency due to reported security advisory.
+
 #### [**13.0.1**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.1) **(January 16th 2024)**
 
 * Added configuration value `TitleAndDescription:AllowUnsafeHtmlRendering` to allow tighter security for HTML rendering of text entered in the "Title and description" field type.
