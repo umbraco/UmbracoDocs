@@ -20,7 +20,7 @@ The `FunctionName` property provides the name of the function that will be used 
 
 The `FormatValue` property parses the provided value and arguments and returns the formatted value as a string.
 
-The following example shows the implementation of a function that bounds an integer value.  It takes two arguments, a minimum and maximum value.  If the value read from the magic string source is numeric, and fits within the the two bounds, it is returned.  Otherwise, either the minimum or maximum value is returned depending on whether the value is lower or higher than the bounds respectively.
+The following example shows the implementation of a function that bounds an integer value.  It takes two arguments, a minimum and maximum value.  If the value read from the magic string source is numeric, and fits within the two bounds, it is returned.  Otherwise, either the minimum or maximum value is returned depending on whether the value is lower or higher than the bounds respectively.
 
 ```csharp
 using System.Globalization;
