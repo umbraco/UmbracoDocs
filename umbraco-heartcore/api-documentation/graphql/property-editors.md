@@ -30,6 +30,17 @@ Can be used for filtering: `true`
 
 <details>
 
+<summary>Block Grid</summary>
+
+Editor Alias: `Umbraco.BlockGrid`\
+GraphQL Type: [`BlockGrid`](schema-generation.md#block-grid)&#x20;
+
+Can be used for filtering: `false`
+
+</details>
+
+<details>
+
 <summary>Block List</summary>
 
 Editor Alias: `Umbraco.BlockList`\
