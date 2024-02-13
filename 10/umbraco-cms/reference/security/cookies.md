@@ -9,7 +9,7 @@ The cookies listed in this article are required only for accessing the Backoffic
 
 ## Necessary Cookies
 
-The below cookies are necessary while accessing the Umbraco Backoffice for functioning of the website or to allow you to enjoy the contents and services you request.
+The below cookies are necessary for accessing the Umbraco Backoffice and functioning of the website. They allow you to enjoy the contents and services you request.
 
 | Name                       | Purpose                                                                                                           | Expiration |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------|------------|
