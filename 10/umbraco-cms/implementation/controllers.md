@@ -58,7 +58,7 @@ The Umbraco Authorized controllers and attributes for Backoffice Users are:
 
     Remember to [add a route](../reference/routing/authorized/defining-a-route) for your controller.
 
-    #### Example custom authorized backoffice mvc controller
+    #### Example custom authorized backoffice MVC Controller
     ```csharp
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
