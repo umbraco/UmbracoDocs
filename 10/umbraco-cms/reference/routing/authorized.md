@@ -27,7 +27,7 @@ The {area} specified by the [PluginController] attribute replaces the /api/ area
 
 ## MVC controllers for the backoffice
 
-Depending on the type of controller used (mvc or webapi), the controller is not auto-routed. You will need to delcare a custom route and register it with the Umbraco DI container to make it work.
+Depending on the type of controller used (MVC or WebAPI), the controller is not auto-routed. You will need to declare a custom route and register it with the Umbraco DI container to make it work.
 
 For more information on authenticated/authorized controllers & attributes see the [Controllers Documentation](../../implementation/controllers.md).
 
