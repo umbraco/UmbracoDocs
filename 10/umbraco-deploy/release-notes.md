@@ -21,6 +21,14 @@ This section contains the release notes for Umbraco Deploy 4 and 10 including al
 
 <summary>Version 10</summary>
 
+[**10.3.4**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.4) **(February 20th 2024)**
+
+* Removed the no-longer supported "live edit" feature (Deploy on Cloud only).
+* Fixed issue where the removal of a master template couldn't be deployed [#201](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/201)
+* Ensured configuration for behavior following a "path too long" exception is respected for handling image cropper values [#200](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/200)
+* User experience and message improvements on content flow exception [#202](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/202)
+* Fixed issue with transfer of empty values to overwrite non-empty ones.
+
 [**10.3.3**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.3) **(January 16th 2024)**
 
 * Added configurable option to avoid overwriting of dictionary items with empty values [#191](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/191)
@@ -190,6 +198,14 @@ This section contains the release notes for Umbraco Deploy 4 and 10 including al
 <details>
 
 <summary>Version 4</summary>
+
+[**4.9.4**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.9.4) **(February 20th 2024)**
+
+* Removed the no-longer supported "live edit" feature (Deploy on Cloud only).
+* Fixed issue where the removal of a master template couldn't be deployed [#201](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/201)
+* Ensured configuration for behavior following a "path too long" exception is respected for handling image cropper values [#200](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/200)
+* User experience and message improvements on content flow exception [#202](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/202)
+* Fixed issue with transfer of empty values to overwrite non-empty ones.
 
 [**4.9.3**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.9.3) **(January 16th 2024)**
 
