@@ -24,10 +24,10 @@ This section contains the release notes for Umbraco Forms 8 and 10 including all
 [**10.5.4**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.5.4) **(February 20th 2024)**
 
 * Fixed ordering of forms by name in security screen [#1122](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1122)
-* Update the copy form dialog to use standard CMS patterns for button state and disabling after click [#1121](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1121).
+* Updated the copy form dialog to use standard CMS patterns for button state and disable it after clicking [#1121](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1121).
 * Ensured UI for the upload of a text file for a prevalue source only allows selection of expected .txt files.
 * Fixed handling of API and traditional form posts in reCAPTCHA 3 checks [#1150](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1150)
-* Fixed display of validation error when a duplicate form field alias is created [#1150](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1152)
+* Fixed display of validation error when a duplicate form field alias is created [#1152](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1152)
 * Fixed issue where file uploads weren't removed as records were deleted.
 
 [**10.5.3**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.5.3) **(January 16th 2024)**
@@ -332,8 +332,8 @@ This section contains the release notes for Umbraco Forms 8 and 10 including all
 
 * Null checks on setting prevalue captions handling issues with upgraded form definitions [#1148](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1148).
 * Fixed ordering of forms by name in security screen [#1122](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1122)
-* Update the copy form dialog to use standard CMS patterns for button state and disabling after click [#1121](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1121).
-* Ensured UI for the upload of a text file for a prevalue source only allows selection of expected .txt files.
+* Updated the copy form dialog to use standard CMS patterns for button state and disable it after clicking [#1121](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1121).
+* Ensured UI for the upload of a text file for a prevalue source only allows the selection of expected .txt files.
 
 [**8.13.13**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.13.13) **(January 16th 2024)**
 
