@@ -97,7 +97,7 @@ For example, to always remove a trailing slash from the URL (make sure Umbraco d
     <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
     <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
   </conditions>
-  <action type="Redirect" url="{R:1}" />
+  <action type="Redirect" url="/{R:1}" />
 </rule>
 ```
 
