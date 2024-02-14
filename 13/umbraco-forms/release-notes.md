@@ -17,6 +17,14 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
+#### [**13.1.0**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.0) **(TBC)**
+
+With the introduction of webhooks with Umbraco 13, we've made an update to Forms to allow workflow execution events to trigger webhooks. Workflows are operations that you can associated with form submission, approval or rejections actions. You can use these where you need to notify external systems of the success or failure of a workflow. Read more on [Umbraco Forms wehbooks](./developer/webhooks.md).
+
+**Features implemented and issues resolved in 13.1.0**
+
+* Added wehbooks for workflow execution events [#1151](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1151)
+
 #### [**13.0.2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.2) **(February 20th 2024)**
 
 * Ensured UI for the upload of a text file for a prevalue source only allows the selection of expected .txt files.
