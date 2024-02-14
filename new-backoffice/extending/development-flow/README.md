@@ -12,8 +12,8 @@ This page is a work in progress. It will be updated as the software evolves.
 
 Make sure you have the following installed on your machine:
 
--   **.NET 8**
--   **Node.js 20.11.0**
+* **.NET 8**
+* **Node.js 20.11.0**
 
 {% hint style="info" %}
 Tip: use nvm (Node Version Manager for [Windows](https://github.com/coreybutler/nvm-windows) or [Mac/Linux](https://github.com/nvm-sh/nvm)
@@ -21,7 +21,7 @@ Tip: use nvm (Node Version Manager for [Windows](https://github.com/coreybutler/
 
 ## Package Setup
 
-### App_Plugins
+### App\_Plugins
 
 Extensions will go into a folder called `App_Plugins`. If you don't have this folder, you can create it at the root of your Umbraco project.
 
@@ -35,7 +35,7 @@ You can use any package manager you like to install dependencies. We recommend u
 
 ### Umbraco Backoffice
 
-Umbraco publishes an NPM package called "@umbraco-cms/backoffice" that holds typings and other niceties to build extensions. You can install this package by running the command `npm install --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@14.0.0--preview004`. This will install the relevant packages used for IntelliSense and TypeScript definitions in your IDE. The `--preview004` is the version of the package, which will change as new versions are released.
+Umbraco publishes an NPM package called "@umbraco-cms/backoffice" that holds typings and other niceties to build extensions. You can install this package by running the command `npm install --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@14.0.0--preview006`. This will install the relevant packages used for IntelliSense and TypeScript definitions in your IDE. The `--preview006` is the version of the package, which will change as new versions are released.
 
 It is important that this namespace is ignored in your bundler. If you are using Vite, you can add the following to your `vite.config.ts` file:
 
@@ -56,7 +56,7 @@ export default defineConfig({
 
 This ensures that the Umbraco Backoffice package is not bundled with your package.
 
-Read more about using Vite with Umbraco in the [Vite Package Setup](./vite-package-setup.md) article.
+Read more about using Vite with Umbraco in the [Vite Package Setup](vite-package-setup.md) article.
 
 ## Visual Studio Code
 

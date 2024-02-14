@@ -6,7 +6,7 @@ description: Learn how to create your first extension for Umbraco.
 
 This guide will help you set up your first extension using vanilla JavaScript or Vite, Typescript, and Lit. It is also part of the prerequisites for [Creating a Property Editor](creating-a-property-editor/) and [Creating a Custom Dashboard](creating-a-custom-dashboard.md) tutorials.
 
-Before following this tutorial make sure to read the [Setup Your Development Environment](../extending/development-flow/README.md) article.
+Before following this tutorial make sure to read the [Setup Your Development Environment](../extending/development-flow/) article.
 
 ## The end result
 
@@ -16,7 +16,7 @@ By the end of this tutorial, we will have a extension up and running with a Web 
 If you want to set up an extension with Vite, Typescript, and Lit, you can skip the section "Extension with Vanilla JavaScript".
 {% endhint %}
 
-## App_Plugins
+## App\_Plugins
 
 Extensions will go into a folder called `App_Plugins`. If you don't have this folder, you can create it at the root of your Umbraco project.
 
@@ -24,11 +24,10 @@ Extensions will go into a folder called `App_Plugins`. If you don't have this fo
 
 We consider it best practice to use at least TypeScript and some kind of build tool to write your extensions. However, since Umbraco's extension system is written entirely in JavaScript, it's possible to create extensions with vanilla JavaScript. For the sake of posterity, we will briefly go through what that looks like:
 
--   Go to the `App_Plugins` folder and create a new folder called `my-package`
--   Navigate into the folder and create a file called `umbraco-package.json`, and paste the following code. This code sets up a basic package with a dashboard extension:
+* Go to the `App_Plugins` folder and create a new folder called `my-package`
+* Navigate into the folder and create a file called `umbraco-package.json`, and paste the following code. This code sets up a basic package with a dashboard extension:
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
-
 ```json
 {
     "$schema": "../../umbraco-package-schema.json",
@@ -55,17 +54,15 @@ We consider it best practice to use at least TypeScript and some kind of build t
     ]
 }
 ```
-
 {% endcode %}
 
 {% hint style="info" %}
 Adding `$schema` to `umbraco-package.json` will give you IntelliSense for this file to help you see different options for your package.
 {% endhint %}
 
--   Next, create a new JavaScript file called `dashboard.js` and insert the following code:
+* Next, create a new JavaScript file called `dashboard.js` and insert the following code:
 
 {% code title="dashboard.js" lineNumbers="true" %}
-
 ```javascript
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 import { UMB_NOTIFICATION_CONTEXT } from "@umbraco-cms/backoffice/notification";
@@ -115,7 +112,6 @@ export default class MyDashboardElement extends UmbElementMixin(HTMLElement) {
 
 customElements.define("my-custom-dashboard", MyDashboardElement);
 ```
-
 {% endcode %}
 
 ### Running it
@@ -161,10 +157,10 @@ The Backoffice package currently relies on the older Lit 2.8 and the Vite templa
 {% endhint %}
 
 ```bash
-npm install --force --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@14.0.0--preview004
+npm install --force --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@14.0.0--preview006
 ```
 
-This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `--preview004` is the version of the package, which will change as new versions are released.
+This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `--preview006` is the version of the package, which will change as new versions are released.
 
 {% hint style="warning" %}
 If you see any errors during this process, make sure that you have the right tools installed (Node, .NET, and so on). Also, make sure you have followed the steps on how to [Setup Your Development Environment](../extending/development-flow/).
@@ -251,7 +247,6 @@ declare global {
 }
 
 ```
-
 {% endcode %}
 
 The code above defines a Web Component that contains a button that when clicked will open a notification with a message to the user.
@@ -267,7 +262,6 @@ After running the build, you will see a new file in the `dist` folder with the n
 The `umbraco-package.json` file should look like this:
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
-
 ```json
 {
     "$schema": "../../umbraco-package-schema.json",
@@ -294,7 +288,6 @@ The `umbraco-package.json` file should look like this:
     ]
 }
 ```
-
 {% endcode %}
 
 ### Running it
@@ -303,7 +296,7 @@ Now we have a JavaScript file with a Web Component which gets linked to a Dashbo
 
 Press the F5 button in your favorite IDE or run `dotnet run` in a command line. Then you should be able to see the new dashboard show up in the Content section:
 
-![The Umbraco content section showing a dashboard called "My Dashboard"](./images/my-dashboard.jpg)
+![The Umbraco content section showing a dashboard called "My Dashboard"](images/my-dashboard.jpg)
 
 Clicking the button will open a notification with the message "#h5yr".
 
@@ -312,4 +305,3 @@ Clicking the button will open a notification with the message "#h5yr".
 Now that you have created your first extension, which is a dashboard, you can continue to the next tutorial: [Creating a Custom Dashboard](creating-a-custom-dashboard.md).
 
 You can also read more about the [Umbraco Package Manifest](../extending/package-manifest.md) to learn more about the different options you have when creating an extension.
-

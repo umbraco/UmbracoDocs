@@ -35,7 +35,7 @@ The Backoffice package currently relies on the older Lit 2.8 and the Vite templa
 {% endhint %}
 
 ```bash
-npm install --force --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@14.0.0--preview004
+npm install --force --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@14.0.0--preview006
 ```
 
 This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `--preview004` is the version of the package, which will change as new versions are released.
@@ -82,8 +82,7 @@ npm run build
 
 ### Watch for changes and build
 
-If you like to continuously work on the package and have each change built, you can change the `dev` script of your `package.json` to `vite build --watch`.
-The example below indicates where in the structure this change should be implemented:
+If you like to continuously work on the package and have each change built, you can change the `dev` script of your `package.json` to `vite build --watch`. The example below indicates where in the structure this change should be implemented:
 
 {% code title="package.json" lineNumbers="true" %}
 ```json
@@ -107,7 +106,6 @@ This example declares a Dashboard as part of your Package, using the Vite exampl
 [Learn about the abilities of the Umbraco Package here.](../package-manifest.md)
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
-
 ```json
 {
     "$schema": "../../umbraco-package-schema.json",
@@ -128,7 +126,6 @@ This example declares a Dashboard as part of your Package, using the Vite exampl
     ]
 }
 ```
-
 {% endcode %}
 
 {% hint style="info" %}
@@ -139,7 +136,6 @@ To do this, you should add `default` to your `MyElement` class in the `my-elemen
 ```ts
 export default class MyElement extends LitElement {
 ```
-
 {% endhint %}
 
 ### Testing your package
@@ -147,7 +143,6 @@ export default class MyElement extends LitElement {
 In order to be able to test your package, you will need to run your site. Before you do this, you will need to include all the files in the `src` folder and the `umbraco-package.json` file into your project.
 
 If you try to include these resources via Visual Studio, be careful to include only the `dist` folder. Otherwise, VS will try include a few lines on your csproj file to compile the TypeScript code that exists in your project folder. When you run your website, VS will try to compile these files and will fail.
-
 
 ### Summary
 
