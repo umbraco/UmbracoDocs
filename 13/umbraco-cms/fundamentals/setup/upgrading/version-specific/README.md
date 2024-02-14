@@ -41,6 +41,13 @@ Below you can find the list of breaking changes introduced in Umbraco 13.
 * &#x20;[V13: Log webhook firing exceptions when they happen](https://github.com/umbraco/Umbraco-CMS/issues/15393)
 * &#x20;[Remove date header from webhook request and use constants](https://github.com/umbraco/Umbraco-CMS/issues/15407)
 
+{% hint style="warning" %}
+If using EF Core, and having installed the `Microsoft.EntityFrameworkCore.Design 8.0.0` then it has a transient dependency to `Microsoft.CodeAnalysis.Common` which clashes with the same transient dependency from `Umbraco.Cms 13.0.0`. 
+This happens because `Microsoft.EntityFrameworkCore.Design 8.0.0` requires `Microsoft.CodeAnalysis.CSharp.Workspaces` in v 4.5.0 or higher. But if nothing else needs that package then it installs it in the lowerst (4.5.0). That package then has a strict dependency on `Microsoft.CodeAnalysis.Common` version 4.5.0.
+
+This can be fixed by installing `Microsoft.CodeAnalysis.CSharp.Workspaces 4.8.0` as a specific package instead of leaving it as a transient dependency, because it will then have a strict transient dependency on `Microsoft.CodeAnalysis.Common 4.8.0` which is the same as Umbraco has.
+{% endhint %}
+
 </details>
 
 <details>
