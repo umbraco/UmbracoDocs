@@ -349,7 +349,7 @@ Moving forward, other migrators may be built by HQ or the community for property
 
 ### Migrating from Umbraco 7
 
-The import and export feature is available from Deploy 4 (which supports Umbraco 8). It's not been ported back to Umbraco 7, hence you can't trigger an export from there in the same way.
+The import and export feature is available from Deploy 4.9.x (which supports Umbraco 8). It's not been ported back to Umbraco 7, hence you can't trigger an export from there in the same way.
 
 We are still able to use this feature though to help migration from Umbraco 7 to a more recent major version.
 
