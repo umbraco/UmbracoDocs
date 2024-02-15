@@ -80,7 +80,7 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
     ```
 3.  Build and run the website. You can now login with your Azure AD credentials.
 
-    ![AD Login Screen](images/AD\_Login.png)
+    ![AD Login Screen](../reference/security/images/AD_Login.png)
 
 ## Azure AD Authentication for Members
 
@@ -214,4 +214,4 @@ Ensure to replace **{your_client_id}** and **{your_client_secret}** in the code 
     ```
 3.  Build and run the website. Your members can now login with their Azure AD credentials.
 
-    ![AD Login Screen](images/AD\_Login\_Members.png)
+    ![AD Login Screen](../reference/security/images/AD_Login_Members.png)
