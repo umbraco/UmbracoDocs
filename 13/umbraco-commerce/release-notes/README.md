@@ -17,6 +17,15 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 13 including all changes for this version.
 
+#### 13.1.0-rc3 (February 15th 2024)
+
+* Fixed missing SQL Server migrations.
+* Fixed realtime shipping rates cache not taking shipping country/region changes into account.
+* Fixed realtime shipping rates cache not taking store default location changes into account.
+* Fixed error in SafeLazy not taking null into account and so causing errors when an entity cache entry is evicted [#466](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/466).
+* Updated `Umbraco.Licenses` version dependency to the latest.
+* Made `WithUmbracoCommerceBuilder` extension public to allow accessing the `IUmbracoCommerceBuilder` instance outside of the `AddUmbracoCommerce` call.
+
 #### 13.1.0-rc2 (February 8th 2024)
 
 * Fixed RC1 regression where discount/gift card tree icons were broken.
@@ -39,14 +48,18 @@ Read the [v13.1.0-RC release post](./v13.1.0-rc.md) for further background on th
 * Updates the order editor to display the selected shipping option.
 * Updates the cart editor to allow selecting a shipping option from real-time shipping methods.
 * Updates the cart editor to calculate shipping rates/payment fees based on the current in-memory cart state.
-* Updates storefront API to incorporate new shipping rates endpoints
+* Updates storefront API to incorporate new shipping rates endpoints.
+
+#### 13.0.2 (February 15th 2024)
+
+* Fixed error in SafeLazy not taking null into account and so causing errors when an entity cache entry is evicted [#466](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/466).
 
 #### 13.0.1 (February 6th 2024)
 
-* Reset request stream before passing to payment providers
-* Added licensing fallback to use any previously validated license within the last 7 days
-* Updated `Umbraco.Licenses` version dependency to the latest
-* Made `WithUmbracoCommerceBuilder` extension public to allow accessing the `IUmbracoCommerceBuilder` instance outside of the `AddUmbracoCommerce` call
+* Reset request stream before passing to payment providers.
+* Added licensing fallback to use any previously validated license within the last 7 days.
+* Updated `Umbraco.Licenses` version dependency to the latest.
+* Made `WithUmbracoCommerceBuilder` extension public to allow accessing the `IUmbracoCommerceBuilder` instance outside of the `AddUmbracoCommerce` call.
 
 #### [13.0.0](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.0) (December 13th 2023)
 
