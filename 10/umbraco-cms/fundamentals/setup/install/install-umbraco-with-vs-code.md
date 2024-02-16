@@ -6,9 +6,9 @@ Follow these steps to set up an Umbraco project with VS Code. The benefit of usi
 
 1. Go to [https://code.visualstudio.com/](https://code.visualstudio.com/) and download VS Code for free.
 2. Once installed, launch VS Code.
-3.  Click the extensions menu at the bottom on the left side. Then search for **C#**, install it then press reload.
+3. Click the extensions menu at the bottom on the left side. Then search for **C#**, install it then press reload.
 
-    ![VS Code install extension](../../../../../13/umbraco-cms/fundamentals/setup/install/images/VsCode/VsCodeExtension.png)
+    ![VS Code install extension](images/VsCode/Marketplace.jpg)
 
 ## Creating your Umbraco project
 
@@ -18,7 +18,7 @@ Follow the [Templates Guide](install-umbraco-with-templates.md) to create your p
 
 Open your project folder in VS Code, your project will look something like this:
 
-![Fresh Umbraco installation](../../../../../13/umbraco-cms/fundamentals/setup/install/images/VsCode/netcoreStructure.png)
+![Fresh Umbraco installation](images/VsCode/VS_Code_Explorer.png)
 
 Now we need to tell VS Code how to run your project.
 
@@ -38,15 +38,21 @@ After this VS Code will have created a folder called `.vscode` that contains a f
 
 Now that we've told VS Code how to build your project, we need to tell it how to launch it. VS Code can do this for you. First, select the little play button in the left side menu, and then select the "create a launch.json file" link.
 
-![Creating launch.json file](../../../../../13/umbraco-cms/fundamentals/setup/install/images/VsCode/creatingLaunchFile.png)
+![Creating launch.json file](images/VsCode/Create_LaunchJson_file.jpg)
 
 This will prompt a menu to appear, select:
 
-<figure><img src="../../../../../13/umbraco-cms/fundamentals/setup/install/images/VsCode/NetcoreTask.png" alt=""><figcaption></figcaption></figure>
+![Prompt Menu](images/VsCode/Prompt_Menu.jpg)
 
-Now you'll see a green play button appear with a dropdown where ".NET Core Launch" is selected. If you navigate to the files section again, you'll see that another file has been created in the `.vscode` folder, this one is called `launch.json`, it's this file that tells VS Code, to build your project, run it, and then open a browser when you press F5.
+Now you'll see a green play button appear with a dropdown where ".NET Core Launch" is selected.
 
-With that, you're ready to run! Press F5, or click the little green play button in the "Run and Debug" section to run your brand new Umbraco site locally.
+![Green play button options](images/VsCode/Dropdown_option.jpg)
+
+If you navigate to the Files section, a new `launch.json` file is created in the `.vscode` folder.  When you press F5, the `launch.json` file tells VS Code to build your project, run it, and then open a browser .
+
+![launch.json file](images/VsCode/launchJson.jpg)
+
+With that, you're ready to run the project! Press F5, or click the little green play button in the **Run and Debug** section to run your brand new Umbraco site locally.
 
 ## Umbraco Web Installer
 
@@ -54,7 +60,7 @@ This section continues from where we left off but covers the installation and co
 
 You will see the install screen where you will need to fill in some data before Umbraco can be installed.
 
-![Web Installer - Lets Get Started](../../../../../13/umbraco-cms/fundamentals/setup/install/images/installer.png)
+![Web Installer - Lets Get Started](images/VsCode/Install_Umbraco.jpg)
 
 When the installer is done you will automatically be logged into the backoffice.
 
