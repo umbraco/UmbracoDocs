@@ -237,7 +237,7 @@ UPDATE umbracoCommercePrintTemplate
 SET templateView = REPLACE(templateView, '/App_Plugins/Vendr/templates/print', '/Views/UmbracoCommerce/Templates/Print')
 WHERE templateView LIKE '%/Vendr/%';
 UPDATE umbracoCommerceExportTemplate
-SET templateView = REPLACE(templateView, '/App_Plugins/Vendr/templates/email', '/Views/UmbracoCommerce/Templates/Export')
+SET templateView = REPLACE(templateView, '/App_Plugins/Vendr/templates/export', '/Views/UmbracoCommerce/Templates/Export')
 WHERE templateView LIKE '%/Vendr/%';
 ```
 
