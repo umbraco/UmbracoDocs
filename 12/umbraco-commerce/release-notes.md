@@ -17,6 +17,11 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 12 including all changes for this version.
 
+#### 12.1.6 (February 15th 2024)
+
+* Fixed error in SafeLazy not taking null into account and so causing errors when an entity cache entry is evicted [#466](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/466).
+* Incremented `Newtonsoft.Json` version dependency to 13.0.1 as 13.0.0 doesn't exist on NuGet anymore [#451](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/451).
+
 #### 12.1.5 (February 6th 2024)
 
 * Added licensing fallback to use any previously validated license within the last 7 days
