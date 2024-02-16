@@ -92,4 +92,4 @@ To run the newly created Umbraco site, you can execute the following command:
 dotnet run
 ```
 
-For more information about installing Umbraco see [the installation requirements](alpha-release.md).
+For more information about installing Umbraco see [the installation requirements](../requirements.md).

@@ -3,11 +3,17 @@
 * [Upcoming Umbraco Backoffice](README.md)
 * [Contributing Guidelines](https://github.com/umbraco/Umbraco.CMS.Backoffice/blob/main/.github/CONTRIBUTING.md)
 
-## Getting Started
+## Fundamentals
 
-* [Getting Started With Backoffice](getting-started/getting-started-with-the-new-backoffice.md)
-* [Installing Preview Builds](getting-started/installing-preview-builds/README.md)
-  * [Requirements](getting-started/installing-preview-builds/alpha-release.md)
+* [Getting Started With Backoffice](fundamentals/setup/getting-started-backoffice.md)
+* [Setup](fundamentals/setup/README.md)  
+  * [Requirements](fundamentals/setup/requirements.md)
+  * [Installation](fundamentals/setup/install/README.md)
+    * [Installing Preview Builds](fundamentals/setup/install/preview-builds.md)
+    * [Installing Nightly Builds](fundamentals/setup/install/installing-nightly-builds.md)
+
+* [Backoffice](fundamentals/backoffice/README.md)
+  * [Document Blueprints](fundamentals/backoffice/document-blueprints.md)
 
 ## Extending
 
@@ -51,12 +57,20 @@
   * [Route Registration](extending/modals/route-registration.md)
 * [Sorting](extending/sorting.md)
 
-## Fundamentals
-
-* [Document Blueprints](fundamentals/backoffice/document-blueprints.md)
-
 ## Tutorials
 
+* [Creating a Basic Website](tutorials/creating-a-basic-website/README.md)
+  * [Getting Started](tutorials/creating-a-basic-website/getting-started.md)
+  * [Document Types](tutorials/creating-a-basic-website/document-types.md)
+  * [Creating Your First Template](tutorials/creating-a-basic-website/creating-your-first-template-and-content-node.md)
+  * [CSS and Images](tutorials/creating-a-basic-website/css-and-images.md)
+  * [Displaying the Document Type Properties](tutorials/creating-a-basic-website/displaying-the-document-type-properties.md)
+  * [Creating a Master Template](tutorials/creating-a-basic-website/creating-master-template-part-1.md)
+  * [Creating Pages and Using the Master Template](tutorials/creating-a-basic-website/creating-master-template-part-2.md)
+  * [Setting the Navigation Menu](tutorials/creating-a-basic-website/setting-the-navigation-menu.md)
+  * [Articles and Article Items](tutorials/creating-a-basic-website/article-parent-and-article-items.md)
+  * [Adding Language Variants](tutorials/creating-a-basic-website/adding-language-variants.md)
+  * [Conclusions](tutorials/creating-a-basic-website/conclusion.md)
 * [Creating your first extension](tutorials/creating-your-first-extension.md)
 * [Creating a Custom Dashboard](tutorials/creating-a-custom-dashboard.md)
   * [Adding localization to the dashboard](tutorials/creating-a-custom-dashboard/adding-localization-to-the-dashboard.md)
