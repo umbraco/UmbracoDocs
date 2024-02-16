@@ -5,7 +5,7 @@
 
 ## Fundamentals
 
-* [Getting Started With Backoffice](fundamentals/setup/getting-started-backoffice.md)
+* [Getting Started With Backoffice](fundamentals/getting-started-backoffice.md)
 * [Setup](fundamentals/setup/README.md)  
   * [Requirements](fundamentals/setup/requirements.md)
   * [Installation](fundamentals/setup/install/README.md)
