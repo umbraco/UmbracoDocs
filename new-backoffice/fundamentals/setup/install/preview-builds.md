@@ -4,92 +4,128 @@ description: Instructions on installing preview builds of Umbraco.
 
 # Installing Preview Builds
 
-This article explains how you can get the latest builds of Umbraco V14. There are three steps to do this.
+In this article, we'll explain how you can get the latest builds of Umbraco. You can do this in three steps:
 
-1. Adding the "prereleases" feed as a NuGet source
-2. Finding the preview version
-3. Installing the preview version template called "Umbraco.Templates"
+1. [Using the Feed](preview-builds.md#using-the-feed)
+2. [Adding the "prereleases" Feed as a NuGet Source](preview-builds.md#adding-the-prereleases-feed-as-a-nuget-source)
+3. [Installing the Preview Build Template](preview-builds.md#installing-the-preview-build-template)
 
 {% hint style="info" %}
-If you experience any problems running any of the prerelease/nightly builds, please ensure that you have the required version of .NET. You can always find the latest on the [dotnet website](https://dotnet.microsoft.com/en-us/). For Umbraco 14 you will need at least .NET 8.
+If you experience any problems running any of the prerelease/nightly builds, ensure that you have the [required version of .NET](../requirements.md#local-development). You can always find the latest on the [Microsoft website](https://dotnet.microsoft.com/en-us/).&#x20;
 {% endhint %}
 
-But let's take things one step at a time.
+## Using the Feed
 
-## Adding the feed as a NuGet source
+You can choose from two NuGet feeds to try out the latest Umbraco preview releases containing the new Backoffice:
 
-There are two NuGet feeds to choose from to try out the latest Umbraco including the Umbraco 14 preview releases containing the new Backoffice.
+* [Prerelease Feed](preview-builds.md#prerelease-feed)
+* [Nightly Feed](preview-builds.md#nightly-feed)
 
-**Prerelease feed**
+### Prerelease Feed
 
-This feed contains prebuilt versions of Umbraco released along with the prerelease announcements.
+The prerelease feed contains prebuilt versions of Umbraco released along with the prerelease announcements.
 
-The feed is available through this URL, which you have to use during the rest of the guide:
+The feed is available through this URL and is used in the rest of the guide:
 
 ```
 https://www.myget.org/F/umbracoprereleases/api/v3/index.json
 ```
 
-**Nightly feed**
+### Nightly Feed
 
-This feed usually receives a release once a day. The releases are built from the respective dev branches of Umbraco and are therefore not considered stable.
+The nightly feed usually receives a release once a day. The releases are built from the respective dev branches of Umbraco and are therefore not considered stable.
 
-The feed is available through this URL, which you have to use during the rest of the guide:
+The feed is available through this URL:
 
 ```
 https://www.myget.org/F/umbraconightly/api/v3/index.json
 ```
 
-## Using the feed
+For more information, see the [Installing Nightly Builds](installing-nightly-builds.md) article.
 
-You can either add the feed through the command line or use your IDE of choice. In this guide, we'll cover the command line.
+## Adding the "prereleases" Feed as a NuGet Source
 
-We will use the prereleases feed during this guide, but the instructions are the same for both feeds.
+You can either add the feed through the command line or use an IDE of your choice. In this guide, we'll provide steps for:
+
+* [Using the command line](preview-builds.md#using-the-command-line)
+* [Using Visual Studio](preview-builds.md#using-visual-studio)
 
 ### Using the command line
 
-To add the feed using the command line, open up your command prompt of choice and run the following command:
+To add the feed using the command line:
+
+1. Open a command prompt of your choice.
+2. Run the following command:
 
 ```bash
 dotnet nuget add source "https://www.myget.org/F/umbracoprereleases/api/v3/index.json" -n "Umbraco Prereleases"
 ```
 
-This will add the feed as a source named `Umbraco Prereleases.`
+The feed is added as a source named `Umbraco Prereleases`.
 
-## Installing the latest build
+### Using Visual Studio
 
-Now that our feed is added we're ready to install our template.
+To add the feed using Visual Studio:
 
-Open up your command prompt of choice then execute the `dotnet new install` command and provide the version that we want to install. For the latest Umbraco 14 preview release, the command looks like this:
+1. Open Visual Studio.
+2. Go to **Tools** > **NuGet Package Manager** > **Package Manager Settings**.
+
+![Package Manager Settings](<../../../.gitbook/assets/Package-Manager-Settings (1).jpg>)
+
+3. The **Options** window open.
+4. Select the **Package Sources** option in the **NuGet Package Manager** section.
+5. Select **Umbraco Prereleases**.
+6. Enter the desired name for the feed in the **Name** field.
+7. Enter the link `https://www.myget.org/F/umbracoprereleases/api/v3/index.json` into the **Source** field.
+8. Click **OK**.
+
+![Register the prereleases feed](../../../.gitbook/assets/VS-Package-Sources.jpg)
+
+The feed is added as a source named `Umbraco Prereleases`.
+
+## Installing the Preview Build Template
+
+Now that our feed is added we're ready to install the preview build template.
+
+To install the preview build template:
+
+1. Open your command prompt.
+2. Run the following command and provide the version that you want to install.&#x20;
 
 ```
 dotnet new install Umbraco.Templates::14.0.0--preview006
 ```
 
 {% hint style="info" %}
-You can always keep up to date with the latest preview version by checking the [MyGet website](https://www.myget.org/feed/umbraconightly/package/nuget/Umbraco.Templates).
+Check the [MyGet website](https://www.myget.org/feed/umbraconightly/package/nuget/Umbraco.Templates) to stay up-to-date with the latest preview versions.&#x20;
 {% endhint %}
 
-The name and the versions are separated with two colons`::`. It's important that we specify the entire version, including the `--preview006`; Otherwise, the `dotnet new` command cannot find the package.
+The prerelease name and the version are separated with two colons`::`. It is important to specify the entire version, including the `--preview006` otherwise the `dotnet new` command will not find the package.
 
-With that, we've successfully installed the latest build of Umbraco! All we have to do now is create a new site by executing the newly installed template:
+With that, we've successfully installed the latest build of Umbraco.
 
-```bash
-dotnet new umbraco -n MyAwesomeNightlySite
-```
+## Create an Umbraco project
 
-This creates a folder named "MyAwesomeNightlySite" on your system. You can open it in your IDE (like Rider) or use the command line to start working with it.
-
-If you choose to use the command line first you have to change the directory to `MyAwesomeNightlySite`.
+Create a new project using the following command:
 
 ```bash
-cd MyAwesomeNightlySite
+dotnet new umbraco -n MyAwesomePreviewSite
 ```
 
-To run the newly created Umbraco site, you can execute the following command:
+This creates a folder named **MyAwesomePreviewSite**.  The new project can be opened and run using your favorite IDE or you can continue using the CLI commands.
+
+### Run Umbraco
+
+1. Navigate to the newly created project folder:
+
+```bash
+cd MyAwesomePreviewSite
+```
+
+2. Build and run the newly created Umbraco site:
 
 ```bash
 dotnet run
 ```
 
-For more information about installing Umbraco see [the installation requirements](../requirements.md).
+For more information about installing Umbraco, see the [Installation Requirements](../requirements.md).

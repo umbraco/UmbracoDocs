@@ -13,10 +13,10 @@ This page is a work in progress. It will be updated as the software evolves.
 Make sure you have the following installed on your machine:
 
 * **.NET 8**
-* **Node.js 20.11.0**
+* [**Node.js version 20.11.0 (LTS)**](https://nodejs.org/en/download/)
 
 {% hint style="info" %}
-Tip: use nvm (Node Version Manager for [Windows](https://github.com/coreybutler/nvm-windows) or [Mac/Linux](https://github.com/nvm-sh/nvm)
+Tip: use NVM (Node Version Manager) for [Windows](https://github.com/coreybutler/nvm-windows) or [Mac/Linux](https://github.com/nvm-sh/nvm) to manage the Node.js versions.
 {% endhint %}
 
 ## Package Setup
