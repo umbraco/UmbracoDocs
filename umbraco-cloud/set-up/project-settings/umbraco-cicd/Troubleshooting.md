@@ -41,12 +41,12 @@ The next time you try to deploy through your pipeline you will encounter an erro
 In order to fix this issue, you need to use [KUDU](../../power-tools/README.md) to remove the leftover marker file.
 
 1. Access KUDU on the "left-most" environment
-  * If you only have one environment you want the live environemnt
+  * If you only have one environment you want the live environment
   * If you have more than one environment, you want the development environment
 
-3. Navigate to `site` > `locks` folder
+3. Navigate to `site` > `locks` folder  In there, there should be a file named `updating`
 
-4. In the folder, there should be a file named `updating`. Remove it
+4. Remove the `updating` file.
 
 Once the marker file is removed, run your pipeline again.
 
