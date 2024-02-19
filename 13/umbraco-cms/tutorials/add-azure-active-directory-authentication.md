@@ -147,8 +147,8 @@ public static class MemberAuthenticationExtensions
                             });
                     });
             });
-            return builder;
-        }
+        });
+        return builder;
     }
 }
 ```
