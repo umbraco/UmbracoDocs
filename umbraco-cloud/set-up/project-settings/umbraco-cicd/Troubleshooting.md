@@ -48,7 +48,7 @@ In order to fix this issue, you need to use [KUDU](../../power-tools/README.md) 
 
 4. In the folder, there should be a file named `updating`. Remove it
 
-Once the leftover marker file is removed, you run your pipeline again.
+Once the marker file is removed, run your pipeline again.
 
 ## Are you stuck?
 
