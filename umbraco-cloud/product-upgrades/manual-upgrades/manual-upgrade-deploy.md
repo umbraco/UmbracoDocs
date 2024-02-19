@@ -45,11 +45,11 @@ When the command completes, open the `.csproj` file to make sure the package ref
 
 Make sure that everything works on the local clone and that you can **run the project without any errors**.
 
+## Manually Upgrade Umbraco Deploy Legacy Version 7 and 8
+
 <details>
 
-<summary>Manually Upgrade Umbraco Deploy Legacy versions 7 and 8</summary>
-
-If you are on Umbraco 7 or Umbraco 8, follow the steps below to manually upgrade Umbraco Deploy to a later version of your project.
+<summary>If you are on Umbraco 7 or Umbraco 8, follow these steps to manually upgrade Umbraco Deploy to a later version of your project</summary>
 
 1. Download **Storage Explorer** here: [https://azure.microsoft.com/en-us/products/storage/storage-explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer) and install it.
 2. Click the **"Plug"** Button (Open Connect Dialog):\
