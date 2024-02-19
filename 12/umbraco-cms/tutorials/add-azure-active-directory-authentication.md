@@ -46,7 +46,7 @@ namespace MyApp;
 
 public class AzureB2CMembersExternalLoginProviderOptions : IConfigureNamedOptions<MemberExternalLoginProviderOptions>
 {
-    public const string SchemeName = "ActiveDirectoryB2C";¨
+    public const string SchemeName = "ActiveDirectoryB2C";
 
     public void Configure(string? name, MemberExternalLoginProviderOptions options)
     {
