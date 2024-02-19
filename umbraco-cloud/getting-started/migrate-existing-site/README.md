@@ -6,14 +6,14 @@ Migrating an existing site requires some specific steps and an understanding of 
 
 These are the steps you need to go through to complete the migration successfully:
 
-1. [Requirements](./#1.-requirements)
-2. [Tools](./#2.-tools)
-3. [Prepare your site](./#3.-prepare-your-site)
-4. [Prepare your Cloud project](./#4.-prepare-your-cloud-project)
-5. [Clone down the Cloud project](./#5.-clone-down-the-cloud-project)
-6. [Move and Merge files](./#6.-move-and-merge-files)
-7. [Generate meta data](./#7.-generate-meta-data)
-8. [Deploy to Umbraco Cloud](./#8.-deploy-to-umbraco-cloud)
+1. [Requirements](./#id-1.-requirements)
+2. [Tools](./#id-2.-tools)
+3. [Prepare your site](./#id-3.-prepare-your-site)
+4. [Prepare your Cloud project](./#id-4.-prepare-your-cloud-project)
+5. [Clone down the Cloud project](./#id-5.-clone-down-the-cloud-project)
+6. [Move and Merge files](./#id-6.-move-and-merge-files)
+7. [Generate meta data](./#id-7.-generate-meta-data)
+8. [Deploy to Umbraco Cloud](./#id-8.-deploy-to-umbraco-cloud)
 
 ## Video tutorial
 
@@ -154,7 +154,6 @@ That's it! Now that you've merged your existing site with the local clone of the
 Umbraco Identity (Umbraco ID) is the Single Sign-On (SSO) feature across all Umbraco Cloud services.
 
 It is required to access any project pages as well as the backoffice.
-
 {% endhint %}
 
 With that confirmed, it's time to prepare to migrate the project to Umbraco Cloud.
