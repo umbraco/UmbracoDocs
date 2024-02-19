@@ -10,41 +10,43 @@ Umbraco recommends building extensions with a setup using TypeScript and a build
 
 Vite comes with a set of really good presets to get you quickly up and running with libraries and languages. For example: Lit, Svelte, and Vanilla Web Components with both JavaScript and TypeScript.
 
-Create an `/App_Plugins` folder if it doesn't exist yet and run the following command.
+1. At the root of your project create an `/App_Plugins` folder (if it doesn't exist yet) and run the following command in the `/App_Plugins`:
 
 ```bash
 npm create vite@latest
 ```
 
-This Guide will help you set up your new package, asking you to pick a framework and a compiler. We recommend **Lit** and **TypeScript**.
+2. This command will help you set up your new package, asking you to pick a framework and a compiler.&#x20;
 
-To follow this tutorial, we recommend you enter `my-dashboard` as the Project Name when prompted, although you can choose any other you like.
+To follow this tutorial, we recommend you enter `my-dashboard` as the Project Name when prompted, although you can choose any other you like. Then choose **Lit** and **TypeScript**.
+
+<figure><img src="../../.gitbook/assets/Vite_Package_Setup_Image_Install.png" alt=""><figcaption><p>Create vite command choices</p></figcaption></figure>
 
 This creates a new folder, sets up our new project, and creates a `package.json` file, which includes the necessary packages.
 
-Navigate to the new project folder and install the packages using:
+3. Navigate to the new project folder and install the packages using:
 
 ```bash
 npm install
 ```
 
-The last thing we need to install now is our Backoffice package. You can install the package using the following command:
-
-{% hint style="warning" %}
-The Backoffice package currently relies on the older Lit 2.8 and the Vite template uses Lit 3. Because of this mismatch, you need to override the Lit version in the Backoffice package by installing with the `--force` option. This will be fixed in a future version when the Backoffice has been upgraded to Lit 3.
-{% endhint %}
+4. The last thing we need to install now is our Backoffice package. You can install the package using the following command:
 
 ```bash
 npm install --force --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@14.0.0--preview006
 ```
 
-This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `--preview004` is the version of the package, which will change as new versions are released.
+{% hint style="warning" %}
+The Backoffice package currently relies on the older Lit 2.8 and the Vite template uses Lit 3. Because of this mismatch, you need to override the Lit version in the Backoffice package by installing with the `--force` option. This will be fixed in a future version when the Backoffice has been upgraded to Lit 3.
+{% endhint %}
+
+This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `--preview006` is the version of the package, which will change as new versions are released.&#x20;
 
 {% hint style="warning" %}
 If you see any errors during this process, make sure that you have the right tools installed (Node, .NET, and so on). Also, make sure you have followed the steps on how to [Setup Your Development Environment](./).
 {% endhint %}
 
-Next, in your project folder, create a new file called `vite.config.ts` and insert the following code:
+5. In your project folder, create a new file called `vite.config.ts` and insert the following code:
 
 ```ts
 import { defineConfig } from "vite";
