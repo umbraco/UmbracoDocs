@@ -23,8 +23,8 @@ Install an appropriate Nuget package for the provider you wish to use. Some popu
 
 ## Try it out
 
-{% content-ref url="../../tutorials/add-azure-active-directory-authentication.md" %}
-[configuration](../../tutorials/add-azure-active-directory-authentication.md)
+{% content-ref url="../../tutorials/add-microsoft-entra-id-authentication.md" %}
+[configuration](../../tutorials/add-microsoft-entra-id-authentication.md)
 {% endcontent-ref %}
 
 {% content-ref url="../../tutorials/add-google-authentication.md" %}
