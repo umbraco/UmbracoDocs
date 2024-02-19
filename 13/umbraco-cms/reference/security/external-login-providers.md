@@ -6,7 +6,7 @@ description: >-
 
 # External login providers
 
-Both the Umbraco backoffice users and website members support external login providers (OAuth) for performing authentication. This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google, or Facebook.
+Both the Umbraco backoffice users and website members support external login providers (OAuth) for performing authentication. This could be any OpenIDConnect provider such as Microsoft Entra ID (Azure Active Directory), Identity Server, Google, or Facebook.
 
 {% hint style="info" %}
 Unlike previous major releases of Umbraco the use of the Identity Extensions package is no longer required.
