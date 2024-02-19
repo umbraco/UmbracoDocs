@@ -1,9 +1,11 @@
 ---
 description: >-
-    You can register modals with a route, making it possible to link directly to that specific modal. This also means the user can navigate back and forth in the browser history. This makes it an ideal solution for modals containing an editorial experience.
+  You can register modals with a route, making it possible to link directly to
+  that specific modal. This also means the user can navigate back and forth in
+  the browser history. This makes it an ideal so
 ---
 
-# Modal Route Registration
+# Route Registration
 
 A modal can be registered via the `UmbModalRouteRegistrationController`. The registration accepts a modal token (or extension alias).
 
@@ -22,10 +24,10 @@ this.myModalRegistration = new UmbModalRouteRegistrationController(
 
 The registration holds an instance of its `UmbModalHandler` when the modal is active. The modal registration accepts 4 different callbacks:
 
--   `onSetup` - called when the modal is opened
--   `onSubmit` - called when the modal is submitted
--   `onReject` - called when the modal is rejected
--   `observeRouteBuilder` - called when the modal route changes. Use the given route builder to build a route to open the modal
+* `onSetup` - called when the modal is opened
+* `onSubmit` - called when the modal is submitted
+* `onReject` - called when the modal is rejected
+* `observeRouteBuilder` - called when the modal route changes. Use the given route builder to build a route to open the modal
 
 **TODOS:**
 
@@ -33,12 +35,12 @@ describe the additional features of the route Registration:
 
 **Hints:**
 
--   Add unique parts to the path. (How is this done properly as part of a Property Editor)
--   A modal registered in a dashboard can be setup in few steps
--   A modal registered in a property editor needs to become specific for the property and the variant of that property.
--   Build some data for the setup.
--   Reject a modal by returning false in setup.
--   Use a param as part of the setup to determine the data going to the modal.
+* Add unique parts to the path. (How is this done properly as part of a Property Editor)
+* A modal registered in a dashboard can be setup in few steps
+* A modal registered in a property editor needs to become specific for the property and the variant of that property.
+* Build some data for the setup.
+* Reject a modal by returning false in setup.
+* Use a param as part of the setup to determine the data going to the modal.
 
 ## Modal registration for UI as part of a Property Editor
 
