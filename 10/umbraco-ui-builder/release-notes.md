@@ -17,6 +17,11 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco UI Builder 10 including all changes for this version.
 
+#### [**10.0.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.3) **(February 20th 2023)**
+
+* Dependency version update for `Umbraco.Licenses`
+* Version range update for `Microsoft.AspNetCore.Components.Web`
+
 #### [**10.0.2**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.2) **(December 1st 2023)**
 
 * Run server side validation on action settings dialog [#34](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/34).
