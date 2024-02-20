@@ -119,6 +119,8 @@ Now we have a JavaScript file with a Web Component which gets linked to a Dashbo
 
 <figure><img src="../.gitbook/assets/Create_first_extension_Vanilla.png" alt=""><figcaption><p>Dashboard using Vanilla JS</p></figcaption></figure>
 
+Clicking the button will open a notification with the message "Hello".
+
 ## Extension with Vite, Typescript, and Lit
 
 You now have a working extension with a dashboard Web Component written in plain JavaScript and no build tool. However, Umbraco recommends building extensions with a setup using TypeScript and a build tool such as [Vite](https://vitejs.dev). Umbraco uses the library [Lit](https://lit.dev) for building web components which we will be using throughout this guide.
@@ -295,7 +297,7 @@ Now we have a JavaScript file with a Web Component which gets linked to a Dashbo
 
 8. Press the F5 button in your favorite IDE or run `dotnet run` in a command line to run the project. Then you will see the new dashboard show up in the Content section.
 
-(insert image)
+<figure><img src="../.gitbook/assets/Create_first_extension_Typescript.png" alt=""><figcaption><p>Dasboard using TypeScript</p></figcaption></figure>
 
 Clicking the button will open a notification with the message "#h5yr".
 
