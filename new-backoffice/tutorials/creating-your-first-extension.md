@@ -4,17 +4,14 @@ description: Learn how to create your first extension for Umbraco.
 
 # Creating your first extension
 
-This guide will help you set up your first extension using vanilla JavaScript or Vite, Typescript, and Lit. It is also part of the prerequisites for [Creating a Property Editor](creating-a-property-editor/) and [Creating a Custom Dashboard](creating-a-custom-dashboard.md) tutorials.
+This guide will help you set up your first extension with a Web Component using two ways:
 
-Before following this tutorial make sure to read the [Setup Your Development Environment](../extending/development-flow/) article.
+1. [Vanilla JavaScript](creating-your-first-extension.md#extension-with-vanilla-javascript) or
+2. [Vite, Typescript, and Lit](creating-your-first-extension.md#extension-with-vite-typescript-and-lit)
 
-## The end result
+Before following this tutorial make sure to read the [Setup Your Development Environment](../extending/development-flow/) article.&#x20;
 
-By the end of this tutorial, we will have a extension up and running with a Web Component. This will be made with Vanilla JavaScript or made and set up with Vite, Typescript, and Lit.
-
-{% hint style="info" %}
-If you want to set up an extension with Vite, Typescript, and Lit, you can skip the section "Extension with Vanilla JavaScript".
-{% endhint %}
+This article is also part of the prerequisites for [Creating a Property Editor](creating-a-property-editor/) and [Creating a Custom Dashboard](creating-a-custom-dashboard.md) tutorials.
 
 ## App\_Plugins
 
@@ -24,8 +21,8 @@ Extensions will go into a folder called `App_Plugins`. If you don't have this fo
 
 We consider it best practice to use at least TypeScript and some kind of build tool to write your extensions. However, since Umbraco's extension system is written entirely in JavaScript, it's possible to create extensions with vanilla JavaScript. For the sake of posterity, we will briefly go through what that looks like:
 
-* Go to the `App_Plugins` folder and create a new folder called `my-vanilla-extension`
-* Navigate into the folder and create a file called `umbraco-package.json`, and paste the following code. This code sets up a basic package with a dashboard extension:
+1. Go to the `App_Plugins` folder and create a new folder called `my-vanilla-extension`
+2. In the newly created folder, create a file called `umbraco-package.json`. Then add the following code :
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
 ```json
@@ -56,11 +53,13 @@ We consider it best practice to use at least TypeScript and some kind of build t
 ```
 {% endcode %}
 
+This code sets up a basic package with a dashboard extension.
+
 {% hint style="info" %}
 Adding `$schema` to `umbraco-package.json` will give you IntelliSense for this file to help you see different options for your package.
 {% endhint %}
 
-* Next, create a new JavaScript file called `vanilla-extension.js` and insert the following code:
+3. Next, create a new JavaScript file called `vanilla-extension.js` and insert the following code:
 
 {% code title="vanilla-extension.js" lineNumbers="true" %}
 ```javascript
@@ -114,11 +113,11 @@ customElements.define("my-vanilla-extension", MyDashboardElement);
 ```
 {% endcode %}
 
-### Running it
-
 Now we have a JavaScript file with a Web Component which gets linked to a Dashboard Extension as part of the Package Manifest JSON.
 
-Press the F5 button in your favorite IDE or run `dotnet run` in a command line. Then you should be able to see the new dashboard show up in the Content section.
+5. Press the F5 button in your favorite IDE or run `dotnet run` in a command line to run the project. Then you will see the new dashboard show up in the Content section.
+
+<figure><img src="../.gitbook/assets/Create_first_extension_Vanilla.png" alt=""><figcaption><p>Dashboard using Vanilla JS</p></figcaption></figure>
 
 ## Extension with Vite, Typescript, and Lit
 
@@ -132,25 +131,27 @@ If you want to learn more about Vite, you can read the [Vite Package Setup](../e
 
 Vite comes with a set of really good presets to get you quickly up and running with libraries and languages. Examples: Lit, Svelte, and vanilla Web Components with both JavaScript and TypeScript. We will use their preset of Lit and TypeScript.
 
-Find a place where you want to keep your source files, this could be a new folder under the `App_Plugins/my-package` folder you created before.
+Find a place where you want to keep your source files, this could be a new folder under the `App_Plugins` folder.
 
 {% hint style="info" %}
 Be aware that any files in the `App_Plugins` folder are publicly available. If you want to keep your source files private, you should create a new folder outside of the `App_Plugins` folder. Your source files could be in a whole new project where you build your extension and then copy the build files to the `App_Plugins` folder.
 {% endhint %}
 
-Paste and run the following command in your terminal where you want to create your new project:
+1. In the `App_Plugins` folder paste and run the following command in your terminal:
 
 ```bash
-npm create vite@latest my-extension -- --template lit-ts
+npm create vite@latest my-typescript-extension -- --template lit-ts
 ```
 
-This sets up our new project in a folder named `my-extension` and creates a `package.json` file, which includes the necessary packages. Navigate to the new project folder and install the packages using:
+This sets up our new project in a folder named `my-extension` and creates a `package.json` file, which includes the necessary packages.&#x20;
+
+2. Navigate to the new `my-typescript-extension` project folder and install the packages using:
 
 ```bash
 npm install
 ```
 
-The last thing we need to install now is our Backoffice package. You can install the package using the following command:
+3. The last thing we need to install now is our Backoffice package. You can install the package using the following command:
 
 {% hint style="warning" %}
 The Backoffice package currently relies on the older Lit 2.8 and the Vite template uses Lit 3. Because of this mismatch, you need to override the Lit version in the Backoffice package by installing with the `--force` option. This will be fixed in a future version when the Backoffice has been upgraded to Lit 3.
@@ -166,7 +167,7 @@ This will add a package to your devDependencies containing the TypeScript defini
 If you see any errors during this process, make sure that you have the right tools installed (Node, .NET, and so on). Also, make sure you have followed the steps on how to [Setup Your Development Environment](../extending/development-flow/).
 {% endhint %}
 
-Next, create a new file called `vite.config.ts` and insert the following code:
+4. At the root of the `my-typescript-extension` folder create a new file called `vite.config.ts` and insert the following code:
 
 ```javascript
 import { defineConfig } from 'vite';
@@ -188,13 +189,13 @@ export default defineConfig({
 
 ```
 
-This alters the Vite default output into a "library mode", where the output is a JavaScript file with the same name as the `name` attribute in `package.json`. The name is `my-extension` if you followed this tutorial with no changes.
+This alters the Vite default output into a "library mode", where the output is a JavaScript file with the same name as the `name` attribute in `package.json`.&#x20;
 
 {% hint style="info" %}
 You can read more about [Vite's build options here](https://vitejs.dev/config/build-options.html#build-lib).
 {% endhint %}
 
-Navigate to `src/my-element.ts`, open the file and replace it with the following code:
+5. Navigate to `src/my-element.ts`, open the file and replace it with the following code:
 
 {% code title="src/my-element.ts" lineNumbers="true" %}
 ```typescript
@@ -251,32 +252,32 @@ declare global {
 
 The code above defines a Web Component that contains a button that when clicked will open a notification with a message to the user.
 
-Next, we are going to build the `ts` file so we can use it in our package:
+6. At the root of the `my-typescript-extension` folder build the `ts` file so we can use it in our package:
 
 ```bash
 npm run build
 ```
 
-After running the build, you will see a new file in the `dist` folder with the name `my-extension.js`. This is the file we will use in our package. To do so, you need to open the `umbraco-package.json` file and change the `js` property to point to your new file. If you chose to put the source code inside your `App_Plugins` folder, the path will be `/App_Plugins/my-package/my-extension/dist/my-extension.js`.
+After running the build, you will see a new file in the `dist` folder with the name `my-typescript-extension.js`. This is the file we will use in our package.&#x20;
 
-The `umbraco-package.json` file should look like this:
+7. At the root of the `my-typescript-extension` folder create a `umbraco-package.json` file with the following:
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
 ```json
 {
     "$schema": "../../umbraco-package-schema.json",
-    "name": "My Package",
+    "name": "My TypeScript Extension",
     "version": "0.1.0",
     "extensions": [
         {
             "type": "dashboard",
-            "alias": "My.Dashboard.MyExtension",
-            "name": "My Dashboard",
-            "js": "/App_Plugins/my-package/my-extension.js",
+            "alias": "My.Dashboard.MyTypeScriptExtension",
+            "name": "My TypeScript Extension",
+            "js": "/App_Plugins/my-typescript-extension/dist/my-typescript-extension.js",
             "weight": -1,
             "meta": {
-                "label": "My Dashboard",
-                "pathname": "my-dashboard"
+                "label": "My TypeScript Extension",
+                "pathname": "my-typescript-extension"
             },
             "conditions": [
                 {
@@ -290,13 +291,11 @@ The `umbraco-package.json` file should look like this:
 ```
 {% endcode %}
 
-### Running it
-
 Now we have a JavaScript file with a Web Component which gets linked to a Dashboard Extension as part of the Package Manifest JSON.
 
-Press the F5 button in your favorite IDE or run `dotnet run` in a command line. Then you should be able to see the new dashboard show up in the Content section:
+8. Press the F5 button in your favorite IDE or run `dotnet run` in a command line to run the project. Then you will see the new dashboard show up in the Content section.
 
-![The Umbraco content section showing a dashboard called "My Dashboard"](images/my-dashboard.jpg)
+(insert image)
 
 Clicking the button will open a notification with the message "#h5yr".
 
