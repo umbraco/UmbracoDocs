@@ -212,7 +212,7 @@ import {
     UMB_NOTIFICATION_CONTEXT,
 } from "@umbraco-cms/backoffice/notification";
 
-@customElement("my-element")
+@customElement("my-typescript-element")
 export default class MyElement extends UmbElementMixin(LitElement) {
     #notificationContext?: UmbNotificationContext;
 
@@ -245,12 +245,16 @@ export default class MyElement extends UmbElementMixin(LitElement) {
 
 declare global {
     interface HTMLElementTagNameMap {
-        "my-element": MyElement;
+        "my-typescript-element": MyTypeScriptElement;
     }
 }
 
 ```
 {% endcode %}
+
+{% hint style="warning" %}
+If you create multiple dashboard it is necessary to have the alias of the `customElement` changed to a unique alias. If it's not changed then it will conflict with the other dashboards that use the same alias and therefore only one will show.&#x20;
+{% endhint %}
 
 The code above defines a Web Component that contains a button that when clicked will open a notification with a message to the user.
 
