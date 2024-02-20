@@ -10,7 +10,7 @@ Umbraco recommends building extensions with a setup using TypeScript and a build
 
 Vite comes with a set of really good presets to get you quickly up and running with libraries and languages. For example: Lit, Svelte, and Vanilla Web Components with both JavaScript and TypeScript.
 
-1. At the root of your project create an `/App_Plugins` folder (if it doesn't exist yet) and run the following command in the `/App_Plugins`:
+1. At the root of your project create an `App_Plugins` folder (if it doesn't exist yet) and run the following command in the `App_Plugins`:
 
 ```bash
 npm create vite@latest
@@ -46,7 +46,7 @@ This will add a package to your devDependencies containing the TypeScript defini
 If you see any errors during this process, make sure that you have the right tools installed (Node, .NET, and so on). Also, make sure you have followed the steps on how to [Setup Your Development Environment](./).
 {% endhint %}
 
-5. In your project folder, create a new file called `vite.config.ts` and insert the following code:
+5. In the `my-dashboard` folder, create a new file called `vite.config.ts` and insert the following code:
 
 ```ts
 import { defineConfig } from "vite";
@@ -84,24 +84,26 @@ npm run build
 
 ### Watch for changes and build
 
-If you like to continuously work on the package and have each change built, you can change the `dev` script of your `package.json` to `vite build --watch`. The example below indicates where in the structure this change should be implemented:
+If you like to continuously work on the package and have each change built, you can add a `watch`script in your `package.json` with `vite build --watch`. The example below indicates where in the structure this change should be implemented:
 
 {% code title="package.json" lineNumbers="true" %}
 ```json
 {
-  "name": "my-package",
+  "name": "my-dashboard",
   ...
   "scripts": {
-    "dev": "vite build --watch",
+    "watch": "vite build --watch"
     ...
   },
   ...
 ```
 {% endcode %}
 
+Then in the terminal, you can run `npm run watch`.&#x20;
+
 ### Umbraco Package declaration
 
-Declare your package to Umbraco via a file called `umbraco-package.json.` This should be added at the root of your package.
+Declare your package to Umbraco via a file called `umbraco-package.json.` This should be added at the root of your package. In this guide, it is inside the `my-dashboard` folder.
 
 This example declares a Dashboard as part of your Package, using the Vite example element.
 
@@ -111,7 +113,7 @@ This example declares a Dashboard as part of your Package, using the Vite exampl
 ```json
 {
     "$schema": "../../umbraco-package-schema.json",
-    "name": "My Package",
+    "name": "My Dashboard",
     "version": "0.1.0",
     "extensions": [
         {
@@ -133,7 +135,9 @@ This example declares a Dashboard as part of your Package, using the Vite exampl
 {% hint style="info" %}
 Umbraco needs the name of the element that will render as default when our dashboard loads. This is specified in the manifest as the `elementName`.&#x20;
 
-Another approach would be to define your default element in the TS code. To do this, in the `src/my-element.ts` add **`default`** to your `MyElement` class in the  file like so:
+Another approach would be to define your default element in the TS code.&#x20;
+
+To do this, in the `src/my-element.ts` add **`default`** to your `MyElement` class in the  file like so:
 
 ```ts
 export default class MyElement extends LitElement {
@@ -142,9 +146,30 @@ export default class MyElement extends LitElement {
 
 ### Testing your package
 
-In order to be able to test your package, you will need to run your site. Before you do this, you will need to include all the files in the `src` folder and the `umbraco-package.json` file into your project.
+In order to be able to test your package, you will need to run your site.&#x20;
 
-If you try to include these resources via Visual Studio, be careful to include only the `dist` folder. Otherwise, VS will try include a few lines on your csproj file to compile the TypeScript code that exists in your project folder. When you run your website, VS will try to compile these files and will fail.
+Before you do this, you will need to include all the files in the `src` folder and the `umbraco-package.json` file into your project.
+
+If you try to include these resources via Visual Studio, be careful to include only the `dist` folder. Otherwise, VS will try to include a few lines on your .csproj file to compile the TypeScript code that exists in your project folder. When you run your website, VS will try to compile these files and fail.
+
+#### Result
+
+The final result looks like this:
+
+<figure><img src="../../.gitbook/assets/Vite_Package_Setup_Dashboard.png" alt=""><figcaption><p>My dashboard</p></figcaption></figure>
+
+If the Vite logo is not found, this is because the path to its location needs to be changed in the `my-element.ts` file from the `src` folder to:
+
+```typescript
+import viteLogo from '../dist/vite.svg'
+```
+
+In the same file, you will need to change the `background-color` of the `button` to white so it is visible:
+
+```css
+ button {
+      background-color: white;
+```
 
 ### Summary
 
