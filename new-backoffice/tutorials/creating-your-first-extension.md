@@ -253,7 +253,7 @@ declare global {
 {% endcode %}
 
 {% hint style="warning" %}
-If you create multiple dashboard it is necessary to have the alias of the `customElement` changed to a unique alias. If it's not changed then it will conflict with the other dashboards that use the same alias and therefore only one will show.&#x20;
+If you create multiple dashboards it's necessary to change the alias of `@customElement` to a unique alias in the `my-element.ts`file. If it's not changed then it will conflict with the other dashboards that use the same alias and therefore only one will show.&#x20;
 {% endhint %}
 
 The code above defines a Web Component that contains a button that when clicked will open a notification with a message to the user.
@@ -307,6 +307,6 @@ Clicking the button will open a notification with the message "#h5yr".
 
 ## Next
 
-Now that you have created your first extension, which is a dashboard, you can continue to the next tutorial: [Creating a Custom Dashboard](creating-a-custom-dashboard.md).
+Now that you have created your first extension (which is a dashboard), you can continue to the next tutorial: [Creating a Custom Dashboard](creating-a-custom-dashboard.md).
 
 You can also read more about the [Umbraco Package Manifest](../extending/package-manifest.md) to learn more about the different options you have when creating an extension.
