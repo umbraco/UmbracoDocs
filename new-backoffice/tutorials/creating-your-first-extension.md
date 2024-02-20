@@ -24,34 +24,34 @@ Extensions will go into a folder called `App_Plugins`. If you don't have this fo
 
 We consider it best practice to use at least TypeScript and some kind of build tool to write your extensions. However, since Umbraco's extension system is written entirely in JavaScript, it's possible to create extensions with vanilla JavaScript. For the sake of posterity, we will briefly go through what that looks like:
 
-* Go to the `App_Plugins` folder and create a new folder called `my-package`
+* Go to the `App_Plugins` folder and create a new folder called `my-vanilla-extension`
 * Navigate into the folder and create a file called `umbraco-package.json`, and paste the following code. This code sets up a basic package with a dashboard extension:
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
 ```json
 {
-    "$schema": "../../umbraco-package-schema.json",
-    "name": "My.Package",
-    "version": "0.1.0",
-    "extensions": [
+  "$schema": "../../umbraco-package-schema.json",
+  "name": "My.Vanilla.Extension",
+  "version": "0.1.0",
+  "extensions": [
+    {
+      "type": "dashboard",
+      "alias": "my.vanilla.extension",
+      "name": "My Vanilla Extension",
+      "js": "/App_Plugins/my-vanilla-extension/vanilla-extension.js",
+      "weight": -1,
+      "meta": {
+        "label": "My Vanilla Extension",
+        "pathname": "my-vanilla-extension"
+      },
+      "conditions": [
         {
-            "type": "dashboard",
-            "alias": "my.custom.dashboard",
-            "name": "My Dashboard",
-            "js": "/App_Plugins/my-package/dashboard.js",
-            "weight": -1,
-            "meta": {
-                "label": "My Dashboard",
-                "pathname": "my-dashboard"
-            },
-            "conditions": [
-                {
-                    "alias": "Umb.Condition.SectionAlias",
-                    "match": "Umb.Section.Content"
-                }
-            ]
+          "alias": "Umb.Condition.SectionAlias",
+          "match": "Umb.Section.Content"
         }
-    ]
+      ]
+    }
+  ]
 }
 ```
 {% endcode %}
@@ -60,9 +60,9 @@ We consider it best practice to use at least TypeScript and some kind of build t
 Adding `$schema` to `umbraco-package.json` will give you IntelliSense for this file to help you see different options for your package.
 {% endhint %}
 
-* Next, create a new JavaScript file called `dashboard.js` and insert the following code:
+* Next, create a new JavaScript file called `vanilla-extension.js` and insert the following code:
 
-{% code title="dashboard.js" lineNumbers="true" %}
+{% code title="vanilla-extension.js" lineNumbers="true" %}
 ```javascript
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 import { UMB_NOTIFICATION_CONTEXT } from "@umbraco-cms/backoffice/notification";
@@ -110,7 +110,7 @@ export default class MyDashboardElement extends UmbElementMixin(HTMLElement) {
     };
 }
 
-customElements.define("my-custom-dashboard", MyDashboardElement);
+customElements.define("my-vanilla-extension", MyDashboardElement);
 ```
 {% endcode %}
 
