@@ -33,5 +33,5 @@ If you're using Umbraco 9 [SQL Server Compact database](https://www.connectionst
 {% endhint %}
 
 ## Provider name
-Because Umbraco cannot determine the provider name from the connection string in all cases. Umbraco follows [Microsoft's convention](ttps://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-5.0#connection-string-prefixes-1) for provider names, which involves specifying it as a postfix in the connection string name.
+Because Umbraco cannot determine the provider name from the connection string in all cases. Umbraco follows [Microsoft's convention](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-5.0#connection-string-prefixes-1) for provider names, which involves specifying it as a postfix in the connection string name.
 
