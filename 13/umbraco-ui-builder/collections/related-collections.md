@@ -4,7 +4,9 @@ description: Configuring **many-to-many** relationships in Umbraco UI Builder, t
 
 # Related Collections
 
-Related collections identify with a **many-to-many** relationship context, when multiple entities from a parent collection are associated with multiple entities from a different collection, using a junction entity.
+Related collections add support for editing **many-to-many** relationships with UI Builder. These are foundw hen multiple entities from one collection are associated with multiple entities from a another. They are modelled in a database via two tables related via a junction table.
+
+An classic example is with `Students` and `Courses`.  Each course has many students, and each student takes many courses.
 
 ![Child Collection](../images/related_collections_child.png)
 
