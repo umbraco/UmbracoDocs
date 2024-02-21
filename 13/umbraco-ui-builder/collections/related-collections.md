@@ -73,7 +73,7 @@ You can get started with related collection through a two step process:
 
 ### Collection definition
 
-You define a related collection by calling the `AddRelatedCollection` method on a given collection config builder instance.
+Define a related collection by calling the `AddRelatedCollection` method on a given collection config builder instance.
 
 ### **AddRelatedCollection&lt;TEntityType, TRelatedEntityType, TJunctionEntityType&gt;(Expression&lt;Func&lt;TRelatedEntityType, object&gt;&gt; idPropertyExpression, string nameSingular, string namePlural, Action&lt;RelationConfigBuilder&lt;TBuilder, TEntity, TRelatedEntityType, TJunctionEntityType&gt;&gt; relationConfig)**
 
