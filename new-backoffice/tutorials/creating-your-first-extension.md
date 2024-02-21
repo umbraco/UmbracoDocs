@@ -160,10 +160,10 @@ The Backoffice package currently relies on the older Lit 2.8 and the Vite templa
 {% endhint %}
 
 ```bash
-npm install --force --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@14.0.0--preview006
+npm install --force --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@14.0.0--preview007
 ```
 
-This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `--preview006` is the version of the package, which will change as new versions are released.
+This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `--preview007` is the version of the package, which will change as new versions are released.
 
 {% hint style="warning" %}
 If you see any errors during this process, make sure that you have the right tools installed (Node, .NET, and so on). Also, make sure you have followed the steps on how to [Setup Your Development Environment](../extending/development-flow/).
