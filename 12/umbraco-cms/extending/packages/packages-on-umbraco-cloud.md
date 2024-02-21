@@ -32,7 +32,7 @@ You could consider creating Umbraco schema only during a package action, and the
 You may sometimes choose to save data in a file. Could be a separate config file for your package or a [config transform file](https://docs.umbraco.com/umbraco-cloud/set-up/config-transforms) to add an app setting to the web.config. If you do this be aware of two things:
 
 1. If these files are generated on a Cloud environment they will not be stored in source control, and will be overwritten on next deployment. They need to be installed locally, committed to source control and then pushed up to the Cloud environments. We have an [existing feature request](../../reference/mapping.md) on allowing package creators to commit their files directly on Cloud, and it is possible to do so currently but not in a supported way, and it may change suddenly.
-2. If you need the content of the files to be different on the different environments you will need to use environment specific [config transforms](https://docs.umbraco.com/umbraco-cloud/set-up/config-transformss).
+2. If you need the content of the files to be different on the different environments you will need to use environment specific [config transforms](https://docs.umbraco.com/umbraco-cloud/set-up/config-transforms).
 
 ## ValueConnectors
 
