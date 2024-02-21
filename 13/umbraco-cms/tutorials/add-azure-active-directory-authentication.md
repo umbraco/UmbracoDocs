@@ -149,6 +149,7 @@ public static class MemberAuthenticationExtensions
             });
         });
         return builder;
+        });
     }
 }
 ```
