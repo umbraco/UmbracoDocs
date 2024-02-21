@@ -42,7 +42,7 @@ public class StudentProject
 
 ## Child Repositories
 
-The concept of child repository will allow you to use the new methods of `IRepositoryFactory` to create child repository instances and use them as any other repository configuration.
+You can create child repository instances via the `IRepositoryFactory` and use them to retrieve information from the child collection.
 
 ```csharp
 public class StudentProjectController : Controller
