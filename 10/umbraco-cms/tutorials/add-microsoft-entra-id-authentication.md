@@ -141,7 +141,7 @@ Ensure to replace **{your_client_id}** and **{your_client_secret}** in the code 
     {
         public class EntraIDB2CMembersExternalLoginProviderOptions : IConfigureNamedOptions<MemberExternalLoginProviderOptions>
         {
-            public const string SchemeName = "OpenIdConnect";
+            public const string SchemeName = "EntraIDB2C";
             public void Configure(string name, MemberExternalLoginProviderOptions options)
             {
                 if (name != "Umbraco." + SchemeName)
