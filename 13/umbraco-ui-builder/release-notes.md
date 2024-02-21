@@ -32,7 +32,7 @@ You can read more about this in the [related collections](collections/related-co
 
 This feature addresses a **one-to-many** relationship context. Having a parent collection with child sub-collections, one might need to retrieve the child collections only, without fetching the details of the parent.
 
-You can read more in [this](collections/retrieve-child-collections.md) section of the documentation.
+You can read more about this in the [retrieve child collections](collections/retrieve-child-collections.md) article.
 
 * Implementation of a `UdiConverter`
 
