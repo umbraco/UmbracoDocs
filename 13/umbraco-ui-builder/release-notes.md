@@ -26,7 +26,7 @@ Umbraco UI Builder 13.1 is the first release since launch adding new features. W
 
 This feature provides support for managing **many-to-many** relationships by configuring main, related and junction entities.
 
-You can read more in [this](collections/related-collections.md) section of the documentation.
+You can read more about this in the [related collections](collections/related-collections.md) article.
 
 * Retrieve Child Collections
 
