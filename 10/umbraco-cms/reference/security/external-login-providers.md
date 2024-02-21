@@ -26,7 +26,8 @@ Install an appropriate nuget package for the provider you wish to use. Some popu
 {% hint style="info" %}
 **Try it out**
 
-This community-created package with a complete Umbraco solution incl. an SQLite database demonstrates how OpenID Connect can be used: [Umbraco OpenIdConnect Example](https://github.com/jbreuer/Umbraco-OpenIdConnect-Example).
+* This community-created package with a complete Umbraco solution incl. an SQLite database demonstrates how OpenID Connect can be used: [Umbraco OpenIdConnect Example](https://github.com/jbreuer/Umbraco-OpenIdConnect-Example).&#x20;
+* This community-created package will allow you to automatically create Umbraco user accounts for users in your directory. This will then associate the Umbraco users with groups based on their AD group: [Umbraco.Community.AzureSSO](https://github.com/Gibe/Umbraco.Community.AzureSSO).
 
 It is great for testing and for trying out the implementation before building it into your own project.
 {% endhint %}
@@ -135,13 +136,3 @@ In this case, you would want to be able to create user accounts in your external
 This could also be the case for members if your website allows public creation of members. In this case, the creation process can be simplified by allowing auto-linking the external account. E.g. using Facebook, Twitter or Google.
 
 Read more about [auto linking](auto-linking.md).
-
-<details>
-
-<summary>Umbraco Entra ID (Azure AD) Example [Community-made]</summary>
-
-This community-created package will allow you to automatically create Umbraco user accounts for users in your directory. This will then associate the Umbraco users with groups based on their AD group: [Umbraco.Community.AzureSSO](https://github.com/Gibe/Umbraco.Community.AzureSSO).
-
-**This project is not managed or maintained by Umbraco HQ.**
-
-</details>
