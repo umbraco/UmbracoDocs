@@ -17,6 +17,12 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 13 including all changes for this version.
 
+#### 13.1.0 (February 21st 2024)
+
+* Minor release closing off the RC period.
+* Fixed null exceptions when creating shipping methods with empty config.
+* Added helper methods to `FixedRateShippingCalculationConfig` to make it's API closer to the older fixed rate price lookup API.
+
 #### 13.1.0-rc3 (February 15th 2024)
 
 * Fixed missing SQL Server migrations.

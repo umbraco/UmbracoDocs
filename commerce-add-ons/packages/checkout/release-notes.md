@@ -16,6 +16,10 @@ In this section, you can find the release notes for each version of Checkout pac
 
 <summary>Version 13</summary>
 
+#### 13.1.0 (February 21st 2024)
+
+* Minor release closing off the RC period.
+
 #### 13.1.0-rc1 (February 6th 2024)
 
 * Adds support for dynamic and realtime rates.
