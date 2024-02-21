@@ -20,7 +20,7 @@ A representation of your collections would look like this:
 
 ![Related Collections Diagram](../images/related_collections_diagram.png)
 
-And the entities would be represented using the following Poco models:
+And the entities would be represented using the following Models:
 
 ```csharp
 [TableName("Students")]
