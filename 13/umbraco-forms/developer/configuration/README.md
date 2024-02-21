@@ -111,7 +111,8 @@ For illustration purposes, the following structure represents the full set of op
       "Recaptcha3": {
         "SiteKey": "",
         "PrivateKey": "",
-        "Domain": "www.google.com"
+        "Domain": "Google",
+        "VerificationUrl": "https://www.google.com/recaptcha/api/siteverify"
       },
       "RichText": {
         "DataTypeId": "ca90c950-0aff-4e72-b976-a30b1ac57dad"
@@ -491,7 +492,13 @@ You can obtain both of these values after signing up to create a ReCaptcha key h
 
 This setting defines the domain from which the client-side assets for using the reCAPTCHA service are requested.
 
-Valid options are `www.google.com` (the default) or `www.recaptcha.net`. You may want to use the latter for control of which domains are setting cookies on your site. [Read more at the reCAPTCHA documentation](https://developers.google.com/recaptcha/docs/faq#does-recaptcha-use-cookies).
+Valid options are `Google` (the default) or `Recaptcha`. You may want to use the latter for control of which domains are setting cookies on your site. [Read more at the reCAPTCHA documentation](https://developers.google.com/recaptcha/docs/faq#does-recaptcha-use-cookies).
+
+#### VerificationUrl
+
+By default the server-side validation of the reCAPTCHA response is sent to Google's servers at `https://www.google.com/recaptcha/api/siteverify`.
+
+Some customers with a locked down production environment cannot configure the firewall to allow these requests and instead use a proxy server. They can use this setting to configure the URL to their proxy server, which will relay the request to and response from Google.
 
 ### Rich text field type configuration
 
