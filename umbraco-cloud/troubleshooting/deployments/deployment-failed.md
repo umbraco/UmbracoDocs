@@ -17,7 +17,7 @@ In order to fix this issue, you would need to use [KUDU](../../set-up/power-tool
 
 2. Navigate to `site` > `locks` folder
 
-3. In the folder, there should be a file named `upgrading`, `upgrade-failed` or `failed-upgrade`. Remove this file. 
+3. In the folder, there should be a file named `upgrading`, `upgrade-failed` or `failed-upgrade`. Remove these files. 
 
 4. Repeat the operation on the target environment - it might also have the leftover marker
 
