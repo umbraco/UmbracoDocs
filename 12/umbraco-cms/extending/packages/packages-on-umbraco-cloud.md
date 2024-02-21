@@ -23,16 +23,16 @@ A [migration](../database.md) is some code that you run as part of a migration p
 
 As migration runs are stored in the database of the site it also means that they will run on each environment you trigger them on. The most common way to trigger a migration is to include them in a [composer](../../implementation/composing.md), which will ensure they run on site startup. This means any commands you have in your migration will automatically run when the site starts up. When your package code is pushed to a new environment it will run them from the beginning on that environment as no ID is saved in the database.
 
-This is normally a good thing. However if you generate any Umbraco schema then Umbraco Deploy will automatically create [UDA files](https://docs.umbraco.com/umbraco-cloud/setup/power-tools/generating-uda-files) based on that schema, and commit them to source control. This means that when you deploy all your files to the next environment the migration will run again, create duplicates and generate duplicate UDA files, which could end up causing a lot of issues.
+This is normally a good thing. However if you generate any Umbraco schema then Umbraco Deploy will automatically create [UDA files](https://docs.umbraco.com/umbraco-cloud/set-up/power-tools/generating-uda-files) based on that schema, and commit them to source control. This means that when you deploy all your files to the next environment the migration will run again, create duplicates and generate duplicate UDA files, which could end up causing a lot of issues.
 
 You could consider creating Umbraco schema only during a package action, and then running things like creating database tables in migrations. Another good workaround could be to not run the migrations in a composer, but rather create a dashboard for the package where the user can choose which migrations to run themselves. The [Articulate package](https://github.com/Shazwazza/Articulate/blob/master/build/packageManifest.xml#L613) has an example of this.
 
 ### Creating files
 
-You may sometimes choose to save data in a file. Could be a separate config file for your package or a [config transform file](https://docs.umbraco.com/umbraco-cloud/setup/config-transforms) to add an app setting to the web.config. If you do this be aware of two things:
+You may sometimes choose to save data in a file. Could be a separate config file for your package or a [config transform file](https://docs.umbraco.com/umbraco-cloud/set-up/config-transforms) to add an app setting to the web.config. If you do this be aware of two things:
 
 1. If these files are generated on a Cloud environment they will not be stored in source control, and will be overwritten on next deployment. They need to be installed locally, committed to source control and then pushed up to the Cloud environments. We have an [existing feature request](../../reference/mapping.md) on allowing package creators to commit their files directly on Cloud, and it is possible to do so currently but not in a supported way, and it may change suddenly.
-2. If you need the content of the files to be different on the different environments you will need to use environment specific [config transforms](https://docs.umbraco.com/umbraco-cloud/setup/config-transforms).
+2. If you need the content of the files to be different on the different environments you will need to use environment specific [config transforms](https://docs.umbraco.com/umbraco-cloud/set-up/config-transformss).
 
 ## ValueConnectors
 

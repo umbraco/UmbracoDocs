@@ -20,7 +20,7 @@ This organization-enforced MFA feature is easy to set up and manage and can help
 
 ## New Project Creation Flow
 
-We are continuously migrating the pages of Umbraco Cloud Portal to a new front end stack. Lately, we have updated the [hostnames](https://docs.umbraco.com/umbraco-cloud/setup/project-settings/manage-hostnames) page and the project creation flow. In particular, for the latter, you will notice some significant improvements compared to the previous version.
+We are continuously migrating the pages of Umbraco Cloud Portal to a new front end stack. Lately, we have updated the [hostnames](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/manage-hostnames) page and the project creation flow. In particular, for the latter, you will notice some significant improvements compared to the previous version.
 
 The new flow has a **more modern and visually appealing design**, which makes it more engaging and user-friendly. It features a **step-by-step guide** that leads users through the process of creating a new project, ensuring that they don't miss any important details.
 

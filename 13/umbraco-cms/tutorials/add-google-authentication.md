@@ -110,7 +110,7 @@ The **ClientId** and **ClientSecret** can always be accessed from the **Credenti
 
 Once the Google API is set up it is time to install the Google Auth provider on the Umbraco project.
 
-If you are working with a Cloud project, see the [Working locally](https://docs.umbraco.com/umbraco-cloud/setup/working-locally) article to complete this step.
+If you are working with a Cloud project, see the [Working locally](https://docs.umbraco.com/umbraco-cloud/set-up/working-locally) article to complete this step.
 
 ### Installing a Nuget Package
 
