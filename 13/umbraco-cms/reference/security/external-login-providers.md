@@ -43,6 +43,16 @@ It is great for testing and for trying out the implementation before building it
 
 </details>
 
+<details>
+
+<summary>Umbraco Entra ID (Azure AD) Example [Community-made]</summary>
+
+This community-created package will allow you to automatically create Umbraco user accounts for users in your directory. This will then associate the Umbraco users with groups based on their AD group: [Umbraco.Community.AzureSSO](https://github.com/Gibe/Umbraco.Community.AzureSSO).
+
+**This project is not managed or maintained by Umbraco HQ.**
+
+</details>
+
 ## Extend core functionality
 
 When you are implementing your own custom authentication on Users and/or Members on your Umbraco CMS website, you are effectively extending existing features.
