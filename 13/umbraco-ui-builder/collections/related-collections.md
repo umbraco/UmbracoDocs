@@ -94,7 +94,7 @@ You define the child collection entity picker by calling the `AddRelatedCollecti
 
 ### **AddRelatedCollectionPickerField&lt;TValueType&gt;(string alias, string dataTypeName, string label)**
 
-Adds an entity picker with the specified data type name to the editor of the parent collection.
+Adds an entity picker with the specified Data Type name to the editor of the parent collection.
 
 ```csharp
 collectionConfig.Editor(editorConfig =>
