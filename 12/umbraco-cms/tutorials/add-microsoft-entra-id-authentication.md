@@ -1,17 +1,17 @@
 ---
 description: >-
-  Learn how to use Azure Active Directory credentials to login to Umbraco as a
+  Learn how to use Microsoft Entra ID (Azure Active Directory) credentials to login to Umbraco as a
   member.
 ---
 
-# Add Azure Active Directory authentication (Members)
+# Add Microsoft Entra ID (Azure Active Directory) authentication (Members)
 
-This tutorial takes you through configuring Azure Active Directory (Azure AD) for the member login on your Umbraco CMS website.
+This tutorial takes you through configuring Microsoft Entra ID (Azure Active Directory / Azure AD) for the member login on your Umbraco CMS website.
 
 {% hint style="warning" %}
-Azure AD conflicts with Umbraco ID which is the main authentication method used on all Umbraco Cloud projects.
+Entra ID conflicts with Umbraco ID which is the main authentication method used on all Umbraco Cloud projects.
 
-Due to this, we **highly recommend not using Azure AD for backoffice authentication on your Umbraco Cloud projects**.
+Due to this, we **highly recommend not using Entra ID for backoffice authentication on your Umbraco Cloud projects**.
 
 It is still possible to use other [External Login Providers](../reference/security/external-login-providers.md) like Google Auth and OpenIdConnect, with Umbraco Cloud.
 {% endhint %}
@@ -21,9 +21,9 @@ It is still possible to use other [External Login Providers](../reference/securi
 * A project with a setup for Members.
 * Visual Studio, or another Integrated Development Environment (IDE).
 
-## Step 1: Configure Azure AD
+## Step 1: Configure Entra ID
 
-Before your applications can interact with Azure AD B2C, they must be registered with a tenant that you manage. For more information, see [Microsoft's Tutorial: Create an Azure Active Directory B2C tenant](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant).
+Before your applications can interact with Entra ID B2C, they must be registered with a tenant that you manage. For more information, see [Microsoft's Tutorial: Create an Azure Active Directory B2C tenant](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant).
 
 ## Step 2: Install the NuGet package
 
@@ -32,9 +32,9 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
 1. Use your favorite Integrated Development Environment (IDE) and open up the **NuGet Package Manager** to search and install the packages.
 2. Use the command line to install the package.
 
-## Step 3: Implement the Azure AD Authentication
+## Step 3: Implement the Entra ID Authentication
 
-1. Create a new class for custom configuration options: `AzureB2CMembersExternalLoginProviderOptions.cs`.
+1. Create a new class for custom configuration options: `EntraIDB2CMembersExternalLoginProviderOptions.cs`.
 
 {% code title="AzureB2CMembersExternalLoginProviderOptions.cs" lineNumbers="true" %}
 ```csharp
@@ -44,7 +44,7 @@ using Umbraco.Cms.Web.Common.Security;
 
 namespace MyApp;
 
-public class AzureB2CMembersExternalLoginProviderOptions : IConfigureNamedOptions<MemberExternalLoginProviderOptions>
+public class EntraIDB2CMembersExternalLoginProviderOptions : IConfigureNamedOptions<MemberExternalLoginProviderOptions>
 {
     public const string SchemeName = "ActiveDirectoryB2C";¨
 
@@ -118,7 +118,7 @@ public static class MemberAuthenticationExtensions
 {
     public static IUmbracoBuilder ConfigureAuthenticationMembers(this IUmbracoBuilder builder)
     {
-        builder.Services.ConfigureOptions<AzureB2CMembersExternalLoginProviderOptions>();
+        builder.Services.ConfigureOptions<EntraIDB2CMembersExternalLoginProviderOptions>();
         builder.AddMemberExternalLogins(logins =>
         {
             logins.AddMemberLogin(
@@ -135,9 +135,9 @@ public static class MemberAuthenticationExtensions
                             // This needs to be unique.
                             options.CallbackPath = "/umbraco-b2c-members-signin";
 
-                            //Obtained from the AZURE AD B2C WEB APP
+                            //Obtained from the Entra ID B2C WEB APP
                             options.ClientId = "YOURCLIENTID";
-                            //Obtained from the AZURE AD B2C WEB APP
+                            //Obtained from the Entra ID B2C WEB APP
                             options.ClientSecret = "YOURCLIENTSECRET"; 
 
                             options.SaveTokens = true;
@@ -151,7 +151,7 @@ public static class MemberAuthenticationExtensions
 {% endcode %}
 
 {% hint style="info" %}
-Ensure to replace `YOURCLIENTID` and `YOURCLIENTSECRET` in the code with the values from the Azure AD tenant.
+Ensure to replace `YOURCLIENTID` and `YOURCLIENTSECRET` in the code with the values from the Entra ID tenant.
 {% endhint %}
 
 4. Add the Members authentication configuration to the `ConfigureServices` method in the `Startup.cs` file:
@@ -176,4 +176,4 @@ public void ConfigureServices(IServiceCollection services)
 5. Build the project.
 6. Run the website.
 
-![AD Login Screen](<../../../10/umbraco-cms/reference/security/images/AD\_Login\_Members (1).png>)
+![AEntra ID Login Screen](<../../../10/umbraco-cms/reference/security/images/AD\_Login\_Members (1).png>)
