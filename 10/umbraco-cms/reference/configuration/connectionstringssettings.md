@@ -1,7 +1,6 @@
 ---
-
-meta.Title: "Umbraco Connection Strings Settings"
-description: "Information on the connection strings settings section"
+meta.Title: Umbraco Connection Strings Settings
+description: Information on the connection strings settings section
 ---
 
 # Connection strings settings
@@ -23,7 +22,7 @@ An connection strings config can look like this:
 We recommend using private cache for SQLite. You can read more on why shared cache is discouraged in [the official SQLite documentation](https://sqlite.org/sharedcache.html).
 {% endhint %}
 
-The connection string used here is an SQLite connection string, that will connect to a data in the file `Umbraco.sqlite.db`  located in `/umbraco/Data` .
+The connection string used here is an SQLite connection string, that will connect to a data in the file `Umbraco.sqlite.db` located in `/umbraco/Data` .
 
 Umbraco currently supports using either a Microsoft SQL Server or a SQLite database. Both of these options will have different connection strings. For more information about the specific connection strings, see:
 
@@ -35,5 +34,5 @@ If you're using Umbraco 9 [SQL Server Compact database](https://www.connectionst
 {% endhint %}
 
 ## Provider name
-Because Umbraco cannot determine the provider name from the connection string in all cases. Umbraco follows [Microsoft's convention](ttps://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-5.0#connection-string-prefixes-1) for provider names, which involves specifying it as a postfix in the connection string name.
 
+Because Umbraco cannot determine the provider name from the connection string in all cases. Umbraco follows [Microsoft's convention](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-6.0#connection-string-prefixes-1) for provider names, which involves specifying it as a postfix in the connection string name.
