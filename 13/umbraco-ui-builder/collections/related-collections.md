@@ -90,7 +90,7 @@ collectionConfig.AddRelatedCollection<Student, Course, StudentCourse>(x => x.Id,
 
 ### Configuring a related collection entity picker
 
-You define the child collection entity picker by calling the `AddRelatedCollectionPickerField` method on the parent collection fieldset config.
+Define the child collection entity picker by calling the `AddRelatedCollectionPickerField` method on the parent collection fieldset config.
 
 ### **AddRelatedCollectionPickerField&lt;TValueType&gt;(string alias, string dataTypeName, string label)**
 
