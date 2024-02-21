@@ -4,38 +4,39 @@ description: Configuring **one-to-many** relationships in Umbraco UI Builder, th
 
 # Retrieve Child Collections
 
-In a **one-to-many** relationship context, an entity from a parent collection can be associated with multiple entities from a child collection. In this context, you might need 
-to retrieve the child collection entities, without fetching the details of the parent.
+Retrieving child collections in **one-to-many** relationships with UI Builder, where one parent entity of a collection is associated with multiple entities from another, can be achieved with the support of child repositories.
 
 ## Models Representation
 
-The Poco models would look like this:
+The models would look like this:
 
 ```csharp
-[TableName("Person")]
+[TableName("Students")]
 [PrimaryKey("Id")]
-public class Person
+public class Student
 {
     [PrimaryKeyColumn]
     public int Id { get; set; }
 
-    public string Name { get; set; }
+    public string FirstName { get; set; }
+
+    public string LastName { get; set; }
 
     public string Email { get; set; }
 }
 ```
 
 ```csharp
-[TableName("ChildPerson")]
+[TableName("StudentProjects")]
 [PrimaryKey("Id")]
-public class ChildPerson
+public class StudentProject
 {
     [PrimaryKeyColumn]
     public int Id { get; set; }
 
     public string Name { get; set; }
 
-    public int ParentId { get; set; }
+    public int StudentId { get; set; }
 }
 ```
 
@@ -44,19 +45,18 @@ public class ChildPerson
 The concept of child repository will allow you to use the new methods of `IRepositoryFactory` to create child repository instances and use them as any other repository configuration.
 
 ```csharp
-// Example
-public class MyController : Controller
+public class StudentProjectController : Controller
 {
     private readonly IRepositoryFactory _repositoryFactory;
 
-    public MyController(IRepositoryFactory repositoryFactory)
+    public StudentProjectController(IRepositoryFactory repositoryFactory)
     {
         _repositoryFactory = repositoryFactory;
     }
 
-    public IActionResult Index(int parentId)
+    public IActionResult Index(int projectId)
     {
-        var childRepository = _repositoryFactory.GetChildRepository<int, ChildPerson, int>(parentId);
+        var childRepository = _repositoryFactory.GetChildRepository<int, StudentProject, int>(projectId);
 
         var list = childRepository.GetAll();
 

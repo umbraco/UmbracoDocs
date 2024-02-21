@@ -20,7 +20,7 @@ This section contains the release notes for Umbraco UI Builder 12 including all 
 #### [**12.0.4**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.4) **(February 20th 2024)**
 
 * Dependency version update for `Umbraco.Licenses`
-* Version range update for `Microsoft.AspNetCore.Components.Web`
+* Version range update for `Microsoft.AspNetCore.Components.Web` [#89](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/89)
 
 #### [**12.0.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.0.3) **(January 26th 2024)**
 

@@ -20,11 +20,7 @@ This section contains the release notes for Umbraco UI Builder 13 including all 
 
 #### [**13.1.0-rc1**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.0) **(February 20th 2024)**
 
-* Retrieve Child Collections
-
-This feature addresses a **one-to-many** relationship context, where having a parent collection with child sub-collections, one might need to retrieve the child collections only, without fetching the details of the parent.
-
-You can read more in [this](collections/retrieve-child-collections.md) section of the documentation.
+Umbraco UI Builder 13.1 is the first release since launch adding new features. We've focussed on improving the experience when working with related collections, addressing some additional use cases that widen the scope of the product like the possibility to retrieve child collections entities or use an Umbraco entity as foreign key.
 
 * Related Collections
 
@@ -32,11 +28,17 @@ This feature provides support for managing **many-to-many** relationships by con
 
 You can read more in [this](collections/related-collections.md) section of the documentation.
 
-* Implementation of an `UdiConverter`
+* Retrieve Child Collections
+
+This feature addresses a **one-to-many** relationship context, where having a parent collection with child sub-collections, one might need to retrieve the child collections only, without fetching the details of the parent.
+
+You can read more in [this](collections/retrieve-child-collections.md) section of the documentation.
+
+* Implementation of a `UdiConverter`
 
 When configuring a collection to use as foreign key a reference to an Umbraco entity, while having the foreign key represented as `Integer`, the UDI value of the entity cannot be converted from `String` to `Int`, and will default to 0. With this feature, based on the UDI value, we are retrieving and persisting the `Id` of the Umbraco entity.
 
-An use case can be found [here](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/86).
+A use case can be found [here](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/86).
 
 
 #### [**13.0.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.3) **(February 20th 2024)**

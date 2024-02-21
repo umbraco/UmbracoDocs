@@ -4,7 +4,7 @@ description: Configuring **many-to-many** relationships in Umbraco UI Builder, t
 
 # Related Collections
 
-Related collections add support for editing **many-to-many** relationships with UI Builder. These are foundw hen multiple entities from one collection are associated with multiple entities from a another. They are modelled in a database via two tables related via a junction table.
+Related collections add support for editing **many-to-many** relationships with UI Builder. These are found when multiple entities from one collection are associated with multiple entities from a another. They are modelled in a database via two tables related via a junction table.
 
 An classic example is with `Students` and `Courses`.  Each course has many students, and each student takes many courses.
 
@@ -23,45 +23,55 @@ A representation of your collections would look like this:
 And the entities would be represented using the following Poco models:
 
 ```csharp
-[TableName("Person")]
+[TableName("Students")]
 [PrimaryKey("Id")]
-public class Person
+public class Student
 {
     [PrimaryKeyColumn]
     public int Id { get; set; }
 
-    public string Name { get; set; }
+    public string FirstName { get; set; }
+
+    public string LastName { get; set; }
 
     public string Email { get; set; }
 }
 ```
 
 ```csharp
-[TableName("Color")]
+[TableName("Courses")]
 [PrimaryKey("Id")]
-public class Color
+public class Course
 {
     [PrimaryKeyColumn]
     public int Id { get; set; }
 
-    public string Name { get; set; }
+    public string Title { get; set; }
+
+    public string Description { get; set; }
 }
 ```
 
 ```csharp
-[TableName("PersonColor")]
-[PrimaryKey(new[] { "PersonId", "ColorId" })]
-public class PersonColor
+[TableName("StudentsCourses")]
+[PrimaryKey(new[] { "StudentId", "CourseId" })]
+public class StudentCourse
 {
     [PrimaryKeyColumn]
-    public int PersonId { get; set; }
+    public int StudentId { get; set; }
 
     [PrimaryKeyColumn]
-    public int ColorId { get; set; }
+    public int CourseId { get; set; }
 }
 ```
 
 ## Defining a related collection
+
+You can get started with related collection through a two step process:
+1. Add collection definition
+2. Add related collection entity picker and definition
+
+### Collection definition
 
 You define a related collection by calling the `AddRelatedCollection` method on a given collection config builder instance.
 
@@ -70,16 +80,15 @@ You define a related collection by calling the `AddRelatedCollection` method on 
 Adds a related collection to the current collection with the given names and description and default icons. A property accessor expression is required for the entity ID field of the entity. The relation configuration will define the junction entity by specifying the references to parent and child entities.
 
 ```csharp
-// Example
-collectionConfig.AddRelatedCollection<Person, Color, PersonColor>(x => x.Id, "Favorite Color", "Favorite Colours", relationConfig =>
-  {
-      relationConfig
-           .SetAlias("favoriteColours")
-           .SetJunction<PersonColor>(x => x.PersonId, y => y.ColorId);
-  });
+collectionConfig.AddRelatedCollection<Student, Course, StudentCourse>(x => x.Id, "Student Course", "Students Courses", relationConfig =>
+{
+    relationConfig
+        .SetAlias("studentsCourses")
+        .SetJunction<StudentCourse>(x => x.StudentId, y => y.CourseId);
+});
 ```
 
-## Configuring a related collection entity picker
+### Configuring a related collection entity picker
 
 You define the child collection entity picker by calling the `AddRelatedCollectionPickerField` method on the parent collection fieldset config.
 
@@ -88,14 +97,20 @@ You define the child collection entity picker by calling the `AddRelatedCollecti
 Adds an entity picker with the specified data type name to the editor of the parent collection.
 
 ```csharp
-// Example
 collectionConfig.Editor(editorConfig =>
 {
     editorConfig.AddTab("General", tabConfig =>
-         tabConfig.AddFieldset("General", fieldsetConfig =>
-            {
-                fieldsetConfig.AddField(p => p.Name);
-                fieldsetConfig.AddRelatedCollectionPickerField<Color>("favoriteColours", "Colours Related Picker", "Favorite Colors");
-            }));
+        tabConfig.AddFieldset("General", fieldsetConfig =>
+        {
+            fieldsetConfig.AddField(x => x.FirstName).MakeRequired();
+            fieldsetConfig.AddField(x => x.LastName).MakeRequired();
+            fieldsetConfig.AddField(x => x.Email).MakeRequired();
+
+            fieldsetConfig.AddRelatedCollectionPickerField<Course>("studentsCourses", "Courses Related Picker", "Courses");
+        }));
 });
 ```
+
+{% hint style="info" %}
+**Relation Config Alias:** The relation config alias must correspond to the related collection picker field alias! (e.g. `studentsCourses`)
+{% endhint %}
