@@ -418,7 +418,7 @@
   * [Adding server-side data to a property editor](tutorials/creating-a-property-editor/part-4.md)
 * [Creating a Multilingual Site](tutorials/multilanguage-setup.md)
 * [Add Google Authentication](tutorials/add-google-authentication.md)
-* [Add Azure Active Directory](tutorials/add-azure-active-directory-authentication.md)
+* [Add Microsoft Entra ID (Azure Active Directory) authentication (Members)](tutorials/add-microsoft-entra-id-authentication.md)
 * [The Starter Kit](tutorials/starter-kit/README.md)
   * [Lessons](tutorials/starter-kit/lessons/README.md)
     * [Customize the Starter Kit](tutorials/starter-kit/lessons/1-customize-the-starter-kit.md)
