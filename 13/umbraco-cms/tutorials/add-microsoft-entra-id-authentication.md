@@ -138,9 +138,9 @@ public static class MemberAuthenticationExtensions
                                 // This needs to be unique.
                                 options.CallbackPath = "/umbraco-b2c-members-signin";
 
-                                //Obtained from the AZURE AD B2C WEB APP
+                                //Obtained from the Entra ID B2C WEB APP
                                 options.ClientId = "YOURCLIENTID";
-                                //Obtained from the AZURE AD B2C WEB APP
+                                //Obtained from the Entra ID B2C WEB APP
                                 options.ClientSecret = "YOURCLIENTSECRET";
 
                                 options.SaveTokens = true;
