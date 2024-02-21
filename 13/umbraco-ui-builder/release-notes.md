@@ -36,7 +36,7 @@ You can read more about this in the [retrieve child collections](collections/ret
 
 * Implementation of a `UdiConverter`
 
-This update addresses the configuration of collections that use as foreign key a reference to an Umbraco entity. If the FK type is `Integer`, the persisted value defaults to 0. Because the UDI value of the entity cannot be converted from `String` to `Int`. Based on the UDI value, we are retrieving and persisting the `Id` of the Umbraco entity.
+This update addresses the configuration of collections that use as foreign key a reference to an Umbraco entity. If the FK type is `Integer`, the persisted value defaults to 0. This is because the UDI value of the entity cannot be converted from `String` to `Int`. Based on the UDI value, we are retrieving and persisting the `Id` of the Umbraco entity.
 
 A use case can be found [here](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/86).
 
