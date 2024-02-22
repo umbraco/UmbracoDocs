@@ -16,7 +16,7 @@ Vite comes with a set of really good presets to get you quickly up and running w
 npm create vite@latest
 ```
 
-2. This command will help you set up your new package, asking you to pick a framework and a compiler.&#x20;
+2. This command will help you set up your new package, asking you to pick a framework and a compiler.
 
 To follow this tutorial, we recommend you enter `my-dashboard` as the Project Name when prompted, although you can choose any other you like. Then choose **Lit** and **TypeScript**.
 
@@ -40,7 +40,7 @@ npm install --force --registry https://www.myget.org/F/umbracoprereleases/npm/ -
 The Backoffice package currently relies on the older Lit 2.8 and the Vite template uses Lit 3. Because of this mismatch, you need to override the Lit version in the Backoffice package by installing with the `--force` option. This will be fixed in a future version when the Backoffice has been upgraded to Lit 3.
 {% endhint %}
 
-This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `--preview007` is the version of the package, which will change as new versions are released.&#x20;
+This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `--preview007` is the version of the package, which will change as new versions are released.
 
 {% hint style="warning" %}
 If you see any errors during this process, make sure that you have the right tools installed (Node, .NET, and so on). Also, make sure you have followed the steps on how to [Setup Your Development Environment](./).
@@ -68,7 +68,7 @@ export default defineConfig({
 
 This alters the Vite default output into a **library mode**, where the output is a JavaScript file with the same name as the `name` attribute in `package.json`. The name is `my-dashboard` if you followed this tutorial with no changes.
 
-The source code that is compiled lives in the `src` folder of your package folder and that is where you can see a `my-element.js` file. You can confirm that this file is the one specified as our entry on the Vite config file that we recently created.
+The source code that is compiled lives in the `src` folder of your package folder and that is where you can see a `my-element.ts` file. You can confirm that this file is the one specified as our entry on the Vite config file that we recently created.
 
 {% hint style="info" %}
 The `build:lib:entry` parameter can accept an array which will allow you to export multiple files during the build. You can read more about [Vite's build options here](https://vitejs.dev/config/build-options.html#build-lib).
@@ -99,7 +99,7 @@ If you like to continuously work on the package and have each change built, you 
 ```
 {% endcode %}
 
-Then in the terminal, you can run `npm run watch`.&#x20;
+Then in the terminal, you can run `npm run watch`.
 
 ### Umbraco Package declaration
 
@@ -133,11 +133,11 @@ This example declares a Dashboard as part of your Package, using the Vite exampl
 {% endcode %}
 
 {% hint style="info" %}
-Umbraco needs the name of the element that will render as default when our dashboard loads. This is specified in the manifest as the `elementName`.&#x20;
+Umbraco needs the name of the element that will render as default when our dashboard loads. This is specified in the manifest as the `elementName`.
 
-Another approach would be to define your default element in the TS code.&#x20;
+Another approach would be to define your default element in the TS code.
 
-To do this, in the `src/my-element.ts` add **`default`** to your `MyElement` class in the  file like so:
+To do this, in the `src/my-element.ts` add **`default`** to your `MyElement` class in the file like so:
 
 ```ts
 export default class MyElement extends LitElement {
@@ -146,7 +146,7 @@ export default class MyElement extends LitElement {
 
 ### Testing your package
 
-In order to be able to test your package, you will need to run your site.&#x20;
+In order to be able to test your package, you will need to run your site.
 
 Before you do this, you will need to include all the files in the `src` folder and the `umbraco-package.json` file into your project.
 
