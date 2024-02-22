@@ -12,7 +12,7 @@ This page is a work in progress. It will be updated as the software evolves.
 
 This is the second part of our guide to building a Custom Dashboard. This part continues work on the dashboard we built in part one: [Creating a Custom Dashboard](../creating-a-custom-dashboard.md), but further shows how to handle localization in a custom dashboard.
 
-## Localization
+## Default Localization
 
 If you want the dashboard to be available in different languages, you can use the existing localizations from Umbraco or register your own localizations. The localizations are written as a key-value pair pattern.
 
@@ -41,7 +41,10 @@ To register localizations to a language, you need to add a new manifest to the E
 Tip: If you do not have many translations, you can also choose to include the localizations directly in the meta-object. Read more about translations in the [**Localization**](../../extending/localization/) article.
 {% endhint %}
 
-Create two new files `en-us.js` and `da-dk.js`.
+## Setup localization files
+
+1. In the `welcome-dashboard` folder create a new folder called "`Localization`"
+2. Then create two new files `en-us.js` and `da-dk.js`:
 
 Add the following code to `en-us.js`
 
@@ -71,7 +74,7 @@ export default {
 ```
 {% endcode %}
 
-Now let's update our `umbraco-package.json` extensions object to register our new localization file:
+3. Now let's update our `umbraco-package.json` extensions object to register our new localization file:
 
 {% code title="umbraco-package.json" %}
 ```typescript
@@ -86,16 +89,16 @@ Now let's update our `umbraco-package.json` extensions object to register our ne
       "meta": {
         "culture": "en-us"
       },
-      "js": "/App_Plugins/WelcomeDashboard/Localization/en-us.js"
+      "js": "/App_Plugins/welcome-dashboard/Localization/en-us.js"
     },
     {
       "type": "localization",
       "alias": "MyPackage.Localize.DaDK",
       "name": "Danish",
       "meta": {
-	"culture": "da-dk"
+        "culture": "da-dk"
       },
-      "js": "/App_Plugins/WelcomeDashboard/Localization/da-dk.js"
+      "js": "/App_Plugins/welcome-dashboard/Localization/da-dk.js"
     }
   ]
 }
@@ -117,7 +120,7 @@ Now let's update our `umbraco-package.json` extensions object to register our ne
       "type": "dashboard",
       "alias": "my.welcome.dashboard",
       "name": "My Welcome Dashboard",
-      "js": "/App_Plugins/WelcomeDashboard/dashboard.js",
+      "js": "/App_Plugins/welcome-dashboard/dist/welcome-dashboard.js",
       "elementName": "my-welcome-dashboard",
       "weight": -1,
       "meta": {
@@ -138,7 +141,7 @@ Now let's update our `umbraco-package.json` extensions object to register our ne
       "meta": {
         "culture": "en-us"
       },
-      "js": "/App_Plugins/WelcomeDashboard/Localization/en-us.js"
+      "js": "/App_Plugins/welcome-dashboard/Localization/en-us.js"
     },
     {
       "type": "localization",
@@ -147,7 +150,7 @@ Now let's update our `umbraco-package.json` extensions object to register our ne
       "meta": {
         "culture": "da-dk"
       },
-      "js": "/App_Plugins/WelcomeDashboard/Localization/da-dk.js"
+      "js": "/App_Plugins/welcome-dashboard/Localization/da-dk.js"
     }
   ]
 }
@@ -196,7 +199,8 @@ render() {
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
-import { LitElement, css, html, customElement } from "@umbraco-cms/backoffice/external/lit";
+import { LitElement, css, html } from "lit";
+import { customElement } from "@umbraco-cms/backoffice/external/lit";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
 @customElement("my-welcome-dashboard")
@@ -227,8 +231,8 @@ export class MyWelcomeDashboardElement extends UmbElementMixin(LitElement) {
   static styles = [
     css`
       :host {
-	display: block;
-	padding: 24px;
+        display: block;
+        padding: 24px;
       }
     `,
   ];
@@ -254,7 +258,7 @@ This is how our dashboard should now look like:
 
 <figure><img src="../../.gitbook/assets/welcome-eng.png" alt=""><figcaption><p>Dashboard if the user's language is English / Fallback</p></figcaption></figure>
 
-
+ 
 
 <figure><img src="../../.gitbook/assets/welcome-da.png" alt=""><figcaption><p>Dashboard if the user's language is Danish</p></figcaption></figure>
 
