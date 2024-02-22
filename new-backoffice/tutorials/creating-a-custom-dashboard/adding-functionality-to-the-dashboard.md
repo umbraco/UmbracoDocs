@@ -6,7 +6,9 @@ description: >-
 
 # Adding functionality to the Dashboard
 
+{% hint style="warning" %}
 This page is a work in progress. It will be updated as the software evolves.
+{% endhint %}
 
 ## Overview
 
@@ -25,20 +27,16 @@ To get information on the current user that's currently logged in, we first need
 
 Import the Auth token and the type for the logged-in user. We also need to update the import from lit decorators to get `state`.
 
+Update and add the following imports to `welcome-dashboard.element.ts` :
+
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
-import { customElement, state } from "@umbraco-cms/backoffice/external/lit";
+import { LitElement, css, html, customElement, state } from "@umbraco-cms/backoffice/external/lit";
 import { UMB_AUTH, UmbLoggedInUser } from '@umbraco-cms/backoffice/auth';
 ```
 {% endcode %}
 
 Now that we have the Auth token, we can consume it in the constructor to obtain the current user. We do this using the `consumeContext` method, which is available on our element because we extended using `UmbElementMixin`. As the first thing in the `export class MyWelcomeDashboardElement` add the following to the element implementation :
-
-{% hint style="info" %}
-
-The entire `welcome-dashboard.element.ts` file is available for reference at the end of the step to confirm your placement for code snippets.
-
-{% endhint %}
 
 {% code title="welcome-dashboard.element.ts" %}
 ```typescript
@@ -67,6 +65,10 @@ private async _observeCurrentUser() {
 ...
 ```
 {% endcode %}
+
+{% hint style="info" %}
+The entire `welcome-dashboard.element.ts` file is available for reference at the end of the step to confirm your placement for code snippets.
+{% endhint %}
 
 Now that we have the current user, we can access a few different things. Let's get the `name` of the current user, so that we can welcome the user:
 
@@ -215,7 +217,7 @@ private async _getDataFromRepository() {
 ```
 {% endcode %}
 
-Notice that the user repository has a lot of methods that we can use. We are going to use `requestCollection`to get all the users.&#x20;
+Notice that the user repository has a lot of methods that we can use. We are going to use `requestCollection`to get all the users.
 
 <figure><img src="../../.gitbook/assets/requestcollection.png" alt=""><figcaption><p>Options from the user repository</p></figcaption></figure>
 
@@ -312,10 +314,6 @@ declare global {
 }
 ```
 {% endcode %}
-
-
-
-
 
 </details>
 
@@ -485,6 +483,6 @@ declare global {
 
 ## Going Further
 
-With all of the steps completed, you should have a functional dashboard that welcomes the user and shows a list of all users. Hopefully, this tutorial has given you some ideas on what is possible to do when creating a dashboard.&#x20;
+With all of the steps completed, you should have a functional dashboard that welcomes the user and shows a list of all users. Hopefully, this tutorial has given you some ideas on what is possible to do when creating a dashboard.
 
 You can also go further and [extend the dashboard](extending-the-dashboard-using-umbraco-ui-library.md) with UI elements from the Umbraco UI Library.
