@@ -16,8 +16,8 @@ This is the third part of our guide to building a custom dashboard. This part co
 
 The steps we will go through in this part are:
 
-1. [Contexts](adding-functionality-to-the-dashboard.md#1.-contexts)
-2. [Getting data from the server](adding-functionality-to-the-dashboard.md#2.-getting-data-from-the-server)
+1. [Contexts](adding-functionality-to-the-dashboard.md#step-1-contexts)
+2. [Getting data from the server](adding-functionality-to-the-dashboard.md#step-2-getting-data-from-the-server)
 
 ## Step 1: Contexts
 

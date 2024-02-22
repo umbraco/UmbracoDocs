@@ -34,7 +34,7 @@ There are a lot of parallels with Creating a Custom Dashboard. The tutorial [Cre
 
 At the tutorial's end, we'll have a Umbraco Suggestions Data Type, registered in the backoffice, and assigned to a Document Type. This Data Type can create and suggest values.
 
-### 1. Setting up a plugin
+### Step 1: Setting up a plugin
 
 Follow the [Vite Package Setup](../../extending/development-flow/vite-package-setup.md) by creating a new project folder called "`suggestions`" in `App_Plugins`.
 
@@ -69,7 +69,7 @@ Add the following code:
 Make sure to restart the application after you create and update`umbraco-package.json`
 {% endhint %}
 
-### 2. Creating a Web Component
+### Step 2: Creating a Web Component
 
 Now let's create the web component we need for our property editor. Create a file in the `src` folder with the name `suggestions-property-editor-ui.element.ts`
 
@@ -108,7 +108,7 @@ Now our basic parts of the editor are done, namely:
 * The package manifest, telling Umbraco what to load
 * The web component for the editor
 
-### 3. Registering the Data Type in Umbraco
+### Step 3: Registering the Data Type in Umbraco
 
 We will now restart our application. In the Document Type, let's add our newly added property editor "Suggestions" and save it.
 
@@ -120,7 +120,7 @@ We should now have a property editor that looks like this:
 
 <figure><img src="../../.gitbook/assets/NewPropertyEditor.png" alt=""><figcaption></figcaption></figure>
 
-### 4. Adding styling and setting up events in the Web Components
+### Step 4: Adding styling and setting up events in the Web Components
 
 Let's start by creating an input field and some buttons that we can style and hook up to events. In the `suggestions-property-editor-ui.element.ts` file, update the render method to include some input fields and buttons:
 
@@ -271,8 +271,11 @@ Then update the suggestion button in the render method to call a `onSuggestion` 
  }
 ```
 
-The `suggestions-property-editor-ui.element.ts` file should now look something like this:
+<details>
 
+<summary>See the entire file: <code>suggestions-property-editor-ui.element.ts</code></summary>
+
+{% code title="suggestions-property-editor-ui.element.ts" lineNumbers="true" %}
 ```typescript
 import { LitElement, css, html, customElement, property, state } from "@umbraco-cms/backoffice/external/lit";
 import { UmbPropertyEditorExtensionElement } from "@umbraco-cms/backoffice/extension-registry";
@@ -360,6 +363,9 @@ declare global {
     }
 }
 ```
+{% endcode %}
+
+</details>
 
 Next, clear the cache, reload the document, and see the Suggestions Data Type running.
 

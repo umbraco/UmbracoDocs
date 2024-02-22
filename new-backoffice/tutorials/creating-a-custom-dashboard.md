@@ -8,10 +8,10 @@ description: A guide to creating a custom dashboard in Umbraco
 
 This guide takes you through the steps to set up a Custom Dashboard in Umbraco.
 
-The guide is divided into four parts. The first part will go through the following:
+The steps we will go through in part one are:
 
-1. [Setting up a package](creating-a-custom-dashboard.md#id-1.-setting-up-a-package)
-2. [Creating the dashboard web component](creating-a-custom-dashboard.md#id-2.-creating-the-dashboard-web-component)
+1. [Setting up a package](creating-a-custom-dashboard.md#step-1-setting-up-a-package)
+2. [Creating the dashboard web component](creating-a-custom-dashboard.md#step-2-creating-the-dashboard-web-component)
 
 ### What is a Dashboard?
 
@@ -54,7 +54,7 @@ There are a lot of parallels with Creating a Property Editor. The tutorial '[Cre
 
 At the end of this guide, we will have a friendly welcoming dashboard displaying a list of the most recent site logs.
 
-## 1. Setting up a package
+## Step 1: Setting up a package
 
 Follow the [Vite Package Setup](../extending/development-flow/vite-package-setup.md) by creating a new project folder called "`welcome-dashboard`" in `App_Plugins`.
 
@@ -98,7 +98,7 @@ For more information about the `umbraco-package.json` file, read the article [Pa
 Please be aware that the file`umbraco-package.json` is loaded into memory when Umbraco starts up. If you are changing or adding new configurations you will need to start and stop your application for it to be loaded.
 {% endhint %}
 
-## 2. Creating the Dashboard Web Component
+## Step 2: Creating the Dashboard Web Component
 
 Now let's create the web component we need for our property editor. This web component contains all our HTML, CSS, and logic.&#x20;
 

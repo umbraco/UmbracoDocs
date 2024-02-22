@@ -20,7 +20,7 @@ An editor can be used again and again, with different configurations, and that i
 
 ## umbraco-package.json
 
-To add a Data Type configuration fields when using our Suggestion Property Editor, open the `umbraco-package.json` file. Inside the `meta` object, we can add the `settings` object, which has the optional objects `properties` and `defaultData`. Let's start by adding some  `properties`:
+To add a Data Type configuration fields when using our Suggestion Property Editor, open the `umbraco-package.json` file. Inside the `meta` object, we can add the `settings` object, which has the optional objects `properties` and `defaultData`. Let's start by adding some `properties`:
 
 ```json
     ...
@@ -48,10 +48,9 @@ To add a Data Type configuration fields when using our Suggestion Property Edito
 
 Above we add two configuration fields. Each entry of the `properties` collection represents a Configuration field. Each has the information needed for a field. Notice you have to declare a Property Editor UI, this declares what User Interface should be used for this field.
 
-The field with the label "Disabled" uses the Toggle Property Editor UI. This will allow us to turn the suggestion button on/off and will provide the user with a toggle button.
-The field with the label "Placeholder text" uses the TextBox Property Editor UI. This will allow the user to write a text.
+The field with the label "Disabled" uses the Toggle Property Editor UI. This will allow us to turn the suggestion button on/off and will provide the user with a toggle button. The field with the label "Placeholder text" uses the TextBox Property Editor UI. This will allow the user to write a text.
 
-We can now also set some default data on our new configurations:&#x20;
+We can now also set some default data on our new configurations:
 
 ```json
   ...
@@ -162,7 +161,7 @@ import { type UmbPropertyEditorConfigCollection } from "@umbraco-cms/backoffice/
   }
 ```
 
-We can now use the configurations. Let's use the `placeholder` and `maxChars` for the input field and the `disabled` option for the suggestion button.&#x20;
+We can now use the configurations. Let's use the `placeholder` and `maxChars` for the input field and the `disabled` option for the suggestion button.
 
 Add `ifDefined` to our imports and update the render method:
 
@@ -209,7 +208,7 @@ import { ifDefined } from "@umbraco-cms/backoffice/external/lit";
 
 <details>
 
-<summary>property-editor-ui-suggestions.element.ts</summary>
+<summary>See the entire file: <code>property-editor-ui-suggestions.element.ts</code></summary>
 
 ```typescript
 import { LitElement, css, html, customElement, property, state, ifDefined } from "@umbraco-cms/backoffice/external/lit";

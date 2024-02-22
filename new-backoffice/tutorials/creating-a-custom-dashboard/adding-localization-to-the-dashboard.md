@@ -161,7 +161,7 @@ It is currently not an option to localize the dashboard label. This is a work in
 
 We can use the `umb-localize` element to get the localizations out, which takes a key property in.
 
-Let's start using the localizations:
+4. Let's start using the localizations. Update the `welcome-dashboard.element.ts`:
 
 {% code title="welcome-dashboard.element.ts" %}
 ```typescript
