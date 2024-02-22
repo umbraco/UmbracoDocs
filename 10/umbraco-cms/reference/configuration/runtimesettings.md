@@ -23,7 +23,7 @@ An example of a configuration could look something like:
 }
 ```
 
-`MaxRequsetLength` is specified in kilobytes, so this configuration would limit requests, and therefore uploaded files, to 2 megabytes, and a maximum query string length of 90 characters.
+`MaxRequestLength` is specified in kilobytes, limiting requests, and therefore uploaded files, to 2 megabytes. Additionally, it sets a maximum query string length of 90 characters.
 
 `Mode` can have three values: `BackofficeDevelopment` (default), `Development`, and `Production`.
 
