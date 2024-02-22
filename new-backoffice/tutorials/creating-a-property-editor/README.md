@@ -12,19 +12,21 @@ This guide explains how to set up a property editor and hook it into Umbraco's D
 
 The steps we will go through in part 1 are:
 
--   ​[Setting up a Plugin](./#1.-setting-up-a-plugin)​
--   ​[Creating a Web Component​](./#2.-creating-a-simple-web-component)
--   ​[Registering the Data Type in Umbraco](./#3.-registering-the-data-type-in-umbraco)
--   [Adding styling and setting up events in Web Components](./#4.-adding-styling-and-setting-up-events-in-the-web-components)
+* ​[Setting up a Plugin](./#1.-setting-up-a-plugin)​
+* ​[Creating a Web Component​](./#2.-creating-a-simple-web-component)
+* ​[Registering the Data Type in Umbraco](./#3.-registering-the-data-type-in-umbraco)
+* [Adding styling and setting up events in Web Components](./#4.-adding-styling-and-setting-up-events-in-the-web-components)
 
 ### Prerequisites
 
-This tutorial uses Typescript and Lit with Umbraco, so it does not cover Typescript or Lit. It is expected that your package is already set up to use Typescript and Lit. To read about setting up an extension in Umbraco using Typescript and Lit, please read the article [Creating your first extension](../creating-your-first-extension.md).
+This tutorial uses Typescript and Lit with Umbraco, so it does not cover Typescript or Lit. It is expected that your package is already [set up to use Typescript and Lit](../../extending/development-flow/vite-package-setup.md).&#x20;
+
+To read about setting up an extension in Umbraco using Typescript and Lit, please read the article [Creating your first extension](../creating-your-first-extension.md).
 
 For resources on Typescript or Lit, you can find some here:
 
--   [Typescript Docs](https://www.typescriptlang.org/docs/)
--   [Lit Docs](https://lit.dev/docs/)
+* [Typescript Docs](https://www.typescriptlang.org/docs/)
+* [Lit Docs](https://lit.dev/docs/)
 
 There are a lot of parallels with Creating a Custom Dashboard. The tutorial [Creating a Custom Dashboard](../creating-a-custom-dashboard.md) is worth a read too.
 
@@ -34,11 +36,11 @@ At the tutorial's end, we'll have a Umbraco Suggestions Data Type, registered in
 
 ### 1. Setting up a plugin
 
-Assuming you have read the tutorial [Creating your first extension](../creating-your-first-extension.md), you should have a folder named App_Plugins in your project. Let's call our project Suggestions. Start by creating a folder in App_Plugins called `Suggestions`.
+Follow the [Vite Package Setup](../../extending/development-flow/vite-package-setup.md) by creating a new project folder called "`suggestions`" in `App_Plugins`.
 
-Now create the manifest file named `umbraco-package.json` at the root of the `Suggestions` folder. Here we define and configure our dashboard.
+Then create the manifest file named `umbraco-package.json` at the root of the `suggestions` folder. Here we define and configure our dashboard.
 
-Add the following code
+Add the following code:
 
 ```json
 {
@@ -50,7 +52,7 @@ Add the following code
             "type": "propertyEditorUi",
             "alias": "My.PropertyEditorUi.Suggestions",
             "name": "My Suggestions Property Editor UI",
-            "js": "/App_Plugins/Suggestions/dist/my-suggestions-property-editor-ui.element.js",
+            "js": "/App_Plugins/Suggestions/dist/suggestions.js",
             "elementName": "my-suggestions-property-editor-ui",
             "meta": {
                 "label": "Suggestions",
@@ -69,18 +71,18 @@ Make sure to restart the application after you create and update`umbraco-package
 
 ### 2. Creating a Web Component
 
-Let's start with creating a folder `src` in our Suggestions folder. We want to start creating the web component we need for our property editor. Create a file in the `src` folder with the name `suggestions-property-editor-ui.element.ts`
+Now let's create the web component we need for our property editor. Create a file in the `src` folder with the name `suggestions-property-editor-ui.element.ts`
 
-In this new file, we will add the following code:
+In this new file, add the following code:
 
 ```typescript
 import { LitElement, html, customElement, property } from "@umbraco-cms/backoffice/external/lit";
-import { type UmbPropertyEditorExtensionElement } from "@umbraco-cms/backoffice/extension-registry";
+import { UmbPropertyEditorUiElement } from "@umbraco-cms/backoffice/extension-registry";
 
 @customElement("my-suggestions-property-editor-ui")
 export class MySuggestionsPropertyEditorUIElement
     extends LitElement
-    implements UmbPropertyEditorExtensionElement
+    implements UmbPropertyEditorUiElement
 {
     @property({ type: String })
     public value = "";
@@ -97,10 +99,14 @@ declare global {
 }
 ```
 
+{% hint style="info" %}
+In the `vite.config.ts` file replace the `entry` to our newly created `.ts` file: `entry: "src/suggestions-property-editor-ui.element.ts".`
+{% endhint %}
+
 Now our basic parts of the editor are done, namely:
 
--   The package manifest, telling Umbraco what to load
--   The web component for the editor
+* The package manifest, telling Umbraco what to load
+* The web component for the editor
 
 ### 3. Registering the Data Type in Umbraco
 
@@ -157,7 +163,7 @@ render() {
 Next, let's add a little bit of styling. Update the import from lit to include CSS:
 
 ```typescript
-import { LitElement, html, css } from "lit";
+import { LitElement, html, css } from "@umbraco-cms/backoffice/external/lit";
 ```
 
 Then add the CSS:
@@ -219,7 +225,7 @@ Let's look at the suggestions button next. When we press the suggestion button w
 First, update the import for Lit and add some suggestions to the property editor:
 
 ```typescript
-import { customElement, property, state } from "@umbraco-cms/backoffice/external/lit";
+import { LitElement, html, css, customElement, property, state } from "@umbraco-cms/backoffice/external/lit";
 ```
 
 ```typescript
@@ -237,7 +243,7 @@ import { customElement, property, state } from "@umbraco-cms/backoffice/external
 
 ```
 
-Then update the suggestion button in the render method to call a `onSuggestion` method when we press the button
+Then update the suggestion button in the render method to call a `onSuggestion` method when we press the button:
 
 ```typescript
  #onSuggestion() {
