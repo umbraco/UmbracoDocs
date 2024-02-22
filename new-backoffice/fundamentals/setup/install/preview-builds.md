@@ -11,7 +11,7 @@ In this article, we'll explain how you can get the latest builds of Umbraco. You
 3. [Installing the Preview Build Template](preview-builds.md#installing-the-preview-build-template)
 
 {% hint style="info" %}
-If you experience any problems running any of the prerelease/nightly builds, ensure that you have the [required version of .NET](../requirements.md#local-development). You can always find the latest on the [Microsoft website](https://dotnet.microsoft.com/en-us/).&#x20;
+If you experience any problems running any of the prerelease/nightly builds, ensure that you have the [required version of .NET](../requirements.md#local-development). You can always find the latest on the [Microsoft website](https://dotnet.microsoft.com/en-us/).
 {% endhint %}
 
 ## Using the Feed
@@ -42,6 +42,10 @@ https://www.myget.org/F/umbraconightly/api/v3/index.json
 ```
 
 For more information, see the [Installing Nightly Builds](installing-nightly-builds.md) article.
+
+{% hint style="info" %}
+Check the [MyGet website](https://www.myget.org/feed/umbraconightly/package/nuget/Umbraco.Templates) to stay up-to-date with the latest nightly versions.
+{% endhint %}
 
 ## Adding the "prereleases" Feed as a NuGet Source
 
@@ -90,15 +94,11 @@ Now that our feed is added we're ready to install the preview build template.
 To install the preview build template:
 
 1. Open your command prompt.
-2. Run the following command and provide the version that you want to install.&#x20;
+2. Run the following command and provide the version that you want to install.
 
 ```
 dotnet new install Umbraco.Templates::14.0.0--preview007
 ```
-
-{% hint style="info" %}
-Check the [MyGet website](https://www.myget.org/feed/umbraconightly/package/nuget/Umbraco.Templates) to stay up-to-date with the latest preview versions.&#x20;
-{% endhint %}
 
 The prerelease name and the version are separated with two colons`::`. It is important to specify the entire version, including the `--preview007` otherwise the `dotnet new` command will not find the package.
 
@@ -112,7 +112,7 @@ Create a new project using the following command:
 dotnet new umbraco -n MyAwesomePreviewSite
 ```
 
-This creates a folder named **MyAwesomePreviewSite**.  The new project can be opened and run using your favorite IDE or you can continue using the CLI commands.
+This creates a folder named **MyAwesomePreviewSite**. The new project can be opened and run using your favorite IDE or you can continue using the CLI commands.
 
 ### Run Umbraco
 
