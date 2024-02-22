@@ -21,7 +21,7 @@ The steps we will go through in part 1 are:
 
 This tutorial uses Typescript and Lit with Umbraco, so it does not cover Typescript or Lit. It is expected that your package is already [set up to use Typescript and Lit](../../extending/development-flow/vite-package-setup.md).&#x20;
 
-To read about setting up an extension in Umbraco using Typescript and Lit, please read the article [Creating your first extension](../creating-your-first-extension.md).
+To read about setting up an extension in Umbraco using Typescript and Lit, read the article [Creating your first extension](../creating-your-first-extension.md).
 
 For resources on Typescript or Lit, you can find some here:
 

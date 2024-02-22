@@ -14,8 +14,8 @@ This guide takes you through the steps to set up a Custom Dashboard in Umbraco.
 
 The guide is divided into four parts. The first part will go through the following:
 
-1. [Setting up a package](creating-a-custom-dashboard.md#1.-setting-up-a-package)
-2. [Creating the dashboard web component](creating-a-custom-dashboard.md#2.-creating-the-dashboard-web-component)
+1. [Setting up a package](creating-a-custom-dashboard.md#setting-up-a-package)
+2. [Creating the dashboard web component](creating-a-custom-dashboard.md#creating-the-dashboard-web-component)
 
 ### What is a Dashboard?
 
@@ -43,7 +43,9 @@ Here's an overview of the steps that will be covered:
 
 ### Prerequisites
 
-This tutorial uses Typescript and Lit with Umbraco, so it does not cover Typescript or Lit. It is expected that your package is already set up to use Typescript and Lit. To read about setting up an extension in Umbraco using Typescript and Lit, please read the article [Creating your first extension](creating-your-first-extension.md).
+This tutorial uses Typescript and Lit with Umbraco, so it does not cover Typescript or Lit. It is expected that your package is already [set up to use Typescript and Lit](../extending/development-flow/vite-package-setup.md).&#x20;
+
+To read about setting up an extension in Umbraco using Typescript and Lit, read the article [Creating your first extension](creating-your-first-extension.md).
 
 For resources on Typescript or Lit, you can find some here:
 
@@ -54,47 +56,45 @@ There are a lot of parallels with Creating a Property Editor. The tutorial '[Cre
 
 ### The end result
 
-At the end of this guide, we should have a friendly welcoming dashboard displaying a list of the most recent site logs.
+At the end of this guide, we will have a friendly welcoming dashboard displaying a list of the most recent site logs.
 
-## 1. Setting up a package
+## Setting up a package
 
-Assuming you have read the tutorial [Creating your first extension](creating-your-first-extension.md), you should have a folder named App\_Plugins in your project. Let's call our project WelcomeDashboard. Start by creating a folder in App\_Plugins called `WelcomeDashboard`.
+Follow the [Vite Package Setup](../extending/development-flow/vite-package-setup.md) by creating a new project folder called "`welcome-dashboard`" in `App_Plugins`.
 
-Create the manifest file `umbraco-package.json` at the root of the folder `WelcomeDashboard`. Here we define and configure our dashboard.
+Then create the manifest file named `umbraco-package.json` at the root of the `welcome-dashboard`folder. Here we define and configure our dashboard.
 
 Add the following code:
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
 ```json
 {
-	"$schema": "../../umbraco-package-schema.json",
-	"name": "My.WelcomePackage",
-	"version": "0.1.0",
-	"extensions": [
-		{
-			"type": "dashboard",
-			"alias": "my.welcome.dashboard",
-			"name": "My Welcome Dashboard",
-			"js": "/App_Plugins/WelcomeDashboard/dashboard.js",
-			"elementName": "my-welcome-dashboard",
-			"weight": -1,
-			"meta": {
-				"label": "Welcome Dashboard",
-				"pathname": "welcome-dashboard"
-			},
-			"conditions": [
-				{
-					"alias": "Umb.Condition.SectionAlias",
-					"match": "Umb.Section.Content"
-				}
-			]
-		}
-	]
+  "$schema": "../../umbraco-package-schema.json",
+  "name": "My.WelcomePackage",
+  "version": "0.1.0",
+  "extensions": [
+    {
+      "type": "dashboard",
+      "alias": "my.welcome.dashboard",
+      "name": "My Welcome Dashboard",
+      "js": "/App_Plugins/welcome-dashboard/dist/welcome-dashboard.js",
+      "elementName": "my-welcome-dashboard",
+      "weight": -1,
+      "meta": {
+        "label": "Welcome Dashboard",
+        "pathname": "welcome-dashboard"
+      },
+      "conditions": [
+        {
+          "alias": "Umb.Condition.SectionAlias",
+          "match": "Umb.Section.Content"
+        }
+      ]
+    }
+  ]
 }
 ```
 {% endcode %}
-
-Notice that the file for our dashboard extension is in the root of our WelcomeDashboard folder and is called `dashboard.js`with the element name `my-welcome-dashboard`.
 
 For more information about the `umbraco-package.json` file, read the article [Package Manifest](../extending/package-manifest.md). You should also read the [Dashboards](../extending/extension-types/dashboards.md) article for more information about dashboard configurations.
 
@@ -102,11 +102,13 @@ For more information about the `umbraco-package.json` file, read the article [Pa
 Please be aware that the file`umbraco-package.json` is loaded into memory when Umbraco starts up. If you are changing or adding new configurations you will need to start and stop your application for it to be loaded.
 {% endhint %}
 
-## 2. Creating the Dashboard Web Component
+## Creating the Dashboard Web Component
 
-Next, let's create a new ts file called `welcome-dashboard.element.ts`. This file is our web component and will contain all our HTML, CSS, and logic.
+Now let's create the web component we need for our property editor. This web component contains all our HTML, CSS, and logic.&#x20;
 
-Let's start with setting the web component with some HTML and CSS:
+Create a file in the `src` folder with the name `welcome-dashboard.element.ts`
+
+In this new file, add the following code:
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
@@ -148,9 +150,11 @@ declare global {
 ```
 {% endcode %}
 
-Build the `ts` file and make sure to copy the output file to `dashboard.js` under `/App_Plugins/WelcomeDashboard/`.
+{% hint style="info" %}
+In the `vite.config.ts` file replace the `entry` to our newly created `.ts` file: `entry: "src/welcome-dashboard.element.ts".`&#x20;
+{% endhint %}
 
-You can now start up the Backoffice and see our new dashboard in the content section:
+In the `welcome-dashboard` run `npm run build` and then run the project. Then in the  content section of the Backoffice you will see our new dashboard:
 
 <figure><img src="../.gitbook/assets/spaces_G1Byxw7XfiZAj8zDMCTD_uploads_PtBQkEyVcGmoVx3ysAOJ_welcome.webp" alt=""><figcaption><p>First look of the dashboard</p></figcaption></figure>
 
