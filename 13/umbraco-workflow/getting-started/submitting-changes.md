@@ -33,7 +33,7 @@ Depending on the document type and Workflow settings, the overlay will provide i
 - A date picker for setting a scheduled unpublishing date
   - only visible when 'Allow scheduling' is true
 
-It is not possible to schedule a publish date in an unpublish workflow, but it is possible to schedule both publish and unpublish dates in a publish workflow. Once content has been unpublish, a new workflow process is required to republish the content.
+It is not possible to schedule a publish date in an unpublish workflow. It is possible to schedule both publish and unpublish dates in a publish workflow. Once content has been unpublish, a new workflow process is required to republish the content.
 
 ## Variant workflows
 
