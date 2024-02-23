@@ -29,14 +29,6 @@ When the current node is pending workflow approval, the **Active workflow** sub-
 
 You can access Active Workflows from two places - the **Content** section and the **Workflow** section (depending on your user permission). Workflow Administrators (those users with access to the Workflow section) can access workflows assigned to a different group. In the **Workflow History**, these are noted as being performed by the admin.
 
-In multi-lingual sites, variant content can be submitted in one of these workflows:
-
-* Only the current variant.
-* All variants for publishing in a single workflow process using the workflow applied to the default variant.
-* Each variant into a separate workflow.
-
-For example, the German version of your content can be approved by German speaker's group and the English version by the English speaker's group.
-
 ### Approve, Reject, or Cancel pending workflow tasks
 
 #### Approve Workflow Tasks
@@ -58,6 +50,10 @@ To cancel a pending Workflow task, click on the **Cancel** button in the Action 
 ## Configuration
 
 The Configuration sub-section provides an interface for configuring the content approval flow for the current node. It also displays any Inherited or Document type approval flows applied to the current content node.
+
+In multi-lingual sites, each variant can have its own approval flow. By default, new variants inherit the configuration set on the default language.
+
+For example, German variants can be approved by German speakers' group, while English variants are approved by the English speakers' group.
 
 ![Configuration sub-section](../../../10/umbraco-workflow/getting-started/images/Configuration-sub-section.png)
 
