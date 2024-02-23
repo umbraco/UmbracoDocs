@@ -19,19 +19,19 @@ The button opens the request approval overlay:
 
 ![Request approval overlay](./images/approval-request-overlay-detailed.png)
 
-Depending on the document type and Workflow settings, the overlay will provide inputs for:
+Depending on the Document Type and Workflow settings, the overlay will provide inputs for:
 
 - A comment describing the changes
 - A selector for choosing the workflow type - either publish or unpublish
-  - only visible when 'Use Workflow for unpublish' is set to true
+  - Only visible when 'Use Workflow for unpublish' is set to true
 - A selector for choosing the variants to publish
-  - only visible on variant content
+  - Only visible on variant content
 - A media picker for choosing a media attachment
-  - only visible when 'Allow attachments' is set to true
+  - Only visible when 'Allow attachments' is set to true
 - A date picker for setting a scheduled publishing date
-  - only visible when 'Allow scheduling' is set to true, and the workflow type is publish
+  - Only visible when 'Allow scheduling' is set to true, and the workflow type is publish
 - A date picker for setting a scheduled unpublishing date
-  - only visible when 'Allow scheduling' is true
+  - Only visible when 'Allow scheduling' is true
 
 It is not possible to schedule a publish date in an unpublish workflow. It is possible to schedule both publish and unpublish dates in a publish workflow. Once content has been unpublish, a new workflow process is required to republish the content.
 
@@ -43,9 +43,9 @@ When a document is invariant, the variants selector is not displayed, and the ap
 
 ![Request approval overlay](./images/approval-request-overlay-variants.png)
 
-The editor will NOT be able to select variants where:
-- they do not have permission to edit the language, or
-- the variant is already in a workflow.
+The editor will not be able to select variants where:
+- They do not have permission to edit the language, or
+- The variant is already in a workflow.
 
 When submitting multiple variants, a workflow process is started for each variant, using the [default permissions inheritence pattern](./workflow-content-app#approval-flow-types). Newly created variants are automatically assigned the configuration from the default language.
 
