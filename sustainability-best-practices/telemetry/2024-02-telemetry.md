@@ -1,18 +1,18 @@
 # Telemetry Status February 2024
 
-Last year, around this time, we released our very first telemetry report, however, most of all, it was a disclaimer because we had very few sites, that opted in to detailed telemetry. We asked for your help and hoped to also count your project next year - which is now this year. And you did opt in! The number of responses has increased by 7000%, and there is now no reason for a disclaimer. #H5YR
+Last year, around this time, we released our very first telemetry report. However, most of all, it was a disclaimer because we had very few sites, that opted in to detailed telemetry. We asked for your help and hoped to also count your project next year - which is now this year. And you did opt in! The number of responses has increased by 7000%, and there is now no reason for a disclaimer. #H5YR
 
-Be aware though, that the telemetry does not cover V7 sites at all and only has basic data for V8 (from 8.10 and onwards), as the detailed telemetry was first introduced with V9.5
+Be aware though, that the telemetry does not cover V7 sites at all. Also, it only includes basic data for V8 (from 8.10 and onwards), as the detailed telemetry was first introduced with V9.5
 
 ### Adoption of new features
-One of the things we at HQ of course are curious about is, how the adoption of new features is going. In V11 we introduced the Block Grid (also added to V10 in 10.4), and we now see that it is used in 21% of all projects. That's pretty cool I think, although the BlockList outshines it with 59%. 
+One of the things we at HQ are curious about is, how the adoption of new features is going. In V11 we introduced the Block Grid (also added to V10 in 10.4). We now see that it is used in 21% of all projects. That's pretty cool I think, although the BlockList outshines it with 59%. 
 
 Another new feature is the Content Delivery API. We see this enabled on 6% of all projects. However, we also see a little weird thing in the numbers: 27% have disabled public access. This number shouldn't be higher than the number of enablements, as the Content Delivery API is disabled by default, so maybe we need more communication around this. But now you know, that the Content Delivery API is disabled by default.
 
-Since the last telemetry report, we've also started counting the number of External Login Providers. Here, UmbracoID seems to be the primary provider, however, there are still 5% that use other external providers and 1% that have implemented more than 1. 
+Since the last telemetry report, we've also started counting the number of External Login Providers. Here, UmbracoID seems to be the primary provider. However, there are still 5% that use other external providers and 1% that have implemented more than 1. 
 
 ### Average project
-So yeah, what is an average project? If we just calculate, we'll see that such a project has 1023 content items based on 58 document- and element types. It has 925 media items, 8 users, 2,5 nodes in the root and 1,7 languages. However, this average hides the fact, that there are some very big projects and a lot of smaller ones. That goes very much hand in hand with our vision, to be the "preferred CMS for partners and mid-market to lower enterprise" but still grow in the actual number of Umbraco installations.
+So yeah, what is an average project? If we make simple calculations, we'll see that such a project has 1023 content items based on 58 document- and element types. It has 925 media items, 8 users, 2,5 nodes in the root and 1,7 languages. However, this average hides the fact, that there are some very big projects and a lot of smaller ones. That goes very much hand in hand with our vision, to be the "preferred CMS for partners and mid-market to lower enterprise" but still grow in the actual number of Umbraco installations.
   
 So looking at the average "smaller" projects, we see:
 * 63% have less than 100 content nodes
@@ -29,7 +29,7 @@ This is very similar to what we saw last year. But this year, with a much bigger
 * 2% have more than 5 languages
 * 3% have more than 250 members
 
-### LTS versions are popular - and they should be
+### LTS (Long Term Supported) versions are popular - and they should be
 Besides the detailed telemetry data behind the numbers above, we also collect the basic telemetry that has been reported since version 8.10. In the chart below, we see that there still are quite a few V8 sites running (45%), but we also see, that the LTS versions are popular. Although V13 hasn't been public for more than a couple of months, it's adopted by 13%, only surpassed by the V10 LTS (19%) and of course V8.
 
 ![Active versions](../assets/active-versions-2024.png)
