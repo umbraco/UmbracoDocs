@@ -2,7 +2,7 @@
 
 Last year, around this time, we released our first telemetry report. However, most of all, it was a disclaimer because we only had few sites, that opted in to detailed telemetry. We asked for your help and hoped to also count your project next year - which is now this year. And you did opt in! The number of responses has increased by 7000%, and there is now no reason for a disclaimer. #H5YR
 
-Be aware though, that the telemetry does not cover V7 sites at all. Also, it only includes basic data for V8 (from 8.10 and onwards), as the detailed telemetry was first introduced with V9.5
+Be aware though, that the telemetry does not cover V7 sites at all. However, it includes only basic data for V8 (from v8.10+), as the detailed telemetry was first introduced with v9.5.
 
 ### Adoption of new features
 One of the things we at HQ are curious about is, how the adoption of new features is going. In V11 we introduced the Block Grid (also added to V10 in 10.4). We now see that it is used in 21% of all projects. That's pretty cool I think, although the BlockList outshines it with 59%. 
