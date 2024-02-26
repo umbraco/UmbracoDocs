@@ -9,7 +9,7 @@ One of the things we at HQ are curious about is, how the adoption of new feature
 
 Another new feature is the [Content Delivery API](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api). We see this enabled on 6% of all projects. However, we also see that 27% have disabled public access. This number shouldn't be higher than the number of elements, as the Content Delivery API is disabled by default. A takeaway from this is that it is important to know that the Content Delivery API is disabled by default.
 
-Since the last telemetry report, we've also started counting the number of External Login Providers. Here, UmbracoID seems to be the primary provider. However, there are still 5% that use other external providers and 1% that have implemented more than 1. 
+Since the last telemetry report, we've also started counting the number of External Login Providers. Here, UmbracoID seems to be the primary provider. However, there are still 5% that use other external providers and 1% that have implemented more than one. 
 
 ### Average project
 So yeah, what is an average project? Based on average calculations, we'll see that such a project has 1023 content items based on 58 document- and element types. It has 925 media items, 8 users, 2,5 nodes in the root and 1,7 languages. However, this average hides the fact, that there are some big projects and a lot of smaller ones. That goes hand in hand with our vision. To be the "preferred CMS for partners and mid-market to lower enterprise" but still grow in the actual number of Umbraco installations.
