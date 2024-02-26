@@ -12,7 +12,7 @@ Another new feature is the [Content Delivery API](https://docs.umbraco.com/umbra
 Since the last telemetry report, we've also started counting the number of External Login Providers. Here, UmbracoID seems to be the primary provider. However, there are still 5% that use other external providers and 1% that have implemented more than one. 
 
 ### Average project
-So yeah, what is an average project? Based on average calculations, we'll see that such a project has 1023 content items based on 58 document- and element types. It has 925 media items, 8 users, 2,5 nodes in the root and 1,7 languages. However, this average hides the fact, that there are some big projects and a lot of smaller ones. That goes hand in hand with our vision. To be the "preferred CMS for partners and mid-market to lower enterprise" but still grow in the actual number of Umbraco installations.
+What is an average project? Based on average calculations, we'll see that such a project has 1023 content items based on 58 document- and element types. It has 925 media items, 8 users, 2,5 nodes in the root and 1,7 languages. However, this average hides the fact, that there are some big projects and a lot of smaller ones. That goes hand in hand with our vision. To be the "preferred CMS for partners and mid-market to lower enterprise" but still grow in the actual number of Umbraco installations.
   
 Looking at the average "smaller" projects, we see:
 * 63% have less than 100 content nodes
