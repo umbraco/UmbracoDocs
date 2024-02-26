@@ -9,4 +9,6 @@ The Telemetry Data dashboard is a consent screen that is used for collecting sys
 
 Here you can find articles summing up the insights we've got through the detailed telemetry we've collected.
 
-### [February 2024](2024-02-telemetry.md)
+## [February 2023](https://umbraco.com/blog/how-umbraco-cms-is-used-telemetry-status-february-2023/)
+
+## [February 2024](2024-02-telemetry.md)
