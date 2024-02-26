@@ -10,12 +10,7 @@ Umbraco Workflow adds a [Content App](https://docs.umbraco.com/umbraco-cms/exten
 
 ## Active Workflow
 
-The Active workflow sub-section provides an interface for managing workflows for the current content node. When you initiate a workflow on the current node, the **Active workflow** sub-section requires information such as:
-
-* Change Description.
-* \[Optional] Scheduled date to publish the changes requested in the node.
-
-![Active workflow initiate request](../../../10/umbraco-workflow/getting-started/images/Active-workflow-initiate-request.png)
+The Active workflow sub-section provides an interface for managing workflows for the current content node. 
 
 When the current node is pending workflow approval, the **Active workflow** sub-section displays detailed information such as:
 
