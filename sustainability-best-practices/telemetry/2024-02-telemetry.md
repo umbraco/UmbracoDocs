@@ -12,7 +12,7 @@ Another new feature is the Content Delivery API. We see this enabled on 6% of al
 Since the last telemetry report, we've also started counting the number of External Login Providers. Here, UmbracoID seems to be the primary provider. However, there are still 5% that use other external providers and 1% that have implemented more than 1. 
 
 ### Average project
-So yeah, what is an average project? Based on average calculations, we'll see that such a project has 1023 content items based on 58 document- and element types. It has 925 media items, 8 users, 2,5 nodes in the root and 1,7 languages. However, this average hides the fact, that there are some big projects and a lot of smaller ones. That goes very much hand in hand with our vision: To be the "preferred CMS for partners and mid-market to lower enterprise" but still grow in the actual number of Umbraco installations.
+So yeah, what is an average project? Based on average calculations, we'll see that such a project has 1023 content items based on 58 document- and element types. It has 925 media items, 8 users, 2,5 nodes in the root and 1,7 languages. However, this average hides the fact, that there are some big projects and a lot of smaller ones. That goes hand in hand with our vision. To be the "preferred CMS for partners and mid-market to lower enterprise" but still grow in the actual number of Umbraco installations.
   
 So looking at the average "smaller" projects, we see:
 * 63% have less than 100 content nodes
@@ -30,15 +30,15 @@ This is similar to what we saw last year. But this year, with a much bigger data
 * 3% have more than 250 members
 
 ### LTS (Long Term Supported) versions are popular - and they should be
-Besides the detailed telemetry data behind the numbers above, we also collect the basic telemetry that has been reported since version 8.10. In the chart below, we see that there still are a few V8 sites running (45%). But we also see, that the LTS (Long Term Supported) versions are popular. Although V13 hasn't been public for more than a couple of months, it's adopted by 13%. Only surpassed by the V10 LTS (19%) and of course V8.
+Besides the detailed telemetry data behind the numbers above, we also collect the basic telemetry that has been reported since version 8.10. In the chart below, we see that there still are a few V8 sites running (45%). But we also see, that the LTS (Long Term Supported) versions are popular. Although V13 hasn't been public for more than a couple of months, it's adopted by 13%. Only surpassed by the V10 LTS (Long Term Supported) (19%) and V8.
 
 ![Active versions](../assets/active-versions-2024.png)
 
-This behaviour is aligned with how we hoped our release schedules would work: Adopt new STS (Standard Term Supported) versions if you can make use of the latest functionality or stay on LTS (Long Term Supported) versions if you want minimal work related to upgrades. 
+This behaviour is aligned with how we hoped our release schedules would work. Adopt new STS (Standard Term Supported) versions if you can make use of the latest functionality. Or stay on LTS (Long Term Supported) versions if you want minimal work related to upgrades. 
 
 And, as last year, the two most installed packages outside HQ are uSync (24%) and Contentment (9%).
 
 ### Some final notes
-We've only counted projects AspEnvironment set to Production, as we believe this is the best indicator for only counting production sites. Among the responses, there are some pretty wild outliers, when it comes to the number of languages, media, content, macros, domains, users, examine indexes, members, root nodes and yeah, pretty much everything. However, these individual outliers are not mentioned in this blog post.
+We've only counted projects AspEnvironment set to Production, as we believe this is the best indicator for only counting production sites. Among the responses, there are some pretty wild outliers. Especially, when it comes to the number of languages, media, content, macros, domains, users, examine indexes, members, root nodes and yeah, pretty much everything. However, these individual outliers are not mentioned in this blog post.
 
-And, as the very last word on this post: Thank you, for opting in. I'm sure it will help us build an even better Umbraco CMS in the future.
+And, as the last word on this post: Thank you, for opting in. I'm sure it will help us build an even better Umbraco CMS in the future.
