@@ -11,7 +11,7 @@
 
 ## Telemetry
 
-* [About telemetry](telemetry/README.md)
+* [Telemetry Overview](telemetry/README.md)
 * [February 2024](telemetry/2024-02-telemetry.md)
 
 ## Backend
