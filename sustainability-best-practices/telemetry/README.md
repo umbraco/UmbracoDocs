@@ -3,7 +3,7 @@ description: >-
   Here you can find some insights based on the collected telemetry.
 ---
 
-# About telemetry
+# About Telemetry
 
 The Telemetry Data dashboard is a consent screen that is used for collecting system and usage information from your installation. Here, you can see what type of data is being collected and even adjust the level of reporting. Currently, there are three levels available: Minimal, Basic, and Detailed. You can read more about this in the [Settings Dashboard ](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/settings-dashboards#telemetry-data) article.
 
