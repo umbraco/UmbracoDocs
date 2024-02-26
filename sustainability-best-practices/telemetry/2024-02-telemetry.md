@@ -7,7 +7,7 @@ Be aware though, that the telemetry does not cover V7 sites at all. However, it 
 ### Adoption of new features
 One of the things we at HQ are curious about is, how the adoption of new features is going. In v11 we introduced the [Block Grid](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-grid-editor) (also added to v10.4+). We now see that it is used in 21% of all projects although the BlockList outshines it with 59%. 
 
-Another new feature is the Content Delivery API. We see this enabled on 6% of all projects. However, we also see a little weird thing in the numbers: 27% have disabled public access. This number shouldn't be higher than the number of enablements, as the Content Delivery API is disabled by default. So maybe we need more communication around this. But now you know, that the Content Delivery API is disabled by default.
+Another new feature is the [Content Delivery API](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api). We see this enabled on 6% of all projects. However, we also see that 27% have disabled public access. This number shouldn't be higher than the number of elements, as the Content Delivery API is disabled by default. A takeaway from this is that it is important to know that the Content Delivery API is disabled by default.
 
 Since the last telemetry report, we've also started counting the number of External Login Providers. Here, UmbracoID seems to be the primary provider. However, there are still 5% that use other external providers and 1% that have implemented more than 1. 
 
