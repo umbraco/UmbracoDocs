@@ -55,7 +55,6 @@
   * [Confirm Dialog](extending/modals/confirm-dialog.md)
   * [Custom Modals](extending/modals/custom-modals.md)
   * [Route Registration](extending/modals/route-registration.md)
-  * [Create and register a custom modal](extending/modals/custom-modals.md)
 * [Sorting](extending/sorting.md)
 
 ## Tutorials
