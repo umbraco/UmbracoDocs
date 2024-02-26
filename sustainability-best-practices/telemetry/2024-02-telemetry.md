@@ -41,4 +41,4 @@ And, as last year, the two most installed packages outside HQ are uSync (24%) an
 ### Some final notes
 We've only counted projects AspEnvironment set to Production, as we believe this is the best indicator for only counting production sites. Among the responses, there are some pretty wild outliers. Especially, when it comes to the number of languages, media, content, macros, domains, users, examine indexes, members, root nodes and pretty much everything. However, these individual outliers are not mentioned in this blog post.
 
-As the last word on this aricle: Thank you, for opting in. I'm sure it will help us build an even better Umbraco CMS in the future.
+As the last word on this article: Thank you, for opting in. I'm sure it will help us build an even better Umbraco CMS in the future.
