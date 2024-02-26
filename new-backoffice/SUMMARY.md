@@ -54,7 +54,8 @@
 * [Modals](extending/modals/README.md)
   * [Confirm Dialog](extending/modals/confirm-dialog.md)
   * [Custom Modals](extending/modals/custom-modals.md)
-  * [Route Registration](extending/modals/route-registration.md)
+  * [Route Registration](extending/modals/custom-modals.md)
+  * [Create and register a custom modal]("ex")
 * [Sorting](extending/sorting.md)
 
 ## Tutorials
