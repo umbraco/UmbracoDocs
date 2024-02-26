@@ -30,7 +30,7 @@ This is similar to what we saw last year. But this year, with a much bigger data
 * 3% have more than 250 members
 
 ### Long Term Supported (LTS) versions are popular - and they should be
-Besides the detailed telemetry data behind the numbers above, we also collect the basic telemetry that has been reported since version 8.10. In the chart below, we see that there still are a few V8 sites running (45%). But we also see, that the LTS (Long Term Supported) versions are popular. Although V13 hasn't been public for more than a couple of months, it's adopted by 13%. Only surpassed by the V10 Long Term Supported (19%) and V8.
+Besides the detailed telemetry data behind the numbers above, we also collect the basic telemetry that has been reported since version 8.10. In the chart below, we see that there still are a few V8 sites running (45%). But we also see, that the Long Term Supported (LTS) versions are popular. Although V13 hasn't been public for more than a couple of months, it's adopted by 13%. Only surpassed by the V10 Long Term Supported (19%) and V8.
 
 ![Active versions](../assets/active-versions-2024.png)
 
