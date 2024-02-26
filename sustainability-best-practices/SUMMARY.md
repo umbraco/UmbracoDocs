@@ -9,11 +9,6 @@
 * [Architecture](infrastructure/architecture.md)
 * [Security and Bots](infrastructure/security-and-bots.md)
 
-## Telemetry
-
-* [Telemetry Overview](telemetry/README.md)
-* [February 2024](telemetry/2024-02-telemetry.md)
-
 ## Backend
 
 * [Backend Overview](backend/README.md)
@@ -47,3 +42,8 @@
 * [Design Choices](editor/design-choices.md)
 * [Data Management](editor/data-management.md)
 * [Housekeeping](editor/housekeeping.md)
+
+## Telemetry
+
+* [Telemetry Overview](telemetry/README.md)
+* [February 2024](telemetry/2024-02-telemetry.md)
