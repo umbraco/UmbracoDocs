@@ -25,7 +25,7 @@ Breaking it down:
 
 ## Usage
 
-You can use UDIs in many of the Querying and Management/Service APIs.
+You can use UDIs in some of the Querying and Management/Service APIs.
 
 There are 2 types of UDIs:
 
