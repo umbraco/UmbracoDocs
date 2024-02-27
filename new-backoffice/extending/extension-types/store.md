@@ -1,14 +1,14 @@
 ---
 description: >-
-  A store holds data through out the session, used to create reactivity across
-  different parts
+  A store holds data throughout the session. It is used to create reactivity
+  across different parts.
 ---
 
 # Store
 
-A store is the link between a Resource and a Repository. A store is mainly taken form as a Context API, In other words, we will have to Consume the Context(Store) to get the Store. Generally, a Store will be holding one or more State Objects, with each Subject made available for Observation via Observables.
+A store is the link between a Resource and a Repository. A store is mainly taken from a Context API. In other words, we will have to Consume the Context (Store) to get the Store.&#x20;
 
-[See States for more information](../states.md)
+Generally, a Store will be holding one or more [State Objects](../states.md), with each Subject made available for Observation via Observables.&#x20;
 
 ## A Basic Store
 

@@ -12,8 +12,9 @@ JSON file format is used to describe one or more custom Umbraco extensions such 
 
 ## Sample Manifest
 
-This is a sample manifest, it is always stored in a folder in `/App_Plugins/{YourPackageName}`, with the name `umbraco-package.json`
+This is a sample manifest, it is always stored in a folder in `App_Plugins/{YourPackageName}`, with the name `umbraco-package.json`. In this example, the package name is SirTrevor and is a text box property data type.
 
+{% code title="umbraco-package.json" %}
 ```json
 {
     "name": "Sir Trevor",
@@ -21,7 +22,7 @@ This is a sample manifest, it is always stored in a folder in `/App_Plugins/{You
     "allowPackageTelemetry": true,
     "extensions": [
         {
-            "type": "propertyEditorUI",
+            "type": "propertyEditorUi",
             "alias": "Sir.Trevor",
             "name": "Sir Trevor Property Editor UI",
             "js": "/App_Plugins/SirTrevor/SirTrevor.js",
@@ -35,11 +36,12 @@ This is a sample manifest, it is always stored in a folder in `/App_Plugins/{You
     ]
 }
 ```
+{% endcode %}
 
 ## Sample Manifest with Csharp
 
 {% hint style="warning" %}
-This is a work in progress. It's currently not possible to register a manifest with Csharp such as it was supported in previous versions of Umbraco CMS.&#x20;
+This is a work in progress. It's currently not possible to register a manifest with Csharp such as it was supported in previous versions of Umbraco CMS.
 {% endhint %}
 
 ## Root properties

@@ -103,7 +103,7 @@ Then in the terminal, you can run `npm run watch`.
 
 ### Umbraco Package declaration
 
-Declare your package to Umbraco via a file called `umbraco-package.json.` This should be added at the root of your package. In this guide, it is inside the `my-dashboard` folder.
+Declare your package to Umbraco via a file called `umbraco-package.json`. This should be added at the root of your package. In this guide, it is inside the `my-dashboard` folder.
 
 This example declares a Dashboard as part of your Package, using the Vite example element.
 

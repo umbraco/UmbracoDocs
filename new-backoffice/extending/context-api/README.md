@@ -10,11 +10,9 @@ The Context API enables an element or a controller, to receive an API provided v
 
 ## Consume a Context API
 
-There a different ways to consume a Context API. The most straightforward implementation is done on an Umbraco Element with a Context Token.
+There are different ways to consume a Context API. The most straightforward implementation is done on an Umbraco Element with a Context Token.
 
-A Context Token is a context identifier.
-
-All Umbraco Context APIs have a Context Token which can be imported and used for consumption. Similar to this example:
+All Umbraco Context APIs have a Context Token which can be imported and used for consumption, similar to this example:
 
 ```typescript
 import { UMB_NOTIFICATION_CONTEXT } from '@umbraco-cms/backoffice/notification';
@@ -31,13 +29,13 @@ The above example takes place in an Umbraco Element or Umbraco Controller.
 
 ### Alternative solutions
 
-The above examples utilize an Umbraco Controller to hook into an element's life cycle, this Controller is named `UmbContextConsumerController`.
+The above examples utilize an Umbraco Controller to hook into an element's life cycle. This Controller is named `UmbContextConsumerController`.
 
 If you need to consume a Context API from a non-controller host, then look at the `UmbContextConsumer`.
 
 ## **Write your own Context Token**
 
-A Context Token is generally a string matched with a type. In this way, users of the token can be sure to get the right type of context.
+A Context Token is a context identifier and is generally a string matched with a type. In this way, users of the token can be sure to get the right type of context.
 
 ```ts
 import { UmbContextToken } from "@umbraco-cms/backoffice/context";
@@ -52,12 +50,10 @@ const MY_CONTEXT = new UmbContextToken <MyContext>("My.Context.Token");
 
 ### **Context Token with an API Alias**
 
-For additions to Contexts, we can use the API Aliases to identify the additional API. Using the same Context Alias for additional APIs will ensure that such API has to be present with the first encounter of that Context Alias. Otherwise, a request will be rejected.
-In other words, if the addition is not part of the nearest matching Context, then a request will be rejected.
+For additions to Contexts, we can use the API Aliases to identify the additional API. Using the same Context Alias for additional APIs will ensure that such API has to be present with the first encounter of that Context Alias. Otherwise, a request will be rejected. In other words, if the addition is not part of the nearest matching Context, then a request will be rejected.
 
 {% hint style="info" %}
-Using API Alias only provides value when two or more APIs should share the same Context.
-This is needed for Context Extensions that are provided along with other Contexts.
+Using API Alias only provides value when two or more APIs should share the same Context. This is needed for Context Extensions that are provided along with other Contexts.
 {% endhint %}
 
 ```ts
@@ -73,8 +69,7 @@ const MY_ADDITIONAL_API_TOKEN = new UmbContextToken<MyAdditionalContext>(
 );
 ```
 
-The Token declared above can then be used to provide an additional Context API at the same Element as another Context API is provided at.
-The example below shows how the two APIs are made available.
+The Token declared above can then be used to provide an additional Context API at the same Element as another Context API is provided at. The example below shows how the two APIs are made available.
 
 ```ts
 const contextElement = new UmbLitElement();
@@ -125,8 +120,7 @@ The consumption of the Additional API will never happen as the token uses the sa
 ### **Context Token with a Type Discriminator**
 
 {% hint style="info" %}
-Discriminator only gives value for consumption of Context APIs that have a varying interface.
-Backoffice uses this for the different types of Workspace Contexts.
+Discriminator only gives value for consumption of Context APIs that have a varying interface. Backoffice uses this for the different types of Workspace Contexts.
 {% endhint %}
 
 In some cases, it is needed to have different APIs for the same context. The [Workspace Contexts](../extension-types/workspaces/workspace-context.md) is a good example of this.

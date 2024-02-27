@@ -6,48 +6,49 @@ description: >-
 
 # Localization
 
-{% hint style="warning" %}
-This article is a work in progress.
-{% endhint %}
-
-## Overview
-
 Localization files are used to translate:
 
 * The Umbraco backoffice user interface so that end users can use Umbraco in their native language. This is particularly important for content editors who do not speak English.
 * The member identity errors in an Umbraco website enable end users to use Umbraco in the website language.
 
-TODO: Description
+{% hint style="warning" %}
+This article is a work in progress.
+{% endhint %}
 
-* Read the [.NET Localization](.net-localization.md) article
-* Read the [UI Localization](ui-localization.md) article
+### [.NET Localization](.net-localization.md)
+
+Defines how to use the .NET Core Umbraco Localization files.
+
+### [UI Localization](ui-localization.md)
+
+Defines how to use the UI Umbraco Localization files.
 
 ## Supported Languages
 
-Current languages that are included in new Umbraco installations are:
+Current [languages ](https://github.com/umbraco/Umbraco-CMS/tree/contrib/src/Umbraco.Core/EmbeddedResources/Lang)with their ISO codes that are included in new Umbraco installations are:
 
-* English (UK)
-* English (US)
-* Danish
-* German
-* Spanish
-* French
-* Hebrew (Israel)
-* Italian
-* Japanese
-* Korean
-* Dutch
-* Norwegian
-* Polish
-* Portuguese
-* Russian
-* Swedish
-* Chinese
-* Chinese (Taiwan)
-* Czech
-* Turkish
-* Welsh
-* Ukrainian
-* Romanian
-* Croatian
-* Bosnian (Bosnia and Herzegovina)
+* `bs-BS` - Bosnian (Bosnia and Herzegovina)
+* `cs-CZ` - Czech (Czech Republic)
+* `cy-GB` - Welsh (United Kingdom)
+* `da-DK` - Danish (Denmark)
+* `de-DE` - German (Germany)
+* `en-GB` - English (United Kingdom)
+* `en-US` - **English (United States)** (fallback language)
+* `es-ES` - Spanish (Spain)
+* `fr-FR` - French (France)
+* `he-IL` - Hebrew (Israel)
+* `hr-HR` - Croatian (Croatia)
+* `it-IT` - Italian (Italy)
+* `ja-JP` - Japanese (Japan)
+* `ko-KR` - Korean (Korea)
+* `nb-NO` - Norwegian Bokmål (Norway)
+* `nl-NL` - Dutch (Netherlands)
+* `pl-PL` - Polish (Poland)
+* `pt-BR` - Portuguese (Brazil)
+* `ro-RO` - Romanian (Romania)
+* `ru-RU` - Russian (Russia)
+* `sv-SE` - Swedish (Sweden)
+* `tr-TR` - Turkish (Turkey)
+* `ua-UA` - Ukrainian (Ukraine)
+* `zh-CN` - Chinese (China)
+* `zh-TW` - Chinese (Taiwan)

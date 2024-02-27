@@ -8,35 +8,6 @@ description: In this subpage, we will cover how to set up localization for your 
 
 This is the second part of our guide to building a Custom Dashboard. This part continues work on the dashboard we built in part one: [Creating a Custom Dashboard](../creating-a-custom-dashboard.md), but further shows how to handle localization in a custom dashboard.
 
-## Default Localization
-
-If you want the dashboard to be available in different languages, you can use the existing localizations from Umbraco or register your own localizations. The localizations are written as a key-value pair pattern.
-
-To register localizations to a language, you need to add a new manifest to the Extension API. The manifest can be added through the `umbraco-package.json` file like this:
-
-{% code title="umbraco-package.json" %}
-```typescript
-{
-  ...
-  "extensions": [
-    {
-      "type": "localization",
-      "alias": "MyPackage.Localize.DaDK",
-      "name": "Danish",
-      "meta": {
-        "culture": "da-dk"
-      },
-      "js": "/App_Plugins/MyPackage/Localization/da-dk.js"
-    }
-  ]
-}
-```
-{% endcode %}
-
-{% hint style="info" %}
-Tip: If you do not have many translations, you can also choose to include the localizations directly in the meta-object. Read more about translations in the [**Localization**](../../extending/localization/) article.
-{% endhint %}
-
 ## Setup localization files
 
 1. In the `welcome-dashboard` folder create a new folder called "`Localization`"
@@ -259,6 +230,10 @@ This is how our dashboard should now look like:
 <figure><img src="../../.gitbook/assets/welcome-da.png" alt=""><figcaption><p>Dashboard if the user's language is Danish</p></figcaption></figure>
 
 </div>
+
+{% hint style="info" %}
+Tip: If you do not have many translations, you can also choose to include the localizations directly in the meta-object. Read more about translations in the [**Localization**](../../extending/localization/) article.
+{% endhint %}
 
 ## Going Further
 

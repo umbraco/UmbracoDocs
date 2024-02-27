@@ -21,11 +21,11 @@ The pages of this article describe all the extension types that Backoffice suppo
 [property-editors](property-editors/)
 {% endcontent-ref %}
 
-{% content-ref url="sections-and-trees.md" %}
-[sections-and-trees.md](sections-and-trees.md)
+{% content-ref url="sections-and-trees/" %}
+[sections-and-trees](sections-and-trees/)
 {% endcontent-ref %}
 
-## Declare Extension Manifest&#x20;
+## Declare Extension Manifest
 
 Extension Manifest and can be declared in multiple ways. One of these is to declare it as part of the [Umbraco Package Manifest](../package-manifest.md).
 
@@ -55,7 +55,7 @@ The bundle declares a single JavaScript file that will be loaded at startup. All
 ### Using `entryPoint` as your foundation
 
 The `entryPoint` extension type is special, it can be used to run any JavaScript code at startup.\
-This can be used as an entry point for a package. \
+This can be used as an entry point for a package.\
 The entry point declares a single JavaScript file that will be loaded and run when the Backoffice starts.
 
 The `entryPoint` extension is also the way to go if you want to load in external libraries such as jQuery, Angular, React, etc. You can use the `entryPoint` to load in the external libraries to be shared by all your extensions. Loading **global CSS files** can also be used in the `entryPoint` extension.

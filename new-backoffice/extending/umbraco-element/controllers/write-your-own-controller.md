@@ -4,10 +4,10 @@ description: Reuse functionality across components by writing it as a Controller
 
 # Write your own Controller
 
-A Controller must follow the interface of UmbController, to ease the implementation you can base your class on the `UmbBaseController`:
+A Controller must follow the interface of UmbController, to ease the implementation you can base your class on the `UmbController`:
 
 ```csharp
-import { UmbBaseController } from '@umbraco-cms/backoffice/controller-api';
+import { UmbController } from '@umbraco-cms/backoffice/controller-api';
 
 class MyController extends UmbBaseController {
 	
@@ -25,4 +25,3 @@ class MyController extends UmbBaseController {
 	}
 }
 ```
-

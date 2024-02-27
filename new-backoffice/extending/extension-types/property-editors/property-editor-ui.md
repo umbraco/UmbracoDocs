@@ -8,9 +8,7 @@ description: Presenting the Editing Experience of a Property Editor
 This page is a work in progress. It will be updated as the software evolves.
 {% endhint %}
 
-The Property Editor UI is a pure front-end extension, this determines how the data of a Property Editor is presented and manipulated.
-
-The Extension points to a Web Component.
+The Property Editor UI is a pure front-end extension. This determines how the data of a Property Editor is presented and manipulated. The Extension points to a Web Component.
 
 ### Property Editor UI
 
@@ -20,7 +18,7 @@ The Extension points to a Web Component.
 	"alias": "Umb.PropertyEditorUi.TextBox",
 	"name": "Text Box Property Editor UI",
 	"elementName": "my-text-box",
-	"js": "./my-text-box.element.js",
+	"js": "/App_Plugins/my-text-box/dist/my-text-box.js",
 	"meta": {
 		"label": "My Text Box",
 		"propertyEditorSchema": "Umbraco.TextBox",
@@ -34,7 +32,7 @@ If no Property Editor Schema is specified in the manifest, the Property Editor U
 
 ### Settings
 
-Define the configuration for a Property Editor UI. This is the same for Property Editor Schemas:
+Defines the configuration for a Property Editor UI. This is the same for Property Editor Schemas:
 
 {% hint style="info" %}
 The Property Editor UI inherits the Settings of its Property Editor Schema.
@@ -82,7 +80,7 @@ interface UmbPropertyEditorUIElement {}
 
 ```ts
 import { LitElement, html, css, customElement, property } from '@umbraco-cms/backoffice/external/lit';
-import { UmbElementMixin } from '@umbraco-cms/backoffice/element';
+import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
 
 @customElement('my-text-box')
 export default class UmbPropertyEditorUITextBoxElement extends UmbElementMixin(LitElement) {

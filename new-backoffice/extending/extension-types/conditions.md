@@ -1,6 +1,7 @@
 ---
 description: >-
-    Extension conditions are used to determine if an extension should be used or not. Many of the Extension Types support conditions, but not all of them.
+  Extension conditions are used to determine if an extension should be used or
+  not. Many of the Extension Types support conditions, but not all of them.
 ---
 
 # Conditions
@@ -26,8 +27,8 @@ In the following example we define the manifest for a Workspace Action, this act
 
 The conditions are defined as an array of conditions. Each condition is an object with the following properties:
 
--   `alias`- The alias of the condition to utilize.
--   `...` - The rest of the properties of the object are specific to the condition.
+* `alias`- The alias of the condition to utilize.
+* `...` - The rest of the properties of the object are specific to the condition.
 
 In the above example the `Umb.Condition.SectionAlias` condition is used. This condition takes a property `match` that must be set to the `alias` of the section to match.
 
@@ -35,15 +36,15 @@ In the above example the `Umb.Condition.SectionAlias` condition is used. This co
 
 The following conditions are available out of the box, for all extension types that support conditions.
 
--   `Umb.Condition.SectionAlias` - Checks if the current section alias matches the one specified.
--   `Umb.Condition.WorkspaceAlias` - Checks if the current workspace alias matches the one specified.
+* `Umb.Condition.SectionAlias` - Checks if the current section alias matches the one specified.
+* `Umb.Condition.WorkspaceAlias` - Checks if the current workspace alias matches the one specified.
 
 ### Make your own Condition Type
 
 You can make your own conditions by creating a class that implements the `UmbExtensionCondition` interface.
 
 ```typescript
-import { UmbBaseController } from "@umbraco-cms/backoffice/controller-api";
+import { UmbController } from "@umbraco-cms/backoffice/controller-api";
 import {
     ManifestCondition,
     UmbConditionConfigBase,

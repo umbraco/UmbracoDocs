@@ -27,13 +27,13 @@ The code of such an API file could look like this:
 
 ```typescript
 import {
-    UmbBaseController,
+    UmbController,
     UmbControllerHost,
 } from "@umbraco-cms/backoffice/controller-api";
 import { UmbContextToken } from "@umbraco-cms/backoffice/context-api";
 import { UmbNumberState } from "@umbraco-cms/backoffice/observable-api";
 
-export class MyContextApi extends UmbBaseController {
+export class MyContextApi extends UmbController {
     #counter = new UmbNumberState(0);
     readonly counter = this.#counter.asObservable();
 
@@ -51,7 +51,7 @@ export const api = MyContextCounterApi;
 ```
 
 {% hint style="info" %}
- Context APIs have to be self-providing. To do so it has to be an Umbraco Controller.
+Context APIs have to be self-providing. To do so it has to be an Umbraco Controller.
 {% endhint %}
 
 A Context Token for a Workspace Context Extension should look like this:
@@ -63,7 +63,6 @@ export const UMB_APP_CONTEXT = new UmbContextToken<MyContextCounterApi>(
 );
 ```
 
-We recommend using `UmbWorkspaceContext` as the Context Alias for your Context Token. This will ensure that the requester only retrieves this Context if it's present at their nearest Workspace Context.
-Use the Extension Manifest Alias as the API Alias for your Context Token.
+We recommend using `UmbWorkspaceContext` as the Context Alias for your Context Token. This will ensure that the requester only retrieves this Context if it's present at their nearest Workspace Context. Use the Extension Manifest Alias as the API Alias for your Context Token.
 
 [Read more about creating your own Context API here.](../../tutorials/write-your-own-context.md)

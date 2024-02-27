@@ -6,12 +6,11 @@
 ## Fundamentals
 
 * [Getting Started With Backoffice](fundamentals/getting-started-backoffice.md)
-* [Setup](fundamentals/setup/README.md)  
+* [Setup](fundamentals/setup/README.md)
   * [Requirements](fundamentals/setup/requirements.md)
   * [Installation](fundamentals/setup/install/README.md)
     * [Installing Preview Builds](fundamentals/setup/install/preview-builds.md)
     * [Installing Nightly Builds](fundamentals/setup/install/installing-nightly-builds.md)
-
 * [Backoffice](fundamentals/backoffice/README.md)
   * [Document Blueprints](fundamentals/backoffice/document-blueprints.md)
 
@@ -26,8 +25,8 @@
   * [Store](extending/extension-types/store.md)
   * [Kind](extending/extension-types/kind.md)
   * [Dashboard](extending/extension-types/dashboards.md)
-  * [Section](extending/extension-types/sections-and-trees.md)
-  * [Section View](extending/extension-types/section-view.md)
+  * [Section](extending/extension-types/sections-and-trees/README.md)
+    * [Section View](extending/extension-types/sections-and-trees/section-view.md)
   * [Property Editor](extending/extension-types/property-editors/README.md)
     * [Property Editor Schema](extending/extension-types/property-editors/property-editor-schema.md)
     * [Property Editor UI](extending/extension-types/property-editors/property-editor-ui.md)
@@ -46,7 +45,6 @@
 * [Context API](extending/context-api/README.md)
   * [Variant Context](extending/context-api/variant-context.md)
 * [Localization](extending/localization/README.md)
-  * [Use Localizations](extending/localization/use-localizations.md)
   * [.NET Localization](extending/localization/.net-localization.md)
   * [UI Localization](extending/localization/ui-localization.md)
 * [States](extending/states.md)
