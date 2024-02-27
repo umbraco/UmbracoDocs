@@ -87,7 +87,7 @@ export default {
       "type": "dashboard",
       "alias": "my.welcome.dashboard",
       "name": "My Welcome Dashboard",
-      "js": "/App_Plugins/welcome-dashboard/dist/welcome-dashboard.js",
+      "js": "/App_Plugins/welcome-dashboard/dist/welcome-dashboard.element.js",
       "elementName": "my-welcome-dashboard",
       "weight": -1,
       "meta": {
@@ -225,7 +225,7 @@ This is how our dashboard should now look like:
 
 <figure><img src="../../.gitbook/assets/welcome-eng.png" alt=""><figcaption><p>Dashboard if the user's language is English / Fallback</p></figcaption></figure>
 
- 
+
 
 <figure><img src="../../.gitbook/assets/welcome-da.png" alt=""><figcaption><p>Dashboard if the user's language is Danish</p></figcaption></figure>
 
