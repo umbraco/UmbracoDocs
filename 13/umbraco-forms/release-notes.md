@@ -21,10 +21,17 @@ This section contains the release notes for Umbraco Forms 13 including all chang
 
 With the introduction of webhooks with Umbraco 13, we've made an update to Forms to allow workflow execution events to trigger webhooks. Workflows are operations that you can associated with form submission, approval or rejections actions. You can use these where you need to notify external systems of the success or failure of a workflow. Read more on [Umbraco Forms wehbooks](./developer/webhooks.md).
 
+We've added an update that will help customers using Forms within locked down production environments.
+
+And there are a couple of further additions to improve performance and accessibility of the product.
+
 **Features implemented and issues resolved in 13.1.0**
 
 * Added wehbooks for workflow execution events [#1151](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1151)
 * Added support for a proxied request when using reCAPTCHA 3 [#1159](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1159)
+* Added a configurable option to ensure accessibility requirements with regard to fieldsets are adhered to [#1163](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1163)
+    * Read more about this configuration setting [here](./developer/configuration/README.md#mandatoryfieldsetlegends).
+* Added a cachebuster querystring based on the current product version to rendered script dependencies [#773](https://github.com/umbraco/Umbraco.Forms.Issues/issues/773)
 
 #### [**13.0.2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.2) **(February 20th 2024)**
 

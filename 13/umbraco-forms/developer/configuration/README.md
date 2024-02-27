@@ -67,7 +67,8 @@ For illustration purposes, the following structure represents the full set of op
         "FieldTypes": {},
         "PrevalueSourceTypes": {},
         "WorkflowTypes": {},
-      }
+      },
+      "MandatoryFieldsetLegends": false
     },
     "Options": {
       "IgnoreWorkFlowsOnEdit": "True",
@@ -223,6 +224,12 @@ In order to configure this setting, you will need to know the GUID or alias for 
 Take care to not hide any settings that are required for the particular field or workflow type (for example, the `Subject` field for email workflows). If you do that, the item will fail validation when an editor tries to create it.
 
 The default value and read-only settings apply to most setting types. There is an exception for complex ones where a default string value isn't appropriate. An example of one of these is the field mapper used in the "Send to URL" workflow.
+
+### MandatoryFieldsetLegends
+
+When creating a form with Umbraco Forms, adding captions to the groups for fields is optional. To follow accessibility best practice, these fields should be completed. When they are, the group of fields are presented within a `<fieldset>` element that has a populated `<legend>`.
+
+If you want to ensure form creators always have to provide a caption, you can set the value of this setting to `true`.
 
 ### Form default settings configuration
 
