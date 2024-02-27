@@ -32,6 +32,7 @@ And there are a couple of further additions to improve performance and accessibi
 * Added a configurable option to ensure accessibility requirements with regard to fieldsets are adhered to [#1163](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1163)
     * Read more about this configuration setting [here](./developer/configuration/README.md#mandatoryfieldsetlegends).
 * Added a cachebuster querystring based on the current product version to rendered script dependencies [#773](https://github.com/umbraco/Umbraco.Forms.Issues/issues/773)
+* Ensured that client-side conditions logic correctly implements "is" with multiple values, such that the condition passes if one and only one matching value is found. [#1173](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1173)
 
 #### [**13.0.2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.2) **(February 20th 2024)**
 
