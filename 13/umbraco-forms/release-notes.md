@@ -27,12 +27,13 @@ And there are a couple of further additions to improve performance and accessibi
 
 **Features implemented and issues resolved in 13.1.0**
 
-* Added wehbooks for workflow execution events [#1151](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1151)
-* Added support for a proxied request when using reCAPTCHA 3 [#1159](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1159)
-* Added a configurable option to ensure accessibility requirements with regard to fieldsets are adhered to [#1163](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1163)
+* Added wehbooks for workflow execution events [#1151](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1151).
+* Added support for a proxied request when using reCAPTCHA 3 [#1159](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1159).
+* Added a configurable option to ensure accessibility requirements with regard to fieldsets are adhered to [#1163](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1163).
     * Read more about this configuration setting [here](./developer/configuration/README.md#mandatoryfieldsetlegends).
-* Added a cachebuster querystring based on the current product version to rendered script dependencies [#773](https://github.com/umbraco/Umbraco.Forms.Issues/issues/773)
-* Ensured that client-side conditions logic correctly implements "is" with multiple values, such that the condition passes if one and only one matching value is found. [#1173](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1173)
+* Added a cachebuster querystring based on the current product version to rendered script dependencies [#773](https://github.com/umbraco/Umbraco.Forms.Issues/issues/773).
+* Ensured that client-side conditions logic correctly implements "is" with multiple values, such that the condition passes if one and only one matching value is found [#1173](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1173).
+* Fixed closing of theme picker dialog [#1174](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1174).
 
 #### [**13.0.2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.2) **(February 20th 2024)**
 
