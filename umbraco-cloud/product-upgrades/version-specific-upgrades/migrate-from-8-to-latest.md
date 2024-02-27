@@ -9,7 +9,7 @@ description: >-
 {% hint style="warning" %}
 It is currently not possible to upgrade directly from Umbraco 8 to Umbraco 12+.
 
-The recommended approach for upgrading from v8 to v12+ is to use this guide to upgrade from _Umbraco 8 to Umbraco 10_ and then use the [Major Upgrades](../major-upgrades.md) steps to upgrade from _Umbraco 10 to Umbraco 12+_.
+The recommended approach for upgrading from v8 to v12+ is to use this guide to upgrade from _Umbraco 8 to Umbraco 10_ . Then use the [Major Upgrades](../major-upgrades.md) steps to upgrade from _Umbraco 10 to Umbraco 12+_.
 {% endhint %}
 
 Since the underlying framework going from Umbraco 8 to the latest version has changed, there is no direct upgrade path. That said, it is possible to re-use the database from your Umbraco 8 project on your new project in order to maintain the content.
