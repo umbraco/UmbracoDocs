@@ -227,7 +227,7 @@ The default value and read-only settings apply to most setting types. There is a
 
 ### MandatoryFieldsetLegends
 
-When creating a form with Umbraco Forms, adding captions to the groups for fields is optional. To follow accessibility best practice, these fields should be completed. When they are, the group of fields are presented within a `<fieldset>` element that has a populated `<legend>`.
+When creating a form with Umbraco Forms, adding captions to the groups for fields is optional. To follow accessibility best practices, these fields should be completed. When they are, the group of fields are presented within a `<fieldset>` element that has a populated `<legend>`.
 
 If you want to ensure form creators always have to provide a caption, you can set the value of this setting to `true`.
 
@@ -503,9 +503,9 @@ Valid options are `Google` (the default) or `Recaptcha`. You may want to use the
 
 #### VerificationUrl
 
-By default the server-side validation of the reCAPTCHA response is sent to Google's servers at `https://www.google.com/recaptcha/api/siteverify`.
+By default, the server-side validation of the reCAPTCHA response is sent to Google's servers at `https://www.google.com/recaptcha/api/siteverify`.
 
-Some customers with a locked down production environment cannot configure the firewall to allow these requests and instead use a proxy server. They can use this setting to configure the URL to their proxy server, which will relay the request to and response from Google.
+Some customers with a locked-down production environment cannot configure the firewall to allow these requests and instead use a proxy server. They can use this setting to configure the URL to their proxy server, which will relay the request to and response from Google.
 
 ### Rich text field type configuration
 

@@ -2,9 +2,9 @@
 
 Umbraco Forms will register events for workflow operations that you can use with [Umbraco webhooks](https://docs.umbraco.com/umbraco-cms/reference/webhooks).
 
-Workflows are operations that you can associated with form submission, approval or rejections actions. You can use these where you need to notify external systems of the success or failure of a workflow.
+Workflows are operations that you can associate with form submission, approval, or rejection actions. You can use these where you need to notify external systems of the success or failure of a workflow.
 
-Via the Umbraco _Settings > Webhooks_ dashboard you can configure webhooks to respond to workflows.
+On the Umbraco **Settings** > **Webhooks** dashboard, you can configure webhooks to respond to workflows.
 
 ![Webhook events](./images/wehbook-events.png)
 
