@@ -19,7 +19,7 @@ Realtime rate shipping in Umbraco Commerce allows you to define real-time, up-to
 ![Shipping Methods](../../media/shipping_methods.png)
 
 5. Click **Create Shipping Method**.
-* Choose the shipping provider for thie shipping operator you wish to use
+6. Choose the shipping provider for the shipping operator you wish to use.
 
 ![Choose Shipping Provider](../../media/create_shipping_method.png)
 
