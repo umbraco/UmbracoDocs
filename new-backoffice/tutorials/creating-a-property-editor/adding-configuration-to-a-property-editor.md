@@ -20,7 +20,9 @@ An editor can be used again and again, with different configurations, and that i
 
 ## umbraco-package.json
 
-To add a Data Type configuration field when using our Suggestion Property Editor, open the `umbraco-package.json` file. Inside the `meta` object, we can add the `settings` object, which has the optional objects `properties` and `defaultData`. Let's start by adding some `properties`:
+To add a Data Type configuration field when using our Suggestion Property Editor, open the `umbraco-package.json` file. Inside the `meta` object, we can add the `settings` object, which has the optional objects `properties` and `defaultData`.&#x20;
+
+1. Add some `properties`:
 
 ```json
     ...
@@ -46,13 +48,16 @@ To add a Data Type configuration field when using our Suggestion Property Editor
     }
 ```
 
-Above we add two configuration fields. Each entry of the `properties` collection represents a Configuration field. Each has the information needed for a field. Notice you have to declare a Property Editor UI, this declares what User Interface should be used for this field.
+Above we added two configuration fields. Each entry of the `properties` collection represents a Configuration field. Each has the information needed for a field.&#x20;
 
-The field with the label "Disabled" uses the Toggle Property Editor UI. This will allow us to turn the suggestion button on/off and will provide the user with a toggle button.&#x20;
+{% hint style="info" %}
+The Property Editor UI needs to be declared as it declares what User Interface should be used for this field.
+{% endhint %}
 
-The field with the label "Placeholder text" uses the TextBox Property Editor UI. This will allow the user to write a text.
+* The field with the label "`Disabled`" uses the Toggle Property Editor UI. This will allow us to turn the suggestion button on/off and will provide the user with a toggle button.&#x20;
+* The field with the label "`Placeholder text`" uses the TextBox Property Editor UI. This will allow the user to write a text.
 
-We can now also set some default data on our new configurations:
+2. We can now also set some default data on our new configurations:
 
 ```json
   ...
@@ -74,8 +79,11 @@ We can now also set some default data on our new configurations:
    ...
 ```
 
-Your `umbraco-package.json` file should now look something like this:
+<details>
 
+<summary>See the entire file: umbraco-package.json</summary>
+
+{% code title=" umbraco-package.json" %}
 ```json
 {
     "$schema": "../../umbraco-package-schema.json",
@@ -90,7 +98,7 @@ Your `umbraco-package.json` file should now look something like this:
             "elementName": "my-suggestions-property-editor-ui",
             "meta": {
                 "label": "Suggestions",
-                "icon": "umb:list",
+                "icon": "icon-list",
                 "group": "common",
                 "propertyEditorSchemaAlias": "Umbraco.TextBox",
                 "settings": {
@@ -124,10 +132,14 @@ Your `umbraco-package.json` file should now look something like this:
     ]
 }
 ```
+{% endcode %}
 
-Save the files and rebuild the application. To access the configuration options, enable/disable the `disabled` option. Additionally, you can set a default value in the `placeholder` field and see the Suggestions Data Type at play.
+</details>
 
-Since we are using the `Umbraco.TextBox` Property Editor Schema, we inherit a `maxChars` configuration field from the Property Editor Schema. Let's save it as 20.
+3. Save the files and rebuild the application.&#x20;
+   * To access the configuration options, enable/disable the `disabled` option.&#x20;
+   * Additionally, you can set a default value in the `placeholder` field and see the Suggestions Data Type at play.
+4. Since we are using the `Umbraco.TextBox` Property Editor Schema, we inherit a `maxChars` configuration field from the Property Editor Schema. Let's save it as 20.
 
 <figure><img src="../../.gitbook/assets/property-editor-config.png" alt=""><figcaption></figcaption></figure>
 
@@ -135,7 +147,7 @@ Since we are using the `Umbraco.TextBox` Property Editor Schema, we inherit a `m
 
 The next step is to gain access to our new configuration options. For this, open the `suggestions-property-editor-ui.element.ts` file.
 
-First, let's create some state variables that can store our configurations
+1. Create some state variables that can store our configurations:
 
 ```typescript
   @state()
@@ -148,11 +160,13 @@ First, let's create some state variables that can store our configurations
   private _maxChars?: number;
 ```
 
-Now let's create a config property. We look up the alias of the config and then grab the value by said alias. Add a new import and add the following property:
+2. Let's create a config property. Add a new import and add the following property:
 
 ```typescript
 import { type UmbPropertyEditorConfigCollection } from "@umbraco-cms/backoffice/property-editor";
 ```
+
+3. Look up the alias of the config and then grab the value by said alias:
 
 ```typescript
   @property({ attribute: false })
@@ -165,7 +179,7 @@ import { type UmbPropertyEditorConfigCollection } from "@umbraco-cms/backoffice/
 
 We can now use the configurations. Let's use the `placeholder` and `maxChars` for the input field and the `disabled` option for the suggestion button.
 
-Add a new import `ifDefined` and update the render method:
+4. Add a new import `ifDefined` and update the render method:
 
 ```typescript
 import { ifDefined } from "@umbraco-cms/backoffice/external/lit";
@@ -322,6 +336,6 @@ declare global {
 
 </details>
 
-In the `suggestions` folder run `npm run build` and then run the project. In the  content section of the Backoffice you will see the new changes in the property editor:
+5. In the `suggestions` folder run `npm run build` and then run the project. In the  content section of the Backoffice you will see the new changes in the property editor:
 
 <figure><img src="../../.gitbook/assets/property-editor-config-on.png" alt=""><figcaption><p>Suggestions Property Editor with disabled suggestions option</p></figcaption></figure>

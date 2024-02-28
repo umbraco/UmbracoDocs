@@ -36,11 +36,9 @@ At the tutorial's end, we'll have a Umbraco Suggestions Data Type, registered in
 
 ### Step 1: Setting up a plugin
 
-Follow the [Vite Package Setup](../../extending/development-flow/vite-package-setup.md) by creating a new project folder called "`suggestions`" in `App_Plugins`.
-
-Then create the manifest file named `umbraco-package.json` at the root of the `suggestions` folder. Here we define and configure our dashboard.
-
-Add the following code:
+1. Follow the [Vite Package Setup](../../extending/development-flow/vite-package-setup.md) by creating a new project folder called "`suggestions`" in `App_Plugins`.
+2. Then create the manifest file named `umbraco-package.json` at the root of the `suggestions` folder. Here we define and configure our dashboard.
+3. Add the following code to `umbraco-package.json`:
 
 ```json
 {
@@ -56,7 +54,7 @@ Add the following code:
             "elementName": "my-suggestions-property-editor-ui",
             "meta": {
                 "label": "Suggestions",
-                "icon": "umb:list",
+                "icon": "icon-list",
                 "group": "common",
                 "propertyEditorSchemaAlias": "Umbraco.TextBox"
             }
@@ -71,9 +69,10 @@ Make sure to restart the application after you create and update`umbraco-package
 
 ### Step 2: Creating a Web Component
 
-Now let's create the web component we need for our property editor. Create a file in the `src` folder with the name `suggestions-property-editor-ui.element.ts`
+Now let's create the web component we need for our property editor.&#x20;
 
-In this new file, add the following code:
+1. Create a file in the `src` folder with the name `suggestions-property-editor-ui.element.ts`
+2. In this new file, add the following code:
 
 ```typescript
 import { LitElement, html, customElement, property } from "@umbraco-cms/backoffice/external/lit";
@@ -108,9 +107,11 @@ Now our basic parts of the editor are done, namely:
 * The package manifest, telling Umbraco what to load
 * The web component for the editor
 
+3. Restart the application.
+
 ### Step 3: Registering the Data Type in Umbraco
 
-We will now restart our application. In the Document Type, let's add our newly added property editor "Suggestions" and save it.
+In the Document Type, let's add our newly added property editor "Suggestions" and save it.
 
 <figure><img src="../../.gitbook/assets/spaces_OdQETpqkO0Kcv8KMquKL_uploads_git-blob-c7d7e59228a3b5738a1464489ef7601b7f8d350d_suggestion-property-editor.webp" alt=""><figcaption></figcaption></figure>
 
@@ -122,11 +123,9 @@ We should now have a property editor that looks like this:
 
 ### Step 4: Adding styling and setting up events in the Web Components
 
-Let's start by creating an input field and some buttons that we can style and hook up to events. In the `suggestions-property-editor-ui.element.ts` file, update the render method to include some input fields and buttons:
+Let's start by creating an input field and some buttons that we can style and hook up to events.&#x20;
 
-{% hint style="info" %}
-The Umbraco UI library is already a part of the backoffice, which means we can start using it
-{% endhint %}
+1. In the `suggestions-property-editor-ui.element.ts` file, update the render method to include some input fields and buttons:
 
 ```typescript
 render() {
@@ -160,13 +159,17 @@ render() {
   }
 ```
 
-Next, let's add a little bit of styling. Update the import from lit to include CSS:
+{% hint style="info" %}
+The Umbraco UI library is already a part of the backoffice, which means we can start using it
+{% endhint %}
+
+2. Add some styling. Update the import from lit to include CSS:
 
 ```typescript
 import { LitElement, html, css } from "@umbraco-cms/backoffice/external/lit";
 ```
 
-Then add the CSS:
+3. Then add the CSS:
 
 ```typescript
 render() {
@@ -193,7 +196,13 @@ It should now look something like this:
 
 It's starting to look good! Next, let's look into setting up the event logic.
 
-Let's start with the input field. When we type something in the input field, we want the property editor's value to change to the input field's current value. We then have to dispatch an `property-value-change` event.
+### Step 5: Setup Event Logic
+
+#### Setup Input Field
+
+Let's start with the input field. When we type something in the input field, we want the property editor's value to change to the input field's current value.&#x20;
+
+We then have to dispatch an `property-value-change` event:
 
 ```typescript
   #onInput(e: InputEvent) {
@@ -220,13 +229,20 @@ Let's start with the input field. When we type something in the input field, we 
 }
 ```
 
-Let's look at the suggestions button next. When we press the suggestion button we want the text to update to the suggestion that we get. Similar to how the value of our property editor changes when we write in the input field. We also want the value to change when we press the suggestion button.
+Let's look at the suggestions button next.&#x20;
 
-First, update the import for Lit and add some suggestions to the property editor:
+#### Setup Suggestions Button
+
+* When we press the suggestion button we want the text to update to the suggestion that we get. Similar to how the value of our property editor changes when we write in the input field.&#x20;
+* We also want the value to change when we press the suggestion button.
+
+1. First, update the import for Lit:
 
 ```typescript
 import { LitElement, html, css, customElement, property, state } from "@umbraco-cms/backoffice/external/lit";
 ```
+
+2. Add some suggestions to the property editor:
 
 ```typescript
 
@@ -243,7 +259,7 @@ import { LitElement, html, css, customElement, property, state } from "@umbraco-
 
 ```
 
-Then update the suggestion button in the render method to call a `onSuggestion` method when we press the button:
+3. Update the suggestion button in the render method to call a `onSuggestion` method when we press the button:
 
 ```typescript
  #onSuggestion() {
@@ -367,7 +383,7 @@ declare global {
 
 </details>
 
-Next, clear the cache, reload the document, and see the Suggestions Data Type running.
+4. Next, clear the cache, reload the document, and see the Suggestions Data Type running.
 
 <figure><img src="../../.gitbook/assets/NewPropertyEditorSuggestions.png" alt=""><figcaption></figcaption></figure>
 

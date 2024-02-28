@@ -214,9 +214,14 @@ declare global {
 
 </details>
 
-The dashboard's text will appear depending on the user's language. If the user's language is Danish, the dashboard will use the text from our `da-dk` file. If the user's language is English, the dashboard will use the text from our `en-us` file.
+The dashboard's text will appear depending on the user's language.&#x20;
 
+* If the user's language is Danish, the dashboard will use the text from our `da-dk` file.&#x20;
+* If the user's language is English, the dashboard will use the text from our `en-us` file.
+
+{% hint style="info" %}
 The text between the open and close tags of `umb-localize` is the fallback value in case the key can't be found or doesn't exist.
+{% endhint %}
 
 This is how our dashboard should now look like:
 

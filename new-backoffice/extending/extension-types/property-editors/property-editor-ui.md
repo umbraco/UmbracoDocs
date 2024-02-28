@@ -22,7 +22,7 @@ The Property Editor UI is a pure front-end extension. This determines how the da
 	"meta": {
 		"label": "My Text Box",
 		"propertyEditorSchema": "Umbraco.TextBox",
-		"icon": "umb:autofill",
+		"icon": "icon-autofill",
 		"group": "common"
 	}
 }

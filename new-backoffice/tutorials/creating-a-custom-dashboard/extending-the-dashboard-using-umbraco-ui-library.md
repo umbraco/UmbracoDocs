@@ -4,7 +4,7 @@ description: >-
   prettier. To do this we can use the Umbraco UI library.
 ---
 
-# Extending the Dashboard using Umbraco UI library
+# Using Umbraco UI library in the Dashboard
 
 {% hint style="warning" %}
 This page is a work in progress. It will be updated as the software evolves.
@@ -12,7 +12,7 @@ This page is a work in progress. It will be updated as the software evolves.
 
 ## Overview
 
-This is the fourth and final part of the guide to building a Custom Dashboard. This part continues work on the dashboard we built in part three: [Adding functionality to the Dashboard](adding-functionality-to-the-dashboard.md). But it goes further to showcase how we can use the UI Library in our extension.&#x20;
+This is the fourth and final part of the guide to building a Custom Dashboard. This part continues work on the dashboard we built in part three: [Adding functionality to the Dashboard](adding-functionality-to-the-dashboard.md). But it goes further to showcase how we can use the UI Library in our extension.
 
 ## Umbraco UI Library
 
@@ -20,7 +20,9 @@ The [Umbraco UI Library](../../extending/ui-library.md) is a set of web componen
 
 By using the variables available from the UI Library, you ensure that your extensions are a consistent size with the rest of the backoffice.
 
-Let's start by wrapping `uui-box` around our render output. This makes our dashboard the same style as the built-in dashboards of Umbraco.
+### UI Box
+
+1. Let's start by wrapping `uui-box` around our render output. This makes our dashboard the same style as the built-in dashboards of Umbraco:
 
 {% code title="welcome-dashboard.element.ts" %}
 ```typescript
@@ -36,7 +38,7 @@ render() {
 ```
 {% endcode %}
 
-The `uui-box` has a headline property. Let's move our headline into the headline property.
+2. The `uui-box` has a headline property as well. Let's move our headline into the headline property.
 
 {% code title="welcome-dashboard.element.ts" %}
 ```typescript
@@ -52,7 +54,9 @@ The `uui-box` has a headline property. Let's move our headline into the headline
 ```
 {% endcode %}
 
-The `uui-box` also has a headline slot if you want to add an element instead. This element can also be styled and contain other elements. So let's say we want to keep using `umb-localize` instead of `localize.term()`, we can accomplish this by doing so:&#x20;
+3. The `uui-box` also has a headline slot if you want to add an element instead. This element can also be styled and contain other elements. \
+   \
+   Let's keep using `umb-localize` instead of `localize.term()`. This can be accomplished like so:
 
 {% code title="welcome-dashboard.element.ts" %}
 ```typescript
@@ -72,7 +76,7 @@ render() {
 ```
 {% endcode %}
 
-The UI Library also has a lot of variables we can use such as sizes and colors. Let's update our padding to ensure that our element is always consistent with the rest of the backoffice:
+4. The UI Library also has a lot of variables we can use such as sizes and colors. Let's update our `padding` to ensure that our element is always consistent with the rest of the backoffice:
 
 {% code title="welcome-dashboard.element.ts" %}
 ```typescript
@@ -202,9 +206,11 @@ declare global {
 
 </details>
 
-Let's try another uui element.
+### UI Table
 
-Since we have a lot of information from the users, it could be a good idea to insert it into a proper table. The Umbraco UI (UUI) Library also includes a [uui-table](https://uui.umbraco.com/?path=/docs/layout-table-table--docs), so let's use that.
+Let's try another uui element. Since we have a lot of information from the users, it could be a good idea to insert it into a proper table.&#x20;
+
+1. The Umbraco UI (UUI) Library also includes a [uui-table](https://uui.umbraco.com/?path=/docs/layout-table-table--docs), so let's use it:
 
 {% code title="welcome-dashboard.element.ts" %}
 ```typescript
@@ -237,7 +243,7 @@ private _renderUser(user: UmbUserDetailModel) {
 ```
 {% endcode %}
 
-Since the `uui-table` and others are handling the table, we can redo our CSS a bit:
+2. Since the `uui-table` and others are handling the table, we can redo our CSS a bit:
 
 {% code title="welcome-dashboard.element.ts" %}
 ```typescript
@@ -379,11 +385,13 @@ declare global {
 
 </details>
 
-{% hint style="success" %}
-**Challenge (optional):** Insert the <mark style="color:orange;">`user.state`</mark> into a <mark style="color:orange;">`uui-tag`</mark> that uses different values of the properties<mark style="color:orange;">`look`</mark> and <mark style="color:orange;">`color`</mark>. The values depend on the state of the user. For example, use look="primary" and color="positive" when the user is <mark style="color:orange;">`Active`</mark>
+### **Challenge (optional):**
+
+Insert the <mark style="color:orange;">`user.state`</mark> into a <mark style="color:orange;">`uui-tag`</mark> that uses different values of the properties<mark style="color:orange;">`look`</mark> and <mark style="color:orange;">`color`</mark>.&#x20;
+
+The values depend on the state of the user. For example, use `look="primary"` and `color="positive"` when the user is <mark style="color:orange;">`Active`</mark>
 
 [Check out the uui-tag in the library here](https://uui.umbraco.com/?path=/story/uui-tag--looks-and-colors)
-{% endhint %}
 
 <details>
 
@@ -426,4 +434,6 @@ import { InterfaceColor, InterfaceLook } from '@umbraco-cms/backoffice/external/
 
 </details>
 
-The `uui-table-row` also have a selectable property. We advise you to continue to experiment with different UUI elements from the UI library to build awesome interfaces!
+The `uui-table-row` also have a selectable property.&#x20;
+
+Continue to experiment with different UUI elements from the UI library to build awesome interfaces!

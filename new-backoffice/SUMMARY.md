@@ -73,7 +73,7 @@
 * [Creating a Custom Dashboard](tutorials/creating-a-custom-dashboard.md)
   * [Adding localization to the dashboard](tutorials/creating-a-custom-dashboard/adding-localization-to-the-dashboard.md)
   * [Adding functionality to the Dashboard](tutorials/creating-a-custom-dashboard/adding-functionality-to-the-dashboard.md)
-  * [Extending the Dashboard using Umbraco UI library](tutorials/creating-a-custom-dashboard/extending-the-dashboard-using-umbraco-ui-library.md)
+  * [Using Umbraco UI library in the Dashboard](tutorials/creating-a-custom-dashboard/extending-the-dashboard-using-umbraco-ui-library.md)
 * [Creating a Property Editor](tutorials/creating-a-property-editor/README.md)
   * [Adding configuration to a Property Editor](tutorials/creating-a-property-editor/adding-configuration-to-a-property-editor.md)
   * [Integrating context with a Property Editor](tutorials/creating-a-property-editor/integrating-context-with-a-property-editor.md)
