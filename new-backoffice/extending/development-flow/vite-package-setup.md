@@ -37,7 +37,9 @@ npm install --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbra
 ```
 
 {% hint style="info" %}
-Optionally you can use `--legacy-peer-deps` in the installation command (`npm install --legacy-peer-deps --registry`[`https://www.myget.org/F/umbracoprereleases/npm/`](https://www.myget.org/F/umbracoprereleases/npm/)`-D @umbraco-cms/backoffice@14.0.0--preview007)` to avoid installing Umbraco´s sub-dependencies like TinyMCE and Monaco Editor. If this is used the Intellisense to those external references will not be available.&#x20;
+**`npm install --legacy-peer-deps --registry`**[**`https://www.myget.org/F/umbracoprereleases/npm/`**](https://www.myget.org/F/umbracoprereleases/npm/)**`-D @umbraco-cms/backoffice@14.0.0--preview006`**
+
+Optionally you can use `--legacy-peer-deps` in the installation command to avoid installing Umbraco´s sub-dependencies like TinyMCE and Monaco Editor. If this is used the Intellisense to those external references will not be available.&#x20;
 {% endhint %}
 
 This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `--preview006` is the version of the package, which will change as new versions are released.
