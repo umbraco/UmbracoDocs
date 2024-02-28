@@ -125,7 +125,7 @@ class MyElement extends UmbElementMixin(LitElement) {
     }
 
     private _openModal() {
-        this.#modalManagerContext?.openModal(MY_MODAL_TOKEN, {
+        this.#modalManagerContext?.open(MY_MODAL_TOKEN, {
             data: {
                 headline: "My modal headline",
             },
