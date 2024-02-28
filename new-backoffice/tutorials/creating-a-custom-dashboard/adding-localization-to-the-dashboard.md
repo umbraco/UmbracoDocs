@@ -169,7 +169,7 @@ render() {
 import { LitElement, css, html, customElement} from "@umbraco-cms/backoffice/external/lit";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
-@customElement("my-welcome-dashboard")
+@customElement('my-welcome-dashboard')
 export class MyWelcomeDashboardElement extends UmbElementMixin(LitElement) {
 
   render() {
@@ -206,7 +206,7 @@ export class MyWelcomeDashboardElement extends UmbElementMixin(LitElement) {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "my-welcome-dashboard": MyWelcomeDashboardElement;
+    'my-welcome-dashboard': MyWelcomeDashboardElement;
   }
 }
 ```
