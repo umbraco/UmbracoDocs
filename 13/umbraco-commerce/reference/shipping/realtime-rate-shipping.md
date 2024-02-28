@@ -4,7 +4,7 @@ description: Realtime Rate Shipping in Umbraco Commerce.
 
 # Realtime Rate Shipping
 
-Realtime rate shipping in Umbraco Commerce allows you to define realtime, up to the minute shipping estimates directly from shipping operators. 
+Realtime rate shipping in Umbraco Commerce allows you to define real-time, up-to-the-minute shipping estimates directly from the shipping operators. 
 
 ## Configuration
 
