@@ -166,8 +166,7 @@ render() {
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
-import { LitElement, css, html } from "lit";
-import { customElement } from "@umbraco-cms/backoffice/external/lit";
+import { LitElement, css, html, customElement} from "@umbraco-cms/backoffice/external/lit";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
 @customElement("my-welcome-dashboard")
@@ -225,7 +224,7 @@ This is how our dashboard should now look like:
 
 <figure><img src="../../.gitbook/assets/welcome-eng.png" alt=""><figcaption><p>Dashboard if the user's language is English / Fallback</p></figcaption></figure>
 
-
+ 
 
 <figure><img src="../../.gitbook/assets/welcome-da.png" alt=""><figcaption><p>Dashboard if the user's language is Danish</p></figcaption></figure>
 

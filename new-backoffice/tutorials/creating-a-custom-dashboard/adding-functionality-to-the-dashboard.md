@@ -301,11 +301,11 @@ declare global {
 
 </details>
 
-Now that we have the data from the repository, let's render the data:
+Now that we have the data from the repository, we need to render the data.
 
 We are going to use the `repeat` directive to loop through the array of users and render each user. We are also going to create a new method `_renderUser` that will render the user details.
 
-Make sure you have the `repeat` directive imported:
+Add the `repeat` directive to the import:
 
 {% code title="welcome-dashboard.element.ts" %}
 ```typescript
