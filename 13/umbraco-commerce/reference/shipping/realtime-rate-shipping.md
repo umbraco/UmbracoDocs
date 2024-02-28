@@ -8,7 +8,13 @@ Realtime rate shipping in Umbraco Commerce allows you to define real-time, up-to
 
 ## Configuration
 
-* Go to `Settings > Commerce > Stores > {Your Store} > Shipping Methods`
+
+1. Go to **Settings**. 
+2. Open the **Commerce** folder in the **Commerce** section.
+3. Select <Your Store> from the **Stores** dropdown.
+4. Go to **Shipping Methods**.
+
+
 
 ![Shipping Methods](../../media/shipping_methods.png)
 
