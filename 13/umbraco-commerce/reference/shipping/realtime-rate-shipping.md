@@ -29,7 +29,9 @@ To configure Realtime Rate Shipping, follow these steps:
 
 ![Choose Shipping Calculation Mode](../../media/create_shipping_method2.png)
 
-* Populate the shipping method name, alias, sku and optional image and tax rate
+8. Enter the **Shipping Method Name**, **Alias**, and **SKU**.
+9. Select the tax class from the **Tax Class** dropdown list.
+10. _[Optional]_ Upload an image.
 * Enter any shipping provider API credentials required to connect to the shipping operators API
 
 ![Shipping Method Details](../../media/realtime_shipping_details.png)
