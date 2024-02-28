@@ -36,6 +36,7 @@ To configure Realtime Rate Shipping, follow these steps:
 
 ![Shipping Method Details](../../media/realtime_shipping_details.png)
 
-* Configure the countries in this shipping method should be allowed in
+12. Select the countries this shipping method should be allowed in.
+13. Click **Save**.
 
 ![Shipping Method Allowed Countries](../../media/shipping_method_allowed_countries.png)
