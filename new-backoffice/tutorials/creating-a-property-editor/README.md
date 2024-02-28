@@ -16,6 +16,7 @@ The steps we will go through in part 1 are:
 * ​[Creating a Web Component​](./#2.-creating-a-simple-web-component)
 * ​[Registering the Data Type in Umbraco](./#3.-registering-the-data-type-in-umbraco)
 * [Adding styling and setting up events in Web Components](./#4.-adding-styling-and-setting-up-events-in-the-web-components)
+* [Setup Event Logic](./#step-5-setup-event-logic)
 
 ### Prerequisites
 
