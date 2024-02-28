@@ -100,45 +100,41 @@ This already looks a lot better!
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
-import { UMB_AUTH, UmbLoggedInUser } from "@umbraco-cms/backoffice/auth";
-import { LitElement, css, html, customElement, state } from "@umbraco-cms/backoffice/external/lit";
-import { UmbUserDetail, UmbUserRepository } from '@umbraco-cms/backoffice/users';
+import { type UmbCurrentUserModel, UMB_CURRENT_USER_CONTEXT } from "@umbraco-cms/backoffice/current-user";
+import { LitElement, css, html, customElement, state, repeat } from "@umbraco-cms/backoffice/external/lit";
+import { type UmbUserDetailModel, UmbUserCollectionRepository } from '@umbraco-cms/backoffice/user';
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
 @customElement('my-welcome-dashboard')
 export class MyWelcomeDashboardElement extends UmbElementMixin(LitElement) {
 	@state()
-	private _currentUser?: UmbLoggedInUser;
+    private _currentUser?: UmbCurrentUserModel;
 
-	@state()
-	private _userData?: Array<UmbUserDetail>;
+    @state()
+    private _userData: Array<UmbUserDetailModel> = [];
 
-	private _auth?: typeof UMB_AUTH.TYPE;
+    #userRepository = new UmbUserCollectionRepository(this);
 
-	private _userRepository = new UmbUserRepository(this);
+    constructor() {
+        super();
+        this.consumeContext(UMB_CURRENT_USER_CONTEXT, (instance) => {
+            this._observeCurrentUser(instance);
+        });
+        this._getPagedUserData();
+    }
 
-	constructor() {
-		super();
-		this.consumeContext(UMB_AUTH, (instance) => {
-			this._auth = instance;
-			this._observeCurrentUser();
-		});
-		this._getDataFromRepository();
-	}
+    //Get the current user
+    private async _observeCurrentUser(instance: typeof UMB_CURRENT_USER_CONTEXT.TYPE) {
+        this.observe(instance.currentUser, (currentUser) => {
+            this._currentUser = currentUser;
+        });
+    }
 
-	//Get the current user
-	private async _observeCurrentUser() {
-		if (!this._auth) return;
-		this.observe(this._auth.currentUser, (currentUser) => {
-			this._currentUser = currentUser;
-		});
-	}
-
-	//Get all users
-	private async _getDataFromRepository() {
-		const { data } = await this._userRepository.requestCollection();
-		this._userData = data?.items;
-	}
+    //Get all users
+    private async _getPagedUserData() {
+        const { data } = await this.#userRepository.requestCollection();
+        this._userData = data?.items ?? [];
+    }
 
 	render() {
 		return html`
@@ -157,12 +153,14 @@ export class MyWelcomeDashboardElement extends UmbElementMixin(LitElement) {
 						<umb-localize key="welcomeDashboard_copyright"> © Sample Company 20XX </umb-localize>
 					</p>
 				</div>
-				<div id="users-wrapper">${this._userData?.map((user) => this._renderUser(user))}</div>
+				<div id="users-wrapper">
+                    ${repeat(this._userData, (user) => user.unique, (user) => this._renderUser(user))}
+                </div>
 			</uui-box>
 		`;
 	}
 
-	private _renderUser(user: UmbUserDetail) {
+	private _renderUser(user: UmbUserDetailModel) {
 		return html`<div class="user">
 			<div>${user.name}</div>
 			<div>${user.email}</div>
@@ -222,19 +220,19 @@ render() {
 					<uui-table-head-cell>Email</uui-table-head-cell>
 					<uui-table-head-cell>Status</uui-table-head-cell>
 				</uui-table-row>
-				${this._userData?.map((user) => this._renderUser(user))}
+				${repeat(this._userData, (user) => user.unique, (user) => this._renderUser(user))}
 			</uui-table>
 		</uui-box>
 	`;
 }
 
-private _renderUser(user: UmbUserDetail) {
-	if (!user) return;
-	return html`<uui-table-row class="user">
-		<uui-table-cell>${user.name}</uui-table-cell>
-		<uui-table-cell>${user.email}</uui-table-cell>
-		<uui-table-cell>${user.state}</uui-table-cell>
-	</uui-table-row>`;
+private _renderUser(user: UmbUserDetailModel) {
+    if (!user) return;
+    return html`<uui-table-row class="user">
+        <uui-table-cell>${user.name}</uui-table-cell>
+        <uui-table-cell>${user.email}</uui-table-cell>
+        <uui-table-cell>${user.state}</uui-table-cell>
+    </uui-table-row>`;
 }
 ```
 {% endcode %}
@@ -274,48 +272,44 @@ Your dashboard component should now look like this:
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
-import { UMB_AUTH, UmbLoggedInUser } from "@umbraco-cms/backoffice/auth";
-import { LitElement, css, html, customElement, state } from "@umbraco-cms/backoffice/external/lit";
-import { UmbUserDetail, UmbUserRepository } from '@umbraco-cms/backoffice/users';
+import { type UmbCurrentUserModel, UMB_CURRENT_USER_CONTEXT } from "@umbraco-cms/backoffice/current-user";
+import { LitElement, css, html, customElement, state, repeat } from "@umbraco-cms/backoffice/external/lit";
+import { type UmbUserDetailModel, UmbUserCollectionRepository } from '@umbraco-cms/backoffice/user';
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
 @customElement('my-welcome-dashboard')
 export class MyWelcomeDashboardElement extends UmbElementMixin(LitElement) {
-	@state()
-	private _currentUser?: UmbLoggedInUser;
+    @state()
+    private _currentUser?: UmbCurrentUserModel;
 
-	@state()
-	private _userData?: Array<UmbUserDetail>;
+    @state()
+    private _userData: Array<UmbUserDetailModel> = [];
 
-	private _auth?: typeof UMB_AUTH.TYPE;
+    #userRepository = new UmbUserCollectionRepository(this);
 
-	private _userRepository = new UmbUserRepository(this);
+    constructor() {
+        super();
+        this.consumeContext(UMB_CURRENT_USER_CONTEXT, (instance) => {
+            this._observeCurrentUser(instance);
+        });
+        this._getPagedUserData();
+    }
 
-	constructor() {
-		super();
-		this.consumeContext(UMB_AUTH, (instance) => {
-			this._auth = instance;
-			this._observeCurrentUser();
-		});
-		this._getPagedUserData();
-	}
+    //Get the current user
+    private async _observeCurrentUser(instance: typeof UMB_CURRENT_USER_CONTEXT.TYPE) {
+        this.observe(instance.currentUser, (currentUser) => {
+            this._currentUser = currentUser;
+        });
+    }
 
-	//Get the current user
-	private async _observeCurrentUser() {
-		if (!this._auth) return;
-		this.observe(this._auth.currentUser, (currentUser) => {
-			this._currentUser = currentUser;
-		});
-	}
+    //Get all users
+    private async _getPagedUserData() {
+        const { data } = await this.#userRepository.requestCollection();
+        this._userData = data?.items ?? [];
+    }
 
-	//Get all users
-	private async _getPagedUserData() {
-		const { data } = await this._userRepository.requestCollection();
-		this._userData = data?.items;
-	}
-
-	render() {
-		return html`
+    render() {
+        return html`
 			<uui-box>
 				<h1 slot="headline">
 					<umb-localize key="welcomeDashboard_heading">Welcome</umb-localize>
@@ -338,23 +332,23 @@ export class MyWelcomeDashboardElement extends UmbElementMixin(LitElement) {
 						<uui-table-head-cell>Email</uui-table-head-cell>
 						<uui-table-head-cell>Status</uui-table-head-cell>
 					</uui-table-row>
-					${this._userData?.map((user) => this._renderUser(user))}
+                    ${repeat(this._userData, (user) => user.unique, (user) => this._renderUser(user))}
 				</uui-table>
 			</uui-box>
 		`;
-	}
+    }
 
-	private _renderUser(user: UmbUserDetail) {
-		if (!user) return;
-		return html`<uui-table-row class="user">
+    private _renderUser(user: UmbUserDetailModel) {
+        if (!user) return;
+        return html`<uui-table-row class="user">
 			<uui-table-cell>${user.name}</uui-table-cell>
 			<uui-table-cell>${user.email}</uui-table-cell>
 			<uui-table-cell>${user.state}</uui-table-cell>
 		</uui-table-row>`;
-	}
+    }
 
-	static styles = [
-		css`
+    static styles = [
+        css`
 			:host {
 				display: block;
 				padding: var(--uui-size-layout-1);
@@ -370,15 +364,15 @@ export class MyWelcomeDashboardElement extends UmbElementMixin(LitElement) {
 				background-color: var(--uui-color-surface-alt);
 			}
 		`,
-	];
+    ];
 }
 
 export default MyWelcomeDashboardElement;
 
 declare global {
-	interface HTMLElementTagNameMap {
-		'my-welcome-dashboard': MyWelcomeDashboardElement;
-	}
+    interface HTMLElementTagNameMap {
+        'my-welcome-dashboard': MyWelcomeDashboardElement;
+    }
 }
 ```
 {% endcode %}
@@ -403,7 +397,7 @@ import { InterfaceColor, InterfaceLook } from '@umbraco-cms/backoffice/external/
 
 	...
 
-	private _renderUser(user: UmbUserDetail) {
+	private _renderUser(user: UmbUserDetailModel) {
 		if (!user) return;
 		const state = this.getLookAndColorFromUserState(user.state);
 		return html`<uui-table-row class="user">

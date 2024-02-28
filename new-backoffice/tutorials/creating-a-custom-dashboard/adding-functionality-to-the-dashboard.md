@@ -32,7 +32,7 @@ Update and add the following imports to `welcome-dashboard.element.ts` :
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
 import { LitElement, css, html, customElement, state } from "@umbraco-cms/backoffice/external/lit";
-import { UMB_AUTH, UmbLoggedInUser } from '@umbraco-cms/backoffice/auth';
+import { type UmbCurrentUserModel, UMB_CURRENT_USER_CONTEXT } from "@umbraco-cms/backoffice/current-user";
 ```
 {% endcode %}
 
@@ -43,21 +43,17 @@ Now that we have the Auth token, we can consume it in the constructor to obtain 
 ...
 
 @state()
-private _currentUser?: UmbLoggedInUser;
-
-private _auth?: typeof UMB_AUTH.TYPE;
+private _currentUser?: UmbCurrentUserModel;
 
 constructor() {
     super();
-    this.consumeContext(UMB_AUTH, (instance) => {
-        this._auth = instance;
-        this._observeCurrentUser();
+    this.consumeContext(UMB_CURRENT_USER_CONTEXT, (instance) => {
+        this._observeCurrentUser(instance);
     });
 }
 
-private async _observeCurrentUser() {
-    if (!this._auth) return;
-    this.observe(this._auth.currentUser, (currentUser) => {
+private async _observeCurrentUser(instance: typeof UMB_CURRENT_USER_CONTEXT.TYPE) {
+    this.observe(instance.currentUser, (currentUser) => {
         this._currentUser = currentUser;
     });
 }
@@ -108,28 +104,24 @@ Your dashboard should now look something like this:
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
-import { UMB_AUTH, UmbLoggedInUser } from '@umbraco-cms/backoffice/auth';
+import { type UmbCurrentUserModel, UMB_CURRENT_USER_CONTEXT } from "@umbraco-cms/backoffice/current-user";
 import { LitElement, css, html, customElement, state } from "@umbraco-cms/backoffice/external/lit";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
 @customElement('my-welcome-dashboard')
 export class MyWelcomeDashboardElement extends UmbElementMixin(LitElement) {
     @state()
-    private _currentUser?: UmbLoggedInUser;
-
-    private _auth?: typeof UMB_AUTH.TYPE;
+    private _currentUser?: UmbCurrentUserModel;
 
     constructor() {
         super();
-        this.consumeContext(UMB_AUTH, (instance) => {
-            this._auth = instance;
-            this._observeCurrentUser();
+        this.consumeContext(UMB_CURRENT_USER_CONTEXT, (instance) => {
+            this._observeCurrentUser(instance);
         });
     }
 
-    private async _observeCurrentUser() {
-        if (!this._auth) return;
-        this.observe(this._auth.currentUser, (currentUser) => {
+    private async _observeCurrentUser(instance: typeof UMB_CURRENT_USER_CONTEXT.TYPE) {
+        this.observe(instance.currentUser, (currentUser) => {
             this._currentUser = currentUser;
         });
     }
@@ -180,19 +172,15 @@ declare global {
 
 ## Step 2: Getting data from the server
 
-{% hint style="danger" %}
-<mark style="color:red;">`UmbUserDetail`</mark> and <mark style="color:red;">`UmbUserRepository`</mark> is not available yet.
-{% endhint %}
-
 Let's dive deeper into some new resources and see what we can do with them.
 
 Before we can get data from the server we need to start up the repository that handles said data. Let's say we want to get the data of all of the users of our project. To get the user data, we need to start up the user repository. We are also going to need a type for our user details.
 
-Let's import `UmbUserDetail` and `UmbUserRepository`:
+Let's import `UmbUserDetailModel` and `UmbUserCollectionRepository`:
 
 {% code title="welcome-dashboard.element.ts" %}
 ```typescript
-import { UmbUserDetail, UmbUserRepository } from '@umbraco-cms/backoffice/users';
+import { type UmbUserDetailModel, UmbUserCollectionRepository } from '@umbraco-cms/backoffice/user';
 ```
 {% endcode %}
 
@@ -201,32 +189,32 @@ Next, we start up the repository and then create a new async method that we call
 {% code title="welcome-dashboard.element.ts" %}
 ```typescript
 @state()
-private _userData?: Array<UmbUserDetail>;
+private _userData: Array<UmbUserDetailModel> = [];
 
-private _userRepository = new UmbUserRepository(this);
+#userRepository = new UmbUserCollectionRepository(this);
 
 constructor() {
 	...
 
-	this._getDataFromRepository();
+	this._getPagedUserData();
 }
 
-private async _getDataFromRepository() {
+private async _getPagedUserData() {
 	//this._userRepository
 }
 ```
 {% endcode %}
 
-Notice that the user repository has a lot of methods that we can use. We are going to use `requestCollection`to get all the users.
+Notice that the user repository has a lot of methods that we can use. We are going to use `requestCollection` to get all the users.
 
 <figure><img src="../../.gitbook/assets/requestcollection.png" alt=""><figcaption><p>Options from the user repository</p></figcaption></figure>
 
 The method `requestCollection` returns a promise, so let's `await` the data and save the data in our array.
 
 ```typescript
-private async _getDataFromRepository() {
-    const { data } = await this._userRepository.requestCollection();
-    this._userData = data?.items;
+private async _getPagedUserData() {
+    const { data } = await this.#userRepository.requestCollection();
+    this._userData = data?.items ?? [];
 }
 ```
 
@@ -236,45 +224,41 @@ private async _getDataFromRepository() {
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
-import { UMB_AUTH, UmbLoggedInUser } from '@umbraco-cms/backoffice/auth';
+import { type UmbCurrentUserModel, UMB_CURRENT_USER_CONTEXT } from "@umbraco-cms/backoffice/current-user";
 import { LitElement, css, html, customElement, state } from "@umbraco-cms/backoffice/external/lit";
-import { UmbUserDetail, UmbUserRepository } from '@umbraco-cms/backoffice/users';
+import { type UmbUserDetailModel, UmbUserCollectionRepository } from '@umbraco-cms/backoffice/user';
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
 @customElement('my-welcome-dashboard')
 export class MyWelcomeDashboardElement extends UmbElementMixin(LitElement) {
 	@state()
-	private _currentUser?: UmbLoggedInUser;
+    private _currentUser?: UmbCurrentUserModel;
 
-	@state()
-	private _userData?: Array<UmbUserDetail>;
+    @state()
+    private _userData: Array<UmbUserDetailModel> = [];
 
-	private _auth?: typeof UMB_AUTH.TYPE;
+    #userRepository = new UmbUserCollectionRepository(this);
 
-	private _userRepository = new UmbUserRepository(this);
+    constructor() {
+        super();
+        this.consumeContext(UMB_CURRENT_USER_CONTEXT, (instance) => {
+            this._observeCurrentUser(instance);
+        });
+        this._getPagedUserData();
+    }
 
-	constructor() {
-		super();
-		this.consumeContext(UMB_AUTH, (instance) => {
-			this._auth = instance;
-			this._observeCurrentUser();
-		});
-		this._getDataFromRepository();
-	}
+    //Get the current user
+    private async _observeCurrentUser(instance: typeof UMB_CURRENT_USER_CONTEXT.TYPE) {
+        this.observe(instance.currentUser, (currentUser) => {
+            this._currentUser = currentUser;
+        });
+    }
 
-	//Get the current user
-	private async _observeCurrentUser() {
-		if (!this._auth) return;
-		this.observe(this._auth.currentUser, (currentUser) => {
-			this._currentUser = currentUser;
-		});
-	}
-
-	//Get all users
-	private async _getDataFromRepository() {
-		const { data } = await this._userRepository.requestCollection();
-		this._userData = data?.items;
-	}
+    //Get all users
+    private async _getPagedUserData() {
+        const { data } = await this.#userRepository.requestCollection();
+        this._userData = data?.items ?? [];
+    }
 
 	render() {
 		return html`
@@ -319,6 +303,18 @@ declare global {
 
 Now that we have the data from the repository, let's render the data:
 
+We are going to use the `repeat` directive to loop through the array of users and render each user. We are also going to create a new method `_renderUser` that will render the user details.
+
+Make sure you have the `repeat` directive imported:
+
+{% code title="welcome-dashboard.element.ts" %}
+```typescript
+import { LitElement, css, html, customElement, state, repeat } from "@umbraco-cms/backoffice/external/lit";
+```
+{% endcode %}
+
+And then add the following to the `render` method and create the `_renderUser` method:
+
 {% code title="welcome-dashboard.element.ts" %}
 ```typescript
 render() {
@@ -326,11 +322,13 @@ render() {
         ...
         ...
 
-	<div id="users-wrapper">${this._userData?.map((user) => this._renderUser(user))}</div>
+	<div id="users-wrapper">
+        ${repeat(this._userData, (user) => user.unique, (user) => this._renderUser(user))}
+    </div>
     `;
 }
 
-private _renderUser(user: UmbUserDetail) {
+private _renderUser(user: UmbUserDetailModel) {
 	return html`<div class="user">
 		<div>${user.name}</div>
 		<div>${user.email}</div>
@@ -379,45 +377,41 @@ We now should have something that looks like this:
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
-import { UMB_AUTH, UmbLoggedInUser } from "@umbraco-cms/backoffice/auth";
-import { LitElement, css, html, customElement, state } from "@umbraco-cms/backoffice/external/lit";
-import { UmbUserDetail, UmbUserRepository } from "@umbraco-cms/backoffice/users";
+import { type UmbCurrentUserModel, UMB_CURRENT_USER_CONTEXT } from "@umbraco-cms/backoffice/current-user";
+import { LitElement, css, html, customElement, state, repeat } from "@umbraco-cms/backoffice/external/lit";
+import { type UmbUserDetailModel, UmbUserCollectionRepository } from '@umbraco-cms/backoffice/user';
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
 @customElement('my-welcome-dashboard')
 export class MyWelcomeDashboardElement extends UmbElementMixin(LitElement) {
 	@state()
-	private _currentUser?: UmbLoggedInUser;
+    private _currentUser?: UmbCurrentUserModel;
 
-	@state()
-	private _userData?: Array<UmbUserDetail>;
+    @state()
+    private _userData: Array<UmbUserDetailModel> = [];
 
-	private _auth?: typeof UMB_AUTH.TYPE;
+    #userRepository = new UmbUserCollectionRepository(this);
 
-	private _userRepository = new UmbUserRepository(this);
+    constructor() {
+        super();
+        this.consumeContext(UMB_CURRENT_USER_CONTEXT, (instance) => {
+            this._observeCurrentUser(instance);
+        });
+        this._getPagedUserData();
+    }
 
-	constructor() {
-		super();
-		this.consumeContext(UMB_AUTH, (instance) => {
-			this._auth = instance;
-			this._observeCurrentUser();
-		});
-		this._getDataFromRepository();
-	}
+    //Get the current user
+    private async _observeCurrentUser(instance: typeof UMB_CURRENT_USER_CONTEXT.TYPE) {
+        this.observe(instance.currentUser, (currentUser) => {
+            this._currentUser = currentUser;
+        });
+    }
 
-	//Get the current user
-	private async _observeCurrentUser() {
-		if (!this._auth) return;
-		this.observe(this._auth.currentUser, (currentUser) => {
-			this._currentUser = currentUser;
-		});
-	}
-
-	//Get all users
-	private async _getDataFromRepository() {
-		const { data } = await this._userRepository.requestCollection();
-		this._userData = data?.items;
-	}
+    //Get all users
+    private async _getPagedUserData() {
+        const { data } = await this.#userRepository.requestCollection();
+        this._userData = data?.items ?? [];
+    }
 
 	render() {
 		return html`
@@ -435,11 +429,13 @@ export class MyWelcomeDashboardElement extends UmbElementMixin(LitElement) {
 					<umb-localize key="welcomeDashboard_copyright"> © Sample Company 20XX </umb-localize>
 				</p>
 			</div>
-			<div id="users-wrapper">${this._userData?.map((user) => this._renderUser(user))}</div>
+			<div id="users-wrapper">
+                ${repeat(this._userData, (user) => user.unique, (user) => this._renderUser(user))}
+            </div>
 		`;
 	}
 
-	private _renderUser(user: UmbUserDetail) {
+	private _renderUser(user: UmbUserDetailModel) {
 		return html`<div class="user">
 			<div>${user.name}</div>
 			<div>${user.email}</div>
