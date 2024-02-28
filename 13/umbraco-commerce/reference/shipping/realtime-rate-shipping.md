@@ -23,7 +23,7 @@ Realtime rate shipping in Umbraco Commerce allows you to define real-time, up-to
 
 ![Choose Shipping Provider](../../media/create_shipping_method.png)
 
-* Chose the `Realtime` calculation mode option
+7. Choose the **Realtime** calculation mode option.
 
 ![Choose Shipping Calculation Mode](../../media/create_shipping_method2.png)
 
