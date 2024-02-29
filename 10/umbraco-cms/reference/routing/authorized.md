@@ -80,7 +80,7 @@ public static void MapUmbracoRoute<T>(
 * The generic type argument is the contoller you wish to route, in this case `MyController`.
 * `rootSegment` - The first part of the pattern, since this is an authorized controller it has to be `umbraco/backoffice`.
 * `areaName` - The name of the area the controller should be routed through, an empty string signifies no area.
-* `prefixPathSegment` - Prefix to be applied to the rootSegment, we know this from api controllers where the prefix is `api`, in this case since the controller is in an area we will also prefix the area name to the url, so the final path pattern will be `umbraco/backoffice/mypackagename/{controllerName}/{action}/{id?}`.
+* `prefixPathSegment` - Prefix to be applied to the rootSegment, we know this from api controllers where the prefix is `api`, in this case since the controller is in an area we will also prefix the area name to the URL, so the final path pattern will be `umbraco/backoffice/mypackagename/{controllerName}/{action}/{id?}`.
 * `defaultAction` - If this is not null or an empty string the request will automatically be routed to the specified action, so in this case `umbraco/backoffice/mypackagename/{controllerName}` will route to the index action.
 * `includeControllerNameInRoute` - If this is false the controller name will be excluded from the route, so in this case the route would be `umbraco/backoffice/mypackagename/{action}/{id?}` if this was set to false.
 * `constraints` - Any routing constraints passed to this will be used when mapping the route see [Microsoft documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/routing?view=aspnetcore-5.0#route-constraint-reference) for more information.
