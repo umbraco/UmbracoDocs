@@ -26,7 +26,16 @@ The "Upgrade Details" page offers a clear view of how updates are applied within
 We're here to support your journey every step of the way. Should you have any questions or need further assistance, feel free to reach out. Happy upgrading!
 
 ## Improved Search on Projects Dashboard
-Finally, we have rolled out a significant update to the search functionality on the Projects Dashboard, making it easier and faster for you to navigate your projects. Now, you're not limited to searching by project names. This enhancement introduces the ability to search using a wide array of associated tags and even specific product versions within each project's environment. Examples of searchable tags include project type, project plan, whether the project is a baseline or a child, and payment type, providing a multifaceted approach to organizing and locating your projects.
+Finally, we have rolled out a significant update to the search functionality on the Projects Dashboard. The update makes it easier and faster for you to navigate your projects. Now, you're not limited to only searching by project names. This enhancement introduces the ability to search using a wide array of associated tags and even specific product versions within each project's environment. 
+
+Examples of searchable tags include:
+
+* Project type.
+* Project plans.
+* Payment type. 
+* If the project is a baseline or a child.
+
+Providing a multifaceted approach to organizing and locating your projects.
 
 ![Improved Dashboard Search](images/DashboardSearch.gif)
 
