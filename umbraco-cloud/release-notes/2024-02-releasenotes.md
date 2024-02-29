@@ -17,7 +17,7 @@ The overview today concentrates on activities spurred by users and Umbraco Cloud
 
 ## New Upgrade Details Page
 
-The new "Upgrade Details" page is your gateway to detailed insights for every upgrade. By clicking the 'info' link from the "Project History" page for a manual or automatic upgrade, you'll land on a page that not only highlights the essentials—product version, precise timestamps, current statuses, and error reports for troubleshooting—but also showcases the impact of these upgrades across all relevant environments for your project.
+The new "Upgrade Details" page is your gateway to detailed insights for every upgrade. By clicking the 'info' link from the "Project History" page for manual or automatic upgrades, you'll land on a page that highlights the essentials—product version, precise timestamps, current statuses, and error reports for troubleshooting. The page also showcases the impact of these upgrades across all relevant environments for your project.
 
 ![Upgrade Details Page](images/UpgradeDetailsPage.gif)
 
