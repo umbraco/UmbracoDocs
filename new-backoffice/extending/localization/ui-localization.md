@@ -129,7 +129,7 @@ import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
 export default class MyElement extends UmbElementMixin(LitElement) {
     render() {
-        return html`<uui-button .label=${this.localize.term('title_name')}>
+        return html`<uui-button .label=${this.localize.term('general_close')}>
         </uui-button>`;
     }
 }
