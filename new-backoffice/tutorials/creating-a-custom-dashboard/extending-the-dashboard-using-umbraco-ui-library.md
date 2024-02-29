@@ -38,7 +38,9 @@ render() {
 ```
 {% endcode %}
 
-2. The `uui-box` has a headline property as well. Let's move our headline into the headline property.
+2. The `uui-box` has a headline property as well.  Here are two options:
+
+* Move the headline into the headline property:
 
 {% code title="welcome-dashboard.element.ts" %}
 ```typescript
@@ -54,9 +56,9 @@ render() {
 ```
 {% endcode %}
 
-3. The `uui-box` also has a headline slot if you want to add an element instead. This element can also be styled and contain other elements. \
-   \
-   Let's keep using `umb-localize` instead of `localize.term()`. This can be accomplished like so:
+* Add an element instead. This element can also be styled and contain other elements. \
+  \
+  Let's keep using `umb-localize` instead of `localize.term()`:
 
 {% code title="welcome-dashboard.element.ts" %}
 ```typescript
@@ -76,7 +78,7 @@ render() {
 ```
 {% endcode %}
 
-4. The UI Library also has a lot of variables we can use such as sizes and colors. Let's update our `padding` to ensure that our element is always consistent with the rest of the backoffice:
+3. The UI Library also has a lot of variables we can use such as sizes and colors. Let's update our `padding` to ensure that our element is always consistent with the rest of the backoffice:
 
 {% code title="welcome-dashboard.element.ts" %}
 ```typescript
@@ -96,7 +98,9 @@ static styles = [
 
 This already looks a lot better!
 
-<figure><img src="../../.gitbook/assets/welcome-user-uuibox.png" alt="" width="563"><figcaption><p>The dashboard in uui-box</p></figcaption></figure>
+
+
+<figure><img src="../../.gitbook/assets/Create_dashboard_functionality_users_list_ui_styled.png" alt=""><figcaption><p>The dashboard in uui-box</p></figcaption></figure>
 
 <details>
 
@@ -270,7 +274,7 @@ static styles = [
 
 Your dashboard component should now look like this:
 
-<figure><img src="../../.gitbook/assets/welcomehpver.png" alt=""><figcaption><p>Dashboard with uui-table in use</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Create_dashboard_functionality_users_list_ui_styled_table.png" alt=""><figcaption><p>Dashboard with uui-table in use</p></figcaption></figure>
 
 <details>
 
@@ -385,7 +389,7 @@ declare global {
 
 </details>
 
-### **Challenge (optional):**
+### **Challenge (optional)**
 
 Insert the <mark style="color:orange;">`user.state`</mark> into a <mark style="color:orange;">`uui-tag`</mark> that uses different values of the properties<mark style="color:orange;">`look`</mark> and <mark style="color:orange;">`color`</mark>.&#x20;
 
@@ -400,34 +404,33 @@ The values depend on the state of the user. For example, use `look="primary"` an
 Remember that you can come to a solution in many different ways! Here is a possible solution to how it could've been solved:
 
 ```typescript
-import { UserStateModel } from '@umbraco-cms/backoffice/backend-api';
-import { InterfaceColor, InterfaceLook } from '@umbraco-cms/backoffice/external/uui';
+import { UserStateModel } from '@umbraco-cms/backoffice/external/backend-api';
+import { UUIInterfaceColor, UUIInterfaceLook } from '@umbraco-cms/backoffice/external/uui';
 
 	...
 
-	private _renderUser(user: UmbUserDetailModel) {
-		if (!user) return;
-		const state = this.getLookAndColorFromUserState(user.state);
-		return html`<uui-table-row class="user">
+  private _renderUser(user: UmbUserDetailModel) {
+    if (!user) return;
+    const state = this.getLookAndColorFromUserState(user.state);
+    return html`<uui-table-row class="user">
 			<uui-table-cell>${user.name}</uui-table-cell>
 			<uui-table-cell>${user.email}</uui-table-cell>
 			<uui-table-cell><uui-tag look=${state.look} color=${state.color}>${user.state}</uui-tag></uui-table-cell>
 		</uui-table-row>`;
-	}
-
-	getLookAndColorFromUserState = (state?: UserStateModel): { look: InterfaceLook; color: InterfaceColor } => {
-		switch (state) {
-			case UserStateModel.INACTIVE:
-			case UserStateModel.INVITED:
-				return { look: 'primary', color: 'warning' };
-			case UserStateModel.ACTIVE:
-				return { look: 'primary', color: 'positive' };
-			case UserStateModel.DISABLED:
-				return { look: 'primary', color: 'danger' };
-			default:
-				return { look: 'secondary', color: 'default' };
-		}
-	};
+  }
+  getLookAndColorFromUserState = (state?: UserStateModel): { look: UUIInterfaceLook; color: UUIInterfaceColor } => {
+    switch (state) {
+      case UserStateModel.INACTIVE:
+      case UserStateModel.INVITED:
+        return { look: 'primary', color: 'warning' };
+      case UserStateModel.ACTIVE:
+        return { look: 'primary', color: 'positive' };
+      case UserStateModel.DISABLED:
+        return { look: 'primary', color: 'danger' };
+      default:
+        return { look: 'secondary', color: 'default' };
+    }
+  };
 
 	...
 ```

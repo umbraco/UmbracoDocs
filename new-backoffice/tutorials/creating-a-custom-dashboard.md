@@ -136,6 +136,8 @@ export class MyWelcomeDashboardElement extends UmbElementMixin(LitElement) {
   ];
 }
 
+export default MyWelcomeDashboardElement;
+
 declare global {
   interface HTMLElementTagNameMap {
     'my-welcome-dashboard': MyWelcomeDashboardElement;

@@ -97,7 +97,7 @@ render() {
 
 Your dashboard should now look something like this:
 
-<figure><img src="../../.gitbook/assets/welcome-umb-user.png" alt=""><figcaption><p>Welcoming the user named "Umbraco User"</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Create_dashboard_functionality.png" alt=""><figcaption><p>Welcoming the user named "Admin"</p></figcaption></figure>
 
 <details>
 
@@ -213,7 +213,7 @@ private async _getPagedUserData() {
 
 3. Notice that the user repository has a lot of methods that we can use. We are going to use `requestCollection` to get all the users.
 
-<figure><img src="../../.gitbook/assets/requestcollection.png" alt=""><figcaption><p>Options from the user repository</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Create_dashboard_functionality_gettting_data.png" alt=""><figcaption><p>Options from the user repository</p></figcaption></figure>
 
 The method `requestCollection` returns a promise, so let's `await` the data and save the data in our array:
 
@@ -223,89 +223,6 @@ private async _getPagedUserData() {
     this._userData = data?.items ?? [];
 }
 ```
-
-<details>
-
-<summary>See the entire file: welcome-dashboard.element.ts</summary>
-
-{% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
-```typescript
-import { type UmbCurrentUserModel, UMB_CURRENT_USER_CONTEXT } from "@umbraco-cms/backoffice/current-user";
-import { LitElement, css, html, customElement, state } from "@umbraco-cms/backoffice/external/lit";
-import { type UmbUserDetailModel, UmbUserCollectionRepository } from '@umbraco-cms/backoffice/user';
-import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
-
-@customElement('my-welcome-dashboard')
-export class MyWelcomeDashboardElement extends UmbElementMixin(LitElement) {
-	@state()
-    private _currentUser?: UmbCurrentUserModel;
-
-    @state()
-    private _userData: Array<UmbUserDetailModel> = [];
-
-    #userRepository = new UmbUserCollectionRepository(this);
-
-    constructor() {
-        super();
-        this.consumeContext(UMB_CURRENT_USER_CONTEXT, (instance) => {
-            this._observeCurrentUser(instance);
-        });
-        this._getPagedUserData();
-    }
-
-    //Get the current user
-    private async _observeCurrentUser(instance: typeof UMB_CURRENT_USER_CONTEXT.TYPE) {
-        this.observe(instance.currentUser, (currentUser) => {
-            this._currentUser = currentUser;
-        });
-    }
-
-    //Get all users
-    private async _getPagedUserData() {
-        const { data } = await this.#userRepository.requestCollection();
-        this._userData = data?.items ?? [];
-    }
-
-	render() {
-		return html`
-			<h1>
-				<umb-localize key="welcomeDashboard_heading">Welcome</umb-localize>
-				${this._currentUser?.name ?? 'Unknown'}!
-			</h1>
-			<div>
-				<p>
-					<umb-localize key="welcomeDashboard_bodytext">
-						This is the Backoffice. From here, you can modify the content, media, and settings of your website.
-					</umb-localize>
-				</p>
-				<p>
-					<umb-localize key="welcomeDashboard_copyright"> © Sample Company 20XX </umb-localize>
-				</p>
-			</div>
-		`;
-	}
-
-	static styles = [
-		css`
-			:host {
-				display: block;
-				padding: 24px;
-			}
-		`,
-	];
-}
-
-export default MyWelcomeDashboardElement;
-
-declare global {
-	interface HTMLElementTagNameMap {
-		'my-welcome-dashboard': MyWelcomeDashboardElement;
-	}
-}
-```
-{% endcode %}
-
-</details>
 
 ## Step 3: Render the Data
 
@@ -351,6 +268,106 @@ private _renderUser(user: UmbUserDetailModel) {
 {% code title="welcome-dashboard.element.ts" %}
 ```typescript
 static styles = [
+      css`
+        :host {
+          display: block;
+          padding: 24px;
+        }
+
+        #users-wrapper {
+          border: 1px solid lightgray;
+        }
+        .user {
+          padding: 5px 10px;
+        }
+        .user:not(:first-child) {
+          border-top: 1px solid lightgray;
+        }
+      `,
+    ];
+```
+{% endcode %}
+
+{% hint style="info" %}
+We recommend using variables for colors and sizing. See why and how you could achieve this in the next part where we will use the [Umbraco UI Library](extending-the-dashboard-using-umbraco-ui-library.md).
+{% endhint %}
+
+We now should have our welcome dashboard filled showing a list of all users:
+
+<figure><img src="../../.gitbook/assets/Create_dashboard_functionality_users_list.png" alt=""><figcaption><p>Dashboard with all users. Output may vary depends on your users.</p></figcaption></figure>
+
+<details>
+
+<summary>See the entire file: welcome-dashboard.element.ts</summary>
+
+{% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
+```typescript
+import { type UmbCurrentUserModel, UMB_CURRENT_USER_CONTEXT } from "@umbraco-cms/backoffice/current-user";
+import { LitElement, css, html, customElement, state, repeat  } from "@umbraco-cms/backoffice/external/lit";
+import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
+import { type UmbUserDetailModel, UmbUserCollectionRepository } from '@umbraco-cms/backoffice/user';
+
+@customElement('my-welcome-dashboard')
+export class MyWelcomeDashboardElement extends UmbElementMixin(LitElement) {
+    @state()
+    private _currentUser?: UmbCurrentUserModel;
+
+    @state()
+    private _userData: Array<UmbUserDetailModel> = [];
+
+    #userRepository = new UmbUserCollectionRepository(this);
+
+    constructor() {
+        super();
+        this.consumeContext(UMB_CURRENT_USER_CONTEXT, (instance) => {
+            this._observeCurrentUser(instance);
+        });
+        this._getPagedUserData();
+    }
+
+    private async _observeCurrentUser(instance: typeof UMB_CURRENT_USER_CONTEXT.TYPE) {
+        this.observe(instance.currentUser, (currentUser) => {
+            this._currentUser = currentUser;
+        });
+    }
+    private async _getPagedUserData() {
+        const { data } = await this.#userRepository.requestCollection();
+        this._userData = data?.items ?? [];
+    }
+
+    render() {
+        return html`
+    	    <h1>
+      	        <umb-localize key="welcomeDashboard_heading">Welcome</umb-localize>
+       		${this._currentUser?.name ?? "Unknown"}!
+     	    </h1>
+    	    <div>
+      		<p>
+       		    <umb-localize key="welcomeDashboard_bodytext">
+         		This is the Backoffice. From here, you can modify the content,
+         		media, and settings of your website.
+       		    </umb-localize>
+      		</p>
+      		<p>
+        	    <umb-localize key="welcomeDashboard_copyright">
+          		© Sample Company 20XX
+        	    </umb-localize>
+      		</p>
+    	    </div>
+  	<div id="users-wrapper">
+        ${repeat(this._userData, (user) => user.unique, (user) => this._renderUser(user))}
+    </div>
+    `;
+    }
+    private _renderUser(user: UmbUserDetailModel) {
+	return html`<div class="user">
+		<div>${user.name}</div>
+		<div>${user.email}</div>
+		<div>${user.state}</div>
+	</div>`;
+}
+
+    static styles = [
 	css`
 		:host {
 			display: block;
@@ -368,117 +385,14 @@ static styles = [
 		}
 	`,
 ];
-```
-{% endcode %}
-
-{% hint style="info" %}
-We recommend using variables for colors and sizing. See why and how you could achieve this in the next part where we will use the [Umbraco UI Library](extending-the-dashboard-using-umbraco-ui-library.md).
-{% endhint %}
-
-We now should have something that looks like this:
-
-<figure><img src="../../.gitbook/assets/all-users-first-look2.png" alt=""><figcaption><p>Dashboard with all users. Output may vary depends on your users.</p></figcaption></figure>
-
-<details>
-
-<summary>See the entire file: welcome-dashboard.element.ts</summary>
-
-{% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
-```typescript
-import { type UmbCurrentUserModel, UMB_CURRENT_USER_CONTEXT } from "@umbraco-cms/backoffice/current-user";
-import { LitElement, css, html, customElement, state, repeat } from "@umbraco-cms/backoffice/external/lit";
-import { type UmbUserDetailModel, UmbUserCollectionRepository } from '@umbraco-cms/backoffice/user';
-import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
-
-@customElement('my-welcome-dashboard')
-export class MyWelcomeDashboardElement extends UmbElementMixin(LitElement) {
-	@state()
-    private _currentUser?: UmbCurrentUserModel;
-
-    @state()
-    private _userData: Array<UmbUserDetailModel> = [];
-
-    #userRepository = new UmbUserCollectionRepository(this);
-
-    constructor() {
-        super();
-        this.consumeContext(UMB_CURRENT_USER_CONTEXT, (instance) => {
-            this._observeCurrentUser(instance);
-        });
-        this._getPagedUserData();
-    }
-
-    //Get the current user
-    private async _observeCurrentUser(instance: typeof UMB_CURRENT_USER_CONTEXT.TYPE) {
-        this.observe(instance.currentUser, (currentUser) => {
-            this._currentUser = currentUser;
-        });
-    }
-
-    //Get all users
-    private async _getPagedUserData() {
-        const { data } = await this.#userRepository.requestCollection();
-        this._userData = data?.items ?? [];
-    }
-
-	render() {
-		return html`
-			<h1>
-				<umb-localize key="welcomeDashboard_heading">Welcome</umb-localize>
-				${this._currentUser?.name ?? 'Unknown'}!
-			</h1>
-			<div>
-				<p>
-					<umb-localize key="welcomeDashboard_bodytext">
-						This is the Backoffice. From here, you can modify the content, media, and settings of your website.
-					</umb-localize>
-				</p>
-				<p>
-					<umb-localize key="welcomeDashboard_copyright"> © Sample Company 20XX </umb-localize>
-				</p>
-			</div>
-			<div id="users-wrapper">
-                ${repeat(this._userData, (user) => user.unique, (user) => this._renderUser(user))}
-            </div>
-		`;
-	}
-
-	private _renderUser(user: UmbUserDetailModel) {
-		return html`<div class="user">
-			<div>${user.name}</div>
-			<div>${user.email}</div>
-			<div>${user.state}</div>
-		</div>`;
-	}
-
-	static styles = [
-		css`
-			:host {
-				display: block;
-				padding: 24px;
-			}
-
-			#users-wrapper {
-				border: 1px solid lightgray;
-			}
-
-			.user {
-				padding: 5px 10px;
-			}
-
-			.user:not(:first-child) {
-				border-top: 1px solid lightgray;
-			}
-		`,
-	];
 }
 
 export default MyWelcomeDashboardElement;
 
 declare global {
-	interface HTMLElementTagNameMap {
-		'my-welcome-dashboard': MyWelcomeDashboardElement;
-	}
+    interface HTMLElementTagNameMap {
+        'my-welcome-dashboard': MyWelcomeDashboardElement;
+    }
 }
 ```
 {% endcode %}
