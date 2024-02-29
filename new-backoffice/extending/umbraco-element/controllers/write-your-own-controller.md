@@ -6,8 +6,8 @@ description: Reuse functionality across components by writing it as a Controller
 
 A Controller must follow the interface of UmbController, to ease the implementation you can base your class on the `UmbController`:
 
-```csharp
-import { UmbController } from '@umbraco-cms/backoffice/controller-api';
+```typescript
+import { UmbBaseController } from '@umbraco-cms/backoffice/class-api';
 
 class MyController extends UmbBaseController {
 	
