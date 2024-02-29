@@ -29,7 +29,7 @@ This is a sample manifest, it is always stored in a folder in `App_Plugins/{Your
             "meta": {
                 "label": "Sir Trevor",
                 "propertyEditorSchemaAlias": "Umbraco.TextBox",
-                "icon": "umb:code",
+                "icon": "icon-code",
                 "group": "Pickers"
             }
         }

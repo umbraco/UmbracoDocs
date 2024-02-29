@@ -231,7 +231,7 @@ import { LitElement, css, html, customElement, property, state, ifDefined } from
 import { type UmbPropertyEditorExtensionElement } from "@umbraco-cms/backoffice/extension-registry";
 import { type UmbPropertyEditorConfigCollection } from "@umbraco-cms/backoffice/components";
 
-@customElement("my-suggestions-property-editor-ui")
+@customElement('my-suggestions-property-editor-ui')
 export class MySuggestionsPropertyEditorUIElement
     extends LitElement
     implements UmbPropertyEditorExtensionElement
@@ -329,7 +329,7 @@ export class MySuggestionsPropertyEditorUIElement
 
 declare global {
     interface HTMLElementTagNameMap {
-        "my-suggestions-property-editor-ui": MySuggestionsPropertyEditorUIElement;
+        'my-suggestions-property-editor-ui': MySuggestionsPropertyEditorUIElement;
     }
 }
 ```

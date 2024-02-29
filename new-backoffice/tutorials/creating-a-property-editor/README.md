@@ -79,7 +79,7 @@ Now let's create the web component we need for our property editor.&#x20;
 import { LitElement, html, customElement, property } from "@umbraco-cms/backoffice/external/lit";
 import { UmbPropertyEditorUiElement } from "@umbraco-cms/backoffice/extension-registry";
 
-@customElement("my-suggestions-property-editor-ui")
+@customElement('my-suggestions-property-editor-ui')
 export class MySuggestionsPropertyEditorUIElement
     extends LitElement
     implements UmbPropertyEditorUiElement
@@ -94,7 +94,7 @@ export class MySuggestionsPropertyEditorUIElement
 
 declare global {
     interface HTMLElementTagNameMap {
-        "my-suggestions-property-editor-ui": MySuggestionsPropertyEditorUIElement;
+        'my-suggestions-property-editor-ui': MySuggestionsPropertyEditorUIElement;
     }
 }
 ```
@@ -297,7 +297,7 @@ import { LitElement, html, css, customElement, property, state } from "@umbraco-
 import { LitElement, css, html, customElement, property, state } from "@umbraco-cms/backoffice/external/lit";
 import { UmbPropertyEditorExtensionElement } from "@umbraco-cms/backoffice/extension-registry";
 
-@customElement("my-suggestions-property-editor-ui")
+@customElement('my-suggestions-property-editor-ui')
 export class MySuggestionsPropertyEditorUIElement
     extends LitElement
     implements UmbPropertyEditorExtensionElement
@@ -376,7 +376,7 @@ export class MySuggestionsPropertyEditorUIElement
 
 declare global {
     interface HTMLElementTagNameMap {
-        "my-suggestions-property-editor-ui": MySuggestionsPropertyEditorUIElement;
+        'my-suggestions-property-editor-ui': MySuggestionsPropertyEditorUIElement;
     }
 }
 ```
