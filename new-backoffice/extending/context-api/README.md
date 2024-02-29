@@ -38,7 +38,7 @@ If you need to consume a Context API from a non-controller host, then look at th
 A Context Token is a context identifier and is generally a string matched with a type. In this way, users of the token can be sure to get the right type of context.
 
 ```ts
-import { UmbContextToken } from "@umbraco-cms/backoffice/context";
+import { UmbContextToken } from "@umbraco-cms/backoffice/context-api";
 
 type MyContext = {
     foo: string;
@@ -57,7 +57,7 @@ Using API Alias only provides value when two or more APIs should share the same 
 {% endhint %}
 
 ```ts
-import { UmbContextToken } from "@umbraco-cms/backoffice/context";
+import { UmbContextToken } from "@umbraco-cms/backoffice/context-api";
 
 type MyAdditionalContext = {
     additional: string;
@@ -136,7 +136,7 @@ This example shows how to create a discriminator Context Token, that will discar
 Context token example:
 
 ```ts
-import { UmbContextToken } from "@umbraco-cms/backoffice/context";
+import { UmbContextToken } from "@umbraco-cms/backoffice/context-api";
 
 
 interface MyBaseContext {
