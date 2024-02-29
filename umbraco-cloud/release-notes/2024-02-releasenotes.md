@@ -7,7 +7,7 @@
 * **Improved Search on Projects Dashboard** - Enhances project searchability with the ability to use project names, associated tags, and product versions, complemented by a filter-as-you-type functionality for streamlined navigation and project management.
 
 ## Project History Page (Beta)
-The "Project History Page," today released as a beta release, provides a detailed insight into the significant activities within your project. This feature meticulously catalogs events initiated by users or by Umbraco Cloud itself, including modifications to your project plan, portal deployments, as well as both automatic and manual upgrades.
+The "Project History Page," today released as a beta release, provides a detailed insight into the significant activities within your project. This feature catalogs events initiated by users or by Umbraco Cloud itself, including modifications to your project plan, portal deployments, and automatic and manual upgrades.
 
 ![Project History Page](images/ProjectHistory.gif)
 
