@@ -87,7 +87,7 @@ export default {
       "type": "dashboard",
       "alias": "my.welcome.dashboard",
       "name": "My Welcome Dashboard",
-      "js": "/App_Plugins/welcome-dashboard/dist/welcome-dashboard.element.js",
+      "js": "/App_Plugins/welcome-dashboard/dist/welcome-dashboard.js",
       "elementName": "my-welcome-dashboard",
       "weight": -1,
       "meta": {
