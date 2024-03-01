@@ -1,20 +1,20 @@
 # URL Rewrites in Umbraco
 
-With the release of Umbraco 9 and the change of the underlying web framework that is decoupled from the webserver, the way that you configure rewrites has changed as well.
+Since the release of Umbraco v9 and the change of the underlying web framework that is decoupled from the webserver, the way that you configure rewrites has changed as well.
 
-Instead of the URL Rewriting extension in IIS you can use the [URL Rewriting Middleware in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting?view=aspnetcore-5.0), which needs to be added to your project startup code first.
+Instead of the URL Rewriting extension in IIS you can use the [URL Rewriting Middleware in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting), which needs to be added to your project startup code first.
 
 {% hint style="info" %}
-If you are running Umbraco 9 on IIS you can still add a `web.config` file to configure IIS features such as URL rewrites.
+If you are running Umbraco v9+ on IIS you can still add a `web.config` file to configure IIS features such as URL rewrites.
 {% endhint %}
 
 ## When to use the URL Rewriting Middleware
 
-Make sure to check the official [URL Rewriting Middleware in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting?view=aspnetcore-5.0#when-to-use-url-rewriting-middleware) documentation for more information about when you should or should not use the URL Rewriting Middleware.
+Make sure to check the official [URL Rewriting Middleware in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting#when-to-use-url-rewriting-middleware) documentation for more information about when you should or should not use the URL Rewriting Middleware.
 
 ## Using the URL Rewriting Middleware
 
-To use rewrites with Umbraco 9 you have to register the middleware in your `Program.cs` by using the [`UseRewriter`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.rewritebuilderextensions.userewriter?view=aspnetcore-5.0) extension method and then configure the rewrite options.
+To use rewrites with Umbraco v9+ you have to register the middleware in your `Program.cs` by using the [`UseRewriter`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.rewritebuilderextensions.userewriter) extension method and then configure the rewrite options.
 
 ### Example
 
@@ -37,7 +37,7 @@ To use rewrites with Umbraco 9 you have to register the middleware in your `Prog
 </rewrite>
 ```
 
-* In the `Program.cs` file you can add the URL Rewriting Middleware before the call to `app.UseUmbraco()` and use [`AddIISUrlRewrite`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.rewrite.iisurlrewriteoptionsextensions.addiisurlrewrite?view=aspnetcore-5.0)) to add the rewrite rules from the XML file:
+* In the `Program.cs` file you can add the URL Rewriting Middleware before the call to `app.UseUmbraco()` and use [`AddIISUrlRewrite`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.rewrite.iisurlrewriteoptionsextensions.addiisurlrewrite) to add the rewrite rules from the XML file:
 
 ```csharp
 using Microsoft.AspNetCore.Rewrite;
