@@ -11,6 +11,7 @@ second: '([A-Z]{3,5}): (?:\b[A-Z][a-z]+ )+|(?:\b[A-Z][a-z]+ )+\(([A-Z]{3,5})\)'
 exceptions:
     - ABC
     - ADD
+    - AKA
     - ALT
     - HTML
     - JSON
