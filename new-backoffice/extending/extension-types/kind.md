@@ -42,7 +42,7 @@ const manifest = {
 	alias: 'My.HeaderApp.Example',
 	meta: {
 		label: 'My Example',
-		icon: 'umb:home',
+		icon: 'icon-home',
 		href: '/some/path/to/open/when/clicked',
 	},
 };

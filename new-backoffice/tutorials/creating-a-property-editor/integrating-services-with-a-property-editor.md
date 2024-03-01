@@ -136,28 +136,14 @@ It should look like this:
 <summary>property-editor-ui-suggestions.element.ts</summary>
 
 ```typescript
-import {
-    LitElement,
-    css,
-    html,
-    customElement,
-    property,
-    state,
-    ifDefined,
-} from "@umbraco-cms/backoffice/external/lit";
+import { LitElement, css, html, customElement, property, state, ifDefined } from "@umbraco-cms/backoffice/external/lit";
 import { type UmbPropertyEditorExtensionElement } from "@umbraco-cms/backoffice/extension-registry";
 import { type UmbPropertyEditorConfigCollection } from "@umbraco-cms/backoffice/property-editor";
-import {
-    UMB_MODAL_MANAGER_CONTEXT,
-    UMB_CONFIRM_MODAL,
-} from "@umbraco-cms/backoffice/modal";
-import {
-    UMB_NOTIFICATION_CONTEXT,
-    UmbNotificationDefaultData,
-} from "@umbraco-cms/backoffice/notification";
+import { UMB_MODAL_MANAGER_CONTEXT, UMB_CONFIRM_MODAL} from "@umbraco-cms/backoffice/modal";
+import { UMB_NOTIFICATION_CONTEXT, UmbNotificationDefaultData} from "@umbraco-cms/backoffice/notification";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
-@customElement("my-suggestions-property-editor-ui")
+@customElement('my-suggestions-property-editor-ui')
 export class MySuggestionsPropertyEditorUIElement
     extends UmbElementMixin(LitElement)
     implements UmbPropertyEditorExtensionElement
@@ -301,7 +287,7 @@ export class MySuggestionsPropertyEditorUIElement
 
 declare global {
     interface HTMLElementTagNameMap {
-        "my-suggestions-property-editor-ui": MySuggestionsPropertyEditorUIElement;
+        'my-suggestions-property-editor-ui': MySuggestionsPropertyEditorUIElement;
     }
 }
 ```

@@ -21,7 +21,9 @@ A Dashboard is a tab on the right-hand side of a section eg. the Getting Started
 
 #### Why provide a Custom Dashboard for your editors?
 
-It is generally considered good practice to provide a custom dashboard to welcome your editors to the backoffice of your site. You can provide information about the site and/or provide a helpful gateway to common functionality the editors will use. This guide will show the basics of creating a custom 'Welcome Message' dashboard. The guide will also show how you can go a little further to provide interaction using Lit and Typescript.
+It is generally considered good practice to provide a custom dashboard to welcome your editors to the backoffice of your site. You can provide information about the site and/or provide a helpful gateway to common functionality the editors will use.&#x20;
+
+This guide will show the basics of creating a custom 'Welcome Message' dashboard. The guide will also show how you can go a little further to provide interaction using Lit and Typescript.
 
 The finished dashboard will give the editors an overview of which pages and media files they've worked on most recently.
 
@@ -56,11 +58,9 @@ At the end of this guide, we will have a friendly welcoming dashboard displaying
 
 ## Step 1: Setting up a package
 
-Follow the [Vite Package Setup](../extending/development-flow/vite-package-setup.md) by creating a new project folder called "`welcome-dashboard`" in `App_Plugins`.
-
-Then create the manifest file named `umbraco-package.json` at the root of the `welcome-dashboard`folder. Here we define and configure our dashboard.
-
-Add the following code:
+1. Follow the [Vite Package Setup](../extending/development-flow/vite-package-setup.md) by creating a new project folder called "`welcome-dashboard`" in `App_Plugins`.
+2. Create a manifest file named `umbraco-package.json` at the root of the `welcome-dashboard`folder. Here we define and configure our dashboard.
+3. Add the following code to `umbraco-package.json`:
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
 ```json
@@ -92,7 +92,7 @@ Add the following code:
 ```
 {% endcode %}
 
-For more information about the `umbraco-package.json` file, read the article [Package Manifest](../extending/package-manifest.md). You should also read the [Dashboards](../extending/extension-types/dashboards.md) article for more information about dashboard configurations.
+For more information about the `umbraco-package.json` file, read the article [Package Manifest](../extending/package-manifest.md). For more information about the dashboard configurations read the [Dashboards](../extending/extension-types/dashboards.md) article.
 
 {% hint style="info" %}
 Please be aware that the file`umbraco-package.json` is loaded into memory when Umbraco starts up. If you are changing or adding new configurations you will need to start and stop your application for it to be loaded.
@@ -102,9 +102,8 @@ Please be aware that the file`umbraco-package.json` is loaded into memory when U
 
 Now let's create the web component we need for our property editor. This web component contains all our HTML, CSS, and logic.&#x20;
 
-Create a file in the `src` folder with the name `welcome-dashboard.element.ts`
-
-In this new file, add the following code:
+1. Create a file in the `src` folder with the name `welcome-dashboard.element.ts`
+2. In this new file, add the following code:
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
@@ -137,6 +136,8 @@ export class MyWelcomeDashboardElement extends UmbElementMixin(LitElement) {
   ];
 }
 
+export default MyWelcomeDashboardElement;
+
 declare global {
   interface HTMLElementTagNameMap {
     'my-welcome-dashboard': MyWelcomeDashboardElement;
@@ -145,11 +146,13 @@ declare global {
 ```
 {% endcode %}
 
-{% hint style="info" %}
-In the `vite.config.ts` file replace the `entry` to our newly created `.ts` file: `entry: "src/welcome-dashboard.element.ts".`&#x20;
-{% endhint %}
+3. In the `vite.config.ts` file replace the `entry` to our newly created `.ts` file:
 
-In the `welcome-dashboard` run `npm run build` and then run the project. Then in the  content section of the Backoffice you will see our new dashboard:
+```typescript
+entry: "src/welcome-dashboard.element.ts"
+```
+
+4. In the `welcome-dashboard` folder run `npm run build` and then run the project. Then in the  content section of the Backoffice you will see our new dashboard:
 
 <figure><img src="../.gitbook/assets/spaces_G1Byxw7XfiZAj8zDMCTD_uploads_PtBQkEyVcGmoVx3ysAOJ_welcome.webp" alt=""><figcaption><p>First look of the dashboard</p></figcaption></figure>
 

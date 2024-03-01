@@ -129,7 +129,7 @@ import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 
 export default class MyElement extends UmbElementMixin(LitElement) {
     render() {
-        return html`<uui-button .label=${this.localize.term('title_name')}>
+        return html`<uui-button .label=${this.localize.term('general_close')}>
         </uui-button>`;
     }
 }
@@ -140,10 +140,10 @@ export default class MyElement extends UmbElementMixin(LitElement) {
 If you are working with an Umbraco Controller, then you need to initialize the Localization Controller on your own via the `UmbLocalizationController`:
 
 ```typescript
-import { UmbController } from '@umbraco-cms/backoffice/controller-api';
+import { UmbBaseController } from '@umbraco-cms/backoffice/class-api';
 import { UmbLocalizationController } from '@umbraco-cms/backoffice/localization-api';
 
-export class MyController extends UmbController {
+export class MyController extends UmbBaseController {
     // Create a new instance of the controller and attach it to the element
     private localize = new UmbLocalizationController(this);
     

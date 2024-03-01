@@ -155,15 +155,11 @@ npm install
 
 3. The last thing we need to install now is our Backoffice package. You can install the package using the following command:
 
-{% hint style="warning" %}
-The Backoffice package currently relies on the older Lit 2.8 and the Vite template uses Lit 3. Because of this mismatch, you need to override the Lit version in the Backoffice package by installing with the `--force` option. This will be fixed in a future version when the Backoffice has been upgraded to Lit 3.
-{% endhint %}
-
 ```bash
-npm install --force --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@14.0.0--preview006
+npm install --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@14.0.0--preview008
 ```
 
-This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `--preview006` is the version of the package, which will change as new versions are released.
+This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `--preview008` is the version of the package, which will change as new versions are released.
 
 {% hint style="warning" %}
 If you see any errors during this process, make sure that you have the right tools installed (Node, .NET, and so on). Also, make sure you have followed the steps on how to [Setup Your Development Environment](../extending/development-flow/).
