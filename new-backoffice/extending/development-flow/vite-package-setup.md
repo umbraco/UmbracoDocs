@@ -33,17 +33,17 @@ npm install
 4. The last thing we need to install now is our Backoffice package. You can install the package using the following command:
 
 ```bash
-npm install --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@14.0.0--preview006
+npm install --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@14.0.0--preview008
 ```
 
 {% hint style="info" %}
 Optionally you can use `--legacy-peer-deps` in the installation command to avoid installing Umbraco´s sub-dependencies like TinyMCE and Monaco Editor:\
-`npm install --legacy-peer-deps --registry`[`https://www.myget.org/F/umbracoprereleases/npm/`](https://www.myget.org/F/umbracoprereleases/npm/)`-D @umbraco-cms/backoffice@14.0.0--preview006`
+`npm install --legacy-peer-deps --registry`[`https://www.myget.org/F/umbracoprereleases/npm/`](https://www.myget.org/F/umbracoprereleases/npm/)`-D @umbraco-cms/backoffice@14.0.0--preview008`
 
 If this is used the Intellisense to those external references will not be available.&#x20;
 {% endhint %}
 
-This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `--preview006` is the version of the package, which will change as new versions are released.
+This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `--preview008` is the version of the package, which will change as new versions are released.
 
 {% hint style="warning" %}
 If you see any errors during this process, make sure that you have the right tools installed (Node, .NET, and so on). Also, make sure you have followed the steps on how to [Setup Your Development Environment](./).
