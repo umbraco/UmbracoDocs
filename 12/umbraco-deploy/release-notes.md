@@ -17,6 +17,15 @@ If you are upgrading to a new major version you can find the details about the b
 
 This section contains the release notes for Umbraco Deploy 12 including all changes for this version.
 
+#### [**12.2.0-rc1**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.0) **(March 5th 2024)**
+
+* Add `IArtifactTypeResolver` to allow custom type resolving when deserializing to `IArtifact` (used by Deploy Contrib, see PR [#60](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/61))
+* Add base migrators for importing legacy artifacts (used by Deploy Contrib)
+* Restored ability to overwrite content properties with empty values
+* Improved error UX and messaging to only show technical detail option if available
+* Require a valid license when importing
+* Only validate `ApiKey` and `ApiSecret` when workspaces are configured
+
 #### [**12.1.4**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.4) **(February 20th 2024)**
 
 * Removed the no-longer supported "live edit" feature (Deploy on Cloud only).

@@ -21,6 +21,14 @@ This section contains the release notes for Umbraco Deploy 4 and 10 including al
 
 <summary>Version 10</summary>
 
+#### [**10.4.0-rc1**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.4.0) **(March 5th 2024)**
+
+* Add `IArtifactTypeResolver` to allow custom type resolving when deserializing to `IArtifact` (used by Deploy Contrib, see PR [#60](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/61))
+* Add base migrators for importing legacy artifacts (used by Deploy Contrib)
+* Restored ability to overwrite content properties with empty values
+* Improved error UX and messaging to only show technical detail option if available
+* Require a valid license when importing
+
 [**10.3.4**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.4) **(February 20th 2024)**
 
 * Removed the no-longer supported "live edit" feature (Deploy on Cloud only).
