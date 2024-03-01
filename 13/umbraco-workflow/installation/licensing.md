@@ -68,10 +68,9 @@ In practice, you will probably want to make this a bit more sophisticated. You c
 
 ### Using a Trial License
 
-The trial license introduces some restrictions around advanced features but is otherwise a full-featured workflow platform. 
-You can find which features are included in the free version, and which you get when you have a paid license by following the link https://umbraco.com/products/add-ons/workflow/.
+The trial license introduces some restrictions around advanced features but is otherwise a full-featured workflow platform. The paid license is valid for one top-level domain and all its subdomains.
 
-The paid license is valid for one top-level domain and all its subdomains.
+You can find which features are included in the trial version versus the paid license in the [Workflow Page on .com](https://umbraco.com/products/add-ons/workflow/).
 
 To impersonate the full license on a local site, set `EnableTestLicense` to `true` in the `appSettings.json` file:
 
