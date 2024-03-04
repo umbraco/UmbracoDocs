@@ -15,7 +15,7 @@
 
 ## Extending Backoffice
 
-* [Customize Backoffice](fundamentals/getting-started-backoffice.md)
+* [Customize Backoffice](extending-backoffice/customize-backoffice.md)
 * [Setup Your Development Environment](extending-backoffice/development-flow/README.md)
   * [Vite Package Setup](extending-backoffice/development-flow/vite-package-setup.md)
 * [Umbraco Package Manifest](extending-backoffice/package-manifest.md)
