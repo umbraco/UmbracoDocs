@@ -204,7 +204,7 @@ To **test this locally**, in Visual Studio replace `app.UseDeveloperExceptionPag
 
 #### Trigger a 500 error
 
-You can trigger a 500 error on your frontend by changing a Model.Value property in your template. For example, on a document type with a property called `test`. The way to render it in the frontend would be `Model.Value("test");` To trigger a 500 error page you can add anything after Value such as `Model.ValueTest("test");`
+You can trigger a 500 error on your frontend by changing a Model.Value property in your template. For example, on a Document Type with a property called `test`. The way to render it in the frontend would be `Model.Value("test");` To trigger a 500 error page you can add anything after Value such as `Model.ValueTest("test");`
 
 ## Maintenance Page
 
