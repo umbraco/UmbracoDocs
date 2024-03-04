@@ -5,7 +5,6 @@
 
 ## Fundamentals
 
-* [Getting Started With Backoffice](fundamentals/getting-started-backoffice.md)
 * [Setup](fundamentals/setup/README.md)
   * [Requirements](fundamentals/setup/requirements.md)
   * [Installation](fundamentals/setup/install/README.md)
@@ -14,9 +13,11 @@
 * [Backoffice](fundamentals/backoffice/README.md)
   * [Document Blueprints](fundamentals/backoffice/document-blueprints.md)
 
+## Extending
+
 ## Extending Backoffice
 
-* [Customize Backoffice](extending-backoffice/customize-the-editing-experience.md)
+* [Customize Backoffice](extending-backoffice/getting-started-backoffice.md)
 * [Setup Your Development Environment](extending-backoffice/development-flow/README.md)
   * [Vite Package Setup](extending-backoffice/development-flow/vite-package-setup.md)
 * [Umbraco Package Manifest](extending-backoffice/package-manifest.md)
@@ -78,4 +79,3 @@
   * [Adding configuration to a Property Editor](tutorials/creating-a-property-editor/adding-configuration-to-a-property-editor.md)
   * [Integrating context with a Property Editor](tutorials/creating-a-property-editor/integrating-context-with-a-property-editor.md)
   * [Integrating services with a property editor](tutorials/creating-a-property-editor/integrating-services-with-a-property-editor.md)
-  

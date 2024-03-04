@@ -16,7 +16,7 @@ This is the fourth and final part of the guide to building a Custom Dashboard. T
 
 ## Umbraco UI Library
 
-The [Umbraco UI Library](../../extending/ui-library.md) is a set of web components and variables that we can use to build Umbraco User Interfaces. It is already part of the Backoffice, which means you can already start to use it.
+The [Umbraco UI Library](../../extending-backoffice/ui-library.md) is a set of web components and variables that we can use to build Umbraco User Interfaces. It is already part of the Backoffice, which means you can already start to use it.
 
 By using the variables available from the UI Library, you ensure that your extensions are a consistent size with the rest of the backoffice.
 

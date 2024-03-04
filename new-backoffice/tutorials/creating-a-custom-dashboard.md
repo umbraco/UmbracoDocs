@@ -41,7 +41,7 @@ Here's an overview of the steps that will be covered:
 
 ### Prerequisites
 
-This tutorial uses Typescript and Lit with Umbraco, so it does not cover Typescript or Lit. It is expected that your package is already [set up to use Typescript and Lit](../extending/development-flow/vite-package-setup.md).&#x20;
+This tutorial uses Typescript and Lit with Umbraco, so it does not cover Typescript or Lit. It is expected that your package is already [set up to use Typescript and Lit](../extending-backoffice/development-flow/vite-package-setup.md).&#x20;
 
 To read about setting up an extension in Umbraco using Typescript and Lit, read the article [Creating your first extension](creating-your-first-extension.md).
 
@@ -58,7 +58,7 @@ At the end of this guide, we will have a friendly welcoming dashboard displaying
 
 ## Step 1: Setting up a package
 
-1. Follow the [Vite Package Setup](../extending/development-flow/vite-package-setup.md) by creating a new project folder called "`welcome-dashboard`" in `App_Plugins`.
+1. Follow the [Vite Package Setup](../extending-backoffice/development-flow/vite-package-setup.md) by creating a new project folder called "`welcome-dashboard`" in `App_Plugins`.
 2. Create a manifest file named `umbraco-package.json` at the root of the `welcome-dashboard`folder. Here we define and configure our dashboard.
 3. Add the following code to `umbraco-package.json`:
 
@@ -92,7 +92,7 @@ At the end of this guide, we will have a friendly welcoming dashboard displaying
 ```
 {% endcode %}
 
-For more information about the `umbraco-package.json` file, read the article [Package Manifest](../extending/package-manifest.md). For more information about the dashboard configurations read the [Dashboards](../extending/extension-types/dashboards.md) article.
+For more information about the `umbraco-package.json` file, read the article [Package Manifest](../extending-backoffice/package-manifest.md). For more information about the dashboard configurations read the [Dashboards](../extending-backoffice/extension-types/dashboards.md) article.
 
 {% hint style="info" %}
 Please be aware that the file`umbraco-package.json` is loaded into memory when Umbraco starts up. If you are changing or adding new configurations you will need to start and stop your application for it to be loaded.

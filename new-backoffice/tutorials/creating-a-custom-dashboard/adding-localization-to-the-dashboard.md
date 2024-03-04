@@ -238,7 +238,7 @@ This is how our dashboard should now look like:
 </div>
 
 {% hint style="info" %}
-Tip: If you do not have many translations, you can also choose to include the localizations directly in the meta-object. Read more about translations in the [**Localization**](../../extending/localization/) article.
+Tip: If you do not have many translations, you can also choose to include the localizations directly in the meta-object. Read more about translations in the [**Localization**](../../extending-backoffice/localization/) article.
 {% endhint %}
 
 ## Going Further

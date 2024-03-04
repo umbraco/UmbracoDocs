@@ -9,7 +9,7 @@ This guide will help you set up your first extension with a Web Component using 
 1. [Vanilla JavaScript](creating-your-first-extension.md#extension-with-vanilla-javascript) or
 2. [Vite, Typescript, and Lit](creating-your-first-extension.md#extension-with-vite-typescript-and-lit)
 
-Before following this tutorial make sure to read the [Setup Your Development Environment](../extending/development-flow/) article.&#x20;
+Before following this tutorial make sure to read the [Setup Your Development Environment](../extending-backoffice/development-flow/) article.
 
 This article is also part of the prerequisites for [Creating a Property Editor](creating-a-property-editor/) and [Creating a Custom Dashboard](creating-a-custom-dashboard.md) tutorials.
 
@@ -128,7 +128,7 @@ You now have a working extension with a dashboard Web Component written in plain
 ### Getting Started With Vite
 
 {% hint style="info" %}
-If you want to learn more about Vite, you can read the [Vite Package Setup](../extending/development-flow/vite-package-setup.md) article. It will go into more detail about the setup and how to use Vite with Umbraco. For this tutorial, we will only cover the basics and assume you have no Vite setup yet.
+If you want to learn more about Vite, you can read the [Vite Package Setup](../extending-backoffice/development-flow/vite-package-setup.md) article. It will go into more detail about the setup and how to use Vite with Umbraco. For this tutorial, we will only cover the basics and assume you have no Vite setup yet.
 {% endhint %}
 
 Vite comes with a set of really good presets to get you quickly up and running with libraries and languages. Examples: Lit, Svelte, and vanilla Web Components with both JavaScript and TypeScript. We will use their preset of Lit and TypeScript.
@@ -145,7 +145,7 @@ Be aware that any files in the `App_Plugins` folder are publicly available. If y
 npm create vite@latest my-typescript-extension -- --template lit-ts
 ```
 
-This sets up our new project in a folder named `my-extension` and creates a `package.json` file, which includes the necessary packages.&#x20;
+This sets up our new project in a folder named `my-extension` and creates a `package.json` file, which includes the necessary packages.
 
 2. Navigate to the new `my-typescript-extension` project folder and install the packages using:
 
@@ -162,7 +162,7 @@ npm install --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbra
 This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `--preview008` is the version of the package, which will change as new versions are released.
 
 {% hint style="warning" %}
-If you see any errors during this process, make sure that you have the right tools installed (Node, .NET, and so on). Also, make sure you have followed the steps on how to [Setup Your Development Environment](../extending/development-flow/).
+If you see any errors during this process, make sure that you have the right tools installed (Node, .NET, and so on). Also, make sure you have followed the steps on how to [Setup Your Development Environment](../extending-backoffice/development-flow/).
 {% endhint %}
 
 4. At the root of the `my-typescript-extension` folder create a new file called `vite.config.ts` and insert the following code:
@@ -187,7 +187,7 @@ export default defineConfig({
 
 ```
 
-This alters the Vite default output into a "library mode", where the output is a JavaScript file with the same name as the `name` attribute in `package.json`.&#x20;
+This alters the Vite default output into a "library mode", where the output is a JavaScript file with the same name as the `name` attribute in `package.json`.
 
 {% hint style="info" %}
 You can read more about [Vite's build options here](https://vitejs.dev/config/build-options.html#build-lib).
@@ -249,7 +249,7 @@ declare global {
 {% endcode %}
 
 {% hint style="warning" %}
-If you create multiple dashboards it's necessary to change the alias of `@customElement` to a unique alias in the `my-element.ts`file. If it's not changed then it will conflict with the other dashboards that use the same alias and therefore only one will show.&#x20;
+If you create multiple dashboards it's necessary to change the alias of `@customElement` to a unique alias in the `my-element.ts`file. If it's not changed then it will conflict with the other dashboards that use the same alias and therefore only one will show.
 {% endhint %}
 
 The code above defines a Web Component that contains a button that when clicked will open a notification with a message to the user.
@@ -260,7 +260,7 @@ The code above defines a Web Component that contains a button that when clicked 
 npm run build
 ```
 
-After running the build, you will see a new file in the `dist` folder with the name `my-typescript-extension.js`. This is the file we will use in our package.&#x20;
+After running the build, you will see a new file in the `dist` folder with the name `my-typescript-extension.js`. This is the file we will use in our package.
 
 7. At the root of the `my-typescript-extension` folder create a `umbraco-package.json` file with the following:
 
@@ -305,4 +305,4 @@ Clicking the button will open a notification with the message "#h5yr".
 
 Now that you have created your first extension (which is a dashboard), you can continue to the next tutorial: [Creating a Custom Dashboard](creating-a-custom-dashboard.md).
 
-You can also read more about the [Umbraco Package Manifest](../extending/package-manifest.md) to learn more about the different options you have when creating an extension.
+You can also read more about the [Umbraco Package Manifest](../extending-backoffice/package-manifest.md) to learn more about the different options you have when creating an extension.
