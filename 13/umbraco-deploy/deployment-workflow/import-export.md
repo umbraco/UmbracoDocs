@@ -99,8 +99,8 @@ Implementations to handle common migrations of data types from obsoleted propert
 We've also made available base implementations that you can use to build your own migrations. You may have a need to handle transfer of information between other obsolete and replacement property editors that you have in your Umbraco application.
 
 - `ArtifactMigratorBase<TArtifact>` - migrates the artifact of the specified type
-- `DataTypeArtifactMigratorBase` - migrates data type artifacts
-- `ReplaceDataTypeArtifactMigratorBase` - migrates a data type from one property editor to another
+- `DataTypeArtifactMigratorBase` - migrates Data Type artifacts
+- `ReplaceDataTypeArtifactMigratorBase` - migrates a Data Type from one property editor to another
 - `ArtifactJsonMigratorBase<TArtifact>` - migrates the JSON of the specified artifact type
 
 ### Property migrators
@@ -121,7 +121,7 @@ And a base type to help you build your own migrations:
  - `PropertyTypeMigratorBase`
 
 {% hint style="info" %}
-Determining whether the property editor has changed is done by comparing the `PropertyEditorAliases` dictionary (containing editor aliases for each content property) stored in the content artifact to the current content type/data type configuration.
+Property editor changes are determined by comparing the `PropertyEditorAliases` dictionary (containing editor aliases for each content property) stored in the content artifact to the current Content Type/Data Type configuration.
 {% endhint %}
 
 ### Registering migrators
@@ -157,7 +157,7 @@ In order to help writing your own migrations, we share here the source code of a
 First we have the artifact migrator that handles the conversion of the configuration stored with a datatype:
 
 <details>
-<summary>`ReplaceNestedContentDataTypeArtifactMigrator.cs` (migrate Nested Content data type to Block List)</summary>
+<summary>`ReplaceNestedContentDataTypeArtifactMigrator.cs` (migrate Nested Content Data Type to Block List)</summary>
 
 ```csharp
 using System.Globalization;

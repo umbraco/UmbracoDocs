@@ -493,7 +493,7 @@ This section contains the release notes for Umbraco Deploy 4 and 10 including al
 
 #### [4.1.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-4.1.0) (September 17th 2021)
 
-* Added in codes for the DTGE cell value connector in [#39](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/39)
+* Added in codes for the DTGE (Doc Type Grid Editor) cell value connector in [#39](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/39)
 
 #### [4.0.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-4.0.0) (May 28th 2021)
 
