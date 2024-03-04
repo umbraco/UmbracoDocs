@@ -2,12 +2,10 @@
 description: This is the documentation for the next major of Umbraco, version 14.
 ---
 
-# Umbraco 14 (RC) CMS Documentation
+# Umbraco 14 (Beta) CMS Documentation
 
 {% hint style="danger" %}
 This documentation is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-
-
 
 The new Backoffice for Umbraco CMS is scheduled for release along with Umbraco 14 in May  2024.&#x20;
 {% endhint %}
