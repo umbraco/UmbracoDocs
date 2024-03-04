@@ -1,7 +1,7 @@
 # Table of contents
 
-* [Upcoming Umbraco Backoffice](README.md)
-* [Contributing Guidelines](https://github.com/umbraco/Umbraco.CMS.Backoffice/blob/main/.github/CONTRIBUTING.md)
+* [Umbraco 14 (RC) CMS Documentation](README.md)
+* [Contribute](https://docs.umbraco.com/welcome/contribute/getting-started)
 
 ## Fundamentals
 
@@ -17,7 +17,7 @@
 
 ## Extending Backoffice
 
-* [Customize Backoffice](extending-backoffice/getting-started-backoffice.md)
+* [Customize Backoffice](fundamentals/getting-started-backoffice.md)
 * [Setup Your Development Environment](extending-backoffice/development-flow/README.md)
   * [Vite Package Setup](extending-backoffice/development-flow/vite-package-setup.md)
 * [Umbraco Package Manifest](extending-backoffice/package-manifest.md)
