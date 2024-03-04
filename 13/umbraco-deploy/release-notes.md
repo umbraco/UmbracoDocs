@@ -17,7 +17,7 @@ If you are upgrading to a new major version you can find the details about the b
 
 This section contains the release notes for Umbraco Deploy 13 including all changes for this version.
 
-#### [**13.1.0-rc1**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.0) **(March 5th 2024)**
+#### [13.1.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.0) (March 5th 2024)
 
 * Add `IArtifactTypeResolver` to allow custom type resolving when deserializing to `IArtifact` (used by Deploy Contrib, see PR [#60](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/61))
 * Add base migrators for importing legacy artifacts (used by Deploy Contrib)
@@ -27,7 +27,7 @@ This section contains the release notes for Umbraco Deploy 13 including all chan
 * Only validate `ApiKey` and `ApiSecret` when workspaces are configured
 * Explicitly register API controller endpoints
 
-#### [**13.0.4**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.4) **(February 20th 2024)**
+#### [13.0.4](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.4) (February 20th 2024)
 
 * Removed the no-longer supported "live edit" feature (Deploy on Cloud only).
 * Fixed issue where the removal of a master template couldn't be deployed [#201](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/201)
@@ -36,51 +36,61 @@ This section contains the release notes for Umbraco Deploy 13 including all chan
 * User experience and message improvements on content flow exception [#202](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/202)
 * Fixed issue with transfer of empty values to overwrite non-empty ones.
 
-#### [**13.0.3**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.3) **(January 16th 2024)**
+#### [13.0.3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.3) (January 16th 2024)
 
 * Added configurable option to avoid overwriting of dictionary items with empty values [#191](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/191)
     * For more details see the page on [Deploy's settings](./getting-started/deploy-settings.md).
 * Fixed regression issue with transfer of date values.
 
-#### [**13.0.2**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.2) **(January 9th 2024)**
+#### [13.0.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.2) (January 9th 2024)
 
 * Fixed issue with transfer of content using language variants [#193](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/193)
 
-#### [**13.0.1**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.1) **(December 21th 2023)**
+#### [13.0.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.1) (December 21th 2023)
 
 * Fixes the display of the selected schedule date on queue for transfer.
 * Fixes parsing property values within Nested Content and Block List that were previously saved by the Contrib value connectors.
 * Fixed incorrectly including media files in export when 'Content files' wasn't selected.
 * Add maximum file size validation to import file upload.
 
-#### [**13.0.0**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.0) **(December 14th 2023)**
+#### [13.0.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.0) (December 14th 2023)
 
 * All items from the 13.0.0 RCs and latest 12.2 features.
 
-#### [**13.0.0-rc5**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.0) **(December 12th 2023)**
+#### [13.0.0-rc5](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.0) (December 12th 2023)
 
 * Align with latest CMS RC.
 
-#### [**13.0.0-rc4**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.0) **(December 11th 2023)**
+#### [13.0.0-rc4](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.0) (December 11th 2023)
 
 * Add weight -100 to Deploy package migration (ensuring Deploy database tables are available before other package migrations are executed).
 * Add fluent API for Deploy webhooks.
 
-#### [**13.0.0-rc3**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.0) **(November 29th 2023)**
+#### [13.0.0-rc3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.0) (November 29th 2023)
 
 * Added optional deployment of webhooks as part of schema updates.
 * Added Deploy specific webhook events.
 
-#### [**13.0.0-rc2**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.0) **(November 15th 2023)**
+#### [13.0.0-rc2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.0) (November 15th 2023)
 
 * Exclude automatic relation type aliases (used for reference tracking) from deployment.
 * Fix cyclic dependency between configuring `DeploySettings` and `ConnectionStrings`.
 
-#### [**13.0.0-rc1**](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.0) **(November 6th 2023)**
+#### [13.0.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.0) (November 6th 2023)
 
 * Compatibility with Umbraco 13:
   * See full details of breaking changes under the [version specific upgrade guide](upgrades/version-specific.md).
   * Update Richtext value connector to handle references in blocks.
+
+## Deploy Contrib
+
+#### [13.1.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-13.1.0-rc1) (March 5th 2024)
+
+* Add legacy migrators and type resolver to allow importing from Umbraco 7 in [#61](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/61)
+
+#### [13.0.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-13.0.0) (December 14th 2023)
+
+* Compatibility with Umbraco 13
 
 ## Legacy release notes
 
