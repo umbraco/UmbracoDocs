@@ -195,9 +195,7 @@ Umbraco controls how the UI is for user login and user edits, but will still nee
 In the following example, we will use the [GoogleAuthenticator NuGet Package](https://www.nuget.org/packages/GoogleAuthenticator/). Despite the name, this package works for both Google and Microsoft authenticator apps. It can be used to generate the QR code needed to activate the app for the website.
 
 ```csharp
-using System;
 using System.Runtime.Serialization;
-using System.Threading.Tasks;
 using Google.Authenticator;
 using Umbraco.Cms.Core.Models.Membership;
 using Umbraco.Cms.Core.Security;
