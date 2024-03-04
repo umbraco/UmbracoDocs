@@ -55,7 +55,7 @@ import {
     UMB_MODAL_MANAGER_CONTEXT,
 } from "@umbraco-cms/backoffice/modal";
 
-class MyElement extends UmbElementMixin(LitElement) {
+export class MyElement extends UmbElementMixin(LitElement) {
     #modalManagerContext?: typeof UMB_MODAL_MANAGER_CONTEXT.TYPE;
 
     constructor() {
