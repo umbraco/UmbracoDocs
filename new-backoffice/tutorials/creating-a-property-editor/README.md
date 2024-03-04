@@ -12,30 +12,34 @@ This guide explains how to set up a property editor and hook it into Umbraco's D
 
 The steps we will go through in part 1 are:
 
-* ​[Setting up a Plugin](./#1.-setting-up-a-plugin)​
-* ​[Creating a Web Component​](./#2.-creating-a-simple-web-component)
-* ​[Registering the Data Type in Umbraco](./#3.-registering-the-data-type-in-umbraco)
-* [Adding styling and setting up events in Web Components](./#4.-adding-styling-and-setting-up-events-in-the-web-components)
-* [Setup Event Logic](./#step-5-setup-event-logic)
+* ​[Setting up a Plugin](./#setting-up-a-plugin)​
+* [​Creating a Web Component​](./#creating-a-web-component)
+* ​[Registering the Data Type in Umbraco](./#registering-the-data-type-in-umbraco)
+* [Adding styling and setting up events in Web Components](./#adding-styling-and-setting-up-events-in-the-web-components)
+* [Setup Event Logic](./#setup-event-logic)
 
-### Prerequisites
+This tutorial uses Typescript and Lit with Umbraco, It is expected that your package is already [set up to use Typescript and Lit](../../extending/development-flow/vite-package-setup.md).
 
-This tutorial uses Typescript and Lit with Umbraco, so it does not cover Typescript or Lit. It is expected that your package is already [set up to use Typescript and Lit](../../extending/development-flow/vite-package-setup.md).&#x20;
+To see how to set up an extension in Umbraco using Typescript and Lit, read the article [Creating your first extension](../creating-your-first-extension.md).
 
-To read about setting up an extension in Umbraco using Typescript and Lit, read the article [Creating your first extension](../creating-your-first-extension.md).
+### **Resources**
 
-For resources on Typescript or Lit, you can find some here:
+This tutorial will not go in-depth on how Typescript and Lit work. To learn about Typescript and Lit, you can find their documentation below:
 
 * [Typescript Docs](https://www.typescriptlang.org/docs/)
 * [Lit Docs](https://lit.dev/docs/)
-
-There are a lot of parallels with Creating a Custom Dashboard. The tutorial [Creating a Custom Dashboard](../creating-a-custom-dashboard.md) is worth a read too.
 
 ### The End Result
 
 At the tutorial's end, we'll have a Umbraco Suggestions Data Type, registered in the backoffice, and assigned to a Document Type. This Data Type can create and suggest values.
 
-### Step 1: Setting up a plugin
+The entire `welcome-dashboard.element.ts` file is available for reference at the end of the step to confirm your placement for code snippets.
+
+{% hint style="info" %}
+At each step, you will find a dropdown for`suggestions-property-editor-ui.element.ts, and umbraco-package.json`to confirm your placement for code snippets.
+{% endhint %}
+
+### Setting up a plugin
 
 1. Follow the [Vite Package Setup](../../extending/development-flow/vite-package-setup.md) by creating a new project folder called "`suggestions`" in `App_Plugins`.
 2. Then create the manifest file named `umbraco-package.json` at the root of the `suggestions` folder. Here we define and configure our dashboard.
@@ -68,9 +72,9 @@ At the tutorial's end, we'll have a Umbraco Suggestions Data Type, registered in
 Make sure to restart the application after you create and update`umbraco-package.json`
 {% endhint %}
 
-### Step 2: Creating a Web Component
+### Creating a Web Component
 
-Now let's create the web component we need for our property editor.&#x20;
+Now let's create the web component we need for our property editor.
 
 1. Create a file in the `src` folder with the name `suggestions-property-editor-ui.element.ts`
 2. In this new file, add the following code:
@@ -110,9 +114,9 @@ Now our basic parts of the editor are done, namely:
 
 3. Restart the application.
 
-### Step 3: Registering the Data Type in Umbraco
+### Registering the Data Type in Umbraco
 
-In the Document Type, let's add our newly added property editor "Suggestions" and save it.
+1. Add our newly added property editor "Suggestions" in the Document Type and save it.
 
 <figure><img src="../../.gitbook/assets/spaces_OdQETpqkO0Kcv8KMquKL_uploads_git-blob-c7d7e59228a3b5738a1464489ef7601b7f8d350d_suggestion-property-editor.webp" alt=""><figcaption></figcaption></figure>
 
@@ -122,11 +126,11 @@ We should now have a property editor that looks like this:
 
 <figure><img src="../../.gitbook/assets/NewPropertyEditor.png" alt=""><figcaption></figcaption></figure>
 
-### Step 4: Adding styling and setting up events in the Web Components
+### Adding styling and setting up events in the Web Components
 
-Let's start by creating an input field and some buttons that we can style and hook up to events.&#x20;
+Let's start by creating an input field and some buttons that we can style and hook up to events.
 
-1. In the `suggestions-property-editor-ui.element.ts` file, update the render method to include some input fields and buttons:
+1. Update the render method to include some input fields and buttons in the `suggestions-property-editor-ui.element.ts` file:
 
 ```typescript
 render() {
@@ -170,7 +174,7 @@ The Umbraco UI library is already a part of the backoffice, which means we can s
 import { LitElement, html, css } from "@umbraco-cms/backoffice/external/lit";
 ```
 
-3. Then add the CSS:
+3. Add the CSS:
 
 ```typescript
 render() {
@@ -197,11 +201,11 @@ It should now look something like this:
 
 It's starting to look good! Next, let's look into setting up the event logic.
 
-### Step 5: Setup Event Logic
+### Setup Event Logic
 
 #### Setup Input Field
 
-Let's start with the input field. When we type something in the input field, we want the property editor's value to change to the input field's current value.&#x20;
+Let's start with the input field. When we type something in the input field, we want the property editor's value to change to the input field's current value.
 
 We then have to dispatch an `property-value-change` event:
 
@@ -230,20 +234,20 @@ We then have to dispatch an `property-value-change` event:
 }
 ```
 
-Let's look at the suggestions button next.&#x20;
+Let's look at the suggestions button next.
 
 #### Setup Suggestions Button
 
-* When we press the suggestion button we want the text to update to the suggestion that we get. Similar to how the value of our property editor changes when we write in the input field.&#x20;
+* When we press the suggestion button we want the text to update to the suggestion that we get. Similar to how the value of our property editor changes when we write in the input field.
 * We also want the value to change when we press the suggestion button.
 
-1. First, update the import for Lit:
+1. Update the import for Lit:
 
 ```typescript
 import { LitElement, html, css, customElement, property, state } from "@umbraco-cms/backoffice/external/lit";
 ```
 
-2. Add some suggestions to the property editor:
+2. Add suggestions to the property editor:
 
 ```typescript
 
@@ -384,10 +388,16 @@ declare global {
 
 </details>
 
-4. Next, clear the cache, reload the document, and see the Suggestions Data Type running.
+4. Clear your cache, reload the document, and see the Suggestions Data Type running.
 
 <figure><img src="../../.gitbook/assets/NewPropertyEditorSuggestions.png" alt=""><figcaption></figcaption></figure>
 
 When we save or publish, the value of the Data Type is now automatically synced to the current content object and sent to the server.
 
 Learn more about extending this service by visiting the [Property Editors page](../../extending/extension-types/property-editors/).
+
+## Going further
+
+With all the steps completed, we have created a Suggestion data type running in our property editor.
+
+In the next part, we will look at adding configurations to our property editor.

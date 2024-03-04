@@ -8,9 +8,13 @@ description: This page is a work in progress. It will be updated as the software
 
 This is step 3 in the Property Editor tutorial. In this part, we will integrate one of the built-in Umbraco Contexts. For this sample, we will use the `UmbNotificationContext` for some pop-ups and the `UmbMdalContext`. `UmbMdalContext` is used to show a dialog when you click the Trim button and the textbox's input length is longer than the maxLength configuration.
 
+The steps we will go through in part 3 are:
+
+* [Setting up the contexts](integrating-context-with-a-property-editor.md#setting-up-the-contexts)
+
 ### Setting up the contexts
 
-In the `suggestions-input.element` file, insert the following imports
+1. Insert the following imports into the `suggestions-input.element.ts` file.
 
 ```typescript
 import {
@@ -26,7 +30,7 @@ import {
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 ```
 
-Update the class to extend from UmbElementMixin. This allows us to consume the contexts that we need. After, we can create the constructor where we can consume the contexts:
+2. Update the class to extend from UmbElementMixin. This allows us to consume the contexts that we need. After, we can create the constructor where we can consume the contexts:
 
 ```typescript
 class MySuggestionsInputElement extends UmbElementMixin(FormControlMixin(LitElement))
@@ -48,9 +52,15 @@ constructor() {
 }
 ```
 
-Now we can use the modal and notification API, let's change our `#onTrimText` method!
+Now we can use the modal and notification API, let's change our `#onTrimText` method.
 
-First, let's check if the length of our input is smaller or equal to our maxLength configuration. If it is, we have nothing to trim and will send a notification saying there is nothing to trim. Here we can use the NotificationContext's peek method. It has two parameters, `UmbNotificationColor` and an`UmbNotificationDefaultData` object.
+First, check if the length of our input is smaller or equal to our maxLength configuration.&#x20;
+
+If it is, we have nothing to trim and will send a notification saying there is nothing to trim.&#x20;
+
+Here we can use the NotificationContext's peek method. It has two parameters `UmbNotificationColor` and an`UmbNotificationDefaultData` object.
+
+3. Add the `#onTextTrim()`code in the `suggestions-input.element.ts`
 
 ```typescript
 #onTextTrim() {
@@ -67,9 +77,9 @@ First, let's check if the length of our input is smaller or equal to our maxLeng
 
 If our input length is less or equal to our maxLength configuration, we will now get a notification when pressing the Trim button.
 
-<figure><img src="../.gitbook/assets/nothing-to-trim (1).png" alt=""><figcaption></figcaption></figure>
+Let's add some more logic. If the length is more than the maxLength configuration, we want to show a dialog for the user to confirm the trim. Here we use the modal context's open method.
 
-Let's continue to add more logic. If the length is more than the maxLength configuration, we want to show a dialog for the user to confirm the trim. Here we use the modal context's open method.
+4. Add the `open` method to the `#onTextTrim()`&#x20;
 
 ```typescript
 #onTextTrim() {
@@ -94,13 +104,9 @@ Let's continue to add more logic. If the length is more than the maxLength confi
 }
 ```
 
-It should look like this:
-
-<figure><img src="../.gitbook/assets/trim-confirm.png" alt=""><figcaption></figcaption></figure>
-
 <details>
 
-<summary>suggestions-input.element.ts</summary>
+<summary>See the entire file: <code>suggestions-property-editor-ui.element.ts</code> </summary>
 
 ```typescript
 import {
@@ -270,13 +276,8 @@ declare global {
 
 </details>
 
-### Wrap up
+## Going further
 
-Over the 3 previous steps, we have:
+We have now connected our editor with the `UmbNotificationContext` and `UmbModalContext`. So that it is possible to trim the text as well as show us a pop-up when doing so.
 
--   Created a plugin.
--   Defined an editor.
--   Registered the Data Type in Umbraco.
--   Added configuration to the Property Editor.
--   Connected the editor with UmbNotificationContext and UmbModalContext.
--   Looked at some of the methods from notification & modal contexts in action.
+In the next part, we are going to integrate services with a Property Editor.

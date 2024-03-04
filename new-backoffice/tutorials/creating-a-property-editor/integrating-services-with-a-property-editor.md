@@ -1,4 +1,4 @@
-# Integrating Contexts with a Property Editor
+# Integrating services with a property editor
 
 {% hint style="info" %}
 This page is a work in progress. It will be updated as the software evolves.
@@ -8,9 +8,13 @@ This page is a work in progress. It will be updated as the software evolves.
 
 This is step 3 in the Property Editor tutorial. In this part, we will integrate one of the built-in Umbraco Contexts. For this sample, we will use the `UmbNotificationContext` for some pop-ups and the `UmbModalManagerContext`. This is to show a dialog when clicking the Trim button and the textbox's input length is longer than the maxChars configuration.
 
+The steps we will go through in part 4 are:
+
+* [Setting up and using the contexts](integrating-services-with-a-property-editor.md#setting-up-and-using-the-contexts)
+
 ### Setting up and using the contexts
 
-Update the class to extend from `UmbElementMixin`. This allows us to consume the contexts that we need. After, we can create the constructor where we can consume the contexts.
+1. Update the class to extend from `UmbElementMixin`. This allows us to consume the contexts that we need. After, we can create the constructor where we can consume the contexts.
 
 ```typescript
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
@@ -22,7 +26,9 @@ export class MySuggestionsPropertyEditorUIElement
   implements UmbPropertyEditorExtensionElement
 ```
 
-Let's start with the notification context. We will import the things we need and consume the contexts in the constructor:
+Let's start with the notification context.
+
+2. Import the things we need and consume the contexts in the constructor:
 
 ```typescript
 import {
@@ -46,7 +52,7 @@ Now we can use the notification context when the trim text button is being click
 
 We want to check if the length of our input is smaller or equal to our `maxChars` configuration. If it is, we have nothing to trim and will send a notification saying there is nothing to trim if the user clicks the button. Here we can use the NotificationContext's peek method. It has two parameters `UmbNotificationColor` and an`UmbNotificationDefaultData` object.
 
-Add a `click` event to the trim text button
+3. Add a `click` event to the trim text button
 
 ```typescript
         <uui-button
@@ -75,9 +81,13 @@ Add a `click` event to the trim text button
 
 Now if our input length is less or equal to our `maxChars` configuration, we will get a notification when pressing the Trim button.
 
-<figure><img src="../../.gitbook/assets/nothing-to-trim (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/nothing-to-trim (1).png" alt=""><figcaption><p>Trim Button Notification</p></figcaption></figure>
 
-Let's continue to add more logic. If the length is more than the `maxChars` configuration, we want to show a dialog for the user to confirm the trim. Here we use the `ModalManagerContext` which has an open method to show a dialog. Like the notification context, we need to import it and consume it in the constructor.
+Let's continue to add more logic. If the length is more than the `maxChars` configuration, we want to show a dialog for the user to confirm the trim. Here we use the `ModalManagerContext` which has an open method to show a dialog.&#x20;
+
+Like the notification context, we need to import it and consume it in the constructor.
+
+4. Import the `UMB_MODAL_MANAGER_CONTEXT, UMB_CONFIRM_MODAL` from `@umbraco-cms/backoffice/modal`
 
 ```typescript
 import {
@@ -85,6 +95,8 @@ import {
     UMB_CONFIRM_MODAL,
 } from "@umbraco-cms/backoffice/modal";
 ```
+
+5. Consume the `UMB_MODAL_MANAGER_CONTEXT, UMB_CONFIRM_MODAL`
 
 ```typescript
  #modalManagerContext?: typeof UMB_MODAL_MANAGER_CONTEXT.TYPE;
@@ -102,7 +114,7 @@ import {
   }
 ```
 
-Continue to add more logic to the `onTextTrim` method:
+6. Add more logic to the `onTextTrim` method:
 
 ```typescript
 #onTextTrim() {
@@ -127,13 +139,15 @@ Continue to add more logic to the `onTextTrim` method:
 }
 ```
 
-It should look like this:
+Now that we have added the logic to the `onTextTrim` method, when we try to trim the text it should look like this:
 
-<figure><img src="../../.gitbook/assets/trim-confirm.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/trim-confirm.png" alt=""><figcaption><p>Trim button Text</p></figcaption></figure>
+
+We have now created a working Property editor. Below you can see the full example of how the code for the Property Editor looks like.&#x20;
 
 <details>
 
-<summary>property-editor-ui-suggestions.element.ts</summary>
+<summary>See the entire file: <code>suggestions-property-editor-ui.element.ts</code></summary>
 
 ```typescript
 import { LitElement, css, html, customElement, property, state, ifDefined } from "@umbraco-cms/backoffice/external/lit";
@@ -296,11 +310,12 @@ declare global {
 
 ### Wrap up
 
-Over the 3 previous steps, we have:
+Over the 4 previous steps, we have:
 
--   Created a plugin.
--   Defined an editor.
--   Registered the Data Type in Umbraco.
--   Added configuration to the Property Editor.
--   Connected the editor with `UmbNotificationContext` and `UmbModalManagerContext`.
--   Looked at some of the methods from notification & modal manager contexts in action.
+* Created a plugin.
+* Defined an editor.
+* Registered the Data Type in Umbraco.
+* Added configuration to the Property Editor.
+* Connected the editor with `UmbNotificationContext` and `UmbModalManagerContext`.
+* Looked at some of the methods from notification & modal manager contexts in action.
+* Integrated one of the built-in Umbraco Contexts with the Property Editor.
