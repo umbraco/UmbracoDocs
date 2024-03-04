@@ -8,33 +8,37 @@ description: Ask the user for confirmation
 This page is a work in progress.&#x20;
 {% endhint %}
 
-```typescript
-import { html, LitElement } from "@umbraco-cms/backoffice/external/lit";
-import { UmbElementMixin } from "@umbraco-cms/element";
-import {
-    UmbModalManagerContext,
-    UMB_MODAL_MANAGER_CONTEXT,
-} from "@umbraco-cms/modal";
+## Basic Usage
 
-class MyElement extends UmbElementMixin(LitElement) {
-    #modalManagerContext?: UmbmodalManagerContext;
+{% code title="my-element.ts" %}
+```typescript
+import { html, LitElement, customElement } from "@umbraco-cms/backoffice/external/lit";
+import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
+import { UMB_MODAL_MANAGER_CONTEXT, UMB_CONFIRM_MODAL } from '@umbraco-cms/backoffice/modal';
+
+@customElement('my-element')
+export class MyElement extends UmbElementMixin(LitElement) {
+    #modalManagerContext?: typeof UMB_MODAL_MANAGER_CONTEXT.TYPE;
+
     constructor() {
         super();
         this.consumeContext(UMB_MODAL_MANAGER_CONTEXT, (instance) => {
-
             this.#modalManagerContext = instance;
         });
     }
+
     #onRequestDisable() {
         const modalContext = this.#modalManagerContext?.open(
             UMB_CONFIRM_MODAL,
             {
-                headline: `${this.localize.term("actions_disable")}`,
-                content: `${this.localize.term(
-                    "defaultdialogs_confirmdisable"
-                )}`,
-                color: "danger",
-                confirmLabel: "Disable",
+                data: {
+                    headline: `${this.localize.term("actions_disable")}`,
+                    content: `${this.localize.term(
+                        "defaultdialogs_confirmdisable"
+                    )}`,
+                    color: "danger",
+                    confirmLabel: "Disable",
+                }
             }
         );
         modalContext
@@ -48,9 +52,23 @@ class MyElement extends UmbElementMixin(LitElement) {
     }
 
     render() {
-        return html`<uui-button @click=${
-            this.#onRequestDisable
-        } label=${this.localize.term("actions_disable")}></button>`;
+        return html`<uui-button
+                            look="primary"
+                            color="danger"
+                            @click=${this.#onRequestDisable}
+                            label=${this.localize.term("actions_disable")}></uui-button>`;
     }
 }
 ```
+{% endcode %}
+
+This example shows how to open a confirm dialog. The `UMB_CONFIRM_MODAL` is a token that represents the confirm dialog. The `open` method takes the token and an object with the data for the confirm dialog. The `onSubmit` method returns a promise that resolves when the user confirms the dialog and rejects when the user cancels the dialog.
+
+The confirm modal itself is built-in and does not need to be registered in the extension registry.
+
+The modal token describes the options that you can pass to the modal. The confirm modal token has the following properties:
+
+- `headline` - The headline of the modal.
+- `content` - The content of the modal, which can be a TemplateResult or a string.
+- `color` - (Optional) The color of the modal. This can be `positive` or `danger`.
+- `confirmLabel` - (Optional) The label of the confirm button.

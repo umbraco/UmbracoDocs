@@ -19,7 +19,7 @@ This can also come with defaults, for example, settings for the modal type and s
 This is an example of a Modal Token declaration:
 
 ```ts
-import { ModalToken } from "@umbraco-cms/element";
+import { UmbModalToken } from "@umbraco-cms/backoffice/modal";
 
 export type OurSomethingPickerModalData = {
     // We do not have any data to parse for this example
@@ -42,26 +42,25 @@ export const MY_SOMETHING_PICKER_MODAL = new UmbModalToken<
 
 ## Make a custom Modal Element
 
-To create your own modal, read the [Implementing a Custom Modal article](custom-modals.md) before proceeding with this article.
+To create your own modal, read the [Implementing a Custom Modal article](./custom-modals.md) before proceeding with this article.
 
 ### Basic Usage
 
-Consume the `UmbModalManagerContext` and then use the modal manager context to open a modal. This example shows how to consume the Modal Manager Context:
+Consume the `UMB_MODAL_MANAGER_CONTEXT` and then use the modal manager context to open a modal. This example shows how to consume the Modal Manager Context:
 
 ```ts
 import { LitElement } from "@umbraco-cms/backoffice/external/lit";
-import { UmbElementMixin } from "@umbraco-cms/element";
+import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
 import {
-    UmbModalManagerContext,
-    UMB_MODAL_MANAGER_CONTEXT_ALIAS,
-} from "@umbraco-cms/modal";
+    UMB_MODAL_MANAGER_CONTEXT,
+} from "@umbraco-cms/backoffice/modal";
 
-class MyElement extends UmbElementMixin(LitElement) {
-    #modalManagerContext?: typeof UMB_MODAL_MANAGER_CONTEXT_ALIAS.TYPE;
+export class MyElement extends UmbElementMixin(LitElement) {
+    #modalManagerContext?: typeof UMB_MODAL_MANAGER_CONTEXT.TYPE;
 
     constructor() {
         super();
-        this.consumeContext(UMB_MODAL_MANAGER_CONTEXT_ALIAS, (instance) => {
+        this.consumeContext(UMB_MODAL_MANAGER_CONTEXT, (instance) => {
             this.#modalManagerContext = instance;
             // modalManagerContext is now ready to be used.
         });
@@ -78,7 +77,7 @@ A modal can be opened in two ways. Either you register the modal with a route or
 In this case, we use the Modal Token from above, this takes a key as its data. And if submitted then it returns the new key.
 
 ```typescript
-const modalContext = this._modalContext?.open(MY_SOMETHING_PICKER_MODAL, {
+const modalContext = this.#modalManagerContext?.open(MY_SOMETHING_PICKER_MODAL, {
     value: {
         key: this.selectedKey,
     },
@@ -92,7 +91,7 @@ modalContext
     .catch(() => undefined);
 ```
 
-[See the implementing a Confirm Dialog for a more concrete example.](confirm-dialog.md)
+[See the implementing a Confirm Dialog for a more concrete example.](./confirm-dialog.md)
 
 **Modal Route Registration**
 
