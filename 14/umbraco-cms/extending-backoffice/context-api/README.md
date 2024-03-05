@@ -177,7 +177,7 @@ consumerElement.consumeContext(MY_PUBLISHABLE_CONTEXT, (context) => {
 
 This allows implementers to request a publishable context without needing to know the Type or how to identify the context.
 
-In detail, the Context API will search for the first API that matches the alias `My.Context.Token`, and not look further. If the API meets the type discriminator, it will be returned, otherwise no response will be sent to the consumer.
+In detail, the Context API will search for the first API that matches the alias `My.Context.Token`, and not look further. If the API meets the type discriminator, it will be returned, otherwise the consumer will never reply.
 
 ## Provide a Context API
 
