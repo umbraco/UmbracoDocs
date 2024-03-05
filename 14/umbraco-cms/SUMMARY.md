@@ -36,7 +36,6 @@
   * [Bundle](extending-backoffice/extension-types/bundle.md)
   * [Conditions](extending-backoffice/extension-types/conditions.md)
   * [Entry Point](extending-backoffice/extension-types/entry-point.md)
-  * [Workspace Context](extending-backoffice/extension-types/workspace-context.md)
 * [UI Library](extending-backoffice/ui-library.md)
 * [Umbraco Element](extending-backoffice/umbraco-element/README.md)
   * [Controllers](extending-backoffice/umbraco-element/controllers/README.md)
