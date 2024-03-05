@@ -4,15 +4,15 @@ description: Communicate across different boundaries with the Context API
 
 # Context API
 
-The Context API enables receiving APIs. Depending on where your code is executed from, it affects which and what instances of APIs can be received.\
-\
-The Context API enables an element or a controller, to receive an API provided via any ascending element. In other words, it can receive APIs provided via a parent element or parent of a parent element, and so forth.
+The Context API enables receiving APIs. Depending on where your code is executed from, it affects which and what instances of APIs can be received.
+
+The Context API enables an element or a controller to receive an API provided via any ascending element. In other words, it can receive APIs provided via a parent element or parent of a parent element, and so forth.
 
 ## Consume a Context API
 
 There are different ways to consume a Context API. The most straightforward implementation is done on an Umbraco Element with a Context Token.
 
-All Umbraco Context APIs have a Context Token which can be imported and used for consumption, similar to this example:
+All Umbraco Context APIs have a Context Token which can be imported and used for consumption, for example:
 
 ```typescript
 import { UMB_NOTIFICATION_CONTEXT } from '@umbraco-cms/backoffice/notification';
@@ -37,7 +37,7 @@ If you need to consume a Context API from a non-controller host, then look at th
 
 A Context Token is a context identifier and is generally a string matched with a type. In this way, users of the token can be sure to get the right type of context.
 
-```ts
+```typescript
 import { UmbContextToken } from "@umbraco-cms/backoffice/context-api";
 
 type MyContext = {
@@ -50,13 +50,13 @@ const MY_CONTEXT = new UmbContextToken <MyContext>("My.Context.Token");
 
 ### **Context Token with an API Alias**
 
-For additions to Contexts, we can use the API Aliases to identify the additional API. Using the same Context Alias for additional APIs will ensure that such API has to be present with the first encounter of that Context Alias. Otherwise, a request will be rejected. In other words, if the addition is not part of the nearest matching Context, then a request will be rejected.
+For additions to Contexts, we can use the API Aliases to identify the additional API. Using the same Context Alias for additional APIs will ensure that such API must be present with the first encounter of that Context Alias. Otherwise, a request will be rejected. In other words, if the addition is not part of the nearest matching Context, the request will be rejected.
 
 {% hint style="info" %}
 Using API Alias only provides value when two or more APIs should share the same Context. This is needed for Context Extensions that are provided along with other Contexts.
 {% endhint %}
 
-```ts
+```typescript
 import { UmbContextToken } from "@umbraco-cms/backoffice/context-api";
 
 type MyAdditionalContext = {
@@ -69,9 +69,9 @@ const MY_ADDITIONAL_API_TOKEN = new UmbContextToken<MyAdditionalContext>(
 );
 ```
 
-The Token declared above can then be used to provide an additional Context API at the same Element as another Context API is provided at. The example below shows how the two APIs are made available.
+The Token declared above can be used to provide an additional Context API at the same Element as another Context API is provided at. Below is an example of how the two APIs are made available.
 
-```ts
+```typescript
 const contextElement = new UmbLitElement();
 contextElement.provideContext(
     MY_API_TOKEN,
@@ -92,9 +92,9 @@ consumerElement.consumeContext(MY_ADDITIONAL_API_TOKEN, (context) => {
 });
 ```
 
-This is no different than using two different Context Aliases. But has an important effect on what happens in one of them are not provided. This is begin demonstrated in the example below:
+This is no different than using two different Context Aliases. But it has an important effect on what happens if one of them is not provided. This is demonstrated in the example below:
 
-```ts
+```typescript
 const upperContextElement = new UmbLitElement();
 
 const contextElement = new UmbLitElement();
@@ -115,7 +115,7 @@ consumerElement.consumeContext(MY_ADDITIONAL_API_TOKEN, (context) => {
 });
 ```
 
-The consumption of the Additional API will never happen as the token uses the same Context Alias as `MY_API_TOKEN`. That means the request will never go further up than its first encounter with this Context Alias. Securing that the addition was of this Context has to be local to the nearest present API of that Context Alias.
+The consumption of the Additional API will never happen as the token uses the same Context Alias as `MY_API_TOKEN`. This means that any request containing this Context Alias will be stopped at the first API it encounters. To ensure that the addition was made to this specific Context, it must be done locally at the nearest available API that uses the same Context Alias.
 
 ### **Context Token with a Type Discriminator**
 
@@ -123,19 +123,19 @@ The consumption of the Additional API will never happen as the token uses the sa
 Discriminator only gives value for consumption of Context APIs that have a varying interface. Backoffice uses this for the different types of Workspace Contexts.
 {% endhint %}
 
-In some cases, it is needed to have different APIs for the same context. The [Workspace Contexts](../extension-types/workspaces/workspace-context.md) is a good example of this.
+In some cases, it is needed to have different APIs for the same context. For example, the [Workspace Contexts](../extension-types/workspaces/workspace-context.md).
 
 If someone wants the workspace name, they might not care about the specific API of the Workspace Context. These implementations can use a standard Context Token with a type of generic Workspace Context.
 
-The **Document Workspace Context** has features around Publishing. A new Context is not needed for these features, as when in a Workspace we shouldn't accidentally retrieve the workspace context of a parent workspace. So we need to provide a workspace context in each workspace, the one we retrieve is the one we will be using. But since publishing is not part of the generic Workspace Context, we need to identify if the context is a Document Workspace Context. Then it needs to be recast.
+The features related to Publishing in the **Document Workspace Context** do not require a new Context. However, we should not accidentally retrieve the workspace context of a parent workspace when in a Workspace. Therefore, we need to provide a workspace context in each workspace, and the one we retrieve is the one we will be using. Since Publishing is not part of the generic Workspace Context, check if the context is a Document Workspace Context and recast it accordingly.
 
-To avoid each implementation taking care of this, Context Tokens can be extended with a **type discriminator**. This will discard the given API if it does not live up to the needs. When it is the desired type, it will cast the API to the desired type.
+To avoid each implementation taking care of this, Context Tokens can be extended with a **Type Discriminator**. This will discard the given API if it does not meet the necessary requirements. When it is the desired type, the API will be converted to the appropriate type.
 
-This example shows how to create a discriminator Context Token, that will discard the API if it is not a Publishable Context:
+This example shows how to create a discriminator Context Token that will discard the API if it is not a Publishable Context:
 
-Context token example:
+**Context Token Example:**
 
-```ts
+```typescript
 import { UmbContextToken } from "@umbraco-cms/backoffice/context-api";
 
 
@@ -157,9 +157,9 @@ const MY_PUBLISHABLE_CONTEXT = new UmbContextToken<
 });
 ```
 
-Implementation of context token example:
+**Implementation of Context Token Example:**
 
-```ts
+```typescript
 const contextElement = new UmbLitElement();
 contextElement.provideContext(
     MY_PUBLISHABLE_CONTEXT,
@@ -175,6 +175,20 @@ consumerElement.consumeContext(MY_PUBLISHABLE_CONTEXT, (context) => {
 });
 ```
 
-This enables implementors to request a publishable context, without the knowledge about how to identify such, nor do they need to know about the Type.
+This allows implementers to request a publishable context without needing to know how to identify it or the Type.
 
-In detail, the Context API will find the first API matching alias`My.Context.Token`, and never look further. If that API does live up to the type discriminator, it will be returned. If not the consumer will never reply.
+In detail, the Context API will search for the first API that matches the alias `My.Context.Token`, and not look further. If the API meets the type discriminator, it will be returned, otherwise no response will be sent to the consumer.
+
+## Provide a Context API
+
+You can provide a Context API from an Umbraco Element or Umbraco Controller:
+
+```typescript
+this.provideContext('myContextAlias', new MyContextApi());
+```
+
+Or with a Controller using a 'host' reference to Controller Host (Umbraco Element/Controller):
+
+```typescript
+new UmbContextProviderController(host, 'myContextAlias', new MyContextApi());
+```
