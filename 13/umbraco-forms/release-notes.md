@@ -27,7 +27,7 @@ And there are a couple of further additions to improve the performance and acces
 
 **Features implemented and issues resolved in 13.1.0**
 
-* Added wehbooks for workflow execution events [#1151](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1151).
+* Added webhooks for workflow execution events [#1151](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1151).
 * Added support for a proxied request when using reCAPTCHA 3 [#1159](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1159).
 * Added a configurable option to ensure accessibility requirements with regard to fieldsets are adhered to [#1163](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1163).
     * Read more about this configuration setting [here](./developer/configuration/README.md#mandatoryfieldsetlegends).
