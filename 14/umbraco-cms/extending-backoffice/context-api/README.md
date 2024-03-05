@@ -20,8 +20,8 @@ import { UMB_NOTIFICATION_CONTEXT } from '@umbraco-cms/backoffice/notification';
 ...
 
 this.consumeContext(UMB_NOTIFICATION_CONTEXT, (context) => {
-	// Notice this is a subscription, as the context might change or a new one appears.
-	console.log("I've got the typed context: ", context);
+    // Notice this is a subscription, as the context might change or a new one appears.
+    console.log("I've got the typed context: ", context);
 });
 ```
 
@@ -115,7 +115,7 @@ consumerElement.consumeContext(MY_ADDITIONAL_API_TOKEN, (context) => {
 });
 ```
 
-The consumption of the Additional API will never happen as the token uses the same Context Alias as `MY_API_TOKEN`. This means that any request containing this Context Alias will be stopped at the first API it encounters. To ensure that the addition was made to this specific Context, it must be done locally at the nearest available API that uses the same Context Alias.
+The consumption of the Additional API will never happen as the token uses the same Context Alias as `MY_API_TOKEN`. This means that any request containing this Context Alias will be stopped at the first API it encounters. To ensure addition to a specific context, do it locally at the nearest API that uses the same Context Alias.
 
 ### **Context Token with a Type Discriminator**
 
