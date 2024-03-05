@@ -433,6 +433,7 @@ template.innerHTML = `
     }
   </style>
   <form method="post" action="/404">
+    <input type="hidden" name="provider" value="" />
     <h3>My Company's Provider</h3>
     <p>If you have signed up with MyProvider, you can sign in to Umbraco by clicking the button below.</p>
     <uui-button type="submit" id="button" look="primary">
@@ -453,6 +454,7 @@ export class MyCustomView extends HTMLElement {
 
   connectedCallback() {
     this.shadowRoot.querySelector('form').setAttribute('action', this.externalLoginUrl);
+    this.shadowRoot.querySelector('input[name="provider"]').setAttribute('value', this.providerName);
   }
 }
 
