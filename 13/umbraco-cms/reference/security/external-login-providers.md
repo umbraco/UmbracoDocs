@@ -413,6 +413,10 @@ When you click the button, the form will submit a POST request to the `externalL
 You have access to the [Umbraco UI Library](../../extending/ui-library.md) in the custom element. You can use the components directly in your custom element.
 {% endhint %}
 
+{% hint style="info" %}
+Warning! The below implementation only works for Umbraco 12 and below. 
+{% endhint %}
+
 {% tabs %}
 
 {% tab title="Vanilla (JavaScript)" %}
