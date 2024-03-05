@@ -17,11 +17,11 @@ The steps we will go through in part one are:
 
 A Dashboard is a tab on the right-hand side of a section eg. the Getting Started dashboard in the Content section:
 
-![Welcome dashboard](<../../10/umbraco-cms/tutorials/images/whatisadashboard-v10 (1) (1).jpg>)
+![Welcome dashboard](../../10/umbraco-cms/tutorials/images/whatisadashboard-v10%20\(1\)%20\(1\).jpg)
 
 #### Why provide a Custom Dashboard for your editors?
 
-It is generally considered good practice to provide a custom dashboard to welcome your editors to the backoffice of your site. You can provide information about the site and/or provide a helpful gateway to common functionality the editors will use.&#x20;
+It is generally considered good practice to provide a custom dashboard to welcome your editors to the backoffice of your site. You can provide information about the site and/or provide a helpful gateway to common functionality the editors will use.
 
 This guide will show the basics of creating a custom 'Welcome Message' dashboard. The guide will also show how you can go a little further to provide interaction using Lit and Typescript.
 
@@ -41,7 +41,7 @@ Here's an overview of the steps that will be covered:
 
 ### Prerequisites
 
-This tutorial uses Typescript and Lit with Umbraco, so it does not cover Typescript or Lit. It is expected that your package is already [set up to use Typescript and Lit](../extending-backoffice/development-flow/vite-package-setup.md).&#x20;
+This tutorial uses Typescript and Lit with Umbraco, so it does not cover Typescript or Lit. It is expected that your package is already [set up to use Typescript and Lit](../extending-backoffice/development-flow/vite-package-setup.md).
 
 To read about setting up an extension in Umbraco using Typescript and Lit, read the article [Creating your first extension](creating-your-first-extension.md).
 
@@ -100,7 +100,7 @@ Please be aware that the file`umbraco-package.json` is loaded into memory when U
 
 ## Step 2: Creating the Dashboard Web Component
 
-Now let's create the web component we need for our property editor. This web component contains all our HTML, CSS, and logic.&#x20;
+Now let's create the web component we need for our property editor. This web component contains all our HTML, CSS, and logic.
 
 1. Create a file in the `src` folder with the name `welcome-dashboard.element.ts`
 2. In this new file, add the following code:
@@ -152,9 +152,9 @@ declare global {
 entry: "src/welcome-dashboard.element.ts"
 ```
 
-4. In the `welcome-dashboard` folder run `npm run build` and then run the project. Then in the  content section of the Backoffice you will see our new dashboard:
+4. In the `welcome-dashboard` folder run `npm run build` and then run the project. Then in the content section of the Backoffice you will see our new dashboard:
 
-<figure><img src="../.gitbook/assets/spaces_G1Byxw7XfiZAj8zDMCTD_uploads_PtBQkEyVcGmoVx3ysAOJ_welcome.webp" alt=""><figcaption><p>First look of the dashboard</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/spaces_G1Byxw7XfiZAj8zDMCTD_uploads_PtBQkEyVcGmoVx3ysAOJ_welcome (1).webp" alt=""><figcaption><p>First look of the dashboard</p></figcaption></figure>
 
 ## Going Further
 

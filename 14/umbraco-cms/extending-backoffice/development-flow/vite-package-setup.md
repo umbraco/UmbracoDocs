@@ -20,7 +20,7 @@ npm create vite@latest
 
 To follow this tutorial, we recommend you enter `my-dashboard` as the Project Name when prompted, although you can choose any other you like. Then choose **Lit** and **TypeScript**.
 
-<figure><img src="../../.gitbook/assets/Vite_Package_Setup_Image_Install.png" alt=""><figcaption><p>Create vite command choices</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Vite_Package_Setup_Image_Install (1).png" alt=""><figcaption><p>Create vite command choices</p></figcaption></figure>
 
 This creates a new folder, sets up our new project, and creates a `package.json` file, which includes the necessary packages.
 
@@ -40,7 +40,7 @@ npm install --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbra
 Optionally you can use `--legacy-peer-deps` in the installation command to avoid installing Umbraco´s sub-dependencies like TinyMCE and Monaco Editor:\
 `npm install --legacy-peer-deps --registry`[`https://www.myget.org/F/umbracoprereleases/npm/`](https://www.myget.org/F/umbracoprereleases/npm/)`-D @umbraco-cms/backoffice@14.0.0--preview008`
 
-If this is used the Intellisense to those external references will not be available.&#x20;
+If this is used the Intellisense to those external references will not be available.
 {% endhint %}
 
 This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `--preview008` is the version of the package, which will change as new versions are released.
@@ -159,7 +159,7 @@ If you try to include these resources via Visual Studio, be careful to include o
 
 The final result looks like this:
 
-<figure><img src="../../.gitbook/assets/Vite_Package_Setup_Dashboard.png" alt=""><figcaption><p>My dashboard</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Vite_Package_Setup_Dashboard (1).png" alt=""><figcaption><p>My dashboard</p></figcaption></figure>
 
 If the Vite logo is not found, this is because the path to its location needs to be changed in the `my-element.ts` file from the `src` folder to:
 

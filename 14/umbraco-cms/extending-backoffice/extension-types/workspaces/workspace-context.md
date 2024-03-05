@@ -1,6 +1,5 @@
 ---
-description: >-
-  Establish an extension to communicate across the application.
+description: Establish an extension to communicate across the application.
 ---
 
 # Workspace Context
@@ -84,6 +83,4 @@ export const UMB_APP_CONTEXT = new UmbContextToken<MyContextCounterApi>(
 );
 ```
 
-We recommend using `UmbWorkspaceContext` as the Context Alias for your Context Token. This will ensure that the requester only retrieves this Context if it's present at their nearest Workspace Context. Use the Extension Manifest Alias as the API Alias for your Context Token.
-
-[Read more about creating your own Context API here.](broken-reference)
+We recommend using `UmbWorkspaceContext` as the Context Alias for your Context Token. This will ensure that the requester only retrieves this Context if it's present at their nearest Workspace Context. Use the Extension Manifest Alias as the API Alias for your Context Token. For more information, see the [Context API](../../context-api/) article.

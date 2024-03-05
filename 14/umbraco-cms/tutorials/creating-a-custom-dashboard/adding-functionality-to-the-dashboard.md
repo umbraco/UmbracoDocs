@@ -26,7 +26,7 @@ Umbraco has a large selection of contexts that you can use in your custom Proper
 
 To get information on the current user that's currently logged in, we first need to get the context and its token. We use the Current User Context to receive the user that is currently logged in.
 
-1. Import the  `UMB_CURRENT_USER_CONTEXT` and the `type UmbCurrentUserModel` for the logged-in user. We also need to update the import from lit decorators to get `state` in the `welcome-dashboard.element.ts` file:
+1. Import the `UMB_CURRENT_USER_CONTEXT` and the `type UmbCurrentUserModel` for the logged-in user. We also need to update the import from lit decorators to get `state` in the `welcome-dashboard.element.ts` file:
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
 ```typescript
@@ -35,7 +35,7 @@ import { type UmbCurrentUserModel, UMB_CURRENT_USER_CONTEXT } from "@umbraco-cms
 ```
 {% endcode %}
 
-2. Now that we have access to the Current User Context, we can consume it in the constructor to obtain the current user. We do this using the `consumeContext` method, which is available on our element because we extended using `UmbElementMixin`. \
+2. Now that we have access to the Current User Context, we can consume it in the constructor to obtain the current user. We do this using the `consumeContext` method, which is available on our element because we extended using `UmbElementMixin`.\
    \
    As the first thing in the `export class MyWelcomeDashboardElement` add the following to the element implementation :
 
@@ -97,7 +97,7 @@ render() {
 
 Your dashboard should now look something like this:
 
-<figure><img src="../../.gitbook/assets/Create_dashboard_functionality.png" alt=""><figcaption><p>Welcoming the user named "Admin"</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Create_dashboard_functionality (1).png" alt=""><figcaption><p>Welcoming the user named "Admin"</p></figcaption></figure>
 
 <details>
 
@@ -175,11 +175,11 @@ declare global {
 
 Let's dive deeper into some new resources and see what we can do with them.
 
-Before we can get data from the server we need to start up the repository that handles said data.&#x20;
+Before we can get data from the server we need to start up the repository that handles said data.
 
-Let's say we want to get the data of all of the users of our project.&#x20;
+Let's say we want to get the data of all of the users of our project.
 
-* To get the user data, we need to start up the user repository.&#x20;
+* To get the user data, we need to start up the user repository.
 * We are also going to need a type for our user details.
 
 1. Import `UmbUserDetailModel` and `UmbUserCollectionRepository`:
@@ -213,7 +213,7 @@ private async _getPagedUserData() {
 
 3. Notice that the user repository has a lot of methods that we can use. We are going to use `requestCollection` to get all the users.
 
-<figure><img src="../../.gitbook/assets/Create_dashboard_functionality_gettting_data.png" alt=""><figcaption><p>Options from the user repository</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Create_dashboard_functionality_gettting_data (1).png" alt=""><figcaption><p>Options from the user repository</p></figcaption></figure>
 
 The method `requestCollection` returns a promise, so let's `await` the data and save the data in our array:
 
@@ -294,7 +294,7 @@ We recommend using variables for colors and sizing. See why and how you could ac
 
 We now should have our welcome dashboard filled showing a list of all users:
 
-<figure><img src="../../.gitbook/assets/Create_dashboard_functionality_users_list.png" alt=""><figcaption><p>Dashboard with all users. Output may vary depends on your users.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Create_dashboard_functionality_users_list (1).png" alt=""><figcaption><p>Dashboard with all users. Output may vary depends on your users.</p></figcaption></figure>
 
 <details>
 

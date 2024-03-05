@@ -146,7 +146,7 @@ The Property Editor UI needs to be declared as it declares what User Interface s
    * Additionally, you can set a default value in the `placeholder` field and see the Suggestions Data Type at play.
 4. Since we are using the `Umbraco.TextBox` Property Editor Schema, we inherit a `maxChars` configuration field from the Property Editor Schema. Let's save it as 20.
 
-<figure><img src="../../.gitbook/assets/property-editor-config.png" alt=""><figcaption><p>Data Type configuration.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/property-editor-config (1).png" alt=""><figcaption><p>Data Type configuration.</p></figcaption></figure>
 
 ## Using the configuration
 
@@ -229,7 +229,7 @@ import { ifDefined } from "@umbraco-cms/backoffice/external/lit";
 
 <details>
 
-<summary>See the entire file: <code>suggestions-property-editor-ui.element.ts</code> </summary>
+<summary>See the entire file: <code>suggestions-property-editor-ui.element.ts</code></summary>
 
 ```typescript
 import { LitElement, css, html, customElement, property, state, ifDefined } from "@umbraco-cms/backoffice/external/lit";
@@ -343,7 +343,7 @@ declare global {
 
 5. In the `suggestions` folder run `npm run build` and then run the project. In the content section of the Backoffice you will see the new changes in the property editor:
 
-<figure><img src="../../.gitbook/assets/property-editor-config-on.png" alt=""><figcaption><p>Suggestions Property Editor with disabled suggestions option</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/property-editor-config-on (1).png" alt=""><figcaption><p>Suggestions Property Editor with disabled suggestions option</p></figcaption></figure>
 
 ## Going further
 

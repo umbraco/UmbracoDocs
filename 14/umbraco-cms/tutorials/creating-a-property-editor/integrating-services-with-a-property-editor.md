@@ -81,9 +81,9 @@ We want to check if the length of our input is smaller or equal to our `maxChars
 
 Now if our input length is less or equal to our `maxChars` configuration, we will get a notification when pressing the Trim button.
 
-<figure><img src="../../.gitbook/assets/nothing-to-trim (1).png" alt=""><figcaption><p>Trim Button Notification</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/nothing-to-trim (1) (1).png" alt=""><figcaption><p>Trim Button Notification</p></figcaption></figure>
 
-Let's continue to add more logic. If the length is more than the `maxChars` configuration, we want to show a dialog for the user to confirm the trim. Here we use the `ModalManagerContext` which has an open method to show a dialog.&#x20;
+Let's continue to add more logic. If the length is more than the `maxChars` configuration, we want to show a dialog for the user to confirm the trim. Here we use the `ModalManagerContext` which has an open method to show a dialog.
 
 Like the notification context, we need to import it and consume it in the constructor.
 
@@ -141,9 +141,9 @@ import {
 
 Now that we have added the logic to the `onTextTrim` method, when we try to trim the text it should look like this:
 
-<figure><img src="../../.gitbook/assets/trim-confirm.png" alt=""><figcaption><p>Trim button Text</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/trim-confirm (1).png" alt=""><figcaption><p>Trim button Text</p></figcaption></figure>
 
-We have now created a working Property editor. Below you can see the full example of how the code for the Property Editor looks like.&#x20;
+We have now created a working Property editor. Below you can see the full example of how the code for the Property Editor looks like.
 
 <details>
 

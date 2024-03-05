@@ -38,7 +38,7 @@ render() {
 ```
 {% endcode %}
 
-2. The `uui-box` has a headline property as well.  Here are two options:
+2. The `uui-box` has a headline property as well. Here are two options:
 
 * Move the headline into the headline property:
 
@@ -56,7 +56,7 @@ render() {
 ```
 {% endcode %}
 
-* Add an element instead. This element can also be styled and contain other elements. \
+* Add an element instead. This element can also be styled and contain other elements.\
   \
   Let's keep using `umb-localize` instead of `localize.term()`:
 
@@ -98,9 +98,7 @@ static styles = [
 
 This already looks a lot better!
 
-
-
-<figure><img src="../../.gitbook/assets/Create_dashboard_functionality_users_list_ui_styled.png" alt=""><figcaption><p>The dashboard in uui-box</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Create_dashboard_functionality_users_list_ui_styled (1).png" alt=""><figcaption><p>The dashboard in uui-box</p></figcaption></figure>
 
 <details>
 
@@ -212,7 +210,7 @@ declare global {
 
 ### UI Table
 
-Let's try another uui element. Since we have a lot of information from the users, it could be a good idea to insert it into a proper table.&#x20;
+Let's try another uui element. Since we have a lot of information from the users, it could be a good idea to insert it into a proper table.
 
 1. The Umbraco UI (UUI) Library also includes a [uui-table](https://uui.umbraco.com/?path=/docs/layout-table-table--docs), so let's use it:
 
@@ -274,7 +272,7 @@ static styles = [
 
 Your dashboard component should now look like this:
 
-<figure><img src="../../.gitbook/assets/Create_dashboard_functionality_users_list_ui_styled_table.png" alt=""><figcaption><p>Dashboard with uui-table in use</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Create_dashboard_functionality_users_list_ui_styled_table (1).png" alt=""><figcaption><p>Dashboard with uui-table in use</p></figcaption></figure>
 
 <details>
 
@@ -391,7 +389,7 @@ declare global {
 
 ### **Challenge (optional)**
 
-Insert the <mark style="color:orange;">`user.state`</mark> into a <mark style="color:orange;">`uui-tag`</mark> that uses different values of the properties<mark style="color:orange;">`look`</mark> and <mark style="color:orange;">`color`</mark>.&#x20;
+Insert the <mark style="color:orange;">`user.state`</mark> into a <mark style="color:orange;">`uui-tag`</mark> that uses different values of the properties<mark style="color:orange;">`look`</mark> and <mark style="color:orange;">`color`</mark>.
 
 The values depend on the state of the user. For example, use `look="primary"` and `color="positive"` when the user is <mark style="color:orange;">`Active`</mark>
 
@@ -437,6 +435,6 @@ import { UUIInterfaceColor, UUIInterfaceLook } from '@umbraco-cms/backoffice/ext
 
 </details>
 
-The `uui-table-row` also have a selectable property.&#x20;
+The `uui-table-row` also have a selectable property.
 
 Continue to experiment with different UUI elements from the UI library to build awesome interfaces!

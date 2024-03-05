@@ -40,7 +40,7 @@ To add the nightly feed using Visual Studio:
 1. Open Visual Studio.
 2. Go to **Tools** > **NuGet Package Manager** > **Package Manager Settings**.
 
-![Package Manager Settings](<../../../.gitbook/assets/Package-Manager-Settings (1).jpg>)
+![Package Manager Settings](<../../../.gitbook/assets/Package-Manager-Settings (1) (2).jpg>)
 
 3. The **Options** window open.
 4. Select the **Package Sources** option in the **NuGet Package Manager** section.

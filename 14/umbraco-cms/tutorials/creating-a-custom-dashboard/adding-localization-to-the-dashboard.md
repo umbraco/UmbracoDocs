@@ -216,9 +216,9 @@ declare global {
 
 </details>
 
-The dashboard's text will appear depending on the user's language.&#x20;
+The dashboard's text will appear depending on the user's language.
 
-* If the user's language is Danish, the dashboard will use the text from our `da-dk` file.&#x20;
+* If the user's language is Danish, the dashboard will use the text from our `da-dk` file.
 * If the user's language is English, the dashboard will use the text from our `en-us` file.
 
 {% hint style="info" %}
@@ -229,11 +229,11 @@ This is how our dashboard should now look like:
 
 <div>
 
-<figure><img src="../../.gitbook/assets/welcome-eng.png" alt=""><figcaption><p>Dashboard if the user's language is English / Fallback</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/welcome-eng (1).png" alt=""><figcaption><p>Dashboard if the user's language is English / Fallback</p></figcaption></figure>
 
  
 
-<figure><img src="../../.gitbook/assets/welcome-da.png" alt=""><figcaption><p>Dashboard if the user's language is Danish</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/welcome-da (1).png" alt=""><figcaption><p>Dashboard if the user's language is Danish</p></figcaption></figure>
 
 </div>
 

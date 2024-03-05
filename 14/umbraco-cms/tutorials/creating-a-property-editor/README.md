@@ -118,13 +118,13 @@ Now our basic parts of the editor are done, namely:
 
 1. Add our newly added property editor "Suggestions" in the Document Type and save it.
 
-<figure><img src="../../.gitbook/assets/spaces_OdQETpqkO0Kcv8KMquKL_uploads_git-blob-c7d7e59228a3b5738a1464489ef7601b7f8d350d_suggestion-property-editor.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/spaces_OdQETpqkO0Kcv8KMquKL_uploads_git-blob-c7d7e59228a3b5738a1464489ef7601b7f8d350d_suggestion-property-editor (1).webp" alt=""><figcaption></figcaption></figure>
 
 We can now edit the assigned property's value with our new property editor.
 
 We should now have a property editor that looks like this:
 
-<figure><img src="../../.gitbook/assets/NewPropertyEditor.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/NewPropertyEditor (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Adding styling and setting up events in the Web Components
 
@@ -197,7 +197,7 @@ static styles = [
 
 It should now look something like this:
 
-<figure><img src="../../.gitbook/assets/NewPropertyEditorButtons.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/NewPropertyEditorButtons (1).png" alt=""><figcaption></figcaption></figure>
 
 It's starting to look good! Next, let's look into setting up the event logic.
 
@@ -390,7 +390,7 @@ declare global {
 
 4. Clear your cache, reload the document, and see the Suggestions Data Type running.
 
-<figure><img src="../../.gitbook/assets/NewPropertyEditorSuggestions.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/NewPropertyEditorSuggestions (1).png" alt=""><figcaption></figcaption></figure>
 
 When we save or publish, the value of the Data Type is now automatically synced to the current content object and sent to the server.
 
