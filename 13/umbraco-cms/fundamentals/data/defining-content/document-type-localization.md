@@ -1,24 +1,24 @@
 ---
-description: Here you will learn how to apply localization for document types in Umbraco
+description: Here you will learn how to apply localization for Document Types in Umbraco
 ---
 
 # Localizing Document Types
 
-The Umbraco backoffice is fully localized to match the user's [configured language](../users.md). When defining document types, you can apply localization to:
+The Umbraco backoffice is fully localized to match the user's [configured language](../users.md). When defining Document Types, you can apply localization to:
 
-- Document type names and descriptions.
+- Document Type names and descriptions.
 - Property names and descriptions.
 - Custom property validation messages.
 - Tab and group names.
 
-Setting up localization for document types is a two-step process:
+Setting up localization for Document Types is a two-step process:
 
 - Create the localizations in [user defined language files](../../../extending/language-files.md).
-- Apply the localizations to the document types.
+- Apply the localizations to the Document Types.
 
 {% hint style="info" %}
 
-Everything in this article also applies to defining [media types](../creating-media/README.md).
+Everything in this article also applies to defining [Media Types](../creating-media/README.md).
 
 {% endhint %}
 
@@ -26,7 +26,7 @@ Everything in this article also applies to defining [media types](../creating-me
 
 User defined language files are created in `/config/lang` and must be named `{language}.user.xml` - e.g. `en-us.user.xml`.
 
-There are no specific requirements as to how localizations should be structured for use in document types. The following localizations have been used for the samples in this article:
+There are no specific requirements as to how localizations should be structured for use in Document Types. The following localizations have been used for the samples in this article:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
@@ -64,7 +64,7 @@ Umbraco must be restarted to pick up on changes to language files.
 
 The localizations are applied by using the syntax `#{area alias}_{key alias}`:
 
-![Applying localization to a document type](../images/localization-document-type-editor.png)
+![Applying localization to a Document Type](../images/localization-document-type-editor.png)
 
 ![Applying localization to a property](../images/localization-document-type-editor-validation.png)
 
