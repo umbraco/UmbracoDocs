@@ -55,6 +55,7 @@
   * [Customize Default Fields and Workflows For a Form](developer/extending/customize-default-workflows.md)
 * [Configuration](developer/configuration/README.md)
   * [Forms Provider Type Details](developer/configuration/type-details.md)
+* [Webhooks](developer/webhooks.md)
 * [Security](developer/security.md)
 * [Magic Strings](developer/magic-strings.md)
 * [Health Checks](developer/healthchecks/README.md)

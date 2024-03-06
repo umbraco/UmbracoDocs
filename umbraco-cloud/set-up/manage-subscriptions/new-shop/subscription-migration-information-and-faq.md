@@ -11,7 +11,7 @@ The migration of Umbraco Cloud subscriptions from shop.umbraco.com to the new su
 
 The process will be handled automatically, no action is required on your end.&#x20;
 
-You can find documentation on how the new subscription and billing engine works in the [Organizations documentation](https://docs.umbraco.com/umbraco-cloud/getting-started/the-umbraco-cloud-portal/organizations) and [Payments documentation](https://docs.umbraco.com/umbraco-cloud/\~/changes/I0HSeJqJ3Xoz7dFWrfy5/set-up/manage-subscriptions/new-shop).
+You can find documentation on how the new subscription and billing engine works in the [Organizations documentation](https://docs.umbraco.com/umbraco-cloud/getting-started/the-umbraco-cloud-portal/organizations) and [Payments documentation](https://docs.umbraco.com/umbraco-cloud/set-up/manage-subscriptions/new-shop).
 
 ### Frequently Asked Questions
 

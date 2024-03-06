@@ -67,7 +67,8 @@ For illustration purposes, the following structure represents the full set of op
         "FieldTypes": {},
         "PrevalueSourceTypes": {},
         "WorkflowTypes": {},
-      }
+      },
+      "MandatoryFieldsetLegends": false
     },
     "Options": {
       "IgnoreWorkFlowsOnEdit": "True",
@@ -111,7 +112,8 @@ For illustration purposes, the following structure represents the full set of op
       "Recaptcha3": {
         "SiteKey": "",
         "PrivateKey": "",
-        "Domain": "www.google.com"
+        "Domain": "Google",
+        "VerificationUrl": "https://www.google.com/recaptcha/api/siteverify"
       },
       "RichText": {
         "DataTypeId": "ca90c950-0aff-4e72-b976-a30b1ac57dad"
@@ -222,6 +224,12 @@ In order to configure this setting, you will need to know the GUID or alias for 
 Take care to not hide any settings that are required for the particular field or workflow type (for example, the `Subject` field for email workflows). If you do that, the item will fail validation when an editor tries to create it.
 
 The default value and read-only settings apply to most setting types. There is an exception for complex ones where a default string value isn't appropriate. An example of one of these is the field mapper used in the "Send to URL" workflow.
+
+### MandatoryFieldsetLegends
+
+When creating a form with Umbraco Forms, adding captions to the groups for fields is optional. To follow accessibility best practices, these fields should be completed. When they are, the group of fields are presented within a `<fieldset>` element that has a populated `<legend>`.
+
+If you want to ensure form creators always have to provide a caption, you can set the value of this setting to `true`.
 
 ### Form default settings configuration
 
@@ -491,7 +499,13 @@ You can obtain both of these values after signing up to create a ReCaptcha key h
 
 This setting defines the domain from which the client-side assets for using the reCAPTCHA service are requested.
 
-Valid options are `www.google.com` (the default) or `www.recaptcha.net`. You may want to use the latter for control of which domains are setting cookies on your site. [Read more at the reCAPTCHA documentation](https://developers.google.com/recaptcha/docs/faq#does-recaptcha-use-cookies).
+Valid options are `Google` (the default) or `Recaptcha`. You may want to use the latter for control of which domains are setting cookies on your site. [Read more at the reCAPTCHA documentation](https://developers.google.com/recaptcha/docs/faq#does-recaptcha-use-cookies).
+
+#### VerificationUrl
+
+By default, the server-side validation of the reCAPTCHA response is sent to Google's servers at `https://www.google.com/recaptcha/api/siteverify`.
+
+Some customers with a locked-down production environment cannot configure the firewall to allow these requests and instead use a proxy server. They can use this setting to configure the URL to their proxy server, which will relay the request to and response from Google.
 
 ### Rich text field type configuration
 

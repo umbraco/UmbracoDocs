@@ -26,6 +26,14 @@ In this section, you can find the release notes for each version of Deploy packa
 
 <summary>Version 13</summary>
 
+#### [13.1.1](https://github.com/umbraco/Umbraco.Commerce.Deploy/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.1) (March 3rd 2024)
+
+* Fixed issue with new property not being null checked and so causing error [#8](https://github.com/umbraco/Umbraco.Commerce.Deploy/issues/8).
+
+#### 13.1.0 (February 21st 2024)
+
+* Minor release closing off the RC period.
+
 #### 13.1.0-rc1 (February 6th 2024)
 
 * Adds support for Locations

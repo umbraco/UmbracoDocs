@@ -17,6 +17,18 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 13 including all changes for this version.
 
+#### [13.1.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.1) (March 3rd 2024)
+
+* Fixed regression where custom order/cart editor view stopped working [#469](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/469).
+* Fixed issue with Locations not deleting [#470](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/470).
+* Fixed issue with date range order searches not working correctly [#468](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/468).
+
+#### 13.1.0 (February 21st 2024)
+
+* Minor release closing off the RC period.
+* Fixed null exceptions when creating shipping methods with empty config.
+* Added helper methods to `FixedRateShippingCalculationConfig` to make it's API closer to the older fixed rate price lookup API.
+
 #### 13.1.0-rc3 (February 15th 2024)
 
 * Fixed missing SQL Server migrations.

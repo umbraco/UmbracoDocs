@@ -163,7 +163,7 @@ Once the migration is complete, and the Live environment is running without erro
 
 ## Related information
 
-* [Content Migration for Umbraco CMS - 7 to 8](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific/migrate-content-to-umbraco-8.md)
+* [Content Migration for Umbraco CMS - 7 to 8](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific/migrate-content-to-umbraco-8)
 * [Issue tracker for known issues with Content Migration](https://github.com/umbraco/UmbracoDocs/issues)
 * [Forms on Umbraco Cloud](../../deployment/umbraco-forms-on-cloud.md)
 * [Working locally with Umbraco Cloud](../../set-up/working-locally.md)

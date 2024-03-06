@@ -89,7 +89,7 @@ The **ClientId** and **ClientSecret** can always be accessed from the **Credenti
 
 ## Integrating Google Auth in Visual Studio
 
-Now that you have the Google API set up, open your existing solution in Visual Studio. If you don't know how to clone down a Cloud site, see the [Working locally](https://docs.umbraco.com/umbraco-cloud/setup/working-locally) article.
+Now that you have the Google API set up, open your existing solution in Visual Studio. If you don't know how to clone down a Cloud site, see the [Working locally](https://docs.umbraco.com/umbraco-cloud/set-up/working-locally) article.
 
 ### Installing a Nuget Package
 
