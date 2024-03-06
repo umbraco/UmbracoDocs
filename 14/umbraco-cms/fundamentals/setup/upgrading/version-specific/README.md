@@ -36,6 +36,7 @@ Below you can find the list of breaking changes introduced in Umbraco 14.
 * [Macros have been removed](https://github.com/umbraco/Announcements/issues/14). Use partial views and/or blocks in the RTE.
 * package-manifest is now umbraco.package.json
 * New login screen
+* In-depth details can be found on [Our Release Notes](https://our.umbraco.com/download/releases/1400)
 
 For more details of changes for each preview version of new backoffice check out the [Github Release Notes](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases).
 
