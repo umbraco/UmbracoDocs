@@ -31,7 +31,7 @@ You can use any package manager you like to install dependencies. We recommend u
 
 ### Umbraco Backoffice
 
-Umbraco publishes an NPM package called "@umbraco-cms/backoffice" that holds typings and other niceties to build extensions. You can install this package by running the command `npm install --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@14.0.0--preview008`. This will install the relevant packages used for IntelliSense and TypeScript definitions in your IDE. The `--preview008` is the version of the package, which will change as new versions are released.
+Umbraco publishes an NPM package called "@umbraco-cms/backoffice" that holds typings and other niceties to build extensions. You can install this package by running the command `npm install --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@14.0.0-beta001`. This will install the relevant packages used for IntelliSense and TypeScript definitions in your IDE. The `-beta001` is the version of the package, which will change as new versions are released.
 
 It is important that this namespace is ignored in your bundler. If you are using Vite, you can add the following to your `vite.config.ts` file:
 

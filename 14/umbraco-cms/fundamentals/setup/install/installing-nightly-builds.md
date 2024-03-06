@@ -143,8 +143,8 @@ To install the latest nightly version template:
 1. Open your command prompt.
 2. Run the following command using the latest version:
 
-```
-dotnet new install Umbraco.Templates::14.0.0--preview008
+```bash
+dotnet new install Umbraco.Templates::14.0.0-beta001
 ```
 
 With that, we've successfully installed the latest nightly build of Umbraco.

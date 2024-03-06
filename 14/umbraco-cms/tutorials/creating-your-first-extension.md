@@ -156,10 +156,10 @@ npm install
 3. The last thing we need to install now is our Backoffice package. You can install the package using the following command:
 
 ```bash
-npm install --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@14.0.0--preview008
+npm install --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@14.0.0-beta001
 ```
 
-This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `--preview008` is the version of the package, which will change as new versions are released.
+This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `-beta001` is the version of the package, which will change as new versions are released.
 
 {% hint style="warning" %}
 If you see any errors during this process, make sure that you have the right tools installed (Node, .NET, and so on). Also, make sure you have followed the steps on how to [Setup Your Development Environment](../extending-backoffice/development-flow/).

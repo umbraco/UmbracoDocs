@@ -100,11 +100,11 @@ To install the preview build template:
 1. Open your command prompt.
 2. Run the following command and provide the version that you want to install.
 
-```
-dotnet new install Umbraco.Templates::14.0.0--preview008
+```bash
+dotnet new install Umbraco.Templates::14.0.0-beta001
 ```
 
-The prerelease name and the version are separated with two colons`::`. It is important to specify the entire version, including the `--preview008` otherwise the `dotnet new` command will not find the package.
+The prerelease name and the version are separated with two colons`::`. It is important to specify the entire version, including the `-beta001` otherwise the `dotnet new` command will not find the package.
 
 With that, we've successfully installed the latest build of Umbraco.
 
