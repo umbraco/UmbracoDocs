@@ -16,7 +16,7 @@ The new Backoffice for Umbraco CMS is scheduled for release along with Umbraco 1
 
 ### Breaking Changes
 
-Some breaking changes have been introduced in the Umbraco 14 Release Candidate, you can find the list of breaking changes in the Version Specific Upgrades article.
+Some breaking changes have been introduced in the Umbraco 14 Release Candidate, you can find the list of breaking changes in the [Version Specific Upgrades](./fundamentals/setup/upgrading/version-specific/README.md) article.
 
 You can find a sneak peak of what is upcoming on v14 of the CMS in the [Umbraco Product Update Blog](https://umbraco.com/blog/umbraco-product-update-february-2024/#CMS).
 
