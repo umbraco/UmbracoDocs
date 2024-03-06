@@ -3,7 +3,9 @@ description: "A guide to creating a Basic Website using Umbraco"
 ---
 # Creating a Basic Website using Umbraco
 
-_This tutorial was last tested on the latest version of **Umbraco 11**._
+{% hint style="warning" %}
+This tutorial is a work in progress. It will be updated as the software evolves.
+{% endhint %}
 
 ## Introduction
 

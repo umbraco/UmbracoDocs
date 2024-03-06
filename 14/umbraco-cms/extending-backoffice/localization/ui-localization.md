@@ -6,10 +6,6 @@ description: Learn how to manage and use the UI Localization files.
 
 This article describes how you can use the UI Localization files via the [Package Manifest](../package-manifest.md).&#x20;
 
-{% hint style="warning" %}
-This article is a work in progress.
-{% endhint %}
-
 ## Default Localization
 
 If you want the dashboard to be available in different languages, you can use the existing localizations from Umbraco or register your own localizations. The localizations are written as a key-value pair pattern.

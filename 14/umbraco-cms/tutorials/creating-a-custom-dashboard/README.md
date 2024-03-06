@@ -8,7 +8,7 @@ description: A guide that shows you how you can create a custom dashboard in Umb
 
 A Dashboard is a tab on the right-hand side of a section eg. the Getting Started dashboard in the Content section:
 
-![Welcome dashboard](<../../../../10/umbraco-cms/tutorials/images/whatisadashboard-v10 (1) (1) (1).jpg>)
+![Welcome dashboard](../images/whatisadashboard-v10%20(1)%20(1).jpg)
 
 ### Why provide a Custom Dashboard for editors?
 

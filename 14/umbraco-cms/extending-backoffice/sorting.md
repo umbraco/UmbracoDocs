@@ -4,6 +4,10 @@ description: Enable sorting elements via drag and drop
 
 # Sorting of elements
 
+{% hint style="warning" %}
+This page is a work in progress. It will be updated as the software evolves.
+{% endhint %}
+
 The Umbraco Sorter enables you to make a list of elements sortable via drag-and-drop interaction.
 You have to set up the sorter once on the Element that renders the items to be sorted.
 As part of the configuration, you shall provide an `onChange` callback method, which will be executed every time the sorter makes a difference to the data.
