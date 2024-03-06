@@ -10,6 +10,8 @@
   * [Installation](fundamentals/setup/install/README.md)
     * [Installing Preview Builds](fundamentals/setup/install/preview-builds.md)
     * [Installing Nightly Builds](fundamentals/setup/install/installing-nightly-builds.md)
+  * [Upgrade your project](fundamentals/setup/upgrading/README.md)
+    * [Version Specific Upgrades](fundamentals/setup/upgrading/version-specific/README.md)
 * [Backoffice](fundamentals/backoffice/README.md)
   * [Document Blueprints](fundamentals/backoffice/document-blueprints.md)
 
