@@ -2,6 +2,10 @@
 description: Get started with a Vite Package, setup with TypeScript and Lit
 ---
 
+{% hint style="warning" %}
+This page is a work in progress. It will be updated as the software evolves.
+{% endhint %}
+
 # Vite Package Setup
 
 Umbraco recommends building extensions with a setup using TypeScript and a build tool such as Vite. Umbraco uses the library Lit for building web components which we will be using throughout this guide.

@@ -11,10 +11,6 @@ Localization files are used to translate:
 * The Umbraco backoffice user interface so that end users can use Umbraco in their native language. This is particularly important for content editors who do not speak English.
 * The member identity errors in an Umbraco website enable end users to use Umbraco in the website language.
 
-{% hint style="warning" %}
-This article is a work in progress.
-{% endhint %}
-
 ### [.NET Localization](.net-localization.md)
 
 Defines how to use the .NET Core Umbraco Localization files.

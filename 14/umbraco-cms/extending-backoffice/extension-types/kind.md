@@ -2,6 +2,10 @@
 description: A kind extension provides the preset for other extensions to use
 ---
 
+{% hint style="warning" %}
+This page is a work in progress. It will be updated as the software evolves.
+{% endhint %}
+
 # Kind
 
 A kind is matched with a specific type. When another extension uses that type and kind it will inherit the preset manifest of the kind extension.

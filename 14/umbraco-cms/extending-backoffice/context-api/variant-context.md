@@ -4,6 +4,10 @@ description: The Variant Context is a context that holds the data for a set of p
 
 # Variant Context
 
+{% hint style="warning" %}
+This page is a work in progress. It will be updated as the software evolves.
+{% endhint %}
+
 Property Editors UIs require the Variant Context to be present to work. This enables Property Editor UIs to have a generic relation with its ownership.
 
 The Variant context holds a name and a set of properties. What makes a property can vary but an alias and a value are required.
