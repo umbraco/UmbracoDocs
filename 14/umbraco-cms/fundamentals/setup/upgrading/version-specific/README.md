@@ -34,4 +34,6 @@ Below you can find the list of breaking changes introduced in Umbraco 14.
 * package-manifest is now umbraco.package.json
 * New login screen
 
+For more details of changes for each preview version of new backoffice check out the [Github Release Notes](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases).
+
 </details>
