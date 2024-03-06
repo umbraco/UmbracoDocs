@@ -11,7 +11,7 @@ Localization files are used to translate:
 * The Umbraco backoffice user interface so that end users can use Umbraco in their native language. This is particularly important for content editors who do not speak English.
 * The member identity errors in an Umbraco website enable end users to use Umbraco in the website language.
 
-### [.NET Localization](.net-localization.md)
+### [.NET Localization](net-localization.md)
 
 Defines how to use the .NET Core Umbraco Localization files.
 
@@ -21,7 +21,7 @@ Defines how to use the UI Umbraco Localization files.
 
 ## Supported Languages
 
-Current [languages ](https://github.com/umbraco/Umbraco-CMS/tree/contrib/src/Umbraco.Core/EmbeddedResources/Lang)with their ISO codes that are included in new Umbraco installations are:
+Current [languages](https://github.com/umbraco/Umbraco-CMS/tree/contrib/src/Umbraco.Core/EmbeddedResources/Lang) with their ISO codes that are included in new Umbraco installations are:
 
 * `bs-BS` - Bosnian (Bosnia and Herzegovina)
 * `cs-CZ` - Czech (Czech Republic)
