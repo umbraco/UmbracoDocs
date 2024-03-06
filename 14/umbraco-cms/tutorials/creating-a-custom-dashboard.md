@@ -10,14 +10,14 @@ This guide takes you through the steps to set up a Custom Dashboard in Umbraco.
 
 The steps we will go through in part one are:
 
-1. [Setting up a package](creating-a-custom-dashboard.md#step-1-setting-up-a-package)
-2. [Creating the dashboard web component](creating-a-custom-dashboard.md#step-2-creating-the-dashboard-web-component)
+1. [Setting up a package](creating-a-custom-dashboard.md#setting-up-a-package)
+2. [Creating the dashboard web component](creating-a-custom-dashboard.md#creating-the-dashboard-web-component)
 
 ### What is a Dashboard?
 
 A Dashboard is a tab on the right-hand side of a section eg. the Getting Started dashboard in the Content section:
 
-![Welcome dashboard](../../10/umbraco-cms/tutorials/images/whatisadashboard-v10%20\(1\)%20\(1\).jpg)
+<figure><img src="../../../10/umbraco-cms/tutorials/images/whatisadashboard-v10 (1) (1).jpg" alt=""><figcaption><p>Welcome dashboard</p></figcaption></figure>
 
 #### Why provide a Custom Dashboard for your editors?
 
@@ -27,25 +27,13 @@ This guide will show the basics of creating a custom 'Welcome Message' dashboard
 
 The finished dashboard will give the editors an overview of which pages and media files they've worked on most recently.
 
-Here's an overview of the steps that will be covered:
+This tutorial uses Typescript and Lit with Umbraco, It is expected that your package is already [set up to use Typescript and Lit](../extending-backoffice/development-flow/vite-package-setup.md).
 
-* Setting up the dashboard plugin
-* Writing a basic Welcome Message view
-* Configure the Custom Welcome Dashboard to be displayed
-* Adding translations
-* Adding styles
-* Adding interactive functionality with Lit and Typescript
-* Display the current user's name in our welcome message
-* Display the most recent log viewer items
-* You can do anything...
+To see how to set up an extension in Umbraco using Typescript and Lit, read the article [Creating your first extension](creating-your-first-extension.md).
 
-### Prerequisites
+### **Resources**
 
-This tutorial uses Typescript and Lit with Umbraco, so it does not cover Typescript or Lit. It is expected that your package is already [set up to use Typescript and Lit](../extending-backoffice/development-flow/vite-package-setup.md).
-
-To read about setting up an extension in Umbraco using Typescript and Lit, read the article [Creating your first extension](creating-your-first-extension.md).
-
-For resources on Typescript or Lit, you can find some here:
+This tutorial will not go in-depth on how Typescript and Lit work. To learn about Typescript and Lit, you can find their documentation below:
 
 * [Typescript Docs](https://www.typescriptlang.org/docs/)
 * [Lit Docs](https://lit.dev/docs/)
@@ -56,7 +44,11 @@ There are a lot of parallels with Creating a Property Editor. The tutorial '[Cre
 
 At the end of this guide, we will have a friendly welcoming dashboard displaying a list of the most recent site logs.
 
-## Step 1: Setting up a package
+{% hint style="info" %}
+At each step, you will find a dropdown for `welcome-dashboard.element.ts`, `and umbraco-package.json`to confirm your placement for code snippets.
+{% endhint %}
+
+## Setting up a package
 
 1. Follow the [Vite Package Setup](../extending-backoffice/development-flow/vite-package-setup.md) by creating a new project folder called "`welcome-dashboard`" in `App_Plugins`.
 2. Create a manifest file named `umbraco-package.json` at the root of the `welcome-dashboard`folder. Here we define and configure our dashboard.
@@ -98,7 +90,7 @@ For more information about the `umbraco-package.json` file, read the article [Pa
 Please be aware that the file`umbraco-package.json` is loaded into memory when Umbraco starts up. If you are changing or adding new configurations you will need to start and stop your application for it to be loaded.
 {% endhint %}
 
-## Step 2: Creating the Dashboard Web Component
+## Creating the Dashboard Web Component
 
 Now let's create the web component we need for our property editor. This web component contains all our HTML, CSS, and logic.
 

@@ -1,14 +1,8 @@
 ---
-description: >-
-  In this subpage we will cover how to use resources and get data for your
-  dashboard.
+description: Use resources and get data for your dashboard.
 ---
 
 # Adding functionality to the Dashboard
-
-{% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
-{% endhint %}
 
 ## Overview
 
@@ -16,11 +10,11 @@ This is the third part of our guide to building a custom dashboard. This part co
 
 The steps we will go through in this part are:
 
-1. [Contexts](adding-functionality-to-the-dashboard.md#step-1-contexts)
-2. [Getting data from the server](adding-functionality-to-the-dashboard.md#step-2-getting-data-from-the-server)
-3. [Rendering the data from the server](adding-functionality-to-the-dashboard.md#step-3-render-the-data)
+1. [Contexts](adding-functionality-to-the-dashboard.md#contexts)
+2. [Getting data from the server](adding-functionality-to-the-dashboard.md#getting-data-from-the-server)
+3. [Rendering the data from the server](adding-functionality-to-the-dashboard.md#render-the-data)
 
-## Step 1: Contexts
+## Contexts
 
 Umbraco has a large selection of contexts that you can use in your custom Property Editors and Dashboards. For this example, we will welcome the editor by name. To achieve this we can make use of the Umbraco Contexts.
 
@@ -171,7 +165,7 @@ declare global {
 
 </details>
 
-## Step 2: Getting data from the server
+## Getting data from the server
 
 Let's dive deeper into some new resources and see what we can do with them.
 
@@ -224,7 +218,7 @@ private async _getPagedUserData() {
 }
 ```
 
-## Step 3: Render the Data
+## Render the Data
 
 Now that we have the data from the repository, we need to render the data.
 

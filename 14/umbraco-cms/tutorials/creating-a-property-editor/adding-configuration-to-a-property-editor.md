@@ -1,23 +1,19 @@
 ---
-description: This page is a work in progress. It will be updated as the software evolves.
+description: Adding configuration options to the editor.
 ---
 
 # Adding configuration to a Property Editor
 
-{% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
-{% endhint %}
-
 ## Overview
 
-This is step 2 in our guide to building a Property Editor. This step continues work on the Suggestion Data Type we built in Step 1 but goes further to show how to add configuration options to our editor.
+This is step two in our guide to building a Property Editor. This step continues work on the Suggestion Data Type we built in part one but goes further to show how to add configuration options to our editor.
 
 The steps we will go through in the second part are:
 
 * [Adding settings object to umbraco-package.json](adding-configuration-to-a-property-editor.md#adding-settings-object-to-umbraco-package.json)
 * [Using the configuration](adding-configuration-to-a-property-editor.md#using-the-configuration)
 
-## Configuration
+### Configuration
 
 An important part of building good Property Editors is to build something flexible, so we can reuse it many times, for different things. Like the Rich Text Editor in Umbraco, which allows us to choose which buttons and stylesheets we want to use on each instance of the editor.
 
@@ -29,6 +25,7 @@ To add a Data Type configuration field when using our Suggestion Property Editor
 
 1. Add some `properties`:
 
+{% code title="umbraco-package.json" %}
 ```json
     ...
     "meta": {
@@ -52,6 +49,7 @@ To add a Data Type configuration field when using our Suggestion Property Editor
         ...
     }
 ```
+{% endcode %}
 
 Above we added two configuration fields. Each entry of the `properties` collection represents a Configuration field. Each has the information needed for a field.
 
@@ -64,6 +62,7 @@ The Property Editor UI needs to be declared as it declares what User Interface s
 
 2. We can now also set some default data on our new configurations:
 
+{% code title="umbraco-package.json" %}
 ```json
   ...
   "meta": {
@@ -83,6 +82,7 @@ The Property Editor UI needs to be declared as it declares what User Interface s
    }
    ...
 ```
+{% endcode %}
 
 <details>
 
@@ -154,6 +154,7 @@ The next step is to gain access to our new configuration options. For this, open
 
 1. Create some state variables that can store our configurations:
 
+{% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
   @state()
   private _disabled?: boolean;
@@ -164,15 +165,19 @@ The next step is to gain access to our new configuration options. For this, open
   @state()
   private _maxChars?: number;
 ```
+{% endcode %}
 
 2. Let's create a config property. Add a new import and add the following property:
 
+{% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
 import { type UmbPropertyEditorConfigCollection } from "@umbraco-cms/backoffice/property-editor";
 ```
+{% endcode %}
 
 3. Look up the alias of the config and then grab the value by said alias:
 
+{% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
   @property({ attribute: false })
   public set config(config: UmbPropertyEditorConfigCollection) {
@@ -181,15 +186,21 @@ import { type UmbPropertyEditorConfigCollection } from "@umbraco-cms/backoffice/
     this._maxChars = config.getValueByAlias("maxChars");
   }
 ```
+{% endcode %}
 
 We can now use the configurations. Let's use the `placeholder` and `maxChars` for the input field and the `disabled` option for the suggestion button.
 
-4. Add a new import `ifDefined` and update the render method:
+4. Add a new import `ifDefined` :
 
+{% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
 import { ifDefined } from "@umbraco-cms/backoffice/external/lit";
 ```
+{% endcode %}
 
+5. Update the render method:
+
+{% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
   render() {
     return html`
@@ -226,11 +237,13 @@ import { ifDefined } from "@umbraco-cms/backoffice/external/lit";
     `;
   }
 ```
+{% endcode %}
 
 <details>
 
-<summary>See the entire file: <code>suggestions-property-editor-ui.element.ts</code></summary>
+<summary>See the entire file: suggestions-property-editor-ui.element.ts</summary>
 
+{% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
 import { LitElement, css, html, customElement, property, state, ifDefined } from "@umbraco-cms/backoffice/external/lit";
 import { type UmbPropertyEditorExtensionElement } from "@umbraco-cms/backoffice/extension-registry";
@@ -338,10 +351,11 @@ declare global {
     }
 }
 ```
+{% endcode %}
 
 </details>
 
-5. In the `suggestions` folder run `npm run build` and then run the project. In the content section of the Backoffice you will see the new changes in the property editor:
+6. In the `suggestions` folder run `npm run build` and then run the project. In the content section of the Backoffice you will see the new changes in the property editor:
 
 <figure><img src="../../.gitbook/assets/property-editor-config-on (1).png" alt=""><figcaption><p>Suggestions Property Editor with disabled suggestions option</p></figcaption></figure>
 

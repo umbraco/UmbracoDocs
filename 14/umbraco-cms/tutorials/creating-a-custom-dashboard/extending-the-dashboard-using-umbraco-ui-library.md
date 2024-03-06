@@ -6,21 +6,23 @@ description: >-
 
 # Using Umbraco UI library in the Dashboard
 
-{% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
-{% endhint %}
-
 ## Overview
 
 This is the fourth and final part of the guide to building a Custom Dashboard. This part continues work on the dashboard we built in part three: [Adding functionality to the Dashboard](adding-functionality-to-the-dashboard.md). But it goes further to showcase how we can use the UI Library in our extension.
 
-## Umbraco UI Library
+The steps we will go through in this part are:
+
+1. [Using UI Box](extending-the-dashboard-using-umbraco-ui-library.md#ui-box)
+2. [Using UI Table](extending-the-dashboard-using-umbraco-ui-library.md#ui-table)
+3. [Challenge (Optional)](extending-the-dashboard-using-umbraco-ui-library.md#challenge-optional)
+
+### Umbraco UI Library
 
 The [Umbraco UI Library](../../extending-backoffice/ui-library.md) is a set of web components and variables that we can use to build Umbraco User Interfaces. It is already part of the Backoffice, which means you can already start to use it.
 
 By using the variables available from the UI Library, you ensure that your extensions are a consistent size with the rest of the backoffice.
 
-### UI Box
+## UI Box
 
 1. Let's start by wrapping `uui-box` around our render output. This makes our dashboard the same style as the built-in dashboards of Umbraco:
 
@@ -208,7 +210,7 @@ declare global {
 
 </details>
 
-### UI Table
+## UI Table
 
 Let's try another uui element. Since we have a lot of information from the users, it could be a good idea to insert it into a proper table.
 
@@ -387,7 +389,7 @@ declare global {
 
 </details>
 
-### **Challenge (optional)**
+## **Challenge (optional)**
 
 Insert the <mark style="color:orange;">`user.state`</mark> into a <mark style="color:orange;">`uui-tag`</mark> that uses different values of the properties<mark style="color:orange;">`look`</mark> and <mark style="color:orange;">`color`</mark>.
 
@@ -438,3 +440,17 @@ import { UUIInterfaceColor, UUIInterfaceLook } from '@umbraco-cms/backoffice/ext
 The `uui-table-row` also have a selectable property.
 
 Continue to experiment with different UUI elements from the UI library to build awesome interfaces!
+
+## Wrap up
+
+Over the four previous steps, we have:
+
+* Set up the dashboard plugin
+* Wrote a basic Welcome Message view
+* Configured the Custom Welcome Dashboard to be displayed
+* Added translations
+* Added styles
+* Added interactive functionality with Lit and Typescript
+* Displayed the current user's name in our welcome message
+* Displayed the most recent log viewer items
+* You can do anything with Umbraco UI Library

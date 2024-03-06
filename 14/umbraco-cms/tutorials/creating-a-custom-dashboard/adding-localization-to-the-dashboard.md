@@ -1,5 +1,5 @@
 ---
-description: In this subpage, we will cover how to set up localization for your dashboard.
+description: Set up localization for your dashboard.
 ---
 
 # Adding localization to the dashboard
@@ -8,7 +8,13 @@ description: In this subpage, we will cover how to set up localization for your 
 
 This is the second part of our guide to building a Custom Dashboard. This part continues work on the dashboard we built in part one: [Creating a Custom Dashboard](../creating-a-custom-dashboard.md), but further shows how to handle localization in a custom dashboard.
 
-## Setup localization files
+The steps we will go through in second part are:
+
+1. [Setup localization files](adding-localization-to-the-dashboard.md#setup-localization-files)
+2. [Register localization files](adding-localization-to-the-dashboard.md#register-localization-files)
+3. [Use the localization files](adding-localization-to-the-dashboard.md#using-the-localization-files)
+
+## Setup Localization Files
 
 1. In the `welcome-dashboard` folder create a new folder called "`Localization`"
 2. Then create two new files `en-us.js` and `da-dk.js`:
@@ -41,7 +47,9 @@ export default {
 ```
 {% endcode %}
 
-3. Now let's update our `umbraco-package.json` extensions object to register our new localization file:
+## Register Localization Files
+
+Now let's update our `umbraco-package.json` extensions object to register our new localization files:
 
 {% code title="umbraco-package.json" %}
 ```typescript
@@ -132,7 +140,9 @@ It is currently not an option to localize the dashboard label. This is a work in
 
 We can use the `umb-localize` element to get the localizations out, which takes a key property in.
 
-4. Let's start using the localizations. Update the `welcome-dashboard.element.ts`:
+## Using the Localization Files
+
+Let's start using the localizations. Update the `welcome-dashboard.element.ts`:
 
 {% code title="welcome-dashboard.element.ts" %}
 ```typescript

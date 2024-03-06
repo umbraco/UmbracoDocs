@@ -1,21 +1,23 @@
 ---
-description: This page is a work in progress. It will be updated as the software evolves.
+description: Integrate one of the built-in Umbraco Contexts.
 ---
 
 # Integrating context with a Property Editor
 
-### Overview
+## Overview
 
-This is step 3 in the Property Editor tutorial. In this part, we will integrate one of the built-in Umbraco Contexts. For this sample, we will use the `UmbNotificationContext` for some pop-ups and the `UmbMdalContext`. `UmbMdalContext` is used to show a dialog when you click the Trim button and the textbox's input length is longer than the maxLength configuration.
+This is the third step in the Property Editor tutorial. In this part, we will integrate one of the built-in Umbraco Contexts. For this sample, we will use the `UmbNotificationContext` for some pop-ups and the `UmbMdalContext`. `UmbMdalContext` is used to show a dialog when you click the Trim button and the textbox's input length is longer than the maxLength configuration.
 
-The steps we will go through in part 3 are:
+The steps we will go through in this part are:
 
 * [Setting up the contexts](integrating-context-with-a-property-editor.md#setting-up-the-contexts)
+* [Using the modal and notification API](integrating-context-with-a-property-editor.md#using-the-modal-and-notification-api)
 
-### Setting up the contexts
+## Setting up the contexts
 
 1. Insert the following imports into the `suggestions-input.element.ts` file.
 
+{% code title="suggestions-input.element.ts" %}
 ```typescript
 import {
     UmbModalContext,
@@ -29,13 +31,19 @@ import {
 } from "@umbraco-cms/backoffice/notification";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 ```
+{% endcode %}
 
-2. Update the class to extend from UmbElementMixin. This allows us to consume the contexts that we need. After, we can create the constructor where we can consume the contexts:
+2. Update the class to extend from UmbElementMixin. This allows us to consume the contexts that we need:
 
+{% code title="suggestions-input.element.ts" %}
 ```typescript
 class MySuggestionsInputElement extends UmbElementMixin(FormControlMixin(LitElement))
 ```
+{% endcode %}
 
+3. Create the constructor where we can consume the contexts:
+
+{% code title="suggestions-input.element.ts" %}
 ```typescript
 private _modalContext?: UmbModalContext;
 private _notificationContext?: UmbNotificationContext;
@@ -51,17 +59,19 @@ constructor() {
     });
 }
 ```
+{% endcode %}
+
+## Using the modal and notification API
 
 Now we can use the modal and notification API, let's change our `#onTrimText` method.
 
-First, check if the length of our input is smaller or equal to our maxLength configuration.&#x20;
-
-If it is, we have nothing to trim and will send a notification saying there is nothing to trim.&#x20;
+First, check if the length of our input is smaller or equal to our maxLength configuration. If it is, we have nothing to trim and will send a notification saying there is nothing to trim.
 
 Here we can use the NotificationContext's peek method. It has two parameters `UmbNotificationColor` and an`UmbNotificationDefaultData` object.
 
-3. Add the `#onTextTrim()`code in the `suggestions-input.element.ts`
+1. Add the `#onTextTrim()`code in the `suggestions-input.element.ts`
 
+{% code title="suggestions-input.element.ts" %}
 ```typescript
 #onTextTrim() {
   if (!this.maxLength) return;
@@ -74,13 +84,15 @@ Here we can use the NotificationContext's peek method. It has two parameters `Um
   }
 }
 ```
+{% endcode %}
 
 If our input length is less or equal to our maxLength configuration, we will now get a notification when pressing the Trim button.
 
 Let's add some more logic. If the length is more than the maxLength configuration, we want to show a dialog for the user to confirm the trim. Here we use the modal context's open method.
 
-4. Add the `open` method to the `#onTextTrim()`&#x20;
+2. Add the `open` method to the `#onTextTrim()`
 
+{% code title="suggestions-input.element.ts" %}
 ```typescript
 #onTextTrim() {
   ...
@@ -103,11 +115,13 @@ Let's add some more logic. If the length is more than the maxLength configuratio
   }, null);
 }
 ```
+{% endcode %}
 
 <details>
 
-<summary>See the entire file: <code>suggestions-property-editor-ui.element.ts</code> </summary>
+<summary>See the entire file: suggestions-property-editor-ui.element.ts</summary>
 
+{% code title="suggestions-input.element.ts" %}
 ```typescript
 import {
     LitElement,
@@ -273,6 +287,7 @@ declare global {
     }
 }
 ```
+{% endcode %}
 
 </details>
 
