@@ -2,6 +2,10 @@
 description: Instructions on installing preview builds of Umbraco.
 ---
 
+{% hint style="warning" %}
+This page is a work in progress. It will be updated as the software evolves.
+{% endhint %}
+
 # Installing Preview Builds
 
 In this article, we'll explain how you can get the latest builds of Umbraco. You can do this in three steps:

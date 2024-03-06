@@ -6,6 +6,11 @@ description: >-
 
 # Conditions
 
+{% hint style="warning" %}
+This page is a work in progress. It will be updated as the software evolves.
+{% endhint %}
+
+
 ### Using conditions
 
 In the following example we define the manifest for a Workspace Action, this action will only be available in the workspace with the alias `My.Example.Workspace`.

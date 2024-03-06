@@ -4,10 +4,6 @@ description: Learn about the recommended development environment to extend Umbra
 
 # Setup Your Development Environment
 
-{% hint style="warning" %}
-This page is a work in progress. It will be updated as the software evolves.
-{% endhint %}
-
 ## Required Software
 
 Make sure you have the following installed on your machine:

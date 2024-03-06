@@ -4,6 +4,10 @@ description: Make reactivity with Umbraco States
 
 # States
 
+{% hint style="warning" %}
+This page is a work in progress. It will be updated as the software evolves.
+{% endhint %}
+
 Umbraco States enables you to create [Observables](states.md#observables) based on a State. The Observables can then be observed, and when a change to the State occurs, all observers of Observables will be triggered.
 
 ### State types

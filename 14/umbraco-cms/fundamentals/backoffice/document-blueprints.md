@@ -4,6 +4,10 @@ description: >-
   Umbraco.
 ---
 
+{% hint style="warning" %}
+This page is a work in progress. It will be updated as the software evolves.
+{% endhint %}
+
 # Document Blueprints
 
 Document Blueprints allows a content editor to create a blueprint for new content nodes based on an existing node.

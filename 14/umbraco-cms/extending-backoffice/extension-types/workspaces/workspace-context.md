@@ -4,6 +4,10 @@ description: Establish an extension to communicate across the application.
 
 # Workspace Context
 
+{% hint style="warning" %}
+This page is a work in progress. It will be updated as the software evolves.
+{% endhint %}
+
 A Workspace context is a container for the data of a workspace. It is a wrapper around the data of the entity that the workspace is working on. It is responsible for loading and saving the data to the server. Workspace Contexts are used to bring additional context alongside the default context of a workspace.
 
 TODO: Extend the description of a workspace
