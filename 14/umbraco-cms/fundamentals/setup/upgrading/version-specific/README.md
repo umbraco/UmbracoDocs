@@ -34,7 +34,7 @@ Below you can find the list of breaking changes introduced in Umbraco 14.
 * [Migration from Newtonsoft.Json to the System.Text.Json which removes Nested Content and Grid value converter and so on](https://github.com/umbraco/Umbraco-CMS/pull/15728)
 * [Legacy media picker has been removed](https://github.com/umbraco/Umbraco-CMS/pull/15835)
 * [Macros have been removed](https://github.com/umbraco/Announcements/issues/14). Use partial views and/or blocks in the RTE.
-* package-manifest is now umbraco.package.json
+* [package-manifest is now umbraco.package.json](../../../../extending-backoffice/package-manifest.md)
 * New login screen
 * In-depth details can be found on [Our Release Notes](https://our.umbraco.com/download/releases/1400)
 
