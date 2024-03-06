@@ -103,16 +103,18 @@ declare global {
 ```
 {% endcode %}
 
-{% hint style="info" %}
-In the `vite.config.ts` file replace the `entry` to our newly created `.ts` file: `entry: "src/suggestions-property-editor-ui.element.ts".`
-{% endhint %}
+3.  In the `vite.config.ts` file replace the `entry` to our newly created `.ts` file:
+
+    ```typescript
+    entry: "src/suggestions-property-editor-ui.element.ts"
+    ```
 
 Now our basic parts of the editor are done, namely:
 
 * The package manifest, telling Umbraco what to load
 * The web component for the editor
 
-3. Restart the application.
+4. Restart the application.
 
 ## Registering the Data Type in Umbraco
 
@@ -122,7 +124,7 @@ Now our basic parts of the editor are done, namely:
 
 We can now edit the assigned property's value with our new property editor.
 
-We should now have a property editor that looks like this:
+2. Check out the content where you will see the property editor that looks like this:
 
 <figure><img src="../../.gitbook/assets/NewPropertyEditor (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -167,7 +169,7 @@ render() {
 {% endcode %}
 
 {% hint style="info" %}
-The Umbraco UI library is already a part of the backoffice, which means we can start using it
+The Umbraco UI library is already a part of the backoffice, which means we can start using it.
 {% endhint %}
 
 2. Add some styling. Update the import from lit to include CSS:
