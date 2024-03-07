@@ -53,6 +53,11 @@ You can purchase the license at [Umbraco Forms Licenses](https://umbraco.com/pro
 
 When you've bought a license you need to configure it with your domains. You can either configure your license right away or you can do it later by visiting your account on Umbraco.com.
 
+### Reconfiguration of domains
+
+Once a license has been configured with the domains, it is not possible to reconfigure them. An exception is when there is a mistake in the domain URL.
+As reconfiguration is not possible, you will either need to purchase an additional domain or a new license.
+
 ## Installing your license
 
 Once you've configured your license with the correct domains, you are ready to install the license on your Umbraco installation.
