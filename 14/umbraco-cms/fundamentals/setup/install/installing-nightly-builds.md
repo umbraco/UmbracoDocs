@@ -151,4 +151,4 @@ With that, we've successfully installed the latest nightly build of Umbraco.
 
 All we have to do now is to create a site using the `dotnet new umbraco -n MyAwesomeNightlySite` command.
 
-For more information about installing Umbraco, see the [Installation](./)article.
+For more information about installing Umbraco, see the [Installation](./) article.
