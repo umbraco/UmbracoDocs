@@ -209,7 +209,7 @@ import {
 } from "@umbraco-cms/backoffice/notification";
 
 @customElement("my-typescript-element")
-export default class MyElement extends UmbElementMixin(LitElement) {
+export default class MyTypeScriptElement extends UmbElementMixin(LitElement) {
     #notificationContext?: UmbNotificationContext;
 
     constructor() {
