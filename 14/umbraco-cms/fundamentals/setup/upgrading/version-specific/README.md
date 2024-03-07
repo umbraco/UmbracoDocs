@@ -37,6 +37,7 @@ Below you can find the list of breaking changes introduced in Umbraco 14.
 * [package-manifest is now umbraco.package.json](../../../../extending-backoffice/package-manifest.md)
 * [Smidge has been removed from default installation](https://github.com/umbraco/Umbraco-CMS/pull/15788). Can be manually installed if needed.
 * New login screen
+* In the backoffice from your profile information you can now choose Light, Dark or Contract mode for the backoffice.
 
 **In-depth and further breaking changes for v14 can be found on the** [**CMS Github**](https://github.com/umbraco/Umbraco-CMS/pulls?q=is%3Apr+base%3Av14%2Fdev+label%3Acategory%2Fbreaking) **repository.**
 
