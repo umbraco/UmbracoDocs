@@ -4,7 +4,7 @@ description: Get started with the Management API.
 
 # Management API
 
-The Management API delivers headless capabilities built directly into Umbraco. In comparison with the Content Delivery API, Management API allows you to interact with everything else from the backoffice apart from the content and media items. You can then receive responses in a JSON format and lets you preset them in different channels, using your preferred technology stack. This feature preserves the friendly editing experience of Umbraco, while also ensuring a performant delivery of content in a headless fashion. And with its different extension points, you can tailor this API to fit a broad range of requirements.
+The Management API delivers headless capabilities built directly into Umbraco. In comparison with the Content Delivery API, Management API allows interaction with everything else from the backoffice apart from the content and media items. You can then receive responses in a JSON format and lets you preset them in different channels, using your preferred technology stack. This feature preserves the friendly editing experience of Umbraco, while also ensuring a performant delivery of content in a headless fashion. And with its different extension points, you can tailor this API to fit a broad range of requirements.
 
 The Management API can also be used for custom apps or workflows with OpenID Connect.
 
