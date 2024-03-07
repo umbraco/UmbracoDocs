@@ -26,7 +26,7 @@ public bool HasDomain { get; }
 public DomainAndUri Domain { get; }
 public CultureInfo Culture { get; }
 ```
-Domain is a DomainAndUri object that is a standard Domain plus the fully qualified uri. For example, the Domain may contain "example.com" whereas the Uri will be fully qualified e.g. "https://example.com/".
+Domain is a DomainAndUri object that is a standard Domain plus the fully qualified uri. For example, the Domain may contain "example.com" whereas the Uri will be fully qualified for example "https://example.com/".
 
 It contains the content to render:
 
