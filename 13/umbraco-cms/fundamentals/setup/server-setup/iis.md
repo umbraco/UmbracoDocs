@@ -6,7 +6,7 @@ description: Information on hosting Umbraco on IIS
 
 ## Configuring IIS for .NET
 
-* Install the [ASP.NET Core Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) and download the **Hosting Bundle**.
+* Install the [ASP.NET Core Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/) and download the **Hosting Bundle**. Ensure you download the correct version for your specific version of Umbraco.
 * Restart IIS (`net stop was /y` followed by `net start w3svc`)
 * Create a site in IIS and ensure that the .NET Common Language Runtime (CLR) version is set to `No Managed Code` for the Application Pool.
 
