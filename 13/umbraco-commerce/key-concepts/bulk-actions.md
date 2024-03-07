@@ -131,6 +131,6 @@ angular.module('umbracoCommerce')
                 sortOrder: 110
             }
         }]);
-    }]):
+    }]);
 
 ```

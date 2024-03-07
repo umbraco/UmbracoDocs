@@ -56,7 +56,7 @@ angular.module('umbracoCommerce')
                 sortOrder: 110
             }
         }]);
-    }]):
+    }]);
 
 ```
 
@@ -131,6 +131,6 @@ angular.module('umbracoCommerce')
                 sortOrder: 110
             }
         }]);
-    }]):
+    }]);
 
 ```
