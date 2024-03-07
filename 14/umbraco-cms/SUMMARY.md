@@ -55,6 +55,12 @@
   * [Route Registration](extending-backoffice/modals/route-registration.md)
 * [Sorting](extending-backoffice/sorting.md)
 
+## Reference
+
+* [Management API](./reference/management-api/README.md)
+  * [Setup Authorization in Postman](./reference/management-api/postman-setup-swagger.md)
+* [Custom Swagger API](./reference/custom-swagger-api.md)
+
 ## Tutorials
 
 * [Creating a Basic Website](tutorials/creating-a-basic-website/README.md)
