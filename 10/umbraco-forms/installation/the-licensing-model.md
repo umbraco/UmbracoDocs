@@ -56,7 +56,7 @@ When you've bought a license you need to configure it with your domains. You can
 ### Reconfiguration of domains
 
 Once a license has been configured with the domains, it is not possible to reconfigure them. An exception is when there is a mistake in the domain URL.
-As reconfiguration is not possible, you will either need to purchase an additional domain or a new license.
+As reconfiguration is not possible, you will either need to purchase an additional domain or a [new license](https://umbraco.com/products/umbraco-forms/).
 
 ## Installing your license
 
