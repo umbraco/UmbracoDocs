@@ -145,7 +145,7 @@ Be aware that any files in the `App_Plugins` folder are publicly available. If y
 npm create vite@latest my-typescript-extension -- --template lit-ts
 ```
 
-This sets up our new project in a folder named `my-extension` and creates a `package.json` file, which includes the necessary packages.
+This sets up our new project in a folder named `my-typescript-extension` and creates a `package.json` file, which includes the necessary packages.
 
 2. Navigate to the new `my-typescript-extension` project folder and install the packages using:
 
