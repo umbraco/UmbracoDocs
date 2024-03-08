@@ -215,4 +215,4 @@ GET /api/v1/my/say-hello
 
 ![Trying out the endpoint](./images/custom-api-swagger-example-response.png)
 
-Here we get the response we have setup via code: `"Hello, {{userName}}"`.
+We now get the response we have setup using the code: `"Hello, {{userName}}"`.
