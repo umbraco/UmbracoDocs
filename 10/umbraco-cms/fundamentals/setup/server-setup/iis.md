@@ -7,7 +7,7 @@ description: Information on hosting Umbraco v9+ on IIS
 
 ## Configuring IIS for .NET 5
 
-* Install the ["ASP.NET Core Runtime"](https://dotnet.microsoft.com/en-us/download/dotnet/) and download the **Hosting Bundle**. Ensure you download the correct .NET version as per the [requirements](../requirements.md).
+* Install the [".NET Core Runtime"](https://dotnet.microsoft.com/en-us/download/dotnet/) and download the **Hosting Bundle**. Ensure you download the correct .NET version as per the [requirements](../requirements.md).
 * Once you have the hosting bundle installed and have restarted IIS (`net stop was /y` followed by `net start w3svc`), create a site in IIS as you would for a v8 site, however you need to ensure that ".NET CLR version" is set to "No Managed Code" for the Application Pool.
 
 ![IIS Application Pool](images/iis-app-pool-core.png)
