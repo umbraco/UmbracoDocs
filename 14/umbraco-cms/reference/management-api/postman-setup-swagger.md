@@ -80,7 +80,7 @@ Now let's setup a new token:
 {{baseUrl}}/umbraco/management/api/v1/security/back-office/authorize
 ```
 
-5. On **Access Token URL** add:
+5. Add the following on **Access Token URL**:
 
 ```http
 {{baseUrl}}/umbraco/management/api/v1/security/back-office/token
