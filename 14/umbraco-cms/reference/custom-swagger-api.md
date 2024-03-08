@@ -10,7 +10,7 @@ This example can be a starting point for creating a secure custom API in the Swa
 
 {% hint style="info" %}
 
-Before following this guide familiarize yourself with the [Management API](./management-api/README.md) article. There you can read more about the Swagger documentation and Authorization which will be used in this article.
+Before  proceeding, make sure to read the [Management API](./management-api/README.md) article. It provides information about the Swagger documentation and Authorization used in this article.
 
 {% endhint %}
 
