@@ -65,7 +65,7 @@ You can see an example of how to setup OAuth2 with Postman in the [Swagger Setup
 
 ## Test an Endpoint
 
-In order to test a Management API endpoint, follow these steps: , authorize localhost then click on the first endpoint , execute check response 200- then click
+To test a Management API endpoint, follow these steps:
 
 1. Authenticate via the **Authorize** button. On a development environment you need only a `client_id` which has a default value of `umbraco-swagger` to login. Then click **Authorize** and you will be logged in:
 
