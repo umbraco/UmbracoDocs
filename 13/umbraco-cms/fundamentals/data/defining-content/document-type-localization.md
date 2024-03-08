@@ -28,6 +28,8 @@ User defined language files are created in `/config/lang` and must be named `{la
 
 There are no specific requirements as to how localizations should be structured for use in Document Types. The following localizations have been used for the samples in this article:
 
+
+{% code title="en-us.user.xml" lineNumbers="true" %}
 ```xml
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <language>
@@ -52,7 +54,8 @@ There are no specific requirements as to how localizations should be structured 
         <key alias="subTitle-desc">This is the sub title of the page.</key>
     </area>
 </language>
-```
+```{% endcode %}
+
 
 {% hint style="info" %}
 
