@@ -87,7 +87,7 @@ Now let's setup a new token:
 ```
 
 6.  Add `umbraco-postman` on **Client ID**.
-7. On **Code Challenge Method** choose `SHA-256`.
+7. Choose `SHA-256` from **Code Challenge Method** . 
 8. On **Client Authentication** choose `Send Client credentials in body`.
 9. Any other field should be empty or auto-filled by default. **Save** and then:
 
