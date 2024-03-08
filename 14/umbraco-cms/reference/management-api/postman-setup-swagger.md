@@ -86,7 +86,7 @@ Now let's setup a new token:
 {{baseUrl}}/umbraco/management/api/v1/security/back-office/token
 ```
 
-6. On **Client ID** add `umbraco-postman`.
+6.  Add `umbraco-postman` on **Client ID**.
 7. On **Code Challenge Method** choose `SHA-256`.
 8. On **Client Authentication** choose `Send Client credentials in body`.
 9. Any other field should be empty or auto-filled by default. **Save** and then:
