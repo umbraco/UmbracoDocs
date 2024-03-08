@@ -5,7 +5,7 @@ description: Ask the user for confirmation
 # Confirm Dialog
 
 {% hint style="warning" %}
-This page is a work in progress.&#x20;
+This page is a work in progress.
 {% endhint %}
 
 ## Basic Usage
@@ -29,7 +29,7 @@ export class MyElement extends UmbElementMixin(LitElement) {
 
     #onRequestDisable() {
         const modalContext = this.#modalManagerContext?.open(
-            UMB_CONFIRM_MODAL,
+            this, UMB_CONFIRM_MODAL,
             {
                 data: {
                     headline: `${this.localize.term("actions_disable")}`,
@@ -68,7 +68,7 @@ The confirm modal itself is built-in and does not need to be registered in the e
 
 The modal token describes the options that you can pass to the modal. The confirm modal token has the following properties:
 
-- `headline` - The headline of the modal.
-- `content` - The content of the modal, which can be a TemplateResult or a string.
-- `color` - (Optional) The color of the modal. This can be `positive` or `danger`.
-- `confirmLabel` - (Optional) The label of the confirm button.
+* `headline` - The headline of the modal.
+* `content` - The content of the modal, which can be a TemplateResult or a string.
+* `color` - (Optional) The color of the modal. This can be `positive` or `danger`.
+* `confirmLabel` - (Optional) The label of the confirm button.

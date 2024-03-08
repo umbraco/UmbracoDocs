@@ -1,9 +1,10 @@
 ---
 description: >-
-    New modals can be added to the system via the extension registry. This article goes through how this is done.
+  New modals can be added to the system via the extension registry. This article
+  goes through how this is done.
 ---
 
-# Create and register a custom modal
+# Custom Modals
 
 There are two parts to creating a custom modal. First, you need to create a modal element which you need to register in the extension registry. Second, you need to create and export a modal token.
 
@@ -11,7 +12,6 @@ There are two parts to creating a custom modal. First, you need to create a moda
 
 A modal token is a string that identifies a modal. This is the modal extension alias. It is used to open a modal and is also to set default options for the modal. It should also have a unique alias to avoid conflicts with other modals.
 
-{% code title="my-modal.token.ts %}
 ```ts
 import { UmbModalToken } from "@umbraco-cms/backoffice/modal";
 
@@ -30,7 +30,6 @@ export const MY_MODAL_TOKEN = new UmbModalToken<MyModalData, MyModalValue>('My.M
     }
 });
 ```
-{% endcode %}
 
 A modal token is a generic type that takes two type arguments. The first is the type of the data that is passed to the modal when it is opened. The second is the type of the value that is returned when the modal is closed.
 
@@ -125,7 +124,7 @@ class MyElement extends UmbElementMixin(LitElement) {
     }
 
     private _openModal() {
-        this.#modalManagerContext?.open(MY_MODAL_TOKEN, {
+        this.#modalManagerContext?.open(this, MY_MODAL_TOKEN, {
             data: {
                 headline: "My modal headline",
             },
