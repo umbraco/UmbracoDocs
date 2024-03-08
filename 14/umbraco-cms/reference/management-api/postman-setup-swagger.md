@@ -96,7 +96,7 @@ Now let's setup a new token:
 
 # Get a token for a new user
 
-1. In the **Umbraco Management API** collection click on **Authorization** tab.
+1. Click on **Authorization** tab in the **Umbraco Management API** collection .
 2. At the bottom of the page, above the **Get New Access Token**, click on `Clear Cookies`.
 3. Open your localhost instance of Umbraco in the browser. Example: `https://localhost:44331`.
 4. Inspect the page, go to **Application** tab and clear the `UmbracoBackOffice` cookie.
