@@ -36,7 +36,7 @@ This guide covers the following:
 
 ![Postman import JSON file as collection](../images/postman-setup-swagger-import.png)
 
-Once imported you will see a new collection called **Umbraco Management API**.
+Once imported, you will see a new collection called **Umbraco Management API**.
 
 # Setup Authorization
 
