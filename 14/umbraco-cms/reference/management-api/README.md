@@ -35,7 +35,7 @@ Then a popup will appear with some setup information and login form for authoriz
 
 ![Umbraco Management API Authorize Login](../images/management-api-swagger-authorize-instructions.png)
 
-The available integration for the authorization is done via a backoffice user with the integration of **OAuth2, authorizationCode with PKCE**. If you are working on a production environment, you will need to setup an OAuth2 integration with the following Umbraco Authentication specifications:
+The available integration for the authorization is done via a backoffice user with the integration of `OAuth2, authorizationCode with PKCE`. If you are working on a production environment, you will need to setup an OAuth2 integration with the following Umbraco Authentication specifications:
 
 **Authorization URL**
 
