@@ -21,7 +21,7 @@ From the Swagger documentation you can select a definition to navigate to Umbrac
 
 ![Umbraco Management API documentation in Swagger](../images/management-api-swagger.png)
 
-In the Swagger Umbraco Management API you can find a collection of the available endpoints in this version of Umbraco. It also includes all the legacy APIs that are available for backward compatibility.
+In the Swagger Umbraco Management API, you can find a collection of available endpoints in this version of Umbraco. It also includes all the legacy APIs that are available for backward compatibility.
 
 ## Authorization
 
