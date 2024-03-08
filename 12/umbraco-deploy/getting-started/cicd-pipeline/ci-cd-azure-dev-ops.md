@@ -30,6 +30,13 @@ Firstly a web deployment (#4), takes the packaged build artifact and deploys it,
 
 The final step (#5) is Umbraco Deploy specific - to call a function defined in the PowerShell script and trigger the extraction. Replace `ApiSecret` with `ApiKey` if you're using the deprecated API key setting instead.
 
+{% hint style="info" %} 
+The Microsoft docs contains useful information, if you are unsure on how to set secrets for your pipeline:
+[Set secret variables](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/set-secret-variables?view=azure-devops&tabs=yaml%2Cbash)
+
+[Protecting secrets in Azure Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/security/secrets?view=azure-devops)
+{% endhint %}
+
 ## Full Example
 
 ```yaml
