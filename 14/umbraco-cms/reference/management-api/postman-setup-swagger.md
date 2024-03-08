@@ -73,7 +73,7 @@ Now let's setup a new token:
 
 1. Add a **Token name** called `BackofficeSwagger` under **Configure New Token**. The token name can be anything.
 2.  Choose `Authorization Code (With PKCE)` from **Grant Type**.
-3. On **Callback URL** click to enable `Authorize using browser`.
+3. Click to enable `Authorize using browser` on **Callback URL**.
 4.  Add the following on **Auth URL**:
 
 ```http
