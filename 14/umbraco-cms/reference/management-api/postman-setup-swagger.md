@@ -71,7 +71,7 @@ In the **Umbraco Management API** collection click on **Authorization** tab and 
 
 Now let's setup a new token:
 
-1. Under **Configure New Token** add a **Token name** called `BackofficeSwagger` (Can be anything).
+1. Add a **Token name** called `BackofficeSwagger` under **Configure New Token**. The token name can be anything.
 2. On **Grant Type** choose `Authorization Code (With PKCE)`.
 3. On **Callback URL** click to enable `Authorize using browser`.
 4.  Add the following on **Auth URL**:
