@@ -22,7 +22,7 @@ Once it has been added, we can start building our UI for our editors.
 
 Since we are showing our editors their recently edited content nodes on this dashboard, it makes sense to use the [Content Node Card](https://uui.umbraco.com/?path=/docs/uui-card-content-node--aaa-overview):
 
-![Content Node Card](../../../../new-backoffice/.gitbook/assets/uiLibraryCard.png)
+![Content Node Card](<../../../../14/umbraco-cms/tutorials/images/uiLibraryCard (1).png>)
 
 1. Wrap our unordered list and its content in the `<uui-card-content-node>` so it will look like this:
 
@@ -38,7 +38,7 @@ Since we are showing our editors their recently edited content nodes on this das
 ```
 {% endcode %}
 
-Make sure that the card shows the name of the content nodes that the editors recently worked with.&#x20;
+Make sure that the card shows the name of the content nodes that the editors recently worked with.
 
 2. Replace _"The card"_ value of the `name` property in the `<uui-card-content-node>` with `{{logEntry.Content.name}}` so it will look like this:
 
@@ -70,7 +70,7 @@ At this point, the code looks like this:
 ```
 {% endcode %}
 
-We want the editors to go directly to the content node,&#x20;
+We want the editors to go directly to the content node,
 
 4. Move the `<a href="/Umbraco/#/{{logEntry.editUrl}}">{{logEntry.Content.name}} <span ng-if="logEntry.comment">- {{logEntry.comment}}</span></a>` line down under the `<uui-card-content-node>`.
 5. Add some text to the `<a>` tag like _"click here"_ or _"See Node"._
@@ -175,4 +175,4 @@ uui-card-content-node {
 
 Once it has been added, we are done and it should look something like this:
 
-<figure><img src="../../../../new-backoffice/.gitbook/assets/extendedWithUiLibrary.png" alt=""><figcaption><p>Custom Dashboard extended with UI Library Card</p></figcaption></figure>
+<figure><img src="../../../../14/umbraco-cms/tutorials/images/extendedWithUiLibrary (1).png" alt=""><figcaption><p>Custom Dashboard extended with UI Library Card</p></figcaption></figure>
