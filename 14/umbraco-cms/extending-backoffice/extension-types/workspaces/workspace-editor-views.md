@@ -10,6 +10,8 @@ This page is a work in progress. It will be updated as the software evolves.
 
 Previously known as Content Apps, now generalized with the ability to take place in any workspace.
 
+<figure><img src="../../../.gitbook/assets/workspace-views.svg" alt=""><figcaption><p>Workspace Views</p></figcaption></figure>
+
 **Manifest**
 
 <pre class="language-json"><code class="lang-json">{

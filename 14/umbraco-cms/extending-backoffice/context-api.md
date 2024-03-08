@@ -4,9 +4,15 @@ description: Communicate across different boundaries with the Context API
 
 # Context API
 
+{% hint style="warning" %}
+This page is a work in progress. It will be updated as the software evolves.
+{% endhint %}
+
 The Context API enables receiving APIs. Depending on where your code is executed from, it affects which and what instances of APIs can be received.
 
 The Context API enables an element or a controller to receive an API provided via any ascending element. In other words, it can receive APIs provided via a parent element or parent of a parent element, and so forth.
+
+The Context API enables connections between Elements and APIs. DOM structure defines the context of which an API is exposed for. APIs are provided via an element and can then be consumed by any decending element.
 
 ## Consume a Context API
 
@@ -120,10 +126,10 @@ The consumption of the Additional API will never happen as the token uses the sa
 ### **Context Token with a Type Discriminator**
 
 {% hint style="info" %}
-Discriminator only gives value for consumption of Context APIs that have a varying interface. Backoffice uses this for the different types of Workspace Contexts.
+This is only relevant if you are going to make multiple context API for the same context. Discriminator only gives value for consumption of Context APIs that have a varying interface. The backoffice uses this for the different types of Workspace Contexts.
 {% endhint %}
 
-In some cases, it is needed to have different APIs for the same context. For example, the [Workspace Contexts](../extension-types/workspaces/workspace-context.md).
+In some cases, it is needed to have different APIs for the same context. For example, the [Workspace Contexts](extension-types/workspaces/workspace-context.md).
 
 If someone wants the workspace name, they might not care about the specific API of the Workspace Context. These implementations can use a standard Context Token with a type of generic Workspace Context.
 

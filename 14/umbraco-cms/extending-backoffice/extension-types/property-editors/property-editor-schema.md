@@ -12,6 +12,8 @@ The Property Editor Schema is server code, written in C#. This handles the stora
 
 ### Property Editor Schema
 
+The Property Editor Schema settings are used for configuration that the server needs to know about.
+
 **Manifest**
 
 ```json

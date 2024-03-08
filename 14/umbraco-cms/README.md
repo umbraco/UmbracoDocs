@@ -21,6 +21,7 @@ The new Backoffice for Umbraco CMS is scheduled for release along with Umbraco 1
 3. [Creating your first extension](tutorials/creating-a-basic-website/creating-your-first-template-and-content-node.md)
 4. [Creating a custom dashboard](tutorials/creating-a-custom-dashboard.md)
 5. [Creating a property editor](tutorials/creating-a-property-editor/)
+6. [Terminology](extending-backoffice/customize-backoffice.md#terminology)
 
 ### Breaking Changes
 
@@ -34,15 +35,15 @@ Below you will find a list of new and updated articles for Umbraco 14.
 
 The list will be updated as more articles have been created and updated.
 
-* FUNDAMENTALS:
-  * SETUP
+* **FUNDAMENTALS**:
+  * **SETUP**
     * Installation
       * [Installing Preview Builds](fundamentals/setup/install/preview-builds.md)
     * Upgrade your project
       * [Version specific upgrades](fundamentals/setup/upgrading/version-specific/)
-  * BACKOFFICE:
+  * **BACKOFFICE**:
     * [Document Blueprints](fundamentals/backoffice/document-blueprints.md)
-* EXTENDING BACKOFFICE (new section)
+* **EXTENDING BACKOFFICE (new section)**
   * [Customize Backoffice](extending-backoffice/customize-backoffice.md)
   * [Setup Your Development Environment](extending-backoffice/development-flow/)
     * [Vite Package Setup](extending-backoffice/development-flow/vite-package-setup.md)
@@ -53,8 +54,8 @@ The list will be updated as more articles have been created and updated.
   * [Umbraco Element](extending-backoffice/umbraco-element/)
     * [Controllers](extending-backoffice/umbraco-element/controllers/)
       * [Write your own Controller](extending-backoffice/umbraco-element/controllers/write-your-own-controller.md)
-  * [Context API](extending-backoffice/context-api/)
-    * [Variant Context](extending-backoffice/context-api/variant-context.md)
+  * [Context API](extending-backoffice/context-api.md)
+  * [Property Dataset Context](extending-backoffice/variant-context.md)
   * [Localization](extending-backoffice/localization/)
     * [.NET Localization](extending-backoffice/localization/net-localization.md)
     * [UI Localization](extending-backoffice/localization/ui-localization.md)
@@ -65,7 +66,9 @@ The list will be updated as more articles have been created and updated.
     * [Custom Modals](extending-backoffice/modals/custom-modals.md)
     * [Route Registration](extending-backoffice/modals/route-registration.md)
   * [Sorting](extending-backoffice/sorting.md)
-* TUTORIALS:
+  * [Trees](extending-backoffice/trees.md)
+  * [Menu](extending-backoffice/menu.md)
+* **TUTORIALS**:
   * [Create your first extension](tutorials/creating-your-first-extension.md)
   * [Creating a Custom Dashboard](tutorials/creating-a-custom-dashboard/)
   * [Creating a Property Editor](tutorials/creating-a-property-editor/)

@@ -26,7 +26,7 @@ interface UmbWorkspaceContext {}
 
 ## Example of Workspace
 
-TODO: link to all workspaces in storybook. Can we somehow auto-generate this list?
+TODO: link to all [workspaces ](https://apidocs.umbraco.com/v14/ui/?path=/docs/umb-data-type-workspace--docs)in storybook. Can we somehow auto-generate this list?
 
 ## Example of Workspace Context
 
@@ -87,4 +87,4 @@ export const UMB_APP_CONTEXT = new UmbContextToken<MyContextCounterApi>(
 );
 ```
 
-We recommend using `UmbWorkspaceContext` as the Context Alias for your Context Token. This will ensure that the requester only retrieves this Context if it's present at their nearest Workspace Context. Use the Extension Manifest Alias as the API Alias for your Context Token. For more information, see the [Context API](../../context-api/) article.
+We recommend using `UmbWorkspaceContext` as the Context Alias for your Context Token. This will ensure that the requester only retrieves this Context if it's present at their nearest Workspace Context. Use the Extension Manifest Alias as the API Alias for your Context Token. For more information, see the [Context API](../../context-api.md) article.

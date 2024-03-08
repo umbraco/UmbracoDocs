@@ -60,4 +60,4 @@ The entry point declares a single JavaScript file that will be loaded and run wh
 
 The `entryPoint` extension is also the way to go if you want to load in external libraries such as jQuery, Angular, React, etc. You can use the `entryPoint` to load in the external libraries to be shared by all your extensions. Loading **global CSS files** can also be used in the `entryPoint` extension.
 
-Read more about the `entryPoint` extension type in the [Entry Point](entry-point.md) article.
+Read more about the `entryPoint` extension type in the [Entry Point](extension-types/entry-point.md) article.

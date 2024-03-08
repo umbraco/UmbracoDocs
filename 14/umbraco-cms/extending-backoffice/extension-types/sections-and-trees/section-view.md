@@ -7,8 +7,10 @@ description: >-
 # Section View
 
 {% hint style="warning" %}
-This page is a work in progress.&#x20;
+This page is a work in progress.
 {% endhint %}
+
+<figure><img src="../../../.gitbook/assets/section-views.svg" alt=""><figcaption><p>Section View</p></figcaption></figure>
 
 **Manifest**
 

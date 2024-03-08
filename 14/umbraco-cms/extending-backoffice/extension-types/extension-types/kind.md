@@ -2,17 +2,19 @@
 description: A kind extension provides the preset for other extensions to use
 ---
 
+# Kind
+
 {% hint style="warning" %}
 This page is a work in progress. It will be updated as the software evolves.
 {% endhint %}
 
-# Kind
+## Kind
 
 A kind is matched with a specific type. When another extension uses that type and kind it will inherit the preset manifest of the kind extension.
 
-The registration of Kinds is done in the same manner as the registration of other extensions. But the format of it is different. Let's take a look at an example of how to implement  the `Kind registration` for a **Header App Button Kind**.
+The registration of Kinds is done in the same manner as the registration of other extensions. But the format of it is different. Let's take a look at an example of how to implement the `Kind registration` for a [**Header App**](../header-apps.md) **Button Kind**.
 
-### Kind example
+#### Kind example
 
 In the following example, a kind is registered. This kind provides a default element for extensions utilizing this kind.
 
@@ -54,7 +56,7 @@ const manifest = {
 extensionRegistry.register(extension);
 ```
 
-### Understanding the Kind Extension
+#### Understanding the Kind Extension
 
 The root properties of this object define the `Kind registration`. Then the manifest property holds the preset for the extension using this kind to be based upon. This object can hold the property values that make sense for the Kind.
 

@@ -19,13 +19,17 @@ TODO: extend the description of a workspace
 * A workspace can be a single view or consist of multiple views.
 * A workspace should host a workspace context, of which anything within can communicate with.
 
+<figure><img src="../../../.gitbook/assets/workspace.svg" alt=""><figcaption><p>Workspace</p></figcaption></figure>
+
 ```ts
 // TODO: get typescript interface
 interface UmbWorkspaceElement {}
 ```
 
-### The Workspace Context
+## The Workspace Context
 
-Read more about Workspace Context
+Read more about [Workspace Context](workspace-context.md)
 
-### Examples of workspaces:
+### Examples of workspaces
+
+TODO: link to all workspaces in storybook. Can we somehow auto-generate this list?
