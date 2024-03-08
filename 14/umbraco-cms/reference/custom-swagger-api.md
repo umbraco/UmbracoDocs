@@ -14,7 +14,7 @@ Before  proceeding, make sure to read the [Management API](./management-api/READ
 
 {% endhint %}
 
-1. In an Umbraco v14+ installation, create at the root of the project a new `.cs` file called `MyBackOfficeSecurityRequirementsOperationFilter`.
+1. Create a new `.cs` file called `MyBackOfficeSecurityRequirementsOperationFilter` at the root of the project in an Umbraco v14+ installation.
 
 2. Then add the following code so that the new API shows in the Swagger documentation and Swagger UI:
 
