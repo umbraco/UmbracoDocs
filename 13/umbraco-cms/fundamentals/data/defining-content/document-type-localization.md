@@ -65,16 +65,21 @@ Umbraco must be restarted to pick up on changes to language files.
 
 ## Applying localizations
 
-The localizations are applied by using the syntax `#{area alias}_{key alias}`:
+The localizations are applied by using the syntax `#{area alias}_{key alias}`. 
+
+1. Create a Document Type with template that looks like this:
 
 ![Applying localization to a Document Type](../images/localization-document-type-editor.png)
 
+2. Set the first property as mandatory:
+
 ![Applying localization to a property](../images/localization-document-type-editor-validation.png)
 
-When creating and editing documents, the backoffice now uses the configured localizations:
+3. When creating and editing the content, you will see that the backoffice now uses the configured localizations:
 
 ![Localized document creation dialog](../images/localization-document-editor-create.png)
 
+4. When trying to save the content without adding the mandatory content, you will see a warning as expected:
 ![Localized document editing](../images/localization-document-editor.png)
 
 ![Localized property validation](../images/localization-document-editor-validation.png)
