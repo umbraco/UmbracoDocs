@@ -88,7 +88,7 @@ Now let's setup a new token:
 
 6.  Add `umbraco-postman` on **Client ID**.
 7. Choose `SHA-256` from **Code Challenge Method** . 
-8. On **Client Authentication** choose `Send Client credentials in body`.
+8.  Choose `Send Client credentials in body` from **Client Authentication**.
 9. Any other field should be empty or auto-filled by default. **Save** and then:
 
 * Click on **Get New Access Token**. Then a window will popup to authenticate into the Backoffice. Follow the given instructuction to **Open in Postman**.
