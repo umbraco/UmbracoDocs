@@ -123,4 +123,5 @@ When making a request for the first time, follow these steps:
 
 1. Click on the **Authorization** tab in the **Umbraco Management API** collection.
 2. Choose `Inherit auth from parent` from **Type**.
-* Disable any parameters you are not using as Postman sets their value to default sometimes.
+3. Disable any parameters you are not using as Postman sets their value to default sometimes.
+4. Click **Save**
