@@ -42,7 +42,7 @@ Once imported you will see a new collection called **Umbraco Management API**.
 
 ## Setup Variables Values
 
-1. In the **Umbraco Management API** collection click on **Variables** tab.
+1. Click on **Variables** tab in the **Umbraco Management API** collection.
 2. Add a new variable called `baseUrl` and in the **Initial** and **Current** values add your URL, which in this example we use the `localhost URL` (without trailing slashes):
 
 ```http
