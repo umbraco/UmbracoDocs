@@ -30,7 +30,9 @@ This guide covers the following:
 ![JSON file location](../images/postman-setup-swagger-json-file.png)
 
 4. Save the JSON file to disk. The name of the file will be saved by default with the name of `swagger.json`.
-5. In Postman, click to [create a new collection](https://learning.postman.com/docs/collections/using-collections/#creating-collections). Then import the `swagger.json` file and choose **Postman Collection** when prompted.
+5. Click to [create a new collection](https://learning.postman.com/docs/collections/using-collections/#creating-collections) in Postman.
+6. Import the `swagger.json` file.
+7. Choose **Postman Collection** when prompted.
 
 ![Postman import JSON file as collection](../images/postman-setup-swagger-import.png)
 
