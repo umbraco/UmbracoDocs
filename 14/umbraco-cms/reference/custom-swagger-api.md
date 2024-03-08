@@ -203,7 +203,7 @@ public class MyApiController : Controller
 
 ![Created Custom API in Swagger Documentation](./images/custom-api-swagger-example.png)
 
-Here we can find the endpoint that we have created:
+Here, we can find the endpoint that we created:
 
 ```http
 GET /api/v1/my/say-hello
