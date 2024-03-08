@@ -64,7 +64,7 @@ In the **Umbraco Management API** collection click on **Authorization** tab and 
 1. On **Type** choose `OAuth 2.0`
 2. Check if those attributes are setup:
 
-* **Add auth data** to is set to `Request Headers`
+* **Add auth data** is set to `Request Headers`
 * **Auto-refresh token** is `Disabled`
 
 ### Configure Token
