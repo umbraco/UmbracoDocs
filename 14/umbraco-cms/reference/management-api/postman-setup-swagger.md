@@ -92,7 +92,8 @@ Now let's setup a new token:
 9. Any other field should either be empty or auto-filled by default. 
 10. Click **Save**.
 
-* Click on **Get New Access Token**. Then a window will popup to authenticate into the Backoffice. Follow the given instructuction to **Open in Postman**.
+11. Click on **Get New Access Token**. 
+A window appears to authenticate into the Backoffice. Follow the given instruction to **Open in Postman**.
 * Then in Postman you will see a new **Manage access tokens** window. Click **Use Token**.
 
 # Get a token for a new user
