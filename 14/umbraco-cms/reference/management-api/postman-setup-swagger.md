@@ -108,7 +108,7 @@ When trying to obtain a token you might run into an error when trying to obtain 
 
 ## SSL Certificate verification
 
-When requesting a token, you might get an error that when viewed in the console states: `Error: unable to verify the first certificate`.
+When requesting a token, you might get an error that reads `Error: unable to verify the first certificate` in the console.
 To resolve this, next to **Invite** button, click on the **Settings** cog wheel in top right corner:
 
 ![Postman Cog Wheel Location](../images/postman-setup-swagger-cog-wheel.png)
