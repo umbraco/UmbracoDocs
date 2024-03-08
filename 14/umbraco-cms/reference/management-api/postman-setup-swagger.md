@@ -97,7 +97,7 @@ Now let's setup a new token:
 # Get a token for a new user
 
 1. Click on **Authorization** tab in the **Umbraco Management API** collection .
-2. At the bottom of the page, above the **Get New Access Token**, click on `Clear Cookies`.
+2. Click on `Clear Cookies` at the bottom of the page above the **Get New Access Token**.
 3. Open your localhost instance of Umbraco in the browser. Example: `https://localhost:44331`.
 4. Inspect the page, go to **Application** tab and clear the `UmbracoBackOffice` cookie.
 5. Go to Postman and click on **Get New Access Token** and once authenticated click on **Use Token**.
