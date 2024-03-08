@@ -121,5 +121,6 @@ Click on **Settings** and disable `SSL certificate verification`.
 
 When making a request for the first time, follow these steps:
 
-* In the **Umbraco Management API** collection click on **Authorization** tab. On **Type** choose `Inherit auth from parent`.
+1. Click on the **Authorization** tab in the **Umbraco Management API** collection.
+2. Choose `Inherit auth from parent` from **Type**.
 * Disable any parameters you are not using as Postman sets their value to default sometimes.
