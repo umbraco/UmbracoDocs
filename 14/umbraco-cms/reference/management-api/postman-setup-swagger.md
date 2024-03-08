@@ -6,7 +6,7 @@ description: Setup OAuth authorization for swagger via Postman
 
 {% hint style="info" %}
 
-This guide has been provided by a member of our community meaning that it is not managed by Umbraco HQ. As it relies on a third-party integration (Postman), some attributes will become subject to change in the future.
+This guide is created by a community member and is not managed by Umbraco HQ. Some attributes may change in the future because of the integration with Postman (third-party tool).
 
 {% endhint %}
 
