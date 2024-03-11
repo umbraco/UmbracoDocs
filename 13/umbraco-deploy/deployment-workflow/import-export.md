@@ -474,7 +474,7 @@ Artifact type resolvers allow resolving changes in the type that's stored in the
   - `Umbraco.DropDown.Flexible`
   - `Umbraco.RadioButtonList` 
 
-The following composer adds the required legacy artifact type resolver and migrators, plus a custom resolver that marks the specified document type alias `testElement` as element type. Element types are a concept added in Umbraco 8 and is required for document types that are used in Nested Content.
+The following composer adds the required legacy artifact type resolver and migrators. It also adds a custom resolver that marks the specified document type alias `testElement` as element type. Element types are a concept added in Umbraco 8 and are required for document types that are used in Nested Content.
 
 <details>
 <summary>`LegacyImportComposer.cs` (configure artifact type resolver and artifact migrators)</summary>
