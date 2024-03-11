@@ -65,7 +65,7 @@ umbraco-swagger
 
 You can see an example of how to setup OAuth2 with Postman in the [Swagger Setup in Postman](./postman-setup-swagger) article.
 
-## Test an Endpoint
+# Test an Endpoint
 
 To test a Management API endpoint, follow these steps:
 
