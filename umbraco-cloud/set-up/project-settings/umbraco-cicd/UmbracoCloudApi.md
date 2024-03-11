@@ -261,7 +261,7 @@ The response from this API call will return the same deployment object in JSON f
 
 ### Get Deployments
 
-The endpoint lets you retrieve a list of completed deployments. It can only list deployments that has been run throug the api.
+The endpoint lets you retrieve a list of completed deployments. It can only list deployments that has been run through the api.
 
 The API allows you to filter and limit the number of returned deployments using query parameters:
 - _Skip_ : optional, zero or positive integer

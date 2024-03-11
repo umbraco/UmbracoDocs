@@ -4,94 +4,151 @@ description: Instructions on installing nightly builds of Umbraco.
 
 # Installing Nightly Builds
 
-Here we'll explain how you can get the latest bleeding edge builds of Umbraco V9 and above. There's three steps to do this.
+In this article, we'll explain how you can get the latest builds of Umbraco. You can do this in three steps:
 
-1. Adding the nightly feed as a NuGet source
-2. Finding the latest nightly version
-3. Installing the latest nightly version template
-
-But let's take things one step at a time.
+1. [Adding the nightly feed as a NuGet source](installing-nightly-builds.md#adding-the-nightly-feed-as-a-nuget-source)
+2. [Finding the latest nightly version](installing-nightly-builds.md#finding-the-latest-nightly-version)
+3. [Installing the latest nightly version template](installing-nightly-builds.md#installing-the-latest-nightly-version-template)
 
 ## Adding the nightly feed as a NuGet source
 
-The NuGet feed containing the nightly builds is `https://www.myget.org/F/umbraconightly/api/v3/index.json`, you can either add this feed through the command line or use your IDE of choice, in this guide we'll cover Visual Studio and Rider as well as using the command line.
+The NuGet feed containing the nightly builds is `https://www.myget.org/F/umbraconightly/api/v3/index.json`.
 
-### Using the command line
+You can either add this feed through the command line or use an IDE of your choice. In this article, we'll provide steps for:
 
-To add the nightly feed using the command line, open up your command prompt of choice and run the following command:
+* [Using the command line](installing-nightly-builds.md#option-1-using-the-command-line)
+* [Using Visual Studio](installing-nightly-builds.md#option-2-using-visual-studio)
+* [Using Rider](installing-nightly-builds.md#option-3-using-rider)
+
+### Option 1: Using the command line
+
+To add the nightly feed using the command line:
+
+1. Open a command prompt of your  choice.
+2. Run the following command:
 
 ```
 dotnet nuget add source "https://www.myget.org/F/umbraconightly/api/v3/index.json" -n "Umbraco Nightly"
 ```
 
-This will add the nightly feed as a source named `Umbraco Nightly`
+Now the feed is added as a source named `Umbraco Nightly`.
 
-### Using Visual Studio
+### Option 2: Using Visual Studio
 
-To add the feed through Visual Studio, first open the NuGet settings by selecting the `Tools > NuGet Package Manager > Package Manager Settings` options from the top menu.
+To add the nightly feed using Visual Studio:
 
-![Open NuGet settings](images/VS/open-nuget-setttings.jpg)
+1. Open Visual Studio.
+2. Go to **Tools** > **NuGet Package Manager** > **Package Manager Settings**.
 
-Now the options window will open, first select the `Package Sources` option, then click the `+` icon in the top bar, a new source will be added and automatically highlighted. Now enter your desired name for the feed in the `Name` input, and then enter the link `https://www.myget.org/F/umbraconightly/api/v3/index.json` into the source input and click `OK`.
+![Package Manager Settings](images/VS/open-nuget-setttings.jpg)
 
-![Register the nightly feed](images/VS/registering-nightly-feed.jpg)
+3. The **Options** window open.
+4. Select the **Package Sources** option in the **NuGet Package Manager** section.
+5. Click the `+` icon.
+6. A new Package source will be added automatically and highlighted.
+7. Enter the desired name for the feed in the **Name** field.
+8. Enter the link `https://www.myget.org/F/umbraconightly/api/v3/index.json` into the **Source** field.
+9. Click **OK**.
 
-Now the feed is added as a source named `Umbraco Nightly`
+![Register the nightly feed](../../../.gitbook/assets/Register_Nightly_Feed.jpg)
 
-### Using Rider
+Now the feed is added as a source named `Umbraco Nightly`.
 
-To add the feed through Rider first click on the `NuGet` tab at the bottom, a menu blade will pop up, then choose the `Sources` tab. Now you must choose what NuGet configuration you wish to add the feed to, to add the feed globally add it to the `NuGet.Config` in `AppData\Roaming\NuGet`, by clicking that option. Lastly, open up the `New Feed` dialog by clicking the green `+` button.
+### Option 3: Using Rider
 
-![Open the new feed menu](images/Rider/open-add-feed.jpg)
+To add the nightly feed using Rider:
 
-When you click the green `+` icon the new feed dialog will pop up, and the name and URL `https://www.myget.org/F/umbraconightly/api/v3/index.json`, to the fields, and press `OK`. Leave the User and Password empty and the `Enabled` box ticked.
+1. Open Rider.
+2. Go to **View** > **Tool Windows** > **NuGet**.
+3. Go to **Sources** tab.
+4. Choose the `C:\Users\Úmbraco\AppData\Roaming\NuGet\NuGet.Config` to add the feed globally.
+5. Cick the green `+` button in the **New Feed** field.
 
-![Adding the feed](images/Rider/add-the-feed.jpg)
+![Open the new feed menu](../../../.gitbook/assets/NuGet_NewFeed.jpg)
 
-Now the feed is added as a source named `Umbraco Nightly`
+6. The New feed dialog opens.
+7. Enter the desired name in the **Name** field.
+8. Enter `https://www.myget.org/F/umbraconightly/api/v3/index.json`  in the URL field.
+
+{% hint style="info" %}
+Leave the **User, Password** fields empty, and the **Enabled** checkbox ticked.
+{% endhint %}
+
+![Adding the feed](../../../.gitbook/assets/NewFeed_Details.jpg)
+
+9. Click **OK**.
+
+Now the feed is added as a source named `Umbraco Nightly`.
 
 ## Finding the latest nightly version
 
-Now that the feed is added we're ready to install the nightly build, great! However, this begs the question what is the version called we want to install? This is in particular an issue if we want to create a new site using the dotnet template, since the dotnet command does not allow us to use wildcards to install the newest version. Fortunately, our tools can help us out here, we can see a list of available versions in both Visual Studio and Rider, and then use that version to install the template.
+In the previous steps, we've added the feed and are now ready to install the nightly build.
 
-Here we're going to assume that you want to create a brand new site with the dotnet template, however, the approach will be the same if you're updating an existing site, you'll just be clicking the update button for the `Umbraco.Cms` package instead of installing the template through the terminal.
+However, which version should we install? This is, in particular, an issue if we want to create a new site using the dotnet template. The dotnet command does not allow us to use wildcard characters to install the newest version.
 
-### Using Visual Studio
+Using IDE, we can see a list of available versions in both Visual Studio and Rider. We can then use that version to install the template.
 
-You can use the package manager in Visual Studio to browse the available template versions. First, open the package manager by selecting `Tools > NuGet Package Manager > Manage NuGet Packages For Solution...` from the top menu
+Here we're going to assume that you want to create a brand new site with the dotnet template. The approach is the same if you're updating an existing site. You'll click the **Update** button for the `Umbraco.Cms` package instead of installing the template through the terminal.
 
-![Opening the Nuget Package Manager](images/VS/open-nuget-package-manager.jpg)
+Let's look at how we can find the latest version of the nightly build:
 
-Now the `NuGet` window will open, in the top right corner there is a dropdown `Package source`, in order to be able to see our nightly builds, we have to change this to the feed we've just added `Umbraco Nightly` in this case.
+* [Using Visual Studio](installing-nightly-builds.md#option-1-using-visual-studio)
+* [Using Rider](installing-nightly-builds.md#option-2-using-rider)
 
-![Select the nightly NuGet feed](images/VS/select-nuget-feed.jpg)
+### Option 1: Using Visual Studio
 
-Now that the correct feed is selected we're almost ready to search for the package and choose a version. However, since these are marked as prereleases, we have to tick the checkbox `Include prerelease`. If we do not do this, they will be filtered out. Next search for `Umbraco.Templates`, and choose that package. Now we can click on the `Version` drop down and see the available nightly builds for both V9 and V10. This is the _**template**_, not the Umbraco package itself, so it won't work to click install. Instead chose the applicable version and note down the version number
+You can use the package manager in Visual Studio to browse the available template versions.
 
-![Find the version](images/VS/find-the-version.jpg)
+1. Open Visual Studio.
+2. Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages For Solution...**
 
-### Using Rider
+![Opening the Nuget Package Manager](../../../.gitbook/assets/Manage_NuGet_Pkgs.jpg)
 
-You can use the NuGet window in Rider to browse the available template versions. First open the window by clicking on `NuGet` on the bottom bar, next make sure the `Packages` tab is selected. To make things as easy as possible for ourselves click on the sources dropdown (3), and make sure that only our nightly feed is selected.
+3. Select **Umbraco Nightly** from the **Package source** dropdown in the **NuGet - Solution** window.
 
-![Choose the feed](images/Rider/choose-the-feed.jpg)
+![Select the nightly NuGet feed](../../../.gitbook/assets/Manage_Packages.jpg)
 
-Now that the correct feed is selected we're almost ready to search for the package and choose a version, however since these are marked as prerelease, we have to tick the checkbox `Prerelase` otherwise these will be filtered out. Next search for `Umbraco.Templates`, and choose that package. Now we can click on the `Version` drop down and see the available nightly builds for both V9 and V10. It's important to note that this is the _**template**_, not the Umbraco package itself, so it won't work to click install. Instead chose the applicable version and note down the version number
+4. Check the **Include prerelease** checkbox.
+5. Search for **Umbraco.Templates** in the **Browse** field.
+6. Choose that package.
+7. Click on the **Version** dropdown and see the available nightly builds.
+8. Choose the applicable version and note down the version number.
 
-![Find the version](images/Rider/find-the-version.jpg)
+![Find the version](../../../.gitbook/assets/Latest_nightly_build_version.jpg)
 
-## Installing the nightly build
+### Option 2: Using Rider
+
+You can use the NuGet window in Rider to browse the available template versions.
+
+1. Open Rider.
+2. Go to the **Packages** tab in the **NuGet** window..
+3. Select **Umbraco Nightly** from the **All Feeds** dropdown.
+
+![Choose the feed](../../../.gitbook/assets/Rider_Nightly_Feed.jpg)
+
+4. Check the **Prerelase** checkbox.
+5. Search for **Umbraco.Templates** in the **Search** field.
+6. Choose that package.
+7. Click on the **Version** drop down and see the available nightly builds.
+8. Choose the applicable version and note down the version number
+
+![Find the version](../../../.gitbook/assets/Rider_Nightly_Feed_version.jpg)
+
+## Installing the latest nightly version template
 
 Now that our feed is added and we know the exact version we're ready to install our template.
 
-Open up your command prompt of choice and execute the `dotnet new install` command using the latest, version, at the time of writing the latest preview build is `9.4.0-preview20220228.85007` so to install the newest nightly build I'd have to execute:
+To install the latest nightly version template:
+
+1. Open your command prompt.
+2. Run the following command using the latest version:
 
 ```
-dotnet new install Umbraco.Templates::9.4.0-preview20220228.85007
+dotnet new install Umbraco.Templates
 ```
 
-The name and the versions are separated with two colons `::`, it's important that we specify the entire version including the `-preview20220228.85007`, otherwise the dotnet new command cannot find the package.
+With that, we've successfully installed the latest nightly build of Umbraco.
 
-With that, we've successfully installed the latest nightly build of Umbraco! All we have to do now to create a site with the newest nightly is to run `dotnet new umbraco -n MyAwesomeNightlySite`
+All we have to do now is to create a site using the `dotnet new umbraco -n MyAwesomeNightlySite` command.
 
-For more information about installing Umbraco see [the installation documentation](./)
+For more information about installing Umbraco, see the [Installation ](./)article.

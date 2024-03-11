@@ -237,7 +237,7 @@ UPDATE umbracoCommercePrintTemplate
 SET templateView = REPLACE(templateView, '/App_Plugins/Vendr/templates/print', '/Views/UmbracoCommerce/Templates/Print')
 WHERE templateView LIKE '%/Vendr/%';
 UPDATE umbracoCommerceExportTemplate
-SET templateView = REPLACE(templateView, '/App_Plugins/Vendr/templates/email', '/Views/UmbracoCommerce/Templates/Export')
+SET templateView = REPLACE(templateView, '/App_Plugins/Vendr/templates/export', '/Views/UmbracoCommerce/Templates/Export')
 WHERE templateView LIKE '%/Vendr/%';
 ```
 
@@ -280,7 +280,7 @@ https://{site_url}/umbraco/commerce/payment/callback/{payment_provider_alias}/{p
 
 6. Run the project.
 
-It is highly recommended to ensure everything works as expected, before moving on to migrating packages and custom payment providers.&#x20;
+It is highly recommended to ensure everything works as expected, before moving on to migrating packages and custom payment providers.
 
 ## Further Migrations
 

@@ -59,7 +59,7 @@ Which language a user has access to is determined by the "Language permissions" 
 
 ## Using Dictionary Values in Document Types
 
-In some cases, you might want to render the dictionary values in the Document Type to display the labels depending on the language configured for the logged-in user.
+In some cases, you might want to render the dictionary values in the Document Type. This is to display the labels depending on the language configured for the logged-in user.
 
 To use dictionary values in the Document Type, follow these steps:
 

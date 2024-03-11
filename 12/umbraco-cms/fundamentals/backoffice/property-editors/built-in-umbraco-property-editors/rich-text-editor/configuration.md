@@ -2,7 +2,9 @@
 
 ## Configuration
 
-The Rich Text Editor (RTE) in Umbraco can be configured in many different ways, and you have full control over which options you want to give you content editors.
+{% embed url="https://www.youtube.com/watch?v=QRIWz9SotY4" %}
+Rich Text Editor default implementation
+{% endembed %}
 
 In this article you can learn about the various ways you can configure the RTE.
 
@@ -74,7 +76,7 @@ The RTE can also accept advanced configuration through the `appSettings.json` fi
 
 * [Commands](https://www.tiny.cloud/docs/tinymce/latest/editor-command-identifiers/)
 * [Plugins](https://www.tiny.cloud/docs/tinymce/latest/plugins/)
-* [CustomConfig](hhttps://www.tiny.cloud/docs/tinymce/latest/editor-important-options/)
+* [CustomConfig](https://www.tiny.cloud/docs/tinymce/latest/editor-important-options/)
 * [ValidElements](https://www.tiny.cloud/docs/tinymce/latest/content-filtering/#valid\_elements)
 * [InvalidElements](https://www.tiny.cloud/docs/tinymce/latest/content-filtering/#invalid\_elements)
 

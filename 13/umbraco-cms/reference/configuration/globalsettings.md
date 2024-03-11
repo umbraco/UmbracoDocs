@@ -72,6 +72,8 @@ A comma-seperated list of files to be left alone by Umbraco, these files will be
 
 A comma-separated list of all the folders in your directory to be left alone by Umbraco. If you have folders with custom files, add them to this setting to make sure Umbraco leaves them alone.
 
+{% hint style="warning" %} Adding additional values to the Reserves URLs and Reserved Paths will overwrite default/current values. This causes performance issues as well. {% endhint %}
+
 ### Timeout
 
 Configure the session timeout to determine how much time without a request being made can pass before the user is required to log in again. The session timeout format needs to be set as `HH:MM:SS`. Any activity within the backoffice will reset the timer.

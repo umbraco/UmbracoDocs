@@ -2,6 +2,12 @@
 
 * [Packages for Umbraco Commerce](README.md)
 
+## Commerce Products
+
+* [Umbraco Commerce](https://docs.umbraco.com/umbraco-commerce/)
+* [Commerce Payment Providers](https://docs.umbraco.com/umbraco-commerce-payment-providers)
+* [Commerce Shipping Providers](https://docs.umbraco.com/umbraco-commerce-shipping-providers)
+
 ## Checkout
 
 * [Overview](checkout/README.md)

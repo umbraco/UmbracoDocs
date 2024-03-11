@@ -6,7 +6,7 @@ description: >-
 
 # Manual upgrade of Umbraco Deploy
 
-Deploy on Coud will either be automatically upgraded with patch releases or it can be done through the portal when new minors are available.
+Deploy on Cloud will either be automatically upgraded with patch releases or it can be done through the portal when new minors are available.
 
 In rare cases, Deploy might not be on the latest patch or minor and you will need to upgrade Deploy manually.
 
@@ -45,26 +45,26 @@ When the command completes, open the `.csproj` file to make sure the package ref
 
 Make sure that everything works on the local clone and that you can **run the project without any errors**.
 
+## Manually Upgrade Umbraco Deploy Legacy Version 7 and 8
+
 <details>
 
-<summary>Manually Upgrade Umbraco Deploy Legacy versions 7 and 8</summary>
-
-If you are on Umbraco 7 or Umbraco 8, follow the steps below to manually upgrade Umbraco Deploy to a later version of your project.
+<summary>If you are on Umbraco 7 or Umbraco 8, follow these steps to manually upgrade Umbraco Deploy to a later version of your project</summary>
 
 1. Download **Storage Explorer** here: [https://azure.microsoft.com/en-us/products/storage/storage-explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer) and install it.
 2. Click the **"Plug"** Button (Open Connect Dialog):\
    \
-   ![Click the "Plug" Button (Open Connect Dialog)](<../../.gitbook/assets/image (1) (1).png>)
+   ![Click the "Plug" Button (Open Connect Dialog)](<../../.gitbook/assets/image (1) (1) (1).png>)
 
 <!---->
 
 3. Choose **"Blob container or directory"**:\
-   ![](<../../.gitbook/assets/image (1) (1) (1).png>)
+   ![](<../../.gitbook/assets/image (1) (1) (1) (1).png>)
 
 <!---->
 
 4. Choose **"Anonymously"** when prompted on how you will connect to the blob container.\
-   ![](<../../.gitbook/assets/image (2) (1).png>)
+   ![](<../../.gitbook/assets/image (2) (1) (1).png>)
 
 <!---->
 

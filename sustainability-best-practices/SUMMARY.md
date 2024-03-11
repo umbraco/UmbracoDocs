@@ -4,13 +4,14 @@
 
 ## Infrastructure
 
+* [Infrastructure Overview](infrastructure/README.md)
 * [Hosting](infrastructure/hosting.md)
 * [Architecture](infrastructure/architecture.md)
 * [Security and Bots](infrastructure/security-and-bots.md)
 
 ## Backend
 
-* [Overview](backend/README.md)
+* [Backend Overview](backend/README.md)
 * [Upgrades and patches](backend/upgrades-and-patches.md)
 * [Cache responses](backend/cache-responses.md)
 * [Sustainable Design Patterns](backend/sustainable-design-patterns.md)
@@ -25,6 +26,7 @@
 
 ## Frontend
 
+* [Frontend Overview](frontend/README.md)
 * [Page weight budget](frontend/page-weight-budgets.md)
 * [Image optimization](frontend/image-optimisation.md)
 * [Asset optimization](frontend/assets-optimisation.md)
@@ -34,8 +36,14 @@
 
 ## Editor
 
+* [Editor Overview](editor/README.md)
 * [Content Types](editor/content-types.md)
 * [Content Optimization](editor/content-optimisation.md)
 * [Design Choices](editor/design-choices.md)
 * [Data Management](editor/data-management.md)
 * [Housekeeping](editor/housekeeping.md)
+
+## Telemetry
+
+* [Telemetry Overview](telemetry/README.md)
+* [February 2024](telemetry/2024-02-telemetry.md)

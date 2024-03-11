@@ -27,13 +27,12 @@ The {area} specified by the [PluginController] attribute replaces the /api/ area
 
 ## MVC controllers for the backoffice
 
-If you are using MVC in the backoffice then you would normally inherit from `Umbraco.Cms.Web.Common.Controllers.UmbracoAuthorizedController`. This type of controller is not auto-routed like Umbraco Api controllers or surface controllers, so will require a custom route declaration and be registered with the Umbraco DI container to make it work.
+Depending on the type of controller used (MVC or WebAPI), the controller is not auto-routed. You will need to declare a custom route and register it with the Umbraco DI container to make it work.
 
 For more information on authenticated/authorized controllers & attributes see the [Controllers Documentation](../../implementation/controllers.md).
 
 ## Defining a route
 
-When you create a controller that inherits from `Umbraco.Cms.Web.Common.Controllers.UmbracoAuthorizedController` you need to explicitly define a route.
 Defining a route is done with the standard .NET Core MVC routing practices, however there is a handy extension method on the `IEndpointRouteBuilder` to help you.
 
 When creating custom routes you can either do it directly in the `Startup.cs` files, or with a pipeline filter in a composer which looks something like:
@@ -81,13 +80,12 @@ public static void MapUmbracoRoute<T>(
 * The generic type argument is the contoller you wish to route, in this case `MyController`.
 * `rootSegment` - The first part of the pattern, since this is an authorized controller it has to be `umbraco/backoffice`.
 * `areaName` - The name of the area the controller should be routed through, an empty string signifies no area.
-* `prefixPathSegment` - Prefix to be applied to the rootSegment, we know this from api controllers where the prefix is `api`, in this case since the controller is in an area we will also prefix the area name to the url, so the final path pattern will be `umbraco/backoffice/mypackagename/{controllerName}/{action}/{id?}`.
+* `prefixPathSegment` - Prefix to be applied to the rootSegment, we know this from api controllers where the prefix is `api`, in this case since the controller is in an area we will also prefix the area name to the URL, so the final path pattern will be `umbraco/backoffice/mypackagename/{controllerName}/{action}/{id?}`.
 * `defaultAction` - If this is not null or an empty string the request will automatically be routed to the specified action, so in this case `umbraco/backoffice/mypackagename/{controllerName}` will route to the index action.
 * `includeControllerNameInRoute` - If this is false the controller name will be excluded from the route, so in this case the route would be `umbraco/backoffice/mypackagename/{action}/{id?}` if this was set to false.
 * `constraints` - Any routing constraints passed to this will be used when mapping the route see [Microsoft documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/routing?view=aspnetcore-5.0#route-constraint-reference) for more information.
 
-
-Using the `MapUmbracoRoute` extension method is completely optional though, it's just a neat helper to ensure controllers get routed in the same way. It's very important to note though that if your controller uses an area, like in this example, you need to specify this on your controller using the `Area` attribute, this is not an Umbraco specific thing though, in this example the controller looks like this: 
+Using the `MapUmbracoRoute` extension method is optional though, it's a neat helper to ensure controllers get routed in the same way. If your controller uses an area, like in this example, you need to specify this using the `Area` attribute. In this example the controller looks like this:
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
@@ -108,8 +106,8 @@ namespace Umbraco.Cms.Web.UI.NetCore
 
 
 {% hint style="info" %}
-The route must be prefixed with Umbraco path which is configurable and resolved with `GetUmbracoMvcArea()` from `IGlobalSettings` and then by "/backoffice" in order for Umbraco to check user authentication.
+The route must be prefixed with the Umbraco path, which is configurable and resolved with `GetUmbracoMvcArea()` from `IGlobalSettings`. Then, it should be followed by "/backoffice" in order for Umbraco to check user authentication.
 {% endhint %}
 
 ### What about Surface Controllers?
-Surface Controllers should not be used in the backoffice. Surface Controllers are not designed to work with the backoffice, they are not meant to be used there and will not be supported being used there.
+Surface Controllers should not be used in the backoffice. Surface Controllers are not designed to work with the backoffice. They are not meant to be used there and will not be supported being used there.

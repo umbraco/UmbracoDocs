@@ -1,4 +1,4 @@
-# Mobile first
+# Mobile First
 
 When it comes to design, we should be making sustainable choices from the outset. Consider the use of images and large graphics that could contribute to page weight. If possible, remove the use of stock images that provide little to no value.
 

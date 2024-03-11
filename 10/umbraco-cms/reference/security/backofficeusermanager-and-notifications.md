@@ -97,6 +97,6 @@ Internally these are mainly used for auditing but there are some that allow you 
 * `UserLogoutSuccessNotification`
 
   * This is specifically used if you have an [External Login Provider](external-login-providers.md) in use
-    and you want to log out of that external provider when the user is logged out of the backoffice (i.e. Log out of everywhere).
+    and you want to log out of that external provider when the user is logged out of the backoffice (that is log out of everywhere).
     The notification has a property `SignOutRedirectUrl`. If this property is assigned then Umbraco will redirect to that URL upon successful
     backoffice sign out in order to sign the user out of the external login provider.

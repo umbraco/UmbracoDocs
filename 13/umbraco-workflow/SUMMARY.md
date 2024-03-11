@@ -36,3 +36,7 @@
 ## Advanced Search
 
 * [Advanced Search dashboard](advanced-search/advanced-search-dashboard.md)
+
+## Data Generator
+
+* [Data Generator](./data-generator/data-generator.md)

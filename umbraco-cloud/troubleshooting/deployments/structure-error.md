@@ -41,8 +41,6 @@ When you have two or more Cloud environments, we recommend that you never create
 Fixing collision errors tutorial
 {% endembed %}
 
-You can find a full playlist about Collision errors on our [YouTube Channel](https://www.youtube.com/playlist?list=PLgX62vUaGZsHAKusJRjVyquIV47eJgjDq).
-
 ## Using the error message
 
 In the example above the entity involved is a Document Type with "home" as the alias. There are two colliding files both located in the `/deploy/revision` folder. The files are colliding because they share the same alias but have different GUIDs (also the name of the files).
@@ -135,6 +133,6 @@ When the push from local to the Development environment has been completed, refr
 
 ### Does your Development still have the red indicator?
 
-Sometimes you might need to run another schema deployment on your Cloud environment after deploying to turn your environment _green_. To do this, follow the steps described in the [schema deployment guide](../../deployment/deploy-operations/deploy-schema.md).
+Sometimes you might need to run another schema deployment on your Cloud environment after deploying to turn your environment _green_. To do this, follow the steps described in the [schema deployment guide](../../deployment/deploy-dashboard.md).
 
 The final step is to deploy the pending changes from Development to your Live environment, to ensure everything is completely in sync.

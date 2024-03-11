@@ -4,6 +4,10 @@ description: "Learn how to create a Custom Grid Editor in Umbraco Heartcore."
 
 # Custom Grid Editors
 
+{% hint style="warning" %}
+The grid editor Data Type in Heartcore is deprecated and will be retired in June 2025 or thereafter. For more information read the following [blog post](https://umbraco.com/blog/umbraco-heartcore-update-october-2023#editors).
+{% endhint %}
+
 In this tutorial, we will create a Custom Grid Editor using [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web\_Components/Using\_custom\_elements) and [Lit](https://lit.dev/). We will look at how we can define what the API response for our data should look like.
 
 ## Content
@@ -395,7 +399,7 @@ Now that we have a working editor, let's add a couple of images to our page. Whe
 Note down the **Id** from the **Info** tab. We will need that in a bit.
 
 * Go to the **Settings** section.
-* Exapnd the **Headless** node.
+* Expand the **Headless** node.
 * Open the [API Browser](../getting-started/api-browser.md)
 * Type in `https://cdn.umbraco.io/content/<CONTENT_ID>` in the Explorer URL bar, replacing `<CONTENT-ID>` with the id we copied before.
 * Click **Go!**.

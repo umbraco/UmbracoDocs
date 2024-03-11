@@ -14,7 +14,7 @@ Here is a quick overview of them:
     * Choosing a node directly from the Content tree or
     *   Using XPath
 
-        ![Umbraco Documents as prevalue sources](../../../../11/umbraco-forms/editor/defining-and-attaching-prevaluesources/images/umbraco-documents-v9.png)
+        ![Umbraco Documents as prevalue sources](images/umbraco-documents-v9.png)
 
         Additional settings can be applied:
 
@@ -38,4 +38,4 @@ Here is a quick overview of them:
 
     In the example below, the prevalue collection from a Data Type called `Home - Font - Radio button` is used:
 
-    ![Data Type prevalues](../../../../11/umbraco-forms/editor/defining-and-attaching-prevaluesources/images/datatype-prevalues.png)
+    ![Data Type prevalues](images/datatype-prevalues.png)

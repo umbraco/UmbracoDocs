@@ -35,7 +35,7 @@ using Umbraco.Forms.Core.Persistence.Dtos;
 
 namespace MyNamespace
 {
-    public class TestWorkflow : WorkflowType
+    public class LogMessageWorkflow : WorkflowType
     {
         public const string LogMessageWorkflowId = "7ca500a7-cb34-4a82-8ae9-2acac777382d";
         private readonly ILogger<LogMessageWorkflow> _logger;

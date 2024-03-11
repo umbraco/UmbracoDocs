@@ -1,6 +1,4 @@
 ---
-
-
 meta.Title: Umbraco Tree
 description: A guide to creating a custom tree in Umbraco
 ---
@@ -170,7 +168,7 @@ namespace My.Website.Trees
 }
 ```
 
-![Favourite Things Custom Tree](<../../../../../new-backoffice/.gitbook/assets/favourite-things-custom-tree-v8 (1).png>)
+![Favourite Things Custom Tree](../../../../../13/umbraco-cms/extending/section-trees/trees/images/favourite-things-custom-tree-v8.png)
 
 ### Responding to Tree Actions
 
@@ -223,7 +221,7 @@ Our Tree Action View would then be wired to the loaded controller using the `ng-
 </div>
 ```
 
-![Delete Raindrops on Roses](<../../../../../new-backoffice/.gitbook/assets/delete-raindrops-on-roses-v8 (1).png>)
+![Delete Raindrops on Roses](../../../../../13/umbraco-cms/extending/section-trees/trees/images/delete-raindrops-on-roses-v8.png)
 
 [see Tree Actions for a list of tree _ActionMenuItems_ and _IActions_](tree-actions.md)
 
@@ -268,7 +266,7 @@ protected override ActionResult<TreeNode> CreateRootNode(FormCollection queryStr
 
 The RoutePath should be in the format of: **section/treeAlias/method**. As our example controller uses the `PluginController` attribute, clicking the root node would now request `/App_Plugins/favouriteThing/backoffice/favouritistThingsAlias/overview.html`. If you are not using the `PluginController` attribute, then the request would be to `/umbraco/views/favouritistThingsAlias/overview.html`.
 
-![Favourite Thing Custom Single Node Tree](<../../../../../new-backoffice/.gitbook/assets/favourite-thing-custom-single-node-tree (1).png>)
+![Favourite Thing Custom Single Node Tree](../../../../../13/umbraco-cms/extending/section-trees/trees/images/favourite-thing-custom-single-node-tree.png)
 
 #### Full Width App - IsSingleNodeTree
 

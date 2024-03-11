@@ -1,9 +1,13 @@
 # Table of contents
 
 * [Umbraco Commerce Documentation](README.md)
+* [Release Notes](release-notes.md)
+
+## Commerce Products
+
 * [Commerce Packages](https://docs.umbraco.com/umbraco-commerce-packages)
 * [Commerce Payment Providers](https://docs.umbraco.com/umbraco-commerce-payment-providers)
-* [Release Notes](release-notes.md)
+* [Commerce Shipping Providers](https://docs.umbraco.com/umbraco-commerce-shipping-providers)
 
 ## Installation
 

@@ -43,7 +43,7 @@ The Open API specification is available from: `/umbraco/swagger/forms/swagger.js
 To request the definition of a form, the following request can be made:
 
 ```none
-GET /umbraco/forms/api/v1/definitions/{id}?contentId={contentId}&culture={culture}
+GET /umbraco/forms/api/v1/definitions/{id}?contentId={contentId}?culture={culture}
 ```
 
 The GET request requires the Guid identifying the form.
@@ -524,7 +524,7 @@ Firstly, with server-to-server integrations you will want to disable the antifor
 
 This is done by setting the `Umbraco:Forms:Security:EnableAntiForgeryTokenForFormsApi` configuration key to a value of `false`.
 
-You should then configure an API key `Umbraco:Forms:Security:FormsApiKey`.  This can be any string value, but shouldn't be easily guessable by a brute force attack.
+You should then configure an API key `Umbraco:Forms:Security:FormsApiKey`. This can be any string value, but it should be complex enough to resist being guessed by a brute force attack.
 
 With this in place any request to the Forms API will be rejected unless the configured value is provided in an HTTP header named `Api-Key`.
 
@@ -538,7 +538,7 @@ Examples demonstrating how to handle a file upload and use reCAPTCHA fields are 
 
 The [Content Delivery API](https://docs.umbraco.com/umbraco-cms/v/12.latest/reference/content-delivery-api) provides headless capabilities within Umbraco by allowing you to retrieve content in JSON format.
 
-When retrieving content that contains an Umbraco Forms form picker, the output by default will consist of just the ID of the selected form:
+When retrieving content that contains an Umbraco Forms form picker, the output by default will consist of the ID of the selected form:
 
 ```json
 {

@@ -36,7 +36,7 @@ For illustration purposes, the following structure represents the full set of op
         "Settings": {
             "ApiKey": "<your API key here>",
             "ApiSecret": "<your API secret here>",
-            "Edition": "Default",            
+            "Edition": "Default",
             "ExcludedEntityTypes": [],
             "RelationTypes" : [],
             "ValueConnectors": [],
@@ -68,7 +68,8 @@ For illustration purposes, the following structure represents the full set of op
             "NumberOfSignaturesToUseAllRelationCache": 100,
             "ContinueOnMediaFilePathTooLongException": false,
             "SuppressCacheRefresherNotifications": false,
-            "HideConfigurationDetails": false
+            "HideConfigurationDetails": false,
+            "HideVersionDetails": false
         }
     }
   }
@@ -375,6 +376,10 @@ If attempting a one-off, large transfer operation, before a site is live, you co
 
 If set to `true` the configuration details shown on the setting's dashboard will be hidden.
 
+### HideVersionDetails
+
+If set to `true` the version details shown on the setting's dashboard will be hidden.
+
 ## Configuration Via Code
 
 ### Webhook Events
@@ -387,7 +392,7 @@ using Umbraco.Deploy.Infrastructure.Extensions;
 
 public class RegisterDeployWebhooksComposer : IComposer
 {
-    public void Compose(IUmbracoBuilder builder) 
+    public void Compose(IUmbracoBuilder builder)
         => builder.WebhookEvents().AddDeploy(deployBuilder => deployBuilder.AddTask());
 }
 ```

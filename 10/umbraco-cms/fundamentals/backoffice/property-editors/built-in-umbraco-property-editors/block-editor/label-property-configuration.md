@@ -22,9 +22,14 @@ As well as the [default AngularJS filters](https://docs.angularjs.org/api/ng/fil
 
 ### Custom filters
 
-If the filters do not suit your needs, you can create custom filters by creating a plugin in `App_Plugins` and adding a filter module.
+If the filters do not suit your needs, you can create custom filters by creating a plugin in `App_Plugins` and adding a filter module. You can see an example below:
 
-An example `package.manifest` file is:
+{% hint style="warning" %}
+If you do not have an `/App_Plugins` folder, you can create it at the root of your project.
+{% endhint %}
+
+1. Create a plugin by adding a folder inside `App_Plugins` called `MyFilters`
+2. Inside the `MyFilters` folder add a `package.manifest` file containing:
 
 ```json
 {
@@ -37,7 +42,7 @@ An example `package.manifest` file is:
 }
 ```
 
-With `myFilter.filter.js` containing:
+3. Add a `myFilter.filter.js` file containing:
 
 ```javascript
 angular.module("umbraco.filters").filter("myFilter", function () {
@@ -47,6 +52,8 @@ angular.module("umbraco.filters").filter("myFilter", function () {
   }
 });
 ```
+
+4. Implement a [block editor](README.md) of your choice. When adding a label add `{{ myFilter }}` which is the property alias of the element type. The `myFilter` property has a `textstring` editor. When adding the content, the block editor will then display the data that you input.
 
 ## Special variables
 

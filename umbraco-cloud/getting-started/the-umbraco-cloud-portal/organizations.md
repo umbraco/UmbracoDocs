@@ -27,7 +27,7 @@ In the **Members** section, you can view current members, pending invites, and s
 
 <figure><img src="../../../.gitbook/assets/members.png" alt=""><figcaption></figcaption></figure>
 
-Members added to your ogranization can see different details about their organization based on the user group they are added to. Currently there are three different groups, **Read**, **Write** and **Admin**.
+Members added to your organization can see different details about their organization based on the user group they are added to. Currently there are three different groups, **Read**, **Write** and **Admin**.
 Below you can see what each user group has access to under the organization they are a part of.
 
 Organization Members with **Admin Access** can do the following in the organization:
@@ -43,7 +43,7 @@ Organization Members with **Admin Access** can do the following in the organizat
 * See subscriptions
 * See organization Members
 * See payment history
-* Handle Multi Factor Autentication (MFA) for users
+* Handle Multi Factor Authentication (MFA) for users
 * Handle payment methods
 * Change permissions for Members
 * Remove role from users

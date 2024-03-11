@@ -1,18 +1,18 @@
 # CDN Caching and Optimizations
 
-After [adding hostnames](manage-hostnames/) to your project, it's possible to configure Content Delivery Network (CDN) Caching. This can be done for all or for specific hostnames within your project.
+After [adding hostnames](manage-hostnames/) to your project, it's possible to configure Content Delivery Network (CDN) Caching. This can be done for all or specific hostnames within your project.
 
 These caching options all relate to the traffic that goes through your hostname from the origin (Umbraco Cloud) to the end-user i.e. the traffic of your website and assets from the webserver to the browser.
 
 The options that are currently available are:
 
-* Enable Cache (default: off)
+* Enable Cache (default: On)
 * Cache TTL (default: 120 minutes)
 * Cache Everything (default: off)
 
 ![Default Options](../images/CDN-caching-default.png)
 
-When a new hostname is added to a Project, it will have the default settings applied. However, you can change the default settings for your project, so that the new hostnames will get the settings you have chosen. This also means that if you enable caching in the default settings and add a new hostname, that caching will be enabled for that new hostname.
+When a new hostname is added to a Project, the default settings will be applied. However, you can change the default settings for your project, so that the new hostnames will get the settings you have chosen. This also means that if you enable caching in the default settings and add a new hostname, that caching will be enabled for that new hostname.
 
 ## Caching Explained
 
@@ -51,10 +51,10 @@ The webpage itself is not cached when CDN Caching is enabled.
 When **Cache Everything** is enabled, everything including the webpage is cached in the CDN. So, in addition to static assets, the webpage will also be cached and served from the CDN instead of loading from the origin.
 
 {% hint style="info" %}
-When a webpage is cached, it will be stripped of any cookies that are otherwise part of the request. If you are utilizing cookies as part of the website, be aware of the implications of using Cache Everything.
+When a webpage is cached, it will be stripped of any cookies that are otherwise part of the request. If you use cookies as part of the website, be aware of the implications of using Cache Everything.
 {% endhint %}
 
-When using Cache Everything you should use a Cache TTL, which matches the Editor's expectations of when the webpage is refreshed with a new version loaded from the origin. As an example, choosing a Cache TTL of 2 hours means that the webpage will be served from the cache for 2 hours and then it will be refreshed with a copy from the origin. If Editors make changes every 30 minutes, then they will have to wait at least two hours until they can see the changes on the website.
+When using Cache Everything you should use a Cache TTL, which matches the Editor's expectations of when the webpage is refreshed with a new version loaded from the origin. As an example, choosing a Cache TTL of 2 hours means that the webpage will be served from the cache for 2 hours and then it will be refreshed with a copy from the origin. If Editors make changes every 30 minutes, they will have to wait at least two hours until they can see the changes on the website.
 
 {% hint style="warning" %}
 We recommend using Cache Everything with caution.
@@ -70,7 +70,7 @@ Cache purging is done per hostname and it can take up to 30 seconds before asset
 
 By default, all hostnames are selected, but you can choose to purge specific hostnames from the environments in your Umbraco Cloud project.
 
-Purging the cache is a heavy operation, so there is a constraint on how many purge requests can be done within 24 hours. The 24 hours starts from the moment you Purge. So if you have 2 Purge requests available and Purge twice with an hour, then you can Purge again in 23 hours (for the first Purge request) and then again in 24 hours (for the second Purge request).
+Purging the cache is a heavy operation, so there is a constraint on how many purge requests can be done within 24 hours. The 24 hours starts from the moment you Purge. So if you have 2 Purge requests available and Purge twice within an hour, then you can Purge again in 23 hours (for the first Purge request) and then again in 24 hours (for the second Purge request).
 
 In the Purge Cache section, you can see how many Purge requests you have available and when.
 
@@ -116,4 +116,4 @@ Aside from environments, the CDN Caching & Optimization page is divided into two
 
 Use the **Default settings** to configure default settings that should be applied to new and existing hostnames.
 
-If you want to have different caching options for different hostnames, then select the hostname under **Hostname specific settings** and adjust the options for that specific hostname. This might be useful if you want to test the different options on another hostname than your primary hostname.
+If you want to have different caching options for different hostnames, then select the hostname under **Hostname-specific settings** and adjust the options for that specific hostname. This might be useful if you want to test the different options on another hostname than your primary hostname.

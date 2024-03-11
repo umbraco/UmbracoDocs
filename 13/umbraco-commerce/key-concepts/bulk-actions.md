@@ -4,7 +4,7 @@ description: Perform bulk operations on entities in Umbraco Commerce.
 
 # Bulk Actions
 
-When extending Umbraco Commerce, there may come a time when you need the ability to perform a custom action for every entity in a given selection. For example, being able to trigger label printing for a series of orders, or printing physical gift cards for specific gift card entities.
+You might need to execute a custom action for each entity in a selection while extending Umbraco Commerce. For example, being able to trigger label printing for a series of orders, or printing physical gift cards for specific gift card entities.
 
 Umbraco Commerce allows extending the different table views, adding in **Bulk Actions** to the bulk action bar that appears when you select multiple items. Out of the box all list views contain at minimum a **Delete** bulk action.
 
@@ -56,7 +56,7 @@ angular.module('umbracoCommerce')
                 sortOrder: 110
             }
         }]);
-    }]):
+    }]);
 
 ```
 
@@ -131,6 +131,6 @@ angular.module('umbracoCommerce')
                 sortOrder: 110
             }
         }]);
-    }]):
+    }]);
 
 ```

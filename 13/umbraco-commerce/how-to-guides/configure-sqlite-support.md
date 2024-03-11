@@ -20,6 +20,8 @@ PM> dotnet add package Umbraco.Commerce.Persistence.Sqlite
 
 Once the NuGet package is installed, you need to register SQLite support with Umbraco Commerce via the [`IUmbracoCommerceBuilder`](../key-concepts/umbraco-commerce-builder.md) interface.
 
+Add .`AddUmbracoCommerce()` below `.AddWebsite()` in the `Program.cs` file.
+
 ```csharp
 .AddUmbracoCommerce(builder => {
     builder.AddSQLite();

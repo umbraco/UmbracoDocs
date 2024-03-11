@@ -36,10 +36,12 @@ One approach for this is to add a new rewrite rule to the `<system.webServer><re
   <match url=".*" />
   <conditions>
     <add input="{HTTP_HOST}" pattern="\.umbraco\.io$" />
-    <add input="{HTTP_HOST}" pattern="^localhost(:[0-9]+)?$" negate="true" />
-    <add input="{REQUEST_URI}" pattern="^/umbraco" negate="true" />
-    <add input="{REQUEST_URI}" pattern="^/DependencyHandler.axd" negate="true" />
-    <add input="{REQUEST_URI}" pattern="^/App_Plugins/" negate="true" />
+    <add input="{HTTP_HOST}" negate="true" pattern="^(dev|stage)\.(.*)\.umbraco\.io$" />
+    <add input="{HTTP_HOST}" negate="true" pattern="^localhost(:[0-9]+)?$" />
+    <add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
+    <add input="{REQUEST_URI}" negate="true" pattern="^/DependencyHandler.axd" />
+    <add input="{REQUEST_URI}" negate="true" pattern="^/App_Plugins/" />
+    <add input="{REQUEST_URI}" negate="true" pattern="^/sb" />
   </conditions>
   <action type="Redirect" url="https://www.example.com/{R:0}" redirectType="Permanent" />
 </rule>

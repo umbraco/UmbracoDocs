@@ -110,7 +110,7 @@ For illustration purposes, the following structure represents the full set of op
       "Recaptcha3": {
         "SiteKey": "",
         "PrivateKey": "",
-        "Domain": "www.google.com"
+        "Domain": "Google"
       },
       "RichText": {
         "DataTypeId": "ca90c950-0aff-4e72-b976-a30b1ac57dad"
@@ -478,7 +478,7 @@ You can obtain both of these values after signing up to create a ReCaptcha key h
 
 This setting defines the domain from which the client-side assets for using the reCAPTCHA service are requested.
 
-Valid options are `www.google.com` (the default) or `www.recaptcha.net`. You may want to use the latter for control of which domains are setting cookies on your site. [Read more at the reCAPTCHA documentation](https://developers.google.com/recaptcha/docs/faq#does-recaptcha-use-cookies).
+Valid options are `Google` (the default) or `Recaptcha`. You may want to use the latter for control of which domains are setting cookies on your site. [Read more at the reCAPTCHA documentation](https://developers.google.com/recaptcha/docs/faq#does-recaptcha-use-cookies).
 
 ### Rich text field type configuration
 

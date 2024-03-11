@@ -2,9 +2,9 @@
 
 ## Rich Text Editor Configuration
 
-The Rich Text Editor (RTE) in Umbraco can be configured in many different ways, and you have full control over which options you want to give you content editors.
-
-In this article you can learn about the various ways you can configure the RTE.
+{% embed url="https://www.youtube.com/watch?v=QRIWz9SotY4" %}
+Rich Text Editor default implementation
+{% endembed %}
 
 ### Toolbar
 

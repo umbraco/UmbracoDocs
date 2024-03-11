@@ -62,7 +62,7 @@ public class OrderLineCalculation
 }
 ```
 
-From the `OrderCalculation` object you can access the different order prices, including order line calculations. The order line calculations are stored in a dictionary where the key is the order lines ID, and the value is an `OrderLineCalculation` object holding the calculated prices.
+From the `OrderCalculation` object you can access the different order prices, including order line calculations. The order line calculations are stored in a dictionary. In this dictionary, the key is the order line's ID, and the value is an `OrderLineCalculation` object holding the calculated prices.
 
 By using the prices from the `OrderCalculation` object you can ensure that your calculation is based on the most up-to-date values for the order.
 

@@ -90,7 +90,7 @@ The value defined in `appsettings.json` file will be overwritten with the Cloud 
 
 ## Naming standards for secrets
 
-When naming a secret, it is possible to use alphanumeric characters as well as '-' and '\_' (dash and underscore).
+When naming a secret, it is possible to use alphanumeric characters as well as '\_' (underscore).
 
 There are some reserved words that cannot be accepted:
 

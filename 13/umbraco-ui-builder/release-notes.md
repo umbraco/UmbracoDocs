@@ -1,6 +1,7 @@
 ---
 description: >-
-  Get an overview of the things changed and fixed in each version of Umbraco UI Builder.
+  Get an overview of the things changed and fixed in each version of Umbraco UI
+  Builder.
 ---
 
 # Release Notes
@@ -10,12 +11,56 @@ In this section, we have summarized the changes to Umbraco UI Builder released i
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
 {% hint style="info" %}
-If you are upgrading to a new major version, check the breaking changes in the [Version Specific Upgrade Notes](./upgrading/version-specific.md) article.
+If you are upgrading to a new major version, check the breaking changes in the [Version Specific Upgrade Notes](upgrading/version-specific.md) article.
 {% endhint %}
 
 ## Release History
 
 This section contains the release notes for Umbraco UI Builder 13 including all changes for this version.
+
+#### [**13.1.0**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.0) **(March 6th 2024)**
+
+* All updates listed under 13.1.0-rc1 and 13.1.0-rc2.
+
+#### [**13.1.0-rc2**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.0) **(February 26th 2024)**
+
+* Upgrade from 13.0.3 to 13.1.0-rc1 breaks existing custom repository. [#91](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/91)
+
+While working with a custom repository, the entity ID type converter defaulted to the newly registered `UdiConverter` instead of `Int32Converter`. With the current update, the required converter will be picked in a different order.
+
+#### [**13.1.0-rc1**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.0) **(February 20th 2024)**
+
+Umbraco UI Builder 13.1 is the first release since launch adding new features. We've focussed on improving the experience when working with related collections, addressing some additional use cases that widen the scope of the product. This includes the possibility to retrieve child collections entities or use an Umbraco entity as foreign key.
+
+* Related Collections
+
+This feature provides support for managing **many-to-many** relationships by configuring main, related and junction entities.
+
+You can read more about this in the [related collections](collections/related-collections.md) article.
+
+* Retrieve Child Collections
+
+This feature addresses a **one-to-many** relationship context. Having a parent collection with child sub-collections, one might need to retrieve the child collections only, without fetching the details of the parent.
+
+You can read more about this in the [retrieve child collections](collections/retrieve-child-collections.md) article.
+
+* Implementation of a `UdiConverter`
+
+This update addresses the configuration of collections that use as foreign key a reference to an Umbraco entity. If the FK type is `Integer`, the persisted value defaults to 0. This is because the UDI value of the entity cannot be converted from `String` to `Int`. Based on the UDI value, we are retrieving and persisting the `Id` of the Umbraco entity.
+
+A use case can be found in the [Github issue #86](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/86).
+
+
+#### [**13.0.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.3) **(February 20th 2024)**
+
+* Dependency version update for `Umbraco.Licenses`
+
+#### [13.0.2](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=label%3Arelease%2F13.0.2+is%3Aclosed) (January 26th 2024)
+
+* Doesn't work after upgrading to 13.0.3 [#88](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/88)
+* Dependency issue when installing UIBuilder alongside Umbraco Commerce in a v13 Umbraco website [#82](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/87)
+* Dependency issue when installing UIBuilder alongside uSync in a v13 Umbraco website [#85](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/85)
+* Fields in Sidebar are not included when creating item [#82](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/82)
 
 #### [13.0.1](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=label%3Arelease%2F13.0.1+is%3Aclosed) (January 11th 2024)
 

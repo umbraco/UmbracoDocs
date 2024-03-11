@@ -24,13 +24,12 @@ The {area} specified by the [PluginController] attribute replaces the /api/ area
 
 ## MVC controllers for the backoffice
 
-If you are using MVC in the backoffice then you would normally inherit from `Umbraco.Cms.Web.Common.Controllers.UmbracoAuthorizedController`. This type of controller is not auto-routed like Umbraco Api controllers or surface controllers, so will require a custom route declaration and be registered with the Umbraco DI container to make it work.
+Depending on the type of controller used (MVC or WebAPI), the controller is not auto-routed. You will need to declare a custom route and register it with the Umbraco DI container to make it work.
 
 For more information on authenticated/authorized controllers & attributes see the [Controllers Documentation](../../implementation/controllers.md).
 
 ## Defining a route
 
-When you create a controller that inherits from `Umbraco.Cms.Web.Common.Controllers.UmbracoAuthorizedController` you need to explicitly define a route.
 Defining a route is done with the standard .NET Core MVC routing practices, however there is a handy extension method on the `IEndpointRouteBuilder` to help you.
 
 When creating custom routes you can either do it directly in the `Startup.cs` files, or with a pipeline filter in a composer which looks something like:
@@ -109,8 +108,8 @@ public class MyController : UmbracoAuthorizedController
 
 
 {% hint style="info" %}
-The route must be prefixed with Umbraco path which is configurable and resolved with `GetUmbracoMvcArea()` from `IGlobalSettings` and then by "/backoffice" in order for Umbraco to check user authentication.
+The route must be prefixed with the Umbraco path, which is configurable and resolved with `GetUmbracoMvcArea()` from `IGlobalSettings`. Then, it should be followed by "/backoffice" in order for Umbraco to check user authentication.
 {% endhint %}
 
 ### What about Surface Controllers?
-Surface Controllers should not be used in the backoffice. Surface Controllers are not designed to work with the backoffice, they are not meant to be used there and will not be supported being used there.
+Surface Controllers should not be used in the backoffice. Surface Controllers are not designed to work with the backoffice. They are not meant to be used there and will not be supported being used there.
