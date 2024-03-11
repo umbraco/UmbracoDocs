@@ -41,7 +41,7 @@ One approach for this is to add a new rewrite rule to the `<system.webServer><re
     <add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
     <add input="{REQUEST_URI}" negate="true" pattern="^/DependencyHandler.axd" />
     <add input="{REQUEST_URI}" negate="true" pattern="^/App_Plugins/" />
-    <add input="{REQUEST_URI}" negate="true" pattern="^/sb" />
+    <add input="{REQUEST_URI}" negate="true" pattern="^/sb/" />
   </conditions>
   <action type="Redirect" url="https://www.example.com/{R:0}" redirectType="Permanent" />
 </rule>
@@ -64,8 +64,8 @@ For example, the following rule will redirect all requests for the site http://e
   <match url=".*" />
   <conditions>
     <add input="{HTTPS}" pattern="^OFF$" />
-    <add input="{HTTP_HOST}" pattern="^localhost(:[0-9]+)?$" negate="true" />
-    <add input="{REQUEST_URI}" pattern="^/\.well-known/acme-challenge/" negate="true" />
+    <add input="{HTTP_HOST}" negate="true" pattern="^localhost(:[0-9]+)?$" />
+    <add input="{REQUEST_URI}" negate="true" pattern="^/\.well-known/acme-challenge/" />
   </conditions>
   <action type="Redirect" url="https://{HTTP_HOST}/{R:0}" redirectType="Permanent" />
 </rule>
@@ -87,13 +87,13 @@ For example, the following rule will redirect all requests for `https://example.
 <rule name="Add trailing slash" stopProcessing="true">
   <match url="(.*[^/])$" />
   <conditions>
-    <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
-    <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
-    <add input="{REQUEST_FILENAME}" pattern="(.*?)\.[a-zA-Z0-9]{1,4}$" negate="true" />
-    <add input="{REQUEST_URI}" pattern="^/umbraco" negate="true" />
-    <add input="{REQUEST_URI}" pattern="^/DependencyHandler.axd" negate="true" />
-    <add input="{REQUEST_URI}" pattern="^/App_Plugins/" negate="true" />
-    <add input="{REQUEST_URI}" pattern="^/\.well-known/acme-challenge/" negate="true" />
+    <add input="{REQUEST_FILENAME}" negate="true" matchType="IsDirectory" />
+    <add input="{REQUEST_FILENAME}" negate="true" matchType="IsFile" />
+    <add input="{REQUEST_FILENAME}" negate="true" pattern="(.*?)\.[a-zA-Z0-9]{1,4}$" />
+    <add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
+    <add input="{REQUEST_URI}" negate="true" pattern="^/DependencyHandler.axd" />
+    <add input="{REQUEST_URI}" negate="true" pattern="^/App_Plugins/" />
+    <add input="{REQUEST_URI}" negate="true" pattern="^/\.well-known/acme-challenge/" />
   </conditions>
   <action type="Redirect" url="{R:1}/" />
 </rule>
@@ -113,10 +113,10 @@ Another example would be to redirect from non-www to www:
 <rule name="Redirect to www prefix" stopProcessing="true">
   <match url=".*" />
   <conditions>
-    <add input="{HTTP_HOST}" pattern="^www\." negate="true" />
-    <add input="{HTTP_HOST}" pattern="^localhost(:[0-9]+)?$" negate="true" />
-    <add input="{HTTP_HOST}" pattern="\.azurewebsites\.net$" negate="true" />
-    <add input="{HTTP_HOST}" pattern="\.umbraco\.io$" negate="true" />
+    <add input="{HTTP_HOST}" negate="true" pattern="^www\." />
+    <add input="{HTTP_HOST}" negate="true" pattern="^localhost(:[0-9]+)?$" />
+    <add input="{HTTP_HOST}" negate="true" pattern="\.azurewebsites\.net$" />
+    <add input="{HTTP_HOST}" negate="true" pattern="\.umbraco\.io$" />
   </conditions>
   <action type="Redirect" url="https://www.{HTTP_HOST}/{R:0}" />
 </rule>
