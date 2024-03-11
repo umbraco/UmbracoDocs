@@ -6,13 +6,14 @@ description: Example of a Custom API with Authorization and Swagger
 
 This article covers how to create a Custom API controller protected by the backoffice authorization policy. It also shows how to enable authorization UI in Swagger docs.
 
-This example can be a starting point for creating a secure custom API in the Swagger documentation or using the API Controller. You can find other examples in the [API versioning and OpenAPI](./api-versioning-and-openapi.md) article.
 
 {% hint style="info" %}
 
 Before  proceeding, make sure to read the [Management API](./management-api/README.md) article. It provides information about the Swagger documentation and Authorization used in this article.
 
 {% endhint %}
+
+This example can be a starting point for creating a secure custom API in the Swagger documentation or using the API Controller. You can find other examples in the [API versioning and OpenAPI](./api-versioning-and-openapi.md) article.
 
 1. Create a new `.cs` file called `MyBackOfficeSecurityRequirementsOperationFilter` at the root of the project in an Umbraco v14+ installation.
 
