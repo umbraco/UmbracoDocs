@@ -74,7 +74,7 @@ The localizations are applied by using the syntax `#{area alias}_{key alias}`.
 
 ![Applying localization to a property](../images/localization-document-type-editor-validation.png)
 
-3. When creating and editing the content, you will see that the backoffice now uses the configured localizations:
+3. When creating and editing the content, you will see that the backoffice now uses the configured localizations. Create a new "Article" content:
 
 ![Localized document creation dialog](../images/localization-document-editor-create.png)
 
