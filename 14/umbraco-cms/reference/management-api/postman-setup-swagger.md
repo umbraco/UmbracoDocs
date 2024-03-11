@@ -62,7 +62,7 @@ The localhost URL might vary from this example. Make sure to change the URL to t
 To set up authorization values,  follow these steps:
 1. Click on **Authorization** tab in the **Umbraco Management API** collection.
 
-1. On **Type** choose `OAuth 2.0`
+2. Choose `OAuth 2.0` from **Type** 
 2. Check if those attributes are setup:
 
 * **Add auth data** is set to `Request Headers`
