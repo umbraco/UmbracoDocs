@@ -63,7 +63,7 @@ To set up authorization values,  follow these steps:
 1. Click on **Authorization** tab in the **Umbraco Management API** collection.
 
 2. Choose `OAuth 2.0` from **Type** 
-2. Check if those attributes are setup:
+3. Check if these attributes are set:
 
 * **Add auth data** is set to `Request Headers`
 * **Auto-refresh token** is `Disabled`
