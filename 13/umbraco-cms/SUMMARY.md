@@ -100,6 +100,7 @@
 * [Data](fundamentals/data/README.md)
   * [Defining Content](fundamentals/data/defining-content/README.md)
     * [Default Document Types](fundamentals/data/defining-content/default-document-types.md)
+    * [Document Type Localization](fundamentals/data/defining-content/document-type-localization.md)
   * [Creating Media](fundamentals/data/creating-media/README.md)
     * [Default Data/Media Types](fundamentals/data/creating-media/default-media-types.md)
   * [Members](fundamentals/data/members.md)
