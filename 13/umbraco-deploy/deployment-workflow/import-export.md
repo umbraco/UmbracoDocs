@@ -358,7 +358,7 @@ We can use this feature to help migrate from Umbraco 7 to a supported major vers
 
 #### Exporting Umbraco 7 content and schema
 
-We can generate an export archive in the same format as used by the content import/export feature by adding the [`Umbraco.Deploy.Contrib.Export` assembly](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-2.0.0-export) to your Umbraco 7 project. This archive can then be imported into a newer Umbraco version by configuring the legacy import migrators. You can also apply additional migrators to update obsolete data types and property data into newer equivalents.
+We can generate an export archive in the same format as used by the import/export feature by adding the [`Umbraco.Deploy.Contrib.Export` assembly](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-2.0.0-export) to your Umbraco 7 project. This archive can then be imported into a newer Umbraco version by configuring the legacy import migrators. You can also apply additional migrators to update obsolete data types and property data into newer equivalents.
 
 This is possible via code, by temporarily applying a composer to an Umbraco 7 project to generate the export archive on start-up:
 
