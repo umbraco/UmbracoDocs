@@ -11,7 +11,7 @@ The API returns responses in a JSON format, which can be presented in different 
 The Management API can also be used for Custom apps or Workflows with OpenID Connect.
 
 {% hint style="info" %}
-The Management API is a replacement for the backoffice controllers that were not restful.
+The Management API is a replacement for the backoffice controllers that lacked RESTful capabilities.
 {% endhint %}
 
 ## Swagger Documentation
