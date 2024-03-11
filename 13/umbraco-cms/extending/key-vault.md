@@ -39,25 +39,70 @@ The next step is to add the Azure Key Vault endpoint to the `appsettings.json` f
 }
 ```
 
-After adding the Key Vault endpoint you have to update the `CreateHostBuilder` method which you can find in the `Program.cs` file.
+After adding the endpoint in the appsettings, it's time to add configuration so that the KeyVault is used. One way to achieve this is to write an extension method for the `WebApplicationBuilder`:
 
 ```csharp
-Host.CreateDefaultBuilder(args)
-    .ConfigureUmbracoDefaults()
-    .ConfigureAppConfiguration((context, config) =>
+using System;
+using Azure.Identity;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Extensions;
+
+namespace My.Website;
+
+public static class WebApplicationBuilderExtensions
+{
+	public static WebApplicationBuilder ConfigureKeyVault(this WebApplicationBuilder builder)
+	{
+		var keyVaultEndpoint = builder.Configuration["AzureKeyVaultEndpoint"];
+		if (!string.IsNullOrWhiteSpace(keyVaultEndpoint) && Uri.TryCreate(keyVaultEndpoint, UriKind.Absolute, out var validUri))
+		{
+			builder.Configuration.AddAzureKeyVault(validUri, new DefaultAzureCredential());
+		}
+
+		return builder;
+	}
+}
+```
+
+After creating the extension method, it's possible to call it from the `Program.cs` class, like so:
+
+```csharp
+using Microsoft.AspNetCore.Builder;
+using My.Project;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Extensions;
+
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+builder.ConfigureKeyVault();
+
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .Build();
+
+WebApplication app = builder.Build();
+
+await app.BootUmbracoAsync();
+
+app.UseUmbraco()
+    .WithMiddleware(u =>
     {
-        var settings = config.Build();
-        var keyVaultEndpoint = settings["AzureKeyVaultEndpoint"];
-        if (!string.IsNullOrEmpty(keyVaultEndpoint) && Uri.TryCreate(keyVaultEndpoint, UriKind.Absolute, out var validUri))
-        {
-            config.AddAzureKeyVault(validUri, new DefaultAzureCredential());
-        }
+        u.UseBackOffice();
+        u.UseWebsite();
     })
-    .ConfigureWebHostDefaults(webBuilder =>
+    .WithEndpoints(u =>
     {
-        webBuilder.UseStaticWebAssets();
-        webBuilder.UseStartup<Startup>();
+        u.UseInstallerEndpoints();
+        u.UseBackOfficeEndpoints();
+        u.UseWebsiteEndpoints();
     });
+
+await app.RunAsync();
 ```
 
 ### Authentication
