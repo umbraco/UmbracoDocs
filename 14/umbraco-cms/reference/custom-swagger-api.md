@@ -211,7 +211,8 @@ GET /api/v1/my/say-hello
 
 6. Click on the **Authorize** button to authenticate.
 
-6. Once authenticated try out the endpoint via the **Try it out** button and then click on **Execute**:
+7. Try out the endpoint using the **Try it out** button.
+8. Click on **Execute**.
 
 ![Trying out the endpoint](./images/custom-api-swagger-example-response.png)
 
