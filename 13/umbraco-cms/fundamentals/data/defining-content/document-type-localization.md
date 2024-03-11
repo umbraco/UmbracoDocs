@@ -71,7 +71,6 @@ The localizations are applied by using the syntax `#{area alias}_{key alias}`.
 
 ![Applying localization to a Document Type](../images/localization-document-type-editor.png)
 
-2. Set the first property as mandatory:
 
 ![Applying localization to a property](../images/localization-document-type-editor-validation.png)
 
