@@ -19,7 +19,7 @@ The Management API is a replacement for the backoffice controllers that lacked R
 Umbraco ships with Swagger to document the Management API. Swagger and the Swagger UI are based on [Swashbuckle.AspNetCore](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/) and is available at `{yourdomain}/umbraco/swagger`. For security reasons, both are disabled in non-production environments.
 Read more about Swagger in the [API versioning and OpenAPI](../api-versioning-and-openapi.md) article.
 
-From the Swagger documentation you can select a definition to navigate to Umbraco Management API or the Content Delivery API. You can also create a custom documentation in the swagger which you can read more about in the [Custom Swagger API with Authorization](../custom-swagger-api.md) article.
+The Swagger documentation allows you to select a definition and go to either Umbraco Management API or Content Delivery API. You can also create custom documentation in Swagger by referring to the [Custom Swagger API with Authorization](../custom-swagger-api.md) article.
 
 ![Umbraco Management API documentation in Swagger](../images/management-api-swagger.png)
 
