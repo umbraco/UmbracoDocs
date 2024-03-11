@@ -77,7 +77,8 @@ To test a Management API endpoint, follow these steps:
 
 ![Umbraco Management API Endpoint - Try it Out Button](../images/management-api-try-it-out.png)
 
-3. Then you will have the option to change the values of the **parameters**, however in this case let´s leave the default values as they are. Now click on **Execute** so we can get some data for our **Audit Log** endpoint.
+3. You now have the option to change the values of the **parameters**. In this case, let´s leave the default values as they are. 
+4. Click on **Execute** so that we can get some data for our **Audit Log** endpoint.
 
 ![Umbraco Management API Endpoint - Execute - Response](../images/management-api-execute-response.png)
 
