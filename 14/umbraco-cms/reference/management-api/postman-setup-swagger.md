@@ -121,7 +121,7 @@ To resolve this:
 
 ![Postman Cog Wheel Location](../images/postman-setup-swagger-cog-wheel.png)
 
-Click on **Settings** and disable `SSL certificate verification`.
+2. Click on **Settings** and disable `SSL certificate verification`.
 
 ## Making a request
 
