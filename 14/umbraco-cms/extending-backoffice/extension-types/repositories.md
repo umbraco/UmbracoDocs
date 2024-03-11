@@ -24,7 +24,7 @@ With a repository we can have different data sources depending on the state of t
 
 ### Data flow with a repository  <a href="#data-flow-with-a-repository" id="data-flow-with-a-repository"></a>
 
-<figure><img src="../.gitbook/assets/data-flow.svg" alt=""><figcaption><p>Data flow</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/data-flow.svg" alt=""><figcaption><p>Data flow</p></figcaption></figure>
 
 A repository has to be instanced in the context where it is used. It should take a host element as part of the constructor, so any contexts consumed in the repository (notifications, modals, etc.) get rendered in the correct DOM context.
 

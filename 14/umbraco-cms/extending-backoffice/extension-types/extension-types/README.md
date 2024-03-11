@@ -14,6 +14,7 @@ The Umbraco Backoffice currently supports the following extension types:
 * [Property Editor](../property-editors/)
 * [Menu](../../menu.md)
 * [Tree](../../trees.md)
+* [Repositories](../repositories.md)
 
 ## [Entry Point](entry-point.md)
 

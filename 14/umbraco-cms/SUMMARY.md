@@ -33,6 +33,7 @@
   * [Extension Types](extending-backoffice/extension-types/extension-types/README.md)
     * [Kind](extending-backoffice/extension-types/extension-types/kind.md)
     * [Entry Point](extending-backoffice/extension-types/extension-types/entry-point.md)
+  * [Repositories](extending-backoffice/extension-types/repositories.md)
   * [Header Apps](extending-backoffice/extension-types/header-apps.md)
   * [Section](extending-backoffice/extension-types/sections-and-trees/README.md)
     * [Section View](extending-backoffice/extension-types/sections-and-trees/section-view.md)
@@ -64,7 +65,6 @@
 * [Sorting](extending-backoffice/sorting.md)
 * [Trees](extending-backoffice/trees.md)
 * [Menu](extending-backoffice/menu.md)
-* [Repositories](extending-backoffice/repositories.md)
 
 ## Tutorials
 
