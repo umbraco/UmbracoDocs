@@ -209,7 +209,7 @@ Here, we can find the endpoint that we created:
 GET /api/v1/my/say-hello
 ```
 
-5. Authenticate via the **Authorize** button.
+6. Click on the **Authorize** button to authenticate.
 
 6. Once authenticated try out the endpoint via the **Try it out** button and then click on **Execute**:
 
