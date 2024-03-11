@@ -67,9 +67,24 @@ Umbraco must be restarted to pick up on changes to language files.
 
 The localizations are applied by using the syntax `#{area alias}_{key alias}`. 
 
-1. Create a Document Type with template that looks like this:
+1. Create a Document Type with template called `#contentTypes_article` with alias: `articlePage`.
+
+2. Under the newly created document type follow these steps:
+- Name the description to `#contentTypes_article-desc`.
+- Create a new tab called `#tabs_content`.
+- Add a new group called `#groups_titles`.
+- Add a property called `#properties_title` with alias `title`.
+  - Set description to `#properties_title-desc`. 
+  - Use a `TextString` editor.
+  - Enable to `Set this field as mandatory`.
+  - Under validation add `#properties_title-message`.
+- Add a property called `#properties_subTitle` with alias `subTitle`.
+   - Set description to `#properties_subTitle-desc`.
+   - Use a `TextString` editor.
+- Enable to `Allow as root` in the **Permissions** tab.
 
 ![Applying localization to a Document Type](../images/localization-document-type-editor.png)
+
 
 
 ![Applying localization to a property](../images/localization-document-type-editor-validation.png)
