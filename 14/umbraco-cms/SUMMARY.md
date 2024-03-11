@@ -64,6 +64,7 @@
 * [Sorting](extending-backoffice/sorting.md)
 * [Trees](extending-backoffice/trees.md)
 * [Menu](extending-backoffice/menu.md)
+* [Repositories](extending-backoffice/repositories.md)
 
 ## Tutorials
 
