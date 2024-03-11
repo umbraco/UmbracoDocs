@@ -192,7 +192,7 @@ Below is a list of collections with their corresponding 'collection type' and ho
 
 ### Example - Modifying Collections
 
-This example shows how to control which Healthchecks are available to run in the Umbraco backoffice. Create a C# class which implements IUserComposer, the Compose method gives access to the HealthChecks collection of the Umbraco Composition - first we clear all HealthChecks from the collection, then add back in the ones we want to keep:
+This example shows how to control which Healthchecks are available to run in the Umbraco backoffice. Create a C# class which implements IComposer, the Compose method gives access to the HealthChecks collection of the Umbraco Composition - first we clear all HealthChecks from the collection, then add back in the ones we want to keep:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -390,7 +390,7 @@ public static class WebCompositionExtensions
         => builder.WithCollectionBuilder<MyThingsCollectionBuilder>();
 }
 
-public class MyThingComposer : IUserComposer
+public class MyThingComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {
@@ -482,7 +482,7 @@ public static class WebCompositionExtensions
         => builder.WithCollectionBuilder<MyThingsCollectionBuilder>();
 }
 
-public class MyThingComposer : IUserComposer
+public class MyThingComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {
