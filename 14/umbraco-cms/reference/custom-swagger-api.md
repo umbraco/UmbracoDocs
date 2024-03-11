@@ -90,7 +90,7 @@ public class MyApiController : Controller
 - The `BackOfficeSecurityRequirementsOperationFilter` enables backoffice authentication for Swagger UI.
 - `BackOfficeSecurityRequirementsOperationFilterBase` is an abstract base class that can be reused for custom APIs.
 
-2. Add the ApiController to setup the logic behind the endpoint:
+3. Add the ApiController to setup the logic behind the endpoint:
 
 {% code title="MyBackOfficeSecurityRequirementsOperationFilter.cs" lineNumbers="true" %}
 ```csharp
