@@ -169,6 +169,8 @@ Can be used for filtering: `false`
 
 <summary>Grid layout</summary>
 
+The grid editor Data Type in Heartcore is deprecated and will be retired in June 2025 or thereafter. For more information read the following [blog post](https://umbraco.com/blog/umbraco-heartcore-update-october-2023#editors).
+
 Editor Alias: `Umbraco.Grid`\
 GraphQL Type: [`JSON`](schema-generation.md#json)\
 Can be used for filtering: `false`
