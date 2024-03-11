@@ -5,7 +5,7 @@ description: "Learn how to create a Custom Grid Editor in Umbraco Heartcore."
 # Custom Grid Editors
 
 {% hint style="warning" %}
-The grid editor Data Type in Heartcore is deprecated and will be retired in June 2025 or thereafter. For more information see [this blog post](https://umbraco.com/blog/umbraco-heartcore-update-october-2023#editors).
+The grid editor Data Type in Heartcore is deprecated and will be retired in June 2025 or thereafter. For more information read the following [blog post](https://umbraco.com/blog/umbraco-heartcore-update-october-2023#editors).
 {% endhint %}
 
 In this tutorial, we will create a Custom Grid Editor using [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web\_Components/Using\_custom\_elements) and [Lit](https://lit.dev/). We will look at how we can define what the API response for our data should look like.
