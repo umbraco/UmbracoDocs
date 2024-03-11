@@ -111,7 +111,7 @@ A window appears to authenticate into the Backoffice. Follow the given instructi
 
 ## Missing agent
 
-When trying to obtain a token you might run into an error when trying to obtain a token. When looking in the postman console and see the following `Error: localhost request not supported`. This means you are missing the postman agent. You can get this from the [Postmant website](https://www.postman.com/downloads/postman-agent/) and try again.
+When trying to obtain a token you might run into an error. If you see the message `Error: localhost request not supported` in the Postman console, it means the Postman agent is missing. To resolve this issue, you can download the Postman agent from the Postman website [Postman website](https://www.postman.com/downloads/postman-agent/) and try again.
 
 ## SSL Certificate verification
 
