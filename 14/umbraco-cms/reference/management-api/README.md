@@ -84,4 +84,4 @@ To test a Management API endpoint, follow these steps:
 
 In the **Response Body** we get the details of the **Audit Log** that we have requested.
 
-4. You can continue changing the default **parameters**, **clear** the query or **cancel** the trial of the endpoint.
+5. You can continue changing the default **parameters**, **clear** the query, or **cancel** the trial of the endpoint.
