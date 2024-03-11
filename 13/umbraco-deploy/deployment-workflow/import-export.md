@@ -445,7 +445,7 @@ Artifact type resolvers allow resolving changes in the type that's stored in the
 - Moving the pre-values of data types to the configuration property;
 - Moving the invariant release and expire dates of content to the (culture variant) schedule property;
 - Moving the 'allowed at root' and 'allowed child content types' of content/media/member types to the permissions property;
-- Migrating the data type configuration from pre-values to the correct configuration objects and new editor aliases for:
+- Migrating the Data Type configuration from pre-values to the correct configuration objects and new editor aliases for:
   - `Umbraco.CheckBoxList` (pre-values to value list)
   - `Umbraco.ColorPickerAlias` to `Umbraco.ColorPicker` (pre-values to value list)
   - `Umbraco.ContentPicker2` to `Umbraco.ContentPicker` (removes invalid start node ID)
