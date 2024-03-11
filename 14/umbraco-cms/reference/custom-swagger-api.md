@@ -199,7 +199,7 @@ public class MyApiController : Controller
 </details>
 
 4. Run the project and navigate to `{yourdomain}/umbraco/swagger`.
-4. From **Select a definition** choose the swagger documentation we have created with the above code, called **My API v1**.
+5. Choose the swagger documentation we created with the code above named **My API v1** from **Select a definition**.
 
 ![Created Custom API in Swagger Documentation](./images/custom-api-swagger-example.png)
 
