@@ -59,7 +59,7 @@ You can upload the file via the browser.
 Similar to when exporting, you can choose to import everything from the archive file, or only content, schema or files.
 
 {% hint style="info" %}
-Deploy does not touch the default maximum upload size, but can you [configure this yourself by following the CMS documentation](https://docs.umbraco.com/umbraco-cms/reference/configuration/maximumuploadsizesettings).
+Deploy does not touch the default maximum upload size, but you can [configure this yourself by following the CMS documentation](https://docs.umbraco.com/umbraco-cms/reference/configuration/maximumuploadsizesettings).
 {% endhint %}
 
 ![Import dialog step 2](../../../10/umbraco-deploy/deployment-workflow/images//import-dialog-2.png)
