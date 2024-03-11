@@ -435,7 +435,12 @@ public class DeployExportApplicationHandler : ApplicationEventHandler
 
 #### Importing Umbraco 7 content and schema
 
-To import this archive into a newer Umbraco project, you need to install `UmbracoDeploy.Contrib` 4.3 (for Umbraco 8) or `Umbraco.Deploy.Contrib` 10.2, 12.1 or 13.1 (or later) and configure the legacy artifact type resolver and migrators. Artifact type resolvers allow resolving changes in the type that's stored in the `__type` JSON property of the artifact, in case it moved to a different assembly or namespace (or got renamed) in a newer version. The legacy migrators handle the following changes:
+To import this archive into a newer Umbraco project, you need to install either of these packages:
+* `UmbracoDeploy.Contrib` 4.3 for Umbraco 8
+* `Umbraco.Deploy.Contrib` for Umbraco 10.2, 12.1, 13.1 or later 
+Then you need to configure the legacy artifact type resolver and migratory.
+
+Artifact type resolvers allow resolving changes in the type that's stored in the `__type` JSON property of the artifact. This is in case it moved to a different assembly or namespace (or got renamed) in a newer version. The legacy migrators handle the following changes:
 
 - Moving the pre-values of data types to the configuration property;
 - Moving the invariant release and expire dates of content to the (culture variant) schedule property;
