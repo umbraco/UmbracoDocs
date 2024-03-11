@@ -5,7 +5,7 @@ description: Documentation for Custom Grid Editors in Umbraco Heartcore
 # Custom Grid Editors
 
 {% hint style="warning" %}
-The grid editor Data Type in Heartcore is deprecated and will be retired in June 2025 or thereafter. For more information see [this blog post](https://umbraco.com/blog/umbraco-heartcore-update-october-2023#editors).
+The grid editor Data Type in Heartcore is deprecated and will be retired in June 2025 or thereafter. For more information read the following [blog post](https://umbraco.com/blog/umbraco-heartcore-update-october-2023#editors).
 {% endhint %}
 
 A custom Grid Editor in Heartcore is built using [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web\_Components/Using\_custom\_elements).
