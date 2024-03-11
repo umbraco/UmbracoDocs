@@ -80,6 +80,7 @@ The localizations are applied by using the syntax `#{area alias}_{key alias}`.
 ![Localized document creation dialog](../images/localization-document-editor-create.png)
 
 4. When trying to save the content without adding the mandatory content, you will see a warning as expected:
+
 ![Localized document editing](../images/localization-document-editor.png)
 
 ![Localized property validation](../images/localization-document-editor-validation.png)
