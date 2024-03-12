@@ -429,7 +429,7 @@
   * [Adding server-side data to a property editor](tutorials/creating-a-property-editor/part-4.md)
 * [Creating a Multilingual Site](tutorials/multilanguage-setup.md)
 * [Add Google Authentication (Users)](tutorials/add-google-authentication.md)
-* [Add Azure Active Directory authentication (Members)](tutorials/add-azure-active-directory-authentication.md)
+* [Add Microsoft Entra ID authentication (Members)](tutorials/add-microsoft-entra-id-authentication.md)
 * [Creating a Backoffice Tour](tutorials/creating-a-backoffice-tour.md)
 * [Creating Custom Database Tables with Entity Framework](tutorials/getting-started-with-entity-framework-core.md)
 * [The Starter Kit](tutorials/starter-kit/README.md)
