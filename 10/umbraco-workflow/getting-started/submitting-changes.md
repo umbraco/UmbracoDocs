@@ -3,7 +3,7 @@ description: >-
   Learn how to submit content changes for Workflow approval
 ---
 
-# Submitting changes for approval
+# Submitting Content for Approval
 
 {% hint style="info" %}
 This article applies to versions 10.6.0 and higher.
