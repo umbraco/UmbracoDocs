@@ -29,7 +29,7 @@ Depending on the Document Type and Workflow settings, the overlay will provide i
 - A media picker for choosing a media attachment
   - Only visible when **Allow attachments** is set to true
 - A date picker for setting a scheduled publishing date
-  - Only visible when 'Allow scheduling' is set to true, and the workflow type is publish
+  - Only visible when **Allow scheduling** is set to true and the workflow type is **Publish**
 - A date picker for setting a scheduled unpublishing date
   - Only visible when 'Allow scheduling' is true
 
