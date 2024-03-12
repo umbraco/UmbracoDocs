@@ -53,7 +53,7 @@ Alternatively, all variants can be submitted in an invariant workflow, where the
 
 The invariant workflow will publish all variants, regardless of their node state, that are not already in workflows. This means that previously unpublished variants will be republished when using invariant workflows. In most cases, it is preferable to select the individual variants.
 
-## Content validation and pending changes
+## Content Validation and Pending Changes
 
 When submitting for approval, Workflow will automatically save variants with pending changes.
 
