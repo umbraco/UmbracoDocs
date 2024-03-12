@@ -142,6 +142,10 @@ This setting has been superseded by `DistributedLockingWriteLockDefaultTimeout`.
 
 </details>
 
+## Release notes
+
+You can find a list of all Umbraco versions on [Our Umbraco](https://our.umbraco.com/download/releases/) website. Each version is a link, where once clicked you will find more information about what changes have been done for that specific version.
+
 ## Find your upgrade path
 
 Are you looking to upgrade an Umbraco Cloud project from 9 to 10? Follow the guide made for [Upgrading your project from Umbraco 9 to 10](https://docs.umbraco.com/umbraco-cloud/product-upgrades/major-upgrades) instead, as it requires a few steps specific to Umbraco Cloud.
@@ -376,7 +380,7 @@ If you're using ModelsBuilder in `AppData` mode and you have your generated mode
 
 Umbraco 8.1 replaces AutoMapper with [UmbracoMapper](../../../../reference/mapping.md). This in itself will not break anything on your site. If you have used AutoMapper in your own code you will have to either include the package yourself or switch your implementation to use UmbracoMapper.
 
-#### Follow the [**upgrade guide for Umbraco 8**](minor-upgrades-for-umbraco-8.md) to complete the upgrade
+**Follow the** [**upgrade guide for Umbraco 8**](minor-upgrades-for-umbraco-8.md) **to complete the upgrade**
 
 </details>
 
@@ -390,7 +394,7 @@ It is not possible to upgrade an Umbraco 7 site to Umbraco 8 because the codebas
 
 In Umbraco 8 we have added improvements and updated dependencies. We have also done a thorough clean-up to make it simpler for you to work with and extend your Umbraco project.
 
-#### [Migrate your content to Umbraco 8](migrate-content-to-umbraco-8.md)
+[**Migrate your content to Umbraco 8**](migrate-content-to-umbraco-8.md)
 
 </details>
 
@@ -614,7 +618,7 @@ There are [**important Forms upgrade documentation that you will need to read.**
 
 Umbraco Courier 3.1.0 has been released to be compatible with Umbraco 7.6. If you are using Courier, you will need to update it to version 3.1.0.
 
-#### Follow the [upgrade guide for Umbraco 7](minor-upgrades-for-umbraco-7.md) to complete the upgrade
+**Follow the** [**upgrade guide for Umbraco 7**](minor-upgrades-for-umbraco-7.md) **to complete the upgrade**
 
 </details>
 
