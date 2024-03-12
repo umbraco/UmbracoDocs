@@ -202,9 +202,7 @@ In the following example, we will use the [GoogleAuthenticator NuGet Package](ht
 {% tabs %}
 {% tab title="Latest version" %}
 ```
-using System;
 using System.Runtime.Serialization;
-using System.Threading.Tasks;
 using Google.Authenticator;
 using Umbraco.Cms.Core.Security;
 using Umbraco.Cms.Core.Services;
