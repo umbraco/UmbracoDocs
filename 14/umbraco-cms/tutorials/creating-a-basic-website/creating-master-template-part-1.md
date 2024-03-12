@@ -1,61 +1,67 @@
 # Creating a Master Template
 
-We've seen how to create a **Document Type** and its corresponding **Template**. If you want to create a three-page site containing; Home, News and Contact Us pages, you would create a _**Document Type**_ with a corresponding **Template** and copy the same HTML code into each template.
+We've seen how to create a **Document Type** and its corresponding **Template**. If you plan to create a website containing Home, News, and Contact Us pages, you will need to create a Document Type for each page. You will also need to create a corresponding Template for each Document Type.
 
-If you see yourself repeating the same HTML multiple times in your templates, you might want to consider creating a new master template.
+You may end up copying the same HTML code into each of these templates, which can be time-consuming and repetitive. In such scenario, you might want to consider creating a new master template.
 
 To create a new master template:
 
 1. Go to **Settings**.
 2. Select **Templates** from the **Templating** section.
-3. Select the **...** next to the **Templates** folder and click **Create**.
-4.  A template opens up in the content editor. Enter a **Name** for the master template. Let's call it _Master_.
+3. Select the **...** next to the **Templates** folder.
+4. Click **Create**.
+   A template opens up in the content editor.
+5. Enter a **Name** for the master template. Let's call it _Master_.
 
-    <figure><img src="../../../../10/umbraco-cms/tutorials/creating-a-basic-website/images/figure-22-master-template-v9.png" alt=""><figcaption></figcaption></figure>
-5. Click **Save**.
+    ![Master Template](images/master-template-v14.png)
+6. Click **Save**.
 
 ## Using the Master Template
 
 To use the master template:
 
 1. Go to **Settings**.
-2. Select **Templates** from the **Templating** section and open the **Homepage** template.
-3. Select `Master Template: No Master`. The Master template dialog opens on the right-side of the browser.
-4.  Select the template called **Master**. This will update the Razor code section from `Layout = null;` to `Layout = "Master.cshtml";`
+2. Select **Templates** from the **Templating** section.
+3. Open the **Homepage** template.
+4. Select `Master Template: No Master`.
+   The Master template dialog opens on the right-side of the browser.
+5. Select the template called **Master**.
+6. Click **Choose**.
+   The Razor code section is updated from `Layout = null;` to `Layout = "Master.cshtml";`
 
-    <figure><img src="../../../../10/umbraco-cms/tutorials/creating-a-basic-website/images/figure-23-homepage-has-master-template-v9.png" alt=""><figcaption></figcaption></figure>
-5. Click **Save**.
+    ![Adding Master Template to HomePage](images/homepage-has-master-template.png)
+7. Click **Save**.
 
 ## Updating Templates With the New Master Template
 
-We now need to move the parts of our HTML template that are common across all templates into the _**Master**_. It might be slightly different for different websites and you'll need to consider if all pages contain a `<div id="main">` section so that you can update it in the master.
+We now need to move the parts of our HTML template that are common across all templates into the _**Master**_. It might be slightly different for different websites. You'll need to consider if all pages contain a `<div id="main">` section so that you can update it in the master.
 
 To update templates with the new master template, follow these steps:
 
 1. Go to **Settings**.
 2. Select **Templates** from the **Templating** section.
-3. Go to **Master** and open the **Homepage** template.
-4.  For this tutorial, we will cut everything from the `<html>` (around line 9) to the end of the `</div>` tag (around line 44) which is the `header` and `navigation` of the site to the master template.
+3. Navigate to the **Homepage** template.
+4. For this tutorial, we will cut everything from the `<html>` (around line 8) to the end of the `</div>` tag (around line 43) which is the `header` and `navigation` of the site to the master template.
 
-    <figure><img src="../../../../10/umbraco-cms/tutorials/creating-a-basic-website/images/figure-24-homepage-after-cutting-the-header-v9.png" alt=""><figcaption></figcaption></figure>
+   ![Header and navigation tags selected in the HomePage template](images/homepage-after-cutting-the-header.png)
 5. Click **Save**.
-6.  Go to the **Master** template and paste this HTML markup after the closing curly brace (around line 9).
+6. Go to the **Master** template and paste this HTML markup after the closing curly brace (around line 7).
 
-    <figure><img src="../../../../10/umbraco-cms/tutorials/creating-a-basic-website/images/figure-25-master-template-with-header-v9.png" alt=""><figcaption></figcaption></figure>
-7.  At the end of this markup, we need to tell Umbraco to insert the child template's content. To do so, add the code _**@RenderBody()**_ at the end.
+    ![Header and navigation tags added in the Master template](images/master-template-with-header.png)
+7. At the end of this markup, we need to tell Umbraco to insert the child template's content. To do so, add the code _**@RenderBody()**_ at the end.
 
-    <figure><img src="../../../../10/umbraco-cms/tutorials/creating-a-basic-website/images/figure-26-adding-renderbody-v9.png" alt=""><figcaption></figcaption></figure>
+    ![Adding renderbody in the Master template](images/adding-renderbody.png)
 8. Click **Save**.
 9. Repeat the same process for the footer content:
-   * Go to **Settings > Templates > Master > Homepage template** and cut everything from the `<!-- Footer -->` tag (around line 110) to the end of the `</html>` tag (around line 124) and click **Save**.
-   *   Go to the **Master** template and paste this HTML markup after the _**@RenderBody**_ field we've added.
+   * Go to the **Homepage** template and cut everything from the `<!-- Footer -->` tag (around line 108) to the end of the `</html>` tag (around line 121) and click **Save**.
+   * Go to the **Master** template and paste this HTML markup after the _**@RenderBody**_ field we've added.
 
-       <figure><img src="../../../../10/umbraco-cms/tutorials/creating-a-basic-website/images/figure-27-master-template-complete-v9.png" alt=""><figcaption></figcaption></figure>
+    ![End of the Master template](images/master-template-complete.png)
    * Click **Save**.
 
 Now we've done a lot of work. When we refresh our localhost page, nothing has changed. If you have a compilation error you have perhaps mistyped **@RenderBody()**.
 
-If you are missing any content (header or footer), check that the templates matches the following:
+If you are missing any content such as header or footer, ensure that the templates matches the following:
 
 ### Master Template
 
@@ -66,8 +72,6 @@ If you are missing any content (header or footer), check that the templates matc
 	Layout = null;
 }
 
-@* the fun starts here *@
-
 <html>
 	<head>
 		<title>Welcome - UmbracoTV</title>
@@ -75,7 +79,7 @@ If you are missing any content (header or footer), check that the templates matc
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 		<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="/wwwroot/media/css/main.css" />
+		<link rel="stylesheet" href="/css/main.css" />
 	</head>
 	
 	<body>
@@ -104,15 +108,15 @@ If you are missing any content (header or footer), check that the templates matc
 				</ul>
 			</nav>
 		</div>
-		
-		@RenderBody()
-		
-				<!-- Footer -->
+
+        @RenderBody()
+
+        <!-- Footer -->
 		<div class="container-fluid footer">
 			<div class="container">
 
-		    	@Model.Value("footerText")
-
+                @Model.Value("footerText")
+                
 			</div>
 		</div>
 	
@@ -128,10 +132,9 @@ If you are missing any content (header or footer), check that the templates matc
 
 ```csharp
 @using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>
-@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
-	Layout = "Master.cshtml";
+	Layout = "master.cshtml";
 }
 
 <!DOCTYPE HTML>
@@ -152,8 +155,7 @@ If you are missing any content (header or footer), check that the templates matc
 			<div class="row section">
 				<div class="col-md-12">
 
-	            @Model.Value("bodyText")
-
+					@Model.Value("bodyText")
 				</div>				
 			</div>
 
