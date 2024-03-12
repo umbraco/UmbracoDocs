@@ -1,8 +1,8 @@
 ---
 description: >-
   This document covers specific upgrade steps if a version requires them. Most
-  versions do not require specific upgrade steps. In most cases, you will be
-  able to upgrade directly from your current versi
+  versions do not require specific upgrade steps and you will be able to upgrade
+  directly from your current version.
 ---
 
 # Version Specific Upgrades
