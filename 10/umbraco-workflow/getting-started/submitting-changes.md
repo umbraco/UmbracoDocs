@@ -27,7 +27,7 @@ Depending on the Document Type and Workflow settings, the overlay will provide i
 - A selector for choosing the variants to publish
   - Only visible on variant content
 - A media picker for choosing a media attachment
-  - Only visible when 'Allow attachments' is set to true
+  - Only visible when **Allow attachments** is set to true
 - A date picker for setting a scheduled publishing date
   - Only visible when 'Allow scheduling' is set to true, and the workflow type is publish
 - A date picker for setting a scheduled unpublishing date
