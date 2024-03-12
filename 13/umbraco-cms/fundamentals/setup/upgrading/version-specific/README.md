@@ -1,8 +1,8 @@
 ---
 description: >-
   This document covers specific upgrade steps if a version requires them. Most
-  versions do not require specific upgrade steps. In most cases, you will be
-  able to upgrade directly from your current versi
+  versions do not require specific upgrade steps and you will be able to upgrade
+  directly from your current version.
 ---
 
 # Version Specific Upgrades
@@ -21,25 +21,27 @@ Use the [general upgrade guide](../) to complete the upgrade of your project.
 
 Below you can find the list of breaking changes introduced in Umbraco 13.
 
-* &#x20;[Use ISO codes instead of language IDs for fallback languages and translations](https://github.com/umbraco/Umbraco-CMS/issues/13751)
-* &#x20;[Breaking changes for the Delivery API](https://github.com/umbraco/Umbraco-CMS/issues/14745)
-* &#x20;[V13: New login screen](https://github.com/umbraco/Umbraco-CMS/issues/14780)
-* &#x20;[Updated NuGet Dependencies](https://github.com/umbraco/Umbraco-CMS/issues/14795)
-* &#x20;[Fix \`JsonNetSerializer\` settings leaking into derived implementations](https://github.com/umbraco/Umbraco-CMS/issues/14814)
-* &#x20;[Add default property value converters for all value types](https://github.com/umbraco/Umbraco-CMS/issues/14869)
-* &#x20;[V13: Add config to limit concurrent logins](https://github.com/umbraco/Umbraco-CMS/issues/14989)
-* &#x20;[Updates and support for re-use of CMS logic in Deploy](https://github.com/umbraco/Umbraco-CMS/issues/14990)
-* &#x20;[Dont explicitly index nested property by default](https://github.com/umbraco/Umbraco-CMS/issues/15028)
-* &#x20;[Blocks in the Rich Text Editor](https://github.com/umbraco/Umbraco-CMS/issues/15029)
-* &#x20;[Fix FurthestAncestorOrSelfDynamicRootQueryStep and FurthestDescendantOrSelfDynamicRootQueryStep](https://github.com/umbraco/Umbraco-CMS/issues/15113)
-* &#x20;[Remove parameter value/return nullability in \`IImageSourceParser\`, \`ILocalLinkParser\` and \`IMacroParser\`](https://github.com/umbraco/Umbraco-CMS/issues/15130)
-* &#x20;[Update PackageMigrationsPlans collection to be Weighted and not Lazy](https://github.com/umbraco/Umbraco-CMS/issues/15138)
-* &#x20;[Move IContextCache parameter to base Deploy interfaces and add checksum to artifact dependency](https://github.com/umbraco/Umbraco-CMS/issues/15144)
-* &#x20;[V13: Update IWebHookService to proper casing](https://github.com/umbraco/Umbraco-CMS/issues/15169)
-* &#x20;[V13: Implement webhook as i entity](https://github.com/umbraco/Umbraco-CMS/issues/15267)
-* &#x20;[Change \`WebhookEventCollectionBuilder\` to set collection](https://github.com/umbraco/Umbraco-CMS/issues/15351)
-* &#x20;[V13: Log webhook firing exceptions when they happen](https://github.com/umbraco/Umbraco-CMS/issues/15393)
-* &#x20;[Remove date header from webhook request and use constants](https://github.com/umbraco/Umbraco-CMS/issues/15407)
+* [Use ISO codes instead of language IDs for fallback languages and translations](https://github.com/umbraco/Umbraco-CMS/issues/13751)
+* [Breaking changes for the Delivery API](https://github.com/umbraco/Umbraco-CMS/issues/14745)
+* [V13: New login screen](https://github.com/umbraco/Umbraco-CMS/issues/14780)
+* [Updated NuGet Dependencies](https://github.com/umbraco/Umbraco-CMS/issues/14795)
+* [Fix \`JsonNetSerializer\` settings leaking into derived implementations](https://github.com/umbraco/Umbraco-CMS/issues/14814)
+* [Add default property value converters for all value types](https://github.com/umbraco/Umbraco-CMS/issues/14869)
+* [V13: Add config to limit concurrent logins](https://github.com/umbraco/Umbraco-CMS/issues/14989)
+* [Updates and support for re-use of CMS logic in Deploy](https://github.com/umbraco/Umbraco-CMS/issues/14990)
+* [Dont explicitly index nested property by default](https://github.com/umbraco/Umbraco-CMS/issues/15028)
+* [Blocks in the Rich Text Editor](https://github.com/umbraco/Umbraco-CMS/issues/15029)
+* [Fix FurthestAncestorOrSelfDynamicRootQueryStep and FurthestDescendantOrSelfDynamicRootQueryStep](https://github.com/umbraco/Umbraco-CMS/issues/15113)
+* [Remove parameter value/return nullability in \`IImageSourceParser\`, \`ILocalLinkParser\` and \`IMacroParser\`](https://github.com/umbraco/Umbraco-CMS/issues/15130)
+* [Update PackageMigrationsPlans collection to be Weighted and not Lazy](https://github.com/umbraco/Umbraco-CMS/issues/15138)
+* [Move IContextCache parameter to base Deploy interfaces and add checksum to artifact dependency](https://github.com/umbraco/Umbraco-CMS/issues/15144)
+* [V13: Update IWebHookService to proper casing](https://github.com/umbraco/Umbraco-CMS/issues/15169)
+* [V13: Implement webhook as i entity](https://github.com/umbraco/Umbraco-CMS/issues/15267)
+* [Change \`WebhookEventCollectionBuilder\` to set collection](https://github.com/umbraco/Umbraco-CMS/issues/15351)
+* [V13: Log webhook firing exceptions when they happen](https://github.com/umbraco/Umbraco-CMS/issues/15393)
+* [Remove date header from webhook request and use constants](https://github.com/umbraco/Umbraco-CMS/issues/15407)
+
+You can find more information about all changes that have been done on v13.0.0 on [Our Umbraco](https://our.umbraco.com/download/releases/1300) website.
 
 </details>
 
@@ -695,6 +697,10 @@ This setting has been superseded by `DistributedLockingWriteLockDefaultTimeout`.
 It is no longer possible to rename the `/Umbraco` folder path using configuration. The property still exists but is hardcoded to `/Umbraco` and will be removed in Umbraco 12, planned for release in June 2023.
 
 </details>
+
+## Release notes
+
+You can find a list of all Umbraco versions on [Our Umbraco](https://our.umbraco.com/download/releases/) website. Each version is a link, where once clicked you will find more information about what changes have been done for that specific version.
 
 ## Find your upgrade path
 
