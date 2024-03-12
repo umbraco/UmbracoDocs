@@ -668,6 +668,10 @@ It is no longer possible to rename the `/Umbraco` folder path using configuratio
 
 </details>
 
+## Release notes
+
+You can find a list of all Umbraco versions on [Our Umbraco](https://our.umbraco.com/download/releases/) website. Each version is a link, where once clicked you will find more information about what changes have been done for that specific version.
+
 ## Find your upgrade path
 
 Are you looking to upgrade an Umbraco Cloud project from 9 to 10? Follow the guide made for [Upgrading your project from Umbraco 9 to 10](https://docs.umbraco.com/umbraco-cloud/product-upgrades/major-upgrades) instead, as it requires a few steps specific to Umbraco Cloud.
