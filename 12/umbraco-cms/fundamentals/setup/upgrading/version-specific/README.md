@@ -670,7 +670,7 @@ It is no longer possible to rename the `/Umbraco` folder path using configuratio
 
 ## Release notes
 
-You can find a list of all Umbraco versions on [Our Umbraco](https://our.umbraco.com/download/releases/) website. Each version is a link, where once clicked you will find more information about what changes have been done for that specific version.
+You can find a list of all the released Umbraco versions on [Our Umbraco](https://our.umbraco.com/download/releases/) website. When you visit Our Umbraco website, click on the version number to view the changes made in that specific version.
 
 ## Find your upgrade path
 

@@ -41,7 +41,7 @@ Below you can find the list of breaking changes introduced in Umbraco 13.
 * [V13: Log webhook firing exceptions when they happen](https://github.com/umbraco/Umbraco-CMS/issues/15393)
 * [Remove date header from webhook request and use constants](https://github.com/umbraco/Umbraco-CMS/issues/15407)
 
-You can find more information about all changes that have been done on v13.0.0 on [Our Umbraco](https://our.umbraco.com/download/releases/1300) website.
+You can find more information about all breaking changes for v13.0.0 on [Our Umbraco](https://our.umbraco.com/download/releases/1300) website.
 
 </details>
 
@@ -700,7 +700,7 @@ It is no longer possible to rename the `/Umbraco` folder path using configuratio
 
 ## Release notes
 
-You can find a list of all Umbraco versions on [Our Umbraco](https://our.umbraco.com/download/releases/) website. Each version is a link, where once clicked you will find more information about what changes have been done for that specific version.
+You can find a list of all the released Umbraco versions on [Our Umbraco](https://our.umbraco.com/download/releases/) website. When you visit Our Umbraco website, click on the version number to view the changes made in that specific version.
 
 ## Find your upgrade path
 
