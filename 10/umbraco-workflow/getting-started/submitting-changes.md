@@ -23,7 +23,7 @@ Depending on the Document Type and Workflow settings, the overlay will provide i
 
 - A comment describing the changes
 - A selector for choosing the workflow type - either publish or unpublish
-  - Only visible when 'Use Workflow for unpublish' is set to true
+  - Only visible when **Use Workflow for unpublish** is set to true
 - A selector for choosing the variants to publish
   - Only visible on variant content
 - A media picker for choosing a media attachment
