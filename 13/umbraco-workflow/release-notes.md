@@ -17,6 +17,13 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Workflow 13 including all changes for this version.
 
+#### [13.0.3](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.3) (February 28th 2024)
+
+* Fixes issue where invariant workflows on variant content would publish previously published, but currently unpublished, variants [#52](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/52)
+* Fixes issue where split-view allowed publishing content without using Workflow [#53](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/53)
+
+The above fixes introduce an updated UI for requesting workflow approvals - refer to [Submitting changes for approval](./getting-started/submitting-changes.md) for more details.
+
 #### [13.0.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.2) (January 17th 2024)
 
 * Fixes bug where workflow submission was not respecting user's language access permissions
