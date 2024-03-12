@@ -48,7 +48,7 @@ The Configuration sub-section provides an interface for configuring the content 
 
 In multi-lingual sites, each variant can have its own approval flow. By default, new variants inherit the configuration set on the default language.
 
-For example, German variants can be approved by the German speakers' group, while English variants are approved by the English speakers group.
+For example, German variants can be approved by the German speakers group, while English variants are approved by the English speakers group.
 
 ![Configuration sub-section](../../../10/umbraco-workflow/getting-started/images/Configuration-sub-section.png)
 
