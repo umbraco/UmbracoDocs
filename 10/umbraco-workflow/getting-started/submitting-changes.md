@@ -13,7 +13,7 @@ When requesting workflow approval for content changes, editors must provide addi
 
 To submit the content changes, click the **Request publish** button in the editor footer.
 
-![Buttons](../images/Buttons%20(1).png)
+![Buttons](../images/Buttons.png)
 
 The button opens the request approval overlay:
 
