@@ -43,6 +43,14 @@ Below you can find the list of breaking changes introduced in Umbraco 13.
 
 You can find more information about all breaking changes for v13.0.0 on [Our Umbraco](https://our.umbraco.com/download/releases/1300) website.
 
+**Note:**
+You need to be aware of some things if you are using EF Core, and have installed the `Microsoft.EntityFrameworkCore.Design 8.0.0` package. This package has a transient dependency to `Microsoft.CodeAnalysis.Common` which clashes with the same transient dependency from `Umbraco.Cms 13.0.0`. 
+This happens because `Microsoft.EntityFrameworkCore.Design 8.0.0` requires `Microsoft.CodeAnalysis.CSharp.Workspaces` in v4.5.0 or higher. 
+
+If there are no other dependencies that need that package then it installs it in the lowest allowed version (4.5.0). That package then has a strict dependency on `Microsoft.CodeAnalysis.Common` version 4.5.0. The problem is `Umbraco.Cms` through its own transient dependencies that require the version of `Microsoft.CodeAnalysis.Common` to be >= 4.8.0.
+
+This can be fixed by installing `Microsoft.CodeAnalysis.CSharp.Workspaces` version 4.8.0 as a specific package instead of leaving it as a transient dependency. This is because it will then have a strict transient dependency on `Microsoft.CodeAnalysis.Common` version 4.8.0, which is the same as Umbraco.
+
 </details>
 
 <details>
