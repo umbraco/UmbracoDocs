@@ -6,7 +6,7 @@ description: >-
 # Submitting changes for approval
 
 {% hint style="info" %}
-The UI for approval requests changed in version 10.6.0 - this documentation applies to versions 10.6.0 and higher.
+This article applies to versions 10.6.0 and higher.
 {% endhint %}
 
 When requesting workflow approval for content changes, editors must provide additional information detailing the change.
