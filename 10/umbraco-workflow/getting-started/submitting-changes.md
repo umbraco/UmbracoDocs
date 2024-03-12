@@ -11,7 +11,7 @@ This article applies to versions 10.6.0 and higher.
 
 When requesting workflow approval for content changes, editors must provide additional information detailing the change.
 
-This is done by clicking the 'Request publish' button in the editor footer:
+To submit the content changes, click the **Request publish** button in the editor footer.
 
 ![Buttons](../images/Buttons%20(1).png)
 
