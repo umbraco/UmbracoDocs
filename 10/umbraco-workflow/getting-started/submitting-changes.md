@@ -37,7 +37,7 @@ It is not possible to schedule a **Publish on** date in an Unpublish workflow.
 
 It is possible to schedule both **Publish on** and **Unpublish on** dates in a Publish workflow. Once content has been unpublished, a new workflow process is required to republish the content.
 
-## Variant workflows
+## Variant Workflows
 
 If the document varies by culture, the editor must select one or more variants to submit for approval.
 
