@@ -51,7 +51,7 @@ When submitting multiple variants, a workflow process is started for each varian
 
 Alternatively, all variants can be submitted in an invariant workflow, where they will be approved in a single workflow process. Invariant workflows use the permissions set on the default language. Editors must have permission to edit all the current node's variants to be able to initiate an invariant workflow.
 
-The invariant workflow will publish all variants not already in workflows, regardless of the node state. This means that previously unpublished variants will be republished when using invariant workflows. Given that, in most cases selecting the individual variants is probably the desired approach.
+The invariant workflow will publish all variants, regardless of their node state, that are not already in workflows. This means that previously unpublished variants will be republished when using invariant workflows. In most cases, it is preferable to select the individual variants.
 
 ## Content validation and pending changes
 
