@@ -49,7 +49,7 @@ The following conditions are available out of the box, for all extension types t
 You can make your own conditions by creating a class that implements the `UmbExtensionCondition` interface.
 
 ```typescript
-import { UmbBaseController } from '@umbraco-cms/backoffice/class-api';
+import { UmbControllerBase } from '@umbraco-cms/backoffice/class-api';
 
 import {
     ManifestCondition,
@@ -64,7 +64,7 @@ type MyConditionConfig = UmbConditionConfigBase & {
 };
 
 export class MyExtensionCondition
-    extends UmbBaseController
+    extends UmbControllerBase
     implements UmbExtensionCondition
 {
     config: MyConditionConfig;
