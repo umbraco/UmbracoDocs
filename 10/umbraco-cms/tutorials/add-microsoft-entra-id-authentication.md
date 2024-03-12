@@ -1,15 +1,15 @@
 ---
-
-
+description: >-
+    Learn how to use Microsoft Entra ID (Azure Active Directory) credentials to login to Umbraco as a member.
 ---
 
-# Authenticating the Umbraco backoffice with Azure Active Directory credentials
+# Authenticating the Umbraco backoffice with Microsoft Entra ID (Azure Active Directory) credentials
 
-This article describes how to configure Azure Active Directory (Azure AD) with Umbraco Users and Members.
+This article describes how to configure Microsoft Entra ID (Azure Active Directory/Azure AD) with Umbraco Users and Members.
 
-## Configuring Azure AD
+## Configuring Entra ID
 
-Before your applications can interact with Azure AD B2C, they must be registered in a tenant that you manage. For more information, see [Microsoft's Tutorial: Create an Azure Active Directory B2C tenant](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant).
+Before your applications can interact with Entra ID B2C, they must be registered in a tenant that you manage. For more information, see [Microsoft's Tutorial: Create an Azure Active Directory B2C tenant](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant).
 
 ## Installing the NuGet Package
 
@@ -18,7 +18,7 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
 1. Use your favorite IDE and open up the **NuGet Package Manager** to search and install the packages.
 2. Use the command line to install the package.
 
-## Azure AD Authentication for Users
+## Entra ID Authentication for Users
 
 1.  Create a class called `BackofficeAuthenticationExtensions.cs` to configure the external login.
 
@@ -46,9 +46,9 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
                                 {
                                     //By default this is '/signin-microsoft' but it needs to be changed to this
                                     options.CallbackPath = "/umbraco-signin-microsoft/";
-                                    //Obtained from the AZURE AD B2C WEB APP
+                                    //Obtained from the ENTRA ID B2C WEB APP
                                     options.ClientId = "{your_client_id}";
-                                    //Obtained from the AZURE AD B2C WEB APP
+                                    //Obtained from the ENTRA ID B2C WEB APP
                                     options.ClientSecret = "{your_client_secret}";
                                     //options.TokenEndpoint = $"https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/token";
                                     //options.AuthorizationEndpoint = $"https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/authorize";                                    
@@ -62,7 +62,7 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
     ```
 
     {% hint style="info" %}
-    Ensure to replace **{your\_client\_id}** and **{your\_client\_secret}** in the code with the values from the Azure AD tenant. If Azure AD is configured to use accounts in the organizational directory only (single tenant), you also have to specify the Token and AuthorizationEndpoint.
+    Ensure to replace **{your\_client\_id}** and **{your\_client\_secret}** in the code with the values from the Entra ID tenant. If Entra ID is configured to use accounts in the organizational directory only (single tenant), you also have to specify the Token and AuthorizationEndpoint.
     {% endhint %}
 2.  Update `ConfigureServices` method in the `Startup.cs` file:
 
@@ -78,11 +78,11 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
             .Build();
     }
     ```
-3.  Build and run the website. You can now login with your Azure AD credentials.
+3.  Build and run the website. You can now login with your Entra ID credentials.
 
     ![AD Login Screen](../reference/security/images/AD_Login.png)
 
-## Azure AD Authentication for Members
+## Entra ID Authentication for Members
 
 1. Create a Member login functionality, see the [Member registration and login](../../tutorials/members-registration-and-login.md#member-registration-and-login) article.
 2.  Create a class called `MemberAuthenticationExtensions.cs` to configure the external login.
@@ -96,7 +96,7 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
         {
             public static IUmbracoBuilder ConfigureAuthenticationMembers(this IUmbracoBuilder builder)
             {
-                builder.Services.ConfigureOptions<AzureB2CMembersExternalLoginProviderOptions>();
+                builder.Services.ConfigureOptions<EntraIDB2CMembersExternalLoginProviderOptions>();
                 builder.AddMemberExternalLogins(logins =>
                 {
                     logins.AddMemberLogin(
@@ -104,15 +104,15 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
                         {
                             membersAuthenticationBuilder.AddMicrosoftAccount(
                                 // The scheme must be set with this method to work for members
-                                membersAuthenticationBuilder.SchemeForMembers(AzureB2CMembersExternalLoginProviderOptions.SchemeName),
+                                membersAuthenticationBuilder.SchemeForMembers(EntraIDB2CMembersExternalLoginProviderOptions.SchemeName),
                                 options =>
                                 {
                                     //Callbackpath - Important! The CallbackPath represents the URL to which the browser should be redirected to and the default value is
                                     // /signin-oidc This should be unique!.
                                     options.CallbackPath = "/umbraco-b2c-members-signin";
-                                    //Obtained from the AZURE AD B2C WEB APP
+                                    //Obtained from the ENTRA ID B2C WEB APP
                                     options.ClientId = "YOURCLIENTID";
-                                    //Obtained from the AZURE AD B2C WEB APP
+                                    //Obtained from the ENTRA ID B2C WEB APP
                                     options.ClientSecret = "YOURCLIENTSECRET"; 
                                     options.SaveTokens = true;
                                 });
@@ -126,11 +126,11 @@ You need to install the `Microsoft.AspNetCore.Authentication.MicrosoftAccount` N
 
 {% hint style="info" %}
 ```
-Ensure to replace **{your_client_id}** and **{your_client_secret}** in the code with the values from the Azure AD tenant.
+Ensure to replace **{your_client_id}** and **{your_client_secret}** in the code with the values from the Entra ID tenant.
 ```
 {% endhint %}
 
-1.  To enable a member to link their account to an external login provider such as Azure AD in the Umbraco Backoffice, you have to implement a custom named configuration `MemberExternalLoginProviderOptions` for Members. Add the following code in the `AzureB2CMembersExternalLoginProviderOptions.cs` file:
+1.  To enable a member to link their account to an external login provider such as Entra ID in the Umbraco Backoffice, you have to implement a custom named configuration `MemberExternalLoginProviderOptions` for Members. Add the following code in the `EntraIDB2CMembersExternalLoginProviderOptions.cs` file:
 
     ```csharp
     using Microsoft.Extensions.Options;
@@ -139,9 +139,9 @@ Ensure to replace **{your_client_id}** and **{your_client_secret}** in the code 
 
     namespace MyApp
     {
-        public class AzureB2CMembersExternalLoginProviderOptions : IConfigureNamedOptions<MemberExternalLoginProviderOptions>
+        public class EntraIDB2CMembersExternalLoginProviderOptions : IConfigureNamedOptions<MemberExternalLoginProviderOptions>
         {
-            public const string SchemeName = "OpenIdConnect";
+            public const string SchemeName = "EntraIDB2C";
             public void Configure(string name, MemberExternalLoginProviderOptions options)
             {
                 if (name != "Umbraco." + SchemeName)
@@ -212,6 +212,6 @@ Ensure to replace **{your_client_id}** and **{your_client_secret}** in the code 
             .Build();
     }
     ```
-3.  Build and run the website. Your members can now login with their Azure AD credentials.
+3.  Build and run the website. Your members can now login with their Entra ID credentials.
 
-    ![AD Login Screen](../reference/security/images/AD_Login_Members.png)
+    ![Entra ID Login Screen](../reference/security/images/AD_Login_Members.png)
