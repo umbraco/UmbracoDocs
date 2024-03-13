@@ -23,20 +23,11 @@ This example can be a starting point for creating a secure custom API in the Swa
 
 ```csharp
 
-using Asp.Versioning;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
-using Umbraco.Cms.Api.Common.Attributes;
-using Umbraco.Cms.Api.Common.Filters;
 using Umbraco.Cms.Api.Management.OpenApi;
-using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.Models.Membership;
-using Umbraco.Cms.Core.Security;
-using Umbraco.Cms.Web.Common.Authorization;
 
 namespace Umbraco.Cms.Web.UI.New.Custom;
 
