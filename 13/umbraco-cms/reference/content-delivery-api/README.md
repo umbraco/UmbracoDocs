@@ -24,20 +24,17 @@ Video tutorial
 This step is only applicable for Umbraco projects started on version 11 or below.
 {% endhint %}
 
-1. Open your project's `Startup.cs` file and locate the `ConfigureServices` method.
+1. Open your project's `program.cs`
 2. Register the API dependencies by adding `.AddDeliveryApi()`:
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()
-        .AddWebsite()
-        // Register all Delivery API dependencies
-        .AddDeliveryApi()
-        .AddComposers()
-        .Build();
-}
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+//add delivery API magic here:
+    .AddDeliveryApi()
+    .AddComposers()
+    .Build();
 ```
 
 ### Enable the Content Delivery API
