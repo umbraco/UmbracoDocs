@@ -17,6 +17,11 @@ Check the [Version Specific Upgrade Notes](./upgrading/version-specific.md) arti
 
 This section contains the release notes for Umbraco Workflow 12 including all changes for this version.
 
+### [12.2.5](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.5) (March 13th 2024)
+
+* Make dashboard, content app and section registration classes public [#56](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/56)
+* Fixes discrepancy between a JSON property attribute value and property name in WorkflowTaskCollectionViewModel, which resulted in unexpected JSON values.
+
 ### [12.2.4](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.4) (February 28th 2024)
 
 * Fixes issue where invariant workflows on variant content would publish previously published, but currently unpublished, variants [#52](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/52).
