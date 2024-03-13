@@ -20,8 +20,9 @@ This example can be a starting point for creating a secure custom API in the Swa
 2. Add the following code so that the new API shows in the Swagger documentation and Swagger UI:
 
 {% code title="MyBackOfficeSecurityRequirementsOperationFilter.cs" lineNumbers="true" %}
+
 ```csharp
-{
+
 using Asp.Versioning;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -60,32 +61,8 @@ public class MyComposer : IComposer
         => builder.Services.ConfigureOptions<MyConfigureSwaggerGenOptions>();
 }
 
-//Creating the Controller
-[ApiController]
-[ApiVersion("1.0")] 
-[MapToApi("my-api-v1")] 
-[Authorize(Policy = AuthorizationPolicies.BackOfficeAccess)] 
-[JsonOptionsName(Constants.JsonOptionsNames.BackOffice)]
-[Route("api/v{version:apiVersion}/my")]
-public class MyApiController : Controller
-{
-    private readonly IBackOfficeSecurityAccessor _backOfficeSecurityAccessor;
-
-    public MyApiController(IBackOfficeSecurityAccessor backOfficeSecurityAccessor)
-        => _backOfficeSecurityAccessor = backOfficeSecurityAccessor;
-
-    [HttpGet("say-hello")]
-    [MapToApiVersion("1.0")]
-    [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
-    public IActionResult SayHello()
-    {
-        IUser currentUser = _backOfficeSecurityAccessor.BackOfficeSecurity?.CurrentUser
-                            ?? throw new InvalidOperationException("No backoffice user found");
-        return Ok($"Hello, {currentUser.Name}");
-    }
-}
-}
 ```
+
 {% endcode %}
 
 - The `BackOfficeSecurityRequirementsOperationFilter` enables backoffice authentication for Swagger UI.
@@ -94,6 +71,7 @@ public class MyApiController : Controller
 3. Add the ApiController to setup the logic behind the endpoint:
 
 {% code title="MyBackOfficeSecurityRequirementsOperationFilter.cs" lineNumbers="true" %}
+
 ```csharp
 {
 ...
@@ -102,7 +80,7 @@ public class MyApiController : Controller
 [ApiController]
 [ApiVersion("1.0")] 
 [MapToApi("my-api-v1")] 
-[Authorize(Policy = "New" + AuthorizationPolicies.BackOfficeAccess)] 
+[Authorize(Policy = AuthorizationPolicies.BackOfficeAccess)] 
 [JsonOptionsName(Constants.JsonOptionsNames.BackOffice)]
 [Route("api/v{version:apiVersion}/my")]
 public class MyApiController : Controller
@@ -122,8 +100,9 @@ public class MyApiController : Controller
         return Ok($"Hello, {currentUser.Name}");
     }
 }
-}
+
 ```
+
 {% endcode %}
 
 <details>
@@ -131,6 +110,7 @@ public class MyApiController : Controller
 <summary>See the entire file: MyBackOfficeSecurityRequirementsOperationFilter.cs</summary>
 
 {% code title="MyBackOfficeSecurityRequirementsOperationFilter.cs" lineNumbers="true" %}
+
 ```csharp
 using Asp.Versioning;
 using Microsoft.AspNetCore.Authorization;
@@ -195,6 +175,7 @@ public class MyApiController : Controller
     }
 }
 ```
+
 {% endcode %}
 
 </details>

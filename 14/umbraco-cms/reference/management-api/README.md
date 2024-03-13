@@ -4,9 +4,7 @@ description: Get started with the Management API.
 
 # Management API
 
-The Management API delivers headless capabilities built directly into Umbraco. Unlike the Content Delivery API, the Management API enables interaction with everything else in the backoffice except for the Content and Media items.
-
-The API returns responses in a JSON format, which can be presented in different channels using your preferred technology stack. This feature maintains the user-friendly editing experience of Umbraco, while also ensuring an efficient delivery of content in a headless manner. Additionally, with its different extension points, the API can be customized to meet a wide range of requirements.
+The Management API delivers headless capabilities built directly into Umbraco. The Management API allows for managing everything within the backoffice.
 
 The Management API can also be used for Custom apps or Workflows with OpenID Connect.
 
@@ -17,13 +15,12 @@ The Management API is a replacement for the backoffice controllers that lacked R
 ## Swagger Documentation
 
 Umbraco ships with Swagger to document the Management API. Swagger and the Swagger UI are based on [Swashbuckle.AspNetCore](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/) and is available at `{yourdomain}/umbraco/swagger`. For security reasons, both are disabled in non-production environments.
-Read more about Swagger in the [API versioning and OpenAPI](../api-versioning-and-openapi.md) article.
 
-The Swagger documentation allows you to select a definition and go to either Umbraco Management API or Content Delivery API. You can also create custom documentation in Swagger by referring to the [Custom Swagger API with Authorization](../custom-swagger-api.md) article.
+The Swagger documentation allows you to select a definition and go to either Umbraco Management API or Content Delivery API. If you are extending the Management API with your own controllers, you can also create custom documentation for these in Swagger. See [Custom Swagger API](../custom-swagger-api.md) article for details.
 
 ![Umbraco Management API documentation in Swagger](../images/management-api-swagger.png)
 
-In the Swagger Umbraco Management API, you can find a collection of available endpoints in this version of Umbraco. It also includes all the legacy APIs that are available for backward compatibility.
+In the Swagger Umbraco Management API, you can find a collection of available endpoints in this version of Umbraco.
 
 ## Authorization
 
@@ -37,7 +34,17 @@ Then a popup will appear with some setup information and login form for authoriz
 
 ![Umbraco Management API Authorize Login](../images/management-api-swagger-authorize-instructions.png)
 
-The available integration for the authorization is done via a backoffice user with the integration of `OAuth2, authorizationCode with PKCE`. If you are working on a production environment, you will need to setup an OAuth2 integration with the following Umbraco Authentication specifications:
+The available integration for the authorization is done via a backoffice user with the integration of `OAuth2, authorizationCode with PKCE`. Swagger is only enabled in non-production environments, so if you need to access the Management API in production, you need a different client.
+
+{% hint style="info" %}
+
+In production environment, only `umbraco-back-office` **client** is allowed to connect to the Management API. In non-production environments, the `umbraco-swagger` and `umbraco-postman` **clients** can be used.
+
+You can see an example of how to connect a backoffice user via OAuth2 in Postman in the [Swagger Setup in Postman](./postman-setup-swagger) article.
+
+{% endhint %}
+
+When in non-production environment, you will need to connect via OAuth2 with the following Umbraco Authentication specifications:
 
 **Authorization URL**
 
@@ -63,15 +70,17 @@ authorizationCode with PKCE
 umbraco-swagger
 ```
 
-You can see an example of how to setup OAuth2 with Postman in the [Swagger Setup in Postman](./postman-setup-swagger) article.
-
 # Test an Endpoint
 
 To test a Management API endpoint, follow these steps:
 
-1. Authenticate via the **Authorize** button. On a development environment you need only a `client_id` which has a default value of `umbraco-swagger` to login. Then click **Authorize** and you will be logged in:
+1. Authenticate via the **Authorize** button. Make sure you use `umbraco-swagger` as the `client_id`:
 
 ![Umbraco Management API when Authenticated](../images/management-api-swagger-authenticated.png)
+
+{% hint style="info" %}
+In non-production environments, you will always need only the `client_id` to authenticate. The `client_secret` should always be left blank because of the chosen authentication flow.
+{% endhint %}
 
 2. Expand the first endpoint of **Audit Log** and click **Try it out**
 
