@@ -6,7 +6,7 @@ description: >-
 # Submitting Content for Approval
 
 {% hint style="info" %}
-This article applies to versions 10.6.0 and higher.
+This article applies to versions 10.3.7 and higher.
 {% endhint %}
 
 When requesting workflow approval for content changes, editors must provide additional information detailing the change.

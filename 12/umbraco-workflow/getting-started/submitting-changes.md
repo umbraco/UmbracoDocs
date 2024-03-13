@@ -5,10 +5,6 @@ description: >-
 
 # Submitting Content for Approval
 
-{% hint style="info" %}
-This article applies to versions 10.6.0 and higher.
-{% endhint %}
-
 When requesting workflow approval for content changes, editors must provide additional information detailing the change.
 
 To submit the content changes, click the **Request publish** button in the editor footer.
