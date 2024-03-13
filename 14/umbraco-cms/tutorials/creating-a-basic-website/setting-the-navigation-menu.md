@@ -11,7 +11,7 @@ To create dynamic navigation links from published content nodes, follow these st
 
 1. Go to **Settings**.
 2. Select **Templates** from the **Templating** section, and open the **Master** template.
-3. Locate the `<!-- Navigation -->` tag (around line 22).
+3. Locate the `<!-- Navigation -->` tag (around line 19).
 4. Right below it, place the cursor on an empty line.
 5. Select **Query builder...** in the top-right side of the editor.
 6. Make sure it is set to say *"I want all content from my website"*.
@@ -73,7 +73,7 @@ To add a basic hardcoded navigation, follow these steps:
 
 1. Go to **Settings**.
 2. Select **Templates** from the **Templating** section, and open the **Master** template.
-3. Go to the `<!-- Navigation -->` tag (around line 22), copy the content within the <div> tags (around line 23 to 45) and replace it with the following code:
+3. Go to the `<!-- Navigation -->` tag (around line 19), copy the content within the <div> tags (around line 21 to 41) and replace it with the following code:
 
     ```html
     <div class="container">

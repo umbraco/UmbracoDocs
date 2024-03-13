@@ -30,7 +30,7 @@ To attach the template:
 
     ![Add Home Page Template to Document Type](images/add-template-to-document-type.png)
 4. Click **Add** in the **Allowed Templates** field.
-5. Select the HomePage template.
+5. Select the *HomePage* template.
 
     ![Choose Home Page Template](images/choose-template.png)
 6. Click **Choose**.
