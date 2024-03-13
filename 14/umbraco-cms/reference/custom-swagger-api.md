@@ -64,7 +64,16 @@ public class MyComposer : IComposer
 {% code title="MyBackOfficeSecurityRequirementsOperationFilter.cs" lineNumbers="true" %}
 
 ```csharp
-{
+
+using Umbraco.Cms.Api.Common.Attributes;
+using Umbraco.Cms.Api.Common.Filters;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Models.Membership;
+using Umbraco.Cms.Core.Security;
+using Umbraco.Cms.Web.Common.Authorization;
+using Asp.Versioning;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 ...
 
 //Creating the Controller
