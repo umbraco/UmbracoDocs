@@ -4,6 +4,11 @@ description: Get an overview of release notes for each month in 2024.
 
 # Overview 2024
 
+## [March 2024](2024-03-releasenotes.md)
+
+### Key Takeaways
+* **Database Export** - Export your database smoothly with point-in-time recovery, ensuring your project's data is always safeguarded for when you need it most.
+
 ## [February 2024](2024-02-releasenotes.md)
 
 ### Key Takeaways
