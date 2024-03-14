@@ -54,7 +54,7 @@
 * [Context API](extending-backoffice/context-api.md)
 * [Property Dataset Context](extending-backoffice/variant-context.md)
 * [Localization](extending-backoffice/localization/README.md)
-  * [.NET Localization](extending-backoffice/localization/.net-localization.md)
+  * [.NET Localization](extending-backoffice/localization/net-localization.md)
   * [UI Localization](extending-backoffice/localization/ui-localization.md)
 * [States](extending-backoffice/states.md)
 * [Conditions](extending-backoffice/conditions.md)
