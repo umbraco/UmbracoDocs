@@ -17,6 +17,15 @@ If you are upgrading to a new major version you can find the details about the b
 
 This section contains the release notes for Umbraco Deploy 4 and 10 including all changes for these versions. For each major version, you can find the details about each release.
 
+#### [10.4.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.4.0) (March 19th 2024)
+
+* All items from 10.4.0-rc1
+* Fixed issue with transfer of date values within Nested Content, Block List or Block Grid properties [#209](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/209)
+* Fixed issue where templates could incorrectly cause schema mismatch errors when running in production mode [#187](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/187)
+
+
+
+
 #### [10.4.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.4.0) (March 5th 2024)
 
 * Add `IArtifactTypeResolver` to allow custom type resolving when deserializing to `IArtifact` (used by Deploy Contrib, see PR [#60](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/61))
