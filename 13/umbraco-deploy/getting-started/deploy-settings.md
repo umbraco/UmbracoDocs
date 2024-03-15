@@ -68,6 +68,14 @@ For illustration purposes, the following structure represents the full set of op
             "NumberOfSignaturesToUseAllRelationCache": 100,
             "ContinueOnMediaFilePathTooLongException": false,
             "SuppressCacheRefresherNotifications": false,
+            "Suspensions": {
+              "DiskRead": "All",
+              "PartialRestore": "All",
+              "Restore": "All",
+              "Deploy": "All",
+              "Import": "All",
+              "Export": "All"
+            },
             "HideConfigurationDetails": false,
             "HideVersionDetails": false
         }
@@ -371,6 +379,29 @@ When a Deploy operation completes, cache refresher notifications are fired. Thes
 In production this setting shouldn't be changed from it's default value of `false`, to ensure these additional data stores are kept up to date.
 
 If attempting a one-off, large transfer operation, before a site is live, you could set this value to `true`. That would omit the firing and handling of these notifications and remove their performance overhead. Following which you would need to ensure to rebuild the cache and search index manually via the backoffice _Settings_ dashboards.
+
+### Suspensions
+
+Various Deploy operations suspend scheduled publishing, Examine indexing, document cache and signature database update events by default. You can amend this behavior for all supported or specific operations using these settings.
+
+Each setting within this section represents a Deploy operation. For each, the suspensions that are carried out can be amended with one or more of following values:
+
+-  `DiskRead` - `None, ScheduledPublishing, Examine, DocumentCache, All`,
+-  `PartialRestore` - `None, ScheduledPublishing, Examine, DocumentCache, All`,
+-  `Restore` - `None, ScheduledPublishing, Examine, DocumentCache, Signatures|All`,
+-  `Deploy` - `None, ScheduledPublishing, All`,
+-  `Import` - `None, ScheduledPublishing, Examine, DocumentCache, All`,
+-  `Export` - `None, ScheduledPublishing, All`
+
+The default value for all suspension settings is `All`.
+
+So for example if you wanted to remove Examine indexing suspension and resumption during partial restore operations, you could set the following:
+
+```json
+  "Suspensions": {
+    "PartialRestore": "ScheduledPublishing, DocumentCache"
+  }
+```
 
 ### HideConfigurationDetails
 
