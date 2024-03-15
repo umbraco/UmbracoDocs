@@ -382,7 +382,7 @@ If attempting a one-off, large transfer operation, before a site is live, you co
 
 ### Suspensions
 
-Various Deploy operations suspend scheduled publishing, Examine indexing, document cache and signature database update events by default. You can amend this behavior for all supported or specific operations using these settings.
+Deploy operations suspend scheduled publishing, Examine indexing, document cache and/or signature database update events by default. You can amend this behavior for all supported or specific operations using these settings.
 
 Each setting within this section represents a Deploy operation. For each, the suspensions that are carried out can be amended with one or more of following values:
 
