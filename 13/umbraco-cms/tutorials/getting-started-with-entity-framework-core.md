@@ -99,6 +99,7 @@ To do this we can use this helpful extension method:
 builder.Services.AddUmbracoDbContext<BlogContext>(options => 
 {
     options.UseSqlServer("{YOUR CONNECTIONSTRING HERE}");
+    //If you are using SQlite, replace UseSqlServer with UseSqlite
 });
 ```
 
