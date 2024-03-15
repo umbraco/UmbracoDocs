@@ -116,6 +116,7 @@ builder.CreateUmbracoBuilder()
 builder.Services.AddUmbracoDbContext<BlogContext>(options => 
 {
     options.UseSqlServer("{YOUR CONNECTIONSTRING HERE}");
+    //If you are using SQlite, replace UseSqlServer with UseSqlite
 });
 ```
 
