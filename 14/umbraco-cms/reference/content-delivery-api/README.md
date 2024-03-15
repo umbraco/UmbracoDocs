@@ -186,7 +186,7 @@ This means that the content item resides under the `docs-portal` root node and c
 The start item can also be helpful through the `Start-Item` request header when obtaining content from the Delivery API. Supplying a root node `id` or `path` as the header value, allows you to specify which is the starting point for the requested content operation:
 
 ```http
-GET /umbraco/delivery/api/v1/content/item/articles/2023/getting-started
+GET /umbraco/delivery/api/v2/content/item/articles/2023/getting-started
 Start-Item: docs-portal
 ```
 
@@ -194,122 +194,24 @@ Start-Item: docs-portal
 
 <details>
 
-<summary>Output expansion</summary>
+<summary>Property expansion and limiting</summary>
 
-**Output expansion** allows you to retrieve additional data about related content or media in the API output for a given content item.
+Property expansion and limiting allows you to:
 
-By default, a content property that allows picking a different content item (like a content picker property) outputs a shallow representation of the item. That means, only the basic information about the picked item, without the item properties. However, with output expansion, it is possible to include the properties of the picked item in the API output. Similar shallow representation applies to media items, as well.
+- Include properties from related content or media in the API output for a given content item.
+- Limit the content properties in the API output.
 
-{% hint style="info" %}
-Currently, output expansion allows you to retrieve one level of property data from the point of view of the requested content node. This means that you can expand the properties of the chosen content item, but not the properties of other related items within that item.
-{% endhint %}
+By default, a content property that allows picking a different content item (for example a content picker) outputs a "shallow" representation of the picked item. This means that the output only includes basic information about the picked item, without the item properties.
 
-This feature can be used when querying for both single and multiple content items by adding an `expand` parameter to the query. The value of this parameter can be either `"all"` to expand all properties of the requested content item or `"property:alias, alias, alias"` to expand specific ones.
+If we apply property expansion to the content property, the properties of the picked item are included in the output. This functionality applies to media items and block editors, as well.
 
-The following JSON snippet demonstrates the default output of a content item (without expanding any properties).
+Property expansion can be applied to expanded properties too, thus obtaining nested property expansion. As a consequence, the output grows in size, and this is where property limiting comes into the picture.
 
-**Request**
+By default, all content properties (including expanded properties) are included in the output. Property limiting allows us to specify exactly which content properties to include in the output. This means we can tailor the output specifically to concrete use cases without over-fetching.
 
-```http
-GET /umbraco/delivery/api/v1/content/item/9bdac0e9-66d8-4bfd-bba1-e954ed9c780d
-```
+Property expansion and limiting can be used when querying for both single and multiple content or media items. You can expand properties by adding an `expand` parameter to the query and limit them by the `fields` query parameter.
 
-**Response**
-
-{% code title="Shallow output for " %}
-```json
-{
-    "name": "My post",
-    "createDate": "2023-05-11T00:05:31.878211",
-    "updateDate": "2023-05-15T11:25:53.912058",
-    "route": {...
-    },
-    "id": "9bdac0e9-66d8-4bfd-bba1-e954ed9c780d",
-    "contentType": "blogpost1",
-    "properties": {
-        "title": "My post page",
-        "blogPostNumber": 11,
-        "bodyContent": "Congue, sollicitudin? Est fames maiores, sociis suspendisse et aliquet tristique excepturi, aliquam, nihil illum pretium penatibus exercitationem lacinia! Dolorem tempus convallis, nulla! Eius scelerisque voluptatum penatibus, dignissimos molestiae, soluta eum. Voluptatibus quod? Temporibus potenti voluptates dictumst? Cillum metus, nec asperiores? Impedit sit! Eum tellus cillum facilisis ullamco tempor? Sint nostrum luctus? Neque dictumst diam, minus? Itaque, minus, etiam dignissimos debitis occaecat aptent tempus! Praesent molestiae duis nihil recusandae, eius imperdiet aspernatur natus. Tempus mattis at architecto, augue, consequuntur ultricies eligendi, litora morbi ante nesciunt pretium laoreet quidem recusandae voluptates dapibus, iure sagittis donec ipsum mollit? Blanditiis! Laborum sit assumenda beatae.",
-        "linkedItem": {
-            "name": "Demo blog",
-            "createDate": "2023-05-11T00:26:52.591927",
-            "updateDate": "2023-05-16T12:43:41.339963",
-            "route": {
-                "path": "/demo-blog/",
-                "startItem": {
-                    "id": "5d5ae914-9885-4ee0-a14b-0ab57f501a55",
-                    "path": "demo-blog"
-                }
-            },
-            "id": "5d5ae914-9885-4ee0-a14b-0ab57f501a55",
-            "contentType": "blog",
-            "properties": {}
-        }
-    },
-    "cultures": {}
-}
-```
-{% endcode %}
-
-Below is an example of how an expanded representation might look for the `linkedItem` property that references another content item with properties `title` and `description`:
-
-**Request**
-
-```http
-GET /umbraco/delivery/api/v1/content/item/9bdac0e9-66d8-4bfd-bba1-e954ed9c780d?expand=property:linkedItem
-```
-
-**Response**
-
-{% code title="Expanded output for " %}
-```json
-{
-    "name": "My post",
-    "createDate": "2023-05-11T00:05:31.878211",
-    "updateDate": "2023-05-15T11:25:53.912058",
-    "route": {
-        "path": "/my-post/",
-        "startItem": {
-            "id": "5d5ae914-9885-4ee0-a14b-0ab57f501a55",
-            "path": "demo-blog"
-        }
-    },
-    "id": "9bdac0e9-66d8-4bfd-bba1-e954ed9c780d",
-    "contentType": "blogpost1",
-    "properties": {
-        "title": "My post page",
-        "blogPostNumber": 11,
-        "bodyContent": "Congue, sollicitudin? Est fames maiores, sociis suspendisse et aliquet tristique excepturi, aliquam, nihil illum pretium penatibus exercitationem lacinia! Dolorem tempus convallis, nulla! Eius scelerisque voluptatum penatibus, dignissimos molestiae, soluta eum. Voluptatibus quod? Temporibus potenti voluptates dictumst? Cillum metus, nec asperiores? Impedit sit! Eum tellus cillum facilisis ullamco tempor? Sint nostrum luctus? Neque dictumst diam, minus? Itaque, minus, etiam dignissimos debitis occaecat aptent tempus! Praesent molestiae duis nihil recusandae, eius imperdiet aspernatur natus. Tempus mattis at architecto, augue, consequuntur ultricies eligendi, litora morbi ante nesciunt pretium laoreet quidem recusandae voluptates dapibus, iure sagittis donec ipsum mollit? Blanditiis! Laborum sit assumenda beatae.",
-        "linkedItem": {
-            "name": "Demo blog",
-            "createDate": "2023-05-11T00:26:52.591927",
-            "updateDate": "2023-05-16T12:43:41.339963",
-            "route": {
-                "path": "/demo-blog/",
-                "startItem": {
-                    "id": "5d5ae914-9885-4ee0-a14b-0ab57f501a55",
-                    "path": "demo-blog"
-                }
-            },
-            "id": "5d5ae914-9885-4ee0-a14b-0ab57f501a55",
-            "contentType": "blog",
-            "properties": {
-                "title": "My demo blog",
-                "description": "Nihil incididunt dolores adipisicing placeat quisque imperdiet interdum autem, dolorem fusce rhoncus sunt leo inventore dictumst quisque, voluptatem, magni justo nostrud deserunt! Natus ipsam commodi dignissimos, sodales ab.\n"
-            }
-        }
-    },
-    "cultures": {}
-}
-```
-{% endcode %}
-
-The built-in property editors in Umbraco that allow for output expansion are:
-
-* `Umbraco.ContentPicker`
-* `Umbraco.MediaPicker`
-* `Umbraco.MediaPicker3`
-* `Umbraco.MultiNodeTreePicker`
+Please refer to [this article](./property-expansion-and-limiting) for an in-depth explanation of this feature.
 
 </details>
 
@@ -320,7 +222,7 @@ The built-in property editors in Umbraco that allow for output expansion are:
 Similar to the preview concept in Umbraco, the Delivery API allows for requesting unpublished content through its endpoints. This can be done by setting a `Preview` header to `true` in the API request. However, accessing draft versions of your content nodes requires authorization via an API key configured in `appsettings.json` file - `Umbraco:CMS:DeliveryApi:ApiKey` setting. To obtain preview data, you must add the `Api-Key` request header containing the configured API key to the appropriate endpoints, like:
 
 ```http
-GET /umbraco/delivery/api/v1/content/item/11fb598b-5c51-4d1a-8f2e-0c7594361d15
+GET /umbraco/delivery/api/v2/content/item/11fb598b-5c51-4d1a-8f2e-0c7594361d15
 Preview: true
 Api-Key: my-api-key
 ```
@@ -336,7 +238,7 @@ Draft content is not going to be included in the JSON response otherwise.
 If your content is available in multiple languages, the Delivery API can resolve localized content. When querying content by `id`, the `Accept-Language` header can be used to request variant content.
 
 ```http
-GET /umbraco/delivery/api/v1/content/item/11fb598b-5c51-4d1a-8f2e-0c7594361d15
+GET /umbraco/delivery/api/v2/content/item/11fb598b-5c51-4d1a-8f2e-0c7594361d15
 Accept-Language: en-US
 ```
 
@@ -352,7 +254,7 @@ The output produced by the Delivery API can either represent a specific content 
 When referring to a specific content item in your API requests, the `id` parameter always refers to the item’s key (GUID) and not its integer node id.
 {% endhint %}
 
-{% swagger method="get" path="/content/item/{id}" baseUrl="/umbraco/delivery/api/v1" summary="Gets a content item by id" %}
+{% swagger method="get" path="/content/item/{id}" baseUrl="/umbraco/delivery/api/v2" summary="Gets a content item by id" %}
 {% swagger-description %}
 Returns a single item.
 {% endswagger-description %}
@@ -381,6 +283,10 @@ URL segment or GUID of the root content item
 Which properties to expand and therefore include in the output if they refer to another piece of content
 {% endswagger-parameter %}
 
+{% swagger-parameter in="query" name="fields" type="String" required="false" %}
+Which properties to include in the response (_by default all properties are included_)
+{% endswagger-parameter %}
+
 {% swagger-response status="200: OK" description="Content item" %}
 
 {% endswagger-response %}
@@ -394,7 +300,7 @@ Which properties to expand and therefore include in the output if they refer to 
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="get" path="/content/item/{path}" baseUrl="/umbraco/delivery/api/v1" summary="Gets a content item by route" %}
+{% swagger method="get" path="/content/item/{path}" baseUrl="/umbraco/delivery/api/v2" summary="Gets a content item by route" %}
 {% swagger-description %}
 Returns a single item.
 {% endswagger-description %}
@@ -423,6 +329,10 @@ URL segment or GUID of the root content item
 Which properties to expand and therefore include in the output if they refer to another piece of content
 {% endswagger-parameter %}
 
+{% swagger-parameter in="query" name="fields" type="String" required="false" %}
+Which properties to include in the response (_by default all properties are included_)
+{% endswagger-parameter %}
+
 {% swagger-response status="200: OK" description="Content item" %}
 
 {% endswagger-response %}
@@ -436,7 +346,7 @@ Which properties to expand and therefore include in the output if they refer to 
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="get" path="/content/item" baseUrl="/umbraco/delivery/api/v1" summary="Gets content item(s) by id" %}
+{% swagger method="get" path="/content/items" baseUrl="/umbraco/delivery/api/v2" summary="Gets content item(s) by id" %}
 {% swagger-description %}
 Returns single or multiple items by id.
 {% endswagger-description %}
@@ -465,6 +375,10 @@ URL segment or GUID of the root content item
 Which properties to expand in the response
 {% endswagger-parameter %}
 
+{% swagger-parameter in="query" name="fields" type="String" required="false" %}
+Which properties to include in the response (_by default all properties are included_)
+{% endswagger-parameter %}
+
 {% swagger-response status="200: OK" description="List of content items" %}
 
 {% endswagger-response %}
@@ -474,7 +388,7 @@ Which properties to expand in the response
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="get" path="/content" baseUrl="/umbraco/delivery/api/v1" summary="Gets content item(s) from a query" %}
+{% swagger method="get" path="/content" baseUrl="/umbraco/delivery/api/v2" summary="Gets content item(s) from a query" %}
 {% swagger-description %}
 Returns single or multiple items.
 {% endswagger-description %}
@@ -519,6 +433,10 @@ URL segment or GUID of the root content item
 Which properties to expand and therefore include in the output if they refer to another piece of content
 {% endswagger-parameter %}
 
+{% swagger-parameter in="query" name="fields" type="String" required="false" %}
+Which properties to include in the response (_by default all properties are included_)
+{% endswagger-parameter %}
+
 {% swagger-response status="200: OK" description="Paginated list of content items" %}
 
 {% endswagger-response %}
@@ -536,7 +454,7 @@ All endpoints are documented in a Swagger document at `{yourdomain}/umbraco/swag
 
 ### Query parameters
 
-The Content Delivery API provides a number of query parameters that allow you to customize the content returned by the API to fit your needs. For each endpoint, the relevant query parameters are already specified within their corresponding documentation above. In addition to standard parameters like `skip` and `take`, the API provides different possibilities for the value of `expand`, `fetch`, `filter` and `sort` parameters. Below are the options supported out of the box.
+The Content Delivery API provides a number of query parameters that allow you to customize the content returned by the API to fit your needs. For each endpoint, the relevant query parameters are already specified within their corresponding documentation above. In addition to standard parameters like `skip` and `take`, the API provides different possibilities for the value of `expand`, `fields`, `fetch`, `filter` and `sort` parameters. Below are the options supported out of the box.
 
 {% hint style="info" %}
 You can extend the built-in selector, filter, and sorting capabilities of the Delivery API by creating your own custom query handlers.
@@ -545,21 +463,42 @@ You can extend the built-in selector, filter, and sorting capabilities of the De
 {% tabs %}
 {% tab title="expand" %}
 {% hint style="info" %}
-Refer to the [Output expansion](./#output-expansion) concept for more information about the benefits of this parameter.
+Refer to the [Property expansion and limiting](./#property-expansion-and-limiting) concept for more information about this parameter.
 {% endhint %}
 
-**`?expand=all`**\
+**`?expand=properties[$all]`**\
 All expandable properties on the retrieved content item will be expanded.
 
-**`?expand=property:alias1`**\
+**`?expand=properties[alias1]`**\
 A specific expandable property with the property alias _`alias1`_ will be expanded.
 
-**`?expand=property:alias1,alias2,alias3`**\
+**`?expand=properties[alias1,alias2,alias3]`**\
 Multiple expandable properties with the specified property aliases will be expanded.
+
+**`?expand=properties[alias1[properties[nestedAlias1,nestedAlias2]]]`**\
+The property with the property alias _`alias1`_ will be expanded, and likewise the properties _`nestedAlias1`_ and _`nestedAlias2`_ of the expanded _`alias1`_ property.
+{% endtab %}
+
+{% tab title="fields" %}
+{% hint style="info" %}
+Refer to the [Property expansion and limiting](./#property-expansion-and-limiting) concept for more information about this parameter.
+{% endhint %}
+
+**`?fields=properties[$all]`**\
+Includes all properties of the retrieved content item in the output.
+
+**`?fields=properties[alias1]`**\
+Includes only the property with the property alias _`alias1`_ in the output.
+
+**`?fields=properties[alias1,alias2,alias3]`**\
+Includes only the properties with the specified property aliases in the output.
+
+**`?fields=properties[alias1[properties[nestedAlias1,nestedAlias2]]]`**\
+Includes only the property with the property alias _`alias1`_ in the output. If this property is expanded, only the properties _`nestedAlias1`_ and _`nestedAlias2`_ of the expanded _`alias1`_ property are included in the output.
 {% endtab %}
 
 {% tab title="fetch" %}
-To query content items based on their structure, you can apply a selector option to the `/umbraco/delivery/api/v1/content` endpoint. The selector allows you to fetch different subsets of items based on a GUID or path of a specific content item. If no `fetch` parameter is provided, the Delivery API will search across all available content items. The following built-in selectors can be used out-of-the-box:
+To query content items based on their structure, you can apply a selector option to the `/umbraco/delivery/api/v2/content` endpoint. The selector allows you to fetch different subsets of items based on a GUID or path of a specific content item. If no `fetch` parameter is provided, the Delivery API will search across all available content items. The following built-in selectors can be used out-of-the-box:
 
 **`?fetch=ancestors:id/path`**\
 All ancestors of a content item specified by either its _`id`_ or _`path`_ will be retrieved.
@@ -579,7 +518,7 @@ For example, the following API call will attempt to retrieve all the content ite
 **Request**
 
 ```http
-GET /umbraco/delivery/api/v1/content?fetch=children:dc1f43da-49c6-4d87-b104-a5864eca8152
+GET /umbraco/delivery/api/v2/content?fetch=children:dc1f43da-49c6-4d87-b104-a5864eca8152
 ```
 {% endtab %}
 
@@ -619,7 +558,7 @@ Multiple filters can be applied to the same request in addition to other query p
 **Request**
 
 ```http
-GET /umbraco/delivery/api/v1/content?filter=contentType:article&filter=name:guide&skip=0&take=10
+GET /umbraco/delivery/api/v2/content?filter=contentType:article&filter=name:guide&skip=0&take=10
 ```
 
 This technique can also be used to perform range filtering. For example, fetch articles created in 2023:
@@ -650,12 +589,12 @@ An option to sort the results based on the sort order of the content item in eit
 **`?sort=updateDate:asc/desc`**\
 An option to sort the results based on the last update date of the content item in either _`asc`_ or _`desc`_ order.
 
-Different sorting options can be combined for the `/umbraco/delivery/api/v1/content` endpoint, allowing for more advanced sorting functionality. Here is an example:
+Different sorting options can be combined for the `/umbraco/delivery/api/v2/content` endpoint, allowing for more advanced sorting functionality. Here is an example:
 
 **Request**
 
 ```http
-GET /umbraco/delivery/api/v1/content?sort=name:asc&sort=createDate:asc
+GET /umbraco/delivery/api/v2/content?sort=name:asc&sort=createDate:asc
 ```
 {% endtab %}
 {% endtabs %}

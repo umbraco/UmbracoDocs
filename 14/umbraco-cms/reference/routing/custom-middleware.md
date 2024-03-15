@@ -62,6 +62,6 @@ This should return the following:
 
 <figure><img src="../images/custom-middleware-cors-browser-example.png" alt=""><figcaption><p>Browser result image</p></figcaption></figure>
 
-An additional bonus is that this doesn't require any changes in your `Startup.cs` file. It also allows packages to enable Cross-Origin Resource Sharing (CORS) and configure their own policies.
+An additional bonus is that this doesn't require any changes in your `Program.cs` file. It also allows packages to enable Cross-Origin Resource Sharing (CORS) and configure their own policies.
 
 Users that currently use `WithCustomMiddleware()` will need to add calls to `RunPreRouting()` and `RunPostRouting()`. This is similar to Umbraco adding additional middleware in future versions.

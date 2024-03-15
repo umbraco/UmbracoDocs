@@ -1,5 +1,4 @@
 ---
-
 meta.Title: Umbraco Database
 description: >-
   This tutorial will show you how to get started with creating custom database
@@ -96,10 +95,16 @@ We need to register the `DbContext` to be able to use it in Umbraco.
 To do this we can use this helpful extension method:
 
 ```csharp
-services.AddUmbracoEFCoreContext<BlogContext>("{YOUR CONNECTIONSTRING HERE}", "{YOUR PROVIDER NAME HERE}");
+builder.Services.AddUmbracoDbContext<BlogContext>(options => 
+{
+    options.UseSqlServer("{YOUR CONNECTIONSTRING HERE}");
+    //If you are using SQlite, replace UseSqlServer with UseSqlite
+});
 ```
 
-Add the method in the `Program.cs` file:
+If you are using SQlite, replace `UseSqlServer` with `UseSqlite`.
+
+1. Add the method in the `Program.cs` file:
 
 ```csharp
 builder.CreateUmbracoBuilder()
@@ -109,26 +114,27 @@ builder.CreateUmbracoBuilder()
     .AddComposers()
     .Build();
 
-builder.Services.AddUmbracoEFCoreContext<BlogContext>("{YOUR CONNECTIONSTRING HERE}", "{YOUR PROVIDER NAME HERE}");
+builder.Services.AddUmbracoDbContext<BlogContext>(options => 
+{
+    options.UseSqlServer("{YOUR CONNECTIONSTRING HERE}");
+    //If you are using SQlite, replace UseSqlServer with UseSqlite
+});
 ```
-
-{% hint style="warning" %}
-The registration of the `DbContext` must be done after the `AddUmbraco` method, but only if your connection string contains "|DataDirectory|".
-This is because we cannot translate the "|DataDirectory|" part of the connection string to the correct path until the Umbraco environment has been initialized.
-{% endhint %}
 
 We can then access the database via the `BlogContext.` First, we need to migrate the database to add our tables. With EFCore, we can autogenerate the migrations with the terminal.
 
-1. Open your terminal and navigate to your project folder
-2. Generate the migration by running `dotnet ef migrations add InitialCreate --context BlogContext`
+2. Open your terminal and navigate to your project folder.
+3. Generate the migration by running:&#x20;
+
+```bash
+dotnet ef migrations add InitialCreate --context BlogContext
+```
 
 {% hint style="warning" %}
 In this example, we have named the migration `InitialCreate`. However, you can choose the name you like.
 
 We've named the DbContext class`BlogContext`, however, if you have renamed it to something else, make sure to also change it when running the command.
 {% endhint %}
-
-You should now have a `Migrations` folder in your project, containing the `InitialCreate` migration (or the name of your choice).
 
 {% hint style="warning" %}
 This might be confusing at first, as when working with EFCore you would inject your `Context` class. You can still do that, it is however not the recommended approach in Umbraco.

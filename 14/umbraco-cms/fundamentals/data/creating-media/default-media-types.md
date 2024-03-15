@@ -73,3 +73,7 @@ The `UmbracoMediaVideo` media type has the following properties:
 * `umbracoBytes` - Label (bigint)
 
 ![MediaVideo](../../../../../10/umbraco-cms/fundamentals/data/creating-media/images/umbraco-media-video-media-type.png)
+
+{% hint style="info" %}
+You can also create localization files for Media Types. You can read more about this in the [Document Type Localization](../defining-content/document-type-localization.md) article.
+{% endhint %}

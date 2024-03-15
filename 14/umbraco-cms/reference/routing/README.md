@@ -12,7 +12,7 @@ Explains how Umbraco builds its URLs and how the URLs are mapped back to content
 
 ## [Routing Properties](routing-properties.md)
 
-Describes the various Umbraco special/reserved Property Type aliases that can be used to directly manipulate Umbraco's default routing pipeline. These special Property Type aliases can be very useful when creating an Umbraco website.
+Describes the Umbraco special/reserved Property Type aliases that can be used to directly manipulate Umbraco's default routing pipeline. These special Property Type aliases can be useful when creating an Umbraco website.
 
 ## [Surface Controllers](surface-controllers/)
 
@@ -24,7 +24,7 @@ What is an API Controller and how to use them?
 
 ## [Custom Controllers (hijacking routes)](custom-controllers.md)
 
-Creating custom controllers to have 100% full control over how your pages are rendered. AKA: Hijacking Umbraco Routes
+Creating custom controllers to have 100% full control over how your pages are rendered. Also known as: Hijacking Umbraco Routes
 
 ## [Custom Routes](custom-routes.md)
 
