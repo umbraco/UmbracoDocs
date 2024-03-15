@@ -47,8 +47,8 @@ public static class UmbracoCommerceUmbracoBuilderExtensions
     public static IUmbracoCommerceBuilder AddMyPipelineTasks(this IUmbracoCommerceBuilder builder)
     {
         // Add our custom pipeline tasks
-        builder.WithSendEmailPipeline()
-            .Append<LogEmailSentTask>();
+        builder.WithSendEmailPipeline()    
+            .Add<LogEmailSentTask>();
 
         // Return the builder to continue the chain
         return builder;
