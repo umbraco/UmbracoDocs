@@ -6,7 +6,7 @@ description: >-
 
 # External login providers
 
-Both the Umbraco backoffice users and website members support external login providers (OAuth) for performing authentication. This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google, or Facebook.
+Both the Umbraco backoffice users and website members support external login providers (OAuth) for performing authentication. This could be any OpenIDConnect provider such as Entra ID/Azure Active Directory, Identity Server, Google, or Facebook.
 
 {% hint style="info" %}
 Unlike previous major releases of Umbraco the use of the Identity Extensions package is no longer required.
@@ -23,8 +23,8 @@ Install an appropriate Nuget package for the provider you wish to use. Some popu
 
 ## Try it out
 
-{% content-ref url="../../tutorials/add-azure-active-directory-authentication.md" %}
-[configuration](../../tutorials/add-azure-active-directory-authentication.md)
+{% content-ref url="../../tutorials/add-microsoft-entra-id-authentication.md" %}
+[configuration](../../tutorials/add-microsoft-entra-id-authentication.md)
 {% endcontent-ref %}
 
 {% content-ref url="../../tutorials/add-google-authentication.md" %}
@@ -433,6 +433,7 @@ template.innerHTML = `
     }
   </style>
   <form method="post" action="/404">
+    <input type="hidden" name="provider" value="" />
     <h3>My Company's Provider</h3>
     <p>If you have signed up with MyProvider, you can sign in to Umbraco by clicking the button below.</p>
     <uui-button type="submit" id="button" look="primary">
@@ -453,6 +454,7 @@ export class MyCustomView extends HTMLElement {
 
   connectedCallback() {
     this.shadowRoot.querySelector('form').setAttribute('action', this.externalLoginUrl);
+    this.shadowRoot.querySelector('input[name="provider"]').setAttribute('value', this.providerName);
   }
 }
 

@@ -38,7 +38,7 @@ Out of the box Umbraco ships with a custom ASP.NET Core Identity implementation 
 
 ### [External login providers](external-login-providers.md)
 
-The Umbraco users and members supports external login providers (OAuth) for performing authentication of your users/members. This could be any OpenIDConnect provider such as Azure Active Directory, Identity Server, Google or Facebook.
+The Umbraco users and members supports external login providers (OAuth) for performing authentication of your users/members. This could be any OpenIDConnect provider such as Entra ID/Azure Active Directory, Identity Server, Google or Facebook.
 
 ### [Two-factor authentication](two-factor-authentication.md)
 
