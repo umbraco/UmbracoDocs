@@ -4,7 +4,7 @@
 
 * **Database Export** - Export your database smoothly with point-in-time recovery, ensuring your project's data is always safeguarded for when you need it most.
 
-## Export Your Database Smoothly With Point-In-Time Recovery.
+## Export Your Database Smoothly With Point-In-Time Recovery
 With the introduction of the Point-In-Time Recovery (PITR) feature on the new "Backups" page, managing backups of your cloud projects database has never been more straightforward. This new feature empowers you with the flexibility to export backups of your Umbraco database directly from Azure on your terms, perfect for those moments right before a significant update, during troubleshooting, or when you need to revert recent changes.
 
 All previous backups are neatly organized for easy access. From this list, you can opt to download the .bacpac file or delete any backup. Accessing the new page requires admin permission on the cloud project.
