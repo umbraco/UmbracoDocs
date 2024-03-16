@@ -24,7 +24,6 @@ This section contains the release notes for Umbraco Deploy 13 including all chan
 * Fixed issue where templates could incorrectly cause schema mismatch errors when running in production mode [#187](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/187)
 * Fixed issue where importing invalid variant property data would cause a not supported variation exception [#8](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/8)
 * Fixed deserialization issue causing problems with the compare content feature [#212](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/212)
-* Added migrator to support changes in Form field prevalues when importing from older Umbraco versions
 * Add configuration to allow control over suspension and resumption of Examine and document cache events during Deploy operation [#211](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/211)
 
 #### [13.1.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.0) (March 5th 2024)
@@ -93,6 +92,10 @@ This section contains the release notes for Umbraco Deploy 13 including all chan
   * Update Richtext value connector to handle references in blocks.
 
 ## Deploy Contrib
+
+#### [13.1.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-13.1.0 (March 19th 2024)
+
+* All items from 10.2.0-rc1
 
 #### [13.1.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-13.1.0-rc1) (March 5th 2024)
 

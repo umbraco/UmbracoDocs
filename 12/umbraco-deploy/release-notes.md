@@ -122,6 +122,10 @@ This section contains the release notes for Umbraco Deploy 12 including all chan
 
 ## Deploy Contrib
 
+#### [12.1.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-12.1.0 (March 19th 2024)
+
+* All items from 10.2.0-rc1
+
 #### [12.1.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-12.1.0-rc1) (March 5th 2024)
 
 * Add legacy migrators and type resolver to allow importing from Umbraco 7 in [#61](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/61)
