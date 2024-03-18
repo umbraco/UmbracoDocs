@@ -36,12 +36,12 @@ One approach for this is to add a new rewrite rule to the `<system.webServer><re
   <match url=".*" />
   <conditions>
     <add input="{HTTP_HOST}" pattern="\.umbraco\.io$" />
-    <add input="{HTTP_HOST}" negate="true" pattern="^(dev|stage)\.(.*)\.umbraco\.io$" />
-    <add input="{HTTP_HOST}" negate="true" pattern="^localhost(:[0-9]+)?$" />
-    <add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
-    <add input="{REQUEST_URI}" negate="true" pattern="^/DependencyHandler.axd" />
-    <add input="{REQUEST_URI}" negate="true" pattern="^/App_Plugins/" />
-    <add input="{REQUEST_URI}" negate="true" pattern="^/sb/" />
+    <add input="{HTTP_HOST}" pattern="^(dev-|stage-)(.*)?\.umbraco\.io$" ignoreCase="true" negate="true" />
+    <add input="{REQUEST_URI}" pattern="^/umbraco" ignoreCase="true" negate="true" />
+    <add input="{REQUEST_URI}" pattern="^/App_Plugins" ignoreCase="true" negate="true" />
+    <add input="{REQUEST_URI}" pattern="^/sb" negate="true" /> <!-- Don't redirect Smidge Bundle -->
+    <add input="{HTTP_COOKIE}" pattern="^(.+; )?UMB_UCONTEXT=([^;]*)(;.+)?$" negate="true" /> <!-- Ensure preview can render -->
+	<add input="{HTTP_HOST}" pattern="^localhost(:[0-9]+)?$" negate="true" />
   </conditions>
   <action type="Redirect" url="https://www.example.com/{R:0}" redirectType="Permanent" />
 </rule>
