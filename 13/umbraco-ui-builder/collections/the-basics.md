@@ -69,6 +69,15 @@ Sets which property of your entity to use as the name property. Property must be
 collectionConfig.SetNameProperty(p => p.Name);
 ````
 
+### **SetNameProperty(Lambda namePropertyExpression, string heading) : CollectionConfigBuilder&lt;TEntityType&gt;**
+
+Sets which property of your entity to use as the name property and what custom heading should the list view column heading be. Property must be of type `string`. By defining a property as the name property, its value will be used as the label for the entity in trees and list views. It will also be editable in the header region of the editor interface. The property will also automatically be added to the searchable properties collection and be used for the default sort property.
+
+````csharp
+// Example
+collectionConfig.SetNameProperty(p => p.Name, "Person Name");
+````
+
 ### **SetNameFormat(Lambda nameFormatExpression) : CollectionConfigBuilder&lt;TEntityType&gt;**
 
 Sets a format expression to use to dynamically create a label for the entity in things like trees and list views. By providing a name format it is assumed there is no single name property available on the entity. And as such none of the default behaviors described for the `SetNameProperty` method will apply.
