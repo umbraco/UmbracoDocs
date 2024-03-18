@@ -21,7 +21,7 @@ This section contains the release notes for Umbraco Deploy 4 and 10 including al
 
 * All items from 10.4.0-rc1
 * Fixed issue with transfer of date values within Nested Content, Block List or Block Grid properties [#209](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/209)
-* Fixed issue where templates could incorrectly cause schema mismatch errors when running in production mode [#187](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/187)
+* Back-ported fix where templates could incorrectly cause schema mismatch errors when running in production mode. Although runtime modes aren't available in Umbraco 8, we ensure that the template `.uda` files are correctly processed by always setting the template path. [#187](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/187)
 * Fixed issue where importing invalid variant property data would cause a not supported variation exception [#8](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/8)
 * Fixed deserialization issue causing problems with the compare content feature [#212](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/212)
 

@@ -388,7 +388,7 @@ Each setting within this section represents a Deploy operation. For each, the su
 
 -  `DiskRead` - `None, ScheduledPublishing, Examine, DocumentCache, All`,
 -  `PartialRestore` - `None, ScheduledPublishing, Examine, DocumentCache, All`,
--  `Restore` - `None, ScheduledPublishing, Examine, DocumentCache, Signatures|All`,
+-  `Restore` - `None, ScheduledPublishing, Examine, DocumentCache, Signatures, All`,
 -  `Deploy` - `None, ScheduledPublishing, All`,
 -  `Import` - `None, ScheduledPublishing, Examine, DocumentCache, All`,
 -  `Export` - `None, ScheduledPublishing, All`
@@ -401,6 +401,12 @@ So for example if you wanted to remove Examine indexing suspension and resumptio
   "Suspensions": {
     "PartialRestore": "ScheduledPublishing, DocumentCache"
   }
+```
+
+It's also possible to set the values for all operations by setting `Suspensions` to a value instead of an object, for example:
+
+```json
+  "Suspensions": "ScheduledPublishing, DocumentCache, Signatures"
 ```
 
 ### HideConfigurationDetails
