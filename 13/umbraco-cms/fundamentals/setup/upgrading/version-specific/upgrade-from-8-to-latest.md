@@ -1,10 +1,10 @@
 ---
 description: >-
-  Learn how to upgrade your Umbraco 8 project to the latest version of Umbraco
+  Learn how to upgrade your Umbraco 8 project to Umbraco 10
   CMS.
 ---
 
-# Upgrade from Umbraco 8 to the latest version
+# Upgrade from Umbraco 8 to Umbraco 10
 
 {% hint style="danger" %}
 It is currently not possible to upgrade directly from **Umbraco 8 to the latest version**.

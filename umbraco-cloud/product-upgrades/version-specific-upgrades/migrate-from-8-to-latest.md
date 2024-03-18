@@ -1,10 +1,10 @@
 ---
 description: >-
   This article will provide steps on how to migrate a Cloud project from Umbraco
-  8 to the latest version of Umbraco.
+  8 to Umbraco 10.
 ---
 
-# Migrate from Umbraco 8 to the latest version
+# Migrate from Umbraco 8 to Umbraco 10
 
 {% hint style="warning" %}
 It is currently not possible to upgrade directly from Umbraco 8 to the latest version.
