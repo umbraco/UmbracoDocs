@@ -14,7 +14,7 @@ This page is a work in progress. It will be updated as the software evolves.
 
 ```typescript
 // TODO: get interface
-{
+const section : ManifestSection = {
 	"type": "section",
 	"alias": "My.Section",
 	"name": "My Section",
@@ -22,6 +22,22 @@ This page is a work in progress. It will be updated as the software evolves.
 		"label": "My Section",
 		"pathname": "my-section"
 	}
+}
+```
+
+**Manifest with empty element**
+Create a element with a default export and load the element like this:
+
+```typescript
+const section : ManifestSection = {
+    "type": "section",
+    "alias": "Empty.Section",
+    "name" : 'Empty Section',
+    element : () => import('./empty-section.element.js'),
+    meta : {
+        label : 'Foo',
+        pathname : 'empty-section'
+    }
 }
 ```
 
