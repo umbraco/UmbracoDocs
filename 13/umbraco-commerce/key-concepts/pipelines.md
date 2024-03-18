@@ -39,7 +39,7 @@ All pipelines occur within a [Unit of Work](unit-of-work.md). In case a Pipeline
 
 ## Registering a Pipeline task
 
-Pipeline tasks are [registered via the IUmbracoCommerceBuilder](umbraco-commerce-builder.md) interface using the appropriate `With{PipelineName}Pipeline()` builder extension method. This is done to identify the pipeline you want to extend. You can then call the `Append<TTask>()` method to append your task to the end of that pipeline.
+Pipeline tasks are [registered via the IUmbracoCommerceBuilder](umbraco-commerce-builder.md) interface using the appropriate `With{PipelineName}Pipeline()` builder extension method. This is done to identify the pipeline you want to extend. You can then call the `Add<TTask>()` method to add your task to the end of that pipeline.
 
 ```csharp
 public static class UmbracoCommerceUmbracoBuilderExtensions
