@@ -409,6 +409,29 @@ It's also possible to set the values for all operations by setting `Suspensions`
   "Suspensions": "ScheduledPublishing, DocumentCache, Signatures"
 ```
 
+If you prefer configuration in code, operators overloads on the settings class make this process straightforward, as shown in the following example:
+
+```csharp
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Deploy.Core.Configuration.DeployConfiguration;
+
+internal class DeploySuspensionComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+        => builder.Services.Configure<DeploySettings>(options =>
+        {
+            // No suspensions during import
+            options.Suspensions.Import = SuspensionOptions.None;
+
+            // No Examine suspensions on all operations (using bitwise negation operator)
+            options.Suspensions &= ~SuspensionOptions.Examine;
+
+            // Add scheduled publishing suspension to all operations
+            options.Suspensions |= SuspensionOptions.ScheduledPublishing;
+        });
+}
+```
+
 ### HideConfigurationDetails
 
 If set to `true` the configuration details shown on the setting's dashboard will be hidden.
