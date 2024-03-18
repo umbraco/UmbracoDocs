@@ -70,6 +70,12 @@ And there are a couple of further additions to improve the performance and acces
   * See full details of breaking changes under the [version specific upgrade guide](upgrading/version-specific.md#version-13).
 * Ran registered server-side file validators on file uploads.
 
+## Umbraco.Forms.Deploy
+
+#### [13.0.1] (March 19th 2024)
+
+* Added migrator to support changes in Form field prevalues when importing from older Umbraco versions
+
 ## Legacy release notes
 
 You can find the release notes for versions out of support in the [Legacy documentation on Github](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-forms/release-notes.md) and [Umbraco Forms Package page](https://our.umbraco.com/packages/developer-tools/umbraco-forms/).

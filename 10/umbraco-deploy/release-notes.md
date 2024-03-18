@@ -17,6 +17,14 @@ If you are upgrading to a new major version you can find the details about the b
 
 This section contains the release notes for Umbraco Deploy 4 and 10 including all changes for these versions. For each major version, you can find the details about each release.
 
+#### [10.4.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.4.0) (March 19th 2024)
+
+* All items from 10.4.0-rc1
+* Fixed issue with transfer of date values within Nested Content, Block List or Block Grid properties [#209](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/209)
+* Back-ported fix where templates could incorrectly cause schema mismatch errors when running in production mode. Although runtime modes aren't available in Umbraco 8, we ensure that the template `.uda` files are correctly processed by always setting the template path. [#187](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/187)
+* Fixed issue where importing invalid variant property data would cause a not supported variation exception [#8](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/8)
+* Fixed deserialization issue causing problems with the compare content feature [#212](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/212)
+
 #### [10.4.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.4.0) (March 5th 2024)
 
 * Add `IArtifactTypeResolver` to allow custom type resolving when deserializing to `IArtifact` (used by Deploy Contrib, see PR [#60](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/61))
@@ -185,6 +193,14 @@ This section contains the release notes for Umbraco Deploy 4 and 10 including al
 
 <details>
 <summary>Version 4</summary>
+
+#### [4.10.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.10.0) (March 19th 2024)
+
+* All items from 4.10.0-rc1
+* Fixed issue with transfer of date values within Nested Content, Block List or Block Grid properties [#209](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/209)
+* Fixed issue where templates could incorrectly cause schema mismatch errors when running in production mode [#187](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/187)
+* Fixed issue where importing invalid variant property data would cause a not supported variation exception [#8](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/8)
+* Fixed deserialization issue causing problems with the compare content feature [#212](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/212)
 
 #### [4.10.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F4.10.0) (March 5th 2024)
 
@@ -433,6 +449,10 @@ This section contains the release notes for Umbraco Deploy 4 and 10 including al
 </details>
 
 ## Deploy Contrib
+
+#### [10.2.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-10.2.0 (March 19th 2024)
+
+* All items from 10.2.0-rc1
 
 #### [10.2.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-10.2.0-rc1) (March 5th 2024)
 

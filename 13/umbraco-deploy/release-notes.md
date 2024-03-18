@@ -17,6 +17,15 @@ If you are upgrading to a new major version you can find the details about the b
 
 This section contains the release notes for Umbraco Deploy 13 including all changes for this version.
 
+#### [13.1.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.0) (March 19th 2024)
+
+* All items from 13.1.0-rc1
+* Fixed issue with transfer of date values within Nested Content, Block List or Block Grid properties [#209](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/209)
+* Fixed issue where templates could incorrectly cause schema mismatch errors when running in production mode [#187](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/187)
+* Fixed issue where importing invalid variant property data would cause a not supported variation exception [#8](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/8)
+* Fixed deserialization issue causing problems with the compare content feature [#212](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/212)
+* Add configuration to allow control over suspension and resumption of Examine and document cache events during Deploy operation [#211](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/211)
+
 #### [13.1.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.0) (March 5th 2024)
 
 * Add `IArtifactTypeResolver` to allow custom type resolving when deserializing to `IArtifact` (used by Deploy Contrib, see PR [#60](https://github.com/umbraco/Umbraco.Deploy.Contrib/pull/61))
@@ -83,6 +92,10 @@ This section contains the release notes for Umbraco Deploy 13 including all chan
   * Update Richtext value connector to handle references in blocks.
 
 ## Deploy Contrib
+
+#### [13.1.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-13.1.0 (March 19th 2024)
+
+* All items from 10.2.0-rc1
 
 #### [13.1.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-13.1.0-rc1) (March 5th 2024)
 
