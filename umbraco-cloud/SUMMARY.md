@@ -54,6 +54,7 @@
     * [Account Contacts](set-up/project-settings/team-members/accounts-contact.md)
     * [Technical Contact](set-up/project-settings/team-members/technical-contact.md)
   * [Secrets Management](set-up/project-settings/secrets-management.md)
+  * [Project History](set-up/project-settings/project-history.md)
 * [Private Nuget Feed on Umbraco Cloud](set-up/private-nuget-feed.md)
 * [Going Live](set-up/going-live.md)
 * [Media](set-up/media/README.md)
@@ -130,6 +131,7 @@
   * [Extraction error: "Type not found! "](troubleshooting/deployments/type-not-found.md)
 
 ## Release Notes
+
 * [Overview 2024](release-notes/overview-2024.md)
 * [March 2024](release-notes/2024-03-releasenotes.md)
 * [February 2024](release-notes/2024-02-releasenotes.md)

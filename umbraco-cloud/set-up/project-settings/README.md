@@ -18,6 +18,7 @@ When working with a Umbraco Cloud project, you can handle a lot of the project c
 * [Dedicated Resources](./#dedicated-resources)
 * [Project Usage](./#usage)
 * [Availability & Performance](./#availability-performance)
+* [Project History](./#project-history)
 * [Delete the project.](./#delete-project)
 
 ![settings](../images/project-settings-v10.png)
@@ -80,7 +81,7 @@ You can upgrade your project to a **Standard** or a **Professional** plan, from 
 
 ### Renaming the Cloud Project
 
-You can rename your Umbraco Cloud project from the **Settings** menu. 
+You can rename your Umbraco Cloud project from the **Settings** menu.
 
 s![settings](../images/renaming-project-v10.png)
 
@@ -117,7 +118,11 @@ On your Umbraco Cloud project, it is possible to see the usage of Custom Domains
 
 ## [Availability & Performance](availability-performance.md)
 
-You are able to see metrics related to the overall health and performance of the Azure app service hosting the live environment of your solution.
+You can see metrics related to the overall health and performance of the Azure app service hosting the live environment of your solution.
+
+## [Project History](project-history.md)
+
+On the project history page, you can see a history of activities that have happened on your projects.
 
 ### Delete Project
 
