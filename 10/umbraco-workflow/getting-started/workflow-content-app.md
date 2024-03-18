@@ -10,12 +10,7 @@ Umbraco Workflow adds a [Content App](https://docs.umbraco.com/umbraco-cms/v/10.
 
 ## Active Workflow
 
-The Active workflow sub-section provides an interface for managing workflows for the current content node. When you initiate a workflow on the current node, the **Active workflow** sub-section requires information such as:
-
-* Change Description.
-* \[Optional] Scheduled date to publish the changes requested in the node.
-
-![Active workflow initiate request](<../images/Active-workflow-initiate-request (1).png>)
+The Active workflow sub-section provides an interface for managing workflows for the current content node. 
 
 When the current node is pending workflow approval, the **Active workflow** sub-section displays detailed information such as:
 
@@ -28,14 +23,6 @@ When the current node is pending workflow approval, the **Active workflow** sub-
 ![Active Workflow sub-section](<../images/Active\_Workflow\_detailed\_info (1).png>)
 
 You can access Active Workflows from two places - the **Content** section and the **Workflow** section (depending on your user permission). Workflow Administrators (those users with access to the Workflow section) can access workflows assigned to a different group. In the **Workflow History**, these are noted as being performed by the admin.
-
-In multi-lingual sites, variant content can be submitted in one of these workflows:
-
-* Only the current variant.
-* All variants for publishing in a single workflow process using the workflow applied to the default variant.
-* Each variant into a separate workflow.
-
-For example, the German version of your content can be approved by German speaker's group. The English version by the English speaker's group.
 
 ### Approve, Reject, or Cancel pending workflow tasks
 
@@ -58,6 +45,10 @@ To cancel a pending Workflow task, click on the **Cancel** button in the Action 
 ## Configuration
 
 The Configuration sub-section provides an interface for configuring the content approval flow for the current node. It also displays any Inherited or Document type approval flows applied to the current content node.
+
+In multi-lingual sites, each variant can have its own approval flow. By default, new variants inherit the configuration set on the default language.
+
+For example, German variants can be approved by the German speakers group, while English variants are approved by the English speakers group.
 
 ![Configuration sub-section](<../images/Configuration-sub-section (1).png>)
 

@@ -26,7 +26,7 @@ public bool HasDomain { get; }
 public DomainAndUri Domain { get; }
 public CultureInfo Culture { get; }
 ```
-Domain is a DomainAndUri object i.e. a standard Domain plus the fully qualified uri. For example, the Domain may contain "example.com" whereas the Uri will be fully qualified e.g. "https://example.com/".
+Domain is a DomainAndUri object that is a standard Domain plus the fully qualified uri. For example, the Domain may contain "example.com" whereas the Uri will be fully qualified for example "https://example.com/".
 
 It contains the content to render:
 
@@ -45,9 +45,9 @@ public string GetTemplateAlias { get; }
 public ITemplate Template {get; }
 ```
 
-The published request is created using the `PublishedRequestBuilder` which implements `IPublishedRequestBuilder`, it's only in this builder that it's possible to set values, such as domain, culture, published content, redirects and so on.
+The published request is created using the `PublishedRequestBuilder`, which implements `IPublishedRequestBuilder`. It's only in this builder that it's possible to set values, such as domain, culture, published content, redirects, and so on.
 
-You can subscribe to the 'routing request' notification, which is published right after the `PublishedRequestBuilder` has been prepared, but before the request is built, and processed. Here you can modify anything in the request before it is built and processed! e.g. content, template, etc:
+You can subscribe to the 'routing request' notification, which is published right after the `PublishedRequestBuilder` has been prepared, but before the request is built, and processed. Here you can modify anything in the request before it is built and processed! For example content, template, etc:
 
 ```C#
 using Umbraco.Cms.Core.Events;

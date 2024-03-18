@@ -17,6 +17,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 10 including all changes for this version.
 
+#### [10.0.8](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.8) (March 3rd 2024)
+
+* Fixed issue with date range order searches not working correctly [#468](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/468).
+
 #### 10.0.7 (February 15th 2024)
 
 * Fixed error in SafeLazy not taking null into account and so causing errors when an entity cache entry is evicted [#466](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/466).

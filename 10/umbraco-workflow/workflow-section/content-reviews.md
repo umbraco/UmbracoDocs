@@ -69,7 +69,7 @@ You can configure content reviews for individual content nodes or for all nodes 
 * **Review group** - The group responsible for reviewing the content node. Can contain more than one group.
 
 {% hint style="info" %}
-When reviews are enabled or any changes to content review settings are saved, Workflow determines the review status of all the content needing review. It provides this data in the Content reviews Dashboard. For large sites, or on the first run, this may take a few seconds to complete.
+When reviews are enabled or any changes to content review settings are saved, Workflow determines the review status. It assesses all the content needing review and provides this data in the Content reviews Dashboard. For large sites, or on the first run, this may take a few seconds to complete.
 {% endhint %}
 
 #### Content Item Reviews

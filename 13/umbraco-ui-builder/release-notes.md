@@ -18,6 +18,16 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco UI Builder 13 including all changes for this version.
 
+#### [**13.1.0**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.0) **(March 6th 2024)**
+
+* All updates listed under 13.1.0-rc1 and 13.1.0-rc2.
+
+#### [**13.1.0-rc2**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.0) **(February 26th 2024)**
+
+* Upgrade from 13.0.3 to 13.1.0-rc1 breaks existing custom repository. [#91](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/91)
+
+While working with a custom repository, the entity ID type converter defaulted to the newly registered `UdiConverter` instead of `Int32Converter`. With the current update, the required converter will be picked in a different order.
+
 #### [**13.1.0-rc1**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.0) **(February 20th 2024)**
 
 Umbraco UI Builder 13.1 is the first release since launch adding new features. We've focussed on improving the experience when working with related collections, addressing some additional use cases that widen the scope of the product. This includes the possibility to retrieve child collections entities or use an Umbraco entity as foreign key.

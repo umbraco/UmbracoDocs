@@ -5,10 +5,5 @@ root: ./
     summary: SUMMARY.md
 
 redirects:
-    fundamentals/setup/upgrading/general: fundamentals/setup/upgrading/README.md
-    reference/templating/mvc/child-actions: reference/templating/mvc/viewcomponents
-    fundamentals/setup/upgrading/version-specific/umbraco10-breaking-changes: fundamentals/setup/upgrading/version-specific
-    fundamentals/setup/upgrading/version-specific/umbraco11-breaking-changes: fundamentals/setup/upgrading/version-specific
-    extending/packages/uploading-to-our: extending/packages/listing-on-marketplace.md
-    fundamentals/setup/install/running-umbraco-on-a-mac: fundamentals/setup/install/running-umbraco-on-linux-macos.md
+    tutorials/add-azure-active-directory-authentication: tutorials/add-microsoft-entra-id-authentication.md
 

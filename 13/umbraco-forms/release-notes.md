@@ -17,9 +17,9 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
-#### [**13.1.0**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.0) **(March 5th 2024)**
+#### [**13.1.0**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.0) **(March 19th 2024)**
 
-With the introduction of webhooks in Umbraco 13, we've made an update to Forms to allow workflow execution events to trigger webhooks. Workflows are operations that you can associate with form submission, approval, or rejection actions. You can use these where you need to notify external systems of the success or failure of a workflow. Read more on [Umbraco Forms Wehbooks](./developer/webhooks.md).
+With the introduction of webhooks in Umbraco 13, we've made an update to Forms to allow workflow execution events to trigger webhooks. Workflows are operations that you can associate with form submission, approval, or rejection actions. You can use these where you need to notify external systems of the success or failure of a workflow. Read more on [Umbraco Forms Webhooks](./developer/webhooks.md).
 
 We've added an update that will help customers using Forms within locked down production environments.
 
@@ -27,7 +27,7 @@ And there are a couple of further additions to improve the performance and acces
 
 **Features implemented and issues resolved in 13.1.0**
 
-* Added wehbooks for workflow execution events [#1151](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1151).
+* Added webhooks for workflow execution events [#1151](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1151).
 * Added support for a proxied request when using reCAPTCHA 3 [#1159](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1159).
 * Added a configurable option to ensure accessibility requirements with regard to fieldsets are adhered to [#1163](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1163).
     * Read more about this configuration setting [here](./developer/configuration/README.md#mandatoryfieldsetlegends).
@@ -35,6 +35,7 @@ And there are a couple of further additions to improve the performance and acces
 * Ensured that client-side conditions logic correctly implements "is" with multiple values, such that the condition passes if one and only one matching value is found [#1173](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1173).
 * Fixed closing of theme picker dialog [#1174](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1174).
 * Fixed rendering of translated dictionary items used for form captions [#1175](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1175).
+* Applied multiple click protection for form submissions for installations using the aspnet-validation library [#1182](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1182).
 
 #### [**13.0.2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.2) **(February 20th 2024)**
 
@@ -68,6 +69,12 @@ And there are a couple of further additions to improve the performance and acces
 * Compatibility with Umbraco 13
   * See full details of breaking changes under the [version specific upgrade guide](upgrading/version-specific.md#version-13).
 * Ran registered server-side file validators on file uploads.
+
+## Umbraco.Forms.Deploy
+
+#### [13.0.1] (March 19th 2024)
+
+* Added migrator to support changes in Form field prevalues when importing from older Umbraco versions
 
 ## Legacy release notes
 

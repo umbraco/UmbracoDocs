@@ -12,7 +12,7 @@ In this article you can learn more about the common terms and concepts that are 
 
 When you go to the backoffice for the first time, you're presented with the login screen.
 
-![Login screen](../../../../10/umbraco-cms/fundamentals/backoffice/images/backoffice-login.png)
+![Login screen](images/login-backoffice-login.png)
 
 [Read more about the login screen](login.md).
 

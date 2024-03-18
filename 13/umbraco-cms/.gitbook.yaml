@@ -5,5 +5,5 @@ root: ./
     summary: SUMMARY.md
 
 redirects:
-    fundamentals/setup/install/running-umbraco-on-a-mac: fundamentals/setup/install/running-umbraco-on-linux-macos.md
+    tutorials/add-azure-active-directory-authentication: tutorials/add-microsoft-entra-id-authentication.md
 

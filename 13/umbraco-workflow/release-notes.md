@@ -10,23 +10,35 @@ In this section, we have summarized the changes to Umbraco Workflow released in 
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
 {% hint style="info" %}
-If you are upgrading to a new major version, you can find information about the breaking changes in the [Version Specific Upgrade Notes](upgrading/version-specific.md) article
+Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) article for breaking changes when upgrading to a new major version.
 {% endhint %}
 
 ## Release History
 
 This section contains the release notes for Umbraco Workflow 13 including all changes for this version.
 
-#### [13.0.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.2) (January 17th 2024)
+### [13.0.4](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.4) (March 13th 2024)
+
+* Make dashboard, content app, and section registration classes public [#56](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/56)
+* Fixes discrepancy between a JSON property attribute value and property name in WorkflowTaskCollectionViewModel, which resulted in unexpected JSON values.
+
+### [13.0.3](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.3) (February 28th 2024)
+
+* Fixes issue where invariant workflows on variant content would publish previously published, but currently unpublished, variants [#52](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/52).
+* Fixes issue where split-view allowed publishing content without using Workflow [#53](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/53).
+
+The above fixes introduce an updated UI for requesting workflow approvals. For more information, see the [Submitting Content for Approval](./getting-started/submitting-changes.md) article.
+
+### [13.0.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.2) (January 17th 2024)
 
 * Fixes bug where workflow submission was not respecting user's language access permissions
 * Fixes bug where approval groups were not populated for new nodes using the new-node approval workflow [#51](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/51)
 
-#### [13.0.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.1) (December 20th 2023)
+### [13.0.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.1) (December 20th 2023)
 
 * Updates internal license validation to handle licenses registered with 'UmbracoWorkflow' or 'Umbraco.Workflow'
 
-#### [13.0.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.0) (December 14th 2023)
+### [13.0.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.0) (December 14th 2023)
 
 * Compatibility with Umbraco 13
   * For full details of breaking changes refer to the [Version Specific Upgrade Notes](upgrading/version-specific.md)

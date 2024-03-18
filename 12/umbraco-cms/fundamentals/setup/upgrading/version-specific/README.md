@@ -1,8 +1,8 @@
 ---
 description: >-
   This document covers specific upgrade steps if a version requires them. Most
-  versions do not require specific upgrade steps. In most cases, you will be
-  able to upgrade directly from your current versi
+  versions do not require specific upgrade steps and you will be able to upgrade
+  directly from your current version.
 ---
 
 # Version Specific Upgrades
@@ -667,6 +667,10 @@ This setting has been superseded by `DistributedLockingWriteLockDefaultTimeout`.
 It is no longer possible to rename the `/Umbraco` folder path using configuration. The property still exists but is hardcoded to `/Umbraco` and will be removed in Umbraco 12, planned for release in June 2023.
 
 </details>
+
+## Release notes
+
+You can find a list of all the released Umbraco versions on [Our Umbraco](https://our.umbraco.com/download/releases/) website. When you visit Our Umbraco website, click on the version number to view the changes made in that specific version.
 
 ## Find your upgrade path
 
