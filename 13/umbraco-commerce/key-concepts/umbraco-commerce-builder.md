@@ -60,3 +60,33 @@ public static class UmbracoCommerceUmbracoBuilderExtensions
 })
 ...
 ```
+
+{% hint style="info" %}
+Notice if using a composer to register `IUmbracoCommerceBuilder` extensions and its dependencies, the composer need to run before `UmbracoCommerceComposer` otherwise it will use default configuration.
+{% endhint %}
+
+```csharp
+public static class StoreBuilderExtensions
+{
+	public static IUmbracoBuilder AddBillundStore(this IUmbracoBuilder umbracoBuilder)
+	{
+		umbracoBuilder.AddUmbracoCommerce(v =>
+		{
+			...
+		});
+
+		return umbracoBuilder;
+	}
+}
+```
+
+```csharp
+[ComposeBefore(typeof(UmbracoCommerceComposer))]
+public class StoreComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.AddMyStore();
+    }
+}
+```
