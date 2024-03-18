@@ -68,7 +68,7 @@ Notice if using a composer to register `IUmbracoCommerceBuilder` extensions and 
 ```csharp
 public static class StoreBuilderExtensions
 {
-	public static IUmbracoBuilder AddBillundStore(this IUmbracoBuilder umbracoBuilder)
+	public static IUmbracoBuilder AddMyStore(this IUmbracoBuilder umbracoBuilder)
 	{
 		umbracoBuilder.AddUmbracoCommerce(v =>
 		{
