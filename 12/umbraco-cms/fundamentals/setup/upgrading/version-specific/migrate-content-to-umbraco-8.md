@@ -142,7 +142,6 @@ The updated properties are:
 * Media Picker
 * Member Picker
 * Multinode Treepicker
-* Nested Content
 * Folder Browser
 * Related Links
 

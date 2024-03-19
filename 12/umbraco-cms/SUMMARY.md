@@ -63,7 +63,6 @@
       * [Multi Url Picker](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/multi-url-picker.md)
       * [Multinode Treepicker](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/multinode-treepicker.md)
       * [Repeatable Textstrings](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/multiple-textbox.md)
-      * [Nested Content](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/nested-content.md)
       * [Numeric](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/numeric.md)
       * [Radiobutton List](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/radiobutton-list.md)
       * [Slider](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/slider.md)
