@@ -18,6 +18,15 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco UI Builder 13 including all changes for this version.
 
+#### [**13.1.1**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.1) **(March 18th 2024)**
+
+* Fixed an issue where the database is getting disposed in a UIBuilder repository, causing an error when Forms tries to save the form submission after the workflow is complete [Umbraco.Forms.Issues#1179](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1179).
+* Allow renaming the heading of the implicit `Name` column by calling the `SetNameProperty` method overload.
+
+You can read more about this in [the basics](collections/the-basics.md) article.
+* Use `CsvHelper` library with the built in `ExportEntityAction`.
+* Update `CsvHelper` version dependency.
+
 #### [**13.1.0**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.0) **(March 6th 2024)**
 
 * All updates listed under 13.1.0-rc1 and 13.1.0-rc2.
