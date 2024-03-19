@@ -33,8 +33,10 @@ You need to add these configuration values. E.g in a json configuration source l
     }
 }
 ```
+
 You can also copy the following JSON directly into your Azure Web App configuration via the Advanced Edit feature.
-![image](https://github.com/umbraco/UmbracoDocs/assets/11179749/ae53a26b-c45a-4b71-932a-0682f3d264a8)
+
+<figure><img src="https://github.com/umbraco/UmbracoDocs/assets/11179749/ae53a26b-c45a-4b71-932a-0682f3d264a8" alt=""><figcaption><p>Advanced edit</p></figcaption></figure>
 
 ```json
 {
