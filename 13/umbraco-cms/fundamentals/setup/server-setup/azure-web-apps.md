@@ -33,12 +33,13 @@ You need to add these configuration values. E.g in a json configuration source l
     }
 }
 ```
-You can also copy the following JSON directly into your Azure Web App configuration via the Advanced Edit feature.
-![image](https://github.com/umbraco/UmbracoDocs/assets/11179749/ae53a26b-c45a-4b71-932a-0682f3d264a8)
 
-```json
-{
-  "name": "UMBRACO__CMS__Global__MainDomLock",
+You can also copy the following JSON directly into your Azure Web App configuration via the Advanced Edit feature.
+
+<figure><img src="https://github.com/umbraco/UmbracoDocs/assets/11179749/ae53a26b-c45a-4b71-932a-0682f3d264a8" alt=""><figcaption><p>Advanced Edit</p></figcaption></figure>
+
+<pre class="language-json"><code class="lang-json"><strong>{
+</strong>  "name": "UMBRACO__CMS__Global__MainDomLock",
   "value": "FileSystemMainDomLock",
   "slotSetting": false
 },
@@ -52,7 +53,7 @@ You can also copy the following JSON directly into your Azure Web App configurat
   "value": "SyncedTempFileSystemDirectoryFactory",
   "slotSetting": false
 }
-```
+</code></pre>
 
 The minimum recommended Azure SQL Tier is "S2", however noticeable performance improvements are seen in higher Tiers
 
