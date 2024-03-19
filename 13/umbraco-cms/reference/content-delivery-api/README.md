@@ -10,32 +10,32 @@ The Content Delivery API delivers headless capabilities built directly into Umbr
 
 The Delivery API is an opt-in feature of Umbraco. It must be explicitly enabled through configuration before it can be utilized.
 
-Umbraco projects started on version 11 or below also need to opt-in through code by [registering the delivery API dependencies](./#register-the-content-delivery-api-dependencies). Below you will find a description of how to do this.
-
-For a fresh Umbraco installation you can proceed directly to the [Enable the Content Delivery API](./#enable-the-content-delivery-api) section.
-
 {% embed url="https://www.youtube.com/watch?v=sh_AF-ZKJ28" %}
 Video tutorial
 {% endembed %}
 
-### Register the Content Delivery API dependencies
+<details>
+<summary>For version 12 or below ONLY - Register the Content Delivery API dependencies</summary>
 
-{% hint style="info" %}
-This step is only applicable for Umbraco projects started on version 11 or below.
-{% endhint %}
-
-1. Open your project's `program.cs`
+1. Open your project's `Startup.cs` file and locate the `ConfigureServices` method.
 2. Register the API dependencies by adding `.AddDeliveryApi()`:
 
 ```csharp
-builder.CreateUmbracoBuilder()
-    .AddBackOffice()
-    .AddWebsite()
-//add delivery API magic here:
-    .AddDeliveryApi()
-    .AddComposers()
-    .Build();
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddUmbraco(_env, _config)
+        .AddBackOffice()
+        .AddWebsite()
+        // Register all Delivery API dependencies
+        .AddDeliveryApi()
+        .AddComposers()
+        .Build();
+}
 ```
+
+In version 13 and above this step is done for you in the program.cs file.
+
+</details>
 
 ### Enable the Content Delivery API
 
