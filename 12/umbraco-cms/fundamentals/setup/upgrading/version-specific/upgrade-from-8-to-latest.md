@@ -1,15 +1,14 @@
 ---
 description: >-
-  Learn how to upgrade your Umbraco 8 project to the latest version of Umbraco
-  CMS.
+  Learn how to upgrade your Umbraco 8 project to Umbraco 10.
 ---
 
-# Upgrade from Umbraco 8 to the latest version
+# Upgrade from Umbraco 8 to Umbraco 10
 
 {% hint style="danger" %}
-It is currently not possible to upgrade directly **from Umbraco 8 to Umbraco 12**.
+It is currently not possible to upgrade directly from **Umbraco 8 to the latest version**.
 
-The recommended approach for upgrading from v8 to v12 is to use this guide to upgrade from _Umbraco 8 to Umbraco 10_ and then use the [Upgrading to Major](../#upgrade-to-a-new-major) steps to upgrade from _Umbraco 10 to Umbraco 12_.
+The recommended approach for upgrading from v8 to the latest version is to use this guide to upgrade from _Umbraco 8 to Umbraco 10_. Umbraco 10 contains the [database migrations](https://github.com/umbraco/Umbraco-CMS/blob/release-10.0.0/src/Umbraco.Infrastructure/Migrations/Upgrade/UmbracoPlan.cs#L66-L73) that must be upgraded from Umbraco 8. You can then use the [Upgrading to Major](../#upgrade-to-a-new-major) steps to upgrade from _Umbraco 10 to the latest version_.
 {% endhint %}
 
 Since the underlying framework going from Umbraco 8 to the latest version has changed, there is no direct upgrade path. That said, it is possible to re-use the database from your Umbraco 8 project on your new project in order to maintain the content.

@@ -1,7 +1,6 @@
 ---
 description: >-
-  Learn how to upgrade your Umbraco 8 project to Umbraco 10
-  CMS.
+  Learn how to upgrade your Umbraco 8 project to Umbraco 10.
 ---
 
 # Upgrade from Umbraco 8 to Umbraco 10

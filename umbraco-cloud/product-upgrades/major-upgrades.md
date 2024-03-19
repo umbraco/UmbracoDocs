@@ -17,7 +17,7 @@ Ensure you know the [Breaking changes](https://docs.umbraco.com/umbraco-cms/fund
 
 **Upgrading from Umbraco 9**
 
-When upgrading from Umbraco 9, you need to upgrade to the closest [Long-term Support (LTS) major](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/). For Umbraco 9 that is Umbraco 10. From Umbraco 10 you can then upgrade directly to the next long-term support which is Umbraco 13. 
+When upgrading from Umbraco 9, you need to upgrade to the closest [Long-term Support (LTS) major](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/). For Umbraco 9 that is Umbraco 10. From Umbraco 10 you can then upgrade directly to the next long-term support which is Umbraco 13.
 
 When upgrading from Umbraco 9 to Umbraco 10, follow the dropdowns named: _**"Upgrading from Umbraco 9"**_ in the steps of the guide.
 
@@ -27,7 +27,7 @@ These are extra steps needed when going from Umbraco 9 to Umbraco 10.
 
 You can upgrade from Umbraco 10 to the latest version directly. If you choose to skip upgrading to versions 11 and 12, you will no longer receive warning messages for obsolete features. However, if you do skip these versions, any breaking changes will no longer compile.
 
-It is recommended to upgrade to the closest [Long-term Support (LTS) major](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) version before upgrading to the latest version. For Umbraco 10 the closest long-term support version is Umbraco 13 so a direct upgrade is possible. 
+It is recommended to upgrade to the closest [Long-term Support (LTS) major](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) version before upgrading to the latest version. For Umbraco 10, the closest long-term support version is Umbraco 13 so a direct upgrade is possible.
 
 {% endhint %}
 
