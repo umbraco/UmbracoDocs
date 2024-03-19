@@ -17,7 +17,7 @@ Ensure you know the [Breaking changes](https://docs.umbraco.com/umbraco-cms/fund
 
 **Upgrading from Umbraco 9**
 
-When upgrading from Umbraco 9, you need to upgrade to the closest [Long-term Support (LTS) major](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/). For Umbraco 9 that is Umbraco 10.
+When upgrading from Umbraco 9, you need to upgrade to the closest [Long-term Support (LTS) major](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/). For Umbraco 9 that is Umbraco 10. From Umbraco 10 you can then upgrade directly to the next long-term support which is Umbraco 13. 
 
 When upgrading from Umbraco 9 to Umbraco 10, follow the dropdowns named: _**"Upgrading from Umbraco 9"**_ in the steps of the guide.
 
