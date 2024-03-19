@@ -720,7 +720,7 @@ It might be necessary to delete all of the `bin` and `obj` directories in each o
 
 You can upgrade from Umbraco 10 to the latest version directly. If you choose to skip upgrading to versions 11 and 12, you will no longer receive warning messages for obsolete features. However, if you do skip these versions, any breaking changes will no longer compile.
 
-It is recommended to upgrade to the latest [Long-term Support (LTS) major](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) version.
+It is recommended to upgrade to the closest [Long-term Support (LTS) major](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) version before upgrading to the latest version. For Umbraco 10 the closest long-term support version is Umbraco 13 so a direct upgrade is possible. 
 
 </details>
 
