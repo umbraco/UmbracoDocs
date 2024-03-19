@@ -11,7 +11,7 @@ Umbraco Workflow adds two Dashboards to your Umbraco project:
     ![Workflow Dashboard in the Content Section](<../../../10/umbraco-workflow/images/WorkflowDashboard-ContentSection (1) (1) (1).png>)
 *   **Admin Dashboard** - This Workflow Dashboard is the default view in the **Workflow** section. It displays a chart of recent workflow activity, chart of content review activity, licensing details, and any relevant upgrade-related messages. You can also view the workflow and content review activity chart for the specified range of days.
 
-    ![Workflow Dashboard in the Workflow Section](images/workflow-section.png)
+    ![Workflow Dashboard in the Workflow Section](../images/workflow-section.png)
 
 ## Buttons
 
