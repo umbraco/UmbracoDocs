@@ -4,7 +4,7 @@ description: "Connect to Cloud environment's Azure Blob Storage programmatically
 
 # Connect to Azure Storage Explorer programmatically
 
-This article provides the steps needed to programmatically connect to your Umbraco Cloud Environment's Azure Blob Storage containers, to persist files programmatically. One will need to have access to the credentials of the Blob Storage to authenticate and find the files created programmatically in the Azure Blob Storage.
+This article provides the steps needed to programmatically connect to your Umbraco Cloud Environment's Azure Blob Storage containers, to persist files programmatically. You will need access to the Blob Storage credentials to authenticate and find the files created programmatically in the Azure Blob Storage.
 
 1. Clone down your Umbraco Cloud Project. You can find more information on how to clone a project in the [Working Locally](../working-locally.md) article.
 
