@@ -678,9 +678,13 @@ Are you looking to upgrade an Umbraco Cloud project from 9 to 10? Follow the gui
 
 <details>
 
-<summary>10.latest to version 11</summary>
+<summary>10.latest to the latest Umbraco version</summary>
 
 It might be necessary to delete all of the `bin` and `obj` directories in each of the projects of your solution. It has been observed that Visual Studio's "Clean Solution" option is sometimes not enough.
+
+You can upgrade from Umbraco 10 to the latest version directly. If you choose to skip upgrading to version 11, you will no longer receive warning messages for obsolete features. However, if you do skip this version, any breaking changes will no longer compile.
+
+It is recommended to upgrade to the closest [Long-term Support (LTS) major](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) version before upgrading to the latest version. For Umbraco 10, the closest long-term support version is Umbraco 12 so a direct upgrade is possible.
 
 </details>
 
