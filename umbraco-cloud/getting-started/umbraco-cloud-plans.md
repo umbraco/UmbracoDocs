@@ -42,4 +42,4 @@ Umbraco Cloud Professional plan
 
 These are hard plan quotas, which cannot be exceeded for more than a 5-minute interval. When a cloud environment surpasses the CPU or memory limits defined by the plan quota, the app service hosting the environment will automatically restart. If the app service experiences multiple restarts, we classify it as a noisy neighbor. Then it will be relocated to a dedicated environment to guarantee that other tenants in the shared pool are not negatively impacted.
 
-You can look at the pricing, plans, and features at [Umbraco Cloud Pricing](https://umbraco.com/products/umbraco-cloud/pricing/) page.
+You can look at the pricing, plans, and features on the [Umbraco Cloud Pricing](https://umbraco.com/products/umbraco-cloud/pricing/) page.
