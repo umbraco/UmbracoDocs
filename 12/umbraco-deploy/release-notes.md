@@ -20,7 +20,7 @@ This section contains the release notes for Umbraco Deploy 12 including all chan
 #### [12.2.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.0) (March 19th 2024)
 
 * All items from 12.2.0-rc1
-* Fixed issue with transfer of date values within Block List or Block Grid properties [#209](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/209)
+* Fixed issue with transfer of date values within Nested Content, Block List, or Block Grid properties [#209](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/209)
 * Fixed issue where templates could incorrectly cause schema mismatch errors when running in production mode [#187](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/187)
 * Fixed issue where importing invalid variant property data would cause a not supported variation exception [#8](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/8)
 * Fixed deserialization issue causing problems with the compare content feature [#212](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/212)
@@ -56,7 +56,7 @@ This section contains the release notes for Umbraco Deploy 12 including all chan
 #### [12.1.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.1) (December 21th 2023)
 
 * Fixes the display of the selected schedule date on queue for transfer.
-* Fixes parsing property values within Block List that were previously saved by the Contrib value connectors.
+* Fixes parsing property values within Nested Content and Block List that were previously saved by the Contrib value connectors.
 * Fixed incorrectly including media files in export when 'Content files' wasn't selected.
 * Add maximum file size validation to import file upload.
 
@@ -66,7 +66,7 @@ This section contains the release notes for Umbraco Deploy 12 including all chan
 * Fixed a regression in 12.1.0-rc1 where content restore/transfers didn't use the same JSON converters when deserializing Deploy artifacts.
 * Fixed permissions not being correctly set for administrators on initial install.
 * Moved permissions from the Content to a new Deploy category (only affecting the UI).
-* Add support for migrating property values within Block List and Block Grid, and include Multi URL Picker value connector (an explicit value connector binding is used to override the ones provided in Deploy Contrib).
+* Add support for migrating property values within Nested Content, Block List, and Block Grid, and include Multi URL Picker value connector (an explicit value connector binding is used to override the ones provided in Deploy Contrib).
 * Added new configuration option of `TrashedContentDeploymentOperations` to allow exporting/importing of trashed content, ensuring referenced content in the recycle bin isn't exported by default and otherwise imports back into the recycle bin.
 * Changed the default value connector to use the property storage type, instead of using custom value prefixes to store the object type.
 

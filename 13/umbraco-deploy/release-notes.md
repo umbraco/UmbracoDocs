@@ -20,7 +20,7 @@ This section contains the release notes for Umbraco Deploy 13 including all chan
 #### [13.1.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.0) (March 19th 2024)
 
 * All items from 13.1.0-rc1
-* Fixed issue with transfer of date values within Block List or Block Grid properties [#209](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/209)
+* Fixed issue with transfer of date values within Nested Content, Block List, or Block Grid properties [#209](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/209)
 * Fixed issue where templates could incorrectly cause schema mismatch errors when running in production mode [#187](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/187)
 * Fixed issue where importing invalid variant property data would cause a not supported variation exception [#8](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/8)
 * Fixed deserialization issue causing problems with the compare content feature [#212](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/212)
@@ -58,7 +58,7 @@ This section contains the release notes for Umbraco Deploy 13 including all chan
 #### [13.0.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.1) (December 21th 2023)
 
 * Fixes the display of the selected schedule date on queue for transfer.
-* Fixes parsing property values within Block List that were previously saved by the Contrib value connectors.
+* Fixes parsing property values within Nested Content and Block List that were previously saved by the Contrib value connectors.
 * Fixed incorrectly including media files in export when 'Content files' wasn't selected.
 * Add maximum file size validation to import file upload.
 
