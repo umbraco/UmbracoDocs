@@ -6,7 +6,7 @@ The date picker uses a front-end library called [Pikaday](https://github.com/dbu
 
 Pikaday date picker can be localised based on the page the Form is rendered on.
 
-The date picker displays the picked date in the required locale. Using JavaScript, a hidden field is updated with a standard date format to send to the server for storing the record submission in a standard format. This avoids the locale mixing up the dates.
+The date picker displays the picked date in the required locale. Using JavaScript, a hidden field updates with a standard date format to send server-side for storing record submissions. This avoids the locale mixing up the dates.
 
 To achieve localized date, a Razor partial view is included at `/Views/Partials/Forms/Themes/default/DatePicker.cshtml`.
 
