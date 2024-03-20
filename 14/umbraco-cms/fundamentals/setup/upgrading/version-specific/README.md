@@ -50,11 +50,11 @@ Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 
 Below you can find the list of breaking changes introduced in Umbraco 14 Beta release versions.
 
-**Beta 002**
+**Beta 2**
 
-* Refactor: Workspace Collection Condition (plus new Context token) by [@leekelleher](https://github.com/leekelleher) in [#1408](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1408)
-* Feature/individual publication modals by [@iOvergaard](https://github.com/iOvergaard) in [#1423](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1423)
-* rename selectedIds + Corrections for Lit warnings by [@nielslyngsoe](https://github.com/nielslyngsoe) in [#1439](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1439)
+* Refactor: Workspace Collection Condition (plus new Context token) in [#1408](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1408)
+* Feature/individual publication modals in [#1423](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1423)
+* rename selectedIds + Corrections for Lit warnings in [#1439](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1439)
 
 **In-depth previous, further and other changes for v14 beta versions can be found on the Release Notes on the** [**Umbraco.CMS.Backoffice** ](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases)**repository.**
 
