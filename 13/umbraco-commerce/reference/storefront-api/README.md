@@ -42,7 +42,7 @@ builder.CreateUmbracoBuilder()
 {
     "Umbraco": {
         "Commerce": {
-            "StorefrontAPi": {
+            "StorefrontApi": {
                 "Enabled": true
             }
         }
@@ -60,7 +60,7 @@ In order to work with the Storefront API many of the endpoints require authoriza
 {
     "Umbraco": {
         "Commerce": {
-            "StorefrontAPi": {
+            "StorefrontApi": {
                 "Enabled": true,
                 "ApiKey": "ZUynC149dD2N5efs6HN6dCdXlgOVASs6"
             }
