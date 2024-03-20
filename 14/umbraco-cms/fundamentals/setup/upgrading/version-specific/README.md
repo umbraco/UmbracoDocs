@@ -25,22 +25,33 @@ Use the [general upgrade guide](../) to complete the upgrade of your project.
 
 <summary>Umbraco 14</summary>
 
-Below you can find the list of breaking changes introduced in Umbraco 14.
+Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 
 * [Angular removed: A new backoffice built with Web Components, Lit, and fueled by the Umbraco UI Library](https://github.com/umbraco/Umbraco.CMS.Backoffice)
 * Icons in the new backoffice are based on [Lucide](https://lucide.dev/icons/).
 * [Full TypeScript support for the Backoffice and all its APIs through a public npm package](https://www.myget.org/feed/umbracoprereleases/package/npm/@umbraco-cms/backoffice)
 * A management API documentation in Swagger - replacement for Controllers that were not restful
 * [Migration from Newtonsoft.Json to the System.Text.Json which removes Nested Content and Grid value converter and so on](https://github.com/umbraco/Umbraco-CMS/pull/15728)
+* Nested Content and Grid Layout have been removed
 * [Legacy media picker has been removed](https://github.com/umbraco/Umbraco-CMS/pull/15835)
 * [Macros have been removed](https://github.com/umbraco/Announcements/issues/14). Use partial views and/or blocks in the RTE.
 * [package-manifest is now umbraco.package.json](../../../../extending-backoffice/package-manifest.md)
 * [Smidge has been removed from default installation](https://github.com/umbraco/Umbraco-CMS/pull/15788). Can be manually installed if needed.
 * New login screen
-* In the backoffice from your profile information you can now choose Light, Dark or Contract mode for the backoffice.
+* **Light, Dark or Contract Mode** option has been added in the backoffice. You can choose your preffered mode from your profile information.
 
 **In-depth and further breaking changes for v14 can be found on the** [**CMS Github**](https://github.com/umbraco/Umbraco-CMS/pulls?q=is%3Apr+base%3Av14%2Fdev+label%3Acategory%2Fbreaking) **repository.**
 
-For details of changes for each preview version of new backoffice check out the [Github Release Notes](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases).
+</details>
+
+<details>
+
+<summary>Umbraco 14 Beta </summary>
+
+Below you can find the list of breaking changes introduced in Umbraco 14 Beta.
+
+
+
+**In-depth and further breaking changes for v14 beta versions can be found on the Release Notes on the** [**Umbraco.CMS.Backoffice** ](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases)**repository.**
 
 </details>

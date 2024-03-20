@@ -2,17 +2,21 @@
 description: Get started with a Vite Package, setup with TypeScript and Lit
 ---
 
+# Vite Package Setup
+
 {% hint style="warning" %}
 This page is a work in progress. It will be updated as the software evolves.
 {% endhint %}
 
-# Vite Package Setup
+## Vite Package Setup
 
-Umbraco recommends building extensions with a setup using TypeScript and a build tool such as Vite. Umbraco uses the library Lit for building web components which we will be using throughout this guide.
+Umbraco recommends building extensions with a setup using TypeScript and a build tool such as Vite. Umbraco uses the library Lit for building web components which we will be using throughout this guide.&#x20;
 
 ### Getting Started With Vite
 
 Vite comes with a set of really good presets to get you quickly up and running with libraries and languages. For example: Lit, Svelte, and Vanilla Web Components with both JavaScript and TypeScript.
+
+Before following this guide, read the [Setup Your Development Environment](./) article.
 
 1. At the root of your project create an `App_Plugins` folder (if it doesn't exist yet) and run the following command in the `App_Plugins`:
 
@@ -34,7 +38,7 @@ This creates a new folder, sets up our new project, and creates a `package.json`
 npm install
 ```
 
-4. The last thing we need to install now is our Backoffice package. You can install the package using the following command:
+4. Install the Backoffice package. You can install the package using the following command:
 
 ```bash
 npm install --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@14.0.0-beta002
@@ -45,12 +49,6 @@ Optionally you can use `--legacy-peer-deps` in the installation command to avoid
 `npm install --legacy-peer-deps --registry`[`https://www.myget.org/F/umbracoprereleases/npm/`](https://www.myget.org/F/umbracoprereleases/npm/)`-D @umbraco-cms/backoffice@14.0.0-beta002`
 
 If this is used the Intellisense to those external references will not be available.
-{% endhint %}
-
-This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `-beta002` is the version of the package, which will change as new versions are released.
-
-{% hint style="warning" %}
-If you see any errors during this process, make sure that you have the right tools installed (Node, .NET, and so on). Also, make sure you have followed the steps on how to [Setup Your Development Environment](./).
 {% endhint %}
 
 5. In the `my-dashboard` folder, create a new file called `vite.config.ts` and insert the following code:
@@ -81,7 +79,7 @@ The source code that is compiled lives in the `src` folder of your package folde
 The `build:lib:entry` parameter can accept an array which will allow you to export multiple files during the build. You can read more about [Vite's build options here](https://vitejs.dev/config/build-options.html#build-lib).
 {% endhint %}
 
-#### Build Package
+**Build Package**
 
 Next, we are going to build the `ts` file so we can use it in our package:
 
@@ -151,7 +149,7 @@ export default class MyElement extends LitElement {
 ```
 {% endhint %}
 
-### Testing your package
+#### Testing your package
 
 In order to be able to test your package, you will need to run your site.
 
@@ -159,7 +157,7 @@ Before you do this, you will need to include all the files in the `src` folder a
 
 If you try to include these resources via Visual Studio, be careful to include only the `dist` folder. Otherwise, VS will try to include a few lines on your .csproj file to compile the TypeScript code that exists in your project folder. When you run your website, VS will try to compile these files and fail.
 
-#### Result
+**Result**
 
 The final result looks like this:
 
@@ -178,8 +176,8 @@ In the same file, you will need to change the `background-color` of the `button`
       background-color: white;
 ```
 
-### Summary
+#### Summary
 
 With this, you have set up your Package and created an Extension for the Backoffice.
 
-This Dashboard will appear on all sections, so please continue by following the tutorial on [Creating A Custom Dashboard](../../tutorials/creating-a-custom-dashboard.md)
+This Dashboard will appear on all sections, so please continue by following the tutorial on [Creating A Custom Dashboard](../../tutorials/creating-a-custom-dashboard.md).
