@@ -62,7 +62,7 @@ public static class UmbracoCommerceUmbracoBuilderExtensions
 ```
 
 {% hint style="info" %}
-Notice if using a composer to register `IUmbracoCommerceBuilder` extensions and its dependencies, the composer need to run before `UmbracoCommerceComposer` otherwise it will use default configuration.
+If using a composer to register `IUmbracoCommerceBuilder` extensions and their dependencies, the composer needs to run before `UmbracoCommerceComposer` otherwise it will use the default configuration.
 {% endhint %}
 
 ```csharp
