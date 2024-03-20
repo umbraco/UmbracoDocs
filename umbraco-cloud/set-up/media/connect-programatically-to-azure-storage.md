@@ -161,7 +161,7 @@ You can also secure the values in the **secrets setting** on the **project setti
 
 # References
 
-The above guide has been created based on the following articles from Microsoft:
+For more information, see the following articles from Microsoft:
 
 * [Get started with Azure Blob Storage and .NET](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-dotnet-get-started)
 * [Quickstart: Azure Blob Storage client library for .NET](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-dotnet)
