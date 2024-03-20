@@ -44,7 +44,7 @@ The license for Umbraco Deploy comes with a recurring yearly fee. Learn more abo
 
 ## Purchasing your license
 
-You can purchase the license at [Umbraco Deploy Licenses](https://umbraco.com/products/umbraco-deploy/)
+You can look at the pricing, plans, features, and purchase the license on the [Umbraco Deploy On-premises](https://umbraco.com/products/add-ons/deploy/umbraco-deploy-on-premises/) page.
 
 ## Installing your license
 

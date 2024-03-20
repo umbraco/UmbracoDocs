@@ -47,7 +47,7 @@ This is an add-on domain for existing licenses. Refunds will not be given for th
 
 ## Configuring your license
 
-You can purchase the license at [Umbraco Forms Licenses](https://umbraco.com/products/umbraco-forms/).
+You can look at the pricing, features, and purchase the license on the [Umbraco Forms](https://umbraco.com/products/add-ons/forms/) page.
 
 When you've bought a license you need to configure it with your domains. You can either configure your license right away or you can do it later by visiting your account on Umbraco.com.
 
