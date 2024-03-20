@@ -23,7 +23,7 @@ Use the [general upgrade guide](../) to complete the upgrade of your project.
 
 <details>
 
-<summary>Umbraco 14</summary>
+<summary>Umbraco 14 </summary>
 
 Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 
@@ -46,12 +46,16 @@ Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 
 <details>
 
-<summary>Umbraco 14 Beta </summary>
+<summary>Umbraco 14 Beta Versions</summary>
 
-Below you can find the list of breaking changes introduced in Umbraco 14 Beta.
+Below you can find the list of breaking changes introduced in Umbraco 14 Beta release versions.
 
+**Beta 002**
 
+* Refactor: Workspace Collection Condition (plus new Context token) by [@leekelleher](https://github.com/leekelleher) in [#1408](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1408)
+* Feature/individual publication modals by [@iOvergaard](https://github.com/iOvergaard) in [#1423](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1423)
+* rename selectedIds + Corrections for Lit warnings by [@nielslyngsoe](https://github.com/nielslyngsoe) in [#1439](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1439)
 
-**In-depth and further breaking changes for v14 beta versions can be found on the Release Notes on the** [**Umbraco.CMS.Backoffice** ](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases)**repository.**
+**In-depth previous, further and other changes for v14 beta versions can be found on the Release Notes on the** [**Umbraco.CMS.Backoffice** ](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases)**repository.**
 
 </details>
