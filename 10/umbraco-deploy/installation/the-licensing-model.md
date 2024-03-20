@@ -46,7 +46,7 @@ The license for Umbraco Deploy comes with a recurring yearly fee. Learn more abo
 
 ## Configuring your license
 
-You can look at the pricing, plans, features, and purchase the license at [Umbraco Deploy On-premises](https://umbraco.com/products/add-ons/deploy/umbraco-deploy-on-premises/) page.
+You can look at the pricing, plans, features, and purchase the license on the [Umbraco Deploy On-premises](https://umbraco.com/products/add-ons/deploy/umbraco-deploy-on-premises/) page.
 
 When you've bought a license you need to configure it with your domains. You can either configure your license right away, or you can do it later by visiting your account on Umbraco.com.
 
