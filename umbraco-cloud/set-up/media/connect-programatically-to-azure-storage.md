@@ -141,7 +141,7 @@ public class BlobStorageController : SurfaceController
 
 {% endcode %}
 
-The controller adds the logic behind setting up a directory called `FolderProgramatically` and a `.txt` file in the Azure Blob Storage.
+Here, the controller is used to create a directory named `FolderProgramatically` and a `.txt` file in Azure Blob Storage.
 
 {% hint style="warning" %}
 
