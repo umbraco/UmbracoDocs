@@ -6,4 +6,4 @@ root: ./
 
 redirects:
     tutorials/add-azure-active-directory-authentication: tutorials/add-microsoft-entra-id-authentication.md
-
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/nested-content: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-list-editor

@@ -6,3 +6,4 @@ root: ./
 
 redirects:
     tutorials/add-azure-active-directory-authentication: tutorials/add-microsoft-entra-id-authentication.md
+    
