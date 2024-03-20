@@ -22,7 +22,7 @@ How to create a Heartcore Trial
 
 All Umbraco Heartcore projects include a Content Delivery Network (CDN) using CloudFlare. This CDN is used for caching content and media fetched through the Content Delivery API. Additionally, the media CDN (media.umbraco.io) allows for resizing and cropping options, which improves both performance and stability.
 
-You can read more about all the features and benefits on the [Umbraco Heartcore product page](https://umbraco.com/products/umbraco-heartcore/). You can also look at the pricing, plans, and features at [Umbraco Heartcore Pricing](https://umbraco.com/products/umbraco-heartcore/pricing/) page.
+You can read more about all the features and benefits on the [Umbraco Heartcore product page](https://umbraco.com/products/umbraco-heartcore/). You can also look at the pricing, plans, and features on the [Umbraco Heartcore Pricing](https://umbraco.com/products/umbraco-heartcore/pricing/) page.
 
 There are 3 ways to get your hands on an Umbraco Heartcore project:
 
