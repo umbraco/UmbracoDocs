@@ -14,7 +14,7 @@ View components are:
 
 [View components](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-components?view=aspnetcore-5.0) are similar to partial views but they are much more powerful compared to the partial views. View components do not use model binding, instead they work with the data provided when calling it.
 
-View Components can be implemented in any part of the web application where there are some possibilities to duplicate code like Header, Navigation Pane, Login Panel, Menu, Shopping Cart, Footer, Nested Content, BlockList Items and so on. View Components behave like a web part containing both business logic and UI design to create a package which can be reused in  multiple parts of the web application.
+View Components can be implemented in any part of the web application. There are some possibilities to duplicate code like Header, Navigation Pane, Login Panel, Menu, Shopping Cart, Footer, BlockList Items and so on. View Components behave like a web part containing both business logic and UI design. This is because they create a package which can be reused in multiple parts of the web application.
 
 A view component code consists of two parts:
 
