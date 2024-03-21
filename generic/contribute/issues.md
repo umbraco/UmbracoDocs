@@ -6,7 +6,7 @@ description: Learn how to provide feedback on the Umbraco Documentation.
 
 There are a couple of different ways to submit feedback on the documentation, be it the entire platform or a single article. This article will give you an overview of the different feedback channels and how to use them.
 
-## Rate an article
+## Submit feedback for articles
 
 At the right side of each article in our documentation, you have the option to provide feedback for the content.
 
