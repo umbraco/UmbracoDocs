@@ -35,6 +35,7 @@ Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 * Nested Content and Grid Layout have been removed
 * [Legacy media picker has been removed](https://github.com/umbraco/Umbraco-CMS/pull/15835)
 * [Macros have been removed](https://github.com/umbraco/Announcements/issues/14). Use partial views and/or blocks in the RTE.
+* XPath has been removed. An alternative is using the Dynamic Roots in the Multinode Treepicker.
 * [package-manifest is now umbraco.package.json](../../../../extending-backoffice/package-manifest.md)
 * [Smidge has been removed from default installation](https://github.com/umbraco/Umbraco-CMS/pull/15788). Can be manually installed if needed.
 * New login screen

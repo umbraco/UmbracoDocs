@@ -30,7 +30,7 @@ When you're happy with the list press **Save**. It is now possible to select thi
 
 To customize an existing Data Type go to the **Settings** section, expand the **Data Types** folder and select the **Data Type** you want to edit.
 
-Besides the Data Types that are available out of the box there are some additional **Property Editors**. For example, think of the **Slider** and **Nested Content**.
+Besides the Data Types that are available out of the box there are some additional **Property Editors**. For example, think of the **Slider** and **Block List**.
 
 ## Viewing Data Type References
 

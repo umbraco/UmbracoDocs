@@ -21,7 +21,6 @@ When indexing content, each property contained within certain complex editors ar
 
 - Block List
 - Block Grid
-- Nested Content
 
 The complex editors are also indexed to their own separate fields, which then contains "the sum" of all properties contained within.
 
