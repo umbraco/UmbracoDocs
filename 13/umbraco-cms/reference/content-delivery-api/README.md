@@ -15,7 +15,9 @@ Video tutorial
 {% endembed %}
 
 <details>
-<summary>For version 12 or below ONLY - Register the Content Delivery API dependencies</summary>
+<summary>Register the Content Delivery API dependencies - **Only for Version 12 or below** </summary>
+
+Umbraco projects started on version 11 or below also need to opt-in through code to use the Content Delivery API. Follow the steps below to see how to opt-in through code:
 
 1. Open your project's `Startup.cs` file and locate the `ConfigureServices` method.
 2. Register the API dependencies by adding `.AddDeliveryApi()`:
