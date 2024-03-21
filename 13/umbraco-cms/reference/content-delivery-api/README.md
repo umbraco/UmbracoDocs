@@ -37,7 +37,7 @@ public void ConfigureServices(IServiceCollection services)
 
 From version 13 and above, the Content Delivery API is added by default in `program.cs`. 
 
-The next step is to enable the Content Delivery API in `appsettins.json`. Follow the next section [Enable the Content Delivery API](./#enable-the-content-delivery-api) for this.
+The next step is to enable the Content Delivery API in `appsettings.json`. Follow the next section [Enable the Content Delivery API](./#enable-the-content-delivery-api) for this.
 
 </details>
 
