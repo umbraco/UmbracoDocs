@@ -32,10 +32,6 @@ To use the `<IHtmlContent>` as the data return type, add the `@using Microsoft.A
 <time>@Model.ArticleDate.ToString("dd/MM/yyyy")</time>
 ```
 
-### Working with the grid
-
-To render the content from the Grid, see the [Render Grid in Template](../backoffice/property-editors/built-in-umbraco-property-editors/grid-layout/render-grid-in-template.md#render-grid-in-template) article.
-
 ### Using fall-back methods
 
 The `.Value()` method has a number of optional parameters that support scenarios where we want to "fall-back" to some other content.

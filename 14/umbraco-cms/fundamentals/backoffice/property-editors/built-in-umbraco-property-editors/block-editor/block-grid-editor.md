@@ -39,7 +39,7 @@ The Data Type editor allows you to configure the following properties:
 * **Amount** - Sets the minimum and/or the maximum number of Blocks that should be allowed at the root of the layout.
 * **Live editing mode** - Enabling this option will allow you to see the changes as you are editing them.
 * **Editor width** - Overwrites the width of the property editor. This field takes any valid CSS value for "max-width". For example: 100% or 800px.
-* **Grid Columns** - Define the number of columns in your grid layout. The default is 12 columns.
+* **Grid Columns** - Define the number of columns in your Block Grid. The default is 12 columns.
 * **Layout Stylesheet** - Replaces the built-in Layout Stylesheet. Additionally, you can retrieve the default layout stylesheet to use as a base for your own inspiration or for writing your own stylesheet.
 * **Create Button Label** - Overwrites the label on the Create button.
 
@@ -280,7 +280,7 @@ If you like to use the Default Layout Stylesheet, you must copy the stylesheet t
 ```
 
 {% hint style="info" %}
-A set of built-in Partial Views are responsible for rendering the Blocks and Areas in a grid layout. If you want to tweak or change the way the grid layout is rendered, you can use the built-in Partial Views as a template:
+A set of built-in Partial Views are responsible for rendering the Blocks and Areas in a Block Grid. If you want to tweak or change the way the Block Grid is rendered, you can use the built-in Partial Views as a template:
 
 1. Clone the views from `<a href="https://github.com/umbraco/Umbraco-CMS/">GitHub</a>`. They can be found in `/src/Umbraco.Cms.StaticAssets/Views/Partials/blockgrid/`
 2. Copy the cloned views to the local folder `Views/Partials/blockgrid/`
