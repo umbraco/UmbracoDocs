@@ -6,7 +6,7 @@ Below is a list of guides for Health Checks in Umbraco.
 
 ## [Content sniffing protection](contentsniffingprotection.md)
 
-## [Cross-site scription protection](crosssitescriptingprotection.md)
+## [Cross-site scripting protection](crosssitescriptingprotection.md)
 
 ## [Debug compilation mode](debugcompilationmode.md)
 
@@ -17,8 +17,6 @@ Below is a list of guides for Health Checks in Umbraco.
 ## [Folders and File Permissions](folderandfilepermissions.md)
 
 ## [HTTPS configuration](httpsconfiguration.md)
-
-## [Macro errors](macroerrors.md)
 
 ## [Notification Email](notificationemail.md)
 

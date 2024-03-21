@@ -40,14 +40,12 @@ The Settings tree consists of:
 * Media Types
 * Member Types
 * Data Types
-* Macros
 * Relation Types
 * Log Viewer
 * Languages
 * Content Templates
 * Templates (`.cshtml` files)
 * Partial views (`.cshtml` files)
-* Partial View Macro Files (`.cshtml` files)
 * Stylesheets (`.css` files)
 * Scripts (`.js` files)
 

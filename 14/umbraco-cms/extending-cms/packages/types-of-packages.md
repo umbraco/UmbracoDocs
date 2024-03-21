@@ -54,7 +54,6 @@ Packages zip files can contain:
 * Document Types
 * Templates
 * Stylesheets
-* Macros
 * Languages
 * Dictionary Items
 * Data Types

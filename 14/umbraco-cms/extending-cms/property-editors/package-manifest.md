@@ -1,6 +1,6 @@
 # Package Manifest
 
-The `package.manifest` JSON file format is used to describe one or more custom Umbraco property editors, grid editors or parameter editors. This page outlines the file format and properties found in the JSON.
+The `package.manifest` JSON file format is used to describe one or more custom Umbraco property editors or grid editors. This page outlines the file format and properties found in the JSON.
 
 ## Sample Manifest
 
@@ -118,7 +118,7 @@ Example package.manifest
 
 ## Property Editors
 
-`propertyEditors` returns an array of property editor definitions, each object specifies an editor to make available to data types as an editor component. These editors are primarily property editors for content, media and members. They can also be made available as a macro parameter editor.
+`propertyEditors` returns an array of property editor definitions, each object specifies an editor to make available to data types as an editor component. These editors are primarily property editors for content, media and members.
 
 The basic values on any editor are `alias`, `name` and `editor`. These three **must** be set. Furthermore the editor value is an object with additional configuration options, it must contain a view value.
 
@@ -138,12 +138,11 @@ The basic values on any editor are `alias`, `name` and `editor`. These three **m
 * `alias` The alias of the editor, this must be unique, its recommended to prefix with your own "namespace".
 * `name` The name visible to the user in the UI, should also be unique.
 * `editor` Object containing editor configuration (see below).
-* `isParameterEditor` enables the property editor as a macro parameter editor can be `true`/`false`.
 * `prevalues` Configuration of editor prevalues (see below).
 * `defaultConfig` Default configuration values (see below).
 * `icon` A CSS class for the icon to be used in the 'Select Editor' dialog: e.g. `icon-autofill`.
 * `group` The group to place this editor in within the 'Select Editor' dialog. Use a new group name or alternatively use an existing one such as `Pickers`.
-* `defaultConfig` Provides a collection of default configuration values, in case the property editor is not configured or is using a parameter editor, which doesn't allow configuration. The object is a key/value collection and must match the `prevalues` fields keys.
+* `defaultConfig` Provides a collection of default configuration values, in case the property editor is not configured which doesn't allow configuration. The object is a key/value collection and must match the `prevalues` fields keys.
 
 ### Editor
 
@@ -220,7 +219,7 @@ If you specify a name like `boolean` then Umbraco will look at `/wwwroot/umbraco
 
 ### Default Config
 
-The defaultConfig object provides a collection of default configuration values in case the property editor is not configured or is using a parameter editor, which doesn't allow configuration. The object is a key/value collection and must match the prevalue field keys.
+The defaultConfig object provides a collection of default configuration values in case the property editor is not configured which doesn't allow configuration. The object is a key/value collection and must match the prevalue field keys.
 
 ```json
 "defaultConfig": {
@@ -248,12 +247,6 @@ Similar to how the `propertyEditors` array defines one or more property editors,
 ```
 
 However the default grid editors are already configured.
-
-## Parameter Editors
-
-`parameterEditors` returns an array of editor objects, each object specifies an editor to make available to macro parameters as an editor component. These editors work solely as parameter editors and will not show up on the property editors list.
-
-The parameter editors array follows the same format as the property editors described above, however it cannot contain prevalues since there are no configuration options for macro parameter editors.
 
 ## JavaScript
 

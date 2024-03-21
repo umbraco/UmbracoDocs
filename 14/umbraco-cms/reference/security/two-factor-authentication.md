@@ -10,7 +10,7 @@ Two-factor authentication (2FA) for Umbraco members is activated by implementing
 
 ## Two-factor authentication for Members
 
-Since Umbraco does not control how the UI is for member login and profile edit. The UI for 2FA is shipped as part of the snippets for macros. These can be used as a starting point, before styling the page as you would like.
+Since Umbraco does not control how the UI is for member login and profile edit. The UI for 2FA is shipped as part of the Partial View snippets. These can be used as a starting point, before styling the page as you would like.
 
 ### Example implementation for Authenticator Apps for Members
 
@@ -180,7 +180,7 @@ In this razor-code sample, we get the current member's unique key and list all r
 
 If the `setupData` is `null` for the specified `providerName` it means the provider is already set up. In this case, we show a disable button. Otherwise, we check the type and show the UI for how to set up the App Authenticator. We will show the QR Code and an input field to validate the code from the App Authenticator.
 
-The last part required is to use the `Login` Partial Macro snippet.
+The last part required is to use the `Login` Partial View snippet.
 
 ### Notification when 2FA is requested for a member
 

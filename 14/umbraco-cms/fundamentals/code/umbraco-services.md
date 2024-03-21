@@ -229,7 +229,6 @@ There is full API coverage of all Umbraco core entities:
 * [EntityService](../../reference/management/services/entityservice.md)
 * [FileService](../../reference/management/services/fileservice.md)
 * [LocalizationService](../../reference/management/services/localizationservice/)
-* [MacroService](../../reference/management/services/macroservice.md)
 * [MediaService](../../reference/management/services/mediaservice.md)
 * [MemberService](../../reference/management/services/memberservice.md)
 * [MemberTypeService](../../reference/management/services/membertypeservice.md)

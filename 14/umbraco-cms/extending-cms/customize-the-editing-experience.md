@@ -18,7 +18,6 @@ In this section, you will find all the resources you need to build an intuitive 
 * [Backoffice Search](backoffice-search.md)
 * [Content Apps](content-apps.md)
 * [Language files and localization](language-files.md)
-* [Macro Parameter editors](macro-parameter-editors.md)
 
 ## Also in this section
 

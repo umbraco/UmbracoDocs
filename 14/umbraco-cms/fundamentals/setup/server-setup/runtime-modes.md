@@ -28,7 +28,7 @@ This mode disables in-memory ModelsBuilder generation and validates the followin
 
 * `Umbraco:CMS:ModelsBuilder:ModelsMode` is **not set** to `InMemoryAuto`.
 
-If you want to use the generated models, use `SourceCodeAuto` or `SourceCodeManual`, which requires manually recompiling the project after the models have changed (e.g. after updating Document Types, Media Types, Member Types, or Data Types). Razor views (`cshtml` files) will still be automatically compiled at runtime, allowing you to quickly iterate on the rendered output from templates, (macro) partial views, and view components.
+If you want to use the generated models, use `SourceCodeAuto` or `SourceCodeManual`. These require manually recompiling the project after the models have changed (for example after updating Document Types, Media Types, Member Types, or Data Types). Razor views (`cshtml` files) will still be automatically compiled at runtime. They allow you to quickly iterate on the rendered output from templates, partial views, and view components.
 
 The recommended approach to enable `Development` mode is to update the `appsettings.json` file with the following settings:
 

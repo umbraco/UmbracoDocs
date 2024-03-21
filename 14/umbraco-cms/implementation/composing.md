@@ -167,7 +167,6 @@ Below is a list of collections with their corresponding 'collection type' and ho
 | MediaUrlProviders              | Ordered  | Explicit Registration                                          |
 | NPocoMappers                   | Set      | Explicit Registration                                          |
 | PackageMigrationPlans          | Lazy     | Type scanned for `PackageMigrationPlan`                        |
-| PartialViewMacroSnippets       | Lazy     | Explicit Registration. Reads .cshtml files from `Umbraco.Cms.Core.EmbeddedResources.Snippets` assembly & any files found on disk at `/umbraco/PartialViewMacros/Templates` |
 | PartialViewSnippets            | Lazy     | Explicit Registration. Reads .cshtml files from `Umbraco.Cms.Core.EmbeddedResources.Snippets` assembly |
 | PropertyValueConverters        | Ordered  | Type scanned for `IPropertyValueConverter`                     |
 | RuntimeModeValidators          | Set      | Explicit Registration                                          |

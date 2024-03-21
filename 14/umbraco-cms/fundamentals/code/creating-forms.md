@@ -119,36 +119,6 @@ You can add the form to a template by rendering the partial view:
 }
 ```
 
-## Adding the form through the backoffice
-
-To add the form to your site we'll make a macro. This also makes it possible to let editors add the form to a page using the rich text editor.
-
-### Creating a macro
-
-Go to the Settings section and right-click the __Partial Views Macro Files__ node. Choose "Create" and select __New partial view macro__. Name the macro *Contact Form*.
-
-In the partial view, we're going to render our contact form using the view model we created earlier.
-
-```csharp
-@inherits Umbraco.Cms.Web.Common.Macros.PartialViewMacroPage;
-
-@using MyFirstForm.Models;
-
-@{
-    Html.RenderPartial("~/Views/Partials/ContactForm.cshtml", new ContactFormViewModel());
-}
-```
-
-#### Adding the macro
-
-The last thing to do before we can add the form to a page is to __allow the Macro in a rich text editor__. Expand the __Macros__ node and select the __Contact Form__ Macro. Check the boxes under __Editor Settings__.
-
-{% hint style="info" %}
-If you don't see your new macro listed, right click __Macros__ and select __Reload__.
-{% endhint %}
-
-Now you can add the form to a page that has a rich text editor.
-
 ### More information
 
 - [Surface Controllers](../../reference/routing/surface-controllers/README.md)

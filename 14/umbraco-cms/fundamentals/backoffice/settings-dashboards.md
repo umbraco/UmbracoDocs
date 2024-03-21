@@ -85,7 +85,7 @@ The Telemetry Data dashboard is a consent screen that is used for collecting sys
 **Detailed** is the default option where the data sent contains:
 
 * Anonymized site ID, Umbraco version, and packages installed.
-* Number of: Root nodes, Content nodes, Macros, Media, Document Types, Templates, Languages, Domains, User Group, Users, Members, and Property Editors in use.
+* Number of: Root nodes, Content nodes, Media, Document Types, Templates, Languages, Domains, User Group, Users, Members, and Property Editors in use.
 * System information: Webserver, server OS, server framework, server OS language, and database provider.
 * Configuration settings: Modelsbuilder mode, if custom Umbraco path exists, ASP environment, and if you are in debug mode.
 

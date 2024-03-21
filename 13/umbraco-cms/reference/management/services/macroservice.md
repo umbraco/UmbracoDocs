@@ -1,5 +1,9 @@
 # MacroService
 
+{% hint style="warning" %}
+MacrosService will be removed in the next version.
+{% endhint %}
+
 Defines the MacroService, which is an access to operations involving `IMacro`.
 
 [Browse the API documentation for IMacroService interface](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.Services.IMacroService.html).

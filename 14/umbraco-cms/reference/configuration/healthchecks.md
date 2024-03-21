@@ -37,7 +37,7 @@ An example of a HealthChecks settings can look something like this:
 }
 ```
 
-This config will disable the macro errors check, and enable notifications to run the checks and notify via email if a check fails. The checks will run the first time five minutes after the site is booted, and then once every day.
+This config will enable notifications to run the checks and notify via email if a check fails. The checks will run the first time five minutes after the site is booted, and then once every day.
 
 The email notification method is built in, if you want to read more about creating you own notification methods, or see a list of the ID of every built in health check, then see [Extending health checks](../../extending/health-check/)
 

@@ -23,7 +23,7 @@ The permissions documentation should allow you to run a plain Umbraco install su
 |`/appSettings*.json`      |Modify / Full control  |Only needed for setting database and a global identifier during installation. So can be set to read-only afterwards for enhanced security.|
 |`/App_Plugins`            |Modify / Full control  |Should always have modify rights as the folder and its files are used by packages. Not part of your project by default.|
 |`/umbraco`            |Modify / Full control  |Should always have modify rights as the folder and its files are used for cache and storage.|
-|`/Views`            |Modify / Full control  |Should always have modify rights as the folder and its files are used for Templates, Partial views, and Macro files.|
+|`/Views`            |Modify / Full control  |Should always have modify rights as the folder and its files are used for Templates and Partial views|
 |`/wwwroot/css`            |Modify / Full control  |Should always have modify rights as the folder and its files are used for css files.|
 |`/wwwroot/media`            |Modify / Full control  |Should always have modify rights as the folder and its files are used for Media files uploaded via the Umbraco CMS backoffice.|
 |`/wwwroot/scripts`            |Modify / Full control  |Should always have modify rights as the folder and its files are used for script files.|

@@ -2,6 +2,10 @@
 
 _Checks to make sure macro errors are not set to throw a YSOD (yellow screen of death), which would prevent certain or all pages from loading completely._
 
+{% hint style="warning" %}
+Macros will be removed in the next version. Consider using Partial Views or blocks in Rich Text Editor.
+{% endhint %}
+
 ## How to fix this health check
 
 This health check can be fixed by providing configuration on the following path: `Umbraco:CMS:Content:MacroErrors`.

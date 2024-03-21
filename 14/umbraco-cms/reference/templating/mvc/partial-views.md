@@ -3,7 +3,7 @@
 This section will show you how to use MVC Partial Views in Umbraco.&#x20;
 
 {% hint style="warning" %}
-Please note, this is documentation relating to the use of native MVC partial views, not '[Partial View Macros](../macros/partial-view-macros.md)'
+Please note, this is documentation relating to the use of native MVC partial views
 {% endhint %}
 
 ## Overview
@@ -87,7 +87,7 @@ Another case you might have is that you want your Partial View to be strongly ty
 
 ## Caching
 
-You don't normally need to cache the output of Partial views, like you don't normally need to cache the output of User Controls, but there are times when this is necessary. Like macro caching, we provide caching output of partial views. This is done by using an HtmlHelper extension method:
+You don't normally need to cache the output of Partial views, like you don't normally need to cache the output of User Controls. However, there are times when this is necessary and so we provide caching output of partial views. This is done by using an HtmlHelper extension method:
 
 ```csharp
 @await Html.CachedPartialAsync("ChildItem", page, TimeSpan.FromHours(1))

@@ -4,6 +4,10 @@ description: >-
   login functionality for the frontend of your application.
 ---
 
+{% hint style="warning" %}
+This guide is awaiting to be updated as it uses Macros and Partial View Macros which have been removed from v14.
+{% endhint %}
+
 # Member Registration and Login
 
 Using tools available on a fresh install of Umbraco CMS, you can create a frontend-based registration and login functions and restrict access to specific areas of your site based on this system.
@@ -38,7 +42,7 @@ Since the Register and Login were created as macro partials, you will have corre
 
 ## Include the Macros and Partials in Content and Templates
 
-Halfway there! Next, navigate to your Content section. Since we created Register and Login partials as macro partials, we can paste them into a Richtext Editor. Create a new page that is using this editor. Then give it a name (for example Login/Signup). Do the same in any Rich Text Editor or Grid Editors you have on the page, insert a Macro.
+Halfway there! Next, navigate to your Content section. Since we created Register and Login partials as macro partials, we can paste them into a Richtext Editor. Create a new page that is using this editor, give it a name (e.g. Login/Signup), and in any RTE or Grid layouts you have on the page, insert a Macro.
 
 ![RTE macro](images/v8-06-RTE-Macro.png)
 

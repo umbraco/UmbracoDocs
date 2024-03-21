@@ -13,7 +13,6 @@ For inspiration when building your checks you can look at the checks we've [buil
 Umbraco comes with the following checks by default:
 
 * Category **Configuration**
-  * **Macro errors (id: `D0F7599E-9B2A-4D9E-9883-81C7EDC5616F`)** - checks that the errors are set to `inline` so that pages that error will still load (and shows a small error message)
   * **Notification Email Settings (id: `3E2F7B14-4B41-452B-9A30-E67FBC8E1206`)** - checks that the "from" email address used for email notifications has been changed from its default value
 * Category **Data Integrity**
   * **Database data integrity check (id: `73DD0C1C-E0CA-4C31-9564-1DCA509788AF`)** - checks for various data integrity issues in the Umbraco database
@@ -69,97 +68,6 @@ These are small checks that take an [IConfiguration](https://docs.microsoft.com/
 * `CurrentValue` is the current value from the configuration setting
 * `CheckSuccessMessage` and `CheckErrorMessage` are the messages returned to the user
   * It is highly recommended to use the `LocalizedTextService` so these can be localized. You can add the text in `~/Config/Lang/en-US.user.xml` (or whatever language you like)
-
-An example check:
-
-```csharp
-using Microsoft.Extensions.Options;
-using Umbraco.Cms.Core.Configuration.Models;
-using Umbraco.Cms.Core.Macros;
-using Umbraco.Cms.Core.Services;
-using Umbraco.Extensions;
-
-namespace Umbraco.Cms.Core.HealthChecks.Checks.Configuration;
-
-/// <summary>
-/// Health check for the recommended production configuration for Macro Errors.
-/// </summary>
-[HealthCheck(
-    "D0F7599E-9B2A-4D9E-9883-81C7EDC5616F",
-    "Macro errors",
-    Description = "Checks to make sure macro errors are not set to throw a YSOD (yellow screen of death), which would prevent certain or all pages from loading completely.",
-    Group = "Configuration")]
-public class MacroErrorsCheck : AbstractSettingsCheck
-{
-    private readonly ILocalizedTextService _textService;
-    private readonly IOptionsMonitor<ContentSettings> _contentSettings;
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="MacroErrorsCheck"/> class.
-    /// </summary>
-    public MacroErrorsCheck(
-        ILocalizedTextService textService,
-        IOptionsMonitor<ContentSettings> contentSettings)
-        : base(textService)
-    {
-        _textService = textService;
-        _contentSettings = contentSettings;
-    }
-
-    /// <inheritdoc/>
-    public override string ReadMoreLink => Constants.HealthChecks.DocumentationLinks.Configuration.MacroErrorsCheck;
-
-    /// <inheritdoc/>
-    public override ValueComparisonType ValueComparisonType => ValueComparisonType.ShouldEqual;
-
-    /// <inheritdoc/>
-    public override string ItemPath => Constants.Configuration.ConfigContentMacroErrors;
-
-    /// <summary>
-    /// Gets the values to compare against.
-    /// </summary>
-    public override IEnumerable<AcceptableConfiguration> Values
-    {
-        get
-        {
-            var values = new List<AcceptableConfiguration>
-            {
-                new AcceptableConfiguration
-                {
-                    IsRecommended = true,
-                    Value = MacroErrorBehaviour.Inline.ToString()
-                },
-                new AcceptableConfiguration
-                {
-                    IsRecommended = false,
-                    Value = MacroErrorBehaviour.Silent.ToString()
-                }
-            };
-
-            return values;
-        }
-    }
-
-    /// <inheritdoc/>
-    public override string CurrentValue => _contentSettings.CurrentValue.MacroErrors.ToString();
-
-    /// <summary>
-    /// Gets the message for when the check has succeeded.
-    /// </summary>
-    public override string CheckSuccessMessage =>
-        _textService.Localize(
-            "healthcheck","macroErrorModeCheckSuccessMessage",
-            new[] { CurrentValue, Values.First(v => v.IsRecommended).Value });
-
-    /// <summary>
-    /// Gets the message for when the check has failed.
-    /// </summary>
-    public override string CheckErrorMessage =>
-        _textService.Localize(
-            "healthcheck","macroErrorModeCheckErrorMessage",
-            new[] { CurrentValue, Values.First(v => v.IsRecommended).Value });
-}
-```
 
 ### General checks
 

@@ -155,7 +155,6 @@ The `package.xml` file is the one containing all package metadata, and the file 
   <DocumentTypes />
   <Templates />
   <Stylesheets />
-  <Macros />
   <DictionaryItems />
   <Languages />
   <DataTypes />
