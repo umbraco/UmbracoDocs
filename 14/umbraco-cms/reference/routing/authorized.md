@@ -82,12 +82,6 @@ public static void MapUmbracoRoute<T>(
 * `includeControllerNameInRoute` - If this is false the controller name will be excluded from the route, so in this case the route would be `umbraco/backoffice/mypackagename/{action}/{id?}` if this was set to false.
 * `constraints` - Any routing constraints passed to this will be used when mapping the route see [Microsoft documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/routing?view=aspnetcore-5.0#route-constraint-reference) for more information.
 
-{% hint style="warning" %}
-
-The current implementation of XPath is suboptimal and will be removed entirely in a future version. It is currently obsolete and scheduled for removal in v14.
-
-{% endhint %}
-
 Using the `MapUmbracoRoute` extension method is optional though, it's a neat helper to ensure controllers get routed in the same way. If your controller uses an area, like in this example, you need to specify this using the `Area` attribute. In this example the controller looks like this:
 
 ```csharp
