@@ -1,26 +1,22 @@
 ---
-description: "Connect to Cloud environment's Azure Blob Storage programmatically."
+description: Connect to Cloud environment's Azure Blob Storage programmatically.
 ---
 
-# Connect to Azure Storage Explorer programmatically
+# Connect and Upload Files Programmatically to Azure Storage
+
+## Connect to Azure Storage Explorer programmatically
 
 This article provides the steps needed to programmatically connect to your Umbraco Cloud Environment's Azure Blob Storage containers, to persist files programmatically. You will need access to the Blob Storage credentials to authenticate and find the files created programmatically in the Azure Blob Storage.
 
 Follow these steps to get started:
 
-
 1. Clone down your Umbraco Cloud Project. You can find more information on how to clone a project in the [Working Locally](../working-locally.md) article.
-
 2. Run your project.
-
 3. Install `Azure.Storage.Blobs` package on your project. You can do it either via NuGet Package Manager on Visual Studio or install it via [NuGet](https://www.nuget.org/packages/Azure.Storage.Blobs/).
-
 4. Run the project to complete the installation of the package.
-
 5. Add a new class called `BlobStorageService` which serves as a service that has a method to connect to Blob Storage:
 
 {% code title="BlobStorageService.cs" lineNumbers="true" %}
-
 ```csharp
 using Azure.Storage.Blobs;
 
@@ -38,13 +34,11 @@ namespace UmbracoProject
     }
 }
 ```
-
 {% endcode %}
 
 6. Add a new class called `BlobStorageComposer` to inject the service:
 
 {% code title="BlobStorageComposer.cs" lineNumbers="true" %}
-
 ```csharp
 using Umbraco.Cms.Core.Composing;
 
@@ -59,13 +53,11 @@ public class BlobStorageComposer : IComposer
     }
 }
 ```
-
 {% endcode %}
 
 7. Add a new class called `BlobStorageController` which serves as the Surface Controller:
 
-{% code title="AuthorSelector.cs" lineNumbers="true" %}
-
+{% code title="BlobStorageController.cs" lineNumbers="true" %}
 ```csharp
 using Azure.Storage.Blobs;
 using Microsoft.AspNetCore.Mvc;
@@ -141,28 +133,23 @@ public class BlobStorageController : SurfaceController
 
 }
 ```
-
 {% endcode %}
 
 Here, the controller is used to create a directory named `FolderProgramatically` and a `.txt` file in Azure Blob Storage.
 
 {% hint style="warning" %}
-
-In the above code, update the `SASUrl` and `containerName` values with your own from the Umbraco Cloud Settings. To find these values, refer to the instructions in the [Connect to Azure Storage Explorer to upload files manually](connect-to-azure-storage-explorer.md#getting-the-credentials) article. 
+In the above code, update the `SASUrl` and `containerName` values with your own from the Umbraco Cloud Settings. To find these values, refer to the instructions in the [Connect to Azure Storage Explorer to upload files manually](connect-to-azure-storage-explorer.md#getting-the-credentials) article.
 
 You can also secure the values in **Secrets Management** in the project **Settings** on Umbraco Cloud so you do not store them in code. For more information, see the [Secrets Management](../project-settings/secrets-management.md) article.
-
 {% endhint %}
 
 8. Run the project.
-
 9. Visit the `{{yourProjectURL}}/umbraco/surface/BlobStorage/BlobUpdate` endpoint in the backoffice of your project to manually trigger the creation of the file to the Blob Storage.
-
 10. [Connect to your Blob Storage](connect-to-azure-storage-explorer.md) and there you will find the folder and file that has been created programmatically:
 
 ![Blob folder created programmatically](images/blob-folder-created-programatically.png)
 
-# References
+## References
 
 For more information, see the following articles from Microsoft:
 
