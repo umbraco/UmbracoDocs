@@ -247,7 +247,7 @@ Similar to how the `propertyEditors` array defines one or more property editors,
 }
 ```
 
-However the default grid editors are already configured. You can see the [Grid Editors page](../../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/grid-layout/grid-editors.md) for more information on grid editors.
+However the default grid editors are already configured.
 
 ## Parameter Editors
 

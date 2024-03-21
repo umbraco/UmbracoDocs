@@ -659,10 +659,6 @@ As a result, lifting protection from a content item requires an additional step 
 
 There are certain limitations associated with some of the built-in property editors in Umbraco. Let's go through these below:
 
-#### Grid Layout (legacy)
-
-The Legacy Grid in Umbraco is supported to a certain extent. However, keep in mind that it may not be suitable for headless content scenarios. Instead, we recommend using the Block Grid property editor.
-
 #### Rich Text Editor
 
 The Delivery API is not going to support the rendering of Macros within the Rich Text Editor. Therefore, any Macros included in the content will not be executed or output when retrieving content through the API.

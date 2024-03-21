@@ -77,7 +77,7 @@
         * [Build a Custom View for a Block](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/build-custom-view-for-blocks.md)
         * [Configuring Block Editor Label Properties](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/label-property-configuration.md)
       * [Dropdown](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/dropdown/README.md)
-      * [Grid Layout](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/grid-layout/README.md)
+      * [Grid Layout (Legacy)](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/grid-layout/README.md)
         * [What Are Grid Layouts?](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/grid-layout/what-are-grid-layouts.md)
         * [Configuring The Grid Layout](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/grid-layout/configuring-the-grid-layout-datatype.md)
         * [Settings And Styling](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/grid-layout/settings-and-styles.md)
