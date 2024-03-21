@@ -8,7 +8,7 @@ _A Data Type defines the type of input for a property. So when adding a property
 
 ## What is a Data Type?
 
-A Data Type can be something basic (TextString, Number, True/False and so on) or it can be more complex (Multi Node Tree Picker, Image Cropper, Block Grid and so on).
+A Data Type can be something basic such as TextString, Number, True/False and so on. Or it can be more complex such as Multi Node Tree Picker, Image Cropper, Block Grid and so on.
 
 The Data Type references a Property Editor and if the Property Editor has settings these are configured on the Data Type. This means you can have multiple Data Types referencing the same Property Editor.
 
