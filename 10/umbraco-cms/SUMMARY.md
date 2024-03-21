@@ -5,6 +5,7 @@
   * [Umbraco 11 Documentation](https://github.com/umbraco/UmbracoDocs/tree/umbraco-eol-versions)
   * [Umbraco 8 Documentation](https://our.umbraco.com/documentation/)
   * [Umbraco 7 Documentation](https://our.umbraco.com/documentation/)
+* [Release Notes](https://our.umbraco.com/download/releases/)
 * [Contribute](https://docs.umbraco.com/welcome/contribute/getting-started)
 * [Sustainability Best Practices](https://docs.umbraco.com/sustainability-best-practices/)
 
@@ -418,7 +419,7 @@
   * [Adding server-side data to a property editor](tutorials/creating-a-property-editor/part-4.md)
 * [Creating a Multilingual Site](tutorials/multilanguage-setup.md)
 * [Add Google Authentication](tutorials/add-google-authentication.md)
-* [Add Azure Active Directory](tutorials/add-azure-active-directory-authentication.md)
+* [Add Microsoft Entra ID authentication (Members)](tutorials/add-microsoft-entra-id-authentication.md)
 * [The Starter Kit](tutorials/starter-kit/README.md)
   * [Lessons](tutorials/starter-kit/lessons/README.md)
     * [Customize the Starter Kit](tutorials/starter-kit/lessons/1-customize-the-starter-kit.md)

@@ -717,7 +717,7 @@ At this point we are done with the tutorial, your files should contain this:
 
 </details>
 
-![Custom Dashboard extended with UI Library Card](../../../../new-backoffice/.gitbook/assets/extendedWithUiLibrary.png)
+![Custom Dashboard extended with UI Library Card](<../../../../13/umbraco-cms/tutorials/images/extendedWithUiLibrary (1).png>)
 
 ## **Extending with Custom External Data**
 

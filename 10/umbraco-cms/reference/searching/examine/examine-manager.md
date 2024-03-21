@@ -39,7 +39,7 @@ This returns an active instance of the ExamineManager which exposes operations s
 
 ## Searching
 
-Important to note that the `Search` methods on the ExamineManager will call the Search methods of the **default** search provider specified in config. If you want to search using a specified provider, you can retrieve it from the `SearchProviderCollection` (see example below).
+It's important to highlight that the `Search` methods on the ExamineManager will call the Search methods of the **default** search provider specified in config. If you wish to search using a specified provider, you can retrieve it from the `SearchProviderCollection` (see example below).
 
 You can access any of the searchers by their name, for example:
 

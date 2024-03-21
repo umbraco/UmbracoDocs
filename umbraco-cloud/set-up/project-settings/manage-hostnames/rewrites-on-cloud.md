@@ -25,24 +25,25 @@ When you are doing rewrite rules on Umbraco Cloud there are a few important thin
 * Always make sure that you add a condition that negates the Umbraco Backoffice - `/umbraco`, otherwise, you will not be able to do deployments to/from the environment
 * To be able to continue working locally with your Umbraco Cloud project, you also need to add a condition that negates `localhost`
 
-## Hiding the Default umbraco.io Url
+## Hiding the default umbraco.io URL
 
-Once you've assigned a hostname to your Live environment, you may want to "hide" the project's default URL (e.g. mysite.s1.umbraco.io) for different reasons. Perhaps for SEO or to make it clear to your users that the site can be accessed using only one hostname.
+Once you've assigned a hostname to your Live environment, you may want to "hide" the project's default URL (e.g. example.euwest01.umbraco.io) for different reasons. Perhaps for SEO or to make it clear to your users that the site can be accessed using only the primary hostname.
 
-One approach for this is to add a new rewrite rule to the `<system.webServer><rewrite><rules>` section in the `web.config` file. For example, the following rule will redirect all requests for the project mysite.euwest01.umbraco.io URL to the mysite.com URL and respond with a permanent redirect status.
+One approach for this is to add a new rewrite rule to the `<system.webServer><rewrite><rules>` section in the `web.config` file. For example, the following rule will redirect all requests for the project example.euwest01.umbraco.io URL to the example.com URL (using HTTPS and including the `www.` prefix) and respond with a permanent redirect status.
 
 ```xml
-<rule name="Redirects umbraco.io to actual domain" stopProcessing="true">
+<rule name="Redirect umbraco.io to primary hostname" stopProcessing="true">
   <match url=".*" />
   <conditions>
-    <add input="{HTTP_HOST}" pattern="^(.*)?.euwest01.umbraco.io$" />
-    <add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
-    <add input="{REQUEST_URI}" negate="true" pattern="^/DependencyHandler.axd" />
-    <add input="{REQUEST_URI}" negate="true" pattern="^/App_Plugins" />
-    <add input="{REQUEST_URI}" negate="true" pattern="localhost" />
+    <add input="{HTTP_HOST}" pattern="\.umbraco\.io$" />
+    <add input="{HTTP_HOST}" pattern="^(dev-|stage-)(.*)?\.umbraco\.io$" ignoreCase="true" negate="true" />
+    <add input="{REQUEST_URI}" pattern="^/umbraco" ignoreCase="true" negate="true" />
+    <add input="{REQUEST_URI}" pattern="^/App_Plugins" ignoreCase="true" negate="true" />
+    <add input="{REQUEST_URI}" pattern="^/sb" negate="true" /> <!-- Don't redirect Smidge Bundle -->
+    <add input="{HTTP_COOKIE}" pattern="^(.+; )?UMB_UCONTEXT=([^;]*)(;.+)?$" negate="true" /> <!-- Ensure preview can render -->
+	<add input="{HTTP_HOST}" pattern="^localhost(:[0-9]+)?$" negate="true" />
   </conditions>
-  <action type="Redirect" url="http://<your actual domain here>.com/{R:0}"
-        appendQueryString="true" redirectType="Permanent" />
+  <action type="Redirect" url="https://www.example.com/{R:0}" redirectType="Permanent" />
 </rule>
 ```
 
@@ -56,17 +57,17 @@ Once you've applied a certificate to your site, you can make sure that anybody v
 
 To accomplish this, add a rewrite rule to the live environment's `web.config` in the `<system.webServer><rewrite><rules>` section.
 
-For example, the following rule will redirect all requests for the site http://mysite.com URL to the secure https://mysite.com URL and respond with a permanent redirect status.
+For example, the following rule will redirect all requests for the site http://example.com URL to the secure https://example.com URL and respond with a permanent redirect status.
 
 ```xml
-<rule name="HTTP to HTTPS redirect" stopProcessing="true">
-  <match url="(.*)" />
+<rule name="Redirect HTTP to HTTPS" stopProcessing="true">
+  <match url=".*" />
   <conditions>
-    <add input="{HTTPS}" pattern="off" ignoreCase="true" />
-    <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
-    <add input="{REQUEST_URI}" negate="true" pattern="^/\.well-known/acme-challenge" />
+    <add input="{HTTPS}" pattern="^OFF$" />
+    <add input="{HTTP_HOST}" negate="true" pattern="^localhost(:[0-9]+)?$" />
+    <add input="{REQUEST_URI}" negate="true" pattern="^/\.well-known/acme-challenge/" />
   </conditions>
-  <action type="Redirect" url="https://{HTTP_HOST}/{R:1}" redirectType="Permanent" />
+  <action type="Redirect" url="https://{HTTP_HOST}/{R:0}" redirectType="Permanent" />
 </rule>
 ```
 
@@ -80,19 +81,19 @@ It is possible to transform all of your URLs to use a trailing slash consistentl
 
 To accomplish this, add a rewrite rule to the Live environment's `web.config` in the `<system.webServer><rewrite><rules>` section.
 
-For example, the following rule will redirect all requests for `https://mysite.com/page` to `https://mysite.com/page/`, and respond with a permanent redirect status. This way you can ensure that you use the trailing slashes consistently on your site.
+For example, the following rule will redirect all requests for `https://example.com/page` to `https://example.com/page/`, and respond with a permanent redirect status. This way you can ensure that you use the trailing slashes consistently on your site.
 
 ```xml
 <rule name="Add trailing slash" stopProcessing="true">
   <match url="(.*[^/])$" />
   <conditions>
-    <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
-    <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
-    <add input="{REQUEST_FILENAME}" pattern="(.*?)\.[a-zA-Z1-5]{1,4}$" negate="true" />
-    <add input="{REQUEST_URI}" pattern="^/umbraco" negate="true" />
-    <add input="{REQUEST_URI}" pattern="^/DependencyHandler.axd" negate="true" />
-    <add input="{REQUEST_URI}" pattern="^/App_Plugins" negate="true" />
-    <add input="{REQUEST_URI}" pattern="^/\.well-known/acme-challenge" negate="true" />
+    <add input="{REQUEST_FILENAME}" negate="true" matchType="IsDirectory" />
+    <add input="{REQUEST_FILENAME}" negate="true" matchType="IsFile" />
+    <add input="{REQUEST_FILENAME}" negate="true" pattern="(.*?)\.[a-zA-Z0-9]{1,4}$" />
+    <add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
+    <add input="{REQUEST_URI}" negate="true" pattern="^/DependencyHandler.axd" />
+    <add input="{REQUEST_URI}" negate="true" pattern="^/App_Plugins/" />
+    <add input="{REQUEST_URI}" negate="true" pattern="^/\.well-known/acme-challenge/" />
   </conditions>
   <action type="Redirect" url="{R:1}/" />
 </rule>
@@ -112,15 +113,15 @@ Another example would be to redirect from non-www to www:
 <rule name="Redirect to www prefix" stopProcessing="true">
   <match url=".*" />
   <conditions>
-    <add input="{HTTP_HOST}" pattern="^www\." negate="true" />
-    <add input="{HTTP_HOST}" pattern=".*azurewebsites.net*" negate="true" ignoreCase="true" />
-    <add input="{HTTP_HOST}" pattern="^localhost(:[0-9]+)?$" negate="true" />
-    <add input="{HTTP_HOST}" pattern="\.umbraco\.io$" negate="true" />
+    <add input="{HTTP_HOST}" negate="true" pattern="^www\." />
+    <add input="{HTTP_HOST}" negate="true" pattern="^localhost(:[0-9]+)?$" />
+    <add input="{HTTP_HOST}" negate="true" pattern="\.azurewebsites\.net$" />
+    <add input="{HTTP_HOST}" negate="true" pattern="\.umbraco\.io$" />
   </conditions>
   <action type="Redirect" url="https://www.{HTTP_HOST}/{R:0}" />
 </rule>
 ```
 
 {% hint style="warning" %}
-Adding the `.*azurewebsites.net*` pattern is required for the deployment service and the content transfer between environments to continue to function.
+Adding the `.azurewebsites.net` pattern is required for the deployment service and the content transfer between environments to continue to function.
 {% endhint %}

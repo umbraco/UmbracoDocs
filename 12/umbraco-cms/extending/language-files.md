@@ -7,12 +7,14 @@ description: >-
 # Language Files & Localization
 
 Language files are XML files used to translate:
-- The Umbraco backoffice user interface so that end users can use Umbraco in their native language. This is particularly important for content editors who do not speak English.
-- The member identity errors in an Umbraco website enabling end users to use Umbraco in the website language.
--  Read [Add translations for your packages](packages/language-files-for-packages.md) to see how to include translations for your own package.
-- Override existing language files
+
+* The Umbraco backoffice user interface so that end users can use Umbraco in their native language. This is particularly important for content editors who do not speak English.
+* The member identity errors in an Umbraco website enabling end users to use Umbraco in the website language.
+* Read [Add translations for your packages](packages/language-files-for-packages.md) to see how to include translations for your own package.
+* Override existing language files
 
 This is an example of such a language file, the most important parts are the `alias` fields of the `<area>` and `<key>` elements. This is what you need to retrieve the values from .NET or Angular.
+
 ```xml
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <language alias="en" intName="English (UK)" localName="English (UK)" lcid="" culture="en-GB">
@@ -90,6 +92,10 @@ If you want to override Umbraco core translations or translations shipped with p
 ```xml
 /config/lang/{language}.user.xml
 ```
+
+{% hint style="info" %}
+The `/config/lang/` folders do not exist on a clean installation of the CMS. You will need to create them at the root of your `src` project.&#x20;
+{% endhint %}
 
 By default, these files are empty but you can add any new keys you want or override existing ones with your own translations. The nice part about the user files is that they will not get overwritten by the installer when you upgrade your Umbraco versions.
 

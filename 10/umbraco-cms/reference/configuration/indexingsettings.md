@@ -15,13 +15,13 @@ This section allows you to configure how content is indexed for Examine.
   }
 }
 ```
+
 ## ExplicitlyIndexEachNestedProperty
 
 When indexing content, each property contained within certain complex editors are indexed as separate fields by default. These complex editors include:
 
 - Block List
 - Block Grid
-- Nested Content
 
 The complex editors are also indexed to their own separate fields, which then contains "the sum" of all properties contained within.
 

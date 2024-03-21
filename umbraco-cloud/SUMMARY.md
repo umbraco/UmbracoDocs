@@ -54,10 +54,12 @@
     * [Account Contacts](set-up/project-settings/team-members/accounts-contact.md)
     * [Technical Contact](set-up/project-settings/team-members/technical-contact.md)
   * [Secrets Management](set-up/project-settings/secrets-management.md)
+  * [Project History](set-up/project-settings/project-history.md)
 * [Private Nuget Feed on Umbraco Cloud](set-up/private-nuget-feed.md)
 * [Going Live](set-up/going-live.md)
 * [Media](set-up/media/README.md)
   * [Connect to Azure Storage Explorer to upload files manually](set-up/media/connect-to-azure-storage-explorer.md)
+  * [Connect and Upload Files Programmatically to Azure Storage](set-up/media/connect-programatically-to-azure-storage.md)
 * [Users](set-up/users-on-cloud.md)
 * [Multi-Factor Authentication](set-up/multi-factor-authentication-on-cloud.md)
 * [Application Insights](set-up/application-insights.md)
@@ -130,7 +132,10 @@
   * [Extraction error: "Type not found! "](troubleshooting/deployments/type-not-found.md)
 
 ## Release Notes
+
 * [Overview 2024](release-notes/overview-2024.md)
+* [March 2024](release-notes/2024-03-releasenotes.md)
+* [February 2024](release-notes/2024-02-releasenotes.md)
 * [January 2024](release-notes/2024-01-releasenotes.md)
 * [Overview 2023](release-notes/overview-2023/README.md)
   * [December 2023](release-notes/overview-2023/2023-12-releasenotes.md)

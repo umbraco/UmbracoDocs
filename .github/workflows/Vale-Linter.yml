@@ -1,4 +1,4 @@
-name: Vale Linter wit ReviewDog
+name: Vale Linter with ReviewDog
 on: [pull_request]
 
 jobs:

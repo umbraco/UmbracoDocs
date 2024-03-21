@@ -81,7 +81,7 @@ Once you've assigned a Hostname to your Umbraco Cloud environment, you may want 
 
 ### Automatic TLS (HTTPS)
 
-All hostnames added to an Umbraco Cloud project's environment will get a TLS (HTTPS) certificate added, by default. The certificate is issued by Cloudflare and valid for 1 year after which it will be automatically renewed. Everything around certificates and renewals is handled for you and you only need to make sure that the DNS records are configured according to our recommendations listed above.
+All hostnames added to an Umbraco Cloud project's environment will get a TLS (HTTPS) certificate added, by default. The certificate is issued by Cloudflare and valid for 90 days after which it will be automatically renewed. Everything around certificates and renewals is handled for you and you only need to make sure that the DNS records are configured according to our recommendations listed above.
 
 You will need to **remove the old DNS entry** before the Cloudflare service generates a new certificate for your Hostname.
 

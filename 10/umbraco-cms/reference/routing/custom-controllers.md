@@ -24,7 +24,7 @@ For example:
 * To implement any custom/granular security
 * To return alternative templates depending on some custom business logic
 
-This replacement of the default controller can either be made 'globally' for all requests (see last example) or by _'hijacking'_ requests for types of pages based on their specific Document Type following a this controller naming convention: `[DocumentTypeAlias]Controller`.
+This replacement of the default controller can be made 'globally' for all requests (see last example). It can also be by _'hijacking'_ requests for types of pages based on their specific Document Type following this controller naming convention: `[DocumentTypeAlias]Controller`.
 
 ## Creating a custom controller
 

@@ -1,4 +1,4 @@
-﻿# Running Umbraco on Azure Web Apps
+# Running Umbraco On Azure Web Apps
 
 This section describes best practices with running Umbraco on Azure Web Apps
 
@@ -34,10 +34,31 @@ You need to add these configuration values. E.g in a json configuration source l
 }
 ```
 
+You can also copy the following JSON directly into your Azure Web App configuration via the Advanced Edit feature.
+
+<figure><img src="https://github.com/umbraco/UmbracoDocs/assets/11179749/ae53a26b-c45a-4b71-932a-0682f3d264a8" alt=""><figcaption><p>Advanced edit</p></figcaption></figure>
+
+```json
+{
+  "name": "UMBRACO__CMS__Global__MainDomLock",
+  "value": "FileSystemMainDomLock",
+  "slotSetting": false
+},
+{
+  "name": "UMBRACO__CMS__Hosting__LocalTempStorageLocation",
+  "value": "EnvironmentTemp",
+  "slotSetting": false
+},
+{
+  "name": "UMBRACO__CMS__Examine__LuceneDirectoryFactory",
+  "value": "SyncedTempFileSystemDirectoryFactory",
+  "slotSetting": false
+}
+```
+
 The minimum recommended Azure SQL Tier is "S2", however noticeable performance improvements are seen in higher Tiers
 
-If you are load balancing or require the scaling ("scale out") ability of Azure Web Apps then you need to consult the
-[Load Balancing documentation](load-balancing/README.md). This is due to the fact that a lot more needs to be configured to support scaling/auto-scaling.
+If you are load balancing or require the scaling ("scale out") ability of Azure Web Apps then you need to consult the [Load Balancing documentation](load-balancing/). This is due to the fact that a lot more needs to be configured to support scaling/auto-scaling.
 
 ## Storage
 
@@ -51,7 +72,7 @@ For example, Azure's [Run from Package feature](https://docs.microsoft.com/en-us
 
 ## Scaling
 
-If you require the scaling ("scale out") ability of Azure Web Apps you need to consult the [Load Balancing documentation](load-balancing/README.md). This is due to the fact that a lot more needs to be configured to support scaling/auto-scaling.
+If you require the scaling ("scale out") ability of Azure Web Apps you need to consult the [Load Balancing documentation](load-balancing/). This is due to the fact that a lot more needs to be configured to support scaling/auto-scaling.
 
 ## Web worker migrations
 

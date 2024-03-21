@@ -47,7 +47,7 @@ This is an add-on domain for existing licenses. Refunds will not be given for th
 
 ## Configuring your license
 
-You can purchase the license at [Umbraco Forms Licenses](https://umbraco.com/products/umbraco-forms/).
+You can look at the pricing, features, and purchase the license on the [Umbraco Forms](https://umbraco.com/products/add-ons/forms/) page.
 
 When you've bought a license you need to configure it with your domains. You can either configure your license right away or you can do it later by visiting your account on Umbraco.com.
 
@@ -65,10 +65,15 @@ Once you have a configured Umbraco Forms license, you can add additional domains
 3. Locate your configured Forms license.
 4. Choose **Configure / Add domain**.
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="./images/image.png" alt=""><figcaption></figcaption></figure>
 
 5. Select **Click here to buy** at the bottom of the configuration page.
 6. Configure the additional domain after completing the purchase, or do it later via your account.
+
+### Reconfiguration of domains
+
+Once a license has been configured with the domains, it is not possible to reconfigure them. An exception is when there is a mistake in the domain URL.
+As reconfiguration is not possible, you will either need to purchase an additional domain or a [new license](https://umbraco.com/products/umbraco-forms/).
 
 ## Installing your license
 

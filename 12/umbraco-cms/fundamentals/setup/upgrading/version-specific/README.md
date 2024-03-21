@@ -1,8 +1,8 @@
 ---
 description: >-
   This document covers specific upgrade steps if a version requires them. Most
-  versions do not require specific upgrade steps. In most cases, you will be
-  able to upgrade directly from your current versi
+  versions do not require specific upgrade steps and you will be able to upgrade
+  directly from your current version.
 ---
 
 # Version Specific Upgrades
@@ -668,15 +668,23 @@ It is no longer possible to rename the `/Umbraco` folder path using configuratio
 
 </details>
 
+## Release notes
+
+You can find a list of all the released Umbraco versions on [Our Umbraco](https://our.umbraco.com/download/releases/) website. When you visit Our Umbraco website, click on the version number to view the changes made in that specific version.
+
 ## Find your upgrade path
 
 Are you looking to upgrade an Umbraco Cloud project from 9 to 10? Follow the guide made for [Upgrading your project from Umbraco 9 to 10](https://docs.umbraco.com/umbraco-cloud/product-upgrades/major-upgrades) instead, as it requires a few steps specific to Umbraco Cloud.
 
 <details>
 
-<summary>10.latest to version 11</summary>
+<summary>10.latest to the latest Umbraco version</summary>
 
 It might be necessary to delete all of the `bin` and `obj` directories in each of the projects of your solution. It has been observed that Visual Studio's "Clean Solution" option is sometimes not enough.
+
+You can upgrade from Umbraco 10 to the latest version directly. If you choose to skip upgrading to version 11, you will no longer receive warning messages for obsolete features. However, if you do skip this version, any breaking changes will no longer compile.
+
+It is recommended to upgrade to the closest [Long-term Support (LTS) major](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) version before upgrading to the latest version. For Umbraco 10, the closest long-term support version is Umbraco 12 so a direct upgrade is possible.
 
 </details>
 

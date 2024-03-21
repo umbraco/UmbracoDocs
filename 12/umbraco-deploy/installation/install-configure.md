@@ -105,7 +105,7 @@ To be able to use Umbraco Forms with Umbraco Deploy, you need to install the `Um
 {% endhint %}
 
 {% hint style="info" %}
-In order to deploy content based on certain rich core and community property editors - including Nested Content, Multi URL Picker and Block List/Grid Editor - there is one further NuGet package to install: `Umbraco.Deploy.Contrib`.
+In order to deploy content based on certain rich core and community property editors - including Multi URL Picker and Block List/Grid Editor - there is one further NuGet package to install: `Umbraco.Deploy.Contrib`.
 {% endhint %}
 
 With Umbraco Deploy installed, to use it in the project you will need to create and add configuration for an API key/secret.

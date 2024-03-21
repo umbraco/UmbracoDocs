@@ -7,9 +7,7 @@
 **Block List** is a list editing property editor, using [Element Types](../../../../data/defining-content/#element-types) to define the list item schema.
 
 {% hint style="info" %}
-A default Umbraco CMS installation does not ship with a defined _Data Type_ using the Block List editor. In order to start using the property, follow the steps outlined below.
-
-[Click here for an overview with a worked example and references back to the relevant documentation.](https://umbraco.com/blog/deep-dive-the-block-list-editor/)
+The _Block List_ replaces the obsolete _Nested Content_ editor.
 {% endhint %}
 
 ## Configure Block List
@@ -249,11 +247,11 @@ If you know the Block List Editor only uses a single block, you can cast the col
 
 Building Custom Views for Block representations in Backoffice is the same for all Block Editors. [Read about building a Custom View for Blocks here](build-custom-view-for-blocks.md)
 
-## Creating Blocklist programmatically
+## Creating BlockList programmatically
 
 In this example, we will be creating some Block List objects under the `People` property in the `Home` Document Type. The `People` property implements a Block List Data Type where a `Person` Document Type can be created. The `Person` Document Type has two properties - `user_name` and `user_email`.
 
-The approach to saving Blocklist content programmatically is similar to Nested Content - though the JSON schema is a bit different.
+The approach to saving BlockList content programmatically is as follows:
 
 The JSON object we will pass into the `People` property will look like this:
 
