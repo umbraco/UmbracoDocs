@@ -14,13 +14,6 @@ Published property values have four "Values":
 - **Source** - The raw data stored in the database, this is generally a `String`
 - **Intermediate** - An object of a type that is appropriate to the property, for example a nodeId should be an `Int` or a collection of nodeIds would be an integer array, `Int[]`
 - **Object** - The object to be used when accessing the property using a Published Content API, for example UmbracoHelper's `GetPropertyValue<T>` method
-- **XPath** - The object to be used when the property is accessed by XPath; This should generally be a `String` or an `XPathNodeIterator`
-
-{% hint style="warning" %}
-
-The current implementation of XPath is suboptimal and will be removed entirely in a future version. It is currently obsolete and scheduled for removal in v14.
-
-{% endhint %}
 
 ## Registering PropertyValueConverters
 
@@ -201,20 +194,6 @@ public object ConvertIntermediateToObject(IPublishedElement owner, IPublishedPro
     }
 
     return inter;
-}
-```
-
-### ConvertIntermediateToXPath(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview)
-
-This method converts the Intermediate to XPath. The return value should generally be of type `String` or `XPathNodeIterator`.
-
-In the example below, we convert the nodeId (converted by ConvertSourceToIntermediate) back into a `String`.
-
-```csharp
-public object ConvertIntermediateToXPath(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview)
-{
-    if (inter == null) return null;
-    return inter.ToString();
 }
 ```
 

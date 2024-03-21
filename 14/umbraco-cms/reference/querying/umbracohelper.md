@@ -89,34 +89,6 @@ Returns a collection of `IPublishedContent` objects from the Content tree.
 }
 ```
 
-### .ContentAtXPath(string xpath)
-
-{% hint style="warning" %}
-
-The current implementation of XPath is suboptimal and will be removed entirely in a future version. It is currently obsolete and scheduled for removal in v14.
-
-{% endhint %}
-
-Queries the cache for content matching a given XPath query and returns a collection of `IPublishedContent` objects.
-
-```csharp
-@{
-    var newsArticles = Umbraco.ContentAtXPath("//newsArticle");
-    var bodyText = newsArticles.First().Value("bodyText");
-}
-```
-
-### .ContentSingleAtXPath(string xpath)
-
-Queries the cache for content matching a given XPath query and returns the first match as an `IPublishedContent` object.
-
-```csharp
-@{
-    var newsArticle = Umbraco.ContentSingleAtXPath("//newsArticle");
-    var bodyText = newsArticle.Value("bodyText");
-}
-```
-
 ## Working with Media
 
 ### .Media(Guid id)
