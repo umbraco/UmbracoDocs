@@ -45,7 +45,7 @@ public void ConfigureServices(IServiceCollection services)
 {
     "Umbraco": {
         "Commerce": {
-            "StorefrontAPi": {
+            "StorefrontApi": {
                 "Enabled": true
             }
         }
@@ -63,7 +63,7 @@ In order to work with the Storefront API many of the endpoints require authoriza
 {
     "Umbraco": {
         "Commerce": {
-            "StorefrontAPi": {
+            "StorefrontApi": {
                 "Enabled": true,
                 "ApiKey": "ZUynC149dD2N5efs6HN6dCdXlgOVASs6"
             }
@@ -218,7 +218,7 @@ GET /umbraco/commerce/storefront/api/v1.0/country/GB?expand=defaultCurrency[allo
 }
 ```
 
-#### Shortcuts
+**Shortcuts**
 
 As well as expanding explicit properties, the Storefront API supports shortcut expansion keys that when passed will expand all entities of a given type. Shortcut keys are idenfitied by a `$` prefix. There is currently only one supported shortcut key which is `$prices`.
 
