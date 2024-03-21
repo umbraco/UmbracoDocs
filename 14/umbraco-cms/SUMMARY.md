@@ -47,7 +47,7 @@
   * [Property Editors](extending-backoffice/extension-types/property-editors/README.md)
     * [Property Editor Schema](extending-backoffice/extension-types/property-editors/property-editor-schema.md)
     * [Property Editor UI](extending-backoffice/extension-types/property-editors/property-editor-ui.md)
-* [UI Library](extending-backoffice/ui-library.md)
+* [UI Library and UI API](extending-backoffice/ui-library.md)
 * [Umbraco Element](extending-backoffice/umbraco-element/README.md)
   * [Controllers](extending-backoffice/umbraco-element/controllers/README.md)
     * [Write your own Controller](extending-backoffice/umbraco-element/controllers/write-your-own-controller.md)
