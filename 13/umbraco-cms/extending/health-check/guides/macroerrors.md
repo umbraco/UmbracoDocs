@@ -3,7 +3,7 @@
 _Checks to make sure macro errors are not set to throw a YSOD (yellow screen of death), which would prevent certain or all pages from loading completely._
 
 {% hint style="warning" %}
-Macros will be removed in the next version. Consider using Partial Views or blocks in Rich Text Editor.
+Macros will be removed in the next version. Consider using Partial Views or Blocks in Rich Text Editor.
 {% endhint %}
 
 ## How to fix this health check
