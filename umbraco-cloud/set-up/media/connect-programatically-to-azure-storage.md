@@ -2,11 +2,13 @@
 description: Connect to Cloud environment's Azure Blob Storage programmatically.
 ---
 
-# Connect and Upload Files Programmatically to Azure Storage
+# Connect and Upload Files Programmatically to Azure Blob Storage
 
-## Connect to Azure Storage Explorer programmatically
+## Connect to Azure Blob Storage programmatically
 
 This article provides the steps needed to programmatically connect to your Umbraco Cloud Environment's Azure Blob Storage containers, to persist files programmatically. You will need access to the Blob Storage credentials to authenticate and find the files created programmatically in the Azure Blob Storage.
+
+By the end of this article you will have connected and uploaded a file to your Cloud Blob Storage. Those files will only be available on the Azure Storage so they are not visible publicly.&#x20;
 
 Follow these steps to get started:
 

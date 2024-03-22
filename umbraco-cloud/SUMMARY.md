@@ -59,7 +59,7 @@
 * [Going Live](set-up/going-live.md)
 * [Media](set-up/media/README.md)
   * [Connect to Azure Storage Explorer to upload files manually](set-up/media/connect-to-azure-storage-explorer.md)
-  * [Connect and Upload Files Programmatically to Azure Storage](set-up/media/connect-programatically-to-azure-storage.md)
+  * [Connect and Upload Files Programmatically to Azure Blob Storage](set-up/media/connect-programatically-to-azure-storage.md)
 * [Users](set-up/users-on-cloud.md)
 * [Multi-Factor Authentication](set-up/multi-factor-authentication-on-cloud.md)
 * [Application Insights](set-up/application-insights.md)
