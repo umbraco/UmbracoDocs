@@ -42,7 +42,7 @@ Since the Register and Login were created as macro partials, you will have corre
 
 ## Include the Macros and Partials in Content and Templates
 
-Halfway there! Next, navigate to your Content section. Since we created Register and Login partials as macro partials, we can paste them into a Richtext Editor. Create a new page that is using this editor, give it a name (e.g. Login/Signup), and in any RTE or Grid layouts you have on the page, insert a Macro.
+Halfway there! Next, navigate to your Content section. Since we created Register and Login partials as macro partials, we can paste them into a Richtext Editor. Create a new page that is using this editor and give it a name such as Login/Signup.
 
 ![RTE macro](images/v8-06-RTE-Macro.png)
 
