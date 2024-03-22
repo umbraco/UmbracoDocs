@@ -2,6 +2,10 @@
 
 _Describes how to set up a macro, use macro parameters & configuring caching. Defines the different types of macros and provides details on the different macro engine APIs and their usage_
 
+{% hint style="warning" %}
+Macros and Partial View Macros will be removed in the next version. Consider using Partial Views or Blocks in Rich Text Editor.
+{% endhint %}
+
 ## What is a macro
 
 A macro is 'wrapper' for a reusable piece of functionality that you can utilise in different places throughout your site.

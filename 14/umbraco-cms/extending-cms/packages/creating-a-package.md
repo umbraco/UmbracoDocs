@@ -30,7 +30,6 @@ These values are used to determine which backoffice items the package should con
 | Media          | _Empty_ | Here, you can include media - e.g. if you want to add media to the starter kit. Not relevant for this package though.                                                                                  |
 | Document Types | _Empty_ | Similar to the Content picker above. It is important to note that if you include content, you will need to also pick all its dependencies in this and the next steps for them to be packaged together! |
 | Media Types    | _Empty_ | Similar to the Media picker above. It is important to note that if you include media, you will need to also pick all its dependencies in this and the next steps for them to be packaged together!     |
-| Macros         | _Empty_ | See `Document Types` above                                                                                                                                                                             |
 | Languages      | _Empty_ | See `Document Types` above - all text is hardcoded or within our own lang folder in this package, so this is not needed.                                                                               |
 | Dictionary     | _Empty_ | See `Document Types` above                                                                                                                                                                             |
 | Data Types     | _Empty_ | See `Document Types` above                                                                                                                                                                             |
@@ -65,8 +64,6 @@ The files that we created from the [Creating a Custom Dashboard Tutorial](../../
   <Stylesheets />
   <Scripts />
   <PartialViews />
-  <Macros />
-  <MacroPartialViews />
   <DictionaryItems />
   <Languages />
   <DataTypes />

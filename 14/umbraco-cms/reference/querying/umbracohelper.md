@@ -10,7 +10,7 @@ UmbracoHelper also has a variety of helper methods that are useful when working 
 
 ## How to reference UmbracoHelper
 
-If you are using Views or Partial View Macros you can reference UmbracoHelper with the syntax: `@Umbraco`
+If you are using Views you can reference UmbracoHelper with the syntax: `@Umbraco`
 
 If you need an `UmbracoHelper` in your own controllers, you need to inject an instance.
 
@@ -140,22 +140,4 @@ Alternatively, you can also specify an `altText` which will be returned if the d
 
 ```html
 <p>@Umbraco.GetDictionaryValue("createdOn", "Date Created"): @Model.CreateDate</p>
-```
-
-## Templating Helpers
-
-### .RenderMacro(string alias, object parameters)
-
-Renders a macro in the current page content, given the macro's alias, and parameters required by the macro.
-
-```csharp
-@await Umbraco.RenderMacroAsync("navigation", new {root="1083", header="Hello"})
-```
-
-### .RenderTemplateAsync(int contentId, int? altTemplateId)
-
-Renders a template asynchronously, as if a page with the given contentId was requested, optionally with an alternative template ID passed in.
-
-```csharp
-@await Umbraco.RenderTemplate(1234)
 ```

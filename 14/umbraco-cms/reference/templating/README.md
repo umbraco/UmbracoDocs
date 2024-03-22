@@ -1,16 +1,14 @@
 ---
 description: >-
-  Information on configuring Templates (Views), Partials (Partial Views) and
-  Macros (Macro Partials)
+  Information on configuring Templates (Views) and Partials (Partial Views) 
 ---
 
 # Templating
 
-Templating in Umbraco consists of 3 larger concepts, namely Templates (Views), Partials (Partial Views) and Macros (Macro Partials):
+Templating in Umbraco consists of 3 larger concepts, namely Templates (Views) and Partials (Partial Views).
 
 * Templates are used for the HTML layout of your pages.&#x20;
 * Partials can be included in your templates for shared functionality across different page templates.&#x20;
-* Macros can be used for reusable dynamic components that can be controlled by editors to embed functionality into the grid or rich text areas.
 
 ## Templating technology
 
@@ -23,10 +21,6 @@ The WebForms (masterpages) and Dynamic Razor approaches to templating are still 
 ### [Working with MVC (views, razor, etc...)](mvc/)
 
 Describes how to work with MVC views, the razor syntax and APIs available. It also describes how to create forms, has some step-by-step guides and other advanced techniques.
-
-## [Macros](macros/)
-
-Describes how to set up a macro, use macro parameters & configuring caching. Defines the different types of macros and provides details on the different macro engine APIs and their usage.
 
 ## [Models Builder](modelsbuilder/)
 

@@ -12,7 +12,7 @@ Working with MVC Views and Razor syntax in Umbraco
 
 ## [Partial Views](partial-views.md)
 
-Documentation covering how to use Partial Views. This is not documentation about using "[Partial View Macros](../macros/partial-view-macros.md)", this documentation relates to using native MVC partial views within Umbraco.
+Documentation covering how to use Partial Views. This documentation relates to using native MVC partial views within Umbraco.
 
 ## [ViewComponents](viewcomponents.md)
 

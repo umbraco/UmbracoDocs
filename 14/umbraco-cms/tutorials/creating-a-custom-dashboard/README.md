@@ -456,7 +456,7 @@ angular.module("umbraco").controller("CustomWelcomeDashboardController", functio
 ```
 {% endcode %}
 
-We need to loop through the log items from the `logResource`. Since this includes everything, we need to filter out activities we're not interested in eg, Macro Saves, or DocType Saves. Generally, we need the entry in the log to have a `nodeId`, a `logType` of 'save' and an entity type of Media or Content.
+We need to loop through the log items from the `logResource`. Since this includes everything, we need to filter out activities we're not interested in such as DocType Saves. Generally, we need the entry in the log to have a `nodeId`, a `logType` of 'save' and an entity type of Media or Content.
 
 The `entityResource` has a `getById` method that accepts the `ID` of the item and the entity `type` to retrieve useful information about the entity. For example, its Name and Icon.
 

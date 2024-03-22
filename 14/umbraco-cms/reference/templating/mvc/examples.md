@@ -15,24 +15,6 @@ _Lots of examples of using various techniques to render data in a view_
 @Model.Value<IHtmlString>("bodyContent")
 ```
 
-## Rendering a macro
-
-```csharp
-@Umbraco.RenderMacro("myMacroAlias")
-```
-
-## Rendering a macro with parameters using an anonymous object
-
-```csharp
-@Umbraco.RenderMacro("myMacroAlias", new { name = "Ned", age = 28 })
-```
-
-## Rendering a macro with parameters using a dictionary
-
-```csharp
-@Umbraco.RenderMacro("myMacroAlias", new Dictionary<string, object> {{ "name", "Ned"}, { "age", 27}})
-```
-
 ## Rendering some member data
 
 ```csharp

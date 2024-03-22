@@ -16,10 +16,6 @@ Querying and rendering media items.
 
 Working with partial views in Umbraco's templates.
 
-## [Partial View Macro Files](partial-view-macro-files.md)
-
-Working with partial views macro files.
-
 ## [Stylesheets and JavaScript](stylesheets-javascript.md)
 
 Working with CSS and JavaScript in Umbraco's templates.

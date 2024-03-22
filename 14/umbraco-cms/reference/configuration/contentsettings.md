@@ -41,7 +41,6 @@ The following snippet will give an overview of the keys and values in the conten
       },
       "LoginBackgroundImage": "assets/img/login.jpg",
       "LoginLogoImage": "assets/img/application/umbraco_logo_white.svg",
-      "MacroErrors": "Inline",
       "Notifications": {
         "DisableHtmlEmail": false,
         "Email": null
@@ -137,17 +136,6 @@ You can specify your own background image for the login screen here. The image w
 ### Login logo image
 
 You can specify your own image for the small logo in the top left corner of the login screen. This path is relative to the `wwwroot/umbraco` path. The default location is: `wwwroot/umbraco/assets/img/application/umbraco_logo_white.svg`.
-
-### Macro errors
-
-This setting allows you to specify how errors in macros should be handled.
-
-Options:
-
-* Inline - Default Umbraco behavior, show an inline error within the macro but allow the page to continue rendering.
-* Silent - Silently suppress the error and do not display the offending macro.
-* Throw - Throw an exception.
-* Content - Silently suppress the error, and display custom content reported in the error event args.
 
 ### Preview badge
 

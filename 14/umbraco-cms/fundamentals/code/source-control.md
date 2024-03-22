@@ -118,12 +118,6 @@ You would need to manually merge these files before considering a deployment.
 
 Umbraco Cloud is a good solution in these scenarios, as changes via the backoffice are tracked in a Git repository automatically.
 
-#### Macros
-
-To source/version control changes to Macro implementation code, track the files in the following location:
-
-* **Partial View Macros** - stored in `/Views/MacroPartials` as .cshtml files
-
 #### Controllers/Classes/Custom Code
 
 Any supporting custom code for your application should be in version control, eg any of the following files

@@ -6,10 +6,9 @@ Finally, in Part Three we shall change the blog listing.
 
 ## Steps - Part Three
 
-1. In the **Settings** section, expand **Partial View Macro Files**.
+1. In the **Settings** section, expand **Partial View Files**.
 
     * Select *LatestBlogPosts.cshtml*.
-    * **Macros** are beyond the scope of this lesson, but you don't need to understand them right now.
 
 2. Scroll down to find the `blogpost-date` element and change it to use a nicely formatted Publication Date, i.e.:
 

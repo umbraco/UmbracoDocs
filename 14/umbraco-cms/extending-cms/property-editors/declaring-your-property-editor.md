@@ -11,8 +11,7 @@ A property editor consists of a number of mandatory properties, and some optiona
 | `editor` | object | Yes | This describes details about the editor. See the table below for further information. |
 | `icon` | string | No | A CSS class for the icon to be used in the **Select Editor** dialog - eg: `icon-autofill`. |
 | `group` | string | No | The group to place this editor in within the **Select Editor** dialog. Use a new group name or alternatively use an existing one such as **Pickers**. |
-| `isParameterEditor` | boolean | No | Enables the property editor as a macro parameter editor. Can be either `true` or `false` (default). |
-| `defaultConfig` | object | No | Provides a collection of default configuration values, in cases the property editor is not configured or is used a parameter editor (which doesn't allow configuration). The object is a key/value collection and must match the prevalue fields keys. |
+| `defaultConfig` | object | No | Provides a collection of default configuration values, in cases the property editor is not configured. The object is a key/value collection and must match the prevalue fields keys. |
 
 The `editor` object then has the following properties:
 
@@ -160,7 +159,7 @@ The [DataEditor](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.Pro
 | Name           | Type                                                         | Required | Description                                                  |
 |----------------| ------------------------------------------------------------ | -------- | ------------------------------------------------------------ |
 | `Alias`        | string                                                       | Yes      | Gets the unique alias of the editor.                         |
-| `EditorType`   | [EditorType](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.PropertyEditors.EditorType.html) | Yes      | Gets the type of the editor. Possible values are `EditorType.PropertyValue`, `EditorType.MacroParameter` or `EditorType.Nothing`. |
+| `EditorType`   | [EditorType](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.PropertyEditors.EditorType.html) | Yes      | Gets the type of the editor. Possible values are `EditorType.PropertyValue` or `EditorType.Nothing`. |
 | `Name`         | string                                                       | Yes      | Gets the friendly name of the editor.                        |
 | `View`         | string                                                       | Yes      | Gets the view to use to render the editor.                   |
 | `ValueType`    | string                                                       | No       | Gets or sets the type of the edited value.                   |

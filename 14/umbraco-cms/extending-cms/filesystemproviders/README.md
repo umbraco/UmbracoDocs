@@ -152,24 +152,12 @@ And you could create your own logic for the path by implementing `IMediaPathSche
 
 Umbraco also registers instances of `PhysicalFileSystem` for the following parts of Umbraco that persist to 'files':
 
-* `MacroPartialsFileSystem`
 * `PartialViewsFileSystem`
 * `StylesheetsFileSystem`
 * `ScriptsFileSystem`
 * `MvcViewsFileSystem`
 
 These are accessible via dependency injection.
-
-```csharp
-public class FileSystemLocations
-{
-    private readonly FileSystems _fileSystems;
-    public FileSystemLocations(FileSystems fileSystems)
-    {
-        _fileSystems = fileSystems;
-        var macroPartialsFileSystem = _fileSystems.MacroPartialsFileSystem;
-    }
-```
 
 `IFileSystem`, `MediaFileManager`, and `FileSystems` are located in the `Umbraco.Cms.Core.IO` namespace.
 

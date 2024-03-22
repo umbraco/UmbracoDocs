@@ -11,7 +11,6 @@ If you want to use advanced functionality, you can insert images, create tables,
 * [View Source Code](./#view-source-code)
 * [Links](./#links)
 * [Working with Images](./#working-with-images)
-* [Macros](./#macros)
 * [Tables](./#tables)
 
 Contact your system administrator for details regarding your editor.
@@ -260,43 +259,6 @@ To delete an image from the page:
 
 1. Select the image in your editor.
 2. Press **Delete** on your keyboard. The image is removed from the page, but is not deleted from the Umbraco media library.
-
-### Macros
-
-In Umbraco, macros are small building blocks of functionality that can be used in an editor. Each macro encompasses a piece of functionality and provides an interface to be able to modify the macro as per your requirements. A macro can be anything from a contact form to an embeddable media player. The advantage of macros is that it gives editors the ability to add complex elements to the page in a less complex manner.
-
-The macros available to you differ from system to system. Contact your system administrator to find out which macros are available to you and what they do.
-
-#### Adding a Macro to the Page
-
-1. Place the cursor in the editor where you want to insert your macro.
-2. Click the **Insert Macro** button. The **Select Macro** tree opens on the right-side of the editor.
-3.  Select a macro to insert or enter the macro name in the **Search** bar.
-
-    ![Macro Picker](../../../../../10/umbraco-cms/tutorials/editors-manual/working-with-content/images/Select-a-macro.png)
-4. Configure the macro as required.
-5.  Click **Submit** to insert the macro. The macro is displayed in the editor with a dotted border.
-
-    ![Macro Editor](../../../../../10/umbraco-cms/tutorials/editors-manual/working-with-content/images/Select-a-macro-v9.png)
-
-{% hint style="info" %}
-If there are no macros, you can [Create Macros](../../../reference/templating/macros/managing-macros.md#creating-macros). The above image is an example of macros available when a Starter Kit package is installed.
-{% endhint %}
-
-#### Editing macros
-
-You can edit the macro values after it has been added to the rich text editor:
-
-1. Highlight the macro in the rich text editor.
-2. Click the **Insert Macro** button. The **Select Macro** tree opens on the right-side of the editor.
-3. Here, you can edit the configuration as per your requirements.
-
-#### Removing macros
-
-To remove a macro:
-
-1. Highlight the macro in the rich text editor.
-2. Press the **Delete** or **Backspace** button on your keyboard.
 
 ### Tables
 

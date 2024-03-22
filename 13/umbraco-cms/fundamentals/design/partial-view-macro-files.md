@@ -2,6 +2,10 @@
 description: Information on working with partial view macro files in Umbraco
 ---
 
+{% hint style="warning" %}
+Partial View Macro Files will be removed in the next version. Consider using Partial Views.
+{% endhint %}
+
 # Partial View Macro Files
 
 A Macro is a reusable piece of functionality with some configuration options in the Backoffice. A Partial View Macro File (`.cshtml` file) is a specific file configuration that is associated with the Macro. A Partial View Macro File generates a Macro that can be inserted and rendered in the Grid and Rich Text Editor data types. Additionally, you can define parameter values and enable caching in Macros in the Backoffice. Partial View Macro Files are the recommended macro type to use in Umbraco.

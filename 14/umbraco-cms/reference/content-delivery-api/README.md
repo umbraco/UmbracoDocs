@@ -663,8 +663,6 @@ There are certain limitations associated with some of the built-in property edit
 
 #### Rich Text Editor
 
-The Delivery API is not going to support the rendering of Macros within the Rich Text Editor. Therefore, any Macros included in the content will not be executed or output when retrieving content through the API.
-
 When outputting the Rich Text Editor content as HTML (_the default format_), be aware that internal links may be insufficient in a multi-site setup. There is a possibility that this limitation may be addressed in future updates. However, consider the alternative approach to rendering the Rich Text Editor content as JSON.
 
 #### Member Picker
