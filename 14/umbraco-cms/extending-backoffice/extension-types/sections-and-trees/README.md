@@ -11,14 +11,17 @@ This page is a work in progress. It will be updated as the software evolves.
 <figure><img src="../../../.gitbook/assets/section.svg" alt=""><figcaption><p>Section</p></figcaption></figure>
 
 **Manifest**
+When creating a new section it's a good idea to use a [Entry Point](../extension-types/entry-point)-extension in your [Umbraco Package Manifest](../../package-manifest) to get better control over all the additional extensions required for the new section.
+
+This is how to define a section in TypeScript:
 
 ```typescript
 // TODO: get interface
 const section : ManifestSection = {
-	"type": "section",
-	"alias": "My.Section",
-	"name": "My Section",
-	"meta": {
+	type: "section",
+	alias: "My.Section",
+	name: "My Section",
+	meta: {
 		"label": "My Section",
 		"pathname": "my-section"
 	}
@@ -26,20 +29,22 @@ const section : ManifestSection = {
 ```
 
 **Manifest with empty element**
-Create a element with a default export and load the element like this:
+If you prefer a clean section you can use an element with a default export, and load the element like this:
 
 ```typescript
 const section : ManifestSection = {
-    "type": "section",
-    "alias": "Empty.Section",
-    "name" : 'Empty Section',
+    type: "section",
+    alias: "Empty.Section",
+    name : 'Empty Section',
     element : () => import('./empty-section.element.js'),
     meta : {
-        label : 'Foo',
+        label : 'Empty Section',
         pathname : 'empty-section'
     }
 }
 ```
+
+Notice that if you pass an element like this, the default behavior of loading dashboards and sectionViews will be disabled.
 
 **Default Element**
 
