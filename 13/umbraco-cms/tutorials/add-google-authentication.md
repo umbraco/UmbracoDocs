@@ -42,68 +42,65 @@ The first thing to do is set up a Google API. To do this, you need to go to [htt
 
 1. Click the project dropdown and select **New Project**.
 
-<figure><img src="images/Project_dropdown_list.png" alt=""><figcaption></figcaption></figure>
+    ![Project dropdown list](images/Project_dropdown_list_v13.png)
 
 2. Enter a **Project name**, **Organization**, and **Location**.
-3. **Create** the project.
-
-<figure><img src="images/Project_Details.png" alt=""><figcaption></figcaption></figure>
+3. Click **Create**.
 
 ### Enable the Google+ API
 
 1. Open the newly created project from the project dropdown.
-2. Select **Enable APIs and Services**.
+2. Click **Enable APIs and Services**.
 
-<figure><img src="images/Enable_Apis.png" alt=""><figcaption></figcaption></figure>
+    ![Enable APIs](images/Enable_Apis_v13.png)
 
-2. Use the search field to find the **Google+ API**.
-3. **Enable** the product to enable the API.
+3. Type **Google+ API** in the **Search** field.
+4. Click **Enable**.
 
-<figure><img src="images/Enable_Google_API.png" alt=""><figcaption></figcaption></figure>
+    ![Enable Google APIs](images/Enable_Google_API_v13.png)
 
 ### Set up an OAuth Consent Screen
 
 Before you can create the credentials, you need to configure your consent screen.
 
-1. Select **OAuth Consent Screen** from the left-side navigation menu.
-
-<figure><img src="images/OAuth_Consent_Screen.png" alt=""><figcaption></figcaption></figure>
-
+1. Click **OAuth consent screen** from the left-side navigation menu.
 2. Choose the **User Type** that fits your setup.
-3. Select **Create** to move to the next step.
+3. Click **Create**.
 
-<figure><img src="images/User_Type.png" alt=""><figcaption></figcaption></figure>
+    ![Select User Type](images/User_Type_v13.png)
 
 4. Fill in the required information:
    * App name
    * User support email
    * Developer contact information
-5. Select **Save and continue**.
+5. Click **Save and Continue**.
 6. Select the scopes your project needs.
-7. Move to the next step by selecting **Save and Continue**.
-8. Verify the details provided.
-9. Select **Back to Dashboard** to complete creating the Consent screen.
+7. Click **Save and Continue**.
+8. Verify the details you have provided.
+9. Click **Back to Dashboard** to complete creating the Consent screen.
 
 ### Create credentials
 
-1. Click on **Credentials** in the left-side navigation menu.
-2. Select **Create Credentials** and choose **OAuth Client ID** from the dropdown.
+1. Click **Credentials** from the left-side navigation menu.
+2. Click **Create Credentials**.
+3. Select **OAuth Client ID** from the dropdown.
 
-<figure><img src="images/OAuth_Client_Id.png" alt=""><figcaption></figcaption></figure>
+    ![Select OAuth Client ID](images/OAuth_Client_Id_v13.png)
 
-3. Select **Web Application** from the **Application type** dropdown.
-4. Enter the following details:
+4. Select **Web Application** from the **Application type** dropdown.
+5. Enter the following details:
    * Application **Name**
    * **Authorized JavaScript origins**
    * **Authorized redirect URIs**
-5. **Create** the OAuth Client ID.
 
-<figure><img src="images/Credentials_v9.png" alt=""><figcaption></figcaption></figure>
+    ![Credentials](images/credentials_v13.png)
 
-A popup appears displaying the **ClientId** and **ClientSecret**. You will need these values later while configuring your solution.
+6. Click **Create**.
+
+A popup appears displaying the **Client Id** and **Client Secret**. You will need these values later while configuring your solution.
 
 {% hint style="info" %}
-The **ClientId** and **ClientSecret** can always be accessed from the **Credentials** tab in the **APIs & Services** menu.
+The **Client Id** and **Client Secret** can always be accessed from the **Credentials** tab in the **APIs & Services** menu.
 {% endhint %}
 
 ## 2. Integrating Google Auth in Visual Studio
@@ -114,41 +111,31 @@ If you are working with a Cloud project, see the [Working locally](https://docs.
 
 ### Installing a Nuget Package
 
-You can install and manage packages in Visual Studio either using the Package Manager Console (PowerShell) or the NuGet Package Manager.
+You can install and manage packages in a project.
 
-#### Option 1: Package Manager Console (PowerShell)
+1. Navigate to your project/solution folder.
+2. Open a command prompt of your choice.
+3. Run the following command to install the `Microsoft.AspNetCore.Authentication.Google` package.
 
-The NuGet Package Manager Console lets you use NuGet PowerShell commands to manage NuGet packages on your project. You can use this option if you are comfortable using the Package Manager Console (PowerShell). The command listed below is specific to the Package Manager Console in Visual Studio:
+    ```cli
+    dotnet add package Microsoft.AspNetCore.Authentication.Google --version 8.0.3
+    ```
 
-1. Open your project/solution in Visual Studio.
-2. Go to **Tools** > **NuGet Package Manager** > **Package Manager Console**.
+4. Once the package is installed, open the **.csproj** file to ensure if the package reference is added:
 
-A package manager console appears at the bottom where you can install packages with commands.
-
-3. Type the following in the console:
-
-```js
-Install-Package Microsoft.AspNetCore.Authentication.Google -Version 7.0.13
-```
+    ```js
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="8.0.3" />
+    </ItemGroup>
+    ```
 
 {% hint style="info" %}
-Always check the latest version of the package before installing it.
+Always check the [latest version of the package](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Google) before installing it.
 {% endhint %}
 
-#### Option 2: NuGet Package Manager
+For more information on installing and using a package with the .Net CLI, see [Microsoft Documentation](https://learn.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli).
 
-The NuGet Package Manager UI in Visual Studio allows you to manage NuGet packages in projects and solutions.
-
-1. Open your project in Visual Studio.
-2. Go to **Tools** -> **NuGet Package Manager** -> **Manage NuGet Packages for Solution**.
-3. Select the **Browse** tab.
-4. Type `Microsoft.AspNetCore.Authentication.Google` in the search field.
-5. Ensure that your project is checked.
-6. Select the **version** from the drop-down and click **Install**.
-
-For more information on installing and managing packages in Visual Studio, see [Microsoft Documentation](https://docs.microsoft.com/en-us/nuget/consume-packages/install-use-packages-visual-studio).
-
-## 3. Configuring the solution to allow Google logins
+## 3. Configuring the Solution to allow Google Logins
 
 To use an external login provider such as Google on your Umbraco CMS project, you have to implement a couple of new classes:
 
@@ -323,17 +310,17 @@ builder.CreateUmbracoBuilder()
 
 {% hint style="info" %}
 
-If auto-linking is disabled, the user will need to follow these steps in order to be able to use the Google Authentication:
+If auto-linking is disabled, the user will need to follow these steps in order to be able to use Google Authentication:
 
 1. Login to the backoffice using Umbraco credentials.
 2. Select your user profile in the top-right corner.
-3. **Link your Google account**.
-4. Choose the account you which to link to the Umbraco login.
+3. Click **Link your Google account** under External login providers.
+4. Choose the account you wish to link.
 
-For future backoffice logins, the user will be able to use Google Authentication to login.
+For future backoffice logins, the user will be able to use Google Authentication.
 {% endhint %}
 
-![Google login screen](images/googleLoginScreen.png)
+![Google login screen](images/googleLoginScreen_v13.png)
 
 ## Related Links
 
