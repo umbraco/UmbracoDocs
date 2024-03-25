@@ -17,7 +17,7 @@ Here is a quick overview of them:
 Additional settings can be applied:
 
   * Select which **Value field** should be used for the value of the prevalue.
-  * Select **Use current page as root** instead of choosing a specific root node. Note that the preview is not available when this setting is enabled.
+  * Select **Use current page as root** instead of choosing a specific root node. The preview is not available when this setting is enabled.
   * Select a specific **Document type**, if the selected root node contains a different Document Type.
   * Select **List all Descendants** of the selected root node to list all levels of descendants.
   * Select **Order by** from the drop-down list to display how the prevalue list should be ordered.
