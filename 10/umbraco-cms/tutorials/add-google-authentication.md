@@ -316,6 +316,7 @@ public void ConfigureServices(IServiceCollection services)
 8. Log in to the backoffice using the Google Authentication option.
 
 {% hint style="info" %}
+
 If auto-linking is disabled, the user will need to follow these steps in order to be able to use the Google Authentication:
 
 1. Login to the backoffice using Umbraco credentials.
@@ -324,6 +325,7 @@ If auto-linking is disabled, the user will need to follow these steps in order t
 4. Choose the account you wish to link.
 
 For future backoffice logins, the user will be able to use Google Authentication to login.
+
 {% endhint %}
 
 ![Google login screen](images/googleLoginScreen_v13.png)
