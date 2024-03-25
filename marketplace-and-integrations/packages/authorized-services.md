@@ -83,7 +83,7 @@ The package should be installed into your Umbraco solution from [NuGet](https://
 
 ### App Creation
 
-Services supported by the package will often offer an OAuth authentication and authorization flow against an "app" that the developer will need to create. This will make available information, including for example a "client ID" and "client secret", that will need to be applied in configuration.
+Services supported by the package will often offer an OAuth authentication and authorization flow against an "app" that the developer will need to create. This will make available information, including for example a "**client ID**" and "**client secret**", that will need to be applied in configuration.
 
 When creating the app it will usually be necessary to configure a call back URL. You should use the following:
 
