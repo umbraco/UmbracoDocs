@@ -81,6 +81,15 @@ Below you can learn more about how to use the Umbraco Authorized Services packag
 
 The package should be installed into your Umbraco solution from [NuGet](https://www.nuget.org/packages/Umbraco.AuthorizedServices).
 
+### App Creation
+
+Services supported by the package will often offer an OAuth authentication and authorization flow against an "app" that the developer will need to create. This will make available information, including for example a "**client ID**" and "**client secret**", that will need to be applied in configuration.
+
+When creating the app it will usually be necessary to configure a call back URL. You should use the following:
+
+- For OAuth2: `/umbraco/api/AuthorizedServiceResponse/HandleOAuth2IdentityResponse`
+- For OAuth1: `/umbraco/api/AuthorizedServiceResponse/HandleOAuth1IdentityResponse`
+
 ### Configuring a Service
 
 Details of services available need to be applied to the Umbraco web application's configuration.
