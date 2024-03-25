@@ -1,7 +1,6 @@
 ---
 description: >-
-  A tutorial on setting up Google authentication for the Umbraco CMS backoffice
-  users.
+  A tutorial on setting up Google authentication for the Umbraco CMS backoffice users.
 ---
 
 # Add Google Authentication (Users)
@@ -14,7 +13,7 @@ In this tutorial, we will take you through the steps of setting up a Google logi
 
 When you log in to the Umbraco Backoffice, you need to enter your username and password. Integrating your website with Google authentication adds a button that you can click to log in with your Google account.
 
-![Google login screen](images/googleLoginScreen.png)
+![Google login screen](images/googleLoginScreen_v13.png.png)
 
 ## Why?
 
@@ -306,7 +305,7 @@ builder.CreateUmbracoBuilder()
 {% endcode %}
 
 7. Build and run the website.
-8. Log in to the backoffice using the Google Auth option.
+8. Log in to the backoffice using the Google Authentication option.
 
 {% hint style="info" %}
 
