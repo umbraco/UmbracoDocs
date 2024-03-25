@@ -44,7 +44,8 @@ const section : ManifestSection = {
 }
 ```
 
-Notice that if you pass an element like this, the default behavior of loading dashboards and sectionViews will be disabled.
+{% hint style="warning" %}
+If you pass an element like this, the default behavior of loading dashboards and sectionViews will be disabled.{% endhint %}
 
 **Default Element**
 
