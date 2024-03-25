@@ -105,3 +105,22 @@ The value contains the path of your custom license directory relative to the roo
 {% hint style="warning" %}
 This will also change the location for other Umbraco-related licenses in this project.
 {% endhint %}
+
+## Note on Federal Information Processing Standards (FIPS) Compliant Environments
+
+The algorithm used to decrypt Forms licenses is not supported on locked down FIPS compliant environments, such as those used in the defense industry.
+
+If you are in this situation and unable to resolve via configuration of the environment, please reach out to Umbraco support.
+
+We have the possibility of generating and providing Forms licenses using alternate algorithms.
+
+These can be used if you reference `Umbraco.Licensing` version `13.0.1` or higher.
+
+And apply the following configuration with the appropriate algorithm - `DES` (the default), `TripleDES` or `AES`:
+
+```json
+  "Umbraco": {
+    "Licensing": {
+      "LicenseEncodeAndDecodeAlgorithm": "DES|TripleDES|AES"
+    },
+``````
