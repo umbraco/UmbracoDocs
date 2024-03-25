@@ -122,7 +122,7 @@ Umbraco ships with three indexes:
 
 * ExternalIndex - available to use for indexing published unprotected content.
 * InternalIndex - which Umbraco's backoffice search uses.
-* InternalMemberIndex - which Umbraco's Membership implementation uses.
+* MembersIndex - which Umbraco's Membership implementation uses.
 
 [You can create your own indexes too](indexing.md) if you need to analyse text in a different language for example.
 
