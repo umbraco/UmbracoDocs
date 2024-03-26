@@ -54,7 +54,7 @@ The first thing to do is set up a Google API. To do this, you need to go to [htt
     ![Enable APIs](images/Enable_Apis_v13.png)
 
 3. Type **Google+ API** in the **Search** field.
-4. Click **Enable**.
+4. Select it and then **Enable** it.
 
     ![Enable Google APIs](images/Enable_Google_API_v13.png)
 
