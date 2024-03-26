@@ -133,7 +133,7 @@ If you have cloned down an Umbraco Project, you will need to navigate to the `sr
     ```
 
 {% hint style="info" %}
-Always check the [latest version of the package](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Google) before installing it.
+You can check the [latest version of the package](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Google) before installing it.
 {% endhint %}
 
 For more information on installing and using a package with the .Net CLI, see [Microsoft Documentation](https://learn.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli).
