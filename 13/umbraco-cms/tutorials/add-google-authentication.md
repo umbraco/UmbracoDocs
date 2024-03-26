@@ -121,7 +121,7 @@ If you have cloned down an Umbraco Project, you will need to navigate to the `sr
 3. Run the following command to install the `Microsoft.AspNetCore.Authentication.Google` package.
 
     ```cli
-    dotnet add package Microsoft.AspNetCore.Authentication.Google --version 8.0.3
+    dotnet add package Microsoft.AspNetCore.Authentication.Google
     ```
 
 4. Once the package is installed, open the **.csproj** file to ensure if the package reference is added:
