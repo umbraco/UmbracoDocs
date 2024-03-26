@@ -109,7 +109,7 @@ You can also add a **Remove format** button in your toolbar. To add the **Remove
 
 ![Link Button](images/Link-Button-v11.png)
 
-The **Insert/Edit Link** button is used to add or update links to internal pages, external pages, media files, email links, and anchors. The process for inserting a hyperlink differs depending on the type of hyperlink you wish to create:
+The **Insert/Edit Link** button is used to add or update links to internal pages, external pages, media files, email links, and anchors. The process for inserting a hyperlink differs depending on the type of hyperlink you wish to create.
 
 To insert different types of hyperlinks, follow these steps:
 
