@@ -221,7 +221,7 @@ To remove a link:
 
 To display images on a page the images must be uploaded to your Umbraco media library.
 
-Many organizations set up a media library containing images that editors can use on their pages.  Others allow their editor's free use of their images. The procedure for uploading an image varies slightly depending on which method your organization uses. Check with your system administrator about what applies to your organization.
+Many administrators set up a media library containing images that editors can use on their pages.  Others allow their editor's free use of their images. The procedure for uploading an image varies slightly depending on which method your administrators have setup. Check with your system administrator for more information about this.
 
 #### Inserting an Image from the Media Library
 
