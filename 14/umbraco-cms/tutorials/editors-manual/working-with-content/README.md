@@ -142,7 +142,7 @@ To insert different types of hyperlinks, follow these steps:
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
 3. Select the **Link to Media** button to select the media item.
 4. Click **Select**.
-   - This will populate the **Link** and  **Link Title** fields automatically with the media item information.
+   - This will automatically populate the **Link** and **Link Title** fields with the media item information.
    - By default, the **Link** field contains the media file name and cannot be edited.
 5. Select the **Target** field to open the link in a new window or tab.
 6. Click **Submit**.
