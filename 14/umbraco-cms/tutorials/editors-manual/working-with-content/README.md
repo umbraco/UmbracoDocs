@@ -305,4 +305,6 @@ Clicking on **Table Properties** gives you different options for modifying the t
 
 ## Configuring a Rich Text Editor
 
-The Rich Text Editor in Umbraco can be configured in many different ways. For more information, see the [Rich Text Editor Configuration](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration) article.
+The Rich Text Editor in Umbraco can be configured in many different ways. 
+
+For more information, see the [Rich Text Editor Configuration](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration) article.
