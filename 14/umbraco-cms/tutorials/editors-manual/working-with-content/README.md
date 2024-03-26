@@ -299,7 +299,9 @@ To edit the table after creating it, click on the table. A pop-up appears with d
 
 ![Editing an Existing Table](images/Editing-an-existing-table-v11.png)
 
-Clicking on **Table Properties** gives you different options for modifying the table’s appearance. However, the developer of the website may have already created table styles for you so you may not need to adjust these settings. There are other options available for modifying cells, rows, and columns such as width, height, alignment, border, and so on.
+Clicking on **Table Properties** gives you different options for modifying the table’s appearance. However, the developer of the website may have already created table styles for you so you may not need to adjust these settings. 
+
+There are other options available for modifying cells, rows, and columns such as width, height, alignment, border, and so on.
 
 ![Table Properties](images/table-properties-v11.png)
 
