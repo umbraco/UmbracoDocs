@@ -102,7 +102,7 @@ A popup appears displaying the **Client Id** and **Client Secret**. You will nee
 The **Client Id** and **Client Secret** can always be accessed from the **Credentials** tab in the **APIs & Services** menu.
 {% endhint %}
 
-## 2. Integrating Google Auth in Visual Studio
+## 2. Integrating Google Auth in your project
 
 Once the Google API is set up it is time to install the Google Auth provider on the Umbraco project.
 
