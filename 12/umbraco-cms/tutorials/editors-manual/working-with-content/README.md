@@ -1,41 +1,25 @@
 # Working with Rich Text Editor
 
-The Umbraco Rich Text Editor is an editable field where you, as the editor, can be creative. You select how much you want to do yourself. You can work on text content, format the text, or leave it the way it is.
+The Umbraco Rich Text Editor (RTE) is a field where you, as an editor, can be creative. You can select how much you want to do yourself. You can work on text content, format the text, or leave it the way it is. If you want to do more, you can insert images, create tables, or create links to other pages/documents.
 
-If you want to use advanced functionality, you can insert images, create tables, or create links to other pages or documents. The functionality varies depending on how the editor is set up.
-
-* [Editor Buttons](./#editor-buttons)
-* [Paragraph Break/Line Break](./#paragraph-break-line-break)
-* [Shortcut Keys](./#shortcut-keys)
-* [Text Formatting](./#text-formatting)
-* [View Source Code](./#view-source-code)
-* [Links](./#links)
-* [Working with Images](./#working-with-images)
-* [Macros](./#macros)
-* [Tables](./#tables)
-
-Contact your system administrator for details regarding your editor.
+The functionality varies depending on how the editor is set up. Here, we describe the default editor with all the options enabled. Contact your system administrator for details regarding your editor.
 
 ## Editor Buttons
 
-By default, the following editor styles are available. Your system administrator can determine the styles displayed in different templates. You might have access to more or fewer styles than those shown here.
+By default, the following editor buttons are available. Your system administrator can determine which buttons are displayed in different templates. You therefore might have access to more or fewer buttons than those shown here.
 
-![Editor Bar](../../../../../10/umbraco-cms/tutorials/editors-manual/working-with-content/images/editorBar-v9.jpg)
+![Editor Bar](images/editor_bar_v13.png)
 
-## Rich Text Editor Functionality
+## Paragraph Break/Line Break
 
-The Rich Text Editor provides the following functionalities:
-
-### Paragraph Break/Line Break
-
-The Rich Text Editor is like any other word processing program. You write the text and the text wraps around when the line reaches the end. Use the following keyboard shortcuts in the editor to add:
+The Rich Text Editor is like any other word-processing program. You write the text and the text wraps around when the line reaches the end. Use the following keyboard shortcuts in the editor to add:
 
 * Space between paragraphs - press `ENTER`.
 * Line breaks - press `SHIFT + ENTER`.
 
-### Shortcut Keys
+## Shortcut Keys
 
-For ease, there are shortcut keys for certain editor functions. Use the following shortcut keys to carry out certain commands:
+To make your work easier, there are shortcut keys for certain editor functions. Use the following shortcut keys to carry out certain commands:
 
 | Shortcut | Action     |
 | -------- | ---------- |
@@ -49,271 +33,320 @@ For ease, there are shortcut keys for certain editor functions. Use the followin
 | Ctrl + Y | Redo       |
 | Ctrl + Z | Undo       |
 
-### Text Formatting
+We have listed only a few keyboard shortcuts. For a detailed list of available keyboard shortcuts, see the [TinyMCE Documentation](https://www.tiny.cloud/docs/tinymce/latest/keyboard-shortcuts/).
 
-You do not normally need to spend much time formatting text because Umbraco takes care of the formatting. However, the editor provides a number of options for controlling the text formatting.
+## View Source Code
 
-#### Formatting Buttons
+![View Source Code](images/view-source-code-v11.png)
 
-The most familiar way to control formatting is using the formatting buttons. With these buttons, you can apply basic formatting such as Bold, Italic, aligning text, creating bulleted and numbered lists, and applying indents.
+If you are proficient in HTML, you can switch to HTML mode to create your page. You can also check the code and make minor adjustments to get the page exactly as you want.
+
+Certain elements such as scripts are not recognized by the HTML view of the Rich Text Editor. You can enter the scripts directly in the text view of the editor.
+
+## Formats
+
+![Format Dropdown](images/Formats-Button-v11.png)
+
+You can apply formatting via the **Formats** drop-down list. The Formats drop-down list provides predefined styles that can be applied to text while maintaining a consistent look and feel throughout the site.
+
+These styles incorporate advanced formatting functionality which can be applied to provide a different look for certain elements such as links, headings, and sub-headings. For example, you can use a format style to change a link into a call-to-action button.
+
+To apply pre-defined styles:
+
+1. Select the text you want to apply the style.
+2. Choose the style from the **Format** drop-down list.
+
+For more information on how to create the Styles, see the [Rich Text Editor Styles](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-styles) article.
+
+## Text Formatting
+
+You do not normally need to spend much time formatting text because Umbraco takes care of the formatting. However, the editor provides some options for controlling the text styles.
+
+### Formatting Buttons
+
+![Formatting Buttons](images/Formatting-Buttons-v11.png)
+
+The most familiar way to control formatting is by using the formatting buttons. With these buttons, you can apply basic formatting such as Bold, Italic, aligning text, creating bulleted and numbered lists, and applying indents.
 
 To apply a format using the formatting buttons:
 
-1. Select the text you want to apply the formatting to.
-2.  Click the format button to apply the formatting you wish to add.
+1. Select the text you want to apply the formatting.
+2. Click the desired format button.
 
-    ![Formats](../../../../../10/umbraco-cms/tutorials/editors-manual/working-with-content/images/formats-v9.png)
-
-#### Custom Formats
-
-An alternate way to apply formatting is using Custom Formats. The **Formats** drop-down list provides a set of predefined styles that can be applied to text while maintaining a consistent look and feel throughout the site.
-
-These styles often incorporate more advanced formatting functionality which can be applied to provide a different look for certain elements such as links, headings and sub-heading. For example, you can use a format style to change a link into a call to action button. While the styles available on your site may differ, follow the below process to apply styles:
-
-1. Select the text you want to apply the style to.
-2. Choose the style to apply from the **Format** drop-down list.
-
-#### Copying Content from Other Programs
+### Copying Content from Other Programs
 
 {% hint style="info" %}
-When you write content in another editor to be copied into a rich text editor, you may encounter style issues on your website.
+When you write content in another editor and copy it into a Rich Text Editor, you may encounter style issues on your website.
 {% endhint %}
 
-While pasting content, the original text styles is preserved which can lead to different font faces, sizes, and colours displaying on the website when viewed.
+While pasting content, the original text styles are preserved which can lead to different font faces, sizes, and colors displaying on the website when viewed.
 
 {% hint style="info" %}
-To prevent formatting issues, we recommended pasting the content first into a markdown editor such as notepad, then copy and paste it into your rich text editor.
+To prevent formatting issues, we recommended pasting the content first into a markdown editor such as Notepad, then copying and pasting it into your Rich Text Editor.
 {% endhint %}
 
-#### Remove Formatting
+### Remove Formatting
 
-If you have already formatted a paragraph or selection using the formatting buttons, you can remove the formatting rule. To remove formatting:
+![Remove Format Button](images/Remove-Format-v11.png)
+
+If you have already formatted a paragraph or selection using the formatting buttons, you can remove the formatting rule.
+
+To remove formatting:
 
 1. Select the text you want to remove the style from.
 2. Click the relevant formatting button to remove the formatting rule.
 
 You can also add a **Remove format** button in your toolbar. To add the **Remove format** button:
 
-1. Navigate to your rich text editor.
-2. Go to the **Editor Settings** window.
-3.  Select **Remove format**.
+1. Navigate to your Rich Text Editor in the Document Type.
+2. Click the cog wheel.
+3. Click **Edit** next to the Rich Text Editor Data Type.
+4. Select **Remove format** under the **Toolbar Configuration**.
+5. Click **Submit**.
+6. Click **Save**.
 
-    ![Remove Format](../../../../../10/umbraco-cms/tutorials/editors-manual/working-with-content/images/removeFormat-v9.png)
+## Links
 
-### View Source Code
+![Link Button](images/Link-Button-v11.png)
 
-![View Source Code](../../../../../10/umbraco-cms/tutorials/editors-manual/working-with-content/images/source-code-v9.png)
+The **Insert/Edit Link** button is used to add or update links to internal pages, external pages, media files, email links, and anchors. The process for inserting a hyperlink differs depending on the type of hyperlink you wish to create.
 
-If you are proficient in HTML, you can switch to HTML mode to create your page. You can also check the code and make minor adjustments to get the page exactly as you want it.
+To insert different types of hyperlinks, follow these steps:
 
-Certain elements such as scripts is not recognized by the HTML view of the rich text editor. You can enter the scripts directly in the text view of the editor.
+<details>
 
-### Links
+<summary>Link to a Page on Another Website</summary>
 
-![Link Button](../../../../../10/umbraco-cms/tutorials/editors-manual/working-with-content/images/linkButton.jpg)
-
-The **Insert/edit Link** button is used to add or update links to internal pages, external pages, media files, email links, and anchors. To insert different types of hyperlinks, follow these steps:
-
-#### Link to a Page on Another Website
-
-1. Select the text for the hyperlink.
-2. Click the **Insert Link** button. The **Select Link** tree opens on the right-side of the editor.
-3. In the **Link** field, enter the URL of the web page you wish to link to.
-4. In the **Link title** field, enter the text that will be shown as a pointer to the link. This is an important information for everyone reading the website with different accessibility aids.
-5. In the **Target** field, select the checkbox if you want the link to open in a new window or tab.
+1. Select the text that will form the hyperlink.
+2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
+3. Enter the URL of the web page you wish to link to in the **Link** field.
+4. Enter the text that will be displayed as the link title in the **Link Title** field.
+   - This is important information for everyone reading the website with different accessibility aids.
+5. Select the **Target** field to open the link in a new window or tab.
 6. Click **Submit**.
 
-![External Link](../../../../../10/umbraco-cms/tutorials/editors-manual/working-with-content/images/Create-link-v9.png)
+![Link to a Page on another Website](images/Link-to-an-external-Page-v11.png)
 
-#### Link to a Page in Umbraco
+</details>
 
-1. Select the text for the hyperlink.
-2. Click the **Insert Link** button. The **Select Link** tree opens on the right-side of the editor.
-3. Select a page from the **Link to page** tree. The selection will populate the **Link** and **Link Title** fields.
-4. In the **Link Title** field, enter the text that will be shown as a pointer to the link. By default, the name of the selected page will be populated.
-5. In the **Target** field, select the checkbox if you want the link to open in a new window or tab.
+<details>
+
+<summary>Link to a Page in Umbraco</summary>
+
+1. Select the text that will form the hyperlink.
+2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
+3. Select a page from the **Link to page** field.
+   - This will populate the **Link** and  **Link Title** fields automatically.
+4. Select the **Target** field to open the link in a new window or tab.
+5. Click **Submit**.
+
+![Link to a Page in Umbraco](images/Link-to-a-Page-v11.png)
+
+</details>
+
+<details>
+
+<summary>Link to a Media File in Umbraco</summary>
+
+1. Select the text that will form the hyperlink.
+2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
+3. Select the **Link to Media** button to select the media item.
+4. Click **Select**.
+   - This will automatically populate the **Link** and **Link Title** fields with the media item information.
+   - By default, the **Link** field contains the media file name and cannot be edited.
+5. Select the **Target** field to open the link in a new window or tab.
 6. Click **Submit**.
 
-![Internal Link](../../../../../10/umbraco-cms/tutorials/editors-manual/working-with-content/images/Internal-links-v9.png)
+![Link to a Media File in Umbraco](images/Link-to-Media-File-v11.png)
 
-#### Link to a Media File in Umbraco
+</details>
 
-1. Select the text for the hyperlink.
-2. Click the **Insert Link** button. The **Select Link** tree opens on the right-side of the editor.
-3. Select the **Select media** button. The **Select media** tree opens where you can select the media item.
-4. Click **Select**. The selection will populate the **Link** and **Link Title** fields.
-5. In the **Target** field, select the checkbox if you want the link to open in a new window or tab.
+<details>
+
+<summary>Link to an Email Address in Umbraco</summary>
+
+1. Select the text that will form the hyperlink.
+2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
+3. Enter the text `mailto:` followed by the email address you wish to link to in the **Link** field. For example, `mailto:contact@umbraco.com`.
+4. Enter the text that will be displayed as the link title in the **Link Title** field.
+5. Select the **Target** field to open the link in a new window or tab.
 6. Click **Submit**.
 
-![Link Media](../../../../../10/umbraco-cms/tutorials/editors-manual/working-with-content/images/Link-media-v9.png)
+![Link to an Email Address in Umbraco](images/Link-to-Email-Address-v11.png)
 
-#### Link to an email address in Umbraco
+</details>
 
-1. Select the text for the hyperlink.
-2. Click the **Insert Link** button. The **Select Link** tree opens on the right-side of the editor.
-3. In the **Link** field, enter the text `mailto:` followed by the email address you wish to link (e.g. mailto:name@company.com).
-4. In the **Link Title** field, enter the text that will be shown as a pointer to the link.
-5. In the **Target** field, select the checkbox if you want the link to open in a new window or tab.
-6. Click **Submit**.
+<details>
 
-![Link Email](../../../../../10/umbraco-cms/tutorials/editors-manual/working-with-content/images/Email-link-v9.png)
+<summary>Link to an Anchor on the Same Page</summary>
 
-#### Link to an Anchor on the Same Page
+An anchor allows you to create internal page links that enable users to navigate within a page. There are two parts to setting up an anchor: the anchor itself and the link to the anchor.
 
-An anchor allows you to create internal page links that enable users to navigate within a page. There are two parts to setting up an anchor - the anchor itself and the link to the anchor.
+#### Creating an Anchor
 
-#### Creating an anchor
+1. Click the editor cursor where you wish to create the anchor.
+2. Click the **Anchor Button** which will launch the Anchor creation dialog.
+3. Enter your anchor name in the **ID** field.
+   - You should avoid special characters and spaces.
+4. Click **Save**.
+   - You will see a small anchor icon where you previously had the editor cursor.
 
-1. Select the text or place the cursor where you wish to create the anchor.
-2.  Click the **Anchor** button. The **Create Anchor** dialog opens.
-
-    ![Anchor Button](../../../../../10/umbraco-cms/tutorials/editors-manual/working-with-content/images/anchorButton.jpg)
-3.  Enter the anchor name in the **ID** field. Aoid special characters and do not use spaces.
-
-    ![Anchor Dialogue](../../../../../10/umbraco-cms/tutorials/editors-manual/working-with-content/images/Anchor-v8.png)
-4. Click **OK**. You will see a small anchor icon where you previously had the cursor in the editor.
+![Creating an Anchor](images/Creating-an-anchor-v11.png)
 
 To delete the anchor:
 
-1. Select the anchor icon in the editor.
-2. Press the **Delete** key.
+1. Select the anchor icon.
+2. Press your **Delete** key.
 
-#### Linking to an anchor
+![Deleting an Anchor](images/Delete-an-anchor-v11.png)
 
-1. Select the text where you wish to add the anchor.
-2. Click the **Insert link** button. The **Select Link** tree opens on the right-side of the editor.
-3. Add a `#`symbol followed by the name of your anchor in the **anchor/querystring** field.
-4. Click **Submit**.
+#### Linking to an Anchor
 
-![Link Anchor](../../../../../10/umbraco-cms/tutorials/editors-manual/working-with-content/images/Linking-anchor-v9.png)
+1. Select the text to which you wish to add the anchor link to.
+2. Click the **Insert link** button to open the link properties slide-out menu.
+3. Add a hash symbol (#) followed by the name of your anchor in the **Anchor/querystring** field.
+4. Enter the text that will be displayed as the link title in the **Link Title** field.
+5. Click **Submit**.
 
-#### Create a Link from an Image
+![Linking to an anchor](images/Linking-to-Anchor-v11.png)
+
+</details>
+
+<details>
+
+<summary>Create a Link from an Image</summary>
 
 You can make images into clickable links in Umbraco:
 
-1. Insert an image into the editor (see [Working with Images](./#working-with-images), for more details).
-2. Select the image to form the hyperlink.
-3. Click the **Insert Link** button. The **Select Link** tree opens on the right-side of the editor.
-4. In the **Link** field, enter the URL of the web page you wish to link to.
-5. In the **Link title** field, enter the text that will be shown as a pointer to the link.
-6. In the **Target** field, select the checkbox if you want the link to open in a new window or tab.
-7. Click **Submit**.
+1. Insert an image into the Rich Text Editor.
+   - For more information, see the [Working with Images](#working-with-images) section.
+2. Select the image that will form the hyperlink.
+3. Enter the URL of the web page you wish to link to in the **Link** field.
+4. Enter the text that will be displayed as the link title in the **Link Title** field.
+5. Select the **Target** field to open the link in a new window or tab.
+6. Click **Submit**.
 
-#### Removing a link
+![Create a Link from an Image](images/Link-from-Image-v11.png)
+
+</details>
+
+<details>
+
+<summary>Removing a Link</summary>
+
+![Remove link Button](images/Remove-link-v11.png)
 
 To remove a link:
 
-1. Select the link in the editor. For text links, place the cursor anywhere within the link text. For an image, select the image itself.
-2.  Click the **Remove Link** button which removes the hyperlink.
+1. Select the link in the Rich Text Editor.
+   - For text links, click the cursor anywhere within the link text. For an image, click the image itself.
+2. Click the **Remove Link** button which will remove the hyperlink.
+3. Alternatively, you can click the **Insert/Edit Link** button and remove the link from the **Link** field.
 
-    ![Unlink](../../../../../10/umbraco-cms/tutorials/editors-manual/working-with-content/images/unlink.jpg)
+</details>
 
-If the remove link button is not in your richtext editor toolbar, you can add the **Remove Link** button:
-
-1. Navigate to your rich text editor.
-2. Go to the **Editor Settings** window.
-3.  Select **Remove Link**.
-
-    ![Remove Format](../../../../../10/umbraco-cms/tutorials/editors-manual/working-with-content/images/remove-link-v9.png)
-
-Alternatively, click the **Insert/Edit Link** button and manually remove the link from the **Link** field.
-
-### Working with Images
+## Working with Images
 
 To display images on a page the images must be uploaded to your Umbraco media library.
 
-Many organisations set up a media library containing images that editors can use on their pages. The procedure for uploading an image varies slightly depending on which method your organisation has adopted, so check with your system administrator what is applicable in your organisation.
+Many administrators set up a media library containing images that editors can use on their pages.  Others allow their editor's free use of their images. The procedure for uploading an image varies slightly depending on which method your administrators have setup. Check with your system administrator for more information about this.
 
-#### Inserting an Image from the Media Library
+<details>
 
-1. Place the cursor in the editor where you want to insert your image.
-2. Click the **Media Picker** button on the toolbar. The **Select Media** tree opens on the right-side of the editor.
-3. Select the folder in which your image is stored.
-4. Click the thumbnail of the image. The **Edit selected media** tree opens.
-5. Enter an **Alternative Text** and **Caption** for your image. Both these fields are optional.
-6. Click **Select** to add the image.
+<summary>Inserting an Image from the Media Library</summary>
 
-![Media Picker](../../../../../10/umbraco-cms/tutorials/editors-manual/working-with-content/images/Media-picker-v9.png)
+1. Place the cursor in the Rich Text Editor where you want to insert your image.
+2. Click the **Media Picker** button from the toolbar.
+3. Select the folder in which the image is.
+4. Click the thumbnail of your chosen image to open the image properties menu.
+5. Enter a name/description for the image in the **Caption (optional)** field.
+   - It is important to add descriptive titles to images as these are used to assist visually impaired users.
+6. Click **Select**.
 
-#### Inserting an Image from your Computer
+![Inserting an Image from the Media Library](images/Inserting-Image-from-the-Media-Library-v11.png)
 
-You can upload images directly from your local directory in the rich text editor. These images will be stored in the Umbraco media library. Ensure that the image is placed in the correct location within the library.
+</details>
 
-You can also create folders in the media library by clicking the `+` icon next to `Media/`.
+<details>
 
-![Media Upload](../../../../../10/umbraco-cms/tutorials/editors-manual/working-with-content/images/create-new-folders-v9.png)
+<summary>Inserting an Image from your Computer</summary>
 
-To insert an image from your computer:
+You can upload images directly from the Rich Text Editor on the page you are editing. These images will be stored in the Umbraco Media Library. Therefore, it would be best to ensure the image is placed in the correct location within the library. If you click the plus icon underneath the search bar in the media picker slide-out menu you can create folders in the media library.
 
-1. Place the cursor in the editor where you want to insert your image.
-2. Click the **Media Picker** button. The **Select Media** tree opens on the right-side of the editor.
-3. Click the **Upload** button in the top-right corner of the tree.
-4. Browse to the directory, select the image, and click **Open**.
-5. Enter an **Alternative Text** and **Caption** for your image. Both these fields are optional.
-6. Click **Select** to add the image.
+1. Place the cursor in the Rich Text Editor where you want to insert your image.
+2. Click the **Media Picker** button from the toolbar.
+3. Click the **Upload** button which is located in the top right-hand corner of the menu.
+4. Select the chosen image from the pop-up window.
+5. Enter a name/description for the image in the **Caption (optional)** field.
+6. Click **Select**.
 
-![Media Upload](../../../../../10/umbraco-cms/tutorials/editors-manual/working-with-content/images/Upload-from-local-v9.png)
+![Inserting an Image from your Computer](images/Inserting-an-Image-from-Computer-v11.png)
 
-#### Deleting an Image from the Page
+</details>
+
+<details>
+
+<summary>Deleting an Image from the Page</summary>
 
 To delete an image from the page:
 
-1. Select the image in your editor.
-2. Press **Delete** on your keyboard. The image is removed from the page, but is not deleted from the Umbraco media library.
+1. Select the image.
+2. Press the **Delete** button on your keyboard.
+   - The image disappears from the page but is not deleted from the Umbraco Media library.
 
-### Macros
+</details>
 
-In Umbraco, macros are small building blocks of functionality that can be used in an editor. Each macro encompasses a piece of functionality and provides an interface to be able to modify the macro as per your requirements. A macro can be anything from a contact form to an embeddable media player. The advantage of macros is that it gives editors the ability to add complex elements to the page in a less complex manner.
+## Macros
 
-The macros available to you differ from system to system. Contact your system administrator to find out which macros are available to you and what they do.
+In Umbraco, Macros are small building blocks of functionality that can be dropped into an editor. Each macro encompasses a piece of functionality and provides an interface to modify the macro to your requirements. A macro can be anything from a contact form to an embedded media player. The advantage of macros is that it gives editors the ability to add complex elements to a page.
 
-#### Adding a Macro to the Page
+The macros available differ on each system. Kindly check with your system administrator to find out which macros are available to you and what they do. The process for adding and updating a macro is as follows:
 
-1. Place the cursor in the editor where you want to insert your macro.
-2. Click the **Insert Macro** button. The **Select Macro** tree opens on the right-side of the editor.
-3.  Select a macro to insert or enter the macro name in the **Search** bar.
+### Adding a Macro to the Page
 
-    ![Macro Picker](../../../../../10/umbraco-cms/tutorials/editors-manual/working-with-content/images/Select-a-macro.png)
-4. Configure the macro as required.
-5.  Click **Submit** to insert the macro. The macro is displayed in the editor with a dotted border.
+1. Place the cursor in the Rich Text Editor where you want to insert your macro.
+2. Click the **Insert Macro** button from the toolbar.
+3. Select a macro to insert from the macros list.
+4. Click **Submit**.
+   - The macro is displayed in the editor with a dotted border.
 
-    ![Macro Editor](../../../../../10/umbraco-cms/tutorials/editors-manual/working-with-content/images/Select-a-macro-v9.png)
+![Adding a Macro to the Page](images/Select-Macro-v11.png)
 
-{% hint style="info" %}
-If there are no macros, you can [Create Macros](../../../reference/templating/macros/managing-macros.md#creating-macros). The above image is an example of macros available when a Starter Kit package is installed.
-{% endhint %}
+### Editing Macros
 
-#### Editing macros
+You can edit values after a macro has been added to the Rich Text Editor:
 
-You can edit the macro values after it has been added to the rich text editor:
+1. Select the macro in the Rich Text Editor.
+2. Click the **Insert Macro** button from the toolbar.
+   - This will open the configuration menu where you can edit any values previously added.
 
-1. Highlight the macro in the rich text editor.
-2. Click the **Insert Macro** button. The **Select Macro** tree opens on the right-side of the editor.
-3. Here, you can edit the configuration as per your requirements.
-
-#### Removing macros
+### Removing Macros
 
 To remove a macro:
 
-1. Highlight the macro in the rich text editor.
+1. Select the macro in the Rich Text Editor.
 2. Press the **Delete** or **Backspace** button on your keyboard.
 
-### Tables
+## Tables
 
-Tables are used to format information in a grid based structure. When you insert a table, you select how many rows and columns the table should comprise of, as well as fill in a number of additional optional formatting properties. These values can be altered later, so it is not important to know exactly what your table will look like when you create it.
+Tables are used to format information in a grid-based structure. When you insert a table, you select how many rows and columns the table should comprise of. Additionally, you can fill in some optional formatting properties. These values can be changed later, so it is not important to know exactly what your table will look like when you create it.
 
-![Tables](../../../../../10/umbraco-cms/tutorials/editors-manual/working-with-content/images/Table-v9.png)
+![Inserting a Table](images/Insert-a-table-v11.png)
 
-#### Editing an Existing Table
+### Editing an Existing Table
 
-To edit an existing table:
+To edit the table after creating it, click on the table. A pop-up appears with different table properties and options. Alternatively, you can click on the **Table** button in the Rich Text Editor toolbar.
 
-1. Click on a cell in the table.
-2. A small square box is displayed with some quick actions.
-3.  Select the action of your choice. Alternatively, click on the **Table** button in the rich text editor. There are various other options available for modifying cells, rows and columns such as height, alignment, merge, insert and delete.
+![Editing an Existing Table](images/Editing-an-existing-table-v11.png)
 
-    ![Table Options](../../../../../10/umbraco-cms/tutorials/editors-manual/working-with-content/images/Table-options-v9.png)
+Clicking on **Table Properties** gives you different options for modifying the table’s appearance. However, the developer of the website may have already created table styles for you so you may not need to adjust these settings.
 
-**Table Properties** provides several options for modifying the table’s appearance. However the developer of the website may have already created table styles for you so you may not need to adjust these settings.
+There are other options available for modifying cells, rows, and columns such as width, height, alignment, border, and so on.
 
-![Table Properties](../../../../../10/umbraco-cms/tutorials/editors-manual/working-with-content/images/Table-properties-v8.png)
+![Table Properties](images/table-properties-v11.png)
+
+## Configuring a Rich Text Editor
+
+The Rich Text Editor in Umbraco can be configured in many different ways.
+
+For more information, see the [Rich Text Editor Configuration](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration) article.
