@@ -113,6 +113,10 @@ If you are working with a Cloud project, see the [Working locally](https://docs.
 You can install and manage packages in a project.
 
 1. Navigate to your project/solution folder.
+
+{% hint style="info" %}
+If you have cloned down an Umbraco Project, you will need to navigate to the `src ` folder where you can see a `.csproj` file.
+{% endhint %}
 2. Open a command prompt of your choice.
 3. Run the following command to install the `Microsoft.AspNetCore.Authentication.Google` package.
 
