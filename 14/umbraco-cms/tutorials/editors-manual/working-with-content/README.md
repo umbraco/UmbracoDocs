@@ -162,7 +162,7 @@ To insert different types of hyperlinks, follow these steps:
 
 #### Link to an Anchor on the Same Page
 
-An anchor allows you to create internal page links that enable users to navigate within a page. There are two parts to setting up an anchor; the anchor itself and the link to the anchor.
+An anchor allows you to create internal page links that enable users to navigate within a page. There are two parts to setting up an anchor: the anchor itself and the link to the anchor.
 
 ##### Creating an Anchor
 
