@@ -182,7 +182,7 @@ To delete the anchor:
 
 ![Deleting an Anchor](images/Delete-an-anchor-v11.png)
 
-#### Linking to an Anchor
+##### Linking to an Anchor
 
 1. Select the text to which you wish to add the anchor link to.
 2. Click the **Insert link** button to open the link properties slide-out menu.
