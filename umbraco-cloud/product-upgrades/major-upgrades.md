@@ -16,7 +16,7 @@ You need to ensure that any packages you use are available in the latest version
 Ensure you know the [Breaking changes](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific#breaking-changes) in the latest version of Umbraco CMS.
 {% endhint %}
 
-### **Upgrading from Umbraco 9**
+## **Upgrading from Umbraco 9**
 
 When upgrading from Umbraco 9, you need to upgrade to the closest [Long-term Support (LTS) major](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/). For Umbraco 9 that is Umbraco 10. From Umbraco 10 you can then upgrade directly to the next long-term support which is Umbraco 13.
 
@@ -24,7 +24,7 @@ When upgrading from Umbraco 9 to Umbraco 10, follow the dropdowns named: _**"Upg
 
 These are extra steps needed when going from Umbraco 9 to Umbraco 10.
 
-### **Upgrading from Umbraco 10**
+## **Upgrading from Umbraco 10**
 
 You can upgrade from Umbraco 10 to the latest version directly. If you choose to skip upgrading to versions 11 and 12, you will no longer receive warning messages for obsolete features. However, if you do skip these versions, any breaking changes will no longer compile.
 
