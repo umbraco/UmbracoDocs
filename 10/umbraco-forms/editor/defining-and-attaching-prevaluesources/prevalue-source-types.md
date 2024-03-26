@@ -18,7 +18,7 @@ Here is a quick overview of them:
 
         Additional settings can be applied:
 
-        * Select **Use current page as root** instead of choosing a specific root node. The preview is not available when this setting is enabled.
+        * Select **Use current page as root** instead of choosing a specific root node. _The preview is not available when this setting is enabled._
         * Select a specific **Document type**, if the selected root node contains a different Document Type.
         * Select to include **Grand children** of the selected root node.
 *   **SQL Database**
