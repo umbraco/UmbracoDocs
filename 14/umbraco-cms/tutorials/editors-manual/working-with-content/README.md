@@ -237,7 +237,7 @@ Many administrators set up a media library containing images that editors can us
 
 #### Inserting an Image from your Computer
 
-You can upload images directly from the Rich Text Editor on the page you are editing. These images will be stored in the Umbraco Media Library. Therefore care should be taken to ensure that the image is placed in the correct location within the library. If you click the plus icon underneath the search bar in the media picker slide-out menu you can create folders in the media library.
+You can upload images directly from the Rich Text Editor on the page you are editing. These images will be stored in the Umbraco Media Library. Therefore, it would be best to ensure the image is placed in the correct location within the library. If you click the plus icon underneath the search bar in the media picker slide-out menu you can create folders in the media library.
 
 1. Place the cursor in the Rich Text Editor where you want to insert your image.
 2. Click the **Media Picker** button from the toolbar.
