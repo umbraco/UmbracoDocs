@@ -116,7 +116,7 @@ We have the possibility of generating and providing Forms licenses using alterna
 
 These can be used if you reference `Umbraco.Licensing` version `13.0.1` or higher.
 
-And apply the following configuration with the appropriate algorithm - `DES` (the default), `TripleDES` or `AES`:
+Apply the following configuration with the appropriate algorithm - `DES` (the default), `TripleDES`, or `AES`:
 
 ```json
   "Umbraco": {
