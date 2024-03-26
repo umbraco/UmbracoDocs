@@ -192,7 +192,7 @@ To delete the anchor:
 
 ![Linking to an anchor](images/Linking-to-Anchor-v11.png)
 
-### Create a Link from an Image
+#### Create a Link from an Image
 
 You can make images into clickable links in Umbraco:
 
