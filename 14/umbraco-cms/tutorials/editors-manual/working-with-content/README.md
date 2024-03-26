@@ -164,7 +164,7 @@ To insert different types of hyperlinks, follow these steps:
 
 An anchor allows you to create internal page links that enable users to navigate within a page. There are two parts to setting up an anchor; the anchor itself and the link to the anchor.
 
-### Creating an Anchor
+##### Creating an Anchor
 
 1. Click the editor cursor where you wish to create the anchor.
 2. Click the **Anchor Button** which will launch the Anchor creation dialog.
