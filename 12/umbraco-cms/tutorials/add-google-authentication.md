@@ -54,7 +54,7 @@ The first thing to do is set up a Google API. To do this, you need to go to [htt
     ![Enable APIs](images/Enable_Apis_v13.png)
 
 3. Type **Google+ API** in the **Search** field.
-4. Click **Enable**.
+4. Select it and then **Enable** it.
 
     ![Enable Google APIs](images/Enable_Google_API_v13.png)
 
@@ -113,11 +113,16 @@ If you are working with a Cloud project, see the [Working locally](https://docs.
 You can install and manage packages in a project.
 
 1. Navigate to your project/solution folder.
-2. Open a command prompt of your choice.
+
+{% hint style="info" %}
+If you have cloned down an Umbraco Project, navigate to the `src ` folder where you can see a `.csproj` file.
+{% endhint %}
+
+2. Open a command-line of your choice such as "Command Prompt" at the mentioned location.
 3. Run the following command to install the `Microsoft.AspNetCore.Authentication.Google` package.
 
     ```cli
-    dotnet add package Microsoft.AspNetCore.Authentication.Google --version 8.0.3
+    dotnet add package Microsoft.AspNetCore.Authentication.Google
     ```
 
 4. Once the package is installed, open the **.csproj** file to ensure if the package reference is added:
@@ -129,7 +134,7 @@ You can install and manage packages in a project.
     ```
 
 {% hint style="info" %}
-Always check the [latest version of the package](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Google) before installing it.
+You can check the [latest version of the package](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Google) before installing it.
 {% endhint %}
 
 For more information on installing and using a package with the .Net CLI, see [Microsoft Documentation](https://learn.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli).
