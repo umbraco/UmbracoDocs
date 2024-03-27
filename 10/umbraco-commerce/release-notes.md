@@ -19,7 +19,7 @@ This section contains the release notes for Umbraco Commerce 10 including all ch
 
 #### [10.0.9](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.9) (March 27th 2024)
 
-* Fixed properties set in background from an entity action lost when resaving the entity from the UI after the action [#472](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/472).
+* Fixed properties set in the background from an entity action lost when resaving the entity from the UI after the action [#472](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/472).
 * Fixed unable to override cart editor view like you can the order editor view [#474](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/474).
 
 #### [10.0.8](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.8) (March 3rd 2024)
