@@ -15,7 +15,7 @@ Before  proceeding, make sure to read the [Management API](./management-api/READ
 
 This example can be a starting point for creating a secure custom API with automatic Swagger documentation. You can find other examples in the [API versioning and OpenAPI](./api-versioning-and-openapi.md) article.
 
-1. Create a new `.cs` file called `MyBackOfficeSecurityRequirementsOperationFilter` at the root of the project in an Umbraco v14+ installation.
+1. Create a new `.cs` file called `MyBackOfficeSecurityRequirementsOperationFilter` in your Umbraco project.
 
 2. Add the following code so that the new API shows in the Swagger documentation and Swagger UI:
 
