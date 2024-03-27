@@ -195,16 +195,17 @@ You have now moved and merged the files from your existing site into the Umbraco
 In this next part, it is time to generate the so-called UDA-files for all your project's meta data.
 
 For more details about UDA files, read the [UDA Files](../../set-up/power-tools/generating-uda-files.md#what-are-uda-files) article.
-
+ 
 * Make sure the folder `/Umbraco/Deploy/Revision` on your Umbraco Cloud project is empty
   * If you have any files in the folder, you can safely remove those at this point
 * Start your local cloud project
 * Go to the settings section in your project
-* Select `Extract Schema To Data Files` Command from the **Deploy Operations** drop-down and click **Trigger Operation**.
+* Go to the Deploy tab
+* Under **Deploy Operations** > **Export Schema To Data Files** click `Export Schema`.
   * Generating the UDA files may take a while, depending on the extent of your project
   * You will see a `Last deployment operation completed` status once the export is done
-  * Run `Schema Deployment From Data Files` to check that the UDA files have been generated correctly
-  * When you see a `Last deployment operation completed` status, it means everything is working as expected
+  * Run `Update Umbraco Schema` to check that the UDA files have been generated correctly
+  * When you see a `Last deployment operation completed` status at the top of this page, it means everything is working as expected
 * You should now see that your `/Umbraco/Deploy/revision` folder has been populated with UDA files corresponding to your project's metadata
 
 ![Run echo > deploy-export](images/deployDashBoard.png)
