@@ -30,7 +30,7 @@ To set the authorization, click on the **Authorize** button:
 
 ![Umbraco Management API Authorize Button](../images/management-api-swagger-authorize-button.png)
 
-Then a popup will appear with some setup information and login form for authorization:
+Then a popup will appear with some setup information and a login form for authorization:
 
 ![Umbraco Management API Authorize Login](../images/management-api-swagger-authorize-instructions.png)
 
