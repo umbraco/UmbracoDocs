@@ -1,5 +1,5 @@
 ---
-description: List of services references, how to use them and some examples.
+description: List of service references along with instructions on how to use them, as well as some examples for better understanding.
 ---
 
 # Services References
