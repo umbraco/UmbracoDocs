@@ -117,6 +117,8 @@ To insert different types of hyperlinks, follow these steps:
 
 <summary>Link to a Page on Another Website</summary>
 
+![Link to a Page on another Website](images/Link-to-an-external-Page-v11.png)
+
 1. Select the text that will form the hyperlink.
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
 3. Enter the URL of the web page you wish to link to in the **Link** field.
@@ -125,13 +127,13 @@ To insert different types of hyperlinks, follow these steps:
 5. Select the **Target** field to open the link in a new window or tab.
 6. Click **Submit**.
 
-![Link to a Page on another Website](images/Link-to-an-external-Page-v11.png)
-
 </details>
 
 <details>
 
 <summary>Link to a Page in Umbraco</summary>
+
+![Link to a Page in Umbraco](images/Link-to-a-Page-v11.png)
 
 1. Select the text that will form the hyperlink.
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
@@ -140,13 +142,13 @@ To insert different types of hyperlinks, follow these steps:
 4. Select the **Target** field to open the link in a new window or tab.
 5. Click **Submit**.
 
-![Link to a Page in Umbraco](images/Link-to-a-Page-v11.png)
-
 </details>
 
 <details>
 
 <summary>Link to a Media File in Umbraco</summary>
+
+![Link to a Media File in Umbraco](images/Link-to-Media-File-v11.png)
 
 1. Select the text that will form the hyperlink.
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
@@ -157,13 +159,13 @@ To insert different types of hyperlinks, follow these steps:
 5. Select the **Target** field to open the link in a new window or tab.
 6. Click **Submit**.
 
-![Link to a Media File in Umbraco](images/Link-to-Media-File-v11.png)
-
 </details>
 
 <details>
 
 <summary>Link to an Email Address in Umbraco</summary>
+
+![Link to an Email Address in Umbraco](images/Link-to-Email-Address-v11.png)
 
 1. Select the text that will form the hyperlink.
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
@@ -171,8 +173,6 @@ To insert different types of hyperlinks, follow these steps:
 4. Enter the text that will be displayed as the link title in the **Link Title** field.
 5. Select the **Target** field to open the link in a new window or tab.
 6. Click **Submit**.
-
-![Link to an Email Address in Umbraco](images/Link-to-Email-Address-v11.png)
 
 </details>
 
@@ -182,7 +182,9 @@ To insert different types of hyperlinks, follow these steps:
 
 An anchor allows you to create internal page links that enable users to navigate within a page. There are two parts to setting up an anchor: the anchor itself and the link to the anchor.
 
-#### Creating an Anchor
+### Creating an Anchor
+
+![Creating an Anchor](images/Creating-an-anchor-v11.png)
 
 1. Click the editor cursor where you wish to create the anchor.
 2. Click the **Anchor Button** which will launch the Anchor creation dialog.
@@ -191,8 +193,6 @@ An anchor allows you to create internal page links that enable users to navigate
 4. Click **Save**.
    - You will see a small anchor icon where you previously had the editor cursor.
 
-![Creating an Anchor](images/Creating-an-anchor-v11.png)
-
 To delete the anchor:
 
 1. Select the anchor icon.
@@ -200,15 +200,15 @@ To delete the anchor:
 
 ![Deleting an Anchor](images/Delete-an-anchor-v11.png)
 
-#### Linking to an Anchor
+### Linking to an Anchor
+
+![Linking to an anchor](images/Linking-to-Anchor-v11.png)
 
 1. Select the text to which you wish to add the anchor link to.
 2. Click the **Insert link** button to open the link properties slide-out menu.
 3. Add a hash symbol (#) followed by the name of your anchor in the **Anchor/querystring** field.
 4. Enter the text that will be displayed as the link title in the **Link Title** field.
 5. Click **Submit**.
-
-![Linking to an anchor](images/Linking-to-Anchor-v11.png)
 
 </details>
 
@@ -218,6 +218,8 @@ To delete the anchor:
 
 You can make images into clickable links in Umbraco:
 
+![Create a Link from an Image](images/Link-from-Image-v11.png)
+
 1. Insert an image into the Rich Text Editor.
    - For more information, see the [Working with Images](#working-with-images) section.
 2. Select the image that will form the hyperlink.
@@ -225,8 +227,6 @@ You can make images into clickable links in Umbraco:
 4. Enter the text that will be displayed as the link title in the **Link Title** field.
 5. Select the **Target** field to open the link in a new window or tab.
 6. Click **Submit**.
-
-![Create a Link from an Image](images/Link-from-Image-v11.png)
 
 </details>
 
@@ -255,6 +255,8 @@ Many administrators set up a media library containing images that editors can us
 
 <summary>Inserting an Image from the Media Library</summary>
 
+![Inserting an Image from the Media Library](images/Inserting-Image-from-the-Media-Library-v11.png)
+
 1. Place the cursor in the Rich Text Editor where you want to insert your image.
 2. Click the **Media Picker** button from the toolbar.
 3. Select the folder in which the image is.
@@ -262,8 +264,6 @@ Many administrators set up a media library containing images that editors can us
 5. Enter a name/description for the image in the **Caption (optional)** field.
    - It is important to add descriptive titles to images as these are used to assist visually impaired users.
 6. Click **Select**.
-
-![Inserting an Image from the Media Library](images/Inserting-Image-from-the-Media-Library-v11.png)
 
 </details>
 
@@ -273,14 +273,14 @@ Many administrators set up a media library containing images that editors can us
 
 You can upload images directly from the Rich Text Editor on the page you are editing. These images will be stored in the Umbraco Media Library. Therefore, it would be best to ensure the image is placed in the correct location within the library. If you click the plus icon underneath the search bar in the media picker slide-out menu you can create folders in the media library.
 
+![Inserting an Image from your Computer](images/Inserting-an-Image-from-Computer-v11.png)
+
 1. Place the cursor in the Rich Text Editor where you want to insert your image.
 2. Click the **Media Picker** button from the toolbar.
 3. Click the **Upload** button which is located in the top right-hand corner of the menu.
 4. Select the chosen image from the pop-up window.
 5. Enter a name/description for the image in the **Caption (optional)** field.
 6. Click **Select**.
-
-![Inserting an Image from your Computer](images/Inserting-an-Image-from-Computer-v11.png)
 
 </details>
 
@@ -298,21 +298,21 @@ To delete an image from the page:
 
 ## Tables
 
-Tables are used to format information in a grid-based structure. When you insert a table, you select how many rows and columns the table should comprise of. Additionally, you can fill in some optional formatting properties. These values can be changed later, so it is not important to know exactly what your table will look like when you create it.
-
 ![Inserting a Table](images/Insert-a-table-v11.png)
+
+Tables are used to format information in a grid-based structure. When you insert a table, you select how many rows and columns the table should comprise of. Additionally, you can fill in some optional formatting properties. These values can be changed later, so it is not important to know exactly what your table will look like when you create it.
 
 ### Editing an Existing Table
 
+![Editing an Existing Table](images/Editing-an-existing-table-v11.png)
+
 To edit the table after creating it, click on the table. A pop-up appears with different table properties and options. Alternatively, you can click on the **Table** button in the Rich Text Editor toolbar.
 
-![Editing an Existing Table](images/Editing-an-existing-table-v11.png)
+![Table Properties](images/table-properties-v11.png)
 
 Clicking on **Table Properties** gives you different options for modifying the table’s appearance. However, the developer of the website may have already created table styles for you so you may not need to adjust these settings.
 
 There are other options available for modifying cells, rows, and columns such as width, height, alignment, border, and so on.
-
-![Table Properties](images/table-properties-v11.png)
 
 ## Configuring a Rich Text Editor
 
