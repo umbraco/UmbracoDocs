@@ -10,7 +10,7 @@ This guide is created by a community member and is not managed by Umbraco HQ. So
 
 {% endhint %}
 
-This guide covers how to set up OAuth authorization for Swagger using Postman. It showcases a starting point on how to set up a basic OAuth authorization for those who are not that familiar with OAuth integration.
+This guide covers how to set up OAuth authorization for the Management API using Postman. 
 
 Before proceeding, make sure to read the [Management API](./README.md) article. It provides information about Authorization and why it is needed in this article.
 
