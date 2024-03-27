@@ -62,7 +62,7 @@ All services can be accessed with the following using statement:
 using Umbraco.Cms.Core.Services;
 ```
 
-In other cases, you may be able to use [Dependency Injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection). For instance if you have registered your own class in Umbraco's dependency injection, you can specify the service interface in your constructor.
+In some cases, you can use [Dependency Injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection). For example, if you have registered your class in Umbraco's dependency injection, you can specify the service interface in your constructor.
 
 For example, if you use a `NotificationService` you can use Dependency Injection via the `INotificationService` interface like this:
 
