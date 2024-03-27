@@ -1,7 +1,4 @@
 ---
-versionFrom: 9.5.0
-keywords: 2fa, security, members, users
-meta.Title: Two-factor authentication
 description: >-
   Umbraco users and members support a two-factor authentication (2FA)
   abstraction for implementing a 2FA provider of your choice
@@ -10,6 +7,12 @@ description: >-
 # Two-factor Authentication
 
 Two-factor authentication (2FA) for Umbraco members is activated by implementing an `ITwoFactorProvider` interface and registering the implementation. The implementation can use third-party packages to archive for example support for authentication apps like Microsoft- or Google Authentication App.
+
+{% hint style="info" %}
+
+If you are using [Umbraco Cloud](https://umbraco.com/products/umbraco-cloud/), you can enable multi-factor authentication in Umbraco ID. For more information, see the [Multi-Factor Authentication](https://docs.umbraco.com/umbraco-cloud/set-up/multi-factor-authentication-on-cloud) article.
+
+{% endhint %}
 
 ## Two-factor authentication for Members
 
@@ -201,6 +204,7 @@ In the following example, we will use the [GoogleAuthenticator NuGet Package](ht
 
 {% tabs %}
 {% tab title="Latest version" %}
+
 ```
 using System.Runtime.Serialization;
 using Google.Authenticator;
@@ -285,9 +289,11 @@ namespace My.Website
     }
 }
 ```
+
 {% endtab %}
 
 {% tab title="Umbraco 9" %}
+
 ```
 using System;
 using System.Runtime.Serialization;
@@ -374,6 +380,7 @@ namespace My.Website
     }
 }
 ```
+
 {% endtab %}
 {% endtabs %}
 
