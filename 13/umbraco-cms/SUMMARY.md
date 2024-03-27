@@ -463,7 +463,6 @@
     * [Copying a Page](tutorials/editors-manual/getting-started-with-umbraco/copying-a-page.md)
     * [Deleting and Restoring Pages](tutorials/editors-manual/getting-started-with-umbraco/deleting-and-restoring-pages.md)
   * [Working with Rich Text Editor](tutorials/editors-manual/working-with-content/README.md)
-    * [Rich Text Editor](tutorials/editors-manual/working-with-content/rich-text-editor.md)
   * [Version Management](tutorials/editors-manual/version-management/README.md)
     * [Comparing Versions](tutorials/editors-manual/version-management/comparing-versions.md)
     * [Rollback to a Previous Version](tutorials/editors-manual/version-management/rollback-to-a-previous-version.md)
