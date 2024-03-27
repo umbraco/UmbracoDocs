@@ -106,7 +106,7 @@ The value contains the path of your custom license directory relative to the roo
 This will also change the location for other Umbraco-related licenses in this project.
 {% endhint %}
 
-## Note on Federal Information Processing Standards (FIPS) Compliant Environments
+## Federal Information Processing Standards (FIPS) Compliant Environments
 
 The algorithm used to decrypt Forms licenses is not supported on locked down FIPS compliant environments, such as those used in the defense industry.
 
