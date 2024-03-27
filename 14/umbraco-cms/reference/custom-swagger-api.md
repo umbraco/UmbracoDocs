@@ -13,7 +13,7 @@ Before  proceeding, make sure to read the [Management API](./management-api/READ
 
 {% endhint %}
 
-This example can be a starting point for creating a secure custom API in the Swagger documentation or using the API Controller. You can find other examples in the [API versioning and OpenAPI](./api-versioning-and-openapi.md) article.
+This example can be a starting point for creating a secure custom API with automatic Swagger documentation. You can find other examples in the [API versioning and OpenAPI](./api-versioning-and-openapi.md) article.
 
 1. Create a new `.cs` file called `MyBackOfficeSecurityRequirementsOperationFilter` at the root of the project in an Umbraco v14+ installation.
 
