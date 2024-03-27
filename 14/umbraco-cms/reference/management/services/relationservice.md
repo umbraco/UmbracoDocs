@@ -4,7 +4,7 @@ The `RelationService` allows you to create relations between objects that would 
 
 # Examples
 
-Below you will examples using the `RelationService`.
+Below you will find examples using `RelationService`.
 
 ## Automatically relate to root node
 
