@@ -24,7 +24,7 @@ In the Swagger Umbraco Management API, you can find a collection of available en
 
 ## Authorization
 
-The Management API endpoints are protected by the backoffice authorization policy and need an authentication token to interact with them.
+The Management API endpoints are protected by the backoffice authorization policies and need an authentication token to interact with them.
 
 To set the authorization, click on the **Authorize** button:
 
