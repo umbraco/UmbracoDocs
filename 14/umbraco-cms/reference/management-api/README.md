@@ -44,31 +44,6 @@ You can see an example of how to connect a backoffice user via OAuth2 in Postman
 
 {% endhint %}
 
-When in non-production environment, you will need to connect via OAuth2 with the following Umbraco Authentication specifications:
-
-**Authorization URL**
-
-```http
-{yourdomain}/umbraco/management/api/v1/security/back-office/authorize
-```
-
-**Token URL**
-
-```http
-{yourdomain}/umbraco/management/api/v1/security/back-office/token
-```
-
-**Flow**
-
-```http
-authorizationCode with PKCE
-```
-
-**client_id**
-
-```http
-umbraco-swagger
-```
 
 # Test an Endpoint
 
