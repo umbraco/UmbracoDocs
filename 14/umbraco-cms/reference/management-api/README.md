@@ -4,7 +4,7 @@ description: Get started with the Management API.
 
 # Management API
 
-The Management API delivers headless capabilities built directly into Umbraco. The Management API allows for managing everything within the backoffice.
+The Management API delivers headless management capabilities built directly into Umbraco. The Management API is used by the backoffice to communicate with the backend.
 
 The Management API can also be used for Custom apps or Workflows with OpenID Connect.
 
