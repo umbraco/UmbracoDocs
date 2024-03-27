@@ -116,7 +116,7 @@ Both can be wired up using a composer and component:
     }
 ```
 
-When a form or folder is _moved_ there is no specific service event. However information available in the `State` dictionary available on the notification object can be used to determine whether the item was moved, and if so, where from:
+When a form or folder is _moved_ there is no specific service event. However, information available in the `State` dictionary on the notification object can be used to determine whether the item was moved. If so, it can show where it was moved from:
 
 ```csharp
     public class TestSiteComposer : IComposer
