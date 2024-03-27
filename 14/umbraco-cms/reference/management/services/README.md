@@ -42,7 +42,7 @@ Below you can find a list of most common services:
 
 ## [TagService](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ITagService.html)
 
-## [TextService](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ILocalizedTextService.html)
+## [LocalizedTextService](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.LocalizedTextService.html)
 
 ## [ContentService](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.IContentService.html)
 
