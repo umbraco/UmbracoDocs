@@ -114,7 +114,9 @@ If you are in this situation and unable to resolve it via configuration of the e
 
 We have the possibility of generating and providing Forms licenses using alternate algorithms.
 
-These can be used if you reference `Umbraco.Licensing` version `13.0.1` or higher.
+{% hint style="info" %}
+You can use this configuration if you reference `Umbraco.Licensing` version `13.0.1` or higher.
+{% endhint %}
 
 Apply the following configuration with the appropriate algorithm - `DES` (the default), `TripleDES`, or `AES`:
 
