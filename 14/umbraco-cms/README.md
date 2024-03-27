@@ -45,30 +45,11 @@ The list will be updated as more articles have been created and updated.
   * **BACKOFFICE**:
     * [Document Blueprints](fundamentals/backoffice/document-blueprints.md)
 * **EXTENDING BACKOFFICE (new section)**
-  * [Customize Backoffice](extending-backoffice/customize-backoffice.md)
-  * [Setup Your Development Environment](extending-backoffice/development-flow/)
-    * [Vite Package Setup](extending-backoffice/development-flow/vite-package-setup.md)
-  * [Umbraco Package Manifest](extending-backoffice/package-manifest.md)
-  * [Extension Manifest](extending-backoffice/extension-types/)
-    * All articles under it
-  * [UI Library](extending-backoffice/ui-library.md)
-  * [Umbraco Element](extending-backoffice/umbraco-element/)
-    * [Controllers](extending-backoffice/umbraco-element/controllers/)
-      * [Write your own Controller](extending-backoffice/umbraco-element/controllers/write-your-own-controller.md)
-  * [Context API](extending-backoffice/context-api.md)
-  * [Property Dataset Context](extending-backoffice/variant-context.md)
-  * [Localization](extending-backoffice/localization/)
-    * [.NET Localization](extending-backoffice/localization/net-localization.md)
-    * [UI Localization](extending-backoffice/localization/ui-localization.md)
-  * [States](extending-backoffice/states.md)
-  * [Conditions](extending-backoffice/conditions.md)
-  * [Modals](extending-backoffice/modals/)
-    * [Confirm Dialog](extending-backoffice/modals/confirm-dialog.md)
-    * [Custom Modals](extending-backoffice/modals/custom-modals.md)
-    * [Route Registration](extending-backoffice/modals/route-registration.md)
-  * [Sorting](extending-backoffice/sorting.md)
-  * [Trees](extending-backoffice/trees.md)
-  * [Menu](extending-backoffice/menu.md)
+  * All articles under it
+* **REFERENCE**:
+  * [Management API](reference/management-api/)
+    * [Setup OAuth using Postman](reference/management-api/postman-setup-swagger.md)
+  * [Custom Swagger API](reference/custom-swagger-api.md)
 * **TUTORIALS**:
   * [Create your first extension](tutorials/creating-your-first-extension.md)
   * [Creating a Custom Dashboard](tutorials/creating-a-custom-dashboard/)

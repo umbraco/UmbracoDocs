@@ -23,14 +23,14 @@ Use the [general upgrade guide](../) to complete the upgrade of your project.
 
 <details>
 
-<summary>Umbraco 14 </summary>
+<summary>Umbraco 14</summary>
 
 Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 
 * [Angular removed: A new backoffice built with Web Components, Lit, and fueled by the Umbraco UI Library](https://github.com/umbraco/Umbraco.CMS.Backoffice)
 * Icons in the new backoffice are based on [Lucide](https://lucide.dev/icons/).
 * [Full TypeScript support for the Backoffice and all its APIs through a public npm package](https://www.myget.org/feed/umbracoprereleases/package/npm/@umbraco-cms/backoffice)
-* A management API documentation in Swagger - replacement for Controllers that were not restful
+* A [management API ](../../../../reference/management-api/)documentation in Swagger - replacement for Controllers that were not restful
 * [Migration from Newtonsoft.Json to the System.Text.Json which removes Nested Content and Grid value converter and so on](https://github.com/umbraco/Umbraco-CMS/pull/15728)
 * Nested Content and Grid Layout have been removed
 * [Legacy media picker has been removed](https://github.com/umbraco/Umbraco-CMS/pull/15835)
@@ -53,7 +53,7 @@ Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 Below you can find the list of breaking changes introduced in Umbraco 14 Beta release versions.
 
 [**Beta 1**](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-beta001)\
-Official release of Beta, 6th March 2023.&#x20;
+Official release of Beta, 6th March 2023.
 
 [**Beta 2**](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-beta002)
 

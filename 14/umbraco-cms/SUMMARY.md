@@ -68,9 +68,9 @@
 
 ## Reference
 
-* [Management API](./reference/management-api/README.md)
-  * [Setup Authorization in Postman](./reference/management-api/postman-setup-swagger.md)
-* [Custom Swagger API](./reference/custom-swagger-api.md)
+* [Management API](reference/management-api/README.md)
+  * [Setup OAuth using Postman](reference/management-api/postman-setup-swagger.md)
+* [Custom Swagger API](reference/custom-swagger-api.md)
 
 ## Tutorials
 
