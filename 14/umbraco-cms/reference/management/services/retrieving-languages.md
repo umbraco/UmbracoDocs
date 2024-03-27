@@ -13,7 +13,7 @@ The localization service contains a number of methods for looking up languages. 
 ILanguage language1 = _localizationService.GetLanguageById(1);
 ```
 
-As an alternative, you can look up a language by its iso code via the `GetLanguageByIsoCode` method:
+As an alternative, you can look up a language by its ISO code via the `GetLanguageByIsoCode` method:
 
 ```csharp
 // Get a reference to the language by its ISO code
