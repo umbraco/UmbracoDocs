@@ -84,9 +84,7 @@ In Razor views, you can access the Notification Service through the `@inject` di
 @inject INotificationService NotificationService
 ```
 
-{% hint style="info" %}
-The same example can be used for the other service where you can replace the interface and service name.
-{% endhint %}
+You can use the above example for other services where you can replace the interface and service name.
 
 # Samples
 
