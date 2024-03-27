@@ -10,7 +10,7 @@ Two-factor authentication (2FA) for Umbraco members is activated by implementing
 
 {% hint style="info" %}
 
-If you are using [Umbraco Cloud](https://umbraco.com/products/umbraco-cloud/) you can use the provided multi-factor authentication feature within the Umbraco ID. You can read more about how to enable it in the [Multi-Factor Authentication](https://docs.umbraco.com/umbraco-cloud/set-up/multi-factor-authentication-on-cloud) article.
+If you are using [Umbraco Cloud](https://umbraco.com/products/umbraco-cloud/), you can enable multi-factor authentication in Umbraco ID. For more information, see the [Multi-Factor Authentication](https://docs.umbraco.com/umbraco-cloud/set-up/multi-factor-authentication-on-cloud) article.
 
 {% endhint %}
 
