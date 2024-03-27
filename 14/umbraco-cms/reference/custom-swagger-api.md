@@ -56,8 +56,9 @@ public class MyComposer : IComposer
 
 {% endcode %}
 
-- The `BackOfficeSecurityRequirementsOperationFilter` enables backoffice authentication for Swagger UI.
-- `BackOfficeSecurityRequirementsOperationFilterBase` is an abstract base class that can be reused for custom APIs.
+- Our filter inherits from `BackOfficeSecurityRequirementsOperationFilterBase`. This marks our API as supporting authorization via Swagger.
+- `MyConfigureSwaggerGenOptions` configures our API swagger docs with our filter applied.
+- `MyComposer ` makes sure the swagger generator knows about our API docs configuration at runtime.
 
 3. Add the ApiController to setup the logic behind the endpoint:
 
