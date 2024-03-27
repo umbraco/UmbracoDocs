@@ -19,7 +19,7 @@ This section contains the release notes for Umbraco Commerce 13 including all ch
 
 #### [13.1.2](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.2) (March 27th 2024)
 
-* Fixed properties set in background from an entity action lost when resaving the entity from the UI after the action [#472](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/472).
+* Fixed properties set in the background from an entity action lost when resaving the entity from the UI after the action [#472](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/472).
 * Fixed unable to override cart editor view like you can the order editor view [#474](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/474).
 * Fixed regression where launching the shipping method country prices dialog caused javascript errors [#480](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/480).
 * Fixed regression with order list configs not deserializing correctly [#485](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/485).
