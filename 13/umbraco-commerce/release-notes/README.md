@@ -21,7 +21,7 @@ This section contains the release notes for Umbraco Commerce 13 including all ch
 
 * Fixed properties set in the background from an entity action lost when resaving the entity from the UI after the action [#472](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/472).
 * Fixed unable to override cart editor view like you can the order editor view [#474](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/474).
-* Fixed regression where launching the shipping method country prices dialog caused javascript errors [#480](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/480).
+* Fixed regression where launching the shipping method country prices dialog caused JavaScript errors [#480](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/480).
 * Fixed regression with order list configs not deserializing correctly [#485](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/485).
 * Fixed `Order.ProductVariantReference` mapping to the wrong field in Storefront API.
 * Fixed `CountryRegionTaxRate.Country` mapping to the wrong field in Storefront API.
