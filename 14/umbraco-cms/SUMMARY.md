@@ -66,6 +66,12 @@
 * [Trees](extending-backoffice/trees.md)
 * [Menu](extending-backoffice/menu.md)
 
+## Reference
+
+* [Management API](./reference/management-api/README.md)
+  * [Setup Authorization in Postman](./reference/management-api/postman-setup-swagger.md)
+* [Custom Swagger API](./reference/custom-swagger-api.md)
+
 ## Tutorials
 
 * [Creating a Basic Website](tutorials/creating-a-basic-website/README.md)
