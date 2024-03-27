@@ -85,7 +85,7 @@ bool hasChildren = _contentTypeService.HasChildren(1234);
 
 ## Getting a single content type container
 
-You can add content types in three different ways - at the root level, under another content type, or under a container (which is essentially a folder). To obtain a single container, the process is similar to obtaining a single content type. This means that you can search for a container either by its GUID:
+You can add content types in three different ways. At the root level, under another content type, or under a _container_ (which is a folder). To obtain a single container, the process is similar to obtaining a single content type. This means that you can search for a container either by its GUID:
 
 ```csharp
 // Declare the GUID ID
