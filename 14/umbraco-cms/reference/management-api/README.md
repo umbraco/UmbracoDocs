@@ -54,7 +54,7 @@ To test a Management API endpoint, follow these steps:
 ![Umbraco Management API when Authenticated](../images/management-api-swagger-authenticated.png)
 
 {% hint style="info" %}
-In non-production environments, you will always need only the `client_id` to authenticate. The `client_secret` should always be left blank because of the chosen authentication flow.
+In non-production environments, you will always need only the `client_id` to authenticate. The `client_secret` should always be left blank, as the authentication flow does not use a client secret. 
 {% endhint %}
 
 2. Expand the first endpoint of **Audit Log** and click **Try it out**
