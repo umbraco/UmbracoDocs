@@ -85,7 +85,7 @@ bool hasChildren = _contentTypeService.HasChildren(1234);
 
 ## Getting a single content type container
 
-Content types can be added either at the root level, under another content type or under a content type container (or folders as they're called in the Umbraco backoffice). The approach for getting a single container is similar to getting a single content type, meaning that you can look up a container - either by its GUID:
+Content types can be added either at the root level, under another content type or under a content type container (container is a folder). The approach for getting a single container is similar to getting a single content type. This means that you can look up a container - either by its GUID:
 
 ```csharp
 // Declare the GUID ID
