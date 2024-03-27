@@ -4,7 +4,7 @@ description: Example of a Custom API with Authorization and Swagger
 
 # Custom API with Authorization and Swagger
 
-This article covers how to create a Custom API controller protected by the backoffice authorization policy. It also shows how to enable authorization UI in Swagger docs.
+This article covers how to create a Custom API controller protected by the backoffice authorization policies. It also shows how to enable the authorization UI in Swagger docs.
 
 
 {% hint style="info" %}
