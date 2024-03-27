@@ -14,23 +14,27 @@ Some potential solutions:
 Let's create a content-only contact page where we can provide a title and some rich text.
 
 1. Go to **Settings**.
-2. Select the **...** next to the **Document Types** in the **Settings** tree.
-3. Select **Document Type with Template**. The Document Type opens in the content editor.
-4. Select an **Icon** from the list of icons.
-5. Enter a **Name**. Let's call it _Simple Content Page_.
-6. Enter a Description.
-7.  Let's add two fields with the following specifications:
+2. Click on **...** next to **Document Types**.
+3. Select **Create**. The Create Document Type dialog opens.
+4. Select **New Document Type**.
+5. Select an **Icon** from the list of icons.
+6. Click **Submit**.
+7. Enter a **Name**. Let's call it *Simple Content Page*.
+8. Let's add two fields with the following specifications:
 
     | Group   | Field Name | Alias     | Data Type        |
     | ------- | ---------- | --------- | ---------------- |
     | Content | Page Title | pageTitle | Textstring       |
     | Content | Body Text  | bodyText  | Rich Text Editor |
 
-    ![Simple Content Page Template with Data Fields](../../../../10/umbraco-cms/tutorials/creating-a-basic-website/images/figure-35-contact-us-template-with-data-fields-v8.png)
-8. Click **Save**.
-9. Go to **Templates** to view your _Simple Content Page_ template that was created automatically with the Document Type.
-10. Select the **Simple Content Page** template and then select **Master** as the **Master template**.
-11. Add the following HTML to the **Simple Content Page** template and click **Save**.
+    ![Simple Content Page Template with Data Fields](images/contact-us-template-with-data-fields.png)
+9. Click **Save**.
+10. Go to the **Templates** folder.
+11. Click **...** next to the **Templates** folder.
+12. Click **Create**.
+13. Enter a **Name** for the **Template**. Let's call it *SimpleContentPage*.
+14. Select `Master Template: No Master` and choose the **Master** template.
+15. Add the following HTML after the closing `}`.
 
     ```html
     <!-- Jumbotron, w title -->
@@ -51,7 +55,8 @@ Let's create a content-only contact page where we can provide a title and some r
         </div>
     </section>        
     ```
-12. Click **Save**.
+
+16. Click **Save**.
 
 ### Updating the Document Type Permissions
 
@@ -60,21 +65,44 @@ We now need to update the Document Type permissions to specifically add child no
 To update the Document Type permissions:
 
 1. Go to **Settings**.
-2. Open the **Homepage** Document Type and go to the **Permissions** tab.
-3. Select **Add child** in the **Allowed child node types**. The **Choose child node** dialog opens.
-4.  Select **Simple Content Page** and click **Save**.
+2. Open the **Homepage** Document Type.
+3. Go to the **Structure** tab.
+4. Click **Choose** in the **Allowed child node types**.
+    The **Choose child node** dialog opens.
+5. Select **Simple Content Page**.
 
-    <figure><img src="../../../../10/umbraco-cms/tutorials/creating-a-basic-website/images/figure-32-homepage-allowed-child-v8.png" alt=""><figcaption></figcaption></figure>
+    ![Allow child nodes in HomePage](images/homepage-allowed-child.png)
+
+6. Click **Choose**.
+7. Click **Save**.
+
+## Attaching the Template to the Document Type
+
+To attach the template:
+
+1. Go to the **Doument Types** folder.
+2. Open the *Simple Content Page* Document Type.
+3. Go to the **Templates** tab.
+4. Click **Add** in the **Allowed Templates** field.
+5. Select the *SimpleContentPage* template.
+
+    ![Choose Simple Content Page Template](images/choose-simple-content-page.png)
+6. Click **Choose**.
+7. Click **Save**.
+
+The template is now associated with the Document Type.
 
 ### Creating the content node
 
 To create a content node:
 
 1. Go to **Content**.
-2. Select **...** next to the **Homepage** and select **Simple Content Page**.
-3. Enter a name for the Document Type. Let's call it _Contact Us_.
-4. Fill in details for the **Page Title** and **Body Text**.
-5. Click **Save and Publish**.
+2. Select **...** next to the **Homepage** node.
+3. Click **Create**.
+4. Select **Simple Content Page**.
+5. Enter a name for the Document Type. Let's call it _Contact Us_.
+6. Fill in details for the **Page Title** and **Body Text**.
+7. Click **Save and Publish**.
 
 ### Adding the Document Type Properties
 
@@ -83,15 +111,22 @@ To add the Document Type properties:
 1. Go to **Settings**.
 2. Select **Templates** from the **Templating** section.
 3. Go to **Master** and open the **Simple Content Page** template.
-4. Scroll to the `<!-- Jumbotron, w title -->` (around line 8) section and highlight the text `“Umbraco Support”` (around line 11).
+4. Scroll to the `<!-- Jumbotron, w title -->` (around line 7) section and highlight the text `“Umbraco Support”` (around line 10).
 5. Click **Insert** and select **Value**.
-6. Select the **pageTitle** field from the drop-down list and click **Submit**.
-7. Repeat the same process for the `<div class="container">` tag:
-   * Highlight the content from the `<p>` tag (around line 19) to the end of the `</p>` tag (around line 22).
-   * Click **Insert** and select **Value**.
-   * Select **bodyText** field from the drop-down list.
+   * Select **Document Type** from the **Choose field** drop-down list.
+   * Select **Simple Content Page**.
+   * Click **Choose**.
+   * Select **pageTitle** field from the **Simple Content Page** drop-down list.
    * Click **Submit**.
-8. Click **Save**.
+6. Repeat the same process for the `<div class="container">` tag:
+   * Highlight the content from the `<p>` tag (around line 18) to the end of the `</p>` tag (around line 21).
+   * Click **Insert** and select **Value**.
+   * Select **Document Type** from the **Choose field** drop-down list.
+   * Select **Simple Content Page**.
+   * Click **Choose**.
+   * Select **bodyText** field from the **Simple Content Page** drop-down list.
+   * Click **Submit**.
+7. Click **Save**.
 
 ### Viewing the Contact Us Page
 
@@ -100,9 +135,9 @@ To view the **Contact Us** Page:
 1. Go to **Content**.
 2. Select the **Contact Us** page.
 3. Go to the **Info** tab.
-4.  Click the link to view the page.
+4. Click the link to view the page.
 
-    <figure><img src="../../../../10/umbraco-cms/tutorials/creating-a-basic-website/images/figure-37-viewing-contact-us.png" alt=""><figcaption></figcaption></figure>
+    ![Viewing Contact Us Page](images/viewing-contact-us.png)
 
 ## Using Document Type Properties from the Homepage
 
@@ -111,11 +146,16 @@ You may notice that the footer is now empty - we don't have the content from our
 To use the Document Type properties from the homepage, do the following:
 
 1. Go to **Settings**.
-2. Select **Templates** from the **Templating** section, and open the **Master** template.
-3. Highlight `@Model.Value("footerText")` in the footer (around line 52) and click **Insert**.
-4. Select **Value** and choose the **footerText** again from the **Choose field** dropdown.
-5. Select **Yes, make it recursive** checkbox. This notifies Umbraco to look up the content tree if the field doesn't exist at the node level for the page we're requesting.
-6. Click **Submit**.
-7. Click **Save**.
+2. Click on **Templates** from the **Templating** section.
+3. Open the **Master** template.
+4. Highlight `@Model.Value("footerText")` in the footer (around line 50).
+5. Click **Insert** and select **Value**.
+6. Select **Document Type** from the **Choose field** drop-down list.
+7. Select **Home Page**.
+8. Click **Choose**.
+9. Select **footerText** field from the **HomePage** drop-down list.
+10. Select **Yes, make it recursive** checkbox. This notifies Umbraco to look up the content tree if the field doesn't exist at the node level for the page we're requesting.
+11. Click **Submit**.
+12. Click **Save**.
 
 Reload the _Contact Us_ page to view the content with the footer.
