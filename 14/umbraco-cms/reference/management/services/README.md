@@ -2,7 +2,7 @@
 description: List of service references along with instructions on how to use them, as well as some examples for better understanding.
 ---
 
-# Services References
+# Service References
 
 Below you can find a list of most common services:
 
