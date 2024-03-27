@@ -1,10 +1,5 @@
 # ConsentService
 
-[Browse the API documentation for ConsentService](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.Services.IConsentService.html).
-
-* **Namespace:** `Umbraco.Cms.Core.Services`
-* **Assembly:** `Umbraco.Core.dll`
-
 A service for handling lawful data processing requirements.
 
 ## What is a Consent
@@ -17,7 +12,7 @@ Consent can be given or revoked or changed via the `RegisterConsent` method, whi
 
 ## Get the current state
 
-Getter methods of this service return the current state of a consent, that is the latest [IConsent](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.Models.IConsent.html) entity that was created.
+Getter methods of this service return the current state of a consent, that is the latest [IConsent](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Models.IConsent.html) entity that was created.
 
 ## Revoking a consent
 
@@ -45,10 +40,4 @@ if (consents != null && consents.Any())
         // the state is None, Pending or Revoked
     }
 }
-```
-
-In Razor views, you can access the consent service through the `@inject` directive:
-
-```csharp
-@inject IConsentService ConsentService
 ```

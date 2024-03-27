@@ -1,6 +1,10 @@
+---
+description: Example on how to retrieve languages using the LocalizationService.
+---
+
 # Retrieving languages
 
-### Getting a single language
+## Getting a single language
 
 The localization service contains a number of methods for looking up languages. If you already know the ID of a specific language (eg. the default language has ID `1`), you can use the `GetLanguageById` method to get the reference to that language:
 
@@ -9,7 +13,7 @@ The localization service contains a number of methods for looking up languages. 
 ILanguage language1 = _localizationService.GetLanguageById(1);
 ```
 
-Alternative, you can look up a language by its iso code via the `GetLanguageByIsoCode` method:
+As an alternative, you can look up a language by its ISO code via the `GetLanguageByIsoCode` method:
 
 ```csharp
 // Get a reference to the language by its ISO code
@@ -18,9 +22,9 @@ ILanguage language2 = _localizationService.GetLanguageByIsoCode("en-US");
 
 The ISO code is a combination of the two-letter ISO 639-1 language code (lowercase) and two-letter ISO-3166 country code (uppercase). Eg. `en-US` for English in the United States, `en-GB` for English in the United Kingdom and `da-DK` for Danish in Denmark.
 
-Both methods will return an instance of the [ILanguage](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.Models.ILanguage.html) interface, which has traditional properties like `Id` and `Key`, but also properties specific to the language like `CultureName`, `CultureInfo` and `IsoCode`. You can see the API reference for further information on the properties of the interface.
+Both methods will return an instance of the [ILanguage](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Models.ILanguage.html) interface, which has traditional properties like `Id` and `Key`, but also properties specific to the language like `CultureName`, `CultureInfo` and `IsoCode`. You can see the API reference for further information on the properties of the interface.
 
-### Getting all languages
+## Getting all languages
 
 If you need instead need a list of all installed languages, you can use the `GetAllLanguages` method. It takes no parameters, and as such a returns a collection of all languages (with no pagination like some of the other services):
 

@@ -1,3 +1,7 @@
+---
+description: Example on how to create content programmatically using the ContentService.
+---
+
 # Create content programmatically
 
 In the example below, a new page is programmatically created using the content service. It is assumed that there are two document types, namely Catalogue and Product. In this case, a new Product is added underneath the Catalogue page. Add the below code in the Catalogue template.
@@ -23,8 +27,9 @@ In the example below, a new page is programmatically created using the content s
 
     // Save and publish the child item
     ContentService.SaveAndPublish(demoproduct);
-    ```
+    
 }
+```
 
 In a multilanguage setup, it is necessary to set the name of the content item for a specified culture:
 
@@ -33,4 +38,4 @@ demoproduct.SetCultureName("Microphone", "en-us"); // this will set the english 
 demoproduct.SetCultureName("Mikrofon", "da"); // this will set the danish name
 ```
 
-For information on how to retrieve multilingual languages, see the [Retrieving languages](../localizationservice/retrieving-languages.md) article.
+For information on how to retrieve multilingual languages, see the [Retrieving languages](./retrieving-languages.md) article.

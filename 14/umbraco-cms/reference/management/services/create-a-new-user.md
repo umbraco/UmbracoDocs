@@ -1,10 +1,31 @@
 ---
-description: "This will show you how to create a new user using the UserService in Umbraco."
+description: This will show you how to add a user to a user group using the UserService in Umbraco.
 ---
+
+# Getting the service
+
+## Services property
+
+If you wish to use the UserService in a class that inherits from one of the Umbraco base classes. For example: `SurfaceController`, `UmbracoApiController`, or `UmbracoAuthorizedApiController`). You can access the service through a local `Services` property:
+
+```csharp
+IUserService userService = Services.UserService;
+```
+
+## Static accessor
+
+If neither a `Services` property nor Dependency Injection is available, you can reference the static `Current` class directly:
+
+```csharp
+IUserService userService = Umbraco.Core.Composing.Current.Services.UserService;
+```
+
 # Creating a user
+
 If you want to create a new user, you'd use ASP.NET identity APIs like it is used in core.
 
-### Assigning the user to a user group
+## Assigning the user to a user group
+
 Permissions aren't administered for the specific user, but rather for the user group(s) that the user is a part of. So to add our new user to a user group, we first need to get a reference to the user via the `GetUserGroupByAlias` method, and then use the `AddGroup` method for adding the group to our user:
 
 ```csharp
