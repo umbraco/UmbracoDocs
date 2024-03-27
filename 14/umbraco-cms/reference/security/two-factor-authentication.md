@@ -8,6 +8,12 @@ description: >-
 
 Two-factor authentication (2FA) for Umbraco members is activated by implementing an `ITwoFactorProvider` interface and registering the implementation. The implementation can use third-party packages to archive for example support for authentication apps like Microsoft- or Google Authentication App.
 
+{% hint style="info" %}
+
+If you are using Umbraco Cloud you can use the provided multi-factor authentication feature within the Umbraco ID. You can read more about how to enable it in the [Multi-Factor Authentication](https://docs.umbraco.com/umbraco-cloud/set-up/multi-factor-authentication-on-cloud) article.
+
+{% endhint %}
+
 ## Two-factor authentication for Members
 
 Since Umbraco does not control how the UI is for member login and profile edit. The UI for 2FA is shipped as part of the Partial View snippets. These can be used as a starting point, before styling the page as you would like.
@@ -535,6 +541,7 @@ The following code is an example of a custom 2FA login screen using [Lit](https:
 The element registers two properties: providers and returnPath. These properties are used to render the view. The providers property is an array of strings, where each string is the name of a 2FA provider. The returnPath is the path to redirect to after a successful login. Both supplied by the login screen automatically.
 
 {% code title="~/App_Plugins/TwoFactorProviders/Custom2faLogin.js" lineNumbers="true" %}
+
 ```javascript
 import {LitElement, css, html} from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 
@@ -657,6 +664,7 @@ customElements.define('my-2fa-view', My2faView);
 
 export default My2faView;
 ```
+
 {% endcode %}
 
 {% endtab %}
@@ -666,6 +674,7 @@ export default My2faView;
 We need to register the custom view using a composer. This can be done on the `IUmbracoBuilder` in your startup or a composer. In this case, we will add a composer to your project. This composer will overwrite the `IBackOfficeTwoFactorOptions` to use the custom view.
 
 {% code title="TwoFactorConfiguration.cs" lineNumbers=true %}
+
 ```csharp
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Web.BackOffice.Security;
@@ -688,6 +697,7 @@ public class TwoFactorConfigurationComposer : IComposer
 }
 
 ```
+
 {% endcode %}
 
 {% endtab %}
