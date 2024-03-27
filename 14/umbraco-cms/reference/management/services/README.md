@@ -1,5 +1,5 @@
 ---
-description: Here you can find the references of all available services and how to get them.
+description: List of services references, how to use them and some examples.
 ---
 
 # Services References
@@ -62,7 +62,7 @@ All services can be accessed with the following using statement:
 using Umbraco.Cms.Core.Services;
 ```
 
-In other cases, you may be able to use **Dependency Injection**. For instance if you have registered your own class in Umbraco's dependency injection, you can specify the service interface in your constructor.
+In other cases, you may be able to use [Dependency Injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection). For instance if you have registered your own class in Umbraco's dependency injection, you can specify the service interface in your constructor.
 
 For example, if you use a `NotificationService` you can use Dependency Injection via the `INotificationService` interface like this:
 
@@ -87,3 +87,20 @@ In Razor views, you can access the Notification Service through the `@inject` di
 {% hint style="info" %}
 The same example can be used for the other service where you can replace the interface and service name.
 {% endhint %}
+
+# Samples
+
+* [Consent Service Example](./consentservice.md)
+Example of how to work with a Consent.
+* [User Service Example](./create-a-new-user.md)
+Example of adding a user to a user group.
+* [Content Service Example](./create-content-programmatically.md)
+Example of creating content programmatically.
+* [Media Service Example](./mediaservice.md)
+Examples of how to create a new folder and a new media item from a stream.
+* [Relation Service Example](./relationservice.md)
+Example of how to automatically relate to root node.
+* [Content Type Service Example](./retrieving-content-types.md)
+Examples of how to retrieve content types and content type containers.
+* [Localization Service Example](./retrieving-languages.md)
+Example on how to retrieve languages.
