@@ -10,7 +10,8 @@ For front-end extensions, specifically via theming, see the [Themes](../themes.m
 
 ## Developing Custom Providers
 
-Although the Forms package comes with many field, workflow and other built-in types, if you have a requirement that isn't served by any of these, you can create and develop your own.
+
+The Forms package comes with many field, workflow, and other built-in types. If you have a requirement that isn't served by any of these, you can create and develop your own.
 
 ### [Provider model](adding-a-type.md)
 
@@ -32,7 +33,7 @@ A data source type enables Umbraco Forms to connect to a custom source of data. 
 
 ### [Prevalue Source Types](adding-a-prevaluesourcetype.md)
 
-A prevalue source type can connect to a 3rd party storage and retrieve a collection of values that can be used on fields that support prevalues. The prevalue source is responsible for connecting to the source and retrieving the collection of values.
+A prevalue source type connects to 3rd party storage to retrieve values. These values are used on fields supporting prevalues. The source fetches the collection.
 
 ### [Workflow Types](adding-a-workflowtype.md)
 
@@ -60,7 +61,7 @@ Form events are raised during the submission life cycle and can be handled for e
 
 ### [Default Fields and Workflows](customize-default-workflows.md)
 
-The default behavior when a new form is created is for a single workflow to be added, which will send a copy of the form to the current backoffice user's email address.
+When a new form is created, the default behavior is to add a single workflow. This workflow will send a copy of the form to the current backoffice user's email address.
 
 A single "data consent" field will also be added unless it has been disabled via configuration.
 
