@@ -4,7 +4,7 @@ meta.Title: "Extending Umbraco Forms"
 
 # Extending
 
-Umbraco Forms functionality can be extended in various ways. In this section we focus on techniques available to a back-end/C# developer.
+Umbraco Forms functionality can be extended in different ways. In this section we focus on techniques available to a back-end/C# developer.
 
 For front-end extensions, specifically via theming, see the [Themes](../themes.md) section.
 
@@ -68,7 +68,7 @@ It's possible to amend this behavior and change it to fit your needs.
 
 ## Responding to State Values
 
-In the course of submitting a form, Umbraco Forms will set various values in `TempData` and/or `HttpContext.Items`, that you can use to customize the website functionality.
+In the course of submitting a form, Umbraco Forms will set values in `TempData` and/or `HttpContext.Items`, that you can use to customize the website functionality.
 
 ### Customizing Post-Submission Behavior
 
