@@ -10,7 +10,6 @@ For front-end extensions, specifically via theming, see the [Themes](../themes.m
 
 ## Developing Custom Providers
 
-
 The Forms package comes with many field, workflow, and other built-in types. If you have a requirement that isn't served by any of these, you can create and develop your own.
 
 ### [Provider model](adding-a-type.md)
