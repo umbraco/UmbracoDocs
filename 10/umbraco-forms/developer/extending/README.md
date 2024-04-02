@@ -4,13 +4,13 @@ meta.Title: "Extending Umbraco Forms"
 
 # Extending
 
-Umbraco Forms functionality can be extended in various ways. In this section we focus on techniques available to a back-end/C# developer.
+Umbraco Forms functionality can be extended in different ways. In this section we focus on techniques available to a back-end/C# developer.
 
 For front-end extensions, specifically via theming, see the [Themes](../themes.md) section.
 
 ## Developing Custom Providers
 
-Although the Forms package comes with many field, workflow and other built-in types, if you have a requirement that isn't served by any of these, you can create and develop your own.
+The Forms package comes with many field, workflow, and other built-in types. If you have a requirement that isn't served by any of these, you can create and develop your own.
 
 ### [Provider model](adding-a-type.md)
 
@@ -32,7 +32,7 @@ A data source type enables Umbraco Forms to connect to a custom source of data. 
 
 ### [Prevalue Source Types](adding-a-prevaluesourcetype.md)
 
-A prevalue source type can connect to a 3rd party storage and retrieve a collection of values that can be used on fields that support prevalues. The prevalue source is responsible for connecting to the source and retrieving the collection of values.
+A prevalue source type connects to 3rd party storage to retrieve values. These values are used on fields supporting prevalues. The source fetches the collection of values.
 
 ### [Workflow Types](adding-a-workflowtype.md)
 
@@ -60,7 +60,7 @@ Form events are raised during the submission life cycle and can be handled for e
 
 ### [Default Fields and Workflows](customize-default-workflows.md)
 
-The default behavior when a new form is created is for a single workflow to be added, which will send a copy of the form to the current backoffice user's email address.
+When a new form is created, the default behavior is to add a single workflow. This workflow will send a copy of the form to the current backoffice user's email address.
 
 A single "data consent" field will also be added unless it has been disabled via configuration.
 
@@ -68,7 +68,7 @@ It's possible to amend this behavior and change it to fit your needs.
 
 ## Responding to State Values
 
-In the course of submitting a form, Umbraco Forms will set various values in `TempData` and/or `HttpContext.Items`, that you can use to customize the website functionality.
+In the course of submitting a form, Umbraco Forms will set values in `TempData` and/or `HttpContext.Items`, that you can use to customize the website functionality.
 
 ### Customizing Post-Submission Behavior
 
