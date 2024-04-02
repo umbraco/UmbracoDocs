@@ -37,8 +37,6 @@ The different Ciphers can be enabled or disabled on the security project setting
 
 <figure><img src=".gitbook/assets/image (7).png" alt=""><figcaption><p>Enable or disable TLS Ciphers</p></figcaption></figure>
 
-
-
 ### HSTS - HTTP Strict Transport Security
 
 It's possible to enforce HSTS: [HTTP Strict Transport Security](https://en.wikipedia.org/wiki/HTTP\_Strict\_Transport\_Security) by adding the headers to your website. This grants Umbraco Cloud Websites an A+ security rating on sslabs (March 2020).
@@ -90,7 +88,9 @@ More information specifically from Microsoft about .Net applications and Transpo
 
 ### HTTP
 
-HTTP protocol is supported but not used by default on Umbraco Cloud Websites. If you'd like to keep using HTTP, which we strongly discourage, you'll need to remove a web.config transform as specified in [Rewrite rules on Umbraco Cloud](set-up/project-settings/manage-hostnames/rewrites-on-cloud.md#running-your-site-on-https-only)
+Naked HTTP urls without HTTPS are supported but not used by default on Umbraco Cloud Websites. If you'd like to keep using HTTP, which we strongly discourage, you'll need to remove a web.config transform as specified in [Rewrite rules on Umbraco Cloud](set-up/project-settings/manage-hostnames/rewrites-on-cloud.md#running-your-site-on-https-only)
+
+Umbraco Cloud supports HTTP2 protocol as well as HTTP3 protocol.
 
 ### Ports
 
