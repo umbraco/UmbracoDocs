@@ -86,6 +86,8 @@ See the example below to see how a value can be added or changed programmaticall
 ```csharp
 @using Umbraco.Cms.Core.Services;
 @inject IContentService Services;
+@using Umbraco.Cms.Core.Serialization
+@inject IJsonSerializer Serializer;
 @using Newtonsoft.Json
 @{
     // Get access to ContentService
@@ -98,7 +100,7 @@ See the example below to see how a value can be added or changed programmaticall
     var content = contentService.GetById(guid); // ID of your page
 
     // Set the value of the property with alias 'categories'. 
-    content.SetValue("categories", JsonConvert.SerializeObject(new[] { "News" }));
+    content.SetValue("categories", Serializer.Serialize(new[] { "News" }));
 
     // Save the change
     contentService.Save(content);
@@ -121,6 +123,6 @@ If Modelsbuilder is enabled you can get the alias of the desired property withou
 @inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
 @{
     // Set the value of the property with alias 'categories'
-    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.Categories).Alias, JsonConvert.SerializeObject(new[] { "News" }));
+    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.Categories).Alias, Serializer.Serialize(new[] { "News" }));
 }
 ```

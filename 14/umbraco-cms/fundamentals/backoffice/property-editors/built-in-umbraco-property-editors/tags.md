@@ -70,8 +70,10 @@ Whenever a tag has been added it will be visible in the typeahead when you start
 You can use the ContentService to create and update Umbraco content from c# code, when setting tags there is an extension method (SetTagsValue) on IContentBase that helps you set the value for a Tags property. Remember to add the using statement for `Umbraco.Core.Models` to take advantage of it.
 
 ```csharp
+@using Umbraco.Cms.Core.Serialization
 @using Umbraco.Cms.Core.Services
 @inject IContentService Services;
+@inject IJsonSerializer Serializer;
 @using Newtonsoft.Json
 @{
     // Get access to ContentService
@@ -84,7 +86,7 @@ You can use the ContentService to create and update Umbraco content from c# code
     var content = contentService.GetById(guid); // ID of your page
 
     // Set the value of the property with alias 'tags'. 
-    content.SetValue("tags", JsonConvert.SerializeObject(new[] { "News", "Umbraco", "Example", "Setting Tags", "Helper" }));
+    content.SetValue("tags", Serializer.Serialize(new[] { "News", "Umbraco", "Example", "Setting Tags", "Helper" }));
 
     // Save the change
     contentService.Save(content);
@@ -107,7 +109,7 @@ If Modelsbuilder is enabled, you can get the alias of the desired property witho
 @inject IPublishedSnapshotAccessor _publishedSnapshotAccessor;
 @{
     // Set the value of the property with alias 'tags'
-    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.Tags).Alias, JsonConvert.SerializeObject(new[] {  "News", "Umbraco", "Example", "Setting Tags" }));
+    content.SetValue(Home.GetModelPropertyType(_publishedSnapshotAccessor, x => x.Tags).Alias, Serializer.Serialize(new[] {  "News", "Umbraco", "Example", "Setting Tags" }));
 }
 ```
 
