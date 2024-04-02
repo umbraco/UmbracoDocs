@@ -28,7 +28,7 @@ A data source type enables Umbraco Forms to connect to a custom source of data. 
 
 ### [Prevalue Source Types](adding-a-prevaluesourcetype.md)
 
-A prevalue source type connects to 3rd party storage to retrieve values. These values are used on fields supporting prevalues. The source fetches the collection.
+A prevalue source type connects to 3rd party storage to retrieve values. These values are used on fields supporting prevalues. The source fetches the collection of values.
 
 ### [Workflow Types](adding-a-workflowtype.md)
 
