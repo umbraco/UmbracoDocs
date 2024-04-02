@@ -471,7 +471,7 @@ In this example, we will be creating content programmatically for a "spot" Block
 3. In the Block Grid add a new block and click to **Create new Element Type**
 4. Name this element type **spotElement** with the following properties:
 
-* a property called **title** with the editor of **Textstring**
+* A property called **title** with the editor of **Textstring**
 
 * A property called **text** with the editor of **Textstring**
 
