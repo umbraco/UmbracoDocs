@@ -473,7 +473,7 @@ In this example, we will be creating content programmatically for a "spot" Block
 
 * a property called **title** with the editor of **Textstring**
 
-* a property called **text** with the editor of **Textstring**
+* A property called **text** with the editor of **Textstring**
 
 5. Then on the **Settings model** click to add a new Setting.
 6. Then click to **Create new Element Type**.
