@@ -479,7 +479,7 @@ In this example, we will be creating content programmatically for a "spot" Block
 6. Then click to **Create new Element Type**.
 7. Name this element type **spotSettings** with the following properties:
 
-* a property called **featured** with the editor of **True/false**.
+* A property called **featured** with the editor of **True/false**.
 
 ![Block Grid - Block Configuration](../../../images/BlockEditorConfigurationProgramatically.png)
 
