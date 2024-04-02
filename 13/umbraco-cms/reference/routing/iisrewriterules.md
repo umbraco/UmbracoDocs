@@ -129,7 +129,5 @@ Another example would be to redirect from non-www to www (except for the Umbraco
 ```
 
 {% hint style="warning" %}
-Adding the www redirect rule requires a `<add input="{HTTP_HOST}" pattern=".*azurewebsites.net*" negate="true" ignoreCase="true" />` condition to be added in order for Umbraco Cloud to function correctly.
-
-This step is required for the deployment service and the content transfer between environments to continue to function.
+If you use **Umbraco Cloud** check the [Rewrite Rules](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/manage-hostnames/rewrites-on-cloud) article.
 {% endhint %}
