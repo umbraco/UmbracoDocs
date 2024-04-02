@@ -95,7 +95,7 @@ Before the migration process can start, you will need to have a Umbraco Cloud pr
 <figure><img src="../../.gitbook/assets/Umbraco-Cloud.Trial-Flow.gif" alt=""><figcaption><p>How to start a Umbraco Cloud trial</p></figcaption></figure>
 
 1. The best way to get started with Umbraco Cloud is to [create a trial project](https://umbraco.com/)
-2. When your project is starting choose to start with a _clean slate_ - you need to have an empty Cloud project for the migration to be successful
+2. You need to have an empty Cloud project for the migration to be successful
 3. We recommend that you set up your project with at least two environments.
 
 ![Manage environments](images/setup-dev-env.png)
@@ -195,7 +195,7 @@ You have now moved and merged the files from your existing site into the Umbraco
 In this next part, it is time to generate the so-called UDA-files for all your project's meta data.
 
 For more details about UDA files, read the [UDA Files](../../set-up/power-tools/generating-uda-files.md#what-are-uda-files) article.
- 
+
 * Make sure the folder `/Umbraco/Deploy/Revision` on your Umbraco Cloud project is empty
   * If you have any files in the folder, you can safely remove those at this point
 * Start your local cloud project
