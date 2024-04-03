@@ -274,13 +274,6 @@ You can use the [Umbraco Icon Picker](../../fundamentals/data/defining-content/R
 
 {% code title="ProviderMembersExternalLoginProviderOptions.cs" lineNumbers="true" %}
 ```csharp
-
-{% endtab %}
-
-{% tab title="Member Authentication" %}
-
-{% code title="ProviderMembersExternalLoginProviderOptions.cs" lineNumbers="true" %}
-```csharp
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Web.Common.Security;
