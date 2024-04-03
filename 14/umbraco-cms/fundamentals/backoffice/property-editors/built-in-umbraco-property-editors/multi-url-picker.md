@@ -53,10 +53,11 @@ See the example below to see how a value can be added or changed programmaticall
 
 ```csharp
 @using Umbraco.Cms.Core;
+@using Umbraco.Cms.Core.Serialization
 @using Umbraco.Cms.Core.Services;
-@using Newtonsoft.Json;
 @using Umbraco.Cms.Core.Models;
 @inject IContentService Services;
+@inject IJsonSerializer Serializer;
 @{
     // Get access to ContentService
     var contentService = Services;
@@ -80,7 +81,7 @@ See the example below to see how a value can be added or changed programmaticall
     var contentPageUdi = Udi.Create(Constants.UdiEntityType.Document, contentPage.Key);
 
     // Create a list with different link types
-    var externalLink = new List<Link>
+    var externalLinks = new List<Link>
     {
         // External Link
         new Link
@@ -111,7 +112,7 @@ See the example below to see how a value can be added or changed programmaticall
     };
 
     // Serialize the list with links to JSON
-    var links = JsonConvert.SerializeObject(externalLink);
+    var links = Serializer.Serialize(externalLinks);
 
 
     // Set the value of the property with alias 'footerLinks'. 

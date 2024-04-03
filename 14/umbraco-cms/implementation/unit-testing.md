@@ -201,7 +201,7 @@ public class ProductsControllerTests
     [Test]
     public void WhenGetAllProductsJson_ThenReturnViewModelWithExpectedJson()
     {
-        var json = JsonConvert.SerializeObject(this.controller.GetAllProductsJson().Value);
+        var json = serializer.Serialize(this.controller.GetAllProductsJson().Value);
 
         Assert.AreEqual("[\"Table\",\"Chair\",\"Desk\",\"Computer\",\"Beer fridge\"]", json);
     }

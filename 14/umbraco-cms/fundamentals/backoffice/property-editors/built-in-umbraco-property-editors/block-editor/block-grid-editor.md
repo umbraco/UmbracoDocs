@@ -243,6 +243,7 @@ These Partial Views must be placed in the same folder as before, (`Views/Partial
 The following is an example of a Partial View for a Block Type of type `MyElementTypeAliasOfContent`.
 
 {% code title="MyElementTypeAliasOfContent.cshtml" %}
+
 ```csharp
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>;
 
@@ -252,11 +253,13 @@ The following is an example of a Partial View for a Block Type of type `MyElemen
 @* Render the block areas *@
 @await Html.GetBlockGridItemAreasHtmlAsync(Model)
 ```
+
 {% endcode %}
 
 If you are using ModelsBuilder, you can make the property rendering strongly typed by letting your view accept a model of type `BlockGridItem<T>`. For example:
 
 {% code title="MyElementTypeAliasOfContent.cshtml" %}
+
 ```csharp
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem<ContentModels.MyElementTypeAliasOfContent>>;
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
@@ -267,6 +270,7 @@ If you are using ModelsBuilder, you can make the property rendering strongly typ
 @* Render the block areas *@
 @await Html.GetBlockGridItemAreasHtmlAsync(Model)
 ```
+
 {% endcode %}
 
 #### Stylesheet
@@ -296,6 +300,7 @@ The built-in value converter for the Block Grid property editor lets you use the
 The following example mimics the built-in rendering mechanism for rendering Blocks using Partial Views:
 
 {% code title="View.cshtml" %}
+
 ```csharp
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @using Umbraco.Cms.Core.Models.Blocks
@@ -314,11 +319,13 @@ The following example mimics the built-in rendering mechanism for rendering Bloc
     }
 }
 ```
+
 {% endcode %}
 
 If you do not want to use Partial Views, you can access the block item data directly within your rendering:
 
 {% code title="View.cshtml" %}
+
 ```csharp
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @using Umbraco.Cms.Core.Models.Blocks
@@ -348,6 +355,7 @@ If you do not want to use Partial Views, you can access the block item data dire
     }
 }
 ```
+
 {% endcode %}
 
 ## Write a Custom Layout Stylesheet
@@ -457,16 +465,21 @@ Building Custom Views for Block representations in Backoffice is based on the sa
 ## Creating a Block Grid programmatically
 
 In this example, we will be creating content programmatically for a "spot" Blocks in a Block Grid.
+
 1. On a document type add a property called **blockGrid**.
-2. Then add as editor **Block Grid**. 
+2. Then add as editor **Block Grid**.
 3. In the Block Grid add a new block and click to **Create new Element Type**
 4. Name this element type **spotElement** with the following properties:
-- a property called **title** with the editor of **Textstring**
-- a property called **text** with the editor of **Textstring**
-5. Then on the **Settings model** click to add a new Setting. 
+
+* A property called **title** with the editor of **Textstring**
+
+* A property called **text** with the editor of **Textstring**
+
+5. Then on the **Settings model** click to add a new Setting.
 6. Then click to **Create new Element Type**.
 7. Name this element type **spotSettings** with the following properties:
-- a property called **featured** with the editor of **True/false**.
+
+* A property called **featured** with the editor of **True/false**.
 
 ![Block Grid - Block Configuration](../../../images/BlockEditorConfigurationProgramatically.png)
 
@@ -536,10 +549,10 @@ All `contentData` and `layoutData` entries need their own unique `Udi` as well a
 8. First and foremost, we need models to transform the raw data into Block Grid compatible JSON. Create a class called **Model.cs** containing the following:
 
 {% code title="Models.cs" lineNumbers="true" %}
-```csharp
-using Newtonsoft.Json;
-using Umbraco.Cms.Core;
 
+```csharp
+using Umbraco.Cms.Core;
+using System.Text.Json.Serialization;
 namespace My.Site.Models;
 
 // this is the "root" of the block grid data
@@ -552,13 +565,13 @@ public class BlockGridData
         SettingsData = settingsData;
     }
 
-    [JsonProperty("layout")]
+    [JsonPropertyName("layout")]
     public BlockGridLayout Layout { get; }
 
-    [JsonProperty("contentData")]
+    [JsonPropertyName("contentData")]
     public BlockGridElementData[] ContentData { get; }
 
-    [JsonProperty("settingsData")]
+    [JsonPropertyName("settingsData")]
     public BlockGridElementData[] SettingsData { get; }
 }
 
@@ -567,7 +580,7 @@ public class BlockGridLayout
 {
     public BlockGridLayout(BlockGridLayoutItem[] layoutItems) => LayoutItems = layoutItems;
 
-    [JsonProperty("Umbraco.BlockGrid")]
+    [JsonPropertyName("Umbraco.BlockGrid")]
     public BlockGridLayoutItem[] LayoutItems { get; }
 }
 
@@ -582,20 +595,20 @@ public class BlockGridLayoutItem
         RowSpan = rowSpan;
     }
 
-    [JsonProperty("contentUdi")]
+    [JsonPropertyName("contentUdi")]
     public Udi ContentUdi { get; }
 
-    [JsonProperty("settingsUdi")]
+    [JsonPropertyName("settingsUdi")]
     public Udi SettingsUdi { get; }
 
-    [JsonProperty("areas")]
+    [JsonPropertyName("areas")]
     // areas are omitted from this sample for abbreviation
     public object[] Areas { get; } = { };
 
-    [JsonProperty("columnSpan")]
+    [JsonPropertyName("columnSpan")]
     public int ColumnSpan { get; }
 
-    [JsonProperty("rowSpan")]
+    [JsonPropertyName("rowSpan")]
     public int RowSpan { get; }
 
 }
@@ -610,27 +623,29 @@ public class BlockGridElementData
         Data = data;
     }
 
-    [JsonProperty("contentTypeKey")]
+    [JsonPropertyName("contentTypeKey")]
     public Guid ContentTypeKey { get; }
 
-    [JsonProperty("udi")]
+    [JsonPropertyName("udi")]
     public Udi Udi { get; }
 
     [JsonExtensionData]
     public Dictionary<string, object> Data { get; }
 }
 ```
+
 {% endcode %}
 
 9. By injecting [ContentService](../../../../../reference/management/services/contentservice/) and [ContentTypeService](../../../../../reference/management/services/contenttypeservice/) into an API controller, we can transform the raw data into Block Grid JSON. It can then be saved to the target content item. Create a class called **BlockGridTestController.cs** containing the following:
 
 {% code title="BlockGridTestController.cs" lineNumbers="true" %}
+
 ```csharp
 using Microsoft.AspNetCore.Mvc;
 using My.Site.Models;
-using Newtonsoft.Json;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Core.Serialization;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Web.Common.Controllers;
 
@@ -640,11 +655,13 @@ public class BlockGridTestController : UmbracoApiController
 {
     private readonly IContentService _contentService;
     private readonly IContentTypeService _contentTypeService;
+    private readonly IJsonSerializer _serializer;
 
-    public BlockGridTestController(IContentService contentService, IContentTypeService contentTypeService)
+    public BlockGridTestController(IContentService contentService, IContentTypeService contentTypeService, IJsonSerializer serializer)
     {
         _contentService = contentService;
         _contentTypeService = contentTypeService;
+        _serializer = serializer;
     }
 
     // POST: /umbraco/api/blockgridtest/create
@@ -707,7 +724,7 @@ public class BlockGridTestController : UmbracoApiController
             spotSettingsData.ToArray());
 
         // serialize the block grid data as JSON and save it to the "blockGrid" property on the content item
-        var propertyValue = JsonConvert.SerializeObject(blockGridData);
+        var propertyValue = _serializer.Serialize(blockGridData);
         content.SetValue("blockGrid", propertyValue);
         _contentService.Save(content);
 
@@ -715,6 +732,7 @@ public class BlockGridTestController : UmbracoApiController
     }
 }
 ```
+
 {% endcode %}
 
 For the above code `IContent? content = _contentService.GetById(1203);` change the id with your content node that is using the Block Grid.
