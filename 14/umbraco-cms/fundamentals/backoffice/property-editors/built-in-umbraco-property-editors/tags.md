@@ -74,7 +74,6 @@ You can use the ContentService to create and update Umbraco content from c# code
 @using Umbraco.Cms.Core.Services
 @inject IContentService Services;
 @inject IJsonSerializer Serializer;
-@using Newtonsoft.Json
 @{
     // Get access to ContentService
     var contentService = Services;

@@ -88,7 +88,6 @@ See the example below to see how a value can be added or changed programmaticall
 @inject IContentService Services;
 @using Umbraco.Cms.Core.Serialization
 @inject IJsonSerializer Serializer;
-@using Newtonsoft.Json
 @{
     // Get access to ContentService
     var contentService = Services;
