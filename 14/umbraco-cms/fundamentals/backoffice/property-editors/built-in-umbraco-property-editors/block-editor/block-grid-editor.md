@@ -655,13 +655,13 @@ public class BlockGridTestController : UmbracoApiController
 {
     private readonly IContentService _contentService;
     private readonly IContentTypeService _contentTypeService;
-    private readonly IJsonSerializer serializer;
+    private readonly IJsonSerializer _serializer;
 
     public BlockGridTestController(IContentService contentService, IContentTypeService contentTypeService, IJsonSerializer serializer)
     {
         _contentService = contentService;
         _contentTypeService = contentTypeService;
-        this.serializer = serializer;
+        _serializer = serializer;
     }
 
     // POST: /umbraco/api/blockgridtest/create
@@ -724,7 +724,7 @@ public class BlockGridTestController : UmbracoApiController
             spotSettingsData.ToArray());
 
         // serialize the block grid data as JSON and save it to the "blockGrid" property on the content item
-        var propertyValue = serializer.Serialize(blockGridData);
+        var propertyValue = _serializer.Serialize(blockGridData);
         content.SetValue("blockGrid", propertyValue);
         _contentService.Save(content);
 
