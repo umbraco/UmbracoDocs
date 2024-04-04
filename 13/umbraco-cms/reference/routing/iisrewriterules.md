@@ -43,7 +43,7 @@ To use rewrites with Umbraco v9+ you have to register the middleware in your `Pr
 using Microsoft.AspNetCore.Rewrite;
 
 var rewriteOptions = new RewriteOptions()
-    .AddIISUrlRewrite(env.ContentRootFileProvider, "IISUrlRewrite.xml");
+    .AddIISUrlRewrite(builder.Environment.ContentRootFileProvider, "IISUrlRewrite.xml");
 
 app.UseRewriter(rewriteOptions);
 
