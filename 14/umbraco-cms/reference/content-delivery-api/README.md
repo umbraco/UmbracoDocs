@@ -10,7 +10,7 @@ The Content Delivery API delivers headless capabilities built directly into Umbr
 
 The Delivery API is an opt-in feature of Umbraco. It must be explicitly enabled through configuration before it can be utilized.
 
-{% embed url="https://www.youtube.com/watch?v=sh_AF-ZKJ28" %}
+{% embed url="<https://www.youtube.com/watch?v=sh_AF-ZKJ28>" %}
 Video tutorial
 {% endembed %}
 
@@ -49,6 +49,7 @@ The next step is to enable the Content Delivery API in `appsettings.json`. Follo
 3. Add the `Enabled` key and set its value to `true`:
 
 {% code title="appsettings.json" %}
+
 ```json
 {
     "Umbraco": {
@@ -60,6 +61,7 @@ The next step is to enable the Content Delivery API in `appsettings.json`. Follo
     }
 }
 ```
+
 {% endcode %}
 
 Once the Content Delivery API is enabled, you will need to manually rebuild the Delivery API content index (_DeliveryApiContentIndex_). This can be done using the "Examine Management" dashboard in the "Settings" section. Once the index is rebuilt, the API will be able to serve the latest content from the multiple-items endpoint.
@@ -69,6 +71,7 @@ Once the Content Delivery API is enabled, you will need to manually rebuild the 
 When the Delivery API is enabled in your project, all your published content will be made available to the public by default. However, a few additional configuration options will allow you to restrict access to the Delivery API endpoints and limit the content that is returned.
 
 {% code title="appsettings.json" %}
+
 ```json
 {
     "Umbraco": {
@@ -84,6 +87,7 @@ When the Delivery API is enabled in your project, all your published content wil
     }
 }
 ```
+
 {% endcode %}
 
 * `Umbraco:CMS:DeliveryApi:PublicAccess` determines whether the Delivery API (_if enabled_) should be publicly accessible or if access should require an API key.
@@ -200,8 +204,8 @@ Start-Item: docs-portal
 
 Property expansion and limiting allows you to:
 
-- Include properties from related content or media in the API output for a given content item.
-- Limit the content properties in the API output.
+* Include properties from related content or media in the API output for a given content item.
+* Limit the content properties in the API output.
 
 By default, a content property that allows picking a different content item (for example a content picker) outputs a "shallow" representation of the picked item. This means that the output only includes basic information about the picked item, without the item properties.
 
@@ -213,7 +217,7 @@ By default, all content properties (including expanded properties) are included 
 
 Property expansion and limiting can be used when querying for both single and multiple content or media items. You can expand properties by adding an `expand` parameter to the query and limit them by the `fields` query parameter.
 
-Please refer to [this article](./property-expansion-and-limiting) for an in-depth explanation of this feature.
+Refer to [this article](./property-expansion-and-limiting.md) for an in-depth explanation of this feature.
 
 </details>
 
@@ -256,201 +260,163 @@ The output produced by the Delivery API can either represent a specific content 
 When referring to a specific content item in your API requests, the `id` parameter always refers to the item’s key (GUID) and not its integer node id.
 {% endhint %}
 
-{% swagger method="get" path="/content/item/{id}" baseUrl="/umbraco/delivery/api/v2" summary="Gets a content item by id" %}
-{% swagger-description %}
+## Gets a content item by id
+
+<mark style="color:blue;">`GET`</mark> `/umbraco/delivery/api/v2/content/item/{id}`
+
 Returns a single item.
-{% endswagger-description %}
 
-{% swagger-parameter in="path" name="id" type="String" required="true" %}
-GUID of the content item
-{% endswagger-parameter %}
+#### Path Parameters
 
-{% swagger-parameter in="header" name="Accept-Language" type="String" required="false" %}
-Requested culture
-{% endswagger-parameter %}
+| Name                                 | Type   | Description              |
+| ------------------------------------ | ------ | ------------------------ |
+| id<mark style="color:red;">\*</mark> | String | GUID of the content item |
 
-{% swagger-parameter in="header" name="Api-Key" type="String" required="false" %}
-Access token
-{% endswagger-parameter %}
+#### Query Parameters
 
-{% swagger-parameter in="header" name="Preview" type="Boolean" required="false" %}
-Whether draft content is requested
-{% endswagger-parameter %}
+| Name   | Type   | Description                                                                                              |
+| ------ | ------ | -------------------------------------------------------------------------------------------------------- |
+| expand | String | Which properties to expand and therefore include in the output if they refer to another piece of content |
+| fields | String | Which properties to include in the response (_by default all properties are included_)                   |
 
-{% swagger-parameter in="header" name="Start-Item" type="String" required="false" %}
-URL segment or GUID of the root content item
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-parameter in="query" name="expand" type="String" required="false" %}
-Which properties to expand and therefore include in the output if they refer to another piece of content
-{% endswagger-parameter %}
+| Name            | Type    | Description                                  |
+| --------------- | ------- | -------------------------------------------- |
+| Accept-Language | String  | Requested culture                            |
+| Api-Key         | String  | Access token                                 |
+| Preview         | Boolean | Whether draft content is requested           |
+| Start-Item      | String  | URL segment or GUID of the root content item |
 
-{% swagger-parameter in="query" name="fields" type="String" required="false" %}
-Which properties to include in the response (_by default all properties are included_)
-{% endswagger-parameter %}
+{% tabs %}
+{% tab title="200: OK Content item" %}
 
-{% swagger-response status="200: OK" description="Content item" %}
+{% endtab %}
 
-{% endswagger-response %}
+{% tab title="401: Unauthorized Missing permissions after protection is set up" %}
 
-{% swagger-response status="401: Unauthorized" description="Missing permissions after protection is set up" %}
+{% endtab %}
 
-{% endswagger-response %}
+{% tab title="404: Not Found Content item not found" %}
 
-{% swagger-response status="404: Not Found" description="Content item not found" %}
+{% endtab %}
+{% endtabs %}
 
-{% endswagger-response %}
-{% endswagger %}
+## Gets a content item by route
 
-{% swagger method="get" path="/content/item/{path}" baseUrl="/umbraco/delivery/api/v2" summary="Gets a content item by route" %}
-{% swagger-description %}
+<mark style="color:blue;">`GET`</mark> `/umbraco/delivery/api/v2/content/item/{path}`
+
 Returns a single item.
-{% endswagger-description %}
 
-{% swagger-parameter in="path" name="path" type="String" required="true" %}
-Path of the content item
-{% endswagger-parameter %}
+#### Path Parameters
 
-{% swagger-parameter in="header" name="Accept-Language" type="String" required="false" %}
-Requested culture
-{% endswagger-parameter %}
+| Name                                   | Type   | Description              |
+| -------------------------------------- | ------ | ------------------------ |
+| path<mark style="color:red;">\*</mark> | String | Path of the content item |
 
-{% swagger-parameter in="header" name="Api-Key" type="String" required="false" %}
-Access token
-{% endswagger-parameter %}
+#### Query Parameters
 
-{% swagger-parameter in="header" name="Preview" type="Boolean" required="false" %}
-Whether draft content is requested
-{% endswagger-parameter %}
+| Name   | Type   | Description                                                                                              |
+| ------ | ------ | -------------------------------------------------------------------------------------------------------- |
+| expand | String | Which properties to expand and therefore include in the output if they refer to another piece of content |
+| fields | String | Which properties to include in the response (_by default all properties are included_)                   |
 
-{% swagger-parameter in="header" name="Start-Item" type="String" required="false" %}
-URL segment or GUID of the root content item
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-parameter in="query" name="expand" type="String" required="false" %}
-Which properties to expand and therefore include in the output if they refer to another piece of content
-{% endswagger-parameter %}
+| Name            | Type    | Description                                  |
+| --------------- | ------- | -------------------------------------------- |
+| Accept-Language | String  | Requested culture                            |
+| Api-Key         | String  | Access token                                 |
+| Preview         | Boolean | Whether draft content is requested           |
+| Start-Item      | String  | URL segment or GUID of the root content item |
 
-{% swagger-parameter in="query" name="fields" type="String" required="false" %}
-Which properties to include in the response (_by default all properties are included_)
-{% endswagger-parameter %}
+{% tabs %}
+{% tab title="200: OK Content item" %}
 
-{% swagger-response status="200: OK" description="Content item" %}
+{% endtab %}
 
-{% endswagger-response %}
+{% tab title="401: Unauthorized Missing permissions after protection is set up" %}
 
-{% swagger-response status="401: Unauthorized" description="Missing permissions after protection is set up" %}
+{% endtab %}
 
-{% endswagger-response %}
+{% tab title="404: Not Found Content item not found" %}
 
-{% swagger-response status="404: Not Found" description="Content item not found" %}
+{% endtab %}
+{% endtabs %}
 
-{% endswagger-response %}
-{% endswagger %}
+## Gets content item(s) by id
 
-{% swagger method="get" path="/content/items" baseUrl="/umbraco/delivery/api/v2" summary="Gets content item(s) by id" %}
-{% swagger-description %}
+<mark style="color:blue;">`GET`</mark> `/umbraco/delivery/api/v2/content/items`
+
 Returns single or multiple items by id.
-{% endswagger-description %}
 
-{% swagger-parameter in="query" name="id" type="String Array" required="true" %}
-GUIDs of the content items
-{% endswagger-parameter %}
+#### Query Parameters
 
-{% swagger-parameter in="header" name="Accept-Language" type="String" required="false" %}
-Requested culture
-{% endswagger-parameter %}
+| Name                                 | Type         | Description                                                                            |
+| ------------------------------------ | ------------ | -------------------------------------------------------------------------------------- |
+| id<mark style="color:red;">\*</mark> | String Array | GUIDs of the content items                                                             |
+| expand                               | String       | Which properties to expand in the response                                             |
+| fields                               | String       | Which properties to include in the response (_by default all properties are included_) |
 
-{% swagger-parameter in="header" name="Api-Key" type="String" required="false" %}
-Access token
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-parameter in="header" name="Preview" type="Boolean" required="false" %}
-Whether draft content is requested
-{% endswagger-parameter %}
+| Name            | Type    | Description                                  |
+| --------------- | ------- | -------------------------------------------- |
+| Accept-Language | String  | Requested culture                            |
+| Api-Key         | String  | Access token                                 |
+| Preview         | Boolean | Whether draft content is requested           |
+| Start-Item      | String  | URL segment or GUID of the root content item |
 
-{% swagger-parameter in="header" name="Start-Item" type="String" required="false" %}
-URL segment or GUID of the root content item
-{% endswagger-parameter %}
+{% tabs %}
+{% tab title="200: OK List of content items" %}
 
-{% swagger-parameter in="query" name="expand" type="String" required="false" %}
-Which properties to expand in the response
-{% endswagger-parameter %}
+{% endtab %}
 
-{% swagger-parameter in="query" name="fields" type="String" required="false" %}
-Which properties to include in the response (_by default all properties are included_)
-{% endswagger-parameter %}
+{% tab title="401: Unauthorized Missing permissions after protection is set up" %}
 
-{% swagger-response status="200: OK" description="List of content items" %}
+{% endtab %}
+{% endtabs %}
 
-{% endswagger-response %}
+## Gets content item(s) from a query
 
-{% swagger-response status="401: Unauthorized" description="Missing permissions after protection is set up" %}
+<mark style="color:blue;">`GET`</mark> `/umbraco/delivery/api/v2/content`
 
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger method="get" path="/content" baseUrl="/umbraco/delivery/api/v2" summary="Gets content item(s) from a query" %}
-{% swagger-description %}
 Returns single or multiple items.
-{% endswagger-description %}
 
-{% swagger-parameter in="query" name="fetch" type="String" required="false" %}
-Structural query string option (e.g. `ancestors`, `children`, `descendants`)
-{% endswagger-parameter %}
+#### Query Parameters
 
-{% swagger-parameter in="query" name="filter" type="String Array" required="false" %}
-Filtering query string options (e.g. `contentType`, `name`, `createDate`, `updateDate`)
-{% endswagger-parameter %}
+| Name   | Type         | Description                                                                                              |
+| ------ | ------------ | -------------------------------------------------------------------------------------------------------- |
+| fetch  | String       | Structural query string option (e.g. `ancestors`, `children`, `descendants`)                             |
+| filter | String Array | Filtering query string options (e.g. `contentType`, `name`, `createDate`, `updateDate`)                  |
+| sort   | String Array | Sorting query string options (e.g. `createDate`, `level`, `name`, `sortOrder`, `updateDate`)             |
+| skip   | Integer      | Amount of items to skip                                                                                  |
+| take   | Integer      | Amount of items to take                                                                                  |
+| expand | String       | Which properties to expand and therefore include in the output if they refer to another piece of content |
+| fields | String       | Which properties to include in the response (_by default all properties are included_)                   |
 
-{% swagger-parameter in="query" name="sort" type="String Array" required="false" %}
-Sorting query string options (e.g. `createDate`, `level`, `name`, `sortOrder`, `updateDate`)
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-parameter in="query" name="skip" type="Integer" required="false" %}
-Amount of items to skip
-{% endswagger-parameter %}
+| Name            | Type    | Description                                  |
+| --------------- | ------- | -------------------------------------------- |
+| Accept-Language | String  | Requested culture                            |
+| Api-Key         | String  | Access token                                 |
+| Preview         | Boolean | Whether draft content is requested           |
+| Start-Item      | String  | URL segment or GUID of the root content item |
 
-{% swagger-parameter in="query" name="take" type="Integer" required="false" %}
-Amount of items to take
-{% endswagger-parameter %}
+{% tabs %}
+{% tab title="200: OK Paginated list of content items" %}
 
-{% swagger-parameter in="header" name="Accept-Language" type="String" required="false" %}
-Requested culture
-{% endswagger-parameter %}
+{% endtab %}
 
-{% swagger-parameter in="header" name="Api-Key" type="String" required="false" %}
-Access token
-{% endswagger-parameter %}
+{% tab title="400: Bad Request Invalid request" %}
 
-{% swagger-parameter in="header" name="Preview" type="Boolean" required="false" %}
-Whether draft content is requested
-{% endswagger-parameter %}
+{% endtab %}
 
-{% swagger-parameter in="header" name="Start-Item" type="String" required="false" %}
-URL segment or GUID of the root content item
-{% endswagger-parameter %}
+{% tab title="404: Not Found Start-Item not found" %}
 
-{% swagger-parameter in="query" name="expand" type="String" required="false" %}
-Which properties to expand and therefore include in the output if they refer to another piece of content
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="fields" type="String" required="false" %}
-Which properties to include in the response (_by default all properties are included_)
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="Paginated list of content items" %}
-
-{% endswagger-response %}
-
-{% swagger-response status="400: Bad Request" description="Invalid request" %}
-
-{% endswagger-response %}
-
-{% swagger-response status="404: Not Found" description="Start-Item not found" %}
-
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 All endpoints are documented in a Swagger document at `{yourdomain}/umbraco/swagger`. Keep in mind that this document is not available in production mode by default. For more information check the [API versioning and OpenAPI](https://docs.umbraco.com/umbraco-cms/reference/api-versioning-and-openapi) article.
 
@@ -522,10 +488,10 @@ For example, the following API call will attempt to retrieve all the content ite
 ```http
 GET /umbraco/delivery/api/v2/content?fetch=children:dc1f43da-49c6-4d87-b104-a5864eca8152
 ```
+
 {% endtab %}
 
 {% tab title="filter" %}
-
 The `filter` query parameter allows you to specify one or more filters that must match in order for a content item to be included in the response. The API provides a few built-in filters that you can use right away with the `/umbraco/delivery/api/v2/content` endpoint:
 
 **`?filter=contentType:alias`**\
@@ -549,10 +515,10 @@ When this filter is applied, only content items that were updated later than the
 {% hint style="info" %}
 The `createDate` and `updateDate` filters support both "greater than", "greater than or equal", "less than" and "less than or equal":
 
-- Use `>` for "greater than" filtering.
-- Use `>:` for "greater than or equal" filtering.
-- Use `<` for "less than" filtering.
-- Use `<:` for "less than or equal" filtering.
+* Use `>` for "greater than" filtering.
+* Use `>:` for "greater than or equal" filtering.
+* Use `<` for "less than" filtering.
+* Use `<:` for "less than or equal" filtering.
 {% endhint %}
 
 Multiple filters can be applied to the same request in addition to other query parameters:
@@ -598,6 +564,7 @@ Different sorting options can be combined for the `/umbraco/delivery/api/v2/cont
 ```http
 GET /umbraco/delivery/api/v2/content?sort=name:asc&sort=createDate:asc
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -623,15 +590,18 @@ To handle this we have to change the limit. Since the Delivery API has its own J
 First, we have to add these `using` statements to `Program.cs`:
 
 {% code title="Program.cs" %}
+
 ```csharp
 using Umbraco.Cms.Api.Common.DependencyInjection;
 using Umbraco.Cms.Core;
 ```
+
 {% endcode %}
 
 Now we can add the following code snippet to the `Program.cs` file:
 
 {% code title="Program.cs" %}
+
 ```csharp
 builder.Services.AddControllers().AddJsonOptions(
     Constants.JsonOptionsNames.DeliveryApi,
@@ -641,6 +611,7 @@ builder.Services.AddControllers().AddJsonOptions(
         options.JsonSerializerOptions.MaxDepth = {desired max depth}
     });
 ```
+
 {% endcode %}
 
 ## Current Limitations
