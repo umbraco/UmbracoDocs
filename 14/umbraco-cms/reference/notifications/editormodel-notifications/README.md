@@ -112,7 +112,7 @@ public class EditorSendingMemberNotificationHandler : INotificationHandler<Sendi
 
 {% hint style="warning" %}
 
-The following notification events are obsolete. You can still use these notifications, however you will not be able to alter the data.
+The following notification events are obsolete from v14. You can still use these notifications, however you will not be able to alter the data.
 
 {% endhint %}
 
