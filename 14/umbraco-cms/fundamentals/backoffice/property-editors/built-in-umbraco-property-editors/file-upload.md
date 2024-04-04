@@ -60,7 +60,7 @@ The samples in this section have not been verified against the latest version of
 Instead, we recommend using the [Media Picker](media-picker-3.md) for uploading files to your Umbraco website.
 {% endhint %}
 
-See the example below to see how a value can be added or changed programmatically. To update a value of this property editor you need the [Content Service](../../../../reference/management/services/contentservice/) and the [Media Service](../../../../reference/management/services/mediaservice.md).
+See the example below to see how a value can be added or changed programmatically. To update a value of this property editor you need the [Content Service](../../../../reference/management/services/README.md#contentservice) and the [Media Service](../../../../reference/management/services/mediaservice.md).
 
 ```csharp
 @using Umbraco.Cms.Core.IO

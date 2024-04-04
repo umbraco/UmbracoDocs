@@ -49,10 +49,10 @@ Learn more about viewing references or implementing tracking in the [Tracking Re
 
 ### Related Services
 
-* [DataTypeService](../../../reference/management/services/datatypeservice.md)
+* [DataTypeService](../../../reference/management/services/README.md#datatypeservice)
 
 ### Umbraco Learning Base Channel
 
-{% embed url="https://www.youtube.com/watch?ab_channel=UmbracoLearningBase&v=OW9pCHWebGE" %}
+{% embed url="<https://www.youtube.com/watch?ab_channel=UmbracoLearningBase&v=OW9pCHWebGE>" %}
 Document Types in Umbraco: Defining Properties, Data Types and Property Editors
 {% endembed %}

@@ -636,7 +636,7 @@ public class BlockGridElementData
 
 {% endcode %}
 
-9. By injecting [ContentService](../../../../../reference/management/services/contentservice/) and [ContentTypeService](../../../../../reference/management/services/contenttypeservice/) into an API controller, we can transform the raw data into Block Grid JSON. It can then be saved to the target content item. Create a class called **BlockGridTestController.cs** containing the following:
+9. By injecting [ContentService](../../../../../reference/management/services/README.md#contentservice) and [ContentTypeService](../../../../../reference/management/services/README.md#contenttypeservice) into an API controller, we can transform the raw data into Block Grid JSON. It can then be saved to the target content item. Create a class called **BlockGridTestController.cs** containing the following:
 
 {% code title="BlockGridTestController.cs" lineNumbers="true" %}
 

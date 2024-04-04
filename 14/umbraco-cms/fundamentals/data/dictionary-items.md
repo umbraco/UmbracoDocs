@@ -16,11 +16,11 @@ To add a Dictionary Item:
 
 1. Go to the **Translation** section.
 2. Click on **Dictionary** in the **Translation** tree and select **Create**.
-3.  Enter the **Name** for the dictionary item. Let's say _Welcome_.
+3. Enter the **Name** for the dictionary item. Let's say _Welcome_.
 
     <figure><img src="../../../../10/umbraco-cms/fundamentals/data/images/Create-dictionary-item.png" alt=""><figcaption></figcaption></figure>
 4. Click **Create**.
-5.  Enter the values for the different language versions.
+5. Enter the values for the different language versions.
 
     <figure><img src="../../../../10/umbraco-cms/fundamentals/data/images/dictionary-item-values.png" alt=""><figcaption></figcaption></figure>
 6. Click **Save**.
@@ -36,7 +36,7 @@ To group dictionary items:
 5. Click on **Contact** and select **Create**.
 6. Enter the **Name** of the item to be created under the **Contact** group.
 7. Click **Create**.
-8.  Enter the values for the different language versions.
+8. Enter the values for the different language versions.
 
     <figure><img src="../../../../10/umbraco-cms/fundamentals/data/images/display-dictionary-item.png" alt=""><figcaption></figcaption></figure>
 9. Click **Save**.
@@ -135,5 +135,5 @@ To use Dictionary Items in a multilingual website, see the [Creating a Multiling
 ## Related Links
 
 * [API reference for the DictionaryItem](../../reference/management/models/dictionaryitem.md)
-* [Localization Service](../../reference/management/services/localizationservice/)
+* [Localization Service](../../reference/management/services/README.md#localizationservice)
 * [Creating a Multilingual Site](../../tutorials/multilanguage-setup.md)

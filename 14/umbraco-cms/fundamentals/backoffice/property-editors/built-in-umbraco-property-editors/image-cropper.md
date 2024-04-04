@@ -112,7 +112,7 @@ Set the `htmlEncode` to false so that the URL is not HTML encoded
 
 ## Add values programmatically
 
-To update a content property value you need the [Content Service](../../../../reference/management/services/contentservice/).
+To update a content property value you need the [Content Service](../../../../reference/management/services/README.md#contentservice).
 
 The following sample demonstrates how to add or change the value of an Image Cropper property programmatically. The sample creates an API controller with an action, which must be invoked via a POST request to the URL written above the action.
 

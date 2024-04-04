@@ -43,7 +43,7 @@ The Email Address Property Editor does not come with any further configuration. 
 
 ## Add value programmatically
 
-See the example below to learn how a value can be added or changed programmatically to an Email-address property. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/contentservice/).
+See the example below to learn how a value can be added or changed programmatically to an Email-address property. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/README.md#contentservice).
 
 ```csharp
 @using Umbraco.Cms.Core.Services;
@@ -67,7 +67,7 @@ See the example below to learn how a value can be added or changed programmatica
 ```
 
 {% hint style="info" %}
-The value sent to an EmailAddress property needs to be a correct email address, For example: name@domain.com.
+The value sent to an EmailAddress property needs to be a correct email address, For example: <name@domain.com>.
 
 It is recommended that you set up validation on this property, in order to verify whether the value added is in the correct format.
 {% endhint %}
