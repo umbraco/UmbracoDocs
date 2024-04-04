@@ -317,13 +317,13 @@ To import a Document Type:
 
 ## Related Services
 
-* [ContentService](../../../reference/management/services/contentservice/)
-* [ContentTypeService](../../../reference/management/services/contenttypeservice/)
+* [ContentService](../../../reference/management/services/README.md#contentservice)
+* [ContentTypeService](../../../reference/management/services/README.md#contenttypeservice)
 
 ## Tutorials
 
 * [Creating a basic website with Umbraco](../../../tutorials/creating-a-basic-website/)
 
-{% embed url="https://www.youtube.com/playlist?ab_channel=UmbracoLearningBase&list=PLgX62vUaGZsG98vy9HWuwpU4XVnbIAnHK" %}
+{% embed url="<https://www.youtube.com/playlist?ab_channel=UmbracoLearningBase&list=PLgX62vUaGZsG98vy9HWuwpU4XVnbIAnHK>" %}
 Playlist: Document Types in Umbraco
 {% endembed %}

@@ -45,26 +45,26 @@ There is also a Value Type: Long string if you need to set a long string value f
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/contentservice/).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/README.md#contentservice).
 
 ```csharp
 @{
     @inject IContentService Services;
     
-	// Get access to ContentService
-	var contentService = Services;
+ // Get access to ContentService
+ var contentService = Services;
 
-	// Create a variable for the GUID of the page you want to update
-	var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
+ // Create a variable for the GUID of the page you want to update
+ var guid = Guid.Parse("32e60db4-1283-4caa-9645-f2153f9888ef");
 
-	// Get the page using the GUID you've defined
-	var content = contentService.GetById(guid); // ID of your page
+ // Get the page using the GUID you've defined
+ var content = contentService.GetById(guid); // ID of your page
 
-	// Set the value of the property with alias 'pageLabel'. 
-	content.SetValue("pageLabel", "A pre-set string value");
+ // Set the value of the property with alias 'pageLabel'. 
+ content.SetValue("pageLabel", "A pre-set string value");
 
-	// Save the change
-	contentService.Save(content);
+ // Save the change
+ contentService.Save(content);
 }
 ```
 

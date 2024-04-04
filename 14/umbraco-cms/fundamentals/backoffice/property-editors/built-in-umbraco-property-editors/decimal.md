@@ -34,7 +34,7 @@ If the value of **Step Size** is not set then all decimal values between 8 and 1
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/contentservice/).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/README.md#contentservice).
 
 ```csharp
 @inject IContentService Services;

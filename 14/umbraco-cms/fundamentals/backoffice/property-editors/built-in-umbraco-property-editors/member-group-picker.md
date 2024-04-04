@@ -37,7 +37,7 @@ The Member Group Picker opens a panel to pick one or more member groups from the
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/contentservice/).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/README.md#contentservice).
 
 ```csharp
 @using Umbraco.Cms.Core.Services;

@@ -70,7 +70,7 @@ You can also render the output by casting it to a string, which means you will n
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/contentservice/).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](../../../../reference/management/services/README.md#contentservice).
 
 ```csharp
 @using Umbraco.Cms.Core.Services;

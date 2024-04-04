@@ -108,12 +108,12 @@ You can find out more about the services methods in the reference section of the
 
 ## References
 
-* Video:[ Adding a member](https://www.youtube.com/watch?v=gdvfrqQcAGY)
+* Video:[Adding a member](https://www.youtube.com/watch?v=gdvfrqQcAGY)
 * Video: [Member types properties](https://www.youtube.com/watch?v=\_aMZJWxdNHg)
 * Video: [Role-Based Protection](https://www.youtube.com/watch?v=wVR9OBnaNZQ)
 
 ### Related Services
 
-* [MemberService](../../reference/management/services/memberservice.md)
-* [MemberType Service](../../reference/management/services/membertypeservice.md)
-* [MemberGroup Service](../../reference/management/services/membergroupservice.md)
+* [MemberService](../../reference/management/services/README.md#memberservice)
+* [MemberType Service](../../reference/management/services/README.md#membertypeservice)
+* [MemberGroup Service](../../reference/management/services/README.md#membergroupservice)

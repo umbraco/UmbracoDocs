@@ -221,18 +221,18 @@ public class CustomNewsArticleService: ICustomNewsArticleService
 
 There is full API coverage of all Umbraco core entities:
 
-* [AuditService](../../reference/management/services/auditservice.md)
+* [AuditService](../../reference/management/services/README.md#auditservice)
 * [ConsentService](../../reference/management/services/consentservice.md)
-* [ContentService](../../reference/management/services/contentservice/)
-* [ContentTypeService](../../reference/management/services/contenttypeservice/)
-* [DataTypeService](../../reference/management/services/datatypeservice.md)
-* [EntityService](../../reference/management/services/entityservice.md)
-* [FileService](../../reference/management/services/fileservice.md)
-* [LocalizationService](../../reference/management/services/localizationservice/)
+* [ContentService](../../reference/management/services/README.md#contentservice)
+* [ContentTypeService](../../reference/management/services/README.md#contenttypeservice)
+* [DataTypeService](../../reference/management/services/README.md#datatypeservice)
+* [EntityService](../../reference/management/services/README.md#entityservice)
+* [FileService](../../reference/management/services/README.md#fileservice)
+* [LocalizationService](../../reference/management/services/README.md#localizationservice)
 * [MediaService](../../reference/management/services/mediaservice.md)
-* [MemberService](../../reference/management/services/memberservice.md)
-* [MemberTypeService](../../reference/management/services/membertypeservice.md)
-* [MemberGroupService](../../reference/management/services/membergroupservice.md)
+* [MemberService](../../reference/management/services/README.md#memberservice)
+* [MemberTypeService](../../reference/management/services/README.md#membertypeservice)
+* [MemberGroupService](../../reference/management/services/README.md#membergroupservice)
 
 ### More information
 
