@@ -173,6 +173,7 @@ In earlier versions of Umbraco up to version 12, the options included only a "Bu
 {% endhint %}
 
 {% code title="ProviderBackOfficeExternalLoginProviderOptions.cs" lineNumbers="true" %}
+
 ```csharp
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
@@ -258,6 +259,7 @@ public class ProviderBackOfficeExternalLoginProviderOptions : IConfigureNamedOpt
     }
 }
 ```
+
 {% endcode %}
 
 **Icons**
@@ -273,13 +275,7 @@ You can use the [Umbraco Icon Picker](../../fundamentals/data/defining-content/R
 {% tab title="Member Authentication" %}
 
 {% code title="ProviderMembersExternalLoginProviderOptions.cs" lineNumbers="true" %}
-```csharp
 
-{% endtab %}
-
-{% tab title="Member Authentication" %}
-
-{% code title="ProviderMembersExternalLoginProviderOptions.cs" lineNumbers="true" %}
 ```csharp
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
@@ -347,6 +343,7 @@ public class ProviderMembersExternalLoginProviderOptions : IConfigureNamedOption
     }
 }
 ```
+
 {% endcode %}
 
 {% endtab %}
@@ -389,6 +386,7 @@ The module should define a Custom Element and export it as default. The Custom E
 If you use TypeScript, you can use this interface to define the properties:
 
 {% code title="login-types.ts" %}
+
 ```typescript
 type UserViewState = 'loggingIn' | 'loggedIn' | 'loggedOut' | 'timedOut';
 
@@ -399,6 +397,7 @@ interface IExternalLoginCustomViewElement {
   userViewState?: UserViewState;
 };
 ```
+
 {% endcode %}
 
 **Examples**
@@ -420,6 +419,7 @@ You have access to the [Umbraco UI Library](../../extending/ui-library.md) in th
 We have to define a template first and then the custom element itself. The template is a small HTML form with a button. The button will submit the form to the `externalLoginUrl` property. The custom element will then render the template and attach it to the shadow DOM and wire up the `externalLoginUrl` property in the `connectedCallback` method.
 
 {% code title="~/App_Plugins/MyPlugin/BackOffice/my-external-login.js" lineNumbers="true" %}
+
 ```javascript
 const template = document.createElement('template');
 template.innerHTML = `
@@ -463,6 +463,7 @@ customElements.define('my-custom-view', MyCustomView);
 export default MyCustomView;
 
 ```
+
 {% endcode %}
 {% endtab %}
 
@@ -473,6 +474,7 @@ It is also possible to use a library like [Lit](https://lit.dev/) to render the 
 We are using Lit version 3 in this example imported directly from a JavaScript delivery network to keep the example slim. You can also use a bundler like [Vite](https://vitejs.dev) to bundle the Lit library with your custom element.
 
 {% code title="~/App_Plugins/MyPlugin/BackOffice/my-external-login.js" lineNumbers="true" %}
+
 ```javascript
 import {LitElement, css, html} from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 
@@ -514,6 +516,7 @@ customElements.define('my-lit-view', MyLitView);
 
 export default MyLitView;
 ```
+
 {% endcode %}
 {% endtab %}
 
@@ -527,6 +530,7 @@ The extension class is required to extend on the default authentication implemen
 {% tab title="User Authentication" %}
 
 {% code title="ProviderBackofficeAuthenticationExtensions.cs" lineNumbers="true" %}
+
 ```csharp
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Extensions;
@@ -581,6 +585,7 @@ public static class ProviderBackofficeAuthenticationExtensions
     }
 }
 ```
+
 {% endcode %}
 
 {% endtab %}
@@ -588,6 +593,7 @@ public static class ProviderBackofficeAuthenticationExtensions
 {% tab title="Member Authentication" %}
 
 {% code title="ProviderMembersAuthenticationExtensions.cs" lineNumbers="true" %}
+
 ```csharp
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.DependencyInjection;
@@ -632,6 +638,7 @@ public static class ProviderMemberAuthenticationExtensions
     }
 }
 ```
+
 {% endcode %}
 
 {% endtab %}
