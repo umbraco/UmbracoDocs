@@ -24,6 +24,10 @@ The new Backoffice for Umbraco CMS is scheduled for release along with Umbraco 1
 6. [Terminology](extending-backoffice/customize-backoffice.md#terminology)
 7. [UI Library and UI API](extending-backoffice/ui-library.md) external documentations
 
+{% hint style="info" %}
+You can also find a list of other resources related to the new backoffice of Umbraco in the [Umbraco v14 "Bellissima" Resources](https://github.com/umbraco/Umbraco.Packages/tree/main/bellissima) article.&#x20;
+{% endhint %}
+
 ### Breaking Changes
 
 Some breaking changes have been introduced in the Umbraco 14. You can find the list of breaking changes or other changes from v14 in the [Version Specific Upgrades](fundamentals/setup/upgrading/version-specific/) article. In the same article, you can find the breaking changes between each v14 version.&#x20;
