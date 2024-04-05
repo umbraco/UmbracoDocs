@@ -16,3 +16,9 @@
 * [Installation](deploy/installation.md)
 * [Deploying Changes](deploy/deploying-changes.md)
 * [Release Notes](deploy/release-notes.md)
+
+## Product Feeds
+
+* [Overview](product-feeds/README.md)
+* [Extending the plugin](product-feeds/extending.md)
+* [Release Notes](https://github.com/umbraco/Umbraco.Commerce.ProductFeeds/releases)
