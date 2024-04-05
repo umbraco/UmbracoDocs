@@ -1,0 +1,38 @@
+---
+description: >-
+  Need to generate umbraco commerce product feed? There's a plugin for that.
+---
+
+## Introduction
+After building up your e-commerce website, it's quite common that you want to share your fancy products to a external service like Google Merchant Center to reach out to more viewers.
+
+We have a XML feed generator plugin which simplifies the creation of structured XML files like that. It automatically extracts product data from Umbraco node, organizes it according to standards and allows you to add more information to the feed.
+
+Checkout `Umbraco Commerce Product Feeds plugin`.
+
+Supported feed templates
+- Google Merchant Center.
+
+## Quick start
+- Install the package from nuget: [![NuGet](https://img.shields.io/nuget/v/Umbraco.Commerce.ProductFeeds.svg?style=modern&label=nuget)](https://www.nuget.org/packages/Umbraco.Commerce.ProductFeeds/) 
+
+- To add this plugin to your website, locate where you call `IUmbracoBuilder.AddUmbracoCommerce()` and add a call to `IUmbracoCommerceBuilder.AddCommerceProductFeeds()`.
+
+```csharp
+        umbracoBuilder.AddUmbracoCommerce(ucBuilder => {
+            ucBuilder.AddCommerceProductFeeds(); // add this line
+        }
+```
+
+- After that, go to your backoffice, open your store's setting page then click on `Product Feed` section.
+![product feed list page](./media/product-feed-list-page.png).
+
+- Inside `Product Feeds` page, click on `Create Product Feed` button and fill in the feed settings. Mandatory fields are marked with a red asterisk (*). You can add more product data by adding new mappings in `Property And Node Mapping` section.
+
+![feed setting page](./media/feed-setting-page.png).
+
+- After saving the feed setting, a link to access the feed will show up under `Feed URL Segment` field and at the bottom of the page.
+![open feed link](./media/open-feed-link.png)
+
+- `Google Merchant Center Feed` sample:
+![google merchant center feed](./media/google-merchant-center-feed.png)
