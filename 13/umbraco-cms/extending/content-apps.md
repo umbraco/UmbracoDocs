@@ -232,51 +232,27 @@ public class WordCounterApp : IContentAppFactory
         // Allowing us to display the content app with some restrictions for certain groups
         if (userGroups.All(x => x.Alias.ToLowerInvariant() != Umbraco.Cms.Core.Constants.Security.AdminGroupAlias))
             return null;
-            
+
         // Only show app on content items
-        if (!(source is IContent))
+        if (source is not IContent content)
             return null;
-            
-        var content = ((IContent)source);
-            
+
         // Only show app on content items with template
         if (content.TemplateId is null)
             return null;
-            
+
         // Only show app on content with certain content type alias
         // if (!content.ContentType.Alias.Equals("aliasName"))
         //    return null;
-            
+
         return new ContentApp
         {
-            // Can implement some logic with userGroups if needed
-            // Allowing us to display the content app with some restrictions for certain groups
-            if (userGroups.All(x => x.Alias.ToLowerInvariant() != Umbraco.Cms.Core.Constants.Security.AdminGroupAlias))
-                return null;
-
-            // Only show app on content items
-            if (!(source is IContent))
-                return null;
-
-            var content = ((IContent)source);
-
-            // Only show app on content items with template
-            if (content.TemplateId is null)
-                return null;
-
-            // Only show app on content with certain content type alias
-            // if (!content.ContentType.Alias.Equals("aliasName"))
-            //    return null;
-
-            return new ContentApp
-            {
-                Alias = "wordCounter",
-                Name = "Word Counter",
-                Icon = "icon-calculator",
-                View = "/App_Plugins/WordCounter/wordcounter.html",
-                Weight = 0
-            };
-        }
+            Alias = "wordCounter",
+            Name = "Word Counter",
+            Icon = "icon-calculator",
+            View = "/App_Plugins/WordCounter/wordcounter.html",
+            Weight = 0
+        };
     }
 }
 ```
@@ -337,58 +313,33 @@ public class WordCounterAppComponent : IComposer
 
 public class WordCounterApp : IContentAppFactory
 {
-    public ContentApp GetContentAppFor(object source, IEnumerable<IReadOnlyUserGroup> userGroups)
+    public ContentApp? GetContentAppFor(object source, IEnumerable<IReadOnlyUserGroup> userGroups)
     {
         // Can implement some logic with userGroups if needed
         // Allowing us to display the content app with some restrictions for certain groups
         if (userGroups.All(x => x.Alias.ToLowerInvariant() != Umbraco.Cms.Core.Constants.Security.AdminGroupAlias))
             return null;
-            
+
         // Only show app on content items
-        if (!(source is IContent))
+        if (source is not IContent content)
             return null;
-            
-        var content = ((IContent)source);
-            
+
         // Only show app on content items with template
         if (content.TemplateId is null)
             return null;
-            
+
         // Only show app on content with certain content type alias
         // if (!content.ContentType.Alias.Equals("aliasName"))
         //    return null;
-            
+
         return new ContentApp
         {
-            // Can implement some logic with userGroups if needed
-            // Allowing us to display the content app with some restrictions for certain groups
-            if (userGroups.All(x => x.Alias.ToLowerInvariant() != Umbraco.Cms.Core.Constants.Security.AdminGroupAlias))
-                return null;
-
-            // Only show app on content items
-            if (!(source is IContent))
-                return null;
-
-            var content = ((IContent)source);
-
-            // Only show app on content items with template
-            if (content.TemplateId is null)
-                return null;
-
-            // Only show app on content with certain content type alias
-            // if (!content.ContentType.Alias.Equals("aliasName"))
-            //    return null;
-
-            return new ContentApp
-            {
-                Alias = "wordCounter",
-                Name = "Word Counter",
-                Icon = "icon-calculator",
-                View = "/App_Plugins/WordCounter/wordcounter.html",
-                Weight = 0,
-                Badge = new ContentAppBadge { Count = 5 , Type = ContentAppBadgeType.Warning }
-            };
-        }
+            Alias = "wordCounter",
+            Name = "Word Counter",
+            Icon = "icon-calculator",
+            View = "/App_Plugins/WordCounter/wordcounter.html",
+            Weight = 0
+        };
     }
 }
 ```
