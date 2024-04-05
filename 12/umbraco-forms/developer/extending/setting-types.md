@@ -52,7 +52,7 @@ It offers the option of text field entry or the selection of a field from the fo
 To create a custom setting type you will need an AngularJS view and controller in the following location: `/App_Plugins/MyPlugin/`.
 
 {% hint style="info" %}
-**Tip:** Your plugin folder path must be outside of the `/App_Plugins/UmbracoForms/` folder if you are going to use a custom Angular controller and Package.manifest.
+Your plugin folder path must be outside of the `/App_Plugins/UmbracoForms/` folder if you use a custom Angular controller and Package.manifest.
 {% endhint %}
 
 You then add the name of the view as the `View` property on the `Setting` attribute defined on the type.
