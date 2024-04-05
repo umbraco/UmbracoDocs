@@ -6,7 +6,7 @@ description: Converting product sources into understandable products for Umbraco
 
 The role of a Product Adapter in Umbraco Commerce is to provide an interface between a product information source and convert it into a standardized format. This is done to prevent the need for Umbraco Commerce to be tied to that source.
 
-What this means for developers is that Product Adapters allow you to hook in alternative product information sources that may not be Umbraco node based. You may hold your product information in a third-party database table. A custom Product Adapter would then allow Umbraco Commerce to interface with that custom data in the same way it would the default Umbraco node data.
+What this means for developers is that Product Adapters allow you to hook in alternative product information sources that may not be Umbraco node-based. You may hold your product information in a third-party database table. A custom Product Adapter would then allow Umbraco Commerce to interface with that custom data in the same way it would the default Umbraco node data.
 
 ## Example Product Adapter
 
@@ -176,7 +176,7 @@ public static class UmbracoCommerceUmbracoBuilderExtensions
     public static IUmbracoCommerceBuilder AddMyServices(IUmbracoCommerceBuilder builder)
     {
         // Replacing the default Product Adapter implementation
-        builder.Services.AddUnique<IProductAdapter, MyCustomProductAdapter>();
+        builder.Services.AddUnique<ProductAdapterBase, MyCustomProductAdapter>();
 
         // Return the builder to continue the chain
         return builder;

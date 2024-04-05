@@ -91,7 +91,7 @@ public static class UmbracoBuilderExtensions
         builder.Services.AddUnique<IProductCalculator, MyProductCalculator>();
 
         // Replacing the default product adapter
-        builder.Services.AddUnique<IProductAdapter, MyProductAdapter>();
+        builder.Services.AddUnique<ProductAdapterBase, MyProductAdapter>();
 
         // Return the builder to continue the chain
         return builder;
