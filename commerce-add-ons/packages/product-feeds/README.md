@@ -22,6 +22,7 @@ The `Umbraco Commerce Product Feeds` package supports the Google Merchant Center
 ```
 
 - After that, go to your backoffice, open your store's setting page then click on `Product Feed` section.
+
 ![product feed list page](./media/product-feed-list-page.png).
 
 - Inside `Product Feeds` page, click on `Create Product Feed` button and fill in the feed settings. Mandatory fields are marked with a red asterisk (*). You can add more product data by adding new mappings in `Property And Node Mapping` section.
@@ -29,6 +30,7 @@ The `Umbraco Commerce Product Feeds` package supports the Google Merchant Center
 ![feed setting page](./media/feed-setting-page.png).
 
 - After saving the feed setting, a link to access the feed will show up under `Feed URL Segment` field and at the bottom of the page.
+
 ![open feed link](./media/open-feed-link.png)
 
 - `Google Merchant Center Feed` sample:
