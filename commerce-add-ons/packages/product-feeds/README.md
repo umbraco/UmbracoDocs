@@ -4,7 +4,7 @@ description: >-
 ---
 
 ## Introduction
-After building up your e-commerce website, it's quite common that you want to share your fancy products to a external service like Google Merchant Center to reach out to more viewers.
+After building an e-commerce website, you might want to share your products with an external service like Google Merchant Center to reach more viewers.
 
 We have a XML feed generator plugin which simplifies the creation of structured XML files like that. It automatically extracts product data from Umbraco node, organizes it according to standards and allows you to add more information to the feed.
 
