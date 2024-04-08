@@ -19,4 +19,5 @@ builder.MultipleValuePropertyExtractors()
 ```
 
 Afterwards, your extractor name should show up in the dropdown under `Property And Node Mapping` section.
+
 ![property value extractor dropdown](./media/property-value-extractor-dropdown.png)
