@@ -1,6 +1,7 @@
 ---
 description: >-
-  Get an overview of the things changed and fixed in each version of Umbraco Commerce.
+  Get an overview of the things changed and fixed in each version of Umbraco
+  Commerce.
 ---
 
 # Release Notes
@@ -10,7 +11,7 @@ In this section, we have summarized the changes to Umbraco Commerce released in 
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
 {% hint style="info" %}
-If you are upgrading to a new major version, check the breaking changes in the [Version Specific Upgrade Notes](./upgrading/version-specific-upgrades.md) article.
+If you are upgrading to a new major version, check the breaking changes in the [Version Specific Upgrade Notes](upgrading/version-specific-upgrades.md) article.
 {% endhint %}
 
 ## Release History
@@ -19,7 +20,7 @@ This section contains the release notes for Umbraco Commerce 12 including all ch
 
 #### [12.1.9](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.1.9) (April 8th 2024)
 
-* Fixed properties set in the background from an entity action lost when resaving the entity from the UI after the action (wasn't fully fixed in 12.1.9) [#472](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/472).
+* Fixed properties set in the background from an entity action lost when resaving the entity from the UI after the action (wasn't fully fixed in 12.1.8) [#472](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/472).
 * Added support for localhost sub domains in dev license [#493](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/493).
 * Added a `WithUmbracoBuilder` extension for `IUmbracoCommerceBuilder` to allow access to the Umbraco configuration within an Umbraco Commerce registration.
 
