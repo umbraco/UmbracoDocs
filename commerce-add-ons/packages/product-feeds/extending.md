@@ -1,7 +1,7 @@
 # Extending the plugin
 
 ## Add a custom property value extractor
-When a simple node-name-to-property-alias mapping does not suit your need, you can create your own property value extractor to... *extract* the value from the property yourself.
+When a default node-name-to-property-alias mapping does not suit your need, you can create a property value extractor to *extract* the value from the property.
 
 Most of the time, you just need to create a new implementation of `ISingleValuePropertyExtractor` ~~or rarely `IMultipleValuePropertyExtractor`~~.
 
