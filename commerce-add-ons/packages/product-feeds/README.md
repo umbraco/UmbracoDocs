@@ -1,6 +1,6 @@
 ---
 description: >-
-  Need to generate umbraco commerce product feed? There's a plugin for that.
+  This is the documentation for the Product Feed package for Umbraco Commerce.
 ---
 
 ## Introduction
