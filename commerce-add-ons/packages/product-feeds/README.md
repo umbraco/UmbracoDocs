@@ -8,10 +8,7 @@ After building an e-commerce website, you might want to share your products with
 
 `Umbraco Commerce Product Feeds` package is an XML feed generator plugin that simplifies the creation of structured XML files. It automatically extracts product data from Umbraco node, organizes it according to standards and allows you to add more information to the feed.
 
-Checkout `Umbraco Commerce Product Feeds plugin`.
-
-Supported feed templates
-- Google Merchant Center.
+The `Umbraco Commerce Product Feeds` package supports the Google Merchant Center feed template.
 
 ## Quick start
 - Install the package from nuget: [![NuGet](https://img.shields.io/nuget/v/Umbraco.Commerce.ProductFeeds.svg?style=modern&label=nuget)](https://www.nuget.org/packages/Umbraco.Commerce.ProductFeeds/) 
