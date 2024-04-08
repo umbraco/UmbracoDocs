@@ -107,7 +107,7 @@ public IEnumerable<Person> GetAll()
 }
 ```
 
-We are now done with the server side of things, with the file saved in App\_Code you can now open the URL: `/umbraco/backoffice/My/PersonApi/GetAll`.
+We are now done with the server side of things, with the file saved you can now open the URL: `/umbraco/backoffice/My/PersonApi/GetAll`.
 
 This will return our JSON data.
 
