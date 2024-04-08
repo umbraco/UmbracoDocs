@@ -23,7 +23,7 @@ As new forms are created, users will automatically be granted access to them, un
 
 ## Start folders
 
-When form definitions are configured for storage in the database, it allows for the creation of folders to group forms within. It's also possible to define one or more start folders for a user, in order to limit their access to a sub-set of the forms available.
+When form definitions are configured for storage in the database, it allows for the creation of folders to group forms within. It's also possible to define one or more start folders for a user. This is done in order to limit their access to a subset of the forms available.
 
 If no start folders are selected, the user will be able to access all forms in the backoffice according to their permissions.
 
@@ -62,7 +62,7 @@ Start folders are enabled for User Groups. They work in a similar way as the gro
 
 ### Migrating to user group based permissions
 
-In introducing the user group based permissions we've taken care to ensure a migration path is available for those existing installations running on older versions of Umbraco Forms. In that situation, we'd recommend the following approach.
+In introducing the user group based permissions, we've taken care to ensure a migration path. This is available for those existing installations running on older versions of Umbraco Forms. In that situation, we'd recommend the following approach.
 
 * Upgrade to Umbraco 9.3.
 * At this stage nothing will have changed in terms of the permissions model in use.
