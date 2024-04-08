@@ -3,7 +3,7 @@
 ## Add a custom property value extractor
 When a default node-name-to-property-alias mapping does not suit your need, you can create a property value extractor to *extract* the value from the property.
 
-Most of the time, you just need to create a new implementation of `ISingleValuePropertyExtractor` ~~or rarely `IMultipleValuePropertyExtractor`~~.
+You can often create a new implementation of `ISingleValuePropertyExtractor` or rarely `IMultipleValuePropertyExtractor`.
 
 This plugin uses [Collection Builder pattern](https://docs.umbraco.com/umbraco-cms/implementation/composing#example-modifying-collections) which is commonly used in Umbraco. You can use these two extension methods during application initialization to add your value extractors.
 
