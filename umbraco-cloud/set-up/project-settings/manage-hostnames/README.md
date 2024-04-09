@@ -59,7 +59,11 @@ The following Records will become obsolete in the future. Refrain from using the
 </details>
 
 {% hint style="info" %}
-Once you have updated your DNS, you can check DNS propagation using a site like [whatsmydns.net](https://www.whatsmydns.net/) before adding the hostname on Umbraco Cloud.
+Once you have updated your DNS records, you need to remove the hostname and re-add it from Umbraco Cloud to re-validate the certificate with Cloudflare.
+
+
+
+You can also check the DNS propagation using a site like [whatsmydns.net](https://www.whatsmydns.net/).
 {% endhint %}
 
 Check with your DNS host or hostname registrar regarding configuration details for your Hostnames.
@@ -83,7 +87,9 @@ Once you've assigned a Hostname to your Umbraco Cloud environment, you may want 
 
 All hostnames added to an Umbraco Cloud project's environment will get a TLS (HTTPS) certificate added, by default. The certificate is issued by Cloudflare and valid for 90 days after which it will be automatically renewed. Everything around certificates and renewals is handled for you and you only need to make sure that the DNS records are configured according to our recommendations listed above.
 
+{% hint style="info" %}
 You will need to **remove the old DNS entry** before the Cloudflare service generates a new certificate for your Hostname.
+{% endhint %}
 
 ### Is your Domain hosted on your own Cloudflare account?
 
