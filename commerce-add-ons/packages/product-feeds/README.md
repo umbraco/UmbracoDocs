@@ -3,8 +3,7 @@ description: >-
   This is the documentation for the Product Feed package for Umbraco Commerce.
 ---
 
-## Introduction
-After building an e-commerce website, you might want to share your products with an external service like Google Merchant Center to reach more viewers.
+After building up your commerce website, you can expand your product reach and show your products to a larger audience with product feeds. Umbraco Commerce Product Feed is a free and open-source add-on for Umbraco Commerce that helps you generate the XML files that are used in services like Google Merchant Center.
 
 `Umbraco Commerce Product Feeds` package is an XML feed generator plugin that simplifies the creation of structured XML files. It automatically extracts product data from Umbraco nodes, organizes it according to standards and also allows you to add more information to the feed.
 
