@@ -18,8 +18,6 @@ The `DatePicker` has one configuration setting to control the number of year sho
 
 Go to your `appsettings.json` and add:
 ```json
-    {
-  ...
   "Umbraco": {
     "CMS": {
         ...
@@ -32,8 +30,6 @@ Go to your `appsettings.json` and add:
       }
      }
     }
-  }
-}
 ```
 
 You can then change the `DatePickerYearRange` to a higher number (for example 100).
