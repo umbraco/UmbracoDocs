@@ -33,7 +33,7 @@ Below you can find some steps on installing the package using NuGet and getting 
 
 ![open feed link](./media/open-feed-link.png)
 
-`Google Merchant Center Feed` sample:
+**Google Merchant Center Feed** sample:
 
 ![google merchant center feed](./media/google-merchant-center-feed.png)
 
