@@ -11,7 +11,7 @@ When working with a Umbraco Cloud project, you can handle a lot of the project c
 * [Public Access](./#public-access)
 * [Deployment Webhooks](./#webhooks)
 * [Secure Sockets Layer (SSL) certificates](./#certificates-only-available-on-professional-or-enterprise-plan)
-* [CI/CD Flow.](./#umbracocicd)
+
 * [Upgrade Plan](./#upgrade-plan)
 * [Rename Project](./#rename-project)
 * [Advanced Settings](./#advanced)
@@ -98,7 +98,7 @@ You can rename your project from the **Rename Project** section in the **Setting
 ## Advanced
 
 Manage **Advanced** settings for your project from the **Settings** menu:
-
+* [CI/CD Flow](./umbraco-cicd)
 * [Enable static outbound IP addresses](external-services.md#enabling-static-outbound-ip-addresses) for projects on a **Standard**, **Professional**, or **Enterprise** plan.
 * Enable IIS logging for each of your environments. The log files can be accessed through kudu in `C:\home\LogFiles\http`. There is a rolling size limit on the log files of 100 MB. Once the limit is reached, the oldest log files will be overwritten by new ones.
 * [Enable loading of a client certificate from the file system](application-settings.md#enable-client-certificate-loaded-from-file-system-explained).
