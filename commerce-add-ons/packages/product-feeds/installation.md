@@ -4,9 +4,12 @@ description: >-
   Umbraco Commerce implementation.
 ---
 
-The Product Feeds package can be installed directly into your project's code base using NuGet packages. Below you can find some steps on installing the package using NuGet and getting started with implementing the Product Feeds into your Umbraco Commerce store.
+The Product Feeds package can be installed directly into your project's code base using NuGet packages. 
 
 # Getting started
+
+Below you can find some steps on installing the package using NuGet and getting started with implementing the Product Feeds into your Umbraco Commerce store.
+
 
 1. Install the package from [NuGet](https://www.nuget.org/packages/Umbraco.Commerce.ProductFeeds/)
 
