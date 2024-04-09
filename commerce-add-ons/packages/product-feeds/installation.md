@@ -40,7 +40,7 @@ Below you can find some steps on installing the package using NuGet and getting 
 ## Upgrading
 
 {% hint style="info" %}
-Even though the package modifies only `umbracoCommerceProductFeedSetting` table, 
+Even though the package modifies only the `umbracoCommerceProductFeedSetting` table, 
 it is always advisable to take a complete backup of your site/database before upgrading.
 {% endhint %}
 
