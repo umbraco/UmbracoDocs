@@ -44,4 +44,4 @@ Even though the package modifies only the `umbracoCommerceProductFeedSetting` ta
 it is always advisable to take a complete backup of your site/database before upgrading.
 {% endhint %}
 
-The Product Feeds package uses a database migration for both installs and upgrades. Upgrading is generally a case of installing the latest version via nuget over the existing package and re-start your website.
+The Product Feeds package uses a database migration for both installs and upgrades. Upgrading is generally a case of installing the latest version via NuGet over the existing package and restarting the website.
