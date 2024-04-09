@@ -1,7 +1,7 @@
 # Extending the plugin
 
 ## Add a custom property value extractor
-When a default node-name-to-property-alias mapping does not suit your need, you can create a property value extractor to *extract* the value from the property.
+When a default node-name-to-property-alias mapping does not suit your need, you can create a property value extractor to *extract* the property value yourself.
 
 For example, when a product's stock value is `0`, `Google Merchant Feed` desired value is `out_of_stock`. In that case, we have [`DefaultGoogleAvailabilityValueExtractor.cs`](https://github.com/umbraco/Umbraco.Commerce.ProductFeeds/blob/main/src/Umbraco.Commerce.ProductFeeds.Core/Features/PropertyValueExtractors/Implementations/DefaultGoogleAvailabilityValueExtractor.cs) to do the conversion from `0` to `out_of_stock`.
 
