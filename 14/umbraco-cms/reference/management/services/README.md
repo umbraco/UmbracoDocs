@@ -26,6 +26,10 @@ Below you can find a list of most common services:
 
 ## [LocalizationService](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.ILocalizationService.html)
 
+{% hint style="warning" %}
+`ILocalizationService` is currently obselete and will be removed in v15. Use `ILanguageService` and `IDictionaryItemService` instead.
+{% endhint %}
+
 ## [LocalizedTextService](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.LocalizedTextService.html)
 
 ## [MediaService](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.IMediaService.html)

@@ -50,6 +50,10 @@ public class BackofficeSearchComposer : IComposer
 }
 ```
 
+{% hint style="warning" %}
+The below example is using `ILocalizationService` which is currently obselete and will be removed in v15. Use `ILanguageService` instead.
+{% endhint %}
+
 ```csharp
 using System.Collections.Generic;
 using Umbraco.Cms.Core.Services;

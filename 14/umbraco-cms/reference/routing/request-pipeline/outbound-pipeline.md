@@ -141,7 +141,7 @@ Paths can be cached, what comes next cannot (http vs https, current request…).
 
 The Url of a node consists of a complete [URI](https://en.wikipedia.org/wiki/Uniform\_Resource\_Identifier): the Schema, Domain name, (port) and the path.
 
-In our example the "swibble" node could have the following URL: "http://example.com/our-products/swibble"
+In our example the "swibble" node could have the following URL: "<http://example.com/our-products/swibble>"
 
 Generating this url is handled by the Url Provider. The Url Provider is called whenever a request is made in code for a Url e.g.:
 
@@ -219,6 +219,10 @@ If there is only a small change to the logic around Url generation, then a smart
 #### Example
 
 Add /fish on the end of every URL. It's important to note here that since we're changing the outbound URL, but not how we handle URLs inbound, this **will** break the routing. In order to make the routing work again you have to implement a custom content finder, see [IContentFinder](icontentfinder.md) for more information on how to do that.
+
+{% hint style="warning" %}
+The below example is using `ILocalizationService` which is currently obselete and will be removed in v15. Use `ILanguageService` or `IDictionaryItemService` (for dictionary item operations) instead.
+{% endhint %}
 
 ```csharp
 using System;

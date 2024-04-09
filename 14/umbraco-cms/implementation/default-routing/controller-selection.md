@@ -47,7 +47,7 @@ builder.CreateUmbracoBuilder()
     .Build();
 
 // Configure Umbraco Render Controller Type
-services.Configure<UmbracoRenderingDefaultsOptions>(c =>
+builder.Services.Configure<UmbracoRenderingDefaultsOptions>(c =>
 {
     c.DefaultControllerType = typeof(MyRenderController);
 });

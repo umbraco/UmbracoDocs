@@ -228,7 +228,7 @@ For more information, see the [Antiforgery in ASP.NET Core](https://docs.microso
 
 ### Asynchronous surface controller actions
 
-Surface controller actions can be asynchronous. A common naming convention for asynchronous methods is using an `Async` suffix for the action name. However, this will not work by default due to the inner workings of ASP.NET Core MVC. 
+Surface controller actions can be asynchronous. A common naming convention for asynchronous methods is using an `Async` suffix for the action name. However, this will not work by default due to the inner workings of ASP.NET Core MVC.
 
 Consider the following asynchronous surface controller action:
 
@@ -247,21 +247,21 @@ public class MySurfaceController : SurfaceController
 }
 ```
 
-To use this action in a view you can add this: 
+To use this action in a view you can add this:
 
 ```html
 @using (Html.BeginUmbracoForm<MySurfaceController>(nameof(MySurfaceController.SomeMethodAsync), FormMethod.Post))
 {
-	<button type="submit">Do the async work</button>
+ <button type="submit">Do the async work</button>
 }
 ```
 
 But once you click the button, you will encounter an error message along the lines of: `InvalidOperationException: Could not find a Surface controller route in the RouteTable for controller name MySurface`.
 
-To counter this you need to instruct ASP.NET Core MVC to explicitly accept the `Async` suffix for controller names:
+To counter this you need to instruct ASP.NET Core MVC to explicitly accept the `Async` suffix for controller names in the `program.cs`:
 
 ```csharp
-services.AddMvc(options =>
+builder.Services.AddMvc(options =>
 {
     options.SuppressAsyncSuffixInActionNames = false; 
 });
