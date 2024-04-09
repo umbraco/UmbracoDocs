@@ -18,6 +18,8 @@ When working with a Umbraco Cloud project, you can handle a lot of the project c
 * [Dedicated Resources](./#dedicated-resources)
 * [Project Usage](./#usage)
 * [Availability & Performance](./#availability-performance)
+* [Automatic Upgrades](./#automatic-upgrades)
+* [Backups](./#backups)
 * [Project History](./#project-history)
 * [Delete the project.](./#delete-project)
 
@@ -119,6 +121,21 @@ On your Umbraco Cloud project, it is possible to see the usage of Custom Domains
 ## [Availability & Performance](availability-performance.md)
 
 You can see metrics related to the overall health and performance of the Azure app service hosting the live environment of your solution.
+
+## Automatic Upgrades
+
+We handle minor and patch upgrades for the Umbraco components used by Umbraco Cloud, so you don't have to. 
+Here you can control if you want to opt-in or out of automatic minor upgrades. 
+
+New projects are opt-in by default.
+
+## Backups
+
+You can handle backups from this setting. You can create a database backup of one or more of your cloud environments. 
+
+(Coming soon) It is also possible to upload your own '.bacpac' file.
+
+(Coming soon) You can also restore a bacpac file to an environment. 
 
 ## [Project History](project-history.md)
 
