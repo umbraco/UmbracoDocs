@@ -45,8 +45,8 @@ Now you can create a handler that receives the amount of items deleted through t
 
 Just creating the notification classes is not enough, we also want to be able to publish them. There's two ways of publishing notifications:
 
--   `IEventAggregator` - Notifications published with `IEventAggregator` will always be published immediately.
--   `IScope.Notifications` - Notifications published with a scope will only be published once the scope has been completed and disposed.
+- `IEventAggregator` - Notifications published with `IEventAggregator` will always be published immediately.
+- `IScope.Notifications` - Notifications published with a scope will only be published once the scope has been completed and disposed.
 
 The method you use to publish notifications depends on what your needs are, the benefits of publishing notifications with a scope is that the notification will only be published if you complete the scope, and then only once the scope is disposed of. This can be useful if you access the database, or do some other operation that might fail causing you to do a rollback, disposing of the scope without completing it, in this case, you might not want to publish a notification that signals that the operation was a success, using scopes will handle this for you. On the other hand, you might want to publish the notification immediately no matter what, for instance with the `CleanYourRoomStartedNotification`, for this, the `IEventAggregator` is the right choice.
 

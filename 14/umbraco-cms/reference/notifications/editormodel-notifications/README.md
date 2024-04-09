@@ -110,6 +110,12 @@ public class EditorSendingMemberNotificationHandler : INotificationHandler<Sendi
 
 ## Notifications
 
+{% hint style="warning" %}
+
+The following notification events are obsolete from v14. You can still use these notifications, however you will not be able to alter the data.
+
+{% endhint %}
+
 | Notification                       | Members                                                                                                        | Description                                                                                                                                                                                                                                                                                                                                      |
 | ---------------------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | SendingContentNotification         | <ul><li>ContentItemDisplay Content</li><li>IUmbracoContext UmbracoContext</li></ul>                            | <p>Published right before the editor model is sent for editing in the content section.<br>NOTE: Content is a Umbraco.Cms.Core.Models.ContentEditing.ContentItemDisplay type which contains the tabs and properties of the elements about to be loaded for editing.</p>                                                                           |

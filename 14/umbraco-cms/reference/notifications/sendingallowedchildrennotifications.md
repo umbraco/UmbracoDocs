@@ -1,3 +1,7 @@
+---
+description: Example of how to use a SendingAllowedChildren Notification
+---
+
 # Sending Allowed Children Notification
 
 The `SendingAllowedChildrenNotification` enables you to manipulate the Document Types that will be shown in the create menu when adding new content in the backoffice.
