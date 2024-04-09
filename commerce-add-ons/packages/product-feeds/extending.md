@@ -1,4 +1,11 @@
+---
+description: >-
+ Learn how to extend the plugin by adding a custom property value extractor.
+---
+
 # Extending the plugin
+
+In this article, you can find an example of extending the plugin by adding a custom property value extractor.
 
 ## Add a custom property value extractor
 When a default property value extractor does not suit your need, you can create your own extractor to *extract* the property value yourself.
