@@ -28,6 +28,10 @@ If you want to override Umbraco Core translations or translations shipped with p
 /config/lang/{language}.user.xml
 ```
 
+{% hint style="info" %}
+The `/config/lang/` folders do not exist on a clean installation of the CMS. You will need to create them at the root of your project.&#x20;
+{% endhint %}
+
 By default, these files are empty but you can add any new keys you want or override existing ones with your own translations. The nice part about the user files is that they will not get overwritten by the installer when you upgrade your Umbraco versions.
 
 In order for these files to deploy when you do a `dotnet publish`, you need to add the following to your `.csproj` file:
@@ -51,7 +55,7 @@ public MyClass(ILocalizedTextService textservice)
 
 ### Package localization files
 
-If you are a package developer, see the article for[ UI Localization](ui-localization.md).
+If you are a package developer, see the article for[UI Localization](ui-localization.md).
 
 ## Help keep the language files up to date
 
@@ -70,7 +74,7 @@ The language files are XML files with a straight-forward layout as seen below.
 <language alias="en" intName="English (UK)" localName="English (UK)" lcid="" culture="en-GB">
     <creator>
         <name>The Umbraco community</name>
-        <link>https://our.umbraco.com</link>
+        <link>https://community.umbraco.com</link>
     </creator>
     <area alias="actions">
         <key alias="assignDomain">Culture and Hostnames</key>
@@ -88,7 +92,7 @@ In the above example of a missing translation for "**assignDomain**", locate thi
 <language alias="es" intName="Spanish" localName="español" lcid="10" culture="es-ES">
     <creator>
         <name>The Umbraco community</name>
-        <link>https://our.umbraco.com</link>
+        <link>https://community.umbraco.com</link>
     </creator>
     <area alias="actions">
         <key alias="assignDomain">Administrar hostnames</key>
