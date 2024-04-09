@@ -200,6 +200,7 @@
   * [Installing and Uninstalling Packages](extending/packages/installing-and-uninstalling-packages.md)
   * [Maintaining packages](extending/packages/maintaining-packages.md)
   * [Create accessible Umbraco packages](extending/packages/accessibility.md)
+  * [Example Package Repository](./extending/packages/example-package-repository.md)
 * [UI Library](extending/ui-library.md)
 
 ## Reference
