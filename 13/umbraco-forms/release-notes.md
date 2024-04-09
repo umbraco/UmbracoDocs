@@ -17,6 +17,12 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
+#### [**13.1.2**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.4) **(April 16th 2024)**
+
+* Corrected alignment of label `for` and input `id` attributes in the date picker field [#1200](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1200).
+* Corrected permission check such that users with only "view entries" permissions can see form details on the dashboard [#1192](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1192).
+* Used `requestSubmit` when submitting forms [#1199](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1199).
+
 #### [**13.1.1**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=label%3Arelease%2F13.1.1+is%3Aclosed) **(March 22nd 2024)**
 
 * Fixes regression issue with form validation where two forms are rendered on a single page [#1189](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1189).
