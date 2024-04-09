@@ -40,7 +40,8 @@ Below you can find some steps on installing the package using NuGet and getting 
 ## Upgrading
 
 {% hint style="info" %}
-Before upgrading, it is always advisable to take a complete backup of your site/database.
+Even though the package modifies only `umbracoCommerceProductFeedSetting` table, 
+it is always advisable to take a complete backup of your site/database before upgrading.
 {% endhint %}
 
-The Checkout package uses a combination of database migrations and a manual install dashboard for both installs and upgrades. Upgrading is generally a case of installing the latest version over the existing package and running through the installation steps.
+The Product Feeds package uses a database migration for both installs and upgrades. Upgrading is generally a case of installing the latest version via nuget over the existing package and re-start your website.
