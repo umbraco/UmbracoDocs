@@ -12,4 +12,24 @@ To achieve this a new Razor partial view is included `/Views/Partials/Forms/Date
 
 The `DatePicker` has one configuration setting to control the number of year shown. The default is 10 years which makes the picker unusable for picking birth dates.
 
-Go to `~/App_Data/UmbracoForms/umbracoforms.config` and update `<setting key="DatePickerYearRange" value="10" />` to a higher number (for example 100)
+Go to your `appsettings.json` and add:
+```json
+    {
+  ...
+  "Umbraco": {
+    "CMS": {
+        ...
+    },
+    "Forms": {
+      "FieldTypes": {
+        "DatePicker": {
+          "DatePickerYearRange": 12
+        }
+      }
+     }
+    }
+  }
+}
+```
+
+You can then change the `DatePickerYearRange` to a higher number (for example 100).
