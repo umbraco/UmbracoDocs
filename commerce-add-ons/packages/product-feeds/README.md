@@ -11,6 +11,6 @@ After building an e-commerce website, you might want to share your products with
 Current supported feed template:
 - `Google Merchant Center` feed template.
 
-## Useful links
+# Useful links
 - Package source code: https://github.com/umbraco/Umbraco.Commerce.ProductFeeds
 - Package issue tracker: https://github.com/umbraco/Umbraco.Commerce.ProductFeeds/issues
