@@ -26,5 +26,6 @@
 ## Product Feeds
 
 * [Overview](product-feeds/README.md)
+* [Installation](product-feeds/installation.md)
 * [Extending the plugin](product-feeds/extending.md)
 * [Release Notes](https://github.com/umbraco/Umbraco.Commerce.ProductFeeds/releases)
