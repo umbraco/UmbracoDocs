@@ -19,7 +19,7 @@ Depending on which section you are working on, there are different options:
 * **Custom element**: A Custom Element is a section that can be configured to use any web component as the **entry point**. The `element()` can be configured in the manifest. By doing this we'll disable the possibility of using dashboards and section views for the section since they will not be automatically routed/rendered. This option should be used only when necessary.
 
 ## Building routing
-Almost any component can host routable sub-components by defining a list of routes and render a `umb-router-slot` element. Let's assume we have a **custom section** with pathname `custom-section` and a **sectionView** with pathname `organization`. In this context we can create an element with routes, like this:
+Almost any component can host routable sub-components by defining a list of routes and render a `umb-router-slot` element. Let's assume we have a **custom section** with pathname `custom-section` and a **section view** with pathname `organization`. In this context we can create an element with routes, like this:
 
 ```typescript
 @state()
