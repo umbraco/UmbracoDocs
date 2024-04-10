@@ -33,7 +33,7 @@ Data stored in custom tables are not supported by default by add-ons such as Umb
 
 <details>
 
-<summary>If you are using EF Core, and have installed the <code>Microsoft.EntityFrameworkCore.Design 8.0.0</code> package.</summary>
+<summary>If you are using EF Core, and have installed the <code>Microsoft.EntityFrameworkCore.Design 8.0.0</code> package</summary>
 
 You need to be aware of some things if you are using EF Core, and have installed the `Microsoft.EntityFrameworkCore.Design 8.0.0` package:
 
