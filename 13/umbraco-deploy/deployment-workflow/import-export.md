@@ -60,6 +60,7 @@ Similar to when exporting, you can choose to import everything from the archive 
 
 {% hint style="info" %}
 Deploy does not touch the default maximum upload size, but you can [configure this yourself by following the CMS documentation](https://docs.umbraco.com/umbraco-cms/reference/configuration/maximumuploadsizesettings).
+However, on Umbraco Cloud the upload size limit is 500mb.
 {% endhint %}
 
 ![Import dialog step 2](../../../10/umbraco-deploy/deployment-workflow/images//import-dialog-2.png)
