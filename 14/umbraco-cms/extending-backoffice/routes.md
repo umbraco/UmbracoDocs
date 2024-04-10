@@ -13,7 +13,7 @@ The overall **divider** is the [Section](extension-types/sections-and-trees/READ
 
 Depending on which section you are working on, there are different options:
 
-* **SectionView** The section view is one of the automatically router extension types. It can be an entry point to a section. The "section view" is a view in a section, you'll find examples of these in the Packages-section and the Member-section. If a section has multiple views defined (or both dashboards and views) tabs and icons will be rendered.
+* **SectionView**: The [Section View](extension-types/sections-and-trees/section-view.md) is a view in a section and one of the automatic router extension types. It can be an entry point to a section. If a section has multiple views defined (or both dashboards and views) then the tabs and icons will be rendered. As some examples, you can check the **Packages** and **Member** sections.
 * **Dashboard** Also a entry point to a section. If there are more than one section view or dashboard defined tabs and icons will be rendered to make it possible to navigate.
 * **Workspace** The workspace-concept has built in features to facilitate editing of entity of a certain entity type. Used by many entities in the backoffice like content, media, content types, data types, dictionaries and so on and so on.
 * **Custom element** A section can also be configured to use any web component as the "entry point" (really the `element()` configured in the manifest). By doing this we'll basically disable the possibility of using dashboards and section views for the section since they will not be automatically router/rendered. This option should be quite rare and only needed in very special situations.
