@@ -6,7 +6,7 @@ description: Get started with Routing in the backoffice.
 This page is a work in progress. It will be updated as the software evolves.
 {% endhint %}
 
-## Routing
+# Routing
 The routing in the backoffice is flexible and customizable. There are a couple of starting-points for routing that is good to know about:
 
 The overall "divider" is the [section](extension-types/sections-and-trees/README.md) (defined by the `ManifestSection` extension type), which is used internally by Content,Media,Settings,Members and so on. 
