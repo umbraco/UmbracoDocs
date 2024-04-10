@@ -48,7 +48,9 @@ _routes: UmbRoute[] = [
   },
 ];
 ```
-**Note** that the order in which the routes are defined matters, the first match will be used so be sure to put more specific routes first. 
+{% hint style="info" %}
+The order in which the routes are defined is important as the first match will be used so make sure to add more specific routes in the beginning.
+{% endhint %}
 
 In the render method of the element, render the `umb-router-slot`:
 
