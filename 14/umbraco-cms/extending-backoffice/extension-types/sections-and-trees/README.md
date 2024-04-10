@@ -11,7 +11,7 @@ This page is a work in progress. It will be updated as the software evolves.
 <figure><img src="../../../.gitbook/assets/section.svg" alt=""><figcaption><p>Section</p></figcaption></figure>
 
 **Manifest**
-When creating a new section it's recommended to use a [Entry Point](../extension-types/entry-point)-extension in your [Umbraco Package Manifest](../../package-manifest). This is to get better control over all the additional extensions required for the new section.
+When creating a new section it's recommended to use a [Entry Point](../extension-types/entry-point.md)-extension in your [Umbraco Package Manifest](../../package-manifest.md). This is to get better control over all the additional extensions required for the new section.
 
 This is how to define a section in TypeScript:
 
