@@ -14,9 +14,9 @@ The overall **divider** is the [Section](extension-types/sections-and-trees/READ
 Depending on which section you are working on, there are different options:
 
 * **SectionView**: The [Section View](extension-types/sections-and-trees/section-view.md) is a view in a section and one of the automatic router extension types. It can be an entry point to a section. If a section has multiple views defined (or both dashboards and views) then the tabs and icons will be rendered. As some examples, you can check the **Packages** and **Member** sections.
-* **Dashboard** Also a entry point to a section. If there are more than one section view or dashboard defined tabs and icons will be rendered to make it possible to navigate.
-* **Workspace** The workspace-concept has built in features to facilitate editing of entity of a certain entity type. Used by many entities in the backoffice like content, media, content types, data types, dictionaries and so on and so on.
-* **Custom element** A section can also be configured to use any web component as the "entry point" (really the `element()` configured in the manifest). By doing this we'll basically disable the possibility of using dashboards and section views for the section since they will not be automatically router/rendered. This option should be quite rare and only needed in very special situations.
+* **Dashboard**: The [Dashboard](extension-types/dashboards.md) is an entry point to a section. If there is more than one section view or dashboard then the defined tabs and icons will be rendered to make it possible to navigate.
+* **Workspace**: The [Workspace](extension-types/workspaces/README.md) concept has built-in features to facilitate editing of an entity of a certain entity type. It is used by many entities in the backoffice like content, media, content types, data types, dictionaries and so on.
+* **Custom element**: A Custom Element is a section that can be configured to use any web component as the **entry point**. The `element()` can be configured in the manifest. By doing this we'll disable the possibility of using dashboards and section views for the section since they will not be automatically routed/rendered. This option should be used only when necessary.
 
 ### Building routing
 Almost any component can host routable sub-components by defining a list of routes and render a `umb-router-slot` element. Let's assume we have a custom section with pathname `custom-section` and a `sectionView` with pathname `organization`. In this context we can create a element with routes, like this:
