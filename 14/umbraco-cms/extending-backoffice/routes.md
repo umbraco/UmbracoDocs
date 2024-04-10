@@ -52,7 +52,7 @@ In the render method of the element, render the `umb-router-slot`:
 <umb-router-slot .routes=${this._routes}></umb-router-slot> 
 ```
 
-One can simple create links to allow navigation to a given route:
+One can create links to allow navigation to a given route:
 
 ```html
 <a href="/umbraco/section/custom-section/organization/people">People</a>
