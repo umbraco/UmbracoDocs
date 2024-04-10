@@ -29,7 +29,7 @@ If you want to override Umbraco Core translations or translations shipped with p
 ```
 
 {% hint style="info" %}
-The `/config/lang/` folders do not exist on a clean installation of the CMS. You will need to create them at the root of your project.&#x20;
+The `/config/lang/` folders do not exist on a clean installation of the CMS. You will need to create them at the root of your project. In an Umbraco Cloud project this will need to be in the `src` project.&#x20;
 {% endhint %}
 
 By default, these files are empty but you can add any new keys you want or override existing ones with your own translations. The nice part about the user files is that they will not get overwritten by the installer when you upgrade your Umbraco versions.
@@ -55,7 +55,7 @@ public MyClass(ILocalizedTextService textservice)
 
 ### Package localization files
 
-If you are a package developer, see the article for[UI Localization](ui-localization.md).
+If you are a package developer, see the article for [UI Localization](ui-localization.md).
 
 ## Help keep the language files up to date
 
