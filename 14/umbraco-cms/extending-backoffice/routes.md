@@ -7,11 +7,11 @@ This page is a work in progress. It will be updated as the software evolves.
 {% endhint %}
 
 # Routing
-The routing in the backoffice is flexible and customizable. There are a couple of starting-points for routing that is good to know about:
+The routing in the backoffice is flexible and customizable. In this article, you can find a couple of starting points for routing.
 
-The overall "divider" is the [section](extension-types/sections-and-trees/README.md) (defined by the `ManifestSection` extension type), which is used internally by Content,Media,Settings,Members and so on. 
+The overall **divider** is the [Section](extension-types/sections-and-trees/README.md) which is a `ManifestSection` extension type. It is also used internally by the following sections: Content, Media, Settings, Members, and so on. 
 
-When we know which section to work in we have different options,
+Depending on which section you are working on, there are different options:
 
 * **SectionView** The section view is one of the automatically router extension types. It can be an entry point to a section. The "section view" is a view in a section, you'll find examples of these in the Packages-section and the Member-section. If a section has multiple views defined (or both dashboards and views) tabs and icons will be rendered.
 * **Dashboard** Also a entry point to a section. If there are more than one section view or dashboard defined tabs and icons will be rendered to make it possible to navigate.
