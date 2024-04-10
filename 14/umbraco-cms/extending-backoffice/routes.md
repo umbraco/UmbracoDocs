@@ -46,7 +46,7 @@ _routes: UmbRoute[] = [
 ```
 **Note** that the order in which the routes are defined matters, the first match will be used so be sure to put more specific routes first. 
 
-In the render method of the element, be sure to render the `umb-router-slot`
+In the render method of the element, render the `umb-router-slot`:
 
 ```html
 <umb-router-slot .routes=${this._routes}></umb-router-slot> 
