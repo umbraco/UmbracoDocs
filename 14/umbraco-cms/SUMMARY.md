@@ -65,6 +65,7 @@
 * [Sorting](extending-backoffice/sorting.md)
 * [Trees](extending-backoffice/trees.md)
 * [Menu](extending-backoffice/menu.md)
+* [Routes](extending-backoffice/routes.md)
 
 ## Reference
 
