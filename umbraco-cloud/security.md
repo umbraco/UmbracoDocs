@@ -183,7 +183,7 @@ You can read more about the HTTP request headers coming from Cloudflare in the [
 </rule>
 ```
 {% endtab %}
--->
+
 
 {% tab title="Legacy (non-reverse proxy)" %}
 **Non-reverse proxy (projects created before 2021)**
@@ -204,10 +204,10 @@ Use the example below to restrict access to your backoffice using IP filtering:
     <match url="(^umbraco/backoffice/(.*)|^umbraco($|/$))" />
     <conditions logicalGrouping="MatchAll" trackAllCaptures="false">
     
-    <!-- Don't apply rules on localhost so your local environment still works -->
+    <!-- Don't apply rules on localhost so your local environment still works 
     <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
 
-    <!-- Custom IP list -->
+    <!-- Custom IP list 
     <add input="{REMOTE_ADDR}" pattern="123.123.123.123" negate="true" />
     </conditions>
     <action type="CustomResponse" statusCode="403" />
