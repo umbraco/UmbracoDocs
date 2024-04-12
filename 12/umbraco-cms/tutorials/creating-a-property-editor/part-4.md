@@ -182,4 +182,4 @@ There is a good amount of things to keep track of, but each component is tiny an
 
 The important part of the above is the way you create a `ApiController` call to the database for your own data, and finally expose the data to angular as a service using `$http`.
 
-For simplicity, you could also have skipped the service part and called `$http` directly in your controller, but by having your data in services, it becomes a reusable resource for your entire application.
+For simplicity, you could have skipped the service part and called `$http` directly in your controller. However, having your data in services it becomes a reusable resource for your entire application.
