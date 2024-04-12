@@ -1,12 +1,8 @@
----
-needsV9Update: 'true'
----
-
 # Adding server-side data to a property editor
 
 ## Overview
 
-In this tutorial, we will add a server-side API controller, which will query a custom table in the Umbraco database, and then return the data to an angular controller + view.
+In this tutorial, we will add a server-side API controller, which will query a custom table in the Umbraco database. It will then return the data to an angular controller + view.
 
 The result will be a person-list, populated from a custom table. When clicked it will store the ID of the selected person.
 
@@ -44,6 +40,8 @@ In the `PersonApiController.cs` file, add:
 ```csharp
     using Umbraco.Cms.Web.BackOffice.Controllers;
     using Umbraco.Cms.Web.Common.Attributes;
+    using Umbraco.Cms.Infrastructure.Scoping;
+
 
 
     namespace YourProjectName;
@@ -54,7 +52,7 @@ In the `PersonApiController.cs` file, add:
     }
 ```
 
-This is a very basic API controller that inherits from `UmbracoAuthorizedJsonController` this specific class and will only return JSON data and only to requests which are authorized to access the backoffice.
+This is a basic API controller that inherits from `UmbracoAuthorizedJsonController`. This specific class will only return JSON data and only to requests that are authorized to access the backoffice.
 
 ## Setup the GetAll() method
 
@@ -83,13 +81,13 @@ public IEnumerable<Person> GetAll()
 }
 ```
 
-Inside the `GetAll()` method, we now write a bit of code, that connects to the database, creates a query, and returns the data, mapped to the `Person` class above:
+Inside the `GetAll()` method, we write a bit of code. The code connects to the database, creates a query, and returns the data, mapped to the `Person` class above:
 
 ```csharp
-private readonly Umbraco.Cms.Infrastructure.Scoping.IScopeProvider scopeProvider;
+private readonly IScopeProvider scopeProvider;
 
 
-public PersonApiController(Umbraco.Cms.Infrastructure.Scoping.IScopeProvider scopeProvider)
+public PersonApiController(IScopeProvider scopeProvider)
 {
     this.scopeProvider = scopeProvider;
 }
@@ -183,6 +181,6 @@ There is a good amount of things to keep track of, but each component is tiny an
 
 ## Wrap-up
 
-The important part of the above is the way you create a `ApiController` call to the database for your own data, and finally expose the data to angular as a service using `$http`.
+The important part of the above is the way you create an `ApiController` call to the database for your own data. And finally, expose the data to angular as a service using `$http`.
 
-For simplicity, you could also have skipped the service part and called `$http` directly in your controller, but by having your data in services, it becomes a reusable resource for your entire application.
+For simplicity, you could have skipped the service part and called `$http` directly in your controller. However, having your data in services it becomes a reusable resource for your entire application.
