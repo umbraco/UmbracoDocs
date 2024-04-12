@@ -87,7 +87,7 @@ Inside the `GetAll()` method, we write a bit of code. The code connects to the d
 private readonly IScopeProvider scopeProvider;
 
 
-public PersonApiController(Umbraco.Cms.Infrastructure.Scoping.IScopeProvider scopeProvider)
+public PersonApiController(IScopeProvider scopeProvider)
 {
     this.scopeProvider = scopeProvider;
 }
