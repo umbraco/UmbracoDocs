@@ -63,7 +63,7 @@ Below you can find a list of the most common ContentService object notifications
 
 <details>
 
-<summary>**MediaService** Notifications</summary>
+<summary><strong>MediaService</strong>Notifications</summary>
 
 Below you can find a list of the most common MediaService object notifications.
 
@@ -82,7 +82,7 @@ Below you can find a list of the most common MediaService object notifications.
 
 <details>
 
-<summary>**MemberService** Notifications</summary>
+<summary><strong>MemberService</strong> Notifications</summary>
 
 The MemberService implements IMemberService and provides access to operations involving IMember.
 
@@ -101,7 +101,7 @@ Below you can find a list of the most common MemberService object notifications.
 
 <details>
 
-<summary>**ContentTypeService** Notifications</summary>
+<summary><strong>ContentTypeService</strong> Notifications</summary>
 
 The ContentTypeService class implements IContentTypeService. It provides access to operations involving IContentType.
 
@@ -119,7 +119,7 @@ Below you can find a list of the most common ContentTypeService object notificat
 
 <details>
 
-<summary>**MediaTypeService** Notifications - object list</summary>
+<summary><strong>MediaTypeService</strong> Notifications - object list</summary>
 
 The MediaTypeService class implements IMediaTypeService. It provides access to operations involving IMediaType.
 
@@ -137,7 +137,7 @@ Below you can find a list of the most common MediaTypeService object notificatio
 
 <details>
 
-<summary>**MemberTypeService** Notifications</summary>
+<summary><strong>MemberTypeService</strong> Notifications</summary>
 
 The MemberTypeService class implements IMemberTypeService. It provides access to operations involving IMemberType
 
@@ -155,7 +155,7 @@ Below you can find a list of the most common MemberTypeService object notificati
 
 <details>
 
-<summary>**DataTypeService** Notifications</summary>
+<summary><strong>DataTypeService</strong> Notifications</summary>
 
 The DataTypeService class implements IDataTypeService. It provides access to operations involving IDataType.
 
@@ -172,7 +172,7 @@ Below you can find a list of the most common DataTypeService object notification
 
 <details>
 
-<summary>**FileService** Notifications</summary>
+<summary><strong>FileService</strong> Notifications</summary>
 
 The FileService class implements IFileService. It provides access to operations involving IFile objects like scripts, stylesheets and templates.
 
@@ -195,7 +195,7 @@ Below you can find a list of the most common FileService object notifications.
 
 <details>
 
-<summary>**LocalizationService** Notifications</summary>
+<summary><strong>LocalizationService</strong> Notifications</summary>
 
 The LocalizationService class implements ILocalizationService. It provides access to operations involving Language and DictionaryItem.
 
@@ -214,7 +214,7 @@ Below you can find a list of the most common LocalizationService object notifica
 
 <details>
 
-<summary>**CacheRefresher** Notifications</summary>
+<summary><strong>CacheRefresher</strong> Notifications</summary>
 
 Below you can find a list of the most common CacheRefresher object notifications.
 
@@ -227,7 +227,7 @@ Below you can find a list of the most common CacheRefresher object notifications
 
 <details>
 
-<summary>**RelationService** Notifications</summary>
+<summary><strong>RelationService</strong> Notifications</summary>
 
 Below you can find a list of the most common RelationService object notifications.
 
@@ -246,7 +246,7 @@ The RelationService provides access to operations involving IRelation and IRelat
 
 <details>
 
-<summary>**UmbracoApplicationLifetime** Notifications</summary>
+<summary><strong>UmbracoApplicationLifetime</strong> Notifications</summary>
 
 Represents an Umbraco application lifetime (starting, started, stopping, stopped) notification.
 
