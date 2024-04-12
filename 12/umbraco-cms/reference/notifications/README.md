@@ -1,3 +1,7 @@
+---
+description: Get started with Notifications.
+---
+
 # Using Notifications
 
 Umbraco uses Notifications (similar to the Observer pattern) to allow you to hook into the workflow process for the backoffice. For example, notifications allow you to execute some code every time a page is published.
@@ -10,201 +14,349 @@ Available notifications typically exist in pairs, with "before" and "after" noti
 
 The notification to use depends on what you want to achieve. If you want to be able to cancel the action, you would use the `CancelOperation` method on the "before" notification. See the sample in [ContentService Notifications](contentservice-notifications.md). If you want to execute some code after the publishing has succeeded, then you would use the "after" notification.
 
-### Notification handlers lifetime
+## Registering Notifications
 
-It's important to know that the handlers you create and register to receive notifications will be **transient**. This means that they will be initialized every time they receive a notification. You can therefore not rely on them having a specific state based on previous notifications. 
+Check the [Notification Handler](./notification-handler.md) article to learn more about notification handlers lifetime, async notification handler and how to register the notification handlers.
 
-As an example, you cannot do the following:
+## List of Notifications
 
-1. Create a list in a handler.
-2. Add something when a notification is received.
-3. Check if that list contains what you added in an earlier notification.
+Below you can find a list of most used object notifications.
 
-When following the steps above, the list will always be empty because the object has only been initialized.
+You can find a list of all supported notifications in the [API Docs](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.html).
 
-If you need persistence between notifications, we recommend you move that functionality into a service or similar. You can then register it with the DI container, and inject it into your handler.
+### Content, Media, and Member notifications
 
-As previously mentioned, many notifications exist in pairs, with a "before" and "after" notification. There may be cases where you want to add some information to the "before" notification, which will then be available to your "after" notification handler. In order to support this, the notification "pairs" are **stateful**. This means the notifications contain a dictionary that is shared between the "before" and "after" notifications. You can add values to the dictionary, and later retrieve them like this:
+<details>
 
-```csharp
-public void Handle(TemplateSavingNotification notification)  
-{  
- notification.State["SomeKey"] = "Some Value Relevant to the \"after\" notification handler";  
-}  
-  
-  
-public void Handle(TemplateSavedNotification notification)  
-{  
-  var valueFromSaving = notification.State["SomeKey"];  
-}
-```
+<summary>**ContentService** Notifications</summary>
 
-### Registering notification handlers
+The ContentService class is the most commonly used type when extending Umbraco using notifications. ContentService implements IContentService. It provides access to operations involving IContent.
 
-Once you've made your notification handlers, you need to register them with the `AddNotificationHandler` extension method on the `IUmbracoBuilder`. This enables them to run whenever a notification they subscribe to is published. There are two ways to do this: 
+Below you can find a list of the most common ContentService object notifications.
 
-1. In the **Startup** class, if you're making handlers for your site
-2. In a [**composer**](../../implementation/composing.md), if you're a package developer subscribing to notifications
+* [ContentSavingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentSavingNotification.html)
 
-#### Registering notification handlers in the startup class
+* [ContentSavedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentSavedNotification.html)
 
-In the Startup class, register your notification handler in the `ConfigureServices` after `AddComposers()` but before `Build()`:
+* [ContentPublishingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentPublishingNotification.html)
 
-```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-#pragma warning disable IDE0022 // Use expression body for methods
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()             
-        .AddWebsite()
-        .AddComposers()
-        .AddNotificationHandler<ContentPublishingNotification, DontShout>()
-        .Build();
-#pragma warning restore IDE0022 // Use expression body for methods
+* [ContentPublishedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentPublishedNotification.html)
 
-}
-```
+* [ContentUnpublishingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentUnpublishingNotification.html)
 
-The extension method takes two generic type parameters. The first, `ContentPublishingNotification`, is the notification you wish to subscribe to. The second, `DontShout`, is the class that handles the notification. This class must implement `INotificationHandler<>` with the type of notification it handles as the generic type parameter. In this case, the `DontShout` class definition looks like this:
+* [ContentUnpublishedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentUnpublishedNotification.html)
 
-```csharp
-public class DontShout : INotificationHandler<ContentPublishingNotification>
-```
+* [ContentCopyingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentCopyingNotification.html)
 
-For the full handler implementation, see [ContentService Notifications](contentservice-notifications.md).
+* [ContentCopiedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentCopiedNotification.html)
 
-#### Registering notification handlers in a composer
+* [ContentMovingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentMovingNotification.html)
 
-If you're writing a package for Umbraco you won't have access to the Startup class. You can instead use a composer, which gives you access to the `IUmbracoBuilder`. the rest is the same as when doing it in the Startup class:
+* [ContentMovedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentMovedNotification.html)
 
-```csharp
-public class DontShoutComposer : IComposer
-{
-    public void Compose(IUmbracoBuilder builder)
-    {
-        builder.AddNotificationHandler<ContentPublishingNotification, DontShout>();
-    }
-}
-```
+* [ContentMovingToRecycleBinNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentMovingToRecycleBinNotification.html)
 
-#### Registering many notification handlers
+* [ContentMovedToRecycleBinNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentMovedToRecycleBinNotification.html)
 
-You may want to subscribe to many notifications, meaning your `ConfigureServices` method or composer might become cluttered. You can avoid this by creating your own `IUmbracoBuilder` extension method for your events, keeping everything neatly wrapped up in one place, as follows:
+* [ContentDeletingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentDeletingNotification.html)
 
-```csharp
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Cms.Core.Services.Notifications;
+* [ContentDeletedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentDeletedNotification.html)
 
-namespace MySite;
+* [ContentDeletingVersionsNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentDeletingVersionsNotification.html)
 
-public static class UmbracoBuilderNotificationExtensions
-{
-    public static IUmbracoBuilder AddDontShoutNotifications(this IUmbracoBuilder builder)
-    {
-        builder
-            .AddNotificationHandler<ContentPublishingNotification, DontShout>()
-            .AddNotificationHandler<TemplateSavingNotification, DontShout>()
-            .AddNotificationHandler<MediaSavingNotification, DontShout>();
-        
-        return builder;
-    }
-}
-```
+* [ContentDeletedVersionsNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentDeletedVersionsNotification.html)
 
-You can then register all these notifications by calling `AddDontShoutNotifications` in `ConfigureServices` or your composer, just like you would `AddNotificationHandler`:
+* [ContentRollingBackNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentRollingBackNotification.html)
 
-```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-#pragma warning disable IDE0022 // Use expression body for methods
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()             
-        .AddWebsite()
-        .AddComposers()
-        .AddDontShoutNotifications()
-        .Build();
-#pragma warning restore IDE0022 // Use expression body for methods
+* [ContentRolledBackNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentRolledBackNotification.html)
 
-}
-```
+* [ContentSendingToPublishNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentSendingToPublishNotification.html)
 
-Now, your handler will handle all the notifications you registered in your extension method.
+* [ContentSentToPublishNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentSentToPublishNotification.html)
 
-## Async Notification Handler
+* [ContentEmptyingRecycleBinNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentEmptyingRecycleBinNotification.html)
 
-If you need to do anything asynchronously when handling a notification, you can achieve this using the `INotificationAsyncHandler`.
+* [ContentEmptiedRecycleBinNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentEmptiedRecycleBinNotification.html)
 
-### Notification handler
+* [ContentSavedBlueprintNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentSavedBlueprintNotification.html)
 
-Create an asynchronous handler by implementing the `INotificationAsyncHandler`:
+* [ContentDeletedBlueprintNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentDeletedBlueprintNotification.html)
 
-```csharp
-public class ContentDeletedHandler : INotificationAsyncHandler<ContentDeletedNotification>
-{
-    public async Task HandleAsync(ContentDeletedNotification notification, CancellationToken cancellationToken)
-    {
-        // await anything
-        await Task.Delay(1000);
-    }
-}
-```
+</details>
 
-### Notification registration
+<details>
 
-When using the `INotificationAsyncHandler`, register it using the `IUmbracoBuilder` and the `AddNotificationAsyncHandler` extension method. This can be done in the Startup class or with a composer.
+<summary>**MediaService** Notifications </summary>
 
-#### Registering notification async handlers in the startup class
+Below you can find a list of the most common MediaService object notifications.
 
-Register your notification async handler to the `IUmbracoBuilder` in the Startup class:
+* [MediaSavingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MediaSavingNotification.html)
 
-```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddUmbraco(_env, _config)
-        .AddBackOffice()             
-        .AddWebsite()
-        .AddComposers()
-        .AddNotificationAsyncHandler<ContentDeletedNotification, ContentDeletedHandler>()
-        .Build();
-}
-```
+* [MediaSavedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MediaSavedNotification.html)
 
-#### Registering notification async handlers in a composer
+* [MediaMovingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MediaMovingNotification.html)
 
-If you do not have access to the Startup class, use a composer instead:
+* [MediaMovedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MediaMovedNotification.html)
 
-```csharp
-public class NotificationHandlersComposer : IComposer
-{
-    public void Compose(IUmbracoBuilder builder)
-    {
-        builder.AddNotificationAsyncHandler<ContentDeletedNotification, ContentDeletedHandler>();
-    }
-}
-```
+* [MediaMovingToRecycleBinNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MediaMovingToRecycleBinNotification.html)
 
-## Content, Media, and Member notifications
+* [MediaMovedToRecycleBinNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MediaMovedToRecycleBinNotification.html)
 
-* See [ContentService Notifications](contentservice-notifications.md) for a list of the ContentService object notifications.
-* See [MediaService Notifications](mediaservice-notifications.md) for a list of the MediaService object notifications.
-* See [MemberService Notifications](memberservice-notifications.md) for a list of the MemberService object notifications.
+* [MediaDeletingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MediaDeletingNotification.html)
 
-## Other notifications
+* [MediaDeletedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MediaDeletedNotification.html)
 
-* See [ContentTypeService Notifications](contentypeservice-notifications.md) for a list of the ContentTypeService object notifications.
-* See [MediaTypeService Notifications](mediatypeservice-notifications.md) for a list of the MediaTypeService object notifications.
-* See [MemberTypeService Notifications](membertypeservice-notifications.md) for a list of the MemberTypeService object notifications.
-* See [DataTypeService Notifications](datatypeservice-notifications.md) for a list of the DataTypeService object notifications.
-* See [FileService Notifications](fileservice-notifications.md) for a list of the FileService object notifications.
-* See [LocalizationService Notifications](localizationservice-notifications.md) for a list of the LocalizationService object notifications.
+* [MediaDeletingVersionsNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MediaDeletingVersionsNotification.html)
 
-## Tree notifications
+* [MediaDeletedVersionsNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MediaDeletedVersionsNotification.html)
+
+</details>
+
+<details>
+
+<summary>**MemberService** Notifications</summary>
+
+The MemberService implements IMemberService and provides access to operations involving IMember.
+
+Below you can find a list of the most common MemberService object notifications.
+
+* [MemberSavingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MemberSavingNotification.html)
+
+* [MemberSavedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MemberSavedNotification.html)
+
+* [MemberDeletingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MemberDeletingNotification.html)
+
+* [MemberDeletedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MemberDeletedNotification.html)
+
+* [AssignedMemberRolesNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.AssignedMemberRolesNotification.html)
+
+* [RemovedMemberRolesNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.RemovedMemberRolesNotification.html)
+
+</details>
+
+### Other notifications
+
+<details>
+
+<summary>**ContentTypeService** Notifications</summary>
+
+The ContentTypeService class implements IContentTypeService. It provides access to operations involving IContentType.
+
+Below you can find a list of the most common ContentTypeService object notifications.
+
+* [ContentTypeSavingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentTypeSavingNotification.html)
+
+* [ContentTypeSavedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentTypeSavedNotification.html)
+
+* [ContentTypeDeletingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentTypeDeletingNotification.html)
+
+* [ContentTypeDeletedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentTypeDeletedNotification.html)
+
+* [ContentTypeMovingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentTypeMovingNotification.html)
+
+* [ContentTypeMovedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentTypeMovedNotification.html)
+
+* [ContentTypeChangedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentTypeChangedNotification.html)
+
+</details>
+
+<details>
+
+<summary>**MediaTypeService** Notifications - object list</summary>
+
+The MediaTypeService class implements IMediaTypeService. It provides access to operations involving IMediaType.
+
+Below you can find a list of the most common MediaTypeService object notifications.
+
+* [MediaTypeSavingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MediaTypeSavingNotification.html)
+
+* [MediaTypeSavedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MediaTypeSavedNotification.html)
+
+* [MediaTypeDeletingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MediaTypeDeletingNotification.html)
+
+* [MediaTypeDeletedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MediaTypeDeletedNotification.html)
+
+* [MediaTypeMovingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MediaTypeMovingNotification.html)
+
+* [MediaTypeMovedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MediaTypeMovedNotification.html)
+
+* [MediaTypeChangedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MediaTypeChangedNotification.html)
+
+</details>
+
+<details>
+
+<summary>**MemberTypeService** Notifications</summary>
+
+The MemberTypeService class implements IMemberTypeService. It provides access to operations involving IMemberType
+
+Below you can find a list of the most common MemberTypeService object notifications.
+
+* [MemberTypeSavingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MemberTypeSavingNotification.html)
+
+* [MemberTypeSavedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MemberTypeSavedNotification.html)
+
+* [MemberTypeDeletingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MemberTypeDeletingNotification.html)
+
+* [MemberTypeDeletedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MemberTypeDeletedNotification.html)
+
+* [MemberTypeMovingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MemberTypeMovingNotification.html)
+
+* [MemberTypeMovedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MemberTypeMovedNotification.html)
+
+* [MemberTypeChangedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MemberTypeChangedNotification.html)
+
+</details>
+
+<details>
+
+<summary>**DataTypeService** Notifications</summary>
+
+The DataTypeService class implements IDataTypeService. It provides access to operations involving IDataType.
+
+Below you can find a list of the most common DataTypeService object notifications.
+
+* [DataTypeSavingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.DataTypeSavingNotification.html)
+
+* [DataTypeSavedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.DataTypeSavedNotification.html)
+
+* [DataTypeDeletingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.DataTypeDeletingNotification.html)
+
+* [DataTypeDeletedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.DataTypeDeletedNotification.html)
+
+* [DataTypeMovingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.DataTypeMovingNotification.html)
+
+* [DataTypeMovedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.DataTypeMovedNotification.html)
+
+</details>
+
+<details>
+
+<summary>**FileService** Notifications</summary>
+
+The FileService class implements IFileService. It provides access to operations involving IFile objects like scripts, stylesheets and templates.
+
+Below you can find a list of the most common FileService object notifications.
+
+* [TemplateSavingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.TemplateSavingNotification.html)
+
+* [TemplateSavedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.TemplateSavedNotification.html)
+
+* [ScriptSavingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ScriptSavingNotification.html)
+
+* [ScriptSavedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ScriptSavedNotification.html)
+
+* [StylesheetSavingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.StylesheetSavingNotification.html)
+
+* [StylesheetSavedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.StylesheetSavedNotification.html)
+
+* [TemplateDeletingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.TemplateDeletingNotification.html)
+
+* [TemplateDeletedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.TemplateDeletedNotification.html)
+
+* [ScriptDeletingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ScriptDeletingNotification.html)
+
+* [ScriptDeletedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ScriptDeletedNotification.html)
+
+* [StylesheetDeletingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.StylesheetDeletingNotification.html)
+
+* [StylesheetDeletedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.StylesheetDeletedNotification.html)
+
+</details>
+
+<details>
+
+<summary>**LocalizationService** Notifications</summary>
+
+The LocalizationService class implements ILocalizationService. It provides access to operations involving Language and DictionaryItem.
+
+Below you can find a list of the most common LocalizationService object notifications.
+
+* [LanguageSavingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.LanguageSavingNotification.html)
+
+* [LanguageSavedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.LanguageSavedNotification.html)
+
+* [DictionaryItemSavingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.DictionaryItemSavingNotification.html)
+
+* [DictionaryItemSavedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.DictionaryItemSavedNotification.html)
+
+* [LanguageDeletingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.LanguageDeletingNotification.html)
+
+* [LanguageDeletedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.LanguageDeletedNotification.html)
+
+* [DictionaryItemDeletingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.DictionaryItemDeletingNotification.html)
+
+* [DictionaryItemDeletedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.DictionaryItemDeletedNotification.html)
+
+</details>
+
+<details>
+
+<summary>**CacheRefresher** Notifications</summary>
+
+Below you can find a list of the most common CacheRefresher object notifications.
+
+* [ContentCacheRefresherNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.ContentCacheRefresherNotification.html)
+
+* [MediaCacheRefresherNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MediaCacheRefresherNotification.html)
+
+* [MemberCacheRefresherNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.MemberCacheRefresherNotification.html)
+
+* [UserCacheRefresherNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.UserCacheRefresherNotification.html)
+
+</details>
+
+<details>
+
+<summary>**RelationService** Notifications</summary>
+
+Below you can find a list of the most common RelationService object notifications.
+
+The RelationService provides access to operations involving IRelation and IRelationType, and publishes the following relation notifications:
+
+* [RelationSavingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.RelationSavingNotification.html)
+
+* [RelationSavedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.RelationSavedNotification.html)
+
+* [RelationDeletingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.RelationDeletingNotification.html)
+
+* [RelationDeletedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.RelationDeletedNotification.html)
+
+* [RelationTypeSavingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.RelationTypeSavingNotification.html)
+
+* [RelationTypeSavedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.RelationTypeSavedNotification.html)
+
+* [RelationTypeDeletingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.RelationTypeDeletingNotification.html)
+
+* [RelationTypeDeletedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.RelationTypeDeletedNotification.html)
+
+</details>
+
+<details>
+
+<summary>**UmbracoApplicationLifetime** Notifications</summary>
+
+Represents an Umbraco application lifetime (starting, started, stopping, stopped) notification.
+
+Below you can find a list of the most common UmbracoApplicationLifetime object notifications.
+
+* [UmbracoApplicationStartingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.UmbracoApplicationStartingNotification.html)
+
+* [UmbracoApplicationStartedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.UmbracoApplicationStartedNotification.html)
+
+* [UmbracoApplicationStoppingNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.UmbracoApplicationStoppingNotification.html)
+
+* [UmbracoApplicationStoppedNotification](https://apidocs.umbraco.com/v12/csharp/api/Umbraco.Cms.Core.Notifications.UmbracoApplicationStoppedNotification.html)
+
+</details>
+
+### Tree notifications
 
 See [Tree Notifications](../../extending/section-trees/) for a list of the tree notifications.
 
-## Editor Model Notifications
+### Editor Model Notifications
 
-See [EditorModel Notifications](editormodel-notifications/) for a list of the EditorModel events
+See [EditorModel Notifications](editormodel-notifications/) for a list of the EditorModel events.
 
 {% hint style="info" %}
 Useful for manipulating the model before it is sent to an editor in the backoffice. It could be used to set a default value of a property on a new document.
@@ -213,3 +365,23 @@ Useful for manipulating the model before it is sent to an editor in the backoffi
 ## Creating and publishing your own custom notifications
 
 Umbraco uses notifications to allow people to hook into different workflow processes. This notification pattern is extensible, allowing you to create and publish custom notifications, and other people to observe and hook into your custom processes. This approach can be very useful when creating Umbraco packages. For more information on how you create and publish your own notifications, see the [creating and publishing notifications](creating-and-publishing-notifications.md) article.
+
+## Samples
+
+Below you can find some articles with some examples using Notifications.
+
+* [CacheRefresher Notification](./cacherefresher-notifications.md)
+
+* [ContentService Notifications](./contentservice-notifications.md)
+
+* [Determining if an entity is new](./determining-new-entity.md)
+
+* [Hot vs. cold restarts](./hot-vs-cold-restarts.md)
+
+* [MediaService Notifications](./mediaservice-notifications.md)
+
+* [MemberService Notifications](./memberservice-notifications.md)
+
+* [Sending Allowed Children Notification](./sendingallowedchildrennotifications.md)
+
+* [Umbraco Application Lifetime Notifications](./umbracoapplicationlifetime-notifications.md)

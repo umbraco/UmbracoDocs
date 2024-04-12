@@ -1,3 +1,7 @@
+---
+description: Example of how to use a CacheRefresher Notification
+---
+
 # CacheRefresher Notifications
 
 Before starting with cache refresher notifications it's a good idea to ensure you need to use them. If you want to react to changes in content, for instance, there's no real reason to use these notifications. This is due to the [content service notifications](contentservice-notifications.md) being easier to work with. If you need to react to changes in the cache, then these are the notifications for you.
@@ -105,10 +109,3 @@ public class ContentCacheRefresherExample : INotificationHandler<ContentCacheRef
 }
 
 ```
-
-| Notification                      | Members                                                                | Description                                                                                                                                                 |
-| --------------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ContentCacheRefresherNotification | <ul><li>object MessageObject</li><li>MessageType MessageType</li></ul> | <p>Published when the content cache has been updated.<br>MessageObject: The refresher payload.<br>MessageType: The type of cache refresher message.<br></p> |
-| MediaCacheRefresherNotification   | <ul><li>object MessageObject</li><li>MessageType MessageType</li></ul> | <p>Published when the media cache has been updated.<br>MessageObject: The refresher payload.<br>MessageType: The type of cache refresher message.<br></p>   |
-| MemberCacheRefresherNotification  | <ul><li>object MessageObject</li><li>MessageType MessageType</li></ul> | <p>Published when the member cache has been updated.<br>MessageObject: The refresher payload.<br>MessageType: The type of cache refresher message.<br></p>  |
-| UserCacheRefresherNotification    | <ul><li>object MessageObject</li><li>MessageType MessageType</li></ul> | <p>Published when the user cache has been updated.<br>MessageObject: The refresher payload.<br>MessageType: The type of cache refresher message.<br></p>    |

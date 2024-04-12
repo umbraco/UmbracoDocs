@@ -1,3 +1,7 @@
+---
+description: Example of how to use a SendingAllowedChildren Notification
+---
+
 # Sending Allowed Children Notification
 
 The `SendingAllowedChildrenNotification` enables you to manipulate the Document Types that will be shown in the create menu when adding new content in the backoffice.
@@ -64,7 +68,7 @@ public class SendingAllowedChildrenNotificationHandler : INotificationHandler<Se
 }
 ```
 
-You also need to register this notification handler. You can achieve this by updating the `Startup` class like:
+You also need to register this notification handler. You can achieve this by updating the `Program` class like:
 
 ```csharp
 builder.CreateUmbracoBuilder()

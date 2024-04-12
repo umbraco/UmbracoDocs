@@ -68,7 +68,7 @@ public class SendingAllowedChildrenNotificationHandler : INotificationHandler<Se
 }
 ```
 
-You also need to register this notification handler. You can achieve this by updating the `Startup` class like:
+You also need to register this notification handler. You can achieve this by updating the `Program` class like:
 
 ```csharp
 builder.CreateUmbracoBuilder()
