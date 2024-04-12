@@ -1,4 +1,3 @@
-
 # Adding server-side data to a property editor
 
 ## Overview
@@ -41,6 +40,8 @@ In the `PersonApiController.cs` file, add:
 ```csharp
     using Umbraco.Cms.Web.BackOffice.Controllers;
     using Umbraco.Cms.Web.Common.Attributes;
+    using Umbraco.Cms.Infrastructure.Scoping;
+
 
 
     namespace YourProjectName;
@@ -83,7 +84,7 @@ public IEnumerable<Person> GetAll()
 Inside the `GetAll()` method, we write a bit of code. The code connects to the database, creates a query, and returns the data, mapped to the `Person` class above:
 
 ```csharp
-private readonly Umbraco.Cms.Infrastructure.Scoping.IScopeProvider scopeProvider;
+private readonly IScopeProvider scopeProvider;
 
 
 public PersonApiController(Umbraco.Cms.Infrastructure.Scoping.IScopeProvider scopeProvider)
