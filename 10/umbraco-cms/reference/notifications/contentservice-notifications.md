@@ -173,12 +173,54 @@ bool IsCultureEdited(string culture);
 bool IsCulturePublished(string culture);
 ```
 
-### What happened to Creating and Created events?
+<details>
+
+<summary>What happened to Creating and Created events?</summary>
 
 Both the ContentService.Creating and ContentService.Created events were removed, and therefore never moved to notifications. Why? Because these events were not guaranteed to trigger and therefore should not be used. This is because these events would only trigger when the ContentService.CreateContent method was used which is an entirely optional way to create content entities. It is also possible to construct a new content item - which is generally the preferred and consistent way - and therefore the Creating/Created events would not execute when constructing content that way.
 
 Furthermore, there was no reason to listen to the Creating/Created events. They were misleading since they didn't trigger before and after the entity persisted. They are triggered inside the CreateContent method which never persists the entity, it constructs a new content object.
 
-#### What do we use instead?
+**What do we use instead?**
 
 The ContentSavingNotification and ContentSavedNotification will always be published before and after an entity has been persisted. You can determine if an entity is brand new in either of those notifications. In the Saving notification - before the entity is persisted - you can check the entity's HasIdentity property which will be 'false' if it is brand new. In the Saved notification you can [check to see if the entity 'remembers being dirty'](determining-new-entity.md)
+
+</details>
+
+<details>
+
+<summary>What happened to `raiseEvent` method parameters?</summary>
+
+RaiseEvent method service parameters have been removed from v9 and to name some reasons why:
+
+- Because it's entirely inconsistent, not all services have this as method parameters and maintaining that consistency is impossible especially if 3rd party libraries support events/notifications.
+- It's hacky. There's no good way to suppress events/notifications this way at a higher (scoped) level.
+- There's also hard-coded logic to ignore these parameters sometimes which makes it even more inconsistent.
+- There are events below services at the repository level that cannot be controlled by this flag.
+
+**What do we use instead?**
+
+We can suppress notifications at the scope level which makes things consistent and will work for all services that use a Scope. Also, there's no required maintenance to make sure that new service methods will also work.
+
+**How to use scopes**:
+
+- Create an explicit scope and call scope.Notifications.Supress().
+- The result of Suppress() is IDisposable, so until it is disposed, notifications will not be added to the queue.
+
+[Example](https://github.com/umbraco/Umbraco-CMS/blob/b69afe81f3f6fcd37480b3b0295a62af44ede245/tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Scoping/SupressNotificationsTests.cs#L35):
+
+```csharp
+using (IScope scope = ScopeProvider.CreateScope(autoComplete: true))
+using (IDisposable _ = scope.Notifications.Supress())
+{
+    // TODO: Calls to service methods here will not have notifications
+}
+```
+
+Child scope will inherit the parent Scope's notification object which means if a parent scope has notifications suppressed, then so does the child scope. You cannot call Supress() more than once for the same outer scope instance else an exception will be thrown. This is to ensure that you cannot un-suppress notifications at a child level for an outer scope and ensures that suppressing events is a very explicit thing to do.
+
+Why would you want to suppress events? The main reason for ever doing this would be performance for bulk operations. The caller will need to be aware that suppressing events will lead to an inconsistent content cache state (if notifications are suppressed for content or media services). This is because notifications are used by things such as NuCache to populate the cmsContentNu table and populate the content caches. They are also used to populate the Examine indexes.
+
+So if you did suppress events, it will require you to rebuild the NuCache and examine data manually.
+
+</details>
