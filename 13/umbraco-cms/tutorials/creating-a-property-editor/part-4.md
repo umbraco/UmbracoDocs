@@ -50,7 +50,7 @@ In the `PersonApiController.cs` file, add:
     }
 ```
 
-This is a very basic API controller that inherits from `UmbracoAuthorizedJsonController` this specific class and will only return JSON data and only to requests which are authorized to access the backoffice.
+This is a basic API controller that inherits from `UmbracoAuthorizedJsonController`. This specific class will only return JSON data and only to requests that are authorized to access the backoffice.
 
 ## Setup the GetAll() method
 
@@ -79,7 +79,7 @@ public IEnumerable<Person> GetAll()
 }
 ```
 
-Inside the `GetAll()` method, we now write a bit of code, that connects to the database, creates a query, and returns the data, mapped to the `Person` class above:
+Inside the `GetAll()` method, we write a bit of code. The code connects to the database, creates a query, and returns the data, mapped to the `Person` class above:
 
 ```csharp
 private readonly Umbraco.Cms.Infrastructure.Scoping.IScopeProvider scopeProvider;
@@ -179,6 +179,6 @@ There is a good amount of things to keep track of, but each component is tiny an
 
 ## Wrap-up
 
-The important part of the above is the way you create a `ApiController` call to the database for your own data, and finally expose the data to angular as a service using `$http`.
+The important part of the above is the way you create an `ApiController` call to the database for your own data. And finally, expose the data to angular as a service using `$http`.
 
-For simplicity, you could also have skipped the service part and called `$http` directly in your controller, but by having your data in services, it becomes a reusable resource for your entire application.
+For simplicity, you could have skipped the service part and called `$http` directly in your controller. However, having your data in services it becomes a reusable resource for your entire application.
