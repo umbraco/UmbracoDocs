@@ -139,6 +139,7 @@ The following rule can be added to your web.config file in the `system.webServer
 
 For anyone using the 123.123.123.123 IP, this will result in them getting a 502 error. You can choose your own error.
 
+<!--
 ## Restrict backoffice access using IP filtering
 
 It is possible to restrict who can access the Umbraco backoffice by applying an IP filter. When doing this on an Umbraco Cloud site, there are a few things to pay attention to as the backoffice URL is used in the deployment workflow.
@@ -170,17 +171,19 @@ You can read more about the HTTP request headers coming from Cloudflare in the [
 <rule name="Backoffice IP Filter excluding localhost" enabled="true" stopProcessing="true">
   <match url="(^umbraco/backoffice/(.*)|^umbraco($|/$))" />
   <conditions logicalGrouping="MatchAll" trackAllCaptures="false">
-
-    <!-- Don't apply rules on localhost so your local environment still works -->
+  -->
+<!--
+    <!-- Don't apply rules on localhost so your local environment still works 
     <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
 
-    <!-- Custom IP list -->
+    <!-- Custom IP list 
     <add input="{HTTP_CF_Connecting_IP}" pattern="123.123.123.123" negate="true" />
   </conditions>
   <action type="CustomResponse" statusCode="403" />
 </rule>
 ```
 {% endtab %}
+-->
 
 {% tab title="Legacy (non-reverse proxy)" %}
 **Non-reverse proxy (projects created before 2021)**
