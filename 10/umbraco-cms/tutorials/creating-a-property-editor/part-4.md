@@ -50,7 +50,7 @@ In the `PersonApiController.cs` file, add:
     }
 ```
 
-This is a very basic API controller that inherits from `UmbracoAuthorizedJsonController` this specific class and will only return JSON data and only to requests which are authorized to access the backoffice.
+This is a basic API controller that inherits from `UmbracoAuthorizedJsonController`. This specific class will only return JSON data and only to requests that are authorized to access the backoffice.
 
 ## Setup the GetAll() method
 
