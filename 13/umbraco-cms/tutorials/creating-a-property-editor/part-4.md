@@ -1,12 +1,8 @@
----
-needsV9Update: 'true'
----
-
 # Adding server-side data to a property editor
 
 ## Overview
 
-In this tutorial, we will add a server-side API controller, which will query a custom table in the Umbraco database, and then return the data to an angular controller + view.
+In this tutorial, we will add a server-side API controller, which will query a custom table in the Umbraco database. It will then return the data to an angular controller + view.
 
 The result will be a person-list, populated from a custom table. When clicked it will store the ID of the selected person.
 
