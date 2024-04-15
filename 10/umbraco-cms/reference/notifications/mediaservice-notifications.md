@@ -2,7 +2,7 @@
 description: Example of how to use a MediaService Notification
 ---
 
-# MediaService Notifications
+# MediaService Notifications Example
 
 The MediaService class implements IMediaService. It provides access to operations involving IMedia.
 
@@ -10,7 +10,7 @@ The MediaService class implements IMediaService. It provides access to operation
 
 Example usage of the MediaService notifications:
 
-```C#
+```csharp
 using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
@@ -44,8 +44,7 @@ namespace MySite
 
 ## Returning messages to the user
 
-You can return a custom message to the user. Use this to show information, a warning or maybe an error.
-This is achieved using the ```Messages``` property of the notification and a composer.
+You can return a custom message to the user. Use this to show information, a warning or maybe an error. This is achieved using the `Messages` property of the notification and a composer.
 
 ### Example
 
@@ -85,7 +84,7 @@ namespace MyProject
 
 <summary>What happened to Creating and Created events?</summary>
 
-Both the MediaService.Creating and MediaService.Created events have been obsoleted. Because of this, these were not moved over to notifications, and no longer exist. Why? Because these events were not guaranteed to trigger and therefore should not have been used. This is because these events *only* triggered when the MediaService.CreateMedia method was used which is an entirely optional way to create media entities. It is also possible to construct a new media item - which is generally the preferred and consistent way - and therefore the Creating/Created events would not execute when constructing media that way.
+Both the MediaService.Creating and MediaService.Created events have been obsoleted. Because of this, these were not moved over to notifications, and no longer exist. Why? Because these events were not guaranteed to trigger and therefore should not have been used. This is because these events _only_ triggered when the MediaService.CreateMedia method was used which is an entirely optional way to create media entities. It is also possible to construct a new media item - which is generally the preferred and consistent way - and therefore the Creating/Created events would not execute when constructing media that way.
 
 Furthermore, there was no reason to listen for the Creating/Created events because they were misleading. They didn't trigger before and after the entity had been persisted. Instead they triggered inside the CreateMedia method which never persists the entity. It constructs a new media object.
 
@@ -97,14 +96,14 @@ The MediaSavingNotification and MediaSavedNotification will always be published 
 
 <details>
 
-<summary>What happened to `raiseEvent` method parameters?</summary>
+<summary>What happened to <code>raiseEvent</code>method parameters?</summary>
 
 RaiseEvent method service parameters have been removed from v9 and to name some reasons why:
 
-- Because it's entirely inconsistent, not all services have this as method parameters and maintaining that consistency is impossible especially if 3rd party libraries support events/notifications.
-- It's hacky. There's no good way to suppress events/notifications this way at a higher (scoped) level.
-- There's also hard-coded logic to ignore these parameters sometimes which makes it even more inconsistent.
-- There are events below services at the repository level that cannot be controlled by this flag.
+* Because it's entirely inconsistent, not all services have this as method parameters and maintaining that consistency is impossible especially if 3rd party libraries support events/notifications.
+* It's hacky. There's no good way to suppress events/notifications this way at a higher (scoped) level.
+* There's also hard-coded logic to ignore these parameters sometimes which makes it even more inconsistent.
+* There are events below services at the repository level that cannot be controlled by this flag.
 
 **What do we use instead?**
 
@@ -112,8 +111,8 @@ We can suppress notifications at the scope level which makes things consistent a
 
 **How to use scopes**:
 
-- Create an explicit scope and call scope.Notifications.Supress().
-- The result of Suppress() is IDisposable, so until it is disposed, notifications will not be added to the queue.
+* Create an explicit scope and call scope.Notifications.Supress().
+* The result of Suppress() is IDisposable, so until it is disposed, notifications will not be added to the queue.
 
 [Example](https://github.com/umbraco/Umbraco-CMS/blob/b69afe81f3f6fcd37480b3b0295a62af44ede245/tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Scoping/SupressNotificationsTests.cs#L35):
 

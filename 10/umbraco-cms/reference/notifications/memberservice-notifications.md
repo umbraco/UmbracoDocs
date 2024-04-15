@@ -2,13 +2,13 @@
 description: Example of how to use a MemberService Notification
 ---
 
-# MemberService Notifications
+# MemberService Notifications Example
 
 The MemberService implements IMemberService and provides access to operations involving IMember.
 
 ## Usage
 
-```C#
+```csharp
 using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Services.Notifications;
@@ -38,14 +38,14 @@ namespace MySite
 
 <details>
 
-<summary>What happened to `raiseEvent` method parameters?</summary>
+<summary>What happened to <code>raiseEvent</code>method parameters?</summary>
 
 RaiseEvent method service parameters have been removed from v9 and to name some reasons why:
 
-- Because it's entirely inconsistent, not all services have this as method parameters and maintaining that consistency is impossible especially if 3rd party libraries support events/notifications.
-- It's hacky. There's no good way to suppress events/notifications this way at a higher (scoped) level.
-- There's also hard-coded logic to ignore these parameters sometimes which makes it even more inconsistent.
-- There are events below services at the repository level that cannot be controlled by this flag.
+* Because it's entirely inconsistent, not all services have this as method parameters and maintaining that consistency is impossible especially if 3rd party libraries support events/notifications.
+* It's hacky. There's no good way to suppress events/notifications this way at a higher (scoped) level.
+* There's also hard-coded logic to ignore these parameters sometimes which makes it even more inconsistent.
+* There are events below services at the repository level that cannot be controlled by this flag.
 
 **What do we use instead?**
 
@@ -53,8 +53,8 @@ We can suppress notifications at the scope level which makes things consistent a
 
 **How to use scopes**:
 
-- Create an explicit scope and call scope.Notifications.Supress().
-- The result of Suppress() is IDisposable, so until it is disposed, notifications will not be added to the queue.
+* Create an explicit scope and call scope.Notifications.Supress().
+* The result of Suppress() is IDisposable, so until it is disposed, notifications will not be added to the queue.
 
 [Example](https://github.com/umbraco/Umbraco-CMS/blob/b69afe81f3f6fcd37480b3b0295a62af44ede245/tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Scoping/SupressNotificationsTests.cs#L35):
 

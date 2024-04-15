@@ -1,9 +1,10 @@
 ---
-description: Find out more about ContentService Notifications and explore some example of how to use it
+description: >-
+  Find out more about ContentService Notifications and explore some example of
+  how to use it
 ---
 
-
-# ContentService Notifications
+# ContentService Notifications Example
 
 The ContentService class is the most commonly used type when extending Umbraco using notifications. ContentService implements IContentService. It provides access to operations involving IContent.
 
@@ -11,7 +12,7 @@ The ContentService class is the most commonly used type when extending Umbraco u
 
 Example usage of the ContentPublishingNotification:
 
-```C#
+```csharp
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
 
@@ -53,13 +54,13 @@ This poses a problem when handling notifications from the ContentService - eg wh
 
 When handling the ContentSavingNotification which will be published whenever a variant is saved. You can tell 'which' variant has triggered the save using an extension method on the ContentSavingNotification called 'IsSavingCulture'
 
-```C#
+```csharp
 public bool IsSavingCulture(IContent content, string culture);
 ```
 
 As an example, you could check which cultures are being saved (it could be multiple if multiple checkboxes are checked)
 
-```C#
+```csharp
 public void Handle(ContentSavingNotification notification)
 {
     foreach (var entity in notification.SavedEntities)
@@ -80,7 +81,7 @@ public void Handle(ContentSavingNotification notification)
 
 With the Saved notification you can similarly use the 'HasSavedCulture' method of the 'ContentSavedNotification' to detect which culture caused the Save.
 
-```C#
+```csharp
 public bool HasSavedCulture(IContent content, string culture);
 ```
 
@@ -88,7 +89,7 @@ public bool HasSavedCulture(IContent content, string culture);
 
 When handling the Unpublishing notification, it might not work how you would expect. If 'all the variants' are being unpublished at the same time (or the mandatory language is being unpublished, which forces this to occur) then the Unpublishing notification will be published as expected.
 
-```C#
+```csharp
 public void Handle(ContentUnpublishingNotification  notification)
 {
  foreach (var unPublishedEntity  in notification.UnpublishedEntities)
@@ -102,7 +103,7 @@ However, if only one variant is being unpublished, the Unpublishing event will n
 
 You can therefore detect the Unpublishing of a variant in the publishing notification - using the IsUnpublishingCulture extension method of the `ContentPublishingNotification`
 
-```C#
+```csharp
 public void Handle(ContentPublishingNotification notification)
 {
     foreach (var node in notification.PublishedEntities)
@@ -119,7 +120,7 @@ public void Handle(ContentPublishingNotification notification)
 
 Again, the Unpublished notification does not get published when a single variant is Unpublished, instead, the Published notification can be used, and the 'HasUnpublishedCulture' extension method of the ContentPublishedNotification can determine which variant being unpublished triggered the publish.
 
-```C#
+```csharp
 public bool HasUnpublishedCulture(IContent content, string culture);
 ```
 
@@ -129,13 +130,13 @@ When handling the ContentPublishingNotification which will be triggered whenever
 
 You can tell 'which' variant has triggered the publish using a helper method on the ContentPublishingNotification called IsPublishingCulture.
 
-```C#
+```csharp
 public bool IsPublishingCulture(IContent content, string culture);
 ```
 
 For example, you could check which cultures are being published and act accordingly (it could be multiple if multiple checkboxes are checked).
 
-```C#
+```csharp
 public void Handle(ContentPublishingNotification notification)
 {
     foreach (var node in notification.PublishedEntities)
@@ -158,7 +159,7 @@ public void Handle(ContentPublishingNotification notification)
 
 In the Published notification you can similarly use the HasPublishedCulture and HasUnpublishedCulture methods of the 'ContentPublishedEventArgs' to detect which culture caused the Publish or the UnPublish if it was only a single non-mandatory variant that was unpublished.
 
-```C#
+```csharp
 public bool HasPublishedCulture(IContent content, string culture);
 public bool HasUnpublishedCulture(ICotnent content, string culture);
 ```
@@ -167,7 +168,7 @@ public bool HasUnpublishedCulture(ICotnent content, string culture);
 
 In each of these notifications, the entities being Saved, Published, and Unpublished are `IContent` entities. There are some useful helper methods on IContent to discover the status of the content item's variant cultures:
 
-```C#
+```csharp
 bool IsCultureAvailable(string culture);
 bool IsCultureEdited(string culture);
 bool IsCulturePublished(string culture);
@@ -189,14 +190,14 @@ The ContentSavingNotification and ContentSavedNotification will always be publis
 
 <details>
 
-<summary>What happened to `raiseEvent` method parameters?</summary>
+<summary>What happened to <code>raiseEvent</code>method parameters?</summary>
 
 RaiseEvent method service parameters have been removed from v9 and to name some reasons why:
 
-- Because it's entirely inconsistent, not all services have this as method parameters and maintaining that consistency is impossible especially if 3rd party libraries support events/notifications.
-- It's hacky. There's no good way to suppress events/notifications this way at a higher (scoped) level.
-- There's also hard-coded logic to ignore these parameters sometimes which makes it even more inconsistent.
-- There are events below services at the repository level that cannot be controlled by this flag.
+* Because it's entirely inconsistent, not all services have this as method parameters and maintaining that consistency is impossible especially if 3rd party libraries support events/notifications.
+* It's hacky. There's no good way to suppress events/notifications this way at a higher (scoped) level.
+* There's also hard-coded logic to ignore these parameters sometimes which makes it even more inconsistent.
+* There are events below services at the repository level that cannot be controlled by this flag.
 
 **What do we use instead?**
 
@@ -204,8 +205,8 @@ We can suppress notifications at the scope level which makes things consistent a
 
 **How to use scopes**:
 
-- Create an explicit scope and call scope.Notifications.Supress().
-- The result of Suppress() is IDisposable, so until it is disposed, notifications will not be added to the queue.
+* Create an explicit scope and call scope.Notifications.Supress().
+* The result of Suppress() is IDisposable, so until it is disposed, notifications will not be added to the queue.
 
 [Example](https://github.com/umbraco/Umbraco-CMS/blob/b69afe81f3f6fcd37480b3b0295a62af44ede245/tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Scoping/SupressNotificationsTests.cs#L35):
 
