@@ -26,7 +26,7 @@ In this method, we will use a 404 page created via the backoffice.
 
 ### Create a 404 page in the backoffice
 
-1. Create a new Document Type called `Page404` with same alias. You could also use a more generic Document Type if you already have one.
+1. Create a new Document Type called `Page404` with the same alias. You can also use a more generic Document Type if you already have one.
 2. Set the permissions to create the Document Type at the root in the Content section.
 3. Properties on this Document Type are optional. In most cases, the 404 not found page would be static.
 4. Assign (and fill out) the template for your error page.
