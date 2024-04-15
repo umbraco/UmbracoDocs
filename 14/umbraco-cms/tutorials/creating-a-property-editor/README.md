@@ -215,7 +215,7 @@ It's starting to look good! Next, let's look into setting up the event logic.
 
 Let's start with the input field. When we type something in the input field, we want the property editor's value to change to the input field's current value.
 
-We then have to dispatch an `property-value-change` event:
+We then have to dispatch an `property-value-change` event, this can be done using ´new CustomEvent('property-value-change')` or you can leverage the core class `new UmbPropertyValueChangeEvent()` (recommended):
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
@@ -225,7 +225,7 @@ We then have to dispatch an `property-value-change` event:
   }
 
   #dispatchChangeEvent() {
-    this.dispatchEvent(new CustomEvent('property-value-change'));
+    this.dispatchEvent(new UmbPropertyValueChangeEvent());
   }
 
   render() {
