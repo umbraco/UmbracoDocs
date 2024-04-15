@@ -35,7 +35,11 @@ The value for error pages can be:
 * A content item's integer ID (example: 1234)
 
 {% hint style="warning" %}
-The current implementation of XPath is suboptimal and will be removed entirely in a future version. It is currently obsolete and scheduled for removal in v14.
+
+The current implementation of XPath is suboptimal, marked as obsolete, and scheduled for removal in Umbraco 14. The replacement for ContentXPath is [IContentLastChanceFinder](../implementation/custom-routing/README.md#last-chance-icontentfinder).
+
+If you have implemented XPath in previous versions and upgraded to v13 you might encounter issues with XPath. This article will be updated when we have more details on how the article should be updated.
+
 {% endhint %}
 
 That is where the value you grabbed earlier comes in. Fill it out like so:
@@ -143,7 +147,7 @@ The following steps guides you through setting up a page for internal server err
 
 * Create a `~/controllers` folder in your Umbraco web project.
 * Create a file in this folder, called `ErrorController.cs`.
-*   Add the following code to the file:
+* Add the following code to the file:
 
     ```csharp
     using Microsoft.AspNetCore.Mvc;
@@ -172,7 +176,7 @@ The following steps guides you through setting up a page for internal server err
 **Namespace** replace \[YOUR\_PROJECT\_NAME] by the actual project name. In Visual Studio you can use _Sync Namespaces_ from the project context menu (in _Solution Explorer_ View).
 {% endhint %}
 
-*   Add an entry in `appSettings.json` for the new route "Error" like so
+* Add an entry in `appSettings.json` for the new route "Error" like so
 
     ```json
     "Umbraco": {
@@ -181,6 +185,7 @@ The following steps guides you through setting up a page for internal server err
         "ReservedPaths": "~/app_plugins/,~/install/,~/mini-profiler-resources/,~/umbraco/,~/error/",
         ...
     ```
+
 * Create the redirect pages from 1. step as regular content nodes in the backoffice. They should neither appear in navigation menus or sitemaps. In this example you would create under root node `Statuscodes` with a subnode `500`.
 * Update `Program.cs`
 
