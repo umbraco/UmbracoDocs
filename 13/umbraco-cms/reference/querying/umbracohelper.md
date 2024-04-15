@@ -66,14 +66,14 @@ Given a node ID, returns a `IPublishedContent`
 
 ```csharp
 @{
-	var pageFromGui = Umbraco.Content(Guid.Parse("af22cb83-9bd4-454b-ab06-cc19ac8e983d"));
+ var pageFromGui = Umbraco.Content(Guid.Parse("af22cb83-9bd4-454b-ab06-cc19ac8e983d"));
 }
 
 <h3>@pageFromGui.Value("propertyAlias")</h3>
 
 @foreach (var child in pageFromGui.Children)
 {
-	<a href="@child.Url()">@child.Name</a>
+ <a href="@child.Url()">@child.Name</a>
 }
 ```
 
@@ -85,7 +85,7 @@ Returns a collection of `IPublishedContent` objects from the Content tree.
 @* Get the children of the first content item found in the root *@
 @foreach (var child in Umbraco.ContentAtRoot().First().Children)
 {
-	<a href="@child.Url()">@child.Name</a>
+ <a href="@child.Url()">@child.Name</a>
 }
 ```
 
@@ -93,7 +93,7 @@ Returns a collection of `IPublishedContent` objects from the Content tree.
 
 {% hint style="warning" %}
 
-The current implementation of XPath is suboptimal and will be removed entirely in a future version. It is currently obsolete and scheduled for removal in v14.
+The current implementation of XPath is suboptimal, marked as obsolete, and scheduled for removal in Umbraco 14. The replacement for ContentXPath is [IContentLastChanceFinder](../../implementation/custom-routing/README.md#last-chance-icontentfinder).
 
 {% endhint %}
 
@@ -138,7 +138,7 @@ Returns a collection of `IPublishedContent` objects from the Media tree.
 ```csharp
 @foreach (var child in Umbraco.MediaAtRoot())
 {
-	<img src="@child.Url()"/>
+ <img src="@child.Url()"/>
 }
 ```
 
