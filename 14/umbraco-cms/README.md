@@ -17,7 +17,7 @@ The new Backoffice for Umbraco CMS is scheduled for release along with Umbraco 1
 #### Recommended starting points
 
 1. [Install v14-beta](fundamentals/setup/install/preview-builds.md#installing-the-preview-build-template)
-2. [Setup your development Environment ](extending-backoffice/development-flow/)followed by [Vite package setup](extending-backoffice/development-flow/vite-package-setup.md)
+2. [Setup your development Environment](extending-backoffice/development-flow/)followed by [Vite package setup](extending-backoffice/development-flow/vite-package-setup.md)
 3. [Creating your first extension](tutorials/creating-a-basic-website/creating-your-first-template-and-content-node.md)
 4. [Creating a custom dashboard](tutorials/creating-a-custom-dashboard.md)
 5. [Creating a property editor](tutorials/creating-a-property-editor/)
@@ -58,3 +58,4 @@ The list will be updated as more articles have been created and updated.
   * [Create your first extension](tutorials/creating-your-first-extension.md)
   * [Creating a Custom Dashboard](tutorials/creating-a-custom-dashboard/)
   * [Creating a Property Editor](tutorials/creating-a-property-editor/)
+  * [Implementing Custom Error Pages](tutorials/custom-error-page.md)

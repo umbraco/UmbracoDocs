@@ -1,5 +1,9 @@
 # Implementing Custom Error Pages
 
+{% hint style="warning" %}
+This tutorial is a work in progress. It will be updated as the software evolves.
+{% endhint %}
+
 Umbraco is built upon Microsoft's .NET Framework and is using ASP.NET. This provides a number of options when setting up custom error pages on your website.
 
 Custom error handling might make your site look more on-brand and minimize the impact of errors on user experience. An example, a custom 404 with some helpful links (or a search function) could bring some value to the site.
@@ -20,23 +24,22 @@ One way is to watch for error events and serve corresponding pages via C# code.
 
 In this method, we will use a 404 page created via the backoffice.
 
-#### Create a 404 page in the backoffice
+### Create a 404 page in the backoffice
 
-First, create a new Document Type (though you could also use a more generic Document Type if you already have one) called Page404. Make sure the permissions are set to create it under Content. Properties on this Document Type are optional - in most cases, the 404 not found page would be static. Make sure to assign (and fill out) the template for your error page, and then create it in Content.
+1. Create a new Document Type called `Page404` with same alias. You could also use a more generic Document Type if you already have one.
+2. Set the permissions to create the Document Type at the root in the Content section.
+3. Properties on this Document Type are optional. In most cases, the 404 not found page would be static.
+4. Assign (and fill out) the template for your error page.
+5. Create the `Page404` in the Content section.
 
-#### Set a custom 404 page in appsettings.json
+### Set a custom 404 page in appsettings.json
 
 Once all of that is done, grab your published error page's ID, GUID or path and head on over to the `appsettings.json`.
 
 The value for error pages can be:
 
 * A content item's GUID ID (example: 26C1D84F-C900-4D53-B167-E25CC489DAC8)
-* An XPath statement (example: //errorPages\[@nodeName='My cool error']
 * A content item's integer ID (example: 1234)
-
-{% hint style="warning" %}
-The current implementation of XPath is suboptimal and will be removed entirely in a future version. It is currently obsolete and scheduled for removal in v14.
-{% endhint %}
 
 That is where the value you grabbed earlier comes in. Fill it out like so:
 
@@ -63,33 +66,6 @@ The above sample uses a GUID value.
 With this approach, you can set different 404 pages for different languages (cultures) - such as `en-us`, `it` etc.
 {% endhint %}
 
-{% hint style="warning" %}
-If you are hosting your site on Umbraco Cloud, using an XPath statement is the best approach. This is because content IDs might differ across Cloud environments.
-{% endhint %}
-
-XPath example:
-
-```json
-{
-    "Umbraco": {
-        "CMS": {
-            "Content": {
-                "Error404Collection": [
-                    {
-                        "Culture": "default",
-                        "ContentXPath": "//errorPages[@nodeName='My cool error']"
-                    }
-                ]
-            }
-        }
-    }
-}
-```
-
-{% hint style="info" %}
-In the above XPath example `//errorPages` is the DocTypeAlias
-{% endhint %}
-
 Id example:
 
 ```json
@@ -110,6 +86,74 @@ Id example:
 ```
 
 The above example uses an integer Id value.
+
+### Set a custom 404 page using IContentLastChanceFinder
+
+This is an example how you can setup a 404 error page using `IContentLastChanceFinder`. To find more information about `IContentLastChanceFinder` read the [Custom Routing](../implementation/custom-routing/README.md#last-chance-icontentfinder) article.
+
+Before following this example, follow the  [Create a 404 page in the backoffice](#create-a-404-page-in-the-backoffice) part. This is due to the fact that this example will use the `Page404` alias of the Document Type to find and display the error page.
+
+1. Create a new `.cs` file called `Error404Page` in your Umbraco project.
+
+2. Add the following code in the newly created class:
+
+{% code title="Error404Page.cs" lineNumbers="true" %}
+
+```csharp
+
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.Routing;
+using Umbraco.Cms.Core.Web;
+
+namespace YourProjectNamespace;
+
+public class Error404Page : IContentLastChanceFinder
+{
+ private readonly IUmbracoContextAccessor _contextAccessor;
+
+ public Error404Page(IUmbracoContextAccessor contextAccessor)
+ {
+  _contextAccessor = contextAccessor;
+ }
+
+ public Task<bool> TryFindContent(IPublishedRequestBuilder request)
+ {
+  // In the rare case that an umbracoContext cannot be build from the request, we will not be able to find the page
+  if (_contextAccessor.TryGetUmbracoContext(out var umbracoContext) == false)
+  {
+   return Task.FromResult(false);
+  }
+
+  // Find the first notFound page at root level through the published content cache by its documentTypeAlias
+  // You can make this search as complex as you want, you can return different pages based on anything in the original request
+  var notFoundPage = umbracoContext.Content?.GetAtRoot().FirstOrDefault(c => c.ContentType.Alias == "Page404");
+  if (notFoundPage == null)
+  {
+   return Task.FromResult(false);
+  }
+
+  // set the content on the request and mark our search as succesfull
+  request.SetPublishedContent(notFoundPage);
+  return Task.FromResult(true); ;
+ }
+}
+
+// ContentFinders need to be registered into the DI container through a composer
+public class Mycomposer : IComposer
+{
+ public void Compose(IUmbracoBuilder builder)
+ {
+  builder.SetContentLastChanceFinder<Error404Page>();
+ }
+}
+
+```
+
+{% endcode %}
+
+{% hint style="info" %}
+If you are hosting your site on Umbraco Cloud, using `IContentLastChanceFinder` is the best approach. This is because content IDs might differ across Cloud environments.
+{% endhint %}
 
 ## Errors with booting a project
 
@@ -143,7 +187,7 @@ The following steps guides you through setting up a page for internal server err
 
 * Create a `~/controllers` folder in your Umbraco web project.
 * Create a file in this folder, called `ErrorController.cs`.
-*   Add the following code to the file:
+* Add the following code to the file:
 
     ```csharp
     using Microsoft.AspNetCore.Mvc;
@@ -172,7 +216,7 @@ The following steps guides you through setting up a page for internal server err
 **Namespace** replace \[YOUR\_PROJECT\_NAME] by the actual project name. In Visual Studio you can use _Sync Namespaces_ from the project context menu (in _Solution Explorer_ View).
 {% endhint %}
 
-*   Add an entry in `appSettings.json` for the new route "Error" like so
+* Add an entry in `appSettings.json` for the new route "Error" like so
 
     ```json
     "Umbraco": {
@@ -181,6 +225,7 @@ The following steps guides you through setting up a page for internal server err
         "ReservedPaths": "~/app_plugins/,~/install/,~/mini-profiler-resources/,~/umbraco/,~/error/",
         ...
     ```
+
 * Create the redirect pages from 1. step as regular content nodes in the backoffice. They should neither appear in navigation menus or sitemaps. In this example you would create under root node `Statuscodes` with a subnode `500`.
 * Update `Program.cs`
 
@@ -202,7 +247,7 @@ else
 To **test this locally**, in Visual Studio replace `app.UseDeveloperExceptionPage();` by `app.UseExceptionHandler("/error");`. Otherwise you will get the default error page with stack trace etc.&#x20;
 {% endhint %}
 
-#### Trigger a 500 error
+### Trigger a 500 error
 
 You can trigger a 500 error on your frontend by changing a Model.Value property in your template. For example, on a Document Type with a property called `test`. The way to render it in the frontend would be `Model.Value("test");` To trigger a 500 error page you can add anything after Value such as `Model.ValueTest("test");`
 
@@ -254,4 +299,4 @@ If your code or any packages configures a custom `IContentLastChanceFinder`, the
 
 ## Handling errors in ASP.NET Core
 
-For common approaches to handling errors in ASP.NET Core web apps, see the [Handle errors in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/error-handling?view=aspnetcore-6.0) article in the Microsoft Documentation.
+For common approaches to handling errors in ASP.NET Core web apps, see the [Handle errors in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/error-handling) article in the Microsoft Documentation.
