@@ -38,7 +38,7 @@ The value for error pages can be:
 
 The current implementation of XPath is suboptimal, marked as obsolete, and scheduled for removal in Umbraco 14. The replacement for ContentXPath is [IContentLastChanceFinder](../implementation/custom-routing/README.md#last-chance-icontentfinder).
 
-If you have implemented XPath in previous versions and upgraded to v13 you might encounter some issues with XPath. This article will be updated when we have more details to know how the article should be updated.
+If you have implemented XPath in previous versions and upgraded to v13 you might encounter issues with XPath. This article will be updated when we have more details on how the article should be updated.
 
 {% endhint %}
 
