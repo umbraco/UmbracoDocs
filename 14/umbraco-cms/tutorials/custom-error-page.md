@@ -89,13 +89,13 @@ The above example uses an integer Id value.
 
 ### Set a custom 404 page using IContentLastChanceFinder
 
-This is an example how you can setup a 404 error page using `IContentLastChanceFinder`. To find more information about `IContentLastChanceFinder` read the [Custom Routing](../implementation/custom-routing/README.md#last-chance-icontentfinder) article.
+This is an example of how you can set up a 404 error page using `IContentLastChanceFinder`. To learn more about `IContentLastChanceFinder` read the [Custom Routing](../implementation/custom-routing/README.md#last-chance-icontentfinder) article.
 
-Before following this example, follow the  [Create a 404 page in the backoffice](#create-a-404-page-in-the-backoffice) part. This is due to the fact that this example will use the `Page404` alias of the Document Type to find and display the error page.
+Before following this example, follow the  [Create a 404 page in the backoffice](#create-a-404-page-in-the-backoffice) part. This is because this example will use the `Page404` alias of the Document Type to find and display the error page.
 
 1. Create a new `.cs` file called `Error404Page` in your Umbraco project.
 
-2. Add the following code in the newly created class:
+2. Add the following code to the newly created class:
 
 {% code title="Error404Page.cs" lineNumbers="true" %}
 
