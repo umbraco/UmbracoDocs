@@ -482,7 +482,7 @@ Media can be created by sending a POST request to the media endpoint. The reques
 The `umbracoFile.src` property in the first `MultipartBoundary`'s JSON body defines the name of the file to be uploaded. The `fileName` in the second `MultipartBoundary` must match the `umbracoFile.src` property's value.
 
 {% hint style="info" %}
-Different media property editors will require different request body formats.The File Upload property editor has the file name as the value `"umbracoFile": FILE_NAME`, and the Image Cropper property editor expects a JSON value `"umbracoFile": { "src": FILE_NAME }`. To verify the JSON structure you can manually upload the media file via the backoffice and fetch the data. It can then be used for reference. (See how in the [Creating Content with Media](../../../tutorials/management-api/creating-content-with-media.md) tutorial.)
+Different media property editors will require different request body formats.The File Upload property editor has the file name as the value `"umbracoFile": FILE_NAME`, and the Image Cropper property editor expects a JSON value `"umbracoFile": { "src": FILE_NAME }`. To verify the JSON structure you can manually upload the media file via the backoffice and fetch the data. It can then be used for reference. (See how in the [Creating Content with Media](../../../tutorials/creating-content-with-media.md) tutorial.)
 {% endhint %}
 
 **URL**: `/media`
