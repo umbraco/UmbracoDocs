@@ -67,47 +67,57 @@ Before we start working on making a ValueConnector a few notes on how to test an
 First thing we will do is create the ValueConnector using the interface. If you implement it you will get something like this:
 
 ```csharp
-using System;
-using System.Collections.Generic;
-using Umbraco.Core.Deploy;
-using Umbraco.Core.Models;
+using Umbraco.Cms.Core.Deploy;
+using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Core;
 
 namespace valueconnector.Core.Controllers;
 
 public class BadMediaValueConnector : IValueConnector
 {
-    public BadMediaValueConnector()
-    {
-    }
-    public IEnumerable<string> PropertyEditorAliases => new[] {"BadMediaPicker"};
+ private readonly IEntityService _entityService;
+ private readonly ILogger<BadMediaValueConnector> _logger;
+ public BadMediaValueConnector(IEntityService entityService, ILogger<BadMediaValueConnector> logger)
+ {
+  _entityService = entityService;
+  _logger = logger;
+ }
+ public IEnumerable<string> PropertyEditorAliases => new[] { "BadMediaPicker" };
 
-    public string ToArtifact(object value, PropertyType propertyType, ICollection<ArtifactDependency> dependencies)
-    {
-        return value.ToString();
-    }
+ public string? ToArtifact(object? value, IPropertyType propertyType, ICollection<ArtifactDependency> dependencies, IContextCache contextCache)
+ {
+  return value.ToString();
+ }
 
-    public object FromArtifact(string value, PropertyType propertyType, object currentValue)
-    {
-        return currentValue;
-    }
+ public object? FromArtifact(string? value, IPropertyType propertyType, object? currentValue, IContextCache contextCache)
+ {
+  return currentValue;
+ }
 }
 ```
 
+<details>
+
+<summary> Legacy v8 <code>uaas.cmd</code> </summary>
 In this case I cloned the Cloud project down using the [uaas.cmd](https://umbra.co/uaas-cmd) tool, which means that I have a class library that I can add the ValueConnector to. This will automatically have some references included and will build a DLL, eg. `projectalias.core.dll`, and put it in the websites bin folder when building.
 
 This has no impact on the way you work, but it may help you understand why some things are named the way they are.
 
-At this point I have one clone of the site locally. However, to test this I will push the changes to the Cloud site and then clone it down again. The second clone doesn't need to be cloned with the `uaas.cmd` tool as we aren't developing on it, all we need is to run it locally.
+<strong>uaas.cmd is a tool that can be used to clone down v8 project and below.</strong>
+</details>
+
+At this point I have one clone of the site locally. However, to test this I will push the changes to the Cloud site and then clone it down again.
 
 At this point I have two local sites:
 
-**Site 1**: Full Visual Studio solution Running on http://localhost:6240/ (Randomly generated) Has the ValueConnector in a class library that is built to a dll and copied to the websites bin on build
+**Site 1**: Full Visual Studio solution Running on <http://localhost:6240/> (Randomly generated) Has the ValueConnector in a class library that is built to a dll and copied to the websites bin on build
 
-**Site 2**: A website served through VS Code (Could be IIS or anything else, doesn't matter) Running on http://localhost:17025/ (Randomly generated) Has the ValueConnector dll in the bin from the clone
+**Site 2**: A website served through VS Code (Could be IIS or anything else, doesn't matter) Running on <http://localhost:17025/> (Randomly generated) Has the ValueConnector dll in the bin from the clone
 
 Now we will set up these two identical sites to transfer content between each other.
 
-To do so go to `site1/Config/UmbracoDeploy.config` and edit the live environment url to be Site 2's url (http://localhost:17025/ in my case). Then do the same for Site 2 but put in the domain for Site 1 as the "live" one.
+To do so go to `site1/Config/UmbracoDeploy.config` and edit the live environment url to be Site 2's url (<http://localhost:17025/> in my case). Then do the same for Site 2 but put in the domain for Site 1 as the "live" one.
 
 At this point you should be able to go to the backoffice of either environment and do a Content transfer to live, and it should end up on the other (Assuming no errors from your custom connector).
 
@@ -173,33 +183,31 @@ That is not a good assumption, and you may have noticed that there is a paramete
 In order to add the image as a dependency for the item being transferred, we will update the code in the `ToArtifact` method:
 
 ```csharp
-public string ToArtifact(object value, PropertyType propertyType, ICollection<ArtifactDependency> dependencies)
-{
-    var svalue = value as string;
-    if (string.IsNullOrWhiteSpace(svalue))
-        return null;
+public string? ToArtifact(object? value, IPropertyType propertyType, ICollection<ArtifactDependency> dependencies, IContextCache contextCache)
+ {
+  var svalue = value as string;
+  if (string.IsNullOrWhiteSpace(svalue))
+   return null;
 
-    if (int.TryParse(svalue, out var intvalue))
-        return null;
+  if (!int.TryParse(svalue, out var intvalue))
+   return null;
 
-    var getKeyAttempt = _entityService.GetKey(intvalue, UmbracoObjectTypes.Media);
+  var getKeyAttempt = _entityService.GetKey(intvalue, UmbracoObjectTypes.Media);
 
-    if (getKeyAttempt.Success)
-    {
-        var udi = new GuidUdi(Constants.UdiEntityType.Media, getKeyAttempt.Result);
-        // ArtifactDependencyMode can either be "Exist" or "Match"
-        // Match is an exact match where exist just checks if it is there
-        dependencies.Add(new ArtifactDependency(udi, false, ArtifactDependencyMode.Exist));
+  if (getKeyAttempt.Success)
+  {
+   var udi = new GuidUdi(Constants.UdiEntityType.Media, getKeyAttempt.Result);
+   dependencies.Add(new ArtifactDependency(udi, false, ArtifactDependencyMode.Exist));
 
-        return udi.ToString();
-    }
-    else
-    {
-        _logger.Debug<BadMediaValueConnector>($"Couldn't convert integer value #{intvalue} to UDI");
-    }
+   return udi.ToString();
+  }
+  else
+  {
+   _logger.LogDebug($"Couldn't convert integer value #{intvalue} to UDI");
+  }
 
-    return null;
-}
+  return null;
+ }
 ```
 
 You can find references on the methods used here in our API documentation:
@@ -220,20 +228,20 @@ Note: Showing the variable values is a feature of [ReSharper](https://www.jetbra
 By the time we hit `FromArtifact` value of `"umb://media/00c9eff861654f52be7a33367c3561a4"` all that is left to do is convert back to an `int`.
 
 ```csharp
-public object FromArtifact(string value, PropertyType propertyType, object currentValue)
-{
-    if (string.IsNullOrWhiteSpace(value))
-        return null;
+public object? FromArtifact(string? value, IPropertyType propertyType, object? currentValue, IContextCache contextCache)
+ {
+  if (string.IsNullOrWhiteSpace(value))
+   return null;
 
-    if (!GuidUdi.TryParse(value, out var udi) || udi.Guid == Guid.Empty)
-        return null;
+  if (!UdiParser.TryParse(value, out GuidUdi? udi) || udi.Guid == Guid.Empty)
+   return null;
 
-    var getIdAttempt = _entityService.GetId(udi.Guid, UmbracoObjectTypes.Media);
+  var getIdAttempt = _entityService.GetId(udi.Guid, UmbracoObjectTypes.Media);
 
-    if (!getIdAttempt.Success) return null;
+  if (!getIdAttempt.Success) return null;
 
-    return getIdAttempt.Result.ToString();
-}
+  return getIdAttempt.Result.ToString();
+ }
 ```
 
 Here is a gif showing the ValueConnector in action. A new image is uploaded, the ID on the node is updated and transferred. Finally the image is on the new environment and the ID is updated:
@@ -243,66 +251,63 @@ Here is a gif showing the ValueConnector in action. A new image is uploaded, the
 The final ValueConnector code will look like this:
 
 ```csharp
-using System;
-using System.Collections.Generic;
-using Umbraco.Core;
-using Umbraco.Core.Deploy;
-using Umbraco.Core.Logging;
-using Umbraco.Core.Models;
-using Umbraco.Core.Services;
+using Umbraco.Cms.Core.Deploy;
+using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Core;
 
 namespace valueconnector.Core.Controllers;
 
 public class BadMediaValueConnector : IValueConnector
 {
-    private readonly IEntityService _entityService;
-    private readonly ILogger _logger;
-    public BadMediaValueConnector(IEntityService entityService, ILogger logger)
-    {
-        _entityService = entityService;
-        _logger = logger;
-    }
-    public IEnumerable<string> PropertyEditorAliases => new[] {"BadMediaPicker"};
+ private readonly IEntityService _entityService;
+ private readonly ILogger<BadMediaValueConnector> _logger;
+ public BadMediaValueConnector(IEntityService entityService, ILogger<BadMediaValueConnector> logger)
+ {
+  _entityService = entityService;
+  _logger = logger;
+ }
+ public IEnumerable<string> PropertyEditorAliases => new[] { "BadMediaPicker" };
 
-    public string ToArtifact(object value, PropertyType propertyType, ICollection<ArtifactDependency> dependencies)
-    {
-        var svalue = value as string;
-        if (string.IsNullOrWhiteSpace(svalue))
-            return null;
+ public string? ToArtifact(object? value, IPropertyType propertyType, ICollection<ArtifactDependency> dependencies, IContextCache contextCache)
+ {
+  var svalue = value as string;
+  if (string.IsNullOrWhiteSpace(svalue))
+   return null;
 
-        if (!int.TryParse(svalue, out var intvalue))
-            return null;
+  if (!int.TryParse(svalue, out var intvalue))
+   return null;
 
-        var getKeyAttempt = _entityService.GetKey(intvalue, UmbracoObjectTypes.Media);
+  var getKeyAttempt = _entityService.GetKey(intvalue, UmbracoObjectTypes.Media);
 
-        if (getKeyAttempt.Success)
-        {
-            var udi = new GuidUdi(Constants.UdiEntityType.Media, getKeyAttempt.Result);
-            dependencies.Add(new ArtifactDependency(udi, false, ArtifactDependencyMode.Exist));
+  if (getKeyAttempt.Success)
+  {
+   var udi = new GuidUdi(Constants.UdiEntityType.Media, getKeyAttempt.Result);
+   dependencies.Add(new ArtifactDependency(udi, false, ArtifactDependencyMode.Exist));
 
-            return udi.ToString();
-        }
-        else
-        {
-            _logger.Debug<BadMediaValueConnector>($"Couldn't convert integer value #{intvalue} to UDI");
-        }
+   return udi.ToString();
+  }
+  else
+  {
+   _logger.LogDebug($"Couldn't convert integer value #{intvalue} to UDI");
+  }
 
-        return null;
-    }
+  return null;
+ }
 
-    public object FromArtifact(string value, PropertyType propertyType, object currentValue)
-    {
-        if (string.IsNullOrWhiteSpace(value))
-            return null;
+ public object? FromArtifact(string? value, IPropertyType propertyType, object? currentValue, IContextCache contextCache)
+ {
+  if (string.IsNullOrWhiteSpace(value))
+   return null;
 
-        if (!GuidUdi.TryParse(value, out var udi) || udi.Guid == Guid.Empty)
-            return null;
+  if (!UdiParser.TryParse(value, out GuidUdi? udi) || udi.Guid == Guid.Empty)
+   return null;
 
-        var getIdAttempt = _entityService.GetId(udi.Guid, UmbracoObjectTypes.Media);
+  var getIdAttempt = _entityService.GetId(udi.Guid, UmbracoObjectTypes.Media);
 
-        if (!getIdAttempt.Success) return null;
+  if (!getIdAttempt.Success) return null;
 
-        return getIdAttempt.Result.ToString();
-    }
+  return getIdAttempt.Result.ToString();
+ }
 }
 ```

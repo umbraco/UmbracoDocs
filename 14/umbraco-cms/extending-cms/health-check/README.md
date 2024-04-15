@@ -92,96 +92,95 @@ This can be anything you can think of, the results and the rectify action are co
 An example check:
 
 ```csharp
+using Umbraco.Cms.Core.Extensions;
 using Umbraco.Cms.Core.HealthChecks;
 using Umbraco.Cms.Core.Services;
-using Umbraco.Cms.Infrastructure.HostedServices;
-using Umbraco.Extensions;
-using IHostingEnvironment = Umbraco.Cms.Core.Hosting.IHostingEnvironment;
 
 namespace Umbraco.Web.HealthCheck.Checks.SEO;
 
 [HealthCheck("3A482719-3D90-4BC1-B9F8-910CD9CF5B32", "Robots.txt",
-    Description = "Create a robots.txt file to block access to system folders.",
-    Group = "SEO")]
-public class RobotsTxt : Cms.Core.HealthChecks.HealthCheck
+ Description = "Create a robots.txt file to block access to system folders.",
+ Group = "SEO")]
+public class HealthCheckNotifier : Cms.Core.HealthChecks.HealthCheck
 {
-    private readonly IHostingEnvironment _hostingEnvironment;
-    private readonly ILogger<HealthCheckNotifier> _logger;
-    private readonly ILocalizedTextService _textService;
+ private readonly IHostEnvironment _hostEnvironment;
+ private readonly ILogger<HealthCheckNotifier> _logger;
+ private readonly ILocalizedTextService _textService;
 
-    public RobotsTxt(ILocalizedTextService textService, IHostingEnvironment hostingEnvironment,
-        ILogger<HealthCheckNotifier> logger)
-    {
-        _textService = textService;
-        _hostingEnvironment = hostingEnvironment;
-        _logger = logger;
-    }
+ public HealthCheckNotifier(ILocalizedTextService textService, IHostEnvironment hostEnvironment,
+  ILogger<HealthCheckNotifier> logger)
+ {
+  _textService = textService;
+  _hostEnvironment = hostEnvironment;
+  _logger = logger;
+ }
 
-    public override Task<IEnumerable<HealthCheckStatus>> GetStatus() =>
-        Task.FromResult((IEnumerable<HealthCheckStatus>)new[] { CheckForRobotsTxtFile() });
+ public override Task<IEnumerable<HealthCheckStatus>> GetStatus() =>
+  Task.FromResult((IEnumerable<HealthCheckStatus>)new[] { CheckForRobotsTxtFile() });
 
-    public override HealthCheckStatus ExecuteAction(HealthCheckAction action)
-    {
-        switch (action.Alias)
-        {
-            case "addDefaultRobotsTxtFile":
-                return AddDefaultRobotsTxtFile();
-            default:
-                throw new InvalidOperationException("Action not supported");
-        }
-    }
+ public override HealthCheckStatus ExecuteAction(HealthCheckAction action)
+ {
+  switch (action.Alias)
+  {
+   case "addDefaultRobotsTxtFile":
+    return AddDefaultRobotsTxtFile();
+   default:
+    throw new InvalidOperationException("Action not supported");
+  }
+ }
 
-    private HealthCheckStatus CheckForRobotsTxtFile()
-    {
-        var success = File.Exists(_hostingEnvironment.MapPathContentRoot("~/robots.txt"));
-        var message = success
-            ? _textService.Localize("healthcheck", "seoRobotsCheckSuccess")
-            : _textService.Localize("healthcheck","seoRobotsCheckFailed");
+ private HealthCheckStatus CheckForRobotsTxtFile()
+ {
+  var success = File.Exists(_hostEnvironment.MapPathContentRoot("~/robots.txt"));
+  var message = success
+   ? _textService.Localize("healthcheck", "seoRobotsCheckSuccess")
+   : _textService.Localize("healthcheck", "seoRobotsCheckFailed");
 
-        var actions = new List<HealthCheckAction>();
+  var actions = new List<HealthCheckAction>();
 
-        if (success == false)
-        {
-            actions.Add(new HealthCheckAction("addDefaultRobotsTxtFile", Id)
-                // Override the "Rectify" button name and describe what this action will do
-                {
-                    Name = _textService.Localize("healthcheck","seoRobotsRectifyButtonName"),
-                    Description = _textService.Localize("healthcheck","seoRobotsRectifyDescription")
-                });
-        }
+  if (success == false)
+  {
+   actions.Add(new HealthCheckAction("addDefaultRobotsTxtFile", Id)
+   // Override the "Rectify" button name and describe what this action will do
+   {
+    Name = _textService.Localize("healthcheck", "seoRobotsRectifyButtonName"),
+    Description = _textService.Localize("healthcheck", "seoRobotsRectifyDescription")
+   });
+  }
 
-        return
-            new HealthCheckStatus(message)
-            {
-                ResultType = success ? StatusResultType.Success : StatusResultType.Error, Actions = actions
-            };
-    }
+  return
+   new HealthCheckStatus(message)
+   {
+    ResultType = success ? StatusResultType.Success : StatusResultType.Error,
+    Actions = actions
+   };
+ }
 
-    private HealthCheckStatus AddDefaultRobotsTxtFile()
-    {
-        var success = false;
-        var message = string.Empty;
-        const string content = @"# robots.txt for Umbraco
+ private HealthCheckStatus AddDefaultRobotsTxtFile()
+ {
+  var success = false;
+  var message = string.Empty;
+  const string content = @"# robots.txt for Umbraco
 User-agent: *
 Disallow: /umbraco/";
 
-        try
-        {
-            File.WriteAllText(_hostingEnvironment.MapPathContentRoot("~/robots.txt"), content);
-            success = true;
-        }
-        catch (Exception exception)
-        {
-            _logger.LogError(exception, "Could not write robots.txt to the root of the site");
-        }
+  try
+  {
+   File.WriteAllText(_hostEnvironment.MapPathContentRoot("~/robots.txt"), content);
+   success = true;
+  }
+  catch (Exception exception)
+  {
+   _logger.LogError(exception, "Could not write robots.txt to the root of the site");
+  }
 
-        return
-            new HealthCheckStatus(message)
-            {
-                ResultType = success ? StatusResultType.Success : StatusResultType.Error,
-                Actions = new List<HealthCheckAction>()
-            };
-    }
+  return
+   new HealthCheckStatus(message)
+   {
+    ResultType = success ? StatusResultType.Success : StatusResultType.Error,
+    Actions = new List<HealthCheckAction>()
+   };
+ }
 }
 ```
 
@@ -196,96 +195,94 @@ The following example shows how the core method for sending notification via ema
 ```csharp
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core.Configuration.Models;
-using Umbraco.Cms.Core.Hosting;
 using Umbraco.Cms.Core.Mail;
 using Umbraco.Cms.Core.Models.Email;
 using Umbraco.Cms.Core.Services;
-using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Core.HealthChecks.NotificationMethods;
 
 [HealthCheckNotificationMethod("email")]
 public class EmailNotificationMethod : NotificationMethodBase
 {
-    private readonly ILocalizedTextService? _textService;
-    private readonly IHostingEnvironment? _hostingEnvironment;
-    private readonly IEmailSender? _emailSender;
-    private readonly IMarkdownToHtmlConverter? _markdownToHtmlConverter;
-    private ContentSettings? _contentSettings;
+ private readonly ILocalizedTextService? _textService;
+ private readonly IHostEnvironment? _hostEnvironment;
+ private readonly IEmailSender? _emailSender;
+ private readonly IMarkdownToHtmlConverter? _markdownToHtmlConverter;
+ private ContentSettings? _contentSettings;
 
-    public EmailNotificationMethod(
-        ILocalizedTextService textService,
-        IHostingEnvironment hostingEnvironment,
-        IEmailSender emailSender,
-        IOptionsMonitor<HealthChecksSettings> healthChecksSettings,
-        IOptionsMonitor<ContentSettings> contentSettings,
-        IMarkdownToHtmlConverter markdownToHtmlConverter)
-        : base(healthChecksSettings)
-    {
-        var recipientEmail = Settings?["RecipientEmail"];
-        if (string.IsNullOrWhiteSpace(recipientEmail))
-        {
-            Enabled = false;
-            return;
-        }
+ public EmailNotificationMethod(
+  ILocalizedTextService textService,
+  IHostEnvironment hostEnvironment,
+  IEmailSender emailSender,
+  IOptionsMonitor<HealthChecksSettings> healthChecksSettings,
+  IOptionsMonitor<ContentSettings> contentSettings,
+  IMarkdownToHtmlConverter markdownToHtmlConverter)
+  : base(healthChecksSettings)
+ {
+  var recipientEmail = Settings?["RecipientEmail"];
+  if (string.IsNullOrWhiteSpace(recipientEmail))
+  {
+   Enabled = false;
+   return;
+  }
 
-        RecipientEmail = recipientEmail;
+  RecipientEmail = recipientEmail;
 
-        _textService = textService ?? throw new ArgumentNullException(nameof(textService));
-        _hostingEnvironment = hostingEnvironment;
-        _emailSender = emailSender;
-        _markdownToHtmlConverter = markdownToHtmlConverter;
-        _contentSettings = contentSettings.CurrentValue ?? throw new ArgumentNullException(nameof(contentSettings));
+  _textService = textService ?? throw new ArgumentNullException(nameof(textService));
+  _hostEnvironment = hostEnvironment;
+  _emailSender = emailSender;
+  _markdownToHtmlConverter = markdownToHtmlConverter;
+  _contentSettings = contentSettings.CurrentValue ?? throw new ArgumentNullException(nameof(contentSettings));
 
-        contentSettings.OnChange(x => _contentSettings = x);
-    }
+  contentSettings.OnChange(x => _contentSettings = x);
+ }
 
-    public string? RecipientEmail { get; }
+ public string? RecipientEmail { get; }
 
-    public override async Task SendAsync(HealthCheckResults results)
-    {
-        if (ShouldSend(results) == false)
-        {
-            return;
-        }
+ public override async Task SendAsync(HealthCheckResults results)
+ {
+  if (ShouldSend(results) == false)
+  {
+   return;
+  }
 
-        if (string.IsNullOrEmpty(RecipientEmail))
-        {
-            return;
-        }
+  if (string.IsNullOrEmpty(RecipientEmail))
+  {
+   return;
+  }
 
-        var message = _textService?.Localize("healthcheck","scheduledHealthCheckEmailBody", new[]
-        {
-            DateTime.Now.ToShortDateString(),
-            DateTime.Now.ToShortTimeString(),
-            _markdownToHtmlConverter?.ToHtml(results, Verbosity)
-        });
+  var message = _textService?.Localize("healthcheck", "scheduledHealthCheckEmailBody", new[]
+  {
+   DateTime.Now.ToShortDateString(),
+   DateTime.Now.ToShortTimeString(),
+   _markdownToHtmlConverter?.ToHtml(results, Verbosity)
+  });
 
-        // Include the Umbraco Application URL host in the message subject so that
-        // you can identify the site that these results are for.
-        var host = _hostingEnvironment?.ApplicationMainUrl?.ToString();
+  // Include the Umbraco Application URL host in the message subject so that
+  // you can identify the site that these results are for.
+  var host = _hostEnvironment?.ContentRootPath?.ToString();
 
-        var subject = _textService?.Localize("healthcheck","scheduledHealthCheckEmailSubject", new[] { host });
+  var subject = _textService?.Localize("healthcheck", "scheduledHealthCheckEmailSubject", new[] { host });
 
 
-        var mailMessage = CreateMailMessage(subject, message);
-        Task? task = _emailSender?.SendAsync(mailMessage, Constants.Web.EmailTypes.HealthCheck);
-        if (task is not null)
-        {
-            await task;
-        }
-    }
+  var mailMessage = CreateMailMessage(subject, message);
+  Task? task = _emailSender?.SendAsync(mailMessage, Constants.Web.EmailTypes.HealthCheck);
+  if (task is not null)
+  {
+   await task;
+  }
+ }
 
-    private EmailMessage CreateMailMessage(string? subject, string? message)
-    {
-        var to = _contentSettings?.Notifications.Email;
+ private EmailMessage CreateMailMessage(string? subject, string? message)
+ {
+  var to = _contentSettings?.Notifications.Email;
 
-        if (string.IsNullOrWhiteSpace(subject))
-            subject = "Umbraco Health Check Status";
+  if (string.IsNullOrWhiteSpace(subject))
+   subject = "Umbraco Health Check Status";
 
-        var isBodyHtml = message.IsNullOrWhiteSpace() == false && message!.Contains("<") && message.Contains("</");
-        return new EmailMessage(to, RecipientEmail, subject, message, isBodyHtml);
-    }
+  var isBodyHtml = message.IsNullOrWhiteSpace() == false && message!.Contains("<") && message.Contains("</");
+  return new EmailMessage(to, RecipientEmail, subject, message, isBodyHtml);
+ }
 }
 ```
 
