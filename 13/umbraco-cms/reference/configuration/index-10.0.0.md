@@ -87,6 +87,7 @@ In case of a 404 error (page not found) Umbraco can return a default page instea
   }
 ]
 ```
+
 The above example shows what you need to do if you only have a single site that needs to show a custom 404 page. You specify which node that should be shown when a request for a non-existing page is being made. You can specify the node in three ways:
 
 1. Enter the nodes **id** (`"ContentId": 1`)
@@ -102,7 +103,7 @@ The above example shows what you need to do if you only have a single site that 
 
 {% hint style="warning" %}
 
-The current implementation of XPath is suboptimal and will be removed entirely in a future version. It is currently obsolete and scheduled for removal in v14.
+The current implementation of XPath is suboptimal, marked as obsolete, and scheduled for removal in Umbraco 14. The replacement for ContentXPath is [IContentLastChanceFinder](../../implementation/custom-routing/README.md#last-chance-icontentfinder).
 
 {% endhint %}
 
@@ -139,11 +140,11 @@ You can specify your own image for the small logo in the top left corner of the 
 This setting allows you to specify how errors in macros should be handled.
 
 Options:
+
 * Inline - Default Umbraco behavior, show an inline error within the macro but allow the page to continue rendering.
 * Silent - Silently suppress the error and do not display the offending macro.
 * Throw - Throw an exception.
 * Content - Silently suppress the error, and display custom content reported in the error event args.
-
 
 ### Preview badge
 
@@ -162,7 +163,6 @@ This setting is used when you're running Umbraco in virtual directories. Setting
 This setting is used for controlling whether or not the Data Types marked as obsolete should be visible when creating new Data Types.
 
 By default this is set to `false`. To make the obsolete data types visible in the dropdown change the value to `true`.
-
 
 ## ContentVersionCleanupPolicy
 
@@ -199,7 +199,6 @@ All versions that fall in this period will be kept.
 For content versions that fall in this period, the most recent version for each day is kept. All previous versions for that day are removed unless marked as preventCleanup.
 
 This variable is independent of `KeepAllVersionsNewerThanDays`, if both were set to the same value `KeepLatestVersionPerDayForDays` would never apply as `KeepAllVersionsNewerThanDays` is considered first.
-
 
 ## Imaging
 
@@ -253,7 +252,7 @@ If you need to create a custom Media Type to handle images you need to add anoth
   ]
 }
 ```
+
 ## Notifications
 
 Umbraco can send out email notifications, set the sender email address for the notifications emails here. To set the SMTP server used to send the emails, edit the standard Simple Mail Transfer Protocol (SMTP) section in the global section, see [global settings](../GlobalSettings/) for more information.
-

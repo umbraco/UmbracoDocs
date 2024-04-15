@@ -30,12 +30,12 @@ Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 * [Angular removed: A new backoffice built with Web Components, Lit, and fueled by the Umbraco UI Library](https://github.com/umbraco/Umbraco.CMS.Backoffice)
 * Icons in the new backoffice are based on [Lucide](https://lucide.dev/icons/).
 * [Full TypeScript support for the Backoffice and all its APIs through a public npm package](https://www.myget.org/feed/umbracoprereleases/package/npm/@umbraco-cms/backoffice)
-* A [management API ](../../../../reference/management-api/)documentation in Swagger - replacement for Controllers that were not restful
+* A [management API](../../../../reference/management-api/)documentation in Swagger - replacement for Controllers that were not restful
 * [Migration from Newtonsoft.Json to the System.Text.Json which removes Nested Content and Grid value converter and so on](https://github.com/umbraco/Umbraco-CMS/pull/15728)
 * Nested Content and Grid Layout have been removed
 * [Legacy media picker has been removed](https://github.com/umbraco/Umbraco-CMS/pull/15835)
 * [Macros and Partial View Macros have been removed](https://github.com/umbraco/Announcements/issues/14). Use partial views and/or blocks in the Rich Text Editor.
-* XPath has been removed. An alternative is using the Dynamic Roots in the Multinode Treepicker.
+* XPath has been removed. An alternative is using the Dynamic Roots in the Multinode Treepicker and for ContentXPath the alternative is [IContentLastChanceFinder](../../../../tutorials/custom-error-page.md).
 * [package-manifest is now umbraco.package.json](../../../../extending-backoffice/package-manifest.md)
 * [Smidge has been removed from default installation](https://github.com/umbraco/Umbraco-CMS/pull/15788). Can be manually installed if needed.
 * New login screen
@@ -72,6 +72,6 @@ Management API Breaking Changes
 * [#15862](https://github.com/umbraco/Umbraco-CMS/pull/15862) - Removed “type” from tree item response models
 * [#15856](https://github.com/umbraco/Umbraco-CMS/pull/15856) - Remove duplicate pagination helper
 
-**In-depth previous, further and other changes for v14 beta versions can be found on the Release Notes on the** [**Umbraco.CMS.Backoffice** ](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases)**repository.**
+**In-depth previous, further and other changes for v14 beta versions can be found on the Release Notes on the** [**Umbraco.CMS.Backoffice**](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases)**repository.**
 
 </details>

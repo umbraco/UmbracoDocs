@@ -107,6 +107,7 @@ The above example shows what you need to do if you only have a single site that 
 3. Enter the XPath to find the node (`"ContentXPath": "/root/Home//TextPage[@urlName = 'error404'"`)
 
 {% hint style="info" %}
+
 * Ids are usually local to the specific solution (so won't point to the same node in two different environments if you're using Umbraco Cloud).
 * GUIDs are universal and will point to the same node on different environments, provided the content was created in one environment and deployed to the other(s).
 * When using XPath, there is no "context" (like, you can't find the node based on "currentPage") so needs to be a global absolute path.
@@ -114,7 +115,7 @@ The above example shows what you need to do if you only have a single site that 
 
 {% hint style="warning" %}
 
-The current implementation of XPath is suboptimal and will be removed entirely in a future version. It is currently obsolete and scheduled for removal in v14.
+The current implementation of XPath is suboptimal, marked as obsolete, and scheduled for removal in Umbraco 14. The replacement for ContentXPath is [IContentLastChanceFinder](../../implementation/custom-routing/README.md#last-chance-icontentfinder).
 
 {% endhint %}
 

@@ -103,8 +103,10 @@ The above example shows what you need to do if you only have a single site that 
 
 1. Enter the nodes **id** (`"ContentId": 1`)
 2. Enter the node's **GUID** (`"ContentKey": "4f96ffdd-b969-46a8-949e-7935c41fabc0"`)
+3. Use [IContentLastChanceFinder](../../tutorials/custom-error-page.md#set-a-custom-404-page-using-icontentlastchancefinder) to find the node.
 
 {% hint style="info" %}
+
 * Ids are usually local to the specific solution (so won't point to the same node in two different environments if you're using Umbraco Cloud).
 * GUIDs are universal and will point to the same node on different environments, provided the content was created in one environment and deployed to the other(s).
 {% endhint %}

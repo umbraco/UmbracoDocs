@@ -18,7 +18,7 @@ Published property values have four "Values":
 
 {% hint style="warning" %}
 
-The current implementation of XPath is suboptimal and will be removed entirely in a future version. It is currently obsolete and scheduled for removal in v14.
+The current implementation of XPath is suboptimal, marked as obsolete, and scheduled for removal in Umbraco 14. The replacement for ContentXPath is [IContentLastChanceFinder](../../implementation/custom-routing/README.md#last-chance-icontentfinder).
 
 {% endhint %}
 
@@ -109,14 +109,14 @@ Do not use this cache level unless you know exactly what you're doing. We recomm
 
 The property value will be cached until its _element_ is modified. The element is what holds (or owns) the property. For example:
 
-- For properties used at the page level, the element is the entire page. 
+- For properties used at the page level, the element is the entire page.
 - For properties contained within Block List items, the element is the individual Block List item.
 
-This is the most commonly used cache level and should be your default, unless you have specific reasons to do otherwise. 
+This is the most commonly used cache level and should be your default, unless you have specific reasons to do otherwise.
 
 #### `PropertyCacheLevel.Elements`
 
-The property value will be cached until _any_ element (see above) is changed. This means that any change to any page will clear the property value cache. 
+The property value will be cached until _any_ element (see above) is changed. This means that any change to any page will clear the property value cache.
 
 This is particularly useful for property values that contain references to other content or elements. For example, this cache level is utilized by the Content Picker to clear its property values from the cache upon content updates.
 
@@ -172,7 +172,7 @@ public object ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPro
 
 This method converts the Intermediate to an Object. The returned value is used by the `GetPropertyValue<T>` method of `IPublishedContent`.
 
-The below example converts the nodeId (converted to `Int` or `Udi` by *ConvertSourceToIntermediate*) into an 'IPublishedContent' object.
+The below example converts the nodeId (converted to `Int` or `Udi` by _ConvertSourceToIntermediate_) into an 'IPublishedContent' object.
 
 ```csharp
 public object ConvertIntermediateToObject(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview)
@@ -217,6 +217,12 @@ public object ConvertIntermediateToXPath(IPublishedElement owner, IPublishedProp
     return inter.ToString();
 }
 ```
+
+{% hint style="warning" %}
+
+The current implementation of XPath is suboptimal, marked as obsolete, and scheduled for removal in Umbraco 14. The replacement for ContentXPath is [IContentLastChanceFinder](../../implementation/custom-routing/README.md#last-chance-icontentfinder).
+
+{% endhint %}
 
 ## Sample
 
