@@ -77,7 +77,6 @@
 ## Reference
 
 * [Stores](reference/stores/README.md)
-* [Locations](reference/locations/README.md)
 * [Shipping](reference/shipping/README.md)
   * [Fixed Rate Shipping](reference/shipping/fixed-rate-shipping.md)
   * [Dynamic Rate Shipping](reference/shipping/dynamic-rate-shipping.md)
