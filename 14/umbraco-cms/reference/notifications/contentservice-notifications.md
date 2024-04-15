@@ -185,7 +185,7 @@ The ContentSavingNotification and ContentSavedNotification will always be publis
 
 <details>
 
-<summary>What happened to `raiseEvent` method parameters?</summary>
+<summary>What happened to <code>raiseEvent</code>method parameters?</summary>
 
 RaiseEvent method service parameters have been removed from v9 and to name some reasons why:
 
