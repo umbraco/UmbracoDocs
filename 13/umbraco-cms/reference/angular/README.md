@@ -10,6 +10,8 @@ Please refer to the [Backoffice UI API Documentation](../../extending/backoffice
 For any questions regarding the above, feel free to reach out at [docs@umbraco.com](mailto:docs@umbraco.com).
 
 You can also raise an issue on the [official UmbracoDocs GitHub Issue Tracker](https://github.com/umbraco/UmbracoDocs/issues).
+
+This section will be removed on Umbraco 14.
 {% endhint %}
 
 Generally, you can find information about these via the [Backoffice UI API documentation](https://apidocs.umbraco.com/v13/ui). This part of the documentation is auto-generated from the Umbraco source code.
