@@ -132,6 +132,7 @@ New projects are opt-in by default.
 ## Backups
 
 With this setting, it is possible to create a database backup of one or more of your cloud environments. 
+
 ## [Project History](project-history.md)
 
 On the project history page, you can see a history of activities that have happened on your projects.
