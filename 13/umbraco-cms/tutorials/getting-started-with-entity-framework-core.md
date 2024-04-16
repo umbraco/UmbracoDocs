@@ -154,6 +154,17 @@ builder.Services.AddUmbracoDbContext<CustomDbContext>((serviceProvider, options)
 dotnet ef migrations add InitialCreate --context BlogContext
 ```
 
+{% hint style="info" %}
+
+If you use another class library in your project to store models and DBContext classes such as Project.Core (Project.Web being the main startup Project):
+- Go to the project folder where you have your custom class library such as /Project.Core
+- Run the following script with the relative path to your main startup project Project.Web:
+```bash
+dotnet ef migrations add initialCreate -s ../Project.Web/ --context BlogContext
+```
+{% endhint %}
+
+
 {% hint style="warning" %}
 In this example, we have named the migration `InitialCreate`. However, you can choose the name you like.
 
