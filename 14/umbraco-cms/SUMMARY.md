@@ -88,7 +88,7 @@
   * [Adding Language Variants](tutorials/creating-a-basic-website/adding-language-variants.md)
   * [Conclusions](tutorials/creating-a-basic-website/conclusion.md)
 * [Creating your first extension](tutorials/creating-your-first-extension.md)
-* [Creating a Custom Dashboard](tutorials/creating-a-custom-dashboard.md)
+* [Creating a Custom Dashboard](tutorials/creating-a-custom-dashboard/README.md)
   * [Adding localization to the dashboard](tutorials/creating-a-custom-dashboard/adding-localization-to-the-dashboard.md)
   * [Adding functionality to the Dashboard](tutorials/creating-a-custom-dashboard/adding-functionality-to-the-dashboard.md)
   * [Using Umbraco UI library in the Dashboard](tutorials/creating-a-custom-dashboard/extending-the-dashboard-using-umbraco-ui-library.md)

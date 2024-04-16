@@ -3,3 +3,6 @@ root: ./
 ​structure:  
     readme: README.md
     summary: SUMMARY.md
+
+redirects: 
+    tutorials/creating-a-custom-dashboard: tutorials/creating-a-custom-dashboard/README.md
