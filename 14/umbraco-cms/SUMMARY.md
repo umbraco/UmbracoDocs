@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Umbraco 14 (Beta) CMS Documentation](README.md)
+* [Umbraco 14 (RC) CMS Documentation](README.md)
 * [Contribute](https://docs.umbraco.com/welcome/contribute/getting-started)
 
 ## Fundamentals
