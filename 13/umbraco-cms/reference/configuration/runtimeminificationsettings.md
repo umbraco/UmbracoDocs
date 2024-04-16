@@ -6,7 +6,7 @@ description: "Information on the runtime minification settings section"
 
 {% hint style="warning" %}
 
-Smidge with RunTimeMinification setting is scheduled for removal on Umbraco 14. You can install the package separately if needed and read the [Smidge](https://github.com/Shazwazza/Smidge) documentation on how to setup settings.
+Smidge with RunTimeMinification setting is scheduled for removal on Umbraco 14. You can install the package separately if needed and read the [Smidge](https://github.com/Shazwazza/Smidge) documentation on how to get started.
 
 {% endhint %}
 
