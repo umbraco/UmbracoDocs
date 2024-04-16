@@ -17,7 +17,7 @@ The steps we will go through in part one are:
 
 A Dashboard is a tab on the right-hand side of a section eg. the Getting Started dashboard in the Content section:
 
-<figure><img src="../../../10/umbraco-cms/tutorials/images/whatisadashboard-v10 (1) (1).jpg" alt=""><figcaption><p>Welcome dashboard</p></figcaption></figure>
+<figure><img src="../images/whatisadashboard-v10 (1) (1).jpg" alt=""><figcaption><p>Welcome dashboard</p></figcaption></figure>
 
 #### Why provide a Custom Dashboard for your editors?
 
@@ -51,7 +51,7 @@ At each step, you will find a dropdown for `welcome-dashboard.element.ts`, `and 
 ## Setting up a package
 
 1. Follow the [Vite Package Setup](../../extending-backoffice/development-flow/vite-package-setup.md) by creating a new project folder called "`welcome-dashboard`" in `App_Plugins`.
-2. Create a manifest file named `umbraco-package.json` at the root of the `welcome-dashboard`folder. Here we define and configure our dashboard.
+2. Create a manifest file named `umbraco-package.json` at the root of the `welcome-dashboard` folder. Here we define and configure our dashboard.
 3. Add the following code to `umbraco-package.json`:
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
@@ -150,7 +150,7 @@ entry: "src/welcome-dashboard.element.ts"
 
 4. In the `welcome-dashboard` folder run `npm run build` and then run the project. Then in the content section of the Backoffice you will see our new dashboard:
 
-<figure><img src="../.gitbook/assets/spaces_G1Byxw7XfiZAj8zDMCTD_uploads_PtBQkEyVcGmoVx3ysAOJ_welcome (1).webp" alt=""><figcaption><p>First look of the dashboard</p></figcaption></figure>
+<figure><img src="../../../umbraco-cms/.gitbook/assets/spaces_G1Byxw7XfiZAj8zDMCTD_uploads_PtBQkEyVcGmoVx3ysAOJ_welcome (1).webp" alt=""><figcaption><p>First look of the dashboard</p></figcaption></figure>
 
 ## Going Further
 
