@@ -187,7 +187,7 @@ We have now created a working Property editor. Below you can see the full exampl
 ```typescript
 import { LitElement, css, html, customElement, property, state, ifDefined } from "@umbraco-cms/backoffice/external/lit";
 import { type UmbPropertyEditorExtensionElement } from "@umbraco-cms/backoffice/extension-registry";
-import { type UmbPropertyEditorConfigCollection } from "@umbraco-cms/backoffice/property-editor";
+import { type UmbPropertyEditorConfigCollection, UmbPropertyValueChangeEvent } from "@umbraco-cms/backoffice/property-editor";
 import { UMB_MODAL_MANAGER_CONTEXT, UMB_CONFIRM_MODAL} from "@umbraco-cms/backoffice/modal";
 import { UMB_NOTIFICATION_CONTEXT, UmbNotificationDefaultData} from "@umbraco-cms/backoffice/notification";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
@@ -281,7 +281,7 @@ export class MySuggestionsPropertyEditorUIElement
     }
 
     #dispatchChangeEvent() {
-        this.dispatchEvent(new CustomEvent("property-value-change"));
+        this.dispatchEvent(new UmbPropertyValueChangeEvent());
     }
 
     render() {

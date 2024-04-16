@@ -316,6 +316,7 @@ import { LitElement, html, css, customElement, property, state } from "@umbraco-
 ```typescript
 import { LitElement, css, html, customElement, property, state } from "@umbraco-cms/backoffice/external/lit";
 import { UmbPropertyEditorExtensionElement } from "@umbraco-cms/backoffice/extension-registry";
+import { UmbPropertyValueChangeEvent } from '@umbraco-cms/backoffice/property-editor';
 
 @customElement('my-suggestions-property-editor-ui')
 export class MySuggestionsPropertyEditorUIElement
@@ -345,7 +346,7 @@ export class MySuggestionsPropertyEditorUIElement
     }
 
     #dispatchChangeEvent() {
-        this.dispatchEvent(new CustomEvent("property-value-change"));
+        this.dispatchEvent(new UmbPropertyValueChangeEvent());
     }
 
     render() {
