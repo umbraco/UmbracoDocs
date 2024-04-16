@@ -125,7 +125,7 @@ You can see metrics related to the overall health and performance of the Azure a
 ## Automatic Upgrades
 
 We handle minor and patch upgrades for the Umbraco components used by Umbraco Cloud, so you don't have to. 
-Here you can control if you want to opt-in or out of automatic minor upgrades. 
+From the Automatic Upgrades page, you can control if you want to opt in or out of automatic minor upgrades. 
 
 New projects are opt-in by default.
 
