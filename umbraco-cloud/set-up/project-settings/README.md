@@ -1,4 +1,4 @@
-# Project Settings
+ # Project Settings
 
 When working with a Umbraco Cloud project, you can handle a lot of the project configuration directly in the Umbraco Cloud Portal. You can manage the following configurations from the **Settings** dropdown:
 
@@ -11,13 +11,15 @@ When working with a Umbraco Cloud project, you can handle a lot of the project c
 * [Public Access](./#public-access)
 * [Deployment Webhooks](./#webhooks)
 * [Secure Sockets Layer (SSL) certificates](./#certificates-only-available-on-professional-or-enterprise-plan)
-* [CI/CD Flow.](./#umbracocicd)
+
 * [Upgrade Plan](./#upgrade-plan)
 * [Rename Project](./#rename-project)
 * [Advanced Settings](./#advanced)
 * [Dedicated Resources](./#dedicated-resources)
 * [Project Usage](./#usage)
 * [Availability & Performance](./#availability-performance)
+* [Automatic Upgrades](./#automatic-upgrades)
+* [Backups](./#backups)
 * [Project History](./#project-history)
 * [Delete the project.](./#delete-project)
 
@@ -96,7 +98,7 @@ You can rename your project from the **Rename Project** section in the **Setting
 ## Advanced
 
 Manage **Advanced** settings for your project from the **Settings** menu:
-
+* [CI/CD Flow](./umbraco-cicd)
 * [Enable static outbound IP addresses](external-services.md#enabling-static-outbound-ip-addresses) for projects on a **Standard**, **Professional**, or **Enterprise** plan.
 * Enable IIS logging for each of your environments. The log files can be accessed through kudu in `C:\home\LogFiles\http`. There is a rolling size limit on the log files of 100 MB. Once the limit is reached, the oldest log files will be overwritten by new ones.
 * [Enable loading of a client certificate from the file system](application-settings.md#enable-client-certificate-loaded-from-file-system-explained).
@@ -119,6 +121,17 @@ On your Umbraco Cloud project, it is possible to see the usage of Custom Domains
 ## [Availability & Performance](availability-performance.md)
 
 You can see metrics related to the overall health and performance of the Azure app service hosting the live environment of your solution.
+
+## [Automatic Upgrades](../../product-upgrades/minor-upgrades.md)
+
+We handle minor and patch upgrades for the Umbraco components used by Umbraco Cloud, so you don't have to. 
+From the Automatic Upgrades page, you can control if you want to opt in or out of automatic minor upgrades. 
+
+New projects are opt-in by default.
+
+## [Backups](../../databases/backups.md#backup-on-umbraco-cloud)
+
+With this setting, it is possible to create a database backup of one or more of your cloud environments. 
 
 ## [Project History](project-history.md)
 
