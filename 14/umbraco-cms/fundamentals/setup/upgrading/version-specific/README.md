@@ -1,6 +1,8 @@
 ---
 description: >-
-  This document covers specific upgrade steps if a version requires them. Most versions do not require specific upgrade steps and you will be able to upgrade directly from your current version.
+  This document covers specific upgrade steps if a version requires them. Most
+  versions do not require specific upgrade steps and you will be able to upgrade
+  directly from your current version.
 ---
 
 # Version Specific Upgrades
@@ -28,7 +30,7 @@ Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 * [Angular removed: A new backoffice built with Web Components, Lit, and fueled by the Umbraco UI Library](https://github.com/umbraco/Umbraco.CMS.Backoffice)
 * Icons in the new backoffice are based on [Lucide](https://lucide.dev/icons/).
 * [Full TypeScript support for the Backoffice and all its APIs through a public npm package](https://www.myget.org/feed/umbracoprereleases/package/npm/@umbraco-cms/backoffice)
-* A [management API](../../../../reference/management-api/)documentation in Swagger - replacement for Controllers that were not restful
+* A [management API documentation](../../../../reference/management-api/) in Swagger - replacement for Controllers that were not restful
 * [Migration from Newtonsoft.Json to the System.Text.Json which removes Nested Content and Grid value converter and so on](https://github.com/umbraco/Umbraco-CMS/pull/15728)
 * Nested Content and Grid Layout have been removed
 * [Legacy media picker has been removed](https://github.com/umbraco/Umbraco-CMS/pull/15835)
@@ -50,8 +52,31 @@ Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 
 Below you can find the list of breaking changes introduced in Umbraco 14 Beta release versions.
 
-[**Beta 1**](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-beta001)\
-Official release of Beta, 6th March 2023.
+[**Beta 3**](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-beta003)
+
+Management API Breaking Changes:
+
+* [#16027](https://github.com/umbraco/Umbraco-CMS/pull/16027) - Remove manifest validators&#x20;
+* [#16026](https://github.com/umbraco/Umbraco-CMS/pull/16026) - Remove remnants of the Angular implementation
+* [#16024](https://github.com/umbraco/Umbraco-CMS/pull/16024) - Remove "additional data" from entities
+* [#15946](https://github.com/umbraco/Umbraco-CMS/pull/15946) - Document version endpoints with async service
+* [#15923](https://github.com/umbraco/Umbraco-CMS/pull/15923) - Convert Tourdata into a more generic concept
+
+Bellissima (Client) Breaking Changes
+
+* &#x20;[#1455](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1455) - Workspace routable kind
+* [#1475](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1475) - Feature: Entity Workspace Context Token and Interface + preparation for Validation&#x20;
+* [#1488](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1488) - Rename Settings Menu
+* [#1429](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1429) - Feature: Workspace breadcrumbs
+* [#1474](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1474) - Bugfix: Relation types
+* &#x20;[#1502](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1502) - Feature/tracked references server update&#x20;
+* [#1500](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1500) - Breaking: Rename save() to submit() for workspace contexts (Validation part 2)&#x20;
+* [#1521](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1521) - Breaking: rename Umbraco controller methods&#x20;
+* [#1391](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1391) - Bugfix: Rename file system file
+* [#1524](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1524) - Remove exports from packages/core/index.ts
+* [#1565](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1565) - Feature: Replace openapi-typescript-codegen with @hey-api/openapi-ts
+* [#1569](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1569) - Feature: Rename Resource class suffix to Service&#x20;
+* &#x20;[#1584](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1584) - UI Library 1.8.0-rc.1
 
 [**Beta 2**](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-beta002)
 
@@ -70,6 +95,9 @@ Management API Breaking Changes
 * [#15862](https://github.com/umbraco/Umbraco-CMS/pull/15862) - Removed “type” from tree item response models
 * [#15856](https://github.com/umbraco/Umbraco-CMS/pull/15856) - Remove duplicate pagination helper
 
-**In-depth previous, further and other changes for v14 beta versions can be found on the Release Notes on the** [**Umbraco.CMS.Backoffice**](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases)**repository.**
+[**Beta 1**](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-beta001)\
+Official release of Beta, 6th March 2023.
+
+**In-depth previous, further and other changes for v14 beta versions can be found on the Release Notes on the** [**Umbraco.CMS.Backoffice**](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases) **repository.**
 
 </details>
