@@ -168,10 +168,6 @@ The configuration file is used to configure a handful of different options for t
 {% tabs %}
 {% tab title="User Authentication" %}
 
-{% hint style="info" %}
-In earlier versions of Umbraco up to version 12, the options included only a "ButtonStyle" property to style the button. In version 13+ the default button is now rendered using the Umbraco UI library. This means that the "ButtonStyle" property has been deprecated and should not be used. You can override the default styling of the button by using the "ButtonColor" and "ButtonLook" properties. We recommend leaving these properties empty to use the default styling. The default styling will give your users an optimal login experience.
-{% endhint %}
-
 {% code title="ProviderBackOfficeExternalLoginProviderOptions.cs" lineNumbers="true" %}
 
 ```csharp
@@ -354,12 +350,6 @@ public class ProviderMembersExternalLoginProviderOptions : IConfigureNamedOption
 Additionally, more advanced custom properties can be added to the `BackOfficeExternalLoginProviderOptions`.
 
 #### BackOfficeExternalLoginProviderOptions.CustomBackOfficeView
-
-{% hint style="warning" %}
-In earlier versions of Umbraco up to version 12, this property had to define an AngularJS HTML view. This is no longer the case. You can now define a JavaScript module to render a Custom Element instead of the default external login button.
-
-It is still supported to load an HTML file as a view. However, Umbraco no longer supports AngularJS and the HTML file will be loaded into the DOM as-is. You will have to implement all the logic yourself.
-{% endhint %}
 
 The `CustomBackofficeView` allows for specifying a JavaScript module to render a [Custom Element](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements) instead default external login button. Use this in case you want to change the UI or one of the following:
 

@@ -4,6 +4,10 @@ description: A guide configuring backoffice tours in Umbraco
 
 # Backoffice Tours
 
+{% hint style="warning" %}
+This article is a work in progress and will be updated after Umbraco 14 release.
+{% endhint %}
+
 Backoffice Tours are a way to create helpful guides for how to work in the Umbraco backoffice.
 
 They are managed in a JSON format and stored in files on disk. The filenames should end with the `.json` extension.
@@ -12,10 +16,10 @@ They are managed in a JSON format and stored in files on disk. The filenames sho
 
 The tour functionality will load information from multiple locations.
 
-*   **Core tours**
+* **Core tours**
 
     The tour that ship with Umbraco are embedded into the CMS assemblies.
-*   **Custom tours**
+* **Custom tours**
 
     Custom tours need to be added as custom plugin/package. The custom json tour file needs to be added in `/App_Plugins/<YourTourPlugin>/backoffice/tours`. The custom tours can be added independently, or [as part of a plugin/package](packages/creating-a-package.md).
 
@@ -58,31 +62,31 @@ Example tour configuration object:
 
 Below is an explanation of each of the properties on the tour configuration object:
 
-*   **name**
+* **name**
 
     This is the name that is displayed in the help drawer for the tour.
 
     ![Tour name highlighted](../../../10/umbraco-cms/extending/images/tourname-v8.png)
-*   **alias**
+* **alias**
 
     The unique alias of your tour. This is used to track the progress a user has made while taking a tour. The progress information is stored in the `TourData` column of the `UmbracoUsers` table in the database.
-*   **group**
+* **group**
 
     The group property is used to group related tours in the help drawer under a common subject (for example Getting started).
 
     ![Tour group highlighted](../../../10/umbraco-cms/extending/images/tourgroup-v8.png)
-*   **groupOrder**
+* **groupOrder**
 
     This is used to control the order of the groups in the help drawer. This must be an integer value.
-*   **allowDisable**
+* **allowDisable**
 
     A boolean value that indicates if the "Don't show this tour again" should be shown on the tour steps. If the user clicks this link the tour will no longer be shown in the help drawer.
 
     ![Tour allow disable link highlighted](../../../10/umbraco-cms/extending/images/tourallowdisable-v8.png)
-*   **culture**
+* **culture**
 
     You have the option to set a culture, such as nl-NL. This tour will exclusively be displayed to users who have set this culture in their profile.
-*   **contentType**
+* **contentType**
 
     Use this property if you want to limit the tour to a specific content type. To create a tour for content nodes using the Home Page, set the `contentType` property with the alias `homePage`.
 
@@ -96,10 +100,10 @@ Below is an explanation of each of the properties on the tour configuration obje
     2. "Setup the Search Engine Optimization (SEO)" is available because the content type uses the `SEO` composition, which is associated with a specific tour.
 
     When the `contentType` property is set, the tour will **not** show as part of any groups.
-*   **requiredSections**
+* **requiredSections**
 
     This is an array of section aliases that a user needs to have access to in order to see the tour. If the user does not have access to all the sections the tour will not be shown in the help drawer. For example if a user lacks access to Settings but has access to Content and Media, the tour requiring all three will not be shown.
-*   **steps**
+* **steps**
 
     This is an array of tour step JSON objects that a user needs to take to complete the tour.
 
@@ -128,20 +132,20 @@ Example tour step object:
 
 Below is an explanation of each of the properties on the tour step object.
 
-*   **title**
+* **title**
 
     This the title shown on the tour step.
 
     ![Tour step highlighted](../../../10/umbraco-cms/extending/images/steptitle-v8.png)
-*   **content**
+* **content**
 
     This text will be shown on the tour step, it can contain HTML markup.
 
     ![Tour content highlighted](../../../10/umbraco-cms/extending/images/stepcontent-v8.png)
-*   **type**
+* **type**
 
     The type of step. Currently, only one type is supported : "intro". This will center the step and show a "Start tour" button.
-*   **element**
+* **element**
 
     A CSS selector for the element you wish to highlight. The tour step will position itself near the element.
 
@@ -157,32 +161,32 @@ Below is an explanation of each of the properties on the tour step object.
 
 <figure><img src="../../../10/umbraco-cms/extending/images/element-v8.png" alt=""><figcaption></figcaption></figure>
 
-*   **elementPreventClick**
+* **elementPreventClick**
 
     Setting this to true will prevent JavaScript events from being bound to the highlighted element. A "Next" button will be added to the tour step.
 
     As an example, it is useful when you would like to highlight a button, but would like to prevent the user clicking it.
-*   **backdropOpacity**
+* **backdropOpacity**
 
     A decimal value between 0 and 1 to indicate the transparency of the background overlay.
-*   **event**
+* **event**
 
     The JavaScript event that is bound to the highlighted element that should trigger the next tour step for example click, hover, etc.
 
     If not set or omitted a "Next" button will be added to the tour.
-*   **view**
+* **view**
 
     Here you can enter a path to your own custom AngularJS view that will be used to display the tour step.
 
     This is useful if you would like to validate input from the user during the tour step.
-*   **eventElement**
+* **eventElement**
 
     A CSS selector for the element you wish to attach the JavaScript event. Highlighting a larger section of the backoffice while encouraging users to click on a specific element can be useful.. If not set, the selector in the element property will be used.
 
     The image below shows the entire tree highlighted, but requires the user to click on a specific tree element.
 
     ![Step eventElement highlighted](../../../10/umbraco-cms/extending/images/step-event-element-v8.png)
-*   **customProperties**
+* **customProperties**
 
     A JSON object that is passed to the scope of a custom step view, so you can use this data in your view with `$scope.model.currentStep.customProperties`.
 
