@@ -144,7 +144,6 @@ builder.Services.AddUmbracoDbContext<CustomDbContext>((serviceProvider, options)
         options.UseUmbracoDatabaseProvider(serviceProvider);
     });
 ```
-
 {% endhint %}
 
 2. Open your terminal and navigate to your project folder.
@@ -155,25 +154,23 @@ dotnet ef migrations add InitialCreate --context BlogContext
 ```
 
 {% hint style="info" %}
-
 If you use another class library in your project to store models and DBContext classes such as Project.Core (Project.Web being the main startup Project):
-- Go to the project folder where you have your custom class library such as /Project.Core
-- Run the following script with the relative path to your main startup project Project.Web:
+
+* Go to the project folder where you have your custom class library such as /Project.Core
+* Run the following script with the relative path to your main startup project Project.Web:
+
 ```bash
 dotnet ef migrations add initialCreate -s ../Project.Web/ --context BlogContext
 ```
 {% endhint %}
 
-
-{% hint style="warning" %}
 In this example, we have named the migration `InitialCreate`. However, you can choose the name you like.
 
-We've named the DbContext class`BlogContext`, however, if you have renamed it to something else, make sure to also change it when running the command.
+We've named the DbContext class `BlogContext`, however, if you have renamed it to something else, make sure to also change it when running the command.
 
 This might be confusing at first, as when working with EFCore you would inject your `Context` class. You can still do that, it is however not the recommended approach in Umbraco.
 
 In Umbraco, we use a concept called `Scope` which is our implementation of the `Unit of work` pattern. This ensures that we start a transaction when using the database. If the scope is not completed (for example when exceptions are thrown) it will roll it back.
-{% endhint %}
 
 ## Step 4: Create the notification handler
 
