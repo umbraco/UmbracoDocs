@@ -131,7 +131,7 @@ New projects are opt-in by default.
 
 ## Backups
 
-You can handle backups from this setting. You can create a database backup of one or more of your cloud environments. 
+With this setting, it is possible to create a database backup of one or more of your cloud environments. 
 
 (Coming soon) It is also possible to upload your own '.bacpac' file.
 
