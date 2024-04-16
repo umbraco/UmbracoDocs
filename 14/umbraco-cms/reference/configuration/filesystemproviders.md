@@ -8,7 +8,6 @@ Filesystem providers are configured via code, you can either configure it in a c
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.IO;
 using Umbraco.Cms.Infrastructure.DependencyInjection;
 using IHostingEnvironment = Umbraco.Cms.Core.Hosting.IHostingEnvironment;
@@ -17,21 +16,22 @@ namespace FilesystemProviders;
 
 public class FilesystemComposer : IComposer
 {
-    public void Compose(IUmbracoBuilder builder) =>
-        builder.SetMediaFileSystem(factory =>
-        {
-            IHostingEnvironment hostingEnvironment = factory.GetRequiredService<IHostingEnvironment>();
-            var folderLocation = "~/CustomMediaFolder";
-            var rootPath = hostingEnvironment.MapPathWebRoot(folderLocation);
-            var rootUrl = hostingEnvironment.ToAbsolute(folderLocation);
+ public void Compose(IUmbracoBuilder builder) =>
+  builder.SetMediaFileSystem(factory =>
+  {
+   IHostingEnvironment hostingEnvironment = factory.GetRequiredService<IHostingEnvironment>();
+   IWebHostEnvironment webHostEnvironment = factory.GetRequiredService<IWebHostEnvironment>();
+   var folderLocation = "~/CustomMediaFolder";
+   var rootPath = webHostEnvironment.MapPathWebRoot(folderLocation);
+   var rootUrl = hostingEnvironment.ToAbsolute(folderLocation);
 
-            return new PhysicalFileSystem(
-                factory.GetRequiredService<IIOHelper>(),
-                hostingEnvironment,
-                factory.GetRequiredService<ILogger<PhysicalFileSystem>>(),
-                rootPath,
-                rootUrl);
-        });
+   return new PhysicalFileSystem(
+    factory.GetRequiredService<IIOHelper>(),
+    hostingEnvironment,
+    factory.GetRequiredService<ILogger<PhysicalFileSystem>>(),
+    rootPath,
+    rootUrl);
+  });
 }
 ```
 
@@ -69,35 +69,31 @@ app.UseStaticFiles(new StaticFileOptions
 Now you can register the folder as the media filesystem
 
 ```csharp
-using System.IO;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Cms.Core.Hosting;
 using Umbraco.Cms.Core.IO;
 using Umbraco.Cms.Infrastructure.DependencyInjection;
+using IHostingEnvironment = Umbraco.Cms.Core.Hosting.IHostingEnvironment;
 
 namespace FilesystemProviders;
 
 public class FilesystemComposer : IComposer
 {
-    public void Compose(IUmbracoBuilder builder)
-    {
-        builder.SetMediaFileSystem((factory) =>
-        {
-            IHostingEnvironment hostingEnvironment = factory.GetRequiredService<IHostingEnvironment>();
-            var rootPath = Path.Combine("C:", "storage", "umbracoMedia");
-            var rootUrl = hostingEnvironment.ToAbsolute("/CustomPath");
+ public void Compose(IUmbracoBuilder builder)
+ {
+  builder.SetMediaFileSystem((factory) =>
+  {
+   IHostingEnvironment hostingEnvironment = factory.GetRequiredService<IHostingEnvironment>();
+   var rootPath = Path.Combine("C:", "storage", "umbracoMedia");
+   var rootUrl = hostingEnvironment.ToAbsolute("/CustomPath");
 
-            return new PhysicalFileSystem(
-                factory.GetRequiredService<IIOHelper>(),
-                hostingEnvironment,
-                factory.GetRequiredService<ILogger<PhysicalFileSystem>>(),
-                rootPath,
-                rootUrl);
-        });
-    }
+   return new PhysicalFileSystem(
+    factory.GetRequiredService<IIOHelper>(),
+    hostingEnvironment,
+    factory.GetRequiredService<ILogger<PhysicalFileSystem>>(),
+    rootPath,
+    rootUrl);
+  });
+ }
 }
 ```
 
@@ -120,14 +116,12 @@ If you want all your media files in the same location, you have to copy all pre-
 
 ## Get the contents of a file as a stream
 
-The recommended approach to obtain a file's content as a stream is to utilize the `MediaFileManager`. It is advised to avoid reading the file directly from the server using methods like `Server.MapPath`. This will ensure that, regardless of the file system provider, the stream will be returned correctly. TThis example demonstrates using MediaFileManager to validate file existence and stream it back from a controller.
+The recommended approach to obtain a file's content as a stream is to utilize the `MediaFileManager`. It is advised to avoid reading the file directly from the server using methods like `Server.MapPath`. This will ensure that, regardless of the file system provider, the stream will be returned correctly. This example demonstrates using MediaFileManager to validate file existence and stream it back from a controller.
 
 ```csharp
-using System.IO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.StaticFiles;
 using Umbraco.Cms.Core.Cache;
-using Umbraco.Cms.Core.Hosting;
 using Umbraco.Cms.Core.IO;
 using Umbraco.Cms.Core.Logging;
 using Umbraco.Cms.Core.Routing;
@@ -140,44 +134,43 @@ namespace FilesystemProviders;
 
 public class MediaController : SurfaceController
 {
-    private readonly MediaFileManager _mediaFileManager;
-    private readonly IHostingEnvironment _hostingEnvironment;
+ private readonly MediaFileManager _mediaFileManager;
+ private readonly IWebHostEnvironment _webHostEnvironment;
 
-    public MediaController(
-        IUmbracoContextAccessor umbracoContextAccessor,
-        IUmbracoDatabaseFactory databaseFactory,
-        ServiceContext services,
-        AppCaches appCaches,
-        IProfilingLogger profilingLogger,
-        IPublishedUrlProvider publishedUrlProvider,
-        MediaFileManager mediaFileManager,
-        IHostingEnvironment hostingEnvironment)
-        : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
-    {
-        _mediaFileManager = mediaFileManager;
-        _hostingEnvironment = hostingEnvironment;
-    }
+ public MediaController(
+  IUmbracoContextAccessor umbracoContextAccessor,
+  IUmbracoDatabaseFactory databaseFactory,
+  ServiceContext services,
+  AppCaches appCaches,
+  IProfilingLogger profilingLogger,
+  IPublishedUrlProvider publishedUrlProvider,
+  MediaFileManager mediaFileManager,
+  IWebHostEnvironment webHostEnvironment)
+  : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+ {
+  _mediaFileManager = mediaFileManager;
+  _webHostEnvironment = webHostEnvironment;
+ }
 
-    public IActionResult Index(string id, string file)
-    {
-        var path = _hostingEnvironment.MapPathWebRoot($"/media/{id}/{file}");
+ public IActionResult Index(string id, string file)
+ {
+  var path = _webHostEnvironment.MapPathWebRoot($"/media/{id}/{file}");
+  if (_mediaFileManager.FileSystem.FileExists(path) == false)
+  {
+   return new NotFoundResult();
+  }
 
-        if (_mediaFileManager.FileSystem.FileExists(path))
-        {
-            var stream = _mediaFileManager.FileSystem.OpenFile(path);
-            stream.Seek(0, SeekOrigin.Begin);
+  var stream = _mediaFileManager.FileSystem.OpenFile(path);
+  stream.Seek(0, SeekOrigin.Begin);
 
-            var provider = new FileExtensionContentTypeProvider();
-            string contentType;
-            if (!provider.TryGetContentType(file, out contentType))
-            {
-                contentType = "application/octet-stream";
-            }
+  var provider = new FileExtensionContentTypeProvider();
+  if (!provider.TryGetContentType(file, out var contentType))
+  {
+   contentType = "application/octet-stream";
+  }
 
-            return new FileStreamResult(stream, contentType);
-        }
+  return new FileStreamResult(stream, contentType);
 
-        return new NotFoundResult();
-    }
+ }
 }
 ```

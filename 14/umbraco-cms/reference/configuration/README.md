@@ -128,7 +128,6 @@ A complete list of all the configuration sections included in Umbraco, by defaul
 * [Plugins settings](pluginssettings.md)
 * [Request handler settings](requesthandlersettings.md)
 * [Rich text editor settings](richtexteditorsettings.md)
-* [Runtime minification settings](runtimeminificationsettings.md)
 * [Runtime settings](runtimesettings.md)
 * [Security settings](securitysettings.md)
 * [Serilog settings](serilog.md)

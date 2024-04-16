@@ -86,6 +86,12 @@ You can use whichever tool you are comfortable with for bundling & minification 
 
 You can create various bundles of your site's CSS or JavaScript files in your code that can be rendered later in your views. There can be a single bundle for the entire site, or a common bundle for the files you want to be loaded on every page, as well as page-specific bundles, just by listing your resources in the order you like.
 
+{% hint style="warning" %}
+
+Smidge with RunTimeMinification setting is scheduled for removal on Umbraco 14. You can install the package separately if needed and read the [Smidge](https://github.com/Shazwazza/Smidge) documentation on how to get started.
+
+{% endhint %}
+
 **Step 1:** Create a `INotificationHandler<UmbracoApplicationStartingNotification>`
 
 ```csharp

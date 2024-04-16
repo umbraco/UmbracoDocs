@@ -1,8 +1,6 @@
 ---
 description: >-
-  This document covers specific upgrade steps if a version requires them. Most
-  versions do not require specific upgrade steps. In most cases, you will be
-  able to upgrade directly from your current versi
+  This document covers specific upgrade steps if a version requires them. Most versions do not require specific upgrade steps and you will be able to upgrade directly from your current version.
 ---
 
 # Version Specific Upgrades
@@ -37,7 +35,7 @@ Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 * [Macros and Partial View Macros have been removed](https://github.com/umbraco/Announcements/issues/14). Use partial views and/or blocks in the Rich Text Editor.
 * XPath has been removed. An alternative is using the Dynamic Roots in the Multinode Treepicker and for ContentXPath the alternative is [IContentLastChanceFinder](../../../../tutorials/custom-error-page.md).
 * [package-manifest is now umbraco.package.json](../../../../extending-backoffice/package-manifest.md)
-* [Smidge has been removed from default installation](https://github.com/umbraco/Umbraco-CMS/pull/15788). Can be manually installed if needed.
+* [Smidge has been removed from default installation](https://github.com/umbraco/Umbraco-CMS/pull/15788) along with RuntimeMinification setting. Smidge can be manually installed if needed and you can read the [Smidge](https://github.com/Shazwazza/Smidge) documentation on how to setup a similar setting to [RuntimeMinification](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-cms/reference/configuration/runtimeminificationsettings.md).
 * New login screen
 * **Light, Dark or Contract Mode** option has been added in the backoffice. You can choose your preffered mode from your profile information.
 * [UI Library and UI API](../../../../extending-backoffice/ui-library.md) external documentations.

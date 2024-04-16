@@ -4,6 +4,12 @@ description: "Information on the runtime minification settings section"
 
 # Runtime minification settings
 
+{% hint style="warning" %}
+
+Smidge with RunTimeMinification setting is scheduled for removal on Umbraco 14. You can install the package separately if needed and read the [Smidge](https://github.com/Shazwazza/Smidge) documentation on how to get started.
+
+{% endhint %}
+
 This section allows you to configure the runtime minifications (defaults shown), used by ['Smidge - A lightweight runtime CSS/Javascript minification,combination, compression & management library for ASP.NET'](https://github.com/shazwazza/smidge)
 
 ```json
@@ -16,6 +22,7 @@ This section allows you to configure the runtime minifications (defaults shown),
   }
 }
 ```
+
 ## Use 'in memory' cache
 
 This setting determines whether Smidge should save it's cached output in memory, or in a file on disk. If set to false, then the folder will be created at the wwwroot of your Umbraco site in a folder called 'Smidge'/
@@ -49,6 +56,7 @@ If you use a CacheBuster setting of "Version" you can add an additional configur
   }
 }
 ```
+
 The actual 'Version' number will not be visible in the url of the assets, this is because it is combined, along with the Umbraco Version from configuration and the your project assembly dll, and then once combined a 'hash' is generated to obscure these details.
 
 in the HTML link thus: ```<link href='/sb/umbraco-backoffice-init-css.css.v7a71f91360259c5f7c3337f152b0df01eeee36f0' rel='stylesheet' type='text/css'/>``` (when [`Umbraco:CMS:Hosting:Debug:false`](hostingsettings.md))
