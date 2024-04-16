@@ -274,7 +274,7 @@ If the title doesn't change color, [Smidge](https://github.com/shazwazza/smidge)
 
 For information on creating bundles of your site's CSS or JavaScript files in your code, see the [Bundling & Minification for JavaScript and CSS](../../fundamentals/design/stylesheets-javascript.md#bundling--minification-for-javascript-and-css) section.
 
-<strong>Smidge with RunTimeMinification setting is scheduled for removal from Umbraco 14. You can install the package separately if needed.</strong>
+<strong>Smidge with RunTimeMinification setting is scheduled for removal on Umbraco 14. You can install the package separately if needed.</strong>
 
 {% endhint %}
 

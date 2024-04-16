@@ -12,12 +12,6 @@ Smidge with RunTimeMinification setting is scheduled for removal on Umbraco 14. 
 
 This section allows you to configure the runtime minifications (defaults shown), used by ['Smidge - A lightweight runtime CSS/Javascript minification,combination, compression & management library for ASP.NET'](https://github.com/shazwazza/smidge)
 
-{% hint style="warning" %}
-
-Smidge is scheduled for removal from Umbraco 14. You can install the package separately if needed.
-
-{% endhint %}
-
 ```json
 "Umbraco": {
   "CMS": {

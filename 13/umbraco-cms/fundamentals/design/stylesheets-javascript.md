@@ -88,7 +88,7 @@ You can create various bundles of your site's CSS or JavaScript files in your co
 
 {% hint style="warning" %}
 
-Smidge is scheduled for removal from Umbraco 14. You can install the package separately if needed.
+Smidge with RunTimeMinification setting is scheduled for removal on Umbraco 14. You can install the package separately if needed and read the [Smidge](https://github.com/Shazwazza/Smidge) documentation on how to setup settings.
 
 {% endhint %}
 
