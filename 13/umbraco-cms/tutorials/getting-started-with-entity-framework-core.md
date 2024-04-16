@@ -155,9 +155,9 @@ dotnet ef migrations add InitialCreate --context BlogContext
 ```
 
 {% hint style="info" %}
-If you are using another project (class library) to store your model class and DBContext class (For Example: Project.Core) than your main startup Project (For example: Project.Web):
-- go to the project folder (/Project.Core)
-- run following script with relative path to your main startup project:
+If you are using another project (class library) to store your model class and DBContext class(Project.Core) than your main startup Project (Project.Web):
+- Go to the project folder (/Project.Core)
+- Run following script with relative path to your main startup project:
 ```bash
 dotnet ef migrations add initialCreate -s ../Project.Web/ --context BlogContext
 ```
