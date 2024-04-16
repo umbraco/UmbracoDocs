@@ -69,7 +69,6 @@ This mode disables both in-memory ModelsBuilder generation (see [Development mod
 * The application is built/published in Release mode (with JIT optimization enabled), e.g. using `dotnet publish --configuration Release`;
 * `Umbraco:CMS:WebRouting:UmbracoApplicationUrl` is set to a valid URL;
 * `Umbraco:CMS:Global:UseHttps` is enabled;
-* `Umbraco:CMS:RuntimeMinification:CacheBuster` is set to a fixed cache buster like `Version` or `AppDomain`;
 * `Umbraco:CMS:ModelsBuilder:ModelsMode` is set to `Nothing`.
 
 {% hint style="info" %}
@@ -123,7 +122,6 @@ Validation of the above-mentioned settings is done when determining the runtime 
 * `JITOptimizerValidator` - Ensure the application is built/published in Release mode (with JIT optimization enabled) when in production runtime mode, e.g. using `dotnet publish --configuration Release`;
 * `UmbracoApplicationUrlValidator` - ensure `Umbraco:CMS:WebRouting:UmbracoApplicationUrl` is configured when in production runtime mode;
 * `UseHttpsValidator` - ensure `Umbraco:CMS:Global:UseHttps` is enabled when in production runtime mode;
-* `RuntimeMinificationValidator` - ensure `Umbraco:CMS:RuntimeMinification:CacheBuster` is set to a fixed cache buster like `Version` or `AppDomain` when in production runtime mode;
 * `ModelsBuilderModeValidator` - ensure `Umbraco:CMS:ModelsBuilder:ModelsMode` is not set to `InMemoryAuto` when in development runtime mode and set to `Nothing` when in production runtime mode.
 
 The following example removes the default `UmbracoApplicationUrlValidator` and adds a new custom `DisableElectionForSingleServerValidator`:
