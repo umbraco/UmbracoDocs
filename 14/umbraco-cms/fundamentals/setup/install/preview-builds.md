@@ -23,18 +23,8 @@ If you experience any problems running any of the prerelease/nightly builds, ens
 
 You can choose from two NuGet feeds to try out the latest Umbraco preview releases containing the new Backoffice:
 
-* [Prerelease Feed](preview-builds.md#prerelease-feed) (for beta versions and below)
 * [Nightly Feed](preview-builds.md#nightly-feed)
-
-#### Prerelease Feed (for beta versions and below)
-
-The prerelease feed contains prebuilt versions of Umbraco released along with the prerelease announcements.
-
-The feed is available through this URL and is used in the rest of the guide:
-
-```
-https://www.myget.org/F/umbracoprereleases/api/v3/index.json
-```
+* [Prerelease Feed](preview-builds.md#adding-the-prereleases-feed-as-a-nuget-source-for-beta-versions-and-below) (for beta versions and below)
 
 #### Nightly Feed
 
@@ -55,6 +45,14 @@ Check the [MyGet website](https://www.myget.org/feed/umbraconightly/package/nuge
 <details>
 
 <summary>Adding the "prereleases" Feed as a NuGet Source (for beta versions and below)</summary>
+
+The prerelease feed contains prebuilt versions of Umbraco released along with the prerelease announcements.
+
+The feed is available through this URL and is used in the rest of the guide:
+
+```
+https://www.myget.org/F/umbracoprereleases/api/v3/index.json
+```
 
 You can either add the feed through the command line or use an IDE of your choice. In this guide, we'll provide steps for:
 
