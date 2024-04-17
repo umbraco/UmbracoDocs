@@ -1,5 +1,7 @@
 ---
-description: "In this article we explain how you can work with a local clone of your Umbraco Cloud project."
+description: >-
+  In this article we explain how you can work with a local clone of your Umbraco
+  Cloud project.
 ---
 
 # Working with a Local Clone
@@ -21,7 +23,7 @@ We recommend using the following tools to work with a local clone of your Umbrac
 * Visual Studio - for running the project on your local machine.
 
 {% hint style="info" %}
-In the root of your local project, there is a README file containing information about the project structure and the build process on Umbraco Cloud.&#x20;
+In the root of your local project, there is a README file containing information about the project structure and the build process on Umbraco Cloud.
 {% endhint %}
 
 ## Cloning an Umbraco Cloud Project
@@ -32,10 +34,14 @@ To clone an Umbraco Cloud project, follow these steps:
 2. Click on the arrow next to the **Development** environment.
 3.  Select **Clone project**.
 
-    ![Clone project option](images/clone-project-option.png)
+    <div align="left">
+
+    <figure><img src="../.gitbook/assets/image (12).png" alt="Clone project option"><figcaption><p>Clone project option</p></figcaption></figure>
+
+    </div>
 4.  **Copy** the clone URL to copy the Development environment's git repository endpoint.
 
-    ![Copy the clone URL](images/copy-clone-url.png)
+    <figure><img src="../.gitbook/assets/image (13).png" alt="Copy the clone URL"><figcaption><p>Copy the clone URL</p></figcaption></figure>
 5. Use your favorite Git client to clone down the project. In this guide, we will use **Git Bash**.
 6.  Type the following command in the **Git Bash** terminal:
 
@@ -43,7 +49,10 @@ To clone an Umbraco Cloud project, follow these steps:
     git clone <Git clone URL>
     ```
 
-    The `<Git clone URL>` should be the URL you copied from the Cloud Development environment. ![Git Bash Terminal](images/git-bash-terminal.png)
+    The `<Git clone URL>` should be the URL you copied from the Cloud Development environment.&#x20;
+
+<figure><img src="images/git-bash-terminal.png" alt=""><figcaption></figcaption></figure>
+
 7. Press **Enter**.
 
 Once the project has been cloned down, you will get a folder with files for your Umbraco Cloud project. Now, you have a copy of your Umbraco Cloud Development environment that you can run locally.
@@ -165,13 +174,25 @@ dotnet sln add .\src\MyAwesomeProject.Web\MyAwesomeProject.Web.csproj
 1. Open the `UmbracoProject.csproj` project in Visual studio.
 2.  Click on the solution:
 
-    ![Solution](images/solution-VS.png)
+    <div align="left">
+
+    <img src="images/solution-VS.png" alt="Solution">
+
+    </div>
 3.  Right-click the solution and choose `Add` -> `New Project...`
 
-    ![add new project](images/add-new.png)
+    <div align="left">
+
+    <img src="images/add-new.png" alt="add new project">
+
+    </div>
 4.  Add a class library using the latest .NET SDK to your project:
 
-    ![Class library](images/class-library.png)
+    <div align="left">
+
+    <img src="images/class-library.png" alt="Class library">
+
+    </div>
 
 Once the Class library (`.Core`) has been added, you can see the project(s) that have been added in Solution Explorer:
 

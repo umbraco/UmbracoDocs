@@ -12,8 +12,6 @@ You can find this option in **Settings** -> **Advanced** -> **Custom Application
 
 If your cloud project needs to load a client certificate (such as an X.509 certificate) at runtime, you can turn on this feature for one or more environments. By turning this feature on for an environment, you will be able to load a client certificate as a file during the run-time of your cloud project.
 
-<figure><img src="../images/EnableClientCertificateLoadedFromFileSystem-v10.gif" alt=""><figcaption><p>Enable client certificate</p></figcaption></figure>
-
 For more information on loading a certificate from a file, see the [Load certificate from file](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate-in-code#load-certificate-from-file) article in the Microsoft documentation.
 
 {% hint style="info" %}

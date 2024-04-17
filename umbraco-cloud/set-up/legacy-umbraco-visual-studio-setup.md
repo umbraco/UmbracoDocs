@@ -67,7 +67,7 @@ Before running the UaaS.cmd tool you will need the **git clone URL** for your Um
 * Go to the Project in the Portal
 * Copy the URL from "How to connect my machine"
 
-![Clone down Umbraco Cloud project](images/connect-my-machine.png)
+<figure><img src="../.gitbook/assets/image (14).png" alt="Clone down Umbraco Cloud project"><figcaption><p>Clone down Umbraco Cloud project</p></figcaption></figure>
 
 Running the UaaS.cmd tool will download the latest Visual Studio generator (waasp.exe) and prompt you to enter the clone URL for your Project. Then enter the "Namespace", which will be the name of the Visual Studio solution and thus the namespace for the solution as well.
 
@@ -166,7 +166,7 @@ All files that are required to run the Umbraco site should be committed to the g
 {% hint style="info" %}
 To ensure that your `.dll` files are created in release mode, ensure that you switch to "Release" (instead of "Debug") mode when building the project.
 
-It is recommend to build the project in release mode, before deploying the changes through Git. 
+It is recommend to build the project in release mode, before deploying the changes through Git.
 {% endhint %}
 
 For the `*.Core` part of the solution as well as the solution file and default `.gitignore` file you commit that to the source code repository. You should ideally set a remote for this git repository to your own git host like GitHub, BitBucket or Visual Studio Team Services.

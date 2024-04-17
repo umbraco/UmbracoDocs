@@ -14,7 +14,7 @@ Upgrading to Deploy, one of the major improvements is that Deploy handles everyt
 
 The issue will show up as an extraction error on your Umbraco Cloud environment with a red indicator.
 
-![Extraction error](images/extraction-error.png)
+<figure><img src="../../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
 
 There are two types of duplicate dictionary item errors. The first scenario (_Scenario 1_) is when you have duplicate _UDA files_ for each of your dictionary items. When this is the case, you will see an error message like this:
 
@@ -30,7 +30,7 @@ Collisions for entity type "dictionary-item":
         UdaFile: ~/data/revision/dictionary-item__1f1d9fe32e094e6c9b3c8871e123e34c.uda
 ```
 
-The second scenario (_Scenario 2_) is when you do not have duplicate files for your dictionary items. In this scenario you will have one UDA file for each of your dictionary items, but each of them are references with a different id in the database. In this scenario you will see an error message like this:
+The second scenario (_Scenario 2_) is when you do not have duplicate files for your dictionary items. In this scenario, you will have one UDA file for each of your dictionary items, but each of them are referenced with a different ID in the database. In this scenario you will see an error message like this:
 
 ```
 Some artifacts collide on unique identifiers.
@@ -48,25 +48,25 @@ You can find more details about UDA files in this article: [Generating UDA files
 
 ## Fixing
 
-In order to fix this issue, it is required that all dictionary items are aligned to have the same unique identifier for a specific `ItemKey` across all environments. The easiest way of doing this is to select an environment where you believe all your dictionary items are mostly correct, remove any duplicated items and then ensure that the changes are pushed to your other environments:
+In order to fix this issue, it is required that all dictionary items are aligned to have the same unique identifier for a specific `ItemKey` across all environments. The easiest way of doing this is to select an environment where you believe all your dictionary items are mostly correct, remove any duplicated items, and then ensure that the changes are pushed to your other environments:
 
 1. Ensure you do not have any duplicated dictionary items in your UDA files. If you do - these will need to be cleaned up as a first step.
 2. Ensure you remove all duplicate entries in the backoffice if any.
 3. When you can successfully create a `deploy` marker and get a `deploy-complete` in your `/data/` folder - your environment should be "clean" and you are good to go.
-   * If you are encountering Scenario 2, you might not be able to get a `deploy-complete` marker. Instead you need to verify that you do **not** have any duplicate UDA files in your `/data/revisions` folder or dictionary item entries in the backoffice, and then move on to step 4.
+   * If you are encountering Scenario 2, you might not be able to get a `deploy-complete` marker. Instead, you need to verify that you do **not** have any duplicate UDA files in your `/data/revisions` folder or dictionary item entries in the backoffice, and then move on to step 4.
 4. Create a `deploy-repairdictionaryids` marker in the `/data/` folder. Do this by typing `echo > deploy-repairdictionaryids` in CMD console in Kudu.
-   * The command will **not** work on your local clone. If you've done the clean-up from step 1 and 2 on your local machine, you will need to commit and push these changes to your Cloud environment, and run the command there
+   * The command will **not** work on your local clone. If you've done the clean-up from steps 1 and 2 on your local machine, you will need to commit and push these changes to your Cloud environment, and run the command there
 
 Doing this will make Deploy run through all of the dictionary items in the database and remove any duplicates (there should be none, if you did the manual cleanup correctly).
 
 When done with this, it will go through all UDA files and check if there is any duplicates existing in your site for that particular `ItemKey` used in that UDA file. If it finds a duplicate - it will update the ID to match, so your dictionary item is synchronized with the UDA file.
 
-1. When this is done - and you end up with a `deploy-complete` marker - you will need to transfer your dictionary item UDA files to the next environment, to ensure the same ID's will be applied here.
+1. When this is done - and you end up with a `deploy-complete` marker - you will need to transfer your dictionary item UDA files to the next environment, to ensure the same IDs will be applied here.
 2. Create a `deploy-repairdictionaryids` marker in the `/data/` folder.
 
-Deploy will now again delete any existing duplicate entries and update the ID's of the remaining entries to match the IDs in the UDA files.
+Deploy will now again delete any existing duplicate entries and update the IDs of the remaining entries to match the IDs in the UDA files.
 
-1. Repeat steps 5-6 if there's any other environments.
+1. Repeat steps 5-6 if there are any other environments.
 
 ## Important Notes
 

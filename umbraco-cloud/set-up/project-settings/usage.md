@@ -1,8 +1,8 @@
 # Usage
 
-In the Umbraco Cloud Settings menu you can find a page called _Usage_.
+In the Umbraco Cloud Settings menu, you can find a page called _Usage_.
 
-On the Usage page, you will find an overview that displays your usage and evaluates it against the plan limitations of your project. On the page you will also find top 10 for the bandwidth usage of your project. This can give you important insight into where you can optimize resource management.
+On the Usage page, you will find an overview that displays your usage and evaluates it against the plan limitations of your project. On the page, you will also find the top 10 for the bandwidth usage of your project. This can give you important insight into where you can optimize resource management.
 
 ## Usage overview
 
@@ -12,7 +12,7 @@ In this overview, you will find the usage limitations for your Umbraco Cloud pro
 
 ![Usage on Cloud](../images/cloud-usage.png)
 
-The usage shown is for the Live environment of your project as it is the usage in this environment that is measured against the plan usage limits. For _media storage_ it is the size of all files in the blob storage including the cache that is considered.
+The usage shown is for the Live environment of your project as it is the usage in this environment that is measured against the plan usage limits. For _media storage,_ it is the size of all files in the blob storage including the cache that is considered.
 
 ## Bandwidth Top 10's
 
@@ -42,7 +42,7 @@ The list shows the name of the file, its path, size, and type (whether it is a j
 
 You can see the Usage limits and prices for the different plans on Umbraco Cloud on our [website](https://umbraco.com/umbraco-cloud-pricing/) or when [upgrading your plan](upgrade-umbraco-cloud-plan.md).
 
-You can always upgrade your project to a higher plan if you have reached the limit of what you are allowed on your project. You can **Upgrade Plan** from the **Settings** drop-down list on your project.
+You can always upgrade your project to a higher plan if you have reached the limit of what you are allowed on your project. You can **Upgrade the Plan** from the **Management** tab on your project.
 
 {% hint style="warning" %}
 When one of the limits reaches 90%, you’ll see a warning banner in the portal and an email is sent to the project owner and the technical contact(s) of the project, notifying you that you’re getting close to your limit(s).

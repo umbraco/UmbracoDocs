@@ -2,11 +2,11 @@
 
 This issue will present itself as an extraction error on your target environment for a deploy.
 
-![Extraction error on Live](images/Error\_environment.png)
+<figure><img src="../../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
 
 The extraction error happens with two Document Types where one of them have been allowed as a child node type for the other Document Type.
 
-If the Document Type that have been allowed as the child is then deleted, the references for the child Document Type is not removed from the parent Document Type.
+If the Document Type that has been allowed as the child is then deleted, the references for the child Document Type are not removed from the parent Document Type.
 
 Because the parent Document Type still has the references from the deleted child Document Type, the environment will throw an extraction error when trying to deploy to the next environment. The error will tell us that it can not find the Document Type that is allowed as a child.
 
@@ -28,6 +28,6 @@ In this case that is the Document Type _"test1"_.
 
 Resave the parent Document Type so that the references to the deleted child Document Type will be removed from the parent Document Type.
 
-After the Document Type have been saved again make a new deploy and you will see that the deploy will go through.
+After the Document Type has been saved again make a new deploy and you will see that the deploy will go through.
 
 The environment will be green and the deployment has successfully gone through without any errors.

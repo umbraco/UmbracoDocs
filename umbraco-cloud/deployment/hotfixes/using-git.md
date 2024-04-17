@@ -45,22 +45,23 @@ Here are the steps to follow to apply selected changes to the Live environment w
 
 Before you push the newly created branch to Umbraco Cloud we need to change the _remote destination_. If you hit _Push_ now, the branch would be pushed to the Development environment. You need to add the Live environment as a _new remote_.
 
-1.  Find the clone URL for the Live environment in the Umbraco Cloud Portal.
+1. Find the clone URL for the Live environment in the Umbraco Cloud Portal.
 
-    ![Live Clone URL](images/live-clone-URL\_v10.png)
-2.  In GitKraken add a **new remote**, by clicking the **+** next to _Remote_.
+<figure><img src="../../.gitbook/assets/image (44).png" alt="Live Clone URL"><figcaption><p>Live Clone URL</p></figcaption></figure>
+
+1.  In GitKraken add a **new remote**, by clicking the **+** next to _Remote_.
 
     ![Add new remote](images/add-remote.png)
-3.  Give the new remote a name - like **Live**, and add the clone URL for the Live environment to both _Push URL_ and _Pull URL_ - click **Add Remote**.
+2.  Give the new remote a name - like **Live**, and add the clone URL for the Live environment to both _Push URL_ and _Pull URL_ - click **Add Remote**.
 
     ![Add Live as remote](images/live-remote.png)
-4. You will be prompted to authenticate - use your Umbraco Cloud credentials.
-5. You will see that the history from the Live repository is visible in the Git history.
-6. Next step; hit **Push**.
-7.  Choose to push to the newly added remote, and write **master** to make sure you are pushing to the master branch on the Live environment.
+3. You will be prompted to authenticate - use your Umbraco Cloud credentials.
+4. You will see that the history from the Live repository is visible in the Git history.
+5. Next step; hit **Push**.
+6.  Choose to push to the newly added remote, and write **master** to make sure you are pushing to the master branch on the Live environment.
 
     ![Choose remote](images/choose-remote.png)
-8. Hit **Submit** and the push will start.
+7. Hit **Submit** and the push will start.
 
 {% hint style="info" %}
 When changes are pushed directly to a Live environment and you have more than one environment, the changes are not automatically extracted into the site.

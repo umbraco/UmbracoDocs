@@ -6,9 +6,9 @@ The Umbraco Cloud Portal helps you manage your Umbraco Cloud project. From here,
 
 When you log in to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/home/login/), the projects dashboard gives an overview of all your Umbraco Cloud projects. Here, you can view all the projects you've created or have been added to as a team member.
 
-![View all projects](images/Umbraco-cloud-dashboard.png)
+<figure><img src="../../.gitbook/assets/image (2).png" alt="The Umbraco Cloud portal"><figcaption><p>The Umbraco Cloud portal</p></figcaption></figure>
 
-You can see the project's environments, usage for each project and which plans it is on. You can also see whether it is a baseline or baseline-child project.
+You can see the project's environments, usage for each project, and which plans it is on. You can also see whether it is a baseline or baseline-child project.
 
 In the top-right corner of the Umbraco Cloud Portal, you will find:
 
@@ -22,7 +22,7 @@ In the top-right corner of the Umbraco Cloud Portal, you will find:
 
 In the right-side corner of the Umbraco Cloud Portal, you can enable **Show environments** and **Show usage** of the project from the **Settings** option.
 
-![Settings](images/Settings.png)
+<figure><img src="../../.gitbook/assets/image (3).png" alt="Project Groups Settings"><figcaption><p>Project Groups Settings</p></figcaption></figure>
 
 ### Collapse Groups
 
@@ -32,9 +32,11 @@ Collapse Groups allows you to collapse the groups on the project Dashboard. You 
 
 To get a better overview of your projects, it is possible to sort your projects into **Groups**. This can be done by clicking the **Edit Groups** button on the top right side of the Umbraco Cloud Portal.
 
-![Edit Groups](images/edit-group.png)
+<figure><img src="../../.gitbook/assets/image (4).png" alt="Edit Groups"><figcaption><p>Edit Groups</p></figcaption></figure>
 
 After clicking on **Edit Groups**, you can create new Groups to sort your project in and create a better overview for yourself.
+
+<figure><img src="../../.gitbook/assets/image (5).png" alt="Create Group"><figcaption><p>Create Group</p></figcaption></figure>
 
 ![Create Group](images/add-group.png)
 
@@ -44,7 +46,7 @@ Click **Add Group** to give the group a name and then drag and drop your project
 
 In the bottom-right corner of the Umbraco Cloud Portal, you'll find a chat bubble. This is where you can reach out to the Umbraco HQ Support Warriors, should you have any questions regarding your Umbraco Cloud projects.
 
-<figure><img src="images/Chat.PNG" alt=""><figcaption><p>Chat Feature</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6).png" alt="Chat Feature"><figcaption><p>Chat Feature</p></figcaption></figure>
 
 With the Starter and Standard plan, you are only entitled to support regarding specific issues regarding the Cloud platform. If you are on a Professional plan, you are entitled to support through the chat regarding implementation and issues with the CMS. For more information on plans and pricing, see [Umbraco Cloud plans](https://umbraco.com/pricing/).
 
@@ -64,24 +66,18 @@ When you click on the User Profile link, you will find the following options:
 
 Managing your projects has been made even simpler with Umbraco Cloud. If you go to a particular project, you can get a quick overview of the environments in your project.
 
-![Project Overview](images/project-overview-v10.png)
+<figure><img src="../../.gitbook/assets/image (8).png" alt="Project Overview"><figcaption><p>Project Overview</p></figcaption></figure>
 
-* Project Name along with the options to **Manage environments**, **Invite User**, or **Settings** section.
-* Environment name along with the option to **Restart environment**, view **Error Logs** and **Logs**, **Clone project**, and access **Power Tools (Kudu)**.
+* Project Name along with the options to **Create environments**, **Invite User**, or **Settings** section.
+* Environment name along with the option to **Restart the environment**, view **Error Logs** and **Logs**, **Clone project**, and access **Power Tools (Kudu)**.
 * Links to **View errors**, **View page** (frontend), **Go to backoffice**, and the **Environment history**.
 * Option to view change details.
 
-While managing the environments on your project, click on **Manage environments** to add and/or remove environments as needed. Read more about how the number of environments varies depending on the plan you are on, in the [Project overview](../project-overview.md) article.
+While managing the environments on your project, click on **Create Environments** to add and/or remove environments as needed. Read more about how the number of environments varies depending on the plan you are on, in the [Project Overview](../project-overview.md) article.
 
 Aside from these features, it's also from the project view that changes are deployed from one Cloud environment to another. Find out more in the [Cloud-to-Cloud](../../deployment/cloud-to-cloud.md) article.
 
 In the [Settings](../../set-up/project-settings/) section, you will find a lot more options to configure your project.
-
-### Manage Subscriptions
-
-For customers who joined Umbraco Cloud before 5th of May 2021, subscriptions can be managed from Umbraco Shop. Umbraco Shop can be accessed through [shop.umbraco.com](https://shop.umbraco.com). You can also click on the **Manage Subscriptions** link from the **Profile** dropdown on the Umbraco Cloud Portal. Find out more in the [Manage Subscriptions](../../set-up/manage-subscriptions/) article.
-
-Customers who have joined Umbraco Cloud after the 5th of May, 2021, can manage their subscriptions directly through Umbraco Cloud. Find out more in the [Payments on Umbraco Cloud](../../set-up/manage-subscriptions/new-shop/) article.
 
 ### Pending Invites
 

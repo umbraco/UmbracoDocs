@@ -16,7 +16,7 @@ The Project History page shows details about the following changes to your proje
 
 This is to provide you with better oversight and control over your project.
 
-<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption><p>Project History page</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (12) (1).png" alt=""><figcaption><p>Project History page</p></figcaption></figure>
 
 For each activity you can see the following information:
 
@@ -31,8 +31,8 @@ To get a detailed view of each history type on your project, click the info icon
 
 If you click on the info icon for an automatic update, you will be redirected to an Upgrade Details page. On this page, you can see details about how the upgrade went.
 
-<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption><p>Upgrade Details</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14) (1).png" alt=""><figcaption><p>Upgrade Details</p></figcaption></figure>
 
 For activities like adding and removing environments,  clicking on the info icon will show details of how the process went when adding/ removing the environment.
 
-<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption><p>Adding environment details</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (15) (1).png" alt=""><figcaption><p>Adding environment details</p></figcaption></figure>

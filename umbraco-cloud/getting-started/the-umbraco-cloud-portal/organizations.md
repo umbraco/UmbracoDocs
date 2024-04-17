@@ -1,19 +1,16 @@
 # Organizations
 
-On Umbraco Cloud it is possible to setup an Organization. An organization is handy if you are managing many projects for different customers. It is also handy if you need to manage permissions for multiple users (such as developers, content editors etc.). 
+,On Umbraco Cloud it is possible to setup an Organization. An organization is handy if you are managing many projects for different customers. It is also handy if you need to manage permissions for multiple users (such as developers, content editors etc.).
 
 With an organization, you get an overview of all projects and members that are part of it. You can also manage payment methods for projects, as well as many other functions outlined on this page.
 
 In the following sections, we will go through the different options that are available to an Organization:
 
-![Organization Overview](images/Cloud-org-overview.png)
+<figure><img src="../../.gitbook/assets/image (9).png" alt="Organization Overview"><figcaption><p>Organization Overview</p></figcaption></figure>
 
 {% hint style="info" %}
-
 Are you interested in getting an organization, or need a project added to a different organization? Please reach out to the Support Team in the small chat box in your [project overview](https://www.s1.umbraco.io/projects).
-
 {% endhint %}
-
 
 ### Information
 
@@ -23,16 +20,15 @@ In the **Information** section of the Organization, you can find all the details
 
 ### Members
 
-In the **Members** section, you can view current members, pending invites, and see the Multi-Factor Authentication (MFA) status for the Members of your Organization. You can also setup different permissions for your Members, such as Read, Write, and Administrators for your organization by adjusting their **Role**.
+In the **Members** section, you can view current members, pending invites, and see the Multi-Factor Authentication (MFA) status for the Members of your Organization. You can also set up different permissions for your Members, such as Read, Write, and Administrators for your organization by adjusting their **Roles**.
 
 <figure><img src="../../../.gitbook/assets/members.png" alt=""><figcaption></figcaption></figure>
 
-Members added to your organization can see different details about their organization based on the user group they are added to. Currently there are three different groups, **Read**, **Write** and **Admin**.
-Below you can see what each user group has access to under the organization they are a part of.
+Members added to your organization can see different details about their organization based on the user group they are added to. Currently there are three different groups, **Read**, **Write** and **Admin**. Below you can see what each user group has access to under the organization they are a part of.
 
 Organization Members with **Admin Access** can do the following in the organization:
 
-* Update the organization information
+* Update the organization's information
 * Invite others to the organization
 * Invite Users to project under the organization
 * Edit organization team
@@ -43,11 +39,10 @@ Organization Members with **Admin Access** can do the following in the organizat
 * See subscriptions
 * See organization Members
 * See payment history
-* Handle Multi Factor Authentication (MFA) for users
+* Handle Multi-Factor Authentication (MFA) for users
 * Handle payment methods
 * Change permissions for Members
 * Remove role from users
-
 
 Organization members with **Write Access** can do the following in the organization:
 
@@ -56,16 +51,16 @@ Organization members with **Write Access** can do the following in the organizat
 * Invite to the organization
 * See pending invitations
 
-Organization Members with **Read Access**, can do the following in the organization:
+Organization Members with **Read Access** can do the following in the organization:
 
 * See Organization information
 * See Organization Members
 
 {% hint style="info" %}
-Being a Member of an organization, does not give access to any projects under it. To get access to a project under an organization, you need to be [invited](/umbraco-cloud/set-up/users-on-cloud.md) to the project. This can be done by either someone that is already part of the project or an administrator in your organization.
+Being a Member of an organization does not give access to any projects under it. To get access to a project under an organization, you need to be [invited](../../set-up/users-on-cloud.md) to the project. This can be done by either someone who is already part of the project or an administrator in your organization.
 {% endhint %}
 
-### Multi Factor Authentication (MFA) enforcement
+### Multi-Factor Authentication (MFA) enforcement
 
 When working in organizations on Umbraco Cloud, as a company, you can enforce a certain type of Multi-Factor Authentication (MFA) method for members.
 
@@ -81,8 +76,7 @@ To enforce a certain MFA for a member, follow these steps:
 4. Find the member that needs to have MFA enabled.
 5. Click on the cogwheel and select the **Enforced MFA Method** from the drop-down list for the member.
 
-Once it has been enabled, the next time the member logs in, they will be forced to setup the chosen Multi-Factor Authentication (MFA) method.
-It is possible for an administrator to reset the authenticator app settings for members of the organization.
+Once it has been enabled, the next time the member logs in, they will be forced to setup the chosen Multi-Factor Authentication (MFA) method. It is possible for an administrator to reset the authenticator app settings for members of the organization.
 
 ### Projects
 
@@ -90,21 +84,21 @@ In the **Projects** section, you can get an overview of all the Projects that ha
 
 ![Project overview](images/org-projects.png)
 
-It is possible to see the plan, project status, payment status, creation date, region and number of environments for each of your projects.
+It is possible to see the plan, project status, payment status, creation date, region, and number of environments for each of your projects.
 
-As an administrator you can invite members of your organization to the different projects under the organization.
+As an administrator, you can invite members of your organization to the different projects under the organization.
 
 ## Access Rights
 
 In the **Access Rights** section, you can get a list of all the Access Rights your Members have to each Project in your Organization.
 
-![Access Rights](images/Access_rights-v10.png)
+![Access Rights](images/Access\_rights-v10.png)
 
 ## Payment methods
 
-In the **Payment methods** section, you can view the payment methods for your organization. From here, you can add or delete credit card details for your Organization. These payment options will be used, when you create new projects under your organization.
+In the **Payment Methods** section, you can view the payment methods for your organization. From here, you can add or delete credit card details for your Organization. These payment options will be used, when you create new projects under your organization.
 
-![Payment methods](images/payment-methods-v10.png)
+<figure><img src="../../.gitbook/assets/image (60).png" alt="Payment methods"><figcaption><p>Payment methods</p></figcaption></figure>
 
 ## Payment History
 

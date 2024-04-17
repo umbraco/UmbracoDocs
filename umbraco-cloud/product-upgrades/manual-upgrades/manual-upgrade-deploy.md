@@ -54,25 +54,25 @@ Make sure that everything works on the local clone and that you can **run the pr
 1. Download **Storage Explorer** here: [https://azure.microsoft.com/en-us/products/storage/storage-explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer) and install it.
 2. Click the **"Plug"** Button (Open Connect Dialog):\
    \
-   ![Click the "Plug" Button (Open Connect Dialog)](<../../.gitbook/assets/image (1) (1) (1) (1).png>)
+   ![Click the "Plug" Button (Open Connect Dialog)](<../../.gitbook/assets/image (1) (1) (1) (1) (1).png>)
 
 <!---->
 
 3. Choose **"Blob container or directory"**:\
-   ![](<../../.gitbook/assets/image (1) (1) (1) (1) (1).png>)
+   ![](<../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png>)
 
 <!---->
 
 4. Choose **"Anonymously"** when prompted on how you will connect to the blob container.\
-   ![](<../../.gitbook/assets/image (2) (1) (1) (1).png>)
+   ![](<../../.gitbook/assets/image (2) (1) (1) (1) (1).png>)
 
 <!---->
 
-5. Enter [`https://umbraconightlies.blob.core.windows.net/umbraco-deploy-release`](https://umbraconightlies.blob.core.windows.net/umbraco-deploy-release) in the **"Blob container or directory URL":**<img src="../../.gitbook/assets/image (3) (1) (1).png" alt="" data-size="original">
+5. Enter [`https://umbraconightlies.blob.core.windows.net/umbraco-deploy-release`](https://umbraconightlies.blob.core.windows.net/umbraco-deploy-release) in the **"Blob container or directory URL":**<img src="../../.gitbook/assets/image (3) (1) (1) (1).png" alt="" data-size="original">
 
 <!---->
 
-6. You will then get a list of files available to download:![](<../../.gitbook/assets/image (4) (1) (1).png>)
+6. You will then get a list of files available to download:![](<../../.gitbook/assets/image (4) (1) (1) (1).png>)
 
 <!---->
 

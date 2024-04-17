@@ -36,12 +36,13 @@ For the sake of simplicity here's an explanation of the names I'll be using in t
 
 ### Move the files
 
-1. Clone down the Live environment.
-   *   The _clone URL_ for the Live environment can be found in the Umbraco Cloud Portal:
+1.  Clone down the Live environment.
 
-       <figure><img src="images/live-clone-URL_v10.png" alt=""><figcaption><p>Live Clone URL</p></figcaption></figure>
+    * The _clone URL_ for the Live environment can be found in the Umbraco Cloud Portal:
 
-       ![](images/live-clone-url\_v10.png)
+    <figure><img src="../../.gitbook/assets/image (43).png" alt="Live Clone URL"><figcaption><p>Live Clone URL</p></figcaption></figure>
+
+    ![](images/live-clone-url\_v10.png)
 2. Locate the files from the Development repository that you want to move to Live.
    *   Check the commits in the Git history for the Development repository to verify which files you need.
 

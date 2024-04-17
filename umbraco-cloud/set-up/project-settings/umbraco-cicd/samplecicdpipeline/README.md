@@ -27,10 +27,12 @@ You can use Azure DevOps as an external repository and with the pipelines, it wi
 Before proceeding, you'll need an Umbraco Cloud project and a CI/CD pipeline. You will also need the required files to add to your pipeline for successful interaction with the Umbraco Cloud API.
 
 1. Pick an Umbraco Cloud project, preferably with a development environment (but not a requirement)
-  * Create a new Umbraco Cloud Project. 
-    * You can take a [trial here](https://try.umbraco.com/cloud?utm\_source=github.com\&utm\_medium=referral\&utm\_campaign=) 
-    * [Create a new project](https://www.s1.umbraco.io/createproject) in the Umbraco Cloud Portal
-  * Use one of your [existing projects](https://www.s1.umbraco.io/projects).
+
+* Create a new Umbraco Cloud Project.
+  * You can take a [trial here](https://try.umbraco.com/cloud?utm\_source=github.com\&utm\_medium=referral\&utm\_campaign=)
+  * [Create a new project](https://www.s1.umbraco.io/createproject) in the Umbraco Cloud Portal
+* Use one of your [existing projects](https://www.s1.umbraco.io/projects).
+
 2. Create a new or an existing CI/CD pipeline in [Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/organizations/projects/create-project?view=azure-devops\&tabs=browser) or [GitHub Actions](https://github.com/features/actions).
 
 {% hint style="info" %}
@@ -44,7 +46,7 @@ To get started with API interactions, you'll need to obtain your Project ID and 
 1. Navigate to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects) and select your project.
 2. Go to `Settings` -> `Advanced`. This is where you can generate an API key and find your Project ID.
 
-<figure><img src="../../../../.gitbook/assets/image (8).png" alt=""><figcaption><p>Advanced tab on Cloud.</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (27).png" alt="Advanced tab on Cloud."><figcaption><p>Advanced tab on Cloud.</p></figcaption></figure>
 
 3. Click on "Activate CI/CD Flow" toggle to enable the feature.
 
@@ -59,15 +61,15 @@ The API key is tied to the specific project for which it is generated. Make sure
 Below we have a couple of examples of how to set up a CI/CD Pipeline using either Azure DevOps or GitHub Actions.
 
 Each guide describes:
-- How to set up a new repository in either GitHub or Azure DevOps
-- Get a copy of your Umbraco Cloud project into that repository
-- And finally how to configure a new pipeline using the provided samples
 
-The sample-pipelines are using either Bash-scripts or Powershell-scripts to facilitate the communication with the Umbraco CI/CD API. 
+* How to set up a new repository in either GitHub or Azure DevOps
+* Get a copy of your Umbraco Cloud project into that repository
+* And finally how to configure a new pipeline using the provided samples
+
+The sample pipelines are using either Bash-scripts or Powershell-scripts to facilitate communication with the Umbraco CI/CD API.
 
 {% hint style="info" %}
-During a guide you will have the options to chose between Powershell or Bash scripts.
-We recommend that you chose the scripting technology you fell most comfortable with. 
+During the guides, you will have the option to choose between Powershell or Bash scripts. We recommend that you choose the scripting technology you feel most comfortable with.
 {% endhint %}
 
 ### Azure DevOps sample
@@ -81,4 +83,3 @@ Details the setup of a CI/CD pipeline using Azure DevOps.
 Details the setup of a CI/CD pipeline using GitHub Actions.
 
 * [GitHub Actions Sample](github-actions.md)
-

@@ -35,7 +35,7 @@ Umbraco Cloud Websites support the following TLS ciphers in this order:
 
 The different Ciphers can be enabled or disabled on the security project settings page for your Cloud projects.
 
-<figure><img src=".gitbook/assets/image (7).png" alt=""><figcaption><p>Enable or disable TLS Ciphers</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (7) (1).png" alt=""><figcaption><p>Enable or disable TLS Ciphers</p></figcaption></figure>
 
 ### HSTS - HTTP Strict Transport Security
 
@@ -138,98 +138,3 @@ The following rule can be added to your web.config file in the `system.webServer
 ```
 
 For anyone using the 123.123.123.123 IP, this will result in them getting a 502 error. You can choose your own error.
-
-<!--
-## Restrict backoffice access using IP filtering
-
-It is possible to restrict who can access the Umbraco backoffice by applying an IP filter. When doing this on an Umbraco Cloud site, there are a few things to pay attention to as the backoffice URL is used in the deployment workflow.
-
-The following rule can be added to your web.config file in the `system.webServer/rewrite/rules/` section.
-
-Please note these two different variations, which differ if you have a reverse proxy like Cloudflare (with Proxying turned on) in front of the website.
-
-{% hint style="info" %}
-Since December 8th, 2020 all Umbraco Cloud sites uses Cloudflare for DNS, so new and updated projects should use the reverse proxy version.
-
-If you are unsure whether your Cloud project uses Cloudflare or not, get in touch with the friendly support team, and they will help you out.
-{% endhint %}
-
-{% tabs %}
-{% tab title="Default (reverse proxy)" %}
-**Reverse proxy version (default)**
-
-Cloudflare is used as a reverse proxy service for your Cloud project. This means that you'll need to get the IPs from the `CF-Connecting-IP` header. Use the example below to restrict access to your backoffice using IP filtering.
-
-You can read more about the HTTP request headers coming from Cloudflare in the [Cloudflare Documentation.](https://developers.cloudflare.com/fundamentals/get-started/reference/http-request-headers/).
-
-```xml
-<rule name="Excluding Umbraco Deploy" enabled="true" stopProcessing="true">
-  <match url="^(umbraco/umbracodeploy|umbraco/deploy|umbraco/backoffice/deploy/environment/)(.*)" ignoreCase="true" />
-  <conditions logicalGrouping="MatchAll" trackAllCaptures="false"></conditions>
-  <action type="None" />
-</rule>
-<rule name="Backoffice IP Filter excluding localhost" enabled="true" stopProcessing="true">
-  <match url="(^umbraco/backoffice/(.*)|^umbraco($|/$))" />
-  <conditions logicalGrouping="MatchAll" trackAllCaptures="false">
-  -->
-<!--
-    <!-- Don't apply rules on localhost so your local environment still works 
-    <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
-
-    <!-- Custom IP list 
-    <add input="{HTTP_CF_Connecting_IP}" pattern="123.123.123.123" negate="true" />
-  </conditions>
-  <action type="CustomResponse" statusCode="403" />
-</rule>
-```
-{% endtab %}
-
-
-{% tab title="Legacy (non-reverse proxy)" %}
-**Non-reverse proxy (projects created before 2021)**
-
-If you created the Cloud project earlier than December 8th, 2020, Cloudflare is not used on your project.
-
-When your Cloud project is not using Cloudflare, your site needs to use the Remote IP address of the website visitor.
-
-Use the example below to restrict access to your backoffice using IP filtering:
-
-```xml
-<rule name="Excluding Umbraco Deploy" enabled="true" stopProcessing="true">
-  <match url="^(umbraco/umbracodeploy|umbraco/deploy|umbraco/backoffice/deploy/environment/)(.*)" ignoreCase="true" />
-  <conditions logicalGrouping="MatchAll" trackAllCaptures="false"></conditions>
-  <action type="None" />
-</rule>
-<rule name="Backoffice IP Filter excluding localhost" enabled="true" stopProcessing="true">
-    <match url="(^umbraco/backoffice/(.*)|^umbraco($|/$))" />
-    <conditions logicalGrouping="MatchAll" trackAllCaptures="false">
-    
-    <!-- Don't apply rules on localhost so your local environment still works 
-    <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
-
-    <!-- Custom IP list 
-    <add input="{REMOTE_ADDR}" pattern="123.123.123.123" negate="true" />
-    </conditions>
-    <action type="CustomResponse" statusCode="403" />
-</rule>
-```
-{% endtab %}
-{% endtabs %}
-
-{% hint style="info" %}
-In the first rule we exclude the Umbraco Deploy endpoints, so that all deployment and content transfers can still work.
-{% endhint %}
-
-What we're doing here is blocking all the requests to `umbraco/backoffice/` (while still allowing Umbraco Deploy to work)and all of the routes that start with this.
-
-All of the Umbraco APIs use this route as a prefix, including Umbraco Deploy. So what we need to do first is to allow Umbraco Cloud to still be allowed to access the Deploy endpoints. That is achieved with the first 5 IP addresses, which are all specific to the servers we use for Umbraco Cloud.
-
-You will notice that the regex `^umbraco/backoffice/(.*)|^umbraco` also stops people from going to `yoursite.com/umbraco`, so even the login screen will not show up. Even if you remove the `|^umbraco` part in the end, it should be no problem. You'll get a login screen but any login attempts will be blocked before they reach Umbraco. This is because the login posts to `umbraco/backoffice/UmbracoApi/Authentication/PostLogin`, e.g. it's using the backoffice URL.
-
-The Autoupgrader on Umbraco Cloud needs to have access to the site to successfully run the upgrade process and apply new patches. By adding these two IP's it ensures that the site is accessible and the autoupgrader can apply the newly released patches.
-
-The last IP address is an example. You can add the addresses that your organization uses as new items to this list.
-
-{% hint style="info" %}
-It is possible to change the `umbraco/` route so if you've done that then you need to use the correct prefix. Doing this on Cloud is untested and at the moment not supported.
-{% endhint %}

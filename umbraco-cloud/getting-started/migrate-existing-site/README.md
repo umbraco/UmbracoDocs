@@ -98,7 +98,7 @@ Before the migration process can start, you will need to have a Umbraco Cloud pr
 2. You need to have an empty Cloud project for the migration to be successful
 3. We recommend that you set up your project with at least two environments.
 
-![Manage environments](images/setup-dev-env.png)
+<figure><img src="../../.gitbook/assets/image (10).png" alt="Manage Environments"><figcaption><p>Manage Environments</p></figcaption></figure>
 
 Have you been working with members and made changes to the default Member Type on your existing site?
 
@@ -229,7 +229,7 @@ When the push is complete go check out the Umbraco Cloud Portal to verify the in
 
 Go to the backoffice of your Development environment and make sure all your metadata is there. You won't see any content or media on the environment yet - this you will move in the next few steps.
 
-![Changes committed to Development environment](images/changes-on-dev.png)
+<figure><img src="../../.gitbook/assets/image (11).png" alt="Changes committed to Development environment"><figcaption><p>Changes committed to Development environment</p></figcaption></figure>
 
 ### Transfer your content and media
 

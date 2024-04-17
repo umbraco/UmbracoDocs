@@ -16,23 +16,23 @@ Before you decide to move your Umbraco Cloud project, you need to consider a few
 The first step in moving to a dedicated resource is to access your project in the project overview at [Umbraco.io](https://www.s1.umbraco.io/projects).
 
 * Find and select the project that you want to move to dedicated resources.
-* Select _Dedicated Resources_ from the _Settings_ menu.
+* Select _Dedicated Resources_ from the Management menu:
 
-![Upgrade plan step 1a](../images/Step1a.png)
+<figure><img src="../../.gitbook/assets/image (22).png" alt="Dedicated resources"><figcaption><p>Dedicated resources</p></figcaption></figure>
 
 * There are currently three dedicated options for you to choose from the Professional plan, two dedicated options from the Standard plan, and one dedicated option from the Starter plan. For each of the dedicated options, you will find its name, the memory and CPU cores, and the price per month.
 
-![Upgrade plan step 2a](../images/Step2a.png)
+<figure><img src="../../.gitbook/assets/image (24).png" alt="Dedicated plans (Starter plan)"><figcaption><p>Dedicated plans (Starter plan)</p></figcaption></figure>
 
 * By hitting the "Upgrade" button on your dedicated option of choice and confirming this, you will be redirected to the project page where you will be notified when the move to a dedicated resource has been completed.
 
 {% hint style="info" %}
-Are you moving your Cloud project to a dedicated resource in the middle of the month? Dedicated resources are reserved on a per-month basis. The price of the dedicated resource will take effect from the next period of your subscription. The time from that date until the start of the next subscription period, will be added to the next invoice.
+Are you moving your Cloud project to a dedicated resource in the middle of the month? Dedicated resources are reserved on a per-month basis. The price of the dedicated resource will take effect from the next period of your subscription. The time from that date until the start of the next subscription period will be added to the next invoice.
 {% endhint %}
 
 ## How to move from dedicated to shared
 
-Moving away from dedicated resources and back to shared can be done from the _Dedicated Resources_ page.
+Moving away from dedicated resources and back to shared plan can be done from the _Dedicated Resources_ page.
 
 ![Downgrade](../images/DowngradeA.png)
 
@@ -41,8 +41,7 @@ Moving away from dedicated resources and back to shared can be done from the _De
 
 ## Frequently asked questions
 
-Wondering what happens when you move your environment to a dedicated server? 
-Below you can find a list of the most frequently asked questions including answers.
+Wondering what happens when you move your environment to a dedicated server? Below you can find a list of the most frequently asked questions including answers.
 
 ### Will it move all the environments to the dedicated server?
 
@@ -58,7 +57,7 @@ It will not be possible to work on the project while it is being moved to the de
 
 ### Will the environments be moved at the same time or one by one?
 
-Yes, all environments will be moved simultaneously. 
+Yes, all environments will be moved simultaneously.
 
 ### Will the live environment be unavailable while the Project is moved?
 

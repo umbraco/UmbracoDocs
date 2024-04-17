@@ -22,7 +22,7 @@ To access the backoffice add `/umbraco` at the end of the Live, Development, or 
 
 Under **Settings** in the Umbraco Cloud Portal, you'll find **Hostnames**. This is where you bind Hostnames to your Cloud environments.
 
-<figure><img src="../../../.gitbook/assets/hostnames-umbraco-cloud.png" alt=""><figcaption><p>Manage Hostnames</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26).png" alt="Manage hostnames"><figcaption><p>Manage hostnames</p></figcaption></figure>
 
 Ensure that the hostname you are binding to your Umbraco Cloud environment has a DNS entry that resolves to the Umbraco Cloud service.
 

@@ -19,21 +19,21 @@ To create a backup follow the steps below:
 1. Open your Cloud project.
 2.  Go to **Backups** in the **Settings** menu.
 
-    <figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (45).png" alt="Backups on Cloud"><figcaption><p>Backups on Cloud</p></figcaption></figure>
 3.  Click **Create Backup.**
 
-    <figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption><p>Click Create Backup.</p></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (17) (1).png" alt=""><figcaption><p>Click Create Backup.</p></figcaption></figure>
 
     1. Enter a **description** for your **backup**.
     2. Choose the **Environment** from the **Environment** dropdown you want to create the backup from.
     3. Choose the **Date and Time** for the backup to be created.
 
-    <figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Creating new Backup</p></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Creating new Backup</p></figcaption></figure>
 4. Click **Create Backup.**
 
 When you click on the **Create Backup** button, the system will start creating a backup file in the form of a `bacpac` file. Once the `bacpac` file is created, you can download it by clicking on the **download** icon. In case you want to delete any of your backups, click on the **delete** icon.
 
-<figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Restoring a Cloud backup to a SQL Server Database
 

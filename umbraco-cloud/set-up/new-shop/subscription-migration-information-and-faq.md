@@ -7,9 +7,9 @@ description: >-
 
 # Subscription migration information and FAQ
 
-The migration of Umbraco Cloud subscriptions from shop.umbraco.com to the new subscription and billing engine on Umbraco Cloud will start on September 4, 2023. The migration will be performed in batches in close collaboration with our payment provider to ensure the subscriptions are moved correctly.&#x20;
+The migration of Umbraco Cloud subscriptions from shop.umbraco.com to the new subscription and billing engine on Umbraco Cloud will start on September 4, 2023. The migration will be performed in batches in close collaboration with our payment provider to ensure the subscriptions are moved correctly.
 
-The process will be handled automatically, no action is required on your end.&#x20;
+The process will be handled automatically, no action is required on your end.
 
 You can find documentation on how the new subscription and billing engine works in the [Organizations documentation](https://docs.umbraco.com/umbraco-cloud/getting-started/the-umbraco-cloud-portal/organizations) and [Payments documentation](https://docs.umbraco.com/umbraco-cloud/set-up/manage-subscriptions/new-shop).
 
@@ -17,7 +17,7 @@ You can find documentation on how the new subscription and billing engine works 
 
 #### What is the difference between “the old shop” and the new subscription and billing engine?
 
-When we refer to the old shop (or old billing engine), we mean subscriptions handled on shop.umbraco.com. The new subscription and billing engine is integrated directly into the Umbraco Cloud portal.&#x20;
+When we refer to the old shop (or old billing engine), we mean subscriptions handled on shop.umbraco.com. The new subscription and billing engine is integrated directly into the Umbraco Cloud portal.
 
 #### Where is “the new shop”?
 
@@ -45,5 +45,3 @@ The name of the organization can be changed by reaching out to [contact@umbraco.
 #### How can one change the currency on their new shop profile?
 
 Currency is based on the country that the Organization has put in. To change this reach out to [contact@umbraco.com](mailto:contact@umbraco.com).
-
-\

@@ -11,20 +11,17 @@ To enable Automatic Minor Upgrades follow these steps:
 1. Go to your Umbraco Cloud project.
 2.  Go to `Settings` -> `Automatic Upgrades`.
 
-    <figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption><p>Settings Umbraco Cloud</p></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (47).png" alt="Settings Umbraco Cloud"><figcaption><p>Settings Umbraco Cloud</p></figcaption></figure>
 3.  Enable Automatic Minor Upgrades
 
-    <figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption><p>Enable Minor Upgrades</p></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (10) (1).png" alt=""><figcaption><p>Enable Minor Upgrades</p></figcaption></figure>
 
-With automatic upgrades enabled it will be applied to all products on Umbraco Cloud: Umbraco CMS, Umbraco Forms, and Umbraco Deploy.
-Your project does not need to be running the latest minor for automatic upgrades to work. The project will be upgraded to the latest minor when it is released.
+With automatic upgrades enabled it will be applied to all products on Umbraco Cloud: Umbraco CMS, Umbraco Forms, and Umbraco Deploy. Your project does not need to be running the latest minor for automatic upgrades to work. The project will be upgraded to the latest minor when it is released.
 
 If you create a new project on Umbraco Cloud the project will by default have automatic minor upgrades enabled.
 
 {% hint style="info" %}
-
 For projects where automatic minor upgrades are enabled, having a Development environment is not compulsory. However, it is highly recommended to facilitate a smoother and more controlled upgrade experience. In cases where manual upgrades are necessary, a Development environment becomes essential.
-
 {% endhint %}
 
 A development environment is included in all Umbraco Cloud plans, except Starter. Find pricing details for Umbraco Cloud Starter plans on our [website](https://umbraco.com/products/umbraco-cloud/pricing).

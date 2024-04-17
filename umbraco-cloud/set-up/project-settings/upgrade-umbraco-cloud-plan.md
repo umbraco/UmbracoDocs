@@ -20,7 +20,7 @@ The first step to upgrading your Umbraco Cloud plan is to access your project in
 
 Under the project on the right side, you have a dropdown menu called settings:
 
-![Upgrade plan step 1](../images/step\_1.png)
+<figure><img src="../../.gitbook/assets/image (25).png" alt="Upgrade plan menu tab"><figcaption><p>Upgrade plan menu tab</p></figcaption></figure>
 
 In the menu, you can find a tab called _"Upgrade plan"_.
 
@@ -34,15 +34,15 @@ In the menu, you can find a tab called _"Upgrade plan"_.
 
 Follow the below steps to upgrade your plan:
 
-1. Click on the **Select plan** button to choose the plan you want to upgrade to.
-2.  _\[Optional]_ Choose to upgrade to a **dedicated option** in the next step.&#x20;
+1. Click on the **Select Plan** button to choose the plan you want to upgrade to.
+2.  _\[Optional]_ Choose to upgrade to a **dedicated option** in the next step.
 
     <div align="left">
 
     <figure><img src="../images/dedicated-option.png" alt=""><figcaption><p>Dedicated option on Cloud</p></figcaption></figure>
 
     </div>
-3.  Review the **Summary** to make sure that everything selected is correct in the last step.&#x20;
+3.  Review the **Summary** to make sure that everything selected is correct in the last step.
 
     <figure><img src="../images/upgrade-summary.png" alt=""><figcaption><p>Summary of project upgrade.</p></figcaption></figure>
 
@@ -51,7 +51,7 @@ Once you click the **Upgrade Project** button, the project will be upgraded to t
 {% hint style="info" %}
 The change in price will take effect from the next period of your subscription.
 
-Are you changing the plan in the middle of the month? The time from that date until the start of the next subscription period, will be added to the next invoice.
+Are you changing the plan in the middle of the month? The time from that date until the start of the next subscription period will be added to the next invoice.
 {% endhint %}
 
 {% hint style="info" %}

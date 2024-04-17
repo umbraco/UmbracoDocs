@@ -59,7 +59,7 @@ The pipeline needs to know which Umbraco Cloud project to deploy to. In order to
 * Now go to the repository in GitHub, and click on the Settings section.
 * Expand secrets and variables in the left-hand menu titled `Security` and click on `Actions`.
 
-<figure><img src="../../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption><p>Security and Actions menu GitHub</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption><p>Security and Actions menu GitHub</p></figcaption></figure>
 
 * Create a `repository secret` called `UMBRACO_CLOUD_API_KEY` with the `API Key` value from the Umbraco Portal.
 * Create another `repository secret` with the name `PROJECT_ID` and the `Project ID` value from the Umbraco Portal.

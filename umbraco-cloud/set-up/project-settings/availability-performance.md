@@ -18,7 +18,9 @@ Under Availability & Performance, you'll find visualization and statistics for t
 
 The visualization and statistics can be seen for all your different environments.
 
-<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Availability and performance Overview</p></figcaption></figure>
+
+
+<figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption><p>Availability and performance Overview</p></figcaption></figure>
 
 {% hint style="info" %}
 More detailed visualization and tools intended for troubleshooting are to be added in the future and will be restricted to **Standard** and **Professional** project plans.
@@ -43,8 +45,8 @@ Each tile includes relevant statistics and potentially a warning or an error ind
 An error indicator is shown in the following situations:
 
 * **Failed Requests**: when one or more server errors have occurred in the selected time range.
-* **CPU Usage**: when the maximum CPU time has exceeded 100% of the plan quota in a 5-minute period during the selected time range.
-* **Memory Usage**: when the maximum private time has exceeded 100% of the plan quota in a 5-minute period during the selected time range.
+* **CPU Usage**: when the maximum CPU time has exceeded 100% of the plan quota in 5 minutes during the selected time range.
+* **Memory Usage**: when the maximum private time has exceeded 100% of the plan quota in 5 minutes during the selected time range.
 
 A warning indicator is shown in the following situations:
 

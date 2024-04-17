@@ -8,7 +8,7 @@ First, Umbraco Cloud automatically overrides whatever is in the 'umbracoDbDsn' c
 
 Second, for security, your database on Umbraco Cloud is running behind a firewall. In order to connect to the database, you'll need to open the firewall for the relevant IPs. This can be a single IP, a list of IPs, or even an IP range. It's done from the Connection Details page on your project. Click the "Settings" menu in the upper right corner of your project and select "Connection Details". If you don't see the menu item, it's due to permissions and you'll need to contact the administrator of your project.
 
-![Connecting to Umbraco.mdf in Visual Studio](../images/connection-details.png)
+<figure><img src="../../.gitbook/assets/image (46).png" alt="Connecting to Umbraco.mdf in Visual Studio"><figcaption><p>Connecting to Umbraco.mdf in Visual Studio</p></figcaption></figure>
 
 ### Opening the firewall
 

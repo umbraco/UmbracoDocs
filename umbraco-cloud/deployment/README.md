@@ -69,7 +69,7 @@ Some deployments can cause an Umbraco Cloud environment to restart. See the tabl
 
 From the Umbraco Cloud Portal, you can manually restart your environments.
 
-![Restart an environment](images/restart-environment\_v10.gif)
+<figure><img src="../.gitbook/assets/image (38).png" alt="Restart an environment"><figcaption><p>Restart an environment</p></figcaption></figure>
 
 ## Umbraco-cloud.json
 

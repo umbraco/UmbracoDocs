@@ -59,7 +59,7 @@ From here they will be able to see a pending invitation to the project they have
 
 Once the invitation has been accepted, they can now access the project through the Umbraco Cloud portal and access their site from there.
 
-![New User Invitation](images/Project\_overview.png)
+<figure><img src="../.gitbook/assets/image (33).png" alt="Project overview"><figcaption><p>Project overview</p></figcaption></figure>
 
 ## User group permissions for transfers and restores
 

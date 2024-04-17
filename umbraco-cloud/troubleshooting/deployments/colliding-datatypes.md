@@ -1,8 +1,6 @@
-
 # Extraction error: Data Type collisions
 
-When creating a new environment on your Umbraco Cloud project, you might encounter some issues regarding some of the default data types built into Umbraco.
-The data types in question are:
+When creating a new environment on your Umbraco Cloud project, you might encounter some issues regarding some of the default data types built into Umbraco. The data types in question are:
 
 * Content Picker
 * Media Picker
@@ -14,9 +12,9 @@ Since these 5 data types are part of the Umbraco CMS, these will be created by d
 
 ## How do I know I have this issue?
 
-The issue will present itself as an extraction error on your Development or Staging environment once you're created them.
+The issue will present itself as an extraction error on your Development or Staging environment once you've created them.
 
-![Extraction error on Development environment](images/duplicate-dictionary-extraction-error.png)
+<figure><img src="../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
 
 Open the error message by clicking **More info**.
 
@@ -33,11 +31,11 @@ See the steps below on how to resolve the issue.
 1. Access the backoffice of the affected environment (Development or Staging)
 2. Find the **Data Types** folder in the Developer section
 3. Delete **only** the data types mentioned in the error message
-    * In the case above, I would need to delete *Member Picker*, *Multiple Media Picker*, *Related Links*, and *Content Picker*
-4. [Access Kudu](../../set-up/power-tools/README.md) for the affected environment
+   * In the case above, I would need to delete _Member Picker_, _Multiple Media Picker_, _Related Links_, and _Content Picker_
+4. [Access Kudu](../../set-up/power-tools/) for the affected environment
 5. Follow the [Kudu Documentation](../../set-up/power-tools/manual-extractions.md) to run an extraction on the environment
 6. When you get a `deploy-complete` marker, the issue has been resolved!
 
 When you've followed these steps, go through your Development / Staging environment and make sure everything has been created as expected.
 
-The final step you need to take before your Development / Staging environment is completely in sync with your Live environment is to [restore the content](../../deployment/restoring-content/README.md).
+The final step you need to take before your Development / Staging environment is completely in sync with your Live environment is to [restore the content](../../deployment/restoring-content/).

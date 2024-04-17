@@ -6,7 +6,7 @@ One of the features built into Umbraco Cloud is the ability to work locally with
 
 1.  On the Umbraco Cloud portal, go to your project and clone the site using your favorite Git client.
 
-    <figure><img src="images/clone-project.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (15).png" alt="Clone project down"><figcaption><p>Clone project down</p></figcaption></figure>
 2.  Configure a SQL Server connection string using `ConnectionStrings` in `appsettings.json` or `appsettings.Development.json` (the `launchSettings.json` configures the local instance to run as 'Development'):
 
     ```json
