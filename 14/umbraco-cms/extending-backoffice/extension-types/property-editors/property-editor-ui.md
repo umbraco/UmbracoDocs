@@ -83,6 +83,7 @@ interface UmbPropertyEditorUIElement {}
 ```ts
 import { LitElement, html, css, customElement, property } from '@umbraco-cms/backoffice/external/lit';
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
+import { UmbPropertyValueChangeEvent } from '@umbraco-cms/backoffice/property-editor';
 
 @customElement('my-text-box')
 export default class UmbPropertyEditorUITextBoxElement extends UmbElementMixin(LitElement) {
@@ -95,7 +96,7 @@ export default class UmbPropertyEditorUITextBoxElement extends UmbElementMixin(L
 
 	private onInput(e: InputEvent) {
 		this.value = (e.target as HTMLInputElement).value;
-		this.dispatchEvent(new CustomEvent('property-value-change'));
+		this.dispatchEvent(new UmbPropertyValueChangeEvent());
 	}
 
 	render() {

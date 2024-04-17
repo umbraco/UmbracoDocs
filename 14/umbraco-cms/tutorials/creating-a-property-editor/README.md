@@ -215,7 +215,18 @@ It's starting to look good! Next, let's look into setting up the event logic.
 
 Let's start with the input field. When we type something in the input field, we want the property editor's value to change to the input field's current value.
 
-We then have to dispatch an `property-value-change` event:
+We then have to dispatch an `property-value-change` event which can be done in two ways:
+- Using `new CustomEvent('property-value-change')` or 
+- Using `new UmbPropertyValueChangeEvent()` which is recommended as you can leverage the core class 
+
+1. Add the import so the event can be used:
+{% code title="suggestions-property-editor-ui.element.ts" %}
+
+import { UmbPropertyValueChangeEvent } from "@umbraco-cms/backoffice/property-editor";
+
+{% endcode %}
+
+2. Add the event to the property editor:
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
@@ -225,7 +236,7 @@ We then have to dispatch an `property-value-change` event:
   }
 
   #dispatchChangeEvent() {
-    this.dispatchEvent(new CustomEvent('property-value-change'));
+    this.dispatchEvent(new UmbPropertyValueChangeEvent());
   }
 
   render() {
@@ -314,6 +325,7 @@ import { LitElement, html, css, customElement, property, state } from "@umbraco-
 ```typescript
 import { LitElement, css, html, customElement, property, state } from "@umbraco-cms/backoffice/external/lit";
 import { UmbPropertyEditorExtensionElement } from "@umbraco-cms/backoffice/extension-registry";
+import { UmbPropertyValueChangeEvent } from '@umbraco-cms/backoffice/property-editor';
 
 @customElement('my-suggestions-property-editor-ui')
 export class MySuggestionsPropertyEditorUIElement
@@ -343,7 +355,7 @@ export class MySuggestionsPropertyEditorUIElement
     }
 
     #dispatchChangeEvent() {
-        this.dispatchEvent(new CustomEvent("property-value-change"));
+        this.dispatchEvent(new UmbPropertyValueChangeEvent());
     }
 
     render() {
