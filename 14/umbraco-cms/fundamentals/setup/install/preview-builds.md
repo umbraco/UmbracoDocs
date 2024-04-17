@@ -13,8 +13,7 @@ This page is a work in progress. It will be updated as the software evolves.
 In this article, we'll explain how you can get the latest builds of Umbraco. You can do this in three steps:
 
 1. [Using the Feed](preview-builds.md#using-the-feed)
-2. [Adding the "prereleases" Feed as a NuGet Source](preview-builds.md#adding-the-prereleases-feed-as-a-nuget-source)
-3. [Installing the RC template](preview-builds.md#installing-the-rc-template)
+2. [Installing the RC template](preview-builds.md#installing-the-rc-template)
 
 {% hint style="info" %}
 If you experience any problems running any of the prerelease/nightly builds, ensure that you have the [required version of .NET](../requirements.md#local-development). You can always find the latest on the [Microsoft website](https://dotnet.microsoft.com/en-us/).
@@ -113,7 +112,7 @@ dotnet new install Umbraco.Templates::14.0.0-rc1
 The prerelease name and the version are separated with two colons`::`. It is important to specify the entire version, including the `-rc1` otherwise the `dotnet new` command will not find the package.
 
 {% hint style="info" %}
-Check the [NuGet website](https://www.nuget.org/packages/Umbraco.Templates/) to stay up-to-date with the latest pre-release Template versions.
+Check the [NuGet website](https://www.nuget.org/packages/Umbraco.Templates/) to stay up-to-date with the latest Template versions.
 {% endhint %}
 
 With that, we've successfully installed the latest build of Umbraco.
