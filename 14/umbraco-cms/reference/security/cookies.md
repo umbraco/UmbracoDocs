@@ -13,7 +13,6 @@ The below cookies are necessary for accessing the Umbraco Backoffice and functio
 | umb_installId              | Used to store the Umbraco software installer id.                                                                  | Session    |
 | UMB_UPDCHK                 | Enables your system to check for the Umbraco software updates.                                                    | Session    |
 | UMB-XSRF-V                 | Used to store the backoffice antiforgery token validation value.                                                  | Session    |
-| UMB-XSRF-TOKEN             | Set for angular to pass in to the header value for "X-UMB-XSRF-TOKEN"                                             | Session    |
 | TwoFactorRememberBrowser   | Default authentication type used for storing that 2FA is not needed on next login                                 | Session    |
 | UMB_SESSION                | Preserves the visitor's session state across page requests.                                                       | Session    |
 

@@ -10,13 +10,9 @@ We have gathered all information and resources about the project in one place, g
 You can find it all on [docs.umbraco.com/umbraco-backoffice](https://docs.umbraco.com/umbraco-backoffice).
 {% endhint %}
 
-## [Backoffice UI](https://apidocs.umbraco.com/v13/ui)
+## [Backoffice UI](https://apidocs.umbraco.com/v14/ui)
 
-Angular, JavaScript, CSS & Less UI API references for building Umbraco backoffice components. V10 is using minified versions of the following files:
-
-* The umbraco.directives
-* The umbraco.services
-* The umbraco.resources
+JavaScript, CSS & Less UI API references for building Umbraco backoffice components.
 
 {% hint style="info" %}
 Opens a documentation browser that is different from the documentation section you're viewing now.
