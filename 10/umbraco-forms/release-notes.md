@@ -26,6 +26,7 @@ This section contains the release notes for Umbraco Forms 8 and 10 including all
 * Corrected alignment of label `for` and input `id` attributes in the date picker field [#1200](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1200).
 * Corrected permission check such that users with only "view entries" permissions can see form details on the dashboard [#1192](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1192).
 * Fixed closing of theme picker dialog [#1174](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1174).
+* Tightened path check used in middleware for restriction of access to form file uploads.
 
 [**10.5.4**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.5.4) **(February 20th 2024)**
 
@@ -340,6 +341,7 @@ This section contains the release notes for Umbraco Forms 8 and 10 including all
 * Fixed ordering of forms by name in security screen [#1122](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1122)
 * Updated the copy form dialog to use standard CMS patterns for button state and disable it after clicking [#1121](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1121).
 * Ensured UI for the upload of a text file for a prevalue source only allows the selection of expected .txt files.
+* Tightened path check used in middleware for restriction of access to form file uploads.
 
 [**8.13.13**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.13.13) **(January 16th 2024)**
 
