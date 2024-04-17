@@ -48,6 +48,31 @@ Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 
 <details>
 
+<summary>Umbraco 14 RC Versions</summary>
+
+Below you can find the list of breaking changes introduced in Umbraco 14 RC release versions.
+
+[RC 1](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-rc1)\
+First RC release - 17th of April.
+
+**Breaking changes from beta 3:**
+
+* [#1411](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1411) - Bugfix: Move To Entity Action (Part 1)&#x20;
+* [#1568](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1568) - Feature/Content Editor Kind + Work for validation (take 3)&#x20;
+* [#1591](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1591) - Bugfix: Duplicate to Entity Action (part 1)
+
+#### New Features:
+
+* [#1593](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1593) - Media Entity Picker property-editor UI&#x20;
+* [#1598](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1598) - Hide entity actions when Tree used inside a Modal
+* [#1611](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1611) - Media Tree Item
+* [#1605](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1605) - Document Type Create Actions
+* [#1638](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1638) - Umbraco version number (header logo modal)
+
+</details>
+
+<details>
+
 <summary>Umbraco 14 Beta Versions</summary>
 
 Below you can find the list of breaking changes introduced in Umbraco 14 Beta release versions.
@@ -62,7 +87,7 @@ Management API Breaking Changes:
 * [#15946](https://github.com/umbraco/Umbraco-CMS/pull/15946) - Document version endpoints with async service
 * [#15923](https://github.com/umbraco/Umbraco-CMS/pull/15923) - Convert Tourdata into a more generic concept
 
-Bellissima (Client) Breaking Changes
+Bellissima (Client) Breaking Changes:
 
 * &#x20;[#1455](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1455) - Workspace routable kind
 * [#1475](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1475) - Feature: Entity Workspace Context Token and Interface + preparation for Validation&#x20;
