@@ -341,7 +341,7 @@ This section contains the release notes for Umbraco Forms 8 and 10 including all
 * Fixed ordering of forms by name in security screen [#1122](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1122)
 * Updated the copy form dialog to use standard CMS patterns for button state and disable it after clicking [#1121](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1121).
 * Ensured UI for the upload of a text file for a prevalue source only allows the selection of expected .txt files.
-* Tightened path check used in module for restriction of access to form file uploads.
+* Tightened path check used in middleware for restriction of access to form file uploads.
 
 [**8.13.13**](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F8.13.13) **(January 16th 2024)**
 
