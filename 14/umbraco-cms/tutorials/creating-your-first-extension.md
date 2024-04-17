@@ -160,10 +160,10 @@ npm install
 3. The last thing we need to install now is our Backoffice package. You can install the package using the following command:
 
 ```bash
-npm install --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@14.0.0-beta003
+npm install --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@14.0.0-rc1
 ```
 
-This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `-beta003` is the version of the package, which will change as new versions are released.
+This will add a package to your devDependencies containing the TypeScript definitions for the Umbraco Backoffice. The `-rc1` is the version of the package, which will change as new versions are released.
 
 {% hint style="warning" %}
 If you see any errors during this process, make sure that you have the right tools installed (Node, .NET, and so on). Also, make sure you have followed the steps on how to [Setup Your Development Environment](../extending-backoffice/development-flow/).
@@ -255,7 +255,7 @@ declare global {
 {% endcode %}
 
 {% hint style="warning" %}
-If you create multiple dashboards it's necessary to change the alias of `@customElement` to a unique alias in the `my-element.ts`file. If it's not changed then it will conflict with the other dashboards that use the same alias and therefore only one will show.
+If you create multiple dashboards it's necessary to change the alias of `@customElement` to a unique alias in the `my-element.ts` file. If it's not changed then it will conflict with the other dashboards that use the same alias and therefore only one will show.
 {% endhint %}
 
 The code above defines a Web Component that contains a button that when clicked will open a notification with a message to the user.
