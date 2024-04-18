@@ -15,7 +15,6 @@
     * [Installing Nightly Builds](fundamentals/setup/install/installing-nightly-builds.md)
     * [Running Umbraco on Linux/macOS](fundamentals/setup/install/running-umbraco-on-linux-macos.md)
     * [Unattended Installs](fundamentals/setup/install/unattended-install.md)  
-    * [Installing Preview Builds](fundamentals/setup/install/preview-builds.md)
   * [Upgrade your project](fundamentals/setup/upgrading/README.md)
     * [Version Specific Upgrades](fundamentals/setup/upgrading/version-specific/README.md)
 * [Backoffice](fundamentals/backoffice/README.md)
