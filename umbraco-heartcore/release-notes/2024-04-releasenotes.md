@@ -4,7 +4,7 @@ The following changes have been released to Heartcore sites created on or after 
 ## Grid Disabled By Default
 With the grid property editor [becoming deprecated](https://umbraco.com/blog/umbraco-heartcore-update-october-2023/), we have decided to hide related functionality in the backoffice for sites that are not already using it. The replacement for grid; that is, the Block Grid Editor will require some manual effort to migrate to. We would like to remove the possibility for users to inadvertently create more work for themselves by adopting grid.
 
-Sites that already have grid Data Types in use will continue to offer the full range of grid support. Grid content can also be imported from a zip package, which will also fully enable support for it across the environment.
+Sites that already have Grid Data Types in use will continue to offer the full range of grid support. Grid content can also be imported from a zip package, which will also fully enable support for it across the environment.
 
 ## Notable Bugfixes
 Fixes for commonly-reported issues this month include:
