@@ -150,7 +150,7 @@ localizationService.localize("dialog_myKey").then(function(value){
 
 ## Help keep the language files up to date
 
-As Umbraco is a continually evolving product, it is inevitable that new text is added. This happens on a regular basis to the English language version of these files. This may mean that some of the above languages are no longer up to date.
+As Umbraco is a continually evolving product it is inevitable that new text is added regularly to the English language version of these files. This may mean that some of the above languages are no longer up to date.
 
 If a translation is missing, the key "alias" used will be shown within the user interface, as an example:
 
