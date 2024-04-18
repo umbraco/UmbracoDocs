@@ -194,4 +194,4 @@ In the above example of a missing translation for "assignDomain", locate this st
 </language>
 ```
 
-In the above example of a missing translation for "assignDomain", locate this string in the en.xml file. Then copy the whole "Key" element into the relevant language file. Then you can translate the text, as an example here is the Spanish version of the above snippet:
+If you modify core language files or introduce a new language, you can assist the community by sharing your updates. This can be done by [submitting a pull request](https://github.com/umbraco/Umbraco-CMS/blob/contrib/.github/CONTRIBUTING.md) so that your changes are merged into the core.

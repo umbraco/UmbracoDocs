@@ -154,7 +154,7 @@ localizationService.localize("dialog_myKey").then(function(value){
 
 ## Help keep the language files up to date
 
-As Umbraco is a continually evolving product, it is inevitable that new text is added. This happens on a regular basis to the English language version of these files. This may mean that some of the above languages are no longer up to date.
+As Umbraco is a continually evolving product it is inevitable that new text is added regularly to the English language version of these files. This may mean that some of the above languages are no longer up to date.
 
 If a translation is missing, the key "alias" used will be shown within the user interface, as an example:
 
@@ -198,4 +198,4 @@ In the above example of a missing translation for "assignDomain", locate this st
 </language>
 ```
 
-If you update any of the core language files or add a new language, don't forget to help the rest of the community. You can do this by[submitting a pull request](https://docs.umbraco.com/welcome/contribute/getting-started) so that your changes are merged into the core.
+If you modify core language files or introduce a new language, you can assist the community by sharing your updates. This can be done by [submitting a pull request](https://github.com/umbraco/Umbraco-CMS/blob/contrib/.github/CONTRIBUTING.md) so that your changes are merged into the core.
