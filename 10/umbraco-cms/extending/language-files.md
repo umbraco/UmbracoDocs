@@ -132,7 +132,7 @@ In the Umbraco backoffice UI, labels can be localized with the `localize` direct
 </button>
 ```
 
-The localize directive can also be used as an attribute like below where the value of the title attribute is then populated with the dictionary key "title\_name" from the language file using "@title\_name".
+The localize directive can also be used as an attribute like below. The value of the title attribute is then populated with the dictionary key "title\_name" from the language file using "@title\_name".
 
 ```xml
 <button localize="title" title="@title_name">
@@ -150,7 +150,7 @@ localizationService.localize("dialog_myKey").then(function(value){
 
 ## Help keep the language files up to date
 
-As Umbraco is a continually evolving product it is inevitable that new text is added on a fairly regular basis to the English language version of these files. This may mean that some of the above languages are no longer up to date.
+As Umbraco is a continually evolving product it is inevitable that new text is added regularly to the English language version of these files. This may mean that some of the above languages are no longer up to date.
 
 If a translation is missing, the key "alias" used will be shown within the user interface, as an example:
 
@@ -176,7 +176,7 @@ The language files are XML files with a straight-forward layout as seen below.
 </language>
 ```
 
-In the above example of a missing translation for "assignDomain", locate this string in the en.xml file and then copy the whole "Key" element into the relevant language file. Then you can translate the text, as an example here is the Spanish version of the above snippet:
+In the above example of a missing translation for "assignDomain", locate this string in the en.xml file. Then copy the whole "Key" element into the relevant language file. Then you can translate the text, as an example here is the Spanish version of the above snippet:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
@@ -194,4 +194,4 @@ In the above example of a missing translation for "assignDomain", locate this st
 </language>
 ```
 
-If you do update any of the core language files or you add a new language, don't forget to help the rest of the community by [submitting a pull request](https://docs.umbraco.com/welcome/contribute/getting-started) so that your changes are merged into the core.
+If you modify core language files or introduce a new language, you can assist the community by sharing your updates. This can be done by [submitting a pull request](https://github.com/umbraco/Umbraco-CMS/blob/contrib/.github/CONTRIBUTING.md) so that your changes are merged into the core.
