@@ -22,7 +22,7 @@ In this section of the documentation, we'll provide an overview of the different
 
 We release prebuilt versions of Umbraco during the development phase of the new Backoffice. This happens as we see fit and will be [introduced on our blog](https://umbraco.com/blog).
 
-To get the latest Preview Version, see the [Installing Preview Builds](../fundamentals/setup/install/preview-builds.md) article.
+To get the latest Preview Version, see the [Installing Preview Builds](broken-reference) article.
 
 </details>
 
