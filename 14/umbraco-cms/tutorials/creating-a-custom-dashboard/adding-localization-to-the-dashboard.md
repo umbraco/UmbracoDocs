@@ -6,7 +6,7 @@ description: Set up localization for your dashboard.
 
 ## Overview
 
-This is the second part of our guide to building a Custom Dashboard. This part continues work on the dashboard we built in part one: [Creating a Custom Dashboard](../creating-a-custom-dashboard.md), but further shows how to handle localization in a custom dashboard.
+This is the second part of our guide to building a Custom Dashboard. This part continues work on the dashboard we built in part one: [Creating a Custom Dashboard](./), but further shows how to handle localization in a custom dashboard.
 
 The steps we will go through in second part are:
 

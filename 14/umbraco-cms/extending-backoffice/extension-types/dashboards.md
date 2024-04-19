@@ -12,7 +12,7 @@ This page is a work in progress. It has been migrated but the content is waiting
 
 The dashboard area of Umbraco is used to display information for a Section. Notice that Section Views is another similar approach to append information to the root of a Section. Section views are thought mainly used as Secondary pages. These two approaches should ideally not be combined.
 
-You can try and [create a custom dashboard](../../tutorials/creating-a-custom-dashboard.md) as a way on getting started on this topic.
+You can try and [create a custom dashboard](../../tutorials/creating-a-custom-dashboard/) as a way on getting started on this topic.
 
 ## Dashboard registration
 

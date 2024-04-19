@@ -40,7 +40,7 @@ Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 * [Smidge has been removed from default installation](https://github.com/umbraco/Umbraco-CMS/pull/15788) along with RuntimeMinification setting. Smidge can be manually installed if needed and you can read the [Smidge](https://github.com/Shazwazza/Smidge) documentation on how to setup a similar setting to [RuntimeMinification](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-cms/reference/configuration/runtimeminificationsettings.md).
 * New login screen
 * **Light, Dark or Contract Mode** option has been added in the backoffice. You can choose your preffered mode from your profile information.
-* [UI Library and UI API](../../../../extending-backoffice/ui-library.md) external documentations.
+* [UI Library and UI API](broken-reference) external documentations.
 
 **In-depth and further breaking changes for v14 can be found on the** [**CMS Github**](https://github.com/umbraco/Umbraco-CMS/pulls?q=is%3Apr+base%3Av14%2Fdev+label%3Acategory%2Fbreaking) **repository.**
 

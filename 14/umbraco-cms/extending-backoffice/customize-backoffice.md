@@ -14,31 +14,7 @@ While [Lit](https://lit.dev/) and [TypeScript](https://www.typescriptlang.org/) 
 
 In this section of the documentation, we'll provide an overview of the different ways you can keep up with the development of the Backoffice.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td><a href="development-flow/"><strong>Setup</strong></a></td><td>Discover how to get started with the new backoffice.</td><td><a href="../.gitbook/assets/Documentations Icons_Umbraco_CMS_Fundamentals_Setup (1).png">Documentations Icons_Umbraco_CMS_Fundamentals_Setup (1).png</a></td><td><a href="development-flow/">development-flow</a></td></tr></tbody></table>
-
-<details>
-
-<summary>Download the prerelease of Umbraco 14</summary>
-
-We release prebuilt versions of Umbraco during the development phase of the new Backoffice. This happens as we see fit and will be [introduced on our blog](https://umbraco.com/blog).
-
-To get the latest Preview Version, see the [Installing Preview Builds](broken-reference) article.
-
-</details>
-
-<details>
-
-<summary>Building from Source</summary>
-
-If you want to explore the source code of the new Backoffice and follow the latest development, you should check out [our public GitHub repository](https://github.com/umbraco/Umbraco.CMS.Backoffice).
-
-Here, you can also find more detailed explanations on how to build and run the new Backoffice on its own or target an Umbraco instance.
-
-</details>
-
-## Backoffice Library on Storybook
-
-Documentation for the new Backoffice is still in the early days. For now, you can find documentation for working with and using the new backoffice components on the [**Backoffice Library on Storybook**](https://apidocs.umbraco.com/v14/ui/).
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td><a href="development-flow/"><strong>Setup</strong></a></td><td>Discover how to get started with the new backoffice.</td><td><a href="../.gitbook/assets/Documentations Icons_Umbraco_CMS_Fundamentals_Setup (1).png">Documentations Icons_Umbraco_CMS_Fundamentals_Setup (1).png</a></td><td><a href="development-flow/">development-flow</a></td></tr><tr><td></td><td><a href="ui-documentation.md"><strong>UI Documentation</strong></a></td><td>Discover how to extend the backoffice using the Umbraco UI Library, UI API and Storybook.</td><td><a href="../.gitbook/assets/Documentations Icons_Umbraco_CMS_Fundamentals_Design.png">Documentations Icons_Umbraco_CMS_Fundamentals_Design.png</a></td><td><a href="ui-documentation.md">ui-documentation.md</a></td></tr></tbody></table>
 
 ## Terminology <a href="#terminology" id="terminology"></a>
 
