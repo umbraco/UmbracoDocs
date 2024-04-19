@@ -45,7 +45,7 @@ To create a custom Macro Parameter Type, first create a custom 'Property Editor'
 
 ### PreValues/Configuration/DefaultValues
 
-However 'Parameter Editors' unlike 'Property Editors' cannot contain 'prevalues', since there is no UI to present configuration options in the Macro Parameter tab when a particular type is chosen. However using the `defaultConfig` option enables the passing of 'one off' default set of configuration for the parameter editor to use:
+'Parameter Editors', unlike 'Property Editors', cannot contain 'prevalues'. This is because there is no UI to present configuration options in the Macro Parameter tab when a particular type is chosen. However using the `defaultConfig` option enables the passing of 'one off' default set of configuration for the parameter editor to use:
 
 ```json
 {
@@ -63,11 +63,11 @@ However 'Parameter Editors' unlike 'Property Editors' cannot contain 'prevalues'
 }
 ```
 
-This is only a problem if you have a macro parameter type, that needs to be used on lots of different macros, but with slightly different configurations in each instance.
+This is only a problem if you have a macro parameter type that needs to be used on lots of different macros. Each instance may require slightly different configurations.
 
 ### Example
 
-We'll create an 'Image Position' Macro Parameter type providing a Radio Button list of options for positioning an image that has been inserted via an 'Insert Image' Macro into a Rich Text Editor.
+We'll create an 'Image Position' Macro Parameter type, providing a Radio Button list of options for positioning an image. This image is inserted via an 'Insert Image' Macro into a Rich Text Editor.
 
 #### Package Manifest
 
@@ -137,7 +137,7 @@ The final custom parameter should look like this:
 
 #### Using defaultConfig
 
-In this example it doesn't really add anything to move the radio button options into configuration, however to illustrate the concept of providing defaultConfig, let's do that:
+In this example, moving the radio button options into configuration doesn't really add anything. However, to illustrate the concept of providing defaultConfig, let's do that:
 
 The package manifest becomes:
 
