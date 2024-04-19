@@ -26,9 +26,8 @@ There are 2 types of UDIs:
 
 ## GUID UDI
 
-* [API Reference for Umbraco 13](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.GuidUdi.html)
-
+* [API Reference](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.GuidUdi.html)
 
 ## String UDI
 
-* [API Reference for Umbraco 13](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.StringUdi.html)
+* [API Reference](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.StringUdi.html)

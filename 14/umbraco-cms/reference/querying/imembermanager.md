@@ -4,7 +4,7 @@ description: "Using the IMemberManager"
 
 # IMemberManager
 
-`IMemberManager` is an user manager interface for accessing member data in the form of `MemberIdentityUser` and converting it to `IPublishedContent`. `IMemberManager` has a variety of methods that are useful in views and controllers. For the list of methods, see the [IMemberManager Interface API Documentation](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.Security.IMemberManager.html#methods).
+`IMemberManager` is an user manager interface for accessing member data in the form of `MemberIdentityUser` and converting it to `IPublishedContent`. `IMemberManager` has a variety of methods that are useful in views and controllers. For the list of methods, see the [IMemberManager Interface API Documentation](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Security.IMemberManager.html#methods).
 
 ## How to reference IMemberManager
 
@@ -139,7 +139,7 @@ Returns the user id of a user
 
 ```
 @{
-	var userId = await _memberManager.GetUserIdAsync(user);
+ var userId = await _memberManager.GetUserIdAsync(user);
 }
 ```
 
@@ -213,6 +213,6 @@ Validates that a user's credentials are correct without logging them in.
 
 ```
 @{
-	var isValidCredentials = await _memberManager.ValidateCredentialsAsync(userName, password);
+ var isValidCredentials = await _memberManager.ValidateCredentialsAsync(userName, password);
 }
 ```

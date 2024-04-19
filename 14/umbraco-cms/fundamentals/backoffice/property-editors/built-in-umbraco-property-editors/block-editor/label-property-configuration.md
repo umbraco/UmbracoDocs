@@ -38,9 +38,11 @@ The `mediaKey` is a Guid like `c7a4526c-6b32-4665-a047-5b3e7256d973`.
 For the Media Name, the same could be achieved using `ncNodeName` like shown below:
 
 {% code overflow="wrap" %}
+
 ```
 {{myPropertyAlias[0].mediaKey ? ('umb://media/'+myPropertyAlias[0].mediaKey.split("-").join("") | ncNodeName) : 'No Image' }}
 ```
+
 {% endcode %}
 
 The `ncNodeName` value expects a UDI like `umb://media/c7a4526c6b324665a0475b3e7256d973`.

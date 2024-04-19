@@ -154,12 +154,12 @@ Also notice how the `PropertyEditorAsset` attribute is used to load the `SirTrev
 
 ### DataEditor attribute
 
-The [DataEditor](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.PropertyEditors.DataEditorAttribute.html) attribute shown in the example above is the primary component to declaring the property editor in C#. Notice that the first four properties must be set through the constructor.
+The [DataEditor](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.PropertyEditors.DataEditorAttribute.html) attribute shown in the example above is the primary component to declaring the property editor in C#. Notice that the first four properties must be set through the constructor.
 
 | Name           | Type                                                         | Required | Description                                                  |
 |----------------| ------------------------------------------------------------ | -------- | ------------------------------------------------------------ |
 | `Alias`        | string                                                       | Yes      | Gets the unique alias of the editor.                         |
-| `EditorType`   | [EditorType](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.PropertyEditors.EditorType.html) | Yes      | Gets the type of the editor. Possible values are `EditorType.PropertyValue` or `EditorType.Nothing`. |
+| `EditorType`   | [EditorType](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.PropertyEditors.EditorType.html) | Yes      | Gets the type of the editor. Possible values are `EditorType.PropertyValue` or `EditorType.Nothing`. |
 | `Name`         | string                                                       | Yes      | Gets the friendly name of the editor.                        |
 | `View`         | string                                                       | Yes      | Gets the view to use to render the editor.                   |
 | `ValueType`    | string                                                       | No       | Gets or sets the type of the edited value.                   |
@@ -168,18 +168,11 @@ The [DataEditor](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.Pro
 | `Group`        | string                                                       | No       | Gets or sets an optional group.                              |
 | `IsDeprecated` | boolean                                                      | No       | Gets or sets a value indicating whether the value editor is deprecated. |
 
-### PropertyEditorAsset attribute
-
-As shown in the C# example, the [PropertyEditorAsset](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Infrastructure.WebAssets.PropertyEditorAssetAttribute.html) attribute was used to make Umbraco load the specified JavaScript file.
-
-The constructor of the attribute takes the type of the assets as the first parameter.
-Possible values are either `AssetType.Javascript` or `AssetType.Css`. The second parameter is the URL of the asset.
-
 ### DataEditor class
 
 In the example above, the `SirTrevorEditor` class doesn't really do much. For more basic property editors, the C# approach may require a bit more work compared to that of `package.manifest` files. But as property editors grow in complexity, using C# becomes a bit more useful - and also lets you do things not possible with `package.manifest` files.
 
-The [DataEditor](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.PropertyEditors.DataEditor.html) class defines a virtual `CreateConfigurationEditor` method. It returns a model which is used for the Angular view when editing the prevalues of a Data Type.
+The [DataEditor](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.PropertyEditors.DataEditor.html) class defines a virtual `CreateConfigurationEditor` method. It returns a model which is used for the Angular view when editing the prevalues of a Data Type.
 
 Virtual methods are methods declared in a parent class. These methods have a default implementation that can be overridden in classes that inherit from the parent class. For instance in the example below, we can override the method and provide our own `SirTrevorConfigurationEditor` instead of what Umbraco returns by default.
 
