@@ -12,7 +12,7 @@ This page is a work in progress. It will be updated as the software evolves.
 
 A kind is matched with a specific type. When another extension uses that type and kind it will inherit the preset manifest of the kind extension.
 
-The registration of Kinds is done in the same manner as the registration of other extensions. But the format of it is different. Let's take a look at an example of how to implement the `Kind registration` for a [**Header App**](../header-apps.md) **Button Kind**.
+The registration of Kinds is done in the same manner as the registration of other extensions. But the format of it is different. Let's take a look at an example of how to implement the `Kind registration` for a [**Header App**](../extension-types/header-apps.md) **Button Kind**.
 
 #### Kind example
 

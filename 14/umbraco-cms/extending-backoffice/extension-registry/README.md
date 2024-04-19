@@ -14,7 +14,7 @@ The extension registry is a global registry that can be accessed and changed at 
 
 To provide new UI to backoffice, you need to register them via an extension manifest. This has to initially happen on the server, via a JSON Package Manifest. This will enable you to register one or more extensions.
 
-## Extension types <a href="#extension-types" id="extension-types"></a>
+## [Extension Types](../extension-types/) <a href="#extension-types" id="extension-types"></a>
 
 The abilities of the extensions rely on the specific extension type. The Type sets the scene for what the extension can do and what it needs to be utilized.
 
@@ -24,7 +24,7 @@ Some extension types rely on a reference to other extensions.
 
 Most extension types support conditions. Defining conditions enables you to control when and where the extension is available.
 
-## [Kinds](../extension-types/kind.md) <a href="#kinds" id="kinds"></a>
+## [Kinds](kind.md) <a href="#kinds" id="kinds"></a>
 
 The kinds feature enables you to base your extension registration on a preset. A kind provides the base manifest that you like to extend.
 
@@ -32,6 +32,6 @@ The kinds feature enables you to base your extension registration on a preset. A
 import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
 ```
 
-[Package Manifest\
-](../../package-manifest.md) <a href="#package-manifest" id="package-manifest"></a>
------------------------------------------------------------------------------------
+## [Package Manifest](../package-manifest.md) <a href="#package-manifest" id="package-manifest"></a>
+
+A Package is declared via an Umbraco Package Manifest. This describes the Package and declares one or more UI Extensions.

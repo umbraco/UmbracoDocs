@@ -3,17 +3,20 @@ description: >-
   A store holds data throughout the session. It is used to create reactivity
   across different parts.
 ---
+
+# Store
+
 {% hint style="warning" %}
 This page is a work in progress. It will be updated as the software evolves.
 {% endhint %}
 
-# Store
+## Store
 
-A store is the link between a Resource and a Repository. A store is mainly taken from a Context API. In other words, we will have to Consume the Context (Store) to get the Store.&#x20;
+A store is the link between a Resource and a Repository. A store is mainly taken from a Context API. In other words, we will have to Consume the Context (Store) to get the Store.
 
-Generally, a Store will be holding one or more [State Objects](../states.md), with each Subject made available for Observation via Observables.&#x20;
+Generally, a Store will be holding one or more [State Objects](states.md), with each Subject made available for Observation via Observables.
 
-## A Basic Store
+### A Basic Store
 
 ```typescript
 class MyProductStore {
@@ -61,7 +64,7 @@ class MyImplementation extends UmbLitElement {
 }
 ```
 
-### A bit more meaningful Store
+#### A bit more meaningful Store
 
 Here we added a method that returns an Observable that is specific to the requested product.
 
@@ -115,7 +118,7 @@ class MyImplementation extends UmbLitElement {
 }
 ```
 
-#### Create many Observables
+**Create many Observables**
 
 A Store must hold different Observables, some exceptionally general and others highly specific, all in perspective of the types of observers we aim to accommodate.
 
@@ -135,7 +138,7 @@ class MyProductStore {
 
 An observer of an Observable will only be triggered if the specific part of that data has changed. With this we can make a high-performance application, only triggering the parts that need to update when data is changed.
 
-#### Ensure unique data
+**Ensure unique data**
 
 For incoming data to replace existing data, we need to clarify what makes an entry of the array unique. In the examples of this guide, each product has an `id`. We have clarified this to the State by giving it the little method `(product) => product.id` as part of its creation:
 

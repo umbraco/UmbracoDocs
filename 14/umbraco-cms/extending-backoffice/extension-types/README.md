@@ -5,7 +5,7 @@ description: >-
   Registry in JavaScript.
 ---
 
-# Extension Manifests
+# Extension Types
 
 ### Extension Manifest Type
 
@@ -50,7 +50,7 @@ The bundle extension type can be used for declaring multiple Extension Manifests
 
 The bundle declares a single JavaScript file that will be loaded at startup. All the Extension Manifests exported from this Module will be registered in the Extension Registry.
 
-\[TBD link to article on the matter].
+Read more about the `bundle` extension type in the [Bundle ](../extension-registry/bundle.md)article.
 
 ### Using `entryPoint` as your foundation
 
@@ -60,4 +60,4 @@ The entry point declares a single JavaScript file that will be loaded and run wh
 
 The `entryPoint` extension is also the way to go if you want to load in external libraries such as jQuery, Angular, React, etc. You can use the `entryPoint` to load in the external libraries to be shared by all your extensions. Loading **global CSS files** can also be used in the `entryPoint` extension.
 
-Read more about the `entryPoint` extension type in the [Entry Point](extension-types/entry-point.md) article.
+Read more about the `entryPoint` extension type in the [Entry Point](../extension-registry/entry-point.md) article.

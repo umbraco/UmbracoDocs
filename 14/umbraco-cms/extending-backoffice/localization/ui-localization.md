@@ -4,7 +4,7 @@ description: Learn how to manage and use the UI Localization files.
 
 # UI Localization
 
-This article describes how you can use the UI Localization files via the [Package Manifest](../package-manifest.md).&#x20;
+This article describes how you can use the UI Localization files via the [Package Manifest](../package-manifest.md).
 
 ## Default Localization
 
@@ -116,7 +116,7 @@ In some situations, you need the localization as a variable that can be parsed. 
 
 #### Umbraco Element
 
-When using an [**Umbraco Element**](../umbraco-element/)**,** the **Localization Controller** is already initialized on the `localize` property via the `UmbElementMixin`.
+When using an [**Umbraco Element**](../working-with-data/umbraco-element/)**,** the **Localization Controller** is already initialized on the `localize` property via the `UmbElementMixin`.
 
 ```typescript
 import { LitElement, css, html } from "lit";

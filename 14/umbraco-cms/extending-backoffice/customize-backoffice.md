@@ -20,16 +20,16 @@ In this section of the documentation, we'll provide an overview of the different
 
 There are a few words that cover certain concepts, which is good to learn to decode the purpose of code.
 
-* **Resource:** An API enables communication with a server.&#x20;
-* **Store:** An API representing data, generally coming from the server. Most stores would talk with one or more resources. You can read more about this in the [Store](extension-types/store.md)article.
-* **State:** A reactive container holding data, when data is changed all its Observables will be notified. You can read more about state and observables in the [States](states.md)article.
+* **Resource:** An API enables communication with a server.
+* **Store:** An API representing data, generally coming from the server. Most stores would talk with one or more resources. You can read more about this in the [Store](working-with-data/store.md)article.
+* **State:** A reactive container holding data, when data is changed all its Observables will be notified. You can read more about state and observables in the [States](working-with-data/states.md)article.
   * **Observable:** An observable is the hook for others to subscribe to the data of a State.
-  * **Observe:** Observe is the term of what we do when subscribing to an Observable.&#x20;
-* **Context-API:** The name of the system used to serve APIs (instances/classes) for a certain context in the DOM. An API that is served via the Context-API is called a Context. You can read more about this in the [Context API](context-api.md) article.
+  * **Observe:** Observe is the term of what we do when subscribing to an Observable.
+* **Context-API:** The name of the system used to serve APIs (instances/classes) for a certain context in the DOM. An API that is served via the Context-API is called a Context. You can read more about this in the [Context API](working-with-data/context-api.md) article.
   * **Context Provider:** One that provides a class instance as a Context API.
   * **Context Consumer:** One that consumer subscribes to a class instance as a Context API.
-* **Controller:** An abstract term for a thing that hooks into the lifecycle of an element. Many things in our system are Controllers.&#x20;
-* **Umbraco Controller:** Enables hosting controllers. Additionally, it provides a few shortcut methods for initializing core Umbraco Controllers. You can read more about this in the [Controllers](umbraco-element/controllers/) article.
+* **Controller:** An abstract term for a thing that hooks into the lifecycle of an element. Many things in our system are Controllers.
+* **Umbraco Controller:** Enables hosting controllers. Additionally, it provides a few shortcut methods for initializing core Umbraco Controllers. You can read more about this in the [Controllers](working-with-data/umbraco-element/controllers/) article.
   * **Controller Host:** A class that can host controllers.
   * **Controller Host Element:** The element that can host controllers.
-* **Umbraco Element:** The `UmbLitElement` or `UmbElemenMixin` enables hosting controllers. Additionally, it provides a few shortcut methods for initializing core Umbraco Controllers. You can read more about this in the [Umbraco Element](umbraco-element/) article.
+* **Umbraco Element:** The `UmbLitElement` or `UmbElemenMixin` enables hosting controllers. Additionally, it provides a few shortcut methods for initializing core Umbraco Controllers. You can read more about this in the [Umbraco Element](working-with-data/umbraco-element/) article.

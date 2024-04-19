@@ -52,7 +52,7 @@ Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 
 Below you can find the list of breaking changes introduced in Umbraco 14 RC release versions.
 
-[RC 1](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-rc1)\
+[**RC 1**](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-rc1)\
 First RC release - 17th of April.
 
 **Breaking changes from beta 3:**

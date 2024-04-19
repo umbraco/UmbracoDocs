@@ -1,10 +1,14 @@
+---
+description: >-
+  Extension conditions are used to determine if an extension should be used or
+  not. Many of the Extension Types support conditions, but not all of them.
+---
+
 # Extension Conditions
 
 {% hint style="warning" %}
 This page is a work in progress. It will be updated as the software evolves.
 {% endhint %}
-
-Extension conditions are used to determine if an extension should be used or not. Many of the Extension Types support conditions, but not all of them.
 
 All given conditions for an extension must be valid for an extension to be utilized.
 
@@ -34,12 +38,12 @@ The conditions are defined as an array of conditions. Each condition is an objec
 
 In the above example the `Umb.Condition.SectionAlias` condition is used, this condition takes a property `match` which must be set to the alias of the section to match.
 
-## Core conditions types <a href="#core-conditions-types" id="core-conditions-types"></a>
+## Built-in conditions types <a href="#core-conditions-types" id="core-conditions-types"></a>
+
+The following conditions are available out of the box, for all extension types that support conditions.
 
 * `Umb.Condition.SectionAlias` - Checks if the current section alias matches the one specified.
 * `Umb.Condition.WorkspaceAlias` - Checks if the current workspace alias matches the one specified.
-
-The following conditions are available out of the box, for all extension types that support conditions.
 
 ## Make your own conditions <a href="#make-your-own-conditions" id="make-your-own-conditions"></a>
 
