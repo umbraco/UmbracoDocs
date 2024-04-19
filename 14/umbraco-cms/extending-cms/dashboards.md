@@ -29,7 +29,7 @@ Add a file named 'package.manifest' to the 'App_Plugins' folder, containing the 
 }
 ```
 
-The section aliases can be found in the C# developer reference for [Umbraco.Cms.Core.Constants.Applications](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Core.Constants.Applications.html).
+The section aliases can be found in the C# developer reference for [Umbraco.Cms.Core.Constants.Applications](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Constants.Applications.html).
 
 ### Registering with C# Type
 

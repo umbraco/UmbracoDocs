@@ -69,12 +69,10 @@ Note the constructor minimum needs to inject what is required for the base `Back
 
 ## Notifications
 
-There are [many notifications](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Web.Common.Security.BackOfficeUserManager.html) you can handle on the `BackOfficeUserManager`.
+There are [many notifications](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Web.Common.Security.BackOfficeUserManager.html) you can handle on the `BackOfficeUserManager`.
 Internally these are mainly used for auditing but there are some that allow you to customize some workflows:
 
-[comment]: <> (* `BackOfficeUserManager.SendingUserInvite`)
 
-[comment]: <> (  * Allows you to take control over how a user in the backoffice is invited. This might be handy if you are using an [External Login Provider]&#40;external-login-providers.md&#41; that has the `DenyLocalLogin` option assigned and you still want to have the user invite functionality available. In this setup, all of your users are controlled by your external login provider so you would need to handle the user invite flow yourself by using this event and inviting the user via your external provider. If you are using this event to replace the default functionality you will need to tell Umbraco that you've handled the invite by setting the `UserInviteEventArgs.InviteHandled` property to `true`.)
 
 * `SendEmailNotification`
   * This is a generic notification but it has a property `EmailType` that specify the email type. This type can be `UserInvite`.

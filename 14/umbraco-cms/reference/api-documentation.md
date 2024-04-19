@@ -22,12 +22,6 @@ C# API references for the Umbraco Core, Infrastructure, Extensions and Web libra
 Opens a documentation browser that is different from the documentation section you're viewing now.
 {% endhint %}
 
-## Backoffice UI API Documentation
+## Backoffice UI Documentation
 
-JavaScript, CSS & Less UI API references for building Umbraco backoffice components.
-
-### [Backoffice UI](https://apidocs.umbraco.com/v14/ui/)
-
-{% hint style="info" %}
-Opens a documentation browser that is different from the documentation section you're viewing now.
-{% endhint %}
+You can find all reference documentation for the Backoffice UI in the [UI Documentation](../extending-backoffice/ui-documentation.md) article.

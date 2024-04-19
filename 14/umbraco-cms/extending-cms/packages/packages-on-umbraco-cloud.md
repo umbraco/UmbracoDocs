@@ -212,10 +212,10 @@ public string? ToArtifact(object? value, IPropertyType propertyType, ICollection
 
 You can find references on the methods used here in our API documentation:
 
-* [EntityService.GetKey](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Services.Implement.EntityService.html#Umbraco\_Core\_Services\_Implement\_EntityService\_GetKey\_System\_Int32\_Umbraco\_Core\_Models\_UmbracoObjectTypes\_)
-* [new GuidUdi](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.GuidUdi.html#Umbraco\_Core\_GuidUdi\_\_ctor\_System\_String\_System\_Guid\_)
-* [new ArtifactDependency](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Deploy.ArtifactDependency.html#Umbraco\_Core\_Deploy\_ArtifactDependency\_\_ctor\_Umbraco\_Core\_Udi\_System\_Boolean\_Umbraco\_Core\_Deploy\_ArtifactDependencyMode\_)
-* [ArtifactDependencyMode](https://our.umbraco.com/apidocs/v8/csharp/api/Umbraco.Core.Deploy.ArtifactDependencyMode.html)
+* [EntityService.GetKey](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Services.IEntityService.html#Umbraco_Cms_Core_Services_IEntityService_GetKey_System_Int32_Umbraco_Cms_Core_Models_UmbracoObjectTypes_)
+* [new GuidUdi](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.GuidUdi.html#constructors)
+* [new ArtifactDependency](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Deploy.ArtifactDependency.html)
+* [ArtifactDependencyMode](https://apidocs.umbraco.com/v14/csharp/api/Umbraco.Cms.Core.Deploy.ArtifactDependencyMode.html)
 
 When stepping through the code we can see that everything seems to work fine:
 

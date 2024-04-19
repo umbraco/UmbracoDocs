@@ -4,7 +4,7 @@
 This guide is currently being re-evaluated, as it might not work as intended.
 {% endhint %}
 
-Before reading this document we highly recommend that you familiarise yourself with[ the basics of developing a custom Property Editor for Umbraco](../../tutorials/creating-a-property-editor/).
+Before reading this document we highly recommend that you familiarise yourself with[the basics of developing a custom Property Editor for Umbraco](../../tutorials/creating-a-property-editor/).
 
 {% hint style="info" %}
 [Click here for an overview with a working example and references back to the relevant documention.](https://umbraco.com/blog/deep-dive-the-block-list-editor/)
@@ -209,8 +209,6 @@ if (vm.layout.length > 0) {
   }
 }
 ```
-
-See [blockEditorModelObject](https://our.umbraco.com/apidocs/v8/ui/#/api/umbraco.services.blockEditorModelObject#methods\_getBlockObject) for the getBlockObject method for more information on the properties avaiable on a Block Object.
 
 ## Remove a Block
 
