@@ -257,7 +257,7 @@ When querying content by path, the culture is already known and included in the 
 The output produced by the Delivery API can either represent a specific content item or a paged list of multiple items.
 
 {% hint style="info" %}
-When referring to a specific content item in your API requests, the `id` parameter always refers to the item’s key (GUID) and not its integer node id.
+When referring to a specific content item in your API requests, the `id` parameter always refers to the item’s key (GUID). It does not refer to its integer node id.
 {% endhint %}
 
 ## Gets a content item by id
@@ -492,7 +492,7 @@ GET /umbraco/delivery/api/v2/content?fetch=children:dc1f43da-49c6-4d87-b104-a586
 {% endtab %}
 
 {% tab title="filter" %}
-The `filter` query parameter allows you to specify one or more filters that must match in order for a content item to be included in the response. The API provides a few built-in filters that you can use right away with the `/umbraco/delivery/api/v2/content` endpoint:
+The filter query parameter allows you to specify one or more filters. These filters must match in order for a content item to be included in the response. The API provides a few built-in filters that you can use right away with the `/umbraco/delivery/api/v2/content` endpoint:
 
 **`?filter=contentType:alias`**\
 This filter restricts the results to only include content items that belong to the specified content type. Replace _`alias`_ with the alias of the content type you want to filter by.
