@@ -19,16 +19,17 @@ The registration of Kinds is done in the same manner as the registration of othe
 In the following example, a kind is registered. This kind provides a default element for extensions utilizing this kind.
 
 ```ts
-import { extensionRegistry } from '@umbraco-cms/extension-registry';
+import { ManifestHeaderAppButtonKind, umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
+import { ManifestKind } from '@umbraco-cms/backoffice/extension-api';
 
-const manifest: ManifestKind = {
-	type: 'kind',
-	alias: 'Umb.Kind.MyButtonKind',
-	matchType: 'headerApp',
-	matchKind: 'button',
-	manifest: {
-		elementName: 'umb-header-app-button',
-	},
+const manifest: ManifestKind<ManifestHeaderAppButtonKind> = {
+  type: 'kind',
+  alias: 'Umb.Kind.MyButtonKind',
+  matchType: 'headerApp',
+  matchKind: 'button',
+  manifest: {
+    elementName: 'umb-header-app-button',
+  },
 };
 
 umbExtensionsRegistry.register(manifest);

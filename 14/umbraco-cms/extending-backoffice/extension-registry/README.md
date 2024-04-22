@@ -4,8 +4,6 @@
 This page is a work in progress. It will be updated as the software evolves.
 {% endhint %}
 
-TODO: describe the registration process and the extension registry. TODO: add typescript interface
-
 Most of BackOffice is based on Extensions making it crucial to understand how to register your own extensions. This introduction will give you an outline of the abilities of the extension registry.
 
 ## [Extension Registration](./) <a href="#registration" id="registration"></a>
