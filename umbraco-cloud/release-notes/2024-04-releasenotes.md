@@ -14,6 +14,5 @@ With the new UI and UX for projects on Umbraco Cloud, managing your project is n
 When visiting your project, you'll notice that your project now has a sidebar, containing the different project settings.
 The environment overview has received a fresh design, making it easier to manage your different environments.
 
-With this design, we have created a new and  modern UI and UX making it even easier to manage your project.
 
 ![Umbraco Cloud Portal](images/new-cloud-portal.png)
