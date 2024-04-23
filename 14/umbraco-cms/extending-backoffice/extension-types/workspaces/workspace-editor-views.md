@@ -12,13 +12,13 @@ Previously known as Content Apps, Workspace Views are customizable companion **t
 
 <figure><img src="../../../.gitbook/assets/workspace-views.svg" alt=""><figcaption><p>Workspace Views</p></figcaption></figure>
 
-## In Content Section
+**In Content Section**
 
 With Workspace Views, editors can switch from editing 'Content' to accessing contextual information related to the item they are editing.&#x20;
 
 The default workspace view is **'Info'** - displaying Links, History and Status of the current content item.
 
-## Example
+## Example of a Workspace View
 
 1. Follow the [Vite Package Setup](../../development-flow/vite-package-setup.md) by creating a new project folder called "`workspaceview`" in `App_Plugins`.
 2. Create a manifest file named `umbraco-package.json` at the root of the `welcome-dashboard` folder. Here we define and configure our dashboard.

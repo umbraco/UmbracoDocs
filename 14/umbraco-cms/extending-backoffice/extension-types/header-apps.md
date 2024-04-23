@@ -37,7 +37,7 @@ Below you can find an example of how to setup a Header App using the manifest fi
       "alias": "My.HeaderApp",
       "name": "My Header App",
       "kind": "button",
-      "js": "/App_Plugins/header-app/dist/header-app.js",
+
       "meta": {
         "label": "Hello Umbraco",
         "icon": "icon-hearts",
@@ -63,7 +63,33 @@ Below you can find an example of how to setup a Header App using the ts file.&#x
 
 This is a continuation of the above steps from **Button Header App with Manifest** example as we will register a new Header App directly from the .ts file.&#x20;
 
-1. Replace the content of the `src/my-element.ts file` with the following:
+1. Add a reference to the .js file. Update the `umbraco-package.json` with the following:
+
+{% code title="umbraco-package.json" lineNumbers="true" %}
+```typescript
+{
+  "$schema": "../../umbraco-package-schema.json",
+  "name": "My Header App",
+  "version": "0.1.0",
+  "extensions": [
+    {
+      "type": "headerApp",
+      "alias": "My.HeaderApp",
+      "name": "My Header App",
+      "kind": "button",
+      "js": "/App_Plugins/header-app/dist/header-app.js",
+      "meta": {
+        "label": "Hello Umbraco",
+        "icon": "icon-hearts",
+        "href": "https://umbraco.com/"
+      }
+    }
+  ]
+}
+```
+{% endcode %}
+
+2. Replace the content of the `src/my-element.ts file` with the following:
 
 {% code title="my-element.ts" lineNumbers="true" %}
 ```typescript
@@ -85,6 +111,6 @@ umbExtensionsRegistry.register(manifest);
 ```
 {% endcode %}
 
-2. In the `header-app` folder run `npm run build` and then run the project. Then in the backoffice you will see our new Header App extension with **address book** **icon**:
+3. In the `header-app` folder run `npm run build` and then run the project. Then in the backoffice you will see our new Header App extension with **address book** **icon**:
 
 <figure><img src="../../.gitbook/assets/header-app-example-ts.png" alt=""><figcaption><p>Header App in Backoffice registered via ts File</p></figcaption></figure>
