@@ -37,7 +37,7 @@ To start working with and building your site, you can either work directly in th
 To create a project in Umbraco Cloud Portal:
 
 1. Log in to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects) with your credentials.
-2.  Click **Create project**.
+2.  Click **Create Project**.
 
     <figure><img src=".gitbook/assets/image.png" alt="Create new Umbraco Cloud Project"><figcaption><p>Create new Project</p></figcaption></figure>
 3. Select **Umbraco Cloud** from the list of projects.
@@ -50,7 +50,7 @@ To create a project in Umbraco Cloud Portal:
 10. Click **Continue**.
 11. Verify that everything looks correct.
 12. Check **I have read and agree to the terms and conditions and the Data Processing Agreement**.
-13. Click **Create project**.
+13. Click **Create Project**.
 
 ### Naming a Project
 
@@ -69,19 +69,34 @@ Once a project is created, you can view its overview in Umbraco Cloud Portal:
 
 1. Log in to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects) with your credentials.
 2. Select your Project from the **Projects** dashboard.
-3.  Click on **Overview** from the left side menu..
+3. Click on **Overview** from the left side menu..
 
-    <figure><img src=".gitbook/assets/image (1).png" alt="Project Overview"><figcaption><p>Project Overview</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (65).png" alt="Project Overview"><figcaption><p>Project Overview.</p></figcaption></figure>
 
 The **Overview** menu consists of:
 
 **Environments:**
 
-Shows the environments that are part of your Umbraco Cloud project.
+From the environment overview, you can see the environments you have for your project.
+
+You can access your project's frontend, the backoffice, access kudu, or clone it to your local machine.
+
+You can also add new environments from here.
+
+<figure><img src=".gitbook/assets/image (62).png" alt="Project overview."><figcaption><p>Project overview.</p></figcaption></figure>
 
 **Team:**
 
-Get an overview of team members that have access to your project.
+From the Team Overview, you can see the following:
+
+* Who is a part of your project
+* What kind of access do they have on the project
+* Umbraco Backoffice User Groups&#x20;
+* Add or remove users from the project
+* Pending invites&#x20;
+* View and add technical contacts
+
+<figure><img src=".gitbook/assets/image (66).png" alt="Team overview"><figcaption><p>Team overview</p></figcaption></figure>
 
 **Summary:**
 
@@ -95,7 +110,7 @@ The summary page consists of the following:
 * Created by - The name and email of the project creator.
 * Creation date - The date the project was created.
 
-<figure><img src=".gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (57).png" alt="Summary page"><figcaption><p>Summary page</p></figcaption></figure>
 
 Umbraco Cloud takes care of installation, infrastructure, and security. You will also get the tools to work with your project in the Cloud or locally. Local development starts with cloning the project down to your PC or Linux/macOS.
 
