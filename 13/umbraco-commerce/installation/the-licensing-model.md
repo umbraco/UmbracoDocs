@@ -49,7 +49,7 @@ You can look at the pricing, features, and purchase a license on the [Umbraco Co
 
 ### Add additional domains
 
-If you require to add additional domains to the license, please reach out to a member of the [SUITS team](mailto:suits@umbraco.com) with your request and they will manage this process.
+To add additional domains to your license, reach out to a member of the [Sales team](mailto:suits@umbraco.com) with your request and they will manage this process.
 
 ## Installing your license
 
