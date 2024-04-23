@@ -2,8 +2,18 @@
 
 ## Key Takeaways
 
-* **New Project UI** - Export your database smoothly with point-in-time recovery, ensuring your project's data is always safeguarded for when you need it most.
+* **New Project UI** - New intuitive and modern user interface for projects on Umbraco Cloud.
+
 
 ## New Project UI
 
-With the introduction of a new project UI on Umbraco Cloud, we are 
+From creating new environments, managing your team, or gaining insight into the performance of your project it has never been easier to use Umbraco Cloud.
+
+With the new project UI and UX on Umbraco Cloud, we have made it simpler and more intuitive to manage your project on Umbraco Cloud.
+
+When visiting your project, you'll notice that your project now has a sidebar, containing the different project settings.
+The environment overview have also gotten a new design as well, making it easier to manage your different environments.
+
+With this design, we have created a new and  modern UI and UX making it even easier to manage your project.
+
+![Umbraco Cloud Portal](images/new-cloud-portal.png)
