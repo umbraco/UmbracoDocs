@@ -107,9 +107,7 @@ public class TestHubComposer : IComposer
         {
             options.AddFilter(new UmbracoPipelineFilter(
                 "test",
-                applicationBuilder => { },
-                applicationBuilder => { },
-                applicationBuilder =>
+                 endpoints: applicationBuilder =>
                 {
                     applicationBuilder.UseEndpoints(e =>
                     {
