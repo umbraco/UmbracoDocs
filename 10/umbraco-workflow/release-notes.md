@@ -17,6 +17,10 @@ If you are migrating from Plumber to Umbraco Workflow, see the [Migrate from Plu
 
 This section contains the release notes for Umbraco Workflow 10 including all changes for this version.
 
+### [10.3.9] (April 23rd 2024)
+
+* Fixes an issue where SQL query generation exposed a potential injection vector. This fix was also released as a patch for Plumber v2 and v10.
+
 ### [10.3.8](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.3.8) (March 13th 2024)
 
 * Make dashboard, content app, and section registration classes public [#56](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/56)

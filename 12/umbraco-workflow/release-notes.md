@@ -17,6 +17,10 @@ Check the [Version Specific Upgrade Notes](./upgrading/version-specific.md) arti
 
 This section contains the release notes for Umbraco Workflow 12 including all changes for this version.
 
+### [12.2.6] (April 23rd 2024)
+
+* Fixes an issue where SQL query generation exposed a potential injection vector. 
+
 ### [12.2.5](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.5) (March 13th 2024)
 
 * Make dashboard, content app, and section registration classes public [#56](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/56)
