@@ -15,7 +15,7 @@ These two options can be combined by defining a small extension in a JSON Manife
 
 #### Extension Manifest <a href="#extension-manifest" id="extension-manifest"></a>
 
-The necessary properties that an extension manifest needs are:
+The necessary properties that any extension manifest needs are:
 
 * `type` - The type defines the type and purpose of the extension. It is used to determine where the extension will be used and defines the data needed for this manifest.
 * `alias`- The alias is used to identify the extension. This has to be unique for each extension.
