@@ -8,11 +8,18 @@ description: Example how to work with extension registry
 This page is a work in progress. It will be updated as the software evolves.
 {% endhint %}
 
-In this article, you can find an example of an extension registry. This example goes through the creation of a Header App. A header app appears next to the user profile and global search icon on the top-right corner of Umbraco's backoffice.&#x20;
+A header app appears next to the user profile and global search icon on the top-right corner of Umbraco's backoffice.&#x20;
+
+In this article, you can find an example of an extension registry. This example goes through the creation of a Header App in two ways just as the extension registry can be done as well:
+
+1. Using a manifest file.
+2. Using the javascript/typescript file.
 
 <figure><img src="../../.gitbook/assets/header-apps.svg" alt=""><figcaption><p>Header Apps</p></figcaption></figure>
 
-## **Button Header App**
+## **Button Header App with Manifest**
+
+Below you can find an example of how to setup a Header App using the manifest file.
 
 1. Follow the [Vite Package Setup](../development-flow/vite-package-setup.md) by creating a new project folder called "`header-app`" in `App_Plugins`.
 2. Create a manifest file named `umbraco-package.json` at the root of the `welcome-dashboard` folder. Here we define and configure our dashboard.
@@ -46,6 +53,39 @@ In this article, you can find an example of an extension registry. This example 
 * Then we can define what kind of extension it is, where in this case we can use a pre-defined element called button.&#x20;
 * The button requires some metdata: an icon, label of the button (name of the button) and a link which opens once clicked.&#x20;
 
-4. In the `header-app` folder run `npm run build` and then run the project. Then in the content section of the Backoffice you will see our new Header App extension:
+4. In the `header-app` folder run `npm run build` and then run the project. Then in the backoffice you will see our new Header App extension:
 
-<figure><img src="../../.gitbook/assets/header-app-example.png" alt=""><figcaption><p>Header App in the Backoffice</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/header-app-example.png" alt=""><figcaption><p>Header App in the Backoffice registered via Manifest File</p></figcaption></figure>
+
+## **Button Header App with JS/TS**
+
+Below you can find an example of how to setup a Header App using the ts file.&#x20;
+
+This is a continuation of the above steps from **Button Header App with Manifest** example as we will register a new Header App directly from the .ts file.&#x20;
+
+1. Add the following code after the current imports in the `src/my-element.ts file`:
+
+{% code title="my-element.ts" lineNumbers="true" %}
+```typescript
+import { ManifestHeaderAppButtonKind, umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
+
+const manifest: ManifestHeaderAppButtonKind = {
+  type: "headerApp",
+  alias: "My.HeaderApps",
+  name: "My Header Apps",
+  kind: "button",
+
+  meta: {
+    label: "Hello Umbracos",
+    icon: "icon-code",
+    href: "https://umbraco.com/"
+  }
+};
+
+umbExtensionsRegistry.register(manifest);
+```
+{% endcode %}
+
+2. In the `header-app` folder run `npm run build` and then run the project. Then in the backoffice you will see our new Header App extension:
+
+<figure><img src="../../.gitbook/assets/header-app-example-ts.png" alt=""><figcaption><p>Header App in Backoffice registered via ts File</p></figcaption></figure>
