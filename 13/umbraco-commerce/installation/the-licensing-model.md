@@ -1,10 +1,10 @@
 # Licensing
 
-Umbraco Commerce is a commercial product. You can run an Umbraco Commerce unrestricted locally without the need a license. Running Umbraco Commerce on a public domain will display a warning banner in the backoffice and will limit the maximum number of orders (20). To remove these restrictions, you'll need to have a **valid license**.
+Umbraco Commerce is a commercial product. You can run Umbraco Commerce unrestricted locally without the need for a license. Running Umbraco Commerce in the public domain will display a warning banner in the backoffice and will limit the maximum number of orders to 20. To remove these restrictions, you'll need to have a **valid license**.
 
 ## How does it work?
 
-Licenses are sold per backoffice domain and will also work on all subdomains. If you have alternative staging/qa environment domains, additional domains can be added to the license on request.
+Licenses are sold per backoffice domain and will also work on all subdomains. If you have alternative staging/QA environment domains, additional domains can be added to the license on request.
 
 {% hint style="info" %}
 The licenses are not bound to a specific product version. They will work for all versions of the related product.
@@ -49,7 +49,7 @@ You can look at the pricing, features, and purchase a license on the [Umbraco Co
 
 ### Add additional domains
 
-If you require to add addition domains to the license, please reach out to a member of the [SUITS team](mailto:suits@umbraco.com) with your request and they will manage this process.
+If you require to add additional domains to the license, please reach out to a member of the [SUITS team](mailto:suits@umbraco.com) with your request and they will manage this process.
 
 ## Installing your license
 
@@ -69,7 +69,7 @@ Once you have received your license code it needs to be installed on your site.
 
 ### Verify the license installation
 
-You can verify that your license is successfully installed by logging into your project's backoffice and navigating to the settings section. Here you will see a licenses dashboard which should display the status of your license.
+You can verify that your license is successfully installed by logging into your project's backoffice and navigating to the settings section. Here you will see a license dashboard which should display the status of your license.
 
 ![Umbraco Commerce License Dashboard](../media/license-dashboard.png)
 
@@ -139,7 +139,7 @@ Then configure a random string as an authorization key in configuration. This is
     }
 ```
 
-Your Internet enabled server should make a request of the following form to the online license validation service:
+Your Internet-enabled server should make a request of the following form to the online license validation service:
 
 ```
 POST https://license-validation.umbraco.com/api/ValidateLicense
@@ -156,6 +156,6 @@ The response should be relayed exactly via an HTTP request to your restricted Um
 POST http://<your umbraco environment>/umbraco/licenses/validatedLicense/relay?productId=<product id>&licenseKey=<license key>
 ```
 
-A header with a key of `X-AUTH-KEY` and value of the authorization key you have configured should be provided.
+A header with a key of `X-AUTH-KEY` and the value of the authorization key you have configured should be provided.
 
 This will trigger the same processes that occur when the normal scheduled validation completes ensuring your product is considered licensed.
