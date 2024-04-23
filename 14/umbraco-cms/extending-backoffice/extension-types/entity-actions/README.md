@@ -1,10 +1,14 @@
+---
+description: Entity Actions perform an action on a specific item
+---
+
 # Entity Actions
 
 {% hint style="warning" %}
 This page is a work in progress. It will be updated as the software evolves.
 {% endhint %}
 
-**Entity Action:** Relates to an entity type: (document, media, etc.). Performs the action on a specific item.
+Previously known as Property Actions, Entity Actions is a feature that provides a generic place for secondary or additional functionality for an entity type. An entity type can be a media, document and so on. &#x20;
 
 ## Entity Actions in the UI <a href="#entity-actions-in-the-ui" id="entity-actions-in-the-ui"></a>
 
@@ -27,6 +31,12 @@ This page is a work in progress. It will be updated as the software evolves.
 <figure><img src="../../../.gitbook/assets/entity-action-picker-context-menu.svg" alt=""><figcaption><p><strong>Pickers</strong></p></figcaption></figure>
 
 </div>
+
+### Sidebar Context Menu <a href="#registering-an-entity-action" id="registering-an-entity-action"></a>
+
+Sidebar Context Menu is an entity action that can be performed on a menu item. For example in the content section you can perform some extra actions on the content such as sorting, moving, etc.
+
+<figure><img src="../../../.gitbook/assets/entity-action-example-content-section.png" alt=""><figcaption><p>Default Entity Action in the Content Section</p></figcaption></figure>
 
 ## Registering an Entity Action <a href="#registering-an-entity-action" id="registering-an-entity-action"></a>
 
@@ -123,5 +133,3 @@ export class MyEntityAction extends UmbEntityActionBase<MyRepository> {
 ```
 
 We currently have a couple of generic actions that can be used across silos, so we don't have to write the same logic again: copy, move, trash, delete, etc. We can add more as we discover the needs.
-
-TODO: List generic actions + List what alias' they are registered under.

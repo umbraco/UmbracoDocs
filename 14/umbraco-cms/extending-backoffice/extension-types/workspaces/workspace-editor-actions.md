@@ -12,9 +12,8 @@ Workspace action relates to a workspace alias (Umb.Workspace.Document) and has A
 
 **JavaScript Manifest example**
 
-```javascript
-import { extensionRegistry } from '@umbraco-cms/extension-registry';
-import { MyWorkspaceAction } from './my-workspace-action';
+<pre class="language-javascript"><code class="lang-javascript"><strong>import { extensionRegistry } from '@umbraco-cms/extension-registry';
+</strong>import { MyWorkspaceAction } from './my-workspace-action';
 
 const manifest = {
 	type: 'workspaceAction',
@@ -33,7 +32,7 @@ const manifest = {
 };
 
 extensionRegistry.register(manifest);
-```
+</code></pre>
 
 ## The Workspace Action Class
 
