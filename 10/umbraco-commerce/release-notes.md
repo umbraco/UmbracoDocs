@@ -17,6 +17,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 10 including all changes for this version.
 
+#### [10.0.11](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.11) (April 23rd 2024)
+
+* Fixed error in `SearchOrder` when searching with date ranges [#496](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/496).
+
 #### [10.0.10](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F10.0.10) (April 8th 2024)
 
 * Fixed properties set in the background from an entity action lost when resaving the entity from the UI after the action (wasn't fully fixed in 10.0.9) [#472](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/472).
