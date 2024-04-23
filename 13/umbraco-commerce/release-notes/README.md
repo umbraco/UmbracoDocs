@@ -17,6 +17,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 13 including all changes for this version.
 
+#### [13.1.4](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.4) (April 23rd 2024)
+
+* Fixed error in `SearchOrder` when searching with date ranges [#496](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/496).
+
 #### [13.1.3](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.3) (April 8th 2024)
 
 * Fixed properties set in the background from an entity action lost when resaving the entity from the UI after the action (wasn't fully fixed in 13.1.2) [#472](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/472).
