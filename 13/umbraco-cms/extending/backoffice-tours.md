@@ -187,7 +187,7 @@ Below is an explanation of each of the properties on the tour step object.
 
     A CSS selector for an element that, if it is visible, will skip this tour step.
 
-    As an example, it is useful for excluding navigational step if the user is already there, or skipping a step that would toggle an eventElement to the wrong state.
+    This is useful for excluding a navigational step if the user is already there. Or skipping a step that would toggle an eventElement to the wrong state.
 *   **customProperties**
 
     A JSON object that is passed to the scope of a custom step view, so you can use this data in your view with `$scope.model.currentStep.customProperties`.
