@@ -18,6 +18,11 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco UI Builder 13 including all changes for this version.
 
+#### [**13.1.2**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.2) **(April 23rd 2024)**
+
+* Fixed an issue with nested objects in collection entities [#97](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/97)
+* Fixed an issue with the `UdiConverter` causing website configuration binding to return incorrect values [#96](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/96)
+
 #### [**13.1.1**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.1.1) **(March 18th 2024)**
 
 * Fixed an issue where the database is getting disposed in a UIBuilder repository, causing an error when Forms tries to save the form submission after the workflow is complete [Umbraco.Forms.Issues#1179](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1179).
