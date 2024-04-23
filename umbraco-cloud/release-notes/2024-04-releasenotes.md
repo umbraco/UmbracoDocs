@@ -9,7 +9,7 @@
 
 From creating new environments, managing your team, to gaining insight into the performance of your project it has never been easier to use Umbraco Cloud.
 
-With the new project UI and UX on Umbraco Cloud, we have made it simpler and more intuitive to manage your project on Umbraco Cloud.
+With the new UI and UX for projects on Umbraco Cloud, managing your project is now more straightforward and intuitive.
 
 When visiting your project, you'll notice that your project now has a sidebar, containing the different project settings.
 The environment overview have also gotten a new design as well, making it easier to manage your different environments.
