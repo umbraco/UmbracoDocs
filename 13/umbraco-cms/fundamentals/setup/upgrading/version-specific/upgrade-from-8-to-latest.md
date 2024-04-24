@@ -54,12 +54,16 @@ If you use Umbraco Forms, make sure to have [`StoreUmbracoFormsInDbset`](https:/
 ```
 
 {% hint style="info" %}
-You can also add the connection details if you spin up the clean installation&#x20;
+You can also add the connection details if you spin up the clean installation.
 {% endhint %}
 
 4. Run the new project and login to authorize the upgrade.
 5. Select "Upgrade" when the upgrade wizard appears.
 6. Once the upgrade has been completed, it's recommended to login to the backoffice to verify if your project is upgraded to new version.
+
+{% hint style="warning" %}
+If you experience timeout issues when connecting to a database, set the 'Connection Timeout' value in the **ConnectionStrings** section of the `appsettings.json` file.
+{% endhint %}
 
 {% hint style="success" %}
 This is **only content migration** and the database will be migrated.
