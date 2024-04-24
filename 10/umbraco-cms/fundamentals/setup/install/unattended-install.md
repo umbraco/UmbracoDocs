@@ -48,6 +48,10 @@ It is recommended that you make use of the values shown below for the `Cache`, `
 }
 ```
 
+{% hint style="info" %}
+The 'umbracoDbDSN_ProviderName' attribute is used to set the name of the .NET Framework data provider that the DataSource control uses to connect to an underlying data source. For more information on the data providers included in the .Net Framework, see the [Microsoft Documentation](https://learn.microsoft.com/en-us/dotnet/api/system.web.ui.webcontrols.sqldatasource.providername?view=netframework-4.8.1#remarks).
+{% endhint %}
+
 ## Enable the unattended installs feature
 
 The unattended installs feature is disabled by default. In order to enable it, you need to add the following JSON object to a JSON configuration source.
