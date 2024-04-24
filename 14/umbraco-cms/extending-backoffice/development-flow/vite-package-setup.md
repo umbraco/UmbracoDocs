@@ -10,7 +10,7 @@ This page is a work in progress. It will be updated as the software evolves.
 
 ## Vite Package Setup
 
-Umbraco recommends building extensions with a setup using TypeScript and a build tool such as Vite. Umbraco uses the library Lit for building web components which we will be using throughout this guide.&#x20;
+Umbraco recommends building extensions with a setup using TypeScript and a build tool such as Vite. Umbraco uses the library Lit for building web components which we will be using throughout this guide.
 
 ### Getting Started With Vite
 
@@ -31,6 +31,16 @@ To follow this tutorial, we recommend you enter `my-dashboard` as the Project Na
 <figure><img src="../../.gitbook/assets/Vite_Package_Setup_Image_Install (1).png" alt=""><figcaption><p>Create vite command choices</p></figcaption></figure>
 
 This creates a new folder, sets up our new project, and creates a `package.json` file, which includes the necessary packages.
+
+{% hint style="info" %}
+Instead of the 2 above steps, you can do the following:&#x20;
+
+```typescript
+npm create vite@latest my-dashboard -- --template lit-ts
+```
+
+This will create a Vite Package with Lit and Typescript in a folder called `my-dashboard`.
+{% endhint %}
 
 3. Navigate to the new project folder and install the packages using:
 
@@ -92,7 +102,6 @@ npm run build
 If you like to continuously work on the package and have each change built, you can add a `watch`script in your `package.json` with `vite build --watch`. The example below indicates where in the structure this change should be implemented:
 
 {% code title="package.json" lineNumbers="true" %}
-
 ```json
 {
   "name": "my-dashboard",
@@ -103,7 +112,6 @@ If you like to continuously work on the package and have each change built, you 
   },
   ...
 ```
-
 {% endcode %}
 
 Then in the terminal, you can run `npm run watch`.
@@ -117,7 +125,6 @@ This example declares a Dashboard as part of your Package, using the Vite exampl
 [Learn about the abilities of the Umbraco Package here.](../package-manifest.md)
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
-
 ```json
 {
     "$schema": "../../umbraco-package-schema.json",
@@ -138,7 +145,6 @@ This example declares a Dashboard as part of your Package, using the Vite exampl
     ]
 }
 ```
-
 {% endcode %}
 
 {% hint style="info" %}
@@ -151,7 +157,6 @@ To do this, in the `src/my-element.ts` add **`default`** to your `MyElement` cla
 ```ts
 export default class MyElement extends LitElement {
 ```
-
 {% endhint %}
 
 #### Testing your package
