@@ -28,10 +28,15 @@ If your connection string is for SQLite or SQL Server Express LocalDB it is assu
 ```json
 {
   "ConnectionStrings": {
-    "umbracoDbDSN": "server=localhost;database=UmbracoUnicore;user id=sa;password='P@ssw0rd'"
+    "umbracoDbDSN": "server=localhost;database=UmbracoUnicore;user id=sa;password='P@ssw0rd'",
+    "umbracoDbDSN_ProviderName": "System.Data.SqlClient"
   }
 }
 ```
+
+{% hint style="info" %}
+The 'umbracoDbDSN_ProviderName' attribute sets the .NET Framework data provider name for the DataSource control's connection. For more information on the data providers included in the .Net Framework, see the [Microsoft Documentation](https://learn.microsoft.com/en-us/dotnet/api/system.web.ui.webcontrols.sqldatasource.providername?#remarks).
+{% endhint %}
 
 ### SQLite Example in appsettings.json
 
@@ -47,10 +52,6 @@ It is recommended that you make use of the values shown below for the `Cache`, `
   }
 }
 ```
-
-{% hint style="info" %}
-The 'umbracoDbDSN_ProviderName' attribute sets the .NET Framework data provider name for the DataSource control's connection. For more information on the data providers included in the .Net Framework, see the [Microsoft Documentation](https://learn.microsoft.com/en-us/dotnet/api/system.web.ui.webcontrols.sqldatasource.providername?#remarks).
-{% endhint %}
 
 ## Enable the unattended installs feature
 
