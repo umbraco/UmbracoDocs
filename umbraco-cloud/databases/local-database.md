@@ -19,6 +19,8 @@ To view your local SQLite database, you will need to use a program like [DB Brow
 
 You can also configure your project to prefer SQL Server LocalDb when it's available on your local machine by enabling the Deploy [`PreferLocalDbConnectionString`](https://docs.umbraco.com/umbraco-deploy/deploy-settings#preferlocaldbconnectionstring) setting.
 
+To configure your database, you can add the connection string in the 'appsettings.json' file. For more information, see the [Configure your database](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/install/unattended-install#configure-your-database) section in the [Unattended Installs](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/install/unattended-install) article.
+
 ## Using Custom Tables with Umbraco Cloud
 
 Umbraco Cloud will ensure that your Umbraco related data is always up to date, but it won't know anything about data in custom tables unless told. Nothing new here, it's like any other host when it comes to non-Umbraco data.
