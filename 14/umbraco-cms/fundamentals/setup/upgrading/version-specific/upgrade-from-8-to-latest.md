@@ -54,7 +54,7 @@ If you use Umbraco Forms, make sure to have [`StoreUmbracoFormsInDbset`](https:/
 ```
 
 {% hint style="info" %}
-You can also add the connection details if you spin up the clean installation.
+You can also add the connection details if you spin up a clean installation.
 {% endhint %}
 
 4. Run the new project and login to authorize the upgrade.
