@@ -64,7 +64,7 @@ You can also add the connection details if you spin up a clean installation.
 {% hint style="warning" %}
 If your database experiences timeout issues after an upgrade, it might be due to [ASP.NET Core Module's](https://learn.microsoft.com/en-us/aspnet/core/test/troubleshoot-azure-iis?#default-startup-limits) 'startupTimeLimit' configuration.
 
-To fix the issue, try increasing the 'startupTimeLimit' and the 'Connection Timeout' values in the `appsettings.json` file.
+To fix the issue, try increasing the ['startupTimeLimit'](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/web-config?) in the 'web.config' file. Additionally, you can set the ['Connection Timeout'](https://learn.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlconnection.connectiontimeout?) value in the ['ConnectionStrings'](https://learn.microsoft.com/en-us/dotnet/api/microsoft.data.sqlclient.sqlconnection.connectionstring?) section of the `appsettings.json` file.
 {% endhint %}
 
 {% hint style="success" %}
