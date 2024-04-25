@@ -10,13 +10,9 @@ The Content Delivery API delivers headless capabilities built directly into Umbr
 
 The Delivery API is an opt-in feature of Umbraco. It must be explicitly enabled through configuration before it can be utilized.
 
-{% embed url="<https://www.youtube.com/watch?v=sh_AF-ZKJ28>" %}
-Video tutorial
-{% endembed %}
-
 <details>
 
-<summary>Register the Content Delivery API dependencies - <mark style="color:red;"><strong>Only for Version 12 or below</strong></mark></summary>
+<summary>Register the Content Delivery API dependencies - <mark style="color:red;"><strong><code>Only for Version 12 or below</code></strong></mark></summary>
 
 Umbraco projects started on version 11 or below also need to opt-in through code to use the Content Delivery API. Follow the steps below to see how to opt-in through code:
 
@@ -49,7 +45,6 @@ The next step is to enable the Content Delivery API in `appsettings.json`. Follo
 3. Add the `Enabled` key and set its value to `true`:
 
 {% code title="appsettings.json" %}
-
 ```json
 {
     "Umbraco": {
@@ -61,7 +56,6 @@ The next step is to enable the Content Delivery API in `appsettings.json`. Follo
     }
 }
 ```
-
 {% endcode %}
 
 Once the Content Delivery API is enabled, you will need to manually rebuild the Delivery API content index (_DeliveryApiContentIndex_). This can be done using the "Examine Management" dashboard in the "Settings" section. Once the index is rebuilt, the API will be able to serve the latest content from the multiple-items endpoint.
@@ -71,7 +65,6 @@ Once the Content Delivery API is enabled, you will need to manually rebuild the 
 When the Delivery API is enabled in your project, all your published content will be made available to the public by default. However, a few additional configuration options will allow you to restrict access to the Delivery API endpoints and limit the content that is returned.
 
 {% code title="appsettings.json" %}
-
 ```json
 {
     "Umbraco": {
@@ -87,7 +80,6 @@ When the Delivery API is enabled in your project, all your published content wil
     }
 }
 ```
-
 {% endcode %}
 
 * `Umbraco:CMS:DeliveryApi:PublicAccess` determines whether the Delivery API (_if enabled_) should be publicly accessible or if access should require an API key.
@@ -217,7 +209,7 @@ By default, all content properties (including expanded properties) are included 
 
 Property expansion and limiting can be used when querying for both single and multiple content or media items. You can expand properties by adding an `expand` parameter to the query and limit them by the `fields` query parameter.
 
-Refer to [this article](./property-expansion-and-limiting.md) for an in-depth explanation of this feature.
+Refer to [this article](property-expansion-and-limiting.md) for an in-depth explanation of this feature.
 
 </details>
 
@@ -488,7 +480,6 @@ For example, the following API call will attempt to retrieve all the content ite
 ```http
 GET /umbraco/delivery/api/v2/content?fetch=children:dc1f43da-49c6-4d87-b104-a5864eca8152
 ```
-
 {% endtab %}
 
 {% tab title="filter" %}
@@ -536,7 +527,6 @@ This technique can also be used to perform range filtering. For example, fetch a
 ```http
 GET /umbraco/delivery/api/v2/content?filter=contentType:article&filter=createDate>:2023-01-01&filter=createDate<2024-01-01&skip=0&take=10
 ```
-
 {% endtab %}
 
 {% tab title="sort" %}
@@ -564,7 +554,6 @@ Different sorting options can be combined for the `/umbraco/delivery/api/v2/cont
 ```http
 GET /umbraco/delivery/api/v2/content?sort=name:asc&sort=createDate:asc
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -590,18 +579,15 @@ To handle this we have to change the limit. Since the Delivery API has its own J
 First, we have to add these `using` statements to `Program.cs`:
 
 {% code title="Program.cs" %}
-
 ```csharp
 using Umbraco.Cms.Api.Common.DependencyInjection;
 using Umbraco.Cms.Core;
 ```
-
 {% endcode %}
 
 Now we can add the following code snippet to the `Program.cs` file:
 
 {% code title="Program.cs" %}
-
 ```csharp
 builder.Services.AddControllers().AddJsonOptions(
     Constants.JsonOptionsNames.DeliveryApi,
@@ -611,7 +597,6 @@ builder.Services.AddControllers().AddJsonOptions(
         options.JsonSerializerOptions.MaxDepth = {desired max depth}
     });
 ```
-
 {% endcode %}
 
 ## Current Limitations
