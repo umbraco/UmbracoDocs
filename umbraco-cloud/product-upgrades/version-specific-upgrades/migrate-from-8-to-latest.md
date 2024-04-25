@@ -59,7 +59,6 @@ As you are cloning down a brand new Cloud project there is nothing the restore. 
 ```json
 "ConnectionStrings": {
     "umbracoDbDSN": "Server=YourLocalSQLServerHere;Database=NameOfYourDatabaseHere;User Id=NameOfYourUserHere;Password=YourPasswordHere;TrustServerCertificate=True",
-    "umbracoDbDSN_ProviderName": "YourProviderName"
 }
 ```
 
