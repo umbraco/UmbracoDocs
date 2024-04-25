@@ -90,6 +90,12 @@ If you have other packages installed such as Umbraco Forms, then before upgradin
 
 9. Restart your site in IIS, build, and run your project to finish the installation.
 
+{% hint style="warning" %}
+If your database experiences timeout issues after an upgrade, it might be due to [ASP.NET Core Module's](https://learn.microsoft.com/en-us/aspnet/core/test/troubleshoot-azure-iis?#default-startup-limits) 'startupTimeLimit' configuration.
+
+To fix the issue, try increasing the [`startupTimeLimit`](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/web-config?) in the `web.config` file. Additionally, you can set the [`Connection Timeout`](https://learn.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlconnection.connectiontimeout?) value in the [`ConnectionString`](https://learn.microsoft.com/en-us/dotnet/api/microsoft.data.sqlclient.sqlconnection.connectionstring?) in the `appsettings.json` file.
+{% endhint %}
+
 ## Upgrade to a new Minor
 
 NuGet installs the latest version of the package when you use the `dotnet add package` command unless you specify a package version:

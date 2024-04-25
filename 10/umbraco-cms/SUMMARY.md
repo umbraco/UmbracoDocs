@@ -24,7 +24,7 @@
     * [Unattended Installs](fundamentals/setup/install/unattended-install.md)
   * [Upgrade your project](fundamentals/setup/upgrading/README.md)
     * [Version Specific Upgrades](fundamentals/setup/upgrading/version-specific/README.md)
-      * [Upgrade from Umbraco 8 to the latest version](fundamentals/setup/upgrading/version-specific/upgrade-from-8-to-latest.md)
+      * [Upgrade from Umbraco 8 to Umbraco 10](fundamentals/setup/upgrading/version-specific/upgrade-from-8-to-latest.md)
       * [Migrate content to Umbraco 8](fundamentals/setup/upgrading/version-specific/migrate-content-to-umbraco-8.md)
       * [Minor upgrades for Umbraco 8](fundamentals/setup/upgrading/version-specific/minor-upgrades-for-umbraco-8.md)
       * [Upgrade to Umbraco 7](fundamentals/setup/upgrading/version-specific/upgrade-to-umbraco-7.md)
