@@ -17,6 +17,15 @@ The new Backoffice for Umbraco CMS is scheduled for release along with Umbraco 1
 #### Recommended starting points
 
 1. [Install v14](fundamentals/setup/install/)-RC
+
+{% hint style="warning" %}
+If you have previously installed the Nightly or pre-release feeds versions you must clear the cache to use the new versions. This can be done by running the following command:
+
+`dotnet nuget locals all --clear`
+
+Then restore your package with `dotnet restore` and run the solution again with `dotnet run`.
+{% endhint %}
+
 2. [Setup your development Environment](extending-backoffice/development-flow/) followed by [Vite package setup](extending-backoffice/development-flow/vite-package-setup.md)
 3. [Creating your first extension](tutorials/creating-a-basic-website/creating-your-first-template-and-content-node.md)
 4. [Creating a custom dashboard](tutorials/creating-a-custom-dashboard/)
@@ -46,15 +55,15 @@ The list will be updated as more articles have been created and updated.
     * Upgrade your project
       * [Version specific upgrades](fundamentals/setup/upgrading/version-specific/)
   * **BACKOFFICE**:
-    * [Document Blueprints](fundamentals/backoffice/document-blueprints.md)
+    * [Document Blueprints](fundamentals/backoffice/document-blueprints.md) (previously known as Content Templates)
 * **EXTENDING BACKOFFICE (new section)**
-  * All articles under it
+  * All articles under it are mostly new
 * **REFERENCE**:
-  * [Management API](reference/management-api/)
-    * [Setup OAuth using Postman](reference/management-api/postman-setup-swagger.md)
-  * [Custom Swagger API](reference/custom-swagger-api.md)
+  * [Management API](reference/management-api/) (new article)
+    * [Setup OAuth using Postman](reference/management-api/postman-setup-swagger.md) (new article)
+  * [Custom Swagger API](reference/custom-swagger-api.md) (new article)
 * **TUTORIALS**:
-  * [Create your first extension](tutorials/creating-your-first-extension.md)
+  * [Create your first extension](tutorials/creating-your-first-extension.md) (new article)
   * [Creating a Custom Dashboard](tutorials/creating-a-custom-dashboard/)
   * [Creating a Property Editor](tutorials/creating-a-property-editor/)
   * [Implementing Custom Error Pages](tutorials/custom-error-page.md)
