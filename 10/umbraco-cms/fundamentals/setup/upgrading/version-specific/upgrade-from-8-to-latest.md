@@ -62,7 +62,9 @@ You can also add the connection details if you spin up a clean installation.
 6. Once the upgrade has been completed, it's recommended to login to the backoffice to verify if your project is upgraded to new version.
 
 {% hint style="warning" %}
-If you experience timeout issues when connecting to a database, set the 'Connection Timeout' value in the **ConnectionStrings** section of the `appsettings.json` file.
+If you experience timeout issues on the database after upgrading, it be that you have run into a startup limit based on the [Microsoft Troubleshooting](https://learn.microsoft.com/en-us/aspnet/core/test/troubleshoot-azure-iis?#default-startup-limits) guide. 
+
+A solution for this could be to add a configuration to the [web.config](https://learn.microsoft.com/en-us/aspnet/core/test/troubleshoot-azure-iis?#aspnet-core-module-stdout-log-azure-app-service) file setting increasing the value of the startupTimeLimit and the connection timeout to above 1200.
 {% endhint %}
 
 {% hint style="success" %}
