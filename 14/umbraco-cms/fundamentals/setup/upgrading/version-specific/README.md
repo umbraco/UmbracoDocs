@@ -42,7 +42,7 @@ Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 * **Light, Dark or Contract Mode** option has been added in the backoffice. You can choose your preffered mode from your profile information.
 * [UI Library and UI API](broken-reference) external documentations.
 
-**In-depth and further breaking changes for v14 can be found on the** [**CMS Github**](https://github.com/umbraco/Umbraco-CMS/pulls?q=is%3Apr+base%3Av14%2Fdev+label%3Acategory%2Fbreaking) **repository.**
+**In-depth and further breaking changes for v14 can be found on the** [**CMS Github**](https://github.com/umbraco/Umbraco-CMS/pulls?q=is%3Apr+base%3Av14%2Fdev+label%3Acategory%2Fbreaking) **repository and on** [**Our Website**](https://our.umbraco.com/download/releases/1400)**.**
 
 </details>
 
@@ -52,22 +52,21 @@ Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 
 Below you can find the list of breaking changes introduced in Umbraco 14 RC release versions.
 
+[**RC 2**](https://our.umbraco.com/download/releases/1400)
+
+Bellissima (Client) Breaking Changes since:
+
+* [#1690](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1690) - Bugfix: The modal context should update the entire value rather than updating it partially
+* [#1670](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1679) - Delete UmbInputListBaseElement
+
 [**RC 1**](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-rc1)\
 First RC release - 17th of April.
 
-**Breaking changes from beta 3:**
+**Breaking changes since Beta 3:**
 
 * [#1411](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1411) - Bugfix: Move To Entity Action (Part 1)&#x20;
 * [#1568](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1568) - Feature/Content Editor Kind + Work for validation (take 3)&#x20;
 * [#1591](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1591) - Bugfix: Duplicate to Entity Action (part 1)
-
-#### New Features:
-
-* [#1593](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1593) - Media Entity Picker property-editor UI&#x20;
-* [#1598](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1598) - Hide entity actions when Tree used inside a Modal
-* [#1611](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1611) - Media Tree Item
-* [#1605](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1605) - Document Type Create Actions
-* [#1638](https://github.com/umbraco/Umbraco.CMS.Backoffice/pull/1638) - Umbraco version number (header logo modal)
 
 </details>
 
