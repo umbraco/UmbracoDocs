@@ -96,6 +96,13 @@ Umbraco Cloud supports both HTTP2 and HTTP3 protocols.
 
 By default, all ports are closed to secure them against external attacks. This is done for all ports apart from 80 (HTTP) and 443 (HTTPS).
 
+{% hint style="info" %}
+Some scanning tools will report some other ports open due to cloudflare's default support on those ports. However, all traffic on those ports are managed by Umbraco Cloud and never reach your project. 
+[Read more more about cloudflare network ports](https://developers.cloudflare.com/fundamentals/reference/network-ports/)
+{% endhint %}
+
+
+
 ## Firewall & Restricting public access to Umbraco Cloud resources
 
 Umbraco Cloud offers a multitude of features allowing you to block access to different resources.
