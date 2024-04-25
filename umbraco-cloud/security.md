@@ -100,8 +100,6 @@ By default, all ports are closed to secure them against external attacks. This i
 Some scanning tools will report some other ports open due to Cloudflare's default support on those ports. However, all traffic on those ports is managed by Umbraco Cloud and never reaches your project. You can read more about the Cloudflare Network Ports in the [Cloudflare Documentation](https://developers.cloudflare.com/fundamentals/reference/network-ports/).
 {% endhint %}
 
-
-
 ## Firewall & Restricting public access to Umbraco Cloud resources
 
 Umbraco Cloud offers a multitude of features allowing you to block access to different resources.
