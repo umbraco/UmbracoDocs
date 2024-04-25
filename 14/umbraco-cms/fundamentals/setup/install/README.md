@@ -7,8 +7,6 @@ description: Instructions on installing Umbraco on various platforms using vario
 {% hint style="warning" %}
 This page is a work in progress. It will be updated as the software evolves.
 
-
-
 If you have previously installed the Nightly or pre-release feeds versions, you must clear the cache to use the new versions. This can be done by running the following command:
 
 `dotnet nuget locals all --clear`
@@ -24,7 +22,7 @@ The fastest way to get the latest version of Umbraco up and running is using the
 2. Install the Umbraco templates:
 
 ```bash
-dotnet new install Umbraco.Templates::14.0.0-rc1
+dotnet new install Umbraco.Templates::14.0.0-rc2
 ```
 
 3. Create a new project:

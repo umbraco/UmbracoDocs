@@ -51,12 +51,12 @@ npm install
 4. Install the Backoffice package. You can install the package using the following command:
 
 ```bash
-npm install --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@14.0.0-rc1
+npm install --registry https://www.myget.org/F/umbracoprereleases/npm/ -D @umbraco-cms/backoffice@14.0.0-rc2
 ```
 
 {% hint style="info" %}
 Optionally you can use `--legacy-peer-deps` in the installation command to avoid installing Umbraco´s sub-dependencies like TinyMCE and Monaco Editor:\
-`npm install --legacy-peer-deps --registry`[`https://www.myget.org/F/umbracoprereleases/npm/`](https://www.myget.org/F/umbracoprereleases/npm/)`-D @umbraco-cms/backoffice@14.0.0-rc1`
+`npm install --legacy-peer-deps --registry`[`https://www.myget.org/F/umbracoprereleases/npm/`](https://www.myget.org/F/umbracoprereleases/npm/)`-D @umbraco-cms/backoffice@14.0.0-rc2`
 
 If this is used the Intellisense to those external references will not be available.
 {% endhint %}
@@ -102,6 +102,7 @@ npm run build
 If you like to continuously work on the package and have each change built, you can add a `watch`script in your `package.json` with `vite build --watch`. The example below indicates where in the structure this change should be implemented:
 
 {% code title="package.json" lineNumbers="true" %}
+
 ```json
 {
   "name": "my-dashboard",
@@ -112,6 +113,7 @@ If you like to continuously work on the package and have each change built, you 
   },
   ...
 ```
+
 {% endcode %}
 
 Then in the terminal, you can run `npm run watch`.
@@ -125,6 +127,7 @@ This example declares a Dashboard as part of your Package, using the Vite exampl
 [Learn about the abilities of the Umbraco Package here.](../package-manifest.md)
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
+
 ```json
 {
     "$schema": "../../umbraco-package-schema.json",
@@ -145,6 +148,7 @@ This example declares a Dashboard as part of your Package, using the Vite exampl
     ]
 }
 ```
+
 {% endcode %}
 
 {% hint style="info" %}
@@ -157,6 +161,7 @@ To do this, in the `src/my-element.ts` add **`default`** to your `MyElement` cla
 ```ts
 export default class MyElement extends LitElement {
 ```
+
 {% endhint %}
 
 #### Testing your package
