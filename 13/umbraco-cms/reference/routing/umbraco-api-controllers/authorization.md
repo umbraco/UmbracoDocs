@@ -22,6 +22,10 @@ This attribute will ensure that a valid backoffice user is logged in. It is impo
 
 **Example:**
 
+{% hint style="warning" %}
+The examples below uses UmbracoApiController which is removed in Umbraco 14. The replacement for this is UmbracoManagementApiControllerBase.
+{% endhint %}
+
 This will only allow a logged in backoffice user to access the `GetProduct`action:
 
 ```csharp

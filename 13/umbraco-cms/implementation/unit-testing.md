@@ -163,6 +163,10 @@ public class PageSurfaceControllerTests
 
 See [Reference documentation on UmbracoApiControllers](../reference/routing/umbraco-api-controllers/README.md#locally-declared-controller).
 
+{% hint style="warning" %}
+The example below uses UmbracoApiController which is removed in Umbraco 14. The replacement for this is UmbracoManagementApiControllerBase.
+{% endhint %}
+
 ```csharp
 public class ProductsController : UmbracoApiController
 {

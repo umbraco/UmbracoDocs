@@ -8,6 +8,10 @@ _This section will describe how Umbraco Api controllers are routed and how to re
 
 ## Routing
 
+{% hint style="warning" %}
+UmbracoApiController is removed in Umbraco 14. The replacement for this is UmbracoManagementApiControllerBase.
+{% endhint %}
+
 Like Surface Controllers in Umbraco, when you inherit from the base class `Umbraco.Cms.Web.Common.Controllers.UmbracoApiController` we will auto-route this controller so you don't have to worry about routing at all.
 
 All locally declared Umbraco api controllers will be routed under the URL path of:

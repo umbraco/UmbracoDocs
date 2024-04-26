@@ -144,6 +144,7 @@ builder.Services.AddUmbracoDbContext<CustomDbContext>((serviceProvider, options)
         options.UseUmbracoDatabaseProvider(serviceProvider);
     });
 ```
+
 {% endhint %}
 
 2. Open your terminal and navigate to your project folder.
@@ -162,6 +163,7 @@ If you use another class library in your project to store models and DBContext c
 ```bash
 dotnet ef migrations add initialCreate -s ../Project.Web/ --context BlogContext
 ```
+
 {% endhint %}
 
 In this example, we have named the migration `InitialCreate`. However, you can choose the name you like.
@@ -293,6 +295,8 @@ public class BlogCommentsController : UmbracoApiController
         scope.Complete();
     }
 }
-
-
 ```
+
+{% hint style="warning" %}
+The above example uses UmbracoApiController which is removed in Umbraco 14. The replacement for this is UmbracoManagementApiControllerBase.
+{% endhint %}
