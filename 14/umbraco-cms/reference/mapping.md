@@ -8,7 +8,7 @@ UmbracoMapper replaced AutoMapper which was an external dependency. AutoMapper b
 This is not to be confused with the [UmbracoMapper package by Andy Butland](https://our.umbraco.com/packages/developer-tools/umbraco-mapper) of the same name.
 {% endhint %}
 
-UmbracoMapper was originally introduced to solve some issues in the Umbraco core code, however it is totally fine for anyone to use in their custom site implementations or packages as they wish.
+UmbracoMapper was originally introduced to solve some issues in the Umbraco core code, however it is fine for anyone to use in their custom site implementations or packages as they wish.
 
 ## Accessing the IUmbracoMapper
 
