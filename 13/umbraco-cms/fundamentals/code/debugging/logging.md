@@ -10,7 +10,7 @@ The default location of this file is written to `umbraco/Logs` and contains the 
 
 ## Video overview
 
-{% embed url="https://youtu.be/PDqIRVygAQ4" %}
+{% embed url="<https://youtu.be/PDqIRVygAQ4>" %}
 Watch this video to get an overview of how to view and manage logs and logfiles for your Umbraco CMS website.
 {% endembed %}
 
@@ -55,6 +55,10 @@ To learn more about structured logging and message templates you can read more a
 Umbraco writes log messages, but you are also able to use the Umbraco logger to write the log file as needed, so you can get further insights and details about your implementation.
 
 Here is an example of using the logger to write an Information message to the log which will contain one property of **Name** which will output the name variable that is passed into the method
+
+{% hint style="warning" %}
+The example below uses UmbracoApiController which is removed in Umbraco 14. The replacement for this is UmbracoManagementApiControllerBase.
+{% endhint %}
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;

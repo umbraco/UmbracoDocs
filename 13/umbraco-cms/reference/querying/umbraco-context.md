@@ -18,7 +18,7 @@ If you need an `UmbracoContext` in your own controllers, you need to inject an `
 
 The following is an example of how to get access to the `UmbracoContext` in a controller:
 
-```
+``` csharp
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -66,5 +66,9 @@ public class PeopleController : UmbracoApiController
     }
 }
 ```
+
+{% hint style="warning" %}
+The above example uses UmbracoApiController which is removed in Umbraco 14. The replacement for this is UmbracoManagementApiControllerBase.
+{% endhint %}
 
 UmbracoContext is registered with a scoped lifetime. See the [Microsoft documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-5.0#lifetime-and-registration-options) for more information. A service scope is created for each request, which means you can resolve an instance directly in a controller.

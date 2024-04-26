@@ -74,6 +74,10 @@ public class BadApiController : UmbracoApiController
 }
 ```
 
+{% hint style="warning" %}
+The above example uses UmbracoApiController which is removed in Umbraco 14. The replacement for this is UmbracoManagementApiControllerBase.
+{% endhint %}
+
 This practice can cause memory leaks along with inconsistent data results when using this `_umbracoHelper` instance.
 
 **Why?**
@@ -108,11 +112,11 @@ You create a menu on your Home page like:
 
 ```csharp
 <ul>
-	<li><a href="@Model.Root().Url()">@Model.Root().Name</a></li>
-	@foreach (var node in Model.Root().DescendantsOrSelf().Where(x => x.Level == 2))
-	{
-		<li><a href="@node.Url()">@node.Name</a></li>
-	}
+ <li><a href="@Model.Root().Url()">@Model.Root().Name</a></li>
+ @foreach (var node in Model.Root().DescendantsOrSelf().Where(x => x.Level == 2))
+ {
+  <li><a href="@node.Url()">@node.Name</a></li>
+ }
 </ul>
 ```
 
@@ -124,11 +128,11 @@ This can be re-written as:
 
 ```csharp
 <ul>
-	<li><a href="@Model.Root().Url()">@Model.Root().Name</a></li>
-	@foreach (var node in Model.Root().Children)
-	{
-		<li><a href="@node.Url()">@node.Name</a></li>
-	}
+ <li><a href="@Model.Root().Url()">@Model.Root().Name</a></li>
+ @foreach (var node in Model.Root().Children)
+ {
+  <li><a href="@node.Url()">@node.Name</a></li>
+ }
 </ul>
 ```
 
@@ -142,11 +146,11 @@ Here's a common pitfall that is seen. Let's continue the menu example, in this e
 
 ```csharp
 <ul>
-	<li><a href="@Model.Root().Url()">@Model.Root().Name</a></li>
-	@foreach (var node in Model.Root().Children)
-	{
-		<li><a href="@node.Url()">@node.Name</a></li>
-	}
+ <li><a href="@Model.Root().Url()">@Model.Root().Name</a></li>
+ @foreach (var node in Model.Root().Children)
+ {
+  <li><a href="@node.Url()">@node.Name</a></li>
+ }
 </ul>
 ```
 
@@ -154,14 +158,14 @@ The syntax `@Model.Root()` is shorthand for doing this: `Model.AncestorOrSelf(1)
 
 ```csharp
 @{
-	var root = Model.Root();
+ var root = Model.Root();
 }
 <ul>
-	<li><a href="@root.Url()">@root.Name</a></li>
-	@foreach (var node in root.Children)
-	{
-		<li><a href="@node.Url()">@node.Name</a></li>
-	}
+ <li><a href="@root.Url()">@root.Name</a></li>
+ @foreach (var node in root.Children)
+ {
+  <li><a href="@node.Url()">@node.Name</a></li>
+ }
 </ul>
 ```
 
@@ -178,11 +182,11 @@ Your views should rely only on the read-only data services such as `UmbracoHelpe
 @inject IContentService _contentService
 
 @{
-	// Services access in your views :(
-	var dontDoThis = _contentService.GetById(1234);
-	
-	// Content cache access in your views
-	var doThis = Umbraco.Content(1234);
+ // Services access in your views :(
+ var dontDoThis = _contentService.GetById(1234);
+ 
+ // Content cache access in your views
+ var doThis = Umbraco.Content(1234);
 }
 ```
 
@@ -284,17 +288,17 @@ You then run the following code to show to show the favorites
 ```csharp
 @var recipeNode = Umbraco.TypedContent(3251);
 @{
-	var recipeNode = Umbraco.Content(1234);
+ var recipeNode = Umbraco.Content(1234);
 }
 
 <ul>
-	@foreach (var recipe in recipeNode.Children
-		.Select(x => new RecipeModel(x, _publishedValueFallback))
-		.OrderByDescending(x => x.Votes)
-		.Take(10))
-	{
-		<li><a href="@recipe.Url()">@recipe.Name</a></li>
-	}	
+ @foreach (var recipe in recipeNode.Children
+  .Select(x => new RecipeModel(x, _publishedValueFallback))
+  .OrderByDescending(x => x.Votes)
+  .Take(10))
+ {
+  <li><a href="@recipe.Url()">@recipe.Name</a></li>
+ } 
 </ul>
 ```
 
@@ -345,16 +349,16 @@ This is still not great though. There really isn't much reason to create a `Reci
 
 ```csharp
 @{
-	var recipeNode = Umbraco.Content(1234);
+ var recipeNode = Umbraco.Content(1234);
 }
 
 <ul>
-	@foreach (var recipe in recipeNode.Children
-		.OrderByDescending(x => x.Value<int>("votes"))
-		.Take(10))
-	{
-		<li><a href="@recipe.Url()">@recipe.Name</a></li>
-	}
+ @foreach (var recipe in recipeNode.Children
+  .OrderByDescending(x => x.Value<int>("votes"))
+  .Take(10))
+ {
+  <li><a href="@recipe.Url()">@recipe.Name</a></li>
+ }
 </ul>
 ```
 

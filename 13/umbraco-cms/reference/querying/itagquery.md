@@ -18,6 +18,10 @@ After this you can use `_tagQuery` to access the `ITagQuery`.
 
 If you're using it in controllers, you can inject it into the constructor like so:
 
+{% hint style="warning" %}
+The example below uses UmbracoApiController which is removed in Umbraco 14. The replacement for this is UmbracoManagementApiControllerBase.
+{% endhint %}
+
 ```csharp
 using System.Collections.Generic;
 using System.Linq;
@@ -30,17 +34,17 @@ namespace UmbracoHelperDocs.Controllers;
 [Route("tags/[action]")]
 public class TagApiController : UmbracoApiController
 {
-	private readonly ITagQuery _tagQuery;
+ private readonly ITagQuery _tagQuery;
 
-	public TagApiController(ITagQuery tagQuery)
-	{
-		_tagQuery = tagQuery;
-	}
+ public TagApiController(ITagQuery tagQuery)
+ {
+  _tagQuery = tagQuery;
+ }
 
-	public ActionResult<IEnumerable<string>> GetMediaTags()
-	{
-		return _tagQuery.GetAllMediaTags().Select(tag => tag.Text).ToList();
-	}
+ public ActionResult<IEnumerable<string>> GetMediaTags()
+ {
+  return _tagQuery.GetAllMediaTags().Select(tag => tag.Text).ToList();
+ }
 }
 ```
 
@@ -58,8 +62,8 @@ Get a collection of tags used by content items on the site, you can optionally p
 
 ```csharp
 @{
-	var allContentTags = _tagQuery.GetAllContentTags();
-	var newsContentTags = _tagQuery.GetAllContentTags("news");
+ var allContentTags = _tagQuery.GetAllContentTags();
+ var newsContentTags = _tagQuery.GetAllContentTags("news");
 }
 ```
 
@@ -69,8 +73,8 @@ Get a collection of tags used by media items on the site, you can optionally pas
 
 ```csharp
 @{
-	var allMediaTags = _tagQuery.GetAllMediaTags();
-	var newsMediaTags = _tagQuery.GetAllMediaTags("news");
+ var allMediaTags = _tagQuery.GetAllMediaTags();
+ var newsMediaTags = _tagQuery.GetAllMediaTags("news");
 }
 ```
 
@@ -80,8 +84,8 @@ Get a collection of tags used by members on the site, you can optionally pass in
 
 ```csharp
 @{
-	var allMemberTags = _tagQuery.GetAllMemberTags();
-	var newsMemberTags = _tagQuery.GetAllMemberTags("news");
+ var allMemberTags = _tagQuery.GetAllMemberTags();
+ var newsMemberTags = _tagQuery.GetAllMemberTags("news");
 }
 ```
 
@@ -91,8 +95,8 @@ Get a collection of tags used on the site, you can optionally pass in a group na
 
 ```csharp
 @{
-	var allTags = _tagQuery.GetAllTags();
-	var allNewsTags = _tagQuery.GetAllTags("news");
+ var allTags = _tagQuery.GetAllTags();
+ var allNewsTags = _tagQuery.GetAllTags("news");
 }
 ```
 
@@ -102,7 +106,7 @@ Get a collection of IPublishedContent by tag, and you can optionally filter by t
 
 ```csharp
 @{
-	var taggedContent = _tagQuery.GetContentByTag("News");
+ var taggedContent = _tagQuery.GetContentByTag("News");
 }
 ```
 
@@ -112,7 +116,7 @@ Get a collection of IPublishedContent by tag group
 
 ```csharp
 @{
-	var taggedContent = _tagQuery.GetContentByTagGroup("BlogTags");
+ var taggedContent = _tagQuery.GetContentByTagGroup("BlogTags");
 }
 ```
 
@@ -122,7 +126,7 @@ Get a collection of Media by tag, and you can optionally filter by tag group as 
 
 ```csharp
 @{
-	var taggedMedia = _tagQuery.GetMediaByTag("BlogTag");
+ var taggedMedia = _tagQuery.GetMediaByTag("BlogTag");
 }
 ```
 
@@ -132,7 +136,7 @@ Get a collection of Media by tag group
 
 ```csharp
 @{
-	var mediaByTagGroup = _tagQuery.GetMediaByTagGroup("BlogTags");
+ var mediaByTagGroup = _tagQuery.GetMediaByTagGroup("BlogTags");
 }
 ```
 
@@ -142,7 +146,7 @@ Get a collection of tags by entity id (queries content, media and members), and 
 
 ```csharp
 @{
-	var tagsForEntity = _tagQuery.GetTagsForEntity(1234);
+ var tagsForEntity = _tagQuery.GetTagsForEntity(1234);
 }
 ```
 
@@ -152,6 +156,6 @@ Get a collection of tags assigned to a property of an entity (queries content, m
 
 ```csharp
 @{
-	var propertyTags = _tagQuery.GetTagsForProperty(1234, "propertyTypeAlias");
+ var propertyTags = _tagQuery.GetTagsForProperty(1234, "propertyTypeAlias");
 }
 ```

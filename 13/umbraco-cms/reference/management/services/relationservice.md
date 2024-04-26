@@ -403,6 +403,10 @@ public class RelationsController : UmbracoApiController
 }
 ```
 
+{% hint style="warning" %}
+The above example uses UmbracoApiController which is removed in Umbraco 14. The replacement for this is UmbracoManagementApiControllerBase.
+{% endhint %}
+
 Notice the `x => new Relation()`? We need to make sure what we are returning can be serialized. Therefore the `Relation` class is:
 
 ```csharp

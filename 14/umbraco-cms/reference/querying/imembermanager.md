@@ -23,7 +23,7 @@ _memberManager.IsLoggedIn()
 
 ### Dependency Injection
 
-If you wish to use the `IMemberManager` in a class that inherits from one of the Umbraco base classes (eg. `SurfaceController`, `UmbracoApiController`, or `UmbracoAuthorizedApiController`), you can use Dependency Injection. For instance, if you have registered your own class in Umbraco's dependency injection, you can specify the `IMemberManager` interface in your constructor:
+If you wish to use the `IMemberManager` in a class that inherits from one of the Umbraco base classes (eg. `SurfaceController`, `UmbracoManagementApiControllerBase`, or `UmbracoAuthorizedApiController`), you can use Dependency Injection. For instance, if you have registered your own class in Umbraco's dependency injection, you can specify the `IMemberManager` interface in your constructor:
 
 ```csharp
 public class MemberAuthenticationSurfaceController : SurfaceController

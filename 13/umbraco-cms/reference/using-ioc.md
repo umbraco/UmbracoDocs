@@ -104,6 +104,7 @@ It is not required to have an interface for your dependency:
 ```csharp
 services.AddSingleton<Foobar>();
 ```
+
 {% endhint %}
 
 Now you can call your `AddCustomServices` in either the `Program.cs` file, or your composer like so:
@@ -188,6 +189,10 @@ public class FooController : UmbracoApiController
 }
 ```
 
+{% hint style="warning" %}
+The above example uses UmbracoApiController which is removed in Umbraco 14. The replacement for this is UmbracoManagementApiControllerBase.
+{% endhint %}
+
 If you place a breakpoint on `var bar = _foobar.Foo()`, open `/Umbraco/Api/foo/foo` in your browser and inspect the variable, you'll see that the value is `bar`, which is what you'd expect since all the `Foobar.Foo()` method does it to return `Bar` as a string:
 
 ```csharp
@@ -214,7 +219,7 @@ You might need to use services within your templates or views, fortunately, you 
 @inject IFooBar _fooBar
 
 @{
-	Layout = null;
+ Layout = null;
 }
 
 <h1>@_fooBar.Foo()</h1>
