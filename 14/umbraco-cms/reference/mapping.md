@@ -144,7 +144,7 @@ var target = umbracoMapper.Map<ITarget>(source, context =>
 
 ## Umbraco.Code
 
-Umbraco.Code is an assembly which should contain various coding utilities for Umbraco. At the moment, it contains only one Roslyn analyzer, the `MapAllAnalyzer`, which is used to help writing mapping methods.
+Umbraco.Code is an assembly which should contain coding utilities for Umbraco. At the moment, it contains only one Roslyn analyzer, the `MapAllAnalyzer`, which is used to help writing mapping methods.
 
 The code lives in the [Umbraco.Code repository](https://github.com/umbraco/Umbraco-Code) and the tool is available via [Nuget](https://www.nuget.org/packages/Umbraco.Code/). It is included as a development dependency in Umbraco.
 
