@@ -93,7 +93,7 @@ The constructor function is used whenever the mapper is asked to create a target
 In other words, `umbracoMapper.Map<ITarget>(source)` will first run the construction function, and then the mapping action.
 On the other hand, `umbracoMapper.Map(source, target)` where target already exists, would only run the mapping action.
 
-The UmbracoMapper class provides various overloads of the Define method:
+The UmbracoMapper class provides multiple overloads of the Define method:
 
 - An overload accepting a constructor function and a mapping action, as presented above.
 - An overload accepting a mapping action only, which tells the mapper how to map to an existing target (but the mapper will not be able to create new target instances).
