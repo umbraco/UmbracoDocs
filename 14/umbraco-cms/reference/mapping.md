@@ -16,7 +16,7 @@ The IUmbracoMapper is registered with Dependency Injection (DI). It can therefor
 
 ## Mapping
 
-Mapping with the UmbracoMapper works in ways very similar to AutoMapper:
+Mapping with the UmbracoMapper works in ways similar to AutoMapper:
 
 ```csharp
 // assuming source is ISource, create a new target instance
