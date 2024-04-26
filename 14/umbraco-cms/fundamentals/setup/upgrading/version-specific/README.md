@@ -52,7 +52,7 @@ Below you can find the list of breaking changes introduced in Umbraco 14 CMS.
 
 Below you can find the list of breaking changes introduced in Umbraco 14 RC release versions.
 
-[**RC 2**](https://our.umbraco.com/download/releases/1400)
+[**RC 2**](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-rc2)
 
 Bellissima (Client) Breaking Changes since:
 
