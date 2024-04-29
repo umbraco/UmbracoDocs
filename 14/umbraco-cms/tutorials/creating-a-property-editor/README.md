@@ -403,6 +403,8 @@ export class MySuggestionsPropertyEditorUIElement
     ];
 }
 
+export default MySuggestionsPropertyEditorUIElement;
+
 declare global {
     interface HTMLElementTagNameMap {
         'my-suggestions-property-editor-ui': MySuggestionsPropertyEditorUIElement;
