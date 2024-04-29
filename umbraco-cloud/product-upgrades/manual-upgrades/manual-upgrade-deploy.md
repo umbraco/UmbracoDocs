@@ -68,13 +68,14 @@ Make sure that everything works on the local clone and that you can **run the pr
 
 <!---->
 
-5. Enter [`https://umbraconightlies.blob.core.windows.net/umbraco-deploy-release`](https://umbraconightlies.blob.core.windows.net/umbraco-deploy-release) in the **"Blob container or directory URL":**<img src="../../.gitbook/assets/image (3) (1) (1) (1).png" alt="" data-size="original">
+5. Enter [`https://umbraconightlies.blob.core.windows.net/umbraco-deploy-release`](https://umbraconightlies.blob.core.windows.net/umbraco-deploy-release) in the **"Blob container or directory URL":**\
 
-<!---->
 
-6. You will then get a list of files available to download:![](<../../.gitbook/assets/image (4) (1) (1) (1).png>)
+<img src="../../.gitbook/assets/image (3) (1) (1) (1).png" alt="" data-size="original">
 
-<!---->
+6. You will then get a list of files available to download:
+
+![](<../../.gitbook/assets/image (4) (1) (1) (1).png>)
 
 7. Download the latest version of Umbraco Deploy. Check [Product Dependencies](https://docs.umbraco.com/umbraco-cloud/product-upgrades/product-dependencies) to be sure you download the correct version of Deploy.
 8. Download the to your computer
