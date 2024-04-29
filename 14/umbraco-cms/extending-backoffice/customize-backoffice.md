@@ -21,8 +21,8 @@ In this section of the documentation, we'll provide an overview of the different
 There are a few words that cover certain concepts, which is good to learn to decode the purpose of code.
 
 * **Resource:** An API enables communication with a server.
-* **Store:** An API representing data, generally coming from the server. Most stores would talk with one or more resources. You can read more about this in the [Store](working-with-data/store.md)article.
-* **State:** A reactive container holding data, when data is changed all its Observables will be notified. You can read more about state and observables in the [States](working-with-data/states.md)article.
+* **Store:** An API representing data, generally coming from the server. Most stores would talk with one or more resources. You can read more about this in the [Store](working-with-data/store.md) article.
+* **State:** A reactive container holding data, when data is changed all its Observables will be notified. You can read more about state and observables in the [States](working-with-data/states.md) article.
   * **Observable:** An observable is the hook for others to subscribe to the data of a State.
   * **Observe:** Observe is the term of what we do when subscribing to an Observable.
 * **Context-API:** The name of the system used to serve APIs (instances/classes) for a certain context in the DOM. An API that is served via the Context-API is called a Context. You can read more about this in the [Context API](working-with-data/context-api.md) article.
