@@ -4,7 +4,7 @@ description: How to use API versioning and OpenAPI (Swagger) for your own APIs.
 
 # API versioning and OpenAPI (Swagger)
 
-Umbraco ships with Swagger to document the Content Delivery API. Swagger and the Swagger UI is available at `{yourdomain}/umbraco/swagger`. For security reasons, both are disabled in non-production environments.
+Umbraco ships with Swagger to document the Content Delivery API. Swagger and the Swagger UI is available at `{yourdomain}/umbraco/swagger`. For security reasons, both are disabled in production environments.
 
 Due to the way OpenAPI works within ASP.NET Core, we have to apply some configurations in a global scope. If your Umbraco site used Swagger previous to Umbraco 12, these global configurations may interfere with your setup.
 
