@@ -8,7 +8,7 @@ description: Entity Actions perform an action on a specific item
 This page is a work in progress. It will be updated as the software evolves.
 {% endhint %}
 
-Previously known as Property Actions, Entity Actions is a feature that provides a generic place for secondary or additional functionality for an entity type. An entity type can be a media, document and so on. &#x20;
+Previously known as Tree Actions, Entity Actions is a feature that provides a generic place for secondary or additional functionality for an entity type. An entity type can be a media, document and so on. &#x20;
 
 ## Entity Actions in the UI <a href="#entity-actions-in-the-ui" id="entity-actions-in-the-ui"></a>
 
