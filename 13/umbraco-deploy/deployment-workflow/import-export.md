@@ -515,6 +515,67 @@ internal class LegacyImportComposer : IComposer
 It is recommended to first only import schema and schema files (by deselecting 'Content' and 'Content files' in the dialog), followed by a complete import of all content and schema. The order in which the artifacts are imported depends on the dependencies between them, so this ensures the schema is completely imported before any content is processed.
 {% endhint %}
 
+#### Obtaining Umbraco Deploy for Umbraco 7
+
+Umbraco Deploy for Umbraco 7 is no longer supported and was only available on Umbraco Cloud. It was not released for use on-premise.
+
+As such if you are looking to migrate from an Umbraco Cloud project running on Umbraco 7, you already have Umbraco Deploy installed.
+
+If you have an Umbraco 7 on-premise website, you can use this guide to migrate from on-premise to Umbraco Cloud or to upgrade to a newer Deploy version on-premise. You will need to obtain and install Umbraco Deploy for Umbraco 7 into your project, solely to use the export feature.
+
+The export feature can be used without a license.
+
+{% hint style="info" %}
+
+A license is required for the Umbraco project you are importing into - whether that's a license that comes as part of an Umbraco Cloud subscription, or an on-premise one.
+
+{% endhint %}
+
+Use this guide to migrate from on-premise to Umbraco Cloud or to upgrade to a newer Deploy version on-premise.
+
+1. Download the required `dll` files for Umbraco Deploy for Umbraco 7 from the following links:
+
+- [Umbraco Deploy v2.1.6](https://umbraconightlies.blob.core.windows.net/umbraco-deploy-release/UmbracoDeploy.v2.1.6.zip): Latest Deploy Version 2 release for Umbraco CMS Version 7 (officially for use on Cloud)
+- [Umbraco Deploy Contrib v2.0.0](https://umbraconightlies.blob.core.windows.net/umbraco-deploy-contrib-release/UmbracoDeploy.Contrib.2.0.0.zip): Latest/only Deploy Contrib Version 2
+- [Umbraco Deploy Export v2.0.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-2.0.0-export): For exporting all content/schema in Version 7
+
+2. Install Umbraco Deploy with the Contrib and Export extensions.
+
+- Install `Umbraco Deploy`, `Deploy.Contrib`, and `Deploy.Export` by copying the downloaded `.dll` files into your Umbraco 7 site.
+- When copying the files over from `Umbraco Deploy` you should not overwrite the following files (if you already had Umbraco Deploy installed):
+
+```csharp
+ Config/UmbracoDeploy.config
+ Config/UmbracoDeploy.Settings.config
+```
+
+- Run the project to make sure it runs without any errors
+
+3. Update the `web.config` file with the required references for Umbraco Deploy:
+
+{% code title="web.config" lineNumbers="true" %}
+
+```xml
+<?xml version="1.0"?> 
+<configSections>
+    <sectionGroup name="umbraco.deploy">
+      <section name="environments" type="Umbraco.Deploy.Configuration.DeployEnvironmentsSection, Umbraco.Deploy" requirePermission="false" />
+      <section name="settings" type="Umbraco.Deploy.Configuration.DeploySettingsSection, Umbraco.Deploy" requirePermission="false" />
+    </sectionGroup>
+  </configSections>
+  <umbraco.deploy>
+    <environments configSource="config\UmbracoDeploy.config" />
+    <settings configSource="config\UmbracoDeploy.Settings.config" />
+  </umbraco.deploy>
+</configuration>
+```
+
+{% endcode %}
+
+4. Export Content.
+
+- **Export** your content, schema, and files to zip.
+
 ## Service details (programmatically importing and exporting)
 
 Underlying the functionality of import/export with Deploy is the import/export service, defined by the `IArtifactImportExportService`.
@@ -607,69 +668,3 @@ internal class ArtifactImportExportComposer : IComposer
 ```
 
 </details>
-
-## Upgrade your Project from Version 7
-
-Umbraco Deploy Version 7 is not supported anymore. However, you can use this guide to migrate from on-premise to Umbraco Cloud or to upgrade to a newer Deploy version on-premise. In this case the export feature can be used which is available without a license.
-
-### Export and Import with Umbraco Deploy On-Premise
-
-To upgrade your project from Umbraco Version 7 to a higher version using Umbraco Deploy on-premise, follow these steps:
-
-1. Obtain Umbraco Deploy DDL Files. Download the required DLL files for Umbraco Deploy version 7 from the following links:
-
-- [Umbraco Deploy v2.1.6](https://umbraconightlies.blob.core.windows.net/umbraco-deploy-release/UmbracoDeploy.v2.1.6.zip): Latest Deploy Version 2 release for Umbraco CMS Version 7 (officially for use on Cloud)
-- [Umbraco Deploy Contrib v2.0.0](https://umbraconightlies.blob.core.windows.net/umbraco-deploy-contrib-release/UmbracoDeploy.Contrib.2.0.0.zip): Latest/only Deploy Contrib Version 2
-- [Umbraco Deploy Export v2.0.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-2.0.0-export): For exporting all content/schema in Version 7
-
-{% hint style="info" %}
-
-Umbraco Deploy on-premise was not a standalone product before version 8 of Umbraco. Therefore you’ll obtain the files from the installation of Umbraco Deploy Cloud.
-
-{% endhint %}
-
-2. Install Umbraco Deploy with the Contrib and Export extensions.
-
-- Install `Umbraco Deploy`, `Deploy.Contrib`, and `Deploy.Export` by copying the files into your Umbraco 7 site.
-- When copying the files over from `Umbraco Deploy` you should not overwrite the following files (if you already had Umbraco Deploy installed):
-
-```csharp
- Config/UmbracoDeploy.config
- Config/UmbracoDeploy.Settings.config
-```
-
-- Run the project to make sure it runs without any errors
-
-3. Update the `web.config` file with the required references for Umbraco Deploy:
-
-{% code title="web.config" lineNumbers="true" %}
-
-```xml
-<?xml version="1.0"?> 
-<configSections>
-    <sectionGroup name="umbraco.deploy">
-      <section name="environments" type="Umbraco.Deploy.Configuration.DeployEnvironmentsSection, Umbraco.Deploy" requirePermission="false" />
-      <section name="settings" type="Umbraco.Deploy.Configuration.DeploySettingsSection, Umbraco.Deploy" requirePermission="false" />
-    </sectionGroup>
-  </configSections>
-  <umbraco.deploy>
-    <environments configSource="config\UmbracoDeploy.config" />
-    <settings configSource="config\UmbracoDeploy.Settings.config" />
-  </umbraco.deploy>
-</configuration>
-```
-
-{% endcode %}
-
-4. Export and Import Content.
-
-- **Export** your content, schema, and files to zip.
-- To **import** the exported zip file into your new Umbraco site you will need an Umbraco Deploy on-premise license and access to the import feature.
-
-### Import into Umbraco Cloud
-
-Umbraco Deploy is part of the Umbraco Cloud subscription. Therefore the import feature can be used for free when importing your content, schema, and files into your Umbraco Cloud project.
-
-### Opt in to Umbraco Heartcore
-
-To opt into Umbraco Heartcore, upgrade your Umbraco site to version 13 following the steps above, and then opt into Umbraco Heartcore. Umbraco Deploy is also part of the Umbraco Heartcore subscription so the import feature can be used for free.
