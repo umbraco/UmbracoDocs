@@ -23,7 +23,7 @@ It is still possible to use other [External Login Providers](../reference/securi
 
 ## Step 1: Configure Entra ID
 
-Before your applications can interact with Entra ID, they must be registered with a tenant that you manage - either an Entra ID (Azure AD) tenant, or an Entra ID B2C (Azure AD B2C) tenant. For more information on creating an Azure AD B2C tenant, see [Microsoft's Tutorial: Create an Azure Active Directory B2C tenant](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant).
+Before your applications can interact with Entra ID, they must be registered with a tenant that you manage. This can be either an Entra ID (Azure AD) tenant, or an Entra ID B2C (Azure AD B2C) tenant. For more information on creating an Azure AD B2C tenant, see [Microsoft's Tutorial: Create an Azure Active Directory B2C tenant](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant).
 
 ## Step 2: Install the NuGet package
 
