@@ -4,7 +4,7 @@ description: How to use API versioning and OpenAPI (Swagger) for your own APIs.
 
 # API versioning and OpenAPI (Swagger)
 
-Umbraco ships with Swagger to document the Content Delivery API. Swagger and the Swagger UI is available at `{yourdomain}/umbraco/swagger`. For security reasons, both are disabled in non-production environments.
+Umbraco ships with Swagger to document the Content Delivery API. Swagger and the Swagger UI is available at `{yourdomain}/umbraco/swagger`. For security reasons, both are disabled in production environments.
 
 Due to the way OpenAPI works within ASP.NET Core, we have to apply some configurations in a global scope. If your Umbraco site used Swagger previous to Umbraco 12, these global configurations may interfere with your setup.
 
@@ -25,6 +25,7 @@ The Umbraco APIs rely on having the requested API version as part of the URL. If
 The following code sample illustrates how you can use a custom header to pass the requested API version to your own APIs.
 
 {% code title="MyConfigureApiVersioningOptions.cs" %}
+
 ```csharp
 using Asp.Versioning;
 using Microsoft.Extensions.Options;
@@ -55,6 +56,7 @@ public static class MyConfigureApiVersioningUmbracoBuilderExtensions
     }
 }
 ```
+
 {% endcode %}
 
 ## Swagger route and/or availability
@@ -64,6 +66,7 @@ As mentioned in the beginning of this article, Umbraco exposes Swagger and the S
 The code sample below shows how to change the Swagger route and availability.
 
 {% code title="MySwaggerRouteTemplatePipelineFilter.cs" %}
+
 ```csharp
 using Umbraco.Cms.Api.Common.OpenApi;
 using Umbraco.Cms.Web.Common.ApplicationBuilder;
@@ -114,6 +117,7 @@ public static class MyConfigureSwaggerRouteUmbracoBuilderExtensions
     }
 }
 ```
+
 {% endcode %}
 
 ## Adding custom operation IDs
@@ -125,6 +129,7 @@ The Umbraco APIs use custom operation IDs for that exact reason. In order to rem
 If you want to apply custom operation IDs to your APIs, you must ensure that the Umbraco APIs retain their custom operation IDs. The following code sample illustrates how this can be done.
 
 {% code title="MyOperationIdSelector.cs" %}
+
 ```csharp
 using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
@@ -168,6 +173,7 @@ public static class MyOperationIdUmbracoBuilderExtensions
     }
 }
 ```
+
 {% endcode %}
 
 ## Adding custom schema IDs
@@ -177,6 +183,7 @@ Custom schema IDs can also make it easier for your API consumers to understand a
 If you want to create custom schema IDs for your APIs, you must ensure that the Umbraco APIs retain their custom schema IDs. The following code sample illustrates how that can be done.
 
 {% code title="MySchemaIdSelector.cs" %}
+
 ```csharp
 using Umbraco.Cms.Api.Common.OpenApi;
 
@@ -214,6 +221,7 @@ public static class MySchemaIdUmbracoBuilderExtensions
     }
 }
 ```
+
 {% endcode %}
 
 ## Adding your own Swagger documents
@@ -231,6 +239,7 @@ In the [Swashbuckle GitHib repository](https://github.com/domaindrivendev/Swashb
 A common use case for this is when you maintain multiple versions of the same API. Often you want to have separate Swagger documents for each version. The following code sample creates two Swagger documents - "My API v1" and "My API v2".
 
 {% code title="MyConfigureSwaggerGenOptions.cs" %}
+
 ```csharp
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
@@ -274,11 +283,13 @@ public static class MyConfigureSwaggerGenUmbracoBuilderExtensions
     }
 }
 ```
+
 {% endcode %}
 
 With these Swagger documents in place, you can now assign the different versions of your API controllers to their respective documents using the `MapToApi` annotation.
 
 {% code title="MyApiController.cs" %}
+
 ```csharp
 using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
@@ -307,9 +318,11 @@ public class MyDoSomethingViewModel
     public string Value { get; }
 }
 ```
+
 {% endcode %}
 
 {% code title="MyApiController.cs" %}
+
 ```csharp
 using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
@@ -343,4 +356,5 @@ public class MyDoSomethingViewModel
     public int OtherValue { get; }
 }
 ```
+
 {% endcode %}
