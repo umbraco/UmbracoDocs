@@ -7,7 +7,7 @@ With the grid property editor [becoming deprecated](https://umbraco.com/blog/umb
 Sites that already have Grid Data Types in use will continue to offer the full range of grid support. Grid content can also be imported from a zip package, which will also fully enable support for it across the environment.
 
 ## Management API Property Type Configuration
-The Content Management API now exposes additional configuration data about properties via the [content type](../api-documentation/content-management/content/type/) endpoints. This will allow you to do things like retrieve information about possible prevalues for a dropdown field or radio button list, for example.
+The Content Management API now exposes additional configuration data about properties via the [content type](../api-documentation/content-management/content/type.md) endpoints. This will allow you to do things like retrieve information about possible prevalues for a dropdown field or radio button list, for example.
 
 ## Notable Bugfixes
 Fixes for commonly-reported issues this month include:
